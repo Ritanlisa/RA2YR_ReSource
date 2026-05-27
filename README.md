@@ -54,6 +54,28 @@ cmake --build build --config Debug
 
 编译状态：59 个源文件可编译，~2444 clean build 错误（系统性预设）。
 
+## RA1 结构对齐进度
+
+| 已完成 | 未完成 |
+|--------|--------|
+| CellClass → 移除 AbstractClass 继承，改为独立类 | AbstractClass 4 COM 接口中 IPersistStream/IRTTITypeInfo 仍存疑（YRpp 推测，非 RTTI 确认） |
+| HouseClass → 删除多余虚函数重写 | TechnoClass MI 混入类（Flasher/Stage/Cargo/Door）未确认 RA2 是嵌入还是 MI |
+| AbstractClass → 纯虚函数改为非纯虚默认实现 | DriveClass 层未 IDA 验证（RA1 在 FootClass→UnitClass 之间是否被 ILocomotion 完全取代） |
+| TechnoClass → 语音/绘制/查询 18 个函数去虚拟化 | Mission AI 分发引擎 switch 逻辑因枚举命名空间冲突暂未完成 |
+| TARGET 编码系统（`core/target.hpp`） | ~252 个 unknown 成员待 IDA 重命名 |
+| COORDINATE/CELL 数学库（含 RA1 sin/cos 表） | — |
+| Mission 状态机 28 种 stub（`object/mission.hpp`） | — |
+
+## 下阶段工作计划
+
+详见 `AGENTS.md`，按依赖顺序分为五阶段：
+
+1. **IDA 重命名 unknown 成员**（P0: techno.hpp 35个 + foot.hpp 41个）
+2. **构建完整类结构**（对齐 RA1 命名，验证 sizeof）
+3. **根据 IDA 伪代码重写关键函数**（ObjectClass::Put、FootClass::MovementAI 等）
+4. **统一处理编译错误**（先修 object.hpp 前向声明→消除~1900连锁错误→逐一清完）
+5. **DLL injection 调试**（连接原 gamemd.exe 验证）
+
 ## 许可证
 
 继承自 CnC_Red_Alert——GNU General Public License v3.0，含 Electronic Arts 附加条款（第 7 条）。
