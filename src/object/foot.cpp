@@ -11,6 +11,8 @@ constexpr uint32_t kFootFlag = 0x4u;
 
 } // anonymous namespace
 
+extern int& CurrentFrame;
+
 FootClass::FootClass() noexcept
     : m_planning_path_idx(-1)
     , m_unknown_short_524(0)
@@ -86,6 +88,76 @@ FootClass::FootClass() noexcept
     m_locomotor.ptr = nullptr;
 
     m_abstract_flags |= kFootFlag;
+}
+
+bool FootClass::MovementAI()
+{
+    if (!m_is_alive)
+        return false;
+
+    // Reset per-frame flags
+    m_unknown_bool_6B3 = false;
+
+    // Movement smoke trail emission
+    if ((CurrentFrame % 6) == 0
+        && !m_in_limbo
+        && !IsInAir()
+        && !m_is_a_bomb)
+    {
+        // TODO: Emit movement dust/smoke based on cell terrain type
+    }
+
+    // Handle parasiting, absorption, entering buildings
+    if (m_parasite_eating_me || m_is_sinking || m_in_air
+        || (m_parasite_im_using && !m_is_attacked_by_locomotor) || m_in_limbo)
+    {
+        return false;
+    }
+
+    // Process locomotion if attached
+    if (m_locomotor.ptr)
+    {
+        // TODO: full ILocomotion::Process() call
+    }
+
+    // Movement sound effects based on terrain state changes
+    HandleMovementSoundUpdate();
+
+    // Locomotion COM interface management
+    if (m_locomotor.ptr)
+    {
+        HandleLocomotionUpdate();
+    }
+
+    // Apply movement result
+    m_is_attacked_by_locomotor = false;
+    m_is_let_go_by_locomotor = false;
+
+    return true;
+}
+
+void FootClass::HandleMovementSoundUpdate()
+{
+    // Update movement sounds based on terrain
+    CoordStruct loc;
+    GetCoords(&loc);
+
+    // Check if on bridge transition
+    bool was_on_bridge = m_on_bridge;
+    m_on_bridge = IsOnBridge();
+
+    if (was_on_bridge != m_on_bridge)
+    {
+        // Terrain type changed — update movement sounds
+        // TODO: full IDA logic for sound effect transitions
+    }
+}
+
+void FootClass::HandleLocomotionUpdate()
+{
+    // Locomotion COM interface: QueryInterface for ILocomotion
+    // ILocomotion manages actual movement, path following, etc.
+    // TODO: full implementation with COM QueryInterface
 }
 
 } // namespace game

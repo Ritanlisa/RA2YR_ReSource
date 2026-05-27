@@ -69,6 +69,10 @@ public:
     virtual void vt_entry_54C() {}
     virtual bool vt_entry_550(uint32_t a) { return false; }
 
+    bool MovementAI();
+    void HandleMovementSoundUpdate();
+    void HandleLocomotionUpdate();
+
     // ---- member variables ----
 
     int32_t            m_planning_path_idx;
