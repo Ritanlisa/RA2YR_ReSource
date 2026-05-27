@@ -3,9 +3,11 @@
 namespace ra2 {
 namespace game {
 
-// Stub: headers have =default implementations for most virtuals
-// RadioClass ctor is =default (trivial after parent init)
-// Key virtual functions will be implemented as reverse-engineered
+RadioClass::RadioClass() noexcept
+    : m_last_commands{0, 0, 0}
+    , m_radio_links{}
+{
+}
 
 } // namespace game
 } // namespace ra2

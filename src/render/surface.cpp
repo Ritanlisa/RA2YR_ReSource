@@ -21,7 +21,7 @@ DSurface::DSurface(int width, int height, bool back_buffer, bool force_3d) noexc
     std::memset(&align_1A, 0, sizeof(align_1A));
 }
 
-bool DSurface::BlitWhole(Surface* src, bool option1, bool option2)
+bool DSurface::BlitWhole(class Surface* src, bool option1, bool option2)
 {
     (void)src;
     (void)option1;
@@ -30,7 +30,7 @@ bool DSurface::BlitWhole(Surface* src, bool option1, bool option2)
 }
 
 bool DSurface::BlitPart(
-    const RectangleStruct& dest_rect, Surface* src,
+    const RectangleStruct& dest_rect, class Surface* src,
     const RectangleStruct& src_rect, bool option1, bool option2)
 {
     (void)dest_rect;
@@ -43,7 +43,7 @@ bool DSurface::BlitPart(
 
 bool DSurface::Blit(
     const RectangleStruct& clip_rect, const RectangleStruct& clip_rect2,
-    Surface* src, const RectangleStruct& dest_rect,
+    class Surface* src, const RectangleStruct& dest_rect,
     const RectangleStruct& src_rect, bool option1, bool option2)
 {
     (void)clip_rect;

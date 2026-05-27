@@ -7,8 +7,6 @@
 namespace gamemd
 {
 
-extern void* MixFileClass_vftable[1];
-
 LinkedList<MixFileClass*> MixFileClass_MIXes;
 DynamicVectorClass<MixFileClass*> MixFileClass_Array;
 DynamicVectorClass<MixFileClass*> MixFileClass_Array_Alt;
@@ -39,12 +37,6 @@ MixFileClass::MixFileClass(const char* pFileName) noexcept
     FileStartOffset = 0;
     Headers         = nullptr;
     field_24        = 0;
-
-    const auto vft = const_cast<void**>(reinterpret_cast<void* const*>(MixFileClass_vftable));
-    reinterpret_cast<void**>(this)[0] = vft;
-    reinterpret_cast<void**>(this)[1] = vft;
-    reinterpret_cast<void**>(this)[2] = vft;
-    reinterpret_cast<void**>(this)[3] = vft;
 
     // TODO: complete implementation
     // - Open the MIX file on disk

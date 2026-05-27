@@ -6,6 +6,7 @@
 #include "g_screen.hpp"
 #include "..\core\enums.hpp"
 #include "..\core\math.hpp"
+#include "..\system\radar.hpp"
 
 namespace gamemd
 {

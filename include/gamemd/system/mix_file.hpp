@@ -108,7 +108,8 @@ public:
 
     virtual ~MixFileClass() override = default;
 
-    explicit MixFileClass(const char* pFileName);
+    MixFileClass() noexcept : Node(noinit_t()) {}
+    explicit MixFileClass(const char* pFileName) noexcept;
 
 protected:
     explicit MixFileClass(const noinit_t&) noexcept : Node(noinit_t()) {}

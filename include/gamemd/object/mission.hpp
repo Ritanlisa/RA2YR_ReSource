@@ -73,7 +73,7 @@ public:
     TimerStruct m_mission_timer;
 
 protected:
-    MissionClass() = default;
+    MissionClass() noexcept;
 };
 
 } // namespace game

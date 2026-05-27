@@ -6,9 +6,6 @@
 namespace gamemd
 {
 
-extern void* TagClass_vftable[1];
-extern void* TagTypeClass_vftable[1];
-
 // --- TagClass ---
 
 void TagClass::DeleteAll()

@@ -10,11 +10,6 @@ namespace gamemd
 {
 
 using ra2::game::CoordStruct;
-
-extern void* AnimClass_vftable[1];
-extern DynamicVectorClass<AnimClass*> AnimClass_Array;
-extern DynamicVectorClass<ra2::game::ObjectClass*> ObjectClass_Array;
-
 namespace {
 
 constexpr uint32_t kAnimFlag = 0x4u;
@@ -82,15 +77,6 @@ AnimClass::AnimClass(AnimTypeClass* pType, const CoordStruct& coords,
     }
 
     m_abstract_flags = kAnimFlag;
-
-    const auto vft = reinterpret_cast<void**>(&AnimClass_vftable[0]);
-    reinterpret_cast<void**>(this)[0] = vft;
-    reinterpret_cast<void**>(this)[1] = vft;
-    reinterpret_cast<void**>(this)[2] = vft;
-    reinterpret_cast<void**>(this)[3] = vft;
-
-    AnimClass_Array.AddItem(this);
-    ObjectClass_Array.AddItem(this);
 
     // TODO: complete implementation
     // - Initialize animation from AnimTypeClass data

@@ -33,6 +33,7 @@ class WeaponTypeClass;
 class BuildingTypeClass;
 class AnimClass;
 class WarheadTypeClass;
+class HouseClass;
 struct SHPStruct;
 
 class SuperWeaponTypeClass : public AbstractTypeClass
@@ -45,7 +46,7 @@ public:
 
     virtual AbstractType __stdcall WhatAmI() const override { return AbsID; }
     virtual int32_t Size() const override { return sizeof(SuperWeaponTypeClass); }
-    virtual Action MouseOverObject(const CellStruct& cell, ObjectClass* pObjBelowMouse) const override { return Action::None; }
+    virtual Action MouseOverObject(const CellStruct& cell, ObjectClass* pObjBelowMouse) const { return Action::None; }
 
     static SuperWeaponTypeClass* FindFirstOfAction(Action action);
 

@@ -5,8 +5,6 @@
 namespace gamemd
 {
 
-extern void* TacticalClass_vftable[1];
-
 TacticalClass::TacticalClass() noexcept
     : m_field_24(0)
     , m_field_28(0)
@@ -84,12 +82,6 @@ TacticalClass::TacticalClass() noexcept
     std::memset(m_visible_cells, 0, sizeof(m_visible_cells));
     std::memset(m_floats, 0, sizeof(m_floats));
     std::memset(&m_field_DE4, 0, sizeof(m_field_DE4));
-
-    const auto vtbl = const_cast<void**>(reinterpret_cast<void* const*>(TacticalClass_vftable));
-    reinterpret_cast<void**>(this)[0] = vtbl;
-    reinterpret_cast<void**>(this)[1] = vtbl;
-    reinterpret_cast<void**>(this)[2] = vtbl;
-    reinterpret_cast<void**>(this)[3] = vtbl;
 }
 
 // TODO: complete implementation

@@ -8,23 +8,10 @@
 
 namespace gamemd {
 
-#ifndef GAMEMD_USING_AbstractClass
-#define GAMEMD_USING_AbstractClass
 using ra2::game::AbstractClass;
-#endif
-#ifndef GAMEMD_USING_AbstractType
-#define GAMEMD_USING_AbstractType
 using ra2::game::AbstractType;
-#endif
-#ifndef GAMEMD_USING_Point2D
-#define GAMEMD_USING_Point2D
 using ra2::game::Point2D;
-#endif
-#ifndef GAMEMD_USING_RectangleStruct
-#define GAMEMD_USING_RectangleStruct
 using ra2::game::RectangleStruct;
-#endif
-
 
 
 

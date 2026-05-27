@@ -25,42 +25,42 @@ MPGameModeClass::MPGameModeClass() noexcept
 
 // --- MPBattleClass ---
 
-MPBattleClass::MPBattleClass()
+MPBattleClass::MPBattleClass() noexcept
     : MPGameModeClass()
 {
 }
 
 // --- MPFreeForAllClass ---
 
-MPFreeForAllClass::MPFreeForAllClass()
+MPFreeForAllClass::MPFreeForAllClass() noexcept
     : MPGameModeClass()
 {
 }
 
 // --- MPUnholyAllianceClass ---
 
-MPUnholyAllianceClass::MPUnholyAllianceClass()
+MPUnholyAllianceClass::MPUnholyAllianceClass() noexcept
     : MPGameModeClass()
 {
 }
 
 // --- MPSiegeClass ---
 
-MPSiegeClass::MPSiegeClass()
+MPSiegeClass::MPSiegeClass() noexcept
     : MPGameModeClass()
 {
 }
 
 // --- MPMegawealthClass ---
 
-MPMegawealthClass::MPMegawealthClass()
+MPMegawealthClass::MPMegawealthClass() noexcept
     : MPGameModeClass()
 {
 }
 
 // --- MPManBattleClass ---
 
-MPManBattleClass::MPManBattleClass()
+MPManBattleClass::MPManBattleClass() noexcept
     : MPGameModeClass()
 {
 }

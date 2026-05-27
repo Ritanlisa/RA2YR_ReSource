@@ -35,6 +35,7 @@ public:
     TerrainTypeClass* Type;
     bool             IsBurning;
     bool             TimeToDie;
+    int              m_height;
     RectangleStruct  unknown_rect_D0;
 
 protected:

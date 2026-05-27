@@ -1,4 +1,5 @@
 #include "gamemd/network/winsock.hpp"
+#include <cstring>
 
 namespace gamemd
 {

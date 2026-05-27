@@ -19,7 +19,6 @@ class MPGameModeClass
 public:
     static DynamicVectorClass<MPGameModeClass*>* GameModes;
 
-    MPGameModeClass() noexcept;
     virtual ~MPGameModeClass() = default;
 
     virtual bool   IsValidMap()                                       { return false; }
@@ -98,6 +97,7 @@ protected:
 class MPBattleClass : public MPGameModeClass
 {
 public:
+    MPBattleClass() noexcept;
     virtual ~MPBattleClass() = default;
     virtual bool IsTeamsAllowed() override { return true; }
     // TODO: complete MPBattleClass
@@ -106,6 +106,7 @@ public:
 class MPFreeForAllClass : public MPGameModeClass
 {
 public:
+    MPFreeForAllClass() noexcept;
     virtual ~MPFreeForAllClass() = default;
     virtual bool StartGame() override { return false; }
     virtual bool StopGame(int32_t reason) override { return false; }
@@ -118,6 +119,7 @@ public:
 class MPUnholyAllianceClass : public MPGameModeClass
 {
 public:
+    MPUnholyAllianceClass() noexcept;
     virtual ~MPUnholyAllianceClass() = default;
     virtual bool StartGame() override { return false; }
     virtual bool StopGame(int32_t reason) override { return false; }
@@ -129,6 +131,7 @@ public:
 class MPSiegeClass : public MPGameModeClass
 {
 public:
+    MPSiegeClass() noexcept;
     virtual ~MPSiegeClass() = default;
     virtual bool StartGame() override { return false; }
     virtual bool StopGame(int32_t reason) override { return false; }
@@ -144,6 +147,7 @@ public:
 class MPMegawealthClass : public MPGameModeClass
 {
 public:
+    MPMegawealthClass() noexcept;
     virtual ~MPMegawealthClass() = default;
     virtual bool IsMegawealthAllowed() override { return false; }
     // TODO: complete MPMegawealthClass
@@ -152,6 +156,7 @@ public:
 class MPManBattleClass : public MPGameModeClass
 {
 public:
+    MPManBattleClass() noexcept;
     virtual ~MPManBattleClass() = default;
     // TODO: complete MPManBattleClass
 };

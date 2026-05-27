@@ -6,9 +6,6 @@
 namespace gamemd
 {
 
-extern void* TriggerClass_vftable[1];
-extern void* TriggerTypeClass_vftable[1];
-
 // --- TriggerClass ---
 
 TriggerClass* TriggerClass::GetInstance(TriggerTypeClass* type)

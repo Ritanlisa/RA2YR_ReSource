@@ -7,11 +7,6 @@
 
 namespace gamemd
 {
-
-extern void* ParticleClass_vftable[1];
-extern DynamicVectorClass<ParticleClass*> ParticleClass_Array;
-extern DynamicVectorClass<ObjectClass*> ObjectClass_Array;
-
 namespace {
 
 constexpr uint32_t kParticleFlag = 0x16u;
@@ -59,15 +54,6 @@ ParticleClass::ParticleClass(ParticleTypeClass* pType,
 
     m_location      = coords;
     m_abstract_flags = kParticleFlag;
-
-    const auto vft = const_cast<void**>(reinterpret_cast<void* const*>(ParticleClass_vftable));
-    reinterpret_cast<void**>(this)[0] = vft;
-    reinterpret_cast<void**>(this)[1] = vft;
-    reinterpret_cast<void**>(this)[2] = vft;
-    reinterpret_cast<void**>(this)[3] = vft;
-
-    ParticleClass_Array.AddItem(this);
-    ObjectClass_Array.AddItem(this);
 
     // TODO: complete implementation
     // - Initialize particle state machine

@@ -88,7 +88,7 @@ class CCFileClass : public CDFileClass
 public:
     virtual ~CCFileClass() override = default;
 
-    explicit CCFileClass(const char* pFileName);
+    explicit CCFileClass(const char* pFileName) noexcept;
 
 protected:
     explicit CCFileClass(const noinit_t&) noexcept : CDFileClass(noinit_t()) {}

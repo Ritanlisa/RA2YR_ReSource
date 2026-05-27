@@ -2,6 +2,7 @@
 
 #include <cstdint>
 #include "enums.hpp"
+#include "..\object\abstract.hpp"
 
 namespace gamemd {
 
@@ -85,9 +86,10 @@ inline bool IsTargetFoot(target_t t) noexcept
         || kind == AbstractType::Aircraft;
 }
 
-class ObjectClass;
-class TechnoClass;
-class FootClass;
+using ra2::game::ObjectClass;
+using ra2::game::TechnoClass;
+using ra2::game::FootClass;
+
 class CellClass;
 template <typename T> class DynamicVectorClass;
 

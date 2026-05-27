@@ -6,9 +6,7 @@
 namespace gamemd
 {
 
-extern void* MapClass_vftable[1];
-
-MapClass::MapClass()
+MapClass::MapClass() noexcept
     : m_unknown_10(0)
     , m_unknown_pointer_14(nullptr)
     , m_unknown_4C(0)
@@ -58,12 +56,6 @@ MapClass::MapClass()
     std::memset(&m_visible_rect, 0, sizeof(m_visible_rect));
     std::memset(&m_map_coord_bounds, 0, sizeof(m_map_coord_bounds));
     std::memset(m_crates, 0, sizeof(m_crates));
-
-    const auto vtbl = const_cast<void**>(reinterpret_cast<void* const*>(MapClass_vftable));
-    reinterpret_cast<void**>(this)[0] = vtbl;
-    reinterpret_cast<void**>(this)[1] = vtbl;
-    reinterpret_cast<void**>(this)[2] = vtbl;
-    reinterpret_cast<void**>(this)[3] = vtbl;
 }
 
 // TODO: complete implementation

@@ -1,11 +1,6 @@
 #include "gamemd/structure/aircraft.hpp"
 
-#include <cstring>
-
-namespace gamemd
-{
-
-extern void* AircraftClass_vftable[5];
+namespace gamemd {
 
 namespace {
 
@@ -28,13 +23,6 @@ AircraftClass::AircraftClass() noexcept
     , unknown_bool_6D4(false)
     , unknown_bool_6D5(false)
 {
-    const auto vtbl = const_cast<void**>(reinterpret_cast<void* const*>(AircraftClass_vftable));
-    reinterpret_cast<void**>(this)[0] = vtbl;
-    reinterpret_cast<void**>(this)[1] = vtbl;
-    reinterpret_cast<void**>(this)[2] = vtbl;
-    reinterpret_cast<void**>(this)[3] = vtbl;
-    reinterpret_cast<void**>(this)[4] = vtbl;
-
     m_abstract_flags = kAircraftFlag;
 }
 

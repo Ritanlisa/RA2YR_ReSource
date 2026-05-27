@@ -6,8 +6,6 @@
 namespace gamemd
 {
 
-extern void* LightSourceClass_vftable[1];
-
 LightSourceClass::LightSourceClass(const CoordStruct& location,
                                    int intensity,
                                    int visibility,
@@ -26,12 +24,6 @@ LightSourceClass::LightSourceClass(const CoordStruct& location,
     m_unknown_18     = 0;
     m_ref_count      = 0;
     m_dirty          = false;
-
-    const auto vft = const_cast<void**>(reinterpret_cast<void* const*>(LightSourceClass_vftable));
-    reinterpret_cast<void**>(this)[0] = vft;
-    reinterpret_cast<void**>(this)[1] = vft;
-    reinterpret_cast<void**>(this)[2] = vft;
-    reinterpret_cast<void**>(this)[3] = vft;
 
     // TODO: complete implementation
     // - Register with current map's light source list

@@ -9,8 +9,6 @@
 namespace gamemd
 {
 
-extern void* HouseTypeClass_vftable[1];
-
 HouseTypeClass::HouseTypeClass() noexcept
     : m_zero_3C(0)
     , m_ui_name(nullptr)
@@ -64,12 +62,6 @@ HouseTypeClass::HouseTypeClass() noexcept
     std::memset(m_suffix, 0, sizeof(m_suffix));
     std::memset(m_padding_1A9, 0, sizeof(m_padding_1A9));
     std::memset(&m_align_B1, 0, sizeof(m_align_B1));
-
-    const auto vtbl = const_cast<void**>(reinterpret_cast<void* const*>(HouseTypeClass_vftable));
-    reinterpret_cast<void**>(this)[0] = vtbl;
-    reinterpret_cast<void**>(this)[1] = vtbl;
-    reinterpret_cast<void**>(this)[2] = vtbl;
-    reinterpret_cast<void**>(this)[3] = vtbl;
 }
 
 HouseTypeClass* HouseTypeClass::FindParentCountry() const

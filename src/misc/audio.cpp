@@ -126,26 +126,31 @@ bool VoxClass::LoadFromINI(CCINIClass* pINI)
     return false;
 }
 
-// --- AudioController ---
+// --- AudioController helper functions ---
 
-void AudioController::Stop()
+namespace {
+
+void AudioController_Stop(ra2::game::AudioController& ctrl)
 {
-    // TODO: complete implementation
+    (void)ctrl;
 }
 
-void AudioController::Start(int32_t soundIndex)
+void AudioController_Start(ra2::game::AudioController& ctrl, int32_t soundIndex)
 {
-    // TODO: complete implementation
+    (void)ctrl;
+    (void)soundIndex;
 }
 
-void AudioController::Pause()
+void AudioController_Pause(ra2::game::AudioController& ctrl)
 {
-    // TODO: complete implementation
+    (void)ctrl;
 }
 
-void AudioController::Resume()
+void AudioController_Resume(ra2::game::AudioController& ctrl)
 {
-    // TODO: complete implementation
+    (void)ctrl;
 }
+
+} // anonymous namespace
 
 } // namespace gamemd

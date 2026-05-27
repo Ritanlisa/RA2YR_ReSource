@@ -8,7 +8,7 @@
 namespace gamemd
 {
 
-struct BytePalette
+struct RGBColor
 {
     uint8_t R;
     uint8_t G;

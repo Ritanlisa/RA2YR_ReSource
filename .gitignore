@@ -57,3 +57,6 @@ MIX_Format.html
 *.crt
 *.secret
 .env
+
+# 测试文件
+*.mix

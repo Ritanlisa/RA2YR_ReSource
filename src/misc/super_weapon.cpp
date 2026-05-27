@@ -7,49 +7,40 @@
 namespace gamemd
 {
 
-extern void* SuperWeaponTypeClass_vftable[1];
-extern void* SuperClass_vftable[1];
 
 DynamicVectorClass<AbstractTypeClass*>* SuperWeaponTypeClass::Array = nullptr;
 DynamicVectorClass<SuperClass*>* SuperClass::Array                  = nullptr;
 
 SuperWeaponTypeClass::SuperWeaponTypeClass(const char* pID) noexcept
+    : AbstractTypeClass(pID)
+    , ArrayIndex(0)
+    , WeaponType(nullptr)
+    , RechargeVoice(0)
+    , ChargingVoice(0)
+    , ImpatientVoice(0)
+    , SuspendVoice(0)
+    , RechargeTime(0)
+    , Type(SuperWeaponType{})
+    , SidebarImage(nullptr)
+    , ActionValue(Action::None)
+    , SpecialSound(0)
+    , StartSound(0)
+    , AuxBuilding(nullptr)
+    , zero_E4(0)
+    , UseChargeDrain(false)
+    , IsPowered(false)
+    , DisableableFromShell(false)
+    , FlashSidebarTabFrames(0)
+    , AIDefendAgainst(false)
+    , PreClick(false)
+    , PostClick(false)
+    , PreDependent(0)
+    , ShowTimer(false)
+    , ManualControl(false)
+    , Range(0.0f)
+    , LineMultiplier(0)
 {
-    ArrayIndex     = 0;
-    WeaponType     = nullptr;
-    RechargeVoice  = 0;
-    ChargingVoice  = 0;
-    ImpatientVoice = 0;
-    SuspendVoice   = 0;
-    RechargeTime   = 0;
-    Type           = SuperWeaponType{};
-    SidebarImage   = nullptr;
-    ActionValue    = Action::None;
-    SpecialSound   = 0;
-    StartSound     = 0;
-    AuxBuilding    = nullptr;
-
     std::memset(SidebarImageFile, 0, sizeof(SidebarImageFile));
-    zero_E4 = 0;
-
-    UseChargeDrain        = false;
-    IsPowered             = false;
-    DisableableFromShell  = false;
-    FlashSidebarTabFrames = 0;
-    AIDefendAgainst       = false;
-    PreClick              = false;
-    PostClick             = false;
-    PreDependent          = 0;
-    ShowTimer             = false;
-    ManualControl         = false;
-    Range                 = 0.0f;
-    LineMultiplier        = 0;
-
-    const auto vft = const_cast<void**>(reinterpret_cast<void* const*>(SuperWeaponTypeClass_vftable));
-    reinterpret_cast<void**>(this)[0] = vft;
-    reinterpret_cast<void**>(this)[1] = vft;
-    reinterpret_cast<void**>(this)[2] = vft;
-    reinterpret_cast<void**>(this)[3] = vft;
 
     if (Array)
     {
@@ -91,19 +82,13 @@ SuperClass::SuperClass(SuperWeaponTypeClass* pSWType, HouseClass* pOwner) noexce
 
     ReadinessFrame         = 0;
     CameoChargeState       = 0;
-    ChargeDrainState       = ChargeDrainState{};
+    ChargeDrainState       = static_cast<gamemd::ChargeDrainState>(0);
 
     m_unique_id      = static_cast<uint32_t>(-1);
     m_abstract_flags = 0;
     m_unknown_18     = 0;
     m_ref_count      = 0;
     m_dirty          = false;
-
-    const auto vft = const_cast<void**>(reinterpret_cast<void* const*>(SuperClass_vftable));
-    reinterpret_cast<void**>(this)[0] = vft;
-    reinterpret_cast<void**>(this)[1] = vft;
-    reinterpret_cast<void**>(this)[2] = vft;
-    reinterpret_cast<void**>(this)[3] = vft;
 
     if (Array)
     {

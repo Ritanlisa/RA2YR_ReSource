@@ -5,11 +5,6 @@
 
 namespace gamemd
 {
-
-extern void* WaveClass_vftable[1];
-extern DynamicVectorClass<WaveClass*> WaveClass_Array;
-extern DynamicVectorClass<ObjectClass*> ObjectClass_Array;
-
 namespace {
 
 constexpr uint32_t kWaveFlag = 0x2Bu;
@@ -105,15 +100,6 @@ WaveClass::WaveClass(TechnoClass* pTarget, WaveType waveType,
     field_1CC = 0;
 
     m_abstract_flags = kWaveFlag;
-
-    const auto vft = const_cast<void**>(reinterpret_cast<void* const*>(WaveClass_vftable));
-    reinterpret_cast<void**>(this)[0] = vft;
-    reinterpret_cast<void**>(this)[1] = vft;
-    reinterpret_cast<void**>(this)[2] = vft;
-    reinterpret_cast<void**>(this)[3] = vft;
-
-    WaveClass_Array.AddItem(this);
-    ObjectClass_Array.AddItem(this);
 
     // TODO: complete implementation
     // - Set up wave cell propagation from type

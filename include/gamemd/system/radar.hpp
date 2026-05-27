@@ -1,6 +1,7 @@
 #pragma once
 
 #include "..\object\abstract.hpp"
+#include "..\render\display.hpp"
 
 #include <cstdint>
 

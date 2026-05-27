@@ -17,7 +17,10 @@ using ra2::game::AudioController;
 #endif
 
 class CCINIClass;
-struct CoordStruct;
+#ifndef GAMEMD_USING_CoordStruct
+#define GAMEMD_USING_CoordStruct
+using ra2::game::CoordStruct;
+#endif
 struct AudioEventHandle;
 
 struct VocClassHeader
@@ -127,21 +130,7 @@ public:
     // TODO: complete VoxClass
 };
 
-struct AudioController
-{
-    uint32_t unknown_00;
-    uint32_t unknown_04;
-    uint32_t unknown_08;
-    uint32_t unknown_0C;
-    uint32_t unknown_10;
-    uint32_t unknown_14;
-    uint32_t unknown_18;
-
-    void Stop();
-    void Start(int32_t soundIndex);
-    void Pause();
-    void Resume();
-};
+struct AudioController;
 
 struct AudioEventHandle
 {

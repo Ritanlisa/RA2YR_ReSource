@@ -2,10 +2,7 @@
 
 #include <cstring>
 
-namespace gamemd
-{
-
-extern void* UnitClass_vftable[1];
+namespace gamemd {
 
 namespace {
 
@@ -33,12 +30,6 @@ UnitClass::UnitClass() noexcept
     , NonPassengerCount(0)
 {
     std::memset(ToolTipText, 0, sizeof(ToolTipText));
-
-    const auto vtbl = const_cast<void**>(reinterpret_cast<void* const*>(UnitClass_vftable));
-    reinterpret_cast<void**>(this)[0] = vtbl;
-    reinterpret_cast<void**>(this)[1] = vtbl;
-    reinterpret_cast<void**>(this)[2] = vtbl;
-    reinterpret_cast<void**>(this)[3] = vtbl;
 
     m_abstract_flags = kUnitFlag;
 }

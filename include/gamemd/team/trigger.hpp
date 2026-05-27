@@ -32,8 +32,14 @@ using ra2::game::CellStruct;
 struct TriggerTypeClass;
 struct HouseClass;
 struct HouseTypeClass;
-struct ObjectClass;
-struct TechnoClass;
+#ifndef GAMEMD_USING_ObjectClass
+#define GAMEMD_USING_ObjectClass
+using ra2::game::ObjectClass;
+#endif
+#ifndef GAMEMD_USING_TechnoClass
+#define GAMEMD_USING_TechnoClass
+using ra2::game::TechnoClass;
+#endif
 struct TActionClass;
 struct TEventClass;
 struct CCINIClass;

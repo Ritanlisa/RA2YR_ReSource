@@ -4,6 +4,10 @@
 
 namespace gamemd {
 
+using ra2::game::ObjectClass;
+using ra2::game::TechnoClass;
+using ra2::game::FootClass;
+
 TargetClass::TargetClass(const ObjectClass* obj) noexcept
 {
     if (obj)

@@ -51,6 +51,8 @@ public:
 
 protected:
     LightSourceClass() = default;
+    LightSourceClass(const CoordStruct& location, int intensity, int visibility,
+                     const TintStruct& tint, int detail_level) noexcept;
     explicit LightSourceClass(noinit_t) noexcept {}
 };
 

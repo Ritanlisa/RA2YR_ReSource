@@ -446,7 +446,7 @@ public:
     HouseClass*             m_disguised_as_house;
 
 protected:
-    TechnoClass() = default;
+    TechnoClass() noexcept;
 };
 
 } // namespace game

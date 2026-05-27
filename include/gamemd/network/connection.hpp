@@ -60,8 +60,6 @@ public:
     static IPXManagerClass* Instance;
 
     bool OpenSession();
-
-    bool OpenSession();
     void CloseSession();
     bool SendPacket(const uint8_t* data, int32_t length);
     int32_t ReceivePacket(uint8_t* buffer, int32_t maxLen);

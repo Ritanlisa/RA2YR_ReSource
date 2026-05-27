@@ -51,8 +51,14 @@ class AnimClass;
 class BulletClass;
 class CellClass;
 struct WaypointClass;
-class TechnoClass;
-class ObjectClass;
+#ifndef GAMEMD_USING_TechnoClass
+#define GAMEMD_USING_TechnoClass
+using ra2::game::TechnoClass;
+#endif
+#ifndef GAMEMD_USING_ObjectClass
+#define GAMEMD_USING_ObjectClass
+using ra2::game::ObjectClass;
+#endif
 
 struct ScoreStruct
 {
@@ -623,6 +629,7 @@ public:
 
 protected:
     HouseClass() = default;
+    HouseClass(HouseTypeClass* pType) noexcept;
 };
 
 } // namespace gamemd

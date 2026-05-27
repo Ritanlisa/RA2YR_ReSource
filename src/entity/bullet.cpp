@@ -8,11 +8,6 @@
 
 namespace gamemd
 {
-
-extern void* BulletClass_vftable[1];
-extern DynamicVectorClass<BulletClass*> BulletClass_Array;
-extern DynamicVectorClass<ObjectClass*> ObjectClass_Array;
-
 namespace {
 
 constexpr uint32_t kBulletFlag = 0x8u;
@@ -56,15 +51,6 @@ BulletClass::BulletClass(BulletTypeClass* pType) noexcept
     Range             = 0;
 
     m_abstract_flags = kBulletFlag;
-
-    const auto vft = reinterpret_cast<void**>(&BulletClass_vftable[0]);
-    reinterpret_cast<void**>(this)[0] = vft;
-    reinterpret_cast<void**>(this)[1] = vft;
-    reinterpret_cast<void**>(this)[2] = vft;
-    reinterpret_cast<void**>(this)[3] = vft;
-
-    BulletClass_Array.AddItem(this);
-    ObjectClass_Array.AddItem(this);
 }
 
 } // namespace gamemd

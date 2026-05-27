@@ -2,6 +2,7 @@
 
 #include "..\fundamentals.hpp"
 #include "..\core\vector.hpp"
+#include "..\core\enums.hpp"
 
 namespace gamemd
 {

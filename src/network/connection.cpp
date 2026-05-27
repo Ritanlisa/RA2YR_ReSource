@@ -5,7 +5,7 @@ namespace gamemd
 
 // --- ConnectionClass ---
 
-ConnectionClass::ConnectionClass()
+ConnectionClass::ConnectionClass() noexcept
     : PlayerIndex(-1)
     , Active(false)
     , LastPacketTime(0)
@@ -16,7 +16,7 @@ ConnectionClass::ConnectionClass()
 
 // --- IPXConnClass ---
 
-IPXConnClass::IPXConnClass()
+IPXConnClass::IPXConnClass() noexcept
     : Socket(0xFFFFFFFF)
     , RemoteSocket(0)
 {
@@ -28,7 +28,7 @@ IPXConnClass::IPXConnClass()
 
 IPXManagerClass* IPXManagerClass::Instance = nullptr;
 
-IPXManagerClass::IPXManagerClass()
+IPXManagerClass::IPXManagerClass() noexcept
     : Socket(0xFFFFFFFF)
     , Initialized(false)
     , Active(false)
@@ -43,7 +43,7 @@ bool IPXManagerClass::IsIPXAvailable() const { return false; }
 
 // --- ModemConnectionClass ---
 
-ModemConnectionClass::ModemConnectionClass()
+ModemConnectionClass::ModemConnectionClass() noexcept
     : IsDialing(false)
     , BaudRate(0)
 {
@@ -52,7 +52,7 @@ ModemConnectionClass::ModemConnectionClass()
 
 // --- NullModemClass ---
 
-NullModemClass::NullModemClass()
+NullModemClass::NullModemClass() noexcept
 {
 }
 

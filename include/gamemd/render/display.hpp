@@ -6,6 +6,7 @@
 #include "..\core\math.hpp"
 #include "..\core\enums.hpp"
 #include "..\fundamentals.hpp"
+#include "..\object\abstract.hpp"
 
 namespace gamemd
 {
@@ -13,8 +14,11 @@ namespace gamemd
 class CCINIClass;
 class ObjectTypeClass;
 class HouseClass;
+using ra2::game::ObjectClass;
 struct SHPStruct;
 
+#ifndef GAMEMD_DEF_GScreenClass
+#define GAMEMD_DEF_GScreenClass
 class GScreenClass
 {
 public:
@@ -32,12 +36,16 @@ public:
     virtual bool vt_entry_98(const CellStruct& cell, HouseClass* house) { return false; }
     virtual bool vt_entry_9C(const CellStruct& cell, HouseClass* house) { return false; }
 };
+#endif
 
+#ifndef GAMEMD_DEF_MapClass
+#define GAMEMD_DEF_MapClass
 class MapClass : public GScreenClass
 {
 public:
     virtual ~MapClass() override = default;
 };
+#endif
 
 class DisplayClass : public MapClass
 {

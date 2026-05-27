@@ -6,11 +6,6 @@
 
 namespace gamemd
 {
-
-extern void* TerrainClass_vftable[1];
-extern DynamicVectorClass<TerrainClass*> TerrainClass_Array;
-extern DynamicVectorClass<ObjectClass*> ObjectClass_Array;
-
 namespace {
 
 constexpr uint32_t kTerrainFlag = 0x24u;
@@ -30,15 +25,6 @@ TerrainClass::TerrainClass(TerrainTypeClass* pType, const CellStruct& cell,
 
     m_height  = height;
     m_abstract_flags = kTerrainFlag;
-
-    const auto vft = const_cast<void**>(reinterpret_cast<void* const*>(TerrainClass_vftable));
-    reinterpret_cast<void**>(this)[0] = vft;
-    reinterpret_cast<void**>(this)[1] = vft;
-    reinterpret_cast<void**>(this)[2] = vft;
-    reinterpret_cast<void**>(this)[3] = vft;
-
-    TerrainClass_Array.AddItem(this);
-    ObjectClass_Array.AddItem(this);
 
     // TODO: complete implementation
     // - Set up terrain tile coordinates

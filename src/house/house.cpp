@@ -10,10 +10,7 @@
 namespace gamemd
 {
 
-extern void* HouseClass_vftable[1];
 extern int& CurrentFrame;
-extern DynamicVectorClass<HouseClass*> HouseClass_Array;
-extern DynamicVectorClass<AbstractClass*> AbstractClass_Array;
 
 namespace {
 
@@ -350,15 +347,6 @@ HouseClass::HouseClass(HouseTypeClass* pType) noexcept
     m_unknown_160B4              = 0;
 
     m_abstract_flags = kHouseFlag;
-
-    const auto vft = const_cast<void**>(reinterpret_cast<void* const*>(HouseClass_vftable));
-    reinterpret_cast<void**>(this)[0] = vft;
-    reinterpret_cast<void**>(this)[1] = vft;
-    reinterpret_cast<void**>(this)[2] = vft;
-    reinterpret_cast<void**>(this)[3] = vft;
-
-    HouseClass_Array.AddItem(this);
-    AbstractClass_Array.AddItem(this);
 }
 
 } // namespace gamemd

@@ -19,7 +19,6 @@ using ::gamemd::TimerStruct;
 
 struct DirStruct {
     uint32_t Raw;
-
     constexpr DirStruct() noexcept : Raw(0) {}
     explicit constexpr DirStruct(uint32_t val) noexcept : Raw(val) {}
 };
@@ -28,14 +27,16 @@ using FacingStruct = DirStruct;
 
 class HouseClass;
 class TechnoClass;
+class ObjectClass;
+class FootClass;
 class Checksummer;
 
-struct INoticeSource {
-    virtual void __stdcall NotifySinks() = 0;
-};
-
-struct INoticeSink {
-    virtual bool __stdcall OnNotice(unsigned long event) = 0;
+struct IPersistStream : IUnknown {
+    virtual HRESULT __stdcall GetClassID(CLSID* class_id) = 0;
+    virtual HRESULT __stdcall IsDirty() = 0;
+    virtual HRESULT __stdcall Load(IStream* stream) = 0;
+    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) = 0;
+    virtual HRESULT __stdcall GetSizeMax(ULARGE_INTEGER* size) = 0;
 };
 
 struct IRTTITypeInfo : IUnknown {
@@ -44,26 +45,22 @@ struct IRTTITypeInfo : IUnknown {
     virtual void __stdcall CreateID() = 0;
 };
 
-struct IPersist {
-    virtual HRESULT __stdcall GetClassID(CLSID* class_id) = 0;
+struct INoticeSink {
+    virtual bool __stdcall OnNotice(unsigned long event) = 0;
 };
 
-struct IPersistStream : IPersist {
-    virtual HRESULT __stdcall IsDirty() = 0;
-    virtual HRESULT __stdcall Load(IStream* stream) = 0;
-    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) = 0;
-    virtual HRESULT __stdcall GetSizeMax(ULARGE_INTEGER* size) = 0;
+struct INoticeSource {
+    virtual void __stdcall NotifySinks() = 0;
 };
 
-class AbstractClass : public IPersistStream, public IRTTITypeInfo, public INoticeSink, public INoticeSource {
+class AbstractClass : public IPersistStream, public IRTTITypeInfo,
+                      public INoticeSink, public INoticeSource {
 public:
     static constexpr AbstractType kAbsID = static_cast<AbstractType>(52);
 
     virtual HRESULT __stdcall QueryInterface(const IID& iid, void** ppv) override { return E_NOINTERFACE; }
-    virtual ULONG __stdcall AddRef() override { return 0; }
-    virtual ULONG __stdcall Release() override { return 0; }
-
-    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return E_NOTIMPL; }
+    virtual ULONG   __stdcall AddRef() override { return 0; }
+    virtual ULONG   __stdcall Release() override { return 0; }
 
     virtual HRESULT __stdcall IsDirty() override { return S_FALSE; }
     virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }
@@ -75,7 +72,6 @@ public:
     virtual void __stdcall CreateID() override {}
 
     virtual bool __stdcall OnNotice(unsigned long event) override { return false; }
-
     virtual void __stdcall NotifySinks() override {}
 
     virtual ~AbstractClass() = default;
@@ -101,12 +97,12 @@ public:
 
     bool operator<(const AbstractClass& rhs) const { return m_unique_id < rhs.m_unique_id; }
 
-    uint32_t    m_unique_id;
-    uint32_t    m_abstract_flags;
-    uint32_t    m_unknown_18;
-    int32_t     m_ref_count;
-    bool        m_dirty;
-    uint8_t     m_padding_21[3];
+    uint32_t    m_unique_id;         // +0x10
+    uint32_t    m_abstract_flags;    // +0x14
+    uint32_t    m_unknown_18;        // +0x18
+    int32_t     m_ref_count;         // +0x1C
+    bool        m_dirty;             // +0x20
+    uint8_t     m_padding_21[3];     // +0x21
 
 protected:
     AbstractClass() noexcept;

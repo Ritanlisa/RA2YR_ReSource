@@ -137,6 +137,8 @@ struct LTRBStruct
     int32_t Bottom;
 };
 
+#ifndef GAMEMD_DEF_MapClass
+#define GAMEMD_DEF_MapClass
 class MapClass : public GScreenClass
 {
 public:
@@ -295,8 +297,9 @@ public:
     int32_t                         m_tagged_cells_capacity;
 
 protected:
-    MapClass() = default;
+    MapClass() noexcept;
 };
+#endif
 
 } // namespace gamemd
 

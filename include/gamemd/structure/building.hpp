@@ -9,23 +9,15 @@
 
 namespace gamemd {
 
-#ifndef GAMEMD_USING_ObjectClass
-#define GAMEMD_USING_ObjectClass
 using ra2::game::ObjectClass;
-#endif
-#ifndef GAMEMD_USING_TechnoClass
-#define GAMEMD_USING_TechnoClass
 using ra2::game::TechnoClass;
-#endif
-#ifndef GAMEMD_USING_TechnoTypeClass
-#define GAMEMD_USING_TechnoTypeClass
-using ra2::game::TechnoTypeClass;
-#endif
-#ifndef GAMEMD_USING_AudioController
-#define GAMEMD_USING_AudioController
 using ra2::game::AudioController;
-#endif
-
+using ra2::game::AbstractType;
+using ra2::game::CellStruct;
+using ra2::game::CoordStruct;
+using ra2::game::Point2D;
+using ra2::game::RectangleStruct;
+using ra2::game::TimerStruct;
 
 struct AnimClass;
 struct ColorStruct;
@@ -34,6 +26,7 @@ class BuildingTypeClass;
 class FactoryClass;
 class InfantryClass;
 class LightSourceClass;
+class TechnoTypeClass;
 
 struct RepeatableTimerStruct
 {
@@ -52,11 +45,11 @@ public:
     virtual AbstractType __stdcall WhatAmI() const override { return kAbsID; }
     virtual int Size() const override { return sizeof(BuildingClass); }
 
-    virtual void Destroyed(ra2::game::ObjectClass* killer) override {}
+    virtual void Destroyed(ObjectClass* killer) override {}
     virtual void vt_entry_490(uint32_t dwUnk, uint32_t dwUnk2) override {}
 
     virtual CellStruct* vt_entry_4D4(CellStruct* pCellStruct, uint32_t dwUnk, uint32_t dwUnk2) const { return nullptr; }
-    virtual int vt_entry_4D8(ra2::game::ObjectClass* pObj) const { return 0; }
+    virtual int vt_entry_4D8(ObjectClass* pObj) const { return 0; }
     virtual void Place(bool bUnk) {}
     virtual void UpdateConstructionOptions() {}
     virtual void vt_entry_4E4(uint32_t dwUnk, uint32_t dwUnk2) {}
@@ -107,8 +100,8 @@ public:
     DynamicVectorClass<InfantryClass*>    Overpowerers;
     DynamicVectorClass<InfantryClass*>    Occupants;
     int32_t                               FiringOccupantIndex;
-    ra2::game::AudioController            Audio7;
-    ra2::game::AudioController            Audio8;
+    AudioController            Audio7;
+    AudioController            Audio8;
     bool                                  WasOnline;
     bool                                  ShowRealName;
     bool                                  BeingProduced;
@@ -134,7 +127,7 @@ public:
     uint8_t                               CloakRadius;
     char                                  Translucency;
     uint32_t                              StorageFilledSlots;
-    ra2::game::TechnoTypeClass*           SecretProduction;
+    TechnoTypeClass*           SecretProduction;
     ColorStruct                           ColorAdd;
     int32_t                               unknown_int_6FC;
     int16_t                               unknown_short_700;
@@ -146,7 +139,7 @@ public:
     int32_t                               BunkerState;
 
 protected:
-    BuildingClass() = default;
+    BuildingClass() noexcept;
 };
 
 } // namespace gamemd

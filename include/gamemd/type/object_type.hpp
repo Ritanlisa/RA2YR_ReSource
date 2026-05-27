@@ -13,7 +13,10 @@ struct SomeVoxelCache { int unused; };
 class BuildingClass;
 class HouseClass;
 class HouseTypeClass;
-class ObjectClass;
+#ifndef GAMEMD_USING_ObjectClass
+#define GAMEMD_USING_ObjectClass
+using ra2::game::ObjectClass;
+#endif
 class TechnoTypeClass;
 
 class ObjectTypeClass : public AbstractTypeClass

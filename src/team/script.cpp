@@ -5,9 +5,6 @@
 namespace gamemd
 {
 
-extern void* ScriptClass_vftable[1];
-extern void* ScriptTypeClass_vftable[1];
-
 // --- ScriptClass ---
 
 ScriptActionNode* ScriptClass::GetCurrentAction(ScriptActionNode* buffer) const

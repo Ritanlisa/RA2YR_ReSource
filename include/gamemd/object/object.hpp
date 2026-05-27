@@ -5,21 +5,36 @@
 namespace ra2 {
 namespace game {
 
+class AnimClass;
+class BombClass;
+class BuildingClass;
+class CellClass;
+class LightConvertClass;
+class LineTrail;
+class ObjectTypeClass;
+class SHPStruct;
+class TagClass;
+class TechnoTypeClass;
+class WarheadTypeClass;
+
 enum class Action : unsigned int;
 enum class VisualType : unsigned int;
 enum class Layer : int;
 enum class DamageState : int;
 enum class Mission : int;
-
+enum class HealthState : int;
+enum class KickOutResult : int;
+enum class Move : int;
+enum class RadioCommand : int;
 
 struct AudioController {
-    uint32_t    unknown_00;
-    uint32_t    unknown_04;
-    uint32_t    unknown_08;
-    uint32_t    unknown_0C;
-    uint32_t    unknown_10;
-    uint32_t    unknown_14;
-    uint32_t    unknown_18;
+    uint32_t unknown_00;
+    uint32_t unknown_04;
+    uint32_t unknown_08;
+    uint32_t unknown_0C;
+    uint32_t unknown_10;
+    uint32_t unknown_14;
+    uint32_t unknown_18;
 };
 
 class ObjectClass : public AbstractClass {
@@ -27,7 +42,6 @@ public:
     static constexpr AbstractType kAbsDeriveID = static_cast<AbstractType>(0x2);
 
     virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }
-
     virtual ~ObjectClass() = default;
 
     virtual void AnimPointerExpired(AnimClass* anim) {}
@@ -59,8 +73,8 @@ public:
     virtual bool IsDisguisedAs(HouseClass* target) const { return false; }
     virtual ObjectTypeClass* GetDisguise(bool disguised_against_allies) const { return nullptr; }
     virtual HouseClass* GetDisguiseHouse(bool disguised_against_allies) const { return nullptr; }
-    virtual bool Remove() { return false; }
-    virtual bool Put(const CoordStruct& coords, unsigned int face_dir) { return false; }
+    virtual bool Remove();
+    virtual bool Put(const CoordStruct& coords, unsigned int face_dir);
     virtual void Disappear(bool permanently) {}
     virtual void RegisterDestruction(TechnoClass* destroyer) {}
     virtual void RegisterKill(HouseClass* destroyer) {}
@@ -99,7 +113,7 @@ public:
     virtual int GetWeaponRange(int weapon_idx) const { return 0; }
     virtual DamageState ReceiveDamage(int* damage, int distance_from_epicenter, WarheadTypeClass* wh,
         ObjectClass* attacker, bool ignore_defenses, bool prevent_passenger_escape, HouseClass* attacking_house) { return static_cast<DamageState>(0); }
-    virtual void Destroy() {}
+    virtual void Destroy();
     virtual void Scatter(const CoordStruct& coords, bool ignore_mission, bool ignore_destination) {}
     virtual bool Ignite() { return false; }
     virtual void Extinguish() {}
@@ -150,7 +164,7 @@ public:
     int32_t         m_fall_rate;
     ObjectClass*    m_next_object;
     TagClass*       m_attached_tag;
-    BombClass*       m_attached_bomb;
+    BombClass*      m_attached_bomb;
     AudioController m_ambient_sound_controller;
     AudioController m_custom_sound_controller;
     int32_t         m_custom_sound;
@@ -175,11 +189,11 @@ public:
     bool            m_is_a_bomb;
     bool            m_is_alive;
     uint8_t         m_align_91[3];
-    uint32_t        m_last_layer;           // Layer enum
+    uint32_t        m_last_layer;
     bool            m_is_in_logic;
     bool            m_is_visible;
     uint8_t         m_align_99[2];
-    CoordStruct     m_location;             // requires definition at compilation
+    CoordStruct     m_location;
     LineTrail*      m_line_trailer;
 
 protected:

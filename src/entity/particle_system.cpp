@@ -7,11 +7,6 @@
 
 namespace gamemd
 {
-
-extern void* ParticleSystemClass_vftable[1];
-extern DynamicVectorClass<ParticleSystemClass*> ParticleSystemClass_Array;
-extern DynamicVectorClass<ObjectClass*> ObjectClass_Array;
-
 namespace {
 
 constexpr uint32_t kParticleSystemFlag = 0x18u;
@@ -38,15 +33,6 @@ ParticleSystemClass::ParticleSystemClass(ParticleSystemTypeClass* pType) noexcep
     // Particles DynamicVectorClass is default-constructed inline
 
     m_abstract_flags = kParticleSystemFlag;
-
-    const auto vft = const_cast<void**>(reinterpret_cast<void* const*>(ParticleSystemClass_vftable));
-    reinterpret_cast<void**>(this)[0] = vft;
-    reinterpret_cast<void**>(this)[1] = vft;
-    reinterpret_cast<void**>(this)[2] = vft;
-    reinterpret_cast<void**>(this)[3] = vft;
-
-    ParticleSystemClass_Array.AddItem(this);
-    ObjectClass_Array.AddItem(this);
 
     // TODO: complete implementation
     // - Initialize particle spawn timer

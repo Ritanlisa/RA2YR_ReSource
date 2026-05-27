@@ -180,10 +180,14 @@ public:
     virtual int      Owner() const;
     virtual int      Income() const;
 
+    void AddRef() { ++m_ref_count; }
+    void Release() { if (--m_ref_count == 0) delete this; }
+
     char        Name[64];
     int         OwnerIndex;
     int         IncomePerTurn;
     CellStruct  Center;
+    uint32_t    m_ref_count = 0;
     uint32_t    align_58;
 };
 
@@ -196,9 +200,13 @@ public:
     virtual WDTError Resolve();
     virtual void     Update();
 
+    void AddRef() { ++m_ref_count; }
+    void Release() { if (--m_ref_count == 0) delete this; }
+
     Territory*    Attacker;
     Territory*    Defender;
     int           Outcome;
+    uint32_t      m_ref_count = 0;
     uint32_t      align_C;
 };
 

@@ -44,8 +44,14 @@ struct RadSiteClass;
 struct TubeClass;
 struct FoggedObjectClass;
 struct TagClass;
-struct ObjectClass;
-struct TechnoClass;
+#ifndef GAMEMD_USING_ObjectClass
+#define GAMEMD_USING_ObjectClass
+using ra2::game::ObjectClass;
+#endif
+#ifndef GAMEMD_USING_TechnoClass
+#define GAMEMD_USING_TechnoClass
+using ra2::game::TechnoClass;
+#endif
 
 enum class LandType : int;
 enum class SpeedType : int;

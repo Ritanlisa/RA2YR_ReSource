@@ -36,7 +36,7 @@ public:
 
 protected:
     struct noinit_t {};
-    ParticleSystemTypeClass(noinit_t) noexcept {}
+    ParticleSystemTypeClass(noinit_t) noexcept : ObjectTypeClass(ObjectTypeClass::noinit_t{}) {}
 
 public:
     int ArrayIndex;

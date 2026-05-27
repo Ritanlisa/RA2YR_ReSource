@@ -3,6 +3,8 @@
 
 namespace gamemd {
 
+using ra2::game::ObjectClass;
+
 DynamicVectorClass<ObjectClass*> g_current_objects;
 DynamicVectorClass<ObjectClass*>& CurrentObjects = g_current_objects;
 

@@ -36,7 +36,7 @@ public:
     VectorClass<TechnoClass*> m_radio_links;
 
 protected:
-    RadioClass() = default;
+    RadioClass() noexcept;
 };
 
 } // namespace game

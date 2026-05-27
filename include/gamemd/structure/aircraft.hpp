@@ -9,15 +9,8 @@
 
 namespace gamemd {
 
-#ifndef GAMEMD_USING_AbstractClass
-#define GAMEMD_USING_AbstractClass
 using ra2::game::AbstractClass;
-#endif
-#ifndef GAMEMD_USING_AbstractType
-#define GAMEMD_USING_AbstractType
 using ra2::game::AbstractType;
-#endif
-
 
 
 
