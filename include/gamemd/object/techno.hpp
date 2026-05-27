@@ -169,11 +169,11 @@ public:
     virtual bool IsCloseEnoughToAttackCoords(const CoordStruct& coords) const { return false; }
     virtual uint32_t vt_entry_3B4(uint32_t a) const { return 0; }
     virtual void Destroyed(ObjectClass* killer) = 0;
-    virtual FireError GetFireErrorWithoutRange(AbstractClass* target, int weapon_index) const { return static_cast<FireError>(-1); }
-    virtual FireError GetFireError(AbstractClass* target, int weapon_index, bool ignore_range) const { return static_cast<FireError>(-1); }
+    virtual FireError GetFireErrorWithoutRange(AbstractClass* target, int weapon_index) const;
+    virtual FireError GetFireError(AbstractClass* target, int weapon_index, bool ignore_range) const;
     virtual CellClass* SelectAutoTarget(TargetFlags flags, int current_threat, bool only_target_house_enemy) { return nullptr; }
     virtual void SetTarget(AbstractClass* target) {}
-    virtual BulletClass* Fire(AbstractClass* target, int weapon_index) { return nullptr; }
+    virtual BulletClass* Fire(AbstractClass* target, int weapon_index);
     virtual void Guard() {}
     virtual bool SetOwningHouse(HouseClass* house, bool announce = true) { return false; }
     virtual void vt_entry_3D8(uint32_t a, uint32_t b, uint32_t c) {}

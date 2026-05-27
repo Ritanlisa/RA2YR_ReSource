@@ -186,5 +186,53 @@ TechnoClass::TechnoClass() noexcept
     m_abstract_flags |= 0x1u;
 }
 
+FireError TechnoClass::GetFireErrorWithoutRange(AbstractClass* target, int weapon_index) const
+{
+    if (!target)
+        return static_cast<FireError>(0);
+
+    auto* weapon = GetWeapon(weapon_index);
+    if (!weapon)
+        return static_cast<FireError>(1);
+
+    return static_cast<FireError>(-1);
+}
+
+FireError TechnoClass::GetFireError(AbstractClass* target, int weapon_index, bool ignore_range) const
+{
+    if (!target)
+        return static_cast<FireError>(0);
+
+    auto* weapon = GetWeapon(weapon_index);
+    if (!weapon)
+        return static_cast<FireError>(1);
+
+    if (!IsCloseEnoughToAttack(target) && !ignore_range)
+        return static_cast<FireError>(2);
+
+    return static_cast<FireError>(-1);
+}
+
+BulletClass* TechnoClass::Fire(AbstractClass* target, int weapon_index)
+{
+    if (!target)
+        return nullptr;
+
+    auto* weapon = GetWeapon(weapon_index);
+    if (!weapon)
+        return nullptr;
+
+    // Fire coordinate (depends on unit type via virtual GetFLH)
+    CoordStruct fire_coord;
+    GetFLH(&fire_coord, weapon_index, m_location);
+
+    // Create and launch bullet
+    // TODO: full implementation requires BulletClass ctor:
+    //   BulletClass(WeaponStruct* weapon, CoordStruct& fire_coord, CoordStruct& target_coord, TechnoClass* owner, AbstractClass* target)
+    //   Then Unlimbo bullet, play weapon sound, decrease ammo, handle recoil, etc.
+
+    return nullptr;
+}
+
 } // namespace game
 } // namespace ra2
