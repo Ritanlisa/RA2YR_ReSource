@@ -165,13 +165,13 @@ public:
     virtual uint32_t vt_entry_3A0() { return 0; }
     virtual bool TriggersCellInset(AbstractClass* target) { return false; }
     virtual bool IsCloseEnough(AbstractClass* target, int weapon_idx) const { return false; }
-    virtual bool IsCloseEnoughToAttack(AbstractClass* target) const { return false; }
+    virtual bool IsCloseEnoughToAttack(AbstractClass* target) const;
     virtual bool IsCloseEnoughToAttackCoords(const CoordStruct& coords) const { return false; }
     virtual uint32_t vt_entry_3B4(uint32_t a) const { return 0; }
     virtual void Destroyed(ObjectClass* killer) = 0;
     virtual FireError GetFireErrorWithoutRange(AbstractClass* target, int weapon_index) const;
     virtual FireError GetFireError(AbstractClass* target, int weapon_index, bool ignore_range) const;
-    virtual CellClass* SelectAutoTarget(TargetFlags flags, int current_threat, bool only_target_house_enemy) { return nullptr; }
+    virtual CellClass* SelectAutoTarget(TargetFlags flags, int current_threat, bool only_target_house_enemy);
     virtual void SetTarget(AbstractClass* target) {}
     virtual BulletClass* Fire(AbstractClass* target, int weapon_index);
     virtual void Guard() {}

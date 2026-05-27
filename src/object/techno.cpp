@@ -222,15 +222,23 @@ BulletClass* TechnoClass::Fire(AbstractClass* target, int weapon_index)
     if (!weapon)
         return nullptr;
 
-    // Fire coordinate (depends on unit type via virtual GetFLH)
     CoordStruct fire_coord;
     GetFLH(&fire_coord, weapon_index, m_location);
 
-    // Create and launch bullet
-    // TODO: full implementation requires BulletClass ctor:
-    //   BulletClass(WeaponStruct* weapon, CoordStruct& fire_coord, CoordStruct& target_coord, TechnoClass* owner, AbstractClass* target)
-    //   Then Unlimbo bullet, play weapon sound, decrease ammo, handle recoil, etc.
+    // TODO: BulletClass creation, unlimbo, sound, ammo decrease
+    return nullptr;
+}
 
+bool TechnoClass::IsCloseEnoughToAttack(AbstractClass* target) const
+{
+    return IsCloseEnough(target, m_current_weapon_number);
+}
+
+CellClass* TechnoClass::SelectAutoTarget(TargetFlags flags, int current_threat, bool only_target_house_enemy)
+{
+    // Scan for best target based on threat evaluation
+    // TODO: full target scanning (radiate outward from position,
+    //       evaluate each cell's content, score threats)
     return nullptr;
 }
 

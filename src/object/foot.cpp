@@ -160,5 +160,54 @@ void FootClass::HandleLocomotionUpdate()
     // TODO: full implementation with COM QueryInterface
 }
 
+int FootClass::Mission_Move()
+{
+    if (!m_destination)
+        return 0;
+
+    if (m_locomotor.ptr)
+    {
+        // ILocomotion::Move_To(destination)
+        // Returns: 1 = arrived, 0 = still moving, -1 = blocked
+        // TODO: full COM ILocomotion integration
+    }
+
+    return 0;
+}
+
+int FootClass::Mission_Attack()
+{
+    auto* target = m_target;
+    if (!target)
+        return 0;
+
+    if (!IsCloseEnoughToAttack(target))
+    {
+        // Move toward target
+        m_destination = target;
+        return 0;
+    }
+
+    // Fire at target
+    int weapon_idx = SelectWeapon(target);
+    Fire(target, weapon_idx);
+
+    return 0;
+}
+
+int FootClass::Mission_Guard()
+{
+    // Scan for nearby enemies
+    // TODO: SelectAutoTarget with appropriate threat flags
+    return 15; // TICKS_PER_SECOND * 15
+}
+
+int FootClass::Mission_Hunt()
+{
+    // Scan entire map for enemies
+    // TODO: SelectAutoTarget with full-map scan
+    return 30; // TICKS_PER_SECOND * 30
+}
+
 } // namespace game
 } // namespace ra2

@@ -73,6 +73,11 @@ public:
     void HandleMovementSoundUpdate();
     void HandleLocomotionUpdate();
 
+    int Mission_Move() override;
+    int Mission_Attack() override;
+    int Mission_Guard() override;
+    int Mission_Hunt() override;
+
     // ---- member variables ----
 
     int32_t            m_planning_path_idx;
