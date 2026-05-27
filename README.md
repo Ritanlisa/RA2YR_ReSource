@@ -1,0 +1,66 @@
+# RA2YR ReSource
+
+从 `gamemd.exe` 逆向工程重建《红色警戒2/尤里的复仇》C++ 源码。
+
+## 项目状态
+
+这是 Mental Omega v3.3.6（基于 Yuri's Revenge）游戏引擎 `gamemd.exe` 的逆向重构。目标是对 7.6MB 的 32 位 Windows PE 进行完整反编译，该 PE 由 MSVC 6.0 编译，包含 19,059 个函数，原始代码来自 `D:\ra2mdpost\` 目录下的 72 个 `.CPP` 源文件。
+
+当前输出为 header-only 静态库 `gamemd_core`，使用 CMake + C++20 编译。长期目标是产出可直接替换的 `.dll` 或独立引擎。
+
+## 架构概述
+
+```
+RA2/YR (gamemd.exe)
+├── 19,059 函数（72 个 .CPP 源文件）
+├── AbstractClass 基类（4 vtable，多重继承 COM 层）
+├── ObjectClass → MissionClass → RadioClass → TechnoClass → FootClass
+├── 类型/实例双重层次（TypeClass 原型模式）
+├── COM 接口层（INoticeSink/Source 已通过 RTTI 确认）
+└── Mental Omega v3.3.6 扩展
+```
+
+## 三重参考源方法论
+
+| 来源 | 用途 | 局限 |
+|------|------|------|
+| **RA1 源码**（CnC_Red_Alert/CODE/）| 框架/架构模板：类继承链、Mission 状态机、TARGET 编码 | RA2 偏移不同，含 MI/COM 层 |
+| **YRpp**（~150 头文件）| 运行时验证的成员偏移和 vtable 索引 | 声明层，无函数体 |
+| **IDA Pro**（gamemd.exe MCP）| 二进制级验证：构造函数分析、调用图、全局变量 | 伪代码可能有误 |
+
+## 当前代码结构
+
+```
+RA2YR_ReSource/
+├── include/gamemd/          ← 91 个头文件（17 个子目录）
+│   ├── core/                # 枚举、数学、内存、向量、TARGET、坐标
+│   ├── object/              # AbstractClass → ObjectClass → FootClass
+│   ├── type/                # 类型系统（原型模式）
+│   ├── entity/              # 动画、弹道、粒子、覆盖层等
+│   ├── structure/           # 步兵、单位、飞行器、建筑
+│   ├── house/               # 阵营、阵营类型、侧  #   ← House = 阵营
+│   └── system/              # 单元格、地图、场景、工厂
+├── src/                     ← 59 个 .cpp 实现文件
+├── CMakeLists.txt           # C++20，Win32 静态库
+└── LICENSE.md               # GPL v3（继承自 CnC_Red_Alert）
+```
+
+## 构建
+
+```bash
+cmake -B build -G "Visual Studio 17 2022" -A Win32
+cmake --build build --config Debug
+```
+
+编译状态：59 个源文件可编译，~2444 clean build 错误（系统性预设）。
+
+## 许可证
+
+继承自 CnC_Red_Alert——GNU General Public License v3.0，含 Electronic Arts 附加条款（第 7 条）。
+
+## 致谢
+
+- **Westwood Studios** — 创作了原版《Command & Conquer》系列游戏
+- **Electronic Arts** — 在 GPL v3 下开源了 CnC_Red_Alert 源码
+- **Mentalmeisters** — 创作了 Mental Omega mod
+- **YRpp 项目** — DLL 注入逆向工程参考

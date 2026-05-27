@@ -1,0 +1,59 @@
+# 构建产物
+build/
+*.exe
+*.dll
+*.lib
+*.obj
+*.o
+*.pdb
+*.exp
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.sln
+*.vcxproj*
+*.tlog/
+
+# 模型权重和大型二进制
+*.pt
+*.bin
+*.safetensors
+*.onnx
+*.engine
+*.h5
+
+# 虚拟环境
+venv/
+.venv/
+env/
+
+# 临时文件
+*.tmp
+*.log
+*.swp
+*.bak
+*~
+
+# 用户设置
+.vscode/
+.idea/
+*.code-workspace
+
+# 辅助参考内容（非本项目产出，不要纳入追踪）
+CnC_Red_Alert/
+YRpp/
+MIX_Format.html
+
+# 敏感数据
+*.key
+*.pem
+*.crt
+*.secret
+.env
