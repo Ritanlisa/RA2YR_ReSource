@@ -80,32 +80,185 @@ BuildingClass::BuildingClass() noexcept
     std::memset(Upgrades, 0, sizeof(Upgrades));
 }
 
+// ============================================================
+// Mission_Construction — building construction state machine
+// Based on RA1 BuildingClass::Mission_Construction
+// States: INITIAL=0 → DURING=1
+// ============================================================
 int BuildingClass::Mission_Construction()
 {
-    if (!Factory || !BeingProduced)
-        return 0;
+    enum { INITIAL, DURING };
 
-    // Construction progress update
-    // TODO: advance build progress, check completion
+    switch (m_mission_status)
+    {
+    case INITIAL:
+    {
+        if (!Factory || !BeingProduced)
+            return 0;
+
+        // Begin construction buildup animation
+        // RADIO_BUILDING in RA1
+        SendToFirstLink(static_cast<ra2::game::RadioCommand>(
+            static_cast<int>(RadioCommand::RequestBeginProduction)));
+
+        // TODO: owner->IsPlayerControl → Sound_Effect(VOC_CONSTRUCTION, coord)
+
+        m_mission_status = DURING;
+        return 15;
+    }
+
+    case DURING:
+    {
+        // Poll animation completion
+        // In RA1: if (IsReadyToCommence) → finish construction
+        bool construction_done = true; // TODO: actual animation completion check
+
+        if (construction_done)
+        {
+            SendToFirstLink(static_cast<ra2::game::RadioCommand>(
+                static_cast<int>(RadioCommand::RequestEndProduction)));
+            SendToFirstLink(static_cast<ra2::game::RadioCommand>(
+                static_cast<int>(RadioCommand::AnswerLeave)));
+
+            // Grand Opening: post-construction unlock
+            // owner->AdjustTechnology(Type); owner->IsRecalcNeeded = true;
+            // Spawn free harvester / helicopter
+
+            QueueMission(static_cast<ra2::game::Mission>(static_cast<int>(Mission::Guard)), true);
+        }
+        break;
+    }
+    }
+
     return 15;
 }
 
+// ============================================================
+// Mission_Selling — building sell/deconstruction state machine
+// Based on RA1 BuildingClass::Mission_Deconstruction
+// States: INITIAL=0 → HOLDING=1 → DURING=2
+// ============================================================
 int BuildingClass::Mission_Selling()
 {
-    // Selling animation and deconstruction
-    // TODO: deconstruction animation, refund calculation
+    enum { INITIAL, HOLDING, DURING };
+
+    switch (m_mission_status)
+    {
+    case INITIAL:
+    {
+        BeingProduced = false;
+
+        // Tell docked units to leave
+        SendToEachLink(static_cast<ra2::game::RadioCommand>(
+            static_cast<int>(RadioCommand::AnswerLeave)));
+
+        m_mission_status = HOLDING;
+        return 5;
+    }
+
+    case HOLDING:
+    {
+        // Evacuate crew — spawn survivor infantry
+        // In RA1: How_Many_Survivors() → spawn InfantryClass at exit cell
+        // TODO: Sound_Effect(VOC_CASHTURN, coord)
+
+        // Begin deconstruction animation
+        // Detach_All(true);
+
+        m_mission_status = DURING;
+        return 5;
+    }
+
+    case DURING:
+    {
+        bool decon_done = true; // TODO: animation completion check
+
+        if (decon_done)
+        {
+            // Construction yard → undeploy to MCV
+            // If Type->UndeploysInto → revert to mobile MCV
+            // Refund partial cost to owner
+
+            // Remove gap effect if this building generates one
+            if (m_generating_gap)
+            {
+                DestroyGap();
+            }
+
+            // Remove from map
+            Remove();
+        }
+        break;
+    }
+    }
+
     return 5;
 }
 
+// ============================================================
+// Mission_Repair — repair bay / helipad / conyard active state
+// Based on RA1 BuildingClass::Mission_Repair
+// States: INITIAL=0 → IDLE=1 → DURING=2
+// ============================================================
 int BuildingClass::Mission_Repair()
 {
-    if (!NeedsRepairs)
-        return 0;
+    enum { INITIAL, IDLE, DURING };
 
-    // Repair progress
-    IsBeingRepaired = true;
-    // TODO: advance repair, check completion
-    return 10;
+    switch (m_mission_status)
+    {
+    case INITIAL:
+    {
+        m_mission_status = IDLE;
+        return 20;
+    }
+
+    case IDLE:
+    {
+        // Contact docked unit for repair bay / helipad modes
+        // For generic repair buildings: check NeedsRepairs
+        if (NeedsRepairs)
+        {
+            NeedsRepairs = false;
+            IsBeingRepaired = true;
+            // Begin_Mode(BSTATE_ACTIVE);
+            m_mission_status = DURING;
+        }
+        break;
+    }
+
+    case DURING:
+    {
+        // Per-tick repair logic (RA1 Repair_AI pattern)
+        if (!IsBeingRepaired)
+        {
+            QueueMission(static_cast<ra2::game::Mission>(static_cast<int>(Mission::Guard)), true);
+            return 20;
+        }
+
+        // Deduct money and increase health each repair tick
+        int repair_step = 5;   // TODO: Type->RepairStep
+        int max_health = 1000; // TODO: Type->Strength
+
+        auto* owner = GetOwningHouse();
+        if (owner)
+        {
+            m_health += repair_step;
+            if (m_health >= max_health)
+            {
+                m_health = max_health;
+                IsBeingRepaired = false;
+                QueueMission(static_cast<ra2::game::Mission>(static_cast<int>(Mission::Guard)), true);
+            }
+        }
+        else
+        {
+            IsBeingRepaired = false;
+        }
+        break;
+    }
+    }
+
+    return 20;
 }
 
 int BuildingClass::Mission_Missile()
@@ -113,15 +266,30 @@ int BuildingClass::Mission_Missile()
     return 0;
 }
 
+// ============================================================
+// Place — building placement finalization
+// ============================================================
 void BuildingClass::Place(bool bUnk)
 {
     ActuallyPlacedOnMap = true;
     BeingProduced = false;
 
+    auto* owner = GetOwningHouse();
+    if (!owner)
+        return;
+
     // Register with house building list
-    // TODO: HouseClass::RegisterGain(this),
-    //        power system registration,
-    //        reveal area around building
+    // owner->RegisterGain(this);
+    // owner->IsRecalcNeeded = true;
+
+    // Enable cloak radius if applicable
+    if (HasCloakingData && CloakRadius > 0)
+    {
+        // Cloak surrounding area
+    }
+
+    // Reveal area around building
+    int reveal_range = 4; // TODO: from Type->SightRange
 }
 
 } // namespace gamemd

@@ -190,33 +190,55 @@ TechnoClass::TechnoClass() noexcept
 
 FireError TechnoClass::GetFireErrorWithoutRange(AbstractClass* target, int weapon_index) const
 {
+    // RA1 Can_Fire pattern — without range check
     if (!target)
-        return static_cast<FireError>(0);
+        return static_cast<FireError>(static_cast<int>(gamemd::FireError::ILLEGAL));
+
+    if (m_is_falling_down)
+        return static_cast<FireError>(static_cast<int>(gamemd::FireError::CANT));
 
     auto* weapon = GetWeapon(weapon_index);
     if (!weapon)
-        return static_cast<FireError>(1);
+        return static_cast<FireError>(static_cast<int>(gamemd::FireError::CANT));
 
-    return static_cast<FireError>(-1);
+    // TODO: Anti-air check — weapon must have AA capability to target aircraft
+    // TODO: Anti-ground check — weapon must have AG capability to target ground units
+    // TODO: Rearm delay check — Arm != 0 → REARM
+
+    if (m_ammo <= 0)
+        return static_cast<FireError>(static_cast<int>(gamemd::FireError::AMMO));
+
+    if (m_cloak_state == static_cast<uint32_t>(gamemd::CloakState::Cloaked))
+        return static_cast<FireError>(static_cast<int>(gamemd::FireError::CLOAKED));
+
+    return static_cast<FireError>(static_cast<int>(gamemd::FireError::NONE));
 }
 
 FireError TechnoClass::GetFireError(AbstractClass* target, int weapon_index, bool ignore_range) const
 {
-    if (!target)
-        return static_cast<FireError>(0);
-
-    auto* weapon = GetWeapon(weapon_index);
-    if (!weapon)
-        return static_cast<FireError>(1);
+    auto result = GetFireErrorWithoutRange(target, weapon_index);
+    if (static_cast<int>(result) != static_cast<int>(gamemd::FireError::NONE))
+        return result;
 
     if (!IsCloseEnoughToAttack(target) && !ignore_range)
-        return static_cast<FireError>(2);
+        return static_cast<FireError>(static_cast<int>(gamemd::FireError::RANGE));
 
-    return static_cast<FireError>(-1);
+    return static_cast<FireError>(static_cast<int>(gamemd::FireError::NONE));
 }
 
 BulletClass* TechnoClass::Fire(AbstractClass* target, int weapon_index)
 {
+    // RA1 Fire_At pattern:
+    // 1. Validate weapon & target
+    // 2. Calculate fire coordinates (FLH)
+    // 3. Calculate firing direction & firepower
+    // 4. Create BulletClass with weapon parameters
+    // 5. Unlimbo bullet into world
+    // 6. Apply recoil, switch burst index
+    // 7. Play weapon animation + sound
+    // 8. Decrease ammo
+    // 9. Reveal hidden units (fog of war)
+
     if (!target)
         return nullptr;
 
@@ -224,10 +246,30 @@ BulletClass* TechnoClass::Fire(AbstractClass* target, int weapon_index)
     if (!weapon)
         return nullptr;
 
+    // Get fire coordinates (muzzle flash position)
     CoordStruct fire_coord;
     GetFLH(&fire_coord, weapon_index, m_location);
 
-    // TODO: BulletClass creation, unlimbo, sound, ammo decrease
+    // TODO: Calculate firing direction
+    // If projectile has R != 0 or is lobber → use Fire_Direction() (turret facing)
+    // Otherwise → Direction(fire_coord, target_coord)
+
+    // TODO: Calculate firepower (consider FirepowerBias, house modifiers, etc.)
+
+    // TODO: Create bullet
+    // auto* bullet = new BulletClass(weapon->WeaponType->Projectile, target, this,
+    //     firepower, weapon->WeaponType->Warhead, firespeed);
+    // bullet->Unlimbo(fire_coord, direction);
+
+    // TODO: Recoil effects, burst index switch
+
+    // TODO: Play weapon animation + sound
+    // TODO: DecreaseAmmo()
+
+    // TODO: Reveal hidden units in fog of war (if firer not visible to enemy)
+    // If !IsVisibleTo(player):
+    //   reveal 2-cell radius around firer
+
     return nullptr;
 }
 
@@ -292,12 +334,15 @@ CellClass* TechnoClass::SelectAutoTarget(TargetFlags flags, int current_threat, 
 
 void TechnoClass::Guard()
 {
+    // RA1: Clear target, enter Guard mission with area-defense mode
     m_target = nullptr;
-    QueueMission(static_cast<Mission>(0), true);
+    m_last_target = nullptr;
+    QueueMission(static_cast<Mission>(static_cast<int>(gamemd::Mission::Guard)), true);
 }
 
 void TechnoClass::SetTarget(AbstractClass* target)
 {
+    m_last_target = m_target;
     m_target = target;
     if (target)
         SetDestination(target, false);
@@ -305,36 +350,68 @@ void TechnoClass::SetTarget(AbstractClass* target)
 
 void TechnoClass::Cloak(bool play_sound)
 {
-    m_cloak_state = static_cast<uint32_t>(2);
+    m_cloak_state = static_cast<uint32_t>(gamemd::CloakState::Cloaked);
     m_cloakable = true;
 }
 
 void TechnoClass::Uncloak(bool play_sound)
 {
-    m_cloak_state = static_cast<uint32_t>(1);
+    m_cloak_state = static_cast<uint32_t>(gamemd::CloakState::Uncloaking);
 }
 
 int TechnoClass::SelectWeapon(AbstractClass* target) const
 {
-    if (!target) return 0;
-    return 0;
+    // RA1 What_Weapon_Should_I_Use pattern:
+    // Compare both weapons' warhead multipliers against target armor
+    // Choose the weapon with higher effective damage
+    // If within range, double the value
+    // Default to primary (weapon 0)
+    if (!target)
+        return 0;
+
+    auto* primary = GetWeapon(0);
+    auto* secondary = GetWeapon(1);
+
+    if (!primary && !secondary)
+        return 0;
+    if (!primary)
+        return 1;
+    if (!secondary)
+        return 0;
+
+    // If secondary is depleted, use primary
+    if (m_ammo <= 0 && m_current_weapon_number == 1)
+        return 0;
+
+    // Default: use primary
+    return m_current_weapon_number;
 }
 
 void TechnoClass::DecreaseAmmo()
 {
-    if (m_ammo > 0) --m_ammo;
+    if (m_ammo > 0)
+        --m_ammo;
 }
 
 void TechnoClass::Reload()
 {
+    auto* weapon = GetWeapon(m_current_weapon_number);
+    if (!weapon)
+        return;
+    // m_reload_timer.Start(weapon->ROF);
 }
 
 void TechnoClass::UpdateCloak(bool unknown)
 {
-    if (!m_cloakable) return;
-    if (ShouldBeCloaked() && m_cloak_state != 2)
+    if (!m_cloakable)
+        return;
+
+    bool should_cloak = ShouldBeCloaked();
+    bool should_uncloak = ShouldNotBeCloaked();
+
+    if (should_cloak && m_cloak_state != static_cast<uint32_t>(gamemd::CloakState::Cloaked))
         Cloak(true);
-    else if (ShouldNotBeCloaked() && m_cloak_state != 1)
+    else if (should_uncloak && m_cloak_state != static_cast<uint32_t>(gamemd::CloakState::Uncloaked))
         Uncloak(true);
 }
 
