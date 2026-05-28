@@ -126,7 +126,7 @@ public:
     virtual DirStruct* GetRealFacing(DirStruct* buffer) const { return nullptr; }
     virtual InfantryTypeClass* GetCrew() const { return nullptr; }
     virtual bool vt_entry_310() const { return false; }
-    virtual bool CanDeploySlashUnload() const { return false; }
+    virtual bool CanDeploySlashUnload() const;
     virtual int GetROF(int weapon) const { return 0; }
     virtual int GetGuardRange(int unknown) const { return 0; }
     virtual bool vt_entry_320() const { return false; }
@@ -158,7 +158,7 @@ public:
     virtual void Cheer(bool force) {}
     virtual int GetDefaultSpeed() const { return 0; }
     virtual void DecreaseAmmo();
-    virtual void AddPassenger(FootClass* passenger) {}
+    virtual void AddPassenger(FootClass* passenger);
     virtual bool CanDisguiseAs(AbstractClass* target) const { return false; }
     virtual bool TargetAndEstimateDamage(uint32_t a, uint32_t b) { return false; }
     virtual uint32_t vt_entry_3A0() { return 0; }

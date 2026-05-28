@@ -370,5 +370,22 @@ bool TechnoClass::GarrisonStructure()
     return false; // Overridden by InfantryClass
 }
 
+bool TechnoClass::CanDeploySlashUnload() const
+{
+    return false; // Overridden by UnitClass
+}
+
+void TechnoClass::AddPassenger(FootClass* passenger)
+{
+    if (!passenger)
+        return;
+
+    if (!m_passengers.FirstPassenger)
+    {
+        m_passengers.FirstPassenger = passenger;
+    }
+    m_passengers.NumPassengers++;
+}
+
 } // namespace game
 } // namespace ra2
