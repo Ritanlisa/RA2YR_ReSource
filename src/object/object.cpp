@@ -170,6 +170,41 @@ int ObjectClass::GetZ() const
     return m_location.Z;
 }
 
+bool ObjectClass::IsActive() const
+{
+    return m_is_alive && m_is_on_map && !m_in_limbo;
+}
+
+bool ObjectClass::IsControllable() const
+{
+    return m_is_on_map && m_is_alive;
+}
+
+bool ObjectClass::IsSurfaced()
+{
+    return m_is_on_map;
+}
+
+bool ObjectClass::IsStrange() const
+{
+    return m_is_a_bomb || m_is_falling_down;
+}
+
+uint32_t ObjectClass::GetPointsValue() const
+{
+    return 0;
+}
+
+bool ObjectClass::CanBeRepaired() const
+{
+    return m_health > 0;
+}
+
+bool ObjectClass::CanBeSold() const
+{
+    return m_health > 0 && !m_in_limbo;
+}
+
 bool ObjectClass::CanBeSelected() const
 {
     return m_is_alive && m_is_on_map && !m_in_limbo;

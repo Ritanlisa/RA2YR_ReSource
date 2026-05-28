@@ -51,16 +51,16 @@ public:
     virtual Action MouseOverCell(const CellStruct& cell, bool check_fog = false, bool ignore_force = false) const { return static_cast<Action>(0); }
     virtual Action MouseOverObject(const ObjectClass* object, bool ignore_force = false) const { return static_cast<Action>(0); }
     virtual Layer InWhichLayer() const { return static_cast<Layer>(2); }
-    virtual bool IsSurfaced() { return false; }
-    virtual bool IsStrange() const { return false; }
+    virtual bool IsSurfaced();
+    virtual bool IsStrange() const;
     virtual TechnoTypeClass* GetTechnoType() const { return nullptr; }
     virtual ObjectTypeClass* GetType() const { return nullptr; }
     virtual uint32_t GetTypeOwners() const { return 0; }
     virtual const wchar_t* GetUIName() const { return nullptr; }
-    virtual bool CanBeRepaired() const { return false; }
-    virtual bool CanBeSold() const { return false; }
-    virtual bool IsActive() const { return false; }
-    virtual bool IsControllable() const { return false; }
+    virtual bool CanBeRepaired() const;
+    virtual bool CanBeSold() const;
+    virtual bool IsActive() const;
+    virtual bool IsControllable() const;
     virtual CoordStruct* GetPosition_0(CoordStruct* out) const { return nullptr; }
     virtual CoordStruct* GetDockCoords(CoordStruct* out, TechnoClass* docker) const { return nullptr; }
     virtual CoordStruct* GetPosition_2(CoordStruct* out) const { return nullptr; }
@@ -117,7 +117,7 @@ public:
     virtual void Scatter(const CoordStruct& coords, bool ignore_mission, bool ignore_destination);
     virtual bool Ignite();
     virtual void Extinguish();
-    virtual uint32_t GetPointsValue() const { return 0; }
+    virtual uint32_t GetPointsValue() const;
     virtual Mission GetCurrentMission() const { return static_cast<Mission>(0); }
     virtual void RestoreMission(Mission mission);
     virtual void UpdatePosition(int unknown) {}
