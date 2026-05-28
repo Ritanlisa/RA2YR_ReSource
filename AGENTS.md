@@ -448,3 +448,21 @@ Current IDB: `C:\Program Files (x86)\Mental Omega\gamemd.exe.i64`
 - **已确认（CONFIRMED）**：AbstractClass 有 4 个 vtable 槽位。INoticeSink 和 INoticeSource 是 RTTI 确认的基类。AbstractClass 到 FootClass 的构造函数链已通过 IDA 验证。全局变量地址来自 IDA。
 - **重建（RECONSTRUCTED）**：IPersistStream 和 IRTTITypeInfo 基类来自 YRpp 推测，未经 RTTI 字符串确认。部分成员名称和类型来自 YRpp，未经独立验证。ObjectClass 之外的 vtable 布局来自 YRpp 模式假设。
 - **未验证（UNVERIFIED）**：头文件的逐字节二进制等效性尚未测试。当前编译目标是结构正确性，非二进制等效。
+
+---
+
+## 测试数据 (Mix 文件)
+
+项目包含两套 Mix 文件用于后续测试 Mix 读取和系统文件解析：
+
+| 来源 | 路径 | 文件数 | 说明 |
+|------|------|--------|------|
+| **RA2YR 原版** | `RA2YRMIX/` | 17 个 | ra2.mix, ra2md.mix, expandmd01.mix, ares.mix, langmd.mix, language.mix, theme*.mix, WDT.MIX 等 |
+| **Mental Omega 3.3.6** | `MOMIX/` | 23 个 | expandmo04-99.mix, langmd.mix, language.mix 等。经过 Ares DLL 注入扩展，使用更严格的加密 |
+
+**MO Mix 文件特点**：
+- 使用 Ares DLL 扩展功能
+- 更严格的加密/混淆（相对 RA2YR 原版 Mix）
+- `ra2.mix` + `ra2md.mix` + `thememo.mix` 可在 `C:\Program Files (x86)\Mental Omega\` 找到（不包含在项目仓库中）
+
+**测试优先级**：先用 RA2YR 原版 Mix 验证基础 Mix 解析器，再用 MO Mix 测试加密兼容性。
