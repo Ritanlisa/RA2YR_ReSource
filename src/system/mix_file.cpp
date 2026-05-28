@@ -41,6 +41,7 @@ namespace mix {
 
 constexpr uint32_t kFlagChecksum  = 0x00010000;
 constexpr uint32_t kFlagEncrypted = 0x00020000;
+constexpr uint32_t kMoMarker      = 0x00000000; // Mental Omega MIX prefix
 constexpr size_t   kKeySourceSize = 80;
 constexpr size_t   kBlowfishKeySize = 56;
 constexpr size_t   kBlowfishBlockSize = 8;
@@ -125,7 +126,7 @@ MixFileClass::MixFileClass(const char* pFileName) noexcept
     if (!fp)
         return;
 
-    // Read first 4 bytes to detect flags (RA/TS) or file count (TD)
+    // Read first 4 bytes for format detection
     uint32_t first_word = 0;
     if (fread(&first_word, 4, 1, fp) != 1) {
         fclose(fp);
@@ -134,16 +135,19 @@ MixFileClass::MixFileClass(const char* pFileName) noexcept
 
     int header_offset = 4;
 
-    // Check for RA/TS encryption flags (mix_checksum=0x10000, mix_encrypted=0x20000)
-    bool has_ra_flags = false;
-    uint32_t ra_flags = 0;
+    // ============================================================
+    // Format detection:
+    //   RA2 encrypted:  first_word == 0x20000 or 0x30000 (blowfish)
+    //   RA2 checksum:   first_word == 0x10000 (unencrypted RA2)
+    //   MO marker:      first_word == 0x00000000 (TD header at +4)
+    //   TD legacy:      first 2 bytes = non-zero file_count
+    // ============================================================
 
     if (first_word == mix::kFlagEncrypted
         || first_word == mix::kFlagChecksum
         || first_word == (mix::kFlagEncrypted | mix::kFlagChecksum))
     {
-        has_ra_flags = true;
-        ra_flags = first_word;
+        uint32_t ra_flags = first_word;
 
         if (ra_flags & mix::kFlagEncrypted)
         {
@@ -227,10 +231,9 @@ MixFileClass::MixFileClass(const char* pFileName) noexcept
             return;
         }
     }
-
-    if (has_ra_flags)
+    else if (first_word == mix::kFlagChecksum)
     {
-        // Unencrypted RA/TS: read normal header after flags
+        // Unencrypted RA2 with checksum: read normal header after flags
         mix::TdHeader hdr{};
         if (fread(&hdr, sizeof(hdr), 1, fp) != 1) {
             fclose(fp);
@@ -242,9 +245,15 @@ MixFileClass::MixFileClass(const char* pFileName) noexcept
     }
     else
     {
-        // TD-style: rewind to read from start
-        fseek(fp, 0, SEEK_SET);
-        header_offset = 0;
+        // TD-style or MO (first 4 bytes all zero → skip to +4 for TD header)
+        int td_offset = (first_word == mix::kMoMarker) ? 4 : 0;
+        if (td_offset == 4) {
+            fseek(fp, 4, SEEK_SET);
+            header_offset = 8; // 4 (marker) + 4 (read ahead)
+        } else {
+            fseek(fp, 0, SEEK_SET);
+            header_offset = 0;
+        }
 
         mix::TdHeader hdr{};
         if (fread(&hdr, sizeof(hdr), 1, fp) != 1) {
