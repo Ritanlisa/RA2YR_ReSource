@@ -218,6 +218,11 @@ public:
     virtual void SmokeUpdate();
     virtual void CreateGap();
     virtual void DestroyGap();
+    virtual void vt_entry_4E0() {}
+    virtual void UpdateGap() {}
+    virtual bool vt_entry_4E8() { return true; }
+
+    bool CreateUnit(); // IDA 0x423AC0: per-frame unit construction pipeline
 
     int GetIonCannonValue(AIDifficulty difficulty) const { return 0; }
 

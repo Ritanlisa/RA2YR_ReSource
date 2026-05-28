@@ -1,4 +1,5 @@
 #include "gamemd/structure/building.hpp"
+#include "gamemd/type/building_type.hpp"
 
 #include <cstring>
 
@@ -121,8 +122,22 @@ int BuildingClass::Mission_Construction()
                 static_cast<int>(RadioCommand::AnswerLeave)));
 
             // Grand Opening: post-construction unlock
-            // owner->AdjustTechnology(Type); owner->IsRecalcNeeded = true;
-            // Spawn free harvester / helicopter
+            // (RA1 Grand_Opening pattern)
+            // owner->AdjustTechnology(Type);
+            // owner->IsRecalcNeeded = true;
+            //
+            // Refinery: spawn free harvester at adjacent cell
+            if (Type && Type->Refinery && Type->FreeUnit)
+            {
+                // auto* harv = CreateUnit(Type->FreeUnit, exit_cell, owner);
+                // harv->QueueMission(Mission::Harvest, true);
+            }
+            //
+            // Helipad: spawn free aircraft
+            if (Type && Type->Helipad)
+            {
+                // auto* aircraft = CreateUnit(pad_aircraft, m_location, owner);
+            }
 
             QueueMission(static_cast<ra2::game::Mission>(static_cast<int>(Mission::Guard)), true);
         }
@@ -176,8 +191,20 @@ int BuildingClass::Mission_Selling()
         if (decon_done)
         {
             // Construction yard → undeploy to MCV
-            // If Type->UndeploysInto → revert to mobile MCV
-            // Refund partial cost to owner
+            if (Type && Type->UndeploysInto)
+            {
+                // Revert to mobile MCV, preserving health ratio
+                // auto* mcv_type = Type->UndeploysInto;
+                // int health_pct = m_health * 100 / Type->Strength;
+                // auto* mcv = CreateUnit(...);
+                // mcv->m_health = health_pct * mcv_type->Strength / 100;
+                // Remove();
+                // return 5;
+            }
+            else
+            {
+                // Refund partial cost: owner->RefundMoney(Type->GetRefund(owner, false));
+            }
 
             // Remove gap effect if this building generates one
             if (m_generating_gap)
@@ -208,15 +235,48 @@ int BuildingClass::Mission_Repair()
     {
     case INITIAL:
     {
+        // Construction yard: stay active while producing
+        if (Type && Type->ConstructionYard && Factory)
+        {
+            // Begin_Mode(BSTATE_ACTIVE);
+            m_mission_status = DURING;
+            return 20;
+        }
+
+        // Repair bay / hospital / armory: contact docked unit
+        if (Type && (Type->UnitRepair || Type->Hospital || Type->Armory))
+        {
+            // Send RADIO_NEED_TO_MOVE to docked unit
+            m_mission_status = IDLE;
+            return 20;
+        }
+
+        // Helipad: contact landed aircraft
+        if (Type && Type->Helipad)
+        {
+            // Send RADIO_NEED_TO_MOVE + RADIO_PREPARED to docked aircraft
+            m_mission_status = IDLE;
+            return 20;
+        }
+
+        // Generic repair: check NeedsRepairs flag
         m_mission_status = IDLE;
         return 20;
     }
 
     case IDLE:
     {
-        // Contact docked unit for repair bay / helipad modes
-        // For generic repair buildings: check NeedsRepairs
-        if (NeedsRepairs)
+        if (Type && (Type->UnitRepair || Type->Hospital || Type->Armory))
+        {
+            // Check docked unit health, begin repair when below threshold
+            // Begin_Mode(BSTATE_ACTIVE);
+            m_mission_status = DURING;
+        }
+        else if (Type && Type->Helipad)
+        {
+            // Wait for aircraft reload signal (RADIO_PREPARED)
+        }
+        else if (NeedsRepairs)
         {
             NeedsRepairs = false;
             IsBeingRepaired = true;
@@ -228,7 +288,28 @@ int BuildingClass::Mission_Repair()
 
     case DURING:
     {
-        // Per-tick repair logic (RA1 Repair_AI pattern)
+        if (Type && Type->ConstructionYard)
+        {
+            // Check if radio contact lost (produced unit completed)
+            // If no active radio link, return to guard
+            return 20;
+        }
+
+        if (Type && (Type->UnitRepair || Type->Hospital || Type->Armory))
+        {
+            // Each anim cycle: send RADIO_REPAIR to docked unit
+            // Handle: RADIO_ROGER (ok), RADIO_CANT (no cash), RADIO_ALL_DONE (full)
+            return 20;
+        }
+
+        if (Type && Type->Helipad)
+        {
+            // Reload time scales with power fraction, min 50% speed
+            // On reload complete: release aircraft
+            return 20;
+        }
+
+        // Generic repair: per-tick healing (RA1 Repair_AI pattern)
         if (!IsBeingRepaired)
         {
             QueueMission(static_cast<ra2::game::Mission>(static_cast<int>(Mission::Guard)), true);
@@ -236,8 +317,8 @@ int BuildingClass::Mission_Repair()
         }
 
         // Deduct money and increase health each repair tick
-        int repair_step = 5;   // TODO: Type->RepairStep
-        int max_health = 1000; // TODO: Type->Strength
+        int repair_step = Type ? Type->GetRepairStep() : 5;
+        int max_health = Type ? Type->Strength : 1000;
 
         auto* owner = GetOwningHouse();
         if (owner)
@@ -283,13 +364,14 @@ void BuildingClass::Place(bool bUnk)
     // owner->IsRecalcNeeded = true;
 
     // Enable cloak radius if applicable
-    if (HasCloakingData && CloakRadius > 0)
+    if (Type && Type->CloakGenerator)
     {
-        // Cloak surrounding area
+        HasCloakingData = 1;
+        CloakRadius = Type->CloakRadiusInCells;
     }
 
     // Reveal area around building
-    int reveal_range = 4; // TODO: from Type->SightRange
+    int reveal_range = Type ? Type->Sight : 4;
 }
 
 } // namespace gamemd
