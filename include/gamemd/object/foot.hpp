@@ -26,7 +26,7 @@ public:
 
     virtual ~FootClass() = default;
 
-    virtual void Destroyed(ObjectClass* killer) override {}
+    virtual void Destroyed(ObjectClass* killer) override;
     virtual void vt_entry_490(uint32_t a, uint32_t b) override {}
 
     virtual void ReceiveGunner(FootClass* gunner) {}

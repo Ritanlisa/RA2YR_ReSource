@@ -269,67 +269,38 @@ int FootClass::Mission_Attack()
     return 0;
 }
 
-int FootClass::Mission_Guard()
+void FootClass::Destroyed(ObjectClass* killer)
 {
-    return 15;
-}
+    // RA1 death sequence: crash animation → crew ejection → experience → cleanup
+    if (!m_is_alive)
+        return;
 
-int FootClass::Mission_Hunt()
-{
-    return 30;
-}
+    m_is_alive = false;
+    m_is_crashing = true;
 
-bool FootClass::MoveTo(CoordStruct* coords)
-{
-    if (!coords || !m_locomotor.ptr)
-        return false;
+    // Stop movement
+    if (m_locomotor.ptr)
+    {
+        // TODO: ILocomotion::Stop()
+    }
 
-    m_unknown_point3d_678 = *coords;
-    return true;
-}
+    // Eject passengers
+    // TODO: iterate m_passengers, eject each with parachute
 
-bool FootClass::StopMoving()
-{
-    if (!m_locomotor.ptr)
-        return false;
+    // Award experience to killer
+    if (killer)
+    {
+        RegisterDestruction(reinterpret_cast<TechnoClass*>(killer));
+        auto* killer_house = killer->GetOwningHouse();
+        if (killer_house)
+            RegisterKill(killer_house);
+    }
 
-    m_destination = nullptr;
-    return true;
-}
+    // Start crash/death animation
+    // TODO: create explosion AnimClass at current position
 
-void FootClass::Panic()
-{
-    m_should_scan_for_target = false;
-    m_frozen_still = false;
-    // Enter scatter behavior, flee from threats
-}
-
-void FootClass::UnPanic()
-{
-    m_should_scan_for_target = true;
-}
-
-bool FootClass::ChronoWarpTo(CoordStruct dest)
-{
-    m_chrono_dest_coords = dest;
-    m_being_warped_out = true;
-
-    // TODO: Create chrono shift animation, teleport after delay
-    return true;
-}
-
-int FootClass::GetCurrentSpeed() const
-{
-    if (!m_locomotor.ptr)
-        return 0;
-
-    // TODO: ILocomotion::Get_Speed() COM call
-    return static_cast<int>(m_speed_percentage);
-}
-
-void FootClass::SetSpeedPercentage(double percentage)
-{
-    m_speed_percentage = percentage;
+    // Remove from map
+    Remove();
 }
 
 } // namespace game
