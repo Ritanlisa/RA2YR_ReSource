@@ -39,7 +39,7 @@ using ra2::game::RectangleStruct;
 
 
 
-struct CellClass;
+class CellClass;
 struct ColorScheme;
 
 class TacticalClass : public AbstractClass

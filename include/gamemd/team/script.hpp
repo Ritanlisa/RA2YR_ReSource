@@ -19,7 +19,7 @@ using ra2::game::AbstractType;
 
 
 
-struct ScriptTypeClass;
+class ScriptTypeClass;
 struct ScriptActionNode;
 
 struct ScriptActionNode
@@ -60,7 +60,7 @@ protected:
 
 // --- ScriptTypeClass ---
 
-struct CCINIClass;
+class CCINIClass;
 
 class ScriptTypeClass : public AbstractClass
 {

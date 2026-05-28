@@ -17,9 +17,9 @@ using ra2::game::AbstractType;
 
 
 
-struct HouseClass;
-struct TechnoClass;
-struct TechnoTypeClass;
+class HouseClass;
+class TechnoClass;
+class TechnoTypeClass;
 
 class FactoryClass : public AbstractClass
 {

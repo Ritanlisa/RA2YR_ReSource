@@ -38,6 +38,7 @@ if(MSVC)
     target_compile_options(gamemd_core PRIVATE
         /W3         # Warning level 3
         /FS         # Force synchronous PDB writes (multi-processor compilation)
+        /utf-8      # Treat source/execution charset as UTF-8
         /wd4250     # Disable dominance warning (diamond inheritance intentional)
         /wd4275     # Non-DLL interface class used as base (expected for game engine)
     )

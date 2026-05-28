@@ -24,8 +24,8 @@ using ra2::game::CellStruct;
 
 
 
-struct TagTypeClass;
-struct TriggerClass;
+class TagTypeClass;
+class TriggerClass;
 #ifndef GAMEMD_USING_ObjectClass
 #define GAMEMD_USING_ObjectClass
 using ra2::game::ObjectClass;
@@ -86,7 +86,7 @@ protected:
 
 // --- TagTypeClass ---
 
-struct CCINIClass;
+class CCINIClass;
 
 class TagTypeClass : public AbstractClass
 {
@@ -112,16 +112,16 @@ public:
     bool HasCrossesHorizontalLineEvent() const;
     bool HasCrossesVerticalLineEvent() const;
     bool HasZoneEntryByEvent() const;
-    bool AddTrigger(struct TriggerTypeClass* trigger);
-    bool RemoveTrigger(struct TriggerTypeClass* trigger);
-    bool ContainsTrigger(struct TriggerTypeClass* trigger) const;
+    bool AddTrigger(class TriggerTypeClass* trigger);
+    bool RemoveTrigger(class TriggerTypeClass* trigger);
+    bool ContainsTrigger(class TriggerTypeClass* trigger) const;
 
     static void LoadFromINIList(CCINIClass* ini);
     static void SaveToINIList(CCINIClass* ini);
 
     int32_t             m_array_index;
     int32_t             m_persistence;
-    struct TriggerTypeClass* m_first_trigger;
+    class TriggerTypeClass* m_first_trigger;
 
 protected:
     TagTypeClass() = default;

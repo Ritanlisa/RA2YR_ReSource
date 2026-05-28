@@ -29,13 +29,13 @@ using ra2::game::CellStruct;
 
 
 
-struct TeamTypeClass;
-struct ScriptClass;
-struct HouseClass;
-struct FootClass;
-struct TechnoTypeClass;
-struct TagClass;
-struct CellClass;
+class TeamTypeClass;
+class ScriptClass;
+class HouseClass;
+class FootClass;
+class TechnoTypeClass;
+class TagClass;
+class CellClass;
 
 class TeamClass : public AbstractClass
 {

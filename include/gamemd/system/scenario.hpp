@@ -29,7 +29,7 @@ using ra2::game::TimerStruct;
 
 
 
-struct TechnoTypeClass;
+class TechnoTypeClass;
 
 enum class TheaterType : int;
 

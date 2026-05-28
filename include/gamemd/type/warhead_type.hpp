@@ -11,7 +11,7 @@ class ParticleTypeClass;
 class VoxelAnimTypeClass;
 
 template <typename T>
-struct DynamicVectorClass;
+class DynamicVectorClass;
 
 struct WarheadFlags
 {

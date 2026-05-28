@@ -19,9 +19,9 @@ using ra2::game::AbstractType;
 
 
 
-struct InfantryTypeClass;
-struct UnitTypeClass;
-struct AircraftTypeClass;
+class InfantryTypeClass;
+class UnitTypeClass;
+class AircraftTypeClass;
 
 class HouseTypeClass : public AbstractClass
 {

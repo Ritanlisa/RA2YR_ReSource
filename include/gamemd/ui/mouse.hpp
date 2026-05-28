@@ -12,7 +12,7 @@ namespace gamemd
 {
 
 struct SHPStruct;
-struct DSurface;
+class DSurface;
 
 struct MouseHotSpotX {};
 struct MouseHotSpotY {};

@@ -19,7 +19,7 @@ using ra2::game::Point2D;
 using ra2::game::RectangleStruct;
 using ra2::game::TimerStruct;
 
-struct AnimClass;
+class AnimClass;
 struct ColorStruct;
 class BuildingLightClass;
 class BuildingTypeClass;

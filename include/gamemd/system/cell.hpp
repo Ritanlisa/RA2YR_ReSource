@@ -31,19 +31,19 @@ using ra2::game::TimerStruct;
 using ra2::game::AbstractType;
 #endif
 
-struct BuildingClass;
-struct BuildingTypeClass;
-struct UnitClass;
-struct InfantryClass;
-struct AircraftClass;
-struct TerrainClass;
-struct FootClass;
-struct HouseClass;
-struct LightConvertClass;
-struct RadSiteClass;
-struct TubeClass;
-struct FoggedObjectClass;
-struct TagClass;
+class BuildingClass;
+class BuildingTypeClass;
+class UnitClass;
+class InfantryClass;
+class AircraftClass;
+class TerrainClass;
+class FootClass;
+class HouseClass;
+class LightConvertClass;
+class RadSiteClass;
+class TubeClass;
+class FoggedObjectClass;
+class TagClass;
 #ifndef GAMEMD_USING_ObjectClass
 #define GAMEMD_USING_ObjectClass
 using ra2::game::ObjectClass;

@@ -19,7 +19,7 @@ using ra2::game::AbstractType;
 
 
 
-struct HouseTypeClass;
+class HouseTypeClass;
 
 class SideClass : public AbstractClass
 {

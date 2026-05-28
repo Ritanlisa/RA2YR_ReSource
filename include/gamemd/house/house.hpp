@@ -254,7 +254,7 @@ public:
 
     BuildingClass* FindBuildingOfType(int idx, int sector = -1) const;
 
-    struct AnimClass* PsiWarn(struct CellClass* target, struct BulletClass* bullet, const char* anim_name);
+    class AnimClass* PsiWarn(class CellClass* target, class BulletClass* bullet, const char* anim_name);
 
     bool Fire_LightningStorm(SuperClass* super);
     bool Fire_ParaDrop(SuperClass* super);
@@ -318,9 +318,9 @@ public:
 
     bool IsIonCannonEligibleTarget(const TechnoClass* techno) const;
 
-    void UpdateFlagCoords(struct UnitClass* new_carrier, uint32_t unk);
-    void DroppedFlag(CellStruct* where, struct UnitClass* who);
-    char PickedUpFlag(struct UnitClass* who, uint32_t unk);
+    void UpdateFlagCoords(class UnitClass* new_carrier, uint32_t unk);
+    void DroppedFlag(CellStruct* where, class UnitClass* who);
+    char PickedUpFlag(class UnitClass* who, uint32_t unk);
 
     FactoryClass* GetPrimaryFactory(AbstractType abs_id, bool naval, int build_cat) const;
     void SetPrimaryFactory(FactoryClass* factory, AbstractType abs_id, bool naval, int build_cat);
@@ -506,7 +506,7 @@ public:
     FactoryClass*               m_primary_unused3;
     FactoryClass*               m_primary_for_defenses;
     uint8_t                     m_unknown_53D0[12];
-    struct UnitClass*           m_our_flag_carrier;
+    class UnitClass*           m_our_flag_carrier;
     CellStruct                  m_our_flag_coords;
     int32_t                     m_killed_units_of_houses[20];
     int32_t                     m_total_killed_units;

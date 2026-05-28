@@ -12,7 +12,7 @@ class ParticleSystemTypeClass;
 class WarheadTypeClass;
 
 template <typename T>
-struct DynamicVectorClass;
+class DynamicVectorClass;
 
 class WeaponTypeClass : public AbstractTypeClass
 {

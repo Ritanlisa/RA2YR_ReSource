@@ -348,17 +348,17 @@ bool MixFileClass::Extract(int index, void* buffer, int buffer_size) const
     if (index < 0 || index >= CountFiles || !buffer || !FileName)
         return false;
 
-    if (buffer_size < Headers[index].Size)
+    if (buffer_size < static_cast<int>(Headers[index].Size))
         return false;
 
     FILE* fp = fopen(FileName, "rb");
     if (!fp)
         return false;
 
-    int file_pos = FileStartOffset + Headers[index].Offset;
+    int file_pos = FileStartOffset + static_cast<int>(Headers[index].Offset);
     fseek(fp, file_pos, SEEK_SET);
 
-    size_t read = fread(buffer, 1, Headers[index].Size, fp);
+    size_t read = fread(buffer, 1, static_cast<size_t>(Headers[index].Size), fp);
     fclose(fp);
 
     return read == static_cast<size_t>(Headers[index].Size);

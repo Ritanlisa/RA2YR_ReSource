@@ -16,7 +16,7 @@ class VoxelAnimTypeClass;
 class WeaponTypeClass;
 
 template <typename T>
-struct DynamicVectorClass;
+class DynamicVectorClass;
 
 struct AbilitiesStruct
 {

@@ -11,7 +11,7 @@ struct Matrix3DStruct;
 struct SHPStruct;
 struct VoxelStruct;
 struct SomeVoxelCache;
-struct ILocomotion;
+class ILocomotion;
 class LocomotionClass;
 class ParasiteClass;
 class TeamClass;

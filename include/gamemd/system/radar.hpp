@@ -18,8 +18,8 @@ using ra2::game::CellStruct;
 
 
 
-struct DisplayClass;
-struct GScreenClass;
+class DisplayClass;
+class GScreenClass;
 
 class RadarClass : public DisplayClass
 {

@@ -55,13 +55,13 @@ using ra2::game::TechnoClass;
 
 
 
-struct CellClass;
-struct HouseClass;
-struct BulletTypeClass;
-struct WeaponTypeClass;
-struct WarheadTypeClass;
-struct AnimTypeClass;
-struct FootClass;
+class CellClass;
+class HouseClass;
+class BulletTypeClass;
+class WeaponTypeClass;
+class WarheadTypeClass;
+class AnimTypeClass;
+class FootClass;
 
 enum class Layer : int;
 enum class LandType : int;
@@ -127,7 +127,7 @@ struct LogicClass : LayerClass
 {
 };
 
-struct GScreenClass;
+class GScreenClass;
 
 struct LTRBStruct
 {

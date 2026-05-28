@@ -12,7 +12,7 @@ class CellClass;
 class LightConvertClass;
 class LineTrail;
 class ObjectTypeClass;
-class SHPStruct;
+struct SHPStruct;
 class TagClass;
 class TechnoTypeClass;
 class WarheadTypeClass;

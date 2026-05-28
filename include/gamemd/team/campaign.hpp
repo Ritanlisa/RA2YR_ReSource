@@ -19,7 +19,7 @@ using ra2::game::AbstractType;
 
 
 
-struct CCINIClass;
+class CCINIClass;
 
 class CampaignClass : public AbstractClass
 {

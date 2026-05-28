@@ -375,7 +375,7 @@ void key_to_bignum(bignum n, const uint8_t* key, uint32_t len) {
     uint32_t keylen;
     if (key[0] & 0x80) {
         keylen = 0;
-        for (uint32_t i = 0; i < (key[0] & 0x7F); i++)
+        for (uint32_t i = 0; i < static_cast<uint32_t>(key[0] & 0x7F); i++)
             keylen = (keylen << 8) | key[i + 1];
         key += (key[0] & 0x7F) + 1;
     } else {
