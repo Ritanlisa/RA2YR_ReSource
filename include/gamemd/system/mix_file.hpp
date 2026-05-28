@@ -106,10 +106,24 @@ public:
 
     static void Bootstrap();
 
-    virtual ~MixFileClass() override = default;
+    static uint32_t ComputeID(const char* filename);
+
+    virtual ~MixFileClass() override
+    {
+        if (Headers)
+            free(Headers);
+    }
 
     MixFileClass() noexcept : Node(noinit_t()) {}
     explicit MixFileClass(const char* pFileName) noexcept;
+
+    int  FindIndex(uint32_t id) const;
+    int  FindIndex(const char* filename) const;
+    int  GetSize(int index) const;
+    int  GetSize(const char* filename) const;
+    bool Extract(int index, void* buffer, int buffer_size) const;
+    bool Extract(const char* filename, void* buffer, int buffer_size) const;
+    bool IsValid() const;
 
 protected:
     explicit MixFileClass(const noinit_t&) noexcept : Node(noinit_t()) {}
