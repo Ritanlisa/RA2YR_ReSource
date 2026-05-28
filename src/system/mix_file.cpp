@@ -1,5 +1,6 @@
 #include "gamemd/system/mix_file.hpp"
 #include "gamemd/system/cc_file.hpp"
+#include "gamemd/system/mix_blowfish.hpp"
 #include "gamemd/core/vector.hpp"
 
 #include <cstdio>
@@ -149,8 +150,6 @@ MixFileClass::MixFileClass(const char* pFileName) noexcept
             Encryption = true;
             Blowfish = true;
 
-            // Read 80-byte key_source for later blowfish decryption
-            // For now, skip encrypted files (blowfish not yet implemented)
             uint8_t key_source[mix::kKeySourceSize];
             if (fread(key_source, mix::kKeySourceSize, 1, fp) != 1) {
                 fclose(fp);
@@ -158,14 +157,79 @@ MixFileClass::MixFileClass(const char* pFileName) noexcept
             }
             header_offset += mix::kKeySourceSize;
 
-            // TODO: Implement blowfish decryption:
-            //   1. Compute 56-byte key from key_source via Westwood key calculation
-            //   2. Decrypt header blocks (ceil(header_size/8) * 8 bytes)
-            //   3. Parse decrypted header + index
+            // Decrypt header using blowfish
+            uint8_t blowfish_key[mix::kBlowfishKeySize];
+            mix::ComputeBlowfishKey(key_source, blowfish_key);
 
-            // Mark as loaded but encrypted — content extraction not available
-            FileStartOffset = -1;
-            CountFiles = -1; // signals encrypted state
+            mix::BlowfishEngine bf;
+            bf.SetKey(blowfish_key, mix::kBlowfishKeySize);
+
+            // Read encrypted header blocks
+            // Header + index = 6 bytes header + count * 12 bytes index
+            // Read first 8-byte block to get file count
+            uint8_t enc_block[8];
+            if (fread(enc_block, 8, 1, fp) != 1) {
+                fclose(fp);
+                return;
+            }
+            header_offset += 8;
+
+            bf.Decipher(enc_block, enc_block, 8);
+
+            // Parse decrypted block to get file count
+            mix::TdHeader hdr{};
+            memcpy(&hdr, enc_block, sizeof(hdr));
+            CountFiles = hdr.file_count;
+            FileSize   = hdr.body_size;
+
+            if (CountFiles <= 0 || CountFiles > 65535) {
+                fclose(fp);
+                return;
+            }
+
+            // Read and decrypt remaining index blocks
+            int total_index_bytes = CountFiles * static_cast<int>(sizeof(mix::IndexEntry));
+            int remaining_header = total_index_bytes - (8 - sizeof(hdr)); // minus header bytes already read
+
+            uint8_t* enc_buf = static_cast<uint8_t*>(malloc(total_index_bytes));
+            if (!enc_buf) {
+                fclose(fp);
+                return;
+            }
+
+            // Copy already-read header bytes
+            memcpy(enc_buf, enc_block, 8);
+
+            // Read remaining encrypted blocks
+            if (remaining_header > 0) {
+                int padded = ((remaining_header + 7) / 8) * 8;
+                if (fread(enc_buf + 8, 1, padded, fp) != static_cast<size_t>(padded)) {
+                    free(enc_buf);
+                    fclose(fp);
+                    return;
+                }
+                header_offset += padded;
+            }
+
+            // Decrypt all blocks
+            bf.Decipher(enc_buf, enc_buf, total_index_bytes);
+
+            // Parse index entries
+            Headers = static_cast<MixHeaderData*>(malloc(sizeof(MixHeaderData) * CountFiles));
+            if (!Headers) {
+                free(enc_buf);
+                fclose(fp);
+                return;
+            }
+
+            auto* idx = reinterpret_cast<mix::IndexEntry*>(enc_buf + sizeof(mix::TdHeader));
+            for (int i = 0; i < CountFiles; ++i) {
+                Headers[i].ID     = idx[i].id;
+                Headers[i].Offset = idx[i].offset;
+                Headers[i].Size   = idx[i].size;
+            }
+
+            free(enc_buf);
             fclose(fp);
             return;
         }
@@ -323,7 +387,7 @@ bool MixFileClass::Extract(const char* filename, void* buffer, int buffer_size) 
 
 bool MixFileClass::IsValid() const
 {
-    return (CountFiles > 0 || (CountFiles == -1 && Blowfish)) && FileName != nullptr;
+    return CountFiles > 0 && FileName != nullptr;
 }
 
 } // namespace gamemd

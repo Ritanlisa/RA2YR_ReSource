@@ -14,6 +14,7 @@ namespace mix {
 class BlowfishEngine {
 public:
     void SetKey(const uint8_t* key, int cb_key);
+    void Encipher(uint32_t& xl, uint32_t& xr) const;
     void Decipher(uint32_t& xl, uint32_t& xr) const;
     void Decipher(const void* src, void* dst, int size) const;
 
