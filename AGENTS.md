@@ -2,7 +2,7 @@
 
 ## 项目目标
 
-逆向工程完整的 `gamemd.exe`（Mental Omega v3.3.6）C++ 源码。目标文件是 32 位 Windows PE，由 MSVC 6.0 编译，约 7.6MB，基址 0x400000，含 19,059 个函数。原始构建来自 `D:\ra2mdpost\` 目录下的 72 个 `.CPP` 源文件。
+逆向工程完整的 `gamemd.exe` C++ 源码。目标文件是 32 位 Windows PE，由 MSVC 6.0 编译，约 7.6MB，基址 0x400000，含 19,059 个函数。原始构建来自 `D:\ra2mdpost\` 目录下的 72 个 `.CPP` 源文件。
 
 当前输出为 header-only 的静态库 `gamemd_core`，使用 CMake + C++20 编译。长期目标是产出可直接替换的 `.dll` 或独立引擎。
 
@@ -16,7 +16,7 @@
 | 编译错误 | **0** |
 | 编译警告 | **0** (已修复 72 C4099 + 1 C4018 + 8 C4819) |
 | 已实现函数 | **~120** |
-| MIX 格式支持 | RA2 加密 + MO + TD (全部验证) |
+| MIX 格式支持 | RA2 加密 + 扩展无加密 + TD 传统 (全部验证) |
 
 ### 构建命令
 
@@ -117,7 +117,7 @@ else → TD传统格式 (rewind, 读取原始header)
 |------|------|---------|------|
 | RA2 加密 | first=0, flags=0x0003 | expandmd01.mix (33文件) | ✅ RULES.INI 确认 |
 | RA2 校验 | first=0, flags=0x0001 | — | ✅ 支持 |
-| MO 无加密 | first=0, flags=0x0000 | expandmo04.mix (66文件) | ✅ 数据可读 |
+| 扩展无加密 | first=0, flags=0x0000 | expandmo04.mix (66文件) | ✅ 数据可读 |
 | TD 传统 | first≠0 | test.mix | ✅ 端到端验证 |
 
 ### Blowfish 组件
@@ -128,13 +128,13 @@ else → TD传统格式 (rewind, 读取原始header)
 | Westwood 密钥计算 | RSA 模幂运算 + Barrett 约简 | ✅ Base64 公钥 "AihRvNo..." → 56B 密钥 |
 | 头解密 | 8B 块 + reverse32 | ✅ 已验证 expandmd01/language/WDT |
 
-### MO MIX 分析结论
+### 扩展格式无加密 MIX 分析
 
 - 前 4 字节 `0x00000000` (first=0, flags=0) 是 RA1 扩展格式，非特殊标记
 - Offset 4 开始是标准 TD 格式 (count + body + index)
 - 内部文件**未加密**——二进制游戏数据，结构清晰
-- MO 的"混淆"体现在容器级（扩展格式 zero-flags），非逐文件加密
-- Ares DLL 注入扩展引擎功能，走原版 Mix 加载路径，格式完全兼容
+- 扩展格式 zero-flags 被某些模组（如基于 Ares/Phobos DLL注入的项目）用于容器级混淆
+- DLL 注入扩展走原版 Mix 加载路径，格式完全兼容
 
 ---
 
@@ -224,7 +224,7 @@ D:\RA2YR_ReSource\
 ├── CnC_Red_Alert\           # RA1 open-source reference (277 .CPP + 237 .H)
 ├── YRpp\                    # DLL injection headers (~150 files)
 ├── RA2YRMIX\                # 17 original RA2YR MIX test files
-├── MOMIX\                   # 23 Mental Omega MIX test files
+├── MOMIX\                   # 23 扩展格式 MIX 测试文件 (DLL injection 模组)
 └── CMakeLists.txt           # C++20, Win32, /utf-8, /FS
 ```
 
@@ -248,9 +248,9 @@ D:\RA2YR_ReSource\
 ### P2: 动态调试验证
 - DLL injection (YRpp 方式) 测试函数替换
 
-### P3: Mix 读取器的 Blowfish 流水线修复
-- ComputeBlowfishKey placeholder → 导致高优先级报错
-- 需要：完整 Westwood key calculation 实现
+### P3: Far Future — Ares/Phobos 扩展原生支持
+- 当前通过 DLL 注入提供功能扩展
+- 长期目标：将常用扩展功能直接集成到引擎中
 
 ---
 
@@ -259,7 +259,7 @@ D:\RA2YR_ReSource\
 | 来源 | 路径 | 文件数 | 格式 | 状态 |
 |------|------|--------|------|------|
 | **RA2YR 原版** | `RA2YRMIX/` | 17 | RA2 加密 (first=0, flags=0x0003) | ✅ 解密验证通过 |
-| **Mental Omega 3.3.6** | `MOMIX/` | 23 | 扩展格式 (first=0, flags=0x0000) | ✅ 解析验证通过 |
+| 扩展无加密 (DLL注入模组) | `MOMIX/` | 23 | 扩展格式 (first=0, flags=0x0000) | ✅ 解析验证通过 |
 
 ### 已验证文件
 - `expandmd01.mix`: 33 files, RULES.INI text confirmed
