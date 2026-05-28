@@ -522,26 +522,18 @@ void BuildingClass::Place(bool bUnk)
     int reveal_range = Type ? Type->Sight : 4;
 }
 
-} // namespace gamemd
-
 // ============================================================
-// BuildingClass::Load — deserialize from save stream
-// IDA 0x453E20, 870 bytes.
-// vtable[5] of BuildingClass
+// BuildingClass_LoadFromStream — deserialize from save game
+// IDA 0x453E20, 870B. vtable[5]: COM IPersistStream::Load override.
 //
-// Reads building data from a save game stream, reconstructing
-// the building state including Type, Factory, animations,
-// upgrades, and audio controllers.
+// Steps:
+//  1. Get BuildingTypeClass* from load queue (dequeue)
+//  2. Allocate + call BuildingClass_ctor(this, type)
+//  3. Register building in BuildingLoadQueue
+//  4. Register key members for GC tracking (Type, Factory, Anims, Upgrades, etc.)
+//  5. Init Audio7/Audio8 controllers
+//  6. Read dynamic arrays from stream (Occupants, Occupiers)
+//  7. Clear field at offset 0x614 (GateStage/LaserFence)
 // ============================================================
-namespace {
-    // Forward declarations for referenced subroutines
-    // sub_41C590: Lookup building type from production queue table
-    // sub_70BF50: Allocate/initialize BuildingClass object
-    // sub_43B680: BuildingClass constructor
-    // sub_41C500: Grow dynamic array
-    // sub_6CF240: Register pointer for garbage collection tracking
-    // sub_405BE0: Initialize AudioController
-}
 
-// TODO: Full implementation when save/load system is ready
-// Current skeleton covers the member initialization structure only
+} // namespace gamemd
