@@ -844,7 +844,69 @@ static bool CreateUnitOnCompletion(TechnoClass* techno)
     //     }
     // }
 
-    return true;
+    return false; // TODO: return true on success
+}
+
+// ============================================================
+// ConstructionPositionTracker — sub_425670 (1688B)
+// IDA 0x425670. Tracks building movement during construction:
+//   - Manages production timer based on movement state
+//   - Calculates position delta from target coordinates
+//   - Determines direction/angle for construction
+//   - Checks cell occupancy for placement validity
+// ============================================================
+static void ConstructionPositionTracker(TechnoClass* techno)
+{
+    auto* building = reinterpret_cast<gamemd::BuildingClass*>(techno);
+    auto* type = reinterpret_cast<gamemd::BuildingTypeClass*>(techno->GetTechnoType());
+    if (!type) return;
+
+    // IDA flow:
+    // 1. If not repositioning (byte +410):
+    //    - Set production timer using CurrentFrame
+    // 2. Compare current position (this+39/40/41) with target (this+66/67/68)
+    // 3. If position matches target:
+    //    - Mark as positioned (set byte +410)
+    //    - Set production timer from subtype field (type+848)
+    //    - vt_entry_248(this) to finalize
+    // 4. If position differs:
+    //    - Calculate angle/direction (sub_41C230, sub_41C380)
+    //    - Adjust position timing
+    //    - Check cell walkability (sub_5657A0 → field_320)
+    //    - If small delta: try alternative cell offset (dword_89F688)
+    // 5. If not positioned yet:
+    //    - Compute direction from position delta (sub_4CAE30)
+    //    - Calculate rotation angle → update production timer
+    // 6. Final check on foundation size and vt_entry_248
+
+    // TODO: full implementation when coordinate math and cell system are ready
+}
+
+// ============================================================
+// CreateUnitAtCoordsStandard — sub_6B59A0 
+// IDA 0x6B59A0. Creates a unit at specified coordinates using
+// standard placement rules.
+// Checks BuildingTypeClass array for type at *(entry+673) flag.
+// ============================================================
+static bool CreateUnitAtCoordsStandard(CoordStruct* coords, int time, bool special)
+{
+    // TODO: iterate BuildingTypeClass array (dword_A8EC1C/A8EC28)
+    // filter by cell walkability (sub_6B5F80)
+    // create via sub_6B4A50 (0xB0 byte alloc)
+    return false;
+}
+
+// ============================================================
+// CreateUnitAtCoordsTimed — sub_6B5C90
+// IDA 0x6B5C90. Creates a unit at coords with timed placement.
+// Checks BuildingTypeClass array for type at *(entry+672) flag.
+// ============================================================
+static bool CreateUnitAtCoordsTimed(CoordStruct* coords, int time, bool special)
+{
+    // TODO: iterate BuildingTypeClass array (dword_A8EC1C/A8EC28)
+    // filter by cell walkability (sub_6B5F80)
+    // create via sub_6B4A50 (0xB0 byte alloc)
+    return false;
 }
 
 } // namespace game
