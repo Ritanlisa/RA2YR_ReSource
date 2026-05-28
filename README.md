@@ -4,7 +4,7 @@
 
 ## 项目状态
 
-这是 Mental Omega v3.3.6（基于 Yuri's Revenge）游戏引擎 `gamemd.exe` 的逆向重构。目标是对 7.6MB 的 32 位 Windows PE 进行完整反编译，该 PE 由 MSVC 6.0 编译，包含 19,059 个函数，原始代码来自 `D:\ra2mdpost\` 目录下的 72 个 `.CPP` 源文件。
+这是 Red Alert 2: Yuri's Revenge 游戏引擎 `gamemd.exe` 的逆向重构项目。目标是对 7.6MB 的 32 位 Windows PE 进行完整反编译，该 PE 由 MSVC 6.0 编译，包含 19,059 个函数。
 
 当前输出为 header-only 静态库 `gamemd_core`，使用 CMake + C++20 编译。长期目标是产出可直接替换的 `.dll` 或独立引擎。
 
@@ -17,7 +17,7 @@ RA2/YR (gamemd.exe)
 ├── ObjectClass → MissionClass → RadioClass → TechnoClass → FootClass
 ├── 类型/实例双重层次（TypeClass 原型模式）
 ├── COM 接口层（INoticeSink/Source 已通过 RTTI 确认）
-└── Mental Omega v3.3.6 扩展
+└── 通过 Ares/Phobos, 基于 Syringe 通过 DLL 注入对 RA2/YR 进行纯功能扩展
 ```
 
 ## 三重参考源方法论
@@ -52,7 +52,7 @@ cmake -B build -G "Visual Studio 17 2022" -A Win32
 cmake --build build --config Debug
 ```
 
-编译状态：59 个源文件可编译，~2444 clean build 错误（系统性预设）。
+编译状态：61 个源文件可编译，总代码行数 ~13,000, 无错误与警告。
 
 ## RA1 结构对齐进度
 
@@ -74,7 +74,7 @@ cmake --build build --config Debug
 2. **构建完整类结构**（对齐 RA1 命名，验证 sizeof）
 3. **根据 IDA 伪代码重写关键函数**（ObjectClass::Put、FootClass::MovementAI 等）
 4. **统一处理编译错误**（先修 object.hpp 前向声明→消除~1900连锁错误→逐一清完）
-5. **DLL injection 调试**（连接原 gamemd.exe 验证）
+5. **动态执行调试**（替代原 gamemd.exe 验证）
 
 ## 许可证
 
