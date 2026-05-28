@@ -269,6 +269,7 @@ D:\RA2YR_ReSource\
 - **MIX 格式**: 前 2B=0 为扩展格式; flags 0x0002=加密; 算法来自 RA1 MixFileClass
 - **MIX 文件名**: 仅存 hash ID, 不存原始名; 通过 `ComputeId()` 匹配
 - **IDA 连接**: `127.0.0.1:13337`, i64 在 `C:\Program Files (x86)\Mental Omega\gamemd.exe.i64`
+- **IDA 命名状态**: 61 个函数 + 27 个全局变量已重命名 (见下方 IDA 命名清单)
 - **Python**: 3.14.2 (`python` 或 `py`), Windows 上已就绪
 
 ### 测试数据
