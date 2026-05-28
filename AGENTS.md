@@ -137,6 +137,25 @@ Constructed at `0x71A4E0`. Calls AbstractClass ctor. Manages chrono-shift / time
 | `rngState` | 0xA8B230 | Random state | RNG seed/state |
 | MIX file list | 0xABEFD8 | — | MIX archive table |
 
+### BuildingClass Vtable Addresses (from IDA)
+
+BuildingClass constructor at 0x43B680 sets 4 vtable pointers:
+- `vtable[0]` (primary) = `0x7E3EBC` (64+ entries)
+- `vtable[1]` = `0x7E3EA0` (~32 entries, IPersistStream/IRTTITypeInfo)
+- `vtable[2]` = `0x7E3E98` (~30 entries, INoticeSink)
+- `vtable[3]` = `0x7E3E90` (~27 entries, INoticeSource)
+
+Key BuildingClass-specific vtable entries (index → address):
+| Vtable Index | Address | Function |
+|-------------|---------|----------|
+| [5] | 0x453E20 | BuildingClass factory/creation (870B, 45 BBs) |
+| [24] | 0x710410 | Ptr clear-if-equal helper (77B) |
+| [27] | 0x4513D0 | Animation state dispatch (48B) |
+| [31] | 0x5F6C10 | Generic OR check: vtable[456] > -20 (19B) |
+| [39] | 0x7010D0 | Unknown |
+| [44] | 0x453840 | GetExitCoords — compute unit exit cell (550B) |
+| [46] | 0x449410 | Building flag bitfield computation (46B) |
+
 ---
 
 ## Functions Named in IDA (Stage 14 Progress)
@@ -148,12 +167,15 @@ Constructed at `0x71A4E0`. Calls AbstractClass ctor. Manages chrono-shift / time
 | `FootClass_MovementAI` | 0x4DA530 | Movement update (smoke, dust, sound, state) |
 | `BuildingClass_Draw` | 0x47F6A0 | Building rendering |
 | `TechnoClass_SmokeUpdate` | 0x414BB0 | Damaged-building smoke animation |
-| `AnimClass_SimpleCtor` | 0x422720 | Simplified AnimClass construction |
 | `TechnoClass_CreateUnit` | 0x423AC0 | Full Techno/Unit creation pipeline |
 | `SuperWeapon_CreateUnits` | 0x445F80 | Superweapon delivery + EVA announcements |
 | `RulesClass_LoadFromINI` | 0x66D530 | INI parser, largest function (18793 bytes, 392 strings) |
 | `WinMain` | 0x6BB9A0 | Game entry point (10261 bytes, 171 callees) |
 | `ObjectClass::Put` | 0x5F4520 | Add object to CurrentObjects array |
+| `sub_453E20` | 0x453E20 | BuildingClass factory/creation pipeline (870B, 45 BBs) — calls BuildingClass ctor + subsystem registration |
+| `sub_453840` | 0x453840 | BuildingClass GetExitCoords (550B) — computes unit exit position based on building type flags |
+| `sub_449410` | 0x449410 | BuildingClass flag computation (46B) — bitfield from type flags + sub_5F6BD0 |
+| `sub_710410` | 0x710410 | BuildingClass pointer clear-if-equal helper (77B) — nulls anim/tech ptrs if matching |
 
 ---
 
