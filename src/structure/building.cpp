@@ -536,4 +536,26 @@ void BuildingClass::Place(bool bUnk)
 //  7. Clear field at offset 0x614 (GateStage/LaserFence)
 // ============================================================
 
+// ============================================================
+// BuildingClass::Update — per-frame update (0x442C40)
+// IDA 0x442C40, vtable[9] or non-vt member.
+//
+// Sections:
+//  1. TechnoClass_Update(this) — parent class update
+//  2. If C4AppliedBy (this+0x540):
+//     - Copy owner's field_184 to this+0x53C (OwnerCountryIndex)
+//     - BuildingClass_PowerUpdate(this)
+//  3. If Type exists:
+//     a. Update power drain/usage (field_160, field_1664)
+//     b. BuildingTypeClass_GetPowerOutput(Type+1820)
+//     c. vt_entry_192(Type) → check power online:
+//        - If online: BuildingTypeClass_IsPowered(Type), set this+0x6E9 = 1
+//        - If offline: set this+0x6DC = 0
+//     d. Special C4AppliedBy logic:
+//        - If C4AppliedBy->field_704 && Type conditions:
+//          House_PowerChanged(1)
+//  4. If Type && Type+0x16B0 (Special flag):
+//     - Register this in global tracking array (dword_8B41E0+)
+// ============================================================
+
 } // namespace gamemd

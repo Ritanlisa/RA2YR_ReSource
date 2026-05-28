@@ -1032,29 +1032,60 @@ static void ConstructionPositionTracker(TechnoClass* techno)
 }
 
 // ============================================================
-// CreateUnitAtCoordsStandard — sub_6B59A0 
-// IDA 0x6B59A0. Creates a unit at specified coordinates using
-// standard placement rules.
-// Checks BuildingTypeClass array for type at *(entry+673) flag.
+// CreateUnitAtCoordsStandard — sub_6B59A0
+// IDA 0x6B59A0. Creates a unit at specified cell coordinates.
+//
+// Algorithm:
+//  1. Skip if coords == Map_BottomRightCell
+//  2. Lock mutex, iterate BuildingTypeClass instances:
+//     - Filter: entry+673 flag set + cell is walkable
+//     - Add to candidate list (max 10)
+//  3. Unlock mutex, filter candidates by size constraints
+//  4. If filtered: random pick → UnitClass_Create
+//  5. Else if regular: random pick → UnitClass_Create
+//  6. Clean up dynamic vectors
 // ============================================================
 static bool CreateUnitAtCoordsStandard(CoordStruct* coords, int time, bool special)
 {
-    // TODO: iterate BuildingTypeClass array (dword_A8EC1C/A8EC28)
-    // filter by cell walkability (sub_6B5F80)
-    // create via sub_6B4A50 (0xB0 byte alloc)
+    if (!coords) return false;
+
+    // TODO: Check if coords == Map_BottomRightCell → early return
+
+    // TODO: Game_LockMutex
+    // foreach BuildingTypeClass instance in global array:
+    //   if (instance->CanPlaceAtCoords):   // flag at +673
+    //     if (Cell_IsWalkable(cell, special)):
+    //       add to candidates (DynamicVectorClass, max 10)
+    // TODO: Game_LockMutex (unlock)
+
+    // TODO: Filter candidates by size constraints (field_664/668)
+    // if (filtered count > 0):
+    //   pick Random_Range(0, filtered_count - 1)
+    //   UnitClass_Create(filtered[index], coords, -1)
+    // elif (candidate count > 0):
+    //   pick Random_Range(0, candidate_count - 1)
+    //   UnitClass_Create(candidates[index], coords, -1)
+
+    // TODO: Clean up dynamic vectors
+
     return false;
 }
 
 // ============================================================
 // CreateUnitAtCoordsTimed — sub_6B5C90
-// IDA 0x6B5C90. Creates a unit at coords with timed placement.
-// Checks BuildingTypeClass array for type at *(entry+672) flag.
+// IDA 0x6B5C90. Variant with timed placement rules.
+// Same structure as Standard but checks entry+672 flag instead.
 // ============================================================
 static bool CreateUnitAtCoordsTimed(CoordStruct* coords, int time, bool special)
 {
-    // TODO: iterate BuildingTypeClass array (dword_A8EC1C/A8EC28)
-    // filter by cell walkability (sub_6B5F80)
-    // create via sub_6B4A50 (0xB0 byte alloc)
+    if (!coords) return false;
+
+    // TODO: Same flow as Standard but:
+    //   - Filter: entry+672 flag (instead of +673)
+    //   - Additional time-based constraints
+    //   - Standard: check (field != 1 || field_668 != 1) && (time <= 60 || special <= 50)
+    //   - Timed: check (field > 1 && field_668 > 1) for special mode
+
     return false;
 }
 
