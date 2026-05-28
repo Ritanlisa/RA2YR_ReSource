@@ -225,4 +225,17 @@ int AircraftClass::Mission_Retreat()
     return 10;
 }
 
+// ============================================================
+// AircraftClass_Update — vtable[9] (IDA 0x413F80, 241B)
+// Per-frame update: calls TechnoClass_Update → power drain
+// Checks Type(this+1732) → House_PowerChanged → power output
+// Updates power fields from Type members (this+108/112/764)
+// Delegates to BuildingClass_PowerUpdate(C4AppliedBy)
+// ============================================================
+
+// ============================================================
+// AircraftClass_LoadFromStream — vtable[5] (IDA 0x41B430, 395B)
+// COM IPersistStream::Load for aircraft deserialization
+// ============================================================
+
 } // namespace gamemd

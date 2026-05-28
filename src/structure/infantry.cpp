@@ -86,4 +86,21 @@ int InfantryClass::Mission_ParaDropOverfly()
     return 5;
 }
 
+// ============================================================
+// InfantryClass_PowerDrainUpdate — vtable[13] (IDA 0x521C90, 160B)
+// Per-frame power consumption for infantry (deployed units, etc.)
+// Processes timer at this+1732/1736/1748 via Power_TimerProcess
+// Processes flags at this+1753-1757 via Power_FlagProcess (5 flags)
+// ============================================================
+
+// ============================================================
+// InfantryClass_LoadFromStream — vtable[5] (IDA 0x521960, 402B)
+// COM IPersistStream::Load for infantry deserialization
+// ============================================================
+
+// ============================================================
+// InfantryClass_PerFrameUpdate — vtable[9] (IDA 0x517CC0, 207B)
+// Per-frame update delegating to FootClass_Update
+// ============================================================
+
 } // namespace gamemd

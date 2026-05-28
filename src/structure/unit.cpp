@@ -129,4 +129,22 @@ int UnitClass::Mission_Unload()
     return 5;
 }
 
+// ============================================================
+// UnitClass_PowerDrainUpdate — vtable[13] (IDA 0x744640, 159B)
+// Per-frame power for units (deployed siege units, mobile factories)
+// Gets speed from ILocomotion(vtable[44]) → Power_TimerProcess
+// Gets type ID via vtable[16] → Power_TimerProcess
+// Timers at this+1732/1736/1740, flags at this+1744-1746, 1671
+// ============================================================
+
+// ============================================================
+// UnitClass_LoadFromStream — vtable[5] (IDA 0x744470, 391B)
+// COM IPersistStream::Load for unit deserialization
+// ============================================================
+
+// ============================================================
+// UnitClass_PerFrameUpdate — vtable[9] (IDA 0x746810, 167B)
+// Per-frame update (speed/position/facing via ILocomotion)
+// ============================================================
+
 } // namespace gamemd
