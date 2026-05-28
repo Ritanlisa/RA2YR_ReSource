@@ -123,8 +123,6 @@ bool FootClass::MovementAI()
 
 void FootClass::EmitMovementSmoke()
 {
-    // Smoke interval from rules (global at 0x8871E0, offset 1538)
-    // IDA: if (!(CurrentFrame % rules[1538]) && !IsHouseFlag3383 && !IsInAir() && !m_in_limbo)
     if ((CurrentFrame % 6) == 0
         && !m_in_limbo
         && !IsInAir()
@@ -133,17 +131,19 @@ void FootClass::EmitMovementSmoke()
         CoordStruct coords;
         GetCoords(&coords);
 
-        // Convert to map cell coordinates
         int cell_x = coords.X / 256;
         int cell_y = coords.Y / 256;
 
-        // Look up cell and check traversability
-        CellClass* cell = GetCell();
+        CellStruct map_coords = { static_cast<int16_t>(cell_x), static_cast<int16_t>(cell_y) };
+        CellClass* cell = nullptr;
+        // TODO: cell = MapClass::Instance->TryGetCellAt(map_coords);
+
         if (cell)
         {
-            // Check if cell is on impassable terrain
-            // IDA: if cell traversability > 0, emit smoke with scaled damage
-            // TODO: full smoke particle system emission
+            // IDA: check cell passability (sub_487CB0)
+            // If impassable terrain, emit scaled damage smoke
+            // damage = cell_traversability * rules.SmokeSpeed
+            // ReceiveDamage( &scaled_damage, 0, rules[1549], 0, 0, 1, 0 )
         }
     }
 }

@@ -294,5 +294,27 @@ void TechnoClass::Reload()
     // TODO: m_ammo = GetType()->MaxAmmo;
 }
 
+void TechnoClass::CreateGap()
+{
+    m_generating_gap = true;
+    m_gap_super_charged = false;
+    m_gap_radius = 0;
+    // TODO: create shroud gap effect around unit
+}
+
+void TechnoClass::DestroyGap()
+{
+    m_generating_gap = false;
+    // TODO: remove shroud gap effect
+}
+
+void TechnoClass::UpdateSight(uint32_t a, uint32_t b, uint32_t c, uint32_t d, uint32_t e)
+{
+    // Update fog of war visibility around this unit
+    // TODO: MapClass::RevealArea2 at current position with sight range
+    m_last_sight_coords = m_location;
+    // m_last_sight_range = GetSightRange();
+}
+
 } // namespace game
 } // namespace ra2

@@ -57,6 +57,12 @@ public:
 
     virtual ~AircraftClass() override = default;
 
+    int Mission_Attack() override;
+    int Mission_Return() override;
+    int Mission_Unload() override;
+    int Mission_Hunt() override;
+    int Mission_Retreat() override;
+
     AircraftTypeClass* Type;
     bool               unknown_bool_6C8;
     bool               HasPassengers;

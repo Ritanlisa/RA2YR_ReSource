@@ -115,7 +115,6 @@ public:
     int GetAntiArmorValue() const { return 0; }
     int GetAntiInfantryValue() const { return 0; }
     virtual void GotHijacked() {}
-    int SelectWeapon(AbstractClass* target) const;
     virtual int SelectNavalTargeting(AbstractClass* target) const { return 0; }
     virtual int GetZAdjustment() const { return 0; }
     virtual ZGradient GetZGradient() const { return static_cast<ZGradient>(-1); }
@@ -190,39 +189,6 @@ public:
     virtual int GetOccupyRangeBonus() const { return 0; }
     virtual int GetOccupantCount() const { return 0; }
     virtual void OnFinishRepair() {}
-    void UpdateCloak(bool unknown = true) {}
-    virtual void CreateGap() {}
-    virtual void DestroyGap() {}
-    virtual void vt_entry_41C() {}
-    virtual void Sensed() {}
-    virtual void Reload();
-    virtual void vt_entry_428() {}
-    virtual CoordStruct* GetTargetCoords(CoordStruct* out) const { return nullptr; }
-    virtual bool IsNotWarpingIn() const { return true; }
-    virtual bool vt_entry_434(uint32_t a) const { return false; }
-    void DrawActionLines(bool force, uint32_t unknown) {}
-    virtual uint32_t GetDisguiseFlags(uint32_t existing_flags) const { return 0; }
-    virtual bool IsClearlyVisibleTo(HouseClass* house) const { return false; }
-    virtual void vt_entry_444(
-        uint32_t a, uint32_t b, uint32_t c, uint32_t d, uint32_t e,
-        uint32_t f, uint32_t g, uint32_t h, uint32_t i, uint32_t j) {}
-    virtual void vt_entry_448(uint32_t a, uint32_t b) {}
-    void DrawHealthBar(Point2D* location, RectangleStruct* bounds, bool unknown) const {}
-    void DrawPipScalePips(Point2D* location, Point2D* original_location, RectangleStruct* bounds) const {}
-    void DrawVeterancyPips(Point2D* location, RectangleStruct* bounds) const {}
-    void DrawExtraInfo(const Point2D& location, const Point2D& original_location, const RectangleStruct& bounds) const {}
-    virtual void Uncloak(bool play_sound);
-    virtual void Cloak(bool play_sound);
-    virtual uint32_t vt_entry_464(uint32_t a) const { return 0; }
-    virtual void UpdateRefinerySmokeSystems() {}
-    virtual uint32_t DisguiseAs(AbstractClass* target) { return 0; }
-    virtual void ClearDisguise() {}
-    virtual bool IsItTimeForIdleActionYet() const { return false; }
-    virtual bool UpdateIdleAction() { return false; }
-    virtual void vt_entry_47C(uint32_t a) {}
-    virtual void SetDestination(AbstractClass* dest, bool unknown) {}
-    virtual bool vt_entry_484(uint32_t a, uint32_t b) { return false; }
-    virtual void UpdateSight(uint32_t a, uint32_t b, uint32_t c, uint32_t d, uint32_t e) {}
     virtual void vt_entry_48C(uint32_t a, uint32_t b, uint32_t c, uint32_t d) {}
     virtual void vt_entry_490(uint32_t a, uint32_t b) = 0;
     virtual void RadarTrackingStart() {}
@@ -241,6 +207,16 @@ public:
     virtual bool vt_entry_4C8() { return false; }
     virtual void vt_entry_4CC() {}
     virtual bool vt_entry_4D0() { return false; }
+
+    int SelectWeapon(AbstractClass* target) const;
+    void UpdateCloak(bool unknown = true) {}
+    virtual void Cloak(bool play_sound);
+    virtual void Uncloak(bool play_sound);
+    virtual void Reload();
+    virtual void SetDestination(AbstractClass* dest, bool unknown);
+    virtual void UpdateSight(uint32_t a, uint32_t b, uint32_t c, uint32_t d, uint32_t e);
+    virtual void CreateGap();
+    virtual void DestroyGap();
 
     int GetIonCannonValue(AIDifficulty difficulty) const { return 0; }
 
