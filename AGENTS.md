@@ -2,9 +2,9 @@
 
 ## 项目目标
 
-逆向工程完整的 `gamemd.exe` C++ 源码。目标文件是 32 位 Windows PE，由 MSVC 6.0 编译，约 7.6MB，基址 0x400000，含 19,059 个函数。原始构建来自 `D:\ra2mdpost\` 目录下的 72 个 `.CPP` 源文件。
+逆向工程完整的 `gamemd.exe` C++ 源码。目标文件是 32 位 Windows PE，由 MSVC 6.0 编译，约 7.6MB，基址 0x400000，含 19,059 个函数。
 
-当前输出为 header-only 的静态库 `gamemd_core`，使用 CMake + C++20 编译。长期目标是产出可直接替换的 `.dll` 或独立引擎。
+当前输出为 header-only 的静态库 `gamemd_core`，使用 CMake + C++20 编译。长期目标是产出可直接替换的跨平台可执行文件(独立引擎)。
 
 ---
 
