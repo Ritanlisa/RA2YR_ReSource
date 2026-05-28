@@ -111,9 +111,9 @@ public:
     virtual uint32_t vt_entry_2C8(uint32_t a, uint32_t b) { return 0; }
     virtual bool vt_entry_2CC(uint32_t a) { return false; }
     virtual int GetCrewCount() const { return 0; }
-    int GetAntiAirValue() const { return 0; }
-    int GetAntiArmorValue() const { return 0; }
-    int GetAntiInfantryValue() const { return 0; }
+    virtual int GetAntiAirValue() const { return 0; }
+    virtual int GetAntiArmorValue() const { return 0; }
+    virtual int GetAntiInfantryValue() const { return 0; }
     virtual void GotHijacked() {}
     virtual int SelectNavalTargeting(AbstractClass* target) const { return 0; }
     virtual int GetZAdjustment() const { return 0; }
@@ -130,7 +130,7 @@ public:
     virtual int GetROF(int weapon) const { return 0; }
     virtual int GetGuardRange(int unknown) const { return 0; }
     virtual bool vt_entry_320() const { return false; }
-    bool IsRadarVisible(int* out_detection) const { return false; }
+    virtual bool IsRadarVisible(int* out_detection) const { return false; }
     virtual bool IsSensorVisibleToPlayer() const { return false; }
     virtual bool IsSensorVisibleToHouse(HouseClass* house) const { return false; }
     virtual bool IsEngineer() const { return false; }
@@ -142,14 +142,14 @@ public:
     virtual bool EnterBattleBunker();
     virtual bool GarrisonStructure();
     virtual bool IsPowerOnline() const { return true; }
-    void QueueVoice(int idx_voc) {}
-    int VoiceEnter() { return 0; }
-    int VoiceHarvest() { return 0; }
-    int VoiceSelect() { return 0; }
-    int VoiceCapture() { return 0; }
-    int VoiceMove() { return 0; }
-    int VoiceDeploy() { return 0; }
-    int VoiceAttack(ObjectClass* target) { return 0; }
+    virtual void QueueVoice(int idx_voc) {}
+    virtual int VoiceEnter() { return 0; }
+    virtual int VoiceHarvest() { return 0; }
+    virtual int VoiceSelect() { return 0; }
+    virtual int VoiceCapture() { return 0; }
+    virtual int VoiceMove() { return 0; }
+    virtual int VoiceDeploy() { return 0; }
+    virtual int VoiceAttack(ObjectClass* target) { return 0; }
     virtual bool ClickedEvent(NetworkEvents event) { return false; }
     virtual bool ClickedMission(Mission mission, ObjectClass* target, CellClass* target_cell, CellClass* nearest_target_cell) { return false; }
     virtual bool IsUnderEMP() const { return false; }
@@ -209,7 +209,7 @@ public:
     virtual bool vt_entry_4D0() { return false; }
 
     int SelectWeapon(AbstractClass* target) const;
-    void UpdateCloak(bool unknown = true);
+    virtual void UpdateCloak(bool unknown = true);
     virtual void Cloak(bool play_sound);
     virtual void Uncloak(bool play_sound);
     virtual void Reload();
