@@ -276,5 +276,34 @@ ObjectClass::ObjectClass() noexcept
     m_abstract_flags |= kObjectFlag;
 }
 
+// ============================================================
+// ObjectClass vtable[18]: GetCoords (IDA 0x5F65A0, 33B)
+// Copies Location(member offset +39/40/41) to output CoordStruct
+// Used everywhere: CreateUnit, MovementAI, rendering, etc.
+// ============================================================
+
+// ============================================================
+// ObjectClass vtable[27]: HasC4 (IDA 0x5F3E30, 18B)
+// Checks if building has C4 planted (this+1320 area)
+// ============================================================
+
+// ============================================================
+// BuildingClass vtable[122]: MissionDispatch (IDA 0x5B35E0, 101B)
+// Called from CreateUnit to trigger deploy state changes.
+// Checks CurrentMission (this+43) against known missions
+// (28=Unload, 19=Enter), dispatches via vt_entry_512/492
+// ============================================================
+
+// ============================================================
+// ObjectClass vtable[73]: UpdateProductionDisplay (IDA 0x5F5850)
+// Updates the production progress bar display
+// ============================================================
+
+// ============================================================
+// ObjectClass vtable[109]: SetPosition (IDA 0x5F6940)
+// Sets object position from CoordStruct (vt_entry_436 in IDA)
+// Used by ConstructionPositionTracker for angle-based positioning
+// ============================================================
+
 } // namespace game
 } // namespace ra2
