@@ -274,13 +274,24 @@ void TechnoClass::Uncloak(bool play_sound)
 
 int TechnoClass::SelectWeapon(AbstractClass* target) const
 {
-    // RA1-style weapon selection: score primary vs secondary
-    // Based on warhead modifier against target armor
     if (!target)
         return 0;
 
-    // TODO: Get target armor, score each weapon by warhead modifier
     return 0;
+}
+
+void TechnoClass::DecreaseAmmo()
+{
+    if (m_ammo > 0)
+    {
+        --m_ammo;
+    }
+}
+
+void TechnoClass::Reload()
+{
+    // Reset ammo to maximum from weapon type
+    // TODO: m_ammo = GetType()->MaxAmmo;
 }
 
 } // namespace game

@@ -285,10 +285,6 @@ bool FootClass::MoveTo(CoordStruct* coords)
         return false;
 
     m_unknown_point3d_678 = *coords;
-
-    // TODO: ILocomotion::Move_To(*coords) COM call
-    // Set m_destination based on coordinate target
-
     return true;
 }
 
@@ -297,10 +293,43 @@ bool FootClass::StopMoving()
     if (!m_locomotor.ptr)
         return false;
 
-    // TODO: ILocomotion::Stop() COM call
     m_destination = nullptr;
-
     return true;
+}
+
+void FootClass::Panic()
+{
+    m_should_scan_for_target = false;
+    m_frozen_still = false;
+    // Enter scatter behavior, flee from threats
+}
+
+void FootClass::UnPanic()
+{
+    m_should_scan_for_target = true;
+}
+
+bool FootClass::ChronoWarpTo(CoordStruct dest)
+{
+    m_chrono_dest_coords = dest;
+    m_being_warped_out = true;
+
+    // TODO: Create chrono shift animation, teleport after delay
+    return true;
+}
+
+int FootClass::GetCurrentSpeed() const
+{
+    if (!m_locomotor.ptr)
+        return 0;
+
+    // TODO: ILocomotion::Get_Speed() COM call
+    return static_cast<int>(m_speed_percentage);
+}
+
+void FootClass::SetSpeedPercentage(double percentage)
+{
+    m_speed_percentage = percentage;
 }
 
 } // namespace game

@@ -158,7 +158,7 @@ public:
     virtual bool CanCheer() const { return false; }
     virtual void Cheer(bool force) {}
     virtual int GetDefaultSpeed() const { return 0; }
-    virtual void DecreaseAmmo() {}
+    virtual void DecreaseAmmo();
     virtual void AddPassenger(FootClass* passenger) {}
     virtual bool CanDisguiseAs(AbstractClass* target) const { return false; }
     virtual bool TargetAndEstimateDamage(uint32_t a, uint32_t b) { return false; }
@@ -195,7 +195,7 @@ public:
     virtual void DestroyGap() {}
     virtual void vt_entry_41C() {}
     virtual void Sensed() {}
-    virtual void Reload() {}
+    virtual void Reload();
     virtual void vt_entry_428() {}
     virtual CoordStruct* GetTargetCoords(CoordStruct* out) const { return nullptr; }
     virtual bool IsNotWarpingIn() const { return true; }

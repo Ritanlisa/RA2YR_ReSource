@@ -42,7 +42,7 @@ public:
     virtual bool MoveTo(CoordStruct* coords);
     virtual bool StopMoving();
     virtual bool vt_entry_504() { return false; }
-    virtual bool ChronoWarpTo(CoordStruct dest) { return false; }
+    virtual bool ChronoWarpTo(CoordStruct dest);
     virtual void Draw_A_SHP(
         SHPStruct* shp, int facing_idx, Point2D* coords, RectangleStruct* rect,
         uint32_t a5, uint32_t a6, uint32_t a7, ZGradient gradient,
@@ -53,18 +53,18 @@ public:
         RectangleStruct* rect, Point2D* center_point, Matrix3DStruct* matrix,
         uint32_t a8, uint32_t draw_flags, uint32_t a10) {}
     virtual void vt_entry_514() {}
-    virtual void Panic() {}
-    virtual void UnPanic() {}
+    virtual void Panic();
+    virtual void UnPanic();
     virtual void PlayIdleAnim(int idle_anim_number) {}
     virtual uint32_t vt_entry_524() { return 0; }
     virtual uint32_t vt_entry_528(uint32_t a, uint32_t b, uint32_t c) const { return 0; }
     virtual uint32_t vt_entry_52C(uint32_t a, uint32_t b, uint32_t c, uint32_t d) const { return 0; }
     virtual uint32_t vt_entry_530(uint32_t a, uint32_t b, uint32_t c) const { return 0; }
     virtual void vt_entry_534(uint32_t a, uint32_t b) {}
-    virtual int GetCurrentSpeed() const { return 0; }
+    virtual int GetCurrentSpeed() const;
     virtual uint32_t vt_entry_53C(uint32_t a) { return 0; }
     virtual void vt_entry_540(uint32_t a) {}
-    virtual void SetSpeedPercentage(double percentage) {}
+    virtual void SetSpeedPercentage(double percentage);
     virtual void vt_entry_548() {}
     virtual void vt_entry_54C() {}
     virtual bool vt_entry_550(uint32_t a) { return false; }
