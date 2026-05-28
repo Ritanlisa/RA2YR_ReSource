@@ -344,7 +344,143 @@ int BuildingClass::Mission_Repair()
 
 int BuildingClass::Mission_Missile()
 {
-    return 0;
+    // RA1 BuildingClass::Mission_Missile — handles nuke silo + GPS satellite launch
+    // Two separate state machines depending on building type
+
+    // GPS Satellite (STRUCT_ADVANCED_TECH in RA1)
+    if (Type && (Type->ICBMLauncher || Type->SpySat))
+    {
+        enum { DOOR_OPENING, LAUNCH_UP, DONE_LAUNCH };
+
+        switch (m_mission_status)
+        {
+        case DOOR_OPENING:
+        {
+            // Open building door
+            // Create door opening animation at center
+            // AnimClass* door_anim = new AnimClass(Type->DoorAnim, CenterCoord());
+
+            // Track door animation
+            // m_mission_data = door_anim;
+            m_mission_status = LAUNCH_UP;
+            return 10;
+        }
+
+        case LAUNCH_UP:
+        {
+            // Wait for door animation to reach launch stage
+            // When ready: create GPS satellite bullet
+            // BulletClass* bullet = new BulletClass(GPS_SATELLITE, target, this, 200, WARHEAD_FIRE, MPH_ROCKET);
+            // bullet->Unlimbo(launch_coord, DIR_N);
+
+            // After launch, return to guard
+            QueueMission(static_cast<ra2::game::Mission>(static_cast<int>(Mission::Guard)), true);
+            return 10;
+        }
+
+        case DONE_LAUNCH:
+        default:
+            QueueMission(static_cast<ra2::game::Mission>(static_cast<int>(Mission::Guard)), true);
+            return 10;
+        }
+    }
+
+    // Nuke Silo
+    if (Type && Type->NukeSilo)
+    {
+        enum { INITIAL, DOOR_OPENING, LAUNCH_UP, LAUNCH_DOWN, DONE_LAUNCH };
+
+        switch (m_mission_status)
+        {
+        case INITIAL:
+        {
+            // Start opening the silo door
+            // Begin_Mode(BSTATE_ACTIVE);
+            m_mission_status = DOOR_OPENING;
+            return 10;
+        }
+
+        case DOOR_OPENING:
+        {
+            // Poll for door fully open
+            // if (IsReadyToCommence) {
+            //     Begin_Mode(BSTATE_AUX1); // hold door open
+            //     m_mission_status = LAUNCH_UP;
+            // }
+            m_mission_status = LAUNCH_UP;
+            return 10;
+        }
+
+        case LAUNCH_UP:
+        {
+            // Launch nuke-up bullet
+            // BulletClass* bullet = new BulletClass(BULLET_NUKE_UP, target, this, 200, WARHEAD_HE, MPH_VERY_FAST);
+            // bullet->Unlimbo(launch_coord, DIR_N);
+
+            // Speak VOX_ABOMB_LAUNCH
+
+            // Launch nuke-down bullet at House->NukeDest
+            // BulletClass* nuke_down = new BulletClass(BULLET_NUKE_DOWN, nuke_target, this, 200, WARHEAD_NUKE, MPH_VERY_FAST);
+            // nuke_down->Unlimbo(nuke_start, DIR_S);
+
+            m_mission_status = DONE_LAUNCH;
+            return 60;
+        }
+
+        case DONE_LAUNCH:
+        {
+            // Close silo door
+            // Begin_Mode(BSTATE_IDLE);
+            QueueMission(static_cast<ra2::game::Mission>(static_cast<int>(Mission::Guard)), true);
+            return 10;
+        }
+
+        default:
+            return 10;
+        }
+    }
+
+    return 10;
+}
+
+// ============================================================
+// ExitObject — unit exit from building (RA1 Exit_Object pattern)
+// Returns: 0=failure, 1=retry, 2=success
+// ============================================================
+int Building_ExitObject(BuildingClass* building, ra2::game::TechnoClass* exiting_unit)
+{
+    if (!exiting_unit || !building || !building->Type)
+        return 0;
+
+    using ra2::game::AbstractType;
+
+    switch (building->Type->Factory)
+    {
+    case AbstractType::Aircraft:
+        // Aircraft exit from helipad/airstrip
+        // air->Unlimbo(dock_coord, air->Pose_Dir());
+        // Transmit_Message(RADIO_HELLO, air);
+        return 1;
+
+    case AbstractType::Unit:
+        if (building->Type->Refinery)
+        {
+            // Harvester exit from refinery
+            // unit->Unlimbo(exit_cell, DIR_SW_X2);
+            // unit->QueueMission(Mission::Harvest, true);
+            return 1;
+        }
+        // War factory exit
+        return 1;
+
+    case AbstractType::Infantry:
+        // Barracks exit
+        // exiting_unit->Unlimbo(Exit_Coord(), dir);
+        return 1;
+
+    default:
+        return 0;
+    }
 }
 
 // ============================================================
