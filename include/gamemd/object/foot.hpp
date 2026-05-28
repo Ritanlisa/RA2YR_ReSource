@@ -156,8 +156,8 @@ protected:
     bool               m_unknown_bool_6B3;
     bool               m_unknown_bool_6B4;
     bool               m_unknown_bool_6B5;
-    bool               m_unknown_bool_6B6;
     bool               m_frozen_still;
+    bool               m_unknown_bool_6B7;
     bool               m_unknown_bool_6B8;
     uint8_t            m_padding_6B9[3];
     uint32_t           m_unused_6BC;

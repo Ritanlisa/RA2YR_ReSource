@@ -77,7 +77,7 @@ FootClass::FootClass() noexcept
     , m_unknown_bool_6B3(false)
     , m_unknown_bool_6B4(false)
     , m_unknown_bool_6B5(false)
-    , m_unknown_bool_6B6(false)
+    , m_unknown_bool_6B7(false)
     , m_frozen_still(false)
     , m_unknown_bool_6B8(false)
     , m_unused_6BC(0)

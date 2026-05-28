@@ -189,6 +189,39 @@ public:
     virtual int GetOccupyRangeBonus() const { return 0; }
     virtual int GetOccupantCount() const { return 0; }
     virtual void OnFinishRepair() {}
+
+    virtual void UpdateCloak(bool unknown = true);
+    virtual void CreateGap();
+    virtual void DestroyGap();
+    virtual void vt_entry_41C() {}
+    virtual void Sensed() {}
+    virtual void Reload();
+    virtual void vt_entry_428() {}
+    virtual CoordStruct* GetTargetCoords(CoordStruct* pCrd) const { return nullptr; }
+    virtual bool IsNotWarpingIn() const { return false; }
+    virtual bool vt_entry_434(uint32_t dwUnk) const { return false; }
+    virtual void DrawActionLines(bool force, uint32_t dwUnk2) {}
+    virtual uint32_t GetDisguiseFlags(uint32_t existingFlags) const { return 0; }
+    virtual bool IsClearlyVisibleTo(HouseClass* house) const { return false; }
+    virtual void vt_entry_444(uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5,
+        uint32_t a6, uint32_t a7, uint32_t a8, uint32_t a9, uint32_t a10) {}
+    virtual void vt_entry_448(uint32_t a, uint32_t b) {}
+    virtual void DrawHealthBar(Point2D* pLocation, RectangleStruct* pBounds, bool bUnk3) const {}
+    virtual void DrawPipScalePips(Point2D* pLocation, Point2D* pOriginalLocation, RectangleStruct* pBounds) const {}
+    virtual void DrawVeterancyPips(Point2D* pLocation, RectangleStruct* pBounds) const {}
+    virtual void DrawExtraInfo(Point2D const& location, Point2D const& originalLocation, RectangleStruct const& bounds) const {}
+    virtual void Uncloak(bool play_sound);
+    virtual void Cloak(bool play_sound);
+    virtual uint32_t vt_entry_464(uint32_t dwUnk) const { return 0; }
+    virtual void UpdateRefinerySmokeSystems() {}
+    virtual uint32_t DisguiseAs(AbstractClass* pTarget) { return 0; }
+    virtual void ClearDisguise() {}
+    virtual bool IsItTimeForIdleActionYet() const { return false; }
+    virtual bool UpdateIdleAction() { return false; }
+    virtual void vt_entry_47C(uint32_t dwUnk) {}
+    virtual void SetDestination(AbstractClass* dest, bool unknown);
+    virtual bool vt_entry_484(uint32_t dwUnk, uint32_t dwUnk2) { return false; }
+    virtual void UpdateSight(uint32_t a, uint32_t b, uint32_t c, uint32_t d, uint32_t e);
     virtual void vt_entry_48C(uint32_t a, uint32_t b, uint32_t c, uint32_t d) {}
     virtual void vt_entry_490(uint32_t a, uint32_t b) = 0;
     virtual void RadarTrackingStart();
@@ -208,21 +241,9 @@ public:
     virtual void vt_entry_4CC() {}
     virtual bool vt_entry_4D0() { return false; }
 
-    int SelectWeapon(AbstractClass* target) const;
-    virtual void UpdateCloak(bool unknown = true);
-    virtual void Cloak(bool play_sound);
-    virtual void Uncloak(bool play_sound);
-    virtual void Reload();
-    virtual void SetDestination(AbstractClass* dest, bool unknown);
-    virtual void UpdateSight(uint32_t a, uint32_t b, uint32_t c, uint32_t d, uint32_t e);
-    virtual void SmokeUpdate();
-    virtual void CreateGap();
-    virtual void DestroyGap();
-    virtual void vt_entry_4E0() {}
-    virtual void UpdateGap() {}
-    virtual bool vt_entry_4E8() { return true; }
-
-    bool CreateUnit(); // IDA 0x423AC0: per-frame unit construction pipeline
+    virtual int SelectWeapon(AbstractClass* target) const;
+    void SmokeUpdate();
+    bool CreateUnit();
 
     int GetIonCannonValue(AIDifficulty difficulty) const { return 0; }
 
