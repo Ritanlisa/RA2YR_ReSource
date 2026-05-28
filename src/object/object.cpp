@@ -2,6 +2,7 @@
 #include "gamemd/type/object_type.hpp"
 
 #include <cstring>
+#include <cmath>
 
 namespace ra2 {
 namespace game {
@@ -50,6 +51,93 @@ void ObjectClass::Destroy()
 {
     Remove();
     m_is_alive = false;
+}
+
+DamageState ObjectClass::ReceiveDamage(int* damage, int distance_from_epicenter, WarheadTypeClass* wh,
+    ObjectClass* attacker, bool ignore_defenses, bool prevent_passenger_escape, HouseClass* attacking_house)
+{
+    if (!m_is_alive || !m_is_on_map)
+        return static_cast<DamageState>(0);
+
+    if (m_health <= 0)
+    {
+        Destroy();
+        return static_cast<DamageState>(0);
+    }
+
+    if (damage && *damage > 0)
+    {
+        // Apply armor/verses modifiers from warhead
+        // TODO: full warhead-vs-armor calculation
+        int actual_damage = *damage;
+        m_health -= actual_damage;
+        m_estimated_health = m_health;
+
+        if (m_health <= 0)
+        {
+            m_health = 0;
+            Destroy();
+            if (attacker)
+                RegisterDestruction(reinterpret_cast<TechnoClass*>(attacker));
+            if (attacking_house)
+                RegisterKill(attacking_house);
+            return static_cast<DamageState>(1); // destroyed
+        }
+    }
+
+    return static_cast<DamageState>(2); // damaged
+}
+
+void ObjectClass::Scatter(const CoordStruct& coords, bool ignore_mission, bool ignore_destination)
+{
+    // RA1 scatter: move away from threat in random direction
+    if (!m_is_alive || !m_is_on_map)
+        return;
+
+    // TODO: calculate scatter destination based on threat direction
+    // For now, basic scatter just marks for movement
+    (void)coords;
+    (void)ignore_mission;
+    (void)ignore_destination;
+}
+
+bool ObjectClass::Ignite()
+{
+    // Start fire/damage burning state
+    // TODO: create fire animation, set burning timer
+    return true;
+}
+
+void ObjectClass::Extinguish()
+{
+    // Stop fire/damage burning state
+    // TODO: remove fire animation, clear burning timer
+}
+
+int ObjectClass::GetWeaponRange(int weapon_idx) const
+{
+    auto* type = reinterpret_cast<gamemd::ObjectTypeClass*>(GetType());
+    if (!type)
+        return 0;
+
+    // TODO: return type->GetWeapon(weapon_idx)->Range
+    (void)weapon_idx;
+    return 0;
+}
+
+int ObjectClass::DistanceFrom(AbstractClass* that) const
+{
+    if (!that)
+        return 0;
+
+    CoordStruct my_coords = GetCoords();
+    CoordStruct their_coords = that->GetCoords();
+
+    int dx = my_coords.X - their_coords.X;
+    int dy = my_coords.Y - their_coords.Y;
+    int dz = my_coords.Z - their_coords.Z;
+
+    return static_cast<int>(std::sqrt(static_cast<double>(dx*dx + dy*dy + dz*dz)));
 }
 
 ObjectClass::ObjectClass() noexcept

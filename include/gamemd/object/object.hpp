@@ -110,13 +110,13 @@ public:
     virtual void StartAirstrikeTimer(int duration) {}
     virtual bool IsIronCurtained() const { return false; }
     virtual bool IsCloseEnough3D(uint32_t a, uint32_t b) const { return false; }
-    virtual int GetWeaponRange(int weapon_idx) const { return 0; }
+    virtual int GetWeaponRange(int weapon_idx) const;
     virtual DamageState ReceiveDamage(int* damage, int distance_from_epicenter, WarheadTypeClass* wh,
-        ObjectClass* attacker, bool ignore_defenses, bool prevent_passenger_escape, HouseClass* attacking_house) { return static_cast<DamageState>(0); }
+        ObjectClass* attacker, bool ignore_defenses, bool prevent_passenger_escape, HouseClass* attacking_house);
     virtual void Destroy();
-    virtual void Scatter(const CoordStruct& coords, bool ignore_mission, bool ignore_destination) {}
-    virtual bool Ignite() { return false; }
-    virtual void Extinguish() {}
+    virtual void Scatter(const CoordStruct& coords, bool ignore_mission, bool ignore_destination);
+    virtual bool Ignite();
+    virtual void Extinguish();
     virtual uint32_t GetPointsValue() const { return 0; }
     virtual Mission GetCurrentMission() const { return static_cast<Mission>(0); }
     virtual void RestoreMission(Mission mission) {}
@@ -144,7 +144,7 @@ public:
     virtual bool IsNotWarping() const { return false; }
     virtual LightConvertClass* GetRemapColour() const { return nullptr; }
 
-    int DistanceFrom(AbstractClass* that) const { return 0; }
+    int DistanceFrom(AbstractClass* that) const;
 
     virtual double GetHealthPercentage() const;
 

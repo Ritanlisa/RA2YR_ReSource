@@ -59,5 +59,8 @@ MIX_Format.html
 .env
 
 # 测试文件
-*.mixbuild_err.txt
+*.mix
+MOMIX/
+RA2YRMIX/
+build_err.txt
 build_errors.txt
