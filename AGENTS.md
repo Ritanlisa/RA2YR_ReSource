@@ -230,6 +230,52 @@ D:\RA2YR_ReSource\
 
 ---
 
+## 当前会话上下文 (快速恢复)
+
+### 已完成 (最近)
+
+| 任务 | 文件 | 状态 |
+|------|------|------|
+| MIX 通用格式读取器 | mix_file.cpp | ✅ 3 种格式验证 |
+| Blowfish 引擎 (1042 常量) | mix_blowfish.cpp | ✅ 回合验证 |
+| Westwood 密钥计算 (RSA) | mix_blowfish.cpp | ✅ expandmd01 解密 |
+| BuildingClass 状态机 ×4 | building.cpp | ✅ RA1 导出 |
+| Infantry/Unit/Aircraft 状态机 | infantry/unit/aircraft.cpp | ✅ RA1 导出 |
+| FootClass 移动/路径 | foot.cpp | ✅ RA1 导出 |
+| TechnoClass 战斗函数 | techno.cpp | ✅ Fire/GetFireError/Guard |
+| CreateUnit 骨架 | techno.cpp | 📋 IDA 反编译完成，待翻译 |
+| 所有 C4099 警告修复 | 24 个头文件 | ✅ 0 warnings |
+
+### 当前 TODO (Priority Order)
+
+1. **P0**: `TechnoClass::CreateUnit` 完整翻译 — IDA 0x423AC0 (4234B), 骨架已在 techno.cpp:517
+2. **P0**: `sub_453E20` BuildingClass 工厂翻译 — IDA 0x453E20 (870B)
+3. **P1**: `sub_424CE0`/`sub_424F00` 生产回调完善
+4. **P1**: 更多 IDA BuildingClass vtable 函数识别
+5. **P2**: 动态调试 (DLL injection)
+6. **Far Future**: Ares/Phobos 扩展原生支持
+
+### 项目关键信息
+
+- **命名空间**: `ra2::game` (核心层次) / `gamemd` (其他)
+- **枚举跨命名空间**: 用 `static_cast<ra2::game::Mission>(static_cast<int>(gamemd::Mission::X))` 桥接
+- **类定义 vs 前向声明**: 必须一致 (class/struct), 24 文件已修复
+- **BuildingTypeClass**: 已有 ~270 成员，可直接使用 Type->Xxx
+- **HouseClass**: `ra2::game` 仅前向声明, 不能用 `->` 访问成员
+- **MIX 格式**: 前 2B=0 为扩展格式; flags 0x0002=加密; 算法来自 RA1 MixFileClass
+- **MIX 文件名**: 仅存 hash ID, 不存原始名; 通过 `ComputeId()` 匹配
+- **IDA 连接**: `127.0.0.1:13337`, i64 在 `C:\Program Files (x86)\Mental Omega\gamemd.exe.i64`
+- **Python**: 3.14.2 (`python` 或 `py`), Windows 上已就绪
+
+### 测试数据
+
+| 目录 | 格式 | 已验证 |
+|------|------|--------|
+| RA2YRMIX/ | first=0, flags=0x0003 (加密) | expandmd01(33文件), language(6), WDT(126) |
+| MOMIX/ | first=0, flags=0x0000 (无加密) | expandmo04(66), expandmo90(45) |
+
+---
+
 ## Next Session Work Plan
 
 ### P0: CreateUnit 完整翻译
