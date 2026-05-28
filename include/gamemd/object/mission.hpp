@@ -25,11 +25,11 @@ public:
 
     virtual ~MissionClass() = default;
 
-    virtual bool QueueMission(Mission mission, bool start_mission) { return false; }
-    virtual bool NextMission() { return false; }
-    virtual void ForceMission(Mission mission) {}
+    virtual bool QueueMission(Mission mission, bool start_mission);
+    virtual bool NextMission();
+    virtual void ForceMission(Mission mission);
     virtual void vt_entry_1F4(Mission mission) {}
-    virtual bool Mission_Revert() { return false; }
+    virtual bool Mission_Revert();
     virtual bool vt_entry_1FC() const { return false; }
     virtual bool vt_entry_200() const { return false; }
 

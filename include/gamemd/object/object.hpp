@@ -119,7 +119,7 @@ public:
     virtual void Extinguish();
     virtual uint32_t GetPointsValue() const { return 0; }
     virtual Mission GetCurrentMission() const { return static_cast<Mission>(0); }
-    virtual void RestoreMission(Mission mission) {}
+    virtual void RestoreMission(Mission mission);
     virtual void UpdatePosition(int unknown) {}
     virtual BuildingClass* FindFactory(bool allow_occupied, bool require_power) const { return nullptr; }
     virtual RadioCommand ReceiveCommand(TechnoClass* sender, RadioCommand command, AbstractClass*& inout) { return static_cast<RadioCommand>(0); }

@@ -53,6 +53,11 @@ void ObjectClass::Destroy()
     m_is_alive = false;
 }
 
+void ObjectClass::RestoreMission(Mission mission)
+{
+    // Override in MissionClass for actual mission queue management
+}
+
 DamageState ObjectClass::ReceiveDamage(int* damage, int distance_from_epicenter, WarheadTypeClass* wh,
     ObjectClass* attacker, bool ignore_defenses, bool prevent_passenger_escape, HouseClass* attacking_house)
 {

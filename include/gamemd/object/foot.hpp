@@ -70,13 +70,18 @@ public:
     virtual bool vt_entry_550(uint32_t a) { return false; }
 
     bool MovementAI();
-    void HandleMovementSoundUpdate();
-    void HandleLocomotionUpdate();
 
     int Mission_Move() override;
     int Mission_Attack() override;
     int Mission_Guard() override;
     int Mission_Hunt() override;
+
+protected:
+    void EmitMovementSmoke();
+    void UpdateMovementAmbiguity();
+    void UpdateMovementSpeed();
+    void HandleMovementSoundUpdate();
+    void HandleLocomotionUpdate();
 
     // ---- member variables ----
 
