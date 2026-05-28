@@ -935,11 +935,16 @@ static bool CreateUnitOnCompletion(TechnoClass* techno)
 
 // ============================================================
 // ConstructionPositionTracker — sub_425670 (1688B)
-// IDA 0x425670. Tracks building movement during construction:
-//   - Manages production timer based on movement state
-//   - Calculates position delta from target coordinates
-//   - Determines direction/angle for construction
-//   - Checks cell occupancy for placement validity
+// IDA 0x425670. Tracks building/pod position during construction.
+//
+// Key logic:
+//  1. If not ProductionBlocked: start production timer
+//  2. Compare current position vs target position
+//  3. If target is invalid (Map_InvalidCoord): compute new target
+//  4. If within range (distance <= 18): snap to target, check cell
+//  5. If out of range: calculate angle, adjust position via vt_entry_436
+//  6. Check cell walkability at 3 neighbor cells
+//  7. Calculate direction angle → update production progress timer
 // ============================================================
 static void ConstructionPositionTracker(TechnoClass* techno)
 {
@@ -947,25 +952,48 @@ static void ConstructionPositionTracker(TechnoClass* techno)
     auto* type = reinterpret_cast<gamemd::BuildingTypeClass*>(techno->GetTechnoType());
     if (!type) return;
 
-    // IDA flow:
-    // 1. If not repositioning (byte +410):
-    //    - Set production timer using CurrentFrame
-    // 2. Compare current position (this+39/40/41) with target (this+66/67/68)
-    // 3. If position matches target:
-    //    - Mark as positioned (set byte +410)
-    //    - Set production timer from subtype field (type+848)
-    //    - vt_entry_248(this) to finalize
-    // 4. If position differs:
-    //    - Calculate angle/direction (sub_41C230, sub_41C380)
-    //    - Adjust position timing
-    //    - Check cell walkability (sub_5657A0 → field_320)
-    //    - If small delta: try alternative cell offset (dword_89F688)
-    // 5. If not positioned yet:
-    //    - Compute direction from position delta (sub_4CAE30)
-    //    - Calculate rotation angle → update production timer
-    // 6. Final check on foundation size and vt_entry_248
+    // Section 1: Start production timer if not blocked
+    if (!building->ProductionBlocked)
+    {
+        building->ProductionFrame = static_cast<int>(CurrentFrame);
+        building->ProductionSpeed = 0;
+        building->ProductionRate = 0;
+    }
 
-    // TODO: full implementation when coordinate math and cell system are ready
+    // Section 2-3: Target position management
+    // IDA: Compare current location with target coords (this+0x210 area)
+    //       If target matches Map_InvalidCoord or ProductionBlocked:
+    //         Compute position via Building_ComputePosition
+    //         If computed is still invalid: mark ProductionBlocked,
+    //           set ProductionSpeed=1, recalculate mission timer
+
+    // Section 4: Distance check
+    // IDA: Coord_Subtract(current_pos - target_pos)
+    //       If Coord_Length(delta) > 18: far away
+    //         Calculate angle (Math_SinCos/ArcTan2), adjust position
+    //         vt_entry_436(this, adjusted_coords)
+    //       Else: close enough
+    //         Check cell type (Coord_To_Cell + cell_data[59])
+    //         If valid: update target position from Building_ComputePosition
+    //         Increment retry counter
+
+    // Section 5: Cell walkability check
+    // IDA: if building is on surface (Coordinates.Z >= ground + threshold)
+    //        Check 3 adjacent cells for walkability (cell_data[80] & 0x100)
+    //        If all 3 are blocked: set flag (this+141 = 1)
+
+    // Section 6: Angle calculation and timer update
+    // IDA: if not ProductionBlocked:
+    //        If current position != target:
+    //          Math_CalcAngle(Y_delta, X_delta) → direction
+    //          Math_RoundToInt(angle) → rotation steps
+    //          rotation_steps = type+848 * calculated_steps
+    //        CurrentMission = rotation_steps + (CurrentFrame/3 % type+848)
+    //
+    // IDA: if ProductionBlocked:
+    //        foundation_size = vt_entry_108(this).GetFoundationWidth() / 2 - 1
+    //        if CurrentMission >= foundation_size:
+    //          vt_entry_248(this) → complete construction
 }
 
 // ============================================================
