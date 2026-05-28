@@ -39,8 +39,8 @@ public:
     virtual CoordStruct* vt_entry_4F0(CoordStruct* out) { return nullptr; }
     virtual void vt_entry_4F4() {}
     virtual bool vt_entry_4F8() { return false; }
-    virtual bool MoveTo(CoordStruct* coords) { return false; }
-    virtual bool StopMoving() { return false; }
+    virtual bool MoveTo(CoordStruct* coords);
+    virtual bool StopMoving();
     virtual bool vt_entry_504() { return false; }
     virtual bool ChronoWarpTo(CoordStruct dest) { return false; }
     virtual void Draw_A_SHP(

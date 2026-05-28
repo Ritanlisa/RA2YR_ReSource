@@ -259,5 +259,29 @@ void TechnoClass::SetTarget(AbstractClass* target)
     }
 }
 
+void TechnoClass::Cloak(bool play_sound)
+{
+    m_cloak_state = static_cast<uint32_t>(2); // CLOAKED
+    m_cloakable = true;
+    // TODO: play cloak sound if play_sound
+}
+
+void TechnoClass::Uncloak(bool play_sound)
+{
+    m_cloak_state = static_cast<uint32_t>(1); // UNCLOAKING
+    // TODO: play uncloak sound if play_sound
+}
+
+int TechnoClass::SelectWeapon(AbstractClass* target) const
+{
+    // RA1-style weapon selection: score primary vs secondary
+    // Based on warhead modifier against target armor
+    if (!target)
+        return 0;
+
+    // TODO: Get target armor, score each weapon by warhead modifier
+    return 0;
+}
+
 } // namespace game
 } // namespace ra2

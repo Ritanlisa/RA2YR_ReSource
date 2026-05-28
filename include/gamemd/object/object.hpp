@@ -128,16 +128,16 @@ public:
     virtual void Sell(uint32_t unknown) {}
     virtual void AssignPlanningPath(int path_idx, signed char wp_idx) {}
     virtual void vt_entry_1A8(uint32_t a) {}
-    virtual Move IsCellOccupied(CellClass* dest_cell, int facing, int level, CellClass* source_cell, bool alt) const { return static_cast<Move>(0); }
+    virtual Move IsCellOccupied(CellClass* dest_cell, int facing, int level, CellClass* source_cell, bool alt) const;
     virtual uint32_t vt_entry_1B0(uint32_t a, uint32_t b, uint32_t c, uint32_t d, uint32_t e) { return 0; }
     virtual void SetLocation(const CoordStruct& coords) {}
     virtual CellStruct* GetMapCoords(CellStruct* out) const { return nullptr; }
     virtual CellClass* GetCell() const { return nullptr; }
     virtual CellStruct* GetMapCoordsAgain(CellStruct* out) const { return nullptr; }
     virtual CellClass* GetCellAgain() const { return nullptr; }
-    virtual int GetHeight() const { return 0; }
-    virtual void SetHeight(uint32_t height) {}
-    virtual int GetZ() const { return 0; }
+    virtual int GetHeight() const;
+    virtual void SetHeight(uint32_t height);
+    virtual int GetZ() const;
     virtual bool IsBeingWarpedOut() const { return false; }
     virtual bool IsWarpingIn() const { return false; }
     virtual bool IsWarpingSomethingOut() const { return false; }

@@ -115,7 +115,7 @@ public:
     int GetAntiArmorValue() const { return 0; }
     int GetAntiInfantryValue() const { return 0; }
     virtual void GotHijacked() {}
-    int SelectWeapon(AbstractClass* target) const { return 0; }
+    int SelectWeapon(AbstractClass* target) const;
     virtual int SelectNavalTargeting(AbstractClass* target) const { return 0; }
     virtual int GetZAdjustment() const { return 0; }
     virtual ZGradient GetZGradient() const { return static_cast<ZGradient>(-1); }
@@ -211,8 +211,8 @@ public:
     void DrawPipScalePips(Point2D* location, Point2D* original_location, RectangleStruct* bounds) const {}
     void DrawVeterancyPips(Point2D* location, RectangleStruct* bounds) const {}
     void DrawExtraInfo(const Point2D& location, const Point2D& original_location, const RectangleStruct& bounds) const {}
-    virtual void Uncloak(bool play_sound) {}
-    virtual void Cloak(bool play_sound) {}
+    virtual void Uncloak(bool play_sound);
+    virtual void Cloak(bool play_sound);
     virtual uint32_t vt_entry_464(uint32_t a) const { return 0; }
     virtual void UpdateRefinerySmokeSystems() {}
     virtual uint32_t DisguiseAs(AbstractClass* target) { return 0; }

@@ -145,6 +145,31 @@ int ObjectClass::DistanceFrom(AbstractClass* that) const
     return static_cast<int>(std::sqrt(static_cast<double>(dx*dx + dy*dy + dz*dz)));
 }
 
+Move ObjectClass::IsCellOccupied(CellClass* dest_cell, int facing, int level, CellClass* source_cell, bool alt) const
+{
+    if (!dest_cell)
+        return static_cast<Move>(0);
+
+    // Check if cell contains an object that blocks movement
+    // TODO: full cell occupancy check with facing/level/alt logic
+    return static_cast<Move>(1);
+}
+
+int ObjectClass::GetHeight() const
+{
+    return m_location.Z;
+}
+
+void ObjectClass::SetHeight(uint32_t height)
+{
+    m_location.Z = static_cast<int>(height);
+}
+
+int ObjectClass::GetZ() const
+{
+    return m_location.Z;
+}
+
 bool ObjectClass::CanBeSelected() const
 {
     return m_is_alive && m_is_on_map && !m_in_limbo;

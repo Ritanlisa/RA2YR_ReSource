@@ -279,5 +279,29 @@ int FootClass::Mission_Hunt()
     return 30;
 }
 
+bool FootClass::MoveTo(CoordStruct* coords)
+{
+    if (!coords || !m_locomotor.ptr)
+        return false;
+
+    m_unknown_point3d_678 = *coords;
+
+    // TODO: ILocomotion::Move_To(*coords) COM call
+    // Set m_destination based on coordinate target
+
+    return true;
+}
+
+bool FootClass::StopMoving()
+{
+    if (!m_locomotor.ptr)
+        return false;
+
+    // TODO: ILocomotion::Stop() COM call
+    m_destination = nullptr;
+
+    return true;
+}
+
 } // namespace game
 } // namespace ra2
