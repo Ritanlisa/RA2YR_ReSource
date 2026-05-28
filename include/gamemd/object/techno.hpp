@@ -191,10 +191,10 @@ public:
     virtual void OnFinishRepair() {}
     virtual void vt_entry_48C(uint32_t a, uint32_t b, uint32_t c, uint32_t d) {}
     virtual void vt_entry_490(uint32_t a, uint32_t b) = 0;
-    virtual void RadarTrackingStart() {}
-    virtual void RadarTrackingStop() {}
-    virtual void RadarTrackingFlash() {}
-    virtual void RadarTrackingUpdate(bool unknown) {}
+    virtual void RadarTrackingStart();
+    virtual void RadarTrackingStop();
+    virtual void RadarTrackingFlash();
+    virtual void RadarTrackingUpdate(bool unknown);
     virtual void vt_entry_4A4(uint32_t a) {}
     virtual void vt_entry_4A8() {}
     virtual bool vt_entry_4AC() const { return false; }
@@ -209,7 +209,7 @@ public:
     virtual bool vt_entry_4D0() { return false; }
 
     int SelectWeapon(AbstractClass* target) const;
-    void UpdateCloak(bool unknown = true) {}
+    void UpdateCloak(bool unknown = true);
     virtual void Cloak(bool play_sound);
     virtual void Uncloak(bool play_sound);
     virtual void Reload();

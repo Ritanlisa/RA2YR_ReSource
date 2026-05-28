@@ -226,6 +226,13 @@ void ObjectClass::Reveal()
     m_is_visible = true;
 }
 
+void ObjectClass::Flash(int duration)
+{
+    // Toggle selected flash state
+    (void)duration;
+    m_needs_redraw = true;
+}
+
 bool ObjectClass::DiscoveredBy(HouseClass* house)
 {
     (void)house;

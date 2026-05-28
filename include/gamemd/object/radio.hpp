@@ -23,10 +23,10 @@ public:
 
     virtual ~RadioClass() = default;
 
-    virtual RadioCommand SendToFirstLink(RadioCommand command) { return static_cast<RadioCommand>(0); }
-    virtual RadioCommand SendCommand(RadioCommand command, TechnoClass* recipient) { return static_cast<RadioCommand>(0); }
-    virtual RadioCommand SendCommandWithData(RadioCommand command, AbstractClass*& inout, TechnoClass* recipient) { return static_cast<RadioCommand>(0); }
-    virtual void SendToEachLink(RadioCommand command) {}
+    virtual RadioCommand SendToFirstLink(RadioCommand command);
+    virtual RadioCommand SendCommand(RadioCommand command, TechnoClass* recipient);
+    virtual RadioCommand SendCommandWithData(RadioCommand command, AbstractClass*& inout, TechnoClass* recipient);
+    virtual void SendToEachLink(RadioCommand command);
 
     TechnoClass* const& GetNthLink(int idx = 0) const { return m_radio_links.Items[idx]; }
     bool HasFreeLink() const { return m_radio_links.Count < m_radio_links.Capacity; }

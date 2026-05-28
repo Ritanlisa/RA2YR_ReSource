@@ -310,10 +310,39 @@ void TechnoClass::DestroyGap()
 
 void TechnoClass::UpdateSight(uint32_t a, uint32_t b, uint32_t c, uint32_t d, uint32_t e)
 {
-    // Update fog of war visibility around this unit
-    // TODO: MapClass::RevealArea2 at current position with sight range
     m_last_sight_coords = m_location;
-    // m_last_sight_range = GetSightRange();
+}
+
+void TechnoClass::UpdateCloak(bool unknown)
+{
+    if (!m_cloakable)
+        return;
+
+    if (ShouldBeCloaked() && m_cloak_state != 2)
+        Cloak(true);
+    else if (ShouldNotBeCloaked() && m_cloak_state != 1)
+        Uncloak(true);
+}
+
+void TechnoClass::RadarTrackingStart()
+{
+    m_is_radar_tracked = true;
+}
+
+void TechnoClass::RadarTrackingStop()
+{
+    m_is_radar_tracked = false;
+}
+
+void TechnoClass::RadarTrackingFlash()
+{
+    // Toggle radar blip visibility
+    m_is_radar_tracked = !m_is_radar_tracked;
+}
+
+void TechnoClass::RadarTrackingUpdate(bool unknown)
+{
+    (void)unknown;
 }
 
 } // namespace game

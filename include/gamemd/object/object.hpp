@@ -102,7 +102,7 @@ public:
     virtual bool CanBeSelectedNow() const;
     virtual bool vt_entry_140(uint32_t a, uint32_t b, uint32_t c, uint32_t d) { return false; }
     virtual bool ClickedAction(Action action, ObjectClass* target, bool unknown) { return false; }
-    virtual void Flash(int duration) {}
+    virtual void Flash(int duration);
     virtual bool Select();
     virtual void Deselect();
     virtual DamageState IronCurtain(int duration, HouseClass* source, bool force_shield);
