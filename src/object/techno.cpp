@@ -820,14 +820,15 @@ bool TechnoClass::CreateUnit()
 
 // ============================================================
 // ProductionCompletionCallback — sub_424CE0 (543B)
-// IDA 0x424CE0. Called when production timer expires or a
-// production milestone is reached.
+// IDA 0x424CE0. Called when production timer expires.
 //
-// Handles:
-//   - Production display update
-//   - Audio start/stop (working sound)
-//   - Special building animations (NukeSilo, SpySat, etc.)
-//   - Unit creation via sub_424F00
+// Sections:
+//  1. vt_entry_292(this, 2) — update production progress display
+//  2. Audio: start/stop WorkingSound on Audio7 controller
+//  3. Audio: stop Audio8 controller
+//  4. If no completion threshold (type+664 == 0): create unit immediately
+//  5. Special building launch (NukeSilo/ICBM/SpySat): launch animation + EVA
+//  6. Cell radar update after launch
 // ============================================================
 static bool ProductionCompletionCallback(TechnoClass* techno)
 {
@@ -835,38 +836,63 @@ static bool ProductionCompletionCallback(TechnoClass* techno)
     auto* type = reinterpret_cast<gamemd::BuildingTypeClass*>(techno->GetTechnoType());
     if (!type) return false;
 
-    // vt_entry_292(this, 2) — update production display
-    // TODO
+    // Section 1: Update production progress display
+    // TODO: vt_entry_292(this, 2)
 
-    // Audio management: stop/start working sound
-    if (techno->m_audio3.unknown_00 || type->WorkingSound == -1)
+    // Section 2-3: Audio management
+    bool audio_active = (techno->m_audio3.unknown_00 != 0);
+    bool has_working_sound = (type->WorkingSound != -1);
+
+    if (audio_active || !has_working_sound)
     {
-        // TODO: sub_405D40(building->Audio7) — stop building audio
+        // No audio or no sound configured → stop Audio7
+        // TODO: AudioController_Stop(&building->Audio7)
     }
     else
     {
-        // TODO: Start building working sound
-        // CoordStruct coords; techno->GetCoords(&coords);
-        // sub_7509E0(building->Audio7)
+        // Start working sound on Audio7
+        // TODO: CoordStruct coords; GetCoords(&coords);
+        // AudioController_StartAt(type->WorkingSound, coords, &building->Audio7)
     }
-    // TODO: sub_405D40(building->Audio8)
+    // Stop Audio8
+    // TODO: AudioController_Stop(&building->Audio8)
 
-    // If no completion threshold, try creating unit immediately
+    // Section 4: Immediate unit creation if no threshold
     if (!type->ProductionCompletionThreshold)
     {
-        // TODO: sub_424F00(techno)
+        // TODO: CreateUnitOnCompletion(techno)
     }
 
-    // Check special building type (NukeSil / ICBM / SpySat)
-    if (!techno->m_audio3.unknown_00)
+    // Section 5: Special building launch sequence
+    // IDA: check field_855 → NukeSilo / ICBMLauncher / SpySat types
+    if (!audio_active)
     {
-        if (type->ICBMLauncher || type->SpySat || type->NukeSilo) // IDA: field_855
+        if (type->ICBMLauncher || type->SpySat || type->NukeSilo)
         {
-            // TODO: Special building launch sequence
-            // 1. Get cell owner of building position
-            // 2. Find the special building instance at that cell
-            // 3. 1-in-3 chance to create launch animation
-            // 4. Play special sound effect (Rules[1002])
+            // Get cell at building position
+            // TODO: cell = Coord_To_Cell(GetCoords())
+            // TODO: building_idx = BuildingClass_FindByCellHash(cell)
+            // if (building_idx != -1) {
+            //     building_instance = BuildingClass_InstanceArray[building_idx]
+            //     EVA_Announce(cell, cell->field_286 + 1)
+            //
+            //     // 1-in-3 chance: create launch animation
+            //     if (building_instance->field_53 > 0 && !(random() % 3)) {
+            //         AnimClass* anim = new AnimClass(
+            //             building_instance->Anims[random(0, field_53)],
+            //             coords + Z(10),
+            //             0, 1, 0x600, 0, 0)
+            //         anim->X = BuildingTypeClass_AnimTable[building_instance->field_48 + 780]
+            //         anim->Y = cell->field_266
+            //     }
+            //
+            //     PlaySoundEffectAt(coords, Rules[346], ...)
+            //     House_AnnounceUpgrade(cell, -1)
+            //     Cell_SetRadar(cell)
+            //     Radar_Update(cell)
+            // }
+
+            // TODO: Full launch sequence implementation
         }
     }
 
@@ -875,14 +901,14 @@ static bool ProductionCompletionCallback(TechnoClass* techno)
 
 // ============================================================
 // CreateUnitOnCompletion — sub_424F00 (583B)
-// IDA 0x424F00. Called during production completion to
-// create the final unit or trigger special effects.
+// IDA 0x424F00. Creates unit at completion of production.
 //
-// Handles:
-//   - Cell coordinate calculation
-//   - Foundation offset lookup
-//   - Super weapon effect creation
-//   - Unit creation (sub_6B5C90 / sub_6B59A0)
+// Sections:
+//  1. Get cell coordinates from building position
+//  2. Look up foundation size offsets (type+668, type+672)
+//  3. Create super weapon fire effects (type+716 → SW_CreateFireAt)
+//  4. Get construction delay (vt_entry_456)
+//  5. Branch: CreateUnitAtCoords_Timed or _Standard
 // ============================================================
 static bool CreateUnitOnCompletion(TechnoClass* techno)
 {
@@ -890,47 +916,56 @@ static bool CreateUnitOnCompletion(TechnoClass* techno)
     auto* type = reinterpret_cast<gamemd::BuildingTypeClass*>(techno->GetTechnoType());
     if (!type) return false;
 
-    // Get cell coordinates from building position
-    // CoordStruct coords; techno->GetCoords(&coords);
-    // int cell_x = coords.X / 256;
-    // int cell_y = coords.Y / 256;
-    // CellStruct cell{cell_x, cell_y};
-    // auto* cell_obj = sub_5657A0(&cell);
+    // Section 1: Get cell coordinates
+    // IDA: coords = GetCoords() / 256 → CellCoord_To_CellObj
+    // auto* coords = GetCoords(); // via vt_entry_72
+    // int cell_x = coords->X / 256;
+    // int cell_y = coords->Y / 256;
+    // auto* cell = CellCoord_To_CellObj(CellStruct{cell_x, cell_y});
+
     int build_time = 30;
 
-    // vt_entry_108: check if factory has custom foundation offsets
-    // if (techno->vt_entry_108()) {
-    //     if (type->field_668 == -1) type->field_668 = ... (GetFoundationOffset1)
-    //     if (type->field_672 == -1) type->field_672 = ... (GetFoundationOffset2)
-    //     build_time = type->field_672;
+    // Section 2: Foundation size offsets
+    // IDA: vt_entry_108(this) → if active, calculate foundation dimensions
+    // if (vt_entry_108(this)) {
+    //     if (type+668 == -1)
+    //         type+668 = Building_GetFoundationSize(coords, type+664)[2]
+    //     if (type+672 == -1)
+    //         type+672 = Building_GetFoundationSize(coords, type+664)[3]
+    //     build_time = type+672
     // }
 
-    // Super weapon / special effect creation
+    int foundation_width = build_time; // placeholder for type+668
+
+    // Section 3: Super weapon fire effects
+    // IDA: type+716 → index into SW array, type+720 → count
     if (type->Unknown_716 != -1)
     {
         for (int i = 0; i < type->Unknown_720; ++i)
         {
-            // TODO: sub_62E430(special_array[type->Unknown_716], coords)
+            // auto sw_coords = GetCoords();
+            // SW_CreateFireAt(sw_array[type+716], sw_coords)
         }
     }
 
-    // vt_entry_456: get production delay
-    // int delay = techno->vt_entry_456();
+    // Section 4-5: Construction delay check and unit creation
+    // IDA: int delay = vt_entry_456(this)
     // if (delay < 30) {
-    //     if (!type->field_875) {
-    //         if (type->field_877 && random() >= 0.5) {
-    //             sub_480A80(6); // announce
-    //             if (type->field_878)
-    //                 sub_6B5C90(coords, 300, 1); // create with special timing
+    //     if (!type+875 || (type+877 && Random >= 0.5)) {
+    //         if (type+877) {
+    //             EVA_Announce(cell, 6)
+    //             if (type+878)
+    //                 CreateUnitAtCoords_Timed(coords, 300, 300, 1)
     //             else
-    //                 sub_6B5C90(coords, build_time, 0);
+    //                 CreateUnitAtCoords_Timed(coords, foundation_width, build_time, 0)
     //         }
     //     } else {
-    //         // sub_6B59A0(coords, build_time, 0) — create unit
+    //         CreateUnitAtCoords_Standard(coords, foundation_width, build_time, 0)
     //     }
     // }
 
-    return false; // TODO: return true on success
+    // TODO: actual unit creation when cell/coordinate system is ready
+    return false;
 }
 
 // ============================================================
