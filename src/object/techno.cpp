@@ -568,19 +568,70 @@ bool TechnoClass::CreateUnit()
     // ---- Section 4: MCV deploy state check ----
     // TODO: if (type == Rules->MCVType) { placement override }
 
-    // ---- Section 5: Deploy animation preset ----
+    // ---- Section 5: Deploy animation coordinate preset ----
+    // IDA: if (type->field_844 != -1) { vt_entry_240 preset coords }
     if (build_type->DeployingAnim)
     {
-        // TODO: vt_entry_240 (set deploy coordinates)
+        // TODO: vt_entry_240(this, &m_location) — preset deploy coordinates
     }
 
     // ---- Section 6: Mission queued clear ----
     if (m_mission_queued && m_queued_mission == m_current_mission)
         m_mission_queued = false;
 
-    // ---- Section 7: Deploy/undeploy animation ----
-    // TODO: vt_entry_488 → deploy state check, anim creation
-    // (MCV deploy, subterranean emerge, surface deploy)
+    // ---- Section 7: Deploy/undeploy animation state machine ----
+    // IDA 0x423C24-0x4242A5: vt_entry_488 → deploy state check
+    // Handles: MCV undeploy, subterranean emerge, surface build animation
+    {
+        // TODO: int deploy_state = vt_entry_488(this);
+        // For now, check if building is in deployed state
+        bool is_deployed = building->ActuallyPlacedOnMap; // proxy for deploy state
+
+        if (is_deployed)
+        {
+            // TODO: deploy_state = vt_entry_488()
+            // IDA: states 1 (building up) and 2 (holding) trigger animation
+
+            // Create deploy animation based on building type
+            if (build_type->IsSubterranean)
+            {
+                // Subterranean building: special emerge animation from underground
+                // IDA: Rules[753][Rules[756]-1] anim at m_location with Z+3 offset
+                // TODO: new AnimClass(Rules->SubterraneanEmergeAnim, m_location + Z(3), ...)
+            }
+            else
+            {
+                // Surface building: deploy anim + build smoke
+                // IDA: Rules[37] deploy anim + Rules[753][0] build smoke
+                // TODO: new AnimClass(Rules->DeployAnim, m_location, 0,1,0x600,...)
+                // TODO: new AnimClass(Rules->BuildSmokeAnim, m_location+Z(3), 0,1,0x600,...)
+            }
+
+            // Special deploy animation with fire effects
+            // IDA: if (type->field_772) → special anim + fire + smoke effects
+            if (build_type->CreateUnitSound) // proxy for field_772
+            {
+                // TODO: new AnimClass(type->field_772, m_location, 0,1,0x2600,-30,...)
+                // TODO: sub_489280(0, type->field_816, 1, 0) — fire effect
+                // TODO: sub_48A620(anim_coords, 0, 0) — smoke effect
+            }
+
+            // Fire/smoke effects for all deploying buildings
+            // IDA: if (type->field_752) { for each count: create fire anim }
+            // TODO
+
+            // Crater effect for large buildings
+            // IDA: if (type->field_856 && !above_surface) {
+            //   circular radius scan → create debris/damage fire anims
+            //   sub_6D2790(crater_rect, 0)
+            // }
+            // TODO
+
+            // vt_entry_248(this) — finalize deploy
+            // TODO
+            return false;
+        }
+    }
 
     // ---- Section 8: Construction progress ----
     if (!m_is_alive)
@@ -598,7 +649,7 @@ bool TechnoClass::CreateUnit()
         --building->ProductionTimer;
         if (building->ProductionTimer == 0)
         {
-            // TODO: sub_424CE0(this)
+            // TODO: ProductionCompletionCallback(this)
         }
         return true;
     }
@@ -696,37 +747,72 @@ bool TechnoClass::CreateUnit()
             building->ProductionAccum = 0;
 
             // Random timer for new cycle
-            // TODO: building->ProductionTimer = Random(build_type->Unknown_732, build_type->Unknown_736);
+            // TODO: building->ProductionTimer = RandomBetween(build_type->Unknown_732, build_type->Unknown_736)
             building->ProductionTimer = build_type->Unknown_688;
             building->ProductionFrame = static_cast<int>(CurrentFrame);
             building->ProductionRate = building->ProductionTimer;
             building->ProductionSpeed = building->ProductionTimer;
             building->ProductionAccum = build_type->InitialProductionProgress;
 
-            // TODO: sub_424CE0(this)
+            // TODO: ProductionCompletionCallback(this)
             return true;
         }
 
-        // ---- Section 10: Final unit creation ----
+        // ---- Section 10: Final unit creation (production complete) ----
+        // IDA 0x424938-0x424B31: spawn the produced unit
         if (build_type->DeployingAnim)
         {
-            // TODO: vt_entry_244 — FinalizeDeployCoords
+            // vt_entry_244 — finalize deploy coordinates
+            // TODO: (*(vt + 244))(this, &m_location)
 
-            // Check factory type/cell buildability
-            auto* owner = building->GetOwningHouse();
-            if (owner)
+            // Check if deploy animation index is valid (<= Rules[829])
+            // IDA: if (type->field_844 <= Rules->DeployAnimCount) {
+            if (true) // TODO: proper condition
             {
-                // TODO: Get exit cell, create unit via factory
-                // auto* factory = Rules[826][build_type->DeployFacing];
-                // CellStruct exit_coord = Exit_Coord();
-                // CreateUnit(produced_type, exit_cell, owner);
+                auto* owner = building->GetOwningHouse();
+
+                // If owner is neutral or invalid, fallback to Civilian house
+                // IDA: if (!owner || !IsActive()) → find Civilian house
+                if (!owner)
+                {
+                    // IDA: iterate houses to find Civilian house
+                    // for (int i = 0; i < HouseArray->Count; ++i)
+                    //     if (houses[i]->Type == Civilian)
+                    //         building->m_owner = houses[i];
+                    // TODO: FindCivilianHouse()
+                }
+
+                if (building->GetOwningHouse())
+                {
+                    // Find exit cell for unit placement
+                    // IDA: factory = Rules[826][type->field_844]
+                    //       cell = factory->GetExitCoords(building->m_owner)
+                    //       vt_entry_D8 of factory → PlaceUnit(cell, owner)
+
+                    // Check cell walkability at exit position
+                    // IDA: if (cell->field_320 & 0x100) → obstacle check
+                    //       If blocked: vt_entry_124(unit, 0) → disable
+                    //       vt_entry_124(unit, 1) → re-enable after reposition
+                    //       Set unit flag (byte+140 = 1)
+
+                    // Create the unit in playfield
+                    // IDA: if (owner->field_492 == 0) { vt_entry_1E8(unit, 15, 0) }
+                    //       // field_492 = no special behavior
+
+                    // TODO: CreateUnitAtCoordsStandard(exit_coords, time, false)
+                    // TODO: sub_6B4A50(unit_obj, coords, ...)
+                }
             }
 
+            // vt_entry_248(this) — finalize
             building->m_unknown_bool_3D0 = true;
+            // TODO: return vt_entry_248(this);
             return false;
         }
 
+        // No deploy animation → production complete, set flag
         building->m_unknown_bool_3D0 = true;
+        // TODO: return vt_entry_248(this);
     }
 
     return true;
