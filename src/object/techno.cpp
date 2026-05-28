@@ -281,7 +281,7 @@ bool TechnoClass::IsCloseEnoughToAttack(AbstractClass* target) const
 CellClass* TechnoClass::SelectAutoTarget(TargetFlags flags, int current_threat, bool only_target_house_enemy)
 {
     // RA1 Greatest_Threat pattern:
-    // Two scanning modes: area scan and full-map scan
+    // Two scanning modes: area scan (expanding box) and full-map scan
     //
     // Area scan: radiate outward from current position in expanding box
     //   For each cell: get occupier → Evaluate_Object() for legality + scoring
@@ -297,18 +297,19 @@ CellClass* TechnoClass::SelectAutoTarget(TargetFlags flags, int current_threat, 
     AbstractClass* best_target = nullptr;
     int scan_range = GetWeaponRange(m_current_weapon_number);
 
-    // Area scan — radiate outward
     CellStruct center = {
         static_cast<int16_t>(my_pos.X / 256),
         static_cast<int16_t>(my_pos.Y / 256)
     };
 
-    for (int radius = 0; radius <= scan_range && !best_target; ++radius)
+    // Area scan — radiate outward in expanding box
+    for (int radius = 0; radius <= scan_range; ++radius)
     {
         for (int dx = -radius; dx <= radius; ++dx)
         {
             for (int dy = -radius; dy <= radius; ++dy)
             {
+                // Only scan perimeter of each ring (skip interior)
                 if (abs(dx) != radius && abs(dy) != radius)
                     continue;
 
@@ -317,19 +318,45 @@ CellClass* TechnoClass::SelectAutoTarget(TargetFlags flags, int current_threat, 
                     static_cast<int16_t>(center.Y + dy)
                 };
 
-                // TODO: GetCellAt(map_coords) → check occupier → Evaluate_Object
+                // TODO: GetCellAt(map_coords) → get occupier list
                 // CellClass* cell = MapClass::Instance->TryGetCellAt(map_coords);
-                // TechnoClass* occupier = cell->GetOccupier();
-                // if (occupier && Evaluate_Object(flags, occupier))
-                //     best_target = occupier;
+                // if (!cell) continue;
+                //
+                // for each occupier in cell:
+                //   int value = Evaluate_Object(flags, occupier);
+                //   if (value > best_value)
+                //   {
+                //       best_value = value;
+                //       best_target = occupier;
+                //   }
             }
         }
+
+        // Early exit at range/4 and range/2
+        if (best_target && (radius >= scan_range / 4))
+        {
+            // Early exit for close high-value targets
+            break;
+        }
+    }
+
+    // Full-map fallback if no target found in area scan
+    if (!best_target)
+    {
+        // TODO: iterate all objects on map layer
+        // for each object on MapClass::Instance->Objects:
+        //   int value = Evaluate_Object(flags, obj);
+        //   if (value > best_value)
+        //   {
+        //       best_value = value;
+        //       best_target = obj;
+        //   }
     }
 
     if (best_target)
         SetTarget(best_target);
 
-    return nullptr;
+    return nullptr; // TODO: return CellClass* for the cell containing best target
 }
 
 void TechnoClass::Guard()
