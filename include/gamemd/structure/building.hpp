@@ -50,7 +50,7 @@ public:
 
     virtual CellStruct* vt_entry_4D4(CellStruct* pCellStruct, uint32_t dwUnk, uint32_t dwUnk2) const { return nullptr; }
     virtual int vt_entry_4D8(ObjectClass* pObj) const { return 0; }
-    virtual void Place(bool bUnk) {}
+    virtual void Place(bool bUnk);
     virtual void UpdateConstructionOptions() {}
     virtual void vt_entry_4E4(uint32_t dwUnk, uint32_t dwUnk2) {}
     virtual CellStruct* vt_entry_4E8(CellStruct* pCellStruct, uint32_t dwUnk) const { return nullptr; }

@@ -110,9 +110,18 @@ int BuildingClass::Mission_Repair()
 
 int BuildingClass::Mission_Missile()
 {
-    // Nuclear missile / superweapon launch sequence
-    // TODO: targeting, launch animation
     return 0;
+}
+
+void BuildingClass::Place(bool bUnk)
+{
+    ActuallyPlacedOnMap = true;
+    BeingProduced = false;
+
+    // Register with house building list
+    // TODO: HouseClass::RegisterGain(this),
+    //        power system registration,
+    //        reveal area around building
 }
 
 } // namespace gamemd

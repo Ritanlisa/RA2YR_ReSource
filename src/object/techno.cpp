@@ -345,5 +345,30 @@ void TechnoClass::RadarTrackingUpdate(bool unknown)
     (void)unknown;
 }
 
+bool TechnoClass::EnterGrinder()
+{
+    return false; // Overridden by InfantryClass
+}
+
+bool TechnoClass::EnterBioReactor()
+{
+    return false; // Overridden by InfantryClass
+}
+
+bool TechnoClass::EnterTankBunker()
+{
+    return false; // Overridden by InfantryClass/UnitClass
+}
+
+bool TechnoClass::EnterBattleBunker()
+{
+    return false; // Overridden by InfantryClass
+}
+
+bool TechnoClass::GarrisonStructure()
+{
+    return false; // Overridden by InfantryClass
+}
+
 } // namespace game
 } // namespace ra2

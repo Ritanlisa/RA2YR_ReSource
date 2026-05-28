@@ -136,11 +136,11 @@ public:
     virtual bool IsEngineer() const { return false; }
     virtual void ProceedToNextPlanningWaypoint() {}
     virtual uint32_t ScanForTiberium(uint32_t a, uint32_t b, uint32_t c) const { return 0; }
-    virtual bool EnterGrinder() { return false; }
-    virtual bool EnterBioReactor() { return false; }
-    virtual bool EnterTankBunker() { return false; }
-    virtual bool EnterBattleBunker() { return false; }
-    virtual bool GarrisonStructure() { return false; }
+    virtual bool EnterGrinder();
+    virtual bool EnterBioReactor();
+    virtual bool EnterTankBunker();
+    virtual bool EnterBattleBunker();
+    virtual bool GarrisonStructure();
     virtual bool IsPowerOnline() const { return true; }
     void QueueVoice(int idx_voc) {}
     int VoiceEnter() { return 0; }
