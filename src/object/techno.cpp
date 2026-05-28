@@ -1,4 +1,6 @@
 #include "gamemd/object/techno.hpp"
+#include "gamemd/structure/building.hpp"
+#include "gamemd/type/building_type.hpp"
 
 #include <cstring>
 
@@ -524,16 +526,19 @@ void TechnoClass::AddPassenger(FootClass* passenger)
 
 // ============================================================
 // CreateUnit — per-frame unit/building construction pipeline
-// IDA 0x423AC0, 4234 bytes. Translates the core production logic.
+// IDA 0x423AC0, 4234 bytes.
 //
-// This function handles:
-// 1. Audio setup (movement sounds)
-// 2. StupTank cloak detection
+// Sections:
+// 1. Audio (working sound)
+// 2. Cloak/stealth detection
 // 3. Building placement validation
-// 4. Deploy animation (MCV, subterranean, surface deploy)
-// 5. Construction progress tracking
-// 6. Production cost accumulation
-// 7. Production completion (switch to next type, create unit)
+// 4. MCV deploy state
+// 5. Deploy animation setup
+// 6. Deploy/undeploy animation
+// 7. Construction progress (main loop)
+// 8. Cost accumulation
+// 9. Production milestone + type switching
+// 10. Final unit creation
 // ============================================================
 bool TechnoClass::CreateUnit()
 {
@@ -541,123 +546,303 @@ bool TechnoClass::CreateUnit()
     if (!type)
         return false;
 
-    // --- Section 1: Audio setup ---
-    // If no audio controller active and type has movement sound:
-    // Start audio tracking at this+416 (techno-level audio controller)
-    // if (!*(this + 408) && type->field_760 != -1) { ... }
+    auto* building = reinterpret_cast<gamemd::BuildingClass*>(this);
+    auto* build_type = reinterpret_cast<gamemd::BuildingTypeClass*>(type);
 
-    // --- Section 2: Cloak detection (StupTank / stealth building) ---
-    // if (*(type + 852)) { sub_425670(); sub_5F3E70(); }
-
-    // --- Section 3: Building placement validation ---
-    // Check if building can be placed on current cell
-    // *(this + 413) = sub_43B4C0(cell_owner, cell_coord) == 0;
-
-    // --- Section 4: MCV deploy state check ---
-    // if (type == rules[46]) { deploy = byte_A8EB7F; }
-
-    // --- Section 5: Deploy animation creation ---
-    // if (type->field_844 != -1 && m_current_mission == m_queued_mission)
-    //     m_mission_queued = false;
-    //
-    // if (deployed_state) {
-    //     anim_state = vt_entry_488();
-    //     if (anim_state == 1 || anim_state == 2) {
-    //         // Create deploy/sell animation at current position
-    //         // Subterranean: rules[753][756] special sub-emerge anim
-    //         // Surface: rules[37] deploy anim + rules[753][0] build smoke
-    //         // Fire/smoke effects after animation
-    //     }
-    //     return true;
-    // }
-
-    // --- Section 6: Construction state ---
-    bool is_producing = m_is_alive; // this+144 (m_is_alive + 144?)
-
-    if (is_producing)
+    // ---- Section 1: Audio setup ----
+    if (!m_audio3.unknown_00 && build_type->WorkingSound != -1)
     {
-        // Idle construction animation
-        // if (type->field_776) {
-        //     anim = new AnimClass(type->field_776, coords, 1, 1, 0x600, 0, 0);
-        // }
+        // TODO: StartAudio(building->Audio7, build_type->WorkingSound)
+    }
 
-        // Production progress timer countdown
-        int* prod_timer = nullptr; // this + 97 (offset 0x184 in TechnoClass?)
-        if (*prod_timer > 0)
+    // ---- Section 2: Cloak/stealth detection ----
+    // TODO: if (build_type->HasStupidGuardMode) { CloakDetect(); DetectSensors(); }
+
+    // ---- Section 3: Building placement validation ----
+    if (build_type->CanBeOccupied) // IDA: field_883 (placement check flag)
+    {
+        // TODO: Check if cell owner allows placement
+        // building->PlacementAllowed = (CheckCellOwner(building->m_owner, cell) == 0);
+    }
+
+    // ---- Section 4: MCV deploy state check ----
+    // TODO: if (type == Rules->MCVType) { placement override }
+
+    // ---- Section 5: Deploy animation preset ----
+    if (build_type->DeployingAnim)
+    {
+        // TODO: vt_entry_240 (set deploy coordinates)
+    }
+
+    // ---- Section 6: Mission queued clear ----
+    if (m_mission_queued && m_queued_mission == m_current_mission)
+        m_mission_queued = false;
+
+    // ---- Section 7: Deploy/undeploy animation ----
+    // TODO: vt_entry_488 → deploy state check, anim creation
+    // (MCV deploy, subterranean emerge, surface deploy)
+
+    // ---- Section 8: Construction progress ----
+    if (!m_is_alive)
+        return false;
+
+    if (building->ProductionBlocked)
+        return false;
+
+    // Section 8a: Construction idle animation
+    // TODO: if (build_type->CreateUnitSound) spawn construction anim
+
+    // Section 8b: Production timer countdown
+    if (building->ProductionTimer > 0)
+    {
+        --building->ProductionTimer;
+        if (building->ProductionTimer == 0)
         {
-            --(*prod_timer);
-            if (*prod_timer == 0)
+            // TODO: sub_424CE0(this)
+        }
+        return true;
+    }
+
+    // Section 8c: Placement distance check
+    if (build_type->IsThreatRatingNode) // IDA: field_864
+    {
+        // TODO: Check if building has matching type at owner's conyard cell
+    }
+
+    // Section 8d: Production size calculation
+    if (build_type->ProductionSizeOverride == -1)
+    {
+        build_type->ProductionSizeOverride = build_type->GetFoundationWidth();
+        if (build_type->FreeBuildup) // IDA: field_882 - cliff protector
+            build_type->ProductionSizeOverride /= 2;
+    }
+    if (build_type->ProductionStepsTarget == -1)
+        build_type->ProductionStepsTarget = build_type->ProductionSizeOverride;
+
+    // vt_entry_292(this, 2) — production progress update
+    // TODO: update production display bar
+
+    // Section 8e: Production speed tracking
+    int prod_speed = building->ProductionSpeed;
+    if (prod_speed != 0)
+    {
+        building->ProductionAccum += prod_speed;
+        building->ProductionFrame = static_cast<int>(CurrentFrame);
+        building->ProductionRate = prod_speed;
+    }
+
+    // Section 8f: Cost accumulation
+    double cost_rate = build_type->CostRatePerFrame;
+    if (cost_rate > 0.0 && !building->ProductionBlocked)
+    {
+        // TODO: locomotor type 36 → cost_rate *= 5.0
+        building->CostAccumulator += cost_rate;
+        if (building->CostAccumulator >= 1.0 && !building->Audio7.unknown_00)
+        {
+            int count = static_cast<int>(building->CostAccumulator);
+            building->CostAccumulator -= static_cast<double>(count);
+            // TODO: SpendMoney(Rules[994/1002], count)
+        }
+    }
+
+    // ---- Section 9: Milestone and type switching ----
+    int accum = building->ProductionAccum;
+    int target = build_type->ProductionStepsTarget;
+    int offset = build_type->InitialProductionProgress;
+
+    // Pipeline milestone flag (IDA: field_880)
+    if (build_type->IsBaseDefense)
+    {
+        if (accum < build_type->ProductionSizeOverride && accum == 0)
+            return true;
+    }
+
+    uint8_t pipeline_step = building->PipelineStep;
+    if (pipeline_step > 1)
+    {
+        if (accum < target - offset)
+            return true;
+    }
+    else if (accum < build_type->ProductionSizeOverride)
+    {
+        return true;
+    }
+
+    // Production milestone reached
+    if (pipeline_step != 0 && pipeline_step != 0xFF)
+        building->PipelineStep = pipeline_step - 1;
+
+    // Check production chain
+    if (!building->PipelineStep)
+    {
+        // No more steps — try switching to next type in chain
+        auto* next_type = build_type->NextTypeInChain;
+        if (next_type)
+        {
+            building->Type = reinterpret_cast<gamemd::BuildingTypeClass*>(next_type);
+            build_type = building->Type;
+
+            if (build_type->ProductionSizeOverride == -1)
             {
-                // Production complete — trigger callback
-                // sub_424CE0(this);
+                build_type->ProductionSizeOverride = build_type->GetFoundationWidth();
+                if (build_type->FreeBuildup)
+                    build_type->ProductionSizeOverride /= 2;
             }
+            if (build_type->ProductionStepsTarget == -1)
+                build_type->ProductionStepsTarget = build_type->ProductionSizeOverride;
+
+            building->ProductionBlocked = false;
+            building->PipelineStep = build_type->PipelineStepCount;
+            building->ProductionAccum = 0;
+
+            // Random timer for new cycle
+            // TODO: building->ProductionTimer = Random(build_type->Unknown_732, build_type->Unknown_736);
+            building->ProductionTimer = build_type->Unknown_688;
+            building->ProductionFrame = static_cast<int>(CurrentFrame);
+            building->ProductionRate = building->ProductionTimer;
+            building->ProductionSpeed = building->ProductionTimer;
+            building->ProductionAccum = build_type->InitialProductionProgress;
+
+            // TODO: sub_424CE0(this)
             return true;
         }
 
-        // Building placement distance/cell check
-        // if (type->field_864) {
-        //     coords = GetCoords() - (384, 384, 0);
-        //     cell_owner = sub_565730(coords) + 68;
-        //     if (cell_owner == -1 || buildings[cell_owner].type != type)
-        //         *(this + 411) = 1; // production blocked
-        // }
+        // ---- Section 10: Final unit creation ----
+        if (build_type->DeployingAnim)
+        {
+            // TODO: vt_entry_244 — FinalizeDeployCoords
 
-        // Production size check
-        // if (type->field_704 == -1) {
-        //     type->field_704 = vt_entry_156(type).size;
-        //     type->field_704 /= 2 if cliff protector;
-        // }
-        // if (type->field_700 == -1) type->field_700 = type->field_704;
+            // Check factory type/cell buildability
+            auto* owner = building->GetOwningHouse();
+            if (owner)
+            {
+                // TODO: Get exit cell, create unit via factory
+                // auto* factory = Rules[826][build_type->DeployFacing];
+                // CellStruct exit_coord = Exit_Coord();
+                // CreateUnit(produced_type, exit_cell, owner);
+            }
 
-        // vt_entry_292(this, 2); // production progress update
+            building->m_unknown_bool_3D0 = true;
+            return false;
+        }
 
-        // Speed/timer calculation
-        // speed = *(this + 48); // production speed
-        // if (speed) {
-        //     *(this + 43) += speed;
-        //     *(this + 45) = CurrentFrame;
-        //     *(this + 46) = timer_value;
-        //     *(this + 47) = speed;
-        // }
-        //
-        // // Cost accumulation
-        // if (type->field_680 > 0.0 && !deployed) {
-        //     if (locomotor && locomotor_type == 36)
-        //         cost_rate = type->field_680 * 5.0;
-        //     else
-        //         cost_rate = type->field_680;
-        //     *(this + 49) += cost_rate;
-        //     if (*(this + 49) >= 1.0 && !audio) {
-        //         int count = (int)*(this + 49);
-        //         *(this + 49) -= count;
-        //         // Spend money: rules[994] for normal, rules[1002] for "INVISO"
-        //     }
-        // }
-
-        // Production milestone checks
-        // if (type->field_880) {
-        //     if (step < type->field_704) return;
-        // }
-        // if (step >= type->field_700 - type->field_692) {
-        //     // Production complete — switch to next type
-        //}
-
-        // Type switching (production pipeline)
-        // if (type->field_712) {
-        //     this+50 = type->field_712; // switch to next type
-        //     reset progress counters;
-        //     reset timer;
-        //     sub_424CE0(); // start new production cycle
-        // } else {
-        //     // Final completion: create deploy anim, create unit
-        //     // rules[826][type->field_844] → factory type → house index
-        //     // Check cell buildability (civilian house fallback)
-        //     // Spawn unit at exit cell
-        // }
-
-        // m_unknown_bool_3D0 = true; // production complete
-        // return true;
+        building->m_unknown_bool_3D0 = true;
     }
+
+    return true;
+}
+
+// ============================================================
+// ProductionCompletionCallback — sub_424CE0 (543B)
+// IDA 0x424CE0. Called when production timer expires or a
+// production milestone is reached.
+//
+// Handles:
+//   - Production display update
+//   - Audio start/stop (working sound)
+//   - Special building animations (NukeSilo, SpySat, etc.)
+//   - Unit creation via sub_424F00
+// ============================================================
+static bool ProductionCompletionCallback(TechnoClass* techno)
+{
+    auto* building = reinterpret_cast<gamemd::BuildingClass*>(techno);
+    auto* type = reinterpret_cast<gamemd::BuildingTypeClass*>(techno->GetTechnoType());
+    if (!type) return false;
+
+    // vt_entry_292(this, 2) — update production display
+    // TODO
+
+    // Audio management: stop/start working sound
+    if (techno->m_audio3.unknown_00 || type->WorkingSound == -1)
+    {
+        // TODO: sub_405D40(building->Audio7) — stop building audio
+    }
+    else
+    {
+        // TODO: Start building working sound
+        // CoordStruct coords; techno->GetCoords(&coords);
+        // sub_7509E0(building->Audio7)
+    }
+    // TODO: sub_405D40(building->Audio8)
+
+    // If no completion threshold, try creating unit immediately
+    if (!type->ProductionCompletionThreshold)
+    {
+        // TODO: sub_424F00(techno)
+    }
+
+    // Check special building type (NukeSil / ICBM / SpySat)
+    if (!techno->m_audio3.unknown_00)
+    {
+        if (type->ICBMLauncher || type->SpySat || type->NukeSilo) // IDA: field_855
+        {
+            // TODO: Special building launch sequence
+            // 1. Get cell owner of building position
+            // 2. Find the special building instance at that cell
+            // 3. 1-in-3 chance to create launch animation
+            // 4. Play special sound effect (Rules[1002])
+        }
+    }
+
+    return true;
+}
+
+// ============================================================
+// CreateUnitOnCompletion — sub_424F00 (583B)
+// IDA 0x424F00. Called during production completion to
+// create the final unit or trigger special effects.
+//
+// Handles:
+//   - Cell coordinate calculation
+//   - Foundation offset lookup
+//   - Super weapon effect creation
+//   - Unit creation (sub_6B5C90 / sub_6B59A0)
+// ============================================================
+static bool CreateUnitOnCompletion(TechnoClass* techno)
+{
+    auto* building = reinterpret_cast<gamemd::BuildingClass*>(techno);
+    auto* type = reinterpret_cast<gamemd::BuildingTypeClass*>(techno->GetTechnoType());
+    if (!type) return false;
+
+    // Get cell coordinates from building position
+    // CoordStruct coords; techno->GetCoords(&coords);
+    // int cell_x = coords.X / 256;
+    // int cell_y = coords.Y / 256;
+    // CellStruct cell{cell_x, cell_y};
+    // auto* cell_obj = sub_5657A0(&cell);
+    int build_time = 30;
+
+    // vt_entry_108: check if factory has custom foundation offsets
+    // if (techno->vt_entry_108()) {
+    //     if (type->field_668 == -1) type->field_668 = ... (GetFoundationOffset1)
+    //     if (type->field_672 == -1) type->field_672 = ... (GetFoundationOffset2)
+    //     build_time = type->field_672;
+    // }
+
+    // Super weapon / special effect creation
+    if (type->Unknown_716 != -1)
+    {
+        for (int i = 0; i < type->Unknown_720; ++i)
+        {
+            // TODO: sub_62E430(special_array[type->Unknown_716], coords)
+        }
+    }
+
+    // vt_entry_456: get production delay
+    // int delay = techno->vt_entry_456();
+    // if (delay < 30) {
+    //     if (!type->field_875) {
+    //         if (type->field_877 && random() >= 0.5) {
+    //             sub_480A80(6); // announce
+    //             if (type->field_878)
+    //                 sub_6B5C90(coords, 300, 1); // create with special timing
+    //             else
+    //                 sub_6B5C90(coords, build_time, 0);
+    //         }
+    //     } else {
+    //         // sub_6B59A0(coords, build_time, 0) — create unit
+    //     }
+    // }
 
     return true;
 }

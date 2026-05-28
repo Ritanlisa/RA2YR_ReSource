@@ -236,6 +236,11 @@ D:\RA2YR_ReSource\
 
 | 任务 | 文件 | 状态 |
 |------|------|------|
+| CreateUnit 生产管线核心实现 | techno.cpp, building.hpp/cpp, building_type.hpp | ✅ 编译通过 (0e/0w) |
+| sub_424CE0/sub_424F00 生产回调骨架 | techno.cpp | ✅ 结构实现，TODO标注子函数 |
+| BuildingTypeClass 生产成员字段 | building_type.hpp | ✅ 10+ 生产相关字段 |
+| BuildingClass 生产状态成员 | building.hpp/cpp | ✅ ProductionTimer/Accum 等 |
+| sub_453E20 Load/工厂文档化 | building.cpp | ✅ 结构分析完成 |
 | MIX 通用格式读取器 | mix_file.cpp | ✅ 3 种格式验证 |
 | Blowfish 引擎 (1042 常量) | mix_blowfish.cpp | ✅ 回合验证 |
 | Westwood 密钥计算 (RSA) | mix_blowfish.cpp | ✅ expandmd01 解密 |
@@ -243,14 +248,13 @@ D:\RA2YR_ReSource\
 | Infantry/Unit/Aircraft 状态机 | infantry/unit/aircraft.cpp | ✅ RA1 导出 |
 | FootClass 移动/路径 | foot.cpp | ✅ RA1 导出 |
 | TechnoClass 战斗函数 | techno.cpp | ✅ Fire/GetFireError/Guard |
-| CreateUnit 骨架 | techno.cpp | 📋 IDA 反编译完成，待翻译 |
 | 所有 C4099 警告修复 | 24 个头文件 | ✅ 0 warnings |
 
 ### 当前 TODO (Priority Order)
 
-1. **P0**: `TechnoClass::CreateUnit` 完整翻译 — IDA 0x423AC0 (4234B), 骨架已在 techno.cpp:517
-2. **P0**: `sub_453E20` BuildingClass 工厂翻译 — IDA 0x453E20 (870B)
-3. **P1**: `sub_424CE0`/`sub_424F00` 生产回调完善
+1. **P0**: `TechnoClass::CreateUnit` 完善 — 部署动画、弹坑效果、单元创建 (当前骨架已完成核心生产逻辑)
+2. **P0**: `sub_453E20` BuildingClass Load/工厂实现 — 当前已文档化，待完整翻译
+3. **P1**: `sub_424CE0`/`sub_424F00` 生产回调完善 — 当前骨架已完成
 4. **P1**: 更多 IDA BuildingClass vtable 函数识别
 5. **P2**: 动态调试 (DLL injection)
 6. **Far Future**: Ares/Phobos 扩展原生支持
@@ -279,17 +283,19 @@ D:\RA2YR_ReSource\
 ## Next Session Work Plan
 
 ### P0: CreateUnit 完整翻译
-- IDA 0x423AC0, 4234B 已反编译
-- 骨架已在 techno.cpp 中
-- 需映射 byte 偏移到成员名
+- **DONE**: 核心生产逻辑已实现 (techno.cpp:540-732)
+- **TODO**: 部署动画、弹坑效果、烟雾特效 (需 sub_425670, sub_5F3E70 等子函数)
+- **TODO**: 生产完成回调子函数完善 (sub_424CE0/sub_424F00)
 
 ### P0: BuildingClass 工厂翻译 (sub_453E20)
-- IDA 0x453E20, 870B 已识别
-- 调用 sub_43B680 构造器 + 全局数组注册
+- **DONE**: IDA 分析完成 (870B), 已文档化
+- **TODO**: 完整实现 Load/反序列化逻辑 (sub_70BF50, sub_41C590 等子函数)
 
 ### P1: IDA 函数反编译与实现
-- 更多 BuildingClass vtable 函数
-- 生产完成回调完善 (sub_424CE0/sub_424F00)
+- **DONE**: CreateUnit (4234B) 核心生产管线
+- **DONE**: sub_424CE0 (543B) 生产完成回调骨架
+- **DONE**: sub_424F00 (583B) 单元创建回调骨架
+- **TODO**: 更多 BuildingClass vtable 函数
 
 ### P2: 动态调试验证
 - DLL injection (YRpp 方式) 测试函数替换

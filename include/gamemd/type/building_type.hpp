@@ -267,6 +267,24 @@ public:
     char TheaterSpecificID[0x13];
     int NumberOfDocks;
     DynamicVectorClass<CoordStruct>* DockingOffsets;
+
+    int     ProductionCompletionThreshold;
+    double  CostRatePerFrame;
+    int     Unknown_688;
+    int     InitialProductionProgress;
+    int     Unknown_696;
+    int     ProductionStepsTarget;
+    int     ProductionSizeOverride;
+    uint8   PipelineStepCount;
+    uint8   _pad_prod_71[3];
+    TechnoTypeClass* NextTypeInChain;
+    int     Unknown_716;
+    int     Unknown_720;
+    int     Unknown_732;
+    int     Unknown_736;
+    int     Unknown_740;
+    int     Unknown_744;
+
     DWORD align_1794;
 };
 

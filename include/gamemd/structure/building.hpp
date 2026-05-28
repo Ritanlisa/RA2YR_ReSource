@@ -143,6 +143,19 @@ public:
     uint32_t                              DelayBeforeFiring;
     int32_t                               BunkerState;
 
+    int32_t                               ProductionTimer;
+    bool                                  PlacementAllowed;
+    uint8_t                               ProductionBlocked;
+    uint8_t                               m_pad_prod_1;
+    uint8_t                               m_pad_prod_2;
+    int32_t                               ProductionAccum;
+    int32_t                               ProductionFrame;
+    int32_t                               ProductionRate;
+    int32_t                               ProductionSpeed;
+    double                                CostAccumulator;
+    uint8_t                               PipelineStep;
+    uint8_t                               m_pad_prod_3[3];
+
 protected:
     BuildingClass() noexcept;
 };

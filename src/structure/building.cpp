@@ -74,7 +74,19 @@ BuildingClass::BuildingClass() noexcept
     , PrismTargetCoords{}
     , DelayBeforeFiring(0)
     , BunkerState(0)
+    , ProductionTimer(0)
+    , PlacementAllowed(false)
+    , ProductionBlocked(0)
+    , m_pad_prod_1(0)
+    , m_pad_prod_2(0)
+    , ProductionAccum(0)
+    , ProductionFrame(0)
+    , ProductionRate(0)
+    , ProductionSpeed(0)
+    , CostAccumulator(0.0)
+    , PipelineStep(0)
 {
+    m_pad_prod_3[0] = 0; m_pad_prod_3[1] = 0; m_pad_prod_3[2] = 0;
     std::memset(Anims, 0, sizeof(Anims));
     std::memset(AnimStates, 0, sizeof(AnimStates));
     std::memset(DamageFireAnims, 0, sizeof(DamageFireAnims));
@@ -511,3 +523,25 @@ void BuildingClass::Place(bool bUnk)
 }
 
 } // namespace gamemd
+
+// ============================================================
+// BuildingClass::Load — deserialize from save stream
+// IDA 0x453E20, 870 bytes.
+// vtable[5] of BuildingClass
+//
+// Reads building data from a save game stream, reconstructing
+// the building state including Type, Factory, animations,
+// upgrades, and audio controllers.
+// ============================================================
+namespace {
+    // Forward declarations for referenced subroutines
+    // sub_41C590: Lookup building type from production queue table
+    // sub_70BF50: Allocate/initialize BuildingClass object
+    // sub_43B680: BuildingClass constructor
+    // sub_41C500: Grow dynamic array
+    // sub_6CF240: Register pointer for garbage collection tracking
+    // sub_405BE0: Initialize AudioController
+}
+
+// TODO: Full implementation when save/load system is ready
+// Current skeleton covers the member initialization structure only
