@@ -205,35 +205,32 @@ bool ObjectClass::CanBeSold() const
     return m_health > 0 && !m_in_limbo;
 }
 
-bool ObjectClass::CanBeSelected() const
+DamageState ObjectClass::IronCurtain(int duration, HouseClass* source, bool force_shield)
 {
-    return m_is_alive && m_is_on_map && !m_in_limbo;
+    // Set invulnerability timer
+    // TODO: start iron curtain timer, set visual tint
+    (void)duration;
+    (void)source;
+    (void)force_shield;
+    return static_cast<DamageState>(0);
 }
 
-bool ObjectClass::CanBeSelectedNow() const
+bool ObjectClass::IsIronCurtained() const
 {
-    return CanBeSelected() && m_is_visible && !m_is_selected;
+    // TODO: check iron curtain timer > 0
+    return false;
 }
 
-void ObjectClass::MarkForRedraw()
+void ObjectClass::Reveal()
 {
-    m_needs_redraw = true;
+    m_is_visible = true;
 }
 
-bool ObjectClass::Select()
+bool ObjectClass::DiscoveredBy(HouseClass* house)
 {
-    if (!CanBeSelectedNow())
-        return false;
-
-    m_is_selected = true;
-    MarkForRedraw();
+    (void)house;
+    m_is_visible = true;
     return true;
-}
-
-void ObjectClass::Deselect()
-{
-    m_is_selected = false;
-    MarkForRedraw();
 }
 
 ObjectClass::ObjectClass() noexcept

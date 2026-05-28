@@ -83,7 +83,7 @@ public:
     virtual void MarkAllOccupationBits(const CoordStruct& coords) {}
     virtual void UnmarkAllOccupationBits(const CoordStruct& coords) {}
     virtual void UnInit() {}
-    virtual void Reveal() {}
+    virtual void Reveal();
     virtual KickOutResult KickOutUnit(TechnoClass* techno, CellStruct cell) { return static_cast<KickOutResult>(0); }
     virtual bool DrawIfVisible(RectangleStruct* bounds, bool even_if_cloaked, uint32_t unknown) const { return false; }
     virtual const CellStruct* GetFoundationData(bool include_bib = false) const { return nullptr; }
@@ -105,10 +105,10 @@ public:
     virtual void Flash(int duration) {}
     virtual bool Select();
     virtual void Deselect();
-    virtual DamageState IronCurtain(int duration, HouseClass* source, bool force_shield) { return static_cast<DamageState>(0); }
+    virtual DamageState IronCurtain(int duration, HouseClass* source, bool force_shield);
     virtual void StopAirstrikeTimer() {}
     virtual void StartAirstrikeTimer(int duration) {}
-    virtual bool IsIronCurtained() const { return false; }
+    virtual bool IsIronCurtained() const;
     virtual bool IsCloseEnough3D(uint32_t a, uint32_t b) const { return false; }
     virtual int GetWeaponRange(int weapon_idx) const;
     virtual DamageState ReceiveDamage(int* damage, int distance_from_epicenter, WarheadTypeClass* wh,
@@ -123,7 +123,7 @@ public:
     virtual void UpdatePosition(int unknown) {}
     virtual BuildingClass* FindFactory(bool allow_occupied, bool require_power) const { return nullptr; }
     virtual RadioCommand ReceiveCommand(TechnoClass* sender, RadioCommand command, AbstractClass*& inout) { return static_cast<RadioCommand>(0); }
-    virtual bool DiscoveredBy(HouseClass* house) { return false; }
+    virtual bool DiscoveredBy(HouseClass* house);
     virtual void SetRepairState(int state) {}
     virtual void Sell(uint32_t unknown) {}
     virtual void AssignPlanningPath(int path_idx, signed char wp_idx) {}
