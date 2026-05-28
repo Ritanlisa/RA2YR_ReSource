@@ -600,4 +600,28 @@ void BuildingClass::Place(bool bUnk)
 //  - Related objects (this+1344, 1352): get type via vtable[16]
 // ============================================================
 
+// ============================================================
+// GetExitCoords — building foundation center (IDA 0x447AC0, 84B)
+// Used when units exit a building (barracks, war factory, etc.)
+// ============================================================
+CellStruct* BuildingClass::vt_entry_4E8(CellStruct* out, uint32_t dwUnk) const
+{
+    if (Type)
+    {
+        int fw = Type->GetFoundationWidth() * 128 - 128;
+        int fh = (Type->Height ? Type->GetFoundationHeight(false) : 1) * 128 - 128;
+
+        CoordStruct coords;
+        GetCoords(&coords);
+
+        out->X = static_cast<int16_t>((coords.X + fw) / 256);
+        out->Y = static_cast<int16_t>((coords.Y + fh) / 256);
+    }
+    else
+    {
+        *out = {};
+    }
+    return out;
+}
+
 } // namespace gamemd
