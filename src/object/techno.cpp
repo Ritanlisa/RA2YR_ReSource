@@ -1089,5 +1089,26 @@ static bool CreateUnitAtCoordsTimed(CoordStruct* coords, int time, bool special)
     return false;
 }
 
+// ============================================================
+// TechnoClass::Update — parent per-frame update (IDA 0x6F3F40)
+// Called by all TechnoClass subclasses (Building/Infantry/Unit/Aircraft).
+//
+// Sections:
+//  1. Owner check: if C4AppliedBy(this+540) exists, update owner flag
+//  2. vt_entry_132 → get TechnoTypeClass* → create particle/vfx systems:
+//     a. type+3392  → sub_6AF1A0 → store at this+728 (laser/sensor system)
+//     b. type+3416  → sub_6B6C90 → store at this+720 (particle system)
+//     c. type+172→341 → sub_4717D0 → store at this+700 (pip/display)
+//     d. type+172→345 → sub_6292B0 → store at this+1692 (planning token)
+//     e. type+172→346 → sub_71A4E0 → store at this+628 (locomotor link?)
+//     f. type+1564    → sub_41D380 → store at this+660 (capture manager?)
+//  3. Production display setup (type+3375/3376):
+//     Copy Rules display fields to this+1304/1308
+//  4. Copy type members to instance:
+//     type+3236→3252 (4 dwords) → this+984→1004
+//     type+3256→3272 (4 dwords) → this+1016→1040
+//  5. Set this+1180=1, this+1184=0 (update flags)
+// ============================================================
+
 } // namespace game
 } // namespace ra2
