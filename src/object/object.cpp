@@ -140,6 +140,37 @@ int ObjectClass::DistanceFrom(AbstractClass* that) const
     return static_cast<int>(std::sqrt(static_cast<double>(dx*dx + dy*dy + dz*dz)));
 }
 
+bool ObjectClass::CanBeSelected() const
+{
+    return m_is_alive && m_is_on_map && !m_in_limbo;
+}
+
+bool ObjectClass::CanBeSelectedNow() const
+{
+    return CanBeSelected() && m_is_visible && !m_is_selected;
+}
+
+void ObjectClass::MarkForRedraw()
+{
+    m_needs_redraw = true;
+}
+
+bool ObjectClass::Select()
+{
+    if (!CanBeSelectedNow())
+        return false;
+
+    m_is_selected = true;
+    MarkForRedraw();
+    return true;
+}
+
+void ObjectClass::Deselect()
+{
+    m_is_selected = false;
+    MarkForRedraw();
+}
+
 ObjectClass::ObjectClass() noexcept
     : m_unknown_24(0)
     , m_unknown_28(0)

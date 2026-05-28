@@ -172,9 +172,9 @@ public:
     virtual FireError GetFireErrorWithoutRange(AbstractClass* target, int weapon_index) const;
     virtual FireError GetFireError(AbstractClass* target, int weapon_index, bool ignore_range) const;
     virtual CellClass* SelectAutoTarget(TargetFlags flags, int current_threat, bool only_target_house_enemy);
-    virtual void SetTarget(AbstractClass* target) {}
+    virtual void SetTarget(AbstractClass* target);
     virtual BulletClass* Fire(AbstractClass* target, int weapon_index);
-    virtual void Guard() {}
+    virtual void Guard();
     virtual bool SetOwningHouse(HouseClass* house, bool announce = true) { return false; }
     virtual void vt_entry_3D8(uint32_t a, uint32_t b, uint32_t c) {}
     virtual bool Crash(ObjectClass* killer) { return false; }

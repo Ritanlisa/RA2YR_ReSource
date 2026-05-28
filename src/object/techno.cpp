@@ -242,5 +242,22 @@ CellClass* TechnoClass::SelectAutoTarget(TargetFlags flags, int current_threat, 
     return nullptr;
 }
 
+void TechnoClass::Guard()
+{
+    // Enter guard mode: scan area for threats
+    m_target = nullptr;
+    m_focus = nullptr;
+    QueueMission(static_cast<Mission>(0), true);
+}
+
+void TechnoClass::SetTarget(AbstractClass* target)
+{
+    m_target = target;
+    if (target)
+    {
+        SetDestination(target, false);
+    }
+}
+
 } // namespace game
 } // namespace ra2

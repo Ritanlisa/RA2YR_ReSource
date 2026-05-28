@@ -97,14 +97,14 @@ public:
     virtual RectangleStruct* vt_entry_128(RectangleStruct* out) const { return nullptr; }
     virtual RectangleStruct* vt_entry_12C(RectangleStruct* out) { return nullptr; }
     virtual void DrawRadialIndicator(uint32_t unknown) {}
-    virtual void MarkForRedraw() {}
-    virtual bool CanBeSelected() const { return false; }
-    virtual bool CanBeSelectedNow() const { return false; }
+    virtual void MarkForRedraw();
+    virtual bool CanBeSelected() const;
+    virtual bool CanBeSelectedNow() const;
     virtual bool vt_entry_140(uint32_t a, uint32_t b, uint32_t c, uint32_t d) { return false; }
     virtual bool ClickedAction(Action action, ObjectClass* target, bool unknown) { return false; }
     virtual void Flash(int duration) {}
-    virtual bool Select() { return false; }
-    virtual void Deselect() {}
+    virtual bool Select();
+    virtual void Deselect();
     virtual DamageState IronCurtain(int duration, HouseClass* source, bool force_shield) { return static_cast<DamageState>(0); }
     virtual void StopAirstrikeTimer() {}
     virtual void StartAirstrikeTimer(int duration) {}
