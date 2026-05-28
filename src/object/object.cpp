@@ -72,7 +72,6 @@ DamageState ObjectClass::ReceiveDamage(int* damage, int distance_from_epicenter,
 
     if (damage && *damage > 0)
     {
-        // Apply armor/verses modifiers from warhead
         // TODO: full warhead-vs-armor calculation
         int actual_damage = *damage;
         m_health -= actual_damage;
