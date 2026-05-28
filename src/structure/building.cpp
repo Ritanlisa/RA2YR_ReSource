@@ -558,4 +558,19 @@ void BuildingClass::Place(bool bUnk)
 //     - Register this in global tracking array (dword_8B41E0+)
 // ============================================================
 
+// ============================================================
+// BuildingClass::PowerDrainUpdate — per-frame power consumption (0x454260)
+// IDA 0x454260, vtable[13]. Processes power drain timers & flags.
+//
+// Called every frame when building is online. Processes:
+//  - Power timers (this+1320/1328, 1744/1752, 1332/1336/1340, 1360/1368)
+//    Each timer: remaining = duration - (CurrentFrame - start)
+//    Power_TimerProcess(remaining) updates drain state
+//  - Power flags via Power_FlagProcess:
+//    this+1632, 1770, 1738, 1739, 1756-1766, 1740 (16 flags total)
+//  - Power_TimerProcess(this+1792) — 16-bit accumulator
+//  - Power_FinalizeDrain(this+1794) — finalize this frame
+//  - Related objects (this+1344, 1352): get type via vtable[16]
+// ============================================================
+
 } // namespace gamemd
