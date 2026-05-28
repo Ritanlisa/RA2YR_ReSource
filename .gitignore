@@ -59,6 +59,7 @@ MIX_Format.html
 .env
 
 # 测试文件
+test_*
 *.mix
 MOMIX/
 RA2YRMIX/
