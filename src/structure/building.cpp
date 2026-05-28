@@ -456,6 +456,33 @@ int BuildingClass::Mission_Missile()
 }
 
 // ============================================================
+// BuildingClass_GetExitCoords — calculate foundation center
+// IDA 0x447AC0, 84B. Returns exit position for units leaving building.
+//
+// Algorithm:
+//   foundation_h = GetFoundationHeight(false) → coord offset
+//   foundation_w = GetFoundationWidth(Type) → coord offset  
+//   exit.X = Location.X + (foundation_w << 7) - 128
+//   exit.Y = Location.Y + (foundation_h << 7) - 128
+//   exit.Z = Location.Z
+// ============================================================
+
+// ============================================================
+// BuildingClass_OnObjectExpired — cleanup dangling refs (0x44E8F0, 536B)
+// Called when a referenced object (anim, unit, overlay) is destroyed.
+// Clears matching pointers in: this+336/338/329/384/389/351/353.
+// Updates building animations based on health ratio.
+// Removes entry from dynamic arrays (this+411/417).
+// ============================================================
+
+// ============================================================
+// BuildingClass_TogglePrimaryFactory — get factory exit coords (0x447E90, 121B)
+// Returns exit coordinates for the primary factory.
+// Checks Type flags (5835/5801/5803) to determine coordinate source.
+// Uses vt_entry_168 or vt_entry_72 to get position.
+// ============================================================
+
+// ============================================================
 // ExitObject — unit exit from building (RA1 Exit_Object pattern)
 // Returns: 0=failure, 1=retry, 2=success
 // ============================================================
