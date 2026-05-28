@@ -458,11 +458,11 @@ Current IDB: `C:\Program Files (x86)\Mental Omega\gamemd.exe.i64`
 | 来源 | 路径 | 文件数 | 说明 |
 |------|------|--------|------|
 | **RA2YR 原版** | `RA2YRMIX/` | 17 个 | ra2.mix, ra2md.mix, expandmd01.mix, ares.mix, langmd.mix, language.mix, theme*.mix, WDT.MIX 等 |
-| **Mental Omega 3.3.6** | `MOMIX/` | 23 个 | expandmo04-99.mix, langmd.mix, language.mix 等。经过 Ares DLL 注入扩展，使用更严格的加密 |
+| **Mental Omega 3.3.6** | `MOMIX/` | 23 个 | expandmo04-99.mix, langmd.mix, language.mix 等。通过 Ares（DLL注入扩展RA2YR功能，非加密工具）加载。走的是原版 Mix 加载路径，但相比RA2YR原版加密了更多文件（更激进的混淆策略） |
 
 **MO Mix 文件特点**：
-- 使用 Ares DLL 扩展功能
-- 更严格的加密/混淆（相对 RA2YR 原版 Mix）
+- 通过 Ares（DLL注入扩展引擎功能，非加密工具）加载
+- 走原版 Mix 文件加载路径，但与 RA2YR 原版相比加密了更多文件（更激进的混淆）
 - `ra2.mix` + `ra2md.mix` + `thememo.mix` 可在 `C:\Program Files (x86)\Mental Omega\` 找到（不包含在项目仓库中）
 
-**测试优先级**：先用 RA2YR 原版 Mix 验证基础 Mix 解析器，再用 MO Mix 测试加密兼容性。
+**测试优先级**：先用 RA2YR 原版 Mix 验证基础 Mix 解析器，再用 MO Mix 测试更严格加密场景的兼容性。
