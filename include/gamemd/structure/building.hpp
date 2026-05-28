@@ -62,6 +62,11 @@ public:
     virtual void DisguiseDetectorDeactivate(CellStruct cell) {}
     virtual uint32_t vt_entry_504() { return 0; }
 
+    int Mission_Construction() override;
+    int Mission_Selling() override;
+    int Mission_Repair() override;
+    int Mission_Missile() override;
+
     BuildingTypeClass*                    Type;
     FactoryClass*                         Factory;
     TimerStruct                           C4Timer;

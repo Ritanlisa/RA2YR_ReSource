@@ -34,4 +34,25 @@ UnitClass::UnitClass() noexcept
     m_abstract_flags = kUnitFlag;
 }
 
+int UnitClass::Mission_Harvest()
+{
+    // RA1 harvester logic:
+    // 1. Scan for tiberium/ore
+    // 2. Move to resource cell
+    // 3. Harvest animation
+    // 4. Return to refinery when full
+    // TODO: full harvester state machine
+    return 10;
+}
+
+int UnitClass::Mission_Unload()
+{
+    if (!HasFollowerCar)
+        return 0;
+
+    Unloading = true;
+    // TODO: open cargo doors, eject passengers
+    return 5;
+}
+
 } // namespace gamemd

@@ -32,6 +32,10 @@ public:
     virtual bool IsDeployed() const { return false; }
     virtual bool PlayAnim(Sequence index, bool force = false, bool randomStartFrame = false) { return false; }
 
+    int Mission_Enter() override;
+    int Mission_ParaDropApproach() override;
+    int Mission_ParaDropOverfly() override;
+
     InfantryTypeClass* Type;
     Sequence           SequenceAnim;
     TimerStruct        unknown_Timer_6C8;

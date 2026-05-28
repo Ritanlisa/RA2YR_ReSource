@@ -80,4 +80,39 @@ BuildingClass::BuildingClass() noexcept
     std::memset(Upgrades, 0, sizeof(Upgrades));
 }
 
+int BuildingClass::Mission_Construction()
+{
+    if (!Factory || !BeingProduced)
+        return 0;
+
+    // Construction progress update
+    // TODO: advance build progress, check completion
+    return 15;
+}
+
+int BuildingClass::Mission_Selling()
+{
+    // Selling animation and deconstruction
+    // TODO: deconstruction animation, refund calculation
+    return 5;
+}
+
+int BuildingClass::Mission_Repair()
+{
+    if (!NeedsRepairs)
+        return 0;
+
+    // Repair progress
+    IsBeingRepaired = true;
+    // TODO: advance repair, check completion
+    return 10;
+}
+
+int BuildingClass::Mission_Missile()
+{
+    // Nuclear missile / superweapon launch sequence
+    // TODO: targeting, launch animation
+    return 0;
+}
+
 } // namespace gamemd

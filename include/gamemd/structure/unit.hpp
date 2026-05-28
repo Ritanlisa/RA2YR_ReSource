@@ -38,6 +38,9 @@ public:
     virtual void DrawAsVXL(Point2D* coords, RectangleStruct* bounding_rect, uint32_t dwUnk7, uint32_t dwUnk8) {}
     virtual void DrawAsSHP(Point2D* coords, RectangleStruct* bounding_rect, uint32_t dwUnk7, uint32_t dwUnk8) {}
 
+    int Mission_Harvest() override;
+    int Mission_Unload() override;
+
     int32_t            unknown_int_6C0;
     UnitTypeClass*     Type;
     UnitClass*         FollowerCar;

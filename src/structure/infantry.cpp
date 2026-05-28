@@ -32,4 +32,25 @@ InfantryClass::InfantryClass() noexcept
     m_abstract_flags = kInfantryFlag;
 }
 
+int InfantryClass::Mission_Enter()
+{
+    // Enter building or transport
+    // TODO: find building target, play enter animation, garrison/board
+    return 10;
+}
+
+int InfantryClass::Mission_ParaDropApproach()
+{
+    // Paradrop: descending to ground
+    // TODO: parachute descent animation
+    return 5;
+}
+
+int InfantryClass::Mission_ParaDropOverfly()
+{
+    // Paradrop: flyover phase
+    // TODO: horizontal movement before drop
+    return 5;
+}
+
 } // namespace gamemd
