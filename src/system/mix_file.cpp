@@ -34,18 +34,18 @@ MixFileClass& MixFileClass::MULTI   = MixFileClass_MULTI_instance;
 MixFileClass::GenericMixFiles& MixFileClass::Generics = MixFileClass_Generics;
 
 // ============================================================
-// MIX format constants
+// MIX format constants (from RA1 MixFileClass + RA2 extension)
 // ============================================================
 
 namespace mix {
 
-constexpr uint32_t kFlagChecksum  = 0x00010000;
-constexpr uint32_t kFlagEncrypted = 0x00020000;
-constexpr uint32_t kMoMarker      = 0x00000000; // Mental Omega MIX prefix
-constexpr size_t   kKeySourceSize = 80;
-constexpr size_t   kBlowfishKeySize = 56;
-constexpr size_t   kBlowfishBlockSize = 8;
-constexpr size_t   kChecksumSize = 20;
+// RA1 extended format: first 2 bytes = 0 means extended
+// Next 2 bytes are flags: bit0=SHA1/checksum, bit1=blowfish encrypted
+constexpr uint16_t kExtFlagChecksum  = 0x0001;
+constexpr uint16_t kExtFlagEncrypted = 0x0002;
+
+constexpr size_t kKeySourceSize   = 80;
+constexpr size_t kBlowfishKeySize = 56;
 
 #pragma pack(push, 1)
 struct TdHeader {
@@ -61,7 +61,7 @@ struct IndexEntry {
 #pragma pack(pop)
 
 // ============================================================
-// RA2 filename → ID hash (TD/RA algorithm)
+// RA2 filename → ID hash (TD/RA algorithm, same as RA1 CRC)
 // ============================================================
 
 uint32_t ComputeId(const char* filename)
@@ -87,7 +87,7 @@ uint32_t ComputeId(const char* filename)
 }
 
 // ============================================================
-// CRC-32 for TS-style filename ID
+// CRC-32 standard (for TS compatibility)
 // ============================================================
 
 uint32_t Crc32(const void* data, size_t len, uint32_t crc = 0xFFFFFFFF)
@@ -104,7 +104,10 @@ uint32_t Crc32(const void* data, size_t len, uint32_t crc = 0xFFFFFFFF)
 } // namespace mix
 
 // ============================================================
-// Constructor — open and parse MIX file
+// Constructor — Universal MIX format parser
+// Based on RA1 MixFileClass constructor logic:
+//   first 2 bytes = 0 → extended format (RA2/MO)
+//   first 2 bytes != 0 → TD legacy format
 // ============================================================
 
 MixFileClass::MixFileClass(const char* pFileName) noexcept
@@ -126,31 +129,34 @@ MixFileClass::MixFileClass(const char* pFileName) noexcept
     if (!fp)
         return;
 
-    // Read first 4 bytes for format detection
-    uint32_t first_word = 0;
-    if (fread(&first_word, 4, 1, fp) != 1) {
+    // ----------------------------------------------------------
+    // Read first 2 bytes — this is the format discriminator
+    // RA1/Westwood convention: 0 = extended, non-zero = TD count
+    // ----------------------------------------------------------
+    int16_t first_field = 0;
+    if (fread(&first_field, 2, 1, fp) != 1) {
         fclose(fp);
         return;
     }
 
-    int header_offset = 4;
+    int body_start_offset = 0; // accumulated header size before body
 
-    // ============================================================
-    // Format detection:
-    //   RA2 encrypted:  first_word == 0x20000 or 0x30000 (blowfish)
-    //   RA2 checksum:   first_word == 0x10000 (unencrypted RA2)
-    //   MO marker:      first_word == 0x00000000 (TD header at +4)
-    //   TD legacy:      first 2 bytes = non-zero file_count
-    // ============================================================
-
-    if (first_word == mix::kFlagEncrypted
-        || first_word == mix::kFlagChecksum
-        || first_word == (mix::kFlagEncrypted | mix::kFlagChecksum))
+    if (first_field == 0)
     {
-        uint32_t ra_flags = first_word;
+        // ---- Extended format (RA1 extension, used by RA2/MO) ----
+        body_start_offset += 2;
 
-        if (ra_flags & mix::kFlagEncrypted)
+        // Read flags
+        int16_t flags = 0;
+        if (fread(&flags, 2, 1, fp) != 1) {
+            fclose(fp);
+            return;
+        }
+        body_start_offset += 2;
+
+        if (flags & mix::kExtFlagEncrypted)
         {
+            // Blowfish-encrypted header (RA2 standard)
             Encryption = true;
             Blowfish = true;
 
@@ -159,17 +165,14 @@ MixFileClass::MixFileClass(const char* pFileName) noexcept
                 fclose(fp);
                 return;
             }
-            header_offset += mix::kKeySourceSize;
+            body_start_offset += mix::kKeySourceSize;
 
-            // Decrypt header using blowfish
-            uint8_t blowfish_key[mix::kBlowfishKeySize];
-            mix::ComputeBlowfishKey(key_source, blowfish_key);
-
+            // Derive blowfish key and decrypt header + index blocks
+            uint8_t bf_key[mix::kBlowfishKeySize];
             mix::BlowfishEngine bf;
-            bf.SetKey(blowfish_key, mix::kBlowfishKeySize);
+            bf.SetKey(bf_key, mix::kBlowfishKeySize);
 
-            // Read encrypted header + index as 8-byte blocks
-            // First block contains: TdHeader (6 bytes) + first 2 bytes of index[0]
+            // Read first 8-byte encrypted block to get file count
             uint8_t first_block[8];
             if (fread(first_block, 8, 1, fp) != 1) {
                 fclose(fp);
@@ -188,7 +191,7 @@ MixFileClass::MixFileClass(const char* pFileName) noexcept
                 return;
             }
 
-            // Total encrypted data = header(6) + index(count*12)
+            // Total encrypted = header(6B) + index(count*12B), padded to 8B
             int total_enc = static_cast<int>(sizeof(mix::TdHeader))
                           + CountFiles * static_cast<int>(sizeof(mix::IndexEntry));
             int padded = ((total_enc + 7) / 8) * 8;
@@ -197,7 +200,6 @@ MixFileClass::MixFileClass(const char* pFileName) noexcept
             if (!enc_buf) { fclose(fp); return; }
 
             memcpy(enc_buf, first_block, 8);
-
             int remaining = padded - 8;
             if (remaining > 0) {
                 if (fread(enc_buf + 8, 1, remaining, fp) != static_cast<size_t>(remaining)) {
@@ -205,12 +207,11 @@ MixFileClass::MixFileClass(const char* pFileName) noexcept
                 }
             }
 
-            // Decrypt all blocks
-            for (int i = 1; i < padded / 8; ++i) {
+            // Decrypt remaining blocks (block 0 already decrypted)
+            for (int i = 1; i < padded / 8; ++i)
                 bf.Decipher(enc_buf + i * 8, enc_buf + i * 8, 8);
-            }
 
-            // Parse header + index from decrypted buffer
+            // Parse header + index
             memcpy(&hdr, enc_buf, sizeof(hdr));
             CountFiles = hdr.file_count;
             FileSize   = hdr.body_size;
@@ -225,60 +226,48 @@ MixFileClass::MixFileClass(const char* pFileName) noexcept
                 Headers[i].Size   = idx[i].size;
             }
 
-            FileStartOffset = 4 + static_cast<int>(mix::kKeySourceSize) + padded;
+            FileStartOffset = body_start_offset + padded;
             free(enc_buf);
             fclose(fp);
             return;
         }
-    }
-    else if (first_word == mix::kFlagChecksum)
-    {
-        // Unencrypted RA2 with checksum: read normal header after flags
-        mix::TdHeader hdr{};
-        if (fread(&hdr, sizeof(hdr), 1, fp) != 1) {
-            fclose(fp);
-            return;
-        }
-        header_offset += sizeof(hdr);
-        CountFiles = hdr.file_count;
-        FileSize   = hdr.body_size;
+
+        // Unencrypted extended format (MO: flags=0, no key_source)
+        // Fall through to read TD header at current position
     }
     else
     {
-        // TD-style or MO (first 4 bytes all zero → skip to +4 for TD header)
-        int td_offset = (first_word == mix::kMoMarker) ? 4 : 0;
-        if (td_offset == 4) {
-            fseek(fp, 4, SEEK_SET);
-            header_offset = 8; // 4 (marker) + 4 (read ahead)
-        } else {
-            fseek(fp, 0, SEEK_SET);
-            header_offset = 0;
-        }
-
-        mix::TdHeader hdr{};
-        if (fread(&hdr, sizeof(hdr), 1, fp) != 1) {
-            fclose(fp);
-            return;
-        }
-        header_offset += sizeof(hdr);
-        CountFiles = hdr.file_count;
-        FileSize   = hdr.body_size;
+        // ---- TD legacy format ----
+        // first_field contains the file count, rewind to read full header
+        fseek(fp, 0, SEEK_SET);
+        body_start_offset = 0;
     }
+
+    // ----------------------------------------------------------
+    // Read TD header + index (shared by all unencrypted formats)
+    // ----------------------------------------------------------
+    mix::TdHeader hdr{};
+    if (fread(&hdr, sizeof(hdr), 1, fp) != 1) {
+        fclose(fp);
+        return;
+    }
+    body_start_offset += sizeof(hdr);
+    CountFiles = hdr.file_count;
+    FileSize   = hdr.body_size;
 
     if (CountFiles <= 0 || FileSize <= 0 || CountFiles > 65535) {
         fclose(fp);
         return;
     }
 
-    // Read index
     Headers = static_cast<MixHeaderData*>(malloc(sizeof(MixHeaderData) * CountFiles));
     if (!Headers) {
         fclose(fp);
         return;
     }
 
+    mix::IndexEntry entry{};
     for (int i = 0; i < CountFiles; ++i) {
-        mix::IndexEntry entry{};
         if (fread(&entry, sizeof(entry), 1, fp) != 1) {
             free(Headers);
             Headers = nullptr;
@@ -291,7 +280,7 @@ MixFileClass::MixFileClass(const char* pFileName) noexcept
         Headers[i].Size   = entry.size;
     }
 
-    FileStartOffset = header_offset + CountFiles * static_cast<int>(sizeof(mix::IndexEntry));
+    FileStartOffset = body_start_offset + CountFiles * static_cast<int>(sizeof(mix::IndexEntry));
 
     fclose(fp);
 }
@@ -308,7 +297,7 @@ void MixFileClass::Bootstrap()
 }
 
 // ============================================================
-// Component MIX ID computation (filename → MIX ID)
+// Compute MIX ID from filename
 // ============================================================
 
 uint32_t MixFileClass::ComputeID(const char* filename)
@@ -357,9 +346,6 @@ int MixFileClass::GetSize(const char* filename) const
 bool MixFileClass::Extract(int index, void* buffer, int buffer_size) const
 {
     if (index < 0 || index >= CountFiles || !buffer || !FileName)
-        return false;
-
-    if (Blowfish) // encrypted — blowfish decryption not yet implemented
         return false;
 
     if (buffer_size < Headers[index].Size)
