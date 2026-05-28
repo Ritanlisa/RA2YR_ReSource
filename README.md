@@ -38,10 +38,10 @@ RA2YR_ReSource/
 │   ├── type/                # 类型系统（原型模式）
 │   ├── entity/              # 动画、弹道、粒子、覆盖层等
 │   ├── structure/           # 步兵、单位、飞行器、建筑
-│   ├── house/               # 阵营、阵营类型、侧  #   ← House = 阵营
+│   ├── house/               # 子阵营、子阵营类型、阵营  #   ← House = 子阵营, Side = 阵营, 每个阵营包含1个及以上的子阵营
 │   └── system/              # 单元格、地图、场景、工厂
 ├── src/                     ← 59 个 .cpp 实现文件
-├── CMakeLists.txt           # C++20，Win32 静态库
+├── CMakeLists.txt           # C++20, Win32 静态库
 └── LICENSE.md               # GPL v3（继承自 CnC_Red_Alert）
 ```
 
