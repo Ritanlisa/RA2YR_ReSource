@@ -12,10 +12,14 @@
 
 | 指标 | 数值 |
 |--------|-------|
-| 可编译源文件 | 59 |
+| 可编译源文件 | 61 |
+| 总头文件 | 94 |
+| 总代码行数 | ~13,000 (headers ~8,000 + source ~5,000) |
 | 编译错误 | **0** |
-| 编译警告 | **0** (已修复 72 C4099 + 1 C4018 + 8 C4819) |
-| 已实现函数 | **~120** |
+| 编译警告 | **0** |
+| 已实现函数 | **~120** (~200+ stubs/empty) |
+| TODO/FIXME 标记 | **252** (source 205 + headers 47) |
+| IDA 命名 | **122 函数 + 30 全局变量 + 3 struct 类型** |
 | MIX 格式支持 | RA2 加密 + 扩展无加密 + TD 传统 (全部验证) |
 
 ### 构建命令
@@ -86,14 +90,57 @@ AbstractClass/Core  ✅ 26 COM + 14 engine virtuals
 ObjectClass         ✅ ~28 函数 (Put/Remove/Destroy/Damage/Selection/Sell/Flash etc.)
 MissionClass        ✅ QueueMission/NextMission/ForceMission/Mission_Revert
 RadioClass          ✅ SendToFirstLink/SendCommand/SendCommandWithData/SendToEachLink
-TechnoClass         ✅ ~26 函数 (Fire/GetFireError/Cloak/Guard/CreateUnit骨架/CanDeploy etc.)
-FootClass           ✅ ~14 函数 (MovementAI/Mission×4/Destroyed/MoveTo/StopMoving)
-BuildingClass       ✅ Mission×4 + Place + Mission_Missile + ExitObject + Type成员集成
-InfantryClass       ✅ Mission_Enter/ParaDrop×2 (RA1 无线电协调)
-UnitClass           ✅ Mission_Harvest(5状态)/Unload (RA1 采集状态机)
-AircraftClass       ✅ Mission×5 (RA1 7状态攻击/降落/卸载/猎杀/撤退)
-System              ✅ MIX reader (RA2加密+MO+TD, blowfish引擎, Westwood密钥计算)
+TechnoClass         ✅ Update文档化 + CreateUnit 10-section pipeline + ~26函数
+FootClass           ✅ MovementAI (7-section), Mission×4, Destroyed, MoveTo, StopMoving
+BuildingClass       ✅ Vtable全覆盖(19/19), Mission×4(RA1参考), Place, GetExitCoords
+InfantryClass       ✅ Constructor + 3 Mission + Vtable关键解码(Load/Update/PowerDrain)
+UnitClass           ✅ Constructor + 3 Mission + Vtable关键解码(Load/Update/PowerDrain)
+AircraftClass       ✅ Constructor + 5 Mission + Vtable关键解码(Load/Update)
+System              ✅ MIX reader (3 format verified), blowfish engine, Westwood key
 ```
+
+### 类 Vtable 覆盖状态
+
+| 类 | Load[5] | Update[9] | PowerDrain[13] | Mission thunks | 其他 |
+|-----|---------|-----------|-----------------|-----------------|------|
+| BuildingClass | ✅ 文档 | ✅ 文档 | ✅ 文档 | ✅ (6B each) | GetExitCoords,TogglePrimaryFactory,OnObjectExpired |
+| InfantryClass | ✅ 命名 | ✅ 命名 | ✅ 文档 | ✅ | — |
+| UnitClass | ✅ 命名 | ✅ 命名 | ✅ 文档 | ✅ | — |
+| AircraftClass | ✅ 命名 | ✅ 文档 | 委托Building | ✅ | TechnoClass_Update→Building |
+
+### BuildingClass Vtable [3] (0x7E3EBC) 全解码
+
+| Idx | 函数 | 大小 | 状态 |
+|-----|------|------|------|
+| [5] | BuildingClass_LoadFromStream | 870B | 7步结构 |
+| [6] | BuildingClass_Size/GetSizeMax | 187B | COM |
+| [9] | BuildingClass_Update | 327B | 4段电力 |
+| [10] | BuildingClass_OnObjectExpired | 536B | 指针清理 |
+| [11] | Mission_Construction thunk | 6B | ret 6 |
+| [12] | Mission_Guard thunk | 6B | ret 1824 |
+| [13] | BuildingClass_PowerDrainUpdate | 571B | 16定时器+16标志 |
+| [18] | BuildingClass_GetExitCoords | 84B | ✅ 已实现 |
+| [19] | BuildingClass_TogglePrimaryFactory | 121B | 出口坐标 |
+
+### 关键 IDA 函数命名 (共122函数)
+
+| IDA 名称 | 地址 | 大小 | 说明 |
+|----------|------|------|------|
+| ObjectClass_GetCoords | 0x5F65A0 | 33B | vtable[18], 坐标复制 |
+| BuildingClass_MissionDispatch | 0x5B35E0 | 101B | vtable[122], 部署分发 |
+| ProductionCompletionCallback | 0x424CE0 | 543B | 音频/发射动画/EVA |
+| CreateUnitOnCompletion | 0x424F00 | 583B | 地基/SW/单元创建 |
+| ConstructionPositionTracker | 0x425670 | 1688B | 6步位置跟踪 |
+| TechnoClass_Update | 0x6F3F40 | — | 父更新, 6 VFX子系统 |
+| FootClass_MovementAI | 0x4DA530 | 2520B | 7段移动, 138 BBs |
+| AudioController_Start | 0x750D40 | — | 音频控制 |
+| Coord_To_Cell | 0x565730 | — | 坐标→格子 |
+| Cell_GetGroundHeight | 0x578080 | — | 地面高度 |
+| Random_Range | 0x65C7E0 | — | 随机数 |
+| UnitClass_Create | 0x6B4A50 | — | 单元创建 |
+| Cell_IsWalkable | 0x6B5F80 | — | 可通行检查 |
+| Power_TimerProcess | 0x4A1D50 | — | 电力计时 |
+| Power_FlagProcess | 0x4A1CA0 | — | 电力标志 |
 
 ---
 
@@ -176,88 +223,123 @@ Key vtable entries (IDA identified):
 
 ---
 
-## Confirmed Global Variables
+## Confirmed Global Variables (IDA 命名)
 
-| Name | Address | Type | Notes |
-|------|---------|------|-------|
+| IDA Name | Address | Type | Notes |
+|----------|---------|------|-------|
 | `CurrentFrame` | 0xA8ED84 | `int` | Frame counter |
-| `CurrentObjects` | 0xA8ECB8 | `DynamicVectorClass<ObjectClass*>` | |
-| `RuleConfig` | 0x8871E0 | Rules/Config pointer | Global game rules |
-| `Session` | 0xA83D4C | Session instance | Network session state |
-| `rngState` | 0xA8B230 | Random state | RNG seed/state |
+| `RulesClass_Instance` | 0x8871E0 | RulesClass* | Global game rules |
+| `BuildingTypeClass_Array` | 0xA83D84 | BuildingTypeClass*[] | Building type table |
+| `HouseClass_Array` | 0xA8022C | HouseClass*[] | House instances |
+| `HouseClass_Count` | 0xA80238 | int | House count |
+| `FactoryClass_Array` | 0xA8EC1C | BuildingClass*[] | Factory buildings |
+| `FactoryClass_Count` | 0xA8EC28 | int | Factory count |
+| `MCV_DeployModeEnabled` | 0xA8EB7F | bool | MCV deploy toggle |
+| `RandomState_Seed` | 0xA8B230 | int | RNG state |
+| `Map_MaxHeight` | 0x89A1B4 | int | Max map height |
+| `Map_CellHeight` | 0x89A1C0 | int | Cell height delta |
+| `Map_InvalidCoord_X/Y/Z` | 0x89A178/7C/80 | int[3] | Invalid map coord |
+| `Map_BottomRightCell` | 0xB0B788 | CellStruct | Map boundary |
+| `Direction_X_Offsets` | 0x89F688 | int16[8] | X direction offsets |
+| `BuildingClass_InstanceArray` | 0xB0F4EC | BuildingClass*[] | Build instances |
+| `BuildingTypeClass_AnimTable` | 0xB054D4 | — | Anim lookup table |
+| `BuildingLoadQueue_*` | 0xB0E840+ | queue | Load queue |
 
 ---
 
-## Functions Named in IDA
+## Master TODO (优先级排序)
 
-| IDA Name | Address | Size | Description |
-|----------|---------|------|-------------|
-| `ObjectClass_ctor` | 0x5F3900 | 500B | ObjectClass constructor |
-| `FootClass_MovementAI` | 0x4DA530 | 2520B | Movement update |
-| `TechnoClass_SmokeUpdate` | 0x414BB0 | 1540B | Smoke animation |
-| `TechnoClass_CreateUnit` | 0x423AC0 | 4234B | Unit construction pipeline |
-| `ObjectClass::Put` | 0x5F4520 | 500B | Add to CurrentObjects |
-| `sub_453E20` | 0x453E20 | 870B | BuildingClass factory |
-| `sub_424CE0` | 0x424CE0 | 543B | CreateUnit production completion |
-| `sub_424F00` | 0x424F00 | 583B | Building placement |
-| `RulesClass_LoadFromINI` | 0x66D530 | 18793B | INI parser (largest) |
-| `WinMain` | 0x6BB9A0 | 10261B | Game entry point |
+### P0 — 核心游戏管线 (阻塞级)
 
----
+| # | 描述 | 文件 | IDA地址 | 估算行数 |
+|---|------|------|---------|----------|
+| P0-1 | CreateUnit deploy animation Section 7 (sub_425670 弹坑/烟雾/部署动画) | `techno.cpp:560-593` | 0x423C24 | ~200 |
+| P0-2 | CreateUnit final unit creation Section 10 (BuildingClass_MissionDispatch + exit cell) | `techno.cpp:770-815` | 0x424938 | ~150 |
+| P0-3 | ProductionCompletionCallback 完整实现 (音频+特殊建筑发射动画) | `techno.cpp:833-900` | 0x424CE0 | ~150 |
+| P0-4 | CreateUnitOnCompletion 完整实现 (地基偏移/SW特效/单元创建) | `techno.cpp:913-969` | 0x424F00 | ~200 |
+| P0-5 | ConstructionPositionTracker 完整实现 (6步坐标跟踪/角度计算) | `techno.cpp:984-1032` | 0x425670 | ~250 |
+| P0-6 | CreateUnitAtCoordsStandard + Timed (候选过滤→UnitClass_Create) | `techno.cpp:1048-1090` | 0x6B59A0/6B5C90 | ~200 |
+| P0-7 | BuildingClass_Mission_Construction 动画轮询+工厂协调 | `building.cpp:101-161` | — | ~50 |
+| P0-8 | BuildingClass_Mission_Selling 动画+MCV undeploy+退款 | `building.cpp:168-235` | — | ~80 |
+| P0-9 | FootClass::Destroyed 乘客弹出+爆炸动画+乘员生成 | `foot.cpp:338-370` | — | ~80 |
+| P0-10 | BuildingClass::Place 建筑物放置最终化 | `building.cpp:490-523` | — | ~50 |
 
-## Current Codebase Structure
+### P1 — IDA 翻译 (解锁子系统)
 
-```
-D:\RA2YR_ReSource\
-├── include\gamemd\          # 89 header files, 17 subdirectories
-│   ├── core\                # enums, math, memory, vector, target, coordinate
-│   ├── object\              # AbstractClass → ObjectClass → ... → FootClass
-│   ├── type\                # BuildingTypeClass (~270 members), TechnoTypeClass, etc.
-│   ├── structure\           # Infrastructure/Unit/Building/Aircraft
-│   ├── system\              # Cell, Map, MIX file, Factory, FileSystem
-│   └── ...                  # entity, house, team, ui, network, render, misc, wdt
-├── src\                     # 59 .cpp files, 13 subdirectories
-│   ├── object\              # abstract, object, mission, radio, techno, foot
-│   ├── structure\           # building, infantry, unit, aircraft
-│   ├── system\              # mix_file (完整MIX读取器), mix_blowfish (Blowfish+Westwood密钥)
-│   └── ...
-├── CnC_Red_Alert\           # RA1 open-source reference (277 .CPP + 237 .H)
-├── YRpp\                    # DLL injection headers (~150 files)
-├── RA2YRMIX\                # 17 original RA2YR MIX test files
-├── MOMIX\                   # 23 扩展格式 MIX 测试文件 (DLL injection 模组)
-└── CMakeLists.txt           # C++20, Win32, /utf-8, /FS
-```
+| # | 描述 | 文件 | IDA地址 | 估算行数 |
+|---|------|------|---------|----------|
+| P1-1 | MapClass 18个stub函数 (DamageArea, Pathfinding_Find, Reveal) | `map.cpp` | — | ~400 |
+| P1-2 | SmokeUpdate 完整实现 (1540B, damage smoke/sink) | `techno.cpp:482-510` | 0x414BB0 | ~100 |
+| P1-3 | BuildingClass::Update 完整实现 (电力/C4/雷达更新) | `building.cpp` | 0x442C40 | ~200 |
+| P1-4 | BuildingClass::PowerDrainUpdate 完整实现 (16定时器+16标志) | `building.cpp` | 0x454260 | ~150 |
+| P1-5 | BuildingClass_LoadFromStream 完整反序列化 | `building.cpp` | 0x453E20 | ~250 |
+| P1-6 | TechnoClass::Update 完整父更新 (6 VFX子系统初始化) | `techno.cpp:1093+` | 0x6F3F40 | ~150 |
+| P1-7 | VFX子系统链: sub_6AF1A0/sub_6B6C90/sub_4717D0/sub_6292B0/sub_71A4E0/sub_41D380 | `techno.cpp` | 多个 | ~300 |
+| P1-8 | 部署特效: sub_489280(fire)/sub_48A620(smoke)/sub_6D2790(crater) | `techno.cpp` | 0x489280/48A620/6D2790 | ~150 |
+| P1-9 | SelectAutoTarget 完整实现 (cell occupier迭代+Evaluate_Object评分) | `techno.cpp:283-362` | — | ~100 |
+| P1-10 | vt_entry函数集 (240/244/248/292/456/488/436/108/132/D8/1E8/472) | 多个文件 | 多个 | varies |
+| P1-11 | BuildingClass_Mission_Repair 修复合规逻辑 (金钱扣除+治疗) | `building.cpp:242-355` | — | ~60 |
+| P1-12 | BuildingClass_Mission_Missile 核弹GPS动画+子弹发射 | `building.cpp:357-456` | — | ~100 |
+
+### P2 — 系统完成
+
+| # | 描述 | 文件 | 估算行数 |
+|---|------|------|----------|
+| P2-1 | ReceiveDamage 完整护甲计算 (弹头vs护甲类型) | `object.cpp:62-93` | ~50 |
+| P2-2 | Audio系统 (VocClass/VoxClass ~15 stub方法) | `audio.cpp` | ~200 |
+| P2-3 | TriggerClass 事件注册/动作触发/实例创建 | `trigger.cpp` | ~200 |
+| P2-4 | TacticalClass 坐标转换/遮挡/绘制 | `tactical.cpp` | ~200 |
+| P2-5 | Surface/DSurface Blit/FillRect/Lock/Unlock/DrawSHP | `surface.cpp` | ~200 |
+| P2-6 | Cell occupancy (IsCellOccupied, MarkAllOccupationBits) | `object.cpp` | ~80 |
+| P2-7 | Fire/SmokeUpdate/TakeDamage — 战斗子系统完善 | `techno.cpp` | ~100 |
+
+### P3 — 架构完整性
+
+| # | 描述 | 文件 | 估算行数 |
+|---|------|------|----------|
+| P3-1 | 成员文档化 — IDA验证所有 `unknown_*` 成员(34个跨4类) | structure headers | 调研 |
+| P3-2 | 从YRpp补全HouseClass/RulesClass/SessionClass成员 | 8+ headers | varies |
+| P3-3 | 网络子系统 (Winsock/IPX/UDP/Connection/Multiplayer) | 4 files | ~500 |
+| P3-4 | UI子系统 (CommandClass 14子类/Sidebar/Mouse) | 6 files | ~500 |
+| P3-5 | Entity子系统 (Anim/Bullet/Particle/Smudge/Overlay/Tiberium/Wave/Tube/Terrain) | 9 files | ~600 |
+| P3-6 | Voxel渲染 (VoxelAnimClass) | voxel headers | ~300 |
+| P3-7 | SuperWeapon静态方法 (LightningStorm/PsyDom/NukeFlash/ChronoScreenEffect) | `super_weapon.cpp` | ~200 |
+| P3-8 | Tag/Team/Trigger系统 (持久化+动作链) | 3 files | ~500 |
+| P3-9 | Far Future: Ares/Phobos扩展原生支持 | — | — |
+
+### 统计
+
+| 指标 | 数值 |
+|------|------|
+| 已实现函数 | ~120 |
+| 存根/空实现 | ~200+ |
+| TODO/FIXME标记 | 252 (src 205 + headers 47) |
+| 未命名成员 | 34 (BuildingClass 17 + Infantry 6 + Unit 3 + Aircraft 8) |
+| 待翻译IDA函数 | 20 sub_ + 12 vt_entry |
+| 构建状态 | 0 errors, 0 warnings |
 
 ---
 
 ## 当前会话上下文 (快速恢复)
 
-### 已完成 (最近)
+### IDA 命名摘要 (共122函数 + 30全局)
 
-| 任务 | 文件 | 状态 |
+| 类别 | 示例 | 用途 |
 |------|------|------|
-| CreateUnit 生产管线核心实现 | techno.cpp, building.hpp/cpp, building_type.hpp | ✅ 编译通过 (0e/0w) |
-| sub_424CE0/sub_424F00 生产回调骨架 | techno.cpp | ✅ 结构实现，TODO标注子函数 |
-| BuildingTypeClass 生产成员字段 | building_type.hpp | ✅ 10+ 生产相关字段 |
-| BuildingClass 生产状态成员 | building.hpp/cpp | ✅ ProductionTimer/Accum 等 |
-| sub_453E20 Load/工厂文档化 | building.cpp | ✅ 结构分析完成 |
-| MIX 通用格式读取器 | mix_file.cpp | ✅ 3 种格式验证 |
-| Blowfish 引擎 (1042 常量) | mix_blowfish.cpp | ✅ 回合验证 |
-| Westwood 密钥计算 (RSA) | mix_blowfish.cpp | ✅ expandmd01 解密 |
-| BuildingClass 状态机 ×4 | building.cpp | ✅ RA1 导出 |
-| Infantry/Unit/Aircraft 状态机 | infantry/unit/aircraft.cpp | ✅ RA1 导出 |
-| FootClass 移动/路径 | foot.cpp | ✅ RA1 导出 |
-| TechnoClass 战斗函数 | techno.cpp | ✅ Fire/GetFireError/Guard |
-| 所有 C4099 警告修复 | 24 个头文件 | ✅ 0 warnings |
+| 生产管线 (8) | `ProductionCompletionCallback`, `CreateUnitOnCompletion`, `ConstructionPositionTracker` | CreateUnit 回调链 |
+| 坐标/格子 (10) | `Coord_To_Cell`, `Cell_GetGroundHeight`, `Cell_IsWalkable`, `CellCoord_To_CellObj` | 位置计算 |
+| 音频 (5) | `AudioController_Start`, `AudioController_StartAt`, `AudioController_Stop`, `AudioController_Init` | 工作音效 |
+| 数学 (5) | `Math_RoundToInt`, `Math_Sqrt`, `Math_SinCos`, `Math_CalcAngle` | 坐标计算 |
+| 电力 (5) | `Power_TimerProcess`, `Power_FlagProcess`, `BuildingClass_PowerDrainUpdate` | 电力系统 |
+| 单元创建 (4) | `CreateUnitAtCoords_Timed`, `CreateUnitAtCoords_Standard`, `UnitClass_Create` | 最终产出 |
+| ObjectClass vtable (5) | `ObjectClass_GetCoords`, `ObjectClass_HasC4`, `ObjectClass_SetPosition` | 基类方法 |
+| BuildingClass vtable (8) | `BuildingClass_MissionDispatch`, `BuildingClass_OnObjectExpired`, `BuildingClass_TogglePrimaryFactory` | 建筑虚函数 |
+| 全局变量 (30) | `RulesClass_Instance`, `CurrentFrame`, `MCV_DeployModeEnabled`, `BuildingTypeClass_Array`, `HouseClass_Array` 等 | 全局状态 |
 
-### 当前 TODO (Priority Order)
-
-1. **P0**: `TechnoClass::CreateUnit` 完善 — 部署动画、弹坑效果、单元创建 (当前骨架已完成核心生产逻辑)
-2. **P0**: `sub_453E20` BuildingClass Load/工厂实现 — 当前已文档化，待完整翻译
-3. **P1**: `sub_424CE0`/`sub_424F00` 生产回调完善 — 当前骨架已完成
-4. **P1**: 更多 IDA BuildingClass vtable 函数识别
-5. **P2**: 动态调试 (DLL injection)
-6. **Far Future**: Ares/Phobos 扩展原生支持
+### IDA struct 类型 (3个)
+- `BuildingClass_Full` — 已应用于 CreateUnit + 3 callbacks 的 `this` 参数
+- `BuildingClass_Production` — 生产成员布局
+- `BuildingTypeClass_Production` — 类型成员布局 (660→890偏移)
 
 ### 项目关键信息
 
@@ -269,8 +351,14 @@ D:\RA2YR_ReSource\
 - **MIX 格式**: 前 2B=0 为扩展格式; flags 0x0002=加密; 算法来自 RA1 MixFileClass
 - **MIX 文件名**: 仅存 hash ID, 不存原始名; 通过 `ComputeId()` 匹配
 - **IDA 连接**: `127.0.0.1:13337`, i64 在 `C:\Program Files (x86)\Mental Omega\gamemd.exe.i64`
-- **IDA 命名状态**: 61 个函数 + 27 个全局变量已重命名 (见下方 IDA 命名清单)
+- **IDA 命名状态**: 122 个函数 + 30 个全局变量已重命名 (见上方命名清单)
 - **Python**: 3.14.2 (`python` 或 `py`), Windows 上已就绪
+
+### RA2 Mission 系统关键发现
+- BuildingClass/InfantryClass/UnitClass/AircraftClass 的 Mission_* 虚函数仅为简单 thunks (返回常量如 6/1824)
+- 实际生产逻辑在 `CreateUnit` (由函数指针表调用), 不在 Mission 状态机中
+- RA1 风格的状态机仅作参考实现, 不与二进制完全一致
+- 每个类的 vtable[13] 是 PowerDrainUpdate (电力消耗), vtable[9] 是 Update (每帧更新)
 
 ### 测试数据
 
@@ -278,48 +366,6 @@ D:\RA2YR_ReSource\
 |------|------|--------|
 | RA2YRMIX/ | first=0, flags=0x0003 (加密) | expandmd01(33文件), language(6), WDT(126) |
 | MOMIX/ | first=0, flags=0x0000 (无加密) | expandmo04(66), expandmo90(45) |
-
----
-
-## Next Session Work Plan
-
-### P0: CreateUnit 完整翻译
-- **DONE**: 核心生产逻辑已实现 (techno.cpp:540-732)
-- **TODO**: 部署动画、弹坑效果、烟雾特效 (需 sub_425670, sub_5F3E70 等子函数)
-- **TODO**: 生产完成回调子函数完善 (sub_424CE0/sub_424F00)
-
-### P0: BuildingClass 工厂翻译 (sub_453E20)
-- **DONE**: IDA 分析完成 (870B), 已文档化
-- **TODO**: 完整实现 Load/反序列化逻辑 (sub_70BF50, sub_41C590 等子函数)
-
-### P1: IDA 函数反编译与实现
-- **DONE**: CreateUnit (4234B) 核心生产管线
-- **DONE**: sub_424CE0 (543B) 生产完成回调骨架
-- **DONE**: sub_424F00 (583B) 单元创建回调骨架
-- **TODO**: 更多 BuildingClass vtable 函数
-
-### P2: 动态调试验证
-- DLL injection (YRpp 方式) 测试函数替换
-
-### P3: Far Future — Ares/Phobos 扩展原生支持
-- 当前通过 DLL 注入提供功能扩展
-- 长期目标：将常用扩展功能直接集成到引擎中
-
----
-
-## 测试数据 (Mix 文件)
-
-| 来源 | 路径 | 文件数 | 格式 | 状态 |
-|------|------|--------|------|------|
-| **RA2YR 原版** | `RA2YRMIX/` | 17 | RA2 加密 (first=0, flags=0x0003) | ✅ 解密验证通过 |
-| 扩展无加密 (DLL注入模组) | `MOMIX/` | 23 | 扩展格式 (first=0, flags=0x0000) | ✅ 解析验证通过 |
-
-### 已验证文件
-- `expandmd01.mix`: 33 files, RULES.INI text confirmed
-- `language.mix`: 6 files
-- `WDT.MIX`: 126 files
-- `expandmo04.mix`: 66 files, binary data readable
-- `expandmo90.mix`: 45 files, same IDs as expandmo41 (shared resources)
 
 ---
 
