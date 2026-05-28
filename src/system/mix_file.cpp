@@ -164,21 +164,18 @@ MixFileClass::MixFileClass(const char* pFileName) noexcept
             mix::BlowfishEngine bf;
             bf.SetKey(blowfish_key, mix::kBlowfishKeySize);
 
-            // Read encrypted header blocks
-            // Header + index = 6 bytes header + count * 12 bytes index
-            // Read first 8-byte block to get file count
-            uint8_t enc_block[8];
-            if (fread(enc_block, 8, 1, fp) != 1) {
+            // Read encrypted header + index as 8-byte blocks
+            // First block contains: TdHeader (6 bytes) + first 2 bytes of index[0]
+            uint8_t first_block[8];
+            if (fread(first_block, 8, 1, fp) != 1) {
                 fclose(fp);
                 return;
             }
-            header_offset += 8;
 
-            bf.Decipher(enc_block, enc_block, 8);
+            bf.Decipher(first_block, first_block, 8);
 
-            // Parse decrypted block to get file count
             mix::TdHeader hdr{};
-            memcpy(&hdr, enc_block, sizeof(hdr));
+            memcpy(&hdr, first_block, sizeof(hdr));
             CountFiles = hdr.file_count;
             FileSize   = hdr.body_size;
 
@@ -187,40 +184,35 @@ MixFileClass::MixFileClass(const char* pFileName) noexcept
                 return;
             }
 
-            // Read and decrypt remaining index blocks
-            int total_index_bytes = CountFiles * static_cast<int>(sizeof(mix::IndexEntry));
-            int remaining_header = total_index_bytes - (8 - sizeof(hdr)); // minus header bytes already read
+            // Total encrypted data = header(6) + index(count*12)
+            int total_enc = static_cast<int>(sizeof(mix::TdHeader))
+                          + CountFiles * static_cast<int>(sizeof(mix::IndexEntry));
+            int padded = ((total_enc + 7) / 8) * 8;
 
-            uint8_t* enc_buf = static_cast<uint8_t*>(malloc(total_index_bytes));
-            if (!enc_buf) {
-                fclose(fp);
-                return;
-            }
+            uint8_t* enc_buf = static_cast<uint8_t*>(malloc(padded));
+            if (!enc_buf) { fclose(fp); return; }
 
-            // Copy already-read header bytes
-            memcpy(enc_buf, enc_block, 8);
+            memcpy(enc_buf, first_block, 8);
 
-            // Read remaining encrypted blocks
-            if (remaining_header > 0) {
-                int padded = ((remaining_header + 7) / 8) * 8;
-                if (fread(enc_buf + 8, 1, padded, fp) != static_cast<size_t>(padded)) {
-                    free(enc_buf);
-                    fclose(fp);
-                    return;
+            int remaining = padded - 8;
+            if (remaining > 0) {
+                if (fread(enc_buf + 8, 1, remaining, fp) != static_cast<size_t>(remaining)) {
+                    free(enc_buf); fclose(fp); return;
                 }
-                header_offset += padded;
             }
 
             // Decrypt all blocks
-            bf.Decipher(enc_buf, enc_buf, total_index_bytes);
-
-            // Parse index entries
-            Headers = static_cast<MixHeaderData*>(malloc(sizeof(MixHeaderData) * CountFiles));
-            if (!Headers) {
-                free(enc_buf);
-                fclose(fp);
-                return;
+            for (int i = 1; i < padded / 8; ++i) {
+                bf.Decipher(enc_buf + i * 8, enc_buf + i * 8, 8);
             }
+
+            // Parse header + index from decrypted buffer
+            memcpy(&hdr, enc_buf, sizeof(hdr));
+            CountFiles = hdr.file_count;
+            FileSize   = hdr.body_size;
+
+            Headers = static_cast<MixHeaderData*>(malloc(sizeof(MixHeaderData) * CountFiles));
+            if (!Headers) { free(enc_buf); fclose(fp); return; }
 
             auto* idx = reinterpret_cast<mix::IndexEntry*>(enc_buf + sizeof(mix::TdHeader));
             for (int i = 0; i < CountFiles; ++i) {
@@ -229,6 +221,7 @@ MixFileClass::MixFileClass(const char* pFileName) noexcept
                 Headers[i].Size   = idx[i].size;
             }
 
+            FileStartOffset = 4 + static_cast<int>(mix::kKeySourceSize) + padded;
             free(enc_buf);
             fclose(fp);
             return;
