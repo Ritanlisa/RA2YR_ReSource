@@ -239,34 +239,100 @@ void FootClass::HandleLocomotionUpdate()
 
 int FootClass::Mission_Move()
 {
-    if (!m_destination)
-        return 0;
-
-    if (m_locomotor.ptr)
+    // RA1 FootClass::Mission_Move pattern:
+    // If no destination and not driving, enter idle mode
+    // If no target, scan for nearby threats (AI-controlled units)
+    if (!m_destination && m_mission_queued == 0)
     {
-        // ILocomotion::Move_To(destination)
-        // Returns: 1 = arrived, 0 = still moving, -1 = blocked
+        QueueMission(static_cast<Mission>(static_cast<int>(gamemd::Mission::Guard)), true);
+        return 1;
     }
 
-    return 0;
+    // AI units: scan for targets while moving
+    if (!m_target)
+    {
+        // TODO: check if AI-controlled, then SelectAutoTarget(THREAT_RANGE)
+    }
+
+    return 10;
 }
 
 int FootClass::Mission_Attack()
 {
+    // RA1 pattern: close distance → fire → repeat
     auto* target = m_target;
     if (!target)
         return 0;
 
     if (!IsCloseEnoughToAttack(target))
     {
+        // Move toward target
         m_destination = target;
         return 0;
     }
 
+    // Fire at target
     int weapon_idx = SelectWeapon(target);
     Fire(target, weapon_idx);
 
     return 0;
+}
+
+int FootClass::Mission_Guard()
+{
+    // RA1 Guard pattern: scan for enemies in area, attack if found
+    // If no target, periodically scan
+    if (!m_target)
+    {
+        SelectAutoTarget(static_cast<TargetFlags>(0), 0, false);
+    }
+    return 30;
+}
+
+int FootClass::Mission_Hunt()
+{
+    // RA1 Hunt: aggressive scan + chase
+    if (!m_target)
+    {
+        SelectAutoTarget(static_cast<TargetFlags>(0), 0, false);
+    }
+    if (!m_target)
+    {
+        QueueMission(static_cast<Mission>(static_cast<int>(gamemd::Mission::Guard)), true);
+        return 30;
+    }
+    return 0;
+}
+
+// ============================================================
+// Movement control helpers
+// ============================================================
+
+bool FootClass::MoveTo(CoordStruct* coords)
+{
+    // RA1 Assign_Destination pattern: set navigation target
+    if (!coords)
+        return false;
+
+    // Reset pathfinding threshold
+    m_path_delay_timer = {};
+    m_destination = nullptr; // NavCom in RA1
+
+    return true;
+}
+
+bool FootClass::StopMoving()
+{
+    // RA1 Stop_Driver pattern:
+    // Stop ILocomotion, clear head-to, set speed to 0
+    if (!m_locomotor.ptr)
+        return false;
+
+    // TODO: ILocomotion::Stop()
+    // TODO: Release track reservation
+    // TODO: Set speed to 0
+
+    return true;
 }
 
 void FootClass::Destroyed(ObjectClass* killer)
@@ -281,7 +347,7 @@ void FootClass::Destroyed(ObjectClass* killer)
     // Stop movement
     if (m_locomotor.ptr)
     {
-        // TODO: ILocomotion::Stop()
+        StopMoving();
     }
 
     // Eject passengers
