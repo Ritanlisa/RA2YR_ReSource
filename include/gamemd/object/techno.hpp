@@ -215,6 +215,7 @@ public:
     virtual void Reload();
     virtual void SetDestination(AbstractClass* dest, bool unknown);
     virtual void UpdateSight(uint32_t a, uint32_t b, uint32_t c, uint32_t d, uint32_t e);
+    virtual void SmokeUpdate();
     virtual void CreateGap();
     virtual void DestroyGap();
 
