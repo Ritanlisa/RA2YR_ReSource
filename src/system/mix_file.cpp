@@ -132,6 +132,8 @@ MixFileClass::MixFileClass(const char* pFileName) noexcept
     FileStartOffset = 0;
     Headers         = nullptr;
     field_24        = 0;
+    MemoryData      = nullptr;
+    MemoryDataSize  = 0;
 
     if (!pFileName)
         return;
@@ -299,6 +301,109 @@ MixFileClass::MixFileClass(const char* pFileName) noexcept
 }
 
 // ============================================================
+// Memory-backed constructor — parses from buffer, keeps data alive
+// ============================================================
+
+MixFileClass::MixFileClass(const uint8_t* data, int dataSize, const char* name) noexcept
+    : Node(noinit_t())
+{
+    MemoryData     = const_cast<uint8_t*>(data);
+    MemoryDataSize = dataSize;
+    FileName       = name ? _strdup(name) : _strdup("[mem]");
+    Blowfish       = false;
+    Encryption     = false;
+    CountFiles     = 0;
+    FileSize       = 0;
+    FileStartOffset = 0;
+    Headers        = nullptr;
+    field_24       = 0;
+
+    if (!data || dataSize <= 2) return;
+
+    int off = 0;
+    int16_t first = *(int16_t*)(data + off);
+    if (first == 0) {
+        off += 2;
+        if (dataSize < off + 2) return;
+        int16_t flags = *(int16_t*)(data + off);
+        off += 2;
+
+        if (flags & 2) {
+            Encryption = true; Blowfish = true;
+            if (dataSize < off + 80) return;
+            uint8_t bf_key[56];
+            mix::ComputeBlowfishKey(data + off, bf_key);
+            off += 80;
+
+            mix::BlowfishEngine bf;
+            bf.SetKey(bf_key, 56);
+
+            if (dataSize < off + 8) return;
+            uint8_t dec[8]; memcpy(dec, data + off, 8);
+            bf.Decipher(dec, dec, 8);
+            mix::TdHeader hdr; memcpy(&hdr, dec, sizeof(hdr));
+            int trial_cnt = hdr.file_count;
+            if (trial_cnt <= 1 || trial_cnt > 65535) return;
+
+            int total_enc = 6 + trial_cnt * 12;
+            int padded = ((total_enc + 7) / 8) * 8;
+            if (dataSize < off + padded) { CountFiles = 0; return; }
+
+            uint8_t* db = (uint8_t*)malloc(padded);
+            if (!db) return;
+            memcpy(db, data + off, padded);
+            for (int b = 0; b < padded / 8; ++b)
+                bf.Decipher(db + b*8, db + b*8, 8);
+
+            memcpy(&hdr, db, sizeof(hdr));
+            CountFiles = hdr.file_count; FileSize = hdr.body_size;
+            if (CountFiles <= 0 || CountFiles > 65535) { free(db); CountFiles = 0; return; }
+
+            // Validate: FileSize must fit within the actual data
+            int hdr_end = off + padded;
+            if (FileSize > dataSize - hdr_end) { free(db); CountFiles = 0; return; }
+            // Validate: avg body size must be at least 200 bytes
+            if (CountFiles > 0 && FileSize / CountFiles < 200) { free(db); CountFiles = 0; return; }
+
+            Headers = (MixHeaderData*)malloc(sizeof(MixHeaderData) * CountFiles);
+            if (!Headers) { free(db); return; }
+            auto* idx = (mix::IndexEntry*)(db + sizeof(mix::TdHeader));
+            for (int i = 0; i < CountFiles; ++i) {
+                Headers[i].ID = idx[i].id;
+                Headers[i].Offset = idx[i].offset;
+                Headers[i].Size = idx[i].size;
+            }
+            FileStartOffset = off + padded;
+            free(db);
+            return;
+        }
+        // flags=0: unencrypted extended, fall through to TD header at current off
+    } else {
+        off = 0; // Classic TD from beginning
+    }
+
+    // TD header
+    if (dataSize < off + 6) { CountFiles = 0; return; }
+    mix::TdHeader hdr; memcpy(&hdr, data + off, sizeof(hdr));
+    CountFiles = hdr.file_count; FileSize = hdr.body_size;
+    if (CountFiles <= 0 || CountFiles > 65535) { CountFiles = 0; return; }
+    int idx_sz = CountFiles * 12;
+    if (dataSize < off + 6 + idx_sz) { CountFiles = 0; return; }
+    int hdr_end = off + 6 + idx_sz;
+    if (FileSize > dataSize - hdr_end) { CountFiles = 0; return; }
+    if (CountFiles > 0 && FileSize / CountFiles < 200) { CountFiles = 0; return; }
+    Headers = (MixHeaderData*)malloc(sizeof(MixHeaderData) * CountFiles);
+    if (!Headers) return;
+    auto* idx = (mix::IndexEntry*)(data + off + 6);
+    for (int i = 0; i < CountFiles; ++i) {
+        Headers[i].ID = idx[i].id;
+        Headers[i].Offset = idx[i].offset;
+        Headers[i].Size = idx[i].size;
+    }
+    FileStartOffset = off + 6 + idx_sz;
+}
+
+// ============================================================
 // Bootstrap — initialize all global MIX file references
 // ============================================================
 
@@ -357,11 +462,12 @@ void MixFileClass::Bootstrap()
     // Recursively extract sub-MIX files by trying to load every entry
     // from the top-level MIX files as encrypted MIX
     int processed = 0;
-    while (processed < g_mixPool.Count) {
+    const int MAX_SUB_MIX = 50;
+    while (processed < g_mixPool.Count && g_mixPool.Count < MAX_SUB_MIX) {
         MixFileClass* parent = g_mixPool[processed++];
-        for (int i = 0; i < parent->CountFiles; ++i) {
+        for (int i = 0; i < parent->CountFiles && g_mixPool.Count < MAX_SUB_MIX; ++i) {
             int sz = parent->GetSize(i);
-            if (sz < 200) continue;
+            if (sz < 1000) continue; // sub-MIX files are at least 1KB
 
             // Peek at first 4 bytes - must be 0x0000 for RA2 encrypted MIX
             uint8_t head[4];
@@ -372,43 +478,26 @@ void MixFileClass::Bootstrap()
 
             uint8_t* data = (uint8_t*)malloc(sz);
             if (!data || !parent->Extract(i, data, sz)) { free(data); continue; }
-            char tmpname[64];
-            snprintf(tmpname, sizeof(tmpname), "_tmp_%08X.mix", parent->GetFileID(i));
-            FILE* tmpf = fopen(tmpname, "wb");
-            if (!tmpf) { free(data); continue; }
-            fwrite(data, 1, sz, tmpf);
-            fclose(tmpf);
 
-            auto* submix = new MixFileClass(tmpname);
+            char tmpname[64];
+            snprintf(tmpname, sizeof(tmpname), "sub:0x%08X", parent->GetFileID(i));
+
+            auto* submix = new MixFileClass(data, sz, tmpname);
             if (submix->IsValid()) {
-                // Sanity: avg file size >= 100 bytes, count < 50000
-                if (submix->CountFiles > 0 && sz / submix->CountFiles >= 100 && submix->CountFiles < 50000) {
-                    submix->FileName = _strdup(tmpname);
-                    LOG_INFO("  Sub-MIX: hash=0x%08X -> %d files, %d bytes",
-                        parent->GetFileID(i), submix->CountFiles, sz);
-                    g_mixPool.AddItem(submix);
-                } else { delete submix; }
-            } else { delete submix; }
-            remove(tmpname);
-            free(data);
+                LOG_INFO("  Sub-MIX: hash=0x%08X -> %d files, %d bytes (body %d, avg %d)",
+                    parent->GetFileID(i), submix->CountFiles, sz,
+                    submix->FileSize, submix->CountFiles > 0 ? submix->FileSize / submix->CountFiles : 0);
+                g_mixPool.AddItem(submix); // submix owns data via MemoryData
+            } else {
+                delete submix; // destructor frees MemoryData (= data)
+            }
         }
     }
 
     LOG_INFO("MixFileClass::Bootstrap: done, %d total MIX in pool after recursion", g_mixPool.Count);
-
-    // Dump sub-MIX contents for diagnostics
-    for (int i = 7; i < g_mixPool.Count; ++i) {
-        auto* m = g_mixPool[i];
-        if (!m || m->CountFiles == 0) continue;
-        int pal_count = 0, shp_count = 0;
-        for (int j = 0; j < m->CountFiles; ++j) {
-            int sz = m->GetSize(j);
-            if (sz == 768) { pal_count++; if (pal_count <= 2) LOG_INFO("  [%s] PAL? idx=%d hash=0x%08X", m->FileName, j, m->GetFileID(j)); }
-            if (sz > 10000 && sz < 500000) shp_count++;
-        }
-        if (pal_count > 0 || shp_count > 0)
-            LOG_INFO("  Sub-MIX %s: %d pal-size, %d shp-size files", m->FileName, pal_count, shp_count);
-    }
+    // Dump first 3 MIX entries for hash verification
+    for (int i = 0; i < g_mixPool.Count && i < 3; ++i)
+        if (g_mixPool[i]) g_mixPool[i]->DumpEntries();
 }
 
 // ============================================================
@@ -472,11 +561,21 @@ int MixFileClass::GetSize(const char* filename) const
 
 bool MixFileClass::Extract(int index, void* buffer, int buffer_size) const
 {
-    if (index < 0 || index >= CountFiles || !buffer || !FileName)
+    if (index < 0 || index >= CountFiles || !buffer)
         return false;
-
     if (buffer_size < static_cast<int>(Headers[index].Size))
         return false;
+
+    // Memory-backed: read directly from MemoryData buffer
+    if (MemoryData) {
+        int pos = FileStartOffset + static_cast<int>(Headers[index].Offset);
+        int sz  = static_cast<int>(Headers[index].Size);
+        if (pos + sz > MemoryDataSize) return false;
+        memcpy(buffer, MemoryData + pos, sz);
+        return true;
+    }
+
+    if (!FileName) return false;
 
     FILE* fp = fopen(FileName, "rb");
     if (!fp)
@@ -498,10 +597,21 @@ bool MixFileClass::Extract(const char* filename, void* buffer, int buffer_size) 
 
 bool MixFileClass::Peek(int index, void* buffer, int size) const
 {
-    if (index < 0 || index >= CountFiles || !buffer || !FileName)
+    if (index < 0 || index >= CountFiles || !buffer)
         return false;
     if (size > static_cast<int>(Headers[index].Size))
         size = static_cast<int>(Headers[index].Size);
+
+    // Memory-backed
+    if (MemoryData) {
+        int pos = FileStartOffset + static_cast<int>(Headers[index].Offset);
+        if (pos + size > MemoryDataSize) return false;
+        memcpy(buffer, MemoryData + pos, size);
+        return true;
+    }
+
+    if (!FileName) return false;
+
     FILE* fp = fopen(FileName, "rb");
     if (!fp) return false;
     int pos = FileStartOffset + static_cast<int>(Headers[index].Offset);
@@ -517,7 +627,15 @@ bool MixFileClass::Peek(int index, void* buffer, int size) const
 
 bool MixFileClass::IsValid() const
 {
-    return CountFiles > 0 && FileName != nullptr;
+    return CountFiles > 0 && FileName != nullptr && Headers != nullptr;
+}
+
+void MixFileClass::DumpEntries() const
+{
+    if (!FileName || CountFiles <= 0) return;
+    LOG_INFO("--- %s (%d entries) ---", FileName, CountFiles);
+    for (int i = 0; i < CountFiles && i < 200; ++i)
+        LOG_INFO("  [%3d] 0x%08X sz=%d off=%d", i, Headers[i].ID, Headers[i].Size, Headers[i].Offset);
 }
 
 } // namespace gamemd

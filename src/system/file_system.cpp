@@ -21,7 +21,8 @@ void* FileSystem::LoadFile(const char* pFileName, bool bLoadAsSHP)
     LOG_TRACE("FileSystem::LoadFile '%s' -> hash 0x%08X", pFileName, id);
 
     auto& pool = MixFileClass::GetMixPool();
-    for (int i = 0; i < pool.Count; ++i) {
+    // Search from last to first — later-loaded MIXes override earlier ones
+    for (int i = pool.Count - 1; i >= 0; --i) {
         auto* mix = pool[i];
         if (!mix || !mix->IsValid()) continue;
 
@@ -35,7 +36,7 @@ void* FileSystem::LoadFile(const char* pFileName, bool bLoadAsSHP)
         if (!buf) return nullptr;
 
         if (mix->Extract(idx, buf, sz)) {
-            LOG_INFO("FileSystem: loaded '%s' (%d bytes) from MIX", pFileName, sz);
+            LOG_INFO("FileSystem: loaded '%s' (%d bytes) from MIX [%d]", pFileName, sz, i);
             return buf;
         }
         free(buf);
@@ -174,7 +175,7 @@ void* FileSystem::LoadFirstSHP()
 void* FileSystem::LoadByHash(uint32_t hash)
 {
     auto& pool = MixFileClass::GetMixPool();
-    for (int i = 0; i < pool.Count; ++i) {
+    for (int i = pool.Count - 1; i >= 0; --i) {
         auto* mix = pool[i];
         if (!mix || !mix->IsValid()) continue;
         int idx = mix->FindIndex(hash);

@@ -117,10 +117,15 @@ public:
     {
         if (Headers)
             free(Headers);
+        if (MemoryData)
+            free(MemoryData);
     }
 
     MixFileClass() noexcept : Node(noinit_t()) {}
     explicit MixFileClass(const char* pFileName) noexcept;
+
+    // Memory-backed constructor: takes ownership of data buffer
+    MixFileClass(const uint8_t* data, int dataSize, const char* name) noexcept;
 
     int  FindIndex(uint32_t id) const;
     int  FindIndex(const char* filename) const;
@@ -133,6 +138,7 @@ public:
     bool Extract(const char* filename, void* buffer, int buffer_size) const;
     bool Peek(int index, void* buffer, int size) const;
     bool IsValid() const;
+    void DumpEntries() const;
 
 protected:
     explicit MixFileClass(const noinit_t&) noexcept : Node(noinit_t()) {}
@@ -146,6 +152,10 @@ public:
     int FileStartOffset = 0;
     MixHeaderData* Headers = nullptr;
     int field_24 = 0;
+
+    // Memory-backed data (for sub-MIX files): non-null = read from memory, not disk
+    uint8_t* MemoryData = nullptr;
+    int      MemoryDataSize = 0;
 };
 
 } // namespace gamemd
