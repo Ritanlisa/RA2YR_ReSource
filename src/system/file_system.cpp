@@ -3,6 +3,7 @@
 #include "gamemd/system/convert_class.hpp"
 #include "gamemd/render/surface.hpp"
 #include "gamemd/render/palette.hpp"
+#include "gamemd/core/logging.hpp"
 
 #include <cstdio>
 #include <cstring>
@@ -25,6 +26,7 @@ void* FileSystem::LoadFile(const char* pFileName, bool bLoadAsSHP)
     if (!pFileName) return nullptr;
 
     uint32_t id = MixFileClass::ComputeID(pFileName);
+    LOG_TRACE("FileSystem::LoadFile '%s' -> hash 0x%08X", pFileName, id);
 
     for (int i = 0; g_search_mixes[i]; ++i) {
         auto* mix = *g_search_mixes[i];
@@ -40,12 +42,14 @@ void* FileSystem::LoadFile(const char* pFileName, bool bLoadAsSHP)
         if (!buf) return nullptr;
 
         if (mix->Extract(idx, buf, sz)) {
-            fprintf(stderr, "[gamemd] FileSystem: loaded '%s' (%d bytes) from MIX\n",
-                pFileName, sz);
+            LOG_INFO("FileSystem: loaded '%s' (%d bytes) from MIX[%d]",
+                pFileName, sz, i);
             return buf;
         }
         free(buf);
     }
+
+    LOG_TRACE("FileSystem::LoadFile '%s' NOT found in MIX, trying disk", pFileName);
 
     FILE* fp = fopen(pFileName, "rb");
     if (!fp) return nullptr;

@@ -121,6 +121,9 @@ public:
     int  FindIndex(const char* filename) const;
     int  GetSize(int index) const;
     int  GetSize(const char* filename) const;
+    uint32_t GetFileID(int index) const {
+        return (index >= 0 && index < CountFiles) ? Headers[index].ID : 0;
+    }
     bool Extract(int index, void* buffer, int buffer_size) const;
     bool Extract(const char* filename, void* buffer, int buffer_size) const;
     bool IsValid() const;

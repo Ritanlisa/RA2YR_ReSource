@@ -67,11 +67,17 @@ static uint8_t g_palette[256][4];
 
 static void LoadMenuPalette()
 {
-    const char* names[] = { "temperat.pal", "unitsno.pal", "anim.pal", "mousepal.pal", nullptr };
+    const char* names[] = {
+        "TEMPERAT.PAL", "temperat.pal", "temperat",
+        "unitsno.pal", "unitsno",
+        "anim.pal", "anim",
+        "mousepal.pal", "mousepal",
+        nullptr
+    };
     void* pal_data = nullptr;
     for (int i = 0; names[i]; ++i) {
         pal_data = FileSystem::LoadFile(names[i], false);
-        if (pal_data) break;
+        if (pal_data) { LOG_INFO("Loaded PAL: %s", names[i]); break; }
     }
     if (pal_data) {
         uint8_t* raw = static_cast<uint8_t*>(pal_data);
@@ -174,10 +180,14 @@ struct MenuButton {
 static bool LoadMenuBackground(ShpImage& img)
 {
     const char* names[] = {
-        "ra2ts_l.shp", "ra2ts_s.shp",
-        "ls800yr.shp", "ls640yr.shp",
-        "ls800bg.shp", "ls640bg.shp",
-        "logo.shp",    "title.shp",
+        "Ra2ts_l", "ra2ts_l", "Ra2ts_l.shp", "ra2ts_l.shp",
+        "Ra2ts_s", "ra2ts_s", "Ra2ts_s.shp", "ra2ts_s.shp",
+        "ls800yr", "ls800yr.shp",
+        "ls640yr", "ls640yr.shp",
+        "ls800bg", "ls800bg.shp",
+        "ls640bg", "ls640bg.shp",
+        "logo", "logo.shp",
+        "title", "title.shp",
         nullptr
     };
     void* data = nullptr;

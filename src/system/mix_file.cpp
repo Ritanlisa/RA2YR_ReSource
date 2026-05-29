@@ -2,6 +2,7 @@
 #include "gamemd/system/cc_file.hpp"
 #include "gamemd/system/mix_blowfish.hpp"
 #include "gamemd/core/vector.hpp"
+#include "gamemd/core/logging.hpp"
 
 #include <cstdio>
 #include <cstring>
@@ -291,17 +292,16 @@ MixFileClass::MixFileClass(const char* pFileName) noexcept
 
 void MixFileClass::Bootstrap()
 {
-    fprintf(stderr, "[gamemd] MixFileClass::Bootstrap: loading MIX files\n");
+    LOG_INFO("MixFileClass::Bootstrap: loading MIX files");
 
     auto load_mix = [](const char* name) -> MixFileClass* {
         auto* mix = new MixFileClass(name);
         if (mix->IsValid()) {
-            fprintf(stderr, "[gamemd]   %s: %d files, %d bytes\n",
-                name, mix->CountFiles, mix->FileSize);
+            LOG_INFO("  %s: %d files, %d bytes", name, mix->CountFiles, mix->FileSize);
             return mix;
         }
         delete mix;
-        fprintf(stderr, "[gamemd]   %s: (not found)\n", name);
+        LOG_WARN("  %s: FAILED to load", name);
         return nullptr;
     };
 
@@ -311,7 +311,7 @@ void MixFileClass::Bootstrap()
     Generics.LANGUAGE    = load_mix("language.mix");
     Generics.MAIN        = load_mix("ra2.mix");
 
-    fprintf(stderr, "[gamemd] MixFileClass::Bootstrap: done\n");
+    LOG_INFO("MixFileClass::Bootstrap: done");
 }
 
 // ============================================================

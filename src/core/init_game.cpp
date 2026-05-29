@@ -6,6 +6,17 @@
 
 namespace gamemd {
 
+static void DumpMIXSample(MixFileClass* mix, const char* name)
+{
+    if (!mix || !mix->IsValid()) return;
+    LOG_INFO("  %s: %d files, sampling first 20 hashes:", name, mix->CountFiles);
+    int n = mix->CountFiles < 20 ? mix->CountFiles : 20;
+    for (int i = 0; i < n; ++i) {
+        uint32_t id = mix->GetFileID(i);
+        LOG_INFO("    [%d] 0x%08X", i, id);
+    }
+}
+
 bool InitGame(bool no_cd)
 {
     LOG_INFO("Init_Game: starting initialization (NoCD=%s)", no_cd ? "true" : "false");
@@ -13,6 +24,9 @@ bool InitGame(bool no_cd)
     MixFileClass::Bootstrap();
 
     LOG_INFO("Init_Game: MIX Bootstrap complete");
+    DumpMIXSample(MixFileClass::Generics.RA2MD,   "expandmd01.mix");
+    DumpMIXSample(MixFileClass::Generics.RA2,     "ra2md.mix");
+    DumpMIXSample(MixFileClass::Generics.MAIN,    "ra2.mix");
     LOG_INFO("Init_Game: Palettes loaded from MIX");
 
     if (no_cd) {
