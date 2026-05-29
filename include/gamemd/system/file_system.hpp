@@ -61,6 +61,7 @@ public:
     // Content-based search: find any 768-byte palette file in MIX pool
     static void* LoadFirstPalette();
     static void* LoadFirstSHP();
+    static void* LoadByHash(uint32_t hash);  // XCC hash-based lookup
 
     static SHPStruct* PIPBRD_SHP;
     static SHPStruct* PIPS_SHP;

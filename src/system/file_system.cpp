@@ -3,6 +3,7 @@
 #include "gamemd/system/convert_class.hpp"
 #include "gamemd/render/surface.hpp"
 #include "gamemd/render/palette.hpp"
+#include "gamemd/system/xcc_names.hpp"
 #include "gamemd/core/logging.hpp"
 
 #include <cstdio>
@@ -11,17 +12,6 @@
 
 namespace gamemd
 {
-
-static MixFileClass** g_search_mixes[] = {
-    &MixFileClass::Generics.RA2MD,
-    &MixFileClass::Generics.RA2,
-    &MixFileClass::Generics.LANGMD,
-    &MixFileClass::Generics.LANGUAGE,
-    &MixFileClass::Generics.MAIN,
-    &MixFileClass::Generics.MULTI,
-    &MixFileClass::Generics.MULTIMD,
-    nullptr
-};
 
 void* FileSystem::LoadFile(const char* pFileName, bool bLoadAsSHP)
 {
@@ -179,6 +169,29 @@ void* FileSystem::LoadFirstSHP()
     }
     if (best) LOG_INFO("LoadFirstSHP: best score=%d", best_sz);
     return best;
+}
+
+void* FileSystem::LoadByHash(uint32_t hash)
+{
+    auto& pool = MixFileClass::GetMixPool();
+    for (int i = 0; i < pool.Count; ++i) {
+        auto* mix = pool[i];
+        if (!mix || !mix->IsValid()) continue;
+        int idx = mix->FindIndex(hash);
+        if (idx < 0) continue;
+        int sz = mix->GetSize(idx);
+        if (sz <= 0) continue;
+        void* buf = malloc(sz);
+        if (buf && mix->Extract(idx, buf, sz)) {
+            const char* name = xcc::XccLookup(hash);
+            LOG_INFO("FileSystem::LoadByHash 0x%08X (%s): %d bytes", hash, name ? name : "?", sz);
+            return buf;
+        }
+        free(buf);
+    }
+    const char* name = xcc::XccLookup(hash);
+    LOG_TRACE("FileSystem::LoadByHash 0x%08X (%s): NOT found", hash, name ? name : "?");
+    return nullptr;
 }
 
 } // namespace gamemd

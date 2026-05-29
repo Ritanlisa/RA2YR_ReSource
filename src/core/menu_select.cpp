@@ -76,15 +76,33 @@ char Dialog_PumpMessages(){Dialog_MessageLoop();Event_Dispatch();return 0;}
 struct MenuButton { int x,y,w,h; const char* text; MenuState state; };
 
 static bool LoadMenuBackground(ShpImage& img) {
-    const char* names[]={"Ra2ts_l","ra2ts_l","Ra2ts_s","ra2ts_s","ls800yr","ls640yr","ls800bg","ls640bg","logo","title",nullptr};
+    // Try XCC-known loading screen SHPs by CRC32 hash
+    uint32_t candidates[] = {
+        0x7241327F, // ls800yr.shp
+        0x316453C0, // ls640yr.shp
+        0x44836963, // ls800bg.shp
+        0x07A608DC, // ls640bg.shp
+        0x1C71240A, // logo.shp
+        0x668DD8FB, // title.shp
+    };
     void* data=nullptr;
-    for(int i=0;names[i]&&!data;i++) data=FileSystem::LoadFile(names[i],true);
-    if(!data) data=FileSystem::LoadFirstSHP();  // content-based fallback
+    for(int i=0;i<6 && !data;i++) data=FileSystem::LoadByHash(candidates[i]);
+    if(!data) data=FileSystem::LoadFirstSHP();
     if(!data){LOG_WARN("No SHP");return false;}
     bool ok=img.LoadFromMemory((const uint8_t*)data,1073741824);
     free(data);
     LOG_INFO("SHP %dx%d %df",img.GetWidth(),img.GetHeight(),img.GetFrameCount());
     return ok;
+}
+
+// Load a UI SHP button by XCC hash
+static ShpImage* LoadUIButton(uint32_t hash) {
+    void* data = FileSystem::LoadByHash(hash);
+    if (!data) return nullptr;
+    auto* img = new ShpImage();
+    if (!img->LoadFromMemory((const uint8_t*)data, 1073741824)) { delete img; free(data); return nullptr; }
+    free(data);
+    return img;
 }
 
 static MenuState MainMenu_Screen() {
@@ -94,9 +112,16 @@ static MenuState MainMenu_Screen() {
     if(!surf.Allocated) return MenuState::StartScenario;
     if(!PaletteLoaded()) LoadMenuPalette();
     ShpImage bg; bool has_bg=LoadMenuBackground(bg);
-    int cx=ctx->width/2-100,wb=200,hb=30,y0=ctx->height/2-50;
+
+    // Try to load button SHP graphics by XCC hash
+    ShpImage* btnSHP = LoadUIButton(0x0D2B157D);  // button00.shp
+    ShpImage* tabSHP = LoadUIButton(0x16CD9EF9);   // tabs.shp
+    int btnW=200, btnH=30;
+    if (btnSHP) { btnW=btnSHP->GetWidth(); btnH=btnSHP->GetHeight(); }
+    else if (tabSHP) { btnW=tabSHP->GetWidth(); btnH=tabSHP->GetHeight(); }
+    int cx=ctx->width/2-100,wb=btnW,hb=btnH,y0=ctx->height/2-50;
     MenuButton btns[]={
-        {cx,y0,wb,hb,"Campaign",MenuState::Campaign},
+        {cx,y0,200,hb,"Campaign",MenuState::Campaign},
         {cx,y0+40,wb,hb,"Skirmish",MenuState::Skirmish},
         {cx,y0+80,wb,hb,"Multiplayer",MenuState::Multiplayer},
         {cx,y0+120,wb,hb,"Options",MenuState::Options},
@@ -117,12 +142,16 @@ static MenuState MainMenu_Screen() {
             // Red border
             for(int x=0;x<ctx->width;x++){buf[0*pitch+x]=0xF800; buf[(ctx->height-1)*pitch+x]=0xF800;}
             for(int y=0;y<ctx->height;y++){buf[y*pitch+0]=0xF800; buf[y*pitch+ctx->width-1]=0xF800;}
-            // Green buttons
+            // Green buttons or SHP button graphics
             for(int i=0;i<BN;i++){
-                uint16_t color=i==4?0x001F:0x07E0;
-                for(int y=btns[i].y;y<btns[i].y+btns[i].h;y++)
-                    for(int x=btns[i].x;x<btns[i].x+btns[i].w;x++)
-                        if(y>=0&&y<ctx->height&&x>=0&&x<ctx->width)buf[y*pitch+x]=color;
+                if(btnSHP && btnSHP->GetFrameCount()>0)
+                    btnSHP->RenderToSurface(&surf, 0, btns[i].x, btns[i].y, g_palette);
+                else {
+                    uint16_t color=i==4?0x001F:0x07E0;
+                    for(int y=btns[i].y;y<btns[i].y+btns[i].h;y++)
+                        for(int x=btns[i].x;x<btns[i].x+btns[i].w;x++)
+                            if(y>=0&&y<ctx->height&&x>=0&&x<ctx->width)buf[y*pitch+x]=color;
+                }
             }
             surf.Surface->Unlock(nullptr);
         }
@@ -157,7 +186,7 @@ static MenuState MainMenu_Screen() {
             }else{TranslateMessage(&msg);DispatchMessageA(&msg);}
         }if(!done)Event_Dispatch();
     }
-    bg.Free(); return result;
+    bg.Free(); delete btnSHP; delete tabSHP; return result;
 }
 
 // ---- stubs ----
