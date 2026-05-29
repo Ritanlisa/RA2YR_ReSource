@@ -1,5 +1,6 @@
 # 构建产物
 build/
+build_win/
 *.exe
 *.dll
 *.lib
@@ -50,6 +51,7 @@ env/
 CnC_Red_Alert/
 YRpp/
 MIX_Format.html
+cnc-ddraw/
 
 # 敏感数据
 *.key

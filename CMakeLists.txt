@@ -66,3 +66,35 @@ add_custom_target(verify_headers
 # Future: When linking against original gamemd.exe
 # add_library(gamemd SHARED)
 # For now, headers provide the structure for reference and decompilation work
+
+# ── Executable target (replaces original gamemd.exe) ──
+add_executable(gamemd WIN32
+    app/main.cpp
+    app/game_loop.cpp
+    app/ddraw_init.cpp
+)
+
+target_include_directories(gamemd PRIVATE "include")
+
+target_link_libraries(gamemd PRIVATE
+    gamemd_core
+    user32
+    gdi32
+    ole32
+    ddraw
+    dxguid
+)
+
+# Platform-specific settings for executable
+if(MSVC)
+    target_compile_options(gamemd PRIVATE
+        /W3
+        /FS
+        /utf-8
+    )
+    target_compile_definitions(gamemd PRIVATE
+        WIN32_LEAN_AND_MEAN
+        NOMINMAX
+        _CRT_SECURE_NO_WARNINGS
+    )
+endif()

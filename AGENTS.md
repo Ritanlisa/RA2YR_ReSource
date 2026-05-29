@@ -2,9 +2,24 @@
 
 ## 项目目标
 
-逆向工程完整的 `gamemd.exe` C++ 源码。目标文件是 32 位 Windows PE，由 MSVC 6.0 编译，约 7.6MB，基址 0x400000，含 19,059 个函数。
+逆向工程完整的 `gamemd.exe` C++ 源码并重建为独立可执行文件。
 
-当前输出为 header-only 的静态库 `gamemd_core`，使用 CMake + C++20 编译。长期目标是产出可直接替换的跨平台可执行文件(独立引擎)。
+目标文件是 32 位 Windows PE，由 MSVC 6.0 编译，约 7.6MB，基址 0x400000，含 19,059 个函数。
+
+### 两阶段目标
+
+| 阶段 | 目标 | 产出 |
+|------|------|------|
+| **Phase 1** (当前) | 完整逆向重建，功能对等原版 | 可直接替换的 Win32 EXE (`gamemd.exe`) |
+| **Phase 2** (远期) | 现代化重构 | 跨平台现代游戏引擎 |
+
+Phase 2 现代化方向：
+- 现代渲染引擎 (替代 DirectDraw/D3D，支持高分辨率)
+- 强化学习 AI Bot (替代原版规则AI)
+- 现代模组系统 (原生插件架构，不再需要 DLL 注入/Syringe)
+- 现代 3D 模型支持 (替代 Voxel/SHP)
+
+当前构建输出: 静态库 `gamemd_core` + EXE `gamemd.exe`，使用 CMake + C++20 编译。
 
 ---
 
@@ -12,15 +27,16 @@
 
 | 指标 | 数值 |
 |--------|-------|
-| 可编译源文件 | 61 |
-| 总头文件 | 94 |
-| 总代码行数 | ~13,000 (headers ~8,000 + source ~5,000) |
+| 可编译源文件 | 64 |
+| 总头文件 | 96 |
+| 总代码行数 | ~13,500 (headers ~8,000 + source ~5,500) |
 | 编译错误 | **0** |
 | 编译警告 | **0** |
 | 已实现函数 | **~120** (~200+ stubs/empty) |
 | TODO/FIXME 标记 | **252** (source 205 + headers 47) |
-| IDA 命名 | **122 函数 + 30 全局变量 + 3 struct 类型** |
+| IDA 命名 | **129 函数 + 35 全局变量 + 3 struct 类型** |
 | MIX 格式支持 | RA2 加密 + 扩展无加密 + TD 传统 (全部验证) |
+| EXE 骨架 | **WinMain + Win32窗口 + DirectDraw7初始化 + 游戏循环** |
 
 ### 构建命令
 
@@ -31,21 +47,36 @@ cmake --build build
 
 ---
 
-## 三重参考源 - 协同定位
+## 四重参考源 - 协同定位
 
-三种信息来源各有强弱，**三角交叉验证**是正确方法论。不要迷信任何一个单一来源。
+四种信息来源各有强弱，**三角交叉验证**是正确方法论。不要迷信任何一个单一来源。
 
 | 来源 | 用于 | 不做 |
 |------|------|------|
 | **RA1 源码** (CnC_Red_Alert/CODE/) | **框架/架构**: 类继承链、虚函数模式、Mission 状态机、INI 读取流程、对象管理（TFixedIHeapClass/CCPtr）、TARGET 编解码、COORDINATE 数学、**MIX 读取逻辑** | **直接复制成员布局**: RA2 偏移不同、RA2 有 MI 导致布局变化 |
 | **YRpp** (~150 头文件) | **成员偏移/虚函数索引**: 运行期实测，知道每个成员在对象中的精确位置、虚函数在 vtable 中的顺序 | **业务逻辑实现**: YRpp 是声明层，不含函数体 |
 | **IDA Pro** (gamemd.exe MCP) | **二进制验证**: 构造函数字节级确认成员初始化顺序、调用图追踪函数实现、全局变量地址/类型确认 | **反编译伪代码**: Hex-Rays 输出有误（类型推断错误、结构体大小不准确、优化导致代码变形），仅作参考 |
+| **cnc-ddraw** (./cnc-ddraw) | **渲染接口参考**: DirectDraw/DirectDrawSurface 接口实现、Blit/Lock/Unlock 调用模式、Surface 生命周期管理、窗口化/全屏切换逻辑。**调试验证阶段的运行时伴生 DLL**（EXE 调用标准 DirectDraw API，cnc-ddraw 作为 `ddraw.dll` 提供现代渲染后端） | **最终集成**: Phase 2 将被现代渲染引擎完全取代 |
 
 ### 工作方法
 
 1. 用 **RA1 源码** 理解"代码长什么样"——类结构、构造函数写法、虚函数模式、MIX 读取逻辑
 2. 用 **YRpp** 填入 RA2 实际的成员偏移和类型
 3. 用 **IDA** 对关键函数进行二进制验证，修正 YRpp 的错误
+4. 用 **cnc-ddraw** 理解 DirectDraw 接口调用模式，在调试阶段作为兼容层运行 EXE
+
+### cnc-ddraw 在项目中的角色
+
+```
+Phase 1 (当前):
+  gamemd.exe ──DirectDraw API──▶ ddraw.dll (cnc-ddraw) ──▶ OpenGL/D3D9/GDI ──▶ 屏幕
+                                  ↑
+                                  用于现代系统兼容运行
+
+Phase 2 (远期):
+  gamemd.exe ──▶ 现代渲染引擎 (Vulkan/D3D12) ──▶ 屏幕
+                  ↑ cnc-ddraw 被完全取代
+```
 
 ### RA1 vs. RA2: 关键差异
 
@@ -97,6 +128,7 @@ InfantryClass       ✅ Constructor + 3 Mission + Vtable关键解码(Load/Update
 UnitClass           ✅ Constructor + 3 Mission + Vtable关键解码(Load/Update/PowerDrain)
 AircraftClass       ✅ Constructor + 5 Mission + Vtable关键解码(Load/Update)
 System              ✅ MIX reader (3 format verified), blowfish engine, Westwood key
+Entry Point         ✅ WinMain + Win32窗口 + DirectDraw7 Init + 游戏循环骨架
 ```
 
 ### 类 Vtable 覆盖状态
@@ -122,7 +154,7 @@ System              ✅ MIX reader (3 format verified), blowfish engine, Westwoo
 | [18] | BuildingClass_GetExitCoords | 84B | ✅ 已实现 |
 | [19] | BuildingClass_TogglePrimaryFactory | 121B | 出口坐标 |
 
-### 关键 IDA 函数命名 (共122函数)
+### 关键 IDA 函数命名 (共129函数)
 
 | IDA 名称 | 地址 | 大小 | 说明 |
 |----------|------|------|------|
@@ -141,6 +173,13 @@ System              ✅ MIX reader (3 format verified), blowfish engine, Westwoo
 | Cell_IsWalkable | 0x6B5F80 | — | 可通行检查 |
 | Power_TimerProcess | 0x4A1D50 | — | 电力计时 |
 | Power_FlagProcess | 0x4A1CA0 | — | 电力标志 |
+| **入口点/窗口系统 (新增)** | | | |
+| WindowCreation_Init | 0x777C30 | ~500B | 窗口类注册+CreateWindowExA, 全屏/调试双模式 |
+| WindowProc_Main | 0x7775C0 | 1213B | 主窗口过程, 81 BBs, WM_CREATE/DESTROY/PAINT |
+| GameLoop_MessagePump | 0x53E770 | ~800B | 自定义PeekMessage/DispatchMessage, CritSec保护 |
+| COM_RegisterClasses | 0x6BB390 | ~800B | COM class object 注册 (TypeLib/ProgID/InprocServer32) |
+| CopyProtection_CheckLauncher | 0x49F5C0 | ~80B | 启动器Mutex检测 ("48BC11BD...") |
+| CopyProtection_NotifyLauncher | 0x49F620 | ~250B | 启动器通知+等待响应, 自定义消息 0xBEEF |
 
 ---
 
@@ -244,68 +283,95 @@ Key vtable entries (IDA identified):
 | `BuildingClass_InstanceArray` | 0xB0F4EC | BuildingClass*[] | Build instances |
 | `BuildingTypeClass_AnimTable` | 0xB054D4 | — | Anim lookup table |
 | `BuildingLoadQueue_*` | 0xB0E840+ | queue | Load queue |
+| **入口/窗口系统 (新增)** | | | |
+| `WindowName` | 0x849F48 | char[] | 窗口类名 "Yuri's Revenge" |
+| `g_hWnd` | 0xB73550 | HWND | 主窗口句柄 |
+| `g_hInstance` | 0xB732F0 | HINSTANCE | 实例句柄, WinMain设置 |
+| `g_hIcon` | 0xB7354C | HICON | 图标句柄 (IDI #0x5D) |
+| `g_hCursor` | 0xB73548 | HCURSOR | 光标句柄 (IDC #0x68) |
 
 ---
 
 ## Master TODO (优先级排序)
 
-### P0 — 核心游戏管线 (阻塞级)
+### P0 — EXE 骨架 (已完成)
+
+| # | 描述 | 文件 | 估算行数 | 状态 |
+|---|------|------|----------|------|
+| P0-1 | WinMain 入口点 + 命令行解析 | `app/main.cpp` | ~30 | ✅ |
+| P0-2 | CMake 添加 add_executable 目标 + 链接 gamemd_core | `CMakeLists.txt` | ~15 | ✅ |
+| P0-3 | Win32 窗口创建 + 消息循环 | `app/main.cpp` | ~50 | ✅ |
+| P0-4 | 游戏主循环骨架 (Init→Update→Render→Shutdown) | `app/game_loop.cpp` | ~60 | ✅ |
+| P0-5 | DirectDraw 7 初始化 (Primary Surface + Back Buffer + Clipper) | `app/ddraw_init.cpp` | ~100 | ✅ |
+
+### P1 — 核心游戏管线 (阻塞级)
 
 | # | 描述 | 文件 | IDA地址 | 估算行数 |
 |---|------|------|---------|----------|
-| P0-1 | CreateUnit deploy animation Section 7 (sub_425670 弹坑/烟雾/部署动画) | `techno.cpp:560-593` | 0x423C24 | ~200 |
-| P0-2 | CreateUnit final unit creation Section 10 (BuildingClass_MissionDispatch + exit cell) | `techno.cpp:770-815` | 0x424938 | ~150 |
-| P0-3 | ProductionCompletionCallback 完整实现 (音频+特殊建筑发射动画) | `techno.cpp:833-900` | 0x424CE0 | ~150 |
-| P0-4 | CreateUnitOnCompletion 完整实现 (地基偏移/SW特效/单元创建) | `techno.cpp:913-969` | 0x424F00 | ~200 |
-| P0-5 | ConstructionPositionTracker 完整实现 (6步坐标跟踪/角度计算) | `techno.cpp:984-1032` | 0x425670 | ~250 |
-| P0-6 | CreateUnitAtCoordsStandard + Timed (候选过滤→UnitClass_Create) | `techno.cpp:1048-1090` | 0x6B59A0/6B5C90 | ~200 |
-| P0-7 | BuildingClass_Mission_Construction 动画轮询+工厂协调 | `building.cpp:101-161` | — | ~50 |
-| P0-8 | BuildingClass_Mission_Selling 动画+MCV undeploy+退款 | `building.cpp:168-235` | — | ~80 |
-| P0-9 | FootClass::Destroyed 乘客弹出+爆炸动画+乘员生成 | `foot.cpp:338-370` | — | ~80 |
-| P0-10 | BuildingClass::Place 建筑物放置最终化 | `building.cpp:490-523` | — | ~50 |
+| P1-1 | CreateUnit deploy animation Section 7 (sub_425670 弹坑/烟雾/部署动画) | `techno.cpp:560-593` | 0x423C24 | ~200 |
+| P1-2 | CreateUnit final unit creation Section 10 (BuildingClass_MissionDispatch + exit cell) | `techno.cpp:770-815` | 0x424938 | ~150 |
+| P1-3 | ProductionCompletionCallback 完整实现 (音频+特殊建筑发射动画) | `techno.cpp:833-900` | 0x424CE0 | ~150 |
+| P1-4 | CreateUnitOnCompletion 完整实现 (地基偏移/SW特效/单元创建) | `techno.cpp:913-969` | 0x424F00 | ~200 |
+| P1-5 | ConstructionPositionTracker 完整实现 (6步坐标跟踪/角度计算) | `techno.cpp:984-1032` | 0x425670 | ~250 |
+| P1-6 | CreateUnitAtCoordsStandard + Timed (候选过滤→UnitClass_Create) | `techno.cpp:1048-1090` | 0x6B59A0/6B5C90 | ~200 |
+| P1-7 | BuildingClass_Mission_Construction 动画轮询+工厂协调 | `building.cpp:101-161` | — | ~50 |
+| P1-8 | BuildingClass_Mission_Selling 动画+MCV undeploy+退款 | `building.cpp:168-235` | — | ~80 |
+| P1-9 | FootClass::Destroyed 乘客弹出+爆炸动画+乘员生成 | `foot.cpp:338-370` | — | ~80 |
+| P1-10 | BuildingClass::Place 建筑物放置最终化 | `building.cpp:490-523` | — | ~50 |
 
-### P1 — IDA 翻译 (解锁子系统)
+### P2 — IDA 翻译 (解锁子系统)
 
 | # | 描述 | 文件 | IDA地址 | 估算行数 |
 |---|------|------|---------|----------|
-| P1-1 | MapClass 18个stub函数 (DamageArea, Pathfinding_Find, Reveal) | `map.cpp` | — | ~400 |
-| P1-2 | SmokeUpdate 完整实现 (1540B, damage smoke/sink) | `techno.cpp:482-510` | 0x414BB0 | ~100 |
-| P1-3 | BuildingClass::Update 完整实现 (电力/C4/雷达更新) | `building.cpp` | 0x442C40 | ~200 |
-| P1-4 | BuildingClass::PowerDrainUpdate 完整实现 (16定时器+16标志) | `building.cpp` | 0x454260 | ~150 |
-| P1-5 | BuildingClass_LoadFromStream 完整反序列化 | `building.cpp` | 0x453E20 | ~250 |
-| P1-6 | TechnoClass::Update 完整父更新 (6 VFX子系统初始化) | `techno.cpp:1093+` | 0x6F3F40 | ~150 |
-| P1-7 | VFX子系统链: sub_6AF1A0/sub_6B6C90/sub_4717D0/sub_6292B0/sub_71A4E0/sub_41D380 | `techno.cpp` | 多个 | ~300 |
-| P1-8 | 部署特效: sub_489280(fire)/sub_48A620(smoke)/sub_6D2790(crater) | `techno.cpp` | 0x489280/48A620/6D2790 | ~150 |
-| P1-9 | SelectAutoTarget 完整实现 (cell occupier迭代+Evaluate_Object评分) | `techno.cpp:283-362` | — | ~100 |
-| P1-10 | vt_entry函数集 (240/244/248/292/456/488/436/108/132/D8/1E8/472) | 多个文件 | 多个 | varies |
-| P1-11 | BuildingClass_Mission_Repair 修复合规逻辑 (金钱扣除+治疗) | `building.cpp:242-355` | — | ~60 |
-| P1-12 | BuildingClass_Mission_Missile 核弹GPS动画+子弹发射 | `building.cpp:357-456` | — | ~100 |
+| P2-1 | MapClass 18个stub函数 (DamageArea, Pathfinding_Find, Reveal) | `map.cpp` | — | ~400 |
+| P2-2 | SmokeUpdate 完整实现 (1540B, damage smoke/sink) | `techno.cpp:482-510` | 0x414BB0 | ~100 |
+| P2-3 | BuildingClass::Update 完整实现 (电力/C4/雷达更新) | `building.cpp` | 0x442C40 | ~200 |
+| P2-4 | BuildingClass::PowerDrainUpdate 完整实现 (16定时器+16标志) | `building.cpp` | 0x454260 | ~150 |
+| P2-5 | BuildingClass_LoadFromStream 完整反序列化 | `building.cpp` | 0x453E20 | ~250 |
+| P2-6 | TechnoClass::Update 完整父更新 (6 VFX子系统初始化) | `techno.cpp:1093+` | 0x6F3F40 | ~150 |
+| P2-7 | VFX子系统链: sub_6AF1A0/sub_6B6C90/sub_4717D0/sub_6292B0/sub_71A4E0/sub_41D380 | `techno.cpp` | 多个 | ~300 |
+| P2-8 | 部署特效: sub_489280(fire)/sub_48A620(smoke)/sub_6D2790(crater) | `techno.cpp` | 0x489280/48A620/6D2790 | ~150 |
+| P2-9 | SelectAutoTarget 完整实现 (cell occupier迭代+Evaluate_Object评分) | `techno.cpp:283-362` | — | ~100 |
+| P2-10 | vt_entry函数集 (240/244/248/292/456/488/436/108/132/D8/1E8/472) | 多个文件 | 多个 | varies |
+| P2-11 | BuildingClass_Mission_Repair 修复合规逻辑 (金钱扣除+治疗) | `building.cpp:242-355` | — | ~60 |
+| P2-12 | BuildingClass_Mission_Missile 核弹GPS动画+子弹发射 | `building.cpp:357-456` | — | ~100 |
 
-### P2 — 系统完成
-
-| # | 描述 | 文件 | 估算行数 |
-|---|------|------|----------|
-| P2-1 | ReceiveDamage 完整护甲计算 (弹头vs护甲类型) | `object.cpp:62-93` | ~50 |
-| P2-2 | Audio系统 (VocClass/VoxClass ~15 stub方法) | `audio.cpp` | ~200 |
-| P2-3 | TriggerClass 事件注册/动作触发/实例创建 | `trigger.cpp` | ~200 |
-| P2-4 | TacticalClass 坐标转换/遮挡/绘制 | `tactical.cpp` | ~200 |
-| P2-5 | Surface/DSurface Blit/FillRect/Lock/Unlock/DrawSHP | `surface.cpp` | ~200 |
-| P2-6 | Cell occupancy (IsCellOccupied, MarkAllOccupationBits) | `object.cpp` | ~80 |
-| P2-7 | Fire/SmokeUpdate/TakeDamage — 战斗子系统完善 | `techno.cpp` | ~100 |
-
-### P3 — 架构完整性
+### P3 — 系统完成
 
 | # | 描述 | 文件 | 估算行数 |
 |---|------|------|----------|
-| P3-1 | 成员文档化 — IDA验证所有 `unknown_*` 成员(34个跨4类) | structure headers | 调研 |
-| P3-2 | 从YRpp补全HouseClass/RulesClass/SessionClass成员 | 8+ headers | varies |
-| P3-3 | 网络子系统 (Winsock/IPX/UDP/Connection/Multiplayer) | 4 files | ~500 |
-| P3-4 | UI子系统 (CommandClass 14子类/Sidebar/Mouse) | 6 files | ~500 |
-| P3-5 | Entity子系统 (Anim/Bullet/Particle/Smudge/Overlay/Tiberium/Wave/Tube/Terrain) | 9 files | ~600 |
-| P3-6 | Voxel渲染 (VoxelAnimClass) | voxel headers | ~300 |
-| P3-7 | SuperWeapon静态方法 (LightningStorm/PsyDom/NukeFlash/ChronoScreenEffect) | `super_weapon.cpp` | ~200 |
-| P3-8 | Tag/Team/Trigger系统 (持久化+动作链) | 3 files | ~500 |
-| P3-9 | Far Future: Ares/Phobos扩展原生支持 | — | — |
+| P3-1 | ReceiveDamage 完整护甲计算 (弹头vs护甲类型) | `object.cpp:62-93` | ~50 |
+| P3-2 | Audio系统 (VocClass/VoxClass ~15 stub方法) | `audio.cpp` | ~200 |
+| P3-3 | TriggerClass 事件注册/动作触发/实例创建 | `trigger.cpp` | ~200 |
+| P3-4 | TacticalClass 坐标转换/遮挡/绘制 (参考 cnc-ddraw) | `tactical.cpp` | ~200 |
+| P3-5 | Surface/DSurface Blit/FillRect/Lock/Unlock/DrawSHP (参考 cnc-ddraw) | `surface.cpp` | ~200 |
+| P3-6 | Cell occupancy (IsCellOccupied, MarkAllOccupationBits) | `object.cpp` | ~80 |
+| P3-7 | Fire/SmokeUpdate/TakeDamage — 战斗子系统完善 | `techno.cpp` | ~100 |
+
+### P4 — 架构完整性
+
+| # | 描述 | 文件 | 估算行数 |
+|---|------|------|----------|
+| P4-1 | 成员文档化 — IDA验证所有 `unknown_*` 成员(34个跨4类) | structure headers | 调研 |
+| P4-2 | 从YRpp补全HouseClass/RulesClass/SessionClass成员 | 8+ headers | varies |
+| P4-3 | 网络子系统 (Winsock/IPX/UDP/Connection/Multiplayer) | 4 files | ~500 |
+| P4-4 | UI子系统 (CommandClass 14子类/Sidebar/Mouse) | 6 files | ~500 |
+| P4-5 | Entity子系统 (Anim/Bullet/Particle/Smudge/Overlay/Tiberium/Wave/Tube/Terrain) | 9 files | ~600 |
+| P4-6 | Voxel渲染 (VoxelAnimClass) | voxel headers | ~300 |
+| P4-7 | SuperWeapon静态方法 (LightningStorm/PsyDom/NukeFlash/ChronoScreenEffect) | `super_weapon.cpp` | ~200 |
+| P4-8 | Tag/Team/Trigger系统 (持久化+动作链) | 3 files | ~500 |
+| P4-9 | Far Future: Ares/Phobos扩展原生支持 | — | — |
+
+### P5 — 现代化重构 (远期)
+
+| # | 描述 | 估算 |
+|---|------|------|
+| P5-1 | 现代渲染引擎 (Vulkan/D3D12，替代 DirectDraw + cnc-ddraw) | 大型 |
+| P5-2 | 高分辨率资产管线 (替代 SHP/Voxel) | 大型 |
+| P5-3 | 原生模组系统 (插件架构，替代 Syringe DLL 注入) | 大型 |
+| P5-4 | 强化学习 AI 框架 (替代规则AI) | 大型 |
+| P5-5 | 跨平台移植 (Linux/macOS) | 中型 |
+| P5-6 | 现代网络层 (替代 UDP/IPX) | 中型 |
 
 ### 统计
 
@@ -322,7 +388,7 @@ Key vtable entries (IDA identified):
 
 ## 当前会话上下文 (快速恢复)
 
-### IDA 命名摘要 (共122函数 + 30全局)
+### IDA 命名摘要 (共129函数 + 35全局)
 
 | 类别 | 示例 | 用途 |
 |------|------|------|
@@ -334,7 +400,8 @@ Key vtable entries (IDA identified):
 | 单元创建 (4) | `CreateUnitAtCoords_Timed`, `CreateUnitAtCoords_Standard`, `UnitClass_Create` | 最终产出 |
 | ObjectClass vtable (5) | `ObjectClass_GetCoords`, `ObjectClass_HasC4`, `ObjectClass_SetPosition` | 基类方法 |
 | BuildingClass vtable (8) | `BuildingClass_MissionDispatch`, `BuildingClass_OnObjectExpired`, `BuildingClass_TogglePrimaryFactory` | 建筑虚函数 |
-| 全局变量 (30) | `RulesClass_Instance`, `CurrentFrame`, `MCV_DeployModeEnabled`, `BuildingTypeClass_Array`, `HouseClass_Array` 等 | 全局状态 |
+| 入口点/窗口 (7) | `WinMain`, `WindowCreation_Init`, `WindowProc_Main`, `GameLoop_MessagePump`, `COM_RegisterClasses`, `CopyProtection_CheckLauncher`, `CopyProtection_NotifyLauncher` | 启动管线 |
+| 全局变量 (35) | `RulesClass_Instance`, `CurrentFrame`, `MCV_DeployModeEnabled`, `BuildingTypeClass_Array`, `HouseClass_Array`, `g_hWnd`, `g_hInstance`, `WindowName` 等 | 全局状态 |
 
 ### IDA struct 类型 (3个)
 - `BuildingClass_Full` — 已应用于 CreateUnit + 3 callbacks 的 `this` 参数
@@ -351,8 +418,10 @@ Key vtable entries (IDA identified):
 - **MIX 格式**: 前 2B=0 为扩展格式; flags 0x0002=加密; 算法来自 RA1 MixFileClass
 - **MIX 文件名**: 仅存 hash ID, 不存原始名; 通过 `ComputeId()` 匹配
 - **IDA 连接**: `127.0.0.1:13337`, i64 在 `C:\Program Files (x86)\Mental Omega\gamemd.exe.i64`
-- **IDA 命名状态**: 122 个函数 + 30 个全局变量已重命名 (见上方命名清单)
+- **IDA 命名状态**: 129 个函数 + 35 个全局变量已重命名 (见上方命名清单)
 - **Python**: 3.14.2 (`python` 或 `py`), Windows 上已就绪
+- **渲染框架**: cnc-ddraw (`./cnc-ddraw`, by FunkyFr3sh) 是开源 DirectDraw 兼容层，Phase 1 调试阶段作为 `ddraw.dll` 兼容层运行 EXE，Phase 2 将被现代渲染引擎取代
+- **EXE 入口**: `app/main.cpp` — WinMain 创建窗口 + 初始化 DirectDraw 7 + 游戏循环
 
 ### RA2 Mission 系统关键发现
 - BuildingClass/InfantryClass/UnitClass/AircraftClass 的 Mission_* 虚函数仅为简单 thunks (返回常量如 6/1824)
@@ -375,6 +444,7 @@ Key vtable entries (IDA identified):
 2. `enum class` + `constexpr operator|` for bit flags
 3. 虚函数按 YRpp vtable 顺序，`__stdcall` 调用约定
 4. C++20: `noexcept`、`override`、`constexpr`、`= default`
-5. RA1 为结构参考，YRpp 为偏移参考，IDA 为二进制验证
+5. RA1 为结构参考，YRpp 为偏移参考，IDA 为二进制验证，cnc-ddraw 为渲染接口参考
 6. 前向声明必须匹配实际定义 (class vs struct)
 7. MIX 文件名仅存 hash ID，不保存原始文件名
+8. DirectDraw 调用使用标准 Windows SDK 接口 (Phase 1)，搭配 cnc-ddraw 兼容层运行调试
