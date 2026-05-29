@@ -90,15 +90,18 @@ if(WIN32)
     )
 
     # Post-build: copy cnc-ddraw runtime dll + config to output directory
-    add_custom_command(TARGET gamemd POST_BUILD
-        COMMAND ${CMAKE_COMMAND} -E copy_if_different
-            "${CMAKE_SOURCE_DIR}/ddraw.dll"
-            "$<TARGET_FILE_DIR:gamemd>/ddraw.dll"
-        COMMAND ${CMAKE_COMMAND} -E copy_if_different
-            "${CMAKE_SOURCE_DIR}/ddraw.ini"
-            "$<TARGET_FILE_DIR:gamemd>/ddraw.ini"
-        COMMENT "Copying cnc-ddraw runtime files..."
-    )
+    # (only when source files exist — CI environments don't have them)
+    if(EXISTS "${CMAKE_SOURCE_DIR}/ddraw.dll")
+        add_custom_command(TARGET gamemd POST_BUILD
+            COMMAND ${CMAKE_COMMAND} -E copy_if_different
+                "${CMAKE_SOURCE_DIR}/ddraw.dll"
+                "$<TARGET_FILE_DIR:gamemd>/ddraw.dll"
+            COMMAND ${CMAKE_COMMAND} -E copy_if_different
+                "${CMAKE_SOURCE_DIR}/ddraw.ini"
+                "$<TARGET_FILE_DIR:gamemd>/ddraw.ini"
+            COMMENT "Copying cnc-ddraw runtime files..."
+        )
+    endif()
 endif()
 
 # Platform-specific settings for executable

@@ -13,7 +13,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, windows-latest]
+        os: [windows-latest]
         build_type: [Release]
         include:
           - os: windows-latest
@@ -21,11 +21,6 @@ jobs:
             cpp_compiler: cl
             cmake_args: -A Win32
             target: gamemd
-          - os: ubuntu-latest
-            c_compiler: gcc
-            cpp_compiler: g++
-            cmake_args: ""
-            target: gamemd_core
 
     steps:
     - uses: actions/checkout@v4
