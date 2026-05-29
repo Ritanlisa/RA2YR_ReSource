@@ -449,6 +449,145 @@ Key vtable entries (IDA identified):
 
 ## Master TODO (优先级排序)
 
+### R0 — 菜单渲染管线 (最高优先级, 阻塞可演示性)
+
+**目标**: 完整实现原版主菜单/多菜单/选项菜单等 UI，SHP 按钮 + 背景 + BINK 视频
+
+**当前状态**: DDraw 初始化 ✅ / SHP 加载 ✅ / 调色板 ✅ / MIX 读取 ✅ / 色块按钮可交互 ／ 真实 SHP 按钮加载后未渲染
+
+#### R0-1: DSurface SHP 渲染 — Blit/StretchBlt 正确实现
+
+| # | 描述 | 文件 | 依赖 | 估算行 |
+|---|------|------|------|--------|
+| R0-1a | 正确实现 DSurface::Blt (标准 DirectDraw Blit) | `render/surface.cpp` | cnc-ddraw | ~50 |
+| R0-1b | DSurface::FillRect 验证 (确认 cnc-ddraw 下行为) | `render/surface.cpp` | cnc-ddraw | ~10 |
+| R0-1c | DrawSHP(frame, src_x, src_y, palette) — 调色板索引→16bpp/32bpp 转换 + 写像素 | `render/surface.cpp` | DSurface, Palette | ~50 |
+| R0-1d | SHP 透明色支持 (key color=0 不绘制) | `render/surface.cpp` | DrawSHP | ~20 |
+| R0-1e | SHP 多帧支持 (frame index → frame pixel data) | `render/surface.cpp` | ShpImage | ~30 |
+
+**R0-1 验收**: 单帧 SHP 正常显示在 DDraw 表面上，颜色正确，透明区域正常。
+
+#### R0-2: Dialog / Gadget 系统 — UI 事件分发
+
+| # | 描述 | 文件 | 依赖 | 估算行 |
+|---|------|------|------|--------|
+| R0-2a | GadgetClass 基类完善: DrawMe/OnMouseEnter/OnMouseLeave/Action 虚函数链 | `ui/gadget.cpp` | — | ~100 |
+| R0-2b | TextButtonClass SHP 渲染: LoadFromHash→帧0(普通)/帧1(悬停)/帧2(按下) | `ui/gadget.cpp` | R0-1 | ~80 |
+| R0-2c | LabelClass 文字渲染: GDI→DDraw surface (已有 TextRenderer 基础) | `ui/gadget.cpp` | TextRenderer | ~50 |
+| R0-2d | DialogClass 完善: AddGadget/RemoveGadget/DrawAll/DispatchMouse/DispatchKey | `ui/dialog.cpp` | GadgetClass | ~150 |
+| R0-2e | Dialog_MessageLoop: PeekMessage→Translate→Dispatch + 空闲时 DrawAll (参考原版时序) | `ui/dialog.cpp` | Dialog 系统 | ~80 |
+
+**R0-2 验收**: 多按钮对话框正确响应点击，SHP 按钮显示帧切换，文字标签可见。
+
+#### R0-3: 主菜单 UI 资产 → 功能映射
+
+| # | 描述 | 文件 | 依赖 | 估算行 |
+|---|------|------|------|--------|
+| R0-3a | 按 XCC 名称→CRC32 哈希查找加载所有主菜单 SHP: `button*.shp`, `tabs.shp`, `side2.shp`, `logo.shp`, `title.shp` | `src/core/menu_select.cpp` | R0-1, R0-2 | ~40 |
+| R0-3b | 构建主菜单 Gadget 树: 5 个 TextButton + 1 个 Label(版本号) + 背景控件 | `src/core/menu_select.cpp` | R0-2 | ~60 |
+| R0-3c | 按钮动作: Campaign→Campaign_Screen / Skirmish→(地图选择) / Multiplayer→Multiplayer_Screen / Options→Options_Screen / Exit→PostQuitMessage | `src/core/menu_select.cpp` | Dialog 系统 | ~40 |
+| R0-3d | 背景渲染: 优先 BINK (ra2ts_l.bik), 回退到 loading screen SHP (ls800*.shp) | `src/core/menu_select.cpp` | R0-1 | ~30 |
+
+**R0-3 验收**: 主菜单显示真实 SHP 按钮，各按钮点击后跳转到对应子屏幕（占位或已实现）。
+
+#### R0-4: 子菜单屏幕 (Campaign/Skirmish/Multiplayer/Options)
+
+| # | 描述 | 文件 | 依赖 | 估算行 |
+|---|------|------|------|--------|
+| R0-4a | Campaign_Screen: 阵营选择 SHP 按钮 + Start/Back (参考 IDA `Campaign_Screen` 0x52E0E0) | `src/core/menu_select.cpp` | R0-2 | ~60 |
+| R0-4b | Multiplayer_Screen: 网络模式选择 (参考 IDA `Multiplayer_Screen` 0x52F0A0) | `src/core/menu_select.cpp` | R0-2 | ~60 |
+| R0-4c | Options_Screen: 游戏设置对话框 (参考 IDA `Options_Screen` 0x530D40) | `src/core/menu_select.cpp` | R0-2 | ~50 |
+
+**R0-4 验收**: 四级菜单可导航，返回按钮工作，状态机正确流转。
+
+#### R0-5: BINK 视频解码/播放
+
+| # | 描述 | 文件 | 依赖 | 估算行 |
+|---|------|------|------|--------|
+| R0-5a | SHP 加载屏幕显示 (降级方案: static ls800*.shp 作为菜单背景) | `src/core/menu_select.cpp` | R0-1 | ~30 |
+| R0-5b | 调研 BINK 格式 + RAD Game Tools SDK 可行性 (原版用 BinkPlay.exe / binkw32.dll) | `src/render/bink.cpp` → 新建 | — | 调研 |
+| R0-5c | BINK 视频帧解码→DDraw 表面 Blit (每帧 DMA→surface→Flip) | `src/render/bink.cpp` | DDraw | ~150 |
+| R0-5d | INTRO 视频播放: `Menu_Select` case 0/1 (跳过 Logo/Intro 的 Spawner 钩子) | `src/core/menu_select.cpp` | R0-5c | ~50 |
+
+**R0-5 验收**: 菜单背景显示 BINK 动画（或 SHP 静图降级），INTRO 视频可播放。
+
+---
+
+### R1 — 游戏内渲染管线
+
+**目标**: 完整实现等距视图 (Tactical Map)、地形/建筑/单位/UI 渲染
+
+**当前状态**: 仅头文件定义，无 .cpp 实现
+
+#### R1-1: 等距投影 & 坐标系统
+
+| # | 描述 | 文件 | IDA 地址 | 估算行 |
+|---|------|------|----------|--------|
+| R1-1a | Cell → Screen 坐标转换 (Lepton→Cell→Pixel) | `ui/tactical.cpp` | `Coord_To_Cell` 0x565730 | ~80 |
+| R1-1b | Screen → Cell 坐标逆向 (鼠标点击→地图格) | `ui/tactical.cpp` | — | ~60 |
+| R1-1c | 视口裁剪: 计算可见 cell 范围 (Camera X/Y/Z) | `ui/tactical.cpp` | — | ~80 |
+| R1-1d | 地图滚动: 键盘/鼠标边界检测 + 平滑移动 | `ui/tactical.cpp` | — | ~60 |
+
+**R1-1 验收**: 固定相机位置绘制地形的坐标转换正确，鼠标可检测地图格。
+
+#### R1-2: 地形渲染 (Tactical Map Draw)
+
+| # | 描述 | 文件 | IDA 地址 | 估算行 |
+|---|------|------|----------|--------|
+| R1-2a | 地形 Tile SHP 加载: TEM/TEMPERAT/Snow/Urban tileset | `ui/tactical.cpp` | — | ~100 |
+| R1-2b | Isometric tile 绘制: z-order left→right, top→bottom | `ui/tactical.cpp` | — | ~120 |
+| R1-2c | Tile 变体选择 (随机草地/悬崖边缘检测) | `ui/tactical.cpp` | — | ~100 |
+| R1-2d | 地表覆盖层: Tiberium/Ore/Cliff/Road/Wall/River 覆盖 | `ui/tactical.cpp` | — | ~80 |
+
+**R1-2 验收**: 等距地图可见，地形 tile 正确排列，无 z-order 错误。
+
+#### R1-3: 对象渲染 (Buildings/Units/Infantry/Aircraft)
+
+| # | 描述 | 文件 | IDA 地址 | 估算行 |
+|---|------|------|----------|--------|
+| R1-3a | ObjectClass::Draw (虚函数 [7]) — 基类 Draw 调度 | `core/object.cpp` | — | ~60 |
+| R1-3b | BuildingClass::Draw: SHP 建筑动画 + buildup/active/damage 状态 | `core/building.cpp` | — | ~100 |
+| R1-3c | TechnoClass::Draw: SHP 单位/步兵 8 方向选择 + 动画帧步进 | `core/techno.cpp` | — | ~100 |
+| R1-3d | 对象 z-order 排序: 同 cell 内按 Occupier 列表排序 | `core/object.cpp` | — | ~50 |
+| R1-3e | 选中的对象: 血条 + 选中框绘制 (SHP 覆盖) | `core/techno.cpp` | — | ~60 |
+
+**R1-3 验收**: 至少一个建筑/单位/步兵在屏幕上正确渲染。
+
+#### R1-4: 游戏内 UI 覆盖
+
+| # | 描述 | 文件 | IDA 地址 | 估算行 |
+|---|------|------|----------|--------|
+| R1-4a | 侧边栏 (SidebarClass): 建筑/单位生产标签页 + 图标 + Ready 状态 | `ui/sidebar.cpp` | — | ~200 |
+| R1-4b | 迷你雷达 (RadarClass): 地形预览 + 单位/建筑白点 | `ui/radar.cpp` | — | ~120 |
+| R1-4c | 命令栏 (CommandClass): 移动/攻击/停止/部署/警戒 按钮 | `ui/command_class.cpp` | — | ~80 |
+| R1-4d | 资源/电量/资金 文本显示: CreditDisplay / PowerBar | `ui/g_screen.cpp` | — | ~60 |
+| R1-4e | Tab 选择 (TabClass): 多建筑/多单位切换 | `ui/tab.cpp` | — | ~60 |
+
+**R1-4 验收**: 完整游戏 UI 覆盖层可见交互。
+
+#### R1-5: 视觉效果后期
+
+| # | 描述 | 文件 | IDA 地址 | 估算行 |
+|---|------|------|----------|--------|
+| R1-5a | 战争迷雾/黑幕 (FogOfWar): per-cell 可见性 + 灰/黑渐变覆盖 | `ui/tactical.cpp` | — | ~120 |
+| R1-5b | 动画覆盖 (AnimClass): 爆炸/烟/火花 在 tactical 层之上 | `entity/anim.cpp` | — | ~100 |
+| R1-5c | 动态光照: 核弹闪光/闪电风暴/Chrono 效果 | `ui/tactical.cpp` | `LightingStorm`/`NukeFlash` | ~100 |
+
+**R1-5 验收**: 战争迷雾正确遮挡未探索区域，爆炸动画可见。
+
+#### R1-6: Voxel 3D 模型渲染 (远期, 可选降级)
+
+| # | 描述 | 文件 | 依赖 | 估算行 |
+|---|------|------|------|--------|
+| R1-6a | VXL 格式解析: Header(sections) + Body(voxel array) + Action frame offsets | `entity/voxel_anim.cpp` | — | ~150 |
+| R1-6b | HVA 动画格式: Section 变换矩阵 + 帧动画数据 | `entity/voxel_anim.cpp` | VXL | ~100 |
+| R1-6c | 软件 Voxel→2D 投影: 8 方向 ray-cast → 像素缓冲 → DDraw 表面 | `entity/voxel_anim.cpp` | DSurface | ~200 |
+| R1-6d | **降级方案**: Voxel 对象用 SHP 占位 (从 expandmd01.mix 提取对应 SHP) | `entity/voxel_anim.cpp` | SHP | ~50 |
+
+**R1-6 验收**: Voxel 模型可见（或 SHP 占位版），8 方向随旋转变化。
+
+---
+
 ### P0 — EXE 骨架 (已完成 / 进行中)
 
 | # | 描述 | 文件 | 估算行数 | 状态 |
@@ -587,12 +726,26 @@ make _WIN32_WINNT=0x0400
 
 | 指标 | 数值 |
 |------|------|
-| 已实现函数 | ~120 |
+| 已实现函数 | ~140 |
 | 存根/空实现 | ~200+ |
 | TODO/FIXME标记 | 252 (src 205 + headers 47) |
 | 未命名成员 | 34 (BuildingClass 17 + Infantry 6 + Unit 3 + Aircraft 8) |
 | 待翻译IDA函数 | 20 sub_ + 12 vt_entry |
 | 构建状态 | 0 errors, 0 warnings |
+
+### 当前菜单渲染状态
+
+| 组件 | 状态 | 备注 |
+|------|------|------|
+| DDraw 初始化 | ✅ | 2560x1600 全屏，cnc-ddraw 兼容层 |
+| MIX 文件加载 | ✅ | 16顶层→17子MIX→33池，内存支持 |
+| SHP 解码 | ✅ | TS格式(RLE3+Raw)，`ShpImage::LoadFromMemory` |
+| 调色板 | ✅ | 768字节内容扫描匹配 |
+| SHP 渲染到表面 | ❌ | DrawSHP未实现（仅手动像素写入） |
+| 按钮 SHP 加载 | ✅ | `LoadByHash(0x0D2B157D)`→button00.shp 3384B |
+| 色块按钮交互 | ✅ | 绿色/蓝色方框，ESC退出 |
+| Dialog/Gadget 系统 | ⚠️ | 头文件已定义，未启用 |
+| 主菜单背景 | ❌ | BINK(ra2ts_l.bik)未解码，SHP背景未渲染 |
 
 ---
 
@@ -802,9 +955,17 @@ MainMenu_DlgProc (0x531F60)
 
 1. `namespace gamemd` 或 `namespace ra2::game`
 2. `enum class` + `constexpr operator|` for bit flags
-3. 虚函数按 YRpp vtable 顺序，`__stdcall` 调用约定
+3. 虚函数按 YRpp vtable 顺序，`__stdcall__` 调用约定
 4. C++20: `noexcept`、`override`、`constexpr`、`= default`
 5. RA1 为结构参考，YRpp 为偏移参考，IDA 为二进制验证，cnc-ddraw 为渲染接口参考
 6. 前向声明必须匹配实际定义 (class vs struct)
 7. MIX 文件名仅存 hash ID，不保存原始文件名
 8. DirectDraw 调用使用标准 Windows SDK 接口 (Phase 1)，搭配 cnc-ddraw 兼容层运行调试
+
+## 下一步 (Next Steps)
+
+1. **R0-1: DSurface SHP 渲染** — 实现 Blit/DrawSHP 将 SHP 按钮帧绘制到 DDraw 表面
+2. **R0-2: Dialog/Gadget 系统** — 启用完整的 Dialog 消息循环替代手动 PeekMessage 循环
+3. **R0-3: 主菜单 SHP 按钮** — 替换色块为真实的 button00.shp 等 SHP
+4. **R0-5: BINK/LoadingScreen** — 调研 BINK SDK 或实现 SHP 静图背景降级
+5. 后续 R1: 游戏内等距视图渲染
