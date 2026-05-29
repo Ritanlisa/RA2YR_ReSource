@@ -53,8 +53,10 @@ if(GCC OR CLANG)
     target_compile_options(gamemd_core PRIVATE
         -Wall
         -Wextra
-        -m32
     )
+    if(WIN32)
+        target_compile_options(gamemd_core PRIVATE -m32)
+    endif()
 endif()
 
 # Optional: Verification target (compiles headers only for syntax checking)
@@ -68,34 +70,36 @@ add_custom_target(verify_headers
 # For now, headers provide the structure for reference and decompilation work
 
 # ── Executable target (replaces original gamemd.exe) ──
-add_executable(gamemd WIN32
-    app/main.cpp
-    app/game_loop.cpp
-    app/ddraw_init.cpp
-    app/resource.rc
-)
+if(WIN32)
+    add_executable(gamemd WIN32
+        app/main.cpp
+        app/game_loop.cpp
+        app/ddraw_init.cpp
+        app/resource.rc
+    )
 
-target_include_directories(gamemd PRIVATE "include" "app")
+    target_include_directories(gamemd PRIVATE "include" "app")
 
-target_link_libraries(gamemd PRIVATE
-    gamemd_core
-    user32
-    gdi32
-    ole32
-    ddraw
-    dxguid
-)
+    target_link_libraries(gamemd PRIVATE
+        gamemd_core
+        user32
+        gdi32
+        ole32
+        ddraw
+        dxguid
+    )
 
-# Post-build: copy cnc-ddraw runtime dll + config to output directory
-add_custom_command(TARGET gamemd POST_BUILD
-    COMMAND ${CMAKE_COMMAND} -E copy_if_different
-        "${CMAKE_SOURCE_DIR}/ddraw.dll"
-        "$<TARGET_FILE_DIR:gamemd>/ddraw.dll"
-    COMMAND ${CMAKE_COMMAND} -E copy_if_different
-        "${CMAKE_SOURCE_DIR}/ddraw.ini"
-        "$<TARGET_FILE_DIR:gamemd>/ddraw.ini"
-    COMMENT "Copying cnc-ddraw runtime files..."
-)
+    # Post-build: copy cnc-ddraw runtime dll + config to output directory
+    add_custom_command(TARGET gamemd POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different
+            "${CMAKE_SOURCE_DIR}/ddraw.dll"
+            "$<TARGET_FILE_DIR:gamemd>/ddraw.dll"
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different
+            "${CMAKE_SOURCE_DIR}/ddraw.ini"
+            "$<TARGET_FILE_DIR:gamemd>/ddraw.ini"
+        COMMENT "Copying cnc-ddraw runtime files..."
+    )
+endif()
 
 # Platform-specific settings for executable
 if(MSVC)
