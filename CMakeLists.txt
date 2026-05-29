@@ -72,9 +72,10 @@ add_executable(gamemd WIN32
     app/main.cpp
     app/game_loop.cpp
     app/ddraw_init.cpp
+    app/resource.rc
 )
 
-target_include_directories(gamemd PRIVATE "include")
+target_include_directories(gamemd PRIVATE "include" "app")
 
 target_link_libraries(gamemd PRIVATE
     gamemd_core
@@ -83,6 +84,17 @@ target_link_libraries(gamemd PRIVATE
     ole32
     ddraw
     dxguid
+)
+
+# Post-build: copy cnc-ddraw runtime dll + config to output directory
+add_custom_command(TARGET gamemd POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        "${CMAKE_SOURCE_DIR}/ddraw.dll"
+        "$<TARGET_FILE_DIR:gamemd>/ddraw.dll"
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        "${CMAKE_SOURCE_DIR}/ddraw.ini"
+        "$<TARGET_FILE_DIR:gamemd>/ddraw.ini"
+    COMMENT "Copying cnc-ddraw runtime files..."
 )
 
 # Platform-specific settings for executable

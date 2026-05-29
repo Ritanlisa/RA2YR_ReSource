@@ -2,6 +2,7 @@
 
 #include "gamemd/core/game_loop.hpp"
 #include "gamemd/core/ddraw_init.hpp"
+#include "resource.h"
 
 namespace gamemd {
 
@@ -56,7 +57,7 @@ bool GameLoop_Init(HINSTANCE hInstance, HINSTANCE /*hPrevInstance*/,
     wc.style         = CS_VREDRAW | CS_HREDRAW;
     wc.lpfnWndProc   = WndProc;
     wc.hInstance     = hInstance;
-    wc.hIcon         = LoadIconA(hInstance, MAKEINTRESOURCEA(0x5D));
+    wc.hIcon         = LoadIconA(hInstance, MAKEINTRESOURCEA(IDI_MAIN_ICON));
     wc.hCursor       = LoadCursorA(nullptr, IDC_ARROW);
     wc.hbrBackground = nullptr;
     wc.lpszClassName = WINDOW_CLASS;
