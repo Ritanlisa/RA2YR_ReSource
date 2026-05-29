@@ -337,30 +337,41 @@ void MixFileClass::Bootstrap()
 
     LOG_INFO("MixFileClass::Bootstrap: done, %d MIX files in pool", g_mixPool.Count);
 
-    // Recursively load sub-MIX files from within loaded MIX files
-    // using known sub-MIX filenames (CRC32 hashed)
+    // Recursively load known sub-MIX files using name search (try CRC32 + Classic)
     const char* submix_names[] = {
-        "cache.mix", "local.mix", "conquer.mix", "temperat.mix", "snow.mix",
-        "isotemp.mix", "sounds.mix", "sidec01.mix", "sidec02.mix",
-        "sno.mix", "tem.mix", "speech01.mix", "speech02.mix",
-        "gener.mix", "isogen.mix", "cameo.mix",
-        "cachemd.mix", "localmd.mix", "genermd.mix", "conqmd.mix",
-        "isogenmd.mix", "cameomd.mix",
-        "isotem.mix", "isosnow.mix",
-        "cache.mix", "conquer.mix",
+        "cache.mix","local.mix","conquer.mix","temperat.mix","snow.mix",
+        "isotemp.mix","sounds.mix","sidec01.mix","sidec02.mix",
+        "sno.mix","tem.mix","speech01.mix","speech02.mix",
+        "gener.mix","isogen.mix","cameo.mix",
+        "cachemd.mix","localmd.mix","genermd.mix","conqmd.mix",
+        "isogenmd.mix","cameomd.mix","isotem.mix",
         nullptr
+    };
+
+    // Also compute Classic (TD) hashes as fallback
+    auto classic_hash = [](const char* name) -> uint32_t {
+        int len = (int)strlen(name);
+        int i = 0; uint32_t id = 0;
+        while (i < len) {
+            uint32_t a = 0;
+            for (int j = 0; j < 4; ++j) { a >>= 8; if (i < len) a += (uint32_t)toupper((uint8_t)name[i]) << 24; ++i; }
+            id = (id << 1) | (id >> 31); id += a;
+        }
+        return id;
     };
 
     int processed = 0;
     while (processed < g_mixPool.Count) {
         MixFileClass* parent = g_mixPool[processed++];
         for (int si = 0; submix_names[si]; ++si) {
+            // Try both CRC32 and Classic hash
             uint32_t hid = ComputeID(submix_names[si]);
             int idx = parent->FindIndex(hid);
+            if (idx < 0) { idx = parent->FindIndex(classic_hash(submix_names[si])); }
             if (idx < 0) continue;
 
             int sz = parent->GetSize(idx);
-            if (sz < 20) continue;
+            if (sz < 200) continue;
 
             uint8_t* data = (uint8_t*)malloc(sz);
             if (!data || !parent->Extract(idx, data, sz)) { free(data); continue; }
@@ -368,17 +379,17 @@ void MixFileClass::Bootstrap()
             char tmpname[64];
             snprintf(tmpname, sizeof(tmpname), "_sub_%s", submix_names[si]);
             FILE* tmpf = fopen(tmpname, "wb");
-            if (tmpf) {
-                fwrite(data, 1, sz, tmpf);
-                fclose(tmpf);
-                auto* submix = new MixFileClass(tmpname);
-                remove(tmpname);
-                if (submix->IsValid()) {
-                    submix->FileName = _strdup(submix_names[si]);
-                    LOG_INFO("  Sub-MIX: %s -> %d files", submix_names[si], submix->CountFiles);
-                    g_mixPool.AddItem(submix);
-                } else { delete submix; }
-            }
+            if (!tmpf) { free(data); continue; }
+            fwrite(data, 1, sz, tmpf);
+            fclose(tmpf);
+
+            auto* submix = new MixFileClass(tmpname);
+            remove(tmpname);
+            if (submix->IsValid()) {
+                submix->FileName = _strdup(submix_names[si]);
+                LOG_INFO("  Sub-MIX: %s -> %d files (from %s)", submix_names[si], submix->CountFiles, parent->FileName);
+                g_mixPool.AddItem(submix);
+            } else { delete submix; }
             free(data);
         }
     }
