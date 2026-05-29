@@ -63,29 +63,21 @@ struct IndexEntry {
 #pragma pack(pop)
 
 // ============================================================
-// RA2 filename → ID hash (TD/RA algorithm, same as RA1 CRC)
+// RA2 filename → hash ID (CRC32, upper-cased without extension?)
+// RA1/TD used the classic Westwood hash; TS/RA2 use CRC32
 // ============================================================
 
 uint32_t ComputeId(const char* filename)
 {
-    int len = static_cast<int>(strlen(filename));
-    int i = 0;
-    uint32_t id = 0;
-
-    while (i < len) {
-        uint32_t a = 0;
-        for (int j = 0; j < 4; ++j) {
-            a >>= 8;
-            if (i < len) {
-                char c = static_cast<char>(toupper(static_cast<unsigned char>(filename[i])));
-                a += static_cast<uint32_t>(c) << 24;
-            }
-            ++i;
-        }
-        id = (id << 1) | (id >> 31);
-        id += a;
+    // CRC32 of upper-cased filename
+    uint32_t crc = 0xFFFFFFFF;
+    for (int i = 0; filename[i]; ++i) {
+        uint8_t c = static_cast<uint8_t>(toupper(static_cast<unsigned char>(filename[i])));
+        crc ^= c;
+        for (int j = 0; j < 8; ++j)
+            crc = (crc >> 1) ^ ((crc & 1) ? 0xEDB88320u : 0);
     }
-    return id;
+    return crc ^ 0xFFFFFFFF;
 }
 
 // ============================================================
@@ -344,6 +336,68 @@ void MixFileClass::Bootstrap()
     Generics.MULTIMD  = find_in_pool("multimd.mix");
 
     LOG_INFO("MixFileClass::Bootstrap: done, %d MIX files in pool", g_mixPool.Count);
+
+    // Recursively load sub-MIX files from within loaded MIX files
+    // using known sub-MIX filenames (CRC32 hashed)
+    const char* submix_names[] = {
+        "cache.mix", "local.mix", "conquer.mix", "temperat.mix", "snow.mix",
+        "isotemp.mix", "sounds.mix", "sidec01.mix", "sidec02.mix",
+        "sno.mix", "tem.mix", "speech01.mix", "speech02.mix",
+        "gener.mix", "isogen.mix", "cameo.mix",
+        "cachemd.mix", "localmd.mix", "genermd.mix", "conqmd.mix",
+        "isogenmd.mix", "cameomd.mix",
+        "isotem.mix", "isosnow.mix",
+        "cache.mix", "conquer.mix",
+        nullptr
+    };
+
+    int processed = 0;
+    while (processed < g_mixPool.Count) {
+        MixFileClass* parent = g_mixPool[processed++];
+        for (int si = 0; submix_names[si]; ++si) {
+            uint32_t hid = ComputeID(submix_names[si]);
+            int idx = parent->FindIndex(hid);
+            if (idx < 0) continue;
+
+            int sz = parent->GetSize(idx);
+            if (sz < 20) continue;
+
+            uint8_t* data = (uint8_t*)malloc(sz);
+            if (!data || !parent->Extract(idx, data, sz)) { free(data); continue; }
+
+            char tmpname[64];
+            snprintf(tmpname, sizeof(tmpname), "_sub_%s", submix_names[si]);
+            FILE* tmpf = fopen(tmpname, "wb");
+            if (tmpf) {
+                fwrite(data, 1, sz, tmpf);
+                fclose(tmpf);
+                auto* submix = new MixFileClass(tmpname);
+                remove(tmpname);
+                if (submix->IsValid()) {
+                    submix->FileName = _strdup(submix_names[si]);
+                    LOG_INFO("  Sub-MIX: %s -> %d files", submix_names[si], submix->CountFiles);
+                    g_mixPool.AddItem(submix);
+                } else { delete submix; }
+            }
+            free(data);
+        }
+    }
+
+    LOG_INFO("MixFileClass::Bootstrap: done, %d total MIX in pool after recursion", g_mixPool.Count);
+
+    // Dump sub-MIX contents for diagnostics
+    for (int i = 7; i < g_mixPool.Count; ++i) {
+        auto* m = g_mixPool[i];
+        if (!m || m->CountFiles == 0) continue;
+        int pal_count = 0, shp_count = 0;
+        for (int j = 0; j < m->CountFiles; ++j) {
+            int sz = m->GetSize(j);
+            if (sz == 768) { pal_count++; if (pal_count <= 2) LOG_INFO("  [%s] PAL? idx=%d hash=0x%08X", m->FileName, j, m->GetFileID(j)); }
+            if (sz > 10000 && sz < 500000) shp_count++;
+        }
+        if (pal_count > 0 || shp_count > 0)
+            LOG_INFO("  Sub-MIX %s: %d pal-size, %d shp-size files", m->FileName, pal_count, shp_count);
+    }
 }
 
 // ============================================================

@@ -129,44 +129,54 @@ void* FileSystem::LoadFirstPalette()
 void* FileSystem::LoadFirstSHP()
 {
     auto& pool = MixFileClass::GetMixPool();
-    LOG_TRACE("FileSystem::LoadFirstSHP: scanning %d MIX files", pool.Count);
-    void* best = nullptr;
-    int best_score = -1, best_sz = 0;
+    void* best = nullptr; int best_sz = 0;
 
     for (int mi = 0; mi < pool.Count; ++mi) {
         auto* mix = pool[mi];
         if (!mix || !mix->IsValid()) continue;
         for (int i = 0; i < mix->CountFiles; ++i) {
             int sz = mix->GetSize(i);
-            if (sz < 20 || sz > 2000000) continue;
-            uint8_t head[8];
-            if (!mix->Peek(i, head, 8)) continue;
-            uint16_t frames = *(uint16_t*)(head + 0);
-            uint16_t max_w  = *(uint16_t*)(head + 2);
-            uint16_t max_h  = *(uint16_t*)(head + 4);
-            if (frames == 0 || frames > 1000) continue;
-            if (max_w == 0 || max_w > 1024) continue;
-            if (max_h == 0 || max_h > 1024) continue;
+            // SHP files: 8KB-4MB, prefer files from UI/menu-related MIXes
+            if (sz < 8000 || sz > 4000000) continue;
+            uint8_t head[12];
+            if (!mix->Peek(i, head, 12)) continue;
 
-            int score = 0;
-            if (max_w >= 640 && max_w <= 1024) score += 100;
-            if (max_h >= 400 && max_h <= 768)  score += 50;
-            if (frames > 1 && frames <= 300)  score += frames;
+            // Try TD header: frames(2), width(2), height(2)
+            uint16_t td_frames = *(uint16_t*)(head + 0);
+            uint16_t td_w = *(uint16_t*)(head + 2);
+            uint16_t td_h = *(uint16_t*)(head + 4);
+            bool td_valid = (td_frames > 0 && td_frames <= 500 && td_w > 0 && td_w <= 1024 && td_h > 0 && td_h <= 1024);
 
-            void* data = malloc(sz);
-            if (data && mix->Extract(i, data, sz)) {
-                LOG_TRACE("SHP candidate: MIX[%d] idx=%d %dx%d %df sz=%d score=%d",
-                    mi, i, max_w, max_h, frames, sz, score);
-                if (score > best_score) {
-                    free(best); best = data; best_score = score; best_sz = sz;
-                    continue;
-                }
+            // Try TS/RA2 header: size(4), width(2), height(2), frames(2)
+            uint16_t ts_w = *(uint16_t*)(head + 4);
+            uint16_t ts_h = *(uint16_t*)(head + 6);
+            uint16_t ts_frames = *(uint16_t*)(head + 8);
+            bool ts_valid = (ts_frames > 0 && ts_frames <= 500 && ts_w > 0 && ts_w <= 1024 && ts_h > 0 && ts_h <= 1024);
+
+            if (!td_valid && !ts_valid) continue;
+
+            int w = td_valid ? td_w : ts_w;
+            int h = td_valid ? td_h : ts_h;
+            int f = td_valid ? td_frames : ts_frames;
+
+            // Accept any large SHP, prefer bigger dimensions and animation
+            if (h < 8 || w < 100) continue;
+            int score = w * h;
+            if (f > 1) score += f * 100;
+            // Boost tall SHPs more heavily
+            if (h > 200) score += 50000;
+            if (h > 400) score += 100000;
+
+            if (score > best_sz) {
+                void* data = malloc(sz);
+                if (data && mix->Extract(i, data, sz)) {
+                    LOG_INFO("SHP candidate: %dx%d %df sz=%d score=%d", w, h, f, sz, score);
+                    free(best); best = data; best_sz = score;
+                } else { free(data); }
             }
-            free(data);
         }
     }
-
-    if (best) { LOG_INFO("LoadFirstSHP: %dx%d %d bytes", best_sz > 0 ? best_sz : 0, best_score, best_sz); }
+    if (best) LOG_INFO("LoadFirstSHP: best score=%d", best_sz);
     return best;
 }
 
