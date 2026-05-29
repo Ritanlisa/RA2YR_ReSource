@@ -4,6 +4,7 @@
 #include "gamemd/core/vector.hpp"
 #include "gamemd/core/logging.hpp"
 
+#include <windows.h>
 #include <cstdio>
 #include <cstring>
 #include <cctype>
@@ -292,28 +293,57 @@ MixFileClass::MixFileClass(const char* pFileName) noexcept
 // Bootstrap — initialize all global MIX file references
 // ============================================================
 
+// Global pool of all loaded MIX files for recursive search
+static DynamicVectorClass<MixFileClass*> g_mixPool;
+
+DynamicVectorClass<MixFileClass*>& MixFileClass::GetMixPool()
+{
+    return g_mixPool;
+}
+
 void MixFileClass::Bootstrap()
 {
-    LOG_INFO("MixFileClass::Bootstrap: loading MIX files");
+    LOG_INFO("MixFileClass::Bootstrap: scanning all .mix files");
 
-    auto load_mix = [](const char* name) -> MixFileClass* {
-        auto* mix = new MixFileClass(name);
-        if (mix->IsValid()) {
-            LOG_INFO("  %s: %d files, %d bytes", name, mix->CountFiles, mix->FileSize);
-            return mix;
-        }
-        delete mix;
-        LOG_WARN("  %s: FAILED to load", name);
+    g_mixPool.Clear();
+
+    // Load all .mix files in current directory
+    WIN32_FIND_DATAA fd;
+    HANDLE hFind = FindFirstFileA("*.mix", &fd);
+    if (hFind != INVALID_HANDLE_VALUE) {
+        do {
+            if (fd.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY) continue;
+            auto* mix = new MixFileClass(fd.cFileName);
+            if (mix->IsValid()) {
+                LOG_INFO("  %s: %d files, %d bytes", fd.cFileName, mix->CountFiles, mix->FileSize);
+                // Copy the filename since fd buffer will be overwritten
+                mix->FileName = _strdup(fd.cFileName);
+                g_mixPool.AddItem(mix);
+            } else {
+                delete mix;
+                LOG_WARN("  %s: FAILED to load", fd.cFileName);
+            }
+        } while (FindNextFileA(hFind, &fd));
+        FindClose(hFind);
+    }
+
+    // Set Generics references for known MIX files
+    auto find_in_pool = [](const char* name) -> MixFileClass* {
+        for (int i = 0; i < g_mixPool.Count; ++i)
+            if (g_mixPool[i] && g_mixPool[i]->FileName && _stricmp(g_mixPool[i]->FileName, name) == 0)
+                return g_mixPool[i];
         return nullptr;
     };
 
-    Generics.RA2MD       = load_mix("expandmd01.mix");
-    Generics.RA2         = load_mix("ra2md.mix");
-    Generics.LANGMD      = load_mix("langmd.mix");
-    Generics.LANGUAGE    = load_mix("language.mix");
-    Generics.MAIN        = load_mix("ra2.mix");
+    Generics.RA2MD    = find_in_pool("expandmd01.mix");
+    Generics.RA2      = find_in_pool("ra2md.mix");
+    Generics.LANGMD   = find_in_pool("langmd.mix");
+    Generics.LANGUAGE = find_in_pool("language.mix");
+    Generics.MAIN     = find_in_pool("ra2.mix");
+    Generics.MULTI    = find_in_pool("multi.mix");
+    Generics.MULTIMD  = find_in_pool("multimd.mix");
 
-    LOG_INFO("MixFileClass::Bootstrap: done");
+    LOG_INFO("MixFileClass::Bootstrap: done, %d MIX files in pool", g_mixPool.Count);
 }
 
 // ============================================================
@@ -387,6 +417,21 @@ bool MixFileClass::Extract(int index, void* buffer, int buffer_size) const
 bool MixFileClass::Extract(const char* filename, void* buffer, int buffer_size) const
 {
     return Extract(FindIndex(filename), buffer, buffer_size);
+}
+
+bool MixFileClass::Peek(int index, void* buffer, int size) const
+{
+    if (index < 0 || index >= CountFiles || !buffer || !FileName)
+        return false;
+    if (size > static_cast<int>(Headers[index].Size))
+        size = static_cast<int>(Headers[index].Size);
+    FILE* fp = fopen(FileName, "rb");
+    if (!fp) return false;
+    int pos = FileStartOffset + static_cast<int>(Headers[index].Offset);
+    fseek(fp, pos, SEEK_SET);
+    size_t read = fread(buffer, 1, size, fp);
+    fclose(fp);
+    return read == static_cast<size_t>(size);
 }
 
 // ============================================================

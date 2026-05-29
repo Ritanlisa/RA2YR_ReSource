@@ -58,6 +58,10 @@ public:
 
     static ConvertClass* LoadPALFile(const char* pFileName, DSurface* pSurface);
 
+    // Content-based search: find any 768-byte palette file in MIX pool
+    static void* LoadFirstPalette();
+    static void* LoadFirstSHP();
+
     static SHPStruct* PIPBRD_SHP;
     static SHPStruct* PIPS_SHP;
     static SHPStruct* PIPS2_SHP;

@@ -93,7 +93,12 @@ public:
         MixFileClass* UNKNOWN_3          = nullptr;
         MixFileClass* SIDEC02DMD         = nullptr;
         MixFileClass* SIDEC02D           = nullptr;
+        MixFileClass* MULTI              = nullptr;
+        MixFileClass* MULTIMD            = nullptr;
     };
+
+    // Global search pool — all loaded MIX files (including sub-MIX)
+    static DynamicVectorClass<MixFileClass*>& GetMixPool();
 
     static LinkedList<MixFileClass*>& MIXes;
     static DynamicVectorClass<MixFileClass*>& Array;
@@ -126,6 +131,7 @@ public:
     }
     bool Extract(int index, void* buffer, int buffer_size) const;
     bool Extract(const char* filename, void* buffer, int buffer_size) const;
+    bool Peek(int index, void* buffer, int size) const;
     bool IsValid() const;
 
 protected:
