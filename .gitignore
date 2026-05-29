@@ -67,3 +67,8 @@ MOMIX/
 RA2YRMIX/
 build_err.txt
 build_errors.txt
+
+# CNC DDRAW Release
+Shaders/
+ddraw.*
+cnc-ddraw config.exe
