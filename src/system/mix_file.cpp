@@ -170,6 +170,8 @@ MixFileClass::MixFileClass(const char* pFileName) noexcept
 
             // Derive blowfish key and decrypt header + index blocks
             uint8_t bf_key[mix::kBlowfishKeySize];
+            mix::ComputeBlowfishKey(key_source, bf_key);
+
             mix::BlowfishEngine bf;
             bf.SetKey(bf_key, mix::kBlowfishKeySize);
 
