@@ -1,57 +1,97 @@
 #include "gamemd/system/file_system.hpp"
+#include "gamemd/system/mix_file.hpp"
 #include "gamemd/system/convert_class.hpp"
 #include "gamemd/render/surface.hpp"
 #include "gamemd/render/palette.hpp"
 
+#include <cstdio>
+#include <cstring>
+#include <cstdlib>
+
 namespace gamemd
 {
 
-SHPStruct* FileSystem::PIPBRD_SHP = nullptr;
-SHPStruct* FileSystem::PIPS_SHP = nullptr;
-SHPStruct* FileSystem::PIPS2_SHP = nullptr;
-SHPStruct* FileSystem::TALKBUBL_SHP = nullptr;
-SHPStruct* FileSystem::WRENCH_SHP = nullptr;
-SHPStruct* FileSystem::POWEROFF_SHP = nullptr;
-SHPStruct* FileSystem::GRFXTXT_SHP = nullptr;
-
-BytePalette& FileSystem::TEMPERAT_PAL = *reinterpret_cast<BytePalette*>(nullptr);
-BytePalette* FileSystem::GRFXTXT_PAL = nullptr;
-
-ConvertClass* FileSystem::CAMEO_PAL = nullptr;
-ConvertClass* FileSystem::UNITx_PAL = nullptr;
-ConvertClass* FileSystem::x_PAL = nullptr;
-ConvertClass* FileSystem::GRFTXT_TIBERIUM_PAL = nullptr;
-ConvertClass* FileSystem::ANIM_PAL = nullptr;
-ConvertClass* FileSystem::THEATER_PAL = nullptr;
-ConvertClass* FileSystem::MOUSE_PAL = nullptr;
-ConvertClass* FileSystem::GRFXTXT_Convert = nullptr;
+static MixFileClass** g_search_mixes[] = {
+    &MixFileClass::Generics.RA2MD,
+    &MixFileClass::Generics.RA2,
+    &MixFileClass::Generics.LANGMD,
+    &MixFileClass::Generics.LANGUAGE,
+    &MixFileClass::Generics.MAIN,
+    nullptr
+};
 
 void* FileSystem::LoadFile(const char* pFileName, bool bLoadAsSHP)
 {
-    // TODO: search MIX archives, then disk, for the file
-    (void)pFileName;
+    if (!pFileName) return nullptr;
+
+    uint32_t id = MixFileClass::ComputeID(pFileName);
+
+    for (int i = 0; g_search_mixes[i]; ++i) {
+        auto* mix = *g_search_mixes[i];
+        if (!mix || !mix->IsValid()) continue;
+
+        int idx = mix->FindIndex(id);
+        if (idx < 0) continue;
+
+        int sz = mix->GetSize(idx);
+        if (sz <= 0) continue;
+
+        void* buf = malloc(sz);
+        if (!buf) return nullptr;
+
+        if (mix->Extract(idx, buf, sz)) {
+            fprintf(stderr, "[gamemd] FileSystem: loaded '%s' (%d bytes) from MIX\n",
+                pFileName, sz);
+            return buf;
+        }
+        free(buf);
+    }
+
+    FILE* fp = fopen(pFileName, "rb");
+    if (!fp) return nullptr;
+
+    fseek(fp, 0, SEEK_END);
+    long sz = ftell(fp);
+    fseek(fp, 0, SEEK_SET);
+
+    void* buf = malloc(sz);
+    if (!buf) { fclose(fp); return nullptr; }
+
+    fread(buf, 1, sz, fp);
+    fclose(fp);
+    return buf;
     (void)bLoadAsSHP;
-    return nullptr;
 }
 
 void* FileSystem::LoadWholeFileEx(const char* pFilename, bool& outAllocated)
 {
-    // TODO: open CCFileClass, read entire file into buffer
-    (void)pFilename;
-    outAllocated = false;
-    return nullptr;
+    void* data = LoadFile(pFilename, false);
+    outAllocated = (data != nullptr);
+    return data;
 }
 
 BytePalette* FileSystem::AllocatePalette(const char* pFilename)
 {
-    // TODO: load .pal file from MIX/disk, allocate BytePalette
-    (void)pFilename;
-    return nullptr;
+    void* data = LoadFile(pFilename, false);
+    if (!data) return nullptr;
+
+    uint8_t* raw = static_cast<uint8_t*>(data);
+
+    auto* palette = static_cast<BytePalette*>(malloc(sizeof(BytePalette)));
+    if (!palette) { free(data); return nullptr; }
+
+    for (int i = 0; i < 256; ++i) {
+        palette->Entries[i].R = raw[i * 3 + 0] << 2;
+        palette->Entries[i].G = raw[i * 3 + 1] << 2;
+        palette->Entries[i].B = raw[i * 3 + 2] << 2;
+    }
+
+    free(data);
+    return palette;
 }
 
 ConvertClass* FileSystem::LoadPALFile(const char* pFileName, DSurface* pSurface)
 {
-    // TODO: load palette file, create ConvertClass from it
     (void)pFileName;
     (void)pSurface;
     return nullptr;

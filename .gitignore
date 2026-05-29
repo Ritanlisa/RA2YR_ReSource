@@ -52,6 +52,10 @@ CnC_Red_Alert/
 YRpp/
 MIX_Format.html
 cnc-ddraw/
+Ares/
+Phobos/
+Syringe/
+yrpp-spawner/
 
 # 敏感数据
 *.key
@@ -63,8 +67,9 @@ cnc-ddraw/
 # 测试文件
 test_*
 *.mix
+game.fnt
 MOMIX/
-RA2YRMIX/
+RA2YR-FullFiles/
 build_err.txt
 build_errors.txt
 
@@ -72,3 +77,6 @@ build_errors.txt
 Shaders/
 ddraw.*
 cnc-ddraw config.exe
+
+# CNCNet Client
+xna-cncnet-client/

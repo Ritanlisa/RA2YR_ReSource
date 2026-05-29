@@ -291,9 +291,27 @@ MixFileClass::MixFileClass(const char* pFileName) noexcept
 
 void MixFileClass::Bootstrap()
 {
-    // TODO: Load expandmd##.mix, ra2md.mix, language.mix, etc.
-    // Set up Generics struct with theater-specific MIX files
-    // Register all MIX files in global list
+    fprintf(stderr, "[gamemd] MixFileClass::Bootstrap: loading MIX files\n");
+
+    auto load_mix = [](const char* name) -> MixFileClass* {
+        auto* mix = new MixFileClass(name);
+        if (mix->IsValid()) {
+            fprintf(stderr, "[gamemd]   %s: %d files, %d bytes\n",
+                name, mix->CountFiles, mix->FileSize);
+            return mix;
+        }
+        delete mix;
+        fprintf(stderr, "[gamemd]   %s: (not found)\n", name);
+        return nullptr;
+    };
+
+    Generics.RA2MD       = load_mix("expandmd01.mix");
+    Generics.RA2         = load_mix("ra2md.mix");
+    Generics.LANGMD      = load_mix("langmd.mix");
+    Generics.LANGUAGE    = load_mix("language.mix");
+    Generics.MAIN        = load_mix("ra2.mix");
+
+    fprintf(stderr, "[gamemd] MixFileClass::Bootstrap: done\n");
 }
 
 // ============================================================

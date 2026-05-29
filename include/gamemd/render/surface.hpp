@@ -270,7 +270,7 @@ class DSurface : public XSurface
 public:
     DSurface(int width, int height, bool back_buffer, bool force_3d) noexcept;
 
-    virtual ~DSurface() override = default;
+    virtual ~DSurface() override;
 
     virtual bool BlitWhole(Surface* src, bool option1, bool option2) override;
     virtual bool BlitPart(
@@ -296,7 +296,7 @@ public:
     bool Allocated;
     bool VRAMmed;
     uint8_t align_1A[2];
-    IDirectDrawSurface* Surface;
+    LPDIRECTDRAWSURFACE7 Surface;
     DDSURFACEDESC2* SurfaceDesc;
 
 protected:

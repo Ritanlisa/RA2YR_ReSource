@@ -75,6 +75,7 @@ if(WIN32)
         app/main.cpp
         app/game_loop.cpp
         app/ddraw_init.cpp
+        app/cmdline.cpp
         app/resource.rc
     )
 
@@ -100,6 +101,16 @@ if(WIN32)
                 "${CMAKE_SOURCE_DIR}/ddraw.ini"
                 "$<TARGET_FILE_DIR:gamemd>/ddraw.ini"
             COMMENT "Copying cnc-ddraw runtime files..."
+        )
+    endif()
+
+    # Post-build: copy RA2YR game resource files to output directory
+    if(EXISTS "${CMAKE_SOURCE_DIR}/RA2YR-FullFiles")
+        add_custom_command(TARGET gamemd POST_BUILD
+            COMMAND ${CMAKE_COMMAND} -E copy_directory
+                "${CMAKE_SOURCE_DIR}/RA2YR-FullFiles"
+                "$<TARGET_FILE_DIR:gamemd>"
+            COMMENT "Copying game resources: RA2YR-FullFiles/ -> $<TARGET_FILE_DIR:gamemd>"
         )
     endif()
 endif()

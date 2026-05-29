@@ -5,17 +5,6 @@
 
 namespace gamemd {
 
-struct DDrawContext {
-    LPDIRECTDRAW7        dd;
-    LPDIRECTDRAWSURFACE7 primary;
-    LPDIRECTDRAWSURFACE7 back_buffer;
-    LPDIRECTDRAWCLIPPER  clipper;
-    HWND                 hwnd;
-    int                  width;
-    int                  height;
-    bool                 windowed;
-};
-
 static DDrawContext g_ddraw;
 
 bool DDraw_Init(HWND hwnd, int width, int height, bool windowed)

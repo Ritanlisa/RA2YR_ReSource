@@ -1,11 +1,13 @@
 #include "gamemd/render/surface.hpp"
 
+#include <windows.h>
+#include <ddraw.h>
 #include <cstring>
+
+#include "gamemd/core/ddraw_init.hpp"
 
 namespace gamemd
 {
-
-// --- DSurface ---
 
 DSurface::DSurface(int width, int height, bool back_buffer, bool force_3d) noexcept
     : XSurface(width, height)
@@ -19,26 +21,66 @@ DSurface::DSurface(int width, int height, bool back_buffer, bool force_3d) noexc
     (void)back_buffer;
     (void)force_3d;
     std::memset(&align_1A, 0, sizeof(align_1A));
+
+    auto* ctx = DDraw_GetContext();
+    if (!ctx || !ctx->dd) return;
+
+    DDSURFACEDESC2 desc = {};
+    desc.dwSize         = sizeof(desc);
+    desc.dwFlags        = DDSD_WIDTH | DDSD_HEIGHT | DDSD_CAPS;
+    desc.dwWidth        = width;
+    desc.dwHeight       = height;
+    desc.ddsCaps.dwCaps = DDSCAPS_OFFSCREENPLAIN | DDSCAPS_SYSTEMMEMORY;
+
+    HRESULT hr = ctx->dd->CreateSurface(&desc, &Surface, nullptr);
+    if (SUCCEEDED(hr)) {
+        Allocated = true;
+    }
+}
+
+DSurface::~DSurface()
+{
+    if (Surface) {
+        Surface->Release();
+        Surface = nullptr;
+    }
+    LockedSurface = nullptr;
 }
 
 bool DSurface::BlitWhole(class Surface* src, bool option1, bool option2)
 {
-    (void)src;
-    (void)option1;
-    (void)option2;
-    return false;
+    if (!Surface || !src) return false;
+    auto* dsurf = dynamic_cast<DSurface*>(src);
+    if (!dsurf || !dsurf->Surface) return false;
+
+    RECT dr = { 0, 0, Width, Height };
+    RECT sr = { 0, 0, dsurf->Width, dsurf->Height };
+
+    DWORD flags = DDBLT_WAIT;
+    if (!option1 && !option2) flags |= DDBLT_KEYSRC;
+
+    HRESULT hr = Surface->Blt(&dr, dsurf->Surface, &sr, flags, nullptr);
+    return SUCCEEDED(hr);
 }
 
 bool DSurface::BlitPart(
     const RectangleStruct& dest_rect, class Surface* src,
     const RectangleStruct& src_rect, bool option1, bool option2)
 {
-    (void)dest_rect;
-    (void)src;
-    (void)src_rect;
-    (void)option1;
-    (void)option2;
-    return false;
+    if (!Surface || !src) return false;
+    auto* dsurf = dynamic_cast<DSurface*>(src);
+    if (!dsurf || !dsurf->Surface) return false;
+
+    RECT dr = { dest_rect.X, dest_rect.Y,
+                dest_rect.X + dest_rect.Width, dest_rect.Y + dest_rect.Height };
+    RECT sr = { src_rect.X, src_rect.Y,
+                src_rect.X + src_rect.Width, src_rect.Y + src_rect.Height };
+
+    DWORD flags = DDBLT_WAIT;
+    if (!option1 && !option2) flags |= DDBLT_KEYSRC;
+
+    HRESULT hr = Surface->Blt(&dr, dsurf->Surface, &sr, flags, nullptr);
+    return SUCCEEDED(hr);
 }
 
 bool DSurface::Blit(
@@ -46,67 +88,102 @@ bool DSurface::Blit(
     class Surface* src, const RectangleStruct& dest_rect,
     const RectangleStruct& src_rect, bool option1, bool option2)
 {
+    if (!Surface || !src) return false;
+    auto* dsurf = dynamic_cast<DSurface*>(src);
+    if (!dsurf || !dsurf->Surface) return false;
+
+    RECT dr = { dest_rect.X, dest_rect.Y,
+                dest_rect.X + dest_rect.Width, dest_rect.Y + dest_rect.Height };
+    RECT sr = { src_rect.X, src_rect.Y,
+                src_rect.X + src_rect.Width, src_rect.Y + src_rect.Height };
+
     (void)clip_rect;
     (void)clip_rect2;
-    (void)src;
-    (void)dest_rect;
-    (void)src_rect;
-    (void)option1;
-    (void)option2;
-    return false;
+
+    DWORD flags = DDBLT_WAIT;
+    if (!option1 && !option2) flags |= DDBLT_KEYSRC;
+
+    HRESULT hr = Surface->Blt(&dr, dsurf->Surface, &sr, flags, nullptr);
+    return SUCCEEDED(hr);
 }
 
 bool DSurface::FillRectEx(
     const RectangleStruct& clip_rect,
     const RectangleStruct& fill_rect, uint32_t color)
 {
+    if (!Surface) return false;
+
     (void)clip_rect;
-    (void)fill_rect;
-    (void)color;
-    return false;
+
+    DDBLTFX fx = {};
+    fx.dwSize      = sizeof(fx);
+    fx.dwFillColor = color;
+
+    RECT r = { fill_rect.X, fill_rect.Y,
+               fill_rect.X + fill_rect.Width, fill_rect.Y + fill_rect.Height };
+
+    HRESULT hr = Surface->Blt(&r, nullptr, nullptr, DDBLT_COLORFILL | DDBLT_WAIT, &fx);
+    return SUCCEEDED(hr);
 }
 
 bool DSurface::FillRect(const RectangleStruct& fill_rect, uint32_t color)
 {
-    (void)fill_rect;
-    (void)color;
-    return false;
+    RectangleStruct clip = {};
+    return FillRectEx(clip, fill_rect, color);
 }
 
 void* DSurface::Lock(int x, int y)
 {
-    (void)x;
-    (void)y;
-    return nullptr;
+    if (!Surface) return nullptr;
+
+    DDSURFACEDESC2 desc = {};
+    desc.dwSize = sizeof(desc);
+
+    RECT r = { x, y, x + 1, y + 1 };
+    HRESULT hr = Surface->Lock(&r, &desc, DDLOCK_WAIT, nullptr);
+    if (FAILED(hr)) return nullptr;
+
+    LockedSurface = desc.lpSurface;
+    return LockedSurface;
 }
 
 bool DSurface::Unlock()
 {
-    return false;
+    if (!Surface) return false;
+    HRESULT hr = Surface->Unlock(nullptr);
+    LockedSurface = nullptr;
+    return SUCCEEDED(hr);
 }
 
 bool DSurface::CanLock(uint32_t unk1, uint32_t unk2)
 {
     (void)unk1;
     (void)unk2;
-    return false;
+    return Surface != nullptr;
 }
 
 int DSurface::GetPitch() const
 {
+    if (!Surface) return Width * BytesPerPixel;
+
+    DDSURFACEDESC2 desc = {};
+    desc.dwSize = sizeof(desc);
+    if (SUCCEEDED(Surface->GetSurfaceDesc(&desc))) {
+        return desc.lPitch;
+    }
     return Width * BytesPerPixel;
 }
-
-// --- BSurface ---
 
 void* BSurface::Lock(int x, int y)
 {
     (void)x;
     (void)y;
+    if (!Buffer) {
+        Buffer = new byte[Width * Height * BytesPerPixel];
+        std::memset(Buffer, 0, Width * Height * BytesPerPixel);
+    }
     return Buffer;
 }
-
-// --- Surface ---
 
 void Surface::DrawSHP(
     ConvertClass* palette,
@@ -212,7 +289,5 @@ Point2D Surface::DrawText(
     RectangleStruct bounds = {};
     return DrawText(text, bounds, location, color, option3, flags);
 }
-
-// TODO: complete Surface and DSurface implementations
 
 } // namespace gamemd

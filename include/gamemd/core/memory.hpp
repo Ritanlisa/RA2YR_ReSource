@@ -22,8 +22,17 @@ struct GameAllocator
     constexpr bool operator==(const GameAllocator&) const noexcept { return true; }
     constexpr bool operator!=(const GameAllocator&) const noexcept { return false; }
 
-    T* allocate(std::size_t count);
-    void deallocate(T* ptr, std::size_t count);
+    T* allocate(std::size_t count)
+    {
+        void* p = std::malloc(count * sizeof(T));
+        if (!p) throw std::bad_alloc();
+        return static_cast<T*>(p);
+    }
+    void deallocate(T* ptr, std::size_t count)
+    {
+        (void)count;
+        std::free(ptr);
+    }
 };
 
 template <typename T>
