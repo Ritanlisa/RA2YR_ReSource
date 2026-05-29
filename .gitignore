@@ -1,6 +1,6 @@
 # 构建产物
 build/
-build_win/
+build_*/
 *.exe
 *.dll
 *.lib

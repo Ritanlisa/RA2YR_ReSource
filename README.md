@@ -43,8 +43,8 @@ RA2YR_ReSource/
 │   |                        # ↑ House = 子阵营, Side = 阵营, 每个阵营包含1个及以上的子阵营
 │   └── system/              # 单元格、地图、场景、工厂
 ├── src/                     ← 61 个 .cpp 实现文件
-├── app/                      ← EXE 入口点 (WinMain + 游戏循环 + DDraw初始化)
-├── CMakeLists.txt            # C++20, Win32 静态库 + 可执行文件
+├── app/                     ← EXE 入口点 (WinMain + 游戏循环 + DDraw初始化)
+├── CMakeLists.txt           # C++20, Win32 静态库 + 可执行文件
 └── LICENSE.md               # GPL v3（继承自 CnC_Red_Alert）
 ```
 
