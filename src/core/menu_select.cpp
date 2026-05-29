@@ -94,7 +94,6 @@ static MenuState MainMenu_Screen() {
     if(!surf.Allocated) return MenuState::StartScenario;
     if(!PaletteLoaded()) LoadMenuPalette();
     ShpImage bg; bool has_bg=LoadMenuBackground(bg);
-    TextRenderer text; text.Init(ctx->width,ctx->height);
     int cx=ctx->width/2-100,wb=200,hb=30,y0=ctx->height/2-50;
     MenuButton btns[]={
         {cx,y0,wb,hb,"Campaign",MenuState::Campaign},
@@ -106,15 +105,34 @@ static MenuState MainMenu_Screen() {
     int frame=0,fc=0;
     MenuState result=MenuState::MenuIdle; bool done=false;
     while(!done){
-        surf.FillRect({0,0,ctx->width,ctx->height},0x0000);
+        // Fill black + red border + colored buttons
+        DDSURFACEDESC2 fdesc={}; fdesc.dwSize=sizeof(fdesc);
+        if(SUCCEEDED(surf.Surface->Lock(nullptr,&fdesc,DDLOCK_WAIT,nullptr))){
+            uint16_t* buf=(uint16_t*)fdesc.lpSurface;
+            int pitch=fdesc.lPitch/2;
+            // Clear
+            for(int y=0;y<ctx->height;y++)
+                for(int x=0;x<ctx->width;x++)
+                    buf[y*pitch+x]=0x0000;
+            // Red border
+            for(int x=0;x<ctx->width;x++){buf[0*pitch+x]=0xF800; buf[(ctx->height-1)*pitch+x]=0xF800;}
+            for(int y=0;y<ctx->height;y++){buf[y*pitch+0]=0xF800; buf[y*pitch+ctx->width-1]=0xF800;}
+            // Green buttons
+            for(int i=0;i<BN;i++){
+                uint16_t color=i==4?0x001F:0x07E0;
+                for(int y=btns[i].y;y<btns[i].y+btns[i].h;y++)
+                    for(int x=btns[i].x;x<btns[i].x+btns[i].w;x++)
+                        if(y>=0&&y<ctx->height&&x>=0&&x<ctx->width)buf[y*pitch+x]=color;
+            }
+            surf.Surface->Unlock(nullptr);
+        }
+
         if(has_bg&&bg.GetFrameCount()>0){
             int bx=(ctx->width-bg.GetWidth())/2, by=(ctx->height-bg.GetHeight())/2;
             if(frame>=bg.GetFrameCount())frame=0;
             bg.RenderToSurface(&surf,frame,bx,by,g_palette);
         }
-        text.DrawText(&surf,cx,20,"Yuri's Revenge",255,50,50);
-        for(int i=0;i<BN;i++) text.DrawText(&surf,btns[i].x+10,btns[i].y+4,btns[i].text,255,220,50);
-        text.DrawText(&surf,10,ctx->height-30,"RA2YR ReSource",100,100,100);
+        // Memcpy to back buffer
         DDSURFACEDESC2 desc={},src_desc={};
         desc.dwSize=sizeof(desc); src_desc.dwSize=sizeof(src_desc);
         if(SUCCEEDED(ctx->back_buffer->Lock(nullptr,&desc,DDLOCK_WAIT,nullptr))){
@@ -139,7 +157,7 @@ static MenuState MainMenu_Screen() {
             }else{TranslateMessage(&msg);DispatchMessageA(&msg);}
         }if(!done)Event_Dispatch();
     }
-    bg.Free();text.Shutdown();return result;
+    bg.Free(); return result;
 }
 
 // ---- stubs ----

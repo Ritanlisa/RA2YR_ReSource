@@ -69,13 +69,30 @@ struct IndexEntry {
 
 uint32_t ComputeId(const char* filename)
 {
-    // CRC32 of upper-cased filename
+    int len = (int)strlen(filename);
+    int lenRounded = (len / 4) * 4;
+    int padding = (len % 4) ? (4 - len % 4) : 0;
+
+    // CRC32 of uppercased + TS-style padding:
+    //   Pad byte = (len - lenRounded), then repeat last char of the 4-char block
     uint32_t crc = 0xFFFFFFFF;
-    for (int i = 0; filename[i]; ++i) {
-        uint8_t c = static_cast<uint8_t>(toupper(static_cast<unsigned char>(filename[i])));
+    for (int i = 0; i < lenRounded; ++i) {
+        uint8_t c = (uint8_t)toupper((uint8_t)filename[i]);
         crc ^= c;
         for (int j = 0; j < 8; ++j)
             crc = (crc >> 1) ^ ((crc & 1) ? 0xEDB88320u : 0);
+    }
+    if (len != lenRounded) {
+        // Pad byte: (len - lenRounded)
+        crc ^= (uint8_t)(len - lenRounded);
+        for (int j = 0; j < 8; ++j)
+            crc = (crc >> 1) ^ ((crc & 1) ? 0xEDB88320u : 0);
+        // Repeat last chars of the 4-char block
+        for (int p = 1; p < padding; ++p) {
+            crc ^= (uint8_t)toupper((uint8_t)filename[lenRounded]);
+            for (int j = 0; j < 8; ++j)
+                crc = (crc >> 1) ^ ((crc & 1) ? 0xEDB88320u : 0);
+        }
     }
     return crc ^ 0xFFFFFFFF;
 }
@@ -337,59 +354,42 @@ void MixFileClass::Bootstrap()
 
     LOG_INFO("MixFileClass::Bootstrap: done, %d MIX files in pool", g_mixPool.Count);
 
-    // Recursively load known sub-MIX files using name search (try CRC32 + Classic)
-    const char* submix_names[] = {
-        "cache.mix","local.mix","conquer.mix","temperat.mix","snow.mix",
-        "isotemp.mix","sounds.mix","sidec01.mix","sidec02.mix",
-        "sno.mix","tem.mix","speech01.mix","speech02.mix",
-        "gener.mix","isogen.mix","cameo.mix",
-        "cachemd.mix","localmd.mix","genermd.mix","conqmd.mix",
-        "isogenmd.mix","cameomd.mix","isotem.mix",
-        nullptr
-    };
-
-    // Also compute Classic (TD) hashes as fallback
-    auto classic_hash = [](const char* name) -> uint32_t {
-        int len = (int)strlen(name);
-        int i = 0; uint32_t id = 0;
-        while (i < len) {
-            uint32_t a = 0;
-            for (int j = 0; j < 4; ++j) { a >>= 8; if (i < len) a += (uint32_t)toupper((uint8_t)name[i]) << 24; ++i; }
-            id = (id << 1) | (id >> 31); id += a;
-        }
-        return id;
-    };
-
+    // Recursively extract sub-MIX files by trying to load every entry
+    // from the top-level MIX files as encrypted MIX
     int processed = 0;
     while (processed < g_mixPool.Count) {
         MixFileClass* parent = g_mixPool[processed++];
-        for (int si = 0; submix_names[si]; ++si) {
-            // Try both CRC32 and Classic hash
-            uint32_t hid = ComputeID(submix_names[si]);
-            int idx = parent->FindIndex(hid);
-            if (idx < 0) { idx = parent->FindIndex(classic_hash(submix_names[si])); }
-            if (idx < 0) continue;
-
-            int sz = parent->GetSize(idx);
+        for (int i = 0; i < parent->CountFiles; ++i) {
+            int sz = parent->GetSize(i);
             if (sz < 200) continue;
 
-            uint8_t* data = (uint8_t*)malloc(sz);
-            if (!data || !parent->Extract(idx, data, sz)) { free(data); continue; }
+            // Peek at first 4 bytes - must be 0x0000 for RA2 encrypted MIX
+            uint8_t head[4];
+            if (!parent->Peek(i, head, 4)) continue;
+            if (head[0] != 0 || head[1] != 0) continue;
+            uint16_t flags = *(uint16_t*)(head + 2);
+            if (!(flags & 2)) continue; // must be encrypted
 
+            uint8_t* data = (uint8_t*)malloc(sz);
+            if (!data || !parent->Extract(i, data, sz)) { free(data); continue; }
             char tmpname[64];
-            snprintf(tmpname, sizeof(tmpname), "_sub_%s", submix_names[si]);
+            snprintf(tmpname, sizeof(tmpname), "_tmp_%08X.mix", parent->GetFileID(i));
             FILE* tmpf = fopen(tmpname, "wb");
             if (!tmpf) { free(data); continue; }
             fwrite(data, 1, sz, tmpf);
             fclose(tmpf);
 
             auto* submix = new MixFileClass(tmpname);
-            remove(tmpname);
             if (submix->IsValid()) {
-                submix->FileName = _strdup(submix_names[si]);
-                LOG_INFO("  Sub-MIX: %s -> %d files (from %s)", submix_names[si], submix->CountFiles, parent->FileName);
-                g_mixPool.AddItem(submix);
+                // Sanity: avg file size >= 100 bytes, count < 50000
+                if (submix->CountFiles > 0 && sz / submix->CountFiles >= 100 && submix->CountFiles < 50000) {
+                    submix->FileName = _strdup(tmpname);
+                    LOG_INFO("  Sub-MIX: hash=0x%08X -> %d files, %d bytes",
+                        parent->GetFileID(i), submix->CountFiles, sz);
+                    g_mixPool.AddItem(submix);
+                } else { delete submix; }
             } else { delete submix; }
+            remove(tmpname);
             free(data);
         }
     }
@@ -435,7 +435,19 @@ int MixFileClass::FindIndex(uint32_t id) const
 
 int MixFileClass::FindIndex(const char* filename) const
 {
-    return FindIndex(mix::ComputeId(filename));
+    uint32_t crc = ComputeID(filename);
+    int idx = FindIndex(crc);
+    if (idx >= 0) return idx;
+
+    // Fallback: try Classic (TD) hash
+    int len = (int)strlen(filename);
+    int i = 0; uint32_t cls = 0;
+    while (i < len) {
+        uint32_t a = 0;
+        for (int j = 0; j < 4; ++j) { a >>= 8; if (i < len) a += (uint32_t)toupper((uint8_t)filename[i]) << 24; ++i; }
+        cls = (cls << 1) | (cls >> 31); cls += a;
+    }
+    return FindIndex(cls);
 }
 
 // ============================================================

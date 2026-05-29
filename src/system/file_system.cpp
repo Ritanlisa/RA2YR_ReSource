@@ -30,13 +30,12 @@ void* FileSystem::LoadFile(const char* pFileName, bool bLoadAsSHP)
     uint32_t id = MixFileClass::ComputeID(pFileName);
     LOG_TRACE("FileSystem::LoadFile '%s' -> hash 0x%08X", pFileName, id);
 
-    // Search all loaded MIX files (including recursively extracted sub-MIX)
     auto& pool = MixFileClass::GetMixPool();
     for (int i = 0; i < pool.Count; ++i) {
         auto* mix = pool[i];
         if (!mix || !mix->IsValid()) continue;
 
-        int idx = mix->FindIndex(id);
+        int idx = mix->FindIndex(pFileName);  // dual-hash search (CRC32 then Classic)
         if (idx < 0) continue;
 
         int sz = mix->GetSize(idx);
@@ -159,13 +158,15 @@ void* FileSystem::LoadFirstSHP()
             int h = td_valid ? td_h : ts_h;
             int f = td_valid ? td_frames : ts_frames;
 
-            // Accept any large SHP, prefer bigger dimensions and animation
-            if (h < 8 || w < 100) continue;
+            if (h < 1 || w < 100) continue;
             int score = w * h;
             if (f > 1) score += f * 100;
-            // Boost tall SHPs more heavily
             if (h > 200) score += 50000;
             if (h > 400) score += 100000;
+
+            // Log ALL candidates from newly loaded sub-MIXes
+            LOG_TRACE("SHP? MIX[%d] idx=%d hash=0x%08X %dx%d %df sz=%d score=%d",
+                mi, i, mix->GetFileID(i), w, h, f, sz, score);
 
             if (score > best_sz) {
                 void* data = malloc(sz);
