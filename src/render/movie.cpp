@@ -377,11 +377,9 @@ bool BinkMovieHandle::AdvanceFrame()
 
         int doFrameResult = s_BinkDoFrame(m_bink_handle);
         if (doFrameResult == 0) {
-            // End of stream: _BinkDoFrame returns 0 at end (not negative)
             if (s_BinkGoto) {
                 int gotoResult = s_BinkGoto(m_bink_handle, 0, 0);
                 if (gotoResult) {
-                    // Retry DoFrame after seeking to 0
                     doFrameResult = s_BinkDoFrame(m_bink_handle);
                     if (doFrameResult == 0) {
                         m_playing = false;
@@ -402,6 +400,7 @@ bool BinkMovieHandle::AdvanceFrame()
             return false;
         }
         if (s_BinkWait) s_BinkWait(m_bink_handle);
+        m_frame_decoded = true;
         ++m_current_frame;
         return true;
     }
@@ -447,7 +446,7 @@ void BinkMovieHandle::RenderFrame(DSurface* target)
 }
 
 void BinkMovieHandle::RenderFrameRaw(void* locked_buffer, int pitch_bytes, int height,
-                                     int dest_x, int dest_y, bool advanceNext)
+                                     int dest_x, int dest_y)
 {
     if (!locked_buffer || !m_playing) return;
 
@@ -456,7 +455,10 @@ void BinkMovieHandle::RenderFrameRaw(void* locked_buffer, int pitch_bytes, int h
         s_BinkCopyToBuffer(m_bink_handle, locked_buffer,
                            pitch_bytes, height, dest_x, dest_y,
                            m_surface_flags);
-        if (advanceNext && s_BinkNextFrame) s_BinkNextFrame(m_bink_handle);
+        if (m_frame_decoded && s_BinkNextFrame) {
+            s_BinkNextFrame(m_bink_handle);
+            m_frame_decoded = false;
+        }
     }
 }
 

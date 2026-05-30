@@ -53,7 +53,7 @@ public:
     virtual void Stop() override;
 
     void RenderFrameRaw(void* locked_buffer, int pitch_bytes, int height,
-                        int dest_x = 0, int dest_y = 0, bool advanceNext = false);
+                        int dest_x = 0, int dest_y = 0);
 
     int  GetCurrentFrame() const { return m_current_frame; }
     int  GetTotalFrames()  const { return m_total_frames; }
@@ -70,6 +70,7 @@ private:
     int       m_current_frame = 0;
     int       m_total_frames  = 0;
     int       m_throttle_counter = 0;
+    bool      m_frame_decoded = false;
     int       m_data_size     = 0;
     uint32_t  m_surface_flags = 0x20000000;  // from _BinkDDSurfaceType (sub_432750)
     bool      m_playing       = false;
