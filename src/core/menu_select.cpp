@@ -10,6 +10,7 @@
 #include "gamemd/render/text_render.hpp"
 #include "gamemd/render/surface.hpp"
 #include "gamemd/render/movie.hpp"
+#include "gamemd/render/font_render.hpp"
 #include "gamemd/system/file_system.hpp"
 #include "gamemd/ui/gadget.hpp"
 
@@ -303,39 +304,20 @@ static MenuState MainMenu_Screen() {
                 }
             }
 
-            dlgSurf.Surface->Unlock(nullptr);
-        }
-
-        // === 3. Draw text using GDI DIB (bypass TextRenderer Lock issues) ===
-        if (textOk) {
-            // Use TextRenderer to rasterize text to its internal DIB (m_bits),
-            // then manually copy to dlgSurf. This avoids DDraw surface lock issues.
+            // Draw text on buttons (inside same Lock — uses embedded 8x16 bitmap font)
             for (auto* g : dlg.Gadgets()) {
                 auto* btn = dynamic_cast<TextButtonClass*>(g);
                 if (!btn || !btn->Visible || btn->Text.empty()) continue;
                 int tw = (int)btn->Text.length() * 8;
                 int tx = btn->X + (btn->Width - tw) / 2;
-                int ty = btn->Y + (btn->Height - 16) / 2;
+                int ty = btn->Y + (btn->Height - 16) / 2 + 2;
                 if (tx < 0) tx = btn->X + 2;
                 if (ty < 0) ty = btn->Y + 2;
-                
-                // Manual text: write a simple pixel pattern that's definitely visible
-                // Draw a bright white rectangle as text placeholder
-                DDSURFACEDESC2 txtDesc = {};
-                txtDesc.dwSize = sizeof(txtDesc);
-                if (SUCCEEDED(dlgSurf.Surface->Lock(nullptr, &txtDesc, DDLOCK_WAIT, nullptr))) {
-                    uint16_t* tbuf = (uint16_t*)txtDesc.lpSurface;
-                    int tpitch = txtDesc.lPitch / 2;
-                    // Draw white pixels in a cross pattern to mark each button
-                    for (int dy = 0; dy < 14; dy++) {
-                        for (int dx = 0; dx < tw && tx+dx < ctx->width; dx++) {
-                            if (ty+dy >= 0 && ty+dy < ctx->height)
-                                tbuf[(ty+dy)*tpitch + (tx+dx)] = 0xFFFF; // white
-                        }
-                    }
-                    dlgSurf.Surface->Unlock(nullptr);
-                }
+                Font_DrawText(buf, pitch, tx, ty, ctx->width, ctx->height,
+                              btn->Text.c_str(), 0xFFFF);
             }
+
+            dlgSurf.Surface->Unlock(nullptr);
         }
 
         // === 4. Copy dlgSurf → back_buffer + flip ===
