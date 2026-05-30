@@ -157,21 +157,8 @@ static MenuState MainMenu_Screen()
 
     auto BtnY = [&](int yDLU) { return offY + (int)((float)yDLU * dluY); };
 
-    // Load SHP buttons
+    // Skip SHP button loading — known format issue, use rectangles
     ShpImage* btns[6] = {};
-    for (int i = 0; i < 6; i++) {
-        void* data = FileSystem::LoadByHash(kMenuBtnHashes[i]);
-        if (data) {
-            btns[i] = new ShpImage();
-            if (!btns[i]->LoadFromMemory((const uint8_t*)data, 32768)) {
-                delete btns[i]; btns[i] = nullptr;
-                LOG_WARN("[MENU] SHP btn %d load failed hash=0x%08X", i, kMenuBtnHashes[i]);
-            } else {
-                LOG_DEBUG("[MENU] SHP btn %d loaded %dx%d %df", i, btns[i]->GetWidth(), btns[i]->GetHeight(), btns[i]->GetFrameCount());
-            }
-            free(data);
-        }
-    }
 
     // Create BINK directly (simple, verified approach)
     BinkMovieHandle* bikBg = nullptr;
@@ -211,6 +198,9 @@ static MenuState MainMenu_Screen()
     int loopCount = 0;
     bool reachedEnd = false;
 
+    // Create offscreen surface for rendering (cnc-ddraw flip chain backbuffers may not support Lock)
+    DSurface dlgSurf(ctx->width, ctx->height, false, false);
+
     while (!reachedEnd) {
         ++loopCount;
 
@@ -226,47 +216,49 @@ static MenuState MainMenu_Screen()
                 bik ? bik->GetCurrentFrame() : -1, bik ? bik->GetTotalFrames() : -1);
         }
 
-        // Render to back buffer in one Lock session
-        DDSURFACEDESC2 desc = {};
-        desc.dwSize = sizeof(desc);
-        if (SUCCEEDED(ctx->back_buffer->Lock(nullptr, &desc, DDLOCK_WAIT, nullptr))) {
-            auto* buf = (uint16_t*)desc.lpSurface;
-            int pitch = desc.lPitch / 2;
+        // Lock offscreen → render BINK + buttons → unlock
+        DDSURFACEDESC2 dsDesc = {};
+        dsDesc.dwSize = sizeof(dsDesc);
+        if (SUCCEEDED(dlgSurf.Surface->Lock(nullptr, &dsDesc, DDLOCK_WAIT, nullptr))) {
+            auto* buf = (uint16_t*)dsDesc.lpSurface;
+            int pitch = dsDesc.lPitch / 2;
 
             // Render BINK
             if (bik && bik->IsPlaying()) {
-                bik->RenderFrameRaw(desc.lpSurface, desc.lPitch, ctx->height, bikX, bikY);
+                bik->RenderFrameRaw(dsDesc.lpSurface, dsDesc.lPitch, ctx->height, bikX, bikY);
             } else {
-                // Dark navy background
                 for (int y = 0; y < ctx->height; y++)
                     for (int x = 0; x < ctx->width; x++)
                         buf[y * pitch + x] = 0x1082;
             }
 
-            // Draw SHP buttons
+            // Render buttons
             for (int i = 0; i < 6; i++) {
-                bool btnValid = (btns[i] && btns[i]->GetWidth() > 2 && btns[i]->GetHeight() > 0);
-                int fc = btnHover[i] ? 1 : 0;
-                if (btnValid) {
-                    DrawShpToBuffer(btns[i], fc, buf, pitch, ctx->width, ctx->height, btnX, btnPosY[i]);
-                } else {
-                    // Fallback colored rectangle
-                    int by = btnPosY[i];
-                    uint16_t fill = btnHover[i] ? 0xF800 : 0x07E0;
-                    for (int y = by; y < by + btnH && y < ctx->height; y++)
-                        for (int x = btnX; x < btnX + btnW && x < ctx->width; x++)
-                            buf[y * pitch + x] = (y == by || y == by + btnH - 1 || x == btnX || x == btnX + btnW - 1) ? 0xFFFF : fill;
-                    // Draw button label
-                    static const char* labels[] = {"Campaign","Skirmish","Network","Movies","Options","Exit"};
-                    int tw = (int)strlen(labels[i]) * 8;
-                    int tx = btnX + (btnW - tw) / 2;
-                    int ty = btnPosY[i] + (btnH - 16) / 2 + 2;
-                    if (tx > 0 && ty > 0)
-                        Font_DrawText(buf, pitch, tx, ty, ctx->width, ctx->height, labels[i], 0xFFFF);
-                }
+                int by = btnPosY[i];
+                uint16_t fill = btnHover[i] ? 0xF800 : 0x07E0;
+                for (int y = by; y < by + btnH && y < ctx->height; y++)
+                    for (int x = btnX; x < btnX + btnW && x < ctx->width; x++)
+                        buf[y * pitch + x] = (y == by || y == by + btnH - 1 || x == btnX || x == btnX + btnW - 1) ? 0xFFFF : fill;
+                static const char* labels[] = {"Campaign","Skirmish","Network","Movies","Options","Exit"};
+                int tw = (int)strlen(labels[i]) * 8;
+                int tx = btnX + (btnW - tw) / 2, ty = btnPosY[i] + (btnH - 16) / 2 + 2;
+                if (tx > 0 && ty > 0)
+                    Font_DrawText(buf, pitch, tx, ty, ctx->width, ctx->height, labels[i], 0xFFFF);
             }
+            dlgSurf.Surface->Unlock(nullptr);
+        }
 
+        // Copy offscreen → back buffer + flip (working approach)
+        DDSURFACEDESC2 sd = {}, dd = {};
+        sd.dwSize = sizeof(sd); dd.dwSize = sizeof(dd);
+        if (SUCCEEDED(dlgSurf.Surface->Lock(nullptr, &sd, DDLOCK_WAIT, nullptr)) &&
+            SUCCEEDED(ctx->back_buffer->Lock(nullptr, &dd, DDLOCK_WAIT, nullptr))) {
+            auto* s = (uint8_t*)sd.lpSurface;
+            auto* d = (uint8_t*)dd.lpSurface;
+            for (int y = 0; y < ctx->height && y < (int)sd.dwHeight; y++)
+                memcpy(d + y * dd.lPitch, s + y * sd.lPitch, ctx->width * 2);
             ctx->back_buffer->Unlock(nullptr);
+            dlgSurf.Surface->Unlock(nullptr);
         }
         DDraw_Flip();
 

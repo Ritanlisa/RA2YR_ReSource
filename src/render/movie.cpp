@@ -218,8 +218,6 @@ typedef int32_t(__stdcall *BinkWait_t)(void* bnk);
 typedef const char*(__stdcall *BinkGetError_t)(void);
 typedef int32_t(__stdcall *BinkDDSurfaceType_t)(void* lpDDS);  // 0x7e15a8
 typedef int32_t(__stdcall *BinkGoto_t)(void* bnk, uint32_t frame, uint32_t flags);
-typedef void   (__stdcall *BinkSetSoundSystem_t)(void* open_func, uint32_t param);
-typedef void*  (__stdcall *BinkOpenDirectSound_t)(uint32_t param);
 
 static HMODULE s_binkDLL = nullptr;
 static BinkOpen_t s_BinkOpen = nullptr;
@@ -231,8 +229,6 @@ static BinkWait_t s_BinkWait = nullptr;
 static BinkGetError_t s_BinkGetError = nullptr;
 static BinkDDSurfaceType_t s_BinkDDSurfaceType = nullptr;
 static BinkGoto_t s_BinkGoto = nullptr;
-static BinkSetSoundSystem_t s_BinkSetSoundSystem = nullptr;
-static BinkOpenDirectSound_t s_BinkOpenDirectSound = nullptr;
 
 static bool BinkInit()
 {
@@ -256,8 +252,6 @@ static bool BinkInit()
     s_BinkGetError      = (BinkGetError_t)GetProcAddress(s_binkDLL, "_BinkGetError@0");
     s_BinkDDSurfaceType = (BinkDDSurfaceType_t)GetProcAddress(s_binkDLL, "_BinkDDSurfaceType@4");
     s_BinkGoto          = (BinkGoto_t)GetProcAddress(s_binkDLL, "_BinkGoto@12");
-    s_BinkSetSoundSystem = (BinkSetSoundSystem_t)GetProcAddress(s_binkDLL, "_BinkSetSoundSystem@8");
-    s_BinkOpenDirectSound = (BinkOpenDirectSound_t)GetProcAddress(s_binkDLL, "_BinkOpenDirectSound@4");
 
     if (!s_BinkOpen || !s_BinkDoFrame || !s_BinkCopyToBuffer || !s_BinkClose) {
         FreeLibrary(s_binkDLL);
@@ -316,13 +310,6 @@ bool BinkMovieHandle::OpenFromFile(const char* filename, DSurface* render_target
     m_playing = true;
     LOG_INFO("BinkMovie::OpenFromFile: %dx%d, %d frames, fmt_code=%d",
         m_width, m_height, m_total_frames, m_surface_flags);
-
-    // sub_432750: BinkSetSoundSystem(BinkOpenDirectSound, audioObj) for audio + timing
-    if (s_BinkSetSoundSystem) {
-        s_BinkSetSoundSystem(s_BinkOpenDirectSound, 0);
-        LOG_DEBUG("BinkMovie: BinkSetSoundSystem set");
-    }
-
     return true;
 }
 
