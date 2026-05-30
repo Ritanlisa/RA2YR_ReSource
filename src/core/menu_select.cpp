@@ -187,25 +187,16 @@ static MenuState MainMenu_Screen() {
     int frame = 0, fc = 0;
     DSurface dlgSurf(ctx->width, ctx->height, false, false);
     TextRenderer text;
+    text.Init(ctx->width, ctx->height);
 
-    // Try to load BINK background from MIX (ra2ts_l.bik for >640, ra2ts_s.bik for 640)
+    // Try BINK background (ra2ts_l.bik for >640, ra2ts_s.bik for 640)
     MovieHandle* bikBg = nullptr;
-    uint32_t bikHash = (ctx->width > 640) ? 0x33665128 : 0xC1E6E166;
-    void* bikData = FileSystem::LoadByHash(bikHash);
-    if (bikData) {
-        // Need to get the file size for BINK loading
-        // Since LoadByHash returns extracted data, we need to know its size
-        // For now, use a reasonable max
-        bikBg = MoviePlayer::CreateMovie("ra2ts_l.bik", &dlgSurf);
-        if (!bikBg) {
-            // Fall back: try loading from disk if binkw32.dll is available
-            const char* bikName = (ctx->width > 640) ? "ra2ts_l.bik" : "ra2ts_s.bik";
-            bikBg = MoviePlayer::CreateMovie(bikName, &dlgSurf);
-        }
-        free(bikData);
+    {
+        const char* bikName = (ctx->width > 640) ? "ra2ts_l.bik" : "ra2ts_s.bik";
+        bikBg = MoviePlayer::CreateMovie(bikName, &dlgSurf);
     }
 
-    while (!dlg.IsFinished()) {
+    while (!dlg.IsFinished()) { // Campaign
         MSG msg;
         while (PeekMessageA(&msg, nullptr, 0, 0, PM_REMOVE)) {
             if (msg.message == WM_QUIT) { result = MenuState::StartScenario; dlg.Finish(0); break; }
@@ -277,6 +268,7 @@ static MenuState Campaign_Screen(int arg) {
 
     DSurface dlgSurf(ctx->width, ctx->height, false, false);
     TextRenderer text;
+    text.Init(ctx->width, ctx->height);
 
     while (!dlg.IsFinished()) {
         MSG msg;
@@ -377,6 +369,7 @@ static void Options_Screen_Dialog() {
 
     DSurface dlgSurf(ctx->width, ctx->height, false, false);
     TextRenderer text;
+    text.Init(ctx->width, ctx->height);
 
     while (!dlg.IsFinished()) {
         MSG msg;
@@ -424,6 +417,7 @@ static MenuState Skirmish_Setup_Screen() {
 
     DSurface dlgSurf(ctx->width, ctx->height, false, false);
     TextRenderer text;
+    text.Init(ctx->width, ctx->height);
 
     while (!dlg.IsFinished()) {
         MSG msg;
@@ -464,6 +458,7 @@ static char ShowExitDialog() {
 
     DSurface dlgSurf(ctx->width, ctx->height, false, false);
     TextRenderer text;
+    text.Init(ctx->width, ctx->height);
 
     while (!dlg.IsFinished()) {
         MSG msg;
