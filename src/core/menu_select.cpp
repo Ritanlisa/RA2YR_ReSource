@@ -224,6 +224,9 @@ static MenuState MainMenu_Screen() {
         }
     }
 
+    // Disable dark background fill when BINK is playing
+    dlg.m_draw_background = false;
+
     MenuState result = MenuState::MenuIdle;
     int frame = 0, fc = 0;
     DSurface dlgSurf(ctx->width, ctx->height, false, false);
@@ -233,11 +236,36 @@ static MenuState MainMenu_Screen() {
     bool textOk = text.Init(ctx->width, ctx->height);
     LOG_DEBUG("[MENU] TextRenderer::Init: %s", textOk ? "OK" : "FAILED");
 
-    // Try BINK background
+    // Try BINK background (ra2ts_l.bik for >640, ra2ts_s.bik for 640)
+    // Hash confirmed from XCC: ra2ts_l=0x33665128, ra2ts_s=0xC1E6E166
     MovieHandle* bikBg = nullptr;
     {
+        uint32_t bikHash = (ctx->width > 640) ? 0x33665128 : 0xC1E6E166;
         const char* bikName = (ctx->width > 640) ? "ra2ts_l.bik" : "ra2ts_s.bik";
-        bikBg = MoviePlayer::CreateMovie(bikName, &dlgSurf);
+        void* bikData = FileSystem::LoadByHash(bikHash);
+        if (bikData) {
+            LOG_DEBUG("[MENU] BINK '%s' hash=0x%08X loaded from MIX", bikName, bikHash);
+            // Read file size from BINK header at offset 4
+            uint32_t bikFileSize = *(const uint32_t*)((const uint8_t*)bikData + 4);
+            if (bikFileSize < 100 || bikFileSize > 64*1024*1024) bikFileSize = 8*1024*1024;
+            LOG_DEBUG("[MENU] BINK file size from header: %u", bikFileSize);
+            // Write to temp file for _BinkOpen
+            char tempPath[MAX_PATH];
+            GetTempPathA(sizeof(tempPath), tempPath);
+            strcat_s(tempPath, bikName);
+            FILE* fp = nullptr;
+            if (fopen_s(&fp, tempPath, "wb") == 0 && fp) {
+                fwrite(bikData, 1, bikFileSize, fp);
+                fclose(fp);
+                bikBg = MoviePlayer::CreateMovie(tempPath, &dlgSurf);
+                DeleteFileA(tempPath);
+            }
+            free(bikData);
+        }
+        if (!bikBg) {
+            // Try disk path as fallback
+            bikBg = MoviePlayer::CreateMovie(bikName, &dlgSurf);
+        }
         LOG_DEBUG("[MENU] BINK background '%s': %s", bikName, bikBg ? "loaded" : "not found");
     }
 
@@ -262,6 +290,8 @@ static MenuState MainMenu_Screen() {
             bikBg->AdvanceFrame();
             bikBg->RenderFrame(&dlgSurf);
         } else if (hasBg && bgImg.GetFrameCount() > 0) {
+            // Fallback: ensure background is drawn when no BINK
+            dlg.m_draw_background = true;
             if (frame >= bgImg.GetFrameCount()) frame = 0;
             int bx = (ctx->width - bgImg.GetWidth()) / 2;
             int by = (ctx->height - bgImg.GetHeight()) / 2;

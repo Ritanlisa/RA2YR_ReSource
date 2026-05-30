@@ -135,7 +135,8 @@ void DialogClass::OnRender(DSurface* surface, TextRenderer* text)
 {
     if (!m_visible || !surface) return;
 
-    DrawBackground(surface);
+    if (m_draw_background)
+        DrawBackground(surface);
 
     for (auto* g : m_gadgets) {
         if (g && g->Visible) {

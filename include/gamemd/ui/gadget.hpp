@@ -110,6 +110,7 @@ public:
 
     bool m_finished = false;
     int m_result = 0;
+    bool m_draw_background = true;
 
 protected:
     void DrawBackground(DSurface* surface);
