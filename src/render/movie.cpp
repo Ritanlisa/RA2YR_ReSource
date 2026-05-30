@@ -217,6 +217,7 @@ typedef void   (__stdcall *BinkNextFrame_t)(void* bnk);
 typedef int32_t(__stdcall *BinkWait_t)(void* bnk);
 typedef const char*(__stdcall *BinkGetError_t)(void);
 typedef int32_t(__stdcall *BinkDDSurfaceType_t)(void* lpDDS);  // 0x7e15a8
+typedef int32_t(__stdcall *BinkGoto_t)(void* bnk, uint32_t frame, uint32_t flags);
 
 static HMODULE s_binkDLL = nullptr;
 static BinkOpen_t s_BinkOpen = nullptr;
@@ -227,6 +228,7 @@ static BinkNextFrame_t s_BinkNextFrame = nullptr;
 static BinkWait_t s_BinkWait = nullptr;
 static BinkGetError_t s_BinkGetError = nullptr;
 static BinkDDSurfaceType_t s_BinkDDSurfaceType = nullptr;
+static BinkGoto_t s_BinkGoto = nullptr;
 
 static bool BinkInit()
 {
@@ -249,6 +251,7 @@ static bool BinkInit()
     s_BinkWait          = (BinkWait_t)GetProcAddress(s_binkDLL, "_BinkWait@4");
     s_BinkGetError      = (BinkGetError_t)GetProcAddress(s_binkDLL, "_BinkGetError@0");
     s_BinkDDSurfaceType = (BinkDDSurfaceType_t)GetProcAddress(s_binkDLL, "_BinkDDSurfaceType@4");
+    s_BinkGoto          = (BinkGoto_t)GetProcAddress(s_binkDLL, "_BinkGoto@12");
 
     if (!s_BinkOpen || !s_BinkDoFrame || !s_BinkCopyToBuffer || !s_BinkClose) {
         FreeLibrary(s_binkDLL);
@@ -291,6 +294,14 @@ bool BinkMovieHandle::OpenFromFile(const char* filename, DSurface* render_target
     m_height = hdr[1];
     m_total_frames = hdr[2];
     m_current_frame = 0;
+    // Frame rate: offset 20 = FrameRate, offset 24 = FrameRateDiv
+    uint32_t fpsNum = hdr[5];  // FrameRate
+    uint32_t fpsDen = hdr[6];  // FrameRateDiv
+    if (fpsDen == 0) fpsDen = 1;
+    m_fps = fpsNum / fpsDen;  // e.g. 30/1 = 30 or 30000/1001 = 29
+    m_frame_ms = (fpsDen * 1000) / fpsNum;  // ms per frame
+    if (m_frame_ms < 16) m_frame_ms = 33;  // clamp to ~30fps max
+    m_last_frame_time = 0;
 
     // Query surface pixel format
     if (render_target && render_target->Surface && s_BinkDDSurfaceType) {
@@ -305,8 +316,8 @@ bool BinkMovieHandle::OpenFromFile(const char* filename, DSurface* render_target
     }
 
     m_playing = true;
-    LOG_INFO("BinkMovie::OpenFromFile: %dx%d, %d frames, fmt_code=%d",
-        m_width, m_height, m_total_frames, m_surface_flags);
+    LOG_INFO("BinkMovie::OpenFromFile: %dx%d, %d frames @ %dfps (interval %dms)",
+        m_width, m_height, m_total_frames, m_fps, m_frame_ms);
     return true;
 }
 
@@ -370,6 +381,14 @@ bool BinkMovieHandle::AdvanceFrame()
     if (!m_playing) return false;
 
     if (m_bink_handle) {
+        // Frame rate throttle: skip frame if not enough time has passed
+        DWORD now = GetTickCount();
+        DWORD elapsed = now - m_last_frame_time;
+        if (m_last_frame_time != 0 && elapsed < (DWORD)m_frame_ms) {
+            return true;  // same frame, don't advance
+        }
+        m_last_frame_time = now;
+
         int doFrameResult = s_BinkDoFrame(m_bink_handle);
         if (s_BinkGetError) {
             const char* err = s_BinkGetError();
@@ -377,8 +396,19 @@ bool BinkMovieHandle::AdvanceFrame()
                 LOG_DEBUG("BinkMovie::AdvanceFrame f%d: DoFrame=%d BinkError='%s'", m_current_frame, doFrameResult, err);
         }
         if (doFrameResult < 0) {
-            m_playing = false;
-            return false;
+            // End of stream — loop back to start
+            if (s_BinkGoto) {
+                s_BinkGoto(m_bink_handle, 0, 0);
+                m_current_frame = 0;
+                doFrameResult = s_BinkDoFrame(m_bink_handle);
+                if (doFrameResult < 0) {
+                    m_playing = false;
+                    return false;
+                }
+            } else {
+                m_playing = false;
+                return false;
+            }
         }
         if (s_BinkWait) s_BinkWait(m_bink_handle);
         ++m_current_frame;
