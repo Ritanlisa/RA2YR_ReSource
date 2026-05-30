@@ -213,11 +213,12 @@ static MenuState MainMenu_Screen() {
         }
     }
     if (!haveButtons) {
-        // Fallback: Text buttons
-        int cx = ctx->width / 2 - 100;
-        int y0 = ctx->height / 2 - 50;
+        // Text buttons: RA2/YR places them right-side, vertically stacked near bottom
+        // For 2560x1600: buttons at x=1750, from y=1250 upward
+        int bx = ctx->width * 2 / 3;       // Right-side, ~66% of screen width
+        int by = ctx->height * 3 / 4 - 40; // Start near bottom, 75% of height
         for (int i = 0; i < kMenuButtonCount; i++) {
-            auto* btn = new TextButtonClass(0, colors[i], cx, y0 + i * 40, 200, 32);
+            auto* btn = new TextButtonClass(0, colors[i], bx, by + i * 40, 200, 32);
             MenuState s = states[i];
             btn->Callback = [&dlg, s]() { dlg.Finish(static_cast<int>(s)); };
             dlg.AddGadget(btn);
@@ -236,20 +237,15 @@ static MenuState MainMenu_Screen() {
     bool textOk = text.Init(ctx->width, ctx->height);
     LOG_DEBUG("[MENU] TextRenderer::Init: %s", textOk ? "OK" : "FAILED");
 
-    // Try BINK background (ra2ts_l.bik for >640, ra2ts_s.bik for 640)
-    // Hash confirmed from XCC: ra2ts_l=0x33665128, ra2ts_s=0xC1E6E166
+    // Try BINK background (uses exact hash from XCC db)
     MovieHandle* bikBg = nullptr;
     {
         uint32_t bikHash = (ctx->width > 640) ? 0x33665128 : 0xC1E6E166;
         const char* bikName = (ctx->width > 640) ? "ra2ts_l.bik" : "ra2ts_s.bik";
         void* bikData = FileSystem::LoadByHash(bikHash);
         if (bikData) {
-            LOG_DEBUG("[MENU] BINK '%s' hash=0x%08X loaded from MIX", bikName, bikHash);
-            // Read file size from BINK header at offset 4
             uint32_t bikFileSize = *(const uint32_t*)((const uint8_t*)bikData + 4);
             if (bikFileSize < 100 || bikFileSize > 64*1024*1024) bikFileSize = 8*1024*1024;
-            LOG_DEBUG("[MENU] BINK file size from header: %u", bikFileSize);
-            // Write to temp file for _BinkOpen
             char tempPath[MAX_PATH];
             GetTempPathA(sizeof(tempPath), tempPath);
             strcat_s(tempPath, bikName);
@@ -262,50 +258,112 @@ static MenuState MainMenu_Screen() {
             }
             free(bikData);
         }
-        if (!bikBg) {
-            // Try disk path as fallback
-            bikBg = MoviePlayer::CreateMovie(bikName, &dlgSurf);
-        }
+        if (!bikBg) bikBg = MoviePlayer::CreateMovie(bikName, &dlgSurf);
         LOG_DEBUG("[MENU] BINK background '%s': %s", bikName, bikBg ? "loaded" : "not found");
     }
 
     int loopCount = 0;
     while (!dlg.IsFinished()) {
-        loopCount++; // Campaign
+        loopCount++;
+
+        // === 1. Render BINK background to dlgSurf ===
+        if (bikBg && bikBg->IsPlaying()) {
+            bikBg->AdvanceFrame();
+            bikBg->RenderFrame(&dlgSurf);
+        }
+
+        // === 2. Lock dlgSurf, draw button rectangles manually ===
+        DDSURFACEDESC2 surfDesc = {};
+        surfDesc.dwSize = sizeof(surfDesc);
+        if (SUCCEEDED(dlgSurf.Surface->Lock(nullptr, &surfDesc, DDLOCK_WAIT, nullptr))) {
+            uint16_t* buf = (uint16_t*)surfDesc.lpSurface;
+            int pitch = surfDesc.lPitch / 2;
+
+            // Dark navy background (only if no BINK)
+            if (!bikBg || !bikBg->IsPlaying()) {
+                uint16_t bg = 0x1082;
+                for (int y = 0; y < ctx->height; y++)
+                    for (int x = 0; x < ctx->width; x++)
+                        buf[y * pitch + x] = bg;
+            }
+
+            // Draw button rectangles
+            for (auto* g : dlg.Gadgets()) {
+                auto* btn = dynamic_cast<TextButtonClass*>(g);
+                if (!btn || !btn->Visible) continue;
+                int bx = btn->X, by = btn->Y, bw = btn->Width, bh = btn->Height;
+                uint16_t fill = btn->Hovered ? 0xF800 : 0x07E0;
+                uint16_t border = 0xFFFF;
+
+                for (int y = by; y < by + bh && y < ctx->height; y++) {
+                    for (int x = bx; x < bx + bw && x < ctx->width; x++) {
+                        bool isBorder = (y == by || y == by + bh - 1 || x == bx || x == bx + bw - 1);
+                        buf[y * pitch + x] = isBorder ? border : fill;
+                    }
+                }
+            }
+
+            dlgSurf.Surface->Unlock(nullptr);
+        }
+
+        // === 3. Draw text ===
+        if (textOk) {
+            // Test: draw white text at known position to verify TextRenderer works
+            text.DrawText(&dlgSurf, 100, 100, "TEST TEXT VISIBLE", 255, 255, 255);
+            for (auto* g : dlg.Gadgets()) {
+                auto* btn = dynamic_cast<TextButtonClass*>(g);
+                if (!btn || !btn->Visible || btn->Text.empty()) continue;
+                int tw = (int)btn->Text.length() * 8;
+                int tx = btn->X + (btn->Width - tw) / 2;
+                int ty = btn->Y + (btn->Height - 16) / 2;
+                text.DrawText(&dlgSurf, tx, ty, btn->Text.c_str(), 255, 255, 255);
+            }
+        }
+
+        // === 4. Copy dlgSurf → back_buffer + flip ===
+        DDSURFACEDESC2 sd = {}, dd = {};
+        sd.dwSize = sizeof(sd); dd.dwSize = sizeof(dd);
+        if (SUCCEEDED(dlgSurf.Surface->Lock(nullptr, &sd, DDLOCK_WAIT, nullptr)) &&
+            SUCCEEDED(ctx->back_buffer->Lock(nullptr, &dd, DDLOCK_WAIT, nullptr))) {
+            auto* s = (uint8_t*)sd.lpSurface;
+            auto* d = (uint8_t*)dd.lpSurface;
+            for (int y = 0; y < ctx->height && y < (int)sd.dwHeight; y++)
+                memcpy(d + y * dd.lPitch, s + y * sd.lPitch, ctx->width * 2);
+            ctx->back_buffer->Unlock(nullptr);
+            dlgSurf.Surface->Unlock(nullptr);
+        }
+        DDraw_Flip();
+
+        // Messages
         MSG msg;
         while (PeekMessageA(&msg, nullptr, 0, 0, PM_REMOVE)) {
             if (msg.message == WM_QUIT) { result = MenuState::StartScenario; dlg.Finish(0); break; }
             if (msg.message == WM_KEYDOWN && msg.wParam == VK_ESCAPE) {
                 result = MenuState::StartScenario; dlg.Finish(0); break;
             }
-            if (msg.message == WM_LBUTTONDOWN)
-                dlg.OnMouseClick(LOWORD(msg.lParam), HIWORD(msg.lParam));
-            if (msg.message == WM_MOUSEMOVE)
-                dlg.OnMouseMove(LOWORD(msg.lParam), HIWORD(msg.lParam));
+            if (msg.message == WM_LBUTTONDOWN) {
+                int mx = LOWORD(msg.lParam), my = HIWORD(msg.lParam);
+                for (auto* g : dlg.Gadgets()) {
+                    auto* btn = dynamic_cast<TextButtonClass*>(g);
+                    if (!btn || !btn->Visible) continue;
+                    if (mx >= btn->X && mx < btn->X+btn->Width && my >= btn->Y && my < btn->Y+btn->Height)
+                        { btn->OnClick(mx, my); break; }
+                }
+            }
+            if (msg.message == WM_MOUSEMOVE) {
+                int mx = LOWORD(msg.lParam), my = HIWORD(msg.lParam);
+                for (auto* g : dlg.Gadgets()) {
+                    auto* btn = dynamic_cast<TextButtonClass*>(g);
+                    if (!btn || !btn->Visible) continue;
+                    bool inside = (mx >= btn->X && mx < btn->X+btn->Width && my >= btn->Y && my < btn->Y+btn->Height);
+                    if (inside) btn->OnMouseEnter();
+                    else        btn->OnMouseLeave();
+                }
+            }
             TranslateMessage(&msg);
             DispatchMessageA(&msg);
         }
-        // Render BINK background or SHP fallback
-        if (bikBg && bikBg->IsPlaying()) {
-            bikBg->AdvanceFrame();
-            bikBg->RenderFrame(&dlgSurf);
-        } else if (hasBg && bgImg.GetFrameCount() > 0) {
-            // Fallback: ensure background is drawn when no BINK
-            dlg.m_draw_background = true;
-            if (frame >= bgImg.GetFrameCount()) frame = 0;
-            int bx = (ctx->width - bgImg.GetWidth()) / 2;
-            int by = (ctx->height - bgImg.GetHeight()) / 2;
-            bgImg.RenderToSurface(&dlgSurf, frame, bx, by, g_palette);
-        }
-        dlg.OnRender(&dlgSurf, &text);
-        ctx->back_buffer->Blt(nullptr, dlgSurf.Surface, nullptr, DDBLT_WAIT, nullptr);
-        DDraw_Flip();
-        fc++; if (hasBg && fc >= 8) { fc = 0; frame = (frame + 1) % bgImg.GetFrameCount(); }
         Event_Dispatch();
-        if (loopCount == 1) {
-            LOG_DEBUG("[MENU] First frame rendered: surf=%p textInit=%d",
-                      (void*)dlgSurf.Surface, textOk);
-        }
     }
 
     result = static_cast<MenuState>(dlg.GetResult());

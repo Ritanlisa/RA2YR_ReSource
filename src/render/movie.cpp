@@ -327,28 +327,28 @@ void BinkMovieHandle::RenderFrame(DSurface* target)
     if (!target || !m_playing) return;
 
     if (m_bink_handle && s_BinkCopyToBuffer) {
-        // Lock the DDraw surface and copy BINK frame directly
         DDSURFACEDESC2 desc = {};
         desc.dwSize = sizeof(desc);
         if (SUCCEEDED(target->Surface->Lock(nullptr, &desc, DDLOCK_WAIT, nullptr))) {
-            // _BinkCopyToBuffer copies RGB data to destination (top-down)
-            // BINKCOPYALL, BINKCOPY2X, etc.
+            // BINK surface format flags:
+            // BINKSURFACE565 = 0x20000000 (16-bit R5G6B5)
+            // BINKSURFACE555 = 0x10000000 (16-bit X1R5G5B5)
+            // BINKSURFACE32  = 0x80000000 (32-bit X8R8G8B8)
             s_BinkCopyToBuffer(m_bink_handle, desc.lpSurface,
                                desc.lPitch, m_height, 0, 0,
-                               0x80000000);  // BINKSURFACE32
+                               0x20000000);  // BINKSURFACE565
             target->Surface->Unlock(nullptr);
         }
         return;
     }
 
-    // Software decode placeholder
+    // Software fallback
     if (m_memory_buffer) {
         DDSURFACEDESC2 desc = {};
         desc.dwSize = sizeof(desc);
         if (SUCCEEDED(target->Surface->Lock(nullptr, &desc, DDLOCK_WAIT, nullptr))) {
             auto* buf = static_cast<uint16_t*>(desc.lpSurface);
             int pitch = desc.lPitch / 2;
-            // Fill with dark gray placeholder (no decoder available)
             for (int y = 0; y < m_height && y < 600; y++)
                 for (int x = 0; x < m_width && x < 800; x++)
                     buf[y * pitch + x] = 0x39E7;
