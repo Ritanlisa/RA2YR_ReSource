@@ -238,29 +238,46 @@ static MenuState MainMenu_Screen() {
     bool textOk = text.Init(ctx->width, ctx->height);
     LOG_DEBUG("[MENU] TextRenderer::Init: %s", textOk ? "OK" : "FAILED");
 
-    // Try BINK background (uses exact hash from XCC db)
+    // Try BINK background (uses exact hash from XCC db — 0x33665128 = ra2ts_l.bik, 0xC1E6E166 = ra2ts_s.bik)
     MovieHandle* bikBg = nullptr;
     {
         uint32_t bikHash = (ctx->width > 640) ? 0x33665128 : 0xC1E6E166;
         const char* bikName = (ctx->width > 640) ? "ra2ts_l.bik" : "ra2ts_s.bik";
+        LOG_DEBUG("[MENU] Looking up BINK '%s' by XCC hash 0x%08X", bikName, bikHash);
         void* bikData = FileSystem::LoadByHash(bikHash);
         if (bikData) {
             uint32_t bikFileSize = *(const uint32_t*)((const uint8_t*)bikData + 4);
+            LOG_DEBUG("[MENU] BINK data loaded: header file_size=%u, magic=%c%c%c%c",
+                bikFileSize,
+                ((const char*)bikData)[0], ((const char*)bikData)[1],
+                ((const char*)bikData)[2], ((const char*)bikData)[3]);
             if (bikFileSize < 100 || bikFileSize > 64*1024*1024) bikFileSize = 8*1024*1024;
             char tempPath[MAX_PATH];
             GetTempPathA(sizeof(tempPath), tempPath);
             strcat_s(tempPath, bikName);
+            LOG_DEBUG("[MENU] Writing %u bytes to temp: %s", bikFileSize, tempPath);
             FILE* fp = nullptr;
             if (fopen_s(&fp, tempPath, "wb") == 0 && fp) {
                 fwrite(bikData, 1, bikFileSize, fp);
                 fclose(fp);
                 bikBg = MoviePlayer::CreateMovie(tempPath, &dlgSurf);
+                LOG_DEBUG("[MENU] MoviePlayer::CreateMovie('%s') -> %s",
+                    tempPath, bikBg ? "OK" : "FAILED");
                 DeleteFileA(tempPath);
+            } else {
+                LOG_DEBUG("[MENU] Failed to create temp file '%s'", tempPath);
             }
             free(bikData);
+        } else {
+            LOG_DEBUG("[MENU] LoadByHash(0x%08X) returned NULL — BINK not found in any MIX", bikHash);
         }
-        if (!bikBg) bikBg = MoviePlayer::CreateMovie(bikName, &dlgSurf);
-        LOG_DEBUG("[MENU] BINK background '%s': %s", bikName, bikBg ? "loaded" : "not found");
+        if (!bikBg) {
+            LOG_DEBUG("[MENU] Trying CreateMovie by name '%s'", bikName);
+            bikBg = MoviePlayer::CreateMovie(bikName, &dlgSurf);
+            LOG_DEBUG("[MENU] MoviePlayer::CreateMovie('%s') -> %s",
+                bikName, bikBg ? "OK" : "FAILED");
+        }
+        LOG_DEBUG("[MENU] BINK background final: %s", bikBg ? "loaded" : "not found");
     }
 
     int loopCount = 0;

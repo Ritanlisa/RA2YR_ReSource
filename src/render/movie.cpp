@@ -288,11 +288,10 @@ bool BinkMovieHandle::OpenFromMemory(const void* data, int size, DSurface* rende
         m_temp_path = _strdup(temp_path);
     }
 
-    // Open BINK via binkw32.dll
-    // _BinkOpen(name, flags): flags=0 for normal file, 0x8000000 for no audio
-    m_bink_handle = s_BinkOpen(temp_path, 0x8000000);  // BINKNOAUDIOSKIP + no audio
+    // Open BINK via binkw32.dll (flags=0: normal file open)
+    m_bink_handle = s_BinkOpen(temp_path, 0);
     if (!m_bink_handle) {
-        LOG_TRACE("BinkMovie: _BinkOpen failed");
+        LOG_TRACE("BinkMovie: _BinkOpen('%s') failed", temp_path);
         return false;
     }
 
@@ -306,11 +305,9 @@ bool BinkMovieHandle::AdvanceFrame()
     if (!m_playing) return false;
 
     if (m_bink_handle) {
-        // Use binkw32.dll
         if (s_BinkDoFrame(m_bink_handle) == 0)
             return false;
         ++m_current_frame;
-        s_BinkNextFrame(m_bink_handle);
         return true;
     }
 
