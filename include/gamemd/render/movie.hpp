@@ -69,9 +69,6 @@ private:
     int       m_height        = 0;
     int       m_current_frame = 0;
     int       m_total_frames  = 0;
-    int       m_fps           = 30;
-    int       m_frame_ms      = 33;
-    uint32_t  m_last_frame_time = 0;
     int       m_data_size     = 0;
     uint32_t  m_surface_flags = 0x20000000;  // from _BinkDDSurfaceType (sub_432750)
     bool      m_playing       = false;

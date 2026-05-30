@@ -182,24 +182,21 @@ static MenuState MainMenu_Screen() {
     LOG_DEBUG("[MENU] Dialog created: %dx%d", ctx->width, ctx->height);
 
     // === Menu layout (matching original 800×600 dialog centered in screen) ===
-    // Original positions from dialog template 0xE2 (approximate):
-    //   BINK player at (0,0) within dialog, 632×570
-    //   Buttons right side, version bottom-right
+    // BINK fills left ~540px, buttons on right ~260px (no overlapping panel)
     int dialogW = 800, dialogH = 600;
-    int dialogX = (ctx->width  - dialogW) / 2;  // match SetWindowPos centering
+    int dialogX = (ctx->width  - dialogW) / 2;
     int dialogY = (ctx->height - dialogH) / 2;
 
-    // BINK position (left side of centered dialog)
+    // BINK position: left side of centered dialog
     int bikX = dialogX;
     int bikY = dialogY;
 
-    // Right panel (button area)
-    int panelX = dialogX + (int)(dialogW * 0.65f);  // ~65% from left
-    int panelW = dialogX + dialogW - panelX;
-    int btnW = (int)(panelW * 0.85f);
-    int btnH = 32;
-    int btnStartY = dialogY + 100;
-    int btnGap = 42;
+    // Button area: right side of dialog
+    int btnAreaX = dialogX + 550;  // buttons start here
+    int btnW = 210;
+    int btnH = 30;
+    int btnStartY = dialogY + 130;
+    int btnGap = 38;
 
     MenuState states[] = {MenuState::Campaign, MenuState::Skirmish,
                           MenuState::Multiplayer, MenuState::Options,
@@ -212,7 +209,7 @@ static MenuState MainMenu_Screen() {
             if (!btnSHPs[i]) continue;
             int bw = btnSHPs[i]->GetWidth(), bh = btnSHPs[i]->GetHeight();
             if (bw < 20 || bh < 10 || bw > 800 || bh > 200) continue;
-            int bx = panelX + (panelW - bw) / 2;
+            int bx = btnAreaX;
             int by = btnStartY + i * (bh + btnGap);
             auto* btn = new ShpButtonClass(kMenuButtonHashes[i], bx, by,
                                             btnSHPs[i], g_palette);
@@ -223,8 +220,8 @@ static MenuState MainMenu_Screen() {
     }
     if (!haveButtons) {
         for (int i = 0; i < kMenuButtonCount; i++) {
-            int bx = panelX + (panelW - 200) / 2;
-            auto* btn = new TextButtonClass(0, colors[i], bx, btnStartY + i * btnGap, 200, btnH);
+            int bx = btnAreaX;
+            auto* btn = new TextButtonClass(0, colors[i], bx, btnStartY + i * btnGap, btnW, btnH);
             MenuState s = states[i];
             btn->Callback = [&dlg, s]() { dlg.Finish(static_cast<int>(s)); };
             dlg.AddGadget(btn);
@@ -311,18 +308,7 @@ static MenuState MainMenu_Screen() {
                 }
             }
 
-            // 2b. Dark background for right panel
-            if (dialogY < 0) dialogY = 0;
-            int panelEnd = dialogX + dialogW;
-            int panelBottom = dialogY + dialogH;
-            if (panelEnd > ctx->width) panelEnd = ctx->width;
-            if (panelBottom > ctx->height) panelBottom = ctx->height;
-            uint16_t panelBg = 0x1082;
-            for (int y = dialogY; y < panelBottom; y++)
-                for (int x = panelX; x < panelEnd; x++)
-                    buf[y * pitch + x] = panelBg;
-
-            // 2c. Dark navy background (only if no BINK)
+            // 2b. Dark navy background (only if no BINK)
             if (!bikBg || !bikBg->IsPlaying()) {
                 uint16_t bg = 0x1082;
                 for (int y = 0; y < ctx->height; y++)

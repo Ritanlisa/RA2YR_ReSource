@@ -294,14 +294,6 @@ bool BinkMovieHandle::OpenFromFile(const char* filename, DSurface* render_target
     m_height = hdr[1];
     m_total_frames = hdr[2];
     m_current_frame = 0;
-    // Frame rate: offset 20 = FrameRate, offset 24 = FrameRateDiv
-    uint32_t fpsNum = hdr[5];  // FrameRate
-    uint32_t fpsDen = hdr[6];  // FrameRateDiv
-    if (fpsDen == 0) fpsDen = 1;
-    m_fps = fpsNum / fpsDen;  // e.g. 30/1 = 30 or 30000/1001 = 29
-    m_frame_ms = (fpsDen * 1000) / fpsNum;  // ms per frame
-    if (m_frame_ms < 16) m_frame_ms = 33;  // clamp to ~30fps max
-    m_last_frame_time = 0;
 
     // Query surface pixel format
     if (render_target && render_target->Surface && s_BinkDDSurfaceType) {
@@ -316,8 +308,8 @@ bool BinkMovieHandle::OpenFromFile(const char* filename, DSurface* render_target
     }
 
     m_playing = true;
-    LOG_INFO("BinkMovie::OpenFromFile: %dx%d, %d frames @ %dfps (interval %dms)",
-        m_width, m_height, m_total_frames, m_fps, m_frame_ms);
+    LOG_INFO("BinkMovie::OpenFromFile: %dx%d, %d frames, fmt_code=%d",
+        m_width, m_height, m_total_frames, m_surface_flags);
     return true;
 }
 
@@ -381,22 +373,10 @@ bool BinkMovieHandle::AdvanceFrame()
     if (!m_playing) return false;
 
     if (m_bink_handle) {
-        // Frame rate throttle: skip frame if not enough time has passed
-        DWORD now = GetTickCount();
-        DWORD elapsed = now - m_last_frame_time;
-        if (m_last_frame_time != 0 && elapsed < (DWORD)m_frame_ms) {
-            return true;  // same frame, don't advance
-        }
-        m_last_frame_time = now;
-
+        // Frame rate: use BINK's internal timing via BinkWait (sub_432E40)
         int doFrameResult = s_BinkDoFrame(m_bink_handle);
-        if (s_BinkGetError) {
-            const char* err = s_BinkGetError();
-            if (err && err != (const char*)-1 && m_current_frame < 3)
-                LOG_DEBUG("BinkMovie::AdvanceFrame f%d: DoFrame=%d BinkError='%s'", m_current_frame, doFrameResult, err);
-        }
         if (doFrameResult < 0) {
-            // End of stream — loop back to start
+            // End of stream — loop back to start via BinkGoto
             if (s_BinkGoto) {
                 s_BinkGoto(m_bink_handle, 0, 0);
                 m_current_frame = 0;
@@ -410,6 +390,7 @@ bool BinkMovieHandle::AdvanceFrame()
                 return false;
             }
         }
+        // BinkWait: wait for async decode, also provides timing (sub_432E40)
         if (s_BinkWait) s_BinkWait(m_bink_handle);
         ++m_current_frame;
         return true;
