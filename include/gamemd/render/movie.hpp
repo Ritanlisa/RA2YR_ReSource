@@ -57,6 +57,7 @@ public:
 
     int  GetCurrentFrame() const { return m_current_frame; }
     int  GetTotalFrames()  const { return m_total_frames; }
+    uint32_t GetSurfaceFlags() const { return m_surface_flags; }
 
     bool OpenFromMemory(const void* data, int size, DSurface* render_target);
     bool OpenFromFile(const char* filename, DSurface* render_target);
