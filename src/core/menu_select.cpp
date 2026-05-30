@@ -181,11 +181,21 @@ static MenuState MainMenu_Screen() {
     DialogClass dlg(0, 0, ctx->width, ctx->height);
     LOG_DEBUG("[MENU] Dialog created: %dx%d", ctx->width, ctx->height);
 
-    // Use SHP buttons if available, fallback to TextButtonClass
     MenuState states[] = {MenuState::Campaign, MenuState::Skirmish,
                           MenuState::Multiplayer, MenuState::Options,
                           MenuState::ExitConfirm};
     const char* colors[] = {"[Campaign]","[Skirmish]","[Multiplayer]","[Options]","[Exit]"};
+
+    // Original RA2/YR layout: buttons on the right side, vertically stacked
+    // Using 800×600 reference coordinates scaled to screen:
+    //   Original: btn_x ~520, btn_y ~150-420, btn_w ~200, btn_h ~30, gap ~35
+    float scaleX = ctx->width  / 800.0f;
+    float scaleY = ctx->height / 600.0f;
+    int btn_w = (int)(200 * scaleX);
+    int btn_h = (int)( 30 * scaleY);
+    int btn_x = ctx->width - (int)(250 * scaleX);  // right side
+    int btn_y = (int)(150 * scaleY);
+    int gap   = (int)( 35 * scaleY);
 
     if (haveButtons) {
         LOG_DEBUG("[MENU] Creating SHP buttons...");
@@ -193,20 +203,18 @@ static MenuState MainMenu_Screen() {
         for (int i = 0; i < kMenuButtonCount; i++) {
             if (!btnSHPs[i]) continue;
             int bw = btnSHPs[i]->GetWidth(), bh = btnSHPs[i]->GetHeight();
-            // Validate: button SHPs must have reasonable dimensions
             if (bw < 20 || bh < 10 || bw > 800 || bh > 200) {
                 LOG_WARN("[MENU] btn[%d] invalid size %dx%d, skipping SHP", i, bw, bh);
                 continue;
             }
             anyValid = true;
-            int bx = (ctx->width - bw) / 2;
-            int by = ctx->height/2 - 120 + i * (bh + 4);
-            auto* btn = new ShpButtonClass(kMenuButtonHashes[i], bx, by,
+            int by = btn_y + i * (bh + gap);
+            auto* btn = new ShpButtonClass(kMenuButtonHashes[i], btn_x, by,
                                            btnSHPs[i], g_palette);
             MenuState s = states[i];
             btn->Callback = [&dlg, s]() { dlg.Finish(static_cast<int>(s)); };
             dlg.AddGadget(btn);
-            LOG_DEBUG("[MENU]   btn[%d] %dx%d at (%d,%d) pal=%p", i, bw, bh, bx, by, (void*)g_palette);
+            LOG_DEBUG("[MENU]   btn[%d] %dx%d at (%d,%d)", i, bw, bh, btn_x, by);
         }
         if (!anyValid) {
             LOG_WARN("[MENU] No valid SHP buttons, falling back to text");
@@ -214,12 +222,9 @@ static MenuState MainMenu_Screen() {
         }
     }
     if (!haveButtons) {
-        // Text buttons: RA2/YR places them right-side, vertically stacked near bottom
-        // For 2560x1600: buttons at x=1750, from y=1250 upward
-        int bx = ctx->width * 2 / 3;       // Right-side, ~66% of screen width
-        int by = ctx->height * 3 / 4 - 40; // Start near bottom, 75% of height
+        LOG_DEBUG("[MENU] No valid SHP buttons, falling back to text");
         for (int i = 0; i < kMenuButtonCount; i++) {
-            auto* btn = new TextButtonClass(0, colors[i], bx, by + i * 40, 200, 32);
+            auto* btn = new TextButtonClass(0, colors[i], btn_x, btn_y + i * gap, btn_w, btn_h);
             MenuState s = states[i];
             btn->Callback = [&dlg, s]() { dlg.Finish(static_cast<int>(s)); };
             dlg.AddGadget(btn);
