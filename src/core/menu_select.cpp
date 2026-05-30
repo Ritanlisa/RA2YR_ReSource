@@ -304,7 +304,7 @@ static MenuState MainMenu_Screen() {
                 auto* bink = dynamic_cast<BinkMovieHandle*>(bikBg);
                 if (bink) {
                     bink->RenderFrameRaw(surfDesc.lpSurface, surfDesc.lPitch,
-                                         ctx->height, bikX, bikY);
+                                         ctx->height, bikX, bikY, bikAdvanced);
                 }
             }
 
