@@ -16,6 +16,7 @@
 
 namespace gamemd {
 
+// MenuState — matches IDA Menu_Select (0x52D9A0) 19-case switch
 enum class MenuState {
     Reset=-1, MainMenu=0, Campaign=1, Skirmish=2, Multiplayer=3, CampaignSub=4,
     Options=5, ExitConfirm=6, StartScenario=7, WOLInternet=8, SaveLoadGame=9,
@@ -23,7 +24,19 @@ enum class MenuState {
     CampaignIntro=15, NetworkGameFlow=16, NetworkGameFlow2=17, MenuIdle=18
 };
 
+// GMODE values confirmed from IDA Menu_Select (0x52D9A0) case 16/17 GameMode_Current dispatch
 enum { GMODE_MENU=0, GMODE_CAMPAIGN=1, GMODE_CAMPAIGN_SUB=2, GMODE_INTERNET=3, GMODE_SKIRMISH=4, GMODE_SKIRMISH_SETUP=5 };
+
+// DlgItem IDs — matches IDA MainMenu_DlgProc (0x531F60)
+enum {
+    DLG_BINK_PLAYER    = 1818,   // BINK video player control
+    DLG_VERSION_LABEL  = 1821,   // Version info label
+    CMD_CAMPAIGN       = 1667,   // 0x683
+    CMD_SKIRMISH       = 1668,
+    CMD_MULTIPLAYER    = 1400,   // 0x578
+    CMD_OPTIONS        = 1372,   // 0x55C
+    CMD_EXIT           = 1006,   // 0x3EE
+};
 
 static int g_GameMode = 0;
 static MenuState g_MenuState = MenuState::MenuIdle;
@@ -42,19 +55,17 @@ static bool      Game_Frame_Loop();
 static bool      Game_Frame_Check();
 static void      Main_Game_Frame();
 
-void AudioVideo_Update() {}
-char Event_Dispatch() { AudioVideo_Update(); return 0; }
-
-// ---- palette ----
+// ---- palette loading ----
 static bool PaletteLoaded() {
     for (int i=0;i<256;i++) if (g_palette[i][0]||g_palette[i][1]||g_palette[i][2]) return true;
     return false;
 }
+
 static void LoadMenuPalette() {
     const char* names[]={"TEMPERAT.PAL","temperat.pal","temperat","unitsno.pal","unitsno","anim.pal","mousepal.pal",nullptr};
     void* d=nullptr;
     for(int i=0;names[i]&&!d;i++) d=FileSystem::LoadFile(names[i],false);
-    if(!d) d=FileSystem::LoadFirstPalette();
+    if(!d) d=FileSystem::LoadFirstPalette(); // content-based fallback
     if(d){
         uint8_t* r=(uint8_t*)d;
         for(int j=0;j<256;j++){g_palette[j][0]=r[j*3]<<2;g_palette[j][1]=r[j*3+1]<<2;g_palette[j][2]=r[j*3+2]<<2;}
@@ -64,191 +75,280 @@ static void LoadMenuPalette() {
     for(int i=0;i<256;i++) g_palette[i][0]=g_palette[i][1]=g_palette[i][2]=(uint8_t)i;
 }
 
-// ---- menu layout from DIAGLOGEX template 0xE2 ----
-// Dialog: 533×369 dlu, BINK (0,0) 304×266, buttons x=425 w=108 h=23
-struct MenuLayout {
-    int offsetX, offsetY;
-    int bikX, bikY, bikW, bikH;
-    int btnX, btnW, btnH;
+// ---- Event_Dispatch (IDA 0x48D080) ----
+void AudioVideo_Update() {}
+char Event_Dispatch(){ AudioVideo_Update(); return 0; }
 
-    void Compute(int scrW, int scrH) {
-        int dlgW = (scrW > 800) ? 800 : scrW;
-        int dlgH = (scrH > 600) ? 600 : scrH;
-        offsetX = (scrW - dlgW) / 2;
-        offsetY = (scrH - dlgH) / 2;
-        float dluX = (float)dlgW / 533.0f;
-        float dluY = (float)dlgH / 369.0f;
-        bikW = (int)(304.0f * dluX);
-        bikH = (int)(266.0f * dluY);
-        bikX = offsetX;
-        bikY = offsetY;
-        btnX = offsetX + (int)(425.0f * dluX);
-        btnW = (int)(108.0f * dluX);
-        btnH = (int)(23.0f * dluY);
-    }
-    int BtnY(int yDLU) const {
-        float dluY = (float)((offsetY + (offsetY - (offsetY-600 > 0 ? 600 : 600)))  ) / 369.0f;
-        // simpler: proportion
-        int dlgH = 600; // original
-        return offsetY + (int)((float)yDLU * ((float)dlgH / 369.0f * 0)); // wrong
-    }
-};
-
-// ---- SHP button lookup (button00-04.shp from expandmd01.mix) ----
-// XCC hash IDs: button00=0x0D2B157D, button01=0x304B3CCD, button02=0x77EB461D, button03=0x4A8B6FAD, button04=0xF8ABB3BD
-// Button layout from template 0xE2: Campaign(1667,y=125), Skirmish(1668,y=152), Multiplayer(1400,y=179), Movies(1670,y=206), Options(1372,y=233), Exit(1006,y=330)
-
-static const uint32_t kMenuBtnHashes[] = {
-    0x0D2B157D, // button00.shp → Campaign
-    0x77EB461D, // button02.shp → Skirmish (WWOnline)
-    0x4A8B6FAD, // button03.shp → Multiplayer (Network)
-    0x304B3CCD, // button01.shp → Movies/Options?
-    0x304B3CCD, // button01.shp → Options
-    0xF8ABB3BD, // button04.shp → Exit
-};
-static const int kMenuBtnY[]   = {125, 152, 179, 206, 233, 330};
-static const MenuState kBtnStates[] = {
-    MenuState::Campaign, MenuState::Skirmish, MenuState::Multiplayer,
-    MenuState::CampaignSub, MenuState::Options, MenuState::ExitConfirm
-};
-
-static void DrawShpToBuffer(ShpImage* img, int frame, uint16_t* buf, int pitch,
-                            int scrW, int scrH, int dx, int dy)
-{
-    if (!img || !buf) return;
-    int iw = img->GetWidth(), ih = img->GetHeight();
-    const uint8_t* src = img->GetPixelData(frame);
-    if (!src) return;
-    for (int y = 0; y < ih && dy+y < scrH; y++) {
-        for (int x = 0; x < iw && dx+x < scrW; x++) {
-            uint8_t ci = src[y * iw + x];
-            if (ci == 0) continue; // transparent
-            auto& p = g_palette[ci];
-            uint16_t rgb = (uint16_t)((p[0] >> 3) << 11) | ((p[1] >> 2) << 5) | (p[2] >> 3);
-            buf[(dy+y) * pitch + (dx+x)] = rgb;
-        }
+// ---- message pump ----
+void Dialog_MessageLoop() {
+    MSG msg;
+    while(PeekMessageA(&msg,nullptr,0,0,PM_REMOVE)){
+        if(msg.message==WM_QUIT)break;
+        TranslateMessage(&msg);DispatchMessageA(&msg);
     }
 }
+char Dialog_PumpMessages(){Dialog_MessageLoop();Event_Dispatch();return 0;}
 
-// ---- MainMenu_Screen — DDraw rendering + BinkPlayerControl ----
-static MenuState MainMenu_Screen()
-{
+// ---- main menu ----
+// button SHPs are rendered with baked-in text — no separate text labels needed
+static const uint32_t kMenuButtonHashes[] = {
+    0x0D2B157D, // button00.shp — Campaign
+    0x77EB461D, // button02.shp — Skirmish
+    0x4A8B6FAD, // button03.shp — Multiplayer
+    0x304B3CCD, // button01.shp — Options
+    0xF8ABB3BD, // button04.shp — Exit
+};
+static const int kMenuButtonCount = 5;
+
+static bool LoadMenuBackground(ShpImage& img) {
+    uint32_t candidates[] = {
+        0x7241327F, 0x316453C0, 0x44836963, 0x07A608DC,
+        0x1C71240A, 0x668DD8FB,
+    };
+    void* data = nullptr;
+    for (int i = 0; i < 6 && !data; i++) data = FileSystem::LoadByHash(candidates[i]);
+    // Skip expensive full MIX scan — use a dark background if no candidate found
+    if (!data) {
+        LOG_DEBUG("[MENU] No background SHP found, using dark background");
+        return false;
+    }
+    bool ok = img.LoadFromMemory((const uint8_t*)data, 1073741824);
+    free(data);
+    if (ok) LOG_DEBUG("[MENU] Background loaded: %dx%d %df", img.GetWidth(), img.GetHeight(), img.GetFrameCount());
+    return ok;
+}
+
+static bool LoadMenuButtons(ShpImage* out[5]) {
+    for (int i = 0; i < kMenuButtonCount; i++) {
+        void* data = FileSystem::LoadByHash(kMenuButtonHashes[i]);
+        if (!data) { LOG_WARN("menu button %d not found", i); continue; }
+        out[i] = new ShpImage();
+        LOG_DEBUG("[MENU] btn[%d] hash=0x%08X size from MIX: checking raw bytes...",
+                  i, kMenuButtonHashes[i]);
+        // Print first 16 bytes for format diagnosis
+        auto* raw = (const uint8_t*)data;
+        LOG_DEBUG("[MENU]   raw[0..3]=%02X%02X%02X%02X [4..7]=%02X%02X%02X%02X",
+                  raw[0],raw[1],raw[2],raw[3], raw[4],raw[5],raw[6],raw[7]);
+        uint16_t f0 = *(const uint16_t*)(raw+0);
+        uint16_t f4 = *(const uint16_t*)(raw+4);
+        LOG_DEBUG("[MENU]   frames@0=%u frames@4=%u w@2=%u h@6=%u",
+                  f0, f4, *(uint16_t*)(raw+2), *(uint16_t*)(raw+6));
+        bool ok = out[i]->LoadFromMemory(raw, 3384);
+        LOG_DEBUG("[MENU]   LoadFromMemory: %s", ok ? "OK" : "FAILED");
+        if (!ok) { delete out[i]; out[i] = nullptr; }
+        free(data);
+    }
+    // Check if at least 3 buttons loaded (minimum usable)
+    int loaded = 0;
+    for (int i = 0; i < kMenuButtonCount; i++) if (out[i]) loaded++;
+    return loaded >= 3;
+}
+
+static void FreeMenuButtons(ShpImage* btns[5]) {
+    for (int i = 0; i < kMenuButtonCount; i++) { delete btns[i]; btns[i] = nullptr; }
+}
+
+static MenuState MainMenu_Screen() {
     DDrawContext* ctx = DDraw_GetContext();
+    LOG_DEBUG("[MENU] MainMenu_Screen entry: ctx=%p", (void*)ctx);
     if (!ctx || !ctx->back_buffer) {
-        LOG_ERROR("[MENU] DDraw not available");
-        return MenuState::MenuIdle;
+        LOG_ERROR("[MENU] DDrawContext or back_buffer is null! ctx=%p bb=%p",
+                  (void*)ctx, ctx ? (void*)ctx->back_buffer : nullptr);
+        return MenuState::StartScenario;
     }
-    if (!PaletteLoaded()) LoadMenuPalette();
+    LOG_DEBUG("[MENU] Screen: %dx%d, back_buffer=%p dd=%p",
+              ctx->width, ctx->height, (void*)ctx->back_buffer, (void*)ctx->dd);
 
-    // Layout from template 0xE2
-    int dlgW = (ctx->width > 800) ? 800 : ctx->width;
-    int dlgH = (ctx->height > 600) ? 600 : ctx->height;
-    int offX = (ctx->width - dlgW) / 2;
-    int offY = (ctx->height - dlgH) / 2;
-    float dluX = (float)dlgW / 533.0f;
-    float dluY = (float)dlgH / 369.0f;
-    int bikW = (int)(304.0f * dluX), bikH = (int)(266.0f * dluY);
-    int bikX = offX, bikY = offY;
-    int btnX = offX + (int)(425.0f * dluX);
-    int btnW = (int)(108.0f * dluX);
-    int btnH = (int)(23.0f * dluY);
-    if (btnW < 120) btnW = 120;
-    if (btnH < 30) btnH = 30;  // minimum 120x30 px
+    if (!PaletteLoaded()) {
+        LOG_DEBUG("[MENU] Palette not loaded, loading...");
+        LoadMenuPalette();
+        LOG_DEBUG("[MENU] Palette loaded: %s", PaletteLoaded() ? "OK" : "FAILED");
+    }
 
-    auto BtnY = [&](int yDLU) { return offY + (int)((float)yDLU * dluY); };
+    ShpImage* btnSHPs[kMenuButtonCount] = {};
+    bool haveButtons = LoadMenuButtons(btnSHPs);
+    LOG_DEBUG("[MENU] SHP buttons: haveButtons=%d", haveButtons);
 
-    // Skip SHP button loading — known format issue, use rectangles
-    ShpImage* btns[6] = {};
+    ShpImage bgImg;
+    bool hasBg = false;
+    LOG_DEBUG("[MENU] Loading background SHP...");
+    hasBg = LoadMenuBackground(bgImg);
+    LOG_DEBUG("[MENU] Background SHP: hasBg=%d w=%d h=%d frames=%d",
+              hasBg, hasBg ? bgImg.GetWidth() : 0, hasBg ? bgImg.GetHeight() : 0,
+              hasBg ? bgImg.GetFrameCount() : 0);
+    fflush(nullptr);
 
-    // Create BINK directly (simple, verified approach)
-    BinkMovieHandle* bikBg = nullptr;
-    {
-        const char* bikName = (ctx->width > 640) ? "ra2ts_l.bik" : "ra2ts_s.bik";
-        uint32_t bikHash = (ctx->width > 640) ? 0x33665128 : 0xC1E6E166;
-        void* bikData = FileSystem::LoadByHash(bikHash);
-        if (bikData) {
-            uint32_t sz = *(const uint32_t*)((const uint8_t*)bikData + 4);
-            if (sz < 100 || sz > 64*1024*1024) sz = 8*1024*1024;
-            FILE* fp = nullptr;
-            if (fopen_s(&fp, bikName, "wb") == 0 && fp) { fwrite(bikData, 1, sz, fp); fclose(fp); }
-            free(bikData);
-        }
-        auto* bink = new BinkMovieHandle();
-        DSurface tempSurf(ctx->width, ctx->height, false, false);
-        if (bink->OpenFromFile(bikName, &tempSurf)) {
-            bikBg = bink;
-        } else {
-            delete bink;
+    DialogClass dlg(0, 0, ctx->width, ctx->height);
+    LOG_DEBUG("[MENU] Dialog created: %dx%d", ctx->width, ctx->height);
+
+    // === Menu layout (matching original 800×600 dialog centered in screen) ===
+    // BINK fills left ~540px, buttons on right ~260px (no overlapping panel)
+    int dialogW = 800, dialogH = 600;
+    int dialogX = (ctx->width  - dialogW) / 2;
+    int dialogY = (ctx->height - dialogH) / 2;
+
+    // BINK position: left side of centered dialog
+    int bikX = dialogX;
+    int bikY = dialogY;
+
+    // Button area: right side of dialog
+    int btnAreaX = dialogX + 550;  // buttons start here
+    int btnW = 210;
+    int btnH = 30;
+    int btnStartY = dialogY + 130;
+    int btnGap = 38;
+
+    MenuState states[] = {MenuState::Campaign, MenuState::Skirmish,
+                          MenuState::Multiplayer, MenuState::Options,
+                          MenuState::ExitConfirm};
+    const char* colors[] = {"[Campaign]","[Skirmish]","[Multiplayer]","[Options]","[Exit]"};
+
+    if (haveButtons) {
+        LOG_DEBUG("[MENU] Creating SHP buttons...");
+        for (int i = 0; i < kMenuButtonCount; i++) {
+            if (!btnSHPs[i]) continue;
+            int bw = btnSHPs[i]->GetWidth(), bh = btnSHPs[i]->GetHeight();
+            if (bw < 20 || bh < 10 || bw > 800 || bh > 200) continue;
+            int bx = btnAreaX;
+            int by = btnStartY + i * (bh + btnGap);
+            auto* btn = new ShpButtonClass(kMenuButtonHashes[i], bx, by,
+                                            btnSHPs[i], g_palette);
+            MenuState s = states[i];
+            btn->Callback = [&dlg, s]() { dlg.Finish(static_cast<int>(s)); };
+            dlg.AddGadget(btn);
         }
     }
-    if (bikBg) LOG_INFO("[MENU] BINK: %dx%d %df", bikBg->GetWidth(), bikBg->GetHeight(), bikBg->GetTotalFrames());
+    if (!haveButtons) {
+        for (int i = 0; i < kMenuButtonCount; i++) {
+            int bx = btnAreaX;
+            auto* btn = new TextButtonClass(0, colors[i], bx, btnStartY + i * btnGap, btnW, btnH);
+            MenuState s = states[i];
+            btn->Callback = [&dlg, s]() { dlg.Finish(static_cast<int>(s)); };
+            dlg.AddGadget(btn);
+        }
+    }
 
-    // Button hover state
-    bool btnHover[6] = {};
-    int btnPosY[6] = {};
-    for (int i = 0; i < 6; i++) btnPosY[i] = BtnY(kMenuBtnY[i]);
-
-    LOG_DEBUG("[MENU] Layout: bik(%d,%d,%dx%d) btn(%d,%d,%d) ypos=%d,%d,%d,%d,%d,%d",
-              bikX, bikY, bikW, bikH, btnX, btnW, btnH,
-              btnPosY[0], btnPosY[1], btnPosY[2], btnPosY[3], btnPosY[4], btnPosY[5]);
-    LOG_DEBUG("[MENU] btn_valid: %d/%d/%d/%d/%d/%d", (bool)(btns[0] && btns[0]->GetWidth()>0 && btns[0]->GetHeight()>0), (bool)(btns[1] && btns[1]->GetWidth()>0 && btns[1]->GetHeight()>0), (bool)(btns[2] && btns[2]->GetWidth()>0 && btns[2]->GetHeight()>0), (bool)(btns[3] && btns[3]->GetWidth()>0 && btns[3]->GetHeight()>0), (bool)(btns[4] && btns[4]->GetWidth()>0 && btns[4]->GetHeight()>0), (bool)(btns[5] && btns[5]->GetWidth()>0 && btns[5]->GetHeight()>0));
-    LOG_DEBUG("[MENU] MainMenu entering render loop");
+    // Disable dark background fill when BINK is playing
+    dlg.m_draw_background = false;
 
     MenuState result = MenuState::MenuIdle;
-    int loopCount = 0;
-    bool reachedEnd = false;
-
-    // Create offscreen surface for rendering (cnc-ddraw flip chain backbuffers may not support Lock)
+    int frame = 0, fc = 0;
     DSurface dlgSurf(ctx->width, ctx->height, false, false);
+    LOG_DEBUG("[MENU] DSurface created: Allocated=%d Surface=%p",
+              dlgSurf.Allocated, (void*)dlgSurf.Surface);
+    TextRenderer text;
+    bool textOk = text.Init(ctx->width, ctx->height);
+    LOG_DEBUG("[MENU] TextRenderer::Init: %s", textOk ? "OK" : "FAILED");
 
-    while (!reachedEnd) {
+    // Try BINK background: extract to EXE dir and open directly (matching original sub_432750)
+    MovieHandle* bikBg = nullptr;
+    {
+        uint32_t bikHash = (ctx->width > 640) ? 0x33665128 : 0xC1E6E166;
+        const char* bikName = (ctx->width > 640) ? "ra2ts_l.bik" : "ra2ts_s.bik";
+        LOG_DEBUG("[MENU] Looking up BINK '%s' by XCC hash 0x%08X", bikName, bikHash);
+        void* bikData = FileSystem::LoadByHash(bikHash);
+        if (bikData) {
+            uint32_t bikFileSize = *(const uint32_t*)((const uint8_t*)bikData + 4);
+            if (bikFileSize < 100 || bikFileSize > 64*1024*1024) bikFileSize = 8*1024*1024;
+            // Write to EXE dir and keep it (don't delete — BINK needs file on disk)
+            FILE* fp = nullptr;
+            if (fopen_s(&fp, bikName, "wb") == 0 && fp) {
+                fwrite(bikData, 1, bikFileSize, fp);
+                fclose(fp);
+                // Open via direct file path (matching sub_432750 BinkOpen(filename, 0))
+                auto* rawBink = new BinkMovieHandle();
+                if (rawBink->OpenFromFile(bikName, &dlgSurf))
+                    bikBg = rawBink;
+                else
+                    delete rawBink;
+            }
+            free(bikData);
+        }
+        if (!bikBg) {
+            LOG_DEBUG("[MENU] BINK from MIX failed, trying disk name '%s'", bikName);
+            auto* rawBink = new BinkMovieHandle();
+            if (rawBink->OpenFromFile(bikName, &dlgSurf))
+                bikBg = rawBink;
+            else
+                delete rawBink;
+        }
+        LOG_DEBUG("[MENU] BINK background: %s", bikBg ? "loaded" : "not found");
+    }
+
+    int loopCount = 0;
+    while (!dlg.IsFinished()) {
         ++loopCount;
 
-        BinkMovieHandle* bik = bikBg;
+        // === 1. Advance BINK frame (decodes next frame) ===
         bool bikAdvanced = false;
-        if (bik && bik->IsPlaying()) {
-            bikAdvanced = bik->AdvanceFrame();
+        if (bikBg && bikBg->IsPlaying()) {
+            bikAdvanced = bikBg->AdvanceFrame();
+            if (loopCount == 1 || loopCount % 60 == 0) {
+                auto* bink = dynamic_cast<BinkMovieHandle*>(bikBg);
+                LOG_DEBUG("[MENU] Frame %d: advanced=%d (cur=%d/%d)",
+                    loopCount, bikAdvanced,
+                    bink ? bink->GetCurrentFrame() : -1,
+                    bink ? bink->GetTotalFrames()  : -1);
+            }
         }
 
-        if (loopCount == 1 || loopCount % 120 == 0) {
-            LOG_DEBUG("[MENU] Frame %d: bik=%p advanced=%d frame=%d/%d",
-                loopCount, (void*)bik, bikAdvanced,
-                bik ? bik->GetCurrentFrame() : -1, bik ? bik->GetTotalFrames() : -1);
-        }
+        // === 2. Lock dlgSurf ONCE, render BINK + buttons + text in same session ===
+        DDSURFACEDESC2 surfDesc = {};
+        surfDesc.dwSize = sizeof(surfDesc);
+        if (SUCCEEDED(dlgSurf.Surface->Lock(nullptr, &surfDesc, DDLOCK_WAIT, nullptr))) {
+            uint16_t* buf = (uint16_t*)surfDesc.lpSurface;
+            int pitch = surfDesc.lPitch / 2;
 
-        // Lock offscreen → render BINK + buttons → unlock
-        DDSURFACEDESC2 dsDesc = {};
-        dsDesc.dwSize = sizeof(dsDesc);
-        if (SUCCEEDED(dlgSurf.Surface->Lock(nullptr, &dsDesc, DDLOCK_WAIT, nullptr))) {
-            auto* buf = (uint16_t*)dsDesc.lpSurface;
-            int pitch = dsDesc.lPitch / 2;
+            // 2a. Render BINK centered in left panel with dialog offset
+            if (bikBg && bikBg->IsPlaying()) {
+                auto* bink = dynamic_cast<BinkMovieHandle*>(bikBg);
+                if (bink) {
+                    bink->RenderFrameRaw(surfDesc.lpSurface, surfDesc.lPitch,
+                                         ctx->height, bikX, bikY);
+                }
+            }
 
-            // Render BINK
-            if (bik && bik->IsPlaying()) {
-                bik->RenderFrameRaw(dsDesc.lpSurface, dsDesc.lPitch, ctx->height, bikX, bikY);
-            } else {
+            // 2b. Dark navy background (only if no BINK)
+            if (!bikBg || !bikBg->IsPlaying()) {
+                uint16_t bg = 0x1082;
                 for (int y = 0; y < ctx->height; y++)
                     for (int x = 0; x < ctx->width; x++)
-                        buf[y * pitch + x] = 0x1082;
+                        buf[y * pitch + x] = bg;
             }
 
-            // Render buttons
-            for (int i = 0; i < 6; i++) {
-                int by = btnPosY[i];
-                uint16_t fill = btnHover[i] ? 0xF800 : 0x07E0;
-                for (int y = by; y < by + btnH && y < ctx->height; y++)
-                    for (int x = btnX; x < btnX + btnW && x < ctx->width; x++)
-                        buf[y * pitch + x] = (y == by || y == by + btnH - 1 || x == btnX || x == btnX + btnW - 1) ? 0xFFFF : fill;
-                static const char* labels[] = {"Campaign","Skirmish","Network","Movies","Options","Exit"};
-                int tw = (int)strlen(labels[i]) * 8;
-                int tx = btnX + (btnW - tw) / 2, ty = btnPosY[i] + (btnH - 16) / 2 + 2;
-                if (tx > 0 && ty > 0)
-                    Font_DrawText(buf, pitch, tx, ty, ctx->width, ctx->height, labels[i], 0xFFFF);
+            // Draw button rectangles
+            for (auto* g : dlg.Gadgets()) {
+                auto* btn = dynamic_cast<TextButtonClass*>(g);
+                if (!btn || !btn->Visible) continue;
+                int bx = btn->X, by = btn->Y, bw = btn->Width, bh = btn->Height;
+                uint16_t fill = btn->Hovered ? 0xF800 : 0x07E0;
+                uint16_t border = 0xFFFF;
+
+                for (int y = by; y < by + bh && y < ctx->height; y++) {
+                    for (int x = bx; x < bx + bw && x < ctx->width; x++) {
+                        bool isBorder = (y == by || y == by + bh - 1 || x == bx || x == bx + bw - 1);
+                        buf[y * pitch + x] = isBorder ? border : fill;
+                    }
+                }
             }
+
+            // Draw text on buttons (inside same Lock — uses embedded 8x16 bitmap font)
+            for (auto* g : dlg.Gadgets()) {
+                auto* btn = dynamic_cast<TextButtonClass*>(g);
+                if (!btn || !btn->Visible || btn->Text.empty()) continue;
+                int tw = (int)btn->Text.length() * 8;
+                int tx = btn->X + (btn->Width - tw) / 2;
+                int ty = btn->Y + (btn->Height - 16) / 2 + 2;
+                if (tx < 0) tx = btn->X + 2;
+                if (ty < 0) ty = btn->Y + 2;
+                Font_DrawText(buf, pitch, tx, ty, ctx->width, ctx->height,
+                              btn->Text.c_str(), 0xFFFF);
+            }
+
             dlgSurf.Surface->Unlock(nullptr);
         }
 
-        // Copy offscreen → back buffer + flip (working approach)
+        // === 4. Copy dlgSurf → back_buffer + flip ===
         DDSURFACEDESC2 sd = {}, dd = {};
         sd.dwSize = sizeof(sd); dd.dwSize = sizeof(dd);
         if (SUCCEEDED(dlgSurf.Surface->Lock(nullptr, &sd, DDLOCK_WAIT, nullptr)) &&
@@ -265,37 +365,49 @@ static MenuState MainMenu_Screen()
         // Messages
         MSG msg;
         while (PeekMessageA(&msg, nullptr, 0, 0, PM_REMOVE)) {
-            if (msg.message == WM_QUIT) { result = MenuState::ExitConfirm; reachedEnd = true; break; }
-            if (msg.message == WM_KEYDOWN && msg.wParam == VK_ESCAPE) { result = MenuState::ExitConfirm; reachedEnd = true; break; }
+            if (msg.message == WM_QUIT) { result = MenuState::ExitConfirm; dlg.Finish(static_cast<int>(MenuState::ExitConfirm)); break; }
+            if (msg.message == WM_KEYDOWN && msg.wParam == VK_ESCAPE) {
+                result = MenuState::ExitConfirm; dlg.Finish(static_cast<int>(MenuState::ExitConfirm)); break;
+            }
             if (msg.message == WM_LBUTTONDOWN) {
                 int mx = LOWORD(msg.lParam), my = HIWORD(msg.lParam);
-                for (int i = 0; i < 6; i++) {
-                    if (mx >= btnX && mx < btnX + btnW && my >= btnPosY[i] && my < btnPosY[i] + btnH) {
-                        result = kBtnStates[i];
-                        reachedEnd = true;
-                        break;
-                    }
+                for (auto* g : dlg.Gadgets()) {
+                    auto* btn = dynamic_cast<TextButtonClass*>(g);
+                    if (!btn || !btn->Visible) continue;
+                    if (mx >= btn->X && mx < btn->X+btn->Width && my >= btn->Y && my < btn->Y+btn->Height)
+                        { btn->OnClick(mx, my); break; }
                 }
             }
             if (msg.message == WM_MOUSEMOVE) {
                 int mx = LOWORD(msg.lParam), my = HIWORD(msg.lParam);
-                for (int i = 0; i < 6; i++)
-                    btnHover[i] = (mx >= btnX && mx < btnX + btnW && my >= btnPosY[i] && my < btnPosY[i] + btnH);
+                for (auto* g : dlg.Gadgets()) {
+                    auto* btn = dynamic_cast<TextButtonClass*>(g);
+                    if (!btn || !btn->Visible) continue;
+                    bool inside = (mx >= btn->X && mx < btn->X+btn->Width && my >= btn->Y && my < btn->Y+btn->Height);
+                    if (inside) btn->OnMouseEnter();
+                    else        btn->OnMouseLeave();
+                }
             }
-            TranslateMessage(&msg); DispatchMessageA(&msg);
+            TranslateMessage(&msg);
+            DispatchMessageA(&msg);
         }
         Event_Dispatch();
-        if (loopCount > 7200) break; // 60s timeout
     }
 
-    LOG_DEBUG("[MENU] MainMenu exit: result=%d loops=%d", (int)result, loopCount);
-
+    if (!dlg.IsFinished())
+        result = static_cast<MenuState>(dlg.GetResult());
+    LOG_DEBUG("[MENU] MainMenu_Screen exit: result=%d loops=%d", static_cast<int>(result), loopCount);
     if (bikBg) { bikBg->Stop(); delete bikBg; }
-    for (int i = 0; i < 6; i++) delete btns[i];
+    bgImg.Free();
+    dlg.ClearGadgets();
+    FreeMenuButtons(btnSHPs);
     return result;
 }
 
-// ---- Campaign_Screen (IDA 0x60D380) ----
+// ---- Campaign_Screen (IDA 0x60D380: generic dialog wrapper reused by 4 callers) ----
+// Creates a dialog with LoadGame/NewGame/StartScenario/Back buttons
+// Matching CampaignMenu_DlgProc (IDA 0x52D640) control IDs:
+//   1673=Load, 1674=NewGame, 1672=StartScenario, 1401=Skirmish, 1670=Back
 static MenuState Campaign_Screen(int arg) {
     DDrawContext* ctx = DDraw_GetContext();
     if (!ctx || !ctx->back_buffer) return MenuState::MenuIdle;
@@ -324,14 +436,16 @@ static MenuState Campaign_Screen(int arg) {
     dlg.AddGadget(&btnBack);
 
     DSurface dlgSurf(ctx->width, ctx->height, false, false);
-    TextRenderer text; text.Init(ctx->width, ctx->height);
+    TextRenderer text;
+    text.Init(ctx->width, ctx->height);
 
     while (!dlg.IsFinished()) {
         MSG msg;
         while (PeekMessageA(&msg, nullptr, 0, 0, PM_REMOVE)) {
             if (msg.message == WM_QUIT) return MenuState::StartScenario;
             if (msg.message == WM_KEYDOWN && msg.wParam == VK_ESCAPE) { dlg.m_finished = true; break; }
-            if (msg.message == WM_LBUTTONDOWN) dlg.OnMouseClick(LOWORD(msg.lParam), HIWORD(msg.lParam));
+            if (msg.message == WM_LBUTTONDOWN)
+                dlg.OnMouseClick(LOWORD(msg.lParam), HIWORD(msg.lParam));
             else { TranslateMessage(&msg); DispatchMessageA(&msg); }
         }
         dlg.OnRender(&dlgSurf, &text);
@@ -342,7 +456,9 @@ static MenuState Campaign_Screen(int arg) {
     return result;
 }
 
-// ---- Options_Screen_Dialog ----
+// ---- Options_Screen_Dialog (IDA 0x55FC80) + Options_Screen_Save (0x55FAA0) ----
+// Settings controls matching IDA DlgItem IDs:
+//   1295=Speed, 1540=MCV Deploy, 1537=Scroll, 1327=Sound Vol, 1330=Music Vol
 static void Options_Screen_Dialog() {
     DDrawContext* ctx = DDraw_GetContext();
     if (!ctx || !ctx->back_buffer) return;
@@ -351,27 +467,38 @@ static void Options_Screen_Dialog() {
     int cx = ctx->width / 2 - 120;
     int y0 = ctx->height / 2 - 150;
 
-    static int g_Speed = 2, g_Scroll = 0, g_MCVDeploy = 1, g_SoundVol = 7, g_MusicVol = 7;
+    static int g_Speed = 2;       // IDA: dword_A8EB64, 0-4 slider
+    static int g_Scroll = 0;      // IDA: byte_A8EB7E
+    static int g_MCVDeploy = 1;   // IDA: MCV_DeployModeEnabled
+    static int g_SoundVol = 7;    // IDA: flt_A8EBA0 (0.0-1.0)
+    static int g_MusicVol = 7;
+
     LabelClass lblTitle(0, "Options", cx + 20, y0, 255, 255, 100);
     LabelClass lblSpeed(0, "Game Speed", cx, y0 + 50, 180, 180, 180);
     TextButtonClass btnSpeed0(1295, "< Slower", cx, y0 + 70, 100, 28);
     TextButtonClass btnSpeed1(0, "Faster >", cx + 140, y0 + 70, 100, 28);
     LabelClass lblSpeedVal(0, "", cx + 100, y0 + 76, 255, 255, 255);
+
     LabelClass lblMCV(0, "MCV Auto-Deploy", cx, y0 + 110, 180, 180, 180);
     TextButtonClass btnMCV(1540, "", cx, y0 + 130, 200, 28);
+
     LabelClass lblScroll(0, "Scroll Mode", cx, y0 + 170, 180, 180, 180);
     TextButtonClass btnScroll(1537, "", cx, y0 + 190, 200, 28);
+
     LabelClass lblSound(0, "Sound Volume", cx, y0 + 230, 180, 180, 180);
     TextButtonClass btnSoundDown(0, "<", cx, y0 + 250, 40, 28);
     TextButtonClass btnSoundUp(0, ">", cx + 150, y0 + 250, 40, 28);
     LabelClass lblSoundVal(0, "", cx + 50, y0 + 256, 255, 255, 255);
+
     LabelClass lblMusic(0, "Music Volume", cx, y0 + 290, 180, 180, 180);
     TextButtonClass btnMusicDown(0, "<", cx, y0 + 310, 40, 28);
     TextButtonClass btnMusicUp(0, ">", cx + 150, y0 + 310, 40, 28);
     LabelClass lblMusicVal(0, "", cx + 50, y0 + 316, 255, 255, 255);
+
     TextButtonClass btnOK(0, "OK", cx, y0 + 360, 90, 32);
     TextButtonClass btnCancel(0, "Cancel", cx + 150, y0 + 360, 90, 32);
 
+    // Copy current settings to temp vars (IDA: qmemcpy(&unk_ABCE70, dword_A8EB60, 0xB8u))
     int saveSpeed = g_Speed, saveScroll = g_Scroll, saveMCV = g_MCVDeploy;
     int saveSound = g_SoundVol, saveMusic = g_MusicVol;
 
@@ -393,6 +520,7 @@ static void Options_Screen_Dialog() {
     btnSoundUp.Callback = [&]() { if (g_SoundVol < 10) g_SoundVol++; updateLabels(); };
     btnMusicDown.Callback = [&]() { if (g_MusicVol > 0) g_MusicVol--; updateLabels(); };
     btnMusicUp.Callback = [&]() { if (g_MusicVol < 10) g_MusicVol++; updateLabels(); };
+
     btnOK.Callback = [&]() { dlg.m_finished = true; };
     btnCancel.Callback = [&]() {
         g_Speed = saveSpeed; g_Scroll = saveScroll; g_MCVDeploy = saveMCV;
@@ -409,14 +537,16 @@ static void Options_Screen_Dialog() {
     dlg.AddGadget(&btnOK); dlg.AddGadget(&btnCancel);
 
     DSurface dlgSurf(ctx->width, ctx->height, false, false);
-    TextRenderer text; text.Init(ctx->width, ctx->height);
+    TextRenderer text;
+    text.Init(ctx->width, ctx->height);
 
     while (!dlg.IsFinished()) {
         MSG msg;
         while (PeekMessageA(&msg, nullptr, 0, 0, PM_REMOVE)) {
             if (msg.message == WM_QUIT) return;
             if (msg.message == WM_KEYDOWN && msg.wParam == VK_ESCAPE) { dlg.m_finished = true; break; }
-            if (msg.message == WM_LBUTTONDOWN) dlg.OnMouseClick(LOWORD(msg.lParam), HIWORD(msg.lParam));
+            if (msg.message == WM_LBUTTONDOWN)
+                dlg.OnMouseClick(LOWORD(msg.lParam), HIWORD(msg.lParam));
             else { TranslateMessage(&msg); DispatchMessageA(&msg); }
         }
         dlg.OnRender(&dlgSurf, &text);
@@ -426,10 +556,15 @@ static void Options_Screen_Dialog() {
     }
 }
 
-// ---- Multiplayer_Screen ----
-static MenuState Multiplayer_Screen(int mode) { LOG_INFO("Multiplayer: mode=%d", mode); return MenuState::MenuIdle; }
+// ---- Multiplayer_Screen (IDA 0x53F1F0: stores config, dispatches to network init) ----
+static MenuState Multiplayer_Screen(int mode) {
+    LOG_INFO("Multiplayer_Screen: mode=%d", mode);
+    return MenuState::MenuIdle;
+}
 
-// ---- Skirmish_Setup_Screen ----
+// ---- Skirmish_Setup_Screen (IDA 0x6AE2C0: game setup for skirmish) ----
+// Dialog template 0x102, DlgProc at 0x6AE3F0
+// Exit codes: 1472 (0x5C0) = cancel, 1559 (0x617) = start game
 static MenuState Skirmish_Setup_Screen() {
     DDrawContext* ctx = DDraw_GetContext();
     if (!ctx || !ctx->back_buffer) return MenuState::MenuIdle;
@@ -450,14 +585,16 @@ static MenuState Skirmish_Setup_Screen() {
     dlg.AddGadget(&btnStart); dlg.AddGadget(&btnCancel);
 
     DSurface dlgSurf(ctx->width, ctx->height, false, false);
-    TextRenderer text; text.Init(ctx->width, ctx->height);
+    TextRenderer text;
+    text.Init(ctx->width, ctx->height);
 
     while (!dlg.IsFinished()) {
         MSG msg;
         while (PeekMessageA(&msg, nullptr, 0, 0, PM_REMOVE)) {
             if (msg.message == WM_QUIT) return MenuState::StartScenario;
             if (msg.message == WM_KEYDOWN && msg.wParam == VK_ESCAPE) { dlg.m_finished = true; result = MenuState::MenuIdle; break; }
-            if (msg.message == WM_LBUTTONDOWN) dlg.OnMouseClick(LOWORD(msg.lParam), HIWORD(msg.lParam));
+            if (msg.message == WM_LBUTTONDOWN)
+                dlg.OnMouseClick(LOWORD(msg.lParam), HIWORD(msg.lParam));
             else { TranslateMessage(&msg); DispatchMessageA(&msg); }
         }
         dlg.OnRender(&dlgSurf, &text);
@@ -468,7 +605,7 @@ static MenuState Skirmish_Setup_Screen() {
     return result;
 }
 
-// ---- ShowExitDialog ----
+// ---- ShowExitDialog (IDA Menu_Select case 6: "GUI:ExitAreYouSure") ----
 static char ShowExitDialog() {
     DDrawContext* ctx = DDraw_GetContext();
     if (!ctx || !ctx->back_buffer) return 1;
@@ -489,14 +626,16 @@ static char ShowExitDialog() {
     dlg.AddGadget(&btnYes); dlg.AddGadget(&btnNo);
 
     DSurface dlgSurf(ctx->width, ctx->height, false, false);
-    TextRenderer text; text.Init(ctx->width, ctx->height);
+    TextRenderer text;
+    text.Init(ctx->width, ctx->height);
 
     while (!dlg.IsFinished()) {
         MSG msg;
         while (PeekMessageA(&msg, nullptr, 0, 0, PM_REMOVE)) {
             if (msg.message == WM_QUIT) { result = 1; return result; }
             if (msg.message == WM_KEYDOWN && msg.wParam == VK_ESCAPE) { result = 0; dlg.m_finished = true; break; }
-            if (msg.message == WM_LBUTTONDOWN) dlg.OnMouseClick(LOWORD(msg.lParam), HIWORD(msg.lParam));
+            if (msg.message == WM_LBUTTONDOWN)
+                dlg.OnMouseClick(LOWORD(msg.lParam), HIWORD(msg.lParam));
             else { TranslateMessage(&msg); DispatchMessageA(&msg); }
         }
         dlg.OnRender(&dlgSurf, &text);
@@ -507,10 +646,10 @@ static char ShowExitDialog() {
     return result;
 }
 
-// ---- stubs ----
-static bool Game_Frame_Loop(){return true;}
-static bool Game_Frame_Check(){return false;}
-static void Main_Game_Frame(){Event_Dispatch();}
+// ---- stubs for in-game logic (not yet implemented) ----
+static bool      Game_Frame_Loop(){return true;}
+static bool      Game_Frame_Check(){return false;}
+static void      Main_Game_Frame(){Event_Dispatch();}
 
 // ---- Menu_Select (IDA 0x52D9A0) ----
 char Menu_Select(){
@@ -536,7 +675,7 @@ char Menu_Select(){
         case MenuState::NetworkGameFlow: case MenuState::NetworkGameFlow2: goto L81;
         case MenuState::MenuIdle: g_MenuState=MainMenu_Screen(); break;
         }continue;
-    L81:switch(g_GameMode){
+L81:    switch(g_GameMode){
         case GMODE_MENU: g_MenuState=MenuState::MenuIdle; break;
         case GMODE_CAMPAIGN: case GMODE_CAMPAIGN_SUB: return 1;
         case GMODE_INTERNET: return 1;
@@ -546,6 +685,7 @@ char Menu_Select(){
     }
 }
 
+// ---- Main_Game (IDA 0x48CCC0) ----
 void Main_Game(){
     LOG_INFO("Main_Game: entering");
     int r;
