@@ -185,7 +185,8 @@ void* FileSystem::LoadByHash(uint32_t hash)
         void* buf = malloc(sz);
         if (buf && mix->Extract(idx, buf, sz)) {
             const char* name = xcc::XccLookup(hash);
-            LOG_INFO("FileSystem::LoadByHash 0x%08X (%s): %d bytes", hash, name ? name : "?", sz);
+            LOG_INFO("FileSystem::LoadByHash 0x%08X (%s): %d bytes from [%d]%s",
+                hash, name ? name : "?", sz, i, mix->FileName ? mix->FileName : "?");
             return buf;
         }
         free(buf);

@@ -459,6 +459,27 @@ void MixFileClass::Bootstrap()
 
     LOG_INFO("MixFileClass::Bootstrap: done, %d MIX files in pool", g_mixPool.Count);
 
+    // Reorder: expansion ("md") MIXes must come AFTER base MIXes so
+    // reverse search finds them first (overriding base versions).
+    // e.g. langmd.mix overrides language.mix for ra2ts_l.bik
+    {
+        int remaining = g_mixPool.Count;
+        for (int i = 0; i < remaining; ) {
+            if (!g_mixPool[i] || !g_mixPool[i]->FileName) { ++i; continue; }
+            const char* name = g_mixPool[i]->FileName;
+            int len = (int)strlen(name);
+            if (len > 6 && _stricmp(name + len - 6, "md.mix") == 0) {
+                MixFileClass* mdMix = g_mixPool[i];
+                g_mixPool.RemoveItem(i);
+                g_mixPool.AddItem(mdMix);
+                --remaining; // one less item before the end zone
+                // Don't ++i — check the item that shifted into position i
+            } else {
+                ++i;
+            }
+        }
+    }
+
     // Recursively extract sub-MIX files by trying to load every entry
     // from the top-level MIX files as encrypted MIX
     int processed = 0;
