@@ -181,50 +181,50 @@ static MenuState MainMenu_Screen() {
     DialogClass dlg(0, 0, ctx->width, ctx->height);
     LOG_DEBUG("[MENU] Dialog created: %dx%d", ctx->width, ctx->height);
 
+    // === Menu layout (matching original 800×600 dialog centered in screen) ===
+    // Original positions from dialog template 0xE2 (approximate):
+    //   BINK player at (0,0) within dialog, 632×570
+    //   Buttons right side, version bottom-right
+    int dialogW = 800, dialogH = 600;
+    int dialogX = (ctx->width  - dialogW) / 2;  // match SetWindowPos centering
+    int dialogY = (ctx->height - dialogH) / 2;
+
+    // BINK position (left side of centered dialog)
+    int bikX = dialogX;
+    int bikY = dialogY;
+
+    // Right panel (button area)
+    int panelX = dialogX + (int)(dialogW * 0.65f);  // ~65% from left
+    int panelW = dialogX + dialogW - panelX;
+    int btnW = (int)(panelW * 0.85f);
+    int btnH = 32;
+    int btnStartY = dialogY + 100;
+    int btnGap = 42;
+
     MenuState states[] = {MenuState::Campaign, MenuState::Skirmish,
                           MenuState::Multiplayer, MenuState::Options,
                           MenuState::ExitConfirm};
     const char* colors[] = {"[Campaign]","[Skirmish]","[Multiplayer]","[Options]","[Exit]"};
 
-    // Original RA2/YR layout: buttons on the right side, vertically stacked
-    // Using 800×600 reference coordinates scaled to screen:
-    //   Original: btn_x ~520, btn_y ~150-420, btn_w ~200, btn_h ~30, gap ~35
-    float scaleX = ctx->width  / 800.0f;
-    float scaleY = ctx->height / 600.0f;
-    int btn_w = (int)(200 * scaleX);
-    int btn_h = (int)( 30 * scaleY);
-    int btn_x = ctx->width - (int)(250 * scaleX);  // right side
-    int btn_y = (int)(150 * scaleY);
-    int gap   = (int)( 35 * scaleY);
-
     if (haveButtons) {
         LOG_DEBUG("[MENU] Creating SHP buttons...");
-        bool anyValid = false;
         for (int i = 0; i < kMenuButtonCount; i++) {
             if (!btnSHPs[i]) continue;
             int bw = btnSHPs[i]->GetWidth(), bh = btnSHPs[i]->GetHeight();
-            if (bw < 20 || bh < 10 || bw > 800 || bh > 200) {
-                LOG_WARN("[MENU] btn[%d] invalid size %dx%d, skipping SHP", i, bw, bh);
-                continue;
-            }
-            anyValid = true;
-            int by = btn_y + i * (bh + gap);
-            auto* btn = new ShpButtonClass(kMenuButtonHashes[i], btn_x, by,
-                                           btnSHPs[i], g_palette);
+            if (bw < 20 || bh < 10 || bw > 800 || bh > 200) continue;
+            int bx = panelX + (panelW - bw) / 2;
+            int by = btnStartY + i * (bh + btnGap);
+            auto* btn = new ShpButtonClass(kMenuButtonHashes[i], bx, by,
+                                            btnSHPs[i], g_palette);
             MenuState s = states[i];
             btn->Callback = [&dlg, s]() { dlg.Finish(static_cast<int>(s)); };
             dlg.AddGadget(btn);
-            LOG_DEBUG("[MENU]   btn[%d] %dx%d at (%d,%d)", i, bw, bh, btn_x, by);
-        }
-        if (!anyValid) {
-            LOG_WARN("[MENU] No valid SHP buttons, falling back to text");
-            haveButtons = false;
         }
     }
     if (!haveButtons) {
-        LOG_DEBUG("[MENU] No valid SHP buttons, falling back to text");
         for (int i = 0; i < kMenuButtonCount; i++) {
-            auto* btn = new TextButtonClass(0, colors[i], btn_x, btn_y + i * gap, btn_w, btn_h);
+            int bx = panelX + (panelW - 200) / 2;
+            auto* btn = new TextButtonClass(0, colors[i], bx, btnStartY + i * btnGap, 200, btnH);
             MenuState s = states[i];
             btn->Callback = [&dlg, s]() { dlg.Finish(static_cast<int>(s)); };
             dlg.AddGadget(btn);
@@ -302,15 +302,27 @@ static MenuState MainMenu_Screen() {
             uint16_t* buf = (uint16_t*)surfDesc.lpSurface;
             int pitch = surfDesc.lPitch / 2;
 
-            // 2a. Render BINK directly into locked buffer
+            // 2a. Render BINK centered in left panel with dialog offset
             if (bikBg && bikBg->IsPlaying()) {
                 auto* bink = dynamic_cast<BinkMovieHandle*>(bikBg);
                 if (bink) {
-                    bink->RenderFrameRaw(surfDesc.lpSurface, surfDesc.lPitch, ctx->height);
+                    bink->RenderFrameRaw(surfDesc.lpSurface, surfDesc.lPitch,
+                                         ctx->height, bikX, bikY);
                 }
             }
 
-            // 2b. Dark navy background (only if no BINK)
+            // 2b. Dark background for right panel
+            if (dialogY < 0) dialogY = 0;
+            int panelEnd = dialogX + dialogW;
+            int panelBottom = dialogY + dialogH;
+            if (panelEnd > ctx->width) panelEnd = ctx->width;
+            if (panelBottom > ctx->height) panelBottom = ctx->height;
+            uint16_t panelBg = 0x1082;
+            for (int y = dialogY; y < panelBottom; y++)
+                for (int x = panelX; x < panelEnd; x++)
+                    buf[y * pitch + x] = panelBg;
+
+            // 2c. Dark navy background (only if no BINK)
             if (!bikBg || !bikBg->IsPlaying()) {
                 uint16_t bg = 0x1082;
                 for (int y = 0; y < ctx->height; y++)

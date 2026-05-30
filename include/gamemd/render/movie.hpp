@@ -52,7 +52,8 @@ public:
     virtual void RenderFrame(DSurface* target) override;
     virtual void Stop() override;
 
-    void RenderFrameRaw(void* locked_buffer, int pitch_bytes, int height);
+    void RenderFrameRaw(void* locked_buffer, int pitch_bytes, int height,
+                        int dest_x = 0, int dest_y = 0);
 
     int  GetCurrentFrame() const { return m_current_frame; }
     int  GetTotalFrames()  const { return m_total_frames; }

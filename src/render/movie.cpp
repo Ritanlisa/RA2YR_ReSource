@@ -425,7 +425,8 @@ void BinkMovieHandle::RenderFrame(DSurface* target)
     }
 }
 
-void BinkMovieHandle::RenderFrameRaw(void* locked_buffer, int pitch_bytes, int height)
+void BinkMovieHandle::RenderFrameRaw(void* locked_buffer, int pitch_bytes, int height,
+                                     int dest_x, int dest_y)
 {
     if (!locked_buffer || !m_playing) return;
 
@@ -433,7 +434,7 @@ void BinkMovieHandle::RenderFrameRaw(void* locked_buffer, int pitch_bytes, int h
         if (s_BinkWait) s_BinkWait(m_bink_handle);
 
         s_BinkCopyToBuffer(m_bink_handle, locked_buffer,
-                           pitch_bytes, height, 0, 0,
+                           pitch_bytes, height, dest_x, dest_y,
                            m_surface_flags);
 
         if (m_current_frame == 1) {
@@ -443,7 +444,7 @@ void BinkMovieHandle::RenderFrameRaw(void* locked_buffer, int pitch_bytes, int h
             for (int y = 0; y < 10; y++)
                 for (int x = 0; x < 632; x++)
                     if (p[y * pPitch + x] != 0) nz++;
-            LOG_DEBUG("BinkMovie::RenderFrameRaw f1: %d non-zero pixels (fmt_code=%d)", nz, m_surface_flags);
+            LOG_DEBUG("BinkMovie::RenderFrameRaw f1: %d nz px at (%d,%d) fmt=%d", nz, dest_x, dest_y, m_surface_flags);
         }
     }
     if (s_BinkNextFrame) s_BinkNextFrame(m_bink_handle);
