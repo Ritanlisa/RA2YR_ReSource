@@ -295,17 +295,17 @@ bool BinkMovieHandle::OpenFromFile(const char* filename, DSurface* render_target
     // Query surface pixel format
     if (render_target && render_target->Surface && s_BinkDDSurfaceType) {
         m_surface_flags = s_BinkDDSurfaceType(render_target->Surface);
-        LOG_DEBUG("BinkMovie: _BinkDDSurfaceType returned 0x%08X", m_surface_flags);
-        if (m_surface_flags < 0x1000) {
-            m_surface_flags = 0x20000000;
-            LOG_DEBUG("BinkMovie: overriding invalid flags -> 0x20000000 (RGB565)");
+        LOG_DEBUG("BinkMovie: _BinkDDSurfaceType returned fmt_code=%d", m_surface_flags);
+        if (m_surface_flags < 0 || m_surface_flags > 15) {
+            m_surface_flags = 10;
+            LOG_DEBUG("BinkMovie: invalid code, defaulting to 10 (RGB565)");
         }
     } else {
-        m_surface_flags = 0x20000000;
+        m_surface_flags = 10;
     }
 
     m_playing = true;
-    LOG_INFO("BinkMovie::OpenFromFile: %dx%d, %d frames, flags=0x%08X",
+    LOG_INFO("BinkMovie::OpenFromFile: %dx%d, %d frames, fmt_code=%d",
         m_width, m_height, m_total_frames, m_surface_flags);
     return true;
 }
@@ -347,18 +347,16 @@ bool BinkMovieHandle::OpenFromMemory(const void* data, int size, DSurface* rende
         return false;
     }
 
-    // Query surface pixel format: sub_432750 — *(this+8) = BinkDDSurfaceType(surface)
+    // Query surface pixel format code from BinkDDSurfaceType
     if (render_target && render_target->Surface && s_BinkDDSurfaceType) {
         m_surface_flags = s_BinkDDSurfaceType(render_target->Surface);
-        LOG_DEBUG("BinkMovie: _BinkDDSurfaceType returned 0x%08X", m_surface_flags);
-        // cnc-ddraw system-memory offscreen surfaces don't provide valid DDPIXELFORMAT.
-        // _BinkDDSurfaceType may return invalid flags (<0x1000). Use known good default.
-        if (m_surface_flags < 0x1000) {
-            m_surface_flags = 0x20000000;  // RGB565 (16-bit 5:6:5 from SetDisplayMode(..., 16, ...))
-            LOG_DEBUG("BinkMovie: overriding invalid flags → 0x20000000 (RGB565)");
+        LOG_DEBUG("BinkMovie: _BinkDDSurfaceType returned format code %d", m_surface_flags);
+        if (m_surface_flags < 0 || m_surface_flags > 15) {
+            m_surface_flags = 10;  // default RGB565
+            LOG_DEBUG("BinkMovie: invalid code, defaulting to 10 (RGB565)");
         }
     } else {
-        m_surface_flags = 0x20000000;  // default RGB565
+        m_surface_flags = 10;
     }
 
     m_playing = true;
@@ -433,27 +431,20 @@ void BinkMovieHandle::RenderFrameRaw(void* locked_buffer, int pitch_bytes, int h
 
     if (m_bink_handle && s_BinkCopyToBuffer) {
         if (s_BinkWait) s_BinkWait(m_bink_handle);
-        
-        // Test: copy to a properly-sized buffer instead of full surface
-        int bink_pitch = m_width * 2;  // 632 * 2 = 1264 bytes
-        void* test_buf = malloc(bink_pitch * m_height);
-        if (test_buf) {
-            memset(test_buf, 0xCD, bink_pitch * m_height);  // fill with 0xCDCD to detect writes
-            s_BinkCopyToBuffer(m_bink_handle, test_buf, bink_pitch, m_height, 0, 0, m_surface_flags);
-            
-            if (m_current_frame < 3) {
-                uint16_t* p = (uint16_t*)test_buf;
-                int nonZero = 0;
-                for (int i = 0; i < 1000; i++)
-                    if (p[i] != 0xCDCD) nonZero++;
-                LOG_DEBUG("BinkMovie::RenderFrameRaw f%d: test_buf non-0xCDCD=%d (0)=0x%04X (100)=0x%04X",
-                    m_current_frame, nonZero, p[0], p[100]);
-            }
-            free(test_buf);
+
+        s_BinkCopyToBuffer(m_bink_handle, locked_buffer,
+                           pitch_bytes, height, 0, 0,
+                           m_surface_flags);
+
+        if (m_current_frame == 1) {
+            uint16_t* p = (uint16_t*)locked_buffer;
+            int pPitch = pitch_bytes / 2;
+            int nz = 0;
+            for (int y = 0; y < 10; y++)
+                for (int x = 0; x < 632; x++)
+                    if (p[y * pPitch + x] != 0) nz++;
+            LOG_DEBUG("BinkMovie::RenderFrameRaw f1: %d non-zero pixels (fmt_code=%d)", nz, m_surface_flags);
         }
-        
-        // Also copy to the actual surface
-        s_BinkCopyToBuffer(m_bink_handle, locked_buffer, pitch_bytes, height, 0, 0, m_surface_flags);
     }
     if (s_BinkNextFrame) s_BinkNextFrame(m_bink_handle);
 }
