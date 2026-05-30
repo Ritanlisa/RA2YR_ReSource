@@ -399,7 +399,6 @@ bool BinkMovieHandle::AdvanceFrame()
             m_playing = false;
             return false;
         }
-        if (s_BinkWait) s_BinkWait(m_bink_handle);
         m_frame_decoded = true;
         ++m_current_frame;
         return true;
