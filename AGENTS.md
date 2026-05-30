@@ -730,7 +730,7 @@ make _WIN32_WINNT=0x0400
 | 存根/空实现 | ~200+ |
 | TODO/FIXME标记 | 252 (src 205 + headers 47) |
 | 未命名成员 | 34 (BuildingClass 17 + Infantry 6 + Unit 3 + Aircraft 8) |
-| IDA 命名函数 | **245** (新增 17: 菜单系统深度命名) |
+| IDA 命名函数 | **252** (新增 7: 菜单系统深入) |
 | IDA 命名全局变量 | **44** (新增 8: DDraw + Surface globals) |
 | 构建状态 | 0 errors, 0 warnings |
 
@@ -1111,6 +1111,117 @@ case 9 (INTRO/BINK):
 
 ### Campaign_Screen 通用对话框架构 (0x60D380)
 
+```
+Campaign_Screen(template_id):
+  ├── Dialog_Create(template_id) → ShowWindow → SetForegroundWindow
+  ├── Timer_PumpMessages (注册定时器/screen saver延迟?)
+  ├── 若参数=1: BINK_Background_Setup()
+  ├── while dwNewLong==0:
+  │     ├── Dialog_MessageLoop()
+  │     ├── if GameMode==0||5||byte_A8D60E||dword_A8DAB4:
+  │     │     Event_Dispatch()
+  │     └── else if !sub_55CBF0 && Game_Frame_Loop(): break
+  └── Dialog_Destroy → 返回 dwNewLong (下一状态)
+
+注意：Campaign_Screen 是**通用对话框包装器**，被 4 个调用方复用——不仅是战役屏幕，
+也作为 Skirmish 地图选择、多人模式设置等屏幕的模板。返回值决定下一步状态。
+
+### CampaignMenu_DlgProc (0x52D640) — 战役菜单对话框过程
+
+| DlgItem ID | 功能 | 状态设置 |
+|------------|------|----------|
+| 1673 (0x689) | Load Game 按钮 | state=9 |
+| 1674 (0x68A) | New Game 按钮 | state=10 |
+| 1672 (0x688) | Start Scenario 按钮 | state=8 |
+| 1401 (0x579) | Skirmish 按钮 | state=11 |
+| 1670 (0x686) | Back to Main Menu | state=18 |
+| 1818 (0x71A) | BINK 背景播放器 | WM_CLOSE 时清理 (0x4F0) |
+| 0x497 | 存档查询事件 | LoadOptions_Constructor→LoadOptions_Check→EnableWindow |
+
+### Options_Screen 控件ID对照表 (Options_Screen_Save @ 0x55FAA0)
+
+| DlgItem ID | 类型 | 全局变量 | 功能 |
+|------------|------|----------|------|
+| 1323 | Radio Button | lParam (2-way) | 音效/音乐开关 → stru_87F7E8 |
+| 1295 | Slider (0-4) | dword_A8EB64 | 游戏速度 |
+| 1537 | Checkbox | byte_A8EB7E | 卷屏模式 |
+| 1540 | Checkbox | MCV_DeployModeEnabled | MCV 自动部署 |
+| 1538 | Checkbox | byte_A8EB80 | 其他开关 |
+| 1322 | Slider | dword_A8EB70 | 6 - slider = 音量级数 |
+| 1327 | Slider (×0.1) | sub_5FA4A0 → flt_A8EBA0 | 音效音量 (0.0-1.0) |
+| 1330 | Slider (×0.1) | sub_5FA510 | 音乐音量 |
+| 1334 | Slider (×0.1) | sub_5FA590 | 语音/通知音量 |
+
+### Dialog 系统架构 (Win32 CreateDialogIndirectParamA 封装)
+
+```
+Dialog_Create(template_id, dlg_proc, lParam)
+  ├── Resource_Find(template_id, type=5) → DLGTEMPLATE*
+  ├── CreateDialogIndirectParamA(g_hInstance, template, g_hWnd, dlg_proc, lParam)
+  │     启动模态对话框 (非真正模态—消息循环由调用方手动运行)
+  └── 注册到内部跟踪数组 (dword_B72F50)
+
+Dialog_BaseProc(hWnd, msg, wParam, lParam)
+  ├── 默认对话框过程 — 56 基本块
+  ├── 处理 WM_INITDIALOG / WM_COMMAND / WM_PAINT / WM_CTLCOLOR*
+  └── 由各子对话框过程调用 (59 个调用方)
+
+Dialog_Show(hWnd)    → ShowWindow(SW_SHOW) + SetWindowPos
+Dialog_Destroy(hWnd) → DestroyWindow + 跟踪数组清理
+
+Dialog_MessageLoop()
+  ├── GameLoop_MessagePump(&Msg, 0, 0, 0, 0) — 自定义 PeekMessage
+  ├── Message_IsDialog(&Msg) — 判断消息是否属于当前对话框
+  ├── TranslateMessage + DispatchMessageA
+  └── CopyProtection_NotifyLauncher hook
+
+Dialog_PumpMessages() — 便捷封装 (27 调用方)
+  ├── Dialog_MessageLoop()
+  ├── if GameMode==0||5: Event_Dispatch()
+  └── if in-game: sub_55CBF0()→Game_Frame_Loop()
+```
+
+### 菜单渲染架构 (IDA 逆向)
+```
+MainMenu_Screen (0x531CC0)
+  ├── 创建对话框模板 0xE2 + DlgItem 1818 BINK背景控件
+  ├── 屏幕宽度 > 800 → 居中偏移计算
+  ├── DlgItem 1818: 宽屏模式用 ra2ts_l.bik / 窄屏用 ra2ts_s.bik
+  ├── 发送 0x4E3 → 初始化 BINK 播放器
+  ├── 发送 0x4E4 + "Ra2ts_l" / "Ra2ts_s" → 设置 BINK 文件
+  ├── 循环: Dialog_PumpMessages() [timeout=3600 frames(60s)]
+  │     ├── 若 bp[0xEA]->Screen_Capture 被触发 → Frame_Present 重绘
+  │     └── 返回状态码 → Menu_Select 状态机
+  └── WM_CLOSE: SendMessage(DlgItem 1818, 0x4F0) → 清理 BINK
+```
+
+### 过场动画处理 (case 9)
+```
+case 9 (INTRO/BINK):
+  dword_A8E7AC++ → Credits_Screen() → dword_A8E7AC--
+  sub_558740() → Movie/Cinematic 播放 ("RENEGADE.BIK" 等)
+  sub_5587F0() → 检查返回状态
+  sub_558790() → 清理
+  若成功 → v56=1 (跳过intro) → 直接进游戏
+  否则 → 回到 case 1 (Campaign菜单)
+```
+
+### Campaign_Screen 通用对话框架构 (0x60D380)
+
+```
+Campaign_Screen(template_id):
+  ├── Dialog_Create(template_id) → ShowWindow → SetForegroundWindow
+  ├── Timer_PumpMessages (注册定时器/screen saver延迟?)
+  ├── 若参数=1: BINK_Background_Setup()
+  ├── while dwNewLong==0:
+  │     ├── Dialog_MessageLoop()
+  │     ├── if GameMode==0||5||byte_A8D60E||dword_A8DAB4:
+  │     │     Event_Dispatch()
+  │     └── else if !sub_55CBF0 && Game_Frame_Loop(): break
+  └── Dialog_Destroy → 返回 dwNewLong (下一状态)
+
+注意：Campaign_Screen 是**通用对话框包装器**，被 4 个调用方复用——不仅是战役屏幕，
+也作为 Skirmish 地图选择、多人模式设置等屏幕的模板。返回值决定下一步状态。
 ```
 Campaign_Screen(template_id):
   ├── Dialog_Create(template_id) → ShowWindow → SetForegroundWindow

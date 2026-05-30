@@ -84,15 +84,17 @@ public:
     void SetVisible(bool visible);
     bool IsVisible() const { return m_visible; }
     bool IsFinished() const { return m_finished; }
+    void Finish(int result) { m_finished = true; m_result = result; }
     int GetResult() const { return m_result; }
+
+    bool m_finished = false;
+    int m_result = 0;
 
 protected:
     void DrawBackground(DSurface* surface);
 
     int m_x, m_y, m_w, m_h;
     bool m_visible = true;
-    bool m_finished = false;
-    int m_result = 0;
     std::vector<GadgetClass*> m_gadgets;
 };
 

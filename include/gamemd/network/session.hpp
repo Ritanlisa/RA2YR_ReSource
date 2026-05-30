@@ -124,7 +124,7 @@ public:
 
     bool IsCampaign()  const { return GameMode == GameMode::Campaign; }
     bool IsSkirmish()  const { return GameMode == GameMode::Skirmish; }
-    bool IsMultiplayer() const { return GameMode == GameMode::LAN || GameMode == GameMode::Internet; }
+    bool IsMultiplayer() const { return GameMode == GameMode::Internet || GameMode == GameMode::Skirmish; }
 
     // TODO: complete SessionClass members
 

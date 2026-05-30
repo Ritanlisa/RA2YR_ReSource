@@ -676,12 +676,17 @@ enum class HealthState : unsigned
     Green  = 2
 };
 
+// Confirmed from IDA Menu_Select (0x52D9A0) case 16/17 dispatch
+// switch(GameMode_Current): 0=Menu, 1=Campaign, 2=CampaignSub,
+// 3=Internet/WOL, 4=Skirmish/LAN, 5=SkirmishSetup/NetworkCampaign
 enum class GameMode : unsigned
 {
-    Campaign = 0x0,
-    LAN      = 0x3,
-    Internet = 0x4,
-    Skirmish = 0x5
+    Menu           = 0x0,
+    Campaign       = 0x1,
+    CampaignSub    = 0x2,
+    Internet       = 0x3,
+    Skirmish       = 0x4,
+    SkirmishSetup  = 0x5
 };
 
 enum class InfDeath : unsigned
