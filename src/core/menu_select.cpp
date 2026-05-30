@@ -284,27 +284,35 @@ static MenuState MainMenu_Screen() {
     while (!dlg.IsFinished()) {
         ++loopCount;
 
-        // === 1. Render BINK background to dlgSurf ===
+        // === 1. Advance BINK frame (decodes next frame) ===
+        bool bikAdvanced = false;
         if (bikBg && bikBg->IsPlaying()) {
-            bool advanced = bikBg->AdvanceFrame();
-            bikBg->RenderFrame(&dlgSurf);
+            bikAdvanced = bikBg->AdvanceFrame();
             if (loopCount == 1 || loopCount % 60 == 0) {
                 auto* bink = dynamic_cast<BinkMovieHandle*>(bikBg);
                 LOG_DEBUG("[MENU] Frame %d: advanced=%d (cur=%d/%d)",
-                    loopCount, advanced,
+                    loopCount, bikAdvanced,
                     bink ? bink->GetCurrentFrame() : -1,
                     bink ? bink->GetTotalFrames()  : -1);
             }
         }
 
-        // === 2. Lock dlgSurf, draw button rectangles manually ===
+        // === 2. Lock dlgSurf ONCE, render BINK + buttons + text in same session ===
         DDSURFACEDESC2 surfDesc = {};
         surfDesc.dwSize = sizeof(surfDesc);
         if (SUCCEEDED(dlgSurf.Surface->Lock(nullptr, &surfDesc, DDLOCK_WAIT, nullptr))) {
             uint16_t* buf = (uint16_t*)surfDesc.lpSurface;
             int pitch = surfDesc.lPitch / 2;
 
-            // Dark navy background (only if no BINK)
+            // 2a. Render BINK directly into locked buffer (same Lock = same buffer)
+            if (bikBg && bikBg->IsPlaying()) {
+                auto* bink = dynamic_cast<BinkMovieHandle*>(bikBg);
+                if (bink) {
+                    bink->RenderFrameRaw(surfDesc.lpSurface, surfDesc.lPitch, ctx->height);
+                }
+            }
+
+            // 2b. Dark navy background (only if no BINK)
             if (!bikBg || !bikBg->IsPlaying()) {
                 uint16_t bg = 0x1082;
                 for (int y = 0; y < ctx->height; y++)

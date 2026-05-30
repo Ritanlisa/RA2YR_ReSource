@@ -347,16 +347,14 @@ void BinkMovieHandle::RenderFrame(DSurface* target)
     if (!target || !m_playing) return;
 
     if (m_bink_handle && s_BinkCopyToBuffer) {
-        // sub_432E40: Lock → BinkCopyToBuffer(surface_flags) → Unlock
         DDSURFACEDESC2 desc = {};
         desc.dwSize = sizeof(desc);
         if (SUCCEEDED(target->Surface->Lock(nullptr, &desc, DDLOCK_WAIT, nullptr))) {
             s_BinkCopyToBuffer(m_bink_handle, desc.lpSurface,
                                desc.lPitch, m_height, 0, 0,
-                               m_surface_flags);  // from _BinkDDSurfaceType
+                               m_surface_flags);
             target->Surface->Unlock(nullptr);
         }
-        // sub_432E40: BinkNextFrame after CopyToBuffer
         if (s_BinkNextFrame) s_BinkNextFrame(m_bink_handle);
         return;
     }
@@ -374,6 +372,19 @@ void BinkMovieHandle::RenderFrame(DSurface* target)
             target->Surface->Unlock(nullptr);
         }
     }
+}
+
+void BinkMovieHandle::RenderFrameRaw(void* locked_buffer, int pitch_bytes, int height)
+{
+    if (!locked_buffer || !m_playing) return;
+
+    if (m_bink_handle && s_BinkCopyToBuffer) {
+        s_BinkCopyToBuffer(m_bink_handle, locked_buffer,
+                           pitch_bytes, height, 0, 0,
+                           m_surface_flags);
+    }
+    // sub_432E40: BinkNextFrame after CopyToBuffer
+    if (s_BinkNextFrame) s_BinkNextFrame(m_bink_handle);
 }
 
 void BinkMovieHandle::Stop()
