@@ -188,6 +188,23 @@ static MenuState MainMenu_Screen() {
     DSurface dlgSurf(ctx->width, ctx->height, false, false);
     TextRenderer text;
 
+    // Try to load BINK background from MIX (ra2ts_l.bik for >640, ra2ts_s.bik for 640)
+    MovieHandle* bikBg = nullptr;
+    uint32_t bikHash = (ctx->width > 640) ? 0x33665128 : 0xC1E6E166;
+    void* bikData = FileSystem::LoadByHash(bikHash);
+    if (bikData) {
+        // Need to get the file size for BINK loading
+        // Since LoadByHash returns extracted data, we need to know its size
+        // For now, use a reasonable max
+        bikBg = MoviePlayer::CreateMovie("ra2ts_l.bik", &dlgSurf);
+        if (!bikBg) {
+            // Fall back: try loading from disk if binkw32.dll is available
+            const char* bikName = (ctx->width > 640) ? "ra2ts_l.bik" : "ra2ts_s.bik";
+            bikBg = MoviePlayer::CreateMovie(bikName, &dlgSurf);
+        }
+        free(bikData);
+    }
+
     while (!dlg.IsFinished()) {
         MSG msg;
         while (PeekMessageA(&msg, nullptr, 0, 0, PM_REMOVE)) {
@@ -202,8 +219,11 @@ static MenuState MainMenu_Screen() {
             TranslateMessage(&msg);
             DispatchMessageA(&msg);
         }
-        // Render SHP background with animation
-        if (hasBg && bgImg.GetFrameCount() > 0) {
+        // Render BINK background or SHP fallback
+        if (bikBg && bikBg->IsPlaying()) {
+            bikBg->AdvanceFrame();
+            bikBg->RenderFrame(&dlgSurf);
+        } else if (hasBg && bgImg.GetFrameCount() > 0) {
             if (frame >= bgImg.GetFrameCount()) frame = 0;
             int bx = (ctx->width - bgImg.GetWidth()) / 2;
             int by = (ctx->height - bgImg.GetHeight()) / 2;
@@ -217,6 +237,7 @@ static MenuState MainMenu_Screen() {
     }
 
     result = static_cast<MenuState>(dlg.GetResult());
+    if (bikBg) { bikBg->Stop(); delete bikBg; }
     bgImg.Free();
     dlg.ClearGadgets();
     FreeMenuButtons(btnSHPs);

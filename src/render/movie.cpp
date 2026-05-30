@@ -3,6 +3,8 @@
 #include "gamemd/system/file_system.hpp"
 #include "gamemd/core/logging.hpp"
 
+#include <windows.h>
+#include <ddraw.h>
 #include <cstring>
 #include <cstdio>
 #include <cstdlib>
@@ -101,10 +103,11 @@ MovieHandle* MoviePlayer::CreateMovie(const char* filename, DSurface* render_tar
         return nullptr;
     }
 
-    // Load file data
+    // Load file data from MIX or disk
     void* data = FileSystem::LoadFile(filename, false);
     if (!data) return nullptr;
 
+    // Determine data size (FileSystem doesn't provide size, so we use MIX lookup)
     int size = 0;
     {
         FILE* fp = fopen(filename, "rb");
@@ -114,30 +117,43 @@ MovieHandle* MoviePlayer::CreateMovie(const char* filename, DSurface* render_tar
             fclose(fp);
         }
     }
-    if (size <= 0) { free(data); return nullptr; }
+    // If size is 0 (MIX-loaded data), use a reasonable max
+    if (size <= 0) size = 64 * 1024 * 1024;  // 64MB upper bound
 
     if (type == MovieType::BINK) {
         auto* movie = new BinkMovieHandle();
         if (!movie) { free(data); return nullptr; }
 
-        LOG_INFO("Movie_Create: opening BINK '%s' (%d bytes)", filename, size);
-        if (movie->OpenFromMemory(data, size, render_target)) {
+        LOG_INFO("Movie_Create: opening BINK '%s' (%d bytes %s)", filename, size,
+                 (size > 64*1024*1024) ? "[from MIX]" : "[from disk]");
+
+        // Copy data so the movie owns it
+        void* buf = malloc(size);
+        if (!buf) { delete movie; free(data); return nullptr; }
+        memcpy(buf, data, size);
+        free(data);
+
+        if (movie->OpenFromMemory(buf, size, render_target)) {
             return movie;
         }
+        free(buf);
         delete movie;
     }
     else if (type == MovieType::VQA) {
         auto* movie = new VQMovieHandle();
         if (!movie) { free(data); return nullptr; }
 
-        LOG_INFO("Movie_Create: opening VQA '%s' (%d bytes)", filename, size);
+        LOG_INFO("Movie_Create: opening VQA '%s'", filename);
         if (movie->OpenFromMemory(data, size)) {
             return movie;
         }
+        free(data);
         delete movie;
     }
+    else {
+        free(data);
+    }
 
-    free(data);
     return nullptr;
 }
 
@@ -190,7 +206,51 @@ void MoviePlayer::StopMovie()
 }
 
 // ---------------------------------------------------------------------------
-// BinkMovieHandle Implementation
+// BINK DLL function pointer types (binkw32.dll imports from IDA 0x7e1590-0x7e15c0)
+// ---------------------------------------------------------------------------
+typedef void*  (__stdcall *BinkOpen_t)(const char* name, uint32_t flags);
+typedef void   (__stdcall *BinkClose_t)(void* bnk);
+typedef int32_t(__stdcall *BinkDoFrame_t)(void* bnk);
+typedef int32_t(__stdcall *BinkCopyToBuffer_t)(void* bnk, void* dest,
+    int32_t dest_pitch, uint32_t dest_height, uint32_t dest_x, uint32_t dest_y, uint32_t flags);
+typedef void   (__stdcall *BinkNextFrame_t)(void* bnk);
+typedef void   (__stdcall *BinkWait_t)(void* bnk);
+typedef int32_t(__stdcall *BinkGetError_t)(void);
+
+static HMODULE s_binkDLL = nullptr;
+static BinkOpen_t s_BinkOpen = nullptr;
+static BinkClose_t s_BinkClose = nullptr;
+static BinkDoFrame_t s_BinkDoFrame = nullptr;
+static BinkCopyToBuffer_t s_BinkCopyToBuffer = nullptr;
+static BinkNextFrame_t s_BinkNextFrame = nullptr;
+static BinkWait_t s_BinkWait = nullptr;
+static BinkGetError_t s_BinkGetError = nullptr;
+
+static bool BinkInit()
+{
+    if (s_binkDLL) return true;
+    s_binkDLL = LoadLibraryA("binkw32.dll");
+    if (!s_binkDLL) return false;
+
+    s_BinkOpen          = (BinkOpen_t)GetProcAddress(s_binkDLL, "_BinkOpen@8");
+    s_BinkClose         = (BinkClose_t)GetProcAddress(s_binkDLL, "_BinkClose@4");
+    s_BinkDoFrame       = (BinkDoFrame_t)GetProcAddress(s_binkDLL, "_BinkDoFrame@4");
+    s_BinkCopyToBuffer  = (BinkCopyToBuffer_t)GetProcAddress(s_binkDLL, "_BinkCopyToBuffer@28");
+    s_BinkNextFrame     = (BinkNextFrame_t)GetProcAddress(s_binkDLL, "_BinkNextFrame@4");
+    s_BinkWait          = (BinkWait_t)GetProcAddress(s_binkDLL, "_BinkWait@4");
+    s_BinkGetError      = (BinkGetError_t)GetProcAddress(s_binkDLL, "_BinkGetError@0");
+
+    if (!s_BinkOpen || !s_BinkDoFrame || !s_BinkCopyToBuffer || !s_BinkClose) {
+        FreeLibrary(s_binkDLL);
+        s_binkDLL = nullptr;
+        return false;
+    }
+    LOG_INFO("binkw32.dll loaded successfully");
+    return true;
+}
+
+// ---------------------------------------------------------------------------
+// BinkMovieHandle Implementation (uses binkw32.dll via dynamic loading)
 // ---------------------------------------------------------------------------
 BinkMovieHandle::~BinkMovieHandle()
 {
@@ -200,54 +260,124 @@ BinkMovieHandle::~BinkMovieHandle()
 bool BinkMovieHandle::OpenFromMemory(const void* data, int size, DSurface* render_target)
 {
     m_render_target = render_target;
+    m_data_size = size;
 
     auto* hdr = static_cast<const BinkFileHeader*>(data);
     m_width  = hdr->width;
     m_height = hdr->height;
     m_current_frame = 0;
+
+    if (!BinkInit()) {
+        // No binkw32.dll — store data for software decode later
+        m_memory_buffer = const_cast<void*>(data);
+        m_memory_owned  = true;  // We own this buffer now
+        m_playing = true;
+        LOG_INFO("BinkMovie: %dx%d, %d frames (software decode mode)", m_width, m_height, hdr->num_frames);
+        return true;
+    }
+
+    // Extract BINK data to temp file for _BinkOpen (BINK 1.x opens files, not memory)
+    char temp_path[MAX_PATH];
+    GetTempPathA(sizeof(temp_path), temp_path);
+    strcat_s(temp_path, "_ra2yr_bink_tmp.bik");
+
+    FILE* fp = nullptr;
+    if (fopen_s(&fp, temp_path, "wb") == 0 && fp) {
+        fwrite(data, 1, size, fp);
+        fclose(fp);
+        m_temp_path = _strdup(temp_path);
+    }
+
+    // Open BINK via binkw32.dll
+    // _BinkOpen(name, flags): flags=0 for normal file, 0x8000000 for no audio
+    m_bink_handle = s_BinkOpen(temp_path, 0x8000000);  // BINKNOAUDIOSKIP + no audio
+    if (!m_bink_handle) {
+        LOG_TRACE("BinkMovie: _BinkOpen failed");
+        return false;
+    }
+
     m_playing = true;
-
-    // Store buffer (the caller frees, unless we copy)
-    m_memory_buffer = const_cast<void*>(data);
-    m_memory_owned  = false;
-    m_bink_handle   = const_cast<void*>(data);  // In real implementation: _BinkOpen(data)
-
-    LOG_INFO("BinkMovie: %dx%d, %d frames", m_width, m_height, hdr->num_frames);
+    LOG_INFO("BinkMovie: %dx%d, %d frames (binkw32.dll)", m_width, m_height, hdr->num_frames);
     return true;
 }
 
 bool BinkMovieHandle::AdvanceFrame()
 {
-    if (!m_playing || !m_bink_handle) return false;
+    if (!m_playing) return false;
 
-    auto* hdr = static_cast<const BinkFileHeader*>(m_bink_handle);
-    if (m_current_frame >= static_cast<int>(hdr->num_frames))
+    if (m_bink_handle) {
+        // Use binkw32.dll
+        if (s_BinkDoFrame(m_bink_handle) == 0)
+            return false;
+        ++m_current_frame;
+        s_BinkNextFrame(m_bink_handle);
+        return true;
+    }
+
+    // Software decode fallback
+    auto* hdr = static_cast<const BinkFileHeader*>(m_memory_buffer);
+    if (!hdr || m_current_frame >= static_cast<int>(hdr->num_frames))
         return false;
-
     ++m_current_frame;
     return true;
 }
 
 void BinkMovieHandle::RenderFrame(DSurface* target)
 {
-    (void)target;
-    // Real implementation: _BinkCopyToBuffer → Lock → memcpy → Unlock
-    LOG_TRACE("BinkMovieHandle::RenderFrame: frame %d", m_current_frame);
+    if (!target || !m_playing) return;
+
+    if (m_bink_handle && s_BinkCopyToBuffer) {
+        // Lock the DDraw surface and copy BINK frame directly
+        DDSURFACEDESC2 desc = {};
+        desc.dwSize = sizeof(desc);
+        if (SUCCEEDED(target->Surface->Lock(nullptr, &desc, DDLOCK_WAIT, nullptr))) {
+            // _BinkCopyToBuffer copies RGB data to destination (top-down)
+            // BINKCOPYALL, BINKCOPY2X, etc.
+            s_BinkCopyToBuffer(m_bink_handle, desc.lpSurface,
+                               desc.lPitch, m_height, 0, 0,
+                               0x80000000);  // BINKSURFACE32
+            target->Surface->Unlock(nullptr);
+        }
+        return;
+    }
+
+    // Software decode placeholder
+    if (m_memory_buffer) {
+        DDSURFACEDESC2 desc = {};
+        desc.dwSize = sizeof(desc);
+        if (SUCCEEDED(target->Surface->Lock(nullptr, &desc, DDLOCK_WAIT, nullptr))) {
+            auto* buf = static_cast<uint16_t*>(desc.lpSurface);
+            int pitch = desc.lPitch / 2;
+            // Fill with dark gray placeholder (no decoder available)
+            for (int y = 0; y < m_height && y < 600; y++)
+                for (int x = 0; x < m_width && x < 800; x++)
+                    buf[y * pitch + x] = 0x39E7;
+            target->Surface->Unlock(nullptr);
+        }
+    }
 }
 
 void BinkMovieHandle::Stop()
 {
     m_playing = false;
+    if (m_bink_handle && s_BinkClose) {
+        s_BinkClose(m_bink_handle);
+    }
+    m_bink_handle = nullptr;
+
     if (m_memory_owned && m_memory_buffer) {
         free(m_memory_buffer);
     }
     m_memory_buffer = nullptr;
-    m_bink_handle   = nullptr;
+
+    // Clean up temp file
+    if (m_temp_path) {
+        DeleteFileA(m_temp_path);
+        free(m_temp_path);
+        m_temp_path = nullptr;
+    }
 }
 
-// ---------------------------------------------------------------------------
-// VQMovieHandle Implementation
-// ---------------------------------------------------------------------------
 VQMovieHandle::~VQMovieHandle()
 {
     Stop();

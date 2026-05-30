@@ -52,18 +52,19 @@ public:
     virtual void RenderFrame(DSurface* target) override;
     virtual void Stop() override;
 
-    // Initialize from loaded BINK file data
     bool OpenFromMemory(const void* data, int size, DSurface* render_target);
 
 private:
-    void*   m_bink_handle   = nullptr;   // HBINK from binkw32.dll
+    void*     m_bink_handle   = nullptr;
+    char*     m_temp_path     = nullptr;
     DSurface* m_render_target = nullptr;
-    int     m_width         = 0;
-    int     m_height        = 0;
-    int     m_current_frame = 0;
-    bool    m_playing       = false;
-    bool    m_memory_owned  = false;
-    void*   m_memory_buffer = nullptr;
+    int       m_width         = 0;
+    int       m_height        = 0;
+    int       m_current_frame = 0;
+    int       m_data_size     = 0;
+    bool      m_playing       = false;
+    bool      m_memory_owned  = false;
+    void*     m_memory_buffer = nullptr;
 };
 
 //
