@@ -231,7 +231,14 @@ static BinkDDSurfaceType_t s_BinkDDSurfaceType = nullptr;
 static bool BinkInit()
 {
     if (s_binkDLL) return true;
-    s_binkDLL = LoadLibraryA("binkw32.dll");
+    
+    // Try exact path first (EXE directory)
+    char exeDir[MAX_PATH];
+    GetModuleFileNameA(nullptr, exeDir, sizeof(exeDir));
+    char* sep = strrchr(exeDir, '\\');
+    if (sep) { *sep = '\0'; strcat_s(exeDir, "\\binkw32.dll"); }
+    s_binkDLL = LoadLibraryA(exeDir);
+    if (!s_binkDLL) s_binkDLL = LoadLibraryA("binkw32.dll");
     if (!s_binkDLL) return false;
 
     s_BinkOpen          = (BinkOpen_t)GetProcAddress(s_binkDLL, "_BinkOpen@8");
@@ -248,7 +255,9 @@ static bool BinkInit()
         s_binkDLL = nullptr;
         return false;
     }
-    LOG_INFO("binkw32.dll loaded successfully");
+    char dllPath[MAX_PATH];
+    GetModuleFileNameA(s_binkDLL, dllPath, sizeof(dllPath));
+    LOG_INFO("binkw32.dll loaded: %s", dllPath);
     return true;
 }
 
@@ -258,6 +267,47 @@ static bool BinkInit()
 BinkMovieHandle::~BinkMovieHandle()
 {
     Stop();
+}
+
+bool BinkMovieHandle::OpenFromFile(const char* filename, DSurface* render_target)
+{
+    m_render_target = render_target;
+
+    if (!BinkInit()) {
+        LOG_TRACE("BinkMovie::OpenFromFile: binkw32.dll not available");
+        return false;
+    }
+
+    // Direct file open — matches original sub_432750: BinkOpen(filename, 0)
+    m_bink_handle = s_BinkOpen(filename, 0);
+    if (!m_bink_handle) {
+        LOG_TRACE("BinkMovie::OpenFromFile: _BinkOpen('%s') failed", filename);
+        return false;
+    }
+
+    // Read dimensions from BINK handle (first 3 DWORDs: Width, Height, Frames)
+    uint32_t* hdr = (uint32_t*)m_bink_handle;
+    m_width  = hdr[0];
+    m_height = hdr[1];
+    m_total_frames = hdr[2];
+    m_current_frame = 0;
+
+    // Query surface pixel format
+    if (render_target && render_target->Surface && s_BinkDDSurfaceType) {
+        m_surface_flags = s_BinkDDSurfaceType(render_target->Surface);
+        LOG_DEBUG("BinkMovie: _BinkDDSurfaceType returned 0x%08X", m_surface_flags);
+        if (m_surface_flags < 0x1000) {
+            m_surface_flags = 0x20000000;
+            LOG_DEBUG("BinkMovie: overriding invalid flags -> 0x20000000 (RGB565)");
+        }
+    } else {
+        m_surface_flags = 0x20000000;
+    }
+
+    m_playing = true;
+    LOG_INFO("BinkMovie::OpenFromFile: %dx%d, %d frames, flags=0x%08X",
+        m_width, m_height, m_total_frames, m_surface_flags);
+    return true;
 }
 
 bool BinkMovieHandle::OpenFromMemory(const void* data, int size, DSurface* render_target)

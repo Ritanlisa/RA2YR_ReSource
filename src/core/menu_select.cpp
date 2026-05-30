@@ -238,7 +238,7 @@ static MenuState MainMenu_Screen() {
     bool textOk = text.Init(ctx->width, ctx->height);
     LOG_DEBUG("[MENU] TextRenderer::Init: %s", textOk ? "OK" : "FAILED");
 
-    // Try BINK background via file handle (matches sub_432750 original)
+    // Try BINK background: extract to EXE dir and open directly (matching original sub_432750)
     MovieHandle* bikBg = nullptr;
     {
         uint32_t bikHash = (ctx->width > 640) ? 0x33665128 : 0xC1E6E166;
@@ -248,20 +248,29 @@ static MenuState MainMenu_Screen() {
         if (bikData) {
             uint32_t bikFileSize = *(const uint32_t*)((const uint8_t*)bikData + 4);
             if (bikFileSize < 100 || bikFileSize > 64*1024*1024) bikFileSize = 8*1024*1024;
-            // Write to EXE directory (not temp) — BINK 1.0q may have temp path issues
+            // Write to EXE dir and keep it (don't delete — BINK needs file on disk)
             FILE* fp = nullptr;
             if (fopen_s(&fp, bikName, "wb") == 0 && fp) {
                 fwrite(bikData, 1, bikFileSize, fp);
                 fclose(fp);
-                bikBg = MoviePlayer::CreateMovie(bikName, &dlgSurf);
-                DeleteFileA(bikName);
+                // Open via direct file path (matching sub_432750 BinkOpen(filename, 0))
+                auto* rawBink = new BinkMovieHandle();
+                if (rawBink->OpenFromFile(bikName, &dlgSurf))
+                    bikBg = rawBink;
+                else
+                    delete rawBink;
             }
             free(bikData);
         }
         if (!bikBg) {
-            bikBg = MoviePlayer::CreateMovie(bikName, &dlgSurf);
+            LOG_DEBUG("[MENU] BINK from MIX failed, trying disk name '%s'", bikName);
+            auto* rawBink = new BinkMovieHandle();
+            if (rawBink->OpenFromFile(bikName, &dlgSurf))
+                bikBg = rawBink;
+            else
+                delete rawBink;
         }
-        LOG_DEBUG("[MENU] BINK background final: %s", bikBg ? "loaded" : "not found");
+        LOG_DEBUG("[MENU] BINK background: %s", bikBg ? "loaded" : "not found");
     }
 
     int loopCount = 0;

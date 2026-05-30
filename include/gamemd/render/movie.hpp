@@ -58,6 +58,7 @@ public:
     int  GetTotalFrames()  const { return m_total_frames; }
 
     bool OpenFromMemory(const void* data, int size, DSurface* render_target);
+    bool OpenFromFile(const char* filename, DSurface* render_target);
 
 private:
     void*     m_bink_handle   = nullptr;
