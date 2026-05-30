@@ -1,0 +1,82 @@
+#pragma once
+
+#include <cstdint>
+#include <cstring>
+#include "gamemd/core/math.hpp"
+#include "gamemd/core/enums.hpp"
+#include "gamemd/render/surface.hpp"
+
+namespace gamemd
+{
+
+// External globals used by the blitter (defined by IDA analysis)
+extern void* g_ZBufferDescriptor;
+extern void* g_VisibleSurfaceDescriptor;
+
+// Forward declares
+struct SHPStruct;
+
+// Pixel blit callback types — these map to the vtable methods on the
+// RLEBlit/BlitTrans template classes found in IDA (50+ variants).
+// The specific variant is selected at runtime based on BlitterFlags.
+
+struct BlitRowFuncs
+{
+    // vtable[0]: per-row blit (translucent/alpha modes)
+    void (__thiscall *BlitRowT)(void* _this, int dest, int* src_pixels,
+                                int count, int stride, unsigned int zbuf,
+                                unsigned int vsurf, int param, int flags, int tint);
+
+    // vtable[1]: direct per-row blit
+    void (__thiscall *BlitRow)(void* _this, int dest, int* src_pixels,
+                               int count, int stride, unsigned int zbuf,
+                               unsigned int vsurf, int param, int flags);
+
+    // vtable[2]: per-row blit with tint color
+    void (__stdcall *BlitRowTint)(int dest, int* src_pixels, int count,
+                                  int param1, int param2, int param3, int tint);
+
+    // vtable[3]: simplest per-row copy
+    void (__stdcall *BlitRowDirect)(int dest, int* src_pixels, int count,
+                                    int param1, int param2, int param3,
+                                    int param4, int param5);
+};
+
+//
+// SHP_Blitter_Copy (IDA: 0x4373B0)
+// Simple direct pixel copy path for non-building SHP rendering.
+// Used when the SHP frame format byte is 0x00 (raw data, not RLE).
+//
+bool SHP_Blitter_Copy(
+    Surface* dest_surface,
+    const RectangleStruct& dest_clip,
+    const RectangleStruct& src_rect,
+    void* blitter_vtable,  // -> BlitRowFuncs or similar per-row callback
+    const RectangleStruct& paint_bounds,
+    int stride_param,
+    int z_param,
+    int flags,
+    int tint_color,
+    int opacity);
+
+//
+// SHP_Blitter_RLEBlit (IDA: 0x437A10)
+// RLE-compressed line draw path for building SHP rendering.
+// Handles variable-length RLE encoded row data with Z-buffer.
+//
+bool SHP_Blitter_RLEBlit(
+    Surface* dest_surface,
+    Surface* src_surface,
+    Surface* z_surface,
+    void* blitter_vtable,
+    const RectangleStruct& clip_rect,
+    int* src_rect,
+    int stride_param,
+    int flags,
+    int tint_color,
+    int opacity,
+    SHPStruct* building_shadow,
+    int zs_x,
+    int zs_y);
+
+} // namespace gamemd

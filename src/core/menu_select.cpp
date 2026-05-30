@@ -9,10 +9,12 @@
 #include "gamemd/render/shp_render.hpp"
 #include "gamemd/render/text_render.hpp"
 #include "gamemd/render/surface.hpp"
+#include "gamemd/render/movie.hpp"
 #include "gamemd/system/file_system.hpp"
 
 namespace gamemd {
 
+// MenuState — matches IDA Menu_Select (0x52D9A0) 19-case switch
 enum class MenuState {
     Reset=-1, MainMenu=0, Campaign=1, Skirmish=2, Multiplayer=3, CampaignSub=4,
     Options=5, ExitConfirm=6, StartScenario=7, WOLInternet=8, SaveLoadGame=9,
@@ -21,6 +23,17 @@ enum class MenuState {
 };
 
 enum { GMODE_MENU=0, GMODE_CAMPAIGN=1, GMODE_CAMPAIGN_SUB=2, GMODE_MULTIPLAYER=3, GMODE_SKIRMISH=4, GMODE_NETWORK_CAMPAIGN=5 };
+
+// DlgItem IDs — matches IDA MainMenu_DlgProc (0x531F60)
+enum {
+    DLG_BINK_PLAYER    = 1818,   // BINK video player control
+    DLG_VERSION_LABEL  = 1821,   // Version info label
+    CMD_CAMPAIGN       = 1667,   // 0x683
+    CMD_SKIRMISH       = 1668,
+    CMD_MULTIPLAYER    = 1400,   // 0x578
+    CMD_OPTIONS        = 1372,   // 0x55C
+    CMD_EXIT           = 1006,   // 0x3EE
+};
 
 static int g_GameMode = 0;
 static MenuState g_MenuState = MenuState::MenuIdle;
@@ -114,19 +127,34 @@ static MenuState MainMenu_Screen() {
     ShpImage bg; bool has_bg=LoadMenuBackground(bg);
 
     // Try to load button SHP graphics by XCC hash
+    // buttonxx.shp buttons from expandmd01.mix:
+    // 0x0D2B157D = button00.shp, ~0x6A = button02.shp, etc.
     ShpImage* btnSHP = LoadUIButton(0x0D2B157D);  // button00.shp
-    ShpImage* tabSHP = LoadUIButton(0x16CD9EF9);   // tabs.shp
     int btnW=200, btnH=30;
     if (btnSHP) { btnW=btnSHP->GetWidth(); btnH=btnSHP->GetHeight(); }
-    else if (tabSHP) { btnW=tabSHP->GetWidth(); btnH=tabSHP->GetHeight(); }
     int cx=ctx->width/2-100,wb=btnW,hb=btnH,y0=ctx->height/2-50;
+
+    // Button layout matching original MainMenu_DlgProc (0x531F60)
+    // IDs from IDA: 1667=Campaign, 1668=Skirmish, 1400=Multiplayer, 1372=Options, 1006=Exit
     MenuButton btns[]={
-        {cx,y0,200,hb,"Campaign",MenuState::Campaign},
-        {cx,y0+40,wb,hb,"Skirmish",MenuState::Skirmish},
+        {cx,y0,200,hb,"Campaign",   MenuState::Campaign},
+        {cx,y0+40,wb,hb,"Skirmish",  MenuState::Skirmish},
         {cx,y0+80,wb,hb,"Multiplayer",MenuState::Multiplayer},
-        {cx,y0+120,wb,hb,"Options",MenuState::Options},
-        {cx,y0+180,wb,hb,"Exit",MenuState::ExitConfirm},
+        {cx,y0+120,wb,hb,"Options",  MenuState::Options},
+        {cx,y0+180,wb,hb,"Exit",     MenuState::ExitConfirm},
     }; const int BN=5;
+
+    // BINK movie background (matches SendMessage 0x4E4 with "Ra2ts_l"/"Ra2ts_s")
+    // In original: ra2ts_l.bik (800x600+) or ra2ts_s.bik (640x480)
+    bool has_bink = false;
+    {
+        const char* bik_name = (ctx->width > 640) ? "ra2ts_l.bik" : "ra2ts_s.bik";
+        MovieType mt = MoviePlayer::DetectFormat(bik_name);
+        has_bink = (mt != MovieType::Unknown);
+        if (has_bink)
+            LOG_INFO("BINK background: %s (format=%d)", bik_name, static_cast<int>(mt));
+    }
+
     int frame=0,fc=0;
     MenuState result=MenuState::MenuIdle; bool done=false;
     while(!done){
@@ -135,14 +163,14 @@ static MenuState MainMenu_Screen() {
         if(SUCCEEDED(surf.Surface->Lock(nullptr,&fdesc,DDLOCK_WAIT,nullptr))){
             uint16_t* buf=(uint16_t*)fdesc.lpSurface;
             int pitch=fdesc.lPitch/2;
-            // Clear
             for(int y=0;y<ctx->height;y++)
                 for(int x=0;x<ctx->width;x++)
                     buf[y*pitch+x]=0x0000;
             // Red border
             for(int x=0;x<ctx->width;x++){buf[0*pitch+x]=0xF800; buf[(ctx->height-1)*pitch+x]=0xF800;}
             for(int y=0;y<ctx->height;y++){buf[y*pitch+0]=0xF800; buf[y*pitch+ctx->width-1]=0xF800;}
-            // Green buttons or SHP button graphics
+
+            // SHP button graphics or green/blue fills
             for(int i=0;i<BN;i++){
                 if(btnSHP && btnSHP->GetFrameCount()>0)
                     btnSHP->RenderToSurface(&surf, 0, btns[i].x, btns[i].y, g_palette);
@@ -156,12 +184,13 @@ static MenuState MainMenu_Screen() {
             surf.Surface->Unlock(nullptr);
         }
 
+        // Render background SHP if available
         if(has_bg&&bg.GetFrameCount()>0){
             int bx=(ctx->width-bg.GetWidth())/2, by=(ctx->height-bg.GetHeight())/2;
             if(frame>=bg.GetFrameCount())frame=0;
             bg.RenderToSurface(&surf,frame,bx,by,g_palette);
         }
-        // Memcpy to back buffer
+        // Memcpy to back buffer + flip
         DDSURFACEDESC2 desc={},src_desc={};
         desc.dwSize=sizeof(desc); src_desc.dwSize=sizeof(src_desc);
         if(SUCCEEDED(ctx->back_buffer->Lock(nullptr,&desc,DDLOCK_WAIT,nullptr))){
@@ -186,7 +215,7 @@ static MenuState MainMenu_Screen() {
             }else{TranslateMessage(&msg);DispatchMessageA(&msg);}
         }if(!done)Event_Dispatch();
     }
-    bg.Free(); delete btnSHP; delete tabSHP; return result;
+    bg.Free(); delete btnSHP; return result;
 }
 
 // ---- stubs ----
