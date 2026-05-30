@@ -10,7 +10,6 @@
 #include "gamemd/render/text_render.hpp"
 #include "gamemd/render/surface.hpp"
 #include "gamemd/render/movie.hpp"
-#include "gamemd/render/bink_control.hpp"
 #include "gamemd/render/font_render.hpp"
 #include "gamemd/system/file_system.hpp"
 #include "gamemd/ui/gadget.hpp"
@@ -174,12 +173,9 @@ static MenuState MainMenu_Screen()
         }
     }
 
-    // Create BINK control (hidden window for lifecycle management)
-    HWND binkWnd = CreateWindowExA(0, "STATIC", "",
-        WS_POPUP, 0, 0, 1, 1, ctx->hwnd, nullptr, GetModuleHandleA(nullptr), nullptr);
-    if (binkWnd) {
-        SetWindowSubclass(binkWnd, BinkPlayerControl::WindowProc, 0, 0);
-        SendMessageA(binkWnd, BINKM_INIT, 1, 0);
+    // Create BINK directly (simple, verified approach)
+    BinkMovieHandle* bikBg = nullptr;
+    {
         const char* bikName = (ctx->width > 640) ? "ra2ts_l.bik" : "ra2ts_s.bik";
         uint32_t bikHash = (ctx->width > 640) ? 0x33665128 : 0xC1E6E166;
         void* bikData = FileSystem::LoadByHash(bikHash);
@@ -190,8 +186,15 @@ static MenuState MainMenu_Screen()
             if (fopen_s(&fp, bikName, "wb") == 0 && fp) { fwrite(bikData, 1, sz, fp); fclose(fp); }
             free(bikData);
         }
-        SendMessageA(binkWnd, BINKM_OPEN, 0, (LPARAM)bikName);
+        auto* bink = new BinkMovieHandle();
+        DSurface tempSurf(ctx->width, ctx->height, false, false);
+        if (bink->OpenFromFile(bikName, &tempSurf)) {
+            bikBg = bink;
+        } else {
+            delete bink;
+        }
     }
+    if (bikBg) LOG_INFO("[MENU] BINK: %dx%d %df", bikBg->GetWidth(), bikBg->GetHeight(), bikBg->GetTotalFrames());
 
     // Button hover state
     bool btnHover[6] = {};
@@ -204,8 +207,6 @@ static MenuState MainMenu_Screen()
     LOG_DEBUG("[MENU] btn_valid: %d/%d/%d/%d/%d/%d", (bool)(btns[0] && btns[0]->GetWidth()>0 && btns[0]->GetHeight()>0), (bool)(btns[1] && btns[1]->GetWidth()>0 && btns[1]->GetHeight()>0), (bool)(btns[2] && btns[2]->GetWidth()>0 && btns[2]->GetHeight()>0), (bool)(btns[3] && btns[3]->GetWidth()>0 && btns[3]->GetHeight()>0), (bool)(btns[4] && btns[4]->GetWidth()>0 && btns[4]->GetHeight()>0), (bool)(btns[5] && btns[5]->GetWidth()>0 && btns[5]->GetHeight()>0));
     LOG_DEBUG("[MENU] MainMenu entering render loop");
 
-    DialogClass dlg(0, 0, ctx->width, ctx->height);
-
     MenuState result = MenuState::MenuIdle;
     int loopCount = 0;
     bool reachedEnd = false;
@@ -213,11 +214,16 @@ static MenuState MainMenu_Screen()
     while (!reachedEnd) {
         ++loopCount;
 
-        BinkPlayerControl* bikCtrl = BinkPlayerControl::FromHwnd(binkWnd);
+        BinkMovieHandle* bik = bikBg;
         bool bikAdvanced = false;
-        if (bikCtrl && bikCtrl->IsPlaying()) {
-            BinkMovieHandle* movie = bikCtrl->Movie();
-            if (movie) bikAdvanced = movie->AdvanceFrame();
+        if (bik && bik->IsPlaying()) {
+            bikAdvanced = bik->AdvanceFrame();
+        }
+
+        if (loopCount == 1 || loopCount % 120 == 0) {
+            LOG_DEBUG("[MENU] Frame %d: bik=%p advanced=%d frame=%d/%d",
+                loopCount, (void*)bik, bikAdvanced,
+                bik ? bik->GetCurrentFrame() : -1, bik ? bik->GetTotalFrames() : -1);
         }
 
         // Render to back buffer in one Lock session
@@ -228,9 +234,8 @@ static MenuState MainMenu_Screen()
             int pitch = desc.lPitch / 2;
 
             // Render BINK
-            if (bikCtrl && bikCtrl->IsPlaying()) {
-                BinkMovieHandle* m = bikCtrl->Movie();
-                if (m) m->RenderFrameRaw(desc.lpSurface, desc.lPitch, ctx->height, bikX, bikY);
+            if (bik && bik->IsPlaying()) {
+                bik->RenderFrameRaw(desc.lpSurface, desc.lPitch, ctx->height, bikX, bikY);
             } else {
                 // Dark navy background
                 for (int y = 0; y < ctx->height; y++)
@@ -293,10 +298,7 @@ static MenuState MainMenu_Screen()
 
     LOG_DEBUG("[MENU] MainMenu exit: result=%d loops=%d", (int)result, loopCount);
 
-    if (binkWnd) {
-        SendMessageA(binkWnd, BINKM_CLOSE, 0, 0);
-        DestroyWindow(binkWnd);
-    }
+    if (bikBg) { bikBg->Stop(); delete bikBg; }
     for (int i = 0; i < 6; i++) delete btns[i];
     return result;
 }

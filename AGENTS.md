@@ -742,11 +742,12 @@ make _WIN32_WINNT=0x0400
 | MIX 文件加载 | ✅ | 16顶层→17子MIX→33池，内存支持 |
 | SHP 解码 | ✅ | TS格式(RLE3+Raw)，`ShpImage::LoadFromMemory` |
 | 调色板 | ✅ | 768字节内容扫描匹配 |
-| SHP 渲染到表面 | ❌ | DrawSHP未实现（仅手动像素写入） |
-| 按钮 SHP 加载 | ✅ | `LoadByHash(0x0D2B157D)`→button00.shp 3384B |
-| 色块按钮交互 | ✅ | 绿色/蓝色方框，ESC退出 |
-| Dialog/Gadget 系统 | ⚠️ | 头文件已定义，未启用 |
-| 主菜单背景 | ❌ | BINK(ra2ts_l.bik)未解码，SHP背景未渲染 |
+| **BINK 视频** | ✅ | 左侧 456×432px, ~30fps, RGB565, 已循环+音频 |
+| BINK 循环 | ✅ | `_BinkDoFrame` 返回 0 表示结束, `_BinkGoto(0)` 复位 |
+| **按钮 (彩色矩形)** | ✅ | 右侧 x=1517, 162×37px, 绿=普通/红=悬停, 文字标签 |
+| 按钮 (SHP 素材) | ❌ | SHP 解析器返回错误尺寸 2x0 (头部 `0000 3400 2000 0200` 非标准) |
+| Dialog/Gadget 系统 | ⚠️ | 头文件已定义，菜单使用 DDraw 直接渲染 |
+| 主菜单 BINK 背景 | ✅ | `ra2ts_l.bik` 632×570 渲染到 456×432 区域 |
 
 ---
 
