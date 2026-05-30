@@ -132,6 +132,78 @@ bool DSurface::FillRect(const RectangleStruct& fill_rect, uint32_t color)
     return FillRectEx(clip, fill_rect, color);
 }
 
+bool DSurface::FillRectWithFlags(
+    const RectangleStruct& clip_rect,
+    const ColorStruct& color,
+    int opacity_percent)
+{
+    (void)clip_rect;
+    (void)color;
+    (void)opacity_percent;
+    return XSurface::FillRectWithFlags(clip_rect, color, opacity_percent);
+}
+
+bool DSurface::DrawLineZBuf(
+    const Point2D& start, const Point2D& end,
+    uint16_t color, int fade_start, int fade_end,
+    bool update_z_buffer)
+{
+    (void)start; (void)end; (void)color;
+    (void)fade_start; (void)fade_end; (void)update_z_buffer;
+    return false;
+}
+
+bool DSurface::DrawLineModulated(
+    const Point2D& start, const Point2D& end,
+    int mod_strength, int fade_start, int fade_end,
+    bool update_z_buffer)
+{
+    (void)start; (void)end; (void)mod_strength;
+    (void)fade_start; (void)fade_end; (void)update_z_buffer;
+    return false;
+}
+
+bool DSurface::DrawLineFaded(
+    const Point2D& start, const Point2D& end,
+    const uint8_t* stipple_pattern,
+    int fade_start, int fade_end,
+    bool z_buffer, float gradient_start,
+    float gradient_step, bool flip_dir)
+{
+    (void)start; (void)end; (void)stipple_pattern;
+    (void)fade_start; (void)fade_end; (void)z_buffer;
+    (void)gradient_start; (void)gradient_step; (void)flip_dir;
+    return false;
+}
+
+bool DSurface::DrawLineZBufColored(
+    const Point2D& start, const Point2D& end,
+    const uint8_t src_rgb[3], float brightness,
+    int fade_start, int fade_end)
+{
+    (void)start; (void)end; (void)src_rgb; (void)brightness;
+    (void)fade_start; (void)fade_end;
+    return false;
+}
+
+bool DSurface::DrawDashedLineStipple(
+    const Point2D& start, const Point2D& end,
+    uint16_t color, const uint8_t stipple[16],
+    int dash_offset, bool update_z)
+{
+    (void)start; (void)end; (void)color; (void)stipple;
+    (void)dash_offset; (void)update_z;
+    return false;
+}
+
+bool DSurface::DrawStippledRect(
+    const Point2D& top_left, const Point2D& bottom_right,
+    uint16_t color, bool fill_interior)
+{
+    (void)top_left; (void)bottom_right; (void)color; (void)fill_interior;
+    return false;
+}
+
 void* DSurface::Lock(int x, int y)
 {
     if (!Surface) return nullptr;
@@ -172,6 +244,22 @@ int DSurface::GetPitch() const
         return desc.lPitch;
     }
     return Width * BytesPerPixel;
+}
+
+bool DSurface::DrawGradientLine(
+    const Point2D& start, const Point2D& end,
+    int palette_idx, int fade_val,
+    float* gradient_start, float* gradient_step)
+{
+    (void)start; (void)end; (void)palette_idx; (void)fade_val;
+    (void)gradient_start; (void)gradient_step;
+    return false;
+}
+
+bool DSurface::CheckBltStatus()
+{
+    return Surface != nullptr
+        && SUCCEEDED(Surface->GetBltStatus(DDGBS_CANBLT));
 }
 
 void* BSurface::Lock(int x, int y)

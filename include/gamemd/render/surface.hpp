@@ -23,8 +23,10 @@ public:
 
     virtual ~Surface() = default;
 
+    // [1] 0x04 BlitWhole
     virtual bool BlitWhole(Surface* src, bool option1, bool option2) = 0;
 
+    // [2] 0x08 BlitPart
     virtual bool BlitPart(
         const RectangleStruct& dest_rect,
         Surface* src,
@@ -32,6 +34,7 @@ public:
         bool option1,
         bool option2) = 0;
 
+    // [3] 0x0C Blit
     virtual bool Blit(
         const RectangleStruct& clip_rect,
         const RectangleStruct& clip_rect2,
@@ -41,55 +44,160 @@ public:
         bool option1,
         bool option2) = 0;
 
+    // [4] 0x10 FillRectEx
     virtual bool FillRectEx(
         const RectangleStruct& clip_rect,
         const RectangleStruct& fill_rect,
         uint32_t color) = 0;
 
+    // [5] 0x14 FillRect
     virtual bool FillRect(
         const RectangleStruct& fill_rect,
         uint32_t color) = 0;
 
+    // [6] 0x18 Fill
     virtual bool Fill(uint32_t color) = 0;
 
+    // [7] 0x1C FillRectWithFlags — CPU像素写入，16bpp RGB565，支持alpha混合
+    virtual bool FillRectWithFlags(
+        const RectangleStruct& clip_rect,
+        const ColorStruct& color,
+        int opacity_percent) = 0;
+
+    // [8] 0x20 DrawEllipseOutline — 中点椭圆算法轮廓
+    virtual bool DrawEllipseOutline(
+        const Point2D& center,
+        int radius_w,
+        int radius_h,
+        const RectangleStruct& clip_rect,
+        uint16_t color) = 0;
+
+    // [9] 0x24 SetPixel
     virtual bool SetPixel(
         const Point2D& point,
         uint32_t color) = 0;
 
+    // [10] 0x28 GetPixel
     virtual uint32_t GetPixel(const Point2D& point) = 0;
 
+    // [11] 0x2C DrawLineEx
     virtual bool DrawLineEx(
         const RectangleStruct& clip_rect,
         const Point2D& start,
         const Point2D& end,
         uint32_t color) = 0;
 
+    // [12] 0x30 DrawLine
     virtual bool DrawLine(
         const Point2D& start,
         const Point2D& end,
         uint32_t color) = 0;
 
+    // [13] 0x34 DrawLineZBuf — Z-Buffer直线，写像素+写ZBuffer
+    virtual bool DrawLineZBuf(
+        const Point2D& start,
+        const Point2D& end,
+        uint16_t color,
+        int fade_start,
+        int fade_end,
+        bool update_z_buffer) = 0;
+
+    // [14] 0x38 DrawLineModulated — 读取目标像素，调色混合后写回
+    virtual bool DrawLineModulated(
+        const Point2D& start,
+        const Point2D& end,
+        int mod_strength,
+        int fade_start,
+        int fade_end,
+        bool update_z_buffer) = 0;
+
+    // [15] 0x3C DrawLineFaded — 渐变直线，浮点渐隐参数
+    virtual bool DrawLineFaded(
+        const Point2D& start,
+        const Point2D& end,
+        const uint8_t* stipple_pattern,
+        int fade_start,
+        int fade_end,
+        bool z_buffer,
+        float gradient_start,
+        float gradient_step,
+        bool flip_dir) = 0;
+
+    // [16] 0x40 DrawLineZBufColored — Z-Buffer着色直线，float亮度缩放
+    virtual bool DrawLineZBufColored(
+        const Point2D& start,
+        const Point2D& end,
+        const uint8_t src_rgb[3],
+        float brightness,
+        int fade_start,
+        int fade_end) = 0;
+
+    // [17] 0x44 WalkLine — Bresenham像素遍历，回调模式
+    virtual bool WalkLine(
+        const Point2D& start,
+        const Point2D& end,
+        void (*callback)(const Point2D&)) = 0;
+
+    // [18] 0x48 DrawDashedLine — 虚线(模板模式, 16B数组)
+    virtual bool DrawDashedLine(
+        const Point2D& start,
+        const Point2D& end,
+        uint16_t color,
+        const uint8_t stipple[16],
+        int dash_offset) = 0;
+
+    // [19] 0x4C DrawDashedLineStipple — DSurface版虚线，含Z-Buffer
+    virtual bool DrawDashedLineStipple(
+        const Point2D& start,
+        const Point2D& end,
+        uint16_t color,
+        const uint8_t stipple[16],
+        int dash_offset,
+        bool update_z) = 0;
+
+    // [20] 0x50 DrawStippledRect — 模板矩形
+    virtual bool DrawStippledRect(
+        const Point2D& top_left,
+        const Point2D& bottom_right,
+        uint16_t color,
+        bool fill_interior) = 0;
+
+    // [21] 0x54 DrawRectEx
     virtual bool DrawRectEx(
         const RectangleStruct& clip_rect,
         const RectangleStruct& draw_rect,
         uint32_t color) = 0;
 
+    // [22] 0x58 DrawRect
     virtual bool DrawRect(
         const RectangleStruct& draw_rect,
         uint32_t color) = 0;
 
+    // [23] 0x5C Lock
     virtual void* Lock(int x, int y) = 0;
 
+    // [24] 0x60 Unlock
     virtual bool Unlock() = 0;
 
-    virtual bool CanLock(uint32_t unk1, uint32_t unk2) { return false; }
+    // [25] 0x64 CanLock
+    virtual bool CanLock(uint32_t unk1, uint32_t unk2) = 0;
 
+    // [26] 0x68 vt_entry_68 — returns true (final in XSurface/BSurface)
+    virtual bool vt_entry_68(uint32_t unk1, uint32_t unk2)
+    {
+        return true;
+    }
+
+    // [27] 0x6C IsLocked
     virtual bool IsLocked() const = 0;
 
+    // [28] 0x70 GetBytesPerPixel
     virtual int GetBytesPerPixel() const = 0;
 
+    // [29] 0x74 GetPitch
     virtual int GetPitch() const = 0;
 
+    // [30] 0x78 GetRect
     virtual RectangleStruct* GetRect(RectangleStruct* out) const
     {
         out->X = 0;
@@ -99,20 +207,48 @@ public:
         return out;
     }
 
+    // [31] 0x7C GetWidth
     virtual int GetWidth() const final
     {
         return Width;
     }
 
+    // [32] 0x80 GetHeight
     virtual int GetHeight() const final
     {
         return Height;
     }
 
+    // [33] 0x84 IsDSurface
     virtual bool IsDSurface() const
     {
         return false;
     }
+
+    // [34] 0x88 PutPixel — 单像素写入，边界检查
+    virtual bool PutPixel(
+        const Point2D& point,
+        uint16_t color,
+        const RectangleStruct& clip_rect) = 0;
+
+    // [35] 0x8C GetPixelAtCoords — 单像素读取，边界检查
+    virtual uint16_t GetPixelAtCoords(
+        const Point2D& point,
+        const RectangleStruct& clip_rect) = 0;
+
+    // [36] 0x90 DrawGradientLine — 渐变颜色线
+    virtual bool DrawGradientLine(
+        const Point2D& start,
+        const Point2D& end,
+        int palette_idx,
+        int fade_val,
+        float* gradient_start,
+        float* gradient_step) = 0;
+
+    // [37] 0x94 CheckBltStatus — IDirectDrawSurface7::GetBltStatus
+    virtual bool CheckBltStatus() = 0;
+
+    // --- 辅助方法 (非虚函数) ---
 
     RectangleStruct GetRect() const
     {
@@ -211,6 +347,15 @@ public:
         const RectangleStruct& fill_rect, uint32_t color) override { return false; }
     virtual bool FillRect(const RectangleStruct& fill_rect, uint32_t color) override { return false; }
     virtual bool Fill(uint32_t color) override { return false; }
+    virtual bool FillRectWithFlags(
+        const RectangleStruct& clip_rect,
+        const ColorStruct& color,
+        int opacity_percent) override { return false; }
+    virtual bool DrawEllipseOutline(
+        const Point2D& center,
+        int radius_w, int radius_h,
+        const RectangleStruct& clip_rect,
+        uint16_t color) override { return false; }
     virtual bool SetPixel(const Point2D& point, uint32_t color) override { return false; }
     virtual uint32_t GetPixel(const Point2D& point) override { return 0; }
     virtual bool DrawLineEx(
@@ -218,6 +363,38 @@ public:
         const Point2D& end, uint32_t color) override { return false; }
     virtual bool DrawLine(
         const Point2D& start, const Point2D& end, uint32_t color) override { return false; }
+    virtual bool DrawLineZBuf(
+        const Point2D& start, const Point2D& end,
+        uint16_t color, int fade_start, int fade_end,
+        bool update_z_buffer) override { return false; }
+    virtual bool DrawLineModulated(
+        const Point2D& start, const Point2D& end,
+        int mod_strength, int fade_start, int fade_end,
+        bool update_z_buffer) override { return false; }
+    virtual bool DrawLineFaded(
+        const Point2D& start, const Point2D& end,
+        const uint8_t* stipple_pattern,
+        int fade_start, int fade_end,
+        bool z_buffer, float gradient_start,
+        float gradient_step, bool flip_dir) override { return false; }
+    virtual bool DrawLineZBufColored(
+        const Point2D& start, const Point2D& end,
+        const uint8_t src_rgb[3], float brightness,
+        int fade_start, int fade_end) override { return false; }
+    virtual bool WalkLine(
+        const Point2D& start, const Point2D& end,
+        void (*callback)(const Point2D&)) override { return false; }
+    virtual bool DrawDashedLine(
+        const Point2D& start, const Point2D& end,
+        uint16_t color, const uint8_t stipple[16],
+        int dash_offset) override { return false; }
+    virtual bool DrawDashedLineStipple(
+        const Point2D& start, const Point2D& end,
+        uint16_t color, const uint8_t stipple[16],
+        int dash_offset, bool update_z) override { return false; }
+    virtual bool DrawStippledRect(
+        const Point2D& top_left, const Point2D& bottom_right,
+        uint16_t color, bool fill_interior) override { return false; }
     virtual bool DrawRectEx(
         const RectangleStruct& clip_rect,
         const RectangleStruct& draw_rect, uint32_t color) override { return false; }
@@ -225,7 +402,24 @@ public:
 
     virtual void* Lock(int x, int y) override { return nullptr; }
     virtual bool Unlock() override { return false; }
+    virtual bool CanLock(uint32_t unk1, uint32_t unk2) override { return false; }
     virtual bool IsLocked() const override final { return LockCount > 0; }
+
+    virtual bool PutPixel(
+        const Point2D& point,
+        uint16_t color,
+        const RectangleStruct& clip_rect) override { return false; }
+
+    virtual uint16_t GetPixelAtCoords(
+        const Point2D& point,
+        const RectangleStruct& clip_rect) override { return 0; }
+
+    virtual bool DrawGradientLine(
+        const Point2D& start, const Point2D& end,
+        int palette_idx, int fade_val,
+        float* gradient_start, float* gradient_step) override { return false; }
+
+    virtual bool CheckBltStatus() override { return false; }
 
     virtual bool IsDSurface() const override { return false; }
 
@@ -268,6 +462,14 @@ protected:
 class DSurface : public XSurface
 {
 public:
+    static constexpr auto Tile       = 0x8872FC;
+    static constexpr auto Sidebar    = 0x887300;
+    static constexpr auto Primary    = 0x887308;
+    static constexpr auto Hidden     = 0x88730C;
+    static constexpr auto Alternate  = 0x887310;
+    static constexpr auto Hidden_2   = 0x887314;
+    static constexpr auto Composite  = 0x88731C;
+
     DSurface(int width, int height, bool back_buffer, bool force_3d) noexcept;
 
     virtual ~DSurface() override;
@@ -284,11 +486,45 @@ public:
         const RectangleStruct& clip_rect,
         const RectangleStruct& fill_rect, uint32_t color) override;
     virtual bool FillRect(const RectangleStruct& fill_rect, uint32_t color) override;
+    virtual bool FillRectWithFlags(
+        const RectangleStruct& clip_rect,
+        const ColorStruct& color,
+        int opacity_percent) override;
+    virtual bool DrawLineZBuf(
+        const Point2D& start, const Point2D& end,
+        uint16_t color, int fade_start, int fade_end,
+        bool update_z_buffer) override;
+    virtual bool DrawLineModulated(
+        const Point2D& start, const Point2D& end,
+        int mod_strength, int fade_start, int fade_end,
+        bool update_z_buffer) override;
+    virtual bool DrawLineFaded(
+        const Point2D& start, const Point2D& end,
+        const uint8_t* stipple_pattern,
+        int fade_start, int fade_end,
+        bool z_buffer, float gradient_start,
+        float gradient_step, bool flip_dir) override;
+    virtual bool DrawLineZBufColored(
+        const Point2D& start, const Point2D& end,
+        const uint8_t src_rgb[3], float brightness,
+        int fade_start, int fade_end) override;
+    virtual bool DrawDashedLineStipple(
+        const Point2D& start, const Point2D& end,
+        uint16_t color, const uint8_t stipple[16],
+        int dash_offset, bool update_z) override;
+    virtual bool DrawStippledRect(
+        const Point2D& top_left, const Point2D& bottom_right,
+        uint16_t color, bool fill_interior) override;
     virtual void* Lock(int x, int y) override;
     virtual bool Unlock() override;
     virtual bool CanLock(uint32_t unk1, uint32_t unk2) override;
     virtual int GetBytesPerPixel() const override { return BytesPerPixel; }
     virtual int GetPitch() const override;
+    virtual bool DrawGradientLine(
+        const Point2D& start, const Point2D& end,
+        int palette_idx, int fade_val,
+        float* gradient_start, float* gradient_step) override;
+    virtual bool CheckBltStatus() override;
     virtual bool IsDSurface() const override final { return true; }
 
     int BytesPerPixel;

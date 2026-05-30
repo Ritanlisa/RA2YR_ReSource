@@ -730,7 +730,8 @@ make _WIN32_WINNT=0x0400
 | 存根/空实现 | ~200+ |
 | TODO/FIXME标记 | 252 (src 205 + headers 47) |
 | 未命名成员 | 34 (BuildingClass 17 + Infantry 6 + Unit 3 + Aircraft 8) |
-| 待翻译IDA函数 | 20 sub_ + 12 vt_entry |
+| IDA 命名函数 | **201** (新增 61: Surface vtable 38 + helpers 23) |
+| IDA 命名全局变量 | **44** (新增 8: DDraw + Surface globals) |
 | 构建状态 | 0 errors, 0 warnings |
 
 ### 当前菜单渲染状态
@@ -751,7 +752,7 @@ make _WIN32_WINNT=0x0400
 
 ## 当前会话上下文 (快速恢复)
 
-### IDA 命名摘要 (共152函数 + 36全局)
+### IDA 命名摘要 (共201函数 + 44全局)
 
 | 类别 | 示例 | 用途 |
 |------|------|------|
@@ -763,9 +764,10 @@ make _WIN32_WINNT=0x0400
 | 单元创建 (4) | `CreateUnitAtCoords_Timed`, `CreateUnitAtCoords_Standard`, `UnitClass_Create` | 最终产出 |
 | ObjectClass vtable (5) | `ObjectClass_GetCoords`, `ObjectClass_HasC4`, `ObjectClass_SetPosition` | 基类方法 |
 | BuildingClass vtable (8) | `BuildingClass_MissionDispatch`, `BuildingClass_OnObjectExpired`, `BuildingClass_TogglePrimaryFactory` | 建筑虚函数 |
+| **Surface 类层次 (38)** | `DSurface_Blit`, `DSurface_Lock`, `DSurface_DrawLineZBuf`, `XSurface_WalkLine`, `BSurface_Lock` | DDraw表面绘制管线 |
 | 入口点/窗口 (11) | `WinMain`, `CommandLine_Parse`, `Init_Game`, `Menu_Select`, `Main_Game`, `Main_Game_Frame`, `Game_Frame_Loop`, `Game_Frame_Check`, `Scenario_Load`, `Scenario_ReadINI`, `WinMain_Setup` | 启动管线, 游戏流程 |
 | 对话框/菜单 (12) | `MainMenu_Screen`, `MainMenu_DlgProc`, `Dialog_Create`, `Dialog_Destroy`, `Dialog_Show`, `Dialog_SetParent`, `Dialog_BaseProc`, `Dialog_PumpMessages`, `Dialog_MessageLoop`, `Campaign_Screen`, `Multiplayer_Screen`, `Options_Screen` | UI 对话框系统 |
-| 全局变量 (36) | `RulesClass_Instance`, `CurrentFrame`, `MCV_DeployModeEnabled`, `CmdLine_NoCD`, `BuildingTypeClass_Array`, `HouseClass_Array`, `g_hWnd`, `g_hInstance`, `WindowName` 等 | 全局状态 |
+| **DDraw 全局变量 (8)** | `g_lpDirectDraw7`, `g_DDraw_Initialized`, `g_ZBufferDescriptor`, `g_VisibleSurfaceDescriptor`, `g_BitShift_Red/Green/Blue+Mask` | DDraw 引擎状态 |
 
 ### IDA struct 类型 (3个)
 - `BuildingClass_Full` — 已应用于 CreateUnit + 3 callbacks 的 `this` 参数
@@ -782,7 +784,7 @@ make _WIN32_WINNT=0x0400
 - **MIX 格式**: 前 2B=0 为扩展格式; flags 0x0002=加密; 算法来自 RA1 MixFileClass
 - **MIX 文件名**: 仅存 hash ID, 不存原始名; 通过 `ComputeId()` 匹配
 - **IDA 连接**: `127.0.0.1:13337`, i64 在 `C:\Program Files (x86)\Mental Omega\gamemd.exe.i64`
-- **IDA 命名状态**: 152 个函数 + 36 个全局变量已重命名 (见上方命名清单)
+- **IDA 命名状态**: 201 函数 + 44 全局变量 + 3 struct 类型 (见上方命名清单)
 - **Python**: 3.14.2 (`python` 或 `py`), Windows 上已就绪
 - **渲染框架**: cnc-ddraw (`./cnc-ddraw`, by FunkyFr3sh) — Phase 1 调试阶段作为 `ddraw.dll` 兼容层运行 EXE
 - **EXE 入口**: `app/main.cpp` — WinMain 创建窗口 + 初始化 DirectDraw 7 + 游戏循环
@@ -790,6 +792,95 @@ make _WIN32_WINNT=0x0400
 - **外部源码参考**: Ares 0.A (`./Ares`), Syringe (`./Syringe`), Phobos (`./Phobos`), CnCNet Spawner (`./yrpp-spawner`), xna-cncnet-client (`./xna-cncnet-client`)
 - **游戏资源**: `RA2YR-FullFiles/*.mix` — CMake 构建后自动拷贝到 EXE 输出目录 (16 个 MIX 文件, ~180MB)
 - **MIX Bootstrap**: `MixFileClass::Bootstrap()` 加载 expandmd01/ra2md/langmd/language/ra2 → `FileSystem::LoadFile()` 通过 hash ID 搜索并提取内部文件
+
+### Surface 类层次 vtable 映射 (IDA 已确认)
+
+```
+Surface (抽象基类, vtable 0x7e2198, 38 entries)
+ └─ XSurface (默认实现, vtable 0x7e2104, 继承大部分)
+     ├─ BSurface (软件缓冲区, vtable 0x7e2070, 覆盖 Lock/GetBytesPerPixel/GetPitch)
+     └─ DSurface (DirectDraw7, vtable 0x7e85d4, 覆盖 20项)
+```
+
+#### DSurface 成员偏移 (构造函数 0x4BA5A0 确认)
+| 偏移 | 成员 | 说明 |
+|------|------|------|
+| +0x04 | Width | 继承自 Surface |
+| +0x08 | Height | 继承自 Surface |
+| +0x0C | LockCount | 继承自 XSurface |
+| +0x10 | BytesPerPixel | DSurface 成员 |
+| +0x14 | LockedBuffer | lpSurface 指针 |
+| +0x18 | Allocated | bool |
+| +0x19 | VRAMmed | bool |
+| +0x1C | IDirectDrawSurface7* | DDraw 表面 |
+| +0x20 | DDSURFACEDESC2* | DDraw 描述符 (0x6C bytes, 由构造函数 new) |
+
+#### DSurface vtable (38 entries, 全部已命名)
+
+| 索引 | 偏移 | 函数 | 大小 | 说明 |
+|-----|------|------|------|------|
+| [0] | 0x00 | scalar_dtor | — | 析构 |
+| [1] | 0x04 | DSurface_BlitWhole | 23B | 委托 XSurface |
+| [2] | 0x08 | DSurface_BlitPart | 75B | 裁剪后 Blit |
+| [3] | 0x0C | DSurface_Blit | 1303B | **DirectDraw Blt** (offset20) |
+| [4] | 0x10 | DSurface_FillRectEx | 526B | DDBLT_COLORFILL |
+| [5] | 0x14 | DSurface_FillRect | 43B | → FillRectEx |
+| [6] | 0x18 | XSurface_Fill | 51B | 继承 |
+| [7] | 0x1C | DSurface_FillRectWithFlags | 711B | CPU alpha混合填充 |
+| [8] | 0x20 | XSurface_DrawEllipseOutline | 1478B | 中点椭圆 |
+| [9] | 0x24 | XSurface_SetPixel | 89B | |
+| [10] | 0x28 | XSurface_GetPixel | 80B | |
+| [11] | 0x2C | XSurface_DrawLineEx | 685B | Bresenham |
+| [12] | 0x30 | XSurface_DrawLine | 48B | |
+| [13] | 0x34 | DSurface_DrawLineZBuf | 2583B | **Z-Buffer直线** |
+| [14] | 0x38 | DSurface_DrawLineModulated | 2735B | 读-改-写直线 |
+| [15] | 0x3C | DSurface_DrawLineFaded | 6064B | 渐变直线 |
+| [16] | 0x40 | DSurface_DrawLineZBufColored | 2754B | Z-Buffer着色 |
+| [17] | 0x44 | XSurface_WalkLine | 511B | Bresenham遍历器 |
+| [18] | 0x48 | XSurface_DrawDashedLine | 621B | 虚线模板 |
+| [19] | 0x4C | DSurface_DrawDashedLineStipple | 1758B | DSurface虚线 |
+| [20] | 0x50 | DSurface_DrawStippledRect | 1537B | 模板矩形 |
+| [21] | 0x54 | XSurface_DrawRectEx | 158B | |
+| [22] | 0x58 | XSurface_DrawRect | 43B | |
+| [23] | 0x5C | DSurface_Lock | 315B | IDDS7::Lock (offset100) |
+| [24] | 0x60 | DSurface_Unlock | 154B | IDDS7::Unlock (offset128) |
+| [25] | 0x64 | DSurface_CanLock | 95B | 探测可锁性 |
+| [26] | 0x68 | Surface_vt_entry_68 | 5B | 返回 true |
+| [27] | 0x6C | Surface_IsLocked | 11B | LockCount > 0 |
+| [28] | 0x70 | DSurface_GetBytesPerPixel | 4B | |
+| [29] | 0x74 | DSurface_GetPitch | 7B | DDSURFACEDESC2.dwWidth |
+| [30] | 0x78 | Surface_GetRect | 36B | |
+| [31] | 0x7C | Surface_GetWidth | 4B | |
+| [32] | 0x80 | Surface_GetHeight | 4B | |
+| [33] | 0x84 | DSurface_IsDSurface | 3B | returns true |
+| [34] | 0x88 | XSurface_PutPixel | 130B | 单像素写入+边界 |
+| [35] | 0x8C | XSurface_GetPixelAtCoords | 119B | 单像素读取+边界 |
+| [36] | 0x90 | DSurface_DrawGradientLine | 1499B | 渐变颜色线 |
+| [37] | 0x94 | DSurface_CheckBltStatus | 17B | IDDS7::GetBltStatus |
+
+#### IDirectDrawSurface7 vtable 确认使用
+| DSurface 调用 | IDDS7 offset | 方法 |
+|-------------|-------------|------|
+| Blit [3] | 20 (vtable[5]) | **Blt** |
+| FillRectEx [4] | 20 (vtable[5]) | Blt (DDBLT_COLORFILL) |
+| CheckBltStatus [37] | 52 (vtable[13]) | **GetBltStatus** |
+| 构造/GetPitch | 88 (vtable[22]) | **GetSurfaceDesc** |
+| Lock [23] | 96 (vtable[24]) | **IsLost** |
+| Lock [23] | 100 (vtable[25]) | **Lock** |
+| Lock [23] | 108 (vtable[27]) | **Restore** |
+| Unlock [24] | 128 (vtable[32]) | **Unlock** |
+
+#### 新增 DDraw 全局变量
+| 地址 | 名称 | 说明 |
+|------|------|------|
+| 0x8a0094 | `g_lpDirectDraw7` | IDirectDraw7 主对象 |
+| 0x89F978 | `g_DDraw_Initialized` | DDraw 初始化完成 |
+| 0xA8ED80 | `g_DDraw_Active` | DDraw 活动标志 |
+| 0x8A0DEF | `g_DDraw_Force3D` | 强制 3D 表面 |
+| 0x8205D4 | `g_DDraw_UseHWBlit` | 硬件 Blit 可用 |
+| 0x887644 | `g_ZBufferDescriptor` | Z-Buffer 描述符 |
+| 0x87E8A4 | `g_VisibleSurfaceDescriptor` | 可见表面描述符 |
+| 0x8A0DD0-`0x8A0DE4` | `g_BitShift_Red/Green/Blue+Mask` | 16bpp RGB565 位移 |
 
 ### RA2 Mission 系统关键发现
 - BuildingClass/InfantryClass/UnitClass/AircraftClass 的 Mission_* 虚函数仅为简单 thunks (返回常量如 6/1824)
