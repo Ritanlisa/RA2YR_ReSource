@@ -10,6 +10,7 @@ namespace gamemd {
 
 class DSurface;
 class TextRenderer;
+class ShpImage;
 
 enum class GadgetFlag : uint32_t {
     None        = 0,
@@ -69,6 +70,25 @@ public:
     uint8_t R, G, B;
 };
 
+// SHP-based button with 3 frames: 0=normal, 1=hover, 2=pressed
+// Palette is a 256x4 uint8_t array (R,G,B,unused per entry)
+class ShpButtonClass : public GadgetClass {
+public:
+    ShpButtonClass(uint32_t id, int x, int y, ShpImage* img,
+                   const uint8_t palette[256][4]);
+
+    void Draw(DSurface* surface, TextRenderer* text) override;
+    bool OnClick(int x, int y) override;
+    void OnMouseEnter() override;
+    void OnMouseLeave() override;
+
+    ShpImage* Image = nullptr;
+    const uint8_t (*Palette)[4] = nullptr;
+    bool Hovered = false;
+    bool Pressed = false;
+    std::function<void()> Callback;
+};
+
 class DialogClass {
 public:
     DialogClass(int x, int y, int w, int h);
@@ -81,6 +101,7 @@ public:
     virtual bool OnKeyDown(int key);
 
     void AddGadget(GadgetClass* gadget);
+    void ClearGadgets();
     void SetVisible(bool visible);
     bool IsVisible() const { return m_visible; }
     bool IsFinished() const { return m_finished; }

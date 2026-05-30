@@ -1,9 +1,49 @@
 #include "gamemd/ui/gadget.hpp"
 #include "gamemd/render/text_render.hpp"
+#include "gamemd/render/shp_render.hpp"
 #include <cstring>
 #include <algorithm>
 
 namespace gamemd {
+
+// --- ShpButtonClass ---
+
+ShpButtonClass::ShpButtonClass(uint32_t id, int x, int y, ShpImage* img,
+                               const uint8_t palette[256][4])
+    : Image(img), Palette(palette)
+{
+    ID = id;
+    X = x;
+    Y = y;
+    if (img) {
+        Width  = img->GetWidth();
+        Height = img->GetHeight();
+    }
+}
+
+void ShpButtonClass::Draw(DSurface* surface, TextRenderer* text)
+{
+    (void)text;
+    if (!Visible || !surface || !Image) return;
+
+    int frame = 0;
+    if (Pressed) frame = 2;
+    else if (Hovered) frame = 1;
+
+    if (frame >= Image->GetFrameCount()) frame = 0;
+    Image->RenderToSurface(surface, frame, X, Y, Palette);
+}
+
+bool ShpButtonClass::OnClick(int x, int y)
+{
+    (void)x; (void)y;
+    Pressed = true;
+    if (Callback) { Callback(); return true; }
+    return false;
+}
+
+void ShpButtonClass::OnMouseEnter() { Hovered = true; }
+void ShpButtonClass::OnMouseLeave() { Hovered = false; Pressed = false; }
 
 TextButtonClass::TextButtonClass(uint32_t id, const char* text,
                                    int x, int y, int w, int h)
@@ -142,6 +182,12 @@ bool DialogClass::OnKeyDown(int key)
 void DialogClass::AddGadget(GadgetClass* gadget)
 {
     m_gadgets.push_back(gadget);
+}
+
+void DialogClass::ClearGadgets()
+{
+    for (auto* g : m_gadgets) delete g;
+    m_gadgets.clear();
 }
 
 void DialogClass::SetVisible(bool visible)
