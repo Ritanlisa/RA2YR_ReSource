@@ -374,9 +374,7 @@ bool BinkMovieHandle::AdvanceFrame()
 
     if (m_bink_handle) {
         // Frame rate: BINK native ~30fps, game loop ~120fps → advance every 4th call
-        m_throttle_counter++;
-        if (m_throttle_counter < 4) return true;  // skip, same frame
-        m_throttle_counter = 0;
+        if (m_throttle_counter++ % 4 != 0) return true;
 
         int doFrameResult = s_BinkDoFrame(m_bink_handle);
         if (doFrameResult < 0) {
@@ -388,7 +386,7 @@ bool BinkMovieHandle::AdvanceFrame()
                     return false;
                 }
                 m_current_frame = 0;
-                m_throttle_counter = 0;
+                m_throttle_counter = 0; // reset throttle for new loop
                 doFrameResult = s_BinkDoFrame(m_bink_handle);
                 if (doFrameResult < 0) {
                     m_playing = false;
@@ -400,6 +398,7 @@ bool BinkMovieHandle::AdvanceFrame()
             }
         }
         if (s_BinkWait) s_BinkWait(m_bink_handle);
+        if (s_BinkNextFrame) s_BinkNextFrame(m_bink_handle);  // sub_432E40: after Copy
         ++m_current_frame;
         return true;
     }
@@ -451,22 +450,11 @@ void BinkMovieHandle::RenderFrameRaw(void* locked_buffer, int pitch_bytes, int h
 
     if (m_bink_handle && s_BinkCopyToBuffer) {
         if (s_BinkWait) s_BinkWait(m_bink_handle);
-
         s_BinkCopyToBuffer(m_bink_handle, locked_buffer,
                            pitch_bytes, height, dest_x, dest_y,
                            m_surface_flags);
-
-        if (m_current_frame == 1) {
-            uint16_t* p = (uint16_t*)locked_buffer;
-            int pPitch = pitch_bytes / 2;
-            int nz = 0;
-            for (int y = 0; y < 10; y++)
-                for (int x = 0; x < 632; x++)
-                    if (p[y * pPitch + x] != 0) nz++;
-            LOG_DEBUG("BinkMovie::RenderFrameRaw f1: %d nz px at (%d,%d) fmt=%d", nz, dest_x, dest_y, m_surface_flags);
-        }
     }
-    if (s_BinkNextFrame) s_BinkNextFrame(m_bink_handle);
+    // _BinkNextFrame is called in AdvanceFrame after _BinkDoFrame (sub_432E40 order)
 }
 
 void BinkMovieHandle::Stop()
