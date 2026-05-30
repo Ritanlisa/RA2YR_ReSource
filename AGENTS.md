@@ -34,7 +34,7 @@ Phase 2 现代化方向：
 | 编译警告 | **0** |
 | 已实现函数 | **~140** (~200+ stubs/empty) |
 | TODO/FIXME 标记 | **~260** (source 210 + headers 50) |
-| IDA 命名 | **140 函数 + 36 全局变量 + 3 struct 类型** |
+| IDA 命名 | **263 函数 + 44 全局变量 + 3 struct 类型** |
 | MIX 格式支持 | RA2 加密 + 扩展无加密 + TD 传统 (全部验证) |
 | EXE 骨架 | **WinMain + Win32窗口 + DirectDraw7初始化 + MIX文件加载 + SHP渲染 + 主菜单系统** |
 
@@ -730,7 +730,7 @@ make _WIN32_WINNT=0x0400
 | 存根/空实现 | ~200+ |
 | TODO/FIXME标记 | 252 (src 205 + headers 47) |
 | 未命名成员 | 34 (BuildingClass 17 + Infantry 6 + Unit 3 + Aircraft 8) |
-| IDA 命名函数 | **252** (新增 7: 菜单系统深入) |
+| IDA 命名函数 | **263** (新增 11: BINK 渲染链) |
 | IDA 命名全局变量 | **44** (新增 8: DDraw + Surface globals) |
 | 构建状态 | 0 errors, 0 warnings |
 
@@ -752,7 +752,7 @@ make _WIN32_WINNT=0x0400
 
 ## 当前会话上下文 (快速恢复)
 
-### IDA 命名摘要 (共201函数 + 44全局)
+### IDA 命名摘要 (共263函数 + 44全局)
 
 | 类别 | 示例 | 用途 |
 |------|------|------|
@@ -770,6 +770,8 @@ make _WIN32_WINNT=0x0400
 | **系统工具 (6)** | `Screen_Capture`, `Random_Init`, `Network_Init`, `Timer_GetTicks`, `Resource_Find`, `Message_IsDialog` | 截图/RNG/网络/定时器/资源 |
 | **菜单系统 (6)** | `Skirmish_Setup_Screen`, `Skirmish_Setup_DlgProc`, `Credits_Screen`, `Options_Screen_Save`, `Screensaver_Start`, `Dialog_Init` | Skirmish+Credits+屏保+对话框 |
 | **DDraw 全局变量 (8)** | `g_lpDirectDraw7`, `g_DDraw_Initialized`, `g_ZBufferDescriptor`, `g_VisibleSurfaceDescriptor`, `g_BitShift_Red/Green/Blue+Mask` | DDraw 引擎状态 |
+| **BINK 渲染管线 (11)** | `BinkMovie_RenderLoop`, `BinkMovie_InitFromFile`, `BinkMovie_RenderSingleFrame`, `BinkMovie_BlitToTarget`, `BinkMovie_CheckKeyframeTransition` | BINK视频解码→表面渲染→Blit |
+| **BINK 表面追踪 (3)** | `BinkMovie_CreateSurfaceTracker`, `BinkMovie_FreeSurfaceTracker`, `BinkMovie_ProcessKeyframe` | BSurface 关键帧过渡处理 |
 
 ### IDA struct 类型 (3个)
 - `BuildingClass_Full` — 已应用于 CreateUnit + 3 callbacks 的 `this` 参数
@@ -786,7 +788,7 @@ make _WIN32_WINNT=0x0400
 - **MIX 格式**: 前 2B=0 为扩展格式; flags 0x0002=加密; 算法来自 RA1 MixFileClass
 - **MIX 文件名**: 仅存 hash ID, 不存原始名; 通过 `ComputeId()` 匹配
 - **IDA 连接**: `127.0.0.1:13337`, i64 在 `C:\Program Files (x86)\Mental Omega\gamemd.exe.i64`
-- **IDA 命名状态**: 201 函数 + 44 全局变量 + 3 struct 类型 (见上方命名清单)
+- **IDA 命名状态**: 263 函数 + 44 全局变量 + 3 struct 类型 (见上方命名清单)
 - **Python**: 3.14.2 (`python` 或 `py`), Windows 上已就绪
 - **渲染框架**: cnc-ddraw (`./cnc-ddraw`, by FunkyFr3sh) — Phase 1 调试阶段作为 `ddraw.dll` 兼容层运行 EXE
 - **EXE 入口**: `app/main.cpp` — WinMain 创建窗口 + 初始化 DirectDraw 7 + 游戏循环
@@ -1054,6 +1056,56 @@ Main_Game → Menu_Select (0x52D9A0, 4536B, 222 BBs)
 | 1327 | Slider (×0.1) | sub_5FA4A0 → flt_A8EBA0 | 音效音量 (0.0-1.0) |
 | 1330 | Slider (×0.1) | sub_5FA510 | 音乐音量 |
 | 1334 | Slider (×0.1) | sub_5FA590 | 语音/通知音量 |
+
+### BINK 渲染链 — 完整 IDA 逆向 (新增 11 函数, 已回写 IDA)
+
+```
+DlgItem 1818 子类化窗口过程 (WM_PAINT/WM_TIMER)
+  └─ BinkMovie_RenderLoop(handle, surface, destX, destY)    @ 0x432E40
+       ├─ BinkSetVolume (每帧音量同步)
+       ├─ g_DDraw_Active ? BinkPause(handle, 0) : BinkPause(handle, 1)
+       ├─ BinkDoFrame(handle) → 解码当前帧
+       ├─ BinkMovie_CheckKeyframeTransition(handle+32, frameNum) @ 0x6C9C60
+       │     → 返回 true 时调用 BinkMovie_AdjustSurfaceFormat @ 0x433330
+       ├─ Surface::Lock(vtable[23]) → buf
+       ├─ Surface::GetPitch(vtable[29]), GetHeight(vtable[32])
+       ├─ BinkCopyToBuffer(handle, buf, pitch, h, destX, destY, flags)
+       ├─ Surface::Unlock(vtable[24])
+       ├─ BinkMovie_BlitToTarget(surface) @ 0x433270
+       │     → 当前 BINK 帧已渲染到临时 surface, Blit 到最终屏幕位置
+       │     → destX = this[4] + (targetW - srcW)/2 + rectLeft
+       │     → destY = this[5] + targetH - srcH + rectTop
+       └─ BinkNextFrame(handle)
+```
+
+**BINK 自定义消息** (发送到 DlgItem 1818):
+| 消息 | wParam | lParam | 处理函数 | 功能 |
+|------|--------|--------|----------|------|
+| 0x4E3 (BINKM_INIT) | 1 | 0 | — | 创建 BinkMovieHandle + DDraw surface |
+| 0x4E4 (BINKM_OPEN) | 0 | "Ra2ts_l" | BinkMovie_InitFromFile | 打开 BINK 文件, 设置表面格式 |
+| 0x4F0 (BINKM_CLOSE) | 0 | 0 | BinkMovie_Close | 释放所有资源 |
+
+### DIALOGEX 模板 0xE2 — 完整控件布局
+
+**来源**: PE 资源段 .rsrc (文件偏移 0x486930), Python 解析 sz_Or_Ord DIALOGEX
+
+Dialog: 533×369 对话框单位, MS Sans Serif 8pt, Style=0x40000040
+
+| # | ID | 名称 | 类型 | 坐标 (x,y) | 尺寸 | 标题 |
+|---|-----|------|------|------------|------|------|
+| 0 | 1006 | **Exit** | BUTTON | (425,330) | 108×23 | GUI:ExitGame |
+| 1 | 1667 | **Campaign** | BUTTON | (425,125) | 108×23 | GUI:SinglePlayer |
+| 2 | 1668 | **Skirmish** | BUTTON | (425,152) | 108×23 | GUI:WWOnline |
+| 3 | 1372 | **Options** | BUTTON | (425,233) | 108×23 | GUI:Options |
+| 4 | 1400 | **Multiplayer** | BUTTON | (425,179) | 108×23 | GUI:Network |
+| 5 | 1684 | GroupBox | STATIC | (425,1) | 108×10 | GUI:MainMenu |
+| 6 | 1685 | StatusBar | STATIC | (2,355) | 303×12 | GUI:Blank |
+| 7 | 1670 | **Movies** | BUTTON | (425,206) | 108×23 | GUI:MoviesAndCredits |
+| 8 | 1818 | **BINK背景** | STATIC | (0,0) | 304×266 | (空) |
+| 9 | 1820 | ??? | STATIC | (447,29) | 61×33 | (空) |
+| 10 | 1821 | **Version** | STATIC | (425,357) | 108×10 | GUI:Blank |
+
+关键布局: 6 按钮全部 x=425, 108×23, BINK (0,0) 304×266, 底部 StatusBar+Version
 
 ### Dialog 系统架构 (Win32 CreateDialogIndirectParamA 封装)
 

@@ -86,6 +86,7 @@ if(WIN32)
         user32
         gdi32
         ole32
+        comctl32
         ddraw
         dxguid
     )

@@ -1,4 +1,5 @@
 #include <windows.h>
+#include <commctrl.h>
 #include <cstring>
 
 #include "gamemd/core/game_loop.hpp"
@@ -7,6 +8,10 @@ int __stdcall WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
                       LPSTR lpCmdLine, int nShowCmd)
 {
     (void)nShowCmd;
+
+    // Initialize common controls for SetWindowSubclass
+    INITCOMMONCONTROLSEX icex = { sizeof(icex), ICC_STANDARD_CLASSES };
+    InitCommonControlsEx(&icex);
 
     // Switch to the EXE's directory so MIX files and DLLs are found
     char exePath[MAX_PATH];
