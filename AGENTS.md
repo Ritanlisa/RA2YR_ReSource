@@ -730,7 +730,7 @@ make _WIN32_WINNT=0x0400
 | 存根/空实现 | ~200+ |
 | TODO/FIXME标记 | 252 (src 205 + headers 47) |
 | 未命名成员 | 34 (BuildingClass 17 + Infantry 6 + Unit 3 + Aircraft 8) |
-| IDA 命名函数 | **201** (新增 61: Surface vtable 38 + helpers 23) |
+| IDA 命名函数 | **228** (新增 20: Init_Game 调用链: Mix_Bootstrap_LoadExpand, ScenarioClass_Constructor, RulesClass_Constructor, CCFileClass_Open, CCINIClass_Load, Palette_6BitTo16Bit 等) |
 | IDA 命名全局变量 | **44** (新增 8: DDraw + Surface globals) |
 | 构建状态 | 0 errors, 0 warnings |
 
