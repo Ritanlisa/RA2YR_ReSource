@@ -373,10 +373,12 @@ bool BinkMovieHandle::AdvanceFrame()
     if (!m_playing) return false;
 
     if (m_bink_handle) {
+        // Frame rate: BINK native ~30fps, game loop ~120fps → advance every 4th call
         if (m_throttle_counter++ % 4 != 0) return true;
 
         int doFrameResult = s_BinkDoFrame(m_bink_handle);
         if (doFrameResult < 0) {
+            // End of stream: seek to frame 0 for looping (sub_432BD0 uses _BinkGoto)
             if (s_BinkGoto) {
                 int gotoResult = s_BinkGoto(m_bink_handle, 0, 0);
                 if (gotoResult < 0) {
@@ -384,7 +386,7 @@ bool BinkMovieHandle::AdvanceFrame()
                     return false;
                 }
                 m_current_frame = 0;
-                m_throttle_counter = 0;
+                m_throttle_counter = 0; // reset throttle for new loop
                 doFrameResult = s_BinkDoFrame(m_bink_handle);
                 if (doFrameResult < 0) {
                     m_playing = false;
@@ -395,6 +397,8 @@ bool BinkMovieHandle::AdvanceFrame()
                 return false;
             }
         }
+        if (s_BinkWait) s_BinkWait(m_bink_handle);
+        if (s_BinkNextFrame) s_BinkNextFrame(m_bink_handle);  // sub_432E40: after Copy
         ++m_current_frame;
         return true;
     }
@@ -449,8 +453,8 @@ void BinkMovieHandle::RenderFrameRaw(void* locked_buffer, int pitch_bytes, int h
         s_BinkCopyToBuffer(m_bink_handle, locked_buffer,
                            pitch_bytes, height, dest_x, dest_y,
                            m_surface_flags);
-        if (s_BinkNextFrame) s_BinkNextFrame(m_bink_handle);
     }
+    // _BinkNextFrame is called in AdvanceFrame after _BinkDoFrame (sub_432E40 order)
 }
 
 void BinkMovieHandle::Stop()

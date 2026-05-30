@@ -1321,6 +1321,35 @@ Campaign_Screen(template_id):
 - **大型常量表**: 避免手动录入大量常量（如加密算法的 S-box）。应编写脚本从可信来源提取并生成代码文件。
 - **增量验证不可省**: 加密/压缩/序列化等复杂算法必须逐段端到端验证（引擎核心→密钥计算→完整解密），否则难以定位错误。
 
+### BINK SDK 踩坑总结 (项目特定)
+
+| # | 问题 | 表现 | 根因 | 修复 |
+|---|------|------|------|------|
+| 1 | BINK 画面模糊/低分辨率 | 视频呈现方块像素 | `_BinkNextFrame` 在 `_BinkCopyToBuffer` 之前调用，复制到用户缓冲区时已失效 | NextFrame 必须在 CopyToBuffer 之后（SDK 顺序: DoFrame→CopyToBuffer→NextFrame） |
+| 2 | BINK 完全不可见 | 黑屏 | `_BinkWait` 在 AdvanceFrame 和 RenderFrameRaw 中双重调用，破坏 BINK 帧时序 | 仅在 RenderFrameRaw 的 CopyToBuffer 前调用一次 BinkWait |
+| 3 | BINK 不可见（第二个原因） | 表面 Lock 失败/超时 | cnc-ddraw 翻转链后缓冲不支持 `Lock()` | 渲染到独立离屏表面(DDSCAPS_SYSTEMMEMORY)，Lock→渲染→Unlock，再双Lock→memcpy→Flip |
+| 4 | BINK 无声 | 无音频 | `BinkSetSoundSystem` 传入 `BinkOpenDirectSound` + param=0 可能阻塞 | 需正确实现 DirectSound 初始化后才调用 |
+| 5 | 按钮不可见 | UI 不显示 | Win32 对话框 `WS_EX_TOPMOST` 覆盖 DDraw 渲染 | 对话框必须作为 DDraw 窗口的**子窗口**（非 POPUP） |
+| 6 | 对话框创建失败 | error 1407 | cnc-ddraw fullscreen 下 `CreateDialogIndirectParamA` 找不到窗口类 | 需要 comctl32 链接 + `InitCommonControls()` |
+| 7 | cnc-ddraw 模糊 | BINK 像素模糊 | ddraw.ini 默认 `d3d9_filter=2` (双三次过滤) + bilinear shader | 改为 `d3d9_filter=0` (最近邻) + 注释 shader |
+| 8 | SHP 按钮加载失败 | 尺寸 2x0 | button00.shp 头部 `0000 3400 2000 0200` 非标准 TS/TD 格式 | 待修复 SHP 解析器 |
+
+### 主菜单完全还原计划 (R0 — 最高优先级)
+
+**当前状态**: BINK 背景 ✅ / 按钮色块 ✅ / 布局 0xE2 ✅ / SHP 按钮 ❌ / 对话框系统 ⚠️
+
+#### R0-6: 主菜单渲染完整性
+
+| # | 描述 | 依赖 | 估算行 | 状态 |
+|---|------|------|--------|------|
+| R0-6a | 修复 SHP 按钮加载 (button00-04.shp 非标准头部) | SHP 解析器 | ~50 | ❌ |
+| R0-6b | SHP 按钮帧渲染 (普通/悬停/按下 3 帧切换) | R0-6a | ~60 | ❌ |
+| R0-6c | 版本号文字 (DlgItem 1821, "GUI:Version") | 字体渲染 | ~20 | ❌ |
+| R0-6d | BINK 音频 (BinkSetSoundSystem + DirectSound) | DirectSound | ~80 | ❌ |
+| R0-6e | 主菜单 BINK 循环播放 (BinkWait 时序修复) | BINK SDK | 已完成 | ✅ |
+| R0-6f | Dialog/Gadget 系统对接 (WM_COMMAND→MenuState) | 对话框 | ~50 | ⚠️ |
+| R0-6g | Campaign/Options/Multiplayer 子菜单 SHP 背景 | MIX资产 | ~100 | ❌ |
+
 ## 编码约定
 
 1. `namespace gamemd` 或 `namespace ra2::game`
@@ -1334,8 +1363,15 @@ Campaign_Screen(template_id):
 
 ## 下一步 (Next Steps)
 
-1. **R0-1: DSurface SHP 渲染** — 实现 Blit/DrawSHP 将 SHP 按钮帧绘制到 DDraw 表面
-2. **R0-2: Dialog/Gadget 系统** — 启用完整的 Dialog 消息循环替代手动 PeekMessage 循环
-3. **R0-3: 主菜单 SHP 按钮** — 替换色块为真实的 button00.shp 等 SHP
-4. **R0-5: BINK/LoadingScreen** — 调研 BINK SDK 或实现 SHP 静图背景降级
+### 当前会话成果
+- BINK 渲染管线修复: `DoFrame→CopyToBuffer→NextFrame` 顺序正确, `BinkWait` 仅调用一次
+- cnc-ddraw 适配: 离屏表面 + memcpy 管线, `d3d9_filter=0` 消除模糊
+- 逆向成果: 11 BINK 函数重命名 + DIALOGEX 模板 0xE2 完整解析 + 菜单状态机文档
+- 构建: 0 errors, 0 warnings, BINK 可见清晰, 按钮可交互
+
+### 待完成 (按优先级)
+1. **SHP 按钮素材加载** — button00.shp 头部 `0000 3400 2000 0200` 格式未知, 需修复解析器
+2. **BINK 音频** — `BinkSetSoundSystem` + DirectSound 初始化
+3. **对话框系统** — `CreateDialogIndirectParamA` + 控件子类化, 需要 comctl32 + child window
+4. **子菜单实现** — Campaign/Skirmish/Multiplayer/Options 屏幕
 5. 后续 R1: 游戏内等距视图渲染
