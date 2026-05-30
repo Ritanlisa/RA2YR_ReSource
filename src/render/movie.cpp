@@ -279,22 +279,21 @@ bool BinkMovieHandle::OpenFromMemory(const void* data, int size, DSurface* rende
         return true;
     }
 
-    // Write BINK data to temp file for _BinkOpen
-    char temp_path[MAX_PATH];
-    GetTempPathA(sizeof(temp_path), temp_path);
-    strcat_s(temp_path, "_ra2yr_bink_tmp.bik");
-
+    // Write BINK data to CWD matching original: sub_432750 opens from game dir
+    m_temp_path = _strdup("_ra2yr_bink_tmp.bik");
     FILE* fp = nullptr;
-    if (fopen_s(&fp, temp_path, "wb") == 0 && fp) {
+    if (fopen_s(&fp, m_temp_path, "wb") == 0 && fp) {
         fwrite(data, 1, size, fp);
         fclose(fp);
-        m_temp_path = _strdup(temp_path);
+    } else {
+        LOG_TRACE("BinkMovie: failed to write temp file '%s'", m_temp_path);
+        return false;
     }
 
     // Open BINK: sub_432750 — BinkOpen(filename, 0)
-    m_bink_handle = s_BinkOpen(temp_path, 0);
+    m_bink_handle = s_BinkOpen(m_temp_path, 0);
     if (!m_bink_handle) {
-        LOG_TRACE("BinkMovie: _BinkOpen('%s') failed", temp_path);
+        LOG_TRACE("BinkMovie: _BinkOpen('%s') failed", m_temp_path);
         return false;
     }
 
@@ -323,13 +322,11 @@ bool BinkMovieHandle::AdvanceFrame()
     if (!m_playing) return false;
 
     if (m_bink_handle) {
-        int result = s_BinkDoFrame(m_bink_handle);
-        if (result < 0) {
+        int doFrameResult = s_BinkDoFrame(m_bink_handle);
+        if (doFrameResult < 0) {
             m_playing = false;
             return false;
         }
-        // sub_432E40: BinkWait after decode (loop condition in do..while)
-        if (s_BinkWait) s_BinkWait(m_bink_handle);
         ++m_current_frame;
         return true;
     }
@@ -383,7 +380,6 @@ void BinkMovieHandle::RenderFrameRaw(void* locked_buffer, int pitch_bytes, int h
                            pitch_bytes, height, 0, 0,
                            m_surface_flags);
     }
-    // sub_432E40: BinkNextFrame after CopyToBuffer
     if (s_BinkNextFrame) s_BinkNextFrame(m_bink_handle);
 }
 
@@ -400,7 +396,7 @@ void BinkMovieHandle::Stop()
     }
     m_memory_buffer = nullptr;
 
-    // Clean up temp file
+    // Clean up temp file (in CWD, not system temp)
     if (m_temp_path) {
         DeleteFileA(m_temp_path);
         free(m_temp_path);
