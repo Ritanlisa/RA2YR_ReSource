@@ -376,18 +376,17 @@ bool BinkMovieHandle::AdvanceFrame()
         if (m_throttle_counter++ % 4 != 0) return true;
 
         int doFrameResult = s_BinkDoFrame(m_bink_handle);
-        if (doFrameResult == 0) {
+        if (doFrameResult < 0) {
             if (s_BinkGoto) {
                 int gotoResult = s_BinkGoto(m_bink_handle, 0, 0);
-                if (gotoResult) {
-                    doFrameResult = s_BinkDoFrame(m_bink_handle);
-                    if (doFrameResult == 0) {
-                        m_playing = false;
-                        return false;
-                    }
-                    m_current_frame = 0;
-                    m_throttle_counter = 0;
-                } else {
+                if (gotoResult < 0) {
+                    m_playing = false;
+                    return false;
+                }
+                m_current_frame = 0;
+                m_throttle_counter = 0;
+                doFrameResult = s_BinkDoFrame(m_bink_handle);
+                if (doFrameResult < 0) {
                     m_playing = false;
                     return false;
                 }
@@ -395,11 +394,7 @@ bool BinkMovieHandle::AdvanceFrame()
                 m_playing = false;
                 return false;
             }
-        } else if (doFrameResult < 0) {
-            m_playing = false;
-            return false;
         }
-        m_frame_decoded = true;
         ++m_current_frame;
         return true;
     }
@@ -454,10 +449,7 @@ void BinkMovieHandle::RenderFrameRaw(void* locked_buffer, int pitch_bytes, int h
         s_BinkCopyToBuffer(m_bink_handle, locked_buffer,
                            pitch_bytes, height, dest_x, dest_y,
                            m_surface_flags);
-        if (m_frame_decoded && s_BinkNextFrame) {
-            s_BinkNextFrame(m_bink_handle);
-            m_frame_decoded = false;
-        }
+        if (s_BinkNextFrame) s_BinkNextFrame(m_bink_handle);
     }
 }
 
