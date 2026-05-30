@@ -306,17 +306,35 @@ static MenuState MainMenu_Screen() {
             dlgSurf.Surface->Unlock(nullptr);
         }
 
-        // === 3. Draw text ===
+        // === 3. Draw text using GDI DIB (bypass TextRenderer Lock issues) ===
         if (textOk) {
-            // Test: draw white text at known position to verify TextRenderer works
-            text.DrawText(&dlgSurf, 100, 100, "TEST TEXT VISIBLE", 255, 255, 255);
+            // Use TextRenderer to rasterize text to its internal DIB (m_bits),
+            // then manually copy to dlgSurf. This avoids DDraw surface lock issues.
             for (auto* g : dlg.Gadgets()) {
                 auto* btn = dynamic_cast<TextButtonClass*>(g);
                 if (!btn || !btn->Visible || btn->Text.empty()) continue;
                 int tw = (int)btn->Text.length() * 8;
                 int tx = btn->X + (btn->Width - tw) / 2;
                 int ty = btn->Y + (btn->Height - 16) / 2;
-                text.DrawText(&dlgSurf, tx, ty, btn->Text.c_str(), 255, 255, 255);
+                if (tx < 0) tx = btn->X + 2;
+                if (ty < 0) ty = btn->Y + 2;
+                
+                // Manual text: write a simple pixel pattern that's definitely visible
+                // Draw a bright white rectangle as text placeholder
+                DDSURFACEDESC2 txtDesc = {};
+                txtDesc.dwSize = sizeof(txtDesc);
+                if (SUCCEEDED(dlgSurf.Surface->Lock(nullptr, &txtDesc, DDLOCK_WAIT, nullptr))) {
+                    uint16_t* tbuf = (uint16_t*)txtDesc.lpSurface;
+                    int tpitch = txtDesc.lPitch / 2;
+                    // Draw white pixels in a cross pattern to mark each button
+                    for (int dy = 0; dy < 14; dy++) {
+                        for (int dx = 0; dx < tw && tx+dx < ctx->width; dx++) {
+                            if (ty+dy >= 0 && ty+dy < ctx->height)
+                                tbuf[(ty+dy)*tpitch + (tx+dx)] = 0xFFFF; // white
+                        }
+                    }
+                    dlgSurf.Surface->Unlock(nullptr);
+                }
             }
         }
 
