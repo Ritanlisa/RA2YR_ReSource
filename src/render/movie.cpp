@@ -215,7 +215,7 @@ typedef int32_t(__stdcall *BinkCopyToBuffer_t)(void* bnk, void* dest,
     int32_t dest_pitch, uint32_t dest_height, uint32_t dest_x, uint32_t dest_y, uint32_t flags);
 typedef void   (__stdcall *BinkNextFrame_t)(void* bnk);
 typedef int32_t(__stdcall *BinkWait_t)(void* bnk);
-typedef int32_t(__stdcall *BinkGetError_t)(void);
+typedef const char*(__stdcall *BinkGetError_t)(void);
 typedef int32_t(__stdcall *BinkDDSurfaceType_t)(void* lpDDS);  // 0x7e15a8
 
 static HMODULE s_binkDLL = nullptr;
@@ -323,10 +323,16 @@ bool BinkMovieHandle::AdvanceFrame()
 
     if (m_bink_handle) {
         int doFrameResult = s_BinkDoFrame(m_bink_handle);
+        if (s_BinkGetError) {
+            const char* err = s_BinkGetError();
+            if (err && err != (const char*)-1 && m_current_frame < 3)
+                LOG_DEBUG("BinkMovie::AdvanceFrame f%d: DoFrame=%d BinkError='%s'", m_current_frame, doFrameResult, err);
+        }
         if (doFrameResult < 0) {
             m_playing = false;
             return false;
         }
+        if (s_BinkWait) s_BinkWait(m_bink_handle);
         ++m_current_frame;
         return true;
     }
@@ -376,9 +382,28 @@ void BinkMovieHandle::RenderFrameRaw(void* locked_buffer, int pitch_bytes, int h
     if (!locked_buffer || !m_playing) return;
 
     if (m_bink_handle && s_BinkCopyToBuffer) {
-        s_BinkCopyToBuffer(m_bink_handle, locked_buffer,
-                           pitch_bytes, height, 0, 0,
-                           m_surface_flags);
+        if (s_BinkWait) s_BinkWait(m_bink_handle);
+        
+        // Test: copy to a properly-sized buffer instead of full surface
+        int bink_pitch = m_width * 2;  // 632 * 2 = 1264 bytes
+        void* test_buf = malloc(bink_pitch * m_height);
+        if (test_buf) {
+            memset(test_buf, 0xCD, bink_pitch * m_height);  // fill with 0xCDCD to detect writes
+            s_BinkCopyToBuffer(m_bink_handle, test_buf, bink_pitch, m_height, 0, 0, m_surface_flags);
+            
+            if (m_current_frame < 3) {
+                uint16_t* p = (uint16_t*)test_buf;
+                int nonZero = 0;
+                for (int i = 0; i < 1000; i++)
+                    if (p[i] != 0xCDCD) nonZero++;
+                LOG_DEBUG("BinkMovie::RenderFrameRaw f%d: test_buf non-0xCDCD=%d (0)=0x%04X (100)=0x%04X",
+                    m_current_frame, nonZero, p[0], p[100]);
+            }
+            free(test_buf);
+        }
+        
+        // Also copy to the actual surface
+        s_BinkCopyToBuffer(m_bink_handle, locked_buffer, pitch_bytes, height, 0, 0, m_surface_flags);
     }
     if (s_BinkNextFrame) s_BinkNextFrame(m_bink_handle);
 }

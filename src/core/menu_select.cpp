@@ -288,29 +288,11 @@ static MenuState MainMenu_Screen() {
             uint16_t* buf = (uint16_t*)surfDesc.lpSurface;
             int pitch = surfDesc.lPitch / 2;
 
-            // 2a. Render BINK directly into locked buffer (same Lock = same buffer)
+            // 2a. Render BINK directly into locked buffer
             if (bikBg && bikBg->IsPlaying()) {
                 auto* bink = dynamic_cast<BinkMovieHandle*>(bikBg);
                 if (bink) {
                     bink->RenderFrameRaw(surfDesc.lpSurface, surfDesc.lPitch, ctx->height);
-                    // Diagnostic: scan first 1000 pixels for non-zero values
-                    uint16_t* raw = (uint16_t*)surfDesc.lpSurface;
-                    int rawPitch = surfDesc.lPitch / 2;
-                    if (loopCount == 1) {
-                        LOG_DEBUG("[MENU] Lock desc: lPitch=%d dwWidth=%d dwHeight=%d lpSurface=%p",
-                            surfDesc.lPitch, surfDesc.dwWidth, surfDesc.dwHeight, surfDesc.lpSurface);
-                        int nonZeroCount = 0;
-                        for (int y = 0; y < 10 && y < ctx->height; y++) {
-                            for (int x = 0; x < 632 && x < ctx->width; x++) {
-                                if (raw[y * rawPitch + x] != 0) {
-                                    if (nonZeroCount < 5)
-                                        LOG_DEBUG("[MENU] BINK nz at (%d,%d)=0x%04X", x, y, raw[y * rawPitch + x]);
-                                    nonZeroCount++;
-                                }
-                            }
-                        }
-                        LOG_DEBUG("[MENU] BINK nz scan: %d non-zero pixels in 632x10 area", nonZeroCount);
-                    }
                 }
             }
 
