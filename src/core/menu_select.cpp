@@ -153,6 +153,8 @@ static MenuState MainMenu_Screen()
     int btnX = offX + (int)(425.0f * dluX);
     int btnW = (int)(108.0f * dluX);
     int btnH = (int)(23.0f * dluY);
+    if (btnW < 120) btnW = 120;
+    if (btnH < 30) btnH = 30;  // minimum 120x30 px
 
     auto BtnY = [&](int yDLU) { return offY + (int)((float)yDLU * dluY); };
 
@@ -196,6 +198,12 @@ static MenuState MainMenu_Screen()
     int btnPosY[6] = {};
     for (int i = 0; i < 6; i++) btnPosY[i] = BtnY(kMenuBtnY[i]);
 
+    LOG_DEBUG("[MENU] Layout: bik(%d,%d,%dx%d) btn(%d,%d,%d) ypos=%d,%d,%d,%d,%d,%d",
+              bikX, bikY, bikW, bikH, btnX, btnW, btnH,
+              btnPosY[0], btnPosY[1], btnPosY[2], btnPosY[3], btnPosY[4], btnPosY[5]);
+    LOG_DEBUG("[MENU] btn_valid: %d/%d/%d/%d/%d/%d", (bool)(btns[0] && btns[0]->GetWidth()>0 && btns[0]->GetHeight()>0), (bool)(btns[1] && btns[1]->GetWidth()>0 && btns[1]->GetHeight()>0), (bool)(btns[2] && btns[2]->GetWidth()>0 && btns[2]->GetHeight()>0), (bool)(btns[3] && btns[3]->GetWidth()>0 && btns[3]->GetHeight()>0), (bool)(btns[4] && btns[4]->GetWidth()>0 && btns[4]->GetHeight()>0), (bool)(btns[5] && btns[5]->GetWidth()>0 && btns[5]->GetHeight()>0));
+    LOG_DEBUG("[MENU] MainMenu entering render loop");
+
     DialogClass dlg(0, 0, ctx->width, ctx->height);
 
     MenuState result = MenuState::MenuIdle;
@@ -232,16 +240,24 @@ static MenuState MainMenu_Screen()
 
             // Draw SHP buttons
             for (int i = 0; i < 6; i++) {
-                if (!btns[i]) {
-                    // Fallback: draw colored rect
+                bool btnValid = (btns[i] && btns[i]->GetWidth() > 2 && btns[i]->GetHeight() > 0);
+                int fc = btnHover[i] ? 1 : 0;
+                if (btnValid) {
+                    DrawShpToBuffer(btns[i], fc, buf, pitch, ctx->width, ctx->height, btnX, btnPosY[i]);
+                } else {
+                    // Fallback colored rectangle
                     int by = btnPosY[i];
                     uint16_t fill = btnHover[i] ? 0xF800 : 0x07E0;
                     for (int y = by; y < by + btnH && y < ctx->height; y++)
                         for (int x = btnX; x < btnX + btnW && x < ctx->width; x++)
                             buf[y * pitch + x] = (y == by || y == by + btnH - 1 || x == btnX || x == btnX + btnW - 1) ? 0xFFFF : fill;
-                } else {
-                    int fc = btnHover[i] ? 1 : 0;
-                    DrawShpToBuffer(btns[i], fc, buf, pitch, ctx->width, ctx->height, btnX, btnPosY[i]);
+                    // Draw button label
+                    static const char* labels[] = {"Campaign","Skirmish","Network","Movies","Options","Exit"};
+                    int tw = (int)strlen(labels[i]) * 8;
+                    int tx = btnX + (btnW - tw) / 2;
+                    int ty = btnPosY[i] + (btnH - 16) / 2 + 2;
+                    if (tx > 0 && ty > 0)
+                        Font_DrawText(buf, pitch, tx, ty, ctx->width, ctx->height, labels[i], 0xFFFF);
                 }
             }
 

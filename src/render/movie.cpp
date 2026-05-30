@@ -218,6 +218,8 @@ typedef int32_t(__stdcall *BinkWait_t)(void* bnk);
 typedef const char*(__stdcall *BinkGetError_t)(void);
 typedef int32_t(__stdcall *BinkDDSurfaceType_t)(void* lpDDS);  // 0x7e15a8
 typedef int32_t(__stdcall *BinkGoto_t)(void* bnk, uint32_t frame, uint32_t flags);
+typedef void   (__stdcall *BinkSetSoundSystem_t)(void* open_func, uint32_t param);
+typedef void*  (__stdcall *BinkOpenDirectSound_t)(uint32_t param);
 
 static HMODULE s_binkDLL = nullptr;
 static BinkOpen_t s_BinkOpen = nullptr;
@@ -229,6 +231,8 @@ static BinkWait_t s_BinkWait = nullptr;
 static BinkGetError_t s_BinkGetError = nullptr;
 static BinkDDSurfaceType_t s_BinkDDSurfaceType = nullptr;
 static BinkGoto_t s_BinkGoto = nullptr;
+static BinkSetSoundSystem_t s_BinkSetSoundSystem = nullptr;
+static BinkOpenDirectSound_t s_BinkOpenDirectSound = nullptr;
 
 static bool BinkInit()
 {
@@ -252,6 +256,8 @@ static bool BinkInit()
     s_BinkGetError      = (BinkGetError_t)GetProcAddress(s_binkDLL, "_BinkGetError@0");
     s_BinkDDSurfaceType = (BinkDDSurfaceType_t)GetProcAddress(s_binkDLL, "_BinkDDSurfaceType@4");
     s_BinkGoto          = (BinkGoto_t)GetProcAddress(s_binkDLL, "_BinkGoto@12");
+    s_BinkSetSoundSystem = (BinkSetSoundSystem_t)GetProcAddress(s_binkDLL, "_BinkSetSoundSystem@8");
+    s_BinkOpenDirectSound = (BinkOpenDirectSound_t)GetProcAddress(s_binkDLL, "_BinkOpenDirectSound@4");
 
     if (!s_BinkOpen || !s_BinkDoFrame || !s_BinkCopyToBuffer || !s_BinkClose) {
         FreeLibrary(s_binkDLL);
@@ -310,6 +316,13 @@ bool BinkMovieHandle::OpenFromFile(const char* filename, DSurface* render_target
     m_playing = true;
     LOG_INFO("BinkMovie::OpenFromFile: %dx%d, %d frames, fmt_code=%d",
         m_width, m_height, m_total_frames, m_surface_flags);
+
+    // sub_432750: BinkSetSoundSystem(BinkOpenDirectSound, audioObj) for audio + timing
+    if (s_BinkSetSoundSystem) {
+        s_BinkSetSoundSystem(s_BinkOpenDirectSound, 0);
+        LOG_DEBUG("BinkMovie: BinkSetSoundSystem set");
+    }
+
     return true;
 }
 
@@ -373,22 +386,23 @@ bool BinkMovieHandle::AdvanceFrame()
     if (!m_playing) return false;
 
     if (m_bink_handle) {
-        // Frame rate: BINK native ~30fps, game loop ~120fps → advance every 4th call
         if (m_throttle_counter++ % 4 != 0) return true;
 
         int doFrameResult = s_BinkDoFrame(m_bink_handle);
-        if (doFrameResult < 0) {
-            // End of stream: seek to frame 0 for looping (sub_432BD0 uses _BinkGoto)
+        if (doFrameResult == 0) {
+            // End of stream: _BinkDoFrame returns 0 at end (not negative)
             if (s_BinkGoto) {
                 int gotoResult = s_BinkGoto(m_bink_handle, 0, 0);
-                if (gotoResult < 0) {
-                    m_playing = false;
-                    return false;
-                }
-                m_current_frame = 0;
-                m_throttle_counter = 0; // reset throttle for new loop
-                doFrameResult = s_BinkDoFrame(m_bink_handle);
-                if (doFrameResult < 0) {
+                if (gotoResult) {
+                    // Retry DoFrame after seeking to 0
+                    doFrameResult = s_BinkDoFrame(m_bink_handle);
+                    if (doFrameResult == 0) {
+                        m_playing = false;
+                        return false;
+                    }
+                    m_current_frame = 0;
+                    m_throttle_counter = 0;
+                } else {
                     m_playing = false;
                     return false;
                 }
@@ -396,9 +410,12 @@ bool BinkMovieHandle::AdvanceFrame()
                 m_playing = false;
                 return false;
             }
+        } else if (doFrameResult < 0) {
+            m_playing = false;
+            return false;
         }
         if (s_BinkWait) s_BinkWait(m_bink_handle);
-        if (s_BinkNextFrame) s_BinkNextFrame(m_bink_handle);  // sub_432E40: after Copy
+        if (s_BinkNextFrame) s_BinkNextFrame(m_bink_handle);
         ++m_current_frame;
         return true;
     }
