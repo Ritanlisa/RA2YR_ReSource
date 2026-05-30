@@ -365,9 +365,9 @@ static MenuState MainMenu_Screen() {
         // Messages
         MSG msg;
         while (PeekMessageA(&msg, nullptr, 0, 0, PM_REMOVE)) {
-            if (msg.message == WM_QUIT) { result = MenuState::StartScenario; dlg.Finish(0); break; }
+            if (msg.message == WM_QUIT) { result = MenuState::ExitConfirm; dlg.Finish(static_cast<int>(MenuState::ExitConfirm)); break; }
             if (msg.message == WM_KEYDOWN && msg.wParam == VK_ESCAPE) {
-                result = MenuState::StartScenario; dlg.Finish(0); break;
+                result = MenuState::ExitConfirm; dlg.Finish(static_cast<int>(MenuState::ExitConfirm)); break;
             }
             if (msg.message == WM_LBUTTONDOWN) {
                 int mx = LOWORD(msg.lParam), my = HIWORD(msg.lParam);
@@ -394,7 +394,8 @@ static MenuState MainMenu_Screen() {
         Event_Dispatch();
     }
 
-    result = static_cast<MenuState>(dlg.GetResult());
+    if (!dlg.IsFinished())
+        result = static_cast<MenuState>(dlg.GetResult());
     LOG_DEBUG("[MENU] MainMenu_Screen exit: result=%d loops=%d", static_cast<int>(result), loopCount);
     if (bikBg) { bikBg->Stop(); delete bikBg; }
     bgImg.Free();

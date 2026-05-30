@@ -373,13 +373,22 @@ bool BinkMovieHandle::AdvanceFrame()
     if (!m_playing) return false;
 
     if (m_bink_handle) {
-        // Frame rate: use BINK's internal timing via BinkWait (sub_432E40)
+        // Frame rate: BINK native ~30fps, game loop ~120fps → advance every 4th call
+        m_throttle_counter++;
+        if (m_throttle_counter < 4) return true;  // skip, same frame
+        m_throttle_counter = 0;
+
         int doFrameResult = s_BinkDoFrame(m_bink_handle);
         if (doFrameResult < 0) {
-            // End of stream — loop back to start via BinkGoto
+            // End of stream: seek to frame 0 for looping (sub_432BD0 uses _BinkGoto)
             if (s_BinkGoto) {
-                s_BinkGoto(m_bink_handle, 0, 0);
+                int gotoResult = s_BinkGoto(m_bink_handle, 0, 0);
+                if (gotoResult < 0) {
+                    m_playing = false;
+                    return false;
+                }
                 m_current_frame = 0;
+                m_throttle_counter = 0;
                 doFrameResult = s_BinkDoFrame(m_bink_handle);
                 if (doFrameResult < 0) {
                     m_playing = false;
@@ -390,7 +399,6 @@ bool BinkMovieHandle::AdvanceFrame()
                 return false;
             }
         }
-        // BinkWait: wait for async decode, also provides timing (sub_432E40)
         if (s_BinkWait) s_BinkWait(m_bink_handle);
         ++m_current_frame;
         return true;
