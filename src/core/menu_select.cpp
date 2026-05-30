@@ -101,20 +101,19 @@ static const int kMenuButtonCount = 5;
 
 static bool LoadMenuBackground(ShpImage& img) {
     uint32_t candidates[] = {
-        0x7241327F, // ls800yr.shp
-        0x316453C0, // ls640yr.shp
-        0x44836963, // ls800bg.shp
-        0x07A608DC, // ls640bg.shp
-        0x1C71240A, // logo.shp
-        0x668DD8FB, // title.shp
+        0x7241327F, 0x316453C0, 0x44836963, 0x07A608DC,
+        0x1C71240A, 0x668DD8FB,
     };
     void* data = nullptr;
     for (int i = 0; i < 6 && !data; i++) data = FileSystem::LoadByHash(candidates[i]);
-    if (!data) data = FileSystem::LoadFirstSHP();
-    if (!data) { LOG_WARN("No SHP"); return false; }
+    // Skip expensive full MIX scan — use a dark background if no candidate found
+    if (!data) {
+        LOG_DEBUG("[MENU] No background SHP found, using dark background");
+        return false;
+    }
     bool ok = img.LoadFromMemory((const uint8_t*)data, 1073741824);
     free(data);
-    if (ok) LOG_INFO("Background SHP %dx%d %df", img.GetWidth(), img.GetHeight(), img.GetFrameCount());
+    if (ok) LOG_DEBUG("[MENU] Background loaded: %dx%d %df", img.GetWidth(), img.GetHeight(), img.GetFrameCount());
     return ok;
 }
 
@@ -123,9 +122,19 @@ static bool LoadMenuButtons(ShpImage* out[5]) {
         void* data = FileSystem::LoadByHash(kMenuButtonHashes[i]);
         if (!data) { LOG_WARN("menu button %d not found", i); continue; }
         out[i] = new ShpImage();
-        if (!out[i]->LoadFromMemory((const uint8_t*)data, 1073741824)) {
-            delete out[i]; out[i] = nullptr;
-        }
+        LOG_DEBUG("[MENU] btn[%d] hash=0x%08X size from MIX: checking raw bytes...",
+                  i, kMenuButtonHashes[i]);
+        // Print first 16 bytes for format diagnosis
+        auto* raw = (const uint8_t*)data;
+        LOG_DEBUG("[MENU]   raw[0..3]=%02X%02X%02X%02X [4..7]=%02X%02X%02X%02X",
+                  raw[0],raw[1],raw[2],raw[3], raw[4],raw[5],raw[6],raw[7]);
+        uint16_t f0 = *(const uint16_t*)(raw+0);
+        uint16_t f4 = *(const uint16_t*)(raw+4);
+        LOG_DEBUG("[MENU]   frames@0=%u frames@4=%u w@2=%u h@6=%u",
+                  f0, f4, *(uint16_t*)(raw+2), *(uint16_t*)(raw+6));
+        bool ok = out[i]->LoadFromMemory(raw, 3384);
+        LOG_DEBUG("[MENU]   LoadFromMemory: %s", ok ? "OK" : "FAILED");
+        if (!ok) { delete out[i]; out[i] = nullptr; }
         free(data);
     }
     // Check if at least 3 buttons loaded (minimum usable)
@@ -140,18 +149,36 @@ static void FreeMenuButtons(ShpImage* btns[5]) {
 
 static MenuState MainMenu_Screen() {
     DDrawContext* ctx = DDraw_GetContext();
-    if (!ctx || !ctx->back_buffer) return MenuState::StartScenario;
-    if (!PaletteLoaded()) LoadMenuPalette();
+    LOG_DEBUG("[MENU] MainMenu_Screen entry: ctx=%p", (void*)ctx);
+    if (!ctx || !ctx->back_buffer) {
+        LOG_ERROR("[MENU] DDrawContext or back_buffer is null! ctx=%p bb=%p",
+                  (void*)ctx, ctx ? (void*)ctx->back_buffer : nullptr);
+        return MenuState::StartScenario;
+    }
+    LOG_DEBUG("[MENU] Screen: %dx%d, back_buffer=%p dd=%p",
+              ctx->width, ctx->height, (void*)ctx->back_buffer, (void*)ctx->dd);
+
+    if (!PaletteLoaded()) {
+        LOG_DEBUG("[MENU] Palette not loaded, loading...");
+        LoadMenuPalette();
+        LOG_DEBUG("[MENU] Palette loaded: %s", PaletteLoaded() ? "OK" : "FAILED");
+    }
 
     ShpImage* btnSHPs[kMenuButtonCount] = {};
     bool haveButtons = LoadMenuButtons(btnSHPs);
+    LOG_DEBUG("[MENU] SHP buttons: haveButtons=%d", haveButtons);
 
-    // Load loading screen background
     ShpImage bgImg;
-    bool hasBg = LoadMenuBackground(bgImg);
+    bool hasBg = false;
+    LOG_DEBUG("[MENU] Loading background SHP...");
+    hasBg = LoadMenuBackground(bgImg);
+    LOG_DEBUG("[MENU] Background SHP: hasBg=%d w=%d h=%d frames=%d",
+              hasBg, hasBg ? bgImg.GetWidth() : 0, hasBg ? bgImg.GetHeight() : 0,
+              hasBg ? bgImg.GetFrameCount() : 0);
+    fflush(nullptr);
 
-    // Create dialog with SHP buttons
     DialogClass dlg(0, 0, ctx->width, ctx->height);
+    LOG_DEBUG("[MENU] Dialog created: %dx%d", ctx->width, ctx->height);
 
     // Use SHP buttons if available, fallback to TextButtonClass
     MenuState states[] = {MenuState::Campaign, MenuState::Skirmish,
@@ -160,9 +187,17 @@ static MenuState MainMenu_Screen() {
     const char* colors[] = {"[Campaign]","[Skirmish]","[Multiplayer]","[Options]","[Exit]"};
 
     if (haveButtons) {
+        LOG_DEBUG("[MENU] Creating SHP buttons...");
+        bool anyValid = false;
         for (int i = 0; i < kMenuButtonCount; i++) {
             if (!btnSHPs[i]) continue;
             int bw = btnSHPs[i]->GetWidth(), bh = btnSHPs[i]->GetHeight();
+            // Validate: button SHPs must have reasonable dimensions
+            if (bw < 20 || bh < 10 || bw > 800 || bh > 200) {
+                LOG_WARN("[MENU] btn[%d] invalid size %dx%d, skipping SHP", i, bw, bh);
+                continue;
+            }
+            anyValid = true;
             int bx = (ctx->width - bw) / 2;
             int by = ctx->height/2 - 120 + i * (bh + 4);
             auto* btn = new ShpButtonClass(kMenuButtonHashes[i], bx, by,
@@ -170,8 +205,14 @@ static MenuState MainMenu_Screen() {
             MenuState s = states[i];
             btn->Callback = [&dlg, s]() { dlg.Finish(static_cast<int>(s)); };
             dlg.AddGadget(btn);
+            LOG_DEBUG("[MENU]   btn[%d] %dx%d at (%d,%d) pal=%p", i, bw, bh, bx, by, (void*)g_palette);
         }
-    } else {
+        if (!anyValid) {
+            LOG_WARN("[MENU] No valid SHP buttons, falling back to text");
+            haveButtons = false;
+        }
+    }
+    if (!haveButtons) {
         // Fallback: Text buttons
         int cx = ctx->width / 2 - 100;
         int y0 = ctx->height / 2 - 50;
@@ -186,17 +227,23 @@ static MenuState MainMenu_Screen() {
     MenuState result = MenuState::MenuIdle;
     int frame = 0, fc = 0;
     DSurface dlgSurf(ctx->width, ctx->height, false, false);
+    LOG_DEBUG("[MENU] DSurface created: Allocated=%d Surface=%p",
+              dlgSurf.Allocated, (void*)dlgSurf.Surface);
     TextRenderer text;
-    text.Init(ctx->width, ctx->height);
+    bool textOk = text.Init(ctx->width, ctx->height);
+    LOG_DEBUG("[MENU] TextRenderer::Init: %s", textOk ? "OK" : "FAILED");
 
-    // Try BINK background (ra2ts_l.bik for >640, ra2ts_s.bik for 640)
+    // Try BINK background
     MovieHandle* bikBg = nullptr;
     {
         const char* bikName = (ctx->width > 640) ? "ra2ts_l.bik" : "ra2ts_s.bik";
         bikBg = MoviePlayer::CreateMovie(bikName, &dlgSurf);
+        LOG_DEBUG("[MENU] BINK background '%s': %s", bikName, bikBg ? "loaded" : "not found");
     }
 
-    while (!dlg.IsFinished()) { // Campaign
+    int loopCount = 0;
+    while (!dlg.IsFinished()) {
+        loopCount++; // Campaign
         MSG msg;
         while (PeekMessageA(&msg, nullptr, 0, 0, PM_REMOVE)) {
             if (msg.message == WM_QUIT) { result = MenuState::StartScenario; dlg.Finish(0); break; }
@@ -225,9 +272,14 @@ static MenuState MainMenu_Screen() {
         DDraw_Flip();
         fc++; if (hasBg && fc >= 8) { fc = 0; frame = (frame + 1) % bgImg.GetFrameCount(); }
         Event_Dispatch();
+        if (loopCount == 1) {
+            LOG_DEBUG("[MENU] First frame rendered: surf=%p textInit=%d",
+                      (void*)dlgSurf.Surface, textOk);
+        }
     }
 
     result = static_cast<MenuState>(dlg.GetResult());
+    LOG_DEBUG("[MENU] MainMenu_Screen exit: result=%d loops=%d", static_cast<int>(result), loopCount);
     if (bikBg) { bikBg->Stop(); delete bikBg; }
     bgImg.Free();
     dlg.ClearGadgets();

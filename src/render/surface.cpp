@@ -60,7 +60,28 @@ bool DSurface::BlitWhole(class Surface* src, bool option1, bool option2)
     if (!option1 && !option2) flags |= DDBLT_KEYSRC;
 
     HRESULT hr = Surface->Blt(&dr, dsurf->Surface, &sr, flags, nullptr);
-    return SUCCEEDED(hr);
+    if (SUCCEEDED(hr)) return true;
+
+    // Fallback: manual Lock/memcpy for cnc-ddraw or software surfaces
+    DDSURFACEDESC2 sd = {}, dd = {};
+    sd.dwSize = sizeof(sd); dd.dwSize = sizeof(dd);
+    if (FAILED(dsurf->Surface->Lock(nullptr, &sd, DDLOCK_WAIT, nullptr)))
+        return false;
+    if (FAILED(Surface->Lock(nullptr, &dd, DDLOCK_WAIT, nullptr))) {
+        dsurf->Surface->Unlock(nullptr);
+        return false;
+    }
+
+    auto* s = static_cast<uint8_t*>(sd.lpSurface);
+    auto* d = static_cast<uint8_t*>(dd.lpSurface);
+    int h = (dsurf->Height < Height) ? dsurf->Height : Height;
+    int wbytes = (dsurf->Width < Width) ? dsurf->Width * 2 : Width * 2;
+    for (int y = 0; y < h; y++)
+        memcpy(d + y * dd.lPitch, s + y * sd.lPitch, wbytes);
+
+    Surface->Unlock(nullptr);
+    dsurf->Surface->Unlock(nullptr);
+    return true;
 }
 
 bool DSurface::BlitPart(
@@ -123,7 +144,29 @@ bool DSurface::FillRectEx(
                fill_rect.X + fill_rect.Width, fill_rect.Y + fill_rect.Height };
 
     HRESULT hr = Surface->Blt(&r, nullptr, nullptr, DDBLT_COLORFILL | DDBLT_WAIT, &fx);
-    return SUCCEEDED(hr);
+    if (SUCCEEDED(hr)) return true;
+
+    // cnc-ddraw fallback: manual pixel write via Lock/Unlock
+    DDSURFACEDESC2 desc = {};
+    desc.dwSize = sizeof(desc);
+    if (FAILED(Surface->Lock(nullptr, &desc, DDLOCK_WAIT, nullptr)))
+        return false;
+
+    uint16_t* buf = static_cast<uint16_t*>(desc.lpSurface);
+    int pitch = desc.lPitch / 2;
+
+    int x0 = fill_rect.X, y0 = fill_rect.Y;
+    int x1 = fill_rect.X + fill_rect.Width;
+    int y1 = fill_rect.Y + fill_rect.Height;
+    if (x0 < 0) x0 = 0; if (y0 < 0) y0 = 0;
+    if (x1 > Width) x1 = Width; if (y1 > Height) y1 = Height;
+
+    for (int y = y0; y < y1; y++)
+        for (int x = x0; x < x1; x++)
+            buf[y * pitch + x] = static_cast<uint16_t>(color);
+
+    Surface->Unlock(nullptr);
+    return true;
 }
 
 bool DSurface::FillRect(const RectangleStruct& fill_rect, uint32_t color)

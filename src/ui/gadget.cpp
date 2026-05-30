@@ -1,6 +1,7 @@
 #include "gamemd/ui/gadget.hpp"
 #include "gamemd/render/text_render.hpp"
 #include "gamemd/render/shp_render.hpp"
+#include "gamemd/core/logging.hpp"
 #include <cstring>
 #include <algorithm>
 
@@ -70,7 +71,8 @@ void TextButtonClass::Draw(DSurface* surface, TextRenderer* text)
     }
 
     RectangleStruct bg = { X, Y, Width, Height };
-    surface->FillRect(bg, bg_color);
+    bool fillOk = surface->FillRect(bg, bg_color);
+    if (!fillOk) LOG_DEBUG("[GADGET] TextButton FillRect failed at (%d,%d %dx%d)", X, Y, Width, Height);
 
     RectangleStruct top = { X, Y, Width, 1 };
     RectangleStruct bot = { X, Y + Height - 1, Width, 1 };

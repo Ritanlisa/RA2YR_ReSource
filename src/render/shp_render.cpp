@@ -17,10 +17,23 @@ bool ShpImage::LoadFromMemory(const uint8_t* data, int data_size)
     m_raw_data = data;
     m_raw_size = data_size;
 
-    m_header.frames     = *(const uint16_t*)(data + 0);
-    m_header.max_width  = *(const uint16_t*)(data + 2);
-    m_header.max_height = *(const uint16_t*)(data + 4);
-    m_header.frames_dup = *(const uint16_t*)(data + 6);
+    // Detect SHP format:
+    // TS (RA2/TS): 4-byte prefix (usually 0x00000000), then standard header at +4
+    // TD (C&C1/RA1): header starts at offset 0
+    // Heuristic: read frames from offset 0 and 4, pick the one that looks valid
+    int hdr_offset = 0;
+    uint16_t frames_at0 = *(const uint16_t*)(data + 0);
+    uint16_t frames_at4 = *(const uint16_t*)(data + 4);
+
+    if (frames_at0 == 0 && frames_at4 > 0 && frames_at4 <= 500) {
+        // TS prefix format: 0x00000000 prefix at offset 0, header at offset 4
+        hdr_offset = 4;
+    }
+
+    m_header.frames     = *(const uint16_t*)(data + hdr_offset + 0);
+    m_header.max_width  = *(const uint16_t*)(data + hdr_offset + 2);
+    m_header.max_height = *(const uint16_t*)(data + hdr_offset + 4);
+    m_header.frames_dup = *(const uint16_t*)(data + hdr_offset + 6);
     m_header.data_size  = 0;
 
     m_frame_count = m_header.frames;
@@ -33,8 +46,11 @@ bool ShpImage::LoadFromMemory(const uint8_t* data, int data_size)
 
     if (!m_frames || !m_pixel_data) { Free(); return false; }
 
+    // Frame table starts after header (8 bytes TD, 12 bytes TS)
+    int frame_table_start = hdr_offset + 8;
+
     for (int i = 0; i < m_frame_count; ++i) {
-        const uint8_t* fhdr = data + 8 + i * 8;
+        const uint8_t* fhdr = data + frame_table_start + i * 8;
         m_frames[i].offset = *(const int32_t*)(fhdr + 0);
         m_frames[i].format = fhdr[4];
 
