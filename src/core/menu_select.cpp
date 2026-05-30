@@ -296,16 +296,6 @@ static MenuState MainMenu_Screen() {
         DDSURFACEDESC2 surfDesc = {};
         surfDesc.dwSize = sizeof(surfDesc);
         if (SUCCEEDED(dlgSurf.Surface->Lock(nullptr, &surfDesc, DDLOCK_WAIT, nullptr))) {
-            if (loopCount == 1 && bikBg) {
-                auto* bink = dynamic_cast<BinkMovieHandle*>(bikBg);
-                LOG_DEBUG("[MENU] Lock: buf=%p pitch=%d w=%d h=%d fmt=0x%08X bpp=%d BINK=%dx%d fmt_code=%d",
-                    surfDesc.lpSurface, surfDesc.lPitch,
-                    surfDesc.dwWidth, surfDesc.dwHeight,
-                    surfDesc.ddpfPixelFormat.dwFlags,
-                    surfDesc.ddpfPixelFormat.dwRGBBitCount,
-                    bink ? bink->GetWidth() : 0, bink ? bink->GetHeight() : 0,
-                    bink ? bink->GetSurfaceFlags() : -1);
-            }
             uint16_t* buf = (uint16_t*)surfDesc.lpSurface;
             int pitch = surfDesc.lPitch / 2;
 
