@@ -265,6 +265,7 @@ bool BinkMovieHandle::OpenFromMemory(const void* data, int size, DSurface* rende
     auto* hdr = static_cast<const BinkFileHeader*>(data);
     m_width  = hdr->width;
     m_height = hdr->height;
+    m_total_frames = hdr->num_frames;
     m_current_frame = 0;
 
     if (!BinkInit()) {
@@ -305,8 +306,12 @@ bool BinkMovieHandle::AdvanceFrame()
     if (!m_playing) return false;
 
     if (m_bink_handle) {
-        if (s_BinkDoFrame(m_bink_handle) == 0)
+        int result = s_BinkDoFrame(m_bink_handle);
+        if (result < 0) {
+            // End of stream — stop playing
+            m_playing = false;
             return false;
+        }
         ++m_current_frame;
         return true;
     }

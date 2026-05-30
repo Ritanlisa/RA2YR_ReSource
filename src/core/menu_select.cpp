@@ -282,12 +282,19 @@ static MenuState MainMenu_Screen() {
 
     int loopCount = 0;
     while (!dlg.IsFinished()) {
-        loopCount++;
+        ++loopCount;
 
         // === 1. Render BINK background to dlgSurf ===
         if (bikBg && bikBg->IsPlaying()) {
-            bikBg->AdvanceFrame();
+            bool advanced = bikBg->AdvanceFrame();
             bikBg->RenderFrame(&dlgSurf);
+            if (loopCount == 1 || loopCount % 60 == 0) {
+                auto* bink = dynamic_cast<BinkMovieHandle*>(bikBg);
+                LOG_DEBUG("[MENU] Frame %d: advanced=%d (cur=%d/%d)",
+                    loopCount, advanced,
+                    bink ? bink->GetCurrentFrame() : -1,
+                    bink ? bink->GetTotalFrames()  : -1);
+            }
         }
 
         // === 2. Lock dlgSurf, draw button rectangles manually ===

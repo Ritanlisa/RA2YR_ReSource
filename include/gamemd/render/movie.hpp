@@ -42,7 +42,7 @@ enum class MovieType : uint8_t
 class BinkMovieHandle : public MovieHandle
 {
 public:
-    BinkMovieHandle() = default;
+    BinkMovieHandle() : m_total_frames(0) {}
     virtual ~BinkMovieHandle() override;
 
     virtual int  GetWidth()  const override { return m_width; }
@@ -51,6 +51,9 @@ public:
     virtual bool AdvanceFrame() override;
     virtual void RenderFrame(DSurface* target) override;
     virtual void Stop() override;
+
+    int  GetCurrentFrame() const { return m_current_frame; }
+    int  GetTotalFrames()  const { return m_total_frames; }
 
     bool OpenFromMemory(const void* data, int size, DSurface* render_target);
 
@@ -61,6 +64,7 @@ private:
     int       m_width         = 0;
     int       m_height        = 0;
     int       m_current_frame = 0;
+    int       m_total_frames  = 0;
     int       m_data_size     = 0;
     bool      m_playing       = false;
     bool      m_memory_owned  = false;
