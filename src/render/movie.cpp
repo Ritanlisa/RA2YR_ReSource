@@ -214,8 +214,9 @@ typedef int32_t(__stdcall *BinkDoFrame_t)(void* bnk);
 typedef int32_t(__stdcall *BinkCopyToBuffer_t)(void* bnk, void* dest,
     int32_t dest_pitch, uint32_t dest_height, uint32_t dest_x, uint32_t dest_y, uint32_t flags);
 typedef void   (__stdcall *BinkNextFrame_t)(void* bnk);
-typedef void   (__stdcall *BinkWait_t)(void* bnk);
+typedef int32_t(__stdcall *BinkWait_t)(void* bnk);
 typedef int32_t(__stdcall *BinkGetError_t)(void);
+typedef int32_t(__stdcall *BinkDDSurfaceType_t)(void* lpDDS);  // 0x7e15a8
 
 static HMODULE s_binkDLL = nullptr;
 static BinkOpen_t s_BinkOpen = nullptr;
@@ -225,6 +226,7 @@ static BinkCopyToBuffer_t s_BinkCopyToBuffer = nullptr;
 static BinkNextFrame_t s_BinkNextFrame = nullptr;
 static BinkWait_t s_BinkWait = nullptr;
 static BinkGetError_t s_BinkGetError = nullptr;
+static BinkDDSurfaceType_t s_BinkDDSurfaceType = nullptr;
 
 static bool BinkInit()
 {
@@ -239,6 +241,7 @@ static bool BinkInit()
     s_BinkNextFrame     = (BinkNextFrame_t)GetProcAddress(s_binkDLL, "_BinkNextFrame@4");
     s_BinkWait          = (BinkWait_t)GetProcAddress(s_binkDLL, "_BinkWait@4");
     s_BinkGetError      = (BinkGetError_t)GetProcAddress(s_binkDLL, "_BinkGetError@0");
+    s_BinkDDSurfaceType = (BinkDDSurfaceType_t)GetProcAddress(s_binkDLL, "_BinkDDSurfaceType@4");
 
     if (!s_BinkOpen || !s_BinkDoFrame || !s_BinkCopyToBuffer || !s_BinkClose) {
         FreeLibrary(s_binkDLL);
@@ -269,15 +272,14 @@ bool BinkMovieHandle::OpenFromMemory(const void* data, int size, DSurface* rende
     m_current_frame = 0;
 
     if (!BinkInit()) {
-        // No binkw32.dll — store data for software decode later
         m_memory_buffer = const_cast<void*>(data);
-        m_memory_owned  = true;  // We own this buffer now
+        m_memory_owned  = true;
         m_playing = true;
         LOG_INFO("BinkMovie: %dx%d, %d frames (software decode mode)", m_width, m_height, hdr->num_frames);
         return true;
     }
 
-    // Extract BINK data to temp file for _BinkOpen (BINK 1.x opens files, not memory)
+    // Write BINK data to temp file for _BinkOpen
     char temp_path[MAX_PATH];
     GetTempPathA(sizeof(temp_path), temp_path);
     strcat_s(temp_path, "_ra2yr_bink_tmp.bik");
@@ -289,15 +291,30 @@ bool BinkMovieHandle::OpenFromMemory(const void* data, int size, DSurface* rende
         m_temp_path = _strdup(temp_path);
     }
 
-    // Open BINK via binkw32.dll (flags=0: normal file open)
+    // Open BINK: sub_432750 — BinkOpen(filename, 0)
     m_bink_handle = s_BinkOpen(temp_path, 0);
     if (!m_bink_handle) {
         LOG_TRACE("BinkMovie: _BinkOpen('%s') failed", temp_path);
         return false;
     }
 
+    // Query surface pixel format: sub_432750 — *(this+8) = BinkDDSurfaceType(surface)
+    if (render_target && render_target->Surface && s_BinkDDSurfaceType) {
+        m_surface_flags = s_BinkDDSurfaceType(render_target->Surface);
+        LOG_DEBUG("BinkMovie: _BinkDDSurfaceType returned 0x%08X", m_surface_flags);
+        // cnc-ddraw system-memory offscreen surfaces don't provide valid DDPIXELFORMAT.
+        // _BinkDDSurfaceType may return invalid flags (<0x1000). Use known good default.
+        if (m_surface_flags < 0x1000) {
+            m_surface_flags = 0x20000000;  // RGB565 (16-bit 5:6:5 from SetDisplayMode(..., 16, ...))
+            LOG_DEBUG("BinkMovie: overriding invalid flags → 0x20000000 (RGB565)");
+        }
+    } else {
+        m_surface_flags = 0x20000000;  // default RGB565
+    }
+
     m_playing = true;
-    LOG_INFO("BinkMovie: %dx%d, %d frames (binkw32.dll)", m_width, m_height, hdr->num_frames);
+    LOG_INFO("BinkMovie: %dx%d, %d frames, surface_flags=0x%08X (binkw32.dll)",
+        m_width, m_height, hdr->num_frames, m_surface_flags);
     return true;
 }
 
@@ -308,10 +325,11 @@ bool BinkMovieHandle::AdvanceFrame()
     if (m_bink_handle) {
         int result = s_BinkDoFrame(m_bink_handle);
         if (result < 0) {
-            // End of stream — stop playing
             m_playing = false;
             return false;
         }
+        // sub_432E40: BinkWait after decode (loop condition in do..while)
+        if (s_BinkWait) s_BinkWait(m_bink_handle);
         ++m_current_frame;
         return true;
     }
@@ -329,18 +347,17 @@ void BinkMovieHandle::RenderFrame(DSurface* target)
     if (!target || !m_playing) return;
 
     if (m_bink_handle && s_BinkCopyToBuffer) {
+        // sub_432E40: Lock → BinkCopyToBuffer(surface_flags) → Unlock
         DDSURFACEDESC2 desc = {};
         desc.dwSize = sizeof(desc);
         if (SUCCEEDED(target->Surface->Lock(nullptr, &desc, DDLOCK_WAIT, nullptr))) {
-            // BINK surface format flags:
-            // BINKSURFACE565 = 0x20000000 (16-bit R5G6B5)
-            // BINKSURFACE555 = 0x10000000 (16-bit X1R5G5B5)
-            // BINKSURFACE32  = 0x80000000 (32-bit X8R8G8B8)
             s_BinkCopyToBuffer(m_bink_handle, desc.lpSurface,
                                desc.lPitch, m_height, 0, 0,
-                               0x20000000);  // BINKSURFACE565
+                               m_surface_flags);  // from _BinkDDSurfaceType
             target->Surface->Unlock(nullptr);
         }
+        // sub_432E40: BinkNextFrame after CopyToBuffer
+        if (s_BinkNextFrame) s_BinkNextFrame(m_bink_handle);
         return;
     }
 

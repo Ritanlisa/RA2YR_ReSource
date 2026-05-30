@@ -66,6 +66,7 @@ private:
     int       m_current_frame = 0;
     int       m_total_frames  = 0;
     int       m_data_size     = 0;
+    uint32_t  m_surface_flags = 0x20000000;  // from _BinkDDSurfaceType (sub_432750)
     bool      m_playing       = false;
     bool      m_memory_owned  = false;
     void*     m_memory_buffer = nullptr;
