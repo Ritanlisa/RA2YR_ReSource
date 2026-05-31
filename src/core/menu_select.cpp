@@ -366,26 +366,37 @@ static MenuState MainMenu_Screen()
             if (m) frameReady = m->AdvanceFrame();
         }
 
-        if (frameReady) {
-            // Render BINK to DDraw back buffer
-            DDSURFACEDESC2 desc = {};
-            desc.dwSize = sizeof(desc);
-            if (SUCCEEDED(ctx->back_buffer->Lock(nullptr, &desc, DDLOCK_WAIT, nullptr))) {
-                if (bikCtrl && bikCtrl->IsPlaying()) {
-                    BinkMovieHandle* m = bikCtrl->Movie();
-                    if (m) m->RenderFrameRaw(desc.lpSurface, desc.lPitch,
-                        ctx->height, bikX, bikY);
-                } else {
+            if (frameReady) {
+                // Render BINK to DDraw back buffer
+                DDSURFACEDESC2 desc = {};
+                desc.dwSize = sizeof(desc);
+                if (SUCCEEDED(ctx->back_buffer->Lock(nullptr, &desc, DDLOCK_WAIT, nullptr))) {
                     uint16_t* buf = (uint16_t*)desc.lpSurface;
                     int pitch = desc.lPitch / 2;
-                    for (int y = 0; y < ctx->height; y++)
-                        for (int x = 0; x < ctx->width; x++)
-                            buf[y * pitch + x] = 0x1082;
+
+                    if (bikCtrl && bikCtrl->IsPlaying()) {
+                        BinkMovieHandle* m = bikCtrl->Movie();
+                        if (m) m->RenderFrameRaw(desc.lpSurface, desc.lPitch,
+                            ctx->height, bikX, bikY);
+                    } else {
+                        for (int y = 0; y < ctx->height; y++)
+                            for (int x = 0; x < ctx->width; x++)
+                                buf[y * pitch + x] = 0x1082;
+                    }
+
+                    // Fill button area with dark background to reduce GDI flicker
+                    for (int i = 0; i < 6; i++) {
+                        int by = (int)((float)kMenuBtnDefs[i].yDLU * dluY);
+                        uint16_t btnBg = 0x1082;  // same as dialog background
+                        for (int y = by; y < by + btnH && y < ctx->height; y++)
+                            for (int x = btnX; x < btnX + btnW && x < ctx->width; x++)
+                                buf[y * pitch + x] = btnBg;
+                    }
+
+                    ctx->back_buffer->Unlock(nullptr);
                 }
-                ctx->back_buffer->Unlock(nullptr);
+                DDraw_Flip();
             }
-            DDraw_Flip();
-        }
 
         // Message pump (WM_PAINT fires on BUTTON controls for GDI rendering)
         MSG msg;
