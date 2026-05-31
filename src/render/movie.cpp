@@ -400,43 +400,33 @@ bool BinkMovieHandle::OpenFromMemory(const void* data, int size, DSurface* rende
 
 bool BinkMovieHandle::AdvanceFrame()
 {
-    if (!m_playing) return false;
+    if (!m_playing || !m_bink_handle) return false;
 
     m_frame_decoded = false;
 
-    if (m_bink_handle) {
-        // Use BinkWait for frame pacing — blocks until next frame is due (matching IDA 0x432E40)
-        if (s_BinkWait && s_BinkWait(m_bink_handle)) return false;
-
-        int doFrameResult = s_BinkDoFrame(m_bink_handle);
-        if (doFrameResult == 0) {
-            // End of stream detected — loop back to frame 0 via BinkGoto
-            if (s_BinkGoto) {
-                int gotoResult = s_BinkGoto(m_bink_handle, 0, 0);
-                if (gotoResult < 0) {
-                    m_playing = false;
-                    return false;
-                }
-                m_current_frame = 0;
-                doFrameResult = s_BinkDoFrame(m_bink_handle);
-                if (doFrameResult == 0) {
-                    m_playing = false;
-                    return false;
-                }
-            } else {
-                m_playing = false;
-                return false;
-            }
+    // Loop detection: if we've passed the last frame, seek back to 0
+    if (m_current_frame >= m_total_frames) {
+        if (s_BinkGoto) {
+            int gotoResult = s_BinkGoto(m_bink_handle, 0, 0);
+            if (gotoResult < 0) { m_playing = false; return false; }
+            m_current_frame = 0;
+            LOG_DEBUG("BINK: looped back to frame 0");
+        } else {
+            m_playing = false;
+            return false;
         }
-        m_frame_decoded = true;
-        return true;
     }
 
-    // Software decode fallback
-    auto* hdr = static_cast<const BinkFileHeader*>(m_memory_buffer);
-    if (!hdr || m_current_frame >= static_cast<int>(hdr->num_frames))
+    // Frame pacing: BinkWait returns 1 (not yet time), 0 (ready to display next frame)
+    if (s_BinkWait && s_BinkWait(m_bink_handle)) return false;
+
+    // Start decompression for current frame
+    if (s_BinkDoFrame(m_bink_handle) == 0) {
+        m_playing = false;
         return false;
-    ++m_current_frame;
+    }
+
+    m_frame_decoded = true;
     return true;
 }
 
