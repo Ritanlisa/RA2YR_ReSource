@@ -400,31 +400,44 @@ bool BinkMovieHandle::OpenFromMemory(const void* data, int size, DSurface* rende
 
 bool BinkMovieHandle::AdvanceFrame()
 {
-    if (!m_playing || !m_bink_handle) return false;
+    if (!m_playing) return false;
 
-    // Counter throttle: advance every 4th loop iteration
-    if (m_throttle_counter++ % 4 != 0) return true;
+    if (m_bink_handle) {
+        // Frame rate: BINK native ~30fps, game loop ~120fps → advance every 4th call
+        if (m_throttle_counter++ % 4 != 0) return true;
 
-    int doFrameResult = s_BinkDoFrame(m_bink_handle);
-    if (doFrameResult != 0) {
-        // End of stream: seek back to frame 0 (matching IDA sub_432BD0 + BinkMovie_Play 0x432C70)
-        if (s_BinkGoto) {
-            int gr = s_BinkGoto(m_bink_handle, 0, 0);
-            if (gr < 0) { m_playing = false; return false; }
-            m_current_frame = 0;
-            m_throttle_counter = 0;
-            LOG_DEBUG("BINK: BinkGoto(0) — looped");
-        } else {
-            m_playing = false;
-            return false;
+        int doFrameResult = s_BinkDoFrame(m_bink_handle);
+        if (doFrameResult != 0) {
+            // End of stream: seek to frame 0 for looping (sub_432BD0 uses _BinkGoto)
+            if (s_BinkGoto) {
+                int gotoResult = s_BinkGoto(m_bink_handle, 0, 0);
+                if (gotoResult < 0) {
+                    m_playing = false;
+                    return false;
+                }
+                m_current_frame = 0;
+                m_throttle_counter = 0; // reset throttle for new loop
+                doFrameResult = s_BinkDoFrame(m_bink_handle);
+                if (doFrameResult != 0) {
+                    m_playing = false;
+                    return false;
+                }
+            } else {
+                m_playing = false;
+                return false;
+            }
         }
+        if (s_BinkWait) s_BinkWait(m_bink_handle);
+        if (s_BinkNextFrame) s_BinkNextFrame(m_bink_handle);  // sub_432E40: after Copy
+        ++m_current_frame;
+        return true;
     }
-    if (s_BinkWait) s_BinkWait(m_bink_handle);
-    if (s_BinkNextFrame) s_BinkNextFrame(m_bink_handle);
+
+    // Software decode fallback
+    auto* hdr = static_cast<const BinkFileHeader*>(m_memory_buffer);
+    if (!hdr || m_current_frame >= static_cast<int>(hdr->num_frames))
+        return false;
     ++m_current_frame;
-    // Frame pacing: BinkWait after NextFrame blocks until next frame's display time
-    // (matching IDA BinkMovie_RenderLoop 0x432E40: do{...}while(!BinkWait))
-    if (s_BinkWait) s_BinkWait(m_bink_handle);
     return true;
 }
 
@@ -465,11 +478,12 @@ void BinkMovieHandle::RenderFrameRaw(void* locked_buffer, int pitch_bytes, int h
     if (!locked_buffer || !m_playing) return;
 
     if (m_bink_handle && s_BinkCopyToBuffer) {
+        if (s_BinkWait) s_BinkWait(m_bink_handle);
         s_BinkCopyToBuffer(m_bink_handle, locked_buffer,
                            pitch_bytes, height, dest_x, dest_y,
                            m_surface_flags);
     }
-    // BinkWait pacing is handled in AdvanceFrame (after NextFrame)
+    // _BinkNextFrame is called in AdvanceFrame after _BinkDoFrame (sub_432E40 order)
 }
 
 void BinkMovieHandle::Stop()
