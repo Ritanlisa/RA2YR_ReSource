@@ -9,6 +9,9 @@ ShpImage::~ShpImage()
     Free();
 }
 
+// TS SHP format header (8 bytes): skip(2B=0) | width(2B) | height(2B) | frameCount(2B)
+// Per-frame entry (24 bytes): x(2B) | y(2B) | w(2B) | h(2B) | format(1B) | 11B padding | fileOffset(4B)
+
 bool ShpImage::LoadFromMemory(const uint8_t* data, int data_size)
 {
     Free();
@@ -17,27 +20,25 @@ bool ShpImage::LoadFromMemory(const uint8_t* data, int data_size)
     m_raw_data = data;
     m_raw_size = data_size;
 
-    // Detect SHP format:
-    // TS (RA2/TS): 4-byte prefix (usually 0x00000000), then standard header at +4
-    // TD (C&C1/RA1): header starts at offset 0
-    // Heuristic: read frames from offset 0 and 4, pick the one that looks valid
-    int hdr_offset = 0;
-    uint16_t frames_at0 = *(const uint16_t*)(data + 0);
-    uint16_t frames_at4 = *(const uint16_t*)(data + 4);
-
-    if (frames_at0 == 0 && frames_at4 > 0 && frames_at4 <= 500) {
-        // TS prefix format: 0x00000000 prefix at offset 0, header at offset 4
-        hdr_offset = 4;
+    // TS format detection (OpenRA IsShpTS): first word must be 0
+    uint16_t first = *(const uint16_t*)(data + 0);
+    if (first != 0) {
+        // TD format not yet supported — return false
+        return false;
     }
 
-    m_header.frames     = *(const uint16_t*)(data + hdr_offset + 0);
-    m_header.max_width  = *(const uint16_t*)(data + hdr_offset + 2);
-    m_header.max_height = *(const uint16_t*)(data + hdr_offset + 4);
-    m_header.frames_dup = *(const uint16_t*)(data + hdr_offset + 6);
+    // TS header: offset 0=skip(0), 2=width, 4=height, 6=frameCount
+    m_header.max_width  = *(const uint16_t*)(data + 2);
+    m_header.max_height = *(const uint16_t*)(data + 4);
+    m_header.frames     = *(const uint16_t*)(data + 6);
+    m_header.frames_dup = m_header.frames;
     m_header.data_size  = 0;
 
     m_frame_count = m_header.frames;
     if (m_frame_count <= 0 || m_frame_count > 1024) return false;
+
+    // Sanity: 24 bytes per frame entry must fit
+    if (8 + m_frame_count * 24 > data_size) return false;
 
     m_frames = static_cast<ShpFrameInfo*>(
         calloc(m_frame_count, sizeof(ShpFrameInfo)));
@@ -46,50 +47,61 @@ bool ShpImage::LoadFromMemory(const uint8_t* data, int data_size)
 
     if (!m_frames || !m_pixel_data) { Free(); return false; }
 
-    // Frame table starts after header (8 bytes TD, 12 bytes TS)
-    int frame_table_start = hdr_offset + 8;
-
+    // Frame table starts at offset 8 (after 8-byte header)
     for (int i = 0; i < m_frame_count; ++i) {
-        const uint8_t* fhdr = data + frame_table_start + i * 8;
-        m_frames[i].offset = *(const int32_t*)(fhdr + 0);
-        m_frames[i].format = fhdr[4];
+        const uint8_t* fhdr = data + 8 + i * 24;
+        // Per-frame entry: x(2B), y(2B), width(2B), height(2B), format(1B), 11B padding, fileOffset(4B)
+        int16_t fx = *(const int16_t*)(fhdr + 0);
+        int16_t fy = *(const int16_t*)(fhdr + 2);
+        int16_t fw = *(const int16_t*)(fhdr + 4);
+        int16_t fh = *(const int16_t*)(fhdr + 6);
+        uint8_t fmt = fhdr[8];
+        uint32_t fileOffset = *(const uint32_t*)(fhdr + 20);
 
-        // Decode frame dimensions from pixel data header
-        int offset = m_frames[i].offset;
-        if (offset < 0 || offset >= data_size - 4) continue;
+        m_frames[i].width  = fw > 0 ? fw : 0;
+        m_frames[i].height = fh > 0 ? fh : 0;
+        m_frames[i].offset = fileOffset;
+        m_frames[i].format = fmt;
+        m_frames[i].size   = fw * fh;
 
-        int16_t w = *(const int16_t*)(data + offset + 0);
-        int16_t h = *(const int16_t*)(data + offset + 2);
-        m_frames[i].width  = w;
-        m_frames[i].height = h;
+        if (fw <= 0 || fh <= 0 || fileOffset == 0 || fileOffset >= (uint32_t)data_size)
+            continue;
 
-        // For RLE3 format, skip the encoder-specific header
-        int px_offset;
-        if (m_frames[i].format == 3) {
-            // EncoderType (byte), BlockSize (byte), then actual data
-            px_offset = offset + 4;
-            m_frames[i].size = 0;
-        } else if (m_frames[i].format == 0) {
-            px_offset = offset + 4;
-            m_frames[i].size = w * h;
-        } else {
-            px_offset = offset + 4;
-            m_frames[i].size = 0;
-        }
+        // Pad to even dimensions (OpenRA approach)
+        int dataWidth  = fw;
+        int dataHeight = fh;
+        if (dataWidth  % 2 == 1) dataWidth++;
+        if (dataHeight % 2 == 1) dataHeight++;
 
-        if (px_offset < 0 || px_offset >= data_size) continue;
-
-        m_pixel_data[i] = static_cast<uint8_t*>(malloc(w * h));
+        m_pixel_data[i] = static_cast<uint8_t*>(malloc(dataWidth * dataHeight));
         if (!m_pixel_data[i]) continue;
+        memset(m_pixel_data[i], 0, dataWidth * dataHeight);
 
-        memset(m_pixel_data[i], 0, w * h);
-
-        if (m_frames[i].format == 3 && w > 0 && h > 0) {
-            DecodeRLE3(data + px_offset, data_size - px_offset,
-                       m_pixel_data[i], w, h);
-        } else if (m_frames[i].format == 0) {
-            int sz = (w * h < data_size - px_offset) ? w * h : data_size - px_offset;
-            memcpy(m_pixel_data[i], data + px_offset, sz);
+        if (fmt == 3) {
+            // Format 3: scanline-based RLE-zero compression
+            // Each scanline: length(2B) followed by RLE-zero data
+            DecodeRLE3(data + fileOffset, data_size - fileOffset,
+                       m_pixel_data[i], dataWidth, fh);
+        } else if (fmt == 0 || fmt == 1) {
+            // Format 0/1: uncompressed full-width rows
+            const uint8_t* src = data + fileOffset;
+            for (int y = 0; y < fh && fileOffset + y * fw + fw <= (uint32_t)data_size; y++) {
+                memcpy(m_pixel_data[i] + y * dataWidth, src + y * fw, fw);
+            }
+        } else if (fmt == 2) {
+            // Format 2: uncompressed length-prefixed scanlines
+            const uint8_t* src = data + fileOffset;
+            for (int y = 0; y < fh && fileOffset + 2 <= (uint32_t)data_size; y++) {
+                int len = *(const uint16_t*)src - 2;
+                src += 2;
+                fileOffset += 2;
+                if (len > 0 && fileOffset + len <= (uint32_t)data_size) {
+                    int copy = (len < fw) ? len : fw;
+                    memcpy(m_pixel_data[i] + y * dataWidth, src, copy);
+                    src += len;
+                    fileOffset += len;
+                }
+            }
         }
     }
 
@@ -121,72 +133,39 @@ const uint8_t* ShpImage::GetPixelData(int frame_index) const
 bool ShpImage::DecodeRLE3(const uint8_t* src, int src_size,
                            uint8_t* dst, int dst_width, int dst_height)
 {
+    // Format 3: scanline-based RLE-zero compression (OpenRA ShpTSLoader)
+    // Each scanline: uint16 length (total bytes including this 2B prefix, minus 2)
+    // Followed by RLE-zero data:
+    //   cmd == 0x00: next byte is count → write 'count' zeros
+    //   cmd != 0x00: write byte directly
     if (!src || !dst) return false;
 
-    int src_pos = 0;
-    int line = 0;
-    int pos_in_line = 0;
+    const uint8_t* p = src;
+    const uint8_t* end = src + src_size;
 
-    while (line < dst_height && src_pos < src_size) {
-        if (pos_in_line >= dst_width) {
-            pos_in_line = 0;
-            ++line;
-        }
-        if (line >= dst_height) break;
+    for (int y = 0; y < dst_height && p + 2 <= end; y++) {
+        int lineLen = *(const uint16_t*)p - 2;
+        p += 2;
+        const uint8_t* lineEnd = p + lineLen;
+        if (lineEnd > end) lineEnd = end;
 
-        if (src_pos >= src_size) break;
-        uint8_t cmd = src[src_pos++];
-
-        if (cmd == 0) {
-            // End of line or section marker
-            if (src_pos < src_size) {
-                uint8_t sub = src[src_pos++];
-                if (sub == 0) {
-                    // End of line
-                    pos_in_line = 0;
-                    ++line;
-                } else {
-                    // Skip sub pixels
-                    int skip = sub;
-                    if (src_pos < src_size) {
-                        uint8_t color = src[src_pos++];
-                        for (int j = 0; pos_in_line < dst_width && j < skip; ++j) {
-                            dst[line * dst_width + pos_in_line] = color;
-                            ++pos_in_line;
-                        }
+        int x = 0;
+        while (p < lineEnd && x < dst_width) {
+            uint8_t cmd = *p++;
+            if (cmd == 0) {
+                if (p < lineEnd) {
+                    int count = *p++;
+                    while (count-- > 0 && x < dst_width) {
+                        dst[y * dst_width + x] = 0;
+                        x++;
                     }
                 }
-            }
-        } else if (cmd <= 0x7F) {
-            // Copy cmd literal bytes
-            int count = cmd;
-            for (int j = 0; j < count && src_pos < src_size; ++j) {
-                dst[line * dst_width + pos_in_line] = src[src_pos++];
-                ++pos_in_line;
-                if (pos_in_line >= dst_width) {
-                    pos_in_line = 0;
-                    ++line;
-                    if (line >= dst_height) break;
-                }
-            }
-        } else {
-            // RLE run: repeat next byte (cmd - 0x80) times
-            int count = cmd - 0x80;
-            if (src_pos < src_size) {
-                uint8_t color = src[src_pos++];
-                for (int j = 0; j < count; ++j) {
-                    if (pos_in_line < dst_width) {
-                        dst[line * dst_width + pos_in_line] = color;
-                    }
-                    ++pos_in_line;
-                    if (pos_in_line >= dst_width) {
-                        pos_in_line = 0;
-                        ++line;
-                        if (line >= dst_height) break;
-                    }
-                }
+            } else {
+                dst[y * dst_width + x] = cmd;
+                x++;
             }
         }
+        p = lineEnd;
     }
 
     return true;

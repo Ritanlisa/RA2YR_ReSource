@@ -34,7 +34,7 @@ Phase 2 现代化方向：
 | 编译警告 | **0** |
 | 已实现函数 | **~140** (~200+ stubs/empty) |
 | TODO/FIXME 标记 | **~260** (source 210 + headers 50) |
-| IDA 命名 | **263 函数 + 44 全局变量 + 3 struct 类型** |
+| IDA 命名 | **267 函数 + 46 全局变量 + 3 struct 类型** |
 | MIX 格式支持 | RA2 加密 + 扩展无加密 + TD 传统 (全部验证) |
 | EXE 骨架 | **WinMain + Win32窗口 + DirectDraw7初始化 + MIX文件加载 + SHP渲染 + 主菜单系统** |
 
@@ -742,23 +742,25 @@ make _WIN32_WINNT=0x0400
 | MIX 文件加载 | ✅ | 16顶层→17子MIX→33池，内存支持 |
 | SHP 解码 | ✅ | TS格式(RLE3+Raw)，`ShpImage::LoadFromMemory` |
 | 调色板 | ✅ | 768字节内容扫描匹配 |
-| **BINK 视频** | ✅ | 左侧 456×432px, ~30fps, RGB565, 已循环+音频 |
-| BINK 循环 | ✅ | `_BinkDoFrame` 返回 0 表示结束, `_BinkGoto(0)` 复位 |
-| **按钮 (彩色矩形)** | ✅ | 右侧 x=1517, 162×37px, 绿=普通/红=悬停, 文字标签 |
+| **BINK 视频** | ✅ | 左侧 BINK 区域, RGB565, 帧序已修正 |
+| **BINK 音频** | ✅ | DirectSound + BinkSetSoundSystem + BinkSetVolume |
+| **BINK 帧序** | ✅ | 修正为 DoFrame→Wait→CopyToBuffer→NextFrame (匹配 IDA 0x432E40) |
+| **按钮 (Win32控件)** | ✅ | Win32 BUTTON 子窗口 (DiaglogEX 模板 0xE2), GDI 渲染 |
 | 按钮 (SHP 素材) | ❌ | SHP 解析器返回错误尺寸 2x0 (头部 `0000 3400 2000 0200` 非标准) |
-| Dialog/Gadget 系统 | ⚠️ | 头文件已定义，菜单使用 DDraw 直接渲染 |
-| 主菜单 BINK 背景 | ✅ | `ra2ts_l.bik` 632×570 渲染到 456×432 区域 |
+| Dialog/Gadget 系统 | ⚠️ | 子菜单 (Campaign/Options) 使用 DDraw Gadget 系统 |
+| 主菜单 BINK 背景 | ✅ | `ra2ts_l.bik` 632×570 渲染到 BINK 区域 |
 
 ---
 
 ## 当前会话上下文 (快速恢复)
 
-### IDA 命名摘要 (共263函数 + 44全局)
+### IDA 命名摘要 (共267函数 + 46全局)
 
 | 类别 | 示例 | 用途 |
 |------|------|------|
 | 生产管线 (8) | `ProductionCompletionCallback`, `CreateUnitOnCompletion`, `ConstructionPositionTracker` | CreateUnit 回调链 |
 | 坐标/格子 (10) | `Coord_To_Cell`, `Cell_GetGroundHeight`, `Cell_IsWalkable`, `CellCoord_To_CellObj` | 位置计算 |
+| **BINK音频系统 (4)** | `Audio_IsSoundEnabled`, `Audio_GetDirectSound`, `BinkMovie_Pause`, `BinkMovie_AdjustSurfaceFormat` | DirectSound→BINK音频桥接 |
 | 音频 (5) | `AudioController_Start`, `AudioController_StartAt`, `AudioController_Stop`, `AudioController_Init` | 工作音效 |
 | 数学 (5) | `Math_RoundToInt`, `Math_Sqrt`, `Math_SinCos`, `Math_CalcAngle` | 坐标计算 |
 | 电力 (5) | `Power_TimerProcess`, `Power_FlagProcess`, `BuildingClass_PowerDrainUpdate` | 电力系统 |
@@ -771,8 +773,10 @@ make _WIN32_WINNT=0x0400
 | **系统工具 (6)** | `Screen_Capture`, `Random_Init`, `Network_Init`, `Timer_GetTicks`, `Resource_Find`, `Message_IsDialog` | 截图/RNG/网络/定时器/资源 |
 | **菜单系统 (6)** | `Skirmish_Setup_Screen`, `Skirmish_Setup_DlgProc`, `Credits_Screen`, `Options_Screen_Save`, `Screensaver_Start`, `Dialog_Init` | Skirmish+Credits+屏保+对话框 |
 | **DDraw 全局变量 (8)** | `g_lpDirectDraw7`, `g_DDraw_Initialized`, `g_ZBufferDescriptor`, `g_VisibleSurfaceDescriptor`, `g_BitShift_Red/Green/Blue+Mask` | DDraw 引擎状态 |
-| **BINK 渲染管线 (11)** | `BinkMovie_RenderLoop`, `BinkMovie_InitFromFile`, `BinkMovie_RenderSingleFrame`, `BinkMovie_BlitToTarget`, `BinkMovie_CheckKeyframeTransition` | BINK视频解码→表面渲染→Blit |
+| **BINK 渲染管线 (13)** | `BinkMovie_RenderLoop`, `BinkMovie_InitFromFile`, `BinkMovie_RenderSingleFrame`, `BinkMovie_BlitToTarget`, `BinkMovie_CheckKeyframeTransition`, `BinkMovie_Pause`, `BinkMovie_AdjustSurfaceFormat` | BINK视频解码→表面渲染→Blit |
 | **BINK 表面追踪 (3)** | `BinkMovie_CreateSurfaceTracker`, `BinkMovie_FreeSurfaceTracker`, `BinkMovie_ProcessKeyframe` | BSurface 关键帧过渡处理 |
+| **BINK音频系统 (2)** | `Audio_IsSoundEnabled`, `Audio_GetDirectSound` | DirectSound→BINK SetSoundSystem 桥接 |
+| **音频全局 (2)** | `g_Audio_Enabled`, `g_pDirectSound` | 音频启用标志 + DirectSound 对象指针 |
 
 ### IDA struct 类型 (3个)
 - `BuildingClass_Full` — 已应用于 CreateUnit + 3 callbacks 的 `this` 参数
@@ -789,7 +793,7 @@ make _WIN32_WINNT=0x0400
 - **MIX 格式**: 前 2B=0 为扩展格式; flags 0x0002=加密; 算法来自 RA1 MixFileClass
 - **MIX 文件名**: 仅存 hash ID, 不存原始名; 通过 `ComputeId()` 匹配
 - **IDA 连接**: `127.0.0.1:13337`, i64 在 `C:\Program Files (x86)\Mental Omega\gamemd.exe.i64`
-- **IDA 命名状态**: 263 函数 + 44 全局变量 + 3 struct 类型 (见上方命名清单)
+- **IDA 命名状态**: 267 函数 + 46 全局变量 + 3 struct 类型 (见上方命名清单)
 - **Python**: 3.14.2 (`python` 或 `py`), Windows 上已就绪
 - **渲染框架**: cnc-ddraw (`./cnc-ddraw`, by FunkyFr3sh) — Phase 1 调试阶段作为 `ddraw.dll` 兼容层运行 EXE
 - **EXE 入口**: `app/main.cpp` — WinMain 创建窗口 + 初始化 DirectDraw 7 + 游戏循环

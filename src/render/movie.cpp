@@ -1,6 +1,7 @@
 #include "gamemd/render/movie.hpp"
 #include "gamemd/render/surface.hpp"
 #include "gamemd/system/file_system.hpp"
+#include "gamemd/misc/audio.hpp"
 #include "gamemd/core/logging.hpp"
 
 #include <windows.h>
@@ -218,6 +219,10 @@ typedef int32_t(__stdcall *BinkWait_t)(void* bnk);
 typedef const char*(__stdcall *BinkGetError_t)(void);
 typedef int32_t(__stdcall *BinkDDSurfaceType_t)(void* lpDDS);  // 0x7e15a8
 typedef int32_t(__stdcall *BinkGoto_t)(void* bnk, uint32_t frame, uint32_t flags);
+typedef int32_t(__stdcall *BinkOpenDirectSound_t)(void* ds);  // 0x7e1594
+typedef void   (__stdcall *BinkSetSoundSystem_t)(BinkOpenDirectSound_t open_func, void* param);  // 0x7e1590
+typedef void   (__stdcall *BinkSetVolume_t)(void* bnk, int32_t volume);  // 0x7e15a0
+typedef void   (__stdcall *BinkPause_t)(void* bnk, int32_t pause);  // 0x7e15b0
 
 static HMODULE s_binkDLL = nullptr;
 static BinkOpen_t s_BinkOpen = nullptr;
@@ -229,6 +234,11 @@ static BinkWait_t s_BinkWait = nullptr;
 static BinkGetError_t s_BinkGetError = nullptr;
 static BinkDDSurfaceType_t s_BinkDDSurfaceType = nullptr;
 static BinkGoto_t s_BinkGoto = nullptr;
+static BinkSetSoundSystem_t s_BinkSetSoundSystem = nullptr;
+static BinkOpenDirectSound_t s_BinkOpenDirectSound = nullptr;
+static BinkSetVolume_t s_BinkSetVolume = nullptr;
+static BinkPause_t s_BinkPause = nullptr;
+static int32_t s_binkVolume = 32768;  // default max volume (1.0 * 32768)
 
 static bool BinkInit()
 {
@@ -252,6 +262,10 @@ static bool BinkInit()
     s_BinkGetError      = (BinkGetError_t)GetProcAddress(s_binkDLL, "_BinkGetError@0");
     s_BinkDDSurfaceType = (BinkDDSurfaceType_t)GetProcAddress(s_binkDLL, "_BinkDDSurfaceType@4");
     s_BinkGoto          = (BinkGoto_t)GetProcAddress(s_binkDLL, "_BinkGoto@12");
+    s_BinkSetSoundSystem    = (BinkSetSoundSystem_t)GetProcAddress(s_binkDLL, "_BinkSetSoundSystem@8");
+    s_BinkOpenDirectSound   = (BinkOpenDirectSound_t)GetProcAddress(s_binkDLL, "_BinkOpenDirectSound@4");
+    s_BinkSetVolume         = (BinkSetVolume_t)GetProcAddress(s_binkDLL, "_BinkSetVolume@8");
+    s_BinkPause             = (BinkPause_t)GetProcAddress(s_binkDLL, "_BinkPause@8");
 
     if (!s_BinkOpen || !s_BinkDoFrame || !s_BinkCopyToBuffer || !s_BinkClose) {
         FreeLibrary(s_binkDLL);
@@ -261,6 +275,14 @@ static bool BinkInit()
     char dllPath[MAX_PATH];
     GetModuleFileNameA(s_binkDLL, dllPath, sizeof(dllPath));
     LOG_INFO("binkw32.dll loaded: %s", dllPath);
+
+    if (s_BinkSetSoundSystem && s_BinkOpenDirectSound && Audio_IsSoundEnabled()) {
+        IDirectSound* pDS = Audio_GetDirectSound();
+        if (pDS) {
+            s_BinkSetSoundSystem(s_BinkOpenDirectSound, pDS);
+            LOG_INFO("BinkSetSoundSystem: DirectSound configured");
+        }
+    }
     return true;
 }
 
@@ -310,6 +332,10 @@ bool BinkMovieHandle::OpenFromFile(const char* filename, DSurface* render_target
     m_playing = true;
     LOG_INFO("BinkMovie::OpenFromFile: %dx%d, %d frames, fmt_code=%d",
         m_width, m_height, m_total_frames, m_surface_flags);
+
+    if (s_BinkSetVolume) {
+        s_BinkSetVolume(m_bink_handle, s_binkVolume);
+    }
     return true;
 }
 
@@ -365,6 +391,10 @@ bool BinkMovieHandle::OpenFromMemory(const void* data, int size, DSurface* rende
     m_playing = true;
     LOG_INFO("BinkMovie: %dx%d, %d frames, surface_flags=0x%08X (binkw32.dll)",
         m_width, m_height, hdr->num_frames, m_surface_flags);
+
+    if (s_BinkSetVolume) {
+        s_BinkSetVolume(m_bink_handle, s_binkVolume);
+    }
     return true;
 }
 
@@ -386,7 +416,7 @@ bool BinkMovieHandle::AdvanceFrame()
                     return false;
                 }
                 m_current_frame = 0;
-                m_throttle_counter = 0; // reset throttle for new loop
+                m_throttle_counter = 0;
                 doFrameResult = s_BinkDoFrame(m_bink_handle);
                 if (doFrameResult < 0) {
                     m_playing = false;
@@ -397,9 +427,7 @@ bool BinkMovieHandle::AdvanceFrame()
                 return false;
             }
         }
-        if (s_BinkWait) s_BinkWait(m_bink_handle);
-        if (s_BinkNextFrame) s_BinkNextFrame(m_bink_handle);  // sub_432E40: after Copy
-        ++m_current_frame;
+        m_frame_decoded = true;
         return true;
     }
 
@@ -419,12 +447,14 @@ void BinkMovieHandle::RenderFrame(DSurface* target)
         DDSURFACEDESC2 desc = {};
         desc.dwSize = sizeof(desc);
         if (SUCCEEDED(target->Surface->Lock(nullptr, &desc, DDLOCK_WAIT, nullptr))) {
+            if (s_BinkWait) s_BinkWait(m_bink_handle);
             s_BinkCopyToBuffer(m_bink_handle, desc.lpSurface,
                                desc.lPitch, m_height, 0, 0,
                                m_surface_flags);
             target->Surface->Unlock(nullptr);
         }
         if (s_BinkNextFrame) s_BinkNextFrame(m_bink_handle);
+        ++m_current_frame;
         return;
     }
 
@@ -453,8 +483,9 @@ void BinkMovieHandle::RenderFrameRaw(void* locked_buffer, int pitch_bytes, int h
         s_BinkCopyToBuffer(m_bink_handle, locked_buffer,
                            pitch_bytes, height, dest_x, dest_y,
                            m_surface_flags);
+        if (s_BinkNextFrame) s_BinkNextFrame(m_bink_handle);
+        ++m_current_frame;
     }
-    // _BinkNextFrame is called in AdvanceFrame after _BinkDoFrame (sub_432E40 order)
 }
 
 void BinkMovieHandle::Stop()

@@ -1,6 +1,8 @@
 #include "gamemd/misc/audio.hpp"
 #include "gamemd/core/vector.hpp"
 
+#include <mmsystem.h>
+#include <dsound.h>
 #include <cstring>
 
 namespace gamemd
@@ -124,6 +126,72 @@ bool VoxClass::LoadFromINI(CCINIClass* pINI)
 {
     // TODO: complete implementation
     return false;
+}
+
+// --- DirectSound audio init (matches IDA 0x40A7A0 / 0x407000) ---
+
+static HMODULE s_dsound_dll = nullptr;
+static IDirectSound* g_pDirectSound = nullptr;  // IDA: ppDS at 0x87E89C
+static bool g_Audio_Enabled = false;            // IDA: dword_87E728
+
+typedef HRESULT (__stdcall *DirectSoundCreate_t)(LPCGUID lpGuid, LPDIRECTSOUND* ppDS, LPUNKNOWN pUnkOuter);
+
+bool Audio_Init(HWND hWnd)
+{
+    if (g_pDirectSound) return true;
+
+    s_dsound_dll = LoadLibraryA("dsound.dll");
+    if (!s_dsound_dll) return false;
+
+    auto pCreate = (DirectSoundCreate_t)GetProcAddress(s_dsound_dll, "DirectSoundCreate");
+    if (!pCreate) {
+        FreeLibrary(s_dsound_dll);
+        s_dsound_dll = nullptr;
+        return false;
+    }
+
+    IDirectSound* pDS = nullptr;
+    HRESULT hr = pCreate(nullptr, &pDS, nullptr);
+    if (FAILED(hr) || !pDS) {
+        FreeLibrary(s_dsound_dll);
+        s_dsound_dll = nullptr;
+        return false;
+    }
+
+    hr = pDS->SetCooperativeLevel(hWnd, DSSCL_EXCLUSIVE);
+    if (FAILED(hr)) {
+        pDS->Release();
+        FreeLibrary(s_dsound_dll);
+        s_dsound_dll = nullptr;
+        return false;
+    }
+
+    g_pDirectSound = pDS;
+    g_Audio_Enabled = true;
+    return true;
+}
+
+void Audio_Shutdown()
+{
+    g_Audio_Enabled = false;
+    if (g_pDirectSound) {
+        g_pDirectSound->Release();
+        g_pDirectSound = nullptr;
+    }
+    if (s_dsound_dll) {
+        FreeLibrary(s_dsound_dll);
+        s_dsound_dll = nullptr;
+    }
+}
+
+bool Audio_IsSoundEnabled()   // IDA 0x407000
+{
+    return g_Audio_Enabled;
+}
+
+IDirectSound* Audio_GetDirectSound()  // IDA 0x40A7A0
+{
+    return g_pDirectSound;
 }
 
 // --- AudioController helper functions ---

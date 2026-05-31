@@ -3,6 +3,7 @@
 #include "gamemd/core/game_loop.hpp"
 #include "gamemd/core/ddraw_init.hpp"
 #include "gamemd/core/logging.hpp"
+#include "gamemd/misc/audio.hpp"
 #include "cmdline.hpp"
 #include "resource.h"
 
@@ -127,6 +128,12 @@ bool GameLoop_Init(HINSTANCE hInstance, HINSTANCE hPrevInstance,
     }
     LOG_INFO("DirectDraw7 initialized");
 
+    if (!Audio_Init(g_hWnd)) {
+        LOG_WARN("DirectSound init failed — audio disabled");
+    } else {
+        LOG_INFO("DirectSound initialized");
+    }
+
     if (!InitGame(config.no_cd)) {
         LOG_ERROR("InitGame FAILED");
         return false;
@@ -150,6 +157,7 @@ void GameLoop_Shutdown()
 {
     LOG_INFO("Main_Game: shutting down...");
     DDraw_Shutdown();
+    Audio_Shutdown();
     if (g_hWnd) {
         LOG_TRACE("Main_Game: destroying window 0x%08x", (unsigned)(uintptr_t)g_hWnd);
         DestroyWindow(g_hWnd);

@@ -40,7 +40,7 @@ DSurface::DSurface(int width, int height, bool back_buffer, bool force_3d) noexc
 
 DSurface::~DSurface()
 {
-    if (Surface) {
+    if (Allocated && Surface) {
         Surface->Release();
         Surface = nullptr;
     }

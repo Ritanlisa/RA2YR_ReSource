@@ -1,4 +1,5 @@
 #include <windows.h>
+#include <commctrl.h>
 #include <cstdint>
 #include <cstdio>
 #include <cstring>
@@ -131,7 +132,53 @@ static void DrawShpToBuffer(ShpImage* img, int frame, uint16_t* buf, int pitch,
     }
 }
 
-// ---- MainMenu_Screen — DDraw rendering + BinkPlayerControl ----
+// ---- MainMenu_Screen — Win32 dialog on DDraw surface (IDA 0x531CC0 + 0x531F60) ----
+// Original: Dialog_Create(0xE2, MainMenu_DlgProc, 0) with DIALOGEX template
+// Controls: 6 BUTTONs + 3 STATICs (BINK=1818, StatusBar=1685, Version=1821)
+
+struct MainMenuData {
+    MenuState* state;
+    HWND      binkDlgItem;
+};
+
+// Button definitions from DIALOGEX template 0xE2
+// (id, "CSF_Key", y_dlu, target_state)
+static const struct { int id; const char* text; int yDLU; MenuState target; } kMenuButtons[] = {
+    {1667, "Campaign",    125, MenuState::Campaign},      // GUI:SinglePlayer
+    {1668, "Skirmish",    152, MenuState::Skirmish},       // GUI:WWOnline
+    {1400, "Network",     179, MenuState::Multiplayer},    // GUI:Network
+    {1670, "Movies",      206, MenuState::CampaignSub},    // GUI:MoviesAndCredits
+    {1372, "Options",     233, MenuState::Options},        // GUI:Options
+    {1006, "Exit Game",   330, MenuState::ExitConfirm},    // GUI:ExitGame
+};
+
+static INT_PTR CALLBACK MainMenu_DlgProc_Impl(HWND hDlg, UINT msg, WPARAM wParam, LPARAM lParam)
+{
+    auto* data = (MainMenuData*)GetWindowLongPtrA(hDlg, GWLP_USERDATA);
+
+    if (msg == WM_ERASEBKGND)
+        return TRUE;
+
+    if (msg == WM_COMMAND) {
+        WORD code = HIWORD(wParam);
+        DWORD id = LOWORD(wParam);
+        if (code == BN_CLICKED && data && data->state) {
+            for (auto& btn : kMenuButtons) {
+                if ((DWORD)btn.id == id) {
+                    *data->state = btn.target;
+                    return 0;
+                }
+            }
+        }
+    }
+
+    if (msg == WM_CLOSE && data && data->binkDlgItem) {
+        SendMessageA(data->binkDlgItem, BINKM_CLOSE, 0, 0);
+    }
+
+    return DefWindowProcA(hDlg, msg, wParam, lParam);
+}
+
 static MenuState MainMenu_Screen()
 {
     DDrawContext* ctx = DDraw_GetContext();
@@ -139,149 +186,133 @@ static MenuState MainMenu_Screen()
         LOG_ERROR("[MENU] DDraw not available");
         return MenuState::MenuIdle;
     }
-    if (!PaletteLoaded()) LoadMenuPalette();
 
-    // Layout from template 0xE2
+    // Layout scales from 533×369 dialog units
     int dlgW = (ctx->width > 800) ? 800 : ctx->width;
     int dlgH = (ctx->height > 600) ? 600 : ctx->height;
     int offX = (ctx->width - dlgW) / 2;
     int offY = (ctx->height - dlgH) / 2;
     float dluX = (float)dlgW / 533.0f;
     float dluY = (float)dlgH / 369.0f;
-    int bikW = (int)(304.0f * dluX), bikH = (int)(266.0f * dluY);
     int bikX = offX, bikY = offY;
+    int bikW = (int)(304.0f * dluX), bikH = (int)(266.0f * dluY);
     int btnX = offX + (int)(425.0f * dluX);
     int btnW = (int)(108.0f * dluX);
     int btnH = (int)(23.0f * dluY);
 
-    auto BtnY = [&](int yDLU) { return offY + (int)((float)yDLU * dluY); };
+    // Register a temp window class for the dialog container
+    static const char* DIALOG_CLASS = "RA2MainMenuDlg";
+    WNDCLASSA wc = {};
+    wc.style         = CS_HREDRAW | CS_VREDRAW;
+    wc.lpfnWndProc   = DefWindowProcA;
+    wc.hInstance     = g_hInstance;
+    wc.hbrBackground = (HBRUSH)GetStockObject(NULL_BRUSH);
+    wc.lpszClassName = DIALOG_CLASS;
+    if (!GetClassInfoA(g_hInstance, DIALOG_CLASS, &wc))
+        RegisterClassA(&wc);
 
-    // Load SHP buttons
-    ShpImage* btns[6] = {};
-    for (int i = 0; i < 6; i++) {
-        void* data = FileSystem::LoadByHash(kMenuBtnHashes[i]);
-        if (data) {
-            btns[i] = new ShpImage();
-            if (!btns[i]->LoadFromMemory((const uint8_t*)data, 32768)) {
-                delete btns[i]; btns[i] = nullptr;
-                LOG_WARN("[MENU] SHP btn %d load failed hash=0x%08X", i, kMenuBtnHashes[i]);
-            } else {
-                LOG_DEBUG("[MENU] SHP btn %d loaded %dx%d %df", i, btns[i]->GetWidth(), btns[i]->GetHeight(), btns[i]->GetFrameCount());
-            }
-            free(data);
-        }
+    // Create child dialog window (no background — DDraw shows through)
+    HWND hDlg = CreateWindowExA(0, DIALOG_CLASS, "", WS_CHILD | WS_CLIPCHILDREN | WS_CLIPSIBLINGS,
+        offX, offY, dlgW, dlgH, g_hWnd, nullptr, g_hInstance, nullptr);
+    if (!hDlg) {
+        LOG_ERROR("[MENU] CreateWindowExA(DIALOG) failed: %d", GetLastError());
+        return MenuState::MenuIdle;
     }
 
-    // Create BINK control (hidden window for lifecycle management)
-    HWND binkWnd = CreateWindowExA(0, "STATIC", "",
-        WS_POPUP, 0, 0, 1, 1, ctx->hwnd, nullptr, GetModuleHandleA(nullptr), nullptr);
-    if (binkWnd) {
-        SetWindowSubclass(binkWnd, BinkPlayerControl::WindowProc, 0, 0);
-        SendMessageA(binkWnd, BINKM_INIT, 1, 0);
-        const char* bikName = (ctx->width > 640) ? "ra2ts_l.bik" : "ra2ts_s.bik";
-        uint32_t bikHash = (ctx->width > 640) ? 0x33665128 : 0xC1E6E166;
-        void* bikData = FileSystem::LoadByHash(bikHash);
-        if (bikData) {
-            uint32_t sz = *(const uint32_t*)((const uint8_t*)bikData + 4);
-            if (sz < 100 || sz > 64*1024*1024) sz = 8*1024*1024;
-            FILE* fp = nullptr;
-            if (fopen_s(&fp, bikName, "wb") == 0 && fp) { fwrite(bikData, 1, sz, fp); fclose(fp); }
-            free(bikData);
-        }
-        SendMessageA(binkWnd, BINKM_OPEN, 0, (LPARAM)bikName);
+    // Static controls: BINK area (1818), StatusBar (1685), Version (1821)
+    HWND hBink = CreateWindowExA(0, "STATIC", "",
+        WS_CHILD | WS_VISIBLE, bikX - offX, bikY - offY, bikW, bikH, hDlg, (HMENU)1818, g_hInstance, nullptr);
+    CreateWindowExA(0, "STATIC", "", WS_CHILD, 2, 355, 303, 12, hDlg, (HMENU)1685, g_hInstance, nullptr);
+    HWND hVersion = CreateWindowExA(0, "STATIC", "Yuri's Revenge", WS_CHILD | WS_VISIBLE,
+        425, 357, 108, 10, hDlg, (HMENU)1821, g_hInstance, nullptr);
+
+    // Subclass BINK control
+    SetWindowSubclass(hBink, BinkPlayerControl::WindowProc, 0, 0);
+    SendMessageA(hBink, BINKM_INIT, 1, 0);
+
+    // Load BINK file to disk for binkw32.dll
+    const char* bikName = (ctx->width > 640) ? "ra2ts_l.bik" : "ra2ts_s.bik";
+    uint32_t bikHash = (ctx->width > 640) ? 0x33665128 : 0xC1E6E166;
+    void* bikData = FileSystem::LoadByHash(bikHash);
+    if (bikData) {
+        const auto* head = (const uint32_t*)bikData;
+        uint32_t sz = head[1];
+        if (sz < 100 || sz > 64*1024*1024) sz = 8*1024*1024;
+        FILE* fp = nullptr;
+        if (fopen_s(&fp, bikName, "wb") == 0 && fp) { fwrite(bikData, 1, sz, fp); fclose(fp); }
+        free(bikData);
     }
+    SendMessageA(hBink, BINKM_OPEN, 0, (LPARAM)bikName);
 
-    // Button hover state
-    bool btnHover[6] = {};
-    int btnPosY[6] = {};
-    for (int i = 0; i < 6; i++) btnPosY[i] = BtnY(kMenuBtnY[i]);
-
-    DialogClass dlg(0, 0, ctx->width, ctx->height);
+    // Create BUTTON controls
+    for (auto& btn : kMenuButtons) {
+        int by = (int)((float)btn.yDLU * dluY);
+        CreateWindowExA(0, "BUTTON", btn.text,
+            WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON | BS_NOTIFY,
+            btnX - offX, by, btnW, btnH,
+            hDlg, (HMENU)(INT_PTR)btn.id, g_hInstance, nullptr);
+    }
 
     MenuState result = MenuState::MenuIdle;
+    MainMenuData data = { &result, hBink };
+    SetWindowLongPtrA(hDlg, GWLP_USERDATA, (LONG_PTR)&data);
+    SetWindowLongPtrA(hDlg, GWLP_WNDPROC, (LONG_PTR)MainMenu_DlgProc_Impl);
+
+    ShowWindow(hDlg, SW_SHOW);
+    SetFocus(g_hWnd);
+
     int loopCount = 0;
     bool reachedEnd = false;
 
     while (!reachedEnd) {
         ++loopCount;
 
-        BinkPlayerControl* bikCtrl = BinkPlayerControl::FromHwnd(binkWnd);
-        bool bikAdvanced = false;
+        // BINK frame advance
+        BinkPlayerControl* bikCtrl = BinkPlayerControl::FromHwnd(hBink);
         if (bikCtrl && bikCtrl->IsPlaying()) {
             BinkMovieHandle* movie = bikCtrl->Movie();
-            if (movie) bikAdvanced = movie->AdvanceFrame();
+            if (movie) movie->AdvanceFrame();
         }
 
-        // Render to back buffer in one Lock session
+        // Render BINK to DDraw back buffer
         DDSURFACEDESC2 desc = {};
         desc.dwSize = sizeof(desc);
         if (SUCCEEDED(ctx->back_buffer->Lock(nullptr, &desc, DDLOCK_WAIT, nullptr))) {
             auto* buf = (uint16_t*)desc.lpSurface;
             int pitch = desc.lPitch / 2;
 
-            // Render BINK
             if (bikCtrl && bikCtrl->IsPlaying()) {
                 BinkMovieHandle* m = bikCtrl->Movie();
                 if (m) m->RenderFrameRaw(desc.lpSurface, desc.lPitch, ctx->height, bikX, bikY);
             } else {
-                // Dark navy background
                 for (int y = 0; y < ctx->height; y++)
                     for (int x = 0; x < ctx->width; x++)
                         buf[y * pitch + x] = 0x1082;
-            }
-
-            // Draw SHP buttons
-            for (int i = 0; i < 6; i++) {
-                if (!btns[i]) {
-                    // Fallback: draw colored rect
-                    int by = btnPosY[i];
-                    uint16_t fill = btnHover[i] ? 0xF800 : 0x07E0;
-                    for (int y = by; y < by + btnH && y < ctx->height; y++)
-                        for (int x = btnX; x < btnX + btnW && x < ctx->width; x++)
-                            buf[y * pitch + x] = (y == by || y == by + btnH - 1 || x == btnX || x == btnX + btnW - 1) ? 0xFFFF : fill;
-                } else {
-                    int fc = btnHover[i] ? 1 : 0;
-                    DrawShpToBuffer(btns[i], fc, buf, pitch, ctx->width, ctx->height, btnX, btnPosY[i]);
-                }
             }
 
             ctx->back_buffer->Unlock(nullptr);
         }
         DDraw_Flip();
 
-        // Messages
+        // Message pump — Win32 BUTTON controls handle their own rendering via GDI
         MSG msg;
         while (PeekMessageA(&msg, nullptr, 0, 0, PM_REMOVE)) {
             if (msg.message == WM_QUIT) { result = MenuState::ExitConfirm; reachedEnd = true; break; }
             if (msg.message == WM_KEYDOWN && msg.wParam == VK_ESCAPE) { result = MenuState::ExitConfirm; reachedEnd = true; break; }
-            if (msg.message == WM_LBUTTONDOWN) {
-                int mx = LOWORD(msg.lParam), my = HIWORD(msg.lParam);
-                for (int i = 0; i < 6; i++) {
-                    if (mx >= btnX && mx < btnX + btnW && my >= btnPosY[i] && my < btnPosY[i] + btnH) {
-                        result = kBtnStates[i];
-                        reachedEnd = true;
-                        break;
-                    }
-                }
+            if (!IsDialogMessageA(hDlg, &msg)) {
+                TranslateMessage(&msg); DispatchMessageA(&msg);
             }
-            if (msg.message == WM_MOUSEMOVE) {
-                int mx = LOWORD(msg.lParam), my = HIWORD(msg.lParam);
-                for (int i = 0; i < 6; i++)
-                    btnHover[i] = (mx >= btnX && mx < btnX + btnW && my >= btnPosY[i] && my < btnPosY[i] + btnH);
-            }
-            TranslateMessage(&msg); DispatchMessageA(&msg);
         }
         Event_Dispatch();
-        if (loopCount > 7200) break; // 60s timeout
+        if (loopCount > 7200) break;
     }
 
     LOG_DEBUG("[MENU] MainMenu exit: result=%d loops=%d", (int)result, loopCount);
 
-    if (binkWnd) {
-        SendMessageA(binkWnd, BINKM_CLOSE, 0, 0);
-        DestroyWindow(binkWnd);
+    if (hBink) {
+        SendMessageA(hBink, BINKM_CLOSE, 0, 0);
     }
-    for (int i = 0; i < 6; i++) delete btns[i];
+    DestroyWindow(hDlg);
     return result;
 }
 
