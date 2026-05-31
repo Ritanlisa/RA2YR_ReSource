@@ -405,9 +405,6 @@ bool BinkMovieHandle::AdvanceFrame()
     // Counter throttle: advance every 4th loop iteration
     if (m_throttle_counter++ % 4 != 0) return true;
 
-    // Frame pacing: BinkWait returns 1 = not yet time, 0 = ready
-    if (s_BinkWait && s_BinkWait(m_bink_handle)) return true;
-
     int doFrameResult = s_BinkDoFrame(m_bink_handle);
     if (doFrameResult != 0) {
         // End of stream: seek back to frame 0 (matching IDA sub_432BD0 + BinkMovie_Play 0x432C70)
@@ -425,6 +422,9 @@ bool BinkMovieHandle::AdvanceFrame()
     if (s_BinkWait) s_BinkWait(m_bink_handle);
     if (s_BinkNextFrame) s_BinkNextFrame(m_bink_handle);
     ++m_current_frame;
+    // Frame pacing: BinkWait after NextFrame blocks until next frame's display time
+    // (matching IDA BinkMovie_RenderLoop 0x432E40: do{...}while(!BinkWait))
+    if (s_BinkWait) s_BinkWait(m_bink_handle);
     return true;
 }
 
@@ -465,12 +465,11 @@ void BinkMovieHandle::RenderFrameRaw(void* locked_buffer, int pitch_bytes, int h
     if (!locked_buffer || !m_playing) return;
 
     if (m_bink_handle && s_BinkCopyToBuffer) {
-        if (s_BinkWait) s_BinkWait(m_bink_handle);
         s_BinkCopyToBuffer(m_bink_handle, locked_buffer,
                            pitch_bytes, height, dest_x, dest_y,
                            m_surface_flags);
     }
-    // BinkNextFrame is called in AdvanceFrame after BinkDoFrame
+    // BinkWait pacing is handled in AdvanceFrame (after NextFrame)
 }
 
 void BinkMovieHandle::Stop()
