@@ -106,6 +106,26 @@ static const struct { int yDLU; const char* text; MenuState target; } kMenuButto
     {330, "Exit Game",   MenuState::ExitConfirm},     // GUI:ExitGame
 };
 
+// SHP button pixel rendering helper (palette index → RGB565)
+static void DrawShpToBuffer(ShpImage* img, int frame, uint16_t* buf, int pitch,
+                            int scrW, int scrH, int dx, int dy)
+{
+    if (!img || !buf) return;
+    int iw = img->GetWidth(), ih = img->GetHeight();
+    const uint8_t* src = img->GetPixelData(frame);
+    if (!src) return;
+    for (int y = 0; y < ih && dy+y < scrH; y++) {
+        int row = (dy+y) * pitch;
+        for (int x = 0; x < iw && dx+x < scrW; x++) {
+            uint8_t ci = src[y * iw + x];
+            if (ci == 0) continue;
+            auto& p = g_palette[ci];
+            uint16_t rgb = (uint16_t)((p[0] >> 3) << 11) | ((p[1] >> 2) << 5) | (p[2] >> 3);
+            buf[row + dx + x] = rgb;
+        }
+    }
+}
+
 // Simple monospace bitmap font 8x14 for button text rendering
 static const uint8_t* GetGlyph(uint8_t ch)
 {
@@ -223,6 +243,23 @@ static MenuState MainMenu_Screen()
     for (int i = 0; i < 6; i++)
         btnPosY[i] = offY + (int)((float)kMenuButtons[i].yDLU * dluY);
 
+    // Load SHP button assets (button00-04.shp, hash IDs from XCC database)
+    static const uint32_t kSHPHashes[] = {
+        0x0D2B157D, 0x77EB461D, 0x4A8B6FAD, 0x304B3CCD, 0x304B3CCD, 0xF8ABB3BD
+    };
+    ShpImage* btns[6] = {};
+    for (int i = 0; i < 6; i++) {
+        void* data = FileSystem::LoadByHash(kSHPHashes[i]);
+        if (!data) continue;
+        btns[i] = new ShpImage();
+        if (!btns[i]->LoadFromMemory((const uint8_t*)data, 32768)) {
+            delete btns[i]; btns[i] = nullptr;
+        } else {
+            LOG_DEBUG("[MENU] SHP btn %d: %dx%d %df", i, btns[i]->GetWidth(), btns[i]->GetHeight(), btns[i]->GetFrameCount());
+        }
+        free(data);
+    }
+
     // Create BINK control window for lifecycle (matching DlgItem 1818)
     HWND hBink = CreateWindowExA(0, "STATIC", "", WS_POPUP,
         0, 0, 1, 1, ctx->hwnd, nullptr, g_hInstance, nullptr);
@@ -274,23 +311,21 @@ static MenuState MainMenu_Screen()
                             buf[y * pitch + x] = 0x1082;
                 }
 
-                // Draw buttons: dark blue fill + light border + text
+                // Draw buttons: SHP when available, fallback colored rect + text
                 for (int i = 0; i < 6; i++) {
                     int by = btnPosY[i];
-                    uint16_t fill  = btnHover[i] ? 0x7BEF : 0x2104;
-                    uint16_t border = btnHover[i] ? 0xC618 : 0x9492;
-                    uint16_t textColor = btnHover[i] ? 0xFFFF : 0xD69A;
-
-                    for (int y = by; y < by + btnH && y < ctx->height; y++) {
-                        for (int x = btnX; x < btnX + btnW && x < ctx->width; x++) {
-                            bool isBorder = (y == by || y == by + btnH - 1 || x == btnX || x == btnX + btnW - 1);
-                            buf[y * pitch + x] = isBorder ? border : fill;
-                        }
+                    if (btns[i]) {
+                        DrawShpToBuffer(btns[i], btnHover[i] ? 1 : 0, buf, pitch, ctx->width, ctx->height, btnX, by);
+                    } else {
+                        uint16_t fill  = btnHover[i] ? 0x7BEF : 0x2104;
+                        uint16_t border = btnHover[i] ? 0xC618 : 0x9492;
+                        uint16_t textColor = btnHover[i] ? 0xFFFF : 0xD69A;
+                        for (int y = by; y < by + btnH && y < ctx->height; y++)
+                            for (int x = btnX; x < btnX + btnW && x < ctx->width; x++)
+                                buf[y * pitch + x] = (y == by || y == by+btnH-1 || x == btnX || x == btnX+btnW-1) ? border : fill;
+                        int tx = btnX + (btnW - (int)strlen(kMenuButtons[i].text) * 8) / 2;
+                        DrawButtonText(buf, pitch, tx < btnX ? btnX : tx, by + (btnH-14)/2, kMenuButtons[i].text, textColor);
                     }
-                    int tx = btnX + (btnW - (int)strlen(kMenuButtons[i].text) * 8) / 2;
-                    int ty = by + (btnH - 14) / 2;
-                    if (tx < btnX) tx = btnX;
-                    DrawButtonText(buf, pitch, tx, ty, kMenuButtons[i].text, textColor);
                 }
 
                 ctx->back_buffer->Unlock(nullptr);
@@ -333,6 +368,7 @@ static MenuState MainMenu_Screen()
         SendMessageA(hBink, BINKM_CLOSE, 0, 0);
         DestroyWindow(hBink);
     }
+    for (int i = 0; i < 6; i++) delete btns[i];
     return result;
 }
 

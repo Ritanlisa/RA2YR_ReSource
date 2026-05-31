@@ -404,27 +404,24 @@ bool BinkMovieHandle::AdvanceFrame()
 
     m_frame_decoded = false;
 
-    // Loop detection: if we've passed the last frame, seek back to 0
-    if (m_current_frame >= m_total_frames) {
+    // Check end-of-stream via BINK internal frame counter (handle offset 12 vs 8)
+    uint32_t* h = (uint32_t*)m_bink_handle;
+    uint32_t current = h[3];  // handle->CurrentFrame at offset 12
+    uint32_t total   = h[2];  // handle->TotalFrames at offset 8
+    if (current >= total) {
         if (s_BinkGoto) {
-            int gotoResult = s_BinkGoto(m_bink_handle, 0, 0);
-            if (gotoResult < 0) { m_playing = false; return false; }
+            int gr = s_BinkGoto(m_bink_handle, 0, 0);
+            if (gr < 0) { m_playing = false; return false; }
             m_current_frame = 0;
-            LOG_DEBUG("BINK: looped back to frame 0");
+            LOG_DEBUG("BINK: BinkGoto(0) looped");
         } else {
             m_playing = false;
             return false;
         }
     }
 
-    // Frame pacing: BinkWait returns 1 (not yet time), 0 (ready to display next frame)
-    if (s_BinkWait && s_BinkWait(m_bink_handle)) return false;
-
-    // Start decompression for current frame
-    if (s_BinkDoFrame(m_bink_handle) == 0) {
-        m_playing = false;
-        return false;
-    }
+    // Counter-based throttle: ~30fps from ~120fps loop
+    if (m_throttle_counter++ % 4 != 0) return false;
 
     m_frame_decoded = true;
     return true;
@@ -470,12 +467,15 @@ void BinkMovieHandle::RenderFrameRaw(void* locked_buffer, int pitch_bytes, int h
     if (!locked_buffer || !m_playing || !m_frame_decoded) return;
 
     if (m_bink_handle && s_BinkCopyToBuffer) {
-        if (s_BinkWait) s_BinkWait(m_bink_handle);
+        // DoFrame is synchronous decompression for current frame
+        s_BinkDoFrame(m_bink_handle);
         s_BinkCopyToBuffer(m_bink_handle, locked_buffer,
                            pitch_bytes, height, dest_x, dest_y,
                            m_surface_flags);
-        if (s_BinkNextFrame) s_BinkNextFrame(m_bink_handle);
-        ++m_current_frame;
+        if (s_BinkNextFrame) {
+            s_BinkNextFrame(m_bink_handle);
+            ++m_current_frame;
+        }
         m_frame_decoded = false;
     }
 }
