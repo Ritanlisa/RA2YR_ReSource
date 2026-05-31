@@ -222,6 +222,18 @@ static void DrawButtonText(uint16_t* buf, int pitch, int x, int y, const char* t
 struct MainMenuDlgData {
     MenuState* state;
     HWND      hBink;
+    int       btnX, btnW, btnH;       // button layout for hit-testing
+    int       btnPosY[6];
+};
+
+// Button definitions from DIALOGEX template 0xE2
+static const struct { int id; const char* text; int yDLU; MenuState target; } kMenuBtnDefs[] = {
+    {1667, "Campaign",   125, MenuState::Campaign},
+    {1668, "Skirmish",   152, MenuState::Skirmish},
+    {1400, "Network",    179, MenuState::Multiplayer},
+    {1670, "Movies",     206, MenuState::CampaignSub},
+    {1372, "Options",    233, MenuState::Options},
+    {1006, "Exit Game",  330, MenuState::ExitConfirm},
 };
 
 static INT_PTR CALLBACK MainMenu_DlgProc(HWND hDlg, UINT msg, WPARAM wParam, LPARAM lParam)
@@ -230,20 +242,21 @@ static INT_PTR CALLBACK MainMenu_DlgProc(HWND hDlg, UINT msg, WPARAM wParam, LPA
 
     if (msg == WM_ERASEBKGND) return TRUE;
 
-    // Button IDs to MenuState mapping (matching IDA 0x531F60 switch table)
-    if (msg == WM_COMMAND && HIWORD(wParam) == BN_CLICKED && d && d->state) {
-        MenuState s;
-        switch (LOWORD(wParam)) {
-        case 1667: s = MenuState::Campaign;     break; // 0x683 → 1
-        case 1668: s = MenuState::Skirmish;     break; //        → 2
-        case 1400: s = MenuState::Multiplayer;  break; // 0x578 → 3
-        case 1670: s = MenuState::CampaignSub;  break; //        → 4
-        case 1372: s = MenuState::Options;      break; // 0x55C → 5
-        case 1006: s = MenuState::ExitConfirm;  break; // 0x3EE → 6
-        default:   return 0;
+    if (msg == WM_LBUTTONDOWN && d && d->state) {
+        POINT pt = { LOWORD(lParam), HIWORD(lParam) };
+        for (int i = 0; i < 6; i++) {
+            if (pt.x >= d->btnX && pt.x < d->btnX + d->btnW &&
+                pt.y >= d->btnPosY[i] && pt.y < d->btnPosY[i] + d->btnH) {
+                *d->state = kMenuBtnDefs[i].target;
+                return 0;
+            }
         }
-        *d->state = s;
-        return 0;
+    }
+
+    if (msg == WM_COMMAND && HIWORD(wParam) == BN_CLICKED && d && d->state) {
+        for (auto& bd : kMenuBtnDefs) {
+            if ((DWORD)bd.id == LOWORD(wParam)) { *d->state = bd.target; return 0; }
+        }
     }
 
     if (msg == WM_CLOSE) {
@@ -332,11 +345,11 @@ static MenuState MainMenu_Screen()
             hDlg, (HMENU)(INT_PTR)bd.id, g_hInstance, nullptr);
     }
 
-    // Wire up dialog proc + data
+    // Wire up dialog proc + data with button layout for hit-testing
     MenuState pendingState = MenuState::MenuIdle;
-    MainMenuDlgData dlgData = { &pendingState, hBink };
-    SetWindowLongPtrA(hDlg, GWLP_USERDATA, (LONG_PTR)&dlgData);
-    SetWindowLongPtrA(hDlg, GWLP_WNDPROC, (LONG_PTR)MainMenu_DlgProc);
+    MainMenuDlgData dlgData = { &pendingState, hBink, btnX-offX, btnW, btnH, {} };
+    for (int i = 0; i < 6; i++)
+        dlgData.btnPosY[i] = (int)((float)kMenuBtnDefs[i].yDLU * dluY);
 
     ShowWindow(hDlg, SW_SHOW);
     SetFocus(g_hWnd);

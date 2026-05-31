@@ -402,8 +402,11 @@ bool BinkMovieHandle::AdvanceFrame()
 {
     if (!m_playing || !m_bink_handle) return false;
 
-    // Frame rate: BINK native ~30fps, game loop ~120fps → advance every 4th call
+    // Counter throttle: advance every 4th loop iteration
     if (m_throttle_counter++ % 4 != 0) return true;
+
+    // Frame pacing: BinkWait returns 1 = not yet time, 0 = ready
+    if (s_BinkWait && s_BinkWait(m_bink_handle)) return true;
 
     int doFrameResult = s_BinkDoFrame(m_bink_handle);
     if (doFrameResult != 0) {
