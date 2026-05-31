@@ -218,6 +218,41 @@ static void DrawButtonText(uint16_t* buf, int pitch, int x, int y, const char* t
     }
 }
 
+// ---- MainMenu_DlgProc (IDA 0x531F60) ----
+struct MainMenuDlgData {
+    MenuState* state;
+    HWND      hBink;
+};
+
+static INT_PTR CALLBACK MainMenu_DlgProc(HWND hDlg, UINT msg, WPARAM wParam, LPARAM lParam)
+{
+    auto* d = (MainMenuDlgData*)GetWindowLongPtrA(hDlg, GWLP_USERDATA);
+
+    if (msg == WM_ERASEBKGND) return TRUE;
+
+    // Button IDs to MenuState mapping (matching IDA 0x531F60 switch table)
+    if (msg == WM_COMMAND && HIWORD(wParam) == BN_CLICKED && d && d->state) {
+        MenuState s;
+        switch (LOWORD(wParam)) {
+        case 1667: s = MenuState::Campaign;     break; // 0x683 → 1
+        case 1668: s = MenuState::Skirmish;     break; //        → 2
+        case 1400: s = MenuState::Multiplayer;  break; // 0x578 → 3
+        case 1670: s = MenuState::CampaignSub;  break; //        → 4
+        case 1372: s = MenuState::Options;      break; // 0x55C → 5
+        case 1006: s = MenuState::ExitConfirm;  break; // 0x3EE → 6
+        default:   return 0;
+        }
+        *d->state = s;
+        return 0;
+    }
+
+    if (msg == WM_CLOSE) {
+        if (d && d->hBink) SendMessageA(d->hBink, BINKM_CLOSE, 0, 0);
+    }
+    return DefWindowProcA(hDlg, msg, wParam, lParam);
+}
+
+// ---- MainMenu_Screen (IDA 0x531CC0) ----
 static MenuState MainMenu_Screen()
 {
     DDrawContext* ctx = DDraw_GetContext();
@@ -226,7 +261,7 @@ static MenuState MainMenu_Screen()
         return MenuState::MenuIdle;
     }
 
-    // Layout scales from 533×369 dialog units (DIALOGEX template 0xE2)
+    // Layout from DIALOGEX template 0xE2: 533×369 dlu, BINK (0,0) 304×266, buttons x=425 w=108
     int dlgW = (ctx->width  > 800) ? 800  : ctx->width;
     int dlgH = (ctx->height > 600) ? 600  : ctx->height;
     int offX = (ctx->width  - dlgW) / 2;
@@ -234,142 +269,129 @@ static MenuState MainMenu_Screen()
     float dluX = (float)dlgW / 533.0f;
     float dluY = (float)dlgH / 369.0f;
     int bikX = offX, bikY = offY;
-    int bikW = (int)(304.0f * dluX);
-    int bikH = (int)(266.0f * dluY);
+    int bikW = (int)(304.0f * dluX), bikH = (int)(266.0f * dluY);
     int btnX = offX + (int)(425.0f * dluX);
-    int btnW = (int)(108.0f * dluX);
-    int btnH = (int)(23.0f  * dluY);
-    int btnPosY[6] = {};
-    for (int i = 0; i < 6; i++)
-        btnPosY[i] = offY + (int)((float)kMenuButtons[i].yDLU * dluY);
+    int btnW = (int)(108.0f * dluX), btnH = (int)(23.0f * dluY);
 
-    // Load SHP button assets (button00-04.shp, hash IDs from XCC database)
-    static const uint32_t kSHPHashes[] = {
-        0x0D2B157D, 0x77EB461D, 0x4A8B6FAD, 0x304B3CCD, 0x304B3CCD, 0xF8ABB3BD
+    // Register dialog container class
+    static const char* DLG_CLASS = "RA2MainMenu";
+    WNDCLASSA wc = {};
+    if (!GetClassInfoA(g_hInstance, DLG_CLASS, &wc)) {
+        wc.style = CS_HREDRAW|CS_VREDRAW;
+        wc.lpfnWndProc = DefWindowProcA;
+        wc.hInstance = g_hInstance;
+        wc.hbrBackground = (HBRUSH)GetStockObject(NULL_BRUSH);
+        wc.lpszClassName = DLG_CLASS;
+        RegisterClassA(&wc);
+    }
+
+    // Create dialog container (child of main window)
+    HWND hDlg = CreateWindowExA(0, DLG_CLASS, "", WS_CHILD|WS_CLIPSIBLINGS|DS_SETFONT,
+        offX, offY, dlgW, dlgH, g_hWnd, nullptr, g_hInstance, nullptr);
+    if (!hDlg) {
+        LOG_ERROR("[MENU] CreateWindowExA(dialog) failed: %lu", GetLastError());
+        return MenuState::MenuIdle;
+    }
+
+    // BINK STATIC control (DlgItem 1818) — positioned at (0,0) within dialog
+    HWND hBink = CreateWindowExA(0, "STATIC", "", WS_CHILD|WS_VISIBLE,
+        bikX-offX, bikY-offY, bikW, bikH, hDlg, (HMENU)1818, g_hInstance, nullptr);
+    SetWindowSubclass(hBink, BinkPlayerControl::WindowProc, 0, 0);
+    SendMessageA(hBink, BINKM_INIT, 1, 0);
+
+    // Load BINK file from MIX → disk → BinkPlayerControl
+    const char* bikName = (ctx->width > 640) ? "ra2ts_l.bik" : "ra2ts_s.bik";
+    uint32_t bikHash = (ctx->width > 640) ? 0x33665128 : 0xC1E6E166;
+    void* bikData = FileSystem::LoadByHash(bikHash);
+    if (bikData) {
+        const uint32_t* hd = (const uint32_t*)bikData;
+        uint32_t sz = hd[1];
+        if (sz < 100 || sz > 64*1024*1024) sz = 8*1024*1024;
+        FILE* fp = nullptr;
+        if (fopen_s(&fp, bikName, "wb") == 0 && fp) { fwrite(bikData, 1, sz, fp); fclose(fp); }
+        free(bikData);
+    }
+    SendMessageA(hBink, BINKM_OPEN, 0, (LPARAM)bikName);
+
+    // Version text STATIC (DlgItem 1821) — matching dialog template 0xE2
+    CreateWindowExA(0, "STATIC", "v0.1", WS_CHILD|WS_VISIBLE,
+        425, 357, 108, 10, hDlg, (HMENU)1821, g_hInstance, nullptr);
+
+    // BUTTON controls (IDA DlgItem IDs: 1667=Campaign, 1668=Skirmish,
+    //   1400=Multiplayer, 1670=Movies, 1372=Options, 1006=Exit)
+    static const struct { int id; const char* text; int yDLU; } kBtnDefs[] = {
+        {1667, "Campaign",   125}, {1668, "Skirmish", 152},
+        {1400, "Network",    179}, {1670, "Movies",   206},
+        {1372, "Options",    233}, {1006, "Exit Game", 330},
     };
-    ShpImage* btns[6] = {};
-    for (int i = 0; i < 6; i++) {
-        void* data = FileSystem::LoadByHash(kSHPHashes[i]);
-        if (!data) continue;
-        btns[i] = new ShpImage();
-        if (!btns[i]->LoadFromMemory((const uint8_t*)data, 32768)) {
-            delete btns[i]; btns[i] = nullptr;
-        } else {
-            LOG_DEBUG("[MENU] SHP btn %d: %dx%d %df", i, btns[i]->GetWidth(), btns[i]->GetHeight(), btns[i]->GetFrameCount());
-        }
-        free(data);
+    for (auto& bd : kBtnDefs) {
+        int by = (int)((float)bd.yDLU * dluY);
+        CreateWindowExA(0, "BUTTON", bd.text,
+            WS_CHILD|WS_VISIBLE|BS_PUSHBUTTON|BS_NOTIFY,
+            btnX - offX, by, btnW, btnH,
+            hDlg, (HMENU)(INT_PTR)bd.id, g_hInstance, nullptr);
     }
 
-    // Create BINK control window for lifecycle (matching DlgItem 1818)
-    HWND hBink = CreateWindowExA(0, "STATIC", "", WS_POPUP,
-        0, 0, 1, 1, ctx->hwnd, nullptr, g_hInstance, nullptr);
-    if (hBink) {
-        SetWindowSubclass(hBink, BinkPlayerControl::WindowProc, 0, 0);
-        SendMessageA(hBink, BINKM_INIT, 1, 0);
-        const char* bikName = (ctx->width > 640) ? "ra2ts_l.bik" : "ra2ts_s.bik";
-        uint32_t bikHash = (ctx->width > 640) ? 0x33665128 : 0xC1E6E166;
-        void* bikData = FileSystem::LoadByHash(bikHash);
-        if (bikData) {
-            const auto* hdr = (const uint32_t*)bikData;
-            uint32_t sz = hdr[1];
-            if (sz < 100 || sz > 64*1024*1024) sz = 8*1024*1024;
-            FILE* fp = nullptr;
-            if (fopen_s(&fp, bikName, "wb") == 0 && fp) { fwrite(bikData, 1, sz, fp); fclose(fp); }
-            free(bikData);
-        }
-        SendMessageA(hBink, BINKM_OPEN, 0, (LPARAM)bikName);
-    }
+    // Wire up dialog proc + data
+    MenuState pendingState = MenuState::MenuIdle;
+    MainMenuDlgData dlgData = { &pendingState, hBink };
+    SetWindowLongPtrA(hDlg, GWLP_USERDATA, (LONG_PTR)&dlgData);
+    SetWindowLongPtrA(hDlg, GWLP_WNDPROC, (LONG_PTR)MainMenu_DlgProc);
 
-    bool btnHover[6] = {};
-    MenuState result = MenuState::MenuIdle;
+    ShowWindow(hDlg, SW_SHOW);
+    SetFocus(g_hWnd);
+
     int loopCount = 0;
-    bool reachedEnd = false;
-
-    while (!reachedEnd) {
+    while (pendingState == MenuState::MenuIdle) {
         ++loopCount;
 
+        // BINK: advance frame (throttled internally)
         BinkPlayerControl* bikCtrl = BinkPlayerControl::FromHwnd(hBink);
-        bool newFrame = false;
         if (bikCtrl && bikCtrl->IsPlaying()) {
-            BinkMovieHandle* movie = bikCtrl->Movie();
-            if (movie) newFrame = movie->AdvanceFrame();
+            BinkMovieHandle* m = bikCtrl->Movie();
+            if (m) m->AdvanceFrame();
         }
 
-        if (newFrame || !(bikCtrl && bikCtrl->IsPlaying())) {
-            DDSURFACEDESC2 desc = {};
-            desc.dwSize = sizeof(desc);
-            if (SUCCEEDED(ctx->back_buffer->Lock(nullptr, &desc, DDLOCK_WAIT, nullptr))) {
-                auto* buf = (uint16_t*)desc.lpSurface;
+        // Render BINK to DDraw back buffer (always, every tick)
+        DDSURFACEDESC2 desc = {};
+        desc.dwSize = sizeof(desc);
+        if (SUCCEEDED(ctx->back_buffer->Lock(nullptr, &desc, DDLOCK_WAIT, nullptr))) {
+            if (bikCtrl && bikCtrl->IsPlaying()) {
+                BinkMovieHandle* m = bikCtrl->Movie();
+                if (m) m->RenderFrameRaw(desc.lpSurface, desc.lPitch,
+                    ctx->height, bikX, bikY);
+            } else {
+                uint16_t* buf = (uint16_t*)desc.lpSurface;
                 int pitch = desc.lPitch / 2;
-
-                if (bikCtrl && bikCtrl->IsPlaying()) {
-                    BinkMovieHandle* m = bikCtrl->Movie();
-                    if (m) m->RenderFrameRaw(desc.lpSurface, desc.lPitch, ctx->height, bikX, bikY);
-                } else {
-                    for (int y = 0; y < ctx->height; y++)
-                        for (int x = 0; x < ctx->width; x++)
-                            buf[y * pitch + x] = 0x1082;
-                }
-
-                // Draw buttons: SHP when available, fallback colored rect + text
-                for (int i = 0; i < 6; i++) {
-                    int by = btnPosY[i];
-                    if (btns[i]) {
-                        DrawShpToBuffer(btns[i], btnHover[i] ? 1 : 0, buf, pitch, ctx->width, ctx->height, btnX, by);
-                    } else {
-                        uint16_t fill  = btnHover[i] ? 0x7BEF : 0x2104;
-                        uint16_t border = btnHover[i] ? 0xC618 : 0x9492;
-                        uint16_t textColor = btnHover[i] ? 0xFFFF : 0xD69A;
-                        for (int y = by; y < by + btnH && y < ctx->height; y++)
-                            for (int x = btnX; x < btnX + btnW && x < ctx->width; x++)
-                                buf[y * pitch + x] = (y == by || y == by+btnH-1 || x == btnX || x == btnX+btnW-1) ? border : fill;
-                        int tx = btnX + (btnW - (int)strlen(kMenuButtons[i].text) * 8) / 2;
-                        DrawButtonText(buf, pitch, tx < btnX ? btnX : tx, by + (btnH-14)/2, kMenuButtons[i].text, textColor);
-                    }
-                }
-
-                ctx->back_buffer->Unlock(nullptr);
+                for (int y = 0; y < ctx->height; y++)
+                    for (int x = 0; x < ctx->width; x++)
+                        buf[y * pitch + x] = 0x1082;
             }
-            DDraw_Flip();
+            ctx->back_buffer->Unlock(nullptr);
         }
+        DDraw_Flip();
 
+        // Message pump (WM_PAINT fires on BUTTON controls for GDI rendering)
         MSG msg;
         while (PeekMessageA(&msg, nullptr, 0, 0, PM_REMOVE)) {
-            if (msg.message == WM_QUIT) { result = MenuState::ExitConfirm; reachedEnd = true; break; }
-            if (msg.message == WM_KEYDOWN && msg.wParam == VK_ESCAPE) { result = MenuState::ExitConfirm; reachedEnd = true; break; }
-            if (msg.message == WM_LBUTTONDOWN) {
-                POINT pt = { LOWORD(msg.lParam), HIWORD(msg.lParam) };
-                ScreenToClient(ctx->hwnd, &pt);
-                for (int i = 0; i < 6; i++) {
-                    if (pt.x >= btnX && pt.x < btnX + btnW &&
-                        pt.y >= btnPosY[i] && pt.y < btnPosY[i] + btnH) {
-                        result = kMenuButtons[i].target;
-                        reachedEnd = true;
-                        break;
-                    }
-                }
+            if (msg.message == WM_QUIT) { pendingState = MenuState::ExitConfirm; break; }
+            if (msg.message == WM_KEYDOWN && msg.wParam == VK_ESCAPE) {
+                pendingState = MenuState::ExitConfirm; break;
             }
-            if (msg.message == WM_MOUSEMOVE) {
-                POINT pt = { LOWORD(msg.lParam), HIWORD(msg.lParam) };
-                ScreenToClient(ctx->hwnd, &pt);
-                for (int i = 0; i < 6; i++)
-                    btnHover[i] = (pt.x >= btnX && pt.x < btnX + btnW &&
-                                   pt.y >= btnPosY[i] && pt.y < btnPosY[i] + btnH);
+            if (!IsDialogMessageA(hDlg, &msg)) {
+                TranslateMessage(&msg);
+                DispatchMessageA(&msg);
             }
-            TranslateMessage(&msg); DispatchMessageA(&msg);
         }
         Event_Dispatch();
         if (loopCount > 7200) break;
     }
 
-    LOG_DEBUG("[MENU] MainMenu exit: result=%d loops=%d", (int)result, loopCount);
+    LOG_DEBUG("[MENU] MainMenu exit: result=%d loops=%d", (int)pendingState, loopCount);
 
-    if (hBink) {
-        SendMessageA(hBink, BINKM_CLOSE, 0, 0);
-        DestroyWindow(hBink);
-    }
-    for (int i = 0; i < 6; i++) delete btns[i];
-    return result;
+    if (hBink) { SendMessageA(hBink, BINKM_CLOSE, 0, 0); }
+    DestroyWindow(hDlg);
+    return pendingState;
 }
 
 // ---- Campaign_Screen (IDA 0x60D380) ----

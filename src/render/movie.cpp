@@ -402,28 +402,26 @@ bool BinkMovieHandle::AdvanceFrame()
 {
     if (!m_playing || !m_bink_handle) return false;
 
-    m_frame_decoded = false;
+    // Frame rate: BINK native ~30fps, game loop ~120fps → advance every 4th call
+    if (m_throttle_counter++ % 4 != 0) return true;
 
-    // Check end-of-stream via BINK internal frame counter (handle offset 12 vs 8)
-    uint32_t* h = (uint32_t*)m_bink_handle;
-    uint32_t current = h[3];  // handle->CurrentFrame at offset 12
-    uint32_t total   = h[2];  // handle->TotalFrames at offset 8
-    if (current >= total) {
+    int doFrameResult = s_BinkDoFrame(m_bink_handle);
+    if (doFrameResult != 0) {
+        // End of stream: seek back to frame 0 (matching IDA sub_432BD0 + BinkMovie_Play 0x432C70)
         if (s_BinkGoto) {
             int gr = s_BinkGoto(m_bink_handle, 0, 0);
             if (gr < 0) { m_playing = false; return false; }
             m_current_frame = 0;
-            LOG_DEBUG("BINK: BinkGoto(0) looped");
+            m_throttle_counter = 0;
+            LOG_DEBUG("BINK: BinkGoto(0) — looped");
         } else {
             m_playing = false;
             return false;
         }
     }
-
-    // Counter-based throttle: ~30fps from ~120fps loop
-    if (m_throttle_counter++ % 4 != 0) return false;
-
-    m_frame_decoded = true;
+    if (s_BinkWait) s_BinkWait(m_bink_handle);
+    if (s_BinkNextFrame) s_BinkNextFrame(m_bink_handle);
+    ++m_current_frame;
     return true;
 }
 
@@ -441,9 +439,6 @@ void BinkMovieHandle::RenderFrame(DSurface* target)
                                m_surface_flags);
             target->Surface->Unlock(nullptr);
         }
-        if (s_BinkNextFrame) s_BinkNextFrame(m_bink_handle);
-        ++m_current_frame;
-        return;
     }
 
     // Software fallback
@@ -464,20 +459,15 @@ void BinkMovieHandle::RenderFrame(DSurface* target)
 void BinkMovieHandle::RenderFrameRaw(void* locked_buffer, int pitch_bytes, int height,
                                      int dest_x, int dest_y)
 {
-    if (!locked_buffer || !m_playing || !m_frame_decoded) return;
+    if (!locked_buffer || !m_playing) return;
 
     if (m_bink_handle && s_BinkCopyToBuffer) {
-        // DoFrame is synchronous decompression for current frame
-        s_BinkDoFrame(m_bink_handle);
+        if (s_BinkWait) s_BinkWait(m_bink_handle);
         s_BinkCopyToBuffer(m_bink_handle, locked_buffer,
                            pitch_bytes, height, dest_x, dest_y,
                            m_surface_flags);
-        if (s_BinkNextFrame) {
-            s_BinkNextFrame(m_bink_handle);
-            ++m_current_frame;
-        }
-        m_frame_decoded = false;
     }
+    // BinkNextFrame is called in AdvanceFrame after BinkDoFrame
 }
 
 void BinkMovieHandle::Stop()
