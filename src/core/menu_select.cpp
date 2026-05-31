@@ -159,6 +159,65 @@ static INT_PTR CALLBACK MainMenu_DlgProc_Impl(HWND hDlg, UINT msg, WPARAM wParam
     if (msg == WM_ERASEBKGND)
         return TRUE;
 
+    if (msg == WM_CTLCOLORBTN) {
+        static HBRUSH s_btnBrush = CreateSolidBrush(RGB(48, 48, 72));
+        HDC hdc = (HDC)wParam;
+        SetTextColor(hdc, RGB(200, 200, 220));
+        SetBkColor(hdc, RGB(48, 48, 72));
+        SetBkMode(hdc, OPAQUE);
+        return (INT_PTR)s_btnBrush;
+    }
+
+    if (msg == WM_CTLCOLORSTATIC) {
+        HWND hCtrl = (HWND)lParam;
+        DWORD id = GetDlgCtrlID(hCtrl);
+        if (id == 1821) {
+            SetTextColor((HDC)wParam, RGB(180, 180, 200));
+            SetBkMode((HDC)wParam, TRANSPARENT);
+            return (INT_PTR)GetStockObject(NULL_BRUSH);
+        }
+        SetBkMode((HDC)wParam, TRANSPARENT);
+        return (INT_PTR)GetStockObject(NULL_BRUSH);
+    }
+
+    if (msg == WM_DRAWITEM) {
+        auto* di = (DRAWITEMSTRUCT*)lParam;
+        if (di->CtlType == ODT_BUTTON) {
+            HDC dc = di->hDC;
+            RECT& r = di->rcItem;
+            int w = r.right - r.left, h = r.bottom - r.top;
+            bool pressed = (di->itemState & ODS_SELECTED) != 0;
+            bool hover   = (di->itemState & ODS_HOTLIGHT) != 0;
+
+            COLORREF bg = pressed ? RGB(60, 60, 100) : (hover ? RGB(55, 55, 90) : RGB(48, 48, 72));
+            COLORREF border = hover ? RGB(120, 140, 200) : RGB(80, 80, 120);
+            HBRUSH bgBrush = CreateSolidBrush(bg);
+            FillRect(dc, &r, bgBrush);
+            DeleteObject(bgBrush);
+
+            HPEN pen = CreatePen(PS_SOLID, 1, border);
+            HPEN oldPen = (HPEN)SelectObject(dc, pen);
+            HBRUSH nullBr = (HBRUSH)GetStockObject(NULL_BRUSH);
+            HBRUSH oldBr = (HBRUSH)SelectObject(dc, nullBr);
+            Rectangle(dc, r.left, r.top, r.right, r.bottom);
+            SelectObject(dc, oldPen);
+            SelectObject(dc, oldBr);
+            DeleteObject(pen);
+
+            if (pressed) OffsetRect(&r, 1, 1);
+
+            char text[64];
+            GetWindowTextA(di->hwndItem, text, sizeof(text));
+            SetBkMode(dc, TRANSPARENT);
+            SetTextColor(dc, RGB(200, 200, 220));
+            HFONT font = (HFONT)GetStockObject(DEFAULT_GUI_FONT);
+            HFONT oldFont = (HFONT)SelectObject(dc, font);
+            DrawTextA(dc, text, -1, &r, DT_CENTER | DT_VCENTER | DT_SINGLELINE);
+            SelectObject(dc, oldFont);
+            return TRUE;
+        }
+    }
+
     if (msg == WM_COMMAND) {
         WORD code = HIWORD(wParam);
         DWORD id = LOWORD(wParam);
@@ -248,7 +307,7 @@ static MenuState MainMenu_Screen()
     for (auto& btn : kMenuButtons) {
         int by = (int)((float)btn.yDLU * dluY);
         CreateWindowExA(0, "BUTTON", btn.text,
-            WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON | BS_NOTIFY,
+            WS_CHILD | WS_VISIBLE | BS_OWNERDRAW | BS_NOTIFY,
             btnX - offX, by, btnW, btnH,
             hDlg, (HMENU)(INT_PTR)btn.id, g_hInstance, nullptr);
     }
@@ -267,32 +326,35 @@ static MenuState MainMenu_Screen()
     while (!reachedEnd) {
         ++loopCount;
 
-        // BINK frame advance
+        // BINK frame advance (may throttle to 30 fps)
         BinkPlayerControl* bikCtrl = BinkPlayerControl::FromHwnd(hBink);
+        bool newFrame = false;
         if (bikCtrl && bikCtrl->IsPlaying()) {
             BinkMovieHandle* movie = bikCtrl->Movie();
-            if (movie) movie->AdvanceFrame();
+            if (movie) newFrame = movie->AdvanceFrame();
         }
 
-        // Render BINK to DDraw back buffer
-        DDSURFACEDESC2 desc = {};
-        desc.dwSize = sizeof(desc);
-        if (SUCCEEDED(ctx->back_buffer->Lock(nullptr, &desc, DDLOCK_WAIT, nullptr))) {
-            auto* buf = (uint16_t*)desc.lpSurface;
-            int pitch = desc.lPitch / 2;
+        // Render BINK to DDraw back buffer (only on new frame or fallback)
+        if (newFrame || !(bikCtrl && bikCtrl->IsPlaying())) {
+            DDSURFACEDESC2 desc = {};
+            desc.dwSize = sizeof(desc);
+            if (SUCCEEDED(ctx->back_buffer->Lock(nullptr, &desc, DDLOCK_WAIT, nullptr))) {
+                auto* buf = (uint16_t*)desc.lpSurface;
+                int pitch = desc.lPitch / 2;
 
-            if (bikCtrl && bikCtrl->IsPlaying()) {
-                BinkMovieHandle* m = bikCtrl->Movie();
-                if (m) m->RenderFrameRaw(desc.lpSurface, desc.lPitch, ctx->height, bikX, bikY);
-            } else {
-                for (int y = 0; y < ctx->height; y++)
-                    for (int x = 0; x < ctx->width; x++)
-                        buf[y * pitch + x] = 0x1082;
+                if (bikCtrl && bikCtrl->IsPlaying()) {
+                    BinkMovieHandle* m = bikCtrl->Movie();
+                    if (m) m->RenderFrameRaw(desc.lpSurface, desc.lPitch, ctx->height, bikX, bikY);
+                } else {
+                    for (int y = 0; y < ctx->height; y++)
+                        for (int x = 0; x < ctx->width; x++)
+                            buf[y * pitch + x] = 0x1082;
+                }
+
+                ctx->back_buffer->Unlock(nullptr);
             }
-
-            ctx->back_buffer->Unlock(nullptr);
+            DDraw_Flip();
         }
-        DDraw_Flip();
 
         // Message pump — Win32 BUTTON controls handle their own rendering via GDI
         MSG msg;

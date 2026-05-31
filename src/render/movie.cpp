@@ -402,13 +402,15 @@ bool BinkMovieHandle::AdvanceFrame()
 {
     if (!m_playing) return false;
 
+    m_frame_decoded = false;
+
     if (m_bink_handle) {
-        // Frame rate: BINK native ~30fps, game loop ~120fps → advance every 4th call
-        if (m_throttle_counter++ % 4 != 0) return true;
+        // Use BinkWait for frame pacing — blocks until next frame is due (matching IDA 0x432E40)
+        if (s_BinkWait && s_BinkWait(m_bink_handle)) return false;
 
         int doFrameResult = s_BinkDoFrame(m_bink_handle);
-        if (doFrameResult < 0) {
-            // End of stream: seek to frame 0 for looping (sub_432BD0 uses _BinkGoto)
+        if (doFrameResult == 0) {
+            // End of stream detected — loop back to frame 0 via BinkGoto
             if (s_BinkGoto) {
                 int gotoResult = s_BinkGoto(m_bink_handle, 0, 0);
                 if (gotoResult < 0) {
@@ -416,9 +418,8 @@ bool BinkMovieHandle::AdvanceFrame()
                     return false;
                 }
                 m_current_frame = 0;
-                m_throttle_counter = 0;
                 doFrameResult = s_BinkDoFrame(m_bink_handle);
-                if (doFrameResult < 0) {
+                if (doFrameResult == 0) {
                     m_playing = false;
                     return false;
                 }
@@ -476,7 +477,7 @@ void BinkMovieHandle::RenderFrame(DSurface* target)
 void BinkMovieHandle::RenderFrameRaw(void* locked_buffer, int pitch_bytes, int height,
                                      int dest_x, int dest_y)
 {
-    if (!locked_buffer || !m_playing) return;
+    if (!locked_buffer || !m_playing || !m_frame_decoded) return;
 
     if (m_bink_handle && s_BinkCopyToBuffer) {
         if (s_BinkWait) s_BinkWait(m_bink_handle);
@@ -485,6 +486,7 @@ void BinkMovieHandle::RenderFrameRaw(void* locked_buffer, int pitch_bytes, int h
                            m_surface_flags);
         if (s_BinkNextFrame) s_BinkNextFrame(m_bink_handle);
         ++m_current_frame;
+        m_frame_decoded = false;
     }
 }
 
