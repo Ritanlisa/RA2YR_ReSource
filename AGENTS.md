@@ -1379,3 +1379,144 @@ Campaign_Screen(template_id):
 3. **对话框系统** — `CreateDialogIndirectParamA` + 控件子类化, 需要 comctl32 + child window
 4. **子菜单实现** — Campaign/Skirmish/Multiplayer/Options 屏幕
 5. 后续 R1: 游戏内等距视图渲染
+
+---
+
+## BINK + 主菜单踩坑全记录 (2026-05-31)
+
+### 工作基线: commit `20baad6`
+
+这是已知 BINK 视频质量和播放速度正常（但无循环）的提交。其 BINK 管线为：
+
+```cpp
+// AdvanceFrame (20baad6) — 已验证画质+帧率正常
+bool BinkMovieHandle::AdvanceFrame() {
+    if (!m_playing) return false;
+    if (m_bink_handle) {
+        if (m_throttle_counter++ % 4 != 0) return true;  // 计数器节流, 返回 true
+        int doFrameResult = s_BinkDoFrame(m_bink_handle);
+        if (doFrameResult < 0) {  // 循环检测 (未生效, 因为 BinkDoFrame 不返回负值)
+            s_BinkGoto(m_bink_handle, 0, 0); m_current_frame = 0; m_throttle_counter = 0;
+            doFrameResult = s_BinkDoFrame(m_bink_handle);  // ← 关键: Goto后必须再 DoFrame
+            if (doFrameResult < 0) { m_playing = false; return false; }
+        }
+        s_BinkWait(m_bink_handle);   // 解压同步
+        s_BinkNextFrame(m_bink_handle);  // 推进帧 (注意: 在 CopyToBuffer 之前)
+        ++m_current_frame;
+        return true;  // 始终返回 true (不门控渲染)
+    }
+    // ... 软件回退 ...
+}
+
+// RenderFrameRaw (20baad6)
+void BinkMovieHandle::RenderFrameRaw(buf, pitch, h, dx, dy) {
+    if (!locked_buffer || !m_playing) return;
+    if (m_bink_handle && s_BinkCopyToBuffer) {
+        s_BinkWait(m_bink_handle);   // 再次同步
+        s_BinkCopyToBuffer(m_bink_handle, buf, pitch, h, dx, dy, m_surface_flags);
+    }
+}
+
+// 主菜单循环 (20baad6)
+movie->AdvanceFrame();  // 返回值存在 bikAdvanced 但未使用
+Lock → RenderFrameRaw → Unlock → Flip  // 每帧都渲染，不受门控
+```
+
+**关键特征**: 计数器节流每4帧推进一次，但每帧都调用 RenderFrameRaw（CopyToBuffer 复制同一帧）。AdvanceFrame 始终返回 true（即便油门跳过也不返回 false），因此主循环不门控渲染。
+
+### BINK 踩坑详细记录
+
+| # | 修改尝试 | 结果 | 失败原因 |
+|---|---------|------|---------|
+| **B1** | 修复 NextFrame 顺序: DoFrame→CopyToBuffer→NextFrame | 画面模糊 | CopyToBuffer 后无 BinkWait 同步 |
+| **B2** | AdvanceFrame 返回 false 时跳过渲染(门控) | 黑屏 | 首帧被跳过, 屏幕无初始化内容 |
+| **B3** | BinkWait 放在 AdvanceFrame 开头做节速 + 门控 | 黑屏 | 首帧 BinkWait 可能返回非零; 门控导致首帧不渲染 |
+| **B4** | BinkWait 放在 AdvanceFrame 末尾(NextFrame 之后) | UI 冻结 | BinkWait 内部 Sleep(1) 阻塞主循环, 消息泵无法运行 |
+| **B5** | 把 DoFrame 移到 RenderFrameRaw, AdvanceFrame 只管节流 | 帧率异常 | 改变了 BINK SDK 调用时序, 内部状态混乱 |
+| **B6** | m_frame_decoded 门控: AdvanceFrame 标记,RenderFrameRaw 检查 | 复杂且 buggy | AdvanceFrame 返回 false(跳过)后 m_frame_decoded 状态不一致 |
+| **B7** | BinkWait 双重调用 + 无节流 | 帧率太快 | BinkWait 只做解压同步,不做显示节速(需 NextFrame 后调用体积算才生效) |
+| **B8** | 计数器节流 + BinkWait 双重(先门控再解压) | 帧率太快 | 同上, BinkWait 位置不对 |
+| **B9** | 纯 BinkWait 放在 DoFrame 前门控(去除计数器) | 帧率不对 | BinkWait 内部时序计算可能未正确初始化(*(handle+512)字段问题) |
+| **B10** | BinkGoto 之后缺失 DoFrame 调用 | 循环后画面花屏 | BinkGoto 内部 seek 后需 DoFrame 解码第0帧, 否则 CopyToBuffer 拷贝垃圾数据 |
+
+### BINK 循环检测
+
+| 尝试 | 检测方式 | 结果 |
+|------|---------|------|
+| C1 | `doFrameResult < 0` | 不触发 (BinkDoFrame 返回 0 或正值, 从不负) |
+| C2 | `doFrameResult == 0` | 立即触发 (正常帧也返回 0, 判断方向反了) |
+| C3 | `doFrameResult != 0` | 已实现但未测试能否正确触发 |
+| C4 | `*(handle+12) >= *(handle+8)` (BINK 内部计数器) | 未充分测试 (偏移可能不对) |
+
+### 主菜单渲染踩坑
+
+| # | 修改尝试 | 结果 | 失败原因 |
+|---|---------|------|---------|
+| **M1** | Win32 GDI 按钮 + cnc-ddraw 默认配置 | 按钮不可见 | cnc-ddraw `nonexclusive=false` 下 OpenGL 渲染覆盖 GDI 子窗口 |
+| **M2** | 纯 DDraw 手工渲染按钮(彩色矩形+位图字体) | 按钮可见但用户不满意 | 用户要原游戏素材(button*.shp) |
+| **M3** | DDraw 手工渲染 + SHP 按钮加载 | SHP 加载失败 | button*.shp 非标准格式, 新老解析器均无法解析 |
+| **M4** | Win32 dialog + GDI 按钮 + `nonexclusive=true` | 按钮可见但闪烁 | DDraw Flip 和 GDI WM_PAINT 时序不同步 |
+| **M5** | BS_OWNERDRAW 自定义绘制按钮 | 不可见 | GDI 在 cnc-ddraw 表面上渲染有问题 |
+| **M6** | WM_COMMAND 路由(BN_CLICKED) | 点击无反应 | 可能是 IsDialogMessageA 拦截或对话框窗口过程未正确子类化 |
+| **M7** | WM_LBUTTONDOWN 手动命中检测 | 未充分测试 | 刚实现, 用户报告仍无效 |
+| **M8** | IsDialogMessageA 用于键盘导航 | 无效果 | 可能与对话框类不匹配 |
+
+### SHP 按钮素材
+
+- 哈希 ID: button00=0x0D2B157D, button01=0x304B3CCD, button02=0x77EB461D, button03=0x4A8B6FAD, button04=0xF8ABB3BD
+- **确认存在于 MIX**: sub:0x5B0D6FBD, 每文件 3384 字节
+- **原版 gamemd.exe 中零引用**: IDA 搜索 `0x0D2B157D` 等无结果 → 原版主菜单不使用 button*.shp
+- **原版使用标准 Win32 GDI BUTTON 控件** + CSF 字符串表 (如 "GUI:SinglePlayer")
+- **格式问题**: 头部 `0000 3400 2000 0200` 既不是标准 TS 也不是 TD 格式
+- 前2字节 0x0000 => TS格式标记, 但 `3400 = 52`(可能是width), `2000 = 32`(可能是height), `0200 = 2`(可能是frames)
+
+### cnc-ddraw 兼容性
+
+- `nonexclusive=true` 是让 GDI 子窗口能叠加到 DDraw 表面的**必要条件** (cnc-ddraw 用 OpenGL/D3D9 渲染,默认覆盖所有 GDI)
+- 这不是修改游戏逻辑, 是配置软件渲染器模拟真实 DirectDraw 硬件行为
+- `d3d9_filter=0` 消除 bilinear 过滤造成的 BINK 模糊
+- `maxfps=60` 在 `nonexclusive=true` 下可能不生效 (Flip 不阻塞)
+
+### CMake / Git 构建
+
+- `file(GLOB_RECURSE)` 在 cmake 配置时展开, 切换分支后需重 run `cmake -B build_win ...`
+- Post-build `copy_directory` 在目标已存在且文件被锁时失败 (不影响编译结果, 仅影响资源复制)
+- `src/entity/voxel.cpp` 在 commit `88c70de` 添加, checkout 较早 commit 需重 configure
+
+### binkw32.dll IDA 分析关键发现 (port 13338)
+
+- `_BinkWait@4` (0x1000A3C0): 返回 0=帧就绪, 1=未到显示时间; 内部调用 `Sleep(1)` 做微等待
+  - 初始化检查: `*(handle+528)==0` → `sub_10009B90` 初始化计时
+  - 节速计算: `v4 = *(handle+24) * (1000***(handle+512) - 1000***(handle+532)) / *(handle+20)`
+  - Ready条件: `currentTime - lastFlipTime >= v4`
+- `_BinkDoFrame@4` (0x10009BC0): 返回 0=成功或已解码, 非0=错误或已结束
+  - 入口检查: `*(handle+0x280) == *(handle+0x0C)` → 已解码则返回0
+  - 错误状态: `*(handle+0x1C)` 置位则返回 1
+- `_BinkGoto@12` (0x1000A220): flag=1 快速seek, 内部 DoFrame+NextFrame 循环到目标帧
+- `_BinkNextFrame@4` (0x1000A0C0): 推进帧计数, 调用 `sub_1000A110`(音频) + `sub_10008AF0`(设定帧)
+- `_BinkSetVolume@8`: 音量=Math_RoundToInt(float*32768), 手柄+4=音量值
+
+### gamemd.exe IDA 关键函数 (port 13337)
+
+- `BinkMovie_InitFromFile` (0x432750): BinkOpen→SetSoundSystem→SetVolume→CreateSurfaceTracker→SetPosition
+- `BinkMovie_RenderLoop` (0x432E40): DoFrame→Lock→CopyToBuffer→Unlock→BlitToTarget→NextFrame→Wait
+- `BinkMovie_Play` (0x432C70): 主循环 `while(current<total && current>=loopStart)` {pump→RenderLoop}
+- `MainMenu_Screen` (0x531CC0): Dialog_Create(0xE2)→Dialog_SetParent→Dialog_PumpMessages 循环
+- `MainMenu_DlgProc` (0x531F60): WM_COMMAND(button ID→state), WM_CLOSE(BINK cleanup)
+- `sub_432BD0`: BinkGoto(handle, frame, 1) 封装 (flag=1 快速 seek)
+- `Audio_IsSoundEnabled` (0x407000): 检查 `g_Audio_Enabled`
+- `Audio_GetDirectSound` (0x40A7A0): 返回 `g_pDirectSound`
+- `BinkMovie_Pause` (0x432C30): BinkPause 调用
+
+### IDA 命名 (267函数 + 46全局 + 3 struct 类型, 已保存 .i64)
+
+新增的4函数: `Audio_IsSoundEnabled`, `Audio_GetDirectSound`, `BinkMovie_Pause`, `BinkMovie_AdjustSurfaceFormat`
+新增的2全局: `g_Audio_Enabled` (0x87E728), `g_pDirectSound` (0x87E89C)
+
+### 正确的前进方向
+
+1. **BINK 管线**: 保持 20baad6 的 AdvanceFrame + RenderFrameRaw 结构不动。**只修复循环检测**：需确认 `doFrameResult != 0` 或 `BinkWait 返回非零且帧计数到末尾` 哪个正确触发。当前代码(HEAD=828ffbc)已改为 `doFrameResult != 0` 但未充分测试。
+2. **主菜单按钮**: 原版用 GDI + DIALOGEX 模板 0xE2。按钮素材不是 SHP，是 Windows 标准控件 + CSF 字符串。cnc-ddraw 需 `nonexclusive=true` 才能显示 GDI 子窗口。
+3. **SHP 素材**: button*.shp 虽存在于 MIX，但原版主菜单不使用（可能用于游戏内 UI）。需修复 SHP 解析器支持其非标准格式。
+4. **构建**: 切换分支后务必 `cmake -B build_win -G "Visual Studio 17 2022" -A Win32` 重配置。
+5. **渲染架构**: 原版整个主菜单由 `Dialog_PumpMessages` 驱动，BINK 在 DlgItem 1818 的 subclass 内部渲染，按钮由 GDI 渲染。在 cnc-ddraw 下完全复现此架构需要 `nonexclusive=true`。
