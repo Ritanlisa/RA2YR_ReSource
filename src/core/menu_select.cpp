@@ -358,31 +358,34 @@ static MenuState MainMenu_Screen()
     while (pendingState == MenuState::MenuIdle) {
         ++loopCount;
 
-        // BINK: advance frame (throttled internally)
+        // BINK: advance frame (BinkWait pacing controls frame rate)
         BinkPlayerControl* bikCtrl = BinkPlayerControl::FromHwnd(hBink);
+        bool frameReady = true;
         if (bikCtrl && bikCtrl->IsPlaying()) {
             BinkMovieHandle* m = bikCtrl->Movie();
-            if (m) m->AdvanceFrame();
+            if (m) frameReady = m->AdvanceFrame();
         }
 
-        // Render BINK to DDraw back buffer (always, every tick)
-        DDSURFACEDESC2 desc = {};
-        desc.dwSize = sizeof(desc);
-        if (SUCCEEDED(ctx->back_buffer->Lock(nullptr, &desc, DDLOCK_WAIT, nullptr))) {
-            if (bikCtrl && bikCtrl->IsPlaying()) {
-                BinkMovieHandle* m = bikCtrl->Movie();
-                if (m) m->RenderFrameRaw(desc.lpSurface, desc.lPitch,
-                    ctx->height, bikX, bikY);
-            } else {
-                uint16_t* buf = (uint16_t*)desc.lpSurface;
-                int pitch = desc.lPitch / 2;
-                for (int y = 0; y < ctx->height; y++)
-                    for (int x = 0; x < ctx->width; x++)
-                        buf[y * pitch + x] = 0x1082;
+        if (frameReady) {
+            // Render BINK to DDraw back buffer
+            DDSURFACEDESC2 desc = {};
+            desc.dwSize = sizeof(desc);
+            if (SUCCEEDED(ctx->back_buffer->Lock(nullptr, &desc, DDLOCK_WAIT, nullptr))) {
+                if (bikCtrl && bikCtrl->IsPlaying()) {
+                    BinkMovieHandle* m = bikCtrl->Movie();
+                    if (m) m->RenderFrameRaw(desc.lpSurface, desc.lPitch,
+                        ctx->height, bikX, bikY);
+                } else {
+                    uint16_t* buf = (uint16_t*)desc.lpSurface;
+                    int pitch = desc.lPitch / 2;
+                    for (int y = 0; y < ctx->height; y++)
+                        for (int x = 0; x < ctx->width; x++)
+                            buf[y * pitch + x] = 0x1082;
+                }
+                ctx->back_buffer->Unlock(nullptr);
             }
-            ctx->back_buffer->Unlock(nullptr);
+            DDraw_Flip();
         }
-        DDraw_Flip();
 
         // Message pump (WM_PAINT fires on BUTTON controls for GDI rendering)
         MSG msg;

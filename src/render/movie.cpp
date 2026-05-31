@@ -400,43 +400,28 @@ bool BinkMovieHandle::OpenFromMemory(const void* data, int size, DSurface* rende
 
 bool BinkMovieHandle::AdvanceFrame()
 {
-    if (!m_playing) return false;
+    if (!m_playing || !m_bink_handle) return false;
 
-    if (m_bink_handle) {
-        // Frame rate: BINK native ~30fps, game loop ~120fps → advance every 4th call
-        if (m_throttle_counter++ % 4 != 0) return true;
+    // Frame pacing: BinkWait blocks until next frame is due for display
+    // Returns 0 = frame ready, 1 = not yet time
+    if (s_BinkWait && s_BinkWait(m_bink_handle)) return false;
 
-        int doFrameResult = s_BinkDoFrame(m_bink_handle);
-        if (doFrameResult != 0) {
-            // End of stream: seek to frame 0 for looping (sub_432BD0 uses _BinkGoto)
-            if (s_BinkGoto) {
-                int gotoResult = s_BinkGoto(m_bink_handle, 0, 0);
-                if (gotoResult < 0) {
-                    m_playing = false;
-                    return false;
-                }
-                m_current_frame = 0;
-                m_throttle_counter = 0; // reset throttle for new loop
-                doFrameResult = s_BinkDoFrame(m_bink_handle);
-                if (doFrameResult != 0) {
-                    m_playing = false;
-                    return false;
-                }
-            } else {
-                m_playing = false;
-                return false;
-            }
+    int doFrameResult = s_BinkDoFrame(m_bink_handle);
+    if (doFrameResult != 0) {
+        if (s_BinkGoto) {
+            int gotoResult = s_BinkGoto(m_bink_handle, 0, 0);
+            if (gotoResult < 0) { m_playing = false; return false; }
+            m_current_frame = 0;
+            LOG_DEBUG("BINK: BinkGoto(0) looped");
+            doFrameResult = s_BinkDoFrame(m_bink_handle);
+            if (doFrameResult != 0) { m_playing = false; return false; }
+        } else {
+            m_playing = false;
+            return false;
         }
-        if (s_BinkWait) s_BinkWait(m_bink_handle);
-        if (s_BinkNextFrame) s_BinkNextFrame(m_bink_handle);  // sub_432E40: after Copy
-        ++m_current_frame;
-        return true;
     }
-
-    // Software decode fallback
-    auto* hdr = static_cast<const BinkFileHeader*>(m_memory_buffer);
-    if (!hdr || m_current_frame >= static_cast<int>(hdr->num_frames))
-        return false;
+    if (s_BinkWait) s_BinkWait(m_bink_handle);
+    if (s_BinkNextFrame) s_BinkNextFrame(m_bink_handle);
     ++m_current_frame;
     return true;
 }
