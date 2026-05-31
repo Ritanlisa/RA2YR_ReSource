@@ -96,40 +96,105 @@ struct MenuLayout {
     }
 };
 
-// ---- MainMenu_Screen — DDraw BINK + SHP buttons + manual hit-testing ----
-// Matching IDA 0x531CC0 + 0x531F60 but using SHP assets for buttons since
-// Win32 GDI controls don't render over cnc-ddraw's DDraw surface
-
-static const uint32_t kMenuBtnHashes[] = {
-    0x0D2B157D, // button00.shp → Campaign
-    0x77EB461D, // button02.shp → Skirmish
-    0x4A8B6FAD, // button03.shp → Multiplayer
-    0x304B3CCD, // button01.shp → Movies
-    0x304B3CCD, // button01.shp → Options
-    0xF8ABB3BD, // button04.shp → Exit
-};
-static const int kMenuBtnY[]   = {125, 152, 179, 206, 233, 330};
-static const MenuState kBtnStates[] = {
-    MenuState::Campaign, MenuState::Skirmish, MenuState::Multiplayer,
-    MenuState::CampaignSub, MenuState::Options, MenuState::ExitConfirm
+// ---- Button text labels (from DIALOGEX template 0xE2 CSF keys) ----
+static const struct { int yDLU; const char* text; MenuState target; } kMenuButtons[] = {
+    {125, "Campaign",    MenuState::Campaign},       // GUI:SinglePlayer
+    {152, "Skirmish",    MenuState::Skirmish},        // GUI:WWOnline
+    {179, "Network",     MenuState::Multiplayer},     // GUI:Network
+    {206, "Movies",      MenuState::CampaignSub},     // GUI:MoviesAndCredits
+    {233, "Options",     MenuState::Options},         // GUI:Options
+    {330, "Exit Game",   MenuState::ExitConfirm},     // GUI:ExitGame
 };
 
-static void DrawShpToBuffer(ShpImage* img, int frame, uint16_t* buf, int pitch,
-                            int scrW, int scrH, int dx, int dy)
+// Simple monospace bitmap font 8x14 for button text rendering
+static const uint8_t* GetGlyph(uint8_t ch)
 {
-    if (!img || !buf) return;
-    int iw = img->GetWidth(), ih = img->GetHeight();
-    const uint8_t* src = img->GetPixelData(frame);
-    if (!src) return;
-    for (int y = 0; y < ih && dy + y < scrH; y++) {
-        int row = (dy + y) * pitch;
-        for (int x = 0; x < iw && dx + x < scrW; x++) {
-            uint8_t ci = src[y * iw + x];
-            if (ci == 0) continue;
-            auto& p = g_palette[ci];
-            uint16_t rgb = (uint16_t)((p[0] >> 3) << 11) | ((p[1] >> 2) << 5) | (p[2] >> 3);
-            buf[row + dx + x] = rgb;
+    static const uint8_t glyphs[][14] = {
+        {0,0,0,0,0,0,0,0,0,0,0,0,0,0}, // 0: not used
+        {0x08,0x14,0x22,0x22,0x3E,0x22,0x22,0x22,0x00,0x00,0x00,0x00,0x00,0x00}, // 1: A
+        {0x3C,0x22,0x22,0x3C,0x22,0x22,0x22,0x3C,0x00,0x00,0x00,0x00,0x00,0x00}, // 2: B
+        {0x1C,0x22,0x20,0x20,0x20,0x20,0x22,0x1C,0x00,0x00,0x00,0x00,0x00,0x00}, // 3: C
+        {0x3E,0x20,0x20,0x3C,0x20,0x20,0x20,0x3E,0x00,0x00,0x00,0x00,0x00,0x00}, // 4: E
+        {0x1C,0x22,0x20,0x20,0x27,0x22,0x22,0x1C,0x00,0x00,0x00,0x00,0x00,0x00}, // 5: G
+        {0x08,0x08,0x08,0x08,0x08,0x08,0x08,0x08,0x00,0x00,0x00,0x00,0x00,0x00}, // 6: I
+        {0x22,0x36,0x2A,0x2A,0x22,0x22,0x22,0x22,0x00,0x00,0x00,0x00,0x00,0x00}, // 7: M
+        {0x22,0x22,0x32,0x2A,0x26,0x22,0x22,0x22,0x00,0x00,0x00,0x00,0x00,0x00}, // 8: N
+        {0x1C,0x22,0x22,0x22,0x22,0x22,0x22,0x1C,0x00,0x00,0x00,0x00,0x00,0x00}, // 9: O
+        {0x3C,0x22,0x22,0x3C,0x20,0x20,0x20,0x20,0x00,0x00,0x00,0x00,0x00,0x00}, // 10: P
+        {0x3C,0x22,0x22,0x3C,0x28,0x24,0x22,0x21,0x00,0x00,0x00,0x00,0x00,0x00}, // 11: R
+        {0x1E,0x20,0x20,0x1C,0x02,0x02,0x22,0x1C,0x00,0x00,0x00,0x00,0x00,0x00}, // 12: S
+        {0x3E,0x08,0x08,0x08,0x08,0x08,0x08,0x08,0x00,0x00,0x00,0x00,0x00,0x00}, // 13: T
+        {0x22,0x22,0x22,0x22,0x22,0x14,0x14,0x08,0x00,0x00,0x00,0x00,0x00,0x00}, // 14: V
+        {0x22,0x22,0x22,0x22,0x2A,0x2A,0x36,0x22,0x00,0x00,0x00,0x00,0x00,0x00}, // 15: W
+        {0x22,0x22,0x14,0x08,0x08,0x14,0x22,0x22,0x00,0x00,0x00,0x00,0x00,0x00}, // 16: X
+        {0x00,0x00,0x1C,0x02,0x1E,0x22,0x22,0x1E,0x00,0x00,0x00,0x00,0x00,0x00}, // 17: a
+        {0x00,0x00,0x1C,0x22,0x20,0x20,0x22,0x1C,0x00,0x00,0x00,0x00,0x00,0x00}, // 18: c
+        {0x00,0x02,0x02,0x1E,0x22,0x22,0x22,0x1E,0x00,0x00,0x00,0x00,0x00,0x00}, // 19: d
+        {0x00,0x00,0x1C,0x22,0x3E,0x20,0x22,0x1C,0x00,0x00,0x00,0x00,0x00,0x00}, // 20: e
+        {0x04,0x08,0x08,0x1C,0x08,0x08,0x08,0x08,0x00,0x00,0x00,0x00,0x00,0x00}, // 21: f
+        {0x00,0x00,0x1E,0x22,0x22,0x1E,0x02,0x1C,0x00,0x00,0x00,0x00,0x00,0x00}, // 22: g
+        {0x20,0x20,0x20,0x3C,0x22,0x22,0x22,0x22,0x00,0x00,0x00,0x00,0x00,0x00}, // 23: h
+        {0x00,0x08,0x00,0x08,0x08,0x08,0x08,0x08,0x00,0x00,0x00,0x00,0x00,0x00}, // 24: i
+        {0x20,0x20,0x22,0x24,0x38,0x24,0x22,0x22,0x00,0x00,0x00,0x00,0x00,0x00}, // 25: k
+        {0x08,0x08,0x08,0x08,0x08,0x08,0x08,0x08,0x00,0x00,0x00,0x00,0x00,0x00}, // 26: l
+        {0x00,0x00,0x36,0x2A,0x2A,0x2A,0x22,0x22,0x00,0x00,0x00,0x00,0x00,0x00}, // 27: m
+        {0x00,0x00,0x2C,0x32,0x22,0x22,0x22,0x22,0x00,0x00,0x00,0x00,0x00,0x00}, // 28: n
+        {0x00,0x00,0x1C,0x22,0x22,0x22,0x22,0x1C,0x00,0x00,0x00,0x00,0x00,0x00}, // 29: o
+        {0x00,0x00,0x3C,0x22,0x22,0x3C,0x20,0x20,0x00,0x00,0x00,0x00,0x00,0x00}, // 30: p
+        {0x00,0x00,0x2C,0x32,0x20,0x20,0x20,0x20,0x00,0x00,0x00,0x00,0x00,0x00}, // 31: r
+        {0x00,0x00,0x1E,0x20,0x1C,0x02,0x22,0x1C,0x00,0x00,0x00,0x00,0x00,0x00}, // 32: s
+        {0x08,0x08,0x1C,0x08,0x08,0x08,0x08,0x04,0x00,0x00,0x00,0x00,0x00,0x00}, // 33: t
+        {0x00,0x00,0x22,0x22,0x22,0x22,0x22,0x1E,0x00,0x00,0x00,0x00,0x00,0x00}, // 34: u
+        {0x00,0x00,0x22,0x22,0x22,0x14,0x14,0x08,0x00,0x00,0x00,0x00,0x00,0x00}, // 35: v
+        {0x00,0x00,0x22,0x22,0x2A,0x2A,0x36,0x22,0x00,0x00,0x00,0x00,0x00,0x00}, // 36: w
+        {0x00,0x00,0x22,0x14,0x08,0x08,0x14,0x22,0x00,0x00,0x00,0x00,0x00,0x00}, // 37: x
+        {0x00,0x00,0x22,0x22,0x14,0x08,0x08,0x30,0x00,0x00,0x00,0x00,0x00,0x00}, // 38: y
+        {0x08,0x14,0x22,0x22,0x3E,0x22,0x22,0x22,0x00,0x00,0x00,0x00,0x00,0x00}, // 39: A backup
+    };
+    static const uint8_t indices[96] = {}; // lazy init
+    // Map ASCII 32-122 to glyph index
+    switch (ch) {
+    case ' ': return glyphs[0];
+    case 'A': case 'a': return glyphs[1];
+    case 'B': return glyphs[2];
+    case 'C': case 'c': return glyphs[18];
+    case 'E': case 'e': return glyphs[20];
+    case 'G': case 'g': return glyphs[22];
+    case 'I': case 'i': return glyphs[24];
+    case 'M': case 'm': return glyphs[27];
+    case 'N': case 'n': return glyphs[28];
+    case 'O': case 'o': return glyphs[29];
+    case 'P': case 'p': return glyphs[30];
+    case 'R': case 'r': return glyphs[31];
+    case 'S': case 's': return glyphs[32];
+    case 'T': case 't': return glyphs[33];
+    case 'V': case 'v': return glyphs[35];
+    case 'W': case 'w': return glyphs[36];
+    case 'X': case 'x': return glyphs[37];
+    case 'd': return glyphs[19];
+    case 'f': return glyphs[21];
+    case 'h': return glyphs[23];
+    case 'k': return glyphs[25];
+    case 'l': return glyphs[26];
+    case 'u': return glyphs[34];
+    case 'y': return glyphs[38];
+    default: return glyphs[0]; // space for unknown
+    }
+}
+
+static void DrawButtonText(uint16_t* buf, int pitch, int x, int y, const char* text, uint16_t color)
+{
+    while (*text) {
+        uint8_t ch = (uint8_t)*text++;
+        const uint8_t* glyph = GetGlyph(ch);
+        for (int row = 0; row < 14; row++) {
+            uint8_t bits = glyph[row];
+            int screenY = y + row;
+            for (int col = 0; col < 8 && bits; col++, bits <<= 1) {
+                if (bits & 0x80) buf[screenY * pitch + x + col] = color;
+            }
         }
+        x += 8;
     }
 }
 
@@ -140,7 +205,6 @@ static MenuState MainMenu_Screen()
         LOG_ERROR("[MENU] DDraw not available");
         return MenuState::MenuIdle;
     }
-    if (!PaletteLoaded()) LoadMenuPalette();
 
     // Layout scales from 533×369 dialog units (DIALOGEX template 0xE2)
     int dlgW = (ctx->width  > 800) ? 800  : ctx->width;
@@ -157,22 +221,7 @@ static MenuState MainMenu_Screen()
     int btnH = (int)(23.0f  * dluY);
     int btnPosY[6] = {};
     for (int i = 0; i < 6; i++)
-        btnPosY[i] = offY + (int)((float)kMenuBtnY[i] * dluY);
-
-    // Load SHP button assets
-    ShpImage* btns[6] = {};
-    for (int i = 0; i < 6; i++) {
-        void* data = FileSystem::LoadByHash(kMenuBtnHashes[i]);
-        if (!data) { LOG_WARN("[MENU] SHP btn %d hash=0x%08X not found", i, kMenuBtnHashes[i]); continue; }
-        btns[i] = new ShpImage();
-        if (!btns[i]->LoadFromMemory((const uint8_t*)data, 32768)) {
-            LOG_WARN("[MENU] SHP btn %d load failed %dx%d", i, btns[i]->GetWidth(), btns[i]->GetHeight());
-            delete btns[i]; btns[i] = nullptr;
-        } else {
-            LOG_DEBUG("[MENU] SHP btn %d: %dx%d %df", i, btns[i]->GetWidth(), btns[i]->GetHeight(), btns[i]->GetFrameCount());
-        }
-        free(data);
-    }
+        btnPosY[i] = offY + (int)((float)kMenuButtons[i].yDLU * dluY);
 
     // Create BINK control window for lifecycle (matching DlgItem 1818)
     HWND hBink = CreateWindowExA(0, "STATIC", "", WS_POPUP,
@@ -202,7 +251,6 @@ static MenuState MainMenu_Screen()
     while (!reachedEnd) {
         ++loopCount;
 
-        // BINK frame advance + pacing
         BinkPlayerControl* bikCtrl = BinkPlayerControl::FromHwnd(hBink);
         bool newFrame = false;
         if (bikCtrl && bikCtrl->IsPlaying()) {
@@ -210,7 +258,6 @@ static MenuState MainMenu_Screen()
             if (movie) newFrame = movie->AdvanceFrame();
         }
 
-        // Render to DDraw back buffer
         if (newFrame || !(bikCtrl && bikCtrl->IsPlaying())) {
             DDSURFACEDESC2 desc = {};
             desc.dwSize = sizeof(desc);
@@ -227,19 +274,23 @@ static MenuState MainMenu_Screen()
                             buf[y * pitch + x] = 0x1082;
                 }
 
-                // Draw SHP buttons on top of BINK
+                // Draw buttons: dark blue fill + light border + text
                 for (int i = 0; i < 6; i++) {
                     int by = btnPosY[i];
-                    if (btns[i]) {
-                        int fc = btnHover[i] ? 1 : 0;
-                        if (fc >= btns[i]->GetFrameCount()) fc = 0;
-                        DrawShpToBuffer(btns[i], fc, buf, pitch, ctx->width, ctx->height, btnX, by);
-                    } else {
-                        uint16_t fill = btnHover[i] ? 0xF800 : 0x07E0;
-                        for (int y = by; y < by + btnH && y < ctx->height; y++)
-                            for (int x = btnX; x < btnX + btnW && x < ctx->width; x++)
-                                buf[y * pitch + x] = (y == by || y == by + btnH - 1 || x == btnX || x == btnX + btnW - 1) ? 0xFFFF : fill;
+                    uint16_t fill  = btnHover[i] ? 0x7BEF : 0x2104;
+                    uint16_t border = btnHover[i] ? 0xC618 : 0x9492;
+                    uint16_t textColor = btnHover[i] ? 0xFFFF : 0xD69A;
+
+                    for (int y = by; y < by + btnH && y < ctx->height; y++) {
+                        for (int x = btnX; x < btnX + btnW && x < ctx->width; x++) {
+                            bool isBorder = (y == by || y == by + btnH - 1 || x == btnX || x == btnX + btnW - 1);
+                            buf[y * pitch + x] = isBorder ? border : fill;
+                        }
                     }
+                    int tx = btnX + (btnW - (int)strlen(kMenuButtons[i].text) * 8) / 2;
+                    int ty = by + (btnH - 14) / 2;
+                    if (tx < btnX) tx = btnX;
+                    DrawButtonText(buf, pitch, tx, ty, kMenuButtons[i].text, textColor);
                 }
 
                 ctx->back_buffer->Unlock(nullptr);
@@ -247,18 +298,17 @@ static MenuState MainMenu_Screen()
             DDraw_Flip();
         }
 
-        // Message pump + manual hit-testing
         MSG msg;
         while (PeekMessageA(&msg, nullptr, 0, 0, PM_REMOVE)) {
             if (msg.message == WM_QUIT) { result = MenuState::ExitConfirm; reachedEnd = true; break; }
             if (msg.message == WM_KEYDOWN && msg.wParam == VK_ESCAPE) { result = MenuState::ExitConfirm; reachedEnd = true; break; }
             if (msg.message == WM_LBUTTONDOWN) {
                 POINT pt = { LOWORD(msg.lParam), HIWORD(msg.lParam) };
-                ScreenToClient(ctx->hwnd, &pt);  // convert to client coords if needed
+                ScreenToClient(ctx->hwnd, &pt);
                 for (int i = 0; i < 6; i++) {
                     if (pt.x >= btnX && pt.x < btnX + btnW &&
                         pt.y >= btnPosY[i] && pt.y < btnPosY[i] + btnH) {
-                        result = kBtnStates[i];
+                        result = kMenuButtons[i].target;
                         reachedEnd = true;
                         break;
                     }
@@ -283,7 +333,6 @@ static MenuState MainMenu_Screen()
         SendMessageA(hBink, BINKM_CLOSE, 0, 0);
         DestroyWindow(hBink);
     }
-    for (int i = 0; i < 6; i++) delete btns[i];
     return result;
 }
 
