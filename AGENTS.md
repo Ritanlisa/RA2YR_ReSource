@@ -777,11 +777,13 @@ make _WIN32_WINNT=0x0400
 | **BINK 表面追踪 (3)** | `BinkMovie_CreateSurfaceTracker`, `BinkMovie_FreeSurfaceTracker`, `BinkMovie_ProcessKeyframe` | BSurface 关键帧过渡处理 |
 | **BINK音频系统 (2)** | `Audio_IsSoundEnabled`, `Audio_GetDirectSound` | DirectSound→BINK SetSoundSystem 桥接 |
 | **音频全局 (2)** | `g_Audio_Enabled`, `g_pDirectSound` | 音频启用标志 + DirectSound 对象指针 |
+| **Locomotor GUID 表 (8)** | `g_CLSID_WalkLocomotion`, `g_CLSID_DriveLocomotion`, `g_CLSID_FlyLocomotion`, `g_CLSID_HoverLocomotion`, `g_CLSID_TunnelLocomotion`, `g_CLSID_DriveLocomotion2`, `g_CLSID_JumpjetLocomotion`, `g_CLSID_ShipLocomotion` | COM 移动类型 CLSID 表 @0x7E9A60 |
 
-### IDA struct 类型 (3个)
+### IDA struct 类型 (4个)
 - `BuildingClass_Full` — 已应用于 CreateUnit + 3 callbacks 的 `this` 参数
 - `BuildingClass_Production` — 生产成员布局
 - `BuildingTypeClass_Production` — 类型成员布局 (660→890偏移)
+- `WarheadTypeClass` (61成员), `BuildingTypeClass` (198), `TechnoTypeClass` (293) — YRpp 导入完成
 
 ### 项目关键信息
 
@@ -1313,6 +1315,75 @@ Campaign_Screen(template_id):
 | VXL/HVA 体素 | ❌ 待实现 | 仅头文件定义，无 .cpp |
 
 ---
+
+## 逆向经验 (本会话新增, 2026-06-02)
+
+### INI Key → 成员变量映射验证
+
+**方法**: 反编译类的 READ_INI/ReadINI 函数，查找 `INIClass::GetString(ini, section, "KeyName", ..., this+OFFSET, ...)` 模式。
+
+**WarheadTypeClass 示例** (@ 0x772080):
+```
+*(this + 0xA4) = ReadInt("Damage", *(this+0xA4));         // Damage
+*(this + 0xCA) = ReadBool("MindControl", *(this+0xCA));    // MindControl
+*(this + 0xD0) = ReadBool("IsLocomotor", *(this+0xD0));    // IsLocomotor
+```
+每个 INI key 对应一个成员偏移。如果成员在 IDA struct 中名为 `unknown_*`，说明 YRpp 也未能确定该 key。
+
+**验证工具**: `tools/verify_yrpp_members.py` — 交叉验证 YRpp JSON 与 IDA struct 成员名。结果: 647/647 成员匹配 (4 个核心类)。
+
+### COM GUID 表定位
+
+RA2/YR 的移动系统使用 COM 架构，每种移动类型是注册在 Windows 中的 COM 类，由 128-bit CLSID 标识:
+
+**定位方法**:
+1. INI 中看到 GUID 字符串如 `{4A582746-9839-11d1-B709-00A024DDAFD1}`
+2. 在 IDA 中用 `find_bytes` 搜索 GUID 的 16 字节二进制格式（注意 Windows GUID 是小端序: `46 27 58 4A 39 98 D1 11 ...`）
+3. GUID 表位于 `.rdata` 段 (这里在 0x7E9A60)
+4. 用 `xrefs_to` 查每个 GUID 的引用 → 确认对应类名
+
+**GUID 表结构** (0x7E9A60, 8 个 CLSID):
+
+| 地址 | GUID (首 4 字节 LE) | 对应 COM 类 | 引用函数 |
+|------|---------------------|------------|----------|
+| `0x7E9A60` | `4A582744` | WalkLocomotion | WinMain COM 注册 |
+| `0x7E9A70` | `4A582745` | DriveLocomotion | WinMain |
+| `0x7E9A80` | `4A582746` | FlyLocomotion | FlyLocomotionClass::ddtor |
+| `0x7E9A90` | `4A582747` | HoverLocomotion | InfantryClass::CreateDeployLocomotor |
+| `0x7E9AA0` | `55D141B8` | TunnelLocomotion | WinMain |
+| `0x7E9AB0` | `2BEA74E1` | DriveLocomotion2 | — |
+| `0x7E9AC0` | `92612C46` | JumpjetLocomotion | 10+ 函数 (核心移动) |
+| `0x7E9AD0` | `B7B49766` | ShipLocomotion | WinMain |
+
+**GUID 解析链**:
+```
+INI: Locomotor={4A582746-...}
+  → CLSIDFromString("{4A582746-...}", &pclsid)    ← INIClass::ReadGUID_Overwrite @ 0x527920
+  → 存入 ObjectTypeClass +844 (16B)
+  → CreateInstanceCOM(&pclsid, ...)                 ← 创建 COM 对象
+  → COMObject::SwapReference → 替换目标的 ILocomotion 接口
+```
+
+### Locomotor 类型推断方法
+
+1. 找到 GUID 的 xrefs → 最多的代码引用数 = 最核心的类
+2. `{92612C46-...}` 有 10+ xrefs (FootClass::CalculateApproachPath 等) → Jumpjet
+3. `{4A582744-747}` 是连续编号 → Walk/Drive/Fly/Hover 基础类型
+4. 调用 `CreateInstanceCOM(&GUID)` 的函数名含 "Locomotor" → 确认用途
+5. WinMain 中的 xrefs → COM 类注册时遍历 GUID 表
+
+### IsLocomotor 弹头效果追踪
+
+**目标**: 理解为何 `Warhead.IsLocomotor=yes` + `Locomotor={GUID}` 对敌方单位的移动类型替换效果只在 Jumpjet GUID 时正常工作。
+
+**方法**:
+1. 查 WarheadTypeClass struct → IsLocomotor 在 +0xD0, Locomotor 在 +0xD1
+2. 反编译 WarheadTypeClass::ReadINI → 确认 INI 读取 key 名
+3. 搜索 GUID 的代码引用 (xrefs) → 找核心移动逻辑
+4. Jumpjet GUID 被 10+ 函数引用 (FootClass::CalculateApproachPath, InfantryClass::AssignDestination, Mission::ProcessUnitMissionAI…) → 说明引擎代码中有多处 Jumpjet 特判
+5. 其他 GUID 仅在 WinMain 注册和自身 ddtor 中出现 → 缺少"临时替换后恢复"的完整生命周期
+
+**结论**: Jumpjet 是唯一在核心移动/任务/AI 代码中有 `if (locomotor CLSID == JumpjetGUID)` 分支检查的移动类型。其他类型缺少这种代码路径，导致 ILocomotion 接口被替换后无法正确恢复。
 
 ## 经验教训 (跨项目通用)
 
