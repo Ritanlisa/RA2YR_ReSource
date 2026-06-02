@@ -34,7 +34,7 @@ Phase 2 现代化方向：
 | 编译警告 | **0** |
 | 已实现函数 | **~140** (~200+ stubs/empty) |
 | TODO/FIXME 标记 | **~260** (source 210 + headers 50) |
-| IDA 命名 | **267 函数 + 46 全局变量 + 3 struct 类型** |
+| IDA 命名 | **~8,981 `::` + ~1,491 VerbNounPhrase + 25+ struct 类型** |
 | MIX 格式支持 | RA2 加密 + 扩展无加密 + TD 传统 (全部验证) |
 | EXE 骨架 | **WinMain + Win32窗口 + DirectDraw7初始化 + MIX文件加载 + SHP渲染 + 主菜单系统** |
 
@@ -730,7 +730,7 @@ make _WIN32_WINNT=0x0400
 | 存根/空实现 | ~200+ |
 | TODO/FIXME标记 | 252 (src 205 + headers 47) |
 | 未命名成员 | 34 (BuildingClass 17 + Infantry 6 + Unit 3 + Aircraft 8) |
-| IDA 命名函数 | **263** (新增 11: BINK 渲染链) |
+| IDA 命名函数 | **~8,470** (~44% of 19,059) |
 | IDA 命名全局变量 | **44** (新增 8: DDraw + Surface globals) |
 | 构建状态 | 0 errors, 0 warnings |
 
@@ -1325,6 +1325,81 @@ Campaign_Screen(template_id):
 - **大型常量表**: 避免手动录入大量常量（如加密算法的 S-box）。应编写脚本从可信来源提取并生成代码文件。
 - **增量验证不可省**: 加密/压缩/序列化等复杂算法必须逐段端到端验证（引擎核心→密钥计算→完整解密），否则难以定位错误。
 
+### IDA 批量改名方法论 (2026-06-02 总结)
+
+#### 成员函数判断标准（可靠性排序）
+
+| 方法 | 置信度 | 原理 |
+|------|--------|------|
+| vtable 中出现 | **100%** | MSVC 虚函数表条目必定是虚成员函数 |
+| `__thiscall` 调用约定 | **~95%** | MSVC 成员函数使用 thiscall (this→ECX, callee清栈) |
+| 构造/析构模式 (`mov [ecx], vtable_ptr` + `ret this`) | **>99%** | 构造函数特有模式 |
+| 旧 `.i64` `ClassName_MethodName` 命名 | **不可靠** | 仅是模块组织方式（如 `AudioMixer_Init`），不等同于类成员 |
+
+#### 批量改名管线
+
+```
+Phase 1: Vtable 扫描
+  ├─ 扫描 .rdata 段所有 → .text 的函数指针 dword
+  ├─ 按连续性分组为 vtables (gap ≤ 16 bytes)
+  ├─ 已命名(含::)函数多数投票确定 vtable 所属类
+  ├─ 可疑大 vtable (>100条) 需检测子划分
+  ├─ 未命名 → ClassName::sub_XXXXXX
+  └─ 缺:: → ClassName::ExistingName
+
+Phase 2: Thiscall 批量检测
+  ├─ 找出非vtable、不含::、但名中嵌入类名的函数
+  ├─ tif.dstr() 检查原型字符串是否含 __thiscall
+  └─ thiscall → 确认成员, 取最长类名匹配改名
+
+Phase 3: 旧 .i64 交叉验证
+  ├─ 提取旧 .i64 所有地址→(类名,方法名) 映射
+  ├─ 注意: 旧命名 ClassName_MethodName 不保证是成员
+  ├─ 仅当目标地址在 vtable 或 thiscall 确认后才改为 ::
+  └─ 旧 .i64 可能有新 .i64 未记录的类名（从 _ 格式提取）
+
+Phase 4: 清理
+  ├─ 双重前缀: ClassName::ClassName_Method → ClassName::Method
+  ├─ j_ 跳转: WrongClass::j_RealClass_Method → RealClass::Method
+  ├─ loc_/__RTC_ 在 vtable 中 → sub_ 格式
+  └─ nullsub 永远不应有 :: 前缀
+```
+
+#### 常见改名错误及修复
+
+| 错误 | 错误示例 | 正确结果 |
+|------|----------|----------|
+| 双重类名前缀 | `VectorClass::VectorClass_vt00` | `VectorClass::vt00` |
+| j_ 跳转丢失类名 | `MouseClass::j_SidebarClass_InitButtons` | `SidebarClass::InitButtons` |
+| loc_ 在 vtable | `AbstractClass::loc_45FE50` | `AbstractClass::sub_45FE50` |
+| 短词类名贪婪匹配 | `Control::InitAudioController` | `AudioController::Init` |
+| nullsub 被加前缀 | `nullsub::2` | `nullsub_2` |
+
+#### 类名提取规则
+
+从 `VerbNounClassName` 格式函数名提取类名时必须:
+1. 取**最长匹配**且有意义的类名（优先前缀或后缀位置）
+2. 短通用词（Control/Count/File/Stream/Buffer/nullsub）不应优先于长专用词（AudioController/RefCount/AudioStream）
+3. 先用已有 `::` 命名的函数构建已知类字典，找不到时从 `_` 格式名补充
+
+#### Thiscall 检测方法
+
+```python
+# IDA 9.2: 无 FUNC_THISCALL 标志位, 需用 tinfo_t.dstr()
+tif = ida_typeinf.tinfo_t()
+if ida_nalt.get_tinfo(tif, ea):
+    proto = tif.dstr()  # e.g. "int __thiscall(int *this)"
+    is_thiscall = "__thiscall" in proto
+```
+
+#### IDA Python 踩坑
+
+- `xrefblk_t` 非 `xrefblt_t` (类名不同)
+- `ida_funcs` 无 `FUNC_THISCALL` 标志
+- `tinfo_t.get_cc()` 不存在, 用 `dstr()` 解析
+- `func_type_data_t.cc` 属性不可用
+- `py_eval` 对大脚本有限制，大操作写 `.py` 文件后用 `py_exec_file` 执行
+
 ### BINK SDK 踩坑总结 (项目特定)
 
 | # | 问题 | 表现 | 根因 | 修复 |
@@ -1365,19 +1440,82 @@ Campaign_Screen(template_id):
 7. MIX 文件名仅存 hash ID，不保存原始文件名
 8. DirectDraw 调用使用标准 Windows SDK 接口 (Phase 1)，搭配 cnc-ddraw 兼容层运行调试
 
+### IDA 函数命名规范 — 成员 vs 全局判定
+
+**核心认知**: **vtable 只覆盖虚函数**。非虚成员函数（构造/析构/普通方法/静态方法）不在 vtable 中，但仍是类成员。不能仅凭"不在 vtable"就判为全局函数。
+
+#### 成员函数判定方法（按可靠性排序）
+
+| 判定方法 | 置信度 | 覆盖范围 | 检测方式 |
+|----------|--------|----------|----------|
+| **vtable 中出现** | 100% | 仅虚成员函数 | 扫描 `.rdata` 段，函数指针出现在连续 vtable 块中 |
+| **`__thiscall` 调用约定** | ~95% | 虚 + 非虚成员函数 | `tif.dstr()` 返回字符串含 `__thiscall` |
+| **构造/析构模式** | >99% | 构造/析构函数 | 代码模式：`mov [ecx], vtable_ptr` + `ret this` |
+| **旧 `.i64` 命名 `ClassName_MethodName`** | 不可靠 | — | 仅作参考，需 vtable 或 thiscall 验证 |
+| **`__stdcall` / `__cdecl`** | ~90% 为全局 | 全局函数或静态成员 | 静态成员函数也用 `__stdcall`，无法与全局函数区分 |
+
+**关键陷阱**:
+- ❌ **"不在 vtable = 全局函数"** — 最危险的误解。非虚成员函数不在 vtable 中但 `__thiscall` 调用约定清晰可辨
+- ❌ **"旧命名 `ClassName_MethodName` = 成员函数"** — MSVC 时代常用 `ModuleName_FunctionName` 做模块组织（如 `AudioMixer_Init`），并非类成员声明
+- ❌ **"Vtable 条目 = 该类的所有成员函数"** — vtable 只含虚函数，不包括构造/析构/非虚方法/静态方法
+
+#### 命名格式
+
+| 函数类型 | 格式 | 示例 |
+|----------|------|------|
+| **成员函数**（虚/非虚/构造/析构） | `ClassName::Method` | `BulletClass::FlightUpdate`, `AudioController::Init` |
+| **全局函数** | `VerbNounPhrase` (PascalCase 动宾结构) | `DistributeRandomMapTerrain`, `ComputeBlowfishKey` |
+| **未命名 vtable 条目** | `ClassName::sub_XXXXXX` | `BuildingClass::sub_45A3C0` |
+| **静态成员函数**（暂无法区分） | 保守用 `VerbNounPhrase` | — |
+
+**禁止事项**:
+- ❌ 全局函数用 `ClassName_Method` 格式 — 与 `ClassName::Method` 混淆
+- ❌ 全局函数名含下划线 `_` — 应使用 PascalCase
+- ❌ `nullsub` 被加 `::` 前缀 — nullsub 不是类名
+- ✅ `ClassName::ClassName_Method` 双重前缀 → 修复为 `ClassName::Method`
+- ✅ `WrongClass::j_RealClass_Method` → 修复为 `RealClass::Method`
+
+**批量分类流程** (每次对新批次函数命名前执行):
+1. **Vtable 扫描**: 扫描 `.rdata` → 分组连续函数指针为 vtable → 用已有 `::` 命名多数投票确定 vtable 所属类 → 未命名条目赋 `ClassName::sub_XXXXXX`
+2. **Thiscall 检测**: 非 vtable、非 `::` 的函数 → `tif.dstr()` 检查 `__thiscall` → 确认成员 → 从函数名提取最长匹配的类名 → `ClassName::Method`
+3. **旧 DB 交叉验证**: 利用旧 `.i64` 的地址→命名映射，但必须经 vtable 或 thiscall 验证后才转换为 `::` 格式
+4. **清理**: 修复双重前缀、`j_` 跳转、`loc_`/`__RTC_` 等错误格式
+
 ## 下一步 (Next Steps)
 
-### 当前会话成果
-- BINK 渲染管线修复: `DoFrame→CopyToBuffer→NextFrame` 顺序正确, `BinkWait` 仅调用一次
-- cnc-ddraw 适配: 离屏表面 + memcpy 管线, `d3d9_filter=0` 消除模糊
-- 逆向成果: 11 BINK 函数重命名 + DIALOGEX 模板 0xE2 完整解析 + 菜单状态机文档
-- 构建: 0 errors, 0 warnings, BINK 可见清晰, 按钮可交互
+### 当前计划 (2026-06-01 更新)
+
+| 步骤 | 状态 | 详情 |
+|------|------|------|
+| 1. Vtable 识别/类映射 | ✅ | 1,084 vtables, 934 RTTI 类名 |
+| 2. Struct 类型声明 | ✅ | YRpp 导入 25+ 核心类 (RulesClass 722/BuildingTypeClass 185/TechnoTypeClass 290 等) |
+| 3. 函数签名更新 | ✅ | Building/Rules/Techno 等方法 this 指针类型已应用 |
+| 4. 逆向未命名成员函数 | 🔄 | ~240 函数已命名 (vtable + 大型 sub) |
+| 4.5 全局变量重命名 | ✅ | ≥20 xrefs: 336 个全部命名+深度验证, ≥30: 157, 20-29: 179 |
+| 5. 类成员变量逆向 | ⏳ | 待开始 |
+| 6. 完成 3+ xref pool | ⏳ | 待开始 |
+
+### 当前会话成果 (2026-06-02)
+- IDA 函数批量重命名: ~4,600+ 次操作，三阶段方法
+- **YRpp vt_entry 映射破解**: 155/174 条目重命名为 `ClassName::MethodName`
+- **核心类 ::sub_ 反编译**: 267 个函数已手工反编译并命名
+  - 覆盖 TechnoClass(30+), BuildingClass(20+), TeamClass(15+), FootClass(10+), HouseClass(10+), TacticalClass, SuperClass, InfantryClass, UnitClass, BulletClass, SidebarClass, ObjectClass, CellClass, TriggerClass 等
+- **命名规范修正**: `ClassName__Method` → `ClassName::Method` 全局应用
+- **IDA 保存**: 累积重命名 10,000+ 次
+
+### 当前会话成果 (2026-06-01)
+- YRpp struct 批量导入: 25+ 核心类含 1500+ 字段映射到 IDA
+- 全局变量重命名: ~390 高引用变量, 类型/宽度修复 (深度验证准确率 ~95%)
+- 函数命名: ~240 (BuildingClass::Draw/ProcessSpreadEffect/TeamClass::Update/InfantryClass::Draw 等)
+- 全局变量检查: 17 "State"→对象, 4 "Pool"→Manager 修正
+- 反编译质量: `BuildingClass *this` 替代原始指针, `this->AmmoCrateDamage` 替代 `*(this+0x0C)`
+- 总计: ~8,470/19,064 函数 + ~390 全局 + 25 struct 类型, 构建 0 errors
 
 ### 待完成 (按优先级)
-1. **SHP 按钮素材加载** — button00.shp 头部 `0000 3400 2000 0200` 格式未知, 需修复解析器
-2. **BINK 音频** — `BinkSetSoundSystem` + DirectSound 初始化
-3. **对话框系统** — `CreateDialogIndirectParamA` + 控件子类化, 需要 comctl32 + child window
-4. **子菜单实现** — Campaign/Skirmish/Multiplayer/Options 屏幕
+1. 继续 vtable 成员函数逆向 (剩余 ~9,100 未命名)
+2. 类成员变量逆向 (从构造函数+YRpp对照)
+3. 10-19 xrefs 全局变量 (500 个)
+4. 完成 3+ xref pool 命名
 5. 后续 R1: 游戏内等距视图渲染
 
 ---
@@ -1520,3 +1658,52 @@ Lock → RenderFrameRaw → Unlock → Flip  // 每帧都渲染，不受门控
 3. **SHP 素材**: button*.shp 虽存在于 MIX，但原版主菜单不使用（可能用于游戏内 UI）。需修复 SHP 解析器支持其非标准格式。
 4. **构建**: 切换分支后务必 `cmake -B build_win -G "Visual Studio 17 2022" -A Win32` 重配置。
 5. **渲染架构**: 原版整个主菜单由 `Dialog_PumpMessages` 驱动，BINK 在 DlgItem 1818 的 subclass 内部渲染，按钮由 GDI 渲染。在 cnc-ddraw 下完全复现此架构需要 `nonexclusive=true`。
+
+---
+
+## YRpp vt_entry 偏移映射 (2026-06-02 破解)
+
+### 公式
+
+```
+vt_entry_XXX → index = XXX / 4 → vtable[0] + XXX → 读取函数指针 → 重命名为 ClassName::MethodName
+```
+
+### 关键发现
+
+1. **vtable[0] 实际大小远超预期**: BuildingClass 主 vtable 有 **322** 条目 (之前误认为 100)，是从 AbstractClass 开始的完整累积表
+2. **所有 MI 游戏类共享同一 vtable[0] = 0x7E3EBC**: BuildingClass/TechnoClass/FootClass/ObjectClass/MissionClass 等共用 MSVC 的完整 vtable 块
+3. **简单继承类各有独立 vtable**: XSurface(0x7E2104), DisplayClass(0x7E6114), ObjectTypeClass(0x7E2868), MPBattleClass(0x813F60) 等
+
+### 验证（BuildingClass 7 个 vt_entries）
+
+| vt_entry | 索引 | 函数 |
+|----------|------|------|
+| 0x490 | 292 | BuildingClass::EvacuateFootprintCells |
+| 0x4D4 | 309 | BuildingClass::ValidateFoundation |
+| 0x4D8 | 310 | BuildingClass::DistanceToTarget |
+| 0x4E4 | 313 | BuildingClass::DrawPlacementPreview |
+| 0x4E8 | 314 | BuildingClass::GetTurretAngle |
+| 0x4EC | 315 | BuildingClass::ProcessDemolish |
+| 0x504 | 321 | BuildingClass::StubReturn0 |
+
+### Phase 3 脚本
+
+`tools/apply_yrpp_vt_entries.py` — 155/174 条目已成功重命名为 `ClassName::MethodName` 格式。19 个被跳过（小型类的 vtable 地址未发现），4 个 FootClass 条目越界（可能引用 vtable[1-3]）。
+
+### 模板容器类 _vtNN
+
+已全部消除 3,436 → 0。按 vtable 索引模式批量重命名（Add/Remove/QueryInterface/AddRef/Release/ddtor）。
+
+### 核心类 vtable 地址
+
+| 类 | vtable[0] | 条目数 | 备注 |
+|-----|-----------|--------|------|
+| BuildingClass | 0x7E3EBC | 322 | 完整累积 vtable (MI 共享) |
+| InfantryClass | 0x7EB058 | 343 | |
+| UnitClass | 0x7F32FC | 122 | |
+| DisplayClass | 0x7E6114 | — | 简单继承 |
+| XSurface | 0x7E2104 | 38 | 简单继承 |
+| ObjectTypeClass | 0x7E2868 | — | 简单继承 (共享) |
+| TechnoTypeClass | 0x7E2868 | — | 与 ObjectTypeClass 共享 |
+| MPBattleClass | 0x813F60 | — | .data 段
