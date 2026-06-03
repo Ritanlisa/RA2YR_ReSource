@@ -284,9 +284,15 @@ void VectorClear(void* vec) {
 }
 void LoadAnimTypes(void* rules_ini) { (void)rules_ini; }
 void LoadBuildingTypes(void* rules_ini) { (void)rules_ini; }
+// IDA 0x48E740 — ConvertClass::Constructor: creates DDraw palette surface
 void* ConvertClassConstruct(void* palette, void* temperat_pal, void* surface, int count, int flags) {
-    (void)palette; (void)temperat_pal; (void)surface; (void)count; (void)flags;
-    return nullptr;
+    return new ConvertClass(
+        *static_cast<BytePalette*>(palette),
+        *static_cast<BytePalette*>(temperat_pal),
+        static_cast<DSurface*>(surface),
+        count > 0 ? (size_t)count : 1,
+        flags != 0
+    );
 }
 
 // ============================================================
