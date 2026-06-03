@@ -20,6 +20,8 @@ XREF_ORDER = ["0 Xref","1\u20132","3\u20135","6\u201310","11\u201320",
 
 def fmt_cell(n, u):
     t = n + u
+    if t == 0:
+        return "\u2014"
     pct = round(n*100.0/t, 1) if t else 0
     return f"{n}/{u}/{t}({pct}%)"
 
