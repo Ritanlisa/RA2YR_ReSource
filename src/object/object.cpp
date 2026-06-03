@@ -34,23 +34,50 @@ bool ObjectClass::Put(const CoordStruct& coords, unsigned int face_dir)
     return true;
 }
 
+// IDA: 0x5F44A0 — ObjectClass::Remove (123B)
+// Removes object from selection manager and resets scroll anchor
+// Checks this+0x83 (m_is_selected), not m_is_on_map
 bool ObjectClass::Remove()
 {
-    if (!m_is_on_map)
+    // IDA: if (*(this+0x83)) — m_is_selected check
+    if (!m_is_selected)
         return false;
 
+    // IDA: find index in ObjectClass_CurrentObjects
+    // IDA: remove from g_SelectionManager by shifting entries down
+    // IDA: *(this+0x83) = 0 — m_is_selected = false
+    m_is_selected = false;
+
+    // IDA: if MapClass::GetScrollMode == this → SetScrollMode(0)
+    // This deselects the scroll anchor if this object was it
+
+    // Also perform standard removal — unmark occupancy, set limbo
     UnmarkAllOccupationBits(m_location);
     m_is_on_map = false;
     m_in_limbo = true;
-    m_is_alive = false;
 
     return true;
 }
 
+// IDA: 0x5F65F0 — ObjectClass::Destroy (146B)
+// Cleanup chain: audio → TechnoClass::CleanupAll → AnnounceExpiredPointer
+// Then sets m_is_alive=false and registers for disk laser cleanup
 void ObjectClass::Destroy()
 {
-    Remove();
+    // IDA: if (*(this+0x38)) — m_attached_bomb cleanup
+    // ObjectClass::CleanupAudioAndRefs(v2)
+
+    // IDA: if (m_abstract_flags & 1) — TechnoClass::CleanupAll(this, 0)
+    // AbstractClass::AnnounceExpiredPointer(this, 1)
+    // vtable[53] cleanup virtual
+
+    // IDA: *(this+0x90) = 0 — m_is_alive = false
     m_is_alive = false;
+
+    // Remove from map
+    Remove();
+
+    // IDA: register in disk laser draw queue (g_LaserDrawConfig++)
 }
 
 void ObjectClass::RestoreMission(Mission mission)
