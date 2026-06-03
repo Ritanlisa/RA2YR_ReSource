@@ -194,8 +194,12 @@ bool MixFileLoadAll() {
     LOG_INFO("MixFileLoadAll: %d MIX files currently in pool", pool.Count);
     return pool.Count > 0;
 }
-// IDA 0x5BED40 — Movie::Play
-void MoviePlay(int a1, int a2, int a3, int a4) { (void)a1; (void)a2; (void)a3; (void)a4; }
+// IDA 0x5BED40 — Movie::Play (complex: BINK/VQA detection, DDraw surface, audio setup)
+void MoviePlay(int a1, int a2, int a3, int a4) {
+    LOG_DEBUG("MoviePlay(a1=%d,a2=%d,a3=%d,a4=%d) — skipped (stub)", a1, a2, a3, a4);
+    // IDA: sub_5C0640(1) checks GameMode; loads BINK or VQA; handles stretching;
+    //       sets up DirectSound buffers for movie audio; calls RenderMovieFrame loop
+}
 // IDA 0x5312A0 — ShowLoadingScreen: displays loading SHP (ls640*.shp/ls800*.shp)
 void ShowLoadingScreen() {
     LOG_INFO("ShowLoadingScreen: loading screen SHP would display here");
@@ -223,7 +227,13 @@ void AnimSystemInit() {
     LOG_DEBUG("AnimSystemInit");
 }
 // IDA 0x75A7D0 — ResetAnimSystem
-void ResetAnimSystem(int mode) { (void)mode; }
+// IDA 0x75A7D0 — ResetAnimSystem: clears ActiveAnims list, resets anim indices
+void ResetAnimSystem(int mode) {
+    LOG_DEBUG("ResetAnimSystem(mode=%d)", mode);
+    // IDA: clears dword_???????? array (g_ActiveAnims list)
+    // IDA: if mode != 0, also resets supplemental tables
+    (void)mode;
+}
 // IDA 0x6D1C20 — TacticalMap::Construct
 void* TacticalMapConstruct(void* mem) { (void)mem; return nullptr; }
 
