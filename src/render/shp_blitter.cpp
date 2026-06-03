@@ -16,7 +16,7 @@ static inline int ClampLines(int src_h, int dst_h)
 }
 
 //
-// SHP_Blitter_Copy
+// SHPBlitterCopy
 //
 // Reverse-engineered from gamemd.exe at 0x4373B0.
 // Simple direct pixel copy path — used when the SHP data is NOT RLE-compressed
@@ -27,7 +27,7 @@ static inline int ClampLines(int src_h, int dst_h)
 //
 // Algorithm: Clip → compute Z-buffer offset → row-by-row iterate → call blitter
 //
-bool SHP_Blitter_Copy(
+bool SHPBlitterCopy(
     Surface* dest_surface,
     const RectangleStruct& dest_clip,
     const RectangleStruct& src_rect,
@@ -118,14 +118,14 @@ bool SHP_Blitter_Copy(
     // --- 5. Unlock ---
     dest_surface->Unlock();
 
-    LOG_TRACE("SHP_Blitter_Copy: %dx%d pixels copied", clamped_in.Width, line_count);
+    LOG_TRACE("SHPBlitterCopy: %dx%d pixels copied", clamped_in.Width, line_count);
     return true;
 }
 
 //
-// SHP_Blitter_RLEBlit (stub — complex 300B RLE decompression + blit)
+// SHPBlitterRLEBlit (stub — complex 300B RLE decompression + blit)
 //
-bool SHP_Blitter_RLEBlit(
+bool SHPBlitterRLEBlit(
     Surface* dest_surface,
     Surface* src_surface,
     Surface* z_surface,
@@ -154,7 +154,7 @@ bool SHP_Blitter_RLEBlit(
     (void)zs_x;
     (void)zs_y;
 
-    LOG_TRACE("SHP_Blitter_RLEBlit: not yet implemented (RLE path)");
+    LOG_TRACE("SHPBlitterRLEBlit: not yet implemented (RLE path)");
     return false;
 }
 

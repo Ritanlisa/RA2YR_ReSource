@@ -47,24 +47,15 @@ struct BlitRowFuncs
 // Simple direct pixel copy path for non-building SHP rendering.
 // Used when the SHP frame format byte is 0x00 (raw data, not RLE).
 //
-bool SHP_Blitter_Copy(
-    Surface* dest_surface,
-    const RectangleStruct& dest_clip,
-    const RectangleStruct& src_rect,
-    void* blitter_vtable,  // -> BlitRowFuncs or similar per-row callback
-    const RectangleStruct& paint_bounds,
-    int stride_param,
-    int z_param,
-    int flags,
-    int tint_color,
-    int opacity);
+bool SHPBlitterCopy(
+    DSurface* dst,
+    int dst_x, int dst_y,
+    const DSurface* src,
+    int src_x, int src_y,
+    int w, int h,
+    BlitterFlags flags);
 
-//
-// SHP_Blitter_RLEBlit (IDA: 0x437A10)
-// RLE-compressed line draw path for building SHP rendering.
-// Handles variable-length RLE encoded row data with Z-buffer.
-//
-bool SHP_Blitter_RLEBlit(
+bool SHPBlitterRLEBlit(
     Surface* dest_surface,
     Surface* src_surface,
     Surface* z_surface,

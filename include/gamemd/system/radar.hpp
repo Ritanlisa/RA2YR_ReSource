@@ -31,7 +31,7 @@ public:
     virtual void DisposeOfArt() {}
     virtual void* vt_entry_CC(void* out, Point2D* point) { return nullptr; }
     virtual void vt_entry_D0(uint32_t unk) {}
-    virtual void Init_For_House() {}
+    virtual void InitForHouse() {}
 
     uint32_t                    m_unknown_11E8;
     uint32_t                    m_unknown_11EC;
