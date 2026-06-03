@@ -63,7 +63,7 @@ bool InitBulkData()
     // IDA: Check g_MixFile_CONQMD, CONQUER, CAMEOMD, CAMEO all valid
     // IDA: Event::Dispatch() × 2 (allow UI updates)
     // IDA: MouseClass::LoadTypeData(&MapClass_Instance)
-    // IDA: BulkData::sub_697AD0(&GameMode_Current)
+    // IDA: BulkData::InitMissionHashing(&GameMode_Current)
     // IDA: FileSystem::InitPipShapes() × 6 (various pip types)
     // IDA: GenerateRangeRingTextures()
     // IDA: GenerateLightningStormGlow()
