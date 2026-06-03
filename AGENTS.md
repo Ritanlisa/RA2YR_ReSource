@@ -1601,13 +1601,13 @@ if ida_nalt.get_tinfo(tif, ea):
 
 | # | 类 | 文件 | 未知数 | 优先级 | 状态 |
 |---|------|------|--------|--------|------|
-| 1 | **TechnoClass** | `object/techno.hpp` | **35** | P0 | ⏳ |
-| 2 | **FootClass** | `object/foot.hpp` | **41** | P0 | ⏳ |
-| 3 | **BuildingClass** | `structure/building.hpp` | **17** | P0 | ⏳ |
+| 1 | **TechnoClass** | `object/techno.hpp` | **35** | P0 | ✅ 已验证 |
+| 2 | **FootClass** | `object/foot.hpp` | **41** | P0 | ✅ 已验证 |
+| 3 | **BuildingClass** | `structure/building.hpp` | **17** | P0 | ✅ 已验证 |
 | 4 | **ObjectClass** | `object/object.hpp` | **4** | P1 | ✅ 已验证 |
-| 5 | **InfantryClass** | `structure/infantry.hpp` | **6** | P1 | ⏳ |
-| 6 | **UnitClass** | `structure/unit.hpp` | **3** | P1 | ⏳ |
-| 7 | **AircraftClass** | `structure/aircraft.hpp` | **8** | P1 | ⏳ |
+| 5 | **InfantryClass** | `structure/infantry.hpp` | **6** | P1 | ✅ 已验证 |
+| 6 | **UnitClass** | `structure/unit.hpp` | **3** | P1 | ✅ 已验证 |
+| 7 | **AircraftClass** | `structure/aircraft.hpp` | **8** | P1 | ✅ 已验证 |
 | 8 | RadarClass | `system/radar.hpp` | 53 | P2 | ⏳ |
 | 9 | HouseClass | `house/house.hpp` | 52 | P2 | ⏳ |
 | 10 | CellClass | `system/cell.hpp` | 50 | P2 | ⏳ |
