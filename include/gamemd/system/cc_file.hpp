@@ -90,6 +90,10 @@ public:
 
     explicit CCFileClass(const char* pFileName) noexcept;
 
+    bool  Open(const char* pFileName);
+    void* ReadEntireFile();
+    void  Reset();
+
 protected:
     explicit CCFileClass(const noinit_t&) noexcept : CDFileClass(noinit_t()) {}
 

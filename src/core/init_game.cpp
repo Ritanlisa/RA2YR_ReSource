@@ -214,17 +214,19 @@ void BlockCopy(const void* src) {
     (void)src;
     // TODO: actual block copy — copies a surface's pixel data to another
 }
+// CCFileClass wrapper stubs — CCFileClass::Open/ReadEntireFile now implemented in cc_file.cpp
 void* CCFileClassConstruct(void* buf, const char* filename) {
-    (void)buf; (void)filename;
-    return buf; // TODO: CCFileClass proper construction (0xD8-byte BufferIOFileClass)
+    // Construct a real CCFileClass at buf (opens filename via MIX pool + disk)
+    auto* f = new (buf) CCFileClass(filename);
+    return f;
 }
 bool CCFileClassOpen(void* file, int mode) {
-    (void)file; (void)mode;
-    return true; // TODO: CCFileClass::Open — search MIX pool + disk
+    (void)mode;
+    return file != nullptr; // Open is now done in constructor
 }
 void* CCFileClassReadEntireFile(void* file) {
-    (void)file;
-    return nullptr; // TODO: CCFileClass::ReadEntireFile
+    auto* f = static_cast<CCFileClass*>(file);
+    return f ? f->ReadEntireFile() : nullptr;
 }
 void CCFileClassReset(void* file) { (void)file; }
 void CCFileClassDestruct(void* file) { (void)file; }
