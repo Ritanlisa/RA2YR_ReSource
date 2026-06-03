@@ -155,14 +155,92 @@ bool BuildingLoadQueue_Dirty = false;
 // 0xB0E850: BuildingLoadQueue_Active — cached active entry
 void* BuildingLoadQueue_Active = nullptr;
 
-// 0x55D360: Game_Frame_Loop (declared in menu_select.cpp — stub here)
-bool Game_Frame_Loop() { return false; }
+// ============================================================
+// Game_Frame_Loop (0x55D360) — required global variables
+// ============================================================
 
-// 0x55CFD0: Game_Frame_Check
-bool Game_Frame_Check() { return false; }
+// 0xA8E9A0: WTFMode — game loop control flag
+int WTFMode = 0;
 
-// 0x48C8B0: Main_Game_Frame
-void Main_Game_Frame() {}
+// 0xABCD58: byte_ABCD58 — frame processing active flag
+bool byte_ABCD58 = false;
+
+// 0xA8E378: g_FramePresent_State — frame presentation state
+int g_FramePresent_State = 0;
+
+// 0xA8B55C: dword_A8B55C — frame start timestamp (timeGetTime)
+int dword_A8B55C = 0;
+
+// 0xA8B550: g_ScenarioState — scenario state counter
+int g_ScenarioState = 30;
+
+// 0xA8B558: dword_A8B558 — game speed setting (FPS)
+int dword_A8B558 = 0;
+
+// 0x887328: g_TacticalState — tactical render state
+int g_TacticalState = -1;
+
+// 0xABCD04: dword_ABCE04 — frame sync delay
+int dword_ABCE04 = 0;
+
+// 0x88732C: dword_88732C — timer high-precision data
+int dword_88732C = 0;
+
+// 0x887330: dword_887330 — frame interval (ms)
+int dword_887330 = 33;
+
+// 0x887348: dword_887348 — frame timer start
+int dword_887348 = 0;
+
+// 0x88734C: dword_88734C — frame timer value
+int dword_88734C = 0;
+
+// 0x887350: dwMilliseconds — frame delay milliseconds
+int dwMilliseconds = 2;
+
+// 0xA8ED72: byte_A8ED72 — high precision timer flag
+bool byte_A8ED72 = false;
+
+// 0xA8B560: ArgList — argument list for timing
+int ArgList = 0;
+
+// 0xA8B564: dword_A8B564 — frame counter
+int dword_A8B564 = 0;
+
+// 0xA83D14: dword_A83D14 — theme queue state
+int dword_A83D14 = 0;
+
+// 0xA83D18: dword_A83D18 — theme queue backup
+int dword_A83D18 = 0;
+
+// 0xA8EBA5: byte_A8EBA5 — theme enabled flag
+bool byte_A8EBA5 = false;
+
+// 0xA8EC08: BombListClass_Array
+void* BombListClass_Array = nullptr;
+
+// 0xA8EC0C: dword_A8EC0C
+int dword_A8EC0C = 0;
+
+// 0xA8EC00: dword_A8EC00 — mouse input flags
+int dword_A8EC00 = 0;
+
+// 0xA8EC04: dword_A8EC04 — mouse input flags 2
+int dword_A8EC04 = 0;
+
+// 0x87F8DC: g_Cell_PositionLUT — cell position lookup table
+int g_Cell_PositionLUT = 0;
+
+// 0x87F8E0: g_CellPositionOffset — cell position offset
+int g_CellPositionOffset = 0;
+
+// 0xABCE14: dword_ABCE14 — input flags
+int dword_ABCE14 = 0;
+
+// 0xB07784: dword_B07784 — mouse update frame counter
+int dword_B07784 = 0;
+
+// ============================================================
 
 // 0x5F9E80: Checksummer::HashString
 int HashString(const char* str) {
@@ -182,5 +260,14 @@ const wchar_t* GetCSFString(const wchar_t* key, const char* file, int line) {
     if (!key) return L"";
     return key; // Return key as placeholder until CSF is implemented
 }
+
+// IDA: 0x55D360 — Game_Frame_Loop stub
+bool Game_Frame_Loop() { return false; }
+
+// IDA: 0x55CFD0 — Game_Frame_Check stub
+bool Game_Frame_Check() { return false; }
+
+// IDA: 0x48C8B0 — Main_Game_Frame stub
+void Main_Game_Frame() {}
 
 } // namespace gamemd
