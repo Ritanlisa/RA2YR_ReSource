@@ -136,8 +136,24 @@ void CleanupCampaignResources() {}
 // 0x5DA720: Network::ShutdownInterface
 void NetworkShutdownInterface() {}
 
-// 0x7241A0: Tooltip::Enable
-void Tooltip_Enable(bool enable) { (void)enable; }
+// IDA: 0x6E6FF0 — BuildingLoadQueue_FindObject
+// These globals are used by all object constructors (Unit/Infantry/Aircraft/Building)
+// for orderly post-construction initialization via binary search queue
+
+// 0xB0E840: BuildingLoadQueue_Array — array of (id, object*) pairs
+void* BuildingLoadQueue_Array = nullptr;
+
+// 0xB0E844: BuildingLoadQueue_Count — number of entries in queue
+int BuildingLoadQueue_Count = 0;
+
+// 0xB0E848: BuildingLoadQueue_Capacity — allocated capacity
+int BuildingLoadQueue_Capacity = 0;
+
+// 0xB0E84C: BuildingLoadQueue_Dirty — queue needs resort
+bool BuildingLoadQueue_Dirty = false;
+
+// 0xB0E850: BuildingLoadQueue_Active — cached active entry
+void* BuildingLoadQueue_Active = nullptr;
 
 // 0x55D360: Game_Frame_Loop (declared in menu_select.cpp — stub here)
 bool Game_Frame_Loop() { return false; }
