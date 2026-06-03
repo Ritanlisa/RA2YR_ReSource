@@ -68,8 +68,7 @@ void NetworkAssignAddress(void* addr, void* port, int arg) { (void)addr; (void)p
 // 0x542430: Network::GetField
 void NetworkGetField(int port) { (void)port; }
 
-// 0x7B2720: Dropout counter
-void sub_7B2720(int value) { (void)value; }
+// IDA 0x7B2720 — SessionClass::SetInstance (defined in app/cmdline.cpp)
 
 // ============================================================
 // MainGame (0x48CCC0) — required global variables
