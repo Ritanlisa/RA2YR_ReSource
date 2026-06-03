@@ -1630,10 +1630,11 @@ if ida_nalt.get_tinfo(tif, ea):
 2. **YRpp 交叉引用** (高置信度): YRpp 运行时分析已命名绝大部分字段 (匹配率 ~97.7%), 仅 15 个内部计算字段未确定
 3. **IDA 字段访问追踪** (中等置信度): 搜索特定 offset 的读写指令, 分析调用上下文推断用途
 4. **AudioController sizeof 陷阱**: 原以为是 7 dwords (28B), 构造函数确认 5 dwords (20B = 0x14). 使用 `tools/verify_layout.py` 脚本验证所有包含 AudioController 的类.
+5. **YRpp 全覆盖结论**: 523 个 unknown_ 字段中，0 个可在 YRpp 中解析——YRpp 社区运行时分析已达天花板。需深度 IDA 字段访问追踪才能进一步突破。
 
-### 待完成 (按优先级)
+### 成员变量 — 待完成 (按优先级)
 1. 继续 vtable 成员函数逆向 (剩余 ~2,444 `::sub_` 未命名)
-2. 类成员变量逆向: BuildingClass(17) → InfantryClass(6) → UnitClass(3) → AircraftClass(8)
+2. 类成员变量深度逆向: 需 IDA 字段级 xref 追踪 (~523 字段, 长期任务)
 3. 10-19 xrefs 全局变量 (~180 个)
 4. 后续 R1: 游戏内等距视图渲染
 
