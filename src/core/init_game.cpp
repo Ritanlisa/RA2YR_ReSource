@@ -13,6 +13,7 @@
 #include "gamemd/core/ddraw_init.hpp"
 #include "gamemd/core/init_stubs.hpp"
 #include "gamemd/core/game_loop.hpp"
+#include "gamemd/system/ini_class.hpp"
 #include "gamemd/system/mix_file.hpp"
 #include "gamemd/system/file_system.hpp"
 #include "gamemd/system/convert_class.hpp"
@@ -171,11 +172,24 @@ void* TacticalMapConstruct(void* mem) { (void)mem; return nullptr; }
 
 // --- Phase 6: INI loading ---
 
-void INIClassConstruct(void* buf) { (void)buf; }
+// IDA 0x535AA0 — INIClass::Constructor (84B): placement-new an INIClass
+void INIClassConstruct(void* buf) { new (buf) INIClass(); }
+
+// IDA 0x535B30 — CCINIClass::Constructor (138B): placement-new a CCINIClass
+void CCINIClassConstruct(void* buf) { new (buf) CCINIClass(); }
+
+// IDA 0x4741F0 — CCINIClass::Load: loads an INI file into the CCINIClass
 bool CCINIClassLoad(void* ini, void* file, int a2, int a3) {
-    (void)ini; (void)file; (void)a2; (void)a3; return true;
+    auto* ccini = static_cast<CCINIClass*>(ini);
+    auto* ccfile = static_cast<CCFileClass*>(file);
+    return ccini && ccini->Load(ccfile, a2 != 0, a3 != 0);
 }
-void DestroyHashTableINIClass(void* ini) { (void)ini; }
+
+// IDA 0x5256F0 — DestroyHashTableINIClass: cleans up INI sections/keys
+void DestroyHashTableINIClass(void* ini) {
+    auto* ccini = static_cast<CCINIClass*>(ini);
+    if (ccini) ccini->~CCINIClass();
+}
 void AudioLoadSoundINI() {}
 void AudioInitFromINI(void* ini) { (void)ini; }
 void LoadINIEVA() {}
@@ -263,7 +277,6 @@ void VectorClear(void* vec) {
     v[2] = 0; // Count = 0
     // Optional: if Capacity > 0, clear Items
 }
-void CCINIClassConstruct(void* buf) { (void)buf; }
 void LoadAnimTypes(void* rules_ini) { (void)rules_ini; }
 void LoadBuildingTypes(void* rules_ini) { (void)rules_ini; }
 void* ConvertClassConstruct(void* palette, void* temperat_pal, void* surface, int count, int flags) {
