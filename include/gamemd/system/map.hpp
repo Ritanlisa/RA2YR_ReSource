@@ -144,7 +144,7 @@ class MapClass : public GScreenClass
 public:
     static constexpr int kMaxCells = 0x40000;
 
-    virtual int32_t __stdcall Is_Visible(CellStruct cell) { return 0; }
+    virtual int32_t __stdcall IsVisible(CellStruct cell) { return 0; }
 
     virtual ~MapClass() = default;
 
@@ -208,11 +208,11 @@ public:
     void UpdatePathfinding1();
     void UpdatePathfinding2(const CellStruct* where, int count);
 
-    CellStruct* Pathfinding_Find(CellStruct& out, const CellStruct& position, SpeedType speed, int a5, MovementZone mov_zone, bool alt, int space_size_x, int space_size_y, bool disallow_overlay, bool a11, bool require_burrowable, bool allow_bridge, const CellStruct& close_to, bool a15, bool buildable);
-    CellStruct Pathfinding_Find(const CellStruct& position, SpeedType speed, int a5, MovementZone mov_zone, bool alt, int space_size_x, int space_size_y, bool disallow_overlay, bool a11, bool require_burrowable, bool allow_bridge, const CellStruct& close_to, bool a15, bool buildable)
+    CellStruct* PathfindingFind(CellStruct& out, const CellStruct& position, SpeedType speed, int a5, MovementZone mov_zone, bool alt, int space_size_x, int space_size_y, bool disallow_overlay, bool a11, bool require_burrowable, bool allow_bridge, const CellStruct& close_to, bool a15, bool buildable);
+    CellStruct PathfindingFind(const CellStruct& position, SpeedType speed, int a5, MovementZone mov_zone, bool alt, int space_size_x, int space_size_y, bool disallow_overlay, bool a11, bool require_burrowable, bool allow_bridge, const CellStruct& close_to, bool a15, bool buildable)
     {
         CellStruct out;
-        Pathfinding_Find(out, position, speed, a5, mov_zone, alt, space_size_x, space_size_y, disallow_overlay, a11, require_burrowable, allow_bridge, close_to, a15, buildable);
+        PathfindingFind(out, position, speed, a5, mov_zone, alt, space_size_x, space_size_y, disallow_overlay, a11, require_burrowable, allow_bridge, close_to, a15, buildable);
         return out;
     }
 
