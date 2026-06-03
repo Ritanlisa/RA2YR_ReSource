@@ -1588,9 +1588,52 @@ if ida_nalt.get_tinfo(tif, ea):
 - 反编译质量: `BuildingClass *this` 替代原始指针, `this->AmmoCrateDamage` 替代 `*(this+0x0C)`
 - 总计: ~8,470/19,064 函数 + ~390 全局 + 25 struct 类型, 构建 0 errors
 
+### 当前会话成果 (2026-06-03 第二批) — 类成员变量逆向
+- **AudioController sizeof 修复**: 7→5 dwords (0x1C→0x14 bytes), 构造函数确认 gap 0x3C→0x50
+  - 影响: ObjectClass, TechnoClass (m_audio3/4/5/6), FootClass, BuildingClass 等所有包含 AudioController 的类
+- **ObjectClass 布局验证**: 全部字段 offset 与构造函数一致 (0x5F3900)
+- **TechnoClass AudioController 级联验证**: m_audio3@0x488, m_audio4@0x4A4, m_audio5@0x4C0, m_audio6@0x4DC — 全部正确
+- **FootClass 布局验证**: 构造函数 (0x4D31E0) 字段初始化序列与 header 一致
+- **Unknown Field Inventory**: 523 个 `unknown_*` 成员分布在 55 类中, 编制完整清单
+- **验证工具**: `tools/verify_layout.py` — 可复用 IDA 构造函数→header 交叉验证脚本
+
+### 类成员变量 — 完整 Inventory
+
+| # | 类 | 文件 | 未知数 | 优先级 | 状态 |
+|---|------|------|--------|--------|------|
+| 1 | **TechnoClass** | `object/techno.hpp` | **35** | P0 | ⏳ |
+| 2 | **FootClass** | `object/foot.hpp` | **41** | P0 | ⏳ |
+| 3 | **BuildingClass** | `structure/building.hpp` | **17** | P0 | ⏳ |
+| 4 | **ObjectClass** | `object/object.hpp` | **4** | P1 | ✅ 已验证 |
+| 5 | **InfantryClass** | `structure/infantry.hpp` | **6** | P1 | ⏳ |
+| 6 | **UnitClass** | `structure/unit.hpp` | **3** | P1 | ⏳ |
+| 7 | **AircraftClass** | `structure/aircraft.hpp` | **8** | P1 | ⏳ |
+| 8 | RadarClass | `system/radar.hpp` | 53 | P2 | ⏳ |
+| 9 | HouseClass | `house/house.hpp` | 52 | P2 | ⏳ |
+| 10 | CellClass | `system/cell.hpp` | 50 | P2 | ⏳ |
+| 11 | Locomotion subs | `misc/locomotion.hpp` | 33 | P2 | ⏳ |
+| 12 | Audio | `misc/audio.hpp` | 23 | P2 | ⏳ |
+| 13 | ParticleClass | `entity/particle.hpp` | 22 | P2 | ⏳ |
+| 14 | SidebarClass | `ui/sidebar.hpp` | 21 | P3 | ⏳ |
+| 15 | DisplayClass | `render/display.hpp` | 19 | P3 | ⏳ |
+| 16 | MapClass | `system/map.hpp` | 20 | P3 | ⏳ |
+| 17 | SessionClass | `network/session.hpp` | 19 | P3 | ⏳ |
+| 18 | TeamClass | `team/team.hpp` | 18 | P3 | ⏳ |
+| 19 | 其他 (37 类) | 各文件 | ~110 | P4 | ⏳ |
+| | **合计** | **55 类** | **~523** | | |
+
+### 成员变量逆向 — 方法论
+
+**方法**: 构造函数→header 交叉验证 + YRpp 交叉引用 + IDA 字段访问追踪
+
+1. **构造函数验证** (最高置信度): 检查构造函数中 `mov [esi+OFFSET], value` 序列与 header 字段布局是否一致
+2. **YRpp 交叉引用** (高置信度): YRpp 运行时分析已命名绝大部分字段 (匹配率 ~97.7%), 仅 15 个内部计算字段未确定
+3. **IDA 字段访问追踪** (中等置信度): 搜索特定 offset 的读写指令, 分析调用上下文推断用途
+4. **AudioController sizeof 陷阱**: 原以为是 7 dwords (28B), 构造函数确认 5 dwords (20B = 0x14). 使用 `tools/verify_layout.py` 脚本验证所有包含 AudioController 的类.
+
 ### 待完成 (按优先级)
 1. 继续 vtable 成员函数逆向 (剩余 ~2,444 `::sub_` 未命名)
-2. 类成员变量逆向 (从构造函数+YRpp对照)
+2. 类成员变量逆向: BuildingClass(17) → InfantryClass(6) → UnitClass(3) → AircraftClass(8)
 3. 10-19 xrefs 全局变量 (~180 个)
 4. 后续 R1: 游戏内等距视图渲染
 
