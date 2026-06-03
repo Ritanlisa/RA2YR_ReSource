@@ -164,40 +164,8 @@ void InitCommands();
 // IDA 0x5D7CE0 — CompleteGameInit
 void CompleteGameInit();
 
-// IDA 0x5B40B0 — SearchMIXFile
-const void* SearchMIXFile(const char* name);
-
-// IDA 0x6260D0 — Block::Copy
-void BlockCopy(const void* src);
-
-// IDA 0x4739F0 — CCFileClass::Construct
-void* CCFileClassConstruct(void* buf, const char* filename);
-
-// IDA 0x473C50 — CCFileClass::Open
-bool CCFileClassOpen(void* file, int mode);
-
-// IDA 0x4A3890 — CCFileClass::ReadEntireFile
-void* CCFileClassReadEntireFile(void* file);
-
-// IDA 0x473CE0 — CCFileClass::Reset
-void CCFileClassReset(void* file);
-
-// IDA 0x535A70 — CCFileClass::Destruct (BufferIOFileClass::Destruct)
-void CCFileClassDestruct(void* file);
-
-// IDA 0x43AE50 — Vector::Clear
-void VectorClear(void* vec);
-
-// IDA 0x535B30 — CCINIClass::Constructor
-void CCINIClassConstruct(void* buf);
-
-// IDA 0x6728B0 — RulesClass::LoadAnimTypes
-void LoadAnimTypes(void* rules_ini);
-
-// IDA 0x672660 — RulesClass::LoadBuildingTypes
-void LoadBuildingTypes(void* rules_ini);
-
-// IDA 0x48E740 — ConvertClass::Construct
-void* ConvertClassConstruct(void* palette, void* temperat_pal, void* surface, int count, int flags);
+// IDA 0x6BB390 — RegisterClassesCOM (single class registry writer)
+// IDA 0x6BB9A0 — RegisterAllClasses (iterates TClassFactory table, 63-71 entries)
+void RegisterAllClasses();
 
 } // namespace gamemd

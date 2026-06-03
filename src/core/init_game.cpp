@@ -13,6 +13,7 @@
 #include "gamemd/core/ddraw_init.hpp"
 #include "gamemd/core/init_stubs.hpp"
 #include "gamemd/core/game_loop.hpp"
+#include "gamemd/core/com_defs.hpp"
 #include "gamemd/system/ini_class.hpp"
 #include "gamemd/system/mix_file.hpp"
 #include "gamemd/system/file_system.hpp"
@@ -445,6 +446,9 @@ int InitGame(bool no_cd)
 
     // IDA 0x52BB58: TextBuffer::Init(GetTextBufferEntry(4))
     TextBufferInit(GetTextBufferEntry(4));
+
+    // IDA 0x6BB390-0x6BB9A0: RegisterClassesCOM — register all COM game classes
+    RegisterAllClasses();
 
     // ============================================================
     // Phase 2: MIX Bootstrap + Font + Mouse + Audio (BBs 21-45)
