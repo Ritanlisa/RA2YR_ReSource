@@ -34,7 +34,7 @@ Phase 2 现代化方向：
 | 编译警告 | **0** |
 | 已实现函数 | **~140** (~200+ stubs/empty) |
 | TODO/FIXME 标记 | **~260** (source 210 + headers 50) |
-| IDA 命名 | **~8,981 `::` + ~1,491 VerbNounPhrase + 25+ struct 类型** |
+| IDA 命名 | **~7,209 `::` + ~1,518 VerbNounPhrase + 25+ struct 类型** |
 | MIX 格式支持 | RA2 加密 + 扩展无加密 + TD 传统 (全部验证) |
 | EXE 骨架 | **WinMain + Win32窗口 + DirectDraw7初始化 + MIX文件加载 + SHP渲染 + 主菜单系统** |
 
@@ -730,8 +730,10 @@ make _WIN32_WINNT=0x0400
 | 存根/空实现 | ~200+ |
 | TODO/FIXME标记 | 252 (src 205 + headers 47) |
 | 未命名成员 | 34 (BuildingClass 17 + Infantry 6 + Unit 3 + Aircraft 8) |
-| IDA 命名函数 | **~8,470** (~44% of 19,059) |
-| IDA 命名全局变量 | **44** (新增 8: DDraw + Surface globals) |
+| IDA 命名函数 | **8,727** (49.9% of 17,488) |
+| IDA 类成员命名 | **7,209** (74.7% of 9,653) |
+| IDA 全局函数命名 | **1,518** (19.4% of 7,835) |
+| IDA 命名全局变量 | **2,633** (28.1% of 9,365) |
 | 构建状态 | 0 errors, 0 warnings |
 
 ### 当前菜单渲染状态
@@ -754,7 +756,7 @@ make _WIN32_WINNT=0x0400
 
 ## 当前会话上下文 (快速恢复)
 
-### IDA 命名摘要 (共267函数 + 46全局)
+### IDA 命名摘要 (共345手工反编译 + 18音频全局 + 4音频函数)
 
 | 类别 | 示例 | 用途 |
 |------|------|------|
@@ -778,6 +780,8 @@ make _WIN32_WINNT=0x0400
 | **BINK音频系统 (2)** | `Audio_IsSoundEnabled`, `Audio_GetDirectSound` | DirectSound→BINK SetSoundSystem 桥接 |
 | **音频全局 (2)** | `g_Audio_Enabled`, `g_pDirectSound` | 音频启用标志 + DirectSound 对象指针 |
 | **Locomotor GUID 表 (8)** | `g_CLSID_WalkLocomotion`, `g_CLSID_DriveLocomotion`, `g_CLSID_FlyLocomotion`, `g_CLSID_HoverLocomotion`, `g_CLSID_TunnelLocomotion`, `g_CLSID_DriveLocomotion2`, `g_CLSID_JumpjetLocomotion`, `g_CLSID_ShipLocomotion` | COM 移动类型 CLSID 表 @0x7E9A60 |
+| **音频子系统 (4)** | `Audio::ProcessMixerOutput`, `Audio::UpdatePlaybackPosition`, `Audio::GetChannelStatus`, `Audio::FlushChannel` | 混音器输出 + 播放位置 + 通道管理 |
+| **音频混音器 (18)** | `g_MixerBuffer{1-8}`, `g_MixerChannel_{SFX/Theme/Voice/Score/Misc/Stream/Ambient}`, `g_MixFile_AUDIO`, `g_AudioFileData`, `g_AudioInitialized` | 8 混音缓冲 + 6 通道 + AUDIO MIX 文件 |
 
 ### IDA struct 类型 (4个)
 - `BuildingClass_Full` — 已应用于 CreateUnit + 3 callbacks 的 `this` 参数
@@ -795,7 +799,7 @@ make _WIN32_WINNT=0x0400
 - **MIX 格式**: 前 2B=0 为扩展格式; flags 0x0002=加密; 算法来自 RA1 MixFileClass
 - **MIX 文件名**: 仅存 hash ID, 不存原始名; 通过 `ComputeId()` 匹配
 - **IDA 连接**: `127.0.0.1:13337`, i64 在 `C:\Program Files (x86)\Mental Omega\gamemd.exe.i64`
-- **IDA 命名状态**: 267 函数 + 46 全局变量 + 3 struct 类型 (见上方命名清单)
+- **IDA 命名状态**: 345 函数 + 64 全局变量 + 3 struct 类型 (见上方命名清单)
 - **Python**: 3.14.2 (`python` 或 `py`), Windows 上已就绪
 - **渲染框架**: cnc-ddraw (`./cnc-ddraw`, by FunkyFr3sh) — Phase 1 调试阶段作为 `ddraw.dll` 兼容层运行 EXE
 - **EXE 入口**: `app/main.cpp` — WinMain 创建窗口 + 初始化 DirectDraw 7 + 游戏循环
@@ -1561,18 +1565,20 @@ if ida_nalt.get_tinfo(tif, ea):
 | 1. Vtable 识别/类映射 | ✅ | 1,084 vtables, 934 RTTI 类名 |
 | 2. Struct 类型声明 | ✅ | YRpp 导入 25+ 核心类 (RulesClass 722/BuildingTypeClass 185/TechnoTypeClass 290 等) |
 | 3. 函数签名更新 | ✅ | Building/Rules/Techno 等方法 this 指针类型已应用 |
-| 4. 逆向未命名成员函数 | 🔄 | ~240 函数已命名 (vtable + 大型 sub) |
+| 4. 逆向未命名成员函数 | 🔄 | ~345 函数已手工反编译并命名 |
 | 4.5 全局变量重命名 | ✅ | ≥20 xrefs: 336 个全部命名+深度验证, ≥30: 157, 20-29: 179 |
+| 4.6 INI 读取函数命名 | ✅ | 281/281 (100%) |
+| 4.7 音频子系统命名 | ✅ | 4 sub_ 命名 + 18 全局变量 |
 | 5. 类成员变量逆向 | ⏳ | 待开始 |
-| 6. 完成 3+ xref pool | ⏳ | 待开始 |
+| 6. 完成 3+ xref pool | ✅ | 3,201/3,230 (99.1%) |
 
-### 当前会话成果 (2026-06-02)
-- IDA 函数批量重命名: ~4,600+ 次操作，三阶段方法
-- **YRpp vt_entry 映射破解**: 155/174 条目重命名为 `ClassName::MethodName`
-- **核心类 ::sub_ 反编译**: 267 个函数已手工反编译并命名
-  - 覆盖 TechnoClass(30+), BuildingClass(20+), TeamClass(15+), FootClass(10+), HouseClass(10+), TacticalClass, SuperClass, InfantryClass, UnitClass, BulletClass, SidebarClass, ObjectClass, CellClass, TriggerClass 等
-- **命名规范修正**: `ClassName__Method` → `ClassName::Method` 全局应用
-- **IDA 保存**: 累积重命名 10,000+ 次
+### 当前会话成果 (2026-06-03)
+- **音频子系统完整逆向**: 4 个剩余 `Audio::sub_*` 全部命名, 18 个混音器全局变量命名
+- **Audio.md 完成**: 覆盖初始化→WAV/AUD→Miles→EVA→Theme→BINK 音频全管线
+- **INI 读取函数**: 281/281 (100%) callers of INIClass::GetString/ReadBool/ReadInt/ReadGUID 全部命名
+- **`callsYRpp_*` 消除**: 266 → 0, 四阶段自动+手工验证
+- **统计数据结构化**: 大小×xref 二维交叉表, 3 个维度 (全部/成员/全局), 2 的幂分级
+- **IDA 保存**: 累计命名 ~8,727 函数 + ~2,633 全局变量
 
 ### 当前会话成果 (2026-06-01)
 - YRpp struct 批量导入: 25+ 核心类含 1500+ 字段映射到 IDA
@@ -1583,11 +1589,10 @@ if ida_nalt.get_tinfo(tif, ea):
 - 总计: ~8,470/19,064 函数 + ~390 全局 + 25 struct 类型, 构建 0 errors
 
 ### 待完成 (按优先级)
-1. 继续 vtable 成员函数逆向 (剩余 ~9,100 未命名)
+1. 继续 vtable 成员函数逆向 (剩余 ~2,444 `::sub_` 未命名)
 2. 类成员变量逆向 (从构造函数+YRpp对照)
-3. 10-19 xrefs 全局变量 (500 个)
-4. 完成 3+ xref pool 命名
-5. 后续 R1: 游戏内等距视图渲染
+3. 10-19 xrefs 全局变量 (~180 个)
+4. 后续 R1: 游戏内等距视图渲染
 
 ---
 
@@ -1717,10 +1722,11 @@ Lock → RenderFrameRaw → Unlock → Flip  // 每帧都渲染，不受门控
 - `Audio_GetDirectSound` (0x40A7A0): 返回 `g_pDirectSound`
 - `BinkMovie_Pause` (0x432C30): BinkPause 调用
 
-### IDA 命名 (267函数 + 46全局 + 3 struct 类型, 已保存 .i64)
+### IDA 命名 (~8,727 函数 + ~2,633 全局变量 + 25+ struct 类型, 已保存 .i64)
 
-新增的4函数: `Audio_IsSoundEnabled`, `Audio_GetDirectSound`, `BinkMovie_Pause`, `BinkMovie_AdjustSurfaceFormat`
-新增的2全局: `g_Audio_Enabled` (0x87E728), `g_pDirectSound` (0x87E89C)
+### 当前会话新增命名 (2026-06-03)
+- 4 音频函数: `Audio::ProcessMixerOutput`, `Audio::UpdatePlaybackPosition`, `Audio::GetChannelStatus`, `Audio::FlushChannel`
+- 18 音频全局: `g_MixerBuffer{1-8}`, `g_MixerChannel_{SFX/Theme/Voice/Score/Misc/Stream/Ambient}`, `g_MixFile_AUDIO`, `g_AudioFileData`, `g_AudioInitialized`
 
 ### 正确的前进方向
 
