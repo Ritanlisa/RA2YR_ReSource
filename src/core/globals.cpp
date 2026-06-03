@@ -298,4 +298,31 @@ bool byte_8B41C0 = false;
 // IDA: 0xA8ECD0 — g_NetResponseActive
 bool g_NetResponseActive = false;
 
+// IDA: 0xA8ECB8 — ObjectClass_CurrentObjects (global object list)
+void* ObjectClass_CurrentObjects = nullptr;
+
+// IDA: 0xA8ECBC — g_ObjectClass_CurrentCount
+void* g_ObjectClass_CurrentCount = nullptr;
+
+// IDA: 0xA8ECC8 — g_SelectionManager
+int   g_SelectionManager = 0;
+
+// IDA: 0xA8E368 — dword_A8E368 (placement pool count)
+int   g_PlacementCellPool = 0;
+
+// IDA: 0xA8E370 — dword_A8E370 (placement cell limit)
+int   dword_A8E370 = 0;
+
+// IDA: 0xA8E360 — dword_A8E360 (placement cell array)
+void* dword_A8E360 = nullptr;
+
+// IDA: 0xA8E364 — dword_A8E364 (placement cell data)
+void* dword_A8E364 = nullptr;
+
+// IDA: 0xA8E374 — dword_A8E374 (placement config)
+int   dword_A8E374 = 0;
+
+// IDA: 0xA8E36D — byte_A8E36D (placement flag)
+bool  byte_A8E36D = false;
+
 } // namespace gamemd
