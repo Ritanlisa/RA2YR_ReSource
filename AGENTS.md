@@ -475,7 +475,7 @@ Key vtable entries (IDA identified):
 | R0-2b | TextButtonClass SHP 渲染: LoadFromHash→帧0(普通)/帧1(悬停)/帧2(按下) | `ui/gadget.cpp` | R0-1 | ~80 |
 | R0-2c | LabelClass 文字渲染: GDI→DDraw surface (已有 TextRenderer 基础) | `ui/gadget.cpp` | TextRenderer | ~50 |
 | R0-2d | DialogClass 完善: AddGadget/RemoveGadget/DrawAll/DispatchMouse/DispatchKey | `ui/dialog.cpp` | GadgetClass | ~150 |
-| R0-2e | Dialog_MessageLoop: PeekMessage→Translate→Dispatch + 空闲时 DrawAll (参考原版时序) | `ui/dialog.cpp` | Dialog 系统 | ~80 |
+| R0-2e | Dialog::MessageLoop: PeekMessage→Translate→Dispatch + 空闲时 DrawAll (参考原版时序) | `ui/dialog.cpp` | Dialog 系统 | ~80 |
 
 **R0-2 验收**: 多按钮对话框正确响应点击，SHP 按钮显示帧切换，文字标签可见。
 
@@ -485,7 +485,7 @@ Key vtable entries (IDA identified):
 |---|------|------|------|--------|
 | R0-3a | 按 XCC 名称→CRC32 哈希查找加载所有主菜单 SHP: `button*.shp`, `tabs.shp`, `side2.shp`, `logo.shp`, `title.shp` | `src/core/menu_select.cpp` | R0-1, R0-2 | ~40 |
 | R0-3b | 构建主菜单 Gadget 树: 5 个 TextButton + 1 个 Label(版本号) + 背景控件 | `src/core/menu_select.cpp` | R0-2 | ~60 |
-| R0-3c | 按钮动作: Campaign→Campaign_Screen / Skirmish→(地图选择) / Multiplayer→Multiplayer_Screen / Options→Options_Screen / Exit→PostQuitMessage | `src/core/menu_select.cpp` | Dialog 系统 | ~40 |
+| R0-3c | 按钮动作: Campaign→CampaignScreen / Skirmish→(地图选择) / Multiplayer→MultiplayerScreen / Options→Options_Screen / Exit→PostQuitMessage | `src/core/menu_select.cpp` | Dialog 系统 | ~40 |
 | R0-3d | 背景渲染: 优先 BINK (ra2ts_l.bik), 回退到 loading screen SHP (ls800*.shp) | `src/core/menu_select.cpp` | R0-1 | ~30 |
 
 **R0-3 验收**: 主菜单显示真实 SHP 按钮，各按钮点击后跳转到对应子屏幕（占位或已实现）。
@@ -494,9 +494,9 @@ Key vtable entries (IDA identified):
 
 | # | 描述 | 文件 | 依赖 | 估算行 |
 |---|------|------|------|--------|
-| R0-4a | Campaign_Screen: 阵营选择 SHP 按钮 + Start/Back (参考 IDA `Campaign_Screen` **0x60D380**) | `src/core/menu_select.cpp` | R0-2 | ~60 |
-| R0-4b | Multiplayer_Screen: 网络模式选择 (参考 IDA `Multiplayer_Screen` **0x53F1F0**, 全局存储) | `src/core/menu_select.cpp` | R0-2 | ~60 |
-| R0-4c | Options_Screen: 游戏设置对话框 (参考 IDA `Options_Screen_Dialog` **0x55FC80**, `Options_Screen_Save` **0x55FAA0**) | `src/core/menu_select.cpp` | R0-2 | ~50 |
+| R0-4a | CampaignScreen: 阵营选择 SHP 按钮 + Start/Back (参考 IDA `CampaignScreen` **0x60D380**) | `src/core/menu_select.cpp` | R0-2 | ~60 |
+| R0-4b | MultiplayerScreen: 网络模式选择 (参考 IDA `MultiplayerScreen` **0x53F1F0**, 全局存储) | `src/core/menu_select.cpp` | R0-2 | ~60 |
+| R0-4c | Options_Screen: 游戏设置对话框 (参考 IDA `OptionsScreenDialog` **0x55FC80**, `OptionsScreenSave` **0x55FAA0**) | `src/core/menu_select.cpp` | R0-2 | ~50 |
 
 **R0-4 验收**: 四级菜单可导航，返回按钮工作，状态机正确流转。
 
@@ -771,9 +771,9 @@ make _WIN32_WINNT=0x0400
 | BuildingClass vtable (8) | `BuildingClass_MissionDispatch`, `BuildingClass_OnObjectExpired`, `BuildingClass_TogglePrimaryFactory` | 建筑虚函数 |
 | **Surface 类层次 (38)** | `DSurface_Blit`, `DSurface_Lock`, `DSurface_DrawLineZBuf`, `XSurface_WalkLine`, `BSurface_Lock` | DDraw表面绘制管线 |
 | 入口点/窗口 (11) | `WinMain`, `ParseCommandLine`, `InitGame`, `MenuSelect`, `MainGame`, `MainGameFrame`, `GameFrameLoop`, `GameFrameCheck`, `ScenarioClass::LoadMap`, `ScenarioClass::ReadMapINI`, `WinMainSetup` | 启动管线, 游戏流程 |
-| 对话框/菜单 (12) | `MainMenu_Screen`, `MainMenu_DlgProc`, `Dialog_Create`, `Dialog_Destroy`, `Dialog_Show`, `Dialog_SetParent`, `Dialog_BaseProc`, `Dialog_PumpMessages`, `Dialog_MessageLoop`, `Campaign_Screen`, `Multiplayer_Screen`, `Options_Screen_Dialog` | UI 对话框系统 |
+| 对话框/菜单 (12) | `MainMenu::Screen`, `MainMenu::DlgProc`, `Dialog::Create`, `Dialog::Destroy`, `Dialog::Show`, `Dialog::SetParent`, `Dialog::BaseProc`, `Dialog::PumpMessages`, `Dialog::MessageLoop`, `CampaignScreen`, `MultiplayerScreen`, `OptionsScreenDialog` | UI 对话框系统 |
 | **系统工具 (6)** | `Screen_Capture`, `Random_Init`, `Network_Init`, `Timer_GetTicks`, `Resource_Find`, `Message_IsDialog` | 截图/RNG/网络/定时器/资源 |
-| **菜单系统 (6)** | `Skirmish_Setup_Screen`, `Skirmish_Setup_DlgProc`, `Credits_Screen`, `Options_Screen_Save`, `Screensaver_Start`, `Dialog_Init` | Skirmish+Credits+屏保+对话框 |
+| **菜单系统 (6)** | `SkirmishSetupScreen`, `SkirmishSetupDlgProc`, `CreditsScreen`, `OptionsScreenSave`, `ScreensaverStart`, `Dialog::Init` | Skirmish+Credits+屏保+对话框 |
 | **DDraw 全局变量 (8)** | `g_lpDirectDraw7`, `g_DDraw_Initialized`, `g_ZBufferDescriptor`, `g_VisibleSurfaceDescriptor`, `g_BitShift_Red/Green/Blue+Mask` | DDraw 引擎状态 |
 | **BINK 渲染管线 (13)** | `BinkMovie_RenderLoop`, `BinkMovie_InitFromFile`, `BinkMovie_RenderSingleFrame`, `BinkMovie_BlitToTarget`, `BinkMovie_CheckKeyframeTransition`, `BinkMovie_Pause`, `BinkMovie_AdjustSurfaceFormat` | BINK视频解码→表面渲染→Blit |
 | **BINK 表面追踪 (3)** | `BinkMovie_CreateSurfaceTracker`, `BinkMovie_FreeSurfaceTracker`, `BinkMovie_ProcessKeyframe` | BSurface 关键帧过渡处理 |
@@ -1011,12 +1011,12 @@ sub_5B40B0(filename, is_shp)                    // 文件加载器 (0x5B40B0)
 ```
 MainGame → MenuSelect (0x52D9A0, 4536B, 222 BBs)
   │
-  ├─ case 18: MainMenu_Screen(3600 timeout) → 等待用户交互
-  │   └─ MainMenu_DlgProc(0x531F60) → 设置 *WindowLongA[8] = state
+  ├─ case 18: MainMenu::Screen(3600 timeout) → 等待用户交互
+  │   └─ MainMenu::DlgProc(0x531F60) → 设置 *WindowLongA[8] = state
   │
-  ├─ case 5: Options_Screen_Dialog → Options_Screen_Save → 回到 18
-  ├─ case 1: Campaign_Screen(1) → 回到主循环
-  ├─ case 4: Campaign_Screen(1) [第二路径] → 回到主循环
+  ├─ case 5: OptionsScreenDialog → OptionsScreenSave → 回到 18
+  ├─ case 1: CampaignScreen(1) → 回到主循环
+  ├─ case 4: CampaignScreen(1) [第二路径] → 回到主循环
   ├─ case 2: Skirmish [GameMode=4] → case 16
   ├─ case 3: Internet [GameMode=3] → case 16
   ├─ case 11: GameMode=5 (Skirmish) → case 16
@@ -1025,9 +1025,9 @@ MainGame → MenuSelect (0x52D9A0, 4536B, 222 BBs)
   ├─ case 7: Exit — 清理→等待3秒→退出进程
   │
   ├─ case 8: 单人游戏开始 — Credits→场景选择→加载游戏 → case 16/17
-  ├─ case 9: 过场动画/BINK播放 → Credits_Screen→Movie_Play → case 1
+  ├─ case 9: 过场动画/BINK播放 → CreditsScreen→Movie_Play → case 1
   ├─ case 13: Movie_Play(1,1,1,0) → Screen_Capture → case 4
-  ├─ case 14: Campaign_Screen check + CD检测→可能播电影 → case 4
+  ├─ case 14: CampaignScreen check + CD检测→可能播电影 → case 4
   ├─ case 15: CreditsPower_Display → case 4
   │
   ├─ case 16/17: 游戏已开始 (Scenario已加载) → 分发到游戏循环
@@ -1035,12 +1035,12 @@ MainGame → MenuSelect (0x52D9A0, 4536B, 222 BBs)
   │   ├─ GameMode 1/2: Campaign → 加载场景+触发
   │   ├─ GameMode 3: Internet → 网络设置+触发
   │   ├─ GameMode 4: Skirmish/LAN → 网络大厅/对战
-  │   └─ GameMode 5: 遭遇战 → Skirmish_Setup_Screen(0x6AE2C0)
+  │   └─ GameMode 5: 遭遇战 → SkirmishSetupScreen(0x6AE2C0)
   │
   └─ case 10: 回到 case 1
 ```
 
-### MainMenu_DlgProc 控件ID对照表
+### MainMenu::DlgProc 控件ID对照表
 
 | DlgItem ID | 功能 | 状态设置 |
 |------------|------|----------|
@@ -1048,13 +1048,13 @@ MainGame → MenuSelect (0x52D9A0, 4536B, 222 BBs)
 | 1668 | Skirmish 按钮 | state=2 |
 | 1400 (0x578) | Multiplayer/Internet 按钮 | state=3 |
 | 1670 | 按钮4 (可能是Credits/Intro) | state=4 |
-| 1372 (0x55C) | Options 按钮 | 直接调用 Options_Screen_Dialog |
+| 1372 (0x55C) | Options 按钮 | 直接调用 OptionsScreenDialog |
 | 1006 (0x3EE) | Exit 按钮 | PostQuitMessage |
 | 1818 (0x71A) | BINK 背景播放器控件 | SendMessage 0x4E3→init, 0x4E4→set bg, 0x4F0→cleanup |
 | 1821 (0x71D) | 版本信息文字标签 | 显示 "GUI:Version" |
 | 1175 (0x497) | 版本查询事件 | swprintf→SendMessage 1821 |
 
-### Options_Screen 控件ID对照表 (Options_Screen_Save @ 0x55FAA0)
+### Options_Screen 控件ID对照表 (OptionsScreenSave @ 0x55FAA0)
 
 | DlgItem ID | 类型 | 全局变量 | 功能 |
 |------------|------|----------|------|
@@ -1121,41 +1121,41 @@ Dialog: 533×369 对话框单位, MS Sans Serif 8pt, Style=0x40000040
 ### Dialog 系统架构 (Win32 CreateDialogIndirectParamA 封装)
 
 ```
-Dialog_Create(template_id, dlg_proc, lParam)
+Dialog::Create(template_id, dlg_proc, lParam)
   ├── Resource_Find(template_id, type=5) → DLGTEMPLATE*
   ├── CreateDialogIndirectParamA(g_hInstance, template, g_hWnd, dlg_proc, lParam)
   │     启动模态对话框 (非真正模态—消息循环由调用方手动运行)
   └── 注册到内部跟踪数组 (dword_B72F50)
 
-Dialog_BaseProc(hWnd, msg, wParam, lParam)
+Dialog::BaseProc(hWnd, msg, wParam, lParam)
   ├── 默认对话框过程 — 56 基本块
   ├── 处理 WM_INITDIALOG / WM_COMMAND / WM_PAINT / WM_CTLCOLOR*
   └── 由各子对话框过程调用 (59 个调用方)
 
-Dialog_Show(hWnd)    → ShowWindow(SW_SHOW) + SetWindowPos
-Dialog_Destroy(hWnd) → DestroyWindow + 跟踪数组清理
+Dialog::Show(hWnd)    → ShowWindow(SW_SHOW) + SetWindowPos
+Dialog::Destroy(hWnd) → DestroyWindow + 跟踪数组清理
 
-Dialog_MessageLoop()
+Dialog::MessageLoop()
   ├── GameLoopMessagePump(&Msg, 0, 0, 0, 0) — 自定义 PeekMessage
   ├── Message_IsDialog(&Msg) — 判断消息是否属于当前对话框
   ├── TranslateMessage + DispatchMessageA
   └── CopyProtection::NotifyLauncher hook
 
-Dialog_PumpMessages() — 便捷封装 (27 调用方)
-  ├── Dialog_MessageLoop()
+Dialog::PumpMessages() — 便捷封装 (27 调用方)
+  ├── Dialog::MessageLoop()
   ├── if GameMode==0||5: Event_Dispatch()
   └── if in-game: sub_55CBF0()→GameFrameLoop()
 ```
 
 ### 菜单渲染架构 (IDA 逆向)
 ```
-MainMenu_Screen (0x531CC0)
+MainMenu::Screen (0x531CC0)
   ├── 创建对话框模板 0xE2 + DlgItem 1818 BINK背景控件
   ├── 屏幕宽度 > 800 → 居中偏移计算
   ├── DlgItem 1818: 宽屏模式用 ra2ts_l.bik / 窄屏用 ra2ts_s.bik
   ├── 发送 0x4E3 → 初始化 BINK 播放器
   ├── 发送 0x4E4 + "Ra2ts_l" / "Ra2ts_s" → 设置 BINK 文件
-  ├── 循环: Dialog_PumpMessages() [timeout=3600 frames(60s)]
+  ├── 循环: Dialog::PumpMessages() [timeout=3600 frames(60s)]
   │     ├── 若 bp[0xEA]->Screen_Capture 被触发 → Frame_Present 重绘
   │     └── 返回状态码 → MenuSelect 状态机
   └── WM_CLOSE: SendMessage(DlgItem 1818, 0x4F0) → 清理 BINK
@@ -1164,7 +1164,7 @@ MainMenu_Screen (0x531CC0)
 ### 过场动画处理 (case 9)
 ```
 case 9 (INTRO/BINK):
-  dword_A8E7AC++ → Credits_Screen() → dword_A8E7AC--
+  dword_A8E7AC++ → CreditsScreen() → dword_A8E7AC--
   sub_558740() → Movie/Cinematic 播放 ("RENEGADE.BIK" 等)
   sub_5587F0() → 检查返回状态
   sub_558790() → 清理
@@ -1172,21 +1172,21 @@ case 9 (INTRO/BINK):
   否则 → 回到 case 1 (Campaign菜单)
 ```
 
-### Campaign_Screen 通用对话框架构 (0x60D380)
+### CampaignScreen 通用对话框架构 (0x60D380)
 
 ```
-Campaign_Screen(template_id):
-  ├── Dialog_Create(template_id) → ShowWindow → SetForegroundWindow
+CampaignScreen(template_id):
+  ├── Dialog::Create(template_id) → ShowWindow → SetForegroundWindow
   ├── Timer_PumpMessages (注册定时器/screen saver延迟?)
   ├── 若参数=1: BINK_Background_Setup()
   ├── while dwNewLong==0:
-  │     ├── Dialog_MessageLoop()
+  │     ├── Dialog::MessageLoop()
   │     ├── if GameMode==0||5||byte_A8D60E||dword_A8DAB4:
   │     │     Event_Dispatch()
   │     └── else if !sub_55CBF0 && GameFrameLoop(): break
-  └── Dialog_Destroy → 返回 dwNewLong (下一状态)
+  └── Dialog::Destroy → 返回 dwNewLong (下一状态)
 
-注意：Campaign_Screen 是**通用对话框包装器**，被 4 个调用方复用——不仅是战役屏幕，
+注意：CampaignScreen 是**通用对话框包装器**，被 4 个调用方复用——不仅是战役屏幕，
 也作为 Skirmish 地图选择、多人模式设置等屏幕的模板。返回值决定下一步状态。
 
 ### CampaignMenu_DlgProc (0x52D640) — 战役菜单对话框过程
@@ -1201,7 +1201,7 @@ Campaign_Screen(template_id):
 | 1818 (0x71A) | BINK 背景播放器 | WM_CLOSE 时清理 (0x4F0) |
 | 0x497 | 存档查询事件 | LoadOptions_Constructor→LoadOptions_Check→EnableWindow |
 
-### Options_Screen 控件ID对照表 (Options_Screen_Save @ 0x55FAA0)
+### Options_Screen 控件ID对照表 (OptionsScreenSave @ 0x55FAA0)
 
 | DlgItem ID | 类型 | 全局变量 | 功能 |
 |------------|------|----------|------|
@@ -1218,41 +1218,41 @@ Campaign_Screen(template_id):
 ### Dialog 系统架构 (Win32 CreateDialogIndirectParamA 封装)
 
 ```
-Dialog_Create(template_id, dlg_proc, lParam)
+Dialog::Create(template_id, dlg_proc, lParam)
   ├── Resource_Find(template_id, type=5) → DLGTEMPLATE*
   ├── CreateDialogIndirectParamA(g_hInstance, template, g_hWnd, dlg_proc, lParam)
   │     启动模态对话框 (非真正模态—消息循环由调用方手动运行)
   └── 注册到内部跟踪数组 (dword_B72F50)
 
-Dialog_BaseProc(hWnd, msg, wParam, lParam)
+Dialog::BaseProc(hWnd, msg, wParam, lParam)
   ├── 默认对话框过程 — 56 基本块
   ├── 处理 WM_INITDIALOG / WM_COMMAND / WM_PAINT / WM_CTLCOLOR*
   └── 由各子对话框过程调用 (59 个调用方)
 
-Dialog_Show(hWnd)    → ShowWindow(SW_SHOW) + SetWindowPos
-Dialog_Destroy(hWnd) → DestroyWindow + 跟踪数组清理
+Dialog::Show(hWnd)    → ShowWindow(SW_SHOW) + SetWindowPos
+Dialog::Destroy(hWnd) → DestroyWindow + 跟踪数组清理
 
-Dialog_MessageLoop()
+Dialog::MessageLoop()
   ├── GameLoopMessagePump(&Msg, 0, 0, 0, 0) — 自定义 PeekMessage
   ├── Message_IsDialog(&Msg) — 判断消息是否属于当前对话框
   ├── TranslateMessage + DispatchMessageA
   └── CopyProtection::NotifyLauncher hook
 
-Dialog_PumpMessages() — 便捷封装 (27 调用方)
-  ├── Dialog_MessageLoop()
+Dialog::PumpMessages() — 便捷封装 (27 调用方)
+  ├── Dialog::MessageLoop()
   ├── if GameMode==0||5: Event_Dispatch()
   └── if in-game: sub_55CBF0()→GameFrameLoop()
 ```
 
 ### 菜单渲染架构 (IDA 逆向)
 ```
-MainMenu_Screen (0x531CC0)
+MainMenu::Screen (0x531CC0)
   ├── 创建对话框模板 0xE2 + DlgItem 1818 BINK背景控件
   ├── 屏幕宽度 > 800 → 居中偏移计算
   ├── DlgItem 1818: 宽屏模式用 ra2ts_l.bik / 窄屏用 ra2ts_s.bik
   ├── 发送 0x4E3 → 初始化 BINK 播放器
   ├── 发送 0x4E4 + "Ra2ts_l" / "Ra2ts_s" → 设置 BINK 文件
-  ├── 循环: Dialog_PumpMessages() [timeout=3600 frames(60s)]
+  ├── 循环: Dialog::PumpMessages() [timeout=3600 frames(60s)]
   │     ├── 若 bp[0xEA]->Screen_Capture 被触发 → Frame_Present 重绘
   │     └── 返回状态码 → MenuSelect 状态机
   └── WM_CLOSE: SendMessage(DlgItem 1818, 0x4F0) → 清理 BINK
@@ -1261,7 +1261,7 @@ MainMenu_Screen (0x531CC0)
 ### 过场动画处理 (case 9)
 ```
 case 9 (INTRO/BINK):
-  dword_A8E7AC++ → Credits_Screen() → dword_A8E7AC--
+  dword_A8E7AC++ → CreditsScreen() → dword_A8E7AC--
   sub_558740() → Movie/Cinematic 播放 ("RENEGADE.BIK" 等)
   sub_5587F0() → 检查返回状态
   sub_558790() → 清理
@@ -1269,36 +1269,36 @@ case 9 (INTRO/BINK):
   否则 → 回到 case 1 (Campaign菜单)
 ```
 
-### Campaign_Screen 通用对话框架构 (0x60D380)
+### CampaignScreen 通用对话框架构 (0x60D380)
 
 ```
-Campaign_Screen(template_id):
-  ├── Dialog_Create(template_id) → ShowWindow → SetForegroundWindow
+CampaignScreen(template_id):
+  ├── Dialog::Create(template_id) → ShowWindow → SetForegroundWindow
   ├── Timer_PumpMessages (注册定时器/screen saver延迟?)
   ├── 若参数=1: BINK_Background_Setup()
   ├── while dwNewLong==0:
-  │     ├── Dialog_MessageLoop()
+  │     ├── Dialog::MessageLoop()
   │     ├── if GameMode==0||5||byte_A8D60E||dword_A8DAB4:
   │     │     Event_Dispatch()
   │     └── else if !sub_55CBF0 && GameFrameLoop(): break
-  └── Dialog_Destroy → 返回 dwNewLong (下一状态)
+  └── Dialog::Destroy → 返回 dwNewLong (下一状态)
 
-注意：Campaign_Screen 是**通用对话框包装器**，被 4 个调用方复用——不仅是战役屏幕，
+注意：CampaignScreen 是**通用对话框包装器**，被 4 个调用方复用——不仅是战役屏幕，
 也作为 Skirmish 地图选择、多人模式设置等屏幕的模板。返回值决定下一步状态。
 ```
-Campaign_Screen(template_id):
-  ├── Dialog_Create(template_id) → ShowWindow → SetForegroundWindow
+CampaignScreen(template_id):
+  ├── Dialog::Create(template_id) → ShowWindow → SetForegroundWindow
   ├── sub_54F720 (注册定时器/screen saver延迟?)
-  ├── 若参数=1: Screensaver_Start()
+  ├── 若参数=1: ScreensaverStart()
   ├── while dwNewLong==0:
-  │     ├── Dialog_MessageLoop()
+  │     ├── Dialog::MessageLoop()
   │     ├── if GameMode==0||5||byte_A8D60E||dword_A8DAB4:
   │     │     Event_Dispatch()
   │     └── else if !sub_55CBF0 && GameFrameLoop(): break
-  └── Dialog_Destroy → 返回 dwNewLong (下一状态)
+  └── Dialog::Destroy → 返回 dwNewLong (下一状态)
 ```
 
-注意：Campaign_Screen 是**通用对话框包装器**，被 4 个调用方复用——不仅是战役屏幕，
+注意：CampaignScreen 是**通用对话框包装器**，被 4 个调用方复用——不仅是战役屏幕，
 也作为 Skirmish 地图选择、多人模式设置等屏幕的模板。返回值决定下一步状态。
 
 ### 当前实现状态
@@ -1767,8 +1767,8 @@ Lock → RenderFrameRaw → Unlock → Flip  // 每帧都渲染，不受门控
 - `BinkMovie_InitFromFile` (0x432750): BinkOpen→SetSoundSystem→SetVolume→CreateSurfaceTracker→SetPosition
 - `BinkMovie_RenderLoop` (0x432E40): DoFrame→Lock→CopyToBuffer→Unlock→BlitToTarget→NextFrame→Wait
 - `BinkMovie_Play` (0x432C70): 主循环 `while(current<total && current>=loopStart)` {pump→RenderLoop}
-- `MainMenu_Screen` (0x531CC0): Dialog_Create(0xE2)→Dialog_SetParent→Dialog_PumpMessages 循环
-- `MainMenu_DlgProc` (0x531F60): WM_COMMAND(button ID→state), WM_CLOSE(BINK cleanup)
+- `MainMenu::Screen` (0x531CC0): Dialog::Create(0xE2)→Dialog::SetParent→Dialog::PumpMessages 循环
+- `MainMenu::DlgProc` (0x531F60): WM_COMMAND(button ID→state), WM_CLOSE(BINK cleanup)
 - `sub_432BD0`: BinkGoto(handle, frame, 1) 封装 (flag=1 快速 seek)
 - `AudioController::IsSoundEnabled` (0x407000): 检查 `g_Audio_Enabled`
 - `Audio::GetDirectSound` (0x40A7A0): 返回 `g_pDirectSound`
@@ -1789,7 +1789,7 @@ Lock → RenderFrameRaw → Unlock → Flip  // 每帧都渲染，不受门控
 2. **主菜单按钮**: 原版用 GDI + DIALOGEX 模板 0xE2。按钮素材不是 SHP，是 Windows 标准控件 + CSF 字符串。cnc-ddraw 需 `nonexclusive=true` 才能显示 GDI 子窗口。
 3. **SHP 素材**: button*.shp 虽存在于 MIX，但原版主菜单不使用（可能用于游戏内 UI）。需修复 SHP 解析器支持其非标准格式。
 4. **构建**: 切换分支后务必 `cmake -B build_win -G "Visual Studio 17 2022" -A Win32` 重配置。
-5. **渲染架构**: 原版整个主菜单由 `Dialog_PumpMessages` 驱动，BINK 在 DlgItem 1818 的 subclass 内部渲染，按钮由 GDI 渲染。在 cnc-ddraw 下完全复现此架构需要 `nonexclusive=true`。
+5. **渲染架构**: 原版整个主菜单由 `Dialog::PumpMessages` 驱动，BINK 在 DlgItem 1818 的 subclass 内部渲染，按钮由 GDI 渲染。在 cnc-ddraw 下完全复现此架构需要 `nonexclusive=true`。
 
 ---
 

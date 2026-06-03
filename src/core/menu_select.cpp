@@ -34,11 +34,11 @@ static bool GameFlags_Init = false;
 static uint8_t g_palette[256][4];
 
 // forward declarations
-static MenuState MainMenu_Screen();
-static MenuState Campaign_Screen(int);
-static MenuState Multiplayer_Screen(int);
-static MenuState Skirmish_Setup_Screen();
-static void      Options_Screen_Dialog();
+static MenuState MainMenuScreen();
+static MenuState CampaignScreen(int);
+static MenuState MultiplayerScreen(int);
+static MenuState SkirmishSetupScreen();
+static void      OptionsScreenDialog();
 static char      ShowExitDialog();
 static bool      GameFrameLoop();
 static bool      GameFrameCheck();
@@ -220,7 +220,7 @@ static void DrawButtonText(uint16_t* buf, int pitch, int x, int y, const char* t
     }
 }
 
-// ---- MainMenu_DlgProc (IDA 0x531F60) ----
+// ---- MainMenuDlgProc (IDA 0x531F60) ----
 struct MainMenuDlgData {
     MenuState* state;
     HWND      hBink;
@@ -238,7 +238,7 @@ static const struct { int id; const char* text; int yDLU; MenuState target; } kM
     {1006, "Exit Game",  330, MenuState::ExitConfirm},
 };
 
-static INT_PTR CALLBACK MainMenu_DlgProc(HWND hDlg, UINT msg, WPARAM wParam, LPARAM lParam)
+static INT_PTR CALLBACK MainMenuDlgProc(HWND hDlg, UINT msg, WPARAM wParam, LPARAM lParam)
 {
     auto* d = (MainMenuDlgData*)GetWindowLongPtrA(hDlg, GWLP_USERDATA);
 
@@ -267,8 +267,8 @@ static INT_PTR CALLBACK MainMenu_DlgProc(HWND hDlg, UINT msg, WPARAM wParam, LPA
     return DefWindowProcA(hDlg, msg, wParam, lParam);
 }
 
-// ---- MainMenu_Screen (IDA 0x531CC0) ----
-static MenuState MainMenu_Screen()
+// ---- MainMenuScreen (IDA 0x531CC0) ----
+static MenuState MainMenuScreen()
 {
     DDrawContext* ctx = DDrawGetContext();
     if (!ctx || !ctx->back_buffer) {
@@ -423,8 +423,8 @@ static MenuState MainMenu_Screen()
     return pendingState;
 }
 
-// ---- Campaign_Screen (IDA 0x60D380) ----
-static MenuState Campaign_Screen(int arg) {
+// ---- CampaignScreen (IDA 0x60D380) ----
+static MenuState CampaignScreen(int arg) {
     DDrawContext* ctx = DDrawGetContext();
     if (!ctx || !ctx->back_buffer) return MenuState::MenuIdle;
 
@@ -470,8 +470,8 @@ static MenuState Campaign_Screen(int arg) {
     return result;
 }
 
-// ---- Options_Screen_Dialog ----
-static void Options_Screen_Dialog() {
+// ---- OptionsScreenDialog ----
+static void OptionsScreenDialog() {
     DDrawContext* ctx = DDrawGetContext();
     if (!ctx || !ctx->back_buffer) return;
 
@@ -554,11 +554,11 @@ static void Options_Screen_Dialog() {
     }
 }
 
-// ---- Multiplayer_Screen ----
-static MenuState Multiplayer_Screen(int mode) { LOG_INFO("Multiplayer: mode=%d", mode); return MenuState::MenuIdle; }
+// ---- MultiplayerScreen ----
+static MenuState MultiplayerScreen(int mode) { LOG_INFO("Multiplayer: mode=%d", mode); return MenuState::MenuIdle; }
 
-// ---- Skirmish_Setup_Screen ----
-static MenuState Skirmish_Setup_Screen() {
+// ---- SkirmishSetupScreen ----
+static MenuState SkirmishSetupScreen() {
     DDrawContext* ctx = DDrawGetContext();
     if (!ctx || !ctx->back_buffer) return MenuState::MenuIdle;
 
@@ -690,15 +690,15 @@ char MenuSelect(){
         // IDA state 18: MainMenu::Screen with 3600-frame timeout
         case MenuState::Reset: case MenuState::MainMenu: g_MenuState=MenuState::MenuIdle; break;
         // IDA state 1: Campaign::Screen(1) — generic dialog wrapper
-        case MenuState::Campaign: g_MenuState=Campaign_Screen(1); break;
+        case MenuState::Campaign: g_MenuState=CampaignScreen(1); break;
         // IDA state 2: Skirmish (GameMode=4)
-        case MenuState::Skirmish: g_GameMode=GMODE_SKIRMISH; g_MenuState=MenuState::NetworkGameFlow; Multiplayer_Screen(2); break;
+        case MenuState::Skirmish: g_GameMode=GMODE_SKIRMISH; g_MenuState=MenuState::NetworkGameFlow; MultiplayerScreen(2); break;
         // IDA state 3: Internet (GameMode=3)
-        case MenuState::Multiplayer: g_GameMode=GMODE_INTERNET; g_MenuState=MenuState::NetworkGameFlow; Multiplayer_Screen(1); break;
+        case MenuState::Multiplayer: g_GameMode=GMODE_INTERNET; g_MenuState=MenuState::NetworkGameFlow; MultiplayerScreen(1); break;
         // IDA state 4: Campaign second path + CD check
-        case MenuState::CampaignSub: g_MenuState=Campaign_Screen(1); break;
-        // IDA state 5: Options_Screen_Dialog
-        case MenuState::Options: Options_Screen_Dialog(); g_MenuState=MenuState::MenuIdle; break;
+        case MenuState::CampaignSub: g_MenuState=CampaignScreen(1); break;
+        // IDA state 5: OptionsScreenDialog
+        case MenuState::Options: OptionsScreenDialog(); g_MenuState=MenuState::MenuIdle; break;
         // IDA state 6: Exit confirm → 7(quit) or 18(back)
         case MenuState::ExitConfirm: g_MenuState=ShowExitDialog()?MenuState::StartScenario:MenuState::MenuIdle; break;
         // IDA state 7: Exit — return 0 (quit process)
@@ -719,7 +719,7 @@ char MenuSelect(){
         // IDA state 16/17: Network game flow → enter game loop (return 1)
         case MenuState::NetworkGameFlow: case MenuState::NetworkGameFlow2: goto L81;
         // IDA state 18: MainMenu
-        case MenuState::MenuIdle: g_MenuState=MainMenu_Screen(); break;
+        case MenuState::MenuIdle: g_MenuState=MainMenuScreen(); break;
         }continue;
     L81:switch(g_GameMode){
         // IDA: GameMode 0 → back to MenuIdle (18)
@@ -729,9 +729,9 @@ char MenuSelect(){
         // IDA: GameMode 3 (internet) → game start
         case GMODE_INTERNET: return 1;
         // IDA: GameMode 4 (skirmish) → Skirmish_Setup
-        case GMODE_SKIRMISH: g_MenuState=Skirmish_Setup_Screen(); break;
+        case GMODE_SKIRMISH: g_MenuState=SkirmishSetupScreen(); break;
         // IDA: GameMode 5 (skirmish setup) → Skirmish_Setup
-        case GMODE_SKIRMISH_SETUP: g_MenuState=Skirmish_Setup_Screen(); break;
+        case GMODE_SKIRMISH_SETUP: g_MenuState=SkirmishSetupScreen(); break;
         }
     }
 }
