@@ -124,14 +124,16 @@ void ArrayForEach3ByteZero(void* buf, int stride, int count) {
 
 // --- Phase 4: MIX / CD / Movie ---
 
-bool LoadExpansionMixFiles() { return true; }
+// --- Phase 4: MIX / CD / Movie ---
+
+// LoadExpansionMixFiles defined in src/misc/rules.cpp
 int  LoadFileSHP(const char* filename) { (void)filename; return 0; }
 void MissionSetAndCall(int a, int b) { (void)a; (void)b; }
 void EventDispatchEx() {}
 int  FindGameDirectoryCD(const char* drives) { (void)drives; return 1; }
 int  DialogShowMessageBox(const wchar_t* msg, const wchar_t* ok, const wchar_t* cancel, int a4, int a5) {
     (void)msg; (void)ok; (void)cancel; (void)a4; (void)a5;
-    return 1; // IDA: 1 = OK pressed
+    return 1;
 }
 bool MixFileLoadAll() { return true; }
 void MoviePlay(int a1, int a2, int a3, int a4) { (void)a1; (void)a2; (void)a3; (void)a4; }
@@ -149,8 +151,7 @@ void* TacticalMapConstruct(void* mem) { (void)mem; return nullptr; }
 
 void INIClassConstruct(void* buf) { (void)buf; }
 bool CCINIClassLoad(void* ini, void* file, int a2, int a3) {
-    (void)ini; (void)file; (void)a2; (void)a3;
-    return true;
+    (void)ini; (void)file; (void)a2; (void)a3; return true;
 }
 void DestroyHashTableINIClass(void* ini) { (void)ini; }
 void AudioLoadSoundINI() {}
@@ -160,13 +161,13 @@ void InitFromINIEVA(void* ini) { (void)ini; }
 void ThemeManagerCleanup() {}
 void ThemeClassInitializeThemes(void* ini) { (void)ini; }
 void AudioLoadWAVFiles() {}
-bool InitBulkData() { return true; }
+// InitBulkData defined in src/misc/rules.cpp
 // InitRules defined in src/misc/rules.cpp
 int  AudioCallback() { return 0; }
 void PlayIntroSequence() {}
 void InitRandomSeed() {}
 void InitCommands() {}
-void CompleteGameInit() {}
+// CompleteGameInit defined in src/misc/rules.cpp
 
 // --- Phase 7: File helpers ---
 
