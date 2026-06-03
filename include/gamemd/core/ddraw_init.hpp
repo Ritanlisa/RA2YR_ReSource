@@ -9,7 +9,7 @@ namespace gamemd {
 // 0x8A0094: g_lpDirectDraw7 — main DDraw7 object
 // 0x89F978: g_DDraw_Initialized — window mode flag (-WIN)
 // 0xA8ED80: g_DDraw_Active — DDraw activity flag
-// 0x8A00A4/A8/AC: g_DisplayWidth/Height/BPP
+extern bool g_DDraw_Active;
 // 0x8A00B0: g_DDraw_ErrorCallback — error callback function pointer
 // 0x89FC90: g_DDraw_Palette — 8bpp palette object
 // 0x89FC94: g_DDraw_PaletteEntries — 256 COLORENTRY palette data

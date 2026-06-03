@@ -415,7 +415,7 @@ DynamicVectorClass<MixFileClass*>& MixFileClass::GetMixPool()
     return g_mixPool;
 }
 
-void MixFileClass::Bootstrap()
+bool MixFileClass::Bootstrap()
 {
     LOG_INFO("MixFileClass::Bootstrap: scanning all .mix files");
 
@@ -519,6 +519,8 @@ void MixFileClass::Bootstrap()
     // Dump first 3 MIX entries for hash verification
     for (int i = 0; i < g_mixPool.Count && i < 3; ++i)
         if (g_mixPool[i]) g_mixPool[i]->DumpEntries();
+
+    return true;
 }
 
 // ============================================================

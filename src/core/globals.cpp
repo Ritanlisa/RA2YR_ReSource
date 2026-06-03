@@ -43,7 +43,8 @@ bool g_Is16BitMode         = false; // 0x8175B0
 int  g_DDraw_Initialized   = 0;   // 0x89F978 (window mode flag)
 bool byte_A8ED64           = false; // 0xA8ED64 (-XQ / -OQ)
 
-// String globals for command line switches — all inlined in cmdline.cpp
+// 0xA8ED80 — g_DDraw_Active (defined in ddraw_init.cpp, declared here for core access)
+extern bool g_DDraw_Active;
 
 // ============================================================
 // Stub functions (TODO: full IDA translation)
