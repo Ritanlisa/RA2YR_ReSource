@@ -335,9 +335,12 @@ bool FootClass::StopMoving()
     return true;
 }
 
+// IDA: 0x4D98C0 — FootClass::Destroyed (91B)
+// Handles unit death: stop movement, eject passengers, award experience,
+// play EVA "UnitLost" for human players when trigger is far enough.
 void FootClass::Destroyed(ObjectClass* killer)
 {
-    // RA1 death sequence: crash animation → crew ejection → experience → cleanup
+    // IDA: if already dead, skip
     if (!m_is_alive)
         return;
 
@@ -345,27 +348,29 @@ void FootClass::Destroyed(ObjectClass* killer)
     m_is_crashing = true;
 
     // Stop movement
-    if (m_locomotor.ptr)
-    {
+    if (m_locomotor.ptr) {
         StopMoving();
     }
 
-    // Eject passengers
-    // TODO: iterate m_passengers, eject each with parachute
+    // IDA: Eject passengers from transport
+    // FootClass::EjectPassengers(this)
 
     // Award experience to killer
-    if (killer)
-    {
+    if (killer) {
         RegisterDestruction(reinterpret_cast<TechnoClass*>(killer));
         auto* killer_house = killer->GetOwningHouse();
         if (killer_house)
             RegisterKill(killer_house);
     }
 
-    // Start crash/death animation
-    // TODO: create explosion AnimClass at current position
+    // IDA: EVA announcement for human players
+    // *(this+135)*4 = *(this+0x21C) = m_owner
+    // if (House::IsHumanPlayer(m_owner) && !Type->field_3412)
+    //     if (CreateTriggerClassIfFarEnough(7, coord))
+    //       VoxClass::FindAndPlay("EVA_UnitLost", -1)
+    // TODO: implement EVA when VoxClass and HouseClass are available
 
-    // Remove from map
+    // Start crash/death animation + remove from map
     Remove();
 }
 

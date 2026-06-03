@@ -1,6 +1,7 @@
 #include "gamemd/render/shp_render.hpp"
 #include <cstring>
 #include <cstdlib>
+#include "gamemd/core/logging.hpp"
 
 namespace gamemd {
 
@@ -15,26 +16,35 @@ ShpImage::~ShpImage()
 bool ShpImage::LoadFromMemory(const uint8_t* data, int data_size)
 {
     Free();
-    if (!data || data_size < 8) return false;
+    if (!data || data_size < 8) {
+        LOG_WARN("SHP: null data or too small (size=%d)", data_size);
+        return false;
+    }
 
     m_raw_data = data;
     m_raw_size = data_size;
 
-    // TS format detection (OpenRA IsShpTS): first word must be 0
+    // IDA: TS SHP format — header is 8 bytes: 0x0000, width(2B), height(2B), frames(2B)
     uint16_t first = *(const uint16_t*)(data + 0);
     if (first != 0) {
-        // TD format not yet supported — return false
-        return false;
+        // TD format: frames(2B) at offset 0 + width(2B) + height(2B)
+        // TD SHP has offset table after the 6-byte header
+        m_header.frames     = first;
+        m_header.max_width  = *(const uint16_t*)(data + 2);
+        m_header.max_height = *(const uint16_t*)(data + 4);
+        LOG_WARN("SHP: TD format detected, limited support (w=%d h=%d f=%d)",
+            m_header.max_width, m_header.max_height, m_header.frames);
+    } else {
+        m_header.max_width  = *(const uint16_t*)(data + 2);
+        m_header.max_height = *(const uint16_t*)(data + 4);
+        m_header.frames     = *(const uint16_t*)(data + 6);
     }
-
-    // TS header: offset 0=skip(0), 2=width, 4=height, 6=frameCount
-    m_header.max_width  = *(const uint16_t*)(data + 2);
-    m_header.max_height = *(const uint16_t*)(data + 4);
-    m_header.frames     = *(const uint16_t*)(data + 6);
     m_header.frames_dup = m_header.frames;
     m_header.data_size  = 0;
 
     m_frame_count = m_header.frames;
+    LOG_TRACE("SHP: w=%d h=%d frames=%d size=%d",
+        m_header.max_width, m_header.max_height, m_frame_count, data_size);
     if (m_frame_count <= 0 || m_frame_count > 1024) return false;
 
     // Sanity: 24 bytes per frame entry must fit
