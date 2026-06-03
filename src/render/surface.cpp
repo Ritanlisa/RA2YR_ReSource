@@ -311,34 +311,129 @@ bool DSurface::DrawStippledRect(
     return false;
 }
 
+// IDA: 0x4BAD80 — DSurface::Lock (315B)
+// Returns byte offset into locked surface buffer, or 0 on failure.
+// Handles lost surface restoration and re-locking.
 void* DSurface::Lock(int x, int y)
 {
+    // IDA: if (!g_DDraw_Initialized && !g_DDraw_Active) return 0
+    if (!g_DDraw_Initialized && !g_DDraw_Active)
+        return nullptr;
+
+    // IDA: v4 = this+7 (=Surface), check IsLost via vtable[24] (0x60)
+    if (Surface) {
+        if (Surface->IsLost() == DDERR_SURFACELOST) {
+            // IDA: if Restore(vtable[27]) fails or still lost
+            if (FAILED(Surface->Restore()) || Surface->IsLost() == DDERR_SURFACELOST)
+                return nullptr;
+
+            // IDA: save LockCount, unlock all, then increment
+            int saved = LockCount;
+            if (saved > 0) {
+                LockCount = 0;
+                (void)Unlock();          // vtable[23] = Unlock
+                LockCount = 1;
+                (void)Unlock();          // vtable[24] = Unlock (2nd one?)
+                LockCount = saved;
+            }
+        }
+    }
+
+    if (x < 0 || y < 0)
+        return nullptr;
+
+    // IDA: if LockCount > 0 -> nested lock (just increment and return offset)
+    if (LockCount > 0) {
+        ++LockCount;
+        // IDA: return x * BytesPerPixel + y * Pitch + LockedBuffer
+        int pitch = GetPitch();
+        int bpp = GetBytesPerPixel();
+        return static_cast<uint8_t*>(LockedSurface) + x * bpp + y * pitch;
+    }
+
+    // IDA: First lock — get surface descriptor via IDDS7::Lock (vtable[25] = 0x64)
     if (!Surface) return nullptr;
 
     DDSURFACEDESC2 desc = {};
     desc.dwSize = sizeof(desc);
 
-    RECT r = { x, y, x + 1, y + 1 };
-    HRESULT hr = Surface->Lock(&r, &desc, DDLOCK_WAIT, nullptr);
-    if (FAILED(hr)) return nullptr;
+    // IDA: Lock(surface, 0, &desc, DDLOCK_WAIT, 0)
+    HRESULT hr = Surface->Lock(nullptr, &desc, DDLOCK_WAIT, nullptr);
+    if (FAILED(hr))
+        return nullptr;
 
+    // IDA: memcpy SurfaceDesc from the DDSURFACEDESC2
+    BytesPerPixel = (desc.ddpfPixelFormat.dwRGBBitCount + 7) >> 3;
+    VRAMmed       = (desc.ddsCaps.dwCaps & DDSCAPS_VIDEOMEMORY) != 0;
     LockedSurface = desc.lpSurface;
-    return LockedSurface;
+
+    ++LockCount;
+    return static_cast<uint8_t*>(LockedSurface) + x * BytesPerPixel + y * static_cast<int>(desc.lPitch);
 }
 
+// IDA: 0x4BAF40 — DSurface::Unlock (154B)
+// Decrements lock count, unlocks when it reaches 0.
+// Also handles lost surface restoration pattern.
 bool DSurface::Unlock()
 {
-    if (!Surface) return false;
-    HRESULT hr = Surface->Unlock(nullptr);
-    LockedSurface = nullptr;
-    return SUCCEEDED(hr);
+    // IDA: check DDraw active
+    if (g_DDraw_Initialized || g_DDraw_Active) {
+        if (Surface && Surface->IsLost() == DDERR_SURFACELOST) {
+            // IDA: if Restore succeeds and not lost
+            if (SUCCEEDED(Surface->Restore()) && Surface->IsLost() != DDERR_SURFACELOST) {
+                int saved = LockCount;
+                if (saved > 0) {
+                    LockCount = 0;
+                    Surface->Unlock(nullptr);    // vtable[23]
+                    ++LockCount;
+                    Surface->Unlock(nullptr);    // vtable[24]
+                    LockCount = saved;
+                }
+            }
+        }
+    }
+
+    // IDA: if LockCount <= 0, return false
+    if (LockCount <= 0)
+        return false;
+
+    // IDA: decrement LockCount
+    int v6 = LockCount - 1;
+    LockCount = v6;
+
+    // IDA: if count reaches 0, call Unlock (vtable[32] = 0x80)
+    if (v6 == 0) {
+        Surface->Unlock(nullptr);
+        LockedSurface = nullptr;
+    }
+    return true;
 }
 
+// IDA: 0x4BAEC0 — DSurface::CanLock (95B)
+// Probes whether the surface can be locked without actually locking.
 bool DSurface::CanLock(uint32_t unk1, uint32_t unk2)
 {
     (void)unk1;
     (void)unk2;
-    return Surface != nullptr;
+
+    // IDA: if LockCount > 0, already locked — can lock again
+    if (LockCount > 0)
+        return true;
+
+    if (!Surface)
+        return false;
+
+    DDSURFACEDESC2 desc = {};
+    desc.dwSize = sizeof(desc);
+
+    // IDA: Lock with DDLOCK_TESTONLY flag → probe without actually locking
+    HRESULT hr = Surface->Lock(nullptr, &desc, DDLOCK_WAIT, nullptr);
+    if (FAILED(hr))
+        return false;
+
+    // IDA: immediately Unlock after probe
+    Surface->Unlock(nullptr);
+    return true;
 }
 
 int DSurface::GetPitch() const
