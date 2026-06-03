@@ -200,11 +200,11 @@ CellStruct* MapClass::PickCellOnEdge(CellStruct& buffer, Edge edge, const CellSt
     return &buffer;
 }
 
-void MapClass::Update_Pathfinding_1()
+void MapClass::UpdatePathfinding1()
 {
 }
 
-void MapClass::Update_Pathfinding_2(const CellStruct* where, int count)
+void MapClass::UpdatePathfinding2(const CellStruct* where, int count)
 {
     (void)where;
     (void)count;

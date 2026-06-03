@@ -205,8 +205,8 @@ public:
         return buffer;
     }
 
-    void Update_Pathfinding_1();
-    void Update_Pathfinding_2(const CellStruct* where, int count);
+    void UpdatePathfinding1();
+    void UpdatePathfinding2(const CellStruct* where, int count);
 
     CellStruct* Pathfinding_Find(CellStruct& out, const CellStruct& position, SpeedType speed, int a5, MovementZone mov_zone, bool alt, int space_size_x, int space_size_y, bool disallow_overlay, bool a11, bool require_burrowable, bool allow_bridge, const CellStruct& close_to, bool a15, bool buildable);
     CellStruct Pathfinding_Find(const CellStruct& position, SpeedType speed, int a5, MovementZone mov_zone, bool alt, int space_size_x, int space_size_y, bool disallow_overlay, bool a11, bool require_burrowable, bool allow_bridge, const CellStruct& close_to, bool a15, bool buildable)
