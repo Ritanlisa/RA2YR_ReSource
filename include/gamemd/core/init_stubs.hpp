@@ -168,4 +168,13 @@ void CompleteGameInit();
 // IDA 0x6BB9A0 — RegisterAllClasses (iterates TClassFactory table, 63-71 entries)
 void RegisterAllClasses();
 
+// IDA 0x49F5C0 — CopyProtection::CheckLauncher (always TRUE — bypassed)
+bool CopyProtectionCheckLauncher();
+
+// IDA 0x49F620 — CopyProtection::NotifyLauncher (always TRUE — bypassed)
+bool CopyProtectionNotifyLauncher();
+
+// IDA 0x49F7A0 — CopyProtection::CheckProtectedData (always TRUE — bypassed)
+bool CopyProtectionCheckProtectedData();
+
 } // namespace gamemd
