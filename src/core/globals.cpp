@@ -325,4 +325,26 @@ int   dword_A8E374 = 0;
 // IDA: 0xA8E36D — byte_A8E36D (placement flag)
 bool  byte_A8E36D = false;
 
+// IDA: Object pool / Alpha shape globals
+int   g_AlphaShapePool = 0;    // 0xB0F730
+void* dword_B0F724 = nullptr;  // 0xB0F724
+int   dword_B0F728 = 0;        // 0xB0F728
+bool  byte_B0F72D = false;     // 0xB0F72D
+int   dword_B0F734 = 0;        // 0xB0F734
+
+// IDA: Anim pool globals
+int   g_AnimTypePool = 0;      // 0xB0F678
+void* g_AnimManager = nullptr;  // 0xB0F680
+bool  g_AnimPoolLocked = false; // 0xB0F67D
+int   g_AnimManagerConfig = 0;  // 0xB0F684
+void* g_AnimPoolManager = nullptr; // 0xB0F670
+
+// IDA: Laser draw globals
+int   g_LaserDrawConfig = 0;    // 0xB0F6A8
+void* g_DiskLaserManager = nullptr; // 0xB0F698
+void* dword_B0F69C = nullptr;   // 0xB0F69C
+int   dword_B0F6A0 = 0;         // 0xB0F6A0
+bool  byte_B0F6A5 = false;      // 0xB0F6A5
+int   dword_B0F6AC = 0;         // 0xB0F6AC
+
 } // namespace gamemd
