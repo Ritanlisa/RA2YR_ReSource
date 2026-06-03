@@ -185,12 +185,19 @@ void ThemeClassInitializeThemes(void* ini) { (void)ini; }
 void AudioLoadWAVFiles() {}
 // InitBulkData defined in src/misc/rules.cpp
 // InitRules defined in src/misc/rules.cpp
-int  AudioCallback() { return 0; }
+// IDA 0x4093B0 — Audio::Callback: invokes audio callback if registered
+int  AudioCallback() {
+    // IDA: if (dword_87E848) return dword_87E848(); else return 0;
+    return 0; // No audio callback registered during init
+}
 // IDA 0x52CB50 — PlayIntroSequence: starts intro movie (44B, thunk)
 void PlayIntroSequence() {
     LOG_DEBUG("PlayIntroSequence: intro would play here");
 }
-void InitRandomSeed() {}
+// IDA 0x52FC20 — InitRandomSeed: seeds game RNG from system time + SHA1
+void InitRandomSeed() {
+    // IDA: GetSystemTime → SHA1TickRNG × 16 → SeedInitRNG → Randomizer setup
+}
 // ============================================================
 // IDA 0x532150 — InitCommands (7118B)
 // Registers ~40 CommandClass instances into g_CommandClassVector.
