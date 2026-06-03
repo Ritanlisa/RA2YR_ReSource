@@ -10,18 +10,21 @@ constexpr uint32_t kAircraftFlag = static_cast<uint32_t>(AbstractFlags::Foot)
 
 } // anonymous namespace
 
+// IDA: 0x413D20 — AircraftClass::Construct (593B)
+// Fields at byte offsets 0x6C4-0x6D5 from full object base
+// Note: AircraftClass has 5 vtables (FootClass base + FlasherClass at +0x6C0)
 AircraftClass::AircraftClass() noexcept
-    : Type(nullptr)
-    , unknown_bool_6C8(false)
-    , HasPassengers(false)
-    , IsKamikaze(false)
-    , unknown_6CC(0)
-    , unknown_bool_6D0(false)
-    , unknown_bool_6D1(false)
-    , unknown_bool_6D2(false)
-    , unknown_char_6D3(0)
-    , unknown_bool_6D4(false)
-    , unknown_bool_6D5(false)
+    : Type(nullptr)              // +0x6C4, set by constructor parameter in IDA
+    , unknown_bool_6C8(false)    // +0x6C8, IDA: *(BYTE*)(this+0x6C8) = 0
+    , HasPassengers(false)       // +0x6C9, IDA: *(BYTE*)(this+0x6C9) = 0
+    , IsKamikaze(false)          // +0x6CA, IDA: *(BYTE*)(this+0x6CA) = 0
+    , unknown_6CC(0)             // +0x6CC, IDA: *(this+0x6CC) = 0
+    , unknown_bool_6D0(false)    // +0x6D0, IDA: *(BYTE*)(this+0x6D0) = 0
+    , unknown_bool_6D1(false)    // +0x6D1, IDA: *(BYTE*)(this+0x6D1) = 0
+    , unknown_bool_6D2(false)    // +0x6D2, IDA: *(BYTE*)(this+0x6D2) = 0
+    , unknown_char_6D3(5)        // +0x6D3, IDA: *(BYTE*)(this+0x6D3) = 5
+    , unknown_bool_6D4(true)     // +0x6D4, IDA: *(BYTE*)(this+0x6D4) = 1
+    , unknown_bool_6D5(true)     // +0x6D5, IDA: *(BYTE*)(this+0x6D5) = 1
 {
     m_abstract_flags = kAircraftFlag;
 }
