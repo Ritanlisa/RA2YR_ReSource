@@ -633,10 +633,44 @@ static char ShowExitDialog() {
     return result;
 }
 
-// ---- stubs ----
-static bool Game_Frame_Loop(){return true;}
-static bool Game_Frame_Check(){return false;}
-static void Main_Game_Frame(){Event_Dispatch();}
+// ---- Game Frame Stubs (IDA: 0x55D360, 0x55CFD0, 0x48C8B0) ----
+// These are simplified versions of the massive frame processing functions.
+// IDA reference addresses annotated for future faithful rewriting.
+
+// IDA: 0x55D360 — Game_Frame_Loop (2940B)
+// Full implementation handles: DDraw wait loop, frame timing (timeGetTime),
+// network sync delay, Event::Dispatch, TacticalMap::Redraw,
+// InputManager_ProcessEvents, SyncDelay, MarkAllFootOccupancies,
+// ProcessAutoSave, DrawHUD, NetworkEvents, Scenario::Update, etc.
+static bool Game_Frame_Loop(){
+    // IDA: if (!WTFMode) return 1
+    // IDA: Wait for g_DDraw_Active
+    // IDA: Frame timing (timeGetTime → Timer::EnableHighPrecision)
+    // IDA: Dialog::MessageLoop() → Event::Dispatch()
+    Event_Dispatch();
+    return false; // keep running
+}
+
+// IDA: 0x55CFD0 — Game_Frame_Check (906B)
+// Checks conditions for exiting the game loop:
+// - WTFMode shutdown
+// - byte_A83D49 (surrender/specific)
+// - g_NetResponseActive
+// - byte_8B41C0 (restart flag)
+// - byte_A83D48
+static bool Game_Frame_Check(){
+    return false; // keep running
+}
+
+// IDA: 0x48C8B0 — Main_Game_Frame (978B, 51BBs)
+// 9-state in-game UI state machine:
+// State 1=InGameUI::Open, 2=Surrender, 3=NetworkEventDispatch,
+// 4=HotkeyOptions, 5=Transition→1, 6=AudioSettings,
+// 7=WOLLobby, 8=Diplomacy, 9=MissionBriefing
+// Calls PreFrameSetup(0x683EB0) + WWMouseClass input + PostFrameCleanup(0x683FB0)
+static void Main_Game_Frame(){
+    Event_Dispatch();
+}
 
 // ---- Menu_Select (IDA 0x52D9A0, 4536B, 222BBs) ----
 // IDA states:
