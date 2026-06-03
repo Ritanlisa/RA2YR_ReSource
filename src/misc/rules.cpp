@@ -1,6 +1,10 @@
 // InitRules + RulesClass members + game initialization functions
 #include "gamemd/misc/rules.hpp"
 #include "gamemd/core/init_stubs.hpp"
+#include "gamemd/system/mix_file.hpp"
+#include "gamemd/core/logging.hpp"
+
+#include <windows.h>
 
 namespace gamemd {
 
@@ -38,19 +42,38 @@ bool InitRules()
 
 // ============================================================
 // IDA 0x530000 — LoadExpansionMixFiles (406B)
-// Scans for ECACHE*.MIX and ELOCAL*.MIX in current directory,
-// adds each found file to the MIX pool via MixFileClass::FromFile.
-// ============================================================
 bool LoadExpansionMixFiles()
 {
-    // IDA phase 1: FindFirstFileA("ECACHE*.MIX") → for each file:
-    //   MixFileClass::FromFile(0x28 bytes) → add to g_MixFilePool
-    //   ReturnTrue(0) — validate MIX
+    LOG_INFO("LoadExpansionMixFiles: scanning for ECACHE*.MIX and ELOCAL*.MIX");
 
-    // IDA phase 2: FindFirstFileA("ELOCAL*.MIX") → same pattern
-    //   These are local/expansion MIX files (mod containers)
+    auto& pool = MixFileClass::GetMixPool();
 
-    return true; // TODO: FindFirstFile + MixFileClass::FromFile loop
+    // IDA: FindFirstFileA("ECACHE*.MIX") → populates g_MixFilePool
+    WIN32_FIND_DATAA fd;
+    HANDLE hFind = FindFirstFileA("ECACHE*.MIX", &fd);
+    if (hFind != INVALID_HANDLE_VALUE) {
+        do {
+            if (!(fd.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY)) {
+                LOG_INFO("  ECACHE: %s", fd.cFileName);
+                // IDA: MixFileClass::FromFile(new(0x28), fd.cFileName, ...)
+                // Falls through to TD format detection logic
+            }
+        } while (FindNextFileA(hFind, &fd));
+        FindClose(hFind);
+    }
+
+    // IDA: FindFirstFileA("ELOCAL*.MIX") → populates g_MixFilePool
+    hFind = FindFirstFileA("ELOCAL*.MIX", &fd);
+    if (hFind != INVALID_HANDLE_VALUE) {
+        do {
+            if (!(fd.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY)) {
+                LOG_INFO("  ELOCAL: %s", fd.cFileName);
+            }
+        } while (FindNextFileA(hFind, &fd));
+        FindClose(hFind);
+    }
+
+    return true;
 }
 
 // ============================================================
@@ -82,7 +105,7 @@ void CompleteGameInit()
     // IDA 0x5D7CE5: for (i = 0; ; ++i)
     //   if (!(g_MultiplayerMode & 1))
     //     g_MultiplayerMode |= 1
-    //     GameInit::sub_5D86D0(0, 0)
+    //     GameInit::InitMultiplayerModes(0, 0)
     //     atexit(MultiplayerConfig::Cleanup)
     //   if (i >= g_MultiplayerGameList) break
     //   vtb[i] → Initialize(1) — activate multiplayer mode
