@@ -29,6 +29,9 @@ class FileSystem
 public:
     static void* LoadFile(const char* pFileName, bool bLoadAsSHP);
 
+    // Load file and return size via outSize parameter
+    static void* LoadFileWithSize(const char* pFileName, int* outSize, bool bLoadAsSHP);
+
     static void* LoadFile(const char* pFileName)
     {
         return LoadFile(pFileName, false);

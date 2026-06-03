@@ -60,6 +60,45 @@ void* FileSystem::LoadFile(const char* pFileName, bool bLoadAsSHP)
     (void)bLoadAsSHP;
 }
 
+// Load file and return size via outSize
+void* FileSystem::LoadFileWithSize(const char* pFileName, int* outSize, bool bLoadAsSHP)
+{
+    if (!pFileName) return nullptr;
+
+    int sz = 0;
+    void* buf = nullptr;
+
+    uint32_t id = MixFileClass::ComputeID(pFileName);
+    auto& pool = MixFileClass::GetMixPool();
+    for (int i = pool.Count - 1; i >= 0; --i) {
+        auto* mix = pool[i];
+        if (!mix || !mix->IsValid()) continue;
+        int idx = mix->FindIndex(pFileName);
+        if (idx < 0) continue;
+        sz = mix->GetSize(idx);
+        if (sz <= 0) continue;
+        buf = malloc(sz);
+        if (buf && mix->Extract(idx, buf, sz)) {
+            if (outSize) *outSize = sz;
+            return buf;
+        }
+        free(buf); buf = nullptr;
+    }
+
+    // Try disk
+    FILE* fp = fopen(pFileName, "rb");
+    if (!fp) return nullptr;
+    fseek(fp, 0, SEEK_END);
+    sz = (int)ftell(fp);
+    fseek(fp, 0, SEEK_SET);
+    buf = malloc(sz);
+    if (buf) { fread(buf, 1, sz, fp); }
+    fclose(fp);
+    if (outSize) *outSize = sz;
+    (void)bLoadAsSHP;
+    return buf;
+}
+
 void* FileSystem::LoadWholeFileEx(const char* pFilename, bool& outAllocated)
 {
     void* data = LoadFile(pFilename, false);

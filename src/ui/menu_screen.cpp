@@ -18,18 +18,14 @@ static uint8_t g_palette[256][4];
 static bool LoadMenuBackground(ShpImage& img)
 {
     const char* shp_names[] = {
-        "ls800yr.shp",
-        "ls640yr.shp",
-        "ls800bg.shp",
-        "ls640bg.shp",
-        "logo.shp",
-        "title.shp",
-        nullptr
+        "ls800yr.shp", "ls640yr.shp", "ls800bg.shp", "ls640bg.shp",
+        "logo.shp", "title.shp", nullptr
     };
 
     void* shp_data = nullptr;
+    int   shp_size = 0;
     for (int i = 0; shp_names[i]; ++i) {
-        shp_data = FileSystem::LoadFile(shp_names[i], true);
+        shp_data = FileSystem::LoadFileWithSize(shp_names[i], &shp_size, true);
         if (shp_data) break;
     }
 
@@ -38,8 +34,7 @@ static bool LoadMenuBackground(ShpImage& img)
         return false;
     }
 
-    bool ok = img.LoadFromMemory(static_cast<const uint8_t*>(shp_data),
-                                 1073741824);
+    bool ok = img.LoadFromMemory(static_cast<const uint8_t*>(shp_data), shp_size);
     free(shp_data);
 
     char buf[128];
