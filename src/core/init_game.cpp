@@ -178,12 +178,14 @@ int  DialogShowMessageBox(const wchar_t* msg, const wchar_t* ok, const wchar_t* 
     (void)msg; (void)ok; (void)cancel; (void)a4; (void)a5;
     return 1;
 }
-// IDA 0x530460 — MixFile::LoadAll: secondary MIX file loading
+// IDA 0x530460 — MixFile::LoadAll: secondary MIX loading (expansion packs, local)
 bool MixFileLoadAll() {
-    // After Bootstrap loads primary MIX files, LoadAll loads additional
-    // MIX containers (cache, expansion, local, etc.)
-    // Previously tried to call Bootstrap() again but that was incorrect.
-    return true; // TODO: implement secondary MIX scanning
+    // In the original, this scans for additional MIX containers after Bootstrap.
+    // Bootstrap already loaded the primary chain; LoadAll adds expansion/local MIXes.
+    // For compatibility, we just check that the pool is non-empty.
+    auto& pool = MixFileClass::GetMixPool();
+    LOG_INFO("MixFileLoadAll: %d MIX files currently in pool", pool.Count);
+    return pool.Count > 0;
 }
 // IDA 0x5BED40 — Movie::Play
 void MoviePlay(int a1, int a2, int a3, int a4) { (void)a1; (void)a2; (void)a3; (void)a4; }
@@ -257,9 +259,12 @@ int  AudioCallback() {
 void PlayIntroSequence() {
     LOG_DEBUG("PlayIntroSequence: intro would play here");
 }
-// IDA 0x52FC20 — InitRandomSeed: seeds game RNG from system time + SHA1
+// IDA 0x52FC20 — InitRandomSeed: seeds game RNG from system time
 void InitRandomSeed() {
     // IDA: GetSystemTime → SHA1TickRNG × 16 → SeedInitRNG → Randomizer setup
+    // Simplified: seed with time + tick count
+    srand(timeGetTime() ^ GetTickCount());
+    LOG_DEBUG("InitRandomSeed: RNG seeded");
 }
 // ============================================================
 // IDA 0x532150 — InitCommands (7118B)
