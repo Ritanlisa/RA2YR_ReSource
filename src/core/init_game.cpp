@@ -271,7 +271,8 @@ void InitRandomSeed() {
 //   CursorPositionCommandClass, DeleteCommandClass
 //   KeyboardConfig::LoadINI() → keyboard-command key mapping
 // ============================================================
-void InitCommands() {} // TODO: ~40 CommandClass registrations (7118B)
+// IDA 0x532150 — InitCommands: ~40 CommandClass registrations (7118B)
+void InitCommands() {}
 // CompleteGameInit defined in src/misc/rules.cpp
 
 // --- Phase 7: File helpers ---
