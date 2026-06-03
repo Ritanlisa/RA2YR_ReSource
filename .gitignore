@@ -83,3 +83,8 @@ cnc-ddraw config.exe
 
 # CNCNet Client
 xna-cncnet-client/
+
+# IDA 过程文件
+decompile-results/gamemd.exe.id*
+decompile-results/gamemd.exe.nam
+decompile-results/gamemd.exe.til

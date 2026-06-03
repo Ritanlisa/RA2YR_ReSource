@@ -1,0 +1,758 @@
+[
+  {
+    "addr": "0x00402220",
+    "new": "ObjectClass::Cleanup"
+  },
+  {
+    "addr": "0x0041D300",
+    "new": "AbstractClass::Create"
+  },
+  {
+    "addr": "0x0041F2E0",
+    "new": "CCINIClass::ReadINIEntry"
+  },
+  {
+    "addr": "0x00420AF0",
+    "new": "AbstractClass::Create"
+  },
+  {
+    "addr": "0x004261D0",
+    "new": "BuildingClass::Find"
+  },
+  {
+    "addr": "0x004309D0",
+    "new": "CCFileClass::Create"
+  },
+  {
+    "addr": "0x00431700",
+    "new": "HouseClass::Render"
+  },
+  {
+    "addr": "0x00438E70",
+    "new": "AbstractClass::Initialize"
+  },
+  {
+    "addr": "0x0043A7E0",
+    "new": "AbstractClass::Create"
+  },
+  {
+    "addr": "0x0043EEB0",
+    "new": "BuildingClass::Cleanup"
+  },
+  {
+    "addr": "0x0044FEC0",
+    "new": "BuildingClass::Get"
+  },
+  {
+    "addr": "0x00452940",
+    "new": "CellClass::Get"
+  },
+  {
+    "addr": "0x004545D0",
+    "new": "BuildingClass::Cleanup"
+  },
+  {
+    "addr": "0x00454730",
+    "new": "BuildingClass::Cleanup"
+  },
+  {
+    "addr": "0x004547C0",
+    "new": "BuildingClass::Cleanup"
+  },
+  {
+    "addr": "0x00454930",
+    "new": "BuildingClass::Cleanup"
+  },
+  {
+    "addr": "0x004575B0",
+    "new": "BuildingClass::Cleanup"
+  },
+  {
+    "addr": "0x00458750",
+    "new": "HouseClass::Process"
+  },
+  {
+    "addr": "0x00466000",
+    "new": "BuildingClass::Create"
+  },
+  {
+    "addr": "0x00471890",
+    "new": "AbstractClass::Create"
+  },
+  {
+    "addr": "0x004737F0",
+    "new": "BuildingClass::Create"
+  },
+  {
+    "addr": "0x00475A60",
+    "new": "BuildingClass::ReadBuildingSettings"
+  },
+  {
+    "addr": "0x00486A70",
+    "new": "BuildingClass::Create"
+  },
+  {
+    "addr": "0x004A8EB0",
+    "new": "BuildingClass::Get"
+  },
+  {
+    "addr": "0x004A9070",
+    "new": "BuildingClass::Get"
+  },
+  {
+    "addr": "0x004AC4F0",
+    "new": "HouseClass::Get"
+  },
+  {
+    "addr": "0x004ADA30",
+    "new": "ScenarioClass::Get"
+  },
+  {
+    "addr": "0x004ADBA0",
+    "new": "ScenarioClass::Reset"
+  },
+  {
+    "addr": "0x004AE450",
+    "new": "TacticalClass::Initialize"
+  },
+  {
+    "addr": "0x004AF540",
+    "new": "LocomotionClass::Initialize"
+  },
+  {
+    "addr": "0x004CE5A0",
+    "new": "BuildingClass::Create"
+  },
+  {
+    "addr": "0x004CF950",
+    "new": "TechnoClass::Get"
+  },
+  {
+    "addr": "0x004D08B0",
+    "new": "AbstractClass::Create"
+  },
+  {
+    "addr": "0x004F9370",
+    "new": "HouseClass::Update"
+  },
+  {
+    "addr": "0x004FA910",
+    "new": "TechnoClass::Get"
+  },
+  {
+    "addr": "0x00500300",
+    "new": "CellClass::Find"
+  },
+  {
+    "addr": "0x005009B0",
+    "new": "HouseClass::LoadTypeList"
+  },
+  {
+    "addr": "0x00501160",
+    "new": "CCINIClass::Cleanup"
+  },
+  {
+    "addr": "0x00509B20",
+    "new": "HouseClass::Find"
+  },
+  {
+    "addr": "0x00509C10",
+    "new": "HouseClass::Find"
+  },
+  {
+    "addr": "0x0050A350",
+    "new": "CellClass::Get"
+  },
+  {
+    "addr": "0x0050B760",
+    "new": "BuildingClass::Get"
+  },
+  {
+    "addr": "0x0050CAD0",
+    "new": "TechnoClass::Get"
+  },
+  {
+    "addr": "0x0050E010",
+    "new": "TechnoClass::Find"
+  },
+  {
+    "addr": "0x0050E1C0",
+    "new": "TechnoClass::Find"
+  },
+  {
+    "addr": "0x0050E280",
+    "new": "TechnoClass::Find"
+  },
+  {
+    "addr": "0x00512680",
+    "new": "WeaponTypeClass::Create"
+  },
+  {
+    "addr": "0x00513C20",
+    "new": "LocomotionClass::Initialize"
+  },
+  {
+    "addr": "0x0054AC40",
+    "new": "LocomotionClass::Update"
+  },
+  {
+    "addr": "0x0054B980",
+    "new": "HouseClass::Get"
+  },
+  {
+    "addr": "0x00552CC0",
+    "new": "SessionClass::Load"
+  },
+  {
+    "addr": "0x00554830",
+    "new": "AbstractClass::Create"
+  },
+  {
+    "addr": "0x00565190",
+    "new": "RadarClass::Render"
+  },
+  {
+    "addr": "0x0056B5A0",
+    "new": "CellClass::Create"
+  },
+  {
+    "addr": "0x0056B780",
+    "new": "CellClass::Create"
+  },
+  {
+    "addr": "0x0056B8A0",
+    "new": "CellClass::Create"
+  },
+  {
+    "addr": "0x0056B9A0",
+    "new": "CellClass::Create"
+  },
+  {
+    "addr": "0x0056BAC0",
+    "new": "CellClass::Create"
+  },
+  {
+    "addr": "0x0056C020",
+    "new": "BuildingClass::Create"
+  },
+  {
+    "addr": "0x0056E890",
+    "new": "HouseClass::Get"
+  },
+  {
+    "addr": "0x00578E60",
+    "new": "MapClass::Create"
+  },
+  {
+    "addr": "0x00581090",
+    "new": "BuildingClass::Cleanup"
+  },
+  {
+    "addr": "0x00585D00",
+    "new": "MapClass::Create"
+  },
+  {
+    "addr": "0x0058EF10",
+    "new": "MapClass::Reset"
+  },
+  {
+    "addr": "0x00594700",
+    "new": "MapClass::Cleanup"
+  },
+  {
+    "addr": "0x00595BC0",
+    "new": "CCFileClass::Load"
+  },
+  {
+    "addr": "0x00599530",
+    "new": "MapClass::Process"
+  },
+  {
+    "addr": "0x0059B6D0",
+    "new": "CellClass::Get"
+  },
+  {
+    "addr": "0x0059C630",
+    "new": "MapClass::Get"
+  },
+  {
+    "addr": "0x005A17F0",
+    "new": "MapClass::Get"
+  },
+  {
+    "addr": "0x005A38C0",
+    "new": "CellClass::Reset"
+  },
+  {
+    "addr": "0x005ADF20",
+    "new": "SessionClass::Get"
+  },
+  {
+    "addr": "0x005AE100",
+    "new": "ScenarioClass::Load"
+  },
+  {
+    "addr": "0x005AFEF0",
+    "new": "LocomotionClass::Initialize"
+  },
+  {
+    "addr": "0x005B5EF0",
+    "new": "CellClass::Get"
+  },
+  {
+    "addr": "0x005B9F30",
+    "new": "CellClass::Get"
+  },
+  {
+    "addr": "0x005C23B0",
+    "new": "MovieClass::ReadINIEntry"
+  },
+  {
+    "addr": "0x005D8FD0",
+    "new": "CCFileClass::Create"
+  },
+  {
+    "addr": "0x005D9360",
+    "new": "CCFileClass::Create"
+  },
+  {
+    "addr": "0x005EE9D0",
+    "new": "HouseClass::Find"
+  },
+  {
+    "addr": "0x005FB160",
+    "new": "TechnoClass::Get"
+  },
+  {
+    "addr": "0x005FDDF0",
+    "new": "BuildingClass::Reset"
+  },
+  {
+    "addr": "0x00629210",
+    "new": "AbstractClass::Create"
+  },
+  {
+    "addr": "0x0062E4C0",
+    "new": "ParticleClass::Create"
+  },
+  {
+    "addr": "0x00633EA0",
+    "new": "BuildingClass::Get"
+  },
+  {
+    "addr": "0x00633F20",
+    "new": "BuildingClass::Get"
+  },
+  {
+    "addr": "0x00633FA0",
+    "new": "BuildingClass::Get"
+  },
+  {
+    "addr": "0x006340B0",
+    "new": "TeamClass::Cleanup"
+  },
+  {
+    "addr": "0x00634CC0",
+    "new": "BuildingClass::Find"
+  },
+  {
+    "addr": "0x00635A40",
+    "new": "BuildingClass::Get"
+  },
+  {
+    "addr": "0x00635C10",
+    "new": "BuildingClass::Get"
+  },
+  {
+    "addr": "0x00635F80",
+    "new": "FactoryClass::Find"
+  },
+  {
+    "addr": "0x00636120",
+    "new": "TeamClass::Cleanup"
+  },
+  {
+    "addr": "0x006367B0",
+    "new": "BuildingClass::Get"
+  },
+  {
+    "addr": "0x00636980",
+    "new": "BuildingClass::Get"
+  },
+  {
+    "addr": "0x00636B50",
+    "new": "TeamClass::Cleanup"
+  },
+  {
+    "addr": "0x00637920",
+    "new": "FactoryClass::Cleanup"
+  },
+  {
+    "addr": "0x00638CE0",
+    "new": "BuildingClass::Find"
+  },
+  {
+    "addr": "0x00638E60",
+    "new": "BuildingClass::Get"
+  },
+  {
+    "addr": "0x00639040",
+    "new": "BuildingClass::ReadINIEntry"
+  },
+  {
+    "addr": "0x00639130",
+    "new": "BuildingClass::ReadINIEntry"
+  },
+  {
+    "addr": "0x006395B0",
+    "new": "BuildingClass::Find"
+  },
+  {
+    "addr": "0x00639740",
+    "new": "BuildingClass::Find"
+  },
+  {
+    "addr": "0x00639A50",
+    "new": "BuildingClass::Get"
+  },
+  {
+    "addr": "0x00639BC0",
+    "new": "BuildingClass::Cleanup"
+  },
+  {
+    "addr": "0x00639CB0",
+    "new": "BuildingClass::Get"
+  },
+  {
+    "addr": "0x0063B150",
+    "new": "BuildingClass::Render"
+  },
+  {
+    "addr": "0x0063CE40",
+    "new": "BuildingClass::Render"
+  },
+  {
+    "addr": "0x0063F6B0",
+    "new": "RadarClass::Create"
+  },
+  {
+    "addr": "0x00645820",
+    "new": "BuildingClass::Create"
+  },
+  {
+    "addr": "0x00654EA0",
+    "new": "MapClass::Get"
+  },
+  {
+    "addr": "0x00655990",
+    "new": "RadarClass::Process"
+  },
+  {
+    "addr": "0x00655B20",
+    "new": "RadarClass::Process"
+  },
+  {
+    "addr": "0x0066CF70",
+    "new": "CCINIClass::LoadTypeList"
+  },
+  {
+    "addr": "0x0066D3A0",
+    "new": "CCINIClass::ReadINIEntry"
+  },
+  {
+    "addr": "0x00672360",
+    "new": "CCINIClass::LoadBuildingTypes"
+  },
+  {
+    "addr": "0x00672440",
+    "new": "CCINIClass::ReadSuperWeaponSettings"
+  },
+  {
+    "addr": "0x006726D0",
+    "new": "CCINIClass::LoadTypeList"
+  },
+  {
+    "addr": "0x006727D0",
+    "new": "CCINIClass::LoadTypeList"
+  },
+  {
+    "addr": "0x00672840",
+    "new": "CCINIClass::LoadBuildingTypes"
+  },
+  {
+    "addr": "0x00672920",
+    "new": "CCINIClass::LoadUnitTypes"
+  },
+  {
+    "addr": "0x00672990",
+    "new": "CCINIClass::LoadTypeList"
+  },
+  {
+    "addr": "0x00672A70",
+    "new": "CCINIClass::ReadBuildingSettings"
+  },
+  {
+    "addr": "0x0067B720",
+    "new": "BuildingClass::LoadBuildingTypes"
+  },
+  {
+    "addr": "0x0067B8F0",
+    "new": "HouseClass::LoadTypeList"
+  },
+  {
+    "addr": "0x0067BDD0",
+    "new": "RulesClass::LoadTypeList"
+  },
+  {
+    "addr": "0x00683560",
+    "new": "ScenarioClass::ReadINIEntry"
+  },
+  {
+    "addr": "0x00686730",
+    "new": "CCINIClass::Cleanup"
+  },
+  {
+    "addr": "0x006896C0",
+    "new": "HouseClass::Update"
+  },
+  {
+    "addr": "0x0068EC20",
+    "new": "CellClass::CreateInstance"
+  },
+  {
+    "addr": "0x00691970",
+    "new": "CCINIClass::ReadINIEntry"
+  },
+  {
+    "addr": "0x00692F30",
+    "new": "TacticalClass::Process"
+  },
+  {
+    "addr": "0x0069EC50",
+    "new": "LocomotionClass::Initialize"
+  },
+  {
+    "addr": "0x006AF360",
+    "new": "AbstractClass::Create"
+  },
+  {
+    "addr": "0x006B04C0",
+    "new": "BuildingClass::Get"
+  },
+  {
+    "addr": "0x006B0750",
+    "new": "BuildingClass::Get"
+  },
+  {
+    "addr": "0x006B4C80",
+    "new": "CCINIClass::ReadINIEntry"
+  },
+  {
+    "addr": "0x006B6EA0",
+    "new": "AbstractClass::Create"
+  },
+  {
+    "addr": "0x006CAEC0",
+    "new": "AbstractClass::Create"
+  },
+  {
+    "addr": "0x006D3290",
+    "new": "TacticalClass::Render"
+  },
+  {
+    "addr": "0x006D3470",
+    "new": "TacticalClass::Render"
+  },
+  {
+    "addr": "0x006DA5C0",
+    "new": "BuildingClass::Process"
+  },
+  {
+    "addr": "0x006E0110",
+    "new": "ScenarioClass::Create"
+  },
+  {
+    "addr": "0x006E1440",
+    "new": "ObjectClass::Render"
+  },
+  {
+    "addr": "0x006E14A0",
+    "new": "ObjectClass::Render"
+  },
+  {
+    "addr": "0x006E1530",
+    "new": "ObjectClass::Render"
+  },
+  {
+    "addr": "0x006E15F0",
+    "new": "ObjectClass::ReadINIEntry"
+  },
+  {
+    "addr": "0x006E18B0",
+    "new": "CellClass::Find"
+  },
+  {
+    "addr": "0x006E1BD0",
+    "new": "HouseClass::Get"
+  },
+  {
+    "addr": "0x006E1C40",
+    "new": "HouseClass::Get"
+  },
+  {
+    "addr": "0x006E2660",
+    "new": "BuildingClass::Cleanup"
+  },
+  {
+    "addr": "0x006E26D0",
+    "new": "ScenarioClass::Get"
+  },
+  {
+    "addr": "0x006E30C0",
+    "new": "HouseClass::Create"
+  },
+  {
+    "addr": "0x006E3120",
+    "new": "HouseClass::Create"
+  },
+  {
+    "addr": "0x006E4090",
+    "new": "BuildingClass::Load"
+  },
+  {
+    "addr": "0x006E5ED0",
+    "new": "CCINIClass::ReadINIEntry"
+  },
+  {
+    "addr": "0x006E8220",
+    "new": "CCINIClass::ReadINIEntry"
+  },
+  {
+    "addr": "0x006EC130",
+    "new": "ObjectClass::Get"
+  },
+  {
+    "addr": "0x006ECFB0",
+    "new": "TeamClass::Create"
+  },
+  {
+    "addr": "0x006ED770",
+    "new": "HouseClass::Get"
+  },
+  {
+    "addr": "0x006EE100",
+    "new": "TacticalClass::Get"
+  },
+  {
+    "addr": "0x006F1920",
+    "new": "TechnoClass::Create"
+  },
+  {
+    "addr": "0x006F19B0",
+    "new": "CCINIClass::ReadINIEntry"
+  },
+  {
+    "addr": "0x00709290",
+    "new": "FootClass::Get"
+  },
+  {
+    "addr": "0x0071A450",
+    "new": "AbstractClass::Create"
+  },
+  {
+    "addr": "0x0071BDF0",
+    "new": "ObjectClass::Get"
+  },
+  {
+    "addr": "0x0071CA70",
+    "new": "CCINIClass::LoadTypeList"
+  },
+  {
+    "addr": "0x00720480",
+    "new": "CCINIClass::ReadINIEntry"
+  },
+  {
+    "addr": "0x00721D10",
+    "new": "CCINIClass::ReadINIEntry"
+  },
+  {
+    "addr": "0x00726630",
+    "new": "TriggerClass::Create"
+  },
+  {
+    "addr": "0x007275D0",
+    "new": "CCINIClass::ReadINIEntry"
+  },
+  {
+    "addr": "0x00728280",
+    "new": "CCINIClass::Cleanup"
+  },
+  {
+    "addr": "0x00729480",
+    "new": "FootClass::Cleanup"
+  },
+  {
+    "addr": "0x007298F0",
+    "new": "AnimClass::Get"
+  },
+  {
+    "addr": "0x00729AA0",
+    "new": "FootClass::Cleanup"
+  },
+  {
+    "addr": "0x00730D60",
+    "new": "FactoryClass::Get"
+  },
+  {
+    "addr": "0x007311C0",
+    "new": "TacticalClass::Update"
+  },
+  {
+    "addr": "0x007436E0",
+    "new": "CCINIClass::Cleanup"
+  },
+  {
+    "addr": "0x007498D0",
+    "new": "ObjectClass::Initialize"
+  },
+  {
+    "addr": "0x0074D490",
+    "new": "TacticalClass::Render"
+  },
+  {
+    "addr": "0x0074E6B0",
+    "new": "RulesClass::Reset"
+  },
+  {
+    "addr": "0x0074E930",
+    "new": "BuildingClass::Update"
+  },
+  {
+    "addr": "0x0074F960",
+    "new": "CCFileClass::Create"
+  },
+  {
+    "addr": "0x0074FA20",
+    "new": "CCFileClass::Create"
+  },
+  {
+    "addr": "0x0074FC80",
+    "new": "CCFileClass::Create"
+  },
+  {
+    "addr": "0x0075AA90",
+    "new": "LocomotionClass::Initialize"
+  },
+  {
+    "addr": "0x0075EBE0",
+    "new": "ObjectClass::Initialize"
+  },
+  {
+    "addr": "0x00761030",
+    "new": "CellClass::Get"
+  },
+  {
+    "addr": "0x0077DFD0",
+    "new": "CCINIClass::Save"
+  }
+]
