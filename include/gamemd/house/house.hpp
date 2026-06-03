@@ -221,84 +221,18 @@ public:
 
     void AcquiredThreatNode();
 
-    static bool Index_IsMP(int idx);
-    static HouseClass* FindByCountryIndex(int house_type);
-    static HouseClass* FindByIndex(int idx);
-    static int FindIndexByName(const char* name);
-    static HouseClass* FindByCountryName(const char* name);
-    static HouseClass* FindNeutral();
-    static HouseClass* FindSpecial();
-    static HouseClass* FindBySideIndex(int index);
-    static HouseClass* FindBySideName(const char* name);
-    static HouseClass* FindCivilianSide();
+    static bool IndexIsMP(int idx);
 
-    static void LoadFromINIList(void* ini);
+    void UpdateFactoriesQueues(AbstractType factory_of, bool is_naval, int build_cat) const;
 
-    struct WaypointClass* GetPlanningWaypointAt(CellStruct* coords);
-    bool GetPlanningWaypointProperties(struct WaypointClass* wpt, int& idx_path, uint8_t& idx_wp);
-    void EnsurePlanningPathExists(int idx);
-    void Update_FactoriesQueues(AbstractType factory_of, bool is_naval, int build_cat) const;
+    bool FireLightningStorm(SuperClass* super);
+    bool FireParadrop(SuperClass* super);
+    bool FirePsyDom(SuperClass* super);
+    bool FireGenMutator(SuperClass* super);
 
-    FactoryClass* GetFactoryProducing(const TechnoTypeClass* item) const;
-    BuildingTypeClass* FirstBuildableFromArray(const BuildingTypeClass** items, int count);
-
-    bool AllPrerequisitesAvailable(const TechnoTypeClass* item, const BuildingTypeClass** buildings, int count);
-
-    bool ControlledByHuman() const;
-    bool ControlledByPlayer() const;
-
-    void SendSpyPlanes(int aircraft_type_idx, int aircraft_amount, int mission, AbstractClass* target, ObjectClass* destination);
-
-    void RegisterGain(TechnoClass* techno, bool owner_change);
-    void RegisterLoss(TechnoClass* techno, bool keep_tiberium);
-
-    BuildingClass* FindBuildingOfType(int idx, int sector = -1) const;
-
-    class AnimClass* PsiWarn(class CellClass* target, class BulletClass* bullet, const char* anim_name);
-
-    bool Fire_LightningStorm(SuperClass* super);
-    bool Fire_ParaDrop(SuperClass* super);
-    bool Fire_PsyDom(SuperClass* super);
-    bool Fire_GenMutator(SuperClass* super);
-
-    bool IonSensitivesShouldBeOffline() const;
-
-    const char* get_ID() const;
-    int FindSuperWeaponIndex(SuperWeaponType type) const;
-    SuperClass* FindSuperWeapon(SuperWeaponType type) const;
-
-    int CountOwnedNow(const TechnoTypeClass* item) const;
-    int CountOwnedNow(const BuildingTypeClass* item) const;
-    int CountOwnedNow(const AircraftTypeClass* item) const;
-    int CountOwnedNow(const InfantryTypeClass* item) const;
-    int CountOwnedNow(const UnitTypeClass* item) const;
-
-    int CountOwnedAndPresent(const TechnoTypeClass* item) const;
-    int CountOwnedAndPresent(const BuildingTypeClass* item) const;
-    int CountOwnedAndPresent(const AircraftTypeClass* item) const;
-    int CountOwnedAndPresent(const InfantryTypeClass* item) const;
-    int CountOwnedAndPresent(const UnitTypeClass* item) const;
-
-    int CountOwnedEver(const TechnoTypeClass* item) const;
-    int CountOwnedEver(const BuildingTypeClass* item) const;
-    int CountOwnedEver(const AircraftTypeClass* item) const;
-    int CountOwnedEver(const InfantryTypeClass* item) const;
-    int CountOwnedEver(const UnitTypeClass* item) const;
-
-    bool HasFromSecretLab(const TechnoTypeClass* item) const;
-    bool HasAllStolenTech(const TechnoTypeClass* item) const;
-    bool HasFactoryForObject(const TechnoTypeClass* item) const;
-    bool CanExpectToBuild(const TechnoTypeClass* item) const;
-    bool CanExpectToBuild(const TechnoTypeClass* item, int idx_parent) const;
-    bool InOwners(const TechnoTypeClass* item) const;
-    bool InRequiredHouses(const TechnoTypeClass* item) const;
-    bool InForbiddenHouses(const TechnoTypeClass* item) const;
-
-    int CanBuild(const TechnoTypeClass* item, bool build_limit_only, bool allow_if_in_production) const;
-
-    int AI_BaseConstructionUpdate();
-    void AI_TryFireSW();
-    bool Fire_SW(int idx, const CellStruct& coords);
+    int  AIBaseConstructionUpdate();
+    void AITryFireSW();
+    bool FireSW(int idx, const CellStruct& coords);
 
     CellStruct* PickTargetByType(CellStruct& out, TargetType type) const;
     CellStruct PickTargetByType(TargetType type) const

@@ -87,7 +87,9 @@ void ResetIntroFlags(int* obj);           // 0x6B8AE0 (ScenarioClass::ResetIntro
 void FindGameDirectoryCD(const char* path); // 0x47AB10 (Game::FindGameDirectoryCD)
 void NetworkAssignAddress(void* addr, void* port, int arg); // 0x53ECE0 (NetworkAddress::Assign)
 void NetworkGetField(int port);           // 0x542430 (Network::GetField)
-void sub_7B2720(int value);              // 0x7B2720
+// IDA 0x7B2720 — SessionClass::SetInstance
+struct SessionClass;
+void SessionClassSetInstance(int value);
 int  HashString(const char* str);         // 0x5F9E80 (Checksummer::HashString)
 const wchar_t* GetCSFString(const wchar_t* key, const char* file, int line); // 0x734E60 (GetStringCSF)
 

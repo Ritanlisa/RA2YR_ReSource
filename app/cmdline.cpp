@@ -119,8 +119,8 @@ int ParseCommandLine(int argc, char** argv)
             continue;
         }
 
-        // 0x52F8D6: sub_7B2720(0)
-        sub_7B2720(0);
+        // 0x52F8D6: SessionClassSetInstance(0)
+        SessionClassSetInstance(0);
 
         // 0x52F8E1: -MPDEBUG
         if (strstr(tok, "-MPDEBUG")) {
@@ -131,7 +131,7 @@ int ParseCommandLine(int argc, char** argv)
         // 0x52F901: -DROP=
         if (strstr(tok, "-DROP=")) {
             int dropVal = (unsigned short)atoi(&tok[strlen("-DROP=")]);
-            sub_7B2720(dropVal);
+            SessionClassSetInstance(dropVal);
             continue;
         }
 
@@ -220,6 +220,12 @@ int ParseCommandLine(int argc, char** argv)
     }
 
     return 1;
+}
+
+// IDA 0x7B2720 — SessionClass::SetInstance: registers global session pointer
+static void* g_SessionClass_Instance = nullptr;
+void SessionClassSetInstance(int value) {
+    g_SessionClass_Instance = (void*)(intptr_t)value;
 }
 
 } // namespace gamemd
