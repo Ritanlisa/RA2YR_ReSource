@@ -206,14 +206,14 @@ public:
     void TakeMoney(int amount);
     void GiveMoney(int amount);
 
-    bool CanTransactMoney(int amount) const { return amount > 0 || Available_Money() >= -amount; }
+    bool CanTransactMoney(int amount) const { return amount > 0 || AvailableMoney() >= -amount; }
     void TransactMoney(int amount)
     {
         if (amount > 0) GiveMoney(amount);
         else TakeMoney(-amount);
     }
 
-    int Available_Money() const;
+    int AvailableMoney() const;
 
     void GiveTiberium(float amount, int type);
     void UpdateAllSilos(int prev_storage, int prev_total_storage);

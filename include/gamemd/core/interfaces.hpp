@@ -60,7 +60,7 @@ public:
     virtual long __stdcall ID_Number() const = 0;
     virtual BSTR __stdcall Name() const = 0;
     virtual IApplication* __stdcall Get_Application() = 0;
-    virtual long __stdcall Available_Money() const = 0;
+    virtual long __stdcall AvailableMoney() const = 0;
     virtual long __stdcall Available_Storage() const = 0;
     virtual long __stdcall Power_Output() const = 0;
     virtual long __stdcall Power_Drain() const = 0;
