@@ -89,6 +89,7 @@ if(WIN32)
         comctl32
         ddraw
         dxguid
+        imm32
     )
 
     # Post-build: copy cnc-ddraw runtime dll + config to output directory

@@ -1,0 +1,1553 @@
+{
+  "addr": "0x6BB9A0",
+  "code": "int __stdcall WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd)\n{\n  HWND WindowA; // eax\n  HWND v6; // esi\n  int v7; // edi\n  char *v8; // eax\n  char *v9; // esi\n  int v10; // esi\n  int v11; // eax\n  int v12; // eax\n  int v13; // eax\n  int v14; // esi\n  char *i; // eax\n  int *v16; // eax\n  _DWORD *v17; // eax\n  _DWORD *v18; // esi\n  size_t v19; // eax\n  const WCHAR *v20; // eax\n  _SCOPETABLE_ENTRY *v21; // esi\n  int v22; // eax\n  HMODULE LibraryA; // eax\n  HMODULE v24; // edi\n  void (*ProcAddress)(void); // eax\n  void *v26; // eax\n  IUnknown *v27; // eax\n  void *v28; // eax\n  IUnknown *v29; // eax\n  void *v30; // eax\n  IUnknown *v31; // eax\n  void *v32; // eax\n  IUnknown *v33; // eax\n  void *v34; // eax\n  IUnknown *v35; // eax\n  void *v36; // eax\n  IUnknown *v37; // eax\n  void *v38; // eax\n  IUnknown *v39; // eax\n  void *v40; // eax\n  IUnknown *v41; // eax\n  void *v42; // eax\n  IUnknown *v43; // eax\n  void *v44; // eax\n  IUnknown *v45; // eax\n  void *v46; // eax\n  IUnknown *v47; // eax\n  void *v48; // eax\n  IUnknown *v49; // eax\n  void *v50; // eax\n  IUnknown *v51; // eax\n  void *v52; // eax\n  IUnknown *v53; // eax\n  void *v54; // eax\n  IUnknown *v55; // eax\n  void *v56; // eax\n  IUnknown *v57; // eax\n  void *v58; // eax\n  IUnknown *v59; // eax\n  void *v60; // eax\n  IUnknown *v61; // eax\n  void *v62; // eax\n  IUnknown *v63; // eax\n  void *v64; // eax\n  IUnknown *v65; // eax\n  void *v66; // eax\n  IUnknown *v67; // eax\n  void *v68; // eax\n  IUnknown *v69; // eax\n  void *v70; // eax\n  IUnknown *v71; // eax\n  void *v72; // eax\n  IUnknown *v73; // eax\n  void *v74; // eax\n  IUnknown *v75; // eax\n  void *v76; // eax\n  IUnknown *v77; // eax\n  void *v78; // eax\n  IUnknown *v79; // eax\n  void *v80; // eax\n  IUnknown *v81; // eax\n  void *v82; // eax\n  IUnknown *v83; // eax\n  void *v84; // eax\n  IUnknown *v85; // eax\n  void *v86; // eax\n  IUnknown *v87; // eax\n  void *v88; // eax\n  IUnknown *v89; // eax\n  void *v90; // eax\n  IUnknown *v91; // eax\n  void *v92; // eax\n  IUnknown *v93; // eax\n  void *v94; // eax\n  IUnknown *v95; // eax\n  void *v96; // eax\n  IUnknown *v97; // eax\n  void *v98; // eax\n  IUnknown *v99; // eax\n  void *v100; // eax\n  IUnknown *v101; // eax\n  void *v102; // eax\n  IUnknown *v103; // eax\n  void *v104; // eax\n  IUnknown *v105; // eax\n  void *v106; // eax\n  IUnknown *v107; // eax\n  void *v108; // eax\n  IUnknown *v109; // eax\n  void *v110; // eax\n  IUnknown *v111; // eax\n  void *v112; // eax\n  IUnknown *v113; // eax\n  void *v114; // eax\n  IUnknown *v115; // eax\n  void *v116; // eax\n  IUnknown *v117; // eax\n  void *v118; // eax\n  IUnknown *v119; // eax\n  void *v120; // eax\n  IUnknown *v121; // eax\n  void *v122; // eax\n  IUnknown *v123; // eax\n  void *v124; // eax\n  IUnknown *v125; // eax\n  void *v126; // eax\n  IUnknown *v127; // eax\n  void *v128; // eax\n  IUnknown *v129; // eax\n  void *v130; // eax\n  IUnknown *v131; // eax\n  void *v132; // eax\n  IUnknown *v133; // eax\n  void *v134; // eax\n  IUnknown *v135; // eax\n  void *v136; // eax\n  IUnknown *v137; // eax\n  void *v138; // eax\n  IUnknown *v139; // eax\n  void *v140; // eax\n  IUnknown *v141; // eax\n  void *v142; // eax\n  IUnknown *v143; // eax\n  void *v144; // eax\n  IUnknown *v145; // eax\n  void *v146; // eax\n  IUnknown *v147; // eax\n  void *v148; // eax\n  IUnknown *v149; // eax\n  void *v150; // eax\n  IUnknown *v151; // eax\n  void *v152; // eax\n  IUnknown *v153; // eax\n  void *v154; // eax\n  IUnknown *v155; // eax\n  void *v156; // eax\n  IUnknown *v157; // eax\n  void *v158; // eax\n  IUnknown *v159; // eax\n  void *v160; // eax\n  IUnknown *v161; // eax\n  void *v162; // eax\n  IUnknown *v163; // eax\n  void *v164; // eax\n  IUnknown *v165; // eax\n  void *v166; // eax\n  IUnknown *v167; // eax\n  void *v168; // eax\n  IUnknown *v169; // eax\n  void *v170; // eax\n  IUnknown *v171; // eax\n  void *v172; // eax\n  IUnknown *v173; // eax\n  void *v174; // eax\n  IUnknown *v175; // eax\n  void *v176; // eax\n  IUnknown *v177; // eax\n  void *v178; // eax\n  IUnknown *v179; // eax\n  int v180; // esi\n  std::codecvt_base *v181; // ecx\n  size_t v182; // eax\n  const WCHAR *v183; // eax\n  bool v184; // al\n  int v185; // edi\n  int v186; // eax\n  int v187; // ecx\n  _DWORD *v188; // eax\n  int v189; // esi\n  int v190; // eax\n  int v191; // ecx\n  int v192; // eax\n  const WCHAR *v193; // [esp-4h] [ebp-E40h]\n  const WCHAR *v194; // [esp-4h] [ebp-E40h]\n  const WCHAR *v195; // [esp-4h] [ebp-E40h]\n  const WCHAR *v196; // [esp-4h] [ebp-E40h]\n  const WCHAR *v197; // [esp-4h] [ebp-E40h]\n  _BYTE v198[516]; // [esp+60h] [ebp-DDCh] BYREF\n  _BYTE v199[32]; // [esp+264h] [ebp-BD8h] BYREF\n  _BYTE v200[380]; // [esp+284h] [ebp-BB8h] BYREF\n  LPVOID ppv[2]; // [esp+400h] [ebp-A3Ch] BYREF\n  DWORD dwRegister[2]; // [esp+408h] [ebp-A34h] BYREF\n  bool v203; // [esp+410h] [ebp-A2Ch]\n  char v204; // [esp+428h] [ebp-A14h] BYREF\n  _BYTE v205[4]; // [esp+42Ch] [ebp-A10h] BYREF\n  int v206; // [esp+430h] [ebp-A0Ch] BYREF\n  __int16 v207; // [esp+434h] [ebp-A08h]\n  char String[572]; // [esp+444h] [ebp-9F8h] BYREF\n  int v209; // [esp+680h] [ebp-7BCh]\n  int v210; // [esp+684h] [ebp-7B8h]\n  int v211; // [esp+688h] [ebp-7B4h]\n  int v212; // [esp+68Ch] [ebp-7B0h]\n  _DWORD v213[4]; // [esp+690h] [ebp-7ACh] BYREF\n  _DWORD v214[31]; // [esp+6A0h] [ebp-79Ch] BYREF\n  int v215; // [esp+71Ch] [ebp-720h]\n  int v216; // [esp+720h] [ebp-71Ch] BYREF\n  char v217; // [esp+724h] [ebp-718h]\n  int v218; // [esp+730h] [ebp-70Ch]\n  char Drive[4]; // [esp+73Ch] [ebp-700h] BYREF\n  char Dir[260]; // [esp+740h] [ebp-6FCh] BYREF\n  CHAR Filename[132]; // [esp+844h] [ebp-5F8h] BYREF\n  wchar_t Buffer[512]; // [esp+8C8h] [ebp-574h] BYREF\n  char *FullPath; // [esp+CC8h] [ebp-174h] BYREF\n  char v224; // [esp+CCCh] [ebp-170h] BYREF\n  CHAR PathName[260]; // [esp+D1Ch] [ebp-120h] BYREF\n  int v226; // [esp+E20h] [ebp-1Ch]\n  CPPEH_RECORD ms_exc; // [esp+E24h] [ebp-18h]\n\n  g_hInstance = hInstance; /*0x6bb9cc*/\n  dword_B730E8 = GetCurrentThreadId(); /*0x6bb9d8*/\n  Debug::Log(\"%d-%d\\n\", 1660, 152); /*0x6bb9ec*/\n  Debug::Log(\"%d-%d\\n\", 1661, 76); /*0x6bb9fd*/\n  Debug::Log(\"%d-%d\\n\", 1662, 76); /*0x6bba0e*/\n  Debug::Log(\"%d-%d\\n\", 1663, 19); /*0x6bba1f*/\n  Debug::Log(\"%d-%d\\n\", 1664, 3608); /*0x6bba33*/\n  Debug::Log(\"%d-%d\\n\", 1665, 1752); /*0x6bba47*/\n  Debug::Log(\"%d-%d\\n\", 1666, 3600); /*0x6bba5e*/\n  Debug::Log(\"%d-%d\\n\", 1667, 272); /*0x6bba72*/\n  Debug::Log(\"%d-%d\\n\", 1668, 456); /*0x6bba86*/\n  Debug::Log(\"%d-%d\\n\", 1669, 888); /*0x6bba9a*/\n  Debug::Log(\"%d-%d\\n\", 1670, 120); /*0x6bbaab*/\n  Debug::Log(\"%d-%d\\n\", 1671, 1824); /*0x6bbabf*/\n  Debug::Log(\"%d-%d\\n\", 1672, 6040); /*0x6bbad6*/\n  Debug::Log(\"%d-%d\\n\", 1673, 352); /*0x6bbaea*/\n  Debug::Log(\"%d-%d\\n\", 1674, 760); /*0x6bbafe*/\n  Debug::Log(\"%d-%d\\n\", 1675, 328); /*0x6bbb12*/\n  Debug::Log(\"%d-%d\\n\", 1676, 116); /*0x6bbb23*/\n  Debug::Log(\"%d-%d\\n\", 1677, 90296); /*0x6bbb37*/\n  Debug::Log(\"%d-%d\\n\", 1678, 432); /*0x6bbb4e*/\n  Debug::Log(\"%d-%d\\n\", 1679, 1776); /*0x6bbb62*/\n  Debug::Log(\"%d-%d\\n\", 1680, 3792); /*0x6bbb76*/\n  Debug::Log(\"%d-%d\\n\", 1681, 24); /*0x6bbb87*/\n  Debug::Log(\"%d-%d\\n\", 1682, 21868); /*0x6bbb9b*/\n  Debug::Log(\"%d-%d\\n\", 1683, 3608); /*0x6bbbaf*/\n  Debug::Log(\"%d-%d\\n\", 1684, 176); /*0x6bbbc6*/\n  Debug::Log(\"%d-%d\\n\", 1685, 700); /*0x6bbbda*/\n  Debug::Log(\"%d-%d\\n\", 1686, 176); /*0x6bbbee*/\n  Debug::Log(\"%d-%d\\n\", 1687, 676); /*0x6bbc02*/\n  Debug::Log(\"%d-%d\\n\", 1688, 212); /*0x6bbc16*/\n  Debug::Log(\"%d-%d\\n\", 1689, 160); /*0x6bbc2a*/\n  Debug::Log(\"%d-%d\\n\", 1690, 248); /*0x6bbc41*/\n  Debug::Log(\"%d-%d\\n\", 1691, 224); /*0x6bbc55*/\n  Debug::Log(\"%d-%d\\n\", 1692, 700); /*0x6bbc69*/\n  Debug::Log(\"%d-%d\\n\", 1693, 72); /*0x6bbc7a*/\n  Debug::Log(\"%d-%d\\n\", 1694, 180); /*0x6bbc8e*/\n  Debug::Log(\"%d-%d\\n\", 1695, 164); /*0x6bbca2*/\n  Debug::Log(\"%d-%d\\n\", 1696, 56); /*0x6bbcb6*/\n  Debug::Log(\"%d-%d\\n\", 1697, 2280); /*0x6bbcca*/\n  Debug::Log(\"%d-%d\\n\", 1698, 3704); /*0x6bbcde*/\n  Debug::Log(\"%d-%d\\n\", 1699, 14144); /*0x6bbcf2*/\n  Debug::Log(\"%d-%d\\n\", 1700, 256); /*0x6bbd06*/\n  Debug::Log(\"%d-%d\\n\", 1701, 128); /*0x6bbd1a*/\n  Debug::Log(\"%d-%d\\n\", 1702, 432); /*0x6bbd31*/\n  Debug::Log(\"%d-%d\\n\", 1703, 6336); /*0x6bbd45*/\n  Debug::Log(\"%d-%d\\n\", 1704, 1024); /*0x6bbd59*/\n  Debug::Log(\"%d-%d\\n\", 1705, 1); /*0x6bbd6a*/\n  Debug::Log(\"%d-%d\\n\", 1706, 1312); /*0x6bbd7e*/\n  Debug::Log(\"%d-%d\\n\", 1707, 240); /*0x6bbd92*/\n  Debug::Log(\"%d-%d\\n\", 1708, 212); /*0x6bbda9*/\n  Debug::Log(\"%d-%d\\n\", 1709, 8); /*0x6bbdba*/\n  Debug::Log(\"%d-%d\\n\", 1710, 28); /*0x6bbdcb*/\n  Debug::Log(\"%d-%d\\n\", 1711, 4); /*0x6bbddc*/\n  Debug::Log(\"%d-%d\\n\", 1712, 8); /*0x6bbded*/\n  Debug::Log(\"%d-%d\\n\", 1713, 16); /*0x6bbdfe*/\n  Debug::Log(\"%d-%d\\n\", 1714, 32); /*0x6bbe12*/\n  Debug::Log(\"%d-%d\\n\", 1715, 24); /*0x6bbe23*/\n  if ( !(unsigned __int8)CopyProtection::CheckLauncher() ) /*0x6bbe2b*/\n  {\n    Debug::Log(aLauncherNotRun); /*0x6bbe39*/\n    return 0; /*0x6bbe53*/\n  }\n  dword_B0BCE4 = CreateMutexA(0, 0, a29e3bb2a2f3611); /*0x6bbe65*/\n  if ( GetLastError() == 183 ) /*0x6bbe75*/\n  {\n    WindowA = FindWindowA(a29e3bb2a2f3611, 0); /*0x6bbe7e*/\n    v6 = WindowA; /*0x6bbe84*/\n    if ( WindowA ) /*0x6bbe88*/\n    {\n      SetForegroundWindow(WindowA); /*0x6bbe8b*/\n      ShowWindow(v6, 9); /*0x6bbe94*/\n    }\n    if ( dword_B0BCE4 ) /*0x6bbea1*/\n    {\n      CloseHandle(dword_B0BCE4); /*0x6bbea4*/\n      dword_B0BCE4 = 0; /*0x6bbeaa*/\n    }\n    Debug::Log(aTibsunIsAlread); /*0x6bbeb9*/\n    return 0; /*0x6bbed3*/\n  }\n  Debug::Log(aCreateAppmutex); /*0x6bbedb*/\n  do /*0x6bbfa7*/\n  {\n    dword_B0BCE8 = OpenMutexA(0x1F0001u, 0, a01af9993349211); /*0x6bbefd*/\n    if ( dword_B0BCE8 ) /*0x6bbf04*/\n    {\n      Debug::Log(aWaitingForAuto); /*0x6bbf0b*/\n      if ( WaitForSingleObject(dword_B0BCE8, 0x7530u) == -1 ) /*0x6bbf27*/\n      {\n        Debug::Log(aFailedWaitingF); /*0x6bbf2e*/\n        CloseHandle(dword_B0BCE8); /*0x6bbf3d*/\n        dword_B0BCE8 = 0; /*0x6bbf3f*/\n      }\n    }\n    if ( dword_B0BCE8 ) /*0x6bbf50*/\n      break; /*0x6bbf50*/\n    dword_B0BCE8 = CreateMutexA(0, 0, a01af9993349211); /*0x6bbf61*/\n    if ( GetLastError() == 183 ) /*0x6bbf71*/\n    {\n      CloseHandle(dword_B0BCE8); /*0x6bbf7a*/\n      dword_B0BCE8 = 0; /*0x6bbf7c*/\n      Sleep(0x9C4u); /*0x6bbf8b*/\n    }\n    else\n    {\n      Debug::Log(aCreateAutoplay); /*0x6bbf98*/\n    }\n  }\n  while ( !dword_B0BCE8 ); /*0x6bbfa7*/\n  Debug::Log(aGotAutoplaymut); /*0x6bbfb2*/\n  _controlfp(0x300u, 0x300u); /*0x6bbfc1*/\n  sub_7C5EE4(); /*0x6bbfc9*/\n  GetModuleFileNameA(hInstance, Filename, 0x84u); /*0x6bbfdb*/\n  v7 = 1; /*0x6bbfe6*/\n  v226 = 1; /*0x6bbfe8*/\n  FullPath = Filename; /*0x6bbff1*/\n  v8 = strtok(lpCmdLine, asc_830A14); /*0x6bc000*/\n  v9 = &v224; /*0x6bc008*/\n  do /*0x6bc031*/\n  {\n    if ( !v8 ) /*0x6bc010*/\n      break; /*0x6bc010*/\n    *(_DWORD *)v9 = String::Trim(v8); /*0x6bc019*/\n    ++v7; /*0x6bc01b*/\n    v9 += 4; /*0x6bc01c*/\n    v8 = strtok(0, asc_830A14); /*0x6bc026*/\n  }\n  while ( v7 < 20 ); /*0x6bc031*/\n  v226 = v7; /*0x6bc033*/\n  _splitpath(FullPath, Drive, Dir, 0, 0); /*0x6bc04f*/\n  _makepath(PathName, Drive, Dir, 0, 0); /*0x6bc06d*/\n  SetCurrentDirectoryA(PathName); /*0x6bc07c*/\n  v10 = 1; /*0x6bc082*/\n  if ( (unsigned __int8)ParseCommandLine(v7, &FullPath) )\n  {\n    if ( __2_YAPAXI_Z(0x24u) ) /*0x6bc09b*/\n      v11 = RawFileClass::Construct(aRa2mdIni); /*0x6bc0ae*/\n    else\n      v11 = 0; /*0x6bc0b5*/\n    v218 = v11; /*0x6bc0b7*/\n    CCINIClass::Load(v11, 0, 0); /*0x6bc0c7*/\n    Game_bVideoBackBuffer = INIClass::ReadBool_Overwrite(aVideo, aVideobackbuffe, 1); /*0x6bc0e1*/\n    byte_A8ED63 = INIClass::ReadBool_Overwrite(aVideo, aAllowmodetoggl, 0); /*0x6bc0fc*/\n    g_CommandLineFlags = INIClass::ReadInt_Overwrite(aVideo, aScreenwidth, g_CommandLineFlags); /*0x6bc11c*/\n    g_CommandLineParam = INIClass::ReadInt_Overwrite(aVideo, aScreenheight, g_CommandLineParam); /*0x6bc13c*/\n    v12 = INIClass::ReadInt_Overwrite(aNetwork, aSocket, 0); /*0x6bc152*/\n    if ( v12 > 0 ) /*0x6bc159*/\n    {\n      v13 = v12 + 0x4000; /*0x6bc15b*/\n      if ( v13 >= 0x4000 && v13 < 0x8000 ) /*0x6bc16c*/\n        Network::GetField(v13); /*0x6bc174*/\n    }\n    memset(String, 0, 0x200u); /*0x6bc186*/\n    if ( INIClass::GetString((int)aNetwork, (int)aDestnet, 0, String, 0x200u) && String && strlen(String) ) /*0x6bc1cb*/\n    {\n      v14 = 0; /*0x6bc1db*/\n      for ( i = strtok(String, asc_826598); i; i = strtok(0, asc_826598) ) /*0x6bc1f3*/\n      {\n        sscanf(i, \"%x\", &v204); /*0x6bc202*/\n        v205[v14++] = v204; /*0x6bc215*/\n      }\n      if ( v14 >= 4 ) /*0x6bc242*/\n      {\n        dword_A8D5FC = 1; /*0x6bc244*/\n        v206 = -1; /*0x6bc24d*/\n        v207 = -1; /*0x6bc253*/\n        v16 = (int *)NetworkAddress::Assign(v205, &v206, 0); /*0x6bc270*/\n        dword_A8D600 = *v16; /*0x6bc277*/\n        dword_A8D604 = v16[1]; /*0x6bc280*/\n        dword_A8D608 = v16[2]; /*0x6bc289*/\n      }\n    }\n    v17 = __2_YAPAXI_Z(0x320u); /*0x6bc293*/\n    v18 = v17; /*0x6bc29b*/\n    if ( v17 ) /*0x6bc29f*/\n    {\n      sub_54EE60(v17); /*0x6bc2a3*/\n      v18[199] = 1; /*0x6bc2a8*/\n      g_BinkMoviePlayer = v18; /*0x6bc2ae*/\n    }\n    else\n    {\n      g_BinkMoviePlayer = 0; /*0x6bc2b6*/\n    }\n    if ( (unsigned int)DiskSpace::CheckAvailable() < 0x2000 ) /*0x6bc2ca*/\n    {\n      v19 = GetStringCSF(aTxtCriticallyL, (int)aDRa2mdpostStar, 1931); /*0x6bc2df*/\n      swprintf(Buffer, v19, 0); /*0x6bc2ec*/\n      v20 = (const WCHAR *)GetStringCSF(aTxtShortTitle, (int)aDRa2mdpostStar, 1932); /*0x6bc307*/\n      if ( WideMessageBox(v20, 0x24u) == 7 ) /*0x6bc31d*/\n      {\n        OleUninitialize(); /*0x6bc31f*/\n        return 1; /*0x6bc337*/\n      }\n    }\n    OleInitialize(0); /*0x6bc33c*/\n    v21 = (_SCOPETABLE_ENTRY *)&off_7F3710; /*0x6bc342*/\n    while ( 1 ) /*0x6bc34d*/\n    {\n      ppv[0] = 0; /*0x6bc34d*/\n      v22 = sub_6BEDB0(ppv, (IID *)v21->EnclosingLevel, 0, 7u); /*0x6bc364*/\n      v203 = v22 < 0; /*0x6bc36e*/\n      if ( v22 < 0 ) /*0x6bc376*/\n      {\n        v203 = 0; /*0x6bc378*/\n        LibraryA = LoadLibraryA((LPCSTR)v21->FilterFunc); /*0x6bc383*/\n        v24 = LibraryA; /*0x6bc385*/\n        if ( LibraryA ) /*0x6bc389*/\n        {\n          ProcAddress = (void (*)(void))GetProcAddress(LibraryA, aDllregisterser); /*0x6bc391*/\n          if ( !ProcAddress || (ProcAddress(), sub_6BEDB0(ppv, (IID *)v21->EnclosingLevel, 0, 7u) < 0) ) /*0x6bc3b1*/\n            v203 = 1; /*0x6bc3b3*/\n          FreeLibrary(v24); /*0x6bc3bb*/\n        }\n        else\n        {\n          v203 = 1; /*0x6bc3c3*/\n        }\n      }\n      if ( v203 ) /*0x6bc3d2*/\n        break; /*0x6bc3d2*/\n      if ( !ppv[0] ) /*0x6bc3dc*/\n        WinAPI::Wrapper(-2147467261); /*0x6bc3e3*/\n      (*(void (__stdcall **)(LPVOID))(*(_DWORD *)ppv[0] + 8))(ppv[0]); /*0x6bc3f1*/\n      ppv[0] = 0; /*0x6bc3f4*/\n      sub_6C61C0(ppv); /*0x6bc404*/\n      v21 = (_SCOPETABLE_ENTRY *)((char *)v21 + 8); /*0x6bc409*/\n      if ( (int)v21 >= (int)&stru_7F3718 ) /*0x6bc412*/\n        goto LABEL_56; /*0x6bc412*/\n    }\n    sub_6C61C0(ppv); /*0x6bc420*/\nLABEL_56:\n    RegisterClassesCOM(); /*0x6bc425*/\n    CoRegisterClassObject(&rguid, &pUnk, 1u, 1u, dwRegister); /*0x6bc445*/\n    DynamicVector::Add(dwRegister); /*0x6bc453*/\n    v26 = __2_YAPAXI_Z(8u); /*0x6bc45a*/\n    if ( v26 ) /*0x6bc464*/\n      v27 = (IUnknown *)sub_6BEE40(v26); /*0x6bc468*/\n    else\n      v27 = 0; /*0x6bc46f*/\n    CoRegisterClassObject(&stru_7E9540, v27, 1u, 1u, dwRegister); /*0x6bc482*/\n    DynamicVector::Add(dwRegister); /*0x6bc490*/\n    v28 = __2_YAPAXI_Z(8u); /*0x6bc497*/\n    if ( v28 ) /*0x6bc4a1*/\n      v29 = (IUnknown *)sub_6BEFC0(v28); /*0x6bc4a5*/\n    else\n      v29 = 0; /*0x6bc4ac*/\n    CoRegisterClassObject(&stru_7E9720, v29, 1u, 1u, dwRegister); /*0x6bc4bf*/\n    DynamicVector::Add(dwRegister); /*0x6bc4cd*/\n    v30 = __2_YAPAXI_Z(8u); /*0x6bc4d4*/\n    if ( v30 ) /*0x6bc4de*/\n      v31 = (IUnknown *)sub_6BF140(v30); /*0x6bc4e2*/\n    else\n      v31 = 0; /*0x6bc4e9*/\n    CoRegisterClassObject(&stru_7E95E0, v31, 1u, 1u, dwRegister); /*0x6bc4fc*/\n    DynamicVector::Add(dwRegister); /*0x6bc50a*/\n    v32 = __2_YAPAXI_Z(8u); /*0x6bc511*/\n    if ( v32 ) /*0x6bc51b*/\n      v33 = (IUnknown *)sub_6BF2C0(v32); /*0x6bc51f*/\n    else\n      v33 = 0; /*0x6bc526*/\n    CoRegisterClassObject(&stru_7E9740, v33, 1u, 1u, dwRegister); /*0x6bc539*/\n    DynamicVector::Add(dwRegister); /*0x6bc547*/\n    v34 = __2_YAPAXI_Z(8u); /*0x6bc54e*/\n    if ( v34 ) /*0x6bc558*/\n      v35 = (IUnknown *)sub_6BF440(v34); /*0x6bc55c*/\n    else\n      v35 = 0; /*0x6bc563*/\n    CoRegisterClassObject(&stru_7E9570, v35, 1u, 1u, dwRegister); /*0x6bc576*/\n    DynamicVector::Add(dwRegister); /*0x6bc584*/\n    v36 = __2_YAPAXI_Z(8u); /*0x6bc58b*/\n    if ( v36 ) /*0x6bc595*/\n      v37 = (IUnknown *)sub_6BF5C0(v36); /*0x6bc599*/\n    else\n      v37 = 0; /*0x6bc5a0*/\n    CoRegisterClassObject(&stru_7E9580, v37, 1u, 1u, dwRegister); /*0x6bc5b3*/\n    DynamicVector::Add(dwRegister); /*0x6bc5c1*/\n    v38 = __2_YAPAXI_Z(8u); /*0x6bc5c8*/\n    if ( v38 ) /*0x6bc5d2*/\n      v39 = (IUnknown *)sub_6BF740(v38); /*0x6bc5d6*/\n    else\n      v39 = 0; /*0x6bc5dd*/\n    CoRegisterClassObject(&stru_7E9950, v39, 1u, 1u, dwRegister); /*0x6bc5f0*/\n    DynamicVector::Add(dwRegister); /*0x6bc5fe*/\n    v40 = __2_YAPAXI_Z(8u); /*0x6bc605*/\n    if ( v40 ) /*0x6bc60f*/\n      v41 = (IUnknown *)sub_6BF8C0(v40); /*0x6bc613*/\n    else\n      v41 = 0; /*0x6bc61a*/\n    CoRegisterClassObject(&stru_7E9930, v41, 1u, 1u, dwRegister); /*0x6bc62d*/\n    DynamicVector::Add(dwRegister); /*0x6bc63b*/\n    v42 = __2_YAPAXI_Z(8u); /*0x6bc642*/\n    if ( v42 ) /*0x6bc64c*/\n      v43 = (IUnknown *)sub_6BFA40(v42); /*0x6bc650*/\n    else\n      v43 = 0; /*0x6bc657*/\n    CoRegisterClassObject(&stru_7E9940, v43, 1u, 1u, dwRegister); /*0x6bc66a*/\n    DynamicVector::Add(dwRegister); /*0x6bc678*/\n    v44 = __2_YAPAXI_Z(8u); /*0x6bc67f*/\n    if ( v44 ) /*0x6bc689*/\n      v45 = (IUnknown *)sub_6BFBC0(v44); /*0x6bc68d*/\n    else\n      v45 = 0; /*0x6bc694*/\n    CoRegisterClassObject(&stru_7E98F0, v45, 1u, 1u, dwRegister); /*0x6bc6a7*/\n    DynamicVector::Add(dwRegister); /*0x6bc6b5*/\n    v46 = __2_YAPAXI_Z(8u); /*0x6bc6bc*/\n    if ( v46 ) /*0x6bc6c6*/\n      v47 = (IUnknown *)sub_6BFD40(v46); /*0x6bc6ca*/\n    else\n      v47 = 0; /*0x6bc6d1*/\n    CoRegisterClassObject(&stru_7E9910, v47, 1u, 1u, dwRegister); /*0x6bc6e4*/\n    DynamicVector::Add(dwRegister); /*0x6bc6f2*/\n    v48 = __2_YAPAXI_Z(8u); /*0x6bc6f9*/\n    if ( v48 ) /*0x6bc703*/\n      v49 = (IUnknown *)sub_6BFEC0(v48); /*0x6bc707*/\n    else\n      v49 = 0; /*0x6bc70e*/\n    CoRegisterClassObject(&stru_7E9920, v49, 1u, 1u, dwRegister); /*0x6bc721*/\n    DynamicVector::Add(dwRegister); /*0x6bc72f*/\n    v50 = __2_YAPAXI_Z(8u); /*0x6bc736*/\n    if ( v50 ) /*0x6bc740*/\n      v51 = (IUnknown *)sub_6C0040(v50); /*0x6bc744*/\n    else\n      v51 = 0; /*0x6bc74b*/\n    CoRegisterClassObject(&stru_7E9750, v51, 1u, 1u, dwRegister); /*0x6bc75e*/\n    DynamicVector::Add(dwRegister); /*0x6bc76c*/\n    v52 = __2_YAPAXI_Z(8u); /*0x6bc773*/\n    if ( v52 ) /*0x6bc77d*/\n      v53 = (IUnknown *)sub_6C01C0(v52); /*0x6bc781*/\n    else\n      v53 = 0; /*0x6bc788*/\n    CoRegisterClassObject(&stru_7E9900, v53, 1u, 1u, dwRegister); /*0x6bc79b*/\n    DynamicVector::Add(dwRegister); /*0x6bc7a9*/\n    v54 = __2_YAPAXI_Z(8u); /*0x6bc7b0*/\n    if ( v54 ) /*0x6bc7ba*/\n      v55 = (IUnknown *)sub_6C0340(v54); /*0x6bc7be*/\n    else\n      v55 = 0; /*0x6bc7c5*/\n    CoRegisterClassObject(&stru_7E9730, v55, 1u, 1u, dwRegister); /*0x6bc7d8*/\n    DynamicVector::Add(dwRegister); /*0x6bc7e6*/\n    v56 = __2_YAPAXI_Z(8u); /*0x6bc7ed*/\n    if ( v56 ) /*0x6bc7f7*/\n      v57 = (IUnknown *)sub_6C04C0(v56); /*0x6bc7fb*/\n    else\n      v57 = 0; /*0x6bc802*/\n    CoRegisterClassObject(&stru_7E9850, v57, 1u, 1u, dwRegister); /*0x6bc815*/\n    DynamicVector::Add(dwRegister); /*0x6bc823*/\n    v58 = __2_YAPAXI_Z(8u); /*0x6bc82a*/\n    if ( v58 ) /*0x6bc834*/\n      v59 = (IUnknown *)sub_6C0640(v58); /*0x6bc838*/\n    else\n      v59 = 0; /*0x6bc83f*/\n    CoRegisterClassObject(&stru_7E98D0, v59, 1u, 1u, dwRegister); /*0x6bc852*/\n    DynamicVector::Add(dwRegister); /*0x6bc860*/\n    v60 = __2_YAPAXI_Z(8u); /*0x6bc867*/\n    if ( v60 ) /*0x6bc871*/\n      v61 = (IUnknown *)sub_6C07C0(v60); /*0x6bc875*/\n    else\n      v61 = 0; /*0x6bc87c*/\n    CoRegisterClassObject(&stru_7E98E0, v61, 1u, 1u, dwRegister); /*0x6bc88f*/\n    DynamicVector::Add(dwRegister); /*0x6bc89d*/\n    v62 = __2_YAPAXI_Z(8u); /*0x6bc8a4*/\n    if ( v62 ) /*0x6bc8ae*/\n      v63 = (IUnknown *)sub_6C0940(v62); /*0x6bc8b2*/\n    else\n      v63 = 0; /*0x6bc8b9*/\n    CoRegisterClassObject(&stru_7E9860, v63, 1u, 1u, dwRegister); /*0x6bc8cc*/\n    DynamicVector::Add(dwRegister); /*0x6bc8da*/\n    v64 = __2_YAPAXI_Z(8u); /*0x6bc8e1*/\n    if ( v64 ) /*0x6bc8eb*/\n      v65 = (IUnknown *)sub_6C0AC0(v64); /*0x6bc8ef*/\n    else\n      v65 = 0; /*0x6bc8f6*/\n    CoRegisterClassObject(&stru_7E9870, v65, 1u, 1u, dwRegister); /*0x6bc909*/\n    DynamicVector::Add(dwRegister); /*0x6bc917*/\n    v66 = __2_YAPAXI_Z(8u); /*0x6bc91e*/\n    if ( v66 ) /*0x6bc928*/\n      v67 = (IUnknown *)sub_6C0C40(v66); /*0x6bc92c*/\n    else\n      v67 = 0; /*0x6bc933*/\n    CoRegisterClassObject(&stru_7E9880, v67, 1u, 1u, dwRegister); /*0x6bc946*/\n    DynamicVector::Add(dwRegister); /*0x6bc954*/\n    v68 = __2_YAPAXI_Z(8u); /*0x6bc95b*/\n    if ( v68 ) /*0x6bc965*/\n      v69 = (IUnknown *)sub_6C0DC0(v68); /*0x6bc969*/\n    else\n      v69 = 0; /*0x6bc970*/\n    CoRegisterClassObject(&stru_7E9890, v69, 1u, 1u, dwRegister); /*0x6bc983*/\n    DynamicVector::Add(dwRegister); /*0x6bc991*/\n    v70 = __2_YAPAXI_Z(8u); /*0x6bc998*/\n    if ( v70 ) /*0x6bc9a2*/\n      v71 = (IUnknown *)sub_6C0F40(v70); /*0x6bc9a6*/\n    else\n      v71 = 0; /*0x6bc9ad*/\n    CoRegisterClassObject(&stru_7E98A0, v71, 1u, 1u, dwRegister); /*0x6bc9c0*/\n    DynamicVector::Add(dwRegister); /*0x6bc9ce*/\n    v72 = __2_YAPAXI_Z(8u); /*0x6bc9d5*/\n    if ( v72 ) /*0x6bc9df*/\n      v73 = (IUnknown *)sub_6C10C0(v72); /*0x6bc9e3*/\n    else\n      v73 = 0; /*0x6bc9ea*/\n    CoRegisterClassObject(&stru_7E98B0, v73, 1u, 1u, dwRegister); /*0x6bc9fd*/\n    DynamicVector::Add(dwRegister); /*0x6bca0b*/\n    v74 = __2_YAPAXI_Z(8u); /*0x6bca12*/\n    if ( v74 ) /*0x6bca1c*/\n      v75 = (IUnknown *)sub_6C1240(v74); /*0x6bca20*/\n    else\n      v75 = 0; /*0x6bca27*/\n    CoRegisterClassObject(&stru_7E98C0, v75, 1u, 1u, dwRegister); /*0x6bca3a*/\n    DynamicVector::Add(dwRegister); /*0x6bca48*/\n    v76 = __2_YAPAXI_Z(8u); /*0x6bca4f*/\n    if ( v76 ) /*0x6bca59*/\n      v77 = (IUnknown *)sub_6C13C0(v76); /*0x6bca5d*/\n    else\n      v77 = 0; /*0x6bca64*/\n    CoRegisterClassObject(&stru_7E9810, v77, 1u, 1u, dwRegister); /*0x6bca77*/\n    DynamicVector::Add(dwRegister); /*0x6bca85*/\n    v78 = __2_YAPAXI_Z(8u); /*0x6bca8c*/\n    if ( v78 ) /*0x6bca96*/\n      v79 = (IUnknown *)sub_6C1540(v78); /*0x6bca9a*/\n    else\n      v79 = 0; /*0x6bcaa1*/\n    CoRegisterClassObject(&stru_7E9790, v79, 1u, 1u, dwRegister); /*0x6bcab4*/\n    DynamicVector::Add(dwRegister); /*0x6bcac2*/\n    v80 = __2_YAPAXI_Z(8u); /*0x6bcac9*/\n    if ( v80 ) /*0x6bcad3*/\n      v81 = (IUnknown *)sub_6C16C0(v80); /*0x6bcad7*/\n    else\n      v81 = 0; /*0x6bcade*/\n    CoRegisterClassObject(&stru_7E9650, v81, 1u, 1u, dwRegister); /*0x6bcaf1*/\n    DynamicVector::Add(dwRegister); /*0x6bcaff*/\n    v82 = __2_YAPAXI_Z(8u); /*0x6bcb06*/\n    if ( v82 ) /*0x6bcb10*/\n      v83 = (IUnknown *)sub_6C1840(v82); /*0x6bcb14*/\n    else\n      v83 = 0; /*0x6bcb1b*/\n    CoRegisterClassObject(&stru_7E9800, v83, 1u, 1u, dwRegister); /*0x6bcb2e*/\n    DynamicVector::Add(dwRegister); /*0x6bcb3c*/\n    v84 = __2_YAPAXI_Z(8u); /*0x6bcb43*/\n    if ( v84 ) /*0x6bcb4d*/\n      v85 = (IUnknown *)sub_6C19C0(v84); /*0x6bcb51*/\n    else\n      v85 = 0; /*0x6bcb58*/\n    CoRegisterClassObject(&stru_7E97E0, v85, 1u, 1u, dwRegister); /*0x6bcb6b*/\n    DynamicVector::Add(dwRegister); /*0x6bcb79*/\n    v86 = __2_YAPAXI_Z(8u); /*0x6bcb80*/\n    if ( v86 ) /*0x6bcb8a*/\n      v87 = (IUnknown *)sub_6C1B40(v86); /*0x6bcb8e*/\n    else\n      v87 = 0; /*0x6bcb95*/\n    CoRegisterClassObject(&stru_7E97F0, v87, 1u, 1u, dwRegister); /*0x6bcba8*/\n    DynamicVector::Add(dwRegister); /*0x6bcbb6*/\n    v88 = __2_YAPAXI_Z(8u); /*0x6bcbbd*/\n    if ( v88 ) /*0x6bcbc7*/\n      v89 = (IUnknown *)sub_6C1CC0(v88); /*0x6bcbcb*/\n    else\n      v89 = 0; /*0x6bcbd2*/\n    CoRegisterClassObject(&stru_7E97A0, v89, 1u, 1u, dwRegister); /*0x6bcbe5*/\n    DynamicVector::Add(dwRegister); /*0x6bcbf3*/\n    v90 = __2_YAPAXI_Z(8u); /*0x6bcbfa*/\n    if ( v90 ) /*0x6bcc04*/\n      v91 = (IUnknown *)sub_6C1E40(v90); /*0x6bcc08*/\n    else\n      v91 = 0; /*0x6bcc0f*/\n    CoRegisterClassObject(&stru_7E97B0, v91, 1u, 1u, dwRegister); /*0x6bcc22*/\n    DynamicVector::Add(dwRegister); /*0x6bcc30*/\n    v92 = __2_YAPAXI_Z(8u); /*0x6bcc37*/\n    if ( v92 ) /*0x6bcc41*/\n      v93 = (IUnknown *)sub_6C1FC0(v92); /*0x6bcc45*/\n    else\n      v93 = 0; /*0x6bcc4c*/\n    CoRegisterClassObject(&stru_7E97C0, v93, 1u, 1u, dwRegister); /*0x6bcc5f*/\n    DynamicVector::Add(dwRegister); /*0x6bcc6d*/\n    v94 = __2_YAPAXI_Z(8u); /*0x6bcc74*/\n    if ( v94 ) /*0x6bcc7e*/\n      v95 = (IUnknown *)sub_6C2140(v94); /*0x6bcc82*/\n    else\n      v95 = 0; /*0x6bcc89*/\n    CoRegisterClassObject(&stru_7E97D0, v95, 1u, 1u, dwRegister); /*0x6bcc9c*/\n    DynamicVector::Add(dwRegister); /*0x6bccaa*/\n    v96 = __2_YAPAXI_Z(8u); /*0x6bccb1*/\n    if ( v96 ) /*0x6bccbb*/\n      v97 = (IUnknown *)sub_6C22C0(v96); /*0x6bccbf*/\n    else\n      v97 = 0; /*0x6bccc6*/\n    CoRegisterClassObject(&stru_7E9760, v97, 1u, 1u, dwRegister); /*0x6bccd9*/\n    DynamicVector::Add(dwRegister); /*0x6bcce7*/\n    v98 = __2_YAPAXI_Z(8u); /*0x6bccee*/\n    if ( v98 ) /*0x6bccf8*/\n      v99 = (IUnknown *)sub_6C2440(v98); /*0x6bccfc*/\n    else\n      v99 = 0; /*0x6bcd03*/\n    CoRegisterClassObject(&stru_7E9780, v99, 1u, 1u, dwRegister); /*0x6bcd16*/\n    DynamicVector::Add(dwRegister); /*0x6bcd24*/\n    v100 = __2_YAPAXI_Z(8u); /*0x6bcd2b*/\n    if ( v100 ) /*0x6bcd35*/\n      v101 = (IUnknown *)sub_6C25C0(v100); /*0x6bcd39*/\n    else\n      v101 = 0; /*0x6bcd40*/\n    CoRegisterClassObject(&stru_7E9770, v101, 1u, 1u, dwRegister); /*0x6bcd53*/\n    DynamicVector::Add(dwRegister); /*0x6bcd61*/\n    v102 = __2_YAPAXI_Z(8u); /*0x6bcd68*/\n    if ( v102 ) /*0x6bcd72*/\n      v103 = (IUnknown *)sub_6C2740(v102); /*0x6bcd76*/\n    else\n      v103 = 0; /*0x6bcd7d*/\n    CoRegisterClassObject(&stru_7E9590, v103, 1u, 1u, dwRegister); /*0x6bcd90*/\n    DynamicVector::Add(dwRegister); /*0x6bcd9e*/\n    v104 = __2_YAPAXI_Z(8u); /*0x6bcda5*/\n    if ( v104 ) /*0x6bcdaf*/\n      v105 = (IUnknown *)sub_6C28C0(v104); /*0x6bcdb3*/\n    else\n      v105 = 0; /*0x6bcdba*/\n    CoRegisterClassObject(&stru_7E95C0, v105, 1u, 1u, dwRegister); /*0x6bcdcd*/\n    DynamicVector::Add(dwRegister); /*0x6bcddb*/\n    v106 = __2_YAPAXI_Z(8u); /*0x6bcde2*/\n    if ( v106 ) /*0x6bcdec*/\n      v107 = (IUnknown *)sub_6C2A40(v106); /*0x6bcdf0*/\n    else\n      v107 = 0; /*0x6bcdf7*/\n    CoRegisterClassObject(&stru_7E95B0, v107, 1u, 1u, dwRegister); /*0x6bce0a*/\n    DynamicVector::Add(dwRegister); /*0x6bce18*/\n    v108 = __2_YAPAXI_Z(8u); /*0x6bce1f*/\n    if ( v108 ) /*0x6bce29*/\n      v109 = (IUnknown *)sub_6C2BC0(v108); /*0x6bce2d*/\n    else\n      v109 = 0; /*0x6bce34*/\n    CoRegisterClassObject(&stru_7E95A0, v109, 1u, 1u, dwRegister); /*0x6bce47*/\n    DynamicVector::Add(dwRegister); /*0x6bce55*/\n    v110 = __2_YAPAXI_Z(8u); /*0x6bce5c*/\n    if ( v110 ) /*0x6bce66*/\n      v111 = (IUnknown *)sub_6C2D40(v110); /*0x6bce6a*/\n    else\n      v111 = 0; /*0x6bce71*/\n    CoRegisterClassObject(&stru_7E95D0, v111, 1u, 1u, dwRegister); /*0x6bce84*/\n    DynamicVector::Add(dwRegister); /*0x6bce92*/\n    v112 = __2_YAPAXI_Z(8u); /*0x6bce99*/\n    if ( v112 ) /*0x6bcea3*/\n      v113 = (IUnknown *)sub_6C2EC0(v112); /*0x6bcea7*/\n    else\n      v113 = 0; /*0x6bceae*/\n    CoRegisterClassObject(&stru_7E95F0, v113, 1u, 1u, dwRegister); /*0x6bcec1*/\n    DynamicVector::Add(dwRegister); /*0x6bcecf*/\n    v114 = __2_YAPAXI_Z(8u); /*0x6bced6*/\n    if ( v114 ) /*0x6bcee0*/\n      v115 = (IUnknown *)sub_6C3040(v114); /*0x6bcee4*/\n    else\n      v115 = 0; /*0x6bceeb*/\n    CoRegisterClassObject(&stru_7E9600, v115, 1u, 1u, dwRegister); /*0x6bcefe*/\n    DynamicVector::Add(dwRegister); /*0x6bcf0c*/\n    v116 = __2_YAPAXI_Z(8u); /*0x6bcf13*/\n    if ( v116 ) /*0x6bcf1d*/\n      v117 = (IUnknown *)sub_6C31C0(v116); /*0x6bcf21*/\n    else\n      v117 = 0; /*0x6bcf28*/\n    CoRegisterClassObject(&stru_7E9610, v117, 1u, 1u, dwRegister); /*0x6bcf3b*/\n    DynamicVector::Add(dwRegister); /*0x6bcf49*/\n    v118 = __2_YAPAXI_Z(8u); /*0x6bcf50*/\n    if ( v118 ) /*0x6bcf5a*/\n      v119 = (IUnknown *)sub_6C3340(v118); /*0x6bcf5e*/\n    else\n      v119 = 0; /*0x6bcf65*/\n    CoRegisterClassObject(&stru_7E96F0, v119, 1u, 1u, dwRegister); /*0x6bcf78*/\n    DynamicVector::Add(dwRegister); /*0x6bcf86*/\n    v120 = __2_YAPAXI_Z(8u); /*0x6bcf8d*/\n    if ( v120 ) /*0x6bcf97*/\n      v121 = (IUnknown *)sub_6C34C0(v120); /*0x6bcf9b*/\n    else\n      v121 = 0; /*0x6bcfa2*/\n    CoRegisterClassObject(&stru_7E96A0, v121, 1u, 1u, dwRegister); /*0x6bcfb5*/\n    DynamicVector::Add(dwRegister); /*0x6bcfc3*/\n    v122 = __2_YAPAXI_Z(8u); /*0x6bcfca*/\n    if ( v122 ) /*0x6bcfd4*/\n      v123 = (IUnknown *)sub_6C3640(v122); /*0x6bcfd8*/\n    else\n      v123 = 0; /*0x6bcfdf*/\n    CoRegisterClassObject(&stru_7E9660, v123, 1u, 1u, dwRegister); /*0x6bcff2*/\n    DynamicVector::Add(dwRegister); /*0x6bd000*/\n    v124 = __2_YAPAXI_Z(8u); /*0x6bd007*/\n    if ( v124 ) /*0x6bd011*/\n      v125 = (IUnknown *)sub_6C37C0(v124); /*0x6bd015*/\n    else\n      v125 = 0; /*0x6bd01c*/\n    CoRegisterClassObject(&stru_7E9680, v125, 1u, 1u, dwRegister); /*0x6bd02f*/\n    DynamicVector::Add(dwRegister); /*0x6bd03d*/\n    v126 = __2_YAPAXI_Z(8u); /*0x6bd044*/\n    if ( v126 ) /*0x6bd04e*/\n      v127 = (IUnknown *)sub_6C3940(v126); /*0x6bd052*/\n    else\n      v127 = 0; /*0x6bd059*/\n    CoRegisterClassObject(&stru_7E9670, v127, 1u, 1u, dwRegister); /*0x6bd06c*/\n    DynamicVector::Add(dwRegister); /*0x6bd07a*/\n    v128 = __2_YAPAXI_Z(8u); /*0x6bd081*/\n    if ( v128 ) /*0x6bd08b*/\n      v129 = (IUnknown *)sub_6C3AC0(v128); /*0x6bd08f*/\n    else\n      v129 = 0; /*0x6bd096*/\n    CoRegisterClassObject(&stru_7E9620, v129, 1u, 1u, dwRegister); /*0x6bd0a9*/\n    DynamicVector::Add(dwRegister); /*0x6bd0b7*/\n    v130 = __2_YAPAXI_Z(8u); /*0x6bd0be*/\n    if ( v130 ) /*0x6bd0c8*/\n      v131 = (IUnknown *)sub_6C3C40(v130); /*0x6bd0cc*/\n    else\n      v131 = 0; /*0x6bd0d3*/\n    CoRegisterClassObject(&stru_7E9630, v131, 1u, 1u, dwRegister); /*0x6bd0e6*/\n    DynamicVector::Add(dwRegister); /*0x6bd0f4*/\n    v132 = __2_YAPAXI_Z(8u); /*0x6bd0fb*/\n    if ( v132 ) /*0x6bd105*/\n      v133 = (IUnknown *)sub_6C3DC0(v132); /*0x6bd109*/\n    else\n      v133 = 0; /*0x6bd110*/\n    CoRegisterClassObject(&stru_7E9560, v133, 1u, 1u, dwRegister); /*0x6bd123*/\n    DynamicVector::Add(dwRegister); /*0x6bd131*/\n    v134 = __2_YAPAXI_Z(8u); /*0x6bd138*/\n    if ( v134 ) /*0x6bd142*/\n      v135 = (IUnknown *)sub_6C3F40(v134); /*0x6bd146*/\n    else\n      v135 = 0; /*0x6bd14d*/\n    CoRegisterClassObject(&stru_7E9A30, v135, 1u, 1u, dwRegister); /*0x6bd160*/\n    DynamicVector::Add(dwRegister); /*0x6bd16e*/\n    v136 = __2_YAPAXI_Z(8u); /*0x6bd175*/\n    if ( v136 ) /*0x6bd17f*/\n      v137 = (IUnknown *)sub_6C40C0(v136); /*0x6bd183*/\n    else\n      v137 = 0; /*0x6bd18a*/\n    CoRegisterClassObject(&stru_7E9AC0, v137, 1u, 1u, dwRegister); /*0x6bd19d*/\n    DynamicVector::Add(dwRegister); /*0x6bd1ab*/\n    v138 = __2_YAPAXI_Z(8u); /*0x6bd1b2*/\n    if ( v138 ) /*0x6bd1bc*/\n      v139 = (IUnknown *)sub_6C4240(v138); /*0x6bd1c0*/\n    else\n      v139 = 0; /*0x6bd1c7*/\n    CoRegisterClassObject(&stru_7E9A40, v139, 1u, 1u, dwRegister); /*0x6bd1da*/\n    DynamicVector::Add(dwRegister); /*0x6bd1e8*/\n    v140 = __2_YAPAXI_Z(8u); /*0x6bd1ef*/\n    if ( v140 ) /*0x6bd1f9*/\n      v141 = (IUnknown *)sub_6C43C0(v140); /*0x6bd1fd*/\n    else\n      v141 = 0; /*0x6bd204*/\n    CoRegisterClassObject(&stru_7E9AD0, v141, 1u, 1u, dwRegister); /*0x6bd217*/\n    DynamicVector::Add(dwRegister); /*0x6bd225*/\n    v142 = __2_YAPAXI_Z(8u); /*0x6bd22c*/\n    if ( v142 ) /*0x6bd236*/\n      v143 = (IUnknown *)sub_6C4540(v142); /*0x6bd23a*/\n    else\n      v143 = 0; /*0x6bd241*/\n    CoRegisterClassObject(&stru_7E9A50, v143, 1u, 1u, dwRegister); /*0x6bd254*/\n    DynamicVector::Add(dwRegister); /*0x6bd262*/\n    v144 = __2_YAPAXI_Z(8u); /*0x6bd269*/\n    if ( v144 ) /*0x6bd273*/\n      v145 = (IUnknown *)sub_6C46C0(v144); /*0x6bd277*/\n    else\n      v145 = 0; /*0x6bd27e*/\n    CoRegisterClassObject(&stru_7E9A60, v145, 1u, 1u, dwRegister); /*0x6bd291*/\n    DynamicVector::Add(dwRegister); /*0x6bd29f*/\n    v146 = __2_YAPAXI_Z(8u); /*0x6bd2a6*/\n    if ( v146 ) /*0x6bd2b0*/\n      v147 = (IUnknown *)sub_6C4840(v146); /*0x6bd2b4*/\n    else\n      v147 = 0; /*0x6bd2bb*/\n    CoRegisterClassObject(&stru_7E9A70, v147, 1u, 1u, dwRegister); /*0x6bd2ce*/\n    DynamicVector::Add(dwRegister); /*0x6bd2dc*/\n    v148 = __2_YAPAXI_Z(8u); /*0x6bd2e3*/\n    if ( v148 ) /*0x6bd2ed*/\n      v149 = (IUnknown *)sub_6C49C0(v148); /*0x6bd2f1*/\n    else\n      v149 = 0; /*0x6bd2f8*/\n    CoRegisterClassObject(&stru_7E9A80, v149, 1u, 1u, dwRegister); /*0x6bd30b*/\n    DynamicVector::Add(dwRegister); /*0x6bd319*/\n    v150 = __2_YAPAXI_Z(8u); /*0x6bd320*/\n    if ( v150 ) /*0x6bd32a*/\n      v151 = (IUnknown *)sub_6C4B40(v150); /*0x6bd32e*/\n    else\n      v151 = 0; /*0x6bd335*/\n    CoRegisterClassObject(&stru_7E9A90, v151, 1u, 1u, dwRegister); /*0x6bd348*/\n    DynamicVector::Add(dwRegister); /*0x6bd356*/\n    v152 = __2_YAPAXI_Z(8u); /*0x6bd35d*/\n    if ( v152 ) /*0x6bd367*/\n      v153 = (IUnknown *)sub_6C4CC0(v152); /*0x6bd36b*/\n    else\n      v153 = 0; /*0x6bd372*/\n    CoRegisterClassObject(&stru_7E9AA0, v153, 1u, 1u, dwRegister); /*0x6bd385*/\n    DynamicVector::Add(dwRegister); /*0x6bd393*/\n    v154 = __2_YAPAXI_Z(8u); /*0x6bd39a*/\n    if ( v154 ) /*0x6bd3a4*/\n      v155 = (IUnknown *)sub_6C4E40(v154); /*0x6bd3a8*/\n    else\n      v155 = 0; /*0x6bd3af*/\n    CoRegisterClassObject(&stru_7E9AB0, v155, 1u, 1u, dwRegister); /*0x6bd3c2*/\n    DynamicVector::Add(dwRegister); /*0x6bd3d0*/\n    v156 = __2_YAPAXI_Z(8u); /*0x6bd3d7*/\n    if ( v156 ) /*0x6bd3e1*/\n      v157 = (IUnknown *)sub_6C4FC0(v156); /*0x6bd3e5*/\n    else\n      v157 = 0; /*0x6bd3ec*/\n    CoRegisterClassObject(&rclsid, v157, 1u, 1u, dwRegister); /*0x6bd3ff*/\n    DynamicVector::Add(dwRegister); /*0x6bd40d*/\n    v158 = __2_YAPAXI_Z(8u); /*0x6bd414*/\n    if ( v158 ) /*0x6bd41e*/\n      v159 = (IUnknown *)sub_6C5140(v158); /*0x6bd422*/\n    else\n      v159 = 0; /*0x6bd429*/\n    CoRegisterClassObject(&stru_7E9820, v159, 1u, 1u, dwRegister); /*0x6bd43c*/\n    DynamicVector::Add(dwRegister); /*0x6bd44a*/\n    v160 = __2_YAPAXI_Z(8u); /*0x6bd451*/\n    if ( v160 ) /*0x6bd45b*/\n      v161 = (IUnknown *)sub_6C52C0(v160); /*0x6bd45f*/\n    else\n      v161 = 0; /*0x6bd466*/\n    CoRegisterClassObject(&stru_7E9840, v161, 1u, 1u, dwRegister); /*0x6bd479*/\n    DynamicVector::Add(dwRegister); /*0x6bd487*/\n    v162 = __2_YAPAXI_Z(8u); /*0x6bd48e*/\n    if ( v162 ) /*0x6bd498*/\n      v163 = (IUnknown *)sub_6C5440(v162); /*0x6bd49c*/\n    else\n      v163 = 0; /*0x6bd4a3*/\n    CoRegisterClassObject(&stru_7E9830, v163, 1u, 1u, dwRegister); /*0x6bd4b6*/\n    DynamicVector::Add(dwRegister); /*0x6bd4c4*/\n    v164 = __2_YAPAXI_Z(8u); /*0x6bd4cb*/\n    if ( v164 ) /*0x6bd4d5*/\n      v165 = (IUnknown *)sub_6C55C0(v164); /*0x6bd4d9*/\n    else\n      v165 = 0; /*0x6bd4e0*/\n    CoRegisterClassObject(&stru_7E9700, v165, 1u, 1u, dwRegister); /*0x6bd4f3*/\n    DynamicVector::Add(dwRegister); /*0x6bd501*/\n    v166 = __2_YAPAXI_Z(8u); /*0x6bd508*/\n    if ( v166 ) /*0x6bd512*/\n      v167 = (IUnknown *)sub_6C5740(v166); /*0x6bd516*/\n    else\n      v167 = 0; /*0x6bd51d*/\n    CoRegisterClassObject(&stru_7E9710, v167, 1u, 1u, dwRegister); /*0x6bd530*/\n    DynamicVector::Add(dwRegister); /*0x6bd53e*/\n    v168 = __2_YAPAXI_Z(8u); /*0x6bd545*/\n    if ( v168 ) /*0x6bd54f*/\n      v169 = (IUnknown *)sub_6C58C0(v168); /*0x6bd553*/\n    else\n      v169 = 0; /*0x6bd55a*/\n    CoRegisterClassObject(&stru_7E96C0, v169, 1u, 1u, dwRegister); /*0x6bd56d*/\n    DynamicVector::Add(dwRegister); /*0x6bd57b*/\n    v170 = __2_YAPAXI_Z(8u); /*0x6bd582*/\n    if ( v170 ) /*0x6bd58c*/\n      v171 = (IUnknown *)sub_6C5A40(v170); /*0x6bd590*/\n    else\n      v171 = 0; /*0x6bd597*/\n    CoRegisterClassObject(&stru_7E96D0, v171, 1u, 1u, dwRegister); /*0x6bd5aa*/\n    DynamicVector::Add(dwRegister); /*0x6bd5b8*/\n    v172 = __2_YAPAXI_Z(8u); /*0x6bd5bf*/\n    if ( v172 ) /*0x6bd5c9*/\n      v173 = (IUnknown *)sub_6C5BC0(v172); /*0x6bd5cd*/\n    else\n      v173 = 0; /*0x6bd5d4*/\n    CoRegisterClassObject(&stru_7E9960, v173, 1u, 1u, dwRegister); /*0x6bd5e7*/\n    DynamicVector::Add(dwRegister); /*0x6bd5f5*/\n    v174 = __2_YAPAXI_Z(8u); /*0x6bd5fc*/\n    if ( v174 ) /*0x6bd606*/\n      v175 = (IUnknown *)sub_6C5D40(v174); /*0x6bd60a*/\n    else\n      v175 = 0; /*0x6bd611*/\n    CoRegisterClassObject(&stru_7E9980, v175, 1u, 1u, dwRegister); /*0x6bd624*/\n    DynamicVector::Add(dwRegister); /*0x6bd632*/\n    v176 = __2_YAPAXI_Z(8u); /*0x6bd639*/\n    if ( v176 ) /*0x6bd643*/\n      v177 = (IUnknown *)sub_6C5EC0(v176); /*0x6bd647*/\n    else\n      v177 = 0; /*0x6bd64e*/\n    CoRegisterClassObject(&stru_7E9990, v177, 1u, 1u, dwRegister); /*0x6bd661*/\n    DynamicVector::Add(dwRegister); /*0x6bd66f*/\n    v178 = __2_YAPAXI_Z(8u); /*0x6bd676*/\n    if ( v178 ) /*0x6bd680*/\n      v179 = (IUnknown *)sub_6C6040(v178); /*0x6bd684*/\n    else\n      v179 = 0; /*0x6bd68b*/\n    CoRegisterClassObject(&stru_7E99A0, v179, 1u, 1u, dwRegister); /*0x6bd69e*/\n    DynamicVector::Add(dwRegister); /*0x6bd6ac*/\n    RegisterActiveObject(&punk, &rguid, 1u, &pdwRegister); /*0x6bd6c8*/\n    if ( v203 ) /*0x6bd6d2*/\n    {\n      v193 = (const WCHAR *)GetStringCSF(aTxtShortTitle, (int)aDRa2mdpostStar, 1618); /*0x6bd6ec*/\n      GetStringCSF(aTxtPreparecomF, (int)aDRa2mdpostStar, 1618); /*0x6bd6fe*/\n      WideMessageBox(v193, 0x30u); /*0x6bd707*/\n      if ( v203 ) /*0x6bd714*/\n        exit(1); /*0x6bd718*/\n    }\n    Debug::Log(aInitEncryption); /*0x6bd722*/\n    Debug::Log(aInitKeysDeclar); /*0x6bd72c*/\n    sub_65C250( /*0x6bd74f*/\n      (int)\"[PublicKey]\\n1=AihRvNoIbTn85FZRYNZRcT+i6KpU+maCsEqr3Q5q+LDB5tH7Tz2qQ38V\\n\\n\",\n      strlen(\"[PublicKey]\\n1=AihRvNoIbTn85FZRYNZRcT+i6KpU+maCsEqr3Q5q+LDB5tH7Tz2qQ38V\\n\\n\"));\n    INIClass::Constructor(v200); /*0x6bd75a*/\n    Debug::Log(aInitKeysLoad); /*0x6bd764*/\n    FileStraw::Open(v199, 0); /*0x6bd77b*/\n    Debug::Log(aInitKeysInitFa); /*0x6bd785*/\n    qmemcpy(&dword_886980, (const void *)sub_52A670(v198, 1), 0x204u); /*0x6bd7ad*/\n    HashTable::DestroyHashTableINIClass(v200); /*0x6bd7b5*/\n    sub_65C2A0(v199); /*0x6bd7c0*/\n    v180 = dword_81C1D0; /*0x6bd7c5*/\n    SetSoundWarning(-2); /*0x6bd7d0*/\n    if ( __2_YAPAXI_Z(0x28u) ) /*0x6bd7d7*/\n      dword_884E04 = MixFileClass::FromFile(aLangmdMix, (int)&dword_886980); /*0x6bd7f4*/\n    else\n      dword_884E04 = 0; /*0x6bd7fb*/\n    if ( __2_YAPAXI_Z(0x28u) ) /*0x6bd807*/\n      dword_884E00 = MixFileClass::FromFile(aLanguageMix, (int)&dword_886980); /*0x6bd824*/\n    else\n      dword_884E00 = 0; /*0x6bd82b*/\n    SetSoundWarning(v180); /*0x6bd837*/\n    atexit(WinMain::Setup); /*0x6bd841*/\n    sub_7B84F0(); /*0x6bd849*/\n    if ( !CSFClass::LoadFile(aRa2mdStr) ) /*0x6bd853*/\n    {\n      MessageBoxA(0, aUnableToInitia, aRedAlert2, 0x10u); /*0x6bd869*/\n      return 0; /*0x6bd881*/\n    }\n    LOBYTE(v181) = 1; /*0x6bd884*/\n    if ( !_do_always_noconv_codecvt_base_std__MBE_NXZ_3(v181) ) /*0x6bd886*/\n      return 0; /*0x6bd8a1*/\n    if ( !GetSystemMetrics(19) || !GetSystemMetrics(43) ) /*0x6bd8b8*/\n    {\n      v197 = (const WCHAR *)GetStringCSF(aTxtShortTitle, (int)aDRa2mdpostStar, 1999); /*0x6be18e*/\n      GetStringCSF(aTxtMouseRequir, (int)aDRa2mdpostStar, 1999); /*0x6be1a0*/\n      WideMessageBox(v197, 0x10u); /*0x6be1a9*/\n      exit(1); /*0x6be1b0*/\n    }\n    if ( (unsigned int)sub_4AECD0((LPCSTR)aComctl32Dll_0) < 0x40046 ) /*0x6bd8d1*/\n    {\n      v182 = GetStringCSF(aTxtDllInvalid, (int)aDRa2mdpostStar, 2009); /*0x6bd8f2*/\n      swprintf(Buffer, v182, aComctl32Dll_0, 4, 70, aComctl32Dll_0); /*0x6bd8ff*/\n      v183 = (const WCHAR *)GetStringCSF(aTxtShortTitle, (int)aDRa2mdpostStar, 2010); /*0x6bd91a*/\n      WideMessageBox(v183, 0x10u); /*0x6bd928*/\n      exit(1); /*0x6bd92f*/\n    }\n    RegisterActiveObject(&MapClass_Instance, &rguid, 1u, &::dwRegister); /*0x6bd945*/\n    if ( g_CommandLineFlags == -1 || g_CommandLineParam == -1 ) /*0x6bd958*/\n    {\n      v184 = byte_887625 && dword_887598 < 5; /*0x6bd96c*/\n      if ( v184 || (unsigned int)sub_4A4130() > 0x200000 ) /*0x6bd983*/\n      {\n        g_CommandLineFlags = 800; /*0x6bd99c*/\n        g_CommandLineParam = 600; /*0x6bd9a6*/\n      }\n      else\n      {\n        g_CommandLineFlags = 640; /*0x6bd98a*/\n        g_CommandLineParam = 480; /*0x6bd990*/\n      }\n    }\n    if ( byte_A8ED63 )\n    {\n      InitWindowCreation(hInstance, 640, 480); /*0x6bd9cf*/\n      sub_4A3FD0(); /*0x6bd9d4*/\n      if ( g_DDraw_Initialized )\n      {\n        DSurface_WindowBounds = 0; /*0x6bd9e8*/\n        dword_886FB4 = 0; /*0x6bd9ed*/\n        g_CreditsScreenBounds = 640; /*0x6bd9f3*/\n        g_CreditsScreenConfig = 480; /*0x6bd9f9*/\n        qword_8A00A4 = 640; /*0x6bd9ff*/\n        MEMORY[0x8A00A8] = 480; /*0x6bda05*/\n        dword_8A00AC = byte_8175B0 != 0 ? 16 : 8;\n      }\n      else\n      {\n        v215 = (unsigned __int8)InitializeDDraw(480, byte_8175B0 != 0 ? 16 : 8);\n        DSurface_WindowBounds = 0; /*0x6bda94*/\n        dword_886FB4 = 0; /*0x6bda99*/\n        g_CreditsScreenBounds = 640; /*0x6bda9f*/\n        g_CreditsScreenConfig = 480; /*0x6bdaa5*/\n        if ( !v215 ) /*0x6bdaab*/\n        {\n          sub_4A40C0(); /*0x6bdab1*/\n          v194 = (const WCHAR *)GetStringCSF(aTxtShortTitle, (int)aDRa2mdpostStar, 2160); /*0x6bdace*/\n          GetStringCSF(aTxtVideoError, (int)aDRa2mdpostStar, 2159); /*0x6bdae0*/\n          WideMessageBox(v194, 0x30u); /*0x6bdaed*/\n          exit(1); /*0x6bdaf4*/\n        }\n      }\n    }\n    else\n    {\n      InitWindowCreation(hInstance, xRight, yBottom); /*0x6bdb0c*/\n      sub_4A3FD0(); /*0x6bdb11*/\n      if ( g_DDraw_Initialized )\n      {\n        DSurface_WindowBounds = 0; /*0x6bdb2f*/\n        dword_886FB4 = 0; /*0x6bdb34*/\n        g_CreditsScreenBounds = xRight; /*0x6bdb3a*/\n        g_CreditsScreenConfig = yBottom; /*0x6bdb40*/\n        qword_8A00A4 = xRight; /*0x6bdb46*/\n        MEMORY[0x8A00A8] = yBottom; /*0x6bdb4c*/\n        dword_8A00AC = byte_8175B0 != 0 ? 16 : 8;\n      }\n      else\n      {\n        v185 = (unsigned __int8)InitializeDDraw(yBottom, byte_8175B0 != 0 ? 16 : 8);\n        DSurface_WindowBounds = 0; /*0x6bdbaf*/\n        dword_886FB4 = 0; /*0x6bdbb4*/\n        g_CreditsScreenBounds = xRight; /*0x6bdbba*/\n        g_CreditsScreenConfig = yBottom; /*0x6bdbc0*/\n        if ( !v185 )\n        {\n          if ( g_CommandLineFlags != 640 || g_CommandLineParam != 480 )\n          {\n            g_CommandLineFlags = 640; /*0x6bdbe0*/\n            g_CommandLineParam = 480; /*0x6bdbe6*/\n            v185 = (unsigned __int8)InitializeDDraw(480, byte_8175B0 != 0 ? 16 : 8);\n            DSurface_WindowBounds = 0; /*0x6bdc2a*/\n            dword_886FB4 = 0; /*0x6bdc2f*/\n            g_CreditsScreenBounds = g_CommandLineFlags; /*0x6bdc35*/\n            g_CreditsScreenConfig = g_CommandLineParam; /*0x6bdc3b*/\n          }\n          if ( !v185 ) /*0x6bdc43*/\n          {\n            sub_4A40C0(); /*0x6bdc49*/\n            v195 = (const WCHAR *)GetStringCSF(aTxtShortTitle, (int)aDRa2mdpostStar, 2216); /*0x6bdc66*/\n            GetStringCSF(aTxtVideoError, (int)aDRa2mdpostStar, 2215); /*0x6bdc78*/\n            WideMessageBox(v195, 0x30u); /*0x6bdc85*/\n            exit(1); /*0x6bdc8c*/\n          }\n        }\n      }\n    }\n    if ( dword_A8F784 && InitializeAudioStreaming(1000, 102400) ) /*0x6bda37*/\n    {\n      if ( dword_A8F784 == 1 ) /*0x6bda4c*/\n      {\n        sub_53E4F0(aSessionIpb); /*0x6bda57*/\n      }\n      else if ( dword_A8F784 == 2 ) /*0x6bdc94*/\n      {\n        sub_53E550(aSessionIpb); /*0x6bdc9b*/\n      }\n    }\n    DSurface_Primary = DSurface::CreatePrimary(0); /*0x6bdca7*/\n    v186 = (*(int (__thiscall **)(int))(*(_DWORD *)DSurface_Primary + 112))(DSurface_Primary); /*0x6bdcb0*/\n    byte_8175B0 = v186 == 2; /*0x6bdcb9*/\n    if ( v186 != 2 ) /*0x6bdcc0*/\n    {\n      v196 = (const WCHAR *)GetStringCSF(aTxtShortTitle, (int)aDRa2mdpostStar, 2245); /*0x6bdcda*/\n      GetStringCSF(aTxtInvalidmode, (int)aDRa2mdpostStar, 2245); /*0x6bdcec*/\n      WideMessageBox(v196, 0x30u); /*0x6bdcf9*/\n      GameClass::Shutdown(); /*0x6bdcfe*/\n    }\n    do /*0x6bdd0f*/\n      Dialog::MessageLoop(); /*0x6bdd03*/\n    while ( !g_DDraw_Active ); /*0x6bdd0f*/\n    if ( !(unsigned __int8)CopyProtection::NotifyLauncher() ) /*0x6bdd11*/\n    {\n      Debug::Log(aFailedToNotify_0); /*0x6bdd1f*/\n      exit(1); /*0x6bdd29*/\n    }\n    do /*0x6bdd3a*/\n      Dialog::MessageLoop(); /*0x6bdd2e*/\n    while ( !g_DDraw_Active ); /*0x6bdd3a*/\n    g_LoadScreenFlag = 0; /*0x6bdd3c*/\n    if ( !g_DDraw_Initialized ) /*0x6bdd4a*/\n      (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)DSurface_Primary + 24))(DSurface_Primary, 0); /*0x6bdd55*/\n    LOBYTE(v187) = g_DDraw_Initialized; /*0x6bdd58*/\n    sub_5BC180(v187); /*0x6bdd6b*/\n    sub_637070(); /*0x6bdd70*/\n    nullsub_18(); /*0x6bdd75*/\n    if ( g_DDraw_Force3D ) /*0x6bdd81*/\n    {\n      if ( !sub_4C1600() ) /*0x6bdd8a*/\n        goto LABEL_345; /*0x6bdd8a*/\n      DDraw::CleanupSurfaces(); /*0x6bdd8c*/\n      g_DDraw_Force3D = 0; /*0x6bdd91*/\n    }\n    byte_8A0DF0 = 0; /*0x6bdd98*/\nLABEL_345:\n    v214[0] = 0; /*0x6bdd9f*/\n    v214[1] = 0; /*0x6bdda5*/\n    v214[2] = 168; /*0x6bddb1*/\n    v214[3] = g_CreditsScreenConfig; /*0x6bddbd*/\n    v213[0] = 0; /*0x6bddca*/\n    v213[1] = 0; /*0x6bddd0*/\n    v213[2] = g_CreditsScreenBounds - 168; /*0x6bddd6*/\n    v213[3] = g_CreditsScreenConfig; /*0x6bdddc*/\n    v209 = 0; /*0x6bdde2*/\n    v210 = 0; /*0x6bdde8*/\n    v211 = g_CreditsScreenBounds - 168; /*0x6bddee*/\n    v212 = g_CreditsScreenConfig; /*0x6bddf4*/\n    AllocateSurfaceScreenSurfaces(v213, v214, 0); /*0x6bde14*/\n    if ( g_DDraw_Force3D && InitializeRadialGradientTexture() ) /*0x6bde22*/\n    {\n      DDraw::CleanupSurfaces(); /*0x6bde2b*/\n      g_DDraw_Force3D = 0; /*0x6bde30*/\n      byte_8A0DF0 = 0; /*0x6bde37*/\n    }\n    DSurface_Hidden_2 = DSurface_Hidden; /*0x6bde44*/\n    Frame::Present(0); /*0x6bde4d*/\n    if ( __2_YAPAXI_Z(0x30u) ) /*0x6bde54*/\n      v188 = (_DWORD *)BSurface::ConstructEx(DSurface_ViewBounds, Map_VisibleRect, 480, 480 - Map_VisibleRect); /*0x6bde8a*/\n    else\n      v188 = 0; /*0x6bde91*/\n    g_ZBufferDescriptor = v188; /*0x6bde93*/\n    v189 = v218; /*0x6bde98*/\n    v188[9] = 0x8000; /*0x6bde9e*/\n    if ( __2_YAPAXI_Z(0x30u) ) /*0x6bdea7*/\n    {\n      g_VisibleSurfaceDescriptor = (void *)BSurface::Construct( /*0x6bdee2*/\n                                             DSurface_ViewBounds,\n                                             Map_VisibleRect,\n                                             480,\n                                             480 - Map_VisibleRect);\n      v189 = v218; /*0x6bdee7*/\n    }\n    else\n    {\n      g_VisibleSurfaceDescriptor = 0; /*0x6bdeef*/\n    }\n    if ( __2_YAPAXI_Z(0x98u) ) /*0x6bdefe*/\n      v190 = MouseClass::Construct(DSurface_Primary, g_hWnd); /*0x6bdf1c*/\n    else\n      v190 = 0; /*0x6bdf23*/\n    WWMouseClass_Instance = v190; /*0x6bdf25*/\n    (*(void (__thiscall **)(int))(*(_DWORD *)v190 + 12))(v190); /*0x6bdf2e*/\n    dword_A8E954 = 0; /*0x6bdf31*/\n    if ( dword_A8E950 ) /*0x6bdf3d*/\n    {\n      v191 = dword_A8E8E8; /*0x6bdf3f*/\n      dword_A8E954 = 1; /*0x6bdf4a*/\n    }\n    else\n    {\n      v191 = -1; /*0x6bdf52*/\n    }\n    CD::sub_47ADA0(v191); /*0x6bdf5a*/\n    Performance::Profile(); /*0x6bdf5f*/\n    g_IntroMovieObject = g_IntroMovieObject & 0xFFFFFFFB /*0x6bdf89*/\n                       | (4 * (INIClass::ReadBool_Overwrite(aIntro_0, aPlay_0, 1) & 1));\n    v216 = 0; /*0x6bdf8e*/\n    v217 = 0; /*0x6bdf94*/\n    ReadRegistryOptionsWOL(&v216); /*0x6bdfa1*/\n    if ( !(unsigned __int8)InfantryClass::SetField6(&v216) /*0x6bdfca*/\n      && !(unsigned __int8)sub_5176C0(&v216)\n      && !(unsigned __int8)Flag::IsNot2(&v216) )\n    {\n      v192 = g_IntroMovieObject; /*0x6bdfd3*/\n      LOBYTE(v192) = g_IntroMovieObject | 8; /*0x6bdfd8*/\n      g_IntroMovieObject = v192; /*0x6bdfda*/\n    }\n    if ( (g_IntroMovieObject & 4) == 4 ) /*0x6bdfeb*/\n    {\n      INIClass::SetBool(aIntro_0, aPlay_0, 0); /*0x6bdffd*/\n      (*(void (__thiscall **)(int))(*(_DWORD *)v189 + 52))(v189); /*0x6be006*/\n      (*(void (__thiscall **)(int, int))(*(_DWORD *)v189 + 28))(v189, 1); /*0x6be00e*/\n      INIClass::WriteDigest(v189, 0); /*0x6be018*/\n    }\n    (*(void (__thiscall **)(int))(*(_DWORD *)v189 + 52))(v189); /*0x6be021*/\n    if ( v189 ) /*0x6be026*/\n      (**(void (__thiscall ***)(int, int))v189)(v189, 1); /*0x6be02d*/\n    if ( byte_A8F7AC ) /*0x6be036*/\n    {\n      Main::Game(v226, &FullPath); /*0x6be041*/\n    }\n    else\n    {\n      ms_exc.registration.TryLevel = 0; /*0x6be048*/\n      Debug::Log(aMainGame); /*0x6be050*/\n      Main::Game(v226, &FullPath); /*0x6be061*/\n      ms_exc.registration.TryLevel = -1; /*0x6be078*/\n      SetUnhandledExceptionFilter(TopLevelExceptionFilter); /*0x6be084*/\n    }\n    (*(void (__thiscall **)(int))(*(_DWORD *)WWMouseClass_Instance + 12))(WWMouseClass_Instance); /*0x6be099*/\n    (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)DSurface_Hidden + 24))(DSurface_Hidden, 0); /*0x6be0a5*/\n    Frame::Present(0); /*0x6be0b1*/\n    dword_A8EDD8 = 1; /*0x6be0b6*/\n    ThemeManager::Cleanup(&g_BuildingTypeClass_Count); /*0x6be0c1*/\n    sub_406D40(); /*0x6be0c6*/\n    PostMessageA(g_hWnd, 2u, 0, 0); /*0x6be0d6*/\n    do /*0x6be0e7*/\n      Dialog::MessageLoop(); /*0x6be0dc*/\n    while ( dword_A8EDD8 == 1 ); /*0x6be0e7*/\n    v10 = 0; /*0x6be0e9*/\n  }\n  sub_5D7E50(); /*0x6be0eb*/\n  sub_65FD50(); /*0x6be0f0*/\n  TacticalClass::CleanupResources(&MapClass_Instance); /*0x6be0fa*/\n  sub_626FF0(); /*0x6be0ff*/\n  _ioterm(); /*0x6be104*/\n  ObjectTypeClass::UnloadPipsSHP(); /*0x6be109*/\n  nullsub_31(); /*0x6be10e*/\n  j_PlanningNodeClass_CleanupAll(); /*0x6be113*/\n  sub_72AC40(); /*0x6be118*/\n  sub_730970(); /*0x6be11d*/\n  LoadProgressMgr::Destroy(); /*0x6be122*/\n  sub_5BE940(); /*0x6be127*/\n  sub_5DB6F0(); /*0x6be12c*/\n  if ( ::dwRegister != -1 ) /*0x6be139*/\n  {\n    RevokeActiveObject(::dwRegister, 0); /*0x6be13e*/\n    ::dwRegister = -1; /*0x6be144*/\n  }\n  CoDisconnectObject(&punk, 0); /*0x6be155*/\n  OleUninitialize(); /*0x6be15b*/\n  return v10; /*0x6bbe43*/\n}",
+  "refs": [
+    {
+      "addr": "0xb732f0",
+      "name": "g_hInstance"
+    },
+    {
+      "addr": "0xb730e8",
+      "name": "dword_B730E8"
+    },
+    {
+      "addr": "0x7e11d0",
+      "name": "__imp_GetCurrentThreadId"
+    },
+    {
+      "addr": "0x4068e0",
+      "name": "Debug::Log"
+    },
+    {
+      "addr": "0x840f5c",
+      "name": "aDD",
+      "string": "%d-%d\n"
+    },
+    {
+      "addr": "0x840f3c",
+      "name": "aLauncherNotRun",
+      "string": "Launcher not running....Bail!\n"
+    },
+    {
+      "addr": "0x49f5c0",
+      "name": "CopyProtection::CheckLauncher"
+    },
+    {
+      "addr": "0xb0bce4",
+      "name": "dword_B0BCE4"
+    },
+    {
+      "addr": "0x7e1248",
+      "name": "__imp_CreateMutexA"
+    },
+    {
+      "addr": "0x840f14",
+      "name": "a29e3bb2a2f3611",
+      "string": "29e3bb2a-2f36-11d3-a72c-0090272fa661"
+    },
+    {
+      "addr": "0x7e1448",
+      "name": "__imp_FindWindowA"
+    },
+    {
+      "addr": "0x7e14d0",
+      "name": "__imp_SetForegroundWindow"
+    },
+    {
+      "addr": "0x7e1498",
+      "name": "__imp_ShowWindow"
+    },
+    {
+      "addr": "0x7e11e0",
+      "name": "__imp_CloseHandle"
+    },
+    {
+      "addr": "0x840ef0",
+      "name": "aTibsunIsAlread",
+      "string": "TibSun is already running...Bail!\n"
+    },
+    {
+      "addr": "0x7e1200",
+      "name": "__imp_GetLastError"
+    },
+    {
+      "addr": "0x840ed8",
+      "name": "aCreateAppmutex",
+      "string": "Create AppMutex okay.\n"
+    },
+    {
+      "addr": "0xb0bce8",
+      "name": "dword_B0BCE8"
+    },
+    {
+      "addr": "0x7e114c",
+      "name": "__imp_OpenMutexA"
+    },
+    {
+      "addr": "0x840eb0",
+      "name": "a01af9993349211",
+      "string": "01AF9993-3492-11d3-8F6F-0060089C05B1"
+    },
+    {
+      "addr": "0x840e90",
+      "name": "aWaitingForAuto",
+      "string": "Waiting for Autoplay to quit!\n"
+    },
+    {
+      "addr": "0x840e6c",
+      "name": "aFailedWaitingF",
+      "string": "Failed waiting for AutoPlayMutex\n"
+    },
+    {
+      "addr": "0x7e11dc",
+      "name": "__imp_WaitForSingleObject"
+    },
+    {
+      "addr": "0x7e11f0",
+      "name": "__imp_Sleep"
+    },
+    {
+      "addr": "0x840e54",
+      "name": "aCreateAutoplay",
+      "string": "Create AutoPlayMutex.\n"
+    },
+    {
+      "addr": "0x840e38",
+      "name": "aGotAutoplaymut",
+      "string": "Got AutoPlayMutex okay.\n"
+    },
+    {
+      "addr": "0x7cbf49",
+      "name": "__controlfp"
+    },
+    {
+      "addr": "0x7c5ee4",
+      "name": "sub_7C5EE4"
+    },
+    {
+      "addr": "0x7e11a8",
+      "name": "__imp_GetModuleFileNameA"
+    },
+    {
+      "addr": "0x7c9cc2",
+      "name": "_strtok"
+    },
+    {
+      "addr": "0x830a14",
+      "name": "asc_830A14",
+      "string": " "
+    },
+    {
+      "addr": "0x727cf0",
+      "name": "String::Trim"
+    },
+    {
+      "addr": "0x7cb673",
+      "name": "__splitpath"
+    },
+    {
+      "addr": "0x7c9ff0",
+      "name": "__makepath"
+    },
+    {
+      "addr": "0x7e1148",
+      "name": "__imp_SetCurrentDirectoryA"
+    },
+    {
+      "addr": "0x65ca80",
+      "name": "RawFileClass::Construct"
+    },
+    {
+      "addr": "0x826444",
+      "name": "aRa2mdIni",
+      "string": "RA2MD.INI"
+    },
+    {
+      "addr": "0x7c8e17",
+      "name": "??2_YAPAXI_Z"
+    },
+    {
+      "addr": "0x4741f0",
+      "name": "CCINIClass::Load"
+    },
+    {
+      "addr": "0x840a6c",
+      "name": "Game_bVideoBackBuffer"
+    },
+    {
+      "addr": "0x5295f0",
+      "name": "INIClass::ReadBool_Overwrite"
+    },
+    {
+      "addr": "0x833160",
+      "name": "aVideo",
+      "string": "Video"
+    },
+    {
+      "addr": "0x840e28",
+      "name": "aVideobackbuffe",
+      "string": "VideoBackBuffer"
+    },
+    {
+      "addr": "0xa8ed63",
+      "name": "byte_A8ED63"
+    },
+    {
+      "addr": "0x8330dc",
+      "name": "aAllowmodetoggl",
+      "string": "AllowModeToggle"
+    },
+    {
+      "addr": "0xa8eb84",
+      "name": "g_CommandLineFlags"
+    },
+    {
+      "addr": "0x5276d0",
+      "name": "INIClass::ReadInt_Overwrite"
+    },
+    {
+      "addr": "0x833168",
+      "name": "aScreenwidth",
+      "string": "ScreenWidth"
+    },
+    {
+      "addr": "0xa8eb88",
+      "name": "g_CommandLineParam"
+    },
+    {
+      "addr": "0x833150",
+      "name": "aScreenheight",
+      "string": "ScreenHeight"
+    },
+    {
+      "addr": "0x833060",
+      "name": "aNetwork",
+      "string": "Network"
+    },
+    {
+      "addr": "0x83301c",
+      "name": "aSocket",
+      "string": "Socket"
+    },
+    {
+      "addr": "0x542430",
+      "name": "Network::GetField"
+    },
+    {
+      "addr": "0x826598",
+      "name": "asc_826598",
+      "string": "."
+    },
+    {
+      "addr": "0x7ca530",
+      "name": "_sscanf"
+    },
+    {
+      "addr": "0x825bd4",
+      "name": "asc_825BD4",
+      "string": "%x"
+    },
+    {
+      "addr": "0xa8d5fc",
+      "name": "dword_A8D5FC"
+    },
+    {
+      "addr": "0x53ece0",
+      "name": "NetworkAddress::Assign"
+    },
+    {
+      "addr": "0xa8d600",
+      "name": "dword_A8D600"
+    },
+    {
+      "addr": "0xa8d604",
+      "name": "dword_A8D604"
+    },
+    {
+      "addr": "0xa8d608",
+      "name": "dword_A8D608"
+    },
+    {
+      "addr": "0x528a10",
+      "name": "INIClass::GetString"
+    },
+    {
+      "addr": "0x83300c",
+      "name": "aDestnet",
+      "string": "DestNet"
+    },
+    {
+      "addr": "0x54ee60",
+      "name": "sub_54EE60"
+    },
+    {
+      "addr": "0x87f770",
+      "name": "g_BinkMoviePlayer"
+    },
+    {
+      "addr": "0x734e60",
+      "name": "GetStringCSF"
+    },
+    {
+      "addr": "0x840df8",
+      "name": "aTxtCriticallyL",
+      "string": "TXT_CRITICALLY_LOW"
+    },
+    {
+      "addr": "0x840e0c",
+      "name": "aDRa2mdpostStar",
+      "string": "D:\\ra2mdpost\\Startup.CPP"
+    },
+    {
+      "addr": "0x7ca564",
+      "name": "_swprintf"
+    },
+    {
+      "addr": "0x81d57c",
+      "name": "aTxtShortTitle",
+      "string": "TXT_SHORT_TITLE"
+    },
+    {
+      "addr": "0x7e15d0",
+      "name": "__imp_OleUninitialize"
+    },
+    {
+      "addr": "0x734fe0",
+      "name": "WideMessageBox"
+    },
+    {
+      "addr": "0x48dd50",
+      "name": "DiskSpace::CheckAvailable"
+    },
+    {
+      "addr": "0x7e15d4",
+      "name": "__imp_OleInitialize"
+    },
+    {
+      "addr": "0x7f3710",
+      "name": "off_7F3710"
+    },
+    {
+      "addr": "0x6bedb0",
+      "name": "sub_6BEDB0"
+    },
+    {
+      "addr": "0x7e1220",
+      "name": "__imp_LoadLibraryA"
+    },
+    {
+      "addr": "0x7e1250",
+      "name": "__imp_GetProcAddress"
+    },
+    {
+      "addr": "0x840de4",
+      "name": "aDllregisterser",
+      "string": "DllRegisterServer"
+    },
+    {
+      "addr": "0x7e1224",
+      "name": "__imp_FreeLibrary"
+    },
+    {
+      "addr": "0x7dc720",
+      "name": "WinAPI::Wrapper"
+    },
+    {
+      "addr": "0x6c61c0",
+      "name": "sub_6C61C0"
+    },
+    {
+      "addr": "0x7f3718",
+      "name": "stru_7F3718"
+    },
+    {
+      "addr": "0x6bb390",
+      "name": "RegisterClassesCOM"
+    },
+    {
+      "addr": "0x7e15d8",
+      "name": "__imp_CoRegisterClassObject"
+    },
+    {
+      "addr": "0x7e9520",
+      "name": "rguid"
+    },
+    {
+      "addr": "0xa8e8c8",
+      "name": "pUnk"
+    },
+    {
+      "addr": "0x6c6400",
+      "name": "DynamicVector::Add"
+    },
+    {
+      "addr": "0x6bee40",
+      "name": "sub_6BEE40"
+    },
+    {
+      "addr": "0x7e9540",
+      "name": "stru_7E9540"
+    },
+    {
+      "addr": "0x6befc0",
+      "name": "sub_6BEFC0"
+    },
+    {
+      "addr": "0x7e9720",
+      "name": "stru_7E9720"
+    },
+    {
+      "addr": "0x6bf140",
+      "name": "sub_6BF140"
+    },
+    {
+      "addr": "0x7e95e0",
+      "name": "stru_7E95E0"
+    },
+    {
+      "addr": "0x6bf2c0",
+      "name": "sub_6BF2C0"
+    },
+    {
+      "addr": "0x7e9740",
+      "name": "stru_7E9740"
+    },
+    {
+      "addr": "0x6bf440",
+      "name": "sub_6BF440"
+    },
+    {
+      "addr": "0x7e9570",
+      "name": "stru_7E9570"
+    },
+    {
+      "addr": "0x6bf5c0",
+      "name": "sub_6BF5C0"
+    },
+    {
+      "addr": "0x7e9580",
+      "name": "stru_7E9580"
+    },
+    {
+      "addr": "0x6bf740",
+      "name": "sub_6BF740"
+    },
+    {
+      "addr": "0x7e9950",
+      "name": "stru_7E9950"
+    },
+    {
+      "addr": "0x6bf8c0",
+      "name": "sub_6BF8C0"
+    },
+    {
+      "addr": "0x7e9930",
+      "name": "stru_7E9930"
+    },
+    {
+      "addr": "0x6bfa40",
+      "name": "sub_6BFA40"
+    },
+    {
+      "addr": "0x7e9940",
+      "name": "stru_7E9940"
+    },
+    {
+      "addr": "0x6bfbc0",
+      "name": "sub_6BFBC0"
+    },
+    {
+      "addr": "0x7e98f0",
+      "name": "stru_7E98F0"
+    },
+    {
+      "addr": "0x6bfd40",
+      "name": "sub_6BFD40"
+    },
+    {
+      "addr": "0x7e9910",
+      "name": "stru_7E9910"
+    },
+    {
+      "addr": "0x6bfec0",
+      "name": "sub_6BFEC0"
+    },
+    {
+      "addr": "0x7e9920",
+      "name": "stru_7E9920"
+    },
+    {
+      "addr": "0x6c0040",
+      "name": "sub_6C0040"
+    },
+    {
+      "addr": "0x7e9750",
+      "name": "stru_7E9750"
+    },
+    {
+      "addr": "0x6c01c0",
+      "name": "sub_6C01C0"
+    },
+    {
+      "addr": "0x7e9900",
+      "name": "stru_7E9900"
+    },
+    {
+      "addr": "0x6c0340",
+      "name": "sub_6C0340"
+    },
+    {
+      "addr": "0x7e9730",
+      "name": "stru_7E9730"
+    },
+    {
+      "addr": "0x6c04c0",
+      "name": "sub_6C04C0"
+    },
+    {
+      "addr": "0x7e9850",
+      "name": "stru_7E9850"
+    },
+    {
+      "addr": "0x6c0640",
+      "name": "sub_6C0640"
+    },
+    {
+      "addr": "0x7e98d0",
+      "name": "stru_7E98D0"
+    },
+    {
+      "addr": "0x6c07c0",
+      "name": "sub_6C07C0"
+    },
+    {
+      "addr": "0x7e98e0",
+      "name": "stru_7E98E0"
+    },
+    {
+      "addr": "0x6c0940",
+      "name": "sub_6C0940"
+    },
+    {
+      "addr": "0x7e9860",
+      "name": "stru_7E9860"
+    },
+    {
+      "addr": "0x6c0ac0",
+      "name": "sub_6C0AC0"
+    },
+    {
+      "addr": "0x7e9870",
+      "name": "stru_7E9870"
+    },
+    {
+      "addr": "0x6c0c40",
+      "name": "sub_6C0C40"
+    },
+    {
+      "addr": "0x7e9880",
+      "name": "stru_7E9880"
+    },
+    {
+      "addr": "0x6c0dc0",
+      "name": "sub_6C0DC0"
+    },
+    {
+      "addr": "0x7e9890",
+      "name": "stru_7E9890"
+    },
+    {
+      "addr": "0x6c0f40",
+      "name": "sub_6C0F40"
+    },
+    {
+      "addr": "0x7e98a0",
+      "name": "stru_7E98A0"
+    },
+    {
+      "addr": "0x6c10c0",
+      "name": "sub_6C10C0"
+    },
+    {
+      "addr": "0x7e98b0",
+      "name": "stru_7E98B0"
+    },
+    {
+      "addr": "0x6c1240",
+      "name": "sub_6C1240"
+    },
+    {
+      "addr": "0x7e98c0",
+      "name": "stru_7E98C0"
+    },
+    {
+      "addr": "0x6c13c0",
+      "name": "sub_6C13C0"
+    },
+    {
+      "addr": "0x7e9810",
+      "name": "stru_7E9810"
+    },
+    {
+      "addr": "0x6c1540",
+      "name": "sub_6C1540"
+    },
+    {
+      "addr": "0x7e9790",
+      "name": "stru_7E9790"
+    },
+    {
+      "addr": "0x6c16c0",
+      "name": "sub_6C16C0"
+    },
+    {
+      "addr": "0x7e9650",
+      "name": "stru_7E9650"
+    },
+    {
+      "addr": "0x6c1840",
+      "name": "sub_6C1840"
+    },
+    {
+      "addr": "0x7e9800",
+      "name": "stru_7E9800"
+    },
+    {
+      "addr": "0x6c19c0",
+      "name": "sub_6C19C0"
+    },
+    {
+      "addr": "0x7e97e0",
+      "name": "stru_7E97E0"
+    },
+    {
+      "addr": "0x6c1b40",
+      "name": "sub_6C1B40"
+    },
+    {
+      "addr": "0x7e97f0",
+      "name": "stru_7E97F0"
+    },
+    {
+      "addr": "0x6c1cc0",
+      "name": "sub_6C1CC0"
+    },
+    {
+      "addr": "0x7e97a0",
+      "name": "stru_7E97A0"
+    },
+    {
+      "addr": "0x6c1e40",
+      "name": "sub_6C1E40"
+    },
+    {
+      "addr": "0x7e97b0",
+      "name": "stru_7E97B0"
+    },
+    {
+      "addr": "0x6c1fc0",
+      "name": "sub_6C1FC0"
+    },
+    {
+      "addr": "0x7e97c0",
+      "name": "stru_7E97C0"
+    },
+    {
+      "addr": "0x6c2140",
+      "name": "sub_6C2140"
+    },
+    {
+      "addr": "0x7e97d0",
+      "name": "stru_7E97D0"
+    },
+    {
+      "addr": "0x6c22c0",
+      "name": "sub_6C22C0"
+    },
+    {
+      "addr": "0x7e9760",
+      "name": "stru_7E9760"
+    },
+    {
+      "addr": "0x6c2440",
+      "name": "sub_6C2440"
+    },
+    {
+      "addr": "0x7e9780",
+      "name": "stru_7E9780"
+    },
+    {
+      "addr": "0x6c25c0",
+      "name": "sub_6C25C0"
+    },
+    {
+      "addr": "0x7e9770",
+      "name": "stru_7E9770"
+    },
+    {
+      "addr": "0x6c2740",
+      "name": "sub_6C2740"
+    },
+    {
+      "addr": "0x7e9590",
+      "name": "stru_7E9590"
+    },
+    {
+      "addr": "0x6c28c0",
+      "name": "sub_6C28C0"
+    },
+    {
+      "addr": "0x7e95c0",
+      "name": "stru_7E95C0"
+    },
+    {
+      "addr": "0x6c2a40",
+      "name": "sub_6C2A40"
+    },
+    {
+      "addr": "0x7e95b0",
+      "name": "stru_7E95B0"
+    },
+    {
+      "addr": "0x6c2bc0",
+      "name": "sub_6C2BC0"
+    },
+    {
+      "addr": "0x7e95a0",
+      "name": "stru_7E95A0"
+    },
+    {
+      "addr": "0x6c2d40",
+      "name": "sub_6C2D40"
+    },
+    {
+      "addr": "0x7e95d0",
+      "name": "stru_7E95D0"
+    },
+    {
+      "addr": "0x6c2ec0",
+      "name": "sub_6C2EC0"
+    },
+    {
+      "addr": "0x7e95f0",
+      "name": "stru_7E95F0"
+    },
+    {
+      "addr": "0x6c3040",
+      "name": "sub_6C3040"
+    },
+    {
+      "addr": "0x7e9600",
+      "name": "stru_7E9600"
+    },
+    {
+      "addr": "0x6c31c0",
+      "name": "sub_6C31C0"
+    },
+    {
+      "addr": "0x7e9610",
+      "name": "stru_7E9610"
+    },
+    {
+      "addr": "0x6c3340",
+      "name": "sub_6C3340"
+    },
+    {
+      "addr": "0x7e96f0",
+      "name": "stru_7E96F0"
+    },
+    {
+      "addr": "0x6c34c0",
+      "name": "sub_6C34C0"
+    },
+    {
+      "addr": "0x7e96a0",
+      "name": "stru_7E96A0"
+    },
+    {
+      "addr": "0x6c3640",
+      "name": "sub_6C3640"
+    },
+    {
+      "addr": "0x7e9660",
+      "name": "stru_7E9660"
+    },
+    {
+      "addr": "0x6c37c0",
+      "name": "sub_6C37C0"
+    },
+    {
+      "addr": "0x7e9680",
+      "name": "stru_7E9680"
+    },
+    {
+      "addr": "0x6c3940",
+      "name": "sub_6C3940"
+    },
+    {
+      "addr": "0x7e9670",
+      "name": "stru_7E9670"
+    },
+    {
+      "addr": "0x6c3ac0",
+      "name": "sub_6C3AC0"
+    },
+    {
+      "addr": "0x7e9620",
+      "name": "stru_7E9620"
+    },
+    {
+      "addr": "0x6c3c40",
+      "name": "sub_6C3C40"
+    },
+    {
+      "addr": "0x7e9630",
+      "name": "stru_7E9630"
+    },
+    {
+      "addr": "0x6c3dc0",
+      "name": "sub_6C3DC0"
+    },
+    {
+      "addr": "0x7e9560",
+      "name": "stru_7E9560"
+    },
+    {
+      "addr": "0x6c3f40",
+      "name": "sub_6C3F40"
+    },
+    {
+      "addr": "0x7e9a30",
+      "name": "stru_7E9A30"
+    },
+    {
+      "addr": "0x6c40c0",
+      "name": "sub_6C40C0"
+    },
+    {
+      "addr": "0x7e9ac0",
+      "name": "stru_7E9AC0"
+    },
+    {
+      "addr": "0x6c4240",
+      "name": "sub_6C4240"
+    },
+    {
+      "addr": "0x7e9a40",
+      "name": "stru_7E9A40"
+    },
+    {
+      "addr": "0x6c43c0",
+      "name": "sub_6C43C0"
+    },
+    {
+      "addr": "0x7e9ad0",
+      "name": "stru_7E9AD0"
+    },
+    {
+      "addr": "0x6c4540",
+      "name": "sub_6C4540"
+    },
+    {
+      "addr": "0x7e9a50",
+      "name": "stru_7E9A50"
+    },
+    {
+      "addr": "0x6c46c0",
+      "name": "sub_6C46C0"
+    },
+    {
+      "addr": "0x7e9a60",
+      "name": "stru_7E9A60"
+    },
+    {
+      "addr": "0x6c4840",
+      "name": "sub_6C4840"
+    },
+    {
+      "addr": "0x7e9a70",
+      "name": "stru_7E9A70"
+    },
+    {
+      "addr": "0x6c49c0",
+      "name": "sub_6C49C0"
+    },
+    {
+      "addr": "0x7e9a80",
+      "name": "stru_7E9A80"
+    },
+    {
+      "addr": "0x6c4b40",
+      "name": "sub_6C4B40"
+    },
+    {
+      "addr": "0x7e9a90",
+      "name": "stru_7E9A90"
+    },
+    {
+      "addr": "0x6c4cc0",
+      "name": "sub_6C4CC0"
+    },
+    {
+      "addr": "0x7e9aa0",
+      "name": "stru_7E9AA0"
+    },
+    {
+      "addr": "0x6c4e40",
+      "name": "sub_6C4E40"
+    },
+    {
+      "addr": "0x7e9ab0",
+      "name": "stru_7E9AB0"
+    },
+    {
+      "addr": "0x6c4fc0",
+      "name": "sub_6C4FC0"
+    },
+    {
+      "addr": "0x7e96e0",
+      "name": "rclsid"
+    },
+    {
+      "addr": "0x6c5140",
+      "name": "sub_6C5140"
+    },
+    {
+      "addr": "0x7e9820",
+      "name": "stru_7E9820"
+    },
+    {
+      "addr": "0x6c52c0",
+      "name": "sub_6C52C0"
+    },
+    {
+      "addr": "0x7e9840",
+      "name": "stru_7E9840"
+    },
+    {
+      "addr": "0x6c5440",
+      "name": "sub_6C5440"
+    },
+    {
+      "addr": "0x7e9830",
+      "name": "stru_7E9830"
+    },
+    {
+      "addr": "0x6c55c0",
+      "name": "sub_6C55C0"
+    },
+    {
+      "addr": "0x7e9700",
+      "name": "stru_7E9700"
+    },
+    {
+      "addr": "0x6c5740",
+      "name": "sub_6C5740"
+    },
+    {
+      "addr": "0x7e9710",
+      "name": "stru_7E9710"
+    },
+    {
+      "addr": "0x6c58c0",
+      "name": "sub_6C58C0"
+    },
+    {
+      "addr": "0x7e96c0",
+      "name": "stru_7E96C0"
+    },
+    {
+      "addr": "0x6c5a40",
+      "name": "sub_6C5A40"
+    },
+    {
+      "addr": "0x7e96d0",
+      "name": "stru_7E96D0"
+    },
+    {
+      "addr": "0x6c5bc0",
+      "name": "sub_6C5BC0"
+    },
+    {
+      "addr": "0x7e9960",
+      "name": "stru_7E9960"
+    },
+    {
+      "addr": "0x6c5d40",
+      "name": "sub_6C5D40"
+    },
+    {
+      "addr": "0x7e9980",
+      "name": "stru_7E9980"
+    },
+    {
+      "addr": "0x6c5ec0",
+      "name": "sub_6C5EC0"
+    },
+    {
+      "addr": "0x7e9990",
+      "name": "stru_7E9990"
+    },
+    {
+      "addr": "0x6c6040",
+      "name": "sub_6C6040"
+    },
+    {
+      "addr": "0x7e99a0",
+      "name": "stru_7E99A0"
+    },
+    {
+      "addr": "0x7e1370",
+      "name": "__imp_RegisterActiveObject"
+    },
+    {
+      "addr": "0x89a29c",
+      "name": "punk"
+    },
+    {
+      "addr": "0xb0bcec",
+      "name": "pdwRegister"
+    },
+    {
+      "addr": "0x840dcc",
+      "name": "aTxtPreparecomF",
+      "string": "TXT_PREPARECOM_FAILED"
+    },
+    {
+      "addr": "0x7cbddc",
+      "name": "_exit"
+    },
+    {
+      "addr": "0x840db4",
+      "name": "aInitEncryption",
+      "string": "Init Encryption Keys.\n"
+    },
+    {
+      "addr": "0x840d98",
+      "name": "aInitKeysDeclar",
+      "string": "Init_Keys - declarations\n"
+    },
+    {
+      "addr": "0x65c250",
+      "name": "sub_65C250"
+    },
+    {
+      "addr": "0x7e1a80",
+      "name": "aPublickey1Aihr",
+      "string": "[PublicKey]\n1=AihRvNoIbTn85FZRYNZRcT+i6KpU+maCsEqr3Q5q+LDB5tH7Tz2qQ38V\n\n"
+    },
+    {
+      "addr": "0x535aa0",
+      "name": "INIClass::Constructor"
+    },
+    {
+      "addr": "0x840d84",
+      "name": "aInitKeysLoad",
+      "string": "Init_Keys - Load\n"
+    },
+    {
+      "addr": "0x525a10",
+      "name": "FileStraw::Open"
+    },
+    {
+      "addr": "0x840d68",
+      "name": "aInitKeysInitFa",
+      "string": "Init_Keys - Init fast key\n"
+    },
+    {
+      "addr": "0x886980",
+      "name": "dword_886980"
+    },
+    {
+      "addr": "0x52a670",
+      "name": "sub_52A670"
+    },
+    {
+      "addr": "0x5256f0",
+      "name": "HashTable::DestroyHashTableINIClass"
+    },
+    {
+      "addr": "0x65c2a0",
+      "name": "sub_65C2A0"
+    },
+    {
+      "addr": "0x81c1d0",
+      "name": "dword_81C1D0"
+    },
+    {
+      "addr": "0x4790b0",
+      "name": "SetSoundWarning"
+    },
+    {
+      "addr": "0x884e04",
+      "name": "dword_884E04"
+    },
+    {
+      "addr": "0x5b3c20",
+      "name": "MixFileClass::FromFile"
+    },
+    {
+      "addr": "0x840d5c",
+      "name": "aLangmdMix",
+      "string": "LANGMD.MIX"
+    },
+    {
+      "addr": "0x884e00",
+      "name": "dword_884E00"
+    },
+    {
+      "addr": "0x840d4c",
+      "name": "aLanguageMix",
+      "string": "LANGUAGE.MIX"
+    },
+    {
+      "addr": "0x7c978a",
+      "name": "_atexit"
+    },
+    {
+      "addr": "0x6be1c0",
+      "name": "WinMain::Setup"
+    },
+    {
+      "addr": "0x7b84f0",
+      "name": "sub_7B84F0"
+    },
+    {
+      "addr": "0x7e1460",
+      "name": "__imp_MessageBoxA"
+    },
+    {
+      "addr": "0x840c58",
+      "name": "aUnableToInitia",
+      "string": "Unable to initialize 'ra2.csf', please reinstall Red Alert.\nKeine Initialisierung von 'ra2.csf' m"
+    },
+    {
+      "addr": "0x840d34",
+      "name": "aRedAlert2",
+      "string": "Red Alert 2"
+    },
+    {
+      "addr": "0x7346a0",
+      "name": "CSFClass::LoadFile"
+    },
+    {
+      "addr": "0x840d40",
+      "name": "aRa2mdStr",
+      "string": "ra2md.str"
+    },
+    {
+      "addr": "0x4a3bf0",
+      "name": "?do_always_noconv_codecvt_base_std__MBE_NXZ_3"
+    },
+    {
+      "addr": "0x840bc8",
+      "name": "aTxtMouseRequir",
+      "string": "TXT_MOUSE_REQUIRED"
+    },
+    {
+      "addr": "0x7e13ec",
+      "name": "__imp_GetSystemMetrics"
+    },
+    {
+      "addr": "0x840c38",
+      "name": "aTxtDllInvalid",
+      "string": "TXT_DLL_INVALID"
+    },
+    {
+      "addr": "0x840c48",
+      "name": "aComctl32Dll_0",
+      "string": "comctl32.dll"
+    },
+    {
+      "addr": "0x4aecd0",
+      "name": "sub_4AECD0"
+    },
+    {
+      "addr": "0x87f7e8",
+      "name": "MapClass_Instance"
+    },
+    {
+      "addr": "0x840a74",
+      "name": "dwRegister"
+    },
+    {
+      "addr": "0x887625",
+      "name": "byte_887625"
+    },
+    {
+      "addr": "0x887598",
+      "name": "dword_887598"
+    },
+    {
+      "addr": "0x4a4130",
+      "name": "sub_4A4130"
+    },
+    {
+      "addr": "0x777c30",
+      "name": "InitWindowCreation"
+    },
+    {
+      "addr": "0x4a3fd0",
+      "name": "sub_4A3FD0"
+    },
+    {
+      "addr": "0x886fb0",
+      "name": "DSurface_WindowBounds"
+    },
+    {
+      "addr": "0x886fb4",
+      "name": "dword_886FB4"
+    },
+    {
+      "addr": "0x886fb8",
+      "name": "g_CreditsScreenBounds"
+    },
+    {
+      "addr": "0x886fbc",
+      "name": "g_CreditsScreenConfig"
+    },
+    {
+      "addr": "0x8a00a4",
+      "name": "qword_8A00A4"
+    },
+    {
+      "addr": "0x8a00ac",
+      "name": "dword_8A00AC"
+    },
+    {
+      "addr": "0x8175b0",
+      "name": "byte_8175B0"
+    },
+    {
+      "addr": "0x4a42f0",
+      "name": "InitializeDDraw"
+    },
+    {
+      "addr": "0x4a40c0",
+      "name": "sub_4A40C0"
+    },
+    {
+      "addr": "0x840c1c",
+      "name": "aTxtVideoError",
+      "string": "TXT_VIDEO_ERROR"
+    },
+    {
+      "addr": "0x89f978",
+      "name": "g_DDraw_Initialized"
+    },
+    {
+      "addr": "0xa8eb8c",
+      "name": "xRight"
+    },
+    {
+      "addr": "0xa8eb90",
+      "name": "yBottom"
+    },
+    {
+      "addr": "0x53e4f0",
+      "name": "sub_53E4F0"
+    },
+    {
+      "addr": "0x840c2c",
+      "name": "aSessionIpb",
+      "string": "session.ipb"
+    },
+    {
+      "addr": "0x53e550",
+      "name": "sub_53E550"
+    },
+    {
+      "addr": "0xa8f784",
+      "name": "dword_A8F784"
+    },
+    {
+      "addr": "0x53de00",
+      "name": "InitializeAudioStreaming"
+    },
+    {
+      "addr": "0x887308",
+      "name": "DSurface_Primary"
+    },
+    {
+      "addr": "0x4ba770",
+      "name": "DSurface::CreatePrimary"
+    },
+    {
+      "addr": "0x840c0c",
+      "name": "aTxtInvalidmode",
+      "string": "TXT_INVALIDMODE"
+    },
+    {
+      "addr": "0x6bec60",
+      "name": "GameClass::Shutdown"
+    },
+    {
+      "addr": "0x5d4d50",
+      "name": "Dialog::MessageLoop"
+    },
+    {
+      "addr": "0xa8ed80",
+      "name": "g_DDraw_Active"
+    },
+    {
+      "addr": "0x840bf0",
+      "name": "aFailedToNotify_0",
+      "string": "Failed to notify launcher\n"
+    },
+    {
+      "addr": "0x49f620",
+      "name": "CopyProtection::NotifyLauncher"
+    },
+    {
+      "addr": "0x8a00a0",
+      "name": "g_LoadScreenFlag"
+    },
+    {
+      "addr": "0x5bc180",
+      "name": "sub_5BC180"
+    },
+    {
+      "addr": "0x637070",
+      "name": "sub_637070"
+    },
+    {
+      "addr": "0x52cb80",
+      "name": "nullsub_18"
+    },
+    {
+      "addr": "0x4c1600",
+      "name": "sub_4C1600"
+    },
+    {
+      "addr": "0x4c19b0",
+      "name": "DDraw::CleanupSurfaces"
+    },
+    {
+      "addr": "0x8a0def",
+      "name": "g_DDraw_Force3D"
+    },
+    {
+      "addr": "0x8a0df0",
+      "name": "byte_8A0DF0"
+    },
+    {
+      "addr": "0x533fd0",
+      "name": "AllocateSurfaceScreenSurfaces"
+    },
+    {
+      "addr": "0x4c16a0",
+      "name": "InitializeRadialGradientTexture"
+    },
+    {
+      "addr": "0x887314",
+      "name": "DSurface_Hidden_2"
+    },
+    {
+      "addr": "0x88730c",
+      "name": "DSurface_Hidden"
+    },
+    {
+      "addr": "0x4f4780",
+      "name": "Frame::Present"
+    },
+    {
+      "addr": "0x7bc970",
+      "name": "BSurface::ConstructEx"
+    },
+    {
+      "addr": "0x886fa0",
+      "name": "DSurface_ViewBounds"
+    },
+    {
+      "addr": "0x886fa4",
+      "name": "Map_VisibleRect"
+    },
+    {
+      "addr": "0x887644",
+      "name": "g_ZBufferDescriptor"
+    },
+    {
+      "addr": "0x87e8a4",
+      "name": "g_VisibleSurfaceDescriptor"
+    },
+    {
+      "addr": "0x410ce0",
+      "name": "BSurface::Construct"
+    },
+    {
+      "addr": "0x7b8730",
+      "name": "MouseClass::Construct"
+    },
+    {
+      "addr": "0xb73550",
+      "name": "g_hWnd"
+    },
+    {
+      "addr": "0x887640",
+      "name": "WWMouseClass_Instance"
+    },
+    {
+      "addr": "0xa8e954",
+      "name": "dword_A8E954"
+    },
+    {
+      "addr": "0xa8e8e8",
+      "name": "dword_A8E8E8"
+    },
+    {
+      "addr": "0xa8e950",
+      "name": "dword_A8E950"
+    },
+    {
+      "addr": "0x47ada0",
+      "name": "CD::sub_47ADA0"
+    },
+    {
+      "addr": "0x5355d0",
+      "name": "Performance::Profile"
+    },
+    {
+      "addr": "0xa8e960",
+      "name": "g_IntroMovieObject"
+    },
+    {
+      "addr": "0x8241c0",
+      "name": "aIntro_0",
+      "string": "Intro"
+    },
+    {
+      "addr": "0x840be8",
+      "name": "aPlay_0",
+      "string": "Play"
+    },
+    {
+      "addr": "0x5175f0",
+      "name": "ReadRegistryOptionsWOL"
+    },
+    {
+      "addr": "0x5176a0",
+      "name": "InfantryClass::SetField6"
+    },
+    {
+      "addr": "0x5176c0",
+      "name": "sub_5176C0"
+    },
+    {
+      "addr": "0x5176b0",
+      "name": "Flag::IsNot2"
+    },
+    {
+      "addr": "0x529560",
+      "name": "INIClass::SetBool"
+    },
+    {
+      "addr": "0x474430",
+      "name": "INIClass::WriteDigest"
+    },
+    {
+      "addr": "0x48ccc0",
+      "name": "Main::Game"
+    },
+    {
+      "addr": "0x840bdc",
+      "name": "aMainGame",
+      "string": "Main_Game\n"
+    },
+    {
+      "addr": "0x7e1144",
+      "name": "__imp_SetUnhandledExceptionFilter"
+    },
+    {
+      "addr": "0x6bb990",
+      "name": "TopLevelExceptionFilter"
+    },
+    {
+      "addr": "0xa8f7ac",
+      "name": "byte_A8F7AC"
+    },
+    {
+      "addr": "0xa8edd8",
+      "name": "dword_A8EDD8"
+    },
+    {
+      "addr": "0x720770",
+      "name": "ThemeManager::Cleanup"
+    },
+    {
+      "addr": "0xa83d10",
+      "name": "g_BuildingTypeClass_Count"
+    },
+    {
+      "addr": "0x406d40",
+      "name": "sub_406D40"
+    },
+    {
+      "addr": "0x7e14ac",
+      "name": "__imp_PostMessageA"
+    },
+    {
+      "addr": "0x52f620",
+      "name": "ParseCommandLine"
+    },
+    {
+      "addr": "0x5d7e50",
+      "name": "sub_5D7E50"
+    },
+    {
+      "addr": "0x65fd50",
+      "name": "sub_65FD50"
+    },
+    {
+      "addr": "0x6d0270",
+      "name": "TacticalClass::CleanupResources"
+    },
+    {
+      "addr": "0x626ff0",
+      "name": "sub_626FF0"
+    },
+    {
+      "addr": "0x5bc300",
+      "name": "__ioterm"
+    },
+    {
+      "addr": "0x5f77f0",
+      "name": "ObjectTypeClass::UnloadPipsSHP"
+    },
+    {
+      "addr": "0x60d440",
+      "name": "nullsub_31"
+    },
+    {
+      "addr": "0x6370a0",
+      "name": "j_PlanningNodeClass_CleanupAll"
+    },
+    {
+      "addr": "0x72ac40",
+      "name": "sub_72AC40"
+    },
+    {
+      "addr": "0x730970",
+      "name": "sub_730970"
+    },
+    {
+      "addr": "0x552aa0",
+      "name": "LoadProgressMgr::Destroy"
+    },
+    {
+      "addr": "0x5be940",
+      "name": "sub_5BE940"
+    },
+    {
+      "addr": "0x5db6f0",
+      "name": "sub_5DB6F0"
+    },
+    {
+      "addr": "0x7e1384",
+      "name": "__imp_RevokeActiveObject"
+    },
+    {
+      "addr": "0x7e15dc",
+      "name": "__imp_CoDisconnectObject"
+    }
+  ]
+}
