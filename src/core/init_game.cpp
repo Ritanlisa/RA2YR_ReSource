@@ -94,22 +94,30 @@ extern const void* CCINIClass_Vtable;
 // --- Phase 1: Bootstrap preamble ---
 
 // FadePalette defined in globals.cpp
-// void FadePalette(int mode); — declared in init_stubs.hpp
+// IDA 0x4790B0 — SetSoundWarning
 void SetSoundWarning(int level) { (void)level; }
+// IDA 0x54F000 — EventQueue::Process
 void EventQueueProcess(void* bink_player) { (void)bink_player; }
 
 // --- Phase 2: Font / Mouse / Audio ---
 
+// IDA 0x5BC450 — GetTextBufferEntry
 int  GetTextBufferEntry(int index) { (void)index; return 0; }
+// IDA 0x5BCC90 — TextBuffer::Init
 void TextBufferInit(int buffer) { (void)buffer; }
+// IDA 0x434AD0 — BitTextClass::LoadFont
 void* BitTextClassLoadFont(void* mem) { (void)mem; return nullptr; }
+// IDA 0x60D430 — Init::StubPlaceholder
 void InitStubPlaceholder() {}
+// IDA 0x72AA40 — LoadMouseClassResources
 void LoadMouseClassResources() {}
+// IDA 0x406B10 — InitializeAudioSubsystem
 int  InitializeAudioSubsystem(void* hwnd) { (void)hwnd; return 1; }
 
 // IDA 0x6C8C40 — Timer::GetTicks: returns timeGetTime() >> 4 (~16ms resolution)
 int TimerGetTicks() { return timeGetTime() >> 4; }
 
+// IDA 0x54F720 — Timer::PumpMessages
 void TimerPumpMessages(void* bink_player) { (void)bink_player; }
 
 // --- Phase 3: Palette helpers ---
@@ -120,7 +128,9 @@ int Palette6BitTo16Bit(int r, int g, int b) {
 }
 // IDA 0x4B9BD0 — Struct::Zero3: zero-fill 3 bytes at each stride
 void StructZero3(void* ptr, int count) { std::memset(ptr, 0, count * 3); }
+// IDA 0x753B70 — VoxelPaletteClass::LoadFromFile
 void VoxelPaletteLoadFromFile(const char* path) { (void)path; }
+// IDA 0x5AE860 — Matrix3x4::Identity
 void Matrix3x4Identity(float* m) { (void)m; }
 
 // IDA 0x4068F0 — Array::ForEach: zero-fill n elements of stride size
@@ -129,7 +139,9 @@ void ArrayForEach3ByteZero(void* buf, int stride, int count) {
     for (int i = 0; i < count; ++i, p += stride)
         std::memset(p, 0, 3);
 }
+// IDA 0x754C00 — Voxel::SetProjectionAngle
 void VoxelSetProjectionAngle(float angle) { (void)angle; }
+// IDA 0x754CB0 — Voxel::ProjectionSetup
 void VoxelProjectionSetup() {}
 // --- Phase 4: MIX / CD / Movie ---
 
@@ -147,7 +159,9 @@ void EventDispatchEx() {
     // IDA: In skirmish mode, handles UI pointer table + time-based events
     AudioVideoUpdate();
 }
+// IDA 0x47AB10 — Game::FindGameDirectoryCD
 int  FindGameDirectoryCD(const char* drives) { (void)drives; return 1; }
+// IDA 0x5D3490 — Dialog::ShowMessageBox
 int  DialogShowMessageBox(const wchar_t* msg, const wchar_t* ok, const wchar_t* cancel, int a4, int a5) {
     (void)msg; (void)ok; (void)cancel; (void)a4; (void)a5;
     return 1;
@@ -159,18 +173,24 @@ bool MixFileLoadAll() {
     // Previously tried to call Bootstrap() again but that was incorrect.
     return true; // TODO: implement secondary MIX scanning
 }
+// IDA 0x5BED40 — Movie::Play
 void MoviePlay(int a1, int a2, int a3, int a4) { (void)a1; (void)a2; (void)a3; (void)a4; }
 // IDA 0x5312A0 — ShowLoadingScreen: displays loading progress
 void ShowLoadingScreen() {
     LOG_INFO("ShowLoadingScreen: loading screen would display here");
 }
+// IDA 0x52CB90 — Credits::Screen (credits display)
 void CreditsScreen() {}
 
 // --- Phase 5: Settings / Anim / Tactical ---
 
+// IDA 0x5FA620 — GameSettings::Read
 void GameSettingsRead(int mode) { (void)mode; }
+// IDA 0x75A790 — AnimSystem::Init
 void AnimSystemInit() {}
+// IDA 0x75A7D0 — ResetAnimSystem
 void ResetAnimSystem(int mode) { (void)mode; }
+// IDA 0x6D1C20 — TacticalMap::Construct
 void* TacticalMapConstruct(void* mem) { (void)mem; return nullptr; }
 
 // --- Phase 6: INI loading ---
@@ -193,12 +213,19 @@ void DestroyHashTableINIClass(void* ini) {
     auto* ccini = static_cast<CCINIClass*>(ini);
     if (ccini) ccini->~CCINIClass();
 }
+// IDA 0x7513F0 — Audio::LoadSoundINI
 void AudioLoadSoundINI() {}
+// IDA 0x7510D0 — Audio::InitFromINI
 void AudioInitFromINI(void* ini) { (void)ini; }
+// IDA 0x7531A0 — LoadINIEVA
 void LoadINIEVA() {}
+// IDA 0x753000 — InitFromINIEVA
 void InitFromINIEVA(void* ini) { (void)ini; }
+// IDA 0x720770 — ThemeManager::Cleanup
 void ThemeManagerCleanup() {}
+// IDA 0x720590 — ThemeClass::InitializeThemes
 void ThemeClassInitializeThemes(void* ini) { (void)ini; }
+// IDA 0x7207F0 — Audio::LoadWAVFiles
 void AudioLoadWAVFiles() {}
 // InitBulkData defined in src/misc/rules.cpp
 // InitRules defined in src/misc/rules.cpp
@@ -249,36 +276,41 @@ void InitCommands() {} // TODO: ~40 CommandClass registrations (7118B)
 
 // --- Phase 7: File helpers ---
 
+// IDA 0x5B40B0 — SearchMIXFile: search MIX pool by hash, return file data
 const void* SearchMIXFile(const char* name) {
     return FileSystem::LoadFile(name, false);
 }
-// IDA 0x6260D0 — Block::Copy: copies 768-byte palette block (if src != dst)
+// IDA 0x6260D0 — Block::Copy: copies 768-byte palette block
 void BlockCopy(const void* src) {
     (void)src; // Destination is implicit (this pointer in IDA __thiscall)
     // IDA: if (this != src) qmemcpy(this, src, 0x300)
     // For now, skip — destination is a palette duplicate buffer not yet allocated
 }
 
+// IDA 0x4739F0 — CCFileClass::Construct
 void* CCFileClassConstruct(void* /*stack_buf*/, const char* filename) {
-    // Heap-allocate a real CCFileClass (stack buffers are too small for full CCFileClass hierarchy)
     auto* f = new CCFileClass(filename);
     if (!filename || !filename[0]) return f;
-    f->Open(filename); // search MIX pool + disk
+    f->Open(filename);
     return f;
 }
+// IDA 0x473C50 — CCFileClass::Open
 bool CCFileClassOpen(void* file, int mode) {
     (void)mode;
     auto* f = static_cast<CCFileClass*>(file);
-    return f && f->Buffer.Buffer != nullptr; // true if file was loaded
+    return f && f->Buffer.Buffer != nullptr;
 }
+// IDA 0x4A3890 — CCFileClass::ReadEntireFile
 void* CCFileClassReadEntireFile(void* file) {
     auto* f = static_cast<CCFileClass*>(file);
     return f ? f->ReadEntireFile() : nullptr;
 }
+// IDA 0x473CE0 — CCFileClass::Reset
 void CCFileClassReset(void* file) {
     auto* f = static_cast<CCFileClass*>(file);
     if (f) f->Reset();
 }
+// IDA 0x535A70 — CCFileClass::Destruct (BufferIOFileClass::Dtor)
 void CCFileClassDestruct(void* file) {
     auto* f = static_cast<CCFileClass*>(file);
     if (f) { f->~CCFileClass(); delete f; }
@@ -290,7 +322,9 @@ void VectorClear(void* vec) {
     v[2] = 0; // Count = 0
     // Optional: if Capacity > 0, clear Items
 }
+// IDA 0x6728B0 — RulesClass::LoadAnimTypes
 void LoadAnimTypes(void* rules_ini) { (void)rules_ini; }
+// IDA 0x672660 — RulesClass::LoadBuildingTypes
 void LoadBuildingTypes(void* rules_ini) { (void)rules_ini; }
 // IDA 0x48E740 — ConvertClass::Constructor: creates DDraw palette surface
 void* ConvertClassConstruct(void* palette, void* temperat_pal, void* surface, int count, int flags) {
