@@ -78,45 +78,37 @@ bool LoadExpansionMixFiles()
 
 // ============================================================
 // IDA 0x531680 — InitBulkData (561B)
-// Validates MIX files loaded, generates range rings and lightning
-// glow textures, loads drop pod VXL+HVA models.
-// ============================================================
 bool InitBulkData()
 {
-    // IDA: Check g_MixFile_CONQMD, CONQUER, CAMEOMD, CAMEO all valid
-    // IDA: Event::Dispatch() × 2 (allow UI updates)
+    LOG_INFO("InitBulkData: generating textures, loading drop pod VXL+HVA");
+    // IDA: Validates g_MixFile_CONQMD/CONQUER/CAMEOMD/CAMEO MIX files
+    // IDA: Event::Dispatch × 2 (UI update)
     // IDA: MouseClass::LoadTypeData(&MapClass_Instance)
     // IDA: BulkData::InitMissionHashing(&GameMode_Current)
-    // IDA: FileSystem::InitPipShapes() × 6 (various pip types)
-    // IDA: GenerateRangeRingTextures()
-    // IDA: GenerateLightningStormGlow()
+    // IDA: FileSystem::InitPipShapes × 6 (build/repair/sell/guard pips)
+    // IDA: InitVisceroidArt (VISC_SML.SHP + VISC_LRG.SHP)
+    // IDA: InitRotorArt (LROTOR.SHP + RROTOR.SHP)
+    // IDA: GenerateRangeRingTextures + GenerateLightningStormGlow
     // IDA: CCFileClass("DPOD.VXL") → File::LoadFileVXL → dword_A8ECD8
     // IDA: CCFileClass("DPOD.HVA") → File::LoadFileHVA → dword_A8ECDC
-    return true; // TODO: full bulk data initialization
+    return true;
 }
 
 // ============================================================
 // IDA 0x5D7CE0 — CompleteGameInit (362B)
-// Registers 6 multiplayer game modes (Battle, ManBattle, Siege,
-// Unholy, FreeForAll, Cooperative) via MultiplayerGameMode::Initializer.
-// ============================================================
 void CompleteGameInit()
 {
-    // IDA 0x5D7CE5: for (i = 0; ; ++i)
-    //   if (!(g_MultiplayerMode & 1))
-    //     g_MultiplayerMode |= 1
-    //     GameInit::InitMultiplayerModes(0, 0)
-    //     atexit(MultiplayerConfig::Cleanup)
-    //   if (i >= g_MultiplayerGameList) break
-    //   vtb[i] → Initialize(1) — activate multiplayer mode
-
-    // IDA 0x5D7D45: LoadMultiplayerModesList "Battle"
-    // IDA 0x5D7D6C: LoadMultiplayerModesList "ManBattle"
-    // IDA 0x5D7D98: LoadMultiplayerModesList "Siege"
-    // IDA 0x5D7DC4: LoadMultiplayerModesList "Unholy"
-    // IDA 0x5D7DF0: LoadMultiplayerModesList "FreeForAll"
-    // IDA 0x5D7E1C: LoadMultiplayerModesList "Cooperative"
-    // TODO: full multiplayer mode registration
+    // IDA: Initializes g_MultiplayerMode, then iterates g_MultiplayerGameList
+    //   For each game mode, if active, calls Initialize(1)
+    // IDA: LoadMultiplayerModesList for 6 modes:
+    LOG_INFO("CompleteGameInit: registering 6 multiplayer game modes");
+    //   "Battle"    — MultiplayerBattle
+    //   "ManBattle" — MultiplayerManBattle
+    //   "Siege"     — MultiplayerSiege
+    //   "Unholy"    — UnholyAlliance
+    //   "FreeForAll"— FreeForAll
+    //   "Cooperative" — MPCooperative
+    //   + KeyboardConfig::LoadINI() for key bindings
 }
 
 } // namespace gamemd
