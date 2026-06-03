@@ -172,11 +172,18 @@ void EventDispatchEx() {
     AudioVideoUpdate();
 }
 // IDA 0x47AB10 — Game::FindGameDirectoryCD
-int  FindGameDirectoryCD(const char* drives) { (void)drives; return 1; }
+int  FindGameDirectoryCD(const char* drives) {
+    (void)drives;
+    // IDA: iterates CD drive letters, checks for game files
+    // Returns 1=found, 0=not found, 2=retry
+    return 1; // Skip CD check — all files local
+}
+
 // IDA 0x5D3490 — Dialog::ShowMessageBox
 int  DialogShowMessageBox(const wchar_t* msg, const wchar_t* ok, const wchar_t* cancel, int a4, int a5) {
-    (void)msg; (void)ok; (void)cancel; (void)a4; (void)a5;
-    return 1;
+    (void)ok; (void)cancel; (void)a4; (void)a5;
+    LOG_WARN("DialogShowMessageBox: %S", msg);
+    return 1; // OK pressed (skip dialog)
 }
 // IDA 0x530460 — MixFile::LoadAll: secondary MIX loading (expansion packs, local)
 bool MixFileLoadAll() {
