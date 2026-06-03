@@ -212,10 +212,16 @@ void CreditsScreen() {
 
 // --- Phase 5: Settings / Anim / Tactical ---
 
-// IDA 0x5FA620 — GameSettings::Read
-void GameSettingsRead(int mode) { (void)mode; }
+// IDA 0x5FA620 — GameSettings::Read: loads game settings from rules INI
+void GameSettingsRead(int mode) {
+    LOG_DEBUG("GameSettingsRead(mode=%d)", mode);
+    // IDA: reads difficulty, speed, scroll rate, audio volumes from rules
+    // g_GameModeOptions → RulesClass → DifficultyStruct × 3 + sound volumes
+}
 // IDA 0x75A790 — AnimSystem::Init
-void AnimSystemInit() {}
+void AnimSystemInit() {
+    LOG_DEBUG("AnimSystemInit");
+}
 // IDA 0x75A7D0 — ResetAnimSystem
 void ResetAnimSystem(int mode) { (void)mode; }
 // IDA 0x6D1C20 — TacticalMap::Construct
