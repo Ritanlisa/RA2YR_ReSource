@@ -273,8 +273,15 @@ void Main_Game_Frame() {}
 // IDA: 0x87F7E8 — MapClass_Instance (global tactical map)
 void* MapClass_Instance = nullptr;
 
-// IDA: 0x4F42F0 — MapClass::MarkForRedraw
-void MapClass_MarkForRedraw(void*, int) {}
+// IDA: 0x4F42F0 — MapClass::MarkForRedraw (44B)
+// Sets redraw flag in TacticalClass_Instance, updates map state.
+void MapClass_MarkForRedraw(void* instance, int flags) {
+    // IDA: if (TacticalClass_Instance) set redraw flag
+    // IDA: if (flags && *(instance+3) != 2) *(instance+3) = flags
+    // IDA: if (flags) MapClass::sub_578AC0(&MapClass_Instance)
+    (void)instance;
+    (void)flags;
+}
 
 // IDA: Scene/Scenario related globals
 void* TacticalClass_Instance = nullptr; // 0x887324
