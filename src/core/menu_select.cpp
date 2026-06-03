@@ -44,7 +44,9 @@ static bool      GameFrameLoop();
 static bool      GameFrameCheck();
 static void      MainGameFrame();
 
+// IDA 0x406F70 — AudioVideoUpdate (per-frame audio/video poll)
 void AudioVideoUpdate() {}
+// IDA 0x48D080 — Event_Dispatch (per-frame event processing)
 char Event_Dispatch() { AudioVideoUpdate(); return 0; }
 
 // ---- palette ----
@@ -679,6 +681,7 @@ static void MainGameFrame(){
 //   9=LoadGame  10=BackToCampaign  11=SkirmishMode5
 //   13=PlayMovie  14=CampaignCD  15=Credits
 //   16/17=GameStart(return 1)
+// IDA 0x52D9A0 — MenuSelect (4536B, 222BBs, 19-case state machine)
 char MenuSelect(){
     g_MenuState=MenuState::MenuIdle;g_GameMode=0;
     while(true){

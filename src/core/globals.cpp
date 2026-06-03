@@ -111,7 +111,7 @@ bool byte_A8EB80 = false;
 // MainGame stub functions
 // ============================================================
 
-// 0x4A3C30: FadePalette
+// IDA 0x4A3C30 — FadePalette (screen fade to/from black)
 void FadePalette(int mode) { (void)mode; }
 
 // 0x6C87F0: InitSkirmishSettings
