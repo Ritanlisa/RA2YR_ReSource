@@ -55,8 +55,13 @@ bool LoadExpansionMixFiles()
         do {
             if (!(fd.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY)) {
                 LOG_INFO("  ECACHE: %s", fd.cFileName);
-                // IDA: MixFileClass::FromFile(new(0x28), fd.cFileName, ...)
-                // Falls through to TD format detection logic
+                auto* mix = new MixFileClass(fd.cFileName);
+                if (mix->IsValid()) {
+                    pool.AddItem(mix);
+                    LOG_INFO("  → added to pool (%d files)", mix->CountFiles);
+                } else {
+                    delete mix;
+                }
             }
         } while (FindNextFileA(hFind, &fd));
         FindClose(hFind);
@@ -68,6 +73,13 @@ bool LoadExpansionMixFiles()
         do {
             if (!(fd.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY)) {
                 LOG_INFO("  ELOCAL: %s", fd.cFileName);
+                auto* mix = new MixFileClass(fd.cFileName);
+                if (mix->IsValid()) {
+                    pool.AddItem(mix);
+                    LOG_INFO("  → added to pool (%d files)", mix->CountFiles);
+                } else {
+                    delete mix;
+                }
             }
         } while (FindNextFileA(hFind, &fd));
         FindClose(hFind);

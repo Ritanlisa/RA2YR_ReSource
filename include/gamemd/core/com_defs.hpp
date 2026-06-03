@@ -8,7 +8,7 @@ namespace gamemd {
 
 // ============================================================
 // Locomotor CLSIDs (8 COM classes for unit movement types)
-// IDA table @ 0x7E9A60
+// IDA table @ 0x7E9A60 (8 × 16-byte GUIDs)
 // ============================================================
 static const GUID CLSID_WalkLocomotion    = {0x4A582744, 0x9839, 0x11D1, {0xB7,0x09,0x00,0xA0,0x24,0xDD,0xAF,0xD1}};
 static const GUID CLSID_DriveLocomotion   = {0x4A582745, 0x9839, 0x11D1, {0xB7,0x09,0x00,0xA0,0x24,0xDD,0xAF,0xD1}};
@@ -21,6 +21,7 @@ static const CLSID CLSID_ShipLocomotion    = {0xB7B49766, 0x9839, 0x11D1, {0xB7,
 
 // ============================================================
 // Core game object CLSIDs (major class hierarchy)
+// IDA source: TClassFactory table entries (scattered .rdata addresses)
 // ============================================================
 static const CLSID CLSID_AbstractClass     = {0xB45A4A81, 0x86DA, 0x11D1, {0xB7,0x06,0x00,0xA0,0x24,0xDD,0xAF,0xD1}};
 static const CLSID CLSID_ObjectClass       = {0x0D5CD78E, 0x6470, 0x11D2, {0x9B,0x74,0x00,0x10,0x4B,0x97,0x2F,0xE8}};
