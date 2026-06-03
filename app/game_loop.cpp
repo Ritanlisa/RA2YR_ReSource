@@ -65,7 +65,14 @@ bool GameLoop_Init(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 
     g_hInstance = hInstance;
 
-    auto config = ParseCommandLine(lpCmdLine);
+    // IDA: WinMain calls ParseCommandLine with argv
+    // Our old interface returns a GameConfig; ParseCommandLine sets globals directly
+    GameConfig config;
+    ParseCommandLine(__argc, __argv);
+    config.no_cd     = byte_89E3A0;
+    config.windowed  = (g_DDraw_Initialized != 0);
+    config.spawn_mode = false; // -SPAWN is handled by DLL injection hook
+
     g_windowed   = config.windowed;
     g_spawn_mode = config.spawn_mode;
 
