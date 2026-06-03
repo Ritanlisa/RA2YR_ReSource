@@ -97,13 +97,25 @@ extern const void* CCINIClass_Vtable;
 // IDA 0x4790B0 — SetSoundWarning
 void SetSoundWarning(int level) { (void)level; }
 // IDA 0x54F000 — EventQueue::Process
-void EventQueueProcess(void* bink_player) { (void)bink_player; }
+// IDA 0x54F000 — EventQueue::Process: pump window messages, keep UI responsive
+void EventQueueProcess(void* bink_player) {
+    (void)bink_player;
+    MSG msg;
+    while (PeekMessageA(&msg, nullptr, 0, 0, PM_REMOVE)) {
+        TranslateMessage(&msg);
+        DispatchMessageA(&msg);
+    }
+    AudioVideoUpdate();
+}
 
 // --- Phase 2: Font / Mouse / Audio ---
 
-// IDA 0x5BC450 — GetTextBufferEntry
-int  GetTextBufferEntry(int index) { (void)index; return 0; }
-// IDA 0x5BCC90 — TextBuffer::Init
+// IDA 0x5BC450 — GetTextBufferEntry: returns text buffer index
+int  GetTextBufferEntry(int index) {
+    (void)index;
+    return 0; // TODO: text buffer subsystem (used for loading screen messages)
+}
+// IDA 0x5BCC90 — TextBuffer::Init: initializes text buffer for loading messages
 void TextBufferInit(int buffer) { (void)buffer; }
 // IDA 0x434AD0 — BitTextClass::LoadFont
 void* BitTextClassLoadFont(void* mem) { (void)mem; return nullptr; }
@@ -175,12 +187,19 @@ bool MixFileLoadAll() {
 }
 // IDA 0x5BED40 — Movie::Play
 void MoviePlay(int a1, int a2, int a3, int a4) { (void)a1; (void)a2; (void)a3; (void)a4; }
-// IDA 0x5312A0 — ShowLoadingScreen: displays loading progress
+// IDA 0x5312A0 — ShowLoadingScreen: displays loading SHP (ls640*.shp/ls800*.shp)
 void ShowLoadingScreen() {
-    LOG_INFO("ShowLoadingScreen: loading screen would display here");
+    LOG_INFO("ShowLoadingScreen: loading screen SHP would display here");
+    // IDA: loads ls640*.shp or ls800*.shp based on screen width
+    // IDA: creates DDraw surface, blits SHP as background
+    // TODO: SHP loading + DSurface blit
 }
-// IDA 0x52CB90 — Credits::Screen (credits display)
-void CreditsScreen() {}
+
+// IDA 0x52CB90 — CreditsScreen (credits/intro sequence)
+void CreditsScreen() {
+    LOG_INFO("CreditsScreen: credits/intro sequence would display here");
+    // IDA: loads credits assets, renders scrolling text on DDraw surface
+}
 
 // --- Phase 5: Settings / Anim / Tactical ---
 
