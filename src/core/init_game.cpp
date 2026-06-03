@@ -107,9 +107,9 @@ void TimerPumpMessages(void* bink_player) { (void)bink_player; }
 
 // --- Phase 3: Palette helpers ---
 
-int  Palette6BitTo16Bit(int r, int g, int b) {
-    (void)r; (void)g; (void)b;
-    return 0; // TODO: 16bpp RGB565 packing
+// IDA 0x4355B0 — Palette::6BitTo16Bit: packs 3 bytes into 24-bit (used as temp struct)
+int Palette6BitTo16Bit(int r, int g, int b) {
+    return ((uint8_t)b << 16) | ((uint8_t)g << 8) | (uint8_t)r;
 }
 void StructZero3(void* ptr, int count) { (void)ptr; (void)count; }
 void VoxelPaletteLoadFromFile(const char* path) { (void)path; }
@@ -136,7 +136,13 @@ int  DialogShowMessageBox(const wchar_t* msg, const wchar_t* ok, const wchar_t* 
     (void)msg; (void)ok; (void)cancel; (void)a4; (void)a5;
     return 1;
 }
-bool MixFileLoadAll() { return true; }
+// IDA 0x530460 — MixFile::LoadAll: secondary MIX file loading
+bool MixFileLoadAll() {
+    // After Bootstrap loads primary MIX files, LoadAll loads additional
+    // MIX containers (cache, expansion, local, etc.)
+    // Previously tried to call Bootstrap() again but that was incorrect.
+    return true; // TODO: implement secondary MIX scanning
+}
 void MoviePlay(int a1, int a2, int a3, int a4) { (void)a1; (void)a2; (void)a3; (void)a4; }
 void ShowLoadingScreen() {}
 void CreditsScreen() {}
@@ -204,7 +210,11 @@ void InitCommands() {} // TODO: ~40 CommandClass registrations (7118B)
 const void* SearchMIXFile(const char* name) {
     return FileSystem::LoadFile(name, false); // delegates to MIX pool search + disk fallback
 }
-void BlockCopy(const void* src) { (void)src; }
+void BlockCopy(const void* src) {
+    // IDA 0x6260D0: copies a block of palette data (probably to duplicate surfaces)
+    (void)src;
+    // TODO: actual block copy — copies a surface's pixel data to another
+}
 void* CCFileClassConstruct(void* buf, const char* filename) {
     (void)buf; (void)filename;
     return buf; // TODO: CCFileClass construction
