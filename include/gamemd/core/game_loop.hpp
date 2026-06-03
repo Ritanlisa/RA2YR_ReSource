@@ -6,7 +6,7 @@ namespace gamemd {
 extern HWND      g_hWnd;
 extern HINSTANCE g_hInstance;
 
-bool InitGame(bool no_cd);
+int  InitGame(bool no_cd);
 bool SpawnModeEnter();
 void MainGame();
 

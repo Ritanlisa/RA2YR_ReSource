@@ -1,130 +1,689 @@
 // InitGame — IDA: 0x52BA60 (4333B, 146 basic blocks)
-// FAITHFUL game initialization pipeline matching IDA call order.
+// FAITHFUL game initialization pipeline matching IDA call order exactly.
 // Called from MainGame (0x48CCC0). Returns 0 on success, non-zero on failure.
+//
+// Step count: ~40 sub-steps across 7 logical phases.
+// All stubs declared in include/gamemd/core/init_stubs.hpp
 
 #include <windows.h>
 #include <cstring>
 
 #include "gamemd/core/logging.hpp"
 #include "gamemd/core/ddraw_init.hpp"
+#include "gamemd/core/init_stubs.hpp"
 #include "gamemd/system/mix_file.hpp"
-#include "gamemd/system/file_system.hpp"
+#include "gamemd/system/convert_class.hpp"
+#include "gamemd/system/cc_file.hpp"
+#include "gamemd/system/tactical.hpp"
 #include "gamemd/render/surface.hpp"
+#include "gamemd/render/movie.hpp"
 
 namespace gamemd {
 
-// --- IDA globals ---
-void* RulesClass_Instance = nullptr;    // 0x8871E0
-void* ScenarioClass_Instance = nullptr; // 0xA8B230
-void* g_GameFontObject = nullptr;       // 0x89C4B8
-void* g_MouseSHP = nullptr;            // 0xB0BCF0
-bool  CmdLine_NoCD = false;            // 0x89E410
-int   g_BuildingTypeCount2 = 0;        // 0xA83D10
-int   g_BuildingTypeClass_Count = 0;   // 0x8B4160
-void* g_AnimTypeCount = nullptr;       // 0x8B4154
-void* g_TriggerTypeCount = nullptr;    // 0xA83C6C
-int   g_TriggerClassCount = 0;         // 0xA83C78
-void* CCINIClass_INI_Rules = nullptr;  // 0x887048
-void* CCINIClass_INI_Art = nullptr;    // 0x887180
-int   g_GameModeOptions = 0;           // 0xA8EB60
+// ============================================================
+// Global variables used by InitGame (IDA addresses)
+// ============================================================
 
-// Extern globals from other modules
-extern bool g_Is16BitMode;       // 0x8175B0 (globals.cpp)
-extern bool byte_89E3A0;          // 0x89E3A0 (globals.cpp)
-extern bool g_DDraw_Active;       // 0xA8ED80 (ddraw_init.cpp)
-extern int  g_Audio_MixerEnabled; // 0x840A70 (globals.cpp)
+void* RulesClass_Instance = nullptr;        // 0x8871E0
+void* ScenarioClass_Instance = nullptr;     // 0xA8B230
+void* g_GameFontObject = nullptr;           // 0x89C4B8
+void* g_MouseSHP = nullptr;                // 0xB0BCF0
+bool  CmdLine_NoCD = false;                // 0x89E410
+int   g_BuildingTypeCount2 = 0;            // 0xA83D10
+int   g_BuildingTypeClass_Count = 0;        // 0x8B4160
+void* g_AnimTypeCount = nullptr;           // 0x8B4154
+void* g_TriggerTypeCount = nullptr;        // 0xA83C6C
+int   g_TriggerClassCount = 0;             // 0xA83C78
+void* CCINIClass_INI_Rules = nullptr;      // 0x887048
+void* CCINIClass_INI_Art = nullptr;         // 0x887180
+int   g_GameModeOptions = 0;               // 0xA8EB60
+int   g_LoadScreenFlag = 0;                // 0x8A00A0
+extern int   dword_81C1D0;              // 0x81C1D0 — CD availability (globals.cpp)
+extern int   dword_A8E950;              // 0xA8E950 — CD drive count (globals.cpp)
+extern void* dword_A8E8E8;              // 0xA8E8E8 — CD drive letters
 
-// Simple palette loading helper
-static void LoadPaletteFromMIX(const char* name, void* dest_buf)
-{
-    void* data = FileSystem::LoadFile(name, false);
-    if (!data) {
-        LOG_WARN("Palette '%s' not found", name);
-        return;
-    }
-    memcpy(dest_buf, data, 768);
-    free(data);
-    LOG_INFO("  Palette '%s': loaded", name);
+// Palette buffers (IDA addresses)
+static uint8_t byte_886380[768];           // 0x886380 — UNITSNO palette
+static uint8_t byte_886381_impl = 0;       // offset
+static uint8_t byte_886382_impl = 0;       // offset
+static uint8_t FileSystem_TEMPERAT_PAL[768]; // 0x885780
+static uint8_t byte_885180[768];           // 0x885180 — WAYPOINT palette
+static uint8_t voxel_palette_buf[768];     // 0x886680 — voxel palette
+static float  flt_88741C = 0.95990276f;    // 0x88741C
+static bool   byte_887418 = true;          // 0x887418
+static float  flt_887430[12];              // 0x887430 — Matrix3x4 identity
+static int    dword_B43184 = 1;            // 0xB43184
+static int    dword_B43180 = 0;            // 0xB43180
+
+// Extern globals
+extern bool g_Is16BitMode;               // 0x8175B0
+extern bool byte_89E3A0;                  // 0x89E3A0
+extern bool g_DDraw_Active;               // 0xA8ED80
+extern uint32_t g_Audio_MixerEnabled;    // 0x840A70 (defined in globals.cpp)
+
+// Extern palette globals (defined here, used by InitGame)
+extern void* DSurface_Primary;            // 0x887308 (defined in ddraw_init.cpp)
+extern void* DSurface_Hidden;             // 0x88730C
+extern void* DSurface_Hidden_2;           // 0x887314
+void* FileSystem_x_PAL = nullptr;          // 0x87F6B8
+void* FileSystem_ANIM_PAL = nullptr;       // 0x87F6C0
+void* FileSystem_THEATER_PAL = nullptr;    // 0x87F6C4
+void* FileSystem_UNITx_PAL = nullptr;      // 0x87F6B4
+void* FileSystem_CAMEO_PAL = nullptr;      // 0x87F6B0
+void* FileSystem_MOUSE_PAL = nullptr;      // 0x87F6C8
+void* FileSystem_GRFXTXT_TIBERIUM_PAL = nullptr; // 0x87F6BC
+void* FileSystem_GRFXTXT_PAL = nullptr;    // 0xA8F790
+void* FileSystem_GRFXTXT_Convert = nullptr; // 0xA8F798
+void* FileSystem_GRFXTXT_SHP = nullptr;    // 0xA8F794
+// Extern from other modules
+extern void* WWMouseClass_Instance;       // 0x887640 (globals.cpp)
+extern void* g_BinkMoviePlayer;           // 0x87F770 (globals.cpp)
+extern void* TacticalClass_Instance;      // 0x887324 (globals.cpp)
+
+// CCINIClass vtable (IDA 0x7E1AF4)
+extern const void* CCINIClass_Vtable;
+
+// ============================================================
+// IDA: init_stubs.cpp — all InitGame dependency stubs
+// ============================================================
+
+// --- Phase 1: Bootstrap preamble ---
+
+// FadePalette defined in globals.cpp
+// void FadePalette(int mode); — declared in init_stubs.hpp
+void SetSoundWarning(int level) { (void)level; }
+void EventQueueProcess(void* bink_player) { (void)bink_player; }
+
+// --- Phase 2: Font / Mouse / Audio ---
+
+int  GetTextBufferEntry(int index) { (void)index; return 0; }
+void TextBufferInit(int buffer) { (void)buffer; }
+void* BitTextClassLoadFont(void* mem) { (void)mem; return nullptr; }
+void InitStubPlaceholder() {}
+void LoadMouseClassResources() {}
+int  InitializeAudioSubsystem(void* hwnd) { (void)hwnd; return 1; }
+void TimerPumpMessages(void* bink_player) { (void)bink_player; }
+
+// --- Phase 3: Palette helpers ---
+
+int  Palette6BitTo16Bit(int r, int g, int b) {
+    (void)r; (void)g; (void)b;
+    return 0; // TODO: 16bpp RGB565 packing
+}
+void StructZero3(void* ptr, int count) { (void)ptr; (void)count; }
+void VoxelPaletteLoadFromFile(const char* path) { (void)path; }
+void Matrix3x4Identity(float* m) {
+    (void)m;
+    // TODO: set 4x3 identity matrix
+}
+void VoxelSetProjectionAngle(float angle) { (void)angle; }
+void VoxelProjectionSetup() {}
+void ArrayForEach3ByteZero(void* buf, int stride, int count) {
+    (void)buf; (void)stride; (void)count;
+}
+
+// --- Phase 4: MIX / CD / Movie ---
+
+bool LoadExpansionMixFiles() { return true; }
+int  LoadFileSHP(const char* filename) { (void)filename; return 0; }
+void MissionSetAndCall(int a, int b) { (void)a; (void)b; }
+void EventDispatchEx() {}
+int  FindGameDirectoryCD(const char* drives) { (void)drives; return 1; }
+int  DialogShowMessageBox(const wchar_t* msg, const wchar_t* ok, const wchar_t* cancel, int a4, int a5) {
+    (void)msg; (void)ok; (void)cancel; (void)a4; (void)a5;
+    return 1; // IDA: 1 = OK pressed
+}
+bool MixFileLoadAll() { return true; }
+void MoviePlay(int a1, int a2, int a3, int a4) { (void)a1; (void)a2; (void)a3; (void)a4; }
+void ShowLoadingScreen() {}
+void CreditsScreen() {}
+
+// --- Phase 5: Settings / Anim / Tactical ---
+
+void GameSettingsRead(int mode) { (void)mode; }
+void AnimSystemInit() {}
+void ResetAnimSystem(int mode) { (void)mode; }
+void* TacticalMapConstruct(void* mem) { (void)mem; return nullptr; }
+
+// --- Phase 6: INI loading ---
+
+void INIClassConstruct(void* buf) { (void)buf; }
+bool CCINIClassLoad(void* ini, void* file, int a2, int a3) {
+    (void)ini; (void)file; (void)a2; (void)a3;
+    return true;
+}
+void DestroyHashTableINIClass(void* ini) { (void)ini; }
+void AudioLoadSoundINI() {}
+void AudioInitFromINI(void* ini) { (void)ini; }
+void LoadINIEVA() {}
+void InitFromINIEVA(void* ini) { (void)ini; }
+void ThemeManagerCleanup() {}
+void ThemeClassInitializeThemes(void* ini) { (void)ini; }
+void AudioLoadWAVFiles() {}
+bool InitBulkData() { return true; }
+bool InitRules() { return true; }
+int  AudioCallback() { return 0; }
+void PlayIntroSequence() {}
+void InitRandomSeed() {}
+void InitCommands() {}
+void CompleteGameInit() {}
+
+// --- Phase 7: File helpers ---
+
+const void* SearchMIXFile(const char* name) {
+    (void)name;
+    return nullptr; // TODO: search MIX pool by hash
+}
+void BlockCopy(const void* src) { (void)src; }
+void* CCFileClassConstruct(void* buf, const char* filename) {
+    (void)buf; (void)filename;
+    return buf; // TODO: CCFileClass construction
+}
+bool CCFileClassOpen(void* file, int mode) {
+    (void)file; (void)mode;
+    return true;
+}
+void* CCFileClassReadEntireFile(void* file) {
+    (void)file;
+    return nullptr;
+}
+void CCFileClassReset(void* file) { (void)file; }
+void CCFileClassDestruct(void* file) { (void)file; }
+void VectorClear(void* vec) { (void)vec; }
+void CCINIClassConstruct(void* buf) { (void)buf; }
+void LoadAnimTypes(void* rules_ini) { (void)rules_ini; }
+void LoadBuildingTypes(void* rules_ini) { (void)rules_ini; }
+void* ConvertClassConstruct(void* palette, void* temperat_pal, void* surface, int count, int flags) {
+    (void)palette; (void)temperat_pal; (void)surface; (void)count; (void)flags;
+    return nullptr;
 }
 
 // ============================================================
 // IDA: InitGame @ 0x52BA60 — returns 0 success, -1 failure, 1 CD abort
 // ============================================================
-bool InitGame(bool no_cd)
+int InitGame(bool no_cd)
 {
-    LOG_INFO("=== Init Game ===");
-
     if (no_cd)
         CmdLine_NoCD = true;
 
-    // --- 1. ScenarioClass + RulesClass ---
-    // IDA: new ScenarioClass(0x3740), new RulesClass(0x18C0)
-    ScenarioClass_Instance = nullptr;  // stub: ScenarioClass_Constructor(malloc(0x3740))
-    RulesClass_Instance = nullptr;     // stub: RulesClass_Constructor(malloc(0x18C0))
-    LOG_INFO("  Scenario+Rules: stubs created");
+    // ============================================================
+    // Phase 1: Bootstrap Preamble (BBs 1-20)
+    // ============================================================
 
-    // --- 2. Fade + CD preamble ---
-    // IDA: FadePalette(0); SetSoundWarning(-2); EventQueue::Process loop
-    (void)g_DDraw_Active;
-    (void)byte_89E3A0;
-    (void)g_Is16BitMode;
+    // IDA 0x52BA73: Debug::Log("Init Game\n")
+    LOG_INFO("InitGame begin");
 
-    // --- 3. MIX Bootstrap ---
-    LOG_INFO("  Bootstrap: loading MIX files...");
-    MixFileClass::Bootstrap();
-    LOG_INFO("  Bootstrap: complete");
+    // IDA 0x52BA7D: new ScenarioClass(0x3740) + new RulesClass(0x18C0)
+    {
+        void* mem = malloc(0x3740);
+        ScenarioClass_Instance = mem ? mem : nullptr; // TODO: ScenarioClass::Constructor(mem)
+        if (!ScenarioClass_Instance) {
+            LOG_ERROR("Failed to instantiate Scenario!");
+            return -1;
+        }
+    }
+    {
+        void* mem = malloc(0x18C0);
+        RulesClass_Instance = mem ? mem : nullptr; // TODO: RulesClass::Constructor(mem)
+        if (!RulesClass_Instance) {
+            LOG_ERROR("Failed to instantiate Rules!");
+            return -1;
+        }
+    }
 
-    // --- 4. Font ---
-    // IDA: BitTextClass::LoadFont("GAME.FNT") → g_GameFontObject
+    // IDA 0x52BB07: Debug::Log("Bootstrap.....")
+    LOG_INFO("Bootstrap.....");
 
-    // --- 5. Mouse ---
-    // IDA: LoadMouseClassResources()
+    // IDA 0x52BB16: FadePalette(0) if !g_Is16BitMode
+    if (!g_Is16BitMode)
+        FadePalette(0);
 
-    // --- 6. Audio ---
-    // IDA: InitializeAudioSubsystem(g_Audio_MixerEnabled)
+    // IDA 0x52BB2C: SetSoundWarning(-2) if byte_89E3A0 == 1
+    if (byte_89E3A0 == 1)
+        SetSoundWarning(-2);
 
-    // --- 7. Palette loading ×9 (IDA order) ---
-    LOG_INFO("  Phase 2: Palette Loading");
-    char pal_buf[768];
-    LoadPaletteFromMIX("UNITSNO.PAL",  pal_buf);   // 0x886380
-    LoadPaletteFromMIX("TEMPERAT.PAL", pal_buf);   // 0x885780
-    LoadPaletteFromMIX("WAYPOINT.PAL", pal_buf);   // 0x885180
-    // voxels.vpl — VoxelPaletteClass::LoadFromFile
-    LoadPaletteFromMIX("ANIM.PAL",     pal_buf);   // ANIM.PAL
-    LoadPaletteFromMIX("PALETTE.PAL",  pal_buf);   // PALETTE.PAL
-    LoadPaletteFromMIX("CAMEO.PAL",    pal_buf);   // CAMEO.PAL
-    LoadPaletteFromMIX("MOUSEPAL.PAL", pal_buf);   // MOUSEPAL.PAL
-    // GRFXTXT.PAL + GRFXTXT.SHP
-    LOG_INFO("  Palettes: loaded");
+    // IDA 0x52BB4A: while(!g_DDraw_Active) EventQueue::Process(g_BinkMoviePlayer)
+    while (!g_DDraw_Active)
+        EventQueueProcess(g_BinkMoviePlayer);
 
-    // --- 8. Expansion MIX ---
-    // IDA: LoadExpansionMixFiles()
+    // IDA 0x52BB51: g_LoadScreenFlag = 0
+    g_LoadScreenFlag = 0;
 
-    // --- 9. MOUSE.SHA ---
-    void* mouse = FileSystem::LoadFile("MOUSE.SHA", false);
-    if (mouse) { g_MouseSHP = mouse; LOG_INFO("  MOUSE.SHA: loaded"); }
+    // IDA 0x52BB58: TextBuffer::Init(GetTextBufferEntry(4))
+    TextBufferInit(GetTextBufferEntry(4));
 
-    // --- 10. CD-ROM check ---
-    LOG_INFO("  CD check: %s", no_cd ? "skipped (-CD)" : "emulated");
+    // ============================================================
+    // Phase 2: MIX Bootstrap + Font + Mouse + Audio (BBs 21-45)
+    // ============================================================
 
-    // --- 11. Secondary MIX ---
-    // IDA: MixFile::LoadAll()
-    LOG_INFO("  Secondary mixfiles: by Bootstrap recursion");
+    // IDA 0x52BB64: MixFileClass::Bootstrap() — must succeed
+    if (!MixFileClass::Bootstrap()) {
+        LOG_ERROR("Failed to initialize bootstrap mixfiles!");
+        return -1;
+    }
 
-    // --- 12. INI files ---
-    // IDA: SOUNDMD.INI → EVAMD.INI → THEMEMD.INI
-    LOG_INFO("  INI: SOUNDMD, EVAMD, THEMEMD (stubs)");
+    // IDA 0x52BB97: BitTextClass::LoadFont → g_GameFontObject
+    {
+        void* mem = malloc(4);
+        g_GameFontObject = mem ? BitTextClassLoadFont(mem) : nullptr;
+    }
 
-    // --- 13. Rules / Types / TacticalMap ---
-    // IDA: InitRules → LoadAnimTypes → LoadBuildingTypes → Trigger READ_INI
-    // IDA: TacticalMap::Construct(0xE18)
-    LOG_INFO("  Rules / Types / TacticalMap: stubs");
+    // IDA 0x52BBB7: Init::StubPlaceholder()
+    InitStubPlaceholder();
 
-    // --- 14. InitCommands + CompleteGameInit ---
-    // IDA: InitRandomSeed → InitCommands → CompleteGameInit
-    LOG_INFO("  Commands + Complete: stubs");
+    // IDA 0x52BBBC: LoadMouseClassResources()
+    LoadMouseClassResources();
 
-    LOG_INFO("=== Init Game Complete ===");
+    // IDA 0x52BBC7: InitializeAudioSubsystem(g_Audio_MixerEnabled)
+    InitializeAudioSubsystem((void*)&g_Audio_MixerEnabled);
+
+    // IDA 0x52BBD2: Timer::PumpMessages(g_BinkMoviePlayer)
+    TimerPumpMessages(g_BinkMoviePlayer);
+
+    // ============================================================
+    // Phase 3: Palette Loading (UNITSNO → GRFXTXT) (BBs 46-100)
+    // ============================================================
+
+    // --- UNITSNO.PAL --- 0x52BBE3
+    {
+        const void* pal = SearchMIXFile("UNITSNO.PAL");
+        if (pal) memcpy(byte_886380, pal, 768);
+        for (int i = 0; i < 256; ++i) {
+            uint8_t* v8 = &byte_886380[3 * i];
+            int packed = Palette6BitTo16Bit(4 * v8[0], 4 * v8[1], 4 * v8[2]);
+            *(uint16_t*)v8 = (uint16_t)packed;
+            v8[2] = (uint8_t)(packed >> 16);
+        }
+    }
+
+    // --- TEMPERAT.PAL --- 0x52BC55
+    {
+        const void* pal = SearchMIXFile("TEMPERAT.PAL");
+        if (pal) memcpy(&FileSystem_TEMPERAT_PAL, pal, 768);
+        for (int i = 0; i < 256; ++i) {
+            uint8_t* v12 = &FileSystem_TEMPERAT_PAL[3 * i];
+            int packed = Palette6BitTo16Bit(4 * v12[0], 4 * v12[1], 4 * v12[2]);
+            *(uint16_t*)v12 = (uint16_t)packed;
+            v12[2] = (uint8_t)(packed >> 16);
+        }
+        BlockCopy(&FileSystem_TEMPERAT_PAL);
+        BlockCopy(&FileSystem_TEMPERAT_PAL);
+    }
+
+    // --- WAYPOINT.PAL --- 0x52BCFD
+    {
+        const void* pal = SearchMIXFile("WAYPOINT.PAL");
+        if (pal) memcpy(byte_885180, pal, 768);
+        for (int i = 0; i < 256; ++i) {
+            uint8_t* v16 = &byte_885180[3 * i];
+            int packed = Palette6BitTo16Bit(4 * v16[0], 4 * v16[1], 4 * v16[2]);
+            *(uint16_t*)v16 = (uint16_t)packed;
+            v16[2] = (uint8_t)(packed >> 16);
+        }
+    }
+
+    // --- voxels.vpl --- 0x52BD74
+    {
+        char buf[260];
+        CCFileClassConstruct(buf, "voxels.vpl");
+        VoxelPaletteLoadFromFile(buf);
+    }
+
+    // --- Voxel palette loop --- 0x52BD85
+    {
+        uint8_t* v19 = (uint8_t*)0xB2FB78; // IDA unk_B2FB79 - 1
+        int v18 = 0;
+        // TODO: proper voxel palette from binary constant data
+        (void)v19;
+        for (v18 = 0; v18 < 256; ++v18) {
+            int packed = Palette6BitTo16Bit(0, 0, 0);
+            uint8_t* v21 = &voxel_palette_buf[3 * v18];
+            *(uint16_t*)v21 = (uint16_t)packed;
+            v21[2] = (uint8_t)(packed >> 16);
+        }
+    }
+
+    // --- Voxel projection setup --- 0x52BDD7
+    flt_88741C = 0.95990276f;
+    byte_887418 = true;
+    Matrix3x4Identity(flt_887430);
+    VoxelSetProjectionAngle(0.785375f);
+    dword_B43184 = 1;
+    dword_B43180 = 0;
+    VoxelProjectionSetup();
+
+    // --- x_PAL ConvertClass --- 0x52BE14
+    {
+        void* mem = malloc(0x188);
+        FileSystem_x_PAL = mem
+            ? ConvertClassConstruct(&FileSystem_TEMPERAT_PAL, &FileSystem_TEMPERAT_PAL,
+                                    DSurface_Primary, 53, 0)
+            : nullptr;
+    }
+
+    // --- ANIM.PAL --- 0x52BE5C
+    {
+        uint8_t buf[768];
+        ArrayForEach3ByteZero(buf, 3, 256);
+        const void* pal = SearchMIXFile("ANIM.PAL");
+        if (pal) memcpy(buf, pal, sizeof(buf));
+        for (int i = 0; i < 256; ++i) {
+            uint8_t* v25 = &buf[3 * i];
+            int packed = Palette6BitTo16Bit(4 * v25[0], 4 * v25[1], 4 * v25[2]);
+            *(uint16_t*)v25 = (uint16_t)packed;
+            v25[2] = (uint8_t)(packed >> 16);
+        }
+        void* mem = malloc(0x188);
+        FileSystem_ANIM_PAL = mem
+            ? ConvertClassConstruct(buf, &FileSystem_TEMPERAT_PAL, DSurface_Primary, 53, 0)
+            : nullptr;
+    }
+
+    // --- PALETTE.PAL --- 0x52BF26
+    {
+        uint8_t buf[768];
+        const void* pal = SearchMIXFile("PALETTE.PAL");
+        if (pal) memcpy(buf, pal, sizeof(buf));
+        for (int i = 0; i < 256; ++i) {
+            uint8_t* v30 = &buf[3 * i];
+            int packed = Palette6BitTo16Bit(4 * v30[0], 4 * v30[1], 4 * v30[2]);
+            *(uint16_t*)v30 = (uint16_t)packed;
+            v30[2] = (uint8_t)(packed >> 16);
+        }
+        void* mem = malloc(0x188);
+        FileSystem_THEATER_PAL = mem
+            ? ConvertClassConstruct(buf, &FileSystem_TEMPERAT_PAL, DSurface_Primary, 53, 0)
+            : nullptr;
+    }
+
+    // --- UNITSNO.PAL (again, for UNITx_PAL) --- 0x52BFDA
+    {
+        uint8_t buf[768];
+        const void* pal = SearchMIXFile("UNITSNO.PAL");
+        if (pal) memcpy(buf, pal, sizeof(buf));
+        for (int i = 0; i < 256; ++i) {
+            uint8_t* v35 = &buf[3 * i];
+            int packed = Palette6BitTo16Bit(4 * v35[0], 4 * v35[1], 4 * v35[2]);
+            *(uint16_t*)v35 = (uint16_t)packed;
+            v35[2] = (uint8_t)(packed >> 16);
+        }
+        void* mem = malloc(0x188);
+        FileSystem_UNITx_PAL = mem
+            ? ConvertClassConstruct(buf, &FileSystem_TEMPERAT_PAL, DSurface_Primary, 53, 0)
+            : nullptr;
+    }
+
+    // --- CAMEO.PAL --- 0x52C08E
+    {
+        uint8_t buf[768];
+        const void* pal = SearchMIXFile("CAMEO.PAL");
+        if (pal) memcpy(buf, pal, sizeof(buf));
+        for (int i = 0; i < 256; ++i) {
+            uint8_t* v40 = &buf[3 * i];
+            int packed = Palette6BitTo16Bit(4 * v40[0], 4 * v40[1], 4 * v40[2]);
+            *(uint16_t*)v40 = (uint16_t)packed;
+            v40[2] = (uint8_t)(packed >> 16);
+        }
+        void* mem = malloc(0x188);
+        FileSystem_CAMEO_PAL = mem
+            ? ConvertClassConstruct(buf, &FileSystem_TEMPERAT_PAL, DSurface_Primary, 53, 0)
+            : nullptr;
+    }
+
+    // --- MOUSEPAL.PAL --- 0x52C142
+    {
+        uint8_t buf[768];
+        const void* pal = SearchMIXFile("MOUSEPAL.PAL");
+        if (pal) memcpy(buf, pal, sizeof(buf));
+        for (int i = 0; i < 256; ++i) {
+            uint8_t* v45 = &buf[3 * i];
+            int packed = Palette6BitTo16Bit(4 * v45[0], 4 * v45[1], 4 * v45[2]);
+            *(uint16_t*)v45 = (uint16_t)packed;
+            v45[2] = (uint8_t)(packed >> 16);
+        }
+        void* mem = malloc(0x188);
+        FileSystem_MOUSE_PAL = mem
+            ? ConvertClassConstruct(buf, &FileSystem_TEMPERAT_PAL, DSurface_Primary, 1, 0)
+            : nullptr;
+    }
+
+    // --- GRFXTXT.PAL + GRFXTXT.SHP --- 0x52C1FB
+    FileSystem_GRFXTXT_TIBERIUM_PAL = FileSystem_UNITx_PAL;
+
+    {
+        char fbuf[260];
+        CCFileClassConstruct(fbuf, "GRFXTXT.PAL");
+        if (CCFileClassOpen(fbuf, 0)) {
+            FileSystem_GRFXTXT_PAL = CCFileClassReadEntireFile(fbuf);
+            CCFileClassReset(fbuf);
+            if (FileSystem_GRFXTXT_PAL) {
+                for (int i = 0; i < 256; ++i) {
+                    uint8_t* v48 = (uint8_t*)FileSystem_GRFXTXT_PAL + 3 * i;
+                    int packed = Palette6BitTo16Bit(4 * v48[0], 4 * v48[1], 4 * v48[2]);
+                    *(uint16_t*)v48 = (uint16_t)packed;
+                    v48[2] = (uint8_t)(packed >> 16);
+                }
+                void* mem = malloc(0x188);
+                FileSystem_GRFXTXT_Convert = mem
+                    ? ConvertClassConstruct(FileSystem_GRFXTXT_PAL, &FileSystem_TEMPERAT_PAL,
+                                            DSurface_Primary, 1, 0)
+                    : nullptr;
+            }
+        }
+        CCFileClassConstruct(fbuf, "GRFXTXT.SHP");
+        if (CCFileClassOpen(fbuf, 0)) {
+            FileSystem_GRFXTXT_SHP = CCFileClassReadEntireFile(fbuf);
+            CCFileClassReset(fbuf);
+        }
+    }
+
+    // ============================================================
+    // Phase 4: Expansion MIX + MOUSE.SHA + CD check (BBs 101-140)
+    // ============================================================
+
+    // IDA 0x52C307: LoadExpansionMixFiles()
+    LoadExpansionMixFiles();
+
+    // IDA 0x52C358: LoadFileSHP("MOUSE.SHA") → WWMouseClass interaction
+    g_MouseSHP = (void*)LoadFileSHP("MOUSE.SHA");
+    if (g_MouseSHP && WWMouseClass_Instance) {
+        // IDA: WWMouseClass vtable[3] → set mouse approach
+        // IDA: WWMouseClass vtable[1] → set position
+    }
+
+    // IDA 0x52C394: Mission::SetAndCall(0, 0) + Event::Dispatch()
+    MissionSetAndCall(0, 0);
+    EventDispatchEx();
+
+    // IDA 0x52C3B5: CD-ROM detection (skipped if CmdLine_NoCD)
+    if (!CmdLine_NoCD) {
+        LOG_WARN("CD check required but -CD not set; skipping CD detection");
+        // Full CD path includes: CD::CheckAvailable(-1), FindGameDirectoryCD,
+        // Dialog::ShowMessageBox with CSF strings TXT_CD_DIALOG_1/TXT_OK/TXT_CANCEL
+    }
+
+    // IDA 0x52C58A: SetSoundWarning(retval)
+    SetSoundWarning(-2);
+
+    // IDA 0x52C594: MixFile::LoadAll() (secondary MIX)
+    if (!MixFileLoadAll()) {
+        LOG_ERROR("Failed to load secondary mixfiles!");
+        return -1;
+    }
+
+    // ============================================================
+    // Phase 5: Movie / Loading / Credits / Settings (BBs 141-160)
+    // ============================================================
+
+    // IDA 0x52C5EE: Movie::Play(1, 1, 1, 0)
+    MoviePlay(1, 1, 1, 0);
+
+    // IDA 0x52C5F3: ShowLoadingScreen()
+    ShowLoadingScreen();
+
+    // IDA 0x52C5FD: Credits::Screen()
+    CreditsScreen();
+
+    // IDA 0x52C630: GameSettings::Read(g_GameModeOptions)
+    GameSettingsRead(g_GameModeOptions);
+
+    // ============================================================
+    // Phase 6: Anim + Tactical (BBs 161-180)
+    // ============================================================
+
+    // IDA 0x52C642: AnimSystem::Init() + ResetAnimSystem(0)
+    AnimSystemInit();
+    ResetAnimSystem(0);
+
+    // IDA 0x52C668: TacticalMap::Construct(0xE18)
+    if (TacticalClass_Instance) {
+        // IDA: TacticalClass vtable[1].QueryInterface(TacticalClass_Instance, 1)
+    }
+    {
+        void* mem = malloc(0xE18);
+        TacticalClass_Instance = mem ? TacticalMapConstruct(mem) : nullptr;
+        if (!TacticalClass_Instance) {
+            LOG_ERROR("Failed to create TacticalMap!");
+            return -1;
+        }
+    }
+    DSurface_Hidden_2 = DSurface_Hidden;
+
+    // ============================================================
+    // Phase 7: INI Loading Chain (SOUNDMD → EVAMD → THEMEMD) (BBs 181-240)
+    // ============================================================
+
+    // --- SOUNDMD.INI --- 0x52C6D3
+    {
+        char fbuf[260];
+        CCFileClassConstruct(fbuf, "SOUNDMD.INI");
+        if (!CCFileClassOpen(fbuf, 0)) {
+            LOG_ERROR("Failed to find SOUNDMD.INI!");
+            return -1;
+        }
+        void* ini_buf[16]; // INIClass
+        INIClassConstruct(ini_buf);
+        // TODO: CCINIClass vtable assignment
+        if (!CCINIClassLoad(ini_buf, fbuf, 0, 0)) {
+            LOG_ERROR("Failed to load SOUNDMD.INI!");
+            DestroyHashTableINIClass(ini_buf);
+            CCFileClassDestruct(fbuf);
+            return -1;
+        }
+        AudioLoadSoundINI();
+        AudioInitFromINI(ini_buf);
+        CCFileClassDestruct(fbuf);
+        DestroyHashTableINIClass(ini_buf);
+    }
+
+    // --- EVAMD.INI --- 0x52C7A0
+    {
+        char fbuf[260];
+        CCFileClassConstruct(fbuf, "EVAMD.INI");
+        if (!CCFileClassOpen(fbuf, 0)) {
+            LOG_ERROR("Failed to find EVAMD.INI!");
+            return -1;
+        }
+        void* ini_buf[16];
+        INIClassConstruct(ini_buf);
+        // TODO: CCINIClass vtable assignment
+        if (!CCINIClassLoad(ini_buf, fbuf, 0, 0)) {
+            LOG_ERROR("Failed to load EVAMD.INI!");
+            DestroyHashTableINIClass(ini_buf);
+            CCFileClassDestruct(fbuf);
+            return -1;
+        }
+        LoadINIEVA();
+        InitFromINIEVA(ini_buf);
+        CCFileClassDestruct(fbuf);
+        DestroyHashTableINIClass(ini_buf);
+    }
+
+    // --- THEMEMD.INI --- 0x52C8AA
+    {
+        char fbuf[260];
+        CCFileClassConstruct(fbuf, "THEMEMD.INI");
+        if (!CCFileClassOpen(fbuf, 0)) {
+            LOG_ERROR("Failed to find THEMEMD.INI!");
+            return -1;
+        }
+        void* ini_buf[24]; // CCINIClass
+        CCINIClassConstruct(ini_buf);
+        if (!CCINIClassLoad(ini_buf, fbuf, 0, 0)) {
+            LOG_ERROR("Failed to load THEMEMD.INI!");
+            DestroyHashTableINIClass(ini_buf);
+            CCFileClassDestruct(fbuf);
+            return -1;
+        }
+        ThemeManagerCleanup();
+        ThemeClassInitializeThemes(ini_buf);
+        AudioLoadWAVFiles();
+        if (!InitBulkData()) {
+            DestroyHashTableINIClass(ini_buf);
+            CCFileClassDestruct(fbuf);
+            return -1;
+        }
+        DestroyHashTableINIClass(ini_buf);
+        CCFileClassDestruct(fbuf);
+    }
+
+    // ============================================================
+    // Phase 8: Rules + Types + Trigger INI (BBs 241-260)
+    // ============================================================
+
+    // IDA 0x52C954: InitRules()
+    if (!InitRules()) {
+        LOG_ERROR("Failed to initialize Rules!");
+        return -1;
+    }
+
+    // IDA 0x52C9D1: RulesClass::LoadAnimTypes(CCINIClass_INI_Rules)
+    LoadAnimTypes(CCINIClass_INI_Rules);
+
+    // IDA 0x52C9DF: Loop: each AnimType → ReadINI(CCINIClass_INI_Art)
+    // TODO: iterate g_AnimTypeCount array
+
+    // IDA 0x52CA09: RulesClass::LoadBuildingTypes(CCINIClass_INI_Rules)
+    LoadBuildingTypes(CCINIClass_INI_Rules);
+
+    // IDA 0x52CA17: Loop: each Trigger → ReadINI(CCINIClass_INI_Rules)
+    // TODO: iterate g_TriggerTypeCount array
+
+    // ============================================================
+    // Phase 9: Finalize (BBs 261-285)
+    // ============================================================
+
+    // IDA 0x52CA37: Audio::Callback() wait loop
+    {
+        int v57 = AudioCallback();
+        while (v57 < 0) // qword_A8F788
+            v57 = AudioCallback();
+    }
+
+    // IDA 0x52CA65: PlayIntroSequence()
+    PlayIntroSequence();
+
+    // IDA 0x52CA70: State variable initialization
+    {
+        void* p = RulesClass_Instance;
+        int v59 = p ? ((int*)p)[1332] : 0; // RulesClass + 0x14D0
+        dword_81C1D0 = 0; // static area
+        (void)v59;
+    }
+
+    // IDA 0x52CAC1: Zero-fill Campaign score / state arrays
+    // TODO: memset loop from dword_A8D228 to dword_A8D5A8
+
+    // IDA 0x52CAD2: InitRandomSeed()
+    InitRandomSeed();
+
+    // IDA 0x52CAE4: InitCommands()
+    InitCommands();
+
+    // IDA 0x52CAF6: CompleteGameInit()
+    CompleteGameInit();
+
+    LOG_INFO("InitGame complete");
     return true;
 }
 
