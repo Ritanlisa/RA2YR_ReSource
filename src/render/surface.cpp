@@ -458,10 +458,16 @@ bool DSurface::DrawGradientLine(
     return false;
 }
 
+// IDA: 0x4BAF20 — DSurface::CheckBltStatus (17B)
+// Calls IDirectDrawSurface7::GetBltStatus(DDGBS_ISBLTDONE)
+// Returns true if blit is complete (DD_OK)
 bool DSurface::CheckBltStatus()
 {
-    return Surface != nullptr
-        && SUCCEEDED(Surface->GetBltStatus(DDGBS_CANBLT));
+    // IDA: (*(*(this+7) + 52))(*(this+7), 1) == 0
+    // vtable offset 52/4 = 13 = GetBltStatus
+    if (!Surface)
+        return true;
+    return SUCCEEDED(Surface->GetBltStatus(DDGBS_ISBLTDONE));
 }
 
 void* BSurface::Lock(int x, int y)
