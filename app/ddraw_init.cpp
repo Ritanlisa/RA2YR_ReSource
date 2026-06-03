@@ -221,18 +221,26 @@ DDrawContext* DDraw_GetContext()
 
 void DDraw_Flip()
 {
-    if (!g_ddraw.primary) return;
+    // IDA: uses g_DDraw_PrimarySurface directly, not the context wrapper
+    if (!g_DDraw_PrimarySurface) return;
 
-    DDrawContext* ctx = &g_ddraw;
-    if (!ctx->windowed) {
-        ctx->primary->Flip(nullptr, DDFLIP_WAIT);
+    if (g_DDraw_Initialized) {
+        // Windowed mode: Blt back buffer to primary
+        DDrawContext* ctx = &g_ddraw;
+        if (ctx->back_buffer) {
+            RECT rc;
+            HWND hwnd = GetActiveWindow();
+            if (hwnd) {
+                GetClientRect(hwnd, &rc);
+                POINT pt = { 0, 0 };
+                ClientToScreen(hwnd, &pt);
+                OffsetRect(&rc, pt.x, pt.y);
+            }
+            g_DDraw_PrimarySurface->Blt(&rc, ctx->back_buffer, nullptr, DDBLT_WAIT, nullptr);
+        }
     } else {
-        RECT rc;
-        GetClientRect(ctx->hwnd, &rc);
-        POINT pt = { 0, 0 };
-        ClientToScreen(ctx->hwnd, &pt);
-        OffsetRect(&rc, pt.x, pt.y);
-        ctx->primary->Blt(&rc, ctx->back_buffer, nullptr, DDBLT_WAIT, nullptr);
+        // Fullscreen: Flip
+        g_DDraw_PrimarySurface->Flip(nullptr, DDFLIP_WAIT);
     }
 }
 

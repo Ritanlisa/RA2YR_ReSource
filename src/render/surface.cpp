@@ -103,7 +103,21 @@ bool DSurface::BlitWhole(class Surface* src, bool option1, bool option2)
     auto* dsurf = dynamic_cast<DSurface*>(src);
     if (!dsurf || !dsurf->Surface) return false;
 
+    // IDA: DSurface::Blit — primary surface coordinate adjustment
+    // When blit-ing to the primary surface in windowed mode,
+    // destination coordinates must be offset by the window position
     RECT dr = { 0, 0, Width, Height };
+    if (Surface == g_DDraw_PrimarySurface) {
+        RECT client_rect;
+        HWND hwnd = GetActiveWindow();
+        if (hwnd) {
+            GetClientRect(hwnd, &client_rect);
+            POINT pt = { client_rect.left, client_rect.top };
+            ClientToScreen(hwnd, &pt);
+            OffsetRect(&dr, pt.x, pt.y);
+        }
+    }
+
     RECT sr = { 0, 0, dsurf->Width, dsurf->Height };
 
     DWORD flags = DDBLT_WAIT;
