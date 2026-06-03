@@ -12,6 +12,7 @@
 #include "gamemd/core/ddraw_init.hpp"
 #include "gamemd/core/init_stubs.hpp"
 #include "gamemd/system/mix_file.hpp"
+#include "gamemd/system/file_system.hpp"
 #include "gamemd/system/convert_class.hpp"
 #include "gamemd/system/cc_file.hpp"
 #include "gamemd/system/tactical.hpp"
@@ -201,8 +202,7 @@ void InitCommands() {} // TODO: ~40 CommandClass registrations (7118B)
 // --- Phase 7: File helpers ---
 
 const void* SearchMIXFile(const char* name) {
-    (void)name;
-    return nullptr; // TODO: search MIX pool by hash
+    return FileSystem::LoadFile(name, false); // delegates to MIX pool search + disk fallback
 }
 void BlockCopy(const void* src) { (void)src; }
 void* CCFileClassConstruct(void* buf, const char* filename) {
