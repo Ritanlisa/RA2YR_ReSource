@@ -311,52 +311,65 @@ void* ObjectClass_CurrentObjects = nullptr;
 // IDA: 0xA8ECBC — g_ObjectClass_CurrentCount
 void* g_ObjectClass_CurrentCount = nullptr;
 
-// IDA: 0xA8ECC8 — g_SelectionManager
+// IDA: 0xA8ECC8 — g_SelectionManager (selection count)
 int   g_SelectionManager = 0;
 
-// IDA: 0xA8E368 — dword_A8E368 (placement pool count)
-int   g_PlacementCellPool = 0;
-
-// IDA: 0xA8E370 — dword_A8E370 (placement cell limit)
-int   dword_A8E370 = 0;
-
-// IDA: 0xA8E360 — dword_A8E360 (placement cell array)
-void* dword_A8E360 = nullptr;
-
-// IDA: 0xA8E364 — dword_A8E364 (placement cell data)
-void* dword_A8E364 = nullptr;
-
-// IDA: 0xA8E374 — dword_A8E374 (placement config)
+// IDA: 0xA8E368-A8E374 — Object placement pool system
+int   g_PlacementCellPool = 0;    // 0xA8E370
+int   dword_A8E368 = 0;
 int   dword_A8E374 = 0;
+void* dword_A8E360 = nullptr;    // 0xA8E360
+void* dword_A8E364 = nullptr;    // 0xA8E364
+bool  byte_A8E36D = false;       // 0xA8E36D
 
-// IDA: 0xA8E36D — byte_A8E36D (placement flag)
-bool  byte_A8E36D = false;
-
-// IDA: Cell/Map globals
-void* g_Shroud_CellArray = nullptr;  // 0x87F924
-int   dword_87F928 = 0;              // 0x87F928
-int   g_Map_GlobalCellIndex = 0;      // 0xABDC74 (packed X/Y of cell)
-
-// IDA: Object pool / Alpha shape globals
-int   g_AlphaShapePool = 0;    // 0xB0F730
-void* dword_B0F724 = nullptr;  // 0xB0F724
-int   dword_B0F728 = 0;        // 0xB0F728
-bool  byte_B0F72D = false;     // 0xB0F72D
-int   dword_B0F734 = 0;        // 0xB0F734
+// IDA: Object AlphaShape pool globals
+int   g_AlphaShapePool = 0;       // 0xB0F730
+void* dword_B0F724 = nullptr;     // 0xB0F724
+int   dword_B0F728 = 0;           // 0xB0F728
+bool  byte_B0F72D = false;        // 0xB0F72D
+int   dword_B0F734 = 0;           // 0xB0F734
 
 // IDA: Anim pool globals
-int   g_AnimTypePool = 0;      // 0xB0F678
-void* g_AnimManager = nullptr;  // 0xB0F680
-bool  g_AnimPoolLocked = false; // 0xB0F67D
-int   g_AnimManagerConfig = 0;  // 0xB0F684
+int   g_AnimTypePool = 0;         // 0xB0F678
+void* g_AnimManager = nullptr;     // 0xB0F680
+bool  g_AnimPoolLocked = false;    // 0xB0F67D
+int   g_AnimManagerConfig = 0;     // 0xB0F684
 void* g_AnimPoolManager = nullptr; // 0xB0F670
 
 // IDA: Laser draw globals
-int   g_LaserDrawConfig = 0;    // 0xB0F6A8
+int   g_LaserDrawConfig = 0;       // 0xB0F6A8
 void* g_DiskLaserManager = nullptr; // 0xB0F698
-void* dword_B0F69C = nullptr;   // 0xB0F69C
-int   dword_B0F6A0 = 0;         // 0xB0F6A0
-bool  byte_B0F6A5 = false;      // 0xB0F6A5
-int   dword_B0F6AC = 0;         // 0xB0F6AC
+void* dword_B0F69C = nullptr;      // 0xB0F69C
+int   dword_B0F6A0 = 0;            // 0xB0F6A0
+bool  byte_B0F6A5 = false;         // 0xB0F6A5
+int   dword_B0F6AC = 0;            // 0xB0F6AC
+
+// IDA: Cell/Map globals
+void* g_Shroud_CellArray = nullptr; // 0x87F924
+int   dword_87F928 = 0;             // 0x87F928
+int   g_Map_GlobalCellIndex = 0;     // 0xABDC74
+
+// IDA: 0xA8E950 — dword_A8E950 (CD drive count)
+int   dword_A8E950 = 0;
+
+// IDA: 0xA8E8E8 — dword_A8E8E8 (CD drive letters array)
+int   dword_A8E8E8 = 0;
+
+// IDA: 0x81C1D0 — dword_81C1D0 (CD availability flag)
+int   dword_81C1D0 = 0;
+
+// IDA: 0xB0F6D8 — Foot object pool state
+int   dword_B0F6D8 = 0;
+void* dword_B0F6CC = nullptr;
+int   dword_B0F6D0 = 0;
+bool  byte_B0F6D5 = false;
+int   dword_B0F6DC = 0;
+void* dword_B0F6C8 = nullptr;
+
+// IDA: 0x887640 — WWMouseClass_Instance
+void* WWMouseClass_Instance = nullptr;
+
+// IDA: 0x87F770 — g_BinkMoviePlayer
+void* g_BinkMoviePlayer = nullptr;
 
 } // namespace gamemd
