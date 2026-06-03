@@ -90,6 +90,7 @@ if(WIN32)
         ddraw
         dxguid
         imm32
+        winmm
     )
 
     # Post-build: copy cnc-ddraw runtime dll + config to output directory

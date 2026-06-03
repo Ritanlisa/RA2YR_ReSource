@@ -44,6 +44,9 @@ void LoadMouseClassResources();
 // IDA 0x406B10 — InitializeAudioSubsystem
 int InitializeAudioSubsystem(void* hwnd_or_flag);
 
+// IDA 0x6C8C40 — Timer::GetTicks (returns timeGetTime() >> 4)
+int TimerGetTicks();
+
 // IDA 0x54F720 — Timer::PumpMessages
 void TimerPumpMessages(void* bink_player);
 

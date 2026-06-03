@@ -6,6 +6,7 @@
 // All stubs declared in include/gamemd/core/init_stubs.hpp
 
 #include <windows.h>
+#include <mmsystem.h>
 #include <cstring>
 
 #include "gamemd/core/logging.hpp"
@@ -104,6 +105,10 @@ void* BitTextClassLoadFont(void* mem) { (void)mem; return nullptr; }
 void InitStubPlaceholder() {}
 void LoadMouseClassResources() {}
 int  InitializeAudioSubsystem(void* hwnd) { (void)hwnd; return 1; }
+
+// IDA 0x6C8C40 — Timer::GetTicks: returns timeGetTime() >> 4 (~16ms resolution)
+int TimerGetTicks() { return timeGetTime() >> 4; }
+
 void TimerPumpMessages(void* bink_player) { (void)bink_player; }
 
 // --- Phase 3: Palette helpers ---
