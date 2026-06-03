@@ -173,8 +173,8 @@ public:
     RadSiteClass* GetRadSite() const { return m_rad_site; }
     bool IsRadiated() const;
     int GetRadLevel() const;
-    void RadLevel_Increase(double amount);
-    void RadLevel_Decrease(double amount);
+    void RadLevelIncrease(double amount);
+    void RadLevelDecrease(double amount);
 
     bool ContainsBridge() const { return (static_cast<uint32_t>(m_flags) & 0x8000u) != 0; }
     ObjectClass* GetContent() const { return ContainsBridge() ? m_alt_object : m_first_object; }
