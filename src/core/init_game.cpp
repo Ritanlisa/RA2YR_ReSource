@@ -127,7 +127,11 @@ void VoxelProjectionSetup() {}
 // --- Phase 4: MIX / CD / Movie ---
 
 // LoadExpansionMixFiles defined in src/misc/rules.cpp
-int  LoadFileSHP(const char* filename) { (void)filename; return 0; }
+// IDA 0x4A38D0 — LoadFileSHP: loads SHP file and returns handle
+int  LoadFileSHP(const char* filename) {
+    void* data = FileSystem::LoadFile(filename, true);
+    return data ? 1 : 0; // returns handle/index (simplified: non-zero = loaded)
+}
 void MissionSetAndCall(int a, int b) { (void)a; (void)b; }
 void EventDispatchEx() {}
 int  FindGameDirectoryCD(const char* drives) { (void)drives; return 1; }
