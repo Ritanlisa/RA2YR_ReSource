@@ -8,8 +8,8 @@
 namespace gamemd
 {
 
-struct SHPReference;
-struct SHPFile;
+class SHPReference;
+class SHPFile;
 
 struct SHPStruct
 {
@@ -61,7 +61,7 @@ struct SHPFrame
     int32_t     Offset;
 };
 
-struct SHPFile : public SHPStruct
+class SHPFile : public SHPStruct
 {
     const SHPFrame& GetFrameHeader(int frame_index) const
     {
@@ -71,7 +71,7 @@ struct SHPFile : public SHPStruct
     SHPFrame FirstFrame;
 };
 
-struct SHPReference : public SHPStruct
+class SHPReference : public SHPStruct
 {
     SHPReference(const char* filename);
 

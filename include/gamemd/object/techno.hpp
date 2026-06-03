@@ -45,7 +45,8 @@ struct FlashData {
     uint8_t padding[3];
 };
 
-struct PassengersClass {
+class PassengersClass {
+public:
     int32_t     NumPassengers;
     FootClass*  FirstPassenger;
 };

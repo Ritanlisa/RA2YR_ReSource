@@ -18,7 +18,7 @@ void BinkPlayerControl::Init(HWND hWnd)
     m_hWnd = hWnd;
     SetPropA(hWnd, "__bink_ctrl", this);
 
-    DDrawContext* ctx = DDraw_GetContext();
+    DDrawContext* ctx = DDrawGetContext();
     if (!ctx || !ctx->dd) {
         LOG_ERROR("BinkControl: DDraw not available");
         return;

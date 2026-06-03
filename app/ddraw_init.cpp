@@ -69,9 +69,9 @@ LPDIRECTDRAWCLIPPER g_DDraw_Clipper = nullptr;
 static DDrawContext g_ddraw;
 
 // ============================================================
-// IDA: DDraw_Initialize @ 0x4A42F0
+// IDA: DDrawInitialize @ 0x4A42F0
 // ============================================================
-int DDraw_Initialize(int a1, DWORD width, DWORD height, DWORD bpp)
+int DDrawInitialize(int a1, DWORD width, DWORD height, DWORD bpp)
 {
     (void)a1;
 
@@ -149,18 +149,9 @@ int DDraw_Initialize(int a1, DWORD width, DWORD height, DWORD bpp)
 // Simplified DDraw API (game_loop.cpp compatibility)
 // ============================================================
 
-bool DDraw_Init(HWND hwnd, int width, int height, bool windowed)
+bool DDrawInit(HWND hwnd, int width, int height, bool windowed)
 {
-    g_ddraw.hwnd     = hwnd;
-    g_ddraw.width    = width;
-    g_ddraw.height   = height;
-    g_ddraw.windowed = windowed;
-
-    if (windowed) {
-        g_DDraw_Initialized = 1;
-    }
-
-    int result = DDraw_Initialize(0, width, height, 16);
+    int result = DDrawInitialize(0, width, height, 16);
     if (!result) return false;
 
     g_ddraw.dd = g_lpDirectDraw7;
@@ -206,7 +197,7 @@ bool DDraw_Init(HWND hwnd, int width, int height, bool windowed)
     return true;
 }
 
-void DDraw_Shutdown()
+void DDrawShutdown()
 {
     if (g_ddraw.back_buffer) { g_ddraw.back_buffer->Release(); g_ddraw.back_buffer = nullptr; }
     if (g_ddraw.clipper)     { g_ddraw.clipper->Release();     g_ddraw.clipper     = nullptr; }
@@ -214,12 +205,12 @@ void DDraw_Shutdown()
     if (g_lpDirectDraw7)     { g_lpDirectDraw7->Release();     g_lpDirectDraw7     = nullptr; }
 }
 
-DDrawContext* DDraw_GetContext()
+DDrawContext* DDrawGetContext()
 {
     return &g_ddraw;
 }
 
-void DDraw_Flip()
+void DDrawFlip()
 {
     // IDA: uses g_DDraw_PrimarySurface directly, not the context wrapper
     if (!g_DDraw_PrimarySurface) return;

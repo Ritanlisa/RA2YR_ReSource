@@ -15,7 +15,7 @@ static inline float ReadFloat(const uint8_t* d, int off) {
     return f;
 }
 
-bool Vxl_Load(const uint8_t* data, int size, VxlFile* out)
+bool VxlLoad(const uint8_t* data, int size, VxlFile* out)
 {
     if (!data || size < 802 || !out) return false;
 
@@ -109,7 +109,7 @@ bool Vxl_Load(const uint8_t* data, int size, VxlFile* out)
     return true;
 }
 
-bool Hva_Load(const uint8_t* data, int size, HvaFile* out)
+bool HvaLoad(const uint8_t* data, int size, HvaFile* out)
 {
     if (!data || size < 40 || !out) return false;
 

@@ -6,7 +6,7 @@
 namespace gamemd
 {
 
-// External screen globals used by Frame_Present (IDA 0x4F4780)
+// External screen globals used by FramePresent (IDA 0x4F4780)
 extern HWND  g_hWnd;           // main window handle
 extern void* g_PrimarySurface;  // dword_887308 — primary DSurface
 extern void* g_SidebarSurface; // dword_887300 — sidebar DSurface
@@ -57,7 +57,7 @@ DisplayClass::DisplayClass() noexcept
 {
 }
 
-// Frame_Present (IDA: 0x4F4780)
+// FramePresent (IDA: 0x4F4780)
 // Called every frame to blit all surfaces to the primary surface
 // and flip to screen. This is the main page-present function.
 //
@@ -69,7 +69,7 @@ DisplayClass::DisplayClass() noexcept
 //   5. Render mouse cursor
 //   6. Page flip (Primary→FrontBuffer)
 //
-bool Frame_Present(Surface* composite_surface, int flags, int arg3, int arg4)
+bool FramePresent(Surface* composite_surface, int flags, int arg3, int arg4)
 {
     (void)composite_surface;
     (void)flags;

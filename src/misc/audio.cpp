@@ -1,5 +1,6 @@
 #include "gamemd/misc/audio.hpp"
 #include "gamemd/core/vector.hpp"
+#include "gamemd/object/object.hpp"
 
 #include <mmsystem.h>
 #include <dsound.h>
@@ -136,7 +137,7 @@ static bool g_Audio_Enabled = false;            // IDA: dword_87E728
 
 typedef HRESULT (__stdcall *DirectSoundCreate_t)(LPCGUID lpGuid, LPDIRECTSOUND* ppDS, LPUNKNOWN pUnkOuter);
 
-bool Audio_Init(HWND hWnd)
+bool AudioInit(HWND hWnd)
 {
     if (g_pDirectSound) return true;
 
@@ -171,7 +172,7 @@ bool Audio_Init(HWND hWnd)
     return true;
 }
 
-void Audio_Shutdown()
+void AudioShutdown()
 {
     g_Audio_Enabled = false;
     if (g_pDirectSound) {
@@ -184,7 +185,7 @@ void Audio_Shutdown()
     }
 }
 
-bool Audio_IsSoundEnabled()   // IDA 0x407000
+bool AudioIsSoundEnabled()   // IDA 0x407000
 {
     return g_Audio_Enabled;
 }
@@ -194,31 +195,6 @@ IDirectSound* Audio_GetDirectSound()  // IDA 0x40A7A0
     return g_pDirectSound;
 }
 
-// --- AudioController helper functions ---
-
-namespace {
-
-void AudioController_Stop(ra2::game::AudioController& ctrl)
-{
-    (void)ctrl;
-}
-
-void AudioController_Start(ra2::game::AudioController& ctrl, int32_t soundIndex)
-{
-    (void)ctrl;
-    (void)soundIndex;
-}
-
-void AudioController_Pause(ra2::game::AudioController& ctrl)
-{
-    (void)ctrl;
-}
-
-void AudioController_Resume(ra2::game::AudioController& ctrl)
-{
-    (void)ctrl;
-}
-
-} // anonymous namespace
+// --- AudioController member functions (defined in object.cpp, namespace ra2) ---
 
 } // namespace gamemd

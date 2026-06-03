@@ -7,7 +7,7 @@
 namespace gamemd {
 namespace {
 
-int Ini_GetInt(FILE* f, const char* section, const char* key, int def)
+int IniGetInt(FILE* f, const char* section, const char* key, int def)
 {
     return def;
 }

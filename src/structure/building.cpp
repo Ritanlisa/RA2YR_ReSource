@@ -485,7 +485,7 @@ int BuildingClass::Mission_Missile()
 // ExitObject — unit exit from building (RA1 Exit_Object pattern)
 // Returns: 0=failure, 1=retry, 2=success
 // ============================================================
-int Building_ExitObject(BuildingClass* building, ra2::game::TechnoClass* exiting_unit)
+int BuildingExitObject(BuildingClass* building, ra2::game::TechnoClass* exiting_unit)
 {
     if (!exiting_unit || !building || !building->Type)
         return 0;

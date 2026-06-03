@@ -45,7 +45,7 @@ static LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lPara
     return DefWindowProcA(hWnd, msg, wParam, lParam);
 }
 
-// IDA: 0x777C30 — WindowCreation_Init
+// IDA: 0x777C30 — InitWindowCreation
 // Creates the main game window, sets up IME, registers hotkeys
 static void InitWindowCreation(HINSTANCE hInstance, int screenWidth, int xRight, int yBottom)
 {
@@ -120,7 +120,7 @@ static void InitWindowCreation(HINSTANCE hInstance, int screenWidth, int xRight,
 // TODO: IDA MainGame @ 0x48CCC0
 // TODO: IDA MenuSelect @ 0x52D9A0 (4536B, 222BBs)
 
-bool GameLoop_Init(HINSTANCE hInstance, HINSTANCE hPrevInstance,
+bool GameLoopInit(HINSTANCE hInstance, HINSTANCE hPrevInstance,
                    LPSTR lpCmdLine, int nShowCmd)
 {
     (void)hPrevInstance;
@@ -138,7 +138,7 @@ bool GameLoop_Init(HINSTANCE hInstance, HINSTANCE hPrevInstance,
     g_spawn_mode = config.spawn_mode;
 
 #ifdef _DEBUG
-    Log_SetLevel(LogLevel::Trace);
+    LogSetLevel(LogLevel::Trace);
 #endif
 
     LOG_INFO("============================================");
@@ -156,14 +156,14 @@ bool GameLoop_Init(HINSTANCE hInstance, HINSTANCE hPrevInstance,
     LOG_INFO("Window created: %dx%d %s", screenW, screenH,
         g_windowed ? "windowed" : "fullscreen");
 
-    if (!DDraw_Init(g_hWnd, screenW, screenH, g_windowed)) {
-        LOG_ERROR("DDraw_Init failed");
+    if (!DDrawInit(g_hWnd, screenW, screenH, g_windowed)) {
+        LOG_ERROR("DDrawInit failed");
         DestroyWindow(g_hWnd);
         return false;
     }
     LOG_INFO("DirectDraw7 initialized");
 
-    if (!Audio_Init(g_hWnd)) {
+    if (!AudioInit(g_hWnd)) {
         LOG_WARN("DirectSound init failed — audio disabled");
     } else {
         LOG_INFO("DirectSound initialized");
@@ -178,38 +178,38 @@ bool GameLoop_Init(HINSTANCE hInstance, HINSTANCE hPrevInstance,
     return true;
 }
 
-void GameLoop_Run()
+void GameLoopRun()
 {
     if (g_spawn_mode) {
-        LOG_INFO("Entering SpawnMode_Enter()");
-        SpawnMode_Enter();
+        LOG_INFO("Entering SpawnModeEnter()");
+        SpawnModeEnter();
     }
 
-    Main_Game();
+    MainGame();
 }
 
-void GameLoop_Shutdown()
+void GameLoopShutdown()
 {
-    LOG_INFO("Main_Game: shutting down...");
-    DDraw_Shutdown();
-    Audio_Shutdown();
+    LOG_INFO("MainGame: shutting down...");
+    DDrawShutdown();
+    AudioShutdown();
     if (g_hWnd) {
         DestroyWindow(g_hWnd);
         g_hWnd = nullptr;
     }
     UnregisterClassA(WINDOW_CLASS, g_hInstance);
-    LOG_INFO("Main_Game: shutdown complete");
-    Log_Close();
+    LOG_INFO("MainGame: shutdown complete");
+    LogClose();
 }
 
-int GameLoop_MessagePump(MSG* msg, UINT wMsgFilterMin, UINT wMsgFilterMax, HWND hWnd, UINT flags)
+int GameLoopMessagePump(MSG* msg, UINT wMsgFilterMin, UINT wMsgFilterMax, HWND hWnd, UINT flags)
 {
     (void)hWnd;
     (void)flags;
     return PeekMessageA(msg, nullptr, wMsgFilterMin, wMsgFilterMax, PM_REMOVE);
 }
 
-bool TranslateMessage_Dispatch(MSG* msg)
+bool TranslateMessageDispatch(MSG* msg)
 {
     return msg->message != WM_QUIT;
 }

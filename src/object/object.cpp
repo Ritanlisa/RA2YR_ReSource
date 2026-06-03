@@ -355,5 +355,12 @@ ObjectClass::ObjectClass() noexcept
 // Used by ConstructionPositionTracker for angle-based positioning
 // ============================================================
 
+// IDA: AudioController::Stop @ 0x405D40, Start @ 0x758A40,
+//      Pause @ 0x752E60, Resume @ 0x750F30
+void AudioController::Stop() { }
+void AudioController::Start(int32_t soundIndex) { (void)soundIndex; }
+void AudioController::Pause() { }
+void AudioController::Resume() { }
+
 } // namespace game
 } // namespace ra2

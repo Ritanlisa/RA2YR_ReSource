@@ -7,12 +7,12 @@ namespace gamemd {
 static FILE*   g_log_file = nullptr;
 static LogLevel g_level = LogLevel::Info;
 
-void Log_SetLevel(LogLevel level)
+void LogSetLevel(LogLevel level)
 {
     g_level = level;
 }
 
-void Log_Write(LogLevel level, const char* fmt, ...)
+void LogWrite(LogLevel level, const char* fmt, ...)
 {
     if (level < g_level) return;
 
@@ -34,7 +34,7 @@ void Log_Write(LogLevel level, const char* fmt, ...)
     }
 }
 
-void Log_Close()
+void LogClose()
 {
     if (g_log_file) {
         fclose(g_log_file);

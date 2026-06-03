@@ -18,13 +18,13 @@ int __stdcall WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
         if (lastSep) { *lastSep = '\0'; SetCurrentDirectoryA(exePath); }
     }
 
-    if (!gamemd::GameLoop_Init(hInstance, hPrevInstance, lpCmdLine, nShowCmd)) {
+    if (!gamemd::GameLoopInit(hInstance, hPrevInstance, lpCmdLine, nShowCmd)) {
         MessageBoxA(nullptr, "Failed to initialize game.", "Error",
                     MB_OK | MB_ICONERROR);
         return 1;
     }
 
-    gamemd::GameLoop_Run();
-    gamemd::GameLoop_Shutdown();
+    gamemd::GameLoopRun();
+    gamemd::GameLoopShutdown();
     return 0;
 }

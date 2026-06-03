@@ -36,7 +36,8 @@ class ObjectClass;
 class FootClass;
 class Checksummer;
 
-struct IPersistStream : IUnknown {
+class IPersistStream : IUnknown {
+public:
     virtual HRESULT __stdcall GetClassID(CLSID* class_id) = 0;
     virtual HRESULT __stdcall IsDirty() = 0;
     virtual HRESULT __stdcall Load(IStream* stream) = 0;
@@ -44,17 +45,20 @@ struct IPersistStream : IUnknown {
     virtual HRESULT __stdcall GetSizeMax(ULARGE_INTEGER* size) = 0;
 };
 
-struct IRTTITypeInfo : IUnknown {
+class IRTTITypeInfo : IUnknown {
+public:
     virtual AbstractType __stdcall WhatAmI() const = 0;
     virtual int __stdcall FetchID() const = 0;
     virtual void __stdcall CreateID() = 0;
 };
 
-struct INoticeSink {
+class INoticeSink {
+public:
     virtual bool __stdcall OnNotice(unsigned long event) = 0;
 };
 
-struct INoticeSource {
+class INoticeSource {
+public:
     virtual void __stdcall NotifySinks() = 0;
 };
 

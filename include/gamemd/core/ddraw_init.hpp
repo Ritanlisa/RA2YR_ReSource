@@ -53,15 +53,13 @@ struct DDrawContext {
     bool                 windowed;
 };
 
-// IDA: DDraw_Initialize @ 0x4A42F0
-// Called 3 times from WinMain. On first call creates the DDraw7 object.
-// Returns 1 on success, 0 on failure.
-int DDraw_Initialize(int a1, DWORD width, DWORD height, DWORD bpp);
+// IDA: DDrawInitialize @ 0x4A42F0
+int DDrawInitialize(int a1, DWORD width, DWORD height, DWORD bpp);
+bool DDrawInit(HWND hwnd, int width, int height, bool windowed);
+void DDrawShutdown();
+void DDrawFlip();
+DDrawContext* DDrawGetContext();
 
-// Simplified wrapper for game_loop.cpp compatibility
-bool DDraw_Init(HWND hwnd, int width, int height, bool windowed);
-void DDraw_Shutdown();
-DDrawContext* DDraw_GetContext();
-void DDraw_Flip();
+extern bool CmdLine_NoCD;  // 0x89E410
 
 } // namespace gamemd

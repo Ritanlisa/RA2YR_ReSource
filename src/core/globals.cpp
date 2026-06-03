@@ -118,17 +118,13 @@ void FadePalette(int mode) { (void)mode; }
 // 0x6C87F0: InitSkirmishSettings
 void InitSkirmishSettings() {}
 
-// 0x69BAB0: WTFMode::Init
-void WTFMode_Init(int* mode) { (void)mode; }
-
-// 0x69BB40: WTFMode::Shutdown
-void WTFMode_Shutdown(int* mode) { (void)mode; }
+// 0x69BAB0: WTFMode::Init (see game_loop.hpp struct)
+// 0x69BB40: WTFMode::Shutdown (see game_loop.hpp struct)
 
 // 0x48E0B0: DumpNetworkStats
 void DumpNetworkStats() {}
 
-// 0x532100: ScreenSaver::Process
-void ScreenSaver_Process(bool enable) { (void)enable; }
+// 0x532100: ScreenSaver::Process (see game_loop.hpp struct)
 
 // 0x5F0070: CleanupCampaignResources
 void CleanupCampaignResources() {}
@@ -156,7 +152,7 @@ bool BuildingLoadQueue_Dirty = false;
 void* BuildingLoadQueue_Active = nullptr;
 
 // ============================================================
-// Game_Frame_Loop (0x55D360) — required global variables
+// GameFrameLoop (0x55D360) — required global variables
 // ============================================================
 
 // 0xA8E9A0: WTFMode — game loop control flag
@@ -261,27 +257,19 @@ const wchar_t* GetCSFString(const wchar_t* key, const char* file, int line) {
     return key; // Return key as placeholder until CSF is implemented
 }
 
-// IDA: 0x55D360 — Game_Frame_Loop stub
-bool Game_Frame_Loop() { return false; }
+// IDA: 0x55D360 — GameFrameLoop stub
+bool GameFrameLoop() { return false; }
 
-// IDA: 0x55CFD0 — Game_Frame_Check stub
-bool Game_Frame_Check() { return false; }
+// IDA: 0x55CFD0 — GameFrameCheck stub
+bool GameFrameCheck() { return false; }
 
-// IDA: 0x48C8B0 — Main_Game_Frame stub
-void Main_Game_Frame() {}
+// IDA: 0x48C8B0 — MainGameFrame stub
+void MainGameFrame() {}
 
 // IDA: 0x87F7E8 — MapClass_Instance (global tactical map)
 void* MapClass_Instance = nullptr;
 
-// IDA: 0x4F42F0 — MapClass::MarkForRedraw (44B)
-// Sets redraw flag in TacticalClass_Instance, updates map state.
-void MapClass_MarkForRedraw(void* instance, int flags) {
-    // IDA: if (TacticalClass_Instance) set redraw flag
-    // IDA: if (flags && *(instance+3) != 2) *(instance+3) = flags
-    // IDA: if (flags) MapClass::sub_578AC0(&MapClass_Instance)
-    (void)instance;
-    (void)flags;
-}
+// IDA: 0x4F42F0 — MapClass::MarkForRedraw (see system/map.hpp)
 
 // IDA: Scene/Scenario related globals
 void* TacticalClass_Instance = nullptr; // 0x887324

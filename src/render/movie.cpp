@@ -189,7 +189,7 @@ bool MoviePlayer::PlayMovie(const char* filename,
             m_current_movie->RenderFrame(hidden_surface);
         }
 
-        // In the original, this is where Frame_Present is called
+        // In the original, this is where FramePresent is called
         // to flip the buffer to screen
     }
 
@@ -276,7 +276,7 @@ static bool BinkInit()
     GetModuleFileNameA(s_binkDLL, dllPath, sizeof(dllPath));
     LOG_INFO("binkw32.dll loaded: %s", dllPath);
 
-    if (s_BinkSetSoundSystem && s_BinkOpenDirectSound && Audio_IsSoundEnabled()) {
+    if (s_BinkSetSoundSystem && s_BinkOpenDirectSound && AudioIsSoundEnabled()) {
         IDirectSound* pDS = Audio_GetDirectSound();
         if (pDS) {
             s_BinkSetSoundSystem(s_BinkOpenDirectSound, pDS);

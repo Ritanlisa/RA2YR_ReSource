@@ -138,7 +138,7 @@ public:
     {
         if (!surface) return;
 
-        DDrawContext* ctx = DDraw_GetContext();
+        DDrawContext* ctx = DDrawGetContext();
         RectangleStruct full = { 0, 0, ctx->width, ctx->height };
         surface->FillRect(full, 0x0000);
 
@@ -161,7 +161,7 @@ public:
 
 MenuResult ShowMainMenu()
 {
-    DDrawContext* ctx = DDraw_GetContext();
+    DDrawContext* ctx = DDrawGetContext();
     if (!ctx || !ctx->back_buffer) return MenuResult::Exit;
 
     DSurface back_surface(ctx->width, ctx->height, true, false);
@@ -226,7 +226,7 @@ MenuResult ShowMainMenu()
             ctx->back_buffer->Unlock(nullptr);
         }
 
-        DDraw_Flip();
+        DDrawFlip();
 
         RectangleStruct clr = { 0, 0, ctx->width, ctx->height };
         back_surface.FillRect(clr, 0x0000);

@@ -40,12 +40,12 @@ static MenuState Multiplayer_Screen(int);
 static MenuState Skirmish_Setup_Screen();
 static void      Options_Screen_Dialog();
 static char      ShowExitDialog();
-static bool      Game_Frame_Loop();
-static bool      Game_Frame_Check();
-static void      Main_Game_Frame();
+static bool      GameFrameLoop();
+static bool      GameFrameCheck();
+static void      MainGameFrame();
 
-void AudioVideo_Update() {}
-char Event_Dispatch() { AudioVideo_Update(); return 0; }
+void AudioVideoUpdate() {}
+char Event_Dispatch() { AudioVideoUpdate(); return 0; }
 
 // ---- palette ----
 static bool PaletteLoaded() {
@@ -268,7 +268,7 @@ static INT_PTR CALLBACK MainMenu_DlgProc(HWND hDlg, UINT msg, WPARAM wParam, LPA
 // ---- MainMenu_Screen (IDA 0x531CC0) ----
 static MenuState MainMenu_Screen()
 {
-    DDrawContext* ctx = DDraw_GetContext();
+    DDrawContext* ctx = DDrawGetContext();
     if (!ctx || !ctx->back_buffer) {
         LOG_ERROR("[MENU] DDraw not available");
         return MenuState::MenuIdle;
@@ -395,7 +395,7 @@ static MenuState MainMenu_Screen()
 
                     ctx->back_buffer->Unlock(nullptr);
                 }
-                DDraw_Flip();
+                DDrawFlip();
             }
 
         // Message pump (WM_PAINT fires on BUTTON controls for GDI rendering)
@@ -423,7 +423,7 @@ static MenuState MainMenu_Screen()
 
 // ---- Campaign_Screen (IDA 0x60D380) ----
 static MenuState Campaign_Screen(int arg) {
-    DDrawContext* ctx = DDraw_GetContext();
+    DDrawContext* ctx = DDrawGetContext();
     if (!ctx || !ctx->back_buffer) return MenuState::MenuIdle;
 
     DialogClass dlg(0, 0, ctx->width, ctx->height);
@@ -462,7 +462,7 @@ static MenuState Campaign_Screen(int arg) {
         }
         dlg.OnRender(&dlgSurf, &text);
         ctx->back_buffer->Blt(nullptr, dlgSurf.Surface, nullptr, DDBLT_WAIT, nullptr);
-        DDraw_Flip();
+        DDrawFlip();
         Event_Dispatch();
     }
     return result;
@@ -470,7 +470,7 @@ static MenuState Campaign_Screen(int arg) {
 
 // ---- Options_Screen_Dialog ----
 static void Options_Screen_Dialog() {
-    DDrawContext* ctx = DDraw_GetContext();
+    DDrawContext* ctx = DDrawGetContext();
     if (!ctx || !ctx->back_buffer) return;
 
     DialogClass dlg(0, 0, ctx->width, ctx->height);
@@ -547,7 +547,7 @@ static void Options_Screen_Dialog() {
         }
         dlg.OnRender(&dlgSurf, &text);
         ctx->back_buffer->Blt(nullptr, dlgSurf.Surface, nullptr, DDBLT_WAIT, nullptr);
-        DDraw_Flip();
+        DDrawFlip();
         Event_Dispatch();
     }
 }
@@ -557,7 +557,7 @@ static MenuState Multiplayer_Screen(int mode) { LOG_INFO("Multiplayer: mode=%d",
 
 // ---- Skirmish_Setup_Screen ----
 static MenuState Skirmish_Setup_Screen() {
-    DDrawContext* ctx = DDraw_GetContext();
+    DDrawContext* ctx = DDrawGetContext();
     if (!ctx || !ctx->back_buffer) return MenuState::MenuIdle;
 
     DialogClass dlg(0, 0, ctx->width, ctx->height);
@@ -588,7 +588,7 @@ static MenuState Skirmish_Setup_Screen() {
         }
         dlg.OnRender(&dlgSurf, &text);
         ctx->back_buffer->Blt(nullptr, dlgSurf.Surface, nullptr, DDBLT_WAIT, nullptr);
-        DDraw_Flip();
+        DDrawFlip();
         Event_Dispatch();
     }
     return result;
@@ -596,7 +596,7 @@ static MenuState Skirmish_Setup_Screen() {
 
 // ---- ShowExitDialog ----
 static char ShowExitDialog() {
-    DDrawContext* ctx = DDraw_GetContext();
+    DDrawContext* ctx = DDrawGetContext();
     if (!ctx || !ctx->back_buffer) return 1;
 
     DialogClass dlg(0, 0, ctx->width, ctx->height);
@@ -627,7 +627,7 @@ static char ShowExitDialog() {
         }
         dlg.OnRender(&dlgSurf, &text);
         ctx->back_buffer->Blt(nullptr, dlgSurf.Surface, nullptr, DDBLT_WAIT, nullptr);
-        DDraw_Flip();
+        DDrawFlip();
         Event_Dispatch();
     }
     return result;
@@ -637,12 +637,12 @@ static char ShowExitDialog() {
 // These are simplified versions of the massive frame processing functions.
 // IDA reference addresses annotated for future faithful rewriting.
 
-// IDA: 0x55D360 — Game_Frame_Loop (2940B)
+// IDA: 0x55D360 — GameFrameLoop (2940B)
 // Full implementation handles: DDraw wait loop, frame timing (timeGetTime),
 // network sync delay, Event::Dispatch, TacticalMap::Redraw,
 // InputManager_ProcessEvents, SyncDelay, MarkAllFootOccupancies,
 // ProcessAutoSave, DrawHUD, NetworkEvents, Scenario::Update, etc.
-static bool Game_Frame_Loop(){
+static bool GameFrameLoop(){
     // IDA: if (!WTFMode) return 1
     // IDA: Wait for g_DDraw_Active
     // IDA: Frame timing (timeGetTime → Timer::EnableHighPrecision)
@@ -651,35 +651,35 @@ static bool Game_Frame_Loop(){
     return false; // keep running
 }
 
-// IDA: 0x55CFD0 — Game_Frame_Check (906B)
+// IDA: 0x55CFD0 — GameFrameCheck (906B)
 // Checks conditions for exiting the game loop:
 // - WTFMode shutdown
 // - byte_A83D49 (surrender/specific)
 // - g_NetResponseActive
 // - byte_8B41C0 (restart flag)
 // - byte_A83D48
-static bool Game_Frame_Check(){
+static bool GameFrameCheck(){
     return false; // keep running
 }
 
-// IDA: 0x48C8B0 — Main_Game_Frame (978B, 51BBs)
+// IDA: 0x48C8B0 — MainGameFrame (978B, 51BBs)
 // 9-state in-game UI state machine:
 // State 1=InGameUI::Open, 2=Surrender, 3=NetworkEventDispatch,
 // 4=HotkeyOptions, 5=Transition→1, 6=AudioSettings,
 // 7=WOLLobby, 8=Diplomacy, 9=MissionBriefing
 // Calls PreFrameSetup(0x683EB0) + WWMouseClass input + PostFrameCleanup(0x683FB0)
-static void Main_Game_Frame(){
+static void MainGameFrame(){
     Event_Dispatch();
 }
 
-// ---- Menu_Select (IDA 0x52D9A0, 4536B, 222BBs) ----
+// ---- MenuSelect (IDA 0x52D9A0, 4536B, 222BBs) ----
 // IDA states:
 //   18=MainMenu  1=Campaign  2=Skirmish  3=Internet  4=CampaignSub
 //   5=Options    6=ExitConfirm  7=Quit(return 0)  8=NewGame
 //   9=LoadGame  10=BackToCampaign  11=SkirmishMode5
 //   13=PlayMovie  14=CampaignCD  15=Credits
 //   16/17=GameStart(return 1)
-char Menu_Select(){
+char MenuSelect(){
     g_MenuState=MenuState::MenuIdle;g_GameMode=0;
     while(true){
         Event_Dispatch();
@@ -733,34 +733,29 @@ char Menu_Select(){
     }
 }
 
-// IDA: Main_Game @ 0x48CCC0 (780B, 51BBs)
+// IDA: MainGame @ 0x48CCC0 (780B, 51BBs)
 // The main game loop: InitGame → MenuSelect → { GameLoop → cleanup } → repeat
-void Main_Game(){
-    LOG_INFO("Main_Game: entering");
+void MainGame(){
+    LOG_INFO("MainGame: entering");
 
     // IDA: 0x48CCCF — InitGame() — returns 0 on success, non-zero on failure/error
     int r;
-    for(r=Menu_Select();r;r=Menu_Select()){
-        LOG_INFO("Menu_Select=%d GameMode=%d",r,g_GameMode);
-        // IDA: IKnowWhatImDoing = 0; g_MenuReturnState = 1; FadePalette(0)
-        GameFlags_EAC=0;GameFlags_Init=true;
-
-        // IDA: g_MainGameState=0; g_GameActive=ScenarioClass[13730]; g_GameLoopActive=1
-        // IDA: WTFMode::Init(&GameMode_Current)
-
-        // IDA: Game loop — do { if (GameFrameLoop() && GameFrameCheck()) break; MainGameFrame(); } while (!GameFrameCheck())
-        while(true){
-            if(Game_Frame_Loop() && Game_Frame_Check())
-                break;
-            Main_Game_Frame();
+    for(r=MenuSelect();r;r=MenuSelect()){
+        LOG_INFO("MenuSelect=%d GameMode=%d",r,g_GameMode);
+        if(!InitGame(CmdLine_NoCD)){
+            LOG_ERROR("InitGame failed");
+            return;
         }
-
-        // IDA: After game: InitLoadingScreenResources → WTFMode::Shutdown
-        // IDA: Debug::Log("Average FPS = %d") → DumpNetworkStats → FadePalette
-        // IDA: ScreenSaver::Process → cleanup per GameMode
-        Event_Dispatch();
+        // IDA: 0x48CD1A — inner game loop
+        for(;;){
+            if(GameFrameLoop() && GameFrameCheck())
+                break;
+            MainGameFrame();
+        }
+        CmdLine_NoCD=true;
     }
-    LOG_INFO("Main_Game: exiting");
+    Event_Dispatch();
+    LOG_INFO("MainGame: exiting");
 }
 
 } // namespace gamemd

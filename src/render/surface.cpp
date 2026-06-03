@@ -72,7 +72,7 @@ DSurface::DSurface(int width, int height, bool back_buffer, bool force_3d) noexc
     (void)force_3d;
     std::memset(&align_1A, 0, sizeof(align_1A));
 
-    auto* ctx = DDraw_GetContext();
+    auto* ctx = DDrawGetContext();
     if (!ctx || !ctx->dd) return;
 
     DDSURFACEDESC2 desc = {};

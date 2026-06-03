@@ -143,7 +143,7 @@ xna-cncnet-client (C# UI, 游戏大厅, IRC 聊天, INI 生成)
 - `-SPAWN` 的真正实现者，编译为 `CnCNet-Spawner.dll`
 - 由 Syringe 注入到 gamemd.exe 中
 - 启动流程 (所有地址偏移均为原版 gamemd.exe 二进制地址):
-  1. Hook `0x52F639` (CommandLine_Parse): 检测 `-SPAWN` `-CD`
+  1. Hook `0x52F639` (ParseCommandLine): 检测 `-SPAWN` `-CD`
   2. Hook `0x6BD7C5` (WinMain): 读 SPAWN.INI，应用 ~25 个动态补丁
   3. CALL 替换 `0x48CDD3` + `0x48CFAA` → `Spawner::StartGame()` (跳过菜单)
   4. CALL 替换 `0x68745E` + `0x68ACFF` → `Spawner::AssignHouses()` (自定义分配玩家)
@@ -262,7 +262,7 @@ MainMenu            ✅ 主菜单屏幕 (基本交互)
 | ConstructionPositionTracker | 0x425670 | 1688B | 6步位置跟踪 |
 | TechnoClass_Update | 0x6F3F40 | — | 父更新, 6 VFX子系统 |
 | FootClass_MovementAI | 0x4DA530 | 2520B | 7段移动, 138 BBs |
-| AudioController_Start | 0x750D40 | — | 音频控制 |
+| AudioController::Start | 0x750D40 | — | 音频控制 |
 | Coord_To_Cell | 0x565730 | — | 坐标→格子 |
 | Cell_GetGroundHeight | 0x578080 | — | 地面高度 |
 | Random_Range | 0x65C7E0 | — | 随机数 |
@@ -272,23 +272,23 @@ MainMenu            ✅ 主菜单屏幕 (基本交互)
 | Power_FlagProcess | 0x4A1CA0 | — | 电力标志 |
 | **入口点/窗口系统** | | | |
 | WinMain | 0x6BB9A0 | 10261B | 主入口: 413 BBS, 40+ COM类注册, CopyProtection, 窗口创建 |
-| CommandLine_Parse | 0x52F620 | 1531B | 命令行解析 (被 Ares/Phobos/Spawner hook) |
-| Init_Game | 0x52BA60 | 4333B | 游戏初始化 (146 BBs, Scenario/Rules/MIX/Palettes/CD/INI) |
-| Menu_Select | 0x52D9A0 | 4536B | 菜单/场景选择 (222 BBs, 19-case switch, INTRO视频) |
-| Main_Game | 0x48CCC0 | 780B | 主游戏流程: Init→Menu→GameLoop→"Average FPS" |
-| Main_Game_Frame | 0x48C8B0 | 978B | 每帧处理 (51 BBs, 9-case switch: 投降/回放/网络) |
-| Init_Intro | 0x52CB50 | 44B | 开场动画播放 (Spawner 跳过) |
-| WindowCreation_Init | 0x777C30 | ~500B | 窗口类注册+CreateWindowExA, 全屏/调试双模式 |
+| ParseCommandLine | 0x52F620 | 1531B | 命令行解析 (被 Ares/Phobos/Spawner hook) |
+| InitGame | 0x52BA60 | 4333B | 游戏初始化 (146 BBs, Scenario/Rules/MIX/Palettes/CD/INI) |
+| MenuSelect | 0x52D9A0 | 4536B | 菜单/场景选择 (222 BBs, 19-case switch, INTRO视频) |
+| MainGame | 0x48CCC0 | 780B | 主游戏流程: Init→Menu→GameLoop→"Average FPS" |
+| MainGameFrame | 0x48C8B0 | 978B | 每帧处理 (51 BBs, 9-case switch: 投降/回放/网络) |
+| PlayIntroSequence | 0x52CB50 | 44B | 开场动画播放 (Spawner 跳过) |
+| InitWindowCreation | 0x777C30 | ~500B | 窗口类注册+CreateWindowExA, 全屏/调试双模式 |
 | WindowProc_Main | 0x7775C0 | 1213B | 主窗口过程, 81 BBs, WM_CREATE/DESTROY/PAINT |
-| Game_Frame_Loop | 0x55D360 | 2940B | 游戏帧处理主循环 |
-| Game_Frame_Check | 0x55CFD0 | 906B | 游戏帧条件检查 |
-| Scenario_Load | 0x686B20 | 4532B | 场景加载 (含 AssignHouses 调用点 0x68745E) |
-| Scenario_ReadINI | 0x689E90 | 3800B | 场景 INI 读取 (含 AssignHouses 调用点 0x68ACFF) |
-| WinMain_Setup | 0x6BE1C0 | 2697B | WinMain 前置设置 (配置加载/NO-CD) |
-| GameLoop_MessagePump | 0x53E770 | ~800B | 自定义PeekMessage/DispatchMessage, CritSec保护 |
-| COM_RegisterClasses | 0x6BB390 | ~800B | COM class object 注册 (TypeLib/ProgID/InprocServer32) |
-| CopyProtection_CheckLauncher | 0x49F5C0 | ~80B | 启动器Mutex检测 ("48BC11BD...") |
-| CopyProtection_NotifyLauncher | 0x49F620 | ~250B | 启动器通知+等待响应, 自定义消息 0xBEEF |
+| GameFrameLoop | 0x55D360 | 2940B | 游戏帧处理主循环 |
+| GameFrameCheck | 0x55CFD0 | 906B | 游戏帧条件检查 |
+| ScenarioClass::LoadMap | 0x686B20 | 4532B | 场景加载 (含 AssignHouses 调用点 0x68745E) |
+| ScenarioClass::ReadMapINI | 0x689E90 | 3800B | 场景 INI 读取 (含 AssignHouses 调用点 0x68ACFF) |
+| WinMainSetup | 0x6BE1C0 | 2697B | WinMain 前置设置 (配置加载/NO-CD) |
+| GameLoopMessagePump | 0x53E770 | ~800B | 自定义PeekMessage/DispatchMessage, CritSec保护 |
+| RegisterClassesCOM | 0x6BB390 | ~800B | COM class object 注册 (TypeLib/ProgID/InprocServer32) |
+| CopyProtection::CheckLauncher | 0x49F5C0 | ~80B | 启动器Mutex检测 ("48BC11BD...") |
+| CopyProtection::NotifyLauncher | 0x49F620 | ~250B | 启动器通知+等待响应, 自定义消息 0xBEEF |
 
 ---
 
@@ -507,7 +507,7 @@ Key vtable entries (IDA identified):
 | R0-5a | SHP 加载屏幕显示 (降级方案: static ls800*.shp 作为菜单背景) | `src/core/menu_select.cpp` | R0-1 | ~30 |
 | R0-5b | 调研 BINK 格式 + RAD Game Tools SDK 可行性 (原版用 BinkPlay.exe / binkw32.dll) | `src/render/bink.cpp` → 新建 | — | 调研 |
 | R0-5c | BINK 视频帧解码→DDraw 表面 Blit (每帧 DMA→surface→Flip) | `src/render/bink.cpp` | DDraw | ~150 |
-| R0-5d | INTRO 视频播放: `Menu_Select` case 0/1 (跳过 Logo/Intro 的 Spawner 钩子) | `src/core/menu_select.cpp` | R0-5c | ~50 |
+| R0-5d | INTRO 视频播放: `MenuSelect` case 0/1 (跳过 Logo/Intro 的 Spawner 钩子) | `src/core/menu_select.cpp` | R0-5c | ~50 |
 
 **R0-5 验收**: 菜单背景显示 BINK 动画（或 SHP 静图降级），INTRO 视频可播放。
 
@@ -596,7 +596,7 @@ Key vtable entries (IDA identified):
 | P0-2 | DirectDraw 7 初始化 | `app/ddraw_init.cpp` | ~100 | ✅ |
 | P0-3 | 命令行解析器 (`-SPAWN`, `-CD`, `-WINDOW`, `-LOG`) | `app/cmdline.cpp` | ~60 | ✅ (新增) |
 | P0-4 | 游戏主流程路由 (Init→Menu/Spawn→GameLoop) | `app/game_loop.cpp` | ~100 | ✅ (新增) |
-| P0-5 | InitGame 骨架 (匹配 Init_Game 流程) | `src/core/init_game.cpp` | ~80 | ✅ (新增) |
+| P0-5 | InitGame 骨架 (匹配 InitGame 流程) | `src/core/init_game.cpp` | ~80 | ✅ (新增) |
 | P0-6 | MenuSelect 骨架 (19-case switch placeholder) | `src/core/menu_select.cpp` | ~60 | ✅ (新增) |
 | P0-7 | SpawnINI 完整解析器 (Settings/Players/Houses/Tunnel) | `src/core/spawn_config.cpp` | ~200 | ✅ (新增) |
 | P0-8 | SpawnMode 入口 (读 spawn.ini → 路由到游戏循环) | `src/core/spawn_mode.cpp` | ~100 | ✅ (新增) |
@@ -762,22 +762,22 @@ make _WIN32_WINNT=0x0400
 |------|------|------|
 | 生产管线 (8) | `ProductionCompletionCallback`, `CreateUnitOnCompletion`, `ConstructionPositionTracker` | CreateUnit 回调链 |
 | 坐标/格子 (10) | `Coord_To_Cell`, `Cell_GetGroundHeight`, `Cell_IsWalkable`, `CellCoord_To_CellObj` | 位置计算 |
-| **BINK音频系统 (4)** | `Audio_IsSoundEnabled`, `Audio_GetDirectSound`, `BinkMovie_Pause`, `BinkMovie_AdjustSurfaceFormat` | DirectSound→BINK音频桥接 |
-| 音频 (5) | `AudioController_Start`, `AudioController_StartAt`, `AudioController_Stop`, `AudioController_Init` | 工作音效 |
+| **BINK音频系统 (4)** | `AudioController::IsSoundEnabled`, `Audio::GetDirectSound`, `BinkMovie_Pause`, `BinkMovie_AdjustSurfaceFormat` | DirectSound→BINK音频桥接 |
+| 音频 (5) | `AudioController::Start`, `AudioController::StartAt`, `AudioController::Stop`, `AudioController::Init` | 工作音效 |
 | 数学 (5) | `Math_RoundToInt`, `Math_Sqrt`, `Math_SinCos`, `Math_CalcAngle` | 坐标计算 |
 | 电力 (5) | `Power_TimerProcess`, `Power_FlagProcess`, `BuildingClass_PowerDrainUpdate` | 电力系统 |
 | 单元创建 (4) | `CreateUnitAtCoords_Timed`, `CreateUnitAtCoords_Standard`, `UnitClass_Create` | 最终产出 |
 | ObjectClass vtable (5) | `ObjectClass_GetCoords`, `ObjectClass_HasC4`, `ObjectClass_SetPosition` | 基类方法 |
 | BuildingClass vtable (8) | `BuildingClass_MissionDispatch`, `BuildingClass_OnObjectExpired`, `BuildingClass_TogglePrimaryFactory` | 建筑虚函数 |
 | **Surface 类层次 (38)** | `DSurface_Blit`, `DSurface_Lock`, `DSurface_DrawLineZBuf`, `XSurface_WalkLine`, `BSurface_Lock` | DDraw表面绘制管线 |
-| 入口点/窗口 (11) | `WinMain`, `CommandLine_Parse`, `Init_Game`, `Menu_Select`, `Main_Game`, `Main_Game_Frame`, `Game_Frame_Loop`, `Game_Frame_Check`, `Scenario_Load`, `Scenario_ReadINI`, `WinMain_Setup` | 启动管线, 游戏流程 |
+| 入口点/窗口 (11) | `WinMain`, `ParseCommandLine`, `InitGame`, `MenuSelect`, `MainGame`, `MainGameFrame`, `GameFrameLoop`, `GameFrameCheck`, `ScenarioClass::LoadMap`, `ScenarioClass::ReadMapINI`, `WinMainSetup` | 启动管线, 游戏流程 |
 | 对话框/菜单 (12) | `MainMenu_Screen`, `MainMenu_DlgProc`, `Dialog_Create`, `Dialog_Destroy`, `Dialog_Show`, `Dialog_SetParent`, `Dialog_BaseProc`, `Dialog_PumpMessages`, `Dialog_MessageLoop`, `Campaign_Screen`, `Multiplayer_Screen`, `Options_Screen_Dialog` | UI 对话框系统 |
 | **系统工具 (6)** | `Screen_Capture`, `Random_Init`, `Network_Init`, `Timer_GetTicks`, `Resource_Find`, `Message_IsDialog` | 截图/RNG/网络/定时器/资源 |
 | **菜单系统 (6)** | `Skirmish_Setup_Screen`, `Skirmish_Setup_DlgProc`, `Credits_Screen`, `Options_Screen_Save`, `Screensaver_Start`, `Dialog_Init` | Skirmish+Credits+屏保+对话框 |
 | **DDraw 全局变量 (8)** | `g_lpDirectDraw7`, `g_DDraw_Initialized`, `g_ZBufferDescriptor`, `g_VisibleSurfaceDescriptor`, `g_BitShift_Red/Green/Blue+Mask` | DDraw 引擎状态 |
 | **BINK 渲染管线 (13)** | `BinkMovie_RenderLoop`, `BinkMovie_InitFromFile`, `BinkMovie_RenderSingleFrame`, `BinkMovie_BlitToTarget`, `BinkMovie_CheckKeyframeTransition`, `BinkMovie_Pause`, `BinkMovie_AdjustSurfaceFormat` | BINK视频解码→表面渲染→Blit |
 | **BINK 表面追踪 (3)** | `BinkMovie_CreateSurfaceTracker`, `BinkMovie_FreeSurfaceTracker`, `BinkMovie_ProcessKeyframe` | BSurface 关键帧过渡处理 |
-| **BINK音频系统 (2)** | `Audio_IsSoundEnabled`, `Audio_GetDirectSound` | DirectSound→BINK SetSoundSystem 桥接 |
+| **BINK音频系统 (2)** | `AudioController::IsSoundEnabled`, `Audio::GetDirectSound` | DirectSound→BINK SetSoundSystem 桥接 |
 | **音频全局 (2)** | `g_Audio_Enabled`, `g_pDirectSound` | 音频启用标志 + DirectSound 对象指针 |
 | **Locomotor GUID 表 (8)** | `g_CLSID_WalkLocomotion`, `g_CLSID_DriveLocomotion`, `g_CLSID_FlyLocomotion`, `g_CLSID_HoverLocomotion`, `g_CLSID_TunnelLocomotion`, `g_CLSID_DriveLocomotion2`, `g_CLSID_JumpjetLocomotion`, `g_CLSID_ShipLocomotion` | COM 移动类型 CLSID 表 @0x7E9A60 |
 | **音频子系统 (4)** | `Audio::ProcessMixerOutput`, `Audio::UpdatePlaybackPosition`, `Audio::GetChannelStatus`, `Audio::FlushChannel` | 混音器输出 + 播放位置 + 通道管理 |
@@ -803,7 +803,7 @@ make _WIN32_WINNT=0x0400
 - **Python**: 3.14.2 (`python` 或 `py`), Windows 上已就绪
 - **渲染框架**: cnc-ddraw (`./cnc-ddraw`, by FunkyFr3sh) — Phase 1 调试阶段作为 `ddraw.dll` 兼容层运行 EXE
 - **EXE 入口**: `app/main.cpp` — WinMain 创建窗口 + 初始化 DirectDraw 7 + 游戏循环
-- **启动管线架构**: WinMain → Init_Game → Menu_Select → GameLoop (原版) / WinMain → SpawnMode → GameLoop (SPAWN)
+- **启动管线架构**: WinMain → InitGame → MenuSelect → GameLoop (原版) / WinMain → SpawnMode → GameLoop (SPAWN)
 - **外部源码参考**: Ares 0.A (`./Ares`), Syringe (`./Syringe`), Phobos (`./Phobos`), CnCNet Spawner (`./yrpp-spawner`), xna-cncnet-client (`./xna-cncnet-client`)
 - **游戏资源**: `RA2YR-FullFiles/*.mix` — CMake 构建后自动拷贝到 EXE 输出目录 (16 个 MIX 文件, ~180MB)
 - **MIX Bootstrap**: `MixFileClass::Bootstrap()` 加载 expandmd01/ra2md/langmd/language/ra2 → `FileSystem::LoadFile()` 通过 hash ID 搜索并提取内部文件
@@ -1009,7 +1009,7 @@ sub_5B40B0(filename, is_shp)                    // 文件加载器 (0x5B40B0)
 ### 菜单状态机架构 (IDA 逆向 — 完整 19-case switch)
 
 ```
-Main_Game → Menu_Select (0x52D9A0, 4536B, 222 BBs)
+MainGame → MenuSelect (0x52D9A0, 4536B, 222 BBs)
   │
   ├─ case 18: MainMenu_Screen(3600 timeout) → 等待用户交互
   │   └─ MainMenu_DlgProc(0x531F60) → 设置 *WindowLongA[8] = state
@@ -1136,15 +1136,15 @@ Dialog_Show(hWnd)    → ShowWindow(SW_SHOW) + SetWindowPos
 Dialog_Destroy(hWnd) → DestroyWindow + 跟踪数组清理
 
 Dialog_MessageLoop()
-  ├── GameLoop_MessagePump(&Msg, 0, 0, 0, 0) — 自定义 PeekMessage
+  ├── GameLoopMessagePump(&Msg, 0, 0, 0, 0) — 自定义 PeekMessage
   ├── Message_IsDialog(&Msg) — 判断消息是否属于当前对话框
   ├── TranslateMessage + DispatchMessageA
-  └── CopyProtection_NotifyLauncher hook
+  └── CopyProtection::NotifyLauncher hook
 
 Dialog_PumpMessages() — 便捷封装 (27 调用方)
   ├── Dialog_MessageLoop()
   ├── if GameMode==0||5: Event_Dispatch()
-  └── if in-game: sub_55CBF0()→Game_Frame_Loop()
+  └── if in-game: sub_55CBF0()→GameFrameLoop()
 ```
 
 ### 菜单渲染架构 (IDA 逆向)
@@ -1157,7 +1157,7 @@ MainMenu_Screen (0x531CC0)
   ├── 发送 0x4E4 + "Ra2ts_l" / "Ra2ts_s" → 设置 BINK 文件
   ├── 循环: Dialog_PumpMessages() [timeout=3600 frames(60s)]
   │     ├── 若 bp[0xEA]->Screen_Capture 被触发 → Frame_Present 重绘
-  │     └── 返回状态码 → Menu_Select 状态机
+  │     └── 返回状态码 → MenuSelect 状态机
   └── WM_CLOSE: SendMessage(DlgItem 1818, 0x4F0) → 清理 BINK
 ```
 
@@ -1183,7 +1183,7 @@ Campaign_Screen(template_id):
   │     ├── Dialog_MessageLoop()
   │     ├── if GameMode==0||5||byte_A8D60E||dword_A8DAB4:
   │     │     Event_Dispatch()
-  │     └── else if !sub_55CBF0 && Game_Frame_Loop(): break
+  │     └── else if !sub_55CBF0 && GameFrameLoop(): break
   └── Dialog_Destroy → 返回 dwNewLong (下一状态)
 
 注意：Campaign_Screen 是**通用对话框包装器**，被 4 个调用方复用——不仅是战役屏幕，
@@ -1233,15 +1233,15 @@ Dialog_Show(hWnd)    → ShowWindow(SW_SHOW) + SetWindowPos
 Dialog_Destroy(hWnd) → DestroyWindow + 跟踪数组清理
 
 Dialog_MessageLoop()
-  ├── GameLoop_MessagePump(&Msg, 0, 0, 0, 0) — 自定义 PeekMessage
+  ├── GameLoopMessagePump(&Msg, 0, 0, 0, 0) — 自定义 PeekMessage
   ├── Message_IsDialog(&Msg) — 判断消息是否属于当前对话框
   ├── TranslateMessage + DispatchMessageA
-  └── CopyProtection_NotifyLauncher hook
+  └── CopyProtection::NotifyLauncher hook
 
 Dialog_PumpMessages() — 便捷封装 (27 调用方)
   ├── Dialog_MessageLoop()
   ├── if GameMode==0||5: Event_Dispatch()
-  └── if in-game: sub_55CBF0()→Game_Frame_Loop()
+  └── if in-game: sub_55CBF0()→GameFrameLoop()
 ```
 
 ### 菜单渲染架构 (IDA 逆向)
@@ -1254,7 +1254,7 @@ MainMenu_Screen (0x531CC0)
   ├── 发送 0x4E4 + "Ra2ts_l" / "Ra2ts_s" → 设置 BINK 文件
   ├── 循环: Dialog_PumpMessages() [timeout=3600 frames(60s)]
   │     ├── 若 bp[0xEA]->Screen_Capture 被触发 → Frame_Present 重绘
-  │     └── 返回状态码 → Menu_Select 状态机
+  │     └── 返回状态码 → MenuSelect 状态机
   └── WM_CLOSE: SendMessage(DlgItem 1818, 0x4F0) → 清理 BINK
 ```
 
@@ -1280,7 +1280,7 @@ Campaign_Screen(template_id):
   │     ├── Dialog_MessageLoop()
   │     ├── if GameMode==0||5||byte_A8D60E||dword_A8DAB4:
   │     │     Event_Dispatch()
-  │     └── else if !sub_55CBF0 && Game_Frame_Loop(): break
+  │     └── else if !sub_55CBF0 && GameFrameLoop(): break
   └── Dialog_Destroy → 返回 dwNewLong (下一状态)
 
 注意：Campaign_Screen 是**通用对话框包装器**，被 4 个调用方复用——不仅是战役屏幕，
@@ -1294,7 +1294,7 @@ Campaign_Screen(template_id):
   │     ├── Dialog_MessageLoop()
   │     ├── if GameMode==0||5||byte_A8D60E||dword_A8DAB4:
   │     │     Event_Dispatch()
-  │     └── else if !sub_55CBF0 && Game_Frame_Loop(): break
+  │     └── else if !sub_55CBF0 && GameFrameLoop(): break
   └── Dialog_Destroy → 返回 dwNewLong (下一状态)
 ```
 
@@ -1770,8 +1770,8 @@ Lock → RenderFrameRaw → Unlock → Flip  // 每帧都渲染，不受门控
 - `MainMenu_Screen` (0x531CC0): Dialog_Create(0xE2)→Dialog_SetParent→Dialog_PumpMessages 循环
 - `MainMenu_DlgProc` (0x531F60): WM_COMMAND(button ID→state), WM_CLOSE(BINK cleanup)
 - `sub_432BD0`: BinkGoto(handle, frame, 1) 封装 (flag=1 快速 seek)
-- `Audio_IsSoundEnabled` (0x407000): 检查 `g_Audio_Enabled`
-- `Audio_GetDirectSound` (0x40A7A0): 返回 `g_pDirectSound`
+- `AudioController::IsSoundEnabled` (0x407000): 检查 `g_Audio_Enabled`
+- `Audio::GetDirectSound` (0x40A7A0): 返回 `g_pDirectSound`
 - `BinkMovie_Pause` (0x432C30): BinkPause 调用
 
 ### IDA 命名 (~8,727 函数 + ~2,633 全局变量 + 25+ struct 类型, 已保存 .i64)

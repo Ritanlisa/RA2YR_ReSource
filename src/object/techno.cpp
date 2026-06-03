@@ -846,7 +846,7 @@ static bool ProductionCompletionCallback(TechnoClass* techno)
     if (audio_active || !has_working_sound)
     {
         // No audio or no sound configured → stop Audio7
-        // TODO: AudioController_Stop(&building->Audio7)
+        // TODO: AudioControllerStop(&building->Audio7)
     }
     else
     {
@@ -855,7 +855,7 @@ static bool ProductionCompletionCallback(TechnoClass* techno)
         // AudioController_StartAt(type->WorkingSound, coords, &building->Audio7)
     }
     // Stop Audio8
-    // TODO: AudioController_Stop(&building->Audio8)
+    // TODO: AudioControllerStop(&building->Audio8)
 
     // Section 4: Immediate unit creation if no threshold
     if (!type->ProductionCompletionThreshold)

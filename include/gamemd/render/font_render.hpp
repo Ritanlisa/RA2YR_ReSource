@@ -128,7 +128,7 @@ inline const uint8_t kFontData[][16] = {
     {0},{0},{0},{0},
 };
 
-inline void Font_DrawText(uint16_t* buf, int pitch, int x, int y, int w, int h,
+inline void FontDrawText(uint16_t* buf, int pitch, int x, int y, int w, int h,
                           const char* text, uint16_t color)
 {
     if (!text || !buf) return;

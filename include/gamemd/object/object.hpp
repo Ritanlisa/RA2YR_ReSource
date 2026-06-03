@@ -27,12 +27,19 @@ enum class KickOutResult : int;
 enum class Move : int;
 enum class RadioCommand : int;
 
-struct AudioController {
+class AudioController {
+public:
     uint32_t field_00;   // +0x00, init 0
     uint32_t field_04;   // +0x04, init 0
     uint32_t field_08;   // +0x08, init 0
     uint32_t field_0C;   // +0x0C, init &dword_87E294
     uint32_t field_10;   // +0x10, not initialized by Init
+
+    void Stop();
+    void Start(int32_t soundIndex);
+    void Pause();
+    void Resume();
+    static bool IsSoundEnabled() { return false; } // IDA 0x407000
 }; // sizeof = 0x14 (verified against ObjectClass ctor gap 0x3C->0x50)
 
 class ObjectClass : public AbstractClass {

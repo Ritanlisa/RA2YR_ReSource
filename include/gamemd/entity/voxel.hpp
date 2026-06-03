@@ -66,7 +66,7 @@ struct HvaFile
     }
 };
 
-bool Vxl_Load(const uint8_t* data, int size, VxlFile* out);
-bool Hva_Load(const uint8_t* data, int size, HvaFile* out);
+bool VxlLoad(const uint8_t* data, int size, VxlFile* out);
+bool HvaLoad(const uint8_t* data, int size, HvaFile* out);
 
 } // namespace gamemd

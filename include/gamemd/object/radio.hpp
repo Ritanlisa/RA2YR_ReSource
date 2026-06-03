@@ -8,7 +8,8 @@ namespace game {
 enum class RadioCommand : int;
 
 template <typename T>
-struct VectorClass {
+class VectorClass {
+public:
     T*      Items;
     int32_t Count;
     int32_t Capacity;

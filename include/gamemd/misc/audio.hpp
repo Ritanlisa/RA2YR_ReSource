@@ -132,7 +132,7 @@ public:
     // TODO: complete VoxClass
 };
 
-struct AudioController;
+class AudioController;
 
 struct AudioEventHandle
 {
@@ -152,9 +152,9 @@ struct AudioEventHandle
 };
 
 // --- DirectSound audio system (IDA 0x40A7A0 / 0x407000) ---
-bool Audio_Init(HWND hWnd);
-void Audio_Shutdown();
-bool Audio_IsSoundEnabled();       // IDA 0x407000: checks dword_87E728
+bool AudioInit(HWND hWnd);
+void AudioShutdown();
+bool AudioIsSoundEnabled();       // IDA 0x407000: checks dword_87E728
 IDirectSound* Audio_GetDirectSound();  // IDA 0x40A7A0: returns ppDS (0x87E89C)
 
 } // namespace gamemd

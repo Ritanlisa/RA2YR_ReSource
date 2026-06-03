@@ -1,4 +1,4 @@
-// Init_Game — IDA: 0x52BA60 (4333B, 146 basic blocks)
+// InitGame — IDA: 0x52BA60 (4333B, 146 basic blocks)
 // FAITHFUL game initialization pipeline matching IDA call order.
 // Called from MainGame (0x48CCC0). Returns 0 on success, non-zero on failure.
 

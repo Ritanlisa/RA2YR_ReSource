@@ -7,7 +7,7 @@
 
 namespace gamemd {
 
-bool SpawnMode_Enter()
+bool SpawnModeEnter()
 {
     auto cfg = SpawnConfig_LoadFromINI("spawn.ini");
 
