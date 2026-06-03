@@ -325,6 +325,11 @@ int   dword_A8E374 = 0;
 // IDA: 0xA8E36D — byte_A8E36D (placement flag)
 bool  byte_A8E36D = false;
 
+// IDA: Cell/Map globals
+void* g_Shroud_CellArray = nullptr;  // 0x87F924
+int   dword_87F928 = 0;              // 0x87F928
+int   g_Map_GlobalCellIndex = 0;      // 0xABDC74 (packed X/Y of cell)
+
 // IDA: Object pool / Alpha shape globals
 int   g_AlphaShapePool = 0;    // 0xB0F730
 void* dword_B0F724 = nullptr;  // 0xB0F724

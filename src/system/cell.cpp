@@ -182,4 +182,22 @@ ObjectClass* CellClass::FindObjectOfType(AbstractType type, bool alt) const
     return nullptr;
 }
 
+// IDA: 0x578080 — Cell::GetGroundHeight (121B)
+// Computes ground height from lepton coordinates.
+// Converts leptons (1 cell = 256 leptons) to cell index,
+// validates bounds against dword_87F928 and g_Shroud_CellArray.
+// Then calls Isometric::InitTables (0x47B3A0) for actual height.
+int GetGroundHeight(int x_leptons, int y_leptons)
+{
+    // IDA: cell_index = (x/256) + (y/256) << 9
+    int cx = x_leptons / 256;
+    int cy = y_leptons / 256;
+    int cell_idx = cx + (cy << 9);
+
+    // IDA: bounds check against dword_87F928
+    // IDA: if out of bounds or shroud not loaded, store global cell index
+    // IDA: then call Isometric::InitTables for height
+    return 0; // TODO: full implementation when Isometric::InitTables is available
+}
+
 } // namespace gamemd
