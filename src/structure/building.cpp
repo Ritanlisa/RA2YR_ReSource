@@ -95,8 +95,6 @@ BuildingClass::BuildingClass() noexcept
 
 // IDA: 0x447AC0 — BuildingClass::GetExitCoords (84B), see definition at end of file
 
-// ============================================================
-// Mission_Construction — building construction state machine
 // Based on RA1 BuildingClass::Mission_Construction
 // States: INITIAL=0 → DURING=1
 int BuildingClass::Mission_Construction()

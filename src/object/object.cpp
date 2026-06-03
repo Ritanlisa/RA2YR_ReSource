@@ -231,12 +231,20 @@ bool ObjectClass::CanBeSold() const
     return m_health > 0 && !m_in_limbo;
 }
 
+// IDA: 0x70E2B0 — TechnoClass::IronCurtain (80B)
+// Sets iron curtain invulnerability timer fields at timer offsets
 DamageState ObjectClass::IronCurtain(int duration, HouseClass* source, bool force_shield)
 {
-    // Set invulnerability timer
-    // TODO: start iron curtain timer, set visual tint
-    (void)duration;
     (void)source;
+
+    // IDA: *(this+99) = CurrentFrame — m_iron_curtain_timer.data[0] at +0x18C
+    // IDA: *(this+100) = v5 — duration stored in timer data[1] at +0x190
+    // IDA: *(this+105) = 0 — m_iron_tint_stage at +0x1A4
+    // IDA: *(this+101) = a2 — duration field at +0x194
+    // IDA: *(this+113) = a4 ? 1 : 0 — m_force_shielded at +0x1C4
+
+    // TODO: implement timer fields when TimerStruct layout is confirmed
+    (void)duration;
     (void)force_shield;
     return static_cast<DamageState>(0);
 }
