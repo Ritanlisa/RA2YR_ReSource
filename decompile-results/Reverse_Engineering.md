@@ -129,32 +129,4 @@
 └── 17–32B   23.0% (870/3,790)      ← 主要瓶颈
 
 全局变量:   28.1% (2,633/9,365)
-
----
-
-## 七、逆向文档完整性
-
-| 文档 | 完成度 | 最近更新 | 内容 |
-|------|--------|----------|------|
-| **COM.md** | ✅ 完整 | 2026-06-03 | 12 COM 接口 IID, 8 Locomotor GUID 全值, 71 TClassFactory 条目, Locomotion 类层次 |
-| **Objects.md** | ✅ 完整 | 2026-06-03 | MI 继承链含 COM 接口标注, 28 游戏对象类 vtable 地址, NeuronClass 修正 |
-| **Audio.md** | ✅ 完整 | 2026-06-03 | 初始化→WAV/AUD→Miles→EVA→Theme→BINK 全管线 |
-| **Buildings.md** | ⏳ 部分 | — | BuildingClass vtable + 构造/生产 |
-| **Techno.md** | ⏳ 部分 | — | TechnoClass CreateUnit 管线 |
-| **Foot.md** | ⏳ 部分 | — | MovementAI + Mission 状态机 |
-| **Infantry.md** | ⏳ 部分 | — | 构造函数 + 3 Mission |
-| **Surface.md** | ⏳ 部分 | — | Surface 类层次 + DSurface vtable |
-| **BINK.md** | ⏳ 部分 | — | BINK 渲染管线 |
-| **Menu.md** | ⏳ 部分 | — | 主菜单架构 + Dialog 系统 |
-
-### 核心发现 (本文档新增)
-
-| 类别 | 发现 | 位置 |
-|------|------|------|
-| COM 接口 | 8 Locomotor GUID 完整映射 (含 DriveLocomotion2={2BEA...}) | COM.md §四 |
-| MI 继承链 | AircraftClass = FootClass + FlasherClass(IFlyControl) | Objects.md §1.1 |
-| MI 继承链 | TeleportLocomotionClass = LocomotionClass + IPiggyback | Objects.md §1.1 |
-| MI 继承链 | HouseClass 7 vtables = AbstractClass + IHouse + IPublicHouse | Objects.md §1.1 |
-| NeuronClass | 非武器/非AI — SwizzleManager 图形神经元 (紫幕特效) | Objects.md §4.2 |
-| TClassFactory | 补充 CellClass@60, QueueClass@61 | COM.md §4.2 |
 ```
