@@ -93,11 +93,12 @@ BuildingClass::BuildingClass() noexcept
     std::memset(Upgrades, 0, sizeof(Upgrades));
 }
 
+// IDA: 0x447AC0 — BuildingClass::GetExitCoords (84B), see definition at end of file
+
 // ============================================================
 // Mission_Construction — building construction state machine
 // Based on RA1 BuildingClass::Mission_Construction
 // States: INITIAL=0 → DURING=1
-// ============================================================
 int BuildingClass::Mission_Construction()
 {
     enum { INITIAL, DURING };
@@ -600,27 +601,25 @@ void BuildingClass::Place(bool bUnk)
 //  - Related objects (this+1344, 1352): get type via vtable[16]
 // ============================================================
 
-// ============================================================
-// GetExitCoords — building foundation center (IDA 0x447AC0, 84B)
-// Used when units exit a building (barracks, war factory, etc.)
-// ============================================================
-CellStruct* BuildingClass::vt_entry_4E8(CellStruct* out, uint32_t dwUnk) const
+// IDA: 0x447AC0 — BuildingClass::GetExitCoords (84B)
+// Computes exit cell coordinate for unit spawning from a building.
+// IDA: this+0x520 = Type, this+0x9C = m_location
+CoordStruct* BuildingClass::GetExitCoords(CoordStruct* out, uint32_t unknown) const
 {
-    if (Type)
-    {
-        int fw = Type->GetFoundationWidth() * 128 - 128;
-        int fh = (Type->Height ? Type->GetFoundationHeight(false) : 1) * 128 - 128;
-
-        CoordStruct coords;
-        GetCoords(&coords);
-
-        out->X = static_cast<int16_t>((coords.X + fw) / 256);
-        out->Y = static_cast<int16_t>((coords.Y + fh) / 256);
-    }
-    else
-    {
+    (void)unknown;
+    if (!Type) {
         *out = {};
+        return out;
     }
+
+    int fh = Type->GetFoundationHeight(false);
+    int fw = Type->GetFoundationWidth();
+
+    // IDA: foundationW*128 - 128 + location.X, foundationH*128 - 128 + location.Y
+    out->X = m_location.X + ((fw << 7) - 128);
+    out->Y = m_location.Y + ((fh << 7) - 128);
+    out->Z = m_location.Z;
+
     return out;
 }
 

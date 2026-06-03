@@ -53,7 +53,7 @@ public:
     virtual void Place(bool bUnk);
     virtual void UpdateConstructionOptions() {}
     virtual void vt_entry_4E4(uint32_t dwUnk, uint32_t dwUnk2) {}
-    virtual CellStruct* vt_entry_4E8(CellStruct* pCellStruct, uint32_t dwUnk) const;
+    virtual CoordStruct* GetExitCoords(CoordStruct* out, uint32_t unknown) const override;
     virtual void vt_entry_4EC(uint32_t dwUnk, uint32_t dwUnk2, uint32_t dwUnk3, uint32_t dwUnk4) {}
     virtual bool TogglePrimaryFactory() { return false; }
     virtual void SensorArrayActivate(CellStruct cell) {}
