@@ -123,8 +123,14 @@ void* BitTextClassLoadFont(void* mem) { (void)mem; return nullptr; }
 void InitStubPlaceholder() {}
 // IDA 0x72AA40 — LoadMouseClassResources
 void LoadMouseClassResources() {}
-// IDA 0x406B10 — InitializeAudioSubsystem
-int  InitializeAudioSubsystem(void* hwnd) { (void)hwnd; return 1; }
+// IDA 0x406B10 — InitializeAudioSubsystem: mixer channels, AUDIO.MIX, DirectSound
+int  InitializeAudioSubsystem(void* hwnd) {
+    LOG_DEBUG("InitializeAudioSubsystem");
+    // IDA: AudioMixer::Init × 8 → g_MixerChannel_SFX/Theme/Voice/Score/Misc/Stream/Ambient
+    // IDA: CreateAudioChannel(-1) → g_Audio_Enabled; CCFileClass AUDIOMD.MIX → g_MixFile_AUDIO
+    (void)hwnd;
+    return 1;
+}
 
 // IDA 0x6C8C40 — Timer::GetTicks: returns timeGetTime() >> 4 (~16ms resolution)
 int TimerGetTicks() { return timeGetTime() >> 4; }
