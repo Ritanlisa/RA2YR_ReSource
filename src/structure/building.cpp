@@ -485,6 +485,7 @@ int BuildingClass::Mission_Missile()
 // ExitObject — unit exit from building (RA1 Exit_Object pattern)
 // Returns: 0=failure, 1=retry, 2=success
 // ============================================================
+// IDA 0x447AC0 — BuildingClass::GetExitCoords
 int BuildingExitObject(BuildingClass* building, ra2::game::TechnoClass* exiting_unit)
 {
     if (!exiting_unit || !building || !building->Type)

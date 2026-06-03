@@ -69,6 +69,7 @@ DisplayClass::DisplayClass() noexcept
 //   5. Render mouse cursor
 //   6. Page flip (Primary→FrontBuffer)
 //
+// IDA 0x4F4780 — Frame::Present
 bool FramePresent(Surface* composite_surface, int flags, int arg3, int arg4)
 {
     (void)composite_surface;
