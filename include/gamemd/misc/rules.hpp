@@ -6,6 +6,7 @@
 #include "..\core\enums.hpp"
 #include "..\core\vector.hpp"
 #include "..\core\math.hpp"
+#include "..\entity\tiberium.hpp"
 #include "..\fundamentals.hpp"
 
 namespace gamemd

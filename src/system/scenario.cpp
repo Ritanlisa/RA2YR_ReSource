@@ -34,7 +34,7 @@ ScenarioClass::ScenarioClass() noexcept
     , m_pre_map_select(nullptr)
     , m_theme_index(-1)
     , m_human_player_house_type_index(-1)
-    , m_carry_over_money(0)
+    , m_carry_over_money(0.0)
     , m_carry_over_cap(0)
     , m_percent(0)
     , m_unknown_34A0(0)
@@ -111,42 +111,83 @@ ScenarioClass::ScenarioClass() noexcept
     , m_ls800_brief_loc_x(0)
     , m_ls800_brief_loc_y(0)
 {
-    std::memset(&m_special_flags, 0, sizeof(m_special_flags));
-    std::memset(m_next_scenario, 0, sizeof(m_next_scenario));
-    std::memset(m_alt_next_scenario, 0, sizeof(m_alt_next_scenario));
-    std::memset(&m_random, 0, sizeof(m_random));
-    std::memset(&m_elapsed_timer, 0, sizeof(m_elapsed_timer));
-    std::memset(&m_pause_timer, 0, sizeof(m_pause_timer));
-    std::memset(m_waypoints, 0, sizeof(m_waypoints));
-    std::memset(m_starting_points, 0, sizeof(m_starting_points));
-    std::memset(m_house_indices, 0, sizeof(m_house_indices));
-    std::memset(m_house_home_cells, 0, sizeof(m_house_home_cells));
-    std::memset(&m_mission_timer, 0, sizeof(m_mission_timer));
-    std::memset(m_mission_timer_text, 0, sizeof(m_mission_timer_text));
-    std::memset(&m_shroud_regrow_timer, 0, sizeof(m_shroud_regrow_timer));
-    std::memset(&m_fog_timer, 0, sizeof(m_fog_timer));
-    std::memset(&m_ice_timer, 0, sizeof(m_ice_timer));
-    std::memset(&m_unknown_timer_123c, 0, sizeof(m_unknown_timer_123c));
-    std::memset(&m_ambient_timer, 0, sizeof(m_ambient_timer));
-    std::memset(m_file_name, 0, sizeof(m_file_name));
-    std::memset(m_name, 0, sizeof(m_name));
-    std::memset(m_ui_name, 0, sizeof(m_ui_name));
-    std::memset(m_ui_name_loaded, 0, sizeof(m_ui_name_loaded));
-    std::memset(m_briefing, 0, sizeof(m_briefing));
-    std::memset(m_briefing_csf, 0, sizeof(m_briefing_csf));
-    std::memset(m_global_variables, 0, sizeof(m_global_variables));
-    std::memset(m_local_variables, 0, sizeof(m_local_variables));
-    std::memset(&m_unknown_timer_34C0, 0, sizeof(m_unknown_timer_34C0));
-    std::memset(m_under_par_title, 0, sizeof(m_under_par_title));
-    std::memset(m_under_par_message, 0, sizeof(m_under_par_message));
-    std::memset(m_over_par_title, 0, sizeof(m_over_par_title));
-    std::memset(m_over_par_message, 0, sizeof(m_over_par_message));
-    std::memset(m_ls_load_message, 0, sizeof(m_ls_load_message));
-    std::memset(m_ls_brief, 0, sizeof(m_ls_brief));
-    std::memset(m_ls640_bkgd_name, 0, sizeof(m_ls640_bkgd_name));
-    std::memset(m_ls800_bkgd_name, 0, sizeof(m_ls800_bkgd_name));
-    std::memset(m_ls800_bkgd_pal, 0, sizeof(m_ls800_bkgd_pal));
+    // IDA 0x6832CF: SeedInitRNG(&m_random, 0) — offset +536
+    m_random.Random(); // placeholder: SeedInitRNG will replace
 
+    // IDA 0x6832E5: m_elapsed_timer = Timer::GetTicks() — offset +1556
+    // IDA 0x6832EB: m_elapsed_timer.end = 0 — offset +1564
+    // IDA 0x6832F6: m_pause_timer = Timer::GetTicks() — offset +1568
+    // IDA 0x6832FC: m_pause_timer.end = 0 — offset +1576
+
+    // IDA 0x683307: offset +4592 = 0
+    // IDA 0x68330D: offset +4584 = CurrentFrame
+    // IDA 0x683313: offset +4600 = 0
+    // IDA 0x68331F: offset +4640 = 0
+    // IDA 0x683325: offset +4632 = CurrentFrame
+    // IDA 0x683331: offset +4644 = CurrentFrame
+    // IDA 0x683337: offset +4652 = 0
+    // IDA 0x683342: offset +4664 = 0
+    // IDA 0x683348: offset +4656 = CurrentFrame
+    // IDA 0x683354: offset +4668 = CurrentFrame
+    // IDA 0x68335A: offset +4676 = 0
+    // IDA 0x683366: offset +4688 = 0
+    // IDA 0x68336C: offset +4680 = CurrentFrame
+    // IDA 0x683381: offset +13504 = CurrentFrame
+    // IDA 0x683387: offset +13512 = 0
+
+    // IDA 0x68338D: TypeList::TechnoTypeConstructor(this+13524, 0, 0)
+    // IDA 0x683397: offset +13540 = 0
+    // IDA 0x68339A: offset +13544 = 10
+    // IDA 0x68339D: vtable assignment (TypeList<TechnoTypeClass*>)
+
+    // IDA 0x6833AD: VectorClass::Construct(this+13552, 0, 0)
+    // IDA 0x6833B2: offset +13572 = 10
+    // IDA 0x6833B5: offset +13568 = 0
+    // IDA 0x6833B8: vtable assignment (TypeList<int>)
+
+    // IDA 0x6833C8: VectorClass::Construct(this+13580, 0, 0)
+    // IDA 0x6833CF: offset +13600 = 10
+    // IDA 0x6833D2: offset +13596 = 0
+    // IDA 0x6833D5: vtable assignment (TypeList<int>)
+
+    // IDA 0x6833DB: ScenarioClass::InitTimer(this)
+    // IDA 0x6833E2: offset +13720 = 0
+    // IDA 0x6833E8: offset +13501 = 0
+    // IDA 0x6833EE: ScenarioClass::ResetIntroFlags(this)
+    // IDA 0x6833F3: offset +4692 = 1
+    // IDA 0x6833FD: offset +13516 = -1
+
+    // IDA 0x683407: offset +4 = 0
+    // IDA 0x68340A: offset +264 = 0
+
+    // IDA 0x683421: memset loop — 702 iterations, dword_B05458 → offset +1586
+    std::memset(m_waypoints, 0xFF, sizeof(m_waypoints)); // TODO: verify source constant
+
+    // IDA 0x683435: wcscpy(this+4960, &g_TypeClass_DefaultString)
+    std::memset(m_name, 0, sizeof(m_name));
+    // IDA 0x683446: wcscpy(this+5082, &g_TypeClass_DefaultString)
+    std::memset(m_ui_name_loaded, 0, sizeof(m_ui_name_loaded));
+    // IDA 0x683475: strcpy(this+4700, &g_INI_DefaultBuffer)
+    std::memset(m_file_name, 0, sizeof(m_file_name));
+    // IDA 0x68349D: strcpy(this+7248, &g_INI_DefaultBuffer)
+    std::memset(m_briefing, 0, sizeof(m_briefing));
+    // IDA 0x6834BF: strcpy(this+5050, &g_INI_DefaultBuffer)
+    std::memset(m_ui_name, 0, sizeof(m_ui_name));
+    // IDA 0x6834CF: wcscpy(this+5200, &g_TypeClass_DefaultString)
+
+    // IDA 0x6834E2-0x683502: HouseClass::UpdateAllTypes loop (50 iterations)
+    for (int i = 0; i < 50; ++i) {
+        m_global_variables[i].m_name[0] = '\0'; // offset -40 from m_value
+        m_global_variables[i].m_value = '\0';
+    }
+
+    // IDA 0x68350F-0x68352F: TriggerActionQueue::ProcessAll loop (100 iterations)
+    for (int i = 0; i < 100; ++i) {
+        m_local_variables[i].m_name[0] = '\0'; // offset -40 from m_value
+        m_local_variables[i].m_value = '\0';
+    }
+
+    // IDA 0x683534-0x683549: zero 4 dwords at +13454
     m_view1 = {};
     m_view2 = {};
     m_view3 = {};

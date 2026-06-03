@@ -383,4 +383,7 @@ public:
     int CapacityIncrement = 10;
 };
 
+// IDA: TypeList<T> is declared in entity/tiberium.hpp
+// Used by RulesClass/ScenarioClass as typed list container.
+
 } // namespace gamemd

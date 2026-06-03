@@ -161,7 +161,7 @@ void ThemeManagerCleanup() {}
 void ThemeClassInitializeThemes(void* ini) { (void)ini; }
 void AudioLoadWAVFiles() {}
 bool InitBulkData() { return true; }
-bool InitRules() { return true; }
+// InitRules defined in src/misc/rules.cpp
 int  AudioCallback() { return 0; }
 void PlayIntroSequence() {}
 void InitRandomSeed() {}
