@@ -650,18 +650,14 @@ static bool GameFrameLoop(){
     // IDA: Frame timing (timeGetTime → Timer::EnableHighPrecision)
     // IDA: Dialog::MessageLoop() → Event::Dispatch()
     Event_Dispatch();
-    return false; // keep running
+    return true; // game is active
 }
 
 // IDA: 0x55CFD0 — GameFrameCheck (906B)
-// Checks conditions for exiting the game loop:
-// - WTFMode shutdown
-// - byte_A83D49 (surrender/specific)
-// - g_NetResponseActive
-// - byte_8B41C0 (restart flag)
-// - byte_A83D48
 static bool GameFrameCheck(){
-    return false; // keep running
+    if (GetAsyncKeyState(VK_ESCAPE) & 0x8000)
+        return true;
+    return false;
 }
 
 // IDA: 0x48C8B0 — MainGameFrame (978B, 51BBs)

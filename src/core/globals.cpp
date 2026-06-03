@@ -112,7 +112,14 @@ bool byte_A8EB80 = false;
 // ============================================================
 
 // IDA 0x4A3C30 — FadePalette (screen fade to/from black)
-void FadePalette(int mode) { (void)mode; }
+// IDA: creates dark palette, loops blending current→dark over a2 frames,
+//      calls Surface::CreateSurfacePalette each frame, optional callback a3()
+void FadePalette(int mode) {
+    (void)mode;
+    // Simplified: just sleep briefly to simulate fade timing
+    // Full impl: DSurface::Lock → palette blend → Unlock → Flip, ~400B of loop
+    Sleep(16); // ~1 frame at 60fps
+}
 
 // 0x6C87F0: InitSkirmishSettings
 void InitSkirmishSettings() {}

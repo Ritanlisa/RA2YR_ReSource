@@ -15,6 +15,7 @@ static inline float ReadFloat(const uint8_t* d, int off) {
     return f;
 }
 
+// IDA 0x755CD0 — File::LoadFileVXL
 bool VxlLoad(const uint8_t* data, int size, VxlFile* out)
 {
     if (!data || size < 802 || !out) return false;
@@ -109,6 +110,7 @@ bool VxlLoad(const uint8_t* data, int size, VxlFile* out)
     return true;
 }
 
+// IDA 0x5BD570 — File::LoadFileHVA
 bool HvaLoad(const uint8_t* data, int size, HvaFile* out)
 {
     if (!data || size < 40 || !out) return false;
