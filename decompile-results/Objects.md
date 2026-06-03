@@ -10,72 +10,132 @@
 所有游戏对象均继承自 `AbstractClass`，通过 4 重 MI (Multiple Inheritance) 实现 COM 接口。
 
 ```
-AbstractClass (4 vtables @ 0x7E1F24/2C/34/50)
-├── 实现: IPersistStream, IRTTITypeInfo, INoticeSink, INoticeSource
+AbstractClass : IPersistStream, IRTTITypeInfo, INoticeSink, INoticeSource
+│  4 vtables @ 0x7E1F24/2C/34/50 — 4 个基础 COM 接口
 │
-├─ ObjectClass (4 vtables @ 0x7EF034/3C/44/60) — sizeof 0xC9
-│   │ 添加: 坐标、位置、血量、视野、渲染标记
+├─ ObjectClass : AbstractClass
+│   │  4 vtables @ 0x7EF034/3C/44/60 — sizeof 0xC9
+│   │  添加: 坐标、位置、血量、视野、渲染标记
 │   │
-│   ├─ MissionClass (4 vtables @ 0x7EDC94/9C/A4/C0) — 状态机
-│   │   │  Mission_Attack/Move/Guard/Hunt/Retreat/...
+│   ├─ MissionClass : ObjectClass
+│   │   │  4 vtables @ 0x7EDC94/9C/A4/C0 — 任务状态机
 │   │   │
-│   │   └─ RadioClass (4 vtables @ 0x7F04DC/E4/EC/08) — 通信
-│   │       │  SendCommand, ReceiveCommand, SendToEachLink
+│   │   └─ RadioClass : MissionClass
+│   │       │  4 vtables @ 0x7F04DC/E4/EC/08 — 无线电通信
 │   │       │
-│   │       └─ TechnoClass (3 vtables @ 0x7F493C/44/60) — 所有可操控单位基类
+│   │       └─ TechnoClass : RadioClass
+│   │           │  3 vtables @ 0x7F493C/44/60 — 所有可控单位基类
 │   │           │  武器、弹药、隐形、升级、乘客、部署、C4...
 │   │           │  sizeof ~0x504 (1284B)
 │   │           │
-│   │           ├─ FootClass (4 vtables @ 0x7E8C68/70/78/94) — 可移动单位
+│   │           ├─ FootClass : TechnoClass
+│   │           │   │  4 vtables @ 0x7E8C68/70/78/94
+│   │           │   │  继承 3 vtables + 新增隐含接口
 │   │           │   │  Speed, Destination, Locomotor, Pathfinding
 │   │           │   │  sizeof ~0x6BC (1724B)
 │   │           │   │
-│   │           │   ├─ UnitClass (3 vtables @ 0x7F5C4C/54/70) — 坦克/车辆
-│   │           │   │   sizeof ~0x6D4 (1748B)
+│   │           │   ├─ UnitClass : FootClass
+│   │           │   │  3 vtables @ 0x7F5C4C/54/70
+│   │           │   │  sizeof ~0x6D4 (1748B)
 │   │           │   │
-│   │           │   ├─ InfantryClass (3 vtables @ 0x7EB034/3C/58) — 步兵
-│   │           │   │   sizeof ~0x6E8 (1768B)
+│   │           │   ├─ InfantryClass : FootClass
+│   │           │   │  3 vtables @ 0x7EB034/3C/58
+│   │           │   │  sizeof ~0x6E8 (1768B)
 │   │           │   │
-│   │           │   └─ AircraftClass (5 vtables @ 0x7E2250+)
-│   │           │       sizeof ~0x6D5 (1749B)
+│   │           │   └─ AircraftClass : FootClass, FlasherClass
+│   │           │      5 vtables @ 0x7E2250/78/80/88/...
+│   │           │      MI: FootClass(游戏对象) + FlasherClass(IFlyControl 接口)
+│   │           │      FlasherClass : StageClass : IFlyControl
+│   │           │      sizeof ~0x6D5 (1749B)
 │   │           │
-│   │           └─ BuildingClass — 建筑 (直接继承 TechnoClass)
-│   │               │  Factory, Power, Gap, Sensor
-│   │               │  sizeof ~0x704 (1796B)
-│   │               │
-│   │               (vtable @ 0x7E3EBC) — 322 条目 (完整累积 vtable)
+│   │           └─ BuildingClass : TechnoClass
+│   │              4 vtables, vtable[0] @ 0x7E3EBC — 322 条目 (完整累积)
+│   │              Factory, Power, Gap, Sensor
+│   │              sizeof ~0x704 (1796B)
 │   │
-│   ├─ AnimClass (3 vtables @ 0x7E3330/38/54) — 动画/特效
-│   │   sizeof 2162B
+│   ├─ AnimClass : ObjectClass
+│   │  3 vtables @ 0x7E3330/38/54 — 动画/特效
+│   │  sizeof 2162B
 │   │
-│   ├─ BulletClass (4 vtables @ 0x7E46B8+) — 子弹/弹道
+│   ├─ BulletClass : ObjectClass
+│   │  4 vtables @ 0x7E46B8+
 │   │
-│   ├─ ParticleClass (4 vtables @ 0x7EF928+) — 粒子
-│   │   sizeof 1343B
+│   ├─ ParticleClass : ObjectClass
+│   │  4 vtables @ 0x7EF928+ — sizeof 1343B
 │   │
-│   ├─ ParticleSystemClass (3 vtables @ 0x7EFB78+) — 粒子系统
-│   │   sizeof 705B
+│   ├─ ParticleSystemClass : ObjectClass
+│   │  3 vtables @ 0x7EFB78+ — sizeof 705B
 │   │
-│   ├─ VoxelAnimClass (4 vtables @ 0x7F62EC+) — 体素动画
-│   │   sizeof 332B
+│   ├─ VoxelAnimClass : ObjectClass
+│   │  4 vtables @ 0x7F62EC+ — sizeof 332B
 │   │
-│   ├─ WaveClass (3 vtables @ 0x7F6BD0+) — 冲击波
-│   │   sizeof 645B
+│   ├─ WaveClass : ObjectClass
+│   │  3 vtables @ 0x7F6BD0+ — sizeof 645B
 │   │
 │   └─ (其他 ObjectClass 子类)
 │
-├─ OverlayClass (4 vtables @ 0x7EF3A8+) — 地表覆盖物
-├─ SmudgeClass (4 vtables @ 0x7F32D0+) — 弹坑/痕迹
-├─ TerrainClass (3 vtables @ 0x7F521C+) — 地形对象
-│   sizeof 593B
-├─ TiberiumClass (4 vtables @ 0x7F56FC+) — 矿石/资源
-├─ CellClass (4 vtables @ 0x7E4EC0+) — 地图单元格
-│   sizeof 440B
-├─ FoggedObjectClass (4 vtables @ 0x7E8B0C+) — 战争迷雾对象
-│   sizeof 1150B
-└─ AlphaShapeClass (4 vtables @ 0x7E3278+) — 透明度形状
-    sizeof 351B
+├─ OverlayClass : AbstractClass
+│  4 vtables — 地表覆盖物
+├─ SmudgeClass : AbstractClass
+│  4 vtables — 弹坑/痕迹
+├─ TerrainClass : AbstractClass
+│  3 vtables — 地形对象, sizeof 593B
+├─ TiberiumClass : AbstractClass
+│  4 vtables — 矿石/资源
+├─ CellClass : AbstractClass
+│  4 vtables @ 0x7E4EC0+ — 地图单元格, sizeof 440B
+├─ FoggedObjectClass : AbstractClass
+│  4 vtables — 战争迷雾, sizeof 1150B
+└─ AlphaShapeClass : AbstractClass
+   4 vtables — 透明度形状, sizeof 351B
 ```
+
+### 1.1 COM 接口继承详情
+
+```
+AbstractClass : IPersistStream, IRTTITypeInfo, INoticeSink, INoticeSource (4 vtables)
+  │  IPersistStream : IUnknown (序列化)
+  │  IRTTITypeInfo : IUnknown (运行时类型)
+  │  INoticeSink (事件通知)
+  │  INoticeSource (事件广播)
+  │
+  └─ 所有子类继承这 4 个接口
+
+AircraftClass : FootClass, FlasherClass (5 vtables)
+  │  FootClass → ... → AbstractClass (4 vtables)
+  │  FlasherClass : StageClass : IFlyControl : IUnknown (+1 vtable = 5 total)
+  │  IFlyControl = {820F501C-4F39-11D2-9B70-00104B972FE8}
+  
+LocomotionClass : IPersistStream, ILocomotion (2 vtables)
+  │  IPersistStream : IUnknown (序列化)
+  │  ILocomotion : IUnknown (移动接口)
+  │  ILocomotion = {070F3290-9841-11D1-B709-00A024DDAFD1}
+  │
+  ├─ TeleportLocomotionClass : LocomotionClass, IPiggyback (3 vtables)
+  │     IPiggyback : IUnknown = {92FEA800-A184-11D1-B70A-00A024DDAFD1}
+  │
+  └─ 其他 9 种 Locomotion 均继承 LocomotionClass (2 vtables)
+
+HouseClass : AbstractClass → 实现了 IHouse 和 IPublicHouse (不在 header MI 中声明)
+  │  7 vtables @ 0x7EA7F4/0C/34/74/...
+  │  IHouse : IUnknown = {941582E0-86DA-11D1-B706-00A024DDAFD1}
+  │  IPublicHouse : IUnknown = {CAACF210-86E3-11D1-B706-00A024DDAFD1}
+```
+
+### 1.2 接口 IID 速查
+
+| 接口 | IID | 实现者 |
+|------|-----|--------|
+| **IPersistStream** | `{00000109-0000-0000-C000-000000000046}` | AbstractClass, LocomotionClass |
+| **IRTTITypeInfo** | `{170DAC82-12E4-11D2-8175-006008055BB5}` | AbstractClass (所有游戏对象) |
+| **INoticeSink** | (内部) | AbstractClass |
+| **INoticeSource** | (内部) | AbstractClass |
+| **ILocomotion** | `{070F3290-9841-11D1-B709-00A024DDAFD1}` | LocomotionClass + 14 子类 |
+| **IFlyControl** | `{820F501C-4F39-11D2-9B70-00104B972FE8}` | StageClass → FlasherClass → AircraftClass |
+| **IPiggyback** | `{92FEA800-A184-11D1-B70A-00A024DDAFD1}` | TeleportLocomotionClass |
+| **IHouse** | `{941582E0-86DA-11D1-B706-00A024DDAFD1}` | HouseClass |
+| **IPublicHouse** | `{CAACF210-86E3-11D1-B706-00A024DDAFD1}` | HouseClass |
+| **ISwizzle** | `{5FF0CA70-8B12-11D1-B708-00A024DDAFD1}` | (声明, 未实现) |
 
 ### 1.1 关键 vtable 条目
 
@@ -235,7 +295,7 @@ RadSiteClass (4 vtables @ 0x7F07E4+) — sizeof 186B — 辐射区
 DiskLaserClass (4 vtables @ 0x7E5F8C+) — 激光
 LightSourceClass (4 vtables @ 0x7ECFFC+) — sizeof 194B — 光源
 BuildingLightClass (4 vtables @ 0x7E3AA4+) — 建筑灯光
-NeuronClass (4 vtables @ 0x7E3DC4+) — 神经元/AI
+NeuronClass (4 vtables @ 0x7E3DC4+) — 图形转换神经元 (SwizzleManager 辅助)—— YR 紫幕特效组件
 
 SuperClass (4 vtables @ 0x7F3FBC+) — sizeof 199B — 超武实例
 SuperWeaponTypeClass (4 vtables @ 0x7F4064+) — sizeof 600B — 超武类型
