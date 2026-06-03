@@ -252,6 +252,16 @@ void ObjectClass::Reveal()
     m_is_visible = true;
 }
 
+// IDA: 0x5F4D10 — ObjectClass::MarkForRedraw (30B)
+// If not already marked, sets m_needs_redraw=true and calls MapClass::MarkForRedraw
+void ObjectClass::MarkForRedraw()
+{
+    if (!m_needs_redraw) {  // IDA: if (!*(this+0x80))
+        m_needs_redraw = true;  // IDA: *(this+0x80) = 1
+        // IDA: MapClass::MarkForRedraw(&MapClass_Instance, 0);
+    }
+}
+
 void ObjectClass::Flash(int duration)
 {
     // Toggle selected flash state
