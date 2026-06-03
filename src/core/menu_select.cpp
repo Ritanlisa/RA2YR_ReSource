@@ -638,35 +638,62 @@ static bool Game_Frame_Loop(){return true;}
 static bool Game_Frame_Check(){return false;}
 static void Main_Game_Frame(){Event_Dispatch();}
 
-// ---- Menu_Select (IDA 0x52D9A0) ----
+// ---- Menu_Select (IDA 0x52D9A0, 4536B, 222BBs) ----
+// IDA states:
+//   18=MainMenu  1=Campaign  2=Skirmish  3=Internet  4=CampaignSub
+//   5=Options    6=ExitConfirm  7=Quit(return 0)  8=NewGame
+//   9=LoadGame  10=BackToCampaign  11=SkirmishMode5
+//   13=PlayMovie  14=CampaignCD  15=Credits
+//   16/17=GameStart(return 1)
 char Menu_Select(){
     g_MenuState=MenuState::MenuIdle;g_GameMode=0;
     while(true){
         Event_Dispatch();
         switch(g_MenuState){
+        // IDA state 18: MainMenu::Screen with 3600-frame timeout
         case MenuState::Reset: case MenuState::MainMenu: g_MenuState=MenuState::MenuIdle; break;
+        // IDA state 1: Campaign::Screen(1) — generic dialog wrapper
         case MenuState::Campaign: g_MenuState=Campaign_Screen(1); break;
+        // IDA state 2: Skirmish (GameMode=4)
         case MenuState::Skirmish: g_GameMode=GMODE_SKIRMISH; g_MenuState=MenuState::NetworkGameFlow; Multiplayer_Screen(2); break;
+        // IDA state 3: Internet (GameMode=3)
         case MenuState::Multiplayer: g_GameMode=GMODE_INTERNET; g_MenuState=MenuState::NetworkGameFlow; Multiplayer_Screen(1); break;
+        // IDA state 4: Campaign second path + CD check
         case MenuState::CampaignSub: g_MenuState=Campaign_Screen(1); break;
+        // IDA state 5: Options_Screen_Dialog
         case MenuState::Options: Options_Screen_Dialog(); g_MenuState=MenuState::MenuIdle; break;
+        // IDA state 6: Exit confirm → 7(quit) or 18(back)
         case MenuState::ExitConfirm: g_MenuState=ShowExitDialog()?MenuState::StartScenario:MenuState::MenuIdle; break;
+        // IDA state 7: Exit — return 0 (quit process)
         case MenuState::StartScenario: Event_Dispatch(); return 0;
+        // IDA state 8/16/17: Game start — return 1 (enter game loop)
         case MenuState::WOLInternet: Event_Dispatch(); g_MenuState=MenuState::MenuIdle; Event_Dispatch(); Event_Dispatch(); return 1;
+        // IDA state 9: Load savegame
         case MenuState::SaveLoadGame: g_MenuState=MenuState::Campaign; break;
         case MenuState::QuickMatch: g_MenuState=MenuState::Campaign; break;
+        // IDA state 11: Skirmish Mode 5
         case MenuState::NetworkGame5: g_GameMode=GMODE_SKIRMISH_SETUP; goto L81;
+        // IDA state 13: Play movie
         case MenuState::CampaignInit: g_MenuState=MenuState::CampaignSub; break;
+        // IDA state 14: Campaign+CD  
         case MenuState::CampaignLoadCD: g_MenuState=MenuState::CampaignSub; break;
+        // IDA state 15: Credits → Theme::QueueSong
         case MenuState::CampaignIntro: Event_Dispatch(); g_MenuState=MenuState::CampaignSub; break;
+        // IDA state 16/17: Network game flow → enter game loop (return 1)
         case MenuState::NetworkGameFlow: case MenuState::NetworkGameFlow2: goto L81;
+        // IDA state 18: MainMenu
         case MenuState::MenuIdle: g_MenuState=MainMenu_Screen(); break;
         }continue;
     L81:switch(g_GameMode){
+        // IDA: GameMode 0 → back to MenuIdle (18)
         case GMODE_MENU: g_MenuState=MenuState::MenuIdle; break;
+        // IDA: GameMode 1/2 (campaign) → game start
         case GMODE_CAMPAIGN: case GMODE_CAMPAIGN_SUB: return 1;
+        // IDA: GameMode 3 (internet) → game start
         case GMODE_INTERNET: return 1;
+        // IDA: GameMode 4 (skirmish) → Skirmish_Setup
         case GMODE_SKIRMISH: g_MenuState=Skirmish_Setup_Screen(); break;
+        // IDA: GameMode 5 (skirmish setup) → Skirmish_Setup
         case GMODE_SKIRMISH_SETUP: g_MenuState=Skirmish_Setup_Screen(); break;
         }
     }
