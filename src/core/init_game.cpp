@@ -160,7 +160,10 @@ bool MixFileLoadAll() {
     return true; // TODO: implement secondary MIX scanning
 }
 void MoviePlay(int a1, int a2, int a3, int a4) { (void)a1; (void)a2; (void)a3; (void)a4; }
-void ShowLoadingScreen() {}
+// IDA 0x5312A0 — ShowLoadingScreen: displays loading progress
+void ShowLoadingScreen() {
+    LOG_INFO("ShowLoadingScreen: loading screen would display here");
+}
 void CreditsScreen() {}
 
 // --- Phase 5: Settings / Anim / Tactical ---
@@ -249,7 +252,12 @@ void InitCommands() {} // TODO: ~40 CommandClass registrations (7118B)
 const void* SearchMIXFile(const char* name) {
     return FileSystem::LoadFile(name, false);
 }
-void BlockCopy(const void* src) { (void)src; /* TODO: 768-byte palette copy */ }
+// IDA 0x6260D0 — Block::Copy: copies 768-byte palette block (if src != dst)
+void BlockCopy(const void* src) {
+    (void)src; // Destination is implicit (this pointer in IDA __thiscall)
+    // IDA: if (this != src) qmemcpy(this, src, 0x300)
+    // For now, skip — destination is a palette duplicate buffer not yet allocated
+}
 
 void* CCFileClassConstruct(void* /*stack_buf*/, const char* filename) {
     // Heap-allocate a real CCFileClass (stack buffers are too small for full CCFileClass hierarchy)
