@@ -270,4 +270,32 @@ bool Game_Frame_Check() { return false; }
 // IDA: 0x48C8B0 — Main_Game_Frame stub
 void Main_Game_Frame() {}
 
+// IDA: 0x87F7E8 — MapClass_Instance (global tactical map)
+void* MapClass_Instance = nullptr;
+
+// IDA: 0x4F42F0 — MapClass::MarkForRedraw
+void MapClass_MarkForRedraw(void*, int) {}
+
+// IDA: Scene/Scenario related globals
+void* TacticalClass_Instance = nullptr; // 0x887324
+void* DSurface_Hidden = nullptr;        // 0x88730C
+void* DSurface_Hidden_2 = nullptr;      // 0x887314
+void* DSurface_Primary = nullptr;       // 0x887308
+
+// IDA: 0xA8ED9D — byte_A8ED9D (network state flag)
+bool byte_A8ED9D = false;
+
+// IDA: 0x822CF2 — MoveFeedback (UI feedback flag)
+int MoveFeedback = 1;
+
+// IDA: 0xA83D48/49 — game state flags
+bool byte_A83D48 = false;
+bool byte_A83D49 = false;
+
+// IDA: 0x8B41C0 — byte_8B41C0 (restart flag)
+bool byte_8B41C0 = false;
+
+// IDA: 0xA8ECD0 — g_NetResponseActive
+bool g_NetResponseActive = false;
+
 } // namespace gamemd
