@@ -772,7 +772,7 @@ make _WIN32_WINNT=0x0400
 | **Surface 类层次 (38)** | `DSurface_Blit`, `DSurface_Lock`, `DSurface_DrawLineZBuf`, `XSurface_WalkLine`, `BSurface_Lock` | DDraw表面绘制管线 |
 | 入口点/窗口 (11) | `WinMain`, `ParseCommandLine`, `InitGame`, `MenuSelect`, `MainGame`, `MainGameFrame`, `GameFrameLoop`, `GameFrameCheck`, `ScenarioClass::LoadMap`, `ScenarioClass::ReadMapINI`, `WinMainSetup` | 启动管线, 游戏流程 |
 | 对话框/菜单 (12) | `MainMenu::Screen`, `MainMenu::DlgProc`, `Dialog::Create`, `Dialog::Destroy`, `Dialog::Show`, `Dialog::SetParent`, `Dialog::BaseProc`, `Dialog::PumpMessages`, `Dialog::MessageLoop`, `CampaignScreen`, `MultiplayerScreen`, `OptionsScreenDialog` | UI 对话框系统 |
-| **系统工具 (6)** | `Screen_Capture`, `Random_Init`, `Network_Init`, `Timer_GetTicks`, `Resource_Find`, `Message_IsDialog` | 截图/RNG/网络/定时器/资源 |
+| **系统工具 (6)** | `Screen_Capture`, `Random_Init`, `Network_Init`, `Timer_GetTicks`, `ResourceFind`, `MessageIsDialog` | 截图/RNG/网络/定时器/资源 |
 | **菜单系统 (6)** | `SkirmishSetupScreen`, `SkirmishSetupDlgProc`, `CreditsScreen`, `OptionsScreenSave`, `ScreensaverStart`, `Dialog::Init` | Skirmish+Credits+屏保+对话框 |
 | **DDraw 全局变量 (8)** | `g_lpDirectDraw7`, `g_DDraw_Initialized`, `g_ZBufferDescriptor`, `g_VisibleSurfaceDescriptor`, `g_BitShift_Red/Green/Blue+Mask` | DDraw 引擎状态 |
 | **BINK 渲染管线 (13)** | `BinkMovie_RenderLoop`, `BinkMovie_InitFromFile`, `BinkMovie_RenderSingleFrame`, `BinkMovie_BlitToTarget`, `BinkMovie_CheckKeyframeTransition`, `BinkMovie_Pause`, `BinkMovie_AdjustSurfaceFormat` | BINK视频解码→表面渲染→Blit |
@@ -1025,8 +1025,8 @@ MainGame → MenuSelect (0x52D9A0, 4536B, 222 BBs)
   ├─ case 7: Exit — 清理→等待3秒→退出进程
   │
   ├─ case 8: 单人游戏开始 — Credits→场景选择→加载游戏 → case 16/17
-  ├─ case 9: 过场动画/BINK播放 → CreditsScreen→Movie_Play → case 1
-  ├─ case 13: Movie_Play(1,1,1,0) → Screen_Capture → case 4
+  ├─ case 9: 过场动画/BINK播放 → CreditsScreen→Movie::Play → case 1
+  ├─ case 13: Movie::Play(1,1,1,0) → Screen_Capture → case 4
   ├─ case 14: CampaignScreen check + CD检测→可能播电影 → case 4
   ├─ case 15: CreditsPower_Display → case 4
   │
@@ -1122,7 +1122,7 @@ Dialog: 533×369 对话框单位, MS Sans Serif 8pt, Style=0x40000040
 
 ```
 Dialog::Create(template_id, dlg_proc, lParam)
-  ├── Resource_Find(template_id, type=5) → DLGTEMPLATE*
+  ├── ResourceFind(template_id, type=5) → DLGTEMPLATE*
   ├── CreateDialogIndirectParamA(g_hInstance, template, g_hWnd, dlg_proc, lParam)
   │     启动模态对话框 (非真正模态—消息循环由调用方手动运行)
   └── 注册到内部跟踪数组 (dword_B72F50)
@@ -1137,13 +1137,13 @@ Dialog::Destroy(hWnd) → DestroyWindow + 跟踪数组清理
 
 Dialog::MessageLoop()
   ├── GameLoopMessagePump(&Msg, 0, 0, 0, 0) — 自定义 PeekMessage
-  ├── Message_IsDialog(&Msg) — 判断消息是否属于当前对话框
+  ├── MessageIsDialog(&Msg) — 判断消息是否属于当前对话框
   ├── TranslateMessage + DispatchMessageA
   └── CopyProtection::NotifyLauncher hook
 
 Dialog::PumpMessages() — 便捷封装 (27 调用方)
   ├── Dialog::MessageLoop()
-  ├── if GameMode==0||5: Event_Dispatch()
+  ├── if GameMode==0||5: Event::Dispatch()
   └── if in-game: sub_55CBF0()→GameFrameLoop()
 ```
 
@@ -1177,12 +1177,12 @@ case 9 (INTRO/BINK):
 ```
 CampaignScreen(template_id):
   ├── Dialog::Create(template_id) → ShowWindow → SetForegroundWindow
-  ├── Timer_PumpMessages (注册定时器/screen saver延迟?)
-  ├── 若参数=1: BINK_Background_Setup()
+  ├── Timer::PumpMessages (注册定时器/screen saver延迟?)
+  ├── 若参数=1: BinkBackgroundSetup()
   ├── while dwNewLong==0:
   │     ├── Dialog::MessageLoop()
   │     ├── if GameMode==0||5||byte_A8D60E||dword_A8DAB4:
-  │     │     Event_Dispatch()
+  │     │     Event::Dispatch()
   │     └── else if !sub_55CBF0 && GameFrameLoop(): break
   └── Dialog::Destroy → 返回 dwNewLong (下一状态)
 
@@ -1219,7 +1219,7 @@ CampaignScreen(template_id):
 
 ```
 Dialog::Create(template_id, dlg_proc, lParam)
-  ├── Resource_Find(template_id, type=5) → DLGTEMPLATE*
+  ├── ResourceFind(template_id, type=5) → DLGTEMPLATE*
   ├── CreateDialogIndirectParamA(g_hInstance, template, g_hWnd, dlg_proc, lParam)
   │     启动模态对话框 (非真正模态—消息循环由调用方手动运行)
   └── 注册到内部跟踪数组 (dword_B72F50)
@@ -1234,13 +1234,13 @@ Dialog::Destroy(hWnd) → DestroyWindow + 跟踪数组清理
 
 Dialog::MessageLoop()
   ├── GameLoopMessagePump(&Msg, 0, 0, 0, 0) — 自定义 PeekMessage
-  ├── Message_IsDialog(&Msg) — 判断消息是否属于当前对话框
+  ├── MessageIsDialog(&Msg) — 判断消息是否属于当前对话框
   ├── TranslateMessage + DispatchMessageA
   └── CopyProtection::NotifyLauncher hook
 
 Dialog::PumpMessages() — 便捷封装 (27 调用方)
   ├── Dialog::MessageLoop()
-  ├── if GameMode==0||5: Event_Dispatch()
+  ├── if GameMode==0||5: Event::Dispatch()
   └── if in-game: sub_55CBF0()→GameFrameLoop()
 ```
 
@@ -1274,12 +1274,12 @@ case 9 (INTRO/BINK):
 ```
 CampaignScreen(template_id):
   ├── Dialog::Create(template_id) → ShowWindow → SetForegroundWindow
-  ├── Timer_PumpMessages (注册定时器/screen saver延迟?)
-  ├── 若参数=1: BINK_Background_Setup()
+  ├── Timer::PumpMessages (注册定时器/screen saver延迟?)
+  ├── 若参数=1: BinkBackgroundSetup()
   ├── while dwNewLong==0:
   │     ├── Dialog::MessageLoop()
   │     ├── if GameMode==0||5||byte_A8D60E||dword_A8DAB4:
-  │     │     Event_Dispatch()
+  │     │     Event::Dispatch()
   │     └── else if !sub_55CBF0 && GameFrameLoop(): break
   └── Dialog::Destroy → 返回 dwNewLong (下一状态)
 
@@ -1293,7 +1293,7 @@ CampaignScreen(template_id):
   ├── while dwNewLong==0:
   │     ├── Dialog::MessageLoop()
   │     ├── if GameMode==0||5||byte_A8D60E||dword_A8DAB4:
-  │     │     Event_Dispatch()
+  │     │     Event::Dispatch()
   │     └── else if !sub_55CBF0 && GameFrameLoop(): break
   └── Dialog::Destroy → 返回 dwNewLong (下一状态)
 ```
@@ -1394,7 +1394,7 @@ INI: Locomotor={4A582746-...}
 ### 逆向工程核心原则
 - **逆向优先，莫自作主张**: 逆向工程的核心目标是**复现原版行为**，而非按个人理解重新设计。应通过 IDA 反编译理解原函数的调用约定/控制流/数据依赖，再逐函数忠实翻译为 C++。自行编写简化版或替代逻辑会导致与原版行为偏离、后续对接时产生大量废代码。
 - **函数重命名后即时同步**: 从 IDA 反编译理解函数功能后，应立即用 `rename` 工具回写 IDA 并 `idb_save` 持久化。后续反编译输出会自动使用已命名函数，可读性指数级提升。
-- **避免地址编号命名**: 代码中不应使用 `Sub_48D080` 这类 IDA 自动编号命名。应根据功能命名（如 `Event_Dispatch`）并同步回 IDA，使二进制 → 源码双向可读。
+- **避免地址编号命名**: 代码中不应使用 `Sub_48D080` 这类 IDA 自动编号命名。应根据功能命名（如 `Event::Dispatch`）并同步回 IDA，使二进制 → 源码双向可读。
 
 ### 数据结构与兼容性
 - **大型常量表**: 避免手动录入大量常量（如加密算法的 S-box）。应编写脚本从可信来源提取并生成代码文件。
@@ -1766,7 +1766,7 @@ Lock → RenderFrameRaw → Unlock → Flip  // 每帧都渲染，不受门控
 
 - `BinkMovie_InitFromFile` (0x432750): BinkOpen→SetSoundSystem→SetVolume→CreateSurfaceTracker→SetPosition
 - `BinkMovie_RenderLoop` (0x432E40): DoFrame→Lock→CopyToBuffer→Unlock→BlitToTarget→NextFrame→Wait
-- `BinkMovie_Play` (0x432C70): 主循环 `while(current<total && current>=loopStart)` {pump→RenderLoop}
+- `BinkMovie::Play` (0x432C70): 主循环 `while(current<total && current>=loopStart)` {pump→RenderLoop}
 - `MainMenu::Screen` (0x531CC0): Dialog::Create(0xE2)→Dialog::SetParent→Dialog::PumpMessages 循环
 - `MainMenu::DlgProc` (0x531F60): WM_COMMAND(button ID→state), WM_CLOSE(BINK cleanup)
 - `sub_432BD0`: BinkGoto(handle, frame, 1) 封装 (flag=1 快速 seek)
