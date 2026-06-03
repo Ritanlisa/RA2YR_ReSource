@@ -111,20 +111,19 @@ void TimerPumpMessages(void* bink_player) { (void)bink_player; }
 int Palette6BitTo16Bit(int r, int g, int b) {
     return ((uint8_t)b << 16) | ((uint8_t)g << 8) | (uint8_t)r;
 }
-void StructZero3(void* ptr, int count) { (void)ptr; (void)count; }
+// IDA 0x4B9BD0 — Struct::Zero3: zero-fill 3 bytes at each stride
+void StructZero3(void* ptr, int count) { std::memset(ptr, 0, count * 3); }
 void VoxelPaletteLoadFromFile(const char* path) { (void)path; }
-void Matrix3x4Identity(float* m) {
-    (void)m;
-    // TODO: set 4x3 identity matrix
+void Matrix3x4Identity(float* m) { (void)m; }
+
+// IDA 0x4068F0 — Array::ForEach: zero-fill n elements of stride size
+void ArrayForEach3ByteZero(void* buf, int stride, int count) {
+    uint8_t* p = (uint8_t*)buf;
+    for (int i = 0; i < count; ++i, p += stride)
+        std::memset(p, 0, 3);
 }
 void VoxelSetProjectionAngle(float angle) { (void)angle; }
 void VoxelProjectionSetup() {}
-void ArrayForEach3ByteZero(void* buf, int stride, int count) {
-    (void)buf; (void)stride; (void)count;
-}
-
-// --- Phase 4: MIX / CD / Movie ---
-
 // --- Phase 4: MIX / CD / Movie ---
 
 // LoadExpansionMixFiles defined in src/misc/rules.cpp
@@ -217,19 +216,25 @@ void BlockCopy(const void* src) {
 }
 void* CCFileClassConstruct(void* buf, const char* filename) {
     (void)buf; (void)filename;
-    return buf; // TODO: CCFileClass construction
+    return buf; // TODO: CCFileClass proper construction (0xD8-byte BufferIOFileClass)
 }
 bool CCFileClassOpen(void* file, int mode) {
     (void)file; (void)mode;
-    return true;
+    return true; // TODO: CCFileClass::Open — search MIX pool + disk
 }
 void* CCFileClassReadEntireFile(void* file) {
     (void)file;
-    return nullptr;
+    return nullptr; // TODO: CCFileClass::ReadEntireFile
 }
 void CCFileClassReset(void* file) { (void)file; }
 void CCFileClassDestruct(void* file) { (void)file; }
-void VectorClear(void* vec) { (void)vec; }
+// IDA 0x43AE50 — Vector::Clear: zero-fill vector (Count=0, Items=nullptr or preserved)
+void VectorClear(void* vec) {
+    // VectorClass layout: [vtable, Items, Count, Capacity]
+    int* v = (int*)vec;
+    v[2] = 0; // Count = 0
+    // Optional: if Capacity > 0, clear Items
+}
 void CCINIClassConstruct(void* buf) { (void)buf; }
 void LoadAnimTypes(void* rules_ini) { (void)rules_ini; }
 void LoadBuildingTypes(void* rules_ini) { (void)rules_ini; }
