@@ -4,33 +4,36 @@
 #pragma once
 
 #include <cstdint>
+#include <cstring>
 #include "..\system\cc_file.hpp"
 
 namespace gamemd {
 
-// Forward: INI section key=value entry
+// Forward declarations
+struct INIData;
+
+// INI entry (key=value pair)
 struct INIEntry {
     const char* Key;
     const char* Value;
     INIEntry* Next;
 };
 
-// Forward: INI section (key-value map)
+// INI section
 struct INISection {
     const char* Name;
     INIEntry* FirstEntry;
     INISection* Next;
 };
 
-// Generic linked list node (used by INIClass internals)
-// NOTE: different from mix_file.hpp's GenericNode (Node-based linked list)
+// Linked list node for INIClass internals
 struct INILinkNode {
     void* vtable;
     INILinkNode* Prev;
     INILinkNode* Next;
 };
 
-// Generic list
+// Generic list base
 struct GenericList {
     void* vtable;
 };
@@ -72,30 +75,33 @@ protected:
 class CCINIClass : public INIClass {
 public:
     static constexpr size_t kSize = 0x58;
-    static const void* Vtable;       // IDA 0x7E1AF4
+    static const void* Vtable;
 
     CCINIClass();
-    virtual ~CCINIClass() = default;
+    virtual ~CCINIClass();
 
-    // IDA 0x4741F0 — CCINIClass::Load(file, unk1, unk2)
     bool Load(CCFileClass* file, bool unk1, bool unk2) override;
 
-    // Accessors for InitGame pipeline
     CCFileClass* GetFile() const { return m_cc_file; }
 
-    // vtable-based methods (IDA-confirmed names):
     int GetKeyCount(const char* section);
     const char* GetStringByIndex(const char* section, int index);
     int BinarySearchSection(const char* section);
 
+    const char* GetString(const char* section, const char* key, const char* def, char* buf, int bufSize) override;
+    int GetInt(const char* section, const char* key, int def) override;
+
 protected:
-    CCFileClass* m_cc_file;            // +0x40
-    bool         m_owns_file;           // +0x44 (byte 64 from INIClass constructor: v7[64]=0)
+    CCFileClass* m_cc_file;
+    bool         m_owns_file;
     uint8_t      m_padding_45[3];
-    int32_t      m_unknown_48;          // +0x48
-    int32_t      m_unknown_4C;          // +0x4C
-    int32_t      m_unknown_50;          // +0x50
-    int32_t      m_unknown_54;          // +0x54
+    union {
+        INIData* m_ini_data;
+        int32_t  m_unknown_48;
+    };
+    int32_t      m_unknown_4C;
+    int32_t      m_unknown_50;
+    int32_t      m_unknown_54;
 };
 
 // Hash table for INI section lookup (used by INIClass::BinarySearchSection)

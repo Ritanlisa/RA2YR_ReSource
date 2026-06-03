@@ -247,29 +247,34 @@ void InitCommands() {} // TODO: ~40 CommandClass registrations (7118B)
 // --- Phase 7: File helpers ---
 
 const void* SearchMIXFile(const char* name) {
-    return FileSystem::LoadFile(name, false); // delegates to MIX pool search + disk fallback
+    return FileSystem::LoadFile(name, false);
 }
-void BlockCopy(const void* src) {
-    // IDA 0x6260D0: copies a block of palette data (probably to duplicate surfaces)
-    (void)src;
-    // TODO: actual block copy — copies a surface's pixel data to another
-}
-// CCFileClass wrapper stubs — CCFileClass::Open/ReadEntireFile now implemented in cc_file.cpp
-void* CCFileClassConstruct(void* buf, const char* filename) {
-    // Construct a real CCFileClass at buf (opens filename via MIX pool + disk)
-    auto* f = new (buf) CCFileClass(filename);
+void BlockCopy(const void* src) { (void)src; /* TODO: 768-byte palette copy */ }
+
+void* CCFileClassConstruct(void* /*stack_buf*/, const char* filename) {
+    // Heap-allocate a real CCFileClass (stack buffers are too small for full CCFileClass hierarchy)
+    auto* f = new CCFileClass(filename);
+    if (!filename || !filename[0]) return f;
+    f->Open(filename); // search MIX pool + disk
     return f;
 }
 bool CCFileClassOpen(void* file, int mode) {
     (void)mode;
-    return file != nullptr; // Open is now done in constructor
+    auto* f = static_cast<CCFileClass*>(file);
+    return f && f->Buffer.Buffer != nullptr; // true if file was loaded
 }
 void* CCFileClassReadEntireFile(void* file) {
     auto* f = static_cast<CCFileClass*>(file);
     return f ? f->ReadEntireFile() : nullptr;
 }
-void CCFileClassReset(void* file) { (void)file; }
-void CCFileClassDestruct(void* file) { (void)file; }
+void CCFileClassReset(void* file) {
+    auto* f = static_cast<CCFileClass*>(file);
+    if (f) f->Reset();
+}
+void CCFileClassDestruct(void* file) {
+    auto* f = static_cast<CCFileClass*>(file);
+    if (f) { f->~CCFileClass(); delete f; }
+}
 // IDA 0x43AE50 — Vector::Clear: zero-fill vector (Count=0, Items=nullptr or preserved)
 void VectorClear(void* vec) {
     // VectorClass layout: [vtable, Items, Count, Capacity]
