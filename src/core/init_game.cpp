@@ -321,9 +321,11 @@ void* CCFileClassConstruct(void* /*stack_buf*/, const char* filename) {
 }
 // IDA 0x473C50 — CCFileClass::Open
 bool CCFileClassOpen(void* file, int mode) {
-    (void)mode;
     auto* f = static_cast<CCFileClass*>(file);
-    return f && f->Buffer.Buffer != nullptr;
+    if (!f) return false;
+    // CCFileClass was already constructed and opened in CCFileClassConstruct
+    (void)mode;
+    return f->Buffer.Buffer != nullptr || f->ReadEntireFile() != nullptr;
 }
 // IDA 0x4A3890 — CCFileClass::ReadEntireFile
 void* CCFileClassReadEntireFile(void* file) {
@@ -340,12 +342,11 @@ void CCFileClassDestruct(void* file) {
     auto* f = static_cast<CCFileClass*>(file);
     if (f) { f->~CCFileClass(); delete f; }
 }
-// IDA 0x43AE50 — Vector::Clear: zero-fill vector (Count=0, Items=nullptr or preserved)
+// IDA 0x43AE50 — Vector::Clear: resets vector count to 0
 void VectorClear(void* vec) {
-    // VectorClass layout: [vtable, Items, Count, Capacity]
-    int* v = (int*)vec;
-    v[2] = 0; // Count = 0
-    // Optional: if Capacity > 0, clear Items
+    // Calls VectorClass::Clear() which sets Count=0 and optionally frees Items
+    auto* v = static_cast<VectorClass<int>*>(vec); // generic VectorClass<T>
+    v->Clear();
 }
 // IDA 0x6728B0 — RulesClass::LoadAnimTypes
 void LoadAnimTypes(void* rules_ini) { (void)rules_ini; }
