@@ -172,10 +172,11 @@ public:
     int32_t         m_estimated_health;
     bool            m_is_on_map;
     uint8_t         m_align_75[3];
-    uint32_t        m_unknown_78;
-    uint32_t        m_unknown_7C;
-    bool            m_needs_redraw;
-    bool            m_in_limbo;
+    // IDA: +0x78 = init 1, +0x7C = init 0
+    uint32_t        m_unknown_78;         // +0x78, init = 1
+    uint32_t        m_unknown_7C;         // +0x7C, init = 0
+    bool            m_needs_redraw;       // +0x80, init = false
+    bool            m_in_limbo;           // +0x81, init = true
     bool            m_in_open_topped_transport;
     bool            m_is_selected;
     bool            m_has_parachute;

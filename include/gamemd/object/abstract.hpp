@@ -6,6 +6,11 @@
 #include "..\core\enums.hpp"
 #include "..\core\math.hpp"
 
+// IDA: IID_IRTTITypeInfo @ 0x7E9AE0 = {170DAC82-12E4-11D2-8175-006008055BB5}
+// {170DAC82-12E4-11D2-8175-006008055BB5}
+static const GUID IID_IRTTITypeInfo = 
+{ 0x170DAC82, 0x12E4, 0x11D2, { 0x81, 0x75, 0x00, 0x60, 0x08, 0x05, 0x5B, 0xB5 } };
+
 namespace ra2 {
 namespace game {
 
@@ -53,27 +58,47 @@ struct INoticeSource {
     virtual void __stdcall NotifySinks() = 0;
 };
 
+// IDA: AbstractClass @ constructor=0x410170, sizeof >= 0x24 (4 vtables + 6 fields)
+// vtable[0] @ 0x7E1F50 (IPersistStream + custom, 28 entries)
+// vtable[1] @ 0x7E1F34 (IRTTITypeInfo chain, 32 entries)
+// vtable[2] @ 0x7E1F2C (INoticeSink merged, 32 entries)
+// vtable[3] @ 0x7E1F24 (INoticeSource merged, 31 entries)
+// All 4 vtable pointers are at +0x00/+0x04/+0x08/+0x0C (IDA ctor confirmed)
 class AbstractClass : public IPersistStream, public IRTTITypeInfo,
                       public INoticeSink, public INoticeSource {
 public:
     static constexpr AbstractType kAbsID = static_cast<AbstractType>(52);
 
-    virtual HRESULT __stdcall QueryInterface(const IID& iid, void** ppv) override { return E_NOINTERFACE; }
-    virtual ULONG   __stdcall AddRef() override { return 0; }
-    virtual ULONG   __stdcall Release() override { return 0; }
+    // --- IPersistStream (vtable[0]) ---
+    virtual HRESULT __stdcall QueryInterface(const IID& iid, void** ppv) override;
+    virtual ULONG   __stdcall AddRef() override;
+    virtual ULONG   __stdcall Release() override;
+    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override;
+    virtual HRESULT __stdcall IsDirty() override;
+    virtual HRESULT __stdcall Load(IStream* stream) override;
+    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
+    virtual HRESULT __stdcall GetSizeMax(ULARGE_INTEGER* size) override;
 
-    virtual HRESULT __stdcall IsDirty() override { return S_FALSE; }
-    virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }
-    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { return S_OK; }
-    virtual HRESULT __stdcall GetSizeMax(ULARGE_INTEGER* size) override { return E_NOTIMPL; }
-
+    // --- IRTTITypeInfo (vtable[1]) ---
     virtual AbstractType __stdcall WhatAmI() const override { return kAbsID; }
     virtual int __stdcall FetchID() const override { return 0; }
-    virtual void __stdcall CreateID() override {}
+    virtual void __stdcall CreateID() override;
 
+    // --- INoticeSink (vtable[2]) ---
     virtual bool __stdcall OnNotice(unsigned long event) override { return false; }
+
+    // --- INoticeSource (vtable[3]) ---
     virtual void __stdcall NotifySinks() override {}
 
+    // --- AbstractClass custom virtuals (vtable[0] entries 8+) ---
+    // IDA: vtable[0][8]  = COMStub_8    (0x4105A0)
+    // IDA: vtable[0][9]  = StubReturnFalse (0x410470)
+    // IDA: vtable[0][10] = COMStub_Return0_10 (0x410480)
+    // IDA: vtable[0][13] = ProcessPower (0x410410)
+    // IDA: vtable[0][17] = sub_410440
+    // IDA: vtable[0][18] = GetInvalidCoord (0x4104C0)
+    // IDA: vtable[0][19] = GetCoordsEx (0x4104F0)
+    // IDA: vtable[0][22] = GetCoords (0x410540)
     virtual ~AbstractClass() = default;
 
     virtual void Initialize() {}
@@ -84,7 +109,7 @@ public:
     virtual HouseClass* GetOwningHouse() const { return nullptr; }
     virtual int GetArrayIndex() const { return -1; }
     virtual bool IsDead() const { return false; }
-    virtual CoordStruct* GetCoords(CoordStruct* out) const { return nullptr; }
+    virtual CoordStruct* GetCoords(CoordStruct* out) const;
     virtual CoordStruct* GetDestination(CoordStruct* out, TechnoClass* docker = nullptr) const { return nullptr; }
     virtual bool IsOnFloor() const { return false; }
     virtual bool IsInAir() const { return false; }
@@ -97,12 +122,13 @@ public:
 
     bool operator<(const AbstractClass& rhs) const { return m_unique_id < rhs.m_unique_id; }
 
-    uint32_t    m_unique_id;         // +0x10
-    uint32_t    m_abstract_flags;    // +0x14
-    uint32_t    m_unknown_18;        // +0x18
-    int32_t     m_ref_count;         // +0x1C
-    bool        m_dirty;             // +0x20
-    uint8_t     m_padding_21[3];     // +0x21
+    // IDA ctor confirmed offsets:
+    uint32_t    m_unique_id;         // +0x10, init = -1 (0xFFFFFFFF)
+    uint32_t    m_abstract_flags;    // +0x14, init = preserve bits 7-3 (& 0xF8)
+    uint32_t    m_unknown_18;        // +0x18, init = 0
+    int32_t     m_ref_count;         // +0x1C, init = 0
+    bool        m_dirty;             // +0x20, init = 0
+    uint8_t     m_padding_21[3];     // +0x21, alignment
 
 protected:
     AbstractClass() noexcept;

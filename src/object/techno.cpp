@@ -550,7 +550,7 @@ bool TechnoClass::CreateUnit()
     auto* build_type = reinterpret_cast<gamemd::BuildingTypeClass*>(type);
 
     // ---- Section 1: Audio setup ----
-    if (!m_audio3.unknown_00 && build_type->WorkingSound != -1)
+    if (!m_audio3.field_00 && build_type->WorkingSound != -1)
     {
         // TODO: StartAudio(building->Audio7, build_type->WorkingSound)
     }
@@ -688,7 +688,7 @@ bool TechnoClass::CreateUnit()
     {
         // TODO: locomotor type 36 → cost_rate *= 5.0
         building->CostAccumulator += cost_rate;
-        if (building->CostAccumulator >= 1.0 && !building->Audio7.unknown_00)
+        if (building->CostAccumulator >= 1.0 && !building->Audio7.field_00)
         {
             int count = static_cast<int>(building->CostAccumulator);
             building->CostAccumulator -= static_cast<double>(count);
@@ -840,7 +840,7 @@ static bool ProductionCompletionCallback(TechnoClass* techno)
     // TODO: vt_entry_292(this, 2)
 
     // Section 2-3: Audio management
-    bool audio_active = (techno->m_audio3.unknown_00 != 0);
+    bool audio_active = (techno->m_audio3.field_00 != 0);
     bool has_working_sound = (type->WorkingSound != -1);
 
     if (audio_active || !has_working_sound)
