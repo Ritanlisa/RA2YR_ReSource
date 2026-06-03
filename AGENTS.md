@@ -799,7 +799,7 @@ make _WIN32_WINNT=0x0400
 - **MIX 格式**: 前 2B=0 为扩展格式; flags 0x0002=加密; 算法来自 RA1 MixFileClass
 - **MIX 文件名**: 仅存 hash ID, 不存原始名; 通过 `ComputeId()` 匹配
 - **IDA 连接**: `127.0.0.1:13337`, i64 在 `C:\Program Files (x86)\Mental Omega\gamemd.exe.i64`
-- **IDA 命名状态**: 345 函数 + 64 全局变量 + 3 struct 类型 (见上方命名清单)
+- **IDA 命名状态**: **8,727 函数** + **2,633 全局变量** + **25+ struct 类型** (见上方命名清单)
 - **Python**: 3.14.2 (`python` 或 `py`), Windows 上已就绪
 - **渲染框架**: cnc-ddraw (`./cnc-ddraw`, by FunkyFr3sh) — Phase 1 调试阶段作为 `ddraw.dll` 兼容层运行 EXE
 - **EXE 入口**: `app/main.cpp` — WinMain 创建窗口 + 初始化 DirectDraw 7 + 游戏循环
@@ -1588,6 +1588,14 @@ if ida_nalt.get_tinfo(tif, ea):
 - 反编译质量: `BuildingClass *this` 替代原始指针, `this->AmmoCrateDamage` 替代 `*(this+0x0C)`
 - 总计: ~8,470/19,064 函数 + ~390 全局 + 25 struct 类型, 构建 0 errors
 
+### 当前会话成果 (2026-06-03 第三批) — MI 继承链与 COM 接口文档化
+- **COM.md 补全**: 8 个 Locomotor GUID 全部完整 (Drive/Fly/Hover 从缩写→完整值)
+- **COM.md 扩展**: 新增 TClassFactory 表 (63→71 条目, 含 8 Locomotor + 2 遗漏的 CellClass/QueueClass)
+- **Objects.md 重构**: 继承链标注 COM 接口 (IPersistStream/IRTTITypeInfo/INoticeSink/INoticeSource/ILocomotion/IFlyControl/IPiggyback/IHouse/IPublicHouse)
+- **Objects.md 新增**: 1.1 COM 接口继承详情 + 1.2 IID 速查表 (10 接口 ↔ 类映射)
+- **NeuronClass 修正**: "神经元/AI" → "SwizzleManager 图形神经元 (紫幕特效, 非武器)" — 构造函数确认注册 AnimManager + SwizzleManagerClass
+- **Objects.md 补充**: TClassFactory 序号补充 (NeuronClass@141, ParachuteAnim@42, TriggerClass@53, 6 日志系统, 6 战役UI)
+
 ### 当前会话成果 (2026-06-03 第二批) — 类成员变量逆向
 - **AudioController sizeof 修复**: 7→5 dwords (0x1C→0x14 bytes), 构造函数确认 gap 0x3C→0x50
   - 影响: ObjectClass, TechnoClass (m_audio3/4/5/6), FootClass, BuildingClass 等所有包含 AudioController 的类
@@ -1771,6 +1779,9 @@ Lock → RenderFrameRaw → Unlock → Flip  // 每帧都渲染，不受门控
 ### 当前会话新增命名 (2026-06-03)
 - 4 音频函数: `Audio::ProcessMixerOutput`, `Audio::UpdatePlaybackPosition`, `Audio::GetChannelStatus`, `Audio::FlushChannel`
 - 18 音频全局: `g_MixerBuffer{1-8}`, `g_MixerChannel_{SFX/Theme/Voice/Score/Misc/Stream/Ambient}`, `g_MixFile_AUDIO`, `g_AudioFileData`, `g_AudioInitialized`
+- **新增**: 2 CellClass/QueueClass TClassFactory 注册 (0x6C6BE0/0x6C6B50)
+- **新增 NeuronClass 置评**: 构造函数→SwizzleManager, Fire/Update→SaveLoad, 紫幕特效非武器
+- **COM.md 8 GUID 全值**: DriveLocomotion2={2BEA...}, Drive={4A582745-...}, Fly={4A582746-...}, Hover={4A582747-...}
 
 ### 正确的前进方向
 
