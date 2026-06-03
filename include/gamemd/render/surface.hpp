@@ -527,6 +527,9 @@ public:
     virtual bool CheckBltStatus() override;
     virtual bool IsDSurface() const override final { return true; }
 
+    // IDA: DSurface::CreatePrimary pixel format detection (0x4BA770 bit-shift logic)
+    static void DetectPixelFormat(const DDPIXELFORMAT& pf);
+
     int BytesPerPixel;
     void* LockedSurface;
     bool Allocated;

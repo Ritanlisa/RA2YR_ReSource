@@ -9,6 +9,56 @@
 namespace gamemd
 {
 
+// IDA: 0x4BA770 — DSurface::CreatePrimary pixel format detection logic
+// Computes bit shifts/masks from the surface's RGB masks, then determines
+// the pixel format enum: 0=RGB565, 1=RGB555, 2=RGB444, -1=unknown
+void DSurface::DetectPixelFormat(const DDPIXELFORMAT& pf)
+{
+    g_DDraw_RedMask   = pf.dwRBitMask;
+    g_DDraw_GreenMask = pf.dwGBitMask;
+    g_DDraw_BlueMask  = pf.dwBBitMask;
+
+    DWORD rM = pf.dwRBitMask;
+    DWORD gM = pf.dwGBitMask;
+    DWORD bM = pf.dwBBitMask;
+
+    int rShift = 0, gShift = 0, bShift = 0;
+    int rWidth = 0, gWidth = 0, bWidth = 0;
+
+    // Count trailing zeros for shift
+    while (rShift < 16 && (rM & 1) == 0) { rM >>= 1; ++rShift; }
+    while (gShift < 16 && (gM & 1) == 0) { gM >>= 1; ++gShift; }
+    while (bShift < 16 && (bM & 1) == 0) { bM >>= 1; ++bShift; }
+
+    g_BitShift_Red   = rShift;
+    g_BitShift_Green = gShift;
+    g_BitShift_Blue  = bShift;
+
+    // Count bits set (= mask width)
+    DWORD rT = rM, gT = gM, bT = bM;
+    while (rWidth < 8 && (rT & 0x80)) { rT <<= 1; ++rWidth; }
+    while (gWidth < 8 && (gT & 0x80)) { gT <<= 1; ++gWidth; }
+    while (bWidth < 8 && (bT & 0x80)) { bT <<= 1; ++bWidth; }
+
+    g_BitMask_Red   = rWidth;
+    g_BitMask_Green = gWidth;
+    g_BitMask_Blue  = bWidth;
+
+    // IDA: determine pixel format enum
+    g_DDraw_PixelFormat = -1; // unknown
+
+    if (bShift == 0) {
+        if (rWidth == 3 && gWidth == 5 && bWidth == 3) {
+            if (rShift == 10 && gShift == 3)
+                g_DDraw_PixelFormat = 0; // RGB555 (R:5@10, G:5@5, B:5@0)
+            else if (rShift == 11 && gShift == 2)
+                g_DDraw_PixelFormat = 1; // RGB555 variant
+        }
+        if (rWidth == 2 && gWidth == 6 && bWidth == 3 && rShift == 11 && gShift == 3)
+            g_DDraw_PixelFormat = 2; // RGB444
+    }
+}
+
 DSurface::DSurface(int width, int height, bool back_buffer, bool force_3d) noexcept
     : XSurface(width, height)
     , BytesPerPixel(2)

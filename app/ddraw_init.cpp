@@ -35,6 +35,36 @@ PALETTEENTRY g_DDraw_PaletteEntries[256] = {};
 // IDA: 0x8205D4 — g_DDraw_UseHWBlit
 bool g_DDraw_UseHWBlit = false;
 
+// IDA: 0x8A0DEE — g_DDraw_AllowStretchBlits
+bool g_DDraw_AllowStretchBlits = false;
+
+// IDA: 0x8A0958/5C/60 — RGB pixel format masks
+DWORD g_DDraw_RedMask   = 0;
+DWORD g_DDraw_GreenMask = 0;
+DWORD g_DDraw_BlueMask  = 0;
+
+// IDA: 0x8A0DD0/D4/D8 — RGB bit shifts
+int g_BitShift_Red   = 0;
+int g_BitShift_Green = 0;
+int g_BitShift_Blue  = 0;
+
+// IDA: 0x8A0DDC/E0/E4 — RGB bit mask widths
+int g_BitMask_Red   = 0;
+int g_BitMask_Green = 0;
+int g_BitMask_Blue  = 0;
+
+// IDA: 0x8205D0 — pixel format enum (0=RGB565, 1=RGB555, 2=RGB444, -1=unknown)
+int g_DDraw_PixelFormat = -1;
+
+// IDA: 0x8A0DE8 — gray color value for 127 intensity (16-bit)
+uint16_t g_DDraw_Gray127 = 0;
+
+// IDA: 0x8A009C — g_DDraw_PrimarySurface (IDirectDrawSurface7*)
+LPDIRECTDRAWSURFACE7 g_DDraw_PrimarySurface = nullptr;
+
+// IDA: 0x8A0DCC — g_DDraw_Clipper
+LPDIRECTDRAWCLIPPER g_DDraw_Clipper = nullptr;
+
 // Local DDraw context for the simplified API
 static DDrawContext g_ddraw;
 
