@@ -11,6 +11,7 @@
 #include "gamemd/core/logging.hpp"
 #include "gamemd/core/ddraw_init.hpp"
 #include "gamemd/core/init_stubs.hpp"
+#include "gamemd/core/game_loop.hpp"
 #include "gamemd/system/mix_file.hpp"
 #include "gamemd/system/file_system.hpp"
 #include "gamemd/system/convert_class.hpp"
@@ -132,8 +133,14 @@ int  LoadFileSHP(const char* filename) {
     void* data = FileSystem::LoadFile(filename, true);
     return data ? 1 : 0; // returns handle/index (simplified: non-zero = loaded)
 }
-void MissionSetAndCall(int a, int b) { (void)a; (void)b; }
-void EventDispatchEx() {}
+// IDA 0x5BDA80 — Mission::SetAndCall
+void MissionSetAndCall(int a, int b) { LOG_DEBUG("MissionSetAndCall(%d, %d)", a, b); }
+// IDA 0x48D080 — Event::Dispatch (per-frame event processing)
+void EventDispatchEx() {
+    // IDA: calls UpdateAudioVideo first, then AsyncIO, Network, Campaign events
+    // IDA: In skirmish mode, handles UI pointer table + time-based events
+    AudioVideoUpdate();
+}
 int  FindGameDirectoryCD(const char* drives) { (void)drives; return 1; }
 int  DialogShowMessageBox(const wchar_t* msg, const wchar_t* ok, const wchar_t* cancel, int a4, int a5) {
     (void)msg; (void)ok; (void)cancel; (void)a4; (void)a5;
@@ -174,7 +181,10 @@ void AudioLoadWAVFiles() {}
 // InitBulkData defined in src/misc/rules.cpp
 // InitRules defined in src/misc/rules.cpp
 int  AudioCallback() { return 0; }
-void PlayIntroSequence() {}
+// IDA 0x52CB50 — PlayIntroSequence: starts intro movie (44B, thunk)
+void PlayIntroSequence() {
+    LOG_DEBUG("PlayIntroSequence: intro would play here");
+}
 void InitRandomSeed() {}
 // ============================================================
 // IDA 0x532150 — InitCommands (7118B)
