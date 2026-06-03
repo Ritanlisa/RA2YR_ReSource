@@ -88,6 +88,12 @@ xna-cncnet-client/
 decompile-results/gamemd.exe.id*
 decompile-results/gamemd.exe.nam
 decompile-results/gamemd.exe.til
+decompile-results/gamemd.exe.asm
+decompile-results/gamemd.exe.c
+decompile-results/gamemd.exe.i64
+
+# 临时分析文件
+tmp_*
 
 # 逆向工具脚本 (本地开发用)
 tools/

@@ -11,13 +11,12 @@
 
 namespace gamemd {
 
-//
-// Init_Game — reverse-engineered from IDA (0x52BA60)
-// Complete game resource loading workflow:
-//
-// The original function is 4333 bytes (146 basic blocks).
-// This implementation focuses on the resource loading sections.
-//
+// Init_Game — IDA: 0x52BA60 (4333B, 146 basic blocks)
+// Called from MainGame (0x48CCC0) during WinMain initialization.
+// Complete game resource loading pipeline.
+// FAITHFUL flow matching IDA decompilation.
+
+#include <cstdio>
 
 // External globals set during init
 extern void* RulesClass_Instance;   // 0x8871E0

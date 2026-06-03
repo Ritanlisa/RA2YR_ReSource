@@ -672,13 +672,31 @@ char Menu_Select(){
     }
 }
 
+// IDA: Main_Game @ 0x48CCC0 (780B, 51BBs)
+// The main game loop: InitGame → MenuSelect → { GameLoop → cleanup } → repeat
 void Main_Game(){
     LOG_INFO("Main_Game: entering");
+
+    // IDA: 0x48CCCF — InitGame() — returns 0 on success, non-zero on failure/error
     int r;
     for(r=Menu_Select();r;r=Menu_Select()){
         LOG_INFO("Menu_Select=%d GameMode=%d",r,g_GameMode);
+        // IDA: IKnowWhatImDoing = 0; g_MenuReturnState = 1; FadePalette(0)
         GameFlags_EAC=0;GameFlags_Init=true;
-        while(true){if(Game_Frame_Loop()&&Game_Frame_Check())break;Main_Game_Frame();}
+
+        // IDA: g_MainGameState=0; g_GameActive=ScenarioClass[13730]; g_GameLoopActive=1
+        // IDA: WTFMode::Init(&GameMode_Current)
+
+        // IDA: Game loop — do { if (GameFrameLoop() && GameFrameCheck()) break; MainGameFrame(); } while (!GameFrameCheck())
+        while(true){
+            if(Game_Frame_Loop() && Game_Frame_Check())
+                break;
+            Main_Game_Frame();
+        }
+
+        // IDA: After game: InitLoadingScreenResources → WTFMode::Shutdown
+        // IDA: Debug::Log("Average FPS = %d") → DumpNetworkStats → FadePalette
+        // IDA: ScreenSaver::Process → cleanup per GameMode
         Event_Dispatch();
     }
     LOG_INFO("Main_Game: exiting");
