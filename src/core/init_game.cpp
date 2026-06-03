@@ -166,7 +166,36 @@ void AudioLoadWAVFiles() {}
 int  AudioCallback() { return 0; }
 void PlayIntroSequence() {}
 void InitRandomSeed() {}
-void InitCommands() {}
+// ============================================================
+// IDA 0x532150 — InitCommands (7118B)
+// Registers ~40 CommandClass instances into g_CommandClassVector.
+// Each command class is instantiated (new(size) → vtable assignment)
+// and appended to the global command vector via DynamicVector::Add.
+//
+// Command classes registered (in order):
+//   [Debug]  MultiplayerDebugCommandClass
+//   [Debug]  MultiplayerSyncCommandClass
+//   FollowCommandClass, ViewCommandClass ×4 (View1-4)
+//   SetViewCommandClass ×4 (SetView1-4)
+//   OptionsCommandClass, SidebarUp/DownCommandClass
+//   CenterREventCommandClass, BeaconPlacementCommandClass
+//   ToggleSellCommandClass, ToggleRepairCommandClass
+//   AllianceCommandClass, CenterBaseCommandClass, CenterViewCommandClass
+//   ScatterCommandClass, GuardCommandClass, StopCommandClass
+//   AllToCheerCommandClass, DeployCommandClass
+//   PrevObjectCommandClass, NextObjectCommandClass
+//   PlanningModeCommandClass, CombatantSelectCommandClass
+//   TypeSelectCommandClass, HealthNavCommandClass, VeterancyNavCommandClass
+//   SetStructureTabCommandClass, SetDefenseTabCommandClass
+//   SetUnitTabCommandClass, SetInfantryTabCommandClass
+//   CreateTeamCommand(×5, 1-5), SelectTeamCommand(×10, 1-10)
+//   AddTeamCommand(×10, 1-10), CenterTeamCommand(×10, 1-10)
+//   TauntCommandClass(×8, 1-8)
+//   ScreenCaptureCommandClass, PageUserCommandClass
+//   CursorPositionCommandClass, DeleteCommandClass
+//   KeyboardConfig::LoadINI() → keyboard-command key mapping
+// ============================================================
+void InitCommands() {} // TODO: ~40 CommandClass registrations (7118B)
 // CompleteGameInit defined in src/misc/rules.cpp
 
 // --- Phase 7: File helpers ---
