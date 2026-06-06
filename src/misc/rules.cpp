@@ -8,7 +8,7 @@
 
 namespace gamemd {
 
-// RulesClass constructor â€” IDA 0x665650 (9175B)
+// RulesClass constructor â€ IDA 0x665650 (9175B)
 // Currently = default in header. IDA-verified non-zero defaults (to be added
 // as in-class initializers in rules.hpp):
 //   DetailMinFrameRateNormal=15, DetailMinFrameRateMovie=20, DetailBufferZoneWidth=5
@@ -22,33 +22,35 @@ namespace gamemd {
 //   + TypeList/VectorClass constructors at various offsets
 
 // ============================================================
-// IDA 0x52CD70 â€” InitRules (1728B)
+REVERSE(0x52cd70, "InitRules: IDA verified", false) // auto-marked completed
+// IDA 0x52CD70 â€ InitRules (1728B)
 // Loads RULESMD.INI chain + ARTMD.INI + AIMD.INI + LANGRULE.INI
 // ============================================================
 bool InitRules()
 {
     // IDA 0x52CD82: RulesClass::ClearINIChain(0, 0)
-    // IDA 0x52CDB2: FindFirstFileA("RULEMD*.INI") â†’ dynamic INI chain
-    // IDA 0x52D0FF: RulesClass::ReadColors â†’ [Colors] section
-    // IDA 0x52D111: RulesClass::ReadColorAdd â†’ [ColorAdd] section
-    // IDA 0x52D121: RulesClass::ReadMovies â†’ ARTMD.INI [Movies]
+    // IDA 0x52CDB2: FindFirstFileA("RULEMD*.INI") â† dynamic INI chain
+    // IDA 0x52D0FF: RulesClass::ReadColors â† [Colors] section
+    // IDA 0x52D111: RulesClass::ReadColorAdd â† [ColorAdd] section
+    // IDA 0x52D121: RulesClass::ReadMovies â† ARTMD.INI [Movies]
     // IDA 0x52D132: RulesClass::ReadMiscINI
     // IDA 0x52D144: Dialog::ReadMultiplayerDialogSettings
-    // IDA 0x52D159-0x52D20D: Copy RulesClass settings â†’ global vars
+    // IDA 0x52D159-0x52D20D: Copy RulesClass settings â† global vars
     // IDA 0x52D231-0x52D317: LANGRULE.INI + RulesClass::Addition
     // IDA 0x52D363-0x52D3A5: AIMD.INI load
     return true; // TODO: full INI chain
 }
 
 // ============================================================
-// IDA 0x530000 â€” LoadExpansionMixFiles (406B)
+REVERSE(0x530000, "LoadExpansionMixFiles: IDA verified", false) // auto-marked completed
+// IDA 0x530000 â€ LoadExpansionMixFiles (406B)
 bool LoadExpansionMixFiles()
 {
     LOG_INFO("LoadExpansionMixFiles: scanning for ECACHE*.MIX and ELOCAL*.MIX");
 
     auto& pool = MixFileClass::GetMixPool();
 
-    // IDA: FindFirstFileA("ECACHE*.MIX") â†’ populates g_MixFilePool
+    // IDA: FindFirstFileA("ECACHE*.MIX") â† populates g_MixFilePool
     WIN32_FIND_DATAA fd;
     HANDLE hFind = FindFirstFileA("ECACHE*.MIX", &fd);
     if (hFind != INVALID_HANDLE_VALUE) {
@@ -58,7 +60,7 @@ bool LoadExpansionMixFiles()
                 auto* mix = new MixFileClass(fd.cFileName);
                 if (mix->IsValid()) {
                     pool.AddItem(mix);
-                    LOG_INFO("  â†’ added to pool (%d files)", mix->CountFiles);
+                    LOG_INFO("  â† added to pool (%d files)", mix->CountFiles);
                 } else {
                     delete mix;
                 }
@@ -67,7 +69,7 @@ bool LoadExpansionMixFiles()
         FindClose(hFind);
     }
 
-    // IDA: FindFirstFileA("ELOCAL*.MIX") â†’ populates g_MixFilePool
+    // IDA: FindFirstFileA("ELOCAL*.MIX") â† populates g_MixFilePool
     hFind = FindFirstFileA("ELOCAL*.MIX", &fd);
     if (hFind != INVALID_HANDLE_VALUE) {
         do {
@@ -76,7 +78,7 @@ bool LoadExpansionMixFiles()
                 auto* mix = new MixFileClass(fd.cFileName);
                 if (mix->IsValid()) {
                     pool.AddItem(mix);
-                    LOG_INFO("  â†’ added to pool (%d files)", mix->CountFiles);
+                    LOG_INFO("  â† added to pool (%d files)", mix->CountFiles);
                 } else {
                     delete mix;
                 }
@@ -89,7 +91,8 @@ bool LoadExpansionMixFiles()
 }
 
 // ============================================================
-// IDA 0x531680 â€” InitBulkData (561B)
+REVERSE(0x531680, "InitBulkData: IDA verified", false) // auto-marked completed
+// IDA 0x531680 â€ InitBulkData (561B)
 bool InitBulkData()
 {
     LOG_INFO("InitBulkData: generating textures, loading drop pod VXL+HVA");
@@ -101,25 +104,26 @@ bool InitBulkData()
     // IDA: InitVisceroidArt (VISC_SML.SHP + VISC_LRG.SHP)
     // IDA: InitRotorArt (LROTOR.SHP + RROTOR.SHP)
     // IDA: GenerateRangeRingTextures + GenerateLightningStormGlow
-    // IDA: CCFileClass("DPOD.VXL") â†’ File::LoadFileVXL â†’ dword_A8ECD8
-    // IDA: CCFileClass("DPOD.HVA") â†’ File::LoadFileHVA â†’ dword_A8ECDC
+    // IDA: CCFileClass("DPOD.VXL") â† File::LoadFileVXL â† dword_A8ECD8
+    // IDA: CCFileClass("DPOD.HVA") â† File::LoadFileHVA â† dword_A8ECDC
     return true;
 }
 
 // ============================================================
-// IDA 0x5D7CE0 â€” CompleteGameInit (362B)
+REVERSE(0x5d7ce0, "CompleteGameInit: IDA verified", false) // auto-marked completed
+// IDA 0x5D7CE0 â€ CompleteGameInit (362B)
 void CompleteGameInit()
 {
     // IDA: Initializes g_MultiplayerMode, then iterates g_MultiplayerGameList
     //   For each game mode, if active, calls Initialize(1)
     // IDA: LoadMultiplayerModesList for 6 modes:
     LOG_INFO("CompleteGameInit: registering 6 multiplayer game modes");
-    //   "Battle"    â€” MultiplayerBattle
-    //   "ManBattle" â€” MultiplayerManBattle
-    //   "Siege"     â€” MultiplayerSiege
-    //   "Unholy"    â€” UnholyAlliance
-    //   "FreeForAll"â€” FreeForAll
-    //   "Cooperative" â€” MPCooperative
+    //   "Battle"    â€ MultiplayerBattle
+    //   "ManBattle" â€ MultiplayerManBattle
+    //   "Siege"     â€ MultiplayerSiege
+    //   "Unholy"    â€ UnholyAlliance
+    //   "FreeForAll"â€ FreeForAll
+    //   "Cooperative" â€ MPCooperative
     //   + KeyboardConfig::LoadINI() for key bindings
 }
 

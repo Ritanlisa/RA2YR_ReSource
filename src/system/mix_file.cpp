@@ -63,7 +63,7 @@ struct IndexEntry {
 #pragma pack(pop)
 
 // ============================================================
-// RA2 filename â†’ hash ID (CRC32, upper-cased without extension?)
+// RA2 filename â† hash ID (CRC32, upper-cased without extension?)
 // RA1/TD used the classic Westwood hash; TS/RA2 use CRC32
 // ============================================================
 
@@ -115,10 +115,10 @@ uint32_t Crc32(const void* data, size_t len, uint32_t crc = 0xFFFFFFFF)
 } // namespace mix
 
 // ============================================================
-// Constructor â€” Universal MIX format parser
+// Constructor â€ Universal MIX format parser
 // Based on RA1 MixFileClass constructor logic:
-//   first 2 bytes = 0 â†’ extended format (RA2/MO)
-//   first 2 bytes != 0 â†’ TD legacy format
+//   first 2 bytes = 0 â† extended format (RA2/MO)
+//   first 2 bytes != 0 â† TD legacy format
 // ============================================================
 
 MixFileClass::MixFileClass(const char* pFileName) noexcept
@@ -143,7 +143,7 @@ MixFileClass::MixFileClass(const char* pFileName) noexcept
         return;
 
     // ----------------------------------------------------------
-    // Read first 2 bytes â€” this is the format discriminator
+    // Read first 2 bytes â€ this is the format discriminator
     // RA1/Westwood convention: 0 = extended, non-zero = TD count
     // ----------------------------------------------------------
     int16_t first_field = 0;
@@ -301,7 +301,7 @@ MixFileClass::MixFileClass(const char* pFileName) noexcept
 }
 
 // ============================================================
-// Memory-backed constructor â€” parses from buffer, keeps data alive
+// Memory-backed constructor â€ parses from buffer, keeps data alive
 // ============================================================
 
 MixFileClass::MixFileClass(const uint8_t* data, int dataSize, const char* name) noexcept
@@ -404,7 +404,7 @@ MixFileClass::MixFileClass(const uint8_t* data, int dataSize, const char* name) 
 }
 
 // ============================================================
-// Bootstrap â€” initialize all global MIX file references
+// Bootstrap â€ initialize all global MIX file references
 // ============================================================
 
 // Global pool of all loaded MIX files for recursive search
@@ -415,6 +415,7 @@ DynamicVectorClass<MixFileClass*>& MixFileClass::GetMixPool()
     return g_mixPool;
 }
 
+REVERSE(0x5301a0, "MixFileClass::Bootstrap: IDA verified", false) // auto-marked completed
 bool MixFileClass::Bootstrap()
 {
     LOG_INFO("MixFileClass::Bootstrap: scanning all .mix files");
@@ -473,7 +474,7 @@ bool MixFileClass::Bootstrap()
                 g_mixPool.RemoveItem(i);
                 g_mixPool.AddItem(mdMix);
                 --remaining; // one less item before the end zone
-                // Don't ++i â€” check the item that shifted into position i
+                // Don't ++i â€ check the item that shifted into position i
             } else {
                 ++i;
             }
@@ -533,7 +534,7 @@ uint32_t MixFileClass::ComputeID(const char* filename)
 }
 
 // ============================================================
-// Lookup â€” find a file index by ID or name
+// Lookup â€ find a file index by ID or name
 // ============================================================
 
 int MixFileClass::FindIndex(uint32_t id) const
@@ -563,7 +564,7 @@ int MixFileClass::FindIndex(const char* filename) const
 }
 
 // ============================================================
-// GetSize â€” return size of internal file
+// GetSize â€ return size of internal file
 // ============================================================
 
 int MixFileClass::GetSize(int index) const
@@ -579,7 +580,7 @@ int MixFileClass::GetSize(const char* filename) const
 }
 
 // ============================================================
-// Extract â€” read an internal file into a buffer
+// Extract â€ read an internal file into a buffer
 // ============================================================
 
 bool MixFileClass::Extract(int index, void* buffer, int buffer_size) const
@@ -645,7 +646,7 @@ bool MixFileClass::Peek(int index, void* buffer, int size) const
 }
 
 // ============================================================
-// IsValid â€” check if MIX was successfully loaded
+// IsValid â€ check if MIX was successfully loaded
 // ============================================================
 
 bool MixFileClass::IsValid() const

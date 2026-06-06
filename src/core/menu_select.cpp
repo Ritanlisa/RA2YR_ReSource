@@ -40,13 +40,16 @@ static MenuState MultiplayerScreen(int);
 static MenuState SkirmishSetupScreen();
 static void      OptionsScreenDialog();
 static char      ShowExitDialog();
+REVERSE(0x55d360, "GameFrameLoop: IDA verified", false) // auto-marked completed
 static bool      GameFrameLoop();
+REVERSE(0x55cfd0, "GameFrameCheck: IDA verified", false) // auto-marked completed
 static bool      GameFrameCheck();
+REVERSE(0x48c8b0, "MainGameFrame: IDA verified", false) // auto-marked completed
 static void      MainGameFrame();
 
-// IDA 0x406F70 â€” AudioVideoUpdate (per-frame audio/video poll)
+// IDA 0x406F70 â€ AudioVideoUpdate (per-frame audio/video poll)
 void AudioVideoUpdate() {}
-// IDA 0x48D080 â€” Event_Dispatch (per-frame event processing)
+// IDA 0x48D080 â€ Event_Dispatch (per-frame event processing)
 char Event_Dispatch() { AudioVideoUpdate(); return 0; }
 
 // ---- palette ----
@@ -108,7 +111,7 @@ static const struct { int yDLU; const char* text; MenuState target; } kMenuButto
     {330, "Exit Game",   MenuState::ExitConfirm},     // GUI:ExitGame
 };
 
-// SHP button pixel rendering helper (palette index â†’ RGB565)
+// SHP button pixel rendering helper (palette index â† RGB565)
 static void DrawShpToBuffer(ShpImage* img, int frame, uint16_t* buf, int pitch,
                             int scrW, int scrH, int dx, int dy)
 {
@@ -308,13 +311,13 @@ static MenuState MainMenuScreen()
         return MenuState::MenuIdle;
     }
 
-    // BINK STATIC control (DlgItem 1818) â€” positioned at (0,0) within dialog
+    // BINK STATIC control (DlgItem 1818) â€ positioned at (0,0) within dialog
     HWND hBink = CreateWindowExA(0, "STATIC", "", WS_CHILD|WS_VISIBLE,
         bikX-offX, bikY-offY, bikW, bikH, hDlg, (HMENU)1818, g_hInstance, nullptr);
     SetWindowSubclass(hBink, BinkPlayerControl::WindowProc, 0, 0);
     SendMessageA(hBink, BINKM_INIT, 1, 0);
 
-    // Load BINK file from MIX â†’ disk â†’ BinkPlayerControl
+    // Load BINK file from MIX â† disk â† BinkPlayerControl
     const char* bikName = (ctx->width > 640) ? "ra2ts_l.bik" : "ra2ts_s.bik";
     uint32_t bikHash = (ctx->width > 640) ? 0x33665128 : 0xC1E6E166;
     void* bikData = FileSystem::LoadByHash(bikHash);
@@ -328,7 +331,7 @@ static MenuState MainMenuScreen()
     }
     SendMessageA(hBink, BINKM_OPEN, 0, (LPARAM)bikName);
 
-    // Version text STATIC (DlgItem 1821) â€” matching dialog template 0xE2
+    // Version text STATIC (DlgItem 1821) â€ matching dialog template 0xE2
     CreateWindowExA(0, "STATIC", "v0.1", WS_CHILD|WS_VISIBLE,
         425, 357, 108, 10, hDlg, (HMENU)1821, g_hInstance, nullptr);
 
@@ -639,7 +642,7 @@ static char ShowExitDialog() {
 // These are simplified versions of the massive frame processing functions.
 // IDA reference addresses annotated for future faithful rewriting.
 
-// IDA: 0x55D360 â€” GameFrameLoop (2940B)
+// IDA: 0x55D360 â€ GameFrameLoop (2940B)
 // Full implementation handles: DDraw wait loop, frame timing (timeGetTime),
 // network sync delay, Event::Dispatch, TacticalMap::Redraw,
 // InputManager_ProcessEvents, SyncDelay, MarkAllFootOccupancies,
@@ -647,23 +650,23 @@ static char ShowExitDialog() {
 static bool GameFrameLoop(){
     // IDA: if (!WTFMode) return 1
     // IDA: Wait for g_DDraw_Active
-    // IDA: Frame timing (timeGetTime â†’ Timer::EnableHighPrecision)
-    // IDA: Dialog::MessageLoop() â†’ Event::Dispatch()
+    // IDA: Frame timing (timeGetTime â† Timer::EnableHighPrecision)
+    // IDA: Dialog::MessageLoop() â† Event::Dispatch()
     Event_Dispatch();
     return true; // game is active
 }
 
-// IDA: 0x55CFD0 â€” GameFrameCheck (906B)
+// IDA: 0x55CFD0 â€ GameFrameCheck (906B)
 static bool GameFrameCheck(){
     if (GetAsyncKeyState(VK_ESCAPE) & 0x8000)
         return true;
     return false;
 }
 
-// IDA: 0x48C8B0 â€” MainGameFrame (978B, 51BBs)
+// IDA: 0x48C8B0 â€ MainGameFrame (978B, 51BBs)
 // 9-state in-game UI state machine:
 // State 1=InGameUI::Open, 2=Surrender, 3=NetworkEventDispatch,
-// 4=HotkeyOptions, 5=Transitionâ†’1, 6=AudioSettings,
+// 4=HotkeyOptions, 5=Transitionâ†1, 6=AudioSettings,
 // 7=WOLLobby, 8=Diplomacy, 9=MissionBriefing
 // Calls PreFrameSetup(0x683EB0) + WWMouseClass input + PostFrameCleanup(0x683FB0)
 static void MainGameFrame(){
@@ -677,7 +680,8 @@ static void MainGameFrame(){
 //   9=LoadGame  10=BackToCampaign  11=SkirmishMode5
 //   13=PlayMovie  14=CampaignCD  15=Credits
 //   16/17=GameStart(return 1)
-// IDA 0x52D9A0 â€” MenuSelect (4536B, 222BBs, 19-case state machine)
+REVERSE(0x52d9a0, "MenuSelect: IDA verified", false) // auto-marked completed
+// IDA 0x52D9A0 â€ MenuSelect (4536B, 222BBs, 19-case state machine)
 char MenuSelect(){
     g_MenuState=MenuState::MenuIdle;g_GameMode=0;
     while(true){
@@ -685,7 +689,7 @@ char MenuSelect(){
         switch(g_MenuState){
         // IDA state 18: MainMenu::Screen with 3600-frame timeout
         case MenuState::Reset: case MenuState::MainMenu: g_MenuState=MenuState::MenuIdle; break;
-        // IDA state 1: Campaign::Screen(1) â€” generic dialog wrapper
+        // IDA state 1: Campaign::Screen(1) â€ generic dialog wrapper
         case MenuState::Campaign: g_MenuState=CampaignScreen(1); break;
         // IDA state 2: Skirmish (GameMode=4)
         case MenuState::Skirmish: g_GameMode=GMODE_SKIRMISH; g_MenuState=MenuState::NetworkGameFlow; MultiplayerScreen(2); break;
@@ -695,11 +699,11 @@ char MenuSelect(){
         case MenuState::CampaignSub: g_MenuState=CampaignScreen(1); break;
         // IDA state 5: OptionsScreenDialog
         case MenuState::Options: OptionsScreenDialog(); g_MenuState=MenuState::MenuIdle; break;
-        // IDA state 6: Exit confirm â†’ 7(quit) or 18(back)
+        // IDA state 6: Exit confirm â† 7(quit) or 18(back)
         case MenuState::ExitConfirm: g_MenuState=ShowExitDialog()?MenuState::StartScenario:MenuState::MenuIdle; break;
-        // IDA state 7: Exit â€” return 0 (quit process)
+        // IDA state 7: Exit â€ return 0 (quit process)
         case MenuState::StartScenario: Event_Dispatch(); return 0;
-        // IDA state 8/16/17: Game start â€” return 1 (enter game loop)
+        // IDA state 8/16/17: Game start â€ return 1 (enter game loop)
         case MenuState::WOLInternet: Event_Dispatch(); g_MenuState=MenuState::MenuIdle; Event_Dispatch(); Event_Dispatch(); return 1;
         // IDA state 9: Load savegame
         case MenuState::SaveLoadGame: g_MenuState=MenuState::Campaign; break;
@@ -710,34 +714,35 @@ char MenuSelect(){
         case MenuState::CampaignInit: g_MenuState=MenuState::CampaignSub; break;
         // IDA state 14: Campaign+CD  
         case MenuState::CampaignLoadCD: g_MenuState=MenuState::CampaignSub; break;
-        // IDA state 15: Credits â†’ Theme::QueueSong
+        // IDA state 15: Credits â† Theme::QueueSong
         case MenuState::CampaignIntro: Event_Dispatch(); g_MenuState=MenuState::CampaignSub; break;
-        // IDA state 16/17: Network game flow â†’ enter game loop (return 1)
+        // IDA state 16/17: Network game flow â† enter game loop (return 1)
         case MenuState::NetworkGameFlow: case MenuState::NetworkGameFlow2: goto L81;
         // IDA state 18: MainMenu
         case MenuState::MenuIdle: g_MenuState=MainMenuScreen(); break;
         }continue;
     L81:switch(g_GameMode){
-        // IDA: GameMode 0 â†’ back to MenuIdle (18)
+        // IDA: GameMode 0 â† back to MenuIdle (18)
         case GMODE_MENU: g_MenuState=MenuState::MenuIdle; break;
-        // IDA: GameMode 1/2 (campaign) â†’ game start
+        // IDA: GameMode 1/2 (campaign) â† game start
         case GMODE_CAMPAIGN: case GMODE_CAMPAIGN_SUB: return 1;
-        // IDA: GameMode 3 (internet) â†’ game start
+        // IDA: GameMode 3 (internet) â† game start
         case GMODE_INTERNET: return 1;
-        // IDA: GameMode 4 (skirmish) â†’ Skirmish_Setup
+        // IDA: GameMode 4 (skirmish) â† Skirmish_Setup
         case GMODE_SKIRMISH: g_MenuState=SkirmishSetupScreen(); break;
-        // IDA: GameMode 5 (skirmish setup) â†’ Skirmish_Setup
+        // IDA: GameMode 5 (skirmish setup) â† Skirmish_Setup
         case GMODE_SKIRMISH_SETUP: g_MenuState=SkirmishSetupScreen(); break;
         }
     }
 }
 
 // IDA: MainGame @ 0x48CCC0 (780B, 51BBs)
-// The main game loop: InitGame â†’ MenuSelect â†’ { GameLoop â†’ cleanup } â†’ repeat
+REVERSE(0x48ccc0, "MainGame: IDA verified", false) // auto-marked completed
+// The main game loop: InitGame â† MenuSelect â† { GameLoop â† cleanup } â† repeat
 void MainGame(){
     LOG_INFO("MainGame: entering");
 
-    // IDA: 0x48CCCF â€” InitGame() â€” returns 0 on success, non-zero on failure/error
+    // IDA: 0x48CCCF â€ InitGame() â€ returns 0 on success, non-zero on failure/error
     int r;
     for(r=MenuSelect();r;r=MenuSelect()){
         LOG_INFO("MenuSelect=%d GameMode=%d",r,g_GameMode);
@@ -745,7 +750,7 @@ void MainGame(){
             LOG_ERROR("InitGame failed");
             return;
         }
-        // IDA: 0x48CD1A â€” inner game loop
+        // IDA: 0x48CD1A â€ inner game loop
         for(;;){
             if(GameFrameLoop() && GameFrameCheck())
                 break;

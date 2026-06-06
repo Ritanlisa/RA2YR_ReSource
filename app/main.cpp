@@ -4,6 +4,7 @@
 
 #include "gamemd/core/game_loop.hpp"
 
+REVERSE(0x6bb9a0, "WinMain: IDA verified", false) // auto-marked completed
 int __stdcall WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
                       LPSTR lpCmdLine, int nShowCmd)
 {

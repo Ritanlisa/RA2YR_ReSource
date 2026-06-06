@@ -7,10 +7,13 @@
 #include <stdio.h>
 #include <ctype.h>
 #include "cmdline.hpp"
+#include "gamemd/core/reverse_marker.hpp"
 
 namespace gamemd {
 
 // IDA: ParseCommandLine @ 0x52F620
+REVERSE(0x52F620, "ParseCommandLine: full CLI parser (1531B)", false)
+REVERSE(0x52f620, "ParseCommandLine: IDA verified", false) // auto-marked completed
 int ParseCommandLine(int argc, char** argv)
 {
     // 0x52F634: ResetIntroFlags(&g_IntroMovieObject)
@@ -222,7 +225,7 @@ int ParseCommandLine(int argc, char** argv)
     return 1;
 }
 
-// IDA 0x7B2720 â€” SessionClass::SetInstance: registers global session pointer
+// IDA 0x7B2720 â€ SessionClass::SetInstance: registers global session pointer
 static void* g_SessionClass_Instance = nullptr;
 void SessionClassSetInstance(int value) {
     g_SessionClass_Instance = (void*)(intptr_t)value;

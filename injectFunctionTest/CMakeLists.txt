@@ -29,6 +29,7 @@ set(HOOK_SOURCES
     element_tracker.cpp
     render_hooks.cpp
     "${CMAKE_CURRENT_SOURCE_DIR}/gen/reverse_hooks.cpp"
+    "${CMAKE_CURRENT_SOURCE_DIR}/gen/reverse_check.cpp"
     test_hooks.cpp
 )
 
