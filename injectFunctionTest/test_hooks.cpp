@@ -4,6 +4,7 @@
 #include "tls_storage.h"
 #include "shadow_txn.h"
 #include "headless_server.h"
+#include "virtual_screen.h"
 
 extern "C" void PostProcStub();
 

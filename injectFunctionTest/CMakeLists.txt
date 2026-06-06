@@ -26,6 +26,8 @@ set(HOOK_SOURCES
     hook_main.cpp
     shadow_txn.cpp
     headless_server.cpp
+    element_tracker.cpp
+    render_hooks.cpp
     test_hooks.cpp
 )
 
@@ -34,6 +36,8 @@ set(HOOK_HEADERS
     shadow_txn.h
     shadow_veh.h
     headless_server.h
+    element_tracker.h
+    render_hooks.h
 )
 
 set(HOOK_ASM

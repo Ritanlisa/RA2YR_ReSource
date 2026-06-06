@@ -6,6 +6,7 @@
 #include <cstdlib>
 #include "headless_server.h"
 #include "tls_storage.h"
+#include "element_tracker.h"
 
 namespace headless {
 
@@ -83,6 +84,105 @@ static void HandleCommand(SOCKET client, const char* cmd)
     else if (strncmp(cmd, "QUIT", 4) == 0) {
         SendResponse(client, "{\"ok\":true,\"action\":\"exit\"}");
         ExitProcess(0);
+    }
+    else if (strncmp(cmd, "SCREEN", 6) == 0) {
+        // Return primary surface info + frame buffer
+        HWND hwnd = FindWindowA(nullptr, "Yuri's Revenge");
+        RECT r = {};
+        if (hwnd) GetClientRect(hwnd, &r);
+        if (r.right == 0) { r.right = 800; r.bottom = 600; }
+
+        // Allocate a static frame buffer on first call
+        static unsigned char* g_frame_buffer = nullptr;
+        static int g_fb_size = 0;
+        if (!g_frame_buffer) {
+            // 1920x1080 RGBA
+            g_fb_size = 1920 * 1080 * 4;
+            g_frame_buffer = (unsigned char*)VirtualAlloc(nullptr, g_fb_size, MEM_COMMIT, PAGE_READWRITE);
+        }
+
+        // Try to BitBlt from screen
+        bool captured = false;
+        if (hwnd && g_frame_buffer) {
+            HDC hdcScreen = GetDC(hwnd);
+            if (hdcScreen) {
+                HDC hdcMem = CreateCompatibleDC(hdcScreen);
+                BITMAPINFO bmi = {};
+                bmi.bmiHeader.biSize = sizeof(bmi.bmiHeader);
+                bmi.bmiHeader.biWidth = 1920;
+                bmi.bmiHeader.biHeight = -1080;
+                bmi.bmiHeader.biPlanes = 1;
+                bmi.bmiHeader.biBitCount = 32;
+                bmi.bmiHeader.biCompression = BI_RGB;
+
+                void* bits = nullptr;
+                HBITMAP hbm = CreateDIBSection(hdcMem, &bmi, DIB_RGB_COLORS, &bits, nullptr, 0);
+                if (hbm && bits) {
+                    HBITMAP old = (HBITMAP)SelectObject(hdcMem, hbm);
+                    BitBlt(hdcMem, 0, 0, 1920, 1080, hdcScreen, 0, 0, SRCCOPY);
+                    memcpy(g_frame_buffer, bits, 1920 * 1080 * 4);
+                    SelectObject(hdcMem, old);
+                    captured = true;
+                }
+                if (hbm) DeleteObject(hbm);
+                DeleteDC(hdcMem);
+                ReleaseDC(hwnd, hdcScreen);
+            }
+        }
+
+        snprintf(response, sizeof(response),
+            "{\"ok\":true,\"window\":\"%s\",\"client\":[%ld,%ld,%ld,%ld],"
+            "\"virtual\":{\"width\":1920,\"height\":1080,\"bpp\":32,"
+            "\"addr\":\"0x%08X\",\"size\":%d,\"captured\":%s}}",
+            hwnd ? "found" : "none",
+            r.left, r.top, r.right, r.bottom,
+            (uintptr_t)g_frame_buffer, g_fb_size,
+            captured ? "true" : "false");
+        SendResponse(client, response);
+    }
+    else if (strncmp(cmd, "ELEMENTS RESET", 14) == 0) {
+        elements::Reset();
+        SendResponse(client, "{\"ok\":true,\"action\":\"reset\"}");
+    }
+    else if (strncmp(cmd, "ELEMENTS ", 9) == 0) {
+        // Paginated: ELEMENTS <offset> <count>
+        int offset = 0, count = 100;
+        sscanf(cmd + 9, "%d %d", &offset, &count);
+        if (count > 500) count = 500;
+
+        int total = elements::Count();
+        int pos = snprintf(response, 256,
+            "{\"ok\":true,\"total\":%d,\"offset\":%d,\"elements\":[", total, offset);
+        int shown = 0;
+        for (int i = offset; i < total && shown < count && pos < (int)sizeof(response)-256; ++i) {
+            auto& e = elements::Get(i);
+            const char* typeStr = "?";
+            switch (e.type) {
+                case elements::SHP:  typeStr = "shp"; break;
+                case elements::TEXT: typeStr = "text"; break;
+                case elements::BINK: typeStr = "bink"; break;
+                case elements::RECT: typeStr = "rect"; break;
+                case elements::VXL:  typeStr = "vxl"; break;
+                default: break;
+            }
+            pos += snprintf(response + pos, sizeof(response) - pos,
+                "%s{\"type\":\"%s\",\"x\":%d,\"y\":%d,\"w\":%d,\"h\":%d,"
+                "\"frame\":%u,\"surf\":\"%04X\",\"ts\":%u}",
+                shown > 0 ? "," : "", typeStr,
+                e.x, e.y, e.w, e.h, e.frame,
+                (unsigned)(e.surface_addr & 0xFFFF), e.ts);
+            ++shown;
+            if (pos >= (int)sizeof(response) - 260) break;
+        }
+        snprintf(response + pos, sizeof(response) - pos, "]}");
+        SendResponse(client, response);
+    }
+    else if (strncmp(cmd, "ELEMENTS", 8) == 0) {
+        // Quick summary only
+        int count = elements::Count();
+        snprintf(response, sizeof(response),
+            "{\"ok\":true,\"count\":%d,\"hint\":\"Use ELEMENTS <offset> <count> to paginate\"}", count);
+        SendResponse(client, response);
     }
     else if (strncmp(cmd, "ECHO ", 5) == 0) {
         snprintf(response, sizeof(response), "{\"ok\":true,\"echo\":\"%.256s\"}", cmd + 5);
