@@ -9,6 +9,170 @@
 namespace gamemd
 {
 
+namespace {
+
+// IDA: 0x421B60 — ClipRectIntersection (289B)
+// Computes intersection of src_rect with clip_rect, storing result.
+// Optional offset pointers (x_off, y_off) are adjusted by the delta.
+RectangleStruct* ClipRectIntersection(
+    RectangleStruct* result,
+    const RectangleStruct* clip_rect,
+    const RectangleStruct* src_rect,
+    int* x_off,
+    int* y_off)
+{
+    if (clip_rect->Width <= 0 || clip_rect->Height <= 0
+        || src_rect->Width <= 0 || src_rect->Height <= 0)
+    {
+        *result = {};
+        return result;
+    }
+
+    int x = src_rect->X;
+    int y = src_rect->Y;
+    int w = src_rect->Width;
+    int h = src_rect->Height;
+
+    if (x < clip_rect->X)
+    {
+        w = x - clip_rect->X + w;
+        x = clip_rect->X;
+    }
+    if (w < 1)
+    {
+        *result = {};
+        return result;
+    }
+
+    if (y < clip_rect->Y)
+    {
+        h = y - clip_rect->Y + h;
+        y = clip_rect->Y;
+    }
+    if (h < 1)
+    {
+        *result = {};
+        return result;
+    }
+
+    if (x + w > clip_rect->X + clip_rect->Width)
+        w = clip_rect->X + clip_rect->Width - x;
+    if (w < 1)
+    {
+        *result = {};
+        return result;
+    }
+
+    if (y + h > clip_rect->Y + clip_rect->Height)
+        h = clip_rect->Y + clip_rect->Height - y;
+    if (h < 1)
+    {
+        *result = {};
+        return result;
+    }
+
+    if (x_off)
+        *x_off += src_rect->X - x;
+    if (y_off)
+        *y_off += src_rect->Y - y;
+
+    result->X = x;
+    result->Y = y;
+    result->Width = w;
+    result->Height = h;
+    return result;
+}
+
+// IDA: 0x7BC2B0 — ClipLine (717B)
+// Cohen-Sutherland line clipping against clip_rect.
+// Modifies start/end in-place, returns true if visible portion exists.
+bool ClipLine(int* start, int* end, int* clip_rect)
+{
+    int clip_x  = clip_rect[0];
+    int clip_y  = clip_rect[1];
+    int clip_w  = clip_rect[2];
+    int clip_h  = clip_rect[3];
+    int clip_r  = clip_x + clip_w;
+    int clip_b  = clip_y + clip_h;
+
+    auto outcode = [clip_x, clip_y, clip_r, clip_b](double x, double y) -> int {
+        int code = 0;
+        if (x < static_cast<double>(clip_x))    code |= 1;
+        if (x > static_cast<double>(clip_r - 1)) code |= 2;
+        if (y > static_cast<double>(clip_b - 1)) code |= 4;
+        if (y < static_cast<double>(clip_y))     code |= 8;
+        return code;
+    };
+
+    double x0 = static_cast<double>(start[0]);
+    double y0 = static_cast<double>(start[1]);
+    double x1 = static_cast<double>(end[0]);
+    double y1 = static_cast<double>(end[1]);
+
+    int c0 = outcode(x0, y0);
+    int c1 = outcode(x1, y1);
+
+    for (;;)
+    {
+        if (!c0 && !c1)
+        {
+            start[0] = static_cast<int>(x0);
+            start[1] = static_cast<int>(y0);
+            end[0]   = static_cast<int>(x1);
+            end[1]   = static_cast<int>(y1);
+            return true;
+        }
+
+        if (c0 & c1)
+            return false;
+
+        int c = c0 ? c0 : c1;
+
+        double dx   = x1 - x0;
+        double dy   = y1 - y0;
+        double dxdy = (dy >= -0.0001 && dy <= 0.0001) ? 0.0 : dx / dy;
+        double dydx = (dx >= -0.0001 && dx <= 0.0001) ? 0.0 : dy / dx;
+
+        double nx = 0, ny = 0;
+
+        if (c & 8)
+        {
+            nx = (static_cast<double>(clip_y) - y0) * dxdy + x0;
+            ny = static_cast<double>(clip_y);
+        }
+        else if (c & 4)
+        {
+            ny = static_cast<double>(clip_b - 1);
+            nx = (ny - y0) * dxdy + x0;
+        }
+        else if (c & 2)
+        {
+            nx = static_cast<double>(clip_r - 1);
+            ny = (nx - x0) * dydx + y0;
+        }
+        else
+        {
+            ny = (static_cast<double>(clip_x) - x0) * dydx + y0;
+            nx = static_cast<double>(clip_x);
+        }
+
+        if (c == c0)
+        {
+            x0 = nx;
+            y0 = ny;
+            c0 = outcode(x0, y0);
+        }
+        else
+        {
+            x1 = nx;
+            y1 = ny;
+            c1 = outcode(x1, y1);
+        }
+    }
+}
+
+} // anonymous namespace
+
 // IDA: 0x4BA770 — DSurface::CreatePrimary pixel format detection logic
 // Computes bit shifts/masks from the surface's RGB masks, then determines
 // the pixel format enum: 0=RGB565, 1=RGB555, 2=RGB444, -1=unknown
