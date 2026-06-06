@@ -1,59 +1,174 @@
-# REVERSE Pipeline — Function Comparison & Dependency Validation
+# RA2YR ReSource — Function Comparison Pipeline
 
-## Overview
+## 1. Architecture Overview
 
-The REVERSE pipeline validates reverse-engineered C++ functions against the original `gamemd.exe` at runtime. Hook injection via Syringe, stack hijacking for return value capture, and page-level memory transactions ensure side-effect-free validation.
-
-**39 functions** are currently marked as faithfully reverse-engineered (completed:true in functions.json). **~11,000** remaining functions are stubs or not yet implemented.
-
-## Architecture
+The shadow execution framework validates reverse-engineered C++ functions against the original `gamemd.exe` binary at runtime. Three key mechanisms work together:
 
 ```
-Source code:  REVERSE(0xADDR, "desc", true/false)
-                   ↓
-gen_reverse_hooks.py:  scan → check completion → check dependencies → generate hooks
-                   ↓
-gen/reverse_hooks.cpp:  DEFINE_HOOK stubs compiled into hook_dll.dll
-gen/reverse_check.cpp:  #pragma message (warnings) / #error (errors)
-                   ↓
-Syringe → inject DLL → hook each function
-                   ↓
-Hook fires:  save regs → call RE version → save result →
-             stack hijack → run original → PostProcStub compare
-                   ↓
-comparisonResult.log:  [FuncName-0xADDR]
-                       Call N: CallerName()<-0xCALLSITE
-                         Input:  param1(REG)=value  param2(REG)=value
-                         Return: hook=RE_VAL    |    original=ORIG_VAL
+┌─ Syringe (injector) ───────────────────────────────────────┐
+│  1. CREATE_SUSPENDED → INT3 at entry point (0x7CD80F)      │
+│  2. Inject cLoadLibrary machine code → resolve hook addrs   │
+│  3. Write JMP (5 bytes) at each hook address → trampoline   │
+│  4. DebugActiveProcessStop → detach, hooks active           │
+└─────────────────────────────────────────────────────────────┘
+                                 ↓
+┌─ hook_dll.dll (injected) ───────────────────────────────────┐
+│  DllMain: InitTLS → InstallVEH → (wait for ExeRun)         │
+│  ExeRun hook (0x7CD810): StartServer + InitNames            │
+│  Per-function hooks: save regs → RE version → hijack stack  │
+│  PostProcStub: compare RE vs original → LogComparison       │
+│  DLL_PROCESS_DETACH: WriteNoCallSummary                     │
+└─────────────────────────────────────────────────────────────┘
 ```
 
-## Completion & Dependency Validation
+### 1.1 Stack Hijacking — How PostProcStub Works
 
-### Rules
-
-| Condition | Result |
-|-----------|--------|
-| REVERSE enabled + function NOT completed | **ERROR** (build fails) |
-| REVERSE disabled + function NOT completed | **WARNING** (compiler `#pragma message`) |
-| Address not found in `functions.json` | **ERROR** (build fails) |
-| FuncA(REVERSE=true) calls FuncB(not completed) | **ERROR** — any uncompleted callee |
-| FuncA(REVERSE=false) calls FuncB(not completed, no REVERSE marker) | **WARNING** — unmarked dependency |
-
-### Sample Output
+The core innovation. When our hook fires at function entry:
 
 ```
-ERROR: 0x52ba60 (InitGame) calls 56 uncompleted: AnimSystem::Init, Audio::Callback, LoadFileSHP (+51)
-WARNING: 0x5bed40 (Movie::Play) — NOT completed (functions.json line 301834)
-ERROR: src/object/object.cpp:77: 0x5f44a0 (ObjectClass::Remove) — NOT completed
+1. Hook saves all registers (PUSHAD/PUSHFD by Syringe trampoline)
+2. RE version runs with page-level memory transaction
+3. RE result stored in TLS (fs:[0x18])
+4. Original return address on stack: R->Stack<DWORD>(0)
+5. REPLACE stack return address: R->Stack(0, &PostProcStub)
+6. return 0 → Syringe executes displaced bytes → JMP back to function
+7. Original function runs normally → RET pops PostProcStub address
+8. PostProcStub: EAX=original result, compares with TLS RE result
+9. LogComparison called with (orig_result, hook_addr) → writes to file
+10. PostProcStub: mov eax, [original_ret_addr]; jmp eax → returns to caller
 ```
 
-### Dependency Data
+**Why this works**: The original function runs on CLEAN state (RE's modifications were rolled back by the page transaction). The stack is restored by Syringe's POPFD/POPAD before the displaced bytes execute. The function's `ret` instruction pops our hijacked address, landing in PostProcStub with EAX=return value.
 
-- `callee_map.json` — 39 completed functions, 10,008 unique callee names
+### 1.2 Page-Level Memory Transaction
+
+```
+ShadowTransaction::Begin()
+  → VirtualProtect all 872 .data pages (0x812000-0xB7A000) → PAGE_READONLY
+
+RE version executes:
+  → RE writes to page P → EXCEPTION_ACCESS_VIOLATION (write=1)
+  → VEH handler (AddVectoredExceptionHandler):
+     → memcpy(backup_buffer, page, 4096)   // backup entire 4KB page
+     → VirtualProtect(page, PAGE_READWRITE) // unprotect
+     → EXCEPTION_CONTINUE_EXECUTION         // retry the write
+
+ShadowTransaction::End()
+  → For each backed-up page:
+     → VirtualProtect(page, PAGE_READWRITE)
+     → memcpy(page, backup, 4096)  // restore original content
+     → VirtualProtect(page, PAGE_READONLY) // re-protect for next call
+```
+
+**TLS slot layout** (fs:[0x18], avoids Syringe's fs:[0x14]):
+
+| Offset | Field | Purpose |
+|--------|-------|---------|
+| +0x00 | original_ret_addr | Caller return address (before hijack) |
+| +0x04 | re_result_eax | RE version's EAX output |
+| +0x08 | re_result_edx | RE version's EDX output |
+| +0x0C | hook_addr | Current hook function address |
+| +0x10 | transaction | Active ShadowTransaction* (null if none) |
+| +0x14 | in_shadow | bool: currently in shadow execution |
+
+### 1.3 VEH Exception Handler
+
+```cpp
+// Install: AddVectoredExceptionHandler(1, handler) — called in DllMain
+LONG CALLBACK VEHHandler(PEXCEPTION_POINTERS info) {
+    if (code != EXCEPTION_ACCESS_VIOLATION) return CONTINUE_SEARCH;
+    if (access_type != 1) return CONTINUE_SEARCH;  // only WRITE violations
+
+    Transaction* txn = Transaction::Current();  // from fs:[0x18]
+    if (!txn) {
+        // No active transaction → just unprotect
+        VirtualProtect(page, 4096, PAGE_READWRITE, &old);
+        return CONTINUE_EXECUTION;
+    }
+
+    txn->OnWriteViolation(fault_addr);  // backup + unprotect
+    return CONTINUE_EXECUTION;  // retry the write
+}
+```
+
+**Why gamemd.exe can use page-level transactions**:
+- Single-threaded (CreateThread/InitializeCriticalSection = 0 xrefs)
+- No VEH conflicts with other threads
+- .data section: 872 pages (3,571,712 bytes)
+- First call overhead: ~8.7ms (872 × VirtualProtect)
+- Subsequent calls: ~50μs (re-protect only dirty pages)
+
+## 2. REVERSE Pipeline
+
+### 2.1 Source Marking
+
+```cpp
+#include "gamemd/core/reverse_marker.hpp"
+
+// REVERSE(addr, description, enabled)
+// The NEXT line MUST contain the C++ function declaration with parameter names.
+REVERSE(0x52BA60, "InitGame: master init pipeline (4333B)", true)
+int InitGame(bool no_cd) {
+    // Parameter names parsed from this declaration → appear in log
+}
+```
+
+`reverse_marker.hpp` defines REVERSE as a NO-OP macro:
+```cpp
+#define REVERSE(addr, desc, enabled) \
+    /* REVERSE_MARKER: addr desc enabled */
+```
+
+### 2.2 Code Generator (`gen_reverse_hooks.py`)
+
+```bash
+python gen_reverse_hooks.py
+```
+
+**Scanning phase**:
+1. Walks `src/`, `app/`, `include/gamemd/` for `REVERSE(0xADDR, "desc", true/false)` markers
+2. Skips markers on comment lines (`// ` prefixed)
+3. Parses the C++ function declaration on the NEXT line for parameter names
+4. Looks up each address in `functions.json` for completion status + calling convention
+
+**Validation phase**:
+| Condition | Severity | Action |
+|-----------|----------|--------|
+| addr not found in `functions.json` | ERROR | exits with sys.exit(1) |
+| `completed:false` + `enabled:true` | ERROR | exits with sys.exit(1) |
+| `completed:false` + `enabled:false` | WARNING | compiler `#pragma message` |
+| FuncA(enabled) calls FuncB(uncompleted) | ERROR | blocked until dep completed |
+| FuncA(disabled) calls FuncB(uncompleted, no REVERSE marker) | WARNING | `#pragma message` |
+| Library function (CRT/MSVC) in callees | SKIP | `is_lib()` filter |
+
+**Library function filter** (`is_lib()`):
+```python
+# Excluded from dependency warnings:
+name.startswith(('??', '__', '?_', '?$'))  # MSVC name-mangled operators
+name.startswith('_') and name[1].isalpha() # _malloc, _free, etc.
+name.startswith(('j_', 'nullsub', 'unknown_libname'))
+name in ('Debug::Log', 'Debug::Log_0')
+```
+
+**Generation phase**:
+1. Reads `decompile-results/gamemd.exe.map` (segment `0001:` only) for caller name lookup
+2. Embeds 8,000 function address→name entries as binary search array
+3. Generates `gen/reverse_hooks.cpp` — DEFINE_HOOK stubs with:
+   - Register capture (all 8 GPRs)
+   - Parameter-name-to-register mapping (from C++ signature + calling convention)
+   - Stack hijack setup
+   - LogComparison callback
+4. Generates `gen/reverse_check.cpp` — `#pragma message` / `#error` for compiler diagnostics
+
+### 2.3 Dependency Data
+
+`callee_map.json` — 39 completed functions, ~10K unique callee names:
 - Generated from IDA via `CodeRefsFrom` instruction-level scan
-- Self-calls filtered, names deduplicated
+- Self-calls filtered
+- Names deduplicated
+- Updated: `python ida_extract.py` → re-run the callee scan
 
-## comparisonResult.log Format
+### 2.4 comparisonResult.log Format
 
 ```
 [InitGame-0x0052BA60]
@@ -61,25 +176,105 @@ Call 1: MainGame()<-0x0048CCCF
   Input:  no_cd(ECX)=0x00000004
   Return: hook=0x00000000    |    original=0x00000000
 
-[AnotherFunc-0xADDRESS]
+[ParseCommandLine-0x0052F620]
 No Call
 ```
 
-| Field | Meaning |
-|-------|---------|
-| `[FuncName-0xADDRESS]` | Function identity (from `functions.json`) |
-| `Call N` | Call counter |
-| `MainGame()` | Caller identified via `gamemd.exe.map` binary search |
-| `<-0xCALLSITE` | CALL instruction address = return_addr - 5 |
-| `no_cd(ECX)` | Parameter name from C++ declaration + register |
-| `Return: hook=\|original=` | RE version vs original output |
-| `No Call` | Function hooked but never invoked (written at `DLL_PROCESS_DETACH`) |
+| Field | Source |
+|-------|--------|
+| `InitGame` | `functions.json` function name |
+| `0x0052BA60` | REVERSE macro address |
+| `MainGame()` | `gamemd.exe.map` binary search lookup |
+| `<-0x0048CCCF` | return_address - 5 (CALL instruction site) |
+| `no_cd(ECX)` | Parameter name from C++ declaration + calling convention mapping |
+| `hook=` / `original=` | PostProcStub comparison (EAX values) |
+| `No Call` | Written at `DLL_PROCESS_DETACH` by `WriteNoCallSummary()` |
 
-## Step-by-Step: Adding a New Function
+## 3. Hook Safety Constraints
 
-### 1. Verify Completion
+### 3.1 First-Byte Safety
 
-In `functions.json`:
+Syringe overwrites N bytes at the hook address with a JMP. The displaced bytes must NOT contain:
+
+| Pattern | Issue |
+|---------|-------|
+| `push reg` + ESP-relative addressing | Displaced `push` changes ESP → wrong `[esp+N]` offsets |
+| Relative `jmp`/`call` in first N bytes | Address changes when relocated to trampoline |
+| Instruction spanning hook boundary | Partial instruction corruption → garbage opcode |
+
+**Safe patterns**:
+| Bytes | Instruction | Hook Size |
+|-------|------------|-----------|
+| `B8 XX XX XX XX` | `mov eax, imm32` | 5 |
+| `A1 XX XX XX XX` | `mov eax, [absolute]` | 5 |
+| `81 EC XX XX XX XX` | `sub esp, imm` | 6 |
+| `8B 0D XX XX XX XX` | `mov ecx, [absolute]` | 6 |
+
+`min_safe_size` is computed per-function in `functions.json` via IDA instruction boundary analysis.
+
+### 3.2 Calling Convention Mapping
+
+| Convention | this pointer | Parameter 1 | Parameter 2 | Parameter 3+ |
+|------------|-------------|-------------|-------------|-------------|
+| `thiscall` | ECX | [ESP+4] | [ESP+8] | [ESP+12] |
+| `stdcall` | — | [ESP+4] | [ESP+8] | [ESP+12] |
+| `cdecl` | — | [ESP+4] | [ESP+8] | [ESP+12] |
+| `fastcall` | — | ECX | EDX | [ESP+4] |
+
+`gen_reverse_hooks.py` reads `call.convention` from `functions.json` and generates correct register extraction per function.
+
+## 4. Headless Testing Infrastructure
+
+### 4.1 TCP Command Server
+
+Starts from ExeRun hook (0x7CD810), runs on dedicated thread. Commands:
+
+| Command | Response |
+|---------|----------|
+| `STATS` | `{"ok":true,"mismatch_count":0}` |
+| `REG` | `{"ok":true,"re_eax":"...","in_shadow":false}` |
+| `HOOKS` | `{"ok":true,"mismatch_count":0}` |
+| `MEM addr size` | `{"ok":true,"data":"HEX..."}` |
+| `SCREEN` | `{"ok":true,"virtual":{"addr":"...","captured":true}}` |
+| `WINDOW` | `{"ok":true,"hwnd":"...","rect":[0,0,800,600]}` |
+| `GETMOUSE` | `{"ok":true,"screen":[x,y],"client":[x,y]}` |
+| `ELEMENTS` | `{"ok":true,"count":514}` |
+| `ELEMENTS reset` | Clear element buffer |
+| `ELEMENTS offset count` | Paginated query |
+| `FOCUS` | SetForegroundWindow |
+| `MOUSEMOVE x y` | SetCursorPos + PostMessage WM_MOUSEMOVE |
+| `CLICKAT x y [left/right]` | Move + click |
+| `DRAG x1 y1 x2 y2` | Press → 10-step interpolated drag → release |
+| `KEY vk` | Key down + up (vk in hex) |
+| `WAIT ms` | Sleep(ms), max 60000 |
+| `QUIT` | ExitProcess(0) |
+
+### 4.2 Render Element Tracking
+
+`DSurface::Blit` hook (0x4BB0D0) intercepts all surface blits. 4,096-slot ring buffer records:
+- Type (SHP/BINK/TEXT/RECT/VXL)
+- Screen position + dimensions
+- Source surface address (low 16 bits exposed)
+- Timestamp
+
+### 4.3 Input Simulation
+
+`PostMessage` (not `SendInput`) is used for compatibility with the game's message pump:
+- `MOUSEMOVE`: SetCursorPos + PostMessage(WM_MOUSEMOVE)
+- `CLICKAT`: ScreenToClient → PostMessage(WM_LBUTTONDOWN) → Sleep(50) → PostMessage(WM_LBUTTONUP)
+- `KEY`: PostMessage(WM_KEYDOWN) → Sleep(30) → PostMessage(WM_KEYUP)
+
+## 5. Adding a New Function — Step by Step
+
+### 5.1 Complete the C++ implementation
+```cpp
+// Must be a FAITHFUL translation from IDA, not a stub
+int InitGame(bool no_cd) {
+    // ...[888 lines matching IDA @ 0x52BA60]...
+}
+```
+
+### 5.2 Mark completion in functions.json
 ```json
 {
   "address": "0x52BA60",
@@ -87,89 +282,50 @@ In `functions.json`:
 }
 ```
 
-Only mark as completed if the function has a **faithful IDA translation** (not a stub/placeholder).
+### 5.3 Verify first-byte safety
+From IDA: `python ida_extract.py` → check `min_safe_size` in functions.json.
+Must be ≥ 5 and not contain push/call/relative-jmp in displacement zone.
 
-### 2. Verify First-Byte Safety
-
-First instruction must fit within hook boundary. `gen_reverse_hooks.py` reads `min_safe_size` from `functions.json`.
-
-| Safe Bytes | Example |
-|-----------|---------|
-| `B8 XX XX XX XX` | `mov eax, imm32` (5 bytes) |
-| `A1 XX XX XX XX` | `mov eax, [absolute]` (5 bytes) |
-| `81 EC XX XX XX XX` | `sub esp, imm` (6 bytes) |
-| `55 8B EC` | `push ebp; mov ebp, esp` (≥3) |
-
-**Warning**: `push`/`pop` combined with ESP-relative addressing breaks Syringe relocation. Compute `min_safe_size` via IDA.
-
-### 3. Add REVERSE Marker
-
+### 5.4 Add REVERSE marker
 ```cpp
 #include "gamemd/core/reverse_marker.hpp"
-
-REVERSE(0x52BA60, "InitGame: master init pipeline (4333B)", true)
-int InitGame(bool no_cd) {
-    // Parameter names parsed from this declaration
-}
+REVERSE(0x52BA60, "InitGame: master init pipeline", true)
+int InitGame(bool no_cd) { ... }
 ```
 
-### 4. Generate Hooks
-
+### 5.5 Generate hooks + check dependencies
 ```bash
 cd injectFunctionTest
 python gen_reverse_hooks.py
+# Fix any ERRORs before proceeding to build
 ```
 
-This script:
-- Scans `src/`, `app/`, `include/gamemd/` for all `REVERSE(...)` markers
-- Validates completion status via `functions.json`
-- Checks callee dependencies via `callee_map.json`
-- Parses parameter names from C++ function declarations
-- Generates `gen/reverse_hooks.cpp` (DEFINE_HOOK stubs)
-- Generates `gen/reverse_check.cpp` (`#pragma message` / `#error`)
-- Exits with code 1 if any ERROR found
-
-### 5. Build and Test
-
+### 5.6 Build and test
 ```bash
 cmake --build build_hook --config Release
-# Copy hook_dll.dll to game directory
-# Launch: Syringe "gamemd.exe"
-# Check: comparisonResult.log
+# Copy DLL, launch game, check comparisonResult.log
 ```
 
-## Headless Testing Commands
-
-```bash
-STATS              # {"ok":true,"mismatch_count":0}
-REG                # {"ok":true,"re_eax":"0x...","in_shadow":false}
-HOOKS              # {"ok":true,"mismatch_count":0}
-MEM 0x812000 64    # {"ok":true,"data":"HEX..."}
-SCREEN             # {"ok":true,"virtual":{"addr":"0x...","captured":true}}
-WINDOW             # {"ok":true,"hwnd":"0x...","rect":[0,0,800,600]}
-GETMOUSE           # {"ok":true,"screen":[x,y],"client":[x,y]}
-
-ELEMENTS           # {"ok":true,"count":514}
-ELEMENTS RESET     # clear buffer
-ELEMENTS 0 5       # paginated element query
-
-FOCUS              # SetForegroundWindow
-MOUSEMOVE x y      # SetCursorPos + PostMessage WM_MOUSEMOVE
-CLICKAT x y [left] # Move + click
-DRAG x1 y1 x2 y2   # Press → interpolated drag → release
-KEY 0x1B           # Key down + up (0x1B = ESC)
-WAIT ms            # Sleep(ms), max 60000
-QUIT               # ExitProcess(0)
-```
-
-## Generated Files
+## 6. Key Files
 
 | File | Purpose |
 |------|---------|
-| `gen/reverse_hooks.cpp` | Generated DEFINE_HOOK stubs |
-| `gen/reverse_check.cpp` | Compiler diagnostics (`#pragma`/`#error`) |
+| `injectFunctionTest/PostProcStub.asm` | Stack hijack + result comparison + LogComparison call |
+| `injectFunctionTest/shadow_txn.cpp` | Page-level memory transaction (VirtualProtect + VEH) |
+| `injectFunctionTest/tls_storage.h` | `fs:[0x18]` TLS slot layout |
+| `injectFunctionTest/gen_reverse_hooks.py` | Scanner + validator + code generator |
+| `injectFunctionTest/gen/reverse_hooks.cpp` | Generated DEFINE_HOOK stubs (auto) |
+| `injectFunctionTest/gen/reverse_check.cpp` | Compiler diagnostics (auto) |
+| `injectFunctionTest/headless_server.cpp` | TCP command server |
+| `injectFunctionTest/element_tracker.cpp` | Render element capture |
+| `injectFunctionTest/render_hooks.cpp` | DSurface::Blit interception |
+| `injectFunctionTest/test_client.py` | Python TCP client |
+| `include/gamemd/core/reverse_marker.hpp` | REVERSE(addr, desc, enabled) no-op macro |
+| `decompile-results/gamemd.exe.map` | Function address→name (segment 0001) |
+| `injectFunctionTest/functions.json` | 19K function metadata (IDA export) |
+| `injectFunctionTest/callee_map.json` | Dependency graph (39 funcs, 10K names) |
 
-## Key Configuration
+## 7. Configuration
 
 | Variable | Default | Purpose |
 |----------|---------|---------|
@@ -179,24 +335,14 @@ QUIT               # ExitProcess(0)
 | `SHADOW_DATA_START` | `0x812000` | .data section start |
 | `SHADOW_DATA_END` | `0xB7A000` | .data section end |
 
-## Pipeline Files
+## 8. Current Status
 
-| File | Purpose |
-|------|---------|
-| `include/gamemd/core/reverse_marker.hpp` | `REVERSE(addr, desc, enabled)` no-op macro |
-| `injectFunctionTest/gen_reverse_hooks.py` | Marker scanner + hook generator + dependency checker |
-| `injectFunctionTest/gen/reverse_hooks.cpp` | Generated DEFINE_HOOK stubs |
-| `injectFunctionTest/gen/reverse_check.cpp` | Compiler diagnostics |
-| `injectFunctionTest/hook_main.cpp` | DllMain + ExeRun server + NoCall summary |
-| `injectFunctionTest/PostProcStub.asm` | Stack hijack + LogComparison |
-| `injectFunctionTest/tls_storage.h` | `fs:[0x18]` TLS slot |
-| `injectFunctionTest/shadow_txn.cpp` | Page-level memory transaction |
-| `injectFunctionTest/headless_server.cpp` | TCP command server |
-| `injectFunctionTest/element_tracker.cpp` | Render element capture |
-| `injectFunctionTest/test_client.py` | Python TCP test client |
-| `injectFunctionTest/fix_completed.py` | Fix JSON completion flags |
-| `injectFunctionTest/enable_all.py` | Batch-enable REVERSE markers |
-| `injectFunctionTest/callee_map.json` | Callee dependency data (39 functions, 10K names) |
-| `injectFunctionTest/functions.json` | 19K function metadata (IDA export) |
-| `decompile-results/gamemd.exe.map` | Function address → name lookup |
-| `functionComparison.md` | This document |
+| Metric | Value |
+|--------|-------|
+| Truly completed functions | **30** (faithful IDA translations) |
+| REVERSE markers in source | **~32** (across 14 files, all disabled) |
+| Completed + enabled hooks | **0** (pending dependency resolution) |
+| Dependency callees tracked | **~10K unique** (callee_map.json) |
+| Hook DLL build | **0 errors** |
+| gamemd_core build | **0 errors** (1 pre-existing linker issue) |
+| Verified at runtime | **1** (CellStruct::Set — 0 mismatches) |
