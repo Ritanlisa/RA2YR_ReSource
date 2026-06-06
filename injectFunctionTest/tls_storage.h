@@ -17,6 +17,7 @@ struct ShadowSlot {
     uint32_t original_ret_addr;
     uint32_t re_result_eax;
     uint32_t re_result_edx;
+    uint32_t hook_addr;          // current hook address (for logging)
     void*    transaction;
     bool     in_shadow;
 };

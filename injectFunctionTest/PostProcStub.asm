@@ -1,13 +1,16 @@
-; PostProcStub.asm — post-process handler for stack-hijacked functions
-; Compares original EAX (return value) with RE result from TLS fs:[18h]+4.
-; Increments mismatch_counter on difference. 
-; Jumps back to original caller via fs:[18h]+0.
+; PostProcStub.asm — post-process handler + comparisonResult.log logging
+;
+; Reached via stack hijack. EAX = original return value.
+; Reads RE result + hook_addr from fs:[18h], calls LogComparison,
+; then jumps back to original caller.
+;
+; extern "C" void LogComparison(DWORD orig_result, DWORD hook_addr);
 
 .586
 .MODEL FLAT, C
 OPTION CASEMAP:NONE
 
-EXTERN OutputDebugStringA@4 : PROC
+EXTERN LogComparison : PROC
 
 .DATA?
     PUBLIC mismatch_counter
@@ -17,26 +20,44 @@ EXTERN OutputDebugStringA@4 : PROC
 
 PostProcStub PROC PUBLIC
     assume fs:nothing
-    mov ecx, dword ptr fs:[18h]
+    push eax                        ; save original eax
+    push edx                        ; save original edx
+
+    mov ecx, dword ptr fs:[18h]    ; ShadowSlot*
     test ecx, ecx
-    jz return_now
+    jz cleanup
 
-    ; compare RE eax vs original eax
-    mov edx, dword ptr [ecx + 4]
-    cmp eax, edx
-    je cleanup
+    ; Read RE result for comparison
+    mov edx, dword ptr [ecx + 4]    ; re_result_eax
+    pop eax                          ; original edx
+    pop ebx                          ; ebx = original eax
+    push eax                         ; save original edx
+    push ebx                         ; save original eax
 
-    ; also compare EDX for 64-bit returns
-    cmp edx, dword ptr [ecx + 8]
+    ; Compare RE vs original
+    cmp ebx, edx
     jne log_diff
-    cmp eax, dword ptr [ecx + 4]
-    je cleanup
+    jmp log_write
 
 log_diff:
     inc dword ptr [mismatch_counter]
 
+log_write:
+    ; Call LogComparison(orig_eax, hook_addr)
+    push dword ptr [ecx + 12]       ; hook_addr (offset 0xC)
+    push ebx                         ; orig_result
+    call LogComparison
+    add esp, 8
+
 cleanup:
-    mov eax, dword ptr [ecx]
+    pop ebx                          ; original eax
+    pop edx                          ; original edx
+
+    ; Jump to original caller
+    mov ecx, dword ptr fs:[18h]
+    test ecx, ecx
+    jz return_now
+    mov eax, dword ptr [ecx]         ; original_ret_addr
     jmp eax
 
 return_now:

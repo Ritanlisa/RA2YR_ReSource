@@ -45,6 +45,17 @@ SYRINGE_HANDSHAKE(pInfo)
 }
 
 // ============================================================
+// LogComparison stub — called by PostProcStub.asm
+// Full implementation in gen/reverse_hooks.cpp (when compiled in)
+// ============================================================
+extern "C" void __cdecl LogComparison(DWORD orig_result, DWORD hook_addr)
+{
+    (void)orig_result;
+    (void)hook_addr;
+    // Logging implemented when gen/reverse_hooks.cpp is linked
+}
+
+// ============================================================
 // ExeRun hook (0x7CD810) — safe server startup after DLL load
 // ============================================================
 DEFINE_HOOK(7CD810, HDS_StartServer, 9)

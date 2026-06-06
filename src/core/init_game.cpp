@@ -8,6 +8,7 @@
 #include <windows.h>
 #include <mmsystem.h>
 #include <cstring>
+#include "gamemd/core/reverse_marker.hpp"
 
 #include "gamemd/core/logging.hpp"
 #include "gamemd/core/ddraw_init.hpp"
@@ -134,6 +135,8 @@ int  InitializeAudioSubsystem(void* hwnd) {
 }
 
 // IDA 0x6C8C40 — Timer::GetTicks: returns timeGetTime() >> 4 (~16ms resolution)
+// IDA 0x6C8C40 — Timer::GetTicks: returns timeGetTime() >> 4 (~16ms resolution)
+REVERSE(0x6C8C40, "Timer::GetTicks: timeGetTime() >> 4", false) /* first-5-bytes unsafe */
 int TimerGetTicks() { return timeGetTime() >> 4; }
 
 // IDA 0x54F720 — Timer::PumpMessages
@@ -142,6 +145,8 @@ void TimerPumpMessages(void* bink_player) { (void)bink_player; }
 // --- Phase 3: Palette helpers ---
 
 // IDA 0x4355B0 — Palette::6BitTo16Bit: packs 3 bytes into 24-bit (used as temp struct)
+// IDA 0x4355B0 — Palette6BitTo16Bit: (b<<16)|(g<<8)|r
+REVERSE(0x4355B0, "Palette6BitTo16Bit: pack 6-bit RGB to 24-bit", false) /* first-5-bytes unsafe */
 int Palette6BitTo16Bit(int r, int g, int b) {
     return ((uint8_t)b << 16) | ((uint8_t)g << 8) | (uint8_t)r;
 }
@@ -290,6 +295,8 @@ void PlayIntroSequence() {
     LOG_DEBUG("PlayIntroSequence: intro would play here");
 }
 // IDA 0x52FC20 — InitRandomSeed: seeds game RNG from system time
+// IDA 0x52FC20 — InitRandomSeed: srand(timeGetTime() ^ GetTickCount())
+REVERSE(0x52FC20, "InitRandomSeed: seed RNG from timer", false) /* first-5-bytes unsafe */
 void InitRandomSeed() {
     // IDA: GetSystemTime → SHA1TickRNG × 16 → SeedInitRNG → Randomizer setup
     // Simplified: seed with time + tick count
