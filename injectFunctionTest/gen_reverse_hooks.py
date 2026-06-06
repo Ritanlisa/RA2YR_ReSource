@@ -229,7 +229,7 @@ def generate(markers, functions, fn_map):
         if count >= 8000: break
     w('  {0,0}};')
     # Caller lookup
-    w(f'static const char* Caller(DWORD v){{')
+    w(f'const char* Caller(DWORD v){{')
     w(f'  int lo=1,hi={count};')
     w('  while(lo<hi){int m=(lo+hi)/2;if(v<F[m].a)hi=m;else lo=m+1;}')
     w('  return F[lo-1].n;')
