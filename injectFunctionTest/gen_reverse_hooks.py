@@ -19,20 +19,16 @@ MAP  = os.path.join(ROOT, "decompile-results", "gamemd.exe.map")
 CAL  = os.path.join(SCRIPT, "callee_map.json")
 
 def load_json():
-    if not os.path.exists(JSON): return {}, {}
+    if not os.path.exists(JSON): return {}, None
     with open(JSON) as f:
-        data = json.load(f)
+        raw = f.read()
+    data = json.loads(raw)
     fn_map = {fn['address'].lower(): fn for fn in data['functions']}
-    # Build line map lazily per query
-    return fn_map, None
+    return fn_map, raw
 
-def get_json_line(addr, raw=None):
-    """Return line number for an address in functions.json."""
-    if not os.path.exists(JSON): return '?'
+def get_json_line(addr, raw):
+    if not raw: return '?'
     try:
-        if raw is None:
-            with open(JSON) as f:
-                raw = f.read()
         pos = raw.find(f'"address": "{addr}"')
         if pos >= 0:
             return raw[:pos].count('\n') + 1
@@ -61,7 +57,7 @@ SIG = re.compile(
     r'(?:\w+(?:::+\w+)*[\*\s&]+)+(\w+)\s*\(([^)]*)\)',
     re.IGNORECASE | re.DOTALL)
 
-def find_markers(functions, line_map, callee_map, callee_names, all_marked):
+def find_markers(functions, raw_json, callee_map, callee_names, all_marked):
     pat = re.compile(r'REVERSE\(\s*(0x[0-9A-Fa-f]+)\s*,\s*"([^"]*)"\s*,\s*(true|false)\s*\)', re.I)
     markers = []
     warnings = []
@@ -100,30 +96,54 @@ def find_markers(functions, line_map, callee_map, callee_names, all_marked):
                     
                     completed = fn_info.get('hook',{}).get('completed', False)
                     if not completed:
-                        json_line = get_json_line(addr)
+                        json_line = get_json_line(addr, raw_json)
                         json_name = fn_info.get('name', '?') if fn_info else '?'
                         msg = f"{fp}:{c[:m.start()].count(chr(10))+1}: {addr} ({json_name}) — NOT completed (functions.json line {json_line})"
                         if enabled:
                             errors.append(msg)
                         else:
                             warnings.append(msg)
+                    
+                    # Dependency check for DISABLED hooks (REVERSE=false):
+                    # Warn about uncompleted callees WITHOUT REVERSE markers
+                    if not enabled and addr in callee_map:
+                        unmarked = {}
+                        for c in callee_map[addr]:
+                            if c == addr: continue
+                            if c in all_marked: continue
+                            cfn = functions.get(c)
+                            if cfn and cfn.get('hook', {}).get('completed', False):
+                                continue
+                            cname = callee_names.get(c, c)
+                            if cname not in unmarked:
+                                unmarked[cname] = True
+                        if unmarked:
+                            uniq = sorted(unmarked.keys())
+                            deps_str = ', '.join(uniq[:3])
+                            if len(uniq) > 3: deps_str += f' (+{len(uniq)-3})'
+                            line_no = c[:m.start()].count(chr(10))+1
+                            warnings.append(f"{fp}:{line_no}: {addr} ({fname}) disabled, {len(uniq)} unmarked-uncompleted: {deps_str}")
                     if not enabled: continue
                     
-                    # Dependency check: only for enabled+completed hooks
-                    # Check if any callee is REVERSE-marked but not completed
-                    if addr in callee_map and all_marked:
-                        bad_callees = []
+                    # Dependency check
+                    if addr in callee_map:
+                        bad_callees = {}  # cname → has_marker
                         for c in callee_map[addr]:
-                            if c in all_marked:
-                                cfn = functions.get(c)
-                                if cfn and not cfn.get('hook', {}).get('completed', False):
-                                    cname = callee_names.get(c, c)
-                                    bad_callees.append(cname)
+                            if c == addr: continue  # skip self-calls
+                            cfn = functions.get(c)
+                            if cfn and cfn.get('hook', {}).get('completed', False):
+                                continue
+                            cname = callee_names.get(c, c)
+                            has_marker = c in all_marked
+                            if cname not in bad_callees:
+                                bad_callees[cname] = has_marker
+                        
                         if bad_callees:
-                            deps_str = ', '.join(bad_callees[:5])
-                            if len(bad_callees) > 5: deps_str += f' (+{len(bad_callees)-5})'
+                            uniq = sorted(bad_callees.keys())
+                            deps_str = ', '.join(uniq[:5])
+                            if len(uniq) > 5: deps_str += f' (+{len(uniq)-5})'
                             line_no = c[:m.start()].count(chr(10))+1
-                            warnings.append(f"{fp}:{line_no}: {addr} ({fname}) calls {len(bad_callees)} REVERSE-uncompleted: {deps_str}")
+                            errors.append(f"{fp}:{line_no}: {addr} ({fname}) calls {len(uniq)} uncompleted: {deps_str}")
                     
                     markers.append(dict(addr=addr,desc=m.group(2),fn_name=fname,
                                         file=os.path.relpath(fp,ROOT),params=params,completed=completed))
@@ -369,7 +389,7 @@ def load_all_markers():
     print("\nNext: cmake --build build_hook")
 
 def main():
-    functions, line_map = load_json()
+    functions, raw_json = load_json()
     
     # Load callee dependency map
     callee_map = {}
@@ -383,7 +403,7 @@ def main():
     # All REVERSE-marked addresses (for dependency filter)
     all_marked = load_all_markers()
     
-    markers, warnings, errors = find_markers(functions, line_map, callee_map, callee_names, all_marked)
+    markers, warnings, errors = find_markers(functions, raw_json, callee_map, callee_names, all_marked)
     
     for w in warnings:
         print(f"  WARNING: {w}")
