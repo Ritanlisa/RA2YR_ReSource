@@ -18,10 +18,26 @@ JSON = os.path.join(SCRIPT, "functions.json")
 MAP  = os.path.join(ROOT, "decompile-results", "gamemd.exe.map")
 
 def load_json():
-    if not os.path.exists(JSON): return {}
+    if not os.path.exists(JSON): return {}, {}
     with open(JSON) as f:
         data = json.load(f)
-    return {fn['address'].lower(): fn for fn in data['functions']}
+    fn_map = {fn['address'].lower(): fn for fn in data['functions']}
+    # Build line map lazily per query
+    return fn_map, None
+
+def get_json_line(addr, raw=None):
+    """Return line number for an address in functions.json."""
+    if not os.path.exists(JSON): return '?'
+    try:
+        if raw is None:
+            with open(JSON) as f:
+                raw = f.read()
+        pos = raw.find(f'"address": "{addr}"')
+        if pos >= 0:
+            return raw[:pos].count('\n') + 1
+    except:
+        pass
+    return '?'
 
 def parse_map():
     addrs = {}
@@ -44,7 +60,7 @@ SIG = re.compile(
     r'(?:\w+(?:::+\w+)*[\*\s&]+)+(\w+)\s*\(([^)]*)\)',
     re.IGNORECASE | re.DOTALL)
 
-def find_markers(functions):
+def find_markers(functions, line_map):
     pat = re.compile(r'REVERSE\(\s*(0x[0-9A-Fa-f]+)\s*,\s*"([^"]*)"\s*,\s*(true|false)\s*\)', re.I)
     markers = []
     warnings = []
@@ -75,12 +91,21 @@ def find_markers(functions):
                     
                     # Completion check
                     fn_info = functions.get(addr)
-                    completed = fn_info.get('hook',{}).get('completed', False) if fn_info else False
+                    
+                    if fn_info is None:
+                        err = f"{fp}:{c[:m.start()].count(chr(10))+1}: REVERSE({addr}) — NOT FOUND in functions.json"
+                        errors.append(err)
+                        continue
+                    
+                    completed = fn_info.get('hook',{}).get('completed', False)
                     if not completed:
+                        json_line = get_json_line(addr)
+                        json_name = fn_info.get('name', '?') if fn_info else '?'
+                        msg = f"{fp}:{c[:m.start()].count(chr(10))+1}: {addr} ({json_name}) — NOT completed (functions.json line {json_line})"
                         if enabled:
-                            errors.append(f"{fp}:{c[:m.start()].count(chr(10))+1}: REVERSE({addr}, \"{m.group(2)}\", true) — function NOT completed!")
+                            errors.append(msg)
                         else:
-                            warnings.append(f"{fp}:{c[:m.start()].count(chr(10))+1}: REVERSE({addr}, \"{m.group(2)}\", false) — function NOT completed (hook disabled)")
+                            warnings.append(msg)
                     if not enabled: continue
                     
                     markers.append(dict(addr=addr,desc=m.group(2),fn_name=fname,
@@ -216,22 +241,24 @@ def generate(markers, functions, fn_map):
     return '\n'.join(out)
 
 def write_check_file(markers, warnings, errors):
-    """Generate reverse_check.cpp with #pragma message (warnings) and #error (errors)."""
     lines = ['// Auto-generated completion validation for REVERSE markers',
              '// Compiled into hook DLL for build-time diagnostics',
              '#include <windows.h>', '']
     for w in warnings:
-        lines.append(f'#pragma message("WARNING: {w}")')
+        # Strip non-ASCII to avoid C4828 encoding warnings
+        clean = w.encode('ascii', errors='replace').decode('ascii').replace('?', '')
+        lines.append(f'#pragma message("WARN: {clean}")')
     for e in errors:
-        lines.append(f'#error "ERROR: {e}"')
+        clean = e.encode('ascii', errors='replace').decode('ascii').replace('?', '')
+        lines.append(f'#error "ERR: {clean}"')
     if not warnings and not errors:
         lines.append('// All REVERSE markers pass completion check.')
-    with open(CHK, 'w') as f:
+    with open(CHK, 'w', encoding='ascii') as f:
         f.write('\n'.join(lines))
 
 def main():
-    functions = load_json()
-    markers, warnings, errors = find_markers(functions)
+    functions, line_map = load_json()
+    markers, warnings, errors = find_markers(functions, line_map)
     
     # Print diagnostics
     for w in warnings:
