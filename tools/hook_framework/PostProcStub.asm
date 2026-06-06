@@ -1,64 +1,45 @@
-; PostProcStub.asm — universal post-process handler for stack-hijacked functions
-;
-; When the ORIGINAL function RETurns, it pops our hijacked return address
-; and lands here. EAX = original return value, EDX = high 32 bits.
-;
-; We read RE result from TLS (fs:[18h]), compare, log mismatches,
-; then JMP to the original caller's return address.
-;
-; Build: ml /coff /FoPostProcStub.obj /c PostProcStub.asm
+; PostProcStub.asm — post-process handler for stack-hijacked functions
+; Compares original EAX (return value) with RE result from TLS fs:[18h]+4.
+; Increments mismatch_counter on difference. 
+; Jumps back to original caller via fs:[18h]+0.
 
 .586
 .MODEL FLAT, C
 OPTION CASEMAP:NONE
+
+EXTERN OutputDebugStringA@4 : PROC
 
 .DATA?
     mismatch_counter dd ?
 
 .CODE
 
-; void PostProcStub(void)
 PostProcStub PROC PUBLIC
-
-    ; Save original return values
-    push eax
-    push edx
-
-    ; Load RE result from TLS
     assume fs:nothing
     mov ecx, dword ptr fs:[18h]
     test ecx, ecx
-    jz cleanup
+    jz return_now
 
-    ; Compare RE result vs original eax
-    mov edx, dword ptr [ecx + 4]    ; edx = RE result (eax)
-    pop eax                          ; original edx
-    pop ebx                          ; ebx = original eax
-    push eax
-    push ebx
+    ; compare RE eax vs original eax
+    mov edx, dword ptr [ecx + 4]
+    cmp eax, edx
+    je cleanup
 
-    cmp ebx, edx
+    ; also compare EDX for 64-bit returns
+    cmp edx, dword ptr [ecx + 8]
     jne log_diff
-
-    jmp cleanup
+    cmp eax, dword ptr [ecx + 4]
+    je cleanup
 
 log_diff:
     inc dword ptr [mismatch_counter]
 
 cleanup:
-    pop ebx                          ; original eax
-    pop edx                          ; original edx
-
-    ; Jump to original caller
-    mov ecx, dword ptr fs:[18h]
-    test ecx, ecx
-    jz return_now
-    mov eax, dword ptr [ecx]         ; original_ret_addr
+    mov eax, dword ptr [ecx]
     jmp eax
 
 return_now:
     ret
 
 PostProcStub ENDP
-
 END

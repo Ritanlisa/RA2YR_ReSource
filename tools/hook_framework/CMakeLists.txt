@@ -39,7 +39,6 @@ target_include_directories(hook_dll PRIVATE
 
 target_link_libraries(hook_dll PRIVATE
     winmm.lib
-    psapi.lib
 )
 
 target_compile_definitions(hook_dll PRIVATE

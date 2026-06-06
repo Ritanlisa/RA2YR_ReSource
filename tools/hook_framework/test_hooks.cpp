@@ -1,14 +1,40 @@
-// test_hooks.cpp — Disabled: pending verified function addresses from IDA
-// The original addresses (0x565B40, 0x4A0820) were NOT function entry points.
-// Use ida_extract.py to get verified addresses, then re-enable hooks.
+// test_hooks.cpp — CellStruct::Set @ 0x42D470 with shadow execution
 #include <windows.h>
 #include "Syringe.h"
 #include "tls_storage.h"
 #include "shadow_txn.h"
 
-// PostProcStub — still exported for future use
 extern "C" void PostProcStub();
 
-// Dummy hook to ensure .syhks00 section is non-empty (Syringe requirement)
-// Hooks a harmless function that just returns — verified as function entry via IDA.
-// TODO: replace with real verified addresses from functions.json
+// CellStruct = { int16_t x; int16_t y; }
+struct CellStruct { __int16 X; __int16 Y; };
+
+static CellStruct* RE_CellStruct_Set(CellStruct* pThis, __int16 x, __int16 y)
+{
+    pThis->X = x;
+    pThis->Y = y;
+    return pThis;
+}
+
+DEFINE_HOOK(42D470, CellStruct_Set_shadow, 5)
+{
+    auto* slot = shadow::GetSlot();
+
+    CellStruct* pThis = (CellStruct*)R->ECX();
+    __int16 x = (__int16)R->Stack<DWORD>(4);
+    __int16 y = (__int16)R->Stack<DWORD>(8);
+
+    shadow::ShadowTransaction txn;
+    txn.Begin();
+
+    CellStruct* re_result = RE_CellStruct_Set(pThis, x, y);
+
+    txn.End();
+
+    slot->re_result_eax = (uint32_t)re_result;
+    slot->re_result_edx = 0;
+    slot->original_ret_addr = R->Stack<DWORD>(0);
+    R->Stack(0, (DWORD)&PostProcStub);
+
+    return 0;
+}
