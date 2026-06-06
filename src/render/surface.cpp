@@ -1280,4 +1280,116 @@ bool XSurface::DrawDashedLine(
     return true;
 }
 
+// --- XSurface rectangle / shape drawing (Batch C) ---
+
+// IDA: 0x7BBAB0 — XSurface::Fill (51B)
+// vtable[6] 0x18 — fill entire surface with single color
+bool XSurface::Fill(uint32_t color)
+{
+    RectangleStruct rect;
+    GetRect(&rect);
+    return FillRectEx(rect, rect, color);
+}
+
+// IDA: 0x7BADC0 — XSurface::DrawRectEx (158B)
+// vtable[21] 0x54 — rectangle outline drawing 4 edges via DrawLineEx
+bool XSurface::DrawRectEx(
+    const RectangleStruct& clip_rect,
+    const RectangleStruct& draw_rect,
+    uint32_t color)
+{
+    Point2D tl(draw_rect.X, draw_rect.Y);
+    Point2D tr(draw_rect.X + draw_rect.Width - 1, draw_rect.Y);
+    Point2D br(draw_rect.X + draw_rect.Width - 1, draw_rect.Y + draw_rect.Height - 1);
+    Point2D bl(draw_rect.X, draw_rect.Y + draw_rect.Height - 1);
+
+    DrawLineEx(clip_rect, tl, tr, color);
+    DrawLineEx(clip_rect, tl, bl, color);
+    DrawLineEx(clip_rect, tr, br, color);
+    DrawLineEx(clip_rect, bl, br, color);
+    return true;
+}
+
+// IDA: 0x7BAD90 — XSurface::DrawRect (43B)
+// vtable[22] 0x58 — DrawRectEx wrapper with surface-level clip
+bool XSurface::DrawRect(const RectangleStruct& draw_rect, uint32_t color)
+{
+    RectangleStruct clip;
+    GetRect(&clip);
+    return DrawRectEx(clip, draw_rect, color);
+}
+
+// IDA: 0x7BB350 — XSurface::DrawEllipseOutline (1478B)
+// vtable[8] 0x20 — midpoint ellipse algorithm
+bool XSurface::DrawEllipseOutline(
+    const Point2D& center,
+    int radius_w, int radius_h,
+    const RectangleStruct& clip_rect,
+    uint16_t color)
+{
+    int cx = center.X;
+    int cy = center.Y;
+    int a2 = radius_w * radius_w;
+    int b2 = radius_h * radius_h;
+
+    SetPixel(Point2D(cx, cy + radius_h), color);
+    SetPixel(Point2D(cx, cy - radius_h), color);
+
+    int y = radius_h;
+    int x = 0;
+    int d1 = b2 - a2 * radius_h + a2 / 4;
+    int b2x2 = 0;
+
+    while (2 * b2 * (x + 1) < 2 * a2 * (y - 1))
+    {
+        if (d1 < 0)
+        {
+            d1 += 2 * b2x2 + 3 * b2;
+            ++x;
+        }
+        else
+        {
+            d1 += 2 * b2x2 - 2 * a2 * y + 3 * b2 + 2 * a2;
+            ++x;
+            --y;
+        }
+        b2x2 = 2 * b2 * x;
+
+        SetPixel(Point2D(cx + x, cy + y), color);
+        SetPixel(Point2D(cx - x, cy + y), color);
+        SetPixel(Point2D(cx + x, cy - y), color);
+        SetPixel(Point2D(cx - x, cy - y), color);
+    }
+
+    int a2y2 = 2 * a2 * y;
+    int d2 = b2 * (x + 1) * (x + 1) + a2 * (y - 1) * (y - 1) - a2 * b2;
+
+    while (y > 0)
+    {
+        if (d2 < 0)
+        {
+            d2 += 2 * b2 * (x + 1) - a2y2 + a2;
+            ++x;
+            --y;
+        }
+        else
+        {
+            d2 += a2 - a2y2;
+            --y;
+        }
+        a2y2 = 2 * a2 * y;
+
+        SetPixel(Point2D(cx + x, cy + y), color);
+        SetPixel(Point2D(cx - x, cy + y), color);
+        SetPixel(Point2D(cx + x, cy - y), color);
+        SetPixel(Point2D(cx - x, cy - y), color);
+    }
+
+    SetPixel(Point2D(cx + radius_w, cy), color);
+    SetPixel(Point2D(cx - radius_w, cy), color);
+
+    Unlock();
+    return true;
+}
+
 } // namespace gamemd

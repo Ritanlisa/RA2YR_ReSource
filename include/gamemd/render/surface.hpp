@@ -346,16 +346,12 @@ public:
         const RectangleStruct& clip_rect,
         const RectangleStruct& fill_rect, uint32_t color) override { return false; }
     virtual bool FillRect(const RectangleStruct& fill_rect, uint32_t color) override { return false; }
-    virtual bool Fill(uint32_t color) override { return false; }
-    virtual bool FillRectWithFlags(
-        const RectangleStruct& clip_rect,
-        const ColorStruct& color,
-        int opacity_percent) override { return false; }
+    virtual bool Fill(uint32_t color) override;
     virtual bool DrawEllipseOutline(
         const Point2D& center,
         int radius_w, int radius_h,
         const RectangleStruct& clip_rect,
-        uint16_t color) override { return false; }
+        uint16_t color) override;
     virtual bool SetPixel(const Point2D& point, uint32_t color) override;
     virtual uint32_t GetPixel(const Point2D& point) override;
     virtual bool DrawLineEx(
@@ -397,8 +393,8 @@ public:
         uint16_t color, bool fill_interior) override { return false; }
     virtual bool DrawRectEx(
         const RectangleStruct& clip_rect,
-        const RectangleStruct& draw_rect, uint32_t color) override { return false; }
-    virtual bool DrawRect(const RectangleStruct& draw_rect, uint32_t color) override { return false; }
+        const RectangleStruct& draw_rect, uint32_t color) override;
+    virtual bool DrawRect(const RectangleStruct& draw_rect, uint32_t color) override;
 
     virtual void* Lock(int x, int y) override { return nullptr; }
     virtual bool Unlock() override { return false; }
