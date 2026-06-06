@@ -34,9 +34,11 @@ Phase 2 现代化方向：
 | 编译警告 | **0** |
 | 已实现函数 | **~140** (~200+ stubs/empty) |
 | TODO/FIXME 标记 | **~260** (source 210 + headers 50) |
-| IDA 命名 | **~7,576 `::` + ~1,525 VerbNounPhrase + ~9,630 全局变量 + 25+ struct 类型** |
+| IDA 命名 | **~10,272 / 19,067 (53.9%)** — 含 7,576 `::` + 2,246 全局 + 450 其他 |
+| JSON 数据库 | **functions.json (15MB)** — 19,067 函数元数据 (调用约定/参数/返回类型/分类) |
 | MIX 格式支持 | RA2 加密 + 扩展无加密 + TD 传统 (全部验证) |
 | EXE 骨架 | **WinMain + Win32窗口 + DirectDraw7初始化 + MIX文件加载 + SHP渲染 + 主菜单系统** |
+| **Hook 框架** | **hook_dll.dll (13.5KB)** — 页面级内存事务 + 栈劫持影子对拍** |
 
 ### 构建命令
 
@@ -52,6 +54,74 @@ cmake --build build_linux
 # cnc-ddraw MinGW 交叉编译 (Linux 产出 ddraw.dll)
 cd cnc-ddraw && make _WIN32_WINNT=0x0400
 ```
+
+---
+
+## 步骤2 (进行中): 钩挂式重建 — 影子对拍验证
+
+### 架构
+
+我们采用**页面级内存事务 + 栈劫持**的"影子对拍"方案来逐个验证逆向函数：
+
+```
+1. Syringe注入 hook_dll.dll 到 gamemd.exe
+2. 钩子拦截函数入口 → 栈劫持跳转到PostProcStub
+3. 影子执行: RE版本运行在页面保护下(所有写自动回滚)
+4. 原函数恢复执行(状态完全干净)
+5. PostProcStub比较RE结果 vs 原结果 → 记录差异
+```
+
+### 核心组件 (`tools/hook_framework/`)
+
+| 文件 | 功能 |
+|------|------|
+| `shadow_txn.cpp` | **页面级内存事务**: VirtualProtect所有可写页→VEH拦截首次写入→备份4KB页→解保护。执行后完整恢复。 |
+| `shadow_veh.h` | **VEH异常处理器**: `AddVectoredExceptionHandler(1, handler)`，仅在AV异常(write)时备份/解保护页 |
+| `tls_storage.h` | **TLS存储**: `fs:[0x18]` 槽存 RE结果 + 原始返回地址 + 事务指针。避免与Syringe的`fs:[0x14]`冲突 |
+| `PostProcStub.asm` | **MASM后处理存根**: 原函数RET后跳转至此。比较EAX(原结果) vs RE结果→记录计数 |
+| `test_hooks.cpp` | **首批测试钩子**: Direction8 (0x565B40) + IsCloseEnough (0x4A0820) — 纯确定性函数 |
+| `ida_extract.py` | 从IDA生成 `functions.json` (19,067函数, 15MB, 12,613已命名) |
+| `codegen.py` | 从functions.json生成DEFINE_HOOK存根(DEFINE_HOOK格式, SYR_VER=2) |
+
+### 为什么用页面级事务而不是字段级备份
+
+| | 字段级备份 | 页面级事务 |
+|------|------|------|
+| 覆盖率 | 依赖IDA精确分析每个写目标 | **100%** — VEH捕获一切写 |
+| 写别名 (union/reinterpret_cast) | 可能遗漏 | 自动捕获 |
+| 隐式写 (malloc元数据等) | 不可追踪 | 自动捕获 |
+| 前置分析成本 | 需逐个分析写目标 | **零** — 全自动 |
+| 运行时成本 | O(写目标大小) | O(被写页数×4KB memcpy) |
+
+### 为什么gamemd.exe可以使用页面级事务
+
+- **单线程**: `CreateThread`/`InitializeCriticalSection`等全部零xref — 无多线程冲突
+- **无VEH竞争**: 只有一个线程，其他代码不会在影子执行期间写受保护页
+- **.data区段**: 872页 (3,571,712B) — 首调用VirtualProtect ~8.7ms，后续调用仅保护已记录脏页(~2-10页)
+
+### 构建命令
+
+```bash
+# 生成JSON数据库 (从IDA)
+cd tools/hook_framework && python ida_extract.py
+
+# 构建hook_dll.dll
+cmake -B build_hook -G "Visual Studio 17 2022" -A Win32
+cmake --build build_hook --config Release
+# 产物: build_hook/Release/hook_dll.dll (13.5KB, .syhks00区段)
+
+# 测试: Syringe.exe "gamemd.exe" -CD -i=hook_dll.dll
+```
+
+### 状态
+
+| 指标 | 数值 |
+|------|-------|
+| 构建状态 | 0 errors, .syhks00 section 已生成 |
+| 导出函数 | 3 (Direction8_shadow, IsCloseEnough_shadow, SyringeHandshake) |
+| JSON函数数据库 | 19,067条目, 12,613已命名, 分类完成 |
+| 待测试 | 用 gamemd.exe + Syringe 验证栈劫持+VEH流程 |
+| 待实施 | 代码生成器从 `completed: true` 函数生成全量钩子 |
 
 ---
 
