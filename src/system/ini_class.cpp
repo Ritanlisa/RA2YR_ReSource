@@ -10,6 +10,7 @@
 #include <string>
 #include <vector>
 #include <map>
+#include "gamemd/core/reverse_marker.hpp"
 
 namespace gamemd {
 

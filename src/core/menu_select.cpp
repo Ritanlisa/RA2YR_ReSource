@@ -15,6 +15,7 @@
 #include "gamemd/render/font_render.hpp"
 #include "gamemd/system/file_system.hpp"
 #include "gamemd/ui/gadget.hpp"
+#include "gamemd/core/reverse_marker.hpp"
 
 namespace gamemd {
 

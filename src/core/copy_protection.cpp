@@ -2,6 +2,7 @@
 // All three functions are bypassed by Ares/Phobos (always return TRUE).
 // We follow the same approach for standalone EXE.
 #include "gamemd/core/logging.hpp"
+#include "gamemd/core/reverse_marker.hpp"
 
 namespace gamemd {
 

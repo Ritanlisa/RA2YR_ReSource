@@ -9,6 +9,7 @@
 #include <cstring>
 #include <cctype>
 #include <cstdlib>
+#include "gamemd/core/reverse_marker.hpp"
 
 namespace gamemd
 {

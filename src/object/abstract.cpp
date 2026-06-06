@@ -4,6 +4,7 @@
 
 #include "gamemd/object/abstract.hpp"
 #include "gamemd/system/scenario.hpp"
+#include "gamemd/core/reverse_marker.hpp"
 
 namespace ra2 {
 namespace game {

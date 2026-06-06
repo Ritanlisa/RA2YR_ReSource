@@ -3,6 +3,7 @@
 
 #include <cstring>
 #include <cmath>
+#include "gamemd/core/reverse_marker.hpp"
 
 namespace ra2 {
 namespace game {

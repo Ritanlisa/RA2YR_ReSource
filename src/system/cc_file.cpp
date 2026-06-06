@@ -5,6 +5,7 @@
 #include "gamemd/core/logging.hpp"
 
 #include <cstring>
+#include "gamemd/core/reverse_marker.hpp"
 
 namespace gamemd
 {
