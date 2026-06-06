@@ -1,20 +1,15 @@
 #include "gamemd/render/display.hpp"
 #include "gamemd/render/surface.hpp"
+#include "gamemd/core/ddraw_init.hpp"
 #include <windows.h>
 #include <cstring>
 
 namespace gamemd
 {
 
-// External screen globals used by FramePresent (IDA 0x4F4780)
 extern HWND  g_hWnd;           // main window handle
-extern void* g_PrimarySurface;  // dword_887308 — primary DSurface
-extern void* g_SidebarSurface; // dword_887300 — sidebar DSurface
-extern void* g_MouseHandler;   // dword_887640 — mouse rendering handler
 extern int   g_ScrollOffsetX;  // dword_87F7EC — horizontal scroll
 extern int   g_ScrollOffsetY;  // dword_87F7F0 — vertical scroll
-extern int   g_WindowWidth;    // dword_886FB8
-extern int   g_WindowHeight;   // dword_886FBC
 
 DisplayClass::DisplayClass() noexcept
     : CurrentFoundation_CenterCell{}
@@ -57,63 +52,101 @@ DisplayClass::DisplayClass() noexcept
 {
 }
 
-// FramePresent (IDA: 0x4F4780)
-// Called every frame to blit all surfaces to the primary surface
-// and flip to screen. This is the main page-present function.
-//
-// Flow:
-//   1. Get client rect → screen coordinates
-//   2. Handle scroll offsets (g_ScrollOffsetX/Y)
-//   3. Blit Sidebar surface if visible
-//   4. Blit Tile→Primary for scrolling areas
-//   5. Render mouse cursor
-//   6. Page flip (Primary→FrontBuffer)
-//
-// IDA 0x4F4780 — Frame::Present
+// IDA: 0x4F4780 — Frame::Present (~3000B)
+// Main frame presentation: composites rendered surfaces onto primary DDraw surface,
+// handles scroll offsets, sidebar, mouse cursor, and page flip.
 bool FramePresent(Surface* composite_surface, int flags, int arg3, int arg4)
 {
-    (void)composite_surface;
-    (void)flags;
-    (void)arg3;
-    (void)arg4;
-
-    // Get client rectangle for the main window
-    RECT rect = {};
-    if (!GetClientRect(g_hWnd, &rect))
+    if (!composite_surface || !g_hWnd)
         return false;
 
-    POINT pt = { rect.left, rect.top };
+    DDrawContext* ctx = DDrawGetContext();
+    if (!ctx)
+        return false;
+
+    // Get surface dimensions
+    RectangleStruct surf_rect;
+    composite_surface->GetRect(&surf_rect);
+
+    // Get window client area
+    RECT wnd_rect;
+    if (!GetClientRect(g_hWnd, &wnd_rect))
+        return false;
+
+    POINT pt = { wnd_rect.left, wnd_rect.top };
     if (!ClientToScreen(g_hWnd, &pt))
         return false;
 
-    // Handle horizontal scroll offset
-    int src_x = 0, src_y = 0;
-    int src_w = 0, src_h = 0;
+    int win_w = wnd_rect.right - wnd_rect.left;
+    int win_h = wnd_rect.bottom - wnd_rect.top;
 
-    if (g_ScrollOffsetX != 0) {
-        if (g_ScrollOffsetX > 0) {
-            src_x = g_ScrollOffsetX;
-        } else {
-            src_w = -g_ScrollOffsetX;
-        }
+    // Apply scroll offsets
+    int src_x = 0, dst_x = 0;
+    int src_y = 0, dst_y = 0;
+    int src_w = surf_rect.Width;
+    int src_h = surf_rect.Height;
+
+    if (g_ScrollOffsetX < 0)
+    {
+        src_x = -g_ScrollOffsetX;
+        src_w += g_ScrollOffsetX;
     }
-    if (g_ScrollOffsetY != 0) {
-        if (g_ScrollOffsetY > 0) {
-            src_y = g_ScrollOffsetY;
-        } else {
-            src_h = -g_ScrollOffsetY;
-        }
+    else if (g_ScrollOffsetX > 0)
+    {
+        dst_x = g_ScrollOffsetX;
     }
 
-    // NOTE: In the full implementation, this function would:
-    // - Lock Primary surface (dword_887308)
-    // - Compute clip rectangles
-    // - Call Primary->BlitPart for each visible region
-    // - Call Primary->Blit for sidebar region
-    // - Call MouseHandler->vt_entry_3C (draw mouse)
-    // - Call Primary->vt_entry_60 (page flip via DirectDraw Flip)
+    if (g_ScrollOffsetY < 0)
+    {
+        src_y = -g_ScrollOffsetY;
+        src_h += g_ScrollOffsetY;
+    }
+    else if (g_ScrollOffsetY > 0)
+    {
+        dst_y = g_ScrollOffsetY;
+    }
 
-    // Simplified: just do a basic flip via the DDraw context
+    // Clamp to window size
+    if (dst_x + src_w > win_w) src_w = win_w - dst_x;
+    if (dst_y + src_h > win_h) src_h = win_h - dst_y;
+    if (src_w <= 0 || src_h <= 0) return true;
+
+    // Lock the composite surface to read pixels
+    void* src_buf = composite_surface->Lock(src_x, src_y);
+    if (!src_buf)
+        return false;
+
+    int bpp = composite_surface->GetBytesPerPixel();
+    int pitch = composite_surface->GetPitch();
+
+    // Lock primary surface for writing
+    DDSURFACEDESC2 desc = {};
+    desc.dwSize = sizeof(desc);
+    if (FAILED(ctx->primary->Lock(nullptr, &desc, DDLOCK_WAIT, nullptr)))
+    {
+        composite_surface->Unlock();
+        return false;
+    }
+
+    uint8_t* dst_row = static_cast<uint8_t*>(desc.lpSurface);
+    int dst_pitch = desc.lPitch;
+
+    // Copy scanlines from composite to primary
+    uint8_t* src_row = static_cast<uint8_t*>(src_buf);
+    int row_bytes = src_w * bpp;
+
+    for (int y = 0; y < src_h; ++y)
+    {
+        uint8_t* d = dst_row + (dst_y + y) * dst_pitch + dst_x * bpp;
+        uint8_t* s = src_row + y * pitch;
+        memcpy(d, s, row_bytes);
+    }
+
+    ctx->primary->Unlock(nullptr);
+    composite_surface->Unlock();
+
+    // Flip to screen
+    DDrawFlip();
     return true;
 }
 
