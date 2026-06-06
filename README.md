@@ -1,92 +1,149 @@
 # RA2YR ReSource
 
-从 `gamemd.exe` 逆向工程重建《红色警戒2/尤里的复仇》C++ 源码。
+Reverse-engineered C++ source code of Red Alert 2 / Yuri's Revenge from `gamemd.exe`.
 
-## 项目状态
+## Project Status
 
-这是 Red Alert 2: Yuri's Revenge 游戏引擎 `gamemd.exe` 的逆向重构项目。目标是对 7.6MB 的 32 位 Windows PE 进行完整反编译，该 PE 由 MSVC 6.0 编译，包含 19,059 个函数。
+This project reconstructs the RA2/YR game engine `gamemd.exe` — a 7.6MB 32-bit Windows PE compiled with MSVC 6.0, containing 19,059 functions.
 
-当前输出为静态库 `gamemd_core` + 可执行文件 `gamemd.exe`，使用 CMake + C++20 编译。长期目标是产出可直接替换原版的独立引擎，并逐步进行现代化重构。
+Current output: static library `gamemd_core` + executable `gamemd.exe`, built with CMake + C++20. The long-term goal is a fully independent, drop-in replacement engine with progressive modernization.
 
-## 架构概述
+## Architecture Overview
 
 ```
 RA2/YR (gamemd.exe)
-├── 19,059 函数（72 个 .CPP 源文件）
-├── AbstractClass 基类（4 vtable，多重继承 COM 层）
+├── 19,059 functions (across 72 .cpp source files)
+├── AbstractClass root (4 vtables, multiple-inheritance COM layer)
 ├── ObjectClass → MissionClass → RadioClass → TechnoClass → FootClass
-├── 类型/实例双重层次（TypeClass 原型模式）
-├── COM 接口层（INoticeSink/Source 已通过 RTTI 确认）
-└── 通过 Ares/Phobos, 基于 Syringe 通过 DLL 注入对 RA2/YR 进行纯功能扩展
+├── Type/Instance dual hierarchy (TypeClass prototype pattern)
+├── COM interface layer (INoticeSink/Source confirmed via RTTI)
+└── Extended ecosystem: Ares/Phobos (DLL injection mods via Syringe)
 ```
 
-## 四重参考源方法论
+## Four-Source Triangulation
 
-| 来源 | 用途 | 局限 |
-|------|------|------|
-| **RA1 源码**（CnC_Red_Alert/CODE/）| 框架/架构模板：类继承链、Mission 状态机、TARGET 编码 | RA2 偏移不同，含 MI/COM 层 |
-| **YRpp**（~150 头文件）| 运行时验证的成员偏移和 vtable 索引 | 声明层，无函数体 |
-| **IDA Pro**（gamemd.exe MCP）| 二进制级验证：构造函数分析、调用图、全局变量 | 伪代码可能有误 |
-| **cnc-ddraw**（./cnc-ddraw）| DirectDraw 接口参考与调试验证兼容层 | Phase 2 将替换为现代渲染引擎 |
+| Source | Purpose | Limitations |
+|--------|---------|-------------|
+| **RA1 Source** (CnC_Red_Alert/CODE/) | Framework/architecture: class hierarchy, mission state machine, TARGET encoding | RA2 offsets differ; has MI/COM layer |
+| **YRpp** (~150 headers) | Runtime-verified member offsets and vtable indices | Declaration-only, no function bodies |
+| **IDA Pro** (gamemd.exe MCP) | Binary-level verification: constructor analysis, call graphs, globals | Pseudocode may be imprecise |
+| **cnc-ddraw** (./cnc-ddraw) | DirectDraw reference + debug compatibility layer | Replaced in Phase 2 by modern renderer |
 
-## 当前代码结构
+## Code Structure
 
 ```
 RA2YR_ReSource/
-├── include/gamemd/          ← 91 个头文件（17 个子目录）
-│   ├── core/                # 枚举、数学、内存、向量、TARGET、坐标
+├── include/gamemd/          ← 91 headers (17 subdirectories)
+│   ├── core/                # Enums, math, memory, vectors, TARGET, coordinates
 │   ├── object/              # AbstractClass → ObjectClass → FootClass
-│   ├── type/                # 类型系统（原型模式）
-│   ├── entity/              # 动画、弹道、粒子、覆盖层等
-│   ├── structure/           # 步兵、单位、飞行器、建筑
-│   ├── house/               # 子阵营、子阵营类型、阵营
-│   |                        # ↑ House = 子阵营, Side = 阵营, 每个阵营包含1个及以上的子阵营
-│   └── system/              # 单元格、地图、场景、工厂
-├── src/                     ← 61 个 .cpp 实现文件
-├── app/                     ← EXE 入口点 (WinMain + 游戏循环 + DDraw初始化)
-├── CMakeLists.txt           # C++20, Win32 静态库 + 可执行文件
-└── LICENSE.md               # GPL v3（继承自 CnC_Red_Alert）
+│   ├── type/                # Type system (prototype pattern)
+│   ├── entity/              # Animations, bullets, particles, overlays
+│   ├── structure/           # Infantry, units, aircraft, buildings
+│   ├── house/               # Houses, house types, sides
+│   └── system/              # Cells, maps, scenarios, factories
+├── src/                     ← 61 .cpp implementation files
+├── app/                     ← EXE entry point (WinMain + game loop + DDraw init)
+├── injectFunctionTest/      ← Hook-based shadow execution framework (see below)
+├── CMakeLists.txt           # C++20, Win32 static lib + EXE
+└── LICENSE.md               # GPL v3 (inherited from CnC_Red_Alert)
 ```
 
-## 构建
+## Build
 
 ```bash
-cmake -B build -G "Visual Studio 17 2022" -A Win32
-cmake --build build --config Debug
+# gamemd_core.lib + gamemd.exe
+cmake -B build_win -G "Visual Studio 17 2022" -A Win32
+cmake --build build_win
+
+# Hook DLL for shadow execution testing
+cd injectFunctionTest
+cmake -B build_hook -A Win32 -DHOOK_OUTPUT_DIR="path/to/game/dir"
+cmake --build build_hook --config Release
 ```
 
-编译状态：64 个源文件可编译，总代码行数 ~13,500, 无错误与警告。
+Build status: 0 errors, 0 warnings. 72 compileable source files, ~17,000 lines (headers ~10,500 + source ~6,500).
 
-## RA1 结构对齐进度
+## Hook-Based Shadow Execution Framework
 
-| 已完成 | 未完成 |
-|--------|--------|
-| CellClass → 移除 AbstractClass 继承，改为独立类 | AbstractClass 4 COM 接口中 IPersistStream/IRTTITypeInfo 仍存疑（YRpp 推测，非 RTTI 确认） |
-| HouseClass → 删除多余虚函数重写 | TechnoClass MI 混入类（Flasher/Stage/Cargo/Door）未确认 RA2 是嵌入还是 MI |
-| AbstractClass → 纯虚函数改为非纯虚默认实现 | DriveClass 层未 IDA 验证（RA1 在 FootClass→UnitClass 之间是否被 ILocomotion 完全取代） |
-| TechnoClass → 语音/绘制/查询 18 个函数去虚拟化 | Mission AI 分发引擎 switch 逻辑因枚举命名空间冲突暂未完成 |
-| TARGET 编码系统（`core/target.hpp`） | ~252 个 unknown 成员待 IDA 重命名 |
-| COORDINATE/CELL 数学库（含 RA1 sin/cos 表） | — |
-| Mission 状态机 28 种 stub（`object/mission.hpp`） | — |
+Located in `injectFunctionTest/`. Validates reverse-engineered functions by hooking them into the original `gamemd.exe` at runtime:
 
-## 下阶段工作计划
+```
+Syringe → injects hook_dll.dll → intercepts function entry
+  → runs RE version in shadow (all writes auto-rolled-back via page-level memory transaction)
+  → runs original function (clean state)
+  → PostProcStub compares RE result vs original result
+  → logs mismatches
+```
 
-详见 `AGENTS.md`，按依赖顺序分为五阶段：
+### Key Components
 
-1. **IDA 重命名 unknown 成员**（P0: techno.hpp 35个 + foot.hpp 41个）
-2. **构建完整类结构**（对齐 RA1 命名，验证 sizeof）
-3. **根据 IDA 伪代码重写关键函数**（ObjectClass::Put、FootClass::MovementAI 等）
-4. **统一处理编译错误**（先修 object.hpp 前向声明→消除~1900连锁错误→逐一清完）
-5. **动态执行调试**（编译为 EXE，搭配 cnc-ddraw 兼容层运行，与原版对比验证）
+| File | Purpose |
+|------|---------|
+| `shadow_txn.cpp` | Page-level memory transaction (VirtualProtect + VEH) |
+| `PostProcStub.asm` | Stack-hijack post-process comparison stub |
+| `headless_server.cpp` | TCP command server (STATS/MEM/REG/HOOKS/QUIT) |
+| `tls_storage.h` | `fs:[0x18]` TLS slot (avoids Syringe's `fs:[0x14]`) |
+| `ida_extract.py` | IDA → `functions.json` (19,067 function metadata) |
+| `codegen.py` | JSON → DEFINE_HOOK code generator |
 
-## 许可证
+### Usage
 
-继承自 CnC_Red_Alert——GNU General Public License v3.0，含 Electronic Arts 附加条款（第 7 条）。
+```bash
+# Normal test
+Syringe.exe "gamemd.exe" -CD -i=hook_dll.dll
 
-## 致谢
+# Headless test (TCP server on port 25400)
+set SHADOW_HEADLESS=1
+Syringe.exe "gamemd.exe" -CD -i=hook_dll.dll
+# In another terminal: nc localhost 25400
+#   STATS → {"ok":true,"mismatch_count":0}
+#   MEM 0x812000 64 → hex dump
+#   QUIT
+```
 
-- **Westwood Studios** — 创作了原版《Command & Conquer》系列游戏
-- **Electronic Arts** — 在 GPL v3 下开源了 CnC_Red_Alert 源码
-- **Mentalmeisters** — 创作了 Mental Omega mod
-- **FunkyFr3sh/cnc-ddraw** — DirectDraw 兼容层，作为渲染接口逆向参考与调试运行时
-- **YRpp 项目** — DLL 注入逆向工程参考
+### Configuration (Environment Variables)
+
+| Variable | Default | Purpose |
+|----------|---------|---------|
+| `SHADOW_HEADLESS` | *(unset)* | Set to `1` to enable TCP command server |
+| `SHADOW_PORT` | `25400` | TCP server port |
+| `SHADOW_DATA_START` | `0x812000` | .data section start (for page protection) |
+| `SHADOW_DATA_END` | `0xB7A000` | .data section end |
+| `HOOK_OUTPUT_DIR` | `../build_win/Debug` | DLL copy destination |
+
+## RA1 vs RA2: Key Differences
+
+| Aspect | RA1 (CnC_Red_Alert) | RA2/YR (gamemd.exe) |
+|--------|---------------------|---------------------|
+| Compiler | Watcom C++ | MSVC 6.0 |
+| Inheritance | Single-inheritance | Multiple inheritance, 4 vtable pointers |
+| COM layer | None | 4 base interfaces |
+| Rendering | 2D isometric SHP | 3D Voxel + 2D SHP |
+| Movement | DriveClass track-based | ILocomotion COM interface |
+| Vessels | Separate VesselClass | Merged into UnitClass |
+| Fixed-point | `fixed` (16.16) | `float` |
+| Health | `short` (0–255) | `int` |
+| MIX encryption | RSA-wrapped Blowfish | Direct Blowfish key_source |
+
+## IDA Naming Progress
+
+| Category | Count | Percentage |
+|----------|-------|------------|
+| Named functions | 10,272 | 53.9% |
+| Member functions (`::`) | 7,576 | 76.2% |
+| Global functions | 2,246 | 28.7% |
+| Named global variables | 9,630 | 96.3% |
+| Total functions | 19,067 | — |
+
+## License
+
+GNU General Public License v3.0 with Electronic Arts additional terms (Clause 7). Inherited from CnC_Red_Alert. All contributions must respect this license.
+
+## Acknowledgements
+
+- **Westwood Studios** — Created the original Command & Conquer series
+- **Electronic Arts** — Open-sourced CnC_Red_Alert under GPL v3
+- **Mentalmeisters** — Created the Mental Omega mod
+- **FunkyFr3sh/cnc-ddraw** — DirectDraw compatibility layer
+- **YRpp Project** — Runtime reverse engineering reference
+- **Ares / Phobos** — DLL injection mod platform ecosystem

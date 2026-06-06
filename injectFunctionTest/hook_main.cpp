@@ -21,19 +21,7 @@ BOOL WINAPI DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved)
         DisableThreadLibraryCalls(hinstDLL);
         shadow::InitTLS();
         shadow::InstallVEH();
-
-        // Headless mode: set SHADOW_HEADLESS=1 before launching Syringe
-        // or pass -headless in gamemd.exe command line args
-        if (GetEnvironmentVariableA("SHADOW_HEADLESS", nullptr, 0) > 0
-            || strstr(GetCommandLineA(), "-headless")) {
-            int port = 25400;
-            char portBuf[16];
-            if (GetEnvironmentVariableA("SHADOW_PORT", portBuf, sizeof(portBuf)) > 0)
-                port = atoi(portBuf);
-            headless::StartServer(port, []() -> int {
-                return mismatch_counter;
-            });
-        }
+        // Server starts later via ExeRun hook (DllMain can't CreateThread safely)
         break;
 
     case DLL_PROCESS_DETACH:
@@ -54,4 +42,15 @@ SYRINGE_HANDSHAKE(pInfo)
         pInfo->Message = "Shadow Execution Framework v1.0";
     }
     return S_OK;
+}
+
+// ============================================================
+// ExeRun hook (0x7CD810) — safe server startup after DLL load
+// ============================================================
+DEFINE_HOOK(7CD810, HDS_StartServer, 9)
+{
+    headless::StartServer(25400, []() -> int {
+        return mismatch_counter;
+    });
+    return 0; // let original ExeRun continue (Ares/Phobos also hook this)
 }

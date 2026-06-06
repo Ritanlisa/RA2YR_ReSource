@@ -1,4 +1,4 @@
-// test_hooks.cpp — CellStruct::Set shadow hook + headless server
+// test_hooks.cpp — CellStruct::Set shadow hook + headless polling
 #include <windows.h>
 #include "Syringe.h"
 #include "tls_storage.h"
@@ -39,10 +39,10 @@ DEFINE_HOOK(42D470, CellStruct_Set_shadow, 5)
 }
 
 // MainGameFrame @ 0x48C8B0 — poll headless commands every frame
-// This hook fires every frame during the game loop, providing a
-// reliable entry point for the headless command server.
+// Server runs on dedicated thread; PollCommands is a no-op
+// but this hook confirms the game loop is active
 DEFINE_HOOK(48C8B0, HDS_PollCommands, 5)
 {
     headless::PollCommands();
-    return 0; // passthrough — let original run
+    return 0;
 }
