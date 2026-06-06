@@ -94,11 +94,15 @@ def find_markers(functions, raw_json, callee_map, callee_names, all_marked):
                         errors.append(err)
                         continue
                     
+                    # Prefer JSON function name (IDA naming)
+                    json_name = fn_info.get('name', fname)
+                    if json_name and json_name != '?':
+                        fname = json_name  # override with IDA name
+                    
                     completed = fn_info.get('hook',{}).get('completed', False)
                     if not completed:
                         json_line = get_json_line(addr, raw_json)
-                        json_name = fn_info.get('name', '?') if fn_info else '?'
-                        msg = f"{fp}:{c[:m.start()].count(chr(10))+1}: {addr} ({json_name}) — NOT completed (functions.json line {json_line})"
+                        msg = f"{fp}:{c[:m.start()].count(chr(10))+1}: {addr} ({fname}) — NOT completed (functions.json line {json_line})"
                         if enabled:
                             errors.append(msg)
                         else:

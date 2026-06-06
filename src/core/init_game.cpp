@@ -297,14 +297,14 @@ int  AudioCallback() {
     return 0; // No audio callback registered during init
 }
 // IDA 0x52CB50 â€ PlayIntroSequence: starts intro movie (44B, thunk)
-REVERSE(0x52cb50, "PlayIntroSequence: IDA verified", false) // auto-marked completed
+REVERSE(0x52cb50, "PlayIntroSequence: IDA verified", false /* not yet completed */) // auto-marked completed
 void PlayIntroSequence() {
     LOG_DEBUG("PlayIntroSequence: intro would play here");
 }
 // IDA 0x52FC20 â€ InitRandomSeed: seeds game RNG from system time
 // IDA 0x52FC20 â€ InitRandomSeed: srand(timeGetTime() ^ GetTickCount())
-REVERSE(0x52FC20, "InitRandomSeed: seed RNG from timer", false) /* first-5-bytes unsafe */
-REVERSE(0x52fc20, "InitRandomSeed: IDA verified", false) // auto-marked completed
+REVERSE(0x52FC20, "InitRandomSeed: seed RNG from timer", false /* not yet completed */) /* first-5-bytes unsafe */
+REVERSE(0x52fc20, "InitRandomSeed: IDA verified", false /* not yet completed */) // auto-marked completed
 void InitRandomSeed() {
     // IDA: GetSystemTime â† SHA1TickRNG Ã— 16 â† SeedInitRNG â† Randomizer setup
     // Simplified: seed with time + tick count
@@ -312,7 +312,7 @@ void InitRandomSeed() {
     LOG_DEBUG("InitRandomSeed: RNG seeded");
 }
 // ============================================================
-REVERSE(0x532150, "InitCommands: IDA verified", false) // auto-marked completed
+REVERSE(0x532150, "InitCommands: IDA verified", false /* not yet completed */) // auto-marked completed
 // IDA 0x532150 â€ InitCommands (7118B)
 // Registers ~40 CommandClass instances into g_CommandClassVector.
 // Each command class is instantiated (new(size) â† vtable assignment)
@@ -412,7 +412,7 @@ void* ConvertClassConstruct(void* palette, void* temperat_pal, void* surface, in
 
 // ============================================================
 // IDA: InitGame @ 0x52BA60 â€ returns 0 success, -1 failure, 1 CD abort
-REVERSE(0x52BA60, "InitGame: master init pipeline", true)
+REVERSE(0x52BA60, "InitGame: master init pipeline", false)
 int InitGame(bool no_cd)
 {
     if (no_cd)

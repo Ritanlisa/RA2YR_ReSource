@@ -5,7 +5,7 @@
 
 namespace gamemd {
 
-REVERSE(0x49f5c0, "CopyProtection::CheckLauncher: IDA verified", false) // auto-marked completed
+REVERSE(0x49f5c0, "CopyProtection::CheckLauncher: IDA verified", false /* not yet completed */) // auto-marked completed
 // IDA 0x49F5C0 â€ CopyProtection::CheckLauncher (80B)
 // Checks for launcher Mutex "48BC11BD..." to verify legitimate launch.
 // Bypassed: always returns TRUE for standalone EXE.
@@ -15,7 +15,7 @@ bool CopyProtectionCheckLauncher()
     return true;
 }
 
-REVERSE(0x49f620, "CopyProtection::NotifyLauncher: IDA verified", false) // auto-marked completed
+REVERSE(0x49f620, "CopyProtection::NotifyLauncher: IDA verified", false /* not yet completed */) // auto-marked completed
 // IDA 0x49F620 â€ CopyProtection::NotifyLauncher (250B)
 // Sends custom message 0xBEEF to launcher, waits for response.
 // Bypassed: always returns TRUE for standalone EXE.
