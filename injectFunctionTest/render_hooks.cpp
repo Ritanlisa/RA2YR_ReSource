@@ -1,10 +1,8 @@
-// render_hooks.cpp — Render function tracking with full comparisonResult.log output
+// render_hooks.cpp — Render function tracking with comparisonResult.log output
 #include <windows.h>
 #include <cstdio>
 #include "Syringe.h"
 #include "element_tracker.h"
-
-const char* Caller(DWORD v);
 
 namespace render_hooks {
 
@@ -13,17 +11,17 @@ static FILE* g_log = nullptr;
 struct HookEntry {
     DWORD addr;
     const char* name;
-    bool has_this;   // __thiscall: ECX = this pointer
-    int bpp;          // GetBytesPerPixel result (from ECX's vtable)
+    bool has_this;
 };
 static HookEntry g_entries[] = {
-    {0x7BAEB0, "SetPixel",       true,  0},
-    {0x7BA610, "DrawLineEx",     true,  0},
-    {0x7BADC0, "DrawRectEx",     true,  0},
-    {0x4BB620, "FillRectEx",     true,  0},
-    {0x4F4780, "FramePresent",   false, 0},
-    {0x4BB0D0, "Blit",           true,  0},
+    {0x7BAEB0, "SetPixel",       true},
+    {0x7BA610, "DrawLineEx",     true},
+    {0x7BADC0, "DrawRectEx",     true},
+    {0x4BB620, "FillRectEx",     true},
+    {0x4F4780, "FramePresent",   false},
+    {0x4BB0D0, "Blit",           true},
 };
+static const int g_n = sizeof(g_entries) / sizeof(g_entries[0]);
 static int g_counts[6] = {};
 
 static void hk_log(DWORD addr, DWORD ecx, DWORD ret_addr) {
@@ -31,47 +29,25 @@ static void hk_log(DWORD addr, DWORD ecx, DWORD ret_addr) {
         g_log = fopen("comparisonResult.log", "a");
         if (!g_log) return;
     }
-    HookEntry* he = nullptr;
-    for (int i = 0; i < 6; ++i) {
-        if (g_entries[i].addr == addr) { he = &g_entries[i]; break; }
+    int idx = -1;
+    for (int i = 0; i < g_n; ++i) {
+        if (g_entries[i].addr == addr) { idx = i; break; }
     }
-    if (!he) return;
+    if (idx < 0) return;
 
-    int n = ++g_counts[he - g_entries];
-    DWORD call_site = ret_addr - 5;
-
+    int n = ++g_counts[idx];
     if (n == 1)
-        fprintf(g_log, "\n[%s-0x%08X]\n", he->name, he->addr);
+        fprintf(g_log, "\n[%s-0x%08X]\n", g_entries[idx].name, g_entries[idx].addr);
 
-    // Try to resolve caller by checking if ret-5 calls the hook addr
-    // Simple heuristic: read the call instruction bytes at ret-5
-    unsigned char* pc = (unsigned char*)call_site;
-    const char* caller = "?";
-    if (pc[0] == 0xE8) {
-        // Relative call: E8 xx xx xx xx
-        DWORD target = call_site + 5 + *(DWORD*)(pc + 1);
-        if (target == addr) {
-            // It's a call to our function. Get the caller via the global function table.
-            // We can't easily resolve caller names without the MAP data.
-            // Use reverse_hooks.cpp's Caller function.
-            caller = Caller(call_site);
-        }
-    }
+    fprintf(g_log, "Call %d: <-0x%08X\n", n, ret_addr);
 
-    fprintf(g_log, "Call %d: %s()<-0x%08X\n", n, caller ? caller : "?", call_site);
-
-    if (he->has_this) {
-        // Read BPP from ECX's vtable: vtable[28] = GetBytesPerPixel at offset 0x70
+    if (g_entries[idx].has_this) {
         DWORD vt = *(DWORD*)ecx;
         if (vt) {
             typedef int (__thiscall *GetBPP_t)(void*);
             GetBPP_t getBPP = (GetBPP_t)(*(DWORD*)(vt + 0x70));
-            if (getBPP) {
-                int bpp = getBPP((void*)ecx);
-                fprintf(g_log, "  Input:  this=0x%08X  BPP=%d\n", ecx, bpp);
-            } else {
-                fprintf(g_log, "  Input:  this=0x%08X\n", ecx);
-            }
+            int bpp = getBPP ? getBPP((void*)ecx) : -1;
+            fprintf(g_log, "  Input:  this=0x%08X  BPP=%d\n", ecx, bpp);
         } else {
             fprintf(g_log, "  Input:  this=0x%08X\n", ecx);
         }
