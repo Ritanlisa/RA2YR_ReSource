@@ -356,8 +356,8 @@ public:
         int radius_w, int radius_h,
         const RectangleStruct& clip_rect,
         uint16_t color) override { return false; }
-    virtual bool SetPixel(const Point2D& point, uint32_t color) override { return false; }
-    virtual uint32_t GetPixel(const Point2D& point) override { return 0; }
+    virtual bool SetPixel(const Point2D& point, uint32_t color) override;
+    virtual uint32_t GetPixel(const Point2D& point) override;
     virtual bool DrawLineEx(
         const RectangleStruct& clip_rect, const Point2D& start,
         const Point2D& end, uint32_t color) override { return false; }
@@ -408,11 +408,11 @@ public:
     virtual bool PutPixel(
         const Point2D& point,
         uint16_t color,
-        const RectangleStruct& clip_rect) override { return false; }
+        const RectangleStruct& clip_rect) override;
 
     virtual uint16_t GetPixelAtCoords(
         const Point2D& point,
-        const RectangleStruct& clip_rect) override { return 0; }
+        const RectangleStruct& clip_rect) override;
 
     virtual bool DrawGradientLine(
         const Point2D& start, const Point2D& end,

@@ -586,4 +586,96 @@ Point2D Surface::DrawText(
     return DrawText(text, bounds, location, color, option3, flags);
 }
 
+// --- XSurface pixel operations (Batch A) ---
+
+// IDA: 0x7BAEB0 — XSurface::SetPixel (89B)
+// vtable[9]  0x24 — Lock(point) → check BPP → write pixel → Unlock
+bool XSurface::SetPixel(const Point2D& point, uint32_t color)
+{
+    void* buf = Lock(point.X, point.Y);
+    if (!buf)
+        return false;
+
+    if (GetBytesPerPixel() == 2)
+        *static_cast<uint16_t*>(buf) = static_cast<uint16_t>(color);
+    else
+        *static_cast<uint8_t*>(buf) = static_cast<uint8_t>(color);
+
+    Unlock();
+    return true;
+}
+
+// IDA: 0x7BAE60 — XSurface::GetPixel (80B)
+// vtable[10] 0x28 — Lock(point) → check BPP → read pixel → Unlock
+uint32_t XSurface::GetPixel(const Point2D& point)
+{
+    uint32_t result = 0;
+
+    void* buf = Lock(point.X, point.Y);
+    if (!buf)
+        return result;
+
+    if (GetBytesPerPixel() == 2)
+        result = *static_cast<uint16_t*>(buf);
+    else
+        result = *static_cast<uint8_t*>(buf);
+
+    Unlock();
+    return result;
+}
+
+// IDA: 0x7BAF90 — XSurface::PutPixel (130B)
+// vtable[34] 0x88 — bounds check → Lock → check BPP → write → Unlock
+bool XSurface::PutPixel(const Point2D& point, uint16_t color, const RectangleStruct& clip_rect)
+{
+    if (point.X < clip_rect.X)
+        return false;
+    if (point.X >= clip_rect.X + clip_rect.Width)
+        return false;
+    if (point.Y < clip_rect.Y)
+        return false;
+    if (point.Y >= clip_rect.Y + clip_rect.Height)
+        return false;
+
+    void* buf = Lock(point.X, point.Y);
+    if (!buf)
+        return false;
+
+    if (GetBytesPerPixel() == 2)
+        *static_cast<uint16_t*>(buf) = color;
+    else
+        *static_cast<uint8_t*>(buf) = static_cast<uint8_t>(color);
+
+    Unlock();
+    return true;
+}
+
+// IDA: 0x7BAF10 — XSurface::GetPixelAtCoords (119B)
+// vtable[35] 0x8C — bounds check → Lock → check BPP → read → Unlock
+uint16_t XSurface::GetPixelAtCoords(const Point2D& point, const RectangleStruct& clip_rect)
+{
+    uint16_t result = 0;
+
+    if (point.X < clip_rect.X)
+        return result;
+    if (point.X >= clip_rect.X + clip_rect.Width)
+        return result;
+    if (point.Y < clip_rect.Y)
+        return result;
+    if (point.Y >= clip_rect.Y + clip_rect.Height)
+        return result;
+
+    void* buf = Lock(point.X, point.Y);
+    if (!buf)
+        return result;
+
+    if (GetBytesPerPixel() == 2)
+        result = *static_cast<uint16_t*>(buf);
+    else
+        result = *static_cast<uint8_t*>(buf);
+
+    Unlock();
+    return result;
+}
+
 } // namespace gamemd
