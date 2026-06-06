@@ -1,200 +1,204 @@
 #!/usr/bin/env python3
-"""Scan source files for REVERSE macros, generate DEFINE_HOOK stubs with call logging.
+"""Scan REVERSE macros, generate DEFINE_HOOK stubs with parameterized log.
 
-Usage:
-    python gen_reverse_hooks.py
-    
-Scans: src/**/*.cpp, app/**/*.cpp, include/gamemd/**/*.hpp
-Generates: injectFunctionTest/gen/reverse_hooks.cpp with DEFINE_HOOKs
+Reads decompile-results/gamemd.exe.map for caller lookup.
+Output: injectFunctionTest/gen/reverse_hooks.cpp
 """
-import os, re, json
+import os, re, json, struct
 
-SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-PROJECT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, ".."))
-OUTPUT_PATH = os.path.join(SCRIPT_DIR, "gen", "reverse_hooks.cpp")
-JSON_PATH   = os.path.join(SCRIPT_DIR, "functions.json")
+SCRIPT = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.abspath(os.path.join(SCRIPT, ".."))
+OUT  = os.path.join(SCRIPT, "gen", "reverse_hooks.cpp")
+JSON = os.path.join(SCRIPT, "functions.json")
+MAP  = os.path.join(ROOT, "decompile-results", "gamemd.exe.map")
 
 def load_json():
-    if not os.path.exists(JSON_PATH):
-        return {}
-    with open(JSON_PATH) as f:
+    if not os.path.exists(JSON): return {}
+    with open(JSON) as f:
         data = json.load(f)
     return {fn['address'].lower(): fn for fn in data['functions']}
 
-def find_reverse_markers():
+def parse_map():
+    addrs = {}  # addr -> name
+    re_map = re.compile(r'^\s*0001:([0-9A-Fa-f]+)\s+(\w\S*)')
+    if not os.path.exists(MAP): return addrs
+    with open(MAP, errors='ignore') as f:
+        for line in f:
+            m = re_map.match(line)
+            if not m: continue
+            off = int(m.group(1), 16) + 0x401000
+            name = m.group(2)
+            if name.startswith(('sub_','null','loc_','unknown','SEH_','__catch$')): continue
+            if 'RTTI' in name or '`' in name or '<' in name: continue
+            if len(name) < 3: continue
+            if len(name) > 80: continue
+            addrs[off] = name
+    return addrs
+
+SIG = re.compile(
+    r'(?:inline\s+)?(?:static\s+)?(?:const\s+)?(?:virtual\s+)?'
+    r'(?:\w+(?:::+\w+)*[\*\s&]+)+(\w+)\s*\(([^)]*)\)',
+    re.IGNORECASE | re.DOTALL)
+
+def find_markers():
+    pat = re.compile(r'REVERSE\(\s*(0x[0-9A-Fa-f]+)\s*,\s*"([^"]*)"\s*,\s*(true|false)\s*\)', re.I)
     markers = []
-    pattern = re.compile(
-        r'REVERSE\(\s*(0x[0-9A-Fa-f]+)\s*,\s*"([^"]*)"\s*,\s*(true|false)\s*\)',
-        re.IGNORECASE
-    )
-    search_dirs = [
-        os.path.join(PROJECT_ROOT, "src"),
-        os.path.join(PROJECT_ROOT, "app"),
-        os.path.join(PROJECT_ROOT, "include", "gamemd"),
-    ]
-    fn_name_pattern = re.compile(
-        r'(?:inline\s+)?(?:static\s+)?(?:const\s+)?(?:virtual\s+)?'
-        r'(?:\w+(?:::+\w+)*[\*\s&]+)+'
-        r'(\w+)'
-        r'\s*\(', re.IGNORECASE
-    )
-    for search_dir in search_dirs:
-        for root, dirs, files in os.walk(search_dir):
-            for fname in files:
-                if not fname.endswith(('.cpp', '.hpp', '.h')):
-                    continue
-                fpath = os.path.join(root, fname)
-                with open(fpath, errors='ignore') as f:
-                    content = f.read()
-                for m in pattern.finditer(content):
-                    # Skip if inside a comment
-                    line_start = content.rfind('\n', 0, m.start()) + 1
-                    line = content[line_start:m.end()]
-                    if line.lstrip().startswith('//') or line.lstrip().startswith('/*'):
-                        continue
+    for d in ["src","app","include/gamemd"]:
+        for root,dirs,files in os.walk(os.path.join(ROOT,d)):
+            for fn in files:
+                if not fn.endswith(('.cpp','.hpp','.h')): continue
+                fp = os.path.join(root,fn)
+                with open(fp, errors='ignore') as f:
+                    c = f.read()
+                for m in pat.finditer(c):
                     addr = m.group(1).lower()
-                    desc = m.group(2)
-                    enabled = m.group(3) == 'true'
-                    if not enabled:
-                        continue
-                    rest = content[m.end():m.end()+200]
-                    fn_match = fn_name_pattern.search(rest)
-                    fn_name = fn_match.group(1) if fn_match else "unknown"
-                    relpath = os.path.relpath(fpath, PROJECT_ROOT)
-                    markers.append({
-                        'addr': addr, 'desc': desc,
-                        'fn_name': fn_name, 'file': relpath,
-                    })
+                    if m.group(3) != 'true': continue
+                    ls = c.rfind('\n',0,m.start())+1
+                    line = c[ls:m.end()]
+                    if line.lstrip().startswith('//'): continue
+                    rest = c[m.end():m.end()+300]
+                    s = SIG.search(rest)
+                    fname = s.group(1) if s else "?"
+                    params = []
+                    if s and s.group(2).strip() and s.group(2).strip()!='void':
+                        for p in s.group(2).split(','):
+                            ps = p.strip().split()
+                            if ps:
+                                n = ps[-1].lstrip('*& ')
+                                if n and n!='const': params.append(n)
+                    markers.append(dict(addr=addr,desc=m.group(2),fn_name=fname,
+                                        file=os.path.relpath(fp,ROOT),params=params))
     return markers
 
-def sanitize(name):
-    return name.replace('::', '_').replace('@', '_').replace('<','_').replace('>','_')
+def san(n):
+    return n.replace('::','_').replace('@','_').replace('<','_').replace('>','_')
 
-def generate_hooks(markers, functions):
-    out = []
-    w = out.append
-    w('// Auto-generated by gen_reverse_hooks.py — DO NOT EDIT')
+def reg_ref(r):
+    return {'ECX':'V.c','EDX':'V.d','Stack':'V.sp'}.get(r,'V.sp')
+
+def generate(markers, functions, fn_map):
+    out = []; w = out.append
+    w('// Auto-generated by gen_reverse_hooks.py')
     w('#include <windows.h>')
     w('#include <cstdio>')
     w('#include "Syringe.h"')
     w('#include "tls_storage.h"')
-    w('')
     w('extern "C" void PostProcStub();')
-    w('static FILE* g_log_file = nullptr;')
-    w('static int   g_call_counters[8192] = {};')
-    w('static const char* g_names[8192] = {};')
-    w('')
-    w('struct CallInputs {')
-    w('    DWORD eax, ecx, edx, ebx, esi, edi, ebp, esp;')
-    w('    DWORD re_result;')
-    w('};')
-    w('static CallInputs g_inputs[8192] = {};')
-    w('')
-    w('static void InitNames() {')
-    for i, m in enumerate(markers):
-        w(f'    g_names[{i}] = "{m["fn_name"]}";')
-    w('}')
-    w('static int _init_names = (InitNames(), 0);')
-    w('')
-    w('static int GetHookIndex(DWORD addr) {')
-    w('    static DWORD addrs[] = {')
-    for m in markers:
-        addr_int = int(m['addr'], 16)
-        w(f'        0x{addr_int:08X},  // {m["fn_name"]}')
-    w('        0 };')
-    w('    for (int i = 0; addrs[i]; ++i)')
-    w('        if (addrs[i] == addr) return i;')
-    w('    return -1;')
-    w('}')
-    w('')
-
-    w('static void LogCall(const char* name, DWORD addr, int idx,')
-    w('                    DWORD eax, DWORD ecx, DWORD edx, DWORD ebx,')
-    w('                    DWORD esi, DWORD edi, DWORD ebp, DWORD esp,')
-    w('                    DWORD re_out, DWORD orig_out) {')
-    w('    if (!g_log_file) {')
-    w('        g_log_file = fopen("comparisonResult.log", "a");')
-    w('        if (!g_log_file) return;')
-    w('    }')
-    w('    int call_num = ++g_call_counters[idx];')
-    w('    if (call_num == 1)')
-    w('        fprintf(g_log_file, "\\n[%s-0x%08X]\\n", name, addr);')
-    w('    fprintf(g_log_file, "Call %d:\\n", call_num);')
-    w('    fprintf(g_log_file, "  Input:  EAX=0x%08X  ECX=0x%08X  EDX=0x%08X  Stack:0x%08X\\n", eax, ecx, edx, esp);')
-    w('    fprintf(g_log_file, "  Return: hook=0x%08X    |    original=0x%08X\\n", re_out, orig_out);')
-    w('    fflush(g_log_file);')
-    w('}')
-    w('')
-
-    for m in markers:
-        addr_hex = m['addr'].lstrip('0x').upper()
-        safe = sanitize(m['fn_name'])
-        fn = functions.get(m['addr'])
-        conv = fn.get('call', {}).get('convention', 'unknown') if fn else 'unknown'
-        hook_size = fn.get('hook', {}).get('min_safe_size', 5) if fn else 5
-
-        w(f'// {m["fn_name"]} @ {m["addr"]} ({conv}) — {m["file"]}')
-        w(f'// {m["desc"]}')
-        w(f'DEFINE_HOOK({addr_hex}, Reverse_{safe}, {hook_size})')
-        w('{')
-        w(f'    int idx = GetHookIndex(0x{addr_hex});')
-        w('    auto& inp = g_inputs[idx];')
-        w('    inp.eax = R->EAX();')
-        w('    inp.ecx = R->ECX();')
-        w('    inp.edx = R->EDX();')
-        w('    inp.ebx = R->EBX();')
-        w('    inp.esi = R->ESI();')
-        w('    inp.edi = R->EDI();')
-        w('    inp.ebp = R->EBP();')
-        w('    inp.esp = R->ESP();')
-        w('')
-        w(f'    // TODO: call RE version — {m["fn_name"]}(params)')
-        w('    inp.re_result = 0; // placeholder')
-        w('')
-        w('    auto* slot = shadow::GetSlot();')
-        w('    slot->re_result_eax = inp.re_result;')
-        w(f'    slot->hook_addr = 0x{addr_hex};')
-        w('    slot->original_ret_addr = R->Stack<DWORD>(0);')
-        w('    R->Stack(0, (DWORD)&PostProcStub);')
-        w('')
-        w('    return 0;')
+    w('static FILE* f = nullptr;')
+    w('static int ctr[8192]={};')
+    w('static const char* nm[8192]={};')
+    w('struct S{DWORD a,c,d,b,si,di,bp,sp,re;};')
+    w('static S in[8192]={};')
+    # Names
+    w('static void NN(){')
+    for i,m in enumerate(markers): w(f'  nm[{i}]="{m["fn_name"]}";')
+    w('} static int _=(NN(),0);')
+    # Index lookup
+    w('static int I(DWORD x){static DWORD A[]={')
+    for m in markers: w(f'  0x{int(m["addr"],16):08X},')
+    w('  0};for(int i=0;A[i];++i)if(A[i]==x)return i;return -1;}')
+    # FormatInput per function
+    for i,m in enumerate(markers):
+        conv = functions.get(m['addr'],{}).get('call',{}).get('convention','unknown')
+        if conv == 'unknown': conv = 'stdcall'
+        params = m.get('params',[])
+        w(f'static void FI_{san(m["fn_name"])}(){{')
+        w(f'  auto&V=in[{i}];')
+        if params:
+            parts=[]; args=[]
+            for j,p in enumerate(params[:4]):
+                if conv == 'thiscall': reg = 'ECX' if j==0 else 'EDX' if j==1 else 'Stack'
+                else: reg = 'ECX' if j==0 else 'EDX' if j==1 else 'Stack'
+                parts.append(f'{p}({reg})=0x%08X')
+                args.append(reg_ref(reg))
+            w(f'  fprintf(f,"  Input:  {("  ".join(parts))}\\n",{", ".join(args)});')
+        else:
+            w(f'  fprintf(f,"  Input:  ECX=0x%08X  EDX=0x%08X  ESP=0x%08X\\n",V.c,V.d,V.sp);')
         w('}')
         w('')
-
-    w('// ============================================================')
-    w('// Post-process logging (called from PostProcStub after original RET)')
-    w('// ============================================================')
-    w('extern "C" void __cdecl LogComparison(DWORD orig_result, DWORD hook_addr) {')
-    w('    int idx = GetHookIndex(hook_addr);')
-    w('    if (idx < 0) return;')
-    w('    auto& inp = g_inputs[idx];')
-    w('    const char* name = g_names[idx] ? g_names[idx] : "?";')
-    w('    LogCall(name, hook_addr, idx,')
-    w('        inp.eax, inp.ecx, inp.edx, inp.ebx,')
-    w('        inp.esi, inp.edi, inp.ebp, inp.esp,')
-    w('        inp.re_result, orig_result);')
+    # FI dispatcher
+    w('static void FI(int i){switch(i){')
+    for i,m in enumerate(markers): w(f'  case {i}:FI_{san(m["fn_name"])}();break;')
+    w('  default:fprintf(f,"  Input: ???\\n");break;}}')
+    w('')
+    # Function address table (from .map)
+    w('struct FE{DWORD a;const char*n;};')
+    w('static FE F[]={')
+    sorted_addrs = sorted(fn_map.keys())
+    count = 0
+    for a in sorted_addrs:
+        n = fn_map[a]
+        w(f'  {{0x{a:08X},"{n}"}},')
+        count += 1
+        if count >= 8000: break
+    w('  {0,0}};')
+    w(f'// {count} entries from gamemd.exe.map')
+    # Binary search caller — use v (not r) to avoid conflict with DEFINE_HOOK R parameter
+    w(f'static const char* Caller(DWORD v){{')
+    w(f'  int lo=1,hi={count};')
+    w('  while(lo<hi){int m=(lo+hi)/2;if(v<F[m].a)hi=m;else lo=m+1;}')
+    w('  return F[lo-1].n;')
+    w('}')
+    # Log
+    w('static void Log(DWORD a,int i,DWORD re,DWORD orig,DWORD ret){')
+    w('  if(!f){f=fopen("comparisonResult.log","a");if(!f)return;}')
+    w('  int n=++ctr[i];')
+    w('  if(n==1)fprintf(f,"\\n[%s-0x%08X]\\n",nm[i]?nm[i]:"?",a);')
+    w('  const char* cn=Caller(ret-5);')
+    w('  fprintf(f,"Call %d: %s()<-0x%08X\\n",n,cn?cn:"?",ret-5);')
+    w('  FI(i);')
+    w('  fprintf(f,"  Return: hook=0x%08X    |    original=0x%08X\\n",re,orig);')
+    w('  fflush(f);')
+    w('}')
+    # Hooks
+    for m in markers:
+        ah=m['addr'].lstrip('0x').upper();s=san(m['fn_name'])
+        fn=functions.get(m['addr'])
+        hs=fn.get('hook',{}).get('min_safe_size',5) if fn else 5
+        conv=fn.get('call',{}).get('convention','?') if fn else '?'
+        w(f'// {m["fn_name"]} @ {m["addr"]} ({conv})')
+        w(f'// {m["desc"]}')
+        w(f'DEFINE_HOOK({ah}, Rev_{s}, {hs})')
+        w('{')
+        w(f'  int idx=I(0x{ah});')
+        w('  auto&V=in[idx];')
+        w('  V.a=R->EAX();V.c=R->ECX();V.d=R->EDX();')
+        w('  V.b=R->EBX();V.si=R->ESI();V.di=R->EDI();')
+        w('  V.bp=R->EBP();V.sp=R->ESP();')
+        w(f'  // TODO: call RE version — {m["fn_name"]}')
+        w('  V.re=0;')
+        w('  auto*s=shadow::GetSlot();')
+        w('  s->re_result_eax=V.re;')
+        w(f'  s->hook_addr=0x{ah};')
+        w('  s->original_ret_addr=R->Stack<DWORD>(0);')
+        w('  R->Stack(0,(DWORD)&PostProcStub);')
+        w('  return 0;')
+        w('}')
+    # LogComparison
+    w('extern "C" void __cdecl LogComparison(DWORD orig,DWORD addr){')
+    w('  int idx=I(addr);if(idx<0)return;')
+    w('  auto&V=in[idx];')
+    w('  auto*s=shadow::GetSlot();')
+    w('  DWORD ret=s?s->original_ret_addr:0;')
+    w('  Log(addr,idx,V.re,orig,ret);')
     w('}')
     return '\n'.join(out)
 
 def main():
-    print("Scanning for REVERSE markers...")
-    markers = find_reverse_markers()
-    print(f"  Found {len(markers)} enabled markers:")
+    markers = find_markers()
+    print(f"Found {len(markers)} enabled:")
     for m in markers:
-        print(f"    {m['addr']}: {m['fn_name']} — {m['desc'][:60]}")
-    if not markers:
-        print("  No enabled markers found. Aborting.")
-        return
-    print(f"\nLoading functions.json...")
+        print(f"  {m['addr']}: {m['fn_name']}({','.join(m.get('params',[]))})")
+    if not markers: return print("None. Add REVERSE(...,true) markers.")
     functions = load_json()
-    print(f"  {len(functions)} functions in database")
-    print(f"\nGenerating {OUTPUT_PATH}...")
-    code = generate_hooks(markers, functions)
-    os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
-    with open(OUTPUT_PATH, 'w') as f:
-        f.write(code)
-    print(f"  Generated {len(markers)} hooks")
-    print("\nNext: rebuild hook DLL, launch game, check comparisonResult.log")
+    print(f"Loading {MAP}...")
+    fn_map = parse_map()
+    print(f"  {len(fn_map)} named function entries")
+    code = generate(markers, functions, fn_map)
+    os.makedirs(os.path.dirname(OUT), exist_ok=True)
+    with open(OUT,'w') as f: f.write(code)
+    sz = os.path.getsize(OUT)
+    print(f"Generated {OUT} ({sz/1024:.0f}KB)")
 
 if __name__ == '__main__':
     main()
