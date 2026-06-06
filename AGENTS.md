@@ -38,7 +38,10 @@ Phase 2 现代化方向：
 | JSON 数据库 | **functions.json (15MB)** — 19,067 函数元数据 (调用约定/参数/返回类型/分类) |
 | MIX 格式支持 | RA2 加密 + 扩展无加密 + TD 传统 (全部验证) |
 | EXE 骨架 | **WinMain + Win32窗口 + DirectDraw7初始化 + MIX文件加载 + SHP渲染 + 主菜单系统** |
-| **Hook 框架** | **hook_dll.dll (13.5KB)** — 页面级内存事务 + 栈劫持影子对拍** |
+| **Hook 框架** | **hook_dll.dll** — 页面级内存事务 + 栈劫持影子对拍 |
+| **REVERSE 管道** | **gen_reverse_hooks.py** — 自动扫描→完成检查→依赖验证→生成钩子 |
+| **已标记函数** | **~32** 个 REVERSE 标记 (39 个已完成) |
+| **Headless 服务器** | **TCP :25400** — STATS/MEM/ELEMENTS/CLICKAT/QUIT 等 22 命令 |
 
 ### 构建命令
 
@@ -71,17 +74,32 @@ cd cnc-ddraw && make _WIN32_WINNT=0x0400
 5. PostProcStub比较RE结果 vs 原结果 → 记录差异
 ```
 
-### 核心组件 (`tools/hook_framework/`)
+### 核心组件 (`injectFunctionTest/`)
 
 | 文件 | 功能 |
 |------|------|
 | `shadow_txn.cpp` | **页面级内存事务**: VirtualProtect所有可写页→VEH拦截首次写入→备份4KB页→解保护。执行后完整恢复。 |
 | `shadow_veh.h` | **VEH异常处理器**: `AddVectoredExceptionHandler(1, handler)`，仅在AV异常(write)时备份/解保护页 |
 | `tls_storage.h` | **TLS存储**: `fs:[0x18]` 槽存 RE结果 + 原始返回地址 + 事务指针。避免与Syringe的`fs:[0x14]`冲突 |
-| `PostProcStub.asm` | **MASM后处理存根**: 原函数RET后跳转至此。比较EAX(原结果) vs RE结果→记录计数 |
-| `test_hooks.cpp` | **首批测试钩子**: Direction8 (0x565B40) + IsCloseEnough (0x4A0820) — 纯确定性函数 |
-| `ida_extract.py` | 从IDA生成 `functions.json` (19,067函数, 15MB, 12,613已命名) |
+| `PostProcStub.asm` | **MASM后处理存根**: 原函数RET后跳转至此。比较EAX(原结果) vs RE结果→记录计数→调用LogComparison写comparisonResult.log |
+| `test_hooks.cpp` | **首批测试钩子**: CellStruct::Set (0x42D470) — 已验证 0 对拍失误 |
+| `ida_extract.py` | 从IDA生成 `functions.json` (19,067函数, 15MB) |
 | `codegen.py` | 从functions.json生成DEFINE_HOOK存根(DEFINE_HOOK格式, SYR_VER=2) |
+| `gen_reverse_hooks.py` | **REVERSE管道核心**: 扫描REVERSE标记→完成检查→依赖验证(#pragma/#error)→生成钩子→comparisonResult.log |
+| `headless_server.h/cpp` | **TCP命令服务器**: 独立线程, STATS/MEM/REG/HOOKS/ELEMENTS/SCREEN/CLICKAT/QUIT等22条命令 |
+| `render_hooks.cpp` | **渲染拦截**: DSurface::Blit钩子捕获所有屏幕元素(SHP/BINK/Text) |
+| `element_tracker.h/cpp` | **元素追踪**: 4096槽位, 记录类型/位置/尺寸/源表面/时间戳 |
+| `callee_map.json` | **依赖图**: 39个已完成函数的调用关系(10K唯一被调用者, IDA导出) |
+
+### REVERSE 管道 — 依赖验证规则
+
+| 条件 | 结果 |
+|------|------|
+| REVERSE启用 + 函数未完成 | **ERROR** (构建失败) |
+| REVERSE禁用 + 函数未完成 | **WARNING** (`functions.json` 行号) |
+| 地址不在 `functions.json` 中 | **ERROR** |
+| FuncA(启用)调用FuncB(未完成) | **ERROR** — 无论FuncB是否有标记 |
+| FuncA(禁用)调用FuncB(未完成+无标记) | **WARNING** — 未标记依赖 |
 
 ### 为什么用页面级事务而不是字段级备份
 
@@ -103,14 +121,18 @@ cd cnc-ddraw && make _WIN32_WINNT=0x0400
 
 ```bash
 # 生成JSON数据库 (从IDA)
-cd tools/hook_framework && python ida_extract.py
+cd injectFunctionTest && python ida_extract.py
+
+# 生成REVERSE钩子 (从标记扫描)
+cd injectFunctionTest && python gen_reverse_hooks.py
 
 # 构建hook_dll.dll
-cmake -B build_hook -G "Visual Studio 17 2022" -A Win32
+cmake -B build_hook -G "Visual Studio 17 2022" -A Win32 -DHOOK_OUTPUT_DIR=D:/RA2MD
 cmake --build build_hook --config Release
-# 产物: build_hook/Release/hook_dll.dll (13.5KB, .syhks00区段)
+# 产物: build_hook/Release/hook_dll.dll (.syhks00区段)
 
 # 测试: Syringe.exe "gamemd.exe" -CD -i=hook_dll.dll
+# Headless: set SHADOW_HEADLESS=1 && Syringe.exe "gamemd.exe"
 ```
 
 ### 状态
@@ -118,10 +140,12 @@ cmake --build build_hook --config Release
 | 指标 | 数值 |
 |------|-------|
 | 构建状态 | 0 errors, .syhks00 section 已生成 |
-| 导出函数 | 3 (Direction8_shadow, IsCloseEnough_shadow, SyringeHandshake) |
+| 导出函数 | 3 (CellStruct_Set_shadow, SyringeHandshake, PostProcStub) |
 | JSON函数数据库 | 19,067条目, 12,613已命名, 分类完成 |
-| 待测试 | 用 gamemd.exe + Syringe 验证栈劫持+VEH流程 |
-| 待实施 | 代码生成器从 `completed: true` 函数生成全量钩子 |
+| **已完成函数** | **39** (faithful IDA translations, completed:true) |
+| **REVERSE标记** | **~32** (跨14个源文件, 全部已禁用) |
+| **依赖验证** | 39函数→10K唯一被调用者 (callee_map.json) |
+| 待测试 | 完成所有依赖后再启用钩子进行对拍 |
 
 ---
 
