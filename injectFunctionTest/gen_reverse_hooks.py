@@ -179,11 +179,12 @@ def generate(markers, functions, fn_map):
     w('#include "tls_storage.h"')
     w('extern "C" void PostProcStub();')
     w('static FILE* f = nullptr;')
-    w(f'static int ctr[{len(markers)}]={{}};')
-    w(f'static const char* nm[{len(markers)}]={{}};')
-    w(f'static DWORD addr_tbl[{len(markers)}]={{}};')
+    nmk = max(len(markers), 1)
+    w(f'static int ctr[{nmk}]={{}};')
+    w(f'static const char* nm[{nmk}]={{}};')
+    w(f'static DWORD addr_tbl[{nmk}]={{}};')
     w('struct S{DWORD a,c,d,b,si,di,bp,sp,re;};')
-    w(f'static S in[{len(markers)}]={{}};')
+    w(f'static S in[{nmk}]={{}};')
     # Init
     w('static void NN(){')
     for i,m in enumerate(markers):
@@ -247,7 +248,7 @@ def generate(markers, functions, fn_map):
     # No Call summary — called from hook_main.cpp DllMain detach
     w('void WriteNoCallSummary(){')
     w('  if(!f){f=fopen("comparisonResult.log","a");if(!f)return;}')
-    w(f'  for(int i=0;i<{len(markers)};++i){{')
+    w(f'  for(int i=0;i<{nmk};++i){{')
     w('    if(ctr[i]==0){')
     w('      fprintf(f,"\\n[%s-0x%08X]\\nNo Call\\n\\n",nm[i]?nm[i]:"?",addr_tbl[i]);')
     w('    }')
@@ -433,12 +434,14 @@ def main():
         print(f"\n{len(errors)} ERROR(s): enabled hooks on uncompleted functions!")
         sys.exit(1)
     
-    if markers:
-        fn_map = parse_map()
-        code = generate(markers, functions, fn_map)
-        os.makedirs(os.path.dirname(OUT), exist_ok=True)
-        with open(OUT,'w') as f: f.write(code)
-        print(f"Generated {OUT} ({os.path.getsize(OUT)/1024:.0f}KB)")
+    if not markers:
+        print("No enabled hooks. Add REVERSE(..., true) markers.")
+
+    fn_map = parse_map()
+    code = generate(markers, functions, fn_map)
+    os.makedirs(os.path.dirname(OUT), exist_ok=True)
+    with open(OUT,'w') as f: f.write(code)
+    print(f"Generated {OUT} ({os.path.getsize(OUT)/1024:.0f}KB)")
     
     write_check_file(markers, warnings, errors)
     if warnings:

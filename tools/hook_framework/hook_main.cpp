@@ -24,7 +24,7 @@ BOOL WINAPI DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved)
         // Headless mode: set SHADOW_HEADLESS=1 before launching Syringe
         // or pass -headless in gamemd.exe command line args
         if (GetEnvironmentVariableA("SHADOW_HEADLESS", nullptr, 0) > 0
-            || strstr(GetCommandLineA(), "-headless")) {
+            || strstr(GetCommandLineA(), "-headless")|| strstr(GetCommandLineA(), "-HEADLESS")) {
             int port = 25400;
             char portBuf[16];
             if (GetEnvironmentVariableA("SHADOW_PORT", portBuf, sizeof(portBuf)) > 0)
