@@ -360,9 +360,9 @@ public:
     virtual uint32_t GetPixel(const Point2D& point) override;
     virtual bool DrawLineEx(
         const RectangleStruct& clip_rect, const Point2D& start,
-        const Point2D& end, uint32_t color) override { return false; }
+        const Point2D& end, uint32_t color) override;
     virtual bool DrawLine(
-        const Point2D& start, const Point2D& end, uint32_t color) override { return false; }
+        const Point2D& start, const Point2D& end, uint32_t color) override;
     virtual bool DrawLineZBuf(
         const Point2D& start, const Point2D& end,
         uint16_t color, int fade_start, int fade_end,
@@ -383,11 +383,11 @@ public:
         int fade_start, int fade_end) override { return false; }
     virtual bool WalkLine(
         const Point2D& start, const Point2D& end,
-        void (*callback)(const Point2D&)) override { return false; }
+        void (*callback)(const Point2D&)) override;
     virtual bool DrawDashedLine(
         const Point2D& start, const Point2D& end,
         uint16_t color, const uint8_t stipple[16],
-        int dash_offset) override { return false; }
+        int dash_offset) override;
     virtual bool DrawDashedLineStipple(
         const Point2D& start, const Point2D& end,
         uint16_t color, const uint8_t stipple[16],

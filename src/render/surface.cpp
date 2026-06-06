@@ -842,4 +842,442 @@ uint16_t XSurface::GetPixelAtCoords(const Point2D& point, const RectangleStruct&
     return result;
 }
 
+// --- XSurface line drawing (Batch B) ---
+
+// IDA: 0x7BAB90 — XSurface::WalkLine (511B)
+// vtable[17] 0x44 — Bresenham walker with callback
+bool XSurface::WalkLine(
+    const Point2D& start, const Point2D& end,
+    void (*callback)(const Point2D&))
+{
+    RectangleStruct clip;
+    GetRect(&clip);
+
+    RectangleStruct clipped;
+    ClipRectIntersection(&clipped, &clip, &clip, nullptr, nullptr);
+
+    int sx = start.X + clip.X;
+    int sy = start.Y + clip.Y;
+    int ex = end.X + clip.X;
+    int ey = end.Y + clip.Y;
+
+    int p1[2] = { sx, sy };
+    int p2[2] = { ex, ey };
+    if (!ClipLine(p1, p2, reinterpret_cast<int*>(&clipped)))
+        return false;
+
+    if (p1[0] > p2[0])
+    {
+        int tx = p1[0], ty = p1[1];
+        p1[0] = p2[0]; p1[1] = p2[1];
+        p2[0] = tx;     p2[1] = ty;
+    }
+
+    int x1 = p1[0], y1 = p1[1];
+    int x2 = p2[0], y2 = p2[1];
+
+    int dx = x2 - x1;
+    int dy = y2 - y1;
+    int step_y = 1;
+    if (dy < 0) { dy = -dy; step_y = -1; }
+
+    if (dy == 0)
+    {
+        for (int x = x1; x <= x2; ++x)
+            callback(Point2D(x, y1));
+    }
+    else if (dx == 0)
+    {
+        int y_start = (y1 <= y2) ? y1 : y2;
+        int y_count = dy >= 0 ? dy : -dy;
+        for (int i = 0; i <= y_count; ++i)
+            callback(Point2D(x1, y_start + i));
+    }
+    else if (dx >= dy)
+    {
+        int d = 2 * dy - dx;
+        int y = y1;
+        for (int x = x1; x <= x2; ++x)
+        {
+            callback(Point2D(x, y));
+            if (d > 0) { y += step_y; d -= 2 * dx; }
+            d += 2 * dy;
+        }
+    }
+    else
+    {
+        int y_start = (y1 <= y2) ? y1 : y2;
+        int y_end   = (y1 <= y2) ? y2 : y1;
+        int d = 2 * dx - dy;
+        int x = (y1 <= y2) ? x1 : x2;
+        int x_step = (x1 <= x2) ? 1 : -1;
+        for (int y = y_start; y <= y_end; ++y)
+        {
+            callback(Point2D(x, y));
+            if (d > 0) { x += x_step; d -= 2 * dy; }
+            d += 2 * dx;
+        }
+    }
+
+    Unlock();
+    return true;
+}
+
+// IDA: 0x7BA610 — XSurface::DrawLineEx (685B)
+// vtable[11] 0x2C — clipped line with inline Bresenham pixel write
+bool XSurface::DrawLineEx(
+    const RectangleStruct& clip_rect,
+    const Point2D& start, const Point2D& end,
+    uint32_t color)
+{
+    RectangleStruct surf_rect;
+    GetRect(&surf_rect);
+
+    RectangleStruct clipped;
+    ClipRectIntersection(&clipped, &clip_rect, &surf_rect, nullptr, nullptr);
+
+    int sx = start.X + clipped.X;
+    int sy = start.Y + clipped.Y;
+    int ex = end.X + clipped.X;
+    int ey = end.Y + clipped.Y;
+
+    int p1[2] = { sx, sy };
+    int p2[2] = { ex, ey };
+    if (!ClipLine(p1, p2, reinterpret_cast<int*>(&clipped)))
+        return false;
+
+    if (p1[0] > p2[0])
+    {
+        int tx = p1[0], ty = p1[1];
+        p1[0] = p2[0]; p1[1] = p2[1];
+        p2[0] = tx;     p2[1] = ty;
+    }
+
+    int x1 = p1[0], y1 = p1[1];
+    int x2 = p2[0], y2 = p2[1];
+    int bpp = GetBytesPerPixel();
+
+    void* buf = Lock(x1, y1);
+    if (!buf)
+        return false;
+
+    int pitch = GetPitch();
+
+    if (y1 == y2)
+    {
+        if (bpp == 1)
+        {
+            auto* p = static_cast<uint8_t*>(buf);
+            for (int x = x1; x <= x2; ++x)
+                p[x - x1] = static_cast<uint8_t>(color);
+        }
+        else
+        {
+            auto* p = static_cast<uint16_t*>(buf);
+            for (int x = x1; x <= x2; ++x)
+                p[x - x1] = static_cast<uint16_t>(color);
+        }
+        Unlock();
+        return true;
+    }
+
+    if (x1 == x2)
+    {
+        int y_start = (y1 <= y2) ? y1 : y2;
+        int y_count = (y1 <= y2) ? (y2 - y1) : (y1 - y2);
+        bool y_down = y2 >= y1;
+
+        if (bpp == 1)
+        {
+            uint8_t* p = static_cast<uint8_t*>(buf);
+            for (int i = 0; i <= y_count; ++i)
+            {
+                *p = static_cast<uint8_t>(color);
+                p = reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(p) + (y_down ? pitch : -pitch));
+            }
+        }
+        else
+        {
+            uint16_t* p = static_cast<uint16_t*>(buf);
+            for (int i = 0; i <= y_count; ++i)
+            {
+                *p = static_cast<uint16_t>(color);
+                uint8_t* bp = reinterpret_cast<uint8_t*>(p);
+                bp += (y_down ? pitch : -pitch);
+                p = reinterpret_cast<uint16_t*>(bp);
+            }
+        }
+        Unlock();
+        return true;
+    }
+
+    int dx = x2 - x1;
+    int dy = y2 - y1;
+    int step_y = 1;
+    int abs_dy = dy;
+    if (dy < 0) { abs_dy = -dy; step_y = -1; }
+
+    if (dx >= abs_dy)
+    {
+        int d = 2 * abs_dy - dx;
+        int cur_y = y1;
+
+        if (bpp == 1)
+        {
+            uint8_t* p = static_cast<uint8_t*>(buf);
+            uint8_t  bc = static_cast<uint8_t>(color);
+            int row_offset = step_y * pitch;
+
+            for (int x = 0; x <= dx; ++x)
+            {
+                p[x] = bc;
+                if (d > 0) { p += row_offset; cur_y += step_y; d -= 2 * dx; }
+                d += 2 * abs_dy;
+            }
+        }
+        else
+        {
+            uint16_t* p = static_cast<uint16_t*>(buf);
+            uint16_t  wc = static_cast<uint16_t>(color);
+            int row_offset = step_y * (pitch / 2);
+
+            for (int x = 0; x <= dx; ++x)
+            {
+                p[x] = wc;
+                if (d > 0) { p += row_offset; cur_y += step_y; d -= 2 * dx; }
+                d += 2 * abs_dy;
+            }
+        }
+    }
+    else
+    {
+        int y_start = (y1 <= y2) ? y1 : y2;
+        int y_end   = (y1 <= y2) ? y2 : y1;
+        int d = 2 * dx - abs_dy;
+        int cur_x = 0;
+
+        bool y_down = y2 >= y1;
+
+        if (bpp == 1)
+        {
+            uint8_t* p = static_cast<uint8_t*>(buf);
+            uint8_t  bc = static_cast<uint8_t>(color);
+            int row_offset = (y_down ? pitch : -pitch);
+
+            for (int y = y_start; y <= y_end; ++y)
+            {
+                p[cur_x] = bc;
+                if (d > 0) { ++cur_x; d -= 2 * abs_dy; }
+                d += 2 * dx;
+                p = reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(p) + row_offset);
+            }
+        }
+        else
+        {
+            uint16_t* p = static_cast<uint16_t*>(buf);
+            uint16_t  wc = static_cast<uint16_t>(color);
+            int row_offset = y_down ? (pitch / 2) : -(pitch / 2);
+
+            for (int y = y_start; y <= y_end; ++y)
+            {
+                p[cur_x] = wc;
+                if (d > 0) { ++cur_x; d -= 2 * abs_dy; }
+                d += 2 * dx;
+                p += row_offset;
+            }
+        }
+    }
+
+    Unlock();
+    return true;
+}
+
+// IDA: 0x7BA5E0 — XSurface::DrawLine (48B)
+// vtable[12] 0x30 — DrawLineEx wrapper with surface-level clip
+bool XSurface::DrawLine(const Point2D& start, const Point2D& end, uint32_t color)
+{
+    RectangleStruct clip;
+    GetRect(&clip);
+    return DrawLineEx(clip, start, end, color);
+}
+
+// IDA: 0x7BA8C0 — XSurface::DrawDashedLine (621B)
+// vtable[18] 0x48 — Bresenham dashed line with 16-byte stipple pattern
+bool XSurface::DrawDashedLine(
+    const Point2D& start, const Point2D& end,
+    uint16_t color, const uint8_t stipple[16],
+    int dash_offset)
+{
+    int x1 = start.X;
+    int y1 = start.Y;
+    int x2 = end.X;
+    int y2 = end.Y;
+    int step = 1;
+
+    if (x1 > x2)
+    {
+        x1 = end.X; y1 = end.Y;
+        x2 = start.X; y2 = start.Y;
+        int d = x2 - x1;
+        int dy = y2 - y1;
+        int ady = (dy >= 0) ? dy : -dy;
+        int larger = (d >= ady) ? d : ady;
+        dash_offset = (dash_offset + larger) % 16;
+        step = -1;
+    }
+
+    int bpp = GetBytesPerPixel();
+    void* buf = Lock(x1, y1);
+    if (!buf)
+        return false;
+
+    int pitch = GetPitch();
+
+    if (y1 == y2)
+    {
+        if (x2 >= x1)
+        {
+            if (bpp == 1)
+            {
+                uint8_t* p = static_cast<uint8_t*>(buf);
+                for (int x = 0; x <= x2 - x1; ++x)
+                {
+                    int idx = dash_offset + x;
+                    while (idx < 0) idx += 16;
+                    idx %= 16;
+                    if (stipple[idx])
+                        p[x] = static_cast<uint8_t>(color);
+                }
+            }
+            else
+            {
+                uint16_t* p = static_cast<uint16_t*>(buf);
+                for (int x = 0; x <= x2 - x1; ++x)
+                {
+                    int idx = dash_offset + x;
+                    while (idx < 0) idx += 16;
+                    idx %= 16;
+                    if (stipple[idx])
+                        p[x] = color;
+                }
+            }
+        }
+    }
+    else if (x1 == x2)
+    {
+        int y_step = (y2 >= y1) ? pitch : -pitch;
+        int y_count = (y2 >= y1) ? (y2 - y1) : (y1 - y2);
+
+        if (bpp == 1)
+        {
+            uint8_t* p = static_cast<uint8_t*>(buf);
+            for (int i = 0; i <= y_count; ++i)
+            {
+                int idx = dash_offset + i;
+                while (idx < 0) idx += 16;
+                idx %= 16;
+                if (stipple[idx])
+                    *p = static_cast<uint8_t>(color);
+                p = reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(p) + y_step);
+            }
+        }
+        else
+        {
+            uint16_t* p = static_cast<uint16_t*>(buf);
+            int y_off = y_step / 2;
+            for (int i = 0; i <= y_count; ++i)
+            {
+                int idx = dash_offset + i;
+                while (idx < 0) idx += 16;
+                idx %= 16;
+                if (stipple[idx])
+                    *p = color;
+                p += y_off;
+            }
+        }
+    }
+    else if (x2 - x1 >= (y2 - y1 >= 0 ? y2 - y1 : y1 - y2))
+    {
+        int dx = x2 - x1;
+        int ady = (y2 - y1 >= 0) ? (y2 - y1) : (y1 - y2);
+        int y_step = (y2 >= y1) ? 1 : -1;
+        int d = 2 * ady - dx;
+        int cur_y = y1;
+
+        if (bpp == 1)
+        {
+            uint8_t* p = static_cast<uint8_t*>(buf);
+            for (int x = 0; x < dx; ++x)
+            {
+                int idx = dash_offset + x;
+                while (idx < 0) idx += 16;
+                idx %= 16;
+                if (stipple[idx])
+                    p[x] = static_cast<uint8_t>(color);
+                if (d > 0) { cur_y += y_step; p = reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(p) + y_step * pitch); d -= 2 * dx; }
+                d += 2 * ady;
+            }
+        }
+        else
+        {
+            uint16_t* p = static_cast<uint16_t*>(buf);
+            int row_step = y_step * (pitch / 2);
+            for (int x = 0; x < dx; ++x)
+            {
+                int idx = dash_offset + x;
+                while (idx < 0) idx += 16;
+                idx %= 16;
+                if (stipple[idx])
+                    p[x] = color;
+                if (d > 0) { cur_y += y_step; p += row_step; d -= 2 * dx; }
+                d += 2 * ady;
+            }
+        }
+    }
+    else
+    {
+        int dy = (y2 - y1 >= 0) ? (y2 - y1) : (y1 - y2);
+        int adx = x2 - x1;
+        int y_step = (y2 >= y1) ? pitch : -pitch;
+        int d = 2 * adx - dy;
+        int cur_x = 0;
+        int y_count = dy;
+
+        if (bpp == 1)
+        {
+            uint8_t* p = static_cast<uint8_t*>(buf);
+            for (int i = 0; i <= y_count; ++i)
+            {
+                int idx = dash_offset + i;
+                while (idx < 0) idx += 16;
+                idx %= 16;
+                if (stipple[idx])
+                    p[cur_x] = static_cast<uint8_t>(color);
+                if (d > 0) { ++cur_x; d -= 2 * dy; }
+                d += 2 * adx;
+                p = reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(p) + y_step);
+            }
+        }
+        else
+        {
+            uint16_t* p = static_cast<uint16_t*>(buf);
+            int row_step = y_step / 2;
+            for (int i = 0; i <= y_count; ++i)
+            {
+                int idx = dash_offset + i;
+                while (idx < 0) idx += 16;
+                idx %= 16;
+                if (stipple[idx])
+                    p[cur_x] = color;
+                if (d > 0) { ++cur_x; d -= 2 * dy; }
+                d += 2 * adx;
+                p += row_step;
+            }
+        }
+    }
+
+    Unlock();
+    return true;
+}
+
 } // namespace gamemd
