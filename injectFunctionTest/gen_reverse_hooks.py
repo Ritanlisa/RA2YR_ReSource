@@ -57,6 +57,15 @@ SIG = re.compile(
     r'(?:\w+(?:::+\w+)*[\*\s&]+)+(\w+)\s*\(([^)]*)\)',
     re.IGNORECASE | re.DOTALL)
 
+def is_lib(name):
+    """Filter CRT/library/internal helpers from dependency warnings."""
+    if not name: return True
+    if name.startswith(('??', '__', '?_', '?$')): return True
+    if name.startswith('_') and len(name) > 1 and name[1].isalpha(): return True
+    if name.startswith(('j_', 'nullsub', 'unknown_libname')): return True
+    if name in ('Debug::Log', 'Debug::Log_0'): return True
+    return False
+
 def find_markers(functions, raw_json, callee_map, callee_names, all_marked):
     pat = re.compile(r'REVERSE\(\s*(0x[0-9A-Fa-f]+)\s*,\s*"([^"]*)"\s*,\s*(true|false)\s*\)', re.I)
     markers = []
@@ -119,6 +128,7 @@ def find_markers(functions, raw_json, callee_map, callee_names, all_marked):
                             if cfn and cfn.get('hook', {}).get('completed', False):
                                 continue
                             cname = callee_names.get(c, c)
+                            if is_lib(cname): continue
                             if cname not in unmarked:
                                 unmarked[cname] = True
                         if unmarked:
@@ -131,13 +141,14 @@ def find_markers(functions, raw_json, callee_map, callee_names, all_marked):
                     
                     # Dependency check
                     if addr in callee_map:
-                        bad_callees = {}  # cname → has_marker
+                        bad_callees = {}
                         for c in callee_map[addr]:
-                            if c == addr: continue  # skip self-calls
+                            if c == addr: continue
                             cfn = functions.get(c)
                             if cfn and cfn.get('hook', {}).get('completed', False):
                                 continue
                             cname = callee_names.get(c, c)
+                            if is_lib(cname): continue
                             has_marker = c in all_marked
                             if cname not in bad_callees:
                                 bad_callees[cname] = has_marker
