@@ -3,11 +3,25 @@ project(hook_framework VERSION 1.0 LANGUAGES CXX ASM_MASM)
 
 set(CMAKE_CXX_STANDARD 17)
 
-# External dependencies
+# ============================================================
+# Configuration
+# ============================================================
+# YRpp include dir (relative to this CMakeLists.txt)
 set(YRPP_DIR           "${CMAKE_SOURCE_DIR}/../Ares/YRpp")
+# gamemd_core include dir
 set(GAMEMD_INCLUDE_DIR "${CMAKE_SOURCE_DIR}/../include")
+# Output directory for hook_dll.dll (set via -DHOOK_OUTPUT_DIR=... or env)
+if(NOT DEFINED HOOK_OUTPUT_DIR)
+    if(DEFINED ENV{HOOK_OUTPUT_DIR})
+        set(HOOK_OUTPUT_DIR "$ENV{HOOK_OUTPUT_DIR}")
+    else()
+        set(HOOK_OUTPUT_DIR "${CMAKE_SOURCE_DIR}/../build_win/Debug")
+    endif()
+endif()
 
+# ============================================================
 # Source files
+# ============================================================
 set(HOOK_SOURCES
     hook_main.cpp
     shadow_txn.cpp
@@ -26,7 +40,9 @@ set(HOOK_ASM
     PostProcStub.asm
 )
 
+# ============================================================
 # DLL target
+# ============================================================
 add_library(hook_dll SHARED
     ${HOOK_SOURCES}
     ${HOOK_HEADERS}
@@ -51,10 +67,12 @@ target_compile_definitions(hook_dll PRIVATE
 
 target_compile_options(hook_dll PRIVATE $<$<COMPILE_LANGUAGE:CXX>:/utf-8>)
 
+# ============================================================
 # Post-build
+# ============================================================
 add_custom_command(TARGET hook_dll POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_if_different
         "$<TARGET_FILE:hook_dll>"
-        "${CMAKE_SOURCE_DIR}/../build_win/Debug/"
-    COMMENT "Copying hook_dll.dll -> gamemd output"
+        "${HOOK_OUTPUT_DIR}/"
+    COMMENT "Copying hook_dll.dll -> ${HOOK_OUTPUT_DIR}"
 )

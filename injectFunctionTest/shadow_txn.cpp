@@ -92,10 +92,16 @@ ShadowTransaction* ShadowTransaction::Current()
 
 void ShadowTransaction::ProtectAllDataPages()
 {
-    // IDA-confirmed .data section: 0x812000 - 0xB7A000
-    // 872 pages, 3,571,712 bytes
-    static const uintptr_t DATA_START = 0x812000;
-    static const uintptr_t DATA_END   = 0xB7A000;
+    // .data section bounds — defaults for gamemd.exe (0x812000-0xB7A000, 872 pages)
+    // Override via env vars: SHADOW_DATA_START / SHADOW_DATA_END
+    uintptr_t DATA_START = 0x812000;
+    uintptr_t DATA_END   = 0xB7A000;
+
+    char buf[32];
+    if (GetEnvironmentVariableA("SHADOW_DATA_START", buf, sizeof(buf)) > 0)
+        DATA_START = (uintptr_t)strtoul(buf, nullptr, 16);
+    if (GetEnvironmentVariableA("SHADOW_DATA_END", buf, sizeof(buf)) > 0)
+        DATA_END = (uintptr_t)strtoul(buf, nullptr, 16);
 
     s_data_start = reinterpret_cast<uint8_t*>(DATA_START);
     s_data_end   = reinterpret_cast<uint8_t*>(DATA_END);

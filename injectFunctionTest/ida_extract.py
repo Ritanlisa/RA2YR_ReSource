@@ -7,7 +7,9 @@ Output: tools/hook_framework/functions.json
 import json
 import os
 
-OUTPUT_PATH = r"D:\RA2YR_ReSource\injectFunctionTest\functions.json"
+# Output path — same directory as this script
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+OUTPUT_PATH = os.path.join(SCRIPT_DIR, "functions.json")
 
 try:
     import ida_funcs, ida_typeinf, idautils, ida_xref
