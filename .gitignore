@@ -59,6 +59,7 @@ yrpp-spawner/
 OpenRA/
 Yuris-Revenge/
 xcc/
+ares_3.0/
 
 # 敏感数据
 *.key
@@ -96,4 +97,5 @@ decompile-results/gamemd.exe.i64
 tmp_*
 
 # 逆向工具脚本 (本地开发用)
-tools/
+tools/*
+!tools/hook_framework/
