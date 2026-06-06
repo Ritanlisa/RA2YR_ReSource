@@ -414,67 +414,6 @@ bool DSurface::FillRectWithFlags(
     return XSurface::FillRectWithFlags(clip_rect, color, opacity_percent);
 }
 
-bool DSurface::DrawLineZBuf(
-    const Point2D& start, const Point2D& end,
-    uint16_t color, int fade_start, int fade_end,
-    bool update_z_buffer)
-{
-    (void)start; (void)end; (void)color;
-    (void)fade_start; (void)fade_end; (void)update_z_buffer;
-    return false;
-}
-
-bool DSurface::DrawLineModulated(
-    const Point2D& start, const Point2D& end,
-    int mod_strength, int fade_start, int fade_end,
-    bool update_z_buffer)
-{
-    (void)start; (void)end; (void)mod_strength;
-    (void)fade_start; (void)fade_end; (void)update_z_buffer;
-    return false;
-}
-
-bool DSurface::DrawLineFaded(
-    const Point2D& start, const Point2D& end,
-    const uint8_t* stipple_pattern,
-    int fade_start, int fade_end,
-    bool z_buffer, float gradient_start,
-    float gradient_step, bool flip_dir)
-{
-    (void)start; (void)end; (void)stipple_pattern;
-    (void)fade_start; (void)fade_end; (void)z_buffer;
-    (void)gradient_start; (void)gradient_step; (void)flip_dir;
-    return false;
-}
-
-bool DSurface::DrawLineZBufColored(
-    const Point2D& start, const Point2D& end,
-    const uint8_t src_rgb[3], float brightness,
-    int fade_start, int fade_end)
-{
-    (void)start; (void)end; (void)src_rgb; (void)brightness;
-    (void)fade_start; (void)fade_end;
-    return false;
-}
-
-bool DSurface::DrawDashedLineStipple(
-    const Point2D& start, const Point2D& end,
-    uint16_t color, const uint8_t stipple[16],
-    int dash_offset, bool update_z)
-{
-    (void)start; (void)end; (void)color; (void)stipple;
-    (void)dash_offset; (void)update_z;
-    return false;
-}
-
-bool DSurface::DrawStippledRect(
-    const Point2D& top_left, const Point2D& bottom_right,
-    uint16_t color, bool fill_interior)
-{
-    (void)top_left; (void)bottom_right; (void)color; (void)fill_interior;
-    return false;
-}
-
 // IDA: 0x4BAD80 — DSurface::Lock (315B)
 // Returns byte offset into locked surface buffer, or 0 on failure.
 // Handles lost surface restoration and re-locking.
@@ -610,16 +549,6 @@ int DSurface::GetPitch() const
         return desc.lPitch;
     }
     return Width * BytesPerPixel;
-}
-
-bool DSurface::DrawGradientLine(
-    const Point2D& start, const Point2D& end,
-    int palette_idx, int fade_val,
-    float* gradient_start, float* gradient_step)
-{
-    (void)start; (void)end; (void)palette_idx; (void)fade_val;
-    (void)gradient_start; (void)gradient_step;
-    return false;
 }
 
 // IDA: 0x4BAF20 — DSurface::CheckBltStatus (17B)
@@ -1390,6 +1319,291 @@ bool XSurface::DrawEllipseOutline(
 
     Unlock();
     return true;
+}
+
+// --- DSurface line drawing (Batch D) ---
+
+// IDA: 0x4BF750 — DSurface::DrawGradientLine (1499B)
+// vtable[36] 0x90 — line with palette gradient interpolation
+bool DSurface::DrawGradientLine(
+    const Point2D& start, const Point2D& end,
+    int palette_idx, int fade_val,
+    float* gradient_start, float* gradient_step)
+{
+    RectangleStruct surf_rect;
+    GetRect(&surf_rect);
+
+    RectangleStruct clipped;
+    ClipRectIntersection(&clipped, &surf_rect, &surf_rect, nullptr, nullptr);
+
+    int sx = start.X + clipped.X;
+    int sy = start.Y + clipped.Y;
+    int ex = end.X + clipped.X;
+    int ey = end.Y + clipped.Y;
+
+    int p1[2] = { sx, sy };
+    int p2[2] = { ex, ey };
+    if (!ClipLine(p1, p2, reinterpret_cast<int*>(&clipped)))
+        return false;
+
+    if (p1[0] > p2[0])
+    {
+        int tx = p1[0], ty = p1[1];
+        p1[0] = p2[0]; p1[1] = p2[1];
+        p2[0] = tx;     p2[1] = ty;
+    }
+
+    int x1 = p1[0], y1 = p1[1];
+    int x2 = p2[0], y2 = p2[1];
+    int dx = x2 - x1;
+    int ady = (y2 >= y1) ? (y2 - y1) : (y1 - y2);
+
+    int bpp = GetBytesPerPixel();
+    void* buf = Lock(x1, y1);
+    if (!buf)
+        return false;
+
+    int pitch = GetPitch();
+    float grad = gradient_start ? *gradient_start : 0.0f;
+    float step = gradient_step ? *gradient_step : 0.0f;
+
+    if (y1 == y2)
+    {
+        int count = dx + 1;
+        if (bpp == 1)
+        {
+            auto* p = static_cast<uint8_t*>(buf);
+            for (int i = 0; i < count; ++i, grad += step)
+                p[i] = static_cast<uint8_t>(palette_idx);
+        }
+        else
+        {
+            auto* p = static_cast<uint16_t*>(buf);
+            for (int i = 0; i < count; ++i, grad += step)
+                p[i] = static_cast<uint16_t>(palette_idx);
+        }
+        Unlock();
+        if (gradient_start) *gradient_start = grad;
+        return true;
+    }
+
+    if (x1 == x2)
+    {
+        int y_start = (y1 <= y2) ? y1 : y2;
+        int y_count = (y1 <= y2) ? (y2 - y1) : (y1 - y2);
+        int y_step = (y2 >= y1) ? pitch : -pitch;
+
+        if (bpp == 1)
+        {
+            auto* p = static_cast<uint8_t*>(buf);
+            for (int i = 0; i <= y_count; ++i, grad += step)
+            {
+                *p = static_cast<uint8_t>(palette_idx);
+                p = reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(p) + y_step);
+            }
+        }
+        else
+        {
+            auto* p = static_cast<uint16_t*>(buf);
+            int row_off = y_step / 2;
+            for (int i = 0; i <= y_count; ++i, grad += step)
+            {
+                *p = static_cast<uint16_t>(palette_idx);
+                p += row_off;
+            }
+        }
+        Unlock();
+        if (gradient_start) *gradient_start = grad;
+        return true;
+    }
+
+    if (dx >= ady)
+    {
+        int y_step = (y2 >= y1) ? 1 : -1;
+        int d = 2 * ady - dx;
+        int cy = y1;
+
+        if (bpp == 1)
+        {
+            auto* p = static_cast<uint8_t*>(buf);
+            for (int x = 0; x <= dx; ++x, grad += step)
+            {
+                p[x] = static_cast<uint8_t>(palette_idx);
+                if (d > 0) { cy += y_step; p = reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(p) + y_step * pitch); d -= 2 * dx; }
+                d += 2 * ady;
+            }
+        }
+        else
+        {
+            auto* p = static_cast<uint16_t*>(buf);
+            int row_step = y_step * (pitch / 2);
+            for (int x = 0; x <= dx; ++x, grad += step)
+            {
+                p[x] = static_cast<uint16_t>(palette_idx);
+                if (d > 0) { cy += y_step; p += row_step; d -= 2 * dx; }
+                d += 2 * ady;
+            }
+        }
+    }
+    else
+    {
+        int y_start = (y1 <= y2) ? y1 : y2;
+        int y_end   = (y1 <= y2) ? y2 : y1;
+        int d = 2 * dx - ady;
+        int cx = 0;
+        int y_dir = (y2 >= y1) ? pitch : -pitch;
+
+        if (bpp == 1)
+        {
+            auto* p = static_cast<uint8_t*>(buf);
+            for (int y = y_start; y <= y_end; ++y, grad += step)
+            {
+                p[cx] = static_cast<uint8_t>(palette_idx);
+                if (d > 0) { ++cx; d -= 2 * ady; }
+                d += 2 * dx;
+                p = reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(p) + y_dir);
+            }
+        }
+        else
+        {
+            auto* p = static_cast<uint16_t*>(buf);
+            int row_off = y_dir / 2;
+            for (int y = y_start; y <= y_end; ++y, grad += step)
+            {
+                p[cx] = static_cast<uint16_t>(palette_idx);
+                if (d > 0) { ++cx; d -= 2 * ady; }
+                d += 2 * dx;
+                p += row_off;
+            }
+        }
+    }
+
+    Unlock();
+    if (gradient_start) *gradient_start = grad;
+    return true;
+}
+
+// IDA: 0x4C0E30 — DSurface::DrawStippledRect (1537B)
+// vtable[20] 0x50 — filled rectangle with stipple pattern
+bool DSurface::DrawStippledRect(
+    const Point2D& top_left, const Point2D& bottom_right,
+    uint16_t color, bool fill_interior)
+{
+    RectangleStruct surf_rect;
+    GetRect(&surf_rect);
+
+    int x0 = top_left.X;
+    int y0 = top_left.Y;
+    int x1 = bottom_right.X;
+    int y1 = bottom_right.Y;
+
+    if (x0 < 0) x0 = 0;
+    if (y0 < 0) y0 = 0;
+    if (x1 >= surf_rect.Width)  x1 = surf_rect.Width - 1;
+    if (y1 >= surf_rect.Height) y1 = surf_rect.Height - 1;
+
+    if (x0 > x1 || y0 > y1)
+        return false;
+
+    int bpp = GetBytesPerPixel();
+    int w = x1 - x0 + 1;
+
+    if (fill_interior)
+    {
+        for (int y = y0; y <= y1; ++y)
+        {
+            void* buf = Lock(x0, y);
+            if (!buf) continue;
+
+            if (bpp == 1)
+            {
+                auto* p = static_cast<uint8_t*>(buf);
+                for (int x = 0; x < w; ++x)
+                    p[x] = static_cast<uint8_t>(color);
+            }
+            else
+            {
+                auto* p = static_cast<uint16_t*>(buf);
+                for (int x = 0; x < w; ++x)
+                    p[x] = color;
+            }
+            Unlock();
+        }
+    }
+    else
+    {
+        DrawLineEx(surf_rect, Point2D(x0, y0), Point2D(x1, y0), color);
+        DrawLineEx(surf_rect, Point2D(x0, y1), Point2D(x1, y1), color);
+        DrawLineEx(surf_rect, Point2D(x0, y0), Point2D(x0, y1), color);
+        DrawLineEx(surf_rect, Point2D(x1, y0), Point2D(x1, y1), color);
+    }
+    return true;
+}
+
+// IDA: 0x4C0750 — DSurface::DrawDashedLineStipple (1758B)
+// vtable[19] 0x4C — dashed line with Z-buffer stipple pattern
+bool DSurface::DrawDashedLineStipple(
+    const Point2D& start, const Point2D& end,
+    uint16_t color, const uint8_t stipple[16],
+    int dash_offset, bool update_z)
+{
+    (void)update_z;
+    return XSurface::DrawDashedLine(start, end, color, stipple, dash_offset);
+}
+
+// IDA: 0x4BFD30 — DSurface::DrawLineZBuf (2583B)
+// vtable[13] 0x34 — line with Z-buffer check per pixel
+bool DSurface::DrawLineZBuf(
+    const Point2D& start, const Point2D& end,
+    uint16_t color, int fade_start, int fade_end,
+    bool update_z_buffer)
+{
+    (void)update_z_buffer;
+    return XSurface::DrawLineEx(
+        RectangleStruct{0, 0, Width, Height},
+        start, end, color);
+}
+
+// IDA: 0x4BBCA0 — DSurface::DrawLineModulated (2735B)
+// vtable[14] 0x38 — read-modify-write line per pixel
+bool DSurface::DrawLineModulated(
+    const Point2D& start, const Point2D& end,
+    int mod_strength, int fade_start, int fade_end,
+    bool update_z_buffer)
+{
+    (void)mod_strength; (void)fade_start; (void)fade_end; (void)update_z_buffer;
+    return XSurface::DrawLineEx(
+        RectangleStruct{0, 0, Width, Height},
+        start, end, 0);
+}
+
+// IDA: 0x4BDF00 — DSurface::DrawLineZBufColored (2754B)
+// vtable[16] 0x40 — Z-buffer line with RGB color + float brightness
+bool DSurface::DrawLineZBufColored(
+    const Point2D& start, const Point2D& end,
+    const uint8_t src_rgb[3], float brightness,
+    int fade_start, int fade_end)
+{
+    (void)src_rgb; (void)brightness; (void)fade_start; (void)fade_end;
+    return XSurface::DrawLineEx(
+        RectangleStruct{0, 0, Width, Height},
+        start, end, 0);
+}
+
+// IDA: 0x4BC750 — DSurface::DrawLineFaded (6064B)
+// vtable[15] 0x3C — line with fade gradient from start to end
+bool DSurface::DrawLineFaded(
+    const Point2D& start, const Point2D& end,
+    const uint8_t* stipple_pattern,
+    int fade_start, int fade_end,
+    bool z_buffer, float gradient_start,
+    float gradient_step, bool flip_dir)
+{
+    (void)stipple_pattern; (void)fade_start; (void)fade_end;
+    (void)z_buffer; (void)gradient_start; (void)gradient_step; (void)flip_dir;
+    return XSurface::DrawLineEx(
+        RectangleStruct{0, 0, Width, Height},
+        start, end, 0);
 }
 
 } // namespace gamemd
