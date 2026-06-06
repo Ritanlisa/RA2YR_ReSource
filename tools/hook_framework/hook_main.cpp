@@ -1,13 +1,10 @@
-// hook_main.cpp — Hook DLL entry point
-// Injected into gamemd.exe by Syringe.
-// Provides shadow execution framework for RE function validation.
 #include <windows.h>
 #include "Syringe.h"
 #include "tls_storage.h"
 #include "shadow_txn.h"
 #include "shadow_veh.h"
+#include "headless_server.h"
 
-// PostProcStub — assembly stub, reached after original function RET
 extern "C" void PostProcStub();
 
 // ============================================================
@@ -23,9 +20,24 @@ BOOL WINAPI DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved)
         DisableThreadLibraryCalls(hinstDLL);
         shadow::InitTLS();
         shadow::InstallVEH();
+
+        // Headless mode: set SHADOW_HEADLESS=1 before launching Syringe
+        // or pass -headless in gamemd.exe command line args
+        if (GetEnvironmentVariableA("SHADOW_HEADLESS", nullptr, 0) > 0
+            || strstr(GetCommandLineA(), "-headless")) {
+            int port = 25400;
+            char portBuf[16];
+            if (GetEnvironmentVariableA("SHADOW_PORT", portBuf, sizeof(portBuf)) > 0)
+                port = atoi(portBuf);
+            headless::StartServer(port, []() -> int {
+                extern volatile int mismatch_counter;
+                return mismatch_counter;
+            });
+        }
         break;
 
     case DLL_PROCESS_DETACH:
+        headless::StopServer();
         shadow::RemoveVEH();
         break;
     }
@@ -34,12 +46,10 @@ BOOL WINAPI DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved)
 }
 
 // ============================================================
-// SyringeHandshake — validates gamemd.exe compatibility
+// SyringeHandshake
 // ============================================================
 SYRINGE_HANDSHAKE(pInfo)
 {
-    // Accept any gamemd.exe for now (same binary we're running in)
-    // TODO: add version checking (timestamp, filesize, CRC)
     if (pInfo) {
         pInfo->Message = "Shadow Execution Framework v1.0";
     }

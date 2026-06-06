@@ -1,4 +1,4 @@
-// COM class registration â€” IDA 0x6BB390 (RegisterClassesCOM)
+// COM class registration â€ IDA 0x6BB390 (RegisterClassesCOM)
 // Registers 30+ game classes with Windows registry for COM interop.
 // Simplified: registry writes are logged but not executed since
 // our standalone EXE doesn't need external COM access.
@@ -9,7 +9,7 @@
 
 namespace gamemd {
 
-// IDA 0x6BB390 â€” registers a single COM class with registry keys
+// IDA 0x6BB390 â€ registers a single COM class with registry keys
 void RegisterClassCOM(const GUID& clsid)
 {
     char guid_str[40];

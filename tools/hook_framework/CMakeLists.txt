@@ -11,6 +11,7 @@ set(GAMEMD_INCLUDE_DIR "${CMAKE_SOURCE_DIR}/../../include")
 set(HOOK_SOURCES
     hook_main.cpp
     shadow_txn.cpp
+    headless_server.cpp
     test_hooks.cpp
 )
 
@@ -18,6 +19,7 @@ set(HOOK_HEADERS
     tls_storage.h
     shadow_txn.h
     shadow_veh.h
+    headless_server.h
 )
 
 set(HOOK_ASM
@@ -39,6 +41,7 @@ target_include_directories(hook_dll PRIVATE
 
 target_link_libraries(hook_dll PRIVATE
     winmm.lib
+    ws2_32.lib
 )
 
 target_compile_definitions(hook_dll PRIVATE
