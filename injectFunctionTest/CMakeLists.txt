@@ -28,6 +28,7 @@ set(HOOK_SOURCES
     headless_server.cpp
     element_tracker.cpp
     render_hooks.cpp
+    "${CMAKE_CURRENT_SOURCE_DIR}/gen/reverse_hooks.cpp"
     test_hooks.cpp
 )
 

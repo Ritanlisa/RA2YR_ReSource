@@ -402,7 +402,7 @@ void* ConvertClassConstruct(void* palette, void* temperat_pal, void* surface, in
 
 // ============================================================
 // IDA: InitGame @ 0x52BA60 — returns 0 success, -1 failure, 1 CD abort
-// ============================================================
+REVERSE(0x52BA60, "InitGame: master init pipeline", true)
 int InitGame(bool no_cd)
 {
     if (no_cd)

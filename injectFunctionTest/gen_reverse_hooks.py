@@ -47,6 +47,11 @@ def find_reverse_markers():
                 with open(fpath, errors='ignore') as f:
                     content = f.read()
                 for m in pattern.finditer(content):
+                    # Skip if inside a comment
+                    line_start = content.rfind('\n', 0, m.start()) + 1
+                    line = content[line_start:m.end()]
+                    if line.lstrip().startswith('//') or line.lstrip().startswith('/*'):
+                        continue
                     addr = m.group(1).lower()
                     desc = m.group(2)
                     enabled = m.group(3) == 'true'
@@ -110,10 +115,11 @@ def generate_hooks(markers, functions):
         safe = sanitize(m['fn_name'])
         fn = functions.get(m['addr'])
         conv = fn.get('call', {}).get('convention', 'unknown') if fn else 'unknown'
+        hook_size = fn.get('hook', {}).get('min_safe_size', 5) if fn else 5
 
         w(f'// {m["fn_name"]} @ {m["addr"]} ({conv}) — {m["file"]}')
         w(f'// {m["desc"]}')
-        w(f'DEFINE_HOOK({addr_hex}, Reverse_{safe}, 5)')
+        w(f'DEFINE_HOOK({addr_hex}, Reverse_{safe}, {hook_size})')
         w('{')
         w('    DWORD eax_in = R->EAX();')
         w('    DWORD ecx_in = R->ECX();')
@@ -137,7 +143,7 @@ def generate_hooks(markers, functions):
     w('// ============================================================')
     w('// Post-process logging (called from PostProcStub after original RET)')
     w('// ============================================================')
-    w('extern "C" void __stdcall LogComparison(DWORD orig_result, DWORD hook_addr) {')
+    w('extern "C" void __cdecl LogComparison(DWORD orig_result, DWORD hook_addr) {')
     w('    auto* slot = shadow::GetSlot();')
     w('    if (!slot) return;')
     w('    int idx = GetHookIndex(hook_addr);')
