@@ -188,6 +188,185 @@ static void HandleCommand(SOCKET client, const char* cmd)
         snprintf(response, sizeof(response), "{\"ok\":true,\"echo\":\"%.256s\"}", cmd + 5);
         SendResponse(client, response);
     }
+    // ============================================================
+    // Input simulation commands
+    // ============================================================
+    else if (strncmp(cmd, "FOCUS", 5) == 0) {
+        HWND hwnd = FindWindowA(nullptr, "Yuri's Revenge");
+        if (hwnd) {
+            SetForegroundWindow(hwnd);
+            SendResponse(client, "{\"ok\":true,\"action\":\"focus\"}");
+        } else {
+            SendResponse(client, "{\"ok\":false,\"error\":\"window_not_found\"}");
+        }
+    }
+    else if (strncmp(cmd, "WINDOW", 6) == 0) {
+        HWND hwnd = FindWindowA(nullptr, "Yuri's Revenge");
+        RECT r = {};
+        if (hwnd) {
+            GetWindowRect(hwnd, &r);
+            snprintf(response, sizeof(response),
+                "{\"ok\":true,\"hwnd\":\"0x%08X\",\"rect\":[%ld,%ld,%ld,%ld],\"w\":%ld,\"h\":%ld}",
+                (uint32_t)(uintptr_t)hwnd, r.left, r.top, r.right, r.bottom,
+                r.right - r.left, r.bottom - r.top);
+        } else {
+            snprintf(response, sizeof(response), "{\"ok\":false,\"error\":\"window_not_found\"}");
+        }
+        SendResponse(client, response);
+    }
+    else if (strncmp(cmd, "MOUSEMOVE ", 10) == 0) {
+        int x = 0, y = 0;
+        if (sscanf(cmd + 10, "%d %d", &x, &y) == 2) {
+            SetCursorPos(x, y);
+            HWND hwnd = FindWindowA(nullptr, "Yuri's Revenge");
+            if (hwnd) {
+                POINT pt = { x, y };
+                ScreenToClient(hwnd, &pt);
+                LPARAM lParam = MAKELPARAM(pt.x, pt.y);
+                PostMessageA(hwnd, WM_MOUSEMOVE, 0, lParam);
+            }
+            snprintf(response, sizeof(response), "{\"ok\":true,\"x\":%d,\"y\":%d}", x, y);
+        } else {
+            snprintf(response, sizeof(response), "{\"ok\":false,\"error\":\"usage: MOUSEMOVE <x> <y>\"}");
+        }
+        SendResponse(client, response);
+    }
+    else if (strncmp(cmd, "CLICKAT ", 8) == 0) {
+        int x = 0, y = 0;
+        char btn[16] = "left";
+        sscanf(cmd + 8, "%d %d %15s", &x, &y, btn);
+        SetCursorPos(x, y);
+        HWND hwnd = FindWindowA(nullptr, "Yuri's Revenge");
+        if (hwnd) {
+            POINT pt = { x, y };
+            ScreenToClient(hwnd, &pt);
+            LPARAM lParam = MAKELPARAM(pt.x, pt.y);
+            UINT downMsg = (btn[0] == 'r') ? WM_RBUTTONDOWN : WM_LBUTTONDOWN;
+            UINT upMsg   = (btn[0] == 'r') ? WM_RBUTTONUP   : WM_LBUTTONUP;
+            WPARAM wParam = (btn[0] == 'r') ? MK_RBUTTON : MK_LBUTTON;
+            PostMessageA(hwnd, downMsg, wParam, lParam);
+            Sleep(50);
+            PostMessageA(hwnd, upMsg, 0, lParam);
+        }
+        snprintf(response, sizeof(response), "{\"ok\":true,\"x\":%d,\"y\":%d,\"btn\":\"%s\"}", x, y, btn);
+        SendResponse(client, response);
+    }
+    else if (strncmp(cmd, "CLICK ", 6) == 0) {
+        char btn[16] = "left";
+        sscanf(cmd + 6, "%15s", btn);
+        POINT pt;
+        GetCursorPos(&pt);
+        HWND hwnd = FindWindowA(nullptr, "Yuri's Revenge");
+        if (hwnd) {
+            ScreenToClient(hwnd, &pt);
+            LPARAM lParam = MAKELPARAM(pt.x, pt.y);
+            UINT downMsg = (btn[0] == 'r') ? WM_RBUTTONDOWN : WM_LBUTTONDOWN;
+            UINT upMsg   = (btn[0] == 'r') ? WM_RBUTTONUP   : WM_LBUTTONUP;
+            WPARAM wParam = (btn[0] == 'r') ? MK_RBUTTON : MK_LBUTTON;
+            PostMessageA(hwnd, downMsg, wParam, lParam);
+            Sleep(50);
+            PostMessageA(hwnd, upMsg, 0, lParam);
+        }
+        snprintf(response, sizeof(response), "{\"ok\":true,\"btn\":\"%s\"}", btn);
+        SendResponse(client, response);
+    }
+    else if (strncmp(cmd, "KEY ", 4) == 0) {
+        unsigned int vk = 0;
+        if (sscanf(cmd + 4, "%x", &vk) == 1 || sscanf(cmd + 4, "%u", &vk) == 1) {
+            HWND hwnd = FindWindowA(nullptr, "Yuri's Revenge");
+            if (hwnd) {
+                PostMessageA(hwnd, WM_KEYDOWN, vk, 0);
+                Sleep(30);
+                PostMessageA(hwnd, WM_KEYUP, vk, 0);
+            }
+            snprintf(response, sizeof(response), "{\"ok\":true,\"vk\":\"0x%02X\"}", vk);
+        } else {
+            snprintf(response, sizeof(response), "{\"ok\":false,\"error\":\"usage: KEY <vk_hex>\"}");
+        }
+        SendResponse(client, response);
+    }
+    else if (strncmp(cmd, "KEYDOWN ", 8) == 0) {
+        unsigned int vk = 0;
+        if (sscanf(cmd + 8, "%x", &vk) == 1 || sscanf(cmd + 8, "%u", &vk) == 1) {
+            HWND hwnd = FindWindowA(nullptr, "Yuri's Revenge");
+            if (hwnd) PostMessageA(hwnd, WM_KEYDOWN, vk, 0);
+            snprintf(response, sizeof(response), "{\"ok\":true,\"vk\":\"0x%02X\"}", vk);
+        }
+        SendResponse(client, response);
+    }
+    else if (strncmp(cmd, "KEYUP ", 6) == 0) {
+        unsigned int vk = 0;
+        if (sscanf(cmd + 6, "%x", &vk) == 1 || sscanf(cmd + 6, "%u", &vk) == 1) {
+            HWND hwnd = FindWindowA(nullptr, "Yuri's Revenge");
+            if (hwnd) PostMessageA(hwnd, WM_KEYUP, vk, 0);
+            snprintf(response, sizeof(response), "{\"ok\":true,\"vk\":\"0x%02X\"}", vk);
+        }
+        SendResponse(client, response);
+    }
+    else if (strncmp(cmd, "DRAG ", 5) == 0) {
+        int x1 = 0, y1 = 0, x2 = 0, y2 = 0;
+        char btn[16] = "left";
+        sscanf(cmd + 5, "%d %d %d %d %15s", &x1, &y1, &x2, &y2, btn);
+        HWND hwnd = FindWindowA(nullptr, "Yuri's Revenge");
+        if (hwnd) {
+            UINT downMsg = (btn[0] == 'r') ? WM_RBUTTONDOWN : WM_LBUTTONDOWN;
+            UINT upMsg   = (btn[0] == 'r') ? WM_RBUTTONUP   : WM_LBUTTONUP;
+            WPARAM wParam = (btn[0] == 'r') ? MK_RBUTTON : MK_LBUTTON;
+
+            // Press at x1,y1
+            SetCursorPos(x1, y1);
+            POINT pt = { x1, y1 };
+            ScreenToClient(hwnd, &pt);
+            PostMessageA(hwnd, downMsg, wParam, MAKELPARAM(pt.x, pt.y));
+            Sleep(50);
+
+            // Drag to x2,y2 in steps
+            int steps = 10;
+            for (int i = 1; i <= steps; ++i) {
+                int cx = x1 + (x2 - x1) * i / steps;
+                int cy = y1 + (y2 - y1) * i / steps;
+                SetCursorPos(cx, cy);
+                pt.x = cx; pt.y = cy;
+                ScreenToClient(hwnd, &pt);
+                PostMessageA(hwnd, WM_MOUSEMOVE, wParam, MAKELPARAM(pt.x, pt.y));
+                Sleep(10);
+            }
+
+            // Release at x2,y2
+            SetCursorPos(x2, y2);
+            pt.x = x2; pt.y = y2;
+            ScreenToClient(hwnd, &pt);
+            PostMessageA(hwnd, upMsg, 0, MAKELPARAM(pt.x, pt.y));
+        }
+        snprintf(response, sizeof(response),
+            "{\"ok\":true,\"from\":[%d,%d],\"to\":[%d,%d],\"btn\":\"%s\"}",
+            x1, y1, x2, y2, btn);
+        SendResponse(client, response);
+    }
+    else if (strncmp(cmd, "GETMOUSE", 8) == 0) {
+        POINT pt;
+        GetCursorPos(&pt);
+        HWND hwnd = FindWindowA(nullptr, "Yuri's Revenge");
+        if (hwnd) {
+            POINT client = pt;
+            ScreenToClient(hwnd, &client);
+            snprintf(response, sizeof(response),
+                "{\"ok\":true,\"screen\":[%ld,%ld],\"client\":[%ld,%ld]}",
+                pt.x, pt.y, client.x, client.y);
+        } else {
+            snprintf(response, sizeof(response),
+                "{\"ok\":true,\"screen\":[%ld,%ld]}", pt.x, pt.y);
+        }
+        SendResponse(client, response);
+    }
+    else if (strncmp(cmd, "WAIT ", 5) == 0) {
+        int ms = 100;
+        sscanf(cmd + 5, "%d", &ms);
+        if (ms > 60000) ms = 60000;
+        Sleep(ms);
+        snprintf(response, sizeof(response), "{\"ok\":true,\"waited_ms\":%d}", ms);
+        SendResponse(client, response);
+    }
     else {
         snprintf(response, sizeof(response),
             "{\"ok\":false,\"error\":\"unknown_command\",\"cmd\":\"%.100s\"}", cmd);
