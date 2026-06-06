@@ -347,6 +347,10 @@ public:
         const RectangleStruct& fill_rect, uint32_t color) override { return false; }
     virtual bool FillRect(const RectangleStruct& fill_rect, uint32_t color) override { return false; }
     virtual bool Fill(uint32_t color) override;
+    virtual bool FillRectWithFlags(
+        const RectangleStruct& clip_rect,
+        const ColorStruct& color,
+        int opacity_percent) override { return false; }
     virtual bool DrawEllipseOutline(
         const Point2D& center,
         int radius_w, int radius_h,
