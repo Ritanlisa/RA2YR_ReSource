@@ -283,11 +283,8 @@ def generate(markers, functions, fn_map):
         w('  V.bp=R->EBP();V.sp=R->ESP();')
         
         if mode == "Capture":
-            w('  auto*s=shadow::GetSlot();')
-            w(f'  s->hook_addr=0x{ah};')
-            w('  s->original_ret_addr=R->Stack<DWORD>(0);')
-            w('  R->Stack(0,(DWORD)&PostProcStub);')
-            w('  V.re=R->EAX();')  # Capture: RE = original
+            w('  V.re=0;')
+            w(f'  Log(0x{ah}, idx, V.re, V.re, R->Stack<DWORD>(0));')
         elif mode in ("Replace", "Inject"):
             w('  shadow::ShadowTransaction txn;')
             w('  txn.Begin();')
