@@ -63,6 +63,25 @@ cmake --build build_hook --config Release
 
 Build status: 0 errors, 0 warnings. 72 compileable source files, ~17,000 lines (headers ~10,500 + source ~6,500).
 
+## IMPORTANT: REVERSE Pipeline Code Protection
+
+**Do NOT modify the following files without explicit user permission.** These files form the complete REVERSE shadow-comparison pipeline:
+
+| File | Purpose |
+|------|---------|
+| `include/gamemd/core/reverse_marker.hpp` | REVERSE macro definition |
+| `injectFunctionTest/gen_reverse_hooks.py` | Hook code generator |
+| `injectFunctionTest/gen_re_impl.py` | RE function generator |
+| `injectFunctionTest/gen/` | Auto-generated hook/RE code |
+| `injectFunctionTest/render_hooks.cpp` | Render element tracker |
+| `injectFunctionTest/PostProcStub.asm` | Stack-hijack comparison stub |
+| `injectFunctionTest/tls_storage.h` | TLS slot layout |
+| `injectFunctionTest/shadow_txn.h/cpp` | Page-level memory transaction |
+| `injectFunctionTest/headless_server.cpp` | TCP command server |
+| `injectFunctionTest/functions.json` | Function metadata (19K entries) |
+| `injectFunctionTest/CMakeLists.txt` | Hook DLL build |
+| `functionComparison.md` | Pipeline design document |
+
 ## Hook-Based Shadow Execution Framework
 
 Located in `injectFunctionTest/`. Validates reverse-engineered functions by hooking them into the original `gamemd.exe` at runtime:

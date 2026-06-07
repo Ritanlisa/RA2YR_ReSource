@@ -339,10 +339,13 @@ cmake --build build_hook --config Release
 
 | Metric | Value |
 |--------|-------|
-| Truly completed functions | **30** (faithful IDA translations) |
-| REVERSE markers in source | **~32** (across 14 files, all disabled) |
-| Completed + enabled hooks | **0** (pending dependency resolution) |
-| Dependency callees tracked | **~10K unique** (callee_map.json) |
-| Hook DLL build | **0 errors** |
-| gamemd_core build | **0 errors** (1 pre-existing linker issue) |
+| Completed rendering functions | **13** (faithful IDA translations) |
+| REVERSE markers | **13 active** (Capture mode) + **~32 disabled** (None mode) |
+| Hook modes tested | **Capture ✅ Inject ✅ Replace ⏳** |
+| comparisonResult.log sections | **3-section dynamic insertion** (Capture/Different/Same) |
+| Hook DLL build | **0 errors, 0 C4129 warnings** |
+| gamemd_core build | **0 errors** |
+| CMake single-build | **gamemd.exe + hook_dll.dll** in one command |
+| Verified at runtime | **Fill (Capture & Inject), 12 rendering functions (Capture)** |
+| Not hookable (ESP-relative) | **ClipRectIntersection** (min_safe_size=0) |
 | Verified at runtime | **1** (CellStruct::Set — 0 mismatches) |
