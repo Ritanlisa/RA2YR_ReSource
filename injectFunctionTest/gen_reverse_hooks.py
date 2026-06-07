@@ -191,11 +191,12 @@ def generate(markers, functions, fn_map):
         w(f'extern "C" DWORD RE_{s}(DWORD ecx, DWORD edx, DWORD a, DWORD b);')
     w('')
     w('static FILE* f = nullptr;')
-    w(f'static int ctr[{len(markers)}]={{}};')
-    w(f'static const char* nm[{len(markers)}]={{}};')
-    w(f'static DWORD addr_tbl[{len(markers)}]={{}};')
+    nmk = max(len(markers), 1)
+    w(f'static int ctr[{nmk}]={{}};')
+    w(f'static const char* nm[{nmk}]={{}};')
+    w(f'static DWORD addr_tbl[{nmk}]={{}};')
     w('struct S{DWORD a,c,d,b,si,di,bp,sp,re;};')
-    w(f'static S in[{len(markers)}]={{}};')
+    w(f'static S in[{nmk}]={{}};')
     # Init — use static object constructor to guarantee NN() call
     w('static void NN(){')
     for i,m in enumerate(markers):
@@ -462,17 +463,15 @@ def main():
         print(f"\n{len(errors)} ERROR(s): fix before building!")
         sys.exit(1)
     
-    if markers:
-        fn_map = parse_map()
-        code = generate(markers, functions, fn_map)
-        os.makedirs(os.path.dirname(OUT), exist_ok=True)
-        with open(OUT,'w') as f: f.write(code)
-        print(f"Generated {OUT} ({os.path.getsize(OUT)/1024:.0f}KB)")
-        
-        # Auto-generate RE_* wrapper functions (Step 2 pipeline)
-        generate_re_impl(markers)
-    else:
-        print("No active hooks (all markers are mode=None or not in functions.json).")
+    if not markers:
+        print("No active hooks. Add REVERSE(..., true) markers.")
+    
+    fn_map = parse_map()
+    code = generate(markers, functions, fn_map)
+    os.makedirs(os.path.dirname(OUT), exist_ok=True)
+    with open(OUT,'w') as f: f.write(code)
+    print(f"Generated {OUT} ({os.path.getsize(OUT)/1024:.0f}KB)")
+    generate_re_impl(markers)
     
     write_check_file(markers, warnings, errors)
     if warnings:
