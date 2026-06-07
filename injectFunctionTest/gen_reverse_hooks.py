@@ -243,8 +243,10 @@ def generate(markers, functions, fn_map):
     w('  {0,0}};')
     # Caller lookup
     w(f'static const char* Caller(DWORD v){{')
+    w(f'  if({count}==0) return 0;')
     w(f'  int lo=1,hi={count};')
     w('  while(lo<hi){int m=(lo+hi)/2;if(v<F[m].a)hi=m;else lo=m+1;}')
+    w(f'  if(lo<=0||lo>{count}) return 0;')
     w('  return F[lo-1].n;')
     w('}')
     # Log
@@ -275,7 +277,7 @@ def generate(markers, functions, fn_map):
     for m in markers:
         ah=m['addr'].lstrip('0x').upper();s=san(m['fn_name'])
         fn=functions.get(m['addr'])
-        hs=fn.get('hook',{}).get('min_safe_size',8) if fn else 8
+        hs=fn.get('hook',{}).get('min_safe_size',12) if fn else 12
         conv=fn.get('call',{}).get('convention','?') if fn else '?'
         mode=m.get('mode','None')
         w(f'// {m["fn_name"]} @ {m["addr"]} ({conv}) mode={mode}')
@@ -320,12 +322,14 @@ def write_check_file(markers, warnings, errors):
              '// Compiled into hook DLL for build-time diagnostics',
              '#include <windows.h>', '']
     for w in warnings:
-        # Strip all non-ASCII and backslash to avoid MSVC C4129/C4828 warnings
+        # Strip non-ASCII and escape backslashes for C++ string literals
         import re
         clean = re.sub(r'[^\x20-\x7E]', '', w)
+        clean = clean.replace('\\', '/')
         lines.append(f'#pragma message("WARN: {clean}")')
     for e in errors:
         clean = re.sub(r'[^\x20-\x7E]', '', e)
+        clean = clean.replace('\\', '/')
         lines.append(f'#error "ERR: {clean}"')
     if not warnings and not errors:
         lines.append('// All REVERSE markers pass completion check.')
