@@ -35,24 +35,24 @@ bool ObjectClass::Put(const CoordStruct& coords, unsigned int face_dir)
     return true;
 }
 
-// IDA: 0x5F44A0 â€ ObjectClass::Remove (123B)
+// IDA: 0x5F44A0 ï¿½ ObjectClass::Remove (123B)
 // Removes object from selection manager and resets scroll anchor
 // Checks this+0x83 (m_is_selected), not m_is_on_map
 bool ObjectClass::Remove()
 {
-    // IDA: if (*(this+0x83)) â€ m_is_selected check
+    // IDA: if (*(this+0x83)) ï¿½ m_is_selected check
     if (!m_is_selected)
         return false;
 
     // IDA: find index in ObjectClass_CurrentObjects
     // IDA: remove from g_SelectionManager by shifting entries down
-    // IDA: *(this+0x83) = 0 â€ m_is_selected = false
+    // IDA: *(this+0x83) = 0 ï¿½ m_is_selected = false
     m_is_selected = false;
 
-    // IDA: if MapClass::GetScrollMode == this â† SetScrollMode(0)
+    // IDA: if MapClass::GetScrollMode == this ï¿½ SetScrollMode(0)
     // This deselects the scroll anchor if this object was it
 
-    // Also perform standard removal â€ unmark occupancy, set limbo
+    // Also perform standard removal ï¿½ unmark occupancy, set limbo
     UnmarkAllOccupationBits(m_location);
     m_is_on_map = false;
     m_in_limbo = true;
@@ -60,22 +60,22 @@ bool ObjectClass::Remove()
     return true;
 }
 
-// IDA: 0x5F65F0 â€ ObjectClass::Destroy (146B)
-// Cleanup chain: audio â† TechnoClass::CleanupAll â† AnnounceExpiredPointer
+// IDA: 0x5F65F0 ï¿½ ObjectClass::Destroy (146B)
+// Cleanup chain: audio ï¿½ TechnoClass::CleanupAll ï¿½ AnnounceExpiredPointer
 // Then sets m_is_alive=false and registers for disk laser cleanup
 void ObjectClass::Destroy()
 {
-    // IDA: if (*(this+0x38)) â€ m_attached_bomb cleanup
+    // IDA: if (*(this+0x38)) ï¿½ m_attached_bomb cleanup
     // ObjectClass::CleanupAudioAndRefs(v2)
 
-    // IDA: if (m_abstract_flags & 1) â€ TechnoClass::CleanupAll(this, 0)
+    // IDA: if (m_abstract_flags & 1) ï¿½ TechnoClass::CleanupAll(this, 0)
     // AbstractClass::AnnounceExpiredPointer(this, 1)
     // vtable[53] cleanup virtual
 
-    // IDA: *(this+0x90) = 0 â€ m_is_alive = false
+    // IDA: *(this+0x90) = 0 ï¿½ m_is_alive = false
     m_is_alive = false;
 
-REVERSE(0x5f44a0, "ObjectClass::Remove: IDA verified", false) // auto-marked completed
+REVERSE(0x5f44a0, "ObjectClass::Remove: IDA verified", "None") // auto-marked completed
     // Remove from map
     Remove();
 
@@ -233,17 +233,17 @@ bool ObjectClass::CanBeSold() const
     return m_health > 0 && !m_in_limbo;
 }
 
-// IDA: 0x70E2B0 â€ TechnoClass::IronCurtain (80B)
+// IDA: 0x70E2B0 ï¿½ TechnoClass::IronCurtain (80B)
 // Sets iron curtain invulnerability timer fields at timer offsets
 DamageState ObjectClass::IronCurtain(int duration, HouseClass* source, bool force_shield)
 {
     (void)source;
 
-    // IDA: *(this+99) = CurrentFrame â€ m_iron_curtain_timer.data[0] at +0x18C
-    // IDA: *(this+100) = v5 â€ duration stored in timer data[1] at +0x190
-    // IDA: *(this+105) = 0 â€ m_iron_tint_stage at +0x1A4
-    // IDA: *(this+101) = a2 â€ duration field at +0x194
-    // IDA: *(this+113) = a4 ? 1 : 0 â€ m_force_shielded at +0x1C4
+    // IDA: *(this+99) = CurrentFrame ï¿½ m_iron_curtain_timer.data[0] at +0x18C
+    // IDA: *(this+100) = v5 ï¿½ duration stored in timer data[1] at +0x190
+    // IDA: *(this+105) = 0 ï¿½ m_iron_tint_stage at +0x1A4
+    // IDA: *(this+101) = a2 ï¿½ duration field at +0x194
+    // IDA: *(this+113) = a4 ? 1 : 0 ï¿½ m_force_shielded at +0x1C4
 
     // TODO: implement timer fields when TimerStruct layout is confirmed
     (void)duration;
@@ -262,7 +262,7 @@ void ObjectClass::Reveal()
     m_is_visible = true;
 }
 
-// IDA: 0x5F4D10 â€ ObjectClass::MarkForRedraw (30B)
+// IDA: 0x5F4D10 ï¿½ ObjectClass::MarkForRedraw (30B)
 // If not already marked, sets m_needs_redraw=true and calls MapClass::MarkForRedraw
 void ObjectClass::MarkForRedraw()
 {
@@ -286,7 +286,7 @@ bool ObjectClass::DiscoveredBy(HouseClass* house)
     return true;
 }
 
-// IDA: 0x5F3900 â€ ObjectClass::ctor
+// IDA: 0x5F3900 ï¿½ ObjectClass::ctor
 // Verified: AbstractClass_Constructor at 0x410170 called first, then 2 AudioController::Init
 ObjectClass::ObjectClass() noexcept
     : m_unknown_24(0)               // +0x24 = 0 (IDA mov [esi+0x24], 0)

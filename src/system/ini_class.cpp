@@ -1,4 +1,4 @@
-// INIClass + CCINIClass â€ IDA-based constructor translations
+// INIClass + CCINIClass ï¿½ IDA-based constructor translations
 // INI parser with section/key/value storage
 #include "gamemd/system/ini_class.hpp"
 #include "gamemd/system/mix_file.hpp"
@@ -30,12 +30,12 @@ struct INISectionData {
 // Per-instance INI data (moved from header to avoid bloat)
 struct INIData {
     std::vector<INISectionData> Sections;
-    std::map<std::string, int> SectionIndex; // name â† index
+    std::map<std::string, int> SectionIndex; // name ï¿½ index
 };
 
 // ============================================================
-REVERSE(0x535aa0, "INIClass::Constructor: IDA verified", false) // auto-marked completed
-// IDA 0x535AA0 â€ INIClass::Constructor (84 bytes)
+REVERSE(0x535aa0, "INIClass::Constructor: IDA verified", "None") // auto-marked completed
+// IDA 0x535AA0 ï¿½ INIClass::Constructor (84 bytes)
 // ============================================================
 INIClass::INIClass()
 {
@@ -43,8 +43,8 @@ INIClass::INIClass()
 }
 
 // ============================================================
-REVERSE(0x535b30, "CCINIClass::Constructor: IDA verified", false) // auto-marked completed
-// IDA 0x535B30 â€ CCINIClass::Constructor (138 bytes)
+REVERSE(0x535b30, "CCINIClass::Constructor: IDA verified", "None") // auto-marked completed
+// IDA 0x535B30 ï¿½ CCINIClass::Constructor (138 bytes)
 // ============================================================
 CCINIClass::CCINIClass()
     : INIClass()
@@ -76,8 +76,8 @@ static std::string Trim(const char* s, int len)
 }
 
 // ============================================================
-REVERSE(0x4741f0, "CCINIClass::Load: IDA verified", false) // auto-marked completed
-// IDA 0x4741F0 â€ CCINIClass::Load(file, unk1, unk2)
+REVERSE(0x4741f0, "CCINIClass::Load: IDA verified", "None") // auto-marked completed
+// IDA 0x4741F0 ï¿½ CCINIClass::Load(file, unk1, unk2)
 // Parses INI file content into sections and key=value pairs
 // ============================================================
 bool CCINIClass::Load(CCFileClass* file, bool unk1, bool unk2)
@@ -142,7 +142,7 @@ bool CCINIClass::Load(CCFileClass* file, bool unk1, bool unk2)
 
         // Key=Value
         if (m_ini_data->Sections.empty()) {
-            // Lines before any section â€ ignored (or global section)
+            // Lines before any section ï¿½ ignored (or global section)
             continue;
         }
 
