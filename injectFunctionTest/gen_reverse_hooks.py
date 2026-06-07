@@ -18,6 +18,10 @@ JSON = os.path.join(SCRIPT, "functions.json")
 MAP  = os.path.join(ROOT, "decompile-results", "gamemd.exe.map")
 CAL  = os.path.join(SCRIPT, "callee_map.json")
 
+# Import RE impl generator
+sys.path.insert(0, SCRIPT)
+from gen_re_impl import generate_re_impl
+
 def load_json():
     if not os.path.exists(JSON): return {}, None
     with open(JSON) as f:
@@ -454,6 +458,9 @@ def main():
         os.makedirs(os.path.dirname(OUT), exist_ok=True)
         with open(OUT,'w') as f: f.write(code)
         print(f"Generated {OUT} ({os.path.getsize(OUT)/1024:.0f}KB)")
+        
+        # Auto-generate RE_* wrapper functions (Step 2 pipeline)
+        generate_re_impl(markers)
     else:
         print("No active hooks (all markers are mode=None or not in functions.json).")
     

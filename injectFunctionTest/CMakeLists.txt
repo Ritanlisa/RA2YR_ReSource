@@ -7,15 +7,15 @@ set(CMAKE_CXX_STANDARD 17)
 # Configuration
 # ============================================================
 # YRpp include dir (relative to this CMakeLists.txt)
-set(YRPP_DIR           "${CMAKE_SOURCE_DIR}/../Ares/YRpp")
+set(YRPP_DIR           "${CMAKE_CURRENT_SOURCE_DIR}/../Ares/YRpp")
 # gamemd_core include dir
-set(GAMEMD_INCLUDE_DIR "${CMAKE_SOURCE_DIR}/../include")
+set(GAMEMD_INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../include")
 # Output directory for hook_dll.dll (set via -DHOOK_OUTPUT_DIR=... or env)
 if(NOT DEFINED HOOK_OUTPUT_DIR)
     if(DEFINED ENV{HOOK_OUTPUT_DIR})
         set(HOOK_OUTPUT_DIR "$ENV{HOOK_OUTPUT_DIR}")
     else()
-        set(HOOK_OUTPUT_DIR "${CMAKE_SOURCE_DIR}/../build_win/Debug")
+        set(HOOK_OUTPUT_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../build_win/Debug")
     endif()
 endif()
 

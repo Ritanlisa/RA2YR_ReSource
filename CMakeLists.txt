@@ -116,6 +116,10 @@ if(WIN32)
             COMMENT "Copying game resources: RA2YR-FullFiles/ -> $<TARGET_FILE_DIR:gamemd>"
         )
     endif()
+
+    # hook_dll — shadow execution framework (subdirectory build)
+    add_subdirectory(injectFunctionTest)
+    add_dependencies(gamemd hook_dll)
 endif()
 
 # Platform-specific settings for executable
