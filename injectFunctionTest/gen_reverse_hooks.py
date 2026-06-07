@@ -269,7 +269,7 @@ def generate(markers, functions, fn_map):
     for m in markers:
         ah=m['addr'].lstrip('0x').upper();s=san(m['fn_name'])
         fn=functions.get(m['addr'])
-        hs=fn.get('hook',{}).get('min_safe_size',5) if fn else 5
+        hs=fn.get('hook',{}).get('min_safe_size',8) if fn else 8
         conv=fn.get('call',{}).get('convention','?') if fn else '?'
         mode=m.get('mode','None')
         w(f'// {m["fn_name"]} @ {m["addr"]} ({conv}) mode={mode}')
