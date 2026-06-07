@@ -190,11 +190,13 @@ def generate(markers, functions, fn_map):
     w(f'static DWORD addr_tbl[{len(markers)}]={{}};')
     w('struct S{DWORD a,c,d,b,si,di,bp,sp,re;};')
     w(f'static S in[{len(markers)}]={{}};')
-    # Init
+    # Init — use static object constructor to guarantee NN() call
     w('static void NN(){')
     for i,m in enumerate(markers):
         w(f'  nm[{i}]="{m["fn_name"]}"; addr_tbl[{i}]=0x{int(m["addr"],16):08X};')
-    w('} static int _=(NN(),0);')
+    w('}')
+    w('struct InitHookNames { InitHookNames() { NN(); } };')
+    w('static InitHookNames _init;')
     # Index
     w('static int I(DWORD x){static DWORD A[]={')
     for m in markers: w(f'  0x{int(m["addr"],16):08X},')
