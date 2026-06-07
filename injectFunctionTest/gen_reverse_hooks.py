@@ -243,7 +243,7 @@ def generate(markers, functions, fn_map):
     w('}')
     # Log
     w('static void Log(DWORD a,int i,DWORD re,DWORD orig,DWORD ret){')
-    w('  if(!f){f=fopen("comparisonResult.log","a");if(!f)return;}')
+    w('  if(!f){f=fopen("comparisonResult.log","w");if(!f)return;}')
     w('  int n=++ctr[i];')
     w('  if(n==1)fprintf(f,"\\n[%s-0x%08X]\\n",nm[i]?nm[i]:"?",a);')
     w('  const char* cn=Caller(ret-5);')
