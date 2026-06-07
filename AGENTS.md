@@ -23,6 +23,33 @@ Phase 2 现代化方向：
 
 ---
 
+## REVERSE 宏相关代码保护规则
+
+**未经用户许可，不允许修改以下文件中的 REVERSE 标记/逻辑：**
+
+| 文件 | 说明 |
+|------|------|
+| `include/gamemd/core/reverse_marker.hpp` | REVERSE 宏定义 |
+| `injectFunctionTest/gen_reverse_hooks.py` | 钩子代码生成器 |
+| `injectFunctionTest/gen_re_impl.py` | RE_* 函数生成器 |
+| `injectFunctionTest/gen/reverse_hooks.cpp` | 自动生成的钩子代码 |
+| `injectFunctionTest/gen/reverse_check.cpp` | 编译诊断代码 |
+| `injectFunctionTest/gen/re_impl.cpp` | 自动生成的 RE_* 函数 |
+| `injectFunctionTest/render_hooks.cpp` | Blit 拦截器（非 REVERSE 钩子） |
+| `injectFunctionTest/hook_main.cpp` | DllMain + ExeRun 钩子 |
+| `injectFunctionTest/PostProcStub.asm` | 栈劫持对拍存根 |
+| `injectFunctionTest/tls_storage.h` | TLS 槽位布局 |
+| `injectFunctionTest/shadow_txn.h/cpp` | 页面级内存事务 |
+| `injectFunctionTest/functions.json` | 函数元数据 |
+| `injectFunctionTest/CMakeLists.txt` | hook DLL 构建 |
+| `functionComparison.md` | 对拍管线设计文档 |
+
+这些文件构成了完整的 REVERSE 对拍管线，改动需经用户审查批准。
+
+---
+
+---
+
 ## 编译状态 (当前)
 
 | 指标 | 数值 |
