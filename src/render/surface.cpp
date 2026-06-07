@@ -5,15 +5,14 @@
 #include <cstring>
 
 #include "gamemd/core/ddraw_init.hpp"
+#include "gamemd/core/reverse_marker.hpp"
 
 namespace gamemd
 {
 
 namespace {
 
-// IDA: 0x421B60 — ClipRectIntersection (289B)
-// Computes intersection of src_rect with clip_rect, storing result.
-// Optional offset pointers (x_off, y_off) are adjusted by the delta.
+REVERSE(0x421B60, "ClipRectIntersection: rect intersection helper", "Capture")
 RectangleStruct* ClipRectIntersection(
     RectangleStruct* result,
     const RectangleStruct* clip_rect,
@@ -86,6 +85,7 @@ RectangleStruct* ClipRectIntersection(
 // IDA: 0x7BC2B0 — ClipLine (717B)
 // Cohen-Sutherland line clipping against clip_rect.
 // Modifies start/end in-place, returns true if visible portion exists.
+REVERSE(0x7bc2b0, "ClipLine: Cohen-Sutherland line clip", "Capture")
 bool ClipLine(int* start, int* end, int* clip_rect)
 {
     int clip_x  = clip_rect[0];
@@ -683,6 +683,7 @@ Point2D Surface::DrawText(
 
 // IDA: 0x7BAEB0 — XSurface::SetPixel (89B)
 // vtable[9]  0x24 — Lock(point) → check BPP → write pixel → Unlock
+REVERSE(0x7baeb0, "XSurface::SetPixel: pixel write", "Capture")
 bool XSurface::SetPixel(const Point2D& point, uint32_t color)
 {
     void* buf = Lock(point.X, point.Y);
@@ -700,6 +701,7 @@ bool XSurface::SetPixel(const Point2D& point, uint32_t color)
 
 // IDA: 0x7BAE60 — XSurface::GetPixel (80B)
 // vtable[10] 0x28 — Lock(point) → check BPP → read pixel → Unlock
+REVERSE(0x7bae60, "XSurface::GetPixel: pixel read", "Capture")
 uint32_t XSurface::GetPixel(const Point2D& point)
 {
     uint32_t result = 0;
@@ -719,6 +721,7 @@ uint32_t XSurface::GetPixel(const Point2D& point)
 
 // IDA: 0x7BAF90 — XSurface::PutPixel (130B)
 // vtable[34] 0x88 — bounds check → Lock → check BPP → write → Unlock
+REVERSE(0x7baf90, "XSurface::PutPixel: pixel write + bounds", "Capture")
 bool XSurface::PutPixel(const Point2D& point, uint16_t color, const RectangleStruct& clip_rect)
 {
     if (point.X < clip_rect.X)
@@ -745,6 +748,7 @@ bool XSurface::PutPixel(const Point2D& point, uint16_t color, const RectangleStr
 
 // IDA: 0x7BAF10 — XSurface::GetPixelAtCoords (119B)
 // vtable[35] 0x8C — bounds check → Lock → check BPP → read → Unlock
+REVERSE(0x7baf10, "XSurface::GetPixelAtCoords: pixel read + bounds", "Capture")
 uint16_t XSurface::GetPixelAtCoords(const Point2D& point, const RectangleStruct& clip_rect)
 {
     uint16_t result = 0;
@@ -775,6 +779,7 @@ uint16_t XSurface::GetPixelAtCoords(const Point2D& point, const RectangleStruct&
 
 // IDA: 0x7BAB90 — XSurface::WalkLine (511B)
 // vtable[17] 0x44 — Bresenham walker with callback
+REVERSE(0x7bab90, "XSurface::WalkLine: Bresenham walker", "Capture")
 bool XSurface::WalkLine(
     const Point2D& start, const Point2D& end,
     void (*callback)(const Point2D&))
@@ -854,6 +859,7 @@ bool XSurface::WalkLine(
 
 // IDA: 0x7BA610 — XSurface::DrawLineEx (685B)
 // vtable[11] 0x2C — clipped line with inline Bresenham pixel write
+REVERSE(0x7ba610, "XSurface::DrawLineEx: clipped line", "Capture")
 bool XSurface::DrawLineEx(
     const RectangleStruct& clip_rect,
     const Point2D& start, const Point2D& end,
@@ -1023,6 +1029,7 @@ bool XSurface::DrawLineEx(
 
 // IDA: 0x7BA5E0 — XSurface::DrawLine (48B)
 // vtable[12] 0x30 — DrawLineEx wrapper with surface-level clip
+REVERSE(0x7ba5e0, "XSurface::DrawLine: no-clip wrapper", "Capture")
 bool XSurface::DrawLine(const Point2D& start, const Point2D& end, uint32_t color)
 {
     RectangleStruct clip;
@@ -1032,6 +1039,7 @@ bool XSurface::DrawLine(const Point2D& start, const Point2D& end, uint32_t color
 
 // IDA: 0x7BA8C0 — XSurface::DrawDashedLine (621B)
 // vtable[18] 0x48 — Bresenham dashed line with 16-byte stipple pattern
+REVERSE(0x7ba8c0, "XSurface::DrawDashedLine: stipple line", "Capture")
 bool XSurface::DrawDashedLine(
     const Point2D& start, const Point2D& end,
     uint16_t color, const uint8_t stipple[16],
@@ -1213,6 +1221,7 @@ bool XSurface::DrawDashedLine(
 
 // IDA: 0x7BBAB0 — XSurface::Fill (51B)
 // vtable[6] 0x18 — fill entire surface with single color
+REVERSE(0x7bbab0, "XSurface::Fill: fill surface", "Capture")
 bool XSurface::Fill(uint32_t color)
 {
     RectangleStruct rect;
@@ -1222,6 +1231,7 @@ bool XSurface::Fill(uint32_t color)
 
 // IDA: 0x7BADC0 — XSurface::DrawRectEx (158B)
 // vtable[21] 0x54 — rectangle outline drawing 4 edges via DrawLineEx
+REVERSE(0x7badc0, "XSurface::DrawRectEx: rect outline", "Capture")
 bool XSurface::DrawRectEx(
     const RectangleStruct& clip_rect,
     const RectangleStruct& draw_rect,
@@ -1241,6 +1251,7 @@ bool XSurface::DrawRectEx(
 
 // IDA: 0x7BAD90 — XSurface::DrawRect (43B)
 // vtable[22] 0x58 — DrawRectEx wrapper with surface-level clip
+REVERSE(0x7bad90, "XSurface::DrawRect: no-clip rect", "Capture")
 bool XSurface::DrawRect(const RectangleStruct& draw_rect, uint32_t color)
 {
     RectangleStruct clip;
@@ -1250,6 +1261,7 @@ bool XSurface::DrawRect(const RectangleStruct& draw_rect, uint32_t color)
 
 // IDA: 0x7BB350 — XSurface::DrawEllipseOutline (1478B)
 // vtable[8] 0x20 — midpoint ellipse algorithm
+REVERSE(0x7bb350, "XSurface::DrawEllipseOutline: ellipse", "Capture")
 bool XSurface::DrawEllipseOutline(
     const Point2D& center,
     int radius_w, int radius_h,
