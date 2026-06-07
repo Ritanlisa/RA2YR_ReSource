@@ -12,7 +12,7 @@ namespace gamemd
 
 namespace {
 
-REVERSE(0x421B60, "ClipRectIntersection: rect intersection helper", "Capture")
+REVERSE(0x421B60, "ClipRectIntersection: rect intersection", "None")
 RectangleStruct* ClipRectIntersection(
     RectangleStruct* result,
     const RectangleStruct* clip_rect,

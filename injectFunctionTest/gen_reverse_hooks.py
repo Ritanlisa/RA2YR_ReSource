@@ -278,7 +278,10 @@ def generate(markers, functions, fn_map):
     for m in markers:
         ah=m['addr'].lstrip('0x').upper();s=san(m['fn_name'])
         fn=functions.get(m['addr'])
-        hs=fn.get('hook',{}).get('min_safe_size',12) if fn else 12
+        hs=fn.get('hook',{}).get('min_safe_size',8) if fn else 8
+        if hs <= 0:
+            print(f'  SKIP: {m["addr"]} ({m["fn_name"]}) — min_safe_size={hs}, not hookable')
+            continue
         conv=fn.get('call',{}).get('convention','?') if fn else '?'
         mode=m.get('mode','None')
         w(f'// {m["fn_name"]} @ {m["addr"]} ({conv}) mode={mode}')
