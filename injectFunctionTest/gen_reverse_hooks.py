@@ -57,8 +57,7 @@ def parse_map():
     return addrs
 
 SIG = re.compile(
-    r'(?:inline\s+)?(?:static\s+)?(?:const\s+)?(?:virtual\s+)?'
-    r'(?:\w+(?:::+\w+)*[\*\s&]+)+(\w+)\s*\(([^)]*)\)',
+    r'(.+?)\s+(\w+(?:::\w+)*)\s*\(([^)]*)\)',
     re.IGNORECASE | re.DOTALL)
 
 def is_lib(name):
@@ -108,12 +107,12 @@ def find_markers(functions, raw_json, callee_map, callee_names, all_marked):
                     
                     # Heuristic: if the matched "return type" looks like a comment or code,
                     # or if the function name doesn't match JSON name, discard the match
-                    fname = s.group(1) if s else "?"
+                    fname = s.group(2) if s else "?"
                     params = []
                     ret_type = ""
                     full_sig = fname
                     if s:
-                        rt = s.group(0)[:s.group(0).rfind(s.group(1))].strip().lower()
+                        rt = s.group(1).strip().lower()
                         # Filter out garbage matches: comments, code fragments, wrong function names
                         garbage_words = ['return','remove','store','global','marked','repeat',
                                         'loads','resets','new','recursive','forward','declare']
@@ -123,10 +122,10 @@ def find_markers(functions, raw_json, callee_map, callee_names, all_marked):
                             fname = "?"
                             full_sig = "?"
                         else:
-                            ret_type = s.group(0)[:s.group(0).rfind(s.group(1))].strip()
+                            ret_type = rt
                             full_sig = s.group(0).strip().replace('\n',' ').replace('\r',' ').replace('  ',' ')
-                        if s and s.group(2).strip() and s.group(2).strip()!='void':
-                            for p in s.group(2).split(','):
+                        if s and s.group(3).strip() and s.group(3).strip()!='void':
+                            for p in s.group(3).split(','):
                                 ps = p.strip().split()
                                 if ps:
                                     n = ps[-1].lstrip('*& ')
@@ -446,7 +445,7 @@ def generate(markers, functions, fn_map, none_markers=None):
     w('  elen=lstrlenA(ebuf);')
     w('  if(tag==\'C\'){ elen+=wsprintfA(ebuf+elen,"  Return: 0x%08X\\r\\n",orig); }')
     w('  else if(re==orig){ elen+=wsprintfA(ebuf+elen,"  Return: hook=original=0x%08X\\r\\n",orig); }')
-    w('  else{ has_diff[i]=true; elen+=wsprintfA(ebuf+elen,"  Return: hook=0x%08X != original=0x%08X\\r\\n",re,orig); }')
+    w('  else{ has_diff[i]=true; elen+=wsprintfA(ebuf+elen,"  Return: hook=%d(0x%08X) != original=%d(0x%08X)\\r\\n",re,re,orig,orig); }')
     w('  // Write to file for crash safety (overwritten by flush_to_file anyway)')
     w('  if(h!=INVALID_HANDLE_VALUE){{')
     w('    DWORD dn;')
