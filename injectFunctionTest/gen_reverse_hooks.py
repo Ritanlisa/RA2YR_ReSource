@@ -91,16 +91,41 @@ def find_markers(functions, raw_json, callee_map, callee_names, all_marked):
                     ls = c.rfind('\n',0,m.start())+1
                     line = c[ls:m.end()]
                     if line.lstrip().startswith('//'): continue
-                    rest = c[m.end():m.end()+300]
-                    s = SIG.search(rest)
+                    rest = c[m.end():m.end()+500]
+                    # Skip comment lines and blank lines to find the real function declaration
+                    s = None
+                    for raw_line in rest.split('\n'):
+                        ln = raw_line.strip()
+                        if not ln or ln.startswith('//') or ln.startswith('/*') or ln.startswith('*') or ln.startswith('*/'):
+                            continue
+                        # Also skip lines that are just annotations like "marked completed"
+                        if ln.startswith('marked ') or ln.startswith('repeat '):
+                            continue
+                        s = SIG.search(ln)
+                        if s: break
+                    if s is None:
+                        s = SIG.search(rest)  # fallback
+                    
+                    # Heuristic: if the matched "return type" looks like a comment or code,
+                    # or if the function name doesn't match JSON name, discard the match
                     fname = s.group(1) if s else "?"
                     params = []
                     ret_type = ""
                     full_sig = fname
                     if s:
-                        ret_type = s.group(0)[:s.group(0).rfind(s.group(1))].strip()
-                        full_sig = s.group(0).strip().replace('\n',' ').replace('\r',' ').replace('  ',' ')
-                        if s.group(2).strip() and s.group(2).strip()!='void':
+                        rt = s.group(0)[:s.group(0).rfind(s.group(1))].strip().lower()
+                        # Filter out garbage matches: comments, code fragments, wrong function names
+                        garbage_words = ['return','remove','store','global','marked','repeat',
+                                        'loads','resets','new','recursive','forward','declare']
+                        is_garbage = any(w == rt or rt.startswith(w+' ') for w in garbage_words)
+                        if is_garbage:
+                            s = None  # discard the match
+                            fname = "?"
+                            full_sig = "?"
+                        else:
+                            ret_type = s.group(0)[:s.group(0).rfind(s.group(1))].strip()
+                            full_sig = s.group(0).strip().replace('\n',' ').replace('\r',' ').replace('  ',' ')
+                        if s and s.group(2).strip() and s.group(2).strip()!='void':
                             for p in s.group(2).split(','):
                                 ps = p.strip().split()
                                 if ps:
@@ -119,6 +144,8 @@ def find_markers(functions, raw_json, callee_map, callee_names, all_marked):
                     json_name = fn_info.get('name', fname)
                     if json_name and json_name != '?':
                         fname = json_name
+                        if full_sig == '?' or full_sig == fname:
+                            full_sig = json_name  # use JSON name as fallback signature
                     
                     completed = fn_info.get('hook',{}).get('completed', False)
                     
@@ -433,18 +460,17 @@ def generate(markers, functions, fn_map, none_markers=None):
     w('  if(!f){f=fopen("comparisonResult.log","w");if(!f)return;}')
     w('  ensure_sections();')
     w('  rewrite_sections();')
-    w('  // None Calls: list all None-mode markers (never hooked, always 0 calls)')
-    if none_markers:
+    w('  // None Calls: list None-mode markers + active markers that were never called')
+    if none_markers or markers:
         w('  fprintf(f,"\\n============== None Calls ================\\n");')
     for i,m in enumerate(none_markers):
-        si = len(markers) + i
         sig = m.get('full_sig', m['fn_name']).replace('\\','\\\\').replace('"','\\"').replace('\n',' ').replace('\r',' ')
         w(f'  fprintf(f,"[{sig}-0x{int(m["addr"],16):08X}]\\n");')
     w(f'  for(int i=0;i<{nmk};++i){{')
     w('    if(ctr[i]==0){')
     w('      const char* s=sig[i];')
-    w('      if(s&&*s)fprintf(f,"[%s-0x%08X]\\nNo Call\\n",s,addr_tbl[i]);')
-    w('      else fprintf(f,"[%s-0x%08X]\\nNo Call\\n",nm[i]?nm[i]:"?",addr_tbl[i]);')
+    w('      if(s&&*s)fprintf(f,"[%s-0x%08X]\\n",s,addr_tbl[i]);')
+    w('      else fprintf(f,"[%s-0x%08X]\\n",nm[i]?nm[i]:"?",addr_tbl[i]);')
     w('    }')
     w('  }')
     w('  fclose(f); f=nullptr;')
