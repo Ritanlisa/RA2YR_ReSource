@@ -15,7 +15,7 @@ static inline float ReadFloat(const uint8_t* d, int off) {
     return f;
 }
 
-// IDA 0x755CD0 — File::LoadFileVXL
+// IDA 0x755CD0 -- File::LoadFileVXL
 bool VxlLoad(const uint8_t* data, int size, VxlFile* out)
 {
     if (!data || size < 802 || !out) return false;
@@ -110,7 +110,7 @@ bool VxlLoad(const uint8_t* data, int size, VxlFile* out)
     return true;
 }
 
-// IDA 0x5BD570 — File::LoadFileHVA
+// IDA 0x5BD570 -- File::LoadFileHVA
 bool HvaLoad(const uint8_t* data, int size, HvaFile* out)
 {
     if (!data || size < 40 || !out) return false;
@@ -124,7 +124,7 @@ bool HvaLoad(const uint8_t* data, int size, HvaFile* out)
     int nameArea = 24;
     int dataStart = nameArea + limbCount * 16;
 
-    // Data section: 16 floats × FrameCount × LimbCount × 4 bytes
+    // Data section: 16 floats x FrameCount x LimbCount x 4 bytes
     int dataSize = frameCount * limbCount * 64;
     if (dataStart + dataSize > size) return false;
 
@@ -151,13 +151,13 @@ bool HvaLoad(const uint8_t* data, int size, HvaFile* out)
             float row2[4] = { ReadFloat(src, 32), ReadFloat(src, 36), ReadFloat(src, 40), 0.0f };
             float row3[4] = { 0.0f, 0.0f, 0.0f, 1.0f };
 
-            // Transpose: row-major input → column-major output
+            // Transpose: row-major input -> column-major output
             m.m[0]  = row0[0]; m.m[4]  = row1[0]; m.m[8]  = row2[0]; m.m[12] = row3[0];
             m.m[1]  = row0[1]; m.m[5]  = row1[1]; m.m[9]  = row2[1]; m.m[13] = row3[1];
             m.m[2]  = row0[2]; m.m[6]  = row1[2]; m.m[10] = row2[2]; m.m[14] = row3[2];
             m.m[3]  = row0[3]; m.m[7]  = row1[3]; m.m[11] = row2[3]; m.m[15] = row3[3];
 
-            src += 64;  // 16 floats × 4 bytes
+            src += 64;  // 16 floats x 4 bytes
         }
     }
 

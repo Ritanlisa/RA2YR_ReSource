@@ -225,7 +225,7 @@ int ParseCommandLine(int argc, char** argv)
     return 1;
 }
 
-// IDA 0x7B2720 â€ SessionClass::SetInstance: registers global session pointer
+// IDA 0x7B2720 -- SessionClass::SetInstance: registers global session pointer
 static void* g_SessionClass_Instance = nullptr;
 void SessionClassSetInstance(int value) {
     g_SessionClass_Instance = (void*)(intptr_t)value;

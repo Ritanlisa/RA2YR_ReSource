@@ -182,7 +182,7 @@ ObjectClass* CellClass::FindObjectOfType(AbstractType type, bool alt) const
     return nullptr;
 }
 
-// IDA: 0x578080 — Cell::GetGroundHeight (121B)
+// IDA: 0x578080 -- Cell::GetGroundHeight (121B)
 // Computes ground height from lepton coordinates.
 // Converts leptons (1 cell = 256 leptons) to cell index,
 // validates bounds against dword_87F928 and g_Shroud_CellArray.

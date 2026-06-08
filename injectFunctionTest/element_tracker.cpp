@@ -1,4 +1,4 @@
-// element_tracker.cpp — Render element tracking buffer
+// element_tracker.cpp -- Render element tracking buffer
 #include "element_tracker.h"
 #include <cstring>
 

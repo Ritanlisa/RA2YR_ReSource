@@ -1,4 +1,4 @@
-// virtual_screen.h — Virtual screen buffer for headless rendering
+// virtual_screen.h -- Virtual screen buffer for headless rendering
 // Tracks primary surface info + recent blit operations for automated testing.
 #pragma once
 #include <windows.h>

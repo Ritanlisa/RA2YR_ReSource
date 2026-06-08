@@ -24,7 +24,7 @@ bool ShpImage::LoadFromMemory(const uint8_t* data, int data_size)
     m_raw_data = data;
     m_raw_size = data_size;
 
-    // IDA: TS SHP format — header is 8 bytes: 0x0000, width(2B), height(2B), frames(2B)
+    // IDA: TS SHP format -- header is 8 bytes: 0x0000, width(2B), height(2B), frames(2B)
     uint16_t first = *(const uint16_t*)(data + 0);
     if (first != 0) {
         // TD format: frames(2B) at offset 0 + width(2B) + height(2B)
@@ -146,7 +146,7 @@ bool ShpImage::DecodeRLE3(const uint8_t* src, int src_size,
     // Format 3: scanline-based RLE-zero compression (OpenRA ShpTSLoader)
     // Each scanline: uint16 length (total bytes including this 2B prefix, minus 2)
     // Followed by RLE-zero data:
-    //   cmd == 0x00: next byte is count → write 'count' zeros
+    //   cmd == 0x00: next byte is count -> write 'count' zeros
     //   cmd != 0x00: write byte directly
     if (!src || !dst) return false;
 

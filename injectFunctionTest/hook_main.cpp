@@ -47,7 +47,7 @@ SYRINGE_HANDSHAKE(pInfo)
 }
 
 // ============================================================
-// ExeRun hook (0x7CD810) — safe server startup after DLL load
+// ExeRun hook (0x7CD810) -- safe server startup after DLL load
 // ============================================================
 DEFINE_HOOK(7CD810, HDS_StartServer, 9)
 {

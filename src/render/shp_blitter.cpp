@@ -19,13 +19,13 @@ static inline int ClampLines(int src_h, int dst_h)
 // SHPBlitterCopy
 //
 // Reverse-engineered from gamemd.exe at 0x4373B0.
-// Simple direct pixel copy path — used when the SHP data is NOT RLE-compressed
+// Simple direct pixel copy path -- used when the SHP data is NOT RLE-compressed
 // (i.e. the frame format byte is 0x00 for raw data).
 //
 // The blitter_vtable is a function pointer table that handles the actual
 // per-row/per-pixel copy with color processing (translucent, alpha, remap, etc.).
 //
-// Algorithm: Clip → compute Z-buffer offset → row-by-row iterate → call blitter
+// Algorithm: Clip -> compute Z-buffer offset -> row-by-row iterate -> call blitter
 //
 bool SHPBlitterCopy(
     Surface* dest_surface,
@@ -123,7 +123,7 @@ bool SHPBlitterCopy(
 }
 
 //
-// SHPBlitterRLEBlit (stub — complex 300B RLE decompression + blit)
+// SHPBlitterRLEBlit (stub -- complex 300B RLE decompression + blit)
 //
 bool SHPBlitterRLEBlit(
     Surface* dest_surface,

@@ -1,5 +1,5 @@
 // TLS storage for shadow execution framework
-// Uses fs:[0x18] (TIB Arbitrary User Pointer) — Syringe uses fs:[0x14],
+// Uses fs:[0x18] (TIB Arbitrary User Pointer) -- Syringe uses fs:[0x14],
 // so we avoid collision by using the next available slot.
 //
 // Layout of fs:[0x18]:

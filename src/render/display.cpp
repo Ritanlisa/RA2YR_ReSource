@@ -8,8 +8,8 @@ namespace gamemd
 {
 
 extern HWND  g_hWnd;           // main window handle
-extern int   g_ScrollOffsetX;  // dword_87F7EC — horizontal scroll
-extern int   g_ScrollOffsetY;  // dword_87F7F0 — vertical scroll
+extern int   g_ScrollOffsetX;  // dword_87F7EC -- horizontal scroll
+extern int   g_ScrollOffsetY;  // dword_87F7F0 -- vertical scroll
 
 DisplayClass::DisplayClass() noexcept
     : CurrentFoundation_CenterCell{}
@@ -52,7 +52,7 @@ DisplayClass::DisplayClass() noexcept
 {
 }
 
-// IDA: 0x4F4780 — Frame::Present (~3000B)
+// IDA: 0x4F4780 -- Frame::Present (~3000B)
 // Main frame presentation: composites rendered surfaces onto primary DDraw surface,
 // handles scroll offsets, sidebar, mouse cursor, and page flip.
 bool FramePresent(Surface* composite_surface, int flags, int arg3, int arg4)

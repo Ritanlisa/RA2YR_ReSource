@@ -35,24 +35,24 @@ bool ObjectClass::Put(const CoordStruct& coords, unsigned int face_dir)
     return true;
 }
 
-// IDA: 0x5F44A0 � ObjectClass::Remove (123B)
+// IDA: 0x5F44A0 -- ObjectClass::Remove (123B)
 // Removes object from selection manager and resets scroll anchor
 // Checks this+0x83 (m_is_selected), not m_is_on_map
 bool ObjectClass::Remove()
 {
-    // IDA: if (*(this+0x83)) � m_is_selected check
+    // IDA: if (*(this+0x83)) -- m_is_selected check
     if (!m_is_selected)
         return false;
 
     // IDA: find index in ObjectClass_CurrentObjects
     // IDA: remove from g_SelectionManager by shifting entries down
-    // IDA: *(this+0x83) = 0 � m_is_selected = false
+    // IDA: *(this+0x83) = 0 -- m_is_selected = false
     m_is_selected = false;
 
-    // IDA: if MapClass::GetScrollMode == this � SetScrollMode(0)
+    // IDA: if MapClass::GetScrollMode == this -- SetScrollMode(0)
     // This deselects the scroll anchor if this object was it
 
-    // Also perform standard removal � unmark occupancy, set limbo
+    // Also perform standard removal -- unmark occupancy, set limbo
     UnmarkAllOccupationBits(m_location);
     m_is_on_map = false;
     m_in_limbo = true;
@@ -60,19 +60,19 @@ bool ObjectClass::Remove()
     return true;
 }
 
-// IDA: 0x5F65F0 � ObjectClass::Destroy (146B)
-// Cleanup chain: audio � TechnoClass::CleanupAll � AnnounceExpiredPointer
+// IDA: 0x5F65F0 -- ObjectClass::Destroy (146B)
+// Cleanup chain: audio -- TechnoClass::CleanupAll -- AnnounceExpiredPointer
 // Then sets m_is_alive=false and registers for disk laser cleanup
 void ObjectClass::Destroy()
 {
-    // IDA: if (*(this+0x38)) � m_attached_bomb cleanup
+    // IDA: if (*(this+0x38)) -- m_attached_bomb cleanup
     // ObjectClass::CleanupAudioAndRefs(v2)
 
-    // IDA: if (m_abstract_flags & 1) � TechnoClass::CleanupAll(this, 0)
+    // IDA: if (m_abstract_flags & 1) -- TechnoClass::CleanupAll(this, 0)
     // AbstractClass::AnnounceExpiredPointer(this, 1)
     // vtable[53] cleanup virtual
 
-    // IDA: *(this+0x90) = 0 � m_is_alive = false
+    // IDA: *(this+0x90) = 0 -- m_is_alive = false
     m_is_alive = false;
 
 REVERSE(0x5f44a0, "ObjectClass::Remove: IDA verified", "None") // auto-marked completed
@@ -233,17 +233,17 @@ bool ObjectClass::CanBeSold() const
     return m_health > 0 && !m_in_limbo;
 }
 
-// IDA: 0x70E2B0 � TechnoClass::IronCurtain (80B)
+// IDA: 0x70E2B0 -- TechnoClass::IronCurtain (80B)
 // Sets iron curtain invulnerability timer fields at timer offsets
 DamageState ObjectClass::IronCurtain(int duration, HouseClass* source, bool force_shield)
 {
     (void)source;
 
-    // IDA: *(this+99) = CurrentFrame � m_iron_curtain_timer.data[0] at +0x18C
-    // IDA: *(this+100) = v5 � duration stored in timer data[1] at +0x190
-    // IDA: *(this+105) = 0 � m_iron_tint_stage at +0x1A4
-    // IDA: *(this+101) = a2 � duration field at +0x194
-    // IDA: *(this+113) = a4 ? 1 : 0 � m_force_shielded at +0x1C4
+    // IDA: *(this+99) = CurrentFrame -- m_iron_curtain_timer.data[0] at +0x18C
+    // IDA: *(this+100) = v5 -- duration stored in timer data[1] at +0x190
+    // IDA: *(this+105) = 0 -- m_iron_tint_stage at +0x1A4
+    // IDA: *(this+101) = a2 -- duration field at +0x194
+    // IDA: *(this+113) = a4 ? 1 : 0 -- m_force_shielded at +0x1C4
 
     // TODO: implement timer fields when TimerStruct layout is confirmed
     (void)duration;
@@ -262,7 +262,7 @@ void ObjectClass::Reveal()
     m_is_visible = true;
 }
 
-// IDA: 0x5F4D10 � ObjectClass::MarkForRedraw (30B)
+// IDA: 0x5F4D10 -- ObjectClass::MarkForRedraw (30B)
 // If not already marked, sets m_needs_redraw=true and calls MapClass::MarkForRedraw
 void ObjectClass::MarkForRedraw()
 {
@@ -286,7 +286,7 @@ bool ObjectClass::DiscoveredBy(HouseClass* house)
     return true;
 }
 
-// IDA: 0x5F3900 � ObjectClass::ctor
+// IDA: 0x5F3900 -- ObjectClass::ctor
 // Verified: AbstractClass_Constructor at 0x410170 called first, then 2 AudioController::Init
 ObjectClass::ObjectClass() noexcept
     : m_unknown_24(0)               // +0x24 = 0 (IDA mov [esi+0x24], 0)

@@ -97,7 +97,7 @@ public:
         MixFileClass* MULTIMD            = nullptr;
     };
 
-    // Global search pool — all loaded MIX files (including sub-MIX)
+    // Global search pool -- all loaded MIX files (including sub-MIX)
     static DynamicVectorClass<MixFileClass*>& GetMixPool();
 
     static LinkedList<MixFileClass*>& MIXes;
@@ -109,7 +109,7 @@ public:
     static MixFileClass& MULTI;
     static GenericMixFiles& Generics;
 
-    static bool Bootstrap();  // IDA: MixFileClass::Bootstrap @ 0x5301A0 — returns bool
+    static bool Bootstrap();  // IDA: MixFileClass::Bootstrap @ 0x5301A0 -- returns bool
 
     static uint32_t ComputeID(const char* filename);
 

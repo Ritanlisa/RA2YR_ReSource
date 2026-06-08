@@ -9,7 +9,7 @@ namespace gamemd
 class DSurface;
 
 //
-// MovieHandle — abstract base for movie playback
+// MovieHandle -- abstract base for movie playback
 // Matches BinkMovieHandle/VQMovieHandle vtable from IDA
 //
 class MovieHandle
@@ -26,12 +26,12 @@ public:
 };
 
 //
-// MovieType — format detection result
+// MovieType -- format detection result
 //
 enum class MovieType : uint8_t
 {
     Unknown = 0,    // Not a valid movie file
-    BINK    = 1,    // .bik — BINK video (RAD Game Tools)
+    BINK    = 1,    // .bik -- BINK video (RAD Game Tools)
     VQA     = 2,    // Westwood VQA format (older)
 };
 
@@ -107,7 +107,7 @@ private:
 };
 
 //
-// MoviePlayer — High-level movie playback
+// MoviePlayer -- High-level movie playback
 // Implements Movie_Play + Movie_Create from IDA (0x5BED40, 0x5C07D0)
 //
 class MoviePlayer

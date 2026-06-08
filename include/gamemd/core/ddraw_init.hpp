@@ -7,17 +7,17 @@
 namespace gamemd {
 
 // IDA: DDraw globals
-// 0x8A0094: g_lpDirectDraw7 — main DDraw7 object
+// 0x8A0094: g_lpDirectDraw7 -- main DDraw7 object
 extern LPDIRECTDRAW7 g_lpDirectDraw7;
-// 0x89F978: g_DDraw_Initialized — window mode flag (-WIN)
+// 0x89F978: g_DDraw_Initialized -- window mode flag (-WIN)
 extern int  g_DDraw_Initialized;
-// 0xA8ED80: g_DDraw_Active — DDraw activity flag
+// 0xA8ED80: g_DDraw_Active -- DDraw activity flag
 extern bool g_DDraw_Active;
 // 0x8A00A4/A8/AC: g_DisplayWidth/Height/BPP
 extern int  g_DisplayWidth;
 extern int  g_DisplayHeight;
 extern int  g_DisplayBPP;
-// 0x8205D4: g_DDraw_UseHWBlit — hardware blit available
+// 0x8205D4: g_DDraw_UseHWBlit -- hardware blit available
 extern bool g_DDraw_UseHWBlit;
 // 0x8A0DEE: g_DDraw_AllowStretchBlits
 extern bool g_DDraw_AllowStretchBlits;

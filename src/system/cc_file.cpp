@@ -1,4 +1,4 @@
-// CCFileClass � IDA-based class for file access (MIX pool search + disk fallback)
+// CCFileClass -- IDA-based class for file access (MIX pool search + disk fallback)
 #include "gamemd/system/cc_file.hpp"
 #include "gamemd/system/mix_file.hpp"
 #include "gamemd/system/file_system.hpp"
@@ -22,7 +22,7 @@ REVERSE(0x473c50, "CCFileClass::Open: IDA verified", "None") // auto-marked comp
     (void)pFileName; // filename stored by SetFileName or opened explicitly
 }
 
-// IDA 0x473C50 � CCFileClass::Open
+// IDA 0x473C50 -- CCFileClass::Open
 // Searches MIX pool first, then falls back to disk
 bool CCFileClass::Open(const char* pFileName)
 {
@@ -77,7 +77,7 @@ bool CCFileClass::Open(const char* pFileName)
 }
 
 REVERSE(0x4a3890, "CCFileClass::ReadEntireFile: IDA verified", "None") // auto-marked completed
-// IDA 0x4A3890 � CCFileClass::ReadEntireFile
+// IDA 0x4A3890 -- CCFileClass::ReadEntireFile
 void* CCFileClass::ReadEntireFile()
 {
     if (Buffer.Buffer && Buffer.Size > 0)
@@ -89,7 +89,7 @@ void* CCFileClass::ReadEntireFile()
 }
 
 REVERSE(0x473ce0, "CCFileClass::Reset: IDA verified", "None") // auto-marked completed
-// IDA 0x473CE0 � CCFileClass::Reset
+// IDA 0x473CE0 -- CCFileClass::Reset
 void CCFileClass::Reset()
 {
     Buffer.Clear();

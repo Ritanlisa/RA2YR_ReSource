@@ -1,4 +1,4 @@
-// Dialog system — IDA Win32 dialog wrapper stubs
+// Dialog system -- IDA Win32 dialog wrapper stubs
 // These are the original gamemd.exe Win32 CreateDialogIndirectParamA wrappers.
 // Implemented as stubs for now (custom DialogClass is used for menu screens).
 #include "gamemd/ui/dialog.hpp"
@@ -7,7 +7,7 @@
 namespace gamemd {
 namespace Dialog {
 
-// IDA: Calls ResourceFind(template_id, type=5) → DLGTEMPLATE*
+// IDA: Calls ResourceFind(template_id, type=5) -> DLGTEMPLATE*
 //       then CreateDialogIndirectParamA(g_hInstance, template, g_hWnd, dlg_proc, lParam)
 //       then registers to internal tracking array (dword_B72F50)
 HWND Create(int template_id, DLGPROC dlg_proc, LPARAM lParam)
@@ -42,12 +42,12 @@ void MessageLoop()
     }
 }
 
-// IDA: 27 callers in original binary — wraps MessageLoop + Event::Dispatch for in-game modes
+// IDA: 27 callers in original binary -- wraps MessageLoop + Event::Dispatch for in-game modes
 void PumpMessages()
 {
     MessageLoop();
     // IDA: if GameMode==0||5: Event::Dispatch()
-    // IDA: if in-game: sub_55CBF0()→GameFrameLoop()
+    // IDA: if in-game: sub_55CBF0()->GameFrameLoop()
 }
 
 // IDA: ShowWindow(SW_SHOW) + SetWindowPos
@@ -63,7 +63,7 @@ void Destroy(HWND hWnd)
     DestroyWindow(hWnd);
 }
 
-// IDA 0x5D3490 — Dialog::ShowMessageBox (CSF strings → MessageBox)
+// IDA 0x5D3490 -- Dialog::ShowMessageBox (CSF strings -> MessageBox)
 int ShowMessageBox(const wchar_t* msg, const wchar_t* ok, const wchar_t* cancel, int a4, int a5)
 {
     (void)msg; (void)ok; (void)cancel; (void)a4; (void)a5;

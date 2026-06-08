@@ -105,9 +105,9 @@ LONG CALLBACK VEHHandler(PEXCEPTION_POINTERS info) {
 ```cpp
 #include "gamemd/core/reverse_marker.hpp"
 
-// REVERSE(addr, description, enabled)
+// REVERSE(addr, description, mode)
 // The NEXT line MUST contain the C++ function declaration with parameter names.
-REVERSE(0x52BA60, "InitGame: master init pipeline (4333B)", true)
+REVERSE(0x52BA60, "InitGame: master init pipeline (4333B)", "Replace")
 int InitGame(bool no_cd) {
     // Parameter names parsed from this declaration → appear in log
 }
@@ -115,7 +115,7 @@ int InitGame(bool no_cd) {
 
 `reverse_marker.hpp` defines REVERSE as a NO-OP macro:
 ```cpp
-#define REVERSE(addr, desc, enabled) \
+#define REVERSE(addr, desc, mode) \
     /* REVERSE_MARKER: addr desc enabled */
 ```
 
@@ -126,21 +126,112 @@ python gen_reverse_hooks.py
 ```
 
 **Scanning phase**:
-1. Walks `src/`, `app/`, `include/gamemd/` for `REVERSE(0xADDR, "desc", true/false)` markers
+1. Walks `src/`, `app/`, `include/gamemd/` for `REVERSE(0xADDR, "desc", Hook_mode)` markers
 2. Skips markers on comment lines (`// ` prefixed)
 3. Parses the C++ function declaration on the NEXT line for parameter names
 4. Looks up each address in `functions.json` for completion status + calling convention
 
-**Validation phase**:
-| Condition | Severity | Action |
-|-----------|----------|--------|
-| addr not found in `functions.json` | ERROR | exits with sys.exit(1) |
-| `completed:false` + `enabled:true` | ERROR | exits with sys.exit(1) |
-| `completed:false` + `enabled:false` | WARNING | compiler `#pragma message` |
-| FuncA(enabled) calls FuncB(uncompleted) | ERROR | blocked until dep completed |
-| FuncA(disabled) calls FuncB(uncompleted, no REVERSE marker) | WARNING | `#pragma message` |
-| Library function (CRT/MSVC) in callees | SKIP | `is_lib()` filter |
+### 2.3 Hook Modes
+1. **None**: This function is only marked as a hook function, **won't apply any hooks**. Only raise warning when it's not completed
+2. **Capture**: This function is marked as a hook function and **its hook will catch every input/output result to comparisonResult.log**. This hook won't affect original function. Only raise warning when it's not completed
+3. **Inject**: This function **will replace the output of the origional Function and their output will both be written in comparisonResult.log**. Raise Error when it's not completed.
+4. **Replace**: This fuction and its callee-functions need to be replaced (this means lib functions won't count in) **will all be replaced but callees won't be written in comparisonResult.log**. Raise Error when it's not completed or its callee-functions need to be replaced.
 
+### Hook Modes Example
+
+Original Execution Flow (ignore Argument Type Defines):
+```
+Entrance -> parent functions -> typeA FuncA(a1, a2) -> typeB FuncB(b1, b2) -> typeC LibFunc(c1, c2)
+```
+Our Target Functions:
+```
+Entrance -> parent functions -> typeA RepFuncA(a1, a2) -> typeB RepFuncB(b1, b2) -> typeC LibFunc(c1, c2)
+```
+In this Example, we need to test RepFuncA & RepFuncB:
+
+---
+**Normal Execution Flow (-> for call & <- for return):**
+```
+Entrance -> parent functions -> typeA FuncA(a1, a2) -> typeB FuncB(b1, b2) -> typeC LibFunc(c1, c2)
+parent functions <- retValA <- FuncA <- retValB <- FuncB <- retValLibFunc <- LibFunc(c1, c2)
+```
+
+---
+for **None** type Mode:
+```cpp
+REVERSE(0xADDR_FuncA, "desc", "None")
+typeA RepFuncA(a1,a2)
+
+REVERSE(0xADDR_FuncA, "desc", "None")
+typeB RepFuncB(b1, b2)
+```
+
+**None Mode Execution Flow (-> for call & <- for return):**
+```
+Entrance -> parent functions -> typeA FuncA(a1, a2) -> typeB FuncB(b1, b2) -> typeC LibFunc(c1, c2)
+parent functions <- retValA <- FuncA <- retValB <- FuncB <- retValLibFunc <- LibFunc(c1, c2)
+```
+
+---
+for **Capture** type Mode:
+```cpp
+REVERSE(0xADDR_FuncA, "desc", "Capture")
+typeA RepFuncA(a1,a2)
+
+REVERSE(0xADDR_FuncA, "desc", "None")
+typeB RepFuncB(b1, b2)
+```
+
+**Capture Mode Execution Flow (-> for call & <- for return):**
+```
+Entrance -> parent functions -> Hook (Record a1 & a2, stack hijack with FuncA_Retprocess)-> typeA FuncA(a1, a2) -> typeB FuncB(b1, b2) -> typeC LibFunc(c1, c2)
+parent functions <- FuncA_Retprocess(print a1/a2/retValA as a full "Call" into comparisonResult.log) <- retValA <- FuncA <- retValB <- FuncB <- retValLibFunc <- LibFunc(c1, c2)
+```
+
+---
+for **Inject** type Mode:
+```cpp
+REVERSE(0xADDR_FuncA, "desc", "Inject")
+typeA RepFuncA(a1,a2)
+
+REVERSE(0xADDR_FuncA, "desc", "None")
+typeB RepFuncB(b1, b2)
+```
+
+**Inject Mode Execution Flow (-> for call & <- for return):**
+```
+Entrance -> parent functions -> Hook (Record a1 & a2, stack hijack with FuncA_Retprocess, ready to recover memory by page-protect/backup/something else) -> typeA FuncA(a1, a2) -> typeB FuncB(b1, b2) -> typeC LibFunc(c1, c2)
+            FuncA_Retprocess(record a1/a2/retValA and recover memory) <- retValA <- FuncA <- retValB <- FuncB <- retValLibFunc <- LibFunc(c1, c2)
+            FuncA_Retprocess -> typeA RepFuncA(a1, a2) -> typeB FuncB(b1, b2) -> typeC LibFunc(c1, c2)
+parent functions <- FuncA_Retprocess(print a1/a2/retValA/retValRepA as a full "Call" into comparisonResult.log) <- retValRepA <- RepFuncA <- retValB <- FuncB <- retValLibFunc <- LibFunc(c1, c2)
+```
+If it would works like below would be better:
+```
+Entrance -> parent functions -> Hook (Record a1 & a2, stack hijack with FuncA_Retprocess, ready to recover memory by page-protect/backup/something else) -> typeA FuncA(a1, a2) -> Hook (Record b1/b2) -> typeB FuncB(b1, b2) -> typeC LibFunc(c1, c2)
+            FuncA_Retprocess(record a1/a2/retValA and recover memory) <- retValA <- FuncA <- Hook (Record retValB) <- retValB <- FuncB <- retValLibFunc <- LibFunc(c1, c2)
+            FuncA_Retprocess -> typeA RepFuncA(a1, a2) -> Calling Manager(check calling if match FuncB(b1, b2), assert any match exists)
+parent functions <- FuncA_Retprocess(print a1/a2/retValA/retValRepA as a full "Call" into comparisonResult.log) <- retValRepA <- RepFuncA <- retValB <- Calling Manager
+```
+
+---
+for **Replace** type Mode:
+```cpp
+REVERSE(0xADDR_FuncA, "desc", "Replace")
+typeA RepFuncA(a1,a2)
+
+REVERSE(0xADDR_FuncA, "desc", "None")
+typeB RepFuncB(b1, b2)
+```
+
+**Replace Mode Execution Flow (-> for call & <- for return):**
+```
+Entrance -> parent functions -> Hook (Record a1 & a2, stack hijack with FuncA_Retprocess, ready to recover memory by page-protect/backup/something else) -> typeA FuncA(a1, a2) -> typeB FuncB(b1, b2) -> typeC LibFunc(c1, c2)
+            FuncA_Retprocess(record a1/a2/retValA and recover memory) <- retValA <- FuncA <- retValB <- FuncB <- retValLibFunc <- LibFunc(c1, c2)
+            FuncA_Retprocess -> typeA RepFuncA(a1, a2) -> typeB RepFuncB(b1, b2) -> typeC LibFunc(c1, c2)
+parent functions <- FuncA_Retprocess(print a1/a2/retValA/retValRepA as a full "Call" into comparisonResult.log) <- retValRepA <- RepFuncA <- retValRepB <- RepFuncB <- retValLibFunc <- LibFunc(c1, c2)
+```
+
+---
 **Library function filter** (`is_lib()`):
 ```python
 # Excluded from dependency warnings:
@@ -160,7 +251,7 @@ name in ('Debug::Log', 'Debug::Log_0')
    - LogComparison callback
 4. Generates `gen/reverse_check.cpp` — `#pragma message` / `#error` for compiler diagnostics
 
-### 2.3 Dependency Data
+### 2.4 Dependency Data
 
 `callee_map.json` — 39 completed functions, ~10K unique callee names:
 - Generated from IDA via `CodeRefsFrom` instruction-level scan
@@ -168,16 +259,33 @@ name in ('Debug::Log', 'Debug::Log_0')
 - Names deduplicated
 - Updated: `python ida_extract.py` → re-run the callee scan
 
-### 2.4 comparisonResult.log Format
+### 2.5 comparisonResult.log Format
 
 ```
-[InitGame-0x0052BA60]
-Call 1: MainGame()<-0x0048CCCF
-  Input:  no_cd(ECX)=0x00000004
-  Return: hook=0x00000000    |    original=0x00000000
+============ Different Calls ============
+[int InitGame(bool no_cd)-0x0052BA60]
+Call 2: MainGame()<-0x0048CCCF
+  Input:  no_cd(ECX)=false(0x00000004)
+  Return: hook=1(0x00000001) | original=0(0x00000000)
 
-[ParseCommandLine-0x0052F620]
-No Call
+============== None Calls ================
+[int ParseCommandLine(int argc, char** argv)-0x0052F620]
+
+================ Captures ================
+[TechnoType* Toggle(TechnoType* Techno)-0x0052FC5A]
+Call 2: MainGame()<-0x0048CCCF
+  Input:  Techno*(ECX)={Techno Class, var1=0}(0xFA531AC4)
+  Return: {Techno Class, var1=111}(0xFA531AC4)
+
+============= Same Compares =============
+[int InitGame(bool no_cd)-0x0052BA60]
+Call 1: MainGame()<-0x0048CCCF
+  Input:  no_cd(ECX)=false(0x00000004)
+  Return: hook=original=0(0x00000000)
+
+Call 3: MainGame()<-0x0048CCCF
+  Input:  no_cd(ECX)=false(0x00000004)
+  Return: hook=original=0(0x00000000)
 ```
 
 | Field | Source |
@@ -335,17 +443,32 @@ cmake --build build_hook --config Release
 | `SHADOW_DATA_START` | `0x812000` | .data section start |
 | `SHADOW_DATA_END` | `0xB7A000` | .data section end |
 
-## 8. Current Status
+## 8. 可能的陷阱
+
+- `tls_storage.h` — `GetSlot()` inline 函数体引用任何新符号都会改变 DLL section 布局，导致 hook 静默失效
+- `PostProcStub.asm` — 添加任何 `EXTERN` 会偏移 DLL 导出序数，使所有 hook 的 `GetProcAddress` 返回错误地址
+- `gen/reverse_hooks.cpp` — 不在 git 跟踪中，`git checkout` 不更新，必须重新运行 `gen_reverse_hooks.py`
+- `D:\RA2MD\` — Syringe 自动加载目录下所有带 `.syhks00` section 的 DLL，只能保留一个 `hook_dll.dll`
+- `fs:[0x18]` — TIB Self 指针，非空闲槽位，当前通过 `InitTLS` 的 `__writefsdword` 覆盖使用
+- ShadowTransaction — 保护 EXE `.data` 页无法回滚 DDraw 表面状态，渲染函数中使用会导致白屏
+- `retn N` — 使用 callee-cleanup 的原函数（如 Fill 的 `retn 4`）需要 PostProcStub 补偿额外清理的字节
+
+## 9. 待修复
+
+- `PostProcStub.asm:60` — `mov eax,[ecx];jmp eax` 破坏 EAX 返回值
+- `tls_storage.h` — `ShadowSlot` 缺 `stack_cleanup` 字段 (offset +0x10)
+- `gen_reverse_hooks.py` — `comparisonResult.log` 需三文件直接写入
+- `gen_reverse_hooks.py` FI_* — Input 显示 `rect(ECX)=...` 应为 `color=0xFF`
+- `gen_reverse_hooks.py` — 函数头 `XSurface::Fill-0xADDR` 应为 `bool XSurface::Fill(uint32_t color)-0xADDR`
+
+## 10. Current Status
 
 | Metric | Value |
 |--------|-------|
-| Completed rendering functions | **13** (faithful IDA translations) |
-| REVERSE markers | **13 active** (Capture mode) + **~32 disabled** (None mode) |
-| Hook modes tested | **Capture ✅ Inject ✅ Replace ⏳** |
-| comparisonResult.log sections | **3-section dynamic insertion** (Capture/Different/Same) |
-| Hook DLL build | **0 errors, 0 C4129 warnings** |
-| gamemd_core build | **0 errors** |
-| CMake single-build | **gamemd.exe + hook_dll.dll** in one command |
-| Verified at runtime | **Fill (Capture & Inject), 12 rendering functions (Capture)** |
-| Not hookable (ESP-relative) | **ClipRectIntersection** (min_safe_size=0) |
+| Truly completed functions | **30** (faithful IDA translations) |
+| REVERSE markers in source | **~32** (across 14 files, all disabled) |
+| Completed + enabled hooks | **0** (pending dependency resolution) |
+| Dependency callees tracked | **~10K unique** (callee_map.json) |
+| Hook DLL build | **0 errors** |
+| gamemd_core build | **0 errors** (1 pre-existing linker issue) |
 | Verified at runtime | **1** (CellStruct::Set — 0 mismatches) |

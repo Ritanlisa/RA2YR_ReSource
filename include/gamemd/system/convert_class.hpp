@@ -17,7 +17,7 @@ class ConvertClass
 {
 public:
     static DynamicVectorClass<ConvertClass*>& Array;
-    // IDA 0x48E740 — ConvertClass::Construct (builds palette+blitter tables)
+    // IDA 0x48E740 -- ConvertClass::Construct (builds palette+blitter tables)
 
     static ConvertClass* FindOrAllocate(const char* pFilename);
     static void CreateFromFile(const char* pFilename, BytePalette*& pPalette, ConvertClass*& pDestination);

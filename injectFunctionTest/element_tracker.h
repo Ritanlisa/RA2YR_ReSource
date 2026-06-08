@@ -1,10 +1,10 @@
-// element_tracker.h — Render element tracking for headless testing
+// element_tracker.h -- Render element tracking for headless testing
 // Intercepts DSurface operations to build a semantic screen tree:
-//   TEXT — text labels with content
-//   SHP  — sprite frames with palette reference
-//   BINK — video playback state
-//   RECT — filled rectangles / UI boxes
-//   VXL  — voxel model placeholders
+//   TEXT -- text labels with content
+//   SHP  -- sprite frames with palette reference
+//   BINK -- video playback state
+//   RECT -- filled rectangles / UI boxes
+//   VXL  -- voxel model placeholders
 //
 // Accessed via headless ELEMENTS command.
 #pragma once

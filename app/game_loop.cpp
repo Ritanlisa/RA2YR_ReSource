@@ -20,10 +20,10 @@ static bool      g_running;
 static bool      g_windowed;
 static bool      g_spawn_mode;
 
-// IDA: 0x849F48 — "Yuri's Revenge"
+// IDA: 0x849F48 -- "Yuri's Revenge"
 static const char* WINDOW_CLASS = "Yuri's Revenge";
 
-// IDA: 0x7775C0 — MainWindowProc
+// IDA: 0x7775C0 -- MainWindowProc
 static LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
     switch (msg) {
@@ -45,16 +45,16 @@ static LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lPara
     return DefWindowProcA(hWnd, msg, wParam, lParam);
 }
 
-// IDA: 0x777C30 — InitWindowCreation
+// IDA: 0x777C30 -- InitWindowCreation
 // Creates the main game window, sets up IME, registers hotkeys
 static void InitWindowCreation(HINSTANCE hInstance, int screenWidth, int xRight, int yBottom)
 {
     InitCommonControls();
 
-    // IDA: g_hIcon = LoadIconA(hInstance, (LPCSTR)0x5D)  — icon resource ID 93
+    // IDA: g_hIcon = LoadIconA(hInstance, (LPCSTR)0x5D)  -- icon resource ID 93
     g_hIcon = LoadIconA(hInstance, MAKEINTRESOURCEA(IDI_MAIN_ICON));
 
-    // IDA: g_hCursor = LoadCursorA(g_hInstance, (LPCSTR)0x68)  — cursor resource ID 104
+    // IDA: g_hCursor = LoadCursorA(g_hInstance, (LPCSTR)0x68)  -- cursor resource ID 104
     g_hCursor = LoadCursorA(hInstance, MAKEINTRESOURCEA(0x68));
 
     WNDCLASSA wc = {};
@@ -101,7 +101,7 @@ static void InitWindowCreation(HINSTANCE hInstance, int screenWidth, int xRight,
     UpdateWindow(g_hWnd);
     SetFocus(g_hWnd);
 
-    // IDA: RegisterHotKey(g_hWnd, 1, 7, 0x4D) — Win+M hotkey
+    // IDA: RegisterHotKey(g_hWnd, 1, 7, 0x4D) -- Win+M hotkey
     RegisterHotKey(g_hWnd, 1, MOD_WIN | MOD_NOREPEAT, 'M');
 
     // IDA: SetCursor
@@ -113,7 +113,7 @@ static void InitWindowCreation(HINSTANCE hInstance, int screenWidth, int xRight,
 // TODO: Following functions need full IDA translation
 // ============================================================
 
-// TODO: IDA InitializeDDraw @ 0x4A42F0 — called 3 times
+// TODO: IDA InitializeDDraw @ 0x4A42F0 -- called 3 times
 // TODO: IDA DSurface::CreatePrimary @ 0x4BA770
 // TODO: IDA InitializeAudioStreaming @ 0x53DE00
 // TODO: IDA InitGame @ 0x52BA60 (4333B, 146BBs)
@@ -164,7 +164,7 @@ bool GameLoopInit(HINSTANCE hInstance, HINSTANCE hPrevInstance,
     LOG_INFO("DirectDraw7 initialized");
 
     if (!AudioInit(g_hWnd)) {
-        LOG_WARN("DirectSound init failed — audio disabled");
+        LOG_WARN("DirectSound init failed -- audio disabled");
     } else {
         LOG_INFO("DirectSound initialized");
     }

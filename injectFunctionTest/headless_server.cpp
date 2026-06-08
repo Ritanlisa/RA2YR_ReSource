@@ -1,4 +1,4 @@
-// headless_server.cpp — TCP command server with dedicated thread
+// headless_server.cpp -- TCP command server with dedicated thread
 #define WIN32_LEAN_AND_MEAN
 #include <winsock2.h>
 #include <windows.h>

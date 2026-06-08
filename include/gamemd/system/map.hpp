@@ -247,7 +247,7 @@ public:
     void DestroyCliff(CellClass* cell);
     bool MakeTraversable(const ObjectClass* visitor, const CellStruct& cell) const;
 
-    // IDA 0x4F42F0 — MapClass::MarkForRedraw (44B)
+    // IDA 0x4F42F0 -- MapClass::MarkForRedraw (44B)
     void MarkForRedraw(int flags) { (void)flags; /* TODO: full IDA translation */ }
 
     uint32_t                        m_unknown_10;

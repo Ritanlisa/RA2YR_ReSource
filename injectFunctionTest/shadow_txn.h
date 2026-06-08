@@ -2,7 +2,7 @@
 // Uses VirtualProtect + Vectored Exception Handler to capture ALL writes
 // made by the RE version, then restores them before the original function runs.
 //
-// gamemd.exe is single-threaded — no synchronization needed.
+// gamemd.exe is single-threaded -- no synchronization needed.
 #pragma once
 #include <windows.h>
 #include <vector>

@@ -82,7 +82,7 @@ RectangleStruct* ClipRectIntersection(
     return result;
 }
 
-// IDA: 0x7BC2B0 — ClipLine (717B)
+// IDA: 0x7BC2B0 -- ClipLine (717B)
 // Cohen-Sutherland line clipping against clip_rect.
 // Modifies start/end in-place, returns true if visible portion exists.
 REVERSE(0x7bc2b0, "ClipLine: Cohen-Sutherland line clip", "Capture")
@@ -173,7 +173,7 @@ bool ClipLine(int* start, int* end, int* clip_rect)
 
 } // anonymous namespace
 
-// IDA: 0x4BA770 — DSurface::CreatePrimary pixel format detection logic
+// IDA: 0x4BA770 -- DSurface::CreatePrimary pixel format detection logic
 // Computes bit shifts/masks from the surface's RGB masks, then determines
 // the pixel format enum: 0=RGB565, 1=RGB555, 2=RGB444, -1=unknown
 void DSurface::DetectPixelFormat(const DDPIXELFORMAT& pf)
@@ -267,7 +267,7 @@ bool DSurface::BlitWhole(class Surface* src, bool option1, bool option2)
     auto* dsurf = dynamic_cast<DSurface*>(src);
     if (!dsurf || !dsurf->Surface) return false;
 
-    // IDA: DSurface::Blit — primary surface coordinate adjustment
+    // IDA: DSurface::Blit -- primary surface coordinate adjustment
     // When blit-ing to the primary surface in windowed mode,
     // destination coordinates must be offset by the window position
     RECT dr = { 0, 0, Width, Height };
@@ -414,7 +414,7 @@ bool DSurface::FillRectWithFlags(
     return XSurface::FillRectWithFlags(clip_rect, color, opacity_percent);
 }
 
-// IDA: 0x4BAD80 — DSurface::Lock (315B)
+// IDA: 0x4BAD80 -- DSurface::Lock (315B)
 // Returns byte offset into locked surface buffer, or 0 on failure.
 // Handles lost surface restoration and re-locking.
 void* DSurface::Lock(int x, int y)
@@ -454,7 +454,7 @@ void* DSurface::Lock(int x, int y)
         return static_cast<uint8_t*>(LockedSurface) + x * bpp + y * pitch;
     }
 
-    // IDA: First lock — get surface descriptor via IDDS7::Lock (vtable[25] = 0x64)
+    // IDA: First lock -- get surface descriptor via IDDS7::Lock (vtable[25] = 0x64)
     if (!Surface) return nullptr;
 
     DDSURFACEDESC2 desc = {};
@@ -474,7 +474,7 @@ void* DSurface::Lock(int x, int y)
     return static_cast<uint8_t*>(LockedSurface) + x * BytesPerPixel + y * static_cast<int>(desc.lPitch);
 }
 
-// IDA: 0x4BAF40 — DSurface::Unlock (154B)
+// IDA: 0x4BAF40 -- DSurface::Unlock (154B)
 // Decrements lock count, unlocks when it reaches 0.
 // Also handles lost surface restoration pattern.
 bool DSurface::Unlock()
@@ -512,14 +512,14 @@ bool DSurface::Unlock()
     return true;
 }
 
-// IDA: 0x4BAEC0 — DSurface::CanLock (95B)
+// IDA: 0x4BAEC0 -- DSurface::CanLock (95B)
 // Probes whether the surface can be locked without actually locking.
 bool DSurface::CanLock(uint32_t unk1, uint32_t unk2)
 {
     (void)unk1;
     (void)unk2;
 
-    // IDA: if LockCount > 0, already locked — can lock again
+    // IDA: if LockCount > 0, already locked -- can lock again
     if (LockCount > 0)
         return true;
 
@@ -529,7 +529,7 @@ bool DSurface::CanLock(uint32_t unk1, uint32_t unk2)
     DDSURFACEDESC2 desc = {};
     desc.dwSize = sizeof(desc);
 
-    // IDA: Lock with DDLOCK_TESTONLY flag → probe without actually locking
+    // IDA: Lock with DDLOCK_TESTONLY flag -> probe without actually locking
     HRESULT hr = Surface->Lock(nullptr, &desc, DDLOCK_WAIT, nullptr);
     if (FAILED(hr))
         return false;
@@ -551,7 +551,7 @@ int DSurface::GetPitch() const
     return Width * BytesPerPixel;
 }
 
-// IDA: 0x4BAF20 — DSurface::CheckBltStatus (17B)
+// IDA: 0x4BAF20 -- DSurface::CheckBltStatus (17B)
 // Calls IDirectDrawSurface7::GetBltStatus(DDGBS_ISBLTDONE)
 // Returns true if blit is complete (DD_OK)
 bool DSurface::CheckBltStatus()
@@ -681,8 +681,8 @@ Point2D Surface::DrawText(
 
 // --- XSurface pixel operations (Batch A) ---
 
-// IDA: 0x7BAEB0 — XSurface::SetPixel (89B)
-// vtable[9]  0x24 — Lock(point) → check BPP → write pixel → Unlock
+// IDA: 0x7BAEB0 -- XSurface::SetPixel (89B)
+// vtable[9]  0x24 -- Lock(point) -> check BPP -> write pixel -> Unlock
 REVERSE(0x7baeb0, "XSurface::SetPixel: pixel write", "Capture")
 bool XSurface::SetPixel(const Point2D& point, uint32_t color)
 {
@@ -699,8 +699,8 @@ bool XSurface::SetPixel(const Point2D& point, uint32_t color)
     return true;
 }
 
-// IDA: 0x7BAE60 — XSurface::GetPixel (80B)
-// vtable[10] 0x28 — Lock(point) → check BPP → read pixel → Unlock
+// IDA: 0x7BAE60 -- XSurface::GetPixel (80B)
+// vtable[10] 0x28 -- Lock(point) -> check BPP -> read pixel -> Unlock
 REVERSE(0x7bae60, "XSurface::GetPixel: pixel read", "Capture")
 uint32_t XSurface::GetPixel(const Point2D& point)
 {
@@ -719,8 +719,8 @@ uint32_t XSurface::GetPixel(const Point2D& point)
     return result;
 }
 
-// IDA: 0x7BAF90 — XSurface::PutPixel (130B)
-// vtable[34] 0x88 — bounds check → Lock → check BPP → write → Unlock
+// IDA: 0x7BAF90 -- XSurface::PutPixel (130B)
+// vtable[34] 0x88 -- bounds check -> Lock -> check BPP -> write -> Unlock
 REVERSE(0x7baf90, "XSurface::PutPixel: pixel write + bounds", "Capture")
 bool XSurface::PutPixel(const Point2D& point, uint16_t color, const RectangleStruct& clip_rect)
 {
@@ -746,8 +746,8 @@ bool XSurface::PutPixel(const Point2D& point, uint16_t color, const RectangleStr
     return true;
 }
 
-// IDA: 0x7BAF10 — XSurface::GetPixelAtCoords (119B)
-// vtable[35] 0x8C — bounds check → Lock → check BPP → read → Unlock
+// IDA: 0x7BAF10 -- XSurface::GetPixelAtCoords (119B)
+// vtable[35] 0x8C -- bounds check -> Lock -> check BPP -> read -> Unlock
 REVERSE(0x7baf10, "XSurface::GetPixelAtCoords: pixel read + bounds", "Capture")
 uint16_t XSurface::GetPixelAtCoords(const Point2D& point, const RectangleStruct& clip_rect)
 {
@@ -777,8 +777,8 @@ uint16_t XSurface::GetPixelAtCoords(const Point2D& point, const RectangleStruct&
 
 // --- XSurface line drawing (Batch B) ---
 
-// IDA: 0x7BAB90 — XSurface::WalkLine (511B)
-// vtable[17] 0x44 — Bresenham walker with callback
+// IDA: 0x7BAB90 -- XSurface::WalkLine (511B)
+// vtable[17] 0x44 -- Bresenham walker with callback
 REVERSE(0x7bab90, "XSurface::WalkLine: Bresenham walker", "Capture")
 bool XSurface::WalkLine(
     const Point2D& start, const Point2D& end,
@@ -857,8 +857,8 @@ bool XSurface::WalkLine(
     return true;
 }
 
-// IDA: 0x7BA610 — XSurface::DrawLineEx (685B)
-// vtable[11] 0x2C — clipped line with inline Bresenham pixel write
+// IDA: 0x7BA610 -- XSurface::DrawLineEx (685B)
+// vtable[11] 0x2C -- clipped line with inline Bresenham pixel write
 REVERSE(0x7ba610, "XSurface::DrawLineEx: clipped line", "Capture")
 bool XSurface::DrawLineEx(
     const RectangleStruct& clip_rect,
@@ -1027,8 +1027,8 @@ bool XSurface::DrawLineEx(
     return true;
 }
 
-// IDA: 0x7BA5E0 — XSurface::DrawLine (48B)
-// vtable[12] 0x30 — DrawLineEx wrapper with surface-level clip
+// IDA: 0x7BA5E0 -- XSurface::DrawLine (48B)
+// vtable[12] 0x30 -- DrawLineEx wrapper with surface-level clip
 REVERSE(0x7ba5e0, "XSurface::DrawLine: no-clip wrapper", "Capture")
 bool XSurface::DrawLine(const Point2D& start, const Point2D& end, uint32_t color)
 {
@@ -1037,8 +1037,8 @@ bool XSurface::DrawLine(const Point2D& start, const Point2D& end, uint32_t color
     return DrawLineEx(clip, start, end, color);
 }
 
-// IDA: 0x7BA8C0 — XSurface::DrawDashedLine (621B)
-// vtable[18] 0x48 — Bresenham dashed line with 16-byte stipple pattern
+// IDA: 0x7BA8C0 -- XSurface::DrawDashedLine (621B)
+// vtable[18] 0x48 -- Bresenham dashed line with 16-byte stipple pattern
 REVERSE(0x7ba8c0, "XSurface::DrawDashedLine: stipple line", "Capture")
 bool XSurface::DrawDashedLine(
     const Point2D& start, const Point2D& end,
@@ -1219,8 +1219,8 @@ bool XSurface::DrawDashedLine(
 
 // --- XSurface rectangle / shape drawing (Batch C) ---
 
-// IDA: 0x7BBAB0 — XSurface::Fill (51B)
-// vtable[6] 0x18 — fill entire surface with single color
+// IDA: 0x7BBAB0 -- XSurface::Fill (51B)
+// vtable[6] 0x18 -- fill entire surface with single color
 REVERSE(0x7bbab0, "XSurface::Fill: fill surface", "Capture")
 bool XSurface::Fill(uint32_t color)
 {
@@ -1229,8 +1229,8 @@ bool XSurface::Fill(uint32_t color)
     return FillRectEx(rect, rect, color);
 }
 
-// IDA: 0x7BADC0 — XSurface::DrawRectEx (158B)
-// vtable[21] 0x54 — rectangle outline drawing 4 edges via DrawLineEx
+// IDA: 0x7BADC0 -- XSurface::DrawRectEx (158B)
+// vtable[21] 0x54 -- rectangle outline drawing 4 edges via DrawLineEx
 REVERSE(0x7badc0, "XSurface::DrawRectEx: rect outline", "Capture")
 bool XSurface::DrawRectEx(
     const RectangleStruct& clip_rect,
@@ -1249,8 +1249,8 @@ bool XSurface::DrawRectEx(
     return true;
 }
 
-// IDA: 0x7BAD90 — XSurface::DrawRect (43B)
-// vtable[22] 0x58 — DrawRectEx wrapper with surface-level clip
+// IDA: 0x7BAD90 -- XSurface::DrawRect (43B)
+// vtable[22] 0x58 -- DrawRectEx wrapper with surface-level clip
 REVERSE(0x7bad90, "XSurface::DrawRect: no-clip rect", "Capture")
 bool XSurface::DrawRect(const RectangleStruct& draw_rect, uint32_t color)
 {
@@ -1259,8 +1259,8 @@ bool XSurface::DrawRect(const RectangleStruct& draw_rect, uint32_t color)
     return DrawRectEx(clip, draw_rect, color);
 }
 
-// IDA: 0x7BB350 — XSurface::DrawEllipseOutline (1478B)
-// vtable[8] 0x20 — midpoint ellipse algorithm
+// IDA: 0x7BB350 -- XSurface::DrawEllipseOutline (1478B)
+// vtable[8] 0x20 -- midpoint ellipse algorithm
 REVERSE(0x7bb350, "XSurface::DrawEllipseOutline: ellipse", "Capture")
 bool XSurface::DrawEllipseOutline(
     const Point2D& center,
@@ -1335,8 +1335,8 @@ bool XSurface::DrawEllipseOutline(
 
 // --- DSurface line drawing (Batch D) ---
 
-// IDA: 0x4BF750 — DSurface::DrawGradientLine (1499B)
-// vtable[36] 0x90 — line with palette gradient interpolation
+// IDA: 0x4BF750 -- DSurface::DrawGradientLine (1499B)
+// vtable[36] 0x90 -- line with palette gradient interpolation
 bool DSurface::DrawGradientLine(
     const Point2D& start, const Point2D& end,
     int palette_idx, int fade_val,
@@ -1495,8 +1495,8 @@ bool DSurface::DrawGradientLine(
     return true;
 }
 
-// IDA: 0x4C0E30 — DSurface::DrawStippledRect (1537B)
-// vtable[20] 0x50 — filled rectangle with stipple pattern
+// IDA: 0x4C0E30 -- DSurface::DrawStippledRect (1537B)
+// vtable[20] 0x50 -- filled rectangle with stipple pattern
 bool DSurface::DrawStippledRect(
     const Point2D& top_left, const Point2D& bottom_right,
     uint16_t color, bool fill_interior)
@@ -1552,8 +1552,8 @@ bool DSurface::DrawStippledRect(
     return true;
 }
 
-// IDA: 0x4C0750 — DSurface::DrawDashedLineStipple (1758B)
-// vtable[19] 0x4C — dashed line with Z-buffer stipple pattern
+// IDA: 0x4C0750 -- DSurface::DrawDashedLineStipple (1758B)
+// vtable[19] 0x4C -- dashed line with Z-buffer stipple pattern
 bool DSurface::DrawDashedLineStipple(
     const Point2D& start, const Point2D& end,
     uint16_t color, const uint8_t stipple[16],
@@ -1563,8 +1563,8 @@ bool DSurface::DrawDashedLineStipple(
     return XSurface::DrawDashedLine(start, end, color, stipple, dash_offset);
 }
 
-// IDA: 0x4BFD30 — DSurface::DrawLineZBuf (2583B)
-// vtable[13] 0x34 — line with Z-buffer check per pixel
+// IDA: 0x4BFD30 -- DSurface::DrawLineZBuf (2583B)
+// vtable[13] 0x34 -- line with Z-buffer check per pixel
 bool DSurface::DrawLineZBuf(
     const Point2D& start, const Point2D& end,
     uint16_t color, int fade_start, int fade_end,
@@ -1576,8 +1576,8 @@ bool DSurface::DrawLineZBuf(
         start, end, color);
 }
 
-// IDA: 0x4BBCA0 — DSurface::DrawLineModulated (2735B)
-// vtable[14] 0x38 — read-modify-write line per pixel
+// IDA: 0x4BBCA0 -- DSurface::DrawLineModulated (2735B)
+// vtable[14] 0x38 -- read-modify-write line per pixel
 bool DSurface::DrawLineModulated(
     const Point2D& start, const Point2D& end,
     int mod_strength, int fade_start, int fade_end,
@@ -1589,8 +1589,8 @@ bool DSurface::DrawLineModulated(
         start, end, 0);
 }
 
-// IDA: 0x4BDF00 — DSurface::DrawLineZBufColored (2754B)
-// vtable[16] 0x40 — Z-buffer line with RGB color + float brightness
+// IDA: 0x4BDF00 -- DSurface::DrawLineZBufColored (2754B)
+// vtable[16] 0x40 -- Z-buffer line with RGB color + float brightness
 bool DSurface::DrawLineZBufColored(
     const Point2D& start, const Point2D& end,
     const uint8_t src_rgb[3], float brightness,
@@ -1602,8 +1602,8 @@ bool DSurface::DrawLineZBufColored(
         start, end, 0);
 }
 
-// IDA: 0x4BC750 — DSurface::DrawLineFaded (6064B)
-// vtable[15] 0x3C — line with fade gradient from start to end
+// IDA: 0x4BC750 -- DSurface::DrawLineFaded (6064B)
+// vtable[15] 0x3C -- line with fade gradient from start to end
 bool DSurface::DrawLineFaded(
     const Point2D& start, const Point2D& end,
     const uint8_t* stipple_pattern,

@@ -105,7 +105,7 @@ public:
 //===========================================================================
 // Template hierarchy:
 //
-//   BlitterCore → Blitter<T>
+//   BlitterCore -> Blitter<T>
 //       ├── BlitPlain<T>                  (direct pixel copy)
 //       ├── BlitTrans<T>                  (color key transparency)
 //       │   ├── BlitTransXlat<T>          (+ palette translation)
@@ -123,7 +123,7 @@ public:
 //           │   └── BlitPlainXlatZReadWrite<T> (+ Z write)
 //           └── ...
 //
-//   RLEBlitterCore → RLEBlitter<T>
+//   RLEBlitterCore -> RLEBlitter<T>
 //       └── RLEBlitTrans<T>               (RLE + transparency)
 //           └── RLEBlitTransXlat<T>        (+ palette translation)
 //               ├── RLEBlitTransXlatZRead<T>

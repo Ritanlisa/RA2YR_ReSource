@@ -1,4 +1,4 @@
-// COM class definitions — all CLSIDs registered by gamemd.exe
+// COM class definitions -- all CLSIDs registered by gamemd.exe
 // IDA source: .rdata segment, TClassFactory table (63-71 entries)
 // Each CLSID is a 128-bit GUID (16 bytes) used for COM interop
 #pragma once
@@ -8,7 +8,7 @@ namespace gamemd {
 
 // ============================================================
 // Locomotor CLSIDs (8 COM classes for unit movement types)
-// IDA table @ 0x7E9A60 (8 × 16-byte GUIDs)
+// IDA table @ 0x7E9A60 (8 x 16-byte GUIDs)
 // ============================================================
 static const GUID CLSID_WalkLocomotion    = {0x4A582744, 0x9839, 0x11D1, {0xB7,0x09,0x00,0xA0,0x24,0xDD,0xAF,0xD1}};
 static const GUID CLSID_DriveLocomotion   = {0x4A582745, 0x9839, 0x11D1, {0xB7,0x09,0x00,0xA0,0x24,0xDD,0xAF,0xD1}};
@@ -61,13 +61,13 @@ static const CLSID CLSID_SidebarClass     = {0xE4D1E7BC, 0xD2A0, 0x11D1, {0xB7,0
 static const CLSID CLSID_SuperWeaponClass = {0x0CF2BCE7, 0x36E4, 0x11D2, {0x9B,0x74,0x00,0x10,0x4B,0x97,0x2F,0xE8}};
 
 // ============================================================
-// COM registration helper — registers all game classes
+// COM registration helper -- registers all game classes
 // ============================================================
 
-// IDA 0x6BB390 — RegisterClassesCOM (single-class registry writer)
+// IDA 0x6BB390 -- RegisterClassesCOM (single-class registry writer)
 void RegisterClassCOM(const GUID& clsid);
 
-// IDA 0x6BB9A0 — WinMain: RegisterAllClasses (iterates factory table)
+// IDA 0x6BB9A0 -- WinMain: RegisterAllClasses (iterates factory table)
 void RegisterAllClasses();
 
 } // namespace gamemd

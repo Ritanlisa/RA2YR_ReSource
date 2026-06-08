@@ -12,7 +12,7 @@ constexpr uint32_t kInfantryFlag = static_cast<uint32_t>(AbstractFlags::Foot)
 
 } // anonymous namespace
 
-// IDA: 0x517A50 — InfantryClass::Construct (617B)
+// IDA: 0x517A50 -- InfantryClass::Construct (617B)
 // Note: fields at byte offsets 0x6C0-0x6EC from full object base
 InfantryClass::InfantryClass() noexcept
     : Type(nullptr)              // +0x6C0, set by constructor parameter in IDA
@@ -37,16 +37,16 @@ InfantryClass::InfantryClass() noexcept
 }
 
 // ============================================================
-// Mission_Enter — RA1 FootClass::Mission_Enter pattern
+// Mission_Enter -- RA1 FootClass::Mission_Enter pattern
 // Single-state radio-based coordination loop
 // ============================================================
 int InfantryClass::Mission_Enter()
 {
     // RA1: Contact transporter via RADIO_DOCKING
-    // Find who to coordinate with — radio contact or archive target
+    // Find who to coordinate with -- radio contact or archive target
     // If contact exists: send RADIO_DOCKING, wait for RADIO_ROGER
-    // If transport says "bug off" → enter idle mode
-    // If no contact → enter idle mode
+    // If transport says "bug off" -> enter idle mode
+    // If no contact -> enter idle mode
 
     // Contact_With_Whom() equivalent: check current radio link
     // if (!contact) contact = As_Techno(m_archive_target);
@@ -68,7 +68,7 @@ int InfantryClass::Mission_ParaDropApproach()
     // Paradrop: descend via parachute animation
     m_has_parachute = true;
 
-    // Check ground proximity — if reached ground, deploy unit
+    // Check ground proximity -- if reached ground, deploy unit
     // if (m_location.Z <= ground_z) {
     //     m_has_parachute = false;
     //     QueueMission(Mission::Guard, true);
@@ -91,19 +91,19 @@ int InfantryClass::Mission_ParaDropOverfly()
 }
 
 // ============================================================
-// InfantryClass_PowerDrainUpdate — vtable[13] (IDA 0x521C90, 160B)
+// InfantryClass_PowerDrainUpdate -- vtable[13] (IDA 0x521C90, 160B)
 // Per-frame power consumption for infantry (deployed units, etc.)
 // Processes timer at this+1732/1736/1748 via Power_TimerProcess
 // Processes flags at this+1753-1757 via Power_FlagProcess (5 flags)
 // ============================================================
 
 // ============================================================
-// InfantryClass_LoadFromStream — vtable[5] (IDA 0x521960, 402B)
+// InfantryClass_LoadFromStream -- vtable[5] (IDA 0x521960, 402B)
 // COM IPersistStream::Load for infantry deserialization
 // ============================================================
 
 // ============================================================
-// InfantryClass_PerFrameUpdate — vtable[9] (IDA 0x517CC0, 207B)
+// InfantryClass_PerFrameUpdate -- vtable[9] (IDA 0x517CC0, 207B)
 // Per-frame update delegating to FootClass_Update
 // ============================================================
 

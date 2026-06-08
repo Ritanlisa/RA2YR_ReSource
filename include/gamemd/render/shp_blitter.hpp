@@ -16,7 +16,7 @@ extern void* g_VisibleSurfaceDescriptor;
 // Forward declares
 struct SHPStruct;
 
-// Pixel blit callback types — these map to the vtable methods on the
+// Pixel blit callback types -- these map to the vtable methods on the
 // RLEBlit/BlitTrans template classes found in IDA (50+ variants).
 // The specific variant is selected at runtime based on BlitterFlags.
 

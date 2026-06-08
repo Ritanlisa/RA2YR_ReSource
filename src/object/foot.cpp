@@ -91,7 +91,7 @@ FootClass::FootClass() noexcept
 }
 
 // ============================================================
-// MovementAI — per-frame movement and navigation update
+// MovementAI -- per-frame movement and navigation update
 // Based on IDA decompilation at 0x4DA530 (2520 bytes, 138 BBs)
 // ============================================================
 
@@ -173,7 +173,7 @@ void FootClass::UpdateMovementSpeed()
     // Speed timer recalculation (IDA: m_speed_timer at 1628, m_speed_period at 1636)
     // If timer elapsed, reset speed (IDA: vtable[1164] and vtable[1160])
     // Handle target-nearest vs target-current facing recalculation
-    // IDA: if current_facing == GetTargetFacing() → narrow turn; else → wide turn
+    // IDA: if current_facing == GetTargetFacing() -> narrow turn; else -> wide turn
 }
 
 void FootClass::HandleMovementSoundUpdate()
@@ -226,8 +226,8 @@ void FootClass::HandleLocomotionUpdate()
     if (!m_locomotor.ptr)
         return;
 
-    // IDA: vt_entry_472(this) — check if moving
-    // If not moving, sub_70D7E0 — process movement result
+    // IDA: vt_entry_472(this) -- check if moving
+    // If not moving, sub_70D7E0 -- process movement result
 
     // IDA: Check parasite state (m_parasite_eating_me at 1684)
     // If parasite active, update parasite position
@@ -259,7 +259,7 @@ int FootClass::Mission_Move()
 
 int FootClass::Mission_Attack()
 {
-    // RA1 pattern: close distance → fire → repeat
+    // RA1 pattern: close distance -> fire -> repeat
     auto* target = m_target;
     if (!target)
         return 0;
@@ -335,7 +335,7 @@ bool FootClass::StopMoving()
     return true;
 }
 
-// IDA: 0x4D98C0 — FootClass::Destroyed (91B)
+// IDA: 0x4D98C0 -- FootClass::Destroyed (91B)
 // Handles unit death: stop movement, eject passengers, award experience,
 // play EVA "UnitLost" for human players when trigger is far enough.
 void FootClass::Destroyed(ObjectClass* killer)

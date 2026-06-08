@@ -87,12 +87,12 @@ ShadowTransaction* ShadowTransaction::Current()
 }
 
 // ============================================================
-// Page protection — hardcoded .data bounds from IDA
+// Page protection -- hardcoded .data bounds from IDA
 // ============================================================
 
 void ShadowTransaction::ProtectAllDataPages()
 {
-    // .data section bounds — defaults for gamemd.exe (0x812000-0xB7A000, 872 pages)
+    // .data section bounds -- defaults for gamemd.exe (0x812000-0xB7A000, 872 pages)
     // Override via env vars: SHADOW_DATA_START / SHADOW_DATA_END
     uintptr_t DATA_START = 0x812000;
     uintptr_t DATA_END   = 0xB7A000;

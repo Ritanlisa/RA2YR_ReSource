@@ -10,7 +10,7 @@ constexpr uint32_t kAircraftFlag = static_cast<uint32_t>(AbstractFlags::Foot)
 
 } // anonymous namespace
 
-// IDA: 0x413D20 — AircraftClass::Construct (593B)
+// IDA: 0x413D20 -- AircraftClass::Construct (593B)
 // Fields at byte offsets 0x6C4-0x6D5 from full object base
 // Note: AircraftClass has 5 vtables (FootClass base + FlasherClass at +0x6C0)
 AircraftClass::AircraftClass() noexcept
@@ -30,8 +30,8 @@ AircraftClass::AircraftClass() noexcept
 }
 
 // ============================================================
-// Mission_Attack — RA1 7-state attack pattern
-// States: VALIDATE=0→PICK=1→TAKEOFF=2→FLY=3→FIRE1=4→FIRE2=5→RTB=6
+// Mission_Attack -- RA1 7-state attack pattern
+// States: VALIDATE=0->PICK=1->TAKEOFF=2->FLY=3->FIRE1=4->FIRE2=5->RTB=6
 // Fixed-wing aircraft delegate to Mission_Hunt (strafing runs)
 // ============================================================
 int AircraftClass::Mission_Attack()
@@ -180,8 +180,8 @@ int AircraftClass::Mission_Return()
 {
     // Return to home airfield for reloading/repair
     // RA1: locate home helipad/airstrip, fly landing pattern
-    // Process_Fly_To(airfield_coords) → Process_Landing()
-    // On landing: RADIO_IM_IN → RADIO_ROGER (guard) or RADIO_ATTACH (attach+limbo)
+    // Process_Fly_To(airfield_coords) -> Process_Landing()
+    // On landing: RADIO_IM_IN -> RADIO_ROGER (guard) or RADIO_ATTACH (attach+limbo)
 
     // if (!HasHomeAirfield) {
     //     QueueMission(Mission::Guard, true);
@@ -209,7 +209,7 @@ int AircraftClass::Mission_Unload()
 int AircraftClass::Mission_Hunt()
 {
     // Scan for enemies in flight range
-    // If target found → switch to Mission_Attack
+    // If target found -> switch to Mission_Attack
     SelectAutoTarget(static_cast<ra2::game::TargetFlags>(0), 0, false);
     if (m_target)
     {
@@ -229,15 +229,15 @@ int AircraftClass::Mission_Retreat()
 }
 
 // ============================================================
-// AircraftClass_Update — vtable[9] (IDA 0x413F80, 241B)
-// Per-frame update: calls TechnoClass_Update → power drain
-// Checks Type(this+1732) → House_PowerChanged → power output
+// AircraftClass_Update -- vtable[9] (IDA 0x413F80, 241B)
+// Per-frame update: calls TechnoClass_Update -> power drain
+// Checks Type(this+1732) -> House_PowerChanged -> power output
 // Updates power fields from Type members (this+108/112/764)
 // Delegates to BuildingClass_PowerUpdate(C4AppliedBy)
 // ============================================================
 
 // ============================================================
-// AircraftClass_LoadFromStream — vtable[5] (IDA 0x41B430, 395B)
+// AircraftClass_LoadFromStream -- vtable[5] (IDA 0x41B430, 395B)
 // COM IPersistStream::Load for aircraft deserialization
 // ============================================================
 

@@ -93,10 +93,10 @@ BuildingClass::BuildingClass() noexcept
     std::memset(Upgrades, 0, sizeof(Upgrades));
 }
 
-// IDA: 0x447AC0 — BuildingClass::GetExitCoords (84B), see definition at end of file
+// IDA: 0x447AC0 -- BuildingClass::GetExitCoords (84B), see definition at end of file
 
 // Based on RA1 BuildingClass::Mission_Construction
-// States: INITIAL=0 → DURING=1
+// States: INITIAL=0 -> DURING=1
 int BuildingClass::Mission_Construction()
 {
     enum { INITIAL, DURING };
@@ -113,7 +113,7 @@ int BuildingClass::Mission_Construction()
         SendToFirstLink(static_cast<ra2::game::RadioCommand>(
             static_cast<int>(RadioCommand::RequestBeginProduction)));
 
-        // TODO: owner->IsPlayerControl → Sound_Effect(VOC_CONSTRUCTION, coord)
+        // TODO: owner->IsPlayerControl -> Sound_Effect(VOC_CONSTRUCTION, coord)
 
         m_mission_status = DURING;
         return 15;
@@ -122,7 +122,7 @@ int BuildingClass::Mission_Construction()
     case DURING:
     {
         // Poll animation completion
-        // In RA1: if (IsReadyToCommence) → finish construction
+        // In RA1: if (IsReadyToCommence) -> finish construction
         bool construction_done = true; // TODO: actual animation completion check
 
         if (construction_done)
@@ -160,9 +160,9 @@ int BuildingClass::Mission_Construction()
 }
 
 // ============================================================
-// Mission_Selling — building sell/deconstruction state machine
+// Mission_Selling -- building sell/deconstruction state machine
 // Based on RA1 BuildingClass::Mission_Deconstruction
-// States: INITIAL=0 → HOLDING=1 → DURING=2
+// States: INITIAL=0 -> HOLDING=1 -> DURING=2
 // ============================================================
 int BuildingClass::Mission_Selling()
 {
@@ -184,8 +184,8 @@ int BuildingClass::Mission_Selling()
 
     case HOLDING:
     {
-        // Evacuate crew — spawn survivor infantry
-        // In RA1: How_Many_Survivors() → spawn InfantryClass at exit cell
+        // Evacuate crew -- spawn survivor infantry
+        // In RA1: How_Many_Survivors() -> spawn InfantryClass at exit cell
         // TODO: Sound_Effect(VOC_CASHTURN, coord)
 
         // Begin deconstruction animation
@@ -201,7 +201,7 @@ int BuildingClass::Mission_Selling()
 
         if (decon_done)
         {
-            // Construction yard → undeploy to MCV
+            // Construction yard -> undeploy to MCV
             if (Type && Type->UndeploysInto)
             {
                 // Revert to mobile MCV, preserving health ratio
@@ -234,9 +234,9 @@ int BuildingClass::Mission_Selling()
 }
 
 // ============================================================
-// Mission_Repair — repair bay / helipad / conyard active state
+// Mission_Repair -- repair bay / helipad / conyard active state
 // Based on RA1 BuildingClass::Mission_Repair
-// States: INITIAL=0 → IDLE=1 → DURING=2
+// States: INITIAL=0 -> IDLE=1 -> DURING=2
 // ============================================================
 int BuildingClass::Mission_Repair()
 {
@@ -355,7 +355,7 @@ int BuildingClass::Mission_Repair()
 
 int BuildingClass::Mission_Missile()
 {
-    // RA1 BuildingClass::Mission_Missile — handles nuke silo + GPS satellite launch
+    // RA1 BuildingClass::Mission_Missile -- handles nuke silo + GPS satellite launch
     // Two separate state machines depending on building type
 
     // GPS Satellite (STRUCT_ADVANCED_TECH in RA1)
@@ -455,19 +455,19 @@ int BuildingClass::Mission_Missile()
 }
 
 // ============================================================
-// BuildingClass_GetExitCoords — calculate foundation center
+// BuildingClass_GetExitCoords -- calculate foundation center
 // IDA 0x447AC0, 84B. Returns exit position for units leaving building.
 //
 // Algorithm:
-//   foundation_h = GetFoundationHeight(false) → coord offset
-//   foundation_w = GetFoundationWidth(Type) → coord offset  
+//   foundation_h = GetFoundationHeight(false) -> coord offset
+//   foundation_w = GetFoundationWidth(Type) -> coord offset  
 //   exit.X = Location.X + (foundation_w << 7) - 128
 //   exit.Y = Location.Y + (foundation_h << 7) - 128
 //   exit.Z = Location.Z
 // ============================================================
 
 // ============================================================
-// BuildingClass_OnObjectExpired — cleanup dangling refs (0x44E8F0, 536B)
+// BuildingClass_OnObjectExpired -- cleanup dangling refs (0x44E8F0, 536B)
 // Called when a referenced object (anim, unit, overlay) is destroyed.
 // Clears matching pointers in: this+336/338/329/384/389/351/353.
 // Updates building animations based on health ratio.
@@ -475,17 +475,17 @@ int BuildingClass::Mission_Missile()
 // ============================================================
 
 // ============================================================
-// BuildingClass_TogglePrimaryFactory — get factory exit coords (0x447E90, 121B)
+// BuildingClass_TogglePrimaryFactory -- get factory exit coords (0x447E90, 121B)
 // Returns exit coordinates for the primary factory.
 // Checks Type flags (5835/5801/5803) to determine coordinate source.
 // Uses vt_entry_168 or vt_entry_72 to get position.
 // ============================================================
 
 // ============================================================
-// ExitObject — unit exit from building (RA1 Exit_Object pattern)
+// ExitObject -- unit exit from building (RA1 Exit_Object pattern)
 // Returns: 0=failure, 1=retry, 2=success
 // ============================================================
-// IDA 0x447AC0 — BuildingClass::GetExitCoords
+// IDA 0x447AC0 -- BuildingClass::GetExitCoords
 int BuildingExitObject(BuildingClass* building, ra2::game::TechnoClass* exiting_unit)
 {
     if (!exiting_unit || !building || !building->Type)
@@ -523,7 +523,7 @@ int BuildingExitObject(BuildingClass* building, ra2::game::TechnoClass* exiting_
 }
 
 // ============================================================
-// Place — building placement finalization
+// Place -- building placement finalization
 // ============================================================
 void BuildingClass::Place(bool bUnk)
 {
@@ -550,7 +550,7 @@ void BuildingClass::Place(bool bUnk)
 }
 
 // ============================================================
-// BuildingClass_LoadFromStream — deserialize from save game
+// BuildingClass_LoadFromStream -- deserialize from save game
 // IDA 0x453E20, 870B. vtable[5]: COM IPersistStream::Load override.
 //
 // Steps:
@@ -564,18 +564,18 @@ void BuildingClass::Place(bool bUnk)
 // ============================================================
 
 // ============================================================
-// BuildingClass::Update — per-frame update (0x442C40)
+// BuildingClass::Update -- per-frame update (0x442C40)
 // IDA 0x442C40, vtable[9] or non-vt member.
 //
 // Sections:
-//  1. TechnoClass_Update(this) — parent class update
+//  1. TechnoClass_Update(this) -- parent class update
 //  2. If C4AppliedBy (this+0x540):
 //     - Copy owner's field_184 to this+0x53C (OwnerCountryIndex)
 //     - BuildingClass_PowerUpdate(this)
 //  3. If Type exists:
 //     a. Update power drain/usage (field_160, field_1664)
 //     b. BuildingTypeClass_GetPowerOutput(Type+1820)
-//     c. vt_entry_192(Type) → check power online:
+//     c. vt_entry_192(Type) -> check power online:
 //        - If online: BuildingTypeClass_IsPowered(Type), set this+0x6E9 = 1
 //        - If offline: set this+0x6DC = 0
 //     d. Special C4AppliedBy logic:
@@ -586,7 +586,7 @@ void BuildingClass::Place(bool bUnk)
 // ============================================================
 
 // ============================================================
-// BuildingClass::PowerDrainUpdate — per-frame power consumption (0x454260)
+// BuildingClass::PowerDrainUpdate -- per-frame power consumption (0x454260)
 // IDA 0x454260, vtable[13]. Processes power drain timers & flags.
 //
 // Called every frame when building is online. Processes:
@@ -595,12 +595,12 @@ void BuildingClass::Place(bool bUnk)
 //    Power_TimerProcess(remaining) updates drain state
 //  - Power flags via Power_FlagProcess:
 //    this+1632, 1770, 1738, 1739, 1756-1766, 1740 (16 flags total)
-//  - Power_TimerProcess(this+1792) — 16-bit accumulator
-//  - Power_FinalizeDrain(this+1794) — finalize this frame
+//  - Power_TimerProcess(this+1792) -- 16-bit accumulator
+//  - Power_FinalizeDrain(this+1794) -- finalize this frame
 //  - Related objects (this+1344, 1352): get type via vtable[16]
 // ============================================================
 
-// IDA: 0x447AC0 — BuildingClass::GetExitCoords (84B)
+// IDA: 0x447AC0 -- BuildingClass::GetExitCoords (84B)
 // Computes exit cell coordinate for unit spawning from a building.
 // IDA: this+0x520 = Type, this+0x9C = m_location
 CoordStruct* BuildingClass::GetExitCoords(CoordStruct* out, uint32_t unknown) const

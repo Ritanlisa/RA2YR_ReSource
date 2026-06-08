@@ -1,4 +1,4 @@
-// virtual_screen.cpp — Tracks primary surface for headless frame capture
+// virtual_screen.cpp -- Tracks primary surface for headless frame capture
 #include "virtual_screen.h"
 
 namespace virtual_screen {

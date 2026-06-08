@@ -31,7 +31,7 @@ private:
 };
 
 // ============================================================
-// Westwood key source → blowfish key derivation
+// Westwood key source -> blowfish key derivation
 // ============================================================
 
 void ComputeBlowfishKey(const uint8_t* key_source, uint8_t* key_out);

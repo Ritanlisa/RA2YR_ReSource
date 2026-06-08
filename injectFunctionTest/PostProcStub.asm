@@ -1,4 +1,4 @@
-; PostProcStub.asm — post-process handler + comparisonResult.log logging
+; PostProcStub.asm -- post-process handler + comparisonResult.log logging
 ;
 ; Reached via stack hijack. EAX = original return value.
 ; Reads RE result + hook_addr from fs:[18h], calls LogComparison,

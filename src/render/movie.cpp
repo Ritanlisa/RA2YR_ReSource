@@ -180,7 +180,7 @@ bool MoviePlayer::PlayMovie(const char* filename,
     int movie_h = m_current_movie->GetHeight();
     LOG_INFO("Movie: %dx%d, stretching to fit", movie_w, movie_h);
 
-    // Main playback loop — advance frames until complete
+    // Main playback loop -- advance frames until complete
     while (m_current_movie->IsPlaying()) {
         if (!m_current_movie->AdvanceFrame())
             break;
@@ -303,7 +303,7 @@ bool BinkMovieHandle::OpenFromFile(const char* filename, DSurface* render_target
         return false;
     }
 
-    // Direct file open — matches original sub_432750: BinkOpen(filename, 0)
+    // Direct file open -- matches original sub_432750: BinkOpen(filename, 0)
     m_bink_handle = s_BinkOpen(filename, 0);
     if (!m_bink_handle) {
         LOG_TRACE("BinkMovie::OpenFromFile: _BinkOpen('%s') failed", filename);
@@ -369,7 +369,7 @@ bool BinkMovieHandle::OpenFromMemory(const void* data, int size, DSurface* rende
         return false;
     }
 
-    // Open BINK: sub_432750 — BinkOpen(filename, 0)
+    // Open BINK: sub_432750 -- BinkOpen(filename, 0)
     m_bink_handle = s_BinkOpen(m_temp_path, 0);
     if (!m_bink_handle) {
         LOG_TRACE("BinkMovie: _BinkOpen('%s') failed", m_temp_path);

@@ -7,62 +7,62 @@
 
 namespace gamemd {
 
-// IDA: 0x8A0094 â€ g_lpDirectDraw7
+// IDA: 0x8A0094 -- g_lpDirectDraw7
 LPDIRECTDRAW7 g_lpDirectDraw7 = nullptr;
 
-// IDA: 0xA8ED80 â€ g_DDraw_Active
+// IDA: 0xA8ED80 -- g_DDraw_Active
 bool g_DDraw_Active = false;
 
-// IDA: 0x8A00A4 â€ g_DisplayWidth
+// IDA: 0x8A00A4 -- g_DisplayWidth
 int g_DisplayWidth = 0;
 
-// IDA: 0x8A00A8 â€ g_DisplayHeight
+// IDA: 0x8A00A8 -- g_DisplayHeight
 int g_DisplayHeight = 0;
 
-// IDA: 0x8A00AC â€ g_DisplayBPP
+// IDA: 0x8A00AC -- g_DisplayBPP
 int g_DisplayBPP = 0;
 
-// IDA: 0x8A00B0 â€ g_DDraw_ErrorCallback (function pointer, NULL = MessageBox fallback)
+// IDA: 0x8A00B0 -- g_DDraw_ErrorCallback (function pointer, NULL = MessageBox fallback)
 // TODO: implement error callback mechanism
 void (*g_DDraw_ErrorCallback)(int) = nullptr;
 
-// IDA: 0x89FC90 â€ g_DDraw_Palette (IDirectDrawPalette*)
+// IDA: 0x89FC90 -- g_DDraw_Palette (IDirectDrawPalette*)
 LPDIRECTDRAWPALETTE g_DDraw_Palette = nullptr;
 
-// IDA: 0x89FC94 â€ g_DDraw_PaletteEntries (256 COLORENTRY = 1024 bytes)
+// IDA: 0x89FC94 -- g_DDraw_PaletteEntries (256 COLORENTRY = 1024 bytes)
 PALETTEENTRY g_DDraw_PaletteEntries[256] = {};
 
-// IDA: 0x8205D4 â€ g_DDraw_UseHWBlit
+// IDA: 0x8205D4 -- g_DDraw_UseHWBlit
 bool g_DDraw_UseHWBlit = false;
 
-// IDA: 0x8A0DEE â€ g_DDraw_AllowStretchBlits
+// IDA: 0x8A0DEE -- g_DDraw_AllowStretchBlits
 bool g_DDraw_AllowStretchBlits = false;
 
-// IDA: 0x8A0958/5C/60 â€ RGB pixel format masks
+// IDA: 0x8A0958/5C/60 -- RGB pixel format masks
 DWORD g_DDraw_RedMask   = 0;
 DWORD g_DDraw_GreenMask = 0;
 DWORD g_DDraw_BlueMask  = 0;
 
-// IDA: 0x8A0DD0/D4/D8 â€ RGB bit shifts
+// IDA: 0x8A0DD0/D4/D8 -- RGB bit shifts
 int g_BitShift_Red   = 0;
 int g_BitShift_Green = 0;
 int g_BitShift_Blue  = 0;
 
-// IDA: 0x8A0DDC/E0/E4 â€ RGB bit mask widths
+// IDA: 0x8A0DDC/E0/E4 -- RGB bit mask widths
 int g_BitMask_Red   = 0;
 int g_BitMask_Green = 0;
 int g_BitMask_Blue  = 0;
 
-// IDA: 0x8205D0 â€ pixel format enum (0=RGB565, 1=RGB555, 2=RGB444, -1=unknown)
+// IDA: 0x8205D0 -- pixel format enum (0=RGB565, 1=RGB555, 2=RGB444, -1=unknown)
 int g_DDraw_PixelFormat = -1;
 
-// IDA: 0x8A0DE8 â€ gray color value for 127 intensity (16-bit)
+// IDA: 0x8A0DE8 -- gray color value for 127 intensity (16-bit)
 uint16_t g_DDraw_Gray127 = 0;
 
-// IDA: 0x8A009C â€ g_DDraw_PrimarySurface (IDirectDrawSurface7*)
+// IDA: 0x8A009C -- g_DDraw_PrimarySurface (IDirectDrawSurface7*)
 LPDIRECTDRAWSURFACE7 g_DDraw_PrimarySurface = nullptr;
 
-// IDA: 0x8A0DCC â€ g_DDraw_Clipper
+// IDA: 0x8A0DCC -- g_DDraw_Clipper
 LPDIRECTDRAWCLIPPER g_DDraw_Clipper = nullptr;
 
 // Local DDraw context for the simplified API
@@ -138,7 +138,7 @@ int DDrawInitialize(int a1, DWORD width, DWORD height, DWORD bpp)
         }
     }
 
-    // IDA: DDraw::CapabilityCheck @ 0x4A3E40 â€ detect HW blit capabilities
+    // IDA: DDraw::CapabilityCheck @ 0x4A3E40 -- detect HW blit capabilities
     // TODO: full capability check (probe surface, test Blit, etc.)
     g_DDraw_UseHWBlit = true;
 

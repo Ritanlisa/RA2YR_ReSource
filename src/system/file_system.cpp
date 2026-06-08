@@ -21,7 +21,7 @@ void* FileSystem::LoadFile(const char* pFileName, bool bLoadAsSHP)
     LOG_TRACE("FileSystem::LoadFile '%s' -> hash 0x%08X", pFileName, id);
 
     auto& pool = MixFileClass::GetMixPool();
-    // Search from last to first — later-loaded MIXes override earlier ones
+    // Search from last to first -- later-loaded MIXes override earlier ones
     for (int i = pool.Count - 1; i >= 0; --i) {
         auto* mix = pool[i];
         if (!mix || !mix->IsValid()) continue;

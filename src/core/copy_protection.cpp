@@ -1,4 +1,4 @@
-// CopyProtection � IDA 0x49F5C0/0x49F620/0x49F7A0
+// CopyProtection -- IDA 0x49F5C0/0x49F620/0x49F7A0
 // All three functions are bypassed by Ares/Phobos (always return TRUE).
 // We follow the same approach for standalone EXE.
 #include "gamemd/core/logging.hpp"
@@ -7,7 +7,7 @@
 namespace gamemd {
 
 REVERSE(0x49f5c0, "CopyProtection::CheckLauncher: IDA verified", "None" /* not yet completed */) // auto-marked completed
-// IDA 0x49F5C0 � CopyProtection::CheckLauncher (80B)
+// IDA 0x49F5C0 -- CopyProtection::CheckLauncher (80B)
 // Checks for launcher Mutex "48BC11BD..." to verify legitimate launch.
 // Bypassed: always returns TRUE for standalone EXE.
 bool CopyProtectionCheckLauncher()
@@ -17,7 +17,7 @@ bool CopyProtectionCheckLauncher()
 }
 
 REVERSE(0x49f620, "CopyProtection::NotifyLauncher: IDA verified", "None" /* not yet completed */) // auto-marked completed
-// IDA 0x49F620 � CopyProtection::NotifyLauncher (250B)
+// IDA 0x49F620 -- CopyProtection::NotifyLauncher (250B)
 // Sends custom message 0xBEEF to launcher, waits for response.
 // Bypassed: always returns TRUE for standalone EXE.
 bool CopyProtectionNotifyLauncher()
@@ -26,7 +26,7 @@ bool CopyProtectionNotifyLauncher()
     return true;
 }
 
-// IDA 0x49F7A0 � CopyProtection::CheckProtectedData
+// IDA 0x49F7A0 -- CopyProtection::CheckProtectedData
 // Verifies protected data integrity on CD.
 // Bypassed: always returns TRUE for standalone EXE.
 bool CopyProtectionCheckProtectedData()

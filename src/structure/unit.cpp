@@ -12,7 +12,7 @@ constexpr uint32_t kUnitFlag = static_cast<uint32_t>(AbstractFlags::Foot)
 
 } // anonymous namespace
 
-// IDA: 0x7353C0 — UnitClass::Construct (960B)
+// IDA: 0x7353C0 -- UnitClass::Construct (960B)
 // Fields at byte offsets 0x6C0-0x6E4 from full object base
 UnitClass::UnitClass() noexcept
     : unknown_int_6C0(static_cast<int>(-1))  // +0x6C0, IDA: *(this+0x6C0) = -1
@@ -35,8 +35,8 @@ UnitClass::UnitClass() noexcept
 }
 
 // ============================================================
-// Mission_Harvest — RA1 5-state harvester state machine
-// States: LOOKING=0 → HARVESTING=1 → FINDHOME=2 → HEADINGHOME=3 → GOINGTOIDLE=4
+// Mission_Harvest -- RA1 5-state harvester state machine
+// States: LOOKING=0 -> HARVESTING=1 -> FINDHOME=2 -> HEADINGHOME=3 -> GOINGTOIDLE=4
 // ============================================================
 int UnitClass::Mission_Harvest()
 {
@@ -46,7 +46,7 @@ int UnitClass::Mission_Harvest()
     {
     case LOOKING:
     {
-        // Full → skip to finding refinery
+        // Full -> skip to finding refinery
         // if (Tiberium_Load() == 1) {
         //     m_mission_status = FINDHOME;
         //     return 1;
@@ -64,7 +64,7 @@ int UnitClass::Mission_Harvest()
         //     m_mission_status = HARVESTING;
         // }
         // else if (!m_destination) {
-        //     // No ore found and no destination → idle
+        //     // No ore found and no destination -> idle
         //     m_mission_status = GOINGTOIDLE;
         // }
 
@@ -105,7 +105,7 @@ int UnitClass::Mission_Harvest()
 
     case GOINGTOIDLE:
     {
-        // Nothing to harvest — fallback to guard or repair
+        // Nothing to harvest -- fallback to guard or repair
         QueueMission(static_cast<ra2::game::Mission>(static_cast<int>(gamemd::Mission::Guard)), true);
         return 10;
     }
@@ -130,20 +130,20 @@ int UnitClass::Mission_Unload()
 }
 
 // ============================================================
-// UnitClass_PowerDrainUpdate — vtable[13] (IDA 0x744640, 159B)
+// UnitClass_PowerDrainUpdate -- vtable[13] (IDA 0x744640, 159B)
 // Per-frame power for units (deployed siege units, mobile factories)
-// Gets speed from ILocomotion(vtable[44]) → Power_TimerProcess
-// Gets type ID via vtable[16] → Power_TimerProcess
+// Gets speed from ILocomotion(vtable[44]) -> Power_TimerProcess
+// Gets type ID via vtable[16] -> Power_TimerProcess
 // Timers at this+1732/1736/1740, flags at this+1744-1746, 1671
 // ============================================================
 
 // ============================================================
-// UnitClass_LoadFromStream — vtable[5] (IDA 0x744470, 391B)
+// UnitClass_LoadFromStream -- vtable[5] (IDA 0x744470, 391B)
 // COM IPersistStream::Load for unit deserialization
 // ============================================================
 
 // ============================================================
-// UnitClass_PerFrameUpdate — vtable[9] (IDA 0x746810, 167B)
+// UnitClass_PerFrameUpdate -- vtable[9] (IDA 0x746810, 167B)
 // Per-frame update (speed/position/facing via ILocomotion)
 // ============================================================
 

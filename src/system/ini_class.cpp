@@ -1,4 +1,4 @@
-// INIClass + CCINIClass � IDA-based constructor translations
+// INIClass + CCINIClass -- IDA-based constructor translations
 // INI parser with section/key/value storage
 #include "gamemd/system/ini_class.hpp"
 #include "gamemd/system/mix_file.hpp"
@@ -30,12 +30,12 @@ struct INISectionData {
 // Per-instance INI data (moved from header to avoid bloat)
 struct INIData {
     std::vector<INISectionData> Sections;
-    std::map<std::string, int> SectionIndex; // name � index
+    std::map<std::string, int> SectionIndex; // name -- index
 };
 
 // ============================================================
 REVERSE(0x535aa0, "INIClass::Constructor: IDA verified", "None") // auto-marked completed
-// IDA 0x535AA0 � INIClass::Constructor (84 bytes)
+// IDA 0x535AA0 -- INIClass::Constructor (84 bytes)
 // ============================================================
 INIClass::INIClass()
 {
@@ -44,7 +44,7 @@ INIClass::INIClass()
 
 // ============================================================
 REVERSE(0x535b30, "CCINIClass::Constructor: IDA verified", "None") // auto-marked completed
-// IDA 0x535B30 � CCINIClass::Constructor (138 bytes)
+// IDA 0x535B30 -- CCINIClass::Constructor (138 bytes)
 // ============================================================
 CCINIClass::CCINIClass()
     : INIClass()
@@ -77,7 +77,7 @@ static std::string Trim(const char* s, int len)
 
 // ============================================================
 REVERSE(0x4741f0, "CCINIClass::Load: IDA verified", "None") // auto-marked completed
-// IDA 0x4741F0 � CCINIClass::Load(file, unk1, unk2)
+// IDA 0x4741F0 -- CCINIClass::Load(file, unk1, unk2)
 // Parses INI file content into sections and key=value pairs
 // ============================================================
 bool CCINIClass::Load(CCFileClass* file, bool unk1, bool unk2)
@@ -142,7 +142,7 @@ bool CCINIClass::Load(CCFileClass* file, bool unk1, bool unk2)
 
         // Key=Value
         if (m_ini_data->Sections.empty()) {
-            // Lines before any section � ignored (or global section)
+            // Lines before any section -- ignored (or global section)
             continue;
         }
 

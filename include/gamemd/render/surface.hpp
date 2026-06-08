@@ -58,13 +58,13 @@ public:
     // [6] 0x18 Fill
     virtual bool Fill(uint32_t color) = 0;
 
-    // [7] 0x1C FillRectWithFlags — CPU像素写入，16bpp RGB565，支持alpha混合
+    // [7] 0x1C FillRectWithFlags -- CPU像素写入，16bpp RGB565，支持alpha混合
     virtual bool FillRectWithFlags(
         const RectangleStruct& clip_rect,
         const ColorStruct& color,
         int opacity_percent) = 0;
 
-    // [8] 0x20 DrawEllipseOutline — 中点椭圆算法轮廓
+    // [8] 0x20 DrawEllipseOutline -- 中点椭圆算法轮廓
     virtual bool DrawEllipseOutline(
         const Point2D& center,
         int radius_w,
@@ -93,7 +93,7 @@ public:
         const Point2D& end,
         uint32_t color) = 0;
 
-    // [13] 0x34 DrawLineZBuf — Z-Buffer直线，写像素+写ZBuffer
+    // [13] 0x34 DrawLineZBuf -- Z-Buffer直线，写像素+写ZBuffer
     virtual bool DrawLineZBuf(
         const Point2D& start,
         const Point2D& end,
@@ -102,7 +102,7 @@ public:
         int fade_end,
         bool update_z_buffer) = 0;
 
-    // [14] 0x38 DrawLineModulated — 读取目标像素，调色混合后写回
+    // [14] 0x38 DrawLineModulated -- 读取目标像素，调色混合后写回
     virtual bool DrawLineModulated(
         const Point2D& start,
         const Point2D& end,
@@ -111,7 +111,7 @@ public:
         int fade_end,
         bool update_z_buffer) = 0;
 
-    // [15] 0x3C DrawLineFaded — 渐变直线，浮点渐隐参数
+    // [15] 0x3C DrawLineFaded -- 渐变直线，浮点渐隐参数
     virtual bool DrawLineFaded(
         const Point2D& start,
         const Point2D& end,
@@ -123,7 +123,7 @@ public:
         float gradient_step,
         bool flip_dir) = 0;
 
-    // [16] 0x40 DrawLineZBufColored — Z-Buffer着色直线，float亮度缩放
+    // [16] 0x40 DrawLineZBufColored -- Z-Buffer着色直线，float亮度缩放
     virtual bool DrawLineZBufColored(
         const Point2D& start,
         const Point2D& end,
@@ -132,13 +132,13 @@ public:
         int fade_start,
         int fade_end) = 0;
 
-    // [17] 0x44 WalkLine — Bresenham像素遍历，回调模式
+    // [17] 0x44 WalkLine -- Bresenham像素遍历，回调模式
     virtual bool WalkLine(
         const Point2D& start,
         const Point2D& end,
         void (*callback)(const Point2D&)) = 0;
 
-    // [18] 0x48 DrawDashedLine — 虚线(模板模式, 16B数组)
+    // [18] 0x48 DrawDashedLine -- 虚线(模板模式, 16B数组)
     virtual bool DrawDashedLine(
         const Point2D& start,
         const Point2D& end,
@@ -146,7 +146,7 @@ public:
         const uint8_t stipple[16],
         int dash_offset) = 0;
 
-    // [19] 0x4C DrawDashedLineStipple — DSurface版虚线，含Z-Buffer
+    // [19] 0x4C DrawDashedLineStipple -- DSurface版虚线，含Z-Buffer
     virtual bool DrawDashedLineStipple(
         const Point2D& start,
         const Point2D& end,
@@ -155,7 +155,7 @@ public:
         int dash_offset,
         bool update_z) = 0;
 
-    // [20] 0x50 DrawStippledRect — 模板矩形
+    // [20] 0x50 DrawStippledRect -- 模板矩形
     virtual bool DrawStippledRect(
         const Point2D& top_left,
         const Point2D& bottom_right,
@@ -182,7 +182,7 @@ public:
     // [25] 0x64 CanLock
     virtual bool CanLock(uint32_t unk1, uint32_t unk2) = 0;
 
-    // [26] 0x68 vt_entry_68 — returns true (final in XSurface/BSurface)
+    // [26] 0x68 vt_entry_68 -- returns true (final in XSurface/BSurface)
     virtual bool vt_entry_68(uint32_t unk1, uint32_t unk2)
     {
         return true;
@@ -225,18 +225,18 @@ public:
         return false;
     }
 
-    // [34] 0x88 PutPixel — 单像素写入，边界检查
+    // [34] 0x88 PutPixel -- 单像素写入，边界检查
     virtual bool PutPixel(
         const Point2D& point,
         uint16_t color,
         const RectangleStruct& clip_rect) = 0;
 
-    // [35] 0x8C GetPixelAtCoords — 单像素读取，边界检查
+    // [35] 0x8C GetPixelAtCoords -- 单像素读取，边界检查
     virtual uint16_t GetPixelAtCoords(
         const Point2D& point,
         const RectangleStruct& clip_rect) = 0;
 
-    // [36] 0x90 DrawGradientLine — 渐变颜色线
+    // [36] 0x90 DrawGradientLine -- 渐变颜色线
     virtual bool DrawGradientLine(
         const Point2D& start,
         const Point2D& end,
@@ -245,7 +245,7 @@ public:
         float* gradient_start,
         float* gradient_step) = 0;
 
-    // [37] 0x94 CheckBltStatus — IDirectDrawSurface7::GetBltStatus
+    // [37] 0x94 CheckBltStatus -- IDirectDrawSurface7::GetBltStatus
     virtual bool CheckBltStatus() = 0;
 
     // --- 辅助方法 (非虚函数) ---

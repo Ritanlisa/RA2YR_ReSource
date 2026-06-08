@@ -1,4 +1,4 @@
-// INIClass + CCINIClass — IDA-confirmed class definitions
+// INIClass + CCINIClass -- IDA-confirmed class definitions
 // INIClass @ 0x535AA0: base INI parser (~0x40 bytes + vtable)
 // CCINIClass @ 0x535B30: INIClass + CCFileClass integration (~0x58 bytes)
 #pragma once
@@ -38,7 +38,7 @@ struct GenericList {
     void* vtable;
 };
 
-// IDA: INIClass @ 0x535AA0 — size ~0x40 (64 bytes)
+// IDA: INIClass @ 0x535AA0 -- size ~0x40 (64 bytes)
 // vtable at 0x7EA5F4
 class INIClass {
 public:
@@ -69,7 +69,7 @@ protected:
     uint32_t   m_unknown_3C;            // +0x3C
 };
 
-// IDA: CCINIClass @ 0x535B30 — size ~0x58 (88 bytes)
+// IDA: CCINIClass @ 0x535B30 -- size ~0x58 (88 bytes)
 // vtable at 0x7E1AF4 (CCINIClass_Vtable)
 // Extends INIClass with CCFileClass integration
 class CCINIClass : public INIClass {

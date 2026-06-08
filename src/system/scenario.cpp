@@ -111,13 +111,13 @@ ScenarioClass::ScenarioClass() noexcept
     , m_ls800_brief_loc_x(0)
     , m_ls800_brief_loc_y(0)
 {
-    // IDA 0x6832CF: SeedInitRNG(&m_random, 0) — offset +536
+    // IDA 0x6832CF: SeedInitRNG(&m_random, 0) -- offset +536
     m_random.Random(); // placeholder: SeedInitRNG will replace
 
-    // IDA 0x6832E5: m_elapsed_timer = Timer::GetTicks() — offset +1556
-    // IDA 0x6832EB: m_elapsed_timer.end = 0 — offset +1564
-    // IDA 0x6832F6: m_pause_timer = Timer::GetTicks() — offset +1568
-    // IDA 0x6832FC: m_pause_timer.end = 0 — offset +1576
+    // IDA 0x6832E5: m_elapsed_timer = Timer::GetTicks() -- offset +1556
+    // IDA 0x6832EB: m_elapsed_timer.end = 0 -- offset +1564
+    // IDA 0x6832F6: m_pause_timer = Timer::GetTicks() -- offset +1568
+    // IDA 0x6832FC: m_pause_timer.end = 0 -- offset +1576
 
     // IDA 0x683307: offset +4592 = 0
     // IDA 0x68330D: offset +4584 = CurrentFrame
@@ -160,7 +160,7 @@ ScenarioClass::ScenarioClass() noexcept
     // IDA 0x683407: offset +4 = 0
     // IDA 0x68340A: offset +264 = 0
 
-    // IDA 0x683421: memset loop — 702 iterations, dword_B05458 → offset +1586
+    // IDA 0x683421: memset loop -- 702 iterations, dword_B05458 -> offset +1586
     std::memset(m_waypoints, 0xFF, sizeof(m_waypoints)); // TODO: verify source constant
 
     // IDA 0x683435: wcscpy(this+4960, &g_TypeClass_DefaultString)

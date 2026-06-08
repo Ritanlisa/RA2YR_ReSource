@@ -1,4 +1,4 @@
-// render_hooks.cpp — Render element tracking via DSurface::Blit hook
+// render_hooks.cpp -- Render element tracking via DSurface::Blit hook
 #include <windows.h>
 #include "Syringe.h"
 #include "element_tracker.h"
@@ -6,7 +6,7 @@
 namespace render_hooks {
 
 // DSurface::Blit @ 0x4BB0D0 (1303B)
-// First 6 bytes: sub esp, 0x88 — safe for relocation (no ESP-relative addressing in prologue)
+// First 6 bytes: sub esp, 0x88 -- safe for relocation (no ESP-relative addressing in prologue)
 // Parameters (thiscall):
 //   ECX = this (DSurface* dst)
 //   [ESP+4]  = dstRect (int*)
@@ -16,7 +16,7 @@ namespace render_hooks {
 //   [ESP+20] = another (int*)
 //   [ESP+24] = flags (int)
 //   [ESP+28] = a8 (char)
-// Record: source surface addr, source rect → frame info, dst rect → screen position
+// Record: source surface addr, source rect -> frame info, dst rect -> screen position
 DEFINE_HOOK(4BB0D0, Blit_Tracker, 6)
 {
     // Extract: src surface + src rect + dst rect
