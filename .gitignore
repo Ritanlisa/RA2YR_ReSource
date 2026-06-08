@@ -22,6 +22,9 @@ cmake_install.cmake
 *.vcxproj*
 *.tlog/
 
+# Python
+injectFunctionTest/__pycache__/**
+
 # 模型权重和大型二进制
 *.pt
 *.bin

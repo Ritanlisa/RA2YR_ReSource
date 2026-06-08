@@ -1,5 +1,14 @@
 # RA2YR ReSource — 从 gamemd.exe 重建红色警戒2/尤里的复仇源码
 
+## 行为准则
+
+1. **只操作指定的文件。** 不修改未要求修改的文件。D:\RA2MD\ 只能写入 `hook_dll.dll`。
+2. **游戏目录只有一个 hook_dll.dll。** Syringe 自动加载所有带 `.syhks00` section 的 DLL。多个变体同时存在会导致 hook 冲突。
+3. **gen/*.cpp 不在 git 跟踪中。** `git checkout` 切换分支后必须运行 `python gen_reverse_hooks.py` 重新生成。
+4. **PostProcStub.asm 不添加任何新 EXTERN。** 新符号会偏移 DLL 导出序数，导致所有 hook 静默失效。
+5. **所有崩溃都是你的代码造成的。** 不推卸责任到系统、游戏文件或外部环境。
+6. **测试验收标准：进程存活 15 秒 + `comparisonResult.log` 生成。** 两者缺一不可。
+
 ## 项目目标
 
 逆向工程完整的 `gamemd.exe` C++ 源码并重建为独立可执行文件。
