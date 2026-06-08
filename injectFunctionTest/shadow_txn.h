@@ -28,6 +28,7 @@ public:
     bool OnWriteViolation(void* fault_addr);
     int BackedPageCount() const { return static_cast<int>(m_backups.size()); }
     static ShadowTransaction* Current();
+    static void EndCurrent();  // rollback + delete heap-allocated txn from PostProcess
 
 private:
     void ProtectAllDataPages();

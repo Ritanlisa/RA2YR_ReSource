@@ -27,18 +27,23 @@ The core innovation. When our hook fires at function entry:
 
 ```
 1. Hook saves all registers (PUSHAD/PUSHFD by Syringe trampoline)
-2. RE version runs with page-level memory transaction
-3. RE result stored in TLS (fs:[0x18])
-4. Original return address on stack: R->Stack<DWORD>(0)
+2. Hook records input parameters (ECX/EDX/stack args) in per-function slot
+3. Begin ShadowTransaction (page-level memory protection for .data)
+4. Original return address on stack saved to TLS: s->original_ret_addr = R->Stack(0)
 5. REPLACE stack return address: R->Stack(0, &PostProcStub)
-6. return 0 → Syringe executes displaced bytes → JMP back to function
-7. Original function runs normally → RET pops PostProcStub address
-8. PostProcStub: EAX=original result, compares with TLS RE result
-9. LogComparison called with (orig_result, hook_addr) → writes to file
-10. PostProcStub: mov eax, [original_ret_addr]; jmp eax → returns to caller
+6. return 0 → Syringe executes displaced bytes → JMP to function
+7. ORIGINAL function runs (writes to .data captured by VEH + backed up)
+8. Original function returns → RET pops PostProcStub address → enters PostProcStub
+9. PostProcStub calls PostProcess(orig_eax, hook_addr):
+   a. PostProcess rolls back ShadowTransaction (restores .data pages)
+   b. PostProcess runs RE version on fully clean state with saved inputs
+   c. PostProcess compares original vs RE results
+   d. PostProcess logs to comparisonResult.log
+   e. PostProcess returns RE result
+10. PostProcStub returns RE result to original caller (jmp to original_ret_addr)
 ```
 
-**Why this works**: The original function runs on CLEAN state (RE's modifications were rolled back by the page transaction). The stack is restored by Syringe's POPFD/POPAD before the displaced bytes execute. The function's `ret` instruction pops our hijacked address, landing in PostProcStub with EAX=return value.
+**Why this works**: The original function runs first, with all writes to .data captured by the page-level transaction (VEH backs up modified pages). After the original function returns, PostProcess rolls back every .data modification. The RE version then runs on a fully clean state identical to what the original function started with. The RE version's result replaces the original's, making this a transparent substitution. For Capture mode, PostProcStub is not used; inputs are logged directly in the hook body without stack hijacking.
 
 ### 1.2 Page-Level Memory Transaction
 

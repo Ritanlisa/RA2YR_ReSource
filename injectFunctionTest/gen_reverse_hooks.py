@@ -185,8 +185,10 @@ def generate(markers, functions, fn_map):
     w('#include "tls_storage.h"')
     w('#include "shadow_txn.h"')
     w('extern "C" void PostProcStub();')
-    # Forward-declare RE_* functions for Inject/Replace mode
+    # Forward-declare RE_* functions for Inject/Replace mode only
     for m in markers:
+        if m.get('mode') not in ('Inject', 'Replace'):
+            continue
         s=san(m['fn_name'])
         w(f'extern "C" DWORD RE_{s}(DWORD ecx, DWORD edx, DWORD a, DWORD b);')
     w('')
@@ -197,7 +199,7 @@ def generate(markers, functions, fn_map):
     w(f'static DWORD addr_tbl[{nmk}]={{}};')
     w(f'static bool is_cap[{nmk}]={{}};')
     w(f'static bool has_diff[{nmk}]={{}};')
-    w('struct S{DWORD a,c,d,b,si,di,bp,sp,re;};')
+    w('struct S{DWORD a,c,d,b,si,di,bp,sp,re,stk0,stk1,stk2,stk3;};')
     w(f'static S in[{nmk}]={{}};')
     # Section file position tracking
     w('static long cap_pos=0, diff_pos=0, same_pos=0;')
@@ -237,6 +239,22 @@ def generate(markers, functions, fn_map):
     for i,m in enumerate(markers): w(f'  case {i}:FI_{san(m["fn_name"])}();break;')
     w('  default:fprintf(f,"  Input: ???\\n");break;}}')
     w('')
+    # CallRE dispatcher — calls RE_* function with captured inputs (for Inject/Replace)
+    w('static DWORD CallRE(int i){')
+    w('  auto&V=in[i];')
+    w('  switch(i){')
+    has_inj = False
+    for i,m in enumerate(markers):
+        if m.get('mode') not in ('Inject', 'Replace'):
+            continue
+        has_inj = True
+        s=san(m['fn_name'])
+        w(f'    case {i}: return RE_{s}(V.c, V.d, V.stk0, V.stk1);')
+    w('    default: return 0;')
+    w('  }')
+    w('}')
+    if not has_inj:
+        w('// No Inject/Replace markers active — CallRE is a no-op')
     # Map table
     w('struct FE{DWORD a;const char*n;};')
     w('static FE F[]={')
@@ -348,17 +366,16 @@ def generate(markers, functions, fn_map):
         w('  V.a=R->EAX();V.c=R->ECX();V.d=R->EDX();')
         w('  V.b=R->EBX();V.si=R->ESI();V.di=R->EDI();')
         w('  V.bp=R->EBP();V.sp=R->ESP();')
+        w('  V.stk0=R->Stack<DWORD>(4);V.stk1=R->Stack<DWORD>(8);')
+        w('  V.stk2=R->Stack<DWORD>(12);V.stk3=R->Stack<DWORD>(16);')
         
         if mode == "Capture":
             w('  V.re=0;')
             w(f'  write_entry(\'C\', idx, 0x{ah}, V.re, V.re, R->Stack<DWORD>(0));')
         elif mode in ("Replace", "Inject"):
-            w('  shadow::ShadowTransaction txn;')
-            w('  txn.Begin();')
-            w(f'  V.re=RE_{s}(R->ECX(), R->Stack<DWORD>(4), R->Stack<DWORD>(8), R->Stack<DWORD>(12));')
-            w('  txn.End();')
+            w('  auto* txn = new shadow::ShadowTransaction();')
+            w('  txn->Begin();')
             w('  auto*s=shadow::GetSlot();')
-            w('  s->re_result_eax=V.re;')
             w(f'  s->hook_addr=0x{ah};')
             w('  s->original_ret_addr=R->Stack<DWORD>(0);')
             w('  R->Stack(0,(DWORD)&PostProcStub);')
@@ -366,13 +383,26 @@ def generate(markers, functions, fn_map):
         w('  return 0;')
         w('}')
         w('')
-    # LogComparison
+    # LogComparison — called from PostProcStub after original function returns
+    # Performs: rollback txn → run RE → compare → log → store RE result in TLS
     w('extern "C" void __cdecl LogComparison(DWORD orig,DWORD addr){')
     w('  int idx=I(addr);if(idx<0)return;')
     w('  auto&V=in[idx];')
+    w('')
+    w('  // Rollback shadow transaction (restore .data pages)')
+    w('  shadow::ShadowTransaction::EndCurrent();')
+    w('')
+    w('  // Run RE version on clean state')
+    w('  DWORD re = CallRE(idx);')
+    w('  V.re = re;')
+    w('')
+    w('  // Store RE result in TLS for PostProcStub to return to caller')
     w('  auto*s=shadow::GetSlot();')
+    w('  if(s) s->re_result_eax = re;')
+    w('')
+    w('  // Compare and log')
     w('  DWORD ret=s?s->original_ret_addr:0;')
-    w('  write_entry(\'I\', idx, addr, V.re, orig, ret);')
+    w('  write_entry(\'I\', idx, addr, re, orig, ret);')
     w('}')
     return '\n'.join(out)
 
