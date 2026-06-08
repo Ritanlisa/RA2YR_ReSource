@@ -108,7 +108,7 @@ def find_markers(functions, raw_json, callee_map, callee_names, all_marked):
                     # Heuristic: if the matched "return type" looks like a comment or code,
                     # or if the function name doesn't match JSON name, discard the match
                     fname = s.group(2) if s else "?"
-                    params = []
+                    params = []       # list of (type_str, name_str)
                     ret_type = ""
                     full_sig = fname
                     if s:
@@ -127,9 +127,10 @@ def find_markers(functions, raw_json, callee_map, callee_names, all_marked):
                         if s and s.group(3).strip() and s.group(3).strip()!='void':
                             for p in s.group(3).split(','):
                                 ps = p.strip().split()
-                                if ps:
+                                if ps and len(ps) >= 2:
                                     n = ps[-1].lstrip('*& ')
-                                    if n and n!='const': params.append(n)
+                                    ty = ' '.join(ps[:-1])
+                                    if n and n!='const': params.append((ty, n))
                     
                     # Completion check
                     fn_info = functions.get(addr)
@@ -211,16 +212,16 @@ def find_markers(functions, raw_json, callee_map, callee_names, all_marked):
 def san(n):
     return n.replace('::','_').replace('@','_').replace('<','_').replace('>','_')
 
-def conv_reg(conv, j):
+def conv_reg(conv, j, i):
     """Return (ref, name) for parameter j under calling convention conv."""
     if conv == 'thiscall':
-        return ('V.stk%d'%j, 'Stack') if j<4 else ('V.stk3', 'Stack')
+        return ('in[%d].stk%d'%(i,j), 'Stack') if j<4 else ('in[%d].stk3'%i, 'Stack')
     elif conv == 'fastcall':
-        if j==0: return ('V.c', 'ECX')
-        elif j==1: return ('V.d', 'EDX')
-        else: return ('V.stk%d'%(j-2), 'Stack') if (j-2)<4 else ('V.stk3', 'Stack')
+        if j==0: return ('in[%d].c'%i, 'ECX')
+        elif j==1: return ('in[%d].d'%i, 'EDX')
+        else: return ('in[%d].stk%d'%(i,j-2), 'Stack') if (j-2)<4 else ('in[%d].stk3'%i, 'Stack')
     else:  # stdcall, cdecl — parameters on stack
-        return ('V.stk%d'%j, 'Stack') if j<4 else ('V.stk3', 'Stack')
+        return ('in[%d].stk%d'%(i,j), 'Stack') if j<4 else ('in[%d].stk3'%i, 'Stack')
 
 def generate(markers, functions, fn_map, none_markers=None):
     if none_markers is None: none_markers = []
@@ -252,6 +253,9 @@ def generate(markers, functions, fn_map, none_markers=None):
     w(f'static bool has_diff[{nmk}]={{}};')
     w('struct S{DWORD a,c,d,b,si,di,bp,sp,re,stk0,stk1,stk2,stk3;};')
     w(f'static S in[{nmk}]={{}};')
+    w('static char wr_buf[4096];')
+    w('static char* AppV(char* p, DWORD v){p+=wsprintfA(p,"%d(0x%08X)",v,v);return p;}')
+    w('static char* AppS(char* p, const char* s){p+=wsprintfA(p,"%s",s);return p;}')
     # Init
     w('static void NN(){')
     for i,m in enumerate(markers):
@@ -282,21 +286,21 @@ def generate(markers, functions, fn_map, none_markers=None):
         if conv == 'unknown': conv = 'stdcall'
         params = m.get('params',[])
         w(f'static void FI_{san(m["fn_name"])}(){{')
-        w(f'  auto&V=in[{i}];')
-        parts=[]; args=[]
+        w(f'  char* p=wr_buf;')
+        w(f'  p=AppS(p,"  Input:  ");')
         if conv == 'thiscall' and params:
-            parts.append('this=0x%08X'); args.append('V.c')
+            w(f'  p=AppS(p,"this="); p=AppV(p,in[{i}].c);')
         if params:
             for j,p in enumerate(params[:4]):
-                ref, reg = conv_reg(conv, j)
-                parts.append(f'{p}({reg})=0x%08X')
-                args.append(ref)
-        if not parts:
-            parts=['ECX=0x%08X','EDX=0x%08X','stk0=0x%08X']
-            args=['V.c','V.d','V.stk0']
-        w(f'  WrF("  Input:  {("  ".join(parts))}\\r\\n",{", ".join(args)});')
-        w('}')
-        w('')
+                ref, reg = conv_reg(conv, j, i)
+                w(f'  p=AppS(p," {p[1]}({reg})="); p=AppV(p,{ref});')
+        if not params and conv != 'thiscall':
+            w(f'  p=AppS(p,"ECX="); p=AppV(p,in[{i}].c);')
+            w(f'  p=AppS(p," EDX="); p=AppV(p,in[{i}].d);')
+            w(f'  p=AppS(p," stk0="); p=AppV(p,in[{i}].stk0);')
+        w(f'  p=AppS(p,"\\r\\n"); *p=0;')
+        w(f'}}')
+        w(f'')
     # FI dispatcher
     w('static void FI(int i){switch(i){')
     for i,m in enumerate(markers): w(f'  case {i}:FI_{san(m["fn_name"])}();break;')
@@ -343,7 +347,6 @@ def generate(markers, functions, fn_map, none_markers=None):
     w('')
     w('static HANDLE h = INVALID_HANDLE_VALUE;')
     w('static void Wr(const char* s){DWORD n;if(h!=INVALID_HANDLE_VALUE)WriteFile(h,s,lstrlenA(s),&n,0);}')
-    w('static char wr_buf[4096];')
     w('static void WrF(const char* fmt,...){')
     w('  va_list va; va_start(va,fmt);')
     w('  int n=wvsprintfA(wr_buf,fmt,va); va_end(va);')
@@ -443,8 +446,8 @@ def generate(markers, functions, fn_map, none_markers=None):
     w('  elen+=wsprintfA(ebuf+elen,"Call %d: %s()<-0x%08X\\r\\n",n,cn?cn:"?",ret-5);')
     w('  FI(i); lstrcatA(ebuf,wr_buf);')
     w('  elen=lstrlenA(ebuf);')
-    w('  if(tag==\'C\'){ elen+=wsprintfA(ebuf+elen,"  Return: 0x%08X\\r\\n",orig); }')
-    w('  else if(re==orig){ elen+=wsprintfA(ebuf+elen,"  Return: hook=original=0x%08X\\r\\n",orig); }')
+    w('  if(tag==\'C\'){ elen+=wsprintfA(ebuf+elen,"  Return: %d(0x%08X)\\r\\n",orig,orig); }')
+    w('  else if(re==orig){ elen+=wsprintfA(ebuf+elen,"  Return: hook=original=%d(0x%08X)\\r\\n",orig,orig); }')
     w('  else{ has_diff[i]=true; elen+=wsprintfA(ebuf+elen,"  Return: hook=%d(0x%08X) != original=%d(0x%08X)\\r\\n",re,re,orig,orig); }')
     w('  // Write to file for crash safety (overwritten by flush_to_file anyway)')
     w('  if(h!=INVALID_HANDLE_VALUE){{')
@@ -614,7 +617,8 @@ def load_all_markers():
     
     print(f"Found {len(markers)} enabled hooks:")
     for m in markers:
-        print(f"  {m['addr']}: {m['fn_name']}({','.join(m.get('params',[]))}) {'[OK]' if m.get('completed') else '[NOT COMPLETED]'}")
+        pnames = [p[1] for p in m.get('params',[])]
+        print(f"  {m['addr']}: {m['fn_name']}({','.join(pnames)}) {'[OK]' if m.get('completed') else '[NOT COMPLETED]'}")
     
     if errors:
         print(f"\n{len(errors)} ERROR(s): enabled hooks on uncompleted functions!")
@@ -663,7 +667,8 @@ def main():
     print(f"Found {len(markers)} active hooks ({len(none_markers)} None-mode):")
     for m in markers:
         status = '[OK]' if m.get('completed') else '[NOT COMPLETED]'
-        print(f"  {m['addr']}: {m['fn_name']}({','.join(m.get('params',[]))}) {status} mode={m['mode']}")
+        pnames = [p[1] for p in m.get('params',[])]
+        print(f"  {m['addr']}: {m['fn_name']}({','.join(pnames)}) {status} mode={m['mode']}")
     if none_markers:
         print(f"  None markers (for None Calls section):")
         for m in none_markers:
