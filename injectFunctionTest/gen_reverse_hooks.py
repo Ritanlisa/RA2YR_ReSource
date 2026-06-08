@@ -94,12 +94,17 @@ def find_markers(functions, raw_json, callee_map, callee_names, all_marked):
                     s = SIG.search(rest)
                     fname = s.group(1) if s else "?"
                     params = []
-                    if s and s.group(2).strip() and s.group(2).strip()!='void':
-                        for p in s.group(2).split(','):
-                            ps = p.strip().split()
-                            if ps:
-                                n = ps[-1].lstrip('*& ')
-                                if n and n!='const': params.append(n)
+                    ret_type = ""
+                    full_sig = fname
+                    if s:
+                        ret_type = s.group(0)[:s.group(0).rfind(s.group(1))].strip()
+                        full_sig = s.group(0).strip()
+                        if s.group(2).strip() and s.group(2).strip()!='void':
+                            for p in s.group(2).split(','):
+                                ps = p.strip().split()
+                                if ps:
+                                    n = ps[-1].lstrip('*& ')
+                                    if n and n!='const': params.append(n)
                     
                     # Completion check
                     fn_info = functions.get(addr)
@@ -167,14 +172,23 @@ def find_markers(functions, raw_json, callee_map, callee_names, all_marked):
                     
                     markers.append(dict(addr=addr,desc=m.group(2),fn_name=fname,
                                         file=os.path.relpath(fp,ROOT),params=params,
-                                        completed=completed,mode=mode))
+                                        completed=completed,mode=mode,
+                                        ret_type=ret_type, full_sig=full_sig))
     return markers, warnings, errors
 
 def san(n):
     return n.replace('::','_').replace('@','_').replace('<','_').replace('>','_')
 
-def reg_ref(r):
-    return {'ECX':'V.c','EDX':'V.d','Stack':'V.sp'}.get(r,'V.sp')
+def conv_reg(conv, j):
+    """Return (ref, name) for parameter j under calling convention conv."""
+    if conv == 'thiscall':
+        return ('V.stk%d'%j, 'Stack') if j<4 else ('V.stk3', 'Stack')
+    elif conv == 'fastcall':
+        if j==0: return ('V.c', 'ECX')
+        elif j==1: return ('V.d', 'EDX')
+        else: return ('V.stk%d'%(j-2), 'Stack') if (j-2)<4 else ('V.stk3', 'Stack')
+    else:  # stdcall, cdecl — parameters on stack
+        return ('V.stk%d'%j, 'Stack') if j<4 else ('V.stk3', 'Stack')
 
 def generate(markers, functions, fn_map):
     out = []; w = out.append
@@ -201,14 +215,19 @@ def generate(markers, functions, fn_map):
     w(f'static bool has_diff[{nmk}]={{}};')
     w('struct S{DWORD a,c,d,b,si,di,bp,sp,re,stk0,stk1,stk2,stk3;};')
     w(f'static S in[{nmk}]={{}};')
-    # Section file position tracking
-    w('static long cap_pos=0, diff_pos=0, same_pos=0;')
+    # Section state
     w('static bool sections_written=false;')
+    # Store full signatures for header formatting
+    w(f'static const char* sig[{nmk}]={{}};')
+    w(f'static const char* rt[{nmk}]={{}};')
     # Init
     w('static void NN(){')
     for i,m in enumerate(markers):
         cap = 'true' if m.get('mode') == 'Capture' else 'false'
+        sig = m.get('full_sig', m['fn_name'])
+        rt = m.get('ret_type', '')
         w(f'  nm[{i}]="{m["fn_name"]}"; addr_tbl[{i}]=0x{int(m["addr"],16):08X}; is_cap[{i}]={cap};')
+        w(f'  sig[{i}]="{sig}"; rt[{i}]="{rt}";')
     w('}')
     w('struct InitHookNames { InitHookNames() { NN(); } };')
     w('static InitHookNames _init;')
@@ -223,15 +242,18 @@ def generate(markers, functions, fn_map):
         params = m.get('params',[])
         w(f'static void FI_{san(m["fn_name"])}(){{')
         w(f'  auto&V=in[{i}];')
+        parts=[]; args=[]
+        if conv == 'thiscall' and params:
+            parts.append('this=0x%08X'); args.append('V.c')
         if params:
-            parts=[]; args=[]
             for j,p in enumerate(params[:4]):
-                reg = 'ECX' if j==0 else 'EDX' if j==1 else 'Stack'
+                ref, reg = conv_reg(conv, j)
                 parts.append(f'{p}({reg})=0x%08X')
-                args.append(reg_ref(reg))
-            w(f'  fprintf(f,"  Input:  {("  ".join(parts))}\\n",{", ".join(args)});')
-        else:
-            w(f'  fprintf(f,"  Input:  ECX=0x%08X  EDX=0x%08X  ESP=0x%08X\\n",V.c,V.d,V.sp);')
+                args.append(ref)
+        if not parts:
+            parts=['ECX=0x%08X','EDX=0x%08X','stk0=0x%08X']
+            args=['V.c','V.d','V.stk0']
+        w(f'  fprintf(f,"  Input:  {("  ".join(parts))}\\n",{", ".join(args)});')
         w('}')
         w('')
     # FI dispatcher
@@ -274,15 +296,57 @@ def generate(markers, functions, fn_map):
     w(f'  if(lo<=0||lo>{count}) return 0;')
     w('  return F[lo-1].n;')
     w('}')
-    # Simple append log + post-process reorganization
+    # Dynamic section management — file always in §2.5 format
+    w('static void ensure_sections(){')
+    w('  if(sections_written) return;')
+    w('  sections_written=true;')
+    w('}')
+    w('')
+    w('static void rewrite_sections(){')
+    w('  if(!f) return;')
+    w('  long end=ftell(f);')
+    w('  if(end<1||end>5*1024*1024) return;')
+    w('  fseek(f,0,SEEK_SET);')
+    w('  char* buf=(char*)malloc(end+1);')
+    w('  if(!buf) return;')
+    w('  fread(buf,1,end,f); buf[end]=0;')
+    w('  fclose(f);')
+    w('')
+    w('  f=fopen("comparisonResult.log","w");')
+    w('  if(!f){free(buf);return;}')
+    w('')
+    w('  // Section 1: Different Calls')
+    w('  fprintf(f,"============ Different Calls ============\\n");')
+    w('  const char* p=buf;')
+    w('  while(*p){if(strncmp(p,"[D]",3)==0){while(*p&&*p!=\'\\n\') fputc(*p++,f); fputc(\'\\n\',f); p++; while(*p&&strncmp(p,"[D]",3)&&strncmp(p,"[C]",3)&&strncmp(p,"[S]",3)){fputc(*p++,f);}}else p++;}')
+    w('')
+    w('  // Section 2: Captures')
+    w('  fprintf(f,"\\n================ Captures ================\\n");')
+    w('  p=buf;')
+    w('  while(*p){if(strncmp(p,"[C]",3)==0){while(*p&&*p!=\'\\n\') fputc(*p++,f); fputc(\'\\n\',f); p++; while(*p&&strncmp(p,"[D]",3)&&strncmp(p,"[C]",3)&&strncmp(p,"[S]",3)){fputc(*p++,f);}}else p++;}')
+    w('')
+    w('  // Section 3: Same Compares')
+    w('  fprintf(f,"\\n============= Same Compares ==============\\n");')
+    w('  p=buf;')
+    w('  while(*p){if(strncmp(p,"[S]",3)==0){while(*p&&*p!=\'\\n\') fputc(*p++,f); fputc(\'\\n\',f); p++; while(*p&&strncmp(p,"[D]",3)&&strncmp(p,"[C]",3)&&strncmp(p,"[S]",3)){fputc(*p++,f);}}else p++;}')
+    w('')
+    w('  free(buf);')
+    w('  fflush(f);')
+    w('}')
+    w('')
     w('static void write_entry(char tag, int i, DWORD addr, DWORD re, DWORD orig, DWORD ret){')
     w('  if(!f){f=fopen("comparisonResult.log","w");if(!f)return;}')
+    w('  ensure_sections();')
     w('  int n=++ctr[i];')
     w('  if(n>50) return;')
     w('  const char* cn=Caller(ret-5);')
-    w('  if(n==1)fprintf(f,"[%c][%s-0x%08X]\\n",tag,nm[i]?nm[i]:"?",addr);')
+    w('  if(n==1){')
+    w('    const char* s=sig[i];')
+    w('    if(s&&*s)fprintf(f,"[%c][%s-0x%08X]\\n",tag,s,addr);')
+    w('    else fprintf(f,"[%c][%s-0x%08X]\\n",tag,nm[i]?nm[i]:"?",addr);')
+    w('  }')
     w('  fprintf(f,"Call %d: %s()<-0x%08X\\n",n,cn?cn:"?",ret-5);')
-    w('  fprintf(f,"  Input:  ECX=0x%08X  EDX=0x%08X  Stack=0x%08X\\n",in[i].c,in[i].d,in[i].sp);')
+    w('  FI(i);')
     w('  if(tag==\'C\'){')
     w('    fprintf(f,"  Return: 0x%08X\\n",orig);')
     w('  }else if(re==orig){')
@@ -291,58 +355,20 @@ def generate(markers, functions, fn_map):
     w('    has_diff[i]=true;')
     w('    fprintf(f,"  Return: hook=0x%08X != original=0x%08X\\n",re,orig);')
     w('  }')
-    w('  fflush(f);')
+    w('  // Always rewrite to maintain §2.5 format dynamically')
+    w('  rewrite_sections();')
     w('}')
     w('void WriteNoCallSummary(){')
     w('  if(!f) return;')
-    w('  fclose(f); f=nullptr;')
-    w('  // Read raw file, rewrite with sections')
-    w('  FILE* fr=fopen("comparisonResult.log","rb");')
-    w('  if(!fr) return;')
-    w('  fseek(fr,0,SEEK_END); long sz=ftell(fr);')
-    w('  if(sz<1||sz>5*1024*1024){{fclose(fr);return;}}')
-    w('  char* buf=(char*)malloc(sz+1);')
-    w('  if(!buf){{fclose(fr);return;}}')
-    w('  fseek(fr,0,SEEK_SET); fread(buf,1,sz,fr); buf[sz]=0; fclose(fr);')
-    w('')
-    w('  f=fopen("comparisonResult.log","w");')
-    w('  if(!f){{free(buf);return;}}')
-    w('  // Section 1: Capture')
-    w('  fprintf(f,"=========== Capture Results ===========\\n");')
-    w('  const char* p=buf;')
-    w('  while(*p){')
-    w('    if(strncmp(p,"[C]",3)==0){')
-    w('      while(*p&&*p!=\'\\n\') fputc(*p++,f); fputc(\'\\n\',f); p++;')
-    w('      while(*p&&strncmp(p,"[C]",3)&&strncmp(p,"[I]",3)){{fputc(*p++,f);}}')
-    w('    }else p++;')
-    w('  }')
-    w('  // Section 2: Different')
-    w('  fprintf(f,"\\n========== Different Compares ==========\\n");')
-    w('  p=buf;')
-    w('  while(*p){')
-    w('    if(strncmp(p,"[I]",3)==0){')
-    w('      const char* b=p; int hasD=0;')
-    w('      while(b<buf+sz&&strncmp(b,"[I]",3)!=0&&strncmp(b,"[C]",3)!=0) b++;')
-    w('      if(strstr(p,"!=")) hasD=1;')
-    w('      if(hasD){{while(p<b){{fputc(*p++,f);}} }} else p=b;')
-    w('    }else p++;')
-    w('  }')
-    w('  // Section 3: Same')
-    w('  fprintf(f,"\\n============ Same Compares ============\\n");')
-    w('  p=buf;')
-    w('  while(*p){')
-    w('    if(strncmp(p,"[I]",3)==0){')
-    w('      const char* b=p;')
-    w('      while(b<buf+sz&&strncmp(b,"[I]",3)!=0&&strncmp(b,"[C]",3)!=0) b++;')
-    w('      if(!strstr(p,"!=")){{while(p<b){{fputc(*p++,f);}} }} else p=b;')
-    w('    }else p++;')
-    w('  }')
-    w('  // No Call')
-    w(f'  fprintf(f,"\\n");')
+    w('  rewrite_sections();')
     w(f'  for(int i=0;i<{nmk};++i){{')
-    w('    if(ctr[i]==0)fprintf(f,"[%s-0x%08X]\\nNo Call\\n",nm[i]?nm[i]:"?",addr_tbl[i]);')
+    w('    if(ctr[i]==0){')
+    w('      const char* s=sig[i];')
+    w('      if(s&&*s)fprintf(f,"[%s-0x%08X]\\nNo Call\\n",s,addr_tbl[i]);')
+    w('      else fprintf(f,"[%s-0x%08X]\\nNo Call\\n",nm[i]?nm[i]:"?",addr_tbl[i]);')
+    w('    }')
     w('  }')
-    w('  fclose(f); f=nullptr; free(buf);')
+    w('  fclose(f); f=nullptr;')
     w('}')
     # ExeTerminate hook — NOT USED (summary written in DllMain detach)
     # ExeTerminate at 0x7CD8EF is hooked by Ares (calls ExitProcess)
