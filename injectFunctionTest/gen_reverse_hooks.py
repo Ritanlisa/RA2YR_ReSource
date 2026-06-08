@@ -117,6 +117,14 @@ def find_markers(functions, raw_json, callee_map, callee_names, all_marked):
                         garbage_words = ['return','remove','store','global','marked','repeat',
                                         'loads','resets','new','recursive','forward','declare']
                         is_garbage = any(w == rt or rt.startswith(w+' ') for w in garbage_words)
+                        # Reject comment-like matches (// or /* in the return type)
+                        if not is_garbage and ('//' in s.group(0) or '/*' in s.group(0)):
+                            is_garbage = True
+                        # Reject if function name doesn't look like a valid identifier
+                        if not is_garbage:
+                            fn = s.group(2)
+                            if not fn[0].isalpha() and fn[0] != '_' and fn[0] != '~':
+                                is_garbage = True
                         if is_garbage:
                             s = None  # discard the match
                             fname = "?"
@@ -124,13 +132,22 @@ def find_markers(functions, raw_json, callee_map, callee_names, all_marked):
                         else:
                             ret_type = rt
                             full_sig = s.group(0).strip().replace('\n',' ').replace('\r',' ').replace('  ',' ')
-                        if s and s.group(3).strip() and s.group(3).strip()!='void':
-                            for p in s.group(3).split(','):
-                                ps = p.strip().split()
-                                if ps and len(ps) >= 2:
-                                    n = ps[-1].lstrip('*& ')
-                                    ty = ' '.join(ps[:-1])
-                                    if n and n!='const': params.append((ty, n))
+                        if s:
+                            raw_params = s.group(3).strip()
+                            # Reject if parameters look like code, not declarations
+                            # (e.g. "draw_rect.X, draw_rect.Y" from Point2D tl(draw_rect.X, draw_rect.Y))
+                            has_dot = any('.' in p for p in (s.group(3).split(',') if s.group(3) else []))
+                            if has_dot:
+                                s = None  # discard: found code, not function declaration
+                                fname = "?"
+                                full_sig = "?"
+                            elif raw_params and raw_params != 'void':
+                                for p in s.group(3).split(','):
+                                    ps = p.strip().split()
+                                    if ps and len(ps) >= 2:
+                                        n = ps[-1].lstrip('*& ')
+                                        ty = ' '.join(ps[:-1])
+                                        if n and n!='const': params.append((ty, n))
                     
                     # Completion check
                     fn_info = functions.get(addr)
@@ -352,12 +369,13 @@ def generate(markers, functions, fn_map, none_markers=None):
         count += 1
         if count >= 8000: break
     w('  {0,0}};')
-    # Caller lookup
+    # Caller lookup with distance guard (reject >64KB=0x10000 gap to avoid garbage names)
     w(f'static const char* Caller(DWORD v){{')
     w(f'  if({count}==0) return 0;')
     w(f'  int lo=1,hi={count};')
     w('  while(lo<hi){int m=(lo+hi)/2;if(v<F[m].a)hi=m;else lo=m+1;}')
     w(f'  if(lo<=0||lo>{count}) return 0;')
+    w('  if(v-F[lo-1].a>0x10000) return 0;')  # too far: likely unfiltered template/gap
     w('  return F[lo-1].n;')
     w('}')
     # ============================================================
