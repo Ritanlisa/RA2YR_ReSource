@@ -25,11 +25,11 @@ static LONG CALLBACK VEHHandler(PEXCEPTION_POINTERS info)
 
     auto* txn = ShadowTransaction::Current();
     if (!txn) {
-        MEMORY_BASIC_INFORMATION mbi;
-        VirtualQuery(fault_addr, &mbi, sizeof(mbi));
-        DWORD old;
-        VirtualProtect(mbi.BaseAddress, mbi.RegionSize, PAGE_READWRITE, &old);
-        return EXCEPTION_CONTINUE_EXECUTION;
+        return EXCEPTION_CONTINUE_SEARCH;
+    }
+
+    if (fault_addr < ShadowTransaction::DataStart() || fault_addr >= ShadowTransaction::DataEnd()) {
+        return EXCEPTION_CONTINUE_SEARCH;
     }
 
     txn->OnWriteViolation(fault_addr);

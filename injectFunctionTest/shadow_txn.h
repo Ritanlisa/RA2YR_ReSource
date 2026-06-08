@@ -29,6 +29,8 @@ public:
     int BackedPageCount() const { return static_cast<int>(m_backups.size()); }
     static ShadowTransaction* Current();
     static void EndCurrent();  // rollback + delete heap-allocated txn from PostProcess
+    static void* DataStart() { return s_data_start; }
+    static void* DataEnd()   { return s_data_end; }
 
 private:
     void ProtectAllDataPages();
