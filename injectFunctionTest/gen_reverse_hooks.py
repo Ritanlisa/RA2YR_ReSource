@@ -212,7 +212,23 @@ def find_markers(functions, raw_json, callee_map, callee_names, all_marked):
 def san(n):
     return n.replace('::','_').replace('@','_').replace('<','_').replace('>','_')
 
+def fmt_fn(ptype):
+    """Return (cpp_formatter, c_fmt) based on parameter type string."""
+    ty = ptype.lower()
+    if 'bool' in ty: return ('AppB', 'bool')
+    if '*' in ty: return ('AppP', 'ptr')
+    return ('AppV', 'int')
+
 def conv_reg(conv, j, i):
+    """Return (ref, name) for parameter j under calling convention conv."""
+    if conv == 'thiscall':
+        return ('in[%d].stk%d'%(i,j), 'Stack') if j<4 else ('in[%d].stk3'%i, 'Stack')
+    elif conv == 'fastcall':
+        if j==0: return ('in[%d].c'%i, 'ECX')
+        elif j==1: return ('in[%d].d'%i, 'EDX')
+        else: return ('in[%d].stk%d'%(i,j-2), 'Stack') if (j-2)<4 else ('in[%d].stk3'%i, 'Stack')
+    else:  # stdcall, cdecl — parameters on stack
+        return ('in[%d].stk%d'%(i,j), 'Stack') if j<4 else ('in[%d].stk3'%i, 'Stack')
     """Return (ref, name) for parameter j under calling convention conv."""
     if conv == 'thiscall':
         return ('in[%d].stk%d'%(i,j), 'Stack') if j<4 else ('in[%d].stk3'%i, 'Stack')
@@ -255,6 +271,8 @@ def generate(markers, functions, fn_map, none_markers=None):
     w(f'static S in[{nmk}]={{}};')
     w('static char wr_buf[4096];')
     w('static char* AppV(char* p, DWORD v){p+=wsprintfA(p,"%d(0x%08X)",v,v);return p;}')
+    w('static char* AppP(char* p, DWORD v){(void)v;p+=wsprintfA(p,"0x%08X",v);return p;}')
+    w('static char* AppB(char* p, DWORD v){p+=wsprintfA(p,"%s(0x%08X)",v?"true":"false",v);return p;}')
     w('static char* AppS(char* p, const char* s){p+=wsprintfA(p,"%s",s);return p;}')
     # Init
     w('static void NN(){')
@@ -289,15 +307,16 @@ def generate(markers, functions, fn_map, none_markers=None):
         w(f'  char* p=wr_buf;')
         w(f'  p=AppS(p,"  Input:  ");')
         if conv == 'thiscall' and params:
-            w(f'  p=AppS(p,"this="); p=AppV(p,in[{i}].c);')
+            w(f'  p=AppS(p,"this="); p=AppP(p,in[{i}].c);')
         if params:
             for j,p in enumerate(params[:4]):
                 ref, reg = conv_reg(conv, j, i)
-                w(f'  p=AppS(p," {p[1]}({reg})="); p=AppV(p,{ref});')
+                fn, _ = fmt_fn(p[0])  # p[0] = type string, p[1] = name
+                w(f'  p=AppS(p," {p[1]}({reg})="); p={fn}(p,{ref});')
         if not params and conv != 'thiscall':
-            w(f'  p=AppS(p,"ECX="); p=AppV(p,in[{i}].c);')
-            w(f'  p=AppS(p," EDX="); p=AppV(p,in[{i}].d);')
-            w(f'  p=AppS(p," stk0="); p=AppV(p,in[{i}].stk0);')
+            w(f'  p=AppS(p,"ECX="); p=AppP(p,in[{i}].c);')
+            w(f'  p=AppS(p," EDX="); p=AppP(p,in[{i}].d);')
+            w(f'  p=AppS(p," stk0="); p=AppP(p,in[{i}].stk0);')
         w(f'  p=AppS(p,"\\r\\n"); *p=0;')
         w(f'}}')
         w(f'')
