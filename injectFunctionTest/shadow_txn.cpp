@@ -77,6 +77,12 @@ void ShadowTransaction::Begin()
 void ShadowTransaction::End()
 {
     RestoreAllPages();
+    // Unprotect ALL pages that were protected by Begin()
+    // (RestoreAllPages only handles backed-up pages; Begin() protects ALL)
+    for (uintptr_t p = (uintptr_t)s_data_start; p < (uintptr_t)s_data_end; p += 4096) {
+        DWORD old;
+        VirtualProtect(reinterpret_cast<void*>(p), 4096, PAGE_READWRITE, &old);
+    }
     auto* slot = GetSlot();
     if (slot) {
         slot->transaction = nullptr;

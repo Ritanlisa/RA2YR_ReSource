@@ -1,4 +1,5 @@
-// test_hooks.cpp -- CellStruct::Set shadow hook + headless polling
+// test_hooks.cpp -- disabled old Inject-mode hooks (use gen/reverse_hooks.cpp instead)
+#if 0
 #include <windows.h>
 #include "Syringe.h"
 #include "tls_storage.h"
@@ -47,3 +48,5 @@ DEFINE_HOOK(48C8B0, HDS_PollCommands, 5)
     headless::PollCommands();
     return 0;
 }
+
+#endif // disabled old test hooks
