@@ -367,7 +367,7 @@ def generate(markers, functions, fn_map, none_markers=None):
         n = fn_map[a]
         w(f'  {{0x{a:08X},"{n}"}},')
         count += 1
-        if count >= 8000: break
+        if count >= 16000: break
     w('  {0,0}};')
     # Caller lookup with distance guard (reject >64KB=0x10000 gap to avoid garbage names)
     w(f'static const char* Caller(DWORD v){{')
@@ -720,7 +720,21 @@ def main():
     
     print(f"None markers: {len(none_markers)}")
 
-    fn_map = parse_map()
+    # Build caller lookup from functions.json (IDA names, 19K+ entries)
+    # Supplement with .map file entries for any extras
+    fn_map = {}
+    for addr_str, fn_info in functions.items():
+        name = fn_info.get('name', '')
+        if not name or name.startswith(('sub_', 'nullsub', 'unknown', 'loc_')):
+            continue
+        if '`' in name or '<' in name or 'RTTI' in name:
+            continue
+        addr = int(addr_str, 16)
+        fn_map[addr] = name
+    for addr, name in parse_map().items():
+        if addr not in fn_map:
+            fn_map[addr] = name
+    print(f"Caller lookup table: {len(fn_map)} entries (functions.json + map)")
     code = generate(markers, functions, fn_map, none_markers)
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     with open(OUT,'w') as f: f.write(code)
