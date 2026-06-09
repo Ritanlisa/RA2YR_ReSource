@@ -9,6 +9,18 @@
 5. **所有崩溃都是你的代码造成的。** 不推卸责任到系统、游戏文件或外部环境。
 6. **测试验收标准：进程存活 15 秒 + `comparisonResult.log` 生成。** 两者缺一不可。
 
+## 故障排除
+
+任何崩溃报告必须包含:
+- EIP 对应的反汇编 (用 .map / dumpbin)
+- 完整栈 dump (至少 64 字节)
+- 寄存器全状态
+- 复现率 (N 次测试中崩 M 次)
+- 对照实验 (上一稳定版本 vs 当前版本崩溃率对比)
+- 自己改动的代码 diff (最近 3 个 commit)
+
+缺任何一项,不许下"根因"结论。
+
 ## 项目目标
 
 逆向工程完整的 `gamemd.exe` C++ 源码并重建为独立可执行文件。
@@ -1981,3 +1993,115 @@ vt_entry_XXX → index = XXX / 4 → vtable[0] + XXX → 读取函数指针 → 
 | ObjectTypeClass | 0x7E2868 | — | 简单继承 (共享) |
 | TechnoTypeClass | 0x7E2868 | — | 与 ObjectTypeClass 共享 |
 | MPBattleClass | 0x813F60 | — | .data 段
+
+---
+
+## Claude Opus 4.7 方法论总结 (2026-06-09)
+
+以下是从本会话中 Claude Opus 4.7 对所有决策和崩溃分析的批评中提炼的**永久性工程原则**。这些原则应在**每次遇到崩溃或设计决策时**主动应用，不依赖外部审查。
+
+### 原则 0：崩溃报告最低标准（每次必做，下结论前）
+
+任何崩溃报告发布之前，必须满足 AGENTS.md 开头的 6 项标准：
+
+- [ ] EIP 对应的反汇编 (用 .map / dumpbin)
+- [ ] 完整栈 dump (至少 64 字节)
+- [ ] 寄存器全状态
+- [ ] 复现率 (N 次测试中崩 M 次)
+- [ ] 对照实验 (上一稳定版本 vs 当前版本崩溃率对比)
+- [ ] 自己改动的代码 diff (最近 3 个 commit)
+
+**缺任何一项，禁止使用"根因是/不是 X"这类确定性结论。** 只能说"待定"或"证据方向"。
+
+### 原则 1：对照实验是一切诊断的前提
+
+> **"栈上没有 hook_dll 地址"不代表 hook_dll 无关。** Capture/Inject 钩子在 `return 0` 后控制权还给游戏，调用栈不保留 hook_dll 帧。这是设计预期。
+
+每次怀疑"是游戏 bug"必须做对照实验：**不加载 hook_dll 跑 N 局，对比崩溃率**。这个对照不做，任何结论都是循环论证。
+
+- **样本量**: 对低复现率 bug (≤10%)，每条件至少 10 局
+- **对照做完之前**，只能用"待定/证据方向"，不能用"根因"
+
+### 原则 2：相似的崩溃可能有不同的根因
+
+不要因为两个崩溃都"EIP=0"就说它们是"同一个 bug"。必须分解每个崩溃的具体上下文：
+
+- ECX 值差异: 0x43B7 (整数误当指针) vs 0x22735CD0 (合法堆对象) → 完全不同的失效模式
+- vtable 差异: DSurface vs BuildingClass → 不同对象类型被破坏
+- 触发时机: 菜单期 vs 游戏中期 → 不同代码路径
+
+**每次崩溃独立取证，不做类比合并。**
+
+### 原则 3：hook_size 必须对齐指令边界
+
+- hook_size 必须 ≥ 5 (容纳 JMP) **且**必须等于前 N 条完整指令的字节总和
+- **用 Capstone 验证**，不要手工数或信任 functions.json 的 min_safe_size
+- 每个新钩子加入前，加入 hook_size 断言到 gen_reverse_hooks.py
+
+### 原则 4：VEH 只在事务激活时处理 .data 范围内的 AV
+
+- 无事务时：`return EXCEPTION_CONTINUE_SEARCH`，绝不做 unprotect
+- 事务激活时：只处理 `.data` 范围内的写 AV，范围外的也 CONTINUE_SEARCH
+- VEH 是进程级的，所有线程的 AV 都走这个 handler
+- 每个 hook 入口必须检查 `GetCurrentThreadId() != g_owner_tid`
+
+### 原则 5：CallRE 必须按调用约定映射参数
+
+- **thiscall**: ECX=this, 栈参数 = arg0, arg1, ...
+- **fastcall**: ECX=arg0, EDX=arg1, 栈参数 = arg2, ...
+- **stdcall/cdecl**: 全部在栈上
+- **绝不能**固定 4 参 `(V.c, V.d, V.stk0, V.stk1)` — 这会把 thiscall 的 EDX 垃圾当参数传入
+
+### 原则 6：RE 模板必须是"手写 RE + 生成薄包装器"
+
+- `gen_re_impl.py` 的通用模板假设固定参数形态 (独立 x, y, color) → **反模式**
+- 正确做法：手写 RE 实现（IDA 反编译 → C++），gen_re_impl.py 只生成包装器解引用参数
+- Point2D& 参数需要先解引用：`int x = *(int*)(ptr+0); int y = *(int*)(ptr+4);`
+- 函数签名必须从 IDA 反编译验证（fld→double, fild→int, 指针是否数组等）
+
+### 原则 7：ostringstream 在 hook 高频路径的代价
+
+- 局部 `std::ostringstream os;` 每次构造析构 ≥2 次堆操作
+- `os.str()` 返回临时 std::string → 额外 1-2 次堆操作
+- 13 个 Capture hook × 每帧触发数次 × 4 次堆操作 = **数十万次/局**
+- **高频路径继续用轻量格式化**（栈缓冲 + WriteFile），ostringstream 保留给 PostProcStub 后的 LogComparison（每次 Inject 才触发一次）
+
+### 原则 8：每个 Stage 必须独立通过验证才推进
+
+- **Never skip Stage N regression before Stage N+1**
+- Stage 1 Replace 模式必须跑 ≥5 局 + log 内容验证后才推进 Stage 2 Inject
+- 验证标准必须可观测：≥10 条 Call 记录、Same/Different Compares 有内容、g_orphan_count=0
+- 回归不只是"没崩"——必须 diff comparisonResult.log 与改造前一致
+
+### 原则 9：构建系统必须输出 .map 文件
+
+```cmake
+target_link_options(hook_dll PRIVATE "/MAP:${CMAKE_CURRENT_BINARY_DIR}/hook_dll.map")
+```
+
+**.map 文件让任何 RVA 能立刻定位到函数名。** 没有 .map 的崩溃报告是残缺的。
+
+### 原则 10：设计偏离必须明确报告
+
+- `__declspec(thread)` 改成 static global → 必须说明理由
+- 本会话中改用 static global 的理由：所有 hook 入口有 `g_owner_tid` 门控，非主线程直接 return 0 不碰 slot。TCP REG 只读显示值（撕裂读不致命）
+
+### 原则 11：Game 1 不崩 Game 2 崩 → 先查状态残留
+
+- 用 `tasklist` 查 Syringe/gamemd 进程是否退出
+- 用 `netstat` 查端口是否仍 LISTENING
+- 检查 DLL_PROCESS_DETACH 是否正确执行
+
+### 原则 12：EDX 指向 vtable 但 vtable 无 NULL → EDX 可能是非虚调用值
+
+BuildingClass vtable 扫描 0-49 槽位无 NULL，但 EDX=0x7E3EBC。EDX 可能被用于：
+- 非虚调用的函数表
+- RTTI 比较
+- 对象身份验证（`CMP EDX, vtable`）
+- 不要自动假设"EDX=vtable 就意味着虚调用失败"
+
+### 原则 13：build 配置用 `/MAP` + dumpbin 验证导出序数
+
+- 每次新 DLlexport 前验证导出序数 1-16 不变
+- `dumpbin /exports hook_dll.dll`
+- 如果序数偏移 → Syringe 可能静默失效
