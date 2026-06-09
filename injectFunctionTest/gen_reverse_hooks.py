@@ -146,8 +146,13 @@ def find_markers(functions, raw_json, callee_map, callee_names, all_marked):
                                     ps = p.strip().split()
                                     if ps and len(ps) >= 2:
                                         n = ps[-1].lstrip('*& ')
+                                        arr_sz = 0
+                                        arr_m = re.search(r'\[(\d+)\]', n)
+                                        if arr_m:
+                                            arr_sz = int(arr_m.group(1))
+                                            n = n[:arr_m.start()]
                                         ty = ' '.join(ps[:-1])
-                                        if n and n!='const': params.append((ty, n))
+                                        if n and n!='const': params.append((ty, n, arr_sz))
                     
                     # Completion check
                     fn_info = functions.get(addr)
@@ -309,6 +314,13 @@ def generate(markers, functions, fn_map, none_markers=None):
     w('  if(strstr(ty,"bool")||strstr(ty,"Bool")) os<<(v?"true":"false")<<"("; else os<<v<<"(";')
     w('  Hex8(os,v); os<<")";')
     w('}')
+    w('// FmtArr: array formatting [v0,v1,...](ADDR)')
+    w('static void FmtArr(std::ostream& os, int n, DWORD v){')
+    w('  if(!v||n<=0){os<<\"(null)\"; return;}')
+    w('  os<<\"[\";')
+    w('  for(int i=0;i<n;i++){if(i)os<<\",\"; os<<((int*)v)[i];}')
+    w('  os<<\"](\"; Hex8(os,v); os<<\")\";')
+    w('}')
     w('// Helper: write string to per-function buffer')
     w(f'static void FnBuf(int idx, const std::string& s){{')
     w(f'  int sl=(int)s.size();')
@@ -348,10 +360,14 @@ def generate(markers, functions, fn_map, none_markers=None):
             w(f'  os<<"this="<<"0x"<<std::hex<<in[{i}].c;')
             if params:
                 w(f'  static const char* ty_{s}[]={{{",".join(f"\"{p[0]}\"" for p in params)}}};')
+                w(f'  static int arr_{s}[]={{{",".join(str(p[2]) for p in params)}}};')
             for j,pt in enumerate(params):
-                reg = f'Stack'
+                reg = 'Stack'
                 ref = f'in[{i}].stk{j}'
-                w(f'  os<<" {pt[1]}({reg})="; Fmt(os,ty_{s}[{j}],{ref});')
+                if pt[2] > 0:
+                    w(f'  os<<" {pt[1]}({reg})="; FmtArr(os,arr_{s}[{j}],{ref});')
+                else:
+                    w(f'  os<<" {pt[1]}({reg})="; Fmt(os,ty_{s}[{j}],{ref});')
         elif conv == 'fastcall':
             regs = ['ECX','EDX']
             for j in range(min(2, len(params))):
@@ -365,9 +381,13 @@ def generate(markers, functions, fn_map, none_markers=None):
         else:  # stdcall, cdecl
             if params:
                 w(f'  static const char* ty_{s}[]={{{",".join(f"\"{p[0]}\"" for p in params)}}};')
+                w(f'  static int arr_{s}[]={{{",".join(str(p[2]) for p in params)}}};')
             for j,pt in enumerate(params):
                 ref = f'in[{i}].stk{j}'
-                w(f'  os<<" {pt[1]}(Stack)="; Fmt(os,ty_{s}[{j}],{ref});')
+                if pt[2] > 0:
+                    w(f'  os<<" {pt[1]}(Stack)="; FmtArr(os,arr_{s}[{j}],{ref});')
+                else:
+                    w(f'  os<<" {pt[1]}(Stack)="; Fmt(os,ty_{s}[{j}],{ref});')
         w(f'  os<<"\\r\\n";')
         w(f'}}')
         w(f'')

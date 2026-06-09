@@ -82,11 +82,12 @@ RectangleStruct* ClipRectIntersection(
     return result;
 }
 
-// IDA: 0x7BC2B0 -- ClipLine (717B)
-// Cohen-Sutherland line clipping against clip_rect.
-// Modifies start/end in-place, returns true if visible portion exists.
+// IDA: 0x7BC2B0 -- ClipLine (717B) — Cohen-Sutherland line clipping
+// fastcall: ECX=start(double[2]), EDX=end(double[2]), [ESP+4]=clip_rect(int[4])
+// NOTE: start/end are double[2] in the binary (IDA uses fld, not fild).
+// clip_rect is int[4] (IDA uses fild). Source uses int* for compat.
 REVERSE(0x7bc2b0, "ClipLine: Cohen-Sutherland line clip", "Capture")
-bool ClipLine(int* start, int* end, int* clip_rect)
+bool ClipLine(int start[2], int end[2], int clip_rect[4])
 {
     int clip_x  = clip_rect[0];
     int clip_y  = clip_rect[1];
