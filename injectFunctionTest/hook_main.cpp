@@ -8,9 +8,14 @@
 extern "C" void PostProcStub();
 extern "C" { extern volatile int mismatch_counter; }
 
-// ============================================================
-// DllMain
-// ============================================================
+namespace shadow {
+    ShadowSlot  g_slot_storage = {};
+    ShadowSlot* g_current_slot = &g_slot_storage;
+    DWORD       g_owner_tid    = 0;
+    int         g_re_depth     = 0;
+    int         g_orphan_count = 0;
+}
+
 BOOL WINAPI DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved)
 {
     (void)hinstDLL;
@@ -19,9 +24,7 @@ BOOL WINAPI DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved)
     switch (fdwReason) {
     case DLL_PROCESS_ATTACH:
         DisableThreadLibraryCalls(hinstDLL);
-        shadow::InitTLS();
         shadow::InstallVEH();
-        // Server starts later via ExeRun hook (DllMain can't CreateThread safely)
         break;
 
     case DLL_PROCESS_DETACH:
@@ -49,8 +52,9 @@ SYRINGE_HANDSHAKE(pInfo)
 // ============================================================
 DEFINE_HOOK(7CD810, HDS_StartServer, 9)
 {
+    shadow::g_owner_tid = GetCurrentThreadId();
     headless::StartServer(25400, []() -> int {
         return mismatch_counter;
     });
-    return 0; // let original ExeRun continue (Ares/Phobos also hook this)
+    return 0;
 }

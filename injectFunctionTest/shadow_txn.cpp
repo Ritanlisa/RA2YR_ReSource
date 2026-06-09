@@ -69,8 +69,7 @@ void ShadowTransaction::Begin()
 {
     auto* slot = GetSlot();
     if (!slot) return;
-    slot->transaction = this;
-    slot->in_shadow   = true;
+    slot->txn = this;
     ProtectAllDataPages();
 }
 
@@ -85,14 +84,14 @@ void ShadowTransaction::End()
     }
     auto* slot = GetSlot();
     if (slot) {
-        slot->transaction = nullptr;
-        slot->in_shadow   = false;
+        slot->txn = nullptr;
     }
 }
 
 ShadowTransaction* ShadowTransaction::Current()
 {
-    return static_cast<ShadowTransaction*>(GetSlot()->transaction);
+    auto* slot = GetSlot();
+    return slot ? slot->txn : nullptr;
 }
 
 void ShadowTransaction::EndCurrent()

@@ -1,39 +1,26 @@
-// TLS storage for shadow execution framework
-// Uses fs:[0x18] (TIB Arbitrary User Pointer) -- Syringe uses fs:[0x14],
-// so we avoid collision by using the next available slot.
-//
-// Layout of fs:[0x18]:
-//   +0x00: original_ret_addr (caller's return address, hijacked)
-//   +0x04: re_result_eax (EAX from RE version)
-//   +0x08: re_result_edx (EDX from RE version, used for 64-bit returns)
-//   +0x0C: ShadowTransaction* (active transaction or nullptr)
-//   +0x10: bool in_shadow_execution
 #pragma once
+#include <windows.h>
 #include <cstdint>
 
 namespace shadow {
 
+class ShadowTransaction;
+
 struct ShadowSlot {
-    uint32_t original_ret_addr;
-    uint32_t re_result_eax;
-    uint32_t re_result_edx;
-    uint32_t hook_addr;          // current hook address (for logging)
-    void*    transaction;
-    bool     in_shadow;
+    uint32_t original_ret_addr;  // +0x00
+    uint32_t re_result_eax;      // +0x04
+    uint32_t re_result_edx;      // +0x08
+    uint32_t hook_addr;          // +0x0C
+    ShadowTransaction* txn;      // +0x10
 };
 
-inline void InitTLS() {
-    auto* slot = reinterpret_cast<ShadowSlot*>(__readfsdword(0x18));
-    if (!slot) {
-        slot = new ShadowSlot{};
-        __writefsdword(0x18, reinterpret_cast<uint32_t>(slot));
-    }
-    slot->transaction = nullptr;
-    slot->in_shadow = false;
-}
+extern ShadowSlot  g_slot_storage;
+extern ShadowSlot* g_current_slot;
+extern DWORD       g_owner_tid;
+extern int         g_re_depth;
+extern int         g_orphan_count;
 
-inline ShadowSlot* GetSlot() {
-    return reinterpret_cast<ShadowSlot*>(__readfsdword(0x18));
-}
+inline ShadowSlot* GetSlot() { return g_current_slot; }
+inline bool IsOwnerThread() { return GetCurrentThreadId() == g_owner_tid; }
 
 } // namespace shadow

@@ -50,7 +50,8 @@ static void HandleCommand(SOCKET client, const char* cmd)
     if (strncmp(cmd, "STATS", 5) == 0) {
         int mismatches = g_stats_fn ? g_stats_fn() : mismatch_counter;
         snprintf(response, sizeof(response),
-            "{\"ok\":true,\"mismatch_count\":%d}", mismatches);
+            "{\"ok\":true,\"mismatch_count\":%d,\"orphan_txn_count\":%d,\"re_depth\":%d}",
+            mismatches, shadow::g_orphan_count, shadow::g_re_depth);
         SendResponse(client, response);
     }
     else if (strncmp(cmd, "MEM ", 4) == 0) {
@@ -71,9 +72,10 @@ static void HandleCommand(SOCKET client, const char* cmd)
     else if (strncmp(cmd, "REG", 3) == 0) {
         auto* slot = shadow::GetSlot();
         snprintf(response, sizeof(response),
-            "{\"ok\":true,\"re_eax\":\"0x%08X\",\"re_edx\":\"0x%08X\",\"orig_ret\":\"0x%08X\",\"in_shadow\":%s}",
+            "{\"ok\":true,\"re_eax\":\"0x%08X\",\"re_edx\":\"0x%08X\",\"orig_ret\":\"0x%08X\",\"hook_addr\":\"0x%08X\",\"txn_active\":%s,\"re_depth\":%d,\"orphans\":%d}",
             slot->re_result_eax, slot->re_result_edx, slot->original_ret_addr,
-            slot->in_shadow ? "true" : "false");
+            slot->hook_addr, slot->txn ? "true" : "false",
+            shadow::g_re_depth, shadow::g_orphan_count);
         SendResponse(client, response);
     }
     else if (strncmp(cmd, "HOOKS", 5) == 0) {
