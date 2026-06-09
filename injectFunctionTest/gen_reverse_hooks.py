@@ -285,14 +285,29 @@ def generate(markers, functions, fn_map, none_markers=None):
     w(f'static const char* rt[{tnk}]={{}};')
     w(f'static bool is_cap[{nmk}]={{}};')
     w(f'static bool has_diff[{nmk}]={{}};')
-    w('struct S{DWORD a,c,d,b,si,di,bp,sp,re,stk0,stk1,stk2,stk3;};')
+    w('struct S{DWORD a,c,d,b,si,di,bp,sp,re,stk0,stk1,stk2,stk3,stk4,stk5,stk6,stk7;};')
     w(f'static S in[{nmk}]={{}};')
-    w('static char wr_buf[4096];')
-    w('static char* AppV(char* p, DWORD v){p+=wsprintfA(p,"%d(0x%08X)",v,v);return p;}')
-    w('static char* AppP(char* p, DWORD v){(void)v;p+=wsprintfA(p,"0x%08X",v);return p;}')
-    w('static char* AppB(char* p, DWORD v){p+=wsprintfA(p,"%s(0x%08X)",v?"true":"false",v);return p;}')
-    w('static char* AppS(char* p, const char* s){p+=wsprintfA(p,"%s",s);return p;}')
-    # Init
+    w('#include <sstream>')
+    w('#include <string>')
+    w('#define FN_BUF_SZ 12288')
+    w(f'static char fn_buf[{nmk}][FN_BUF_SZ]={{0}};')
+    w(f'static int  fn_buf_len[{nmk}]={{0}};')
+    w('static HANDLE h = INVALID_HANDLE_VALUE;')
+    w('')
+    # Format: type-aware value output to ostringstream
+    w('static void Fmt(std::ostream& os, const char* ty, DWORD v){')
+    w('  if(!ty)ty="";')
+    w('  if(strstr(ty,"bool")||strstr(ty,"Bool")) os<<(v?"true":"false")<<"("<<std::hex<<v<<")";')
+    w('  else if(strchr(ty,\'*\')) os<<"0x"<<std::hex<<v;')
+    w('  else os<<v<<"(0x"<<std::hex<<v<<")";')
+    w('}')
+    w('// Helper: write string to per-function buffer')
+    w(f'static void FnBuf(int idx, const std::string& s){{')
+    w(f'  int sl=(int)s.size();')
+    w(f'  if(fn_buf_len[idx]+sl<FN_BUF_SZ-1){{memcpy(fn_buf[idx]+fn_buf_len[idx],s.c_str(),sl);fn_buf_len[idx]+=sl;}}')
+    w(f'}}')
+    w('')
+    # Init -- unchanged
     w('static void NN(){')
     for i,m in enumerate(markers):
         cap = 'true' if m.get('mode') == 'Capture' else 'false'
@@ -312,36 +327,46 @@ def generate(markers, functions, fn_map, none_markers=None):
     w('static int I(DWORD x){static DWORD A[]={')
     for m in markers: w(f'  0x{int(m["addr"],16):08X},')
     w('  0};for(int i=0;A[i];++i)if(A[i]==x)return i;return -1;}')
-    # FormatInput per function
-    # Win32 I/O forward declarations (implemented below)
-    w('static void Wr(const char* s);')
-    w('static void WrF(const char* fmt,...);')
+    # FormatInput per function — writes to std::ostringstream&
+    w('static void WrFile(const std::string& s){if(h!=INVALID_HANDLE_VALUE){DWORD n;WriteFile(h,s.c_str(),(DWORD)s.size(),&n,0);}}')
     w('')
     for i,m in enumerate(markers):
         conv = functions.get(m['addr'],{}).get('call',{}).get('convention','unknown')
         if conv == 'unknown': conv = 'stdcall'
         params = m.get('params',[])
-        w(f'static void FI_{san(m["fn_name"])}(){{')
-        w(f'  char* p=wr_buf;')
-        w(f'  p=AppS(p,"  Input:  ");')
-        if conv == 'thiscall' and params:
-            w(f'  p=AppS(p,"this="); p=AppP(p,in[{i}].c);')
-        if params:
-            for j,p in enumerate(params[:4]):
-                ref, reg = conv_reg(conv, j, i)
-                fn, _ = fmt_fn(p[0])  # p[0] = type string, p[1] = name
-                w(f'  p=AppS(p," {p[1]}({reg})="); p={fn}(p,{ref});')
-        if not params and conv != 'thiscall':
-            w(f'  p=AppS(p,"ECX="); p=AppP(p,in[{i}].c);')
-            w(f'  p=AppS(p," EDX="); p=AppP(p,in[{i}].d);')
-            w(f'  p=AppS(p," stk0="); p=AppP(p,in[{i}].stk0);')
-        w(f'  p=AppS(p,"\\r\\n"); *p=0;')
+        s=san(m['fn_name'])
+        w(f'static void FI_{s}(std::ostream& os){{')
+        if conv == 'thiscall':
+            w(f'  os<<"this="<<"0x"<<std::hex<<in[{i}].c;')
+            if params:
+                w(f'  static const char* ty_{s}[]={{{",".join(f"\"{p[0]}\"" for p in params)}}};')
+            for j,pt in enumerate(params):
+                reg = f'Stack'
+                ref = f'in[{i}].stk{j}'
+                w(f'  os<<" {pt[1]}({reg})="; Fmt(os,ty_{s}[{j}],{ref});')
+        elif conv == 'fastcall':
+            regs = ['ECX','EDX']
+            for j in range(min(2, len(params))):
+                pn = params[j][1] if j < len(params) else '?'
+                ref = f'in[{i}].{chr(ord("c")+j)}'
+                w(f'  os<<" {pn}({regs[j]})="<<"0x"<<std::hex<<{ref};')
+            for j in range(2, len(params)):
+                pn = params[j][1]
+                ref = f'in[{i}].stk{j-2}'
+                w(f'  os<<" {pn}(Stack)="; Fmt(os,"int",{ref});')
+        else:  # stdcall, cdecl
+            if params:
+                w(f'  static const char* ty_{s}[]={{{",".join(f"\"{p[0]}\"" for p in params)}}};')
+            for j,pt in enumerate(params):
+                ref = f'in[{i}].stk{j}'
+                w(f'  os<<" {pt[1]}(Stack)="; Fmt(os,ty_{s}[{j}],{ref});')
+        w(f'  os<<"\\r\\n";')
         w(f'}}')
         w(f'')
     # FI dispatcher
-    w('static void FI(int i){switch(i){')
-    for i,m in enumerate(markers): w(f'  case {i}:FI_{san(m["fn_name"])}();break;')
-    w('  default:Wr("  Input: ???\\r\\n");break;}}')
+    w('static void FI(int i, std::ostream& os){switch(i){')
+    for i,m in enumerate(markers): w(f'  case {i}:FI_{san(m["fn_name"])}(os);break;')
+    w('  default:os<<"  Input: ???\\r\\n";break;}}')
     w('')
     # CallRE dispatcher — calls RE_* function with captured inputs (for Inject/Replace)
     # Parameter mapping by calling convention:
@@ -380,7 +405,7 @@ def generate(markers, functions, fn_map, none_markers=None):
     w('}')
     if not has_inj:
         w('// No Inject/Replace markers active — CallRE is a no-op')
-    # Map table
+    # Map table + Caller lookup
     w('struct FE{DWORD a;const char*n;};')
     w('static FE F[]={')
     sorted_addrs = sorted(fn_map.keys())
@@ -391,33 +416,17 @@ def generate(markers, functions, fn_map, none_markers=None):
         count += 1
         if count >= 16000: break
     w('  {0,0}};')
-    # Caller lookup with distance guard (reject >64KB=0x10000 gap to avoid garbage names)
     w(f'static const char* Caller(DWORD v){{')
     w(f'  if({count}==0) return 0;')
     w(f'  int lo=1,hi={count};')
     w('  while(lo<hi){int m=(lo+hi)/2;if(v<F[m].a)hi=m;else lo=m+1;}')
     w(f'  if(lo<=0||lo>{count}) return 0;')
-    w('  if(v-F[lo-1].a>0x10000) return 0;')  # too far: likely unfiltered template/gap
+    w('  if(v-F[lo-1].a>0x10000) return 0;')
     w('  return F[lo-1].n;')
     w('}')
-    # ============================================================
-    # Win32 file I/O — no CRT (CRT crashes in hook context)
-    # ============================================================
     w('')
-    w('static HANDLE h = INVALID_HANDLE_VALUE;')
-    w('static void Wr(const char* s){DWORD n;if(h!=INVALID_HANDLE_VALUE)WriteFile(h,s,lstrlenA(s),&n,0);}')
-    w('static void WrF(const char* fmt,...){')
-    w('  va_list va; va_start(va,fmt);')
-    w('  int n=wvsprintfA(wr_buf,fmt,va); va_end(va);')
-    w('  DWORD dn; WriteFile(h,wr_buf,(DWORD)n,&dn,0);')
-    w('}')
-    w('')
-    # Per-function buffers (one per hook index to prevent interleaving)
-    w('#define MAX_FN 16')
-    w('#define FN_BUF_SZ 12288')
+    # Per-function buffers continued
     w('#define SEC_BUF_SZ 65536')
-    w(f'static char fn_buf[{nmk}][FN_BUF_SZ]={{0}};')
-    w(f'static int  fn_buf_len[{nmk}]={{0}};')
     w('static char sec_none[SEC_BUF_SZ]={0}; static int sec_none_len=0;')
     w('')
     w('static void flush_full(){')
@@ -426,15 +435,17 @@ def generate(markers, functions, fn_map, none_markers=None):
     w('    if(h==INVALID_HANDLE_VALUE) return;')
     w('  }')
     w('  SetFilePointer(h,0,0,FILE_BEGIN); SetEndOfFile(h);')
-    w('  Wr("============ Different Calls ============\\r\\n");')
-    w(f'  for(int i=0;i<{nmk};i++) if(has_diff[i]&&fn_buf_len[i]>0){{DWORD n;WriteFile(h,fn_buf[i],fn_buf_len[i],&n,0);}}')
-    w('  Wr("\\r\\n================ Captures ================\\r\\n");')
-    w(f'  for(int i=0;i<{nmk};i++) if(is_cap[i]&&!has_diff[i]&&fn_buf_len[i]>0){{DWORD n;WriteFile(h,fn_buf[i],fn_buf_len[i],&n,0);}}')
-    w('  Wr("\\r\\n============= Same Compares ==============\\r\\n");')
-    w(f'  for(int i=0;i<{nmk};i++) if(!is_cap[i]&&!has_diff[i]&&fn_buf_len[i]>0){{DWORD n;WriteFile(h,fn_buf[i],fn_buf_len[i],&n,0);}}')
-    w('  Wr("\\r\\n============== None Calls ================\\r\\n");')
-    w('  if(sec_none_len>0){{DWORD n;WriteFile(h,sec_none,sec_none_len,&n,0);}}')
-    w('  else Wr("\\r\\n");')
+    w('  std::ostringstream os;')
+    w('  os<<"============ Different Calls ============\\r\\n";')
+    w(f'  for(int i=0;i<{nmk};i++) if(has_diff[i]&&fn_buf_len[i]>0) os.write(fn_buf[i],fn_buf_len[i]);')
+    w('  os<<"\\r\\n================ Captures ================\\r\\n";')
+    w(f'  for(int i=0;i<{nmk};i++) if(is_cap[i]&&!has_diff[i]&&fn_buf_len[i]>0) os.write(fn_buf[i],fn_buf_len[i]);')
+    w('  os<<"\\r\\n============= Same Compares ==============\\r\\n";')
+    w(f'  for(int i=0;i<{nmk};i++) if(!is_cap[i]&&!has_diff[i]&&fn_buf_len[i]>0) os.write(fn_buf[i],fn_buf_len[i]);')
+    w('  os<<"\\r\\n============== None Calls ================\\r\\n";')
+    w('  if(sec_none_len>0) os.write(sec_none,sec_none_len);')
+    w('  else os<<"\\r\\n";')
+    w('  {std::string s=os.str();DWORD n;WriteFile(h,s.c_str(),(DWORD)s.size(),&n,0);}')
     w('  FlushFileBuffers(h);')
     w('}')
     w('')
@@ -450,8 +461,8 @@ def generate(markers, functions, fn_map, none_markers=None):
     w('  if(++dirty>=32||now-last_flush_tick>1000){{flush_full();dirty=0;last_flush_tick=now;}}')
     w('}')
     w('')
-    # Helper to append to a section buffer
-    w('static void SecAppend(char* sec, int* plen, const char* s){')
+    # Helper to append to sec_none buffer
+    w('static void SecApp(char* sec, int* plen, const char* s){')
     w('  int sl=lstrlenA(s);')
     w('  if(*plen+sl<SEC_BUF_SZ-1){')
     w('    for(int i=0;i<sl;i++) sec[(*plen)++]=s[i];')
@@ -464,11 +475,10 @@ def generate(markers, functions, fn_map, none_markers=None):
     w('static void ensure_sections(){')
     w('  if(sections_written) return;')
     w('  sections_written=true;')
-    # Build None Calls from markers
     for i,m in enumerate(none_markers):
         sig = m.get('full_sig', m['fn_name']).replace('\\','\\\\').replace('"','\\"').replace('\n',' ')
-        w(f'  WrF("[{sig}-0x{int(m["addr"],16):08X}]\\r\\n");')
-        w(f'  SecAppend(sec_none,&sec_none_len,wr_buf);')
+        addr_hex = f'0x{int(m["addr"],16):08X}'
+        w(f'  SecApp(sec_none,&sec_none_len,"[{sig}-{addr_hex}]\\r\\n");')
     w('  flush_full();')
     w('}')
     w('')
@@ -478,12 +488,11 @@ def generate(markers, functions, fn_map, none_markers=None):
     for i,m in enumerate(none_markers):
         sig = m.get('full_sig', m['fn_name']).replace('\\','\\\\').replace('"','\\"').replace('\n',' ')
         addr_hex = f'0x{int(m["addr"],16):08X}'
-        # Use regular string to avoid f-string brace issues
         w(f'  {{ int called=0;')
         w(f'    for(int j=0;j<{nmk};j++){{')
         w(f'      if(addr_tbl[j]=={addr_hex}&&ctr[j]>0) called=1;')
         w(f'    }}')
-        w(f'    if(!called) SecAppend(sec_none,&sec_none_len,"[{sig}-{addr_hex}\\r\\n"); }}')
+        w(f'    if(!called) SecApp(sec_none,&sec_none_len,"[{sig}-{addr_hex}]\\r\\n"); }}')
     # Also list active markers with ctr==0 that aren't None-mode
     w(f'  for(int j=0;j<{nmk};j++){{')
     w( '    if(ctr[j]==0){')
@@ -496,10 +505,10 @@ def generate(markers, functions, fn_map, none_markers=None):
     w( '        const char* s=sig[j];')
     w( '        if(s&&*s){')
     w( '          char tmp[256]; wsprintfA(tmp,"[%s-0x%08X]\\r\\n",s,addr_tbl[j]);')
-    w( '          SecAppend(sec_none,&sec_none_len,tmp);')
+    w( '          SecApp(sec_none,&sec_none_len,tmp);')
     w( '        }else{')
     w( '          char tmp[128]; wsprintfA(tmp,"[%s-0x%08X]\\r\\n",nm[j]?nm[j]:"?",addr_tbl[j]);')
-    w( '          SecAppend(sec_none,&sec_none_len,tmp);')
+    w( '          SecApp(sec_none,&sec_none_len,tmp);')
     w( '        }')
     w( '      }')
     w( '    }')
@@ -512,21 +521,16 @@ def generate(markers, functions, fn_map, none_markers=None):
     w('  if(n>50) return;')
     w('  const char* cn=Caller(ret-5);')
     w('  const char* hdr=sig[i]&&*sig[i]?sig[i]:nm[i]?nm[i]:"?";')
-    w('  char ebuf[4096]; int elen=0;')
-    w('  if(n==1) elen+=wsprintfA(ebuf+elen,"[%s-0x%08X]\\r\\n",hdr,addr);')
-    w('  elen+=wsprintfA(ebuf+elen,"Call %d: %s()<-0x%08X\\r\\n",n,cn?cn:"?",ret-5);')
-    w('  FI(i); lstrcatA(ebuf,wr_buf);')
-    w('  elen=lstrlenA(ebuf);')
-    w('  if(tag==\'C\'){ elen+=wsprintfA(ebuf+elen,"  Return: %d(0x%08X)\\r\\n",orig,orig); }')
-    w('  else if(re==orig){ elen+=wsprintfA(ebuf+elen,"  Return: hook=original=%d(0x%08X)\\r\\n",orig,orig); }')
-    w('  else{ has_diff[i]=true; elen+=wsprintfA(ebuf+elen,"  Return: hook=%d(0x%08X) != original=%d(0x%08X)\\r\\n",re,re,orig,orig); }')
-    w('  // Write to file for crash safety')
-    w('  if(h!=INVALID_HANDLE_VALUE){{DWORD dn;WriteFile(h,ebuf,(DWORD)elen,&dn,0);}}')
-    w('  // Per-function buffer: no more interleaving')
-    w('  if(fn_buf_len[i]+elen<FN_BUF_SZ-1){{')
-    w('    lstrcpyA(fn_buf[i]+fn_buf_len[i],ebuf);')
-    w('    fn_buf_len[i]+=elen;')
-    w('  }}')
+    w('  std::ostringstream os;')
+    w('  os<<std::hex<<std::uppercase;')
+    w('  if(n==1) os<<"["<<hdr<<"-0x"<<addr<<"]\\r\\n";')
+    w('  os<<"Call "<<std::dec<<n<<": "<<(cn?cn:"?")<<"()<-0x"<<std::hex<<(ret-5)<<"\\r\\n";')
+    w('  os<<"  Input:  "; FI(i,os);')
+    w('  if(tag==\'C\'){ os<<"  Return: "<<std::dec<<orig<<"("<<std::hex<<orig<<")\\r\\n"; }')
+    w('  else if(re==orig){ os<<"  Return: hook=original="<<std::dec<<orig<<"("<<std::hex<<orig<<")\\r\\n"; }')
+    w('  else{ has_diff[i]=true; os<<"  Return: hook="<<std::dec<<re<<"("<<std::hex<<re<<") != original="<<std::dec<<orig<<"("<<std::hex<<orig<<")\\r\\n"; }')
+    w('  std::string s=os.str(); WrFile(s);')
+    w('  FnBuf(i,s);')
     w('  rebuild_none();')
     w('  bool is_diff=(tag==\'I\'&&re!=orig);')
     w('  ++total_entries;')
