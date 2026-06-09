@@ -551,6 +551,8 @@ def generate(markers, functions, fn_map, none_markers=None):
         elif mode in ("Replace", "Inject"):
             w('  // Thread gate: only main game thread participates')
             w('  if(GetCurrentThreadId()!=shadow::g_owner_tid) return 0;')
+            w(f'  // RE depth gate (Inject mode: RE calls hooked callee -> pass through)')
+            w(f'  if(shadow::g_re_depth>0) return 0;')
             w('  // Stale transaction cleanup (previous hook\'s txn escaped)')
             w('  auto*s=shadow::GetSlot();')
             w('  if(s&&s->txn){')
