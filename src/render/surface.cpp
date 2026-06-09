@@ -683,7 +683,7 @@ Point2D Surface::DrawText(
 
 // IDA: 0x7BAEB0 -- XSurface::SetPixel (89B)
 // vtable[9]  0x24 -- Lock(point) -> check BPP -> write pixel -> Unlock
-REVERSE(0x7baeb0, "XSurface::SetPixel: pixel write", "Inject")
+REVERSE(0x7baeb0, "XSurface::SetPixel: pixel write", "Capture")
 bool XSurface::SetPixel(const Point2D& point, uint32_t color)
 {
     void* buf = Lock(point.X, point.Y);

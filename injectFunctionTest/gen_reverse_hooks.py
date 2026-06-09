@@ -223,7 +223,8 @@ def find_markers(functions, raw_json, callee_map, callee_names, all_marked):
                     markers.append(dict(addr=addr,desc=m.group(2),fn_name=fname,
                                         file=os.path.relpath(fp,ROOT),params=params,
                                         completed=completed,mode=mode,
-                                        ret_type=ret_type, full_sig=full_sig))
+                                        ret_type=ret_type, full_sig=full_sig,
+                                        convention=fn_info.get('call',{}).get('convention','stdcall')))
     return markers, warnings, errors, none_markers
 
 def san(n):
@@ -343,6 +344,10 @@ def generate(markers, functions, fn_map, none_markers=None):
     w('  default:Wr("  Input: ???\\r\\n");break;}}')
     w('')
     # CallRE dispatcher — calls RE_* function with captured inputs (for Inject/Replace)
+    # Parameter mapping by calling convention:
+    #   thiscall: V.c(this), V.stk0(arg1), V.stk1(arg2), ...
+    #   fastcall: V.c(arg1), V.d(arg2), V.stk0(arg3), ...
+    #   stdcall/cdecl: V.stk0(arg1), V.stk1(arg2), ...
     w('static DWORD CallRE(int i){')
     w('  auto&V=in[i];')
     w('  switch(i){')
@@ -352,7 +357,24 @@ def generate(markers, functions, fn_map, none_markers=None):
             continue
         has_inj = True
         s=san(m['fn_name'])
-        w(f'    case {i}: return RE_{s}(V.c, V.d, V.stk0, V.stk1);')
+        conv = functions.get(m['addr'],{}).get('call',{}).get('convention','stdcall')
+        num_p = len(m.get('params',[]))
+        # Build args list based on convention
+        args = []
+        if conv == 'thiscall':
+            args.append('V.c')  # this
+            for pi in range(num_p):
+                args.append(f'V.stk{pi}')
+        elif conv == 'fastcall':
+            if num_p >= 1: args.append('V.c')
+            if num_p >= 2: args.append('V.d')
+            for pi in range(max(0, num_p - 2)):
+                args.append(f'V.stk{pi}')
+        else:  # stdcall, cdecl
+            for pi in range(num_p):
+                args.append(f'V.stk{pi}')
+        arg_str = ', '.join(args) if args else ''
+        w(f'    case {i}: return RE_{s}({arg_str});')
     w('    default: return 0;')
     w('  }')
     w('}')

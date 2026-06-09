@@ -20,9 +20,10 @@ CATEGORY_MAP = {
 VT_LOCK=0x5C; VT_UNLOCK=0x60; VT_GETBPP=0x70; VT_GETPITCH=0x74
 VT_GETRECT=0x78; VT_DRAWLINE_EX=0x2C; VT_FILLRECT_EX=0x10
 
-def F(name, addr):
-    """Return lines for a RE function header and vtable preamble."""
-    return ['// %s @ %s' % (name, addr), 'extern "C" DWORD RE_%s(DWORD ecx, DWORD edx, DWORD a, DWORD b) {' % name]
+def F(name, addr, param_names):
+    """Return lines for a RE function header. param_names = ['this_', 'point_ptr', 'color'] etc."""
+    params = ', '.join(f'DWORD {p}' for p in param_names) if param_names else ''
+    return [f'// {name} @ {addr}', f'extern "C" DWORD RE_{name}({params}) {{']
 
 def L(*args): return list(args)
 
@@ -36,129 +37,90 @@ PREAMBLE = [
 
 TEMPLATES = {}
 
-# ---- pixel_write ----
+# ---- pixel_write (thiscall) ----
+# SetPixel/PutPixel: params are (Point2D&, color) = (point_ptr, color)
+# Point2D = { int X; int Y; } — need to dereference
 TEMPLATES['pixel_write'] = L(
-    *F('{name}', '{addr}'),
+    *F('{name}', '{addr}', ['this_', 'point_ptr', 'color']),
     *PREAMBLE,
-    'void* buf = ((LockFn)(*(DWORD*)(vt+0x%X)))((void*)ecx, edx, a);' % VT_LOCK,
+    'if (!point_ptr) return 0;',
+    'int x = *(int*)(point_ptr + 0);',
+    'int y = *(int*)(point_ptr + 4);',
+    'void* buf = ((LockFn)(*(DWORD*)(vt+0x%X)))((void*)this_, x, y);' % VT_LOCK,
     'if (!buf) return 0;',
-    'int bpp = ((BppFn)(*(DWORD*)(vt+0x%X)))((void*)ecx);' % VT_GETBPP,
-    'if (bpp == 2) *(unsigned short*)buf = (unsigned short)b;',
-    'else *(unsigned char*)buf = (unsigned char)b;',
-    '((UnlockFn)(*(DWORD*)(vt+0x%X)))((void*)ecx);' % VT_UNLOCK,
+    'int bpp = ((BppFn)(*(DWORD*)(vt+0x%X)))((void*)this_);' % VT_GETBPP,
+    'if (bpp == 2) *(unsigned short*)buf = (unsigned short)color;',
+    'else *(unsigned char*)buf = (unsigned char)color;',
+    '((UnlockFn)(*(DWORD*)(vt+0x%X)))((void*)this_);' % VT_UNLOCK,
     'return 1;',
     '}',
 )
 
-# ---- pixel_read ----
+# ---- pixel_read (thiscall) ----
+# GetPixel/GetPixelAtCoords: params are (Point2D&) = (point_ptr)
 TEMPLATES['pixel_read'] = L(
-    *F('{name}', '{addr}'),
+    *F('{name}', '{addr}', ['this_', 'point_ptr']),
     *PREAMBLE,
-    'void* buf = ((LockFn)(*(DWORD*)(vt+0x%X)))((void*)ecx, edx, a);' % VT_LOCK,
+    'if (!point_ptr) return 0;',
+    'int x = *(int*)(point_ptr + 0);',
+    'int y = *(int*)(point_ptr + 4);',
+    'void* buf = ((LockFn)(*(DWORD*)(vt+0x%X)))((void*)this_, x, y);' % VT_LOCK,
     'if (!buf) return 0;',
     'DWORD result = 0;',
-    'int bpp = ((BppFn)(*(DWORD*)(vt+0x%X)))((void*)ecx);' % VT_GETBPP,
+    'int bpp = ((BppFn)(*(DWORD*)(vt+0x%X)))((void*)this_);' % VT_GETBPP,
     'if (bpp == 2) result = *(unsigned short*)buf;',
     'else result = *(unsigned char*)buf;',
-    '((UnlockFn)(*(DWORD*)(vt+0x%X)))((void*)ecx);' % VT_UNLOCK,
+    '((UnlockFn)(*(DWORD*)(vt+0x%X)))((void*)this_);' % VT_UNLOCK,
     'return result;',
     '}',
 )
 
-# ---- bresenham_line ----
+# ---- bresenham_line (thiscall) ----
+# DrawLineEx: params (RectangleStruct&, Point2D&, Point2D&, DWORD)
+# template is placeholder until actual RE testing
 TEMPLATES['bresenham_line'] = L(
-    *F('{name}', '{addr}'),
-    *PREAMBLE,
-    'void* buf = ((LockFn)(*(DWORD*)(vt+0x%X)))((void*)ecx, edx, a);' % VT_LOCK,
-    'if (!buf) return 0;',
-    'int bpp = ((BppFn)(*(DWORD*)(vt+0x%X)))((void*)ecx);' % VT_GETBPP,
-    'int pitch = ((PitchFn)(*(DWORD*)(vt+0x%X)))((void*)ecx);' % VT_GETPITCH,
-    'int x1=edx, y1=a, x2=*(int*)(&b), y2=*((int*)(&b)+1);',
-    'int dx=abs(x2-x1), dy=abs(y2-y1);',
-    'int sx=x1<x2?1:-1, sy=y1<y2?1:-1;',
-    '  if (bpp==1) {',
-    '    unsigned char* p=(unsigned char*)buf; int rp=pitch;',
-    '    if(dx>=dy){int d=2*dy-dx,c=dx;',
-    '      while(c-->=0){*p=(unsigned char)b;if(d>0){p=(unsigned char*)((char*)p+sy*rp);d-=2*dx;}d+=2*dy;p++;}}',
-    '    else{int d=2*dx-dy,c=dy;',
-    '      while(c-->=0){*p=(unsigned char)b;if(d>0){p++;d-=2*dy;}d+=2*dx;p=(unsigned char*)((char*)p+sy*rp);}}',
-    '  } else {',
-    '    unsigned short* p=(unsigned short*)buf; int rp=pitch/2;',
-    '    if(dx>=dy){int d=2*dy-dx,c=dx;',
-    '      while(c-->=0){*p=(unsigned short)b;if(d>0){p+=sy*rp;d-=2*dx;}d+=2*dy;p++;}}',
-    '    else{int d=2*dx-dy,c=dy;',
-    '      while(c-->=0){*p=(unsigned short)b;if(d>0){p++;d-=2*dy;}d+=2*dx;p+=sy*rp;}}',
-    '  }',
-    '((UnlockFn)(*(DWORD*)(vt+0x%X)))((void*)ecx);' % VT_UNLOCK,
-    'return 1;',
+    *F('{name}', '{addr}', ['this_', 'p1', 'p2', 'p3', 'p4']),
+    '(void)this_; (void)p1; (void)p2; (void)p3; (void)p4;',
+    'return 0; // TODO: update for DrawLineEx RE',
     '}',
 )
 
-# ---- fill ----
+# ---- fill (thiscall) ----
+# params: (uint32_t color)
 TEMPLATES['fill'] = L(
-    *F('{name}', '{addr}'),
-    'DWORD vt = *(DWORD*)ecx;',
+    *F('{name}', '{addr}', ['this_', 'color']),
+    'DWORD vt = *(DWORD*)this_;',
     'struct Rct { int x,y,w,h; } r;',
     'typedef struct Rct* (__thiscall *GrFn)(void*,struct Rct*);',
-    '((GrFn)(*(DWORD*)(vt+0x%X)))((void*)ecx, &r);' % VT_GETRECT,
+    '((GrFn)(*(DWORD*)(vt+0x%X)))((void*)this_, &r);' % VT_GETRECT,
     'typedef bool (__thiscall *FrFn)(void*,struct Rct*,struct Rct*,DWORD);',
-    'return ((FrFn)(*(DWORD*)(vt+0x%X)))((void*)ecx, &r, &r, edx);' % VT_FILLRECT_EX,
+    'return ((FrFn)(*(DWORD*)(vt+0x%X)))((void*)this_, &r, &r, color);' % VT_FILLRECT_EX,
     '}',
 )
 
-# ---- rectangle ----
+# ---- rectangle (thiscall) ----
+# params: (RectangleStruct& clip, RectangleStruct& draw, DWORD color)
 TEMPLATES['rectangle'] = L(
-    *F('{name}', '{addr}'),
-    'DWORD vt = *(DWORD*)ecx;',
-    'typedef bool (__thiscall *LnFn)(void*,void*,void*,void*,void*,DWORD);',
-    'LnFn dl = (LnFn)(*(DWORD*)(vt+0x%X));' % VT_DRAWLINE_EX,
-    'int x=edx, y=a, w=*(int*)(&b), h=*((int*)(&b)+1);',
-    'int rx=x+w-1, by=y+h-1;',
-    'int c0[4]={x,y,rx,y}, c1[4]={x,y,x,by}, c2[4]={rx,y,rx,by}, c3[4]={x,by,rx,by};',
-    'dl((void*)ecx,0,c0,c0+2,c0,0);',
-    'dl((void*)ecx,0,c1,c1+2,c1,0);',
-    'dl((void*)ecx,0,c2,c2+2,c2,0);',
-    'dl((void*)ecx,0,c3,c3+2,c3,0);',
-    'return 1;',
+    *F('{name}', '{addr}', ['this_', 'clip_ptr', 'draw_ptr', 'color']),
+    '(void)this_; (void)clip_ptr; (void)draw_ptr; (void)color;',
+    'return 0; // TODO: update for DrawRectEx RE',
     '}',
 )
 
-# ---- ellipse ----
+# ---- ellipse (thiscall) ----
+# params: (Point2D& center, int rw, int rh, RectangleStruct& clip, uint16_t color)
 TEMPLATES['ellipse'] = L(
-    *F('{name}', '{addr}'),
-    *PREAMBLE,
-    'int cx=edx, cy=a, rw=b, rh=*(int*)(&b)+1;',
-    'void* buf = ((LockFn)(*(DWORD*)(vt+0x%X)))((void*)ecx, cx, cy);' % VT_LOCK,
-    'if (!buf) return 0;',
-    'int bpp = ((BppFn)(*(DWORD*)(vt+0x%X)))((void*)ecx);' % VT_GETBPP,
-    'int pitch = ((PitchFn)(*(DWORD*)(vt+0x%X)))((void*)ecx);' % VT_GETPITCH,
-    'int a2=rw*rw, b2=rh*rh, x=0, y=rh;',
-    'int d1=b2-a2*rh+a2/4;',
-    'if(bpp==2){',
-    '  unsigned short* p=(unsigned short*)buf; int hp=pitch/2;',
-    '  p[cx+rh*hp]=(unsigned short)b; p[cx-rh*hp]=(unsigned short)b;',
-    '  while(2*b2*(x+1)<2*a2*(y-1)){',
-    '    if(d1<0){d1+=2*b2*x+3*b2;x++;}',
-    '    else{d1+=2*b2*x-2*a2*y+3*b2+2*a2;x++;y--;}',
-    '    p[cx+x+y*hp]=(unsigned short)b; p[cx-x+y*hp]=(unsigned short)b;',
-    '    p[cx+x-y*hp]=(unsigned short)b; p[cx-x-y*hp]=(unsigned short)b;}',
-    '  int d2=b2*(x+1)*(x+1)+a2*(y-1)*(y-1)-a2*b2;',
-    '  while(y>0){',
-    '    if(d2<0){d2+=2*b2*(x+1)-2*a2*y+a2;x++;y--;}',
-    '    else{d2+=a2-2*a2*y;y--;}',
-    '    p[cx+x+y*hp]=(unsigned short)b; p[cx-x+y*hp]=(unsigned short)b;',
-    '    p[cx+x-y*hp]=(unsigned short)b; p[cx-x-y*hp]=(unsigned short)b;}',
-    '  p[cx+rw]=(unsigned short)b; p[cx-rw]=(unsigned short)b;}',
-    '((UnlockFn)(*(DWORD*)(vt+0x%X)))((void*)ecx);' % VT_UNLOCK,
-    'return 1;',
+    *F('{name}', '{addr}', ['this_', 'p1', 'p2', 'p3', 'p4', 'p5']),
+    '(void)this_; (void)p1; (void)p2; (void)p3; (void)p4; (void)p5;',
+    'return 0; // TODO: update for DrawEllipseOutline RE',
     '}',
 )
 
 # ---- dashed_line, callback_line, thin_wrapper, global, frame_present ----
 for cat in ('dashed_line','callback_line','thin_wrapper','global','frame_present'):
     TEMPLATES[cat] = L(
-        *F('{name}', '{addr}'),
-        '(void)ecx; (void)edx; (void)a; (void)b;',
+        *F('{name}', '{addr}', ['p0','p1','p2','p3']),
+        '(void)p0; (void)p1; (void)p2; (void)p3;',
         'return 0; // TODO',
         '}',
     )
