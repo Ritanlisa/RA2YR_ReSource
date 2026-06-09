@@ -599,7 +599,17 @@ def generate(markers, functions, fn_map, none_markers=None):
         if mode == "Capture":
             w('  V.re=0;')
             w(f'  write_entry(\'C\', idx, 0x{ah}, V.re, V.re, R->Stack<DWORD>(0));')
-        elif mode in ("Replace", "Inject"):
+        elif mode == "Replace":
+            # Replace mode: no transaction (leaf functions are idempotent)
+            # Original runs without protection, RE runs on same (dirty) state
+            # Transaction overhead (VirtualProtect ×872 pages) is catastrophic
+            # for per-pixel hooks like SetPixel
+            w('  auto*s=shadow::GetSlot();')
+            w(f'  s->hook_addr=0x{ah};')
+            w('  s->original_ret_addr=R->Stack<DWORD>(0);')
+            w('  R->Stack(0,(DWORD)&PostProcStub);')
+        elif mode == "Inject":
+            # Inject mode: full transaction + page protection for .data rollback
             w('  // Thread gate: only main game thread participates')
             w('  if(GetCurrentThreadId()!=shadow::g_owner_tid) return 0;')
             w(f'  // RE depth gate (Inject mode: RE calls hooked callee -> pass through)')
@@ -627,16 +637,16 @@ def generate(markers, functions, fn_map, none_markers=None):
     w('  int idx=I(addr);if(idx<0)return orig;')
     w('  auto&V=in[idx];')
     w('')
-    w('  // Rollback shadow transaction (restore .data pages)')
-    w('  shadow::ShadowTransaction::EndCurrent();')
+    w('  // Rollback (only if transaction exists; Replace mode has no txn)')
+    w('  auto*s=shadow::GetSlot();')
+    w('  if(s&&s->txn) shadow::ShadowTransaction::EndCurrent();')
     w('')
-    w('  // Run RE version on clean state (RAII guard for re_depth)')
+    w('  // Run RE version (RAII guard for re_depth)')
     w('  { struct ReDepthGuard { ReDepthGuard() { ++shadow::g_re_depth; } ~ReDepthGuard() { --shadow::g_re_depth; } } g;')
     w('    V.re = CallRE(idx);')
     w('  }')
     w('')
     w('  // Store RE result in slot for PostProcStub to return to caller')
-    w('  auto*s=shadow::GetSlot();')
     w('  if(s) { s->re_result_eax = V.re; s->re_result_edx = V.d; }')
     w('')
     w('  // Compare and log')
