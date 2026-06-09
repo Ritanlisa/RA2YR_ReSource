@@ -278,7 +278,11 @@ def generate(markers, functions, fn_map, none_markers=None):
         if m.get('mode') not in ('Inject', 'Replace'):
             continue
         s=san(m['fn_name'])
-        w(f'extern "C" DWORD RE_{s}(DWORD ecx, DWORD edx, DWORD a, DWORD b);')
+        conv = functions.get(m['addr'],{}).get('call',{}).get('convention','stdcall')
+        n_params = len(m.get('params',[]))
+        if conv == 'thiscall': n_params += 1  # +this
+        param_list = ', '.join(['DWORD'] * n_params) if n_params > 0 else ''
+        w(f'extern "C" DWORD RE_{s}({param_list});')
     w('')
     w('static FILE* f = nullptr;')
     nmk = max(len(markers), 1)

@@ -28,7 +28,7 @@ def F(name, addr, param_names):
 def L(*args): return list(args)
 
 PREAMBLE = [
-    'DWORD vt = *(DWORD*)ecx;',
+    'DWORD vt = *(DWORD*)this_;',
     'typedef void* (__thiscall *LockFn)(void*,int,int);',
     'typedef bool (__thiscall *UnlockFn)(void*);',
     'typedef int (__thiscall *BppFn)(void*);',
