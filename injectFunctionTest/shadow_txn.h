@@ -25,6 +25,7 @@ public:
 
     void Begin();
     void End();
+    void Discard();   // unprotect all pages WITHOUT rolling back (for exception recovery)
     bool OnWriteViolation(void* fault_addr);
     int BackedPageCount() const { return static_cast<int>(m_backups.size()); }
     static ShadowTransaction* Current();

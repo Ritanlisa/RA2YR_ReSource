@@ -88,6 +88,23 @@ void ShadowTransaction::End()
     }
 }
 
+void ShadowTransaction::Discard()
+{
+    // Unprotect ALL pages WITHOUT restoring backups. For exception recovery:
+    // the game has continued past the original function (via SEH/exception handler)
+    // and may have already written to .data pages. Restoring backups would
+    // introduce secondary corruption.
+    for (uintptr_t p = (uintptr_t)s_data_start; p < (uintptr_t)s_data_end; p += 4096) {
+        DWORD old;
+        VirtualProtect(reinterpret_cast<void*>(p), 4096, PAGE_READWRITE, &old);
+    }
+    m_backups.clear();
+    auto* slot = GetSlot();
+    if (slot) {
+        slot->txn = nullptr;
+    }
+}
+
 ShadowTransaction* ShadowTransaction::Current()
 {
     auto* slot = GetSlot();

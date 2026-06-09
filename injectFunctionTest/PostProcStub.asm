@@ -1,17 +1,18 @@
 ; PostProcStub.asm -- post-process handler for Inject/Replace hooks
 ;
 ; Reached via stack hijack. EAX = original function's return value.
-; Calls LogComparison (C++) which rolls back transaction, runs RE version,
-; compares results, and writes comparisonResult.log.
-; Returns RE result (from TLS) to original caller.
+; Calls LogComparison(C++) which rolls back transaction, runs RE version,
+; compares results, writes comparisonResult.log, and returns re_result_eax.
+; Returns RE result (EAX) and re_edx (EDX) to original caller.
 ;
-; extern "C" void LogComparison(DWORD orig_result, DWORD hook_addr);
+; extern "C" DWORD __cdecl LogComparison(DWORD orig_result, DWORD hook_addr);
 
 .586
 .MODEL FLAT, C
 OPTION CASEMAP:NONE
 
 EXTERN LogComparison : PROC
+EXTERN g_current_slot : DWORD
 
 .DATA?
     PUBLIC mismatch_counter
@@ -22,35 +23,27 @@ EXTERN LogComparison : PROC
 PostProcStub PROC PUBLIC
     assume fs:nothing
     push ebx                        ; save ebx
-    push edx                        ; save orig_edx
-    mov ebx, eax                    ; save orig_eax in ebx
+    mov  ebx, eax                   ; save orig_eax in ebx
 
-    mov ecx, dword ptr fs:[18h]    ; ShadowSlot*
+    mov  ecx, [g_current_slot]      ; ShadowSlot* (global cache)
     test ecx, ecx
-    jz no_slot
+    jz   no_slot
 
-    ; LogComparison(orig_eax=ebx, hook_addr=[ecx+0C])
-    push dword ptr [ecx + 12]       ; hook_addr
+    push dword ptr [ecx + 12]       ; hook_addr (slot+0x0C)
     push ebx                         ; orig_eax
     call LogComparison
-    add esp, 8
+    add  esp, 8                      ; EAX = re_result_eax from LogComparison
 
-    ; Load RE result from TLS (set by LogComparison)
-    mov ecx, dword ptr fs:[18h]
-    mov eax, dword ptr [ecx + 4]    ; re_result_eax -> EAX
+    mov  ecx, [g_current_slot]      ; reload slot (LogComparison updated re_edx)
+    mov  edx, [ecx + 8]             ; re_result_edx (slot+0x08)
+    mov  ecx, [ecx]                 ; original_ret_addr (slot+0x00)
+
+    pop  ebx                        ; restore ebx
+    jmp  ecx                        ; EAX=re_eax, EDX=re_edx
 
 no_slot:
-    pop edx                          ; restore orig_edx
-    pop ebx                          ; restore ebx
-
-    ; Jump to original caller with EAX = RE result
-    mov ecx, dword ptr fs:[18h]
-    test ecx, ecx
-    jz return_now
-    mov ecx, dword ptr [ecx]         ; original_ret_addr -> ecx
-    jmp ecx                          ; jump (EAX preserved = RE result)
-
-return_now:
+    mov  eax, ebx                   ; return orig_eax
+    pop  ebx
     ret
 
 PostProcStub ENDP

@@ -10,11 +10,12 @@ extern "C" { extern volatile int mismatch_counter; }
 
 namespace shadow {
     ShadowSlot  g_slot_storage = {};
-    ShadowSlot* g_current_slot = &g_slot_storage;
     DWORD       g_owner_tid    = 0;
     int         g_re_depth     = 0;
     int         g_orphan_count = 0;
 }
+
+extern "C" { void* g_current_slot = &shadow::g_slot_storage; }
 
 BOOL WINAPI DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved)
 {
