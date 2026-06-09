@@ -107,14 +107,37 @@ Layer 4: 运行时 (Syringe 注入 → gamemd.exe)
 
 另有 29 个 None 模式标记（函数名已识别但未启用钩子）。
 
-## 已知问题
+## 已知问题 (2026-06-09 更新)
 
-1. **PostProcStub EAX 问题** — 跳转时 ECX 存地址，EAX 存返回值
-2. **Inject/Replace 未测试** — 当前所有钩子都是 Capture 模式
-5. **`fs:[0x18]` 危险** — 直接覆盖 TIB Self 指针，应改用 TlsAlloc()
-6. **VEH 无 ThreadId 过滤** — 多线程场景下可能污染
-7. **无 SEH/尾调用检测** — 可能导致 PostProcStub 被绕过
-8. **`comparisonResult.log` I/O** — 使用 Win32 API (CreateFile/WriteFile/FlushFileBuffers)，无 CRT
+| # | 问题 | 状态 | 备注 |
+|---|------|------|------|
+| 1 | hook_size 不对齐指令边界 (4/13 hooks) | **已修复** `c9f35d7` | PutPixel 8->5, WalkLine 8->5, DrawLine 8->7, GetPixelAtCoords 8->6 |
+| 2 | VEH 无事务时 unprotect 所有页 | **已修复** `702d524` | 改为 CONTINUE_SEARCH + .data 范围检查 |
+| 3 | Caller() 查找表覆盖不足 | **已修复** `03672ae` | 改用 functions.json 14K IDA 名 |
+| 4 | `fs:[0x18]` 覆盖 TIB Self 指针 | **待修复** | 阶段 0a: 改用 `__declspec(thread)` + 全局缓存 |
+| 5 | PostProcStub 硬编码 fs:[18h] | **待修复** | 阶段 0b: 改读 g_current_slot 全局变量 |
+| 6 | Inject/Replace 未测试 | **待实施** | 阶段 1: Replace (SetPixel), 阶段 2: Inject |
+| 7 | write_entry 每次同步 flush | **待修复** | 阶段 0c: 智能批量化 (差异立即 + 前N次立即) |
+| 8 | 嵌套 hook reentrancy | **待实施** | 阶段 2: g_re_depth + RAII Guard |
+| 9 | 事务异常逃逸无恢复 | **待实施** | ShadowTransaction::Discard() + hook 入口 stale 清理 |
+
+## 下一步计划 (Inject/Replace 实施)
+
+**核心认知**：Inject 和 Replace 模式执行流完全相同——原函数先跑(写被备份)→回滚→RE跑→对比→返回RE结果。区别仅在 RE 函数调用的 callee:
+- **Inject**: RE 调原版 callee (通过地址，hook 透传)
+- **Replace**: RE 调 RE callee (编译时链接，不触发 hook)
+
+Replace 更简单(无 reentrancy)，先实施。
+
+**实施顺序**:
+```
+Stage 0a: TLS 改造 (__declspec(thread) + g_current_slot)
+Stage 0b: PostProcStub 重写 + ShadowTransaction::Discard()
+Stage 0c: I/O 智能批量化
+── 每步回归: 13 Capture x5 局 + log diff ──
+Stage 1: Replace 模式 (XSurface::SetPixel)
+Stage 2: Inject 模式 (re_depth + RAII Guard + 线程过滤)
+```
 
 ## 日志格式 (§2.5)
 
@@ -137,17 +160,17 @@ Call 1: XSurface::DrawLineEx()<-0x007BA62E
 [void MainGame()-0x0048CCC0]
 ```
 
-## 崩溃日志 (未修复)
+## 崩溃历史 (已修复)
 
-最新 `syringe.log` 末尾：
+### Crash 1: 0xC000041D at 0x092C0032 (已修复)
+**根因**: 4 个 hook_size 不对齐指令边界 → Syringe Zydis 生成损坏跳板 → 执行到垃圾字节
+**修复**: `c9f35d7` 修正 min_safe_size (Capstone 验证 5/5/7/6)
 
-```
-SyringeDebugger::HandleException: 0xC0000005 at 0x092C0032 (ucrtbased.dll+59E0032)
-SyringeDebugger::HandleException: 0xC000041D at 0x092C0032 (ucrtbased.dll+59E0032)
-SyringeDebugger::Run: Exception C000041D (3221226525).
-```
-
-`0xC000041D` = `STATUS_FATAL_USER_CALLBACK_EXCEPTION`，表示在用户回调中发生了未处理的异常。
+### Crash 2: EIP=0x00000000, ECX=0x43B7 (已修复/缓解)
+**表现**: Scenario::Update → HouseClass vtable[23] → NULL 函数指针调用
+**根因**: VEH 无事务时对所有 WRITE AV 执行 unprotect+continue，破坏 Windows/Ares 的保护机制
+**修复**: `702d524` VEH 无事务时 CONTINUE_SEARCH
+**注意**: Claude Opus 4.7 指出 guard page 用 0x80000001 非 0xC0000005，VEH 修复可能不是真正根因。10 局+ 测试后未复现。
 
 ### 早期会话中出现的 gamemd.exe 内部崩溃地址 (IDA 反编译)
 
@@ -216,4 +239,4 @@ _DWORD* sub_402AF0(int this) {
 | 0x4790B9 | `SoundWarning_Set` | 0x81C1D0 | ✅ 0x812000-0xB7A000 |
 | 0x7C5EF9 | `sub_7C5EE4` | 0x822D80 | ✅ 0x812000-0xB7A000 |
 
-已尝试的修复：`ShadowTransaction::End()` 添加全页解保护、禁用旧 `CellStruct_Set_shadow` 钩子、文件 I/O 改用 Win32 API。**崩溃仍未解决。**
+这些 .data 写入崩溃发生在早期会话中，原因是 VEH 无事务时强制 unprotect 所有 WRITE AV。已在 `702d524` 中修复（VEH 无事务时 CONTINUE_SEARCH）。

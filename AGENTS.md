@@ -175,13 +175,15 @@ cmake --build build_hook --config Release
 
 | 指标 | 数值 |
 |------|-------|
-| 构建状态 | 0 errors, .syhks00 section 已生成 |
-| 导出函数 | 3 (CellStruct_Set_shadow, SyringeHandshake, PostProcStub) |
+| 构建状态 | **Release** 0 errors, .syhks00 section 已生成 |
+| 导出函数 | 3 (SyringeHandshake, PostProcStub, mismatch_counter) |
 | JSON函数数据库 | 19,067条目, 12,613已命名, 分类完成 |
 | **已完成函数** | **39** (faithful IDA translations, completed:true) |
-| **REVERSE标记** | **~32** (跨14个源文件, 全部已禁用) |
+| **REVERSE标记** | **~32** (跨14个源文件) — 13 个 Capture 模式活跃, 29 个 None 模式 |
 | **依赖验证** | 39函数→10K唯一被调用者 (callee_map.json) |
-| 待测试 | 完成所有依赖后再启用钩子进行对拍 |
+| **Capture 模式** | **稳定** (13 hooks, Release 构建, 多局测试无崩溃) |
+| **Caller 查找** | 14,390 条 (functions.json IDA 命名) |
+| 下一步 | TLS 改造 → Replace 模式 (SetPixel) → Inject 模式 |
 
 ---
 
@@ -1701,6 +1703,16 @@ if ida_nalt.get_tinfo(tif, ea):
 | 4.7 音频子系统命名 | ✅ | 4 sub_ 命名 + 18 全局变量 |
 | 5. 类成员变量逆向 | ⏳ | 待开始 |
 | 6. 完成 3+ xref pool | ✅ | 3,201/3,230 (99.1%) |
+
+### 当前会话成果 (2026-06-09) — Hook 系统稳定化 + Inject/Replace 计划
+- **hook_size 修复**: 4/13 hooks 不对齐指令边界 (Capstone 验证), PutPixel 8→5, WalkLine 8→5, DrawLine 8→7, GetPixelAtCoords 8→6
+- **VEH 修复**: 无事务时不再 unprotect AV 页 (CONTINUE_SEARCH), 加 .data 范围检查
+- **Caller 表修复**: 从 functions.json 构建 14,390 条 IDA 命名 (原 .map 仅 ~4K)
+- **SIG 正则修复**: 过滤代码行(含`.`)、注释(`//`/`/*`)、非标识符名、+距离守卫 >64KB
+- **崩溃分析**: 0xC000041D 跳板崩溃(hook_size) + EIP=0 NULL vtable(VEH guard page) 均已修复
+- **Syringe.md 创建**: 新版 SyringeEx + syringe.json 配置文档
+- **Inject/Replace 计划确定**: Replace 先于 Inject (无 reentrancy), TLS→PostProcStub→I/O→Replace→Inject
+- **关键设计决策**: `__declspec(thread)` + g_current_slot 全局缓存, ReDepthGuard RAII, Discard() vs End(), 差异立即 flush
 
 ### 当前会话成果 (2026-06-03)
 - **音频子系统完整逆向**: 4 个剩余 `Audio::sub_*` 全部命名, 18 个混音器全局变量命名
