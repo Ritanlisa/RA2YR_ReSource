@@ -18,23 +18,23 @@ cd D:\RA2MD
 Syringe.exe "gamemd.exe" -cd -SPAWN
 ```
 
-## 当前活跃钩子 (12 Capture + 1 Replace)
+## 当前活跃钩子 (13 Inject)
 
 | 地址 | 函数 | 模式 | 约定 | idempotent |
 |------|------|------|------|------------|
-| 0x7BC2B0 | ClipLine(int start[2], int end[2], int clip_rect[4]) | Capture | fastcall | — |
+| 0x7BC2B0 | ClipLine(int start[2], int end[2], int clip_rect[4]) | Inject | fastcall | — |
 | 0x7BAEB0 | XSurface::SetPixel(const Point2D&, uint32_t) | **Replace** | thiscall | true |
-| 0x7BAE60 | XSurface::GetPixel(const Point2D&) | Capture | thiscall | — |
-| 0x7BAF90 | XSurface::PutPixel(const Point2D&, uint16_t, const RectangleStruct&) | Capture | thiscall | — |
-| 0x7BAF10 | XSurface::GetPixelAtCoords(const Point2D&, const RectangleStruct&) | Capture | thiscall | — |
-| 0x7BAB90 | XSurface::WalkLine(const Point2D&, const Point2D&, callback) | Capture | thiscall | — |
-| 0x7BA610 | XSurface::DrawLineEx(const RectangleStruct&, const Point2D&, const Point2D&, uint32_t) | Capture | thiscall | — |
-| 0x7BA5E0 | XSurface::DrawLine(const Point2D&, const Point2D&, uint32_t) | Capture | thiscall | — |
-| 0x7BA8C0 | XSurface::DrawDashedLine(const Point2D&, const Point2D&, uint16_t, const uint8_t[16], int) | Capture | thiscall | — |
-| 0x7BBAB0 | XSurface::Fill(uint32_t) | Capture | thiscall | — |
-| 0x7BADC0 | XSurface::DrawRectEx(const RectangleStruct&, const RectangleStruct&, uint32_t) | Capture | thiscall | — |
-| 0x7BAD90 | XSurface::DrawRect(const RectangleStruct&, uint32_t) | Capture | thiscall | — |
-| 0x7BB350 | XSurface::DrawEllipseOutline(const Point2D&, int, int, const RectangleStruct&, uint16_t) | Capture | thiscall | — |
+| 0x7BAE60 | XSurface::GetPixel(const Point2D&) | Inject | thiscall | — |
+| 0x7BAF90 | XSurface::PutPixel(const Point2D&, uint16_t, const RectangleStruct&) | Inject | thiscall | — |
+| 0x7BAF10 | XSurface::GetPixelAtCoords(const Point2D&, const RectangleStruct&) | Inject | thiscall | — |
+| 0x7BAB90 | XSurface::WalkLine(const Point2D&, const Point2D&, callback) | Inject | thiscall | — |
+| 0x7BA610 | XSurface::DrawLineEx(const RectangleStruct&, const Point2D&, const Point2D&, uint32_t) | Inject | thiscall | — |
+| 0x7BA5E0 | XSurface::DrawLine(const Point2D&, const Point2D&, uint32_t) | Inject | thiscall | — |
+| 0x7BA8C0 | XSurface::DrawDashedLine(const Point2D&, const Point2D&, uint16_t, const uint8_t[16], int) | Inject | thiscall | — |
+| 0x7BBAB0 | XSurface::Fill(uint32_t) | Inject | thiscall | — |
+| 0x7BADC0 | XSurface::DrawRectEx(const RectangleStruct&, const RectangleStruct&, uint32_t) | Inject | thiscall | — |
+| 0x7BAD90 | XSurface::DrawRect(const RectangleStruct&, uint32_t) | Inject | thiscall | — |
+| 0x7BB350 | XSurface::DrawEllipseOutline(const Point2D&, int, int, const RectangleStruct&, uint16_t) | Inject | thiscall | — |
 
 29 个 None 模式标记 (未启用, 仅出现在 None Calls section)。
 
