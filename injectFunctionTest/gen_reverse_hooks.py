@@ -666,24 +666,29 @@ def generate(markers, functions, fn_map, none_markers=None):
                 w('  s->original_ret_addr=R->Stack<DWORD>(0);')
                 w('  R->Stack(0,(DWORD)&PostProcStub);')
         elif mode == "Inject":
-            # Inject mode: full transaction + page protection for .data rollback
-            w('  // Thread gate: only main game thread participates')
-            w('  if(GetCurrentThreadId()!=shadow::g_owner_tid) return 0;')
-            w(f'  // RE depth gate (Inject mode: RE calls hooked callee -> pass through)')
-            w(f'  if(shadow::g_re_depth>0) return 0;')
-            w('  // Stale transaction cleanup (previous hook\'s txn escaped)')
-            w('  auto*s=shadow::GetSlot();')
-            w('  if(s&&s->txn){')
-            w('    s->txn->Discard();')
-            w('    delete s->txn;')
-            w('    s->txn=nullptr;')
-            w('    ++shadow::g_orphan_count;')
-            w('  }')
-            w('  auto* txn = new shadow::ShadowTransaction();')
-            w('  txn->Begin();')
-            w(f'  s->hook_addr=0x{ah};')
-            w('  s->original_ret_addr=R->Stack<DWORD>(0);')
-            w('  R->Stack(0,(DWORD)&PostProcStub);')
+            # Inject mode: re_depth gate for nested hook passthrough.
+            # Idempotent functions skip transaction (same as Replace).
+            # Non-idempotent functions use full transaction for .data rollback.
+            is_idem = fn.get('hook',{}).get('idempotent', False) if fn else False
+            if is_idem:
+                # Idempotent: no transaction, keep re_depth gate for nested calls
+                w(f'  // RE depth gate (Inject: RE calls hooked callee -> pass through)')
+                w(f'  if(shadow::g_re_depth>0) return 0;')
+                w('  auto*s=shadow::GetSlot();')
+                w(f'  s->hook_addr=0x{ah};')
+                w('  s->original_ret_addr=R->Stack<DWORD>(0);')
+                w('  R->Stack(0,(DWORD)&PostProcStub);')
+            else:
+                # Non-idempotent: full transaction + thread gate + re_depth gate
+                w('  if(GetCurrentThreadId()!=shadow::g_owner_tid) return 0;')
+                w(f'  if(shadow::g_re_depth>0) return 0;')
+                w('  auto*s=shadow::GetSlot();')
+                w('  if(s&&s->txn){s->txn->Discard();delete s->txn;s->txn=nullptr;++shadow::g_orphan_count;}')
+                w('  auto* txn = new shadow::ShadowTransaction();')
+                w('  txn->Begin();')
+                w(f'  s->hook_addr=0x{ah};')
+                w('  s->original_ret_addr=R->Stack<DWORD>(0);')
+                w('  R->Stack(0,(DWORD)&PostProcStub);')
         
         w('  return 0;')
         w('}')
