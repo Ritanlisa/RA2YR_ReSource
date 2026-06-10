@@ -1996,6 +1996,33 @@ vt_entry_XXX → index = XXX / 4 → vtable[0] + XXX → 读取函数指针 → 
 
 ---
 
+## 已知问题 (非 hook_dll 引发, 低优先级)
+
+### EIP=0 崩溃 — Ares AI Team + Chrono 偶发 use-after-free
+
+| 属性 | 值 |
+|------|-----|
+| **首次发现** | 2026-06-08 |
+| **最近出现** | 2026-06-10 (Game 3, 带 hook_dll) |
+| **崩溃地址** | EIP=0x00000000 |
+| **调用链** | GameFrameLoop → Scenario::Update → TeamClass::Update → RecruitMember → Math::DistSq2D → `call [vtable+48h]` → EIP=0 |
+| **触发条件** | AI team 管理 (Create_One_Of) + Chrono/Paradrop/SuperWeapon 密集 + 长时间游戏 |
+| **根因** | `g_UnitClassPool` 中单位对象被提前释放但引用未清除。RecruitMember 遍历池时碰到僵尸条目, 虚调用时 vtable 指针指向无效地址 |
+| **是否与 hook_dll 有关** | 否 — 栈上无 hook_dll 地址; 无 VEH 级联 AV; 无 m_backups 受损 |
+| **50局无hook_dll基线** | 0/50 崩溃 |
+| **带hook_dll复现率** | ~1-3/15-20 局 (≤20%, 统计小样本) |
+| **处置** | 归档, 不阻塞开发。若将来频率上升需重开调查 |
+
+**验证记录**:
+- Hex 验证: `0x6EAD4B` = `E8 FFFFB810` (DIRECT call rel32 → Math::DistSq2D, 非间接调用)
+- EDX=0x2026C0D0 来源: `mov edx, [edi+24h]` (team 对象成员字段, 非 vtable)
+- 全局对象 `g_UnitClassPool` (0x8B410C) 存在僵尸条目
+- `DisplayClass::ExitMode` / `Timer::PumpMessages` 在栈上来自 Ares SEH handler 捕获全栈, 非崩溃路径
+
+---
+
+---
+
 ## Claude Opus 4.7 方法论总结 (2026-06-09)
 
 以下是从本会话中 Claude Opus 4.7 对所有决策和崩溃分析的批评中提炼的**永久性工程原则**。这些原则应在**每次遇到崩溃或设计决策时**主动应用，不依赖外部审查。
