@@ -234,6 +234,21 @@ def find_markers(functions, raw_json, callee_map, callee_names, all_marked):
                                         completed=completed,mode=mode,
                                         ret_type=ret_type, full_sig=full_sig,
                                         convention=fn_info.get('call',{}).get('convention','stdcall')))
+    # Deduplicate none_markers: keep entry with best full_sig per address
+    dedup = {}
+    for m in none_markers:
+        addr = m['addr']
+        cur = m.get('full_sig', '')
+        if addr not in dedup:
+            dedup[addr] = m
+        else:
+            prev = dedup[addr].get('full_sig', '')
+            # prefer entry with params (contains '(') over name-only
+            if '(' not in prev and '(' in cur:
+                dedup[addr] = m
+            elif '(' in prev and '(' in cur and len(cur) > len(prev):
+                dedup[addr] = m
+    none_markers = list(dedup.values())
     return markers, warnings, errors, none_markers
 
 def san(n):
