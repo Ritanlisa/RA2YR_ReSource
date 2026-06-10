@@ -2,6 +2,7 @@
 
 #include <cstdint>
 #include <cmath>
+#include <ostream>
 
 namespace gamemd
 {
@@ -218,6 +219,12 @@ using Point2D      = Vector2D<int>;
 using CoordStruct  = Vector3D<int>;
 using RGBClass     = Vector3D<std::uint8_t>;
 
+// ostream output for hook DLL comparison logs
+template <typename T>
+inline std::ostream& operator<<(std::ostream& os, const Vector2D<T>& v) {
+    return os << "<Vector2D,X=" << std::dec << v.X << ",Y=" << v.Y << ">";
+}
+
 struct Matrix3D
 {
     float Data[12] = {};
@@ -230,6 +237,11 @@ struct RectangleStruct
     int Width = 0;
     int Height = 0;
 };
+
+inline std::ostream& operator<<(std::ostream& os, const RectangleStruct& r) {
+    return os << "<RectangleStruct,X=" << std::dec << r.X << ",Y=" << r.Y
+              << ",W=" << r.Width << ",H=" << r.Height << ">";
+}
 
 struct ColorStruct
 {
