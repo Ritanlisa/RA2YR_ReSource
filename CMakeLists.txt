@@ -121,13 +121,13 @@ if(WIN32)
     # Built only when Python3 + Ares submodule are available.
     # Not a dependency of gamemd.exe (separate dev tool).
     find_package(Python3 COMPONENTS Interpreter QUIET)
-    if(Python3_FOUND AND EXISTS "${CMAKE_SOURCE_DIR}/Ares/YRpp/Syringe.h")
+    if(Python3_FOUND AND EXISTS "${CMAKE_SOURCE_DIR}/YRpp/Syringe.h")
         if(NOT Python3_FOUND)
             message(WARNING "Python3 not found — hook DLL will use committed gen/*.cpp (may be stale)")
         endif()
         add_subdirectory(injectFunctionTest)
     else()
-        message(STATUS "Skipping hook_dll: requires Python3 + Ares/YRpp/Syringe.h submodule")
+        message(STATUS "Skipping hook_dll: requires Python3 + YRpp/Syringe.h submodule")
     endif()
 endif()
 

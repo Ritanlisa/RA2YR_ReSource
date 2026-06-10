@@ -51,7 +51,7 @@ SYRINGE_HANDSHAKE(pInfo)
 // ============================================================
 // ExeRun hook (0x7CD810) -- safe server startup after DLL load
 // ============================================================
-DEFINE_HOOK(7CD810, HDS_StartServer, 9)
+DEFINE_HOOK(0x7CD810, HDS_StartServer, 0x9)
 {
     shadow::g_owner_tid = GetCurrentThreadId();
     headless::StartServer(25400, []() -> int {

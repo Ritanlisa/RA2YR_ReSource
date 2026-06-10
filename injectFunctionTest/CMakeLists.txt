@@ -6,8 +6,8 @@ set(CMAKE_CXX_STANDARD 17)
 # ============================================================
 # Configuration
 # ============================================================
-# YRpp include dir (relative to this CMakeLists.txt)
-set(YRPP_DIR           "${CMAKE_CURRENT_SOURCE_DIR}/../Ares/YRpp")
+# YRpp include dir (Phobos submodule @ 613922a)
+set(YRPP_DIR           "${CMAKE_CURRENT_SOURCE_DIR}/../YRpp")
 # gamemd_core include dir
 set(GAMEMD_INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../include")
 # Output directory for hook_dll.dll (set via -DHOOK_OUTPUT_DIR=... or env)

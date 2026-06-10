@@ -19,7 +19,7 @@ static CellStruct* RE_CellStruct_Set(CellStruct* pThis, __int16 x, __int16 y)
 }
 
 // CellStruct::Set @ 0x42D470
-DEFINE_HOOK(42D470, CellStruct_Set_shadow, 5)
+DEFINE_HOOK(0x42D470, CellStruct_Set_shadow, 0x5)
 {
     auto* slot = shadow::GetSlot();
 
@@ -43,7 +43,7 @@ DEFINE_HOOK(42D470, CellStruct_Set_shadow, 5)
 // MainGameFrame @ 0x48C8B0 -- poll headless commands every frame
 // Server runs on dedicated thread; PollCommands is a no-op
 // but this hook confirms the game loop is active
-DEFINE_HOOK(48C8B0, HDS_PollCommands, 5)
+DEFINE_HOOK(0x48C8B0, HDS_PollCommands, 0x5)
 {
     headless::PollCommands();
     return 0;

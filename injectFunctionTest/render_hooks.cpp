@@ -17,7 +17,7 @@ namespace render_hooks {
 //   [ESP+24] = flags (int)
 //   [ESP+28] = a8 (char)
 // Record: source surface addr, source rect -> frame info, dst rect -> screen position
-DEFINE_HOOK(4BB0D0, Blit_Tracker, 6)
+DEFINE_HOOK(0x4BB0D0, Blit_Tracker, 0x6)
 {
     // Extract: src surface + src rect + dst rect
     uint32_t src_surface = (uint32_t)R->Stack<DWORD>(12);

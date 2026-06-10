@@ -14881,7 +14881,7 @@ static struct FinalFlush{ ~FinalFlush(){ if(h!=INVALID_HANDLE_VALUE){flush_full(
 
 // XSurface::PutPixel @ 0x7baf90 (thiscall) mode=Inject
 // XSurface::PutPixel: pixel write + bounds
-DEFINE_HOOK(7BAF90, Rev_XSurface_PutPixel, 5)
+DEFINE_HOOK(0x7BAF90, Rev_XSurface_PutPixel, 0x5)
 {
   int idx=I(0x7BAF90);
   auto&V=in[idx];
@@ -14899,7 +14899,7 @@ DEFINE_HOOK(7BAF90, Rev_XSurface_PutPixel, 5)
 
 // XSurface::GetPixelAtCoords @ 0x7baf10 (thiscall) mode=Inject
 // XSurface::GetPixelAtCoords: pixel read + bounds
-DEFINE_HOOK(7BAF10, Rev_XSurface_GetPixelAtCoords, 6)
+DEFINE_HOOK(0x7BAF10, Rev_XSurface_GetPixelAtCoords, 0x6)
 {
   int idx=I(0x7BAF10);
   auto&V=in[idx];
