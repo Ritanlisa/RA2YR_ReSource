@@ -7,11 +7,16 @@ namespace shadow {
 class ShadowTransaction;
 
 struct ShadowSlot {
-    uint32_t original_ret_addr;  // +0x00
-    uint32_t re_result_eax;      // +0x04
-    uint32_t re_result_edx;      // +0x08
-    uint32_t hook_addr;          // +0x0C
-    ShadowTransaction* txn;      // +0x10
+    static const int MAX_DEPTH = 16;
+    // Slot stack (push on hook entry, pop in PostProcStub)
+    uint32_t ret_addr_stack[MAX_DEPTH];   // +0x00 (64 bytes)
+    uint32_t hook_addr_stack[MAX_DEPTH];  // +0x40 (64 bytes)
+    int32_t  depth;                        // +0x80
+    // RE results
+    uint32_t re_result_eax;               // +0x84
+    uint32_t re_result_edx;               // +0x88
+    // Active transaction (or nullptr)
+    ShadowTransaction* txn;               // +0x8C
 };
 
 extern DWORD       g_owner_tid;

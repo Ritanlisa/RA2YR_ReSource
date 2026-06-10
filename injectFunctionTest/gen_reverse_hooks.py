@@ -617,10 +617,9 @@ def generate(markers, functions, fn_map, none_markers=None):
             # Non-idempotent functions need transaction for .data rollback
             is_idem = fn.get('hook',{}).get('idempotent', False) if fn else False
             if is_idem:
-                # No transaction: leaf functions like SetPixel are idempotent
+                # No transaction: push slot stack, hijack, return
                 w('  auto*s=shadow::GetSlot();')
-                w(f'  s->hook_addr=0x{ah};')
-                w('  s->original_ret_addr=R->Stack<DWORD>(0);')
+                w(f'  int d=s->depth; if(d<16){{s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x{ah};s->depth=d+1;}}')
                 w('  R->Stack(0,(DWORD)&PostProcStub);')
             else:
                 # Full transaction for non-idempotent functions
@@ -629,23 +628,16 @@ def generate(markers, functions, fn_map, none_markers=None):
                 w('  // Stale transaction cleanup')
                 w('  auto*s=shadow::GetSlot();')
                 w('  if(s&&s->txn){s->txn->Discard();delete s->txn;s->txn=nullptr;++shadow::g_orphan_count;}')
+                w(f'  int d=s->depth; if(d<16){{s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x{ah};s->depth=d+1;}}')
                 w('  auto* txn = new shadow::ShadowTransaction();')
                 w('  txn->Begin();')
-                w(f'  s->hook_addr=0x{ah};')
-                w('  s->original_ret_addr=R->Stack<DWORD>(0);')
                 w('  R->Stack(0,(DWORD)&PostProcStub);')
         elif mode == "Inject":
-            # Inject mode: re_depth gate for nested hook passthrough.
-            # Idempotent functions skip transaction (same as Replace).
-            # Non-idempotent functions use full transaction for .data rollback.
             is_idem = fn.get('hook',{}).get('idempotent', False) if fn else False
             if is_idem:
-                # Idempotent: no transaction, keep re_depth gate for nested calls
-                w(f'  // RE depth gate (Inject: RE calls hooked callee -> pass through)')
                 w(f'  if(shadow::g_re_depth>0) return 0;')
                 w('  auto*s=shadow::GetSlot();')
-                w(f'  s->hook_addr=0x{ah};')
-                w('  s->original_ret_addr=R->Stack<DWORD>(0);')
+                w(f'  int d=s->depth; if(d<16){{s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x{ah};s->depth=d+1;}}')
                 w('  R->Stack(0,(DWORD)&PostProcStub);')
             else:
                 # Non-idempotent: full transaction + thread gate + re_depth gate
@@ -653,10 +645,9 @@ def generate(markers, functions, fn_map, none_markers=None):
                 w(f'  if(shadow::g_re_depth>0) return 0;')
                 w('  auto*s=shadow::GetSlot();')
                 w('  if(s&&s->txn){s->txn->Discard();delete s->txn;s->txn=nullptr;++shadow::g_orphan_count;}')
+                w(f'  int d=s->depth; if(d<16){{s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x{ah};s->depth=d+1;}}')
                 w('  auto* txn = new shadow::ShadowTransaction();')
                 w('  txn->Begin();')
-                w(f'  s->hook_addr=0x{ah};')
-                w('  s->original_ret_addr=R->Stack<DWORD>(0);')
                 w('  R->Stack(0,(DWORD)&PostProcStub);')
         
         w('  return 0;')
@@ -681,7 +672,7 @@ def generate(markers, functions, fn_map, none_markers=None):
     w('  if(s) { s->re_result_eax = V.re; s->re_result_edx = 0; }  // edx=V.d is INPUT edx, not RE output')
     w('')
     w('  // Compare and log')
-    w('  DWORD ret=s?s->original_ret_addr:0;')
+    w('  DWORD ret=s?s->ret_addr_stack[s->depth]:0;')
     w('  write_entry(\'I\', idx, addr, V.re, orig, ret);')
     w('')
     w('  return V.re;')

@@ -72,9 +72,9 @@ static void HandleCommand(SOCKET client, const char* cmd)
     else if (strncmp(cmd, "REG", 3) == 0) {
         auto* slot = shadow::GetSlot();
         snprintf(response, sizeof(response),
-            "{\"ok\":true,\"re_eax\":\"0x%08X\",\"re_edx\":\"0x%08X\",\"orig_ret\":\"0x%08X\",\"hook_addr\":\"0x%08X\",\"txn_active\":%s,\"re_depth\":%d,\"orphans\":%d}",
-            slot->re_result_eax, slot->re_result_edx, slot->original_ret_addr,
-            slot->hook_addr, slot->txn ? "true" : "false",
+            "{\"ok\":true,\"re_eax\":\"0x%08X\",\"re_edx\":\"0x%08X\",\"depth\":%d,\"txn_active\":%s,\"re_depth\":%d,\"orphans\":%d}",
+            slot->re_result_eax, slot->re_result_edx, slot->depth,
+            slot->txn ? "true" : "false",
             shadow::g_re_depth, shadow::g_orphan_count);
         SendResponse(client, response);
     }
