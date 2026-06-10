@@ -130,7 +130,7 @@ if(Python3_FOUND)
     add_custom_target(regenerate_hooks ALL DEPENDS ${GEN_OUTPUTS})
     add_dependencies(hook_dll regenerate_hooks)
 else()
-    message(STATUS "Python3 not found — using committed gen/*.cpp files")
+    message(WARNING "Python3 not found — using committed gen/*.cpp files (may be stale)")
 endif()
 
 # ============================================================
