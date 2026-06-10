@@ -25,7 +25,7 @@ import ida_nalt
 import idaapi
 
 PURITY_PATH = r"D:\RA2YR_ReSource\injectFunctionTest\purity_effects.json"
-DRY_RUN = 500  # 0 = all, N = first N functions
+DRY_RUN = 0  # 0 = all, N = first N functions
 
 # ============================================================
 # Class vtable cache
