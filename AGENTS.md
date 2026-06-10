@@ -69,6 +69,58 @@ cmake -B build_linux -G "Unix Makefiles"
 cmake --build build_linux
 ```
 
+## comparisonResult.log 调试工作流
+
+这是 Inject/Replace 模式下验证 RE 实现正确性的核心流程。
+
+### 日志结构
+
+```text
+============ Different Compares ============  ← RE ≠ 原版，需修复
+  [function_sig-0xADDR]
+  Call N: caller()<-ret_addr
+    Input:  ...                          ← 输入参数
+    Return: hook=false != original=true  ← 差异
+
+================ Captures ================   ← Capture 模式（仅记录）
+
+============= Same Compares ==============   ← RE = 原版，已验证
+  [function_sig-0xADDR]
+    Return: hook=original=X                 ← 一致
+
+============== None Calls ================  ← 零次调用的函数
+```
+
+### 调试步骤
+
+```text
+1. 运行游戏（菜单进入 + 主界面 15s+）
+   → comparisonResult.log 生成
+
+2. 检查 Different Compares 下的函数
+   → 提取输入样本（Input 行）
+
+3. 对每个差异函数：
+   a. IDA 反编译原版 → 对比 RE 实现
+   b. 重点关注: outcode 顺序、边界条件、浮点运算差异
+   c. 修改 gen_re_impl.py 的模板（不是 gen/re_impl.cpp，后者被 gitignore 会被覆盖）
+   d. python gen_reverse_hooks.py && cmake --build build_hook
+
+4. 当函数从 Different → Same 迁移：
+   a. functions.json: hook.done = true
+   b. 源文件: REVERSE 标记改为 "None"
+   c. 提交
+```
+
+### 常见差异原因
+
+| 原因 | 示例 | 修复 |
+|------|------|------|
+| RE stub 返回 0 | `return 0; // TODO` | 实现完整算法 |
+| outcode 顺序/边界不同 | `clip_r-1` vs `clip_r` | 匹配 IDA 反编译 |
+| fild vs fld (int vs double) | 坐标类型不同 | 查 IDA 指令确认 |
+| gen/re_impl.cpp 被覆盖 | 手动编辑后 regen 覆盖 | 改 gen_re_impl.py 模板 |
+
 ## 当前状态
 
 | 指标 | 数值 |
@@ -76,9 +128,10 @@ cmake --build build_linux
 | 已实现函数 | ~140（~200+ stubs） |
 | 编译错误 / 警告 | 0 / 0 |
 | IDA 命名 | ~10,272 / 19,067 (53.9%) |
-| REVERSE 标记 | ~32（13 Inject 活跃, 29 None） |
+| REVERSE 标记 | ~32（4 Inject 活跃, 37 None） |
 | 已完成函数 | 39（faithful translations, completed:true） |
-| Inject 模式 | **13/13 全部部署**（idempotent=true, 零事务开销, slot stack 防并发覆写） |
+| Inject 模式 | **4/13 活跃**（9 verified → None, slot stack 防并发覆写） |
+| 幂等自动判定 | Phase 1+2 完成: TRUE 31%, FALSE 36%, UNCERTAIN 33% |
 | 当前阻塞 | .data 回滚验证仍需非渲染函数 |
 
 ## 文档分布
