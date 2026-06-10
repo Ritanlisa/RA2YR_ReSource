@@ -343,6 +343,12 @@ RA2/YR 的移动系统使用 COM 架构。GUID 表位于 `.rdata` 段（0x7E9A60
 
 ### 最近完成（按时间倒序）
 
+- **2026-06-10**: 编译时自动化幂等判定系统（Phase 1+2）
+  - `gen_annotations.py` → `annotations.json`（373 导入规则 + 35 命名模式 + 手动覆盖）
+  - `ida_extract_purity.py` → `purity_effects.json`（17K 函数直接 .data R/W 扫描，24s）
+  - `analyze_idempotent.py` → SCC 不动点传递闭包 + 三态判定（TRUE/FALSE/UNCERTAIN）
+  - `gen_reverse_hooks.py`：completed gate + 自动查表 + 手动覆盖警告（`idempotent_reason` 必填）
+  - `CMakeLists.txt`：`HOOK_REGEN_GENERATED=ON` 触发完整分析→代码生成管道
 - **2026-06-10**: Inject 模式 13/13 函数全部部署 (Fill 50-call 事务验证通过, 零孤儿)
 - **2026-06-09**: hook_size 修复 + VEH 修复 + Caller 表重建 + ostringstream 重构 + Replace/Inject 基础设施完成
 - **2026-06-03**: 音频子系统完整逆向 + INI 函数 281/281 + COM.md 8 GUID 全部命名
@@ -352,8 +358,8 @@ RA2/YR 的移动系统使用 COM 架构。GUID 表位于 `.rdata` 段（0x7E9A60
 
 ### 当前阻塞
 
-- 等待用户测试 13 Inject hooks（commit `6f8b68e`：全部 idempotent=true，零事务开销）
 - .data 回滚验证仍需非渲染函数（13 已完成函数全是 XSurface，不写 .data）
+- Phase 2 将 13 个 XSurface 判定为 UNCERTAIN（vtable Lock/Unlock 未解析）→ 手动覆盖 + 警告生效。Phase 3 可减少 UNCERTAIN 比例。
 
 ### 后续计划
 
