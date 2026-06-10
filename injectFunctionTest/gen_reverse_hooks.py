@@ -346,8 +346,9 @@ def generate(markers, functions, fn_map, none_markers=None):
     for i,m in enumerate(none_markers):
         si = len(markers) + i
         sig = m.get('full_sig', m['fn_name']).replace('\\','\\\\').replace('"','\\"').replace('\n',' ').replace('\r',' ')
+        rt = m.get('ret_type', '').replace('\n',' ').replace('\r',' ')
         w(f'  nm[{si}]="{m["fn_name"]}"; addr_tbl[{si}]=0x{int(m["addr"],16):08X};')
-        w(f'  sig[{si}]="{sig}";')
+        w(f'  sig[{si}]="{sig}"; rt[{si}]="{rt}";')
     w('}')
     w('struct InitHookNames { InitHookNames() { NN(); } };')
     w('static InitHookNames _init;')
@@ -521,6 +522,8 @@ def generate(markers, functions, fn_map, none_markers=None):
     w('  sections_written=true;')
     for i,m in enumerate(none_markers):
         sig = m.get('full_sig', m['fn_name']).replace('\\','\\\\').replace('"','\\"').replace('\n',' ')
+        rt = m.get('ret_type', '').strip()
+        if '(' not in sig and rt: sig = f'{rt} {sig}'
         addr_hex = f'0x{int(m["addr"],16):08X}'
         w(f'  SecApp(sec_none,&sec_none_len,"[{sig}-{addr_hex}]\\r\\n");')
     w('  flush_full();')
@@ -531,6 +534,8 @@ def generate(markers, functions, fn_map, none_markers=None):
     # List None-mode markers that are uncalled
     for i,m in enumerate(none_markers):
         sig = m.get('full_sig', m['fn_name']).replace('\\','\\\\').replace('"','\\"').replace('\n',' ')
+        rt = m.get('ret_type', '').strip()
+        if '(' not in sig and rt: sig = f'{rt} {sig}'
         addr_hex = f'0x{int(m["addr"],16):08X}'
         w(f'  {{ int called=0;')
         w(f'    for(int j=0;j<{nmk};j++){{')
