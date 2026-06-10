@@ -91,19 +91,20 @@ def find_markers(functions, raw_json, callee_map, callee_names, all_marked):
                     line = c[ls:m.end()]
                     if line.lstrip().startswith('//'): continue
                     rest = c[m.end():m.end()+500]
-                    # Skip comment lines and blank lines to find the real function declaration
-                    s = None
-                    for raw_line in rest.split('\n'):
-                        ln = raw_line.strip()
-                        if not ln or ln.startswith('//') or ln.startswith('/*') or ln.startswith('*') or ln.startswith('*/'):
-                            continue
-                        # Also skip lines that are just annotations like "marked completed"
-                        if ln.startswith('marked ') or ln.startswith('repeat '):
-                            continue
-                        s = SIG.search(ln)
-                        if s: break
+                    # Search full rest first (handles multi-line declarations)
+                    # Fall back to line-by-line for simple cases
+                    s = SIG.search(rest)
                     if s is None:
-                        s = SIG.search(rest)  # fallback
+                        for raw_line in rest.split('\n'):
+                            ln = raw_line.strip()
+                            if not ln or ln.startswith('//') or ln.startswith('/*') or ln.startswith('*') or ln.startswith('*/'):
+                                continue
+                            if ln.startswith('marked ') or ln.startswith('repeat '):
+                                continue
+                            s = SIG.search(ln)
+                            if s: break
+                    if s is None:
+                        s = SIG.search(rest)  # last-resort fallback
                     
                     # Heuristic: if the matched "return type" looks like a comment or code,
                     # or if the function name doesn't match JSON name, discard the match
@@ -375,13 +376,21 @@ def generate(markers, functions, fn_map, none_markers=None):
         elif conv == 'fastcall':
             regs = ['ECX','EDX']
             for j in range(min(2, len(params))):
-                pn = params[j][1] if j < len(params) else '?'
+                pt = params[j]
+                pn = pt[1]
                 ref = f'in[{i}].{chr(ord("c")+j)}'
-                w(f'  os<<" {pn}({regs[j]})="<<"0x"<<std::hex<<{ref};')
+                if pt[2] > 0:
+                    w(f'  os<<" {pn}({regs[j]})="; FmtArr(os,{pt[2]},{ref});')
+                else:
+                    w(f'  os<<" {pn}({regs[j]})="<<"0x"<<std::hex<<{ref};')
             for j in range(2, len(params)):
-                pn = params[j][1]
+                pt = params[j]
+                pn = pt[1]
                 ref = f'in[{i}].stk{j-2}'
-                w(f'  os<<" {pn}(Stack)="; Fmt(os,"int",{ref});')
+                if pt[2] > 0:
+                    w(f'  os<<" {pn}(Stack)="; FmtArr(os,{pt[2]},{ref});')
+                else:
+                    w(f'  os<<" {pn}(Stack)="; Fmt(os,"int",{ref});')
         else:  # stdcall, cdecl
             if params:
                 w(f'  static const char* ty_{s}[]={{{",".join(f"\"{p[0]}\"" for p in params)}}};')
@@ -555,7 +564,7 @@ def generate(markers, functions, fn_map, none_markers=None):
     w('  const char* hdr=sig[i]&&*sig[i]?sig[i]:nm[i]?nm[i]:"?";')
     w('  std::ostringstream os;')
     w('  os<<std::hex<<std::uppercase;')
-    w('  if(n==1) os<<"["<<hdr<<"-0x"<<addr<<"]\\r\\n";')
+    w('  if(n==1) os<<"\\r\\n["<<hdr<<"-0x"<<addr<<"]\\r\\n";')
     w('  os<<"Call "<<std::dec<<n<<": "<<(cn?cn:"?")<<"()<-0x"<<std::hex<<(ret-5)<<"\\r\\n";')
     w('  os<<"  Input:  "; FI(i,os);')
     w('  if(tag==\'C\'){ os<<"  Return: ";Fmt(os,rt[i],orig);os<<"(EAX)\\r\\n"; }')
