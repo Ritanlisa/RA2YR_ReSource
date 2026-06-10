@@ -105,7 +105,6 @@ tools/*
 
 # 函数注入测试 (生成文件)
 injectFunctionTest/build_hook/
-injectFunctionTest/gen/
 injectFunctionTest/functions.json
 !injectFunctionTest/test_hooks.cpp
 injectFunctionTest/idempotent_results.json
