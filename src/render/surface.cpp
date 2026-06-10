@@ -1040,7 +1040,7 @@ bool XSurface::DrawLine(const Point2D& start, const Point2D& end, uint32_t color
 
 // IDA: 0x7BA8C0 -- XSurface::DrawDashedLine (621B)
 // vtable[18] 0x48 -- Bresenham dashed line with 16-byte stipple pattern
-REVERSE(0x7ba8c0, "XSurface::DrawDashedLine: stipple line", "Inject")
+REVERSE(0x7ba8c0, "XSurface::DrawDashedLine: stipple line", "None")
 bool XSurface::DrawDashedLine(
     const Point2D& start, const Point2D& end,
     uint16_t color, const uint8_t stipple[16],
@@ -1262,7 +1262,7 @@ bool XSurface::DrawRect(const RectangleStruct& draw_rect, uint32_t color)
 
 // IDA: 0x7BB350 -- XSurface::DrawEllipseOutline (1478B)
 // vtable[8] 0x20 -- midpoint ellipse algorithm
-REVERSE(0x7bb350, "XSurface::DrawEllipseOutline: ellipse", "Inject")
+REVERSE(0x7bb350, "XSurface::DrawEllipseOutline: ellipse", "None")
 bool XSurface::DrawEllipseOutline(
     const Point2D& center,
     int radius_w, int radius_h,
