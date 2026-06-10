@@ -88,35 +88,49 @@ Located in `injectFunctionTest/`. Validates reverse-engineered functions by hook
 
 ```
 Syringe → injects hook_dll.dll → intercepts function entry
-  → runs RE version in shadow (all writes auto-rolled-back via page-level memory transaction)
-  → runs original function (clean state)
+  → runs original function (Capture mode: just log inputs/return)
+  → runs RE version on clean state (Replace/Inject: stack hijack via PostProcStub)
   → PostProcStub compares RE result vs original result
-  → logs mismatches
+  → logs mismatches to comparisonResult.log
 ```
+
+### Current Status
+
+| Mode | Active | Description |
+|------|--------|-------------|
+| Capture | 12 hooks | Log inputs+return values to Captures section |
+| Replace | 1 hook (SetPixel) | Original runs first, then RE on same state (idempotent functions skip transaction) |
+| Inject | 0 (infrastructure ready) | Full .data rollback for non-idempotent functions |
+| None | 29 markers | Listed in None Calls section, not hooked |
 
 ### Key Components
 
 | File | Purpose |
 |------|---------|
-| `shadow_txn.cpp` | Page-level memory transaction (VirtualProtect + VEH) |
-| `PostProcStub.asm` | Stack-hijack post-process comparison stub |
-| `headless_server.cpp` | TCP command server (STATS/MEM/REG/HOOKS/QUIT) |
-| `tls_storage.h` | `fs:[0x18]` TLS slot (avoids Syringe's `fs:[0x14]`) |
-| `ida_extract.py` | IDA → `functions.json` (19,067 function metadata) |
-| `codegen.py` | JSON → DEFINE_HOOK code generator |
+| `gen_reverse_hooks.py` | Main generator: scans REVERSE() → generates Capture/Replace/Inject hooks |
+| `gen_re_impl.py` | RE_* function template generator (pixel_write, fill, etc.) |
+| `PostProcStub.asm` | Stack hijack stub: reads g_current_slot, calls LogComparison |
+| `shadow_txn.cpp` | VEH handler + ShadowTransaction (Begin/End/Discard/OnWriteViolation) |
+| `tls_storage.h` | ShadowSlot struct + g_current_slot pointer + g_owner_tid + g_re_depth |
+| `headless_server.cpp` | TCP :25400 (STATS/MEM/REG/ELEMENTS/CLICKAT/QUIT) |
+| `render_hooks.cpp` | DSurface::Blit hook (UI element tracking) |
+| `functions.json` | 19K function metadata (calling convention, min_safe_size, idempotent) |
 
-### Usage
+### Quick Start
 
 ```bash
-# Normal test
-Syringe.exe "gamemd.exe" -CD -i=hook_dll.dll
+# Build hook DLL (Release, 32-bit)
+cmake -B build_hook_release -G "Visual Studio 17 2022" -A Win32 -DHOOK_OUTPUT_DIR=D:/RA2MD
+cmake --build build_hook_release --config Release
 
-# Headless test (TCP server on port 25400)
-set SHADOW_HEADLESS=1
-Syringe.exe "gamemd.exe" -CD -i=hook_dll.dll
-# In another terminal: nc localhost 25400
-#   STATS → {"ok":true,"mismatch_count":0}
-#   MEM 0x812000 64 → hex dump
+# Run test
+cd D:\RA2MD
+Syringe.exe "gamemd.exe" -cd -SPAWN
+# comparisonResult.log generated in D:\RA2MD\comparisonResult.log
+
+# TCP stats
+echo STATS | ncat 127.0.0.1 25400
+# → {"ok":true,"mismatch_count":0,"orphan_txn_count":0,"re_depth":0}
 #   QUIT
 ```
 

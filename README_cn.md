@@ -90,3 +90,11 @@ cmake --build build --config Debug
 - **Mentalmeisters** — 创作了 Mental Omega mod
 - **FunkyFr3sh/cnc-ddraw** — DirectDraw 兼容层，作为渲染接口逆向参考与调试运行时
 - **YRpp 项目** — DLL 注入逆向工程参考
+
+## 钩子对拍系统 (Hook Shadow Execution)
+
+位于 `injectFunctionTest/`。通过 Syringe 注入 hook_dll.dll，在运行时对比 RE 版本与原版函数的执行结果。
+
+**当前状态**: 12 Capture + 1 Replace + 29 None 标记。Replace 模式 SetPixel 稳定运行 (idempotent=true 跳过事务)。Inject 模式基础设施就绪 (g_re_depth gate, 线程过滤, VEH 修复)。
+
+详见 [HOOK_SYSTEM_REVIEW.md](HOOK_SYSTEM_REVIEW.md)。
