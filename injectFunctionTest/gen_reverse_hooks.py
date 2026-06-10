@@ -18,6 +18,8 @@ JSON = os.path.join(SCRIPT, "functions.json")
 MAP  = os.path.join(ROOT, "decompile-results", "gamemd.exe.map")
 CAL  = os.path.join(SCRIPT, "callee_map.json")
 
+RES  = os.path.join(SCRIPT, "idempotent_results.json")
+
 # Import RE impl generator
 sys.path.insert(0, SCRIPT)
 from gen_re_impl import generate_re_impl
@@ -39,6 +41,90 @@ def get_json_line(addr, raw):
     except:
         pass
     return '?'
+
+def get_json_line(addr, raw):
+    if not raw: return '?'
+    try:
+        pos = raw.find(f'"address": "{addr}"')
+        if pos >= 0:
+            return raw[:pos].count('\n') + 1
+    except:
+        pass
+    return '?'
+
+def load_idempotent_results():
+    """Load analysis results from analyze_idempotent.py output.
+    Returns dict: addr → "TRUE" | "FALSE" | "UNCERTAIN", or {} if missing."""
+    if not os.path.exists(RES):
+        return {}
+    with open(RES) as f:
+        return json.load(f)
+
+def resolve_idempotent(addr, fn_info, results, warnings_list, hook_path, line_no):
+    """Resolve idempotent status for a hook function.
+
+    Priority:
+      1. Manual `idempotent` in functions.json → use as-is
+         - If manual=true but auto != True → WARNING (with reason check)
+         - If manual=false but auto == True → no warning (conservative)
+      2. No manual → use auto result
+         - UNCERTAIN → treated as false
+      3. No manual AND no auto → FATAL error
+
+    Returns: (bool, list of extra errors)
+    """
+    hook = fn_info.get('hook', {})
+    manual_val = hook.get('idempotent')  # None, True, or False
+    extra_errors = []
+
+    # Normalize addr for lookup: strip 0x (case-insensitive), uppercase, pad to 8 chars
+    addr_norm = addr.upper().replace('0X', '').zfill(8)
+    # Try multiple formats
+    auto_str = None
+    if addr_norm in results:
+        auto_str = results[addr_norm]
+    elif addr in results:
+        auto_str = results[addr]
+    elif addr.upper() in results:
+        auto_str = results[addr.upper()]
+    
+    if auto_str is not None:
+        auto_val = auto_str == "TRUE"
+    else:
+        auto_val = None
+
+    # Case 1: manual override exists
+    if manual_val is not None:
+        if manual_val and auto_val == False:
+            # Manual=true but auto=FALSE/UNCERTAIN → warn
+            reason = hook.get('idempotent_reason', '')
+            if not reason:
+                extra_errors.append(
+                    f"{hook_path}:{line_no}: {addr} ({fn_info.get('name','?')}) "
+                    f"manual idempotent=true but analysis says {auto_str} — "
+                    f"missing idempotent_reason. Add reason or fix analysis."
+                )
+            else:
+                sig = fn_info.get('name', fn_info.get('call', {}).get('method_name', '?'))
+                ret_type = fn_info.get('call', {}).get('return_type', 'int')
+                warnings_list.append(
+                    f"{hook_path}:{line_no}: Function {ret_type} {sig}(...) "
+                    f"should be protected (analysis: {auto_str}) "
+                    f'but user insists it\'s idempotent because "{reason}"'
+                )
+        return manual_val, extra_errors
+
+    # Case 2: no manual override, use auto
+    if auto_val is not None:
+        return auto_val, extra_errors
+
+    # Case 3: neither manual nor auto → FATAL
+    extra_errors.append(
+        f"FATAL: {addr} ({fn_info.get('name','?')}) has no idempotent value. "
+        f"Run analyze_idempotent.py or add manual idempotent to functions.json."
+    )
+    return False, extra_errors  # conservative default after fatal error
+
 
 def parse_map():
     addrs = {}
@@ -69,7 +155,7 @@ def is_lib(name):
     if name in ('Debug::Log', 'Debug::Log_0'): return True
     return False
 
-def find_markers(functions, raw_json, callee_map, callee_names, all_marked):
+def find_markers(functions, raw_json, callee_map, callee_names, all_marked, idem_results):
     pat = re.compile(r'REVERSE\(\s*(0x[0-9A-Fa-f]+)\s*,\s*"([^"]*)"\s*,\s*"([^"]*)"\s*\)', re.I)
     markers = []
     none_markers = []  # mode=None markers for "None Calls" section
@@ -241,10 +327,20 @@ def find_markers(functions, raw_json, callee_map, callee_names, all_marked):
                     
                     # Capture mode: no completion check, no dependency check
                     
+                    # Resolve idempotent status for Inject/Replace hooks
+                    is_idem = False
+                    if mode in ("Replace", "Inject"):
+                        line_no = c[:m.start()].count(chr(10))+1
+                        is_idem, extra_errs = resolve_idempotent(
+                            addr, fn_info, idem_results, warnings,
+                            os.path.relpath(fp, ROOT), line_no)
+                        errors.extend(extra_errs)
+                    
                     markers.append(dict(addr=addr,desc=m.group(2),fn_name=fname,
                                         file=os.path.relpath(fp,ROOT),params=params,
                                         completed=completed,mode=mode,
                                         ret_type=ret_type, full_sig=full_sig,
+                                        is_idem=is_idem,
                                         convention=fn_info.get('call',{}).get('convention','stdcall')))
     # Deduplicate none_markers: keep entry with best full_sig per address
     dedup = {}
@@ -613,9 +709,7 @@ def generate(markers, functions, fn_map, none_markers=None):
             w('  V.re=0;')
             w(f'  write_entry(\'C\', idx, 0x{ah}, V.re, V.re, R->Stack<DWORD>(0));')
         elif mode == "Replace":
-            # Replace mode: skip transaction if idempotent (original+RE on same state is fine)
-            # Non-idempotent functions need transaction for .data rollback
-            is_idem = fn.get('hook',{}).get('idempotent', False) if fn else False
+            is_idem = m.get('is_idem', False)
             if is_idem:
                 # No transaction: push slot stack, hijack, return
                 w('  auto*s=shadow::GetSlot();')
@@ -633,7 +727,7 @@ def generate(markers, functions, fn_map, none_markers=None):
                 w('  txn->Begin();')
                 w('  R->Stack(0,(DWORD)&PostProcStub);')
         elif mode == "Inject":
-            is_idem = fn.get('hook',{}).get('idempotent', False) if fn else False
+            is_idem = m.get('is_idem', False)
             if is_idem:
                 w(f'  if(shadow::g_re_depth>0) return 0;')
                 w('  auto*s=shadow::GetSlot();')
@@ -809,7 +903,14 @@ def main():
     # All REVERSE-marked addresses (for dependency filter)
     all_marked = load_all_markers()
     
-    markers, warnings, errors, none_markers = find_markers(functions, raw_json, callee_map, callee_names, all_marked)
+    # Load idempotency analysis results
+    idem_results = load_idempotent_results()
+    if idem_results:
+        print(f"Loaded idempotency results: {len(idem_results)} entries")
+    else:
+        print("WARNING: idempotent_results.json not found — run analyze_idempotent.py first")
+    
+    markers, warnings, errors, none_markers = find_markers(functions, raw_json, callee_map, callee_names, all_marked, idem_results)
     
     for w in warnings:
         print(f"  WARNING: {w}")
