@@ -76,10 +76,10 @@ cmake --build build_linux
 | 已实现函数 | ~140（~200+ stubs） |
 | 编译错误 / 警告 | 0 / 0 |
 | IDA 命名 | ~10,272 / 19,067 (53.9%) |
-| REVERSE 标记 | ~32（2 Inject + 11 Capture 活跃, 29 None） |
+| REVERSE 标记 | ~32（13 Inject 活跃, 29 None） |
 | 已完成函数 | 39（faithful translations, completed:true） |
-| Inject 模式 | **部分部署**（2 hooks, idempotent=true, 零事务开销, 已验证） |
-| 当前阻塞 | 多 Inject 共享 slot → 需要 per-hook slot 或寄存器传参方案 |
+| Inject 模式 | **13/13 全部部署**（idempotent=true, 零事务开销, slot stack 防并发覆写） |
+| 当前阻塞 | .data 回滚验证仍需非渲染函数 |
 
 ## 文档分布
 
