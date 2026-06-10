@@ -684,7 +684,7 @@ Point2D Surface::DrawText(
 
 // IDA: 0x7BAEB0 -- XSurface::SetPixel (89B)
 // vtable[9]  0x24 -- Lock(point) -> check BPP -> write pixel -> Unlock
-REVERSE(0x7baeb0, "XSurface::SetPixel: pixel write", "Inject")
+REVERSE(0x7baeb0, "XSurface::SetPixel: pixel write", "None")
 bool XSurface::SetPixel(const Point2D& point, uint32_t color)
 {
     void* buf = Lock(point.X, point.Y);
@@ -702,7 +702,7 @@ bool XSurface::SetPixel(const Point2D& point, uint32_t color)
 
 // IDA: 0x7BAE60 -- XSurface::GetPixel (80B)
 // vtable[10] 0x28 -- Lock(point) -> check BPP -> read pixel -> Unlock
-REVERSE(0x7bae60, "XSurface::GetPixel: pixel read", "Inject")
+REVERSE(0x7bae60, "XSurface::GetPixel: pixel read", "None")
 uint32_t XSurface::GetPixel(const Point2D& point)
 {
     uint32_t result = 0;
@@ -780,7 +780,7 @@ uint16_t XSurface::GetPixelAtCoords(const Point2D& point, const RectangleStruct&
 
 // IDA: 0x7BAB90 -- XSurface::WalkLine (511B)
 // vtable[17] 0x44 -- Bresenham walker with callback
-REVERSE(0x7bab90, "XSurface::WalkLine: Bresenham walker", "Inject")
+REVERSE(0x7bab90, "XSurface::WalkLine: Bresenham walker", "None")
 bool XSurface::WalkLine(
     const Point2D& start, const Point2D& end,
     void (*callback)(const Point2D&))
@@ -860,7 +860,7 @@ bool XSurface::WalkLine(
 
 // IDA: 0x7BA610 -- XSurface::DrawLineEx (685B)
 // vtable[11] 0x2C -- clipped line with inline Bresenham pixel write
-REVERSE(0x7ba610, "XSurface::DrawLineEx: clipped line", "Inject")
+REVERSE(0x7ba610, "XSurface::DrawLineEx: clipped line", "None")
 bool XSurface::DrawLineEx(
     const RectangleStruct& clip_rect,
     const Point2D& start, const Point2D& end,
@@ -1030,7 +1030,7 @@ bool XSurface::DrawLineEx(
 
 // IDA: 0x7BA5E0 -- XSurface::DrawLine (48B)
 // vtable[12] 0x30 -- DrawLineEx wrapper with surface-level clip
-REVERSE(0x7ba5e0, "XSurface::DrawLine: no-clip wrapper", "Inject")
+REVERSE(0x7ba5e0, "XSurface::DrawLine: no-clip wrapper", "None")
 bool XSurface::DrawLine(const Point2D& start, const Point2D& end, uint32_t color)
 {
     RectangleStruct clip;
@@ -1222,7 +1222,7 @@ bool XSurface::DrawDashedLine(
 
 // IDA: 0x7BBAB0 -- XSurface::Fill (51B)
 // vtable[6] 0x18 -- fill entire surface with single color
-REVERSE(0x7bbab0, "XSurface::Fill: fill surface", "Inject")
+REVERSE(0x7bbab0, "XSurface::Fill: fill surface", "None")
 bool XSurface::Fill(uint32_t color)
 {
     RectangleStruct rect;
@@ -1252,7 +1252,7 @@ bool XSurface::DrawRectEx(
 
 // IDA: 0x7BAD90 -- XSurface::DrawRect (43B)
 // vtable[22] 0x58 -- DrawRectEx wrapper with surface-level clip
-REVERSE(0x7bad90, "XSurface::DrawRect: no-clip rect", "Inject")
+REVERSE(0x7bad90, "XSurface::DrawRect: no-clip rect", "None")
 bool XSurface::DrawRect(const RectangleStruct& draw_rect, uint32_t color)
 {
     RectangleStruct clip;
