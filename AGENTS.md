@@ -107,10 +107,26 @@ cmake --build build_linux
    d. python gen_reverse_hooks.py && cmake --build build_hook
 
 4. 当函数从 Different → Same 迁移：
-   a. functions.json: hook.done = true
-   b. 源文件: REVERSE 标记改为 "None"
-   c. 提交
-```
+    a. functions.json: hook.done = true
+    b. 源文件: REVERSE 标记改为 "None"
+    c. 提交
+
+### completed 硬性规则
+
+**`completed=true` 只能设置在完全逆向完成的函数上。**
+
+| 字段 | 含义 | 设置时机 |
+|------|------|---------|
+| `completed` | RE 实现完整（代码层面） | IDA 反编译→完整实现→编译通过 |
+| `done` | 对拍验证通过（行为层面） | comparisonResult.log Same Compares |
+
+**强制约束**：
+
+1. `completed=true` 必须满足：函数在 `src/` 下有完整 C++ 实现（非 stub/return 0/TODO），且编译 0 error 0 warning。
+2. 任何 Inject/Replace 钩子若对应函数 `completed=false` → `gen_reverse_hooks.py` 报 ERROR，构建中止。
+3. 设置 `completed=true` 前必须对照 IDA 反编译确认所有分支、边界、返回路径均已覆盖。
+4. 禁止批量标记 `completed=true`——每个函数须逐个核实。
+5. 违反以上规则导致的崩溃由标记者承担全责。
 
 ### 常见差异原因
 
