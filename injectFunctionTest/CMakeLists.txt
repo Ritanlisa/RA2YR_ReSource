@@ -73,6 +73,62 @@ target_compile_definitions(hook_dll PRIVATE
 )
 
 target_compile_options(hook_dll PRIVATE $<$<COMPILE_LANGUAGE:CXX>:/utf-8>)
+target_link_options(hook_dll PRIVATE "/MAP:${CMAKE_CURRENT_BINARY_DIR}/hook_dll.map")
+
+# ============================================================
+# Code generation (opt-in — default: use committed gen/*.cpp)
+# ============================================================
+option(HOOK_REGEN_GENERATED "Regenerate gen/reverse_hooks.cpp from REVERSE markers" OFF)
+
+if(HOOK_REGEN_GENERATED)
+    find_package(Python3 COMPONENTS Interpreter REQUIRED)
+
+    # Collect all source files that may contain REVERSE markers
+    file(GLOB_RECURSE REVERSE_SOURCES CONFIGURE_DEPENDS
+        "${GAMEMD_INCLUDE_DIR}/*.hpp"
+        "${CMAKE_SOURCE_DIR}/src/*.cpp"
+        "${CMAKE_SOURCE_DIR}/src/*.hpp"
+        "${CMAKE_SOURCE_DIR}/app/*.cpp"
+        "${CMAKE_SOURCE_DIR}/app/*.hpp"
+    )
+
+    set(GEN_DIR     "${CMAKE_CURRENT_SOURCE_DIR}/gen")
+    set(SCRIPTS_DIR "${CMAKE_CURRENT_SOURCE_DIR}")
+
+    # Step 1: Idempotency analysis → idempotent_results.json + audit.txt
+    add_custom_command(
+        OUTPUT  "${SCRIPTS_DIR}/idempotent_results.json"
+        COMMAND "${Python3_EXECUTABLE}" "${SCRIPTS_DIR}/analyze_idempotent.py"
+        DEPENDS
+            "${SCRIPTS_DIR}/analyze_idempotent.py"
+            "${SCRIPTS_DIR}/purity_effects.json"
+            "${SCRIPTS_DIR}/annotations.json"
+        COMMENT "Analyzing function idempotency..."
+        WORKING_DIRECTORY "${SCRIPTS_DIR}"
+    )
+
+    # Step 2: Generate hook code (reads idempotent_results.json from source dir)
+    set(GEN_OUTPUTS
+        "${GEN_DIR}/reverse_hooks.cpp"
+        "${GEN_DIR}/reverse_check.cpp"
+        "${GEN_DIR}/re_impl.cpp"
+    )
+    add_custom_command(
+        OUTPUT  ${GEN_OUTPUTS}
+        COMMAND "${Python3_EXECUTABLE}" "${SCRIPTS_DIR}/gen_reverse_hooks.py"
+        DEPENDS
+            "${SCRIPTS_DIR}/gen_reverse_hooks.py"
+            "${SCRIPTS_DIR}/gen_re_impl.py"
+            "${SCRIPTS_DIR}/functions.json"
+            "${SCRIPTS_DIR}/idempotent_results.json"
+            ${REVERSE_SOURCES}
+        COMMENT "Generating REVERSE hook code..."
+        WORKING_DIRECTORY "${SCRIPTS_DIR}"
+    )
+
+    add_custom_target(regenerate_hooks ALL DEPENDS ${GEN_OUTPUTS})
+    add_dependencies(hook_dll regenerate_hooks)
+endif()
 
 # ============================================================
 # Post-build

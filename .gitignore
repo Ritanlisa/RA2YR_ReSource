@@ -108,3 +108,5 @@ injectFunctionTest/build_hook/
 injectFunctionTest/gen/
 injectFunctionTest/functions.json
 !injectFunctionTest/test_hooks.cpp
+injectFunctionTest/idempotent_results.json
+injectFunctionTest/idempotent_audit.txt
