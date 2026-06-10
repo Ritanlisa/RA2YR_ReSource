@@ -27,8 +27,7 @@
 namespace gamemd {
 
 // ============================================================
-REVERSE(0x52ba60, "InitGame: IDA verified", "None") // auto-marked completed
-// Global variables used by InitGame (IDA addresses)
+// InitGame @ 0x52BA60 — defined at line 415
 // ============================================================
 
 void* RulesClass_Instance = nullptr;        // 0x8871E0

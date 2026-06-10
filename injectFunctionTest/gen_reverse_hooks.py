@@ -75,6 +75,7 @@ def find_markers(functions, raw_json, callee_map, callee_names, all_marked):
     none_markers = []  # mode=None markers for "None Calls" section
     warnings = []
     errors = []
+    seen_addrs = {}    # addr → (file, line) for duplicate detection
     for d in ["src","app","include/gamemd"]:
         for root,dirs,files in os.walk(os.path.join(ROOT,d)):
             for fn in files:
@@ -87,25 +88,36 @@ def find_markers(functions, raw_json, callee_map, callee_names, all_marked):
                     mode = m.group(3)  # "None" | "Replace" | "Inject" | "Capture"
                     if mode not in ("None", "Replace", "Inject", "Capture"):
                         mode = "None"
+                    # ERROR: duplicate REVERSE address
+                    line_no = c[:m.start()].count(chr(10))+1
+                    if addr in seen_addrs:
+                        prev_file, prev_line = seen_addrs[addr]
+                        errors.append(f"{fp}:{line_no}: DUPLICATE REVERSE(0x{addr}) — already defined in {prev_file}:{prev_line}")
+                        continue  # skip duplicate
+                    seen_addrs[addr] = (os.path.relpath(fp,ROOT), line_no)
                     ls = c.rfind('\n',0,m.start())+1
                     line = c[ls:m.end()]
                     if line.lstrip().startswith('//'): continue
                     rest = c[m.end():m.end()+500]
-                    # Search full rest first (handles multi-line declarations)
-                    # Fall back to line-by-line for simple cases
-                    s = SIG.search(rest)
-                    if s is None:
-                        for raw_line in rest.split('\n'):
-                            ln = raw_line.strip()
-                            if not ln or ln.startswith('//') or ln.startswith('/*') or ln.startswith('*') or ln.startswith('*/'):
-                                continue
-                            if ln.startswith('marked ') or ln.startswith('repeat '):
-                                continue
-                            s = SIG.search(ln)
-                            if s: break
-                    if s is None:
-                        s = SIG.search(rest)  # last-resort fallback
+                    # Find the next non-blank, non-comment line (MUST contain declaration)
+                    s = None
+                    for raw_line in rest.split('\n'):
+                        ln = raw_line.strip()
+                        if not ln or ln.startswith('//') or ln.startswith('/*') or ln.startswith('*') or ln.startswith('*/'):
+                            continue
+                        if ln.startswith('marked ') or ln.startswith('repeat '):
+                            continue
+                        # Multi-line declaration: first line has '(' but no ')' 
+                        if '(' in ln and ')' not in ln:
+                            s = SIG.search(rest)  # search full rest for the complete declaration
+                        else:
+                            s = SIG.search(ln)     # single-line: match against this line only
+                        break  # only check the first non-blank/non-comment line
                     
+                    # ERROR: Capture/Replace/Inject MUST be followed by a function declaration
+                    if s is None and mode in ("Capture", "Replace", "Inject"):
+                        errors.append(f"{fp}:{line_no}: REVERSE(0x{addr}) mode={mode} — no function declaration found after REVERSE macro")
+                        continue
                     # Heuristic: if the matched "return type" looks like a comment or code,
                     # or if the function name doesn't match JSON name, discard the match
                     fname = s.group(2) if s else "?"
