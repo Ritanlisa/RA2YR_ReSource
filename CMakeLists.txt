@@ -117,9 +117,9 @@ if(WIN32)
         )
     endif()
 
-    # hook_dll — shadow execution framework (subdirectory build)
-    add_subdirectory(injectFunctionTest)
-    add_dependencies(gamemd hook_dll)
+    # hook_dll — shadow execution framework, built separately:
+    #   cmake -B build_hook_release -A Win32 -DHOOK_OUTPUT_DIR=D:/RA2MD
+    #   cmake --build build_hook_release --config Release
 endif()
 
 # Platform-specific settings for executable
