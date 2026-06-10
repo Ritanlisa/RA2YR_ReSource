@@ -38,17 +38,56 @@
 
 ### REVERSE 管道保护文件
 
-未经用户许可不得修改：
+以下文件构成对拍验证管道的核心基础设施。**未经用户明确许可，不得修改其中任何一个。**
+违反此规则修改这些文件并导致"编译通过"或"测试通过"的假象，属于蓄意绕过验证的行为。
 
-- `include/gamemd/core/reverse_marker.hpp`（REVERSE 宏定义）
-- `injectFunctionTest/gen_reverse_hooks.py` / `gen_re_impl.py`（生成器）
-- `injectFunctionTest/gen/reverse_hooks.cpp` / `reverse_check.cpp` / `re_impl.cpp`（生成产物）
-- `injectFunctionTest/render_hooks.cpp` / `hook_main.cpp`
-- `injectFunctionTest/PostProcStub.asm` / `tls_storage.h`
-- `injectFunctionTest/shadow_txn.h/cpp`
-- `injectFunctionTest/functions.json`（函数元数据）
-- `injectFunctionTest/CMakeLists.txt`
-- `functionComparison.md`（对拍管线设计文档）
+#### 生成器（代码逻辑）
+
+- `injectFunctionTest/gen_reverse_hooks.py`   — REVERSE 扫描、钩子体生成、幂等判定集成
+- `injectFunctionTest/gen_re_impl.py`          — RE_* 函数模板（修改此文件而非 gen/re_impl.cpp）
+
+#### 运行时基础设施
+
+- `injectFunctionTest/PostProcStub.asm`        — slot stack push/pop + LogComparison 调用
+- `injectFunctionTest/tls_storage.h`           — ShadowSlot 结构体（slot stack + depth + txn）
+- `injectFunctionTest/shadow_txn.h` / `.cpp`   — VEH handler + ShadowTransaction
+- `injectFunctionTest/hook_template.hpp`       — 共享格式定义（Hex8/Fmt/FmtArr/WrFile）
+- `injectFunctionTest/hook_main.cpp`           — DllMain + ExeRun hook（g_owner_tid）
+- `injectFunctionTest/render_hooks.cpp`        — DSurface::Blit hook（UI 追踪）
+- `injectFunctionTest/headless_server.cpp`     — TCP :25400 调试接口
+
+#### 生成产物（gitignore，每次构建重新生成）
+
+- `injectFunctionTest/gen/reverse_hooks.cpp`   — 钩子入口 + write_entry + 格式化
+- `injectFunctionTest/gen/reverse_check.cpp`   — completed 校验
+- `injectFunctionTest/gen/re_impl.cpp`         — RE_* 函数包装器
+
+#### 分析管道
+
+- `injectFunctionTest/analyze_idempotent.py`   — SCC 不动点幂等判定
+- `injectFunctionTest/ida_extract_purity.py`   — IDA 直接 .data 扫描（Phase 1）
+- `injectFunctionTest/ida_extract_phase3.py`   — IDA vtable 调用解析（Phase 3）
+- `injectFunctionTest/gen_annotations.py`      — 三层标注生成
+- `injectFunctionTest/annotations.json`        — 标注数据（提交 git）
+- `injectFunctionTest/purity_effects.json`     — 纯度数据（提交 git）
+
+#### 构建 + 元数据
+
+- `injectFunctionTest/CMakeLists.txt`          — HOOK_REGEN_GENERATED option
+- `injectFunctionTest/functions.json`          — 19K 函数元数据（completed/done/idempotent）
+- `include/gamemd/core/reverse_marker.hpp`     — REVERSE 宏定义
+- `functionComparison.md`                      — 对拍管线设计文档
+
+#### 锁定理由
+
+这些文件的任何"便利性修改"（如临时 return true、跳过校验、改默认值、删错误检查）都会导致：
+
+1. **静默退化**：对拍系统表面上"正常工作"，实则不再检测差异
+2. **假阳性通过**：未完成的 RE 实现被标记为 verified，掩盖 bug
+3. **管道腐化**：后续分析依赖的元数据被污染，连锁影响所有函数判定
+
+修改策略：如需调整，**必须先向用户说明改什么、为什么、影响哪些函数**，获批准后再实施。
+未经许可的修改将被视为绕过验证，对应的测试结果无效。
 
 ## 构建命令
 
@@ -101,15 +140,16 @@ cmake --build build_linux
    → 提取输入样本（Input 行）
 
 3. 对每个差异函数：
-   a. IDA 反编译原版 → 对比 RE 实现
-   b. 重点关注: outcode 顺序、边界条件、浮点运算差异
-   c. 修改 gen_re_impl.py 的模板（不是 gen/re_impl.cpp，后者被 gitignore 会被覆盖）
-   d. python gen_reverse_hooks.py && cmake --build build_hook
+    a. IDA 反编译原版 → 对比 RE 实现
+    b. 重点关注: outcode 顺序、边界条件、浮点运算差异
+    c. 修改 gen_re_impl.py 的模板（不是 gen/re_impl.cpp，后者被 gitignore 会被覆盖）
+    d. python gen_reverse_hooks.py && cmake --build build_hook
 
 4. 当函数从 Different → Same 迁移：
     a. functions.json: hook.done = true
     b. 源文件: REVERSE 标记改为 "None"
     c. 提交
+```
 
 ### completed 硬性规则
 
@@ -144,9 +184,9 @@ cmake --build build_linux
 | 已实现函数 | ~140（~200+ stubs） |
 | 编译错误 / 警告 | 0 / 0 |
 | IDA 命名 | ~10,272 / 19,067 (53.9%) |
-| REVERSE 标记 | ~32（4 Inject 活跃, 37 None） |
+| REVERSE 标记 | ~32（2 Inject 活跃, 39 None） |
 | 已完成函数 | 39（faithful translations, completed:true） |
-| Inject 模式 | **4/13 活跃**（9 verified → None, slot stack 防并发覆写） |
+| Inject 模式 | **2/13 活跃**（9 verified → None, 2 stubs → None, slot stack） |
 | 幂等自动判定 | Phase 1+2 完成: TRUE 31%, FALSE 36%, UNCERTAIN 33% |
 | 当前阻塞 | .data 回滚验证仍需非渲染函数 |
 
