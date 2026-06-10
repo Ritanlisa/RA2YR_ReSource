@@ -600,14 +600,27 @@ def generate(markers, functions, fn_map, none_markers=None):
             w('  V.re=0;')
             w(f'  write_entry(\'C\', idx, 0x{ah}, V.re, V.re, R->Stack<DWORD>(0));')
         elif mode == "Replace":
-            # Replace mode: no transaction (leaf functions are idempotent)
-            # Original runs without protection, RE runs on same (dirty) state
-            # Transaction overhead (VirtualProtect ×872 pages) is catastrophic
-            # for per-pixel hooks like SetPixel
-            w('  auto*s=shadow::GetSlot();')
-            w(f'  s->hook_addr=0x{ah};')
-            w('  s->original_ret_addr=R->Stack<DWORD>(0);')
-            w('  R->Stack(0,(DWORD)&PostProcStub);')
+            # Replace mode: skip transaction if idempotent (original+RE on same state is fine)
+            # Non-idempotent functions need transaction for .data rollback
+            is_idem = fn.get('hook',{}).get('idempotent', False) if fn else False
+            if is_idem:
+                # No transaction: leaf functions like SetPixel are idempotent
+                w('  auto*s=shadow::GetSlot();')
+                w(f'  s->hook_addr=0x{ah};')
+                w('  s->original_ret_addr=R->Stack<DWORD>(0);')
+                w('  R->Stack(0,(DWORD)&PostProcStub);')
+            else:
+                # Full transaction for non-idempotent functions
+                w('  // Thread gate: only main game thread participates')
+                w('  if(GetCurrentThreadId()!=shadow::g_owner_tid) return 0;')
+                w('  // Stale transaction cleanup')
+                w('  auto*s=shadow::GetSlot();')
+                w('  if(s&&s->txn){s->txn->Discard();delete s->txn;s->txn=nullptr;++shadow::g_orphan_count;}')
+                w('  auto* txn = new shadow::ShadowTransaction();')
+                w('  txn->Begin();')
+                w(f'  s->hook_addr=0x{ah};')
+                w('  s->original_ret_addr=R->Stack<DWORD>(0);')
+                w('  R->Stack(0,(DWORD)&PostProcStub);')
         elif mode == "Inject":
             # Inject mode: full transaction + page protection for .data rollback
             w('  // Thread gate: only main game thread participates')

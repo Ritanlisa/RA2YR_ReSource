@@ -23,16 +23,28 @@ static LONG CALLBACK VEHHandler(PEXCEPTION_POINTERS info)
         info->ExceptionRecord->ExceptionInformation[1]
     );
 
-    auto* txn = ShadowTransaction::Current();
-    if (!txn) {
-        return EXCEPTION_CONTINUE_SEARCH;
-    }
-
+    // Only handle writes to .data range
     if (fault_addr < ShadowTransaction::DataStart() || fault_addr >= ShadowTransaction::DataEnd()) {
         return EXCEPTION_CONTINUE_SEARCH;
     }
 
-    txn->OnWriteViolation(fault_addr);
+    // Is there an active transaction?
+    if (!ShadowTransaction::Current()) {
+        return EXCEPTION_CONTINUE_SEARCH;
+    }
+
+    // Owner thread: normal backup + unprotect via transaction
+    if (GetCurrentThreadId() == shadow::g_owner_tid) {
+        ShadowTransaction::Current()->OnWriteViolation(fault_addr);
+        return EXCEPTION_CONTINUE_EXECUTION;
+    }
+
+    // Non-owner thread: just unprotect the page (no backup to avoid m_backups race)
+    void* page = reinterpret_cast<void*>(
+        reinterpret_cast<uintptr_t>(fault_addr) & ~0xFFF
+    );
+    DWORD old;
+    VirtualProtect(page, 4096, PAGE_READWRITE, &old);
     return EXCEPTION_CONTINUE_EXECUTION;
 }
 
