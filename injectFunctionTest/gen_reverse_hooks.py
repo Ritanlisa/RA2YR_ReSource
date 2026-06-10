@@ -132,7 +132,10 @@ def find_markers(functions, raw_json, callee_map, callee_names, all_marked):
                             full_sig = "?"
                         else:
                             ret_type = rt
-                            full_sig = s.group(0).strip().replace('\n',' ').replace('\r',' ').replace('  ',' ')
+                            fs = s.group(0).strip()
+                            fs = re.sub(r'\s+', ' ', fs)   # collapse whitespace
+                            fs = fs.replace('( ', '(')     # no space after opening paren
+                            full_sig = fs
                         if s:
                             raw_params = s.group(3).strip()
                             # Reject if parameters look like code, not declarations
@@ -323,7 +326,7 @@ def generate(markers, functions, fn_map, none_markers=None):
     w('static void FmtArr(std::ostream& os, int n, DWORD v){')
     w('  if(!v||n<=0){os<<\"(null)\"; return;}')
     w('  os<<\"[\";')
-    w('  for(int i=0;i<n;i++){if(i)os<<\",\"; os<<((int*)v)[i];}')
+    w('  for(int i=0;i<n;i++){if(i)os<<\",\"; os<<std::dec<<((int*)v)[i];}')
     w('  os<<\"](\"; Hex8(os,v); os<<\")\";')
     w('}')
     w('// Helper: write string to per-function buffer')
