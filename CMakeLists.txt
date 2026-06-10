@@ -118,15 +118,16 @@ if(WIN32)
     endif()
 
     # hook_dll — shadow execution framework (subdirectory build)
-    # Only built when Python3 is available (local dev).
-    # CI clones without Python fall back to committed gen/*.cpp files.
+    # Built only when Python3 + Ares submodule are available.
+    # Not a dependency of gamemd.exe (separate dev tool).
     find_package(Python3 COMPONENTS Interpreter QUIET)
-    if(Python3_FOUND OR EXISTS "${CMAKE_SOURCE_DIR}/injectFunctionTest/gen/reverse_hooks.cpp")
+    if(Python3_FOUND AND EXISTS "${CMAKE_SOURCE_DIR}/Ares/YRpp/Syringe.h")
         if(NOT Python3_FOUND)
             message(WARNING "Python3 not found — hook DLL will use committed gen/*.cpp (may be stale)")
         endif()
         add_subdirectory(injectFunctionTest)
-        add_dependencies(gamemd hook_dll)
+    else()
+        message(STATUS "Skipping hook_dll: requires Python3 + Ares/YRpp/Syringe.h submodule")
     endif()
 endif()
 
