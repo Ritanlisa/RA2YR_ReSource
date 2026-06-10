@@ -1222,7 +1222,7 @@ bool XSurface::DrawDashedLine(
 
 // IDA: 0x7BBAB0 -- XSurface::Fill (51B)
 // vtable[6] 0x18 -- fill entire surface with single color
-REVERSE(0x7bbab0, "XSurface::Fill: fill surface", "Capture")
+REVERSE(0x7bbab0, "XSurface::Fill: fill surface", "Inject")
 bool XSurface::Fill(uint32_t color)
 {
     RectangleStruct rect;
