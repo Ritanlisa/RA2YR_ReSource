@@ -202,7 +202,7 @@ void ShadowTransaction::RestoreAllPages()
         DWORD old;
         VirtualProtect(bp.page_addr, 4096, PAGE_READWRITE, &old);
         memcpy(bp.page_addr, bp.backup, 4096);
-        VirtualProtect(bp.page_addr, 4096, PAGE_READONLY, &old);
+        // No re-protect: End() unprotects ALL pages in its own loop
     }
 }
 

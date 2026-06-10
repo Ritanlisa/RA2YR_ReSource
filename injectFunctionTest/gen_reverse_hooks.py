@@ -704,7 +704,7 @@ def generate(markers, functions, fn_map, none_markers=None):
     w('  }')
     w('')
     w('  // Store RE result in slot for PostProcStub to return to caller')
-    w('  if(s) { s->re_result_eax = V.re; s->re_result_edx = V.d; }')
+    w('  if(s) { s->re_result_eax = V.re; s->re_result_edx = 0; }  // edx=V.d is INPUT edx, not RE output')
     w('')
     w('  // Compare and log')
     w('  DWORD ret=s?s->original_ret_addr:0;')
