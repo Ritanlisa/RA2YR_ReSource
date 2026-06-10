@@ -76,13 +76,13 @@ target_compile_options(hook_dll PRIVATE $<$<COMPILE_LANGUAGE:CXX>:/utf-8>)
 target_link_options(hook_dll PRIVATE "/MAP:${CMAKE_CURRENT_BINARY_DIR}/hook_dll.map")
 
 # ============================================================
-# Code generation (opt-in — default: use committed gen/*.cpp)
+# Code generation — auto-regenerate gen/*.cpp from REVERSE markers
+# Runs on every build when Python is available.
+# Falls back to committed gen files when Python is absent (CI / clean clone).
 # ============================================================
-option(HOOK_REGEN_GENERATED "Regenerate gen/reverse_hooks.cpp from REVERSE markers" OFF)
+find_package(Python3 COMPONENTS Interpreter QUIET)
 
-if(HOOK_REGEN_GENERATED)
-    find_package(Python3 COMPONENTS Interpreter REQUIRED)
-
+if(Python3_FOUND)
     # Collect all source files that may contain REVERSE markers
     file(GLOB_RECURSE REVERSE_SOURCES CONFIGURE_DEPENDS
         "${GAMEMD_INCLUDE_DIR}/*.hpp"
@@ -95,7 +95,8 @@ if(HOOK_REGEN_GENERATED)
     set(GEN_DIR     "${CMAKE_CURRENT_SOURCE_DIR}/gen")
     set(SCRIPTS_DIR "${CMAKE_CURRENT_SOURCE_DIR}")
 
-    # Step 1: Idempotency analysis → idempotent_results.json + audit.txt
+    # Step 1: Idempotency analysis → idempotent_results.json
+    # (Only re-runs when purity_effects.json or annotations.json change)
     add_custom_command(
         OUTPUT  "${SCRIPTS_DIR}/idempotent_results.json"
         COMMAND "${Python3_EXECUTABLE}" "${SCRIPTS_DIR}/analyze_idempotent.py"
@@ -107,7 +108,7 @@ if(HOOK_REGEN_GENERATED)
         WORKING_DIRECTORY "${SCRIPTS_DIR}"
     )
 
-    # Step 2: Generate hook code (reads idempotent_results.json from source dir)
+    # Step 2: Generate hook code → gen/reverse_hooks.cpp + check + re_impl
     set(GEN_OUTPUTS
         "${GEN_DIR}/reverse_hooks.cpp"
         "${GEN_DIR}/reverse_check.cpp"
@@ -128,6 +129,8 @@ if(HOOK_REGEN_GENERATED)
 
     add_custom_target(regenerate_hooks ALL DEPENDS ${GEN_OUTPUTS})
     add_dependencies(hook_dll regenerate_hooks)
+else()
+    message(STATUS "Python3 not found — using committed gen/*.cpp files")
 endif()
 
 # ============================================================

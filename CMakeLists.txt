@@ -117,9 +117,14 @@ if(WIN32)
         )
     endif()
 
-    # hook_dll — shadow execution framework, built separately:
-    #   cmake -B build_hook_release -A Win32 -DHOOK_OUTPUT_DIR=D:/RA2MD
-    #   cmake --build build_hook_release --config Release
+    # hook_dll — shadow execution framework (subdirectory build)
+    # Only built when Python3 is available (local dev).
+    # CI clones without Python fall back to committed gen/*.cpp files.
+    find_package(Python3 COMPONENTS Interpreter QUIET)
+    if(Python3_FOUND OR EXISTS "${CMAKE_SOURCE_DIR}/injectFunctionTest/gen/reverse_hooks.cpp")
+        add_subdirectory(injectFunctionTest)
+        add_dependencies(gamemd hook_dll)
+    endif()
 endif()
 
 # Platform-specific settings for executable
