@@ -275,8 +275,8 @@ public:
     int     Unknown_696;
     int     ProductionStepsTarget;
     int     ProductionSizeOverride;
-    uint8   PipelineStepCount;
-    uint8   _pad_prod_71[3];
+    uint8_t PipelineStepCount;
+    uint8_t _pad_prod_71[3];
     TechnoTypeClass* NextTypeInChain;
     int     Unknown_716;
     int     Unknown_720;
