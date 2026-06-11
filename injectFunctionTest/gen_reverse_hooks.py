@@ -280,18 +280,16 @@ def find_markers(functions, raw_json, callee_map, callee_names, all_marked, idem
                             fs = fs.replace('( ', '(')     # no space after opening paren
                             full_sig = fs
                         if s:
-                            # Extract params from source text (SIG truncates at first ))
-                            src = rest if rest and '(' in rest else ln
-                            raw_params = _extract_params(src)
+                            raw_params = s.group(3).strip()
                             # Reject if parameters look like code, not declarations
                             # (e.g. "draw_rect.X, draw_rect.Y" from Point2D tl(draw_rect.X, draw_rect.Y))
-                            has_dot = any('.' in p for p in (split_params(raw_params) if raw_params else []))
+                            has_dot = any('.' in p for p in (s.group(3).split(',') if s.group(3) else []))
                             if has_dot:
                                 s = None  # discard: found code, not function declaration
                                 fname = "?"
                                 full_sig = "?"
                             elif raw_params and raw_params != 'void':
-                                for p in split_params(raw_params):
+                                for p in split_params(s.group(3)):
                                     # Find last identifier as parameter name
                                     ws = p.split()
                                     if len(ws) < 2: continue
@@ -300,24 +298,16 @@ def find_markers(functions, raw_json, callee_map, callee_names, all_marked, idem
                                     pi = len(ws) - 1
                                     for k in range(len(ws)-1, -1, -1):
                                         w = ws[k]
-                                        stripped = w.lstrip('(*&')
-                                        if not stripped: continue
-                                        pm = re.match(r'^([a-zA-Z_]\w*)', stripped)
-                                        if not pm: continue
-                                        end = len(w) - len(stripped) + pm.end()
-                                        # If word starts with (* and the name is inside, it's the param name
-                                        if w.startswith('(*'):
-                                            pn = pm.group(1); pi = k; break
-                                        # Otherwise, skip if trailing char indicates type keyword
-                                        if end < len(w) and w[end] in ',;&)':
+                                        # If word starts with '(' or contains '(' with no matching ')', skip
+                                        if w[0] in '(*&' and k > 0:
                                             continue
-                                        pn = pm.group(1); pi = k; break
+                                        # find identifier via regex
+                                        pm = re.match(r'^([a-zA-Z_]\w*)', w.lstrip('(*&'))
+                                        if pm:
+                                            pn = pm.group(1); pi = k; break
                                     if not pn: continue
-                                    if p.find('(*') >= 0:
-                                        ty = p.replace(pn, '', 1).replace('  ', ' ').strip()
-                                    else:
-                                        ty = ' '.join(ws[:pi]) + (' ' if pi > 0 else '') + ws[pi].replace(pn, '', 1).lstrip('(*&')
-                                        ty = ty.strip()
+                                    ty = ' '.join(ws[:pi]) + (' ' if pi > 0 else '') + ws[pi].replace(pn, '', 1).lstrip('(*&')
+                                    ty = ty.strip()
                                     arr_sz = 0
                                     if ty and pn != 'const':
                                         params.append((ty, pn, arr_sz))
@@ -429,26 +419,12 @@ def san(n):
     return n.replace('::','_').replace('@','_').replace('<','_').replace('>','_')
 
 KNOWN_OSTREAM = {'Point2D', 'RectangleStruct', 'Vector2D'}
-CHAR_PTR_TYPES = {'char', 'char*', 'const char', 'const char*'}
 
 def is_data_ptr(ty):
     return ('*' in ty or ty.endswith('&')) and '(*' not in ty
 
 def is_func_ptr(ty):
     return '(*' in ty
-
-def _extract_params(sig_text):
-    """Extract parameter text from function signature with balanced parens."""
-    # Find the opening ( after function name
-    paren_start = sig_text.find('(')
-    if paren_start < 0: return ''
-    depth = 0
-    for i in range(paren_start, len(sig_text)):
-        if sig_text[i] == '(': depth += 1
-        elif sig_text[i] == ')': depth -= 1
-        if depth == 0:
-            return sig_text[paren_start + 1:i].strip()
-    return ''
 
 def split_params(params_str):
     """Split parameter list on commas, respecting nested parentheses."""
@@ -567,9 +543,7 @@ def generate(markers, functions, fn_map, none_markers=None):
                     w(f'  os<<" {pt[1]}(Stack)=";FmtArr(os,{pt[2]},{ref});')
                 elif is_data_ptr(ty_orig):
                     bare = ty.replace('&','').replace('*','').strip()
-                    if bare in CHAR_PTR_TYPES:
-                        w(f'  os<<" {pt[1]}(Stack)=";os<<(const char*)({ref});')
-                    elif bare in KNOWN_OSTREAM:
+                    if bare in KNOWN_OSTREAM:
                         w(f'  os<<" {pt[1]}(Stack)=";FmtPtr(os,(const {bare}*)({ref}));')
                     else:
                         w(f'  os<<" {pt[1]}(Stack)=";Hex8(os,{ref});')
@@ -598,9 +572,7 @@ def generate(markers, functions, fn_map, none_markers=None):
                     w(f'  os<<" {pt[1]}(Stack)=";FmtArr(os,{pt[2]},{ref});')
                 elif is_data_ptr(ty_orig):
                     bare = ty.replace('&','').replace('*','').strip()
-                    if bare in CHAR_PTR_TYPES:
-                        w(f'  os<<" {pt[1]}(Stack)=";os<<(const char*)({ref});')
-                    elif bare in KNOWN_OSTREAM:
+                    if bare in KNOWN_OSTREAM:
                         w(f'  os<<" {pt[1]}(Stack)=";FmtPtr(os,(const {bare}*)({ref}));')
                     else:
                         w(f'  os<<" {pt[1]}(Stack)=";Hex8(os,{ref});')
@@ -618,9 +590,7 @@ def generate(markers, functions, fn_map, none_markers=None):
                     w(f'  os<<" {pt[1]}(Stack)=";FmtArr(os,{pt[2]},{ref});')
                 elif is_data_ptr(ty_orig):
                     bare = ty.replace('&','').replace('*','').strip()
-                    if bare in CHAR_PTR_TYPES:
-                        w(f'  os<<" {pt[1]}(Stack)=";os<<(const char*)({ref});')
-                    elif bare in KNOWN_OSTREAM:
+                    if bare in KNOWN_OSTREAM:
                         w(f'  os<<" {pt[1]}(Stack)=";FmtPtr(os,(const {bare}*)({ref}));')
                     else:
                         w(f'  os<<" {pt[1]}(Stack)=";Hex8(os,{ref});')

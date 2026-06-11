@@ -28,13 +28,10 @@ set(HOOK_SOURCES
     headless_server.cpp
     element_tracker.cpp
     render_hooks.cpp
-    hook_globals.cpp                 # stub globals for gamemd symbols
     "${CMAKE_CURRENT_SOURCE_DIR}/gen/reverse_hooks.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/gen/reverse_check.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/gen/re_impl.cpp"
     test_hooks.cpp
-    # RE implementation sources (thin shims call these)
-    "${CMAKE_CURRENT_SOURCE_DIR}/../src/render/surface.cpp"
 )
 
 set(HOOK_HEADERS
@@ -61,7 +58,6 @@ add_library(hook_dll SHARED
 
 target_include_directories(hook_dll PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}
-    ${CMAKE_CURRENT_SOURCE_DIR}/stub_override   # REVERSE(a,b,c)= → no-op
     ${YRPP_DIR}
     ${GAMEMD_INCLUDE_DIR}
 )

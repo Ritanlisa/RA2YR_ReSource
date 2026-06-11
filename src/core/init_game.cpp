@@ -146,7 +146,7 @@ void TimerPumpMessages(void* bink_player) { (void)bink_player; }
 
 // IDA 0x4355B0 -- Palette::6BitTo16Bit: packs 3 bytes into 24-bit (used as temp struct)
 // IDA 0x4355B0 -- Palette6BitTo16Bit: (b<<16)|(g<<8)|r
-REVERSE(0x4355B0, "Palette6BitTo16Bit: pack 6-bit RGB to 24-bit", "Inject") /* first-5-bytes unsafe */
+REVERSE(0x4355B0, "Palette6BitTo16Bit: pack 6-bit RGB to 24-bit", "None") /* first-5-bytes unsafe */
 int Palette6BitTo16Bit(int r, int g, int b) {
     return ((uint8_t)b << 16) | ((uint8_t)g << 8) | (uint8_t)r;
 }
