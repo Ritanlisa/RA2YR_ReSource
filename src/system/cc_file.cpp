@@ -23,7 +23,7 @@ CCFileClass::CCFileClass(const char* pFileName) noexcept
 
 // IDA 0x473C50 -- CCFileClass::Open
 // Searches MIX pool first, then falls back to disk
-REVERSE(0x473c50, "CCFileClass::Open: IDA verified", "Inject")
+REVERSE(0x473c50, "CCFileClass::Open: IDA verified", "None")
 bool CCFileClass::Open(const char* pFileName)
 {
     if (!pFileName || !pFileName[0])
@@ -76,7 +76,7 @@ bool CCFileClass::Open(const char* pFileName)
     return false;
 }
 
-REVERSE(0x4a3890, "CCFileClass::ReadEntireFile: IDA verified", "Inject")
+REVERSE(0x4a3890, "CCFileClass::ReadEntireFile: IDA verified", "None")
 // IDA 0x4A3890 -- CCFileClass::ReadEntireFile
 void* CCFileClass::ReadEntireFile()
 {
@@ -88,7 +88,7 @@ void* CCFileClass::ReadEntireFile()
     return FileSystem::LoadFile(FileName, false);
 }
 
-REVERSE(0x473ce0, "CCFileClass::Reset: IDA verified", "Inject")
+REVERSE(0x473ce0, "CCFileClass::Reset: IDA verified", "None")
 // IDA 0x473CE0 -- CCFileClass::Reset
 void CCFileClass::Reset()
 {

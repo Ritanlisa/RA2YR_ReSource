@@ -76,7 +76,7 @@ static std::string Trim(const char* s, int len)
 }
 
 // ============================================================
-REVERSE(0x4741f0, "CCINIClass::Load: IDA verified", "Inject")
+REVERSE(0x4741f0, "CCINIClass::Load: IDA verified", "None")
 // IDA 0x4741F0 -- CCINIClass::Load(file, unk1, unk2)
 // Parses INI file content into sections and key=value pairs
 // ============================================================

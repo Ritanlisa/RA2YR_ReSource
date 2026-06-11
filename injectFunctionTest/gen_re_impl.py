@@ -23,12 +23,12 @@ CATEGORY_MAP = {
     "0x7bbab0": "fill", "0x7bb350": "ellipse",
     "0x4f4780": "frame_present",
     "0x480110": "calc_draw_pos",
-    "0x6c8c40": "stub", "0x4355b0": "stub", "0x4a38d0": "stub",
+    "0x6c8c40": "get_ticks", "0x4355b0": "pack_rgb", "0x4a38d0": "stub",
     "0x48d080": "stub", "0x5b40b0": "stub", "0x52ba60": "stub",
     "0x55d360": "stub", "0x55cfd0": "stub", "0x48c8b0": "stub",
     "0x52d9a0": "stub", "0x48ccc0": "stub", "0x530000": "stub",
     "0x410260": "stub", "0x473c50": "stub", "0x4a3890": "stub",
-    "0x473ce0": "stub", "0x535aa0": "stub", "0x535b30": "stub",
+    "0x473ce0": "stub", "0x535aa0": "ini_ctor", "0x535b30": "ccini_ctor",
     "0x4741f0": "stub", "0x5301a0": "stub",
 }
 
@@ -188,6 +188,11 @@ TEMPLATES['global'] = [
 ]
 
 # ---- stubs (generated dynamically from param count) ----
+TEMPLATES['get_ticks'] = ['return timeGetTime() >> 4;']
+TEMPLATES['pack_rgb'] = ['return ((unsigned char)p2 << 16) | ((unsigned char)p1 << 8) | (unsigned char)p0;']
+TEMPLATES['ini_ctor'] = ['memset((void*)p0, 0, 0x1500);', 'return (DWORD)p0;']
+TEMPLATES['ccini_ctor'] = ['memset((void*)p0, 0, 0x1500);', '*(DWORD*)((DWORD)p0 + 0x1500) = 0;', '*(DWORD*)((DWORD)p0 + 0x1504) = 0;', 'return (DWORD)p0;']
+
 STUB_CATS = {'bresenham_line','callback_line','thin_wrapper','dashed_line',
              'ellipse','frame_present','calc_draw_pos','stub'}
 

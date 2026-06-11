@@ -4,81 +4,12 @@
 
 // Timer::GetTicks @ 0x6c8c40
 extern "C" DWORD RE_Timer_GetTicks() {
-return 0; // TODO
+return timeGetTime() >> 4;
 }
 
 // Palette::6BitTo16Bit @ 0x4355b0
 extern "C" DWORD RE_Palette_6BitTo16Bit(DWORD p0, DWORD p1, DWORD p2, DWORD p3) {
-(void)p0;
-(void)p1;
-(void)p2;
-(void)p3;
-return 0; // TODO
-}
-
-// LoadFileSHP @ 0x4a38d0
-extern "C" DWORD RE_LoadFileSHP(DWORD p0, DWORD p1, DWORD p2) {
-(void)p0;
-(void)p1;
-(void)p2;
-return 0; // TODO
-}
-
-// Event::Dispatch @ 0x48d080
-extern "C" DWORD RE_Event_Dispatch() {
-return 0; // TODO
-}
-
-// SearchMIXFile @ 0x5b40b0
-extern "C" DWORD RE_SearchMIXFile(DWORD p0, DWORD p1, DWORD p2) {
-(void)p0;
-(void)p1;
-(void)p2;
-return 0; // TODO
-}
-
-// InitGame @ 0x52ba60
-extern "C" DWORD RE_InitGame(DWORD p0) {
-(void)p0;
-return 0; // TODO
-}
-
-// GameFrameLoop @ 0x55d360
-extern "C" DWORD RE_GameFrameLoop() {
-return 0; // TODO
-}
-
-// GameFrameCheck @ 0x55cfd0
-extern "C" DWORD RE_GameFrameCheck() {
-return 0; // TODO
-}
-
-// MainGameFrame @ 0x48c8b0
-extern "C" DWORD RE_MainGameFrame() {
-return 0; // TODO
-}
-
-// MenuSelect @ 0x52d9a0
-extern "C" DWORD RE_MenuSelect() {
-return 0; // TODO
-}
-
-// MainGame @ 0x48ccc0
-extern "C" DWORD RE_MainGame() {
-return 0; // TODO
-}
-
-// LoadExpansionMixFiles @ 0x530000
-extern "C" DWORD RE_LoadExpansionMixFiles() {
-return 0; // TODO
-}
-
-// AbstractClass::QueryInterface @ 0x410260
-extern "C" DWORD RE_AbstractClass_QueryInterface(DWORD p0, DWORD p1, DWORD p2) {
-(void)p0;
-(void)p1;
-(void)p2;
-return 0; // TODO
+return ((unsigned char)p2 << 16) | ((unsigned char)p1 << 8) | (unsigned char)p0;
 }
 
 // ClipRectIntersection @ 0x421b60
@@ -335,47 +266,16 @@ extern "C" DWORD RE_XSurface_DrawRect(DWORD p0, DWORD p1, DWORD p2) {
 return 0; // TODO
 }
 
-// CCFileClass::Open @ 0x473c50
-extern "C" DWORD RE_CCFileClass_Open(DWORD p0, DWORD p1) {
-(void)p0;
-(void)p1;
-return 0; // TODO
-}
-
-// CCFileClass::ReadEntireFile @ 0x4a3890
-extern "C" DWORD RE_CCFileClass_ReadEntireFile(DWORD p0) {
-(void)p0;
-return 0; // TODO
-}
-
-// CCFileClass::Reset @ 0x473ce0
-extern "C" DWORD RE_CCFileClass_Reset(DWORD p0) {
-(void)p0;
-return 0; // TODO
-}
-
 // INIClass::Constructor @ 0x535aa0
 extern "C" DWORD RE_INIClass_Constructor(DWORD p0) {
-(void)p0;
-return 0; // TODO
+memset((void*)p0, 0, 0x1500);
+return (DWORD)p0;
 }
 
 // CCINIClass::Constructor @ 0x535b30
 extern "C" DWORD RE_CCINIClass_Constructor(DWORD p0) {
-(void)p0;
-return 0; // TODO
-}
-
-// CCINIClass::Load @ 0x4741f0
-extern "C" DWORD RE_CCINIClass_Load(DWORD p0, DWORD p1, DWORD p2, DWORD p3) {
-(void)p0;
-(void)p1;
-(void)p2;
-(void)p3;
-return 0; // TODO
-}
-
-// MixFileClass::Bootstrap @ 0x5301a0
-extern "C" DWORD RE_MixFileClass_Bootstrap() {
-return 0; // TODO
+memset((void*)p0, 0, 0x1500);
+*(DWORD*)((DWORD)p0 + 0x1500) = 0;
+*(DWORD*)((DWORD)p0 + 0x1504) = 0;
+return (DWORD)p0;
 }

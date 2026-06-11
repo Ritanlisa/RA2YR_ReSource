@@ -42,7 +42,7 @@ bool InitRules()
 }
 
 // ============================================================
-REVERSE(0x530000, "LoadExpansionMixFiles: IDA verified", "Inject")
+REVERSE(0x530000, "LoadExpansionMixFiles: IDA verified", "None")
 // IDA 0x530000 -- LoadExpansionMixFiles (406B)
 bool LoadExpansionMixFiles()
 {

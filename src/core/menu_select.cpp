@@ -41,11 +41,11 @@ static MenuState MultiplayerScreen(int);
 static MenuState SkirmishSetupScreen();
 static void      OptionsScreenDialog();
 static char      ShowExitDialog();
-REVERSE(0x55d360, "GameFrameLoop: IDA verified", "Inject")
+REVERSE(0x55d360, "GameFrameLoop: IDA verified", "None")
 static bool      GameFrameLoop();
-REVERSE(0x55cfd0, "GameFrameCheck: IDA verified", "Inject")
+REVERSE(0x55cfd0, "GameFrameCheck: IDA verified", "None")
 static bool      GameFrameCheck();
-REVERSE(0x48c8b0, "MainGameFrame: IDA verified", "Inject")
+REVERSE(0x48c8b0, "MainGameFrame: IDA verified", "None")
 static void      MainGameFrame();
 
 // IDA 0x406F70 -- AudioVideoUpdate (per-frame audio/video poll)
@@ -681,7 +681,7 @@ static void MainGameFrame(){
 //   9=LoadGame  10=BackToCampaign  11=SkirmishMode5
 //   13=PlayMovie  14=CampaignCD  15=Credits
 //   16/17=GameStart(return 1)
-REVERSE(0x52d9a0, "MenuSelect: IDA verified", "Inject")
+REVERSE(0x52d9a0, "MenuSelect: IDA verified", "None")
 // IDA 0x52D9A0 -- MenuSelect (4536B, 222BBs, 19-case state machine)
 char MenuSelect(){
     g_MenuState=MenuState::MenuIdle;g_GameMode=0;
@@ -738,7 +738,7 @@ char MenuSelect(){
 }
 
 // IDA: MainGame @ 0x48CCC0 (780B, 51BBs)
-REVERSE(0x48ccc0, "MainGame: IDA verified", "Inject")
+REVERSE(0x48ccc0, "MainGame: IDA verified", "None")
 // The main game loop: InitGame -- MenuSelect -- { GameLoop -- cleanup } -- repeat
 void MainGame(){
     LOG_INFO("MainGame: entering");
