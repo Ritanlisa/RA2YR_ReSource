@@ -50,10 +50,11 @@ PostProcStub PROC PUBLIC
     mov  edx, [ecx + 088h]          ; re_result_edx
 
     pop  ecx                         ; ecx = ret_addr → jmp target
-    pop  eax                         ; eax = re_eax
+    pop  eax                         ; discard re_eax (comparison-only)
+    mov  eax, ebx                    ; restore orig_eax
 
     pop  ebx                         ; restore ebx
-    jmp  ecx                         ; EAX=re_eax, EDX=re_edx
+    jmp  ecx                         ; EAX=orig_eax, EDX=re_edx
 
 no_slot:
     mov  eax, ebx                    ; return orig_eax

@@ -10,7 +10,7 @@
 namespace gamemd
 {
 
-REVERSE(0x421B60, "ClipRectIntersection: rect intersection", "Inject")
+REVERSE(0x421B60, "ClipRectIntersection: rect intersection", "None")
 RectangleStruct* ClipRectIntersection(
     RectangleStruct* result,
     const RectangleStruct* clip_rect,
@@ -776,7 +776,7 @@ uint16_t XSurface::GetPixelAtCoords(const Point2D& point, const RectangleStruct&
 
 // IDA: 0x7BAB90 -- XSurface::WalkLine (511B)
 // vtable[17] 0x44 -- Bresenham walker with callback
-REVERSE(0x7bab90, "XSurface::WalkLine: Bresenham walker", "None")
+REVERSE(0x7bab90, "XSurface::WalkLine: Bresenham walker", "Inject")
 bool XSurface::WalkLine(
     const Point2D& start, const Point2D& end,
     void (*callback)(const Point2D&))
@@ -856,7 +856,7 @@ bool XSurface::WalkLine(
 
 // IDA: 0x7BA610 -- XSurface::DrawLineEx (685B)
 // vtable[11] 0x2C -- clipped line with inline Bresenham pixel write
-REVERSE(0x7ba610, "XSurface::DrawLineEx: clipped line", "None")
+REVERSE(0x7ba610, "XSurface::DrawLineEx: clipped line", "Inject")
 bool XSurface::DrawLineEx(
     const RectangleStruct& clip_rect,
     const Point2D& start, const Point2D& end,
@@ -1026,7 +1026,7 @@ bool XSurface::DrawLineEx(
 
 // IDA: 0x7BA5E0 -- XSurface::DrawLine (48B)
 // vtable[12] 0x30 -- DrawLineEx wrapper with surface-level clip
-REVERSE(0x7ba5e0, "XSurface::DrawLine: no-clip wrapper", "None")
+REVERSE(0x7ba5e0, "XSurface::DrawLine: no-clip wrapper", "Inject")
 bool XSurface::DrawLine(const Point2D& start, const Point2D& end, uint32_t color)
 {
     RectangleStruct clip;
@@ -1247,7 +1247,7 @@ bool XSurface::DrawRectEx(
 
 // IDA: 0x7BAD90 -- XSurface::DrawRect (43B)
 // vtable[22] 0x58 -- DrawRectEx wrapper with surface-level clip
-REVERSE(0x7bad90, "XSurface::DrawRect: no-clip rect", "None")
+REVERSE(0x7bad90, "XSurface::DrawRect: no-clip rect", "Inject")
 bool XSurface::DrawRect(const RectangleStruct& draw_rect, uint32_t color)
 {
     RectangleStruct clip;

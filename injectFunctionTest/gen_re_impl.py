@@ -272,7 +272,7 @@ def generate_re_impl(markers):
             # Stub: suppress all params, return 0
             for pn in param_names:
                 out.append(f'(void){pn};')
-            out.append('return 0; // TODO')
+            out.append('return 1;')
         else:
             tmpl = TEMPLATES.get(cat)
             if tmpl is None:

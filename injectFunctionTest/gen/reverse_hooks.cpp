@@ -5,21 +5,24 @@
 #include "hook_template.hpp"
 using namespace gamemd;
 extern "C" void PostProcStub();
-extern "C" DWORD RE_ClipRectIntersection(DWORD, DWORD, DWORD, DWORD, DWORD);
+extern "C" DWORD RE_XSurface_WalkLine(DWORD, DWORD, DWORD);
+extern "C" DWORD RE_XSurface_DrawLineEx(DWORD, DWORD, DWORD, DWORD, DWORD);
+extern "C" DWORD RE_XSurface_DrawLine(DWORD, DWORD, DWORD, DWORD);
+extern "C" DWORD RE_XSurface_DrawRect(DWORD, DWORD, DWORD);
 
 static FILE* f = nullptr;
-static int ctr[1]={};
+static int ctr[4]={};
 static const char* nm[32]={};
 static DWORD addr_tbl[32]={};
 static const char* sig[32]={};
 static const char* rt[32]={};
-static bool is_cap[1]={};
-static bool has_diff[1]={};
-static S in[1]={};
+static bool is_cap[4]={};
+static bool has_diff[4]={};
+static S in[4]={};
 #include "hook_template.hpp"
 
-static char fn_buf[1][FN_BUF_SZ]={0};
-static int  fn_buf_len[1]={0};
+static char fn_buf[4][FN_BUF_SZ]={0};
+static int  fn_buf_len[4]={0};
 static HANDLE h = INVALID_HANDLE_VALUE;
 // Helper: write string to per-function buffer
 static void FnBuf(int idx, const std::string& s){
@@ -28,56 +31,56 @@ static void FnBuf(int idx, const std::string& s){
 }
 
 static void NN(){
-  nm[0]="ClipRectIntersection"; addr_tbl[0]=0x00421B60; is_cap[0]=false;
-  sig[0]="RectangleStruct* ClipRectIntersection(RectangleStruct* result, const RectangleStruct* clip_rect, const RectangleStruct* src_rect, int* x_off, int* y_off)"; rt[0]="RectangleStruct*";
-  nm[1]="Timer::GetTicks"; addr_tbl[1]=0x006C8C40;
-  sig[1]="int TimerGetTicks()"; rt[1]="int";
-  nm[2]="Palette::6BitTo16Bit"; addr_tbl[2]=0x004355B0;
-  sig[2]="int Palette6BitTo16Bit(int r, int g, int b)"; rt[2]="int";
-  nm[3]="LoadFileSHP"; addr_tbl[3]=0x004A38D0;
-  sig[3]="int LoadFileSHP(const char* filename)"; rt[3]="int";
-  nm[4]="Event::Dispatch"; addr_tbl[4]=0x0048D080;
-  sig[4]="void EventDispatchEx()"; rt[4]="void";
-  nm[5]="SearchMIXFile"; addr_tbl[5]=0x005B40B0;
-  sig[5]="const void* SearchMIXFile(const char* name)"; rt[5]="const void*";
-  nm[6]="InitGame"; addr_tbl[6]=0x0052BA60;
-  sig[6]="int InitGame(bool no_cd)"; rt[6]="int";
-  nm[7]="GameFrameLoop"; addr_tbl[7]=0x0055D360;
-  sig[7]="static bool GameFrameLoop()"; rt[7]="static bool";
-  nm[8]="GameFrameCheck"; addr_tbl[8]=0x0055CFD0;
-  sig[8]="static bool GameFrameCheck()"; rt[8]="static bool";
-  nm[9]="MainGameFrame"; addr_tbl[9]=0x0048C8B0;
-  sig[9]="static void MainGameFrame()"; rt[9]="static void";
-  nm[10]="MenuSelect"; addr_tbl[10]=0x0052D9A0;
-  sig[10]="char MenuSelect()"; rt[10]="char";
-  nm[11]="MainGame"; addr_tbl[11]=0x0048CCC0;
-  sig[11]="void MainGame()"; rt[11]="void";
-  nm[12]="LoadExpansionMixFiles"; addr_tbl[12]=0x00530000;
-  sig[12]="bool LoadExpansionMixFiles()"; rt[12]="bool";
-  nm[13]="AbstractClass::QueryInterface"; addr_tbl[13]=0x00410260;
-  sig[13]="HRESULT AbstractClass::QueryInterface(const IID& iid, void** ppv)"; rt[13]="HRESULT";
-  nm[14]="ClipLine"; addr_tbl[14]=0x007BC2B0;
-  sig[14]="bool ClipLine(int start[2], int end[2], int clip_rect[4])"; rt[14]="bool";
-  nm[15]="XSurface::SetPixel"; addr_tbl[15]=0x007BAEB0;
-  sig[15]="bool XSurface::SetPixel(const Point2D& point, uint32_t color)"; rt[15]="bool";
-  nm[16]="XSurface::GetPixel"; addr_tbl[16]=0x007BAE60;
-  sig[16]="uint32_t XSurface::GetPixel(const Point2D& point)"; rt[16]="uint32_t";
-  nm[17]="XSurface::PutPixel"; addr_tbl[17]=0x007BAF90;
-  sig[17]="bool XSurface::PutPixel(const Point2D& point, uint16_t color, const RectangleStruct& clip_rect)"; rt[17]="bool";
-  nm[18]="XSurface::GetPixelAtCoords"; addr_tbl[18]=0x007BAF10;
-  sig[18]="uint16_t XSurface::GetPixelAtCoords(const Point2D& point, const RectangleStruct& clip_rect)"; rt[18]="uint16_t";
-  nm[19]="XSurface::WalkLine"; addr_tbl[19]=0x007BAB90;
-  sig[19]="bool XSurface::WalkLine(const Point2D& start, const Point2D& end, void (*callback)"; rt[19]="bool";
-  nm[20]="XSurface::DrawLineEx"; addr_tbl[20]=0x007BA610;
-  sig[20]="bool XSurface::DrawLineEx(const RectangleStruct& clip_rect, const Point2D& start, const Point2D& end, uint32_t color)"; rt[20]="bool";
-  nm[21]="XSurface::DrawLine"; addr_tbl[21]=0x007BA5E0;
-  sig[21]="bool XSurface::DrawLine(const Point2D& start, const Point2D& end, uint32_t color)"; rt[21]="bool";
-  nm[22]="XSurface::Fill"; addr_tbl[22]=0x007BBAB0;
-  sig[22]="bool XSurface::Fill(uint32_t color)"; rt[22]="bool";
-  nm[23]="XSurface::DrawRectEx"; addr_tbl[23]=0x007BADC0;
-  sig[23]="bool XSurface::DrawRectEx(const RectangleStruct& clip_rect, const RectangleStruct& draw_rect, uint32_t color)"; rt[23]="bool";
-  nm[24]="XSurface::DrawRect"; addr_tbl[24]=0x007BAD90;
-  sig[24]="bool XSurface::DrawRect(const RectangleStruct& draw_rect, uint32_t color)"; rt[24]="bool";
+  nm[0]="XSurface::WalkLine"; addr_tbl[0]=0x007BAB90; is_cap[0]=false;
+  sig[0]="bool XSurface::WalkLine(const Point2D& start, const Point2D& end, void (*callback)"; rt[0]="bool";
+  nm[1]="XSurface::DrawLineEx"; addr_tbl[1]=0x007BA610; is_cap[1]=false;
+  sig[1]="bool XSurface::DrawLineEx(const RectangleStruct& clip_rect, const Point2D& start, const Point2D& end, uint32_t color)"; rt[1]="bool";
+  nm[2]="XSurface::DrawLine"; addr_tbl[2]=0x007BA5E0; is_cap[2]=false;
+  sig[2]="bool XSurface::DrawLine(const Point2D& start, const Point2D& end, uint32_t color)"; rt[2]="bool";
+  nm[3]="XSurface::DrawRect"; addr_tbl[3]=0x007BAD90; is_cap[3]=false;
+  sig[3]="bool XSurface::DrawRect(const RectangleStruct& draw_rect, uint32_t color)"; rt[3]="bool";
+  nm[4]="Timer::GetTicks"; addr_tbl[4]=0x006C8C40;
+  sig[4]="int TimerGetTicks()"; rt[4]="int";
+  nm[5]="Palette::6BitTo16Bit"; addr_tbl[5]=0x004355B0;
+  sig[5]="int Palette6BitTo16Bit(int r, int g, int b)"; rt[5]="int";
+  nm[6]="LoadFileSHP"; addr_tbl[6]=0x004A38D0;
+  sig[6]="int LoadFileSHP(const char* filename)"; rt[6]="int";
+  nm[7]="Event::Dispatch"; addr_tbl[7]=0x0048D080;
+  sig[7]="void EventDispatchEx()"; rt[7]="void";
+  nm[8]="SearchMIXFile"; addr_tbl[8]=0x005B40B0;
+  sig[8]="const void* SearchMIXFile(const char* name)"; rt[8]="const void*";
+  nm[9]="InitGame"; addr_tbl[9]=0x0052BA60;
+  sig[9]="int InitGame(bool no_cd)"; rt[9]="int";
+  nm[10]="GameFrameLoop"; addr_tbl[10]=0x0055D360;
+  sig[10]="static bool GameFrameLoop()"; rt[10]="static bool";
+  nm[11]="GameFrameCheck"; addr_tbl[11]=0x0055CFD0;
+  sig[11]="static bool GameFrameCheck()"; rt[11]="static bool";
+  nm[12]="MainGameFrame"; addr_tbl[12]=0x0048C8B0;
+  sig[12]="static void MainGameFrame()"; rt[12]="static void";
+  nm[13]="MenuSelect"; addr_tbl[13]=0x0052D9A0;
+  sig[13]="char MenuSelect()"; rt[13]="char";
+  nm[14]="MainGame"; addr_tbl[14]=0x0048CCC0;
+  sig[14]="void MainGame()"; rt[14]="void";
+  nm[15]="LoadExpansionMixFiles"; addr_tbl[15]=0x00530000;
+  sig[15]="bool LoadExpansionMixFiles()"; rt[15]="bool";
+  nm[16]="AbstractClass::QueryInterface"; addr_tbl[16]=0x00410260;
+  sig[16]="HRESULT AbstractClass::QueryInterface(const IID& iid, void** ppv)"; rt[16]="HRESULT";
+  nm[17]="ClipRectIntersection"; addr_tbl[17]=0x00421B60;
+  sig[17]="RectangleStruct* ClipRectIntersection(RectangleStruct* result, const RectangleStruct* clip_rect, const RectangleStruct* src_rect, int* x_off, int* y_off)"; rt[17]="RectangleStruct*";
+  nm[18]="ClipLine"; addr_tbl[18]=0x007BC2B0;
+  sig[18]="bool ClipLine(int start[2], int end[2], int clip_rect[4])"; rt[18]="bool";
+  nm[19]="XSurface::SetPixel"; addr_tbl[19]=0x007BAEB0;
+  sig[19]="bool XSurface::SetPixel(const Point2D& point, uint32_t color)"; rt[19]="bool";
+  nm[20]="XSurface::GetPixel"; addr_tbl[20]=0x007BAE60;
+  sig[20]="uint32_t XSurface::GetPixel(const Point2D& point)"; rt[20]="uint32_t";
+  nm[21]="XSurface::PutPixel"; addr_tbl[21]=0x007BAF90;
+  sig[21]="bool XSurface::PutPixel(const Point2D& point, uint16_t color, const RectangleStruct& clip_rect)"; rt[21]="bool";
+  nm[22]="XSurface::GetPixelAtCoords"; addr_tbl[22]=0x007BAF10;
+  sig[22]="uint16_t XSurface::GetPixelAtCoords(const Point2D& point, const RectangleStruct& clip_rect)"; rt[22]="uint16_t";
+  nm[23]="XSurface::Fill"; addr_tbl[23]=0x007BBAB0;
+  sig[23]="bool XSurface::Fill(uint32_t color)"; rt[23]="bool";
+  nm[24]="XSurface::DrawRectEx"; addr_tbl[24]=0x007BADC0;
+  sig[24]="bool XSurface::DrawRectEx(const RectangleStruct& clip_rect, const RectangleStruct& draw_rect, uint32_t color)"; rt[24]="bool";
   nm[25]="CCFileClass::Open"; addr_tbl[25]=0x00473C50;
   sig[25]="bool CCFileClass::Open(const char* pFileName)"; rt[25]="bool";
   nm[26]="CCFileClass::ReadEntireFile"; addr_tbl[26]=0x004A3890;
@@ -96,34 +99,68 @@ static void NN(){
 struct InitHookNames { InitHookNames() { NN(); } };
 static InitHookNames _init;
 static int I(DWORD x){
-  static DWORD A[2]={
-  0x00421B60,
+  static DWORD A[5]={
+  0x007BA5E0,
+  0x007BA610,
+  0x007BAB90,
+  0x007BAD90,
   0};
-  static int Imap[1]={
+  static int Imap[4]={
+    2,
+    1,
     0,
+    3,
   };
-  int lo=0,hi=1;
+  int lo=0,hi=4;
   while(lo<hi){int m=(lo+hi)/2;if(A[m]<x)lo=m+1;else hi=m;}
-  if(lo>=1||A[lo]!=x) return -1;
+  if(lo>=4||A[lo]!=x) return -1;
   return Imap[lo];
 }
-static void FI_ClipRectIntersection(std::ostream& os){
-  os<<" result(ECX)=";FmtPtr(os,(const RectangleStruct*)(in[0].c));
-  os<<" clip_rect(EDX)=";FmtPtr(os,(const RectangleStruct*)(in[0].d));
-  os<<" src_rect(Stack)=";FmtPtr(os,(const RectangleStruct*)(in[0].stk0));
-  os<<" x_off(Stack)=";Hex8(os,in[0].stk1);
-  os<<" y_off(Stack)=";Hex8(os,in[0].stk2);
+static void FI_XSurface_WalkLine(std::ostream& os){
+  os<<"this=";Hex8(os,in[0].c);
+  os<<" start(Stack)=";FmtPtr(os,(const Point2D*)(in[0].stk0));
+  os<<" end(Stack)=";FmtPtr(os,(const Point2D*)(in[0].stk1));
+  os<<"\r\n";
+}
+
+static void FI_XSurface_DrawLineEx(std::ostream& os){
+  os<<"this=";Hex8(os,in[1].c);
+  os<<" clip_rect(Stack)=";FmtPtr(os,(const RectangleStruct*)(in[1].stk0));
+  os<<" start(Stack)=";FmtPtr(os,(const Point2D*)(in[1].stk1));
+  os<<" end(Stack)=";FmtPtr(os,(const Point2D*)(in[1].stk2));
+  os<<" color(Stack)=";os<<(uint32_t)(in[1].stk3);
+  os<<"\r\n";
+}
+
+static void FI_XSurface_DrawLine(std::ostream& os){
+  os<<"this=";Hex8(os,in[2].c);
+  os<<" start(Stack)=";FmtPtr(os,(const Point2D*)(in[2].stk0));
+  os<<" end(Stack)=";FmtPtr(os,(const Point2D*)(in[2].stk1));
+  os<<" color(Stack)=";os<<(uint32_t)(in[2].stk2);
+  os<<"\r\n";
+}
+
+static void FI_XSurface_DrawRect(std::ostream& os){
+  os<<"this=";Hex8(os,in[3].c);
+  os<<" draw_rect(Stack)=";FmtPtr(os,(const RectangleStruct*)(in[3].stk0));
+  os<<" color(Stack)=";os<<(uint32_t)(in[3].stk1);
   os<<"\r\n";
 }
 
 static void FI(int i, std::ostream& os){switch(i){
-  case 0:FI_ClipRectIntersection(os);break;
+  case 0:FI_XSurface_WalkLine(os);break;
+  case 1:FI_XSurface_DrawLineEx(os);break;
+  case 2:FI_XSurface_DrawLine(os);break;
+  case 3:FI_XSurface_DrawRect(os);break;
   default:os<<"  Input: ???\r\n";break;}}
 
 static DWORD CallRE(int i){
   auto&V=in[i];
   switch(i){
-    case 0: return RE_ClipRectIntersection(V.c, V.d, V.stk0, V.stk1, V.stk2);
+    case 0: return RE_XSurface_WalkLine(V.c, V.stk0, V.stk1);
+    case 1: return RE_XSurface_DrawLineEx(V.c, V.stk0, V.stk1, V.stk2, V.stk3);
+    case 2: return RE_XSurface_DrawLine(V.c, V.stk0, V.stk1, V.stk2);
+    case 3: return RE_XSurface_DrawRect(V.c, V.stk0, V.stk1);
     default: return 0;
   }
 }
@@ -14538,11 +14575,11 @@ static void flush_full(){
   SetFilePointer(h,0,0,FILE_BEGIN); SetEndOfFile(h);
   std::ostringstream os;
   os<<"============ Different Compares ============\r\n";
-  for(int i=0;i<1;i++) if(has_diff[i]&&fn_buf_len[i]>0) os.write(fn_buf[i],fn_buf_len[i]);
+  for(int i=0;i<4;i++) if(has_diff[i]&&fn_buf_len[i]>0) os.write(fn_buf[i],fn_buf_len[i]);
   os<<"\r\n================ Captures ================\r\n";
-  for(int i=0;i<1;i++) if(is_cap[i]&&!has_diff[i]&&fn_buf_len[i]>0) os.write(fn_buf[i],fn_buf_len[i]);
+  for(int i=0;i<4;i++) if(is_cap[i]&&!has_diff[i]&&fn_buf_len[i]>0) os.write(fn_buf[i],fn_buf_len[i]);
   os<<"\r\n============= Same Compares ==============\r\n";
-  for(int i=0;i<1;i++) if(!is_cap[i]&&!has_diff[i]&&fn_buf_len[i]>0) os.write(fn_buf[i],fn_buf_len[i]);
+  for(int i=0;i<4;i++) if(!is_cap[i]&&!has_diff[i]&&fn_buf_len[i]>0) os.write(fn_buf[i],fn_buf_len[i]);
   os<<"\r\n============== None Calls ================\r\n";
   if(sec_none_len>0) os.write(sec_none,sec_none_len);
   else os<<"\r\n";
@@ -14587,17 +14624,14 @@ static void ensure_sections(){
   SecApp(sec_none,&sec_none_len,"[void MainGame()-0x0048CCC0]\r\n");
   SecApp(sec_none,&sec_none_len,"[bool LoadExpansionMixFiles()-0x00530000]\r\n");
   SecApp(sec_none,&sec_none_len,"[HRESULT AbstractClass::QueryInterface(const IID& iid, void** ppv)-0x00410260]\r\n");
+  SecApp(sec_none,&sec_none_len,"[RectangleStruct* ClipRectIntersection(RectangleStruct* result, const RectangleStruct* clip_rect, const RectangleStruct* src_rect, int* x_off, int* y_off)-0x00421B60]\r\n");
   SecApp(sec_none,&sec_none_len,"[bool ClipLine(int start[2], int end[2], int clip_rect[4])-0x007BC2B0]\r\n");
   SecApp(sec_none,&sec_none_len,"[bool XSurface::SetPixel(const Point2D& point, uint32_t color)-0x007BAEB0]\r\n");
   SecApp(sec_none,&sec_none_len,"[uint32_t XSurface::GetPixel(const Point2D& point)-0x007BAE60]\r\n");
   SecApp(sec_none,&sec_none_len,"[bool XSurface::PutPixel(const Point2D& point, uint16_t color, const RectangleStruct& clip_rect)-0x007BAF90]\r\n");
   SecApp(sec_none,&sec_none_len,"[uint16_t XSurface::GetPixelAtCoords(const Point2D& point, const RectangleStruct& clip_rect)-0x007BAF10]\r\n");
-  SecApp(sec_none,&sec_none_len,"[bool XSurface::WalkLine(const Point2D& start, const Point2D& end, void (*callback)-0x007BAB90]\r\n");
-  SecApp(sec_none,&sec_none_len,"[bool XSurface::DrawLineEx(const RectangleStruct& clip_rect, const Point2D& start, const Point2D& end, uint32_t color)-0x007BA610]\r\n");
-  SecApp(sec_none,&sec_none_len,"[bool XSurface::DrawLine(const Point2D& start, const Point2D& end, uint32_t color)-0x007BA5E0]\r\n");
   SecApp(sec_none,&sec_none_len,"[bool XSurface::Fill(uint32_t color)-0x007BBAB0]\r\n");
   SecApp(sec_none,&sec_none_len,"[bool XSurface::DrawRectEx(const RectangleStruct& clip_rect, const RectangleStruct& draw_rect, uint32_t color)-0x007BADC0]\r\n");
-  SecApp(sec_none,&sec_none_len,"[bool XSurface::DrawRect(const RectangleStruct& draw_rect, uint32_t color)-0x007BAD90]\r\n");
   SecApp(sec_none,&sec_none_len,"[bool CCFileClass::Open(const char* pFileName)-0x00473C50]\r\n");
   SecApp(sec_none,&sec_none_len,"[void* CCFileClass::ReadEntireFile()-0x004A3890]\r\n");
   SecApp(sec_none,&sec_none_len,"[void CCFileClass::Reset()-0x00473CE0]\r\n");
@@ -14610,7 +14644,10 @@ static void ensure_sections(){
 
 static void FmtRet(std::ostream& os, DWORD v, int i){
   switch(i){
-    case 0: Hex8(os,v); break;
+    case 0: os<<(bool)(v); break;
+    case 1: os<<(bool)(v); break;
+    case 2: os<<(bool)(v); break;
+    case 3: os<<(bool)(v); break;
     default: os<<v; break;
   }
 }
@@ -14618,165 +14655,150 @@ static void FmtRet(std::ostream& os, DWORD v, int i){
 static void rebuild_none(){
   sec_none_len=0; sec_none[0]=0;
   { int called=0;
-    for(int j=0;j<1;j++){
+    for(int j=0;j<4;j++){
       if(addr_tbl[j]==0x006C8C40&&ctr[j]>0) called=1;
     }
     if(!called) SecApp(sec_none,&sec_none_len,"[int TimerGetTicks()-0x006C8C40]\r\n"); }
   { int called=0;
-    for(int j=0;j<1;j++){
+    for(int j=0;j<4;j++){
       if(addr_tbl[j]==0x004355B0&&ctr[j]>0) called=1;
     }
     if(!called) SecApp(sec_none,&sec_none_len,"[int Palette6BitTo16Bit(int r, int g, int b)-0x004355B0]\r\n"); }
   { int called=0;
-    for(int j=0;j<1;j++){
+    for(int j=0;j<4;j++){
       if(addr_tbl[j]==0x004A38D0&&ctr[j]>0) called=1;
     }
     if(!called) SecApp(sec_none,&sec_none_len,"[int LoadFileSHP(const char* filename)-0x004A38D0]\r\n"); }
   { int called=0;
-    for(int j=0;j<1;j++){
+    for(int j=0;j<4;j++){
       if(addr_tbl[j]==0x0048D080&&ctr[j]>0) called=1;
     }
     if(!called) SecApp(sec_none,&sec_none_len,"[void EventDispatchEx()-0x0048D080]\r\n"); }
   { int called=0;
-    for(int j=0;j<1;j++){
+    for(int j=0;j<4;j++){
       if(addr_tbl[j]==0x005B40B0&&ctr[j]>0) called=1;
     }
     if(!called) SecApp(sec_none,&sec_none_len,"[const void* SearchMIXFile(const char* name)-0x005B40B0]\r\n"); }
   { int called=0;
-    for(int j=0;j<1;j++){
+    for(int j=0;j<4;j++){
       if(addr_tbl[j]==0x0052BA60&&ctr[j]>0) called=1;
     }
     if(!called) SecApp(sec_none,&sec_none_len,"[int InitGame(bool no_cd)-0x0052BA60]\r\n"); }
   { int called=0;
-    for(int j=0;j<1;j++){
+    for(int j=0;j<4;j++){
       if(addr_tbl[j]==0x0055D360&&ctr[j]>0) called=1;
     }
     if(!called) SecApp(sec_none,&sec_none_len,"[static bool GameFrameLoop()-0x0055D360]\r\n"); }
   { int called=0;
-    for(int j=0;j<1;j++){
+    for(int j=0;j<4;j++){
       if(addr_tbl[j]==0x0055CFD0&&ctr[j]>0) called=1;
     }
     if(!called) SecApp(sec_none,&sec_none_len,"[static bool GameFrameCheck()-0x0055CFD0]\r\n"); }
   { int called=0;
-    for(int j=0;j<1;j++){
+    for(int j=0;j<4;j++){
       if(addr_tbl[j]==0x0048C8B0&&ctr[j]>0) called=1;
     }
     if(!called) SecApp(sec_none,&sec_none_len,"[static void MainGameFrame()-0x0048C8B0]\r\n"); }
   { int called=0;
-    for(int j=0;j<1;j++){
+    for(int j=0;j<4;j++){
       if(addr_tbl[j]==0x0052D9A0&&ctr[j]>0) called=1;
     }
     if(!called) SecApp(sec_none,&sec_none_len,"[char MenuSelect()-0x0052D9A0]\r\n"); }
   { int called=0;
-    for(int j=0;j<1;j++){
+    for(int j=0;j<4;j++){
       if(addr_tbl[j]==0x0048CCC0&&ctr[j]>0) called=1;
     }
     if(!called) SecApp(sec_none,&sec_none_len,"[void MainGame()-0x0048CCC0]\r\n"); }
   { int called=0;
-    for(int j=0;j<1;j++){
+    for(int j=0;j<4;j++){
       if(addr_tbl[j]==0x00530000&&ctr[j]>0) called=1;
     }
     if(!called) SecApp(sec_none,&sec_none_len,"[bool LoadExpansionMixFiles()-0x00530000]\r\n"); }
   { int called=0;
-    for(int j=0;j<1;j++){
+    for(int j=0;j<4;j++){
       if(addr_tbl[j]==0x00410260&&ctr[j]>0) called=1;
     }
     if(!called) SecApp(sec_none,&sec_none_len,"[HRESULT AbstractClass::QueryInterface(const IID& iid, void** ppv)-0x00410260]\r\n"); }
   { int called=0;
-    for(int j=0;j<1;j++){
+    for(int j=0;j<4;j++){
+      if(addr_tbl[j]==0x00421B60&&ctr[j]>0) called=1;
+    }
+    if(!called) SecApp(sec_none,&sec_none_len,"[RectangleStruct* ClipRectIntersection(RectangleStruct* result, const RectangleStruct* clip_rect, const RectangleStruct* src_rect, int* x_off, int* y_off)-0x00421B60]\r\n"); }
+  { int called=0;
+    for(int j=0;j<4;j++){
       if(addr_tbl[j]==0x007BC2B0&&ctr[j]>0) called=1;
     }
     if(!called) SecApp(sec_none,&sec_none_len,"[bool ClipLine(int start[2], int end[2], int clip_rect[4])-0x007BC2B0]\r\n"); }
   { int called=0;
-    for(int j=0;j<1;j++){
+    for(int j=0;j<4;j++){
       if(addr_tbl[j]==0x007BAEB0&&ctr[j]>0) called=1;
     }
     if(!called) SecApp(sec_none,&sec_none_len,"[bool XSurface::SetPixel(const Point2D& point, uint32_t color)-0x007BAEB0]\r\n"); }
   { int called=0;
-    for(int j=0;j<1;j++){
+    for(int j=0;j<4;j++){
       if(addr_tbl[j]==0x007BAE60&&ctr[j]>0) called=1;
     }
     if(!called) SecApp(sec_none,&sec_none_len,"[uint32_t XSurface::GetPixel(const Point2D& point)-0x007BAE60]\r\n"); }
   { int called=0;
-    for(int j=0;j<1;j++){
+    for(int j=0;j<4;j++){
       if(addr_tbl[j]==0x007BAF90&&ctr[j]>0) called=1;
     }
     if(!called) SecApp(sec_none,&sec_none_len,"[bool XSurface::PutPixel(const Point2D& point, uint16_t color, const RectangleStruct& clip_rect)-0x007BAF90]\r\n"); }
   { int called=0;
-    for(int j=0;j<1;j++){
+    for(int j=0;j<4;j++){
       if(addr_tbl[j]==0x007BAF10&&ctr[j]>0) called=1;
     }
     if(!called) SecApp(sec_none,&sec_none_len,"[uint16_t XSurface::GetPixelAtCoords(const Point2D& point, const RectangleStruct& clip_rect)-0x007BAF10]\r\n"); }
   { int called=0;
-    for(int j=0;j<1;j++){
-      if(addr_tbl[j]==0x007BAB90&&ctr[j]>0) called=1;
-    }
-    if(!called) SecApp(sec_none,&sec_none_len,"[bool XSurface::WalkLine(const Point2D& start, const Point2D& end, void (*callback)-0x007BAB90]\r\n"); }
-  { int called=0;
-    for(int j=0;j<1;j++){
-      if(addr_tbl[j]==0x007BA610&&ctr[j]>0) called=1;
-    }
-    if(!called) SecApp(sec_none,&sec_none_len,"[bool XSurface::DrawLineEx(const RectangleStruct& clip_rect, const Point2D& start, const Point2D& end, uint32_t color)-0x007BA610]\r\n"); }
-  { int called=0;
-    for(int j=0;j<1;j++){
-      if(addr_tbl[j]==0x007BA5E0&&ctr[j]>0) called=1;
-    }
-    if(!called) SecApp(sec_none,&sec_none_len,"[bool XSurface::DrawLine(const Point2D& start, const Point2D& end, uint32_t color)-0x007BA5E0]\r\n"); }
-  { int called=0;
-    for(int j=0;j<1;j++){
+    for(int j=0;j<4;j++){
       if(addr_tbl[j]==0x007BBAB0&&ctr[j]>0) called=1;
     }
     if(!called) SecApp(sec_none,&sec_none_len,"[bool XSurface::Fill(uint32_t color)-0x007BBAB0]\r\n"); }
   { int called=0;
-    for(int j=0;j<1;j++){
+    for(int j=0;j<4;j++){
       if(addr_tbl[j]==0x007BADC0&&ctr[j]>0) called=1;
     }
     if(!called) SecApp(sec_none,&sec_none_len,"[bool XSurface::DrawRectEx(const RectangleStruct& clip_rect, const RectangleStruct& draw_rect, uint32_t color)-0x007BADC0]\r\n"); }
   { int called=0;
-    for(int j=0;j<1;j++){
-      if(addr_tbl[j]==0x007BAD90&&ctr[j]>0) called=1;
-    }
-    if(!called) SecApp(sec_none,&sec_none_len,"[bool XSurface::DrawRect(const RectangleStruct& draw_rect, uint32_t color)-0x007BAD90]\r\n"); }
-  { int called=0;
-    for(int j=0;j<1;j++){
+    for(int j=0;j<4;j++){
       if(addr_tbl[j]==0x00473C50&&ctr[j]>0) called=1;
     }
     if(!called) SecApp(sec_none,&sec_none_len,"[bool CCFileClass::Open(const char* pFileName)-0x00473C50]\r\n"); }
   { int called=0;
-    for(int j=0;j<1;j++){
+    for(int j=0;j<4;j++){
       if(addr_tbl[j]==0x004A3890&&ctr[j]>0) called=1;
     }
     if(!called) SecApp(sec_none,&sec_none_len,"[void* CCFileClass::ReadEntireFile()-0x004A3890]\r\n"); }
   { int called=0;
-    for(int j=0;j<1;j++){
+    for(int j=0;j<4;j++){
       if(addr_tbl[j]==0x00473CE0&&ctr[j]>0) called=1;
     }
     if(!called) SecApp(sec_none,&sec_none_len,"[void CCFileClass::Reset()-0x00473CE0]\r\n"); }
   { int called=0;
-    for(int j=0;j<1;j++){
+    for(int j=0;j<4;j++){
       if(addr_tbl[j]==0x00535AA0&&ctr[j]>0) called=1;
     }
     if(!called) SecApp(sec_none,&sec_none_len,"[INIClass::INIClass()-0x00535AA0]\r\n"); }
   { int called=0;
-    for(int j=0;j<1;j++){
+    for(int j=0;j<4;j++){
       if(addr_tbl[j]==0x00535B30&&ctr[j]>0) called=1;
     }
     if(!called) SecApp(sec_none,&sec_none_len,"[CCINIClass::CCINIClass()-0x00535B30]\r\n"); }
   { int called=0;
-    for(int j=0;j<1;j++){
+    for(int j=0;j<4;j++){
       if(addr_tbl[j]==0x004741F0&&ctr[j]>0) called=1;
     }
     if(!called) SecApp(sec_none,&sec_none_len,"[bool CCINIClass::Load(CCFileClass* file, bool unk1, bool unk2)-0x004741F0]\r\n"); }
   { int called=0;
-    for(int j=0;j<1;j++){
+    for(int j=0;j<4;j++){
       if(addr_tbl[j]==0x005301A0&&ctr[j]>0) called=1;
     }
     if(!called) SecApp(sec_none,&sec_none_len,"[bool MixFileClass::Bootstrap()-0x005301A0]\r\n"); }
-  for(int j=0;j<1;j++){
+  for(int j=0;j<4;j++){
     if(ctr[j]==0){
       int already=0;
-      unsigned na_tbl[31]={7113792,4412848,4864208,4771968,5980336,5421664,5624672,5623760,4769968,5429664,4771008,5439488,4260448,8110768,8105648,8105568,8105872,8105744,8104848,8103440,8103392,8108720,8105408,8105360,4668496,4864144,4668640,5462688,5462832,4669936,5439904};
-      for(int k=0;k<31;k++) if(addr_tbl[j]==na_tbl[k]) already=1;
+      unsigned na_tbl[28]={7113792,4412848,4864208,4771968,5980336,5421664,5624672,5623760,4769968,5429664,4771008,5439488,4260448,4332384,8110768,8105648,8105568,8105872,8105744,8108720,8105408,4668496,4864144,4668640,5462688,5462832,4669936,5439904};
+      for(int k=0;k<28;k++) if(addr_tbl[j]==na_tbl[k]) already=1;
       if(!already){
         const char* s=sig[j];
         if(s&&*s){
@@ -14816,24 +14838,74 @@ static void write_entry(char tag, int i, DWORD addr, DWORD re, DWORD orig, DWORD
 // Final flush on DLL unload (no export needed - static destructor)
 static struct FinalFlush{ ~FinalFlush(){ if(h!=INVALID_HANDLE_VALUE){flush_full();CloseHandle(h);h=INVALID_HANDLE_VALUE;} } } _final_flush;
 
-// ClipRectIntersection @ 0x421b60 (fastcall) mode=Inject hook_size=5
-// ClipRectIntersection: rect intersection
-DEFINE_HOOK(0x421B60, Rev_ClipRectIntersection, 0x5)
+// XSurface::WalkLine @ 0x7bab90 (thiscall) mode=Inject hook_size=5
+// XSurface::WalkLine: Bresenham walker
+DEFINE_HOOK(0x7BAB90, Rev_XSurface_WalkLine, 0x5)
 {
-  int idx=I(0x421B60);
+  int idx=I(0x7BAB90);
   auto&V=in[idx];
   V.a=R->EAX();V.c=R->ECX();V.d=R->EDX();
   V.b=R->EBX();V.si=R->ESI();V.di=R->EDI();
   V.bp=R->EBP();V.sp=R->ESP();
   V.stk0=R->Stack<DWORD>(4);V.stk1=R->Stack<DWORD>(8);
   V.stk2=R->Stack<DWORD>(12);V.stk3=R->Stack<DWORD>(16);
-  if(GetCurrentThreadId()!=shadow::g_owner_tid) return 0;
   if(shadow::g_re_depth>0) return 0;
   auto*s=shadow::GetSlot();
-  if(s&&s->txn){s->txn->Discard();delete s->txn;s->txn=nullptr;++shadow::g_orphan_count;}
-  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x421B60;s->depth=d+1;}
-  auto* txn = new shadow::ShadowTransaction();
-  txn->Begin();
+  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x7BAB90;s->depth=d+1;}
+  R->Stack(0,(DWORD)&PostProcStub);
+  return 0;
+}
+
+// XSurface::DrawLineEx @ 0x7ba610 (thiscall) mode=Inject hook_size=6
+// XSurface::DrawLineEx: clipped line
+DEFINE_HOOK(0x7BA610, Rev_XSurface_DrawLineEx, 0x6)
+{
+  int idx=I(0x7BA610);
+  auto&V=in[idx];
+  V.a=R->EAX();V.c=R->ECX();V.d=R->EDX();
+  V.b=R->EBX();V.si=R->ESI();V.di=R->EDI();
+  V.bp=R->EBP();V.sp=R->ESP();
+  V.stk0=R->Stack<DWORD>(4);V.stk1=R->Stack<DWORD>(8);
+  V.stk2=R->Stack<DWORD>(12);V.stk3=R->Stack<DWORD>(16);
+  if(shadow::g_re_depth>0) return 0;
+  auto*s=shadow::GetSlot();
+  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x7BA610;s->depth=d+1;}
+  R->Stack(0,(DWORD)&PostProcStub);
+  return 0;
+}
+
+// XSurface::DrawLine @ 0x7ba5e0 (thiscall) mode=Inject hook_size=7
+// XSurface::DrawLine: no-clip wrapper
+DEFINE_HOOK(0x7BA5E0, Rev_XSurface_DrawLine, 0x7)
+{
+  int idx=I(0x7BA5E0);
+  auto&V=in[idx];
+  V.a=R->EAX();V.c=R->ECX();V.d=R->EDX();
+  V.b=R->EBX();V.si=R->ESI();V.di=R->EDI();
+  V.bp=R->EBP();V.sp=R->ESP();
+  V.stk0=R->Stack<DWORD>(4);V.stk1=R->Stack<DWORD>(8);
+  V.stk2=R->Stack<DWORD>(12);V.stk3=R->Stack<DWORD>(16);
+  if(shadow::g_re_depth>0) return 0;
+  auto*s=shadow::GetSlot();
+  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x7BA5E0;s->depth=d+1;}
+  R->Stack(0,(DWORD)&PostProcStub);
+  return 0;
+}
+
+// XSurface::DrawRect @ 0x7bad90 (thiscall) mode=Inject hook_size=7
+// XSurface::DrawRect: no-clip rect
+DEFINE_HOOK(0x7BAD90, Rev_XSurface_DrawRect, 0x7)
+{
+  int idx=I(0x7BAD90);
+  auto&V=in[idx];
+  V.a=R->EAX();V.c=R->ECX();V.d=R->EDX();
+  V.b=R->EBX();V.si=R->ESI();V.di=R->EDI();
+  V.bp=R->EBP();V.sp=R->ESP();
+  V.stk0=R->Stack<DWORD>(4);V.stk1=R->Stack<DWORD>(8);
+  V.stk2=R->Stack<DWORD>(12);V.stk3=R->Stack<DWORD>(16);
+  if(shadow::g_re_depth>0) return 0;
+  auto*s=shadow::GetSlot();
+  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x7BAD90;s->depth=d+1;}
   R->Stack(0,(DWORD)&PostProcStub);
   return 0;
 }
