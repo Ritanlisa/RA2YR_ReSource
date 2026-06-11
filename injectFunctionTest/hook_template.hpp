@@ -35,11 +35,35 @@ inline void Hex8(std::ostream& os, DWORD v) {
 
 // ---- Fmt: type-aware value formatting ----
 
+inline bool _ty_match(const char* ty, const char* keyword) {
+    if (!ty || !keyword) return false;
+    for (; *keyword; ty++, keyword++)
+        if (toupper((unsigned char)*ty) != toupper((unsigned char)*keyword))
+            return false;
+    return true;
+}
+
 inline void Fmt(std::ostream& os, const char* ty, DWORD v) {
     if (!ty) ty = "";
-    if (strstr(ty, "Point2D"))   { os << *(const gamemd::Point2D*)v << "(";      Hex8(os, v); os << ")"; return; }
-    if (strstr(ty, "RectangleStruct")) { os << *(const gamemd::RectangleStruct*)v << "("; Hex8(os, v); os << ")"; return; }
-    if (strstr(ty, "bool") || strstr(ty, "Bool"))
+    // Pointer type (contains '*') → format as hex address, no dereference
+    if (strchr(ty, '*')) {
+        Hex8(os, v); return;
+    }
+    if (_ty_match(ty, "this")) {
+        Hex8(os, v); return;
+    }
+    // Struct types: dereference, but NULL-safe
+    if (strstr(ty, "Point2D") || _ty_match(ty, "point2d")) {
+        if (v) os << *(const gamemd::Point2D*)v << "(";
+        else   os << "(null)(";
+        Hex8(os, v); os << ")"; return;
+    }
+    if (strstr(ty, "RectangleStruct")) {
+        if (v) os << *(const gamemd::RectangleStruct*)v << "(";
+        else   os << "(null)(";
+        Hex8(os, v); os << ")"; return;
+    }
+    if (strstr(ty, "bool") || _ty_match(ty, "Bool"))
         os << (v ? "true" : "false") << "(";
     else
         os << std::dec << v << "(";

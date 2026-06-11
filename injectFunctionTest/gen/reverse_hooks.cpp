@@ -118,7 +118,7 @@ static int I(DWORD x){static DWORD A[]={
   0x007BAF10,
   0};for(int i=0;A[i];++i)if(A[i]==x)return i;return -1;}
 static void FI_XSurface_GetPixelAtCoords(std::ostream& os){
-  os<<"this="<<"0x"<<std::hex<<in[0].c;
+  os<<"this=";Fmt(os,"this",in[0].c);
   static const char* ty_XSurface_GetPixelAtCoords[]={"const Point2D&","const RectangleStruct&"};
   static int arr_XSurface_GetPixelAtCoords[]={0,0};
   os<<" point(Stack)="; Fmt(os,ty_XSurface_GetPixelAtCoords[0],in[0].stk0);

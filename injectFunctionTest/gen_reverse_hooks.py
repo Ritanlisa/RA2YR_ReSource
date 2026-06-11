@@ -519,7 +519,7 @@ def generate(markers, functions, fn_map, none_markers=None):
         s=san(m['fn_name'])
         w(f'static void FI_{s}(std::ostream& os){{')
         if conv == 'thiscall':
-            w(f'  os<<"this="<<"0x"<<std::hex<<in[{i}].c;')
+            w(f'  os<<"this=";Fmt(os,"this",in[{i}].c);')
             if params:
                 w(f'  static const char* ty_{s}[]={{{",".join(f"\"{p[0]}\"" for p in params)}}};')
                 w(f'  static int arr_{s}[]={{{",".join(str(p[2]) for p in params)}}};')
