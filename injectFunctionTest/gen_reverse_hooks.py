@@ -270,11 +270,11 @@ def find_markers(functions, raw_json, callee_map, callee_names, all_marked, idem
                     ret_type = ""
                     full_sig = fname
                     if s:
-                        rt = s.group(1).strip().lower()
+                        rt = s.group(1).strip()  # preserve case for C++ type matching
                         # Filter out garbage matches: comments, code fragments, wrong function names
                         garbage_words = ['return','remove','store','global','marked','repeat',
                                         'loads','resets','new','recursive','forward','declare']
-                        is_garbage = any(w == rt or rt.startswith(w+' ') for w in garbage_words)
+                        is_garbage = any(w == rt.lower() or rt.lower().startswith(w+' ') for w in garbage_words)
                         # Reject comment-like matches (// or /* in the return type)
                         if not is_garbage and ('//' in s.group(0) or '/*' in s.group(0)):
                             is_garbage = True

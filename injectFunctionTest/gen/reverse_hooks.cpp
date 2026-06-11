@@ -66,11 +66,11 @@ static void NN(){
   nm[18]="CompleteGameInit"; addr_tbl[18]=0x005D7CE0;
   sig[18]="void CompleteGameInit()"; rt[18]="void";
   nm[19]="AbstractClass::QueryInterface"; addr_tbl[19]=0x00410260;
-  sig[19]="HRESULT AbstractClass::QueryInterface(const IID& iid, void** ppv)"; rt[19]="hresult";
+  sig[19]="HRESULT AbstractClass::QueryInterface(const IID& iid, void** ppv)"; rt[19]="HRESULT";
   nm[20]="ObjectClass::Remove"; addr_tbl[20]=0x005F44A0;
   sig[20]="ObjectClass::Remove"; rt[20]="";
   nm[21]="ClipRectIntersection"; addr_tbl[21]=0x00421B60;
-  sig[21]="RectangleStruct* ClipRectIntersection(RectangleStruct* result, const RectangleStruct* clip_rect, const RectangleStruct* src_rect, int* x_off, int* y_off)"; rt[21]="rectanglestruct*";
+  sig[21]="RectangleStruct* ClipRectIntersection(RectangleStruct* result, const RectangleStruct* clip_rect, const RectangleStruct* src_rect, int* x_off, int* y_off)"; rt[21]="RectangleStruct*";
   nm[22]="ClipLine"; addr_tbl[22]=0x007BC2B0;
   sig[22]="bool ClipLine(int start[2], int end[2], int clip_rect[4])"; rt[22]="bool";
   nm[23]="XSurface::SetPixel"; addr_tbl[23]=0x007BAEB0;
@@ -96,7 +96,7 @@ static void NN(){
   nm[33]="XSurface::DrawEllipseOutline"; addr_tbl[33]=0x007BB350;
   sig[33]="bool XSurface::DrawEllipseOutline(const Point2D& center, int radius_w, int radius_h, const RectangleStruct& clip_rect, uint16_t color)"; rt[33]="bool";
   nm[34]="BuildingClass::CalcDrawPos"; addr_tbl[34]=0x00480110;
-  sig[34]="Point2D* BuildingClass::CalcDrawPos(Point2D* out)"; rt[34]="point2d*";
+  sig[34]="Point2D* BuildingClass::CalcDrawPos(Point2D* out)"; rt[34]="Point2D*";
   nm[35]="CCFileClass::Open"; addr_tbl[35]=0x00473C50;
   sig[35]="CCFileClass::Open"; rt[35]="";
   nm[36]="CCFileClass::ReadEntireFile"; addr_tbl[36]=0x004A3890;
