@@ -144,13 +144,13 @@ def resolve_idempotent(addr, fn_info, results, warnings_list, hook_path, line_no
 
     # Case 1: manual override exists
     if manual_val is not None:
-        if manual_val and auto_val == False:
-            # Manual=true but auto=FALSE/UNCERTAIN → warn
+        if manual_val and auto_str == "FALSE":
+            # Manual=true contradicts definitive FALSE → warn with reason required
             reason = hook.get('idempotent_reason', '')
             if not reason:
                 extra_errors.append(
                     f"{hook_path}:{line_no}: {addr} ({fn_info.get('name','?')}) "
-                    f"manual idempotent=true but analysis says {auto_str} — "
+                    f"manual idempotent=true but analysis says FALSE — "
                     f"missing idempotent_reason. Add reason or fix analysis."
                 )
             else:
@@ -158,9 +158,12 @@ def resolve_idempotent(addr, fn_info, results, warnings_list, hook_path, line_no
                 ret_type = fn_info.get('call', {}).get('return_type', 'int')
                 warnings_list.append(
                     f"{hook_path}:{line_no}: Function {ret_type} {sig}(...) "
-                    f"should be protected (analysis: {auto_str}) "
+                    f"should be protected (analysis: FALSE) "
                     f'but user insists it\'s idempotent because "{reason}"'
                 )
+        # UNCERTAIN + manual=true → silently accept (analysis limitation, user knows better)
+        # UNCERTAIN + manual=false → silently accept (conservative)
+        # TRUE + any manual → silently accept
         return manual_val, extra_errors
 
     # Case 2: no manual override, use auto
