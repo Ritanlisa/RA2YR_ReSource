@@ -421,38 +421,6 @@ def find_markers(functions, raw_json, callee_map, callee_names, all_marked, idem
 def san(n):
     return n.replace('::','_').replace('@','_').replace('<','_').replace('>','_')
 
-def is_ptr_type(ty):
-    """Check if a C++ type is a pointer or reference (value is an address)."""
-    ty = ty.strip()
-    return '*' in ty or ty.endswith('&')
-
-def to_ptr_cast(ty):
-    """Convert C++ type to pointer cast for FmtPtr.
-    'const Point2D&' → '(const Point2D*)'
-    'uint16_t*' → '(uint16_t*)'   """
-    ty = ty.strip().replace('const ', '').replace('const', '')
-    ty = ty.replace('&', '').replace('*', '').strip()
-    return f'(const {ty}*)'
-
-def to_val_cast(ty):
-    """Convert C++ type to value cast for os <<.
-    'uint32_t' → '(uint32_t)'
-    'int' → '(int)'
-    """
-    ty = ty.strip().replace('const ','').replace('const','').strip()
-    return f'({ty})'
-
-def fmt_param(os, cnv, param_name, param_type, arr_sz, ref):
-    """Generate formatting line for a single parameter.
-    Returns a list of code lines (may be multiple for arrays).
-    Uses FmtPtr for pointer/reference types, os<< for value types."""
-    if arr_sz > 0:
-        # Array: FmtArr
-        return [f'{os}<<" {param_name}({cnv})=";FmtArr(os,{arr_sz},{ref});']
-    if is_ptr_type(param_type):
-        return [f'{os}<<" {param_name}({cnv})=";FmtPtr(os,{to_ptr_cast(param_type)}({ref}));']
-    return [f'{os}<<" {param_name}({cnv})=";os<<{to_val_cast(param_type)}({ref});']
-
 def fmt_fn(ptype):
     """Return (cpp_formatter, c_fmt) based on parameter type string."""
     ty = ptype.lower()
@@ -554,26 +522,48 @@ def generate(markers, functions, fn_map, none_markers=None):
         if conv == 'thiscall':
             w(f'  os<<"this=";Hex8(os,in[{i}].c);')
             for j,pt in enumerate(params):
+                ty = pt[0].strip().replace('const ','').replace('const','')
                 ref = f'in[{i}].stk{j}'
-                for line in fmt_param('  os', 'Stack', pt[1], pt[0], pt[2], ref):
-                    w(line)
+                if pt[2] > 0:
+                    w(f'  os<<" {pt[1]}(Stack)=";FmtArr(os,{pt[2]},{ref});')
+                elif '*' in ty or ty.endswith('&'):
+                    bare = ty.replace('&','').replace('*','').strip()
+                    w(f'  os<<" {pt[1]}(Stack)=";FmtPtr(os,(const {bare}*)({ref}));')
+                else:
+                    w(f'  os<<" {pt[1]}(Stack)=";os<<({ty})({ref});')
         elif conv == 'fastcall':
             regs = ['ECX','EDX']
             for j in range(min(2, len(params))):
-                pt = params[j]
+                pt = params[j]; ty = pt[0].strip().replace('const ','').replace('const','')
                 ref = f'in[{i}].{chr(ord("c")+j)}'
-                for line in fmt_param('  os', regs[j], pt[1], pt[0], pt[2], ref):
-                    w(line)
+                if pt[2] > 0:
+                    w(f'  os<<" {pt[1]}({regs[j]})=";FmtArr(os,{pt[2]},{ref});')
+                elif '*' in ty or ty.endswith('&'):
+                    bare = ty.replace('&','').replace('*','').strip()
+                    w(f'  os<<" {pt[1]}({regs[j]})=";FmtPtr(os,(const {bare}*)({ref}));')
+                else:
+                    w(f'  os<<" {pt[1]}({regs[j]})=";os<<({ty})({ref});')
             for j in range(2, len(params)):
-                pt = params[j]
+                pt = params[j]; ty = pt[0].strip().replace('const ','').replace('const','')
                 ref = f'in[{i}].stk{j-2}'
-                for line in fmt_param('  os', 'Stack', pt[1], pt[0], pt[2], ref):
-                    w(line)
+                if pt[2] > 0:
+                    w(f'  os<<" {pt[1]}(Stack)=";FmtArr(os,{pt[2]},{ref});')
+                elif '*' in ty or ty.endswith('&'):
+                    bare = ty.replace('&','').replace('*','').strip()
+                    w(f'  os<<" {pt[1]}(Stack)=";FmtPtr(os,(const {bare}*)({ref}));')
+                else:
+                    w(f'  os<<" {pt[1]}(Stack)=";os<<({ty})({ref});')
         else:  # stdcall, cdecl
             for j,pt in enumerate(params):
+                ty = pt[0].strip().replace('const ','').replace('const','')
                 ref = f'in[{i}].stk{j}'
-                for line in fmt_param('  os', 'Stack', pt[1], pt[0], pt[2], ref):
-                    w(line)
+                if pt[2] > 0:
+                    w(f'  os<<" {pt[1]}(Stack)=";FmtArr(os,{pt[2]},{ref});')
+                elif '*' in ty or ty.endswith('&'):
+                    bare = ty.replace('&','').replace('*','').strip()
+                    w(f'  os<<" {pt[1]}(Stack)=";FmtPtr(os,(const {bare}*)({ref}));')
+                else:
+                    w(f'  os<<" {pt[1]}(Stack)=";os<<({ty})({ref});')
         w(f'  os<<"\\r\\n";')
         w(f'}}')
         w(f'')
@@ -700,12 +690,11 @@ def generate(markers, functions, fn_map, none_markers=None):
     w('static void FmtRet(std::ostream& os, DWORD v, int i){')
     w('  switch(i){')
     for i, m in enumerate(markers):
-        rt = m.get('ret_type', '').strip()
-        if is_ptr_type(rt):
+        rt = m.get('ret_type', '').strip().replace('const ','').replace('const','')
+        if '*' in rt or rt.endswith('&'):
             w(f'    case {i}: Hex8(os,v); break;')
         else:
-            val_cast = to_val_cast(rt)
-            w(f'    case {i}: os<<{val_cast}(v); break;')
+            w(f'    case {i}: os<<({rt})(v); break;')
     w('    default: os<<v; break;')
     w('  }')
     w('}')
