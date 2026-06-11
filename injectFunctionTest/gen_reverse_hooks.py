@@ -834,8 +834,7 @@ def generate(markers, functions, fn_map, none_markers=None):
             if is_idem:
                 # No transaction: push slot stack, hijack, return
                 w('  auto*s=shadow::GetSlot();')
-                w(f'  int d=s->depth; if(d<16){{s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x{ah};s->depth=d+1;}}')
-                w('  R->Stack(0,(DWORD)&PostProcStub);')
+                w(f'  int d=s->depth; if(d<16){{s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x{ah};s->depth=d+1;R->Stack(0,(DWORD)&PostProcStub);}}')
             else:
                 # Full transaction for non-idempotent functions
                 w('  // Thread gate: only main game thread participates')
@@ -843,28 +842,25 @@ def generate(markers, functions, fn_map, none_markers=None):
                 w('  // Stale transaction cleanup')
                 w('  auto*s=shadow::GetSlot();')
                 w('  if(s&&s->txn){s->txn->Discard();delete s->txn;s->txn=nullptr;++shadow::g_orphan_count;}')
-                w(f'  int d=s->depth; if(d<16){{s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x{ah};s->depth=d+1;}}')
+                w(f'  int d=s->depth; if(d<16){{s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x{ah};s->depth=d+1;R->Stack(0,(DWORD)&PostProcStub);}}')
                 w('  auto* txn = new shadow::ShadowTransaction();')
                 w('  txn->Begin();')
-                w('  R->Stack(0,(DWORD)&PostProcStub);')
         elif mode == "Inject":
             is_idem = m.get('is_idem', False)
             if is_idem:
                 w('  if(GetCurrentThreadId()!=shadow::g_owner_tid) return 0;')
                 w(f'  if(shadow::g_re_depth>0) return 0;')
                 w('  auto*s=shadow::GetSlot();')
-                w(f'  int d=s->depth; if(d<16){{s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x{ah};s->depth=d+1;}}')
-                w('  R->Stack(0,(DWORD)&PostProcStub);')
+                w(f'  int d=s->depth; if(d<16){{s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x{ah};s->depth=d+1;R->Stack(0,(DWORD)&PostProcStub);}}')
             else:
                 # Non-idempotent: full transaction + thread gate + re_depth gate
                 w('  if(GetCurrentThreadId()!=shadow::g_owner_tid) return 0;')
                 w(f'  if(shadow::g_re_depth>0) return 0;')
                 w('  auto*s=shadow::GetSlot();')
                 w('  if(s&&s->txn){s->txn->Discard();delete s->txn;s->txn=nullptr;++shadow::g_orphan_count;}')
-                w(f'  int d=s->depth; if(d<16){{s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x{ah};s->depth=d+1;}}')
+                w(f'  int d=s->depth; if(d<16){{s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x{ah};s->depth=d+1;R->Stack(0,(DWORD)&PostProcStub);}}')
                 w('  auto* txn = new shadow::ShadowTransaction();')
                 w('  txn->Begin();')
-                w('  R->Stack(0,(DWORD)&PostProcStub);')
         
         w('  return 0;')
         w('}')

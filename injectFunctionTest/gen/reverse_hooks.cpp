@@ -14838,8 +14838,7 @@ DEFINE_HOOK(0x7BC2B0, Rev_ClipLine, 0x6)
   if(GetCurrentThreadId()!=shadow::g_owner_tid) return 0;
   if(shadow::g_re_depth>0) return 0;
   auto*s=shadow::GetSlot();
-  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x7BC2B0;s->depth=d+1;}
-  R->Stack(0,(DWORD)&PostProcStub);
+  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x7BC2B0;s->depth=d+1;R->Stack(0,(DWORD)&PostProcStub);}
   return 0;
 }
 
@@ -14857,8 +14856,7 @@ DEFINE_HOOK(0x7BAEB0, Rev_XSurface_SetPixel, 0x5)
   if(GetCurrentThreadId()!=shadow::g_owner_tid) return 0;
   if(shadow::g_re_depth>0) return 0;
   auto*s=shadow::GetSlot();
-  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x7BAEB0;s->depth=d+1;}
-  R->Stack(0,(DWORD)&PostProcStub);
+  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x7BAEB0;s->depth=d+1;R->Stack(0,(DWORD)&PostProcStub);}
   return 0;
 }
 
@@ -14876,8 +14874,7 @@ DEFINE_HOOK(0x7BAE60, Rev_XSurface_GetPixel, 0x5)
   if(GetCurrentThreadId()!=shadow::g_owner_tid) return 0;
   if(shadow::g_re_depth>0) return 0;
   auto*s=shadow::GetSlot();
-  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x7BAE60;s->depth=d+1;}
-  R->Stack(0,(DWORD)&PostProcStub);
+  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x7BAE60;s->depth=d+1;R->Stack(0,(DWORD)&PostProcStub);}
   return 0;
 }
 
@@ -14895,8 +14892,7 @@ DEFINE_HOOK(0x7BAF90, Rev_XSurface_PutPixel, 0x5)
   if(GetCurrentThreadId()!=shadow::g_owner_tid) return 0;
   if(shadow::g_re_depth>0) return 0;
   auto*s=shadow::GetSlot();
-  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x7BAF90;s->depth=d+1;}
-  R->Stack(0,(DWORD)&PostProcStub);
+  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x7BAF90;s->depth=d+1;R->Stack(0,(DWORD)&PostProcStub);}
   return 0;
 }
 
@@ -14914,8 +14910,7 @@ DEFINE_HOOK(0x7BAF10, Rev_XSurface_GetPixelAtCoords, 0x6)
   if(GetCurrentThreadId()!=shadow::g_owner_tid) return 0;
   if(shadow::g_re_depth>0) return 0;
   auto*s=shadow::GetSlot();
-  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x7BAF10;s->depth=d+1;}
-  R->Stack(0,(DWORD)&PostProcStub);
+  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x7BAF10;s->depth=d+1;R->Stack(0,(DWORD)&PostProcStub);}
   return 0;
 }
 
@@ -14933,8 +14928,7 @@ DEFINE_HOOK(0x7BBAB0, Rev_XSurface_Fill, 0x7)
   if(GetCurrentThreadId()!=shadow::g_owner_tid) return 0;
   if(shadow::g_re_depth>0) return 0;
   auto*s=shadow::GetSlot();
-  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x7BBAB0;s->depth=d+1;}
-  R->Stack(0,(DWORD)&PostProcStub);
+  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x7BBAB0;s->depth=d+1;R->Stack(0,(DWORD)&PostProcStub);}
   return 0;
 }
 
@@ -14952,8 +14946,7 @@ DEFINE_HOOK(0x7BADC0, Rev_XSurface_DrawRectEx, 0x7)
   if(GetCurrentThreadId()!=shadow::g_owner_tid) return 0;
   if(shadow::g_re_depth>0) return 0;
   auto*s=shadow::GetSlot();
-  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x7BADC0;s->depth=d+1;}
-  R->Stack(0,(DWORD)&PostProcStub);
+  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x7BADC0;s->depth=d+1;R->Stack(0,(DWORD)&PostProcStub);}
   return 0;
 }
 
