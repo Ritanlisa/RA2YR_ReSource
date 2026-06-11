@@ -192,7 +192,7 @@ def parse_map():
     return addrs
 
 SIG = re.compile(
-    r'(.+?)\s+(\w+(?:::\w+)*)\s*\(([^)]*)\)',
+    r'(?:(\S+(?:\s+\S+)*?)\s+)?(\w+(?:::\w+)*)\s*\(([^)]*)\)',
     re.IGNORECASE | re.DOTALL)
 
 def is_lib(name):
@@ -259,7 +259,7 @@ def find_markers(functions, raw_json, callee_map, callee_names, all_marked, idem
                     ret_type = ""
                     full_sig = fname
                     if s:
-                        rt = s.group(1).strip()  # preserve case for C++ type matching
+                        rt = (s.group(1) or '').strip()  # None for constructors
                         # Reject comment-like matches (// or /* in the return type)
                         is_garbage = False
                         if '//' in s.group(0) or '/*' in s.group(0):
@@ -289,17 +289,28 @@ def find_markers(functions, raw_json, callee_map, callee_names, all_marked, idem
                                 fname = "?"
                                 full_sig = "?"
                             elif raw_params and raw_params != 'void':
-                                for p in s.group(3).split(','):
-                                    ps = p.strip().split()
-                                    if ps and len(ps) >= 2:
-                                        n = ps[-1].lstrip('*& ')
-                                        arr_sz = 0
-                                        arr_m = re.search(r'\[(\d+)\]', n)
-                                        if arr_m:
-                                            arr_sz = int(arr_m.group(1))
-                                            n = n[:arr_m.start()]
-                                        ty = ' '.join(ps[:-1])
-                                        if n and n!='const': params.append((ty, n, arr_sz))
+                                for p in split_params(s.group(3)):
+                                    # Find last identifier as parameter name
+                                    ws = p.split()
+                                    if len(ws) < 2: continue
+                                    # Scan backwards for the actual identifier (skip type keywords)
+                                    pn = ''
+                                    pi = len(ws) - 1
+                                    for k in range(len(ws)-1, -1, -1):
+                                        w = ws[k]
+                                        # If word starts with '(' or contains '(' with no matching ')', skip
+                                        if w[0] in '(*&' and k > 0:
+                                            continue
+                                        # find identifier via regex
+                                        pm = re.match(r'^([a-zA-Z_]\w*)', w.lstrip('(*&'))
+                                        if pm:
+                                            pn = pm.group(1); pi = k; break
+                                    if not pn: continue
+                                    ty = ' '.join(ws[:pi]) + (' ' if pi > 0 else '') + ws[pi].replace(pn, '', 1).lstrip('(*&')
+                                    ty = ty.strip()
+                                    arr_sz = 0
+                                    if ty and pn != 'const':
+                                        params.append((ty, pn, arr_sz))
                     
                     # Completion check
                     fn_info = functions.get(addr)
@@ -407,9 +418,35 @@ def find_markers(functions, raw_json, callee_map, callee_names, all_marked, idem
 def san(n):
     return n.replace('::','_').replace('@','_').replace('<','_').replace('>','_')
 
+KNOWN_OSTREAM = {'Point2D', 'RectangleStruct', 'Vector2D'}
+
+def is_data_ptr(ty):
+    return ('*' in ty or ty.endswith('&')) and '(*' not in ty
+
+def is_func_ptr(ty):
+    return '(*' in ty
+
+def split_params(params_str):
+    """Split parameter list on commas, respecting nested parentheses."""
+    result = []
+    depth = 0
+    current = ''
+    for ch in params_str:
+        if ch in '(<':
+            depth += 1
+        elif ch in ')>':
+            depth -= 1
+        elif ch == ',' and depth == 0:
+            result.append(current.strip())
+            current = ''
+            continue
+        current += ch
+    if current.strip():
+        result.append(current.strip())
+    return result
+
 def strip_qualifiers(ty):
-    """Remove C++ type qualifiers: const, volatile."""
-    return ty.strip().replace('const ','').replace('const','').replace('volatile ','').replace('volatile','').strip()
+    return re.sub(r'\[.*?\]', '', ty).strip().replace('static ','').replace('static','').replace('const ','').replace('const','').replace('volatile ','').replace('volatile','').strip()
 
 def generate(markers, functions, fn_map, none_markers=None):
     if none_markers is None: none_markers = []
@@ -504,9 +541,16 @@ def generate(markers, functions, fn_map, none_markers=None):
                 ref = f'in[{i}].stk{j}'
                 if pt[2] > 0:
                     w(f'  os<<" {pt[1]}(Stack)=";FmtArr(os,{pt[2]},{ref});')
-                elif '*' in ty_orig or ty_orig.endswith('&'):
+                elif is_data_ptr(ty_orig):
                     bare = ty.replace('&','').replace('*','').strip()
-                    w(f'  os<<" {pt[1]}(Stack)=";FmtPtr(os,(const {bare}*)({ref}));')
+                    if bare in KNOWN_OSTREAM:
+                        w(f'  os<<" {pt[1]}(Stack)=";FmtPtr(os,(const {bare}*)({ref}));')
+                    else:
+                        w(f'  os<<" {pt[1]}(Stack)=";Hex8(os,{ref});')
+                elif is_func_ptr(ty_orig):
+                    w(f'  os<<" {pt[1]}(Stack)=";Hex8(os,{ref});')
+                elif is_func_ptr(ty_orig):
+                    w(f'  os<<" {pt[1]}(Stack)=";Hex8(os,{ref});')
                 else:
                     w(f'  os<<" {pt[1]}(Stack)=";os<<({ty})({ref});')
         elif conv == 'fastcall':
@@ -516,7 +560,7 @@ def generate(markers, functions, fn_map, none_markers=None):
                 ref = f'in[{i}].{chr(ord("c")+j)}'
                 if pt[2] > 0:
                     w(f'  os<<" {pt[1]}({regs[j]})=";FmtArr(os,{pt[2]},{ref});')
-                elif '*' in ty_orig or ty_orig.endswith('&'):
+                elif is_data_ptr(ty_orig):
                     bare = ty.replace('&','').replace('*','').strip()
                     w(f'  os<<" {pt[1]}({regs[j]})=";FmtPtr(os,(const {bare}*)({ref}));')
                 else:
@@ -526,9 +570,16 @@ def generate(markers, functions, fn_map, none_markers=None):
                 ref = f'in[{i}].stk{j-2}'
                 if pt[2] > 0:
                     w(f'  os<<" {pt[1]}(Stack)=";FmtArr(os,{pt[2]},{ref});')
-                elif '*' in ty_orig or ty_orig.endswith('&'):
+                elif is_data_ptr(ty_orig):
                     bare = ty.replace('&','').replace('*','').strip()
-                    w(f'  os<<" {pt[1]}(Stack)=";FmtPtr(os,(const {bare}*)({ref}));')
+                    if bare in KNOWN_OSTREAM:
+                        w(f'  os<<" {pt[1]}(Stack)=";FmtPtr(os,(const {bare}*)({ref}));')
+                    else:
+                        w(f'  os<<" {pt[1]}(Stack)=";Hex8(os,{ref});')
+                elif is_func_ptr(ty_orig):
+                    w(f'  os<<" {pt[1]}(Stack)=";Hex8(os,{ref});')
+                elif is_func_ptr(ty_orig):
+                    w(f'  os<<" {pt[1]}(Stack)=";Hex8(os,{ref});')
                 else:
                     w(f'  os<<" {pt[1]}(Stack)=";os<<({ty})({ref});')
         else:  # stdcall, cdecl
@@ -537,9 +588,16 @@ def generate(markers, functions, fn_map, none_markers=None):
                 ref = f'in[{i}].stk{j}'
                 if pt[2] > 0:
                     w(f'  os<<" {pt[1]}(Stack)=";FmtArr(os,{pt[2]},{ref});')
-                elif '*' in ty_orig or ty_orig.endswith('&'):
+                elif is_data_ptr(ty_orig):
                     bare = ty.replace('&','').replace('*','').strip()
-                    w(f'  os<<" {pt[1]}(Stack)=";FmtPtr(os,(const {bare}*)({ref}));')
+                    if bare in KNOWN_OSTREAM:
+                        w(f'  os<<" {pt[1]}(Stack)=";FmtPtr(os,(const {bare}*)({ref}));')
+                    else:
+                        w(f'  os<<" {pt[1]}(Stack)=";Hex8(os,{ref});')
+                elif is_func_ptr(ty_orig):
+                    w(f'  os<<" {pt[1]}(Stack)=";Hex8(os,{ref});')
+                elif is_func_ptr(ty_orig):
+                    w(f'  os<<" {pt[1]}(Stack)=";Hex8(os,{ref});')
                 else:
                     w(f'  os<<" {pt[1]}(Stack)=";os<<({ty})({ref});')
         w(f'  os<<"\\r\\n";')
@@ -667,8 +725,11 @@ def generate(markers, functions, fn_map, none_markers=None):
     w('static void FmtRet(std::ostream& os, DWORD v, int i){')
     w('  switch(i){')
     for i, m in enumerate(markers):
-        rt = strip_qualifiers(m.get('ret_type', ''))
-        if '*' in m.get('ret_type','') or m.get('ret_type','').endswith('&'):
+        rt_orig = m.get('ret_type', '')
+        rt = strip_qualifiers(rt_orig)
+        if is_data_ptr(rt_orig):
+            w(f'    case {i}: Hex8(os,v); break;')
+        elif not rt or rt == 'void':
             w(f'    case {i}: Hex8(os,v); break;')
         else:
             w(f'    case {i}: os<<({rt})(v); break;')

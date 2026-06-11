@@ -24,7 +24,7 @@ extern "C" DWORD RE_XSurface_SetPixel(DWORD, DWORD, DWORD);
 extern "C" DWORD RE_XSurface_GetPixel(DWORD, DWORD);
 extern "C" DWORD RE_XSurface_PutPixel(DWORD, DWORD, DWORD, DWORD);
 extern "C" DWORD RE_XSurface_GetPixelAtCoords(DWORD, DWORD, DWORD);
-extern "C" DWORD RE_XSurface_WalkLine(DWORD, DWORD, DWORD, DWORD);
+extern "C" DWORD RE_XSurface_WalkLine(DWORD, DWORD, DWORD);
 extern "C" DWORD RE_XSurface_DrawLineEx(DWORD, DWORD, DWORD, DWORD, DWORD);
 extern "C" DWORD RE_XSurface_DrawLine(DWORD, DWORD, DWORD, DWORD);
 extern "C" DWORD RE_XSurface_Fill(DWORD, DWORD);
@@ -116,9 +116,9 @@ static void NN(){
   nm[27]="CCFileClass::Reset"; addr_tbl[27]=0x00473CE0; is_cap[27]=false;
   sig[27]="void CCFileClass::Reset()"; rt[27]="void";
   nm[28]="INIClass::Constructor"; addr_tbl[28]=0x00535AA0; is_cap[28]=false;
-  sig[28]="void INIClass::INIClass()"; rt[28]="void";
+  sig[28]="INIClass::INIClass()"; rt[28]="";
   nm[29]="CCINIClass::Constructor"; addr_tbl[29]=0x00535B30; is_cap[29]=false;
-  sig[29]="void CCINIClass::CCINIClass()"; rt[29]="void";
+  sig[29]="CCINIClass::CCINIClass()"; rt[29]="";
   nm[30]="CCINIClass::Load"; addr_tbl[30]=0x004741F0; is_cap[30]=false;
   sig[30]="bool CCINIClass::Load(CCFileClass* file, bool unk1, bool unk2)"; rt[30]="bool";
   nm[31]="MixFileClass::Bootstrap"; addr_tbl[31]=0x005301A0; is_cap[31]=false;
@@ -257,8 +257,8 @@ static void FI_LoadExpansionMixFiles(std::ostream& os){
 
 static void FI_AbstractClass_QueryInterface(std::ostream& os){
   os<<"this=";Hex8(os,in[12].c);
-  os<<" iid(Stack)=";FmtPtr(os,(const IID*)(in[12].stk0));
-  os<<" ppv(Stack)=";FmtPtr(os,(const void*)(in[12].stk1));
+  os<<" iid(Stack)=";Hex8(os,in[12].stk0);
+  os<<" ppv(Stack)=";Hex8(os,in[12].stk1);
   os<<"\r\n";
 }
 
@@ -266,15 +266,15 @@ static void FI_ClipRectIntersection(std::ostream& os){
   os<<" result(ECX)=";FmtPtr(os,(const RectangleStruct*)(in[13].c));
   os<<" clip_rect(EDX)=";FmtPtr(os,(const RectangleStruct*)(in[13].d));
   os<<" src_rect(Stack)=";FmtPtr(os,(const RectangleStruct*)(in[13].stk0));
-  os<<" x_off(Stack)=";FmtPtr(os,(const int*)(in[13].stk1));
-  os<<" y_off(Stack)=";FmtPtr(os,(const int*)(in[13].stk2));
+  os<<" x_off(Stack)=";Hex8(os,in[13].stk1);
+  os<<" y_off(Stack)=";Hex8(os,in[13].stk2);
   os<<"\r\n";
 }
 
 static void FI_ClipLine(std::ostream& os){
-  os<<" start(ECX)=";FmtArr(os,2,in[14].c);
-  os<<" end(EDX)=";FmtArr(os,2,in[14].d);
-  os<<" clip_rect(Stack)=";FmtArr(os,4,in[14].stk0);
+  os<<" start(ECX)=";os<<(int)(in[14].c);
+  os<<" end(EDX)=";os<<(int)(in[14].d);
+  os<<" clip_rect(Stack)=";os<<(int)(in[14].stk0);
   os<<"\r\n";
 }
 
@@ -310,7 +310,6 @@ static void FI_XSurface_WalkLine(std::ostream& os){
   os<<"this=";Hex8(os,in[19].c);
   os<<" start(Stack)=";FmtPtr(os,(const Point2D*)(in[19].stk0));
   os<<" end(Stack)=";FmtPtr(os,(const Point2D*)(in[19].stk1));
-  os<<" (*callback(Stack)=";os<<(void)(in[19].stk2);
   os<<"\r\n";
 }
 
@@ -354,7 +353,7 @@ static void FI_XSurface_DrawRect(std::ostream& os){
 
 static void FI_CCFileClass_Open(std::ostream& os){
   os<<"this=";Hex8(os,in[25].c);
-  os<<" pFileName(Stack)=";FmtPtr(os,(const char*)(in[25].stk0));
+  os<<" pFileName(Stack)=";Hex8(os,in[25].stk0);
   os<<"\r\n";
 }
 
@@ -380,7 +379,7 @@ static void FI_CCINIClass_Constructor(std::ostream& os){
 
 static void FI_CCINIClass_Load(std::ostream& os){
   os<<"this=";Hex8(os,in[30].c);
-  os<<" file(Stack)=";FmtPtr(os,(const CCFileClass*)(in[30].stk0));
+  os<<" file(Stack)=";Hex8(os,in[30].stk0);
   os<<" unk1(Stack)=";os<<(bool)(in[30].stk1);
   os<<" unk2(Stack)=";os<<(bool)(in[30].stk2);
   os<<"\r\n";
@@ -447,7 +446,7 @@ static DWORD CallRE(int i){
     case 16: return RE_XSurface_GetPixel(V.c, V.stk0);
     case 17: return RE_XSurface_PutPixel(V.c, V.stk0, V.stk1, V.stk2);
     case 18: return RE_XSurface_GetPixelAtCoords(V.c, V.stk0, V.stk1);
-    case 19: return RE_XSurface_WalkLine(V.c, V.stk0, V.stk1, V.stk2);
+    case 19: return RE_XSurface_WalkLine(V.c, V.stk0, V.stk1);
     case 20: return RE_XSurface_DrawLineEx(V.c, V.stk0, V.stk1, V.stk2, V.stk3);
     case 21: return RE_XSurface_DrawLine(V.c, V.stk0, V.stk1, V.stk2);
     case 22: return RE_XSurface_Fill(V.c, V.stk0);
@@ -14918,14 +14917,14 @@ static void FmtRet(std::ostream& os, DWORD v, int i){
     case 0: os<<(int)(v); break;
     case 1: os<<(int)(v); break;
     case 2: os<<(int)(v); break;
-    case 3: os<<(void)(v); break;
+    case 3: Hex8(os,v); break;
     case 4: Hex8(os,v); break;
     case 5: os<<(int)(v); break;
-    case 6: os<<(static bool)(v); break;
-    case 7: os<<(static bool)(v); break;
-    case 8: os<<(static void)(v); break;
+    case 6: os<<(bool)(v); break;
+    case 7: os<<(bool)(v); break;
+    case 8: Hex8(os,v); break;
     case 9: os<<(char)(v); break;
-    case 10: os<<(void)(v); break;
+    case 10: Hex8(os,v); break;
     case 11: os<<(bool)(v); break;
     case 12: os<<(HRESULT)(v); break;
     case 13: Hex8(os,v); break;
@@ -14942,9 +14941,9 @@ static void FmtRet(std::ostream& os, DWORD v, int i){
     case 24: os<<(bool)(v); break;
     case 25: os<<(bool)(v); break;
     case 26: Hex8(os,v); break;
-    case 27: os<<(void)(v); break;
-    case 28: os<<(void)(v); break;
-    case 29: os<<(void)(v); break;
+    case 27: Hex8(os,v); break;
+    case 28: Hex8(os,v); break;
+    case 29: Hex8(os,v); break;
     case 30: os<<(bool)(v); break;
     case 31: os<<(bool)(v); break;
     default: os<<v; break;
