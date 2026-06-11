@@ -58,13 +58,16 @@ add_library(hook_dll SHARED
 
 target_include_directories(hook_dll PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}
+    ${CMAKE_CURRENT_SOURCE_DIR}/stub_override   # REVERSE(a,b,c)= → no-op
     ${YRPP_DIR}
     ${GAMEMD_INCLUDE_DIR}
 )
 
 target_link_libraries(hook_dll PRIVATE
+    gamemd_core
     winmm.lib
     ws2_32.lib
+    ddraw.lib
 )
 
 target_compile_definitions(hook_dll PRIVATE
