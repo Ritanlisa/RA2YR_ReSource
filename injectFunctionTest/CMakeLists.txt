@@ -28,10 +28,13 @@ set(HOOK_SOURCES
     headless_server.cpp
     element_tracker.cpp
     render_hooks.cpp
+    hook_globals.cpp                 # stub globals for gamemd symbols
     "${CMAKE_CURRENT_SOURCE_DIR}/gen/reverse_hooks.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/gen/reverse_check.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/gen/re_impl.cpp"
     test_hooks.cpp
+    # RE implementation sources (thin shims call these)
+    "${CMAKE_CURRENT_SOURCE_DIR}/../src/render/surface.cpp"
 )
 
 set(HOOK_HEADERS
@@ -64,10 +67,8 @@ target_include_directories(hook_dll PRIVATE
 )
 
 target_link_libraries(hook_dll PRIVATE
-    gamemd_core
     winmm.lib
     ws2_32.lib
-    ddraw.lib
 )
 
 target_compile_definitions(hook_dll PRIVATE

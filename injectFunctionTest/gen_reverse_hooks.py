@@ -280,16 +280,18 @@ def find_markers(functions, raw_json, callee_map, callee_names, all_marked, idem
                             fs = fs.replace('( ', '(')     # no space after opening paren
                             full_sig = fs
                         if s:
-                            raw_params = s.group(3).strip()
+                            # Extract params from source text (SIG truncates at first ))
+                            src = rest if rest and '(' in rest else ln
+                            raw_params = _extract_params(src)
                             # Reject if parameters look like code, not declarations
                             # (e.g. "draw_rect.X, draw_rect.Y" from Point2D tl(draw_rect.X, draw_rect.Y))
-                            has_dot = any('.' in p for p in (s.group(3).split(',') if s.group(3) else []))
+                            has_dot = any('.' in p for p in (split_params(raw_params) if raw_params else []))
                             if has_dot:
                                 s = None  # discard: found code, not function declaration
                                 fname = "?"
                                 full_sig = "?"
                             elif raw_params and raw_params != 'void':
-                                for p in split_params(s.group(3)):
+                                for p in split_params(raw_params):
                                     # Find last identifier as parameter name
                                     ws = p.split()
                                     if len(ws) < 2: continue
@@ -298,16 +300,24 @@ def find_markers(functions, raw_json, callee_map, callee_names, all_marked, idem
                                     pi = len(ws) - 1
                                     for k in range(len(ws)-1, -1, -1):
                                         w = ws[k]
-                                        # If word starts with '(' or contains '(' with no matching ')', skip
-                                        if w[0] in '(*&' and k > 0:
-                                            continue
-                                        # find identifier via regex
-                                        pm = re.match(r'^([a-zA-Z_]\w*)', w.lstrip('(*&'))
-                                        if pm:
+                                        stripped = w.lstrip('(*&')
+                                        if not stripped: continue
+                                        pm = re.match(r'^([a-zA-Z_]\w*)', stripped)
+                                        if not pm: continue
+                                        end = len(w) - len(stripped) + pm.end()
+                                        # If word starts with (* and the name is inside, it's the param name
+                                        if w.startswith('(*'):
                                             pn = pm.group(1); pi = k; break
+                                        # Otherwise, skip if trailing char indicates type keyword
+                                        if end < len(w) and w[end] in ',;&)':
+                                            continue
+                                        pn = pm.group(1); pi = k; break
                                     if not pn: continue
-                                    ty = ' '.join(ws[:pi]) + (' ' if pi > 0 else '') + ws[pi].replace(pn, '', 1).lstrip('(*&')
-                                    ty = ty.strip()
+                                    if p.find('(*') >= 0:
+                                        ty = p.replace(pn, '', 1).replace('  ', ' ').strip()
+                                    else:
+                                        ty = ' '.join(ws[:pi]) + (' ' if pi > 0 else '') + ws[pi].replace(pn, '', 1).lstrip('(*&')
+                                        ty = ty.strip()
                                     arr_sz = 0
                                     if ty and pn != 'const':
                                         params.append((ty, pn, arr_sz))
@@ -426,6 +436,19 @@ def is_data_ptr(ty):
 
 def is_func_ptr(ty):
     return '(*' in ty
+
+def _extract_params(sig_text):
+    """Extract parameter text from function signature with balanced parens."""
+    # Find the opening ( after function name
+    paren_start = sig_text.find('(')
+    if paren_start < 0: return ''
+    depth = 0
+    for i in range(paren_start, len(sig_text)):
+        if sig_text[i] == '(': depth += 1
+        elif sig_text[i] == ')': depth -= 1
+        if depth == 0:
+            return sig_text[paren_start + 1:i].strip()
+    return ''
 
 def split_params(params_str):
     """Split parameter list on commas, respecting nested parentheses."""

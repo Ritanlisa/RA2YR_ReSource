@@ -12,7 +12,7 @@ extern "C" DWORD RE_XSurface_SetPixel(DWORD, DWORD, DWORD);
 extern "C" DWORD RE_XSurface_GetPixel(DWORD, DWORD);
 extern "C" DWORD RE_XSurface_PutPixel(DWORD, DWORD, DWORD, DWORD);
 extern "C" DWORD RE_XSurface_GetPixelAtCoords(DWORD, DWORD, DWORD);
-extern "C" DWORD RE_XSurface_WalkLine(DWORD, DWORD, DWORD);
+extern "C" DWORD RE_XSurface_WalkLine(DWORD, DWORD, DWORD, DWORD);
 extern "C" DWORD RE_XSurface_DrawLineEx(DWORD, DWORD, DWORD, DWORD, DWORD);
 extern "C" DWORD RE_XSurface_DrawLine(DWORD, DWORD, DWORD, DWORD);
 extern "C" DWORD RE_XSurface_Fill(DWORD, DWORD);
@@ -199,6 +199,7 @@ static void FI_XSurface_WalkLine(std::ostream& os){
   os<<"this=";Hex8(os,in[7].c);
   os<<" start(Stack)=";FmtPtr(os,(const Point2D*)(in[7].stk0));
   os<<" end(Stack)=";FmtPtr(os,(const Point2D*)(in[7].stk1));
+  os<<" callback(Stack)=";Hex8(os,in[7].stk2);
   os<<"\r\n";
 }
 
@@ -266,7 +267,7 @@ static DWORD CallRE(int i){
     case 4: return RE_XSurface_GetPixel(V.c, V.stk0);
     case 5: return RE_XSurface_PutPixel(V.c, V.stk0, V.stk1, V.stk2);
     case 6: return RE_XSurface_GetPixelAtCoords(V.c, V.stk0, V.stk1);
-    case 7: return RE_XSurface_WalkLine(V.c, V.stk0, V.stk1);
+    case 7: return RE_XSurface_WalkLine(V.c, V.stk0, V.stk1, V.stk2);
     case 8: return RE_XSurface_DrawLineEx(V.c, V.stk0, V.stk1, V.stk2, V.stk3);
     case 9: return RE_XSurface_DrawLine(V.c, V.stk0, V.stk1, V.stk2);
     case 10: return RE_XSurface_Fill(V.c, V.stk0);

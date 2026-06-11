@@ -27,7 +27,7 @@
 #pragma message("WARN: D:/RA2YR_ReSource/src/misc/rules.cpp:45: 0x530000 (LoadExpansionMixFiles) mode=None, 3 unmarked-uncompleted: LoadExpansionMixFiles, MixFileClass::FromFile, ReturnTrue")
 #pragma message("WARN: D:/RA2YR_ReSource/src/object/abstract.cpp:28: 0x410260 (AbstractClass::QueryInterface) mode=None, not completed (functions.json line 23748)")
 #pragma message("WARN: D:/RA2YR_ReSource/src/object/abstract.cpp:28: 0x410260 (AbstractClass::QueryInterface) mode=None, 1 unmarked-uncompleted: AbstractClass::QueryInterface")
-#pragma message("WARN: src/render/surface.cpp:15: 0x421b60 (ClipRectIntersection) idempotent=UNCERTAIN  transactions enabled (conservative). Fix: implement Phase 3 vtable resolution or add manual idempotent with reason.")
+#pragma message("WARN: src/render/surface.cpp:13: 0x421b60 (ClipRectIntersection) idempotent=UNCERTAIN  transactions enabled (conservative). Fix: implement Phase 3 vtable resolution or add manual idempotent with reason.")
 #pragma message("WARN: D:/RA2YR_ReSource/src/system/cc_file.cpp:26: 0x473c50 (CCFileClass::Open) mode=None, not completed (functions.json line 80701)")
 #pragma message("WARN: D:/RA2YR_ReSource/src/system/cc_file.cpp:26: 0x473c50 (CCFileClass::Open) mode=None, 3 unmarked-uncompleted: CCFileClass::Open, File::IsReady, LookupFileInfoCache")
 #pragma message("WARN: D:/RA2YR_ReSource/src/system/cc_file.cpp:79: 0x4a3890 (CCFileClass::ReadEntireFile) mode=None, not completed (functions.json line 122937)")

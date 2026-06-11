@@ -10,8 +10,6 @@
 namespace gamemd
 {
 
-namespace {
-
 REVERSE(0x421B60, "ClipRectIntersection: rect intersection", "Inject")
 RectangleStruct* ClipRectIntersection(
     RectangleStruct* result,
@@ -171,8 +169,6 @@ bool ClipLine(int start[2], int end[2], int clip_rect[4])
         }
     }
 }
-
-} // anonymous namespace
 
 // IDA: 0x4BA770 -- DSurface::CreatePrimary pixel format detection logic
 // Computes bit shifts/masks from the surface's RGB masks, then determines
