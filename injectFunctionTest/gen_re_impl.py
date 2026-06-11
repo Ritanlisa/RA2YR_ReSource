@@ -189,7 +189,7 @@ TEMPLATES['global'] = [
 
 # ---- stubs (generated dynamically from param count) ----
 TEMPLATES['get_ticks'] = ['return timeGetTime() >> 4;']
-TEMPLATES['pack_rgb'] = ['return ((unsigned char)p2 << 16) | ((unsigned char)p1 << 8) | (unsigned char)p0;']
+TEMPLATES['pack_rgb'] = ['return ((unsigned char)p3 << 16) | ((unsigned char)p2 << 8) | (unsigned char)p1;']
 TEMPLATES['ini_ctor'] = ['memset((void*)p0, 0, 0x1500);', 'return (DWORD)p0;']
 TEMPLATES['ccini_ctor'] = ['memset((void*)p0, 0, 0x1500);', '*(DWORD*)((DWORD)p0 + 0x1500) = 0;', '*(DWORD*)((DWORD)p0 + 0x1504) = 0;', 'return (DWORD)p0;']
 

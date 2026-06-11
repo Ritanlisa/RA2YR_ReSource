@@ -4,7 +4,7 @@
 
 // Palette::6BitTo16Bit @ 0x4355b0
 extern "C" DWORD RE_Palette_6BitTo16Bit(DWORD p0, DWORD p1, DWORD p2, DWORD p3) {
-return ((unsigned char)p2 << 16) | ((unsigned char)p1 << 8) | (unsigned char)p0;
+return ((unsigned char)p3 << 16) | ((unsigned char)p2 << 8) | (unsigned char)p1;
 }
 
 // ClipRectIntersection @ 0x421b60
