@@ -67,6 +67,8 @@ public:
     int Mission_Repair() override;
     int Mission_Missile() override;
 
+    Point2D* CalcDrawPos(Point2D* out);
+
     BuildingTypeClass*                    Type;
     FactoryClass*                         Factory;
     TimerStruct                           C4Timer;

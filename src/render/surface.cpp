@@ -722,7 +722,7 @@ uint32_t XSurface::GetPixel(const Point2D& point)
 
 // IDA: 0x7BAF90 -- XSurface::PutPixel (130B)
 // vtable[34] 0x88 -- bounds check -> Lock -> check BPP -> write -> Unlock
-REVERSE(0x7baf90, "XSurface::PutPixel: pixel write + bounds", "Inject")
+REVERSE(0x7baf90, "XSurface::PutPixel: pixel write + bounds", "None")
 bool XSurface::PutPixel(const Point2D& point, uint16_t color, const RectangleStruct& clip_rect)
 {
     if (point.X < clip_rect.X)
@@ -1040,7 +1040,6 @@ bool XSurface::DrawLine(const Point2D& start, const Point2D& end, uint32_t color
 
 // IDA: 0x7BA8C0 -- XSurface::DrawDashedLine (621B)
 // vtable[18] 0x48 -- Bresenham dashed line with 16-byte stipple pattern
-REVERSE(0x7ba8c0, "XSurface::DrawDashedLine: stipple line", "None")
 bool XSurface::DrawDashedLine(
     const Point2D& start, const Point2D& end,
     uint16_t color, const uint8_t stipple[16],
@@ -1262,7 +1261,6 @@ bool XSurface::DrawRect(const RectangleStruct& draw_rect, uint32_t color)
 
 // IDA: 0x7BB350 -- XSurface::DrawEllipseOutline (1478B)
 // vtable[8] 0x20 -- midpoint ellipse algorithm
-REVERSE(0x7bb350, "XSurface::DrawEllipseOutline: ellipse", "None")
 bool XSurface::DrawEllipseOutline(
     const Point2D& center,
     int radius_w, int radius_h,

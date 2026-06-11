@@ -9,10 +9,10 @@ extern "C" DWORD RE_XSurface_GetPixelAtCoords(DWORD, DWORD, DWORD);
 
 static FILE* f = nullptr;
 static int ctr[1]={};
-static const char* nm[42]={};
-static DWORD addr_tbl[42]={};
-static const char* sig[42]={};
-static const char* rt[42]={};
+static const char* nm[32]={};
+static DWORD addr_tbl[32]={};
+static const char* sig[32]={};
+static const char* rt[32]={};
 static bool is_cap[1]={};
 static bool has_diff[1]={};
 static S in[1]={};
@@ -38,80 +38,60 @@ static void NN(){
   sig[3]="int LoadFileSHP(const char* filename)"; rt[3]="int";
   nm[4]="Event::Dispatch"; addr_tbl[4]=0x0048D080;
   sig[4]="void EventDispatchEx()"; rt[4]="void";
-  nm[5]="Movie::Play"; addr_tbl[5]=0x005BED40;
-  sig[5]="void MoviePlay(int a1, int a2, int a3, int a4)"; rt[5]="void";
-  nm[6]="ShowLoadingScreen"; addr_tbl[6]=0x005312A0;
-  sig[6]="void ShowLoadingScreen()"; rt[6]="void";
-  nm[7]="ResetAnimSystem"; addr_tbl[7]=0x0075A7D0;
-  sig[7]="void ResetAnimSystem(int mode)"; rt[7]="void";
-  nm[8]="SearchMIXFile"; addr_tbl[8]=0x005B40B0;
-  sig[8]="const void* SearchMIXFile(const char* name)"; rt[8]="const void*";
-  nm[9]="InitGame"; addr_tbl[9]=0x0052BA60;
-  sig[9]="int InitGame(bool no_cd)"; rt[9]="int";
-  nm[10]="GameFrameLoop"; addr_tbl[10]=0x0055D360;
-  sig[10]="static bool GameFrameLoop()"; rt[10]="static bool";
-  nm[11]="GameFrameCheck"; addr_tbl[11]=0x0055CFD0;
-  sig[11]="static bool GameFrameCheck()"; rt[11]="static bool";
-  nm[12]="MainGameFrame"; addr_tbl[12]=0x0048C8B0;
-  sig[12]="static void MainGameFrame()"; rt[12]="static void";
-  nm[13]="MenuSelect"; addr_tbl[13]=0x0052D9A0;
-  sig[13]="char MenuSelect()"; rt[13]="char";
-  nm[14]="MainGame"; addr_tbl[14]=0x0048CCC0;
-  sig[14]="void MainGame()"; rt[14]="void";
-  nm[15]="InitRules"; addr_tbl[15]=0x0052CD70;
-  sig[15]="bool InitRules()"; rt[15]="bool";
-  nm[16]="LoadExpansionMixFiles"; addr_tbl[16]=0x00530000;
-  sig[16]="bool LoadExpansionMixFiles()"; rt[16]="bool";
-  nm[17]="InitBulkData"; addr_tbl[17]=0x00531680;
-  sig[17]="bool InitBulkData()"; rt[17]="bool";
-  nm[18]="CompleteGameInit"; addr_tbl[18]=0x005D7CE0;
-  sig[18]="void CompleteGameInit()"; rt[18]="void";
-  nm[19]="AbstractClass::QueryInterface"; addr_tbl[19]=0x00410260;
-  sig[19]="HRESULT AbstractClass::QueryInterface(const IID& iid, void** ppv)"; rt[19]="HRESULT";
-  nm[20]="ObjectClass::Remove"; addr_tbl[20]=0x005F44A0;
-  sig[20]="ObjectClass::Remove"; rt[20]="";
-  nm[21]="ClipRectIntersection"; addr_tbl[21]=0x00421B60;
-  sig[21]="RectangleStruct* ClipRectIntersection(RectangleStruct* result, const RectangleStruct* clip_rect, const RectangleStruct* src_rect, int* x_off, int* y_off)"; rt[21]="RectangleStruct*";
-  nm[22]="ClipLine"; addr_tbl[22]=0x007BC2B0;
-  sig[22]="bool ClipLine(int start[2], int end[2], int clip_rect[4])"; rt[22]="bool";
-  nm[23]="XSurface::SetPixel"; addr_tbl[23]=0x007BAEB0;
-  sig[23]="bool XSurface::SetPixel(const Point2D& point, uint32_t color)"; rt[23]="bool";
-  nm[24]="XSurface::GetPixel"; addr_tbl[24]=0x007BAE60;
-  sig[24]="uint32_t XSurface::GetPixel(const Point2D& point)"; rt[24]="uint32_t";
-  nm[25]="XSurface::PutPixel"; addr_tbl[25]=0x007BAF90;
-  sig[25]="bool XSurface::PutPixel(const Point2D& point, uint16_t color, const RectangleStruct& clip_rect)"; rt[25]="bool";
-  nm[26]="XSurface::WalkLine"; addr_tbl[26]=0x007BAB90;
-  sig[26]="bool XSurface::WalkLine(const Point2D& start, const Point2D& end, void (*callback)"; rt[26]="bool";
-  nm[27]="XSurface::DrawLineEx"; addr_tbl[27]=0x007BA610;
-  sig[27]="bool XSurface::DrawLineEx(const RectangleStruct& clip_rect, const Point2D& start, const Point2D& end, uint32_t color)"; rt[27]="bool";
-  nm[28]="XSurface::DrawLine"; addr_tbl[28]=0x007BA5E0;
-  sig[28]="bool XSurface::DrawLine(const Point2D& start, const Point2D& end, uint32_t color)"; rt[28]="bool";
-  nm[29]="XSurface::DrawDashedLine"; addr_tbl[29]=0x007BA8C0;
-  sig[29]="bool XSurface::DrawDashedLine(const Point2D& start, const Point2D& end, uint16_t color, const uint8_t stipple[16], int dash_offset)"; rt[29]="bool";
-  nm[30]="XSurface::Fill"; addr_tbl[30]=0x007BBAB0;
-  sig[30]="bool XSurface::Fill(uint32_t color)"; rt[30]="bool";
-  nm[31]="XSurface::DrawRectEx"; addr_tbl[31]=0x007BADC0;
-  sig[31]="bool XSurface::DrawRectEx(const RectangleStruct& clip_rect, const RectangleStruct& draw_rect, uint32_t color)"; rt[31]="bool";
-  nm[32]="XSurface::DrawRect"; addr_tbl[32]=0x007BAD90;
-  sig[32]="bool XSurface::DrawRect(const RectangleStruct& draw_rect, uint32_t color)"; rt[32]="bool";
-  nm[33]="XSurface::DrawEllipseOutline"; addr_tbl[33]=0x007BB350;
-  sig[33]="bool XSurface::DrawEllipseOutline(const Point2D& center, int radius_w, int radius_h, const RectangleStruct& clip_rect, uint16_t color)"; rt[33]="bool";
-  nm[34]="BuildingClass::CalcDrawPos"; addr_tbl[34]=0x00480110;
-  sig[34]="Point2D* BuildingClass::CalcDrawPos(Point2D* out)"; rt[34]="Point2D*";
-  nm[35]="CCFileClass::Open"; addr_tbl[35]=0x00473C50;
-  sig[35]="CCFileClass::Open"; rt[35]="";
-  nm[36]="CCFileClass::ReadEntireFile"; addr_tbl[36]=0x004A3890;
-  sig[36]="void* CCFileClass::ReadEntireFile()"; rt[36]="void*";
-  nm[37]="CCFileClass::Reset"; addr_tbl[37]=0x00473CE0;
-  sig[37]="void CCFileClass::Reset()"; rt[37]="void";
-  nm[38]="INIClass::Constructor"; addr_tbl[38]=0x00535AA0;
-  sig[38]="INIClass::Constructor"; rt[38]="";
-  nm[39]="CCINIClass::Constructor"; addr_tbl[39]=0x00535B30;
-  sig[39]="CCINIClass::Constructor"; rt[39]="";
-  nm[40]="CCINIClass::Load"; addr_tbl[40]=0x004741F0;
-  sig[40]="bool CCINIClass::Load(CCFileClass* file, bool unk1, bool unk2)"; rt[40]="bool";
-  nm[41]="MixFileClass::Bootstrap"; addr_tbl[41]=0x005301A0;
-  sig[41]="bool MixFileClass::Bootstrap()"; rt[41]="bool";
+  nm[5]="SearchMIXFile"; addr_tbl[5]=0x005B40B0;
+  sig[5]="const void* SearchMIXFile(const char* name)"; rt[5]="const void*";
+  nm[6]="InitGame"; addr_tbl[6]=0x0052BA60;
+  sig[6]="int InitGame(bool no_cd)"; rt[6]="int";
+  nm[7]="GameFrameLoop"; addr_tbl[7]=0x0055D360;
+  sig[7]="static bool GameFrameLoop()"; rt[7]="static bool";
+  nm[8]="GameFrameCheck"; addr_tbl[8]=0x0055CFD0;
+  sig[8]="static bool GameFrameCheck()"; rt[8]="static bool";
+  nm[9]="MainGameFrame"; addr_tbl[9]=0x0048C8B0;
+  sig[9]="static void MainGameFrame()"; rt[9]="static void";
+  nm[10]="MenuSelect"; addr_tbl[10]=0x0052D9A0;
+  sig[10]="char MenuSelect()"; rt[10]="char";
+  nm[11]="MainGame"; addr_tbl[11]=0x0048CCC0;
+  sig[11]="void MainGame()"; rt[11]="void";
+  nm[12]="LoadExpansionMixFiles"; addr_tbl[12]=0x00530000;
+  sig[12]="bool LoadExpansionMixFiles()"; rt[12]="bool";
+  nm[13]="AbstractClass::QueryInterface"; addr_tbl[13]=0x00410260;
+  sig[13]="HRESULT AbstractClass::QueryInterface(const IID& iid, void** ppv)"; rt[13]="HRESULT";
+  nm[14]="ClipRectIntersection"; addr_tbl[14]=0x00421B60;
+  sig[14]="RectangleStruct* ClipRectIntersection(RectangleStruct* result, const RectangleStruct* clip_rect, const RectangleStruct* src_rect, int* x_off, int* y_off)"; rt[14]="RectangleStruct*";
+  nm[15]="ClipLine"; addr_tbl[15]=0x007BC2B0;
+  sig[15]="bool ClipLine(int start[2], int end[2], int clip_rect[4])"; rt[15]="bool";
+  nm[16]="XSurface::SetPixel"; addr_tbl[16]=0x007BAEB0;
+  sig[16]="bool XSurface::SetPixel(const Point2D& point, uint32_t color)"; rt[16]="bool";
+  nm[17]="XSurface::GetPixel"; addr_tbl[17]=0x007BAE60;
+  sig[17]="uint32_t XSurface::GetPixel(const Point2D& point)"; rt[17]="uint32_t";
+  nm[18]="XSurface::PutPixel"; addr_tbl[18]=0x007BAF90;
+  sig[18]="bool XSurface::PutPixel(const Point2D& point, uint16_t color, const RectangleStruct& clip_rect)"; rt[18]="bool";
+  nm[19]="XSurface::WalkLine"; addr_tbl[19]=0x007BAB90;
+  sig[19]="bool XSurface::WalkLine(const Point2D& start, const Point2D& end, void (*callback)"; rt[19]="bool";
+  nm[20]="XSurface::DrawLineEx"; addr_tbl[20]=0x007BA610;
+  sig[20]="bool XSurface::DrawLineEx(const RectangleStruct& clip_rect, const Point2D& start, const Point2D& end, uint32_t color)"; rt[20]="bool";
+  nm[21]="XSurface::DrawLine"; addr_tbl[21]=0x007BA5E0;
+  sig[21]="bool XSurface::DrawLine(const Point2D& start, const Point2D& end, uint32_t color)"; rt[21]="bool";
+  nm[22]="XSurface::Fill"; addr_tbl[22]=0x007BBAB0;
+  sig[22]="bool XSurface::Fill(uint32_t color)"; rt[22]="bool";
+  nm[23]="XSurface::DrawRectEx"; addr_tbl[23]=0x007BADC0;
+  sig[23]="bool XSurface::DrawRectEx(const RectangleStruct& clip_rect, const RectangleStruct& draw_rect, uint32_t color)"; rt[23]="bool";
+  nm[24]="XSurface::DrawRect"; addr_tbl[24]=0x007BAD90;
+  sig[24]="bool XSurface::DrawRect(const RectangleStruct& draw_rect, uint32_t color)"; rt[24]="bool";
+  nm[25]="CCFileClass::Open"; addr_tbl[25]=0x00473C50;
+  sig[25]="CCFileClass::Open"; rt[25]="";
+  nm[26]="CCFileClass::ReadEntireFile"; addr_tbl[26]=0x004A3890;
+  sig[26]="void* CCFileClass::ReadEntireFile()"; rt[26]="void*";
+  nm[27]="CCFileClass::Reset"; addr_tbl[27]=0x00473CE0;
+  sig[27]="void CCFileClass::Reset()"; rt[27]="void";
+  nm[28]="INIClass::Constructor"; addr_tbl[28]=0x00535AA0;
+  sig[28]="INIClass::Constructor"; rt[28]="";
+  nm[29]="CCINIClass::Constructor"; addr_tbl[29]=0x00535B30;
+  sig[29]="CCINIClass::Constructor"; rt[29]="";
+  nm[30]="CCINIClass::Load"; addr_tbl[30]=0x004741F0;
+  sig[30]="bool CCINIClass::Load(CCFileClass* file, bool unk1, bool unk2)"; rt[30]="bool";
+  nm[31]="MixFileClass::Bootstrap"; addr_tbl[31]=0x005301A0;
+  sig[31]="bool MixFileClass::Bootstrap()"; rt[31]="bool";
 }
 struct InitHookNames { InitHookNames() { NN(); } };
 static InitHookNames _init;
@@ -14596,9 +14576,6 @@ static void ensure_sections(){
   SecApp(sec_none,&sec_none_len,"[int Palette6BitTo16Bit(int r, int g, int b)-0x004355B0]\r\n");
   SecApp(sec_none,&sec_none_len,"[int LoadFileSHP(const char* filename)-0x004A38D0]\r\n");
   SecApp(sec_none,&sec_none_len,"[void EventDispatchEx()-0x0048D080]\r\n");
-  SecApp(sec_none,&sec_none_len,"[void MoviePlay(int a1, int a2, int a3, int a4)-0x005BED40]\r\n");
-  SecApp(sec_none,&sec_none_len,"[void ShowLoadingScreen()-0x005312A0]\r\n");
-  SecApp(sec_none,&sec_none_len,"[void ResetAnimSystem(int mode)-0x0075A7D0]\r\n");
   SecApp(sec_none,&sec_none_len,"[const void* SearchMIXFile(const char* name)-0x005B40B0]\r\n");
   SecApp(sec_none,&sec_none_len,"[int InitGame(bool no_cd)-0x0052BA60]\r\n");
   SecApp(sec_none,&sec_none_len,"[static bool GameFrameLoop()-0x0055D360]\r\n");
@@ -14606,12 +14583,8 @@ static void ensure_sections(){
   SecApp(sec_none,&sec_none_len,"[static void MainGameFrame()-0x0048C8B0]\r\n");
   SecApp(sec_none,&sec_none_len,"[char MenuSelect()-0x0052D9A0]\r\n");
   SecApp(sec_none,&sec_none_len,"[void MainGame()-0x0048CCC0]\r\n");
-  SecApp(sec_none,&sec_none_len,"[bool InitRules()-0x0052CD70]\r\n");
   SecApp(sec_none,&sec_none_len,"[bool LoadExpansionMixFiles()-0x00530000]\r\n");
-  SecApp(sec_none,&sec_none_len,"[bool InitBulkData()-0x00531680]\r\n");
-  SecApp(sec_none,&sec_none_len,"[void CompleteGameInit()-0x005D7CE0]\r\n");
   SecApp(sec_none,&sec_none_len,"[HRESULT AbstractClass::QueryInterface(const IID& iid, void** ppv)-0x00410260]\r\n");
-  SecApp(sec_none,&sec_none_len,"[ObjectClass::Remove-0x005F44A0]\r\n");
   SecApp(sec_none,&sec_none_len,"[RectangleStruct* ClipRectIntersection(RectangleStruct* result, const RectangleStruct* clip_rect, const RectangleStruct* src_rect, int* x_off, int* y_off)-0x00421B60]\r\n");
   SecApp(sec_none,&sec_none_len,"[bool ClipLine(int start[2], int end[2], int clip_rect[4])-0x007BC2B0]\r\n");
   SecApp(sec_none,&sec_none_len,"[bool XSurface::SetPixel(const Point2D& point, uint32_t color)-0x007BAEB0]\r\n");
@@ -14620,12 +14593,9 @@ static void ensure_sections(){
   SecApp(sec_none,&sec_none_len,"[bool XSurface::WalkLine(const Point2D& start, const Point2D& end, void (*callback)-0x007BAB90]\r\n");
   SecApp(sec_none,&sec_none_len,"[bool XSurface::DrawLineEx(const RectangleStruct& clip_rect, const Point2D& start, const Point2D& end, uint32_t color)-0x007BA610]\r\n");
   SecApp(sec_none,&sec_none_len,"[bool XSurface::DrawLine(const Point2D& start, const Point2D& end, uint32_t color)-0x007BA5E0]\r\n");
-  SecApp(sec_none,&sec_none_len,"[bool XSurface::DrawDashedLine(const Point2D& start, const Point2D& end, uint16_t color, const uint8_t stipple[16], int dash_offset)-0x007BA8C0]\r\n");
   SecApp(sec_none,&sec_none_len,"[bool XSurface::Fill(uint32_t color)-0x007BBAB0]\r\n");
   SecApp(sec_none,&sec_none_len,"[bool XSurface::DrawRectEx(const RectangleStruct& clip_rect, const RectangleStruct& draw_rect, uint32_t color)-0x007BADC0]\r\n");
   SecApp(sec_none,&sec_none_len,"[bool XSurface::DrawRect(const RectangleStruct& draw_rect, uint32_t color)-0x007BAD90]\r\n");
-  SecApp(sec_none,&sec_none_len,"[bool XSurface::DrawEllipseOutline(const Point2D& center, int radius_w, int radius_h, const RectangleStruct& clip_rect, uint16_t color)-0x007BB350]\r\n");
-  SecApp(sec_none,&sec_none_len,"[Point2D* BuildingClass::CalcDrawPos(Point2D* out)-0x00480110]\r\n");
   SecApp(sec_none,&sec_none_len,"[CCFileClass::Open-0x00473C50]\r\n");
   SecApp(sec_none,&sec_none_len,"[void* CCFileClass::ReadEntireFile()-0x004A3890]\r\n");
   SecApp(sec_none,&sec_none_len,"[void CCFileClass::Reset()-0x00473CE0]\r\n");
@@ -14667,21 +14637,6 @@ static void rebuild_none(){
     if(!called) SecApp(sec_none,&sec_none_len,"[void EventDispatchEx()-0x0048D080]\r\n"); }
   { int called=0;
     for(int j=0;j<1;j++){
-      if(addr_tbl[j]==0x005BED40&&ctr[j]>0) called=1;
-    }
-    if(!called) SecApp(sec_none,&sec_none_len,"[void MoviePlay(int a1, int a2, int a3, int a4)-0x005BED40]\r\n"); }
-  { int called=0;
-    for(int j=0;j<1;j++){
-      if(addr_tbl[j]==0x005312A0&&ctr[j]>0) called=1;
-    }
-    if(!called) SecApp(sec_none,&sec_none_len,"[void ShowLoadingScreen()-0x005312A0]\r\n"); }
-  { int called=0;
-    for(int j=0;j<1;j++){
-      if(addr_tbl[j]==0x0075A7D0&&ctr[j]>0) called=1;
-    }
-    if(!called) SecApp(sec_none,&sec_none_len,"[void ResetAnimSystem(int mode)-0x0075A7D0]\r\n"); }
-  { int called=0;
-    for(int j=0;j<1;j++){
       if(addr_tbl[j]==0x005B40B0&&ctr[j]>0) called=1;
     }
     if(!called) SecApp(sec_none,&sec_none_len,"[const void* SearchMIXFile(const char* name)-0x005B40B0]\r\n"); }
@@ -14717,34 +14672,14 @@ static void rebuild_none(){
     if(!called) SecApp(sec_none,&sec_none_len,"[void MainGame()-0x0048CCC0]\r\n"); }
   { int called=0;
     for(int j=0;j<1;j++){
-      if(addr_tbl[j]==0x0052CD70&&ctr[j]>0) called=1;
-    }
-    if(!called) SecApp(sec_none,&sec_none_len,"[bool InitRules()-0x0052CD70]\r\n"); }
-  { int called=0;
-    for(int j=0;j<1;j++){
       if(addr_tbl[j]==0x00530000&&ctr[j]>0) called=1;
     }
     if(!called) SecApp(sec_none,&sec_none_len,"[bool LoadExpansionMixFiles()-0x00530000]\r\n"); }
   { int called=0;
     for(int j=0;j<1;j++){
-      if(addr_tbl[j]==0x00531680&&ctr[j]>0) called=1;
-    }
-    if(!called) SecApp(sec_none,&sec_none_len,"[bool InitBulkData()-0x00531680]\r\n"); }
-  { int called=0;
-    for(int j=0;j<1;j++){
-      if(addr_tbl[j]==0x005D7CE0&&ctr[j]>0) called=1;
-    }
-    if(!called) SecApp(sec_none,&sec_none_len,"[void CompleteGameInit()-0x005D7CE0]\r\n"); }
-  { int called=0;
-    for(int j=0;j<1;j++){
       if(addr_tbl[j]==0x00410260&&ctr[j]>0) called=1;
     }
     if(!called) SecApp(sec_none,&sec_none_len,"[HRESULT AbstractClass::QueryInterface(const IID& iid, void** ppv)-0x00410260]\r\n"); }
-  { int called=0;
-    for(int j=0;j<1;j++){
-      if(addr_tbl[j]==0x005F44A0&&ctr[j]>0) called=1;
-    }
-    if(!called) SecApp(sec_none,&sec_none_len,"[ObjectClass::Remove-0x005F44A0]\r\n"); }
   { int called=0;
     for(int j=0;j<1;j++){
       if(addr_tbl[j]==0x00421B60&&ctr[j]>0) called=1;
@@ -14787,11 +14722,6 @@ static void rebuild_none(){
     if(!called) SecApp(sec_none,&sec_none_len,"[bool XSurface::DrawLine(const Point2D& start, const Point2D& end, uint32_t color)-0x007BA5E0]\r\n"); }
   { int called=0;
     for(int j=0;j<1;j++){
-      if(addr_tbl[j]==0x007BA8C0&&ctr[j]>0) called=1;
-    }
-    if(!called) SecApp(sec_none,&sec_none_len,"[bool XSurface::DrawDashedLine(const Point2D& start, const Point2D& end, uint16_t color, const uint8_t stipple[16], int dash_offset)-0x007BA8C0]\r\n"); }
-  { int called=0;
-    for(int j=0;j<1;j++){
       if(addr_tbl[j]==0x007BBAB0&&ctr[j]>0) called=1;
     }
     if(!called) SecApp(sec_none,&sec_none_len,"[bool XSurface::Fill(uint32_t color)-0x007BBAB0]\r\n"); }
@@ -14805,16 +14735,6 @@ static void rebuild_none(){
       if(addr_tbl[j]==0x007BAD90&&ctr[j]>0) called=1;
     }
     if(!called) SecApp(sec_none,&sec_none_len,"[bool XSurface::DrawRect(const RectangleStruct& draw_rect, uint32_t color)-0x007BAD90]\r\n"); }
-  { int called=0;
-    for(int j=0;j<1;j++){
-      if(addr_tbl[j]==0x007BB350&&ctr[j]>0) called=1;
-    }
-    if(!called) SecApp(sec_none,&sec_none_len,"[bool XSurface::DrawEllipseOutline(const Point2D& center, int radius_w, int radius_h, const RectangleStruct& clip_rect, uint16_t color)-0x007BB350]\r\n"); }
-  { int called=0;
-    for(int j=0;j<1;j++){
-      if(addr_tbl[j]==0x00480110&&ctr[j]>0) called=1;
-    }
-    if(!called) SecApp(sec_none,&sec_none_len,"[Point2D* BuildingClass::CalcDrawPos(Point2D* out)-0x00480110]\r\n"); }
   { int called=0;
     for(int j=0;j<1;j++){
       if(addr_tbl[j]==0x00473C50&&ctr[j]>0) called=1;
@@ -14853,8 +14773,8 @@ static void rebuild_none(){
   for(int j=0;j<1;j++){
     if(ctr[j]==0){
       int already=0;
-      unsigned na_tbl[41]={7113792,4412848,4864208,4771968,6024512,5444256,7710672,5980336,5421664,5624672,5623760,4769968,5429664,4771008,5426544,5439488,5445248,6126816,4260448,6243488,4332384,8110768,8105648,8105568,8105872,8104848,8103440,8103392,8104128,8108720,8105408,8105360,8106832,4718864,4668496,4864144,4668640,5462688,5462832,4669936,5439904};
-      for(int k=0;k<41;k++) if(addr_tbl[j]==na_tbl[k]) already=1;
+      unsigned na_tbl[31]={7113792,4412848,4864208,4771968,5980336,5421664,5624672,5623760,4769968,5429664,4771008,5439488,4260448,4332384,8110768,8105648,8105568,8105872,8104848,8103440,8103392,8108720,8105408,8105360,4668496,4864144,4668640,5462688,5462832,4669936,5439904};
+      for(int k=0;k<31;k++) if(addr_tbl[j]==na_tbl[k]) already=1;
       if(!already){
         const char* s=sig[j];
         if(s&&*s){

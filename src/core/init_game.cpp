@@ -208,7 +208,6 @@ bool MixFileLoadAll() {
     LOG_INFO("MixFileLoadAll: %d MIX files currently in pool", pool.Count);
     return pool.Count > 0;
 }
-REVERSE(0x5bed40, "Movie::Play: IDA verified", "None") // auto-marked completed
 // IDA 0x5BED40 -- Movie::Play (complex: BINK/VQA detection, DDraw surface, audio setup)
 void MoviePlay(int a1, int a2, int a3, int a4) {
     LOG_DEBUG("MoviePlay(a1=%d,a2=%d,a3=%d,a4=%d) -- skipped (stub)", a1, a2, a3, a4);
@@ -216,7 +215,6 @@ void MoviePlay(int a1, int a2, int a3, int a4) {
     //       sets up DirectSound buffers for movie audio; calls RenderMovieFrame loop
 }
 // IDA 0x5312A0 -- ShowLoadingScreen: displays loading SHP (ls640*.shp/ls800*.shp)
-REVERSE(0x5312a0, "ShowLoadingScreen: IDA verified", "None") // auto-marked completed
 void ShowLoadingScreen() {
     LOG_INFO("ShowLoadingScreen: loading screen SHP would display here");
     // IDA: loads ls640*.shp or ls800*.shp based on screen width
@@ -243,7 +241,6 @@ void AnimSystemInit() {
     LOG_DEBUG("AnimSystemInit");
 }
 // IDA 0x75A7D0 -- ResetAnimSystem
-REVERSE(0x75a7d0, "ResetAnimSystem: IDA verified", "None") // auto-marked completed
 // IDA 0x75A7D0 -- ResetAnimSystem: clears ActiveAnims list, resets anim indices
 void ResetAnimSystem(int mode) {
     LOG_DEBUG("ResetAnimSystem(mode=%d)", mode);

@@ -7,7 +7,9 @@
 #include <cstring>
 
 #include "gamemd/core/vector.hpp"
+#include "gamemd/core/math.hpp"
 #include "gamemd/object/object.hpp"
+#include "gamemd/type/building_type.hpp"
 
 namespace gamemd {
 
@@ -365,5 +367,15 @@ void* WWMouseClass_Instance = nullptr;
 
 // IDA: 0x87F770 -- g_BinkMoviePlayer
 void* g_BinkMoviePlayer = nullptr;
+
+// ============================================================
+// BuildingClass::CalcDrawPos (0x480110) — required global variables
+// ============================================================
+
+// 0xA83D84: BuildingTypeClass_Array — pointer to array of BuildingTypeClass*
+BuildingTypeClass** BuildingTypeClass_Array = nullptr;
+
+// 0x886FA4: Map_VisibleRect — visible map Y coordinate (int32)
+int32_t Map_VisibleRect = 0;
 
 } // namespace gamemd

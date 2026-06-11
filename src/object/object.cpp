@@ -75,7 +75,6 @@ void ObjectClass::Destroy()
     // IDA: *(this+0x90) = 0 -- m_is_alive = false
     m_is_alive = false;
 
-REVERSE(0x5f44a0, "ObjectClass::Remove: IDA verified", "None") // auto-marked completed
     // Remove from map
     Remove();
 

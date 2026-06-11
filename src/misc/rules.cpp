@@ -23,7 +23,6 @@ namespace gamemd {
 //   + TypeList/VectorClass constructors at various offsets
 
 // ============================================================
-REVERSE(0x52cd70, "InitRules: IDA verified", "None") // auto-marked completed
 // IDA 0x52CD70 -- InitRules (1728B)
 // Loads RULESMD.INI chain + ARTMD.INI + AIMD.INI + LANGRULE.INI
 // ============================================================
@@ -92,7 +91,6 @@ bool LoadExpansionMixFiles()
 }
 
 // ============================================================
-REVERSE(0x531680, "InitBulkData: IDA verified", "None") // auto-marked completed
 // IDA 0x531680 -- InitBulkData (561B)
 bool InitBulkData()
 {
@@ -111,7 +109,6 @@ bool InitBulkData()
 }
 
 // ============================================================
-REVERSE(0x5d7ce0, "CompleteGameInit: IDA verified", "None") // auto-marked completed
 // IDA 0x5D7CE0 -- CompleteGameInit (362B)
 void CompleteGameInit()
 {
