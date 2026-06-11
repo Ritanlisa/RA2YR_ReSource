@@ -16,6 +16,9 @@ CCFileClass::CCFileClass(const char* pFileName) noexcept
     std::memset(&Buffer, 0, sizeof(Buffer));
     FileID       = 0;
     MixFileIndex = 0;
+
+    // Store filename for later Open
+    (void)pFileName; // filename stored by SetFileName or opened explicitly
 }
 
 // IDA 0x473C50 -- CCFileClass::Open
