@@ -21,39 +21,105 @@
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-## 2. 三种模式
+## 2. 四种模式
 
-| 模式 | 行为 | 事务 | 用途 |
-|------|------|------|------|
-| **Inject** | 原版执行 → PostProcStub → RE 执行 → 对比 | 仅非幂等 | 活跃对拍 |
-| **Capture** | 记录输入 → 原版执行 → 无对比 | 无 | 纯日志 |
-| **None** | 不生成钩子 | — | 已调试验证通过 |
+### 2.1 None — 不生成钩子
 
-### 2.1 Inject 执行流
+仅标记为钩子目标，不注入任何钩子。`completed=false` 时报 WARNING。
 
 ```
-Hook 入口
-  → 保存寄存器 + 栈参数 (V.a..V.stk3)
-  → idempotent 判定:
-      是:  g_re_depth gate + slot stack push + return 0
-      否:  thread gate + g_re_depth gate + stale 清理 + txn + push + return 0
-  ↓
-  原版函数执行
-  ↓
-  PostProcStub:
-    depth-- → 读 slot[depth].hook_addr, slot[depth].ret_addr
-    → call LogComparison(orig_eax, hook_addr)
-  ↓
-  LogComparison:
-    若 txn → EndCurrent() 回滚 .data
-    g_re_depth++ → CallRE (RE 执行) → g_re_depth--
-    对比 orig vs re → write_entry → comparisonResult.log
-    return re_eax
-  ↓
-  PostProcStub: jmp 原调用者 (eax=re_eax, edx=re_edx)
+REVERSE(0xADDR, "desc", "None")
+typeA RepFuncA(a1, a2)
 ```
 
-### 2.2 CallRE 参数映射
+执行流：**完全不受影响**，原版调用链照常运行。
+
+```
+Entrance → parent functions → typeA FuncA(a1, a2) → typeB FuncB(b1, b2) → typeC LibFunc(c1, c2)
+parent functions ← retValA ← FuncA ← retValB ← FuncB ← retValLibFunc ← LibFunc
+```
+
+### 2.2 Capture — 记录输入/输出，不影响原版
+
+钩子捕获每次调用的输入参数和返回值，写入 `comparisonResult.log`（Captures 区域）。不触发 PostProcStub，不执行 RE，不影响原始返回值。
+
+```
+REVERSE(0xADDR_FuncA, "desc", "Capture")  // FuncA 钩子
+REVERSE(0xADDR_FuncB, "desc", "None")      // FuncB 无钩子
+```
+
+```
+Entrance → parent functions → Hook(Record a1/a2, stack hijack FuncA_Retprocess)
+    → typeA FuncA(a1, a2) → typeB FuncB(b1, b2) → typeC LibFunc(c1, c2)
+parent functions ← FuncA_Retprocess(print a1/a2/retValA to comparisonResult.log)
+    ← retValA ← FuncA ← retValB ← FuncB ← retValLibFunc ← LibFunc
+```
+
+### 2.3 Inject — 对拍验证（内存备份回滚）
+
+原版执行 → 备份 .data 页 → 回滚 → RE 执行 → 对比。子函数若为 None 模式，不被钩，原版照常运行。若子函数也为 Inject/Replace，嵌套对拍通过 slot stack 独立记录。
+
+```
+REVERSE(0xADDR_FuncA, "desc", "Inject")   // FuncA 钩子
+REVERSE(0xADDR_FuncB, "desc", "None")      // FuncB 无钩子
+```
+
+```
+Entrance → parent functions
+    → Hook(Record a1/a2, stack hijack FuncA_Retprocess, backup .data)
+    → typeA FuncA(a1, a2)
+    → typeB FuncB(b1, b2)            ← None 模式, 无钩子, 正常执行
+    → typeC LibFunc(c1, c2)
+                                                     FuncA_Retprocess(recover .data)
+    ← retValA ← FuncA                               ← FuncB ← LibFunc
+    
+    FuncA_Retprocess → typeA RepFuncA(a1, a2)        ← 第二轮: RE 执行
+    → typeB FuncB(b1, b2)            ← 仍调原版(FuncB 无钩), g_re_depth>0 透传
+    → typeC LibFunc(c1, c2)
+parent functions
+    ← FuncA_Retprocess(print a1/a2/retValA/retValRepA as Call to comparisonResult.log)
+    ← retValRepA ← RepFuncA ← retValB ← FuncB ← LibFunc
+```
+
+**多层 Inject 嵌套**（父 Inject + 子 Inject）：
+
+```
+Entrance → Hook(FuncA) → FuncA → Hook(FuncB) → FuncB → LibFunc
+    slot stack: depth=1(FuncA) → depth=2(FuncB)
+    ← FuncB 返回 → PostProcStub(FuncB) pop → RE_FuncB → comparison → depth=1
+    ← FuncA 返回 → PostProcStub(FuncA) pop → RE_FuncA → comparison → depth=0
+```
+
+### 2.4 Replace — 全链路替换对拍
+
+父函数 RE 直接调用子函数 RE（C++ 函数调用，不经钩子）。子函数不独立对拍（不写 comparisonResult.log），仅父函数输出完整对拍结果。RE 调用链完全替换原版调用链。
+
+```
+REVERSE(0xADDR_FuncA, "desc", "Replace")  // FuncA 钩子
+REVERSE(0xADDR_FuncB, "desc", "Inject")   // FuncB 钩子
+```
+
+```
+Entrance → parent functions
+    → Hook(Record a1/a2, stack hijack FuncA_Retprocess, backup .data)
+    → typeA FuncA(a1, a2)
+    → Hook(Record b1/b2, stack hijack FuncB_Retprocess)
+    → typeB FuncB(b1, b2) → typeC LibFunc(c1, c2)
+                                                     FuncA_Retprocess(recover .data)
+    ← retValA ← FuncA               ← FuncB_Retprocess ← retValB ← FuncB ← LibFunc
+                                    [FuncB 的 PostProcStub 在此触发: RE_FuncB + comparison]
+    
+    FuncA_Retprocess → typeA RepFuncA(a1, a2)
+    → typeB RepFuncB(b1, b2)        ← 直接调 RE_FuncB(C++ call, 不经钩子)
+    → typeC LibFunc(c1, c2)
+parent functions
+    ← FuncA_Retprocess(print a1/a2/retValA/retValRepA as Call)
+    ← retValRepA ← RepFuncA ← retValRepB ← RepFuncB ← LibFunc
+```
+
+**关键设计点**：`g_re_depth > 0` 时 Inject 钩子 `return 0` — 防止 RE 内部通过 vtable 误调 hooked 版本。RE 应调用子函数的 RE 实现（C++ 直接调用）或 unhooked 原版函数。
+
+### 2.5 CallRE 参数映射
 
 ```cpp
 // thiscall: V.c(this), V.stk0(arg1), V.stk1(arg2), ...
@@ -61,7 +127,7 @@ Hook 入口
 // stdcall/cdecl: V.stk0(arg1), V.stk1(arg2), ...
 ```
 
-### 2.3 Slot Stack (tls_storage.h)
+### 2.6 Slot Stack (tls_storage.h)
 
 ```
 ShadowSlot:
@@ -181,6 +247,7 @@ cd D:\RA2MD && Syringe.exe "gamemd.exe" -cd -SPAWN
 
 ## 8. 当前状态
 
-- **Inject**: 4 活跃 (PutPixel, GetPixelAtCoords, DrawDashedLine, DrawEllipseOutline)
-- **None**: 37 (含 9 已验证: SetPixel, GetPixel, WalkLine, DrawLineEx, DrawLine, Fill, DrawRect, ClipLine, DrawRectEx)
+- **Inject**: 13 活跃 (12 XSurface + Palette)
+- **None**: 19 (已完成函数回归验证)
+- **Replace**: 0 (待部署)
 - 幂等分析: Phase 1+2 完成, Phase 3 (vtable 解析) 待实现
