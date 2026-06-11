@@ -19,7 +19,7 @@ MAP  = os.path.join(ROOT, "decompile-results", "gamemd.exe.map")
 CAL  = os.path.join(SCRIPT, "callee_map.json")
 
 RES  = os.path.join(SCRIPT, "idempotent_results.json")
-EXE  = os.path.join("D:", "RA2MD", "gamemd.exe")
+EXE  = "D:\\RA2MD\\gamemd.exe"
 BASE = 0x400000  # image base
 
 def validate_hook_size(addr_str, declared_size):
@@ -38,7 +38,7 @@ def validate_hook_size(addr_str, declared_size):
         with open(EXE, 'rb') as f:
             f.seek(0x3C); pe_off = struct.unpack('<I', f.read(4))[0]
             f.seek(pe_off + 6); ns = struct.unpack('<H', f.read(2))[0]
-            f.seek(pe_off + 0x14 + 0xE0)  # SizeOfHeaders → skip to sections
+            f.seek(pe_off + 0x18 + 0xE0)  # PE sig(4) + FileHdr(20) + PE32 OptHdr(0xE0)
             sec = None
             for _ in range(ns):
                 sn = f.read(8).rstrip(b'\x00').decode()
@@ -165,6 +165,13 @@ def resolve_idempotent(addr, fn_info, results, warnings_list, hook_path, line_no
 
     # Case 2: no manual override, use auto
     if auto_val is not None:
+        if auto_str == "UNCERTAIN":
+            sig = fn_info.get('name', fn_info.get('call', {}).get('method_name', '?'))
+            warnings_list.append(
+                f"{hook_path}:{line_no}: {addr} ({sig}) idempotent=UNCERTAIN — "
+                f"transactions enabled (conservative). Fix: implement Phase 3 vtable "
+                f"resolution or add manual idempotent with reason."
+            )
         return auto_val, extra_errors
 
     # Case 3: neither manual nor auto → FATAL
@@ -736,24 +743,14 @@ def generate(markers, functions, fn_map, none_markers=None):
     for m in markers:
         ah=m['addr'].lstrip('0x').upper();s=san(m['fn_name'])
         fn=functions.get(m['addr'])
-        hs=fn.get('hook',{}).get('min_safe_size',8) if fn else 8
-        if hs <= 0:
-            print(f'  SKIP: {m["addr"]} ({m["fn_name"]}) — min_safe_size={hs}, not hookable')
-            continue
         conv=fn.get('call',{}).get('convention','?') if fn else '?'
         mode=m.get('mode','None')
 
-        # Capstone instruction alignment check
-        if mode in ('Inject', 'Replace'):
-            actual, insns = validate_hook_size(m['addr'], hs)
-            if actual is not None and actual != hs:
-                print(f'  WARNING: {m["addr"]} ({m["fn_name"]}) hook_size={hs} not aligned '
-                      f'— computed={actual}')
-                if fn:
-                    fn.setdefault('hook', {})['min_safe_size'] = actual
-                hs = actual
+        # Auto-compute hook_size from binary via Capstone (PE instruction decode)
+        # No functions.json dependency — always computed, never read from metadata
+        hs = validate_hook_size(m['addr'], 0)[0] or 8
 
-        w(f'// {m["fn_name"]} @ {m["addr"]} ({conv}) mode={mode}')
+        w(f'// {m["fn_name"]} @ {m["addr"]} ({conv}) mode={mode} hook_size={hs}')
         w(f'// {m["desc"]}')
         w(f'DEFINE_HOOK(0x{ah}, Rev_{s}, 0x{hs:X})')
         w('{')
@@ -1020,15 +1017,7 @@ def main():
     write_check_file(markers, warnings, errors)
     if warnings:
         print(f"Generated {CHK} ({len(warnings)} warnings)")
-    
-    # Persist any auto-corrected min_safe_size values back to functions.json
-    if functions and raw_json:
-        fn_list = list(functions.values())
-        data = json.loads(raw_json)
-        data['functions'] = fn_list
-        with open(JSON, 'w', encoding='utf-8') as f:
-            json.dump(data, f, indent=2, ensure_ascii=False)
-    
+
     print("\nNext: cmake --build build_hook")
 
 if __name__ == '__main__':

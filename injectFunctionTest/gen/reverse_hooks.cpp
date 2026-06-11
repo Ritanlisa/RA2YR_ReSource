@@ -14885,7 +14885,7 @@ static void write_entry(char tag, int i, DWORD addr, DWORD re, DWORD orig, DWORD
 // Final flush on DLL unload (no export needed - static destructor)
 static struct FinalFlush{ ~FinalFlush(){ if(h!=INVALID_HANDLE_VALUE){flush_full();CloseHandle(h);h=INVALID_HANDLE_VALUE;} } } _final_flush;
 
-// XSurface::GetPixelAtCoords @ 0x7baf10 (thiscall) mode=Inject
+// XSurface::GetPixelAtCoords @ 0x7baf10 (thiscall) mode=Inject hook_size=6
 // XSurface::GetPixelAtCoords: pixel read + bounds
 DEFINE_HOOK(0x7BAF10, Rev_XSurface_GetPixelAtCoords, 0x6)
 {
@@ -14903,7 +14903,7 @@ DEFINE_HOOK(0x7BAF10, Rev_XSurface_GetPixelAtCoords, 0x6)
   return 0;
 }
 
-// BuildingClass::CalcDrawPos @ 0x480110 (thiscall) mode=Inject
+// BuildingClass::CalcDrawPos @ 0x480110 (thiscall) mode=Inject hook_size=6
 // BuildingClass::CalcDrawPos: building draw position
 DEFINE_HOOK(0x480110, Rev_BuildingClass_CalcDrawPos, 0x6)
 {
