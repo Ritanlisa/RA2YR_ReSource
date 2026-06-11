@@ -293,14 +293,11 @@ int  AudioCallback() {
     return 0; // No audio callback registered during init
 }
 // IDA 0x52CB50 -- PlayIntroSequence: starts intro movie (44B, thunk)
-REVERSE(0x52cb50, "PlayIntroSequence: IDA verified", "None" /* not yet completed */) // auto-marked completed
 void PlayIntroSequence() {
     LOG_DEBUG("PlayIntroSequence: intro would play here");
 }
 // IDA 0x52FC20 -- InitRandomSeed: seeds game RNG from system time
 // IDA 0x52FC20 -- InitRandomSeed: srand(timeGetTime() ^ GetTickCount())
-REVERSE(0x52FC20, "InitRandomSeed: seed RNG from timer", "None" /* not yet completed */) /* first-5-bytes unsafe */
-REVERSE(0x52fc20, "InitRandomSeed: IDA verified", "None" /* not yet completed */) // auto-marked completed
 void InitRandomSeed() {
     // IDA: GetSystemTime -- SHA1TickRNG x 16 -- SeedInitRNG -- Randomizer setup
     // Simplified: seed with time + tick count
@@ -308,7 +305,6 @@ void InitRandomSeed() {
     LOG_DEBUG("InitRandomSeed: RNG seeded");
 }
 // ============================================================
-REVERSE(0x532150, "InitCommands: IDA verified", "None" /* not yet completed */) // auto-marked completed
 // IDA 0x532150 -- InitCommands (7118B)
 // Registers ~40 CommandClass instances into g_CommandClassVector.
 // Each command class is instantiated (new(size) -- vtable assignment)
