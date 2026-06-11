@@ -419,6 +419,7 @@ def san(n):
     return n.replace('::','_').replace('@','_').replace('<','_').replace('>','_')
 
 KNOWN_OSTREAM = {'Point2D', 'RectangleStruct', 'Vector2D'}
+CHAR_PTR_TYPES = {'char', 'char*', 'const char', 'const char*'}
 
 def is_data_ptr(ty):
     return ('*' in ty or ty.endswith('&')) and '(*' not in ty
@@ -543,7 +544,9 @@ def generate(markers, functions, fn_map, none_markers=None):
                     w(f'  os<<" {pt[1]}(Stack)=";FmtArr(os,{pt[2]},{ref});')
                 elif is_data_ptr(ty_orig):
                     bare = ty.replace('&','').replace('*','').strip()
-                    if bare in KNOWN_OSTREAM:
+                    if bare in CHAR_PTR_TYPES:
+                        w(f'  os<<" {pt[1]}(Stack)=";os<<(const char*)({ref});')
+                    elif bare in KNOWN_OSTREAM:
                         w(f'  os<<" {pt[1]}(Stack)=";FmtPtr(os,(const {bare}*)({ref}));')
                     else:
                         w(f'  os<<" {pt[1]}(Stack)=";Hex8(os,{ref});')
@@ -572,7 +575,9 @@ def generate(markers, functions, fn_map, none_markers=None):
                     w(f'  os<<" {pt[1]}(Stack)=";FmtArr(os,{pt[2]},{ref});')
                 elif is_data_ptr(ty_orig):
                     bare = ty.replace('&','').replace('*','').strip()
-                    if bare in KNOWN_OSTREAM:
+                    if bare in CHAR_PTR_TYPES:
+                        w(f'  os<<" {pt[1]}(Stack)=";os<<(const char*)({ref});')
+                    elif bare in KNOWN_OSTREAM:
                         w(f'  os<<" {pt[1]}(Stack)=";FmtPtr(os,(const {bare}*)({ref}));')
                     else:
                         w(f'  os<<" {pt[1]}(Stack)=";Hex8(os,{ref});')
@@ -590,7 +595,9 @@ def generate(markers, functions, fn_map, none_markers=None):
                     w(f'  os<<" {pt[1]}(Stack)=";FmtArr(os,{pt[2]},{ref});')
                 elif is_data_ptr(ty_orig):
                     bare = ty.replace('&','').replace('*','').strip()
-                    if bare in KNOWN_OSTREAM:
+                    if bare in CHAR_PTR_TYPES:
+                        w(f'  os<<" {pt[1]}(Stack)=";os<<(const char*)({ref});')
+                    elif bare in KNOWN_OSTREAM:
                         w(f'  os<<" {pt[1]}(Stack)=";FmtPtr(os,(const {bare}*)({ref}));')
                     else:
                         w(f'  os<<" {pt[1]}(Stack)=";Hex8(os,{ref});')
