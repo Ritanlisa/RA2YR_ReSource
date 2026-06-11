@@ -34,19 +34,19 @@ struct INIData {
 };
 
 // ============================================================
-REVERSE(0x535aa0, "INIClass::Constructor: IDA verified", "None")
 // IDA 0x535AA0 -- INIClass::Constructor (84 bytes)
 // ============================================================
-INIClass::INIClass()
+REVERSE(0x535aa0, "INIClass::Constructor: IDA verified", "Inject")
+void INIClass::INIClass()
 {
     std::memset(this, 0, kSize);
 }
 
 // ============================================================
-REVERSE(0x535b30, "CCINIClass::Constructor: IDA verified", "None")
 // IDA 0x535B30 -- CCINIClass::Constructor (138 bytes)
 // ============================================================
-CCINIClass::CCINIClass()
+REVERSE(0x535b30, "CCINIClass::Constructor: IDA verified", "Inject")
+void CCINIClass::CCINIClass()
     : INIClass()
 {
     m_cc_file = nullptr;
@@ -76,7 +76,7 @@ static std::string Trim(const char* s, int len)
 }
 
 // ============================================================
-REVERSE(0x4741f0, "CCINIClass::Load: IDA verified", "None")
+REVERSE(0x4741f0, "CCINIClass::Load: IDA verified", "Inject")
 // IDA 0x4741F0 -- CCINIClass::Load(file, unk1, unk2)
 // Parses INI file content into sections and key=value pairs
 // ============================================================

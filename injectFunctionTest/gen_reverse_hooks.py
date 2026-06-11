@@ -250,7 +250,7 @@ def find_markers(functions, raw_json, callee_map, callee_names, all_marked, idem
                     
                     # ERROR: Capture/Replace/Inject MUST be followed by a function declaration
                     if s is None and mode in ("Capture", "Replace", "Inject"):
-                        errors.append(f"{fp}:{line_no}: REVERSE(0x{addr}) mode={mode} — no function declaration found after REVERSE macro")
+                        errors.append(f"{fp}:{line_no}: REVERSE({addr}) mode={mode} — no function declaration found after REVERSE macro")
                         continue
                     # Heuristic: if the matched "return type" looks like a comment or code,
                     # or if the function name doesn't match JSON name, discard the match

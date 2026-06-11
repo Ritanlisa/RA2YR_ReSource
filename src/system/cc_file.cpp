@@ -16,14 +16,11 @@ CCFileClass::CCFileClass(const char* pFileName) noexcept
     std::memset(&Buffer, 0, sizeof(Buffer));
     FileID       = 0;
     MixFileIndex = 0;
-
-REVERSE(0x473c50, "CCFileClass::Open: IDA verified", "None")
-    // Store filename for later Open
-    (void)pFileName; // filename stored by SetFileName or opened explicitly
 }
 
 // IDA 0x473C50 -- CCFileClass::Open
 // Searches MIX pool first, then falls back to disk
+REVERSE(0x473c50, "CCFileClass::Open: IDA verified", "Inject")
 bool CCFileClass::Open(const char* pFileName)
 {
     if (!pFileName || !pFileName[0])
@@ -76,7 +73,7 @@ bool CCFileClass::Open(const char* pFileName)
     return false;
 }
 
-REVERSE(0x4a3890, "CCFileClass::ReadEntireFile: IDA verified", "None")
+REVERSE(0x4a3890, "CCFileClass::ReadEntireFile: IDA verified", "Inject")
 // IDA 0x4A3890 -- CCFileClass::ReadEntireFile
 void* CCFileClass::ReadEntireFile()
 {
@@ -88,7 +85,7 @@ void* CCFileClass::ReadEntireFile()
     return FileSystem::LoadFile(FileName, false);
 }
 
-REVERSE(0x473ce0, "CCFileClass::Reset: IDA verified", "None")
+REVERSE(0x473ce0, "CCFileClass::Reset: IDA verified", "Inject")
 // IDA 0x473CE0 -- CCFileClass::Reset
 void CCFileClass::Reset()
 {

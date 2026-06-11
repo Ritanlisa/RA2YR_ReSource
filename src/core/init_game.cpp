@@ -136,7 +136,7 @@ int  InitializeAudioSubsystem(void* hwnd) {
 
 // IDA 0x6C8C40 -- Timer::GetTicks: returns timeGetTime() >> 4 (~16ms resolution)
 // IDA 0x6C8C40 -- Timer::GetTicks: returns timeGetTime() >> 4 (~16ms resolution)
-REVERSE(0x6C8C40, "Timer::GetTicks: timeGetTime() >> 4", "None") /* first-5-bytes unsafe */
+REVERSE(0x6C8C40, "Timer::GetTicks: timeGetTime() >> 4", "Inject") /* first-5-bytes unsafe */
 int TimerGetTicks() { return timeGetTime() >> 4; }
 
 // IDA 0x54F720 -- Timer::PumpMessages
@@ -146,7 +146,7 @@ void TimerPumpMessages(void* bink_player) { (void)bink_player; }
 
 // IDA 0x4355B0 -- Palette::6BitTo16Bit: packs 3 bytes into 24-bit (used as temp struct)
 // IDA 0x4355B0 -- Palette6BitTo16Bit: (b<<16)|(g<<8)|r
-REVERSE(0x4355B0, "Palette6BitTo16Bit: pack 6-bit RGB to 24-bit", "None") /* first-5-bytes unsafe */
+REVERSE(0x4355B0, "Palette6BitTo16Bit: pack 6-bit RGB to 24-bit", "Inject") /* first-5-bytes unsafe */
 int Palette6BitTo16Bit(int r, int g, int b) {
     return ((uint8_t)b << 16) | ((uint8_t)g << 8) | (uint8_t)r;
 }
@@ -170,7 +170,7 @@ void VoxelProjectionSetup() {}
 // --- Phase 4: MIX / CD / Movie ---
 
 // LoadExpansionMixFiles defined in src/misc/rules.cpp
-REVERSE(0x4a38d0, "LoadFileSHP: IDA verified", "None")
+REVERSE(0x4a38d0, "LoadFileSHP: IDA verified", "Inject")
 // IDA 0x4A38D0 -- LoadFileSHP: loads SHP file and returns handle
 int  LoadFileSHP(const char* filename) {
     void* data = FileSystem::LoadFile(filename, true);
@@ -178,7 +178,7 @@ int  LoadFileSHP(const char* filename) {
 }
 // IDA 0x5BDA80 -- Mission::SetAndCall
 void MissionSetAndCall(int a, int b) { LOG_DEBUG("MissionSetAndCall(%d, %d)", a, b); }
-REVERSE(0x48d080, "Event::Dispatch: IDA verified", "None")
+REVERSE(0x48d080, "Event::Dispatch: IDA verified", "Inject")
 // IDA 0x48D080 -- Event::Dispatch (per-frame event processing)
 void EventDispatchEx() {
     // IDA: calls UpdateAudioVideo first, then AsyncIO, Network, Campaign events
@@ -339,7 +339,7 @@ void InitCommands() {}
 
 // --- Phase 7: File helpers ---
 
-REVERSE(0x5b40b0, "SearchMIXFile: IDA verified", "None")
+REVERSE(0x5b40b0, "SearchMIXFile: IDA verified", "Inject")
 // IDA 0x5B40B0 -- SearchMIXFile: search MIX pool by hash, return file data
 const void* SearchMIXFile(const char* name) {
     return FileSystem::LoadFile(name, false);
@@ -404,7 +404,7 @@ void* ConvertClassConstruct(void* palette, void* temperat_pal, void* surface, in
 
 // ============================================================
 // IDA: InitGame @ 0x52BA60 -- returns 0 success, -1 failure, 1 CD abort
-REVERSE(0x52BA60, "InitGame: master init pipeline", "None")
+REVERSE(0x52BA60, "InitGame: master init pipeline", "Inject")
 int InitGame(bool no_cd)
 {
     if (no_cd)

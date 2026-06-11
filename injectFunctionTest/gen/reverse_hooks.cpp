@@ -5,21 +5,52 @@
 #include "hook_template.hpp"
 using namespace gamemd;
 extern "C" void PostProcStub();
+extern "C" DWORD RE_Timer_GetTicks();
+extern "C" DWORD RE_Palette_6BitTo16Bit(DWORD, DWORD, DWORD, DWORD);
+extern "C" DWORD RE_LoadFileSHP(DWORD);
+extern "C" DWORD RE_Event_Dispatch();
+extern "C" DWORD RE_SearchMIXFile(DWORD);
+extern "C" DWORD RE_InitGame(DWORD);
+extern "C" DWORD RE_GameFrameLoop();
+extern "C" DWORD RE_GameFrameCheck();
+extern "C" DWORD RE_MainGameFrame();
+extern "C" DWORD RE_MenuSelect();
+extern "C" DWORD RE_MainGame();
+extern "C" DWORD RE_LoadExpansionMixFiles();
+extern "C" DWORD RE_AbstractClass_QueryInterface(DWORD, DWORD, DWORD);
+extern "C" DWORD RE_ClipRectIntersection(DWORD, DWORD, DWORD, DWORD, DWORD);
+extern "C" DWORD RE_ClipLine(DWORD, DWORD, DWORD);
+extern "C" DWORD RE_XSurface_SetPixel(DWORD, DWORD, DWORD);
+extern "C" DWORD RE_XSurface_GetPixel(DWORD, DWORD);
+extern "C" DWORD RE_XSurface_PutPixel(DWORD, DWORD, DWORD, DWORD);
 extern "C" DWORD RE_XSurface_GetPixelAtCoords(DWORD, DWORD, DWORD);
+extern "C" DWORD RE_XSurface_WalkLine(DWORD, DWORD, DWORD, DWORD);
+extern "C" DWORD RE_XSurface_DrawLineEx(DWORD, DWORD, DWORD, DWORD, DWORD);
+extern "C" DWORD RE_XSurface_DrawLine(DWORD, DWORD, DWORD, DWORD);
+extern "C" DWORD RE_XSurface_Fill(DWORD, DWORD);
+extern "C" DWORD RE_XSurface_DrawRectEx(DWORD, DWORD, DWORD, DWORD);
+extern "C" DWORD RE_XSurface_DrawRect(DWORD, DWORD, DWORD);
+extern "C" DWORD RE_CCFileClass_Open(DWORD, DWORD);
+extern "C" DWORD RE_CCFileClass_ReadEntireFile(DWORD);
+extern "C" DWORD RE_CCFileClass_Reset(DWORD);
+extern "C" DWORD RE_INIClass_Constructor(DWORD);
+extern "C" DWORD RE_CCINIClass_Constructor(DWORD);
+extern "C" DWORD RE_CCINIClass_Load(DWORD, DWORD, DWORD, DWORD);
+extern "C" DWORD RE_MixFileClass_Bootstrap();
 
 static FILE* f = nullptr;
-static int ctr[1]={};
+static int ctr[32]={};
 static const char* nm[32]={};
 static DWORD addr_tbl[32]={};
 static const char* sig[32]={};
 static const char* rt[32]={};
-static bool is_cap[1]={};
-static bool has_diff[1]={};
-static S in[1]={};
+static bool is_cap[32]={};
+static bool has_diff[32]={};
+static S in[32]={};
 #include "hook_template.hpp"
 
-static char fn_buf[1][FN_BUF_SZ]={0};
-static int  fn_buf_len[1]={0};
+static char fn_buf[32][FN_BUF_SZ]={0};
+static int  fn_buf_len[32]={0};
 static HANDLE h = INVALID_HANDLE_VALUE;
 // Helper: write string to per-function buffer
 static void FnBuf(int idx, const std::string& s){
@@ -28,100 +59,407 @@ static void FnBuf(int idx, const std::string& s){
 }
 
 static void NN(){
-  nm[0]="XSurface::GetPixelAtCoords"; addr_tbl[0]=0x007BAF10; is_cap[0]=false;
-  sig[0]="uint16_t XSurface::GetPixelAtCoords(const Point2D& point, const RectangleStruct& clip_rect)"; rt[0]="uint16_t";
-  nm[1]="Timer::GetTicks"; addr_tbl[1]=0x006C8C40;
-  sig[1]="int TimerGetTicks()"; rt[1]="int";
-  nm[2]="Palette::6BitTo16Bit"; addr_tbl[2]=0x004355B0;
-  sig[2]="int Palette6BitTo16Bit(int r, int g, int b)"; rt[2]="int";
-  nm[3]="LoadFileSHP"; addr_tbl[3]=0x004A38D0;
-  sig[3]="int LoadFileSHP(const char* filename)"; rt[3]="int";
-  nm[4]="Event::Dispatch"; addr_tbl[4]=0x0048D080;
-  sig[4]="void EventDispatchEx()"; rt[4]="void";
-  nm[5]="SearchMIXFile"; addr_tbl[5]=0x005B40B0;
-  sig[5]="const void* SearchMIXFile(const char* name)"; rt[5]="const void*";
-  nm[6]="InitGame"; addr_tbl[6]=0x0052BA60;
-  sig[6]="int InitGame(bool no_cd)"; rt[6]="int";
-  nm[7]="GameFrameLoop"; addr_tbl[7]=0x0055D360;
-  sig[7]="static bool GameFrameLoop()"; rt[7]="static bool";
-  nm[8]="GameFrameCheck"; addr_tbl[8]=0x0055CFD0;
-  sig[8]="static bool GameFrameCheck()"; rt[8]="static bool";
-  nm[9]="MainGameFrame"; addr_tbl[9]=0x0048C8B0;
-  sig[9]="static void MainGameFrame()"; rt[9]="static void";
-  nm[10]="MenuSelect"; addr_tbl[10]=0x0052D9A0;
-  sig[10]="char MenuSelect()"; rt[10]="char";
-  nm[11]="MainGame"; addr_tbl[11]=0x0048CCC0;
-  sig[11]="void MainGame()"; rt[11]="void";
-  nm[12]="LoadExpansionMixFiles"; addr_tbl[12]=0x00530000;
-  sig[12]="bool LoadExpansionMixFiles()"; rt[12]="bool";
-  nm[13]="AbstractClass::QueryInterface"; addr_tbl[13]=0x00410260;
-  sig[13]="HRESULT AbstractClass::QueryInterface(const IID& iid, void** ppv)"; rt[13]="HRESULT";
-  nm[14]="ClipRectIntersection"; addr_tbl[14]=0x00421B60;
-  sig[14]="RectangleStruct* ClipRectIntersection(RectangleStruct* result, const RectangleStruct* clip_rect, const RectangleStruct* src_rect, int* x_off, int* y_off)"; rt[14]="RectangleStruct*";
-  nm[15]="ClipLine"; addr_tbl[15]=0x007BC2B0;
-  sig[15]="bool ClipLine(int start[2], int end[2], int clip_rect[4])"; rt[15]="bool";
-  nm[16]="XSurface::SetPixel"; addr_tbl[16]=0x007BAEB0;
-  sig[16]="bool XSurface::SetPixel(const Point2D& point, uint32_t color)"; rt[16]="bool";
-  nm[17]="XSurface::GetPixel"; addr_tbl[17]=0x007BAE60;
-  sig[17]="uint32_t XSurface::GetPixel(const Point2D& point)"; rt[17]="uint32_t";
-  nm[18]="XSurface::PutPixel"; addr_tbl[18]=0x007BAF90;
-  sig[18]="bool XSurface::PutPixel(const Point2D& point, uint16_t color, const RectangleStruct& clip_rect)"; rt[18]="bool";
-  nm[19]="XSurface::WalkLine"; addr_tbl[19]=0x007BAB90;
+  nm[0]="Timer::GetTicks"; addr_tbl[0]=0x006C8C40; is_cap[0]=false;
+  sig[0]="int TimerGetTicks()"; rt[0]="int";
+  nm[1]="Palette::6BitTo16Bit"; addr_tbl[1]=0x004355B0; is_cap[1]=false;
+  sig[1]="int Palette6BitTo16Bit(int r, int g, int b)"; rt[1]="int";
+  nm[2]="LoadFileSHP"; addr_tbl[2]=0x004A38D0; is_cap[2]=false;
+  sig[2]="int LoadFileSHP(const char* filename)"; rt[2]="int";
+  nm[3]="Event::Dispatch"; addr_tbl[3]=0x0048D080; is_cap[3]=false;
+  sig[3]="void EventDispatchEx()"; rt[3]="void";
+  nm[4]="SearchMIXFile"; addr_tbl[4]=0x005B40B0; is_cap[4]=false;
+  sig[4]="const void* SearchMIXFile(const char* name)"; rt[4]="const void*";
+  nm[5]="InitGame"; addr_tbl[5]=0x0052BA60; is_cap[5]=false;
+  sig[5]="int InitGame(bool no_cd)"; rt[5]="int";
+  nm[6]="GameFrameLoop"; addr_tbl[6]=0x0055D360; is_cap[6]=false;
+  sig[6]="static bool GameFrameLoop()"; rt[6]="static bool";
+  nm[7]="GameFrameCheck"; addr_tbl[7]=0x0055CFD0; is_cap[7]=false;
+  sig[7]="static bool GameFrameCheck()"; rt[7]="static bool";
+  nm[8]="MainGameFrame"; addr_tbl[8]=0x0048C8B0; is_cap[8]=false;
+  sig[8]="static void MainGameFrame()"; rt[8]="static void";
+  nm[9]="MenuSelect"; addr_tbl[9]=0x0052D9A0; is_cap[9]=false;
+  sig[9]="char MenuSelect()"; rt[9]="char";
+  nm[10]="MainGame"; addr_tbl[10]=0x0048CCC0; is_cap[10]=false;
+  sig[10]="void MainGame()"; rt[10]="void";
+  nm[11]="LoadExpansionMixFiles"; addr_tbl[11]=0x00530000; is_cap[11]=false;
+  sig[11]="bool LoadExpansionMixFiles()"; rt[11]="bool";
+  nm[12]="AbstractClass::QueryInterface"; addr_tbl[12]=0x00410260; is_cap[12]=false;
+  sig[12]="HRESULT AbstractClass::QueryInterface(const IID& iid, void** ppv)"; rt[12]="HRESULT";
+  nm[13]="ClipRectIntersection"; addr_tbl[13]=0x00421B60; is_cap[13]=false;
+  sig[13]="RectangleStruct* ClipRectIntersection(RectangleStruct* result, const RectangleStruct* clip_rect, const RectangleStruct* src_rect, int* x_off, int* y_off)"; rt[13]="RectangleStruct*";
+  nm[14]="ClipLine"; addr_tbl[14]=0x007BC2B0; is_cap[14]=false;
+  sig[14]="bool ClipLine(int start[2], int end[2], int clip_rect[4])"; rt[14]="bool";
+  nm[15]="XSurface::SetPixel"; addr_tbl[15]=0x007BAEB0; is_cap[15]=false;
+  sig[15]="bool XSurface::SetPixel(const Point2D& point, uint32_t color)"; rt[15]="bool";
+  nm[16]="XSurface::GetPixel"; addr_tbl[16]=0x007BAE60; is_cap[16]=false;
+  sig[16]="uint32_t XSurface::GetPixel(const Point2D& point)"; rt[16]="uint32_t";
+  nm[17]="XSurface::PutPixel"; addr_tbl[17]=0x007BAF90; is_cap[17]=false;
+  sig[17]="bool XSurface::PutPixel(const Point2D& point, uint16_t color, const RectangleStruct& clip_rect)"; rt[17]="bool";
+  nm[18]="XSurface::GetPixelAtCoords"; addr_tbl[18]=0x007BAF10; is_cap[18]=false;
+  sig[18]="uint16_t XSurface::GetPixelAtCoords(const Point2D& point, const RectangleStruct& clip_rect)"; rt[18]="uint16_t";
+  nm[19]="XSurface::WalkLine"; addr_tbl[19]=0x007BAB90; is_cap[19]=false;
   sig[19]="bool XSurface::WalkLine(const Point2D& start, const Point2D& end, void (*callback)"; rt[19]="bool";
-  nm[20]="XSurface::DrawLineEx"; addr_tbl[20]=0x007BA610;
+  nm[20]="XSurface::DrawLineEx"; addr_tbl[20]=0x007BA610; is_cap[20]=false;
   sig[20]="bool XSurface::DrawLineEx(const RectangleStruct& clip_rect, const Point2D& start, const Point2D& end, uint32_t color)"; rt[20]="bool";
-  nm[21]="XSurface::DrawLine"; addr_tbl[21]=0x007BA5E0;
+  nm[21]="XSurface::DrawLine"; addr_tbl[21]=0x007BA5E0; is_cap[21]=false;
   sig[21]="bool XSurface::DrawLine(const Point2D& start, const Point2D& end, uint32_t color)"; rt[21]="bool";
-  nm[22]="XSurface::Fill"; addr_tbl[22]=0x007BBAB0;
+  nm[22]="XSurface::Fill"; addr_tbl[22]=0x007BBAB0; is_cap[22]=false;
   sig[22]="bool XSurface::Fill(uint32_t color)"; rt[22]="bool";
-  nm[23]="XSurface::DrawRectEx"; addr_tbl[23]=0x007BADC0;
+  nm[23]="XSurface::DrawRectEx"; addr_tbl[23]=0x007BADC0; is_cap[23]=false;
   sig[23]="bool XSurface::DrawRectEx(const RectangleStruct& clip_rect, const RectangleStruct& draw_rect, uint32_t color)"; rt[23]="bool";
-  nm[24]="XSurface::DrawRect"; addr_tbl[24]=0x007BAD90;
+  nm[24]="XSurface::DrawRect"; addr_tbl[24]=0x007BAD90; is_cap[24]=false;
   sig[24]="bool XSurface::DrawRect(const RectangleStruct& draw_rect, uint32_t color)"; rt[24]="bool";
-  nm[25]="CCFileClass::Open"; addr_tbl[25]=0x00473C50;
-  sig[25]="CCFileClass::Open"; rt[25]="";
-  nm[26]="CCFileClass::ReadEntireFile"; addr_tbl[26]=0x004A3890;
+  nm[25]="CCFileClass::Open"; addr_tbl[25]=0x00473C50; is_cap[25]=false;
+  sig[25]="bool CCFileClass::Open(const char* pFileName)"; rt[25]="bool";
+  nm[26]="CCFileClass::ReadEntireFile"; addr_tbl[26]=0x004A3890; is_cap[26]=false;
   sig[26]="void* CCFileClass::ReadEntireFile()"; rt[26]="void*";
-  nm[27]="CCFileClass::Reset"; addr_tbl[27]=0x00473CE0;
+  nm[27]="CCFileClass::Reset"; addr_tbl[27]=0x00473CE0; is_cap[27]=false;
   sig[27]="void CCFileClass::Reset()"; rt[27]="void";
-  nm[28]="INIClass::Constructor"; addr_tbl[28]=0x00535AA0;
-  sig[28]="INIClass::Constructor"; rt[28]="";
-  nm[29]="CCINIClass::Constructor"; addr_tbl[29]=0x00535B30;
-  sig[29]="CCINIClass::Constructor"; rt[29]="";
-  nm[30]="CCINIClass::Load"; addr_tbl[30]=0x004741F0;
+  nm[28]="INIClass::Constructor"; addr_tbl[28]=0x00535AA0; is_cap[28]=false;
+  sig[28]="void INIClass::INIClass()"; rt[28]="void";
+  nm[29]="CCINIClass::Constructor"; addr_tbl[29]=0x00535B30; is_cap[29]=false;
+  sig[29]="void CCINIClass::CCINIClass()"; rt[29]="void";
+  nm[30]="CCINIClass::Load"; addr_tbl[30]=0x004741F0; is_cap[30]=false;
   sig[30]="bool CCINIClass::Load(CCFileClass* file, bool unk1, bool unk2)"; rt[30]="bool";
-  nm[31]="MixFileClass::Bootstrap"; addr_tbl[31]=0x005301A0;
+  nm[31]="MixFileClass::Bootstrap"; addr_tbl[31]=0x005301A0; is_cap[31]=false;
   sig[31]="bool MixFileClass::Bootstrap()"; rt[31]="bool";
 }
 struct InitHookNames { InitHookNames() { NN(); } };
 static InitHookNames _init;
 static int I(DWORD x){
-  static DWORD A[2]={
+  static DWORD A[33]={
+  0x00410260,
+  0x00421B60,
+  0x004355B0,
+  0x00473C50,
+  0x00473CE0,
+  0x004741F0,
+  0x0048C8B0,
+  0x0048CCC0,
+  0x0048D080,
+  0x004A3890,
+  0x004A38D0,
+  0x0052BA60,
+  0x0052D9A0,
+  0x00530000,
+  0x005301A0,
+  0x00535AA0,
+  0x00535B30,
+  0x0055CFD0,
+  0x0055D360,
+  0x005B40B0,
+  0x006C8C40,
+  0x007BA5E0,
+  0x007BA610,
+  0x007BAB90,
+  0x007BAD90,
+  0x007BADC0,
+  0x007BAE60,
+  0x007BAEB0,
   0x007BAF10,
+  0x007BAF90,
+  0x007BBAB0,
+  0x007BC2B0,
   0};
-  static int Imap[1]={
+  static int Imap[32]={
+    12,
+    13,
+    1,
+    25,
+    27,
+    30,
+    8,
+    10,
+    3,
+    26,
+    2,
+    5,
+    9,
+    11,
+    31,
+    28,
+    29,
+    7,
+    6,
+    4,
     0,
+    21,
+    20,
+    19,
+    24,
+    23,
+    16,
+    15,
+    18,
+    17,
+    22,
+    14,
   };
-  int lo=0,hi=1;
+  int lo=0,hi=32;
   while(lo<hi){int m=(lo+hi)/2;if(A[m]<x)lo=m+1;else hi=m;}
-  if(lo>=1||A[lo]!=x) return -1;
+  if(lo>=32||A[lo]!=x) return -1;
   return Imap[lo];
 }
+static void FI_Timer_GetTicks(std::ostream& os){
+  os<<"\r\n";
+}
+
+static void FI_Palette_6BitTo16Bit(std::ostream& os){
+  os<<"this=";Hex8(os,in[1].c);
+  os<<" r(Stack)=";os<<(int)(in[1].stk0);
+  os<<" g(Stack)=";os<<(int)(in[1].stk1);
+  os<<" b(Stack)=";os<<(int)(in[1].stk2);
+  os<<"\r\n";
+}
+
+static void FI_LoadFileSHP(std::ostream& os){
+  os<<" filename(ECX)=";FmtPtr(os,(const char*)(in[2].c));
+  os<<"\r\n";
+}
+
+static void FI_Event_Dispatch(std::ostream& os){
+  os<<"\r\n";
+}
+
+static void FI_SearchMIXFile(std::ostream& os){
+  os<<" name(ECX)=";FmtPtr(os,(const char*)(in[4].c));
+  os<<"\r\n";
+}
+
+static void FI_InitGame(std::ostream& os){
+  os<<" no_cd(Stack)=";os<<(bool)(in[5].stk0);
+  os<<"\r\n";
+}
+
+static void FI_GameFrameLoop(std::ostream& os){
+  os<<"\r\n";
+}
+
+static void FI_GameFrameCheck(std::ostream& os){
+  os<<"\r\n";
+}
+
+static void FI_MainGameFrame(std::ostream& os){
+  os<<"\r\n";
+}
+
+static void FI_MenuSelect(std::ostream& os){
+  os<<"\r\n";
+}
+
+static void FI_MainGame(std::ostream& os){
+  os<<"\r\n";
+}
+
+static void FI_LoadExpansionMixFiles(std::ostream& os){
+  os<<"\r\n";
+}
+
+static void FI_AbstractClass_QueryInterface(std::ostream& os){
+  os<<"this=";Hex8(os,in[12].c);
+  os<<" iid(Stack)=";FmtPtr(os,(const IID*)(in[12].stk0));
+  os<<" ppv(Stack)=";FmtPtr(os,(const void*)(in[12].stk1));
+  os<<"\r\n";
+}
+
+static void FI_ClipRectIntersection(std::ostream& os){
+  os<<" result(ECX)=";FmtPtr(os,(const RectangleStruct*)(in[13].c));
+  os<<" clip_rect(EDX)=";FmtPtr(os,(const RectangleStruct*)(in[13].d));
+  os<<" src_rect(Stack)=";FmtPtr(os,(const RectangleStruct*)(in[13].stk0));
+  os<<" x_off(Stack)=";FmtPtr(os,(const int*)(in[13].stk1));
+  os<<" y_off(Stack)=";FmtPtr(os,(const int*)(in[13].stk2));
+  os<<"\r\n";
+}
+
+static void FI_ClipLine(std::ostream& os){
+  os<<" start(ECX)=";FmtArr(os,2,in[14].c);
+  os<<" end(EDX)=";FmtArr(os,2,in[14].d);
+  os<<" clip_rect(Stack)=";FmtArr(os,4,in[14].stk0);
+  os<<"\r\n";
+}
+
+static void FI_XSurface_SetPixel(std::ostream& os){
+  os<<"this=";Hex8(os,in[15].c);
+  os<<" point(Stack)=";FmtPtr(os,(const Point2D*)(in[15].stk0));
+  os<<" color(Stack)=";os<<(uint32_t)(in[15].stk1);
+  os<<"\r\n";
+}
+
+static void FI_XSurface_GetPixel(std::ostream& os){
+  os<<"this=";Hex8(os,in[16].c);
+  os<<" point(Stack)=";FmtPtr(os,(const Point2D*)(in[16].stk0));
+  os<<"\r\n";
+}
+
+static void FI_XSurface_PutPixel(std::ostream& os){
+  os<<"this=";Hex8(os,in[17].c);
+  os<<" point(Stack)=";FmtPtr(os,(const Point2D*)(in[17].stk0));
+  os<<" color(Stack)=";os<<(uint16_t)(in[17].stk1);
+  os<<" clip_rect(Stack)=";FmtPtr(os,(const RectangleStruct*)(in[17].stk2));
+  os<<"\r\n";
+}
+
 static void FI_XSurface_GetPixelAtCoords(std::ostream& os){
-  os<<"this=";Hex8(os,in[0].c);
-  os<<" point(Stack)=";FmtPtr(os,(const Point2D*)(in[0].stk0));
-  os<<" clip_rect(Stack)=";FmtPtr(os,(const RectangleStruct*)(in[0].stk1));
+  os<<"this=";Hex8(os,in[18].c);
+  os<<" point(Stack)=";FmtPtr(os,(const Point2D*)(in[18].stk0));
+  os<<" clip_rect(Stack)=";FmtPtr(os,(const RectangleStruct*)(in[18].stk1));
+  os<<"\r\n";
+}
+
+static void FI_XSurface_WalkLine(std::ostream& os){
+  os<<"this=";Hex8(os,in[19].c);
+  os<<" start(Stack)=";FmtPtr(os,(const Point2D*)(in[19].stk0));
+  os<<" end(Stack)=";FmtPtr(os,(const Point2D*)(in[19].stk1));
+  os<<" (*callback(Stack)=";os<<(void)(in[19].stk2);
+  os<<"\r\n";
+}
+
+static void FI_XSurface_DrawLineEx(std::ostream& os){
+  os<<"this=";Hex8(os,in[20].c);
+  os<<" clip_rect(Stack)=";FmtPtr(os,(const RectangleStruct*)(in[20].stk0));
+  os<<" start(Stack)=";FmtPtr(os,(const Point2D*)(in[20].stk1));
+  os<<" end(Stack)=";FmtPtr(os,(const Point2D*)(in[20].stk2));
+  os<<" color(Stack)=";os<<(uint32_t)(in[20].stk3);
+  os<<"\r\n";
+}
+
+static void FI_XSurface_DrawLine(std::ostream& os){
+  os<<"this=";Hex8(os,in[21].c);
+  os<<" start(Stack)=";FmtPtr(os,(const Point2D*)(in[21].stk0));
+  os<<" end(Stack)=";FmtPtr(os,(const Point2D*)(in[21].stk1));
+  os<<" color(Stack)=";os<<(uint32_t)(in[21].stk2);
+  os<<"\r\n";
+}
+
+static void FI_XSurface_Fill(std::ostream& os){
+  os<<"this=";Hex8(os,in[22].c);
+  os<<" color(Stack)=";os<<(uint32_t)(in[22].stk0);
+  os<<"\r\n";
+}
+
+static void FI_XSurface_DrawRectEx(std::ostream& os){
+  os<<"this=";Hex8(os,in[23].c);
+  os<<" clip_rect(Stack)=";FmtPtr(os,(const RectangleStruct*)(in[23].stk0));
+  os<<" draw_rect(Stack)=";FmtPtr(os,(const RectangleStruct*)(in[23].stk1));
+  os<<" color(Stack)=";os<<(uint32_t)(in[23].stk2);
+  os<<"\r\n";
+}
+
+static void FI_XSurface_DrawRect(std::ostream& os){
+  os<<"this=";Hex8(os,in[24].c);
+  os<<" draw_rect(Stack)=";FmtPtr(os,(const RectangleStruct*)(in[24].stk0));
+  os<<" color(Stack)=";os<<(uint32_t)(in[24].stk1);
+  os<<"\r\n";
+}
+
+static void FI_CCFileClass_Open(std::ostream& os){
+  os<<"this=";Hex8(os,in[25].c);
+  os<<" pFileName(Stack)=";FmtPtr(os,(const char*)(in[25].stk0));
+  os<<"\r\n";
+}
+
+static void FI_CCFileClass_ReadEntireFile(std::ostream& os){
+  os<<"this=";Hex8(os,in[26].c);
+  os<<"\r\n";
+}
+
+static void FI_CCFileClass_Reset(std::ostream& os){
+  os<<"this=";Hex8(os,in[27].c);
+  os<<"\r\n";
+}
+
+static void FI_INIClass_Constructor(std::ostream& os){
+  os<<"this=";Hex8(os,in[28].c);
+  os<<"\r\n";
+}
+
+static void FI_CCINIClass_Constructor(std::ostream& os){
+  os<<"this=";Hex8(os,in[29].c);
+  os<<"\r\n";
+}
+
+static void FI_CCINIClass_Load(std::ostream& os){
+  os<<"this=";Hex8(os,in[30].c);
+  os<<" file(Stack)=";FmtPtr(os,(const CCFileClass*)(in[30].stk0));
+  os<<" unk1(Stack)=";os<<(bool)(in[30].stk1);
+  os<<" unk2(Stack)=";os<<(bool)(in[30].stk2);
+  os<<"\r\n";
+}
+
+static void FI_MixFileClass_Bootstrap(std::ostream& os){
   os<<"\r\n";
 }
 
 static void FI(int i, std::ostream& os){switch(i){
-  case 0:FI_XSurface_GetPixelAtCoords(os);break;
+  case 0:FI_Timer_GetTicks(os);break;
+  case 1:FI_Palette_6BitTo16Bit(os);break;
+  case 2:FI_LoadFileSHP(os);break;
+  case 3:FI_Event_Dispatch(os);break;
+  case 4:FI_SearchMIXFile(os);break;
+  case 5:FI_InitGame(os);break;
+  case 6:FI_GameFrameLoop(os);break;
+  case 7:FI_GameFrameCheck(os);break;
+  case 8:FI_MainGameFrame(os);break;
+  case 9:FI_MenuSelect(os);break;
+  case 10:FI_MainGame(os);break;
+  case 11:FI_LoadExpansionMixFiles(os);break;
+  case 12:FI_AbstractClass_QueryInterface(os);break;
+  case 13:FI_ClipRectIntersection(os);break;
+  case 14:FI_ClipLine(os);break;
+  case 15:FI_XSurface_SetPixel(os);break;
+  case 16:FI_XSurface_GetPixel(os);break;
+  case 17:FI_XSurface_PutPixel(os);break;
+  case 18:FI_XSurface_GetPixelAtCoords(os);break;
+  case 19:FI_XSurface_WalkLine(os);break;
+  case 20:FI_XSurface_DrawLineEx(os);break;
+  case 21:FI_XSurface_DrawLine(os);break;
+  case 22:FI_XSurface_Fill(os);break;
+  case 23:FI_XSurface_DrawRectEx(os);break;
+  case 24:FI_XSurface_DrawRect(os);break;
+  case 25:FI_CCFileClass_Open(os);break;
+  case 26:FI_CCFileClass_ReadEntireFile(os);break;
+  case 27:FI_CCFileClass_Reset(os);break;
+  case 28:FI_INIClass_Constructor(os);break;
+  case 29:FI_CCINIClass_Constructor(os);break;
+  case 30:FI_CCINIClass_Load(os);break;
+  case 31:FI_MixFileClass_Bootstrap(os);break;
   default:os<<"  Input: ???\r\n";break;}}
 
 static DWORD CallRE(int i){
   auto&V=in[i];
   switch(i){
-    case 0: return RE_XSurface_GetPixelAtCoords(V.c, V.stk0, V.stk1);
+    case 0: return RE_Timer_GetTicks();
+    case 1: return RE_Palette_6BitTo16Bit(V.c, V.stk0, V.stk1, V.stk2);
+    case 2: return RE_LoadFileSHP(V.c);
+    case 3: return RE_Event_Dispatch();
+    case 4: return RE_SearchMIXFile(V.c);
+    case 5: return RE_InitGame(V.stk0);
+    case 6: return RE_GameFrameLoop();
+    case 7: return RE_GameFrameCheck();
+    case 8: return RE_MainGameFrame();
+    case 9: return RE_MenuSelect();
+    case 10: return RE_MainGame();
+    case 11: return RE_LoadExpansionMixFiles();
+    case 12: return RE_AbstractClass_QueryInterface(V.c, V.stk0, V.stk1);
+    case 13: return RE_ClipRectIntersection(V.c, V.d, V.stk0, V.stk1, V.stk2);
+    case 14: return RE_ClipLine(V.c, V.d, V.stk0);
+    case 15: return RE_XSurface_SetPixel(V.c, V.stk0, V.stk1);
+    case 16: return RE_XSurface_GetPixel(V.c, V.stk0);
+    case 17: return RE_XSurface_PutPixel(V.c, V.stk0, V.stk1, V.stk2);
+    case 18: return RE_XSurface_GetPixelAtCoords(V.c, V.stk0, V.stk1);
+    case 19: return RE_XSurface_WalkLine(V.c, V.stk0, V.stk1, V.stk2);
+    case 20: return RE_XSurface_DrawLineEx(V.c, V.stk0, V.stk1, V.stk2, V.stk3);
+    case 21: return RE_XSurface_DrawLine(V.c, V.stk0, V.stk1, V.stk2);
+    case 22: return RE_XSurface_Fill(V.c, V.stk0);
+    case 23: return RE_XSurface_DrawRectEx(V.c, V.stk0, V.stk1, V.stk2);
+    case 24: return RE_XSurface_DrawRect(V.c, V.stk0, V.stk1);
+    case 25: return RE_CCFileClass_Open(V.c, V.stk0);
+    case 26: return RE_CCFileClass_ReadEntireFile(V.c);
+    case 27: return RE_CCFileClass_Reset(V.c);
+    case 28: return RE_INIClass_Constructor(V.c);
+    case 29: return RE_CCINIClass_Constructor(V.c);
+    case 30: return RE_CCINIClass_Load(V.c, V.stk0, V.stk1, V.stk2);
+    case 31: return RE_MixFileClass_Bootstrap();
     default: return 0;
   }
 }
@@ -14536,11 +14874,11 @@ static void flush_full(){
   SetFilePointer(h,0,0,FILE_BEGIN); SetEndOfFile(h);
   std::ostringstream os;
   os<<"============ Different Compares ============\r\n";
-  for(int i=0;i<1;i++) if(has_diff[i]&&fn_buf_len[i]>0) os.write(fn_buf[i],fn_buf_len[i]);
+  for(int i=0;i<32;i++) if(has_diff[i]&&fn_buf_len[i]>0) os.write(fn_buf[i],fn_buf_len[i]);
   os<<"\r\n================ Captures ================\r\n";
-  for(int i=0;i<1;i++) if(is_cap[i]&&!has_diff[i]&&fn_buf_len[i]>0) os.write(fn_buf[i],fn_buf_len[i]);
+  for(int i=0;i<32;i++) if(is_cap[i]&&!has_diff[i]&&fn_buf_len[i]>0) os.write(fn_buf[i],fn_buf_len[i]);
   os<<"\r\n============= Same Compares ==============\r\n";
-  for(int i=0;i<1;i++) if(!is_cap[i]&&!has_diff[i]&&fn_buf_len[i]>0) os.write(fn_buf[i],fn_buf_len[i]);
+  for(int i=0;i<32;i++) if(!is_cap[i]&&!has_diff[i]&&fn_buf_len[i]>0) os.write(fn_buf[i],fn_buf_len[i]);
   os<<"\r\n============== None Calls ================\r\n";
   if(sec_none_len>0) os.write(sec_none,sec_none_len);
   else os<<"\r\n";
@@ -14572,209 +14910,52 @@ static bool sections_written=false;
 static void ensure_sections(){
   if(sections_written) return;
   sections_written=true;
-  SecApp(sec_none,&sec_none_len,"[int TimerGetTicks()-0x006C8C40]\r\n");
-  SecApp(sec_none,&sec_none_len,"[int Palette6BitTo16Bit(int r, int g, int b)-0x004355B0]\r\n");
-  SecApp(sec_none,&sec_none_len,"[int LoadFileSHP(const char* filename)-0x004A38D0]\r\n");
-  SecApp(sec_none,&sec_none_len,"[void EventDispatchEx()-0x0048D080]\r\n");
-  SecApp(sec_none,&sec_none_len,"[const void* SearchMIXFile(const char* name)-0x005B40B0]\r\n");
-  SecApp(sec_none,&sec_none_len,"[int InitGame(bool no_cd)-0x0052BA60]\r\n");
-  SecApp(sec_none,&sec_none_len,"[static bool GameFrameLoop()-0x0055D360]\r\n");
-  SecApp(sec_none,&sec_none_len,"[static bool GameFrameCheck()-0x0055CFD0]\r\n");
-  SecApp(sec_none,&sec_none_len,"[static void MainGameFrame()-0x0048C8B0]\r\n");
-  SecApp(sec_none,&sec_none_len,"[char MenuSelect()-0x0052D9A0]\r\n");
-  SecApp(sec_none,&sec_none_len,"[void MainGame()-0x0048CCC0]\r\n");
-  SecApp(sec_none,&sec_none_len,"[bool LoadExpansionMixFiles()-0x00530000]\r\n");
-  SecApp(sec_none,&sec_none_len,"[HRESULT AbstractClass::QueryInterface(const IID& iid, void** ppv)-0x00410260]\r\n");
-  SecApp(sec_none,&sec_none_len,"[RectangleStruct* ClipRectIntersection(RectangleStruct* result, const RectangleStruct* clip_rect, const RectangleStruct* src_rect, int* x_off, int* y_off)-0x00421B60]\r\n");
-  SecApp(sec_none,&sec_none_len,"[bool ClipLine(int start[2], int end[2], int clip_rect[4])-0x007BC2B0]\r\n");
-  SecApp(sec_none,&sec_none_len,"[bool XSurface::SetPixel(const Point2D& point, uint32_t color)-0x007BAEB0]\r\n");
-  SecApp(sec_none,&sec_none_len,"[uint32_t XSurface::GetPixel(const Point2D& point)-0x007BAE60]\r\n");
-  SecApp(sec_none,&sec_none_len,"[bool XSurface::PutPixel(const Point2D& point, uint16_t color, const RectangleStruct& clip_rect)-0x007BAF90]\r\n");
-  SecApp(sec_none,&sec_none_len,"[bool XSurface::WalkLine(const Point2D& start, const Point2D& end, void (*callback)-0x007BAB90]\r\n");
-  SecApp(sec_none,&sec_none_len,"[bool XSurface::DrawLineEx(const RectangleStruct& clip_rect, const Point2D& start, const Point2D& end, uint32_t color)-0x007BA610]\r\n");
-  SecApp(sec_none,&sec_none_len,"[bool XSurface::DrawLine(const Point2D& start, const Point2D& end, uint32_t color)-0x007BA5E0]\r\n");
-  SecApp(sec_none,&sec_none_len,"[bool XSurface::Fill(uint32_t color)-0x007BBAB0]\r\n");
-  SecApp(sec_none,&sec_none_len,"[bool XSurface::DrawRectEx(const RectangleStruct& clip_rect, const RectangleStruct& draw_rect, uint32_t color)-0x007BADC0]\r\n");
-  SecApp(sec_none,&sec_none_len,"[bool XSurface::DrawRect(const RectangleStruct& draw_rect, uint32_t color)-0x007BAD90]\r\n");
-  SecApp(sec_none,&sec_none_len,"[CCFileClass::Open-0x00473C50]\r\n");
-  SecApp(sec_none,&sec_none_len,"[void* CCFileClass::ReadEntireFile()-0x004A3890]\r\n");
-  SecApp(sec_none,&sec_none_len,"[void CCFileClass::Reset()-0x00473CE0]\r\n");
-  SecApp(sec_none,&sec_none_len,"[INIClass::Constructor-0x00535AA0]\r\n");
-  SecApp(sec_none,&sec_none_len,"[CCINIClass::Constructor-0x00535B30]\r\n");
-  SecApp(sec_none,&sec_none_len,"[bool CCINIClass::Load(CCFileClass* file, bool unk1, bool unk2)-0x004741F0]\r\n");
-  SecApp(sec_none,&sec_none_len,"[bool MixFileClass::Bootstrap()-0x005301A0]\r\n");
   flush_full();
 }
 
 static void FmtRet(std::ostream& os, DWORD v, int i){
   switch(i){
-    case 0: os<<(uint16_t)(v); break;
+    case 0: os<<(int)(v); break;
+    case 1: os<<(int)(v); break;
+    case 2: os<<(int)(v); break;
+    case 3: os<<(void)(v); break;
+    case 4: Hex8(os,v); break;
+    case 5: os<<(int)(v); break;
+    case 6: os<<(static bool)(v); break;
+    case 7: os<<(static bool)(v); break;
+    case 8: os<<(static void)(v); break;
+    case 9: os<<(char)(v); break;
+    case 10: os<<(void)(v); break;
+    case 11: os<<(bool)(v); break;
+    case 12: os<<(HRESULT)(v); break;
+    case 13: Hex8(os,v); break;
+    case 14: os<<(bool)(v); break;
+    case 15: os<<(bool)(v); break;
+    case 16: os<<(uint32_t)(v); break;
+    case 17: os<<(bool)(v); break;
+    case 18: os<<(uint16_t)(v); break;
+    case 19: os<<(bool)(v); break;
+    case 20: os<<(bool)(v); break;
+    case 21: os<<(bool)(v); break;
+    case 22: os<<(bool)(v); break;
+    case 23: os<<(bool)(v); break;
+    case 24: os<<(bool)(v); break;
+    case 25: os<<(bool)(v); break;
+    case 26: Hex8(os,v); break;
+    case 27: os<<(void)(v); break;
+    case 28: os<<(void)(v); break;
+    case 29: os<<(void)(v); break;
+    case 30: os<<(bool)(v); break;
+    case 31: os<<(bool)(v); break;
     default: os<<v; break;
   }
 }
 
 static void rebuild_none(){
   sec_none_len=0; sec_none[0]=0;
-  { int called=0;
-    for(int j=0;j<1;j++){
-      if(addr_tbl[j]==0x006C8C40&&ctr[j]>0) called=1;
-    }
-    if(!called) SecApp(sec_none,&sec_none_len,"[int TimerGetTicks()-0x006C8C40]\r\n"); }
-  { int called=0;
-    for(int j=0;j<1;j++){
-      if(addr_tbl[j]==0x004355B0&&ctr[j]>0) called=1;
-    }
-    if(!called) SecApp(sec_none,&sec_none_len,"[int Palette6BitTo16Bit(int r, int g, int b)-0x004355B0]\r\n"); }
-  { int called=0;
-    for(int j=0;j<1;j++){
-      if(addr_tbl[j]==0x004A38D0&&ctr[j]>0) called=1;
-    }
-    if(!called) SecApp(sec_none,&sec_none_len,"[int LoadFileSHP(const char* filename)-0x004A38D0]\r\n"); }
-  { int called=0;
-    for(int j=0;j<1;j++){
-      if(addr_tbl[j]==0x0048D080&&ctr[j]>0) called=1;
-    }
-    if(!called) SecApp(sec_none,&sec_none_len,"[void EventDispatchEx()-0x0048D080]\r\n"); }
-  { int called=0;
-    for(int j=0;j<1;j++){
-      if(addr_tbl[j]==0x005B40B0&&ctr[j]>0) called=1;
-    }
-    if(!called) SecApp(sec_none,&sec_none_len,"[const void* SearchMIXFile(const char* name)-0x005B40B0]\r\n"); }
-  { int called=0;
-    for(int j=0;j<1;j++){
-      if(addr_tbl[j]==0x0052BA60&&ctr[j]>0) called=1;
-    }
-    if(!called) SecApp(sec_none,&sec_none_len,"[int InitGame(bool no_cd)-0x0052BA60]\r\n"); }
-  { int called=0;
-    for(int j=0;j<1;j++){
-      if(addr_tbl[j]==0x0055D360&&ctr[j]>0) called=1;
-    }
-    if(!called) SecApp(sec_none,&sec_none_len,"[static bool GameFrameLoop()-0x0055D360]\r\n"); }
-  { int called=0;
-    for(int j=0;j<1;j++){
-      if(addr_tbl[j]==0x0055CFD0&&ctr[j]>0) called=1;
-    }
-    if(!called) SecApp(sec_none,&sec_none_len,"[static bool GameFrameCheck()-0x0055CFD0]\r\n"); }
-  { int called=0;
-    for(int j=0;j<1;j++){
-      if(addr_tbl[j]==0x0048C8B0&&ctr[j]>0) called=1;
-    }
-    if(!called) SecApp(sec_none,&sec_none_len,"[static void MainGameFrame()-0x0048C8B0]\r\n"); }
-  { int called=0;
-    for(int j=0;j<1;j++){
-      if(addr_tbl[j]==0x0052D9A0&&ctr[j]>0) called=1;
-    }
-    if(!called) SecApp(sec_none,&sec_none_len,"[char MenuSelect()-0x0052D9A0]\r\n"); }
-  { int called=0;
-    for(int j=0;j<1;j++){
-      if(addr_tbl[j]==0x0048CCC0&&ctr[j]>0) called=1;
-    }
-    if(!called) SecApp(sec_none,&sec_none_len,"[void MainGame()-0x0048CCC0]\r\n"); }
-  { int called=0;
-    for(int j=0;j<1;j++){
-      if(addr_tbl[j]==0x00530000&&ctr[j]>0) called=1;
-    }
-    if(!called) SecApp(sec_none,&sec_none_len,"[bool LoadExpansionMixFiles()-0x00530000]\r\n"); }
-  { int called=0;
-    for(int j=0;j<1;j++){
-      if(addr_tbl[j]==0x00410260&&ctr[j]>0) called=1;
-    }
-    if(!called) SecApp(sec_none,&sec_none_len,"[HRESULT AbstractClass::QueryInterface(const IID& iid, void** ppv)-0x00410260]\r\n"); }
-  { int called=0;
-    for(int j=0;j<1;j++){
-      if(addr_tbl[j]==0x00421B60&&ctr[j]>0) called=1;
-    }
-    if(!called) SecApp(sec_none,&sec_none_len,"[RectangleStruct* ClipRectIntersection(RectangleStruct* result, const RectangleStruct* clip_rect, const RectangleStruct* src_rect, int* x_off, int* y_off)-0x00421B60]\r\n"); }
-  { int called=0;
-    for(int j=0;j<1;j++){
-      if(addr_tbl[j]==0x007BC2B0&&ctr[j]>0) called=1;
-    }
-    if(!called) SecApp(sec_none,&sec_none_len,"[bool ClipLine(int start[2], int end[2], int clip_rect[4])-0x007BC2B0]\r\n"); }
-  { int called=0;
-    for(int j=0;j<1;j++){
-      if(addr_tbl[j]==0x007BAEB0&&ctr[j]>0) called=1;
-    }
-    if(!called) SecApp(sec_none,&sec_none_len,"[bool XSurface::SetPixel(const Point2D& point, uint32_t color)-0x007BAEB0]\r\n"); }
-  { int called=0;
-    for(int j=0;j<1;j++){
-      if(addr_tbl[j]==0x007BAE60&&ctr[j]>0) called=1;
-    }
-    if(!called) SecApp(sec_none,&sec_none_len,"[uint32_t XSurface::GetPixel(const Point2D& point)-0x007BAE60]\r\n"); }
-  { int called=0;
-    for(int j=0;j<1;j++){
-      if(addr_tbl[j]==0x007BAF90&&ctr[j]>0) called=1;
-    }
-    if(!called) SecApp(sec_none,&sec_none_len,"[bool XSurface::PutPixel(const Point2D& point, uint16_t color, const RectangleStruct& clip_rect)-0x007BAF90]\r\n"); }
-  { int called=0;
-    for(int j=0;j<1;j++){
-      if(addr_tbl[j]==0x007BAB90&&ctr[j]>0) called=1;
-    }
-    if(!called) SecApp(sec_none,&sec_none_len,"[bool XSurface::WalkLine(const Point2D& start, const Point2D& end, void (*callback)-0x007BAB90]\r\n"); }
-  { int called=0;
-    for(int j=0;j<1;j++){
-      if(addr_tbl[j]==0x007BA610&&ctr[j]>0) called=1;
-    }
-    if(!called) SecApp(sec_none,&sec_none_len,"[bool XSurface::DrawLineEx(const RectangleStruct& clip_rect, const Point2D& start, const Point2D& end, uint32_t color)-0x007BA610]\r\n"); }
-  { int called=0;
-    for(int j=0;j<1;j++){
-      if(addr_tbl[j]==0x007BA5E0&&ctr[j]>0) called=1;
-    }
-    if(!called) SecApp(sec_none,&sec_none_len,"[bool XSurface::DrawLine(const Point2D& start, const Point2D& end, uint32_t color)-0x007BA5E0]\r\n"); }
-  { int called=0;
-    for(int j=0;j<1;j++){
-      if(addr_tbl[j]==0x007BBAB0&&ctr[j]>0) called=1;
-    }
-    if(!called) SecApp(sec_none,&sec_none_len,"[bool XSurface::Fill(uint32_t color)-0x007BBAB0]\r\n"); }
-  { int called=0;
-    for(int j=0;j<1;j++){
-      if(addr_tbl[j]==0x007BADC0&&ctr[j]>0) called=1;
-    }
-    if(!called) SecApp(sec_none,&sec_none_len,"[bool XSurface::DrawRectEx(const RectangleStruct& clip_rect, const RectangleStruct& draw_rect, uint32_t color)-0x007BADC0]\r\n"); }
-  { int called=0;
-    for(int j=0;j<1;j++){
-      if(addr_tbl[j]==0x007BAD90&&ctr[j]>0) called=1;
-    }
-    if(!called) SecApp(sec_none,&sec_none_len,"[bool XSurface::DrawRect(const RectangleStruct& draw_rect, uint32_t color)-0x007BAD90]\r\n"); }
-  { int called=0;
-    for(int j=0;j<1;j++){
-      if(addr_tbl[j]==0x00473C50&&ctr[j]>0) called=1;
-    }
-    if(!called) SecApp(sec_none,&sec_none_len,"[CCFileClass::Open-0x00473C50]\r\n"); }
-  { int called=0;
-    for(int j=0;j<1;j++){
-      if(addr_tbl[j]==0x004A3890&&ctr[j]>0) called=1;
-    }
-    if(!called) SecApp(sec_none,&sec_none_len,"[void* CCFileClass::ReadEntireFile()-0x004A3890]\r\n"); }
-  { int called=0;
-    for(int j=0;j<1;j++){
-      if(addr_tbl[j]==0x00473CE0&&ctr[j]>0) called=1;
-    }
-    if(!called) SecApp(sec_none,&sec_none_len,"[void CCFileClass::Reset()-0x00473CE0]\r\n"); }
-  { int called=0;
-    for(int j=0;j<1;j++){
-      if(addr_tbl[j]==0x00535AA0&&ctr[j]>0) called=1;
-    }
-    if(!called) SecApp(sec_none,&sec_none_len,"[INIClass::Constructor-0x00535AA0]\r\n"); }
-  { int called=0;
-    for(int j=0;j<1;j++){
-      if(addr_tbl[j]==0x00535B30&&ctr[j]>0) called=1;
-    }
-    if(!called) SecApp(sec_none,&sec_none_len,"[CCINIClass::Constructor-0x00535B30]\r\n"); }
-  { int called=0;
-    for(int j=0;j<1;j++){
-      if(addr_tbl[j]==0x004741F0&&ctr[j]>0) called=1;
-    }
-    if(!called) SecApp(sec_none,&sec_none_len,"[bool CCINIClass::Load(CCFileClass* file, bool unk1, bool unk2)-0x004741F0]\r\n"); }
-  { int called=0;
-    for(int j=0;j<1;j++){
-      if(addr_tbl[j]==0x005301A0&&ctr[j]>0) called=1;
-    }
-    if(!called) SecApp(sec_none,&sec_none_len,"[bool MixFileClass::Bootstrap()-0x005301A0]\r\n"); }
-  for(int j=0;j<1;j++){
+  for(int j=0;j<32;j++){
     if(ctr[j]==0){
       int already=0;
-      unsigned na_tbl[31]={7113792,4412848,4864208,4771968,5980336,5421664,5624672,5623760,4769968,5429664,4771008,5439488,4260448,4332384,8110768,8105648,8105568,8105872,8104848,8103440,8103392,8108720,8105408,8105360,4668496,4864144,4668640,5462688,5462832,4669936,5439904};
-      for(int k=0;k<31;k++) if(addr_tbl[j]==na_tbl[k]) already=1;
       if(!already){
         const char* s=sig[j];
         if(s&&*s){
@@ -14814,6 +14995,386 @@ static void write_entry(char tag, int i, DWORD addr, DWORD re, DWORD orig, DWORD
 // Final flush on DLL unload (no export needed - static destructor)
 static struct FinalFlush{ ~FinalFlush(){ if(h!=INVALID_HANDLE_VALUE){flush_full();CloseHandle(h);h=INVALID_HANDLE_VALUE;} } } _final_flush;
 
+// Timer::GetTicks @ 0x6c8c40 (unknown) mode=Inject hook_size=6
+// Timer::GetTicks: timeGetTime() >> 4
+DEFINE_HOOK(0x6C8C40, Rev_Timer_GetTicks, 0x6)
+{
+  int idx=I(0x6C8C40);
+  auto&V=in[idx];
+  V.a=R->EAX();V.c=R->ECX();V.d=R->EDX();
+  V.b=R->EBX();V.si=R->ESI();V.di=R->EDI();
+  V.bp=R->EBP();V.sp=R->ESP();
+  V.stk0=R->Stack<DWORD>(4);V.stk1=R->Stack<DWORD>(8);
+  V.stk2=R->Stack<DWORD>(12);V.stk3=R->Stack<DWORD>(16);
+  if(GetCurrentThreadId()!=shadow::g_owner_tid) return 0;
+  if(shadow::g_re_depth>0) return 0;
+  auto*s=shadow::GetSlot();
+  if(s&&s->txn){s->txn->Discard();delete s->txn;s->txn=nullptr;++shadow::g_orphan_count;}
+  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x6C8C40;s->depth=d+1;}
+  auto* txn = new shadow::ShadowTransaction();
+  txn->Begin();
+  R->Stack(0,(DWORD)&PostProcStub);
+  return 0;
+}
+
+// Palette::6BitTo16Bit @ 0x4355b0 (thiscall) mode=Inject hook_size=6
+// Palette6BitTo16Bit: pack 6-bit RGB to 24-bit
+DEFINE_HOOK(0x4355B0, Rev_Palette_6BitTo16Bit, 0x6)
+{
+  int idx=I(0x4355B0);
+  auto&V=in[idx];
+  V.a=R->EAX();V.c=R->ECX();V.d=R->EDX();
+  V.b=R->EBX();V.si=R->ESI();V.di=R->EDI();
+  V.bp=R->EBP();V.sp=R->ESP();
+  V.stk0=R->Stack<DWORD>(4);V.stk1=R->Stack<DWORD>(8);
+  V.stk2=R->Stack<DWORD>(12);V.stk3=R->Stack<DWORD>(16);
+  if(GetCurrentThreadId()!=shadow::g_owner_tid) return 0;
+  if(shadow::g_re_depth>0) return 0;
+  auto*s=shadow::GetSlot();
+  if(s&&s->txn){s->txn->Discard();delete s->txn;s->txn=nullptr;++shadow::g_orphan_count;}
+  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x4355B0;s->depth=d+1;}
+  auto* txn = new shadow::ShadowTransaction();
+  txn->Begin();
+  R->Stack(0,(DWORD)&PostProcStub);
+  return 0;
+}
+
+// LoadFileSHP @ 0x4a38d0 (fastcall) mode=Inject hook_size=6
+// LoadFileSHP: IDA verified
+DEFINE_HOOK(0x4A38D0, Rev_LoadFileSHP, 0x6)
+{
+  int idx=I(0x4A38D0);
+  auto&V=in[idx];
+  V.a=R->EAX();V.c=R->ECX();V.d=R->EDX();
+  V.b=R->EBX();V.si=R->ESI();V.di=R->EDI();
+  V.bp=R->EBP();V.sp=R->ESP();
+  V.stk0=R->Stack<DWORD>(4);V.stk1=R->Stack<DWORD>(8);
+  V.stk2=R->Stack<DWORD>(12);V.stk3=R->Stack<DWORD>(16);
+  if(GetCurrentThreadId()!=shadow::g_owner_tid) return 0;
+  if(shadow::g_re_depth>0) return 0;
+  auto*s=shadow::GetSlot();
+  if(s&&s->txn){s->txn->Discard();delete s->txn;s->txn=nullptr;++shadow::g_orphan_count;}
+  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x4A38D0;s->depth=d+1;}
+  auto* txn = new shadow::ShadowTransaction();
+  txn->Begin();
+  R->Stack(0,(DWORD)&PostProcStub);
+  return 0;
+}
+
+// Event::Dispatch @ 0x48d080 (unknown) mode=Inject hook_size=6
+// Event::Dispatch: IDA verified
+DEFINE_HOOK(0x48D080, Rev_Event_Dispatch, 0x6)
+{
+  int idx=I(0x48D080);
+  auto&V=in[idx];
+  V.a=R->EAX();V.c=R->ECX();V.d=R->EDX();
+  V.b=R->EBX();V.si=R->ESI();V.di=R->EDI();
+  V.bp=R->EBP();V.sp=R->ESP();
+  V.stk0=R->Stack<DWORD>(4);V.stk1=R->Stack<DWORD>(8);
+  V.stk2=R->Stack<DWORD>(12);V.stk3=R->Stack<DWORD>(16);
+  if(GetCurrentThreadId()!=shadow::g_owner_tid) return 0;
+  if(shadow::g_re_depth>0) return 0;
+  auto*s=shadow::GetSlot();
+  if(s&&s->txn){s->txn->Discard();delete s->txn;s->txn=nullptr;++shadow::g_orphan_count;}
+  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x48D080;s->depth=d+1;}
+  auto* txn = new shadow::ShadowTransaction();
+  txn->Begin();
+  R->Stack(0,(DWORD)&PostProcStub);
+  return 0;
+}
+
+// SearchMIXFile @ 0x5b40b0 (fastcall) mode=Inject hook_size=6
+// SearchMIXFile: IDA verified
+DEFINE_HOOK(0x5B40B0, Rev_SearchMIXFile, 0x6)
+{
+  int idx=I(0x5B40B0);
+  auto&V=in[idx];
+  V.a=R->EAX();V.c=R->ECX();V.d=R->EDX();
+  V.b=R->EBX();V.si=R->ESI();V.di=R->EDI();
+  V.bp=R->EBP();V.sp=R->ESP();
+  V.stk0=R->Stack<DWORD>(4);V.stk1=R->Stack<DWORD>(8);
+  V.stk2=R->Stack<DWORD>(12);V.stk3=R->Stack<DWORD>(16);
+  if(GetCurrentThreadId()!=shadow::g_owner_tid) return 0;
+  if(shadow::g_re_depth>0) return 0;
+  auto*s=shadow::GetSlot();
+  if(s&&s->txn){s->txn->Discard();delete s->txn;s->txn=nullptr;++shadow::g_orphan_count;}
+  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x5B40B0;s->depth=d+1;}
+  auto* txn = new shadow::ShadowTransaction();
+  txn->Begin();
+  R->Stack(0,(DWORD)&PostProcStub);
+  return 0;
+}
+
+// InitGame @ 0x52ba60 (unknown) mode=Inject hook_size=5
+// InitGame: master init pipeline
+DEFINE_HOOK(0x52BA60, Rev_InitGame, 0x5)
+{
+  int idx=I(0x52BA60);
+  auto&V=in[idx];
+  V.a=R->EAX();V.c=R->ECX();V.d=R->EDX();
+  V.b=R->EBX();V.si=R->ESI();V.di=R->EDI();
+  V.bp=R->EBP();V.sp=R->ESP();
+  V.stk0=R->Stack<DWORD>(4);V.stk1=R->Stack<DWORD>(8);
+  V.stk2=R->Stack<DWORD>(12);V.stk3=R->Stack<DWORD>(16);
+  if(GetCurrentThreadId()!=shadow::g_owner_tid) return 0;
+  if(shadow::g_re_depth>0) return 0;
+  auto*s=shadow::GetSlot();
+  if(s&&s->txn){s->txn->Discard();delete s->txn;s->txn=nullptr;++shadow::g_orphan_count;}
+  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x52BA60;s->depth=d+1;}
+  auto* txn = new shadow::ShadowTransaction();
+  txn->Begin();
+  R->Stack(0,(DWORD)&PostProcStub);
+  return 0;
+}
+
+// GameFrameLoop @ 0x55d360 (unknown) mode=Inject hook_size=5
+// GameFrameLoop: IDA verified
+DEFINE_HOOK(0x55D360, Rev_GameFrameLoop, 0x5)
+{
+  int idx=I(0x55D360);
+  auto&V=in[idx];
+  V.a=R->EAX();V.c=R->ECX();V.d=R->EDX();
+  V.b=R->EBX();V.si=R->ESI();V.di=R->EDI();
+  V.bp=R->EBP();V.sp=R->ESP();
+  V.stk0=R->Stack<DWORD>(4);V.stk1=R->Stack<DWORD>(8);
+  V.stk2=R->Stack<DWORD>(12);V.stk3=R->Stack<DWORD>(16);
+  if(GetCurrentThreadId()!=shadow::g_owner_tid) return 0;
+  if(shadow::g_re_depth>0) return 0;
+  auto*s=shadow::GetSlot();
+  if(s&&s->txn){s->txn->Discard();delete s->txn;s->txn=nullptr;++shadow::g_orphan_count;}
+  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x55D360;s->depth=d+1;}
+  auto* txn = new shadow::ShadowTransaction();
+  txn->Begin();
+  R->Stack(0,(DWORD)&PostProcStub);
+  return 0;
+}
+
+// GameFrameCheck @ 0x55cfd0 (unknown) mode=Inject hook_size=5
+// GameFrameCheck: IDA verified
+DEFINE_HOOK(0x55CFD0, Rev_GameFrameCheck, 0x5)
+{
+  int idx=I(0x55CFD0);
+  auto&V=in[idx];
+  V.a=R->EAX();V.c=R->ECX();V.d=R->EDX();
+  V.b=R->EBX();V.si=R->ESI();V.di=R->EDI();
+  V.bp=R->EBP();V.sp=R->ESP();
+  V.stk0=R->Stack<DWORD>(4);V.stk1=R->Stack<DWORD>(8);
+  V.stk2=R->Stack<DWORD>(12);V.stk3=R->Stack<DWORD>(16);
+  if(GetCurrentThreadId()!=shadow::g_owner_tid) return 0;
+  if(shadow::g_re_depth>0) return 0;
+  auto*s=shadow::GetSlot();
+  if(s&&s->txn){s->txn->Discard();delete s->txn;s->txn=nullptr;++shadow::g_orphan_count;}
+  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x55CFD0;s->depth=d+1;}
+  auto* txn = new shadow::ShadowTransaction();
+  txn->Begin();
+  R->Stack(0,(DWORD)&PostProcStub);
+  return 0;
+}
+
+// MainGameFrame @ 0x48c8b0 (unknown) mode=Inject hook_size=5
+// MainGameFrame: IDA verified
+DEFINE_HOOK(0x48C8B0, Rev_MainGameFrame, 0x5)
+{
+  int idx=I(0x48C8B0);
+  auto&V=in[idx];
+  V.a=R->EAX();V.c=R->ECX();V.d=R->EDX();
+  V.b=R->EBX();V.si=R->ESI();V.di=R->EDI();
+  V.bp=R->EBP();V.sp=R->ESP();
+  V.stk0=R->Stack<DWORD>(4);V.stk1=R->Stack<DWORD>(8);
+  V.stk2=R->Stack<DWORD>(12);V.stk3=R->Stack<DWORD>(16);
+  if(GetCurrentThreadId()!=shadow::g_owner_tid) return 0;
+  if(shadow::g_re_depth>0) return 0;
+  auto*s=shadow::GetSlot();
+  if(s&&s->txn){s->txn->Discard();delete s->txn;s->txn=nullptr;++shadow::g_orphan_count;}
+  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x48C8B0;s->depth=d+1;}
+  auto* txn = new shadow::ShadowTransaction();
+  txn->Begin();
+  R->Stack(0,(DWORD)&PostProcStub);
+  return 0;
+}
+
+// MenuSelect @ 0x52d9a0 (unknown) mode=Inject hook_size=6
+// MenuSelect: IDA verified
+DEFINE_HOOK(0x52D9A0, Rev_MenuSelect, 0x6)
+{
+  int idx=I(0x52D9A0);
+  auto&V=in[idx];
+  V.a=R->EAX();V.c=R->ECX();V.d=R->EDX();
+  V.b=R->EBX();V.si=R->ESI();V.di=R->EDI();
+  V.bp=R->EBP();V.sp=R->ESP();
+  V.stk0=R->Stack<DWORD>(4);V.stk1=R->Stack<DWORD>(8);
+  V.stk2=R->Stack<DWORD>(12);V.stk3=R->Stack<DWORD>(16);
+  if(GetCurrentThreadId()!=shadow::g_owner_tid) return 0;
+  if(shadow::g_re_depth>0) return 0;
+  auto*s=shadow::GetSlot();
+  if(s&&s->txn){s->txn->Discard();delete s->txn;s->txn=nullptr;++shadow::g_orphan_count;}
+  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x52D9A0;s->depth=d+1;}
+  auto* txn = new shadow::ShadowTransaction();
+  txn->Begin();
+  R->Stack(0,(DWORD)&PostProcStub);
+  return 0;
+}
+
+// MainGame @ 0x48ccc0 (unknown) mode=Inject hook_size=8
+// MainGame: IDA verified
+DEFINE_HOOK(0x48CCC0, Rev_MainGame, 0x8)
+{
+  int idx=I(0x48CCC0);
+  auto&V=in[idx];
+  V.a=R->EAX();V.c=R->ECX();V.d=R->EDX();
+  V.b=R->EBX();V.si=R->ESI();V.di=R->EDI();
+  V.bp=R->EBP();V.sp=R->ESP();
+  V.stk0=R->Stack<DWORD>(4);V.stk1=R->Stack<DWORD>(8);
+  V.stk2=R->Stack<DWORD>(12);V.stk3=R->Stack<DWORD>(16);
+  if(GetCurrentThreadId()!=shadow::g_owner_tid) return 0;
+  if(shadow::g_re_depth>0) return 0;
+  auto*s=shadow::GetSlot();
+  if(s&&s->txn){s->txn->Discard();delete s->txn;s->txn=nullptr;++shadow::g_orphan_count;}
+  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x48CCC0;s->depth=d+1;}
+  auto* txn = new shadow::ShadowTransaction();
+  txn->Begin();
+  R->Stack(0,(DWORD)&PostProcStub);
+  return 0;
+}
+
+// LoadExpansionMixFiles @ 0x530000 (unknown) mode=Inject hook_size=6
+// LoadExpansionMixFiles: IDA verified
+DEFINE_HOOK(0x530000, Rev_LoadExpansionMixFiles, 0x6)
+{
+  int idx=I(0x530000);
+  auto&V=in[idx];
+  V.a=R->EAX();V.c=R->ECX();V.d=R->EDX();
+  V.b=R->EBX();V.si=R->ESI();V.di=R->EDI();
+  V.bp=R->EBP();V.sp=R->ESP();
+  V.stk0=R->Stack<DWORD>(4);V.stk1=R->Stack<DWORD>(8);
+  V.stk2=R->Stack<DWORD>(12);V.stk3=R->Stack<DWORD>(16);
+  if(GetCurrentThreadId()!=shadow::g_owner_tid) return 0;
+  if(shadow::g_re_depth>0) return 0;
+  auto*s=shadow::GetSlot();
+  if(s&&s->txn){s->txn->Discard();delete s->txn;s->txn=nullptr;++shadow::g_orphan_count;}
+  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x530000;s->depth=d+1;}
+  auto* txn = new shadow::ShadowTransaction();
+  txn->Begin();
+  R->Stack(0,(DWORD)&PostProcStub);
+  return 0;
+}
+
+// AbstractClass::QueryInterface @ 0x410260 (thiscall) mode=Inject hook_size=5
+// AbstractClass::QueryInterface: IDA verified
+DEFINE_HOOK(0x410260, Rev_AbstractClass_QueryInterface, 0x5)
+{
+  int idx=I(0x410260);
+  auto&V=in[idx];
+  V.a=R->EAX();V.c=R->ECX();V.d=R->EDX();
+  V.b=R->EBX();V.si=R->ESI();V.di=R->EDI();
+  V.bp=R->EBP();V.sp=R->ESP();
+  V.stk0=R->Stack<DWORD>(4);V.stk1=R->Stack<DWORD>(8);
+  V.stk2=R->Stack<DWORD>(12);V.stk3=R->Stack<DWORD>(16);
+  if(GetCurrentThreadId()!=shadow::g_owner_tid) return 0;
+  if(shadow::g_re_depth>0) return 0;
+  auto*s=shadow::GetSlot();
+  if(s&&s->txn){s->txn->Discard();delete s->txn;s->txn=nullptr;++shadow::g_orphan_count;}
+  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x410260;s->depth=d+1;}
+  auto* txn = new shadow::ShadowTransaction();
+  txn->Begin();
+  R->Stack(0,(DWORD)&PostProcStub);
+  return 0;
+}
+
+// ClipRectIntersection @ 0x421b60 (fastcall) mode=Inject hook_size=5
+// ClipRectIntersection: rect intersection
+DEFINE_HOOK(0x421B60, Rev_ClipRectIntersection, 0x5)
+{
+  int idx=I(0x421B60);
+  auto&V=in[idx];
+  V.a=R->EAX();V.c=R->ECX();V.d=R->EDX();
+  V.b=R->EBX();V.si=R->ESI();V.di=R->EDI();
+  V.bp=R->EBP();V.sp=R->ESP();
+  V.stk0=R->Stack<DWORD>(4);V.stk1=R->Stack<DWORD>(8);
+  V.stk2=R->Stack<DWORD>(12);V.stk3=R->Stack<DWORD>(16);
+  if(GetCurrentThreadId()!=shadow::g_owner_tid) return 0;
+  if(shadow::g_re_depth>0) return 0;
+  auto*s=shadow::GetSlot();
+  if(s&&s->txn){s->txn->Discard();delete s->txn;s->txn=nullptr;++shadow::g_orphan_count;}
+  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x421B60;s->depth=d+1;}
+  auto* txn = new shadow::ShadowTransaction();
+  txn->Begin();
+  R->Stack(0,(DWORD)&PostProcStub);
+  return 0;
+}
+
+// ClipLine @ 0x7bc2b0 (fastcall) mode=Inject hook_size=6
+// ClipLine: Cohen-Sutherland line clip
+DEFINE_HOOK(0x7BC2B0, Rev_ClipLine, 0x6)
+{
+  int idx=I(0x7BC2B0);
+  auto&V=in[idx];
+  V.a=R->EAX();V.c=R->ECX();V.d=R->EDX();
+  V.b=R->EBX();V.si=R->ESI();V.di=R->EDI();
+  V.bp=R->EBP();V.sp=R->ESP();
+  V.stk0=R->Stack<DWORD>(4);V.stk1=R->Stack<DWORD>(8);
+  V.stk2=R->Stack<DWORD>(12);V.stk3=R->Stack<DWORD>(16);
+  if(shadow::g_re_depth>0) return 0;
+  auto*s=shadow::GetSlot();
+  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x7BC2B0;s->depth=d+1;}
+  R->Stack(0,(DWORD)&PostProcStub);
+  return 0;
+}
+
+// XSurface::SetPixel @ 0x7baeb0 (thiscall) mode=Inject hook_size=5
+// XSurface::SetPixel: pixel write
+DEFINE_HOOK(0x7BAEB0, Rev_XSurface_SetPixel, 0x5)
+{
+  int idx=I(0x7BAEB0);
+  auto&V=in[idx];
+  V.a=R->EAX();V.c=R->ECX();V.d=R->EDX();
+  V.b=R->EBX();V.si=R->ESI();V.di=R->EDI();
+  V.bp=R->EBP();V.sp=R->ESP();
+  V.stk0=R->Stack<DWORD>(4);V.stk1=R->Stack<DWORD>(8);
+  V.stk2=R->Stack<DWORD>(12);V.stk3=R->Stack<DWORD>(16);
+  if(shadow::g_re_depth>0) return 0;
+  auto*s=shadow::GetSlot();
+  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x7BAEB0;s->depth=d+1;}
+  R->Stack(0,(DWORD)&PostProcStub);
+  return 0;
+}
+
+// XSurface::GetPixel @ 0x7bae60 (thiscall) mode=Inject hook_size=5
+// XSurface::GetPixel: pixel read
+DEFINE_HOOK(0x7BAE60, Rev_XSurface_GetPixel, 0x5)
+{
+  int idx=I(0x7BAE60);
+  auto&V=in[idx];
+  V.a=R->EAX();V.c=R->ECX();V.d=R->EDX();
+  V.b=R->EBX();V.si=R->ESI();V.di=R->EDI();
+  V.bp=R->EBP();V.sp=R->ESP();
+  V.stk0=R->Stack<DWORD>(4);V.stk1=R->Stack<DWORD>(8);
+  V.stk2=R->Stack<DWORD>(12);V.stk3=R->Stack<DWORD>(16);
+  if(shadow::g_re_depth>0) return 0;
+  auto*s=shadow::GetSlot();
+  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x7BAE60;s->depth=d+1;}
+  R->Stack(0,(DWORD)&PostProcStub);
+  return 0;
+}
+
+// XSurface::PutPixel @ 0x7baf90 (thiscall) mode=Inject hook_size=5
+// XSurface::PutPixel: pixel write + bounds
+DEFINE_HOOK(0x7BAF90, Rev_XSurface_PutPixel, 0x5)
+{
+  int idx=I(0x7BAF90);
+  auto&V=in[idx];
+  V.a=R->EAX();V.c=R->ECX();V.d=R->EDX();
+  V.b=R->EBX();V.si=R->ESI();V.di=R->EDI();
+  V.bp=R->EBP();V.sp=R->ESP();
+  V.stk0=R->Stack<DWORD>(4);V.stk1=R->Stack<DWORD>(8);
+  V.stk2=R->Stack<DWORD>(12);V.stk3=R->Stack<DWORD>(16);
+  if(shadow::g_re_depth>0) return 0;
+  auto*s=shadow::GetSlot();
+  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x7BAF90;s->depth=d+1;}
+  R->Stack(0,(DWORD)&PostProcStub);
+  return 0;
+}
+
 // XSurface::GetPixelAtCoords @ 0x7baf10 (thiscall) mode=Inject hook_size=6
 // XSurface::GetPixelAtCoords: pixel read + bounds
 DEFINE_HOOK(0x7BAF10, Rev_XSurface_GetPixelAtCoords, 0x6)
@@ -14828,6 +15389,268 @@ DEFINE_HOOK(0x7BAF10, Rev_XSurface_GetPixelAtCoords, 0x6)
   if(shadow::g_re_depth>0) return 0;
   auto*s=shadow::GetSlot();
   int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x7BAF10;s->depth=d+1;}
+  R->Stack(0,(DWORD)&PostProcStub);
+  return 0;
+}
+
+// XSurface::WalkLine @ 0x7bab90 (thiscall) mode=Inject hook_size=5
+// XSurface::WalkLine: Bresenham walker
+DEFINE_HOOK(0x7BAB90, Rev_XSurface_WalkLine, 0x5)
+{
+  int idx=I(0x7BAB90);
+  auto&V=in[idx];
+  V.a=R->EAX();V.c=R->ECX();V.d=R->EDX();
+  V.b=R->EBX();V.si=R->ESI();V.di=R->EDI();
+  V.bp=R->EBP();V.sp=R->ESP();
+  V.stk0=R->Stack<DWORD>(4);V.stk1=R->Stack<DWORD>(8);
+  V.stk2=R->Stack<DWORD>(12);V.stk3=R->Stack<DWORD>(16);
+  if(shadow::g_re_depth>0) return 0;
+  auto*s=shadow::GetSlot();
+  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x7BAB90;s->depth=d+1;}
+  R->Stack(0,(DWORD)&PostProcStub);
+  return 0;
+}
+
+// XSurface::DrawLineEx @ 0x7ba610 (thiscall) mode=Inject hook_size=6
+// XSurface::DrawLineEx: clipped line
+DEFINE_HOOK(0x7BA610, Rev_XSurface_DrawLineEx, 0x6)
+{
+  int idx=I(0x7BA610);
+  auto&V=in[idx];
+  V.a=R->EAX();V.c=R->ECX();V.d=R->EDX();
+  V.b=R->EBX();V.si=R->ESI();V.di=R->EDI();
+  V.bp=R->EBP();V.sp=R->ESP();
+  V.stk0=R->Stack<DWORD>(4);V.stk1=R->Stack<DWORD>(8);
+  V.stk2=R->Stack<DWORD>(12);V.stk3=R->Stack<DWORD>(16);
+  if(shadow::g_re_depth>0) return 0;
+  auto*s=shadow::GetSlot();
+  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x7BA610;s->depth=d+1;}
+  R->Stack(0,(DWORD)&PostProcStub);
+  return 0;
+}
+
+// XSurface::DrawLine @ 0x7ba5e0 (thiscall) mode=Inject hook_size=7
+// XSurface::DrawLine: no-clip wrapper
+DEFINE_HOOK(0x7BA5E0, Rev_XSurface_DrawLine, 0x7)
+{
+  int idx=I(0x7BA5E0);
+  auto&V=in[idx];
+  V.a=R->EAX();V.c=R->ECX();V.d=R->EDX();
+  V.b=R->EBX();V.si=R->ESI();V.di=R->EDI();
+  V.bp=R->EBP();V.sp=R->ESP();
+  V.stk0=R->Stack<DWORD>(4);V.stk1=R->Stack<DWORD>(8);
+  V.stk2=R->Stack<DWORD>(12);V.stk3=R->Stack<DWORD>(16);
+  if(shadow::g_re_depth>0) return 0;
+  auto*s=shadow::GetSlot();
+  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x7BA5E0;s->depth=d+1;}
+  R->Stack(0,(DWORD)&PostProcStub);
+  return 0;
+}
+
+// XSurface::Fill @ 0x7bbab0 (thiscall) mode=Inject hook_size=7
+// XSurface::Fill: fill surface
+DEFINE_HOOK(0x7BBAB0, Rev_XSurface_Fill, 0x7)
+{
+  int idx=I(0x7BBAB0);
+  auto&V=in[idx];
+  V.a=R->EAX();V.c=R->ECX();V.d=R->EDX();
+  V.b=R->EBX();V.si=R->ESI();V.di=R->EDI();
+  V.bp=R->EBP();V.sp=R->ESP();
+  V.stk0=R->Stack<DWORD>(4);V.stk1=R->Stack<DWORD>(8);
+  V.stk2=R->Stack<DWORD>(12);V.stk3=R->Stack<DWORD>(16);
+  if(shadow::g_re_depth>0) return 0;
+  auto*s=shadow::GetSlot();
+  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x7BBAB0;s->depth=d+1;}
+  R->Stack(0,(DWORD)&PostProcStub);
+  return 0;
+}
+
+// XSurface::DrawRectEx @ 0x7badc0 (thiscall) mode=Inject hook_size=7
+// XSurface::DrawRectEx: rect outline
+DEFINE_HOOK(0x7BADC0, Rev_XSurface_DrawRectEx, 0x7)
+{
+  int idx=I(0x7BADC0);
+  auto&V=in[idx];
+  V.a=R->EAX();V.c=R->ECX();V.d=R->EDX();
+  V.b=R->EBX();V.si=R->ESI();V.di=R->EDI();
+  V.bp=R->EBP();V.sp=R->ESP();
+  V.stk0=R->Stack<DWORD>(4);V.stk1=R->Stack<DWORD>(8);
+  V.stk2=R->Stack<DWORD>(12);V.stk3=R->Stack<DWORD>(16);
+  if(shadow::g_re_depth>0) return 0;
+  auto*s=shadow::GetSlot();
+  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x7BADC0;s->depth=d+1;}
+  R->Stack(0,(DWORD)&PostProcStub);
+  return 0;
+}
+
+// XSurface::DrawRect @ 0x7bad90 (thiscall) mode=Inject hook_size=7
+// XSurface::DrawRect: no-clip rect
+DEFINE_HOOK(0x7BAD90, Rev_XSurface_DrawRect, 0x7)
+{
+  int idx=I(0x7BAD90);
+  auto&V=in[idx];
+  V.a=R->EAX();V.c=R->ECX();V.d=R->EDX();
+  V.b=R->EBX();V.si=R->ESI();V.di=R->EDI();
+  V.bp=R->EBP();V.sp=R->ESP();
+  V.stk0=R->Stack<DWORD>(4);V.stk1=R->Stack<DWORD>(8);
+  V.stk2=R->Stack<DWORD>(12);V.stk3=R->Stack<DWORD>(16);
+  if(shadow::g_re_depth>0) return 0;
+  auto*s=shadow::GetSlot();
+  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x7BAD90;s->depth=d+1;}
+  R->Stack(0,(DWORD)&PostProcStub);
+  return 0;
+}
+
+// CCFileClass::Open @ 0x473c50 (thiscall) mode=Inject hook_size=9
+// CCFileClass::Open: IDA verified
+DEFINE_HOOK(0x473C50, Rev_CCFileClass_Open, 0x9)
+{
+  int idx=I(0x473C50);
+  auto&V=in[idx];
+  V.a=R->EAX();V.c=R->ECX();V.d=R->EDX();
+  V.b=R->EBX();V.si=R->ESI();V.di=R->EDI();
+  V.bp=R->EBP();V.sp=R->ESP();
+  V.stk0=R->Stack<DWORD>(4);V.stk1=R->Stack<DWORD>(8);
+  V.stk2=R->Stack<DWORD>(12);V.stk3=R->Stack<DWORD>(16);
+  if(GetCurrentThreadId()!=shadow::g_owner_tid) return 0;
+  if(shadow::g_re_depth>0) return 0;
+  auto*s=shadow::GetSlot();
+  if(s&&s->txn){s->txn->Discard();delete s->txn;s->txn=nullptr;++shadow::g_orphan_count;}
+  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x473C50;s->depth=d+1;}
+  auto* txn = new shadow::ShadowTransaction();
+  txn->Begin();
+  R->Stack(0,(DWORD)&PostProcStub);
+  return 0;
+}
+
+// CCFileClass::ReadEntireFile @ 0x4a3890 (thiscall) mode=Inject hook_size=5
+// CCFileClass::ReadEntireFile: IDA verified
+DEFINE_HOOK(0x4A3890, Rev_CCFileClass_ReadEntireFile, 0x5)
+{
+  int idx=I(0x4A3890);
+  auto&V=in[idx];
+  V.a=R->EAX();V.c=R->ECX();V.d=R->EDX();
+  V.b=R->EBX();V.si=R->ESI();V.di=R->EDI();
+  V.bp=R->EBP();V.sp=R->ESP();
+  V.stk0=R->Stack<DWORD>(4);V.stk1=R->Stack<DWORD>(8);
+  V.stk2=R->Stack<DWORD>(12);V.stk3=R->Stack<DWORD>(16);
+  if(GetCurrentThreadId()!=shadow::g_owner_tid) return 0;
+  if(shadow::g_re_depth>0) return 0;
+  auto*s=shadow::GetSlot();
+  if(s&&s->txn){s->txn->Discard();delete s->txn;s->txn=nullptr;++shadow::g_orphan_count;}
+  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x4A3890;s->depth=d+1;}
+  auto* txn = new shadow::ShadowTransaction();
+  txn->Begin();
+  R->Stack(0,(DWORD)&PostProcStub);
+  return 0;
+}
+
+// CCFileClass::Reset @ 0x473ce0 (thiscall) mode=Inject hook_size=6
+// CCFileClass::Reset: IDA verified
+DEFINE_HOOK(0x473CE0, Rev_CCFileClass_Reset, 0x6)
+{
+  int idx=I(0x473CE0);
+  auto&V=in[idx];
+  V.a=R->EAX();V.c=R->ECX();V.d=R->EDX();
+  V.b=R->EBX();V.si=R->ESI();V.di=R->EDI();
+  V.bp=R->EBP();V.sp=R->ESP();
+  V.stk0=R->Stack<DWORD>(4);V.stk1=R->Stack<DWORD>(8);
+  V.stk2=R->Stack<DWORD>(12);V.stk3=R->Stack<DWORD>(16);
+  if(GetCurrentThreadId()!=shadow::g_owner_tid) return 0;
+  if(shadow::g_re_depth>0) return 0;
+  auto*s=shadow::GetSlot();
+  if(s&&s->txn){s->txn->Discard();delete s->txn;s->txn=nullptr;++shadow::g_orphan_count;}
+  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x473CE0;s->depth=d+1;}
+  auto* txn = new shadow::ShadowTransaction();
+  txn->Begin();
+  R->Stack(0,(DWORD)&PostProcStub);
+  return 0;
+}
+
+// INIClass::Constructor @ 0x535aa0 (thiscall) mode=Inject hook_size=5
+// INIClass::Constructor: IDA verified
+DEFINE_HOOK(0x535AA0, Rev_INIClass_Constructor, 0x5)
+{
+  int idx=I(0x535AA0);
+  auto&V=in[idx];
+  V.a=R->EAX();V.c=R->ECX();V.d=R->EDX();
+  V.b=R->EBX();V.si=R->ESI();V.di=R->EDI();
+  V.bp=R->EBP();V.sp=R->ESP();
+  V.stk0=R->Stack<DWORD>(4);V.stk1=R->Stack<DWORD>(8);
+  V.stk2=R->Stack<DWORD>(12);V.stk3=R->Stack<DWORD>(16);
+  if(GetCurrentThreadId()!=shadow::g_owner_tid) return 0;
+  if(shadow::g_re_depth>0) return 0;
+  auto*s=shadow::GetSlot();
+  if(s&&s->txn){s->txn->Discard();delete s->txn;s->txn=nullptr;++shadow::g_orphan_count;}
+  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x535AA0;s->depth=d+1;}
+  auto* txn = new shadow::ShadowTransaction();
+  txn->Begin();
+  R->Stack(0,(DWORD)&PostProcStub);
+  return 0;
+}
+
+// CCINIClass::Constructor @ 0x535b30 (thiscall) mode=Inject hook_size=6
+// CCINIClass::Constructor: IDA verified
+DEFINE_HOOK(0x535B30, Rev_CCINIClass_Constructor, 0x6)
+{
+  int idx=I(0x535B30);
+  auto&V=in[idx];
+  V.a=R->EAX();V.c=R->ECX();V.d=R->EDX();
+  V.b=R->EBX();V.si=R->ESI();V.di=R->EDI();
+  V.bp=R->EBP();V.sp=R->ESP();
+  V.stk0=R->Stack<DWORD>(4);V.stk1=R->Stack<DWORD>(8);
+  V.stk2=R->Stack<DWORD>(12);V.stk3=R->Stack<DWORD>(16);
+  if(GetCurrentThreadId()!=shadow::g_owner_tid) return 0;
+  if(shadow::g_re_depth>0) return 0;
+  auto*s=shadow::GetSlot();
+  if(s&&s->txn){s->txn->Discard();delete s->txn;s->txn=nullptr;++shadow::g_orphan_count;}
+  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x535B30;s->depth=d+1;}
+  auto* txn = new shadow::ShadowTransaction();
+  txn->Begin();
+  R->Stack(0,(DWORD)&PostProcStub);
+  return 0;
+}
+
+// CCINIClass::Load @ 0x4741f0 (thiscall) mode=Inject hook_size=6
+// CCINIClass::Load: IDA verified
+DEFINE_HOOK(0x4741F0, Rev_CCINIClass_Load, 0x6)
+{
+  int idx=I(0x4741F0);
+  auto&V=in[idx];
+  V.a=R->EAX();V.c=R->ECX();V.d=R->EDX();
+  V.b=R->EBX();V.si=R->ESI();V.di=R->EDI();
+  V.bp=R->EBP();V.sp=R->ESP();
+  V.stk0=R->Stack<DWORD>(4);V.stk1=R->Stack<DWORD>(8);
+  V.stk2=R->Stack<DWORD>(12);V.stk3=R->Stack<DWORD>(16);
+  if(GetCurrentThreadId()!=shadow::g_owner_tid) return 0;
+  if(shadow::g_re_depth>0) return 0;
+  auto*s=shadow::GetSlot();
+  if(s&&s->txn){s->txn->Discard();delete s->txn;s->txn=nullptr;++shadow::g_orphan_count;}
+  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x4741F0;s->depth=d+1;}
+  auto* txn = new shadow::ShadowTransaction();
+  txn->Begin();
+  R->Stack(0,(DWORD)&PostProcStub);
+  return 0;
+}
+
+// MixFileClass::Bootstrap @ 0x5301a0 (unknown) mode=Inject hook_size=8
+// MixFileClass::Bootstrap: IDA verified
+DEFINE_HOOK(0x5301A0, Rev_MixFileClass_Bootstrap, 0x8)
+{
+  int idx=I(0x5301A0);
+  auto&V=in[idx];
+  V.a=R->EAX();V.c=R->ECX();V.d=R->EDX();
+  V.b=R->EBX();V.si=R->ESI();V.di=R->EDI();
+  V.bp=R->EBP();V.sp=R->ESP();
+  V.stk0=R->Stack<DWORD>(4);V.stk1=R->Stack<DWORD>(8);
+  V.stk2=R->Stack<DWORD>(12);V.stk3=R->Stack<DWORD>(16);
+  if(GetCurrentThreadId()!=shadow::g_owner_tid) return 0;
+  if(shadow::g_re_depth>0) return 0;
+  auto*s=shadow::GetSlot();
+  if(s&&s->txn){s->txn->Discard();delete s->txn;s->txn=nullptr;++shadow::g_orphan_count;}
+  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x5301A0;s->depth=d+1;}
+  auto* txn = new shadow::ShadowTransaction();
+  txn->Begin();
   R->Stack(0,(DWORD)&PostProcStub);
   return 0;
 }
