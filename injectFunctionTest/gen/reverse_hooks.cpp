@@ -115,9 +115,18 @@ static void NN(){
 }
 struct InitHookNames { InitHookNames() { NN(); } };
 static InitHookNames _init;
-static int I(DWORD x){static DWORD A[]={
+static int I(DWORD x){
+  static DWORD A[2]={
   0x007BAF10,
-  0};for(int i=0;A[i];++i)if(A[i]==x)return i;return -1;}
+  0};
+  static int Imap[1]={
+    0,
+  };
+  int lo=0,hi=1;
+  while(lo<hi){int m=(lo+hi)/2;if(A[m]<x)lo=m+1;else hi=m;}
+  if(lo>=1||A[lo]!=x) return -1;
+  return Imap[lo];
+}
 static void FI_XSurface_GetPixelAtCoords(std::ostream& os){
   os<<"this=";Hex8(os,in[0].c);
   os<<" point(Stack)=";FmtPtr(os,(const Point2D*)(in[0].stk0));

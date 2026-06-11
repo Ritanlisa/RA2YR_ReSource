@@ -91,16 +91,6 @@ def get_json_line(addr, raw):
         pass
     return '?'
 
-def get_json_line(addr, raw):
-    if not raw: return '?'
-    try:
-        pos = raw.find(f'"address": "{addr}"')
-        if pos >= 0:
-            return raw[:pos].count('\n') + 1
-    except:
-        pass
-    return '?'
-
 def load_idempotent_results():
     """Load analysis results from analyze_idempotent.py output.
     Returns dict: addr → "TRUE" | "FALSE" | "UNCERTAIN", or {} if missing."""
@@ -211,7 +201,6 @@ def is_lib(name):
     if name.startswith(('??', '__', '?_', '?$')): return True
     if name.startswith('_') and len(name) > 1 and name[1].isalpha(): return True
     if name.startswith(('j_', 'nullsub', 'unknown_libname')): return True
-    if name in ('Debug::Log', 'Debug::Log_0'): return True
     return False
 
 def find_markers(functions, raw_json, callee_map, callee_names, all_marked, idem_results):
@@ -271,12 +260,9 @@ def find_markers(functions, raw_json, callee_map, callee_names, all_marked, idem
                     full_sig = fname
                     if s:
                         rt = s.group(1).strip()  # preserve case for C++ type matching
-                        # Filter out garbage matches: comments, code fragments, wrong function names
-                        garbage_words = ['return','remove','store','global','marked','repeat',
-                                        'loads','resets','new','recursive','forward','declare']
-                        is_garbage = any(w == rt.lower() or rt.lower().startswith(w+' ') for w in garbage_words)
                         # Reject comment-like matches (// or /* in the return type)
-                        if not is_garbage and ('//' in s.group(0) or '/*' in s.group(0)):
+                        is_garbage = False
+                        if '//' in s.group(0) or '/*' in s.group(0):
                             is_garbage = True
                         # Reject if function name doesn't look like a valid identifier
                         if not is_garbage:
@@ -421,32 +407,9 @@ def find_markers(functions, raw_json, callee_map, callee_names, all_marked, idem
 def san(n):
     return n.replace('::','_').replace('@','_').replace('<','_').replace('>','_')
 
-def fmt_fn(ptype):
-    """Return (cpp_formatter, c_fmt) based on parameter type string."""
-    ty = ptype.lower()
-    if 'bool' in ty: return ('AppB', 'bool')
-    if '*' in ty: return ('AppP', 'ptr')
-    return ('AppV', 'int')
-
-def conv_reg(conv, j, i):
-    """Return (ref, name) for parameter j under calling convention conv."""
-    if conv == 'thiscall':
-        return ('in[%d].stk%d'%(i,j), 'Stack') if j<4 else ('in[%d].stk3'%i, 'Stack')
-    elif conv == 'fastcall':
-        if j==0: return ('in[%d].c'%i, 'ECX')
-        elif j==1: return ('in[%d].d'%i, 'EDX')
-        else: return ('in[%d].stk%d'%(i,j-2), 'Stack') if (j-2)<4 else ('in[%d].stk3'%i, 'Stack')
-    else:  # stdcall, cdecl — parameters on stack
-        return ('in[%d].stk%d'%(i,j), 'Stack') if j<4 else ('in[%d].stk3'%i, 'Stack')
-    """Return (ref, name) for parameter j under calling convention conv."""
-    if conv == 'thiscall':
-        return ('in[%d].stk%d'%(i,j), 'Stack') if j<4 else ('in[%d].stk3'%i, 'Stack')
-    elif conv == 'fastcall':
-        if j==0: return ('in[%d].c'%i, 'ECX')
-        elif j==1: return ('in[%d].d'%i, 'EDX')
-        else: return ('in[%d].stk%d'%(i,j-2), 'Stack') if (j-2)<4 else ('in[%d].stk3'%i, 'Stack')
-    else:  # stdcall, cdecl — parameters on stack
-        return ('in[%d].stk%d'%(i,j), 'Stack') if j<4 else ('in[%d].stk3'%i, 'Stack')
+def strip_qualifiers(ty):
+    """Remove C++ type qualifiers: const, volatile."""
+    return ty.strip().replace('const ','').replace('const','').replace('volatile ','').replace('volatile','').strip()
 
 def generate(markers, functions, fn_map, none_markers=None):
     if none_markers is None: none_markers = []
@@ -510,9 +473,24 @@ def generate(markers, functions, fn_map, none_markers=None):
     w('struct InitHookNames { InitHookNames() { NN(); } };')
     w('static InitHookNames _init;')
     # Index
-    w('static int I(DWORD x){static DWORD A[]={')
-    for m in markers: w(f'  0x{int(m["addr"],16):08X},')
-    w('  0};for(int i=0;A[i];++i)if(A[i]==x)return i;return -1;}')
+    # I() — binary search on sorted hook addresses
+    sorted_markers = sorted(markers, key=lambda m: int(m['addr'], 16))
+    w(f'static int I(DWORD x){{')
+    w(f'  static DWORD A[{len(sorted_markers) + 1}]={{')
+    for m in sorted_markers:
+        w(f'  0x{int(m["addr"],16):08X},')
+    w(f'  0}};')
+    w(f'  static int Imap[{len(sorted_markers)}]={{')
+    for i, m in enumerate(sorted_markers):
+        # Find original marker index for each sorted position
+        orig = next(j for j, mk in enumerate(markers) if mk['addr'] == m['addr'])
+        w(f'    {orig},')
+    w(f'  }};')
+    w(f'  int lo=0,hi={len(sorted_markers)};')
+    w(f'  while(lo<hi){{int m=(lo+hi)/2;if(A[m]<x)lo=m+1;else hi=m;}}')
+    w(f'  if(lo>={len(sorted_markers)}||A[lo]!=x) return -1;')
+    w(f'  return Imap[lo];')
+    w(f'}}')
     for i,m in enumerate(markers):
         conv = functions.get(m['addr'],{}).get('call',{}).get('convention','unknown')
         if conv == 'unknown': conv = 'stdcall'
@@ -522,11 +500,11 @@ def generate(markers, functions, fn_map, none_markers=None):
         if conv == 'thiscall':
             w(f'  os<<"this=";Hex8(os,in[{i}].c);')
             for j,pt in enumerate(params):
-                ty = pt[0].strip().replace('const ','').replace('const','')
+                ty_orig = pt[0]; ty = strip_qualifiers(ty_orig)
                 ref = f'in[{i}].stk{j}'
                 if pt[2] > 0:
                     w(f'  os<<" {pt[1]}(Stack)=";FmtArr(os,{pt[2]},{ref});')
-                elif '*' in ty or ty.endswith('&'):
+                elif '*' in ty_orig or ty_orig.endswith('&'):
                     bare = ty.replace('&','').replace('*','').strip()
                     w(f'  os<<" {pt[1]}(Stack)=";FmtPtr(os,(const {bare}*)({ref}));')
                 else:
@@ -534,32 +512,32 @@ def generate(markers, functions, fn_map, none_markers=None):
         elif conv == 'fastcall':
             regs = ['ECX','EDX']
             for j in range(min(2, len(params))):
-                pt = params[j]; ty = pt[0].strip().replace('const ','').replace('const','')
+                pt = params[j];                 ty_orig = pt[0]; ty = strip_qualifiers(ty_orig)
                 ref = f'in[{i}].{chr(ord("c")+j)}'
                 if pt[2] > 0:
                     w(f'  os<<" {pt[1]}({regs[j]})=";FmtArr(os,{pt[2]},{ref});')
-                elif '*' in ty or ty.endswith('&'):
+                elif '*' in ty_orig or ty_orig.endswith('&'):
                     bare = ty.replace('&','').replace('*','').strip()
                     w(f'  os<<" {pt[1]}({regs[j]})=";FmtPtr(os,(const {bare}*)({ref}));')
                 else:
                     w(f'  os<<" {pt[1]}({regs[j]})=";os<<({ty})({ref});')
             for j in range(2, len(params)):
-                pt = params[j]; ty = pt[0].strip().replace('const ','').replace('const','')
+                pt = params[j];                 ty_orig = pt[0]; ty = strip_qualifiers(ty_orig)
                 ref = f'in[{i}].stk{j-2}'
                 if pt[2] > 0:
                     w(f'  os<<" {pt[1]}(Stack)=";FmtArr(os,{pt[2]},{ref});')
-                elif '*' in ty or ty.endswith('&'):
+                elif '*' in ty_orig or ty_orig.endswith('&'):
                     bare = ty.replace('&','').replace('*','').strip()
                     w(f'  os<<" {pt[1]}(Stack)=";FmtPtr(os,(const {bare}*)({ref}));')
                 else:
                     w(f'  os<<" {pt[1]}(Stack)=";os<<({ty})({ref});')
         else:  # stdcall, cdecl
             for j,pt in enumerate(params):
-                ty = pt[0].strip().replace('const ','').replace('const','')
+                ty_orig = pt[0]; ty = strip_qualifiers(ty_orig)
                 ref = f'in[{i}].stk{j}'
                 if pt[2] > 0:
                     w(f'  os<<" {pt[1]}(Stack)=";FmtArr(os,{pt[2]},{ref});')
-                elif '*' in ty or ty.endswith('&'):
+                elif '*' in ty_orig or ty_orig.endswith('&'):
                     bare = ty.replace('&','').replace('*','').strip()
                     w(f'  os<<" {pt[1]}(Stack)=";FmtPtr(os,(const {bare}*)({ref}));')
                 else:
@@ -617,7 +595,6 @@ def generate(markers, functions, fn_map, none_markers=None):
         n = fn_map[a]
         w(f'  {{0x{a:08X},"{n}"}},')
         count += 1
-        if count >= 16000: break
     w('  {0,0}};')
     w(f'static const char* Caller(DWORD v){{')
     w(f'  if({count}==0) return 0;')
@@ -690,8 +667,8 @@ def generate(markers, functions, fn_map, none_markers=None):
     w('static void FmtRet(std::ostream& os, DWORD v, int i){')
     w('  switch(i){')
     for i, m in enumerate(markers):
-        rt = m.get('ret_type', '').strip().replace('const ','').replace('const','')
-        if '*' in rt or rt.endswith('&'):
+        rt = strip_qualifiers(m.get('ret_type', ''))
+        if '*' in m.get('ret_type','') or m.get('ret_type','').endswith('&'):
             w(f'    case {i}: Hex8(os,v); break;')
         else:
             w(f'    case {i}: os<<({rt})(v); break;')
@@ -769,8 +746,12 @@ def generate(markers, functions, fn_map, none_markers=None):
         mode=m.get('mode','None')
 
         # Auto-compute hook_size from binary via Capstone (PE instruction decode)
-        # No functions.json dependency — always computed, never read from metadata
-        hs = validate_hook_size(m['addr'], 0)[0] or 8
+        actual = validate_hook_size(m['addr'], 0)
+        if actual[0] is None:
+            print(f"FATAL: Cannot determine hook_size for {m['addr']} ({m['fn_name']}). "
+                  f"Ensure capstone is installed and {EXE} exists.")
+            sys.exit(1)
+        hs = actual[0]
 
         w(f'// {m["fn_name"]} @ {m["addr"]} ({conv}) mode={mode} hook_size={hs}')
         w(f'// {m["desc"]}')
@@ -888,84 +869,6 @@ def load_all_markers():
                     if not line.lstrip().startswith('//'):
                         addrs.add(m.group(1).lower())
     return addrs
-    functions, line_map = load_json()
-    
-    # Load callee dependency map
-    callee_map = {}
-    callee_names = {}
-    if os.path.exists(CAL):
-        with open(CAL) as f:
-            data = json.load(f)
-        callee_map = data.get('callees', {})
-        callee_names = data.get('names', {})
-    
-    markers, warnings, errors, none_markers = find_markers(functions, line_map, callee_map, callee_names, set())
-    
-    # Build set of ALL REVERSE-marked addresses (including disabled)
-    all_marked = {m['addr'] for m in load_all_markers(functions)}
-    
-    # Filter dependency warnings: only flag REVERSE-marked callees
-    filtered_warnings = []
-    for w in warnings:
-        if 'calls' in w and 'uncompleted callees' in w:
-            # This is a dependency warning — filter it
-            # The warning format: "addr (name) calls N uncompleted callees: a, b, c..."
-            pass
-        else:
-            filtered_warnings.append(w)
-    
-    # Recheck dependencies properly: only REVERSE-marked callees
-    for m in markers:
-        addr = m['addr']
-        if addr in callee_map:
-            marked_uncompleted = []
-            for c in callee_map[addr]:
-                if c in all_marked:
-                    cfn = functions.get(c)
-                    if cfn and not cfn.get('hook', {}).get('completed', False):
-                        cname = callee_names.get(c, c)
-                        marked_uncompleted.append(cname)
-            if marked_uncompleted:
-                deps_str = ', '.join(marked_uncompleted[:5])
-                if len(marked_uncompleted) > 5: deps_str += f' (+{len(marked_uncompleted)-5} more)'
-                msg = f"{m['file']}: {addr} ({m['fn_name']}) calls {len(marked_uncompleted)} REVERSE-marked uncompleted callees: {deps_str}"
-                filtered_warnings.append(msg)
-    
-    warnings = filtered_warnings
-    return markers, warnings, errors, all_marked
-    
-    # Print diagnostics
-    for w in warnings:
-        print(f"  WARNING: {w}")
-    for e in errors:
-        print(f"  ERROR: {e}")
-    
-    print(f"Found {len(markers)} enabled hooks:")
-    for m in markers:
-        pnames = [p[1] for p in m.get('params',[])]
-        print(f"  {m['addr']}: {m['fn_name']}({','.join(pnames)}) {'[OK]' if m.get('completed') else '[NOT COMPLETED]'}")
-    
-    if errors:
-        print(f"\n{len(errors)} ERROR(s): enabled hooks on uncompleted functions!")
-        print("Fix: set REVERSE(..., false) or complete the function first.")
-        sys.exit(1)
-    
-    if not markers:
-        print("No enabled hooks. Add REVERSE(..., true) markers.")
-    
-    # Generate hook code
-    fn_map = parse_map()
-    code = generate(markers, functions, fn_map)
-    os.makedirs(os.path.dirname(OUT), exist_ok=True)
-    with open(OUT,'w') as f: f.write(code)
-    print(f"Generated {OUT} ({os.path.getsize(OUT)/1024:.0f}KB)")
-    
-    # Generate check header
-    write_check_file(markers, warnings, errors)
-    if warnings:
-        print(f"Generated {CHK} ({len(warnings)} warnings)")
-    
-    print("\nNext: cmake --build build_hook")
 
 def main():
     functions, raw_json = load_json()
