@@ -681,7 +681,7 @@ __forceinline int* ComputeBuildingDrawYOffset(int* out, int type_index)
 
 } // namespace
 
-REVERSE(0x480110, "BuildingClass::CalcDrawPos: building draw position", "Inject")
+REVERSE(0x480110, "BuildingClass::CalcDrawPos: building draw position", "None")
 Point2D* BuildingClass::CalcDrawPos(Point2D* out)
 {
     auto* this_bytes = reinterpret_cast<uint8_t*>(this);

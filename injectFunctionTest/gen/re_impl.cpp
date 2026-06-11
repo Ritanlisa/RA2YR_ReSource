@@ -25,10 +25,3 @@ else result = *(unsigned char*)buf;
 ((Uk)(*(DWORD*)(vt+0x60)))((void*)p0);
 return result;
 }
-
-// BuildingClass::CalcDrawPos @ 0x480110
-extern "C" DWORD RE_BuildingClass_CalcDrawPos(DWORD p0, DWORD p1) {
-(void)p0;
-(void)p1;
-return 0; // TODO
-}
