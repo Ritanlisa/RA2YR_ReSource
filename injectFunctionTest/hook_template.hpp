@@ -33,25 +33,12 @@ inline void Hex8(std::ostream& os, DWORD v) {
     os.fill(f);
 }
 
-// ---- Fmt: type-aware value formatting, uses operator<< from gamemd headers ----
+// ---- FmtPtr: dereference pointer with operator<<, NULL-safe, with address ----
 
-inline void Fmt(std::ostream& os, const char* ty, DWORD v) {
-    if (!ty) ty = "";
-    if (strchr(ty, '*'))      { Hex8(os, v); return; }
-    if (!strcmp(ty, "this")) { Hex8(os, v); return; }
-    if (strstr(ty, "Point2D")) {
-        if (v) os << *(const gamemd::Point2D*)v; else os << "(null)";
-        os << "("; Hex8(os, v); os << ")"; return;
-    }
-    if (strstr(ty, "RectangleStruct")) {
-        if (v) os << *(const gamemd::RectangleStruct*)v; else os << "(null)";
-        os << "("; Hex8(os, v); os << ")"; return;
-    }
-    if (strstr(ty, "bool") || strstr(ty, "Bool"))
-        os << (v ? "true" : "false") << "(";
-    else
-        os << std::dec << v << "(";
-    Hex8(os, v); os << ")";
+template<typename T>
+inline void FmtPtr(std::ostream& os, const T* p) {
+    if (p) os << *p; else os << "(null)";
+    os << "("; Hex8(os, (DWORD)p); os << ")";
 }
 
 // ---- FmtArr: array formatting [v0,v1,...](ADDR) ----

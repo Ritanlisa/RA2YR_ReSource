@@ -3,6 +3,7 @@
 #include "tls_storage.h"
 #include "shadow_txn.h"
 #include "hook_template.hpp"
+using namespace gamemd;
 extern "C" void PostProcStub();
 extern "C" DWORD RE_XSurface_GetPixelAtCoords(DWORD, DWORD, DWORD);
 
@@ -118,11 +119,9 @@ static int I(DWORD x){static DWORD A[]={
   0x007BAF10,
   0};for(int i=0;A[i];++i)if(A[i]==x)return i;return -1;}
 static void FI_XSurface_GetPixelAtCoords(std::ostream& os){
-  os<<"this=";Fmt(os,"this",in[0].c);
-  static const char* ty_XSurface_GetPixelAtCoords[]={"const Point2D&","const RectangleStruct&"};
-  static int arr_XSurface_GetPixelAtCoords[]={0,0};
-  os<<" point(Stack)="; Fmt(os,ty_XSurface_GetPixelAtCoords[0],in[0].stk0);
-  os<<" clip_rect(Stack)="; Fmt(os,ty_XSurface_GetPixelAtCoords[1],in[0].stk1);
+  os<<"this=";Hex8(os,in[0].c);
+  os<<" point(Stack)=";FmtPtr(os,(const Point2D*)(in[0].stk0));
+  os<<" clip_rect(Stack)=";FmtPtr(os,(const RectangleStruct*)(in[0].stk1));
   os<<"\r\n";
 }
 
@@ -14628,6 +14627,13 @@ static void ensure_sections(){
   flush_full();
 }
 
+static void FmtRet(std::ostream& os, DWORD v, int i){
+  switch(i){
+    case 0: os<<(uint16_t)(v); break;
+    default: os<<v; break;
+  }
+}
+
 static void rebuild_none(){
   sec_none_len=0; sec_none[0]=0;
   { int called=0;
@@ -14865,9 +14871,9 @@ static void write_entry(char tag, int i, DWORD addr, DWORD re, DWORD orig, DWORD
   if(n==1) os<<"\r\n["<<hdr<<"-0x"<<addr<<"]\r\n";
   os<<"Call "<<std::dec<<n<<": "<<(cn?cn:"?")<<"()<-0x"<<std::hex<<(ret-5)<<"\r\n";
   os<<"  Input:  "; FI(i,os);
-  if(tag=='C'){ os<<"  Return: ";Fmt(os,rt[i],orig);os<<"(EAX)\r\n"; }
-  else if(re==orig){ os<<"  Return: hook=original=";Fmt(os,rt[i],orig);os<<"(EAX)\r\n"; }
-  else{ has_diff[i]=true; os<<"  Return: hook=";Fmt(os,rt[i],re);os<<"(EAX) != original=";Fmt(os,rt[i],orig);os<<"(EAX)\r\n"; }
+  if(tag=='C'){ os<<"  Return: ";FmtRet(os,orig,i);os<<"(EAX)\r\n"; }
+  else if(re==orig){ os<<"  Return: hook=original=";FmtRet(os,orig,i);os<<"(EAX)\r\n"; }
+  else{ has_diff[i]=true; os<<"  Return: hook=";FmtRet(os,re,i);os<<"(EAX) != original=";FmtRet(os,orig,i);os<<"(EAX)\r\n"; }
   std::string s=os.str(); WrFile(h,s);
   FnBuf(i,s);
   rebuild_none();

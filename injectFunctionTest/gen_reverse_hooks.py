@@ -421,6 +421,38 @@ def find_markers(functions, raw_json, callee_map, callee_names, all_marked, idem
 def san(n):
     return n.replace('::','_').replace('@','_').replace('<','_').replace('>','_')
 
+def is_ptr_type(ty):
+    """Check if a C++ type is a pointer or reference (value is an address)."""
+    ty = ty.strip()
+    return '*' in ty or ty.endswith('&')
+
+def to_ptr_cast(ty):
+    """Convert C++ type to pointer cast for FmtPtr.
+    'const Point2D&' → '(const Point2D*)'
+    'uint16_t*' → '(uint16_t*)'   """
+    ty = ty.strip().replace('const ', '').replace('const', '')
+    ty = ty.replace('&', '').replace('*', '').strip()
+    return f'(const {ty}*)'
+
+def to_val_cast(ty):
+    """Convert C++ type to value cast for os <<.
+    'uint32_t' → '(uint32_t)'
+    'int' → '(int)'
+    """
+    ty = ty.strip().replace('const ','').replace('const','').strip()
+    return f'({ty})'
+
+def fmt_param(os, cnv, param_name, param_type, arr_sz, ref):
+    """Generate formatting line for a single parameter.
+    Returns a list of code lines (may be multiple for arrays).
+    Uses FmtPtr for pointer/reference types, os<< for value types."""
+    if arr_sz > 0:
+        # Array: FmtArr
+        return [f'{os}<<" {param_name}({cnv})=";FmtArr(os,{arr_sz},{ref});']
+    if is_ptr_type(param_type):
+        return [f'{os}<<" {param_name}({cnv})=";FmtPtr(os,{to_ptr_cast(param_type)}({ref}));']
+    return [f'{os}<<" {param_name}({cnv})=";os<<{to_val_cast(param_type)}({ref});']
+
 def fmt_fn(ptype):
     """Return (cpp_formatter, c_fmt) based on parameter type string."""
     ty = ptype.lower()
@@ -457,6 +489,7 @@ def generate(markers, functions, fn_map, none_markers=None):
     w('#include "tls_storage.h"')
     w('#include "shadow_txn.h"')
     w('#include "hook_template.hpp"')
+    w('using namespace gamemd;')
     w('extern "C" void PostProcStub();')
     # Forward-declare RE_* functions for Inject/Replace mode only
     for m in markers:
@@ -519,45 +552,28 @@ def generate(markers, functions, fn_map, none_markers=None):
         s=san(m['fn_name'])
         w(f'static void FI_{s}(std::ostream& os){{')
         if conv == 'thiscall':
-            w(f'  os<<"this=";Fmt(os,"this",in[{i}].c);')
-            if params:
-                w(f'  static const char* ty_{s}[]={{{",".join(f"\"{p[0]}\"" for p in params)}}};')
-                w(f'  static int arr_{s}[]={{{",".join(str(p[2]) for p in params)}}};')
+            w(f'  os<<"this=";Hex8(os,in[{i}].c);')
             for j,pt in enumerate(params):
-                reg = 'Stack'
                 ref = f'in[{i}].stk{j}'
-                if pt[2] > 0:
-                    w(f'  os<<" {pt[1]}({reg})="; FmtArr(os,arr_{s}[{j}],{ref});')
-                else:
-                    w(f'  os<<" {pt[1]}({reg})="; Fmt(os,ty_{s}[{j}],{ref});')
+                for line in fmt_param('  os', 'Stack', pt[1], pt[0], pt[2], ref):
+                    w(line)
         elif conv == 'fastcall':
             regs = ['ECX','EDX']
             for j in range(min(2, len(params))):
                 pt = params[j]
-                pn = pt[1]
                 ref = f'in[{i}].{chr(ord("c")+j)}'
-                if pt[2] > 0:
-                    w(f'  os<<" {pn}({regs[j]})="; FmtArr(os,{pt[2]},{ref});')
-                else:
-                    w(f'  os<<" {pn}({regs[j]})="<<"0x"<<std::hex<<{ref};')
+                for line in fmt_param('  os', regs[j], pt[1], pt[0], pt[2], ref):
+                    w(line)
             for j in range(2, len(params)):
                 pt = params[j]
-                pn = pt[1]
                 ref = f'in[{i}].stk{j-2}'
-                if pt[2] > 0:
-                    w(f'  os<<" {pn}(Stack)="; FmtArr(os,{pt[2]},{ref});')
-                else:
-                    w(f'  os<<" {pn}(Stack)="; Fmt(os,"int",{ref});')
+                for line in fmt_param('  os', 'Stack', pt[1], pt[0], pt[2], ref):
+                    w(line)
         else:  # stdcall, cdecl
-            if params:
-                w(f'  static const char* ty_{s}[]={{{",".join(f"\"{p[0]}\"" for p in params)}}};')
-                w(f'  static int arr_{s}[]={{{",".join(str(p[2]) for p in params)}}};')
             for j,pt in enumerate(params):
                 ref = f'in[{i}].stk{j}'
-                if pt[2] > 0:
-                    w(f'  os<<" {pt[1]}(Stack)="; FmtArr(os,arr_{s}[{j}],{ref});')
-                else:
-                    w(f'  os<<" {pt[1]}(Stack)="; Fmt(os,ty_{s}[{j}],{ref});')
+                for line in fmt_param('  os', 'Stack', pt[1], pt[0], pt[2], ref):
+                    w(line)
         w(f'  os<<"\\r\\n";')
         w(f'}}')
         w(f'')
@@ -680,6 +696,20 @@ def generate(markers, functions, fn_map, none_markers=None):
     w('  flush_full();')
     w('}')
     w('')
+    # FmtRet — per-marker return value formatting from actual C++ type
+    w('static void FmtRet(std::ostream& os, DWORD v, int i){')
+    w('  switch(i){')
+    for i, m in enumerate(markers):
+        rt = m.get('ret_type', '').strip()
+        if is_ptr_type(rt):
+            w(f'    case {i}: Hex8(os,v); break;')
+        else:
+            val_cast = to_val_cast(rt)
+            w(f'    case {i}: os<<{val_cast}(v); break;')
+    w('    default: os<<v; break;')
+    w('  }')
+    w('}')
+    w('')
     w('static void rebuild_none(){')
     w('  sec_none_len=0; sec_none[0]=0;')
     # List None-mode markers that are uncalled
@@ -726,9 +756,9 @@ def generate(markers, functions, fn_map, none_markers=None):
     w('  if(n==1) os<<"\\r\\n["<<hdr<<"-0x"<<addr<<"]\\r\\n";')
     w('  os<<"Call "<<std::dec<<n<<": "<<(cn?cn:"?")<<"()<-0x"<<std::hex<<(ret-5)<<"\\r\\n";')
     w('  os<<"  Input:  "; FI(i,os);')
-    w('  if(tag==\'C\'){ os<<"  Return: ";Fmt(os,rt[i],orig);os<<"(EAX)\\r\\n"; }')
-    w('  else if(re==orig){ os<<"  Return: hook=original=";Fmt(os,rt[i],orig);os<<"(EAX)\\r\\n"; }')
-    w('  else{ has_diff[i]=true; os<<"  Return: hook=";Fmt(os,rt[i],re);os<<"(EAX) != original=";Fmt(os,rt[i],orig);os<<"(EAX)\\r\\n"; }')
+    w('  if(tag==\'C\'){ os<<"  Return: ";FmtRet(os,orig,i);os<<"(EAX)\\r\\n"; }')
+    w('  else if(re==orig){ os<<"  Return: hook=original=";FmtRet(os,orig,i);os<<"(EAX)\\r\\n"; }')
+    w('  else{ has_diff[i]=true; os<<"  Return: hook=";FmtRet(os,re,i);os<<"(EAX) != original=";FmtRet(os,orig,i);os<<"(EAX)\\r\\n"; }')
     w('  std::string s=os.str(); WrFile(h,s);')
     w('  FnBuf(i,s);')
     w('  rebuild_none();')
