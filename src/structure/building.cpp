@@ -1,5 +1,6 @@
 #include "gamemd/structure/building.hpp"
 #include "gamemd/type/building_type.hpp"
+#include "gamemd/core/reverse_marker.hpp"
 
 #include <cstring>
 
@@ -619,6 +620,98 @@ CoordStruct* BuildingClass::GetExitCoords(CoordStruct* out, uint32_t unknown) co
     out->Y = m_location.Y + ((fh << 7) - 128);
     out->Z = m_location.Z;
 
+    return out;
+}
+
+// IDA: 0x480110 -- BuildingClass::CalcDrawPos (109B, thiscall, 1 stack arg)
+// Computes screen-space draw position for a building. Always returns {30, y}.
+//
+// Assembly-verified field offsets:
+//   this+0x44  → type_index (int32_t) — index in BuildingTypeClass_Array
+//   this+0x11B → height_level (int8_t) — contributes 15*val to Y calc
+//   this+0x11E → foundation_visual_depth (uint8_t) — [9,17] triggers extra offset
+//   this+0x140 → placement_state (int8_t) — MSB=1 during placement/construction
+//
+// Depends on globalHelper_0FDCC0 (0x5FDCC0) — computes Y offset from BuildingTypeClass.
+//   BuildingTypeClass offsets: 0x2A8/0x2A9/0x2AA=bool flags, 0x294=int(idx), 0x298=int(foundation)
+// ============================================================
+
+namespace {
+
+// Assembly-verified member offsets (binary layout, not header)
+constexpr ptrdiff_t kTypeIndex              = 0x44;
+constexpr ptrdiff_t kHeightLevel            = 0x11B;
+constexpr ptrdiff_t kFoundationVisualDepth  = 0x11E;
+constexpr ptrdiff_t kPlacementState         = 0x140;
+
+// BuildingTypeClass member offsets for draw offset computation
+constexpr ptrdiff_t kBTCanBePlacedOn        = 0x2A8;
+constexpr ptrdiff_t kBTCanBePlacedOn_2      = 0x2A9;
+constexpr ptrdiff_t kBTToProtect            = 0x2AA;
+constexpr ptrdiff_t kBTPropertyIndex        = 0x294;  // int, 126 = special type
+constexpr ptrdiff_t kBTFoundationDepth      = 0x298;  // int, 9 = deep foundation
+
+// IDA: 0x5FDCC0 -- ComputeBuildingDrawYOffset (87B, fastcall)
+// Reads BuildingTypeClass properties to determine Y draw offset.
+// Returns {0, y_offset} in out[2]. y_offset ∈ {0, -12, -13, -14}.
+__forceinline int* ComputeBuildingDrawYOffset(int* out, int type_index)
+{
+    // gamemd.exe 0xA83D84 → BuildingTypeClass**
+    auto type_array_base = *reinterpret_cast<uintptr_t*>(0xA83D84);
+    auto* type_object     = reinterpret_cast<uint8_t*>(
+        *reinterpret_cast<uint32_t*>(type_array_base + type_index * 4));
+
+    int y_offset = 0;
+
+    if (type_object[kBTCanBePlacedOn_2] || type_object[kBTCanBePlacedOn] ||
+        *reinterpret_cast<int32_t*>(type_object + kBTPropertyIndex) == 126 ||
+        type_object[kBTToProtect])
+        y_offset = -12;
+
+    if (*reinterpret_cast<int32_t*>(type_object + kBTFoundationDepth) == 9)
+        --y_offset;
+
+    if (type_index == 126)
+        --y_offset;
+
+    out[0] = 0;
+    out[1] = y_offset;
+    return out;
+}
+
+} // namespace
+
+REVERSE(0x480110, "BuildingClass::CalcDrawPos: building draw position", "Inject")
+Point2D* BuildingClass::CalcDrawPos(Point2D* out)
+{
+    auto* this_bytes = reinterpret_cast<uint8_t*>(this);
+
+    int32_t type_index = *reinterpret_cast<int32_t*>(this_bytes + kTypeIndex);
+
+    int draw_offset[2];
+    ComputeBuildingDrawYOffset(draw_offset, type_index);
+    int draw_x = draw_offset[0];  // always 0
+    int draw_y = draw_offset[1];  // 0, -12, -13, or -14
+
+    int8_t placement_state = *reinterpret_cast<int8_t*>(this_bytes + kPlacementState);
+    if (placement_state >= 0) {
+        // Building is fully placed (not under construction)
+        if (type_index == 239)
+            draw_y -= 15;
+    } else {
+        // Building is being placed or under construction
+        draw_y -= 16;
+        uint8_t foundation_depth = *reinterpret_cast<uint8_t*>(this_bytes + kFoundationVisualDepth);
+        if (foundation_depth >= 9 && foundation_depth <= 17)
+            draw_y -= 15;
+    }
+
+    int8_t height_level = *reinterpret_cast<int8_t*>(this_bytes + kHeightLevel);
+    // Map_VisibleRect at gamemd.exe 0x886FA4
+    int screen_y = *reinterpret_cast<int32_t*>(0x886FA4) - 15 * height_level + draw_y;
+
+    out->X = draw_x + 30;
+    out->Y = screen_y + 15;
     return out;
 }
 
