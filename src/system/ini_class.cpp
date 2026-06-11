@@ -36,7 +36,7 @@ struct INIData {
 // ============================================================
 // IDA 0x535AA0 -- INIClass::Constructor (84 bytes)
 // ============================================================
-REVERSE(0x535aa0, "INIClass::Constructor: IDA verified", "Inject")
+REVERSE(0x535aa0, "INIClass::Constructor: IDA verified", "None")
 INIClass::INIClass()
 {
     std::memset(this, 0, kSize);
@@ -45,7 +45,7 @@ INIClass::INIClass()
 // ============================================================
 // IDA 0x535B30 -- CCINIClass::Constructor (138 bytes)
 // ============================================================
-REVERSE(0x535b30, "CCINIClass::Constructor: IDA verified", "Inject")
+REVERSE(0x535b30, "CCINIClass::Constructor: IDA verified", "None")
 CCINIClass::CCINIClass()
     : INIClass()
 {

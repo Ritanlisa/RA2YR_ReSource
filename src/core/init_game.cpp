@@ -136,7 +136,7 @@ int  InitializeAudioSubsystem(void* hwnd) {
 
 // IDA 0x6C8C40 -- Timer::GetTicks: returns timeGetTime() >> 4 (~16ms resolution)
 // IDA 0x6C8C40 -- Timer::GetTicks: returns timeGetTime() >> 4 (~16ms resolution)
-REVERSE(0x6C8C40, "Timer::GetTicks: timeGetTime() >> 4", "Inject") /* first-5-bytes unsafe */
+REVERSE(0x6C8C40, "Timer::GetTicks: timeGetTime() >> 4", "None") /* first-5-bytes unsafe */
 int TimerGetTicks() { return timeGetTime() >> 4; }
 
 // IDA 0x54F720 -- Timer::PumpMessages

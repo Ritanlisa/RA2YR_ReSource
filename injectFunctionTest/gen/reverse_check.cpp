@@ -2,7 +2,8 @@
 // Compiled into hook DLL for build-time diagnostics
 #include <windows.h>
 
-#pragma message("WARN: src/core/init_game.cpp:139: 0x6c8c40 (Timer::GetTicks) idempotent=UNCERTAIN  transactions enabled (conservative). Fix: implement Phase 3 vtable resolution or add manual idempotent with reason.")
+#pragma message("WARN: D:/RA2YR_ReSource/src/core/init_game.cpp:139: 0x6c8c40 (Timer::GetTicks) mode=None, not completed (functions.json line 462540)")
+#pragma message("WARN: D:/RA2YR_ReSource/src/core/init_game.cpp:139: 0x6c8c40 (Timer::GetTicks) mode=None, 1 unmarked-uncompleted: Timer::GetTicks")
 #pragma message("WARN: src/core/init_game.cpp:149: 0x4355b0 (Palette::6BitTo16Bit) idempotent=UNCERTAIN  transactions enabled (conservative). Fix: implement Phase 3 vtable resolution or add manual idempotent with reason.")
 #pragma message("WARN: D:/RA2YR_ReSource/src/core/init_game.cpp:173: 0x4a38d0 (LoadFileSHP) mode=None, not completed (functions.json line 122972)")
 #pragma message("WARN: D:/RA2YR_ReSource/src/core/init_game.cpp:173: 0x4a38d0 (LoadFileSHP) mode=None, 3 unmarked-uncompleted: BufferIOFileClass::Dtor, LoadFileSHP, Vector::Clear")
@@ -33,8 +34,10 @@
 #pragma message("WARN: D:/RA2YR_ReSource/src/system/cc_file.cpp:79: 0x4a3890 (CCFileClass::ReadEntireFile) mode=None, 1 unmarked-uncompleted: CCFileClass::ReadEntireFile")
 #pragma message("WARN: D:/RA2YR_ReSource/src/system/cc_file.cpp:91: 0x473ce0 (CCFileClass::Reset) mode=None, not completed (functions.json line 80770)")
 #pragma message("WARN: D:/RA2YR_ReSource/src/system/cc_file.cpp:91: 0x473ce0 (CCFileClass::Reset) mode=None, 3 unmarked-uncompleted: Buffer::Init, CCFileClass::Close, CCFileClass::Reset")
-#pragma message("WARN: src/system/ini_class.cpp:39: 0x535aa0 (INIClass::Constructor) idempotent=UNCERTAIN  transactions enabled (conservative). Fix: implement Phase 3 vtable resolution or add manual idempotent with reason.")
-#pragma message("WARN: src/system/ini_class.cpp:48: 0x535b30 (CCINIClass::Constructor) idempotent=UNCERTAIN  transactions enabled (conservative). Fix: implement Phase 3 vtable resolution or add manual idempotent with reason.")
+#pragma message("WARN: D:/RA2YR_ReSource/src/system/ini_class.cpp:39: 0x535aa0 (INIClass::Constructor) mode=None, not completed (functions.json line 223345)")
+#pragma message("WARN: D:/RA2YR_ReSource/src/system/ini_class.cpp:39: 0x535aa0 (INIClass::Constructor) mode=None, 1 unmarked-uncompleted: INIClass::Constructor")
+#pragma message("WARN: D:/RA2YR_ReSource/src/system/ini_class.cpp:48: 0x535b30 (CCINIClass::Constructor) mode=None, not completed (functions.json line 223380)")
+#pragma message("WARN: D:/RA2YR_ReSource/src/system/ini_class.cpp:48: 0x535b30 (CCINIClass::Constructor) mode=None, 1 unmarked-uncompleted: CCINIClass::Constructor")
 #pragma message("WARN: D:/RA2YR_ReSource/src/system/ini_class.cpp:79: 0x4741f0 (CCINIClass::Load) mode=None, not completed (functions.json line 81417)")
 #pragma message("WARN: D:/RA2YR_ReSource/src/system/ini_class.cpp:79: 0x4741f0 (CCINIClass::Load) mode=None, 8 unmarked-uncompleted: CCINIClass::Load, FileStraw::Destructor, INIClass::ClearSection (+5)")
 #pragma message("WARN: D:/RA2YR_ReSource/src/system/mix_file.cpp:419: 0x5301a0 (MixFileClass::Bootstrap) mode=None, not completed (functions.json line 222562)")
