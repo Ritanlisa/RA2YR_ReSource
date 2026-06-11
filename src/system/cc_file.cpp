@@ -17,7 +17,7 @@ CCFileClass::CCFileClass(const char* pFileName) noexcept
     FileID       = 0;
     MixFileIndex = 0;
 
-REVERSE(0x473c50, "CCFileClass::Open: IDA verified", "None") // auto-marked completed
+REVERSE(0x473c50, "CCFileClass::Open: IDA verified", "None")
     // Store filename for later Open
     (void)pFileName; // filename stored by SetFileName or opened explicitly
 }
@@ -76,7 +76,7 @@ bool CCFileClass::Open(const char* pFileName)
     return false;
 }
 
-REVERSE(0x4a3890, "CCFileClass::ReadEntireFile: IDA verified", "None") // auto-marked completed
+REVERSE(0x4a3890, "CCFileClass::ReadEntireFile: IDA verified", "None")
 // IDA 0x4A3890 -- CCFileClass::ReadEntireFile
 void* CCFileClass::ReadEntireFile()
 {
@@ -88,7 +88,7 @@ void* CCFileClass::ReadEntireFile()
     return FileSystem::LoadFile(FileName, false);
 }
 
-REVERSE(0x473ce0, "CCFileClass::Reset: IDA verified", "None") // auto-marked completed
+REVERSE(0x473ce0, "CCFileClass::Reset: IDA verified", "None")
 // IDA 0x473CE0 -- CCFileClass::Reset
 void CCFileClass::Reset()
 {

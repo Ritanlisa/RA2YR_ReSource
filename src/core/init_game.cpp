@@ -170,7 +170,7 @@ void VoxelProjectionSetup() {}
 // --- Phase 4: MIX / CD / Movie ---
 
 // LoadExpansionMixFiles defined in src/misc/rules.cpp
-REVERSE(0x4a38d0, "LoadFileSHP: IDA verified", "None") // auto-marked completed
+REVERSE(0x4a38d0, "LoadFileSHP: IDA verified", "None")
 // IDA 0x4A38D0 -- LoadFileSHP: loads SHP file and returns handle
 int  LoadFileSHP(const char* filename) {
     void* data = FileSystem::LoadFile(filename, true);
@@ -178,7 +178,7 @@ int  LoadFileSHP(const char* filename) {
 }
 // IDA 0x5BDA80 -- Mission::SetAndCall
 void MissionSetAndCall(int a, int b) { LOG_DEBUG("MissionSetAndCall(%d, %d)", a, b); }
-REVERSE(0x48d080, "Event::Dispatch: IDA verified", "None") // auto-marked completed
+REVERSE(0x48d080, "Event::Dispatch: IDA verified", "None")
 // IDA 0x48D080 -- Event::Dispatch (per-frame event processing)
 void EventDispatchEx() {
     // IDA: calls UpdateAudioVideo first, then AsyncIO, Network, Campaign events
@@ -339,7 +339,7 @@ void InitCommands() {}
 
 // --- Phase 7: File helpers ---
 
-REVERSE(0x5b40b0, "SearchMIXFile: IDA verified", "None") // auto-marked completed
+REVERSE(0x5b40b0, "SearchMIXFile: IDA verified", "None")
 // IDA 0x5B40B0 -- SearchMIXFile: search MIX pool by hash, return file data
 const void* SearchMIXFile(const char* name) {
     return FileSystem::LoadFile(name, false);
