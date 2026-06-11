@@ -15,10 +15,10 @@ extern "C" DWORD RE_XSurface_DrawRectEx(DWORD, DWORD, DWORD, DWORD);
 
 static FILE* f = nullptr;
 static int ctr[7]={};
-static const char* nm[32]={};
-static DWORD addr_tbl[32]={};
-static const char* sig[32]={};
-static const char* rt[32]={};
+static const char* nm[28]={};
+static DWORD addr_tbl[28]={};
+static const char* sig[28]={};
+static const char* rt[28]={};
 static bool is_cap[7]={};
 static bool has_diff[7]={};
 static S in[7]={};
@@ -76,28 +76,20 @@ static void NN(){
   sig[19]="HRESULT AbstractClass::QueryInterface(const IID& iid, void** ppv)"; rt[19]="HRESULT";
   nm[20]="ClipRectIntersection"; addr_tbl[20]=0x00421B60;
   sig[20]="RectangleStruct* ClipRectIntersection(RectangleStruct* result, const RectangleStruct* clip_rect, const RectangleStruct* src_rect, int* x_off, int* y_off)"; rt[20]="RectangleStruct*";
-  nm[21]="XSurface::WalkLine"; addr_tbl[21]=0x007BAB90;
-  sig[21]="bool XSurface::WalkLine(const Point2D& start, const Point2D& end, void (*callback)"; rt[21]="bool";
-  nm[22]="XSurface::DrawLineEx"; addr_tbl[22]=0x007BA610;
-  sig[22]="bool XSurface::DrawLineEx(const RectangleStruct& clip_rect, const Point2D& start, const Point2D& end, uint32_t color)"; rt[22]="bool";
-  nm[23]="XSurface::DrawLine"; addr_tbl[23]=0x007BA5E0;
-  sig[23]="bool XSurface::DrawLine(const Point2D& start, const Point2D& end, uint32_t color)"; rt[23]="bool";
-  nm[24]="XSurface::DrawRect"; addr_tbl[24]=0x007BAD90;
-  sig[24]="bool XSurface::DrawRect(const RectangleStruct& draw_rect, uint32_t color)"; rt[24]="bool";
-  nm[25]="CCFileClass::Open"; addr_tbl[25]=0x00473C50;
-  sig[25]="bool CCFileClass::Open(const char* pFileName)"; rt[25]="bool";
-  nm[26]="CCFileClass::ReadEntireFile"; addr_tbl[26]=0x004A3890;
-  sig[26]="void* CCFileClass::ReadEntireFile()"; rt[26]="void*";
-  nm[27]="CCFileClass::Reset"; addr_tbl[27]=0x00473CE0;
-  sig[27]="void CCFileClass::Reset()"; rt[27]="void";
-  nm[28]="INIClass::Constructor"; addr_tbl[28]=0x00535AA0;
-  sig[28]="INIClass::INIClass()"; rt[28]="";
-  nm[29]="CCINIClass::Constructor"; addr_tbl[29]=0x00535B30;
-  sig[29]="CCINIClass::CCINIClass()"; rt[29]="";
-  nm[30]="CCINIClass::Load"; addr_tbl[30]=0x004741F0;
-  sig[30]="bool CCINIClass::Load(CCFileClass* file, bool unk1, bool unk2)"; rt[30]="bool";
-  nm[31]="MixFileClass::Bootstrap"; addr_tbl[31]=0x005301A0;
-  sig[31]="bool MixFileClass::Bootstrap()"; rt[31]="bool";
+  nm[21]="CCFileClass::Open"; addr_tbl[21]=0x00473C50;
+  sig[21]="bool CCFileClass::Open(const char* pFileName)"; rt[21]="bool";
+  nm[22]="CCFileClass::ReadEntireFile"; addr_tbl[22]=0x004A3890;
+  sig[22]="void* CCFileClass::ReadEntireFile()"; rt[22]="void*";
+  nm[23]="CCFileClass::Reset"; addr_tbl[23]=0x00473CE0;
+  sig[23]="void CCFileClass::Reset()"; rt[23]="void";
+  nm[24]="INIClass::Constructor"; addr_tbl[24]=0x00535AA0;
+  sig[24]="INIClass::INIClass()"; rt[24]="";
+  nm[25]="CCINIClass::Constructor"; addr_tbl[25]=0x00535B30;
+  sig[25]="CCINIClass::CCINIClass()"; rt[25]="";
+  nm[26]="CCINIClass::Load"; addr_tbl[26]=0x004741F0;
+  sig[26]="bool CCINIClass::Load(CCFileClass* file, bool unk1, bool unk2)"; rt[26]="bool";
+  nm[27]="MixFileClass::Bootstrap"; addr_tbl[27]=0x005301A0;
+  sig[27]="bool MixFileClass::Bootstrap()"; rt[27]="bool";
 }
 struct InitHookNames { InitHookNames() { NN(); } };
 static InitHookNames _init;
@@ -14658,10 +14650,6 @@ static void ensure_sections(){
   SecApp(sec_none,&sec_none_len,"[bool LoadExpansionMixFiles()-0x00530000]\r\n");
   SecApp(sec_none,&sec_none_len,"[HRESULT AbstractClass::QueryInterface(const IID& iid, void** ppv)-0x00410260]\r\n");
   SecApp(sec_none,&sec_none_len,"[RectangleStruct* ClipRectIntersection(RectangleStruct* result, const RectangleStruct* clip_rect, const RectangleStruct* src_rect, int* x_off, int* y_off)-0x00421B60]\r\n");
-  SecApp(sec_none,&sec_none_len,"[bool XSurface::WalkLine(const Point2D& start, const Point2D& end, void (*callback)-0x007BAB90]\r\n");
-  SecApp(sec_none,&sec_none_len,"[bool XSurface::DrawLineEx(const RectangleStruct& clip_rect, const Point2D& start, const Point2D& end, uint32_t color)-0x007BA610]\r\n");
-  SecApp(sec_none,&sec_none_len,"[bool XSurface::DrawLine(const Point2D& start, const Point2D& end, uint32_t color)-0x007BA5E0]\r\n");
-  SecApp(sec_none,&sec_none_len,"[bool XSurface::DrawRect(const RectangleStruct& draw_rect, uint32_t color)-0x007BAD90]\r\n");
   SecApp(sec_none,&sec_none_len,"[bool CCFileClass::Open(const char* pFileName)-0x00473C50]\r\n");
   SecApp(sec_none,&sec_none_len,"[void* CCFileClass::ReadEntireFile()-0x004A3890]\r\n");
   SecApp(sec_none,&sec_none_len,"[void CCFileClass::Reset()-0x00473CE0]\r\n");
@@ -14759,26 +14747,6 @@ static void rebuild_none(){
     if(!called) SecApp(sec_none,&sec_none_len,"[RectangleStruct* ClipRectIntersection(RectangleStruct* result, const RectangleStruct* clip_rect, const RectangleStruct* src_rect, int* x_off, int* y_off)-0x00421B60]\r\n"); }
   { int called=0;
     for(int j=0;j<7;j++){
-      if(addr_tbl[j]==0x007BAB90&&ctr[j]>0) called=1;
-    }
-    if(!called) SecApp(sec_none,&sec_none_len,"[bool XSurface::WalkLine(const Point2D& start, const Point2D& end, void (*callback)-0x007BAB90]\r\n"); }
-  { int called=0;
-    for(int j=0;j<7;j++){
-      if(addr_tbl[j]==0x007BA610&&ctr[j]>0) called=1;
-    }
-    if(!called) SecApp(sec_none,&sec_none_len,"[bool XSurface::DrawLineEx(const RectangleStruct& clip_rect, const Point2D& start, const Point2D& end, uint32_t color)-0x007BA610]\r\n"); }
-  { int called=0;
-    for(int j=0;j<7;j++){
-      if(addr_tbl[j]==0x007BA5E0&&ctr[j]>0) called=1;
-    }
-    if(!called) SecApp(sec_none,&sec_none_len,"[bool XSurface::DrawLine(const Point2D& start, const Point2D& end, uint32_t color)-0x007BA5E0]\r\n"); }
-  { int called=0;
-    for(int j=0;j<7;j++){
-      if(addr_tbl[j]==0x007BAD90&&ctr[j]>0) called=1;
-    }
-    if(!called) SecApp(sec_none,&sec_none_len,"[bool XSurface::DrawRect(const RectangleStruct& draw_rect, uint32_t color)-0x007BAD90]\r\n"); }
-  { int called=0;
-    for(int j=0;j<7;j++){
       if(addr_tbl[j]==0x00473C50&&ctr[j]>0) called=1;
     }
     if(!called) SecApp(sec_none,&sec_none_len,"[bool CCFileClass::Open(const char* pFileName)-0x00473C50]\r\n"); }
@@ -14815,8 +14783,8 @@ static void rebuild_none(){
   for(int j=0;j<7;j++){
     if(ctr[j]==0){
       int already=0;
-      unsigned na_tbl[25]={7113792,4412848,4864208,4771968,5980336,5421664,5624672,5623760,4769968,5429664,4771008,5439488,4260448,4332384,8104848,8103440,8103392,8105360,4668496,4864144,4668640,5462688,5462832,4669936,5439904};
-      for(int k=0;k<25;k++) if(addr_tbl[j]==na_tbl[k]) already=1;
+      unsigned na_tbl[21]={7113792,4412848,4864208,4771968,5980336,5421664,5624672,5623760,4769968,5429664,4771008,5439488,4260448,4332384,4668496,4864144,4668640,5462688,5462832,4669936,5439904};
+      for(int k=0;k<21;k++) if(addr_tbl[j]==na_tbl[k]) already=1;
       if(!already){
         const char* s=sig[j];
         if(s&&*s){
