@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Auto-generate RE_* wrapper functions for hook DLL shadow comparison."""
+"""Auto-generate RE_* wrapper functions for hook DLL shadow comparison.
+
+Templates define the body logic with NAMED params (this_, point_ptr, color, etc.).
+The function header is dynamically extended to match the actual parameter count
+from the function signature (via CallRE dispatch order). Extra params are (void)-suppressed.
+"""
 
 import os
 
@@ -15,13 +20,13 @@ CATEGORY_MAP = {
     "0x7bad90": "thin_wrapper", "0x7badc0": "rectangle",
     "0x7bbab0": "fill", "0x7bb350": "ellipse",
     "0x4f4780": "frame_present",
+    "0x480110": "calc_draw_pos",
 }
 
 VT_LOCK=0x5C; VT_UNLOCK=0x60; VT_GETBPP=0x70; VT_GETPITCH=0x74
 VT_GETRECT=0x78; VT_DRAWLINE_EX=0x2C; VT_FILLRECT_EX=0x10
 
 def F(name, addr, param_names):
-    """Return lines for a RE function header. param_names = ['this_', 'point_ptr', 'color'] etc."""
     params = ', '.join(f'DWORD {p}' for p in param_names) if param_names else ''
     return [f'// {name} @ {addr}', f'extern "C" DWORD RE_{name}({params}) {{']
 
@@ -38,8 +43,6 @@ PREAMBLE = [
 TEMPLATES = {}
 
 # ---- pixel_write (thiscall) ----
-# SetPixel/PutPixel: params are (Point2D&, color) = (point_ptr, color)
-# Point2D = { int X; int Y; } — need to dereference
 TEMPLATES['pixel_write'] = L(
     *F('{name}', '{addr}', ['this_', 'point_ptr', 'color']),
     *PREAMBLE,
@@ -57,7 +60,6 @@ TEMPLATES['pixel_write'] = L(
 )
 
 # ---- pixel_read (thiscall) ----
-# GetPixel/GetPixelAtCoords: params are (Point2D&) = (point_ptr)
 TEMPLATES['pixel_read'] = L(
     *F('{name}', '{addr}', ['this_', 'point_ptr']),
     *PREAMBLE,
@@ -76,8 +78,6 @@ TEMPLATES['pixel_read'] = L(
 )
 
 # ---- bresenham_line (thiscall) ----
-# DrawLineEx: params (RectangleStruct&, Point2D&, Point2D&, DWORD)
-# template is placeholder until actual RE testing
 TEMPLATES['bresenham_line'] = L(
     *F('{name}', '{addr}', ['this_', 'p1', 'p2', 'p3', 'p4']),
     '(void)this_; (void)p1; (void)p2; (void)p3; (void)p4;',
@@ -86,7 +86,6 @@ TEMPLATES['bresenham_line'] = L(
 )
 
 # ---- fill (thiscall) ----
-# params: (uint32_t color)
 TEMPLATES['fill'] = L(
     *F('{name}', '{addr}', ['this_', 'color']),
     'DWORD vt = *(DWORD*)this_;',
@@ -99,8 +98,6 @@ TEMPLATES['fill'] = L(
 )
 
 # ---- rectangle (thiscall) ----
-# DrawRectEx: draws 4 edges via surface Lock/Unlock pixel writes
-# Bypasses hooked DrawLineEx (which returns 0 during g_re_depth>0)
 TEMPLATES['rectangle'] = L(
     *F('{name}', '{addr}', ['this_', 'clip_ptr', 'draw_ptr', 'color']),
     'if (!this_ || !clip_ptr || !draw_ptr) return 0;',
@@ -132,17 +129,7 @@ TEMPLATES['rectangle'] = L(
     '}',
 )
 
-# ---- dashed_line, callback_line, thin_wrapper, frame_present ----
-for cat in ('dashed_line','callback_line','thin_wrapper','frame_present'):
-    TEMPLATES[cat] = L(
-        *F('{name}', '{addr}', ['p0','p1','p2','p3']),
-        '(void)p0; (void)p1; (void)p2; (void)p3;',
-        'return 0; // TODO',
-        '}',
-    )
-
 # ---- ellipse (thiscall) ----
-# params: (Point2D& center, int rw, int rh, RectangleStruct& clip, uint16_t color)
 TEMPLATES['ellipse'] = L(
     *F('{name}', '{addr}', ['this_', 'p1', 'p2', 'p3', 'p4', 'p5']),
     '(void)this_; (void)p1; (void)p2; (void)p3; (void)p4; (void)p5;',
@@ -150,10 +137,7 @@ TEMPLATES['ellipse'] = L(
     '}',
 )
 
-# ---- dashed_line, callback_line, thin_wrapper, global, frame_present ----
-# ---- global (ClipLine) ----
-# Cohen-Sutherland line clipping, fastcall: ECX=start, EDX=end, [esp+4]=clip
-# Faithful to IDA decomp at 0x7BC2B0 (fild loads ints, all double math)
+# ---- global (ClipLine — fastcall) ----
 TEMPLATES['global'] = L(
     *F('{name}', '{addr}', ['start_ptr', 'end_ptr', 'clip_ptr']),
     'if (!start_ptr || !end_ptr || !clip_ptr) return 0;',
@@ -211,36 +195,119 @@ TEMPLATES['global'] = L(
     '}',
 )
 
+# ---- calc_draw_pos (thiscall) ----
+# BuildingClass::CalcDrawPos — drawing position calculation
+TEMPLATES['calc_draw_pos'] = L(
+    *F('{name}', '{addr}', ['this_', 'p1']),
+    '(void)this_; (void)p1;',
+    'return 0; // TODO: implement CalcDrawPos RE',
+    '}',
+)
+
+# ---- dashed_line, callback_line, thin_wrapper, frame_present ----
+for cat in ('dashed_line','callback_line','thin_wrapper','frame_present'):
+    TEMPLATES[cat] = L(
+        *F('{name}', '{addr}', ['p0','p1','p2','p3']),
+        '(void)p0; (void)p1; (void)p2; (void)p3;',
+        'return 0; // TODO',
+        '}',
+    )
+
+# ============================================================
+# Generator — adapts template header to actual function signature
+# ============================================================
+
+def count_template_params(tmpl):
+    """Count DWORD params in template's function header line (after '(')."""
+    for line in tmpl:
+        if line.startswith('extern "C"'):
+            paren = line.find('(')
+            if paren < 0:
+                return 0
+            return line[paren:].count('DWORD')
+    return 0
+
+
+def compute_expected_params(marker):
+    """Compute how many DWORD params the RE function needs.
+    Matches the CallRE dispatch order in gen_reverse_hooks.py."""
+    conv = marker.get('convention', 'stdcall')
+    num_p = len(marker.get('params', []))  # args after this (from C++ decl)
+
+    if conv == 'thiscall':
+        return 1 + num_p  # this + args
+    elif conv == 'fastcall':
+        # ECX=arg0, EDX=arg1, rest on stack
+        if num_p <= 2:
+            return num_p
+        else:
+            return num_p  # all params map to function args
+    else:  # stdcall, cdecl
+        return num_p
+
+
 def generate_re_impl(markers):
-    out = ['// Auto-generated RE_* functions for hook DLL','// Generated by gen_re_impl.py','#include <windows.h>','']
+    out = ['// Auto-generated RE_* functions for hook DLL',
+           '// Generated by gen_re_impl.py',
+           '#include <windows.h>', '']
+
     for m in markers:
-        addr = m['addr']; name = m['fn_name']; mode = m.get('mode','None')
-        if mode not in ('Inject','Replace'): continue
+        addr = m['addr']
+        name = m['fn_name']
+        mode = m.get('mode', 'None')
+        if mode not in ('Inject', 'Replace'):
+            continue
+
         cat = CATEGORY_MAP.get(addr)
         if cat is None:
-            print('  WARNING: %s no category' % addr); continue
-        sanitized = name.replace('::','_').replace('@','_').replace('<','_').replace('>','_')
+            print(f'  WARNING: {addr} ({name}) no category in CATEGORY_MAP')
+            continue
+
         tmpl = TEMPLATES.get(cat)
         if tmpl is None:
-            print('  WARNING: %s no template for %s' % (addr, cat)); continue
+            print(f'  WARNING: {addr} no template for category {cat}')
+            continue
+
+        sanitized = name.replace('::','_').replace('@','_').replace('<','_').replace('>','_')
+
+        # How many params the template expects
+        tpl_count = count_template_params(tmpl)
+        # How many params the actual function signature needs
+        expected = compute_expected_params(m)
+
+        # Extra params to append
+        extra_count = max(0, expected - tpl_count)
+
         for line in tmpl:
-            out.append(line.replace('{name}', sanitized).replace('{addr}', addr))
+            rendered = line.replace('{name}', sanitized).replace('{addr}', addr)
+
+            # Extend function header with extra params
+            if rendered.startswith('extern "C"'):
+                if extra_count > 0:
+                    extra = ', '.join(f'DWORD _p{i}' for i in range(tpl_count, expected))
+                    rendered = rendered.replace(') {', f', {extra}) {{')
+
+            out.append(rendered)
+
+            # After opening brace, add (void) for extra params
+            if rendered.rstrip().endswith('{'):
+                for i in range(tpl_count, expected):
+                    out.append(f'(void)_p{i};')
+
         out.append('')
-        print('  RE_%s (%s)' % (sanitized, cat))
+        print(f'  RE_{sanitized} ({cat}) template={tpl_count} expected={expected} extra={extra_count}')
+
     os.makedirs(os.path.dirname(OUT_IMPL), exist_ok=True)
     with open(OUT_IMPL, 'w') as f:
         f.write('\n'.join(out))
-    print('\nGenerated %s (%d lines)' % (OUT_IMPL, len(out)))
+    print(f'\nGenerated {OUT_IMPL} ({len(out)} lines)')
+
 
 if __name__ == '__main__':
     test = [
-        dict(addr='0x7baeb0', fn_name='XSurface::SetPixel', mode='Inject'),
-        dict(addr='0x7bae60', fn_name='XSurface::GetPixel', mode='Inject'),
-        dict(addr='0x7baf90', fn_name='XSurface::PutPixel', mode='Inject'),
-        dict(addr='0x7baf10', fn_name='XSurface::GetPixelAtCoords', mode='Inject'),
-        dict(addr='0x7ba610', fn_name='XSurface::DrawLineEx', mode='Inject'),
-        dict(addr='0x7badc0', fn_name='XSurface::DrawRectEx', mode='Inject'),
-        dict(addr='0x7bbab0', fn_name='XSurface::Fill', mode='Inject'),
-        dict(addr='0x7bb350', fn_name='XSurface::DrawEllipseOutline', mode='Inject'),
+        dict(addr='0x7baf10', fn_name='XSurface::GetPixelAtCoords', mode='Inject',
+             convention='thiscall', params=[('ty','point',0),('ty','clip_rect',0)]),
+        dict(addr='0x7baf90', fn_name='XSurface::PutPixel', mode='Inject',
+             convention='thiscall', params=[('ty','point',0),('ty','color',0),('ty','clip_rect',0)]),
     ]
     generate_re_impl(test)

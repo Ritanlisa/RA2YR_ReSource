@@ -4,15 +4,15 @@
 #include "shadow_txn.h"
 #include "hook_template.hpp"
 extern "C" void PostProcStub();
-extern "C" DWORD RE_XSurface_PutPixel(DWORD, DWORD, DWORD, DWORD);
 extern "C" DWORD RE_XSurface_GetPixelAtCoords(DWORD, DWORD, DWORD);
+extern "C" DWORD RE_BuildingClass_CalcDrawPos(DWORD, DWORD);
 
 static FILE* f = nullptr;
 static int ctr[2]={};
-static const char* nm[41]={};
-static DWORD addr_tbl[41]={};
-static const char* sig[41]={};
-static const char* rt[41]={};
+static const char* nm[42]={};
+static DWORD addr_tbl[42]={};
+static const char* sig[42]={};
+static const char* rt[42]={};
 static bool is_cap[2]={};
 static bool has_diff[2]={};
 static S in[2]={};
@@ -28,10 +28,10 @@ static void FnBuf(int idx, const std::string& s){
 }
 
 static void NN(){
-  nm[0]="XSurface::PutPixel"; addr_tbl[0]=0x007BAF90; is_cap[0]=false;
-  sig[0]="bool XSurface::PutPixel(const Point2D& point, uint16_t color, const RectangleStruct& clip_rect)"; rt[0]="bool";
-  nm[1]="XSurface::GetPixelAtCoords"; addr_tbl[1]=0x007BAF10; is_cap[1]=false;
-  sig[1]="uint16_t XSurface::GetPixelAtCoords(const Point2D& point, const RectangleStruct& clip_rect)"; rt[1]="uint16_t";
+  nm[0]="XSurface::GetPixelAtCoords"; addr_tbl[0]=0x007BAF10; is_cap[0]=false;
+  sig[0]="uint16_t XSurface::GetPixelAtCoords(const Point2D& point, const RectangleStruct& clip_rect)"; rt[0]="uint16_t";
+  nm[1]="BuildingClass::CalcDrawPos"; addr_tbl[1]=0x00480110; is_cap[1]=false;
+  sig[1]="Point2D* BuildingClass::CalcDrawPos(Point2D* out)"; rt[1]="point2d*";
   nm[2]="Timer::GetTicks"; addr_tbl[2]=0x006C8C40;
   sig[2]="int TimerGetTicks()"; rt[2]="int";
   nm[3]="Palette::6BitTo16Bit"; addr_tbl[3]=0x004355B0;
@@ -80,72 +80,72 @@ static void NN(){
   sig[24]="bool XSurface::SetPixel(const Point2D& point, uint32_t color)"; rt[24]="bool";
   nm[25]="XSurface::GetPixel"; addr_tbl[25]=0x007BAE60;
   sig[25]="uint32_t XSurface::GetPixel(const Point2D& point)"; rt[25]="uint32_t";
-  nm[26]="XSurface::WalkLine"; addr_tbl[26]=0x007BAB90;
-  sig[26]="bool XSurface::WalkLine(const Point2D& start, const Point2D& end, void (*callback)"; rt[26]="bool";
-  nm[27]="XSurface::DrawLineEx"; addr_tbl[27]=0x007BA610;
-  sig[27]="bool XSurface::DrawLineEx(const RectangleStruct& clip_rect, const Point2D& start, const Point2D& end, uint32_t color)"; rt[27]="bool";
-  nm[28]="XSurface::DrawLine"; addr_tbl[28]=0x007BA5E0;
-  sig[28]="bool XSurface::DrawLine(const Point2D& start, const Point2D& end, uint32_t color)"; rt[28]="bool";
-  nm[29]="XSurface::DrawDashedLine"; addr_tbl[29]=0x007BA8C0;
-  sig[29]="bool XSurface::DrawDashedLine(const Point2D& start, const Point2D& end, uint16_t color, const uint8_t stipple[16], int dash_offset)"; rt[29]="bool";
-  nm[30]="XSurface::Fill"; addr_tbl[30]=0x007BBAB0;
-  sig[30]="bool XSurface::Fill(uint32_t color)"; rt[30]="bool";
-  nm[31]="XSurface::DrawRectEx"; addr_tbl[31]=0x007BADC0;
-  sig[31]="bool XSurface::DrawRectEx(const RectangleStruct& clip_rect, const RectangleStruct& draw_rect, uint32_t color)"; rt[31]="bool";
-  nm[32]="XSurface::DrawRect"; addr_tbl[32]=0x007BAD90;
-  sig[32]="bool XSurface::DrawRect(const RectangleStruct& draw_rect, uint32_t color)"; rt[32]="bool";
-  nm[33]="XSurface::DrawEllipseOutline"; addr_tbl[33]=0x007BB350;
-  sig[33]="bool XSurface::DrawEllipseOutline(const Point2D& center, int radius_w, int radius_h, const RectangleStruct& clip_rect, uint16_t color)"; rt[33]="bool";
-  nm[34]="CCFileClass::Open"; addr_tbl[34]=0x00473C50;
-  sig[34]="CCFileClass::Open"; rt[34]="";
-  nm[35]="CCFileClass::ReadEntireFile"; addr_tbl[35]=0x004A3890;
-  sig[35]="void* CCFileClass::ReadEntireFile()"; rt[35]="void*";
-  nm[36]="CCFileClass::Reset"; addr_tbl[36]=0x00473CE0;
-  sig[36]="void CCFileClass::Reset()"; rt[36]="void";
-  nm[37]="INIClass::Constructor"; addr_tbl[37]=0x00535AA0;
-  sig[37]="INIClass::Constructor"; rt[37]="";
-  nm[38]="CCINIClass::Constructor"; addr_tbl[38]=0x00535B30;
-  sig[38]="CCINIClass::Constructor"; rt[38]="";
-  nm[39]="CCINIClass::Load"; addr_tbl[39]=0x004741F0;
-  sig[39]="bool CCINIClass::Load(CCFileClass* file, bool unk1, bool unk2)"; rt[39]="bool";
-  nm[40]="MixFileClass::Bootstrap"; addr_tbl[40]=0x005301A0;
-  sig[40]="bool MixFileClass::Bootstrap()"; rt[40]="bool";
+  nm[26]="XSurface::PutPixel"; addr_tbl[26]=0x007BAF90;
+  sig[26]="bool XSurface::PutPixel(const Point2D& point, uint16_t color, const RectangleStruct& clip_rect)"; rt[26]="bool";
+  nm[27]="XSurface::WalkLine"; addr_tbl[27]=0x007BAB90;
+  sig[27]="bool XSurface::WalkLine(const Point2D& start, const Point2D& end, void (*callback)"; rt[27]="bool";
+  nm[28]="XSurface::DrawLineEx"; addr_tbl[28]=0x007BA610;
+  sig[28]="bool XSurface::DrawLineEx(const RectangleStruct& clip_rect, const Point2D& start, const Point2D& end, uint32_t color)"; rt[28]="bool";
+  nm[29]="XSurface::DrawLine"; addr_tbl[29]=0x007BA5E0;
+  sig[29]="bool XSurface::DrawLine(const Point2D& start, const Point2D& end, uint32_t color)"; rt[29]="bool";
+  nm[30]="XSurface::DrawDashedLine"; addr_tbl[30]=0x007BA8C0;
+  sig[30]="bool XSurface::DrawDashedLine(const Point2D& start, const Point2D& end, uint16_t color, const uint8_t stipple[16], int dash_offset)"; rt[30]="bool";
+  nm[31]="XSurface::Fill"; addr_tbl[31]=0x007BBAB0;
+  sig[31]="bool XSurface::Fill(uint32_t color)"; rt[31]="bool";
+  nm[32]="XSurface::DrawRectEx"; addr_tbl[32]=0x007BADC0;
+  sig[32]="bool XSurface::DrawRectEx(const RectangleStruct& clip_rect, const RectangleStruct& draw_rect, uint32_t color)"; rt[32]="bool";
+  nm[33]="XSurface::DrawRect"; addr_tbl[33]=0x007BAD90;
+  sig[33]="bool XSurface::DrawRect(const RectangleStruct& draw_rect, uint32_t color)"; rt[33]="bool";
+  nm[34]="XSurface::DrawEllipseOutline"; addr_tbl[34]=0x007BB350;
+  sig[34]="bool XSurface::DrawEllipseOutline(const Point2D& center, int radius_w, int radius_h, const RectangleStruct& clip_rect, uint16_t color)"; rt[34]="bool";
+  nm[35]="CCFileClass::Open"; addr_tbl[35]=0x00473C50;
+  sig[35]="CCFileClass::Open"; rt[35]="";
+  nm[36]="CCFileClass::ReadEntireFile"; addr_tbl[36]=0x004A3890;
+  sig[36]="void* CCFileClass::ReadEntireFile()"; rt[36]="void*";
+  nm[37]="CCFileClass::Reset"; addr_tbl[37]=0x00473CE0;
+  sig[37]="void CCFileClass::Reset()"; rt[37]="void";
+  nm[38]="INIClass::Constructor"; addr_tbl[38]=0x00535AA0;
+  sig[38]="INIClass::Constructor"; rt[38]="";
+  nm[39]="CCINIClass::Constructor"; addr_tbl[39]=0x00535B30;
+  sig[39]="CCINIClass::Constructor"; rt[39]="";
+  nm[40]="CCINIClass::Load"; addr_tbl[40]=0x004741F0;
+  sig[40]="bool CCINIClass::Load(CCFileClass* file, bool unk1, bool unk2)"; rt[40]="bool";
+  nm[41]="MixFileClass::Bootstrap"; addr_tbl[41]=0x005301A0;
+  sig[41]="bool MixFileClass::Bootstrap()"; rt[41]="bool";
 }
 struct InitHookNames { InitHookNames() { NN(); } };
 static InitHookNames _init;
 static int I(DWORD x){static DWORD A[]={
-  0x007BAF90,
   0x007BAF10,
+  0x00480110,
   0};for(int i=0;A[i];++i)if(A[i]==x)return i;return -1;}
-static void FI_XSurface_PutPixel(std::ostream& os){
+static void FI_XSurface_GetPixelAtCoords(std::ostream& os){
   os<<"this="<<"0x"<<std::hex<<in[0].c;
-  static const char* ty_XSurface_PutPixel[]={"const Point2D&","uint16_t","const RectangleStruct&"};
-  static int arr_XSurface_PutPixel[]={0,0,0};
-  os<<" point(Stack)="; Fmt(os,ty_XSurface_PutPixel[0],in[0].stk0);
-  os<<" color(Stack)="; Fmt(os,ty_XSurface_PutPixel[1],in[0].stk1);
-  os<<" clip_rect(Stack)="; Fmt(os,ty_XSurface_PutPixel[2],in[0].stk2);
+  static const char* ty_XSurface_GetPixelAtCoords[]={"const Point2D&","const RectangleStruct&"};
+  static int arr_XSurface_GetPixelAtCoords[]={0,0};
+  os<<" point(Stack)="; Fmt(os,ty_XSurface_GetPixelAtCoords[0],in[0].stk0);
+  os<<" clip_rect(Stack)="; Fmt(os,ty_XSurface_GetPixelAtCoords[1],in[0].stk1);
   os<<"\r\n";
 }
 
-static void FI_XSurface_GetPixelAtCoords(std::ostream& os){
+static void FI_BuildingClass_CalcDrawPos(std::ostream& os){
   os<<"this="<<"0x"<<std::hex<<in[1].c;
-  static const char* ty_XSurface_GetPixelAtCoords[]={"const Point2D&","const RectangleStruct&"};
-  static int arr_XSurface_GetPixelAtCoords[]={0,0};
-  os<<" point(Stack)="; Fmt(os,ty_XSurface_GetPixelAtCoords[0],in[1].stk0);
-  os<<" clip_rect(Stack)="; Fmt(os,ty_XSurface_GetPixelAtCoords[1],in[1].stk1);
+  static const char* ty_BuildingClass_CalcDrawPos[]={"Point2D*"};
+  static int arr_BuildingClass_CalcDrawPos[]={0};
+  os<<" out(Stack)="; Fmt(os,ty_BuildingClass_CalcDrawPos[0],in[1].stk0);
   os<<"\r\n";
 }
 
 static void FI(int i, std::ostream& os){switch(i){
-  case 0:FI_XSurface_PutPixel(os);break;
-  case 1:FI_XSurface_GetPixelAtCoords(os);break;
+  case 0:FI_XSurface_GetPixelAtCoords(os);break;
+  case 1:FI_BuildingClass_CalcDrawPos(os);break;
   default:os<<"  Input: ???\r\n";break;}}
 
 static DWORD CallRE(int i){
   auto&V=in[i];
   switch(i){
-    case 0: return RE_XSurface_PutPixel(V.c, V.stk0, V.stk1, V.stk2);
-    case 1: return RE_XSurface_GetPixelAtCoords(V.c, V.stk0, V.stk1);
+    case 0: return RE_XSurface_GetPixelAtCoords(V.c, V.stk0, V.stk1);
+    case 1: return RE_BuildingClass_CalcDrawPos(V.c, V.stk0);
     default: return 0;
   }
 }
@@ -14620,6 +14620,7 @@ static void ensure_sections(){
   SecApp(sec_none,&sec_none_len,"[bool ClipLine(int start[2], int end[2], int clip_rect[4])-0x007BC2B0]\r\n");
   SecApp(sec_none,&sec_none_len,"[bool XSurface::SetPixel(const Point2D& point, uint32_t color)-0x007BAEB0]\r\n");
   SecApp(sec_none,&sec_none_len,"[uint32_t XSurface::GetPixel(const Point2D& point)-0x007BAE60]\r\n");
+  SecApp(sec_none,&sec_none_len,"[bool XSurface::PutPixel(const Point2D& point, uint16_t color, const RectangleStruct& clip_rect)-0x007BAF90]\r\n");
   SecApp(sec_none,&sec_none_len,"[bool XSurface::WalkLine(const Point2D& start, const Point2D& end, void (*callback)-0x007BAB90]\r\n");
   SecApp(sec_none,&sec_none_len,"[bool XSurface::DrawLineEx(const RectangleStruct& clip_rect, const Point2D& start, const Point2D& end, uint32_t color)-0x007BA610]\r\n");
   SecApp(sec_none,&sec_none_len,"[bool XSurface::DrawLine(const Point2D& start, const Point2D& end, uint32_t color)-0x007BA5E0]\r\n");
@@ -14762,6 +14763,11 @@ static void rebuild_none(){
     if(!called) SecApp(sec_none,&sec_none_len,"[uint32_t XSurface::GetPixel(const Point2D& point)-0x007BAE60]\r\n"); }
   { int called=0;
     for(int j=0;j<2;j++){
+      if(addr_tbl[j]==0x007BAF90&&ctr[j]>0) called=1;
+    }
+    if(!called) SecApp(sec_none,&sec_none_len,"[bool XSurface::PutPixel(const Point2D& point, uint16_t color, const RectangleStruct& clip_rect)-0x007BAF90]\r\n"); }
+  { int called=0;
+    for(int j=0;j<2;j++){
       if(addr_tbl[j]==0x007BAB90&&ctr[j]>0) called=1;
     }
     if(!called) SecApp(sec_none,&sec_none_len,"[bool XSurface::WalkLine(const Point2D& start, const Point2D& end, void (*callback)-0x007BAB90]\r\n"); }
@@ -14838,8 +14844,8 @@ static void rebuild_none(){
   for(int j=0;j<2;j++){
     if(ctr[j]==0){
       int already=0;
-      unsigned na_tbl[39]={7113792,4412848,4864208,4771968,6024512,5444256,7710672,5980336,5421664,5624672,5623760,4769968,5429664,4771008,5426544,5439488,5445248,6126816,4260448,6243488,4332384,8110768,8105648,8105568,8104848,8103440,8103392,8104128,8108720,8105408,8105360,8106832,4668496,4864144,4668640,5462688,5462832,4669936,5439904};
-      for(int k=0;k<39;k++) if(addr_tbl[j]==na_tbl[k]) already=1;
+      unsigned na_tbl[40]={7113792,4412848,4864208,4771968,6024512,5444256,7710672,5980336,5421664,5624672,5623760,4769968,5429664,4771008,5426544,5439488,5445248,6126816,4260448,6243488,4332384,8110768,8105648,8105568,8105872,8104848,8103440,8103392,8104128,8108720,8105408,8105360,8106832,4668496,4864144,4668640,5462688,5462832,4669936,5439904};
+      for(int k=0;k<40;k++) if(addr_tbl[j]==na_tbl[k]) already=1;
       if(!already){
         const char* s=sig[j];
         if(s&&*s){
@@ -14879,24 +14885,6 @@ static void write_entry(char tag, int i, DWORD addr, DWORD re, DWORD orig, DWORD
 // Final flush on DLL unload (no export needed - static destructor)
 static struct FinalFlush{ ~FinalFlush(){ if(h!=INVALID_HANDLE_VALUE){flush_full();CloseHandle(h);h=INVALID_HANDLE_VALUE;} } } _final_flush;
 
-// XSurface::PutPixel @ 0x7baf90 (thiscall) mode=Inject
-// XSurface::PutPixel: pixel write + bounds
-DEFINE_HOOK(0x7BAF90, Rev_XSurface_PutPixel, 0x5)
-{
-  int idx=I(0x7BAF90);
-  auto&V=in[idx];
-  V.a=R->EAX();V.c=R->ECX();V.d=R->EDX();
-  V.b=R->EBX();V.si=R->ESI();V.di=R->EDI();
-  V.bp=R->EBP();V.sp=R->ESP();
-  V.stk0=R->Stack<DWORD>(4);V.stk1=R->Stack<DWORD>(8);
-  V.stk2=R->Stack<DWORD>(12);V.stk3=R->Stack<DWORD>(16);
-  if(shadow::g_re_depth>0) return 0;
-  auto*s=shadow::GetSlot();
-  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x7BAF90;s->depth=d+1;}
-  R->Stack(0,(DWORD)&PostProcStub);
-  return 0;
-}
-
 // XSurface::GetPixelAtCoords @ 0x7baf10 (thiscall) mode=Inject
 // XSurface::GetPixelAtCoords: pixel read + bounds
 DEFINE_HOOK(0x7BAF10, Rev_XSurface_GetPixelAtCoords, 0x6)
@@ -14911,6 +14899,28 @@ DEFINE_HOOK(0x7BAF10, Rev_XSurface_GetPixelAtCoords, 0x6)
   if(shadow::g_re_depth>0) return 0;
   auto*s=shadow::GetSlot();
   int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x7BAF10;s->depth=d+1;}
+  R->Stack(0,(DWORD)&PostProcStub);
+  return 0;
+}
+
+// BuildingClass::CalcDrawPos @ 0x480110 (thiscall) mode=Inject
+// BuildingClass::CalcDrawPos: building draw position
+DEFINE_HOOK(0x480110, Rev_BuildingClass_CalcDrawPos, 0x8)
+{
+  int idx=I(0x480110);
+  auto&V=in[idx];
+  V.a=R->EAX();V.c=R->ECX();V.d=R->EDX();
+  V.b=R->EBX();V.si=R->ESI();V.di=R->EDI();
+  V.bp=R->EBP();V.sp=R->ESP();
+  V.stk0=R->Stack<DWORD>(4);V.stk1=R->Stack<DWORD>(8);
+  V.stk2=R->Stack<DWORD>(12);V.stk3=R->Stack<DWORD>(16);
+  if(GetCurrentThreadId()!=shadow::g_owner_tid) return 0;
+  if(shadow::g_re_depth>0) return 0;
+  auto*s=shadow::GetSlot();
+  if(s&&s->txn){s->txn->Discard();delete s->txn;s->txn=nullptr;++shadow::g_orphan_count;}
+  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x480110;s->depth=d+1;}
+  auto* txn = new shadow::ShadowTransaction();
+  txn->Begin();
   R->Stack(0,(DWORD)&PostProcStub);
   return 0;
 }
