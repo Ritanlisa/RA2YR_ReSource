@@ -14905,7 +14905,7 @@ DEFINE_HOOK(0x7BAF10, Rev_XSurface_GetPixelAtCoords, 0x6)
 
 // BuildingClass::CalcDrawPos @ 0x480110 (thiscall) mode=Inject
 // BuildingClass::CalcDrawPos: building draw position
-DEFINE_HOOK(0x480110, Rev_BuildingClass_CalcDrawPos, 0x8)
+DEFINE_HOOK(0x480110, Rev_BuildingClass_CalcDrawPos, 0x6)
 {
   int idx=I(0x480110);
   auto&V=in[idx];

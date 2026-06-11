@@ -344,7 +344,13 @@ Phase 4: 清理
 - 不要自动假设"EDX=vtable 就意味着虚调用失败"
 - 用 IDA 反汇编崩溃前指令，确认 EDX 的实际加载来源（`mov edx, [ecx]` vs `mov edx, [ecx+24h]` 含义完全不同）
 
-### M6: 当前 Capture 钩子（13 个）
+### M6: 自动化 hook_size 验证 (Capstone)
+
+- 每次 `gen_reverse_hooks.py` 运行时，对每个 Inject/Replace 钩子用 Capstone 解码目标地址指令
+- 自动计算正确的 `min_safe_size`（前 N 条完整指令字节总和≥5）
+- 与 functions.json 中声明值不一致时 → WARNING + 自动更新
+- 无需手动维护 hook_size——从二进制直接计算
+- 依赖：`capstone` Python 包，读取 `D:\RA2MD\gamemd.exe`
 
 | 地址 | 函数 | hook_size |
 |------|------|-----------|
