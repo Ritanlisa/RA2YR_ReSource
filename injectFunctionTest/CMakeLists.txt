@@ -108,6 +108,20 @@ if(Python3_FOUND)
         WORKING_DIRECTORY "${SCRIPTS_DIR}"
     )
 
+    # Step 1b: IDA extraction → gen/re_impl_generated.cpp
+    # Extracts decompiled pseudocode from IDA for all Inject-mode functions.
+    # Falls back to cached file when IDA is unavailable.
+    add_custom_command(
+        OUTPUT  "${GEN_DIR}/re_impl_generated.cpp"
+        COMMAND "${Python3_EXECUTABLE}" "${SCRIPTS_DIR}/ida_gen_re_impl.py"
+        DEPENDS
+            "${SCRIPTS_DIR}/ida_gen_re_impl.py"
+            "${SCRIPTS_DIR}/functions.json"
+            "${SCRIPTS_DIR}/gen_re_impl.py"
+        COMMENT "Extracting IDA decompiled implementations..."
+        WORKING_DIRECTORY "${SCRIPTS_DIR}"
+    )
+
     # Step 2: Generate hook code → gen/reverse_hooks.cpp + check + re_impl
     set(GEN_OUTPUTS
         "${GEN_DIR}/reverse_hooks.cpp"
@@ -122,6 +136,7 @@ if(Python3_FOUND)
             "${SCRIPTS_DIR}/gen_re_impl.py"
             "${SCRIPTS_DIR}/functions.json"
             "${SCRIPTS_DIR}/idempotent_results.json"
+            "${GEN_DIR}/re_impl_generated.cpp"
             ${REVERSE_SOURCES}
         COMMENT "Generating REVERSE hook code..."
         WORKING_DIRECTORY "${SCRIPTS_DIR}"
