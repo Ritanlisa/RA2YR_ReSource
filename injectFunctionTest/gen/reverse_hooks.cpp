@@ -14849,6 +14849,7 @@ DEFINE_HOOK(0x7BAB90, Rev_XSurface_WalkLine, 0x5)
   V.bp=R->EBP();V.sp=R->ESP();
   V.stk0=R->Stack<DWORD>(4);V.stk1=R->Stack<DWORD>(8);
   V.stk2=R->Stack<DWORD>(12);V.stk3=R->Stack<DWORD>(16);
+  if(GetCurrentThreadId()!=shadow::g_owner_tid) return 0;
   if(shadow::g_re_depth>0) return 0;
   auto*s=shadow::GetSlot();
   int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x7BAB90;s->depth=d+1;}
@@ -14867,6 +14868,7 @@ DEFINE_HOOK(0x7BA610, Rev_XSurface_DrawLineEx, 0x6)
   V.bp=R->EBP();V.sp=R->ESP();
   V.stk0=R->Stack<DWORD>(4);V.stk1=R->Stack<DWORD>(8);
   V.stk2=R->Stack<DWORD>(12);V.stk3=R->Stack<DWORD>(16);
+  if(GetCurrentThreadId()!=shadow::g_owner_tid) return 0;
   if(shadow::g_re_depth>0) return 0;
   auto*s=shadow::GetSlot();
   int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x7BA610;s->depth=d+1;}
@@ -14885,6 +14887,7 @@ DEFINE_HOOK(0x7BA5E0, Rev_XSurface_DrawLine, 0x7)
   V.bp=R->EBP();V.sp=R->ESP();
   V.stk0=R->Stack<DWORD>(4);V.stk1=R->Stack<DWORD>(8);
   V.stk2=R->Stack<DWORD>(12);V.stk3=R->Stack<DWORD>(16);
+  if(GetCurrentThreadId()!=shadow::g_owner_tid) return 0;
   if(shadow::g_re_depth>0) return 0;
   auto*s=shadow::GetSlot();
   int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x7BA5E0;s->depth=d+1;}
@@ -14903,6 +14906,7 @@ DEFINE_HOOK(0x7BAD90, Rev_XSurface_DrawRect, 0x7)
   V.bp=R->EBP();V.sp=R->ESP();
   V.stk0=R->Stack<DWORD>(4);V.stk1=R->Stack<DWORD>(8);
   V.stk2=R->Stack<DWORD>(12);V.stk3=R->Stack<DWORD>(16);
+  if(GetCurrentThreadId()!=shadow::g_owner_tid) return 0;
   if(shadow::g_re_depth>0) return 0;
   auto*s=shadow::GetSlot();
   int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x7BAD90;s->depth=d+1;}

@@ -850,6 +850,7 @@ def generate(markers, functions, fn_map, none_markers=None):
         elif mode == "Inject":
             is_idem = m.get('is_idem', False)
             if is_idem:
+                w('  if(GetCurrentThreadId()!=shadow::g_owner_tid) return 0;')
                 w(f'  if(shadow::g_re_depth>0) return 0;')
                 w('  auto*s=shadow::GetSlot();')
                 w(f'  int d=s->depth; if(d<16){{s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x{ah};s->depth=d+1;}}')
