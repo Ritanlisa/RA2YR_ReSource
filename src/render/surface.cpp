@@ -1787,6 +1787,54 @@ bool XSurface::DrawEllipseOutline(
 
 // --- DSurface line drawing (Batch D) ---
 
+// ============================================================
+// Static helpers for DrawGradientLine — 16-bit color packing
+// ============================================================
+
+// Pack RGB888 to 16-bit using DDraw pixel format globals.
+// Shifts 8-bit channels down to surface bit depth, then to bit positions.
+static uint16_t PackColor(uint8_t r, uint8_t g, uint8_t b)
+{
+    int mr = g_BitMask_Red,   mg = g_BitMask_Green,   mb = g_BitMask_Blue;
+    int sr = g_BitShift_Red,  sg = g_BitShift_Green,  sb = g_BitShift_Blue;
+
+    uint16_t rv = mr > 0 ? static_cast<uint16_t>((r >> (8 - mr)) << sr) : 0;
+    uint16_t gv = mg > 0 ? static_cast<uint16_t>((g >> (8 - mg)) << sg) : 0;
+    uint16_t bv = mb > 0 ? static_cast<uint16_t>((b >> (8 - mb)) << sb) : 0;
+    return rv | gv | bv;
+}
+
+// Interpolate between two 16-bit packed colors by unpacking to RGB888,
+// linearly interpolating per channel, and repacking.
+// t is clamped to [0,1] range.
+static uint16_t LerpColor(uint16_t a, uint16_t b, float t)
+{
+    int mr = g_BitMask_Red,   mg = g_BitMask_Green,   mb = g_BitMask_Blue;
+    int sr = g_BitShift_Red,  sg = g_BitShift_Green,  sb = g_BitShift_Blue;
+
+    // Extract a single channel from a 16-bit packed color, expand to 8-bit
+    auto extract = [](uint16_t c, int shift, int bits) -> uint8_t {
+        if (bits <= 0) return 0;
+        int val = (c >> shift) & ((1 << bits) - 1);
+        // Bit-replicate: 5-bit→8-bit: (v<<3)|(v>>2); 6-bit→8-bit: (v<<2)|(v>>4)
+        return static_cast<uint8_t>((val << (8 - bits)) | (val >> (2 * bits - 8)));
+    };
+
+    uint8_t ar = extract(a, sr, mr);
+    uint8_t ag = extract(a, sg, mg);
+    uint8_t ab = extract(a, sb, mb);
+    uint8_t br = extract(b, sr, mr);
+    uint8_t bg = extract(b, sg, mg);
+    uint8_t bb = extract(b, sb, mb);
+
+    float inv = 1.0f - t;
+    uint8_t lr = static_cast<uint8_t>(ar * inv + br * t + 0.5f);
+    uint8_t lg = static_cast<uint8_t>(ag * inv + bg * t + 0.5f);
+    uint8_t lb = static_cast<uint8_t>(ab * inv + bb * t + 0.5f);
+
+    return PackColor(lr, lg, lb);
+}
+
 // IDA: 0x4BF750 -- DSurface::DrawGradientLine (1499B)
 // vtable[36] 0x90 -- line with palette gradient interpolation
 bool DSurface::DrawGradientLine(
@@ -1794,22 +1842,30 @@ bool DSurface::DrawGradientLine(
     int palette_idx, int fade_val,
     float* gradient_start, float* gradient_step)
 {
+    // --- Only 16bpp surfaces are supported ---
+    if (GetBytesPerPixel() != 2)
+        return false;
+
+    // --- Get surface rect and clip it to itself ---
     RectangleStruct surf_rect;
     GetRect(&surf_rect);
 
     RectangleStruct clipped;
     ClipRectIntersection(&clipped, &surf_rect, &surf_rect, nullptr, nullptr);
 
+    // --- Adjust coordinates relative to clipped surface origin ---
     int sx = start.X + clipped.X;
     int sy = start.Y + clipped.Y;
     int ex = end.X + clipped.X;
     int ey = end.Y + clipped.Y;
 
+    // --- Cohen-Sutherland line clipping ---
     int p1[2] = { sx, sy };
     int p2[2] = { ex, ey };
     if (!ClipLine(p1, p2, reinterpret_cast<int*>(&clipped)))
         return false;
 
+    // --- Ensure start is left of end ---
     if (p1[0] > p2[0])
     {
         int tx = p1[0], ty = p1[1];
@@ -1819,131 +1875,125 @@ bool DSurface::DrawGradientLine(
 
     int x1 = p1[0], y1 = p1[1];
     int x2 = p2[0], y2 = p2[1];
-    int dx = x2 - x1;
-    int ady = (y2 >= y1) ? (y2 - y1) : (y1 - y2);
 
-    int bpp = GetBytesPerPixel();
+    // --- Cast input colors to 16-bit ---
+    uint16_t clr_start = static_cast<uint16_t>(palette_idx);
+    uint16_t clr_end   = static_cast<uint16_t>(fade_val);
+
+    // --- Lock surface at start pixel ---
     void* buf = Lock(x1, y1);
     if (!buf)
         return false;
 
-    int pitch = GetPitch();
-    float grad = gradient_start ? *gradient_start : 0.0f;
-    float step = gradient_step ? *gradient_step : 0.0f;
+    int  pitch  = GetPitch();
+    auto* pixels = static_cast<uint16_t*>(buf);
 
+    // --- Horizontal line ---
     if (y1 == y2)
     {
-        int count = dx + 1;
-        if (bpp == 1)
+        int count = x2 - x1 + 1;
+        for (int i = 0; i < count; ++i)
         {
-            auto* p = static_cast<uint8_t*>(buf);
-            for (int i = 0; i < count; ++i, grad += step)
-                p[i] = static_cast<uint8_t>(palette_idx);
-        }
-        else
-        {
-            auto* p = static_cast<uint16_t*>(buf);
-            for (int i = 0; i < count; ++i, grad += step)
-                p[i] = static_cast<uint16_t>(palette_idx);
+            uint16_t pix = LerpColor(clr_start, clr_end, *gradient_step);
+            pixels[i] = pix;
+
+            // Bounce oscillator: advance t, cap to [0,1], flip direction
+            float t = *gradient_start + *gradient_step;
+            *gradient_step = t;
+            if (t > 1.0f) { *gradient_step = 1.0f; *gradient_start = -*gradient_start; }
+            if (t < 0.0f) { *gradient_step = 0.0f; *gradient_start = -*gradient_start; }
         }
         Unlock();
-        if (gradient_start) *gradient_start = grad;
         return true;
     }
 
+    // --- Vertical line ---
     if (x1 == x2)
     {
-        int y_start = (y1 <= y2) ? y1 : y2;
-        int y_count = (y1 <= y2) ? (y2 - y1) : (y1 - y2);
-        int y_step = (y2 >= y1) ? pitch : -pitch;
+        int y_count = (y2 >= y1) ? (y2 - y1) : (y1 - y2);
+        int y_step  = (y2 >= y1) ? pitch : -pitch;
 
-        if (bpp == 1)
+        auto* p = pixels;
+        for (int i = 0; i <= y_count; ++i)
         {
-            auto* p = static_cast<uint8_t*>(buf);
-            for (int i = 0; i <= y_count; ++i, grad += step)
-            {
-                *p = static_cast<uint8_t>(palette_idx);
-                p = reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(p) + y_step);
-            }
-        }
-        else
-        {
-            auto* p = static_cast<uint16_t*>(buf);
-            int row_off = y_step / 2;
-            for (int i = 0; i <= y_count; ++i, grad += step)
-            {
-                *p = static_cast<uint16_t>(palette_idx);
-                p += row_off;
-            }
+            *p = LerpColor(clr_start, clr_end, *gradient_step);
+
+            // Bounce oscillator
+            float t = *gradient_start + *gradient_step;
+            *gradient_step = t;
+            if (t > 1.0f) { *gradient_step = 1.0f; *gradient_start = -*gradient_start; }
+            if (t < 0.0f) { *gradient_step = 0.0f; *gradient_start = -*gradient_start; }
+
+            p = reinterpret_cast<uint16_t*>(reinterpret_cast<char*>(p) + y_step);
         }
         Unlock();
-        if (gradient_start) *gradient_start = grad;
         return true;
     }
 
-    if (dx >= ady)
-    {
-        int y_step = (y2 >= y1) ? 1 : -1;
-        int d = 2 * ady - dx;
-        int cy = y1;
+    // --- Bresenham angled line ---
+    int dx    = x2 - x1;
+    int dy    = y2 - y1;
+    int step_y = 1;
+    int abs_dy = dy;
+    if (dy < 0) { abs_dy = -dy; step_y = -1; }
 
-        if (bpp == 1)
+    if (dx >= abs_dy)
+    {
+        // x-major
+        int d     = 2 * abs_dy - dx;
+        int cur_x = 0;
+        int row_step = step_y * (pitch / 2);
+
+        auto* p = pixels;
+        for (int j = 0; j <= dx; ++j)
         {
-            auto* p = static_cast<uint8_t*>(buf);
-            for (int x = 0; x <= dx; ++x, grad += step)
+            p[cur_x] = LerpColor(clr_start, clr_end, *gradient_step);
+
+            // Bounce oscillator
+            float t = *gradient_start + *gradient_step;
+            *gradient_step = t;
+            if (t > 1.0f) { *gradient_step = 1.0f; *gradient_start = -*gradient_start; }
+            if (t < 0.0f) { *gradient_step = 0.0f; *gradient_start = -*gradient_start; }
+
+            if (d > 0)
             {
-                p[x] = static_cast<uint8_t>(palette_idx);
-                if (d > 0) { cy += y_step; p = reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(p) + y_step * pitch); d -= 2 * dx; }
-                d += 2 * ady;
+                d -= 2 * dx;
+                p += row_step;
             }
-        }
-        else
-        {
-            auto* p = static_cast<uint16_t*>(buf);
-            int row_step = y_step * (pitch / 2);
-            for (int x = 0; x <= dx; ++x, grad += step)
-            {
-                p[x] = static_cast<uint16_t>(palette_idx);
-                if (d > 0) { cy += y_step; p += row_step; d -= 2 * dx; }
-                d += 2 * ady;
-            }
+            d += 2 * abs_dy;
+            ++cur_x;
         }
     }
     else
     {
-        int y_start = (y1 <= y2) ? y1 : y2;
-        int y_end   = (y1 <= y2) ? y2 : y1;
-        int d = 2 * dx - ady;
-        int cx = 0;
-        int y_dir = (y2 >= y1) ? pitch : -pitch;
+        // y-major
+        int d       = 2 * dx - abs_dy;
+        int cur_x   = 0;
+        int y_step  = (y2 >= y1) ? pitch : -pitch;
+        int count   = abs_dy + 1;
 
-        if (bpp == 1)
+        auto* p = pixels;
+        for (; count > 0; --count)
         {
-            auto* p = static_cast<uint8_t*>(buf);
-            for (int y = y_start; y <= y_end; ++y, grad += step)
+            p[cur_x] = LerpColor(clr_start, clr_end, *gradient_step);
+
+            // Bounce oscillator
+            float t = *gradient_start + *gradient_step;
+            *gradient_step = t;
+            if (t > 1.0f) { *gradient_step = 1.0f; *gradient_start = -*gradient_start; }
+            if (t < 0.0f) { *gradient_step = 0.0f; *gradient_start = -*gradient_start; }
+
+            if (d > 0)
             {
-                p[cx] = static_cast<uint8_t>(palette_idx);
-                if (d > 0) { ++cx; d -= 2 * ady; }
-                d += 2 * dx;
-                p = reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(p) + y_dir);
+                ++cur_x;
+                d -= 2 * abs_dy;
             }
-        }
-        else
-        {
-            auto* p = static_cast<uint16_t*>(buf);
-            int row_off = y_dir / 2;
-            for (int y = y_start; y <= y_end; ++y, grad += step)
-            {
-                p[cx] = static_cast<uint16_t>(palette_idx);
-                if (d > 0) { ++cx; d -= 2 * ady; }
-                d += 2 * dx;
-                p += row_off;
-            }
+            d += 2 * dx;
+            p = reinterpret_cast<uint16_t*>(reinterpret_cast<char*>(p) + y_step);
         }
     }
 
     Unlock();
-    if (gradient_start) *gradient_start = grad;
     return true;
 }
 
