@@ -19,6 +19,9 @@
 // ============================================================
 // REPLACE hook: intercept DSurface::Blit, run tracker, skip original
 // ============================================================
+#if 0
+// Blit_Tracker REPLACE hook disabled — crashes at startup
+// (Syringe trampoline on 0x4BB0D0 overwrites sub esp, 0x88)
 DEFINE_HOOK(0x4BB0D0, Blit_Tracker, 0x6)
 {
     // Read parameters from Syringe saved register state
@@ -42,6 +45,7 @@ DEFINE_HOOK(0x4BB0D0, Blit_Tracker, 0x6)
     // This bypasses the original function entirely — no trampoline executed.
     return R->Stack<DWORD>(0);
 }
+#endif
 
 namespace render_hooks {
     void Install() {}
