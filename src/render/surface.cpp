@@ -109,7 +109,7 @@ RectangleStruct* ClipRectIntersection(
 // fastcall: ECX=start(double[2]), EDX=end(double[2]), [ESP+4]=clip_rect(int[4])
 // NOTE: start/end are double[2] in the binary (IDA uses fld, not fild).
 // clip_rect is int[4] (IDA uses fild). Source uses int* for compat.
-REVERSE(0x7bc2b0, "ClipLine: Cohen-Sutherland line clip", "Inject")
+REVERSE(0x7bc2b0, "ClipLine: Cohen-Sutherland line clip", "None")
 bool ClipLine(int start[2], int end[2], int clip_rect[4])
 {
     int clip_x  = clip_rect[0];
@@ -1174,7 +1174,7 @@ Point2D Surface::DrawText(
 
 // IDA: 0x7BAEB0 -- XSurface::SetPixel (89B)
 // vtable[9]  0x24 -- Lock(point) -> check BPP -> write pixel -> Unlock
-REVERSE(0x7baeb0, "XSurface::SetPixel: pixel write", "Inject")
+REVERSE(0x7baeb0, "XSurface::SetPixel: pixel write", "None")
 bool XSurface::SetPixel(const Point2D& point, uint32_t color)
 {
     void* buf = Lock(point.X, point.Y);
@@ -1192,7 +1192,7 @@ bool XSurface::SetPixel(const Point2D& point, uint32_t color)
 
 // IDA: 0x7BAE60 -- XSurface::GetPixel (80B)
 // vtable[10] 0x28 -- Lock(point) -> check BPP -> read pixel -> Unlock
-REVERSE(0x7bae60, "XSurface::GetPixel: pixel read", "Inject")
+REVERSE(0x7bae60, "XSurface::GetPixel: pixel read", "None")
 uint32_t XSurface::GetPixel(const Point2D& point)
 {
     uint32_t result = 0;
@@ -1708,7 +1708,7 @@ bool XSurface::DrawDashedLine(
 
 // IDA: 0x7BBAB0 -- XSurface::Fill (51B)
 // vtable[6] 0x18 -- fill entire surface with single color
-REVERSE(0x7bbab0, "XSurface::Fill: fill surface", "Inject")
+REVERSE(0x7bbab0, "XSurface::Fill: fill surface", "None")
 bool XSurface::Fill(uint32_t color)
 {
     RectangleStruct rect;
@@ -1718,7 +1718,7 @@ bool XSurface::Fill(uint32_t color)
 
 // IDA: 0x7BADC0 -- XSurface::DrawRectEx (158B)
 // vtable[21] 0x54 -- rectangle outline drawing 4 edges via DrawLineEx
-REVERSE(0x7badc0, "XSurface::DrawRectEx: rect outline", "Inject")
+REVERSE(0x7badc0, "XSurface::DrawRectEx: rect outline", "None")
 bool XSurface::DrawRectEx(
     const RectangleStruct& clip_rect,
     const RectangleStruct& draw_rect,
