@@ -35,6 +35,13 @@ public:
     virtual AbstractType __stdcall WhatAmI() const override { return AbstractType::Campaign; }
     virtual int Size() const override { return 0; }
 
+    // IDA: 0x46ccd0 — load campaign data from INI section
+    bool LoadFromINIList(CCINIClass* ini);
+    // IDA: 0x49e400 — search missions by scenario name
+    int FindMission(const char* name);
+    // IDA: 0x46cfc0 — power/checksum stats
+    int Stat(void* checksum_ctx);
+    
     static void CreateFromINIList(CCINIClass* ini);
     static int FindIndex(const char* name);
 
