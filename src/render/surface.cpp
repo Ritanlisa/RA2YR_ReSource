@@ -285,7 +285,7 @@ DSurface::~DSurface()
 
 // IDA: 0x4C1A90 — DSurface::BlitWhole (23B) thin wrapper
 // Rect::Set(0,0,0,0) → Blit(zero, zero, src, zero, zero, option1, option2)
-REVERSE(0x4C1A90, "DSurface::BlitWhole: Thin wrapper around Blit", "Inject")
+REVERSE(0x4C1A90, "DSurface::BlitWhole: Thin wrapper around Blit", "None")
 bool DSurface::BlitWhole(class Surface* src, bool option1, bool option2)
 {
     RectangleStruct zero = {};
@@ -295,7 +295,7 @@ bool DSurface::BlitWhole(class Surface* src, bool option1, bool option2)
 // IDA: 0x4BB080 — DSurface::BlitPart (75B)
 // If HW blit possible (both surfaces exist, BPP/pitch match) → Blit
 // Otherwise fallback to XSurface::BlitPart (software path)
-REVERSE(0x4BB080, "DSurface::BlitPart: HW/SW blit with coordinate clipping", "Inject")
+REVERSE(0x4BB080, "DSurface::BlitPart: HW/SW blit with coordinate clipping", "None")
 bool DSurface::BlitPart(
     const RectangleStruct& dest_rect, class Surface* src,
     const RectangleStruct& src_rect, bool option1, bool option2)
@@ -689,7 +689,7 @@ char DSurface::BlitTracker(
 // DSurface::FillRectEx — IDA: 0x4BB620 (526B)
 // Hardware/software color fill with coordinate clipping.
 // ============================================================
-REVERSE(0x4BB620, "DSurface::FillRectEx: Hardware/software color fill with clipping", "Inject")
+REVERSE(0x4BB620, "DSurface::FillRectEx: Hardware/software color fill with clipping", "None")
 bool DSurface::FillRectEx(
     const RectangleStruct& clip_rect,
     const RectangleStruct& fill_rect, uint32_t color)
@@ -765,7 +765,7 @@ bool DSurface::FillRectEx(
 
 // IDA: 0x4BB5F0 — DSurface::FillRect (43B) thin wrapper
 // GetRect() → FillRectEx(clip, fill_rect, color)
-REVERSE(0x4BB5F0, "DSurface::FillRect: Fill rectangle with color", "Inject")
+REVERSE(0x4BB5F0, "DSurface::FillRect: Fill rectangle with color", "None")
 bool DSurface::FillRect(const RectangleStruct& fill_rect, uint32_t color)
 {
     RectangleStruct clip;
@@ -780,7 +780,7 @@ bool DSurface::FillRect(const RectangleStruct& fill_rect, uint32_t color)
 // bit-shift/mask constants, then blends each pixel:
 //   result = (src_alpha * src_ch + dst_alpha * dst_ch) >> 8
 // Opacity 0-100 clamped to 100, scaled to 0-255.
-REVERSE(0x4BB830, "DSurface::FillRectWithFlags: CPU pixel fill with alpha blending", "Inject")
+REVERSE(0x4BB830, "DSurface::FillRectWithFlags: CPU pixel fill with alpha blending", "None")
 bool DSurface::FillRectWithFlags(
     const RectangleStruct& clip_rect,
     const ColorStruct& color,
@@ -887,7 +887,7 @@ bool DSurface::FillRectWithFlags(
 // vtable[23] — Lost-surface recovery: re-locks after Restore via Lock(0,0)+Unlock() cycle.
 // First lock path calls IDirectDrawSurface7::Lock(vtable[25]) and caches desc in SurfaceDesc.
 // Nested lock path just increments LockCount and computes byte offset.
-REVERSE(0x4BAD80, "DSurface::Lock: Lock surface for CPU access", "Inject")
+REVERSE(0x4BAD80, "DSurface::Lock: Lock surface for CPU access", "None")
 void* DSurface::Lock(int x, int y)
 {
     // IDA: if (!g_DDraw_Initialized && !g_DDraw_Active) return 0
@@ -960,7 +960,7 @@ void* DSurface::Lock(int x, int y)
 // IDA: 0x4BAF40 -- DSurface::Unlock (154B)
 // vtable[24] — Decrements lock count; on last unlock releases DDraw surface.
 // Also handles lost-surface recovery on unlock (re-lock cycle after Restore).
-REVERSE(0x4BAF40, "DSurface::Unlock: Release DDraw surface lock", "Inject")
+REVERSE(0x4BAF40, "DSurface::Unlock: Release DDraw surface lock", "None")
 bool DSurface::Unlock()
 {
     // IDA: check DDraw state (OR: proceed if either initialized or active)
@@ -1006,7 +1006,7 @@ bool DSurface::Unlock()
 
 // IDA: 0x4BAEC0 -- DSurface::CanLock (95B)
 // vtable[25] — Probes whether the surface can be locked via test-lock-then-unlock.
-REVERSE(0x4BAEC0, "DSurface::CanLock: Test if surface can be locked", "Inject")
+REVERSE(0x4BAEC0, "DSurface::CanLock: Test if surface can be locked", "None")
 bool DSurface::CanLock(uint32_t /*unk1*/, uint32_t /*unk2*/)
 {
     // IDA: already locked — can always lock again (nested)
@@ -1870,7 +1870,7 @@ static uint16_t LerpColor(uint16_t a, uint16_t b, float t)
 
 // IDA: 0x4BF750 -- DSurface::DrawGradientLine (1499B)
 // vtable[36] 0x90 -- line with palette gradient interpolation
-REVERSE(0x4BF750, "DSurface::DrawGradientLine: Line with palette gradient interpolation", "Inject")
+REVERSE(0x4BF750, "DSurface::DrawGradientLine: Line with palette gradient interpolation", "None")
 bool DSurface::DrawGradientLine(
     const Point2D& start, const Point2D& end,
     int palette_idx, int fade_val,
@@ -2038,7 +2038,7 @@ bool DSurface::DrawGradientLine(
 // fill_interior=true  → draw where zbuf==0
 // fill_interior=false → draw where zbuf!=0
 // ============================================================
-REVERSE(0x4C0E30, "DSurface::DrawStippledRect: Stippled rectangle with Z-buffer gating", "Inject")
+REVERSE(0x4C0E30, "DSurface::DrawStippledRect: Stippled rectangle with Z-buffer gating", "None")
 bool DSurface::DrawStippledRect(
     const Point2D& top_left, const Point2D& bottom_right,
     uint16_t color, bool fill_interior)
@@ -2268,7 +2268,7 @@ bool DSurface::DrawStippledRect(
 // Returns bool (success).  The binary also returns the updated
 // dash_offset in EAX but the C++ interface discards it.
 // ============================================================
-REVERSE(0x4C0750, "DSurface::DrawDashedLineStipple: Dashed line with Z-buffer stipple gating", "Inject")
+REVERSE(0x4C0750, "DSurface::DrawDashedLineStipple: Dashed line with Z-buffer stipple gating", "None")
 bool DSurface::DrawDashedLineStipple(
     const Point2D& start, const Point2D& end,
     uint16_t color, const uint8_t stipple[16],
