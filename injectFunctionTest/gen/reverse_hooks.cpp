@@ -6,26 +6,37 @@
 using namespace gamemd;
 extern "C" void PostProcStub();
 extern "C" DWORD RE_ClipLine(DWORD, DWORD, DWORD);
+extern "C" DWORD RE_DSurface_BlitWhole(DWORD, DWORD, DWORD, DWORD);
+extern "C" DWORD RE_DSurface_BlitPart(DWORD, DWORD, DWORD, DWORD, DWORD, DWORD);
+extern "C" DWORD RE_DSurface_FillRectEx(DWORD, DWORD, DWORD, DWORD);
+extern "C" DWORD RE_DSurface_FillRect(DWORD, DWORD, DWORD);
+extern "C" DWORD RE_DSurface_FillRectWithFlags(DWORD, DWORD, DWORD, DWORD);
+extern "C" DWORD RE_DSurface_Lock(DWORD, DWORD, DWORD);
+extern "C" DWORD RE_DSurface_Unlock(DWORD);
+extern "C" DWORD RE_DSurface_CanLock(DWORD);
 extern "C" DWORD RE_XSurface_SetPixel(DWORD, DWORD, DWORD);
 extern "C" DWORD RE_XSurface_GetPixel(DWORD, DWORD);
 extern "C" DWORD RE_XSurface_PutPixel(DWORD, DWORD, DWORD, DWORD);
 extern "C" DWORD RE_XSurface_GetPixelAtCoords(DWORD, DWORD, DWORD);
 extern "C" DWORD RE_XSurface_Fill(DWORD, DWORD);
 extern "C" DWORD RE_XSurface_DrawRectEx(DWORD, DWORD, DWORD, DWORD);
+extern "C" DWORD RE_DSurface_DrawGradientLine(DWORD, DWORD, DWORD, DWORD, DWORD, DWORD, DWORD);
+extern "C" DWORD RE_DSurface_DrawStippledRect(DWORD, DWORD, DWORD, DWORD, DWORD);
+extern "C" DWORD RE_DSurface_DrawDashedLineStipple(DWORD, DWORD, DWORD, DWORD, DWORD, DWORD, DWORD);
 
 static FILE* f = nullptr;
-static int ctr[7]={};
-static const char* nm[28]={};
-static DWORD addr_tbl[28]={};
-static const char* sig[28]={};
-static const char* rt[28]={};
-static bool is_cap[7]={};
-static bool has_diff[7]={};
-static S in[7]={};
+static int ctr[18]={};
+static const char* nm[39]={};
+static DWORD addr_tbl[39]={};
+static const char* sig[39]={};
+static const char* rt[39]={};
+static bool is_cap[18]={};
+static bool has_diff[18]={};
+static S in[18]={};
 #include "hook_template.hpp"
 
-static char fn_buf[7][FN_BUF_SZ]={0};
-static int  fn_buf_len[7]={0};
+static char fn_buf[18][FN_BUF_SZ]={0};
+static int  fn_buf_len[18]={0};
 static HANDLE h = INVALID_HANDLE_VALUE;
 // Helper: write string to per-function buffer
 static void FnBuf(int idx, const std::string& s){
@@ -36,65 +47,98 @@ static void FnBuf(int idx, const std::string& s){
 static void NN(){
   nm[0]="ClipLine"; addr_tbl[0]=0x007BC2B0; is_cap[0]=false;
   sig[0]="bool ClipLine(int start[2], int end[2], int clip_rect[4])"; rt[0]="bool";
-  nm[1]="XSurface::SetPixel"; addr_tbl[1]=0x007BAEB0; is_cap[1]=false;
-  sig[1]="bool XSurface::SetPixel(const Point2D& point, uint32_t color)"; rt[1]="bool";
-  nm[2]="XSurface::GetPixel"; addr_tbl[2]=0x007BAE60; is_cap[2]=false;
-  sig[2]="uint32_t XSurface::GetPixel(const Point2D& point)"; rt[2]="uint32_t";
-  nm[3]="XSurface::PutPixel"; addr_tbl[3]=0x007BAF90; is_cap[3]=false;
-  sig[3]="bool XSurface::PutPixel(const Point2D& point, uint16_t color, const RectangleStruct& clip_rect)"; rt[3]="bool";
-  nm[4]="XSurface::GetPixelAtCoords"; addr_tbl[4]=0x007BAF10; is_cap[4]=false;
-  sig[4]="uint16_t XSurface::GetPixelAtCoords(const Point2D& point, const RectangleStruct& clip_rect)"; rt[4]="uint16_t";
-  nm[5]="XSurface::Fill"; addr_tbl[5]=0x007BBAB0; is_cap[5]=false;
-  sig[5]="bool XSurface::Fill(uint32_t color)"; rt[5]="bool";
-  nm[6]="XSurface::DrawRectEx"; addr_tbl[6]=0x007BADC0; is_cap[6]=false;
-  sig[6]="bool XSurface::DrawRectEx(const RectangleStruct& clip_rect, const RectangleStruct& draw_rect, uint32_t color)"; rt[6]="bool";
-  nm[7]="Timer::GetTicks"; addr_tbl[7]=0x006C8C40;
-  sig[7]="int TimerGetTicks()"; rt[7]="int";
-  nm[8]="Palette::6BitTo16Bit"; addr_tbl[8]=0x004355B0;
-  sig[8]="int Palette6BitTo16Bit(int r, int g, int b)"; rt[8]="int";
-  nm[9]="LoadFileSHP"; addr_tbl[9]=0x004A38D0;
-  sig[9]="int LoadFileSHP(const char* filename)"; rt[9]="int";
-  nm[10]="Event::Dispatch"; addr_tbl[10]=0x0048D080;
-  sig[10]="void EventDispatchEx()"; rt[10]="void";
-  nm[11]="SearchMIXFile"; addr_tbl[11]=0x005B40B0;
-  sig[11]="const void* SearchMIXFile(const char* name)"; rt[11]="const void*";
-  nm[12]="InitGame"; addr_tbl[12]=0x0052BA60;
-  sig[12]="int InitGame(bool no_cd)"; rt[12]="int";
-  nm[13]="GameFrameLoop"; addr_tbl[13]=0x0055D360;
-  sig[13]="static bool GameFrameLoop()"; rt[13]="static bool";
-  nm[14]="GameFrameCheck"; addr_tbl[14]=0x0055CFD0;
-  sig[14]="static bool GameFrameCheck()"; rt[14]="static bool";
-  nm[15]="MainGameFrame"; addr_tbl[15]=0x0048C8B0;
-  sig[15]="static void MainGameFrame()"; rt[15]="static void";
-  nm[16]="MenuSelect"; addr_tbl[16]=0x0052D9A0;
-  sig[16]="char MenuSelect()"; rt[16]="char";
-  nm[17]="MainGame"; addr_tbl[17]=0x0048CCC0;
-  sig[17]="void MainGame()"; rt[17]="void";
-  nm[18]="LoadExpansionMixFiles"; addr_tbl[18]=0x00530000;
-  sig[18]="bool LoadExpansionMixFiles()"; rt[18]="bool";
-  nm[19]="AbstractClass::QueryInterface"; addr_tbl[19]=0x00410260;
-  sig[19]="HRESULT AbstractClass::QueryInterface(const IID& iid, void** ppv)"; rt[19]="HRESULT";
-  nm[20]="ClipRectIntersection"; addr_tbl[20]=0x00421B60;
-  sig[20]="RectangleStruct* ClipRectIntersection(RectangleStruct* result, const RectangleStruct* clip_rect, const RectangleStruct* src_rect, int* x_off, int* y_off)"; rt[20]="RectangleStruct*";
-  nm[21]="CCFileClass::Open"; addr_tbl[21]=0x00473C50;
-  sig[21]="bool CCFileClass::Open(const char* pFileName)"; rt[21]="bool";
-  nm[22]="CCFileClass::ReadEntireFile"; addr_tbl[22]=0x004A3890;
-  sig[22]="void* CCFileClass::ReadEntireFile()"; rt[22]="void*";
-  nm[23]="CCFileClass::Reset"; addr_tbl[23]=0x00473CE0;
-  sig[23]="void CCFileClass::Reset()"; rt[23]="void";
-  nm[24]="INIClass::Constructor"; addr_tbl[24]=0x00535AA0;
-  sig[24]="INIClass::INIClass()"; rt[24]="";
-  nm[25]="CCINIClass::Constructor"; addr_tbl[25]=0x00535B30;
-  sig[25]="CCINIClass::CCINIClass()"; rt[25]="";
-  nm[26]="CCINIClass::Load"; addr_tbl[26]=0x004741F0;
-  sig[26]="bool CCINIClass::Load(CCFileClass* file, bool unk1, bool unk2)"; rt[26]="bool";
-  nm[27]="MixFileClass::Bootstrap"; addr_tbl[27]=0x005301A0;
-  sig[27]="bool MixFileClass::Bootstrap()"; rt[27]="bool";
+  nm[1]="DSurface::BlitWhole"; addr_tbl[1]=0x004C1A90; is_cap[1]=false;
+  sig[1]="bool DSurface::BlitWhole(class Surface* src, bool option1, bool option2)"; rt[1]="bool";
+  nm[2]="DSurface::BlitPart"; addr_tbl[2]=0x004BB080; is_cap[2]=false;
+  sig[2]="bool DSurface::BlitPart(const RectangleStruct& dest_rect, class Surface* src, const RectangleStruct& src_rect, bool option1, bool option2)"; rt[2]="bool";
+  nm[3]="DSurface::FillRectEx"; addr_tbl[3]=0x004BB620; is_cap[3]=false;
+  sig[3]="bool DSurface::FillRectEx(const RectangleStruct& clip_rect, const RectangleStruct& fill_rect, uint32_t color)"; rt[3]="bool";
+  nm[4]="DSurface::FillRect"; addr_tbl[4]=0x004BB5F0; is_cap[4]=false;
+  sig[4]="bool DSurface::FillRect(const RectangleStruct& fill_rect, uint32_t color)"; rt[4]="bool";
+  nm[5]="DSurface::FillRectWithFlags"; addr_tbl[5]=0x004BB830; is_cap[5]=false;
+  sig[5]="bool DSurface::FillRectWithFlags(const RectangleStruct& clip_rect, const ColorStruct& color, int opacity_percent)"; rt[5]="bool";
+  nm[6]="DSurface::Lock"; addr_tbl[6]=0x004BAD80; is_cap[6]=false;
+  sig[6]="void* DSurface::Lock(int x, int y)"; rt[6]="void*";
+  nm[7]="DSurface::Unlock"; addr_tbl[7]=0x004BAF40; is_cap[7]=false;
+  sig[7]="bool DSurface::Unlock()"; rt[7]="bool";
+  nm[8]="DSurface::CanLock"; addr_tbl[8]=0x004BAEC0; is_cap[8]=false;
+  sig[8]="DSurface::CanLock"; rt[8]="";
+  nm[9]="XSurface::SetPixel"; addr_tbl[9]=0x007BAEB0; is_cap[9]=false;
+  sig[9]="bool XSurface::SetPixel(const Point2D& point, uint32_t color)"; rt[9]="bool";
+  nm[10]="XSurface::GetPixel"; addr_tbl[10]=0x007BAE60; is_cap[10]=false;
+  sig[10]="uint32_t XSurface::GetPixel(const Point2D& point)"; rt[10]="uint32_t";
+  nm[11]="XSurface::PutPixel"; addr_tbl[11]=0x007BAF90; is_cap[11]=false;
+  sig[11]="bool XSurface::PutPixel(const Point2D& point, uint16_t color, const RectangleStruct& clip_rect)"; rt[11]="bool";
+  nm[12]="XSurface::GetPixelAtCoords"; addr_tbl[12]=0x007BAF10; is_cap[12]=false;
+  sig[12]="uint16_t XSurface::GetPixelAtCoords(const Point2D& point, const RectangleStruct& clip_rect)"; rt[12]="uint16_t";
+  nm[13]="XSurface::Fill"; addr_tbl[13]=0x007BBAB0; is_cap[13]=false;
+  sig[13]="bool XSurface::Fill(uint32_t color)"; rt[13]="bool";
+  nm[14]="XSurface::DrawRectEx"; addr_tbl[14]=0x007BADC0; is_cap[14]=false;
+  sig[14]="bool XSurface::DrawRectEx(const RectangleStruct& clip_rect, const RectangleStruct& draw_rect, uint32_t color)"; rt[14]="bool";
+  nm[15]="DSurface::DrawGradientLine"; addr_tbl[15]=0x004BF750; is_cap[15]=false;
+  sig[15]="bool DSurface::DrawGradientLine(const Point2D& start, const Point2D& end, int palette_idx, int fade_val, float* gradient_start, float* gradient_step)"; rt[15]="bool";
+  nm[16]="DSurface::DrawStippledRect"; addr_tbl[16]=0x004C0E30; is_cap[16]=false;
+  sig[16]="bool DSurface::DrawStippledRect(const Point2D& top_left, const Point2D& bottom_right, uint16_t color, bool fill_interior)"; rt[16]="bool";
+  nm[17]="DSurface::DrawDashedLineStipple"; addr_tbl[17]=0x004C0750; is_cap[17]=false;
+  sig[17]="bool DSurface::DrawDashedLineStipple(const Point2D& start, const Point2D& end, uint16_t color, const uint8_t stipple[16], int dash_offset, bool update_z)"; rt[17]="bool";
+  nm[18]="Timer::GetTicks"; addr_tbl[18]=0x006C8C40;
+  sig[18]="int TimerGetTicks()"; rt[18]="int";
+  nm[19]="Palette::6BitTo16Bit"; addr_tbl[19]=0x004355B0;
+  sig[19]="int Palette6BitTo16Bit(int r, int g, int b)"; rt[19]="int";
+  nm[20]="LoadFileSHP"; addr_tbl[20]=0x004A38D0;
+  sig[20]="int LoadFileSHP(const char* filename)"; rt[20]="int";
+  nm[21]="Event::Dispatch"; addr_tbl[21]=0x0048D080;
+  sig[21]="void EventDispatchEx()"; rt[21]="void";
+  nm[22]="SearchMIXFile"; addr_tbl[22]=0x005B40B0;
+  sig[22]="const void* SearchMIXFile(const char* name)"; rt[22]="const void*";
+  nm[23]="InitGame"; addr_tbl[23]=0x0052BA60;
+  sig[23]="int InitGame(bool no_cd)"; rt[23]="int";
+  nm[24]="GameFrameLoop"; addr_tbl[24]=0x0055D360;
+  sig[24]="static bool GameFrameLoop()"; rt[24]="static bool";
+  nm[25]="GameFrameCheck"; addr_tbl[25]=0x0055CFD0;
+  sig[25]="static bool GameFrameCheck()"; rt[25]="static bool";
+  nm[26]="MainGameFrame"; addr_tbl[26]=0x0048C8B0;
+  sig[26]="static void MainGameFrame()"; rt[26]="static void";
+  nm[27]="MenuSelect"; addr_tbl[27]=0x0052D9A0;
+  sig[27]="char MenuSelect()"; rt[27]="char";
+  nm[28]="MainGame"; addr_tbl[28]=0x0048CCC0;
+  sig[28]="void MainGame()"; rt[28]="void";
+  nm[29]="LoadExpansionMixFiles"; addr_tbl[29]=0x00530000;
+  sig[29]="bool LoadExpansionMixFiles()"; rt[29]="bool";
+  nm[30]="AbstractClass::QueryInterface"; addr_tbl[30]=0x00410260;
+  sig[30]="HRESULT AbstractClass::QueryInterface(const IID& iid, void** ppv)"; rt[30]="HRESULT";
+  nm[31]="ClipRectIntersection"; addr_tbl[31]=0x00421B60;
+  sig[31]="RectangleStruct* ClipRectIntersection(RectangleStruct* result, const RectangleStruct* clip_rect, const RectangleStruct* src_rect, int* x_off, int* y_off)"; rt[31]="RectangleStruct*";
+  nm[32]="CCFileClass::Open"; addr_tbl[32]=0x00473C50;
+  sig[32]="bool CCFileClass::Open(const char* pFileName)"; rt[32]="bool";
+  nm[33]="CCFileClass::ReadEntireFile"; addr_tbl[33]=0x004A3890;
+  sig[33]="void* CCFileClass::ReadEntireFile()"; rt[33]="void*";
+  nm[34]="CCFileClass::Reset"; addr_tbl[34]=0x00473CE0;
+  sig[34]="void CCFileClass::Reset()"; rt[34]="void";
+  nm[35]="INIClass::Constructor"; addr_tbl[35]=0x00535AA0;
+  sig[35]="INIClass::INIClass()"; rt[35]="";
+  nm[36]="CCINIClass::Constructor"; addr_tbl[36]=0x00535B30;
+  sig[36]="CCINIClass::CCINIClass()"; rt[36]="";
+  nm[37]="CCINIClass::Load"; addr_tbl[37]=0x004741F0;
+  sig[37]="bool CCINIClass::Load(CCFileClass* file, bool unk1, bool unk2)"; rt[37]="bool";
+  nm[38]="MixFileClass::Bootstrap"; addr_tbl[38]=0x005301A0;
+  sig[38]="bool MixFileClass::Bootstrap()"; rt[38]="bool";
 }
 struct InitHookNames { InitHookNames() { NN(); } };
 static InitHookNames _init;
 static int I(DWORD x){
-  static DWORD A[8]={
+  static DWORD A[19]={
+  0x004BAD80,
+  0x004BAEC0,
+  0x004BAF40,
+  0x004BB080,
+  0x004BB5F0,
+  0x004BB620,
+  0x004BB830,
+  0x004BF750,
+  0x004C0750,
+  0x004C0E30,
+  0x004C1A90,
   0x007BADC0,
   0x007BAE60,
   0x007BAEB0,
@@ -103,18 +147,29 @@ static int I(DWORD x){
   0x007BBAB0,
   0x007BC2B0,
   0};
-  static int Imap[7]={
+  static int Imap[18]={
     6,
+    8,
+    7,
     2,
-    1,
     4,
     3,
     5,
+    15,
+    17,
+    16,
+    1,
+    14,
+    10,
+    9,
+    12,
+    11,
+    13,
     0,
   };
-  int lo=0,hi=7;
+  int lo=0,hi=18;
   while(lo<hi){int m=(lo+hi)/2;if(A[m]<x)lo=m+1;else hi=m;}
-  if(lo>=7||A[lo]!=x) return -1;
+  if(lo>=18||A[lo]!=x) return -1;
   return Imap[lo];
 }
 static void FI_ClipLine(std::ostream& os){
@@ -124,68 +179,179 @@ static void FI_ClipLine(std::ostream& os){
   os<<"\r\n";
 }
 
-static void FI_XSurface_SetPixel(std::ostream& os){
+static void FI_DSurface_BlitWhole(std::ostream& os){
   os<<"this=";Hex8(os,in[1].c);
-  os<<" point(Stack)=";FmtPtr(os,(const Point2D*)(in[1].stk0));
-  os<<" color(Stack)=";os<<(uint32_t)(in[1].stk1);
+  os<<" src(Stack)=";Hex8(os,in[1].stk0);
+  os<<" option1(Stack)=";os<<(bool)(in[1].stk1);
+  os<<" option2(Stack)=";os<<(bool)(in[1].stk2);
+  os<<"\r\n";
+}
+
+static void FI_DSurface_BlitPart(std::ostream& os){
+  os<<"this=";Hex8(os,in[2].c);
+  os<<" dest_rect(Stack)=";FmtPtr(os,(const RectangleStruct*)(in[2].stk0));
+  os<<" src(Stack)=";Hex8(os,in[2].stk1);
+  os<<" src_rect(Stack)=";FmtPtr(os,(const RectangleStruct*)(in[2].stk2));
+  os<<" option1(Stack)=";os<<(bool)(in[2].stk3);
+  os<<" option2(Stack)=";os<<(bool)(in[2].stk4);
+  os<<"\r\n";
+}
+
+static void FI_DSurface_FillRectEx(std::ostream& os){
+  os<<"this=";Hex8(os,in[3].c);
+  os<<" clip_rect(Stack)=";FmtPtr(os,(const RectangleStruct*)(in[3].stk0));
+  os<<" fill_rect(Stack)=";FmtPtr(os,(const RectangleStruct*)(in[3].stk1));
+  os<<" color(Stack)=";os<<(uint32_t)(in[3].stk2);
+  os<<"\r\n";
+}
+
+static void FI_DSurface_FillRect(std::ostream& os){
+  os<<"this=";Hex8(os,in[4].c);
+  os<<" fill_rect(Stack)=";FmtPtr(os,(const RectangleStruct*)(in[4].stk0));
+  os<<" color(Stack)=";os<<(uint32_t)(in[4].stk1);
+  os<<"\r\n";
+}
+
+static void FI_DSurface_FillRectWithFlags(std::ostream& os){
+  os<<"this=";Hex8(os,in[5].c);
+  os<<" clip_rect(Stack)=";FmtPtr(os,(const RectangleStruct*)(in[5].stk0));
+  os<<" color(Stack)=";Hex8(os,in[5].stk1);
+  os<<" opacity_percent(Stack)=";os<<(int)(in[5].stk2);
+  os<<"\r\n";
+}
+
+static void FI_DSurface_Lock(std::ostream& os){
+  os<<"this=";Hex8(os,in[6].c);
+  os<<" x(Stack)=";os<<(int)(in[6].stk0);
+  os<<" y(Stack)=";os<<(int)(in[6].stk1);
+  os<<"\r\n";
+}
+
+static void FI_DSurface_Unlock(std::ostream& os){
+  os<<"this=";Hex8(os,in[7].c);
+  os<<"\r\n";
+}
+
+static void FI_DSurface_CanLock(std::ostream& os){
+  os<<"this=";Hex8(os,in[8].c);
+  os<<"\r\n";
+}
+
+static void FI_XSurface_SetPixel(std::ostream& os){
+  os<<"this=";Hex8(os,in[9].c);
+  os<<" point(Stack)=";FmtPtr(os,(const Point2D*)(in[9].stk0));
+  os<<" color(Stack)=";os<<(uint32_t)(in[9].stk1);
   os<<"\r\n";
 }
 
 static void FI_XSurface_GetPixel(std::ostream& os){
-  os<<"this=";Hex8(os,in[2].c);
-  os<<" point(Stack)=";FmtPtr(os,(const Point2D*)(in[2].stk0));
+  os<<"this=";Hex8(os,in[10].c);
+  os<<" point(Stack)=";FmtPtr(os,(const Point2D*)(in[10].stk0));
   os<<"\r\n";
 }
 
 static void FI_XSurface_PutPixel(std::ostream& os){
-  os<<"this=";Hex8(os,in[3].c);
-  os<<" point(Stack)=";FmtPtr(os,(const Point2D*)(in[3].stk0));
-  os<<" color(Stack)=";os<<(uint16_t)(in[3].stk1);
-  os<<" clip_rect(Stack)=";FmtPtr(os,(const RectangleStruct*)(in[3].stk2));
+  os<<"this=";Hex8(os,in[11].c);
+  os<<" point(Stack)=";FmtPtr(os,(const Point2D*)(in[11].stk0));
+  os<<" color(Stack)=";os<<(uint16_t)(in[11].stk1);
+  os<<" clip_rect(Stack)=";FmtPtr(os,(const RectangleStruct*)(in[11].stk2));
   os<<"\r\n";
 }
 
 static void FI_XSurface_GetPixelAtCoords(std::ostream& os){
-  os<<"this=";Hex8(os,in[4].c);
-  os<<" point(Stack)=";FmtPtr(os,(const Point2D*)(in[4].stk0));
-  os<<" clip_rect(Stack)=";FmtPtr(os,(const RectangleStruct*)(in[4].stk1));
+  os<<"this=";Hex8(os,in[12].c);
+  os<<" point(Stack)=";FmtPtr(os,(const Point2D*)(in[12].stk0));
+  os<<" clip_rect(Stack)=";FmtPtr(os,(const RectangleStruct*)(in[12].stk1));
   os<<"\r\n";
 }
 
 static void FI_XSurface_Fill(std::ostream& os){
-  os<<"this=";Hex8(os,in[5].c);
-  os<<" color(Stack)=";os<<(uint32_t)(in[5].stk0);
+  os<<"this=";Hex8(os,in[13].c);
+  os<<" color(Stack)=";os<<(uint32_t)(in[13].stk0);
   os<<"\r\n";
 }
 
 static void FI_XSurface_DrawRectEx(std::ostream& os){
-  os<<"this=";Hex8(os,in[6].c);
-  os<<" clip_rect(Stack)=";FmtPtr(os,(const RectangleStruct*)(in[6].stk0));
-  os<<" draw_rect(Stack)=";FmtPtr(os,(const RectangleStruct*)(in[6].stk1));
-  os<<" color(Stack)=";os<<(uint32_t)(in[6].stk2);
+  os<<"this=";Hex8(os,in[14].c);
+  os<<" clip_rect(Stack)=";FmtPtr(os,(const RectangleStruct*)(in[14].stk0));
+  os<<" draw_rect(Stack)=";FmtPtr(os,(const RectangleStruct*)(in[14].stk1));
+  os<<" color(Stack)=";os<<(uint32_t)(in[14].stk2);
+  os<<"\r\n";
+}
+
+static void FI_DSurface_DrawGradientLine(std::ostream& os){
+  os<<"this=";Hex8(os,in[15].c);
+  os<<" start(Stack)=";FmtPtr(os,(const Point2D*)(in[15].stk0));
+  os<<" end(Stack)=";FmtPtr(os,(const Point2D*)(in[15].stk1));
+  os<<" palette_idx(Stack)=";os<<(int)(in[15].stk2);
+  os<<" fade_val(Stack)=";os<<(int)(in[15].stk3);
+  os<<" gradient_start(Stack)=";Hex8(os,in[15].stk4);
+  os<<" gradient_step(Stack)=";Hex8(os,in[15].stk5);
+  os<<"\r\n";
+}
+
+static void FI_DSurface_DrawStippledRect(std::ostream& os){
+  os<<"this=";Hex8(os,in[16].c);
+  os<<" top_left(Stack)=";FmtPtr(os,(const Point2D*)(in[16].stk0));
+  os<<" bottom_right(Stack)=";FmtPtr(os,(const Point2D*)(in[16].stk1));
+  os<<" color(Stack)=";os<<(uint16_t)(in[16].stk2);
+  os<<" fill_interior(Stack)=";os<<(bool)(in[16].stk3);
+  os<<"\r\n";
+}
+
+static void FI_DSurface_DrawDashedLineStipple(std::ostream& os){
+  os<<"this=";Hex8(os,in[17].c);
+  os<<" start(Stack)=";FmtPtr(os,(const Point2D*)(in[17].stk0));
+  os<<" end(Stack)=";FmtPtr(os,(const Point2D*)(in[17].stk1));
+  os<<" color(Stack)=";os<<(uint16_t)(in[17].stk2);
+  os<<" stipple(Stack)=";os<<(uint8_t)(in[17].stk3);
+  os<<" dash_offset(Stack)=";os<<(int)(in[17].stk4);
+  os<<" update_z(Stack)=";os<<(bool)(in[17].stk5);
   os<<"\r\n";
 }
 
 static void FI(int i, std::ostream& os){switch(i){
   case 0:FI_ClipLine(os);break;
-  case 1:FI_XSurface_SetPixel(os);break;
-  case 2:FI_XSurface_GetPixel(os);break;
-  case 3:FI_XSurface_PutPixel(os);break;
-  case 4:FI_XSurface_GetPixelAtCoords(os);break;
-  case 5:FI_XSurface_Fill(os);break;
-  case 6:FI_XSurface_DrawRectEx(os);break;
+  case 1:FI_DSurface_BlitWhole(os);break;
+  case 2:FI_DSurface_BlitPart(os);break;
+  case 3:FI_DSurface_FillRectEx(os);break;
+  case 4:FI_DSurface_FillRect(os);break;
+  case 5:FI_DSurface_FillRectWithFlags(os);break;
+  case 6:FI_DSurface_Lock(os);break;
+  case 7:FI_DSurface_Unlock(os);break;
+  case 8:FI_DSurface_CanLock(os);break;
+  case 9:FI_XSurface_SetPixel(os);break;
+  case 10:FI_XSurface_GetPixel(os);break;
+  case 11:FI_XSurface_PutPixel(os);break;
+  case 12:FI_XSurface_GetPixelAtCoords(os);break;
+  case 13:FI_XSurface_Fill(os);break;
+  case 14:FI_XSurface_DrawRectEx(os);break;
+  case 15:FI_DSurface_DrawGradientLine(os);break;
+  case 16:FI_DSurface_DrawStippledRect(os);break;
+  case 17:FI_DSurface_DrawDashedLineStipple(os);break;
   default:os<<"  Input: ???\r\n";break;}}
 
 static DWORD CallRE(int i){
   auto&V=in[i];
   switch(i){
     case 0: return RE_ClipLine(V.c, V.d, V.stk0);
-    case 1: return RE_XSurface_SetPixel(V.c, V.stk0, V.stk1);
-    case 2: return RE_XSurface_GetPixel(V.c, V.stk0);
-    case 3: return RE_XSurface_PutPixel(V.c, V.stk0, V.stk1, V.stk2);
-    case 4: return RE_XSurface_GetPixelAtCoords(V.c, V.stk0, V.stk1);
-    case 5: return RE_XSurface_Fill(V.c, V.stk0);
-    case 6: return RE_XSurface_DrawRectEx(V.c, V.stk0, V.stk1, V.stk2);
+    case 1: return RE_DSurface_BlitWhole(V.c, V.stk0, V.stk1, V.stk2);
+    case 2: return RE_DSurface_BlitPart(V.c, V.stk0, V.stk1, V.stk2, V.stk3, V.stk4);
+    case 3: return RE_DSurface_FillRectEx(V.c, V.stk0, V.stk1, V.stk2);
+    case 4: return RE_DSurface_FillRect(V.c, V.stk0, V.stk1);
+    case 5: return RE_DSurface_FillRectWithFlags(V.c, V.stk0, V.stk1, V.stk2);
+    case 6: return RE_DSurface_Lock(V.c, V.stk0, V.stk1);
+    case 7: return RE_DSurface_Unlock(V.c);
+    case 8: return RE_DSurface_CanLock(V.c);
+    case 9: return RE_XSurface_SetPixel(V.c, V.stk0, V.stk1);
+    case 10: return RE_XSurface_GetPixel(V.c, V.stk0);
+    case 11: return RE_XSurface_PutPixel(V.c, V.stk0, V.stk1, V.stk2);
+    case 12: return RE_XSurface_GetPixelAtCoords(V.c, V.stk0, V.stk1);
+    case 13: return RE_XSurface_Fill(V.c, V.stk0);
+    case 14: return RE_XSurface_DrawRectEx(V.c, V.stk0, V.stk1, V.stk2);
+    case 15: return RE_DSurface_DrawGradientLine(V.c, V.stk0, V.stk1, V.stk2, V.stk3, V.stk4, V.stk5);
+    case 16: return RE_DSurface_DrawStippledRect(V.c, V.stk0, V.stk1, V.stk2, V.stk3);
+    case 17: return RE_DSurface_DrawDashedLineStipple(V.c, V.stk0, V.stk1, V.stk2, V.stk3, V.stk4, V.stk5);
     default: return 0;
   }
 }
@@ -14600,11 +14766,11 @@ static void flush_full(){
   SetFilePointer(h,0,0,FILE_BEGIN); SetEndOfFile(h);
   std::ostringstream os;
   os<<"============ Different Compares ============\r\n";
-  for(int i=0;i<7;i++) if(has_diff[i]&&fn_buf_len[i]>0) os.write(fn_buf[i],fn_buf_len[i]);
+  for(int i=0;i<18;i++) if(has_diff[i]&&fn_buf_len[i]>0) os.write(fn_buf[i],fn_buf_len[i]);
   os<<"\r\n================ Captures ================\r\n";
-  for(int i=0;i<7;i++) if(is_cap[i]&&!has_diff[i]&&fn_buf_len[i]>0) os.write(fn_buf[i],fn_buf_len[i]);
+  for(int i=0;i<18;i++) if(is_cap[i]&&!has_diff[i]&&fn_buf_len[i]>0) os.write(fn_buf[i],fn_buf_len[i]);
   os<<"\r\n============= Same Compares ==============\r\n";
-  for(int i=0;i<7;i++) if(!is_cap[i]&&!has_diff[i]&&fn_buf_len[i]>0) os.write(fn_buf[i],fn_buf_len[i]);
+  for(int i=0;i<18;i++) if(!is_cap[i]&&!has_diff[i]&&fn_buf_len[i]>0) os.write(fn_buf[i],fn_buf_len[i]);
   os<<"\r\n============== None Calls ================\r\n";
   if(sec_none_len>0) os.write(sec_none,sec_none_len);
   else os<<"\r\n";
@@ -14664,11 +14830,22 @@ static void FmtRet(std::ostream& os, DWORD v, int i){
   switch(i){
     case 0: os<<(bool)(v); break;
     case 1: os<<(bool)(v); break;
-    case 2: os<<(uint32_t)(v); break;
+    case 2: os<<(bool)(v); break;
     case 3: os<<(bool)(v); break;
-    case 4: os<<(uint16_t)(v); break;
+    case 4: os<<(bool)(v); break;
     case 5: os<<(bool)(v); break;
-    case 6: os<<(bool)(v); break;
+    case 6: Hex8(os,v); break;
+    case 7: os<<(bool)(v); break;
+    case 8: Hex8(os,v); break;
+    case 9: os<<(bool)(v); break;
+    case 10: os<<(uint32_t)(v); break;
+    case 11: os<<(bool)(v); break;
+    case 12: os<<(uint16_t)(v); break;
+    case 13: os<<(bool)(v); break;
+    case 14: os<<(bool)(v); break;
+    case 15: os<<(bool)(v); break;
+    case 16: os<<(bool)(v); break;
+    case 17: os<<(bool)(v); break;
     default: os<<v; break;
   }
 }
@@ -14676,111 +14853,111 @@ static void FmtRet(std::ostream& os, DWORD v, int i){
 static void rebuild_none(){
   sec_none_len=0; sec_none[0]=0;
   { int called=0;
-    for(int j=0;j<7;j++){
+    for(int j=0;j<18;j++){
       if(addr_tbl[j]==0x006C8C40&&ctr[j]>0) called=1;
     }
     if(!called) SecApp(sec_none,&sec_none_len,"[int TimerGetTicks()-0x006C8C40]\r\n"); }
   { int called=0;
-    for(int j=0;j<7;j++){
+    for(int j=0;j<18;j++){
       if(addr_tbl[j]==0x004355B0&&ctr[j]>0) called=1;
     }
     if(!called) SecApp(sec_none,&sec_none_len,"[int Palette6BitTo16Bit(int r, int g, int b)-0x004355B0]\r\n"); }
   { int called=0;
-    for(int j=0;j<7;j++){
+    for(int j=0;j<18;j++){
       if(addr_tbl[j]==0x004A38D0&&ctr[j]>0) called=1;
     }
     if(!called) SecApp(sec_none,&sec_none_len,"[int LoadFileSHP(const char* filename)-0x004A38D0]\r\n"); }
   { int called=0;
-    for(int j=0;j<7;j++){
+    for(int j=0;j<18;j++){
       if(addr_tbl[j]==0x0048D080&&ctr[j]>0) called=1;
     }
     if(!called) SecApp(sec_none,&sec_none_len,"[void EventDispatchEx()-0x0048D080]\r\n"); }
   { int called=0;
-    for(int j=0;j<7;j++){
+    for(int j=0;j<18;j++){
       if(addr_tbl[j]==0x005B40B0&&ctr[j]>0) called=1;
     }
     if(!called) SecApp(sec_none,&sec_none_len,"[const void* SearchMIXFile(const char* name)-0x005B40B0]\r\n"); }
   { int called=0;
-    for(int j=0;j<7;j++){
+    for(int j=0;j<18;j++){
       if(addr_tbl[j]==0x0052BA60&&ctr[j]>0) called=1;
     }
     if(!called) SecApp(sec_none,&sec_none_len,"[int InitGame(bool no_cd)-0x0052BA60]\r\n"); }
   { int called=0;
-    for(int j=0;j<7;j++){
+    for(int j=0;j<18;j++){
       if(addr_tbl[j]==0x0055D360&&ctr[j]>0) called=1;
     }
     if(!called) SecApp(sec_none,&sec_none_len,"[static bool GameFrameLoop()-0x0055D360]\r\n"); }
   { int called=0;
-    for(int j=0;j<7;j++){
+    for(int j=0;j<18;j++){
       if(addr_tbl[j]==0x0055CFD0&&ctr[j]>0) called=1;
     }
     if(!called) SecApp(sec_none,&sec_none_len,"[static bool GameFrameCheck()-0x0055CFD0]\r\n"); }
   { int called=0;
-    for(int j=0;j<7;j++){
+    for(int j=0;j<18;j++){
       if(addr_tbl[j]==0x0048C8B0&&ctr[j]>0) called=1;
     }
     if(!called) SecApp(sec_none,&sec_none_len,"[static void MainGameFrame()-0x0048C8B0]\r\n"); }
   { int called=0;
-    for(int j=0;j<7;j++){
+    for(int j=0;j<18;j++){
       if(addr_tbl[j]==0x0052D9A0&&ctr[j]>0) called=1;
     }
     if(!called) SecApp(sec_none,&sec_none_len,"[char MenuSelect()-0x0052D9A0]\r\n"); }
   { int called=0;
-    for(int j=0;j<7;j++){
+    for(int j=0;j<18;j++){
       if(addr_tbl[j]==0x0048CCC0&&ctr[j]>0) called=1;
     }
     if(!called) SecApp(sec_none,&sec_none_len,"[void MainGame()-0x0048CCC0]\r\n"); }
   { int called=0;
-    for(int j=0;j<7;j++){
+    for(int j=0;j<18;j++){
       if(addr_tbl[j]==0x00530000&&ctr[j]>0) called=1;
     }
     if(!called) SecApp(sec_none,&sec_none_len,"[bool LoadExpansionMixFiles()-0x00530000]\r\n"); }
   { int called=0;
-    for(int j=0;j<7;j++){
+    for(int j=0;j<18;j++){
       if(addr_tbl[j]==0x00410260&&ctr[j]>0) called=1;
     }
     if(!called) SecApp(sec_none,&sec_none_len,"[HRESULT AbstractClass::QueryInterface(const IID& iid, void** ppv)-0x00410260]\r\n"); }
   { int called=0;
-    for(int j=0;j<7;j++){
+    for(int j=0;j<18;j++){
       if(addr_tbl[j]==0x00421B60&&ctr[j]>0) called=1;
     }
     if(!called) SecApp(sec_none,&sec_none_len,"[RectangleStruct* ClipRectIntersection(RectangleStruct* result, const RectangleStruct* clip_rect, const RectangleStruct* src_rect, int* x_off, int* y_off)-0x00421B60]\r\n"); }
   { int called=0;
-    for(int j=0;j<7;j++){
+    for(int j=0;j<18;j++){
       if(addr_tbl[j]==0x00473C50&&ctr[j]>0) called=1;
     }
     if(!called) SecApp(sec_none,&sec_none_len,"[bool CCFileClass::Open(const char* pFileName)-0x00473C50]\r\n"); }
   { int called=0;
-    for(int j=0;j<7;j++){
+    for(int j=0;j<18;j++){
       if(addr_tbl[j]==0x004A3890&&ctr[j]>0) called=1;
     }
     if(!called) SecApp(sec_none,&sec_none_len,"[void* CCFileClass::ReadEntireFile()-0x004A3890]\r\n"); }
   { int called=0;
-    for(int j=0;j<7;j++){
+    for(int j=0;j<18;j++){
       if(addr_tbl[j]==0x00473CE0&&ctr[j]>0) called=1;
     }
     if(!called) SecApp(sec_none,&sec_none_len,"[void CCFileClass::Reset()-0x00473CE0]\r\n"); }
   { int called=0;
-    for(int j=0;j<7;j++){
+    for(int j=0;j<18;j++){
       if(addr_tbl[j]==0x00535AA0&&ctr[j]>0) called=1;
     }
     if(!called) SecApp(sec_none,&sec_none_len,"[INIClass::INIClass()-0x00535AA0]\r\n"); }
   { int called=0;
-    for(int j=0;j<7;j++){
+    for(int j=0;j<18;j++){
       if(addr_tbl[j]==0x00535B30&&ctr[j]>0) called=1;
     }
     if(!called) SecApp(sec_none,&sec_none_len,"[CCINIClass::CCINIClass()-0x00535B30]\r\n"); }
   { int called=0;
-    for(int j=0;j<7;j++){
+    for(int j=0;j<18;j++){
       if(addr_tbl[j]==0x004741F0&&ctr[j]>0) called=1;
     }
     if(!called) SecApp(sec_none,&sec_none_len,"[bool CCINIClass::Load(CCFileClass* file, bool unk1, bool unk2)-0x004741F0]\r\n"); }
   { int called=0;
-    for(int j=0;j<7;j++){
+    for(int j=0;j<18;j++){
       if(addr_tbl[j]==0x005301A0&&ctr[j]>0) called=1;
     }
     if(!called) SecApp(sec_none,&sec_none_len,"[bool MixFileClass::Bootstrap()-0x005301A0]\r\n"); }
-  for(int j=0;j<7;j++){
+  for(int j=0;j<18;j++){
     if(ctr[j]==0){
       int already=0;
       unsigned na_tbl[21]={7113792,4412848,4864208,4771968,5980336,5421664,5624672,5623760,4769968,5429664,4771008,5439488,4260448,4332384,4668496,4864144,4668640,5462688,5462832,4669936,5439904};
@@ -14839,6 +15016,174 @@ DEFINE_HOOK(0x7BC2B0, Rev_ClipLine, 0x6)
   if(shadow::g_re_depth>0) return 0;
   auto*s=shadow::GetSlot();
   int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x7BC2B0;s->depth=d+1;R->Stack(0,(DWORD)&PostProcStub);}
+  return 0;
+}
+
+// DSurface::BlitWhole @ 0x4c1a90 (thiscall) mode=Inject hook_size=8
+// DSurface::BlitWhole: Thin wrapper around Blit
+DEFINE_HOOK(0x4C1A90, Rev_DSurface_BlitWhole, 0x8)
+{
+  int idx=I(0x4C1A90);
+  auto&V=in[idx];
+  V.a=R->EAX();V.c=R->ECX();V.d=R->EDX();
+  V.b=R->EBX();V.si=R->ESI();V.di=R->EDI();
+  V.bp=R->EBP();V.sp=R->ESP();
+  V.stk0=R->Stack<DWORD>(4);V.stk1=R->Stack<DWORD>(8);
+  V.stk2=R->Stack<DWORD>(12);V.stk3=R->Stack<DWORD>(16);
+  if(GetCurrentThreadId()!=shadow::g_owner_tid) return 0;
+  if(shadow::g_re_depth>0) return 0;
+  auto*s=shadow::GetSlot();
+  if(s&&s->txn){s->txn->Discard();delete s->txn;s->txn=nullptr;++shadow::g_orphan_count;}
+  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x4C1A90;s->depth=d+1;R->Stack(0,(DWORD)&PostProcStub);}
+  auto* txn = new shadow::ShadowTransaction();
+  txn->Begin();
+  return 0;
+}
+
+// DSurface::BlitPart @ 0x4bb080 (thiscall) mode=Inject hook_size=7
+// DSurface::BlitPart: HW/SW blit with coordinate clipping
+DEFINE_HOOK(0x4BB080, Rev_DSurface_BlitPart, 0x7)
+{
+  int idx=I(0x4BB080);
+  auto&V=in[idx];
+  V.a=R->EAX();V.c=R->ECX();V.d=R->EDX();
+  V.b=R->EBX();V.si=R->ESI();V.di=R->EDI();
+  V.bp=R->EBP();V.sp=R->ESP();
+  V.stk0=R->Stack<DWORD>(4);V.stk1=R->Stack<DWORD>(8);
+  V.stk2=R->Stack<DWORD>(12);V.stk3=R->Stack<DWORD>(16);
+  if(GetCurrentThreadId()!=shadow::g_owner_tid) return 0;
+  if(shadow::g_re_depth>0) return 0;
+  auto*s=shadow::GetSlot();
+  if(s&&s->txn){s->txn->Discard();delete s->txn;s->txn=nullptr;++shadow::g_orphan_count;}
+  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x4BB080;s->depth=d+1;R->Stack(0,(DWORD)&PostProcStub);}
+  auto* txn = new shadow::ShadowTransaction();
+  txn->Begin();
+  return 0;
+}
+
+// DSurface::FillRectEx @ 0x4bb620 (thiscall) mode=Inject hook_size=6
+// DSurface::FillRectEx: Hardware/software color fill with clipping
+DEFINE_HOOK(0x4BB620, Rev_DSurface_FillRectEx, 0x6)
+{
+  int idx=I(0x4BB620);
+  auto&V=in[idx];
+  V.a=R->EAX();V.c=R->ECX();V.d=R->EDX();
+  V.b=R->EBX();V.si=R->ESI();V.di=R->EDI();
+  V.bp=R->EBP();V.sp=R->ESP();
+  V.stk0=R->Stack<DWORD>(4);V.stk1=R->Stack<DWORD>(8);
+  V.stk2=R->Stack<DWORD>(12);V.stk3=R->Stack<DWORD>(16);
+  if(GetCurrentThreadId()!=shadow::g_owner_tid) return 0;
+  if(shadow::g_re_depth>0) return 0;
+  auto*s=shadow::GetSlot();
+  if(s&&s->txn){s->txn->Discard();delete s->txn;s->txn=nullptr;++shadow::g_orphan_count;}
+  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x4BB620;s->depth=d+1;R->Stack(0,(DWORD)&PostProcStub);}
+  auto* txn = new shadow::ShadowTransaction();
+  txn->Begin();
+  return 0;
+}
+
+// DSurface::FillRect @ 0x4bb5f0 (thiscall) mode=Inject hook_size=7
+// DSurface::FillRect: Fill rectangle with color
+DEFINE_HOOK(0x4BB5F0, Rev_DSurface_FillRect, 0x7)
+{
+  int idx=I(0x4BB5F0);
+  auto&V=in[idx];
+  V.a=R->EAX();V.c=R->ECX();V.d=R->EDX();
+  V.b=R->EBX();V.si=R->ESI();V.di=R->EDI();
+  V.bp=R->EBP();V.sp=R->ESP();
+  V.stk0=R->Stack<DWORD>(4);V.stk1=R->Stack<DWORD>(8);
+  V.stk2=R->Stack<DWORD>(12);V.stk3=R->Stack<DWORD>(16);
+  if(GetCurrentThreadId()!=shadow::g_owner_tid) return 0;
+  if(shadow::g_re_depth>0) return 0;
+  auto*s=shadow::GetSlot();
+  if(s&&s->txn){s->txn->Discard();delete s->txn;s->txn=nullptr;++shadow::g_orphan_count;}
+  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x4BB5F0;s->depth=d+1;R->Stack(0,(DWORD)&PostProcStub);}
+  auto* txn = new shadow::ShadowTransaction();
+  txn->Begin();
+  return 0;
+}
+
+// DSurface::FillRectWithFlags @ 0x4bb830 (thiscall) mode=Inject hook_size=5
+// DSurface::FillRectWithFlags: CPU pixel fill with alpha blending
+DEFINE_HOOK(0x4BB830, Rev_DSurface_FillRectWithFlags, 0x5)
+{
+  int idx=I(0x4BB830);
+  auto&V=in[idx];
+  V.a=R->EAX();V.c=R->ECX();V.d=R->EDX();
+  V.b=R->EBX();V.si=R->ESI();V.di=R->EDI();
+  V.bp=R->EBP();V.sp=R->ESP();
+  V.stk0=R->Stack<DWORD>(4);V.stk1=R->Stack<DWORD>(8);
+  V.stk2=R->Stack<DWORD>(12);V.stk3=R->Stack<DWORD>(16);
+  if(GetCurrentThreadId()!=shadow::g_owner_tid) return 0;
+  if(shadow::g_re_depth>0) return 0;
+  auto*s=shadow::GetSlot();
+  if(s&&s->txn){s->txn->Discard();delete s->txn;s->txn=nullptr;++shadow::g_orphan_count;}
+  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x4BB830;s->depth=d+1;R->Stack(0,(DWORD)&PostProcStub);}
+  auto* txn = new shadow::ShadowTransaction();
+  txn->Begin();
+  return 0;
+}
+
+// DSurface::Lock @ 0x4bad80 (thiscall) mode=Inject hook_size=5
+// DSurface::Lock: Lock surface for CPU access
+DEFINE_HOOK(0x4BAD80, Rev_DSurface_Lock, 0x5)
+{
+  int idx=I(0x4BAD80);
+  auto&V=in[idx];
+  V.a=R->EAX();V.c=R->ECX();V.d=R->EDX();
+  V.b=R->EBX();V.si=R->ESI();V.di=R->EDI();
+  V.bp=R->EBP();V.sp=R->ESP();
+  V.stk0=R->Stack<DWORD>(4);V.stk1=R->Stack<DWORD>(8);
+  V.stk2=R->Stack<DWORD>(12);V.stk3=R->Stack<DWORD>(16);
+  if(GetCurrentThreadId()!=shadow::g_owner_tid) return 0;
+  if(shadow::g_re_depth>0) return 0;
+  auto*s=shadow::GetSlot();
+  if(s&&s->txn){s->txn->Discard();delete s->txn;s->txn=nullptr;++shadow::g_orphan_count;}
+  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x4BAD80;s->depth=d+1;R->Stack(0,(DWORD)&PostProcStub);}
+  auto* txn = new shadow::ShadowTransaction();
+  txn->Begin();
+  return 0;
+}
+
+// DSurface::Unlock @ 0x4baf40 (thiscall) mode=Inject hook_size=5
+// DSurface::Unlock: Release DDraw surface lock
+DEFINE_HOOK(0x4BAF40, Rev_DSurface_Unlock, 0x5)
+{
+  int idx=I(0x4BAF40);
+  auto&V=in[idx];
+  V.a=R->EAX();V.c=R->ECX();V.d=R->EDX();
+  V.b=R->EBX();V.si=R->ESI();V.di=R->EDI();
+  V.bp=R->EBP();V.sp=R->ESP();
+  V.stk0=R->Stack<DWORD>(4);V.stk1=R->Stack<DWORD>(8);
+  V.stk2=R->Stack<DWORD>(12);V.stk3=R->Stack<DWORD>(16);
+  if(GetCurrentThreadId()!=shadow::g_owner_tid) return 0;
+  if(shadow::g_re_depth>0) return 0;
+  auto*s=shadow::GetSlot();
+  if(s&&s->txn){s->txn->Discard();delete s->txn;s->txn=nullptr;++shadow::g_orphan_count;}
+  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x4BAF40;s->depth=d+1;R->Stack(0,(DWORD)&PostProcStub);}
+  auto* txn = new shadow::ShadowTransaction();
+  txn->Begin();
+  return 0;
+}
+
+// DSurface::CanLock @ 0x4baec0 (thiscall) mode=Inject hook_size=6
+// DSurface::CanLock: Test if surface can be locked
+DEFINE_HOOK(0x4BAEC0, Rev_DSurface_CanLock, 0x6)
+{
+  int idx=I(0x4BAEC0);
+  auto&V=in[idx];
+  V.a=R->EAX();V.c=R->ECX();V.d=R->EDX();
+  V.b=R->EBX();V.si=R->ESI();V.di=R->EDI();
+  V.bp=R->EBP();V.sp=R->ESP();
+  V.stk0=R->Stack<DWORD>(4);V.stk1=R->Stack<DWORD>(8);
+  V.stk2=R->Stack<DWORD>(12);V.stk3=R->Stack<DWORD>(16);
+  if(GetCurrentThreadId()!=shadow::g_owner_tid) return 0;
+  if(shadow::g_re_depth>0) return 0;
+  auto*s=shadow::GetSlot();
+  if(s&&s->txn){s->txn->Discard();delete s->txn;s->txn=nullptr;++shadow::g_orphan_count;}
+  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x4BAEC0;s->depth=d+1;R->Stack(0,(DWORD)&PostProcStub);}
+  auto* txn = new shadow::ShadowTransaction();
+  txn->Begin();
   return 0;
 }
 
@@ -14947,6 +15292,69 @@ DEFINE_HOOK(0x7BADC0, Rev_XSurface_DrawRectEx, 0x7)
   if(shadow::g_re_depth>0) return 0;
   auto*s=shadow::GetSlot();
   int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x7BADC0;s->depth=d+1;R->Stack(0,(DWORD)&PostProcStub);}
+  return 0;
+}
+
+// DSurface::DrawGradientLine @ 0x4bf750 (thiscall) mode=Inject hook_size=5
+// DSurface::DrawGradientLine: Line with palette gradient interpolation
+DEFINE_HOOK(0x4BF750, Rev_DSurface_DrawGradientLine, 0x5)
+{
+  int idx=I(0x4BF750);
+  auto&V=in[idx];
+  V.a=R->EAX();V.c=R->ECX();V.d=R->EDX();
+  V.b=R->EBX();V.si=R->ESI();V.di=R->EDI();
+  V.bp=R->EBP();V.sp=R->ESP();
+  V.stk0=R->Stack<DWORD>(4);V.stk1=R->Stack<DWORD>(8);
+  V.stk2=R->Stack<DWORD>(12);V.stk3=R->Stack<DWORD>(16);
+  if(GetCurrentThreadId()!=shadow::g_owner_tid) return 0;
+  if(shadow::g_re_depth>0) return 0;
+  auto*s=shadow::GetSlot();
+  if(s&&s->txn){s->txn->Discard();delete s->txn;s->txn=nullptr;++shadow::g_orphan_count;}
+  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x4BF750;s->depth=d+1;R->Stack(0,(DWORD)&PostProcStub);}
+  auto* txn = new shadow::ShadowTransaction();
+  txn->Begin();
+  return 0;
+}
+
+// DSurface::DrawStippledRect @ 0x4c0e30 (thiscall) mode=Inject hook_size=5
+// DSurface::DrawStippledRect: Stippled rectangle with Z-buffer gating
+DEFINE_HOOK(0x4C0E30, Rev_DSurface_DrawStippledRect, 0x5)
+{
+  int idx=I(0x4C0E30);
+  auto&V=in[idx];
+  V.a=R->EAX();V.c=R->ECX();V.d=R->EDX();
+  V.b=R->EBX();V.si=R->ESI();V.di=R->EDI();
+  V.bp=R->EBP();V.sp=R->ESP();
+  V.stk0=R->Stack<DWORD>(4);V.stk1=R->Stack<DWORD>(8);
+  V.stk2=R->Stack<DWORD>(12);V.stk3=R->Stack<DWORD>(16);
+  if(GetCurrentThreadId()!=shadow::g_owner_tid) return 0;
+  if(shadow::g_re_depth>0) return 0;
+  auto*s=shadow::GetSlot();
+  if(s&&s->txn){s->txn->Discard();delete s->txn;s->txn=nullptr;++shadow::g_orphan_count;}
+  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x4C0E30;s->depth=d+1;R->Stack(0,(DWORD)&PostProcStub);}
+  auto* txn = new shadow::ShadowTransaction();
+  txn->Begin();
+  return 0;
+}
+
+// DSurface::DrawDashedLineStipple @ 0x4c0750 (thiscall) mode=Inject hook_size=7
+// DSurface::DrawDashedLineStipple: Dashed line with Z-buffer stipple gating
+DEFINE_HOOK(0x4C0750, Rev_DSurface_DrawDashedLineStipple, 0x7)
+{
+  int idx=I(0x4C0750);
+  auto&V=in[idx];
+  V.a=R->EAX();V.c=R->ECX();V.d=R->EDX();
+  V.b=R->EBX();V.si=R->ESI();V.di=R->EDI();
+  V.bp=R->EBP();V.sp=R->ESP();
+  V.stk0=R->Stack<DWORD>(4);V.stk1=R->Stack<DWORD>(8);
+  V.stk2=R->Stack<DWORD>(12);V.stk3=R->Stack<DWORD>(16);
+  if(GetCurrentThreadId()!=shadow::g_owner_tid) return 0;
+  if(shadow::g_re_depth>0) return 0;
+  auto*s=shadow::GetSlot();
+  if(s&&s->txn){s->txn->Discard();delete s->txn;s->txn=nullptr;++shadow::g_orphan_count;}
+  int d=s->depth; if(d<16){s->ret_addr_stack[d]=R->Stack<DWORD>(0);s->hook_addr_stack[d]=0x4C0750;s->depth=d+1;R->Stack(0,(DWORD)&PostProcStub);}
+  auto* txn = new shadow::ShadowTransaction();
+  txn->Begin();
   return 0;
 }
 

@@ -230,5 +230,126 @@ extern "C" DWORD RE_XSurface_DrawRectEx(DWORD p0, DWORD p1, DWORD p2, DWORD p3) 
     return 1;
 }
 
+// ============================================================
+// DSurface::BlitWhole @ 0x4C1A90 — vtable[1] 0x04
+// thiscall: ECX=this, [ESP+4]=src, [ESP+8]=opt1, [ESP+C]=opt2
+// ============================================================
+extern "C" DWORD RE_DSurface_BlitWhole(DWORD p0, DWORD p1, DWORD p2, DWORD p3) {
+    void* self = (void*)p0;
+    DWORD vtable = *(DWORD*)self;
+    typedef int (__thiscall *Fn)(void*, DWORD, DWORD, DWORD);
+    return ((Fn)(*(DWORD*)(vtable + 0x04)))(self, p1, p2, p3);
+}
+
+// ============================================================
+// DSurface::BlitPart @ 0x4BB080 — vtable[2] 0x08
+// thiscall: ECX=this, [ESP+4..14]=dest_rect(ptr),src,src_rect(ptr),opt1,opt2
+// ============================================================
+extern "C" DWORD RE_DSurface_BlitPart(DWORD p0, DWORD p1, DWORD p2, DWORD p3, DWORD p4, DWORD p5) {
+    void* self = (void*)p0;
+    DWORD vtable = *(DWORD*)self;
+    typedef int (__thiscall *Fn)(void*, DWORD, DWORD, DWORD, DWORD, DWORD);
+    return ((Fn)(*(DWORD*)(vtable + 0x08)))(self, p1, p2, p3, p4, p5);
+}
+
+// ============================================================
+// DSurface::FillRectEx @ 0x4BB620 — vtable[4] 0x10
+// thiscall: ECX=this, [ESP+4]=clip_rect(ptr), [ESP+8]=fill_rect(ptr), [ESP+C]=color
+// ============================================================
+extern "C" DWORD RE_DSurface_FillRectEx(DWORD p0, DWORD p1, DWORD p2, DWORD p3) {
+    void* self = (void*)p0;
+    DWORD vtable = *(DWORD*)self;
+    typedef int (__thiscall *Fn)(void*, DWORD, DWORD, DWORD);
+    return ((Fn)(*(DWORD*)(vtable + 0x10)))(self, p1, p2, p3);
+}
+
+// ============================================================
+// DSurface::FillRect @ 0x4BB5F0 — vtable[5] 0x14
+// thiscall: ECX=this, [ESP+4]=rect(ptr), [ESP+8]=color
+// ============================================================
+extern "C" DWORD RE_DSurface_FillRect(DWORD p0, DWORD p1, DWORD p2) {
+    void* self = (void*)p0;
+    DWORD vtable = *(DWORD*)self;
+    typedef int (__thiscall *Fn)(void*, DWORD, DWORD);
+    return ((Fn)(*(DWORD*)(vtable + 0x14)))(self, p1, p2);
+}
+
+// ============================================================
+// DSurface::FillRectWithFlags @ 0x4BB830 — vtable[7] 0x1C
+// thiscall: ECX=this, [ESP+4]=clip_rect(ptr), [ESP+8]=color(ptr), [ESP+C]=opacity
+// ============================================================
+extern "C" DWORD RE_DSurface_FillRectWithFlags(DWORD p0, DWORD p1, DWORD p2, DWORD p3) {
+    void* self = (void*)p0;
+    DWORD vtable = *(DWORD*)self;
+    typedef int (__thiscall *Fn)(void*, DWORD, DWORD, DWORD);
+    return ((Fn)(*(DWORD*)(vtable + 0x1C)))(self, p1, p2, p3);
+}
+
+// ============================================================
+// DSurface::Lock @ 0x4BAD80 — vtable[23] 0x5C
+// thiscall: ECX=this, [ESP+4]=x, [ESP+8]=y
+// ============================================================
+extern "C" DWORD RE_DSurface_Lock(DWORD p0, DWORD p1, DWORD p2) {
+    void* self = (void*)p0;
+    DWORD vtable = *(DWORD*)self;
+    typedef void* (__thiscall *Fn)(void*, int, int);
+    return (DWORD)((Fn)(*(DWORD*)(vtable + 0x5C)))(self, (int)p1, (int)p2);
+}
+
+// ============================================================
+// DSurface::Unlock @ 0x4BAF40 — vtable[24] 0x60
+// thiscall: ECX=this
+// ============================================================
+extern "C" DWORD RE_DSurface_Unlock(DWORD p0) {
+    void* self = (void*)p0;
+    DWORD vtable = *(DWORD*)self;
+    typedef int (__thiscall *Fn)(void*);
+    return ((Fn)(*(DWORD*)(vtable + 0x60)))(self);
+}
+
+// ============================================================
+// DSurface::CanLock @ 0x4BAEC0 — vtable[25] 0x64
+// thiscall: ECX=this, [ESP+4]=unk1, [ESP+8]=unk2 (both unused, pass 0)
+// ============================================================
+extern "C" DWORD RE_DSurface_CanLock(DWORD p0) {
+    void* self = (void*)p0;
+    DWORD vtable = *(DWORD*)self;
+    typedef int (__thiscall *Fn)(void*, DWORD, DWORD);
+    return ((Fn)(*(DWORD*)(vtable + 0x64)))(self, 0, 0);
+}
+
+// ============================================================
+// DSurface::DrawGradientLine @ 0x4BF750 — vtable[36] 0x90
+// thiscall: ECX=this, [ESP+4..18]=start(ptr),end(ptr),pid,fv,gs(ptr),ge(ptr)
+// ============================================================
+extern "C" DWORD RE_DSurface_DrawGradientLine(DWORD p0, DWORD p1, DWORD p2, DWORD p3, DWORD p4, DWORD p5, DWORD p6) {
+    void* self = (void*)p0;
+    DWORD vtable = *(DWORD*)self;
+    typedef int (__thiscall *Fn)(void*, DWORD, DWORD, DWORD, DWORD, DWORD, DWORD);
+    return ((Fn)(*(DWORD*)(vtable + 0x90)))(self, p1, p2, p3, p4, p5, p6);
+}
+
+// ============================================================
+// DSurface::DrawStippledRect @ 0x4C0E30 — vtable[20] 0x50
+// thiscall: ECX=this, [ESP+4..10]=tl(ptr),br(ptr),color,fill
+// ============================================================
+extern "C" DWORD RE_DSurface_DrawStippledRect(DWORD p0, DWORD p1, DWORD p2, DWORD p3, DWORD p4) {
+    void* self = (void*)p0;
+    DWORD vtable = *(DWORD*)self;
+    typedef int (__thiscall *Fn)(void*, DWORD, DWORD, DWORD, DWORD);
+    return ((Fn)(*(DWORD*)(vtable + 0x50)))(self, p1, p2, p3, p4);
+}
+
+// ============================================================
+// DSurface::DrawDashedLineStipple @ 0x4C0750 — vtable[19] 0x4C
+// thiscall: ECX=this, [ESP+4..18]=start(ptr),end(ptr),color,stipple(ptr),dash_offset,update_z
+// ============================================================
+extern "C" DWORD RE_DSurface_DrawDashedLineStipple(DWORD p0, DWORD p1, DWORD p2, DWORD p3, DWORD p4, DWORD p5, DWORD p6) {
+    void* self = (void*)p0;
+    DWORD vtable = *(DWORD*)self;
+    typedef int (__thiscall *Fn)(void*, DWORD, DWORD, DWORD, DWORD, DWORD, DWORD);
+    return ((Fn)(*(DWORD*)(vtable + 0x4C)))(self, p1, p2, p3, p4, p5, p6);
+}
+
 } // namespace re_impl
 } // namespace gamemd
