@@ -400,8 +400,10 @@ public:
         const RectangleStruct& draw_rect, uint32_t color) override;
     virtual bool DrawRect(const RectangleStruct& draw_rect, uint32_t color) override;
 
-    virtual void* Lock(int x, int y) override { return nullptr; }
-    virtual bool Unlock() override { return false; }
+    // IDA: 0x411560 — ++LockCount, return nullptr (no SW buffer)
+    virtual void* Lock(int x, int y) override { ++LockCount; return nullptr; }
+    // IDA: 0x411570 — --LockCount, return false (stub)
+    virtual bool Unlock() override { --LockCount; return false; }
     virtual bool CanLock(uint32_t unk1, uint32_t unk2) override { return false; }
     virtual bool IsLocked() const override final { return LockCount > 0; }
 
