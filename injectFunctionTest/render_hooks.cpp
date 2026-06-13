@@ -17,25 +17,20 @@ namespace render_hooks {
 //   [ESP+24] = flags (int)
 //   [ESP+28] = a8 (char)
 // Record: source surface addr, source rect -> frame info, dst rect -> screen position
+// Blit_Tracker disabled for bisect
+#if 0
 DEFINE_HOOK(0x4BB0D0, Blit_Tracker, 0x6)
 {
-    // Extract: src surface + src rect + dst rect
     uint32_t src_surface = (uint32_t)R->Stack<DWORD>(12);
     int* dst_rect = (int*)R->Stack<DWORD>(4);
     int* src_rect = (int*)R->Stack<DWORD>(8);
     uint32_t flags = (uint32_t)R->Stack<DWORD>(24);
-
     if (src_surface && src_rect && dst_rect) {
-        elements::RecordBlit(
-            src_surface,
-            src_rect[0], src_rect[1],  // source x, y
-            src_rect[2], src_rect[3],  // source w, h
-            dst_rect[0], dst_rect[1],  // dest x, y
-            flags);
+        elements::RecordBlit(src_surface, src_rect[0], src_rect[1], src_rect[2], src_rect[3], dst_rect[0], dst_rect[1], flags);
     }
-
-    return 0; // let original Blit run
+    return 0;
 }
+#endif
 
 void Install() {}    // hooks auto-installed via DEFINE_HOOK
 void Remove() {}     // no cleanup needed
