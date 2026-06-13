@@ -330,6 +330,111 @@ bool DSurface::BlitPart(
 }
 
 // ============================================================
+// IntersectSurfaceRects — IDA: 0x7BBE20 (463B)
+// fastcall: ECX=dest_rect, EDX=dest_bounds, [ESP+4]=src_rect, [ESP+8]=src_bounds
+// All four are int[4]: { X, Y, Width, Height }
+//
+// When dest_rect.W == src_rect.W && dest_rect.H == src_rect.H:
+//   Mutual in-place clipping: adjusts both rect pairs against each other's bounds.
+// Otherwise:
+//   ClipRectIntersection each rect against its bounds independently.
+// Returns: true if all resulting Width/Height > 0.
+// ============================================================
+static bool IntersectSurfaceRects(int* dest_rect, int* dest_bounds,
+                                   int* src_rect, int* src_bounds)
+{
+    if (dest_rect[2] == src_rect[2] && dest_rect[3] == src_rect[3])
+    {
+        // --- Inline mutual clipping (W/H match path) ---
+
+        // Clip dest_rect left edge if negative → shifts src_rect too
+        if (dest_rect[0] < 0)
+        {
+            src_rect[0] -= dest_rect[0];
+            src_rect[2] += dest_rect[0];
+            dest_rect[2] += dest_rect[0];
+            dest_rect[0] = 0;
+        }
+        // Clip dest_rect top edge if negative
+        if (dest_rect[1] < 0)
+        {
+            src_rect[1] -= dest_rect[1];
+            src_rect[3] += dest_rect[1];
+            dest_rect[3] += dest_rect[1];
+            dest_rect[1] = 0;
+        }
+
+        // Clip right edge against dest_bounds
+        int overflow = dest_rect[0] + dest_rect[2] - dest_bounds[2];
+        if (overflow > 0)
+        {
+            src_rect[2]  -= overflow;
+            dest_rect[2] -= overflow;
+        }
+
+        // Clip bottom edge against dest_bounds
+        overflow = dest_rect[1] + dest_rect[3] - dest_bounds[3];
+        if (overflow > 0)
+        {
+            src_rect[3]  -= overflow;
+            dest_rect[3] -= overflow;
+        }
+
+        // Clip src_rect left edge if negative → shifts dest_rect too
+        if (src_rect[0] < 0)
+        {
+            dest_rect[0] -= src_rect[0];
+            src_rect[2]  += src_rect[0];
+            dest_rect[2] += src_rect[0];
+            src_rect[0] = 0;
+        }
+        // Clip src_rect top edge if negative
+        if (src_rect[1] < 0)
+        {
+            dest_rect[1] -= src_rect[1];
+            src_rect[3]  += src_rect[1];
+            dest_rect[3] += src_rect[1];
+            src_rect[1] = 0;
+        }
+
+        // Clip right edge against src_bounds
+        overflow = src_rect[0] + src_rect[2] - src_bounds[2];
+        if (overflow > 0)
+        {
+            src_rect[2]  -= overflow;
+            dest_rect[2] -= overflow;
+        }
+
+        // Clip bottom edge against src_bounds
+        overflow = src_rect[1] + src_rect[3] - src_bounds[3];
+        if (overflow > 0)
+        {
+            src_rect[3]  -= overflow;
+            dest_rect[3] -= overflow;
+        }
+    }
+    else
+    {
+        // --- W/H mismatch: clip each rect against its own bounds ---
+        RectangleStruct tmp;
+        RectangleStruct db = { dest_bounds[0], dest_bounds[1], dest_bounds[2], dest_bounds[3] };
+        RectangleStruct dr = { dest_rect[0],   dest_rect[1],   dest_rect[2],   dest_rect[3]   };
+        ClipRectIntersection(&tmp, &db, &dr, nullptr, nullptr);
+        dest_rect[0] = tmp.X; dest_rect[1] = tmp.Y;
+        dest_rect[2] = tmp.Width; dest_rect[3] = tmp.Height;
+
+        RectangleStruct sb = { src_bounds[0], src_bounds[1], src_bounds[2], src_bounds[3] };
+        RectangleStruct sr = { src_rect[0],   src_rect[1],   src_rect[2],   src_rect[3]   };
+        ClipRectIntersection(&tmp, &sb, &sr, nullptr, nullptr);
+        src_rect[0] = tmp.X; src_rect[1] = tmp.Y;
+        src_rect[2] = tmp.Width; src_rect[3] = tmp.Height;
+    }
+
+    return dest_rect[2] > 0 && dest_rect[3] > 0
+        && src_rect[2] > 0 && src_rect[3] > 0;
+}
+
+// ============================================================
 // DSurface::Blit — IDA: 0x4BB0D0 (1303B)
 // Hardware/software blit with coordinate clipping.
 // Parameters (binary order, raw int*):
@@ -339,7 +444,7 @@ bool DSurface::BlitPart(
 //   a4    = source Surface*
 //   a5    = src_clip_rect [X,Y,W,H] — clip region on src surface
 //   a6    = src_rect [X,Y,W,H] — what part of source to blit
-//   a7    = flags / option1
+//   a7    = flags / option1 (low byte used)
 //   a8    = option2
 // ============================================================
 
@@ -352,156 +457,210 @@ char DSurface::BlitCore(
     int* self, int* a2, int* a3, void* a4, int* a5, int* a6, int a7, char a8)
 {
     // --- Early exit: any rect has non-positive dimensions ---
-    if (a2[2] <= 0 || a2[3] <= 0   // dest_clip W/H
-        || a5[2] <= 0 || a5[3] <= 0 // src_clip W/H
-        || a3[2] <= 0 || a3[3] <= 0 // dest_rect W/H
-        || a6[2] <= 0 || a6[3] <= 0)// src_rect W/H
+    if (a2[2] <= 0 || a2[3] <= 0
+     || a5[2] <= 0 || a5[3] <= 0
+     || a3[2] <= 0 || a3[3] <= 0
+     || a6[2] <= 0 || a6[3] <= 0)
         return 0;
 
-    auto* dst   = reinterpret_cast<DSurface*>(self);
-    auto* src   = reinterpret_cast<class Surface*>(a4);
-    auto* dsurf = dynamic_cast<DSurface*>(src);
+    auto* dst = reinterpret_cast<DSurface*>(self);
+    auto* src = reinterpret_cast<class Surface*>(a4);
+    auto* src_dsurf = dynamic_cast<DSurface*>(src);
 
     // --- Determine hardware vs software blit path ---
-    // v42=1 means software blit (XSurface::BlitPart), v42=0 means hardware (DDraw Blt)
-    char v42 = 0;
+    // v42 == true → software (XSurface::BlitPart), false → hardware (DDraw Blt)
+    bool v42 = false;
 
-    // Check if source can be hardware-blitted:
-    //  - Source must be a DSurface (has IDirectDrawSurface7)
-    //  - Source must not be locked
-    //  - flags != 1
-    //  - BytesPerPixel must match
     if (!src->IsDSurface()
-        || src->IsLocked()
-        || static_cast<char>(a7) == 1
-        || src->GetBytesPerPixel() != dst->GetBytesPerPixel())
+     || src->IsLocked()
+     || static_cast<char>(a7) == 1
+     || src->GetBytesPerPixel() != dst->GetBytesPerPixel())
     {
-        v42 = 1;
+        v42 = true;
     }
 
-    // Determine effective option2:
-    // If destination surface is Allocated AND DDraw is initialized (windowed mode),
-    // disable option2 (v13=0). Otherwise use the parameter.
+    // Windowed mode (Allocated && DDraw initialized) → suppress option2
     char v13;
     if (dst->Allocated && g_DDraw_Initialized == 1)
         v13 = 0;
     else
         v13 = a8;
 
-    // If not already software, and effective option2 is true,
-    // check if either surface is in system memory:
-    // If destination is not VRAM, OR source is DSurface and not VRAM → software blit.
-    // Also requires src_rect dimensions to match clip_src dimensions.
+    // VRAM check: if either surface is in system memory, force software
     if (!v42 && v13 == 1
-        && (!dst->VRAMmed || (dsurf && dsurf->IsDSurface() && !dsurf->VRAMmed))
-        && a6[2] == a3[2] && a6[3] == a3[3])
+     && (!dst->VRAMmed
+         || (src_dsurf && src_dsurf->IsDSurface() && !src_dsurf->VRAMmed))
+     && a6[2] == a3[2] && a6[3] == a3[3])
     {
-        v42 = 1;
+        v42 = true;
     }
 
     // --- DDraw not active → bail ---
     if (!g_DDraw_Initialized && !g_DDraw_Active)
         return 0;
 
-    // --- Surface lost handling ---
+    // --- Surface lost handling (destination surface) ---
     if (dst->Surface
-        && dst->Surface->IsLost() == DDERR_SURFACELOST)
+     && dst->Surface->IsLost() == DDERR_SURFACELOST)
     {
-        // If Restore fails or surface is still lost, bail
-        if (FAILED(dst->Surface->Restore()) || dst->Surface->IsLost() != DD_OK)
+        if (FAILED(dst->Surface->Restore())
+         || dst->Surface->IsLost() == DDERR_SURFACELOST)
             return 0;
 
-        // Fix-up lock count after restore
         int saved_locks = dst->LockCount;
         if (saved_locks > 0)
         {
             dst->LockCount = 0;
-            dst->Lock(0, 0);         // vtable[23]
-            dst->LockCount = 1;
-            dst->Unlock();           // vtable[24]
+            dst->Lock(0, 0);           // vtable[23]
+            ++dst->LockCount;
+            dst->Unlock();             // vtable[24]
             dst->LockCount = saved_locks;
         }
     }
 
-    // --- Software path: delegate to XSurface::BlitPart (direct call, non-virtual) ---
-    if (v42 == 1)
+    // --- Software path: delegate to XSurface::BlitPart ---
+    if (v42)
     {
-        // IDA: XSurface::BlitPart(a3, v10, a6, a7, 1)
-        //   a3 = dest_rect, a4(v10) = src_surface, a6 = src_rect
         RectangleStruct dest_r = { a3[0], a3[1], a3[2], a3[3] };
         RectangleStruct src_r  = { a6[0], a6[1], a6[2], a6[3] };
-        return dst->XSurface::BlitPart(dest_r, const_cast<class Surface*>(src), src_r, a7 != 0, true) ? 1 : 0;
+        return dst->XSurface::BlitPart(
+                    dest_r, const_cast<class Surface*>(src),
+                    src_r, a7 != 0, true) ? 1 : 0;
     }
 
     // ============================================================
     // Hardware path: DDraw Blt with coordinate clipping
-    // IDA reference: IntersectSurfaceRects + IDirectDrawSurface7::Blt(vtable[5])
     // ============================================================
 
-    // Get source surface rect
-    RectangleStruct src_srf;
-    src->GetRect(&src_srf);
+    // Load dest_rect values (a3)
+    int v52 = a3[0], v53 = a3[1], v54 = a3[2], v55 = a3[3];
 
-    // Get destination surface rect
-    RectangleStruct dst_srf;
-    dst->GetRect(&dst_srf);
+    // Load src_rect values (a6) — used as "clip_src" by the binary
+    int v59 = a6[0], v60 = a6[1], v61 = a6[2], v62 = a6[3];
 
-    // Clip source surface to src_clip (a5) bounds
-    RectangleStruct src_clipped;
-    RectangleStruct src_clip = { a5[0], a5[1], a5[2], a5[3] };
-    int sx_off = 0, sy_off = 0;
-    ClipRectIntersection(&src_clipped, &src_clip, &src_srf, &sx_off, &sy_off);
+    // --- Get source surface rect ---
+    int src_srf[4];
+    src->GetRect(reinterpret_cast<RectangleStruct*>(src_srf));
+    int v43 = src_srf[0], v44 = src_srf[1];
+    int v45 = src_srf[2], v46 = src_srf[3];
 
-    // Clip destination surface to dest_clip (a2) bounds
-    RectangleStruct dst_clipped;
-    RectangleStruct dst_clip = { a2[0], a2[1], a2[2], a2[3] };
-    int dx_off = 0, dy_off = 0;
-    ClipRectIntersection(&dst_clipped, &dst_clip, &dst_srf, &dx_off, &dy_off);
+    // Declare clipped values upfront (avoids goto-over-init errors)
+    int v63 = 0, v64 = 0, v65 = 0, v66 = 0;
+    int v67 = 0, v68 = 0, v69 = 0, v70 = 0;
+    bool src_clip_ok = false;
 
-    // Intersect src_rect (a6) with clipped source region
-    RectangleStruct src_blit;
-    RectangleStruct src_r = { a6[0], a6[1], a6[2], a6[3] };
-    int sx2_off = 0, sy2_off = 0;
-    ClipRectIntersection(&src_blit, &src_clipped, &src_r, &sx2_off, &sy2_off);
+    // --- Clip source surface against src_clip (a5) ---
+    {
+        int v48 = a5[2], v49 = a5[3];
+        if (v48 <= 0 || v49 <= 0 || v45 <= 0 || v46 <= 0) goto hw_check;
 
-    // Intersect dest_rect (a3) with clipped dest region
-    RectangleStruct dst_blit;
-    RectangleStruct dst_r = { a3[0], a3[1], a3[2], a3[3] };
-    int dx2_off = 0, dy2_off = 0;
-    ClipRectIntersection(&dst_blit, &dst_clipped, &dst_r, &dx2_off, &dy2_off);
+        int v29 = a5[0], v50 = v29;
+        if (v43 < v29)
+        {
+            v45 += v43 - v29;
+            v43 = v50;
+        }
+        if (v45 < 1) goto hw_check;
 
-    // Ensure both have positive dimensions
-    if (src_blit.Width <= 0 || src_blit.Height <= 0
-        || dst_blit.Width <= 0 || dst_blit.Height <= 0)
+        int v47 = a5[1];
+        if (v44 < v47)
+        {
+            v46 += v44 - v47;
+            v44 = v47;
+        }
+        if (v46 < 1) goto hw_check;
+
+        if (v43 + v45 > v48 + v50)
+            v45 = v48 + v50 - v43;
+        if (v45 < 1) goto hw_check;
+
+        if (v46 + v44 > v49 + v47)
+            v46 = v49 + v47 - v44;
+        if (v46 < 1) goto hw_check;
+
+        v63 = v43; v64 = v44; v65 = v45; v66 = v46;
+        src_clip_ok = true;
+    }
+
+hw_check:
+    if (!src_clip_ok) return 0;
+
+    // --- Get destination surface rect ---
+    RectangleStruct dst_srf_storage;
+    dst->GetRect(&dst_srf_storage);
+    int* v71_ptr = reinterpret_cast<int*>(&dst_srf_storage);
+
+    int v35 = v71_ptr[0], v37 = v71_ptr[1];
+    int v38 = v71_ptr[2], v39 = v71_ptr[3];
+    int v36 = a2[2];
+    int v57 = v38;  // original dst_surf.W
+    bool dst_clip_ok = false;
+
+    // --- Clip destination surface against dest_clip (a2) ---
+    {
+        if (v36 <= 0) goto hw_fail_dst;
+        int v48 = a2[3];
+        if (v48 <= 0 || v38 <= 0 || v39 <= 0) goto hw_fail_dst;
+
+        int v40 = a2[0];
+        if (v35 < v40)
+        {
+            v38 += v35 - v40;
+            v35 = v40;
+            v57 = v38;
+        }
+        if (v38 < 1) goto hw_fail_dst;
+
+        int v49 = a2[1];
+        if (v37 < v49)
+        {
+            v39 += v37 - v49;
+            v37 = v49;
+        }
+        if (v39 < 1) goto hw_fail_dst;
+
+        int v41 = (v35 + v38 <= v40 + v36) ? v57 : (v36 + v40 - v35);
+        if (v41 < 1) goto hw_fail_dst;
+
+        if (v39 + v37 > v49 + v48)
+            v39 = v49 + v48 - v37;
+        if (v39 < 1) goto hw_fail_dst;
+
+        v67 = v35; v68 = v37; v69 = v57; v70 = v39;
+        dst_clip_ok = true;
+    }
+
+hw_fail_dst:
+    if (!dst_clip_ok)
+    {
+        v67 = v43; v68 = v44; v69 = v45; v70 = v46;
+    }
+
+    // --- Intersect the clipped rects ---
+    if (!IntersectSurfaceRects(&v52, &v67, &v59, &v63))
         return 0;
 
-    // Use the smaller of the two dimensions (no stretching with DDBLT_WAIT)
-    int blit_w = (src_blit.Width < dst_blit.Width) ? src_blit.Width : dst_blit.Width;
-    int blit_h = (src_blit.Height < dst_blit.Height) ? src_blit.Height : dst_blit.Height;
-
-    // Build source RECT: clipped_src + offset from IntersectSurfaceRects
-    // In the binary: sr = {v63+v59, v64+v60, v63+v59+v61, v64+v60+v62}
-    //   v63=X of src_clipped, v59=X of src_rect (from a6)
-    //   v61=W of src_rect (adjusted), v62=H of src_rect (adjusted)
-    RECT sr;
-    sr.left   = src_blit.X + a6[0];
-    sr.top    = src_blit.Y + a6[1];
-    sr.right  = sr.left + blit_w;
-    sr.bottom = sr.top  + blit_h;
-
-    // Build dest RECT: clipped_dst + offset from dest_rect
-    // In the binary: dr = {v67+v52, v68+v53, v67+v52+v54, v68+v53+v55}
-    //   v67=X of dst_clipped, v52=X of dest_rect (from a3)
-    //   v54=W of dest_rect, v55=H of dest_rect
+    // --- Build Blt RECTs from intersected values ---
     RECT dr;
-    dr.left   = dst_blit.X + a3[0];
-    dr.top    = dst_blit.Y + a3[1];
-    dr.right  = dr.left + blit_w;
-    dr.bottom = dr.top  + blit_h;
+    dr.left   = v67 + v52;
+    dr.top    = v68 + v53;
+    dr.right  = v67 + v52 + v54;
+    dr.bottom = v68 + v53 + v55;
 
-    // IDirectDrawSurface7::Blt — vtable[5] offset 20
+    RECT sr;
+    sr.left   = v63 + v59;
+    sr.top    = v64 + v60;
+    sr.right  = v63 + v59 + v61;
+    sr.bottom = v64 + v60 + v62;
+
+    if (!(src_dsurf && src_dsurf->Surface))
+        return 0;
+
+    // IDirectDrawSurface7::Blt — vtable[5] offset 0x14
     // flags = 0x01000000 (DDBLT_WAIT), lpDDBltFx = nullptr
-    HRESULT hr = dst->Surface->Blt(&dr, dsurf->Surface, &sr, DDBLT_WAIT, nullptr);
+    HRESULT hr = dst->Surface->Blt(
+                    &dr, src_dsurf->Surface, &sr,
+                    0x1000000, nullptr);
     return (hr == DD_OK) ? 1 : 0;
 }
 
@@ -510,13 +669,10 @@ bool DSurface::Blit(
     class Surface* src, const RectangleStruct& dest_rect,
     const RectangleStruct& src_rect, bool option1, bool option2)
 {
-    // Map C++ parameter order to binary parameter order:
-    //   clip_rect → a2 (dest_clip),  clip_rect2 → a5 (src_clip)
-    //   src       → a4 (source),     dest_rect  → a3, src_rect → a6
-    int a2[4] = { clip_rect.X, clip_rect.Y, clip_rect.Width, clip_rect.Height };
-    int a3[4] = { dest_rect.X, dest_rect.Y, dest_rect.Width, dest_rect.Height };
+    int a2[4] = { clip_rect.X,  clip_rect.Y,  clip_rect.Width,  clip_rect.Height  };
+    int a3[4] = { dest_rect.X,  dest_rect.Y,  dest_rect.Width,  dest_rect.Height  };
     int a5[4] = { clip_rect2.X, clip_rect2.Y, clip_rect2.Width, clip_rect2.Height };
-    int a6[4] = { src_rect.X, src_rect.Y, src_rect.Width, src_rect.Height };
+    int a6[4] = { src_rect.X,   src_rect.Y,   src_rect.Width,   src_rect.Height   };
 
     return BlitCore(
         reinterpret_cast<int*>(this),
@@ -543,45 +699,81 @@ char DSurface::BlitTracker(
     return BlitCore(self, dst_rect, src_rect, src_surface, clip_dst, clip_src, flags, option2);
 }
 
+// ============================================================
+// DSurface::FillRectEx — IDA: 0x4BB620 (526B)
+// Hardware/software color fill with coordinate clipping.
+// ============================================================
 bool DSurface::FillRectEx(
     const RectangleStruct& clip_rect,
     const RectangleStruct& fill_rect, uint32_t color)
 {
-    if (!Surface) return false;
-
-    (void)clip_rect;
-
-    DDBLTFX fx = {};
-    fx.dwSize      = sizeof(fx);
-    fx.dwFillColor = color;
-
-    RECT r = { fill_rect.X, fill_rect.Y,
-               fill_rect.X + fill_rect.Width, fill_rect.Y + fill_rect.Height };
-
-    HRESULT hr = Surface->Blt(&r, nullptr, nullptr, DDBLT_COLORFILL | DDBLT_WAIT, &fx);
-    if (SUCCEEDED(hr)) return true;
-
-    // cnc-ddraw fallback: manual pixel write via Lock/Unlock
-    DDSURFACEDESC2 desc = {};
-    desc.dwSize = sizeof(desc);
-    if (FAILED(Surface->Lock(nullptr, &desc, DDLOCK_WAIT, nullptr)))
+    // IDA: early exit — Surface must exist and fill_rect must have positive dims
+    if (!Surface || fill_rect.Width <= 0 || fill_rect.Height <= 0)
         return false;
 
-    uint16_t* buf = static_cast<uint16_t*>(desc.lpSurface);
-    int pitch = desc.lPitch / 2;
+    // IDA: Check if software blit is needed
+    if (!g_DDraw_UseHWBlit
+     || IsLocked()
+     || FAILED(Surface->GetBltStatus(DDGBS_ISBLTDONE)))
+    {
+        return XSurface::FillRectEx(clip_rect, fill_rect, color);
+    }
 
-    int x0 = fill_rect.X, y0 = fill_rect.Y;
-    int x1 = fill_rect.X + fill_rect.Width;
-    int y1 = fill_rect.Y + fill_rect.Height;
-    if (x0 < 0) x0 = 0; if (y0 < 0) y0 = 0;
-    if (x1 > Width) x1 = Width; if (y1 > Height) y1 = Height;
+    if (!g_DDraw_Initialized && !g_DDraw_Active)
+        return false;
 
-    for (int y = y0; y < y1; y++)
-        for (int x = x0; x < x1; x++)
-            buf[y * pitch + x] = static_cast<uint16_t>(color);
+    // --- Lost surface recovery ---
+    if (Surface->IsLost() == DDERR_SURFACELOST)
+    {
+        if (FAILED(Surface->Restore())
+         || Surface->IsLost() == DDERR_SURFACELOST)
+            return false;
 
-    Surface->Unlock(nullptr);
-    return true;
+        int saved_locks = LockCount;
+        if (saved_locks > 0)
+        {
+            LockCount = 0;
+            Lock(0, 0);           // vtable[23]
+            ++LockCount;
+            Unlock();             // vtable[24]
+            LockCount = saved_locks;
+        }
+    }
+
+    // --- Get destination surface rect and clip fill_rect ---
+    RectangleStruct surf_rect;
+    GetRect(&surf_rect);
+
+    // IDA: two-stage ClipRectIntersection
+    RectangleStruct clipped;
+    ClipRectIntersection(&clipped, &surf_rect, &surf_rect, nullptr, nullptr);
+
+    int fa[4] = { fill_rect.X, fill_rect.Y, fill_rect.Width, fill_rect.Height };
+    int ca[4] = { clipped.X, clipped.Y, clipped.Width, clipped.Height };
+
+    RectangleStruct final_rect;
+    RectangleStruct clip_r = { ca[0], ca[1], ca[2], ca[3] };
+    RectangleStruct fill_r = { fa[0], fa[1], fa[2], fa[3] };
+    ClipRectIntersection(&final_rect, &clip_r, &fill_r, nullptr, nullptr);
+
+    if (final_rect.Width <= 0 || final_rect.Height <= 0)
+        return false;
+
+    // --- DDraw color fill ---
+    RECT r;
+    r.left   = final_rect.X;
+    r.top    = final_rect.Y;
+    r.right  = final_rect.X + final_rect.Width;
+    r.bottom = final_rect.Y + final_rect.Height;
+
+    DDBLTFX fx = {};
+    fx.dwSize      = sizeof(fx);  // IDA: = 100
+    fx.dwFillColor = color;
+
+    // IDA: 0x1000600 = DDBLT_WAIT (0x1000000) | DDBLT_COLORFILL (0x400) | 0x200
+    constexpr DWORD blt_flags = 0x01000600;
+    HRESULT hr = Surface->Blt(&r, nullptr, nullptr, blt_flags, &fx);
+    return SUCCEEDED(hr);
 }
 
 bool DSurface::FillRect(const RectangleStruct& fill_rect, uint32_t color)
@@ -602,111 +794,131 @@ bool DSurface::FillRectWithFlags(
 }
 
 // IDA: 0x4BAD80 -- DSurface::Lock (315B)
-// Returns byte offset into locked surface buffer, or 0 on failure.
-// Handles lost surface restoration and re-locking.
+// thiscall: ECX=this, stack=[x, y]
+// Returns pointer to locked surface pixel at (x,y), or nullptr on failure.
+// vtable[23] — Lost-surface recovery: re-locks after Restore via Lock(0,0)+Unlock() cycle.
+// First lock path calls IDirectDrawSurface7::Lock(vtable[25]) and caches desc in SurfaceDesc.
+// Nested lock path just increments LockCount and computes byte offset.
 void* DSurface::Lock(int x, int y)
 {
     // IDA: if (!g_DDraw_Initialized && !g_DDraw_Active) return 0
     if (!g_DDraw_Initialized && !g_DDraw_Active)
         return nullptr;
 
-    // IDA: v4 = this+7 (=Surface), check IsLost via vtable[24] (0x60)
-    if (Surface) {
-        if (Surface->IsLost() == DDERR_SURFACELOST) {
-            // IDA: if Restore(vtable[27]) fails or still lost
-            if (FAILED(Surface->Restore()) || Surface->IsLost() == DDERR_SURFACELOST)
-                return nullptr;
+    // IDA: Lost surface detection + recovery
+    // v4 = Surface (this+7), IsLost via IDDS7 vtable[24]=0x60
+    if (Surface && Surface->IsLost() == DDERR_SURFACELOST)
+    {
+        // IDA: Restore(vtable[27]=0x6C) || still lost → return 0
+        if (FAILED(Surface->Restore()) || Surface->IsLost() == DDERR_SURFACELOST)
+            return nullptr;
 
-            // IDA: save LockCount, unlock all, then increment
-            int saved = LockCount;
-            if (saved > 0) {
-                LockCount = 0;
-                (void)Unlock();          // vtable[23] = Unlock
-                LockCount = 1;
-                (void)Unlock();          // vtable[24] = Unlock (2nd one?)
-                LockCount = saved;
-            }
+        // IDA: save LockCount, set 0, cycle Lock(0,0)+Unlock(), restore
+        // This re-acquires DDraw lock after Restore without net LockCount change
+        int saved = LockCount;
+        if (saved > 0)
+        {
+            LockCount = 0;
+            Lock(0, 0);          // vtable[23]: lock at origin to re-acquire DDraw surface
+            ++LockCount;
+            Unlock();            // vtable[24]: decrements count, doesn't release DDraw (count ≠ 0)
+            LockCount = saved;
         }
     }
 
+    // IDA: validate coordinates
     if (x < 0 || y < 0)
         return nullptr;
 
-    // IDA: if LockCount > 0 -> nested lock (just increment and return offset)
-    if (LockCount > 0) {
+    // IDA: nested lock — already locked, just increment and compute offset
+    if (LockCount > 0)
+    {
         ++LockCount;
-        // IDA: return x * BytesPerPixel + y * Pitch + LockedBuffer
         int pitch = GetPitch();
-        int bpp = GetBytesPerPixel();
-        return static_cast<uint8_t*>(LockedSurface) + x * bpp + y * pitch;
+        return static_cast<uint8_t*>(LockedSurface)
+             + x * GetBytesPerPixel() + y * pitch;
     }
 
-    // IDA: First lock -- get surface descriptor via IDDS7::Lock (vtable[25] = 0x64)
-    if (!Surface) return nullptr;
+    // IDA: first lock — acquire via IDirectDrawSurface7::Lock(vtable[25]=0x64, flags=DDLOCK_WAIT)
+    if (!Surface)
+        return nullptr;
 
     DDSURFACEDESC2 desc = {};
     desc.dwSize = sizeof(desc);
 
-    // IDA: Lock(surface, 0, &desc, DDLOCK_WAIT, 0)
     HRESULT hr = Surface->Lock(nullptr, &desc, DDLOCK_WAIT, nullptr);
     if (FAILED(hr))
         return nullptr;
 
-    // IDA: memcpy SurfaceDesc from the DDSURFACEDESC2
+    // IDA: qmemcpy DDSURFACEDESC2 to this->SurfaceDesc (this+8)
+    if (SurfaceDesc)
+        std::memcpy(SurfaceDesc, &desc, sizeof(desc));
+
+    // IDA: extract pixel format from descriptor
+    // v8[21] = ddpfPixelFormat.dwRGBBitCount at offset 84
     BytesPerPixel = (desc.ddpfPixelFormat.dwRGBBitCount + 7) >> 3;
-    VRAMmed       = (desc.ddsCaps.dwCaps & DDSCAPS_VIDEOMEMORY) != 0;
+    // v8[26] = ddsCaps.dwCaps at offset 104, 0x4000 = DDSCAPS_VIDEOMEMORY
+    VRAMmed = (desc.ddsCaps.dwCaps & DDSCAPS_VIDEOMEMORY) != 0;
+    // v8[9] = lpSurface (locked data pointer at offset 36)
     LockedSurface = desc.lpSurface;
 
+    // LABEL_14: common tail — increment count, compute byte offset
     ++LockCount;
-    return static_cast<uint8_t*>(LockedSurface) + x * BytesPerPixel + y * static_cast<int>(desc.lPitch);
+    return static_cast<uint8_t*>(LockedSurface)
+         + x * BytesPerPixel + y * static_cast<int>(desc.lPitch);
 }
 
 // IDA: 0x4BAF40 -- DSurface::Unlock (154B)
-// Decrements lock count, unlocks when it reaches 0.
-// Also handles lost surface restoration pattern.
+// vtable[24] — Decrements lock count; on last unlock releases DDraw surface.
+// Also handles lost-surface recovery on unlock (re-lock cycle after Restore).
 bool DSurface::Unlock()
 {
-    // IDA: check DDraw active
-    if (g_DDraw_Initialized || g_DDraw_Active) {
-        if (Surface && Surface->IsLost() == DDERR_SURFACELOST) {
-            // IDA: if Restore succeeds and not lost
-            if (SUCCEEDED(Surface->Restore()) && Surface->IsLost() != DDERR_SURFACELOST) {
+    // IDA: check DDraw state (OR: proceed if either initialized or active)
+    if (g_DDraw_Initialized || g_DDraw_Active)
+    {
+        // IDA: Lost surface detection on unlock
+        if (Surface && Surface->IsLost() == DDERR_SURFACELOST)
+        {
+            // IDA: if Restore succeeds AND surface no longer lost
+            if (SUCCEEDED(Surface->Restore()) && Surface->IsLost() == DD_OK)
+            {
+                // IDA: save LockCount, set 0, cycle Lock(0,0)+Unlock(), restore
                 int saved = LockCount;
-                if (saved > 0) {
+                if (saved > 0)
+                {
                     LockCount = 0;
-                    Surface->Unlock(nullptr);    // vtable[23]
+                    Lock(0, 0);          // vtable[23]: re-acquire DDraw after Restore
                     ++LockCount;
-                    Surface->Unlock(nullptr);    // vtable[24]
+                    Unlock();            // vtable[24]: recursive — decrements, doesn't release DDraw
                     LockCount = saved;
                 }
             }
         }
     }
 
-    // IDA: if LockCount <= 0, return false
+    // IDA: decrement lock count
     if (LockCount <= 0)
         return false;
 
-    // IDA: decrement LockCount
-    int v6 = LockCount - 1;
-    LockCount = v6;
+    int new_count = LockCount - 1;
+    LockCount = new_count;
 
-    // IDA: if count reaches 0, call Unlock (vtable[32] = 0x80)
-    if (v6 == 0) {
-        Surface->Unlock(nullptr);
+    // IDA: last unlock → release DDraw surface via IDDS7::Unlock(vtable[32]=0x80)
+    if (new_count == 0)
+    {
+        if (Surface)
+            Surface->Unlock(nullptr);
         LockedSurface = nullptr;
     }
+
     return true;
 }
 
 // IDA: 0x4BAEC0 -- DSurface::CanLock (95B)
-// Probes whether the surface can be locked without actually locking.
-bool DSurface::CanLock(uint32_t unk1, uint32_t unk2)
+// vtable[25] — Probes whether the surface can be locked via test-lock-then-unlock.
+bool DSurface::CanLock(uint32_t /*unk1*/, uint32_t /*unk2*/)
 {
-    (void)unk1;
-    (void)unk2;
-
-    // IDA: if LockCount > 0, already locked -- can lock again
+    // IDA: already locked — can always lock again (nested)
     if (LockCount > 0)
         return true;
 
@@ -716,12 +928,13 @@ bool DSurface::CanLock(uint32_t unk1, uint32_t unk2)
     DDSURFACEDESC2 desc = {};
     desc.dwSize = sizeof(desc);
 
-    // IDA: Lock with DDLOCK_TESTONLY flag -> probe without actually locking
-    HRESULT hr = Surface->Lock(nullptr, &desc, DDLOCK_WAIT, nullptr);
+    // IDA: Lock with flags=0 (no DDLOCK_WAIT) — non-blocking test probe
+    HRESULT hr = Surface->Lock(nullptr, &desc, 0, nullptr);
     if (FAILED(hr))
         return false;
 
-    // IDA: immediately Unlock after probe
+    // IDA: immediately unlock after successful probe
+    // vtable[32]=0x80: IDirectDrawSurface7::Unlock
     Surface->Unlock(nullptr);
     return true;
 }
