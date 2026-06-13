@@ -84,7 +84,7 @@ RectangleStruct* ClipRectIntersection(
 // fastcall: ECX=start(double[2]), EDX=end(double[2]), [ESP+4]=clip_rect(int[4])
 // NOTE: start/end are double[2] in the binary (IDA uses fld, not fild).
 // clip_rect is int[4] (IDA uses fild). Source uses int* for compat.
-REVERSE(0x7bc2b0, "ClipLine: Cohen-Sutherland line clip", "Inject")
+REVERSE(0x7bc2b0, "ClipLine: Cohen-Sutherland line clip", "None")
 bool ClipLine(int start[2], int end[2], int clip_rect[4])
 {
     int clip_x  = clip_rect[0];
@@ -680,7 +680,7 @@ Point2D Surface::DrawText(
 
 // IDA: 0x7BAEB0 -- XSurface::SetPixel (89B)
 // vtable[9]  0x24 -- Lock(point) -> check BPP -> write pixel -> Unlock
-REVERSE(0x7baeb0, "XSurface::SetPixel: pixel write", "None")
+REVERSE(0x7baeb0, "XSurface::SetPixel: pixel write", "Inject")
 bool XSurface::SetPixel(const Point2D& point, uint32_t color)
 {
     void* buf = Lock(point.X, point.Y);
