@@ -258,75 +258,34 @@ DSurface::~DSurface()
     LockedSurface = nullptr;
 }
 
+// IDA: 0x4C1A90 — DSurface::BlitWhole (23B) thin wrapper
+// Rect::Set(0,0,0,0) → Blit(zero, zero, src, zero, zero, option1, option2)
 bool DSurface::BlitWhole(class Surface* src, bool option1, bool option2)
 {
-    if (!Surface || !src) return false;
-    auto* dsurf = dynamic_cast<DSurface*>(src);
-    if (!dsurf || !dsurf->Surface) return false;
-
-    // IDA: DSurface::Blit -- primary surface coordinate adjustment
-    // When blit-ing to the primary surface in windowed mode,
-    // destination coordinates must be offset by the window position
-    RECT dr = { 0, 0, Width, Height };
-    if (Surface == g_DDraw_PrimarySurface) {
-        RECT client_rect;
-        HWND hwnd = GetActiveWindow();
-        if (hwnd) {
-            GetClientRect(hwnd, &client_rect);
-            POINT pt = { client_rect.left, client_rect.top };
-            ClientToScreen(hwnd, &pt);
-            OffsetRect(&dr, pt.x, pt.y);
-        }
-    }
-
-    RECT sr = { 0, 0, dsurf->Width, dsurf->Height };
-
-    DWORD flags = DDBLT_WAIT;
-    if (!option1 && !option2) flags |= DDBLT_KEYSRC;
-
-    HRESULT hr = Surface->Blt(&dr, dsurf->Surface, &sr, flags, nullptr);
-    if (SUCCEEDED(hr)) return true;
-
-    // Fallback: manual Lock/memcpy for cnc-ddraw or software surfaces
-    DDSURFACEDESC2 sd = {}, dd = {};
-    sd.dwSize = sizeof(sd); dd.dwSize = sizeof(dd);
-    if (FAILED(dsurf->Surface->Lock(nullptr, &sd, DDLOCK_WAIT, nullptr)))
-        return false;
-    if (FAILED(Surface->Lock(nullptr, &dd, DDLOCK_WAIT, nullptr))) {
-        dsurf->Surface->Unlock(nullptr);
-        return false;
-    }
-
-    auto* s = static_cast<uint8_t*>(sd.lpSurface);
-    auto* d = static_cast<uint8_t*>(dd.lpSurface);
-    int h = (dsurf->Height < Height) ? dsurf->Height : Height;
-    int wbytes = (dsurf->Width < Width) ? dsurf->Width * 2 : Width * 2;
-    for (int y = 0; y < h; y++)
-        memcpy(d + y * dd.lPitch, s + y * sd.lPitch, wbytes);
-
-    Surface->Unlock(nullptr);
-    dsurf->Surface->Unlock(nullptr);
-    return true;
+    RectangleStruct zero = {};
+    return Blit(zero, zero, src, zero, zero, option1, option2);
 }
 
+// IDA: 0x4BB080 — DSurface::BlitPart (75B)
+// If HW blit possible (both surfaces exist, BPP/pitch match) → Blit
+// Otherwise fallback to XSurface::BlitPart (software path)
 bool DSurface::BlitPart(
     const RectangleStruct& dest_rect, class Surface* src,
     const RectangleStruct& src_rect, bool option1, bool option2)
 {
-    if (!Surface || !src) return false;
-    auto* dsurf = dynamic_cast<DSurface*>(src);
-    if (!dsurf || !dsurf->Surface) return false;
+    if (!Surface || !src)
+        return false;
 
-    RECT dr = { dest_rect.X, dest_rect.Y,
-                dest_rect.X + dest_rect.Width, dest_rect.Y + dest_rect.Height };
-    RECT sr = { src_rect.X, src_rect.Y,
-                src_rect.X + src_rect.Width, src_rect.Y + src_rect.Height };
+    auto* src_dsurf = dynamic_cast<DSurface*>(src);
+    if (!src_dsurf || !src_dsurf->Surface
+        || src->GetBytesPerPixel() != GetBytesPerPixel()
+        || src_dsurf->GetPitch() != GetPitch())
+    {
+        return XSurface::BlitPart(dest_rect, src, src_rect, option1, option2);
+    }
 
-    DWORD flags = DDBLT_WAIT;
-    if (!option1 && !option2) flags |= DDBLT_KEYSRC;
-
-    HRESULT hr = Surface->Blt(&dr, dsurf->Surface, &sr, flags, nullptr);
-    return SUCCEEDED(hr);
+    RectangleStruct zero = {};
+    return Blit(zero, zero, src, dest_rect, src_rect, option1, option2);
 }
 
 // ============================================================
@@ -776,12 +735,16 @@ bool DSurface::FillRectEx(
     return SUCCEEDED(hr);
 }
 
+// IDA: 0x4BB5F0 — DSurface::FillRect (43B) thin wrapper
+// GetRect() → FillRectEx(clip, fill_rect, color)
 bool DSurface::FillRect(const RectangleStruct& fill_rect, uint32_t color)
 {
-    RectangleStruct clip = {};
+    RectangleStruct clip;
+    GetRect(&clip);
     return FillRectEx(clip, fill_rect, color);
 }
 
+// TODO: IDA 0x4BB830 — 711B, full implementation pending
 bool DSurface::FillRectWithFlags(
     const RectangleStruct& clip_rect,
     const ColorStruct& color,
