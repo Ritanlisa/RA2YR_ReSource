@@ -329,28 +329,218 @@ bool DSurface::BlitPart(
     return SUCCEEDED(hr);
 }
 
+// ============================================================
+// DSurface::Blit — IDA: 0x4BB0D0 (1303B)
+// Hardware/software blit with coordinate clipping.
+// Parameters (binary order, raw int*):
+//   self  = destination DSurface*
+//   a2    = dest_clip_rect [X,Y,W,H] — clip region on dest surface
+//   a3    = dest_rect [X,Y,W,H] — where to paint on dest surface
+//   a4    = source Surface*
+//   a5    = src_clip_rect [X,Y,W,H] — clip region on src surface
+//   a6    = src_rect [X,Y,W,H] — what part of source to blit
+//   a7    = flags / option1
+//   a8    = option2
+// ============================================================
+
+// Forward-declare: no-op stub for EXE build (hook DLL has real version)
+namespace elements {
+    static void RecordBlit(uint32_t, int, int, int, int, int, int, uint32_t) {}
+}
+
+char DSurface::BlitCore(
+    int* self, int* a2, int* a3, void* a4, int* a5, int* a6, int a7, char a8)
+{
+    // --- Early exit: any rect has non-positive dimensions ---
+    if (a2[2] <= 0 || a2[3] <= 0   // dest_clip W/H
+        || a5[2] <= 0 || a5[3] <= 0 // src_clip W/H
+        || a3[2] <= 0 || a3[3] <= 0 // dest_rect W/H
+        || a6[2] <= 0 || a6[3] <= 0)// src_rect W/H
+        return 0;
+
+    auto* dst   = reinterpret_cast<DSurface*>(self);
+    auto* src   = reinterpret_cast<class Surface*>(a4);
+    auto* dsurf = dynamic_cast<DSurface*>(src);
+
+    // --- Determine hardware vs software blit path ---
+    // v42=1 means software blit (XSurface::BlitPart), v42=0 means hardware (DDraw Blt)
+    char v42 = 0;
+
+    // Check if source can be hardware-blitted:
+    //  - Source must be a DSurface (has IDirectDrawSurface7)
+    //  - Source must not be locked
+    //  - flags != 1
+    //  - BytesPerPixel must match
+    if (!src->IsDSurface()
+        || src->IsLocked()
+        || static_cast<char>(a7) == 1
+        || src->GetBytesPerPixel() != dst->GetBytesPerPixel())
+    {
+        v42 = 1;
+    }
+
+    // Determine effective option2:
+    // If destination surface is Allocated AND DDraw is initialized (windowed mode),
+    // disable option2 (v13=0). Otherwise use the parameter.
+    char v13;
+    if (dst->Allocated && g_DDraw_Initialized == 1)
+        v13 = 0;
+    else
+        v13 = a8;
+
+    // If not already software, and effective option2 is true,
+    // check if either surface is in system memory:
+    // If destination is not VRAM, OR source is DSurface and not VRAM → software blit.
+    // Also requires src_rect dimensions to match clip_src dimensions.
+    if (!v42 && v13 == 1
+        && (!dst->VRAMmed || (dsurf && dsurf->IsDSurface() && !dsurf->VRAMmed))
+        && a6[2] == a3[2] && a6[3] == a3[3])
+    {
+        v42 = 1;
+    }
+
+    // --- DDraw not active → bail ---
+    if (!g_DDraw_Initialized && !g_DDraw_Active)
+        return 0;
+
+    // --- Surface lost handling ---
+    if (dst->Surface
+        && dst->Surface->IsLost() == DDERR_SURFACELOST)
+    {
+        // If Restore fails or surface is still lost, bail
+        if (FAILED(dst->Surface->Restore()) || dst->Surface->IsLost() != DD_OK)
+            return 0;
+
+        // Fix-up lock count after restore
+        int saved_locks = dst->LockCount;
+        if (saved_locks > 0)
+        {
+            dst->LockCount = 0;
+            dst->Lock(0, 0);         // vtable[23]
+            dst->LockCount = 1;
+            dst->Unlock();           // vtable[24]
+            dst->LockCount = saved_locks;
+        }
+    }
+
+    // --- Software path: delegate to XSurface::BlitPart (direct call, non-virtual) ---
+    if (v42 == 1)
+    {
+        // IDA: XSurface::BlitPart(a3, v10, a6, a7, 1)
+        //   a3 = dest_rect, a4(v10) = src_surface, a6 = src_rect
+        RectangleStruct dest_r = { a3[0], a3[1], a3[2], a3[3] };
+        RectangleStruct src_r  = { a6[0], a6[1], a6[2], a6[3] };
+        return dst->XSurface::BlitPart(dest_r, const_cast<class Surface*>(src), src_r, a7 != 0, true) ? 1 : 0;
+    }
+
+    // ============================================================
+    // Hardware path: DDraw Blt with coordinate clipping
+    // IDA reference: IntersectSurfaceRects + IDirectDrawSurface7::Blt(vtable[5])
+    // ============================================================
+
+    // Get source surface rect
+    RectangleStruct src_srf;
+    src->GetRect(&src_srf);
+
+    // Get destination surface rect
+    RectangleStruct dst_srf;
+    dst->GetRect(&dst_srf);
+
+    // Clip source surface to src_clip (a5) bounds
+    RectangleStruct src_clipped;
+    RectangleStruct src_clip = { a5[0], a5[1], a5[2], a5[3] };
+    int sx_off = 0, sy_off = 0;
+    ClipRectIntersection(&src_clipped, &src_clip, &src_srf, &sx_off, &sy_off);
+
+    // Clip destination surface to dest_clip (a2) bounds
+    RectangleStruct dst_clipped;
+    RectangleStruct dst_clip = { a2[0], a2[1], a2[2], a2[3] };
+    int dx_off = 0, dy_off = 0;
+    ClipRectIntersection(&dst_clipped, &dst_clip, &dst_srf, &dx_off, &dy_off);
+
+    // Intersect src_rect (a6) with clipped source region
+    RectangleStruct src_blit;
+    RectangleStruct src_r = { a6[0], a6[1], a6[2], a6[3] };
+    int sx2_off = 0, sy2_off = 0;
+    ClipRectIntersection(&src_blit, &src_clipped, &src_r, &sx2_off, &sy2_off);
+
+    // Intersect dest_rect (a3) with clipped dest region
+    RectangleStruct dst_blit;
+    RectangleStruct dst_r = { a3[0], a3[1], a3[2], a3[3] };
+    int dx2_off = 0, dy2_off = 0;
+    ClipRectIntersection(&dst_blit, &dst_clipped, &dst_r, &dx2_off, &dy2_off);
+
+    // Ensure both have positive dimensions
+    if (src_blit.Width <= 0 || src_blit.Height <= 0
+        || dst_blit.Width <= 0 || dst_blit.Height <= 0)
+        return 0;
+
+    // Use the smaller of the two dimensions (no stretching with DDBLT_WAIT)
+    int blit_w = (src_blit.Width < dst_blit.Width) ? src_blit.Width : dst_blit.Width;
+    int blit_h = (src_blit.Height < dst_blit.Height) ? src_blit.Height : dst_blit.Height;
+
+    // Build source RECT: clipped_src + offset from IntersectSurfaceRects
+    // In the binary: sr = {v63+v59, v64+v60, v63+v59+v61, v64+v60+v62}
+    //   v63=X of src_clipped, v59=X of src_rect (from a6)
+    //   v61=W of src_rect (adjusted), v62=H of src_rect (adjusted)
+    RECT sr;
+    sr.left   = src_blit.X + a6[0];
+    sr.top    = src_blit.Y + a6[1];
+    sr.right  = sr.left + blit_w;
+    sr.bottom = sr.top  + blit_h;
+
+    // Build dest RECT: clipped_dst + offset from dest_rect
+    // In the binary: dr = {v67+v52, v68+v53, v67+v52+v54, v68+v53+v55}
+    //   v67=X of dst_clipped, v52=X of dest_rect (from a3)
+    //   v54=W of dest_rect, v55=H of dest_rect
+    RECT dr;
+    dr.left   = dst_blit.X + a3[0];
+    dr.top    = dst_blit.Y + a3[1];
+    dr.right  = dr.left + blit_w;
+    dr.bottom = dr.top  + blit_h;
+
+    // IDirectDrawSurface7::Blt — vtable[5] offset 20
+    // flags = 0x01000000 (DDBLT_WAIT), lpDDBltFx = nullptr
+    HRESULT hr = dst->Surface->Blt(&dr, dsurf->Surface, &sr, DDBLT_WAIT, nullptr);
+    return (hr == DD_OK) ? 1 : 0;
+}
+
 bool DSurface::Blit(
     const RectangleStruct& clip_rect, const RectangleStruct& clip_rect2,
     class Surface* src, const RectangleStruct& dest_rect,
     const RectangleStruct& src_rect, bool option1, bool option2)
 {
-    if (!Surface || !src) return false;
-    auto* dsurf = dynamic_cast<DSurface*>(src);
-    if (!dsurf || !dsurf->Surface) return false;
+    // Map C++ parameter order to binary parameter order:
+    //   clip_rect → a2 (dest_clip),  clip_rect2 → a5 (src_clip)
+    //   src       → a4 (source),     dest_rect  → a3, src_rect → a6
+    int a2[4] = { clip_rect.X, clip_rect.Y, clip_rect.Width, clip_rect.Height };
+    int a3[4] = { dest_rect.X, dest_rect.Y, dest_rect.Width, dest_rect.Height };
+    int a5[4] = { clip_rect2.X, clip_rect2.Y, clip_rect2.Width, clip_rect2.Height };
+    int a6[4] = { src_rect.X, src_rect.Y, src_rect.Width, src_rect.Height };
 
-    RECT dr = { dest_rect.X, dest_rect.Y,
-                dest_rect.X + dest_rect.Width, dest_rect.Y + dest_rect.Height };
-    RECT sr = { src_rect.X, src_rect.Y,
-                src_rect.X + src_rect.Width, src_rect.Y + src_rect.Height };
+    return BlitCore(
+        reinterpret_cast<int*>(this),
+        a2, a3, src, a5, a6,
+        static_cast<int>(option1),
+        static_cast<char>(option2)) != 0;
+}
 
-    (void)clip_rect;
-    (void)clip_rect2;
-
-    DWORD flags = DDBLT_WAIT;
-    if (!option1 && !option2) flags |= DDBLT_KEYSRC;
-
-    HRESULT hr = Surface->Blt(&dr, dsurf->Surface, &sr, flags, nullptr);
-    return SUCCEEDED(hr);
+// BlitTracker — same as Blit but records element info for headless tracking.
+// In the EXE build, RecordBlit is a no-op stub (element_tracker.cpp is hook DLL only).
+// In the hook DLL, render_hooks.cpp provides the real definition with elements::RecordBlit.
+char DSurface::BlitTracker(
+    int* self, int* dst_rect, int* src_rect, void* src_surface,
+    int* clip_dst, int* clip_src, int flags, char option2)
+{
+    if (src_surface && src_rect && dst_rect)
+    {
+        elements::RecordBlit(
+            reinterpret_cast<uint32_t>(src_surface),
+            src_rect[0], src_rect[1], src_rect[2], src_rect[3],
+            dst_rect[0], dst_rect[1],
+            static_cast<uint32_t>(flags));
+    }
+    return BlitCore(self, dst_rect, src_rect, src_surface, clip_dst, clip_src, flags, option2);
 }
 
 bool DSurface::FillRectEx(

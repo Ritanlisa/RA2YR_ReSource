@@ -27,6 +27,7 @@ set(HOOK_SOURCES
     shadow_txn.cpp
     headless_server.cpp
     element_tracker.cpp
+    blit_tracker.cpp
     render_hooks.cpp
     "${CMAKE_CURRENT_SOURCE_DIR}/gen/reverse_hooks.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/gen/reverse_check.cpp"

@@ -530,6 +530,19 @@ public:
     // IDA: DSurface::CreatePrimary pixel format detection (0x4BA770 bit-shift logic)
     static void DetectPixelFormat(const DDPIXELFORMAT& pf);
 
+    // IDA: 0x4BB0D0 — DSurface::Blit full hardware/software implementation
+    // Used by REPLACE hook — bypasses Syringe trampoline entirely.
+    // Takes raw int* parameters matching binary calling convention.
+    static char BlitTracker(
+        int* self,
+        int* dst_rect,
+        int* src_rect,
+        void* src_surface,
+        int* clip_dst,
+        int* clip_src,
+        int flags,
+        char option2);
+
     int BytesPerPixel;
     void* LockedSurface;
     bool Allocated;
@@ -543,6 +556,19 @@ protected:
         : XSurface(noinit_t{})
     {
     }
+
+private:
+    // Core Blit logic shared by Blit() and BlitTracker()
+    // Takes raw int* parameters matching binary ABI (thiscall + stack args)
+    static char BlitCore(
+        int* self,
+        int* dst_rect,
+        int* src_rect,
+        void* src_surface,
+        int* clip_dst,
+        int* clip_src,
+        int flags,
+        char option2);
 };
 
 } // namespace gamemd
