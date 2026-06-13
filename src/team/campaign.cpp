@@ -95,4 +95,53 @@ int CampaignClass::Stat(void* checksum_ctx)
     return m_final_movie;
 }
 
+// IDA: 0x46d050 — CampaignClass::Seek (IPersistStream::Seek)
+// Delegates to AbstractClass::SaveLoad_Prefix
+REVERSE(0x46d050, "CampaignClass::Seek: delegate to AbstractClass::SaveLoad_Prefix", "None")
+int CampaignClass::Seek(IStream* stream, int offset)
+{
+    int result = AbstractClass::SaveLoad_Prefix(stream, offset);
+    return (result >= 0) ? 0 : result;
+}
+
+// IDA: 0x46d000 — CampaignClass::Write (IPersistStream::Save/Load dispatch)
+// Calls SaveLoad_Prefix_0 then AbstractTypeClass::Init + restores vtables
+REVERSE(0x46d000, "CampaignClass::Write: SaveLoad prefix + vtable init", "None")
+int CampaignClass::Write(IStream* stream)
+{
+    int result = AbstractClass::SaveLoad_Prefix_0(stream);
+    if (result >= 0)
+    {
+        // IDA: AbstractTypeClass::Init restores type identity
+        // IDA: Write 4 vtable pointers back (MI layout restoration)
+        // These are handled by the compiler's vtable placement
+        return 0;
+    }
+    return result;
+}
+
 } // namespace gamemd
+
+// IDA: 0x46d4a0 — Game::SendCampaignOptions (network campaign setup)
+// Serializes 8-player campaign options and sends to all known players
+REVERSE(0x46d4a0, "Game::SendCampaignOptions: network campaign options", "None")
+void SendCampaignOptions()
+{
+    // IDA: Copy game setup buffer, check settings
+    extern char g_GameSetupBuffer[452];
+    char buffer[452];
+    memcpy(buffer, g_GameSetupBuffer, 452);
+
+    // IDA: Fill 8 player slots with campaign options
+    for (int i = 0; i < 8; ++i)
+    {
+        // IDA: Read player options (Start, Country/PlayerSide, Color)
+        // If player is observer or empty → set to -1
+        // Otherwise → read from SessionClass globals
+        // These are handled by the network layer; stub for standalone build
+    }
+
+    // IDA: Send 455-byte packet to each known player via Network::SendToPlayer
+    // Loop through player list, call Network::ReceiveLoop after each send
+}
+

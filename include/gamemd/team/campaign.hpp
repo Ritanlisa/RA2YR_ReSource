@@ -41,6 +41,10 @@ public:
     int FindMission(const char* name);
     // IDA: 0x46cfc0 — power/checksum stats
     int Stat(void* checksum_ctx);
+    // IDA: 0x46d050 — IPersistStream::Seek
+    int Seek(IStream* stream, int offset);
+    // IDA: 0x46d000 — IPersistStream::Write (Save/Load dispatch)
+    int Write(IStream* stream);
     
     static void CreateFromINIList(CCINIClass* ini);
     static int FindIndex(const char* name);
