@@ -1214,7 +1214,7 @@ bool XSurface::DrawDashedLine(
 
 // IDA: 0x7BBAB0 -- XSurface::Fill (51B)
 // vtable[6] 0x18 -- fill entire surface with single color
-REVERSE(0x7bbab0, "XSurface::Fill: fill surface", "Inject")
+REVERSE(0x7bbab0, "XSurface::Fill: fill surface", "None")
 bool XSurface::Fill(uint32_t color)
 {
     RectangleStruct rect;
@@ -1224,7 +1224,7 @@ bool XSurface::Fill(uint32_t color)
 
 // IDA: 0x7BADC0 -- XSurface::DrawRectEx (158B)
 // vtable[21] 0x54 -- rectangle outline drawing 4 edges via DrawLineEx
-REVERSE(0x7badc0, "XSurface::DrawRectEx: rect outline", "Inject")
+REVERSE(0x7badc0, "XSurface::DrawRectEx: rect outline", "None")
 bool XSurface::DrawRectEx(
     const RectangleStruct& clip_rect,
     const RectangleStruct& draw_rect,
