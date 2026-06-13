@@ -7,4 +7,4 @@
 #include <cmath>
 
 #include "re_impl_generated.cpp"
-// 7 Inject-mode function(s) ¡ª implementations from IDA
+// 3 Inject-mode function(s) ¡ª implementations from IDA

@@ -680,7 +680,7 @@ Point2D Surface::DrawText(
 
 // IDA: 0x7BAEB0 -- XSurface::SetPixel (89B)
 // vtable[9]  0x24 -- Lock(point) -> check BPP -> write pixel -> Unlock
-REVERSE(0x7baeb0, "XSurface::SetPixel: pixel write", "Inject")
+REVERSE(0x7baeb0, "XSurface::SetPixel: pixel write", "None")
 bool XSurface::SetPixel(const Point2D& point, uint32_t color)
 {
     void* buf = Lock(point.X, point.Y);
@@ -698,7 +698,7 @@ bool XSurface::SetPixel(const Point2D& point, uint32_t color)
 
 // IDA: 0x7BAE60 -- XSurface::GetPixel (80B)
 // vtable[10] 0x28 -- Lock(point) -> check BPP -> read pixel -> Unlock
-REVERSE(0x7bae60, "XSurface::GetPixel: pixel read", "Inject")
+REVERSE(0x7bae60, "XSurface::GetPixel: pixel read", "None")
 uint32_t XSurface::GetPixel(const Point2D& point)
 {
     uint32_t result = 0;
@@ -718,7 +718,7 @@ uint32_t XSurface::GetPixel(const Point2D& point)
 
 // IDA: 0x7BAF90 -- XSurface::PutPixel (130B)
 // vtable[34] 0x88 -- bounds check -> Lock -> check BPP -> write -> Unlock
-REVERSE(0x7baf90, "XSurface::PutPixel: pixel write + bounds", "Inject")
+REVERSE(0x7baf90, "XSurface::PutPixel: pixel write + bounds", "None")
 bool XSurface::PutPixel(const Point2D& point, uint16_t color, const RectangleStruct& clip_rect)
 {
     if (point.X < clip_rect.X)
@@ -745,7 +745,7 @@ bool XSurface::PutPixel(const Point2D& point, uint16_t color, const RectangleStr
 
 // IDA: 0x7BAF10 -- XSurface::GetPixelAtCoords (119B)
 // vtable[35] 0x8C -- bounds check -> Lock -> check BPP -> read -> Unlock
-REVERSE(0x7baf10, "XSurface::GetPixelAtCoords: pixel read + bounds", "Inject")
+REVERSE(0x7baf10, "XSurface::GetPixelAtCoords: pixel read + bounds", "None")
 uint16_t XSurface::GetPixelAtCoords(const Point2D& point, const RectangleStruct& clip_rect)
 {
     uint16_t result = 0;
