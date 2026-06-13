@@ -13,13 +13,14 @@ void Reset() { g_count = 0; }
 void RecordBlit(uint32_t src_surface, int sx, int sy, int sw, int sh, int dx, int dy, uint32_t flags)
 {
     if (g_count >= MAX_ELEMENTS) return;
-    auto& e = g_pool[g_count++];
+    auto& e = g_pool[g_count];
     e.type = SHP;
     e.x = dx; e.y = dy; e.w = sw; e.h = sh;
-    e.frame = sx; // source X = frame offset in SHP strip
+    e.frame = sx;
     e.surface_addr = src_surface;
     e.flags = flags;
     e.ts = GetTickCount();
+    g_count++;
 }
 
 void RecordText(int x, int y, const char* text)
