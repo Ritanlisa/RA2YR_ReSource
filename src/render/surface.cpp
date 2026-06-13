@@ -744,16 +744,111 @@ bool DSurface::FillRect(const RectangleStruct& fill_rect, uint32_t color)
     return FillRectEx(clip, fill_rect, color);
 }
 
-// TODO: IDA 0x4BB830 — 711B, full implementation pending
+// IDA: 0x4BB830 — DSurface::FillRectWithFlags (711B)
+// CPU software pixel fill with per-pixel alpha blending.
+// Only works on 16bpp+ surfaces. Converts RGB888 source color
+// to the surface's native 16-bit format using the global DDraw
+// bit-shift/mask constants, then blends each pixel:
+//   result = (src_alpha * src_ch + dst_alpha * dst_ch) >> 8
+// Opacity 0-100 clamped to 100, scaled to 0-255.
 bool DSurface::FillRectWithFlags(
     const RectangleStruct& clip_rect,
     const ColorStruct& color,
     int opacity_percent)
 {
-    (void)clip_rect;
-    (void)color;
-    (void)opacity_percent;
-    return XSurface::FillRectWithFlags(clip_rect, color, opacity_percent);
+    // IDA: 0x4BB845 — GetBytesPerPixel() < 2 → bail (only 16bpp+)
+    if (GetBytesPerPixel() < 2)
+        return false;
+
+    // IDA: 0x4BB863 — empty fill rect → bail
+    if (clip_rect.Width <= 0 || clip_rect.Height <= 0)
+        return false;
+
+    // IDA: 0x4BB87A — GetRect() → surface rectangle
+    RectangleStruct surf_rect;
+    GetRect(&surf_rect);
+
+    // IDA: 0x4BB888 — ClipRectIntersection(fill_rect, surf_rect) → clipped rect
+    RectangleStruct clipped;
+    ClipRectIntersection(&clipped, &surf_rect, &clip_rect, nullptr, nullptr);
+    if (clipped.Width <= 0 || clipped.Height <= 0)
+        return false;
+
+    // IDA: 0x4BB8BE-0x4BB917 — Compute per-channel masks from DDraw format globals
+    //   red_mask   = (0xFF >> g_BitShift_Green) << g_BitShift_Red
+    //   green_mask = (0xFF >> g_BitMask_Blue)  << g_BitMask_Green
+    //   blue_mask  = (0xFF >> g_BitMask_Red)   << g_BitShift_Blue
+    // All globals are word-sized (16-bit) in the binary.
+    const auto red_mask   = static_cast<uint16_t>((0xFFu >> g_BitShift_Green) << g_BitShift_Red);
+    const auto green_mask = static_cast<uint16_t>((0xFFu >> g_BitMask_Blue)  << g_BitMask_Green);
+    const auto blue_mask  = static_cast<uint16_t>((0xFFu >> g_BitMask_Red)   << g_BitShift_Blue);
+
+    // IDA: 0x4BB91B-0x4BB938 — Lock at clipped origin
+    // CellStruct::Copy stores clipped rect as a local CellStruct copy;
+    // Lock is then called with (clipped.X, clipped.Y) to get a pointer
+    // to the top-left pixel of the fill region.
+    void* buf = Lock(clipped.X, clipped.Y);
+    if (!buf)
+        return false;
+
+    // IDA: 0x4BB94A-0x4BB970 — Opacity scaling: 0–100 clamped, then *255/100
+    const int opacity_clamped = (opacity_percent > 100) ? 100 : opacity_percent;
+    const auto src_alpha = static_cast<uint16_t>(255 * opacity_clamped / 100);
+    const uint16_t dst_alpha = 255 - src_alpha;
+
+    // IDA: 0x4BB98F-0x4BB9D2 — Convert RGB888 source color to native 16-bit
+    //   blue  = (B >> g_BitMask_Red)   << g_BitShift_Blue
+    //   green = (G >> g_BitMask_Blue)  << g_BitMask_Green
+    //   red   = (R >> g_BitShift_Green) << g_BitShift_Red
+    const auto src_blue  = static_cast<uint16_t>((color.B >> g_BitMask_Red)   << g_BitShift_Blue);
+    const auto src_green = static_cast<uint16_t>((color.G >> g_BitMask_Blue)  << g_BitMask_Green);
+    const auto src_red   = static_cast<uint16_t>((color.R >> g_BitShift_Green) << g_BitShift_Red);
+    const uint16_t src_color = src_blue | src_green | src_red;
+
+    // IDA: 0x4BB9E6 — GetPitch() for row stride calculation
+    const int pitch = GetPitch();
+
+    // IDA: 0x4BB9DA-0x4BBADC — Row loop: v41 from 0 to clipped.Height-1
+    for (int row = 0; row < clipped.Height; ++row)
+    {
+        // IDA: 0x4BBA01 — skip row if clipped.Width <= 0
+        if (clipped.Width <= 0)
+            continue;
+
+        // IDA: 0x4BBA1B-0x4BBA4B — Precompute per-channel src×alpha terms
+        //   src_red_blend   = src_alpha * (src_color & red_mask)
+        //   src_green_blend = src_alpha * (src_color & green_mask)
+        //   src_blue_blend  = src_alpha * (src_color & blue_mask)
+        const uint32_t src_red_blend   = src_alpha * (src_color & red_mask);
+        const uint32_t src_green_blend = src_alpha * (src_color & green_mask);
+        const uint32_t src_blue_blend  = src_alpha * (src_color & blue_mask);
+
+        // IDA: 0x4BBA50 — Row pointer: buf + row * pitch → pixel at (clipped.X, clipped.Y+row)
+        auto* pixel_row = reinterpret_cast<uint16_t*>(
+            static_cast<uint8_t*>(buf) + row * pitch);
+
+        // IDA: 0x4BBA68-0x4BBABB — Column loop: blend each pixel left to right
+        for (int col = 0; col < clipped.Width; ++col)
+        {
+            const uint16_t dst = pixel_row[col];
+
+            // Blend red channel:   (src_red_blend   + dst_alpha * (dst & red_mask))   >> 8
+            // Blend green channel: (src_green_blend + dst_alpha * (dst & green_mask)) >> 8
+            // Blend blue channel:  (src_blue_blend  + dst_alpha * (dst & blue_mask))  >> 8
+            const uint32_t new_red   = (src_red_blend   + dst_alpha * (dst & red_mask))   >> 8;
+            const uint32_t new_green = (src_green_blend + dst_alpha * (dst & green_mask)) >> 8;
+            const uint32_t new_blue  = (src_blue_blend  + dst_alpha * (dst & blue_mask))  >> 8;
+
+            // IDA: 0x4BBAA8 — Assemble: mask each channel result and OR together
+            // Red/green are masked; blue result fits naturally (LSB field, no mask needed)
+            pixel_row[col] = static_cast<uint16_t>(
+                (new_green & green_mask) | (new_red & red_mask) | new_blue);
+        }
+    }
+
+    // IDA: 0x4BBAE8 — Unlock surface
+    Unlock();
+    return true;
 }
 
 // IDA: 0x4BAD80 -- DSurface::Lock (315B)
