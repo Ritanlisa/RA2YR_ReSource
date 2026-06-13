@@ -7,6 +7,31 @@
 #include "gamemd/core/ddraw_init.hpp"
 #include "gamemd/core/reverse_marker.hpp"
 
+// StreamClass::ReadAndSeek (IDA: 0x4114B0)
+// Returns WORD* buffer into visible surface stipple/Z space at (x, y).
+// Stub for standalone build — real implementation is in the original binary.
+static WORD g_StippleBufferStub[4096] = {};
+extern "C" void* StreamClass_ReadAndSeek(int x, int y)
+{
+    (void)x; (void)y;
+    return g_StippleBufferStub;
+}
+#define ReadAndSeek StreamClass_ReadAndSeek
+
+// Visible surface descriptor (IDA: 0x87E8A4)
+// Fields (DWORD*): [1]=origin_Y, [6]=wrap_lo, [7]=wrap_hi, [8]=wrap_stride, [10]=word_pitch
+// Stub for standalone build — real values come from the original binary's .data section.
+static DWORD g_VisibleSurfaceDescStub[16] = {
+    0, 0, 0, 0, 0, 0,
+    (DWORD)(uintptr_t)g_StippleBufferStub,                  // [6] wrap_lo
+    (DWORD)(uintptr_t)(g_StippleBufferStub + 4096),          // [7] wrap_hi
+    (DWORD)(sizeof(g_StippleBufferStub)),                    // [8] wrap_stride (bytes)
+    0,
+    0,                                                        // [10] word_pitch (set at runtime)
+    0, 0, 0, 0, 0
+};
+void* g_VisibleSurfaceDescriptor = g_VisibleSurfaceDescStub;
+
 namespace gamemd
 {
 
@@ -1997,72 +2022,466 @@ bool DSurface::DrawGradientLine(
     return true;
 }
 
+// ============================================================
 // IDA: 0x4C0E30 -- DSurface::DrawStippledRect (1537B)
-// vtable[20] 0x50 -- filled rectangle with stipple pattern
+// vtable[20] 0x50 — stippled rectangle: draws a Bresenham line
+// from top_left to bottom_right, gated by the stipple/Z-buffer.
+// fill_interior=true  → draw where zbuf==0
+// fill_interior=false → draw where zbuf!=0
+// ============================================================
 bool DSurface::DrawStippledRect(
     const Point2D& top_left, const Point2D& bottom_right,
     uint16_t color, bool fill_interior)
 {
+    // 16bpp only
+    if (GetBytesPerPixel() != 2)
+        return false;
+
+    // --- Get surface rect ---
     RectangleStruct surf_rect;
     GetRect(&surf_rect);
 
-    int x0 = top_left.X;
-    int y0 = top_left.Y;
-    int x1 = bottom_right.X;
-    int y1 = bottom_right.Y;
+    // --- Adjust coordinates relative to surface origin ---
+    int x1 = surf_rect.X + top_left.X;
+    int y1 = surf_rect.Y + top_left.Y;
+    int x2 = surf_rect.X + bottom_right.X;
+    int y2 = surf_rect.Y + bottom_right.Y;
 
-    if (x0 < 0) x0 = 0;
-    if (y0 < 0) y0 = 0;
-    if (x1 >= surf_rect.Width)  x1 = surf_rect.Width - 1;
-    if (y1 >= surf_rect.Height) y1 = surf_rect.Height - 1;
-
-    if (x0 > x1 || y0 > y1)
+    // --- Clip line against surface rect ---
+    int p1[2] = { x1, y1 };
+    int p2[2] = { x2, y2 };
+    int clip[4] = { surf_rect.X, surf_rect.Y, surf_rect.Width, surf_rect.Height };
+    if (!ClipLine(p1, p2, clip))
         return false;
 
-    int bpp = GetBytesPerPixel();
-    int w = x1 - x0 + 1;
+    x1 = p1[0]; y1 = p1[1];
+    x2 = p2[0]; y2 = p2[1];
 
-    if (fill_interior)
+    // --- Ensure x1 <= x2 (swap if needed) ---
+    if (x1 > x2)
     {
-        for (int y = y0; y <= y1; ++y)
-        {
-            void* buf = Lock(x0, y);
-            if (!buf) continue;
+        int tx = x1, ty = y1;
+        x1 = x2; y1 = y2;
+        x2 = tx; y2 = ty;
+    }
 
-            if (bpp == 1)
+    // --- Access stipple/Z-buffer via StreamClass::ReadAndSeek ---
+    DWORD* desc = (DWORD*)g_VisibleSurfaceDescriptor;
+    WORD*  zbuf = (WORD*)ReadAndSeek(x1, y1 - (int)desc[1]);
+
+    // --- Word pitch from descriptor; negate if going upward ---
+    int wpitch = (int)desc[10];
+    if (y1 > y2)
+        wpitch = -wpitch;
+
+    // --- Lock surface at start pixel ---
+    void* locked = Lock(x1, y1);
+    if (!locked)
+        return false;
+
+    WORD* pixels = (WORD*)locked;
+
+    // --- Stipple buffer ring-wrap boundaries ---
+    uintptr_t wrap_lo = (uintptr_t)desc[6];
+    uintptr_t wrap_hi = (uintptr_t)desc[7];
+    ptrdiff_t wrap_sz = (ptrdiff_t)desc[8];
+
+    // --- Horizontal-line draw predicate ---
+    // a5==true  → draw where zbuf==0
+    // a5==false → draw where zbuf!=0
+    auto draw_if = [fill_interior](WORD z) -> bool {
+        return fill_interior ? (z == 0) : (z != 0);
+    };
+
+    // ================================================================
+    // Branch on line orientation: horizontal / vertical / x-major / y-major
+    // ================================================================
+
+    if (y1 == y2)
+    {
+        // --- Horizontal line ---
+        int count = x2 - x1;
+        if (count < 0) { Unlock(); return false; }
+
+        WORD* pix = pixels;
+        WORD* zptr = zbuf;
+
+        for (int i = 0; i <= count; ++i)
+        {
+            if (draw_if(*zptr))
+                *pix = color;
+
+            // Advance zbuf horizontally with ring-wrap
+            ++zptr;
+            uintptr_t za = (uintptr_t)zptr;
+            if (wpitch <= 0)
             {
-                auto* p = static_cast<uint8_t*>(buf);
-                for (int x = 0; x < w; ++x)
-                    p[x] = static_cast<uint8_t>(color);
+                if (za < wrap_lo) zptr = (WORD*)((char*)zptr + wrap_sz);
             }
             else
             {
-                auto* p = static_cast<uint16_t*>(buf);
-                for (int x = 0; x < w; ++x)
-                    p[x] = color;
+                if (za >= wrap_hi) zptr = (WORD*)((char*)zptr - wrap_sz);
             }
-            Unlock();
+            ++pix;
+        }
+    }
+    else if (x1 == x2)
+    {
+        // --- Vertical line ---
+        int byte_pitch = GetPitch();
+        int row_step   = (y2 >= y1) ? byte_pitch : -byte_pitch;
+        int count      = (y2 >= y1) ? (y2 - y1) : (y1 - y2);
+
+        WORD* pix  = pixels;
+        WORD* zptr = zbuf;
+
+        for (int i = 0; i <= count; ++i)
+        {
+            if (draw_if(*zptr))
+                *pix = color;
+
+            // Advance pixel by one row
+            pix = (WORD*)((char*)pix + row_step);
+
+            // Advance zbuf by one row with wrap
+            zptr += wpitch;
+            uintptr_t za = (uintptr_t)zptr;
+            if (wpitch <= 0)
+            {
+                if (za < wrap_lo) zptr = (WORD*)((char*)zptr + wrap_sz);
+            }
+            else
+            {
+                if (za >= wrap_hi) zptr = (WORD*)((char*)zptr - wrap_sz);
+            }
         }
     }
     else
     {
-        DrawLineEx(surf_rect, Point2D(x0, y0), Point2D(x1, y0), color);
-        DrawLineEx(surf_rect, Point2D(x0, y1), Point2D(x1, y1), color);
-        DrawLineEx(surf_rect, Point2D(x0, y0), Point2D(x0, y1), color);
-        DrawLineEx(surf_rect, Point2D(x1, y0), Point2D(x1, y1), color);
+        // --- Angled line: Bresenham ---
+        int dx    = x2 - x1;
+        int dy    = y2 - y1;
+        int ady   = (dy >= 0) ? dy : -dy;
+        int byte_pitch = GetPitch();
+
+        if (dx >= ady)
+        {
+            // --- x-major ---
+            int row_pitch = (dy >= 0) ? byte_pitch : -byte_pitch;
+            int d         = 2 * ady - dx;
+            int cur_col   = 0;
+            WORD* pix     = pixels;
+            WORD* zptr    = zbuf;
+
+            for (int i = 0; i < dx; ++i)
+            {
+                if (draw_if(*zptr))
+                    pix[cur_col] = color;
+
+                if (d > 0)
+                {
+                    // Move to next row
+                    pix   = (WORD*)((char*)pix + row_pitch);
+                    zptr += wpitch;
+                    if ((uintptr_t)zptr >= wrap_hi)
+                        zptr = (WORD*)((char*)zptr - wrap_sz);
+                    d    -= 2 * dx;
+                    cur_col = 0;
+                }
+                d += 2 * ady;
+
+                // Horizontal advance with wrap
+                ++zptr;
+                uintptr_t za = (uintptr_t)zptr;
+                if (wpitch <= 0)
+                {
+                    if (za < wrap_lo) zptr = (WORD*)((char*)zptr + wrap_sz);
+                }
+                else
+                {
+                    if (za >= wrap_hi) zptr = (WORD*)((char*)zptr - wrap_sz);
+                }
+                ++cur_col;
+            }
+        }
+        else
+        {
+            // --- y-major ---
+            int row_pitch = (dy >= 0) ? byte_pitch : -byte_pitch;
+            int d         = 2 * dx - ady;
+            int cur_col   = 0;
+            WORD* pix     = pixels;
+            WORD* zptr    = zbuf;
+
+            for (int i = 0; i < ady; ++i)
+            {
+                if (draw_if(*zptr))
+                    pix[cur_col] = color;
+
+                if (d > 0)
+                {
+                    ++zptr;
+                    cur_col += 2;
+                    if ((uintptr_t)zptr >= wrap_hi)
+                        zptr = (WORD*)((char*)zptr - wrap_sz);
+                    d -= 2 * ady;
+                }
+                // Vertical advance with wrap
+                zptr += wpitch;
+                d    += 2 * dx;
+                pix   = (WORD*)((char*)pix + row_pitch);
+
+                uintptr_t za = (uintptr_t)zptr;
+                if (wpitch <= 0)
+                {
+                    if (za < wrap_lo) zptr = (WORD*)((char*)zptr + wrap_sz);
+                }
+                else
+                {
+                    if (za >= wrap_hi) zptr = (WORD*)((char*)zptr - wrap_sz);
+                }
+            }
+        }
     }
+
+    Unlock();
     return true;
 }
 
+// ============================================================
 // IDA: 0x4C0750 -- DSurface::DrawDashedLineStipple (1758B)
-// vtable[19] 0x4C -- dashed line with Z-buffer stipple pattern
+// vtable[19] 0x4C — dashed line with Z-buffer stipple gating.
+//
+// update_z=true  → draw where stipple[idx] && zbuf==0
+// update_z=false → draw where stipple[idx] && zbuf!=0
+//
+// Returns bool (success).  The binary also returns the updated
+// dash_offset in EAX but the C++ interface discards it.
+// ============================================================
 bool DSurface::DrawDashedLineStipple(
     const Point2D& start, const Point2D& end,
     uint16_t color, const uint8_t stipple[16],
     int dash_offset, bool update_z)
 {
-    (void)update_z;
-    return XSurface::DrawDashedLine(start, end, color, stipple, dash_offset);
+    // 16bpp only
+    if (GetBytesPerPixel() != 2)
+        return false;
+
+    // --- Read and optionally swap endpoints ---
+    int x1 = start.X;
+    int y1 = start.Y;
+    int x2 = end.X;
+    int y2 = end.Y;
+    int step = 1;
+
+    if (x1 > x2)
+    {
+        // Swap
+        int tx = x1; x1 = x2; x2 = tx;
+        int ty = y1; y1 = y2; y2 = ty;
+
+        // Update dash_offset: advance by max(|dx|, |dy|+1) pixels
+        int adx = x2 - x1;
+        int ady = (y2 >= y1) ? (y2 - y1) : (y1 - y2);
+        int larger = (adx > ady + 1) ? adx : (ady + 1);
+        dash_offset = (larger + dash_offset) % 16;
+        step = -1;
+    }
+
+    // --- Access stipple/Z-buffer ---
+    DWORD* desc = (DWORD*)g_VisibleSurfaceDescriptor;
+    WORD*  zbuf = (WORD*)ReadAndSeek(x1, y1 - (int)desc[1]);
+
+    // --- Word pitch; negate if going upward ---
+    int wpitch = (int)desc[10];
+    if (y1 > y2)
+        wpitch = -wpitch;
+
+    // --- Lock surface ---
+    void* locked = Lock(x1, y1);
+    if (!locked)
+        return false;
+
+    WORD* pixels = (WORD*)locked;
+
+    // --- Stipple ring-wrap boundaries ---
+    uintptr_t wrap_lo = (uintptr_t)desc[6];
+    uintptr_t wrap_hi = (uintptr_t)desc[7];
+    ptrdiff_t wrap_sz = (ptrdiff_t)desc[8];
+
+    // --- Running dash offset (int, tracked per pixel) ---
+    int d_off = dash_offset;
+
+    // --- Combined draw predicate ---
+    // Normalize dash index to 0..15, combine with zbuf gate.
+    auto should_draw = [&](int idx_raw, WORD zval) -> bool {
+        // Normalize: ((idx % 16) + 16) % 16
+        int i = idx_raw;
+        if (i < 0)  i += 16;
+        if (i >= 16) i -= 16;
+        if (!stipple[i])
+            return false;
+        return update_z ? (zval == 0) : (zval != 0);
+    };
+
+    // ================================================================
+    // Branch on line orientation
+    // ================================================================
+
+    if (y1 == y2)
+    {
+        // --- Horizontal ---
+        int count = x2 - x1;
+        if (count >= 0)
+        {
+            WORD* pix  = pixels;
+            WORD* zptr = zbuf;
+
+            for (int i = 0; i <= count; ++i)
+            {
+                if (should_draw(d_off, *zptr))
+                    *pix = color;
+
+                // Advance zbuf with wrap
+                ++zptr;
+                uintptr_t za = (uintptr_t)zptr;
+                if (wpitch <= 0)
+                {
+                    if (za < wrap_lo) zptr = (WORD*)((char*)zptr + wrap_sz);
+                }
+                else
+                {
+                    if (za >= wrap_hi) zptr = (WORD*)((char*)zptr - wrap_sz);
+                }
+                ++pix;
+                d_off += step;
+            }
+        }
+    }
+    else if (x1 == x2)
+    {
+        // --- Vertical ---
+        int byte_pitch = GetPitch();
+        int row_step   = (y2 >= y1) ? byte_pitch : -byte_pitch;
+        int count      = (y2 >= y1) ? (y2 - y1) : (y1 - y2);
+
+        WORD* pix  = pixels;
+        WORD* zptr = zbuf;
+
+        for (int i = 0; i <= count; ++i)
+        {
+            if (should_draw(d_off, *zptr))
+                *pix = color;
+
+            // Advance pixel by one row
+            pix = (WORD*)((char*)pix + row_step);
+
+            // Advance zbuf by one row with wrap
+            zptr += wpitch;
+            uintptr_t za = (uintptr_t)zptr;
+            if (wpitch <= 0)
+            {
+                if (za < wrap_lo) zptr = (WORD*)((char*)zptr + wrap_sz);
+            }
+            else
+            {
+                if (za >= wrap_hi) zptr = (WORD*)((char*)zptr - wrap_sz);
+            }
+            d_off += step;
+        }
+    }
+    else
+    {
+        // --- Bresenham angled line ---
+        int dx    = x2 - x1;
+        int dy    = y2 - y1;
+        int ady   = (dy >= 0) ? dy : -dy;
+        int byte_pitch = GetPitch();
+
+        if (dx >= ady)
+        {
+            // --- x-major ---
+            int row_pitch = (dy >= 0) ? byte_pitch : -byte_pitch;
+            int d         = 2 * ady - dx;
+            int cur_col   = 0;
+            WORD* pix     = pixels;
+            WORD* zptr    = zbuf;
+
+            for (int i = 0; i < dx; ++i)
+            {
+                if (should_draw(d_off, *zptr))
+                    pix[cur_col] = color;
+
+                if (d > 0)
+                {
+                    // Move to next row
+                    pix   = (WORD*)((char*)pix + row_pitch);
+                    zptr += wpitch;
+                    if ((uintptr_t)zptr >= wrap_hi)
+                        zptr = (WORD*)((char*)zptr - wrap_sz);
+                    d    -= 2 * dx;
+                    cur_col = 0;
+                }
+                d += 2 * ady;
+
+                // Horizontal advance with wrap
+                ++zptr;
+                uintptr_t za = (uintptr_t)zptr;
+                if (wpitch <= 0)
+                {
+                    if (za < wrap_lo) zptr = (WORD*)((char*)zptr + wrap_sz);
+                }
+                else
+                {
+                    if (za >= wrap_hi) zptr = (WORD*)((char*)zptr - wrap_sz);
+                }
+                ++cur_col;
+                d_off += step;
+            }
+        }
+        else
+        {
+            // --- y-major ---
+            int row_pitch = (dy >= 0) ? byte_pitch : -byte_pitch;
+            int d         = 2 * dx - ady;
+            int cur_col   = 0;
+            WORD* pix     = pixels;
+            WORD* zptr    = zbuf;
+
+            for (int i = 0; i < ady; ++i)
+            {
+                if (should_draw(d_off, *zptr))
+                    pix[cur_col] = color;
+
+                if (d > 0)
+                {
+                    ++zptr;
+                    cur_col += 2;
+                    if ((uintptr_t)zptr >= wrap_hi)
+                        zptr = (WORD*)((char*)zptr - wrap_sz);
+                    d -= 2 * ady;
+                }
+                // Vertical advance with wrap
+                zptr += wpitch;
+                d    += 2 * dx;
+                pix   = (WORD*)((char*)pix + row_pitch);
+
+                uintptr_t za = (uintptr_t)zptr;
+                if (wpitch <= 0)
+                {
+                    if (za < wrap_lo) zptr = (WORD*)((char*)zptr + wrap_sz);
+                }
+                else
+                {
+                    if (za >= wrap_hi) zptr = (WORD*)((char*)zptr - wrap_sz);
+                }
+                d_off += step;
+            }
+        }
+    }
+
+    Unlock();
+    return true;
 }
 
 // IDA: 0x4BFD30 -- DSurface::DrawLineZBuf (2583B)
