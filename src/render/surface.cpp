@@ -534,6 +534,33 @@ int WonlineStringDialogControl_Draw(int a1, int a2)
     return 0;
 }
 
+// IDA: 0x4F3720 — GraphicMenuImageItem::Draw (117B)
+extern void Team_ReleaseAll(void**, void*);  // IDA 0x5D26C0
+extern int  DSurface_Flip2();              // IDA 0x5D1E50
+
+int GraphicMenuImageItem_Draw(void* self, bool flag)
+{
+    auto* item = reinterpret_cast<int*>(self);
+    auto* fields = reinterpret_cast<uint8_t*>(self);
+
+    // Secondary image (this+36)
+    if (item[9]) {
+        bool v4 = flag && !fields[8];
+        (*(void(__thiscall**)(int, bool))(*(uintptr_t*)item[9] + 4))(item[9], v4);
+    }
+    // Primary image (this+40)
+    if (item[10]) {
+        bool v6 = flag && fields[8];
+        (*(void(__thiscall**)(int, bool))(*(uintptr_t*)item[10] + 4))(item[10], v6);
+    }
+    // Tertiary image (this+44), inverted flag
+    if (item[11])
+        (*(void(__thiscall**)(int, bool))(*(uintptr_t*)item[11] + 4))(item[11], !flag);
+
+    Team_ReleaseAll(reinterpret_cast<void**>(item[4]), item + 5);
+    return DSurface_Flip2();
+}
+
 // IDA: 0x4BB080 — DSurface::BlitPart (75B)
 // If HW blit possible (both surfaces exist, BPP/pitch match) → Blit
 // Otherwise fallback to XSurface::BlitPart (software path)
