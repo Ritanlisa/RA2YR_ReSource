@@ -304,4 +304,36 @@ void MSFrameAnim_Draw(int surface, int* rect)
     RenderScoreScreen(surface, r, 1);
 }
 
+// IDA: 0x4348F0 — FontRenderer::InitContext (157B)
+extern int sub_434840(int*, int*, int*);  // IDA 0x434840
+
+void FontRenderer_InitContext(int* ctx, int* surface)
+{
+    // vtable[23]=Lock → get locked buffer
+    ctx[3] = (*(int(__thiscall**)(int*, int, int))(*(uintptr_t*)surface + 92))(surface, 0, 0);
+    // vtable[29]=GetPitch → pitch in bytes, >> 1 for WORD pitch
+    ctx[4] = (*(int(__thiscall**)(int*))(*(uintptr_t*)surface + 116))(surface) >> 1;
+
+    int v10 = 0;
+    int v11 = 0;
+    // vtable[31]=GetWidth
+    int v12 = (*(int(__thiscall**)(int*))(*(uintptr_t*)surface + 124))(surface) - 1;
+    // vtable[32]=GetHeight
+    int v4  = (*(int(__thiscall**)(int*))(*(uintptr_t*)surface + 128))(surface);
+
+    int flags = ctx[13] | ctx[15] | ctx[14];
+    int result = v4 - 1;
+
+    if (ctx[12] | flags)
+    {
+        sub_434840(ctx + 12, ctx + 12, &v10);
+        return;
+    }
+
+    ctx[15] = result;
+    ctx[12] = v10;
+    ctx[13] = v11;
+    ctx[14] = v12;
+}
+
 } // namespace gamemd
