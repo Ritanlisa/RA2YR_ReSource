@@ -371,6 +371,26 @@ void DSurface::DrawMarker(int x, int y)
         DDBLT_WAIT, nullptr);
 }
 
+// IDA: 0x63D480 — DrawActionLineSegment (126B)
+// Draws a 4x4 pixel action line segment centered at (x, y) onto DSurface_Composite.
+// Uses vtable method 4 (offset 16) for the draw operation.
+void DrawActionLineSegment(void* src_surface, int x, int y)
+{
+    int viewport[4];
+    Display_GetViewport(viewport);
+
+    // Set up 4x4 segment rect centered at (x, y) with +1 offset
+    int seg_rect[4] = { x - 3 + 1, y - 3 + 1, 4, 4 };
+
+    // vtable[4] = offset 0x10 → draw method on DSurface_Composite
+    extern LPDIRECTDRAWSURFACE7 DSurface_Composite;
+    DSurface_Composite->Blt(
+        reinterpret_cast<RECT*>(viewport),
+        static_cast<LPDIRECTDRAWSURFACE7>(src_surface),
+        reinterpret_cast<RECT*>(seg_rect),
+        DDBLT_WAIT, nullptr);
+}
+
 // IDA: 0x4C1A90 — DSurface::BlitWhole (23B) thin wrapper
 // Rect::Set(0,0,0,0) → Blit(zero, zero, src, zero, zero, option1, option2)
 REVERSE(0x4C1A90, "DSurface::BlitWhole: Thin wrapper around Blit", "None")
