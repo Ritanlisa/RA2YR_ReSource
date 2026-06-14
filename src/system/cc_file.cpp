@@ -915,4 +915,46 @@ uint8_t* Palette_ConvertIndices(uint8_t* dst, int unused)
     return dst;
 }
 
+// IDA: 0x5F4160 — ObjectClass::DropAsBomb_Track (221B)
+extern void RemoveTarget(int);           // IDA 0x4A9770
+extern void Targeting_Readd(void*);       // IDA 0x4A9720
+extern void WinAPI_Wrapper(int);          // IDA 0x7DC720
+
+int ObjectClass_DropAsBomb_Track(void* self)
+{
+    auto* fields = reinterpret_cast<uint32_t*>(self);
+    auto* bytes  = reinterpret_cast<uint8_t*>(self);
+    uintptr_t vt = *(uintptr_t*)self;
+
+    bytes[141] = 1;
+    bytes[143] = 1;
+    (*(void(__stdcall**)(int))(vt + 292))(0);
+
+    RemoveTarget((int)self);
+    bytes[140] = 0;
+    Targeting_Readd(self);
+
+    int result = (*(int(__thiscall**)(void*, int))(vt + 292))(self, 1);
+
+    if (self)
+    {
+        if (bytes[20] & 4)
+        {
+            void* com_obj = (void*)fields[413];
+            if (!com_obj) WinAPI_Wrapper(-2147467261);
+            if ((*(int(__stdcall**)(void*))(*(uintptr_t*)com_obj + 16))(com_obj))
+            {
+                if (!fields[413]) WinAPI_Wrapper(-2147467261);
+                return (*(int(__stdcall**)(void*, int))(*(uintptr_t*)fields[413] + 156))(com_obj, 0);
+            }
+            else
+            {
+                int coords[3] = { fields[39], fields[40], fields[41] };
+                return (*(int(__thiscall**)(void*, int*))(vt + 244))(self, coords);
+            }
+        }
+    }
+    return result;
+}
+
 } // namespace gamemd
