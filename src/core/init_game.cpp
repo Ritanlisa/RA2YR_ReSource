@@ -1087,6 +1087,14 @@ int __fastcall Map_CellToTileIndex(int map_w, int map_h, int max_tiles, int x, i
     return idx;
 }
 
+// IDA: 0x691590 — Map_SetLandType (10B)
+// __thiscall: sets landType[11] = -1 (offset 0x2C), returns true
+REVERSE(0x691590, "Map_SetLandType: landType[11] = -1", "None")
+bool SetLandType(int* landType) {
+    landType[11] = -1;  // offset 0x2C (11 * sizeof(int))
+    return true;
+}
+
 // ============================================================
 // IDA: 0x544E30 — MIXFile_AccumulateIndex (57B)
 // Walks sorted MIX index table, accumulating entry sizes for IDs <= a1.
@@ -1247,6 +1255,36 @@ int SetRateMixerSample(unsigned int* sample, int rate_num, unsigned int rate_den
     sample[3] = (rate_num << 16) / rate_den;
     sample[5] = arg4;
     return arg4;
+}
+
+// ============================================================
+// IDA: 0x539EA0 — SetLightningStormActive (7B)
+// Sets the global LightningStorm_Active flag.
+// extern globals defined in the original .data section:
+extern bool LightningStorm_Active;  // 0xA9FAB4
+void SetLightningStormActive(bool active)
+{
+    LightningStorm_Active = active;
+}
+
+// ============================================================
+// IDA: 0x55AF50 — SetGlobalPointer (7B)
+// Stores a pointer into the global dword_829FF8.
+// extern globals defined in the original .data section:
+extern void* dword_829FF8;  // 0x829FF8
+void SetGlobalPointer(void* ptr)
+{
+    dword_829FF8 = ptr;
+}
+
+// ============================================================
+// IDA: 0x46D480 — SetGameModeOption (7B)
+// Sets an element in the g_GameModeOptionState array.
+// extern globals defined in the original .data section:
+extern uint8_t g_GameModeOptionState[];  // 0x89E000
+void SetGameModeOption(int index, int value)
+{
+    g_GameModeOptionState[index] = (uint8_t)value;
 }
 
 } // namespace gamemd
