@@ -183,4 +183,33 @@ void* GraphicMenuShortcutItem_Destructor(void* block, bool free_block)
     return block;
 }
 
+// IDA: 0x55AA60 — LoadIPersistStream (87B)
+// COM IPersistStream::Load: reads 4-byte header, then object data, clears flag if a3.
+extern int IStream_Read(void* stream, void* buf, int size);  // vtable[4]
+
+int LoadIPersistStream(void* obj, void* stream, bool clear_flag)
+{
+    if (!stream)
+        return -2147467261;  // E_POINTER
+
+    // Read 4-byte version/size header
+    uintptr_t vt = *(uintptr_t*)stream;
+    int size = 0;
+    int hr = (*(int(__stdcall**)(void*, int*, int, int))(vt + 16))(stream, &size, 4, 0);
+    if (hr < 0) return hr;
+
+    // Get object data size via vtable[9]
+    uintptr_t ovt = *(uintptr_t*)obj;
+    int data_size = (*(int(__thiscall**)(void*, int))(ovt + 36))(obj, 0);
+
+    // Read object data from stream
+    hr = (*(int(__stdcall**)(void*, void*, int))(*(uintptr_t*)stream + 16))(stream, obj, data_size);
+    if (hr >= 0)
+    {
+        if (clear_flag)
+            *((uint8_t*)obj + 17) = 0;
+    }
+    return hr;
+}
+
 } // namespace gamemd
