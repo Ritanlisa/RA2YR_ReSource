@@ -699,4 +699,16 @@ LONG CStreamClass_ReleaseDelegator(int a1) { return CStreamClass_Release((volati
 // IDA: 0x4A4AC0 — Debug::Log stub (1B)
 void Debug_Log_0(void) {}
 
+// IDA: 0x48D1D0 — Event::Dispatch wrapper (8B)
+extern void Event_Dispatch(void);  // IDA 0x48D080
+int  Event_Dispatch_Return0(void) { Event_Dispatch(); return 0; }
+
+// IDA: 0x4A3220 — CStreamClass QI delegator (10B)
+extern int CStreamClass_QueryInterface(void*, const void*, uint32_t*);
+int  CStreamClass_QI_Delegator(int a1, const void* iid, uint32_t* ppv)
+    { return CStreamClass_QueryInterface((uint8_t*)(a1 - 4), iid, ppv); }
+
+// IDA: 0x50C160 — Field accessor (10B)
+float FieldAccessor_50C160(void* self) { auto* f = (uint32_t*)self; return *(float*)(*(int*)(f[13]) + 328); }
+
 } // namespace gamemd
