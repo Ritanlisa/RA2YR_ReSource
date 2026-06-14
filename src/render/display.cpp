@@ -512,4 +512,26 @@ int DisplayClass::InsertPriorityText(int a2)
     return 1;
 }
 
+// IDA: 0x6842F0 — ToggleDisplayMode (126B)
+extern int  g_CommandLineFlags, g_CommandLineParam;  // IDA 0xA8EB84, 0xA8EB88
+extern int  g_CreditsScreenBounds, g_CreditsScreenConfig;
+extern int  xRight, yBottom;
+extern bool ChangeVideoMode(int, int);  // IDA 0x560BF0
+
+bool ToggleDisplayMode(bool to_command_line)
+{
+    if (to_command_line) {
+        if (g_CreditsScreenBounds != g_CommandLineFlags || g_CreditsScreenConfig != g_CommandLineParam) {
+            Debug::Log("Toggle display mode to %d x %d\n", g_CommandLineFlags, g_CommandLineParam);
+            return ChangeVideoMode(g_CommandLineFlags, g_CommandLineParam);
+        }
+    } else {
+        if (g_CreditsScreenBounds != xRight || g_CreditsScreenConfig != yBottom) {
+            Debug::Log("Toggle display mode back to shell res\n");
+            return ChangeVideoMode(xRight, yBottom);
+        }
+    }
+    return false;
+}
+
 } // namespace gamemd
