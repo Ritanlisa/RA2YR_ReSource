@@ -157,4 +157,30 @@ void* WinModemClass_Destructor(void* block, bool free_block)
     return block;
 }
 
+// IDA: 0x4F3F60 — GraphicMenuShortcutItem dtor (86B)
+// Frees VectorClass<uint> (Block+5), zeros flags, calls GraphicMenuItem::Destructor.
+extern void GraphicMenuItem_Destructor(void*);  // IDA 0x4F3A70
+
+void* GraphicMenuShortcutItem_Destructor(void* block, bool free_block)
+{
+    auto* fields = reinterpret_cast<uint32_t*>(block);
+    auto* bytes  = reinterpret_cast<uint8_t*>(block);
+
+    void* vec_buffer = reinterpret_cast<void*>(fields[5]);  // Vector buffer at offset 20
+    if (vec_buffer && bytes[29])
+    {
+        operator delete(vec_buffer);
+        fields[5] = 0;
+    }
+    bytes[29] = 0;
+    fields[6] = 0;
+
+    GraphicMenuItem_Destructor(block);
+
+    if (free_block)
+        operator delete(block);
+
+    return block;
+}
+
 } // namespace gamemd
