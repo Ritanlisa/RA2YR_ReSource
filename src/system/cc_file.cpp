@@ -548,4 +548,26 @@ int NetworkBuffer_GetField2(void) { return 0x20000; }
 // IDA: 0x74FDB0 — NetworkBuffer::GetField3 (6B)
 int NetworkBuffer_GetField3(void) { return 0x20000; }
 
+// IDA: 0x6F2680 — VectorClass<DistributionObject> dtor (84B)
+void* VectorClass_DistributionObject_Dtor(void* block, bool free_block)
+{
+    auto* fields = reinterpret_cast<uint32_t*>(block);
+    auto* bytes  = reinterpret_cast<uint8_t*>(block);
+    uint32_t buf = fields[1];
+    if (buf && bytes[13]) { operator delete((void*)(buf - 4)); fields[1] = 0; }
+    bytes[13] = 0;
+    fields[2] = 0;
+    if (free_block) operator delete(block);
+    return block;
+}
+
+// IDA: 0x5CB6C0 — VtableStub (7B, sets MSAnim vtable)
+void MSAnim_SetVtable(void* self) { *(uint32_t*)self = 0x7EE8E8; }
+
+// IDA: 0x65D660 — ReferenceCounted::Constructor (7B)
+void ReferenceCounted_Constructor(void* self) { *(uint32_t*)self = 0x7F0954; }
+
+// IDA: 0x76F180 — VectorCursor::Release (6B, AddRef)
+void* VectorCursor_AddRef(void* self) { auto* f = (uint32_t*)self; ++f[2]; return self; }
+
 } // namespace gamemd
