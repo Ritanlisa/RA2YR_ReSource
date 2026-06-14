@@ -206,4 +206,41 @@ void DisplayClass::MarkFoundation(CellStruct* base_cell, bool mark)
     (void)mark;
 }
 
+// IDA: 0x4BF650 — BlendMinimapPixel (119B)
+// fastcall: ECX=src_pixel, EDX=dst_pixel, [ESP+4]=blend_pct
+// Blends two 16-bit minimap pixels using g_DDraw_Gray127 as blend mask.
+// blend_pct: 0=full replacement, 25/50/75=blend, default=keep src
+uint16_t BlendMinimapPixel(uint16_t src, uint16_t dst, int blend_pct)
+{
+    uint16_t result = src;
+
+    switch (blend_pct)
+    {
+    case 0:
+        // Full replacement with destination pixel
+        result = dst;
+        break;
+    case 25:
+        // 25% blend: (gray_mask_hi & (src >> 2)) * 4
+        result = static_cast<uint16_t>(
+            4 * (HIWORD(g_DDraw_Gray127) & (src >> 2)));
+        break;
+    case 50:
+        // 50% blend: (gray & (dst >> 1)) + (gray & (src >> 1))
+        result = static_cast<uint16_t>(
+            (g_DDraw_Gray127 & (dst >> 1)) + (g_DDraw_Gray127 & (src >> 1)));
+        break;
+    case 75:
+        // 75% blend: same formula as 25% (IDA confirms identical)
+        result = static_cast<uint16_t>(
+            4 * (HIWORD(g_DDraw_Gray127) & (src >> 2)));
+        break;
+    default:
+        // 100% — keep source pixel
+        break;
+    }
+
+    return result;
+}
+
 } // namespace gamemd
