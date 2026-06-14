@@ -389,5 +389,44 @@ CoordStruct* ObjectClass::GetDrawPosition(CoordStruct* out) const
     return out;
 }
 
+// IDA: 0x5F6360 — ObjectClass::DistanceTo (213B)
+// Computes 3D Euclidean distance to another object.
+// For buildings, subtracts foundation adjustment (64 * (fw + fh)).
+int ObjectClass::DistanceTo(const ObjectClass* other) const
+{
+    if (!other)
+        return 0;
+
+    // Get coordinates via vtable[18] = GetCoords
+    CoordStruct coords_other;
+    other->GetCoords(&coords_other);
+
+    CoordStruct coords_this;
+    GetCoords(&coords_this);
+
+    // 3D Euclidean distance
+    double dx = static_cast<double>(coords_this.X - coords_other.X);
+    double dy = static_cast<double>(coords_this.Y - coords_other.Y);
+    double dz = static_cast<double>(coords_this.Z - coords_other.Z);
+    double dist = std::sqrt(dx * dx + dy * dy + dz * dz);
+    int result = static_cast<int>(dist + 0.5);  // round to nearest
+
+    // If target is a building, adjust for foundation size
+    if (other->WhatAmI() == AbstractType::Building)
+    {
+        auto* bld_type = reinterpret_cast<const gamemd::BuildingTypeClass*>(other->GetType());
+        if (bld_type)
+        {
+            int fw = bld_type->GetFoundationWidth();
+            int fh = bld_type->GetFoundationHeight(false);
+            result += -64 * (fw + fh);
+            if (result < 0)
+                return 0;
+        }
+    }
+
+    return result;
+}
+
 } // namespace game
 } // namespace ra2

@@ -155,6 +155,9 @@ public:
 
     int DistanceFrom(AbstractClass* that) const;
 
+    // IDA: 0x5F6360 — 3D distance with building foundation adjustment
+    int DistanceTo(const ObjectClass* other) const;
+
     virtual double GetHealthPercentage() const;
 
     HealthState GetHealthStatus() const {
