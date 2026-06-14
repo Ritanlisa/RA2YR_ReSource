@@ -1466,3 +1466,45 @@ void ObfuscateDataBlock(const uint16_t* src, uint32_t* dst, int size)
     *dst_bytes++ = HIBYTE(last_word);
     *dst_bytes = 0;
 }
+
+// IDA: 0x55BB90 — Compression_WriteBlock (103B)
+// LCW compression block writer: raw copy for ≤13 bytes, LCW compress for >13.
+// Always appends 3-byte terminator (0x11, 0, 0).
+extern int CompressLCWBuffer(uint8_t* dst, int* out_size, int mode);  // IDA 0x55BC00
+
+int Compression_WriteBlock(const uint8_t* src, unsigned int size, uint8_t* dst, int* out_size, int mode)
+{
+    int result = 0;
+
+    if (size)
+    {
+        if (size > 13)
+        {
+            // Large block: use LCW compression
+            result = CompressLCWBuffer(dst, out_size, mode);
+            if (result)
+                return result;
+        }
+        else
+        {
+            // Small block: raw copy with size tag (size + 17)
+            dst[0] = static_cast<uint8_t>(size + 17);
+            for (unsigned int i = 0; i < size; ++i)
+                dst[1 + i] = src[i];
+            *out_size = static_cast<int>(1 + size);
+        }
+    }
+    else
+    {
+        *out_size = 0;
+    }
+
+    // Append LCW end marker: 0x11 0x00 0x00
+    int pos = *out_size;
+    dst[pos] = 0x11;
+    dst[pos + 1] = 0;
+    dst[pos + 2] = 0;
+    *out_size += 3;
+
+    return result;
+}
