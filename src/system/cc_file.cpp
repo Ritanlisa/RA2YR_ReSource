@@ -799,5 +799,8 @@ int UnitTypeClass_Vt16(void* self) { return *((uint32_t*)self + 894); }
 int WeaponTypeClass_Vt12(void) { return 352; }
 int WeaponTypeClass_Vt11(void) { return 49; }
 int VoxelAnimTypeClass_Vt11(void) { return 42; }
+int VoxelAnimTypeClass_Vt12(void) { return 776; }
+int SuperWeaponTypeClass_SD_vt12(void) { return 256; }
+int SuperWeaponTypeClass_SD_vt11(void) { return 32; }
 
 } // namespace gamemd
