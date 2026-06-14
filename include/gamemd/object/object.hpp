@@ -133,6 +133,8 @@ public:
     virtual void Sell(uint32_t unknown) {}
     virtual void AssignPlanningPath(int path_idx, signed char wp_idx) {}
     virtual void vt_entry_1A8(uint32_t a) {}
+    // IDA: 0x401170 — clears flag bit 2 from three internal flag fields
+    virtual int ClearFlags2();
     virtual Move IsCellOccupied(CellClass* dest_cell, int facing, int level, CellClass* source_cell, bool alt) const;
     virtual uint32_t vt_entry_1B0(uint32_t a, uint32_t b, uint32_t c, uint32_t d, uint32_t e) { return 0; }
     virtual void SetLocation(const CoordStruct& coords) {}

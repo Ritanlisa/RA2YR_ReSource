@@ -363,5 +363,17 @@ void AudioController::Start(int32_t soundIndex) { (void)soundIndex; }
 void AudioController::Pause() { }
 void AudioController::Resume() { }
 
+// IDA: 0x401170 — ObjectClass::ClearFlags2
+// Clears bit 1 (flag 0x02) from three 32-bit flag fields.
+REVERSE(0x401170, "ObjectClass::ClearFlags2: clear flag bit from 3 fields", "None")
+int ObjectClass::ClearFlags2()
+{
+    uint32_t* fields = reinterpret_cast<uint32_t*>(this);
+    fields[0] &= ~2u;   // IDA: offset 0x00 — m_object_flags_0
+    fields[20] &= ~2u;  // IDA: offset 0x50 — m_object_flags_50
+    fields[10] &= ~2u;  // IDA: offset 0x28 — m_object_flags_28
+    return -3;
+}
+
 } // namespace game
 } // namespace ra2
