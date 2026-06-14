@@ -603,4 +603,19 @@ void BinkMovie_FreeSurfaceBuffer2(void** self) { if (self[5]) operator delete(se
 // IDA: 0x7754B0 — WinModemClass::HangUp (10B)
 int WinModemClass_HangUp(void* self, int val) { auto* f = (uint32_t*)self; f[26] = val; return val; }
 
+// IDA: 0x4A52D0 — Field clearer (9B)
+void ClearFields_24_25(void* self) { auto* b = (uint8_t*)self; b[24]=0; b[25]=1; }
+
+// IDA: 0x4A52E0 — Field resetter (9B)
+int  ResetFields_24_25(void* self) { auto* b = (uint8_t*)self; b[24]=0; b[25]=0; return 0; }
+
+// IDA: 0x4F4CA0 — Flag::IsZero (10B)
+bool Flag_IsZero(void* self) { return *(uint8_t*)self == 0; }
+
+// IDA: 0x510A20 — AbstractClass QI delegator (10B)
+extern int HouseClass_QueryInterface(void*, const void*, uint32_t*);
+int AbstractClass_QI_Delegator(void* self, const void* iid, uint32_t* ppv) {
+    return HouseClass_QueryInterface((uint8_t*)self - 4, iid, ppv);
+}
+
 } // namespace gamemd
