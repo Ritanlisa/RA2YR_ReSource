@@ -241,4 +241,30 @@ int AircraftClass::Mission_Retreat()
 // COM IPersistStream::Load for aircraft deserialization
 // ============================================================
 
+// IDA: 0x414290 — AircraftClass::QueryInterface (95B)
+// Delegates to AbstractClass::QI, then checks IID_IFlyControl for FlasherClass.
+extern const IID IID_IFlyControl;  // IDA 0x7E9B40 {3FAD78E8-7D73-11D4-...}
+
+HRESULT AircraftClass::QueryInterface(const IID& iid, void** ppv)
+{
+    if (!ppv)
+        return E_POINTER;
+    *ppv = nullptr;
+
+    // Try parent first
+    HRESULT hr = AbstractClass::QueryInterface(iid, ppv);
+    if (SUCCEEDED(hr))
+        return hr;
+
+    // Check IFlyControl interface (FlasherClass)
+    if (iid == IID_IFlyControl)
+    {
+        *ppv = static_cast<IFlyControl*>(static_cast<FlasherClass*>(this));
+        AddRef();
+        return S_OK;
+    }
+
+    return E_NOINTERFACE;
+}
+
 } // namespace gamemd
