@@ -717,4 +717,10 @@ int  BuildingClass_Mission_Guard(void* self) { return 1824; }
 int  BuildingClass_Mission_Construction(void* self) { return 6; }
 int  BuildingClass_GetTypeField60(void* self) { auto* f=(uint32_t*)self; return *(int*)(f[328]+96); }
 
+// IDA: void stubs (1B each)
+void Camera_StubReturnVoid(void) {}
+void MSEngine_Destru_Release(void) {}
+void Init_StubPlaceholder(void) {}
+void ScreenEffect_StubReturnFalse(void) {}
+
 } // namespace gamemd
