@@ -894,26 +894,38 @@ void* DSurface::Lock(int x, int y)
     if (!g_DDraw_Initialized && !g_DDraw_Active)
         return nullptr;
 
-    // IDA: Lost surface detection + recovery
-    // v4 = Surface (this+7), IsLost via IDDS7 vtable[24]=0x60
-    if (Surface && Surface->IsLost() == DDERR_SURFACELOST)
-    {
-        // IDA: Restore(vtable[27]=0x6C) || still lost → return 0
-        if (FAILED(Surface->Restore()) || Surface->IsLost() == DDERR_SURFACELOST)
-            return nullptr;
+// IDA: 0x4BB000 — DSurface::RestoreIfLost (116B)
+// Detects lost DDraw surface and restores it via Lock/Unlock cycle.
+REVERSE(0x4BB000, "DSurface::RestoreIfLost: lost surface detection + recovery", "None")
+bool DSurface::RestoreIfLost()
+{
+    if (!g_DDraw_Initialized && !g_DDraw_Active)
+        return false;
 
-        // IDA: save LockCount, set 0, cycle Lock(0,0)+Unlock(), restore
-        // This re-acquires DDraw lock after Restore without net LockCount change
-        int saved = LockCount;
-        if (saved > 0)
-        {
-            LockCount = 0;
-            Lock(0, 0);          // vtable[23]: lock at origin to re-acquire DDraw surface
-            ++LockCount;
-            Unlock();            // vtable[24]: decrements count, doesn't release DDraw (count ≠ 0)
-            LockCount = saved;
-        }
+    if (!Surface)
+        return true;
+
+    // IDA: check if surface is lost
+    if (Surface->IsLost() != DDERR_SURFACELOST)
+        return true;
+
+    // IDA: attempt restore
+    if (FAILED(Surface->Restore()) || Surface->IsLost() != DD_OK)
+        return false;
+
+    // IDA: save LockCount, cycle Lock(0,0)+Unlock to re-acquire, restore count
+    int saved = LockCount;
+    if (saved > 0) {
+        LockCount = 0;
+        Lock(0, 0);
+        ++LockCount;
+        Unlock();
+        LockCount = saved;
     }
+    return true;
+}
+
+
 
     // IDA: validate coordinates
     if (x < 0 || y < 0)
