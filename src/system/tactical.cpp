@@ -173,4 +173,29 @@ bool TacticalClass::AddToDrawQueue(void* object, int x, int y)
     return true;
 }
 
+// IDA: 0x4AC310 — TacticalClass::InitViewBounds (97B)
+// Initializes view bounds (this+4560..4576) from input rect if all guard flags clear.
+bool TacticalClass::InitViewBounds(const int rect[2])
+{
+    auto* fields = reinterpret_cast<uint8_t*>(this);
+
+    if (fields[4528] || fields[4530] || fields[4529])
+        return false;
+
+    if (*reinterpret_cast<int*>(fields + 4536) != -1)
+        return false;
+
+    if (*reinterpret_cast<int*>(fields + 4520))
+        return false;
+
+    // All guards passed — set view bounds
+    fields[4560] = 1;
+    *reinterpret_cast<int*>(fields + 4564) = rect[0];
+    *reinterpret_cast<int*>(fields + 4568) = rect[1];
+    *reinterpret_cast<int*>(fields + 4572) = rect[0];
+    *reinterpret_cast<int*>(fields + 4576) = rect[1];
+
+    return true;
+}
+
 } // namespace gamemd
