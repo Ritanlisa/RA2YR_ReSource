@@ -482,4 +482,27 @@ int EnumConnectionPointsClass_QueryInterface(void* self, const void* iid, uint32
     return 0;
 }
 
+// IDA: 0x4E1A60 — GadgetClass dtor (103B)
+extern void* dword_8B3E90, *dword_8B3E88, *dword_8B3E8C;  // IDA globals
+extern void LinkClass_Destruct(void*);  // IDA 0x5565A0
+
+void* GadgetClass_Destructor(void* block, bool free_block)
+{
+    auto* fields = reinterpret_cast<uint32_t*>(block);
+    void* glob = &dword_8B3E90;
+
+    if (block == &dword_8B3E90) {
+        uint32_t v4 = fields[8];
+        *(uint8_t*)(&v4 + 1) &= ~1u;
+        fields[8] = v4;
+        dword_8B3E90 = nullptr;
+    }
+    if (block == &dword_8B3E88) dword_8B3E88 = nullptr;
+    if (block == &dword_8B3E8C) dword_8B3E8C = nullptr;
+
+    LinkClass_Destruct(block);
+    if (free_block) operator delete(block);
+    return block;
+}
+
 } // namespace gamemd
