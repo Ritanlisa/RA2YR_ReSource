@@ -893,4 +893,26 @@ int TActionClass_Vt12_148(void) { return 148; }
 int TActionClass_Vt11_47(void) { return 47; }
 int Tactical_Vt11_56(void) { return 56; }
 
+// IDA: 0x632BE0 — Palette::ConvertIndices (89B)
+extern int   sub_5C61E0(void);       // IDA 0x5C61E0 — get count
+extern void* sub_5C61D0(void);       // IDA 0x5C61D0 — get data pointer
+extern int   ShiftBigIntAndScan(int, int);  // IDA 0x5C71E0
+
+uint8_t* Palette_ConvertIndices(uint8_t* dst, int unused)
+{
+    *dst = 0;
+    int count = sub_5C61E0();
+    uint16_t* src = (uint16_t*)sub_5C61D0();
+    if (count <= 0) return dst;
+
+    uint8_t* out = dst + 2;
+    for (int i = 0; i < count; ++i)
+    {
+        int val = *src++;
+        val = ShiftBigIntAndScan(val, 64);
+        *out++ = (uint8_t)val;
+    }
+    return dst;
+}
+
 } // namespace gamemd
