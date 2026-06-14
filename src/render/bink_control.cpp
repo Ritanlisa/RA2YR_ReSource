@@ -119,3 +119,55 @@ LRESULT CALLBACK BinkPlayerControl::WindowProc(HWND hWnd, UINT msg, WPARAM wPara
 }
 
 } // namespace gamemd
+
+// IDA: 0x6C9930 — BinkMovie::FreeSurfaceBuffer (15B)
+// Frees an allocated buffer at this+5 (offset 20) if non-null.
+// Used by FreeSurfaceTracker to clean up individual surface entries.
+namespace {
+void BinkMovie_FreeSurfaceBuffer(void** obj)
+{
+    if (obj[5])  // field at DWORD offset 5 → byte offset 20
+    {
+        operator delete(obj[5]);
+    }
+}
+} // anonymous namespace
+
+namespace gamemd
+{
+
+// IDA: 0x6C9AE0 — BinkMovie::FreeSurfaceTracker (83B)
+// Iterates through a surface tracker array, frees each surface buffer
+// via BinkMovie_FreeSurfaceBuffer, then calls destructors on sub-objects.
+int BinkMovie_FreeSurfaceTracker(int* tracker)
+{
+    int result = *tracker;
+
+    if (*tracker)
+    {
+        // Iterate through surface array
+        int count = *(int*)(*tracker + 16);  // array size at offset 16
+        for (int i = 0; i < count; ++i)
+        {
+            int* array_base = *(int**)(*tracker + 4);  // array pointer at offset 4
+            void* entry = *(void**)(array_base + i);     // array[i]
+            if (entry)
+            {
+                BinkMovie_FreeSurfaceBuffer(entry);       // free surface buffer
+                operator delete(entry);                   // free the entry itself
+            }
+        }
+
+        if (*tracker)
+            result = (**(int(__thiscall***)(int, int))*tracker)(*tracker, 1);  // vtable dtor
+    }
+
+    // Call destructor on sub-object at tracker+4
+    int(__thiscall*** sub_obj)(int, int) = *(int(__thiscall****)(int, int))(tracker + 4);
+    if (sub_obj)
+        return (**sub_obj)(sub_obj, 1);  // vtable dtor
+
+    return result;
+}
+
+} // namespace gamemd
