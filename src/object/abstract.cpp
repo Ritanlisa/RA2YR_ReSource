@@ -152,5 +152,32 @@ int __stdcall AbstractClass::SaveLoad_Prefix(void** obj_out, IStream* stream, bo
     return S_OK;
 }
 
+// IDA: 0x4F4240 — COMObject::QueryInterface (91B)
+// Generic COM QueryInterface checking IUnknown + one class-specific IID.
+// Shared by COM wrapper objects; each instantiation has a different second IID.
+// This particular instance uses IID at 0x7EA6E8: {96F02EC7-6FE8-11D1-B6FD-00A024DDAFD1}
+HRESULT __stdcall COMObject_QueryInterface(void* this_ptr, const IID& iid, void** ppv)
+{
+    if (!ppv)
+        return E_POINTER;  // -2147467261
+
+    // Check IUnknown
+    if (iid != IID_IUnknown)
+    {
+        // IDA 0x7EA6E8 — class-specific IID
+        static const IID g_ClassIID = {
+            0x96F02EC7, 0x6FE8, 0x11D1,
+            { 0xB6, 0xFD, 0x00, 0xA0, 0x24, 0xDD, 0xAF, 0xD1 }
+        };
+        if (iid != g_ClassIID)
+            return E_NOINTERFACE;  // -2147467262
+    }
+
+    *ppv = this_ptr;
+    // vtable[1] = AddRef
+    reinterpret_cast<IUnknown*>(this_ptr)->AddRef();
+    return S_OK;
+}
+
 } // namespace game
 } // namespace ra2
