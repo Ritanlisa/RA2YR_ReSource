@@ -894,4 +894,238 @@ int InitGame(bool no_cd)
     return true;
 }
 
+// IDA: 0x42FD30 — Bitmap_EncodeRGB: Base64-encode RGB bytes
+int __fastcall Bitmap_EncodeRGB(const uint8_t* input, int input_len,
+                                 char* output, int output_size)
+{
+    if (!input || input_len <= 0 || !output || output_size <= 0)
+        return 0;
+
+    static const char kBase64Table[] =
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+
+    int written = 0;
+    const uint8_t* src = input;
+    char* dst = output;
+
+    while (input_len > 0)
+    {
+        if (output_size < 4)
+            break;
+
+        uint32_t triple = 0;
+        int bytes_in = 0;
+        triple |= ((uint32_t)*src++) << 16; --input_len; ++bytes_in;
+        if (input_len > 0) { triple |= ((uint32_t)*src++) << 8; --input_len; ++bytes_in; }
+        if (input_len > 0) { triple |= ((uint32_t)*src++) << 0; --input_len; ++bytes_in; }
+
+        *dst++ = kBase64Table[(triple >> 18) & 0x3F];
+        *dst++ = kBase64Table[(triple >> 12) & 0x3F];
+        *dst++ = (bytes_in >= 2) ? kBase64Table[(triple >> 6) & 0x3F] : '=';
+        *dst++ = (bytes_in >= 3) ? kBase64Table[triple & 0x3F] : '=';
+        output_size -= 4;
+        written += 4;
+    }
+    if (output_size > 0) *dst = '\0';
+    return written;
+}
+
+// IDA: 0x42FE50 — Bitmap_DecodeRGB: Base64-decode to RGB bytes
+int __fastcall Bitmap_DecodeRGB(const char* input, int input_len,
+                                 uint8_t* output, int output_size)
+{
+    if (!input || input_len <= 0 || !output || output_size <= 0)
+        return 0;
+
+    static const int8_t kDecodeTable[256] = {
+        -1,-1,-1,-1,-1,-1,-1,-1,-1,-2,-2,-2,-2,-2,-1,-1,
+        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+        -2,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,62,-1,-1,-1,63,
+        52,53,54,55,56,57,58,59,60,61,-1,-1,-1,-1,-1,-1,
+        -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9,10,11,12,13,14,
+        15,16,17,18,19,20,21,22,23,24,25,-1,-1,-1,-1,-1,
+        -1,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,
+        41,42,43,44,45,46,47,48,49,50,51,-1,-1,-1,-1,-1,
+        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+    };
+
+    int written = 0;
+    const char* src = input;
+    uint8_t* dst = output;
+
+    while (input_len > 0 && output_size > 0)
+    {
+        uint32_t triple = 0;
+        int chars_in = 0;
+        while (chars_in < 4 && input_len > 0)
+        {
+            int8_t val = kDecodeTable[(uint8_t)*src++]; --input_len;
+            if (val == -2) continue;
+            if (val == -1) { input_len = 0; break; }
+            triple |= ((uint32_t)(val & 0x3F)) << (18 - chars_in * 6);
+            ++chars_in;
+        }
+        if (output_size > 0 && chars_in >= 1) { *dst++ = (uint8_t)(triple >> 16); --output_size; ++written; }
+        if (output_size > 0 && chars_in >= 2) { *dst++ = (uint8_t)(triple >> 8);  --output_size; ++written; }
+        if (output_size > 0 && chars_in >= 3) { *dst++ = (uint8_t)(triple);       --output_size; ++written; }
+    }
+    return written;
+}
+
 } // namespace gamemd
+
+// IDA: 0x42FD30 — Bitmap_EncodeRGB: Base64-encode RGB bytes
+// Encodes 3 bytes at a time into 4 Base64 characters.
+// Uses standard Base64 alphabet.
+int __fastcall Bitmap_EncodeRGB(const uint8_t* input, int input_len,
+                                 char* output, int output_size)
+{
+    if (!input || input_len <= 0 || !output || output_size <= 0)
+        return 0;
+
+    static const char kBase64Table[] =
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+
+    int written = 0;
+    const uint8_t* src = input;
+    char* dst = output;
+
+    while (input_len > 0)
+    {
+        if (output_size < 4)
+            break;
+
+        // IDA: read up to 3 bytes into a 24-bit value (v18)
+        uint32_t triple = 0;
+        int bytes_in = 0;
+
+        // Byte 1 → bits 23-16
+        triple |= ((uint32_t)*src++) << 16;
+        --input_len;
+        ++bytes_in;
+
+        // Byte 2 → bits 15-8 (if available)
+        if (input_len > 0) {
+            triple |= ((uint32_t)*src++) << 8;
+            --input_len;
+            ++bytes_in;
+        }
+
+        // Byte 3 → bits 7-0 (if available)
+        if (input_len > 0) {
+            triple |= ((uint32_t)*src++) << 0;
+            --input_len;
+            ++bytes_in;
+        }
+
+        // IDA: encode 4 Base64 chars from the 24-bit value
+        // Char 0: bits 23-18 → table index
+        *dst++ = kBase64Table[(triple >> 18) & 0x3F];
+        // Char 1: bits 17-12 → table index
+        *dst++ = kBase64Table[(triple >> 12) & 0x3F];
+        // Char 2: padding or bits 11-6
+        *dst++ = (bytes_in >= 2) ? kBase64Table[(triple >> 6) & 0x3F] : '=';
+        // Char 3: padding or bits 5-0
+        *dst++ = (bytes_in >= 3) ? kBase64Table[triple & 0x3F] : '=';
+
+        output_size -= 4;
+        written += 4;
+    }
+
+    // IDA: null-terminate if space remains
+    if (output_size > 0)
+        *dst = '\0';
+
+    return written;
+}
+
+// IDA: 0x42FE50 — Bitmap_DecodeRGB: Base64-decode to RGB bytes
+// Decodes 4 Base64 chars into 3 bytes.
+int __fastcall Bitmap_DecodeRGB(const char* input, int input_len,
+                                 uint8_t* output, int output_size)
+{
+    if (!input || input_len <= 0 || !output || output_size <= 0)
+        return 0;
+
+    // IDA: lookup table at 0x7E3914 — maps ASCII char to 6-bit value (-1=invalid, -2=whitespace)
+    static const int8_t kDecodeTable[256] = {
+        -1,-1,-1,-1,-1,-1,-1,-1,-1,-2,-2,-2,-2,-2,-1,-1,
+        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+        -2,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,62, -1,-1,-1,63,
+        52,53,54,55,56,57,58,59,60,61,-1,-1,-1,-1,-1,-1,
+        -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9,10,11,12,13,14,
+        15,16,17,18,19,20,21,22,23,24,25,-1,-1,-1,-1,-1,
+        -1,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,
+        41,42,43,44,45,46,47,48,49,50,51,-1,-1,-1,-1,-1,
+        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+    };
+
+    int written = 0;
+    const char* src = input;
+    uint8_t* dst = output;
+
+    while (input_len > 0)
+    {
+        if (output_size <= 0)
+            break;
+
+        // IDA: read up to 4 valid Base64 characters
+        uint32_t triple = 0;
+        int chars_in = 0;
+
+        while (chars_in < 4 && input_len > 0)
+        {
+            int8_t val = kDecodeTable[(uint8_t)*src++];
+            --input_len;
+
+            if (val == -2)  // whitespace — skip
+                continue;
+            if (val == -1) {  // invalid — end of data
+                input_len = 0;
+                break;
+            }
+
+            // IDA: accumulate 6 bits into the triple
+            switch (chars_in) {
+                case 0: triple |= ((uint32_t)(val & 0x3F)) << 18; break;
+                case 1: triple |= ((uint32_t)(val & 0x3F)) << 12; break;
+                case 2: triple |= ((uint32_t)(val & 0x3F)) << 6;  break;
+                case 3: triple |= ((uint32_t)(val & 0x3F)) << 0;  break;
+            }
+            ++chars_in;
+        }
+
+        // IDA: output decoded bytes (byte 2 = bits 23-16, byte 1 = bits 15-8, byte 0 = bits 7-0)
+        if (output_size > 0 && chars_in >= 1) {
+            *dst++ = (uint8_t)(triple >> 16);
+            --output_size;
+            ++written;
+        }
+        if (output_size > 0 && chars_in >= 2) {
+            *dst++ = (uint8_t)(triple >> 8);
+            --output_size;
+            ++written;
+        }
+        if (output_size > 0 && chars_in >= 3) {
+            *dst++ = (uint8_t)(triple);
+            --output_size;
+            ++written;
+        }
+    }
+
+    return written;
+}
