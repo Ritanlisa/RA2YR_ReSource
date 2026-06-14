@@ -449,6 +449,8 @@ public:
     virtual void* Lock(int x, int y) override;
     virtual int GetBytesPerPixel() const override { return BytesPerPixel; }
     virtual int GetPitch() const override { return Width * BytesPerPixel; }
+    // IDA: 0x4114F0 — BSurface::CanLock returns true (always lockable)
+    virtual bool CanLock(uint32_t unk1, uint32_t unk2) override { return true; }
     virtual bool IsDSurface() const override final { return false; }
 
     int BytesPerPixel;
