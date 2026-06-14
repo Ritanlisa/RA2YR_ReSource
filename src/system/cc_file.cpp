@@ -887,4 +887,7 @@ int OverlayTypeClass_Vt16(void* self) { return *((uint32_t*)self + 165); }
 int ParticleTypeClass_Vt12(void) { return 792; }
 int ParticleTypeClass_Vt11(void) { return 23; }
 
+int SuperWeaponTypeClass_SD_vt12_256(void) { return 256; }
+int Tactical_Vt12_3608(void) { return 3608; }
+
 } // namespace gamemd
