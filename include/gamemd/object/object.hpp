@@ -145,6 +145,8 @@ public:
     virtual int GetHeight() const;
     virtual void SetHeight(uint32_t height);
     virtual int GetZ() const;
+    // IDA: 0x4263D0 — returns coords with Z+50 for rendering offset
+    virtual CoordStruct* GetDrawPosition(CoordStruct* out) const;
     virtual bool IsBeingWarpedOut() const { return false; }
     virtual bool IsWarpingIn() const { return false; }
     virtual bool IsWarpingSomethingOut() const { return false; }

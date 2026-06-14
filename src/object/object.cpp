@@ -375,5 +375,19 @@ int ObjectClass::ClearFlags2()
     return -3;
 }
 
+// IDA: 0x4263D0 — ObjectClass::GetDrawPosition
+// Returns coordinates with Z+50 (rendering offset above ground)
+REVERSE(0x4263D0, "ObjectClass::GetDrawPosition: Z+50 render offset", "None")
+CoordStruct* ObjectClass::GetDrawPosition(CoordStruct* out) const
+{
+    // IDA: calls GetCoords (vtable[18]), then adds 50 to Z
+    CoordStruct coords;
+    GetCoords(&coords);
+    out->X = coords.X;
+    out->Y = coords.Y;
+    out->Z = coords.Z + 50;
+    return out;
+}
+
 } // namespace game
 } // namespace ra2
