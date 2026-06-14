@@ -861,4 +861,9 @@ int RadSiteClass_Vt11(void) { return 69; }
 int TiberiumClass_Vt12(void) { return 296; }
 int TiberiumClass_Vt11(void) { return 46; }
 
+// TemporalClass + TiberiumClass stubs
+int TemporalClass_Vt11(void) { return 70; }
+int TemporalClass_Vt12(void) { return 80; }
+int TiberiumClass_Vt16(void* self) { return *((uint32_t*)self + 38); }
+
 } // namespace gamemd
