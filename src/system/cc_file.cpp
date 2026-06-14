@@ -131,4 +131,30 @@ void* BufferIOFileClass_Destructor(void* block, bool free_block)
     return block;
 }
 
+// IDA: 0x775610 — WinModemClass dtor (85B)
+// Closes handle (Block+23), frees buffer (Block+9), conditional free of Block.
+extern void Debug_Log();  // IDA 0x4068E0
+
+void* WinModemClass_Destructor(void* block, bool free_block)
+{
+    auto* fields = reinterpret_cast<uint32_t*>(block);
+
+    uint32_t handle = fields[23];  // DWORD at offset 92
+    if (handle != 0xFFFFFFFF)
+    {
+        Debug_Log();
+        CloseHandle(reinterpret_cast<HANDLE>(static_cast<uintptr_t>(handle)));
+        fields[23] = 0xFFFFFFFF;
+    }
+
+    void* buffer = reinterpret_cast<void*>(fields[9]);  // DWORD at offset 36
+    if (buffer)
+        operator delete(buffer);
+
+    if (free_block)
+        operator delete(block);
+
+    return block;
+}
+
 } // namespace gamemd
