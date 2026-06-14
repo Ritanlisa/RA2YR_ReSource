@@ -245,4 +245,50 @@ void* MSVQAnim_Destructor(void* block, bool free_block)
     return block;
 }
 
+// IDA: 0x4B6470 — DropPodLocomotionClass::QueryInterface (93B)
+extern int   LocomotionClass_QueryInterface(void*, const void*, int*);  // IDA 0x55A9B0
+extern const IID IID_IPiggyback;  // IDA 0x7E9B10
+
+int DropPodLocomotionClass_QueryInterface(void* self, const void* iid, int* ppv)
+{
+    int hr = LocomotionClass_QueryInterface(self, iid, ppv);
+    if (hr == -2147467262)  // E_NOINTERFACE
+    {
+        if (memcmp(iid, &IID_IPiggyback, 16) == 0)
+        {
+            int v4 = self ? (int)((uint8_t*)self + 24) : 0;
+            *ppv = v4;
+        }
+        if (*ppv)
+        {
+            (*(void(__stdcall**)(void*))(*(uintptr_t*)self + 4))(self);  // AddRef
+            return 0;
+        }
+        return -2147467262;
+    }
+    return hr;
+}
+
+// IDA: 0x4AF720 — DriveLocomotionClass::QueryInterface (93B)
+// Same pattern as DropPodLocomotionClass::QI
+int DriveLocomotionClass_QueryInterface(void* self, const void* iid, int* ppv)
+{
+    int hr = LocomotionClass_QueryInterface(self, iid, ppv);
+    if (hr == -2147467262)
+    {
+        if (memcmp(iid, &IID_IPiggyback, 16) == 0)
+        {
+            int v4 = self ? (int)((uint8_t*)self + 24) : 0;
+            *ppv = v4;
+        }
+        if (*ppv)
+        {
+            (*(void(__stdcall**)(void*))(*(uintptr_t*)self + 4))(self);
+            return 0;
+        }
+        return -2147467262;
+    }
+    return hr;
+}
+
 } // namespace gamemd
