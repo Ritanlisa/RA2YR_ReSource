@@ -1087,6 +1087,155 @@ int __fastcall Map_CellToTileIndex(int map_w, int map_h, int max_tiles, int x, i
     return idx;
 }
 
+// ============================================================
+// IDA: 0x544E30 — MIXFile_AccumulateIndex (57B)
+// Walks sorted MIX index table, accumulating entry sizes for IDs <= a1.
+// Used by CellClass terrain/overlay decompression to adjust tile indices.
+// ============================================================
+// extern globals defined in the original .data section:
+extern int* dword_AA107C;  // 0xAA107C — pointer to MIX index table (array of {start_id,count} pairs)
+extern int  dword_AA1088;  // 0xAA1088 — count of entries in the index table
+
+// REVERSE(0x544E30, "MIXFile_AccumulateIndex: accumulate MIX entry sizes", "None")
+int MIXFile_AccumulateIndex(int a1)
+{
+    int result = a1;
+    if (a1 != 0xFFFF) {
+        int i = 0;
+        if (dword_AA1088 > 0) {
+            // dword_AA107C points to array of int* pointers.
+            // Each int* pointer points to a {start_id, count} pair.
+            int* table = dword_AA107C;
+            do {
+                int* entry = (int*)(*table); // *table = pointer to {start_id, count}
+                if (*entry > a1)              // entry[0] = start_id
+                    break;
+                ++table;                       // advance to next pointer in array
+                result += entry[1];            // entry[1] = count
+                ++i;
+            } while (i < dword_AA1088);
+        }
+    }
+    return result;
+}
+
+// ============================================================
+// IDA: 0x4E6150 — Version_GetString (59B)
+// Retrieves version info: byte flag, integer version, and "Not available" string.
+// ============================================================
+extern uint8_t byte_84E863;  // 0x84E863 — version byte
+
+// Forward-declared stubs for sub_7C5F3D and sub_7C5FFF
+static uint8_t sub_7C5F3D() { return 0; }
+static void    sub_7C5FFF() {}
+
+// REVERSE(0x4E6150, "Version_GetString: version info retrieval", "None")
+char* Version_GetString(int* out_int, uint8_t* out_byte, char* dest, size_t count)
+{
+    *out_byte = sub_7C5F3D();
+    sub_7C5FFF();
+    *out_int = byte_84E863;
+    char* result = dest;
+    if (dest)
+        return strncpy(dest, "Not available", count);
+    return result;
+}
+
+// ============================================================
+// IDA: 0x4E4FC0 — Lobby_ResetFactionTable
+// Resets lobby faction selection table.
+// First 'count' slots → -1, remaining slots (up to 8) → -2.
+// Called from Campaign/NetworkLobby/Skirmish/WOLobby dialogs.
+// ============================================================
+void __fastcall Lobby_ResetFactionTable(int count)
+{
+    static int* const kFactionTableBase = (int*)0x8B3F38;
+    static int* const kFactionTableEnd  = (int*)0x8B3FA4;
+
+    if (count > 0) {
+        int* p = kFactionTableBase;
+        for (int i = 0; i < count; ++i) {
+            *p = -1;
+            p += 3;
+        }
+    }
+    if (count < 9) {
+        int* p = (int*)((uintptr_t)kFactionTableBase + count * 12);
+        while (p < kFactionTableEnd) {
+            *p = -2;
+            p += 3;
+        }
+    }
+}
+
+// ============================================================
+// IDA: 0x5F1350 — StringBuilder_AppendChar
+// Appends char to global string builder buffer; null-terminates.
+// Returns updated position, or unchanged if buffer full.
+// ============================================================
+extern uint8_t* g_StrBuilderBuf;   // 0xA8EA7C
+extern int      g_StrBuilderPos;   // 0xA8EA84
+extern int      g_StrBuilderMax;   // 0xA8EA80
+
+int __fastcall StringBuilder_AppendChar(char c)
+{
+    int pos = g_StrBuilderPos;
+    if (pos < g_StrBuilderMax - 1) {
+        g_StrBuilderBuf[pos] = c;
+        g_StrBuilderBuf[pos + 1] = 0;
+        return ++g_StrBuilderPos;
+    }
+    return pos;
+}
+
+// ============================================================
+// IDA: 0x4A3B40 — Resource_Find
+// Finds, loads, and locks Win32 resource by numeric ID + type string.
+// Returns pointer to resource data, or nullptr on failure.
+// ============================================================
+extern HMODULE hLibModule;  // 0x89F974
+
+void* __fastcall Resource_Find(uint16_t id, const char* type)
+{
+    HRSRC hrsrc = FindResourceA(hLibModule, (LPCSTR)(uintptr_t)id, type);
+    if (!hrsrc)
+        return nullptr;
+
+    HGLOBAL hglob = LoadResource(hLibModule, hrsrc);
+    if (!hglob)
+        return nullptr;
+
+    return LockResource(hglob);
+}
+
+// ============================================================
+// IDA: 0x6ABCD0 — Type_MapToValue: type-to-value mapper
+// __fastcall: ECX=type, EDX=param2, stack=param3
+// ============================================================
+int __fastcall Type_MapToValue(int type, int param2, int param3)
+{
+    switch (type) {
+        case 16: return 2;
+        case 40:
+        case 3:  return 3;
+        case 7:  return (param2 == 5) ? 1 : 0;
+        default: return -1;
+    }
+}
+
+// ============================================================
+// IDA: 0x4E5900 — ComboBox_SetSelection: Windows combo box helper
+// __fastcall: ECX=hDlg, EDX=nIDDlgItem, stack=wParam
+// CB_GETCURSEL=0x147, CB_SETCURSEL=0x150
+// ============================================================
+LRESULT __fastcall ComboBox_SetSelection(HWND hDlg, int nIDDlgItem, LRESULT wParam)
+{
+    LRESULT sel = wParam;
+    if (wParam == -1)
+        sel = SendDlgItemMessageA(hDlg, nIDDlgItem, 0x147, 0, 0);
+    return SendDlgItemMessageA(hDlg, nIDDlgItem, 0x150, sel, 0);
+}
+
 } // namespace gamemd
 
 // IDA: 0x42FD30 — Bitmap_EncodeRGB: Base64-encode RGB bytes
