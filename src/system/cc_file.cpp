@@ -803,4 +803,9 @@ int VoxelAnimTypeClass_Vt12(void) { return 776; }
 int SuperWeaponTypeClass_SD_vt12(void) { return 256; }
 int SuperWeaponTypeClass_SD_vt11(void) { return 32; }
 
+// IDA: VeinholeMonster + Tactical stubs
+int VeinholeMonsterClass_Vt11(void) { return 63; }
+int VeinholeMonsterClass_Vt12(void) { return 264; }
+int Tactical_Vt11(void) { return 56; }
+
 } // namespace gamemd
