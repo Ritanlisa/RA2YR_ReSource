@@ -114,6 +114,9 @@ public:
     // IDA: 0x487630 — Decrements display timer, manages timer flags
     int UpdateDisplayTimer();
 
+    // IDA: 0x7BA4D0 — Buffered read from internal data buffer
+    int ReadFromBuffer(void* dest, int size);
+
     CellStruct      CurrentFoundation_CenterCell;
     CellStruct      CurrentFoundation_TopLeftOffset;
     CellStruct*     CurrentFoundation_Data;

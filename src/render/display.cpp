@@ -330,4 +330,32 @@ int DisplayClass::UpdateDisplayTimer()
     return fields[75];
 }
 
+// IDA: 0x7BA4D0 — DisplayClass::ReadFromBuffer (88B)
+// Buffered read from internal data buffer (this+3=ptr, this+4=size, this+6=pos).
+// Returns number of bytes actually read; advances read position.
+int DisplayClass::ReadFromBuffer(void* dest, int size)
+{
+    auto* fields = reinterpret_cast<int*>(this);
+    uint8_t* buffer = reinterpret_cast<uint8_t*>(fields[3]);  // buffer pointer
+    int total_size   = fields[4];   // total buffer size (0 = unbounded)
+    int& read_pos    = fields[6];   // current read position
+
+    if (!buffer || !dest || size <= 0)
+        return 0;
+
+    int remaining = size;
+    if (total_size)
+    {
+        int available = total_size - read_pos;
+        if (size >= available)
+            remaining = available;
+    }
+
+    if (remaining > 0)
+        memcpy(dest, buffer + read_pos, remaining);
+
+    read_pos += remaining;
+    return remaining;
+}
+
 } // namespace gamemd
