@@ -421,6 +421,34 @@ bool DSurface::BlitWhole(class Surface* src, bool option1, bool option2)
     return Blit(zero, zero, src, zero, zero, option1, option2);
 }
 
+// IDA: 0x7BD210 — DSurface::RenderPipelineCleanup (84B)
+// Clears bit 0x40 flag (calls vtable[22] with op=7), always calls vtable[22] with op=3,
+// then clears bit 0x80000000 if set. Returns updated flags at this+1980.
+int DSurface::RenderPipelineCleanup()
+{
+    auto* fields = reinterpret_cast<uint8_t*>(this);
+    uint32_t& flags = *reinterpret_cast<uint32_t*>(fields + 1980);
+
+    if (flags & 0x40)
+    {
+        // vtable[22] = offset 88 → method(this, 7, 0, 0)
+        using VtMethod = void(__thiscall*)(void*, int, int, int);
+        auto fn = (*reinterpret_cast<VtMethod**>(this))[22];
+        fn(this, 7, 0, 0);
+        flags &= ~0x40u;
+    }
+
+    // vtable[22] = offset 88 → method(this, 3, 0, 0)
+    using VtMethod = void(__thiscall*)(void*, int, int, int);
+    auto fn2 = (*reinterpret_cast<VtMethod**>(this))[22];
+    fn2(this, 3, 0, 0);
+
+    if (flags & 0x80000000)
+        flags &= ~0x80000000u;
+
+    return flags;
+}
+
 // IDA: 0x4BB080 — DSurface::BlitPart (75B)
 // If HW blit possible (both surfaces exist, BPP/pitch match) → Blit
 // Otherwise fallback to XSurface::BlitPart (software path)
