@@ -1032,6 +1032,14 @@ int __fastcall String_HashMod31(const char* str)
     return result;
 }
 
+// IDA: 0x64DE80 — hash accumulator: result = input + (acc >> 31) + 2*acc
+int __fastcall Hash_Compute(int* acc, int input)
+{
+    int result = input + (*acc >> 31) + 2 * *acc;
+    *acc = result;
+    return result;
+}
+
 } // namespace gamemd
 
 // IDA: 0x42FD30 — Bitmap_EncodeRGB: Base64-encode RGB bytes
