@@ -7,9 +7,10 @@
 namespace gamemd
 {
 
-extern HWND  g_hWnd;           // main window handle
-extern int   g_ScrollOffsetX;  // dword_87F7EC -- horizontal scroll
-extern int   g_ScrollOffsetY;  // dword_87F7F0 -- vertical scroll
+extern HWND  g_hWnd;                  // main window handle
+extern int   g_ScrollOffsetX;         // dword_87F7EC -- horizontal scroll
+extern int   g_ScrollOffsetY;         // dword_87F7F0 -- vertical scroll
+extern int (__stdcall *g_DDraw_ErrorCallback)(UINT); // IDA 0x8A00B0 — DDraw error callback
 
 DisplayClass::DisplayClass() noexcept
     : CurrentFoundation_CenterCell{}
@@ -241,6 +242,33 @@ uint16_t BlendMinimapPixel(uint16_t src, uint16_t dst, int blend_pct)
     }
 
     return result;
+}
+
+// IDA: 0x4A3DD0 — DDrawLogError (100B)
+// fastcall: ECX=error_code, EDX=show_info_flag
+// DirectDraw error handler: either calls registered callback or shows MessageBox.
+int DDrawLogError(UINT error_code, bool show_info)
+{
+    if (error_code)
+    {
+        if (g_DDraw_ErrorCallback)
+        {
+            return g_DDraw_ErrorCallback(error_code);
+        }
+        else
+        {
+            char text[80];
+            sprintf(text, "DDRAW.DLL Error code = %08X", error_code);
+            return MessageBoxA(g_hWnd, text, "Direct X", MB_ICONEXCLAMATION | MB_OK);
+        }
+    }
+    else if (show_info)
+    {
+        return MessageBoxA(g_hWnd,
+            "Direct Draw operation processed without error",
+            "Note", MB_OK);
+    }
+    return 0;
 }
 
 } // namespace gamemd
