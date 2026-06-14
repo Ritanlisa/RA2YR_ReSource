@@ -291,4 +291,43 @@ int DriveLocomotionClass_QueryInterface(void* self, const void* iid, int* ppv)
     return hr;
 }
 
+// IDA: 0x54DC60 — JumpjetLocomotionClass::QueryInterface (93B)
+int JumpjetLocomotionClass_QueryInterface(void* self, const void* iid, int* ppv)
+{
+    int hr = LocomotionClass_QueryInterface(self, iid, ppv);
+    if (hr == -2147467262) {
+        if (memcmp(iid, &IID_IPiggyback, 16) == 0)
+            *ppv = self ? (int)((uint8_t*)self + 24) : 0;
+        if (*ppv) { (*(void(__stdcall**)(void*))(*(uintptr_t*)self + 4))(self); return 0; }
+        return -2147467262;
+    }
+    return hr;
+}
+
+// IDA: 0x69EE30 — ShipLocomotionClass::QueryInterface (93B)
+int ShipLocomotionClass_QueryInterface(void* self, const void* iid, int* ppv)
+{
+    int hr = LocomotionClass_QueryInterface(self, iid, ppv);
+    if (hr == -2147467262) {
+        if (memcmp(iid, &IID_IPiggyback, 16) == 0)
+            *ppv = self ? (int)((uint8_t*)self + 24) : 0;
+        if (*ppv) { (*(void(__stdcall**)(void*))(*(uintptr_t*)self + 4))(self); return 0; }
+        return -2147467262;
+    }
+    return hr;
+}
+
+// IDA: 0x75C7F0 — WalkLocomotionClass::QueryInterface (93B)
+int WalkLocomotionClass_QueryInterface(void* self, const void* iid, int* ppv)
+{
+    int hr = LocomotionClass_QueryInterface(self, iid, ppv);
+    if (hr == -2147467262) {
+        if (memcmp(iid, &IID_IPiggyback, 16) == 0)
+            *ppv = self ? (int)((uint8_t*)self + 24) : 0;
+        if (*ppv) { (*(void(__stdcall**)(void*))(*(uintptr_t*)self + 4))(self); return 0; }
+        return -2147467262;
+    }
+    return hr;
+}
+
 } // namespace gamemd
