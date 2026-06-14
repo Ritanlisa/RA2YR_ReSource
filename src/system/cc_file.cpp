@@ -711,4 +711,10 @@ int  CStreamClass_QI_Delegator(int a1, const void* iid, uint32_t* ppv)
 // IDA: 0x50C160 — Field accessor (10B)
 float FieldAccessor_50C160(void* self) { auto* f = (uint32_t*)self; return *(float*)(*(int*)(f[13]) + 328); }
 
+// IDA: 0x459DA0-0x459ED0 — BuildingClass stubs
+int  BuildingClass_Return2(void) { return 2; }
+int  BuildingClass_Mission_Guard(void* self) { return 1824; }
+int  BuildingClass_Mission_Construction(void* self) { return 6; }
+int  BuildingClass_GetTypeField60(void* self) { auto* f=(uint32_t*)self; return *(int*)(f[328]+96); }
+
 } // namespace gamemd
