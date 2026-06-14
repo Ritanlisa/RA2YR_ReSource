@@ -378,4 +378,38 @@ int* Display_GetViewport(int out[4])
     return out;
 }
 
+// IDA: 0x4A88C0 — DisplayClass::SetSize (98B)
+// Parent setup + zeroes high-offset fields + iterates global array calling vtable[3].
+extern void MapClass_Destru_vt07(void*);  // IDA 0x5659F0
+extern void* dword_8A0360;               // IDA 0x8A0360 — start of 6-DWORD entry array
+extern void* dbl_8A03D8;                 // IDA 0x8A03D8 — end of array
+
+void DisplayClass::SetSize()
+{
+    auto* fields = reinterpret_cast<uint8_t*>(this);
+
+    MapClass_Destru_vt07(this);
+
+    *reinterpret_cast<int*>(fields + 4516) = 0;
+    *reinterpret_cast<int*>(fields + 4520) = 0;
+    *reinterpret_cast<int*>(fields + 4524) = -1;
+    *reinterpret_cast<int*>(fields + 4476) = 0;
+    *reinterpret_cast<int*>(fields + 4536) = -1;
+    fields[4528] = 0;
+    fields[4559] = 0;
+    fields[4560] = 0;
+    fields[4529] = 0;
+    fields[4530] = 0;
+
+    // Iterate array of 6-DWORD structures, calling vtable[3] on each
+    for (auto* entry = reinterpret_cast<int*>(&dword_8A0360);
+         reinterpret_cast<uintptr_t>(entry) < reinterpret_cast<uintptr_t>(&dbl_8A03D8);
+         entry += 6)
+    {
+        using VtMethod = int(__thiscall*)(int*);
+        auto fn = (*reinterpret_cast<VtMethod**>(entry))[3];
+        fn(entry);
+    }
+}
+
 } // namespace gamemd
