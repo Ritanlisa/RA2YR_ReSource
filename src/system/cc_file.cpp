@@ -891,5 +891,6 @@ int SuperWeaponTypeClass_SD_vt12_256(void) { return 256; }
 int Tactical_Vt12_3608(void) { return 3608; }
 int TActionClass_Vt12_148(void) { return 148; }
 int TActionClass_Vt11_47(void) { return 47; }
+int Tactical_Vt11_56(void) { return 56; }
 
 } // namespace gamemd
