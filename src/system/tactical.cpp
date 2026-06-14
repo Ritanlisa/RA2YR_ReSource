@@ -149,4 +149,28 @@ int TacticalClass::DrawTimer(int index, ColorScheme* scheme, int time, const wch
     return 0;
 }
 
+// IDA: 0x6D9EF0 — TacticalClass::AddToDrawQueue (139B)
+// Inserts object+screen coords into a 500-element draw queue.
+extern int g_Map_VisibleRectOffset;   // IDA 0x886FA8
+extern int g_DSurface_WindowOffset;   // IDA 0x886FAC
+extern void* dword_B0CEC8[1500];      // IDA 0xB0CEC8 — draw queue (3 ints × 500)
+
+bool TacticalClass::AddToDrawQueue(void* object, int x, int y)
+{
+    auto* fields = reinterpret_cast<int*>(this);
+    int& count = fields[876];  // m_draw_queue_count
+
+    if (count == 500
+        || x < -32 || x > g_Map_VisibleRectOffset + 32
+        || y < -32 || y > g_DSurface_WindowOffset + 32)
+        return false;
+
+    int idx = 3 * count;
+    dword_B0CEC8[idx]     = object;           // object pointer
+    dword_B0CEC8[idx + 1] = fields[44] + x;   // screen X offset
+    dword_B0CEC8[idx + 2] = fields[45] + y;   // screen Y offset
+    ++count;
+    return true;
+}
+
 } // namespace gamemd
