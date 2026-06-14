@@ -274,12 +274,42 @@ DSurface::DSurface(int width, int height, bool back_buffer, bool force_3d) noexc
     }
 }
 
+// IDA: 0x4BA6B0 — DSurface::Destroy (98B)
+// Full destructor: clipper cleanup + SurfaceDesc free + Surface release
 DSurface::~DSurface()
 {
-    if (Allocated && Surface) {
+    // vtable already set to DSurface by C++
+
+    if (Allocated)
+    {
+        if (Surface)
+        {
+            if (g_DDraw_Clipper)
+            {
+                // IDA: clipper vtable[28]=0x70 → SetClipList(nullptr, 0)
+                g_DDraw_Clipper->SetClipList(nullptr, 0);
+                // IDA: g_DDraw_Clipper->Release() → set to 0
+                g_DDraw_Clipper->Release();
+                g_DDraw_Clipper = nullptr;
+            }
+        }
+    }
+
+    // IDA: operator delete the allocated SurfaceDesc buffer
+    if (SurfaceDesc)
+    {
+        operator delete(SurfaceDesc);
+        SurfaceDesc = nullptr;
+    }
+
+    // IDA: Release the DDraw surface object
+    if (Surface)
+    {
         Surface->Release();
         Surface = nullptr;
     }
+
+    // IDA: vtable resets to Surface_Vtable (C++ destructor chain handles this)
     LockedSurface = nullptr;
 }
 
