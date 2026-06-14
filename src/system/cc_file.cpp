@@ -505,4 +505,28 @@ void* GadgetClass_Destructor(void* block, bool free_block)
     return block;
 }
 
+// IDA: 0x488F00 — ColorListClass dtor (103B)
+extern void ListClass_Destruct(void*);  // IDA 0x557600
+
+void* ColorListClass_Destructor(void* block, bool free_block)
+{
+    auto* fields = reinterpret_cast<uint32_t*>(block);
+    auto* bytes  = reinterpret_cast<uint8_t*>(block);
+    uint32_t v3 = fields[93];  // vtable offset for sub-object
+    uint8_t* v4 = bytes + 372; // sub-object at offset 372
+
+    // Call sub-object destructor via vtable+12
+    (*(void(__thiscall**)(uint8_t*))(v3 + 12))(v4);
+    fields[100] = 0;
+
+    void* vec_buf = reinterpret_cast<void*>(fields[93 + 1]);  // fields[94] = v4+4
+    if (vec_buf && v4[13]) { operator delete(vec_buf); fields[94] = 0; }
+    v4[13] = 0;
+    fields[95] = 0;  // VectorClass<int>::capacity = 0
+
+    ListClass_Destruct(block);
+    if (free_block) operator delete(block);
+    return block;
+}
+
 } // namespace gamemd
