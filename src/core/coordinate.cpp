@@ -158,4 +158,44 @@ bool IsCloseEnough(const CoordStruct& a, const CoordStruct& b, int range) noexce
     return true;
 }
 
+// IDA: 0x487EA0 — Coord_Neighbor: get neighboring coordinate by direction (0-7)
+Point2D* __fastcall Coord_Neighbor(Point2D* out, const Point2D* pos, uint8_t dir)
+{
+    // IDA: direction X/Y offset table at 0x89F688
+    static const int8_t kDirOffsets[8][2] = {
+        {0,-1},{1,-1},{1,0},{1,1},{0,1},{-1,1},{-1,0},{-1,-1}
+    };
+    int idx = dir & 7;
+    out->X = pos->X + kDirOffsets[idx][0];
+    out->Y = pos->Y + kDirOffsets[idx][1];
+    return out;
+}
+
+// IDA: 0x6D20E0 — Coord_ZToScreenY: convert Z coordinate to screen Y
+int __fastcall Coord_ZToScreenY(int z)
+{
+    // dbl_B0CD48 = scaling factor for isometric projection
+    static const double kZScale = 0.5;  // IDA: dbl_B0CD48
+    return (int)floor(kZScale * (double)z + (z >= 728 ? 1.0 : 0.0) + 0.5);
+}
+
+// IDA: 0x5C6960 — BitArray_FindHighestBit: find highest set bit in DWORD array
+int __fastcall BitArray_FindHighestBit(const uint32_t* bits, int count)
+{
+    int i = count;
+    while (--i >= 0) {
+        if (bits[i] != 0) {
+            uint32_t v = bits[i];
+            int pos = 32 * (i + 1);
+            uint32_t mask = 0x80000000;
+            while ((v & mask) == 0) {
+                mask >>= 1;
+                --pos;
+            }
+            return pos;
+        }
+    }
+    return 0;
+}
+
 } // namespace gamemd
