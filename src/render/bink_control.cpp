@@ -289,4 +289,19 @@ void* BinkMovie_BlitToTarget(int* self, int surface)
     return (*(BlitFn*)(*(uintptr_t*)surface + 8))(surface, dest, src_surface, v4, 1, 1);
 }
 
+// IDA: 0x767EF0 — MSFrameAnim::Draw (138B)
+extern uint8_t byte_8487BD;  // IDA 0x8487BD
+extern void RenderScoreScreen(int, int*, int);  // IDA 0x72E450
+
+void MSFrameAnim_Draw(int surface, int* rect)
+{
+    if (!byte_8487BD) return;
+    int w = (*(int(__thiscall**)(int))(*(uintptr_t*)surface + 124))(surface);
+    int h = (*(int(__thiscall**)(int))(*(uintptr_t*)surface + 128))(surface);
+    int r[4];
+    if (rect) { r[0]=rect[0]; r[1]=rect[1]; r[2]=rect[2]; r[3]=rect[3]; }
+    else      { r[0]=0; r[1]=0; r[2]=w; r[3]=h; }
+    RenderScoreScreen(surface, r, 1);
+}
+
 } // namespace gamemd
