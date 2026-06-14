@@ -243,4 +243,50 @@ void BinkMovie_AdjustSurfaceFormat(int* self, int surface)
     (*(int(__thiscall**)(int, int*, int))(*(uintptr_t*)surface + 20))(surface, dest, 0);
 }
 
+// IDA: 0x4331F0 — BinkMovie::RenderSingleFrame (125B)
+void* BinkMovie_RenderSingleFrame(int* self, int surface, int x, int y, bool adjust)
+{
+    if (adjust)
+        BinkMovie_AdjustSurfaceFormat(self, surface);
+
+    int locked = (*(int(__thiscall**)(int, int, int))(*(uintptr_t*)surface + 92))(surface, 0, 0);
+    if (locked) {
+        int w = (*(int(__thiscall**)(int))(*(uintptr_t*)surface + 116))(surface);
+        int h = (*(int(__thiscall**)(int))(*(uintptr_t*)surface + 128))(surface);
+        int flags = self[2];
+        if (adjust) flags |= 0x80000000;
+        BinkCopyToBuffer((void*)self[1], locked, w, h, x, y, flags);
+        (*(void(__thiscall**)(int))(*(uintptr_t*)surface + 96))(surface);
+    }
+    return BinkMovie_BlitToTarget(self, surface);
+}
+
+// IDA: 0x433270 — BinkMovie::BlitToTarget (192B)
+void* BinkMovie_BlitToTarget(int* self, int surface)
+{
+    int* ctx = reinterpret_cast<int*>(self[8]);
+    if (!ctx || !*ctx)
+        return nullptr;
+
+    int* v4 = ctx + 5;  // dest rect in ctx
+    if (ctx[7] <= 0 || ctx[8] <= 0)
+        return nullptr;
+
+    int src_surface = ctx[4];
+    // vtable[30] → GetRect
+    int* src_rect = (*(int*(__thiscall**)(int, void*))(*(uintptr_t*)src_surface + 120))(src_surface, nullptr);
+    int w13 = src_rect[2];   // Width
+    int h14 = src_rect[3];   // Height
+
+    int dest[4];
+    dest[0] = ctx[9]  + self[4] + ((self[6] - w13) / 2);   // centered X
+    dest[1] = ctx[10] + self[5] + (self[7] - h14);          // adjusted Y
+    dest[2] = ctx[11];  // width
+    dest[3] = ctx[12];  // height
+
+    // vtable[2] → Blit
+    using BlitFn = void*(__thiscall*)(int, int*, int, int*, int, int);
+    return (*(BlitFn*)(*(uintptr_t*)surface + 8))(surface, dest, src_surface, v4, 1, 1);
+}
+
 } // namespace gamemd
