@@ -208,4 +208,15 @@ RectangleStruct* __fastcall Bounds_Compute(RectangleStruct* out, int size, int c
     return out;
 }
 
+// IDA: 0x6D1EB0 — IsoCoord::ToPixel (89B)
+// Converts isometric grid coordinates to screen pixel coordinates.
+// Tile dimensions: width=60, height=30 (RA2 isometric tile size).
+// Formula: px = 30*x - 30*y, py = 15*x + 15*y
+Point2D* __fastcall IsoCoord_ToPixel(Point2D* out, int x, int y)
+{
+    out->X = -60 * y / 2 + 60 * x / 2;   // = 30*x - 30*y
+    out->Y =  30 * y / 2 + 30 * x / 2;   // = 15*x + 15*y
+    return out;
+}
+
 } // namespace gamemd
