@@ -412,4 +412,27 @@ void DisplayClass::SetSize()
     }
 }
 
+// IDA: 0x4A8850 — DisplayClass::LoadTypeData (101B)
+// Loads PLACE.SHP and SHADOW.SHP via SearchMIXFile, gets viewport, delegates to vtable[42].
+extern void  MapClass_Destru_vt05(void*);   // IDA 0x565800
+extern void* SearchMIXFile(const char*, int); // IDA 0x5B40B0
+extern void* dword_8A03FC;                  // IDA 0x8A03FC
+extern void* dword_8A072C;                  // IDA 0x8A072C
+
+void DisplayClass::LoadTypeData()
+{
+    MapClass_Destru_vt05(this);
+
+    dword_8A03FC = SearchMIXFile("PLACE.SHP", 0);
+    dword_8A072C = SearchMIXFile("SHADOW.SHP", 0);
+
+    int viewport[4];
+    Display_GetViewport(viewport);
+
+    // vtable[42] = offset 168 → method(this, viewport)
+    using VtMethod = int(__thiscall*)(void*, int*);
+    auto fn = (*reinterpret_cast<VtMethod**>(this))[42];
+    fn(this, viewport);
+}
+
 } // namespace gamemd
