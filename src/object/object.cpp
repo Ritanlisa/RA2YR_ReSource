@@ -428,5 +428,39 @@ int ObjectClass::DistanceTo(const ObjectClass* other) const
     return result;
 }
 
+// IDA: 0x6E1440 — ObjectClass::Render (96B)
+// Frame-timed render setup: stores frame+timing into ScenarioClass, calls PreDraw.
+extern void* ScenarioClass_Instance;     // IDA 0xA8B230
+extern int   CurrentFrame;               // IDA 0xA8ED84
+extern void  ObjectClass_PreDraw(void*); // IDA 0x6D0F00
+extern void* MapClass_Instance;          // IDA 0x87F7E8
+
+bool ObjectClass::Render(int a2, int a3, int a4, int a5)
+{
+    auto* scenario = reinterpret_cast<uint8_t*>(ScenarioClass_Instance);
+    auto* scenario_fields = reinterpret_cast<int*>(scenario);
+
+    int remaining = scenario_fields[1148];  // duration
+    if (scenario_fields[1146] != -1)        // start frame
+    {
+        if (CurrentFrame - scenario_fields[1146] >= remaining)
+        {
+            remaining = 0;
+        }
+        else
+        {
+            remaining -= (CurrentFrame - scenario_fields[1146]);
+        }
+    }
+
+    int obj_field = *reinterpret_cast<int*>(reinterpret_cast<uint8_t*>(this) + 36);
+    *reinterpret_cast<int*>(scenario + 4584) = CurrentFrame;
+    scenario_fields[1147] = 0;  // v5[1] = v11
+    scenario_fields[1148] = remaining + 12 * obj_field + 3 * obj_field;
+
+    ObjectClass_PreDraw(MapClass_Instance);
+    return true;
+}
+
 } // namespace game
 } // namespace ra2
