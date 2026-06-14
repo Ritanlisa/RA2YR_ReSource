@@ -618,4 +618,17 @@ int AbstractClass_QI_Delegator(void* self, const void* iid, uint32_t* ppv) {
     return HouseClass_QueryInterface((uint8_t*)self - 4, iid, ppv);
 }
 
+// IDA: 0x4F4D80 — Infinite loop stub (2B, noreturn vtable entry)
+[[noreturn]] void Stub_InfiniteLoop(void) { for (;;) {} }
+
+// IDA: 0x5175D0 — Infinite loop stub (2B)
+[[noreturn]] void VtableStub_InfiniteLoop(void) { for (;;) {} }
+
+// IDA: 0x55CBF0 — Global byte reader (6B)
+extern uint8_t byte_ABCD58;
+int  VtableStub_ReadByteABCD58(void) { return byte_ABCD58; }
+
+// IDA: 0x62D770 — ParticleClass constant (6B)
+int  ParticleClass_GetConstant3(void) { return 3; }
+
 } // namespace gamemd
