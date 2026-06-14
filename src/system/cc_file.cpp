@@ -958,50 +958,69 @@ int ObjectClass_DropAsBomb_Track(void* self)
 }
 
 // IDA: 0x5F5850 — ObjectClass::UpdateProductionDisplay (212B)
-extern int AbstractClass_IsTechnoType(void*);  // IDA 0x40DD70
+// Member offsets (from full object start, including AbstractClass base):
+//   this+116 (0x74) = m_is_on_map (production display toggle)
+//   this+128 (0x80) = m_needs_redraw
+//   this+129 (0x81) = m_in_limbo (construction in progress)
+// Vtable calls:
+//   vt+44  → GetTechnoType() [slot 11]
+//   vt+308 → BeginProduction() or ProductionUpdate()
+//   vt+440 → GetProductionState() or QueryProductionState()
+// On TechnoType sub-object:
+//   vt+56  → GetImage()
+//   vt+704 → StartProduction()
 
 int ObjectClass_UpdateProductionDisplay(void* self)
 {
-    auto* bytes  = reinterpret_cast<uint8_t*>(self);
+    auto* obj    = reinterpret_cast<uint8_t*>(self);
     uintptr_t vt = *(uintptr_t*)self;
 
-    if (bytes[129]) return 0;
+    // m_in_limbo: true during construction, skip update
+    if (obj[129])  // m_in_limbo
+        return 0;
 
-    int v6 = 0;  // on stack, uninitialized in IDA too
+    int production_state = 0;  // stack variable, queried via vt+440
 
-    if (v6 == 2)
+    if (production_state == 2)
     {
-        if (!bytes[128] && bytes[116])
+        // State 2: production complete + needs redraw + on map → refresh
+        if (!obj[128] && obj[116])  // !m_needs_redraw && m_is_on_map
         {
+            // vt+308: trigger production display update
             (*(int(__thiscall**)(void*))(vt + 308))(self);
             return 1;
         }
     }
     else
     {
-        if ((*(int(__thiscall**)(void*))(vt + 44))(self) != 6
-            || !*(int*)(*(uint32_t*)((uint8_t*)self + 328) + 3672)
-            || v6)
+        // If not a building (WhatAmI != 6) or building has no factory
+        auto* whatami_fn = (*(int(__thiscall**)(void*))(vt + 44));  // GetTechnoType/WhatAmI
+        if (whatami_fn(self) != 6
+            || !*(int*)(*(uint32_t*)(obj + 328) + 3672)  // Building's factory check
+            || production_state)
         {
-            void* techno = (void*)AbstractClass_IsTechnoType(self);
-            if (techno)
+            void* techno_type = (void*)AbstractClass_IsTechnoType(self);
+            if (techno_type)
             {
-                (*(void(__thiscall**)(void*))(*(uintptr_t*)techno + 704))(techno);
-                (*(void(__thiscall**)(void*))(*(uintptr_t*)techno + 56))(techno);
-                (*(int(__thiscall**)(void*, int*))(vt + 440))(self, &v6);
+                uintptr_t tvt = *(uintptr_t*)techno_type;
+                (*(void(__thiscall**)(void*))(tvt + 704))(techno_type);  // StartProduction
+                (*(void(__thiscall**)(void*))(tvt + 56))(techno_type);    // GetImage
+                (*(int(__thiscall**)(void*, int*))(vt + 440))(self, &production_state);
             }
         }
 
-        if ((v6 == 1 || v6 == 3) && !bytes[116])
+        // States 1 or 3: begin production, set flag
+        if ((production_state == 1 || production_state == 3) && !obj[116])
         {
-            bytes[116] = 1;
+            obj[116] = 1;  // m_is_on_map = true
             (*(int(__thiscall**)(void*))(vt + 308))(self);
             return 1;
         }
 
-        if (!v6 && bytes[116])
+        // State 0: end production, clear flag
+        if (!production_state && obj[116])
         {
-            bytes[116] = 0;
+            obj[116] = 0;  // m_is_on_map = false
             return 1;
         }
     }
