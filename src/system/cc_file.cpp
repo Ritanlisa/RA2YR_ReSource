@@ -631,4 +631,55 @@ int  VtableStub_ReadByteABCD58(void) { return byte_ABCD58; }
 // IDA: 0x62D770 — ParticleClass constant (6B)
 int  ParticleClass_GetConstant3(void) { return 3; }
 
+// IDA: 0x6C9AE0 — BinkMovie::FreeSurfaceTracker (83B)
+extern void BinkMovie_FreeSurfaceEntry(void**);  // IDA 0x6C9930
+
+int BinkMovie_FreeSurfaceTracker(int* tracker)
+{
+    int result = *tracker;
+    if (*tracker)
+    {
+        int count = *(int*)(*tracker + 16);
+        for (int i = 0; i < count; ++i)
+        {
+            int* array_base = *(int**)(*tracker + 4);
+            void* entry = *(void**)(array_base + i);
+            if (entry)
+            {
+                BinkMovie_FreeSurfaceEntry(entry);
+                operator delete(entry);
+            }
+        }
+        if (*tracker)
+            result = (**(int(__thiscall***)(int,int))*tracker)(*tracker, 1);
+    }
+    int(__thiscall*** sub_obj)(int, int) = *(int(__thiscall****)(int, int))(tracker + 4);
+    if (sub_obj) return (**sub_obj)(sub_obj, 1);
+    return result;
+}
+
+// IDA: 0x5F7320 — ObjectTypeClass::Construct (218B)
+extern void AbstractTypeClass_Init(void*, int);  // IDA 0x410960
+
+void* ObjectTypeClass_Constructor(void* self, int a2)
+{
+    auto* fields = reinterpret_cast<uint32_t*>(self);
+    AbstractTypeClass_Init(self, a2);
+
+    fields[41] = 0;
+    for (int i = 0; i < 18; ++i) { fields[50 + 2*i] = 0; fields[50 + 2*i + 1] = 0; }
+    for (int i = 0; i < 18; ++i) { fields[86 + 2*i] = 0; fields[86 + 2*i + 1] = 0; }
+    fields[145] = 0; fields[146] = 0; fields[147] = 0;
+    *((uint8_t*)self + 592) = 0;
+    fields[149] = 0; fields[150] = 0; fields[151] = 0; fields[152] = 0;
+    *((uint8_t*)self + 612) = 0;
+    fields[154] = 0; fields[155] = 0; fields[156] = 0; fields[157] = 0;
+    *((uint8_t*)self + 632) = 0;
+    fields[159] = 0; fields[160] = 0; fields[161] = 0; fields[162] = 0;
+    *((uint8_t*)self + 652) = 0;
+    fields[164] = 0;
+
+    return self;
+}
+
 } // namespace gamemd
