@@ -409,4 +409,49 @@ int ConnectionPointClass_QueryInterface(void* self, const void* iid, uint32_t* p
 void __lock_fhandle(int fh) { (void)fh; }
 void __lock(int locknum)    { (void)locknum; }
 
+// IDA: 0x6BF8D0-0x6C0950 — CreateTClassFactory_*::QueryInterface (101B x14)
+// All are compiler-generated TClassFactory<T>::QueryInterface template instantiations.
+// Check IUnknown + IClassFactory, set *ppv, AddRef.
+int TClassFactory_QueryInterface(void* self, const void* iid, uint32_t* ppv)
+{
+    if (!ppv) return -2147467261;
+    *ppv = 0;
+    if (memcmp(iid, &IID_IUnknown, 16) == 0
+        || memcmp(iid, &IID_IClassFactory, 16) == 0)
+        *ppv = (uint32_t)(uintptr_t)self;
+    if (!*ppv) return -2147467262;
+    (*(void(__stdcall**)(uint32_t))(*(uint32_t*)self + 4))(self);
+    return 0;
+}
+
+// Individual CreateTClassFactory QI wrappers (all identical pattern)
+int CreateTClassFactory_CellClass_QI(void* s, const void* i, uint32_t* p)
+    { return TClassFactory_QueryInterface(s, i, p); }
+int CreateTClassFactory_EMPulseClass_QI(void* s, const void* i, uint32_t* p)
+    { return TClassFactory_QueryInterface(s, i, p); }
+int CreateTClassFactory_LightSourceClass_QI(void* s, const void* i, uint32_t* p)
+    { return TClassFactory_QueryInterface(s, i, p); }
+int CreateTClassFactory_SideClass_QI(void* s, const void* i, uint32_t* p)
+    { return TClassFactory_QueryInterface(s, i, p); }
+int CreateTClassFactory_TiberiumClass_QI(void* s, const void* i, uint32_t* p)
+    { return TClassFactory_QueryInterface(s, i, p); }
+int COMObject_QueryInterface2(void* s, const void* i, uint32_t* p)
+    { return TClassFactory_QueryInterface(s, i, p); }
+int CreateTClassFactory_CampaignClass_QI(void* s, const void* i, uint32_t* p)
+    { return TClassFactory_QueryInterface(s, i, p); }
+int CreateTClassFactory_BuildingLightClass_QI(void* s, const void* i, uint32_t* p)
+    { return TClassFactory_QueryInterface(s, i, p); }
+int CreateTClassFactory_WaypointPathClass_QI(void* s, const void* i, uint32_t* p)
+    { return TClassFactory_QueryInterface(s, i, p); }
+int CreateTClassFactory_TemporalClass_QI(void* s, const void* i, uint32_t* p)
+    { return TClassFactory_QueryInterface(s, i, p); }
+int CreateTClassFactory_AirstrikeClass_QI(void* s, const void* i, uint32_t* p)
+    { return TClassFactory_QueryInterface(s, i, p); }
+int CreateTClassFactory_SpawnManagerClass_QI(void* s, const void* i, uint32_t* p)
+    { return TClassFactory_QueryInterface(s, i, p); }
+int CreateTClassFactory_RadSiteClass_QI(void* s, const void* i, uint32_t* p)
+    { return TClassFactory_QueryInterface(s, i, p); }
+int CreateTClassFactory_TriggerClass_QI(void* s, const void* i, uint32_t* p)
+    { return TClassFactory_QueryInterface(s, i, p); }
+
 } // namespace gamemd
