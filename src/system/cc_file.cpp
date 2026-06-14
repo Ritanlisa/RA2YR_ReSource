@@ -729,4 +729,10 @@ void ScreenEffect_StubReturn(void) {}
 void ScreenEffect_Stub(void) {}
 void ScreenEffect_Stub1(void) {}
 
+// IDA: ScreenEffect void stubs 2-5 (1B each)
+void ScreenEffect_Stub2(void) {}
+void ScreenEffect_Stub3(void) {}
+void ScreenEffect_Stub4(void) {}
+void ScreenEffect_Stub5(void) {}
+
 } // namespace gamemd
