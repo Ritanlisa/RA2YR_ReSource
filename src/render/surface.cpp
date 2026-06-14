@@ -508,7 +508,30 @@ int BlitterDrawSHP(void* dst, int ctx, void* surface, void* a4, int* src_xy,
     // Get surface rect via vtable[30]
     void* surf_rect = (*(void*(__thiscall**)(void*, void*))(*(uintptr_t*)surface + 120))(surface, nullptr);
     return BlitterCopySHP(dst, a6, v19, surface, reinterpret_cast<intptr_t>(surf_rect),
-                          a4, frame_ptr, a9, a10, a11, a12, a13);
+                           a4, frame_ptr, a9, a10, a11, a12, a13);
+}
+
+// IDA: 0x7AD580 — WonlineStringDialogControl::Draw (143B)
+extern wchar_t* GetStringCSF(const wchar_t*, int, const char*, int);  // IDA 0x734E60
+extern HWND Dialog_GetCurrent();  // IDA 0x775B10
+
+int WonlineStringDialogControl_Draw(int a1, int a2)
+{
+    wchar_t buffer[200] = {};
+    if (a2 == 2)
+    {
+        wchar_t* str = GetStringCSF(L"TXT_CONNECTING", 0, "D:\\ra2mdpost\\wonline.cpp", 5191);
+        swprintf(buffer, 200, L"%s", str);
+    }
+    else if (a2 == 4)
+    {
+        wchar_t* str = GetStringCSF(L"TXT_FINDING_PATCH", 0, "D:\\ra2mdpost\\wonline.cpp", 5195);
+        swprintf(buffer, 200, L"%s", str);
+    }
+    HWND dlg = Dialog_GetCurrent();
+    HWND ctrl = GetDlgItem(dlg, 1480);
+    SendMessageA(ctrl, 0x4B2, 0, (LPARAM)buffer);
+    return 0;
 }
 
 // IDA: 0x4BB080 — DSurface::BlitPart (75B)
