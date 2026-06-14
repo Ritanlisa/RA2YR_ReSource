@@ -1437,3 +1437,32 @@ int __fastcall Bitmap_DecodeRGB(const char* input, int input_len,
 
     return written;
 }
+
+// IDA: 0x7E0170 — ObfuscateDataBlock (98B)
+// Simple data obfuscation: byte substitution via lookup table + ROR rotations.
+// Transforms (size-2)/2 WORDs from src to dst, then handles final partial WORD.
+extern uint8_t byte_A8F91C[256];  // IDA 0xA8F91C — 256-byte substitution table
+
+void ObfuscateDataBlock(const uint16_t* src, uint32_t* dst, int size)
+{
+    unsigned int count = (unsigned int)(size - 2) >> 1;
+
+    for (unsigned int i = 0; i < count; ++i)
+    {
+        uint32_t word = *src++;
+        uint32_t v7 = __ROR4__(word, 8);
+        LOBYTE(v7) = byte_A8F91C[(uint16_t)word];
+        BYTE1(v7) = BYTE1(word);
+        uint32_t v8 = __ROR4__(v7, 8);
+        BYTE1(v8) = byte_A8F91C[(word & 0xFFFF00u) >> 8];
+        *dst++ = __ROR4__(v8, 16);
+    }
+
+    // Handle final partial WORD
+    uint16_t last_word = *reinterpret_cast<const uint16_t*>(src);
+    uint8_t* dst_bytes = reinterpret_cast<uint8_t*>(dst);
+    *dst_bytes++ = last_word & 0xFF;
+    *dst_bytes++ = byte_A8F91C[last_word];
+    *dst_bytes++ = HIBYTE(last_word);
+    *dst_bytes = 0;
+}
