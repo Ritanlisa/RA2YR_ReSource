@@ -855,4 +855,10 @@ int TEventClass_Vt11(void) { return 48; }
 int ParasiteClass_Vt12(void) { return 88; }
 int ParasiteClass_Vt11(void) { return 67; }
 
+// RadSite + Tiberium stubs
+int RadSiteClass_Vt12(void) { return 116; }
+int RadSiteClass_Vt11(void) { return 69; }
+int TiberiumClass_Vt12(void) { return 296; }
+int TiberiumClass_Vt11(void) { return 46; }
+
 } // namespace gamemd
