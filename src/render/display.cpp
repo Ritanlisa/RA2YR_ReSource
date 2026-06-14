@@ -534,4 +534,30 @@ bool ToggleDisplayMode(bool to_command_line)
     return false;
 }
 
+// IDA: 0x5FBF80 — GameOptionsClass::UnlockMovieIfNeeded_MoviesList (125B)
+extern char* off_832CA0[];  // IDA 0x832CA0 — 3-string array
+extern char* off_832C30[];  // IDA 0x832C30 — 3-string array
+
+void GameOptionsClass_UnlockMovieIfNeeded_MoviesList(int* self, const char* name)
+{
+    int idx = 0;
+    if (off_832CA0[0]) {
+        while (_strcmpi(name, off_832CA0[idx]) != 0) {
+            ++idx;
+            if (!off_832CA0[idx * 3 + 2]) { idx = -1; break; }
+        }
+    } else { idx = -1; }
+    if (idx > self[19]) self[19] = idx;
+
+    int idx2 = 0;
+    if (off_832C30[0]) {
+        while (1) {
+            if (_strcmpi(name, off_832C30[idx2]) == 0) break;
+            ++idx2;
+            if (!off_832C30[idx2 * 3 + 2]) { idx2 = -1; break; }
+        }
+    } else { idx2 = -1; }
+    if (idx2 > self[20]) self[20] = idx2;
+}
+
 } // namespace gamemd
