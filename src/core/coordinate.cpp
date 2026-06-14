@@ -198,4 +198,14 @@ int __fastcall BitArray_FindHighestBit(const uint32_t* bits, int count)
     return 0;
 }
 
+// IDA: 0x634510 — Bounds_Compute: square centered at (cx,cy) with size w
+RectangleStruct* __fastcall Bounds_Compute(RectangleStruct* out, int size, int cx, int cy)
+{
+    out->X = cx - size / 2;
+    out->Y = cy - size / 2;
+    out->Width = size;
+    out->Height = size;
+    return out;
+}
+
 } // namespace gamemd
