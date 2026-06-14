@@ -435,4 +435,81 @@ void DisplayClass::LoadTypeData()
     fn(this, viewport);
 }
 
+// IDA: 0x5519B0 — DisplayClass::RenderStatusText (124B)
+bool DisplayClass::RenderStatusText(int text_id, bool priority)
+{
+    auto* fields = reinterpret_cast<int*>(this);
+
+    if (priority)
+        return InsertPriorityText(text_id) != 0;
+
+    int capacity = fields[2];
+    int count    = fields[4];
+    if (count >= capacity)
+    {
+        if (!reinterpret_cast<uint8_t*>(this)[13] && capacity)
+            return false;
+
+        int grow_by = fields[5];
+        if (grow_by <= 0)
+            return false;
+
+        using VtGrow = bool(__thiscall*)(void*, int, int);
+        auto grow_fn = (*reinterpret_cast<VtGrow**>(this))[2];
+        if (!grow_fn(this, capacity + grow_by, 0))
+            return false;
+    }
+
+    int idx = fields[4];
+    int* data = reinterpret_cast<int*>(fields[1]);
+    fields[4] = idx + 1;
+    data[idx] = text_id;
+    return true;
+}
+
+// IDA: 0x551A90 — DisplayClass::InsertPriorityText (140B)
+extern bool DisplayClass_sub_55F6220(void*, int);  // IDA 0x5F6220
+
+int DisplayClass::InsertPriorityText(int a2)
+{
+    auto* fields = reinterpret_cast<int*>(this);
+    auto* byte_fields = reinterpret_cast<uint8_t*>(this);
+
+    int capacity = fields[2];
+    int count    = fields[4];
+    if (count >= capacity)
+    {
+        if (!byte_fields[13] && capacity)
+            return 0;
+
+        int grow_by = fields[5];
+        if (grow_by <= 0)
+            return 0;
+
+        using VtGrow = bool(__thiscall*)(void*, int, int);
+        auto grow_fn = (*reinterpret_cast<VtGrow**>(this))[2];
+        if (!grow_fn(this, capacity + grow_by, 0))
+            return 0;
+    }
+
+    int i;
+    void** data = reinterpret_cast<void**>(fields[1]);
+    for (i = 0; i < count; ++i)
+    {
+        if (DisplayClass_sub_55F6220(data[i], a2))
+            break;
+    }
+
+    // Shift elements right from insertion point
+    for (int j = count - 1; j >= i; --j)
+    {
+        int* entry = reinterpret_cast<int*>(data);
+        entry[j + 1] = entry[j];
+    }
+
+    data[i] = reinterpret_cast<void*>(static_cast<intptr_t>(a2));
+    fields[4] = count + 1;
+    return 1;
+}
+
 } // namespace gamemd
