@@ -814,4 +814,33 @@ int SuperClass_Vt12(void) { return 128; }
 int SuperWeaponTypeClass_SD_vt16(void* self) { return *((uint32_t*)self + 38); }
 int Tactical_Vt12(void) { return 3608; }
 
+// IDA: 0x7B27E0 — WinsockInterfaceClass dtor
+extern void NetworkClass_UnregisterAsync(void*);
+extern void WSACleanup(void);
+
+void* WinsockInterfaceClass_Destructor(void* block, bool free_block)
+{
+    auto* fields = reinterpret_cast<uint32_t*>(block);
+    auto* bytes  = reinterpret_cast<uint8_t*>(block);
+
+    if (bytes[258152])
+    {
+        NetworkClass_UnregisterAsync(block);
+        (*(void(__thiscall**)(void*))(*(uintptr_t*)block + 4))(block);
+        WSACleanup();
+        bytes[258152] = 0;
+    }
+
+    // Free 3 VectorClass<WinsockBufferType*> buffers
+    void* v4 = (void*)fields[15]; if (v4 && bytes[69]) { operator delete(v4); fields[15]=0; }
+    bytes[69]=0; fields[16]=0;
+    void* v5 = (void*)fields[9];  if (v5 && bytes[45]) { operator delete(v5); fields[9]=0; }
+    bytes[45]=0; fields[10]=0;
+    void* v6 = (void*)fields[3];  if (v6 && bytes[21]) { operator delete(v6); fields[3]=0; }
+    bytes[21]=0; fields[4]=0;
+
+    if (free_block) operator delete(block);
+    return block;
+}
+
 } // namespace gamemd
