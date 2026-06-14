@@ -843,4 +843,10 @@ void* WinsockInterfaceClass_Destructor(void* block, bool free_block)
     return block;
 }
 
+// IDA: TActionClass + SpawnManagerClass stubs
+int TActionClass_Vt12(void) { return 148; }
+int TActionClass_Vt11(void) { return 47; }
+int SpawnManagerClass_Vt12(void) { return 116; }
+int SpawnManagerClass_Vt11(void) { return 65; }
+
 } // namespace gamemd
