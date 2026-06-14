@@ -688,4 +688,15 @@ int BuildingLightClass_SD_vt12(void) { return 232; }
 int BuildingLightClass_SD_vt30(void) { return 3; }
 int BuildingLightClass_SD_vt11(void) { return 19; }
 
+// IDA: 0x4A3230 — CStreamClass AddRef delegator (10B)
+extern LONG CStreamClass_AddRef(volatile LONG*);
+LONG CStreamClass_AddRefDelegator(int a1) { return CStreamClass_AddRef((volatile LONG*)(a1 - 4)); }
+
+// IDA: 0x4A3240 — CStreamClass Release delegator (10B)
+extern LONG CStreamClass_Release(volatile LONG*);
+LONG CStreamClass_ReleaseDelegator(int a1) { return CStreamClass_Release((volatile LONG*)(a1 - 4)); }
+
+// IDA: 0x4A4AC0 — Debug::Log stub (1B)
+void Debug_Log_0(void) {}
+
 } // namespace gamemd
