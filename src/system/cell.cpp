@@ -200,4 +200,44 @@ int GetGroundHeight(int x_leptons, int y_leptons)
     return 0; // TODO: full implementation when Isometric::InitTables is available
 }
 
+// IDA: 0x48E5A0 — CellClass::Draw (85B)
+// Sets flag bits on cell object at this+36, delegates to vtable[19] at this+40,
+// then calls COMObject::ActivateThunk for COM activation.
+extern int COMObject_ActivateThunk(int flags, void** out, int zero);  // IDA 0x4E1530
+
+bool CellClass::Draw(int flags, void** out, int a4)
+{
+    if (flags)
+    {
+        int obj = *reinterpret_cast<int*>(reinterpret_cast<uint8_t*>(this) + 36);
+        if (obj)
+        {
+            // Set bit 7 in the second byte (BYTE1)
+            *reinterpret_cast<uint8_t*>(obj + 1) |= 0x80;
+            *out = reinterpret_cast<void*>(obj);
+
+            if ((flags & 0x40) && (*reinterpret_cast<uint8_t*>(reinterpret_cast<uint8_t*>(this) + 32) & 0x10))
+            {
+                *reinterpret_cast<uint8_t*>(obj + 1) |= 0x40;
+                *out = reinterpret_cast<void*>(obj);
+            }
+        }
+        else
+        {
+            *out = nullptr;
+        }
+    }
+
+    // Call delegate at this+40 via vtable[19] = offset 76
+    int delegate = *reinterpret_cast<int*>(reinterpret_cast<uint8_t*>(this) + 40);
+    if (delegate)
+    {
+        using DrawDelegate = void(__thiscall*)(int, int, void**, int);
+        auto fn = (*reinterpret_cast<DrawDelegate**>(delegate))[19];  // vtable[19]
+        fn(delegate, flags, out, reinterpret_cast<int>(this));
+    }
+
+    return COMObject_ActivateThunk(flags, out, 0);
+}
+
 } // namespace gamemd
