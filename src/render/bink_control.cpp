@@ -189,4 +189,23 @@ int FontRenderer_DrawText(void* ctx, int* surface, const wchar_t* text, int x, i
     return result;
 }
 
+// IDA: 0x433180 — BinkMovieClass::SetPosition (109B)
+extern void BinkMovie_AdjustSurfaceFormat(int*, int);
+extern void BinkCopyToBuffer(void*, int, int, int, int, int, int);
+extern void* BinkMovie_BlitToTarget(void*, int);
+
+void* BinkMovieClass_SetPosition(int* self, int surface, int x, int y)
+{
+    BinkMovie_AdjustSurfaceFormat(self, surface);
+
+    int locked = (*(int(__thiscall**)(int, int, int))(*(uintptr_t*)surface + 92))(surface, 0, 0);
+    if (locked) {
+        int w = (*(int(__thiscall**)(int))(*(uintptr_t*)surface + 116))(surface);
+        int h = (*(int(__thiscall**)(int))(*(uintptr_t*)surface + 128))(surface);
+        BinkCopyToBuffer((void*)self[1], locked, w, h, x, y, self[2] | 0x80000000);
+        (*(void(__thiscall**)(int))(*(uintptr_t*)surface + 96))(surface);
+    }
+    return BinkMovie_BlitToTarget(self, surface);
+}
+
 } // namespace gamemd
