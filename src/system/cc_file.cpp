@@ -212,4 +212,37 @@ int LoadIPersistStream(void* obj, void* stream, bool clear_flag)
     return hr;
 }
 
+// IDA: 0x5CECB0 — MSVQAnim dtor (88B)
+// Cleans MovieContext + BinkMovie sub-objects, resets vtable, conditional free.
+extern void MovieContext_Cleanup(void*);  // IDA 0x5BFF00
+extern void BinkMovie_Cleanup(void*);     // IDA 0x5C01F0
+
+void* MSVQAnim_Destructor(void* block, bool free_block)
+{
+    auto* fields = reinterpret_cast<uint32_t*>(block);
+
+    void* sub_obj = reinterpret_cast<void*>(fields[10]);  // offset 40
+    if (sub_obj)
+    {
+        (*(void(__thiscall***)(void*, int))sub_obj)[0][0](sub_obj, 1);
+    }
+
+    void* movie = reinterpret_cast<void*>(fields[7]);  // offset 28
+    if (movie)
+    {
+        MovieContext_Cleanup(movie);
+        void* bink = reinterpret_cast<void*>(fields[7]);
+        if (bink)
+        {
+            BinkMovie_Cleanup(bink);
+            operator delete(bink);
+        }
+    }
+
+    if (free_block)
+        operator delete(block);
+
+    return block;
+}
+
 } // namespace gamemd
