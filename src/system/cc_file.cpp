@@ -884,4 +884,7 @@ int OverlayTypeClass_Vt11(void) { return 21; }
 int OverlayTypeClass_Vt12(void) { return 700; }
 int OverlayTypeClass_Vt16(void* self) { return *((uint32_t*)self + 165); }
 
+int ParticleTypeClass_Vt12(void) { return 792; }
+int ParticleTypeClass_Vt11(void) { return 23; }
+
 } // namespace gamemd
