@@ -1817,6 +1817,15 @@ bool XSurface::DrawEllipseOutline(
     return true;
 }
 
+// IDA: 0x7BB020 — XSurface::FillRect (41B)
+REVERSE(0x7BB020, "XSurface::FillRect: GetRect + FillRectEx wrapper", "None")
+bool XSurface::FillRect(const RectangleStruct& draw_rect, uint32_t color)
+{
+    RectangleStruct clip;
+    GetRect(&clip);
+    return FillRectEx(clip, draw_rect, color);
+}
+
 // --- DSurface line drawing (Batch D) ---
 
 // ============================================================

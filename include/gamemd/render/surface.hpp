@@ -345,7 +345,7 @@ public:
     virtual bool FillRectEx(
         const RectangleStruct& clip_rect,
         const RectangleStruct& fill_rect, uint32_t color) override { return false; }
-    virtual bool FillRect(const RectangleStruct& fill_rect, uint32_t color) override { return false; }
+    virtual bool FillRect(const RectangleStruct& fill_rect, uint32_t color) override;
     virtual bool Fill(uint32_t color) override;
     virtual bool FillRectWithFlags(
         const RectangleStruct& clip_rect,
