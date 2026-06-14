@@ -723,4 +723,10 @@ void MSEngine_Destru_Release(void) {}
 void Init_StubPlaceholder(void) {}
 void ScreenEffect_StubReturnFalse(void) {}
 
+// IDA: ScreenEffect void stubs (1B each)
+void ScreenEffect_StubReturnVoid(void) {}
+void ScreenEffect_StubReturn(void) {}
+void ScreenEffect_Stub(void) {}
+void ScreenEffect_Stub1(void) {}
+
 } // namespace gamemd
