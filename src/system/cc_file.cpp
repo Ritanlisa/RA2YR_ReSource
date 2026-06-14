@@ -876,5 +876,7 @@ int  SuperWeapon_GetField(void* self) { return *(uint8_t*)(*(uint32_t*)((uint32_
 // IDA: Object field accessor + 450-return stubs
 int  Object_Vt34(void* self) { return *((uint32_t*)self + 43); }
 int  Stub_Return450(void) { return 450; }
+int  Object_Vt12(void) { return 176; }
+int  Object_Vt11(void) { return 20; }
 
 } // namespace gamemd
