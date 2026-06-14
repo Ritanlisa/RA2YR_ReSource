@@ -490,6 +490,27 @@ int BlitterCopySimpleSHP(void* dst_surface, void* a2, void* src_surface, int a4,
     return BlitterCopySHP(dst_surface, dst_rect, v15, a2, src_surface, src_rect, a5, a6, a7, a8, a9, 0);
 }
 
+// IDA: 0x4AF2A0 — BlitterDrawSHP (144B)
+// Sets up SHP draw context, gets frame via BuildingClass::GetSHPFrame if needed.
+extern int* BuildingClass_GetSHPFrame(int flags);  // IDA 0x490B90
+
+int BlitterDrawSHP(void* dst, int ctx, void* surface, void* a4, int* src_xy,
+                   void* a6, int flags, int* frame, int a9, int a10, int a11, int a12, int a13)
+{
+    int* frame_ptr = frame;
+    *reinterpret_cast<int*>(reinterpret_cast<uint8_t*>(ctx) + 380) = flags;
+
+    if (!frame_ptr)
+        frame_ptr = BuildingClass_GetSHPFrame(flags ? 0x10 : 0);
+
+    int v19[4] = { src_xy[0], src_xy[1], reinterpret_cast<int*>(a4)[2], reinterpret_cast<int*>(a4)[3] };
+
+    // Get surface rect via vtable[30]
+    void* surf_rect = (*(void*(__thiscall**)(void*, void*))(*(uintptr_t*)surface + 120))(surface, nullptr);
+    return BlitterCopySHP(dst, a6, v19, surface, reinterpret_cast<intptr_t>(surf_rect),
+                          a4, frame_ptr, a9, a10, a11, a12, a13);
+}
+
 // IDA: 0x4BB080 — DSurface::BlitPart (75B)
 // If HW blit possible (both surfaces exist, BPP/pitch match) → Blit
 // Otherwise fallback to XSurface::BlitPart (software path)
