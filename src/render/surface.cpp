@@ -561,6 +561,23 @@ int GraphicMenuImageItem_Draw(void* self, bool flag)
     return DSurface_Flip2();
 }
 
+// IDA: 0x769330 — Surface::PixelToIndex (106B)
+int Surface_PixelToIndex(void* surface, int* pixel)
+{
+    auto* fields = reinterpret_cast<uint8_t*>(surface);
+    int x = pixel[0] - *reinterpret_cast<int*>(fields + 68);
+    int y = pixel[1] - *reinterpret_cast<int*>(fields + 72);
+    int v6 = x, v7 = y;
+    void* sub = *reinterpret_cast<void**>(fields + 36);
+
+    if (x < 0) return -1;
+    if (v6 >= (*(int(__thiscall**)(void*))(*(uintptr_t*)sub + 124))(sub)) return -1;
+    if (v7 < 0) return -1;
+    if (v7 >= (*(int(__thiscall**)(void*))(*(uintptr_t*)sub + 128))(sub)) return -1;
+
+    return (*(int(__thiscall**)(void*, int*))(*(uintptr_t*)sub + 40))(sub, &v6);
+}
+
 // IDA: 0x4BB080 — DSurface::BlitPart (75B)
 // If HW blit possible (both surfaces exist, BPP/pitch match) → Blit
 // Otherwise fallback to XSurface::BlitPart (software path)
