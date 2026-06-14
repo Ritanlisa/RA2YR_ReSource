@@ -605,6 +605,37 @@ zero:
     return (int)out_pixel;
 }
 
+// IDA: 0x6B1E50 — SliderClass::Draw (135B)
+extern bool GaugeClass_GetValue(int*, int);    // IDA 0x4E25A0
+extern int  Math_RoundToInt(double);           // IDA 0x7C5F00
+
+bool SliderClass_Draw(void* self, int value)
+{
+    auto* item = reinterpret_cast<int*>(self);
+    auto* fields = reinterpret_cast<uint8_t*>(self);
+
+    int clamped = value;
+    if (value >= item[12] - item[18])  // field_48 - field_72
+        clamped = item[12] - item[18];
+
+    if (!GaugeClass_GetValue(reinterpret_cast<int*>(self), clamped))
+        return false;
+
+    int max_val = fields[46] ? item[5] : item[6];  // field_20 or field_24
+
+    double v = (double)item[12];  // field_48
+    int thumb = Math_RoundToInt(v);
+    if (thumb <= 4) thumb = 4;
+    item[19] = thumb;  // field_76
+
+    int pos = Math_RoundToInt(v);
+    if (pos >= max_val - thumb)
+        pos = max_val - thumb;
+    item[20] = pos;  // field_80
+
+    return true;
+}
+
 // IDA: 0x4BB080 — DSurface::BlitPart (75B)
 // If HW blit possible (both surfaces exist, BPP/pitch match) → Blit
 // Otherwise fallback to XSurface::BlitPart (software path)
