@@ -454,4 +454,32 @@ int CreateTClassFactory_RadSiteClass_QI(void* s, const void* i, uint32_t* p)
 int CreateTClassFactory_TriggerClass_QI(void* s, const void* i, uint32_t* p)
     { return TClassFactory_QueryInterface(s, i, p); }
 
+// IDA: 0x49FF80 — EnumConnectionsClass::QueryInterface (102B)
+extern const IID IID_IEnumConnections;  // {B196B287-BAB4-101A-B69C-00AA00341D07}
+
+int EnumConnectionsClass_QueryInterface(void* self, const void* iid, uint32_t* ppv)
+{
+    if (!ppv) return -2147467261;
+    *ppv = 0;
+    if (memcmp(iid, &IID_IUnknown, 16) == 0 || memcmp(iid, &IID_IEnumConnections, 16) == 0)
+        *ppv = (uint32_t)(uintptr_t)self;
+    if (!*ppv) return -2147467262;
+    (*(void(__stdcall**)(uint32_t))(*(uint32_t*)self + 4))(self);
+    return 0;
+}
+
+// IDA: 0x4A0920 — EnumConnectionPointsClass::QueryInterface (102B)
+extern const IID IID_IEnumConnectionPoints;  // {B196B285-BAB4-101A-B69C-00AA00341D07}
+
+int EnumConnectionPointsClass_QueryInterface(void* self, const void* iid, uint32_t* ppv)
+{
+    if (!ppv) return -2147467261;
+    *ppv = 0;
+    if (memcmp(iid, &IID_IEnumConnectionPoints, 16) == 0 || memcmp(iid, &IID_IUnknown, 16) == 0)
+        *ppv = (uint32_t)(uintptr_t)self;
+    if (!*ppv) return -2147467262;
+    (*(void(__stdcall**)(uint32_t))(*(uint32_t*)self + 4))(self);
+    return 0;
+}
+
 } // namespace gamemd
