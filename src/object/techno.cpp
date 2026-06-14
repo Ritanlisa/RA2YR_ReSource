@@ -1110,5 +1110,45 @@ static bool CreateUnitAtCoordsTimed(CoordStruct* coords, int time, bool special)
 //  5. Set this+1180=1, this+1184=0 (update flags)
 // ============================================================
 
+// IDA: 0x73B0B0 — TechnoClass::ShouldSkipOccupierDraw (140B)
+// Checks if a building occupier should be skipped during draw.
+extern void* Array_Get(void*, int);                     // IDA 0x65AD40
+extern bool  Window_IsVisible(void*);                   // IDA 0x4A5110
+extern bool  BuildingClass_CheckFlag24(void*);          // IDA 0x4A5130
+extern bool  BuildingClass_CheckPowerFlags(void*);      // IDA 0x4A51B0
+extern bool  Flag_CheckNone(void*);                     // IDA 0x4A51D0
+extern bool  ObjectClass_CalcDrawRect(void*);           // IDA 0x5F4B10
+
+bool TechnoClass::ShouldSkipOccupierDraw(int a2, int a3, int a4)
+{
+    auto* fields = reinterpret_cast<uint8_t*>(this);
+
+    if (fields[1048])
+    {
+        void* occupant = Array_Get(this, 0);
+        if (occupant)
+        {
+            int whatami = (*(int(__thiscall**)(void*))(*(uintptr_t*)occupant + 44))(occupant);
+            if (whatami == 6)  // Building
+            {
+                int state = (*(int(__thiscall**)(void*))(*(uintptr_t*)occupant + 388))(occupant);
+                if (state == 16 || *reinterpret_cast<int*>(reinterpret_cast<uint8_t*>(occupant) + 180) == 16)
+                {
+                    void* sub = reinterpret_cast<uint8_t*>(occupant) + 212;
+                    if (Window_IsVisible(sub)
+                        || BuildingClass_CheckFlag24(sub)
+                        || BuildingClass_CheckPowerFlags(sub)
+                        || Flag_CheckNone(sub))
+                    {
+                        return false;  // Skip - occupier is visible/active
+                    }
+                }
+            }
+        }
+    }
+
+    return ObjectClass_CalcDrawRect(this);
+}
+
 } // namespace game
 } // namespace ra2
