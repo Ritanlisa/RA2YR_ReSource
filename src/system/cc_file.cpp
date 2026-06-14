@@ -808,4 +808,10 @@ int VeinholeMonsterClass_Vt11(void) { return 63; }
 int VeinholeMonsterClass_Vt12(void) { return 264; }
 int Tactical_Vt11(void) { return 56; }
 
+// IDA: SuperClass + SWType + Tactical stubs
+int SuperClass_Vt11(void) { return 57; }
+int SuperClass_Vt12(void) { return 128; }
+int SuperWeaponTypeClass_SD_vt16(void* self) { return *((uint32_t*)self + 38); }
+int Tactical_Vt12(void) { return 3608; }
+
 } // namespace gamemd
