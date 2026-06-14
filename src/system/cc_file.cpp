@@ -790,4 +790,9 @@ int TerrainTypeClass_Vt11(void) { return 37; }
 int TerrainTypeClass_Vt12(void) { return 700; }
 int TerrainTypeClass_Vt16(void* self) { return *((uint32_t*)self + 165); }
 
+// IDA: UnitTypeClass stubs
+int UnitTypeClass_Vt12(void) { return 3704; }
+int UnitTypeClass_Vt11(void) { return 40; }
+int UnitTypeClass_Vt16(void* self) { return *((uint32_t*)self + 894); }
+
 } // namespace gamemd
