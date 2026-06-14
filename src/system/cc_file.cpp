@@ -957,4 +957,55 @@ int ObjectClass_DropAsBomb_Track(void* self)
     return result;
 }
 
+// IDA: 0x5F5850 — ObjectClass::UpdateProductionDisplay (212B)
+extern int AbstractClass_IsTechnoType(void*);  // IDA 0x40DD70
+
+int ObjectClass_UpdateProductionDisplay(void* self)
+{
+    auto* bytes  = reinterpret_cast<uint8_t*>(self);
+    uintptr_t vt = *(uintptr_t*)self;
+
+    if (bytes[129]) return 0;
+
+    int v6 = 0;  // on stack, uninitialized in IDA too
+
+    if (v6 == 2)
+    {
+        if (!bytes[128] && bytes[116])
+        {
+            (*(int(__thiscall**)(void*))(vt + 308))(self);
+            return 1;
+        }
+    }
+    else
+    {
+        if ((*(int(__thiscall**)(void*))(vt + 44))(self) != 6
+            || !*(int*)(*(uint32_t*)((uint8_t*)self + 328) + 3672)
+            || v6)
+        {
+            void* techno = (void*)AbstractClass_IsTechnoType(self);
+            if (techno)
+            {
+                (*(void(__thiscall**)(void*))(*(uintptr_t*)techno + 704))(techno);
+                (*(void(__thiscall**)(void*))(*(uintptr_t*)techno + 56))(techno);
+                (*(int(__thiscall**)(void*, int*))(vt + 440))(self, &v6);
+            }
+        }
+
+        if ((v6 == 1 || v6 == 3) && !bytes[116])
+        {
+            bytes[116] = 1;
+            (*(int(__thiscall**)(void*))(vt + 308))(self);
+            return 1;
+        }
+
+        if (!v6 && bytes[116])
+        {
+            bytes[116] = 0;
+            return 1;
+        }
+    }
+    return 0;
+}
+
 } // namespace gamemd
