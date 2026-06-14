@@ -744,4 +744,41 @@ int VoxelAnimClass_Vt12(void) { return 328; }
 int VoxelAnimClass_Vt11(void) { return 41; }
 int VoxelAnimClass_Vt34(void* self) { return *((uint32_t*)self + 65); }
 
+// IDA: 0x410A60 — AbstractTypeClass::LoadFromINI (299B)
+extern void  INIClass_ResetSection(void*);              // IDA 0x526B00
+extern bool  INIClass_BinarySearchSection(void*, void*); // IDA 0x526810
+extern void* INIClass_GetString(void*, void*, void*, void*, void*, int); // IDA 0x528A10
+extern void* g_INI_Key_Name;     // "Name"
+extern void* g_INI_Key_UIName;   // "UIName"
+extern void* GetStringCSF(void*, int, const char*, int); // IDA 0x734E60
+extern void* g_TypeClass_DefaultString;                  // IDA 0x887734
+
+bool AbstractTypeClass_LoadFromINI(void* self, void* ini)
+{
+    auto* fields = reinterpret_cast<uint32_t*>(self);
+    auto* bytes  = reinterpret_cast<uint8_t*>(self);
+
+    INIClass_ResetSection(ini);
+    if (!INIClass_BinarySearchSection(ini, bytes + 36))
+        return false;  // ID = section name
+
+    // Read "Name" key → this+100 (48 bytes)
+    char name_buf[48] = {};
+    INIClass_GetString(ini, bytes + 36, &g_INI_Key_Name, bytes + 100, name_buf, 49);
+    strncpy((char*)(bytes + 100), name_buf, 48);
+
+    // Read "UIName" key → this+61 (32 bytes)
+    char uiname_buf[32] = {};
+    INIClass_GetString(ini, bytes + 36, &g_INI_Key_UIName, bytes + 61, uiname_buf, 32);
+    strncpy((char*)(bytes + 61), uiname_buf, 32);
+
+    // Resolve UIName CSF string → this+96
+    if (*(bytes + 61))
+        fields[24] = (uint32_t)(uintptr_t)GetStringCSF(bytes + 61, 0, "D:\\ra2mdpost\\AbsType.cpp", 215);
+    else
+        fields[24] = (uint32_t)(uintptr_t)&g_TypeClass_DefaultString;
+
+    return true;
+}
+
 } // namespace gamemd
