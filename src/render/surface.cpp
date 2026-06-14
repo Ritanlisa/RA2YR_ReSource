@@ -1054,15 +1054,14 @@ bool DSurface::CheckBltStatus()
     return SUCCEEDED(Surface->GetBltStatus(DDGBS_ISBLTDONE));
 }
 
+// IDA: 0x4115F0 — BSurface::Lock (49B)
+// Increments LockCount, computes byte offset: Buffer + x*BPP + y*Pitch
 void* BSurface::Lock(int x, int y)
 {
-    (void)x;
-    (void)y;
-    if (!Buffer) {
-        Buffer = new byte[Width * Height * BytesPerPixel];
-        std::memset(Buffer, 0, Width * Height * BytesPerPixel);
-    }
-    return Buffer;
+    ++LockCount;
+    int bpp = GetBytesPerPixel();
+    int pitch = GetPitch();
+    return static_cast<uint8_t*>(Buffer) + x * bpp + y * pitch;
 }
 
 void Surface::DrawSHP(
