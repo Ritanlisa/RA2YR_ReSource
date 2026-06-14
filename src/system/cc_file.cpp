@@ -849,4 +849,10 @@ int TActionClass_Vt11(void) { return 47; }
 int SpawnManagerClass_Vt12(void) { return 116; }
 int SpawnManagerClass_Vt11(void) { return 65; }
 
+// IDA: TEvent + Parasite stubs
+int TEventClass_Vt12(void) { return 88; }
+int TEventClass_Vt11(void) { return 48; }
+int ParasiteClass_Vt12(void) { return 88; }
+int ParasiteClass_Vt11(void) { return 67; }
+
 } // namespace gamemd
