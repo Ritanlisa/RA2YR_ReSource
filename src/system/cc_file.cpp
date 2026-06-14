@@ -735,4 +735,13 @@ void ScreenEffect_Stub3(void) {}
 void ScreenEffect_Stub4(void) {}
 void ScreenEffect_Stub5(void) {}
 
+// IDA: 0x7518C0 — VocClass::SetEnabled (7B)
+extern uint8_t VocClass_VoicesEnabled;
+void VocClass_SetEnabled(char val) { VocClass_VoicesEnabled = val; }
+
+// IDA: VoxelAnimClass stubs
+int VoxelAnimClass_Vt12(void) { return 328; }
+int VoxelAnimClass_Vt11(void) { return 41; }
+int VoxelAnimClass_Vt34(void* self) { return *((uint32_t*)self + 65); }
+
 } // namespace gamemd
