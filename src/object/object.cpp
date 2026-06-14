@@ -462,5 +462,31 @@ bool ObjectClass::Render(int a2, int a3, int a4, int a5)
     return true;
 }
 
+// IDA: 0x6A60E0 — SuperWeapon::UpdateTargetRedrawState (85B)
+// Marks target for redraw if selected SW target matches, updates frame timer.
+extern void  MapClass_MarkForRedraw(void*, int); // IDA 0x4F42F0
+
+wchar_t* SuperWeapon_UpdateTargetRedrawState(void* self, wchar_t* target)
+{
+    auto* fields = reinterpret_cast<uint8_t*>(self);
+    wchar_t* current = *reinterpret_cast<wchar_t**>(fields + 21404);
+
+    wchar_t* result = current;
+    if (target == current)
+    {
+        fields[21414] = 1;
+        // Mark specific entry in a 3988-byte-stride array at offset 5504
+        *reinterpret_cast<uint8_t*>(fields + 3988 * reinterpret_cast<int>(current) + 5504) = 1;
+        MapClass_MarkForRedraw(MapClass_Instance, 0);
+
+        if (*reinterpret_cast<int*>(fields + 21408) <= CurrentFrame)
+        {
+            *reinterpret_cast<int*>(fields + 21408) = CurrentFrame + 1;
+            result = reinterpret_cast<wchar_t*>(static_cast<intptr_t>(CurrentFrame + 1));
+        }
+    }
+    return result;
+}
+
 } // namespace game
 } // namespace ra2
