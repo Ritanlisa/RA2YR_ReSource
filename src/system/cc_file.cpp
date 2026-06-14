@@ -539,4 +539,13 @@ int  UnholyAlliance_Read(void) { Bases = 1; return 1; }
 // IDA: 0x5CB430 — UnholyAlliance::Seek (8B)
 int  UnholyAlliance_Seek(void) { return 1; }
 
+// IDA: 0x71D150 — IRTTITypeInfo field accessor (7B)
+uint32_t IRTTITypeInfo_GetField200(void* self) { return *((uint32_t*)self + 50); }
+
+// IDA: 0x74FDA0 — NetworkBuffer::GetField2 (6B)
+int NetworkBuffer_GetField2(void) { return 0x20000; }
+
+// IDA: 0x74FDB0 — NetworkBuffer::GetField3 (6B)
+int NetworkBuffer_GetField3(void) { return 0x20000; }
+
 } // namespace gamemd
