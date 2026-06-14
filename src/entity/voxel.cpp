@@ -279,4 +279,35 @@ int VoxelPaletteClass_LoadFromFile(void* file)
     return result;
 }
 
+// IDA: 0x758A30 — VoxelPaletteClass::ConvertFromFile (147B)
+int VoxelPaletteClass_ConvertFromFile(int* palette, int file)
+{
+    int result = 0;
+
+    // vtable[7] = Seek(file, 1) → position to start
+    if (!(*(int(__thiscall**)(int, int))(*(uintptr_t*)file + 28))(file, 1))
+        goto fail;
+
+    // vtable[9] = Read(file, header, 16) → read 16-byte header
+    if ((*(int(__thiscall**)(int, int*, int))(*(uintptr_t*)file + 36))(file, palette, 16) != 16)
+        goto fail;
+
+    // Read palette data (768 bytes = 256 RGB entries)
+    if ((*(int(__thiscall**)(int, int, int))(*(uintptr_t*)file + 36))(file, palette[4], 768) != 768)
+        goto fail;
+
+    // Read color table (width*height bytes = palette[2] << 8)
+    if ((*(int(__thiscall**)(int, int, int))(*(uintptr_t*)file + 36))(file, palette[5], palette[2] << 8) != palette[2] << 8)
+        goto fail;
+
+    goto done;
+
+fail:
+    result = 1;
+done:
+    // vtable[13] = Close(file)
+    (*(void(__thiscall**)(int))(*(uintptr_t*)file + 52))(file);
+    return result;
+}
+
 } // namespace gamemd
