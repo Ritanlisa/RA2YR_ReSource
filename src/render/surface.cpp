@@ -578,6 +578,33 @@ int Surface_PixelToIndex(void* surface, int* pixel)
     return (*(int(__thiscall**)(void*, int*))(*(uintptr_t*)sub + 40))(sub, &v6);
 }
 
+// IDA: 0x69E860 — MixFileClass::GetPixelData (106B)
+extern void* MixFileClass_LoadSubFile(void*);  // IDA 0x69E580
+
+int MixFileClass_GetPixelData(void* mix, void* out_pixel, unsigned int index)
+{
+    char** sub = (char**)MixFileClass_LoadSubFile(mix);
+    if (!sub) goto zero;
+
+    if (index >= *((int16_t*)sub + 3)) goto zero;
+
+    char** entry = &sub[6 * index + 2];
+    if (!entry) goto zero;
+
+    // Read 3 RGB bytes from entry at offsets 12, 13, 14
+    uint8_t b = *((uint8_t*)entry + 12);
+    uint8_t g = *((uint8_t*)entry + 13);
+    uint8_t r = *((uint8_t*)entry + 14);
+    *(uint16_t*)out_pixel = ((uint16_t)r << 8) | g;  // RGB packed as 0xRG
+    *((uint8_t*)out_pixel + 2) = b;
+    return (int)out_pixel;
+
+zero:
+    *(uint16_t*)out_pixel = 0;
+    *((uint8_t*)out_pixel + 2) = 0;
+    return (int)out_pixel;
+}
+
 // IDA: 0x4BB080 — DSurface::BlitPart (75B)
 // If HW blit possible (both surfaces exist, BPP/pitch match) → Blit
 // Otherwise fallback to XSurface::BlitPart (software path)
