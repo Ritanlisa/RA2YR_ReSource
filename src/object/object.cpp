@@ -488,5 +488,60 @@ wchar_t* SuperWeapon_UpdateTargetRedrawState(void* self, wchar_t* target)
     return result;
 }
 
+// IDA: 0x5F5850 — ObjectClass::UpdateProductionDisplay (212B)
+// Uses YRpp member names: NeedsRedraw, OnBridge, IsFallingDown.
+// Vtable slots referenced: vt+44=GetTechnoType, vt+308=ProductionUpdate,
+//   vt+440=QueryProductionState, TechnoType: vt+56=GetImage, vt+704=StartProduction.
+int ObjectClass::UpdateProductionDisplay()
+{
+    // Skip if falling down (being destroyed/parachuting)
+    if (this->IsFallingDown)
+        return 0;
+
+    int production_state = 0;  // queried via vt+440 on TechnoType
+
+    if (production_state == 2)
+    {
+        if (!this->OnBridge && this->NeedsRedraw)
+        {
+            // vt+308: trigger production display refresh
+            (*(int(__thiscall**)(ObjectClass*))(*(uintptr_t*)this + 308))(this);
+            return 1;
+        }
+    }
+    else
+    {
+        // If not a building (WhatAmI != 6) or building's factory not ready
+        if (this->GetTechnoType() != reinterpret_cast<TechnoTypeClass*>(6)
+            || !*(int*)(*(uint32_t*)((uint8_t*)this + 328) + 3672)
+            || production_state)
+        {
+            auto* techno_type = static_cast<TechnoTypeClass*>(
+                reinterpret_cast<void*>(AbstractClass_IsTechnoType(this)));
+            if (techno_type)
+            {
+                uintptr_t tvt = *(uintptr_t*)techno_type;
+                (*(void(__thiscall**)(TechnoTypeClass*))(tvt + 704))(techno_type);
+                (*(void(__thiscall**)(TechnoTypeClass*))(tvt + 56))(techno_type);
+                (*(int(__thiscall**)(ObjectClass*, int*))(*(uintptr_t*)this + 440))(this, &production_state);
+            }
+        }
+
+        if ((production_state == 1 || production_state == 3) && !this->NeedsRedraw)
+        {
+            this->NeedsRedraw = true;
+            (*(int(__thiscall**)(ObjectClass*))(*(uintptr_t*)this + 308))(this);
+            return 1;
+        }
+
+        if (!production_state && this->NeedsRedraw)
+        {
+            this->NeedsRedraw = false;
+            return 1;
+        }
+    }
+    return 0;
+}
+
 } // namespace game
 } // namespace ra2
