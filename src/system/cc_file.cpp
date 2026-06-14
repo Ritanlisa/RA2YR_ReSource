@@ -867,4 +867,10 @@ int TemporalClass_Vt12(void) { return 80; }
 int TiberiumClass_Vt16(void* self) { return *((uint32_t*)self + 38); }
 int VoxelAnimClass_Vt30(void) { return 3; }
 
+// SuperClass stubs
+void SuperClass_ResetRechargeTime(void* self) { *((uint32_t*)self + 9) = -1; }
+int  SuperClass_SetRechargeTime(void* self, int val) { *((uint32_t*)self + 9) = val; return val; }
+int  SuperClass_SetReadiness(void* self, char val) { *((uint8_t*)self + 111) = val; return val; }
+int  SuperWeapon_GetField(void* self) { return *(uint8_t*)(*(uint32_t*)((uint32_t*)self + 10) + 230); }
+
 } // namespace gamemd
