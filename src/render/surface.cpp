@@ -313,6 +313,41 @@ DSurface::~DSurface()
     LockedSurface = nullptr;
 }
 
+// IDA: 0x4BAC60 — DSurface::CreateBackBuffer (143B)
+// Initializes a DSurface from a parent DirectDraw surface's descriptor.
+// Zeros all fields, sets Surface=parent, allocates SurfaceDesc, queries info.
+void DSurface::CreateBackBuffer(LPDIRECTDRAWSURFACE7 parent)
+{
+    // Zero all DSurface fields
+    Width = 0;
+    Height = 0;
+    LockCount = 0;
+    BytesPerPixel = 0;
+    LockedSurface = nullptr;
+    Allocated = false;
+    VRAMmed = false;
+    Surface = parent;
+    SurfaceDesc = nullptr;
+
+    if (parent)
+    {
+        // Allocate DDSURFACEDESC2 (0x6C = 108 bytes)
+        SurfaceDesc = static_cast<DDSURFACEDESC2*>(operator new(sizeof(DDSURFACEDESC2)));
+        std::memset(SurfaceDesc, 0, sizeof(DDSURFACEDESC2));
+        SurfaceDesc->dwSize = sizeof(DDSURFACEDESC2);
+
+        // Get surface description from parent
+        if (SUCCEEDED(parent->GetSurfaceDesc(SurfaceDesc)))
+        {
+            // Extract fields from the descriptor
+            BytesPerPixel = (SurfaceDesc->ddpfPixelFormat.dwRGBBitCount + 7) >> 3;
+            VRAMmed = (SurfaceDesc->ddsCaps.dwCaps & DDSCAPS_VIDEOMEMORY) != 0;
+            Width = SurfaceDesc->dwWidth;
+            Height = SurfaceDesc->dwHeight;
+        }
+    }
+}
+
 // IDA: 0x4C1A90 — DSurface::BlitWhole (23B) thin wrapper
 // Rect::Set(0,0,0,0) → Blit(zero, zero, src, zero, zero, option1, option2)
 REVERSE(0x4C1A90, "DSurface::BlitWhole: Thin wrapper around Blit", "None")

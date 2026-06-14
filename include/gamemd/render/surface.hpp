@@ -531,6 +531,10 @@ public:
     virtual bool CheckBltStatus() override;
     virtual bool IsDSurface() const override final { return true; }
 
+    // IDA: 0x4BAC60 — DSurface::CreateBackBuffer (143B)
+    // Initializes DSurface fields from a parent surface's descriptor
+    void CreateBackBuffer(LPDIRECTDRAWSURFACE7 parent);
+
     // IDA: DSurface::CreatePrimary pixel format detection (0x4BA770 bit-shift logic)
     static void DetectPixelFormat(const DDPIXELFORMAT& pf);
 
