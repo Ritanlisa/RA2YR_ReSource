@@ -271,4 +271,63 @@ int DDrawLogError(UINT error_code, bool show_info)
     return 0;
 }
 
+// IDA: 0x487690 — DisplayClass::AdvanceFrameCounter (83B)
+// Increments frame counter (this+76), clamps to max (this+77),
+// sets flag bit 0x20 in (this+80) when counter transitions from <=0 to >0.
+int DisplayClass::AdvanceFrameCounter()
+{
+    auto* fields = reinterpret_cast<int*>(this);
+
+    int prev = fields[76];  // m_frame_counter
+    if (prev == -1)
+        fields[76] = 0;
+
+    int next = fields[76] + 1;
+    fields[76] = next;
+
+    int max_frames = fields[77];  // m_max_frames
+    if (next > max_frames)
+        fields[76] = max_frames;
+
+    // When counter transitions from stopped to running, set flag
+    if (prev <= 0)
+    {
+        if (fields[76] > 0)
+        {
+            fields[80] |= 0x20;  // m_display_flags
+        }
+    }
+
+    return fields[80];
+}
+
+// IDA: 0x487630 — DisplayClass::UpdateDisplayTimer (90B)
+// Decrements display timer (this+76), manages flag bits at this+75 and this+80.
+int DisplayClass::UpdateDisplayTimer()
+{
+    auto* fields = reinterpret_cast<int*>(this);
+
+    if (fields[76] == 1)
+        fields[76] = 0;
+
+    int timer = fields[76] - 1;
+    fields[76] = timer;
+
+    int flags75 = fields[75];  // m_timer_flags
+    if ((flags75 & 8) && (flags75 & 0x10))
+    {
+        if (timer <= 0)
+        {
+            if (fields[80] & 0x20)
+                fields[80] &= ~0x20;
+        }
+    }
+    else if (timer <= 0)
+    {
+        fields[75] = flags75 | 0x18;
+    }
+
+    return fields[75];
+}
+
 } // namespace gamemd

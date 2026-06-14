@@ -108,6 +108,12 @@ public:
 
     void MarkFoundation(CellStruct* base_cell, bool mark);
 
+    // IDA: 0x487690 — Increments frame counter, clamps to max, manages display flag
+    int AdvanceFrameCounter();
+
+    // IDA: 0x487630 — Decrements display timer, manages timer flags
+    int UpdateDisplayTimer();
+
     CellStruct      CurrentFoundation_CenterCell;
     CellStruct      CurrentFoundation_TopLeftOffset;
     CellStruct*     CurrentFoundation_Data;
