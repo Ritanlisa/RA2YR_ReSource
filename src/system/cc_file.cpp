@@ -795,4 +795,9 @@ int UnitTypeClass_Vt12(void) { return 3704; }
 int UnitTypeClass_Vt11(void) { return 40; }
 int UnitTypeClass_Vt16(void* self) { return *((uint32_t*)self + 894); }
 
+// IDA: WeaponType + VoxelAnimType stubs
+int WeaponTypeClass_Vt12(void) { return 352; }
+int WeaponTypeClass_Vt11(void) { return 49; }
+int VoxelAnimTypeClass_Vt11(void) { return 42; }
+
 } // namespace gamemd
