@@ -1040,6 +1040,24 @@ int __fastcall Hash_Compute(int* acc, int input)
     return result;
 }
 
+// IDA: 0x63DAD0 — PackRGBFromBytes: pack 3 bytes into 16-bit RGB565
+int __fastcall PackRGBFromBytes(const uint8_t* rgb)
+{
+    return (rgb[0] >> g_BitShift_Green_0 << g_BitShift_Red)
+         | (rgb[1] >> g_BitMask_Blue << g_BitMask_Green)
+         | (rgb[2] >> g_BitMask_Red << g_BitShift_Blue);
+}
+
+// IDA: 0x54A900 — Bitfield_SetBit: set or clear single bit in bitfield
+void* __fastcall Bitfield_SetBit(void* base, int bit_index, int set)
+{
+    int byte_off = bit_index / 8;
+    uint8_t mask = 1 << (bit_index % 8);
+    uint8_t* ptr = (uint8_t*)base + byte_off;
+    *ptr = set ? (*ptr | mask) : (*ptr & ~mask);
+    return ptr;
+}
+
 } // namespace gamemd
 
 // IDA: 0x42FD30 — Bitmap_EncodeRGB: Base64-encode RGB bytes
