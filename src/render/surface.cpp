@@ -391,6 +391,27 @@ void DrawActionLineSegment(void* src_surface, int x, int y)
         DDBLT_WAIT, nullptr);
 }
 
+// IDA: 0x7BBAF0 — XSurface::BlitWhole (145B)
+// Gets dest+src rects via vtable[30]=0x78 (GetRect), zeros X/Y,
+// then delegates to vtable[2]=0x08 (BlitPart).
+bool XSurface::BlitWhole(Surface* src, bool option1, bool option2)
+{
+    // Get destination rect, zero origin
+    RectangleStruct dest_rect;
+    GetRect(&dest_rect);
+    dest_rect.X = 0;
+    dest_rect.Y = 0;
+
+    // Get source rect, zero origin
+    RectangleStruct src_rect;
+    src->GetRect(&src_rect);
+    src_rect.X = 0;
+    src_rect.Y = 0;
+
+    // Delegate to BlitPart (vtable[2] = offset 8)
+    return BlitPart(dest_rect, src, src_rect, option1, option2);
+}
+
 // IDA: 0x4C1A90 — DSurface::BlitWhole (23B) thin wrapper
 // Rect::Set(0,0,0,0) → Blit(zero, zero, src, zero, zero, option1, option2)
 REVERSE(0x4C1A90, "DSurface::BlitWhole: Thin wrapper around Blit", "None")
