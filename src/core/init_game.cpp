@@ -1058,6 +1058,20 @@ void* __fastcall Bitfield_SetBit(void* base, int bit_index, int set)
     return ptr;
 }
 
+// IDA: 0x48DF30 — LookupNameIndex: search global name table for string match
+int __fastcall LookupNameIndex(const char* name)
+{
+    if (!name || !_strcmpi(name, "<none>"))
+        return -1;
+    extern void* g_NameTable;       // 0xABF394
+    extern int   g_NameTableCount;  // 0xABF3A0
+    for (int i = 0; i < g_NameTableCount; ++i) {
+        if (!_strcmpi(name, ((const char**)&g_NameTable)[i]))
+            return i;
+    }
+    return -1;
+}
+
 } // namespace gamemd
 
 // IDA: 0x42FD30 — Bitmap_EncodeRGB: Base64-encode RGB bytes
