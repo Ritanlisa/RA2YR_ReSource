@@ -97,4 +97,38 @@ void CCFileClass::Reset()
     MixFileIndex = 0;
 }
 
+// IDA: 0x432610 — BufferIOFileClass dtor (84B)
+// Frees internal buffer (this+12), zeros flags, calls RawFileClass::Dtor.
+// a2&1 → conditional free of the object block.
+extern void RawFileClass_Dtor(void*);  // IDA 0x65CA00
+
+void* BufferIOFileClass_Destructor(void* block, bool free_block)
+{
+    auto* fields = reinterpret_cast<uint32_t*>(block);
+    auto* bytes  = reinterpret_cast<uint8_t*>(block);
+
+    void* buffer = reinterpret_cast<void*>(fields[12]);  // buffer pointer
+    if (buffer)
+    {
+        if (bytes[36])  // ownership flag
+        {
+            operator delete(buffer);
+            bytes[36] = 0;
+        }
+        fields[12] = 0;
+    }
+    fields[13] = 0;     // clear additional fields
+    bytes[37] = 0;
+    bytes[39] = 0;
+    bytes[40] = 0;
+    bytes[41] = 0;
+
+    RawFileClass_Dtor(block);  // parent dtor
+
+    if (free_block)
+        operator delete(block);
+
+    return block;
+}
+
 } // namespace gamemd
