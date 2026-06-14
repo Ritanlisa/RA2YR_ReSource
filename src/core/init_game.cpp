@@ -1236,6 +1236,19 @@ LRESULT __fastcall ComboBox_SetSelection(HWND hDlg, int nIDDlgItem, LRESULT wPar
     return SendDlgItemMessageA(hDlg, nIDDlgItem, 0x150, sel, 0);
 }
 
+// IDA: 0x4071A0 — SetRateMixerSample: configure mixer sample playback rate
+// __fastcall: ECX=sample_ptr, EDX=rate_numerator, stack=rate_denominator, stack=arg4
+int SetRateMixerSample(unsigned int* sample, int rate_num, unsigned int rate_den, int arg4)
+{
+    // a1[4] = sample_rate;     // offset 0x10
+    // a1[3] = (rate_num << 16) / rate_den; // offset 0x0C — fixed-point rate factor
+    // a1[5] = arg4;            // offset 0x14
+    sample[4] = rate_den;
+    sample[3] = (rate_num << 16) / rate_den;
+    sample[5] = arg4;
+    return arg4;
+}
+
 } // namespace gamemd
 
 // IDA: 0x42FD30 — Bitmap_EncodeRGB: Base64-encode RGB bytes
