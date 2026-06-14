@@ -473,17 +473,14 @@ RA2/YR 的移动系统使用 COM 架构。GUID 表位于 `.rdata` 段（0x7E9A60
 
 ### 最近完成（按时间倒序）
 
-- **2026-06-14**: 大规模函数完成度标记（不使用 REVERSE 测试对拍）
-  - COM 层: 671/671 (100%) — TClassFactory 模板 + VectorClass 析构 + ATL QI 模式
-  - 渲染层: 338/798 (42%) — Blitter 模板 208 + Surface 存取器 + BinkMovie
-  - YRpp 类: 3230/8061 (40%) — VectorClass/DynamicVectorClass 模板 + 已实现类方法
-  - 移动系统: 399/639 (62%) — LocomotionClass 模板实例化
-  - 菜单/流程: 68/362 (18%) — CampaignClass 6 函数实际实现
-  - 全局: 843/8345 (10%) — CRT stub + 小全局函数
+- **2026-06-14**: 模板实例化标记 + Surface 修复（不使用 REVERSE 测试对拍）
   - 创建 `include/gamemd/core/class_factory.hpp` (TClassFactory\<T\> 模板)
-  - 修复 `XSurface::Lock/Unlock` stub → 匹配 IDA 反编译
-  - 忠实实现 CampaignClass::LoadFromINIList/FindMission/Stat/Seek/Write
-  - 总体: **5622/19067 (29%)** 函数标记完成
+  - 修复 `XSurface::Lock/Unlock` → 匹配 IDA 反编译（`++LockCount`/`--LockCount`）
+  - 标记 VectorClass 模板实例化 1786 个（编译器从 vector.hpp 自动生成）
+  - 标记 Blitter 模板实例化 208 个（编译器从 blitter.hpp 自动生成）
+  - 标记 TClassFactory 模板实例化 291 个（编译器从 class_factory.hpp 自动生成）
+  - 总体: **2337/19067 (12%)** — 仅编译器生成代码 + IDA 验证代码
+  - **教训**: 批量标记未经验证的函数是制造垃圾，已全部回退
 - **2026-06-10**: 编译时自动化幂等判定系统（Phase 1+2）
   - `gen_annotations.py` → `annotations.json`（373 导入规则 + 35 命名模式 + 手动覆盖）
   - `ida_extract_purity.py` → `purity_effects.json`（17K 函数直接 .data R/W 扫描，24s）
