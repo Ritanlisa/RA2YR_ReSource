@@ -582,4 +582,16 @@ void* Runtime_ZeroInit73(void* self) { *(uint32_t*)self = 0; return self; }
 // IDA: 0x7B66C0 — MSVC runtime zero-init (9B)
 void* Runtime_ZeroInit74(void* self) { *(uint32_t*)self = 0; return self; }
 
+// IDA: 0x7BE660 — Field setter (10B)
+int SetField_MinusOne(void* self) { auto* f = (uint32_t*)self; f[436] = -1; return -1; }
+
+// IDA: 0x7C35B0 — Field accessor (10B)
+int GetField_906(void* self) { return *(int*)((uint8_t*)self + 906 * 2); }
+
+// IDA: 0x7748A0 — WinModemClass::Release (10B)
+int WinModemClass_Release(void* self, int val) { auto* f = (uint32_t*)self; f[24] = val; return val; }
+
+// IDA: 0x7754A0 — WinModemClass::ddtor (10B)
+int WinModemClass_ddtor(void* self, int val) { auto* f = (uint32_t*)self; f[25] = val; return val; }
+
 } // namespace gamemd
