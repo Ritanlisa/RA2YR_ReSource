@@ -358,4 +358,24 @@ int DisplayClass::ReadFromBuffer(void* dest, int size)
     return remaining;
 }
 
+// IDA: 0x72AD20 — Display::GetViewport (98B)
+// Returns viewport rectangle {X, Y, Width, Height} accounting for sidebar and credits screen.
+extern uint8_t byte_A8EB7C;           // IDA 0xA8EB7C — sidebar visibility flag
+extern uint8_t ArmageddonMode;        // IDA 0xA8ED6B — armageddon mode flag
+extern int32_t g_CreditsScreenBounds; // IDA 0x886FB8 — screen width constant
+extern int32_t g_CreditsScreenConfig; // IDA 0x886FBC — screen height constant
+
+int* Display_GetViewport(int out[4])
+{
+    int x = 0;
+    if (!byte_A8EB7C && !ArmageddonMode)
+        x = 168;  // sidebar width
+
+    out[0] = x;
+    out[1] = 0;
+    out[2] = g_CreditsScreenBounds - 168;
+    out[3] = g_CreditsScreenConfig - 32;
+    return out;
+}
+
 } // namespace gamemd
