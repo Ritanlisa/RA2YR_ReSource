@@ -570,4 +570,16 @@ void ReferenceCounted_Constructor(void* self) { *(uint32_t*)self = 0x7F0954; }
 // IDA: 0x76F180 — VectorCursor::Release (6B, AddRef)
 void* VectorCursor_AddRef(void* self) { auto* f = (uint32_t*)self; ++f[2]; return self; }
 
+// IDA: 0x7B40F0 — UDPInterfaceClass_Destru::_vt13 (6B)
+int UDPInterfaceClass_GetConstant2(void) { return 2; }
+
+// IDA: 0x7B4140 — UDPInterfaceClass_Destru field accessor (7B)
+int UDPInterfaceClass_GetField64856(void* self) { return *(int*)((uint8_t*)self + 64856); }
+
+// IDA: 0x7B4620 — MSVC runtime zero-init (9B)
+void* Runtime_ZeroInit73(void* self) { *(uint32_t*)self = 0; return self; }
+
+// IDA: 0x7B66C0 — MSVC runtime zero-init (9B)
+void* Runtime_ZeroInit74(void* self) { *(uint32_t*)self = 0; return self; }
+
 } // namespace gamemd
