@@ -235,4 +235,25 @@ constexpr float TSNormals[36][3] = {
     {0.774f,0.447f,-0.447f},{-0.774f,0.447f,-0.447f},
 };
 
+// IDA: 0x758950 — VoxelPalette::Init (99B)
+// Initializes voxel palette structure. Allocates 768B palette + 32KB color table
+// if not provided. Sets ownership flags at this+6 and this+7.
+void VoxelPalette_Init(int* self, int palette_src, int color_src)
+{
+    if (palette_src) {
+        self[4] = palette_src;    // Use provided palette (256 RGB entries)
+        self[6] = 0;              // Not self-allocated
+    } else {
+        self[4] = (int)operator new(0x300);  // Allocate 768-byte palette
+        self[6] = 1;                         // Self-allocated flag
+    }
+    if (color_src) {
+        self[5] = color_src;      // Use provided color table
+        self[7] = 0;              // Not self-allocated
+    } else {
+        self[5] = (int)operator new(0x8000); // Allocate 32KB color table
+        self[7] = 1;                         // Self-allocated flag
+    }
+}
+
 } // namespace gamemd
