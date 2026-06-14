@@ -476,6 +476,20 @@ void DSurface::Process(int* a2, int* a3)
         1, 0, 0, 1, 0, 0);
 }
 
+// IDA: 0x437350 — BlitterCopySimpleSHP (91B)
+// Thin wrapper: gets rects via vtable[30] on both surfaces, calls BlitterCopySHP.
+extern int BlitterCopySHP(void*, void*, void*, void*, void*, void*, void*, int, int, int, int, int, int);
+
+int BlitterCopySimpleSHP(void* dst_surface, void* a2, void* src_surface, int a4, void* a5, int a6, int a7, int a8, int a9)
+{
+    // Get source rect via vtable[30]=0x78
+    void* src_rect = (*(void*(__thiscall**)(void*, void*, int))(*(uintptr_t*)src_surface + 120))(src_surface, nullptr, a4);
+    // Get dest rect via vtable[30]=0x78
+    void* dst_rect = (*(void*(__thiscall**)(void*))(*(uintptr_t*)dst_surface + 120))(dst_surface);
+    int v15[3] = {};
+    return BlitterCopySHP(dst_surface, dst_rect, v15, a2, src_surface, src_rect, a5, a6, a7, a8, a9, 0);
+}
+
 // IDA: 0x4BB080 — DSurface::BlitPart (75B)
 // If HW blit possible (both surfaces exist, BPP/pitch match) → Blit
 // Otherwise fallback to XSurface::BlitPart (software path)
