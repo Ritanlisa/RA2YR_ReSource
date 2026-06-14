@@ -1042,16 +1042,16 @@ int DSurface::GetPitch() const
     return Width * BytesPerPixel;
 }
 
-// IDA: 0x4BAF20 -- DSurface::CheckBltStatus (17B)
-// Calls IDirectDrawSurface7::GetBltStatus(DDGBS_ISBLTDONE)
-// Returns true if blit is complete (DD_OK)
+// IDA: 0x4BAF20 — DSurface::CheckBltStatus (17B)
+// Calls IDirectDrawSurface7::GetBltStatus(DDGBS_CANBLT=1)
+// Returns true if surface is ready for blit (DD_OK)
 bool DSurface::CheckBltStatus()
 {
     // IDA: (*(*(this+7) + 52))(*(this+7), 1) == 0
-    // vtable offset 52/4 = 13 = GetBltStatus
+    // vtable offset 52/4 = 13 = GetBltStatus, param=1=DDGBS_CANBLT
     if (!Surface)
         return true;
-    return SUCCEEDED(Surface->GetBltStatus(DDGBS_ISBLTDONE));
+    return SUCCEEDED(Surface->GetBltStatus(DDGBS_CANBLT));
 }
 
 // IDA: 0x4115F0 — BSurface::Lock (49B)
