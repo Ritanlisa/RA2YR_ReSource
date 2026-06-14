@@ -256,4 +256,27 @@ void VoxelPalette_Init(int* self, int palette_src, int color_src)
     }
 }
 
+// IDA: 0x753B70 — VoxelPaletteClass::LoadFromFile (91B)
+// Initializes palette, converts from file, stores results to globals, resets palette.
+extern void* unk_B2FB78;              // IDA 0xB2FB78
+extern void* g_VoxelColorPalette;      // IDA 0xB41178
+extern int   VoxelPalette_ConvertFromFile(int* palette, int file); // IDA 0x758A30
+extern void  VoxelPalette_Reset(int palette);  // IDA 0x7589C0
+extern int   dword_B2FB74, dword_B4317C, dword_B2FB58, dword_B43178;
+
+int VoxelPaletteClass_LoadFromFile(void* file)
+{
+    int palette[8] = {};
+    VoxelPalette_Init(palette, (int)&unk_B2FB78, (int)g_VoxelColorPalette);
+    int result = VoxelPalette_ConvertFromFile(palette, (int)file);
+
+    dword_B2FB74 = palette[0];
+    dword_B4317C = palette[1];
+    dword_B2FB58 = palette[2];
+    dword_B43178 = palette[3];
+
+    VoxelPalette_Reset((int)palette);
+    return result;
+}
+
 } // namespace gamemd
