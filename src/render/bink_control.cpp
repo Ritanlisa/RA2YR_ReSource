@@ -170,4 +170,23 @@ int BinkMovie_FreeSurfaceTracker(int* tracker)
     return result;
 }
 
+// IDA: 0x434B90 — FontRenderer::DrawText (88B)
+// Thin wrapper: InitContext → SetField → RenderText → Cleanup
+extern void FontRenderer_InitContext(void* ctx, int* surface);    // IDA 0x4348F0
+extern void Field_Int_Set(void* ctx, int x);                      // IDA 0x434110
+extern int  FontClass_RenderText(void* ctx, const wchar_t* text, int x, int y, int a6, int a7); // IDA 0x434500
+extern void BufferIO_Cleanup(void* ctx, int surface);             // IDA 0x434990
+
+int FontRenderer_DrawText(void* ctx, int* surface, const wchar_t* text, int x, int y, int a6, int a7)
+{
+    if (!ctx)
+        return x;
+
+    FontRenderer_InitContext(ctx, surface);
+    Field_Int_Set(ctx, x);
+    int result = FontClass_RenderText(ctx, text, x, y, a6, a7);
+    BufferIO_Cleanup(ctx, (int)surface);
+    return result;
+}
+
 } // namespace gamemd
