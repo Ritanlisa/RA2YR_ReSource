@@ -336,4 +336,39 @@ void FontRenderer_InitContext(int* ctx, int* surface)
     ctx[14] = v12;
 }
 
+// IDA: 0x4336C0 — BinkMovieClass::ReleaseRenderSurface (169B)
+// Bit-stream unpacker: unpacks bits from compressed source, skip every 7th bit.
+unsigned int BinkMovie_UnpackBits(const uint8_t* src, uint8_t* dst, int count)
+{
+    const uint8_t* s = src;
+    uint8_t* d = dst;
+    int bit_pos = 0;
+    int byte_pos = 0;
+    *d = *s & 1;  // first bit
+    int remaining = count - 1;
+
+    if (count == 1)
+        return (unsigned int)(count + 7) >> 3;
+
+    while (remaining > 0)
+    {
+        // Every 7 bits, skip one bit in source (BINK compressed format)
+        if (((bit_pos + 1) % 7) == 0) {
+            ++bit_pos;
+            if (bit_pos == 8) { bit_pos = 0; ++s; }
+        }
+        ++bit_pos;
+        if (bit_pos == 8) { bit_pos = 0; ++s; }
+
+        uint8_t bit = ((1 << bit_pos) & *s) != 0;
+        ++byte_pos;
+        if (byte_pos == 8) { ++d; byte_pos = 0; *d = 0; }
+
+        --remaining;
+        *d |= bit << byte_pos;
+    }
+
+    return (unsigned int)(count + 7) >> 3;
+}
+
 } // namespace gamemd
