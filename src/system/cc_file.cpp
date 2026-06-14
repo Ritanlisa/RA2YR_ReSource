@@ -594,4 +594,13 @@ int WinModemClass_Release(void* self, int val) { auto* f = (uint32_t*)self; f[24
 // IDA: 0x7754A0 — WinModemClass::ddtor (10B)
 int WinModemClass_ddtor(void* self, int val) { auto* f = (uint32_t*)self; f[25] = val; return val; }
 
+// IDA: 0x6C9680 — FloatArray::Get (10B)
+float FloatArray_Get(float* arr, int idx) { return arr[idx]; }
+
+// IDA: 0x6C9930 — BinkMovie::FreeSurfaceBuffer (15B)
+void BinkMovie_FreeSurfaceBuffer2(void** self) { if (self[5]) operator delete(self[5]); }
+
+// IDA: 0x7754B0 — WinModemClass::HangUp (10B)
+int WinModemClass_HangUp(void* self, int val) { auto* f = (uint32_t*)self; f[26] = val; return val; }
+
 } // namespace gamemd
