@@ -873,4 +873,8 @@ int  SuperClass_SetRechargeTime(void* self, int val) { *((uint32_t*)self + 9) = 
 int  SuperClass_SetReadiness(void* self, char val) { *((uint8_t*)self + 111) = val; return val; }
 int  SuperWeapon_GetField(void* self) { return *(uint8_t*)(*(uint32_t*)((uint32_t*)self + 10) + 230); }
 
+// IDA: Object field accessor + 450-return stubs
+int  Object_Vt34(void* self) { return *((uint32_t*)self + 43); }
+int  Stub_Return450(void) { return 450; }
+
 } // namespace gamemd
