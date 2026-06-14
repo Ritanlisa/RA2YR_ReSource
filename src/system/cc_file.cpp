@@ -785,4 +785,9 @@ bool AbstractTypeClass_LoadFromINI(void* self, void* ini)
 int TerrainClass_Vt12(void) { return 224; }
 int TerrainClass_Vt11(void) { return 36; }
 
+// IDA: TerrainTypeClass stubs
+int TerrainTypeClass_Vt11(void) { return 37; }
+int TerrainTypeClass_Vt12(void) { return 700; }
+int TerrainTypeClass_Vt16(void* self) { return *((uint32_t*)self + 165); }
+
 } // namespace gamemd
