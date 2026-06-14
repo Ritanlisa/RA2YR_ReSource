@@ -120,5 +120,37 @@ CoordStruct* AbstractClass::GetCoords(CoordStruct* out) const {
     return out;
 }
 
+// IDA: 0x410320 — SaveLoad_Prefix (IPersistStream load helper)
+// Reads object pointer + serialized data from IStream.
+// Called by all game object classes during Load.
+int __stdcall AbstractClass::SaveLoad_Prefix(void** obj_out, IStream* stream, bool clear_dirty)
+{
+    if (!stream)
+        return E_POINTER;  // 0x80004003
+
+    // IDA: Read 4 bytes from stream → *obj_out (the reconstructed object pointer)
+    ULONG bytes_read;
+    HRESULT hr = stream->Read(obj_out, 4, &bytes_read);
+    if (FAILED(hr))
+        return hr;
+
+    AbstractClass* obj = static_cast<AbstractClass*>(*obj_out);
+
+    // IDA: call vtable[12](0) → get serialized data size
+    // vtable[0][12] = ProcessPower or Size, depending on class
+    int data_size = obj->Size();
+
+    // IDA: Read data_size bytes of member data from stream
+    hr = stream->Read(obj, data_size, &bytes_read);
+    if (FAILED(hr))
+        return hr;
+
+    // IDA: clear m_dirty flag at offset +0x20
+    if (clear_dirty)
+        obj->m_dirty = false;
+
+    return S_OK;
+}
+
 } // namespace game
 } // namespace ra2

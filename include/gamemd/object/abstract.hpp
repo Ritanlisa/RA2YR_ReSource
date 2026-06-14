@@ -118,6 +118,9 @@ public:
     virtual bool IsOnFloor() const { return false; }
     virtual bool IsInAir() const { return false; }
     virtual CoordStruct* GetAltCoords(CoordStruct* out) const { return nullptr; }
+
+    // IDA: 0x410320 — IPersistStream::Load helper (static, shared by all game objects)
+    static int __stdcall SaveLoad_Prefix(void** obj_out, IStream* stream, bool clear_dirty);
     virtual void Update() {}
 
     CoordStruct GetCoords() const { CoordStruct crd; GetCoords(&crd); return crd; }
