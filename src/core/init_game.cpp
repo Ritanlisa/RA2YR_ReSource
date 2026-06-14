@@ -1072,6 +1072,21 @@ int __fastcall LookupNameIndex(const char* name)
     return -1;
 }
 
+// IDA: 0x7B6630 — String_ValidateContains
+bool __fastcall String_ValidateContains(const char** input, const char* allowed, const char* control)
+{
+    return control && *input && strcspn(*input, control) < strlen(allowed);
+}
+
+// IDA: 0x56D3F0 — Map_CellToTileIndex
+int __fastcall Map_CellToTileIndex(int map_w, int map_h, int max_tiles, int x, int y)
+{
+    int idx = x + y * (map_w + map_h + 1);
+    if (idx < 0) return 0;
+    if (idx >= max_tiles) return max_tiles - 1;
+    return idx;
+}
+
 } // namespace gamemd
 
 // IDA: 0x42FD30 — Bitmap_EncodeRGB: Base64-encode RGB bytes
