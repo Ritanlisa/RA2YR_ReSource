@@ -529,4 +529,14 @@ void* ColorListClass_Destructor(void* block, bool free_block)
     return block;
 }
 
+// IDA: 0x5C1CB0 — MPCooperative::COMStub (8B)
+void MPCooperative_SetFlag(void* self) { *((uint8_t*)self + 832) = 1; }
+
+// IDA: 0x5CB3F0 — UnholyAlliance::Read (8B)
+extern uint8_t Bases;  // IDA 0xA8B258
+int  UnholyAlliance_Read(void) { Bases = 1; return 1; }
+
+// IDA: 0x5CB430 — UnholyAlliance::Seek (8B)
+int  UnholyAlliance_Seek(void) { return 1; }
+
 } // namespace gamemd
