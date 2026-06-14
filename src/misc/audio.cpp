@@ -197,4 +197,34 @@ IDirectSound* Audio_GetDirectSound()  // IDA 0x40A7A0
 
 // --- AudioController member functions (defined in object.cpp, namespace ra2) ---
 
+// IDA: 0x401190 — scale sample value by percent
+// Computes (HIWORD(*(sampleInfo+44)) * percent) / 100 using magic division
+int __fastcall Audio_ScaleSampleByPercent(int sampleInfo, int percent)
+{
+    // 1374389535 = 0x51EB851F — magic number for signed division by 100
+    int val = HIWORD(*(int*)(sampleInfo + 44));
+    long long product = 1374389535LL * percent * val;
+    int shifted = (int)((unsigned long long)product >> 32);
+    return (int)((unsigned int)shifted >> 31) + (shifted >> 5);
+}
+
+// IDA: 0x4011B0 — array element access: base + index * 36
+void* __fastcall Audio_GetEntryByIndex(void* base, int index)
+{
+    return (char*)base + 36 * index;
+}
+
+// IDA: 0x4015C0 — binary search in sorted 0x24-byte entry array
+// Returns index on match, -1 if not found
+int __fastcall Audio_BinarySearchEntry(void* array, const char* key)
+{
+    size_t count = *((size_t*)array + 1);  // count at offset 4
+    void* found = bsearch(key, *(void**)array, count, 0x24, _strcmpi);
+    if (found)
+        return ((int)(uintptr_t)found - *(int*)array) / 0x24;
+    return -1;
+}
+
+} // namespace gamemd
+
 } // namespace gamemd
