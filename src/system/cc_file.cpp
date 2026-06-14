@@ -682,4 +682,10 @@ void* ObjectTypeClass_Constructor(void* self, int a2)
     return self;
 }
 
+// IDA: 0x4369E0 — BuildingLightClass stubs
+int BuildingLightClass_SD_vt34(void) { return 0; }
+int BuildingLightClass_SD_vt12(void) { return 232; }
+int BuildingLightClass_SD_vt30(void) { return 3; }
+int BuildingLightClass_SD_vt11(void) { return 19; }
+
 } // namespace gamemd
