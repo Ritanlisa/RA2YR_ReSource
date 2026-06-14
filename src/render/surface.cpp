@@ -348,6 +348,29 @@ void DSurface::CreateBackBuffer(LPDIRECTDRAWSURFACE7 parent)
     }
 }
 
+// IDA: 0x63D400 — DSurface::DrawMarker (114B)
+// Draws a 6×6 pixel marker centered at (x, y) onto the global composite surface.
+// Uses Display::GetViewport for destination bounds, then Blits the marker.
+extern LPDIRECTDRAWSURFACE7 DSurface_Composite;  // IDA 0x88731C
+extern int* Display_GetViewport(int out[4]);      // IDA 0x72AD20
+
+void DSurface::DrawMarker(int x, int y)
+{
+    int viewport[4];
+    Display_GetViewport(viewport);
+
+    // Set up marker rect: 6×6 pixels centered at (x, y)
+    int marker[4] = { x - 3, y - 3, 6, 6 };
+
+    // vtable[21] = offset 0x54 → Blit on DSurface_Composite
+    // Signature: Blit(dest_rect, src_surface, src_rect, flags, fx)
+    DSurface_Composite->Blt(
+        reinterpret_cast<RECT*>(viewport),
+        this->Surface,
+        reinterpret_cast<RECT*>(marker),
+        DDBLT_WAIT, nullptr);
+}
+
 // IDA: 0x4C1A90 — DSurface::BlitWhole (23B) thin wrapper
 // Rect::Set(0,0,0,0) → Blit(zero, zero, src, zero, zero, option1, option2)
 REVERSE(0x4C1A90, "DSurface::BlitWhole: Thin wrapper around Blit", "None")

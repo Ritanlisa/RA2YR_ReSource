@@ -535,6 +535,10 @@ public:
     // Initializes DSurface fields from a parent surface's descriptor
     void CreateBackBuffer(LPDIRECTDRAWSURFACE7 parent);
 
+    // IDA: 0x63D400 — DSurface::DrawMarker (114B)
+    // Draws a 6×6 pixel marker centered at (x, y) onto the composite surface
+    void DrawMarker(int x, int y);
+
     // IDA: DSurface::CreatePrimary pixel format detection (0x4BA770 bit-shift logic)
     static void DetectPixelFormat(const DDPIXELFORMAT& pf);
 
