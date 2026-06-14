@@ -208,4 +208,39 @@ void* BinkMovieClass_SetPosition(int* self, int surface, int x, int y)
     return BinkMovie_BlitToTarget(self, surface);
 }
 
+// IDA: 0x433330 — BinkMovie::AdjustSurfaceFormat (170B)
+void BinkMovie_AdjustSurfaceFormat(int* self, int surface)
+{
+    int* ctx = reinterpret_cast<int*>(self[8]);
+    if (!ctx || !*ctx)
+        return;
+
+    int v9  = ctx[9];   // offset 36
+    int v10 = ctx[10];  // offset 40
+    int v11 = ctx[11];  // offset 44 = width
+    int v12 = ctx[12];  // offset 48 = height
+
+    if (v11 <= 0 || v12 <= 0)
+        return;
+
+    // Get surface rect via vtable[30]
+    int* target_surf = reinterpret_cast<int*>(ctx[4]);  // offset 16
+    int* rect = (*(int*(__thiscall**)(int, void*))(*(uintptr_t*)target_surf + 120))(target_surf, nullptr);
+
+    int v13 = rect[0];  // X
+    int v14 = rect[1];  // Y
+    int v6  = rect[3];  // Height
+
+    // Center calculation
+    int64_t v7 = self[6] - rect[2];  // Width diff
+    int v8 = self[7] - v6 + v10;
+
+    int new_x = v9 + self[4] + static_cast<int>((v7 - (v7 >> 32)) >> 1);
+    int new_y = self[5] + v8;
+
+    int dest[4] = { new_x, new_y, v11, v12 };
+    // vtable[5] = offset 20 → SetDestRect
+    (*(int(__thiscall**)(int, int*, int))(*(uintptr_t*)surface + 20))(surface, dest, 0);
+}
+
 } // namespace gamemd
