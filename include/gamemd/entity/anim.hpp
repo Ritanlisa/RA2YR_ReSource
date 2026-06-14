@@ -76,6 +76,9 @@ public:
     ra2::game::AudioController Audio3;
     ra2::game::AudioController Audio4;
 
+    // IDA: 0x428DE0 — Frees SHP render buffer (fields at +164, +168, +862, +863)
+    void FreeRenderBuffer();
+
 protected:
     AnimClass() = default;
 public:

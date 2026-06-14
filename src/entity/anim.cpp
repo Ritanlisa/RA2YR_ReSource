@@ -83,4 +83,28 @@ AnimClass::AnimClass(AnimTypeClass* pType, const CoordStruct& coords,
     // - Start animation timer
 }
 
+// IDA: 0x428DE0 — AnimClass::FreeRenderBuffer (81B)
+// Frees the render buffer (at this+164) if allocated and flags permit.
+// Fields: this+164 = SHP render buffer ptr, this+168 = buffer allocated flag,
+//         this+862 = render active flag, this+863 = free permission flag
+void AnimClass::FreeRenderBuffer()
+{
+    // NOTE: field names are unknown — using raw offsets faithful to IDA
+    auto* buffer_flag   = reinterpret_cast<uint8_t*>(this) + 862;
+    auto* buffer_ptr    = reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(this) + 164);
+    auto* free_perm     = reinterpret_cast<uint8_t*>(this) + 863;
+    auto* alloc_flag    = reinterpret_cast<uint8_t*>(this) + 168;
+
+    if (*buffer_flag && *buffer_ptr)
+    {
+        if (*free_perm)
+        {
+            Debug::Log();
+            operator delete(*buffer_ptr);
+            *buffer_ptr = nullptr;
+            *alloc_flag = 0;
+        }
+    }
+}
+
 } // namespace gamemd
