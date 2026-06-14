@@ -449,6 +449,33 @@ int DSurface::RenderPipelineCleanup()
     return flags;
 }
 
+// IDA: 0x480180 — DSurface::Process (102B)
+// Thin wrapper: calls TerrainClass::GenerateTexture with surface fields + frame globals.
+extern void TerrainClass_GenerateTexture(  // IDA 0x547CF0
+    void* frame_counter, void* dword_87F69C, int zero,
+    void* hidden_surface, int a2x, int a2y, int a3x, int a3y,
+    int a3w, int a3h, char field_283, int16_t field_268,
+    int one1, int zero2, int zero3, int one2, int zero4, int zero5);
+
+extern void* g_FrameCounter;      // IDA 0xA8ED2C
+extern void* dword_87F69C;        // IDA 0x87F69C
+extern void* DSurface_Hidden_2;   // IDA 0x887314
+
+void DSurface::Process(int* a2, int* a3)
+{
+    auto* fields = reinterpret_cast<uint8_t*>(this);
+    TerrainClass_GenerateTexture(
+        g_FrameCounter,
+        dword_87F69C,
+        0,
+        DSurface_Hidden_2,
+        a2[0], a2[1],
+        a3[0], a3[1], a3[2], a3[3],
+        static_cast<char>(fields[283]),
+        *reinterpret_cast<int16_t*>(fields + 268),
+        1, 0, 0, 1, 0, 0);
+}
+
 // IDA: 0x4BB080 — DSurface::BlitPart (75B)
 // If HW blit possible (both surfaces exist, BPP/pitch match) → Blit
 // Otherwise fallback to XSurface::BlitPart (software path)
