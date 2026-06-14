@@ -379,4 +379,34 @@ void* ScoreFontClass_Destructor(void* block, bool free_block)
     return block;
 }
 
+// IDA: 0x4A04B0 — ConnectionPointClass::QueryInterface (97B)
+// Checks IUnknown + IConnectionPoint {B196B286-BAB4-101A-B69C-00AA00341D07}
+extern const IID IID_IConnectionPoint;
+
+int ConnectionPointClass_QueryInterface(void* self, const void* iid, uint32_t* ppv)
+{
+    if (!ppv)
+        return -2147467261;  // E_POINTER
+
+    uint32_t result = 0;
+    if (memcmp(iid, &IID_IConnectionPoint, 16) == 0
+        || memcmp(iid, &IID_IUnknown, 16) == 0)
+    {
+        result = (uint32_t)(uintptr_t)self;
+    }
+    *ppv = result;
+
+    if (!result)
+        return -2147467262;  // E_NOINTERFACE
+
+    (*(void(__stdcall**)(uint32_t))(*(uint32_t*)result + 4))(result);  // AddRef
+    return 0;
+}
+
+// IDA: 0x7D96A8 — __lock_fhandle (95B, CRT internal)
+// IDA: 0x7CD9F5 — __lock (97B, CRT internal)
+// MSVC CRT multi-threaded lock management stubs.
+void __lock_fhandle(int fh) { (void)fh; }
+void __lock(int locknum)    { (void)locknum; }
+
 } // namespace gamemd
