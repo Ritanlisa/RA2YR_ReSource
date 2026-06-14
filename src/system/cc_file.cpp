@@ -330,4 +330,53 @@ int WalkLocomotionClass_QueryInterface(void* self, const void* iid, int* ppv)
     return hr;
 }
 
+// IDA: 0x429210 — HouseClass::QueryInterface_Helper (91B)
+// Checks IUnknown + IClassFactory IID (0x00000001-...).
+extern const IID IID_IClassFactory;  // {00000001-0000-0000-C000-000000000046}
+
+int HouseClass_QueryInterface_Helper(void* self, const void* iid, uint32_t* ppv)
+{
+    if (!ppv)
+        return -2147467261;  // E_POINTER
+
+    if (memcmp(iid, &IID_IClassFactory, 16) != 0
+        && memcmp(iid, &IID_IUnknown, 16) != 0)
+        return -2147467262;  // E_NOINTERFACE
+
+    *ppv = (uint32_t)(uintptr_t)self;
+    (*(void(__stdcall**)(void*))(*(uintptr_t*)self + 4))(self);  // AddRef
+    return 0;
+}
+
+// IDA: 0x691040 — ScoreFontClass dtor (96B)
+// Frees buffer (Block+3), decrements global counter, zeros global array on last.
+extern uint32_t dword_B0558C;  // IDA 0xB0558C — reference counter
+
+void* ScoreFontClass_Destructor(void* block, bool free_block)
+{
+    auto* fields = reinterpret_cast<uint32_t*>(block);
+    auto* bytes  = reinterpret_cast<uint8_t*>(block);
+
+    void* buffer = reinterpret_cast<void*>(fields[3]);
+    if (buffer && bytes[16] == 1)
+    {
+        operator delete(buffer);
+        fields[3] = 0;
+        bytes[16] = 0;
+    }
+
+    if (--dword_B0558C == 0)
+    {
+        // Zero global array from byte_B05594 to dbl_B055A8+4
+        uint8_t* p = (uint8_t*)0xB05594;
+        uint8_t* end = (uint8_t*)(0xB055A8 + 8);
+        while (p < end) { *(uint32_t*)(p-4) = 0; *p = 0; p += 8; }
+    }
+
+    if (free_block)
+        operator delete(block);
+
+    return block;
+}
+
 } // namespace gamemd
