@@ -1,7 +1,7 @@
-#include "gamemd/render/shp_render.hpp"
+#include "render/shp_render.hpp"
 #include <cstring>
 #include <cstdlib>
-#include "gamemd/core/logging.hpp"
+#include "core/logging.hpp"
 
 namespace gamemd {
 

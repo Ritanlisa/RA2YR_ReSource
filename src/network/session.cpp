@@ -1,4 +1,4 @@
-#include "gamemd/network/session.hpp"
+#include "network/session.hpp"
 
 namespace gamemd
 {

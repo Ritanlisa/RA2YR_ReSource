@@ -1,6 +1,6 @@
-#include "gamemd/structure/building.hpp"
-#include "gamemd/type/building_type.hpp"
-#include "gamemd/core/reverse_marker.hpp"
+#include "structure/building.hpp"
+#include "type/building_type.hpp"
+#include "core/reverse_marker.hpp"
 
 #include <cstring>
 
@@ -78,8 +78,8 @@ BuildingClass::BuildingClass() noexcept
     , ProductionTimer(0)
     , PlacementAllowed(false)
     , ProductionBlocked(0)
-    , m_pad_prod_1(0)
-    , m_pad_prod_2(0)
+    , padProd1(0)
+    , padProd2(0)
     , ProductionAccum(0)
     , ProductionFrame(0)
     , ProductionRate(0)
@@ -87,7 +87,7 @@ BuildingClass::BuildingClass() noexcept
     , CostAccumulator(0.0)
     , PipelineStep(0)
 {
-    m_pad_prod_3[0] = 0; m_pad_prod_3[1] = 0; m_pad_prod_3[2] = 0;
+    padProd3[0] = 0; padProd3[1] = 0; padProd3[2] = 0;
     std::memset(Anims, 0, sizeof(Anims));
     std::memset(AnimStates, 0, sizeof(AnimStates));
     std::memset(DamageFireAnims, 0, sizeof(DamageFireAnims));
@@ -102,7 +102,7 @@ int BuildingClass::Mission_Construction()
 {
     enum { INITIAL, DURING };
 
-    switch (m_mission_status)
+    switch (missionStatus)
     {
     case INITIAL:
     {
@@ -111,12 +111,12 @@ int BuildingClass::Mission_Construction()
 
         // Begin construction buildup animation
         // RADIO_BUILDING in RA1
-        SendToFirstLink(static_cast<ra2::game::RadioCommand>(
+        sendToFirstLink(static_cast<ra2::game::RadioCommand>(
             static_cast<int>(RadioCommand::RequestBeginProduction)));
 
         // TODO: owner->IsPlayerControl -> Sound_Effect(VOC_CONSTRUCTION, coord)
 
-        m_mission_status = DURING;
+        missionStatus = DURING;
         return 15;
     }
 
@@ -128,9 +128,9 @@ int BuildingClass::Mission_Construction()
 
         if (construction_done)
         {
-            SendToFirstLink(static_cast<ra2::game::RadioCommand>(
+            sendToFirstLink(static_cast<ra2::game::RadioCommand>(
                 static_cast<int>(RadioCommand::RequestEndProduction)));
-            SendToFirstLink(static_cast<ra2::game::RadioCommand>(
+            sendToFirstLink(static_cast<ra2::game::RadioCommand>(
                 static_cast<int>(RadioCommand::AnswerLeave)));
 
             // Grand Opening: post-construction unlock
@@ -142,16 +142,16 @@ int BuildingClass::Mission_Construction()
             if (Type && Type->Refinery && Type->FreeUnit)
             {
                 // auto* harv = CreateUnit(Type->FreeUnit, exit_cell, owner);
-                // harv->QueueMission(Mission::Harvest, true);
+                // harv->queueMission(Mission::Harvest, true);
             }
             //
             // Helipad: spawn free aircraft
             if (Type && Type->Helipad)
             {
-                // auto* aircraft = CreateUnit(pad_aircraft, m_location, owner);
+                // auto* aircraft = CreateUnit(pad_aircraft, location, owner);
             }
 
-            QueueMission(static_cast<ra2::game::Mission>(static_cast<int>(Mission::Guard)), true);
+            queueMission(static_cast<ra2::game::Mission>(static_cast<int>(Mission::Guard)), true);
         }
         break;
     }
@@ -169,17 +169,17 @@ int BuildingClass::Mission_Selling()
 {
     enum { INITIAL, HOLDING, DURING };
 
-    switch (m_mission_status)
+    switch (missionStatus)
     {
     case INITIAL:
     {
         BeingProduced = false;
 
         // Tell docked units to leave
-        SendToEachLink(static_cast<ra2::game::RadioCommand>(
+        sendToEachLink(static_cast<ra2::game::RadioCommand>(
             static_cast<int>(RadioCommand::AnswerLeave)));
 
-        m_mission_status = HOLDING;
+        missionStatus = HOLDING;
         return 5;
     }
 
@@ -192,7 +192,7 @@ int BuildingClass::Mission_Selling()
         // Begin deconstruction animation
         // Detach_All(true);
 
-        m_mission_status = DURING;
+        missionStatus = DURING;
         return 5;
     }
 
@@ -207,19 +207,19 @@ int BuildingClass::Mission_Selling()
             {
                 // Revert to mobile MCV, preserving health ratio
                 // auto* mcv_type = Type->UndeploysInto;
-                // int health_pct = m_health * 100 / Type->Strength;
+                // int health_pct = health * 100 / Type->Strength;
                 // auto* mcv = CreateUnit(...);
-                // mcv->m_health = health_pct * mcv_type->Strength / 100;
+                // mcv->health = health_pct * mcv_type->Strength / 100;
                 // Remove();
                 // return 5;
             }
             else
             {
-                // Refund partial cost: owner->RefundMoney(Type->GetRefund(owner, false));
+                // Refund partial cost: owner->RefundMoney(Type->getRefund(owner, false));
             }
 
             // Remove gap effect if this building generates one
-            if (m_generating_gap)
+            if (isGeneratingGap)
             {
                 DestroyGap();
             }
@@ -243,7 +243,7 @@ int BuildingClass::Mission_Repair()
 {
     enum { INITIAL, IDLE, DURING };
 
-    switch (m_mission_status)
+    switch (missionStatus)
     {
     case INITIAL:
     {
@@ -251,7 +251,7 @@ int BuildingClass::Mission_Repair()
         if (Type && Type->ConstructionYard && Factory)
         {
             // Begin_Mode(BSTATE_ACTIVE);
-            m_mission_status = DURING;
+            missionStatus = DURING;
             return 20;
         }
 
@@ -259,7 +259,7 @@ int BuildingClass::Mission_Repair()
         if (Type && (Type->UnitRepair || Type->Hospital || Type->Armory))
         {
             // Send RADIO_NEED_TO_MOVE to docked unit
-            m_mission_status = IDLE;
+            missionStatus = IDLE;
             return 20;
         }
 
@@ -267,12 +267,12 @@ int BuildingClass::Mission_Repair()
         if (Type && Type->Helipad)
         {
             // Send RADIO_NEED_TO_MOVE + RADIO_PREPARED to docked aircraft
-            m_mission_status = IDLE;
+            missionStatus = IDLE;
             return 20;
         }
 
         // Generic repair: check NeedsRepairs flag
-        m_mission_status = IDLE;
+        missionStatus = IDLE;
         return 20;
     }
 
@@ -282,7 +282,7 @@ int BuildingClass::Mission_Repair()
         {
             // Check docked unit health, begin repair when below threshold
             // Begin_Mode(BSTATE_ACTIVE);
-            m_mission_status = DURING;
+            missionStatus = DURING;
         }
         else if (Type && Type->Helipad)
         {
@@ -293,7 +293,7 @@ int BuildingClass::Mission_Repair()
             NeedsRepairs = false;
             IsBeingRepaired = true;
             // Begin_Mode(BSTATE_ACTIVE);
-            m_mission_status = DURING;
+            missionStatus = DURING;
         }
         break;
     }
@@ -324,7 +324,7 @@ int BuildingClass::Mission_Repair()
         // Generic repair: per-tick healing (RA1 Repair_AI pattern)
         if (!IsBeingRepaired)
         {
-            QueueMission(static_cast<ra2::game::Mission>(static_cast<int>(Mission::Guard)), true);
+            queueMission(static_cast<ra2::game::Mission>(static_cast<int>(Mission::Guard)), true);
             return 20;
         }
 
@@ -332,15 +332,15 @@ int BuildingClass::Mission_Repair()
         int repair_step = Type ? Type->GetRepairStep() : 5;
         int max_health = Type ? Type->Strength : 1000;
 
-        auto* owner = GetOwningHouse();
+        auto* owner = owningHouse();
         if (owner)
         {
-            m_health += repair_step;
-            if (m_health >= max_health)
+            health += repair_step;
+            if (health >= max_health)
             {
-                m_health = max_health;
+                health = max_health;
                 IsBeingRepaired = false;
-                QueueMission(static_cast<ra2::game::Mission>(static_cast<int>(Mission::Guard)), true);
+                queueMission(static_cast<ra2::game::Mission>(static_cast<int>(Mission::Guard)), true);
             }
         }
         else
@@ -364,7 +364,7 @@ int BuildingClass::Mission_Missile()
     {
         enum { DOOR_OPENING, LAUNCH_UP, DONE_LAUNCH };
 
-        switch (m_mission_status)
+        switch (missionStatus)
         {
         case DOOR_OPENING:
         {
@@ -373,8 +373,8 @@ int BuildingClass::Mission_Missile()
             // AnimClass* door_anim = new AnimClass(Type->DoorAnim, CenterCoord());
 
             // Track door animation
-            // m_mission_data = door_anim;
-            m_mission_status = LAUNCH_UP;
+            // missionData = door_anim;
+            missionStatus = LAUNCH_UP;
             return 10;
         }
 
@@ -386,13 +386,13 @@ int BuildingClass::Mission_Missile()
             // bullet->Unlimbo(launch_coord, DIR_N);
 
             // After launch, return to guard
-            QueueMission(static_cast<ra2::game::Mission>(static_cast<int>(Mission::Guard)), true);
+            queueMission(static_cast<ra2::game::Mission>(static_cast<int>(Mission::Guard)), true);
             return 10;
         }
 
         case DONE_LAUNCH:
         default:
-            QueueMission(static_cast<ra2::game::Mission>(static_cast<int>(Mission::Guard)), true);
+            queueMission(static_cast<ra2::game::Mission>(static_cast<int>(Mission::Guard)), true);
             return 10;
         }
     }
@@ -402,13 +402,13 @@ int BuildingClass::Mission_Missile()
     {
         enum { INITIAL, DOOR_OPENING, LAUNCH_UP, LAUNCH_DOWN, DONE_LAUNCH };
 
-        switch (m_mission_status)
+        switch (missionStatus)
         {
         case INITIAL:
         {
             // Start opening the silo door
             // Begin_Mode(BSTATE_ACTIVE);
-            m_mission_status = DOOR_OPENING;
+            missionStatus = DOOR_OPENING;
             return 10;
         }
 
@@ -417,9 +417,9 @@ int BuildingClass::Mission_Missile()
             // Poll for door fully open
             // if (IsReadyToCommence) {
             //     Begin_Mode(BSTATE_AUX1); // hold door open
-            //     m_mission_status = LAUNCH_UP;
+            //     missionStatus = LAUNCH_UP;
             // }
-            m_mission_status = LAUNCH_UP;
+            missionStatus = LAUNCH_UP;
             return 10;
         }
 
@@ -435,7 +435,7 @@ int BuildingClass::Mission_Missile()
             // BulletClass* nuke_down = new BulletClass(BULLET_NUKE_DOWN, nuke_target, this, 200, WARHEAD_NUKE, MPH_VERY_FAST);
             // nuke_down->Unlimbo(nuke_start, DIR_S);
 
-            m_mission_status = DONE_LAUNCH;
+            missionStatus = DONE_LAUNCH;
             return 60;
         }
 
@@ -443,7 +443,7 @@ int BuildingClass::Mission_Missile()
         {
             // Close silo door
             // Begin_Mode(BSTATE_IDLE);
-            QueueMission(static_cast<ra2::game::Mission>(static_cast<int>(Mission::Guard)), true);
+            queueMission(static_cast<ra2::game::Mission>(static_cast<int>(Mission::Guard)), true);
             return 10;
         }
 
@@ -507,7 +507,7 @@ int BuildingExitObject(BuildingClass* building, ra2::game::TechnoClass* exiting_
         {
             // Harvester exit from refinery
             // unit->Unlimbo(exit_cell, DIR_SW_X2);
-            // unit->QueueMission(Mission::Harvest, true);
+            // unit->queueMission(Mission::Harvest, true);
             return 1;
         }
         // War factory exit
@@ -531,7 +531,7 @@ void BuildingClass::Place(bool bUnk)
     ActuallyPlacedOnMap = true;
     BeingProduced = false;
 
-    auto* owner = GetOwningHouse();
+    auto* owner = owningHouse();
     if (!owner)
         return;
 
@@ -603,7 +603,7 @@ void BuildingClass::Place(bool bUnk)
 
 // IDA: 0x447AC0 -- BuildingClass::GetExitCoords (84B)
 // Computes exit cell coordinate for unit spawning from a building.
-// IDA: this+0x520 = Type, this+0x9C = m_location
+// IDA: this+0x520 = Type, this+0x9C = location
 CoordStruct* BuildingClass::GetExitCoords(CoordStruct* out, uint32_t unknown) const
 {
     (void)unknown;
@@ -616,9 +616,9 @@ CoordStruct* BuildingClass::GetExitCoords(CoordStruct* out, uint32_t unknown) co
     int fw = Type->GetFoundationWidth();
 
     // IDA: foundationW*128 - 128 + location.X, foundationH*128 - 128 + location.Y
-    out->X = m_location.X + ((fw << 7) - 128);
-    out->Y = m_location.Y + ((fh << 7) - 128);
-    out->Z = m_location.Z;
+    out->X = location.X + ((fw << 7) - 128);
+    out->Y = location.Y + ((fh << 7) - 128);
+    out->Z = location.Z;
 
     return out;
 }

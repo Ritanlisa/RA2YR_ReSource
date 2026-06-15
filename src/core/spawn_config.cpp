@@ -2,7 +2,7 @@
 #include <cstring>
 #include <cstdlib>
 
-#include "gamemd/core/spawn_config.hpp"
+#include "core/spawn_config.hpp"
 
 namespace gamemd {
 namespace {

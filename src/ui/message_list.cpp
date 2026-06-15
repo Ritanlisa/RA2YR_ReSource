@@ -1,4 +1,4 @@
-#include "gamemd/ui/message_list.hpp"
+#include "ui/message_list.hpp"
 
 namespace gamemd
 {

@@ -1,4 +1,4 @@
-#include "gamemd/ui/command_class.hpp"
+#include "ui/command_class.hpp"
 
 namespace gamemd
 {

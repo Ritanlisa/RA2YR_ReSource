@@ -1,4 +1,4 @@
-#include "gamemd/core/logging.hpp"
+#include "core/logging.hpp"
 #include <cstdio>
 #include <windows.h>
 

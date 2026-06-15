@@ -1,4 +1,4 @@
-#include "gamemd/house/side.hpp"
+#include "house/side.hpp"
 
 #include <cstring>
 
@@ -7,13 +7,13 @@ namespace gamemd
 
 SideClass::SideClass() noexcept
     : m_zero_3C(0)
-    , m_ui_name(nullptr)
-    , m_house_types(nullptr)
-    , m_house_types_count(0)
+    , uiName(nullptr)
+    , houseTypes(nullptr)
+    , houseTypesCount(0)
 {
-    std::memset(m_id, 0, sizeof(m_id));
-    std::memset(m_ui_name_label, 0, sizeof(m_ui_name_label));
-    std::memset(m_name, 0, sizeof(m_name));
+    std::memset(id, 0, sizeof(id));
+    std::memset(uiNameLabel, 0, sizeof(uiNameLabel));
+    std::memset(name, 0, sizeof(name));
 }
 
 } // namespace gamemd

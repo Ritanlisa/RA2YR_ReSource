@@ -1,7 +1,7 @@
-#include "gamemd/ui/gadget.hpp"
-#include "gamemd/render/text_render.hpp"
-#include "gamemd/render/shp_render.hpp"
-#include "gamemd/core/logging.hpp"
+#include "ui/gadget.hpp"
+#include "render/text_render.hpp"
+#include "render/shp_render.hpp"
+#include "core/logging.hpp"
 #include <cstring>
 #include <algorithm>
 
@@ -127,33 +127,33 @@ void LabelClass::Draw(DSurface* surface, TextRenderer* text)
 }
 
 DialogClass::DialogClass(int x, int y, int w, int h)
-    : m_x(x), m_y(y), m_w(w), m_h(h)
+    : x(x), y(y), w(w), h(h)
 {
 }
 
 void DialogClass::OnRender(DSurface* surface, TextRenderer* text)
 {
-    if (!m_visible || !surface) return;
+    if (!visible || !surface) return;
 
-    if (m_draw_background)
+    if (drawBackground)
         DrawBackground(surface);
 
-    for (auto* g : m_gadgets) {
+    for (auto* g : gadgets) {
         if (g && g->Visible) {
             g->Draw(surface, text);
         }
     }
 }
 
-void DialogClass::OnUpdate()
+void DialogClass::OnupdateLogic()
 {
 }
 
 bool DialogClass::OnMouseClick(int mouse_x, int mouse_y)
 {
-    if (!m_visible) return false;
+    if (!visible) return false;
 
-    for (auto* g : m_gadgets) {
+    for (auto* g : gadgets) {
         if (!g || !g->Visible || !g->Enabled) continue;
         if (mouse_x >= g->X && mouse_x < g->X + g->Width &&
             mouse_y >= g->Y && mouse_y < g->Y + g->Height) {
@@ -165,9 +165,9 @@ bool DialogClass::OnMouseClick(int mouse_x, int mouse_y)
 
 void DialogClass::OnMouseMove(int mouse_x, int mouse_y)
 {
-    if (!m_visible) return;
+    if (!visible) return;
 
-    for (auto* g : m_gadgets) {
+    for (auto* g : gadgets) {
         if (!g || !g->Visible || !g->Enabled) continue;
         bool inside = (mouse_x >= g->X && mouse_x < g->X + g->Width &&
                        mouse_y >= g->Y && mouse_y < g->Y + g->Height);
@@ -184,29 +184,29 @@ bool DialogClass::OnKeyDown(int key)
 
 void DialogClass::AddGadget(GadgetClass* gadget)
 {
-    m_gadgets.push_back(gadget);
+    gadgets.push_back(gadget);
 }
 
 void DialogClass::ClearGadgets()
 {
-    for (auto* g : m_gadgets) delete g;
-    m_gadgets.clear();
+    for (auto* g : gadgets) delete g;
+    gadgets.clear();
 }
 
 void DialogClass::SetVisible(bool visible)
 {
-    m_visible = visible;
+    visible = visible;
 }
 
 void DialogClass::DrawBackground(DSurface* surface)
 {
-    RectangleStruct bg = { m_x, m_y, m_w, m_h };
+    RectangleStruct bg = { x, y, w, h };
     surface->FillRect(bg, 0x1082);
 
-    RectangleStruct top = { m_x, m_y, m_w, 2 };
-    RectangleStruct bot = { m_x, m_y + m_h - 2, m_w, 2 };
-    RectangleStruct left= { m_x, m_y, 2, m_h };
-    RectangleStruct right={ m_x + m_w - 2, m_y, 2, m_h };
+    RectangleStruct top = { x, y, w, 2 };
+    RectangleStruct bot = { x, y + h - 2, w, 2 };
+    RectangleStruct left= { x, y, 2, h };
+    RectangleStruct right={ x + w - 2, y, 2, h };
     surface->FillRect(top,  0x39C7);
     surface->FillRect(bot,  0x39C7);
     surface->FillRect(left, 0x39C7);

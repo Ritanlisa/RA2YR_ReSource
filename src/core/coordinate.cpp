@@ -1,4 +1,4 @@
-#include "gamemd/core/coordinate.hpp"
+#include "core/coordinate.hpp"
 #include <cmath>
 
 namespace gamemd {

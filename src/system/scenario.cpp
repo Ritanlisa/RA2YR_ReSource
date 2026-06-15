@@ -1,4 +1,4 @@
-#include "gamemd/system/scenario.hpp"
+#include "system/scenario.hpp"
 
 #include <cstring>
 
@@ -8,116 +8,116 @@ namespace gamemd
 ScenarioClass* ScenarioClass::Instance = nullptr;
 
 ScenarioClass::ScenarioClass() noexcept
-    : m_home_cell(-1)
-    , m_alt_home_cell(-1)
-    , m_unique_id(0)
-    , m_difficulty_1(0)
-    , m_difficulty_2(0)
+    : homeCell(-1)
+    , altHomeCell(-1)
+    , uniqueId(0)
+    , difficulty1(0)
+    , difficulty2(0)
     , m_unknown_62C(0)
-    , m_unknown_630(0)
-    , m_start_x(0)
-    , m_start_y(0)
-    , m_width(0)
-    , m_height(0)
-    , m_number_starting_points(0)
-    , m_teams_present(false)
-    , m_num_coop_human_start_spots(0)
-    , m_mission_timer_text_csf(nullptr)
-    , m_tech_level(0)
-    , m_theater(0)
-    , m_intro(nullptr)
-    , m_brief(nullptr)
-    , m_win(nullptr)
-    , m_lose(nullptr)
-    , m_action(nullptr)
-    , m_post_score(nullptr)
-    , m_pre_map_select(nullptr)
-    , m_theme_index(-1)
-    , m_human_player_house_type_index(-1)
-    , m_carry_over_money(0.0)
-    , m_carry_over_cap(0)
-    , m_percent(0)
+    , unknown630(0)
+    , startX(0)
+    , startY(0)
+    , width(0)
+    , height(0)
+    , numberStartingPoints(0)
+    , teamsPresent(false)
+    , numCoopHumanStartSpots(0)
+    , missionTimer_text_csf(nullptr)
+    , techLevel(0)
+    , theater(0)
+    , intro(nullptr)
+    , brief(nullptr)
+    , win(nullptr)
+    , lose(nullptr)
+    , action(nullptr)
+    , postScore(nullptr)
+    , preMapSelect(nullptr)
+    , themeIndex(-1)
+    , humanPlayerHouseTypeIndex(-1)
+    , carryOverMoney(0.0)
+    , carryOverCap(0)
+    , percent(0)
     , m_unknown_34A0(0)
-    , m_free_radar(false)
-    , m_train_crate(false)
-    , m_tiberium_growth_enabled(false)
-    , m_vein_growth_enabled(false)
-    , m_ice_growth_enabled(false)
-    , m_bridge_destroyed(false)
-    , m_variables_changed(false)
-    , m_ambient_changed(false)
-    , m_end_of_game(false)
-    , m_timer_inherit(false)
-    , m_skip_score(false)
-    , m_one_time_only(false)
-    , m_skip_map_select(false)
-    , m_truck_crate(false)
-    , m_fill_silos(false)
-    , m_tiberium_death_to_visceroid(false)
-    , m_ignore_global_ai_triggers(false)
+    , freeRadar(false)
+    , trainCrate(false)
+    , storedTiberium_growth_enabled(false)
+    , veinGrowthEnabled(false)
+    , iceGrowthEnabled(false)
+    , bridgeDestroyed(false)
+    , variablesChanged(false)
+    , ambientChanged(false)
+    , endOfGame(false)
+    , timerInherit(false)
+    , skipScore(false)
+    , oneTimeOnly(false)
+    , skipMapSelect(false)
+    , truckCrate(false)
+    , fillSilos(false)
+    , storedTiberium_death_to_visceroid(false)
+    , ignoreGlobalAiTriggers(false)
     , m_unknown_bool_34B5(false)
     , m_unknown_bool_34B6(false)
     , m_unknown_bool_34B7(false)
-    , m_player_side_index(-1)
-    , m_multiplayer_only(false)
-    , m_is_random(false)
-    , m_picked_up_any_crate(false)
-    , m_campaign_index(-1)
-    , m_starting_dropships(0)
-    , m_allowable_units(nullptr)
-    , m_allowable_units_count(0)
-    , m_allowable_unit_maximums(nullptr)
-    , m_allowable_maximums_count(0)
-    , m_dropship_unit_counts(nullptr)
-    , m_dropship_counts_count(0)
-    , m_ambient_original(0)
-    , m_ambient_current(0)
-    , m_ambient_target(0)
-    , m_red(0)
-    , m_green(0)
-    , m_blue(0)
-    , m_ground(0)
-    , m_level(0)
-    , m_ion_ambient(0)
-    , m_ion_red(0)
-    , m_ion_green(0)
-    , m_ion_blue(0)
-    , m_ion_ground(0)
-    , m_ion_level(0)
-    , m_nuke_ambient(0)
-    , m_nuke_red(0)
-    , m_nuke_green(0)
-    , m_nuke_blue(0)
-    , m_nuke_ground(0)
-    , m_nuke_level(0)
-    , m_nuke_ambient_change_rate(0)
-    , m_dominator_ambient(0)
-    , m_dominator_red(0)
-    , m_dominator_green(0)
-    , m_dominator_blue(0)
-    , m_dominator_ground(0)
-    , m_dominator_level(0)
-    , m_dominator_ambient_change_rate(0)
-    , m_unknown_3598(0)
-    , m_init_time(0)
-    , m_stage(0)
+    , playerSideIndex(-1)
+    , multiplayerOnly(false)
+    , isRandom(false)
+    , pickedUpAnyCrate(false)
+    , campaignIndex(-1)
+    , startingDropships(0)
+    , allowableUnits(nullptr)
+    , allowableUnitsCount(0)
+    , allowableUnitMaximums(nullptr)
+    , allowableMaximumsCount(0)
+    , dropshipUnitCounts(nullptr)
+    , dropshipCountsCount(0)
+    , ambientOriginal(0)
+    , ambientCurrent(0)
+    , ambientTarget(0)
+    , red(0)
+    , green(0)
+    , blue(0)
+    , ground(0)
+    , level(0)
+    , ionAmbient(0)
+    , ionRed(0)
+    , ionGreen(0)
+    , ionBlue(0)
+    , ionGround(0)
+    , ionLevel(0)
+    , nukeAmbient(0)
+    , nukeRed(0)
+    , nukeGreen(0)
+    , nukeBlue(0)
+    , nukeGround(0)
+    , nukeLevel(0)
+    , nukeAmbientChangeRate(0)
+    , dominatorAmbient(0)
+    , dominatorRed(0)
+    , dominatorGreen(0)
+    , dominatorBlue(0)
+    , dominatorGround(0)
+    , dominatorLevel(0)
+    , dominatorAmbientChangeRate(0)
+    , unknown3598(0)
+    , initTime(0)
+    , stage(0)
     , m_unknown_35A2(false)
     , m_unknown_35A3(0)
-    , m_par_time_easy(0)
-    , m_par_time_medium(0)
-    , m_par_time_difficult(0)
-    , m_ls640_brief_loc_x(0)
-    , m_ls640_brief_loc_y(0)
-    , m_ls800_brief_loc_x(0)
-    , m_ls800_brief_loc_y(0)
+    , parTimeEasy(0)
+    , parTimeMedium(0)
+    , parTimeDifficult(0)
+    , ls640BriefLocX(0)
+    , ls640BriefLocY(0)
+    , ls800BriefLocX(0)
+    , ls800BriefLocY(0)
 {
-    // IDA 0x6832CF: SeedInitRNG(&m_random, 0) -- offset +536
-    m_random.Random(); // placeholder: SeedInitRNG will replace
+    // IDA 0x6832CF: SeedInitRNG(&random, 0) -- offset +536
+    random.Random(); // placeholder: SeedInitRNG will replace
 
-    // IDA 0x6832E5: m_elapsed_timer = Timer::GetTicks() -- offset +1556
-    // IDA 0x6832EB: m_elapsed_timer.end = 0 -- offset +1564
-    // IDA 0x6832F6: m_pause_timer = Timer::GetTicks() -- offset +1568
-    // IDA 0x6832FC: m_pause_timer.end = 0 -- offset +1576
+    // IDA 0x6832E5: elapsedTimer = Timer::GetTicks() -- offset +1556
+    // IDA 0x6832EB: elapsedTimer.end = 0 -- offset +1564
+    // IDA 0x6832F6: pauseTimer = Timer::GetTicks() -- offset +1568
+    // IDA 0x6832FC: pauseTimer.end = 0 -- offset +1576
 
     // IDA 0x683307: offset +4592 = 0
     // IDA 0x68330D: offset +4584 = CurrentFrame
@@ -161,51 +161,51 @@ ScenarioClass::ScenarioClass() noexcept
     // IDA 0x68340A: offset +264 = 0
 
     // IDA 0x683421: memset loop -- 702 iterations, dword_B05458 -> offset +1586
-    std::memset(m_waypoints, 0xFF, sizeof(m_waypoints)); // TODO: verify source constant
+    std::memset(waypoints, 0xFF, sizeof(waypoints)); // TODO: verify source constant
 
     // IDA 0x683435: wcscpy(this+4960, &g_TypeClass_DefaultString)
-    std::memset(m_name, 0, sizeof(m_name));
+    std::memset(name, 0, sizeof(name));
     // IDA 0x683446: wcscpy(this+5082, &g_TypeClass_DefaultString)
-    std::memset(m_ui_name_loaded, 0, sizeof(m_ui_name_loaded));
+    std::memset(uiNameLoaded, 0, sizeof(uiNameLoaded));
     // IDA 0x683475: strcpy(this+4700, &g_INI_DefaultBuffer)
-    std::memset(m_file_name, 0, sizeof(m_file_name));
+    std::memset(fileName, 0, sizeof(fileName));
     // IDA 0x68349D: strcpy(this+7248, &g_INI_DefaultBuffer)
-    std::memset(m_briefing, 0, sizeof(m_briefing));
+    std::memset(briefing, 0, sizeof(briefing));
     // IDA 0x6834BF: strcpy(this+5050, &g_INI_DefaultBuffer)
-    std::memset(m_ui_name, 0, sizeof(m_ui_name));
+    std::memset(uiName, 0, sizeof(uiName));
     // IDA 0x6834CF: wcscpy(this+5200, &g_TypeClass_DefaultString)
 
     // IDA 0x6834E2-0x683502: HouseClass::UpdateAllTypes loop (50 iterations)
     for (int i = 0; i < 50; ++i) {
-        m_global_variables[i].m_name[0] = '\0'; // offset -40 from m_value
-        m_global_variables[i].m_value = '\0';
+        globalVariables[i].name[0] = '\0'; // offset -40 from unitValue
+        globalVariables[i].unitValue = '\0';
     }
 
     // IDA 0x68350F-0x68352F: TriggerActionQueue::ProcessAll loop (100 iterations)
     for (int i = 0; i < 100; ++i) {
-        m_local_variables[i].m_name[0] = '\0'; // offset -40 from m_value
-        m_local_variables[i].m_value = '\0';
+        localVariables[i].name[0] = '\0'; // offset -40 from unitValue
+        localVariables[i].unitValue = '\0';
     }
 
     // IDA 0x683534-0x683549: zero 4 dwords at +13454
-    m_view1 = {};
-    m_view2 = {};
-    m_view3 = {};
-    m_view4 = {};
+    view1 = {};
+    view2 = {};
+    view3 = {};
+    view4 = {};
 }
 
 bool ScenarioClass::IsDefinedWaypoint(int idx)
 {
     if (idx < 0 || idx >= 702)
         return false;
-    return m_waypoints[idx].X != -1 || m_waypoints[idx].Y != -1;
+    return waypoints[idx].X != -1 || waypoints[idx].Y != -1;
 }
 
 CellStruct* ScenarioClass::GetWaypointCoords(CellStruct* dest, int idx)
 {
     if (dest && idx >= 0 && idx < 702)
     {
-        *dest = m_waypoints[idx];
+        *dest = waypoints[idx];
     }
     else if (dest)
     {

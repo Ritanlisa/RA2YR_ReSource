@@ -1,10 +1,10 @@
-#include "gamemd/system/file_system.hpp"
-#include "gamemd/system/mix_file.hpp"
-#include "gamemd/system/convert_class.hpp"
-#include "gamemd/render/surface.hpp"
-#include "gamemd/render/palette.hpp"
-#include "gamemd/system/xcc_names.hpp"
-#include "gamemd/core/logging.hpp"
+#include "system/file_system.hpp"
+#include "system/mix_file.hpp"
+#include "system/convert_class.hpp"
+#include "render/surface.hpp"
+#include "render/palette.hpp"
+#include "system/xcc_names.hpp"
+#include "core/logging.hpp"
 
 #include <cstdio>
 #include <cstring>

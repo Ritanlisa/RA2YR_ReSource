@@ -1,5 +1,5 @@
 // RawFileClass -- minimal implementations for unresolved virtual functions
-#include "gamemd/system/file_class.hpp"
+#include "system/file_class.hpp"
 #include <cstring>
 
 namespace gamemd

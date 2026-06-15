@@ -1,9 +1,9 @@
-#include "gamemd/object/object.hpp"
-#include "gamemd/type/object_type.hpp"
+#include "object/object.hpp"
+#include "type/object_type.hpp"
 
 #include <cstring>
 #include <cmath>
-#include "gamemd/core/reverse_marker.hpp"
+#include "core/reverse_marker.hpp"
 
 namespace ra2 {
 namespace game {
@@ -16,16 +16,16 @@ constexpr uint32_t kObjectFlag = 0x2u;
 
 double ObjectClass::GetHealthPercentage() const
 {
-    return m_health > 0 ? static_cast<double>(m_health) / reinterpret_cast<gamemd::ObjectTypeClass*>(GetType())->Strength : 0.0;
+    return health > 0 ? static_cast<double>(health) / reinterpret_cast<gamemd::ObjectTypeClass*>(GetType())->Strength : 0.0;
 }
 
 bool ObjectClass::Put(const CoordStruct& coords, unsigned int face_dir)
 {
-    if (m_in_limbo)
+    if (inLimbo)
         return false;
 
-    m_is_on_map = true;
-    m_in_limbo = false;
+    isOnMap = true;
+    inLimbo = false;
     SetLocation(coords);
 
     auto* cell = GetCell();
@@ -37,43 +37,43 @@ bool ObjectClass::Put(const CoordStruct& coords, unsigned int face_dir)
 
 // IDA: 0x5F44A0 -- ObjectClass::Remove (123B)
 // Removes object from selection manager and resets scroll anchor
-// Checks this+0x83 (m_is_selected), not m_is_on_map
+// Checks this+0x83 (isSelected), not isOnMap
 bool ObjectClass::Remove()
 {
-    // IDA: if (*(this+0x83)) -- m_is_selected check
-    if (!m_is_selected)
+    // IDA: if (*(this+0x83)) -- isSelected check
+    if (!isSelected)
         return false;
 
     // IDA: find index in ObjectClass_CurrentObjects
     // IDA: remove from g_SelectionManager by shifting entries down
-    // IDA: *(this+0x83) = 0 -- m_is_selected = false
-    m_is_selected = false;
+    // IDA: *(this+0x83) = 0 -- isSelected = false
+    isSelected = false;
 
     // IDA: if MapClass::GetScrollMode == this -- SetScrollMode(0)
     // This deselects the scroll anchor if this object was it
 
     // Also perform standard removal -- unmark occupancy, set limbo
-    UnmarkAllOccupationBits(m_location);
-    m_is_on_map = false;
-    m_in_limbo = true;
+    UnmarkAllOccupationBits(location);
+    isOnMap = false;
+    inLimbo = true;
 
     return true;
 }
 
 // IDA: 0x5F65F0 -- ObjectClass::Destroy (146B)
 // Cleanup chain: audio -- TechnoClass::CleanupAll -- AnnounceExpiredPointer
-// Then sets m_is_alive=false and registers for disk laser cleanup
+// Then sets isAliveFlag=false and registers for disk laser cleanup
 void ObjectClass::Destroy()
 {
-    // IDA: if (*(this+0x38)) -- m_attached_bomb cleanup
+    // IDA: if (*(this+0x38)) -- attachedBomb cleanup
     // ObjectClass::CleanupAudioAndRefs(v2)
 
-    // IDA: if (m_abstract_flags & 1) -- TechnoClass::CleanupAll(this, 0)
+    // IDA: if (abstractFlags & 1) -- TechnoClass::CleanupAll(this, 0)
     // AbstractClass::AnnounceExpiredPointer(this, 1)
     // vtable[53] cleanup virtual
 
-    // IDA: *(this+0x90) = 0 -- m_is_alive = false
-    m_is_alive = false;
+    // IDA: *(this+0x90) = 0 -- isAliveFlag = false
+    isAliveFlag = false;
 
     // Remove from map
     Remove();
@@ -89,10 +89,10 @@ void ObjectClass::RestoreMission(Mission mission)
 DamageState ObjectClass::ReceiveDamage(int* damage, int distance_from_epicenter, WarheadTypeClass* wh,
     ObjectClass* attacker, bool ignore_defenses, bool prevent_passenger_escape, HouseClass* attacking_house)
 {
-    if (!m_is_alive || !m_is_on_map)
+    if (!isAliveFlag || !isOnMap)
         return static_cast<DamageState>(0);
 
-    if (m_health <= 0)
+    if (health <= 0)
     {
         Destroy();
         return static_cast<DamageState>(0);
@@ -102,12 +102,12 @@ DamageState ObjectClass::ReceiveDamage(int* damage, int distance_from_epicenter,
     {
         // TODO: full warhead-vs-armor calculation
         int actual_damage = *damage;
-        m_health -= actual_damage;
-        m_estimated_health = m_health;
+        health -= actual_damage;
+        estimatedHealth = health;
 
-        if (m_health <= 0)
+        if (health <= 0)
         {
-            m_health = 0;
+            health = 0;
             Destroy();
             if (attacker)
                 RegisterDestruction(reinterpret_cast<TechnoClass*>(attacker));
@@ -123,7 +123,7 @@ DamageState ObjectClass::ReceiveDamage(int* damage, int distance_from_epicenter,
 void ObjectClass::Scatter(const CoordStruct& coords, bool ignore_mission, bool ignore_destination)
 {
     // RA1 scatter: move away from threat in random direction
-    if (!m_is_alive || !m_is_on_map)
+    if (!isAliveFlag || !isOnMap)
         return;
 
     // TODO: calculate scatter destination based on threat direction
@@ -162,8 +162,8 @@ int ObjectClass::DistanceFrom(AbstractClass* that) const
     if (!that)
         return 0;
 
-    CoordStruct my_coords = GetCoords();
-    CoordStruct their_coords = that->GetCoords();
+    CoordStruct my_coords = fetchCoordinatesHere();
+    CoordStruct their_coords = that->fetchCoordinatesHere();
 
     int dx = my_coords.X - their_coords.X;
     int dy = my_coords.Y - their_coords.Y;
@@ -184,37 +184,37 @@ Move ObjectClass::IsCellOccupied(CellClass* dest_cell, int facing, int level, Ce
 
 int ObjectClass::GetHeight() const
 {
-    return m_location.Z;
+    return location.Z;
 }
 
 void ObjectClass::SetHeight(uint32_t height)
 {
-    m_location.Z = static_cast<int>(height);
+    location.Z = static_cast<int>(height);
 }
 
 int ObjectClass::GetZ() const
 {
-    return m_location.Z;
+    return location.Z;
 }
 
 bool ObjectClass::IsActive() const
 {
-    return m_is_alive && m_is_on_map && !m_in_limbo;
+    return isAliveFlag && isOnMap && !inLimbo;
 }
 
 bool ObjectClass::IsControllable() const
 {
-    return m_is_on_map && m_is_alive;
+    return isOnMap && isAliveFlag;
 }
 
 bool ObjectClass::IsSurfaced()
 {
-    return m_is_on_map;
+    return isOnMap;
 }
 
 bool ObjectClass::IsStrange() const
 {
-    return m_is_a_bomb || m_is_falling_down;
+    return isBomb || isFallingDown;
 }
 
 uint32_t ObjectClass::GetPointsValue() const
@@ -224,12 +224,12 @@ uint32_t ObjectClass::GetPointsValue() const
 
 bool ObjectClass::CanBeRepaired() const
 {
-    return m_health > 0;
+    return health > 0;
 }
 
 bool ObjectClass::CanBeSold() const
 {
-    return m_health > 0 && !m_in_limbo;
+    return health > 0 && !inLimbo;
 }
 
 // IDA: 0x70E2B0 -- TechnoClass::IronCurtain (80B)
@@ -238,11 +238,11 @@ DamageState ObjectClass::IronCurtain(int duration, HouseClass* source, bool forc
 {
     (void)source;
 
-    // IDA: *(this+99) = CurrentFrame -- m_iron_curtain_timer.data[0] at +0x18C
+    // IDA: *(this+99) = CurrentFrame -- ironCurtainTimer.data[0] at +0x18C
     // IDA: *(this+100) = v5 -- duration stored in timer data[1] at +0x190
-    // IDA: *(this+105) = 0 -- m_iron_tint_stage at +0x1A4
+    // IDA: *(this+105) = 0 -- ironTintStage at +0x1A4
     // IDA: *(this+101) = a2 -- duration field at +0x194
-    // IDA: *(this+113) = a4 ? 1 : 0 -- m_force_shielded at +0x1C4
+    // IDA: *(this+113) = a4 ? 1 : 0 -- forceShielded at +0x1C4
 
     // TODO: implement timer fields when TimerStruct layout is confirmed
     (void)duration;
@@ -258,15 +258,15 @@ bool ObjectClass::IsIronCurtained() const
 
 void ObjectClass::Reveal()
 {
-    m_is_visible = true;
+    isVisible = true;
 }
 
 // IDA: 0x5F4D10 -- ObjectClass::MarkForRedraw (30B)
-// If not already marked, sets m_needs_redraw=true and calls MapClass::MarkForRedraw
+// If not already marked, sets needsRedraw=true and calls MapClass::MarkForRedraw
 void ObjectClass::MarkForRedraw()
 {
-    if (!m_needs_redraw) {  // IDA: if (!*(this+0x80))
-        m_needs_redraw = true;  // IDA: *(this+0x80) = 1
+    if (!needsRedraw) {  // IDA: if (!*(this+0x80))
+        needsRedraw = true;  // IDA: *(this+0x80) = 1
         // IDA: MapClass::MarkForRedraw(&MapClass_Instance, 0);
     }
 }
@@ -275,56 +275,56 @@ void ObjectClass::Flash(int duration)
 {
     // Toggle selected flash state
     (void)duration;
-    m_needs_redraw = true;
+    needsRedraw = true;
 }
 
 bool ObjectClass::DiscoveredBy(HouseClass* house)
 {
     (void)house;
-    m_is_visible = true;
+    isVisible = true;
     return true;
 }
 
 // IDA: 0x5F3900 -- ObjectClass::ctor
 // Verified: AbstractClass_Constructor at 0x410170 called first, then 2 AudioController::Init
 ObjectClass::ObjectClass() noexcept
-    : m_unknown_24(0)               // +0x24 = 0 (IDA mov [esi+0x24], 0)
-    , m_unknown_28(0)               // +0x28 = 0 (IDA mov [esi+0x28], 0)
-    , m_fall_rate(0)                // +0x2C = 0 (IDA mov [esi+0x2C], 0)
-    , m_next_object(nullptr)        // +0x30 = 0 (IDA mov [esi+0x30], 0)
-    , m_attached_tag(nullptr)       // +0x34 = 0 (IDA mov [esi+0x34], 0)
-    , m_attached_bomb(nullptr)      // +0x38 = 0 (IDA mov [esi+0x38], 0)
-    // m_ambient_sound_controller at +0x3C (zeroed + AudioController_Init call)
-    // m_custom_sound_controller at +0x50 (zeroed + AudioController_Init call)
-    , m_custom_sound(static_cast<int32_t>(-1))  // +0x64 = -1 (IDA or ecx, 0xFFFFFFFF)
-    , m_bomb_visible(false)         // +0x68 = 0 (IDA mov byte [esi+0x68], 0)
-    , m_health(255)                 // +0x6C = 255 (IDA mov [esi+0x6C], 0xFF)
-    , m_estimated_health(255)       // +0x70 = 255 (IDA mov [esi+0x70], 0xFF)
-    , m_is_on_map(false)            // +0x74 = 0 (IDA mov byte [esi+0x74], 0)
-    , m_unknown_78(1)               // +0x78 = 1 (IDA mov [esi+0x78], 1)
-    , m_unknown_7C(0)               // +0x7C = 0 (IDA mov [esi+0x7C], 0)
-    , m_needs_redraw(false)         // +0x80 = 0 (IDA mov byte [esi+0x80], 0)
-    , m_in_limbo(true)              // +0x81 = 1 (IDA mov byte [esi+0x81], 1)
-    , m_in_open_topped_transport(false)  // +0x82 = 0 (IDA mov byte [esi+0x82], 0)
-    , m_is_selected(false)          // +0x83 = 0 (IDA mov byte [esi+0x83], 0)
-    , m_has_parachute(false)        // +0x84 = 0 (IDA mov byte [esi+0x84], 0)
-    , m_parachute(nullptr)          // +0x88 = 0 (IDA mov [esi+0x88], 0)
-    , m_on_bridge(false)            // +0x8C = 0 (IDA mov byte [esi+0x8C], 0)
-    , m_is_falling_down(false)      // +0x8D = 0 (IDA mov byte [esi+0x8D], 0)
-    , m_was_falling_down(false)     // +0x8E = 0 (IDA mov byte [esi+0x8E], 0)
-    , m_is_a_bomb(false)            // +0x8F = 0 (IDA mov byte [esi+0x8F], 0)
-    , m_is_alive(true)              // +0x90 = 1 (IDA mov byte [esi+0x90], 1)
-    , m_last_layer(static_cast<uint32_t>(-1))  // +0x94 = -1 (IDA mov [esi+0x94], -1)
-    , m_is_in_logic(false)          // +0x98 = 0 (IDA mov byte [esi+0x98], 0)
-    , m_is_visible(true)            // +0x99 = 1 (IDA mov byte [esi+0x99], 1)
-    , m_location{}                  // +0x9C = init from dword_AC1380/84/88
-    , m_line_trailer(nullptr)       // +0xA8 = 0 (IDA mov [esi+0xA8], 0)
+    : objectTypeFlags(0)               // +0x24 = 0 (IDA mov [esi+0x24], 0)
+    , owningHouseIndex(0)               // +0x28 = 0 (IDA mov [esi+0x28], 0)
+    , fallRate(0)                // +0x2C = 0 (IDA mov [esi+0x2C], 0)
+    , nextObject(nullptr)        // +0x30 = 0 (IDA mov [esi+0x30], 0)
+    , attachedTag(nullptr)       // +0x34 = 0 (IDA mov [esi+0x34], 0)
+    , attachedBomb(nullptr)      // +0x38 = 0 (IDA mov [esi+0x38], 0)
+    // ambientSoundController at +0x3C (zeroed + AudioController_Init call)
+    // customSound_controller at +0x50 (zeroed + AudioController_Init call)
+    , customSound(static_cast<int32_t>(-1))  // +0x64 = -1 (IDA or ecx, 0xFFFFFFFF)
+    , bombVisible(false)         // +0x68 = 0 (IDA mov byte [esi+0x68], 0)
+    , health(255)                 // +0x6C = 255 (IDA mov [esi+0x6C], 0xFF)
+    , estimatedHealth(255)       // +0x70 = 255 (IDA mov [esi+0x70], 0xFF)
+    , isOnMap(false)            // +0x74 = 0 (IDA mov byte [esi+0x74], 0)
+    , spawnStatus(1)               // +0x78 = 1 (IDA mov [esi+0x78], 1)
+    , visibilityFlags(0)               // +0x7C = 0 (IDA mov [esi+0x7C], 0)
+    , needsRedraw(false)         // +0x80 = 0 (IDA mov byte [esi+0x80], 0)
+    , inLimbo(true)              // +0x81 = 1 (IDA mov byte [esi+0x81], 1)
+    , inOpenToppedTransport(false)  // +0x82 = 0 (IDA mov byte [esi+0x82], 0)
+    , isSelected(false)          // +0x83 = 0 (IDA mov byte [esi+0x83], 0)
+    , hasParachute(false)        // +0x84 = 0 (IDA mov byte [esi+0x84], 0)
+    , parachute(nullptr)          // +0x88 = 0 (IDA mov [esi+0x88], 0)
+    , onBridge(false)            // +0x8C = 0 (IDA mov byte [esi+0x8C], 0)
+    , isFallingDown(false)      // +0x8D = 0 (IDA mov byte [esi+0x8D], 0)
+    , wasFallingDown(false)     // +0x8E = 0 (IDA mov byte [esi+0x8E], 0)
+    , isBomb(false)            // +0x8F = 0 (IDA mov byte [esi+0x8F], 0)
+    , isAliveFlag(true)              // +0x90 = 1 (IDA mov byte [esi+0x90], 1)
+    , lastLayer(static_cast<uint32_t>(-1))  // +0x94 = -1 (IDA mov [esi+0x94], -1)
+    , isInLogic(false)          // +0x98 = 0 (IDA mov byte [esi+0x98], 0)
+    , isVisible(true)            // +0x99 = 1 (IDA mov byte [esi+0x99], 1)
+    , location{}                  // +0x9C = init from dword_AC1380/84/88
+    , lineTrailer(nullptr)       // +0xA8 = 0 (IDA mov [esi+0xA8], 0)
 {
     // IDA: AudioController::Init called at +0x3C and +0x50
-    std::memset(&m_ambient_sound_controller, 0, sizeof(m_ambient_sound_controller));
-    std::memset(&m_custom_sound_controller, 0, sizeof(m_custom_sound_controller));
+    std::memset(&ambientSoundController, 0, sizeof(ambientSoundController));
+    std::memset(&customSound_controller, 0, sizeof(customSound_controller));
 
-    m_abstract_flags |= kObjectFlag;
+    abstractFlags |= kObjectFlag;
 }
 
 // ============================================================

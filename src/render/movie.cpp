@@ -1,8 +1,8 @@
-#include "gamemd/render/movie.hpp"
-#include "gamemd/render/surface.hpp"
-#include "gamemd/system/file_system.hpp"
-#include "gamemd/misc/audio.hpp"
-#include "gamemd/core/logging.hpp"
+#include "render/movie.hpp"
+#include "render/surface.hpp"
+#include "system/file_system.hpp"
+#include "misc/audio.hpp"
+#include "core/logging.hpp"
 
 #include <windows.h>
 #include <ddraw.h>
@@ -170,23 +170,23 @@ bool MoviePlayer::PlayMovie(const char* filename,
 
     LOG_INFO("Movie_Play: '%s' (stretch=%d, show_ui=%d)", filename, stretch_to_fit, show_ui);
 
-    m_current_movie = CreateMovie(filename, hidden_surface);
-    if (!m_current_movie) {
+    currentMovie = CreateMovie(filename, hidden_surface);
+    if (!currentMovie) {
         LOG_TRACE("Movie_Play: failed to create movie handle");
         return false;
     }
 
-    int movie_w = m_current_movie->GetWidth();
-    int movie_h = m_current_movie->GetHeight();
+    int movie_w = currentMovie->GetWidth();
+    int movie_h = currentMovie->GetHeight();
     LOG_INFO("Movie: %dx%d, stretching to fit", movie_w, movie_h);
 
     // Main playback loop -- advance frames until complete
-    while (m_current_movie->IsPlaying()) {
-        if (!m_current_movie->AdvanceFrame())
+    while (currentMovie->IsPlaying()) {
+        if (!currentMovie->AdvanceFrame())
             break;
 
         if (hidden_surface) {
-            m_current_movie->RenderFrame(hidden_surface);
+            currentMovie->RenderFrame(hidden_surface);
         }
 
         // In the original, this is where FramePresent is called
@@ -199,10 +199,10 @@ bool MoviePlayer::PlayMovie(const char* filename,
 
 void MoviePlayer::StopMovie()
 {
-    if (m_current_movie) {
-        m_current_movie->Stop();
-        delete m_current_movie;
-        m_current_movie = nullptr;
+    if (currentMovie) {
+        currentMovie->Stop();
+        delete currentMovie;
+        currentMovie = nullptr;
     }
 }
 
@@ -296,7 +296,7 @@ BinkMovieHandle::~BinkMovieHandle()
 
 bool BinkMovieHandle::OpenFromFile(const char* filename, DSurface* render_target)
 {
-    m_render_target = render_target;
+    renderTarget = render_target;
 
     if (!BinkInit()) {
         LOG_TRACE("BinkMovie::OpenFromFile: binkw32.dll not available");
@@ -304,153 +304,153 @@ bool BinkMovieHandle::OpenFromFile(const char* filename, DSurface* render_target
     }
 
     // Direct file open -- matches original sub_432750: BinkOpen(filename, 0)
-    m_bink_handle = s_BinkOpen(filename, 0);
-    if (!m_bink_handle) {
+    binkHandle = s_BinkOpen(filename, 0);
+    if (!binkHandle) {
         LOG_TRACE("BinkMovie::OpenFromFile: _BinkOpen('%s') failed", filename);
         return false;
     }
 
     // Read dimensions from BINK handle (first 3 DWORDs: Width, Height, Frames)
-    uint32_t* hdr = (uint32_t*)m_bink_handle;
-    m_width  = hdr[0];
-    m_height = hdr[1];
-    m_total_frames = hdr[2];
-    m_current_frame = 0;
+    uint32_t* hdr = (uint32_t*)binkHandle;
+    width  = hdr[0];
+    height = hdr[1];
+    totalFrames = hdr[2];
+    currentFrame = 0;
 
     // Query surface pixel format
     if (render_target && render_target->Surface && s_BinkDDSurfaceType) {
-        m_surface_flags = s_BinkDDSurfaceType(render_target->Surface);
-        LOG_DEBUG("BinkMovie: _BinkDDSurfaceType returned fmt_code=%d", m_surface_flags);
-        if (m_surface_flags < 0 || m_surface_flags > 15) {
-            m_surface_flags = 10;
+        surfaceFlags = s_BinkDDSurfaceType(render_target->Surface);
+        LOG_DEBUG("BinkMovie: _BinkDDSurfaceType returned fmt_code=%d", surfaceFlags);
+        if (surfaceFlags < 0 || surfaceFlags > 15) {
+            surfaceFlags = 10;
             LOG_DEBUG("BinkMovie: invalid code, defaulting to 10 (RGB565)");
         }
     } else {
-        m_surface_flags = 10;
+        surfaceFlags = 10;
     }
 
-    m_playing = true;
+    playing = true;
     LOG_INFO("BinkMovie::OpenFromFile: %dx%d, %d frames, fmt_code=%d",
-        m_width, m_height, m_total_frames, m_surface_flags);
+        width, height, totalFrames, surfaceFlags);
 
     if (s_BinkSetVolume) {
-        s_BinkSetVolume(m_bink_handle, s_binkVolume);
+        s_BinkSetVolume(binkHandle, s_binkVolume);
     }
     return true;
 }
 
 bool BinkMovieHandle::OpenFromMemory(const void* data, int size, DSurface* render_target)
 {
-    m_render_target = render_target;
-    m_data_size = size;
+    renderTarget = render_target;
+    dataSize = size;
 
     auto* hdr = static_cast<const BinkFileHeader*>(data);
-    m_width  = hdr->width;
-    m_height = hdr->height;
-    m_total_frames = hdr->num_frames;
-    m_current_frame = 0;
+    width  = hdr->width;
+    height = hdr->height;
+    totalFrames = hdr->num_frames;
+    currentFrame = 0;
 
     if (!BinkInit()) {
-        m_memory_buffer = const_cast<void*>(data);
-        m_memory_owned  = true;
-        m_playing = true;
-        LOG_INFO("BinkMovie: %dx%d, %d frames (software decode mode)", m_width, m_height, hdr->num_frames);
+        memoryBuffer = const_cast<void*>(data);
+        memoryOwned  = true;
+        playing = true;
+        LOG_INFO("BinkMovie: %dx%d, %d frames (software decode mode)", width, height, hdr->num_frames);
         return true;
     }
 
     // Write BINK data to CWD matching original: sub_432750 opens from game dir
-    m_temp_path = _strdup("_ra2yr_bink_tmp.bik");
+    tempPath = _strdup("_ra2yr_bink_tmp.bik");
     FILE* fp = nullptr;
-    if (fopen_s(&fp, m_temp_path, "wb") == 0 && fp) {
+    if (fopen_s(&fp, tempPath, "wb") == 0 && fp) {
         fwrite(data, 1, size, fp);
         fclose(fp);
     } else {
-        LOG_TRACE("BinkMovie: failed to write temp file '%s'", m_temp_path);
+        LOG_TRACE("BinkMovie: failed to write temp file '%s'", tempPath);
         return false;
     }
 
     // Open BINK: sub_432750 -- BinkOpen(filename, 0)
-    m_bink_handle = s_BinkOpen(m_temp_path, 0);
-    if (!m_bink_handle) {
-        LOG_TRACE("BinkMovie: _BinkOpen('%s') failed", m_temp_path);
+    binkHandle = s_BinkOpen(tempPath, 0);
+    if (!binkHandle) {
+        LOG_TRACE("BinkMovie: _BinkOpen('%s') failed", tempPath);
         return false;
     }
 
     // Query surface pixel format code from BinkDDSurfaceType
     if (render_target && render_target->Surface && s_BinkDDSurfaceType) {
-        m_surface_flags = s_BinkDDSurfaceType(render_target->Surface);
-        LOG_DEBUG("BinkMovie: _BinkDDSurfaceType returned format code %d", m_surface_flags);
-        if (m_surface_flags < 0 || m_surface_flags > 15) {
-            m_surface_flags = 10;  // default RGB565
+        surfaceFlags = s_BinkDDSurfaceType(render_target->Surface);
+        LOG_DEBUG("BinkMovie: _BinkDDSurfaceType returned format code %d", surfaceFlags);
+        if (surfaceFlags < 0 || surfaceFlags > 15) {
+            surfaceFlags = 10;  // default RGB565
             LOG_DEBUG("BinkMovie: invalid code, defaulting to 10 (RGB565)");
         }
     } else {
-        m_surface_flags = 10;
+        surfaceFlags = 10;
     }
 
-    m_playing = true;
+    playing = true;
     LOG_INFO("BinkMovie: %dx%d, %d frames, surface_flags=0x%08X (binkw32.dll)",
-        m_width, m_height, hdr->num_frames, m_surface_flags);
+        width, height, hdr->num_frames, surfaceFlags);
 
     if (s_BinkSetVolume) {
-        s_BinkSetVolume(m_bink_handle, s_binkVolume);
+        s_BinkSetVolume(binkHandle, s_binkVolume);
     }
     return true;
 }
 
 bool BinkMovieHandle::AdvanceFrame()
 {
-    if (!m_playing || !m_bink_handle) return false;
+    if (!playing || !binkHandle) return false;
 
     // Frame pacing: BinkWait blocks until next frame is due for display
     // Returns 0 = frame ready, 1 = not yet time
-    if (s_BinkWait && s_BinkWait(m_bink_handle)) return false;
+    if (s_BinkWait && s_BinkWait(binkHandle)) return false;
 
-    int doFrameResult = s_BinkDoFrame(m_bink_handle);
+    int doFrameResult = s_BinkDoFrame(binkHandle);
     if (doFrameResult != 0) {
         if (s_BinkGoto) {
-            int gotoResult = s_BinkGoto(m_bink_handle, 0, 0);
-            if (gotoResult < 0) { m_playing = false; return false; }
-            m_current_frame = 0;
+            int gotoResult = s_BinkGoto(binkHandle, 0, 0);
+            if (gotoResult < 0) { playing = false; return false; }
+            currentFrame = 0;
             LOG_DEBUG("BINK: BinkGoto(0) looped");
-            doFrameResult = s_BinkDoFrame(m_bink_handle);
-            if (doFrameResult != 0) { m_playing = false; return false; }
+            doFrameResult = s_BinkDoFrame(binkHandle);
+            if (doFrameResult != 0) { playing = false; return false; }
         } else {
-            m_playing = false;
+            playing = false;
             return false;
         }
     }
-    if (s_BinkWait) s_BinkWait(m_bink_handle);
-    if (s_BinkNextFrame) s_BinkNextFrame(m_bink_handle);
-    ++m_current_frame;
+    if (s_BinkWait) s_BinkWait(binkHandle);
+    if (s_BinkNextFrame) s_BinkNextFrame(binkHandle);
+    ++currentFrame;
     return true;
 }
 
 void BinkMovieHandle::RenderFrame(DSurface* target)
 {
-    if (!target || !m_playing) return;
+    if (!target || !playing) return;
 
-    if (m_bink_handle && s_BinkCopyToBuffer) {
+    if (binkHandle && s_BinkCopyToBuffer) {
         DDSURFACEDESC2 desc = {};
         desc.dwSize = sizeof(desc);
         if (SUCCEEDED(target->Surface->Lock(nullptr, &desc, DDLOCK_WAIT, nullptr))) {
-            if (s_BinkWait) s_BinkWait(m_bink_handle);
-            s_BinkCopyToBuffer(m_bink_handle, desc.lpSurface,
-                               desc.lPitch, m_height, 0, 0,
-                               m_surface_flags);
+            if (s_BinkWait) s_BinkWait(binkHandle);
+            s_BinkCopyToBuffer(binkHandle, desc.lpSurface,
+                               desc.lPitch, height, 0, 0,
+                               surfaceFlags);
             target->Surface->Unlock(nullptr);
         }
     }
 
     // Software fallback
-    if (m_memory_buffer) {
+    if (memoryBuffer) {
         DDSURFACEDESC2 desc = {};
         desc.dwSize = sizeof(desc);
         if (SUCCEEDED(target->Surface->Lock(nullptr, &desc, DDLOCK_WAIT, nullptr))) {
             auto* buf = static_cast<uint16_t*>(desc.lpSurface);
             int pitch = desc.lPitch / 2;
-            for (int y = 0; y < m_height && y < 600; y++)
-                for (int x = 0; x < m_width && x < 800; x++)
+            for (int y = 0; y < height && y < 600; y++)
+                for (int x = 0; x < width && x < 800; x++)
                     buf[y * pitch + x] = 0x39E7;
             target->Surface->Unlock(nullptr);
         }
@@ -460,35 +460,35 @@ void BinkMovieHandle::RenderFrame(DSurface* target)
 void BinkMovieHandle::RenderFrameRaw(void* locked_buffer, int pitch_bytes, int height,
                                      int dest_x, int dest_y)
 {
-    if (!locked_buffer || !m_playing) return;
+    if (!locked_buffer || !playing) return;
 
-    if (m_bink_handle && s_BinkCopyToBuffer) {
-        if (s_BinkWait) s_BinkWait(m_bink_handle);
-        s_BinkCopyToBuffer(m_bink_handle, locked_buffer,
+    if (binkHandle && s_BinkCopyToBuffer) {
+        if (s_BinkWait) s_BinkWait(binkHandle);
+        s_BinkCopyToBuffer(binkHandle, locked_buffer,
                            pitch_bytes, height, dest_x, dest_y,
-                           m_surface_flags);
+                           surfaceFlags);
     }
     // _BinkNextFrame is called in AdvanceFrame after _BinkDoFrame (sub_432E40 order)
 }
 
 void BinkMovieHandle::Stop()
 {
-    m_playing = false;
-    if (m_bink_handle && s_BinkClose) {
-        s_BinkClose(m_bink_handle);
+    playing = false;
+    if (binkHandle && s_BinkClose) {
+        s_BinkClose(binkHandle);
     }
-    m_bink_handle = nullptr;
+    binkHandle = nullptr;
 
-    if (m_memory_owned && m_memory_buffer) {
-        free(m_memory_buffer);
+    if (memoryOwned && memoryBuffer) {
+        free(memoryBuffer);
     }
-    m_memory_buffer = nullptr;
+    memoryBuffer = nullptr;
 
     // Clean up temp file (in CWD, not system temp)
-    if (m_temp_path) {
-        DeleteFileA(m_temp_path);
-        free(m_temp_path);
-        m_temp_path = nullptr;
+    if (tempPath) {
+        DeleteFileA(tempPath);
+        free(tempPath);
+        tempPath = nullptr;
     }
 }
 
@@ -499,42 +499,42 @@ VQMovieHandle::~VQMovieHandle()
 
 bool VQMovieHandle::OpenFromMemory(const void* data, int size)
 {
-    m_vqa_data  = const_cast<void*>(data);
-    m_data_size = size;
+    vqaData  = const_cast<void*>(data);
+    dataSize = size;
 
     auto* hdr = static_cast<const VQAFileHeader*>(data);
-    m_width  = hdr->width;
-    m_height = hdr->height;
-    m_current_frame = 0;
-    m_playing = true;
+    width  = hdr->width;
+    height = hdr->height;
+    currentFrame = 0;
+    playing = true;
 
-    LOG_INFO("VQMovie: %dx%d, %d frames", m_width, m_height, hdr->num_frames);
+    LOG_INFO("VQMovie: %dx%d, %d frames", width, height, hdr->num_frames);
     return true;
 }
 
 bool VQMovieHandle::AdvanceFrame()
 {
-    if (!m_playing || !m_vqa_data) return false;
+    if (!playing || !vqaData) return false;
 
-    auto* hdr = static_cast<const VQAFileHeader*>(m_vqa_data);
-    if (m_current_frame >= hdr->num_frames)
+    auto* hdr = static_cast<const VQAFileHeader*>(vqaData);
+    if (currentFrame >= hdr->num_frames)
         return false;
 
-    ++m_current_frame;
+    ++currentFrame;
     return true;
 }
 
 void VQMovieHandle::RenderFrame(DSurface* target)
 {
     (void)target;
-    LOG_TRACE("VQMovieHandle::RenderFrame: frame %d", m_current_frame);
+    LOG_TRACE("VQMovieHandle::RenderFrame: frame %d", currentFrame);
 }
 
 void VQMovieHandle::Stop()
 {
-    m_playing = false;
-    m_vqa_data  = nullptr;
-    m_data_size = 0;
+    playing = false;
+    vqaData  = nullptr;
+    dataSize = 0;
 }
 
 } // namespace gamemd

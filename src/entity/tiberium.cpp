@@ -1,7 +1,7 @@
-#include "gamemd/entity/tiberium.hpp"
-#include "gamemd/type/overlay_type.hpp"
-#include "gamemd/type/anim_type.hpp"
-#include "gamemd/core/vector.hpp"
+#include "entity/tiberium.hpp"
+#include "type/overlay_type.hpp"
+#include "type/anim_type.hpp"
+#include "core/vector.hpp"
 
 #include <cstring>
 
@@ -45,7 +45,7 @@ TiberiumClass::TiberiumClass(const CellStruct& cell,
     field_114  = 0;
     field_118  = 0;
 
-    m_abstract_flags = kTiberiumFlag;
+    abstractFlags = kTiberiumFlag;
 
     // TODO: complete implementation
     // - Register with owning cell

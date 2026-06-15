@@ -4,18 +4,18 @@
 #include <cstdio>
 #include <cstring>
 
-#include "gamemd/core/logging.hpp"
-#include "gamemd/core/ddraw_init.hpp"
-#include "gamemd/core/game_loop.hpp"
-#include "gamemd/render/shp_render.hpp"
-#include "gamemd/render/text_render.hpp"
-#include "gamemd/render/surface.hpp"
-#include "gamemd/render/movie.hpp"
-#include "gamemd/render/bink_control.hpp"
-#include "gamemd/render/font_render.hpp"
-#include "gamemd/system/file_system.hpp"
-#include "gamemd/ui/gadget.hpp"
-#include "gamemd/core/reverse_marker.hpp"
+#include "core/logging.hpp"
+#include "core/ddraw_init.hpp"
+#include "core/game_loop.hpp"
+#include "render/shp_render.hpp"
+#include "render/text_render.hpp"
+#include "render/surface.hpp"
+#include "render/movie.hpp"
+#include "render/bink_control.hpp"
+#include "render/font_render.hpp"
+#include "system/file_system.hpp"
+#include "ui/gadget.hpp"
+#include "core/reverse_marker.hpp"
 
 namespace gamemd {
 
@@ -444,11 +444,11 @@ static MenuState CampaignScreen(int arg) {
     LabelClass lblTitle(0, "Campaign Menu", cx, y0 - 30, 255, 255, 100);
 
     MenuState result = MenuState::MenuIdle;
-    btnLoad.Callback  = [&]() { result = MenuState::WOLInternet; dlg.m_finished = true; };
-    btnNew.Callback   = [&]() { result = MenuState::SaveLoadGame; dlg.m_finished = true; };
-    btnStart.Callback = [&]() { result = MenuState::StartScenario; dlg.m_finished = true; };
-    btnSkirmish.Callback = [&]() { g_GameMode = GMODE_SKIRMISH_SETUP; result = MenuState::NetworkGame5; dlg.m_finished = true; };
-    btnBack.Callback  = [&]() { result = MenuState::MenuIdle; dlg.m_finished = true; };
+    btnLoad.Callback  = [&]() { result = MenuState::WOLInternet; dlg.finished = true; };
+    btnNew.Callback   = [&]() { result = MenuState::SaveLoadGame; dlg.finished = true; };
+    btnStart.Callback = [&]() { result = MenuState::StartScenario; dlg.finished = true; };
+    btnSkirmish.Callback = [&]() { g_GameMode = GMODE_SKIRMISH_SETUP; result = MenuState::NetworkGame5; dlg.finished = true; };
+    btnBack.Callback  = [&]() { result = MenuState::MenuIdle; dlg.finished = true; };
 
     dlg.AddGadget(&lblTitle);
     dlg.AddGadget(&btnLoad); dlg.AddGadget(&btnNew);
@@ -462,7 +462,7 @@ static MenuState CampaignScreen(int arg) {
         MSG msg;
         while (PeekMessageA(&msg, nullptr, 0, 0, PM_REMOVE)) {
             if (msg.message == WM_QUIT) return MenuState::StartScenario;
-            if (msg.message == WM_KEYDOWN && msg.wParam == VK_ESCAPE) { dlg.m_finished = true; break; }
+            if (msg.message == WM_KEYDOWN && msg.wParam == VK_ESCAPE) { dlg.finished = true; break; }
             if (msg.message == WM_LBUTTONDOWN) dlg.OnMouseClick(LOWORD(msg.lParam), HIWORD(msg.lParam));
             else { TranslateMessage(&msg); DispatchMessageA(&msg); }
         }
@@ -525,11 +525,11 @@ static void OptionsScreenDialog() {
     btnSoundUp.Callback = [&]() { if (g_SoundVol < 10) g_SoundVol++; updateLabels(); };
     btnMusicDown.Callback = [&]() { if (g_MusicVol > 0) g_MusicVol--; updateLabels(); };
     btnMusicUp.Callback = [&]() { if (g_MusicVol < 10) g_MusicVol++; updateLabels(); };
-    btnOK.Callback = [&]() { dlg.m_finished = true; };
+    btnOK.Callback = [&]() { dlg.finished = true; };
     btnCancel.Callback = [&]() {
         g_Speed = saveSpeed; g_Scroll = saveScroll; g_MCVDeploy = saveMCV;
         g_SoundVol = saveSound; g_MusicVol = saveMusic;
-        dlg.m_finished = true;
+        dlg.finished = true;
     };
 
     dlg.AddGadget(&lblTitle);
@@ -547,7 +547,7 @@ static void OptionsScreenDialog() {
         MSG msg;
         while (PeekMessageA(&msg, nullptr, 0, 0, PM_REMOVE)) {
             if (msg.message == WM_QUIT) return;
-            if (msg.message == WM_KEYDOWN && msg.wParam == VK_ESCAPE) { dlg.m_finished = true; break; }
+            if (msg.message == WM_KEYDOWN && msg.wParam == VK_ESCAPE) { dlg.finished = true; break; }
             if (msg.message == WM_LBUTTONDOWN) dlg.OnMouseClick(LOWORD(msg.lParam), HIWORD(msg.lParam));
             else { TranslateMessage(&msg); DispatchMessageA(&msg); }
         }
@@ -575,8 +575,8 @@ static MenuState SkirmishSetupScreen() {
     LabelClass lblTitle(0, "Skirmish Setup", cx, y0 - 30, 255, 255, 100);
 
     MenuState result = MenuState::Campaign;
-    btnStart.Callback = [&]() { result = MenuState::Campaign; dlg.m_finished = true; };
-    btnCancel.Callback = [&]() { result = MenuState::MenuIdle; dlg.m_finished = true; };
+    btnStart.Callback = [&]() { result = MenuState::Campaign; dlg.finished = true; };
+    btnCancel.Callback = [&]() { result = MenuState::MenuIdle; dlg.finished = true; };
 
     dlg.AddGadget(&lblTitle);
     dlg.AddGadget(&btnStart); dlg.AddGadget(&btnCancel);
@@ -588,7 +588,7 @@ static MenuState SkirmishSetupScreen() {
         MSG msg;
         while (PeekMessageA(&msg, nullptr, 0, 0, PM_REMOVE)) {
             if (msg.message == WM_QUIT) return MenuState::StartScenario;
-            if (msg.message == WM_KEYDOWN && msg.wParam == VK_ESCAPE) { dlg.m_finished = true; result = MenuState::MenuIdle; break; }
+            if (msg.message == WM_KEYDOWN && msg.wParam == VK_ESCAPE) { dlg.finished = true; result = MenuState::MenuIdle; break; }
             if (msg.message == WM_LBUTTONDOWN) dlg.OnMouseClick(LOWORD(msg.lParam), HIWORD(msg.lParam));
             else { TranslateMessage(&msg); DispatchMessageA(&msg); }
         }
@@ -614,8 +614,8 @@ static char ShowExitDialog() {
     TextButtonClass btnNo(0, "No", cx + 110, y0 + 40, 90, 32);
 
     char result = 0;
-    btnYes.Callback = [&]() { result = 1; dlg.m_finished = true; };
-    btnNo.Callback = [&]() { result = 0; dlg.m_finished = true; };
+    btnYes.Callback = [&]() { result = 1; dlg.finished = true; };
+    btnNo.Callback = [&]() { result = 0; dlg.finished = true; };
 
     dlg.AddGadget(&lblTitle);
     dlg.AddGadget(&btnYes); dlg.AddGadget(&btnNo);
@@ -627,7 +627,7 @@ static char ShowExitDialog() {
         MSG msg;
         while (PeekMessageA(&msg, nullptr, 0, 0, PM_REMOVE)) {
             if (msg.message == WM_QUIT) { result = 1; return result; }
-            if (msg.message == WM_KEYDOWN && msg.wParam == VK_ESCAPE) { result = 0; dlg.m_finished = true; break; }
+            if (msg.message == WM_KEYDOWN && msg.wParam == VK_ESCAPE) { result = 0; dlg.finished = true; break; }
             if (msg.message == WM_LBUTTONDOWN) dlg.OnMouseClick(LOWORD(msg.lParam), HIWORD(msg.lParam));
             else { TranslateMessage(&msg); DispatchMessageA(&msg); }
         }

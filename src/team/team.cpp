@@ -1,8 +1,8 @@
-#include "gamemd/team/team.hpp"
-#include "gamemd/team/script.hpp"
-#include "gamemd/team/tag.hpp"
-#include "gamemd/house/house.hpp"
-#include "gamemd/object/foot.hpp"
+#include "team/team.hpp"
+#include "team/script.hpp"
+#include "team/tag.hpp"
+#include "house/house.hpp"
+#include "object/foot.hpp"
 
 #include <cstring>
 

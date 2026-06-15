@@ -1,4 +1,4 @@
-#include "gamemd/system/factory.hpp"
+#include "system/factory.hpp"
 
 namespace gamemd
 {

@@ -1,4 +1,4 @@
-#include "gamemd/structure/aircraft.hpp"
+#include "structure/aircraft.hpp"
 
 namespace gamemd {
 
@@ -26,7 +26,7 @@ AircraftClass::AircraftClass() noexcept
     , unknown_bool_6D4(true)     // +0x6D4, IDA: *(BYTE*)(this+0x6D4) = 1
     , unknown_bool_6D5(true)     // +0x6D5, IDA: *(BYTE*)(this+0x6D5) = 1
 {
-    m_abstract_flags = kAircraftFlag;
+    abstractFlags = kAircraftFlag;
 }
 
 // ============================================================
@@ -38,61 +38,61 @@ int AircraftClass::Mission_Attack()
 {
     enum { VALIDATE_AZ, PICK_LOCATION, TAKEOFF, FLY_TO, FIRE1, FIRE2, RTB };
 
-    switch (m_mission_status)
+    switch (missionStatus)
     {
     case VALIDATE_AZ:
     {
-        if (!m_target)
+        if (!target)
         {
-            m_mission_status = RTB;
+            missionStatus = RTB;
         }
         else
         {
-            m_mission_status = PICK_LOCATION;
+            missionStatus = PICK_LOCATION;
         }
         return 5;
     }
 
     case PICK_LOCATION:
     {
-        if (!m_target)
+        if (!target)
         {
-            m_mission_status = RTB;
+            missionStatus = RTB;
         }
         else
         {
             // Pick good fire location = Good_Fire_Location(TarCom)
-            // m_destination = GoodFireLocation(m_target);
-            if (m_destination)
-                m_mission_status = TAKEOFF;
+            // movementDestination = GoodFireLocation(target);
+            if (movementDestination)
+                missionStatus = TAKEOFF;
             else
-                m_mission_status = RTB;
+                missionStatus = RTB;
         }
         return 5;
     }
 
     case TAKEOFF:
     {
-        if (!m_target)
+        if (!target)
         {
-            m_mission_status = RTB;
+            missionStatus = RTB;
             return 5;
         }
 
         // Take off from helipad
         // if (ProcessTakeOff()) {
         //     // Break radio contact with helipad
-        //     m_mission_status = FLY_TO;
+        //     missionStatus = FLY_TO;
         // }
-        m_mission_status = FLY_TO;
+        missionStatus = FLY_TO;
         return 5;
     }
 
     case FLY_TO:
     {
-        if (!m_target)
+        if (!target)
         {
-            m_mission_status = RTB;
+            missionStatus = RTB;
             return 5;
         }
 
@@ -101,28 +101,28 @@ int AircraftClass::Mission_Attack()
         // if (dist < 0x0200) {
         //     SetFacing(Direction(TarCom));
         //     if (dist < 0x0010) {
-        //         m_mission_status = FIRE1;
-        //         m_destination = nullptr;
+        //         missionStatus = FIRE1;
+        //         movementDestination = nullptr;
         //     }
         // }
-        m_mission_status = FIRE1;
+        missionStatus = FIRE1;
         return 5;
     }
 
     case FIRE1:
     {
-        if (!m_target || !IsCloseEnoughToAttack(m_target))
+        if (!target || !IsCloseEnoughToAttack(target))
         {
-            m_mission_status = PICK_LOCATION;
+            missionStatus = PICK_LOCATION;
             return 5;
         }
 
         // Attempt to fire primary weapon
-        auto fire_err = GetFireError(m_target, 0, false);
+        auto fire_err = GetFireError(target, 0, false);
         if (static_cast<int>(fire_err) == static_cast<int>(gamemd::FireError::NONE))
         {
-            Fire(m_target, 0);
-            m_mission_status = FIRE2;
+            Fire(target, 0);
+            missionStatus = FIRE2;
         }
         else if (static_cast<int>(fire_err) == static_cast<int>(gamemd::FireError::CLOAKED))
         {
@@ -130,34 +130,34 @@ int AircraftClass::Mission_Attack()
         }
         else if (static_cast<int>(fire_err) == static_cast<int>(gamemd::FireError::AMMO))
         {
-            m_mission_status = RTB;
+            missionStatus = RTB;
         }
         return 5;
     }
 
     case FIRE2:
     {
-        if (!m_target || !IsCloseEnoughToAttack(m_target))
+        if (!target || !IsCloseEnoughToAttack(target))
         {
-            m_mission_status = PICK_LOCATION;
+            missionStatus = PICK_LOCATION;
             return 5;
         }
 
-        auto fire_err = GetFireError(m_target, 0, false);
+        auto fire_err = GetFireError(target, 0, false);
         if (static_cast<int>(fire_err) == static_cast<int>(gamemd::FireError::NONE))
         {
-            Fire(m_target, 0);
-            if (m_ammo > 0)
-                m_mission_status = FIRE1; // Loop back for next pass
+            Fire(target, 0);
+            if (ammo > 0)
+                missionStatus = FIRE1; // Loop back for next pass
             else
-                m_mission_status = RTB;
+                missionStatus = RTB;
         }
         else
         {
-            if (m_ammo <= 0)
-                m_mission_status = RTB;
+            if (ammo <= 0)
+                missionStatus = RTB;
             else
-                m_mission_status = PICK_LOCATION;
+                missionStatus = PICK_LOCATION;
         }
         return 5;
     }
@@ -165,10 +165,10 @@ int AircraftClass::Mission_Attack()
     case RTB:
     {
         // Return to base
-        if (m_ammo <= 0)
-            m_target = nullptr;
-        m_destination = nullptr;
-                QueueMission(static_cast<ra2::game::Mission>(static_cast<int>(gamemd::Mission::Return)), true);;
+        if (ammo <= 0)
+            target = nullptr;
+        movementDestination = nullptr;
+                queueMission(static_cast<ra2::game::Mission>(static_cast<int>(gamemd::Mission::Return)), true);;
         return 10;
     }
     }
@@ -184,7 +184,7 @@ int AircraftClass::Mission_Return()
     // On landing: RADIO_IM_IN -> RADIO_ROGER (guard) or RADIO_ATTACH (attach+limbo)
 
     // if (!HasHomeAirfield) {
-    //     QueueMission(Mission::Guard, true);
+    //     queueMission(Mission::Guard, true);
     //     return 10;
     // }
     return 10;
@@ -197,7 +197,7 @@ int AircraftClass::Mission_Unload()
         return 0;
 
     // Eject passengers with parachutes
-    // for each passenger in m_passengers:
+    // for each passenger in passengers:
     //     passenger->HasParachute = true;
     //     passenger->Unlimbo(eject_coord);
     //     passenger->Scatter(0, true);
@@ -211,9 +211,9 @@ int AircraftClass::Mission_Hunt()
     // Scan for enemies in flight range
     // If target found -> switch to Mission_Attack
     SelectAutoTarget(static_cast<ra2::game::TargetFlags>(0), 0, false);
-    if (m_target)
+    if (target)
     {
-        QueueMission(static_cast<ra2::game::Mission>(static_cast<int>(gamemd::Mission::Attack)), true);
+        queueMission(static_cast<ra2::game::Mission>(static_cast<int>(gamemd::Mission::Attack)), true);
         return 30;
     }
 
@@ -223,8 +223,8 @@ int AircraftClass::Mission_Hunt()
 int AircraftClass::Mission_Retreat()
 {
     // Flee from threats, return to base at high speed
-    m_destination = nullptr;
-            QueueMission(static_cast<ra2::game::Mission>(static_cast<int>(gamemd::Mission::Return)), true);;
+    movementDestination = nullptr;
+            queueMission(static_cast<ra2::game::Mission>(static_cast<int>(gamemd::Mission::Return)), true);;
     return 10;
 }
 

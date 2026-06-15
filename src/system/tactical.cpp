@@ -1,4 +1,4 @@
-#include "gamemd/system/tactical.hpp"
+#include "system/tactical.hpp"
 
 #include <cstring>
 
@@ -6,50 +6,50 @@ namespace gamemd
 {
 
 TacticalClass::TacticalClass() noexcept
-    : m_field_24(0)
-    , m_field_28(0)
+    : field24(0)
+    , field28(0)
     , m_field_2C(0)
-    , m_field_30(0)
-    , m_field_34(0)
-    , m_field_38(0)
+    , field30(0)
+    , field34(0)
+    , field38(0)
     , m_field_3C(0)
-    , m_field_40(0)
-    , m_field_44(0)
-    , m_field_48(0)
+    , field40(0)
+    , field44(0)
+    , field48(0)
     , m_field_4C(0)
-    , m_field_50(0)
-    , m_field_54(0)
-    , m_field_58(0)
+    , field50(0)
+    , field54(0)
+    , field58(0)
     , m_field_5C(0)
-    , m_field_60(0)
-    , m_field_64(0)
-    , m_field_68(0)
+    , field60(0)
+    , field64(0)
+    , field68(0)
     , m_field_6C(0)
-    , m_field_70(0)
-    , m_field_74(0)
-    , m_field_78(0)
+    , field70(0)
+    , field74(0)
+    , field78(0)
     , m_field_7C(0)
-    , m_field_80(0)
-    , m_field_84(0)
-    , m_field_88(0)
+    , field80(0)
+    , field84(0)
+    , field88(0)
     , m_field_8C(0)
-    , m_field_90(0)
-    , m_field_94(0)
-    , m_field_98(0)
+    , field90(0)
+    , field94(0)
+    , field98(0)
     , m_field_9C(0)
     , m_field_A0(0)
     , m_field_A4(0)
     , m_field_A8(0)
     , m_field_AC(false)
     , m_field_AD(false)
-    , m_zoom_in_factor(1.0)
+    , zoomInFactor(1.0)
     , m_field_C8(0)
     , m_field_CC(0)
     , m_field_D0(0)
     , m_field_D4(0)
     , m_field_D8(0)
     , m_field_DC(0)
-    , m_visible_cell_count(0)
+    , visibleCellCount(0)
     , m_field_D64(0)
     , m_field_D68(0)
     , m_field_D6C(0)
@@ -57,7 +57,7 @@ TacticalClass::TacticalClass() noexcept
     , m_field_D74(0)
     , m_field_D78(0)
     , m_field_D7C(false)
-    , m_redrawing(false)
+    , redrawing(false)
     , m_field_D80(0)
     , m_field_D84(0)
     , m_field_D88(0)
@@ -66,8 +66,8 @@ TacticalClass::TacticalClass() noexcept
     , m_field_D94(0)
     , m_field_D98(0)
     , m_field_D9C(0)
-    , m_mouse_frame_index(0)
-    , m_start_time(0)
+    , mouseFrameIndex(0)
+    , startTime(0)
     , m_field_DA8(0)
     , m_field_DAC(0)
     , m_field_DF4(0)
@@ -78,9 +78,9 @@ TacticalClass::TacticalClass() noexcept
     , m_field_E10(0)
     , m_field_E14(0)
 {
-    std::memset(&m_visible_area, 0, sizeof(m_visible_area));
-    std::memset(m_visible_cells, 0, sizeof(m_visible_cells));
-    std::memset(m_floats, 0, sizeof(m_floats));
+    std::memset(&visibleArea, 0, sizeof(visibleArea));
+    std::memset(visibleCells, 0, sizeof(visibleCells));
+    std::memset(floats, 0, sizeof(floats));
     std::memset(&m_field_DE4, 0, sizeof(m_field_DE4));
 }
 

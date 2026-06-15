@@ -1,9 +1,9 @@
-#include "gamemd/ui/menu_screen.hpp"
-#include "gamemd/ui/gadget.hpp"
-#include "gamemd/render/text_render.hpp"
-#include "gamemd/render/shp_render.hpp"
-#include "gamemd/system/file_system.hpp"
-#include "gamemd/core/ddraw_init.hpp"
+#include "ui/menu_screen.hpp"
+#include "ui/gadget.hpp"
+#include "render/text_render.hpp"
+#include "render/shp_render.hpp"
+#include "system/file_system.hpp"
+#include "core/ddraw_init.hpp"
 
 #include <windows.h>
 #include <cstdio>
@@ -125,8 +125,8 @@ public:
         auto* btn_exit = new TextButtonClass(5, "Exit",
             start_x, start_y + gap * 4, btn_w, btn_h);
         btn_exit->Callback = [this]() {
-            m_finished = true;
-            m_result = -1;
+            finished = true;
+            result = -1;
         };
         AddGadget(btn_exit);
 
@@ -149,7 +149,7 @@ public:
         }
 
         DrawBackground(surface);
-        for (auto* g : m_gadgets) {
+        for (auto* g : gadgets) {
             if (g && g->Visible) g->Draw(surface, text);
         }
 
@@ -231,7 +231,7 @@ MenuResult ShowMainMenu()
         RectangleStruct clr = { 0, 0, ctx->width, ctx->height };
         back_surface.FillRect(clr, 0x0000);
 
-        menu.OnUpdate();
+        menu.OnupdateLogic();
     }
 
     bg_img.Free();

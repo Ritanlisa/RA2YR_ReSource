@@ -1,6 +1,6 @@
-#include "gamemd/misc/audio.hpp"
-#include "gamemd/core/vector.hpp"
-#include "gamemd/object/object.hpp"
+#include "misc/audio.hpp"
+#include "core/vector.hpp"
+#include "object/object.hpp"
 
 #include <mmsystem.h>
 #include <dsound.h>

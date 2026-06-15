@@ -1,8 +1,8 @@
-#include "gamemd/entity/bullet.hpp"
-#include "gamemd/type/bullet_type.hpp"
-#include "gamemd/type/weapon_type.hpp"
-#include "gamemd/type/warhead_type.hpp"
-#include "gamemd/core/vector.hpp"
+#include "entity/bullet.hpp"
+#include "type/bullet_type.hpp"
+#include "type/weapon_type.hpp"
+#include "type/warhead_type.hpp"
+#include "core/vector.hpp"
 
 #include <cstring>
 
@@ -50,7 +50,7 @@ BulletClass::BulletClass(BulletTypeClass* pType) noexcept
     SpawnNextAnim     = false;
     Range             = 0;
 
-    m_abstract_flags = kBulletFlag;
+    abstractFlags = kBulletFlag;
 }
 
 } // namespace gamemd

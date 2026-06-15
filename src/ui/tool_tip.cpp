@@ -1,4 +1,4 @@
-#include "gamemd/ui/tool_tip.hpp"
+#include "ui/tool_tip.hpp"
 
 #include <cstring>
 
@@ -7,7 +7,7 @@ namespace gamemd
 
 ToolTipManager* ToolTipManager::Instance = nullptr;
 
-void ToolTipManager::Update()
+void ToolTipManager::updateLogic()
 {
     // TODO: update tooltip timer, hide when expired
 }

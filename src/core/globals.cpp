@@ -6,10 +6,10 @@
 #include <cstdint>
 #include <cstring>
 
-#include "gamemd/core/vector.hpp"
-#include "gamemd/core/math.hpp"
-#include "gamemd/object/object.hpp"
-#include "gamemd/type/building_type.hpp"
+#include "core/vector.hpp"
+#include "core/math.hpp"
+#include "object/object.hpp"
+#include "type/building_type.hpp"
 
 namespace gamemd {
 

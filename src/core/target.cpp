@@ -1,6 +1,6 @@
-#include "gamemd/core/target.hpp"
-#include "gamemd/object/object.hpp"
-#include "gamemd/core/vector.hpp"
+#include "core/target.hpp"
+#include "object/object.hpp"
+#include "core/vector.hpp"
 
 namespace gamemd {
 
@@ -12,7 +12,7 @@ TargetClass::TargetClass(const ObjectClass* obj) noexcept
 {
     if (obj)
     {
-        m_target = BuildTarget(obj->WhatAmI(), static_cast<unsigned>(obj->GetArrayIndex()));
+        m_target = BuildTarget(obj->whatAmI(), static_cast<unsigned>(obj->arrayIndex()));
     }
     else
     {
@@ -33,7 +33,7 @@ ObjectClass* FindObjectByTypeAndId(AbstractType kind, int id)
     for (int i = 0; i < objects.Count; ++i)
     {
         auto* obj = objects.Items[i];
-        if (obj && obj->WhatAmI() == kind && obj->GetArrayIndex() == id)
+        if (obj && obj->whatAmI() == kind && obj->arrayIndex() == id)
         {
             return obj;
         }
@@ -52,7 +52,7 @@ ObjectClass* AsObject(target_t target)
     auto id = static_cast<int>(TargetValue(target));
 
     auto* obj = FindObjectByTypeAndId(kind, id);
-    if (obj && obj->m_is_alive)
+    if (obj && obj->isAliveFlag)
         return obj;
 
     return nullptr;

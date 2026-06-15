@@ -1,4 +1,4 @@
-#include "gamemd/team/campaign.hpp"
+#include "team/campaign.hpp"
 
 #include <cstring>
 
@@ -6,11 +6,11 @@ namespace gamemd
 {
 
 CampaignClass::CampaignClass() noexcept
-    : m_idx_cd(-1)
-    , m_final_movie(-1)
+    : idxCd(-1)
+    , finalMovie(-1)
 {
-    std::memset(m_scenario, 0, sizeof(m_scenario));
-    std::memset(m_description, 0, sizeof(m_description));
+    std::memset(scenario, 0, sizeof(scenario));
+    std::memset(description, 0, sizeof(description));
 }
 
 void CampaignClass::CreateFromINIList(CCINIClass* ini)

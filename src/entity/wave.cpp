@@ -1,5 +1,5 @@
-#include "gamemd/entity/wave.hpp"
-#include "gamemd/core/vector.hpp"
+#include "entity/wave.hpp"
+#include "core/vector.hpp"
 
 #include <cstring>
 
@@ -99,7 +99,7 @@ WaveClass::WaveClass(TechnoClass* pTarget, WaveType waveType,
     field_1C8 = 0;
     field_1CC = 0;
 
-    m_abstract_flags = kWaveFlag;
+    abstractFlags = kWaveFlag;
 
     // TODO: complete implementation
     // - Set up wave cell propagation from type

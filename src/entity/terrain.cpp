@@ -1,6 +1,6 @@
-#include "gamemd/entity/terrain.hpp"
-#include "gamemd/type/terrain_type.hpp"
-#include "gamemd/core/vector.hpp"
+#include "entity/terrain.hpp"
+#include "type/terrain_type.hpp"
+#include "core/vector.hpp"
 
 #include <cstring>
 
@@ -23,8 +23,8 @@ TerrainClass::TerrainClass(TerrainTypeClass* pType, const CellStruct& cell,
 
     std::memset(&unknown_rect_D0, 0, sizeof(unknown_rect_D0));
 
-    m_height  = height;
-    m_abstract_flags = kTerrainFlag;
+    height  = height;
+    abstractFlags = kTerrainFlag;
 
     // TODO: complete implementation
     // - Set up terrain tile coordinates

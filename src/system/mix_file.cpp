@@ -1,15 +1,15 @@
-#include "gamemd/system/mix_file.hpp"
-#include "gamemd/system/cc_file.hpp"
-#include "gamemd/system/mix_blowfish.hpp"
-#include "gamemd/core/vector.hpp"
-#include "gamemd/core/logging.hpp"
+#include "system/mix_file.hpp"
+#include "system/cc_file.hpp"
+#include "system/mix_blowfish.hpp"
+#include "core/vector.hpp"
+#include "core/logging.hpp"
 
 #include <windows.h>
 #include <cstdio>
 #include <cstring>
 #include <cctype>
 #include <cstdlib>
-#include "gamemd/core/reverse_marker.hpp"
+#include "core/reverse_marker.hpp"
 
 namespace gamemd
 {

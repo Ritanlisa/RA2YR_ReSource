@@ -1,4 +1,4 @@
-#include "gamemd/render/text_render.hpp"
+#include "render/text_render.hpp"
 
 namespace gamemd {
 

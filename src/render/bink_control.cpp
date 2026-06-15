@@ -1,7 +1,7 @@
-#include "gamemd/render/bink_control.hpp"
-#include "gamemd/render/surface.hpp"
-#include "gamemd/core/ddraw_init.hpp"
-#include "gamemd/core/logging.hpp"
+#include "render/bink_control.hpp"
+#include "render/surface.hpp"
+#include "core/ddraw_init.hpp"
+#include "core/logging.hpp"
 #include <cstdlib>
 #include <cstring>
 
@@ -31,8 +31,8 @@ void BinkPlayerControl::Init(HWND hWnd)
     desc.dwHeight = 480;
     desc.ddsCaps.dwCaps = DDSCAPS_OFFSCREENPLAIN | DDSCAPS_SYSTEMMEMORY;
 
-    HRESULT hr = ctx->dd->CreateSurface(&desc, &m_surface, nullptr);
-    if (FAILED(hr) || !m_surface) {
+    HRESULT hr = ctx->dd->CreateSurface(&desc, &surface, nullptr);
+    if (FAILED(hr) || !surface) {
         LOG_ERROR("BinkControl: CreateSurface failed hr=0x%08X", hr);
         return;
     }
@@ -45,35 +45,35 @@ void BinkPlayerControl::OpenBink(const char* filename)
         LOG_ERROR("BinkControl: empty filename");
         return;
     }
-    if (!m_surface) {
+    if (!surface) {
         LOG_ERROR("BinkControl: no surface for BINK render");
         return;
     }
 
     DSurface ds(640, 480, false, false);
-    ds.Surface = m_surface;
+    ds.Surface = surface;
     ds.Allocated = false;
 
-    m_movie = std::make_unique<BinkMovieHandle>();
-    if (!m_movie->OpenFromFile(filename, &ds)) {
+    movie = std::make_unique<BinkMovieHandle>();
+    if (!movie->OpenFromFile(filename, &ds)) {
         LOG_ERROR("BinkControl: OpenFromFile('%s') failed", filename);
-        m_movie.reset();
+        movie.reset();
         return;
     }
-    m_playing = true;
-    LOG_INFO("BinkControl: opened '%s' %dx%d %df", filename, m_movie->GetWidth(), m_movie->GetHeight(), m_movie->GetTotalFrames());
+    playing = true;
+    LOG_INFO("BinkControl: opened '%s' %dx%d %df", filename, movie->GetWidth(), movie->GetHeight(), movie->GetTotalFrames());
 }
 
 void BinkPlayerControl::CloseBink()
 {
-    m_playing = false;
-    if (m_movie) {
-        m_movie->Stop();
-        m_movie.reset();
+    playing = false;
+    if (movie) {
+        movie->Stop();
+        movie.reset();
     }
-    if (m_surface) {
-        m_surface->Release();
-        m_surface = nullptr;
+    if (surface) {
+        surface->Release();
+        surface = nullptr;
     }
 }
 

@@ -1,7 +1,7 @@
-#include "gamemd/render/shp_blitter.hpp"
+#include "render/shp_blitter.hpp"
 
 #include <cstring>
-#include "gamemd/core/logging.hpp"
+#include "core/logging.hpp"
 
 namespace gamemd
 {

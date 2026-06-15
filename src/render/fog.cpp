@@ -1,4 +1,4 @@
-#include "gamemd/render/fog.hpp"
+#include "render/fog.hpp"
 
 #include <cstring>
 

@@ -1,4 +1,4 @@
-#include "gamemd/render/shp_struct.hpp"
+#include "render/shp_struct.hpp"
 
 #include <cstdio>
 #include <cstdlib>

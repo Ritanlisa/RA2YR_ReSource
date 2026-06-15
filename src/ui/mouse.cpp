@@ -1,4 +1,4 @@
-#include "gamemd/ui/mouse.hpp"
+#include "ui/mouse.hpp"
 
 #include <cstring>
 

@@ -1,7 +1,7 @@
-#include "gamemd/entity/particle.hpp"
-#include "gamemd/entity/particle_system.hpp"
-#include "gamemd/type/particle_type.hpp"
-#include "gamemd/core/vector.hpp"
+#include "entity/particle.hpp"
+#include "entity/particle_system.hpp"
+#include "type/particle_type.hpp"
+#include "core/vector.hpp"
 
 #include <cstring>
 
@@ -52,8 +52,8 @@ ParticleClass::ParticleClass(ParticleTypeClass* pType,
     unknown_131     = 0;
     unused_134      = 0;
 
-    m_location      = coords;
-    m_abstract_flags = kParticleFlag;
+    location      = coords;
+    abstractFlags = kParticleFlag;
 
     // TODO: complete implementation
     // - Initialize particle state machine

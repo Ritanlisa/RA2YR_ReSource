@@ -1,4 +1,4 @@
-#include "gamemd/render/light_source.hpp"
+#include "render/light_source.hpp"
 
 #include <cmath>
 #include <cstring>
@@ -19,11 +19,11 @@ LightSourceClass::LightSourceClass(const CoordStruct& location,
     LightVisibility = visibility;
     Activated       = false;
 
-    m_unique_id      = static_cast<uint32_t>(-1);
-    m_abstract_flags = 0;
-    m_unknown_18     = 0;
-    m_ref_count      = 0;
-    m_dirty          = false;
+    uniqueId      = static_cast<uint32_t>(-1);
+    abstractFlags = 0;
+    nextArrayIndex     = 0;
+    referenceCount      = 0;
+    needsSave          = false;
 
     // TODO: complete implementation
     // - Register with current map's light source list

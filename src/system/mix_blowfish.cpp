@@ -1,4 +1,4 @@
-#include "gamemd/system/mix_blowfish.hpp"
+#include "system/mix_blowfish.hpp"
 #include <cstring>
 
 namespace gamemd {

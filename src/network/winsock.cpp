@@ -1,4 +1,4 @@
-#include "gamemd/network/winsock.hpp"
+#include "network/winsock.hpp"
 #include <cstring>
 
 namespace gamemd
@@ -20,7 +20,7 @@ WinsockInterfaceClass::~WinsockInterfaceClass()
 {
 }
 
-bool WinsockInterfaceClass::Initialize()
+bool WinsockInterfaceClass::initialize()
 {
     // TODO: WSAStartup, configure Winsock
     Initialized = true;
@@ -63,7 +63,7 @@ IPXInterfaceClass::~IPXInterfaceClass()
 {
 }
 
-bool IPXInterfaceClass::Initialize() { Initialized = true; return true; }
+bool IPXInterfaceClass::initialize() { Initialized = true; return true; }
 void IPXInterfaceClass::Shutdown() { Initialized = false; }
 bool IPXInterfaceClass::IsAvailable() const { return Initialized; }
 bool IPXInterfaceClass::CreateSocket() { return false; }
@@ -87,7 +87,7 @@ UDPInterfaceClass::~UDPInterfaceClass()
 {
 }
 
-bool UDPInterfaceClass::Initialize() { Initialized = true; return true; }
+bool UDPInterfaceClass::initialize() { Initialized = true; return true; }
 void UDPInterfaceClass::Shutdown() { Initialized = false; }
 bool UDPInterfaceClass::IsAvailable() const { return Initialized; }
 bool UDPInterfaceClass::CreateSocket(uint16_t port) { (void)port; return false; }

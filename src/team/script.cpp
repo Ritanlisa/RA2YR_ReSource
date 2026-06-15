@@ -1,4 +1,4 @@
-#include "gamemd/team/script.hpp"
+#include "team/script.hpp"
 
 #include <cstring>
 
@@ -9,7 +9,7 @@ namespace gamemd
 
 ScriptActionNode* ScriptClass::GetCurrentAction(ScriptActionNode* buffer) const
 {
-    // TODO: return the current action based on m_idx_current_line
+    // TODO: return the current action based on idxCurrentLine
     if (buffer)
     {
         *buffer = {};
@@ -30,7 +30,7 @@ ScriptActionNode* ScriptClass::GetNextAction(ScriptActionNode* buffer) const
 bool ScriptClass::HasNextAction() const
 {
     // TODO: check if there is an action after current line
-    return m_type && (m_idx_current_line + 1) < m_type->m_actions_count;
+    return buildingType && (idxCurrentLine + 1) < buildingType->actionsCount;
 }
 
 // --- ScriptTypeClass ---

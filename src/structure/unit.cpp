@@ -1,4 +1,4 @@
-#include "gamemd/structure/unit.hpp"
+#include "structure/unit.hpp"
 
 #include <cstring>
 
@@ -31,7 +31,7 @@ UnitClass::UnitClass() noexcept
     , Undeploying(false)         // +0x6E2, IDA: *(BYTE*)(this+0x6E2) = 0
     , NonPassengerCount(0)       // +0x6E4, IDA: *(this+0x6E4) = 0
 {
-    m_abstract_flags = kUnitFlag;
+    abstractFlags = kUnitFlag;
 }
 
 // ============================================================
@@ -42,30 +42,30 @@ int UnitClass::Mission_Harvest()
 {
     enum { LOOKING, HARVESTING, FINDHOME, HEADINGHOME, GOINGTOIDLE };
 
-    switch (m_mission_status)
+    switch (missionStatus)
     {
     case LOOKING:
     {
         // Full -> skip to finding refinery
         // if (Tiberium_Load() == 1) {
-        //     m_mission_status = FINDHOME;
+        //     missionStatus = FINDHOME;
         //     return 1;
         // }
 
         // Head to last known ore patch
-        if (m_last_target)
+        if (lastTarget)
         {
-            m_destination = m_last_target;
-            m_last_target = nullptr;
+            movementDestination = lastTarget;
+            lastTarget = nullptr;
         }
 
         // Scan for tiberium/ore
         // if (Goto_Tiberium(scan_range)) {
-        //     m_mission_status = HARVESTING;
+        //     missionStatus = HARVESTING;
         // }
-        // else if (!m_destination) {
+        // else if (!movementDestination) {
         //     // No ore found and no destination -> idle
-        //     m_mission_status = GOINGTOIDLE;
+        //     missionStatus = GOINGTOIDLE;
         // }
 
         return 10;
@@ -77,10 +77,10 @@ int UnitClass::Mission_Harvest()
         // if (!Harvesting()) {
         //     if (Tiberium_Load() == 1) {
         //         // Archive current cell as last harvest site
-        //         m_mission_status = FINDHOME;
+        //         missionStatus = FINDHOME;
         //     } else {
         //         // Try nearby ore scan
-        //         m_mission_status = LOOKING;
+        //         missionStatus = LOOKING;
         //     }
         // }
         return 10;
@@ -90,8 +90,8 @@ int UnitClass::Mission_Harvest()
     {
         // Find nearest refinery with docking bay
         // BuildingClass* nearest = Find_Docking_Bay(STRUCT_REFINERY, false);
-        // if (nearest && SendCommand(RADIO_HELLO, nearest) == RADIO_ROGER) {
-        //     m_mission_status = HEADINGHOME;
+        // if (nearest && sendCommand(RADIO_HELLO, nearest) == RADIO_ROGER) {
+        //     missionStatus = HEADINGHOME;
         // }
         return 10;
     }
@@ -99,14 +99,14 @@ int UnitClass::Mission_Harvest()
     case HEADINGHOME:
     {
         // Delegate docking to Mission_Enter
-        QueueMission(static_cast<ra2::game::Mission>(static_cast<int>(gamemd::Mission::Enter)), true);
+        queueMission(static_cast<ra2::game::Mission>(static_cast<int>(gamemd::Mission::Enter)), true);
         return 10;
     }
 
     case GOINGTOIDLE:
     {
         // Nothing to harvest -- fallback to guard or repair
-        QueueMission(static_cast<ra2::game::Mission>(static_cast<int>(gamemd::Mission::Guard)), true);
+        queueMission(static_cast<ra2::game::Mission>(static_cast<int>(gamemd::Mission::Guard)), true);
         return 10;
     }
     }
@@ -122,9 +122,9 @@ int UnitClass::Mission_Unload()
     Unloading = true;
 
     // Eject passengers at current position
-    // for each passenger in m_passengers:
+    // for each passenger in passengers:
     //     passenger->Scatter(0, true);
-    //     passenger->QueueMission(Mission::Guard, true);
+    //     passenger->queueMission(Mission::Guard, true);
 
     return 5;
 }

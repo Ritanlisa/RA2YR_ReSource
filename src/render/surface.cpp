@@ -1,11 +1,11 @@
-#include "gamemd/render/surface.hpp"
+#include "render/surface.hpp"
 
 #include <windows.h>
 #include <ddraw.h>
 #include <cstring>
 
-#include "gamemd/core/ddraw_init.hpp"
-#include "gamemd/core/reverse_marker.hpp"
+#include "core/ddraw_init.hpp"
+#include "core/reverse_marker.hpp"
 
 // StreamClass::ReadAndSeek (IDA: 0x4114B0)
 // Returns WORD* buffer into visible surface stipple/Z space at (x, y).

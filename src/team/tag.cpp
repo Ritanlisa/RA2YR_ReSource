@@ -1,5 +1,5 @@
-#include "gamemd/team/tag.hpp"
-#include "gamemd/team/trigger.hpp"
+#include "team/tag.hpp"
+#include "team/trigger.hpp"
 
 #include <cstring>
 
@@ -59,7 +59,7 @@ void TagClass::LocalChanged(int idx_local)
 
 bool TagClass::IsOnlyInstanceOfType() const
 {
-    return m_instance_count <= 1;
+    return instanceCount <= 1;
 }
 
 bool TagClass::RaiseEvent(int event, ObjectClass* tag_owner, CellStruct location, bool force_all, TechnoClass* source)
@@ -81,7 +81,7 @@ bool TagClass::ShouldReplace() const
 
 void TagClass::Destroy()
 {
-    m_destroyed = true;
+    destroyed = true;
     // TODO: remove from global tag list
 }
 

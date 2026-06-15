@@ -1,4 +1,4 @@
-#include "gamemd/render/bounce.hpp"
+#include "render/bounce.hpp"
 
 #include <cmath>
 #include <cstring>
@@ -38,7 +38,7 @@ void BounceClass::Initialize(
     (void)angular_velocity;
 }
 
-CoordStruct* BounceClass::GetCoords(CoordStruct* out) const
+CoordStruct* BounceClass::fetchCoordinatesHere(CoordStruct* out) const
 {
     if (out)
     {
@@ -49,10 +49,10 @@ CoordStruct* BounceClass::GetCoords(CoordStruct* out) const
     return out;
 }
 
-CoordStruct BounceClass::GetCoords() const
+CoordStruct BounceClass::fetchCoordinatesHere() const
 {
     CoordStruct out;
-    GetCoords(&out);
+    fetchCoordinatesHere(&out);
     return out;
 }
 
@@ -72,7 +72,7 @@ Matrix3D BounceClass::GetDrawingMatrix() const
     return out;
 }
 
-BounceClass::Status BounceClass::Update()
+BounceClass::Status BounceClass::updateLogic()
 {
     // TODO: physics update - apply gravity, bounce on ground, return status
     return Status::None;

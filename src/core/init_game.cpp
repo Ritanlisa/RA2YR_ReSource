@@ -8,21 +8,21 @@
 #include <windows.h>
 #include <mmsystem.h>
 #include <cstring>
-#include "gamemd/core/reverse_marker.hpp"
+#include "core/reverse_marker.hpp"
 
-#include "gamemd/core/logging.hpp"
-#include "gamemd/core/ddraw_init.hpp"
-#include "gamemd/core/init_stubs.hpp"
-#include "gamemd/core/game_loop.hpp"
-#include "gamemd/core/com_defs.hpp"
-#include "gamemd/system/ini_class.hpp"
-#include "gamemd/system/mix_file.hpp"
-#include "gamemd/system/file_system.hpp"
-#include "gamemd/system/convert_class.hpp"
-#include "gamemd/system/cc_file.hpp"
-#include "gamemd/system/tactical.hpp"
-#include "gamemd/render/surface.hpp"
-#include "gamemd/render/movie.hpp"
+#include "core/logging.hpp"
+#include "core/ddraw_init.hpp"
+#include "core/init_stubs.hpp"
+#include "core/game_loop.hpp"
+#include "core/com_defs.hpp"
+#include "system/ini_class.hpp"
+#include "system/mix_file.hpp"
+#include "system/file_system.hpp"
+#include "system/convert_class.hpp"
+#include "system/cc_file.hpp"
+#include "system/tactical.hpp"
+#include "render/surface.hpp"
+#include "render/movie.hpp"
 
 namespace gamemd {
 

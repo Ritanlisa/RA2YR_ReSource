@@ -1,4 +1,4 @@
-#include "gamemd/render/palette.hpp"
+#include "render/palette.hpp"
 
 namespace gamemd
 {

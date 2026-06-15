@@ -1,11 +1,11 @@
 // CCFileClass -- IDA-based class for file access (MIX pool search + disk fallback)
-#include "gamemd/system/cc_file.hpp"
-#include "gamemd/system/mix_file.hpp"
-#include "gamemd/system/file_system.hpp"
-#include "gamemd/core/logging.hpp"
+#include "system/cc_file.hpp"
+#include "system/mix_file.hpp"
+#include "system/file_system.hpp"
+#include "core/logging.hpp"
 
 #include <cstring>
-#include "gamemd/core/reverse_marker.hpp"
+#include "core/reverse_marker.hpp"
 
 namespace gamemd
 {

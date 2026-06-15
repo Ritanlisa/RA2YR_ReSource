@@ -1,62 +1,62 @@
-#include "gamemd/object/mission.hpp"
+#include "object/mission.hpp"
 
 namespace ra2 {
 namespace game {
 
 MissionClass::MissionClass() noexcept
-    : m_current_mission(0)
-    , m_suspended_mission(0)
-    , m_queued_mission(0)
-    , m_mission_queued(false)
-    , m_mission_status(0)
-    , m_mission_start_time(0)
-    , m_mission_data(0)
-    , m_mission_timer{}
+    : currentMission(0)
+    , suspendedMission(0)
+    , queuedMission(0)
+    , missionQueued(false)
+    , missionStatus(0)
+    , missionStartTime(0)
+    , missionData(0)
+    , missionTimer{}
 {
 }
 
-bool MissionClass::QueueMission(Mission mission, bool start_mission)
+bool MissionClass::queueMission(Mission mission, bool start_mission)
 {
     if (start_mission)
     {
-        m_suspended_mission = m_current_mission;
-        m_current_mission = static_cast<int32_t>(mission);
-        m_mission_queued = false;
+        suspendedMission = currentMission;
+        currentMission = static_cast<int32_t>(mission);
+        missionQueued = false;
         return true;
     }
 
-    m_queued_mission = static_cast<int32_t>(mission);
-    m_mission_queued = true;
+    queuedMission = static_cast<int32_t>(mission);
+    missionQueued = true;
     return true;
 }
 
-bool MissionClass::NextMission()
+bool MissionClass::nextMission()
 {
-    if (m_mission_queued)
+    if (missionQueued)
     {
-        m_current_mission = m_queued_mission;
-        m_mission_queued = false;
-        m_mission_status = 0;
+        currentMission = queuedMission;
+        missionQueued = false;
+        missionStatus = 0;
         return true;
     }
     return false;
 }
 
-void MissionClass::ForceMission(Mission mission)
+void MissionClass::forceMission(Mission mission)
 {
-    m_suspended_mission = m_current_mission;
-    m_current_mission = static_cast<int32_t>(mission);
-    m_mission_queued = false;
-    m_mission_status = 0;
+    suspendedMission = currentMission;
+    currentMission = static_cast<int32_t>(mission);
+    missionQueued = false;
+    missionStatus = 0;
 }
 
-bool MissionClass::Mission_Revert()
+bool MissionClass::revertMission()
 {
-    if (m_suspended_mission != 0)
+    if (suspendedMission != 0)
     {
-        m_current_mission = m_suspended_mission;
-        m_suspended_mission = 0;
-        m_mission_status = 0;
+        currentMission = suspendedMission;
+        suspendedMission = 0;
+        missionStatus = 0;
         return true;
     }
     return false;

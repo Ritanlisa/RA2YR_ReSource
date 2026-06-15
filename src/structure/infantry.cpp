@@ -1,4 +1,4 @@
-#include "gamemd/structure/infantry.hpp"
+#include "structure/infantry.hpp"
 
 #include <cstring>
 
@@ -33,7 +33,7 @@ InfantryClass::InfantryClass() noexcept
     // IDA: InfantryClass::PerFrameUpdate called in constructor
     // IDA: CoCreateInstance of locomotor from Type+0x844
     // IDA: BuildingLoadQueue registration
-    m_abstract_flags = kInfantryFlag;
+    abstractFlags = kInfantryFlag;
 }
 
 // ============================================================
@@ -49,15 +49,15 @@ int InfantryClass::Mission_Enter()
     // If no contact -> enter idle mode
 
     // Contact_With_Whom() equivalent: check current radio link
-    // if (!contact) contact = As_Techno(m_archive_target);
+    // if (!contact) contact = As_Techno(archiveTarget);
 
     // if (contact) {
-    //     if (SendCommand(RADIO_DOCKING, contact) != RADIO_ROGER && !IsTethered) {
-    //         SendCommand(RADIO_OVER_OUT, contact);
-    //         QueueMission(Mission::Guard, true);
+    //     if (sendCommand(RADIO_DOCKING, contact) != RADIO_ROGER && !IsTethered) {
+    //         sendCommand(RADIO_OVER_OUT, contact);
+    //         queueMission(Mission::Guard, true);
     //     }
     // } else {
-    //     QueueMission(Mission::Guard, true);
+    //     queueMission(Mission::Guard, true);
     // }
 
     return 10;
@@ -66,12 +66,12 @@ int InfantryClass::Mission_Enter()
 int InfantryClass::Mission_ParaDropApproach()
 {
     // Paradrop: descend via parachute animation
-    m_has_parachute = true;
+    hasParachute = true;
 
     // Check ground proximity -- if reached ground, deploy unit
-    // if (m_location.Z <= ground_z) {
-    //     m_has_parachute = false;
-    //     QueueMission(Mission::Guard, true);
+    // if (location.Z <= ground_z) {
+    //     hasParachute = false;
+    //     queueMission(Mission::Guard, true);
     // }
 
     return 5;
@@ -84,7 +84,7 @@ int InfantryClass::Mission_ParaDropOverfly()
     // When over target, transition to ParadropApproach
 
     // if (distance_to_drop_zone < threshold) {
-    //     QueueMission(Mission::ParadropApproach, true);
+    //     queueMission(Mission::ParadropApproach, true);
     // }
 
     return 5;

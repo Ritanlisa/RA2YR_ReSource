@@ -1,6 +1,6 @@
-#include "gamemd/entity/overlay.hpp"
-#include "gamemd/type/overlay_type.hpp"
-#include "gamemd/core/vector.hpp"
+#include "entity/overlay.hpp"
+#include "type/overlay_type.hpp"
+#include "core/vector.hpp"
 
 namespace gamemd
 {
@@ -16,7 +16,7 @@ OverlayClass::OverlayClass(OverlayTypeClass* pType, const CellStruct& cell,
 {
     Type = pType;
 
-    m_abstract_flags = kOverlayFlag;
+    abstractFlags = kOverlayFlag;
 
     // TODO: complete implementation
     // - Link to owning cell

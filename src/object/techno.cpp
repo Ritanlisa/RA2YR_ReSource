@@ -1,6 +1,6 @@
-#include "gamemd/object/techno.hpp"
-#include "gamemd/structure/building.hpp"
-#include "gamemd/type/building_type.hpp"
+#include "object/techno.hpp"
+#include "structure/building.hpp"
+#include "type/building_type.hpp"
 
 #include <cstring>
 
@@ -10,184 +10,184 @@ namespace game {
 extern int& CurrentFrame;
 
 TechnoClass::TechnoClass() noexcept
-    : m_transporter(nullptr)
-    , m_unknown_int_120(0)
-    , m_current_turret_number(0)
-    , m_unknown_int_128(0)
-    , m_behind_anim(nullptr)
-    , m_deploy_anim(nullptr)
-    , m_in_air(false)
-    , m_current_weapon_number(0)
-    , m_current_ranking(-1)
-    , m_current_gattling_stage(0)
-    , m_gattling_value(0)
-    , m_unknown_148(0)
-    , m_initial_owner(nullptr)
-    , m_armor_multiplier(1.0)
-    , m_firepower_multiplier(1.0)
-    , m_iron_tint_stage(0)
-    , m_airstrike_tint_stage(0)
-    , m_force_shielded(0)
-    , m_deactivated(false)
-    , m_drain_target(nullptr)
-    , m_draining_me(nullptr)
-    , m_drain_anim(nullptr)
-    , m_disguised(false)
-    , m_disguise_creation_frame(0)
-    , m_unknown_bool_1F8(false)
-    , m_unknown_208(0)
-    , m_unknown_20C(0)
-    , m_group(-1)
-    , m_focus(nullptr)
-    , m_owner(nullptr)
-    , m_cloak_state(0)
-    , m_warp_factor(0.0f)
-    , m_unknown_bool_250(false)
-    , m_last_sight_coords{}
-    , m_last_sight_range(0)
-    , m_last_sight_height(0)
-    , m_gap_super_charged(false)
-    , m_generating_gap(false)
-    , m_gap_radius(0)
-    , m_being_warped_out(false)
-    , m_warping_out(false)
-    , m_unknown_bool_272(false)
-    , m_unused_273(0)
-    , m_temporal_im_using(nullptr)
-    , m_temporal_targeting_me(nullptr)
-    , m_is_immobilized(false)
-    , m_unknown_280(0)
-    , m_chrono_lock_remaining(0)
-    , m_chrono_dest_coords{}
-    , m_airstrike(nullptr)
-    , m_berzerk(false)
-    , m_berzerk_duration_left(0)
-    , m_spray_offset_index(0)
-    , m_uncrushable(false)
-    , m_direct_rocker_linked_unit(nullptr)
-    , m_locomotor_target(nullptr)
-    , m_locomotor_source(nullptr)
-    , m_target(nullptr)
-    , m_last_target(nullptr)
-    , m_capture_manager(nullptr)
-    , m_mind_controlled_by(nullptr)
-    , m_mind_controlled_by_a_unit(false)
-    , m_mind_control_ring_anim(nullptr)
-    , m_mind_controlled_by_house(nullptr)
-    , m_spawn_manager(nullptr)
-    , m_spawn_owner(nullptr)
-    , m_slave_manager(nullptr)
-    , m_slave_owner(nullptr)
-    , m_originally_owned_by_house(nullptr)
-    , m_bunker_linked_item(nullptr)
-    , m_pitch_angle(0.0f)
-    , m_unknown_2F8(0)
-    , m_ammo(0)
-    , m_value(0)
-    , m_fire_particle_system(nullptr)
-    , m_spark_particle_system(nullptr)
-    , m_natural_particle_system(nullptr)
-    , m_damage_particle_system(nullptr)
-    , m_railgun_particle_system(nullptr)
-    , m_unk1_particle_system(nullptr)
-    , m_unk2_particle_system(nullptr)
-    , m_firing_particle_system(nullptr)
-    , m_wave(nullptr)
-    , m_angle_rotated_sideways(0.0f)
-    , m_angle_rotated_forwards(0.0f)
-    , m_rocking_sideways_per_frame(0.0f)
-    , m_rocking_forwards_per_frame(0.0f)
-    , m_hijacker_infantry_type(0)
-    , m_unknown_34C(0)
-    , m_unload_timer{}
-    , m_barrel_facing{}
-    , m_facing{}
-    , m_turret_facing{}
-    , m_current_burst_index(0)
-    , m_unknown_short_3C8(0)
-    , m_unknown_3CA(0)
-    , m_counted_as_owned(false)
-    , m_is_sinking(false)
-    , m_was_sinking_already(false)
-    , m_unknown_bool_3CF(false)
-    , m_unknown_bool_3D0(false)
-    , m_has_been_attacked(false)
-    , m_cloakable(false)
-    , m_is_primary_factory(false)
-    , m_spawned(false)
-    , m_is_in_playfield(false)
-    , m_unknown_bool_418(false)
-    , m_unknown_bool_419(false)
-    , m_is_human_controlled(false)
-    , m_discovered_by_player(false)
-    , m_discovered_by_computer(false)
-    , m_unknown_bool_41D(false)
-    , m_unknown_bool_41E(false)
-    , m_unknown_bool_41F(false)
-    , m_sight_increase(0)
-    , m_recruitable_a(false)
-    , m_recruitable_b(false)
-    , m_is_radar_tracked(false)
-    , m_is_on_carryall(false)
-    , m_is_crashing(false)
-    , m_was_crashing_already(false)
-    , m_is_being_manipulated(false)
-    , m_being_manipulated_by(nullptr)
-    , m_chrono_warped_by_house(nullptr)
-    , m_unknown_bool_430(false)
-    , m_unknown_bool_431(false)
-    , m_unknown_bool_432(false)
-    , m_old_team(nullptr)
-    , m_counted_as_owned_special(false)
-    , m_absorbed(false)
-    , m_unknown_bool_43A(false)
-    , m_unknown_43C(0)
-    , m_unknown_49C(0)
-    , m_unknown_4A0(0)
-    , m_unknown_bool_4B8(false)
-    , m_unknown_4BC(0)
-    , m_unknown_bool_4D4(false)
-    , m_unknown_4D8(0)
-    , m_queued_voice_index(0)
-    , m_unknown_4F4(0)
-    , m_unknown_bool_4F8(false)
-    , m_unknown_4FC(0)
-    , m_unknown_500(0)
-    , m_emp_lock_remaining(0)
-    , m_threat_posed(0)
-    , m_should_lose_target_now(0)
-    , m_firing_rad_beam(nullptr)
-    , m_planning_token(nullptr)
-    , m_disguise(nullptr)
-    , m_disguised_as_house(nullptr)
+    : transporter(nullptr)
+    , turretChargeTimer(0)
+    , currentTurretNumber(0)
+    , secondaryTurretIndex(0)
+    , behindAnim(nullptr)
+    , deployAnim(nullptr)
+    , inAirFlag(false)
+    , currentWeaponSlot(0)
+    , currentRank(-1)
+    , gattlingStage(0)
+    , gattlingValue(0)
+    , ammoReloadTimer(0)
+    , initialOwner(nullptr)
+    , armorMultiplier(1.0)
+    , firepowerMultiplier(1.0)
+    , ironTintStage(0)
+    , airstrikeTintStage(0)
+    , forceShielded(0)
+    , isDeactivated(false)
+    , drainTarget(nullptr)
+    , drainingMe(nullptr)
+    , drainAnim(nullptr)
+    , isDisguisedFlag(false)
+    , disguiseCreationFrame(0)
+    , isTargetedByChrono(false)
+    , currentBurstCount(0)
+    , currentBarrelIndex(0)
+    , group(-1)
+    , focus(nullptr)
+    , owner(nullptr)
+    , cloakState(0)
+    , warpFactor(0.0f)
+    , isChronosphereImmune(false)
+    , lastSightCoords{}
+    , lastSightRange(0)
+    , lastSightHeight(0)
+    , gapSuperCharged(false)
+    , isGeneratingGap(false)
+    , gapRadius(0)
+    , isBeingWarpedOut(false)
+    , isWarpingOut(false)
+    , isWarpEffectActive(false)
+    , unusedField273(0)
+    , temporalUsing(nullptr)
+    , temporalTargetingMe(nullptr)
+    , isImmobilized(false)
+    , owningHouseIndex0(0)
+    , chronoLockRemaining(0)
+    , chronoDestCoords{}
+    , airstrike(nullptr)
+    , isBerserk(false)
+    , isBerserk_duration_left(0)
+    , sprayOffsetIndex(0)
+    , isUncrushable(false)
+    , rockerLinkedUnit(nullptr)
+    , locomotorTarget(nullptr)
+    , locomotorSource(nullptr)
+    , target(nullptr)
+    , lastTarget(nullptr)
+    , captureManager(nullptr)
+    , mindControlledBy(nullptr)
+    , mindControlledBy_a_unit(false)
+    , mindControlRingAnim(nullptr)
+    , mindControlledBy_house(nullptr)
+    , spawnManager(nullptr)
+    , spawnOwner(nullptr)
+    , slaveManager(nullptr)
+    , slaveOwner(nullptr)
+    , originalOwnerHouse(nullptr)
+    , bunkerLinkedUnit(nullptr)
+    , pitchAngle(0.0f)
+    , diskLaserChargeState(0)
+    , ammo(0)
+    , unitValue(0)
+    , fireParticles(nullptr)
+    , sparkParticles(nullptr)
+    , ambientParticles(nullptr)
+    , damageParticles(nullptr)
+    , railgunParticles(nullptr)
+    , auxParticles1(nullptr)
+    , auxParticles2(nullptr)
+    , firingParticles(nullptr)
+    , waveEffect(nullptr)
+    , tiltSidewaysAngle(0.0f)
+    , tiltForwardsAngle(0.0f)
+    , tiltSidewaysRate(0.0f)
+    , tiltForwardsRate(0.0f)
+    , hijackerInfantryType(0)
+    , tiberiumCollectionState(0)
+    , unloadTimer{}
+    , barrelFacing{}
+    , facing{}
+    , turretFacing{}
+    , currentBurstIndex(0)
+    , targetLaserOpacity(0)
+    , targetLaserFlags(0)
+    , isCountedAsOwned(false)
+    , isSinking(false)
+    , wasAlreadySinking(false)
+    , isReceivingDamageEffect(false)
+    , isPlayingDamageSound(false)
+    , hasBeenAttacked(false)
+    , isCloakableFlag(false)
+    , isPrimaryFactory(false)
+    , isSpawned(false)
+    , isInPlayfield(false)
+    , isTurretLocked(false)
+    , isBarrelLocked(false)
+    , isHumanControlled(false)
+    , isDiscoveredByPlayer(false)
+    , isDiscoveredByComputer(false)
+    , isSelectedByPlayer(false)
+    , isUnderCursor(false)
+    , isCommandLineTarget(false)
+    , sightRangeBonus(0)
+    , isRecruitableByAlly(false)
+    , isRecruitableByEnemy(false)
+    , isRadarTracked(false)
+    , isOnCarryall(false)
+    , isCrashing(false)
+    , wasAlreadyCrashing(false)
+    , isBeingManipulated(false)
+    , manipulatedByUnit(nullptr)
+    , chronoWarpedByHouse(nullptr)
+    , isChronoImmuneFlag(false)
+    , isEMPImmune(false)
+    , isRadiationImmune(false)
+    , previousTeam(nullptr)
+    , isCountedAsOwned_special(false)
+    , isAbsorbed(false)
+    , isGrindingInProgress(false)
+    , grindingAnimHandle(0)
+    , audioLoopIndex3(0)
+    , audioVolume3(0)
+    , isAudio4Active(false)
+    , audioHandle4(0)
+    , isAudio5Active(false)
+    , audioHandle5(0)
+    , queuedVoiceIndex(0)
+    , voiceFlags(0)
+    , isVoiceOverride(false)
+    , voiceHandle(0)
+    , voiceVolumeModifier(0)
+    , empLockRemaining(0)
+    , threatPosed(0)
+    , shouldLoseTarget(0)
+    , firingRadBeam(nullptr)
+    , planningToken(nullptr)
+    , disguiseAsType(nullptr)
+    , isDisguisedFlag_as_house(nullptr)
 {
-    std::memset(&m_flashing, 0, sizeof(m_flashing));
-    std::memset(&m_animation, 0, sizeof(m_animation));
-    std::memset(&m_passengers, 0, sizeof(m_passengers));
-    std::memset(&m_veterancy, 0, sizeof(m_veterancy));
-    std::memset(&m_idle_action_timer, 0, sizeof(m_idle_action_timer));
-    std::memset(&m_radar_flash_timer, 0, sizeof(m_radar_flash_timer));
-    std::memset(&m_targeting_timer, 0, sizeof(m_targeting_timer));
-    std::memset(&m_iron_curtain_timer, 0, sizeof(m_iron_curtain_timer));
-    std::memset(&m_iron_tint_timer, 0, sizeof(m_iron_tint_timer));
-    std::memset(&m_airstrike_timer, 0, sizeof(m_airstrike_timer));
-    std::memset(&m_airstrike_tint_timer, 0, sizeof(m_airstrike_tint_timer));
-    std::memset(&m_infantry_blink_timer, 0, sizeof(m_infantry_blink_timer));
-    std::memset(&m_disguise_blink_timer, 0, sizeof(m_disguise_blink_timer));
-    std::memset(&m_reload_timer, 0, sizeof(m_reload_timer));
-    std::memset(&m_cloak_progress, 0, sizeof(m_cloak_progress));
-    std::memset(&m_cloak_delay_timer, 0, sizeof(m_cloak_delay_timer));
-    std::memset(&m_disk_laser_timer, 0, sizeof(m_disk_laser_timer));
-    std::memset(&m_target_laser_timer, 0, sizeof(m_target_laser_timer));
-    std::memset(&m_turret_recoil, 0, sizeof(m_turret_recoil));
-    std::memset(&m_barrel_recoil, 0, sizeof(m_barrel_recoil));
-    std::memset(&m_tiberium, 0, sizeof(m_tiberium));
-    std::memset(&m_audio3, 0, sizeof(m_audio3));
-    std::memset(&m_audio4, 0, sizeof(m_audio4));
-    std::memset(&m_audio5, 0, sizeof(m_audio5));
-    std::memset(&m_audio6, 0, sizeof(m_audio6));
+    std::memset(&flashing, 0, sizeof(flashing));
+    std::memset(&animation, 0, sizeof(animation));
+    std::memset(&passengers, 0, sizeof(passengers));
+    std::memset(&veterancy, 0, sizeof(veterancy));
+    std::memset(&idleActionTimer, 0, sizeof(idleActionTimer));
+    std::memset(&radarFlashTimer, 0, sizeof(radarFlashTimer));
+    std::memset(&targetingTimer, 0, sizeof(targetingTimer));
+    std::memset(&ironCurtainTimer, 0, sizeof(ironCurtainTimer));
+    std::memset(&ironTintTimer, 0, sizeof(ironTintTimer));
+    std::memset(&airstrikeTimer, 0, sizeof(airstrikeTimer));
+    std::memset(&airstrikeTintTimer, 0, sizeof(airstrikeTintTimer));
+    std::memset(&infantryBlinkTimer, 0, sizeof(infantryBlinkTimer));
+    std::memset(&disguiseBlinkTimer, 0, sizeof(disguiseBlinkTimer));
+    std::memset(&reloadTimer, 0, sizeof(reloadTimer));
+    std::memset(&cloakProgress, 0, sizeof(cloakProgress));
+    std::memset(&cloakDelayTimer, 0, sizeof(cloakDelayTimer));
+    std::memset(&diskLaserTimer, 0, sizeof(diskLaserTimer));
+    std::memset(&target_laser_timer, 0, sizeof(target_laser_timer));
+    std::memset(&turretRecoil, 0, sizeof(turretRecoil));
+    std::memset(&barrelRecoil, 0, sizeof(barrelRecoil));
+    std::memset(&storedTiberium, 0, sizeof(storedTiberium));
+    std::memset(&audioController3, 0, sizeof(audioController3));
+    std::memset(&audioController4, 0, sizeof(audioController4));
+    std::memset(&audioController5, 0, sizeof(audioController5));
+    std::memset(&audioController6, 0, sizeof(audioController6));
 
-    m_abstract_flags |= 0x1u;
+    abstractFlags |= 0x1u;
 }
 
 FireError TechnoClass::GetFireErrorWithoutRange(AbstractClass* target, int weapon_index) const
@@ -196,7 +196,7 @@ FireError TechnoClass::GetFireErrorWithoutRange(AbstractClass* target, int weapo
     if (!target)
         return static_cast<FireError>(static_cast<int>(gamemd::FireError::ILLEGAL));
 
-    if (m_is_falling_down)
+    if (isFallingDown)
         return static_cast<FireError>(static_cast<int>(gamemd::FireError::CANT));
 
     auto* weapon = GetWeapon(weapon_index);
@@ -207,10 +207,10 @@ FireError TechnoClass::GetFireErrorWithoutRange(AbstractClass* target, int weapo
     // TODO: Anti-ground check -- weapon must have AG capability to target ground units
     // TODO: Rearm delay check -- Arm != 0 -> REARM
 
-    if (m_ammo <= 0)
+    if (ammo <= 0)
         return static_cast<FireError>(static_cast<int>(gamemd::FireError::AMMO));
 
-    if (m_cloak_state == static_cast<uint32_t>(gamemd::CloakState::Cloaked))
+    if (cloakState == static_cast<uint32_t>(gamemd::CloakState::Cloaked))
         return static_cast<FireError>(static_cast<int>(gamemd::FireError::CLOAKED));
 
     return static_cast<FireError>(static_cast<int>(gamemd::FireError::NONE));
@@ -250,7 +250,7 @@ BulletClass* TechnoClass::Fire(AbstractClass* target, int weapon_index)
 
     // Get fire coordinates (muzzle flash position)
     CoordStruct fire_coord;
-    GetFLH(&fire_coord, weapon_index, m_location);
+    GetFLH(&fire_coord, weapon_index, location);
 
     // TODO: Calculate firing direction
     // If projectile has R != 0 or is lobber -> use Fire_Direction() (turret facing)
@@ -277,7 +277,7 @@ BulletClass* TechnoClass::Fire(AbstractClass* target, int weapon_index)
 
 bool TechnoClass::IsCloseEnoughToAttack(AbstractClass* target) const
 {
-    return IsCloseEnough(target, m_current_weapon_number);
+    return IsCloseEnough(target, currentWeaponSlot);
 }
 
 CellClass* TechnoClass::SelectAutoTarget(TargetFlags flags, int current_threat, bool only_target_house_enemy)
@@ -293,11 +293,11 @@ CellClass* TechnoClass::SelectAutoTarget(TargetFlags flags, int current_threat, 
     //   For each: Evaluate_Object() with appropriate threat type
 
     CoordStruct my_pos;
-    GetCoords(&my_pos);
+    fetchCoordinatesHere(&my_pos);
 
     int best_value = current_threat;
     AbstractClass* best_target = nullptr;
-    int scan_range = GetWeaponRange(m_current_weapon_number);
+    int scan_range = GetWeaponRange(currentWeaponSlot);
 
     CellStruct center = {
         static_cast<int16_t>(my_pos.X / 256),
@@ -364,28 +364,28 @@ CellClass* TechnoClass::SelectAutoTarget(TargetFlags flags, int current_threat, 
 void TechnoClass::Guard()
 {
     // RA1: Clear target, enter Guard mission with area-defense mode
-    m_target = nullptr;
-    m_last_target = nullptr;
-    QueueMission(static_cast<Mission>(static_cast<int>(gamemd::Mission::Guard)), true);
+    target = nullptr;
+    lastTarget = nullptr;
+    queueMission(static_cast<Mission>(static_cast<int>(gamemd::Mission::Guard)), true);
 }
 
 void TechnoClass::SetTarget(AbstractClass* target)
 {
-    m_last_target = m_target;
-    m_target = target;
+    lastTarget = target;
+    target = target;
     if (target)
         SetDestination(target, false);
 }
 
 void TechnoClass::Cloak(bool play_sound)
 {
-    m_cloak_state = static_cast<uint32_t>(gamemd::CloakState::Cloaked);
-    m_cloakable = true;
+    cloakState = static_cast<uint32_t>(gamemd::CloakState::Cloaked);
+    isCloakableFlag = true;
 }
 
 void TechnoClass::Uncloak(bool play_sound)
 {
-    m_cloak_state = static_cast<uint32_t>(gamemd::CloakState::Uncloaking);
+    cloakState = static_cast<uint32_t>(gamemd::CloakState::Uncloaking);
 }
 
 int TechnoClass::SelectWeapon(AbstractClass* target) const
@@ -409,100 +409,100 @@ int TechnoClass::SelectWeapon(AbstractClass* target) const
         return 0;
 
     // If secondary is depleted, use primary
-    if (m_ammo <= 0 && m_current_weapon_number == 1)
+    if (ammo <= 0 && currentWeaponSlot == 1)
         return 0;
 
     // Default: use primary
-    return m_current_weapon_number;
+    return currentWeaponSlot;
 }
 
 void TechnoClass::DecreaseAmmo()
 {
-    if (m_ammo > 0)
-        --m_ammo;
+    if (ammo > 0)
+        --ammo;
 }
 
 void TechnoClass::Reload()
 {
-    auto* weapon = GetWeapon(m_current_weapon_number);
+    auto* weapon = GetWeapon(currentWeaponSlot);
     if (!weapon)
         return;
-    // m_reload_timer.Start(weapon->ROF);
+    // reloadTimer.Start(weapon->ROF);
 }
 
 void TechnoClass::UpdateCloak(bool unknown)
 {
-    if (!m_cloakable)
+    if (!isCloakableFlag)
         return;
 
-    bool should_cloak = ShouldBeCloaked();
-    bool should_uncloak = ShouldNotBeCloaked();
+    bool should_cloak = shouldBeCloaked();
+    bool should_uncloak = shouldNotBeCloaked();
 
-    if (should_cloak && m_cloak_state != static_cast<uint32_t>(gamemd::CloakState::Cloaked))
+    if (should_cloak && cloakState != static_cast<uint32_t>(gamemd::CloakState::Cloaked))
         Cloak(true);
-    else if (should_uncloak && m_cloak_state != static_cast<uint32_t>(gamemd::CloakState::Uncloaked))
+    else if (should_uncloak && cloakState != static_cast<uint32_t>(gamemd::CloakState::Uncloaked))
         Uncloak(true);
 }
 
 void TechnoClass::CreateGap()
 {
-    m_generating_gap = true;
-    m_gap_radius = 0;
+    isGeneratingGap = true;
+    gapRadius = 0;
 }
 
 void TechnoClass::DestroyGap()
 {
-    m_generating_gap = false;
+    isGeneratingGap = false;
 }
 
 void TechnoClass::UpdateSight(uint32_t a, uint32_t b, uint32_t c, uint32_t d, uint32_t e)
 {
-    m_last_sight_coords = m_location;
+    lastSightCoords = location;
 }
 
 void TechnoClass::RadarTrackingStart()
 {
-    m_is_radar_tracked = true;
+    isRadarTracked = true;
 }
 
 void TechnoClass::RadarTrackingStop()
 {
-    m_is_radar_tracked = false;
+    isRadarTracked = false;
 }
 
 void TechnoClass::RadarTrackingFlash()
 {
-    m_is_radar_tracked = !m_is_radar_tracked;
+    isRadarTracked = !isRadarTracked;
 }
 
 void TechnoClass::RadarTrackingUpdate(bool unknown)
 {
 }
 
-void TechnoClass::SmokeUpdate()
+void TechnoClass::SmokeupdateLogic()
 {
     // IDA 0x414BB0: Per-frame techno smoke/damage update
     // Default: clear smoke flags for most mission states
-    if (m_current_mission != 1 && m_current_mission != 27
-        && m_current_mission != 30 && m_current_mission != 31)
-        m_unknown_bool_430 = false;
+    if (currentMission != 1 && currentMission != 27
+        && currentMission != 30 && currentMission != 31)
+        isChronoImmuneFlag = false;
 
     // Every 24 frames if moving/attacking: create damage smoke
-    if ((CurrentFrame % 24) == 0 && m_has_been_attacked)
+    if ((CurrentFrame % 24) == 0 && hasBeenAttacked)
     {
         // Create smoke AnimClass at current position
         // AnimClass_ctor(rules[209], coords, 0, 1, 0x600, 0, 0)
     }
 
-    if (m_is_alive)
+    if (isAliveFlag)
     {
-        if (m_is_sinking)
+        if (isSinking)
         {
             CoordStruct coords;
-            GetCoords(&coords);
+            fetchCoordinatesHere(&coords);
             // Sinking: adjust Z, if too deep trigger death
         }
-        if ((CurrentFrame & 3) == 0 && m_health > 0)
+        if ((CurrentFrame & 3) == 0 && health > 0)
         {
             // Random damage smoke near position
         }
@@ -519,9 +519,9 @@ bool TechnoClass::CanDeploySlashUnload() const { return false; }
 void TechnoClass::AddPassenger(FootClass* passenger)
 {
     if (!passenger) return;
-    if (!m_passengers.FirstPassenger)
-        m_passengers.FirstPassenger = passenger;
-    m_passengers.NumPassengers++;
+    if (!passengers.FirstPassenger)
+        passengers.FirstPassenger = passenger;
+    passengers.NumPassengers++;
 }
 
 // ============================================================
@@ -550,7 +550,7 @@ bool TechnoClass::CreateUnit()
     auto* build_type = reinterpret_cast<gamemd::BuildingTypeClass*>(type);
 
     // ---- Section 1: Audio setup ----
-    if (!m_audio3.field_00 && build_type->WorkingSound != -1)
+    if (!audioController3.field_00 && build_type->WorkingSound != -1)
     {
         // TODO: StartAudio(building->Audio7, build_type->WorkingSound)
     }
@@ -562,7 +562,7 @@ bool TechnoClass::CreateUnit()
     if (build_type->CanBeOccupied) // IDA: field_883 (placement check flag)
     {
         // TODO: Check if cell owner allows placement
-        // building->PlacementAllowed = (CheckCellOwner(building->m_owner, cell) == 0);
+        // building->PlacementAllowed = (CheckCellOwner(building->owner, cell) == 0);
     }
 
     // ---- Section 4: MCV deploy state check ----
@@ -572,12 +572,12 @@ bool TechnoClass::CreateUnit()
     // IDA: if (type->field_844 != -1) { vt_entry_240 preset coords }
     if (build_type->DeployingAnim)
     {
-        // TODO: vt_entry_240(this, &m_location) -- preset deploy coordinates
+        // TODO: vt_entry_240(this, &location) -- preset deploy coordinates
     }
 
     // ---- Section 6: Mission queued clear ----
-    if (m_mission_queued && m_queued_mission == m_current_mission)
-        m_mission_queued = false;
+    if (missionQueued && queuedMission == currentMission)
+        missionQueued = false;
 
     // ---- Section 7: Deploy/undeploy animation state machine ----
     // IDA 0x423C24-0x4242A5: vt_entry_488 -> deploy state check
@@ -596,22 +596,22 @@ bool TechnoClass::CreateUnit()
             if (build_type->IsSubterranean)
             {
                 // Subterranean building: special emerge animation from underground
-                // IDA: Rules[753][Rules[756]-1] anim at m_location with Z+3 offset
-                // TODO: new AnimClass(Rules->SubterraneanEmergeAnim, m_location + Z(3), ...)
+                // IDA: Rules[753][Rules[756]-1] anim at location with Z+3 offset
+                // TODO: new AnimClass(Rules->SubterraneanEmergeAnim, location + Z(3), ...)
             }
             else
             {
                 // Surface building: deploy anim + build smoke
                 // IDA: Rules[37] deploy anim + Rules[753][0] build smoke
-                // TODO: new AnimClass(Rules->DeployAnim, m_location, 0,1,0x600,...)
-                // TODO: new AnimClass(Rules->BuildSmokeAnim, m_location+Z(3), 0,1,0x600,...)
+                // TODO: new AnimClass(Rules->DeployAnim, location, 0,1,0x600,...)
+                // TODO: new AnimClass(Rules->BuildSmokeAnim, location+Z(3), 0,1,0x600,...)
             }
 
             // Special deploy animation with fire effects
             // IDA: if (type->field_772) -> special anim + fire + smoke effects
             if (build_type->CreateUnitSound) // proxy for field_772
             {
-                // TODO: new AnimClass(type->field_772, m_location, 0,1,0x2600,-30,...)
+                // TODO: new AnimClass(type->field_772, location, 0,1,0x2600,-30,...)
                 // TODO: sub_489280(0, type->field_816, 1, 0) -- fire effect
                 // TODO: sub_48A620(anim_coords, 0, 0) -- smoke effect
             }
@@ -634,7 +634,7 @@ bool TechnoClass::CreateUnit()
     }
 
     // ---- Section 8: Construction progress ----
-    if (!m_is_alive)
+    if (!isAliveFlag)
         return false;
 
     if (building->ProductionBlocked)
@@ -763,13 +763,13 @@ bool TechnoClass::CreateUnit()
         if (build_type->DeployingAnim)
         {
             // vt_entry_244 -- finalize deploy coordinates
-            // TODO: (*(vt + 244))(this, &m_location)
+            // TODO: (*(vt + 244))(this, &location)
 
             // Check if deploy animation index is valid (<= Rules[829])
             // IDA: if (type->field_844 <= Rules->DeployAnimCount) {
             if (true) // TODO: proper condition
             {
-                auto* owner = building->GetOwningHouse();
+                auto* owner = building->owningHouse();
 
                 // If owner is neutral or invalid, fallback to Civilian house
                 // IDA: if (!owner || !IsActive()) -> find Civilian house
@@ -778,15 +778,15 @@ bool TechnoClass::CreateUnit()
                     // IDA: iterate houses to find Civilian house
                     // for (int i = 0; i < HouseArray->Count; ++i)
                     //     if (houses[i]->Type == Civilian)
-                    //         building->m_owner = houses[i];
+                    //         building->owner = houses[i];
                     // TODO: FindCivilianHouse()
                 }
 
-                if (building->GetOwningHouse())
+                if (building->owningHouse())
                 {
                     // Find exit cell for unit placement
                     // IDA: factory = Rules[826][type->field_844]
-                    //       cell = factory->GetExitCoords(building->m_owner)
+                    //       cell = factory->GetExitCoords(building->owner)
                     //       vt_entry_D8 of factory -> PlaceUnit(cell, owner)
 
                     // Check cell walkability at exit position
@@ -796,7 +796,7 @@ bool TechnoClass::CreateUnit()
                     //       Set unit flag (byte+140 = 1)
 
                     // Create the unit in playfield
-                    // IDA: if (owner->field_492 == 0) { vt_entry_1E8(unit, 15, 0) }
+                    // IDA: if (owner->field_492 == 0) { onParticleExpired(unit, 15, 0) }
                     //       // field_492 = no special behavior
 
                     // TODO: CreateUnitAtCoordsStandard(exit_coords, time, false)
@@ -805,13 +805,13 @@ bool TechnoClass::CreateUnit()
             }
 
             // vt_entry_248(this) -- finalize
-            building->m_unknown_bool_3D0 = true;
+            building->isPlayingDamageSound = true;
             // TODO: return vt_entry_248(this);
             return false;
         }
 
         // No deploy animation -> production complete, set flag
-        building->m_unknown_bool_3D0 = true;
+        building->isPlayingDamageSound = true;
         // TODO: return vt_entry_248(this);
     }
 
@@ -840,7 +840,7 @@ static bool ProductionCompletionCallback(TechnoClass* techno)
     // TODO: vt_entry_292(this, 2)
 
     // Section 2-3: Audio management
-    bool audio_active = (techno->m_audio3.field_00 != 0);
+    bool audio_active = (techno->audioController3.field_00 != 0);
     bool has_working_sound = (type->WorkingSound != -1);
 
     if (audio_active || !has_working_sound)
@@ -851,7 +851,7 @@ static bool ProductionCompletionCallback(TechnoClass* techno)
     else
     {
         // Start working sound on Audio7
-        // TODO: CoordStruct coords; GetCoords(&coords);
+        // TODO: CoordStruct coords; fetchCoordinatesHere(&coords);
         // AudioController_StartAt(type->WorkingSound, coords, &building->Audio7)
     }
     // Stop Audio8
@@ -870,7 +870,7 @@ static bool ProductionCompletionCallback(TechnoClass* techno)
         if (type->ICBMLauncher || type->SpySat || type->NukeSilo)
         {
             // Get cell at building position
-            // TODO: cell = Coord_To_Cell(GetCoords())
+            // TODO: cell = Coord_To_Cell(fetchCoordinatesHere())
             // TODO: building_idx = BuildingClass_FindByCellHash(cell)
             // if (building_idx != -1) {
             //     building_instance = BuildingClass_InstanceArray[building_idx]
@@ -917,8 +917,8 @@ static bool CreateUnitOnCompletion(TechnoClass* techno)
     if (!type) return false;
 
     // Section 1: Get cell coordinates
-    // IDA: coords = GetCoords() / 256 -> CellCoord_To_CellObj
-    // auto* coords = GetCoords(); // via vt_entry_72
+    // IDA: coords = fetchCoordinatesHere() / 256 -> CellCoord_To_CellObj
+    // auto* coords = fetchCoordinatesHere(); // via vt_entry_72
     // int cell_x = coords->X / 256;
     // int cell_y = coords->Y / 256;
     // auto* cell = CellCoord_To_CellObj(CellStruct{cell_x, cell_y});
@@ -943,7 +943,7 @@ static bool CreateUnitOnCompletion(TechnoClass* techno)
     {
         for (int i = 0; i < type->Unknown_720; ++i)
         {
-            // auto sw_coords = GetCoords();
+            // auto sw_coords = fetchCoordinatesHere();
             // SW_CreateFireAt(sw_array[type+716], sw_coords)
         }
     }

@@ -1,6 +1,6 @@
-#include "gamemd/system/convert_class.hpp"
-#include "gamemd/render/surface.hpp"
-#include "gamemd/render/palette.hpp"
+#include "system/convert_class.hpp"
+#include "render/surface.hpp"
+#include "render/palette.hpp"
 
 namespace gamemd
 {

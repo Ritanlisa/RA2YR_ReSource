@@ -1,5 +1,5 @@
-#include "gamemd/team/trigger.hpp"
-#include "gamemd/house/house.hpp"
+#include "team/trigger.hpp"
+#include "house/house.hpp"
 
 #include <cstring>
 
@@ -59,12 +59,12 @@ void TriggerClass::NotifyLocalChanged(int idx_local)
 
 void TriggerClass::ResetTimers()
 {
-    std::memset(&m_timer, 0, sizeof(m_timer));
+    std::memset(&timer, 0, sizeof(timer));
 }
 
 void TriggerClass::Destroy()
 {
-    m_destroyed = true;
+    destroyed = true;
     // TODO: remove from trigger chain, notify actions
 }
 

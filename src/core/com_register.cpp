@@ -2,8 +2,8 @@
 // Registers 30+ game classes with Windows registry for COM interop.
 // Simplified: registry writes are logged but not executed since
 // our standalone EXE doesn't need external COM access.
-#include "gamemd/core/com_defs.hpp"
-#include "gamemd/core/logging.hpp"
+#include "core/com_defs.hpp"
+#include "core/logging.hpp"
 
 #include <string>
 

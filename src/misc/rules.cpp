@@ -1,11 +1,11 @@
 // InitRules + RulesClass members + game initialization functions
-#include "gamemd/misc/rules.hpp"
-#include "gamemd/core/init_stubs.hpp"
-#include "gamemd/system/mix_file.hpp"
-#include "gamemd/core/logging.hpp"
+#include "misc/rules.hpp"
+#include "core/init_stubs.hpp"
+#include "system/mix_file.hpp"
+#include "core/logging.hpp"
 
 #include <windows.h>
-#include "gamemd/core/reverse_marker.hpp"
+#include "core/reverse_marker.hpp"
 
 namespace gamemd {
 

@@ -1,5 +1,5 @@
-#include "gamemd/system/map.hpp"
-#include "gamemd/system/cell.hpp"
+#include "system/map.hpp"
+#include "system/cell.hpp"
 
 #include <cstring>
 
@@ -7,55 +7,55 @@ namespace gamemd
 {
 
 MapClass::MapClass() noexcept
-    : m_unknown_10(0)
-    , m_unknown_pointer_14(nullptr)
+    : unknown10(0)
+    , unknownPointer14(nullptr)
     , m_unknown_4C(0)
-    , m_zone_connections(nullptr)
-    , m_zone_connection_count(0)
-    , m_zone_connection_capacity(0)
-    , m_unknown_array_68(nullptr)
-    , m_num_items_in_68(0)
-    , m_unknown_70(0)
-    , m_unknown_74(0)
-    , m_unknown_78(0)
-    , m_unknown_7C(0)
-    , m_subzone_tracking_1(nullptr)
-    , m_subzone_tracking_1_count(0)
-    , m_subzone_tracking_1_capacity(0)
-    , m_subzone_tracking_2(nullptr)
-    , m_subzone_tracking_2_count(0)
-    , m_subzone_tracking_2_capacity(0)
-    , m_subzone_tracking_3(nullptr)
-    , m_subzone_tracking_3_count(0)
-    , m_subzone_tracking_3_capacity(0)
-    , m_cell_structs_1(nullptr)
-    , m_cell_structs_1_count(0)
-    , m_cell_structs_1_capacity(0)
-    , m_cell_iterator_next_x(0)
-    , m_cell_iterator_next_y(0)
-    , m_cell_iterator_current_y(0)
-    , m_cell_iterator_next_cell(nullptr)
+    , zoneConnections(nullptr)
+    , zoneConnectionCount(0)
+    , zoneConnectionCapacity(0)
+    , unknownArray68(nullptr)
+    , numItemsIn68(0)
+    , unknown70(0)
+    , unknown74(0)
+    , spawnStatus(0)
+    , visibilityFlags(0)
+    , subzoneTracking1(nullptr)
+    , subzoneTracking1Count(0)
+    , subzoneTracking1Capacity(0)
+    , subzoneTracking2(nullptr)
+    , subzoneTracking2Count(0)
+    , subzoneTracking2Capacity(0)
+    , subzoneTracking3(nullptr)
+    , subzoneTracking3Count(0)
+    , subzoneTracking3Capacity(0)
+    , cellStructs1(nullptr)
+    , cellStructs1Count(0)
+    , cellStructs1Capacity(0)
+    , cellIteratorNextX(0)
+    , cellIteratorNextY(0)
+    , cellIteratorCurrentY(0)
+    , cellIteratorNextCell(nullptr)
     , m_unknown_11C(0)
-    , m_unknown_120(0)
-    , m_unknown_134(0)
-    , m_cells(nullptr)
-    , m_cells_count(0)
-    , m_cells_capacity(0)
-    , m_max_width(0)
-    , m_max_height(0)
-    , m_max_num_cells(0)
-    , m_padding_01(0)
-    , m_padding_02(0)
-    , m_tagged_cells(nullptr)
-    , m_tagged_cells_count(0)
-    , m_tagged_cells_capacity(0)
+    , unknown120(0)
+    , unknown134(0)
+    , cells(nullptr)
+    , cellsCount(0)
+    , cellsCapacity(0)
+    , maxWidth(0)
+    , maxHeight(0)
+    , maxNumCells(0)
+    , padding01(0)
+    , padding02(0)
+    , taggedCells(nullptr)
+    , taggedCellsCount(0)
+    , taggedCellsCapacity(0)
 {
-    std::memset(m_unknown_pointer_array_18, 0, sizeof(m_unknown_pointer_array_18));
-    std::memset(m_unknown_80, 0, sizeof(m_unknown_80));
-    std::memset(&m_map_rect, 0, sizeof(m_map_rect));
-    std::memset(&m_visible_rect, 0, sizeof(m_visible_rect));
-    std::memset(&m_map_coord_bounds, 0, sizeof(m_map_coord_bounds));
-    std::memset(m_crates, 0, sizeof(m_crates));
+    std::memset(unknownPointerArray18, 0, sizeof(unknownPointerArray18));
+    std::memset(unknown80, 0, sizeof(unknown80));
+    std::memset(&mapRect, 0, sizeof(mapRect));
+    std::memset(&visibleRect, 0, sizeof(visibleRect));
+    std::memset(&mapCoordBounds, 0, sizeof(mapCoordBounds));
+    std::memset(crates, 0, sizeof(crates));
 }
 
 // TODO: complete implementation
@@ -63,8 +63,8 @@ MapClass::MapClass() noexcept
 CellClass* MapClass::TryGetCellAt(const CellStruct& map_coords) const
 {
     int idx = GetCellIndex(map_coords);
-    if (idx >= 0 && idx < m_cells_count && m_cells)
-        return m_cells[idx];
+    if (idx >= 0 && idx < cellsCount && cells)
+        return cells[idx];
     return nullptr;
 }
 
@@ -76,7 +76,7 @@ CellClass* MapClass::TryGetCellAt(const CoordStruct& crd) const
 
 CellClass* MapClass::GetCellAt(const CellStruct& map_coords) const
 {
-    return m_cells[GetCellIndex(map_coords)];
+    return cells[GetCellIndex(map_coords)];
 }
 
 CellClass* MapClass::GetCellAt(const CoordStruct& crd) const
@@ -88,7 +88,7 @@ CellClass* MapClass::GetCellAt(const CoordStruct& crd) const
 bool MapClass::CellExists(const CellStruct& map_coords) const
 {
     int idx = GetCellIndex(map_coords);
-    return idx >= 0 && idx < m_cells_count && m_cells && m_cells[idx] != nullptr;
+    return idx >= 0 && idx < cellsCount && cells && cells[idx] != nullptr;
 }
 
 int MapClass::GetThreatPosed(const CellStruct& cell, HouseClass* house) const
@@ -129,10 +129,10 @@ CoordStruct* MapClass::PickInfantrySublocation(CoordStruct& out, const CoordStru
 
 void MapClass::CellIteratorReset()
 {
-    m_cell_iterator_next_x = m_map_rect.X;
-    m_cell_iterator_next_y = m_map_rect.Y;
-    m_cell_iterator_current_y = m_map_rect.Y;
-    m_cell_iterator_next_cell = nullptr;
+    cellIteratorNextX = mapRect.X;
+    cellIteratorNextY = mapRect.Y;
+    cellIteratorCurrentY = mapRect.Y;
+    cellIteratorNextCell = nullptr;
 }
 
 CellClass* MapClass::CellIteratorNext()

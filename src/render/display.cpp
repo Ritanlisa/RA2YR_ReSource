@@ -1,6 +1,6 @@
-#include "gamemd/render/display.hpp"
-#include "gamemd/render/surface.hpp"
-#include "gamemd/core/ddraw_init.hpp"
+#include "render/display.hpp"
+#include "render/surface.hpp"
+#include "core/ddraw_init.hpp"
 #include <windows.h>
 #include <cstring>
 

@@ -2,9 +2,9 @@
 // IDA: Constructor @ 0x410170, vtable[0] @ 0x7E1F50 (28 entries)
 // Verified member offsets: +0x00/+0x04/+0x08/+0x0C vtables, +0x10 id, +0x14 flags, +0x18..+0x23 fields
 
-#include "gamemd/object/abstract.hpp"
-#include "gamemd/system/scenario.hpp"
-#include "gamemd/core/reverse_marker.hpp"
+#include "object/abstract.hpp"
+#include "system/scenario.hpp"
+#include "core/reverse_marker.hpp"
 
 namespace ra2 {
 namespace game {
@@ -12,14 +12,14 @@ namespace game {
 // IDA: 0x410170 -- AbstractClass::Constructor
 // Layout confirmed: 4 vtables at 0x00/0x04/0x08/0x0C, fields at 0x10-0x20
 AbstractClass::AbstractClass() noexcept
-    : m_unique_id(static_cast<uint32_t>(-1))  // 0x410191: mov [eax+0x10], 0xFFFFFFFF
-    , m_abstract_flags(0)                      // 0x4101B3: mov [eax+0x14], cl (preserved & 0xF8 from caller)
-    , m_unknown_18(0)                          // 0x410182: mov [eax+0x18], 0
-    , m_ref_count(0)                           // 0x410185: mov [eax+0x1C], 0
-    , m_dirty(false)                           // 0x410188: mov [eax+0x20], 0
+    : uniqueId(static_cast<uint32_t>(-1))  // 0x410191: mov [eax+0x10], 0xFFFFFFFF
+    , abstractFlags(0)                      // 0x4101B3: mov [eax+0x14], cl (preserved & 0xF8 from caller)
+    , nextArrayIndex(0)                          // 0x410182: mov [eax+0x18], 0
+    , referenceCount(0)                           // 0x410185: mov [eax+0x1C], 0
+    , needsSave(false)                           // 0x410188: mov [eax+0x20], 0
 {
-    // IDA preserves bits 7-3 of pre-existing m_abstract_flags (& 0xF8).
-    // In practice heap memory is zeroed, so result is m_abstract_flags = 0.
+    // IDA preserves bits 7-3 of pre-existing abstractFlags (& 0xF8).
+    // In practice heap memory is zeroed, so result is abstractFlags = 0.
     // The vtable pointer dance (temp INoticeSink/INoticeSource -- final merged)
     // is handled automatically by the C++ compiler for MI.
 }
@@ -78,9 +78,9 @@ HRESULT AbstractClass::GetClassID(CLSID* class_id) {
 }
 
 // IDA: 0x410450 -- vtable[0][4], AbstractClass::IsClean
-// Returns *(this + 0x20) == 0  --  !m_dirty
+// Returns *(this + 0x20) == 0  --  !needsSave
 HRESULT AbstractClass::IsDirty() {
-    return m_dirty ? S_OK : S_FALSE;
+    return needsSave ? S_OK : S_FALSE;
 }
 
 // IDA: vtable[0][5] -- Load (stub = XSurface::vt_entry_68)
@@ -98,19 +98,19 @@ HRESULT AbstractClass::GetSizeMax(ULARGE_INTEGER* size) {
     return E_NOTIMPL;
 }
 
-// IDA: 0x410230 -- vtable[1][5], GenerateUniqueID / CreateID
-void AbstractClass::CreateID() {
-    // IDA: if (ScenarioClass_Instance) m_unique_id = sub_68BCB0()
-    // else m_unique_id = 0
+// IDA: 0x410230 -- vtable[1][5], GenerateUniqueID / createId
+void AbstractClass::createId() {
+    // IDA: if (ScenarioClass_Instance) uniqueId = sub_68BCB0()
+    // else uniqueId = 0
     if (gamemd::ScenarioClass::Instance)
-        m_unique_id = 0;  // TODO: call the real ID generator subst (0x68BCB0)
+        uniqueId = 0;  // TODO: call the real ID generator subst (0x68BCB0)
     else
-        m_unique_id = 0;
+        uniqueId = 0;
 }
 
 // IDA: 0x410540 -- vtable[0][22], AbstractClass::GetCoords
 // Calls vtable[0][18] (GetInvalidCoord @ 0x4104C0) then copies XYZ to out
-CoordStruct* AbstractClass::GetCoords(CoordStruct* out) const {
+CoordStruct* AbstractClass::fetchCoordinatesHere(CoordStruct* out) const {
     // vtable[0][18] = Map::GetInvalidCoord @ 0x4104C0
     // Returns static invalid XYZ from dword_887680/684/688
     static constexpr CoordStruct kInvalidCoord = {0, 0, 0};  // TODO: use real invalid coord from IDA

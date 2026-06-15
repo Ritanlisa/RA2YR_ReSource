@@ -1,6 +1,6 @@
-#include "gamemd/entity/smudge.hpp"
-#include "gamemd/type/smudge_type.hpp"
-#include "gamemd/core/vector.hpp"
+#include "entity/smudge.hpp"
+#include "type/smudge_type.hpp"
+#include "core/vector.hpp"
 
 namespace gamemd
 {
@@ -16,7 +16,7 @@ SmudgeClass::SmudgeClass(SmudgeTypeClass* pType, const CellStruct& cell,
 {
     Type = pType;
 
-    m_abstract_flags = kSmudgeFlag;
+    abstractFlags = kSmudgeFlag;
 
     // TODO: complete implementation
     // - Link to owning cell

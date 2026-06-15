@@ -2,8 +2,8 @@
 #include <cstring>
 #include <windows.h>
 
-#include "gamemd/core/logging.hpp"
-#include "gamemd/core/spawn_config.hpp"
+#include "core/logging.hpp"
+#include "core/spawn_config.hpp"
 
 namespace gamemd {
 

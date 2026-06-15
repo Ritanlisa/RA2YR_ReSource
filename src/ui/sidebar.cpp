@@ -1,4 +1,4 @@
-#include "gamemd/ui/sidebar.hpp"
+#include "ui/sidebar.hpp"
 
 #include <cstring>
 

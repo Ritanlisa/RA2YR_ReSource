@@ -1,4 +1,4 @@
-#include "gamemd/system/radar.hpp"
+#include "system/radar.hpp"
 
 namespace gamemd
 {

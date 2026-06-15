@@ -1,7 +1,7 @@
-#include "gamemd/entity/particle_system.hpp"
-#include "gamemd/type/particle_system_type.hpp"
-#include "gamemd/entity/particle.hpp"
-#include "gamemd/core/vector.hpp"
+#include "entity/particle_system.hpp"
+#include "type/particle_system_type.hpp"
+#include "entity/particle.hpp"
+#include "core/vector.hpp"
 
 #include <cstring>
 
@@ -32,7 +32,7 @@ ParticleSystemClass::ParticleSystemClass(ParticleSystemTypeClass* pType) noexcep
 
     // Particles DynamicVectorClass is default-constructed inline
 
-    m_abstract_flags = kParticleSystemFlag;
+    abstractFlags = kParticleSystemFlag;
 
     // TODO: complete implementation
     // - Initialize particle spawn timer

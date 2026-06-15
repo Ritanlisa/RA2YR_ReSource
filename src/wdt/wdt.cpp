@@ -1,4 +1,4 @@
-#include "gamemd/wdt/wdt.hpp"
+#include "wdt/wdt.hpp"
 
 #include <cstring>
 
@@ -72,7 +72,7 @@ WDTError Map::Draw()
     return { 0, "" };
 }
 
-void Map::Update()
+void Map::updateLogic()
 {
 }
 
@@ -131,7 +131,7 @@ WDTError Conflict::Resolve()
     return { 0, "" };
 }
 
-void Conflict::Update()
+void Conflict::updateLogic()
 {
 }
 
@@ -155,7 +155,7 @@ WDTError Campaign::End()
     return { 0, "" };
 }
 
-void Campaign::Update()
+void Campaign::updateLogic()
 {
 }
 
@@ -187,12 +187,12 @@ void History::Record(const char* event)
     Entry entry = {};
     entry.Frame = 0;
     std::strncpy(entry.Text, event ? event : "", sizeof(entry.Text) - 1);
-    m_entries.push_back(entry);
+    entries.push_back(entry);
 }
 
 void History::Clear()
 {
-    m_entries.clear();
+    entries.clear();
 }
 
 // TODO: complete WDT implementations

@@ -1,4 +1,4 @@
-#include "gamemd/entity/voxel.hpp"
+#include "entity/voxel.hpp"
 #include <cstdlib>
 #include <cstring>
 

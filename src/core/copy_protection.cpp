@@ -1,8 +1,8 @@
 // CopyProtection -- IDA 0x49F5C0/0x49F620/0x49F7A0
 // All three functions are bypassed by Ares/Phobos (always return TRUE).
 // We follow the same approach for standalone EXE.
-#include "gamemd/core/logging.hpp"
-#include "gamemd/core/reverse_marker.hpp"
+#include "core/logging.hpp"
+#include "core/reverse_marker.hpp"
 
 namespace gamemd {
 

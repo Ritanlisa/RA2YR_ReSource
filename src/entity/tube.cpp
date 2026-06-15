@@ -1,5 +1,5 @@
-#include "gamemd/entity/tube.hpp"
-#include "gamemd/core/vector.hpp"
+#include "entity/tube.hpp"
+#include "core/vector.hpp"
 
 namespace gamemd
 {
@@ -20,7 +20,7 @@ TubeClass::TubeClass() noexcept
     unknown_C0 = 0;
     unknown_C4 = 0;
 
-    m_abstract_flags = kTubeFlag;
+    abstractFlags = kTubeFlag;
 
     // TODO: complete implementation
     // - Tubes are tunnel/wormhole path connectors

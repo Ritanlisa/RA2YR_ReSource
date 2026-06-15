@@ -12,7 +12,7 @@ endif()
 
 # Collect all source files
 file(GLOB_RECURSE HEADERS
-    "include/gamemd/*.hpp"
+    "src/*.hpp"
 )
 
 file(GLOB_RECURSE SOURCES
@@ -26,7 +26,7 @@ add_library(gamemd_core STATIC
 )
 
 target_include_directories(gamemd_core PUBLIC
-    "include"
+    "src"
 )
 
 target_compile_definitions(gamemd_core PRIVATE

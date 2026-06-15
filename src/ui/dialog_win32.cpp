@@ -1,8 +1,8 @@
 // Dialog system -- IDA Win32 dialog wrapper stubs
 // These are the original gamemd.exe Win32 CreateDialogIndirectParamA wrappers.
 // Implemented as stubs for now (custom DialogClass is used for menu screens).
-#include "gamemd/ui/dialog.hpp"
-#include "gamemd/core/logging.hpp"
+#include "ui/dialog.hpp"
+#include "core/logging.hpp"
 
 namespace gamemd {
 namespace Dialog {

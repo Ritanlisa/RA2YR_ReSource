@@ -1,8 +1,8 @@
-#include "gamemd/entity/anim.hpp"
-#include "gamemd/type/anim_type.hpp"
-#include "gamemd/core/vector.hpp"
-#include "gamemd/render/palette.hpp"
-#include "gamemd/house/house.hpp"
+#include "entity/anim.hpp"
+#include "type/anim_type.hpp"
+#include "core/vector.hpp"
+#include "render/palette.hpp"
+#include "house/house.hpp"
 
 #include <cstring>
 
@@ -73,10 +73,10 @@ AnimClass::AnimClass(AnimTypeClass* pType, const CoordStruct& coords,
 
     if (coords.X != 0 || coords.Y != 0 || coords.Z != 0)
     {
-        m_location = coords;
+        location = coords;
     }
 
-    m_abstract_flags = kAnimFlag;
+    abstractFlags = kAnimFlag;
 
     // TODO: complete implementation
     // - Initialize animation from AnimTypeClass data

@@ -1,8 +1,8 @@
 // INIClass + CCINIClass -- IDA-based constructor translations
 // INI parser with section/key/value storage
-#include "gamemd/system/ini_class.hpp"
-#include "gamemd/system/mix_file.hpp"
-#include "gamemd/core/logging.hpp"
+#include "system/ini_class.hpp"
+#include "system/mix_file.hpp"
+#include "core/logging.hpp"
 
 #include <cstring>
 #include <cstdlib>
@@ -10,7 +10,7 @@
 #include <string>
 #include <vector>
 #include <map>
-#include "gamemd/core/reverse_marker.hpp"
+#include "core/reverse_marker.hpp"
 
 namespace gamemd {
 
@@ -49,18 +49,18 @@ REVERSE(0x535b30, "CCINIClass::Constructor: IDA verified", "None")
 CCINIClass::CCINIClass()
     : INIClass()
 {
-    m_cc_file = nullptr;
-    m_owns_file = false;
-    m_ini_data = new INIData();
+    ccFile = nullptr;
+    ownsFile = false;
+    iniData = new INIData();
     m_unknown_4C = 0;
-    m_unknown_50 = 0;
-    m_unknown_54 = 0;
+    unknown50 = 0;
+    unknown54 = 0;
 }
 
 CCINIClass::~CCINIClass()
 {
-    delete m_ini_data;
-    m_ini_data = nullptr;
+    delete iniData;
+    iniData = nullptr;
 }
 
 const void* CCINIClass::Vtable = nullptr;
@@ -99,9 +99,9 @@ bool CCINIClass::Load(CCFileClass* file, bool unk1, bool unk2)
         return false;
     }
 
-    m_cc_file = file;
-    m_ini_data->Sections.clear();
-    m_ini_data->SectionIndex.clear();
+    ccFile = file;
+    iniData->Sections.clear();
+    iniData->SectionIndex.clear();
 
     // Parse INI content
     const char* p = (const char*)data;
@@ -133,15 +133,15 @@ bool CCINIClass::Load(CCFileClass* file, bool unk1, bool unk2)
             if (endBracket) {
                 INISectionData sec;
                 sec.Name = std::string(ls + 1, endBracket - ls - 1);
-                m_ini_data->SectionIndex[sec.Name] = (int)m_ini_data->Sections.size();
-                m_ini_data->Sections.push_back(std::move(sec));
-                LOG_TRACE("  INI section [%s]", m_ini_data->Sections.back().Name.c_str());
+                iniData->SectionIndex[sec.Name] = (int)iniData->Sections.size();
+                iniData->Sections.push_back(std::move(sec));
+                LOG_TRACE("  INI section [%s]", iniData->Sections.back().Name.c_str());
             }
             continue;
         }
 
         // Key=Value
-        if (m_ini_data->Sections.empty()) {
+        if (iniData->Sections.empty()) {
             // Lines before any section -- ignored (or global section)
             continue;
         }
@@ -152,12 +152,12 @@ bool CCINIClass::Load(CCFileClass* file, bool unk1, bool unk2)
         INIKeyValue kv;
         kv.Key = Trim(ls, (int)(eq - ls));
         kv.Value = Trim(eq + 1, (int)(ll - (eq + 1 - ls)));
-        m_ini_data->Sections.back().Entries.push_back(std::move(kv));
+        iniData->Sections.back().Entries.push_back(std::move(kv));
     }
 
     LOG_INFO("CCINIClass::Load: parsed %d sections, %d bytes",
-             (int)m_ini_data->Sections.size(), sz);
-    for (auto& sec : m_ini_data->Sections) {
+             (int)iniData->Sections.size(), sz);
+    for (auto& sec : iniData->Sections) {
         LOG_DEBUG("  [%s]: %d keys", sec.Name.c_str(), (int)sec.Entries.size());
     }
 
@@ -170,34 +170,34 @@ bool CCINIClass::Load(CCFileClass* file, bool unk1, bool unk2)
 
 int CCINIClass::GetKeyCount(const char* section)
 {
-    auto it = m_ini_data->SectionIndex.find(section);
-    if (it == m_ini_data->SectionIndex.end()) return 0;
-    return (int)m_ini_data->Sections[it->second].Entries.size();
+    auto it = iniData->SectionIndex.find(section);
+    if (it == iniData->SectionIndex.end()) return 0;
+    return (int)iniData->Sections[it->second].Entries.size();
 }
 
 const char* CCINIClass::GetStringByIndex(const char* section, int index)
 {
-    auto it = m_ini_data->SectionIndex.find(section);
-    if (it == m_ini_data->SectionIndex.end()) return nullptr;
-    auto& entries = m_ini_data->Sections[it->second].Entries;
+    auto it = iniData->SectionIndex.find(section);
+    if (it == iniData->SectionIndex.end()) return nullptr;
+    auto& entries = iniData->Sections[it->second].Entries;
     if (index < 0 || index >= (int)entries.size()) return nullptr;
     return entries[index].Key.c_str();
 }
 
 int CCINIClass::BinarySearchSection(const char* section)
 {
-    auto it = m_ini_data->SectionIndex.find(section);
-    return (it != m_ini_data->SectionIndex.end()) ? 1 : 0;
+    auto it = iniData->SectionIndex.find(section);
+    return (it != iniData->SectionIndex.end()) ? 1 : 0;
 }
 
 // ---- INI value accessors ----
 
 const char* CCINIClass::GetString(const char* section, const char* key, const char* def, char* buf, int bufSize)
 {
-    auto it = m_ini_data->SectionIndex.find(section);
-    if (it == m_ini_data->SectionIndex.end()) return def;
+    auto it = iniData->SectionIndex.find(section);
+    if (it == iniData->SectionIndex.end()) return def;
 
-    auto& entries = m_ini_data->Sections[it->second].Entries;
+    auto& entries = iniData->Sections[it->second].Entries;
     for (auto& kv : entries) {
         if (kv.Key == key) {
             if (buf && bufSize > 0) {
@@ -212,10 +212,10 @@ const char* CCINIClass::GetString(const char* section, const char* key, const ch
 
 int CCINIClass::GetInt(const char* section, const char* key, int def)
 {
-    auto it = m_ini_data->SectionIndex.find(section);
-    if (it == m_ini_data->SectionIndex.end()) return def;
+    auto it = iniData->SectionIndex.find(section);
+    if (it == iniData->SectionIndex.end()) return def;
 
-    auto& entries = m_ini_data->Sections[it->second].Entries;
+    auto& entries = iniData->Sections[it->second].Entries;
     for (auto& kv : entries) {
         if (kv.Key == key) {
             return atoi(kv.Value.c_str());
