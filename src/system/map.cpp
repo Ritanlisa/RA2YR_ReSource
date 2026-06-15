@@ -7,18 +7,18 @@ namespace gamemd
 {
 
 MapClass::MapClass() noexcept
-    : m_unknown_10(0)
-    , m_unknown_pointer_14(nullptr)
-    , m_unknown_4C(0)
+    : lightingFlags(0)
+    , tileSetData(nullptr)
+    , zoneSearchState(0)
     , m_zone_connections(nullptr)
     , m_zone_connection_count(0)
     , m_zone_connection_capacity(0)
-    , m_unknown_array_68(nullptr)
+    , pathfindingNodes(nullptr)
     , m_num_items_in_68(0)
-    , m_unknown_70(0)
-    , m_unknown_74(0)
-    , m_unknown_78(0)
-    , m_unknown_7C(0)
+    , pathDataField0(0)
+    , pathDataField1(0)
+    , pathDataField2(0)
+    , pathDataField3(0)
     , m_subzone_tracking_1(nullptr)
     , m_subzone_tracking_1_count(0)
     , m_subzone_tracking_1_capacity(0)
@@ -35,23 +35,23 @@ MapClass::MapClass() noexcept
     , m_cell_iterator_next_y(0)
     , m_cell_iterator_current_y(0)
     , m_cell_iterator_next_cell(nullptr)
-    , m_unknown_11C(0)
-    , m_unknown_120(0)
-    , m_unknown_134(0)
+    , cellIteratorState0(0)
+    , cellIteratorState1(0)
+    , randomMapState(0)
     , m_cells(nullptr)
     , m_cells_count(0)
     , m_cells_capacity(0)
     , m_max_width(0)
     , m_max_height(0)
     , m_max_num_cells(0)
-    , m_padding_01(0)
-    , m_padding_02(0)
+    , reserved_01(0)
+    , reserved_02(0)
     , m_tagged_cells(nullptr)
     , m_tagged_cells_count(0)
     , m_tagged_cells_capacity(0)
 {
-    std::memset(m_unknown_pointer_array_18, 0, sizeof(m_unknown_pointer_array_18));
-    std::memset(m_unknown_80, 0, sizeof(m_unknown_80));
+    std::memset(waypointCache, 0, sizeof(waypointCache));
+    std::memset(pathDataState, 0, sizeof(pathDataState));
     std::memset(&m_map_rect, 0, sizeof(m_map_rect));
     std::memset(&m_visible_rect, 0, sizeof(m_visible_rect));
     std::memset(&m_map_coord_bounds, 0, sizeof(m_map_coord_bounds));

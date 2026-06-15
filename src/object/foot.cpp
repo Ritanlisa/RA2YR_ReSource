@@ -14,78 +14,77 @@ constexpr uint32_t kFootFlag = 0x4u;
 extern int& CurrentFrame;
 
 FootClass::FootClass() noexcept
-    : m_planning_path_idx(-1)
-    , m_unknown_short_524(0)
-    , m_unknown_short_526(0)
-    , m_unknown_short_528(0)
-    , m_unknown_short_52A(0)
-    , m_unknown_52C(0)
-    , m_unknown_530(0)
-    , m_unknown_534(0)
-    , m_unknown_538(0)
-    , m_unknown_bool_53C(false)
-    , m_unknown_540(0)
-    , m_current_map_coords{}
-    , m_last_map_coords{}
-    , m_last_jumpjet_map_coords{}
-    , m_current_jumpjet_map_coords{}
-    , m_unknown_coords_568{}
+    : planningPathIndex(-1)
+    , pathWaypointY(0)
+    , pathTargetX(0)
+    , pathTargetY(0)
+    , pathMoveState(0)
+    , pathStepCounter(0)
+    , pathBlockFlags(0)
+    , pathCollisionState(0)
+    , pathRecomputeFlag(false)
+    , pathReserved(0)
+    , currentMapCoords{}
+    , lastMapCoords{}
+    , lastJumpjetCoords{}
+    , currentJumpjetCoords{}
+    , movementOriginCoords{}
     , m_unused_574(0)
     , m_speed_percentage(0.0)
     , m_speed_multiplier(0.0)
-    , m_destination(nullptr)
-    , m_last_destination(nullptr)
-    , m_unknown_int_5C4(-1)
-    , m_unknown_5C8(0)
-    , m_unknown_5CC(0)
-    , m_unknown_5D0(0)
-    , m_unknown_bool_5D1(false)
-    , m_team(nullptr)
-    , m_next_team_member(nullptr)
-    , m_unknown_5DC(0)
+    , destination(nullptr)
+    , lastDestination(nullptr)
+    , pathDirectionIndex(-1)
+    , pathScanState(0)
+    , pathScanTimer(0)
+    , movementReserved1(0)
+    , movementBlockedFlag(false)
+    , team(nullptr)
+    , nextTeamMember(nullptr)
+    , teamFormationIndex(0)
     , m_path_delay_timer{}
-    , m_unknown_int_64C(0)
-    , m_unknown_timer_650{}
-    , m_sight_timer{}
-    , m_blockage_path_timer{}
-    , m_unknown_point3d_678{}
-    , m_tube_index(-1)
-    , m_unknown_bool_685(false)
-    , m_waypoint_index(0)
-    , m_unknown_bool_687(false)
-    , m_unknown_bool_688(false)
-    , m_is_team_leader(false)
-    , m_should_scan_for_target(false)
-    , m_unknown_bool_68B(false)
-    , m_unknown_bool_68C(false)
-    , m_unknown_bool_68D(false)
-    , m_unknown_bool_68E(false)
-    , m_should_enter_absorber(false)
-    , m_should_enter_occupiable(false)
-    , m_should_garrison_structure(true)
-    , m_parasite_eating_me(nullptr)
-    , m_unknown_698(0)
-    , m_parasite_im_using(nullptr)
-    , m_paralysis_timer{}
-    , m_unknown_bool_6AC(false)
-    , m_is_attacked_by_locomotor(false)
-    , m_is_let_go_by_locomotor(false)
-    , m_unknown_bool_6AF(false)
-    , m_unknown_bool_6B0(false)
-    , m_unknown_bool_6B1(false)
-    , m_unknown_bool_6B2(false)
-    , m_unknown_bool_6B3(false)
-    , m_unknown_bool_6B4(false)
-    , m_unknown_bool_6B5(false)
-    , m_unknown_bool_6B7(false)
-    , m_frozen_still(false)
-    , m_unknown_bool_6B8(false)
+    , pathSequenceLength(0)
+    , pathSequenceTimer{}
+    , sightTimer{}
+    , blockagePathTimer{}
+    , locomotorTargetCoords{}
+    , tubeIndex(-1)
+    , locomotorShiftFlag(false)
+    , waypointIndex(0)
+    , pathSequencingFlag(false)
+    , pathAlternateFlag(false)
+    , isTeamLeader(false)
+    , shouldScanForTarget(false)
+    , aiSearchFlag0(false)
+    , aiSearchFlag1(false)
+    , aiSearchFlag2(false)
+    , aiSearchFlag3(false)
+    , shouldEnterAbsorber(false)
+    , shouldEnterOccupiable(false)
+    , shouldGarrisonStructure(true)
+    , parasiteEatingMe(nullptr)
+    , parasiteState(0)
+    , parasiteImUsing(nullptr)
+    , paralysisTimer{}
+    , parasiteFlag0(false)
+    , isAttackedByLocomotor(false)
+    , isLetGoByLocomotor(false)
+    , locomotorFlag0(false)
+    , locomotorFlag1(false)
+    , locomotorFlag2(false)
+    , locomotorFlag3(false)
+    , locomotorFlag4(false)
+    , locomotorFlag5(false)
+    , locomotorFlag6(false)
+    , locomotorFlag7(false)
+    , frozenStill(false)
+    , locomotorFlag8(false)
     , m_unused_6BC(0)
 {
-    std::memset(&m_audio7, 0, sizeof(m_audio7));
+    std::memset(&movementAudio, 0, sizeof(movementAudio));
     std::memset(m_path_directions, 0, sizeof(m_path_directions));
 
-    m_locomotor.ptr = nullptr;
+    locomotor = nullptr;
 
     m_abstract_flags |= kFootFlag;
 }
@@ -101,7 +100,7 @@ bool FootClass::MovementAI()
     if (!m_is_alive)
         return false;
 
-    m_unknown_bool_6B3 = false;
+    locomotorFlag4 = false;
 
     // Section 2: Movement smoke trail emission
     EmitMovementSmoke();
@@ -150,11 +149,11 @@ void FootClass::EmitMovementSmoke()
 
 void FootClass::UpdateMovementAmbiguity()
 {
-    // IDA: if (!m_unknown_bool_6B5/*981*/ && IsHouseFlag3434) {
+    // IDA: if (!locomotorFlag6/*981*/ && IsHouseFlag3434) {
     //   type = GetType(); check sub_578540(type, 1);
-    //   m_unknown_bool_6B5 = true;
+    //   locomotorFlag6 = true;
     // }
-    if (!m_unknown_bool_6B5)
+    if (!locomotorFlag6)
     {
         // TODO: check house rule for ambiguity detection
     }
@@ -163,7 +162,7 @@ void FootClass::UpdateMovementAmbiguity()
 void FootClass::UpdateMovementSpeed()
 {
     // IDA: COM ILocomotion speed control
-    if (!m_locomotor.ptr)
+    if (!locomotor)
         return;
 
     // IDA: ILocomotion::Is_Moving() && !IsInAir() && IsCurrentPlayer()
@@ -221,15 +220,15 @@ void FootClass::HandleLocomotionUpdate()
     //   Release old locomotor, assign new
     // Then reset attacked_by_locomotor flag
 
-    m_is_attacked_by_locomotor = false;
+    isAttackedByLocomotor = false;
 
-    if (!m_locomotor.ptr)
+    if (!locomotor)
         return;
 
     // IDA: vt_entry_472(this) -- check if moving
     // If not moving, sub_70D7E0 -- process movement result
 
-    // IDA: Check parasite state (m_parasite_eating_me at 1684)
+    // IDA: Check parasite state (parasiteEatingMe at 1684)
     // If parasite active, update parasite position
 }
 
@@ -242,7 +241,7 @@ int FootClass::Mission_Move()
     // RA1 FootClass::Mission_Move pattern:
     // If no destination and not driving, enter idle mode
     // If no target, scan for nearby threats (AI-controlled units)
-    if (!m_destination && m_mission_queued == 0)
+    if (!destination && m_mission_queued == 0)
     {
         QueueMission(static_cast<Mission>(static_cast<int>(gamemd::Mission::Guard)), true);
         return 1;
@@ -267,7 +266,7 @@ int FootClass::Mission_Attack()
     if (!IsCloseEnoughToAttack(target))
     {
         // Move toward target
-        m_destination = target;
+        destination = target;
         return 0;
     }
 
@@ -316,7 +315,7 @@ bool FootClass::MoveTo(CoordStruct* coords)
 
     // Reset pathfinding threshold
     m_path_delay_timer = {};
-    m_destination = nullptr; // NavCom in RA1
+    destination = nullptr; // NavCom in RA1
 
     return true;
 }
@@ -325,7 +324,7 @@ bool FootClass::StopMoving()
 {
     // RA1 Stop_Driver pattern:
     // Stop ILocomotion, clear head-to, set speed to 0
-    if (!m_locomotor.ptr)
+    if (!locomotor)
         return false;
 
     // TODO: ILocomotion::Stop()
@@ -348,7 +347,7 @@ void FootClass::Destroyed(ObjectClass* killer)
     m_is_crashing = true;
 
     // Stop movement
-    if (m_locomotor.ptr) {
+    if (locomotor) {
         StopMoving();
     }
 
@@ -365,7 +364,7 @@ void FootClass::Destroyed(ObjectClass* killer)
 
     // IDA: EVA announcement for human players
     // *(this+135)*4 = *(this+0x21C) = m_owner
-    // if (House::IsHumanPlayer(m_owner) && !Type->field_3412)
+    // if (House::IsHumanPlayer(m_owner) && !Type->unknown_3412)
     //     if (CreateTriggerClassIfFarEnough(7, coord))
     //       VoxClass::FindAndPlay("EVA_UnitLost", -1)
     // TODO: implement EVA when VoxClass and HouseClass are available

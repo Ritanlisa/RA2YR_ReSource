@@ -77,7 +77,7 @@ struct ScenarioFlags
 
 struct Randomizer
 {
-    bool    m_unknown_00;
+    bool    scenarioField_00;
     int32_t m_next1;
     int32_t m_next2;
     uint32_t m_table[250];
@@ -116,8 +116,8 @@ public:
     uint32_t            m_difficulty_2;
     TimerStruct         m_elapsed_timer;
     TimerStruct         m_pause_timer;
-    uint32_t            m_unknown_62C;
-    uint16_t            m_unknown_630;
+    uint32_t            scenarioField_62C;
+    uint16_t            scenarioField_630;
     CellStruct          m_waypoints[702];
 
     int32_t             m_start_x;
@@ -136,7 +136,7 @@ public:
     TimerStruct         m_shroud_regrow_timer;
     TimerStruct         m_fog_timer;
     TimerStruct         m_ice_timer;
-    TimerStruct         m_unknown_timer_123c;
+    TimerStruct         scenarioField_timer_123c;
     TimerStruct         m_ambient_timer;
     int32_t             m_tech_level;
     int32_t             m_theater;
@@ -168,7 +168,7 @@ public:
     CellStruct          m_view2;
     CellStruct          m_view3;
     CellStruct          m_view4;
-    uint32_t            m_unknown_34A0;
+    uint32_t            scenarioField_34A0;
     bool                m_free_radar;
     bool                m_train_crate;
     bool                m_tiberium_growth_enabled;
@@ -186,14 +186,14 @@ public:
     bool                m_fill_silos;
     bool                m_tiberium_death_to_visceroid;
     bool                m_ignore_global_ai_triggers;
-    bool                m_unknown_bool_34B5;
-    bool                m_unknown_bool_34B6;
-    bool                m_unknown_bool_34B7;
+    bool                scenarioFlag_34B5;
+    bool                scenarioFlag_34B6;
+    bool                scenarioFlag_34B7;
     int32_t             m_player_side_index;
     bool                m_multiplayer_only;
     bool                m_is_random;
     bool                m_picked_up_any_crate;
-    TimerStruct         m_unknown_timer_34C0;
+    TimerStruct         scenarioField_timer_34C0;
     int32_t             m_campaign_index;
     int32_t             m_starting_dropships;
     TechnoTypeClass**   m_allowable_units;
@@ -236,11 +236,11 @@ public:
     int32_t             m_dominator_level;
     int32_t             m_dominator_ambient_change_rate;
 
-    uint32_t            m_unknown_3598;
+    uint32_t            scenarioField_3598;
     int32_t             m_init_time;
     int16_t             m_stage;
-    bool                m_unknown_35A2;
-    uint8_t             m_unknown_35A3;
+    bool                scenarioField_35A2;
+    uint8_t             scenarioField_35A3;
     int32_t             m_par_time_easy;
     int32_t             m_par_time_medium;
     int32_t             m_par_time_difficult;

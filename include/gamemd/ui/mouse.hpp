@@ -65,20 +65,20 @@ public:
     SHPStruct*       Image;
     int32_t          ImageFrameIndex;
     uint32_t         RefCount;
-    uint8_t          field_10;
-    uint8_t          field_11;
-    uint8_t          field_12;
-    uint8_t          field_13;
-    uint32_t         field_14;
-    uint32_t         field_18;
+    uint8_t          mouseField_10;
+    uint8_t          mouseField_11;
+    uint8_t          mouseField_12;
+    uint8_t          mouseField_13;
+    uint32_t         mouseField_14;
+    uint32_t         mouseField_18;
     Point2D          Position;
     DSurface*        Surface;
     HWND             hWnd;
     RectangleStruct  CursorRect;
     Point2D          HotspotOffset;
-    uint32_t         field_44;
+    uint32_t         mouseField_44;
     RectangleStruct  DirtyRect;
-    uint32_t         field_58;
+    uint32_t         mouseField_58;
 
     // TODO: complete WWMouseClass members
 };

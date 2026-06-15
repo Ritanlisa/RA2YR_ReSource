@@ -60,14 +60,14 @@ public:
     TechnoClass*    m_object;
     bool            m_on_hold;
     bool            m_is_different;
-    uint8_t         m_align_5E[2];
+    uint8_t         align_5E[2];
     int32_t         m_balance;
     int32_t         m_original_balance;
     int32_t         m_special_item;
     HouseClass*     m_owner;
     bool            m_is_suspended;
     bool            m_is_manual;
-    uint8_t         m_align_72[2];
+    uint8_t         align_72[2];
 
 protected:
     FactoryClass() = default;

@@ -86,7 +86,7 @@ SuperClass::SuperClass(SuperWeaponTypeClass* pSWType, HouseClass* pOwner) noexce
 
     m_unique_id      = static_cast<uint32_t>(-1);
     m_abstract_flags = 0;
-    m_unknown_18     = 0;
+    creationFrame     = 0;
     m_ref_count      = 0;
     m_dirty          = false;
 
@@ -102,5 +102,15 @@ SuperClass::SuperClass(noinit_t) noexcept
 
 // TODO: complete implementation of all static methods:
 // LightningStorm, PsyDom, NukeFlash, ChronoScreenEffect
+
+void SuperClass::ResetRechargeTime()
+{
+    ReadinessFrame = -1;
+}
+
+void SuperClass::SetRechargeTime(int32_t time)
+{
+    ReadinessFrame = time;
+}
 
 } // namespace gamemd

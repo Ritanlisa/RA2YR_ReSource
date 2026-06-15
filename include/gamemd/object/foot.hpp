@@ -86,80 +86,78 @@ protected:
     // ---- member variables ----
 
     int32_t            m_planning_path_idx;
-    int16_t            m_unknown_short_524;
-    int16_t            m_unknown_short_526;
-    int16_t            m_unknown_short_528;
-    int16_t            m_unknown_short_52A;
-    uint32_t           m_unknown_52C;
-    uint32_t           m_unknown_530;
-    uint32_t           m_unknown_534;
-    uint32_t           m_unknown_538;
-    bool               m_unknown_bool_53C;
-    uint8_t            m_padding_53D[3];
-    uint32_t           m_unknown_540;
-    AudioController    m_audio7;
-    CellStruct         m_current_map_coords;
-    CellStruct         m_last_map_coords;
-    CellStruct         m_last_jumpjet_map_coords;
-    CellStruct         m_current_jumpjet_map_coords;
-    CoordStruct        m_unknown_coords_568;
+    int16_t            planningPathIndex;        // +0x524
+    int16_t            pathWaypointY;            // +0x526
+    int16_t            pathTargetX;              // +0x528
+    int16_t            pathTargetY;              // +0x52A
+    uint32_t           pathMoveState;            // +0x52C
+    uint32_t           pathStepCounter;          // +0x530
+    uint32_t           pathBlockFlags;           // +0x534
+    uint32_t           pathCollisionState;       // +0x538
+    bool               pathRecomputeFlag;        // +0x53C
+    uint32_t           pathReserved;             // +0x540
+    AudioController    movementAudio;
+    CellStruct         currentMapCoords;
+    CellStruct         lastMapCoords;
+    CellStruct         lastJumpjetCoords;
+    CellStruct         currentJumpjetCoords;
+    CoordStruct        movementOriginCoords;      // +0x568
     uint32_t           m_unused_574;
     double             m_speed_percentage;
     double             m_speed_multiplier;
-    DynamicVectorClass<AbstractClass*> m_unknown_abstract_array_588;
-    uint32_t           m_unknown_5A0;
-    AbstractClass*     m_destination;
-    AbstractClass*     m_last_destination;
-    DynamicVectorClass<AbstractClass*> m_unknown_abstract_array_5AC;
-    int32_t            m_unknown_int_5C4;
-    uint32_t           m_unknown_5C8;
-    uint32_t           m_unknown_5CC;
-    uint8_t            m_unknown_5D0;
-    bool               m_unknown_bool_5D1;
-    uint8_t            m_padding_5D2[2];
-    TeamClass*         m_team;
-    FootClass*         m_next_team_member;
-    uint32_t           m_unknown_5DC;
+    DynamicVectorClass<AbstractClass*> pathCheckpointList;  // +0x588
+    uint32_t           pathSequenceId;           // +0x5A0
+    AbstractClass*     destination;
+    AbstractClass*     lastDestination;
+    DynamicVectorClass<AbstractClass*> pathAbortList;      // +0x5AC
+    int32_t            pathDirectionIndex;       // +0x5C4
+    uint32_t           pathScanState;            // +0x5C8
+    uint32_t           pathScanTimer;            // +0x5CC
+    uint8_t            movementReserved1;        // +0x5D0
+    bool               movementBlockedFlag;      // +0x5D1
+    TeamClass*         team;
+    FootClass*         nextTeamMember;
+    uint32_t           teamFormationIndex;       // +0x5DC
     int32_t            m_path_directions[24];
     TimerStruct        m_path_delay_timer;
-    int32_t            m_unknown_int_64C;
-    TimerStruct        m_unknown_timer_650;
-    TimerStruct        m_sight_timer;
-    TimerStruct        m_blockage_path_timer;
-    YRComPtr           m_locomotor;
-    CoordStruct        m_unknown_point3d_678;
-    signed char        m_tube_index;
-    bool               m_unknown_bool_685;
-    signed char        m_waypoint_index;
-    bool               m_unknown_bool_687;
-    bool               m_unknown_bool_688;
-    bool               m_is_team_leader;
-    bool               m_should_scan_for_target;
-    bool               m_unknown_bool_68B;
-    bool               m_unknown_bool_68C;
-    bool               m_unknown_bool_68D;
-    bool               m_unknown_bool_68E;
-    bool               m_should_enter_absorber;
-    bool               m_should_enter_occupiable;
-    bool               m_should_garrison_structure;
-    FootClass*         m_parasite_eating_me;
-    uint32_t           m_unknown_698;
-    ParasiteClass*     m_parasite_im_using;
-    TimerStruct        m_paralysis_timer;
-    bool               m_unknown_bool_6AC;
-    bool               m_is_attacked_by_locomotor;
-    bool               m_is_let_go_by_locomotor;
-    bool               m_unknown_bool_6AF;
-    bool               m_unknown_bool_6B0;
-    bool               m_unknown_bool_6B1;
-    bool               m_unknown_bool_6B2;
-    bool               m_unknown_bool_6B3;
-    bool               m_unknown_bool_6B4;
-    bool               m_unknown_bool_6B5;
-    bool               m_frozen_still;
-    bool               m_unknown_bool_6B7;
-    bool               m_unknown_bool_6B8;
-    uint8_t            m_padding_6B9[3];
+    int32_t            pathSequenceLength;       // +0x64C
+    TimerStruct        pathSequenceTimer;        // +0x650
+    TimerStruct        sightTimer;
+    TimerStruct        blockagePathTimer;
+    ILocomotion*        locomotor;
+    CoordStruct        locomotorTargetCoords;    // +0x678
+    int8_t             tubeIndex;
+    bool               locomotorShiftFlag;       // +0x685
+    int8_t             waypointIndex;
+    bool               pathSequencingFlag;       // +0x687
+    bool               pathAlternateFlag;        // +0x688
+    bool               isTeamLeader;
+    bool               shouldScanForTarget;
+    bool               aiSearchFlag0;            // +0x68B
+    bool               aiSearchFlag1;            // +0x68C
+    bool               aiSearchFlag2;            // +0x68D
+    bool               aiSearchFlag3;            // +0x68E
+    bool               shouldEnterAbsorber;
+    bool               shouldEnterOccupiable;
+    bool               shouldGarrisonStructure;
+    FootClass*         parasiteEatingMe;
+    uint32_t           parasiteState;            // +0x698
+    ParasiteClass*     parasiteImUsing;
+    TimerStruct        paralysisTimer;
+    bool               parasiteFlag0;            // +0x6AC
+    bool               isAttackedByLocomotor;
+    bool               isLetGoByLocomotor;
+    bool               locomotorFlag0;           // +0x6AF
+    bool               locomotorFlag1;           // +0x6B0
+    bool               locomotorFlag2;           // +0x6B1
+    bool               locomotorFlag3;           // +0x6B2
+    bool               locomotorFlag4;           // +0x6B3
+    bool               locomotorFlag5;           // +0x6B4
+    bool               locomotorFlag6;           // +0x6B5
+    bool               frozenStill;
+    bool               locomotorFlag7;           // +0x6B7
+    bool               locomotorFlag8;           // +0x6B8
+    uint8_t            padding_6B9[3];
     uint32_t           m_unused_6BC;
 
 protected:

@@ -31,19 +31,19 @@ TiberiumClass::TiberiumClass(const CellStruct& cell,
     Image      = nullptr;
     NumFrames  = 0;
     NumImages  = 0;
-    field_EC   = 0;
-    field_F0   = 0;
-    field_F4   = 0;
-    field_F8   = 0;
-    field_FC   = 0;
+    tiberiumField_EC   = 0;
+    tiberiumField_F0   = 0;
+    tiberiumField_F4   = 0;
+    tiberiumField_F8   = 0;
+    tiberiumField_FC   = 0;
 
     std::memset(&SpreadTimer, 0, sizeof(SpreadTimer));
     std::memset(&GrowthTimer, 0, sizeof(GrowthTimer));
 
-    field_10C  = 0;
-    field_110  = 0;
-    field_114  = 0;
-    field_118  = 0;
+    tiberiumField_10C  = 0;
+    tiberiumField_110  = 0;
+    tiberiumField_114  = 0;
+    tiberiumField_118  = 0;
 
     m_abstract_flags = kTiberiumFlag;
 

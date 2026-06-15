@@ -57,7 +57,7 @@ struct SHPFrame
     int16_t     Height;
     uint32_t    Flags;
     ColorStruct Color;
-    uint32_t    unknown_10;
+    uint32_t    framePixelOffset;
     int32_t     Offset;
 };
 
@@ -81,7 +81,7 @@ class SHPReference : public SHPStruct
     int32_t          Index;
     SHPReference*    Next;
     SHPReference*    Prev;
-    uint32_t         unknown_20;
+    uint32_t         frameDataOffset;
 };
 
 inline SHPReference* SHPStruct::AsReference()

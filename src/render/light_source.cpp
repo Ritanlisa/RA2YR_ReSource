@@ -21,7 +21,7 @@ LightSourceClass::LightSourceClass(const CoordStruct& location,
 
     m_unique_id      = static_cast<uint32_t>(-1);
     m_abstract_flags = 0;
-    m_unknown_18     = 0;
+    DetailLevel     = 0;
     m_ref_count      = 0;
     m_dirty          = false;
 

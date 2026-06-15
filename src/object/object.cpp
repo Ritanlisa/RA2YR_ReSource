@@ -1,5 +1,6 @@
 #include "gamemd/object/object.hpp"
 #include "gamemd/type/object_type.hpp"
+#include "gamemd/type/building_type.hpp"
 
 #include <cstring>
 #include <cmath>
@@ -288,8 +289,8 @@ bool ObjectClass::DiscoveredBy(HouseClass* house)
 // IDA: 0x5F3900 -- ObjectClass::ctor
 // Verified: AbstractClass_Constructor at 0x410170 called first, then 2 AudioController::Init
 ObjectClass::ObjectClass() noexcept
-    : m_unknown_24(0)               // +0x24 = 0 (IDA mov [esi+0x24], 0)
-    , m_unknown_28(0)               // +0x28 = 0 (IDA mov [esi+0x28], 0)
+    : radarFlashFrame(0)               // +0x24 = 0 (IDA mov [esi+0x24], 0)
+    , targetingState(0)               // +0x28 = 0 (IDA mov [esi+0x28], 0)
     , m_fall_rate(0)                // +0x2C = 0 (IDA mov [esi+0x2C], 0)
     , m_next_object(nullptr)        // +0x30 = 0 (IDA mov [esi+0x30], 0)
     , m_attached_tag(nullptr)       // +0x34 = 0 (IDA mov [esi+0x34], 0)
@@ -301,8 +302,8 @@ ObjectClass::ObjectClass() noexcept
     , m_health(255)                 // +0x6C = 255 (IDA mov [esi+0x6C], 0xFF)
     , m_estimated_health(255)       // +0x70 = 255 (IDA mov [esi+0x70], 0xFF)
     , m_is_on_map(false)            // +0x74 = 0 (IDA mov byte [esi+0x74], 0)
-    , m_unknown_78(1)               // +0x78 = 1 (IDA mov [esi+0x78], 1)
-    , m_unknown_7C(0)               // +0x7C = 0 (IDA mov [esi+0x7C], 0)
+    , selectabilityState(1)               // +0x78 = 1 (IDA mov [esi+0x78], 1)
+    , missionTimer(0)               // +0x7C = 0 (IDA mov [esi+0x7C], 0)
     , m_needs_redraw(false)         // +0x80 = 0 (IDA mov byte [esi+0x80], 0)
     , m_in_limbo(true)              // +0x81 = 1 (IDA mov byte [esi+0x81], 1)
     , m_in_open_topped_transport(false)  // +0x82 = 0 (IDA mov byte [esi+0x82], 0)
@@ -489,20 +490,20 @@ wchar_t* SuperWeapon_UpdateTargetRedrawState(void* self, wchar_t* target)
 }
 
 // IDA: 0x5F5850 — ObjectClass::UpdateProductionDisplay (212B)
-// Uses YRpp member names: NeedsRedraw, OnBridge, IsFallingDown.
+// Uses YRpp member names: m_needs_redraw, m_on_bridge, m_is_falling_down.
 // Vtable slots referenced: vt+44=GetTechnoType, vt+308=ProductionUpdate,
 //   vt+440=QueryProductionState, TechnoType: vt+56=GetImage, vt+704=StartProduction.
 int ObjectClass::UpdateProductionDisplay()
 {
     // Skip if falling down (being destroyed/parachuting)
-    if (this->IsFallingDown)
+    if (this->m_is_falling_down)
         return 0;
 
     int production_state = 0;  // queried via vt+440 on TechnoType
 
     if (production_state == 2)
     {
-        if (!this->OnBridge && this->NeedsRedraw)
+        if (!this->m_on_bridge && this->m_needs_redraw)
         {
             // vt+308: trigger production display refresh
             (*(int(__thiscall**)(ObjectClass*))(*(uintptr_t*)this + 308))(this);
@@ -516,8 +517,7 @@ int ObjectClass::UpdateProductionDisplay()
             || !*(int*)(*(uint32_t*)((uint8_t*)this + 328) + 3672)
             || production_state)
         {
-            auto* techno_type = static_cast<TechnoTypeClass*>(
-                reinterpret_cast<void*>(AbstractClass_IsTechnoType(this)));
+            auto* techno_type = static_cast<TechnoTypeClass*>(this->IsTechnoType());
             if (techno_type)
             {
                 uintptr_t tvt = *(uintptr_t*)techno_type;
@@ -527,16 +527,16 @@ int ObjectClass::UpdateProductionDisplay()
             }
         }
 
-        if ((production_state == 1 || production_state == 3) && !this->NeedsRedraw)
+        if ((production_state == 1 || production_state == 3) && !this->m_needs_redraw)
         {
-            this->NeedsRedraw = true;
+            this->m_needs_redraw = true;
             (*(int(__thiscall**)(ObjectClass*))(*(uintptr_t*)this + 308))(this);
             return 1;
         }
 
-        if (!production_state && this->NeedsRedraw)
+        if (!production_state && this->m_needs_redraw)
         {
-            this->NeedsRedraw = false;
+            this->m_needs_redraw = false;
             return 1;
         }
     }

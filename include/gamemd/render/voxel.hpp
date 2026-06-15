@@ -55,15 +55,15 @@ struct VoxLib
     uint32_t VXLSize;
     uint32_t VXL_HVASize;
 
-    int32_t field_1C;
-    int32_t field_20;
-    int32_t field_24;
-    int32_t field_28;
-    int32_t field_2C;
-    int32_t field_30;
-    int32_t field_34;
-    int32_t field_38;
-    int32_t field_3C;
+    int32_t voxelField_1C;
+    int32_t voxelField_20;
+    int32_t voxelField_24;
+    int32_t voxelField_28;
+    int32_t voxelField_2C;
+    int32_t voxelField_30;
+    int32_t voxelField_34;
+    int32_t voxelField_38;
+    int32_t voxelField_3C;
     int32_t HVA_MinX;
     int32_t HVA_MinY;
     int32_t HVA_MinZ;
@@ -72,13 +72,13 @@ struct VoxLib
     int32_t HVA_MaxZ;
     int32_t HVA_NormalSize;
     bool    GenerateMipLevels;
-    bool    field_69;
+    bool    voxelField_69;
     uint8_t pad[2];
     float   XCompress;
     float   YCompress;
     float   ZCompress;
-    int32_t field_78;
-    int32_t field_7C;
+    int32_t voxelField_78;
+    int32_t voxelField_7C;
 };
 
 struct MotLib
@@ -86,23 +86,23 @@ struct MotLib
     bool Loaded();
     int32_t Frames;
     int32_t Layers;
-    int32_t field_8;
+    int32_t voxelField_8;
     uint32_t* Data;
-    int16_t field_10;
-    int16_t field_12;
-    int16_t field_14;
-    int16_t field_16;
-    int16_t field_18;
-    int16_t field_1A;
-    int16_t field_1C;
-    int16_t field_1E;
+    int16_t voxelField_10;
+    int16_t voxelField_12;
+    int16_t voxelField_14;
+    int16_t voxelField_16;
+    int16_t voxelField_18;
+    int16_t voxelField_1A;
+    int16_t voxelField_1C;
+    int16_t voxelField_1E;
 };
 
 struct VoxelStruct
 {
     VoxLib* VXL;
     MotLib* HVA;
-    bool    field_8;
+    bool    voxelField_8;
     uint8_t pad[3];
 };
 
@@ -176,7 +176,7 @@ public:
 
     uint32_t                align_AC;
     BounceClass             Bounce;
-    int32_t                 unknown_int_100;
+    int32_t                 voxelField_int_100;
     VoxelAnimTypeClass*     Type;
     ParticleSystemClass*    AttachedSystem;
     HouseClass*             OwnerHouse;

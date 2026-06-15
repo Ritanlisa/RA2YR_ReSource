@@ -117,42 +117,47 @@ public:
     // IDA: 0x7BA4D0 — Buffered read from internal data buffer
     int ReadFromBuffer(void* dest, int size);
 
+    void SetSize();                    // IDA: display init
+    void LoadTypeData();               // IDA: type data loader
+    bool RenderStatusText(int textId, bool priority);   // IDA: 0x5F5FC0 — render status text
+    int  InsertPriorityText(int priorityLevel);         // IDA: 0x5F5FF0 — insert priority text
+
     CellStruct      CurrentFoundation_CenterCell;
     CellStruct      CurrentFoundation_TopLeftOffset;
     CellStruct*     CurrentFoundation_Data;
-    bool            unknown_1180;
-    bool            unknown_1181;
+    bool            displayField_1180;
+    bool            displayField_1181;
     CellStruct      CurrentFoundationCopy_CenterCell;
     CellStruct      CurrentFoundationCopy_TopLeftOffset;
     CellStruct*     CurrentFoundationCopy_Data;
-    uint32_t        unknown_1190;
-    uint32_t        unknown_1194;
-    uint32_t        unknown_1198;
+    uint32_t        displayField_1190;
+    uint32_t        displayField_1194;
+    uint32_t        displayField_1198;
     bool            FollowObject;
     ObjectClass*    ObjectToFollow;
     ObjectClass*    CurrentBuilding;
     ObjectTypeClass* CurrentBuildingType;
-    uint32_t        unknown_11AC;
+    uint32_t        displayField_11AC;
     bool            RepairMode;
     bool            SellMode;
     bool            PowerToggleMode;
     bool            PlanningMode;
     bool            PlaceBeaconMode;
     int32_t         CurrentSWTypeIndex;
-    uint32_t        unknown_11BC;
-    uint32_t        unknown_11C0;
-    uint32_t        unknown_11C4;
-    uint32_t        unknown_11C8;
-    bool            unknown_bool_11CC;
-    bool            unknown_bool_11CD;
-    bool            unknown_bool_11CE;
+    uint32_t        displayField_11BC;
+    uint32_t        displayField_11C0;
+    uint32_t        displayField_11C4;
+    uint32_t        displayField_11C8;
+    bool            displayFlag_11CC;
+    bool            displayFlag_11CD;
+    bool            displayFlag_11CE;
     bool            DraggingRectangle;
-    bool            unknown_bool_11D0;
-    bool            unknown_bool_11D1;
-    uint32_t        unknown_11D4;
-    uint32_t        unknown_11D8;
-    uint32_t        unknown_11DC;
-    uint32_t        unknown_11E0;
+    bool            displayFlag_11D0;
+    bool            displayFlag_11D1;
+    uint32_t        displayField_11D4;
+    uint32_t        displayField_11D8;
+    uint32_t        displayField_11DC;
+    uint32_t        displayField_11E0;
     uint32_t        padding_11E4;
 
 protected:

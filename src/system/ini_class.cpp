@@ -52,9 +52,9 @@ CCINIClass::CCINIClass()
     m_cc_file = nullptr;
     m_owns_file = false;
     m_ini_data = new INIData();
-    m_unknown_4C = 0;
-    m_unknown_50 = 0;
-    m_unknown_54 = 0;
+    iniField_4C = 0;
+    iniField_50 = 0;
+    iniField_54 = 0;
 }
 
 CCINIClass::~CCINIClass()

@@ -40,13 +40,13 @@ public:
     virtual AbstractType __stdcall WhatAmI() const override { return kAbsID; }
     virtual int Size() const override { return sizeof(TubeClass); }
 
-    int32_t unknown_AC;
-    int32_t unknown_B0;
-    int32_t unknown_B4;
-    int32_t unknown_B8;
-    int32_t unknown_BC;
-    int32_t unknown_C0;
-    int32_t unknown_C4;
+    int32_t tubeField_AC;
+    int32_t tubeField_B0;
+    int32_t tubeField_B4;
+    int32_t tubeField_B8;
+    int32_t tubeField_BC;
+    int32_t tubeField_C0;
+    int32_t tubeField_C4;
 
 protected:
     TubeClass() noexcept;

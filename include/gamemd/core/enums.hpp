@@ -1342,8 +1342,8 @@ enum class TargetType : unsigned
 enum class TargetFlags : unsigned
 {
     None          = 0x0,
-    unknown_1     = 0x1,
-    unknown_2     = 0x2,
+    weaponFlag_01     = 0x1,
+    weaponFlag_02     = 0x2,
     Air           = 0x4,
     Infantry      = 0x8,
     Vehicles      = 0x10,

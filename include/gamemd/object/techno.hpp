@@ -115,6 +115,7 @@ public:
     virtual int GetAntiAirValue() const { return 0; }
     virtual int GetAntiArmorValue() const { return 0; }
     virtual int GetAntiInfantryValue() const { return 0; }
+    virtual bool ShouldSkipOccupierDraw(int a2, int a3, int a4);  // IDA: 0x73B0B0
     virtual void GotHijacked() {}
     virtual int SelectNavalTargeting(AbstractClass* target) const { return 0; }
     virtual int GetZAdjustment() const { return 0; }
@@ -257,21 +258,21 @@ public:
     ProgressTimer           m_animation;
     PassengersClass         m_passengers;
     TechnoClass*            m_transporter;
-    int32_t                 m_unknown_int_120;
+    int32_t                 moraleValue;            // +0x120, init -100 (full morale, 0=broken)
     int32_t                 m_current_turret_number;
-    int32_t                 m_unknown_int_128;
+    int32_t                 guardTargetIndex;       // +0x128, init -1 (no target)
     AnimClass*              m_behind_anim;
     AnimClass*              m_deploy_anim;
     bool                    m_in_air;
-    uint8_t                 m_padding_139[3];
+    uint8_t                 padding_139[3];
     int32_t                 m_current_weapon_number;
     int32_t                 m_current_ranking;          // Rank enum
     int32_t                 m_current_gattling_stage;
     int32_t                 m_gattling_value;
-    uint32_t                m_unknown_148;
+    uint32_t                weaponCooldownTimer;    // +0x148, init 0
     HouseClass*             m_initial_owner;
     VeterancyStruct         m_veterancy;
-    uint32_t                m_align_154;
+    uint32_t                align_154;
     double                  m_armor_multiplier;
     double                  m_firepower_multiplier;
     TimerStruct             m_idle_action_timer;
@@ -285,20 +286,20 @@ public:
     uint32_t                m_airstrike_tint_stage;
     int32_t                 m_force_shielded;
     bool                    m_deactivated;
-    uint8_t                 m_padding_1BD[3];
+    uint8_t                 padding_1BD[3];
     TechnoClass*            m_drain_target;
     TechnoClass*            m_draining_me;
     AnimClass*              m_drain_anim;
     bool                    m_disguised;
-    uint8_t                 m_padding_1CE[3];
+    uint8_t                 padding_1CE[3];
     uint32_t                m_disguise_creation_frame;
     TimerStruct             m_infantry_blink_timer;
     TimerStruct             m_disguise_blink_timer;
-    bool                    m_unknown_bool_1F8;
-    uint8_t                 m_padding_1F9[3];
+    bool                    technoFlag_1F8;
+    uint8_t                 padding_1F9[3];
     TimerStruct             m_reload_timer;
-    uint32_t                m_unknown_208;
-    uint32_t                m_unknown_20C;
+    uint32_t                reloadStage;            // +0x208, init 0 (weapon reload phase)
+    uint32_t                secondaryReloadStage;   // +0x20C, init 0
     IndexBitfield<HouseClass*> m_display_production_to;
     int32_t                 m_group;
     AbstractClass*          m_focus;
@@ -307,33 +308,33 @@ public:
     ProgressTimer           m_cloak_progress;
     TimerStruct             m_cloak_delay_timer;
     float                   m_warp_factor;
-    bool                    m_unknown_bool_250;
-    uint8_t                 m_padding_251[3];
+    bool                    technoFlag_250;
+    uint8_t                 padding_251[3];
     CoordStruct             m_last_sight_coords;
     int32_t                 m_last_sight_range;
     int32_t                 m_last_sight_height;
     bool                    m_gap_super_charged;
     bool                    m_generating_gap;
-    uint8_t                 m_padding_27E[2];
+    uint8_t                 padding_27E[2];
     int32_t                 m_gap_radius;
     bool                    m_being_warped_out;
     bool                    m_warping_out;
-    bool                    m_unknown_bool_272;
+    bool                    technoFlag_272;
     uint8_t                 m_unused_273;
     TemporalClass*          m_temporal_im_using;
     TemporalClass*          m_temporal_targeting_me;
     bool                    m_is_immobilized;
-    uint8_t                 m_padding_27D[3];
-    uint32_t                m_unknown_280;
+    uint8_t                 padding_27D[3];
+    uint32_t                immobilizationTimer;    // +0x280, between immobilize and chrono state
     int32_t                 m_chrono_lock_remaining;
     CoordStruct             m_chrono_dest_coords;
     AirstrikeClass*         m_airstrike;
     bool                    m_berzerk;
-    uint8_t                 m_padding_29D[3];
+    uint8_t                 padding_29D[3];
     uint32_t                m_berzerk_duration_left;
     uint32_t                m_spray_offset_index;
     bool                    m_uncrushable;
-    uint8_t                 m_padding_2A9[3];
+    uint8_t                 padding_2A9[3];
     FootClass*              m_direct_rocker_linked_unit;
     FootClass*              m_locomotor_target;
     FootClass*              m_locomotor_source;
@@ -342,7 +343,7 @@ public:
     CaptureManagerClass*    m_capture_manager;
     TechnoClass*            m_mind_controlled_by;
     bool                    m_mind_controlled_by_a_unit;
-    uint8_t                 m_padding_2C2[3];
+    uint8_t                 padding_2C2[3];
     AnimClass*              m_mind_control_ring_anim;
     HouseClass*             m_mind_controlled_by_house;
     SpawnManagerClass*      m_spawn_manager;
@@ -353,7 +354,7 @@ public:
     TechnoClass*            m_bunker_linked_item;
     float                   m_pitch_angle;
     TimerStruct             m_disk_laser_timer;
-    uint32_t                m_unknown_2F8;
+    uint32_t                diskLaserChargeState;   // +0x2F8, between disk laser timer and ammo
     int32_t                 m_ammo;
     int32_t                 m_value;
     ParticleSystemClass*    m_fire_particle_system;
@@ -371,20 +372,20 @@ public:
     float                   m_rocking_forwards_per_frame;
     int32_t                 m_hijacker_infantry_type;
     OwnedTiberiumStruct     m_tiberium;
-    uint32_t                m_unknown_34C;
+    uint32_t                tiberiumStorageIndex;   // +0x34C
     TransitionTimer         m_unload_timer;
     FacingStruct            m_barrel_facing;
     FacingStruct            m_facing;
     FacingStruct            m_turret_facing;
     int32_t                 m_current_burst_index;
     TimerStruct             m_target_laser_timer;
-    int16_t                 m_unknown_short_3C8;
-    uint16_t                m_unknown_3CA;
+    int16_t                 barrelRotationOffset;   // +0x3C8
+    uint16_t                turretRotationOffset;   // +0x3CA
     bool                    m_counted_as_owned;
     bool                    m_is_sinking;
     bool                    m_was_sinking_already;
-    bool                    m_unknown_bool_3CF;
-    bool                    m_unknown_bool_3D0;
+    bool                    technoFlag_3CF;
+    bool                    technoFlag_3D0;
     bool                    m_has_been_attacked;
     bool                    m_cloakable;
     bool                    m_is_primary_factory;
@@ -392,14 +393,14 @@ public:
     bool                    m_is_in_playfield;
     RecoilData              m_turret_recoil;
     RecoilData              m_barrel_recoil;
-    bool                    m_unknown_bool_418;
-    bool                    m_unknown_bool_419;
+    bool                    technoFlag_418;
+    bool                    technoFlag_419;
     bool                    m_is_human_controlled;
     bool                    m_discovered_by_player;
     bool                    m_discovered_by_computer;
-    bool                    m_unknown_bool_41D;
-    bool                    m_unknown_bool_41E;
-    bool                    m_unknown_bool_41F;
+    bool                    technoFlag_41D;
+    bool                    technoFlag_41E;
+    bool                    technoFlag_41F;
     char                    m_sight_increase;
     bool                    m_recruitable_a;
     bool                    m_recruitable_b;
@@ -410,37 +411,37 @@ public:
     bool                    m_is_being_manipulated;
     TechnoClass*            m_being_manipulated_by;
     HouseClass*             m_chrono_warped_by_house;
-    bool                    m_unknown_bool_430;
-    bool                    m_unknown_bool_431;
-    bool                    m_unknown_bool_432;
-    uint8_t                 m_padding_433;
+    bool                    technoFlag_430;
+    bool                    technoFlag_431;
+    bool                    technoFlag_432;
+    uint8_t                 padding_433;
     TeamClass*              m_old_team;
     bool                    m_counted_as_owned_special;
     bool                    m_absorbed;
-    bool                    m_unknown_bool_43A;
-    uint8_t                 m_padding_43B;
-    uint32_t                m_unknown_43C;
+    bool                    technoFlag_43A;
+    uint8_t                 padding_43B;
+    uint32_t                targetEvaluationTimer;  // +0x43C
     DynamicVectorClass<int32_t> m_current_target_threat_values;
     DynamicVectorClass<AbstractClass*> m_current_targets;
     DynamicVectorClass<AbstractClass*> m_attacked_targets;
     AudioController         m_audio3;
-    uint32_t                m_unknown_49C;
-    uint32_t                m_unknown_4A0;
+    uint32_t                audio3State;            // +0x49C
+    uint32_t                audio3Channel;          // +0x4A0
     AudioController         m_audio4;
-    bool                    m_unknown_bool_4B8;
-    uint8_t                 m_padding_4B9[3];
-    uint32_t                m_unknown_4BC;
+    bool                    technoFlag_4B8;
+    uint8_t                 padding_4B9[3];
+    uint32_t                audio5State;            // +0x4BC
     AudioController         m_audio5;
-    bool                    m_unknown_bool_4D4;
-    uint8_t                 m_padding_4D5[3];
-    uint32_t                m_unknown_4D8;
+    bool                    technoFlag_4D4;
+    uint8_t                 padding_4D5[3];
+    uint32_t                audio6State;            // +0x4D8
     AudioController         m_audio6;
     uint32_t                m_queued_voice_index;
-    uint32_t                m_unknown_4F4;
-    bool                    m_unknown_bool_4F8;
-    uint8_t                 m_padding_4F9[3];
-    uint32_t                m_unknown_4FC;
-    uint32_t                m_unknown_500;
+    uint32_t                voiceQueueState;        // +0x4F4
+    bool                    technoFlag_4F8;
+    uint8_t                 padding_4F9[3];
+    uint32_t                empAccumulator;         // +0x4FC
+    uint32_t                empTargetState;         // +0x500
     uint32_t                m_emp_lock_remaining;
     uint32_t                m_threat_posed;
     uint32_t                m_should_lose_target_now;

@@ -36,7 +36,7 @@ public:
     bool             IsBurning;
     bool             TimeToDie;
     int              m_height;
-    RectangleStruct  unknown_rect_D0;
+    RectangleStruct  terrainOccupancyRect;
 
 protected:
     TerrainClass() = default;

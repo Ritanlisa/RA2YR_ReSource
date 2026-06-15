@@ -153,13 +153,13 @@ int BinkMovie_FreeSurfaceTracker(int* tracker)
             void* entry = *(void**)(array_base + i);     // array[i]
             if (entry)
             {
-                BinkMovie_FreeSurfaceBuffer(entry);       // free surface buffer
+                BinkMovie_FreeSurfaceBuffer(reinterpret_cast<void**>(entry));       // free surface buffer
                 operator delete(entry);                   // free the entry itself
             }
         }
 
         if (*tracker)
-            result = (**(int(__thiscall***)(int, int))*tracker)(*tracker, 1);  // vtable dtor
+            result = (*(int(__thiscall**)(int, int))*tracker)(*tracker, 1);  // vtable dtor
     }
 
     // Call destructor on sub-object at tracker+4
@@ -173,7 +173,7 @@ int BinkMovie_FreeSurfaceTracker(int* tracker)
 // IDA: 0x434B90 — FontRenderer::DrawText (88B)
 // Thin wrapper: InitContext → SetField → RenderText → Cleanup
 extern void FontRenderer_InitContext(void* ctx, int* surface);    // IDA 0x4348F0
-extern void Field_Int_Set(void* ctx, int x);                      // IDA 0x434110
+extern void unknown_Int_Set(void* ctx, int x);                      // IDA 0x434110
 extern int  FontClass_RenderText(void* ctx, const wchar_t* text, int x, int y, int a6, int a7); // IDA 0x434500
 extern void BufferIO_Cleanup(void* ctx, int surface);             // IDA 0x434990
 
@@ -183,7 +183,7 @@ int FontRenderer_DrawText(void* ctx, int* surface, const wchar_t* text, int x, i
         return x;
 
     FontRenderer_InitContext(ctx, surface);
-    Field_Int_Set(ctx, x);
+    unknown_Int_Set(ctx, x);
     int result = FontClass_RenderText(ctx, text, x, y, a6, a7);
     BufferIO_Cleanup(ctx, (int)surface);
     return result;
@@ -225,7 +225,8 @@ void BinkMovie_AdjustSurfaceFormat(int* self, int surface)
 
     // Get surface rect via vtable[30]
     int* target_surf = reinterpret_cast<int*>(ctx[4]);  // offset 16
-    int* rect = (*(int*(__thiscall**)(int, void*))(*(uintptr_t*)target_surf + 120))(target_surf, nullptr);
+    auto* lockFn = reinterpret_cast<int*(__thiscall*)(int, void*)>(*(uintptr_t*)(*(uintptr_t*)target_surf + 120));
+    int* rect = lockFn(target_surf, nullptr);
 
     int v13 = rect[0];  // X
     int v14 = rect[1];  // Y
@@ -274,7 +275,8 @@ void* BinkMovie_BlitToTarget(int* self, int surface)
 
     int src_surface = ctx[4];
     // vtable[30] → GetRect
-    int* src_rect = (*(int*(__thiscall**)(int, void*))(*(uintptr_t*)src_surface + 120))(src_surface, nullptr);
+    auto* lockFn2 = reinterpret_cast<int*(__thiscall*)(int, void*)>(*(uintptr_t*)(*(uintptr_t*)src_surface + 120));
+    int* src_rect = lockFn2(src_surface, nullptr);
     int w13 = src_rect[2];   // Width
     int h14 = src_rect[3];   // Height
 

@@ -57,10 +57,11 @@ public:
 
     virtual AbstractType __stdcall WhatAmI() const override { return kAbsID; }
     virtual int Size() const override { return sizeof(VoxelAnimClass); }
+    int GetDimensionCount() const { return 3; }  // vtable[30], always returns 3
 
     uint32_t               unused_AC;
     BounceClass            Bounce;
-    int32_t                unknown_int_100;
+    int32_t                totalFrames;
     VoxelAnimTypeClass*    Type;
     ParticleSystemClass*   AttachedSystem;
     HouseClass*            OwnerHouse;

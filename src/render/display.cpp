@@ -1,6 +1,7 @@
 #include "gamemd/render/display.hpp"
 #include "gamemd/render/surface.hpp"
 #include "gamemd/core/ddraw_init.hpp"
+#include "gamemd/misc/game_options.hpp"
 #include <windows.h>
 #include <cstring>
 
@@ -16,39 +17,39 @@ DisplayClass::DisplayClass() noexcept
     : CurrentFoundation_CenterCell{}
     , CurrentFoundation_TopLeftOffset{}
     , CurrentFoundation_Data(nullptr)
-    , unknown_1180(false)
-    , unknown_1181(false)
+    , displayField_1180(false)
+    , displayField_1181(false)
     , CurrentFoundationCopy_CenterCell{}
     , CurrentFoundationCopy_TopLeftOffset{}
     , CurrentFoundationCopy_Data(nullptr)
-    , unknown_1190(0)
-    , unknown_1194(0)
-    , unknown_1198(0)
+    , displayField_1190(0)
+    , displayField_1194(0)
+    , displayField_1198(0)
     , FollowObject(false)
     , ObjectToFollow(nullptr)
     , CurrentBuilding(nullptr)
     , CurrentBuildingType(nullptr)
-    , unknown_11AC(0)
+    , displayField_11AC(0)
     , RepairMode(false)
     , SellMode(false)
     , PowerToggleMode(false)
     , PlanningMode(false)
     , PlaceBeaconMode(false)
     , CurrentSWTypeIndex(-1)
-    , unknown_11BC(0)
-    , unknown_11C0(0)
-    , unknown_11C4(0)
-    , unknown_11C8(0)
-    , unknown_bool_11CC(false)
-    , unknown_bool_11CD(false)
-    , unknown_bool_11CE(false)
+    , displayField_11BC(0)
+    , displayField_11C0(0)
+    , displayField_11C4(0)
+    , displayField_11C8(0)
+    , displayFlag_11CC(false)
+    , displayFlag_11CD(false)
+    , displayFlag_11CE(false)
     , DraggingRectangle(false)
-    , unknown_bool_11D0(false)
-    , unknown_bool_11D1(false)
-    , unknown_11D4(0)
-    , unknown_11D8(0)
-    , unknown_11DC(0)
-    , unknown_11E0(0)
+    , displayFlag_11D0(false)
+    , displayFlag_11D1(false)
+    , displayField_11D4(0)
+    , displayField_11D8(0)
+    , displayField_11DC(0)
+    , displayField_11E0(0)
     , padding_11E4(0)
 {
 }
@@ -534,30 +535,32 @@ bool ToggleDisplayMode(bool to_command_line)
     return false;
 }
 
-// IDA: 0x5FBF80 — GameOptionsClass::UnlockMovieIfNeeded_MoviesList (125B)
-extern char* off_832CA0[];  // IDA 0x832CA0 — 3-string array
-extern char* off_832C30[];  // IDA 0x832C30 — 3-string array
+// IDA: 0x5FBF80 — GameOptionsClass::UnlockMovieIfNeeded (125B)
+// Movie list entry: 12-byte node with name pointer + next pointer at +12
+struct MovieListEntry {
+    const char* name;         // +0
+    int32_t     displayField_04;   // +4
+    int32_t     displayField_08;   // +8
+    MovieListEntry* next;     // +12 — nullptr terminates the list
+};
+extern MovieListEntry* off_832CA0[];  // IDA 0x832CA0 — movie list A
+extern MovieListEntry* off_832C30[];  // IDA 0x832C30 — movie list B
 
-void GameOptionsClass_UnlockMovieIfNeeded_MoviesList(int* self, const char* name)
+void GameOptionsClass::UnlockMovieIfNeeded(const char* movieName)
 {
-    int idx = 0;
-    if (off_832CA0[0]) {
-        while (_strcmpi(name, off_832CA0[idx]) != 0) {
-            ++idx;
-            if (!off_832CA0[idx * 3 + 2]) { idx = -1; break; }
-        }
-    } else { idx = -1; }
-    if (idx > self[19]) self[19] = idx;
+    int maxIdx = -1;
+    for (auto* entry = off_832CA0[0]; entry; entry = entry->next) {
+        ++maxIdx;
+        if (_strcmpi(movieName, entry->name) == 0) break;
+    }
+    if (maxIdx > maxMovieUnlockIndex) maxMovieUnlockIndex = maxIdx;
 
-    int idx2 = 0;
-    if (off_832C30[0]) {
-        while (1) {
-            if (_strcmpi(name, off_832C30[idx2]) == 0) break;
-            ++idx2;
-            if (!off_832C30[idx2 * 3 + 2]) { idx2 = -1; break; }
-        }
-    } else { idx2 = -1; }
-    if (idx2 > self[20]) self[20] = idx2;
+    maxIdx = -1;
+    for (auto* entry = off_832C30[0]; entry; entry = entry->next) {
+        ++maxIdx;
+        if (_strcmpi(movieName, entry->name) == 0) break;
+    }
+    if (maxIdx > maxMovieUnlockIndexB) maxMovieUnlockIndexB = maxIdx;
 }
 
 } // namespace gamemd

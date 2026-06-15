@@ -539,8 +539,13 @@ public:
     // Draws a 6×6 pixel marker centered at (x, y) onto the composite surface
     void DrawMarker(int x, int y);
 
+    bool RestoreIfLost();               // IDA: 0x4BF040 — restore lost surface
+
     // IDA: DSurface::CreatePrimary pixel format detection (0x4BA770 bit-shift logic)
     static void DetectPixelFormat(const DDPIXELFORMAT& pf);
+
+    int  RenderPipelineCleanup();       // IDA: DSurface render pipeline cleanup
+    void Process(int* a2, int* a3);     // IDA: DSurface process
 
     // IDA: 0x4BB0D0 — DSurface::Blit full hardware/software implementation
     // Used by REPLACE hook — bypasses Syringe trampoline entirely.

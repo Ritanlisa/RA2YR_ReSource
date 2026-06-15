@@ -33,64 +33,48 @@ public:
     virtual void vt_entry_D0(uint32_t unk) {}
     virtual void InitForHouse() {}
 
-    uint32_t                    m_unknown_11E8;
-    uint32_t                    m_unknown_11EC;
-    uint32_t                    m_unknown_11F0;
-    uint32_t                    m_unknown_11F4;
-    uint32_t                    m_unknown_11F8;
-    uint32_t                    m_unknown_11FC;
-    uint32_t                    m_unknown_1200;
-    uint32_t                    m_unknown_1204;
-    uint32_t                    m_unknown_1208;
-    RectangleStruct             m_unknown_rect_120C;
-    uint32_t                    m_unknown_121C;
-    uint32_t                    m_unknown_1220;
-    CellStruct*                 m_unknown_cells_1124;
-    int32_t                     m_unknown_cells_count;
-    int32_t                     m_unknown_cells_capacity;
-    uint32_t                    m_unknown_123C;
-    uint32_t                    m_unknown_1240;
-    uint32_t                    m_unknown_1244;
-    uint32_t                    m_unknown_1248;
-    uint32_t                    m_unknown_124C;
-    uint32_t                    m_unknown_1250;
-    uint32_t                    m_unknown_1254;
-    uint32_t                    m_unknown_1258;
-    Point2D*                    m_unknown_points_125C;
-    int32_t                     m_unknown_points_count;
-    int32_t                     m_unknown_points_capacity;
-    uint32_t                    m_unknown_1274;
+    uint32_t                    radarDisplayParams[9];     // +0x11E8 to +0x1208
+    RectangleStruct             radarClipRect;             // +0x120C
+    uint32_t                    radarZoomFactorX;          // +0x121C
+    uint32_t                    radarZoomFactorY;          // +0x1220
+    CellStruct*                 radarTrackedCells;         // +0x1224
+    int32_t                     radarTrackedCellCount;
+    int32_t                     radarTrackedCellCapacity;
+    uint32_t                    radarRenderState[8];       // +0x123C to +0x1258
+    Point2D*                    radarDrawPoints;           // +0x125C
+    int32_t                     radarDrawPointCount;
+    int32_t                     radarDrawPointCapacity;
+    uint32_t                    radarRedrawFlag;           // +0x1274
     Point2D*                    m_foundation_type_pixels[22];
     int32_t                     m_foundation_type_pixel_counts[22];
     int32_t                     m_foundation_type_pixel_capacities[22];
     float                       m_radar_size_factor;
-    int32_t                     m_unknown_int_148C;
-    uint32_t                    m_unknown_1490;
-    uint32_t                    m_unknown_1494;
-    uint32_t                    m_unknown_1498;
-    RectangleStruct             m_unknown_rect_149C;
-    uint32_t                    m_unknown_14AC;
-    uint32_t                    m_unknown_14B0;
-    uint32_t                    m_unknown_14B4;
-    uint32_t                    m_unknown_14B8;
-    bool                        m_unknown_bool_14BC;
-    bool                        m_unknown_bool_14BD;
-    uint32_t                    m_unknown_14C0;
-    uint32_t                    m_unknown_14C4;
-    uint32_t                    m_unknown_14C8;
-    uint32_t                    m_unknown_14CC;
-    uint32_t                    m_unknown_14D0;
-    int32_t                     m_unknown_int_14D4;
-    bool                        m_is_available_now;
-    bool                        m_unknown_bool_14D9;
-    bool                        m_unknown_bool_14DA;
-    RectangleStruct             m_unknown_rect_14DC;
-    uint32_t                    m_unknown_14EC;
-    uint32_t                    m_unknown_14F0;
-    uint32_t                    m_unknown_14F4;
-    uint32_t                    m_unknown_14F8;
-    uint32_t                    m_unknown_14FC;
-    TimerStruct                 m_unknown_timer_1500;
+    int32_t                     radarEventCounter;         // +0x148C
+    uint32_t                    radarEventParam0;          // +0x1490
+    uint32_t                    radarEventParam1;          // +0x1494
+    uint32_t                    radarEventParam2;          // +0x1498
+    RectangleStruct             radarEventRect;            // +0x149C
+    uint32_t                    radarTimerState0;          // +0x14AC
+    uint32_t                    radarTimerState1;          // +0x14B0
+    uint32_t                    radarTimerState2;          // +0x14B4
+    uint32_t                    radarTimerState3;          // +0x14B8
+    bool                        radarEventFlag0;           // +0x14BC
+    bool                        radarEventFlag1;           // +0x14BD
+    uint32_t                    radarColorValue1;          // +0x14C0
+    uint32_t                    radarColorValue2;          // +0x14C4
+    uint32_t                    radarColorValue3;          // +0x14C8
+    uint32_t                    radarColorValue4;          // +0x14CC
+    uint32_t                    radarColorValue5;          // +0x14D0
+    int32_t                     radarRefreshCounter;       // +0x14D4
+    bool                        radarVisibleFlag;          // +0x14D9
+    bool                        radarInitializedFlag;      // +0x14DA
+    RectangleStruct             radarInvalidRect;          // +0x14DC
+    uint32_t                    radarPixelBuffer1;         // +0x14EC
+    uint32_t                    radarPixelBuffer2;         // +0x14F0
+    uint32_t                    radarPixelBuffer3;         // +0x14F4
+    uint32_t                    radarPixelBuffer4;         // +0x14F8
+    uint32_t                    radarPixelBuffer5;         // +0x14FC
+    TimerStruct                 radarRefreshTimer;         // +0x1500
 
 protected:
     RadarClass() = default;

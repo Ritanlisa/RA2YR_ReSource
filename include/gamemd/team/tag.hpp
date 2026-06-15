@@ -78,7 +78,7 @@ public:
     CellStruct      m_default_coords;
     bool            m_destroyed;
     bool            m_is_executing;
-    uint8_t         m_align_36[2];
+    uint8_t         align_36[2];
 
 protected:
     TagClass() = default;

@@ -41,15 +41,15 @@ public:
     int Mission_Harvest() override;
     int Mission_Unload() override;
 
-    int32_t            unknown_int_6C0;
+    int32_t            cargoCount;
     UnitTypeClass*     Type;
     UnitClass*         FollowerCar;
     int32_t            FlagHouseIndex;
     bool               HasFollowerCar;
     bool               Unloading;
-    bool               unknown_bool_6D2;
+    bool               isCarryallDeploying;
     bool               TerrainPalette;
-    int32_t            unknown_int_6D4;
+    int32_t            carryallState;
     int32_t            DeathFrameCounter;
     EBolt*             ElectricBolt;
     bool               Deployed;

@@ -10,27 +10,27 @@ BuildingClass::BuildingClass() noexcept
     : Type(nullptr)
     , Factory(nullptr)
     , C4Timer{}
-    , unknown_int_534(0)
-    , unknown_int_538(0)
+    , buildingField_int_534(0)
+    , buildingField_int_538(0)
     , OwnerCountryIndex(0)
     , C4AppliedBy(nullptr)
-    , unknown_544(0)
+    , buildingField_544(0)
     , FirestormAnim(nullptr)
     , PsiWarnAnim(nullptr)
-    , unknown_timer_550{}
+    , buildingField_timer_550{}
     , RequiresDamageFires(false)
     , FiringSWType(-1)
-    , unknown_5FC(0)
+    , buildingField_5FC(0)
     , Spotlight(nullptr)
     , GateTimer{}
     , LightSource(nullptr)
     , LaserFenceFrame(0)
     , FirestormWallFrame(0)
     , RepairProgress{}
-    , unknown_rect_63C{}
-    , unknown_coord_64C{}
-    , unknown_int_658(0)
-    , unknown_65C(0)
+    , buildingField_rect_63C{}
+    , buildingField_coord_64C{}
+    , buildingField_int_658(0)
+    , buildingField_65C(0)
     , HasPower(false)
     , IsOverpowered(false)
     , RegisteredAsPoweredUnitSource(false)
@@ -46,20 +46,20 @@ BuildingClass::BuildingClass() noexcept
     , ShouldRebuild(false)
     , HasEngineer(false)
     , CashProductionTimer{}
-    , unknown_bool_6DC(false)
-    , unknown_bool_6DD(false)
+    , buildingFlag_6DC(false)
+    , buildingFlag_6DD(false)
     , NeedsRepairs(false)
     , C4Applied(false)
     , NoCrew(false)
-    , unknown_bool_6E1(false)
-    , unknown_bool_6E2(false)
+    , buildingFlag_6E1(false)
+    , buildingFlag_6E2(false)
     , HasBeenCaptured(false)
     , ActuallyPlacedOnMap(false)
-    , unknown_bool_6E5(false)
+    , buildingFlag_6E5(false)
     , IsDamaged(false)
     , IsFogged(false)
     , IsBeingRepaired(false)
-    , unknown_bool_6E9(false)
+    , buildingFlag_6E9(false)
     , StuffEnabled(false)
     , HasCloakingData(0)
     , CloakRadius(0)
@@ -67,8 +67,8 @@ BuildingClass::BuildingClass() noexcept
     , StorageFilledSlots(0)
     , SecretProduction(nullptr)
     , ColorAdd{}
-    , unknown_int_6FC(0)
-    , unknown_short_700(0)
+    , buildingField_int_6FC(0)
+    , buildingField_short_700(0)
     , UpgradeLevel(0)
     , GateStage(0)
     , PrismStage(static_cast<PrismChargeState>(0))
@@ -571,16 +571,16 @@ void BuildingClass::Place(bool bUnk)
 // Sections:
 //  1. TechnoClass_Update(this) -- parent class update
 //  2. If C4AppliedBy (this+0x540):
-//     - Copy owner's field_184 to this+0x53C (OwnerCountryIndex)
+//     - Copy owner's buildingField_184 to this+0x53C (OwnerCountryIndex)
 //     - BuildingClass_PowerUpdate(this)
 //  3. If Type exists:
-//     a. Update power drain/usage (field_160, field_1664)
+//     a. Update power drain/usage (buildingField_160, buildingField_1664)
 //     b. BuildingTypeClass_GetPowerOutput(Type+1820)
 //     c. vt_entry_192(Type) -> check power online:
 //        - If online: BuildingTypeClass_IsPowered(Type), set this+0x6E9 = 1
 //        - If offline: set this+0x6DC = 0
 //     d. Special C4AppliedBy logic:
-//        - If C4AppliedBy->field_704 && Type conditions:
+//        - If C4AppliedBy->buildingField_704 && Type conditions:
 //          House_PowerChanged(1)
 //  4. If Type && Type+0x16B0 (Special flag):
 //     - Register this in global tracking array (dword_8B41E0+)

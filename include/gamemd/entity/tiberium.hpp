@@ -60,6 +60,7 @@ public:
 
     virtual AbstractType __stdcall WhatAmI() const override { return kAbsID; }
     virtual int Size() const override { return sizeof(TiberiumClass); }
+    int32_t GetPowerValue() const { return Power; }  // vtable[16], init to -1 then g_CrateProcessState
 
     int32_t                  ArrayIndex;
     int32_t                  Spread;
@@ -73,16 +74,16 @@ public:
     OverlayTypeClass*        Image;
     int32_t                  NumFrames;
     int32_t                  NumImages;
-    int32_t                  field_EC;
-    int32_t                  field_F0;
-    int32_t                  field_F4;
-    int32_t                  field_F8;
-    int32_t                  field_FC;
+    int32_t                  tiberiumField_EC;
+    int32_t                  tiberiumField_F0;
+    int32_t                  tiberiumField_F4;
+    int32_t                  tiberiumField_F8;
+    int32_t                  tiberiumField_FC;
     TimerStruct              SpreadTimer;
-    int32_t                  field_10C;
-    int32_t                  field_110;
-    int32_t                  field_114;
-    int32_t                  field_118;
+    int32_t                  tiberiumField_10C;
+    int32_t                  tiberiumField_110;
+    int32_t                  tiberiumField_114;
+    int32_t                  tiberiumField_118;
     TimerStruct              GrowthTimer;
 
 public:

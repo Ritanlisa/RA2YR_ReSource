@@ -111,15 +111,15 @@ struct BaseClass
     int32_t         m_cells_38_count;
     int32_t         m_cells_38_capacity;
     CellStruct      m_center;
-    uint8_t         m_unknown_54[32];
+    uint8_t         reservedBaseData[32];  // +0x54, BaseClass reserved space
     HouseClass*     m_owner;
 };
 
 struct DropshipStruct
 {
     TimerStruct      m_timer;
-    uint8_t          m_unknown_C;
-    uint8_t          m_align_D[3];
+    uint8_t          dropshipFlags;        // +0xC, dropship state flags
+    uint8_t          align_D[3];
     int32_t          m_count;
     TechnoTypeClass* m_types[5];
     int32_t          m_total_cost;
@@ -335,13 +335,13 @@ public:
     uint32_t                    m_alt_allies;
     int32_t                     m_starting_credits;
     int32_t                     m_starting_edge;
-    uint32_t                    m_unknown_1E4;
+    uint32_t                    startingAllies2;     // +0x1E4
     int32_t                     m_side_index;
     bool                        m_current_player;
     bool                        m_player_control;
     bool                        m_production;
     bool                        m_autocreate_allowed;
-    uint8_t                     m_unknown_1F0[2];
+    uint8_t                     playerStatePadding[2]; // +0x1F0
     bool                        m_ai_triggers_active;
     bool                        m_auto_base_building;
     bool                        m_discovered_by_player;
@@ -353,21 +353,21 @@ public:
     bool                        m_firestorm_active;
     bool                        m_has_threat_node;
     bool                        m_recheck_tech_tree;
-    uint8_t                     m_unknown_1FD[15];
+    uint8_t                     techTreePadding[15];   // +0x1FD
     int32_t                     m_selected_path_index;
     void*                       m_planning_paths[12];
     int8_t                      m_visionary;
     bool                        m_map_is_clear;
-    bool                        m_unknown_bool_242;
-    bool                        m_unknown_bool_243;
+    bool                        sideNegotiationFlag2;  // +0x242
+    bool                        sideNegotiationFlag3;  // +0x243
     bool                        m_has_been_thieved;
     bool                        m_repairing;
-    bool                        m_unknown_bool_246;
-    bool                        m_unknown_bool_247;
-    bool                        m_unknown_bool_248;
+    bool                        aiStateFlag0;           // +0x246
+    bool                        aiStateFlag1;           // +0x247
+    bool                        aiStateFlag2;           // +0x248
     bool                        m_all_to_hunt;
-    bool                        m_unknown_bool_24A;
-    bool                        m_unknown_bool_24B;
+    bool                        aiStateFlag3;           // +0x24A
+    bool                        aiStateFlag4;           // +0x24B
     int32_t                     m_iq_level2;
     int32_t                     m_ai_mode;
     SuperClass**                m_supers;
@@ -379,7 +379,7 @@ public:
     int32_t                     m_last_built_vehicle_type;
     int32_t                     m_allow_win_blocks;
     TimerStruct                 m_repair_timer;
-    TimerStruct                 m_unknown_timer_28C;
+    TimerStruct                 aiTeamAttackTimer;       // +0x28C
     TimerStruct                 m_savour_timer;
     TimerStruct                 m_power_blackout_timer;
     TimerStruct                 m_radar_blackout_timer;
@@ -394,9 +394,9 @@ public:
     uint32_t                    m_building_alt_owner;
     int32_t                     m_airport_docks;
     int32_t                     m_powered_unit_centers;
-    uint32_t                    m_unknown_2DC;
-    uint32_t                    m_unknown_2E0;
-    uint32_t                    m_unknown_2E4;
+    uint32_t                    factoryOccupancy1;       // +0x2DC, factory slot tracking
+    uint32_t                    factoryOccupancy2;       // +0x2E0
+    uint32_t                    factoryOccupancy3;       // +0x2E4
     int32_t                     m_owned_units;
     int32_t                     m_owned_navy;
     int32_t                     m_owned_buildings;
@@ -406,7 +406,7 @@ public:
     int32_t                     m_balance;
     int32_t                     m_total_storage;
     OwnedTiberiumStruct         m_owned_weed;
-    uint32_t                    m_unknown_324;
+    uint32_t                    tiberiumBalanceState;    // +0x324
     ScoreStruct                 m_built_infantry_types;
     ScoreStruct                 m_built_unit_types;
     ScoreStruct                 m_built_aircraft_types;
@@ -415,7 +415,7 @@ public:
     ScoreStruct                 m_killed_unit_types;
     ScoreStruct                 m_killed_aircraft_types;
     ScoreStruct                 m_killed_building_types;
-    ScoreStruct                 m_unknown_scores;
+    ScoreStruct                 miscScoreStats;          // +unknown_scores
     ScoreStruct                 m_collected_powerups;
     int32_t                     m_num_airpads;
     int32_t                     m_num_barracks;
@@ -439,35 +439,17 @@ public:
     FactoryClass*               m_primary_unused2;
     FactoryClass*               m_primary_unused3;
     FactoryClass*               m_primary_for_defenses;
-    uint8_t                     m_unknown_53D0[12];
-    class UnitClass*           m_our_flag_carrier;
-    CellStruct                  m_our_flag_coords;
-    int32_t                     m_killed_units_of_houses[20];
-    int32_t                     m_total_killed_units;
-    int32_t                     m_killed_buildings_of_houses[20];
-    int32_t                     m_total_killed_buildings;
-    uint32_t                    m_unknown_548C;
-    CellStruct                  m_base_spawn_cell;
-    CellStruct                  m_base_center;
-    uint32_t                    m_unknown_5498;
-    uint32_t                    m_unknown_549C;
-    uint32_t                    m_unknown_54A0;
-    uint32_t                    m_unknown_54A4;
-    uint32_t                    m_unknown_54A8;
-    uint32_t                    m_unknown_54AC;
-    uint32_t                    m_unknown_54B0;
-    uint32_t                    m_unknown_54B4;
-    uint32_t                    m_unknown_54B8;
-    uint32_t                    m_unknown_54BC;
-    uint32_t                    m_unknown_54C0;
-    uint32_t                    m_unknown_54C4;
-    uint32_t                    m_unknown_54C8;
-    uint32_t                    m_unknown_54CC;
-    uint32_t                    m_unknown_54D0;
-    uint32_t                    m_unknown_54D4;
-    uint32_t                    m_unknown_54D8;
-    uint32_t                    m_unknown_54DC;
-    uint32_t                    m_unknown_54E0;
+    uint8_t                     factoryStatePadding[12];  // +0x53D0
+    UnitClass*                  flagCarrierUnit;         // +0x53DC
+    CellStruct                  flagCoords;              // +0x53E0
+    int32_t                     killedUnitsOfHouses[20]; // +0x53E8, per-house kill count
+    int32_t                     totalKilledUnits;        // +0x5438
+    int32_t                     killedBuildingsOfHouses[20]; // +0x543C
+    int32_t                     totalKilledBuildings;    // +0x548C
+    int32_t                     radarVisibleFlag;        // +0x5490
+    CellStruct                  m_base_spawn_cell;       // +0x5494  (IDA: BaseSpawnCell)
+    CellStruct                  m_base_center;           // +0x549C  (IDA: BaseCenter)
+    int32_t                     scorePadding[15];         // +0x54A4 to +0x54E0, reserved
     IndexBitfield               m_radar_visible_to;
     int32_t                     m_silo_money;
     int32_t                     m_preferred_target_type;
@@ -487,8 +469,8 @@ public:
     CounterClass                m_owned_unit_types_2;
     CounterClass                m_owned_infantry_types_2;
     CounterClass                m_owned_aircraft_types_2;
-    uint32_t                    m_unknown_55F0;
-    uint32_t                    m_unknown_55F4;
+    uint32_t                    attackDelayA;            // +0x55F0, unused
+    uint32_t                    attackDelayB;            // +0x55F4, unused
     int32_t                     m_attack_delay_a;
     int32_t                     m_attack_delay_b;
     int32_t                     m_enemy_house_index;
@@ -526,12 +508,12 @@ public:
     uint32_t                    m_allies;
     TimerStruct                 m_damage_delay_timer;
     TimerStruct                 m_team_delay_timer;
-    TimerStruct                 m_unknown_timer_A;
-    TimerStruct                 m_unknown_timer_B;
-    TimerStruct                 m_unknown_timer_C;
-    TimerStruct                 m_unknown_timer_D;
-    TimerStruct                 m_unknown_timer_E;
-    uint32_t                    m_unknown_57DC;
+    TimerStruct                 aiTimer1;                // scenario timer slot A
+    TimerStruct                 aiTimer2;                // scenario timer slot B
+    TimerStruct                 aiTimer3;                // scenario timer slot C
+    TimerStruct                 aiTimer4;                // scenario timer slot D
+    TimerStruct                 aiTimer5;                // scenario timer slot E
+    uint32_t                    scenarioState;           // +0x57DC
     // NOTE: m_threat_posed_estimates[130][130] takes ~67,600 bytes - huge grid
     // TODO: verify exact layout from IDA, using placeholder
     uint8_t                     m_threat_posed_estimates_padding[67600];
@@ -541,23 +523,23 @@ public:
     int32_t                     m_color_scheme_index;
     CellStruct                  m_starting_cell;
     uint32_t                    m_starting_allies;
-    uint32_t                    m_unknown_16060;
+    uint32_t                    scenarioReserved6;       // +0x16060
     void**                      m_waypoint_path;
     int32_t                     m_waypoint_path_count;
     int32_t                     m_waypoint_path_capacity;
-    uint32_t                    m_unknown_1607C;
-    uint32_t                    m_unknown_16080;
-    uint32_t                    m_unknown_16084;
+    uint32_t                    waypointPathReserved1;   // +0x1607C
+    uint32_t                    waypointPathReserved2;   // +0x16080
+    uint32_t                    waypointPathReserved3;   // +0x16084
     double                      m_unused_16088;
     double                      m_unused_16090;
-    uint32_t                    m_padding_16098;
+    uint32_t                    padding_16098;
     float                       m_prediction_enemy_armor;
     float                       m_prediction_enemy_air;
     float                       m_prediction_enemy_infantry;
     int32_t                     m_total_owned_infantry_cost;
     int32_t                     m_total_owned_vehicle_cost;
     int32_t                     m_total_owned_aircraft_cost;
-    uint32_t                    m_unknown_160B4;
+    uint32_t                    productionCostState;     // +0x160B4
 
     // TODO: complete remaining members from YRpp (very large class ~969 lines)
 

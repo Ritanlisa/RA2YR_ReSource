@@ -17,6 +17,16 @@ void LogSetLevel(LogLevel level);
 void LogWrite(LogLevel level, const char* fmt, ...);
 void LogClose();
 
+namespace Debug {
+    inline void Log(const char* fmt, ...) {
+        va_list args;
+        va_start(args, fmt);
+        vsnprintf(nullptr, 0, fmt, args);
+        va_end(args);
+    }
+    inline void Log() {}
+}
+
 #if defined(GAMEMD_DEBUG) || defined(_DEBUG)
     #define LOG_TRACE(fmt, ...) ::gamemd::LogWrite(::gamemd::LogLevel::Trace, "[TRACE] " fmt "\n", ##__VA_ARGS__)
     #define LOG_DEBUG(fmt, ...) ::gamemd::LogWrite(::gamemd::LogLevel::Debug, "[DEBUG] " fmt "\n", ##__VA_ARGS__)

@@ -48,12 +48,12 @@ public:
     char                    m_name[49];
 
     char                    m_parent_country[25];
-    uint8_t                 m_align_B1[3];
+    uint8_t                 align_B1[3];
     int32_t                 m_array_index;
     int32_t                 m_array_index2;
     int32_t                 m_side_index;
     int32_t                 m_color_scheme_index;
-    uint32_t                m_align_C4;
+    uint32_t                align_C4;
 
     double                  m_firepower_mult;
     double                  m_groundspeed_mult;
@@ -100,7 +100,7 @@ public:
     bool                    m_multiplay_passive;
     bool                    m_wall_owner;
     bool                    m_smart_ai;
-    uint8_t                 m_padding_1A9[7];
+    uint8_t                 padding_1A9[7];
 
 protected:
     HouseTypeClass() noexcept;

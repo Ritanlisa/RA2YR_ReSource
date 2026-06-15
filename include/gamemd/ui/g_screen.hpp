@@ -59,7 +59,7 @@ public:
 
     int32_t  ScreenShakeX;
     int32_t  ScreenShakeY;
-    int32_t  unknown_0C;
+    int32_t  currentRenderTarget;
     HWND     hWnd;
     int32_t  ScreenWidth;
     int32_t  ScreenHeight;

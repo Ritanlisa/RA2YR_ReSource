@@ -51,7 +51,7 @@ public:
     bool HasNextAction() const;
 
     ScriptTypeClass*    m_type;
-    int32_t             m_field_28;
+    int32_t             scriptActionCount;
     int32_t             m_idx_current_line;
 
 protected:

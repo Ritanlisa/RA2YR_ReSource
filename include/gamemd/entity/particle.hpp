@@ -35,35 +35,35 @@ public:
     virtual int vt_entry_1E8() { return 0; }
 
     ParticleTypeClass*    Type;
-    uint8_t               unknown_B0;
-    uint8_t               unknown_B1;
-    uint8_t               unknown_B2;
-    uint32_t              unknown_B4;
-    uint32_t              unknown_B8;
-    uint32_t              unknown_BC;
-    uint32_t              unknown_C0;
-    uint32_t              unknown_C4;
-    uint32_t              unknown_C8;
-    uint32_t              unknown_CC;
-    double                unknown_double_D0;
-    uint32_t              unknown_D8;
-    uint32_t              unknown_DC;
-    uint32_t              unknown_E0;
+    uint8_t               particleField_B0;
+    uint8_t               particleField_B1;
+    uint8_t               particleField_B2;
+    uint32_t              particleField_B4;
+    uint32_t              particleField_B8;
+    uint32_t              particleField_BC;
+    uint32_t              particleField_C0;
+    uint32_t              particleField_C4;
+    uint32_t              particleField_C8;
+    uint32_t              particleField_CC;
+    double                particleField_double_D0;
+    uint32_t              particleField_D8;
+    uint32_t              particleField_DC;
+    uint32_t              particleField_E0;
     float                 Velocity;
-    CoordStruct           unknown_coords_E8;
-    CoordStruct           unknown_coords_F4;
-    CoordStruct           unknown_coords_100;
-    Vector3D<float>       unknown_vector3d_10C;
-    Vector3D<float>       unknown_vector3d_118;
+    CoordStruct           particleField_coords_E8;
+    CoordStruct           particleField_coords_F4;
+    CoordStruct           particleField_coords_100;
+    Vector3D<float>       particleField_vector3d_10C;
+    Vector3D<float>       particleField_vector3d_118;
     ParticleSystemClass*  ParticleSystem;
     uint16_t              RemainingEC;
     uint16_t              RemainingDC;
     uint8_t               StateAIAdvance;
-    uint8_t               unknown_12D;
+    uint8_t               particleField_12D;
     uint8_t               StartStateAI;
     uint8_t               Translucency;
-    uint8_t               unknown_130;
-    uint8_t               unknown_131;
+    uint8_t               particleField_130;
+    uint8_t               particleField_131;
     uint32_t              unused_134;
 
 public:

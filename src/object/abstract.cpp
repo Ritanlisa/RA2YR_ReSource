@@ -14,7 +14,7 @@ namespace game {
 AbstractClass::AbstractClass() noexcept
     : m_unique_id(static_cast<uint32_t>(-1))  // 0x410191: mov [eax+0x10], 0xFFFFFFFF
     , m_abstract_flags(0)                      // 0x4101B3: mov [eax+0x14], cl (preserved & 0xF8 from caller)
-    , m_unknown_18(0)                          // 0x410182: mov [eax+0x18], 0
+    , creationFrame(0)                          // 0x410182: mov [eax+0x18], 0
     , m_ref_count(0)                           // 0x410185: mov [eax+0x1C], 0
     , m_dirty(false)                           // 0x410188: mov [eax+0x20], 0
 {

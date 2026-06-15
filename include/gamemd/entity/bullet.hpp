@@ -81,20 +81,20 @@ public:
 
     BulletTypeClass*    Type;
     TechnoClass*        Owner;
-    bool                unknown_B4;
+    bool                bulletField_B4;
     BulletData          Data;
     bool                Bright;
-    uint32_t            unknown_E4;
+    uint32_t            bulletField_E4;
     BulletVelocity      Velocity;
-    uint32_t            unknown_100;
-    bool                unknown_104;
-    uint32_t            unknown_108;
+    uint32_t            bulletField_100;
+    bool                bulletField_104;
+    uint32_t            bulletField_108;
     AbstractClass*      Target;
     int32_t             Speed;
     int32_t             InheritedColor;
-    uint32_t            unknown_118;
-    uint32_t            unknown_11C;
-    double              unknown_120;
+    uint32_t            bulletField_118;
+    uint32_t            bulletField_11C;
+    double              bulletField_120;
     WarheadTypeClass*   WH;
     uint8_t             AnimFrame;
     uint8_t             AnimRateCounter;

@@ -15,16 +15,16 @@ constexpr uint32_t kAircraftFlag = static_cast<uint32_t>(AbstractFlags::Foot)
 // Note: AircraftClass has 5 vtables (FootClass base + FlasherClass at +0x6C0)
 AircraftClass::AircraftClass() noexcept
     : Type(nullptr)              // +0x6C4, set by constructor parameter in IDA
-    , unknown_bool_6C8(false)    // +0x6C8, IDA: *(BYTE*)(this+0x6C8) = 0
+    , aircraftFlag_6C8(false)    // +0x6C8, IDA: *(BYTE*)(this+0x6C8) = 0
     , HasPassengers(false)       // +0x6C9, IDA: *(BYTE*)(this+0x6C9) = 0
     , IsKamikaze(false)          // +0x6CA, IDA: *(BYTE*)(this+0x6CA) = 0
-    , unknown_6CC(0)             // +0x6CC, IDA: *(this+0x6CC) = 0
-    , unknown_bool_6D0(false)    // +0x6D0, IDA: *(BYTE*)(this+0x6D0) = 0
-    , unknown_bool_6D1(false)    // +0x6D1, IDA: *(BYTE*)(this+0x6D1) = 0
-    , unknown_bool_6D2(false)    // +0x6D2, IDA: *(BYTE*)(this+0x6D2) = 0
-    , unknown_char_6D3(5)        // +0x6D3, IDA: *(BYTE*)(this+0x6D3) = 5
-    , unknown_bool_6D4(true)     // +0x6D4, IDA: *(BYTE*)(this+0x6D4) = 1
-    , unknown_bool_6D5(true)     // +0x6D5, IDA: *(BYTE*)(this+0x6D5) = 1
+    , aircraftField_6CC(0)             // +0x6CC, IDA: *(this+0x6CC) = 0
+    , aircraftFlag_6D0(false)    // +0x6D0, IDA: *(BYTE*)(this+0x6D0) = 0
+    , aircraftFlag_6D1(false)    // +0x6D1, IDA: *(BYTE*)(this+0x6D1) = 0
+    , aircraftFlag_6D2(false)    // +0x6D2, IDA: *(BYTE*)(this+0x6D2) = 0
+    , aircraftField_char_6D3(5)        // +0x6D3, IDA: *(BYTE*)(this+0x6D3) = 5
+    , aircraftFlag_6D4(true)     // +0x6D4, IDA: *(BYTE*)(this+0x6D4) = 1
+    , aircraftFlag_6D5(true)     // +0x6D5, IDA: *(BYTE*)(this+0x6D5) = 1
 {
     m_abstract_flags = kAircraftFlag;
 }
@@ -62,8 +62,8 @@ int AircraftClass::Mission_Attack()
         else
         {
             // Pick good fire location = Good_Fire_Location(TarCom)
-            // m_destination = GoodFireLocation(m_target);
-            if (m_destination)
+            // destination = GoodFireLocation(m_target);
+            if (destination)
                 m_mission_status = TAKEOFF;
             else
                 m_mission_status = RTB;
@@ -102,7 +102,7 @@ int AircraftClass::Mission_Attack()
         //     SetFacing(Direction(TarCom));
         //     if (dist < 0x0010) {
         //         m_mission_status = FIRE1;
-        //         m_destination = nullptr;
+        //         destination = nullptr;
         //     }
         // }
         m_mission_status = FIRE1;
@@ -167,7 +167,7 @@ int AircraftClass::Mission_Attack()
         // Return to base
         if (m_ammo <= 0)
             m_target = nullptr;
-        m_destination = nullptr;
+        destination = nullptr;
                 QueueMission(static_cast<ra2::game::Mission>(static_cast<int>(gamemd::Mission::Return)), true);;
         return 10;
     }
@@ -223,7 +223,7 @@ int AircraftClass::Mission_Hunt()
 int AircraftClass::Mission_Retreat()
 {
     // Flee from threats, return to base at high speed
-    m_destination = nullptr;
+    destination = nullptr;
             QueueMission(static_cast<ra2::game::Mission>(static_cast<int>(gamemd::Mission::Return)), true);;
     return 10;
 }

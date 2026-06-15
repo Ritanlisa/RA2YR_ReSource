@@ -29,11 +29,11 @@ enum class RadioCommand : int;
 
 class AudioController {
 public:
-    uint32_t field_00;   // +0x00, init 0
-    uint32_t field_04;   // +0x04, init 0
-    uint32_t field_08;   // +0x08, init 0
-    uint32_t field_0C;   // +0x0C, init &dword_87E294
-    uint32_t field_10;   // +0x10, not initialized by Init
+    uint32_t sampleHandle;     // +0x00, init 0
+    uint32_t streamState;      // +0x04, init 0
+    uint32_t playbackPosition; // +0x08, init 0
+    uint32_t audioDevice;      // +0x0C, init &dword_87E294 (global device)
+    uint32_t currentFrame;     // +0x10, not initialized by Init
 
     void Stop();
     void Start(int32_t soundIndex);
@@ -66,6 +66,8 @@ public:
     virtual bool CanBeSold() const;
     virtual bool IsActive() const;
     virtual bool IsControllable() const;
+    virtual bool Render(int a2, int a3, int a4, int a5);
+    virtual int  UpdateProductionDisplay();
     virtual CoordStruct* GetPosition_0(CoordStruct* out) const { return nullptr; }
     virtual CoordStruct* GetDockCoords(CoordStruct* out, TechnoClass* docker) const { return nullptr; }
     virtual CoordStruct* GetPosition_2(CoordStruct* out) const { return nullptr; }
@@ -171,8 +173,8 @@ public:
     CellStruct GetMapCoordsAgain() const { CellStruct ret{}; GetMapCoordsAgain(&ret); return ret; }
     CoordStruct GetFLH(int weapon_idx, const CoordStruct& base) const { CoordStruct ret{}; GetFLH(&ret, weapon_idx, base); return ret; }
 
-    uint32_t        m_unknown_24;
-    uint32_t        m_unknown_28;
+    uint32_t        radarFlashFrame;       // +0x24, init 0
+    uint32_t        targetingState;        // +0x28, init 0
     int32_t         m_fall_rate;
     ObjectClass*    m_next_object;
     TagClass*       m_attached_tag;
@@ -181,31 +183,31 @@ public:
     AudioController m_custom_sound_controller;
     int32_t         m_custom_sound;
     bool            m_bomb_visible;
-    uint8_t         m_align_69[3];
+    uint8_t         align_69[3];
     int32_t         m_health;
     int32_t         m_estimated_health;
     bool            m_is_on_map;
-    uint8_t         m_align_75[3];
+    uint8_t         align_75[3];
     // IDA: +0x78 = init 1, +0x7C = init 0
-    uint32_t        m_unknown_78;         // +0x78, init = 1
-    uint32_t        m_unknown_7C;         // +0x7C, init = 0
+    uint32_t        selectabilityState;    // +0x78, init = 1 (selectable by default)
+    uint32_t        missionTimer;           // +0x7C, init = 0
     bool            m_needs_redraw;       // +0x80, init = false
     bool            m_in_limbo;           // +0x81, init = true
     bool            m_in_open_topped_transport;
     bool            m_is_selected;
     bool            m_has_parachute;
-    uint8_t         m_align_85[3];
+    uint8_t         align_85[3];
     AnimClass*      m_parachute;
     bool            m_on_bridge;
     bool            m_is_falling_down;
     bool            m_was_falling_down;
     bool            m_is_a_bomb;
     bool            m_is_alive;
-    uint8_t         m_align_91[3];
+    uint8_t         align_91[3];
     uint32_t        m_last_layer;
     bool            m_is_in_logic;
     bool            m_is_visible;
-    uint8_t         m_align_99[2];
+    uint8_t         align_99[2];
     CoordStruct     m_location;
     LineTrail*      m_line_trailer;
 

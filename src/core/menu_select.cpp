@@ -683,6 +683,7 @@ static void MainGameFrame(){
 //   16/17=GameStart(return 1)
 REVERSE(0x52d9a0, "MenuSelect: IDA verified", "None")
 // IDA 0x52D9A0 -- MenuSelect (4536B, 222BBs, 19-case state machine)
+static char HandleGameMode();  // forward declaration — extracted from goto L81
 char MenuSelect(){
     g_MenuState=MenuState::MenuIdle;g_GameMode=0;
     while(true){
@@ -710,7 +711,7 @@ char MenuSelect(){
         case MenuState::SaveLoadGame: g_MenuState=MenuState::Campaign; break;
         case MenuState::QuickMatch: g_MenuState=MenuState::Campaign; break;
         // IDA state 11: Skirmish Mode 5
-        case MenuState::NetworkGame5: g_GameMode=GMODE_SKIRMISH_SETUP; goto L81;
+        case MenuState::NetworkGame5: g_GameMode=GMODE_SKIRMISH_SETUP; { char r = HandleGameMode(); if (r) return r; } break;
         // IDA state 13: Play movie
         case MenuState::CampaignInit: g_MenuState=MenuState::CampaignSub; break;
         // IDA state 14: Campaign+CD  
@@ -718,23 +719,23 @@ char MenuSelect(){
         // IDA state 15: Credits -- Theme::QueueSong
         case MenuState::CampaignIntro: Event_Dispatch(); g_MenuState=MenuState::CampaignSub; break;
         // IDA state 16/17: Network game flow -- enter game loop (return 1)
-        case MenuState::NetworkGameFlow: case MenuState::NetworkGameFlow2: goto L81;
+        case MenuState::NetworkGameFlow: case MenuState::NetworkGameFlow2: { char r = HandleGameMode(); if (r) return r; } break;
         // IDA state 18: MainMenu
         case MenuState::MenuIdle: g_MenuState=MainMenuScreen(); break;
         }continue;
-    L81:switch(g_GameMode){
-        // IDA: GameMode 0 -- back to MenuIdle (18)
-        case GMODE_MENU: g_MenuState=MenuState::MenuIdle; break;
-        // IDA: GameMode 1/2 (campaign) -- game start
-        case GMODE_CAMPAIGN: case GMODE_CAMPAIGN_SUB: return 1;
-        // IDA: GameMode 3 (internet) -- game start
-        case GMODE_INTERNET: return 1;
-        // IDA: GameMode 4 (skirmish) -- Skirmish_Setup
-        case GMODE_SKIRMISH: g_MenuState=SkirmishSetupScreen(); break;
-        // IDA: GameMode 5 (skirmish setup) -- Skirmish_Setup
-        case GMODE_SKIRMISH_SETUP: g_MenuState=SkirmishSetupScreen(); break;
-        }
     }
+}
+
+// GameMode dispatch — extracted from goto L81 in MenuSelect
+static char HandleGameMode() {
+    switch(g_GameMode){
+        case GMODE_MENU: g_MenuState=MenuState::MenuIdle; break;
+        case GMODE_CAMPAIGN: case GMODE_CAMPAIGN_SUB: return 1;
+        case GMODE_INTERNET: return 1;
+        case GMODE_SKIRMISH: g_MenuState=SkirmishSetupScreen(); break;
+        case GMODE_SKIRMISH_SETUP: g_MenuState=SkirmishSetupScreen(); break;
+    }
+    return 0;
 }
 
 // IDA: MainGame @ 0x48CCC0 (780B, 51BBs)

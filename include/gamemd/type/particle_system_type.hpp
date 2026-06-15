@@ -40,26 +40,26 @@ protected:
 
 public:
     int ArrayIndex;
-    int unknown_28C;
+    int pTypeField_28C;
     int HoldsWhat;
     int SpawnCount;
     int SlowdownDistance;
-    int unknown_29C;
-    int unknown_2A0;
+    int pTypeField_29C;
+    int pTypeField_2A0;
     float Velocity;
-    float unknown_float;
-    int unknown_2AC;
-    int unknown_2B0;
+    float pTypeField_float;
+    int pTypeField_2AC;
+    int pTypeField_2B0;
     int DamageDelay;
     int WarheadKey;
     int Translucency;
-    int unknown_2C0;
+    int pTypeField_2C0;
     int StartScale;
-    int unknown_2C8;
+    int pTypeField_2C8;
     bool Beam;
     bool OneFrame;
     bool UseLineTrail;
-    bool unknown_bool_2D4;
+    bool pTypeFlag_2D4;
     uint8_t padding_2D5[3];
 };
 

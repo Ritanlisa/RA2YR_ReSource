@@ -454,7 +454,7 @@ int DSurface::RenderPipelineCleanup()
 extern void TerrainClass_GenerateTexture(  // IDA 0x547CF0
     void* frame_counter, void* dword_87F69C, int zero,
     void* hidden_surface, int a2x, int a2y, int a3x, int a3y,
-    int a3w, int a3h, char field_283, int16_t field_268,
+    int a3w, int a3h, char unknown_283, int16_t unknown_268,
     int one1, int zero2, int zero3, int one2, int zero4, int zero5);
 
 extern void* g_FrameCounter;      // IDA 0xA8ED2C
@@ -584,12 +584,27 @@ extern void* MixFileClass_LoadSubFile(void*);  // IDA 0x69E580
 int MixFileClass_GetPixelData(void* mix, void* out_pixel, unsigned int index)
 {
     char** sub = (char**)MixFileClass_LoadSubFile(mix);
-    if (!sub) goto zero;
+    if (!sub)
+    {
+        *(uint16_t*)out_pixel = 0;
+        *((uint8_t*)out_pixel + 2) = 0;
+        return (int)out_pixel;
+    }
 
-    if (index >= *((int16_t*)sub + 3)) goto zero;
+    if (index >= *((int16_t*)sub + 3))
+    {
+        *(uint16_t*)out_pixel = 0;
+        *((uint8_t*)out_pixel + 2) = 0;
+        return (int)out_pixel;
+    }
 
     char** entry = &sub[6 * index + 2];
-    if (!entry) goto zero;
+    if (!entry)
+    {
+        *(uint16_t*)out_pixel = 0;
+        *((uint8_t*)out_pixel + 2) = 0;
+        return (int)out_pixel;
+    }
 
     // Read 3 RGB bytes from entry at offsets 12, 13, 14
     uint8_t b = *((uint8_t*)entry + 12);
@@ -597,11 +612,6 @@ int MixFileClass_GetPixelData(void* mix, void* out_pixel, unsigned int index)
     uint8_t r = *((uint8_t*)entry + 14);
     *(uint16_t*)out_pixel = ((uint16_t)r << 8) | g;  // RGB packed as 0xRG
     *((uint8_t*)out_pixel + 2) = b;
-    return (int)out_pixel;
-
-zero:
-    *(uint16_t*)out_pixel = 0;
-    *((uint8_t*)out_pixel + 2) = 0;
     return (int)out_pixel;
 }
 
@@ -615,23 +625,23 @@ bool SliderClass_Draw(void* self, int value)
     auto* fields = reinterpret_cast<uint8_t*>(self);
 
     int clamped = value;
-    if (value >= item[12] - item[18])  // field_48 - field_72
+    if (value >= item[12] - item[18])  // unknown_48 - unknown_72
         clamped = item[12] - item[18];
 
     if (!GaugeClass_GetValue(reinterpret_cast<int*>(self), clamped))
         return false;
 
-    int max_val = fields[46] ? item[5] : item[6];  // field_20 or field_24
+    int max_val = fields[46] ? item[5] : item[6];  // unknown_20 or unknown_24
 
-    double v = (double)item[12];  // field_48
+    double v = (double)item[12];  // unknown_48
     int thumb = Math_RoundToInt(v);
     if (thumb <= 4) thumb = 4;
-    item[19] = thumb;  // field_76
+    item[19] = thumb;  // unknown_76
 
     int pos = Math_RoundToInt(v);
     if (pos >= max_val - thumb)
         pos = max_val - thumb;
-    item[20] = pos;  // field_80
+    item[20] = pos;  // unknown_80
 
     return true;
 }

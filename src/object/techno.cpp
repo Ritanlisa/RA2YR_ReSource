@@ -11,9 +11,9 @@ extern int& CurrentFrame;
 
 TechnoClass::TechnoClass() noexcept
     : m_transporter(nullptr)
-    , m_unknown_int_120(0)
+    , moraleValue(0)
     , m_current_turret_number(0)
-    , m_unknown_int_128(0)
+    , guardTargetIndex(0)
     , m_behind_anim(nullptr)
     , m_deploy_anim(nullptr)
     , m_in_air(false)
@@ -21,7 +21,7 @@ TechnoClass::TechnoClass() noexcept
     , m_current_ranking(-1)
     , m_current_gattling_stage(0)
     , m_gattling_value(0)
-    , m_unknown_148(0)
+    , weaponCooldownTimer(0)
     , m_initial_owner(nullptr)
     , m_armor_multiplier(1.0)
     , m_firepower_multiplier(1.0)
@@ -34,15 +34,15 @@ TechnoClass::TechnoClass() noexcept
     , m_drain_anim(nullptr)
     , m_disguised(false)
     , m_disguise_creation_frame(0)
-    , m_unknown_bool_1F8(false)
-    , m_unknown_208(0)
-    , m_unknown_20C(0)
+    , technoFlag_1F8(false)
+    , reloadStage(0)
+    , secondaryReloadStage(0)
     , m_group(-1)
     , m_focus(nullptr)
     , m_owner(nullptr)
     , m_cloak_state(0)
     , m_warp_factor(0.0f)
-    , m_unknown_bool_250(false)
+    , technoFlag_250(false)
     , m_last_sight_coords{}
     , m_last_sight_range(0)
     , m_last_sight_height(0)
@@ -51,12 +51,12 @@ TechnoClass::TechnoClass() noexcept
     , m_gap_radius(0)
     , m_being_warped_out(false)
     , m_warping_out(false)
-    , m_unknown_bool_272(false)
+    , technoFlag_272(false)
     , m_unused_273(0)
     , m_temporal_im_using(nullptr)
     , m_temporal_targeting_me(nullptr)
     , m_is_immobilized(false)
-    , m_unknown_280(0)
+    , immobilizationTimer(0)
     , m_chrono_lock_remaining(0)
     , m_chrono_dest_coords{}
     , m_airstrike(nullptr)
@@ -81,7 +81,7 @@ TechnoClass::TechnoClass() noexcept
     , m_originally_owned_by_house(nullptr)
     , m_bunker_linked_item(nullptr)
     , m_pitch_angle(0.0f)
-    , m_unknown_2F8(0)
+    , diskLaserChargeState(0)
     , m_ammo(0)
     , m_value(0)
     , m_fire_particle_system(nullptr)
@@ -98,32 +98,32 @@ TechnoClass::TechnoClass() noexcept
     , m_rocking_sideways_per_frame(0.0f)
     , m_rocking_forwards_per_frame(0.0f)
     , m_hijacker_infantry_type(0)
-    , m_unknown_34C(0)
+    , tiberiumStorageIndex(0)
     , m_unload_timer{}
     , m_barrel_facing{}
     , m_facing{}
     , m_turret_facing{}
     , m_current_burst_index(0)
-    , m_unknown_short_3C8(0)
-    , m_unknown_3CA(0)
+    , barrelRotationOffset(0)
+    , turretRotationOffset(0)
     , m_counted_as_owned(false)
     , m_is_sinking(false)
     , m_was_sinking_already(false)
-    , m_unknown_bool_3CF(false)
-    , m_unknown_bool_3D0(false)
+    , technoFlag_3CF(false)
+    , technoFlag_3D0(false)
     , m_has_been_attacked(false)
     , m_cloakable(false)
     , m_is_primary_factory(false)
     , m_spawned(false)
     , m_is_in_playfield(false)
-    , m_unknown_bool_418(false)
-    , m_unknown_bool_419(false)
+    , technoFlag_418(false)
+    , technoFlag_419(false)
     , m_is_human_controlled(false)
     , m_discovered_by_player(false)
     , m_discovered_by_computer(false)
-    , m_unknown_bool_41D(false)
-    , m_unknown_bool_41E(false)
-    , m_unknown_bool_41F(false)
+    , technoFlag_41D(false)
+    , technoFlag_41E(false)
+    , technoFlag_41F(false)
     , m_sight_increase(0)
     , m_recruitable_a(false)
     , m_recruitable_b(false)
@@ -134,25 +134,25 @@ TechnoClass::TechnoClass() noexcept
     , m_is_being_manipulated(false)
     , m_being_manipulated_by(nullptr)
     , m_chrono_warped_by_house(nullptr)
-    , m_unknown_bool_430(false)
-    , m_unknown_bool_431(false)
-    , m_unknown_bool_432(false)
+    , technoFlag_430(false)
+    , technoFlag_431(false)
+    , technoFlag_432(false)
     , m_old_team(nullptr)
     , m_counted_as_owned_special(false)
     , m_absorbed(false)
-    , m_unknown_bool_43A(false)
-    , m_unknown_43C(0)
-    , m_unknown_49C(0)
-    , m_unknown_4A0(0)
-    , m_unknown_bool_4B8(false)
-    , m_unknown_4BC(0)
-    , m_unknown_bool_4D4(false)
-    , m_unknown_4D8(0)
+    , technoFlag_43A(false)
+    , targetEvaluationTimer(0)
+    , audio3State(0)
+    , audio3Channel(0)
+    , technoFlag_4B8(false)
+    , audio5State(0)
+    , technoFlag_4D4(false)
+    , audio6State(0)
     , m_queued_voice_index(0)
-    , m_unknown_4F4(0)
-    , m_unknown_bool_4F8(false)
-    , m_unknown_4FC(0)
-    , m_unknown_500(0)
+    , voiceQueueState(0)
+    , technoFlag_4F8(false)
+    , empAccumulator(0)
+    , empTargetState(0)
     , m_emp_lock_remaining(0)
     , m_threat_posed(0)
     , m_should_lose_target_now(0)
@@ -485,7 +485,7 @@ void TechnoClass::SmokeUpdate()
     // Default: clear smoke flags for most mission states
     if (m_current_mission != 1 && m_current_mission != 27
         && m_current_mission != 30 && m_current_mission != 31)
-        m_unknown_bool_430 = false;
+        technoFlag_430 = false;
 
     // Every 24 frames if moving/attacking: create damage smoke
     if ((CurrentFrame % 24) == 0 && m_has_been_attacked)
@@ -550,7 +550,7 @@ bool TechnoClass::CreateUnit()
     auto* build_type = reinterpret_cast<gamemd::BuildingTypeClass*>(type);
 
     // ---- Section 1: Audio setup ----
-    if (!m_audio3.field_00 && build_type->WorkingSound != -1)
+    if (!m_audio3.sampleHandle && build_type->WorkingSound != -1)
     {
         // TODO: StartAudio(building->Audio7, build_type->WorkingSound)
     }
@@ -559,7 +559,7 @@ bool TechnoClass::CreateUnit()
     // TODO: if (build_type->HasStupidGuardMode) { CloakDetect(); DetectSensors(); }
 
     // ---- Section 3: Building placement validation ----
-    if (build_type->CanBeOccupied) // IDA: field_883 (placement check flag)
+    if (build_type->CanBeOccupied) // IDA: unknown_883 (placement check flag)
     {
         // TODO: Check if cell owner allows placement
         // building->PlacementAllowed = (CheckCellOwner(building->m_owner, cell) == 0);
@@ -569,7 +569,7 @@ bool TechnoClass::CreateUnit()
     // TODO: if (type == Rules->MCVType) { placement override }
 
     // ---- Section 5: Deploy animation coordinate preset ----
-    // IDA: if (type->field_844 != -1) { vt_entry_240 preset coords }
+    // IDA: if (type->unknown_844 != -1) { vt_entry_240 preset coords }
     if (build_type->DeployingAnim)
     {
         // TODO: vt_entry_240(this, &m_location) -- preset deploy coordinates
@@ -608,20 +608,20 @@ bool TechnoClass::CreateUnit()
             }
 
             // Special deploy animation with fire effects
-            // IDA: if (type->field_772) -> special anim + fire + smoke effects
-            if (build_type->CreateUnitSound) // proxy for field_772
+            // IDA: if (type->unknown_772) -> special anim + fire + smoke effects
+            if (build_type->CreateUnitSound) // proxy for unknown_772
             {
-                // TODO: new AnimClass(type->field_772, m_location, 0,1,0x2600,-30,...)
-                // TODO: sub_489280(0, type->field_816, 1, 0) -- fire effect
+                // TODO: new AnimClass(type->unknown_772, m_location, 0,1,0x2600,-30,...)
+                // TODO: sub_489280(0, type->unknown_816, 1, 0) -- fire effect
                 // TODO: sub_48A620(anim_coords, 0, 0) -- smoke effect
             }
 
             // Fire/smoke effects for all deploying buildings
-            // IDA: if (type->field_752) { for each count: create fire anim }
+            // IDA: if (type->unknown_752) { for each count: create fire anim }
             // TODO
 
             // Crater effect for large buildings
-            // IDA: if (type->field_856 && !above_surface) {
+            // IDA: if (type->unknown_856 && !above_surface) {
             //   circular radius scan -> create debris/damage fire anims
             //   sub_6D2790(crater_rect, 0)
             // }
@@ -655,7 +655,7 @@ bool TechnoClass::CreateUnit()
     }
 
     // Section 8c: Placement distance check
-    if (build_type->IsThreatRatingNode) // IDA: field_864
+    if (build_type->IsThreatRatingNode) // IDA: unknown_864
     {
         // TODO: Check if building has matching type at owner's conyard cell
     }
@@ -664,7 +664,7 @@ bool TechnoClass::CreateUnit()
     if (build_type->ProductionSizeOverride == -1)
     {
         build_type->ProductionSizeOverride = build_type->GetFoundationWidth();
-        if (build_type->FreeBuildup) // IDA: field_882 - cliff protector
+        if (build_type->FreeBuildup) // IDA: unknown_882 - cliff protector
             build_type->ProductionSizeOverride /= 2;
     }
     if (build_type->ProductionStepsTarget == -1)
@@ -688,7 +688,7 @@ bool TechnoClass::CreateUnit()
     {
         // TODO: locomotor type 36 -> cost_rate *= 5.0
         building->CostAccumulator += cost_rate;
-        if (building->CostAccumulator >= 1.0 && !building->Audio7.field_00)
+        if (building->CostAccumulator >= 1.0 && !building->Audio7.sampleHandle)
         {
             int count = static_cast<int>(building->CostAccumulator);
             building->CostAccumulator -= static_cast<double>(count);
@@ -701,7 +701,7 @@ bool TechnoClass::CreateUnit()
     int target = build_type->ProductionStepsTarget;
     int offset = build_type->InitialProductionProgress;
 
-    // Pipeline milestone flag (IDA: field_880)
+    // Pipeline milestone flag (IDA: unknown_880)
     if (build_type->IsBaseDefense)
     {
         if (accum < build_type->ProductionSizeOverride && accum == 0)
@@ -748,7 +748,7 @@ bool TechnoClass::CreateUnit()
 
             // Random timer for new cycle
             // TODO: building->ProductionTimer = RandomBetween(build_type->Unknown_732, build_type->Unknown_736)
-            building->ProductionTimer = build_type->Unknown_688;
+            building->ProductionTimer = build_type->constructionTimer;
             building->ProductionFrame = static_cast<int>(CurrentFrame);
             building->ProductionRate = building->ProductionTimer;
             building->ProductionSpeed = building->ProductionTimer;
@@ -766,7 +766,7 @@ bool TechnoClass::CreateUnit()
             // TODO: (*(vt + 244))(this, &m_location)
 
             // Check if deploy animation index is valid (<= Rules[829])
-            // IDA: if (type->field_844 <= Rules->DeployAnimCount) {
+            // IDA: if (type->unknown_844 <= Rules->DeployAnimCount) {
             if (true) // TODO: proper condition
             {
                 auto* owner = building->GetOwningHouse();
@@ -785,19 +785,19 @@ bool TechnoClass::CreateUnit()
                 if (building->GetOwningHouse())
                 {
                     // Find exit cell for unit placement
-                    // IDA: factory = Rules[826][type->field_844]
+                    // IDA: factory = Rules[826][type->unknown_844]
                     //       cell = factory->GetExitCoords(building->m_owner)
                     //       vt_entry_D8 of factory -> PlaceUnit(cell, owner)
 
                     // Check cell walkability at exit position
-                    // IDA: if (cell->field_320 & 0x100) -> obstacle check
+                    // IDA: if (cell->unknown_320 & 0x100) -> obstacle check
                     //       If blocked: vt_entry_124(unit, 0) -> disable
                     //       vt_entry_124(unit, 1) -> re-enable after reposition
                     //       Set unit flag (byte+140 = 1)
 
                     // Create the unit in playfield
-                    // IDA: if (owner->field_492 == 0) { vt_entry_1E8(unit, 15, 0) }
-                    //       // field_492 = no special behavior
+                    // IDA: if (owner->unknown_492 == 0) { vt_entry_1E8(unit, 15, 0) }
+                    //       // unknown_492 = no special behavior
 
                     // TODO: CreateUnitAtCoordsStandard(exit_coords, time, false)
                     // TODO: sub_6B4A50(unit_obj, coords, ...)
@@ -805,13 +805,13 @@ bool TechnoClass::CreateUnit()
             }
 
             // vt_entry_248(this) -- finalize
-            building->m_unknown_bool_3D0 = true;
+            building->technoFlag_3D0 = true;
             // TODO: return vt_entry_248(this);
             return false;
         }
 
         // No deploy animation -> production complete, set flag
-        building->m_unknown_bool_3D0 = true;
+        building->technoFlag_3D0 = true;
         // TODO: return vt_entry_248(this);
     }
 
@@ -840,7 +840,7 @@ static bool ProductionCompletionCallback(TechnoClass* techno)
     // TODO: vt_entry_292(this, 2)
 
     // Section 2-3: Audio management
-    bool audio_active = (techno->m_audio3.field_00 != 0);
+    bool audio_active = (techno->m_audio3.sampleHandle != 0);
     bool has_working_sound = (type->WorkingSound != -1);
 
     if (audio_active || !has_working_sound)
@@ -864,7 +864,7 @@ static bool ProductionCompletionCallback(TechnoClass* techno)
     }
 
     // Section 5: Special building launch sequence
-    // IDA: check field_855 -> NukeSilo / ICBMLauncher / SpySat types
+    // IDA: check unknown_855 -> NukeSilo / ICBMLauncher / SpySat types
     if (!audio_active)
     {
         if (type->ICBMLauncher || type->SpySat || type->NukeSilo)
@@ -874,16 +874,16 @@ static bool ProductionCompletionCallback(TechnoClass* techno)
             // TODO: building_idx = BuildingClass_FindByCellHash(cell)
             // if (building_idx != -1) {
             //     building_instance = BuildingClass_InstanceArray[building_idx]
-            //     EVA_Announce(cell, cell->field_286 + 1)
+            //     EVA_Announce(cell, cell->unknown_286 + 1)
             //
             //     // 1-in-3 chance: create launch animation
-            //     if (building_instance->field_53 > 0 && !(random() % 3)) {
+            //     if (building_instance->unknown_53 > 0 && !(random() % 3)) {
             //         AnimClass* anim = new AnimClass(
-            //             building_instance->Anims[random(0, field_53)],
+            //             building_instance->Anims[random(0, unknown_53)],
             //             coords + Z(10),
             //             0, 1, 0x600, 0, 0)
-            //         anim->X = BuildingTypeClass_AnimTable[building_instance->field_48 + 780]
-            //         anim->Y = cell->field_266
+            //         anim->X = BuildingTypeClass_AnimTable[building_instance->unknown_48 + 780]
+            //         anim->Y = cell->unknown_266
             //     }
             //
             //     PlaySoundEffectAt(coords, Rules[346], ...)
@@ -939,9 +939,9 @@ static bool CreateUnitOnCompletion(TechnoClass* techno)
 
     // Section 3: Super weapon fire effects
     // IDA: type+716 -> index into SW array, type+720 -> count
-    if (type->Unknown_716 != -1)
+    if (type->factoryBuildIndex0 != -1)
     {
-        for (int i = 0; i < type->Unknown_720; ++i)
+        for (int i = 0; i < type->factoryBuildIndex1; ++i)
         {
             // auto sw_coords = GetCoords();
             // SW_CreateFireAt(sw_array[type+716], sw_coords)
@@ -1058,7 +1058,7 @@ static bool CreateUnitAtCoordsStandard(CoordStruct* coords, int time, bool speci
     //       add to candidates (DynamicVectorClass, max 10)
     // TODO: Game_LockMutex (unlock)
 
-    // TODO: Filter candidates by size constraints (field_664/668)
+    // TODO: Filter candidates by size constraints (unknown_664/668)
     // if (filtered count > 0):
     //   pick Random_Range(0, filtered_count - 1)
     //   UnitClass_Create(filtered[index], coords, -1)
@@ -1083,8 +1083,8 @@ static bool CreateUnitAtCoordsTimed(CoordStruct* coords, int time, bool special)
     // TODO: Same flow as Standard but:
     //   - Filter: entry+672 flag (instead of +673)
     //   - Additional time-based constraints
-    //   - Standard: check (field != 1 || field_668 != 1) && (time <= 60 || special <= 50)
-    //   - Timed: check (field > 1 && field_668 > 1) for special mode
+    //   - Standard: check (field != 1 || unknown_668 != 1) && (time <= 60 || special <= 50)
+    //   - Timed: check (field > 1 && unknown_668 > 1) for special mode
 
     return false;
 }

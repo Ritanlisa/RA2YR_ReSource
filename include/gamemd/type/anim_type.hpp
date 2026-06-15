@@ -59,7 +59,7 @@ public:
     int MiddleFrameIndex;
     int MiddleFrameWidth;
     int MiddleFrameHeight;
-    uint8_t unknown_2A4;
+    uint8_t animTypeField_2A4;
     double Damage;
     int Rate;
     int Start;
@@ -85,7 +85,7 @@ public:
     int TrailerSeperation;
     double Elasticity;
     double MinZVel;
-    double unknown_double_320;
+    double animTypeField_double_320;
     double MaxXYVel;
     WarheadTypeClass* Warhead;
     int DamageRadius;

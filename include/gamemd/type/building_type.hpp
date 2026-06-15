@@ -100,13 +100,13 @@ public:
     InfantryTypeClass* SecretInfantry;
     UnitTypeClass* SecretUnit;
     BuildingTypeClass* SecretBuilding;
-    int field_EB0;
+    int bldTypeField_EB0;
     int Adjacent;
     AbstractType Factory;
     CoordStruct TargetCoordOffset;
     CoordStruct ExitCoord;
     CellStruct* FoundationOutside;
-    int field_ED8;
+    int bldTypeField_ED8;
     int DeployFacing;
     int PowerBonus;
     int PowerDrain;
@@ -140,10 +140,10 @@ public:
     int AntiArmorValue;
     int AntiInfantryValue;
     Point2D ZShapePointMove;
-    int unknown_1538;
-    int unknown_153C;
-    int unknown_1540;
-    int unknown_1544;
+    int bldTypeField_1538;
+    int bldTypeField_153C;
+    int bldTypeField_1540;
+    int bldTypeField_1544;
     WORD ExtraLight;
     bool TogglePower;
     bool HasSpotlight;
@@ -270,20 +270,21 @@ public:
 
     int     ProductionCompletionThreshold;
     double  CostRatePerFrame;
-    int     Unknown_688;
+    int     constructionTimer;        // +0x688, init from INI: construction time accumulator
     int     InitialProductionProgress;
-    int     Unknown_696;
+    int     productionDelay;           // +0x696, init from INI: delay before production starts
     int     ProductionStepsTarget;
     int     ProductionSizeOverride;
     uint8_t PipelineStepCount;
     uint8_t _pad_prod_71[3];
     TechnoTypeClass* NextTypeInChain;
-    int     Unknown_716;
-    int     Unknown_720;
-    int     Unknown_732;
-    int     Unknown_736;
-    int     Unknown_740;
-    int     Unknown_744;
+    // Factory sub-type production indices (6 slots for different factory configurations)
+    int     factoryBuildIndex0;        // +0x716
+    int     factoryBuildIndex1;        // +0x720
+    int     factoryBuildIndex2;        // +0x732
+    int     factoryBuildIndex3;        // +0x736
+    int     factoryBuildIndex4;        // +0x740
+    int     factoryBuildIndex5;        // +0x744
 
     DWORD align_1794;
 };

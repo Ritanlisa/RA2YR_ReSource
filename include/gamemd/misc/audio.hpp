@@ -35,13 +35,13 @@ struct VocClassHeader
 struct VolumeStruct
 {
     int32_t  Volume;
-    uint32_t unknown_4;
-    int32_t  unknown_8;
-    int32_t  unknown_C;
-    int32_t  unknown_10;
-    int32_t  unknown_14;
-    uint32_t unknown_18;
-    int32_t  unknown_1C;
+    uint32_t audioField_4;
+    int32_t  audioField_8;
+    int32_t  audioField_C;
+    int32_t  audioField_10;
+    int32_t  audioField_14;
+    uint32_t audioField_18;
+    int32_t  audioField_1C;
 };
 
 class VocClass
@@ -62,10 +62,10 @@ public:
     SoundControl     Control;
     SoundType        Type;
     VolumeStruct     Volume;
-    uint32_t         unknown_38;
-    uint32_t         unknown_3C;
+    uint32_t         audioField_38;
+    uint32_t         audioField_3C;
     SoundPriority    Priority;
-    uint32_t         unknown_44;
+    uint32_t         audioField_44;
     int32_t          Limit;
     int32_t          Loop;
     int32_t          Range;
@@ -76,23 +76,23 @@ public:
     int32_t          MaxFDelta;
     int32_t          VShift;
     char             Name[0x20];
-    uint32_t         unknown_8C;
-    uint32_t         unknown_90;
-    uint32_t         unknown_94;
-    uint32_t         unknown_98;
-    uint32_t         unknown_9C;
-    uint32_t         unknown_A0;
-    uint32_t         unknown_A4;
-    uint32_t         unknown_A8;
-    uint32_t         unknown_AC;
-    uint32_t         unknown_B0;
+    uint32_t         audioField_8C;
+    uint32_t         audioField_90;
+    uint32_t         audioField_94;
+    uint32_t         audioField_98;
+    uint32_t         audioField_9C;
+    uint32_t         audioField_A0;
+    uint32_t         audioField_A4;
+    uint32_t         audioField_A8;
+    uint32_t         audioField_AC;
+    uint32_t         audioField_B0;
 
     int32_t          SampleIndex[0x20];
     int32_t          NumSamples;
     int32_t          Attack;
     int32_t          Decay;
-    uint32_t         unknown_140;
-    uint32_t         unknown_144;
+    uint32_t         audioField_140;
+    uint32_t         audioField_144;
 
     VocClass() = delete;
     ~VocClass() = delete;
@@ -127,7 +127,7 @@ public:
     char           AlliedVoice[9];
     VoxPriority    Priority;
     VoxType        Type;
-    int32_t        unknown_50;
+    int32_t        audioField_50;
 
     // TODO: complete VoxClass
 };

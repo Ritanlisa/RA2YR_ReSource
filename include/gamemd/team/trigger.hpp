@@ -91,11 +91,11 @@ public:
     TriggerClass*       m_next_trigger;
     HouseClass*         m_house;
     bool                m_destroyed;
-    uint8_t             m_align_31[3];
+    uint8_t             align_31[3];
     TimerStruct         m_timer;
     uint32_t            m_occured_events;
     bool                m_enabled;
-    uint8_t             m_align_45[3];
+    uint8_t             align_45[3];
 
 protected:
     TriggerClass() = default;
@@ -139,7 +139,7 @@ public:
     bool                m_difficulty[3];
     bool                m_enabled;
     bool                m_must_transfer;
-    uint8_t             m_align_A1[3];
+    uint8_t             align_A1[3];
     HouseTypeClass*     m_house;
     TriggerTypeClass*   m_next_trigger;
     TEventClass*        m_first_event;

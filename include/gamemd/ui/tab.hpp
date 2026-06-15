@@ -29,11 +29,11 @@ public:
     virtual ~TabClass() = default;
 
     TabDataClass  TabData;
-    TimerStruct   unknown_timer_552C;
+    TimerStruct   tabFlashTimer;
     TimerStruct   InsufficientFundsBlinkTimer;
-    uint8_t       unknown_byte_5544;
+    uint8_t       tabStateFlags;
     bool          MissionTimerPinged;
-    uint8_t       unknown_byte_5546;
+    uint8_t       tabFlashState;
     uint8_t       padding_5547;
 
     // TODO: complete TabClass members

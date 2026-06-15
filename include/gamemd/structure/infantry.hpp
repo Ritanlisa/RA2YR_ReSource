@@ -38,17 +38,17 @@ public:
 
     InfantryTypeClass* Type;
     Sequence           SequenceAnim;
-    TimerStruct        unknown_Timer_6C8;
+    TimerStruct        infantryField_Timer_6C8;
     uint32_t           PanicDurationLeft;
     bool               PermanentBerzerk;
     bool               Technician;
-    bool               unknown_bool_6DA;
+    bool               infantryFlag_6DA;
     bool               Crawling;
-    bool               unknown_bool_6DC;
-    bool               unknown_bool_6DD;
-    uint32_t           unknown_6E0;
+    bool               infantryFlag_6DC;
+    bool               infantryFlag_6DD;
+    uint32_t           infantryField_6E0;
     bool               ShouldDeploy;
-    int32_t            unknown_int_6E8;
+    int32_t            infantryField_int_6E8;
     uint32_t           unused_6EC;
 
 protected:

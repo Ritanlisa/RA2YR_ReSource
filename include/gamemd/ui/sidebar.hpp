@@ -27,17 +27,17 @@ struct CameoDataStruct
     AbstractType     ItemType;
     bool             IsAlt;
     FactoryClass*    CurrentFactory;
-    uint32_t         unknown_10;
+    uint32_t         sidebarField_10;
     int32_t          Progress;
     int32_t          FlashEndFrame;
 
     CameoDataStruct() noexcept
         : ItemIndex(-1), ItemType(AbstractType::None), IsAlt(false),
-          CurrentFactory(nullptr), unknown_10(0), Progress(0), FlashEndFrame(0) {}
+          CurrentFactory(nullptr), sidebarField_10(0), Progress(0), FlashEndFrame(0) {}
 
     CameoDataStruct(int32_t itemIndex, AbstractType itemType) noexcept
         : ItemIndex(itemIndex), ItemType(itemType), IsAlt(false),
-          CurrentFactory(nullptr), unknown_10(0), Progress(0), FlashEndFrame(0) {}
+          CurrentFactory(nullptr), sidebarField_10(0), Progress(0), FlashEndFrame(0) {}
 
     bool operator==(const CameoDataStruct& rhs) const noexcept
     {
@@ -59,14 +59,14 @@ struct TabDataStruct
     RectangleStruct  Bounds;
     int32_t          Index;
     bool             NeedsRedraw;
-    uint8_t          unknown_3D;
-    uint8_t          unknown_3E;
-    uint8_t          unknown_3F;
-    uint32_t         unknown_40;
+    uint8_t          sidebarField_3D;
+    uint8_t          sidebarField_3E;
+    uint8_t          sidebarField_3F;
+    uint32_t         sidebarField_40;
     int32_t          TopRowIndex;
-    uint32_t         unknown_48;
-    uint32_t         unknown_4C;
-    uint32_t         unknown_50;
+    uint32_t         sidebarField_48;
+    uint32_t         sidebarField_4C;
+    uint32_t         sidebarField_50;
     int32_t          CameoCount;
     CameoDataStruct  Cameos[kMaxCameosPerTab];
 };
@@ -93,32 +93,32 @@ public:
     static int32_t GetObjectTabIdx(AbstractType absType, BuildCat buildCat, bool isNaval);
 
     TabDataStruct    Tabs[kMaxTabs];
-    uint32_t         unknown_5394;
-    uint32_t         unknown_5398;
+    uint32_t         sidebarField_5394;
+    uint32_t         sidebarField_5398;
     int32_t          ActiveTabIndex;
-    uint32_t         unknown_53A0;
+    uint32_t         sidebarField_53A0;
     bool             HideObjectNameInTooltip;
-    bool             unknown_bool_53A5;
+    bool             sidebarFlag_53A5;
     bool             SidebarNeedsRedraw;
     bool             SidebarBackgroundNeedsRedraw;
-    bool             unknown_bool_53A8;
+    bool             sidebarFlag_53A8;
 
     HouseClass*      DiplomacyHouses[kMaxDiplomacyHouses];
     int32_t          DiplomacyKills[kMaxDiplomacyHouses];
     int32_t          DiplomacyOwned[kMaxDiplomacyHouses];
     int32_t          DiplomacyPowerDrain[kMaxDiplomacyHouses];
     ColorScheme*     DiplomacyColors[kMaxDiplomacyHouses];
-    uint32_t         Diplomacy_unknown_544C[kMaxDiplomacyHouses];
-    uint32_t         Diplomacy_unknown_546C[kMaxDiplomacyHouses];
-    uint32_t         Diplomacy_unknown_548C[kMaxDiplomacyHouses];
-    uint32_t         Diplomacy_unknown_54AC[kMaxDiplomacyHouses];
-    uint32_t         Diplomacy_unknown_54CC[kMaxDiplomacyHouses];
-    uint32_t         Diplomacy_unknown_54EC[kMaxDiplomacyHouses];
+    uint32_t         Diplomacy_sidebarField_544C[kMaxDiplomacyHouses];
+    uint32_t         Diplomacy_sidebarField_546C[kMaxDiplomacyHouses];
+    uint32_t         Diplomacy_sidebarField_548C[kMaxDiplomacyHouses];
+    uint32_t         Diplomacy_sidebarField_54AC[kMaxDiplomacyHouses];
+    uint32_t         Diplomacy_sidebarField_54CC[kMaxDiplomacyHouses];
+    uint32_t         Diplomacy_sidebarField_54EC[kMaxDiplomacyHouses];
     uint8_t          Diplomacy_byte_550C;
     int32_t          DiplomacyNumHouses;
 
-    bool             unknown_bool_5514;
-    bool             unknown_bool_5515;
+    bool             sidebarFlag_5514;
+    bool             sidebarFlag_5515;
     uint8_t          padding_5516[2];
 
     SuperClass*      CurrentSuperWeapon;

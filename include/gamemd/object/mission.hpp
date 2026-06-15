@@ -66,7 +66,7 @@ public:
     int32_t     m_suspended_mission;
     int32_t     m_queued_mission;
     bool        m_mission_queued;
-    uint8_t     m_padding_B9[3];
+    uint8_t     padding_B9[3];
     int32_t     m_mission_status;
     int32_t     m_mission_start_time;
     uint32_t    m_mission_data;

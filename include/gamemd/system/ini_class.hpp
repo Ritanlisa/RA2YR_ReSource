@@ -62,11 +62,11 @@ protected:
     // +0x10: GenericList vtable
     INILinkNode m_section_head;         // +0x1C: section list head
     int32_t    m_section_count;         // +0x28
-    int32_t    m_unknown_2C;            // +0x2C
-    int32_t    m_unknown_30;            // +0x30
+    int32_t    iniField_2C;            // +0x2C
+    int32_t    iniField_30;            // +0x30
     bool       m_dirty_flag;            // +0x34 (byte 52)
-    uint32_t   m_unknown_38;            // +0x38
-    uint32_t   m_unknown_3C;            // +0x3C
+    uint32_t   iniField_38;            // +0x38
+    uint32_t   iniField_3C;            // +0x3C
 };
 
 // IDA: CCINIClass @ 0x535B30 -- size ~0x58 (88 bytes)
@@ -94,14 +94,14 @@ public:
 protected:
     CCFileClass* m_cc_file;
     bool         m_owns_file;
-    uint8_t      m_padding_45[3];
+    uint8_t      padding_45[3];
     union {
         INIData* m_ini_data;
-        int32_t  m_unknown_48;
+        int32_t  iniField_48;
     };
-    int32_t      m_unknown_4C;
-    int32_t      m_unknown_50;
-    int32_t      m_unknown_54;
+    int32_t      iniField_4C;
+    int32_t      iniField_50;
+    int32_t      iniField_54;
 };
 
 // Hash table for INI section lookup (used by INIClass::BinarySearchSection)

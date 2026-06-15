@@ -74,7 +74,7 @@ public:
     virtual bool   SpawnBaseUnits(HouseClass* pHouse, uint32_t unused) { return false; }
     virtual bool   GenerateStartingUnits(HouseClass* pHouse, int32_t& amountToSpend) { return false; }
 
-    bool             unknown_4;
+    bool             isMultiplayerEnabled;
     DynamicVectorClass<MPTeam*> MPTeams;
     wchar_t*         CSFTitle;
     wchar_t*         CSFTooltip;

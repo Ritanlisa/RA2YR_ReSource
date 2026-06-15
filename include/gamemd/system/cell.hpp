@@ -64,39 +64,39 @@ struct CellData
 
 enum class CellFlags : uint32_t
 {
-    None                        = 0x00000000,
-    IsCenterPlot                = 0x00000001,
-    Unknown_02                  = 0x00000002,
-    Unknown_04                  = 0x00000004,
-    Unknown_08                  = 0x00000008,
-    Unknown_10                  = 0x00000010,
-    Unknown_20                  = 0x00000020,
-    Unknown_40                  = 0x00000040,
-    Unknown_80                  = 0x00000080,
-    Unknown_100                 = 0x00000100,
-    Unknown_200                 = 0x00000200,
-    Flat                        = 0x00000400,
-    Unknown_800                 = 0x00000800,
-    Unknown_1000                = 0x00001000,
-    Unknown_2000                = 0x00002000,
-    Unknown_4000                = 0x00004000,
-    Bridge                      = 0x00008000,
-    Unknown_10000               = 0x00010000,
-    Unknown_20000               = 0x00020000,
-    Unknown_40000               = 0x00040000,
-    Unknown_80000               = 0x00080000,
-    Unknown_100000              = 0x00100000,
-    Unknown_200000              = 0x00200000,
-    Unknown_400000              = 0x00400000,
-    Unknown_800000              = 0x00800000,
-    Unknown_1000000             = 0x01000000,
-    Unknown_2000000             = 0x02000000,
-    Unknown_4000000             = 0x04000000,
+    Empty                       = 0x00000000,
+    CenterRevealed              = 0x00000001,
+    EdgeRevealed                = 0x00000002,
+    IsWaypoint                  = 0x00000004,
+    Explored                    = 0x00000008,  // no shroud covering this cell
+    FlagPresent                 = 0x00000010,
+    FlagToShroud                = 0x00000020,
+    IsPlot                      = 0x00000040,
+    BridgeOwner                 = 0x00000080,  // repair hut position, see 571FEB
+    BridgeHead                  = 0x00000100,  // see 570254
+    Flag_00000200               = 0x00000200,  // YRpp: Unknown_200
+    BridgeBody                  = 0x00000400,
+    BridgeDir                   = 0x00000800,  // see 570288 and 57036D
+    PixelFX                     = 0x00001000,  // see 6D7A91
+    Flag_00002000               = 0x00002000,  // YRpp: Unknown_2000
+    Flag_00004000               = 0x00004000,  // YRpp: Unknown_4000
+    Veinhole                    = 0x00008000,  // see 74E4A3
+    DrawDarkenIfInAir           = 0x00010000,  // see 51936F and 73D084
+    AnimAttached                = 0x00020000,
+    Tube                        = 0x00040000,  // see 42B5B8
+    EMPPresent                  = 0x00080000,
+    HorizontalLineEventTag      = 0x00100000,
+    VerticalLineEventTag        = 0x00200000,
+    Fogged                      = 0x00400000,
+    // Combined flags
+    Revealed                    = CenterRevealed | EdgeRevealed,
+    Bridge                      = BridgeHead | BridgeBody,
+    // Higher-bit flags (TODO: verify if these belong to a separate AltFlags enum)
     DestroyableCliff            = 0x08000000,
-    Unknown_10000000            = 0x10000000,
+    Hashigh_10000000            = 0x10000000,
     HasCrater                   = 0x20000000,
-    Unknown_40000000            = 0x40000000,
-    Unknown_80000000            = 0x80000000,
+    Hashigh_40000000            = 0x40000000,
+    Hashigh_80000000            = 0x80000000,
 };
 
 class CellClass
@@ -156,6 +156,7 @@ public:
     CoordStruct GetCenterCoords() const { CoordStruct buf; GetCenterCoords(&buf); return buf; }
     void ActivateVeins();
     bool DrawObjectsCloaked(int owner_house_idx) const;
+    bool Draw(int flags, void** out, int a4);   // IDA: 0x48E5A0
 
     bool CloakGen_InclHouse(unsigned int idx) const { return (m_cloaked_by_houses & (1u << idx)) != 0; }
     void CloakGen_AddHouse(unsigned int idx) { m_cloaked_by_houses |= 1u << idx; }
@@ -227,24 +228,19 @@ public:
     CellStruct              m_map_coords;
     void*                   m_fogged_objects;
     CellClass*              m_bridge_owner_cell;
-    uint32_t                m_unknown_30;
+    uint32_t                tunnelLinkIndex;      // +0x30, init 0
     LightConvertClass*      m_light_convert;
     int                     m_iso_tile_type_index;
     TagClass*               m_attached_tag;
     BuildingTypeClass*      m_rubble;
     int                     m_overlay_type_index;
     int                     m_smudge_type_index;
-    uint32_t                m_unknown_4C;
+    uint32_t                occupancyCounter;     // +0x4C, init 0
     int                     m_wall_owner_index;
     int                     m_infantry_owner_index;
     int                     m_alt_infantry_owner_index;
-    uint32_t                m_unknown_5C;
-    uint32_t                m_unknown_60;
-    uint32_t                m_unknown_64;
-    uint32_t                m_unknown_68;
-    uint32_t                m_unknown_6C;
-    uint32_t                m_unknown_70;
-    uint32_t                m_unknown_74;
+    // Per-side state data — 8 entries (IDA: dwords 23-30, init to 0)
+    uint32_t                sideStateData[8];     // +0x5C to +0x74
     uint32_t                m_cloaked_by_houses;
 
     unsigned short          m_sensors_of_houses[24];
@@ -257,39 +253,39 @@ public:
     int                     m_land_type;
     double                  m_rad_level;
     RadSiteClass*           m_rad_site;
-    uint32_t                m_unknown_FC;
+    uint32_t                passabilityFlags;     // +0xFC, init 0
     int                     m_occupy_heights_covering_me;
-    uint32_t                m_unknown_104;
-    uint16_t                m_unknown_108;
-    uint16_t                m_unknown_10A;
-    uint16_t                m_unknown_10C;
-    uint16_t                m_unknown_10E;
-    uint16_t                m_unknown_110;
-    uint16_t                m_unknown_112;
-    uint16_t                m_unknown_114;
+    uint32_t                blockageState;        // +0x104, init 0
+    uint16_t                terrainOverlayType0;  // +0x108
+    uint16_t                terrainOverlayType1;  // +0x10A
+    uint16_t                terrainOverlayType2;  // +0x10C
+    uint16_t                terrainOverlayType3;  // +0x10E
+    uint16_t                terrainOverlayType4;  // +0x110
+    uint16_t                terrainOverlayType5;  // +0x112
+    uint16_t                terrainOverlayType6;  // +0x114
     int16_t                 m_tube_index;
-    int8_t                  m_unknown_118;
-    int8_t                  m_unknown_119;
+    int8_t                  passageDirection1;    // +0x118
+    int8_t                  passageDirection2;    // +0x119
     int8_t                  m_height;
     int8_t                  m_level;
     uint8_t                 m_slope_index;
-    uint8_t                 m_unknown_11D;
+    uint8_t                 bridgeState;          // +0x11D (init 0)
     uint8_t                 m_powerup;
-    uint8_t                 m_unknown_11F;
+    uint8_t                 radarVisibility;      // +0x11F (init 0)
     int8_t                  m_shroudedness;
     int8_t                  m_foggedness;
     uint8_t                 m_blocked_neighbours;
-    uint8_t                 m_align_123;
+    uint8_t                 align_123;
     uint32_t                m_occupation_flags;
     uint32_t                m_alt_occupation_flags;
     int32_t                 m_copy_flags;
     int32_t                 m_shroud_counter;
     uint32_t                m_gaps_covering_this_cell;
     bool                    m_visibility_changed;
-    uint8_t                 m_align_139[3];
-    uint32_t                m_unknown_13C;
+    uint8_t                 align_139[3];
+    uint32_t                morphFlags;           // +0x13C, init 0
     CellFlags               m_flags;
-    uint8_t                 m_padding_144[4];
+    uint8_t                 padding_144[4];
 
 protected:
     CellClass();

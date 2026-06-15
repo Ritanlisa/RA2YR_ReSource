@@ -85,7 +85,7 @@ HouseClass::HouseClass(HouseTypeClass* pType) noexcept
     m_alt_allies               = 0;
     m_starting_credits         = 0;
     m_starting_edge            = 0;
-    m_unknown_1E4              = 0;
+    startingAllies2              = 0;
     m_side_index               = 0;
 
     m_current_player           = false;
@@ -109,16 +109,16 @@ HouseClass::HouseClass(HouseTypeClass* pType) noexcept
 
     m_visionary            = 0;
     m_map_is_clear          = false;
-    m_unknown_bool_242      = false;
-    m_unknown_bool_243      = false;
+    sideNegotiationFlag2      = false;
+    sideNegotiationFlag3      = false;
     m_has_been_thieved      = false;
     m_repairing             = false;
-    m_unknown_bool_246      = false;
-    m_unknown_bool_247      = false;
-    m_unknown_bool_248      = false;
+    aiStateFlag0      = false;
+    aiStateFlag1      = false;
+    aiStateFlag2      = false;
     m_all_to_hunt           = false;
-    m_unknown_bool_24A      = false;
-    m_unknown_bool_24B      = false;
+    aiStateFlag3      = false;
+    aiStateFlag4      = false;
     m_iq_level2             = 0;
     m_ai_mode               = 0;
 
@@ -133,7 +133,7 @@ HouseClass::HouseClass(HouseTypeClass* pType) noexcept
     m_allow_win_blocks          = 0;
 
     m_repair_timer          = TimerStruct{};
-    m_unknown_timer_28C     = TimerStruct{};
+    aiTeamAttackTimer     = TimerStruct{};
     m_savour_timer          = TimerStruct{};
     m_power_blackout_timer  = TimerStruct{};
     m_radar_blackout_timer  = TimerStruct{};
@@ -151,9 +151,9 @@ HouseClass::HouseClass(HouseTypeClass* pType) noexcept
 
     m_airport_docks          = 0;
     m_powered_unit_centers   = 0;
-    m_unknown_2DC            = 0;
-    m_unknown_2E0            = 0;
-    m_unknown_2E4            = 0;
+    factoryOccupancy1            = 0;
+    factoryOccupancy2            = 0;
+    factoryOccupancy3            = 0;
     m_owned_units            = 0;
     m_owned_navy             = 0;
     m_owned_buildings        = 0;
@@ -164,7 +164,7 @@ HouseClass::HouseClass(HouseTypeClass* pType) noexcept
     m_balance       = 0;
     m_total_storage = 0;
     std::memset(&m_owned_weed, 0, sizeof(m_owned_weed));
-    m_unknown_324 = 0;
+    tiberiumBalanceState = 0;
 
     std::memset(&m_built_infantry_types, 0, sizeof(m_built_infantry_types));
     std::memset(&m_built_unit_types,     0, sizeof(m_built_unit_types));
@@ -174,7 +174,7 @@ HouseClass::HouseClass(HouseTypeClass* pType) noexcept
     std::memset(&m_killed_unit_types,     0, sizeof(m_killed_unit_types));
     std::memset(&m_killed_aircraft_types, 0, sizeof(m_killed_aircraft_types));
     std::memset(&m_killed_building_types, 0, sizeof(m_killed_building_types));
-    std::memset(&m_unknown_scores,        0, sizeof(m_unknown_scores));
+    std::memset(&miscScoreStats,        0, sizeof(miscScoreStats));
     std::memset(&m_collected_powerups,    0, sizeof(m_collected_powerups));
 
     m_num_airpads        = 0;
@@ -203,38 +203,38 @@ HouseClass::HouseClass(HouseTypeClass* pType) noexcept
     m_primary_unused3        = nullptr;
     m_primary_for_defenses   = nullptr;
 
-    std::memset(m_unknown_53D0, 0, sizeof(m_unknown_53D0));
+    std::memset(factoryStatePadding, 0, sizeof(factoryStatePadding));
 
-    m_our_flag_carrier  = nullptr;
-    m_our_flag_coords   = CellStruct{};
+    flagCarrierUnit  = nullptr;
+    flagCoords   = CellStruct{};
 
-    std::memset(m_killed_units_of_houses,     0, sizeof(m_killed_units_of_houses));
-    std::memset(m_killed_buildings_of_houses, 0, sizeof(m_killed_buildings_of_houses));
-    m_total_killed_units     = 0;
-    m_total_killed_buildings = 0;
+    std::memset(killedUnitsOfHouses,     0, sizeof(killedUnitsOfHouses));
+    std::memset(killedBuildingsOfHouses, 0, sizeof(killedBuildingsOfHouses));
+    totalKilledUnits     = 0;
+    totalKilledBuildings = 0;
 
-    m_unknown_548C   = 0;
+    radarVisibleFlag   = 0;
     m_base_spawn_cell = CellStruct{};
     m_base_center     = CellStruct{};
-    m_unknown_5498 = 0;
-    m_unknown_549C = 0;
-    m_unknown_54A0 = 0;
-    m_unknown_54A4 = 0;
-    m_unknown_54A8 = 0;
-    m_unknown_54AC = 0;
-    m_unknown_54B0 = 0;
-    m_unknown_54B4 = 0;
-    m_unknown_54B8 = 0;
-    m_unknown_54BC = 0;
-    m_unknown_54C0 = 0;
-    m_unknown_54C4 = 0;
-    m_unknown_54C8 = 0;
-    m_unknown_54CC = 0;
-    m_unknown_54D0 = 0;
-    m_unknown_54D4 = 0;
-    m_unknown_54D8 = 0;
-    m_unknown_54DC = 0;
-    m_unknown_54E0 = 0;
+    scorePadding[0] = 0;
+    scorePadding[1] = 0;
+    scorePadding[2] = 0;
+    scorePadding[3] = 0;
+    scorePadding[4] = 0;
+    scorePadding[5] = 0;
+    scorePadding[6] = 0;
+    scorePadding[7] = 0;
+    scorePadding[8] = 0;
+    scorePadding[9] = 0;
+    scorePadding[10] = 0;
+    scorePadding[11] = 0;
+    scorePadding[12] = 0;
+    scorePadding[13] = 0;
+    scorePadding[14] = 0;
+    scorePadding[15] = 0;
+    scorePadding[16] = 0;
+    scorePadding[17] = 0;
+    scorePadding[18] = 0;
 
     std::memset(&m_radar_visible_to, 0, sizeof(m_radar_visible_to));
 
@@ -258,8 +258,8 @@ HouseClass::HouseClass(HouseTypeClass* pType) noexcept
     std::memset(&m_owned_infantry_types_2, 0, sizeof(m_owned_infantry_types_2));
     std::memset(&m_owned_aircraft_types_2, 0, sizeof(m_owned_aircraft_types_2));
 
-    m_unknown_55F0   = 0;
-    m_unknown_55F4   = 0;
+    attackDelayA   = 0;
+    attackDelayB   = 0;
     m_attack_delay_a = 0;
     m_attack_delay_b = 0;
     m_enemy_house_index = -1;
@@ -308,12 +308,12 @@ HouseClass::HouseClass(HouseTypeClass* pType) noexcept
 
     m_damage_delay_timer = TimerStruct{};
     m_team_delay_timer   = TimerStruct{};
-    m_unknown_timer_A    = TimerStruct{};
-    m_unknown_timer_B    = TimerStruct{};
-    m_unknown_timer_C    = TimerStruct{};
-    m_unknown_timer_D    = TimerStruct{};
-    m_unknown_timer_E    = TimerStruct{};
-    m_unknown_57DC       = 0;
+    aiTimer1    = TimerStruct{};
+    aiTimer2    = TimerStruct{};
+    aiTimer3    = TimerStruct{};
+    aiTimer4    = TimerStruct{};
+    aiTimer5    = TimerStruct{};
+    scenarioState       = 0;
 
     std::memset(m_threat_posed_estimates_padding, 0, sizeof(m_threat_posed_estimates_padding));
 
@@ -324,18 +324,18 @@ HouseClass::HouseClass(HouseTypeClass* pType) noexcept
     m_color_scheme_index = 0;
     m_starting_cell      = CellStruct{};
     m_starting_allies    = 0;
-    m_unknown_16060      = 0;
+    scenarioReserved6      = 0;
 
     m_waypoint_path         = nullptr;
     m_waypoint_path_count   = 0;
     m_waypoint_path_capacity = 0;
 
-    m_unknown_1607C = 0;
-    m_unknown_16080 = 0;
-    m_unknown_16084 = 0;
+    waypointPathReserved1 = 0;
+    waypointPathReserved2 = 0;
+    waypointPathReserved3 = 0;
     m_unused_16088  = 0.0;
     m_unused_16090  = 0.0;
-    m_padding_16098 = 0;
+    padding_16098 = 0;
 
     m_prediction_enemy_armor    = 0.0f;
     m_prediction_enemy_air      = 0.0f;
@@ -344,7 +344,7 @@ HouseClass::HouseClass(HouseTypeClass* pType) noexcept
     m_total_owned_infantry_cost  = 0;
     m_total_owned_vehicle_cost   = 0;
     m_total_owned_aircraft_cost  = 0;
-    m_unknown_160B4              = 0;
+    productionCostState              = 0;
 
     m_abstract_flags = kHouseFlag;
 }

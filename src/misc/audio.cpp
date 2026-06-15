@@ -60,7 +60,7 @@ VoxClass::VoxClass(const char* pName)
 
     Priority    = VoxPriority{};
     Type        = VoxType{};
-    unknown_50  = 0;
+    audioField_50  = 0;
 
     if (Array)
     {
@@ -219,7 +219,8 @@ void* __fastcall Audio_GetEntryByIndex(void* base, int index)
 int __fastcall Audio_BinarySearchEntry(void* array, const char* key)
 {
     size_t count = *((size_t*)array + 1);  // count at offset 4
-    void* found = bsearch(key, *(void**)array, count, 0x24, _strcmpi);
+    void* found = bsearch(key, *(void**)array, count, 0x24,
+        reinterpret_cast<_CoreCrtNonSecureSearchSortCompareFunction>(_strcmpi));
     if (found)
         return ((int)(uintptr_t)found - *(int*)array) / 0x24;
     return -1;

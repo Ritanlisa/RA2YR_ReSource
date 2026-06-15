@@ -113,6 +113,7 @@ public:
     virtual HouseClass* GetOwningHouse() const { return nullptr; }
     virtual int GetArrayIndex() const { return -1; }
     virtual bool IsDead() const { return false; }
+    virtual void* IsTechnoType() const { return nullptr; }  // IDA: vtable[1][11] (0x40DD70) — returns this if Unit/Aircraft/Building/Infantry, else null
     virtual CoordStruct* GetCoords(CoordStruct* out) const;
     virtual CoordStruct* GetDestination(CoordStruct* out, TechnoClass* docker = nullptr) const { return nullptr; }
     virtual bool IsOnFloor() const { return false; }
@@ -132,10 +133,10 @@ public:
     // IDA ctor confirmed offsets:
     uint32_t    m_unique_id;         // +0x10, init = -1 (0xFFFFFFFF)
     uint32_t    m_abstract_flags;    // +0x14, init = preserve bits 7-3 (& 0xF8)
-    uint32_t    m_unknown_18;        // +0x18, init = 0
+    uint32_t    creationFrame;        // +0x18, init = 0
     int32_t     m_ref_count;         // +0x1C, init = 0
     bool        m_dirty;             // +0x20, init = 0
-    uint8_t     m_padding_21[3];     // +0x21, alignment
+    uint8_t     padding_21[3];     // +0x21, alignment
 
 protected:
     AbstractClass() noexcept;

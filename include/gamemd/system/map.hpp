@@ -79,22 +79,22 @@ struct ZoneConnectionClass
 {
     CellStruct  from_map_coords;
     CellStruct  to_map_coords;
-    bool        unknown_bool_08;
+    bool        isBlocked;        // +0x08, pathfinding zone connection blocked flag
     CellClass*  cell;
 
     bool operator==(const ZoneConnectionClass& other) const
     {
         return from_map_coords == other.from_map_coords
             && to_map_coords == other.to_map_coords
-            && unknown_bool_08 == other.unknown_bool_08
+            && isBlocked == other.isBlocked
             && cell == other.cell;
     }
 };
 
 struct SubzoneConnectionStruct
 {
-    uint32_t    unknown_dword_0;
-    uint8_t     unknown_byte_4;
+    uint32_t    zoneIndex;        // +0x00, subzone identifier
+    uint8_t     connectionFlags;  // +0x04, connection state flags
 };
 
 struct SubzoneTrackingStruct
@@ -102,9 +102,9 @@ struct SubzoneTrackingStruct
     SubzoneConnectionStruct* subzone_connections;
     int32_t                  subzone_count;
     int32_t                  subzone_capacity;
-    uint16_t                 unknown_word_18;
-    uint32_t                 unknown_dword_1C;
-    uint32_t                 unknown_dword_20;
+    uint16_t                 searchLimit;       // +0x18, max connection search depth
+    uint32_t                 searchState;       // +0x1C, connection search state
+    uint32_t                 searchResult;      // +0x20, connection search result
 };
 
 struct TrajectoryHelper
@@ -250,20 +250,20 @@ public:
     // IDA 0x4F42F0 -- MapClass::MarkForRedraw (44B)
     void MarkForRedraw(int flags) { (void)flags; /* TODO: full IDA translation */ }
 
-    uint32_t                        m_unknown_10;
-    void*                           m_unknown_pointer_14;
-    void*                           m_unknown_pointer_array_18[13];
-    uint32_t                        m_unknown_4C;
+    uint32_t                        lightingFlags;    // +0x10, map lighting/render state
+    void*                           tileSetData;       // +0x14, theater tile set pointer
+    void*                           waypointCache[13]; // +0x18, waypoint pathfinding cache
+    uint32_t                        zoneSearchState;   // +0x4C, connection search state
     ZoneConnectionClass*            m_zone_connections;
     int32_t                         m_zone_connection_count;
     int32_t                         m_zone_connection_capacity;
-    void*                           m_unknown_array_68;
+    void*                           pathfindingNodes;  // +0x68, pathfinding node array
     int32_t                         m_num_items_in_68;
-    uint32_t                        m_unknown_70;
-    uint32_t                        m_unknown_74;
-    uint32_t                        m_unknown_78;
-    uint32_t                        m_unknown_7C;
-    uint32_t                        m_unknown_80[3];
+    uint32_t                        pathDataField0;    // +0x70
+    uint32_t                        pathDataField1;    // +0x74
+    uint32_t                        pathDataField2;    // +0x78
+    uint32_t                        pathDataField3;    // +0x7C
+    uint32_t                        pathDataState[3];  // +0x80, pathfinding state data
     SubzoneTrackingStruct*          m_subzone_tracking_1;
     int32_t                         m_subzone_tracking_1_count;
     int32_t                         m_subzone_tracking_1_capacity;
@@ -282,18 +282,18 @@ public:
     int32_t                         m_cell_iterator_next_y;
     int32_t                         m_cell_iterator_current_y;
     CellClass*                      m_cell_iterator_next_cell;
-    uint32_t                        m_unknown_11C;
-    uint32_t                        m_unknown_120;
+    uint32_t                        cellIteratorState0; // +0x11C
+    uint32_t                        cellIteratorState1; // +0x120
     LTRBStruct                      m_map_coord_bounds;
-    uint32_t                        m_unknown_134;
+    uint32_t                        randomMapState;     // +0x134, random map generator state
     CellClass**                     m_cells;
     int32_t                         m_cells_count;
     int32_t                         m_cells_capacity;
     int32_t                         m_max_width;
     int32_t                         m_max_height;
     int32_t                         m_max_num_cells;
-    uint32_t                        m_padding_01;
-    uint32_t                        m_padding_02;
+    uint32_t                        reserved_01;       // alignment padding
+    uint32_t                        reserved_02;       // alignment padding
     Crate                           m_crates[256];
     CellStruct*                     m_tagged_cells;
     int32_t                         m_tagged_cells_count;

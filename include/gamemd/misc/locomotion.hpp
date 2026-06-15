@@ -111,7 +111,7 @@ public:
 
     static void ChangeLocomotorTo(FootClass* object, const CLSID& clsid);
 
-    uint32_t     unknown_08;
+    uint32_t     locoField_08;
     FootClass*   LinkedTo;
     bool         Powered;
     bool         Dirty;
@@ -146,14 +146,14 @@ public:
     CoordStruct  MovingDestination;
     CoordStruct  HeadToCoord;
     bool         IsMoving;
-    bool         unknown_bool_31;
-    bool         unknown_bool_32;
-    bool         unknown_bool_33;
-    int32_t      unknown_34;
-    int32_t      unknown_38;
-    int32_t      unknown_3C;
-    int32_t      unknown_40;
-    int32_t      unknown_44;
+    bool         locoFlag_31;
+    bool         locoFlag_32;
+    bool         locoFlag_33;
+    int32_t      locoField_34;
+    int32_t      locoField_38;
+    int32_t      locoField_3C;
+    int32_t      locoField_40;
+    int32_t      locoField_44;
 
 protected:
     DriveLocomotionClass() = default;
@@ -223,12 +223,12 @@ public:
     CoordStruct  HeadToCoord;
     bool         IsMoving;
     bool         IsReallyMoving;
-    bool         unknown_bool_32;
-    bool         unknown_bool_33;
-    int32_t      unknown_34;
-    int32_t      unknown_38;
-    int32_t      unknown_3C;
-    int32_t      unknown_40;
+    bool         locoFlag_32;
+    bool         locoFlag_33;
+    int32_t      locoField_34;
+    int32_t      locoField_38;
+    int32_t      locoField_3C;
+    int32_t      locoField_40;
 
 protected:
     WalkLocomotionClass() = default;
@@ -267,13 +267,13 @@ public:
     int8_t         IsTakingOff;
     bool           IsLanding;
     bool           WasLanding;
-    bool           unknown_bool_53;
-    uint32_t       unknown_54;
-    uint32_t       unknown_58;
+    bool           locoFlag_53;
+    uint32_t       locoField_54;
+    uint32_t       locoField_58;
     bool           IsElevating;
-    bool           unknown_bool_5D;
-    bool           unknown_bool_5E;
-    bool           unknown_bool_5F;
+    bool           locoFlag_5D;
+    bool           locoFlag_5E;
+    bool           locoFlag_5F;
 
 protected:
     FlyLocomotionClass() = default;
@@ -304,13 +304,13 @@ public:
 
     CoordStruct  MovingDestination;
     int32_t      MissionState;
-    uint32_t     unknown_44;
+    uint32_t     locoField_44;
     double       CurrentSpeed;
-    bool         unknown_bool_4C;
+    bool         locoFlag_4C;
     bool         SpawnerIsElite;
     float        CurrentPitch;
-    uint32_t     unknown_58;
-    uint32_t     unknown_5C;
+    uint32_t     locoField_58;
+    uint32_t     locoField_5C;
 
 protected:
     RocketLocomotionClass() = default;
@@ -382,8 +382,8 @@ public:
     uint8_t      align_21[3];
     double       CurrentSpeed;
     double       SinkingWeight;
-    uint32_t     unknown_30;
-    uint32_t     unknown_34;
+    uint32_t     locoField_30;
+    uint32_t     locoField_34;
 
 protected:
     ShipLocomotionClass() = default;
@@ -427,8 +427,8 @@ public:
     CoordStruct   MovingDestination;
     CoordStruct   LastCoords;
     bool          Moving;
-    bool          unknown_bool_35;
-    bool          unknown_bool_36;
+    bool          locoFlag_35;
+    bool          locoFlag_36;
     int32_t       State;
     ILocomotion*  Piggybackee;
 
@@ -495,10 +495,10 @@ public:
     CoordStruct  HeadToCoord;
     bool         IsMoving;
     uint8_t      align_21[3];
-    int32_t      unknown_24;
-    int32_t      unknown_28;
-    int32_t      unknown_2C;
-    int32_t      unknown_30;
+    int32_t      locoField_24;
+    int32_t      locoField_28;
+    int32_t      locoField_2C;
+    int32_t      locoField_30;
 
 protected:
     MechLocomotionClass() = default;

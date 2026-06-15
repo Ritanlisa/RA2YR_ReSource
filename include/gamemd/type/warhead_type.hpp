@@ -68,7 +68,7 @@ public:
     bool PenetratesBunker;
     bool Wood;
     bool Tiberium;
-    bool unknown_bool_149;
+    bool isLocomotorWarhead;
     bool Sparky;
     bool Sonic;
     bool Fire;

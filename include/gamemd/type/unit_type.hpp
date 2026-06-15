@@ -44,7 +44,7 @@ public:
     bool CrateGoodie;
     bool Harvester;
     bool Weeder;
-    bool unknown_E10;
+    bool canCrushInfantry;
     bool HasTurret;
     bool DeployToFire;
     bool IsSimpleDeployer;

@@ -1043,7 +1043,7 @@ int __fastcall Hash_Compute(int* acc, int input)
 // IDA: 0x63DAD0 — PackRGBFromBytes: pack 3 bytes into 16-bit RGB565
 int __fastcall PackRGBFromBytes(const uint8_t* rgb)
 {
-    return (rgb[0] >> g_BitShift_Green_0 << g_BitShift_Red)
+    return (rgb[0] >> g_BitShift_Green << g_BitShift_Red)
          | (rgb[1] >> g_BitMask_Blue << g_BitMask_Green)
          | (rgb[2] >> g_BitMask_Red << g_BitShift_Blue);
 }
@@ -1450,12 +1450,12 @@ void ObfuscateDataBlock(const uint16_t* src, uint32_t* dst, int size)
     for (unsigned int i = 0; i < count; ++i)
     {
         uint32_t word = *src++;
-        uint32_t v7 = __ROR4__(word, 8);
-        LOBYTE(v7) = byte_A8F91C[(uint16_t)word];
-        BYTE1(v7) = BYTE1(word);
-        uint32_t v8 = __ROR4__(v7, 8);
-        BYTE1(v8) = byte_A8F91C[(word & 0xFFFF00u) >> 8];
-        *dst++ = __ROR4__(v8, 16);
+        uint32_t v7  = ((word >> 8) | (word << 24));           // __ROR4__(word, 8)
+        v7 = (v7 & 0xFFFFFF00) | byte_A8F91C[(uint16_t)word];  // LOBYTE(v7) = lookup
+        v7 = (v7 & 0xFFFF00FF) | ((word & 0xFF00) << 0);       // BYTE1(v7) = BYTE1(word)
+        uint32_t v8  = ((v7 >> 8) | (v7 << 24));               // __ROR4__(v7, 8)
+        v8 = (v8 & 0xFFFF00FF) | (byte_A8F91C[(word & 0xFFFF00u) >> 8] << 8); // BYTE1(v8) = lookup
+        *dst++ = ((v8 >> 16) | (v8 << 16));                    // __ROR4__(v8, 16)
     }
 
     // Handle final partial WORD
@@ -1463,7 +1463,7 @@ void ObfuscateDataBlock(const uint16_t* src, uint32_t* dst, int size)
     uint8_t* dst_bytes = reinterpret_cast<uint8_t*>(dst);
     *dst_bytes++ = last_word & 0xFF;
     *dst_bytes++ = byte_A8F91C[last_word];
-    *dst_bytes++ = HIBYTE(last_word);
+    *dst_bytes++ = static_cast<uint8_t>(last_word >> 8);
     *dst_bytes = 0;
 }
 

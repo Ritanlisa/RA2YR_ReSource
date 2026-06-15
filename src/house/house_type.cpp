@@ -16,7 +16,7 @@ HouseTypeClass::HouseTypeClass() noexcept
     , m_array_index2(-1)
     , m_side_index(-1)
     , m_color_scheme_index(-1)
-    , m_align_C4(0)
+    , align_C4(0)
     , m_firepower_mult(1.0)
     , m_groundspeed_mult(1.0)
     , m_airspeed_mult(1.0)
@@ -60,8 +60,8 @@ HouseTypeClass::HouseTypeClass() noexcept
     std::memset(m_name, 0, sizeof(m_name));
     std::memset(m_parent_country, 0, sizeof(m_parent_country));
     std::memset(m_suffix, 0, sizeof(m_suffix));
-    std::memset(m_padding_1A9, 0, sizeof(m_padding_1A9));
-    std::memset(&m_align_B1, 0, sizeof(m_align_B1));
+    std::memset(padding_1A9, 0, sizeof(padding_1A9));
+    std::memset(&align_B1, 0, sizeof(align_B1));
 }
 
 HouseTypeClass* HouseTypeClass::FindParentCountry() const
