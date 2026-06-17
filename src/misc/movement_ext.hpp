@@ -63,4 +63,84 @@ public:
     int32_t     Movement_field_00;       // 0x00
 };
 
+
+// === Batch-generated MISSING class stubs ===
+
+// 1 methods in IDA
+class Locomotor
+{
+public:
+    virtual ~Locomotor() = default;
+
+    virtual void GetSpeed() {} // 0x426630
+
+};
+// 14 methods in IDA
+class MoveFeedback
+{
+public:
+    virtual ~MoveFeedback() = default;
+
+    virtual void ClearBuffer() {} // 0x40b640
+    virtual void PointerToIndex() {} // 0x40b670
+    virtual void Update() {} // 0x40b6d0
+    virtual void Show() {} // 0x40b6f0
+    virtual void FindItem() {} // 0x40b930
+    // +9 more virtual methods
+
+    uint8_t MoveFeedback_field_0x04[4];
+    uint8_t MoveFeedback_field_0x08[4];
+    uint8_t MoveFeedback_field_0x0C[4];
+    uint8_t MoveFeedback_field_0x10[4];
+    uint8_t MoveFeedback_field_0x14[4];
+    uint8_t MoveFeedback_field_0x18[4];
+    uint8_t MoveFeedback_field_0x1C[4];
+    uint8_t MoveFeedback_field_0x20[4];
+    uint8_t MoveFeedback_field_0x24[4];
+    uint8_t MoveFeedback_field_0x28[4];
+    uint8_t MoveFeedback_field_0x2C[4];
+    uint8_t MoveFeedback_field_0x30[4];
+    uint8_t MoveFeedback_field_0x34[4];
+};
+// 2 methods in IDA
+class MovementClass
+{
+public:
+    virtual ~MovementClass() = default;
+
+    virtual void CompareAbsCoords() {} // 0x4c9530
+    virtual void CalcSpeed() {} // 0x54bff0
+
+    uint8_t MovementClass_field_0x04[4];
+};
+// 7 methods in IDA
+class Pathfinding
+{
+public:
+    virtual ~Pathfinding() = default;
+
+    virtual void AStar() {} // 0x42c290
+    virtual void CalcDistance() {} // 0x42d170
+    virtual void sub_42DCA0() {} // 0x42dca0
+    virtual void CrossBridge() {} // 0x583180
+    virtual void SelectRegionPath() {} // 0x5833f0
+    // +2 more virtual methods
+
+    uint8_t Pathfinding_field_0x04[4];
+    uint8_t Pathfinding_field_0x08[4];
+    uint8_t Pathfinding_field_0x0C[4];
+    uint8_t Pathfinding_field_0x10[4];
+    uint8_t Pathfinding_field_0x14[4];
+    uint8_t Pathfinding_field_0x18[4];
+};
+// 1 methods in IDA
+class PathfindingClass
+{
+public:
+    virtual ~PathfindingClass() = default;
+
+    virtual void FindPath() {} // 0x4ffb20
+
+};
+
 } // namespace gamemd

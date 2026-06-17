@@ -619,4 +619,804 @@ public:
     static HINSTANCE s_hInstance; // 0x04
 };
 
+
+// === Batch-generated MISSING class stubs ===
+
+// 1 methods in IDA
+class AllocCallback
+{
+public:
+    virtual ~AllocCallback() = default;
+
+    virtual void Dispatch() {} // 0x7be5d0
+
+};
+// 22 methods in IDA
+class COMClass
+{
+public:
+    virtual ~COMClass() = default;
+
+    virtual void RegisterAll() {} // 0x490490
+    virtual void ReleaseRef() {} // 0x65d670
+    virtual void initInterface() {} // 0x65d6a0
+    virtual void queryProperty() {} // 0x765680
+    virtual void setProperty() {} // 0x7656b0
+    // +17 more virtual methods
+
+    uint8_t COMClass_field_0x04[4];
+    uint8_t COMClass_field_0x08[4];
+    uint8_t COMClass_field_0x0C[4];
+    uint8_t COMClass_field_0x10[4];
+    uint8_t COMClass_field_0x14[4];
+    uint8_t COMClass_field_0x18[4];
+    uint8_t COMClass_field_0x1C[4];
+    uint8_t COMClass_field_0x20[4];
+    uint8_t COMClass_field_0x24[4];
+    uint8_t COMClass_field_0x28[4];
+    uint8_t COMClass_field_0x2C[4];
+    uint8_t COMClass_field_0x30[4];
+    uint8_t COMClass_field_0x34[4];
+    uint8_t COMClass_field_0x38[4];
+    uint8_t COMClass_field_0x3C[4];
+    uint8_t COMClass_field_0x40[4];
+    uint8_t COMClass_field_0x44[4];
+    uint8_t COMClass_field_0x48[4];
+    uint8_t COMClass_field_0x4C[4];
+    uint8_t COMClass_field_0x50[4];
+};
+// 2 methods in IDA
+class COMClassFactory
+{
+public:
+    virtual ~COMClassFactory() = default;
+
+    virtual void Register() {} // 0x6bedb0
+    virtual void CreateInstance() {} // 0x6c0ac0
+
+    uint8_t COMClassFactory_field_0x04[4];
+};
+// 1 methods in IDA
+class COMClassFactory_10
+{
+public:
+    virtual ~COMClassFactory_10() = default;
+
+    virtual void Construct() {} // 0x6bfbc0
+
+};
+// 1 methods in IDA
+class COMClassFactory_3
+{
+public:
+    virtual ~COMClassFactory_3() = default;
+
+    virtual void Construct() {} // 0x6bf140
+
+};
+// 1 methods in IDA
+class COMClassFactory_4
+{
+public:
+    virtual ~COMClassFactory_4() = default;
+
+    virtual void Construct() {} // 0x6bf2c0
+
+};
+// 1 methods in IDA
+class COMClassFactory_5
+{
+public:
+    virtual ~COMClassFactory_5() = default;
+
+    virtual void Construct() {} // 0x6bf440
+
+};
+// 1 methods in IDA
+class COMClassFactory_6
+{
+public:
+    virtual ~COMClassFactory_6() = default;
+
+    virtual void Construct() {} // 0x6bf5c0
+
+};
+// 1 methods in IDA
+class COMClassFactory_7
+{
+public:
+    virtual ~COMClassFactory_7() = default;
+
+    virtual void Construct() {} // 0x6bf740
+
+};
+// 1 methods in IDA
+class COMClassFactory_8
+{
+public:
+    virtual ~COMClassFactory_8() = default;
+
+    virtual void Construct() {} // 0x6bf8c0
+
+};
+// 1 methods in IDA
+class COMClassFactory_9
+{
+public:
+    virtual ~COMClassFactory_9() = default;
+
+    virtual void Construct() {} // 0x6bfa40
+
+};
+// 27 methods in IDA
+class COMObject
+{
+public:
+    virtual ~COMObject() = default;
+
+    virtual void Release() {} // 0x437fc0
+    virtual void DetachPrimary() {} // 0x488690
+    virtual void IsValid() {} // 0x48c3b0
+    virtual void SetMember10() {} // 0x48e600
+    virtual void GetMember09() {} // 0x48e610
+    // +22 more virtual methods
+
+    uint8_t COMObject_field_0x04[4];
+    uint8_t COMObject_field_0x08[4];
+    uint8_t COMObject_field_0x0C[4];
+    uint8_t COMObject_field_0x10[4];
+    uint8_t COMObject_field_0x14[4];
+    uint8_t COMObject_field_0x18[4];
+    uint8_t COMObject_field_0x1C[4];
+    uint8_t COMObject_field_0x20[4];
+    uint8_t COMObject_field_0x24[4];
+    uint8_t COMObject_field_0x28[4];
+    uint8_t COMObject_field_0x2C[4];
+    uint8_t COMObject_field_0x30[4];
+    uint8_t COMObject_field_0x34[4];
+    uint8_t COMObject_field_0x38[4];
+    uint8_t COMObject_field_0x3C[4];
+    uint8_t COMObject_field_0x40[4];
+    uint8_t COMObject_field_0x44[4];
+    uint8_t COMObject_field_0x48[4];
+    uint8_t COMObject_field_0x4C[4];
+    uint8_t COMObject_field_0x50[4];
+};
+// 1 methods in IDA
+class CRC32
+{
+public:
+    virtual ~CRC32() = default;
+
+    virtual void Compute() {} // 0x4a1fb0
+
+};
+// 9 methods in IDA
+class ComPtr
+{
+public:
+    virtual ~ComPtr() = default;
+
+    virtual void Release_Alt() {} // 0x4b4d50
+    virtual void ReleaseAndSet() {} // 0x4d0490
+    virtual void Dtor() {} // 0x6406f0
+    virtual void Constructor() {} // 0x65d430
+    virtual void Release() {} // 0x65d460
+    // +4 more virtual methods
+
+    uint8_t ComPtr_field_0x04[4];
+    uint8_t ComPtr_field_0x08[4];
+    uint8_t ComPtr_field_0x0C[4];
+    uint8_t ComPtr_field_0x10[4];
+    uint8_t ComPtr_field_0x14[4];
+    uint8_t ComPtr_field_0x18[4];
+    uint8_t ComPtr_field_0x1C[4];
+    uint8_t ComPtr_field_0x20[4];
+};
+// 1 methods in IDA
+class CountdownTimer
+{
+public:
+    virtual ~CountdownTimer() = default;
+
+    virtual void UpdateDisplay() {} // 0x4a2600
+
+};
+// 1 methods in IDA
+class CountryCombo
+{
+public:
+    virtual ~CountryCombo() = default;
+
+    virtual void IDToIndex() {} // 0x4e3830
+
+};
+// 11 methods in IDA
+class EnumConnectionPointsClass
+{
+public:
+    virtual ~EnumConnectionPointsClass() = default;
+
+    virtual void QueryInterface() {} // 0x4a0920
+    virtual void AddRef() {} // 0x4a0990
+    virtual void Release() {} // 0x4a09b0
+    virtual void ddtor() {} // 0x4a0a50
+    virtual void Next() {} // 0x4a0af0
+    // +6 more virtual methods
+
+    uint8_t EnumConnectionPointsClass_field_0x04[4];
+    uint8_t EnumConnectionPointsClass_field_0x08[4];
+    uint8_t EnumConnectionPointsClass_field_0x0C[4];
+    uint8_t EnumConnectionPointsClass_field_0x10[4];
+    uint8_t EnumConnectionPointsClass_field_0x14[4];
+    uint8_t EnumConnectionPointsClass_field_0x18[4];
+    uint8_t EnumConnectionPointsClass_field_0x1C[4];
+    uint8_t EnumConnectionPointsClass_field_0x20[4];
+    uint8_t EnumConnectionPointsClass_field_0x24[4];
+    uint8_t EnumConnectionPointsClass_field_0x28[4];
+};
+// 6 methods in IDA
+class EnumConnectionsClass
+{
+public:
+    virtual ~EnumConnectionsClass() = default;
+
+    virtual void QueryInterface() {} // 0x49ff80
+    virtual void AddRef() {} // 0x49fff0
+    virtual void Release() {} // 0x4a0010
+    virtual void ddtor() {} // 0x4a00b0
+    virtual void Next() {} // 0x4a0160
+    // +1 more virtual methods
+
+    uint8_t EnumConnectionsClass_field_0x04[4];
+    uint8_t EnumConnectionsClass_field_0x08[4];
+    uint8_t EnumConnectionsClass_field_0x0C[4];
+    uint8_t EnumConnectionsClass_field_0x10[4];
+    uint8_t EnumConnectionsClass_field_0x14[4];
+};
+// 1 methods in IDA
+class EventBuffer
+{
+public:
+    virtual ~EventBuffer() = default;
+
+    virtual void Enqueue() {} // 0x54f1c0
+
+};
+// 3 methods in IDA
+class Flag
+{
+public:
+    virtual ~Flag() = default;
+
+    virtual void CheckNone() {} // 0x4a51d0
+    virtual void IsZero() {} // 0x4f4ca0
+    virtual void IsNot2() {} // 0x5176b0
+
+    uint8_t Flag_field_0x04[4];
+    uint8_t Flag_field_0x08[4];
+};
+// 1 methods in IDA
+class FlagSystem
+{
+public:
+    virtual ~FlagSystem() = default;
+
+    virtual void GetNextActive() {} // 0x626690
+
+};
+// 2 methods in IDA
+class Float4
+{
+public:
+    virtual ~Float4() = default;
+
+    virtual void Copy() {} // 0x645d20
+    virtual void Sum() {} // 0x6c9650
+
+    uint8_t Float4_field_0x04[4];
+};
+// 1 methods in IDA
+class FloatArray
+{
+public:
+    virtual ~FloatArray() = default;
+
+    virtual void Get() {} // 0x6c9680
+
+};
+// 6 methods in IDA
+class GraphicMenuAnimItem
+{
+public:
+    virtual ~GraphicMenuAnimItem() = default;
+
+    virtual void Release() {} // 0x4f3090
+    virtual void QueryInterface() {} // 0x4f30e0
+    virtual void StubReturnFalse() {} // 0x4f3ad0
+    virtual void Stub() {} // 0x4f3ae0
+    virtual void AddRef() {} // 0x4f3b00
+    // +1 more virtual methods
+
+    uint8_t GraphicMenuAnimItem_field_0x04[4];
+    uint8_t GraphicMenuAnimItem_field_0x08[4];
+    uint8_t GraphicMenuAnimItem_field_0x0C[4];
+    uint8_t GraphicMenuAnimItem_field_0x10[4];
+    uint8_t GraphicMenuAnimItem_field_0x14[4];
+};
+// 5 methods in IDA
+class GraphicMenuImageItem
+{
+public:
+    virtual ~GraphicMenuImageItem() = default;
+
+    virtual void Release() {} // 0x4f3640
+    virtual void Load() {} // 0x4f3690
+    virtual void Draw() {} // 0x4f3720
+    virtual void ddtor() {} // 0x4f37a0
+    virtual void QueryInterface() {} // 0x4f3840
+
+    uint8_t GraphicMenuImageItem_field_0x04[4];
+    uint8_t GraphicMenuImageItem_field_0x08[4];
+    uint8_t GraphicMenuImageItem_field_0x0C[4];
+    uint8_t GraphicMenuImageItem_field_0x10[4];
+};
+// 2 methods in IDA
+class GraphicMenuItem
+{
+public:
+    virtual ~GraphicMenuItem() = default;
+
+    virtual void Constructor() {} // 0x4f3a50
+    virtual void Destructor() {} // 0x4f3a70
+
+    uint8_t GraphicMenuItem_field_0x04[4];
+};
+// 2 methods in IDA
+class GraphicMenuItem_Destru
+{
+public:
+    virtual ~GraphicMenuItem_Destru() = default;
+
+    virtual void Release() {} // 0x4f3af0
+    virtual void QueryInterface() {} // 0x4f3b20
+
+    uint8_t GraphicMenuItem_Destru_field_0x04[4];
+};
+// 2 methods in IDA
+class GraphicMenuShortcutItem
+{
+public:
+    virtual ~GraphicMenuShortcutItem() = default;
+
+    virtual void AddRef() {} // 0x4f3ee0
+    virtual void QueryInterface() {} // 0x4f3f60
+
+    uint8_t GraphicMenuShortcutItem_field_0x04[4];
+};
+// 3 methods in IDA
+class Hash
+{
+public:
+    virtual ~Hash() = default;
+
+    virtual void ComputeHashSHA1() {} // 0x476d80
+    virtual void InsertOrdered() {} // 0x4f4410
+    virtual void Reset() {} // 0x5565f0
+
+    uint8_t Hash_field_0x04[4];
+    uint8_t Hash_field_0x08[4];
+};
+// 4 methods in IDA
+class HashMap
+{
+public:
+    virtual ~HashMap() = default;
+
+    virtual void ComputeIndex() {} // 0x624c80
+    virtual void Shrink2() {} // 0x7adf70
+    virtual void ComputeIndex_2() {} // 0x7ae0c0
+    virtual void Shrink() {} // 0x7ae460
+
+    uint8_t HashMap_field_0x04[4];
+    uint8_t HashMap_field_0x08[4];
+    uint8_t HashMap_field_0x0C[4];
+};
+// 27 methods in IDA
+class HashTable
+{
+public:
+    virtual ~HashTable() = default;
+
+    virtual void DestroyHashTableINIClass() {} // 0x5256f0
+    virtual void BinarySearch() {} // 0x52b390
+    virtual void BinarySearchAlt() {} // 0x52b4f0
+    virtual void LookupAndMark() {} // 0x608440
+    virtual void FindAndMark() {} // 0x624140
+    // +22 more virtual methods
+
+    uint8_t HashTable_field_0x04[4];
+    uint8_t HashTable_field_0x08[4];
+    uint8_t HashTable_field_0x0C[4];
+    uint8_t HashTable_field_0x10[4];
+    uint8_t HashTable_field_0x14[4];
+    uint8_t HashTable_field_0x18[4];
+    uint8_t HashTable_field_0x1C[4];
+    uint8_t HashTable_field_0x20[4];
+    uint8_t HashTable_field_0x24[4];
+    uint8_t HashTable_field_0x28[4];
+    uint8_t HashTable_field_0x2C[4];
+    uint8_t HashTable_field_0x30[4];
+    uint8_t HashTable_field_0x34[4];
+    uint8_t HashTable_field_0x38[4];
+    uint8_t HashTable_field_0x3C[4];
+    uint8_t HashTable_field_0x40[4];
+    uint8_t HashTable_field_0x44[4];
+    uint8_t HashTable_field_0x48[4];
+    uint8_t HashTable_field_0x4C[4];
+    uint8_t HashTable_field_0x50[4];
+};
+// 1 methods in IDA
+class HashTableSection
+{
+public:
+    virtual ~HashTableSection() = default;
+
+    virtual void FindSection() {} // 0x526b10
+
+};
+// 1 methods in IDA
+class HashTree
+{
+public:
+    virtual ~HashTree() = default;
+
+    virtual void MarkEntry() {} // 0x5b4270
+
+};
+// 1 methods in IDA
+class HashVector_UInt
+{
+public:
+    virtual ~HashVector_UInt() = default;
+
+    virtual void Construct() {} // 0x58aff0
+
+};
+// 1 methods in IDA
+class PairVector
+{
+public:
+    virtual ~PairVector() = default;
+
+    virtual void PushBack() {} // 0x4e0c40
+
+};
+// 12 methods in IDA
+class PlayerClass
+{
+public:
+    virtual ~PlayerClass() = default;
+
+    virtual void sub_430F70() {} // 0x430f70
+    virtual void ExecuteCommand() {} // 0x4ab9b0
+    virtual void CheckHumanPlayer() {} // 0x4ac2b0
+    virtual void SetTargetOrClear() {} // 0x4c6650
+    virtual void AssignPlayerIndex_0() {} // 0x5c5d30
+    // +7 more virtual methods
+
+    uint8_t PlayerClass_field_0x04[4];
+    uint8_t PlayerClass_field_0x08[4];
+    uint8_t PlayerClass_field_0x0C[4];
+    uint8_t PlayerClass_field_0x10[4];
+    uint8_t PlayerClass_field_0x14[4];
+    uint8_t PlayerClass_field_0x18[4];
+    uint8_t PlayerClass_field_0x1C[4];
+    uint8_t PlayerClass_field_0x20[4];
+    uint8_t PlayerClass_field_0x24[4];
+    uint8_t PlayerClass_field_0x28[4];
+    uint8_t PlayerClass_field_0x2C[4];
+};
+// 1 methods in IDA
+class PlayerProfile
+{
+public:
+    virtual ~PlayerProfile() = default;
+
+    virtual void QueryInterface() {} // 0x77b030
+
+};
+// 2 methods in IDA
+class PlayerSlot
+{
+public:
+    virtual ~PlayerSlot() = default;
+
+    virtual void NameToDialogID() {} // 0x510fb0
+    virtual void IndexToDlgID() {} // 0x5e98f0
+
+    uint8_t PlayerSlot_field_0x04[4];
+};
+// 1 methods in IDA
+class PlayerType
+{
+public:
+    virtual ~PlayerType() = default;
+
+    virtual void GetName() {} // 0x4e62b0
+
+};
+// 1 methods in IDA
+class PtrVector
+{
+public:
+    virtual ~PtrVector() = default;
+
+    virtual void Destroy() {} // 0x5c6120
+
+};
+// 1 methods in IDA
+class Queue
+{
+public:
+    virtual ~Queue() = default;
+
+    virtual void GetNext() {} // 0x407470
+
+};
+// 4 methods in IDA
+class Random
+{
+public:
+    virtual ~Random() = default;
+
+    virtual void Gaussian() {} // 0x5980c0
+    virtual void State() {} // 0x65c780
+    virtual void Range() {} // 0x65c7e0
+    virtual void sub_661850() {} // 0x661850
+
+    uint8_t Random_field_0x04[4];
+    uint8_t Random_field_0x08[4];
+    uint8_t Random_field_0x0C[4];
+};
+// 3 methods in IDA
+class RandomStraw
+{
+public:
+    virtual ~RandomStraw() = default;
+
+    virtual void sub_65C8B0() {} // 0x65c8b0
+    virtual void Release() {} // 0x661c10
+    virtual void QueryInterface() {} // 0x661c70
+
+    uint8_t RandomStraw_field_0x04[4];
+    uint8_t RandomStraw_field_0x08[4];
+};
+// 1 methods in IDA
+class Rect_Point
+{
+public:
+    virtual ~Rect_Point() = default;
+
+    virtual void Set() {} // 0x4e1a20
+
+};
+// 1 methods in IDA
+class ReferenceCounted
+{
+public:
+    virtual ~ReferenceCounted() = default;
+
+    virtual void Constructor() {} // 0x65d660
+
+};
+// 6 methods in IDA
+class SHA1
+{
+public:
+    virtual ~SHA1() = default;
+
+    virtual void sub_69D8C0() {} // 0x69d8c0
+    virtual void Process() {} // 0x69d960
+    virtual void Compute() {} // 0x69d9e0
+    virtual void Transform() {} // 0x69db30
+    virtual void Reset() {} // 0x69dff0
+    // +1 more virtual methods
+
+    uint8_t SHA1_field_0x04[4];
+    uint8_t SHA1_field_0x08[4];
+    uint8_t SHA1_field_0x0C[4];
+    uint8_t SHA1_field_0x10[4];
+    uint8_t SHA1_field_0x14[4];
+};
+// 1 methods in IDA
+class SettingsClass
+{
+public:
+    virtual ~SettingsClass() = default;
+
+    virtual void ClampValues() {} // 0x5975e0
+
+};
+// 1 methods in IDA
+class StringBuffer
+{
+public:
+    virtual ~StringBuffer() = default;
+
+    virtual void Reset() {} // 0x5f33a0
+
+};
+// 1 methods in IDA
+class StringList
+{
+public:
+    virtual ~StringList() = default;
+
+    virtual void Find() {} // 0x721210
+
+};
+// 2 methods in IDA
+class StringTable
+{
+public:
+    virtual ~StringTable() = default;
+
+    virtual void Lookup() {} // 0x40dce0
+    virtual void Find() {} // 0x5cf6b0
+
+    uint8_t StringTable_field_0x04[4];
+};
+// 7 methods in IDA
+class StringVector
+{
+public:
+    virtual ~StringVector() = default;
+
+    virtual void Release() {} // 0x49ee60
+    virtual void ddtor() {} // 0x49ef10
+    virtual void Add() {} // 0x49ef40
+    virtual void Remove() {} // 0x49ef80
+    virtual void QueryInterface() {} // 0x49efa0
+    // +2 more virtual methods
+
+    uint8_t StringVector_field_0x04[4];
+    uint8_t StringVector_field_0x08[4];
+    uint8_t StringVector_field_0x0C[4];
+    uint8_t StringVector_field_0x10[4];
+    uint8_t StringVector_field_0x14[4];
+    uint8_t StringVector_field_0x18[4];
+};
+// 1 methods in IDA
+class StructTable
+{
+public:
+    virtual ~StructTable() = default;
+
+    virtual void Append() {} // 0x4a3840
+
+};
+// 1 methods in IDA
+class Timeout
+{
+public:
+    virtual ~Timeout() = default;
+
+    virtual void GetRemaining() {} // 0x4b4d70
+
+};
+// 1 methods in IDA
+class TimerPool
+{
+public:
+    virtual ~TimerPool() = default;
+
+    virtual void AllocSlot() {} // 0x53e3c0
+
+};
+// 1 methods in IDA
+class Tree
+{
+public:
+    virtual ~Tree() = default;
+
+    virtual void Destructor() {} // 0x5b4080
+
+};
+// 1 methods in IDA
+class TypeClass
+{
+public:
+    virtual ~TypeClass() = default;
+
+    virtual void FindByName() {} // 0x41caa0
+
+};
+// 2 methods in IDA
+class Vector2
+{
+public:
+    virtual ~Vector2() = default;
+
+    virtual void NormalizeNonZero() {} // 0x41c460
+    virtual void Subtract() {} // 0x6dc4c0
+
+    uint8_t Vector2_field_0x04[4];
+};
+// 3 methods in IDA
+class Vector3
+{
+public:
+    virtual ~Vector3() = default;
+
+    virtual void Magnitude() {} // 0x41c3c0
+    virtual void Subtract() {} // 0x437160
+    virtual void AddAssign() {} // 0x43a100
+
+    uint8_t Vector3_field_0x04[4];
+    uint8_t Vector3_field_0x08[4];
+};
+// 2 methods in IDA
+class Vector4
+{
+public:
+    virtual ~Vector4() = default;
+
+    virtual void EraseAt() {} // 0x5ad790
+    virtual void EraseAt_Copy() {} // 0x63ef70
+
+    uint8_t Vector4_field_0x04[4];
+};
+// 1 methods in IDA
+class Vector8
+{
+public:
+    virtual ~Vector8() = default;
+
+    virtual void EraseAt() {} // 0x589290
+
+};
+// 1 methods in IDA
+class VectorClassUInt
+{
+public:
+    virtual ~VectorClassUInt() = default;
+
+    virtual void Constructor() {} // 0x42dc50
+
+};
+// 7 methods in IDA
+class VectorCursor
+{
+public:
+    virtual ~VectorCursor() = default;
+
+    virtual void Construct() {} // 0x76f0c0
+    virtual void HasNext() {} // 0x76f0e0
+    virtual void initCursor() {} // 0x76f100
+    virtual void updateCursor() {} // 0x76f120
+    virtual void drawCursor() {} // 0x76f140
+    // +2 more virtual methods
+
+    uint8_t VectorCursor_field_0x04[4];
+    uint8_t VectorCursor_field_0x08[4];
+    uint8_t VectorCursor_field_0x0C[4];
+    uint8_t VectorCursor_field_0x10[4];
+    uint8_t VectorCursor_field_0x14[4];
+    uint8_t VectorCursor_field_0x18[4];
+};
+// 3 methods in IDA
+class VectorCursor_uint_DynamicVectorClass_uint
+{
+public:
+    virtual ~VectorCursor_uint_DynamicVectorClass_uint() = default;
+
+    virtual void AddRef() {} // 0x4f3fc0
+    virtual void Release() {} // 0x4f3ff0
+    virtual void ddtor() {} // 0x4f4000
+
+    uint8_t VectorCursor_uint_DynamicVectorClass_uint_field_0x04[4];
+    uint8_t VectorCursor_uint_DynamicVectorClass_uint_field_0x08[4];
+};
+
 } // namespace gamemd

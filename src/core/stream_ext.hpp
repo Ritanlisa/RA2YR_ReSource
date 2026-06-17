@@ -164,4 +164,140 @@ public:
     static int32_t  s_BufferSize;   // 0x04
 };
 
+
+// === Batch-generated MISSING class stubs ===
+
+// 11 methods in IDA
+class Buffer
+{
+public:
+    virtual ~Buffer() = default;
+
+    virtual void CreateDirectSound() {} // 0x40a340
+    virtual void sub_40A6D0() {} // 0x40a6d0
+    virtual void CompareEqual() {} // 0x40ccd0
+    virtual void FillCircularBufferScroll() {} // 0x410ed0
+    virtual void Cleanup() {} // 0x42f7c0
+    // +6 more virtual methods
+
+    uint8_t Buffer_field_0x04[4];
+    uint8_t Buffer_field_0x08[4];
+    uint8_t Buffer_field_0x0C[4];
+    uint8_t Buffer_field_0x10[4];
+    uint8_t Buffer_field_0x14[4];
+    uint8_t Buffer_field_0x18[4];
+    uint8_t Buffer_field_0x1C[4];
+    uint8_t Buffer_field_0x20[4];
+    uint8_t Buffer_field_0x24[4];
+    uint8_t Buffer_field_0x28[4];
+};
+// 1 methods in IDA
+class BufferClass
+{
+public:
+    virtual ~BufferClass() = default;
+
+    virtual void CompareEqual() {} // 0x477c30
+
+};
+// 3 methods in IDA
+class BufferIO
+{
+public:
+    virtual ~BufferIO() = default;
+
+    virtual void FindActiveChannel() {} // 0x431170
+    virtual void Flush() {} // 0x431dd0
+    virtual void Cleanup() {} // 0x434990
+
+    uint8_t BufferIO_field_0x04[4];
+    uint8_t BufferIO_field_0x08[4];
+};
+// 26 methods in IDA
+class CStreamClass
+{
+public:
+    virtual ~CStreamClass() = default;
+
+    virtual void AddRef() {} // 0x4a2930
+    virtual void Release() {} // 0x4a2950
+    virtual void QueryInterface() {} // 0x4a2990
+    virtual void StubReturnNullPointer() {} // 0x4a2a20
+    virtual void StreamRead() {} // 0x4a2ab0
+    // +21 more virtual methods
+
+    uint8_t CStreamClass_field_0x04[4];
+    uint8_t CStreamClass_field_0x08[4];
+    uint8_t CStreamClass_field_0x0C[4];
+    uint8_t CStreamClass_field_0x10[4];
+    uint8_t CStreamClass_field_0x14[4];
+    uint8_t CStreamClass_field_0x18[4];
+    uint8_t CStreamClass_field_0x1C[4];
+    uint8_t CStreamClass_field_0x20[4];
+    uint8_t CStreamClass_field_0x24[4];
+    uint8_t CStreamClass_field_0x28[4];
+    uint8_t CStreamClass_field_0x2C[4];
+    uint8_t CStreamClass_field_0x30[4];
+    uint8_t CStreamClass_field_0x34[4];
+    uint8_t CStreamClass_field_0x38[4];
+    uint8_t CStreamClass_field_0x3C[4];
+    uint8_t CStreamClass_field_0x40[4];
+    uint8_t CStreamClass_field_0x44[4];
+    uint8_t CStreamClass_field_0x48[4];
+    uint8_t CStreamClass_field_0x4C[4];
+    uint8_t CStreamClass_field_0x50[4];
+};
+// 1 methods in IDA
+class StreamObj
+{
+public:
+    virtual ~StreamObj() = default;
+
+    virtual void Release() {} // 0x410e50
+
+};
+// 6 methods in IDA
+class StreamWrapper
+{
+public:
+    virtual ~StreamWrapper() = default;
+
+    virtual void Read() {} // 0x5c5d40
+    virtual void Write() {} // 0x5c5d90
+    virtual void Seek() {} // 0x5c5dd0
+    virtual void readData() {} // 0x5d6620
+    virtual void StubReturnFalse() {} // 0x6241e0
+    // +1 more virtual methods
+
+    uint8_t StreamWrapper_field_0x04[4];
+    uint8_t StreamWrapper_field_0x08[4];
+    uint8_t StreamWrapper_field_0x0C[4];
+    uint8_t StreamWrapper_field_0x10[4];
+    uint8_t StreamWrapper_field_0x14[4];
+};
+// 4 methods in IDA
+class Text
+{
+public:
+    virtual ~Text() = default;
+
+    virtual void Layout() {} // 0x433cf0
+    virtual void MeasureWidth() {} // 0x433ed0
+    virtual void sub_5BD3D0() {} // 0x5bd3d0
+    virtual void DrawRepeated() {} // 0x5bd490
+
+    uint8_t Text_field_0x04[4];
+    uint8_t Text_field_0x08[4];
+    uint8_t Text_field_0x0C[4];
+};
+// 1 methods in IDA
+class TextGroup
+{
+public:
+    virtual ~TextGroup() = default;
+
+    virtual void SetRect() {} // 0x433ca0
+
+};
+
 } // namespace gamemd

@@ -165,4 +165,195 @@ public:
     static int32_t  s_CallbackState; // 0x00
 };
 
+
+// === Batch-generated MISSING class stubs ===
+
+// 1 methods in IDA
+class Audio3D
+{
+public:
+    virtual ~Audio3D() = default;
+
+    virtual void ComputeRotation() {} // 0x55a7d0
+
+};
+// 1 methods in IDA
+class AudioBuffer
+{
+public:
+    virtual ~AudioBuffer() = default;
+
+    virtual void InitializePlayback() {} // 0x409c40
+
+};
+// 3 methods in IDA
+class AudioChannel
+{
+public:
+    virtual ~AudioChannel() = default;
+
+    virtual void IsActive() {} // 0x4010a0
+    virtual void DeactivatePlay() {} // 0x402600
+    virtual void ActivatePlay() {} // 0x402650
+
+    uint8_t AudioChannel_field_0x04[4];
+    uint8_t AudioChannel_field_0x08[4];
+};
+// 1 methods in IDA
+class AudioCodec
+{
+public:
+    virtual ~AudioCodec() = default;
+
+    virtual void Decode() {} // 0x7c81db
+
+};
+// 1 methods in IDA
+class AudioConfig
+{
+public:
+    virtual ~AudioConfig() = default;
+
+    virtual void InitDefault() {} // 0x754be0
+
+};
+// 1 methods in IDA
+class AudioEvent
+{
+public:
+    virtual ~AudioEvent() = default;
+
+    virtual void LoadFromINI() {} // 0x752db0
+
+};
+// 2 methods in IDA
+class AudioFile
+{
+public:
+    virtual ~AudioFile() = default;
+
+    virtual void GetCallback() {} // 0x4026a0
+    virtual void Stop() {} // 0x405fd0
+
+    uint8_t AudioFile_field_0x04[4];
+};
+// 1 methods in IDA
+class AudioFileClass
+{
+public:
+    virtual ~AudioFileClass() = default;
+
+    virtual void Release() {} // 0x405c00
+
+};
+// 2 methods in IDA
+class AudioFrame
+{
+public:
+    virtual ~AudioFrame() = default;
+
+    virtual void ProcessAudioFrame() {} // 0x407fb0
+    virtual void CounterInc() {} // 0x7535b0
+
+    uint8_t AudioFrame_field_0x04[4];
+};
+// 1 methods in IDA
+class AudioIndex
+{
+public:
+    virtual ~AudioIndex() = default;
+
+    virtual void GetSampleInformation() {} // 0x401640
+
+};
+// 1 methods in IDA
+class AudioList
+{
+public:
+    virtual ~AudioList() = default;
+
+    virtual void GetNextEntry() {} // 0x407480
+
+};
+// 1 methods in IDA
+class AudioNode
+{
+public:
+    virtual ~AudioNode() = default;
+
+    virtual void Release() {} // 0x408600
+
+};
+// 1 methods in IDA
+class AudioOcclusion
+{
+public:
+    virtual ~AudioOcclusion() = default;
+
+    virtual void ComputeBoundingVertices() {} // 0x756bb0
+
+};
+// 1 methods in IDA
+class AudioOptionsClass
+{
+public:
+    virtual ~AudioOptionsClass() = default;
+
+    virtual void ApplySettings() {} // 0x5fb160
+
+};
+// 1 methods in IDA
+class AudioPool
+{
+public:
+    virtual ~AudioPool() = default;
+
+    virtual void ProcessQueue() {} // 0x405190
+
+};
+// 5 methods in IDA
+class AudioSample
+{
+public:
+    virtual ~AudioSample() = default;
+
+    virtual void sub_4024A0() {} // 0x4024a0
+    virtual void Destructor() {} // 0x407a90
+    virtual void IsBuffering() {} // 0x4080d0
+    virtual void InitLinkedList() {} // 0x408840
+    virtual void SetField() {} // 0x408930
+
+    uint8_t AudioSample_field_0x04[4];
+    uint8_t AudioSample_field_0x08[4];
+    uint8_t AudioSample_field_0x0C[4];
+    uint8_t AudioSample_field_0x10[4];
+};
+// 1 methods in IDA
+class AudioSource
+{
+public:
+    virtual ~AudioSource() = default;
+
+    virtual void Get() {} // 0x406130
+
+};
+// 1 methods in IDA
+class AudioThread
+{
+public:
+    virtual ~AudioThread() = default;
+
+    virtual void UpdateStats() {} // 0x403920
+
+};
+// 1 methods in IDA
+class AudioTimer
+{
+public:
+    virtual ~AudioTimer() = default;
+
+    virtual void DecrementAll() {} // 0x408230
+
+};
+
 } // namespace gamemd

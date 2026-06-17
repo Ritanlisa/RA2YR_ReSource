@@ -262,4 +262,589 @@ public:
     int32_t     Input_field_00;       // 0x00
 };
 
+
+// === Batch-generated MISSING class stubs ===
+
+// 1 methods in IDA
+class BitArray
+{
+public:
+    virtual ~BitArray() = default;
+
+    virtual void TestBit() {} // 0x54a950
+
+};
+// 1 methods in IDA
+class Bitmap
+{
+public:
+    virtual ~Bitmap() = default;
+
+    virtual void GetNumberBitmapWOL() {} // 0x783a90
+
+};
+// 1 methods in IDA
+class BitmapClass
+{
+public:
+    virtual ~BitmapClass() = default;
+
+    virtual void ProcessFrame() {} // 0x42df90
+
+};
+// 1 methods in IDA
+class ButtonClass
+{
+public:
+    virtual ~ButtonClass() = default;
+
+    virtual void SetState() {} // 0x69dea0
+
+};
+// 1 methods in IDA
+class ButtonOwnerDraw
+{
+public:
+    virtual ~ButtonOwnerDraw() = default;
+
+    virtual void DlgProc() {} // 0x616980
+
+};
+// 1 methods in IDA
+class CampaignCoop
+{
+public:
+    virtual ~CampaignCoop() = default;
+
+    virtual void Setup() {} // 0x5c21d0
+
+};
+// 1 methods in IDA
+class CampaignMenu
+{
+public:
+    virtual ~CampaignMenu() = default;
+
+    virtual void DlgProc() {} // 0x52d640
+
+};
+// 1 methods in IDA
+class CampaignProperties_WorldDominationTour
+{
+public:
+    virtual ~CampaignProperties_WorldDominationTour() = default;
+
+    virtual void QueryInterface() {} // 0x76c030
+
+};
+// 9 methods in IDA
+class CampaignScore
+{
+public:
+    virtual ~CampaignScore() = default;
+
+    virtual void DialogProc() {} // 0x46dfd0
+    virtual void ProcessScreen() {} // 0x46fc00
+    virtual void sub_471420() {} // 0x471420
+    virtual void Constructor_CampaignScoreClass() {} // 0x471500
+    virtual void Constructor_CampaignEndScoreClass() {} // 0x471520
+    // +4 more virtual methods
+
+    uint8_t CampaignScore_field_0x04[4];
+    uint8_t CampaignScore_field_0x08[4];
+    uint8_t CampaignScore_field_0x0C[4];
+    uint8_t CampaignScore_field_0x10[4];
+    uint8_t CampaignScore_field_0x14[4];
+    uint8_t CampaignScore_field_0x18[4];
+    uint8_t CampaignScore_field_0x1C[4];
+    uint8_t CampaignScore_field_0x20[4];
+};
+// 2 methods in IDA
+class CampaignSelect
+{
+public:
+    virtual ~CampaignSelect() = default;
+
+    virtual void LookupByName() {} // 0x46cc90
+    virtual void DlgProc() {} // 0x52ec00
+
+    uint8_t CampaignSelect_field_0x04[4];
+};
+// 1 methods in IDA
+class Campaign_WorldDominationTour
+{
+public:
+    virtual ~Campaign_WorldDominationTour() = default;
+
+    virtual void QueryInterface() {} // 0x765600
+
+};
+// 39 methods in IDA
+class CheckListClass
+{
+public:
+    virtual ~CheckListClass() = default;
+
+    virtual void ?() {} // 0x488310
+    virtual void Clear() {} // 0x488350
+    virtual void ScrollUp() {} // 0x488360
+    virtual void GetSelected() {} // 0x488380
+    virtual void SetItemData() {} // 0x4883f0
+    // +34 more virtual methods
+
+    uint8_t CheckListClass_field_0x04[4];
+    uint8_t CheckListClass_field_0x08[4];
+    uint8_t CheckListClass_field_0x0C[4];
+    uint8_t CheckListClass_field_0x10[4];
+    uint8_t CheckListClass_field_0x14[4];
+    uint8_t CheckListClass_field_0x18[4];
+    uint8_t CheckListClass_field_0x1C[4];
+    uint8_t CheckListClass_field_0x20[4];
+    uint8_t CheckListClass_field_0x24[4];
+    uint8_t CheckListClass_field_0x28[4];
+    uint8_t CheckListClass_field_0x2C[4];
+    uint8_t CheckListClass_field_0x30[4];
+    uint8_t CheckListClass_field_0x34[4];
+    uint8_t CheckListClass_field_0x38[4];
+    uint8_t CheckListClass_field_0x3C[4];
+    uint8_t CheckListClass_field_0x40[4];
+    uint8_t CheckListClass_field_0x44[4];
+    uint8_t CheckListClass_field_0x48[4];
+    uint8_t CheckListClass_field_0x4C[4];
+    uint8_t CheckListClass_field_0x50[4];
+};
+// 1 methods in IDA
+class CheckSum
+{
+public:
+    virtual ~CheckSum() = default;
+
+    virtual void AccumulateModulo() {} // 0x632c40
+
+};
+// 1 methods in IDA
+class Checkbox
+{
+public:
+    virtual ~Checkbox() = default;
+
+    virtual void WndProc() {} // 0x6163a0
+
+};
+// 1 methods in IDA
+class Checksum
+{
+public:
+    virtual ~Checksum() = default;
+
+    virtual void AddString() {} // 0x4a1db0
+
+};
+// 1 methods in IDA
+class ComboBoxDropDown
+{
+public:
+    virtual ~ComboBoxDropDown() = default;
+
+    virtual void WndProc() {} // 0x617250
+
+};
+// 7 methods in IDA
+class ComboBoxOwnerDraw
+{
+public:
+    virtual ~ComboBoxOwnerDraw() = default;
+
+    virtual void GetWidthHeight() {} // 0x600670
+    virtual void MatchDimensions() {} // 0x600680
+    virtual void DlgProc() {} // 0x610ca0
+    virtual void SortItems() {} // 0x6252f0
+    virtual void ComputeMask() {} // 0x625390
+    // +2 more virtual methods
+
+    uint8_t ComboBoxOwnerDraw_field_0x04[4];
+    uint8_t ComboBoxOwnerDraw_field_0x08[4];
+    uint8_t ComboBoxOwnerDraw_field_0x0C[4];
+    uint8_t ComboBoxOwnerDraw_field_0x10[4];
+    uint8_t ComboBoxOwnerDraw_field_0x14[4];
+    uint8_t ComboBoxOwnerDraw_field_0x18[4];
+};
+// 4 methods in IDA
+class ControlClass
+{
+public:
+    virtual ~ControlClass() = default;
+
+    virtual void Construct() {} // 0x48e520
+    virtual void CtorFromData() {} // 0x48e570
+    virtual void QueryInterface() {} // 0x48e660
+    virtual void Constructor() {} // 0x4e1340
+
+    uint8_t ControlClass_field_0x04[4];
+    uint8_t ControlClass_field_0x08[4];
+    uint8_t ControlClass_field_0x0C[4];
+};
+// 2 methods in IDA
+class CreditsPower
+{
+public:
+    virtual ~CreditsPower() = default;
+
+    virtual void sub_4C3D00() {} // 0x4c3d00
+    virtual void Display() {} // 0x4c3e30
+
+    uint8_t CreditsPower_field_0x04[4];
+};
+// 4 methods in IDA
+class DialogControl
+{
+public:
+    virtual ~DialogControl() = default;
+
+    virtual void Hide() {} // 0x4e1450
+    virtual void Show() {} // 0x4e1460
+    virtual void IsHidden() {} // 0x4e1470
+    virtual void Constructor() {} // 0x623340
+
+    uint8_t DialogControl_field_0x04[4];
+    uint8_t DialogControl_field_0x08[4];
+    uint8_t DialogControl_field_0x0C[4];
+};
+// 2 methods in IDA
+class DialogQueue
+{
+public:
+    virtual ~DialogQueue() = default;
+
+    virtual void PushEntry() {} // 0x5d4e70
+    virtual void RemoveEntry() {} // 0x5d4ed0
+
+    uint8_t DialogQueue_field_0x04[4];
+};
+// 25 methods in IDA
+class DropListClass
+{
+public:
+    virtual ~DropListClass() = default;
+
+    virtual void OnClick() {} // 0x4b4ee0
+    virtual void ?() {} // 0x4b4f20
+    virtual void Draw() {} // 0x4b4f40
+    virtual void HitTest() {} // 0x4b4f60
+    virtual void OnDblClick() {} // 0x4b4f80
+    // +20 more virtual methods
+
+    uint8_t DropListClass_field_0x04[4];
+    uint8_t DropListClass_field_0x08[4];
+    uint8_t DropListClass_field_0x0C[4];
+    uint8_t DropListClass_field_0x10[4];
+    uint8_t DropListClass_field_0x14[4];
+    uint8_t DropListClass_field_0x18[4];
+    uint8_t DropListClass_field_0x1C[4];
+    uint8_t DropListClass_field_0x20[4];
+    uint8_t DropListClass_field_0x24[4];
+    uint8_t DropListClass_field_0x28[4];
+    uint8_t DropListClass_field_0x2C[4];
+    uint8_t DropListClass_field_0x30[4];
+    uint8_t DropListClass_field_0x34[4];
+    uint8_t DropListClass_field_0x38[4];
+    uint8_t DropListClass_field_0x3C[4];
+    uint8_t DropListClass_field_0x40[4];
+    uint8_t DropListClass_field_0x44[4];
+    uint8_t DropListClass_field_0x48[4];
+    uint8_t DropListClass_field_0x4C[4];
+    uint8_t DropListClass_field_0x50[4];
+};
+// 1 methods in IDA
+class DropPod
+{
+public:
+    virtual ~DropPod() = default;
+
+    virtual void ProcessLanding() {} // 0x4ce840
+
+};
+// 1 methods in IDA
+class EditClass
+{
+public:
+    virtual ~EditClass() = default;
+
+    virtual void QueryInterface() {} // 0x4b57d0
+
+};
+// 2 methods in IDA
+class EditControl
+{
+public:
+    virtual ~EditControl() = default;
+
+    virtual void WndProc() {} // 0x614b30
+    virtual void GrowBuffer() {} // 0x7b72f0
+
+    uint8_t EditControl_field_0x04[4];
+};
+// 6 methods in IDA
+class FontClass
+{
+public:
+    virtual ~FontClass() = default;
+
+    virtual void RenderGlyph() {} // 0x434120
+    virtual void RenderText() {} // 0x434500
+    virtual void GetPixelData() {} // 0x4349b0
+    virtual void LoadFontResources() {} // 0x5d2e90
+    virtual void CreateGlyphColor() {} // 0x68c3b0
+    // +1 more virtual methods
+
+    uint8_t FontClass_field_0x04[4];
+    uint8_t FontClass_field_0x08[4];
+    uint8_t FontClass_field_0x0C[4];
+    uint8_t FontClass_field_0x10[4];
+    uint8_t FontClass_field_0x14[4];
+};
+// 2 methods in IDA
+class FontRenderer
+{
+public:
+    virtual ~FontRenderer() = default;
+
+    virtual void InitContext() {} // 0x4348f0
+    virtual void DrawText() {} // 0x434b90
+
+    uint8_t FontRenderer_field_0x04[4];
+};
+// 2 methods in IDA
+class GadgetGrid
+{
+public:
+    virtual ~GadgetGrid() = default;
+
+    virtual void InsertItem() {} // 0x4134a0
+    virtual void RemoveItem() {} // 0x4135d0
+
+    uint8_t GadgetGrid_field_0x04[4];
+};
+// 5 methods in IDA
+class InputManager
+{
+public:
+    virtual ~InputManager() = default;
+
+    virtual void sub_4E15A0() {} // 0x4e15a0
+    virtual void ProcessEvents() {} // 0x4e1640
+    virtual void sub_54F2F0() {} // 0x54f2f0
+    virtual void PushInputEvent() {} // 0x54f670
+    virtual void WndProc() {} // 0x54f790
+
+    uint8_t InputManager_field_0x04[4];
+    uint8_t InputManager_field_0x08[4];
+    uint8_t InputManager_field_0x0C[4];
+    uint8_t InputManager_field_0x10[4];
+};
+// 5 methods in IDA
+class InputManager_ProcessEvents
+{
+public:
+    virtual ~InputManager_ProcessEvents() = default;
+
+    virtual void AddRef() {} // 0x40d230
+    virtual void Release() {} // 0x40d240
+    virtual void StubReturnFalse() {} // 0x4aebd0
+    virtual void Stub() {} // 0x4aebe0
+    virtual void Vtable() {} // 0x4f4320
+
+    uint8_t InputManager_ProcessEvents_field_0x04[4];
+    uint8_t InputManager_ProcessEvents_field_0x08[4];
+    uint8_t InputManager_ProcessEvents_field_0x0C[4];
+    uint8_t InputManager_ProcessEvents_field_0x10[4];
+};
+// 1 methods in IDA
+class Keyboard
+{
+public:
+    virtual ~Keyboard() = default;
+
+    virtual void MapKey() {} // 0x54f450
+
+};
+// 1 methods in IDA
+class List
+{
+public:
+    virtual ~List() = default;
+
+    virtual void FindByValue() {} // 0x5943e0
+
+};
+// 8 methods in IDA
+class ListBox
+{
+public:
+    virtual ~ListBox() = default;
+
+    virtual void Constructor() {} // 0x5c1030
+    virtual void FillEntries() {} // 0x5d6450
+    virtual void Refresh() {} // 0x5d64c0
+    virtual void FillPlayers() {} // 0x5d6540
+    virtual void AddEntries() {} // 0x5d6690
+    // +3 more virtual methods
+
+    uint8_t ListBox_field_0x04[4];
+    uint8_t ListBox_field_0x08[4];
+    uint8_t ListBox_field_0x0C[4];
+    uint8_t ListBox_field_0x10[4];
+    uint8_t ListBox_field_0x14[4];
+    uint8_t ListBox_field_0x18[4];
+    uint8_t ListBox_field_0x1C[4];
+};
+// 8 methods in IDA
+class ListClass
+{
+public:
+    virtual ~ListClass() = default;
+
+    virtual void Constructor() {} // 0x4e2500
+    virtual void Construct() {} // 0x557230
+    virtual void Destruct() {} // 0x557600
+    virtual void AddItem() {} // 0x5576a0
+    virtual void RemoveItem() {} // 0x557730
+    // +3 more virtual methods
+
+    uint8_t ListClass_field_0x04[4];
+    uint8_t ListClass_field_0x08[4];
+    uint8_t ListClass_field_0x0C[4];
+    uint8_t ListClass_field_0x10[4];
+    uint8_t ListClass_field_0x14[4];
+    uint8_t ListClass_field_0x18[4];
+    uint8_t ListClass_field_0x1C[4];
+};
+// 1 methods in IDA
+class ListNode
+{
+public:
+    virtual ~ListNode() = default;
+
+    virtual void Alloc() {} // 0x5a9a20
+
+};
+// 1 methods in IDA
+class Main
+{
+public:
+    virtual ~Main() = default;
+
+    virtual void CreateDialog() {} // 0x4e1d00
+
+};
+// 1 methods in IDA
+class ProgressAnim
+{
+public:
+    virtual ~ProgressAnim() = default;
+
+    virtual void Init() {} // 0x642a60
+
+};
+// 1 methods in IDA
+class Slider
+{
+public:
+    virtual ~Slider() = default;
+
+    virtual void CalcPosition() {} // 0x412a40
+
+};
+// 13 methods in IDA
+class SliderClass
+{
+public:
+    virtual ~SliderClass() = default;
+
+    virtual void ?() {} // 0x558120
+    virtual void QueryInterface() {} // 0x558180
+    virtual void Constructor() {} // 0x6b1b20
+    virtual void Destructor() {} // 0x6b1d00
+    virtual void GetValue() {} // 0x6b1d40
+    // +8 more virtual methods
+
+    uint8_t SliderClass_field_0x04[4];
+    uint8_t SliderClass_field_0x08[4];
+    uint8_t SliderClass_field_0x0C[4];
+    uint8_t SliderClass_field_0x10[4];
+    uint8_t SliderClass_field_0x14[4];
+    uint8_t SliderClass_field_0x18[4];
+    uint8_t SliderClass_field_0x1C[4];
+    uint8_t SliderClass_field_0x20[4];
+    uint8_t SliderClass_field_0x24[4];
+    uint8_t SliderClass_field_0x28[4];
+    uint8_t SliderClass_field_0x2C[4];
+    uint8_t SliderClass_field_0x30[4];
+};
+// 1 methods in IDA
+class TabCameoListClass
+{
+public:
+    virtual ~TabCameoListClass() = default;
+
+    virtual void AddCameo_ReplaceItAll() {} // 0x6a8710
+
+};
+// 2 methods in IDA
+class TabControl
+{
+public:
+    virtual ~TabControl() = default;
+
+    virtual void WndProc() {} // 0x612b70
+    virtual void DlgProc() {} // 0x61d950
+
+    uint8_t TabControl_field_0x04[4];
+};
+// 14 methods in IDA
+class ToolTipClass
+{
+public:
+    virtual ~ToolTipClass() = default;
+
+    virtual void updateString() {} // 0x7240b0
+    virtual void initString() {} // 0x724ad0
+    virtual void Destructor() {} // 0x724c10
+    virtual void ddtor() {} // 0x724c30
+    virtual void write() {} // 0x724c60
+    // +9 more virtual methods
+
+    uint8_t ToolTipClass_field_0x04[4];
+    uint8_t ToolTipClass_field_0x08[4];
+    uint8_t ToolTipClass_field_0x0C[4];
+    uint8_t ToolTipClass_field_0x10[4];
+    uint8_t ToolTipClass_field_0x14[4];
+    uint8_t ToolTipClass_field_0x18[4];
+    uint8_t ToolTipClass_field_0x1C[4];
+    uint8_t ToolTipClass_field_0x20[4];
+    uint8_t ToolTipClass_field_0x24[4];
+    uint8_t ToolTipClass_field_0x28[4];
+    uint8_t ToolTipClass_field_0x2C[4];
+    uint8_t ToolTipClass_field_0x30[4];
+    uint8_t ToolTipClass_field_0x34[4];
+};
+// 1 methods in IDA
+class Tooltip
+{
+public:
+    virtual ~Tooltip() = default;
+
+    virtual void Enable() {} // 0x7241a0
+
+};
+// 1 methods in IDA
+class TooltipClass
+{
+public:
+    virtual ~TooltipClass() = default;
+
+    virtual void GetText() {} // 0x7248c0
+
+};
+
 } // namespace gamemd

@@ -190,4 +190,39 @@ public:
     static DynamicVectorClass<CommandClass*>* Array; // 0x87F658
 };
 
+
+// === Batch-generated MISSING class stubs ===
+
+// 1 methods in IDA
+class CursorAnim
+{
+public:
+    virtual ~CursorAnim() = default;
+
+    virtual void Load() {} // 0x6d1800
+
+};
+// 3 methods in IDA
+class DeleteAndZero
+{
+public:
+    virtual ~DeleteAndZero() = default;
+
+    virtual void OrFree() {} // 0x624480
+    virtual void Alt2() {} // 0x7b5340
+    virtual void Alt() {} // 0x7b6760
+
+    uint8_t DeleteAndZero_field_0x04[4];
+    uint8_t DeleteAndZero_field_0x08[4];
+};
+// 1 methods in IDA
+class ScreenCapture
+{
+public:
+    virtual ~ScreenCapture() = default;
+
+    virtual void Frame() {} // 0x55cc20
+
+};
+
 } // namespace gamemd
