@@ -85,7 +85,7 @@ HouseClass::HouseClass(HouseTypeClass* pType) noexcept
     altAllies               = 0;
     startingCredits         = 0;
     startingEdge            = 0;
-    m_unknown_1E4              = 0;
+    field_1E4              = 0;
     sideIndex               = 0;
 
     currentPlayer           = false;
@@ -117,8 +117,8 @@ HouseClass::HouseClass(HouseTypeClass* pType) noexcept
     unknownBool247      = false;
     unknownBool248      = false;
     allToHunt           = false;
-    m_unknown_bool_24A      = false;
-    m_unknown_bool_24B      = false;
+    field_bool_24A      = false;
+    field_bool_24B      = false;
     iqLevel2             = 0;
     aiMode               = 0;
 
@@ -133,7 +133,7 @@ HouseClass::HouseClass(HouseTypeClass* pType) noexcept
     allowWinBlocks          = 0;
 
     repairTimer          = TimerStruct{};
-    m_unknown_timer_28C     = TimerStruct{};
+    field_timer_28C     = TimerStruct{};
     savourTimer          = TimerStruct{};
     powerBlackoutTimer  = TimerStruct{};
     radarBlackoutTimer  = TimerStruct{};
@@ -151,9 +151,9 @@ HouseClass::HouseClass(HouseTypeClass* pType) noexcept
 
     airportDocks          = 0;
     poweredUnitCenters   = 0;
-    m_unknown_2DC            = 0;
-    m_unknown_2E0            = 0;
-    m_unknown_2E4            = 0;
+    field_2DC            = 0;
+    field_2E0            = 0;
+    field_2E4            = 0;
     ownedUnits            = 0;
     ownedNavy             = 0;
     ownedBuildings        = 0;
@@ -203,7 +203,7 @@ HouseClass::HouseClass(HouseTypeClass* pType) noexcept
     primaryUnused3        = nullptr;
     primaryForDefenses   = nullptr;
 
-    std::memset(m_unknown_53D0, 0, sizeof(m_unknown_53D0));
+    std::memset(field_53D0, 0, sizeof(field_53D0));
 
     ourFlagCarrier  = nullptr;
     ourFlagCoords   = CellStruct{};
@@ -213,28 +213,28 @@ HouseClass::HouseClass(HouseTypeClass* pType) noexcept
     totalKilledUnits     = 0;
     totalKilledBuildings = 0;
 
-    m_unknown_548C   = 0;
+    field_548C   = 0;
     baseSpawnCell = CellStruct{};
     baseCenter     = CellStruct{};
     unknown5498 = 0;
-    m_unknown_549C = 0;
-    m_unknown_54A0 = 0;
-    m_unknown_54A4 = 0;
-    m_unknown_54A8 = 0;
-    m_unknown_54AC = 0;
-    m_unknown_54B0 = 0;
-    m_unknown_54B4 = 0;
-    m_unknown_54B8 = 0;
-    m_unknown_54BC = 0;
-    m_unknown_54C0 = 0;
-    m_unknown_54C4 = 0;
-    m_unknown_54C8 = 0;
-    m_unknown_54CC = 0;
-    m_unknown_54D0 = 0;
-    m_unknown_54D4 = 0;
-    m_unknown_54D8 = 0;
-    m_unknown_54DC = 0;
-    m_unknown_54E0 = 0;
+    field_549C = 0;
+    field_54A0 = 0;
+    field_54A4 = 0;
+    field_54A8 = 0;
+    field_54AC = 0;
+    field_54B0 = 0;
+    field_54B4 = 0;
+    field_54B8 = 0;
+    field_54BC = 0;
+    field_54C0 = 0;
+    field_54C4 = 0;
+    field_54C8 = 0;
+    field_54CC = 0;
+    field_54D0 = 0;
+    field_54D4 = 0;
+    field_54D8 = 0;
+    field_54DC = 0;
+    field_54E0 = 0;
 
     std::memset(&radarVisibleTo, 0, sizeof(radarVisibleTo));
 
@@ -258,8 +258,8 @@ HouseClass::HouseClass(HouseTypeClass* pType) noexcept
     std::memset(&ownedInfantryTypes2, 0, sizeof(ownedInfantryTypes2));
     std::memset(&ownedAircraftTypes2, 0, sizeof(ownedAircraftTypes2));
 
-    m_unknown_55F0   = 0;
-    m_unknown_55F4   = 0;
+    field_55F0   = 0;
+    field_55F4   = 0;
     attackDelayA = 0;
     attackDelayB = 0;
     enemyHouseIndex = -1;
@@ -308,12 +308,12 @@ HouseClass::HouseClass(HouseTypeClass* pType) noexcept
 
     damageDelayTimer = TimerStruct{};
     teamDelayTimer   = TimerStruct{};
-    m_unknown_timer_A    = TimerStruct{};
-    m_unknown_timer_B    = TimerStruct{};
-    m_unknown_timer_C    = TimerStruct{};
-    m_unknown_timer_D    = TimerStruct{};
-    m_unknown_timer_E    = TimerStruct{};
-    m_unknown_57DC       = 0;
+    field_timer_A    = TimerStruct{};
+    field_timer_B    = TimerStruct{};
+    field_timer_C    = TimerStruct{};
+    field_timer_D    = TimerStruct{};
+    field_timer_E    = TimerStruct{};
+    field_57DC       = 0;
 
     std::memset(threatPosed_estimates_padding, 0, sizeof(threatPosed_estimates_padding));
 
@@ -330,7 +330,7 @@ HouseClass::HouseClass(HouseTypeClass* pType) noexcept
     waypointPathCount   = 0;
     waypointPathCapacity = 0;
 
-    m_unknown_1607C = 0;
+    field_1607C = 0;
     unknown16080 = 0;
     unknown16084 = 0;
     unused16088  = 0.0;
@@ -344,7 +344,7 @@ HouseClass::HouseClass(HouseTypeClass* pType) noexcept
     totalOwnedInfantryCost  = 0;
     totalOwnedVehicleCost   = 0;
     totalOwnedAircraftCost  = 0;
-    m_unknown_160B4              = 0;
+    field_160B4              = 0;
 
     abstractFlags = kHouseFlag;
 }

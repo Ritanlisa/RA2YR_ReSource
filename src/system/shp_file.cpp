@@ -82,7 +82,7 @@ SHPReference::SHPReference(const char* filename)
     , Index(0)
     , Next(nullptr)
     , Prev(nullptr)
-    , unknown_20(0)
+    , field_20(0)
 {
     Type = 0xFFFF;
 }

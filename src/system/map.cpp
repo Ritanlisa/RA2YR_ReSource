@@ -9,7 +9,7 @@ namespace gamemd
 MapClass::MapClass() noexcept
     : unknown10(0)
     , unknownPointer14(nullptr)
-    , m_unknown_4C(0)
+    , field_4C(0)
     , zoneConnections(nullptr)
     , zoneConnectionCount(0)
     , zoneConnectionCapacity(0)
@@ -35,7 +35,7 @@ MapClass::MapClass() noexcept
     , cellIteratorNextY(0)
     , cellIteratorCurrentY(0)
     , cellIteratorNextCell(nullptr)
-    , m_unknown_11C(0)
+    , field_11C(0)
     , unknown120(0)
     , unknown134(0)
     , cells(nullptr)

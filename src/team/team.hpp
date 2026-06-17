@@ -119,12 +119,12 @@ public:
     bool            unknown77;
     bool            spawnStatus;
     bool            unknown79;
-    bool            m_unknown_7A;
-    bool            m_unknown_7B;
+    bool            field_7A;
+    bool            field_7B;
     bool            visibilityFlags;
     bool            needsToDisappear;
-    bool            m_unknown_7E;
-    bool            m_unknown_7F;
+    bool            field_7E;
+    bool            field_7F;
     bool            stepCompleted;
     bool            unknown81;
     bool            unknown82;

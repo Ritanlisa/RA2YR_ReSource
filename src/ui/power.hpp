@@ -21,15 +21,15 @@ public:
     int32_t      PowerOutput;
     int32_t      PowerDrain;
 
-    bool         unknown_bool_150C;
+    bool         field_bool_150C;
     uint8_t      padding_150D[3];
-    TimerStruct  unknown_timer_1510;
-    uint32_t     unknown_151C;
-    TimerStruct  unknown_timer_1520;
-    uint32_t     unknown_152C;
-    uint32_t     unknown_1530;
-    uint32_t     unknown_1534;
-    bool         unknown_bool_1538;
+    TimerStruct  field_timer_1510;
+    uint32_t     field_151C;
+    TimerStruct  field_timer_1520;
+    uint32_t     field_152C;
+    uint32_t     field_1530;
+    uint32_t     field_1534;
+    bool         field_bool_1538;
     uint8_t      padding_1539[3];
 
     // TODO: complete PowerClass members

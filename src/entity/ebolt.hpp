@@ -32,7 +32,7 @@ public:
 
     CoordStruct    Point1;          // +0x00
     CoordStruct    Point2;          // +0x0C
-    uint32_t       unknown_18;      // +0x18
+    uint32_t       field_18;      // +0x18
     int32_t        Random;          // +0x1C
     TechnoClass*   Owner;           // +0x20
     int32_t        WeaponSlot;      // +0x24

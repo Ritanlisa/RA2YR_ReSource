@@ -68,7 +68,7 @@ public:
     bool PenetratesBunker;
     bool Wood;
     bool Tiberium;
-    bool unknown_bool_149;
+    bool field_bool_149;
     bool Sparky;
     bool Sonic;
     bool Fire;

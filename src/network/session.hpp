@@ -36,14 +36,14 @@ struct NodeNameType
     int32_t     InitialStartPoint;
     int32_t     Team;
     int32_t     InitialTeam;
-    uint32_t    unknown_6B;
+    uint32_t    field_6B;
     int32_t     HouseIndex;
     int32_t     Time;
-    uint32_t    unknown_77;
+    uint32_t    field_77;
     int32_t     Clan;
-    uint32_t    unknown_7F;
-    uint8_t     unknown_byte_83;
-    uint8_t     unknown_byte_84;
+    uint32_t    field_7F;
+    uint8_t     field_byte_83;
+    uint8_t     field_byte_84;
 };
 #pragma pack(pop)
 
@@ -59,7 +59,7 @@ struct GameTypePreferencesStruct
     bool      BuildOffAlly;
     bool      MCVRepacks;
     bool      CratesAppear;
-    uint32_t  unknown_fields[0x18];
+    uint32_t  field_1C[0x18];
 };
 
 struct GameModeOptionsClass
@@ -87,19 +87,19 @@ public:
 
     GameMode                     GameMode;
     MPGameModeClass*             MPGameMode;
-    uint32_t                     unknown_08;
-    uint32_t                     unknown_0C;
-    uint32_t                     unknown_10;
-    uint32_t                     unknown_14;
+    uint32_t                     field_08;
+    uint32_t                     field_0C;
+    uint32_t                     field_10;
+    uint32_t                     field_14;
     GameModeOptionsClass         Config;
     uint32_t                     UniqueID;
     char                         Handle[20];
     int32_t                      PlayerColor;
-    uint32_t                     unknown_160;
-    uint32_t                     unknown_164;
-    uint32_t                     unknown_168;
-    uint32_t                     unknown_16C;
-    uint32_t                     unknown_170;
+    uint32_t                     field_160;
+    uint32_t                     field_164;
+    uint32_t                     field_168;
+    uint32_t                     field_16C;
+    uint32_t                     field_170;
     int32_t                      idxSide;
     int32_t                      idxSide2;
     int32_t                      Color;
@@ -110,16 +110,16 @@ public:
     GameTypePreferencesStruct    LANPreferences;
     GameTypePreferencesStruct    WOLPreferences;
     bool                         MuteSWLaunches;
-    uint8_t                      unknown_304[4];
+    uint8_t                      field_304[4];
     bool                         WOLLimitResolution;
     int32_t                      LastNickSlot;
-    uint8_t                      unknown_310[0x398];
+    uint8_t                      field_310[0x398];
     char                         ScenarioFilename[0x202];
-    uint8_t                      unknown_8AA[0x1F62];
+    uint8_t                      field_8AA[0x1F62];
     DynamicVectorClass<NodeNameType*> UnknownVector_280C;
     DynamicVectorClass<NodeNameType*> UnknownVector_2824;
     DynamicVectorClass<NodeNameType*> StartSpots;
-    uint8_t                      unknown_2854[0x884];
+    uint8_t                      field_2854[0x884];
     bool                         CurrentlyInGame;
 
     bool IsCampaign()  const { return GameMode == GameMode::Campaign; }

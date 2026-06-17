@@ -116,7 +116,7 @@ public:
     uint32_t            difficulty2;
     TimerStruct         elapsedTimer;
     TimerStruct         pauseTimer;
-    uint32_t            m_unknown_62C;
+    uint32_t            field_62C;
     uint16_t            unknown630;
     CellStruct          waypoints[702];
 
@@ -136,7 +136,7 @@ public:
     TimerStruct         shroudRegrowTimer;
     TimerStruct         fogTimer;
     TimerStruct         iceTimer;
-    TimerStruct         unknownTimer123c;
+    TimerStruct         field_timer_123c;
     TimerStruct         ambientTimer;
     int32_t             techLevel;
     int32_t             theater;
@@ -168,7 +168,7 @@ public:
     CellStruct          view2;
     CellStruct          view3;
     CellStruct          view4;
-    uint32_t            m_unknown_34A0;
+    uint32_t            field_34A0;
     bool                freeRadar;
     bool                trainCrate;
     bool                storedTiberium_growth_enabled;
@@ -186,14 +186,14 @@ public:
     bool                fillSilos;
     bool                storedTiberium_death_to_visceroid;
     bool                ignoreGlobalAiTriggers;
-    bool                m_unknown_bool_34B5;
-    bool                m_unknown_bool_34B6;
-    bool                m_unknown_bool_34B7;
+    bool                field_bool_34B5;
+    bool                field_bool_34B6;
+    bool                field_bool_34B7;
     int32_t             playerSideIndex;
     bool                multiplayerOnly;
     bool                isRandom;
     bool                pickedUpAnyCrate;
-    TimerStruct         m_unknown_timer_34C0;
+    TimerStruct         field_timer_34C0;
     int32_t             campaignIndex;
     int32_t             startingDropships;
     TechnoTypeClass**   allowableUnits;
@@ -239,8 +239,8 @@ public:
     uint32_t            unknown3598;
     int32_t             initTime;
     int16_t             stage;
-    bool                m_unknown_35A2;
-    uint8_t             m_unknown_35A3;
+    bool                field_35A2;
+    uint8_t             field_35A3;
     int32_t             parTimeEasy;
     int32_t             parTimeMedium;
     int32_t             parTimeDifficult;

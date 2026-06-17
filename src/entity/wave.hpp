@@ -122,7 +122,7 @@ public:
     ra2::game::TechnoClass*          Owner;
     ra2::game::FacingStruct          Facing;
     DynamicVectorClass<CellClass*>   Cells;
-    uint8_t                          unknown_208[14 * 4];
+    uint8_t                          field_208[14 * 4];
 
 protected:
     WaveClass() = default;

@@ -66,37 +66,37 @@ enum class CellFlags : uint32_t
 {
     None                        = 0x00000000,
     IsCenterPlot                = 0x00000001,
-    Unknown_02                  = 0x00000002,
-    Unknown_04                  = 0x00000004,
-    Unknown_08                  = 0x00000008,
-    Unknown_10                  = 0x00000010,
-    Unknown_20                  = 0x00000020,
-    Unknown_40                  = 0x00000040,
-    Unknown_80                  = 0x00000080,
-    Unknown_100                 = 0x00000100,
-    Unknown_200                 = 0x00000200,
+    field_02                  = 0x00000002,
+    field_04                  = 0x00000004,
+    field_08                  = 0x00000008,
+    field_10                  = 0x00000010,
+    field_20                  = 0x00000020,
+    field_40                  = 0x00000040,
+    field_80                  = 0x00000080,
+    field_100                 = 0x00000100,
+    field_200                 = 0x00000200,
     Flat                        = 0x00000400,
-    Unknown_800                 = 0x00000800,
-    Unknown_1000                = 0x00001000,
-    Unknown_2000                = 0x00002000,
-    Unknown_4000                = 0x00004000,
+    field_800                 = 0x00000800,
+    field_1000                = 0x00001000,
+    field_2000                = 0x00002000,
+    field_4000                = 0x00004000,
     Bridge                      = 0x00008000,
-    Unknown_10000               = 0x00010000,
-    Unknown_20000               = 0x00020000,
-    Unknown_40000               = 0x00040000,
-    Unknown_80000               = 0x00080000,
-    Unknown_100000              = 0x00100000,
-    Unknown_200000              = 0x00200000,
-    Unknown_400000              = 0x00400000,
-    Unknown_800000              = 0x00800000,
-    Unknown_1000000             = 0x01000000,
-    Unknown_2000000             = 0x02000000,
-    Unknown_4000000             = 0x04000000,
+    field_10000               = 0x00010000,
+    field_20000               = 0x00020000,
+    field_40000               = 0x00040000,
+    field_80000               = 0x00080000,
+    field_100000              = 0x00100000,
+    field_200000              = 0x00200000,
+    field_400000              = 0x00400000,
+    field_800000              = 0x00800000,
+    field_1000000             = 0x01000000,
+    field_2000000             = 0x02000000,
+    field_4000000             = 0x04000000,
     DestroyableCliff            = 0x08000000,
-    Unknown_10000000            = 0x10000000,
+    field_10000000            = 0x10000000,
     HasCrater                   = 0x20000000,
-    Unknown_40000000            = 0x40000000,
-    Unknown_80000000            = 0x80000000,
+    field_40000000            = 0x40000000,
+    field_80000000            = 0x80000000,
 };
 
 class CellClass
@@ -234,15 +234,15 @@ public:
     BuildingTypeClass*      rubble;
     int                     overlayTypeIndex;
     int                     smudgeTypeIndex;
-    uint32_t                m_unknown_4C;
+    uint32_t                field_4C;
     int                     wallOwnerIndex;
     int                     infantryOwnerIndex;
     int                     altInfantryOwnerIndex;
-    uint32_t                m_unknown_5C;
+    uint32_t                field_5C;
     uint32_t                unknown60;
     uint32_t                unknown64;
     uint32_t                unknown68;
-    uint32_t                m_unknown_6C;
+    uint32_t                field_6C;
     uint32_t                unknown70;
     uint32_t                unknown74;
     uint32_t                cloakedByHouses;
@@ -257,13 +257,13 @@ public:
     int                     landType;
     double                  radLevel;
     RadSiteClass*           radSite;
-    uint32_t                m_unknown_FC;
+    uint32_t                field_FC;
     int                     occupyHeightsCoveringMe;
     uint32_t                unknown104;
     uint16_t                unknown108;
-    uint16_t                m_unknown_10A;
-    uint16_t                m_unknown_10C;
-    uint16_t                m_unknown_10E;
+    uint16_t                field_10A;
+    uint16_t                field_10C;
+    uint16_t                field_10E;
     uint16_t                unknown110;
     uint16_t                unknown112;
     uint16_t                unknown114;
@@ -273,9 +273,9 @@ public:
     int8_t                  height;
     int8_t                  level;
     uint8_t                 slopeIndex;
-    uint8_t                 m_unknown_11D;
+    uint8_t                 field_11D;
     uint8_t                 powerup;
-    uint8_t                 m_unknown_11F;
+    uint8_t                 field_11F;
     int8_t                  shroudedness;
     int8_t                  foggedness;
     uint8_t                 blockedNeighbours;
@@ -287,7 +287,7 @@ public:
     uint32_t                gapsCoveringThisCell;
     bool                    visibilityChanged;
     uint8_t                 align139[3];
-    uint32_t                m_unknown_13C;
+    uint32_t                field_13C;
     CellFlags               flags;
     uint8_t                 padding144[4];
 

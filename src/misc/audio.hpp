@@ -148,7 +148,7 @@ public:
     char           AlliedVoice[9];   // 0x3E: eva.ini Allied voice
     VoxPriority    Priority;         // 0x47: eva.ini Priority (1 byte enum)
     VoxType        Type;             // 0x48: eva.ini Type (1 byte enum)
-    int32_t        voiceIndex;       // 0x4C: EVA voice index (YRpp: unknown_int_50)
+    int32_t        voiceIndex;       // 0x4C: EVA voice index (YRpp: field_int_50)
 };
 
 class AudioController;

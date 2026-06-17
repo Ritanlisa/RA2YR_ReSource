@@ -26,12 +26,12 @@ public:
     bool FindOrCreate(int, unsigned int*, unsigned char*) { return false; }
 
     WaypointPathClass* paths[12];     // +0x210 (this+132)
-    uint32_t           unknown_0;     // +0x000
-    uint32_t           unknown_4;     // +0x004
-    uint32_t           unknown_8;     // +0x008
-    uint32_t           unknown_C;     // +0x00C
-    uint32_t           unknown_10;    // +0x010
-    uint32_t           unknown_14;    // +0x014
+    uint32_t           field_0;     // +0x000
+    uint32_t           field_4;     // +0x004
+    uint32_t           field_8;     // +0x008
+    uint32_t           field_C;     // +0x00C
+    uint32_t           field_10;    // +0x010
+    uint32_t           field_14;    // +0x014
     // ... padding up to paths array at 0x210
     uint8_t            padding_18[0x1F8]; // +0x018..+0x20F
     uint32_t           activePathIndex;   // +0x20C (this+131)

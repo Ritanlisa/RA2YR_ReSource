@@ -176,7 +176,7 @@ public:
 
     uint32_t                align_AC;
     BounceClass             Bounce;
-    int32_t                 unknown_int_100;
+    int32_t                 field_int_100;
     VoxelAnimTypeClass*     Type;
     ParticleSystemClass*    AttachedSystem;
     HouseClass*             OwnerHouse;

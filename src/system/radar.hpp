@@ -130,7 +130,7 @@ public:
     int32_t                     RadarAnimDelay;         // 0x14FC
 
     // 0x1500: radar animation / update timer
-    TimerStruct                 unknownTimer1500;       // 0x1500
+    TimerStruct                 field_timer_1500;       // 0x1500
 
 protected:
     RadarClass() = default;

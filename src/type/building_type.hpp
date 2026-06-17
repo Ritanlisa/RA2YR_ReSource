@@ -140,10 +140,10 @@ public:
     int AntiArmorValue;
     int AntiInfantryValue;
     Point2D ZShapePointMove;
-    int unknown_1538;
-    int unknown_153C;
-    int unknown_1540;
-    int unknown_1544;
+    int field_1538;
+    int field_153C;
+    int field_1540;
+    int field_1544;
     WORD ExtraLight;
     bool TogglePower;
     bool HasSpotlight;
@@ -270,20 +270,20 @@ public:
 
     int     ProductionCompletionThreshold;
     double  CostRatePerFrame;
-    int     Unknown_688;
+    int     field_688;
     int     InitialProductionProgress;
-    int     Unknown_696;
+    int     field_696;
     int     ProductionStepsTarget;
     int     ProductionSizeOverride;
     uint8_t PipelineStepCount;
     uint8_t _pad_prod_71[3];
     TechnoTypeClass* NextTypeInChain;
-    int     Unknown_716;
-    int     Unknown_720;
-    int     Unknown_732;
-    int     Unknown_736;
-    int     Unknown_740;
-    int     Unknown_744;
+    int     field_716;
+    int     field_720;
+    int     field_732;
+    int     field_736;
+    int     field_740;
+    int     field_744;
 
     DWORD align_1794;
 };

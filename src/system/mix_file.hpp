@@ -75,7 +75,7 @@ public:
         MixFileClass* ISOGEN             = nullptr;
         MixFileClass* ISOGENMD           = nullptr;
         MixFileClass* MOVIES02D          = nullptr;
-        MixFileClass* UNKNOWN_1          = nullptr;
+        MixFileClass* field_1          = nullptr;
         MixFileClass* MAIN               = nullptr;
         MixFileClass* CONQMD             = nullptr;
         MixFileClass* CONQUER            = nullptr;
@@ -89,8 +89,8 @@ public:
         MixFileClass* NEUTRAL            = nullptr;
         MixFileClass* MAPSMD02D          = nullptr;
         MixFileClass* MAPS02D            = nullptr;
-        MixFileClass* UNKNOWN_2          = nullptr;
-        MixFileClass* UNKNOWN_3          = nullptr;
+        MixFileClass* field_2          = nullptr;
+        MixFileClass* field_3          = nullptr;
         MixFileClass* SIDEC02DMD         = nullptr;
         MixFileClass* SIDEC02D           = nullptr;
         MixFileClass* MULTI              = nullptr;

@@ -8,7 +8,7 @@ DynamicVectorClass<MPGameModeClass*>* MPGameModeClass::GameModes = nullptr;
 // --- MPGameModeClass ---
 
 MPGameModeClass::MPGameModeClass() noexcept
-    : unknown_4(false)
+    : field_4(false)
     , CSFTitle(nullptr)
     , CSFTooltip(nullptr)
     , MPModeIndex(-1)

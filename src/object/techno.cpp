@@ -747,8 +747,8 @@ bool TechnoClass::CreateUnit()
             building->ProductionAccum = 0;
 
             // Random timer for new cycle
-            // TODO: building->ProductionTimer = RandomBetween(build_type->Unknown_732, build_type->Unknown_736)
-            building->ProductionTimer = build_type->Unknown_688;
+            // TODO: building->ProductionTimer = RandomBetween(build_type->field_732, build_type->field_736)
+            building->ProductionTimer = build_type->field_688;
             building->ProductionFrame = static_cast<int>(CurrentFrame);
             building->ProductionRate = building->ProductionTimer;
             building->ProductionSpeed = building->ProductionTimer;
@@ -939,9 +939,9 @@ static bool CreateUnitOnCompletion(TechnoClass* techno)
 
     // Section 3: Super weapon fire effects
     // IDA: type+716 -> index into SW array, type+720 -> count
-    if (type->Unknown_716 != -1)
+    if (type->field_716 != -1)
     {
-        for (int i = 0; i < type->Unknown_720; ++i)
+        for (int i = 0; i < type->field_720; ++i)
         {
             // auto sw_coords = fetchCoordinatesHere();
             // SW_CreateFireAt(sw_array[type+716], sw_coords)

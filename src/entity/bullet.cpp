@@ -18,24 +18,24 @@ BulletClass::BulletClass(BulletTypeClass* pType) noexcept
 {
     Type              = pType;
     Owner             = nullptr;
-    unknown_B4        = false;
+    field_B4        = false;
 
     std::memset(&Data, 0, sizeof(Data));
 
     Bright            = false;
-    unknown_E4        = 0;
+    field_E4        = 0;
 
     std::memset(&Velocity, 0, sizeof(Velocity));
 
-    unknown_100       = 0;
-    unknown_104       = false;
-    unknown_108       = 0;
+    field_100       = 0;
+    field_104       = false;
+    field_108       = 0;
     Target            = nullptr;
     Speed             = 0;
     InheritedColor    = 0;
-    unknown_118       = 0;
-    unknown_11C       = 0;
-    unknown_120       = 0.0;
+    field_118       = 0;
+    field_11C       = 0;
+    field_120       = 0.0;
     WH                = nullptr;
     AnimFrame         = 0;
     AnimRateCounter   = 0;

@@ -28,7 +28,7 @@ ParticleSystemClass::ParticleSystemClass(ParticleSystemTypeClass* pType) noexcep
     SparkSpawnFrames  = 0;
     SpotlightRadius   = 0;
     TimeToDie         = false;
-    unknown_bool_F9   = false;
+    field_bool_F9   = false;
 
     // Particles DynamicVectorClass is default-constructed inline
 

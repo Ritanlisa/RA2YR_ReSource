@@ -40,13 +40,13 @@ public:
     virtual AbstractType __stdcall whatAmI() const override { return kObjectTypeId; }
     virtual int objectSize() const override { return sizeof(TubeClass); }
 
-    int32_t unknown_AC;
-    int32_t unknown_B0;
-    int32_t unknown_B4;
-    int32_t unknown_B8;
-    int32_t unknown_BC;
-    int32_t unknown_C0;
-    int32_t unknown_C4;
+    int32_t field_AC;
+    int32_t field_B0;
+    int32_t field_B4;
+    int32_t field_B8;
+    int32_t field_BC;
+    int32_t field_C0;
+    int32_t field_C4;
 
 protected:
     TubeClass() noexcept;

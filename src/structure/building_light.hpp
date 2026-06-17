@@ -48,10 +48,10 @@ public:
     double            Speed;              // +0xB0  (this+44)
     CoordStruct       field_B8;           // +0xB8  (this+46-48)
     CoordStruct       field_C4;           // +0xC4  (this+49-51)
-    uint32_t          unknown_D0;         // +0xD0  (this+52)
-    bool              Unknown_D8;         // +0xD8  (byte+216)
+    uint32_t          field_D0;         // +0xD0  (this+52)
+    bool              field_D8;         // +0xD8  (byte+216)
     int32_t           BehaviourMode;      // +0xDC  (this+55)
-    uint32_t          unknown_E0;         // +0xE0  (this+56)
+    uint32_t          field_E0;         // +0xE0  (this+56)
     ObjectClass*      FollowingObject;    // +0xE4  (this+57, ctor arg a2)
 
 protected:

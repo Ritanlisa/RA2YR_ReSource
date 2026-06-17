@@ -57,7 +57,7 @@ WaveClass::WaveClass(TechnoClass* pTarget, WaveType waveType,
     Owner          = nullptr;
 
     std::memset(&Facing, 0, sizeof(Facing));
-    std::memset(unknown_208, 0, sizeof(unknown_208));
+    std::memset(field_208, 0, sizeof(field_208));
 
     field_134 = 0;
     field_138 = 0;

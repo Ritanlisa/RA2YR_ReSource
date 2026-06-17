@@ -277,10 +277,10 @@ public:
     double        CurrentSpeed;       // 0x50
     double        BoostSpeed;         // 0x58
     double        CurrentWobbles;     // 0x60
-    bool          unknown_bool_68;    // 0x68
+    bool          field_bool_68;    // 0x68
     // padding 3 bytes            // 0x69-0x6B
-    int32_t       unknown_6C;         // 0x6C
-    bool          unknown_bool_70;    // 0x70
+    int32_t       field_6C;         // 0x6C
+    bool          field_bool_70;    // 0x70
     // padding 3 bytes            // 0x71-0x73
 
 protected:
@@ -380,13 +380,13 @@ public:
     int8_t         IsTakingOff;        // 0x50
     bool           IsLanding;          // 0x51
     bool           WasLanding;         // 0x52
-    bool           unknown_bool_53;    // 0x53
-    uint32_t       unknown_54;         // 0x54
-    uint32_t       unknown_58;         // 0x58
+    bool           field_bool_53;    // 0x53
+    uint32_t       field_54;         // 0x54
+    uint32_t       field_58;         // 0x58
     bool           IsElevating;        // 0x5C
-    bool           unknown_bool_5D;    // 0x5D
-    bool           unknown_bool_5E;    // 0x5E
-    bool           unknown_bool_5F;    // 0x5F
+    bool           field_bool_5D;    // 0x5D
+    bool           field_bool_5E;    // 0x5E
+    bool           field_bool_5F;    // 0x5F
 
 protected:
     FlyLocomotionClass() = default;
@@ -425,14 +425,14 @@ public:
     RateTimer     MissionTimer;        // 0x24
     CDTimerClass  TrailerTimer;        // 0x34
     int32_t       MissionState;        // 0x40
-    uint32_t      unknown_44;          // 0x44
+    uint32_t      field_44;          // 0x44
     double        CurrentSpeed;        // 0x48
-    bool          unknown_bool_4C;     // 0x50
+    bool          field_bool_4C;     // 0x50
     bool          SpawnerIsElite;      // 0x51
     // padding 2 bytes            // 0x52-0x53
     float         CurrentPitch;        // 0x54
-    uint32_t      unknown_58;          // 0x58
-    uint32_t      unknown_5C;          // 0x5C
+    uint32_t      field_58;          // 0x58
+    uint32_t      field_5C;          // 0x5C
 
 protected:
     RocketLocomotionClass() = default;
@@ -495,33 +495,33 @@ public:
     float         Wobbles;            // 0x30
     int32_t       Deviation;          // 0x34
     bool          NoWobbles;          // 0x38
-    uint8_t       unknown_3D;         // 0x39
-    uint8_t       unknown_3E;         // 0x3A
-    uint8_t       unknown_3F;         // 0x3B
+    uint8_t       field_3D;         // 0x39
+    uint8_t       field_3E;         // 0x3A
+    uint8_t       field_3F;         // 0x3B
     CoordStruct   DestinationCoords;  // 0x3C
     bool          IsMoving;           // 0x48
-    uint8_t       unknown_4D;         // 0x49
-    uint8_t       unknown_4E;         // 0x4A
-    uint8_t       unknown_4F;         // 0x4B
+    uint8_t       field_4D;         // 0x49
+    uint8_t       field_4E;         // 0x4A
+    uint8_t       field_4F;         // 0x4B
     State         CurrentState;       // 0x4C
     FacingClass   LocomotionFacing;   // 0x50
-    uint8_t       unknown_6C;         // 0x68
-    uint8_t       unknown_6D;         // 0x69
-    uint8_t       unknown_6E;         // 0x6A
-    uint8_t       unknown_6F;         // 0x6B
+    uint8_t       field_6C;         // 0x68
+    uint8_t       field_6D;         // 0x69
+    uint8_t       field_6E;         // 0x6A
+    uint8_t       field_6F;         // 0x6B
     // 4-byte alignment pad       // 0x6C-0x6F
     double        CurrentSpeed;       // 0x70
     double        MaxSpeed;           // 0x78
     int32_t       CurrentHeight;      // 0x80
-    uint8_t       unknown_84;         // 0x84
-    uint8_t       unknown_85;         // 0x85
-    uint8_t       unknown_86;         // 0x86
-    uint8_t       unknown_87;         // 0x87
+    uint8_t       field_84;         // 0x84
+    uint8_t       field_85;         // 0x85
+    uint8_t       field_86;         // 0x86
+    uint8_t       field_87;         // 0x87
     double        CurrentWobbles;     // 0x88
     bool          DestinationReached; // 0x90
-    uint8_t       unknown_91;         // 0x91
-    uint8_t       unknown_92;         // 0x92
-    uint8_t       unknown_93;         // 0x93
+    uint8_t       field_91;         // 0x91
+    uint8_t       field_92;         // 0x92
+    uint8_t       field_93;         // 0x93
     ILocomotion*  Piggybackee;        // 0x94
 
 protected:
@@ -630,8 +630,8 @@ public:
     CoordStruct   MovingDestination;   // 0x18
     CoordStruct   LastCoords;          // 0x24 — marked occupation bits here
     bool          Moving;              // 0x30
-    bool          unknown_bool_35;     // 0x31
-    bool          unknown_bool_36;     // 0x32
+    bool          field_bool_35;     // 0x31
+    bool          field_bool_36;     // 0x32
     // padding 1 byte             // 0x33
     int32_t       State;               // 0x34
     CDTimerClass  Timer;               // 0x38
