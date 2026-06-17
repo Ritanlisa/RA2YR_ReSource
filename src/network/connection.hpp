@@ -16,7 +16,7 @@ struct NetworkEvent;
 class ConnectionClass
 {
 public:
-    ConnectionClass() noexcept;                          // 0x48BEE0
+    ConnectionClass() noexcept;                          // 0x48BE60
 
     virtual HRESULT __stdcall QueryInterface(const IID&, void**) { return E_NOINTERFACE; } // 0x48C650
     virtual ULONG   __stdcall AddRef()                             { return 1; }            // 0x48BF10

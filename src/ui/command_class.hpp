@@ -59,11 +59,11 @@ class MoveCommandClass : public CommandClass       // RTTI @ 0x826F58
 {
 public:
     virtual ~MoveCommandClass() = default;
-    virtual const char*    GetName() const override;             // vt[1] 0x71E3A0
+    virtual const char*    GetName() const override;             // vt[1]
     virtual const wchar_t* GetUIName() const override;           // vt[2]
     virtual const wchar_t* GetUICategory() const override;       // vt[3]
     virtual const wchar_t* GetUIDescription() const override;    // vt[4]
-    virtual void           Execute(uint32_t context) const override; // vt[8] 0x71EC80
+    virtual void           Execute(uint32_t context) const override; // vt[8]
 };
 
 class AttackCommandClass : public CommandClass      // RTTI @ 0x826F68

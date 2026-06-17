@@ -20,7 +20,7 @@ public:
     static DynamicVectorClass<MPGameModeClass*>* GameModes; // 0xA80260
 
     // IUnknown
-    virtual HRESULT __stdcall QueryInterface(const IID&, void**) { return E_NOINTERFACE; } // 0x5D7F20
+    virtual HRESULT __stdcall QueryInterface(const IID&, void**) { return E_NOINTERFACE; }
     virtual ULONG   __stdcall AddRef()                             { return 1; }            // 0x5C0E30
     virtual ULONG   __stdcall Release()                            { return 1; }            // 0x5C0E40
 

@@ -20,7 +20,7 @@ class TechnoClass;
 class EBolt
 {
 public:
-    // 0x4C2BD0 SetOwner
+    // SetOwner: stores owner ptr and weapon index (called from Fire path)
     void SetOwner(UnitClass* owner, int weaponIdx) {}
     // 0x4C1E50 ClearOwner
     void ClearOwner() {}

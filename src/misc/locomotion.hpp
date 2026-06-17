@@ -209,10 +209,10 @@ public:
     virtual bool __stdcall Is_Piggybacking() override;                                // 0x4AF630
 
     // ILocomotion overrides
-    virtual bool __stdcall Is_Moving() override;              // 0x4AEFB0
+    virtual bool __stdcall Is_Moving() override;              // 0x4AFB80
     virtual CoordStruct* __stdcall Destination(CoordStruct* out) override;            // 0x4AEFD0
-    virtual bool __stdcall Process() override;                // 0x4AF070
-    virtual void __stdcall Move_To(CoordStruct to) override;  // 0x4AF0F0
+    virtual bool __stdcall Process() override;                // 0x4B4870
+    virtual void __stdcall Move_To(CoordStruct to) override;  // 0x4B4880
     virtual void __stdcall Stop_Moving() override;            // 0x4AF310
     virtual void __stdcall Do_Turn(unsigned short facing) override;                   // 0x4AF020
     virtual void __stdcall Mark_All_Occupation_Bits(int mark) override;               // 0x4AF390
