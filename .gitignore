@@ -94,12 +94,19 @@ decompile-results/gamemd.exe.til
 decompile-results/gamemd.exe.asm
 decompile-results/gamemd.exe.c
 decompile-results/gamemd.exe.i64
+decompile-results/gamemd.exe.h
+decompile-results/null
 
 # 任务编排（本地状态，不追踪）
 .omo/
 
 # 临时分析文件
 tmp_*
+
+# 临时分析脚本 (本地开发用)
+_*.py
+_*.json
+0
 
 # 逆向工具脚本 (本地开发用)
 tools/*
