@@ -25,10 +25,6 @@ using ra2::game::AbstractType;
 using ra2::game::ObjectClass;
 #endif
 
-
-
-
-
 class WeaponTypeClass;
 class BuildingTypeClass;
 class AnimClass;
@@ -40,17 +36,29 @@ class SuperWeaponTypeClass : public AbstractTypeClass
 {
 public:
     static constexpr AbstractType AbsID = AbstractType::SuperWeaponType;
-    static DynamicVectorClass<AbstractTypeClass*>* Array;
+    static DynamicVectorClass<AbstractTypeClass*>* Array; // 0x87F668
 
-    virtual ~SuperWeaponTypeClass() = default;
+    virtual ~SuperWeaponTypeClass() = default;                                       // 0x6CEFE0 (SDDTOR)
 
-    virtual AbstractType __stdcall whatAmI() const override { return AbsID; }
-    virtual int32_t objectSize() const override { return sizeof(SuperWeaponTypeClass); }
-    virtual Action MouseOverObject(const CellStruct& cell, ObjectClass* pObjBelowMouse) const { return Action::None; }
+    virtual AbstractType __stdcall whatAmI() const override { return AbsID; }        // 0x6CE8F0 (SD_vt11)
+    virtual int32_t objectSize() const override { return sizeof(SuperWeaponTypeClass); } // 0x6CE900 (SD_vt12)
+    virtual Action MouseOverObject(const CellStruct& cell, ObjectClass* pObjBelowMouse) const { return Action::None; } // 0x6CEA10 (SD_vt16)
 
-    static SuperWeaponTypeClass* FindFirstOfAction(Action action);
+    static SuperWeaponTypeClass* FindFirstOfAction(Action action);                    // 0x6CEEB0
 
-    SuperWeaponTypeClass(const char* pID) noexcept;
+    SuperWeaponTypeClass(const char* pID) noexcept;                                   // 0x5113F0 (Construct)
+
+    // type I/O
+    void loadSWProperties(CCINIClass* ini);                                           // 0x474EE0
+    static SuperWeaponTypeClass* FindOrCreate(const char* name);                       // 0x475540
+    static SuperWeaponTypeClass* FindByName(const char* name);                         // 0x5117D0
+    bool IsAvailable() const;                                                         // 0x4F6540
+    void Construct(const char* pID);                                                   // 0x5113F0
+
+    // vtable helpers
+    void SaveLoad_Prefix(IStream* stream);                                             // 0x6CE800
+    void SaveLoad_Prefix_0(IStream* stream);                                           // 0x6CE8D0
+    void SDDTOR();                                                                    // 0x6CEFE0
 
     int32_t             ArrayIndex;
     WeaponTypeClass*    WeaponType;
@@ -90,34 +98,49 @@ class SuperClass : public AbstractClass
 {
 public:
     static constexpr AbstractType AbsID = AbstractType::Super;
-    static DynamicVectorClass<SuperClass*>* Array;
+    static DynamicVectorClass<SuperClass*>* Array; // 0x87F670
 
-    virtual ~SuperClass() = default;
+    virtual ~SuperClass() = default;                                                 // 0x6CDEB0 (ddtor)
 
-    virtual AbstractType __stdcall whatAmI() const override { return AbsID; }
-    virtual int32_t objectSize() const override { return sizeof(SuperClass); }
+    virtual AbstractType __stdcall whatAmI() const override { return AbsID; }        // 0x6CE020 (PowerDrainUpdate area)
+    virtual int32_t objectSize() const override { return sizeof(SuperClass); }       // 0x6CE020
 
-    void Reset();
-    bool SetOnHold(bool onHold);
-    bool Grant(bool oneTime, bool announce, bool onHold);
-    bool Lose();
-    bool IsPowered() const;
-    void Launch(const CellStruct& cell, bool isPlayer);
-    int8_t CanFire() const;
-    void SetReadiness(bool ready);
-    int8_t StopPreclickAnim(bool isPlayer);
-    int8_t ClickFire(bool isPlayer, const CellStruct& cell);
-    bool HasChargeProgressed(bool isPlayer);
-    int32_t GetCameoChargeState() const;
-    void SetCharge(int32_t percentage);
-    int32_t GetRechargeTime() const;
-    void SetRechargeTime(int32_t time);
-    void ResetRechargeTime();
-    const wchar_t* NameReadiness() const;
-    bool ShouldDrawProgress() const;
-    bool ShouldFlashTab() const;
+    void Reset();                                                                    // 0x6CE0B0
+    bool SetOnHold(bool onHold);                                                     // 0x6CB4D0
+    bool Grant(bool oneTime, bool announce, bool onHold);                            // 0x6CB560 (StartTimer)
+    bool Lose();                                                                     // 0x6CB7B0
+    bool IsPowered() const;                                                          // 0x6CB7B0 area
+    void Launch(const CellStruct& cell, bool isPlayer);                              // 0x6CC390
+    int8_t CanFire() const;                                                           // 0x6CC360
+    void SetReadiness(bool ready);                                                    // 0x6CB820
+    int8_t StopPreclickAnim(bool isPlayer);                                           // 0x6CB830
+    int8_t ClickFire(bool isPlayer, const CellStruct& cell);                          // 0x6CB920
+    bool HasChargeProgressed(bool isPlayer);                                          // 0x6CC080 (AnnounceReady)
+    int32_t GetCameoChargeState() const;                                              // 0x6CC080
+    void SetCharge(int32_t percentage);                                               // 0x6CC1E0
+    int32_t GetRechargeTime() const;                                                  // 0x6CC080
+    void SetRechargeTime(int32_t time);                                               // 0x6CC280
+    void ResetRechargeTime();                                                        // 0x6CC290
+    const wchar_t* NameReadiness() const;                                             // 0x6CC2B0
+    bool ShouldDrawProgress() const;                                                  // 0x6CDE90
+    bool ShouldFlashTab() const;                                                      // 0x6CDE90 area
 
-    SuperClass(SuperWeaponTypeClass* pSWType, HouseClass* pOwner) noexcept;
+    SuperClass(SuperWeaponTypeClass* pSWType, HouseClass* pOwner) noexcept;           // 0x6CAEC0 (Constructor)
+
+    // lifecycle
+    void Constructor(SuperWeaponTypeClass* pSWType, HouseClass* pOwner);              // 0x6CAEC0
+    void Construct();                                                                // 0x6CAF90
+    void CleanupMembers();                                                           // 0x6CB120
+    void StartTimer(int32_t duration);                                                // 0x6CB560
+    void ExecuteAction(Action action);                                                // 0x6CDFF0
+    void PowerDrainUpdate();                                                         // 0x6CE0B0
+    void AnnounceReady();                                                            // 0x6CC080
+    void LaunchPsychicDominator(const CellStruct& cell);                              // 0x53AE50
+    void CreateChronoAnim(const CellStruct& cell);                                    // 0x6CB3A0
+
+    // save/load
+    void LoadFromStream(IStream* stream);                                             // 0x6CDEF0
+    void SaveState(IStream* stream);                                                  // 0x6CDFD0
 
     int32_t                  CustomChargeTime;
     SuperWeaponTypeClass*    Type;
@@ -153,65 +176,69 @@ protected:
 class LightningStorm
 {
 public:
-    static double      CloudHeightFactor;
-    static CellStruct  Coords;
-    static HouseClass* Owner;
-    static int32_t     Deferment;
-    static int32_t     Duration;
-    static int32_t     StartTime;
-    static bool        Active;
-    static bool        TimeToEnd;
+    static double      CloudHeightFactor;           // 0xA8E7B8
+    static CellStruct  Coords;                      // 0xA8E7C0
+    static HouseClass* Owner;                       // 0xA8E7C8
+    static int32_t     Deferment;                   // 0xA8E7CC
+    static int32_t     Duration;                    // 0xA8E7D0
+    static int32_t     StartTime;                   // 0xA8E7D4
+    static bool        Active;                      // 0xA8E7D8
+    static bool        TimeToEnd;                   // 0xA8E7D9
 
-    static DynamicVectorClass<AnimClass*> CloudsPresent;
-    static DynamicVectorClass<AnimClass*> CloudsManifesting;
-    static DynamicVectorClass<AnimClass*> BoltsPresent;
+    static DynamicVectorClass<AnimClass*> CloudsPresent;     // 0xA8E7DC
+    static DynamicVectorClass<AnimClass*> CloudsManifesting; // 0xA8E7F4
+    static DynamicVectorClass<AnimClass*> BoltsPresent;      // 0xA8E80C
 
-    static void Start(int32_t duration, int32_t deferment, const CellStruct& cell, HouseClass* pOwner);
-    static void RequestStop();
-    static bool HasDeferment();
-    static void Strike(const CellStruct& cell);
-    static void Strike2(const CoordStruct& coords);
-    static void PrintMessage();
+    static void Start(int32_t duration, int32_t deferment, const CellStruct& cell, HouseClass* pOwner); // 0x539EB0
+    static void RequestStop();                                               // 0x53A090 (End)
+    static bool HasDeferment();                                              // 0x53A100 (IsActive)
+    static void Strike(const CellStruct& cell);                              // 0x53A140
+    static void Strike2(const CoordStruct& coords);                          // 0x53A300
+    static void PrintMessage();                                              // 0x539EB0 area
+    static void End();                                                       // 0x53A090
+    static bool IsActive();                                                  // 0x53A100
 };
 
 class PsyDom
 {
 public:
-    static PsychicDominatorStatus  Status;
-    static CellStruct              Coords;
-    static HouseClass*             Owner;
-    static AnimClass*              Anim;
+    static PsychicDominatorStatus  Status;   // 0xA8E824
+    static CellStruct              Coords;   // 0xA8E828
+    static HouseClass*             Owner;    // 0xA8E830
+    static AnimClass*              Anim;     // 0xA8E834
 
-    static void Start(HouseClass* pOwner, const CellStruct& coords);
-    static void updateLogic();
-    static void Fire();
-    static void PrintMessage();
-    static bool Active();
+    static void Start(HouseClass* pOwner, const CellStruct& coords); // 0x53AE50 area
+    static void updateLogic();                                        // 0x53AE50 area
+    static void Fire();                                               // 0x53B080
+    static void PrintMessage();                                       // 0x53B080 area
+    static bool Active();                                             // 0x53B400 (IsActive)
 };
 
 class ChronoScreenEffect
 {
 public:
-    static int32_t Status;
-    static int32_t Duration;
+    static int32_t Status;   // 0xA8E838
+    static int32_t Duration; // 0xA8E83C
 
-    static void Start(int32_t duration);
-    static void updateLogic();
-    static bool Active();
+    static void Start(int32_t duration);      // 0x753580 (DecrementCounter)
+    static void updateLogic();                 // 0x753580 area
+    static bool Active();                      // 0x753580 area
+    static void DecrementCounter();            // 0x753580
 };
 
 class NukeFlash
 {
 public:
-    static NukeFlashStatus  Status;
-    static int32_t          StartTime;
-    static int32_t          Duration;
+    static NukeFlashStatus  Status;     // 0xA8E840
+    static int32_t          StartTime;  // 0xA8E844
+    static int32_t          Duration;   // 0xA8E848
 
-    static void FadeIn();
-    static void FadeOut();
-    static bool IsFadingIn();
-    static bool IsFadingOut();
+    static void FadeIn();                // 0x53A110 (IsActive)
+    static void FadeOut();               // 0x53A120 (ProcessEffect)
+    static bool IsFadingIn();            // 0x53A110 (IsActive)
+    static bool IsFadingOut();           // 0x53A120 (ProcessEffect)
+    static bool IsActive();              // 0x53A110
+    static void ProcessEffect();         // 0x53A120
 };
 
 } // namespace gamemd
-

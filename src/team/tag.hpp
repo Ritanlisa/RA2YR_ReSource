@@ -103,7 +103,7 @@ public:
     virtual AbstractType __stdcall whatAmI() const override { return AbstractType::TagType; }
     virtual int objectSize() const override { return 0; }
     virtual void calculateChecksum(void* checksum) const {}
-    virtual int arrayIndex() const override { return 0; }
+    // arrayIndex() override inherited, conflicts with member
 
     using Flags = uint8_t;
 

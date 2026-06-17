@@ -24,22 +24,22 @@ public:
     static WeaponTypeClass* FindOrAllocate(const char* pID);
     static int FindIndex(const char* pID);
 
-    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override { return E_NOTIMPL; }
+    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override { return E_NOTIMPL; }  // 0x772c90 (as GetClassIdentifier)
 
     virtual HRESULT __stdcall Load(IStream* pStm) override { return S_OK; }
     virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override { return S_OK; }
 
-    virtual ~WeaponTypeClass() = default;
+    virtual ~WeaponTypeClass() = default;  // 0x7730f0 (as ddtor)
 
-    virtual AbstractType __stdcall whatAmI() const override { return AbstractType::WeaponType; }
-    virtual int objectSize() const override { return 0; }
+    virtual AbstractType __stdcall whatAmI() const override { return AbstractType::WeaponType; }  // 0x7730e0 (as GetTypeIdentifier)
+    virtual int objectSize() const override { return 0; }  // 0x7730d0 (as GetObjectSize)
 
-    void CalculateSpeed();
+    void CalculateSpeed();  // 0x7729f0
 
-    WeaponTypeClass(const char* pID = nullptr) noexcept;
+    WeaponTypeClass(const char* pID = nullptr) noexcept;  // 0x771c70 (as Constructor)
 
 protected:
-    WeaponTypeClass(noinit_t) noexcept;
+    WeaponTypeClass(noinit_t) noexcept;  // 0x771c70 (as Constructor)
 
 public:
     int AmbientDamage;

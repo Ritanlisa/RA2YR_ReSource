@@ -30,23 +30,23 @@ public:
 
     static DynamicVectorClass<WarheadTypeClass*>* Array;
     static WarheadTypeClass* Find(const char* pID);
-    static WarheadTypeClass* FindOrAllocate(const char* pID);
+    static WarheadTypeClass* FindOrAllocate(const char* pID);  // 0x75e3b0 (as FindOrCreate)
     static int FindIndex(const char* pID);
 
-    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override { return E_NOTIMPL; }
+    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override { return E_NOTIMPL; }  // 0x524ed0 (as GetClassIdentifier)
 
-    virtual HRESULT __stdcall Load(IStream* pStm) override { return S_OK; }
-    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override { return S_OK; }
+    virtual HRESULT __stdcall Load(IStream* pStm) override { return S_OK; }  // 0x524f00 (as LoadTypeData)
+    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override { return S_OK; }  // 0x524fb0 (as SaveToINI)
 
-    virtual ~WarheadTypeClass() = default;
+    virtual ~WarheadTypeClass() = default;  // 0x75e510 (as Destructor)
 
-    virtual AbstractType __stdcall whatAmI() const override { return AbstractType::WarheadType; }
-    virtual int objectSize() const override { return 0; }
+    virtual AbstractType __stdcall whatAmI() const override { return AbstractType::WarheadType; }  // 0x75e500 (as GetTypeIdentifier)
+    virtual int objectSize() const override { return 0; }  // 0x75e4f0 (as GetObjectSize)
 
-    WarheadTypeClass(const char* pID) noexcept;
+    WarheadTypeClass(const char* pID) noexcept;  // 0x75cec0 (as Construct)
 
 protected:
-    WarheadTypeClass(noinit_t) noexcept;
+    WarheadTypeClass(noinit_t) noexcept;  // 0x75cec0 (as Construct)
 
 public:
     double Deform;

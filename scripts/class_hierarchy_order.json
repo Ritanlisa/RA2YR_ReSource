@@ -1,0 +1,1642 @@
+{
+  "description": "Topological sort of RA2/YR class hierarchy from IDA vtable data and src/ header inheritance. Leaf classes (no dependents) first, root classes last. Used for completion ordering.",
+  "generated": "2026-06-17",
+  "sources": [
+    "src/**/*.hpp",
+    "docs/coverage.md",
+    "IDA vtable analysis"
+  ],
+  "topological_order": [
+    {
+      "class_name": "gamemd::HouseClass",
+      "full_path": "gamemd::HouseClass",
+      "depth_from_root": 2,
+      "hierarchy_root": "ra2::game::AbstractClass",
+      "parent_classes": [
+        "ra2::game::AbstractClass"
+      ],
+      "child_classes": [],
+      "header_file": "src/house/house.hpp",
+      "vtable_verified": true
+    },
+    {
+      "class_name": "gamemd::HouseTypeClass",
+      "full_path": "gamemd::HouseTypeClass",
+      "depth_from_root": 2,
+      "hierarchy_root": "ra2::game::AbstractClass",
+      "parent_classes": [
+        "ra2::game::AbstractClass"
+      ],
+      "child_classes": [],
+      "header_file": "src/house/house_type.hpp",
+      "vtable_verified": true
+    },
+    {
+      "class_name": "gamemd::SideClass",
+      "full_path": "gamemd::SideClass",
+      "depth_from_root": 2,
+      "hierarchy_root": "ra2::game::AbstractClass",
+      "parent_classes": [
+        "ra2::game::AbstractClass"
+      ],
+      "child_classes": [],
+      "header_file": "src/house/side.hpp",
+      "vtable_verified": true
+    },
+    {
+      "class_name": "gamemd::TeamClass",
+      "full_path": "gamemd::TeamClass",
+      "depth_from_root": 2,
+      "hierarchy_root": "ra2::game::AbstractClass",
+      "parent_classes": [
+        "ra2::game::AbstractClass"
+      ],
+      "child_classes": [],
+      "header_file": "src/team/team.hpp",
+      "vtable_verified": false
+    },
+    {
+      "class_name": "gamemd::TriggerClass",
+      "full_path": "gamemd::TriggerClass",
+      "depth_from_root": 2,
+      "hierarchy_root": "ra2::game::AbstractClass",
+      "parent_classes": [
+        "ra2::game::AbstractClass"
+      ],
+      "child_classes": [],
+      "header_file": "src/team/trigger.hpp",
+      "vtable_verified": false
+    },
+    {
+      "class_name": "gamemd::TriggerTypeClass",
+      "full_path": "gamemd::TriggerTypeClass",
+      "depth_from_root": 2,
+      "hierarchy_root": "ra2::game::AbstractClass",
+      "parent_classes": [
+        "ra2::game::AbstractClass"
+      ],
+      "child_classes": [],
+      "header_file": "src/team/trigger.hpp",
+      "vtable_verified": false
+    },
+    {
+      "class_name": "gamemd::TagClass",
+      "full_path": "gamemd::TagClass",
+      "depth_from_root": 2,
+      "hierarchy_root": "ra2::game::AbstractClass",
+      "parent_classes": [
+        "ra2::game::AbstractClass"
+      ],
+      "child_classes": [],
+      "header_file": "src/team/tag.hpp",
+      "vtable_verified": false
+    },
+    {
+      "class_name": "gamemd::TagTypeClass",
+      "full_path": "gamemd::TagTypeClass",
+      "depth_from_root": 2,
+      "hierarchy_root": "ra2::game::AbstractClass",
+      "parent_classes": [
+        "ra2::game::AbstractClass"
+      ],
+      "child_classes": [],
+      "header_file": "src/team/tag.hpp",
+      "vtable_verified": false
+    },
+    {
+      "class_name": "gamemd::ScriptClass",
+      "full_path": "gamemd::ScriptClass",
+      "depth_from_root": 2,
+      "hierarchy_root": "ra2::game::AbstractClass",
+      "parent_classes": [
+        "ra2::game::AbstractClass"
+      ],
+      "child_classes": [],
+      "header_file": "src/team/script.hpp",
+      "vtable_verified": false
+    },
+    {
+      "class_name": "gamemd::ScriptTypeClass",
+      "full_path": "gamemd::ScriptTypeClass",
+      "depth_from_root": 2,
+      "hierarchy_root": "ra2::game::AbstractClass",
+      "parent_classes": [
+        "ra2::game::AbstractClass"
+      ],
+      "child_classes": [],
+      "header_file": "src/team/script.hpp",
+      "vtable_verified": false
+    },
+    {
+      "class_name": "gamemd::CampaignClass",
+      "full_path": "gamemd::CampaignClass",
+      "depth_from_root": 2,
+      "hierarchy_root": "ra2::game::AbstractClass",
+      "parent_classes": [
+        "ra2::game::AbstractClass"
+      ],
+      "child_classes": [],
+      "header_file": "src/team/campaign.hpp",
+      "vtable_verified": false
+    },
+    {
+      "class_name": "gamemd::SuperClass",
+      "full_path": "gamemd::SuperClass",
+      "depth_from_root": 2,
+      "hierarchy_root": "ra2::game::AbstractClass",
+      "parent_classes": [
+        "ra2::game::AbstractClass"
+      ],
+      "child_classes": [],
+      "header_file": "src/misc/super_weapon.hpp",
+      "vtable_verified": false
+    },
+    {
+      "class_name": "gamemd::TacticalClass",
+      "full_path": "gamemd::TacticalClass",
+      "depth_from_root": 2,
+      "hierarchy_root": "ra2::game::AbstractClass",
+      "parent_classes": [
+        "ra2::game::AbstractClass"
+      ],
+      "child_classes": [],
+      "header_file": "src/system/tactical.hpp",
+      "vtable_verified": false
+    },
+    {
+      "class_name": "gamemd::FactoryClass",
+      "full_path": "gamemd::FactoryClass",
+      "depth_from_root": 2,
+      "hierarchy_root": "ra2::game::AbstractClass",
+      "parent_classes": [
+        "ra2::game::AbstractClass"
+      ],
+      "child_classes": [],
+      "header_file": "src/system/factory.hpp",
+      "vtable_verified": false
+    },
+    {
+      "class_name": "gamemd::LightSourceClass",
+      "full_path": "gamemd::LightSourceClass",
+      "depth_from_root": 2,
+      "hierarchy_root": "ra2::game::AbstractClass",
+      "parent_classes": [
+        "ra2::game::AbstractClass"
+      ],
+      "child_classes": [],
+      "header_file": "src/render/light_source.hpp",
+      "vtable_verified": false
+    },
+    {
+      "class_name": "gamemd::FoggedObjectClass",
+      "full_path": "gamemd::FoggedObjectClass",
+      "depth_from_root": 2,
+      "hierarchy_root": "ra2::game::AbstractClass",
+      "parent_classes": [
+        "ra2::game::AbstractClass"
+      ],
+      "child_classes": [],
+      "header_file": "src/render/fog.hpp",
+      "vtable_verified": false
+    },
+    {
+      "class_name": "gamemd::BulletClass",
+      "full_path": "gamemd::BulletClass",
+      "depth_from_root": 3,
+      "hierarchy_root": "ra2::game::AbstractClass",
+      "parent_classes": [
+        "ra2::game::ObjectClass"
+      ],
+      "child_classes": [],
+      "header_file": "src/entity/bullet.hpp",
+      "vtable_verified": true
+    },
+    {
+      "class_name": "gamemd::AnimClass",
+      "full_path": "gamemd::AnimClass",
+      "depth_from_root": 3,
+      "hierarchy_root": "ra2::game::AbstractClass",
+      "parent_classes": [
+        "ra2::game::ObjectClass"
+      ],
+      "child_classes": [],
+      "header_file": "src/entity/anim.hpp",
+      "vtable_verified": true
+    },
+    {
+      "class_name": "gamemd::ParticleClass",
+      "full_path": "gamemd::ParticleClass",
+      "depth_from_root": 3,
+      "hierarchy_root": "ra2::game::AbstractClass",
+      "parent_classes": [
+        "ra2::game::ObjectClass"
+      ],
+      "child_classes": [],
+      "header_file": "src/entity/particle.hpp",
+      "vtable_verified": false
+    },
+    {
+      "class_name": "gamemd::ParticleSystemClass",
+      "full_path": "gamemd::ParticleSystemClass",
+      "depth_from_root": 3,
+      "hierarchy_root": "ra2::game::AbstractClass",
+      "parent_classes": [
+        "ra2::game::ObjectClass"
+      ],
+      "child_classes": [],
+      "header_file": "src/entity/particle_system.hpp",
+      "vtable_verified": false
+    },
+    {
+      "class_name": "gamemd::OverlayClass",
+      "full_path": "gamemd::OverlayClass",
+      "depth_from_root": 3,
+      "hierarchy_root": "ra2::game::AbstractClass",
+      "parent_classes": [
+        "ra2::game::ObjectClass"
+      ],
+      "child_classes": [],
+      "header_file": "src/entity/overlay.hpp",
+      "vtable_verified": false
+    },
+    {
+      "class_name": "gamemd::SmudgeClass",
+      "full_path": "gamemd::SmudgeClass",
+      "depth_from_root": 3,
+      "hierarchy_root": "ra2::game::AbstractClass",
+      "parent_classes": [
+        "ra2::game::ObjectClass"
+      ],
+      "child_classes": [],
+      "header_file": "src/entity/smudge.hpp",
+      "vtable_verified": false
+    },
+    {
+      "class_name": "gamemd::TerrainClass",
+      "full_path": "gamemd::TerrainClass",
+      "depth_from_root": 3,
+      "hierarchy_root": "ra2::game::AbstractClass",
+      "parent_classes": [
+        "ra2::game::ObjectClass"
+      ],
+      "child_classes": [],
+      "header_file": "src/entity/terrain.hpp",
+      "vtable_verified": false
+    },
+    {
+      "class_name": "gamemd::TiberiumClass",
+      "full_path": "gamemd::TiberiumClass",
+      "depth_from_root": 3,
+      "hierarchy_root": "ra2::game::AbstractClass",
+      "parent_classes": [
+        "ra2::game::ObjectClass"
+      ],
+      "child_classes": [],
+      "header_file": "src/entity/tiberium.hpp",
+      "vtable_verified": false
+    },
+    {
+      "class_name": "gamemd::WaveClass",
+      "full_path": "gamemd::WaveClass",
+      "depth_from_root": 3,
+      "hierarchy_root": "ra2::game::AbstractClass",
+      "parent_classes": [
+        "ra2::game::ObjectClass"
+      ],
+      "child_classes": [],
+      "header_file": "src/entity/wave.hpp",
+      "vtable_verified": false
+    },
+    {
+      "class_name": "gamemd::VoxelAnimClass",
+      "full_path": "gamemd::VoxelAnimClass",
+      "depth_from_root": 3,
+      "hierarchy_root": "ra2::game::AbstractClass",
+      "parent_classes": [
+        "ra2::game::ObjectClass"
+      ],
+      "child_classes": [],
+      "header_file": "src/entity/voxel_anim.hpp",
+      "vtable_verified": false
+    },
+    {
+      "class_name": "gamemd::TubeClass",
+      "full_path": "gamemd::TubeClass",
+      "depth_from_root": 3,
+      "hierarchy_root": "ra2::game::AbstractClass",
+      "parent_classes": [
+        "ra2::game::ObjectClass"
+      ],
+      "child_classes": [],
+      "header_file": "src/entity/tube.hpp",
+      "vtable_verified": false
+    },
+    {
+      "class_name": "ra2::game::WarheadTypeClass",
+      "full_path": "ra2::game::WarheadTypeClass",
+      "depth_from_root": 3,
+      "hierarchy_root": "ra2::game::AbstractClass",
+      "parent_classes": [
+        "ra2::game::AbstractTypeClass"
+      ],
+      "child_classes": [],
+      "header_file": "src/type/type_classes.hpp",
+      "vtable_verified": true
+    },
+    {
+      "class_name": "ra2::game::WeaponTypeClass",
+      "full_path": "ra2::game::WeaponTypeClass",
+      "depth_from_root": 3,
+      "hierarchy_root": "ra2::game::AbstractClass",
+      "parent_classes": [
+        "ra2::game::AbstractTypeClass"
+      ],
+      "child_classes": [],
+      "header_file": "src/type/type_classes.hpp",
+      "vtable_verified": true
+    },
+    {
+      "class_name": "ra2::game::SuperWeaponTypeClass",
+      "full_path": "ra2::game::SuperWeaponTypeClass",
+      "depth_from_root": 3,
+      "hierarchy_root": "ra2::game::AbstractClass",
+      "parent_classes": [
+        "ra2::game::AbstractTypeClass"
+      ],
+      "child_classes": [],
+      "header_file": "src/type/type_classes.hpp",
+      "vtable_verified": true
+    },
+    {
+      "class_name": "gamemd::VoxelAnimTypeClass",
+      "full_path": "gamemd::VoxelAnimTypeClass",
+      "depth_from_root": 4,
+      "hierarchy_root": "ra2::game::AbstractClass",
+      "parent_classes": [
+        "ra2::game::ObjectTypeClass"
+      ],
+      "child_classes": [],
+      "header_file": "src/render/voxel.hpp",
+      "vtable_verified": false
+    },
+    {
+      "class_name": "ra2::game::AircraftTypeClass",
+      "full_path": "ra2::game::AircraftTypeClass",
+      "depth_from_root": 5,
+      "hierarchy_root": "ra2::game::AbstractClass",
+      "parent_classes": [
+        "ra2::game::TechnoTypeClass"
+      ],
+      "child_classes": [],
+      "header_file": "src/type/type_classes.hpp",
+      "vtable_verified": true
+    },
+    {
+      "class_name": "ra2::game::InfantryTypeClass",
+      "full_path": "ra2::game::InfantryTypeClass",
+      "depth_from_root": 5,
+      "hierarchy_root": "ra2::game::AbstractClass",
+      "parent_classes": [
+        "ra2::game::TechnoTypeClass"
+      ],
+      "child_classes": [],
+      "header_file": "src/type/type_classes.hpp",
+      "vtable_verified": true
+    },
+    {
+      "class_name": "ra2::game::UnitTypeClass",
+      "full_path": "ra2::game::UnitTypeClass",
+      "depth_from_root": 5,
+      "hierarchy_root": "ra2::game::AbstractClass",
+      "parent_classes": [
+        "ra2::game::TechnoTypeClass"
+      ],
+      "child_classes": [],
+      "header_file": "src/type/type_classes.hpp",
+      "vtable_verified": true
+    },
+    {
+      "class_name": "ra2::game::BuildingTypeClass",
+      "full_path": "ra2::game::BuildingTypeClass",
+      "depth_from_root": 5,
+      "hierarchy_root": "ra2::game::AbstractClass",
+      "parent_classes": [
+        "ra2::game::TechnoTypeClass"
+      ],
+      "child_classes": [],
+      "header_file": "src/type/type_classes.hpp",
+      "vtable_verified": true
+    },
+    {
+      "class_name": "gamemd::BuildingClass",
+      "full_path": "gamemd::BuildingClass",
+      "depth_from_root": 6,
+      "hierarchy_root": "ra2::game::AbstractClass",
+      "parent_classes": [
+        "ra2::game::TechnoClass"
+      ],
+      "child_classes": [],
+      "header_file": "src/structure/building.hpp",
+      "vtable_verified": true
+    },
+    {
+      "class_name": "gamemd::InfantryClass",
+      "full_path": "gamemd::InfantryClass",
+      "depth_from_root": 7,
+      "hierarchy_root": "ra2::game::AbstractClass",
+      "parent_classes": [
+        "ra2::game::FootClass"
+      ],
+      "child_classes": [],
+      "header_file": "src/structure/infantry.hpp",
+      "vtable_verified": true
+    },
+    {
+      "class_name": "gamemd::UnitClass",
+      "full_path": "gamemd::UnitClass",
+      "depth_from_root": 7,
+      "hierarchy_root": "ra2::game::AbstractClass",
+      "parent_classes": [
+        "ra2::game::FootClass"
+      ],
+      "child_classes": [],
+      "header_file": "src/structure/unit.hpp",
+      "vtable_verified": true
+    },
+    {
+      "class_name": "gamemd::AircraftClass",
+      "full_path": "gamemd::AircraftClass",
+      "depth_from_root": 7,
+      "hierarchy_root": "ra2::game::AbstractClass",
+      "parent_classes": [
+        "ra2::game::FootClass",
+        "gamemd::FlasherClass"
+      ],
+      "child_classes": [],
+      "header_file": "src/structure/aircraft.hpp",
+      "vtable_verified": true
+    },
+    {
+      "class_name": "ra2::game::TechnoTypeClass",
+      "full_path": "ra2::game::TechnoTypeClass",
+      "depth_from_root": 4,
+      "hierarchy_root": "ra2::game::AbstractClass",
+      "parent_classes": [
+        "ra2::game::ObjectTypeClass"
+      ],
+      "child_classes": [
+        "ra2::game::BuildingTypeClass",
+        "ra2::game::UnitTypeClass",
+        "ra2::game::InfantryTypeClass",
+        "ra2::game::AircraftTypeClass"
+      ],
+      "header_file": "src/type/type_classes.hpp",
+      "vtable_verified": true
+    },
+    {
+      "class_name": "ra2::game::FootClass",
+      "full_path": "ra2::game::FootClass",
+      "depth_from_root": 6,
+      "hierarchy_root": "ra2::game::AbstractClass",
+      "parent_classes": [
+        "ra2::game::TechnoClass"
+      ],
+      "child_classes": [
+        "gamemd::InfantryClass",
+        "gamemd::UnitClass",
+        "gamemd::AircraftClass"
+      ],
+      "header_file": "src/object/foot.hpp",
+      "vtable_verified": true
+    },
+    {
+      "class_name": "gamemd::FlasherClass",
+      "full_path": "gamemd::FlasherClass",
+      "depth_from_root": 7,
+      "hierarchy_root": "ra2::game::AbstractClass (via IFlyControl)",
+      "parent_classes": [
+        "gamemd::StageClass"
+      ],
+      "child_classes": [
+        "gamemd::AircraftClass"
+      ],
+      "header_file": "src/structure/aircraft.hpp",
+      "vtable_verified": false,
+      "note": "MI side branch: inherits from StageClass→IFlyControl→IUnknown"
+    },
+    {
+      "class_name": "ra2::game::ObjectTypeClass",
+      "full_path": "ra2::game::ObjectTypeClass",
+      "depth_from_root": 3,
+      "hierarchy_root": "ra2::game::AbstractClass",
+      "parent_classes": [
+        "ra2::game::AbstractTypeClass"
+      ],
+      "child_classes": [
+        "ra2::game::TechnoTypeClass"
+      ],
+      "header_file": "src/type/type_classes.hpp",
+      "vtable_verified": true
+    },
+    {
+      "class_name": "ra2::game::TechnoClass",
+      "full_path": "ra2::game::TechnoClass",
+      "depth_from_root": 5,
+      "hierarchy_root": "ra2::game::AbstractClass",
+      "parent_classes": [
+        "ra2::game::RadioClass"
+      ],
+      "child_classes": [
+        "ra2::game::FootClass",
+        "gamemd::BuildingClass"
+      ],
+      "header_file": "src/object/techno.hpp",
+      "vtable_verified": true
+    },
+    {
+      "class_name": "gamemd::StageClass",
+      "full_path": "gamemd::StageClass",
+      "depth_from_root": 6,
+      "hierarchy_root": "IFlyControl (IUnknown)",
+      "parent_classes": [
+        "gamemd::IFlyControl"
+      ],
+      "child_classes": [
+        "gamemd::FlasherClass"
+      ],
+      "header_file": "src/structure/aircraft.hpp",
+      "vtable_verified": false
+    },
+    {
+      "class_name": "ra2::game::AbstractTypeClass",
+      "full_path": "ra2::game::AbstractTypeClass",
+      "depth_from_root": 2,
+      "hierarchy_root": "ra2::game::AbstractClass",
+      "parent_classes": [
+        "ra2::game::AbstractClass"
+      ],
+      "child_classes": [
+        "ra2::game::ObjectTypeClass",
+        "ra2::game::WarheadTypeClass",
+        "ra2::game::WeaponTypeClass",
+        "ra2::game::SuperWeaponTypeClass"
+      ],
+      "header_file": "src/type/type_classes.hpp",
+      "vtable_verified": true
+    },
+    {
+      "class_name": "ra2::game::RadioClass",
+      "full_path": "ra2::game::RadioClass",
+      "depth_from_root": 4,
+      "hierarchy_root": "ra2::game::AbstractClass",
+      "parent_classes": [
+        "ra2::game::MissionClass"
+      ],
+      "child_classes": [
+        "ra2::game::TechnoClass"
+      ],
+      "header_file": "src/object/radio.hpp",
+      "vtable_verified": true
+    },
+    {
+      "class_name": "ra2::game::MissionClass",
+      "full_path": "ra2::game::MissionClass",
+      "depth_from_root": 3,
+      "hierarchy_root": "ra2::game::AbstractClass",
+      "parent_classes": [
+        "ra2::game::ObjectClass"
+      ],
+      "child_classes": [
+        "ra2::game::RadioClass"
+      ],
+      "header_file": "src/object/mission.hpp",
+      "vtable_verified": true
+    },
+    {
+      "class_name": "ra2::game::ObjectClass",
+      "full_path": "ra2::game::ObjectClass",
+      "depth_from_root": 2,
+      "hierarchy_root": "ra2::game::AbstractClass",
+      "parent_classes": [
+        "ra2::game::AbstractClass"
+      ],
+      "child_classes": [
+        "ra2::game::MissionClass",
+        "gamemd::BulletClass",
+        "gamemd::AnimClass",
+        "gamemd::ParticleClass",
+        "gamemd::ParticleSystemClass",
+        "gamemd::OverlayClass",
+        "gamemd::SmudgeClass",
+        "gamemd::TerrainClass",
+        "gamemd::TiberiumClass",
+        "gamemd::WaveClass",
+        "gamemd::VoxelAnimClass",
+        "gamemd::TubeClass"
+      ],
+      "header_file": "src/object/object.hpp",
+      "vtable_verified": true
+    },
+    {
+      "class_name": "ra2::game::AbstractClass",
+      "full_path": "ra2::game::AbstractClass",
+      "depth_from_root": 1,
+      "hierarchy_root": "ra2::game::AbstractClass",
+      "parent_classes": [],
+      "child_classes": [
+        "ra2::game::ObjectClass",
+        "ra2::game::AbstractTypeClass",
+        "gamemd::HouseClass",
+        "gamemd::HouseTypeClass",
+        "gamemd::SideClass",
+        "gamemd::TeamClass",
+        "gamemd::TriggerClass",
+        "gamemd::TriggerTypeClass",
+        "gamemd::TagClass",
+        "gamemd::TagTypeClass",
+        "gamemd::ScriptClass",
+        "gamemd::ScriptTypeClass",
+        "gamemd::CampaignClass",
+        "gamemd::SuperClass",
+        "gamemd::TacticalClass",
+        "gamemd::FactoryClass",
+        "gamemd::LightSourceClass",
+        "gamemd::FoggedObjectClass"
+      ],
+      "header_file": "src/object/abstract.hpp",
+      "vtable_verified": true
+    }
+  ],
+  "independent_hierarchies": [
+    {
+      "name": "GScreenClass Screen/Display/UI hierarchy",
+      "description": "Standalone hierarchy for screen management, radar, power bar, sidebar. Not part of AbstractClass COM tree.",
+      "classes": [
+        {
+          "class_name": "gamemd::TabClass",
+          "depth_from_root": 6,
+          "parent_classes": [
+            "gamemd::SidebarClass"
+          ],
+          "child_classes": [],
+          "header_file": "src/ui/tab.hpp"
+        },
+        {
+          "class_name": "gamemd::MouseClass",
+          "depth_from_root": 4,
+          "parent_classes": [
+            "gamemd::RadarClass"
+          ],
+          "child_classes": [],
+          "header_file": "src/ui/mouse.hpp"
+        },
+        {
+          "class_name": "gamemd::SidebarClass",
+          "depth_from_root": 5,
+          "parent_classes": [
+            "gamemd::PowerClass"
+          ],
+          "child_classes": [
+            "gamemd::TabClass"
+          ],
+          "header_file": "src/ui/sidebar.hpp"
+        },
+        {
+          "class_name": "gamemd::PowerClass",
+          "depth_from_root": 4,
+          "parent_classes": [
+            "gamemd::RadarClass"
+          ],
+          "child_classes": [
+            "gamemd::SidebarClass"
+          ],
+          "header_file": "src/ui/power.hpp"
+        },
+        {
+          "class_name": "gamemd::RadarClass",
+          "depth_from_root": 3,
+          "parent_classes": [
+            "gamemd::DisplayClass"
+          ],
+          "child_classes": [
+            "gamemd::PowerClass",
+            "gamemd::MouseClass"
+          ],
+          "header_file": "src/system/radar.hpp"
+        },
+        {
+          "class_name": "gamemd::DisplayClass",
+          "depth_from_root": 2,
+          "parent_classes": [
+            "gamemd::MapClass"
+          ],
+          "child_classes": [
+            "gamemd::RadarClass"
+          ],
+          "header_file": "src/render/display.hpp"
+        },
+        {
+          "class_name": "gamemd::MapClass",
+          "depth_from_root": 2,
+          "parent_classes": [
+            "gamemd::GScreenClass"
+          ],
+          "child_classes": [
+            "gamemd::DisplayClass"
+          ],
+          "header_file": "src/system/map.hpp",
+          "note": "MapClass also exists in src/render/display.hpp (same hierarchy)"
+        },
+        {
+          "class_name": "gamemd::GScreenClass",
+          "depth_from_root": 0,
+          "parent_classes": [],
+          "child_classes": [
+            "gamemd::MapClass"
+          ],
+          "header_file": "src/ui/g_screen.hpp",
+          "note": "Also defined in src/render/display.hpp as forward decl"
+        }
+      ]
+    },
+    {
+      "name": "Surface rendering hierarchy",
+      "description": "DirectDraw surface wrapper hierarchy. Standalone, not part of AbstractClass tree.",
+      "classes": [
+        {
+          "class_name": "gamemd::DSurface",
+          "depth_from_root": 3,
+          "parent_classes": [
+            "gamemd::XSurface"
+          ],
+          "child_classes": [],
+          "header_file": "src/render/surface.hpp"
+        },
+        {
+          "class_name": "gamemd::BSurface",
+          "depth_from_root": 3,
+          "parent_classes": [
+            "gamemd::XSurface"
+          ],
+          "child_classes": [],
+          "header_file": "src/render/surface.hpp"
+        },
+        {
+          "class_name": "gamemd::XSurface",
+          "depth_from_root": 2,
+          "parent_classes": [
+            "gamemd::Surface"
+          ],
+          "child_classes": [
+            "gamemd::BSurface",
+            "gamemd::DSurface"
+          ],
+          "header_file": "src/render/surface.hpp"
+        },
+        {
+          "class_name": "gamemd::Surface",
+          "depth_from_root": 0,
+          "parent_classes": [],
+          "child_classes": [
+            "gamemd::XSurface"
+          ],
+          "header_file": "src/render/surface.hpp"
+        }
+      ]
+    },
+    {
+      "name": "Locomotion COM hierarchy",
+      "description": "COM-based locomotion system. Root: LocomotionClass (IPersistStream + ILocomotion). Thread-safe COM objects.",
+      "classes": [
+        {
+          "class_name": "gamemd::TeleportLocomotionClass",
+          "depth_from_root": 2,
+          "parent_classes": [
+            "gamemd::LocomotionClass",
+            "gamemd::IPiggyback"
+          ],
+          "child_classes": [],
+          "header_file": "src/misc/locomotion.hpp"
+        },
+        {
+          "class_name": "gamemd::DriveLocomotionClass",
+          "depth_from_root": 2,
+          "parent_classes": [
+            "gamemd::LocomotionClass"
+          ],
+          "child_classes": [],
+          "header_file": "src/misc/locomotion.hpp"
+        },
+        {
+          "class_name": "gamemd::HoverLocomotionClass",
+          "depth_from_root": 2,
+          "parent_classes": [
+            "gamemd::LocomotionClass"
+          ],
+          "child_classes": [],
+          "header_file": "src/misc/locomotion.hpp"
+        },
+        {
+          "class_name": "gamemd::WalkLocomotionClass",
+          "depth_from_root": 2,
+          "parent_classes": [
+            "gamemd::LocomotionClass"
+          ],
+          "child_classes": [],
+          "header_file": "src/misc/locomotion.hpp"
+        },
+        {
+          "class_name": "gamemd::FlyLocomotionClass",
+          "depth_from_root": 2,
+          "parent_classes": [
+            "gamemd::LocomotionClass"
+          ],
+          "child_classes": [],
+          "header_file": "src/misc/locomotion.hpp"
+        },
+        {
+          "class_name": "gamemd::RocketLocomotionClass",
+          "depth_from_root": 2,
+          "parent_classes": [
+            "gamemd::LocomotionClass"
+          ],
+          "child_classes": [],
+          "header_file": "src/misc/locomotion.hpp"
+        },
+        {
+          "class_name": "gamemd::JumpjetLocomotionClass",
+          "depth_from_root": 2,
+          "parent_classes": [
+            "gamemd::LocomotionClass"
+          ],
+          "child_classes": [],
+          "header_file": "src/misc/locomotion.hpp"
+        },
+        {
+          "class_name": "gamemd::ShipLocomotionClass",
+          "depth_from_root": 2,
+          "parent_classes": [
+            "gamemd::LocomotionClass"
+          ],
+          "child_classes": [],
+          "header_file": "src/misc/locomotion.hpp"
+        },
+        {
+          "class_name": "gamemd::TunnelLocomotionClass",
+          "depth_from_root": 2,
+          "parent_classes": [
+            "gamemd::LocomotionClass"
+          ],
+          "child_classes": [],
+          "header_file": "src/misc/locomotion.hpp"
+        },
+        {
+          "class_name": "gamemd::MechLocomotionClass",
+          "depth_from_root": 2,
+          "parent_classes": [
+            "gamemd::LocomotionClass"
+          ],
+          "child_classes": [],
+          "header_file": "src/misc/locomotion.hpp"
+        },
+        {
+          "class_name": "gamemd::DropPodLocomotionClass",
+          "depth_from_root": 2,
+          "parent_classes": [
+            "gamemd::LocomotionClass"
+          ],
+          "child_classes": [],
+          "header_file": "src/misc/locomotion.hpp"
+        },
+        {
+          "class_name": "gamemd::LocomotionClass",
+          "depth_from_root": 0,
+          "parent_classes": [
+            "gamemd::IPersistStream",
+            "gamemd::ILocomotion"
+          ],
+          "child_classes": [
+            "gamemd::DriveLocomotionClass",
+            "gamemd::HoverLocomotionClass",
+            "gamemd::WalkLocomotionClass",
+            "gamemd::FlyLocomotionClass",
+            "gamemd::RocketLocomotionClass",
+            "gamemd::JumpjetLocomotionClass",
+            "gamemd::ShipLocomotionClass",
+            "gamemd::TeleportLocomotionClass",
+            "gamemd::TunnelLocomotionClass",
+            "gamemd::MechLocomotionClass",
+            "gamemd::DropPodLocomotionClass"
+          ],
+          "header_file": "src/misc/locomotion.hpp"
+        }
+      ]
+    },
+    {
+      "name": "File system hierarchy",
+      "description": "File I/O class chain. Standalone, not part of AbstractClass tree.",
+      "classes": [
+        {
+          "class_name": "gamemd::CCFileClass",
+          "depth_from_root": 4,
+          "parent_classes": [
+            "gamemd::CDFileClass"
+          ],
+          "child_classes": [],
+          "header_file": "src/system/cc_file.hpp"
+        },
+        {
+          "class_name": "gamemd::CDFileClass",
+          "depth_from_root": 3,
+          "parent_classes": [
+            "gamemd::BufferIOFileClass"
+          ],
+          "child_classes": [
+            "gamemd::CCFileClass"
+          ],
+          "header_file": "src/system/cd_file.hpp"
+        },
+        {
+          "class_name": "gamemd::BufferIOFileClass",
+          "depth_from_root": 2,
+          "parent_classes": [
+            "gamemd::RawFileClass"
+          ],
+          "child_classes": [
+            "gamemd::CDFileClass"
+          ],
+          "header_file": "src/system/buffer_io_file.hpp"
+        },
+        {
+          "class_name": "gamemd::RawFileClass",
+          "depth_from_root": 1,
+          "parent_classes": [
+            "gamemd::FileClass"
+          ],
+          "child_classes": [
+            "gamemd::BufferIOFileClass"
+          ],
+          "header_file": "src/system/file_class.hpp"
+        },
+        {
+          "class_name": "gamemd::FileClass",
+          "depth_from_root": 0,
+          "parent_classes": [],
+          "child_classes": [
+            "gamemd::RawFileClass"
+          ],
+          "header_file": "src/system/file_class.hpp"
+        }
+      ]
+    },
+    {
+      "name": "Movie/Video hierarchy",
+      "description": "Video playback wrapper hierarchy. Standalone.",
+      "classes": [
+        {
+          "class_name": "gamemd::BinkMovieHandle",
+          "depth_from_root": 1,
+          "parent_classes": [
+            "gamemd::MovieHandle"
+          ],
+          "child_classes": [],
+          "header_file": "src/render/movie.hpp"
+        },
+        {
+          "class_name": "gamemd::VQMovieHandle",
+          "depth_from_root": 1,
+          "parent_classes": [
+            "gamemd::MovieHandle"
+          ],
+          "child_classes": [],
+          "header_file": "src/render/movie.hpp"
+        },
+        {
+          "class_name": "gamemd::MovieHandle",
+          "depth_from_root": 0,
+          "parent_classes": [],
+          "child_classes": [
+            "gamemd::BinkMovieHandle",
+            "gamemd::VQMovieHandle"
+          ],
+          "header_file": "src/render/movie.hpp"
+        }
+      ]
+    },
+    {
+      "name": "Network connection hierarchy",
+      "description": "Multiplayer connection hierarchy. Standalone.",
+      "classes": [
+        {
+          "class_name": "gamemd::IPXConnClass",
+          "depth_from_root": 1,
+          "parent_classes": [
+            "gamemd::ConnectionClass"
+          ],
+          "child_classes": [],
+          "header_file": "src/network/connection.hpp"
+        },
+        {
+          "class_name": "gamemd::ModemConnectionClass",
+          "depth_from_root": 1,
+          "parent_classes": [
+            "gamemd::ConnectionClass"
+          ],
+          "child_classes": [],
+          "header_file": "src/network/connection.hpp"
+        },
+        {
+          "class_name": "gamemd::NullModemClass",
+          "depth_from_root": 1,
+          "parent_classes": [
+            "gamemd::ConnectionClass"
+          ],
+          "child_classes": [],
+          "header_file": "src/network/connection.hpp"
+        },
+        {
+          "class_name": "gamemd::ConnectionClass",
+          "depth_from_root": 0,
+          "parent_classes": [],
+          "child_classes": [
+            "gamemd::IPXConnClass",
+            "gamemd::ModemConnectionClass",
+            "gamemd::NullModemClass"
+          ],
+          "header_file": "src/network/connection.hpp"
+        }
+      ]
+    },
+    {
+      "name": "Multiplayer game mode hierarchy",
+      "description": "Multiplayer game mode type hierarchy. Standalone.",
+      "classes": [
+        {
+          "class_name": "gamemd::MPBattleClass",
+          "depth_from_root": 1,
+          "parent_classes": [
+            "gamemd::MPGameModeClass"
+          ],
+          "child_classes": [],
+          "header_file": "src/network/multiplayer.hpp"
+        },
+        {
+          "class_name": "gamemd::MPFreeForAllClass",
+          "depth_from_root": 1,
+          "parent_classes": [
+            "gamemd::MPGameModeClass"
+          ],
+          "child_classes": [],
+          "header_file": "src/network/multiplayer.hpp"
+        },
+        {
+          "class_name": "gamemd::MPUnholyAllianceClass",
+          "depth_from_root": 1,
+          "parent_classes": [
+            "gamemd::MPGameModeClass"
+          ],
+          "child_classes": [],
+          "header_file": "src/network/multiplayer.hpp"
+        },
+        {
+          "class_name": "gamemd::MPSiegeClass",
+          "depth_from_root": 1,
+          "parent_classes": [
+            "gamemd::MPGameModeClass"
+          ],
+          "child_classes": [],
+          "header_file": "src/network/multiplayer.hpp"
+        },
+        {
+          "class_name": "gamemd::MPMegawealthClass",
+          "depth_from_root": 1,
+          "parent_classes": [
+            "gamemd::MPGameModeClass"
+          ],
+          "child_classes": [],
+          "header_file": "src/network/multiplayer.hpp"
+        },
+        {
+          "class_name": "gamemd::MPManBattleClass",
+          "depth_from_root": 1,
+          "parent_classes": [
+            "gamemd::MPGameModeClass"
+          ],
+          "child_classes": [],
+          "header_file": "src/network/multiplayer.hpp"
+        },
+        {
+          "class_name": "gamemd::MPGameModeClass",
+          "depth_from_root": 0,
+          "parent_classes": [],
+          "child_classes": [
+            "gamemd::MPBattleClass",
+            "gamemd::MPFreeForAllClass",
+            "gamemd::MPUnholyAllianceClass",
+            "gamemd::MPSiegeClass",
+            "gamemd::MPMegawealthClass",
+            "gamemd::MPManBattleClass"
+          ],
+          "header_file": "src/network/multiplayer.hpp"
+        }
+      ]
+    },
+    {
+      "name": "INI reader hierarchy",
+      "description": "INI file parsing hierarchy. Standalone.",
+      "classes": [
+        {
+          "class_name": "gamemd::CCINIClass",
+          "depth_from_root": 1,
+          "parent_classes": [
+            "INIClass"
+          ],
+          "child_classes": [],
+          "header_file": "src/system/ini_class.hpp"
+        }
+      ]
+    },
+    {
+      "name": "MIX file hierarchy",
+      "description": "MIX archive file hierarchy. Standalone.",
+      "classes": [
+        {
+          "class_name": "gamemd::MixFileClass",
+          "depth_from_root": 1,
+          "parent_classes": [
+            "gamemd::Node<MixFileClass*>"
+          ],
+          "child_classes": [],
+          "header_file": "src/system/mix_file.hpp"
+        }
+      ]
+    },
+    {
+      "name": "Color conversion hierarchy",
+      "description": "Palette/color conversion hierarchy. Standalone.",
+      "classes": [
+        {
+          "class_name": "gamemd::LightConvertClass",
+          "depth_from_root": 1,
+          "parent_classes": [
+            "gamemd::ConvertClass"
+          ],
+          "child_classes": [],
+          "header_file": "src/system/convert_class.hpp"
+        },
+        {
+          "class_name": "gamemd::ConvertClass",
+          "depth_from_root": 0,
+          "parent_classes": [],
+          "child_classes": [
+            "gamemd::LightConvertClass"
+          ],
+          "header_file": "src/system/convert_class.hpp"
+        }
+      ]
+    },
+    {
+      "name": "SHP structure hierarchy",
+      "description": "SHP image file hierarchy. Standalone.",
+      "classes": [
+        {
+          "class_name": "gamemd::SHPFile",
+          "depth_from_root": 1,
+          "parent_classes": [
+            "gamemd::SHPStruct"
+          ],
+          "child_classes": [],
+          "header_file": "src/render/shp_struct.hpp"
+        },
+        {
+          "class_name": "gamemd::SHPReference",
+          "depth_from_root": 1,
+          "parent_classes": [
+            "gamemd::SHPStruct"
+          ],
+          "child_classes": [],
+          "header_file": "src/render/shp_struct.hpp"
+        },
+        {
+          "class_name": "gamemd::SHPStruct",
+          "depth_from_root": 0,
+          "parent_classes": [],
+          "child_classes": [
+            "gamemd::SHPFile",
+            "gamemd::SHPReference"
+          ],
+          "header_file": "src/render/shp_struct.hpp"
+        }
+      ]
+    },
+    {
+      "name": "UI Gadget hierarchy",
+      "description": "UI widget/gadget hierarchy. Standalone.",
+      "classes": [
+        {
+          "class_name": "gamemd::TextButtonClass",
+          "depth_from_root": 1,
+          "parent_classes": [
+            "gamemd::GadgetClass"
+          ],
+          "child_classes": [],
+          "header_file": "src/ui/gadget.hpp"
+        },
+        {
+          "class_name": "gamemd::LabelClass",
+          "depth_from_root": 1,
+          "parent_classes": [
+            "gamemd::GadgetClass"
+          ],
+          "child_classes": [],
+          "header_file": "src/ui/gadget.hpp"
+        },
+        {
+          "class_name": "gamemd::ShpButtonClass",
+          "depth_from_root": 1,
+          "parent_classes": [
+            "gamemd::GadgetClass"
+          ],
+          "child_classes": [],
+          "header_file": "src/ui/gadget.hpp"
+        },
+        {
+          "class_name": "gamemd::GadgetClass",
+          "depth_from_root": 0,
+          "parent_classes": [],
+          "child_classes": [
+            "gamemd::TextButtonClass",
+            "gamemd::LabelClass",
+            "gamemd::ShpButtonClass"
+          ],
+          "header_file": "src/ui/gadget.hpp"
+        }
+      ]
+    },
+    {
+      "name": "Command hierarchy",
+      "description": "Command class hierarchy for player actions. Standalone.",
+      "classes": [
+        {
+          "class_name": "gamemd::MoveCommandClass",
+          "depth_from_root": 1,
+          "parent_classes": [
+            "gamemd::CommandClass"
+          ],
+          "child_classes": [],
+          "header_file": "src/ui/command_class.hpp"
+        },
+        {
+          "class_name": "gamemd::AttackCommandClass",
+          "depth_from_root": 1,
+          "parent_classes": [
+            "gamemd::CommandClass"
+          ],
+          "child_classes": [],
+          "header_file": "src/ui/command_class.hpp"
+        },
+        {
+          "class_name": "gamemd::DeployCommandClass",
+          "depth_from_root": 1,
+          "parent_classes": [
+            "gamemd::CommandClass"
+          ],
+          "child_classes": [],
+          "header_file": "src/ui/command_class.hpp"
+        },
+        {
+          "class_name": "gamemd::StopCommandClass",
+          "depth_from_root": 1,
+          "parent_classes": [
+            "gamemd::CommandClass"
+          ],
+          "child_classes": [],
+          "header_file": "src/ui/command_class.hpp"
+        },
+        {
+          "class_name": "gamemd::GuardCommandClass",
+          "depth_from_root": 1,
+          "parent_classes": [
+            "gamemd::CommandClass"
+          ],
+          "child_classes": [],
+          "header_file": "src/ui/command_class.hpp"
+        },
+        {
+          "class_name": "gamemd::CommandClass",
+          "depth_from_root": 0,
+          "parent_classes": [],
+          "child_classes": [
+            "gamemd::MoveCommandClass",
+            "gamemd::AttackCommandClass",
+            "gamemd::DeployCommandClass",
+            "gamemd::StopCommandClass",
+            "gamemd::GuardCommandClass"
+          ],
+          "header_file": "src/ui/command_class.hpp"
+        }
+      ]
+    },
+    {
+      "name": "CellClass",
+      "description": "Map cell class. Standalone (no inheritance from AbstractClass).",
+      "classes": [
+        {
+          "class_name": "gamemd::CellClass",
+          "depth_from_root": 0,
+          "parent_classes": [],
+          "child_classes": [],
+          "header_file": "src/system/cell.hpp",
+          "note": "Standalone class, not part of any COM hierarchy. Own whatAmI() returning AbstractType::Cell."
+        }
+      ]
+    },
+    {
+      "name": "Blitter hierarchy",
+      "description": "Pixel blitter template hierarchy. Standalone.",
+      "classes": [
+        {
+          "class_name": "gamemd::BlitTransXlatZReadWrite",
+          "depth_from_root": 5,
+          "parent_classes": [
+            "gamemd::BlitTransXlatZRead<T>"
+          ],
+          "child_classes": [],
+          "header_file": "src/render/blitter.hpp"
+        },
+        {
+          "class_name": "gamemd::RLEBlitTransXlatZRead",
+          "depth_from_root": 4,
+          "parent_classes": [
+            "gamemd::RLEBlitTransXlat<T>"
+          ],
+          "child_classes": [],
+          "header_file": "src/render/blitter.hpp"
+        },
+        {
+          "class_name": "gamemd::RLEBlitTransXlatAlpha",
+          "depth_from_root": 4,
+          "parent_classes": [
+            "gamemd::RLEBlitTransXlat<T>"
+          ],
+          "child_classes": [],
+          "header_file": "src/render/blitter.hpp"
+        },
+        {
+          "class_name": "gamemd::RLEBlitTransXlat",
+          "depth_from_root": 3,
+          "parent_classes": [
+            "gamemd::RLEBlitTrans<T>"
+          ],
+          "child_classes": [
+            "gamemd::RLEBlitTransXlatZRead",
+            "gamemd::RLEBlitTransXlatAlpha"
+          ],
+          "header_file": "src/render/blitter.hpp"
+        },
+        {
+          "class_name": "gamemd::RLEBlitTrans",
+          "depth_from_root": 2,
+          "parent_classes": [
+            "gamemd::RLEBlitter<T>"
+          ],
+          "child_classes": [
+            "gamemd::RLEBlitTransXlat"
+          ],
+          "header_file": "src/render/blitter.hpp"
+        },
+        {
+          "class_name": "gamemd::RLEBlitter",
+          "depth_from_root": 1,
+          "parent_classes": [
+            "gamemd::RLEBlitterCore"
+          ],
+          "child_classes": [
+            "gamemd::RLEBlitTrans"
+          ],
+          "header_file": "src/render/blitter.hpp"
+        },
+        {
+          "class_name": "gamemd::BlitTransWarp",
+          "depth_from_root": 2,
+          "parent_classes": [
+            "gamemd::BlitTrans<T>"
+          ],
+          "child_classes": [],
+          "header_file": "src/render/blitter.hpp"
+        },
+        {
+          "class_name": "gamemd::BlitTransRemap",
+          "depth_from_root": 3,
+          "parent_classes": [
+            "gamemd::BlitTransXlat<T>"
+          ],
+          "child_classes": [],
+          "header_file": "src/render/blitter.hpp"
+        },
+        {
+          "class_name": "gamemd::BlitTransLucent25",
+          "depth_from_root": 3,
+          "parent_classes": [
+            "gamemd::BlitTransXlat<T>"
+          ],
+          "child_classes": [],
+          "header_file": "src/render/blitter.hpp"
+        },
+        {
+          "class_name": "gamemd::BlitTransLucent50",
+          "depth_from_root": 3,
+          "parent_classes": [
+            "gamemd::BlitTransXlat<T>"
+          ],
+          "child_classes": [],
+          "header_file": "src/render/blitter.hpp"
+        },
+        {
+          "class_name": "gamemd::BlitTransLucent75",
+          "depth_from_root": 3,
+          "parent_classes": [
+            "gamemd::BlitTransXlat<T>"
+          ],
+          "child_classes": [],
+          "header_file": "src/render/blitter.hpp"
+        },
+        {
+          "class_name": "gamemd::BlitTransDarken",
+          "depth_from_root": 3,
+          "parent_classes": [
+            "gamemd::BlitTransXlat<T>"
+          ],
+          "child_classes": [],
+          "header_file": "src/render/blitter.hpp"
+        },
+        {
+          "class_name": "gamemd::BlitTransXlatAlpha",
+          "depth_from_root": 3,
+          "parent_classes": [
+            "gamemd::BlitTransXlat<T>"
+          ],
+          "child_classes": [],
+          "header_file": "src/render/blitter.hpp"
+        },
+        {
+          "class_name": "gamemd::BlitTransXlatZRead",
+          "depth_from_root": 3,
+          "parent_classes": [
+            "gamemd::BlitTransXlat<T>"
+          ],
+          "child_classes": [
+            "gamemd::BlitTransXlatZReadWrite"
+          ],
+          "header_file": "src/render/blitter.hpp"
+        },
+        {
+          "class_name": "gamemd::BlitTransXlat",
+          "depth_from_root": 2,
+          "parent_classes": [
+            "gamemd::BlitTrans<T>"
+          ],
+          "child_classes": [
+            "gamemd::BlitTransRemap",
+            "gamemd::BlitTransLucent25",
+            "gamemd::BlitTransLucent50",
+            "gamemd::BlitTransLucent75",
+            "gamemd::BlitTransDarken",
+            "gamemd::BlitTransXlatAlpha",
+            "gamemd::BlitTransXlatZRead"
+          ],
+          "header_file": "src/render/blitter.hpp"
+        },
+        {
+          "class_name": "gamemd::BlitPlainXlat",
+          "depth_from_root": 2,
+          "parent_classes": [
+            "gamemd::BlitPlain<T>"
+          ],
+          "child_classes": [],
+          "header_file": "src/render/blitter.hpp"
+        },
+        {
+          "class_name": "gamemd::BlitTrans",
+          "depth_from_root": 1,
+          "parent_classes": [
+            "gamemd::Blitter<T>"
+          ],
+          "child_classes": [
+            "gamemd::BlitTransXlat",
+            "gamemd::BlitTransWarp"
+          ],
+          "header_file": "src/render/blitter.hpp"
+        },
+        {
+          "class_name": "gamemd::BlitPlain",
+          "depth_from_root": 1,
+          "parent_classes": [
+            "gamemd::Blitter<T>"
+          ],
+          "child_classes": [
+            "gamemd::BlitPlainXlat"
+          ],
+          "header_file": "src/render/blitter.hpp"
+        },
+        {
+          "class_name": "gamemd::Blitter",
+          "depth_from_root": 0,
+          "parent_classes": [
+            "gamemd::BlitterCore"
+          ],
+          "child_classes": [
+            "gamemd::BlitPlain",
+            "gamemd::BlitTrans"
+          ],
+          "header_file": "src/render/blitter.hpp"
+        }
+      ]
+    }
+  ],
+  "multi_inheritance_classes": [
+    {
+      "class_name": "gamemd::AircraftClass",
+      "parents": [
+        "ra2::game::FootClass",
+        "gamemd::FlasherClass"
+      ],
+      "note": "Primary: FootClass → TechnoClass chain. Secondary: FlasherClass → StageClass → IFlyControl for flight behaviors."
+    },
+    {
+      "class_name": "gamemd::TeleportLocomotionClass",
+      "parents": [
+        "gamemd::LocomotionClass",
+        "gamemd::IPiggyback"
+      ],
+      "note": "Primary: LocomotionClass (IPersistStream + ILocomotion). Secondary: IPiggyback for piggyback transport."
+    },
+    {
+      "class_name": "ra2::game::AbstractClass",
+      "parents": [
+        "ra2::game::IPersistStream",
+        "ra2::game::IRTTITypeInfo",
+        "ra2::game::INoticeSink",
+        "ra2::game::INoticeSource"
+      ],
+      "note": "4 COM vtable roots. IUnknown chain via IPersistStream."
+    },
+    {
+      "class_name": "gamemd::LocomotionClass",
+      "parents": [
+        "gamemd::IPersistStream",
+        "gamemd::ILocomotion"
+      ],
+      "note": "Independent COM hierarchy. Not in AbstractClass tree."
+    }
+  ],
+  "completion_order_guidance": {
+    "description": "For completing the reverse engineering: implement leaf classes first, then work up to roots. Leaf changes don't affect any dependent classes.",
+    "recommended_sequence": [
+      "Phase 1: Entity leaf classes (BulletClass, AnimClass, ParticleClass, OverlayClass, etc.)",
+      "Phase 2: Structure leaf classes (InfantryClass, UnitClass, AircraftClass, BuildingClass)",
+      "Phase 3: Type leaf classes (BuildingTypeClass, UnitTypeClass, InfantryTypeClass, AircraftTypeClass, WarheadTypeClass, etc.)",
+      "Phase 4: Support classes (HouseClass, TeamClass, TriggerClass, FactoryClass, etc.)",
+      "Phase 5: Intermediate classes (FootClass, TechnoClass, RadioClass, MissionClass, TechnoTypeClass, ObjectTypeClass)",
+      "Phase 6: Base classes (ObjectClass, AbstractTypeClass)",
+      "Phase 7: Root (AbstractClass)"
+    ],
+    "critical_path": "InfantryClass/UnitClass/AircraftClass → FootClass → TechnoClass → RadioClass → MissionClass → ObjectClass → AbstractClass",
+    "note": "The Type hierarchy (BuildingTypeClass etc.) can be completed in parallel with the Object hierarchy since they only share AbstractClass."
+  },
+  "discrepancies": [
+    {
+      "issue": "BulletTypeClass/AnimTypeClass/ParticleTypeClass hierarchy conflict",
+      "files": [
+        "src/type/type_classes.hpp",
+        "src/type/bullet_type.hpp",
+        "src/type/anim_type.hpp",
+        "src/type/particle_type.hpp"
+      ],
+      "ra2_game_chain": "AbstractTypeClass (direct, per type_classes.hpp)",
+      "gamemd_chain": "ObjectTypeClass (per individual .hpp files)",
+      "ida_verified": "ObjectTypeClass (has GetCameo/GetImage virtuals)",
+      "recommendation": "Use individual .hpp files' inheritance (ObjectTypeClass intermediate) for gamemd namespace."
+    },
+    {
+      "issue": "SuperWeaponTypeClass duplicate",
+      "files": [
+        "src/type/type_classes.hpp (ra2::game)",
+        "src/misc/super_weapon.hpp (gamemd)"
+      ],
+      "ra2_game": "AbstractTypeClass direct",
+      "gamemd": "AbstractTypeClass direct",
+      "note": "Same hierarchy. Both are valid copies during namespace migration."
+    },
+    {
+      "issue": "HouseTypeClass/SideClass duplicate",
+      "files": [
+        "src/type/type_classes.hpp (ra2::game)",
+        "src/house/house_type.hpp (gamemd)",
+        "src/house/side.hpp (gamemd)"
+      ],
+      "both": "AbstractClass direct (NOT AbstractTypeClass)",
+      "note": "These are NOT type classes; they extend AbstractClass directly. Both copies have same hierarchy."
+    }
+  ]
+}

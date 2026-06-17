@@ -1,6 +1,8 @@
 #pragma once
 
 #include "object/abstract.hpp"
+#include "house/base.hpp"
+#include "house/score.hpp"
 
 #include <cstdint>
 
@@ -60,13 +62,6 @@ using ra2::game::TechnoClass;
 using ra2::game::ObjectClass;
 #endif
 
-struct ScoreStruct
-{
-    int32_t counts[512];
-    int32_t numCounts;
-    int32_t byteOrder;
-};
-
 struct StartingTechnoStruct
 {
     TechnoTypeClass* unit;
@@ -88,31 +83,6 @@ struct ScoutStruct
 struct BuildChoiceClass
 {
     // TODO: complete from YRpp
-};
-
-struct BaseNodeClass
-{
-    int32_t     buildingTypeIndex;
-    CellStruct  mapCoords;
-    bool        placed;
-    int32_t     attempts;
-};
-
-struct BaseClass
-{
-    BaseNodeClass*  baseNodes;
-    int32_t         baseNodeCount;
-    int32_t         baseNodeCapacity;
-    int32_t         percentBuilt;
-    CellStruct*     cells24;
-    int32_t         cells24Count;
-    int32_t         cells24Capacity;
-    CellStruct*     cells38;
-    int32_t         cells38Count;
-    int32_t         cells38Capacity;
-    CellStruct      center;
-    uint8_t         unknown54[32];
-    HouseClass*     owner;
 };
 
 struct DropshipStruct

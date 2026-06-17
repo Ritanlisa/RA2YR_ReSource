@@ -20,6 +20,7 @@ using ra2::game::AbstractType;
 
 
 class HouseTypeClass;
+class CCINIClass;
 
 class SideClass : public AbstractClass
 {

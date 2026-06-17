@@ -60,7 +60,7 @@ VoxClass::VoxClass(const char* pName)
 
     Priority    = VoxPriority{};
     Type        = VoxType{};
-    unknown_50  = 0;
+    voiceIndex  = 0;
 
     if (Array)
     {

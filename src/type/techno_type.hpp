@@ -82,7 +82,7 @@ public:
     virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override { return S_OK; }
     virtual HRESULT __stdcall GetSizeMax(ULARGE_INTEGER* pcbSize) override { return E_NOTIMPL; }
 
-    virtual ~TechnoTypeClass() = default;
+    virtual ~TechnoTypeClass() = default;  // 0x711ae0 (as DTOR)
 
     virtual bool onTypeLoaded() { return false; }
     virtual bool CanAttackMove() const { return false; }
@@ -93,7 +93,7 @@ public:
     virtual int getRefund(HouseClass* pHouse, bool bUnk) const { return 0; }
     virtual int GetFlightLevel() const { return 0; }
 
-    static TechnoTypeClass* GetByTypeAndIndex(AbstractType abs, int index);
+    static TechnoTypeClass* GetByTypeAndIndex(AbstractType abs, int index);  // 0x48dcd0
 
     bool HasMultipleTurrets() const { return this->TurretCount > 0; }
 
@@ -107,10 +107,10 @@ public:
     WeaponStruct& GetWeapon(size_t index, bool elite) { return elite ? this->EliteWeapon[index] : this->Weapon[index]; }
     const WeaponStruct& GetWeapon(size_t index, bool elite) const { return elite ? this->EliteWeapon[index] : this->Weapon[index]; }
 
-    TechnoTypeClass(const char* id, SpeedType speedtype) noexcept;
+    TechnoTypeClass(const char* id, SpeedType speedtype) noexcept;  // 0x711840 (as Construct)
 
 protected:
-    TechnoTypeClass(noinit_t) noexcept;
+    TechnoTypeClass(noinit_t) noexcept;  // 0x711840 (as Construct)
 
 public:
     int WalkRate;

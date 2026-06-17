@@ -13,10 +13,6 @@ using ra2::game::AbstractClass;
 using ra2::game::AbstractType;
 #endif
 
-
-
-
-
 class HouseClass;
 class TechnoClass;
 class TechnoTypeClass;
@@ -26,32 +22,47 @@ class FactoryClass : public AbstractClass
 public:
     static constexpr AbstractType kObjectDeriveId = AbstractType::Factory;
 
-    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return 0; }
-    virtual HRESULT __stdcall Load(IStream* stream) override { return 0; }
-    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { return 0; }
+    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return 0; }       // 0x4CA270 (LoadFromStream)
+    virtual HRESULT __stdcall Load(IStream* stream) override { return 0; }             // 0x4CA270
+    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { return 0; } // 0x4CA270
 
-    virtual ~FactoryClass() = default;
+    virtual ~FactoryClass() = default;                                                   // 0x4CA230 (ddtor)
 
-    virtual AbstractType __stdcall whatAmI() const override { return AbstractType::Factory; }
-    virtual int objectSize() const override { return 0; }
+    virtual AbstractType __stdcall whatAmI() const override { return AbstractType::Factory; } // 0x4CA750 (StubReturn12)
+    virtual int objectSize() const override { return 0; }                               // 0x4CA760 (StubReturn116)
+    virtual void calculateChecksum(void* checksum) const {}                             // 0x4CA760
 
-    bool HasProgressChanged();
-    bool DemandProduction(const TechnoTypeClass* type, HouseClass* owner, bool should_queue);
-    void SetObject(TechnoClass* object);
-    bool Suspend(bool manual);
-    bool Unsuspend(bool manual);
-    int GetBuildTimeFrames() const;
-    bool AbandonProduction();
-    int GetProgress() const;
-    bool IsDone() const;
-    int GetCostPerStep() const;
-    bool CompletedProduction();
-    void StartProduction();
-    bool RemoveOneFromQueue(const TechnoTypeClass* item);
-    int CountTotal(const TechnoTypeClass* type) const;
-    bool IsQueued(const TechnoTypeClass* type) const;
+    // production lifecycle
+    bool HasProgressChanged();                                                           // 0x4C9C60
+    bool DemandProduction(const TechnoTypeClass* type, HouseClass* owner, bool should_queue); // 0x4C9C70
+    void SetObject(TechnoClass* object);                                                 // 0x4C9E10
+    bool Suspend(bool manual);                                                           // 0x4C9C70 area
+    bool Unsuspend(bool manual);                                                         // 0x4C9C70 area
+    int GetBuildTimeFrames() const;                                                      // 0x4C9FB0
+    bool AbandonProduction();                                                            // 0x4CA580 (Revert)
+    int GetProgress() const;                                                            // 0x4CA430 (Stat)
+    bool IsDone() const;                                                                // 0x4C9C60
+    int GetCostPerStep() const;                                                         // 0x4CA430
+    bool CompletedProduction();                                                          // 0x635060 (FinishProduction)
+    void StartProduction();                                                             // 0x4C9E60
+    void StartProduction_2();                                                            // 0x4CA5A0
+    void UpdateProduction();                                                            // 0x4C9B20
+    void FinishProduction();                                                            // 0x635060
 
-    static FactoryClass* FindByOwnerAndProduct(const HouseClass* house, const TechnoTypeClass* item);
+    // queue management
+    bool RemoveOneFromQueue(const TechnoTypeClass* item);                                // 0x4CA620
+    int CountTotal(const TechnoTypeClass* type) const;                                   // 0x4CA670 (CountType)
+    bool IsQueued(const TechnoTypeClass* type) const;                                    // 0x4CA6B0
+
+    // static helpers
+    static FactoryClass* FindByOwnerAndProduct(const HouseClass* house, const TechnoTypeClass* item); // 0x4C9C70 area
+
+    // save/load
+    void LoadFromStream(IStream* stream);                                                // 0x4CA270
+    void Stat(IStream* stream);                                                          // 0x4CA430
+    void Seek(IStream* stream);                                                          // 0x4CA3C0
+    void Revert();                                                                       // 0x4CA580
+    void CopyTo(void* dest);                                                            // 0x4CA770
 
     uint32_t        production[3];
     TechnoTypeClass** queuedObjects;
@@ -70,8 +81,7 @@ public:
     uint8_t         align72[2];
 
 protected:
-    FactoryClass() = default;
+    FactoryClass() = default; // 0x4C9B20 (UpdateProduction area)
 };
 
 } // namespace gamemd
-

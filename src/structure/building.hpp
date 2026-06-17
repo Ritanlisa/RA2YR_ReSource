@@ -6,6 +6,7 @@
 #include "core/enums.hpp"
 #include "core/math.hpp"
 #include "object/techno.hpp"
+#include "misc/repeatable_timer.hpp"
 
 namespace gamemd {
 
@@ -27,11 +28,6 @@ class FactoryClass;
 class InfantryClass;
 class LightSourceClass;
 class TechnoTypeClass;
-
-struct RepeatableTimerStruct
-{
-    uint32_t data[4];
-};
 
 class BuildingClass : public ra2::game::TechnoClass
 {

@@ -118,7 +118,7 @@ public:
     virtual AbstractType __stdcall whatAmI() const override { return AbstractType::TriggerType; }
     virtual int objectSize() const override { return 0; }
     virtual void calculateChecksum(void* checksum) const {}
-    virtual int arrayIndex() const override { return 0; }
+    // arrayIndex() override inherited, conflicts with member
 
     static void LoadFromINIList(CCINIClass* ini);
     static void SaveToINIList(CCINIClass* ini);
@@ -135,7 +135,7 @@ public:
     bool RemoveAction(TActionClass* action);
     bool RemoveEvent(TEventClass* event);
 
-    int32_t             arrayIndex;
+    int32_t             idxArray;
     bool                difficulty[3];
     bool                enabled;
     bool                mustTransfer;

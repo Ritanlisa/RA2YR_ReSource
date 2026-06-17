@@ -35,27 +35,27 @@ public:
     static constexpr AbstractType AbsID = AbstractType::InfantryType;
 
     static DynamicVectorClass<InfantryTypeClass*>* Array;
-    static InfantryTypeClass* Find(const char* pID);
-    static InfantryTypeClass* FindOrAllocate(const char* pID);
-    static int FindIndex(const char* pID);
+    static InfantryTypeClass* Find(const char* pID);  // 0x772fa0
+    static InfantryTypeClass* FindOrAllocate(const char* pID);  // 0x772fa0
+    static int FindIndex(const char* pID);  // 0x772fa0
 
-    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override { return E_NOTIMPL; }
+    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override { return E_NOTIMPL; }  // 0x524c70 (as GetClassIdentifier)
 
-    virtual HRESULT __stdcall Load(IStream* pStm) override { return S_OK; }
+    virtual HRESULT __stdcall Load(IStream* pStm) override { return S_OK; }  // 0x524960 (as LoadTypeData)
     virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override { return S_OK; }
 
-    virtual ~InfantryTypeClass() = default;
+    virtual ~InfantryTypeClass() = default;  // 0x524d70 (as ddtor)
 
-    virtual AbstractType __stdcall whatAmI() const override { return AbstractType::InfantryType; }
-    virtual int objectSize() const override { return 0; }
+    virtual AbstractType __stdcall whatAmI() const override { return AbstractType::InfantryType; }  // 0x524d40 (as GetTypeIdentifier)
+    virtual int objectSize() const override { return 0; }  // 0x524d50 (as GetObjectSize)
 
-    virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override { return false; }
-    virtual ObjectClass* CreateObject(HouseClass* pOwner) override { return nullptr; }
+    virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override { return false; }  // 0x5247a0 (as StubReturnFalse)
+    virtual ObjectClass* CreateObject(HouseClass* pOwner) override { return nullptr; }  // 0x523b40 (as CreateInfantry)
 
-    InfantryTypeClass(const char* pID) noexcept;
+    InfantryTypeClass(const char* pID) noexcept;  // 0x5236a0 (as Constructor)
 
 protected:
-    InfantryTypeClass(noinit_t) noexcept;
+    InfantryTypeClass(noinit_t) noexcept;  // 0x5236a0 (as Constructor)
 
 public:
     int ArrayIndex;

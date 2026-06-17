@@ -22,13 +22,13 @@ class TechnoTypeClass;
 class ObjectTypeClass : public AbstractTypeClass
 {
 public:
-    virtual HRESULT __stdcall Load(IStream* pStm) override { return S_OK; }
+    virtual HRESULT __stdcall Load(IStream* pStm) override { return S_OK; }  // 0x5f92d0 (as LoadFromINI)
     virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override { return S_OK; }
     virtual HRESULT __stdcall GetSizeMax(ULARGE_INTEGER* pcbSize) override { return E_NOTIMPL; }
 
-    virtual ~ObjectTypeClass() = default;
+    virtual ~ObjectTypeClass() = default;  // 0x5f7400 (as Destruct)
 
-    virtual CoordStruct* onCellChanged(CoordStruct* pDest, CoordStruct* pSrc) const { return nullptr; }
+    virtual CoordStruct* onCellChanged(CoordStruct* pDest, CoordStruct* pSrc) const { return nullptr; }  // 0x41cbf0 (as vt_entry_7C)
     virtual DWORD GetOwners() const { return 0; }
     virtual int GetPipMax() const { return 0; }
     virtual void onTypeLoadComplete(DWORD dwUnk) const {}
@@ -45,12 +45,12 @@ public:
     static bool IsBuildCat5(AbstractType abstractID, int idx);
     static TechnoTypeClass* GetTechnoType(AbstractType abstractID, int idx);
 
-    ObjectTypeClass(const char* pID) noexcept;
+    ObjectTypeClass(const char* pID) noexcept;  // 0x5f7320 (as Construct)
 
     struct noinit_t {};
 
 protected:
-    ObjectTypeClass(noinit_t) noexcept;
+    ObjectTypeClass(noinit_t) noexcept;  // 0x5f7320 (as Construct)
 
 public:
     ColorStruct RadialColor;

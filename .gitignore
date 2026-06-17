@@ -95,6 +95,9 @@ decompile-results/gamemd.exe.asm
 decompile-results/gamemd.exe.c
 decompile-results/gamemd.exe.i64
 
+# 任务编排（本地状态，不追踪）
+.omo/
+
 # 临时分析文件
 tmp_*
 

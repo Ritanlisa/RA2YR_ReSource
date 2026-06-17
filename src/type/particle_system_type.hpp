@@ -24,12 +24,12 @@ public:
     static ParticleSystemTypeClass* Find(const char* pID);
     static ParticleSystemTypeClass* FindOrAllocate(const char* pID);
 
-    virtual ~ParticleSystemTypeClass() = default;
+    virtual ~ParticleSystemTypeClass() = default;  // 0x644960 (as ddtor)
 
-    virtual AbstractType __stdcall whatAmI() const override { return AbstractType::ParticleSystemType; }
-    virtual int objectSize() const override { return 0; }
+    virtual AbstractType __stdcall whatAmI() const override { return AbstractType::ParticleSystemType; }  // 0x644930 (as GetTypeIdentifier)
+    virtual int objectSize() const override { return 0; }  // 0x644920 (as GetObjectSize)
 
-    virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override { return false; }
+    virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override { return false; }  // 0x644950 (as StubReturnFalse)
     virtual ObjectClass* CreateObject(HouseClass* pOwner) override { return nullptr; }
 
     ParticleSystemTypeClass(const char* pID) noexcept;

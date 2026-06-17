@@ -23,12 +23,6 @@ using ra2::game::TimerStruct;
 using ra2::game::CellStruct;
 #endif
 
-
-
-
-
-
-
 class TeamTypeClass;
 class ScriptClass;
 class HouseClass;
@@ -42,17 +36,66 @@ class TeamClass : public AbstractClass
 public:
     static constexpr AbstractType kObjectDeriveId = AbstractType::Team;
 
-    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return 0; }
-    virtual HRESULT __stdcall Load(IStream* stream) override { return 0; }
-    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { return 0; }
+    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return 0; }       // 0x6EC540 (SaveLoad_Prefix_0)
+    virtual HRESULT __stdcall Load(IStream* stream) override { return 0; }             // 0x6EC450 (SaveLoad_Prefix)
+    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { return 0; } // 0x6EC540
 
-    virtual ~TeamClass() = default;
+    virtual ~TeamClass() = default;                                                      // 0x6EC560 (ddtor)
 
-    virtual AbstractType __stdcall whatAmI() const override { return AbstractType::Team; }
-    virtual int objectSize() const override { return 0; }
+    virtual AbstractType __stdcall whatAmI() const override { return AbstractType::Team; } // 0x6EC560
+    virtual int objectSize() const override { return 0; }                               // 0x6EC560
 
-    void GetTaskForceMissingMemberTypes(TechnoTypeClass** dest, int& dest_count) const;
-    void LiberateMember(FootClass* foot, int idx = -1, uint8_t count = 0);
+    // core methods
+    void GetTaskForceMissingMemberTypes(TechnoTypeClass** dest, int& dest_count) const;  // 0x6F1FA0 (TeamTypeClass::ProcessTaskForce)
+    void LiberateMember(FootClass* foot, int idx = -1, uint8_t count = 0);               // 0x6EA870 (LiberateMember_Start)
+    void LiberateMember_Start(FootClass* foot, int idx, uint8_t count);                  // 0x6EA870
+    void RecruitMember(FootClass* foot, int idx);                                        // 0x6EAA90
+    void AddMember(FootClass* foot);                                                     // 0x6EA500
+    bool ValidateMember(FootClass* foot);                                                // 0x6EA610
+    void RemoveAllMembers();                                                             // 0x636120
+    void DestroyAllMembers();                                                            // 0x6340B0
+    FootClass* GetMember(int index);                                                      // 0x635C10
+    int GetLeaderIndex() const;                                                          // 0x6339B0
+    FootClass* SelectMember(int idx);                                                     // 0x6E9050
+
+    // script / action
+    void ProcessScriptActions();                                                         // 0x636980
+    bool FindScriptAction(int action);                                                   // 0x633EA0
+    bool GetNextScriptAction();                                                          // 0x633F20
+    void ExecuteAction(int action);                                                      // 0x6EAE60
+    void SetField11();                                                                   // 0x6915A0
+
+    // update
+    void Update();                                                                       // 0x6E9140
+    void Update_0();                                                                     // 0x6E53A0
+    void UpdateMembers();                                                                // 0x6EBAD0
+    void UpdateReadinessState();                                                         // 0x6EA3E0
+    void UpdateBuildQueue();                                                             // 0x6367B0
+    void ProcessMemberPositions();                                                       // 0x6EBF50
+    void WakeUpAllMembers();                                                             // 0x6EC3A0
+    void Check();                                                                        // 0x6915B0
+
+    // coordination
+    FootClass* FindClosestEnemy(FootClass* foot);                                         // 0x6EAEE0
+    void AttackCoordinator();                                                            // 0x6EB490
+    void CheckCohesion();                                                                // 0x4D9E70
+    bool HasAnyMemberFlagged(int flag) const;                                             // 0x4E0080
+    void MoveTeamToWaypoint(CellStruct target);                                          // 0x6EC7D0
+
+    // lifecycle
+    static TeamClass* FindOrCreate(TeamTypeClass* type);                                  // 0x6E52A0
+    static int CountActiveTeamsForType(TeamTypeClass* type);                              // 0x5095D0
+    static TeamClass* FindByMemberType(TechnoTypeClass* type);                             // 0x635A40
+    void DisbandTeam();                                                                  // 0x577BB0
+    void Reset();                                                                        // 0x635DB0
+    void Cleanup();                                                                      // 0x636B50
+    void Destructor();                                                                   // 0x6E8DE0
+    void DeployUnit(FootClass* foot);                                                     // 0x62A260
+    void PowerDrainUpdate();                                                             // 0x6EC5A0
+
+    // save/load
+    void SaveLoad_Prefix(IStream* stream);                                                // 0x6EC450
+    void SaveLoad_Prefix_0(IStream* stream);                                              // 0x6EC540
 
     TeamTypeClass*  buildingType;
     ScriptClass*    currentScript;
@@ -97,4 +140,3 @@ protected:
 };
 
 } // namespace gamemd
-

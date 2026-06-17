@@ -36,15 +36,15 @@ public:
 
     static DynamicVectorClass<BuildingTypeClass*>* Array;
     static BuildingTypeClass* Find(const char* pID);
-    static BuildingTypeClass* FindOrAllocate(const char* pID);
-    static int FindIndex(const char* pID);
+    static BuildingTypeClass* FindOrAllocate(const char* pID);  // 0x4653c0 (as FindOrCreate)
+    static int FindIndex(const char* pID);  // 0x747370
 
-    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override { return E_NOTIMPL; }
+    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override { return E_NOTIMPL; }  // 0x465380 (as GetClassIdentifier)
 
-    virtual ~BuildingTypeClass() = default;
+    virtual ~BuildingTypeClass() = default;  // 0x465dc0 (as ddtor)
 
-    virtual AbstractType __stdcall whatAmI() const override { return AbstractType::BuildingType; }
-    virtual int objectSize() const override { return 0; }
+    virtual AbstractType __stdcall whatAmI() const override { return AbstractType::BuildingType; }  // 0x465d90 (as GetTypeIdentifier)
+    virtual int objectSize() const override { return 0; }  // 0x465da0 (as GetObjectSize)
 
     virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override { return false; }
     virtual ObjectClass* CreateObject(HouseClass* pOwner) override { return nullptr; }
@@ -52,8 +52,8 @@ public:
     virtual SHPStruct* LoadBuildup() { return nullptr; }
 
     bool IsVehicle() const;
-    short GetFoundationWidth() const;
-    short GetFoundationHeight(bool bIncludeBib) const;
+    short GetFoundationWidth() const;  // 0x45ec90
+    short GetFoundationHeight(bool bIncludeBib) const;  // 0x45eca0
     bool CanPlaceHere(CellStruct* cell, HouseClass* owner) const;
 
     bool HasSuperWeapon(int index) const { return (this->SuperWeapon == index || this->SuperWeapon2 == index); }
@@ -63,10 +63,10 @@ public:
     BuildingAnimStruct& GetBuildingAnim(BuildingAnimSlot slot) { return this->BuildingAnim[static_cast<int>(slot)]; }
     const BuildingAnimStruct& GetBuildingAnim(BuildingAnimSlot slot) const { return this->BuildingAnim[static_cast<int>(slot)]; }
 
-    BuildingTypeClass(const char* pID) noexcept;
+    BuildingTypeClass(const char* pID) noexcept;  // 0x644be0 (as Construct)
 
 protected:
-    BuildingTypeClass(noinit_t) noexcept;
+    BuildingTypeClass(noinit_t) noexcept;  // 0x644be0 (as Construct)
 
 public:
     int ArrayIndex;

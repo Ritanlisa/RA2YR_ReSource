@@ -2,6 +2,7 @@
 
 #include "object/abstract.hpp"
 #include "ui/g_screen.hpp"
+#include "system/layer.hpp"
 
 #include <cstdint>
 
@@ -114,13 +115,6 @@ struct TrajectoryHelper
     static CellClass* GetObstacle(const CellClass* cell_source, const CellClass* cell_target, const CellClass* cell_bullet, CoordStruct crd_cur, const BulletTypeClass* type, const HouseClass* owner);
     static CellClass* FindFirstObstacle(const CoordStruct& crd_src, const CoordStruct& crd_target, const BulletTypeClass* type, const HouseClass* owner);
     static CellClass* FindFirstImpenetrableObstacle(const CoordStruct& crd_src, const CoordStruct& crd_target, const WeaponTypeClass* weapon, const HouseClass* owner);
-};
-
-struct LayerClass
-{
-    ObjectClass**   items;
-    int32_t         count;
-    int32_t         capacity;
 };
 
 class LogicClass : LayerClass
