@@ -4,7 +4,7 @@
 
 ## 项目状态
 
-这是 Red Alert 2: Yuri's Revenge 游戏引擎 `gamemd.exe` 的逆向重构项目。目标是对 7.6MB 的 32 位 Windows PE 进行完整反编译，该 PE 由 MSVC 6.0 编译，包含 19,059 个函数。
+这是 Red Alert 2: Yuri's Revenge 游戏引擎 `gamemd.exe` 的逆向重构项目。目标是对 7.6MB 的 32 位 Windows PE 进行完整反编译，该 PE 由 MSVC 6.0 编译，包含 19,059 个函数，分布于 1,120 个类中。
 
 当前输出为静态库 `gamemd_core` + 可执行文件 `gamemd.exe`，使用 CMake + C++20 编译。长期目标是产出可直接替换原版的独立引擎，并逐步进行现代化重构。
 
@@ -12,7 +12,7 @@
 
 ```
 RA2/YR (gamemd.exe)
-├── 19,059 函数（72 个 .CPP 源文件）
+├── 19,059 函数（分布于 1,120 个类，235 个源文件）
 ├── AbstractClass 基类（4 vtable，多重继承 COM 层）
 ├── ObjectClass → MissionClass → RadioClass → TechnoClass → FootClass
 ├── 类型/实例双重层次（TypeClass 原型模式）
@@ -33,7 +33,7 @@ RA2/YR (gamemd.exe)
 
 ```
 RA2YR_ReSource/
-├── include/gamemd/          ← 91 个头文件（17 个子目录）
+├── src/                     ← ~130 .hpp + 85 .cpp 源文件（20 个子目录）
 │   ├── core/                # 枚举、数学、内存、向量、TARGET、坐标
 │   ├── object/              # AbstractClass → ObjectClass → FootClass
 │   ├── type/                # 类型系统（原型模式）
@@ -41,8 +41,12 @@ RA2YR_ReSource/
 │   ├── structure/           # 步兵、单位、飞行器、建筑
 │   ├── house/               # 子阵营、子阵营类型、阵营
 │   |                        # ↑ House = 子阵营, Side = 阵营, 每个阵营包含1个及以上的子阵营
-│   └── system/              # 单元格、地图、场景、工厂
-├── src/                     ← 61 个 .cpp 实现文件
+│   ├── system/              # 单元格、地图、场景、工厂
+│   ├── render/              # DSurface、BINK、SHP、调色板、文字
+│   ├── ui/                  # Gadget、Dialog、Command、Sidebar、Mouse
+│   ├── misc/                # 音频、移动、规则、超级武器
+│   ├── network/             # Winsock、会话、多人游戏
+│   └── team/                # 小队、触发器、脚本、战役
 ├── app/                     ← EXE 入口点 (WinMain + 游戏循环 + DDraw初始化)
 ├── CMakeLists.txt           # C++20, Win32 静态库 + 可执行文件
 └── LICENSE.md               # GPL v3（继承自 CnC_Red_Alert）
@@ -55,7 +59,7 @@ cmake -B build -G "Visual Studio 17 2022" -A Win32
 cmake --build build --config Debug
 ```
 
-编译状态：64 个源文件可编译，总代码行数 ~13,500, 无错误与警告。
+编译状态：235 个源文件可编译（~130 .hpp + 85 .cpp），总代码行数 ~53,600（头文件 ~39,200 + 源文件 ~14,400），无错误与警告。
 
 ## RA1 结构对齐进度
 
@@ -65,15 +69,16 @@ cmake --build build --config Debug
 | HouseClass → 删除多余虚函数重写 | TechnoClass MI 混入类（Flasher/Stage/Cargo/Door）未确认 RA2 是嵌入还是 MI |
 | AbstractClass → 纯虚函数改为非纯虚默认实现 | DriveClass 层未 IDA 验证（RA1 在 FootClass→UnitClass 之间是否被 ILocomotion 完全取代） |
 | TechnoClass → 语音/绘制/查询 18 个函数去虚拟化 | Mission AI 分发引擎 switch 逻辑因枚举命名空间冲突暂未完成 |
-| TARGET 编码系统（`core/target.hpp`） | ~252 个 unknown 成员待 IDA 重命名 |
+| TARGET 编码系统（`core/target.hpp`） | — |
 | COORDINATE/CELL 数学库（含 RA1 sin/cos 表） | — |
 | Mission 状态机 28 种 stub（`object/mission.hpp`） | — |
+| **1,120 个 IDA 类的成员变量全部解析（0 unknown_）** | — |
 
 ## 下阶段工作计划
 
 详见 `AGENTS.md`，按依赖顺序分为五阶段：
 
-1. **IDA 重命名 unknown 成员**（P0: techno.hpp 35个 + foot.hpp 41个）
+1. **构建完整类结构**（1,120 个类全部完成 header 定义，成员变量 0 unknown_）
 2. **构建完整类结构**（对齐 RA1 命名，验证 sizeof）
 3. **根据 IDA 伪代码重写关键函数**（ObjectClass::Put、FootClass::MovementAI 等）
 4. **统一处理编译错误**（先修 object.hpp 前向声明→消除~1900连锁错误→逐一清完）

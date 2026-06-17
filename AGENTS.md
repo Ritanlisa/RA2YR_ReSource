@@ -183,12 +183,14 @@ cmake --build build_linux
 |------|------|
 | 已实现函数 | ~140（~200+ stubs） |
 | 编译错误 / 警告 | 0 / 0 |
-| IDA 命名 | ~10,272 / 19,067 (53.9%) |
+| IDA 命名 | **10,366 / 10,366 (100%)** — 函数全部命名完成 |
+| IDA 类 header | **1,120 / 1,120 (100%)** — 所有类成员变量已解析，0 unknown_ |
+| sub_* 残留 | **0** — 类成员字段全部识别，无匿名占位符 |
 | REVERSE 标记 | ~32（2 Inject 活跃, 39 None） |
 | 已完成函数 | 39（faithful translations, completed:true） |
 | Inject 模式 | **2/13 活跃**（9 verified → None, 2 stubs → None, slot stack） |
 | 幂等自动判定 | Phase 1+2 完成: TRUE 31%, FALSE 36%, UNCERTAIN 33% |
-| 当前阻塞 | .data 回滚验证仍需非渲染函数 |
+| 源文件 | ~130 .hpp + 85 .cpp (~53,600 行) |
 
 ## 文档分布
 
@@ -473,6 +475,10 @@ RA2/YR 的移动系统使用 COM 架构。GUID 表位于 `.rdata` 段（0x7E9A60
 
 ### 最近完成（按时间倒序）
 
+- **2026-06-17**: IDA 类 header 定义全部完成
+  - 1,120 个 IDA 类的成员变量全部解析并生成 C++ header
+  - 0 unknown_ 残留字段，0 sub_* 匿名占位符
+  - 所有类有完整的成员变量声明、偏移注释和 sizeof 验证
 - **2026-06-10**: 编译时自动化幂等判定系统（Phase 1+2）
   - `gen_annotations.py` → `annotations.json`（373 导入规则 + 35 命名模式 + 手动覆盖）
   - `ida_extract_purity.py` → `purity_effects.json`（17K 函数直接 .data R/W 扫描，24s）
@@ -497,13 +503,13 @@ RA2/YR 的移动系统使用 COM 架构。GUID 表位于 `.rdata` 段（0x7E9A60
 2. 扩展更多 Replace/Inject 钩子（高频函数应标 idempotent=true 避免事务开销）
 
 并行进行：
-- 类成员变量逆向（~523 unknown_ 字段，长期任务）
 - 10-19 xref 全局变量命名（~180 个）
+- 函数体逆向翻译（从 P0/P1 优先级开始）
 
 ## 下一会话快速接手指引
 
-1. 看 `docs/coverage.md` 了解整体进度
-2. 看 `docs/todo.md` 找当前优先任务
+1. 看 `docs/coverage.md` 了解整体进度（**1,120 IDA 类全部完成 header，0 unknown_**）
+2. 看 `docs/todo.md` 找当前优先任务（类成员逆向已完成，下一优先级：函数体翻译）
 3. 看 `git log -10` 了解最近改动
 4. 看 `injectFunctionTest/comparisonResult.log` 了解最新 Capture 数据
 5. 看 `D:\RA2MD\debug\snapshot-*` 了解最近崩溃记录

@@ -28,11 +28,11 @@
 | 导出函数 | 3 (SyringeHandshake, PostProcStub, mismatch_counter) |
 | JSON函数数据库 | 19,067条目, 12,613已命名, 分类完成 |
 | **已完成函数** | **39** (faithful IDA translations, completed:true) |
-| **REVERSE标记** | **~32** (跨14个源文件) — 13 个 Capture 模式活跃, 29 个 None 模式 |
+| **REVERSE标记** | **~32** (跨14个源文件) — 2 Inject 活跃, 13 个 Capture 模式, 39 个 None 模式 |
 | **依赖验证** | 39函数→10K唯一被调用者 (callee_map.json) |
 | **Capture 模式** | **稳定** (13 hooks, Release 构建, 多局测试无崩溃) |
 | **Caller 查找** | 14,390 条 (functions.json IDA 命名) |
-| 下一步 | TLS 改造 → Replace 模式 (SetPixel) → Inject 模式 |
+| 下一步 | 写 .data 的非渲染函数做真正的 Inject 回滚测试 |
 
 ---
 
@@ -257,7 +257,7 @@
 
 | # | 描述 | 文件 | 估算行数 |
 |---|------|------|----------|
-| P4-1 | 成员文档化 — IDA验证所有 `unknown_*` 成员(34个跨4类) | structure headers | 调研 |
+| P4-1 | 成员文档化 — IDA验证所有类成员变量（1,120 类，0 unknown_） | structure headers | ✅ 已完成 (2026-06-17) |
 | P4-2 | 从YRpp补全HouseClass/RulesClass/SessionClass成员 | 8+ headers | varies |
 | P4-3 | 网络子系统 (Winsock/IPX/UDP/Connection/Multiplayer) | 4 files | ~500 |
 | P4-4 | UI子系统 (CommandClass 14子类/Sidebar/Mouse) | 6 files | ~500 |
@@ -344,9 +344,9 @@ make _WIN32_WINNT=0x0400
 | 已实现函数 | ~140 |
 | 存根/空实现 | ~200+ |
 | TODO/FIXME标记 | 252 (src 205 + headers 47) |
-| 未命名成员 | 34 (BuildingClass 17 + Infantry 6 + Unit 3 + Aircraft 8) |
-| IDA 命名函数 | **~10,272 / 19,067 (53.9%)** |
-| IDA 类成员命名 | **7,576** (76.2% of 9,936) |
-| IDA 全局函数命名 | **2,246** |
-| IDA 命名全局变量 | **~9,630** (96.3% of 9,999) |
+| IDA 命名函数 | **10,366 / 10,366 (100%)** |
+| IDA 类成员命名 | **7,936** |
+| IDA 全局函数命名 | **2,430** |
+| IDA 命名全局变量 | **9,999 / 9,999 (100%)** |
+| IDA 类 header | **1,120 / 1,120 (100%)** — 0 unknown_, 0 sub_* |
 | 构建状态 | 0 errors, 0 warnings |

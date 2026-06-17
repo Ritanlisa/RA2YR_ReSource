@@ -4,7 +4,7 @@ Reverse-engineered C++ source code of Red Alert 2 / Yuri's Revenge from `gamemd.
 
 ## Project Status
 
-This project reconstructs the RA2/YR game engine `gamemd.exe` — a 7.6MB 32-bit Windows PE compiled with MSVC 6.0, containing 19,059 functions.
+This project reconstructs the RA2/YR game engine `gamemd.exe` — a 7.6MB 32-bit Windows PE compiled with MSVC 6.0, containing 19,059 functions across 1,120 classes.
 
 Current output: static library `gamemd_core` + executable `gamemd.exe`, built with CMake + C++20. The long-term goal is a fully independent, drop-in replacement engine with progressive modernization.
 
@@ -12,7 +12,7 @@ Current output: static library `gamemd_core` + executable `gamemd.exe`, built wi
 
 ```
 RA2/YR (gamemd.exe)
-├── 19,059 functions (across 72 .cpp source files)
+├── 19,059 functions (across 1,120 classes, 235 source files)
 ├── AbstractClass root (4 vtables, multiple-inheritance COM layer)
 ├── ObjectClass → MissionClass → RadioClass → TechnoClass → FootClass
 ├── Type/Instance dual hierarchy (TypeClass prototype pattern)
@@ -33,15 +33,20 @@ RA2/YR (gamemd.exe)
 
 ```
 RA2YR_ReSource/
-├── include/gamemd/          ← 91 headers (17 subdirectories)
+├── src/                     ← ~130 .hpp + 85 .cpp source files (20 subdirectories)
 │   ├── core/                # Enums, math, memory, vectors, TARGET, coordinates
 │   ├── object/              # AbstractClass → ObjectClass → FootClass
 │   ├── type/                # Type system (prototype pattern)
 │   ├── entity/              # Animations, bullets, particles, overlays
 │   ├── structure/           # Infantry, units, aircraft, buildings
 │   ├── house/               # Houses, house types, sides
-│   └── system/              # Cells, maps, scenarios, factories
-├── src/                     ← 61 .cpp implementation files
+│   ├── system/              # Cells, maps, scenarios, factories
+│   ├── render/              # DSurface, BINK, SHP, palette, text
+│   ├── ui/                  # Gadget, Dialog, Command, Sidebar, Mouse
+│   ├── misc/                # Audio, Locomotion, Rules, SuperWeapon
+│   ├── network/             # Winsock, Session, Multiplayer
+│   ├── team/                # Team, Trigger, Script, Campaign
+│   └── wdt/                 # Watchdog timer
 ├── app/                     ← EXE entry point (WinMain + game loop + DDraw init)
 ├── injectFunctionTest/      ← Hook-based shadow execution framework (see below)
 ├── CMakeLists.txt           # C++20, Win32 static lib + EXE
@@ -61,7 +66,7 @@ cmake -B build_hook -A Win32 -DHOOK_OUTPUT_DIR="path/to/game/dir"
 cmake --build build_hook --config Release
 ```
 
-Build status: 0 errors, 0 warnings. 72 compileable source files, ~17,000 lines (headers ~10,500 + source ~6,500).
+Build status: 0 errors, 0 warnings. 235 compileable source files (~130 .hpp + 85 .cpp), ~53,600 total lines (headers ~39,200 + source ~14,400).
 
 ## IMPORTANT: REVERSE Pipeline Code Protection
 
@@ -160,12 +165,15 @@ echo STATS | ncat 127.0.0.1 25400
 
 ## IDA Naming Progress
 
+All 19,067 functions named. 1,120 classes have complete header definitions with all member fields identified.
+
 | Category | Count | Percentage |
 |----------|-------|------------|
-| Named functions | 10,272 | 53.9% |
-| Member functions (`::`) | 7,576 | 76.2% |
-| Global functions | 2,246 | 28.7% |
-| Named global variables | 9,630 | 96.3% |
+| Named functions | 10,366 | 100% |
+| Member functions (`::`) | 7,936 | 76.6% |
+| Global functions | 2,430 | 23.4% |
+| Named global variables | 9,999 | 100% |
+| Classes with headers | 1,120 | 100% |
 | Total functions | 19,067 | — |
 
 ## License

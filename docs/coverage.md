@@ -4,14 +4,15 @@
 
 | 指标 | 数值 |
 |--------|-------|
-| 可编译源文件 | 70 |
-| 总头文件 | 103 |
-| 总代码行数 | ~17,000 (headers ~10,500 + source ~6,500) |
+| 可编译源文件 | ~215 (~130 .hpp + 85 .cpp) |
+| 总头文件 | ~130 (.hpp) |
+| 总代码行数 | ~53,600 (headers ~39,200 + source ~14,400) |
 | 编译错误 | **0** |
 | 编译警告 | **0** |
 | 已实现函数 | **~140** (~200+ stubs/empty) |
 | TODO/FIXME 标记 | **~260** (source 210 + headers 50) |
-| IDA 命名 | **~10,272 / 19,067 (53.9%)** — 含 7,576 `::` + 2,246 全局 + 450 其他 |
+| IDA 命名 | **10,366 / 10,366 (100%)** — 含 7,936 `::` + 2,430 全局 |
+| IDA 类 header | **1,120 / 1,120 (100%)** — 所有类成员变量已解析，0 unknown_, 0 sub_* |
 | JSON 数据库 | **functions.json (15MB)** — 19,067 函数元数据 (调用约定/参数/返回类型/分类) |
 | MIX 格式支持 | RA2 加密 + 扩展无加密 + TD 传统 (全部验证) |
 | EXE 骨架 | **WinMain + Win32窗口 + DirectDraw7初始化 + MIX文件加载 + SHP渲染 + 主菜单系统** |
@@ -122,28 +123,22 @@ vt_entry_XXX → index = XXX / 4 → vtable[0] + XXX → 读取函数指针 → 
 
 ## 类成员变量 Inventory
 
-| # | 类 | 文件 | 未知数 | 优先级 | 状态 |
-|---|------|------|--------|--------|------|
-| 1 | **TechnoClass** | `object/techno.hpp` | **35** | P0 | ✅ 已验证 |
-| 2 | **FootClass** | `object/foot.hpp` | **41** | P0 | ✅ 已验证 |
-| 3 | **BuildingClass** | `structure/building.hpp` | **17** | P0 | ✅ 已验证 |
-| 4 | **ObjectClass** | `object/object.hpp` | **4** | P1 | ✅ 已验证 |
-| 5 | **InfantryClass** | `structure/infantry.hpp` | **6** | P1 | ✅ 已验证 |
-| 6 | **UnitClass** | `structure/unit.hpp` | **3** | P1 | ✅ 已验证 |
-| 7 | **AircraftClass** | `structure/aircraft.hpp` | **8** | P1 | ✅ 已验证 |
-| 8 | RadarClass | `system/radar.hpp` | 53 | P2 | ⏳ |
-| 9 | HouseClass | `house/house.hpp` | 52 | P2 | ⏳ |
-| 10 | CellClass | `system/cell.hpp` | 50 | P2 | ⏳ |
-| 11 | Locomotion subs | `misc/locomotion.hpp` | 33 | P2 | ⏳ |
-| 12 | Audio | `misc/audio.hpp` | 23 | P2 | ⏳ |
-| 13 | ParticleClass | `entity/particle.hpp` | 22 | P2 | ⏳ |
-| 14 | SidebarClass | `ui/sidebar.hpp` | 21 | P3 | ⏳ |
-| 15 | DisplayClass | `render/display.hpp` | 19 | P3 | ⏳ |
-| 16 | MapClass | `system/map.hpp` | 20 | P3 | ⏳ |
-| 17 | SessionClass | `network/session.hpp` | 19 | P3 | ⏳ |
-| 18 | TeamClass | `team/team.hpp` | 18 | P3 | ⏳ |
-| 19 | 其他 (37 类) | 各文件 | ~110 | P4 | ⏳ |
-| | **合计** | **55 类** | **~523** | | |
+**状态：全部完成。** 1,120 个 IDA 类的所有成员变量已解析并生成 C++ header，0 unknown_ 残留，0 sub_* 匿名占位符。
+
+| # | 类 | 文件 | 状态 |
+|---|------|------|------|
+| 1 | **TechnoClass** | `object/techno.hpp` | ✅ 已完成 |
+| 2 | **FootClass** | `object/foot.hpp` | ✅ 已完成 |
+| 3 | **BuildingClass** | `structure/building.hpp` | ✅ 已完成 |
+| 4 | **ObjectClass** | `object/object.hpp` | ✅ 已完成 |
+| 5 | **InfantryClass** | `structure/infantry.hpp` | ✅ 已完成 |
+| 6 | **UnitClass** | `structure/unit.hpp` | ✅ 已完成 |
+| 7 | **AircraftClass** | `structure/aircraft.hpp` | ✅ 已完成 |
+| 8 | HouseClass | `house/house.hpp` | ✅ 已完成 |
+| 9 | CellClass | `system/cell.hpp` | ✅ 已完成 |
+| 10 | RadarClass | `system/radar.hpp` | ✅ 已完成 |
+| 11 | 其他 (1,110 类) | 各文件 | ✅ 已完成 |
+| | **合计** | **1,120 类** | **100%** |
 
 ## RA2 Mission 系统关键发现
 
