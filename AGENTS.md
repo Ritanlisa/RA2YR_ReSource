@@ -449,13 +449,13 @@ RA2/YR 的移动系统使用 COM 架构。GUID 表位于 `.rdata` 段（0x7E9A60
 | 属性 | 值 |
 |------|-----|
 | 首次发现 | 2026-06-08 |
-| 调用链 | GameFrameLoop → Scenario::Update → TeamClass::Update → RecruitMember → Math::DistSq2D → `call [vtable+48h]` → EIP=0 |
-| 触发 | AI team 管理（Create_One_Of）+ Chrono/Paradrop/SuperWeapon 密集 + 长时间游戏 |
-| 推断根因 | `g_UnitClassPool`（0x8B410C）中单位对象提前释放但引用未清除 |
-| 与 hook_dll 关系 | 无（栈无 hook_dll 地址 / 无 VEH AV / 无 m_backups 受损） |
+| 调用链 | 不固定 |
+| 触发 | 玩家高速滚动屏幕 |
+| 根因 | `DEFINE_HOOK(0x4BB0D0, Blit_Tracker, 0x6)` 在挂入钩子时覆盖了首个指令 `sub esp,88h`，返回时本应执行此指令, 疑似累计大量调用后数组越界 |
+| 与 hook_dll 关系 | DEFINE_HOOK 覆盖了指令导致意料之外的结果（任何 DEFINE_HOOK 都应该考虑这一问题, 尤其是需要原函数功能正常运行的钩子） |
 | 50 局 baseline（无 hook_dll） | 0 / 50 |
-| 带 hook_dll 复现率 | ≤ 20%（小样本） |
-| 处置 | 归档，不阻塞开发 |
+| 带 hook_dll 复现率 | 基本上能够通过快速滚动稳定触发 |
+| 处置 | 先禁用无关钩子，只保留对拍内容（任何 `DEFINE_HOOK` 都需要考虑被覆盖的代码是否应该被执行） |
 
 **验证记录**：
 
