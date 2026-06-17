@@ -62,11 +62,11 @@ protected:
     // +0x10: GenericList vtable
     INILinkNode sectionHead;         // +0x1C: section list head
     int32_t    sectionCount;         // +0x28
-    int32_t    field_2C;            // +0x2C
+    int32_t    INIClass_field_2C;            // +0x2C
     int32_t    unknown30;            // +0x30
     bool       needsSave_flag;            // +0x34 (byte 52)
     uint32_t   unknown38;            // +0x38
-    uint32_t   field_3C;            // +0x3C
+    uint32_t   INIClass_field_3C;            // +0x3C
 };
 
 // IDA: CCINIClass @ 0x535B30 -- size ~0x58 (88 bytes)
@@ -99,7 +99,7 @@ protected:
         INIData* iniData;
         int32_t  unknown48;
     };
-    int32_t      field_4C;
+    int32_t      CCINIClass_field_4C;
     int32_t      unknown50;
     int32_t      unknown54;
 };

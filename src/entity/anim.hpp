@@ -37,7 +37,7 @@ public:
     ProgressTimer       Animation;
     AnimTypeClass*      Type;
     ra2::game::ObjectClass* OwnerObject;
-    uint32_t            field_D0;
+    uint32_t            AnimClass_field_D0;
     LightConvertClass*  LightConvert;
     int32_t             LightConvertIndex;
     char                PaletteName[0x20];
@@ -52,7 +52,7 @@ public:
     bool                Unpaused;
     int32_t             PausedAnimFrame;
     bool                Reverse;
-    uint32_t            field_124;
+    uint32_t            AnimClass_field_124;
     BounceClass         Bounce;
     uint8_t             TranslucencyLevel;
     bool                TimeToDie;
@@ -63,8 +63,8 @@ public:
     BlitterFlags        AnimFlags;
     bool                HasExtras;
     uint8_t             RemainingIterations;
-    uint8_t             field_196;
-    uint8_t             field_197;
+    uint8_t             AnimClass_field_196;
+    uint8_t             AnimClass_field_197;
     bool                IsPlaying;
     bool                IsFogged;
     bool                FlamingGuyExpire;

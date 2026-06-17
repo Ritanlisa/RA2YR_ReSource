@@ -88,7 +88,7 @@ struct BuildChoiceClass
 struct DropshipStruct
 {
     TimerStruct      timer;
-    uint8_t          field_C;
+    uint8_t          DropshipStruct_field_C;
     uint8_t          m_align_D[3];
     int32_t          count;
     TechnoTypeClass* buildingTypes[5];
@@ -305,13 +305,13 @@ public:
     uint32_t                    altAllies;
     int32_t                     startingCredits;
     int32_t                     startingEdge;
-    uint32_t                    field_1E4;
+    uint32_t                    HouseClass_field_1E4;
     int32_t                     sideIndex;
     bool                        currentPlayer;
     bool                        playerControl;
     bool                        production;
     bool                        autocreateAllowed;
-    uint8_t                     field_1F0[2];
+    uint8_t                     HouseClass_field_1F0[2];
     bool                        aiTriggersActive;
     bool                        autoBaseBuilding;
     bool                        isDiscoveredByPlayer;
@@ -323,7 +323,7 @@ public:
     bool                        firestormActive;
     bool                        hasThreatNode;
     bool                        recheckTechTree;
-    uint8_t                     field_1FD[15];
+    uint8_t                     HouseClass_field_1FD[15];
     int32_t                     selectedPathIndex;
     void*                       planningPaths[12];
     int8_t                      visionary;
@@ -336,8 +336,8 @@ public:
     bool                        unknownBool247;
     bool                        unknownBool248;
     bool                        allToHunt;
-    bool                        field_bool_24A;
-    bool                        field_bool_24B;
+    bool                        HouseClass_field_bool_24A;
+    bool                        HouseClass_field_bool_24B;
     int32_t                     iqLevel2;
     int32_t                     aiMode;
     SuperClass**                supers;
@@ -349,7 +349,7 @@ public:
     int32_t                     lastBuiltVehicleType;
     int32_t                     allowWinBlocks;
     TimerStruct                 repairTimer;
-    TimerStruct                 field_timer_28C;
+    TimerStruct                 HouseClass_field_timer_28C;
     TimerStruct                 savourTimer;
     TimerStruct                 powerBlackoutTimer;
     TimerStruct                 radarBlackoutTimer;
@@ -364,9 +364,9 @@ public:
     uint32_t                    buildingAltOwner;
     int32_t                     airportDocks;
     int32_t                     poweredUnitCenters;
-    uint32_t                    field_2DC;
-    uint32_t                    field_2E0;
-    uint32_t                    field_2E4;
+    uint32_t                    HouseClass_field_2DC;
+    uint32_t                    HouseClass_field_2E0;
+    uint32_t                    HouseClass_field_2E4;
     int32_t                     ownedUnits;
     int32_t                     ownedNavy;
     int32_t                     ownedBuildings;
@@ -409,35 +409,35 @@ public:
     FactoryClass*               primaryUnused2;
     FactoryClass*               primaryUnused3;
     FactoryClass*               primaryForDefenses;
-    uint8_t                     field_53D0[12];
+    uint8_t                     HouseClass_field_53D0[12];
     class UnitClass*           ourFlagCarrier;
     CellStruct                  ourFlagCoords;
     int32_t                     killedUnitsOfHouses[20];
     int32_t                     totalKilledUnits;
     int32_t                     killedBuildingsOfHouses[20];
     int32_t                     totalKilledBuildings;
-    uint32_t                    field_548C;
+    uint32_t                    HouseClass_field_548C;
     CellStruct                  baseSpawnCell;
     CellStruct                  baseCenter;
     uint32_t                    unknown5498;
-    uint32_t                    field_549C;
-    uint32_t                    field_54A0;
-    uint32_t                    field_54A4;
-    uint32_t                    field_54A8;
-    uint32_t                    field_54AC;
-    uint32_t                    field_54B0;
-    uint32_t                    field_54B4;
-    uint32_t                    field_54B8;
-    uint32_t                    field_54BC;
-    uint32_t                    field_54C0;
-    uint32_t                    field_54C4;
-    uint32_t                    field_54C8;
-    uint32_t                    field_54CC;
-    uint32_t                    field_54D0;
-    uint32_t                    field_54D4;
-    uint32_t                    field_54D8;
-    uint32_t                    field_54DC;
-    uint32_t                    field_54E0;
+    uint32_t                    HouseClass_field_549C;
+    uint32_t                    HouseClass_field_54A0;
+    uint32_t                    HouseClass_field_54A4;
+    uint32_t                    HouseClass_field_54A8;
+    uint32_t                    HouseClass_field_54AC;
+    uint32_t                    HouseClass_field_54B0;
+    uint32_t                    HouseClass_field_54B4;
+    uint32_t                    HouseClass_field_54B8;
+    uint32_t                    HouseClass_field_54BC;
+    uint32_t                    HouseClass_field_54C0;
+    uint32_t                    HouseClass_field_54C4;
+    uint32_t                    HouseClass_field_54C8;
+    uint32_t                    HouseClass_field_54CC;
+    uint32_t                    HouseClass_field_54D0;
+    uint32_t                    HouseClass_field_54D4;
+    uint32_t                    HouseClass_field_54D8;
+    uint32_t                    HouseClass_field_54DC;
+    uint32_t                    HouseClass_field_54E0;
     IndexBitfield               radarVisibleTo;
     int32_t                     siloMoney;
     int32_t                     preferredTargetType;
@@ -457,8 +457,8 @@ public:
     CounterClass                ownedUnitTypes2;
     CounterClass                ownedInfantryTypes2;
     CounterClass                ownedAircraftTypes2;
-    uint32_t                    field_55F0;
-    uint32_t                    field_55F4;
+    uint32_t                    HouseClass_field_55F0;
+    uint32_t                    HouseClass_field_55F4;
     int32_t                     attackDelayA;
     int32_t                     attackDelayB;
     int32_t                     enemyHouseIndex;
@@ -496,12 +496,12 @@ public:
     uint32_t                    allies;
     TimerStruct                 damageDelayTimer;
     TimerStruct                 teamDelayTimer;
-    TimerStruct                 field_timer_A;
-    TimerStruct                 field_timer_B;
-    TimerStruct                 field_timer_C;
-    TimerStruct                 field_timer_D;
-    TimerStruct                 field_timer_E;
-    uint32_t                    field_57DC;
+    TimerStruct                 HouseClass_field_timer_A;
+    TimerStruct                 HouseClass_field_timer_B;
+    TimerStruct                 HouseClass_field_timer_C;
+    TimerStruct                 HouseClass_field_timer_D;
+    TimerStruct                 HouseClass_field_timer_E;
+    uint32_t                    HouseClass_field_57DC;
     // NOTE: threatPosed_estimates[130][130] takes ~67,600 bytes - huge grid
     // TODO: verify exact layout from IDA, using placeholder
     uint8_t                     threatPosed_estimates_padding[67600];
@@ -515,7 +515,7 @@ public:
     void**                      waypointPath;
     int32_t                     waypointPathCount;
     int32_t                     waypointPathCapacity;
-    uint32_t                    field_1607C;
+    uint32_t                    HouseClass_field_1607C;
     uint32_t                    unknown16080;
     uint32_t                    unknown16084;
     double                      unused16088;
@@ -527,7 +527,7 @@ public:
     int32_t                     totalOwnedInfantryCost;
     int32_t                     totalOwnedVehicleCost;
     int32_t                     totalOwnedAircraftCost;
-    uint32_t                    field_160B4;
+    uint32_t                    HouseClass_field_160B4;
 
     // TODO: complete remaining members from YRpp (very large class ~969 lines)
 

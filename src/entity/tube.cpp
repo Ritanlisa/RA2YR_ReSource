@@ -12,13 +12,13 @@ constexpr uint32_t kTubeFlag = 0x35u;
 
 TubeClass::TubeClass() noexcept
 {
-    field_AC = 0;
-    field_B0 = 0;
-    field_B4 = 0;
-    field_B8 = 0;
-    field_BC = 0;
-    field_C0 = 0;
-    field_C4 = 0;
+    TubeClass_field_AC = 0;
+    TubeClass_field_B0 = 0;
+    TubeClass_field_B4 = 0;
+    TubeClass_field_B8 = 0;
+    TubeClass_field_BC = 0;
+    TubeClass_field_C0 = 0;
+    TubeClass_field_C4 = 0;
 
     abstractFlags = kTubeFlag;
 

@@ -73,16 +73,16 @@ public:
     OverlayTypeClass*        Image;
     int32_t                  NumFrames;
     int32_t                  NumImages;
-    int32_t                  field_EC;
-    int32_t                  field_F0;
-    int32_t                  field_F4;
-    int32_t                  field_F8;
-    int32_t                  field_FC;
+    int32_t                  TiberiumClass_field_EC;
+    int32_t                  TiberiumClass_field_F0;
+    int32_t                  TiberiumClass_field_F4;
+    int32_t                  TiberiumClass_field_F8;
+    int32_t                  TiberiumClass_field_FC;
     TimerStruct              SpreadTimer;
-    int32_t                  field_10C;
-    int32_t                  field_110;
-    int32_t                  field_114;
-    int32_t                  field_118;
+    int32_t                  TiberiumClass_field_10C;
+    int32_t                  TiberiumClass_field_110;
+    int32_t                  TiberiumClass_field_114;
+    int32_t                  TiberiumClass_field_118;
     TimerStruct              GrowthTimer;
 
 public:

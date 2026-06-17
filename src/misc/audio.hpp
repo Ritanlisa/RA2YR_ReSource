@@ -70,10 +70,10 @@ public:
     SoundType        Type;               // 0x14: sound.ini Type flags
     VolumeStruct     Volume;             // 0x18: volume/fade/buffer state (0x20 bytes)
     // 0x38: VocClass::Cleanup iterates 4 DS buffer slots at this+0x28
-    uint32_t         field_38;           // 0x38
-    uint32_t         field_3C;           // 0x3C
+    uint32_t         VocClass_field_38;           // 0x38
+    uint32_t         VocClass_field_3C;           // 0x3C
     SoundPriority    Priority;           // 0x40: sound.ini Priority
-    uint32_t         field_44;           // 0x44: between Priority and Limit
+    uint32_t         VocClass_field_44;           // 0x44: between Priority and Limit
     int32_t          Limit;              // 0x48: sound.ini Limit — max simultaneous plays
     int32_t          Loop;               // 0x4C: sound.ini Loop
     int32_t          Range;              // 0x50: sound.ini Range
@@ -85,23 +85,23 @@ public:
     int32_t          VShift;             // 0x68: sound.ini VShift (volume shift, 0–100)
     char             Name[0x20];         // 0x6C: sound.ini section name
     // 0x8C–0xA7: audio channel state / buffer context (10 dwords)
-    uint32_t         field_8C;           // 0x8C
-    uint32_t         field_90;           // 0x90
-    uint32_t         field_94;           // 0x94
-    uint32_t         field_98;           // 0x98
-    uint32_t         field_9C;           // 0x9C
-    uint32_t         field_A0;           // 0xA0
-    uint32_t         field_A4;           // 0xA4
+    uint32_t         VocClass_field_8C;           // 0x8C
+    uint32_t         VocClass_field_90;           // 0x90
+    uint32_t         VocClass_field_94;           // 0x94
+    uint32_t         VocClass_field_98;           // 0x98
+    uint32_t         VocClass_field_9C;           // 0x9C
+    uint32_t         VocClass_field_A0;           // 0xA0
+    uint32_t         VocClass_field_A4;           // 0xA4
     uint32_t         ActiveBufferCount;  // 0xA8: count of active DS buffer slots (max 4, see Cleanup loop)
-    uint32_t         field_AC;           // 0xAC
+    uint32_t         VocClass_field_AC;           // 0xAC
     void*            pVoiceChannel;      // 0xB0: Voice/AudioStream channel pointer (released in Cleanup via AudioStream::ReleaseChannel)
 
     int32_t          SampleIndex[0x20];  // 0xB4: audio sample indices (max 32)
     int32_t          NumSamples;         // 0x134: number of valid sample indices
     int32_t          Attack;             // 0x138: sound.ini Attack — set by Control bit 0x20
     int32_t          Decay;              // 0x13C: sound.ini Decay — set by Control bit 0x40
-    uint32_t         field_140;          // 0x140
-    uint32_t         field_144;          // 0x144
+    uint32_t         VocClass_field_140;          // 0x140
+    uint32_t         VocClass_field_144;          // 0x144
 
     VocClass() = delete;
     ~VocClass() = delete;
@@ -148,7 +148,7 @@ public:
     char           AlliedVoice[9];   // 0x3E: eva.ini Allied voice
     VoxPriority    Priority;         // 0x47: eva.ini Priority (1 byte enum)
     VoxType        Type;             // 0x48: eva.ini Type (1 byte enum)
-    int32_t        voiceIndex;       // 0x4C: EVA voice index (YRpp: field_int_50)
+    int32_t        voiceIndex;       // 0x4C: EVA voice index (YRpp: VoxClass_field_int_50)
 };
 
 class AudioController;

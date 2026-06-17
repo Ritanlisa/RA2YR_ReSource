@@ -15,15 +15,15 @@ constexpr uint32_t kUnitFlag = static_cast<uint32_t>(AbstractFlags::Foot)
 // IDA: 0x7353C0 -- UnitClass::Construct (960B)
 // Fields at byte offsets 0x6C0-0x6E4 from full object base
 UnitClass::UnitClass() noexcept
-    : field_int_6C0(static_cast<int>(-1))  // +0x6C0, IDA: *(this+0x6C0) = -1
+    : UnitClass_field_int_6C0(static_cast<int>(-1))  // +0x6C0, IDA: *(this+0x6C0) = -1
     , Type(nullptr)              // +0x6C4, set by constructor parameter in IDA
     , FollowerCar(nullptr)       // +0x6C8, IDA: *(this+0x6C8) = 0
     , FlagHouseIndex(-1)         // +0x6CC, IDA: *(this+0x6CC) = -1
     , HasFollowerCar(false)      // +0x6D0, IDA: *(BYTE*)(this+0x6D0) = 0
     , Unloading(false)           // +0x6D1, IDA: *(BYTE*)(this+0x6D1) = 0
-    , field_bool_6D2(false)    // +0x6D2, IDA: *(BYTE*)(this+0x6D2) = 0
+    , UnitClass_field_bool_6D2(false)    // +0x6D2, IDA: *(BYTE*)(this+0x6D2) = 0
     , TerrainPalette(false)      // +0x6D3, IDA: *(BYTE*)(this+0x6D3) = 0
-    , field_int_6D4(static_cast<int>(-1))  // +0x6D4, IDA: *(this+0x6D4) = -1
+    , UnitClass_field_int_6D4(static_cast<int>(-1))  // +0x6D4, IDA: *(this+0x6D4) = -1
     , DeathFrameCounter(static_cast<int>(-1)) // +0x6D8, IDA: *(this+0x6D8) = -1
     , ElectricBolt(nullptr)      // +0x6DC, IDA: *(this+0x6DC) = 0
     , Deployed(false)            // +0x6E0, IDA: *(BYTE*)(this+0x6E0) = 0

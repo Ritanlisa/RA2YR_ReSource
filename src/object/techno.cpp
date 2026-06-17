@@ -550,7 +550,7 @@ bool TechnoClass::CreateUnit()
     auto* build_type = reinterpret_cast<gamemd::BuildingTypeClass*>(type);
 
     // ---- Section 1: Audio setup ----
-    if (!audioController3.field_00 && build_type->WorkingSound != -1)
+    if (!audioController3.AudioController_field_00 && build_type->WorkingSound != -1)
     {
         // TODO: StartAudio(building->Audio7, build_type->WorkingSound)
     }
@@ -688,7 +688,7 @@ bool TechnoClass::CreateUnit()
     {
         // TODO: locomotor type 36 -> cost_rate *= 5.0
         building->CostAccumulator += cost_rate;
-        if (building->CostAccumulator >= 1.0 && !building->Audio7.field_00)
+        if (building->CostAccumulator >= 1.0 && !building->Audio7.AudioController_field_00)
         {
             int count = static_cast<int>(building->CostAccumulator);
             building->CostAccumulator -= static_cast<double>(count);
@@ -747,8 +747,8 @@ bool TechnoClass::CreateUnit()
             building->ProductionAccum = 0;
 
             // Random timer for new cycle
-            // TODO: building->ProductionTimer = RandomBetween(build_type->field_732, build_type->field_736)
-            building->ProductionTimer = build_type->field_688;
+            // TODO: building->ProductionTimer = RandomBetween(build_type->BuildingTypeClass_field_732, build_type->BuildingTypeClass_field_736)
+            building->ProductionTimer = build_type->BuildingTypeClass_field_688;
             building->ProductionFrame = static_cast<int>(CurrentFrame);
             building->ProductionRate = building->ProductionTimer;
             building->ProductionSpeed = building->ProductionTimer;
@@ -840,7 +840,7 @@ static bool ProductionCompletionCallback(TechnoClass* techno)
     // TODO: vt_entry_292(this, 2)
 
     // Section 2-3: Audio management
-    bool audio_active = (techno->audioController3.field_00 != 0);
+    bool audio_active = (techno->audioController3.AudioController_field_00 != 0);
     bool has_working_sound = (type->WorkingSound != -1);
 
     if (audio_active || !has_working_sound)
@@ -939,9 +939,9 @@ static bool CreateUnitOnCompletion(TechnoClass* techno)
 
     // Section 3: Super weapon fire effects
     // IDA: type+716 -> index into SW array, type+720 -> count
-    if (type->field_716 != -1)
+    if (type->BuildingTypeClass_field_716 != -1)
     {
-        for (int i = 0; i < type->field_720; ++i)
+        for (int i = 0; i < type->BuildingTypeClass_field_720; ++i)
         {
             // auto sw_coords = fetchCoordinatesHere();
             // SW_CreateFireAt(sw_array[type+716], sw_coords)

@@ -64,16 +64,16 @@ public:
     int Mission_Retreat() override;
 
     AircraftTypeClass* Type;
-    bool               field_bool_6C8;
+    bool               AircraftClass_field_bool_6C8;
     bool               HasPassengers;
     bool               IsKamikaze;
-    uint32_t           field_6CC;
-    bool               field_bool_6D0;
-    bool               field_bool_6D1;
-    bool               field_bool_6D2;
-    char               field_char_6D3;
-    bool               field_bool_6D4;
-    bool               field_bool_6D5;
+    uint32_t           AircraftClass_field_6CC;
+    bool               AircraftClass_field_bool_6D0;
+    bool               AircraftClass_field_bool_6D1;
+    bool               AircraftClass_field_bool_6D2;
+    char               AircraftClass_field_char_6D3;
+    bool               AircraftClass_field_bool_6D4;
+    bool               AircraftClass_field_bool_6D5;
 
 protected:
     AircraftClass() noexcept;

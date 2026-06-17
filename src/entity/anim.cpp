@@ -24,7 +24,7 @@ AnimClass::AnimClass(AnimTypeClass* pType, const CoordStruct& coords,
 
     Type              = pType;
     OwnerObject       = nullptr;
-    field_D0        = 0;
+    AnimClass_field_D0        = 0;
     LightConvert      = nullptr;
     LightConvertIndex = 0;
 
@@ -43,7 +43,7 @@ AnimClass::AnimClass(AnimTypeClass* pType, const CoordStruct& coords,
     Unpaused          = false;
     PausedAnimFrame   = 0;
     Reverse           = false;
-    field_124       = 0;
+    AnimClass_field_124       = 0;
 
     std::memset(&Bounce, 0, sizeof(Bounce));
 
@@ -57,8 +57,8 @@ AnimClass::AnimClass(AnimTypeClass* pType, const CoordStruct& coords,
 
     HasExtras             = false;
     RemainingIterations   = 0;
-    field_196           = 0;
-    field_197           = 0;
+    AnimClass_field_196           = 0;
+    AnimClass_field_197           = 0;
     IsPlaying             = true;
     IsFogged              = false;
     FlamingGuyExpire      = false;

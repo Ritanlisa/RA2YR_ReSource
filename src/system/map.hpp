@@ -80,22 +80,22 @@ struct ZoneConnectionClass
 {
     CellStruct  from_map_coords;
     CellStruct  to_map_coords;
-    bool        field_bool_08;
+    bool        ZoneConnectionClass_field_bool_08;
     CellClass*  cell;
 
     bool operator==(const ZoneConnectionClass& other) const
     {
         return from_map_coords == other.from_map_coords
             && to_map_coords == other.to_map_coords
-            && field_bool_08 == other.field_bool_08
+            && ZoneConnectionClass_field_bool_08 == other.ZoneConnectionClass_field_bool_08
             && cell == other.cell;
     }
 };
 
 struct SubzoneConnectionStruct
 {
-    uint32_t    field_dword_0;
-    uint8_t     field_byte_4;
+    uint32_t    SubzoneConnectionStruct_field_dword_0;
+    uint8_t     SubzoneConnectionStruct_field_byte_4;
 };
 
 struct SubzoneTrackingStruct
@@ -103,9 +103,9 @@ struct SubzoneTrackingStruct
     SubzoneConnectionStruct* subzone_connections;
     int32_t                  subzone_count;
     int32_t                  subzone_capacity;
-    uint16_t                 field_word_18;
-    uint32_t                 field_dword_1C;
-    uint32_t                 field_dword_20;
+    uint16_t                 SubzoneTrackingStruct_field_word_18;
+    uint32_t                 SubzoneTrackingStruct_field_dword_1C;
+    uint32_t                 SubzoneTrackingStruct_field_dword_20;
 };
 
 struct TrajectoryHelper
@@ -247,7 +247,7 @@ public:
     uint32_t                        unknown10;
     void*                           unknownPointer14;
     void*                           unknownPointerArray18[13];
-    uint32_t                        field_4C;
+    uint32_t                        MapClass_field_4C;
     ZoneConnectionClass*            zoneConnections;
     int32_t                         zoneConnectionCount;
     int32_t                         zoneConnectionCapacity;
@@ -276,7 +276,7 @@ public:
     int32_t                         cellIteratorNextY;
     int32_t                         cellIteratorCurrentY;
     CellClass*                      cellIteratorNextCell;
-    uint32_t                        field_11C;
+    uint32_t                        MapClass_field_11C;
     uint32_t                        unknown120;
     LTRBStruct                      mapCoordBounds;
     uint32_t                        unknown134;

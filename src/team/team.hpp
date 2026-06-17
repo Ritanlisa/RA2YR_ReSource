@@ -119,12 +119,12 @@ public:
     bool            unknown77;
     bool            spawnStatus;
     bool            unknown79;
-    bool            field_7A;
-    bool            field_7B;
+    bool            TeamClass_field_7A;
+    bool            TeamClass_field_7B;
     bool            visibilityFlags;
     bool            needsToDisappear;
-    bool            field_7E;
-    bool            field_7F;
+    bool            TeamClass_field_7E;
+    bool            TeamClass_field_7F;
     bool            stepCompleted;
     bool            unknown81;
     bool            unknown82;

@@ -132,7 +132,7 @@ MixFileClass::MixFileClass(const char* pFileName) noexcept
     FileSize        = 0;
     FileStartOffset = 0;
     Headers         = nullptr;
-    field_24        = 0;
+    MixFileClass_field_24        = 0;
     MemoryData      = nullptr;
     MemoryDataSize  = 0;
 
@@ -317,7 +317,7 @@ MixFileClass::MixFileClass(const uint8_t* data, int dataSize, const char* name) 
     FileSize       = 0;
     FileStartOffset = 0;
     Headers        = nullptr;
-    field_24       = 0;
+    MixFileClass_field_24       = 0;
 
     if (!data || dataSize <= 2) return;
 

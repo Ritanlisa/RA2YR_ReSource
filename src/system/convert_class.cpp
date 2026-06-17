@@ -79,7 +79,7 @@ LightConvertClass::LightConvertClass(
     : ConvertClass(palette1, palette2, pSurface, shadeCount, skipBlitters)
     , UsedPalette1(&palette1)
     , UsedPalette2(&palette2)
-    , field_buffer_190(nullptr)
+    , LightConvertClass_field_buffer_190(nullptr)
     , UsageCount(0)
     , Color1(static_cast<uint32_t>(color_R) | (static_cast<uint32_t>(color_G) << 8) | (static_cast<uint32_t>(color_B) << 16))
     , Color2(0)

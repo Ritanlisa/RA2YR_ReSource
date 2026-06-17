@@ -44,7 +44,7 @@ public:
     bool CrateGoodie;
     bool Harvester;
     bool Weeder;
-    bool field_E10;
+    bool UnitTypeClass_field_E10;
     bool HasTurret;
     bool DeployToFire;
     bool IsSimpleDeployer;

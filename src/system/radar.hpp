@@ -35,13 +35,13 @@ public:
     int32_t                     RadarZoomLevel;         // 0x11EC
     int32_t                     RadarOffsetX;           // 0x11F0 — centering offset for radar surface
     int32_t                     RadarOffsetY;           // 0x11F4
-    int32_t                     field_11F8;             // 0x11F8
-    int32_t                     field_11FC;             // 0x11FC
+    int32_t                     RadarClass_field_11F8;             // 0x11F8
+    int32_t                     RadarClass_field_11FC;             // 0x11FC
 
     // 0x1200: additional state fields
-    int32_t                     field_1200;             // 0x1200
-    int32_t                     field_1204;             // 0x1204
-    int32_t                     field_1208;             // 0x1208
+    int32_t                     RadarClass_field_1200;             // 0x1200
+    int32_t                     RadarClass_field_1204;             // 0x1204
+    int32_t                     RadarClass_field_1208;             // 0x1208
 
     // 0x120C: radar nominal bounds rect (default {0,0,0,0})
     RectangleStruct             RadarBounds;            // 0x120C
@@ -59,12 +59,12 @@ public:
     void*                       RadarCellBuffer;        // 0x123C
 
     // 0x1240–0x1254: radar cell tracking state
-    int32_t                     field_1240;             // 0x1240
-    int32_t                     field_1244;             // 0x1244
-    int32_t                     field_1248;             // 0x1248
-    int32_t                     field_124C;             // 0x124C
-    int32_t                     field_1250;             // 0x1250
-    int32_t                     field_1254;             // 0x1254
+    int32_t                     RadarClass_field_1240;             // 0x1240
+    int32_t                     RadarClass_field_1244;             // 0x1244
+    int32_t                     RadarClass_field_1248;             // 0x1248
+    int32_t                     RadarClass_field_124C;             // 0x124C
+    int32_t                     RadarClass_field_1250;             // 0x1250
+    int32_t                     RadarClass_field_1254;             // 0x1254
 
     // 0x1258: hash table mapping radar blip positions → TechnoClass*
     void*                       RadarHash;              // 0x1258 (HashTable<RadarTrackingStruct, TechnoClass*>*)
@@ -82,10 +82,10 @@ public:
     float                       radarSizeFactor;        // 0x1488
 
     // 0x148C–0x1498: render state counters
-    int32_t                     field_148C;             // 0x148C — initialized to 1
-    int32_t                     field_1490;             // 0x1490
-    int32_t                     field_1494;             // 0x1494
-    int32_t                     field_1498;             // 0x1498
+    int32_t                     RadarClass_field_148C;             // 0x148C — initialized to 1
+    int32_t                     RadarClass_field_1490;             // 0x1490
+    int32_t                     RadarClass_field_1494;             // 0x1494
+    int32_t                     RadarClass_field_1498;             // 0x1498
 
     // 0x149C: radar viewport clip rectangle
     RectangleStruct             RadarClipRect;          // 0x149C
@@ -99,38 +99,38 @@ public:
     // 0x14B4: pending view mode during transition animation
     int32_t                     RadarQueueViewMode;     // 0x14B4
 
-    int32_t                     field_14B8;             // 0x14B8
+    int32_t                     RadarClass_field_14B8;             // 0x14B8
 
-    bool                        field_14BC;             // 0x14BC
-    bool                        field_14BD;             // 0x14BD
+    bool                        RadarClass_field_14BC;             // 0x14BC
+    bool                        RadarClass_field_14BD;             // 0x14BD
 
     // 0x14C0: Mixer audio channel handle for radar toggle sound
     int32_t                     RadarSoundChannel;      // 0x14C0
 
-    int32_t                     field_14C4;             // 0x14C4
-    int32_t                     field_14C8;             // 0x14C8
-    int32_t                     field_14CC;             // 0x14CC
-    int32_t                     field_14D0;             // 0x14D0
+    int32_t                     RadarClass_field_14C4;             // 0x14C4
+    int32_t                     RadarClass_field_14C8;             // 0x14C8
+    int32_t                     RadarClass_field_14CC;             // 0x14CC
+    int32_t                     RadarClass_field_14D0;             // 0x14D0
 
-    int32_t                     field_14D4;             // 0x14D4 — initialized to -1
+    int32_t                     RadarClass_field_14D4;             // 0x14D4 — initialized to -1
 
     bool                        IsAvailableNow;         // 0x14D8
     bool                        IsRadarForced;          // 0x14D9 — set by SetFlag to force radar state
     bool                        IsRadarActive;          // 0x14DA — radar active/enabled flag
 
     // 0x14DC: secondary bounds rectangle
-    RectangleStruct             field_14DC;             // 0x14DC
+    RectangleStruct             RadarClass_field_14DC;             // 0x14DC
 
-    int32_t                     field_14EC;             // 0x14EC
-    int32_t                     field_14F0;             // 0x14F0
-    int32_t                     field_14F4;             // 0x14F4
-    int32_t                     field_14F8;             // 0x14F8
+    int32_t                     RadarClass_field_14EC;             // 0x14EC
+    int32_t                     RadarClass_field_14F0;             // 0x14F0
+    int32_t                     RadarClass_field_14F4;             // 0x14F4
+    int32_t                     RadarClass_field_14F8;             // 0x14F8
 
     // 0x14FC: animation delay counter (SetViewMode sets to 25 during transition)
     int32_t                     RadarAnimDelay;         // 0x14FC
 
     // 0x1500: radar animation / update timer
-    TimerStruct                 field_timer_1500;       // 0x1500
+    TimerStruct                 RadarClass_field_timer_1500;       // 0x1500
 
 protected:
     RadarClass() = default;

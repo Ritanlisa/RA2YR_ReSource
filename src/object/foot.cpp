@@ -18,12 +18,12 @@ FootClass::FootClass() noexcept
     , unknownShort524(0)
     , unknownShort526(0)
     , unknownShort528(0)
-    , field_short_52A(0)
-    , field_52C(0)
+    , FootClass_field_short_52A(0)
+    , FootClass_field_52C(0)
     , unknown530(0)
     , unknown534(0)
     , unknown538(0)
-    , field_bool_53C(false)
+    , FootClass_field_bool_53C(false)
     , unknown540(0)
     , currentMapCoords{}
     , lastMapCoords{}
@@ -35,17 +35,17 @@ FootClass::FootClass() noexcept
     , currentSpeed_multiplier(0.0)
     , movementDestination(nullptr)
     , lastDestination(nullptr)
-    , field_int_5C4(-1)
-    , field_5C8(0)
-    , field_5CC(0)
-    , field_5D0(0)
-    , field_bool_5D1(false)
+    , FootClass_field_int_5C4(-1)
+    , FootClass_field_5C8(0)
+    , FootClass_field_5CC(0)
+    , FootClass_field_5D0(0)
+    , FootClass_field_bool_5D1(false)
     , team(nullptr)
     , nextTeamMember(nullptr)
-    , field_5DC(0)
+    , FootClass_field_5DC(0)
     , pathDelayTimer{}
-    , field_int_64C(0)
-    , field_timer_650{}
+    , FootClass_field_int_64C(0)
+    , FootClass_field_timer_650{}
     , sightTimer{}
     , blockagePathTimer{}
     , unknownPoint3d678{}
@@ -56,10 +56,10 @@ FootClass::FootClass() noexcept
     , unknownBool688(false)
     , isTeamLeader(false)
     , shouldScanForTarget(false)
-    , field_bool_68B(false)
-    , field_bool_68C(false)
-    , field_bool_68D(false)
-    , field_bool_68E(false)
+    , FootClass_field_bool_68B(false)
+    , FootClass_field_bool_68C(false)
+    , FootClass_field_bool_68D(false)
+    , FootClass_field_bool_68E(false)
     , shouldEnterAbsorber(false)
     , shouldEnterOccupiable(false)
     , shouldGarrisonStructure(true)
@@ -67,19 +67,19 @@ FootClass::FootClass() noexcept
     , unknown698(0)
     , parasiteImUsing(nullptr)
     , paralysisTimer{}
-    , field_bool_6AC(false)
+    , FootClass_field_bool_6AC(false)
     , isAttackedByLocomotor(false)
     , isLetGoByLocomotor(false)
-    , field_bool_6AF(false)
-    , field_bool_6B0(false)
-    , field_bool_6B1(false)
-    , field_bool_6B2(false)
-    , field_bool_6B3(false)
-    , field_bool_6B4(false)
-    , field_bool_6B5(false)
-    , field_bool_6B7(false)
+    , FootClass_field_bool_6AF(false)
+    , FootClass_field_bool_6B0(false)
+    , FootClass_field_bool_6B1(false)
+    , FootClass_field_bool_6B2(false)
+    , FootClass_field_bool_6B3(false)
+    , FootClass_field_bool_6B4(false)
+    , FootClass_field_bool_6B5(false)
+    , FootClass_field_bool_6B7(false)
     , frozenStill(false)
-    , field_bool_6B8(false)
+    , FootClass_field_bool_6B8(false)
     , m_unused_6BC(0)
 {
     std::memset(&audioController7, 0, sizeof(audioController7));
@@ -101,7 +101,7 @@ bool FootClass::MovementAI()
     if (!isAliveFlag)
         return false;
 
-    field_bool_6B3 = false;
+    FootClass_field_bool_6B3 = false;
 
     // Section 2: Movement smoke trail emission
     EmitMovementSmoke();
@@ -150,11 +150,11 @@ void FootClass::EmitMovementSmoke()
 
 void FootClass::UpdateMovementAmbiguity()
 {
-    // IDA: if (!field_bool_6B5/*981*/ && IsHouseFlag3434) {
+    // IDA: if (!FootClass_field_bool_6B5/*981*/ && IsHouseFlag3434) {
     //   type = GetType(); check sub_578540(type, 1);
-    //   field_bool_6B5 = true;
+    //   FootClass_field_bool_6B5 = true;
     // }
-    if (!field_bool_6B5)
+    if (!FootClass_field_bool_6B5)
     {
         // TODO: check house rule for ambiguity detection
     }

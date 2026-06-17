@@ -21,7 +21,7 @@ TerrainClass::TerrainClass(TerrainTypeClass* pType, const CellStruct& cell,
     IsBurning  = false;
     TimeToDie  = false;
 
-    std::memset(&field_rect_D0, 0, sizeof(field_rect_D0));
+    std::memset(&TerrainClass_field_rect_D0, 0, sizeof(TerrainClass_field_rect_D0));
 
     height  = height;
     abstractFlags = kTerrainFlag;

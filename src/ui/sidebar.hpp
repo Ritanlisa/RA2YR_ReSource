@@ -30,7 +30,7 @@ struct CameoDataStruct
     bool             IsAlt;                  // 0x08: alternate cameo (multi-factory buildings)
     uint8_t          _pad_09[3];             // 0x09
     FactoryClass*    CurrentFactory;         // 0x0C: factory producing this item
-    uint32_t         field_10;               // 0x10: unknown — YRpp: field_10
+    uint32_t         CameoDataStruct_field_10;               // 0x10: unknown — YRpp: CameoDataStruct_field_10
     // StageClass Progress (0x1C bytes, embedded):
     int32_t          Progress;               // 0x14: StageClass::Value — gclock animation level (0–54)
     bool             ProgressHasChanged;     // 0x18: StageClass::HasChanged
@@ -44,14 +44,14 @@ struct CameoDataStruct
 
     CameoDataStruct() noexcept
         : ItemIndex(-1), ItemType(AbstractType::None), IsAlt(false),
-          CurrentFactory(nullptr), field_10(0), Progress(0),
+          CurrentFactory(nullptr), CameoDataStruct_field_10(0), Progress(0),
           ProgressHasChanged(false), ProgressTimerStart(-1), ProgressTimerCurrent(0),
           ProgressTimerTimeLeft(0), ProgressRate(0), ProgressStep(1),
           FlashEndFrame(0) {}
 
     CameoDataStruct(int32_t itemIndex, AbstractType itemType) noexcept
         : ItemIndex(itemIndex), ItemType(itemType), IsAlt(false),
-          CurrentFactory(nullptr), field_10(0), Progress(0),
+          CurrentFactory(nullptr), CameoDataStruct_field_10(0), Progress(0),
           ProgressHasChanged(false), ProgressTimerStart(-1), ProgressTimerCurrent(0),
           ProgressTimerTimeLeft(0), ProgressRate(0), ProgressStep(1),
           FlashEndFrame(0) {}
@@ -87,14 +87,14 @@ struct TabDataStruct
     RectangleStruct  Bounds;                 // 0x28: tab clickable bounds
     int32_t          Index;                  // 0x38: tab index (0–3)
     bool             NeedsRedraw;            // 0x3C: tab needs redraw flag
-    uint8_t          field_3D;               // 0x3D: unknown (YRpp: field_3D)
-    uint8_t          field_3E;               // 0x3E: unknown (YRpp: field_3E)
-    uint8_t          field_3F;               // 0x3F: unknown (YRpp: field_3F)
-    uint32_t         field_40;               // 0x40: unknown (YRpp: field_40)
+    uint8_t          TabDataStruct_field_3D;               // 0x3D: unknown (YRpp: TabDataStruct_field_3D)
+    uint8_t          TabDataStruct_field_3E;               // 0x3E: unknown (YRpp: TabDataStruct_field_3E)
+    uint8_t          TabDataStruct_field_3F;               // 0x3F: unknown (YRpp: TabDataStruct_field_3F)
+    uint32_t         TabDataStruct_field_40;               // 0x40: unknown (YRpp: TabDataStruct_field_40)
     int32_t          TopRowIndex;            // 0x44: scroll position — topmost visible row
-    uint32_t         field_48;               // 0x48: unknown — scroll-related (YRpp: field_48)
-    uint32_t         field_4C;               // 0x4C: unknown (YRpp: field_4C)
-    uint32_t         field_50;               // 0x50: unknown (YRpp: field_50)
+    uint32_t         TabDataStruct_field_48;               // 0x48: unknown — scroll-related (YRpp: TabDataStruct_field_48)
+    uint32_t         TabDataStruct_field_4C;               // 0x4C: unknown (YRpp: TabDataStruct_field_4C)
+    uint32_t         TabDataStruct_field_50;               // 0x50: unknown (YRpp: TabDataStruct_field_50)
     int32_t          CameoCount;             // 0x54: number of filled cameo slots
     CameoDataStruct  Cameos[kMaxCameosPerTab]; // 0x58: cameo grid entries (75 * 0x34 = 0xF3C)
 };
@@ -137,24 +137,24 @@ public:
     bool             isScrolling;                // 0x3E61 (YRpp: IsSidebarActive @ 0x53A5)
     bool             SidebarNeedsRedraw;         // 0x3E62
     bool             SidebarBackgroundNeedsRedraw; // 0x3E63
-    bool             needsRedrawAll;             // 0x3E64 (YRpp: field_bool_53A8)
+    bool             needsRedrawAll;             // 0x3E64 (YRpp: SidebarClass_field_bool_53A8)
 
     HouseClass*      DiplomacyHouses[kMaxDiplomacyHouses];     // 0x3E68
     int32_t          DiplomacyKills[kMaxDiplomacyHouses];      // 0x3E88
     int32_t          DiplomacyOwned[kMaxDiplomacyHouses];      // 0x3EA8
     int32_t          DiplomacyPowerDrain[kMaxDiplomacyHouses]; // 0x3EC8
     ColorScheme*     DiplomacyColors[kMaxDiplomacyHouses];     // 0x3EE8
-    uint32_t         DiplomacyHouseStates[kMaxDiplomacyHouses];   // 0x3F08 (YRpp: field_544C)
-    uint32_t         DiplomacyHousePowers[kMaxDiplomacyHouses];   // 0x3F28 (YRpp: field_546C)
-    uint32_t         DiplomacyHouseAlliances[kMaxDiplomacyHouses]; // 0x3F48 (YRpp: field_548C)
-    uint32_t         DiplomacyHouseSurrenders[kMaxDiplomacyHouses]; // 0x3F68 (YRpp: field_54AC)
-    uint32_t         DiplomacyHouseCaptures[kMaxDiplomacyHouses];  // 0x3F88 (YRpp: field_54CC)
-    uint32_t         DiplomacyHouseCreditsSpent[kMaxDiplomacyHouses]; // 0x3FA8 (YRpp: field_54EC)
-    uint8_t          diplomacyDrawingState;     // 0x3FC8 (YRpp: field_550C)
+    uint32_t         DiplomacyHouseStates[kMaxDiplomacyHouses];   // 0x3F08 (YRpp: SidebarClass_field_544C)
+    uint32_t         DiplomacyHousePowers[kMaxDiplomacyHouses];   // 0x3F28 (YRpp: SidebarClass_field_546C)
+    uint32_t         DiplomacyHouseAlliances[kMaxDiplomacyHouses]; // 0x3F48 (YRpp: SidebarClass_field_548C)
+    uint32_t         DiplomacyHouseSurrenders[kMaxDiplomacyHouses]; // 0x3F68 (YRpp: SidebarClass_field_54AC)
+    uint32_t         DiplomacyHouseCaptures[kMaxDiplomacyHouses];  // 0x3F88 (YRpp: SidebarClass_field_54CC)
+    uint32_t         DiplomacyHouseCreditsSpent[kMaxDiplomacyHouses]; // 0x3FA8 (YRpp: SidebarClass_field_54EC)
+    uint8_t          diplomacyDrawingState;     // 0x3FC8 (YRpp: SidebarClass_field_550C)
     int32_t          DiplomacyNumHouses;        // 0x3FCC
 
-    bool             stripClassDrawn;           // 0x3FD0 (YRpp: field_bool_5514)
-    bool             stripClassEnabled;         // 0x3FD1 (YRpp: field_bool_5515)
+    bool             stripClassDrawn;           // 0x3FD0 (YRpp: SidebarClass_field_bool_5514)
+    bool             stripClassEnabled;         // 0x3FD1 (YRpp: SidebarClass_field_bool_5515)
     uint8_t          padding_5516[2];           // 0x3FD2
 
     SuperClass*      CurrentSuperWeapon;        // 0x3FD4

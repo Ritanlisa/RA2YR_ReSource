@@ -75,7 +75,7 @@ public:
         MixFileClass* ISOGEN             = nullptr;
         MixFileClass* ISOGENMD           = nullptr;
         MixFileClass* MOVIES02D          = nullptr;
-        MixFileClass* field_1          = nullptr;
+        MixFileClass* MixFileClass_field_1          = nullptr;
         MixFileClass* MAIN               = nullptr;
         MixFileClass* CONQMD             = nullptr;
         MixFileClass* CONQUER            = nullptr;
@@ -89,8 +89,8 @@ public:
         MixFileClass* NEUTRAL            = nullptr;
         MixFileClass* MAPSMD02D          = nullptr;
         MixFileClass* MAPS02D            = nullptr;
-        MixFileClass* field_2          = nullptr;
-        MixFileClass* field_3          = nullptr;
+        MixFileClass* MixFileClass_field_2          = nullptr;
+        MixFileClass* MixFileClass_field_3          = nullptr;
         MixFileClass* SIDEC02DMD         = nullptr;
         MixFileClass* SIDEC02D           = nullptr;
         MixFileClass* MULTI              = nullptr;
@@ -151,7 +151,7 @@ public:
     int FileSize = 0;
     int FileStartOffset = 0;
     MixHeaderData* Headers = nullptr;
-    int field_24 = 0;
+    int MixFileClass_field_24 = 0;
 
     // Memory-backed data (for sub-MIX files): non-null = read from memory, not disk
     uint8_t* MemoryData = nullptr;

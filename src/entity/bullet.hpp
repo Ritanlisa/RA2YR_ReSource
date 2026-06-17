@@ -54,7 +54,7 @@ class AnimClass;
 
 struct BulletData
 {
-    TimerStruct  field_timer_;
+    TimerStruct  BulletData_field_timer_;
     TimerStruct  ArmTimer;
     CoordStruct  Location;
     int32_t      Distance;
@@ -81,20 +81,20 @@ public:
 
     BulletTypeClass*    Type;
     TechnoClass*        Owner;
-    bool                field_B4;
+    bool                BulletClass_field_B4;
     BulletData          Data;
     bool                Bright;
-    uint32_t            field_E4;
+    uint32_t            BulletClass_field_E4;
     BulletVelocity      Velocity;
-    uint32_t            field_100;
-    bool                field_104;
-    uint32_t            field_108;
+    uint32_t            BulletClass_field_100;
+    bool                BulletClass_field_104;
+    uint32_t            BulletClass_field_108;
     AbstractClass*      Target;
     int32_t             Speed;
     int32_t             InheritedColor;
-    uint32_t            field_118;
-    uint32_t            field_11C;
-    double              field_120;
+    uint32_t            BulletClass_field_118;
+    uint32_t            BulletClass_field_11C;
+    double              BulletClass_field_120;
     WarheadTypeClass*   WH;
     uint8_t             AnimFrame;
     uint8_t             AnimRateCounter;

@@ -56,7 +56,7 @@ public:
     int32_t                             SparkSpawnFrames;
     int32_t                             SpotlightRadius;
     bool                                TimeToDie;
-    bool                                field_bool_F9;
+    bool                                ParticleSystemClass_field_bool_F9;
     ra2::game::HouseClass*              OwnerHouse;
 
 public:

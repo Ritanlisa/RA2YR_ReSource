@@ -79,7 +79,7 @@ public:
     virtual bool   SpawnBaseUnits(HouseClass*, uint32_t)              { return false; }      // 0x5D6340 (ScenarioClass::createStartingForces)
     virtual bool   GenerateStartingUnits(HouseClass*, int32_t&)       { return false; }      // 0x5D6440 (ScenarioClass::MissionStubReturnZero3)
 
-    bool             field_4;
+    bool             MPGameModeClass_field_4;
     DynamicVectorClass<MPTeam*> MPTeams;
     wchar_t*         CSFTitle;
     wchar_t*         CSFTooltip;

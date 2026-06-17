@@ -8,18 +8,18 @@ SessionClass* SessionClass::Instance = nullptr;
 SessionClass::SessionClass() noexcept
     : GameMode(GameMode::Skirmish)
     , MPGameMode(nullptr)
-    , field_08(0)
-    , field_0C(0)
-    , field_10(0)
-    , field_14(0)
+    , SessionClass_field_08(0)
+    , SessionClass_field_0C(0)
+    , SessionClass_field_10(0)
+    , SessionClass_field_14(0)
     , Config{}
     , UniqueID(0)
     , PlayerColor(-1)
-    , field_160(0)
-    , field_164(0)
-    , field_168(0)
-    , field_16C(0)
-    , field_170(0)
+    , SessionClass_field_160(0)
+    , SessionClass_field_164(0)
+    , SessionClass_field_168(0)
+    , SessionClass_field_16C(0)
+    , SessionClass_field_170(0)
     , idxSide(-1)
     , idxSide2(-1)
     , Color(-1)
@@ -35,11 +35,11 @@ SessionClass::SessionClass() noexcept
     std::memset(&SkirmishPreferences, 0, sizeof(SkirmishPreferences));
     std::memset(&LANPreferences, 0, sizeof(LANPreferences));
     std::memset(&WOLPreferences, 0, sizeof(WOLPreferences));
-    std::memset(field_304, 0, sizeof(field_304));
-    std::memset(field_310, 0, sizeof(field_310));
+    std::memset(SessionClass_field_304, 0, sizeof(SessionClass_field_304));
+    std::memset(SessionClass_field_310, 0, sizeof(SessionClass_field_310));
     std::memset(ScenarioFilename, 0, sizeof(ScenarioFilename));
-    std::memset(field_8AA, 0, sizeof(field_8AA));
-    std::memset(field_2854, 0, sizeof(field_2854));
+    std::memset(SessionClass_field_8AA, 0, sizeof(SessionClass_field_8AA));
+    std::memset(SessionClass_field_2854, 0, sizeof(SessionClass_field_2854));
 }
 
 SessionClass::~SessionClass()

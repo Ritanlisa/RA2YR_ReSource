@@ -52,7 +52,7 @@ CCINIClass::CCINIClass()
     ccFile = nullptr;
     ownsFile = false;
     iniData = new INIData();
-    field_4C = 0;
+    CCINIClass_field_4C = 0;
     unknown50 = 0;
     unknown54 = 0;
 }

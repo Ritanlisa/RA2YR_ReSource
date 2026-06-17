@@ -18,7 +18,7 @@ protected:
 public:
     int CDDriveNames[26] = {};
     int NumCDDrives = 0;
-    uint32_t field_6C = 0;
+    uint32_t CDDriveManagerClass_field_6C = 0;
 };
 
 class CD
@@ -34,7 +34,7 @@ protected:
     CD() = default;
 
 public:
-    uint32_t field_04 = 0;
+    uint32_t CD_field_04 = 0;
 };
 
 } // namespace gamemd
