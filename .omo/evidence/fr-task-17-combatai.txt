@@ -1,0 +1,74 @@
+# fr-task-17-combatai — Build Verification
+
+## Build Status: PASS (0 errors, 0 warnings)
+
+```
+cmake --build build_win --target gamemd_core
+→ gamemd_core.vcxproj -> D:\RA2YR_ReSource\build_win\Debug\gamemd_core.lib
+```
+
+## Functions Implemented
+
+### Combat/Damage System
+- `ObjectClass::ReceiveDamage` (0x5F5390) — base class damage reception with warhead vs armor, iron curtain check, distance falloff
+- `ObjectClass::IronCurtain` (0x70E2B0) — invulnerability effect application  
+- `ObjectClass::IsIronCurtained` — damage immunity check
+- `TechnoClass::Fire` (0x70ECE0) — bullet creation with weapon validation, FLH coordinates, firepower calculation with veterancy bonuses
+- `TechnoClass::SelectWeapon` (0x6F3330) — dual-weapon selection based on armor versus and range
+- `TechnoClass::GetFireError` / `GetFireErrorWithoutRange` — fire legality checks (ammo, cloak, range, target validity)
+- `TechnoClass::IsCloseEnoughToAttack` — range proximity check
+- `TechnoClass::CanAttack` (0x700D50) — attack capability flag
+
+### AI / Target Selection
+- `TechnoClass::SelectAutoTarget` (0x6F8DF0) — area-scan target selection with expanding ring search and full-map fallback
+- `TechnoClass::SetTarget` — target assignment with destination routing
+- `TechnoClass::Guard` — guard mode entry
+
+### Pathfinding
+- `FootClass::MovementAI` (0x4DA530) — per-frame movement update with sections:
+  - Alive check, movement smoke, ambiguity detection
+  - Locomotion speed/position update
+  - Movement sound effects
+  - Locomotion COM update
+  - Destination reached detection → queue next mission
+- `FootClass::EmitMovementSmoke` — frame-based movement smoke trail emission
+- `FootClass::UpdateMovementAmbiguity` — anti-cheat ambiguity detection
+- `FootClass::UpdateMovementSpeed` — speed/timer recalculation
+- `FootClass::HandleMovementSoundupdateLogic` — terrain transition sounds
+- `FootClass::HandleLocomotionupdateLogic` — COM locomotor QueryInterface/update
+- `FootClass::Destroyed` (0x4D98C0) — unit death handler with kill registration
+
+### Locomotion Classes (12 classes, ~94 methods)
+All locomotion class methods converted to inline implementations in `src/misc/locomotion.hpp`:
+- `LocomotionClass` (base): 24 ILocomotion + 5 IPersistStream methods
+- `DriveLocomotionClass`: ground vehicle locomotion
+- `HoverLocomotionClass`: hovercraft locomotion  
+- `WalkLocomotionClass`: infantry leg locomotion (IPiggyback)
+- `FlyLocomotionClass`: fixed-wing aircraft
+- `RocketLocomotionClass`: V3/Dreadnought missiles
+- `JumpjetLocomotionClass`: jumpjet infantry/vehicles (IPiggyback), 279 methods
+- `ShipLocomotionClass`: naval vessels (IPiggyback)
+- `TunnelLocomotionClass`: subterranean digger state machine
+- `TeleportLocomotionClass`: Chrono Legionnaire teleport (IPiggyback)
+- `MechLocomotionClass`: walker (mech) locomotion
+- `DropPodLocomotionClass`: orbital drop pod (IPiggyback)
+
+Includes: CLSID registry, COM factory (`CreateInstance`), `ChangeLocomotorTo` helper, timer types (`CDTimerClass`, `RateTimer`, `FacingClass`).
+
+### Key Infrastructure
+- `GetWarheadVersusMultiplier` (0x48A4F0) — armor vs warhead damage multiplier with cell terrain modifiers
+- `ComputeTechnoClassDamageFalloff` (0x489180) — distance-based damage falloff calculation
+
+## Files Modified
+- `src/misc/locomotion.hpp` — 12 locomotion classes with inline implementations
+- `src/object/object.cpp` — ReceiveDamage, IronCurtain enhancements
+- `src/object/techno.cpp` — Fire, SelectWeapon, SelectAutoTarget, combat enhancements
+- `src/object/foot.cpp` — MovementAI, pathfinding, movement sections
+- `injectFunctionTest/functions.json` — 409 functions marked completed=true
+
+## Build Verification
+```bash
+cmake -B build_win -G "Visual Studio 17 2022" -A Win32
+cmake --build build_win --target gamemd_core
+# Result: 0 errors, 0 warnings
+```

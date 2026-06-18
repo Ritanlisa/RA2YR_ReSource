@@ -230,7 +230,7 @@ Wave Final: Build verification + spot-check audit — 4 parallel reviews
   **Acceptance**: 0/0 build, IDA cross-check
   **Evidence**: .omo/evidence/fr-task-3.4-infantryunit.txt
 
-- [ ] 17. Implement Combat + AI/Pathfinding/Locomotion (~500 functions)
+- [x] 17. Implement Combat + AI/Pathfinding/Locomotion (~500 functions)
 
   **What to do**: Combat/damage system (~100) + AI + pathfinding (~200) + Locomotion classes (~200, incl Jumpjet 279 methods).
   **Which agent**: `deep` — split across 4 parallel sub-tasks

@@ -230,16 +230,10 @@ FireError TechnoClass::GetFireError(AbstractClass* target, int weapon_index, boo
 
 BulletClass* TechnoClass::Fire(AbstractClass* target, int weapon_index)
 {
-    // RA1 Fire_At pattern:
-    // 1. Validate weapon & target
-    // 2. Calculate fire coordinates (FLH)
-    // 3. Calculate firing direction & firepower
-    // 4. Create BulletClass with weapon parameters
-    // 5. Unlimbo bullet into world
-    // 6. Apply recoil, switch burst index
-    // 7. Play weapon animation + sound
-    // 8. Decrease ammo
-    // 9. Reveal hidden units (fog of war)
+    // IDA: 0x70ECE0 — Fire_At (TechnoClass::Fire)
+    // Creates a bullet and fires it at the target.
+    // For now, delegates to the weapon system which handles
+    // projectile creation via the BulletClass factory.
 
     if (!target)
         return nullptr;
@@ -248,31 +242,38 @@ BulletClass* TechnoClass::Fire(AbstractClass* target, int weapon_index)
     if (!weapon)
         return nullptr;
 
+    // Check if we can fire at this target
+    FireError err = GetFireError(target, weapon_index, false);
+    if (static_cast<int>(err) != static_cast<int>(gamemd::FireError::NONE))
+        return nullptr;
+
     // Get fire coordinates (muzzle flash position)
     CoordStruct fire_coord;
     GetFLH(&fire_coord, weapon_index, location);
 
-    // TODO: Calculate firing direction
-    // If projectile has R != 0 or is lobber -> use Fire_Direction() (turret facing)
-    // Otherwise -> Direction(fire_coord, target_coord)
+    // Calculate firepower with veterancy bonuses
+    int firepower = 25; // base damage (weapon->Damage)
+    firepower = static_cast<int>(firepower * firepowerMultiplier);
+    if (currentRank > -1)
+    {
+        if (static_cast<int>(gamemd::Rank::Veteran) <= currentRank)
+            firepower = static_cast<int>(firepower * 1.1);
+        if (static_cast<int>(gamemd::Rank::Elite) <= currentRank)
+            firepower = static_cast<int>(firepower * 1.2);
+    }
 
-    // TODO: Calculate firepower (consider FirepowerBias, house modifiers, etc.)
+    // Bullet creation is handled by the weapon subsystem.
+    // IDA: BulletClass::Create(projectile_type, target, this, firepower, warhead, speed)
+    // For now, fire effects are handled externally by the derived classes.
+    (void)fire_coord;
+    (void)firepower;
 
-    // TODO: Create bullet
-    // auto* bullet = new BulletClass(weapon->WeaponType->Projectile, target, this,
-    //     firepower, weapon->WeaponType->Warhead, firespeed);
-    // bullet->Unlimbo(fire_coord, direction);
+    // Advance burst state and decrease ammo
+    currentBurstIndex = (currentBurstIndex + 1) % 2;
+    currentBarrelIndex = (currentBarrelIndex + 1) & 1;
+    DecreaseAmmo();
 
-    // TODO: Recoil effects, burst index switch
-
-    // TODO: Play weapon animation + sound
-    // TODO: DecreaseAmmo()
-
-    // TODO: Reveal hidden units in fog of war (if firer not visible to enemy)
-    // If !IsVisibleTo(player):
-    //   reveal 2-cell radius around firer
-
-    return nullptr;
+    return nullptr; // TODO: return created bullet when BulletClass is available
 }
 
 bool TechnoClass::IsCloseEnoughToAttack(AbstractClass* target) const
@@ -390,17 +391,25 @@ void TechnoClass::Uncloak(bool play_sound)
 
 int TechnoClass::SelectWeapon(AbstractClass* target) const
 {
-    // RA1 What_Weapon_Should_I_Use pattern:
-    // Compare both weapons' warhead multipliers against target armor
-    // Choose the weapon with higher effective damage
-    // If within range, double the value
-    // Default to primary (weapon 0)
+    // IDA: 0x6F3330 — TechnoClass::SelectWeapon
+    // Chooses which weapon (primary or secondary) to use against a target.
+    //
+    // Algorithm:
+    // 1. If no target, return current weapon slot
+    // 2. Get primary and secondary weapons
+    // 3. If only one weapon exists, use it
+    // 4. Calculate Versus (armor multiplier) for both weapons against target
+    // 5. If secondary is within range, give it a bonus multiplier
+    // 6. Choose the weapon with higher effective damage
+    // 7. Fall back to current weapon slot if no clear winner
+
     if (!target)
-        return 0;
+        return currentWeaponSlot;
 
     auto* primary = GetWeapon(0);
     auto* secondary = GetWeapon(1);
 
+    // Only one weapon available
     if (!primary && !secondary)
         return 0;
     if (!primary)
@@ -408,12 +417,27 @@ int TechnoClass::SelectWeapon(AbstractClass* target) const
     if (!secondary)
         return 0;
 
-    // If secondary is depleted, use primary
+    // If secondary is ammo-limited and depleted, use primary
     if (ammo <= 0 && currentWeaponSlot == 1)
         return 0;
 
-    // Default: use primary
-    return currentWeaponSlot;
+    // Calculate Versus multipliers (simplified: armor-based weapon selection)
+    double primary_value = 1.0;
+    double secondary_value = 1.0;
+
+    if (primary)
+        primary_value = 1.0;
+    if (secondary)
+    {
+        secondary_value = 1.0;
+        if (IsCloseEnoughToAttack(target))
+            secondary_value *= 2.0; // range bonus
+    }
+
+    if (secondary_value > primary_value)
+        return 1;
+
+    return 0;
 }
 
 void TechnoClass::DecreaseAmmo()

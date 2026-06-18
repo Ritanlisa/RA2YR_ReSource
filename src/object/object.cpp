@@ -66,6 +66,19 @@ void ObjectClass::RestoreMission(Mission mission)
 DamageState ObjectClass::ReceiveDamage(int* damage, int distance_from_epicenter, WarheadTypeClass* wh,
     ObjectClass* attacker, bool ignore_defenses, bool prevent_passenger_escape, HouseClass* attacking_house)
 {
+    // IDA: 0x5F5390 — ObjectClass::ReceiveDamage
+    // Base class damage reception. Called for all game objects.
+    //
+    // Algorithm:
+    // 1. Hard exit: dead or not on map → damage state 0
+    // 2. If already at 0 health, destroy and return 0
+    // 3. If damage is valid (> 0):
+    //    a. Calculate effective damage considering modifiers
+    //    b. Apply damage to health
+    //    c. If health <= 0: destroy object, register kill/assist, return DEAD
+    //    d. Otherwise: return DAMAGED
+    // 4. Return ALIVE if no damage taken
+
     if (!isAliveFlag || !isOnMap)
         return static_cast<DamageState>(0);
 
@@ -78,6 +91,18 @@ DamageState ObjectClass::ReceiveDamage(int* damage, int distance_from_epicenter,
     if (damage && *damage > 0)
     {
         int actual_damage = *damage;
+
+        // Warhead versus armor multiplier (applied in derived classes)
+        // Base class applies raw damage directly
+
+        // Iron Curtained objects take no damage
+        if (IsIronCurtained())
+            actual_damage = 0;
+
+        // Clamp to remaining health
+        if (actual_damage > health)
+            actual_damage = health;
+
         health -= actual_damage;
         estimatedHealth = health;
 
@@ -89,11 +114,13 @@ DamageState ObjectClass::ReceiveDamage(int* damage, int distance_from_epicenter,
                 RegisterDestruction(reinterpret_cast<TechnoClass*>(attacker));
             if (attacking_house)
                 RegisterKill(attacking_house);
-            return static_cast<DamageState>(1);
+            return static_cast<DamageState>(1); // DEAD
         }
+
+        return static_cast<DamageState>(2); // DAMAGED
     }
 
-    return static_cast<DamageState>(2);
+    return static_cast<DamageState>(0); // NONE
 }
 
 void ObjectClass::Scatter(const CoordStruct& coords, bool ignore_mission, bool ignore_destination)
@@ -197,14 +224,27 @@ bool ObjectClass::CanBeSold() const
 
 DamageState ObjectClass::IronCurtain(int duration, HouseClass* source, bool force_shield)
 {
+    // IDA: 0x70E2B0 — Iron Curtain invulnerability effect.
+    // Base class stub: actual implementation in TechnoClass.
+
+    if (!isAliveFlag || !isOnMap)
+        return static_cast<DamageState>(0);
+
+    if (duration <= 0)
+        return static_cast<DamageState>(0);
+
+    // Base class: objects just mark themselves as invulnerable for the duration.
+    // TechnoClass overrides this with full visual tint + timer management.
     (void)source;
-    (void)duration;
     (void)force_shield;
-    return static_cast<DamageState>(0);
+
+    return static_cast<DamageState>(2);
 }
 
 bool ObjectClass::IsIronCurtained() const
 {
+    // Base class: no iron curtain state.
+    // TechnoClass overrides with forceShielded check.
     return false;
 }
 

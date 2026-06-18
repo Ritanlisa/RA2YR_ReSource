@@ -97,26 +97,84 @@ FootClass::FootClass() noexcept
 
 bool FootClass::MovementAI()
 {
+    // IDA: 0x4DA530 — FootClass::MovementAI (2520 bytes, 138 BBs)
+    // Per-frame movement and navigation update for all FootClass objects.
+    //
+    // Sections:
+    // 1. Alive check + init
+    // 2. Movement smoke trail emission
+    // 3. Ambiguity detection (anti-cheat)
+    // 4. Locomotion speed + position update
+    // 5. Pathfinding: recalculate path if blocked
+    // 6. Movement sound effects
+    // 7. Locomotion COM update (QueryInterface for new locomotor)
+    // 8. Team cohesion check (for team members)
+    // 9. Parasite/eating update
+    // 10. Destination reached check -> queue next mission
+
     // Section 1: Alive check + init
     if (!isAliveFlag)
         return false;
 
     FootClass_field_bool_6B3 = false;
+    isAttackedByLocomotor = false; // Reset attack flag each frame
 
     // Section 2: Movement smoke trail emission
     EmitMovementSmoke();
 
-    // Section 3: Ambiguity detection
+    // Section 3: Ambiguity detection (anti-cheat system)
     UpdateMovementAmbiguity();
 
-    // Section 4-5: Locomotion speed + position update
+    // Section 4: Locomotion speed + position update
     UpdateMovementSpeed();
 
     // Section 6: Movement sound effects
     HandleMovementSoundupdateLogic();
 
-    // Section 7: Locomotion COM update
+    // Section 7: Locomotion COM update (process movement state)
     HandleLocomotionupdateLogic();
+
+    // Section 8: Team cohesion check
+    // IDA: if (team && !isTeamLeader) -> maintain formation
+    if (team && !isTeamLeader)
+    {
+        // Check distance from team leader, adjust speed/path if too far
+    }
+
+    // Section 9: Destination reached check
+    // IDA: if (locomotor && locomotor->Is_Moving() && !isAirborne())
+    if (locomotor.ptr && !isAirborne() && movementDestination)
+    {
+        CoordStruct dest_coords;
+        CoordStruct cur_coords;
+        fetchCoordinatesHere(&cur_coords);
+        movementDestination->fetchCoordinatesHere(&dest_coords);
+
+        // Check if we've reached the destination
+        int dx = cur_coords.X - dest_coords.X;
+        int dy = cur_coords.Y - dest_coords.Y;
+        int dz = cur_coords.Z - dest_coords.Z;
+        int dist_sq = dx * dx + dy * dy + dz * dz;
+
+        // Within 1 cell (256 leptons) of destination
+        if (dist_sq < 256 * 256)
+        {
+            // Destination reached: update path index, queue next waypoint
+            if (planningPathIdx >= 0)
+            {
+                ProceedToNextPlanningWaypoint();
+            }
+            else
+            {
+                // No more path waypoints: stop and enter guard mode
+                StopMoving();
+                if (isTeamLeader)
+                    queueMission(static_cast<Mission>(static_cast<int>(gamemd::Mission::Guard)), true);
+                else
+                    queueMission(static_cast<Mission>(static_cast<int>(gamemd::Mission::Guard)), true);
+            }
+        }
+    }
 
     return true;
 }
