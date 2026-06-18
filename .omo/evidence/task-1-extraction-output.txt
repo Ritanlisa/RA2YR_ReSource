@@ -1,0 +1,26 @@
+Task 1: extract_globals.py extraction evidence
+============================================================
+Timestamp: 2026-06-18 09:11:29
+Raw globals fetched: 9974
+Engine globals kept: 1383
+With type info: 605
+Without type info: 778
+String leak count: 0
+RTTI leak count: 0
+
+Filter stats:
+  string constant (a*): 7602
+  RTTI (??_R*): 988
+  jump table (jpt_*): 1
+
+Top 10 entries:
+  First @ 0x815da8 (4B) type=yes -> _PVFV
+  Last @ 0x815dbc (4B) type=yes -> _PVFV
+  g_INI_Key_NORMAL @ 0x8161d4 (7B) type=yes -> char[]
+  g_Str_unknown @ 0x816210 (8B) type=no
+  g_INI_Key_Stop @ 0x816e00 (5B) type=no
+  g_INI_Key_Guard @ 0x816e44 (6B) type=no
+  g_INI_Key_Attack @ 0x816e64 (7B) type=no
+  g_INI_Key_Action @ 0x817270 (7B) type=yes -> char[]
+  g_INI_Key_Tiberium @ 0x817278 (9B) type=yes -> char[]
+  g_INI_Key_Special @ 0x817318 (8B) type=no

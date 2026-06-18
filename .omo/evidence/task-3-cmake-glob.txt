@@ -1,0 +1,29 @@
+CMake GLOB_RECURSE Auto-Include Check
+=====================================
+
+File: CMakeLists.txt (root)
+Lines 14-16:
+
+    file(GLOB_RECURSE HEADERS
+        "src/*.hpp"
+    )
+
+Verdict: PASS — file(GLOB_RECURSE ... "src/*.hpp") will auto-detect any new .hpp
+files added under src/ recursively.
+
+This means:
+- src/system/map.hpp       ✅ included
+- src/structure/building.hpp ✅ included
+- src/object/techno.hpp    ✅ included
+- Any new src/xxx/yyy.hpp   ✅ auto-included on next CMake configure
+
+Caveat: GLOB_RECURSE only runs at CMake configure time, not build time.
+Adding new .hpp files without re-running cmake will NOT pick them up.
+Solution: always run `cmake -B build_win ...` after adding new files, or
+touch CMakeLists.txt to trigger re-configure.
+
+The headers are added to gamemd_core STATIC library (line 23-26):
+    add_library(gamemd_core STATIC
+        ${HEADERS}
+        ${SOURCES}
+    )

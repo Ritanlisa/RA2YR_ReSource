@@ -1,0 +1,34 @@
+=== Task 2 Known Globals Verification ===
+Date: 2026-06-18
+Script: tools/scan_existing_defs.py
+Verification method: python tools/scan_existing_defs.py --verbose
+
+Required globals:
+  1. g_DDraw_Active:
+     - Found: YES
+     - Type: definition
+     - File: src/app/ddraw_init.cpp
+     - Address: 0xA8ED80
+     - Source line: `bool g_DDraw_Active = false;` (with `// IDA: 0xA8ED80` on previous line)
+
+  2. CurrentFrame:
+     - Found: YES
+     - Type: definition
+     - File: src/core/globals.cpp
+     - Address: 0xA8ED84
+     - Source line: `int  CurrentFrame = 0;` (with `// 0xA8ED84: CurrentFrame` on previous line)
+
+  3. RulesClass_Instance:
+     - Found: YES
+     - Type: definition
+     - File: src/core/init_game.cpp
+     - Address: 0x8871E0
+     - Source line: `void* RulesClass_Instance = nullptr;        // 0x8871E0`
+
+All 3 required globals: PASS
+
+Additional verification:
+  - g_lpDirectDraw7: found (def, src/app/ddraw_init.cpp, 0x8A0094)
+  - g_hWnd: found (def, src/app/game_loop.cpp, no address)
+  - ArmageddonMode: found (def, src/core/globals.cpp, 0xA8ED6B)
+  - dword_81C1D0: found (def, src/core/globals.cpp, 0x81C1D0) AND (extern, src/core/init_game.cpp)

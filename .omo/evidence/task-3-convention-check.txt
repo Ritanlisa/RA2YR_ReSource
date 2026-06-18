@@ -1,0 +1,34 @@
+Calling Convention Check
+=========================
+File: src/structure/building.hpp
+Checked: 3 methods with // 0xADDR comments
+IDA instance: gamemd.exe.i64 (port 13337)
+
+=== METHOD 1 ===
+Header:   void BuildingClass::initBuildingData()     // 0x459FF0
+          (implicit __thiscall for member function)
+IDA:      void __thiscall BuildingClass::initBuildingData(int this)
+Match:    ✅ PASS — thiscall, member function
+
+=== METHOD 2 ===
+Header:   void BuildingClass::processPowerState()    // 0x465D70
+          (implicit __thiscall for member function)
+IDA:      int __thiscall BuildingClass::processPowerState(_DWORD *this)
+Match:    ✅ PASS — thiscall, member function
+          Note: return type differs (void vs int) — minor discrepancy
+
+=== METHOD 3 ===
+Header:   void BuildingClass::processCapture()       // 0x712130
+          (implicit __thiscall for member function)
+IDA:      char __thiscall BuildingClass::processCapture(_DWORD *this)
+Match:    ✅ PASS — thiscall, member function
+          Note: return type differs (void vs char) — minor discrepancy
+
+=== SUMMARY ===
+Checked:     3
+Convention:  3/3 correct (all thiscall as expected for MSVC member functions)
+Return type: 1/3 exact match, 2/3 minor mismatches (void vs int/char)
+
+Verdict: PASS ✅ — Calling conventions are consistently correct.
+Return type discrepancies are minor (likely from IDA heuristics or incomplete
+header stubs) and do not affect the convention check baseline.

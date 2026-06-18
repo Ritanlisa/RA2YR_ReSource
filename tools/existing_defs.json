@@ -1,0 +1,5462 @@
+[
+  {
+    "name": "ArgList",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xA8B560"
+  },
+  {
+    "name": "ArmageddonMode",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xA8ED6B"
+  },
+  {
+    "name": "Array",
+    "file": "src\\misc\\audio.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "Array_Alt",
+    "file": "src\\system\\mix_file.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "Blowfish",
+    "file": "src\\system\\mix_file.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "BombListClass_Array",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xA8EC08"
+  },
+  {
+    "name": "BuildingLoadQueue_Active",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xB0E850"
+  },
+  {
+    "name": "BuildingLoadQueue_Array",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xB0E840"
+  },
+  {
+    "name": "BuildingLoadQueue_Capacity",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xB0E848"
+  },
+  {
+    "name": "BuildingLoadQueue_Count",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xB0E844"
+  },
+  {
+    "name": "BuildingLoadQueue_Dirty",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xB0E84C"
+  },
+  {
+    "name": "BuildingTypeClass_Array",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xA83D84"
+  },
+  {
+    "name": "CCINIClass_INI_Art",
+    "file": "src\\core\\init_game.cpp",
+    "is_definition": true,
+    "address_comment": "0x887180"
+  },
+  {
+    "name": "CCINIClass_INI_Rules",
+    "file": "src\\core\\init_game.cpp",
+    "is_definition": true,
+    "address_comment": "0x887048"
+  },
+  {
+    "name": "CCINIClass_Vtable",
+    "file": "src\\core\\init_game.cpp",
+    "is_definition": false,
+    "address_comment": null
+  },
+  {
+    "name": "CmdLine_NoCD",
+    "file": "src\\core\\init_game.cpp",
+    "is_definition": true,
+    "address_comment": "0x89E410"
+  },
+  {
+    "name": "CurrentFrame",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xA8ED84"
+  },
+  {
+    "name": "CurrentObjects",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "DDSCL_FULLSCREEN",
+    "file": "src\\app\\ddraw_init.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "DLG_CLASS",
+    "file": "src\\core\\menu_select.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "DSurface_Hidden",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0x88730C"
+  },
+  {
+    "name": "DSurface_Hidden_2",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0x887314"
+  },
+  {
+    "name": "DSurface_Primary",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0x887308"
+  },
+  {
+    "name": "EVAIndex",
+    "file": "src\\misc\\audio.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "Entries",
+    "file": "src\\system\\ini_class.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "FileSize",
+    "file": "src\\system\\mix_file.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "FileSystem_ANIM_PAL",
+    "file": "src\\core\\init_game.cpp",
+    "is_definition": true,
+    "address_comment": "0x87F6C0"
+  },
+  {
+    "name": "FileSystem_CAMEO_PAL",
+    "file": "src\\core\\init_game.cpp",
+    "is_definition": true,
+    "address_comment": "0x87F6B0"
+  },
+  {
+    "name": "FileSystem_GRFXTXT_Convert",
+    "file": "src\\core\\init_game.cpp",
+    "is_definition": true,
+    "address_comment": "0xA8F798"
+  },
+  {
+    "name": "FileSystem_GRFXTXT_PAL",
+    "file": "src\\core\\init_game.cpp",
+    "is_definition": true,
+    "address_comment": "0xA8F790"
+  },
+  {
+    "name": "FileSystem_GRFXTXT_SHP",
+    "file": "src\\core\\init_game.cpp",
+    "is_definition": true,
+    "address_comment": "0xA8F794"
+  },
+  {
+    "name": "FileSystem_GRFXTXT_TIBERIUM_PAL",
+    "file": "src\\core\\init_game.cpp",
+    "is_definition": true,
+    "address_comment": "0x87F6BC"
+  },
+  {
+    "name": "FileSystem_MOUSE_PAL",
+    "file": "src\\core\\init_game.cpp",
+    "is_definition": true,
+    "address_comment": "0x87F6C8"
+  },
+  {
+    "name": "FileSystem_THEATER_PAL",
+    "file": "src\\core\\init_game.cpp",
+    "is_definition": true,
+    "address_comment": "0x87F6C4"
+  },
+  {
+    "name": "FileSystem_UNITx_PAL",
+    "file": "src\\core\\init_game.cpp",
+    "is_definition": true,
+    "address_comment": "0x87F6B4"
+  },
+  {
+    "name": "FileSystem_x_PAL",
+    "file": "src\\core\\init_game.cpp",
+    "is_definition": true,
+    "address_comment": "0x87F6B8"
+  },
+  {
+    "name": "GameFlags_EAC",
+    "file": "src\\core\\menu_select.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "GameFlags_Init",
+    "file": "src\\core\\menu_select.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "GameMode_Current",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xA8B238"
+  },
+  {
+    "name": "GameModes",
+    "file": "src\\network\\multiplayer.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "Generics",
+    "file": "src\\system\\mix_file.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "IKnowWhatImDoing",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xA8E7AC"
+  },
+  {
+    "name": "Instance",
+    "file": "src\\network\\connection.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "Key",
+    "file": "src\\system\\ini_class.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "LockCount",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "MAX_SUB_MIX",
+    "file": "src\\system\\mix_file.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "MIXes",
+    "file": "src\\system\\mix_file.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "MULTI",
+    "file": "src\\system\\mix_file.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "MULTIMD",
+    "file": "src\\system\\mix_file.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "MapClass_Instance",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0x87F7E8"
+  },
+  {
+    "name": "Map_VisibleRect",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0x886FA4"
+  },
+  {
+    "name": "Maps",
+    "file": "src\\system\\mix_file.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "MixFileClass_Array",
+    "file": "src\\system\\mix_file.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "MixFileClass_Array_Alt",
+    "file": "src\\system\\mix_file.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "MixFileClass_Generics",
+    "file": "src\\system\\mix_file.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "MixFileClass_MIXes",
+    "file": "src\\system\\mix_file.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "MixFileClass_MULTIMD_instance",
+    "file": "src\\system\\mix_file.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "MixFileClass_MULTI_instance",
+    "file": "src\\system\\mix_file.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "MixFileClass_Maps",
+    "file": "src\\system\\mix_file.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "MixFileClass_Movies",
+    "file": "src\\system\\mix_file.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "MoveFeedback",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0x822CF2"
+  },
+  {
+    "name": "Movies",
+    "file": "src\\system\\mix_file.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "Name",
+    "file": "src\\system\\ini_class.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "ObjectClass_CurrentObjects",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xA8ECB8"
+  },
+  {
+    "name": "ProductionTimer",
+    "file": "src\\object\\techno.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "RulesClass_Instance",
+    "file": "src\\core\\init_game.cpp",
+    "is_definition": true,
+    "address_comment": "0x8871E0"
+  },
+  {
+    "name": "ScenarioClass_Instance",
+    "file": "src\\core\\init_game.cpp",
+    "is_definition": true,
+    "address_comment": "0xA8B230"
+  },
+  {
+    "name": "SectionIndex",
+    "file": "src\\system\\ini_class.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "Sections",
+    "file": "src\\system\\ini_class.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "TacticalClass_Instance",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0x887324"
+  },
+  {
+    "name": "Value",
+    "file": "src\\system\\ini_class.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "VoicesEnabled",
+    "file": "src\\misc\\audio.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "Vtable",
+    "file": "src\\system\\ini_class.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "WINDOW_CLASS",
+    "file": "src\\app\\game_loop.cpp",
+    "is_definition": true,
+    "address_comment": "0x849F48"
+  },
+  {
+    "name": "WTFMode",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xA8E9A0"
+  },
+  {
+    "name": "WWMouseClass_Instance",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0x887640"
+  },
+  {
+    "name": "Xl",
+    "file": "src\\system\\mix_blowfish.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "a",
+    "file": "src\\system\\mix_blowfish.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "a1",
+    "file": "src\\app\\ddraw_init.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "a11",
+    "file": "src\\system\\map.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "a15",
+    "file": "src\\system\\map.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "a2",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "a2y2",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "a5",
+    "file": "src\\render\\display.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "a6",
+    "file": "src\\render\\display.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "absType",
+    "file": "src\\ui\\sidebar.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "abs_dy",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "accum",
+    "file": "src\\object\\techno.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "action",
+    "file": "src\\team\\trigger.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "actual_damage",
+    "file": "src\\object\\object.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "adx",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "ady",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "affects_tiberium",
+    "file": "src\\system\\map.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "allow_bridge",
+    "file": "src\\system\\map.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "alt",
+    "file": "src\\system\\map.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "ammo",
+    "file": "src\\object\\techno.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "angular_velocity",
+    "file": "src\\render\\bounce.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "area",
+    "file": "src\\system\\tactical.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "arg",
+    "file": "src\\app\\cmdline.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "arg4",
+    "file": "src\\system\\map.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "arg6",
+    "file": "src\\system\\map.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "arg7",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "arg8",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "arg9",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "argA",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "argD",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "args",
+    "file": "src\\core\\logging.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "armor",
+    "file": "src\\system\\map.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "as_techno",
+    "file": "src\\system\\cell.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "audio_active",
+    "file": "src\\object\\techno.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "b",
+    "file": "src\\system\\scenario.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "b2",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "b2x2",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "b5",
+    "file": "src\\render\\shp_render.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "bLoadAsSHP",
+    "file": "src\\system\\file_system.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "bM",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "back_buffer",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "base_cell",
+    "file": "src\\render\\display.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "bc",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "best",
+    "file": "src\\system\\cell.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "best_target",
+    "file": "src\\object\\techno.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "best_value",
+    "file": "src\\object\\techno.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "bf",
+    "file": "src\\system\\mix_file.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "bg",
+    "file": "src\\ui\\gadget.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "bg_image",
+    "file": "src\\ui\\menu_screen.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "bg_img",
+    "file": "src\\ui\\menu_screen.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "bikH",
+    "file": "src\\core\\menu_select.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "bikHash",
+    "file": "src\\core\\menu_select.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "bikName",
+    "file": "src\\core\\menu_select.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "bikW",
+    "file": "src\\core\\menu_select.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "bikX",
+    "file": "src\\core\\menu_select.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "bink_player",
+    "file": "src\\core\\init_game.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "bit",
+    "file": "src\\system\\mix_blowfish.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "bit_mask",
+    "file": "src\\system\\mix_blowfish.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "bitlen",
+    "file": "src\\system\\mix_blowfish.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "bits",
+    "file": "src\\core\\menu_select.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "blit_row",
+    "file": "src\\render\\shp_blitter.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "blit_row_tint",
+    "file": "src\\render\\shp_blitter.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "blitter_vtable",
+    "file": "src\\render\\shp_blitter.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "block_h",
+    "file": "src\\render\\movie.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "block_w",
+    "file": "src\\render\\movie.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "blt_flags",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": "0x1000600"
+  },
+  {
+    "name": "blue_mask",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "bmi",
+    "file": "src\\render\\text_render.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "body_size",
+    "file": "src\\system\\mix_file.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "body_start_offset",
+    "file": "src\\system\\mix_file.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "border_color",
+    "file": "src\\ui\\gadget.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "bot",
+    "file": "src\\ui\\gadget.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "bounds",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "bp",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "btnBg",
+    "file": "src\\core\\menu_select.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "btnH",
+    "file": "src\\core\\menu_select.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "btnW",
+    "file": "src\\core\\menu_select.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "btnX",
+    "file": "src\\core\\menu_select.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "btn_h",
+    "file": "src\\ui\\menu_screen.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "btn_w",
+    "file": "src\\ui\\menu_screen.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "buf",
+    "file": "src\\core\\menu_select.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "bufferSize",
+    "file": "src\\ui\\tool_tip.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "buildCat",
+    "file": "src\\ui\\sidebar.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "build_time",
+    "file": "src\\object\\techno.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "build_type",
+    "file": "src\\object\\techno.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "buildable",
+    "file": "src\\system\\map.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "building",
+    "file": "src\\object\\techno.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "building_shadow",
+    "file": "src\\render\\shp_blitter.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "buildingz_sha",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "bv",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "bval",
+    "file": "src\\core\\spawn_config.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "bx",
+    "file": "src\\ui\\menu_screen.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "by",
+    "file": "src\\core\\menu_select.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "byte_886381_impl",
+    "file": "src\\core\\init_game.cpp",
+    "is_definition": true,
+    "address_comment": "0x886380"
+  },
+  {
+    "name": "byte_886382_impl",
+    "file": "src\\core\\init_game.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "byte_887418",
+    "file": "src\\core\\init_game.cpp",
+    "is_definition": true,
+    "address_comment": "0x887418"
+  },
+  {
+    "name": "byte_89E3A0",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0x89E3A0"
+  },
+  {
+    "name": "byte_8B41C0",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0x8B41C0"
+  },
+  {
+    "name": "byte_A83D48",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xA83D48"
+  },
+  {
+    "name": "byte_A83D49",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "byte_A8B8B4",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xA8B8B4"
+  },
+  {
+    "name": "byte_A8D60C",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xA8D60C"
+  },
+  {
+    "name": "byte_A8D60D",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xA8D60D"
+  },
+  {
+    "name": "byte_A8E2C8",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xA8E2C8"
+  },
+  {
+    "name": "byte_A8E36D",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xA8E36D"
+  },
+  {
+    "name": "byte_A8EB80",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xA8EB80"
+  },
+  {
+    "name": "byte_A8EBA5",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xA8EBA5"
+  },
+  {
+    "name": "byte_A8ED64",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xA8ED64"
+  },
+  {
+    "name": "byte_A8ED72",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xA8ED72"
+  },
+  {
+    "name": "byte_A8ED9D",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xA8ED9D"
+  },
+  {
+    "name": "byte_A8EDDC",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xA8EDDC"
+  },
+  {
+    "name": "byte_ABCD58",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xABCD58"
+  },
+  {
+    "name": "byte_B04880",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xB04880"
+  },
+  {
+    "name": "byte_B0F6A5",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xB0F6A5"
+  },
+  {
+    "name": "byte_B0F6D5",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "byte_B0F72D",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xB0F72D"
+  },
+  {
+    "name": "bytes",
+    "file": "src\\system\\mix_file.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "c",
+    "file": "src\\app\\cmdline.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "caps",
+    "file": "src\\app\\ddraw_init.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "cb_parts",
+    "file": "src\\render\\movie.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "ccfile",
+    "file": "src\\core\\init_game.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "ccini",
+    "file": "src\\core\\init_game.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "cell",
+    "file": "src\\object\\foot.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "cell_idx",
+    "file": "src\\system\\cell.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "cell_x",
+    "file": "src\\object\\foot.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "cell_y",
+    "file": "src\\object\\foot.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "center",
+    "file": "src\\system\\map.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "cfg",
+    "file": "src\\core\\spawn_config.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "ch",
+    "file": "src\\core\\menu_select.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "check_level",
+    "file": "src\\system\\map.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "ci",
+    "file": "src\\core\\menu_select.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "cl_disable_flags",
+    "file": "src\\system\\map.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "clamped_in",
+    "file": "src\\render\\shp_blitter.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "clamped_out",
+    "file": "src\\render\\shp_blitter.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "client",
+    "file": "src\\system\\tactical.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "clip",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "clip_b",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "clip_h",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "clip_r",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "clip_rect",
+    "file": "src\\render\\shp_blitter.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "clip_w",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "clip_x",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "clip_y",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "clipped",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "close_to",
+    "file": "src\\system\\map.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "clr",
+    "file": "src\\ui\\menu_screen.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "clr_end",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "clr_start",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "cmd",
+    "file": "src\\render\\shp_render.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "code",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "colPos",
+    "file": "src\\entity\\voxel.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "colStart",
+    "file": "src\\entity\\voxel.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "colTableOff",
+    "file": "src\\entity\\voxel.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "color",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "colorIndex",
+    "file": "src\\ui\\message_list.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "color_B",
+    "file": "src\\system\\convert_class.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "colors",
+    "file": "src\\render\\movie.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "config",
+    "file": "src\\app\\game_loop.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "construction_done",
+    "file": "src\\structure\\building.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "content",
+    "file": "src\\system\\cell.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "coop_flags",
+    "file": "src\\app\\ddraw_init.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "coords",
+    "file": "src\\object\\foot.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "copy",
+    "file": "src\\render\\shp_render.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "cost_rate",
+    "file": "src\\object\\techno.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "count",
+    "file": "src\\app\\cmdline.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "crc",
+    "file": "src\\system\\mix_file.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "crd",
+    "file": "src\\system\\cell.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "ctx",
+    "file": "src\\app\\ddraw_init.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "cur",
+    "file": "src\\app\\game_loop.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "cur_col",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "cur_x",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "cur_y",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "currentFrame",
+    "file": "src\\render\\movie.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "current_location",
+    "file": "src\\system\\map.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "cx",
+    "file": "src\\core\\menu_select.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "cy",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "d",
+    "file": "src\\core\\menu_select.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "d1",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "d2",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "d_off",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "damage",
+    "file": "src\\system\\map.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "dataHeight",
+    "file": "src\\render\\shp_render.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "dataSize",
+    "file": "src\\entity\\voxel.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "dataStart",
+    "file": "src\\entity\\voxel.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "dataWidth",
+    "file": "src\\render\\shp_render.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "db",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "dd1",
+    "file": "src\\app\\ddraw_init.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "decon_done",
+    "file": "src\\structure\\building.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "desc",
+    "file": "src\\app\\ddraw_init.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "dest",
+    "file": "src\\system\\tactical.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "dest_offset",
+    "file": "src\\render\\shp_blitter.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "dest_r",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "dest_surface",
+    "file": "src\\render\\shp_blitter.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "dir32",
+    "file": "src\\core\\coordinate.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "disallow_overlay",
+    "file": "src\\system\\map.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "dist",
+    "file": "src\\system\\cell.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "distance",
+    "file": "src\\system\\map.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "dl",
+    "file": "src\\system\\mix_blowfish.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "dlgData",
+    "file": "src\\core\\menu_select.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "dlgH",
+    "file": "src\\core\\menu_select.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "dlgW",
+    "file": "src\\core\\menu_select.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "dlg_proc",
+    "file": "src\\ui\\dialog_win32.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "dluX",
+    "file": "src\\core\\menu_select.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "dluY",
+    "file": "src\\core\\menu_select.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "dr",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "draw_x",
+    "file": "src\\structure\\building.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "draw_y",
+    "file": "src\\structure\\building.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "drives",
+    "file": "src\\core\\init_game.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "dropVal",
+    "file": "src\\app\\cmdline.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "dst",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "dst_alpha",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "dst_clip_ok",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "dst_pitch",
+    "file": "src\\render\\display.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "dst_row",
+    "file": "src\\render\\display.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "dst_srf_storage",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "dsurf",
+    "file": "src\\render\\shp_render.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "dummy",
+    "file": "src\\object\\radio.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "duration",
+    "file": "src\\object\\object.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "durationFrames",
+    "file": "src\\ui\\message_list.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "dwMilliseconds",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0x887350"
+  },
+  {
+    "name": "dword_81C1D0",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0x81C1D0"
+  },
+  {
+    "name": "dword_87F928",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0x87F928"
+  },
+  {
+    "name": "dword_88732C",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0x88732C"
+  },
+  {
+    "name": "dword_887330",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0x887330"
+  },
+  {
+    "name": "dword_887348",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0x887348"
+  },
+  {
+    "name": "dword_88734C",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0x88734C"
+  },
+  {
+    "name": "dword_A83D14",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xA83D14"
+  },
+  {
+    "name": "dword_A83D18",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xA83D18"
+  },
+  {
+    "name": "dword_A8B558",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xA8B558"
+  },
+  {
+    "name": "dword_A8B55C",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xA8B55C"
+  },
+  {
+    "name": "dword_A8B564",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xA8B564"
+  },
+  {
+    "name": "dword_A8D5FC",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xA8D5FC"
+  },
+  {
+    "name": "dword_A8D600",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xA8D600"
+  },
+  {
+    "name": "dword_A8D604",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xA8D604"
+  },
+  {
+    "name": "dword_A8D608",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xA8D608"
+  },
+  {
+    "name": "dword_A8E360",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xA8E360"
+  },
+  {
+    "name": "dword_A8E364",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xA8E364"
+  },
+  {
+    "name": "dword_A8E368",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xA8E370"
+  },
+  {
+    "name": "dword_A8E374",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "dword_A8E8E8",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xA8E8E8"
+  },
+  {
+    "name": "dword_A8E950",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xA8E950"
+  },
+  {
+    "name": "dword_A8EC00",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xA8EC00"
+  },
+  {
+    "name": "dword_A8EC04",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xA8EC04"
+  },
+  {
+    "name": "dword_A8EC0C",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xA8EC0C"
+  },
+  {
+    "name": "dword_A8F784",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xA8F784"
+  },
+  {
+    "name": "dword_ABCE04",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xABCD04"
+  },
+  {
+    "name": "dword_ABCE14",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xABCE14"
+  },
+  {
+    "name": "dword_B07784",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xB07784"
+  },
+  {
+    "name": "dword_B0F69C",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xB0F69C"
+  },
+  {
+    "name": "dword_B0F6A0",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xB0F6A0"
+  },
+  {
+    "name": "dword_B0F6AC",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xB0F6AC"
+  },
+  {
+    "name": "dword_B0F6C8",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "dword_B0F6CC",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "dword_B0F6D0",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "dword_B0F6D8",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xB0F6D8"
+  },
+  {
+    "name": "dword_B0F6DC",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "dword_B0F724",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xB0F724"
+  },
+  {
+    "name": "dword_B0F728",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xB0F728"
+  },
+  {
+    "name": "dword_B0F734",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xB0F734"
+  },
+  {
+    "name": "dword_B43180",
+    "file": "src\\core\\init_game.cpp",
+    "is_definition": true,
+    "address_comment": "0xB43180"
+  },
+  {
+    "name": "dword_B43184",
+    "file": "src\\core\\init_game.cpp",
+    "is_definition": true,
+    "address_comment": "0xB43184"
+  },
+  {
+    "name": "dword_B77E18",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xB77E18"
+  },
+  {
+    "name": "dx",
+    "file": "src\\core\\coordinate.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "dxdy",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "dy",
+    "file": "src\\core\\coordinate.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "dydx",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "dz",
+    "file": "src\\object\\object.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "e",
+    "file": "src\\core\\spawn_config.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "edge",
+    "file": "src\\system\\map.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "edi",
+    "file": "src\\system\\mix_blowfish.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "enc_buf",
+    "file": "src\\system\\mix_file.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "end",
+    "file": "src\\render\\shp_render.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "entries",
+    "file": "src\\system\\ini_class.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "entry",
+    "file": "src\\wdt\\wdt.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "esi",
+    "file": "src\\system\\mix_blowfish.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "event",
+    "file": "src\\team\\tag.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "ex",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "ey",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "f",
+    "file": "src\\core\\init_game.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "fallback",
+    "file": "src\\system\\map.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "fd",
+    "file": "src\\misc\\rules.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "fh",
+    "file": "src\\render\\shp_render.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "fhdr",
+    "file": "src\\render\\shp_render.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "file",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "fileOffset",
+    "file": "src\\render\\shp_render.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "file_count",
+    "file": "src\\system\\mix_file.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "file_pos",
+    "file": "src\\system\\mix_file.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "file_size",
+    "file": "src\\render\\movie.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "filename",
+    "file": "src\\wdt\\wdt.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "fill_r",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "final_rect",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "fire_coord",
+    "file": "src\\object\\techno.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "first",
+    "file": "src\\render\\shp_render.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "first_field",
+    "file": "src\\system\\mix_file.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "flags",
+    "file": "src\\app\\game_loop.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "flt_88741C",
+    "file": "src\\core\\init_game.cpp",
+    "is_definition": true,
+    "address_comment": "0x88741C"
+  },
+  {
+    "name": "fmt",
+    "file": "src\\render\\shp_render.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "fog",
+    "file": "src\\system\\tactical.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "footerOff",
+    "file": "src\\entity\\voxel.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "force",
+    "file": "src\\system\\map.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "force_3d",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "force_all",
+    "file": "src\\team\\tag.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "force_fire",
+    "file": "src\\team\\trigger.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "force_shield",
+    "file": "src\\object\\object.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "format",
+    "file": "src\\system\\shp_file.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "foundation_data",
+    "file": "src\\render\\display.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "foundation_depth",
+    "file": "src\\structure\\building.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "foundation_width",
+    "file": "src\\object\\techno.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "fp",
+    "file": "src\\core\\menu_select.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "frame",
+    "file": "src\\ui\\gadget.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "frameReady",
+    "file": "src\\core\\menu_select.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "frame_index",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "frame_rate",
+    "file": "src\\render\\movie.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "frame_rate_div",
+    "file": "src\\render\\movie.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "full",
+    "file": "src\\ui\\menu_screen.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "fw",
+    "file": "src\\render\\shp_render.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "fx",
+    "file": "src\\render\\shp_render.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "fy",
+    "file": "src\\render\\shp_render.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "g",
+    "file": "src\\system\\scenario.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "g2_len_x2",
+    "file": "src\\system\\mix_blowfish.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "g6",
+    "file": "src\\render\\shp_render.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "gM",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "g_AlphaShapePool",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xB0F730"
+  },
+  {
+    "name": "g_AnimManager",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xB0F680"
+  },
+  {
+    "name": "g_AnimManagerConfig",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xB0F684"
+  },
+  {
+    "name": "g_AnimPoolLocked",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xB0F67D"
+  },
+  {
+    "name": "g_AnimPoolManager",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xB0F670"
+  },
+  {
+    "name": "g_AnimTypeCount",
+    "file": "src\\core\\init_game.cpp",
+    "is_definition": true,
+    "address_comment": "0x8B4154"
+  },
+  {
+    "name": "g_AnimTypePool",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xB0F678"
+  },
+  {
+    "name": "g_Audio_Enabled",
+    "file": "src\\misc\\audio.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "g_Audio_MixerEnabled",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0x840A70"
+  },
+  {
+    "name": "g_BinkMoviePlayer",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0x87F770"
+  },
+  {
+    "name": "g_BitMask_Blue",
+    "file": "src\\app\\ddraw_init.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "g_BitMask_Green",
+    "file": "src\\app\\ddraw_init.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "g_BitMask_Red",
+    "file": "src\\app\\ddraw_init.cpp",
+    "is_definition": true,
+    "address_comment": "0x8A0DDC"
+  },
+  {
+    "name": "g_BitShift_Blue",
+    "file": "src\\app\\ddraw_init.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "g_BitShift_Green",
+    "file": "src\\app\\ddraw_init.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "g_BitShift_Red",
+    "file": "src\\app\\ddraw_init.cpp",
+    "is_definition": true,
+    "address_comment": "0x8A0DD0"
+  },
+  {
+    "name": "g_BuildingTypeClass_Count",
+    "file": "src\\core\\init_game.cpp",
+    "is_definition": true,
+    "address_comment": "0x8B4160"
+  },
+  {
+    "name": "g_BuildingTypeCount2",
+    "file": "src\\core\\init_game.cpp",
+    "is_definition": true,
+    "address_comment": "0xA83D10"
+  },
+  {
+    "name": "g_CellPositionOffset",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0x87F8E0"
+  },
+  {
+    "name": "g_Cell_PositionLUT",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0x87F8DC"
+  },
+  {
+    "name": "g_CommandLineFlags",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xA8EB84"
+  },
+  {
+    "name": "g_CommandLineParam",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xA8EB88"
+  },
+  {
+    "name": "g_DDraw_Active",
+    "file": "src\\app\\ddraw_init.cpp",
+    "is_definition": true,
+    "address_comment": "0xA8ED80"
+  },
+  {
+    "name": "g_DDraw_AllowStretchBlits",
+    "file": "src\\app\\ddraw_init.cpp",
+    "is_definition": true,
+    "address_comment": "0x8A0DEE"
+  },
+  {
+    "name": "g_DDraw_BlueMask",
+    "file": "src\\app\\ddraw_init.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "g_DDraw_Clipper",
+    "file": "src\\app\\ddraw_init.cpp",
+    "is_definition": true,
+    "address_comment": "0x8A0DCC"
+  },
+  {
+    "name": "g_DDraw_Gray127",
+    "file": "src\\app\\ddraw_init.cpp",
+    "is_definition": true,
+    "address_comment": "0x8A0DE8"
+  },
+  {
+    "name": "g_DDraw_GreenMask",
+    "file": "src\\app\\ddraw_init.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "g_DDraw_Initialized",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0x89F978"
+  },
+  {
+    "name": "g_DDraw_Palette",
+    "file": "src\\app\\ddraw_init.cpp",
+    "is_definition": true,
+    "address_comment": "0x89FC90"
+  },
+  {
+    "name": "g_DDraw_PixelFormat",
+    "file": "src\\app\\ddraw_init.cpp",
+    "is_definition": true,
+    "address_comment": "0x8205D0"
+  },
+  {
+    "name": "g_DDraw_PrimarySurface",
+    "file": "src\\app\\ddraw_init.cpp",
+    "is_definition": true,
+    "address_comment": "0x8A009C"
+  },
+  {
+    "name": "g_DDraw_RedMask",
+    "file": "src\\app\\ddraw_init.cpp",
+    "is_definition": true,
+    "address_comment": "0x8A0958"
+  },
+  {
+    "name": "g_DDraw_UseHWBlit",
+    "file": "src\\app\\ddraw_init.cpp",
+    "is_definition": true,
+    "address_comment": "0x8205D4"
+  },
+  {
+    "name": "g_DiskLaserManager",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xB0F698"
+  },
+  {
+    "name": "g_DisplayBPP",
+    "file": "src\\app\\ddraw_init.cpp",
+    "is_definition": true,
+    "address_comment": "0x8A00AC"
+  },
+  {
+    "name": "g_DisplayHeight",
+    "file": "src\\app\\ddraw_init.cpp",
+    "is_definition": true,
+    "address_comment": "0x8A00A8"
+  },
+  {
+    "name": "g_DisplayWidth",
+    "file": "src\\app\\ddraw_init.cpp",
+    "is_definition": true,
+    "address_comment": "0x8A00A4"
+  },
+  {
+    "name": "g_FramePresent_State",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xA8E378"
+  },
+  {
+    "name": "g_GameActive",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xA8ED9C"
+  },
+  {
+    "name": "g_GameFontObject",
+    "file": "src\\core\\init_game.cpp",
+    "is_definition": true,
+    "address_comment": "0x89C4B8"
+  },
+  {
+    "name": "g_GameLoopActive",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0x822CFC"
+  },
+  {
+    "name": "g_GameMode",
+    "file": "src\\core\\menu_select.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "g_GameModeOptions",
+    "file": "src\\core\\init_game.cpp",
+    "is_definition": true,
+    "address_comment": "0xA8EB60"
+  },
+  {
+    "name": "g_IntroMovieObject",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xA8E960"
+  },
+  {
+    "name": "g_Is16BitMode",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0x8175B0"
+  },
+  {
+    "name": "g_LaserDrawConfig",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xB0F6A8"
+  },
+  {
+    "name": "g_LoadScreenFlag",
+    "file": "src\\core\\init_game.cpp",
+    "is_definition": true,
+    "address_comment": "0x8A00A0"
+  },
+  {
+    "name": "g_MainGameState",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xA8EDA0"
+  },
+  {
+    "name": "g_Map_GlobalCellIndex",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xABDC74"
+  },
+  {
+    "name": "g_MenuReturnState",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0x81D4E0"
+  },
+  {
+    "name": "g_MenuState",
+    "file": "src\\core\\menu_select.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "g_MouseSHP",
+    "file": "src\\core\\init_game.cpp",
+    "is_definition": true,
+    "address_comment": "0xB0BCF0"
+  },
+  {
+    "name": "g_MusicVol",
+    "file": "src\\core\\menu_select.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "g_NetResponseActive",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xA8ECD0"
+  },
+  {
+    "name": "g_NetworkEventPending",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xA8D5F8"
+  },
+  {
+    "name": "g_ObjectClass_CurrentCount",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xA8ECBC"
+  },
+  {
+    "name": "g_PlacementCellPool",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xA8E370"
+  },
+  {
+    "name": "g_ScenarioState",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xA8B550"
+  },
+  {
+    "name": "g_ScreenWidth",
+    "file": "src\\app\\game_loop.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "g_Scroll",
+    "file": "src\\core\\menu_select.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "g_ScrollOffsetX",
+    "file": "src\\render\\display.cpp",
+    "is_definition": false,
+    "address_comment": null
+  },
+  {
+    "name": "g_ScrollOffsetY",
+    "file": "src\\render\\display.cpp",
+    "is_definition": false,
+    "address_comment": null
+  },
+  {
+    "name": "g_SelectionManager",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xA8ECC8"
+  },
+  {
+    "name": "g_SessionClass_Instance",
+    "file": "src\\app\\cmdline.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "g_Shroud_CellArray",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0x87F924"
+  },
+  {
+    "name": "g_SkirmishFlag",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xB0BD78"
+  },
+  {
+    "name": "g_SkirmishInitFlag",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xA8F900"
+  },
+  {
+    "name": "g_SkirmishSettings",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0xB0BDB8"
+  },
+  {
+    "name": "g_Speed",
+    "file": "src\\core\\menu_select.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "g_TacticalState",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": "0x887328"
+  },
+  {
+    "name": "g_TriggerClassCount",
+    "file": "src\\core\\init_game.cpp",
+    "is_definition": true,
+    "address_comment": "0xA83C78"
+  },
+  {
+    "name": "g_TriggerTypeCount",
+    "file": "src\\core\\init_game.cpp",
+    "is_definition": true,
+    "address_comment": "0xA83C6C"
+  },
+  {
+    "name": "g_VisibleSurfaceDescriptor",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "g_ZBufferDescriptor",
+    "file": "src\\render\\shp_blitter.cpp",
+    "is_definition": false,
+    "address_comment": null
+  },
+  {
+    "name": "g_current_objects",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "g_ddraw",
+    "file": "src\\app\\ddraw_init.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "g_hCursor",
+    "file": "src\\app\\game_loop.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "g_hIcon",
+    "file": "src\\app\\game_loop.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "g_hInstance",
+    "file": "src\\app\\game_loop.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "g_hWnd",
+    "file": "src\\app\\game_loop.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "g_level",
+    "file": "src\\core\\logging.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "g_log_file",
+    "file": "src\\core\\logging.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "g_lpDirectDraw7",
+    "file": "src\\app\\ddraw_init.cpp",
+    "is_definition": true,
+    "address_comment": "0x8A0094"
+  },
+  {
+    "name": "g_mixPool",
+    "file": "src\\system\\mix_file.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "g_pDirectSound",
+    "file": "src\\misc\\audio.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "g_running",
+    "file": "src\\app\\game_loop.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "g_spawn_mode",
+    "file": "src\\app\\game_loop.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "g_windowed",
+    "file": "src\\app\\game_loop.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "gap",
+    "file": "src\\ui\\menu_screen.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "glob1",
+    "file": "src\\system\\mix_blowfish.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "glob1_hi_bitlen",
+    "file": "src\\system\\mix_blowfish.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "glob1_hi_inv",
+    "file": "src\\system\\mix_blowfish.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "glob1_hi_inv_hi",
+    "file": "src\\system\\mix_blowfish.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "glob1_len_x2",
+    "file": "src\\system\\mix_blowfish.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "glob2",
+    "file": "src\\system\\mix_blowfish.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "green_mask",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "gv",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "h",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "hBink",
+    "file": "src\\core\\menu_select.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "hPrevInstance",
+    "file": "src\\app\\game_loop.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "hWnd",
+    "file": "src\\app\\game_loop.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "hasMenu",
+    "file": "src\\app\\game_loop.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "has_working_sound",
+    "file": "src\\object\\techno.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "hash",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "hd",
+    "file": "src\\core\\menu_select.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "hdr",
+    "file": "src\\render\\movie.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "hdr_end",
+    "file": "src\\system\\mix_file.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "header_size",
+    "file": "src\\render\\movie.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "height",
+    "file": "src\\render\\movie.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "height_level",
+    "file": "src\\structure\\building.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "house",
+    "file": "src\\object\\object.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "hwnd",
+    "file": "src\\core\\init_game.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "i",
+    "file": "src\\core\\spawn_config.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "i1",
+    "file": "src\\system\\mix_blowfish.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "i2",
+    "file": "src\\system\\mix_blowfish.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "id",
+    "file": "src\\core\\target.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "idx",
+    "file": "src\\core\\coordinate.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "idxType",
+    "file": "src\\ui\\sidebar.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "idx_global",
+    "file": "src\\team\\tag.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "idx_local",
+    "file": "src\\team\\tag.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "idx_sz",
+    "file": "src\\system\\mix_file.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "ignore_contents",
+    "file": "src\\system\\map.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "ignore_destination",
+    "file": "src\\object\\object.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "ignore_mission",
+    "file": "src\\object\\object.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "index",
+    "file": "src\\core\\init_game.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "ini",
+    "file": "src\\team\\campaign.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "inv",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "ipAddr",
+    "file": "src\\app\\cmdline.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "isNaval",
+    "file": "src\\ui\\sidebar.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "is_deployed",
+    "file": "src\\object\\techno.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "is_global",
+    "file": "src\\team\\script.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "j",
+    "file": "src\\system\\mix_blowfish.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "kAnimFlag",
+    "file": "src\\entity\\anim.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "kBTCanBePlacedOn",
+    "file": "src\\structure\\building.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "kBTCanBePlacedOn_2",
+    "file": "src\\structure\\building.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "kBTFoundationDepth",
+    "file": "src\\structure\\building.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "kBTPropertyIndex",
+    "file": "src\\structure\\building.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "kBTToProtect",
+    "file": "src\\structure\\building.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "kBlowfishKeySize",
+    "file": "src\\system\\mix_file.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "kBulletFlag",
+    "file": "src\\entity\\bullet.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "kExtFlagChecksum",
+    "file": "src\\system\\mix_file.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "kExtFlagEncrypted",
+    "file": "src\\system\\mix_file.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "kFootFlag",
+    "file": "src\\object\\foot.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "kFoundationVisualDepth",
+    "file": "src\\structure\\building.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "kHeightLevel",
+    "file": "src\\structure\\building.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "kHouseFlag",
+    "file": "src\\house\\house.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "kInvalidCoord",
+    "file": "src\\object\\abstract.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "kKeySourceSize",
+    "file": "src\\system\\mix_file.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "kObjectFlag",
+    "file": "src\\object\\object.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "kOverlayFlag",
+    "file": "src\\entity\\overlay.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "kParticleFlag",
+    "file": "src\\entity\\particle.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "kParticleSystemFlag",
+    "file": "src\\entity\\particle_system.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "kPlacementState",
+    "file": "src\\structure\\building.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "kSmudgeFlag",
+    "file": "src\\entity\\smudge.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "kTerrainFlag",
+    "file": "src\\entity\\terrain.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "kTiberiumFlag",
+    "file": "src\\entity\\tiberium.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "kTubeFlag",
+    "file": "src\\entity\\tube.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "kTypeIndex",
+    "file": "src\\structure\\building.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "kWaveFlag",
+    "file": "src\\entity\\wave.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "key",
+    "file": "src\\ui\\gadget.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "keylen",
+    "file": "src\\system\\mix_blowfish.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "kmatch",
+    "file": "src\\core\\spawn_config.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "kv",
+    "file": "src\\system\\ini_class.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "lParam",
+    "file": "src\\ui\\dialog_win32.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "land_type",
+    "file": "src\\system\\map.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "larger",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "largest_frame_size",
+    "file": "src\\render\\movie.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "lb",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "left",
+    "file": "src\\ui\\gadget.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "len",
+    "file": "src\\core\\spawn_config.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "lenRounded",
+    "file": "src\\system\\mix_file.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "len_diff",
+    "file": "src\\system\\mix_blowfish.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "lg",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "limb",
+    "file": "src\\entity\\voxel.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "limbFooterStart",
+    "file": "src\\entity\\voxel.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "limbHdrStart",
+    "file": "src\\entity\\voxel.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "line",
+    "file": "src\\system\\ini_class.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "lineEnd",
+    "file": "src\\render\\shp_render.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "lineLen",
+    "file": "src\\render\\shp_render.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "line_count",
+    "file": "src\\render\\shp_blitter.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "loc",
+    "file": "src\\object\\foot.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "location",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "loopCount",
+    "file": "src\\core\\menu_select.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "lr",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "m",
+    "file": "src\\entity\\voxel.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "map_coords",
+    "file": "src\\object\\foot.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "mark",
+    "file": "src\\render\\display.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "mask",
+    "file": "src\\system\\mix_blowfish.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "match",
+    "file": "src\\core\\spawn_config.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "max_blocks",
+    "file": "src\\render\\movie.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "max_h_scale",
+    "file": "src\\render\\movie.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "max_health",
+    "file": "src\\structure\\building.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "max_v_scale",
+    "file": "src\\render\\movie.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "mdMix",
+    "file": "src\\system\\mix_file.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "mix",
+    "file": "src\\system\\cc_file.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "mod_strength",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "mode",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "mov_zone",
+    "file": "src\\system\\map.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "mr",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "msg",
+    "file": "src\\core\\init_game.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "my_pos",
+    "file": "src\\object\\techno.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "n2_bytelen",
+    "file": "src\\system\\mix_blowfish.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "n3",
+    "file": "src\\system\\mix_blowfish.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "n3_len",
+    "file": "src\\system\\mix_blowfish.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "nShowCmd",
+    "file": "src\\app\\game_loop.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "n_tmp",
+    "file": "src\\system\\mix_blowfish.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "name",
+    "file": "src\\house\\house_type.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "nameArea",
+    "file": "src\\entity\\voxel.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "new_blue",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "new_count",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "new_green",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "new_red",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "next_type",
+    "file": "src\\object\\techno.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "num_frames",
+    "file": "src\\render\\movie.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "nx",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "obj",
+    "file": "src\\core\\target.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "object",
+    "file": "src\\render\\display.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "objects",
+    "file": "src\\core\\target.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "off",
+    "file": "src\\system\\mix_file.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "offX",
+    "file": "src\\core\\menu_select.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "offY",
+    "file": "src\\core\\menu_select.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "offset",
+    "file": "src\\object\\techno.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "offsetY",
+    "file": "src\\core\\menu_select.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "offset_x",
+    "file": "src\\render\\movie.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "offset_y",
+    "file": "src\\render\\movie.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "ok",
+    "file": "src\\core\\init_game.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "opacity",
+    "file": "src\\render\\shp_blitter.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "opacity_clamped",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": "0x4BB94A"
+  },
+  {
+    "name": "option3",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "out",
+    "file": "src\\render\\bounce.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "outBuffer",
+    "file": "src\\ui\\tool_tip.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "overflow",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "owner",
+    "file": "src\\system\\map.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "p",
+    "file": "src\\app\\cmdline.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "pBuffer",
+    "file": "src\\system\\convert_class.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "pDS",
+    "file": "src\\misc\\audio.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "pDestination",
+    "file": "src\\system\\convert_class.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "pFileName",
+    "file": "src\\system\\cc_file.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "pFilename",
+    "file": "src\\system\\convert_class.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "pHouse",
+    "file": "src\\ui\\tool_tip.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "pLabel",
+    "file": "src\\ui\\message_list.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "pMessage",
+    "file": "src\\ui\\message_list.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "pObject",
+    "file": "src\\ui\\tool_tip.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "pPalette",
+    "file": "src\\system\\convert_class.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "pSurface",
+    "file": "src\\system\\convert_class.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "pTechType",
+    "file": "src\\ui\\tool_tip.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "padded",
+    "file": "src\\system\\mix_file.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "padding",
+    "file": "src\\system\\mix_file.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "pal_data",
+    "file": "src\\ui\\menu_screen.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "palette",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "palette2",
+    "file": "src\\system\\convert_class.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "parent",
+    "file": "src\\system\\mix_file.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "pendingState",
+    "file": "src\\core\\menu_select.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "persistent",
+    "file": "src\\team\\trigger.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "pipeline_step",
+    "file": "src\\object\\techno.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "pitch",
+    "file": "src\\core\\menu_select.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "pix",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "pixels",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "placement_state",
+    "file": "src\\structure\\building.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "player",
+    "file": "src\\wdt\\wdt.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "pos",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "position",
+    "file": "src\\system\\map.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "processed",
+    "file": "src\\system\\mix_file.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "prod_speed",
+    "file": "src\\object\\techno.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "ps",
+    "file": "src\\app\\game_loop.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "pt",
+    "file": "src\\app\\ddraw_init.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "pubkey_initialized",
+    "file": "src\\system\\mix_blowfish.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "pubkey_str",
+    "file": "src\\system\\mix_blowfish.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "px",
+    "file": "src\\render\\shp_render.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "r",
+    "file": "src\\core\\menu_select.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "r5",
+    "file": "src\\render\\shp_render.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "rM",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "rShift",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "rT",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "rWidth",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "radius",
+    "file": "src\\system\\map.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "raw",
+    "file": "src\\system\\file_system.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "rc",
+    "file": "src\\app\\ddraw_init.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "read",
+    "file": "src\\system\\mix_file.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "read_bool",
+    "file": "src\\core\\spawn_config.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "read_int",
+    "file": "src\\core\\spawn_config.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "read_str",
+    "file": "src\\core\\spawn_config.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "rect",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "red_mask",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "ref_offset",
+    "file": "src\\system\\shp_file.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "ref_offset2",
+    "file": "src\\system\\shp_file.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "remaining",
+    "file": "src\\system\\mix_file.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "repair_step",
+    "file": "src\\structure\\building.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "require_burrowable",
+    "file": "src\\system\\map.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "result",
+    "file": "src\\core\\menu_select.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "reveal_by_height",
+    "file": "src\\system\\map.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "reveal_range",
+    "file": "src\\structure\\building.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "rgb",
+    "file": "src\\core\\menu_select.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "right",
+    "file": "src\\ui\\gadget.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "row",
+    "file": "src\\core\\menu_select.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "row_bytes",
+    "file": "src\\render\\display.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "row_offset",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "row_pitch",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "row_step",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "rv",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "s",
+    "file": "src\\render\\display.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "s_BinkClose",
+    "file": "src\\render\\movie.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "s_BinkCopyToBuffer",
+    "file": "src\\render\\movie.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "s_BinkDDSurfaceType",
+    "file": "src\\render\\movie.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "s_BinkDoFrame",
+    "file": "src\\render\\movie.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "s_BinkGetError",
+    "file": "src\\render\\movie.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "s_BinkGoto",
+    "file": "src\\render\\movie.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "s_BinkNextFrame",
+    "file": "src\\render\\movie.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "s_BinkOpen",
+    "file": "src\\render\\movie.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "s_BinkOpenDirectSound",
+    "file": "src\\render\\movie.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "s_BinkPause",
+    "file": "src\\render\\movie.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "s_BinkSetSoundSystem",
+    "file": "src\\render\\movie.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "s_BinkSetVolume",
+    "file": "src\\render\\movie.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "s_BinkWait",
+    "file": "src\\render\\movie.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "s_binkDLL",
+    "file": "src\\render\\movie.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "s_binkVolume",
+    "file": "src\\render\\movie.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "s_dsound_dll",
+    "file": "src\\misc\\audio.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "saveSound",
+    "file": "src\\core\\menu_select.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "saveSpeed",
+    "file": "src\\core\\menu_select.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "saved",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "saved_locks",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "sb",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "scheme",
+    "file": "src\\system\\tactical.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "score",
+    "file": "src\\system\\file_system.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "screenY",
+    "file": "src\\core\\menu_select.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "screen_y",
+    "file": "src\\structure\\building.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "sec",
+    "file": "src\\system\\ini_class.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "section",
+    "file": "src\\core\\spawn_config.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "self",
+    "file": "src\\render\\bink_control.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "shp",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "shp_data",
+    "file": "src\\ui\\menu_screen.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "shp_size",
+    "file": "src\\ui\\menu_screen.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "sig",
+    "file": "src\\render\\movie.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "sign",
+    "file": "src\\system\\mix_blowfish.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "signature",
+    "file": "src\\render\\movie.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "silent",
+    "file": "src\\ui\\message_list.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "size",
+    "file": "src\\render\\movie.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "skip",
+    "file": "src\\entity\\voxel.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "skipBlitters",
+    "file": "src\\system\\convert_class.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "skip_reveal",
+    "file": "src\\system\\map.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "source",
+    "file": "src\\object\\object.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "source_house",
+    "file": "src\\system\\map.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "space_size_x",
+    "file": "src\\system\\map.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "space_size_y",
+    "file": "src\\system\\map.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "speed",
+    "file": "src\\system\\map.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "sr",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "src",
+    "file": "src\\core\\init_game.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "src_alpha",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "src_blue",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "src_blue_blend",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "src_clip_ok",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "src_color",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "src_desc",
+    "file": "src\\ui\\menu_screen.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "src_dsurf",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "src_green",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "src_green_blend",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "src_h",
+    "file": "src\\render\\display.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "src_px",
+    "file": "src\\render\\text_render.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "src_r",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "src_rect",
+    "file": "src\\render\\shp_blitter.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "src_red",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "src_red_blend",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "src_rgb",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "src_row",
+    "file": "src\\render\\display.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "src_surface",
+    "file": "src\\render\\shp_blitter.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "src_w",
+    "file": "src\\render\\display.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "src_x",
+    "file": "src\\render\\display.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "src_y",
+    "file": "src\\render\\display.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "srcx",
+    "file": "src\\render\\shp_blitter.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "srcy",
+    "file": "src\\render\\shp_blitter.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "start",
+    "file": "src\\system\\map.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "start_x",
+    "file": "src\\ui\\menu_screen.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "start_y",
+    "file": "src\\ui\\menu_screen.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "state",
+    "file": "src\\core\\menu_select.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "step",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "step_y",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "stipple_pattern",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "str",
+    "file": "src\\core\\globals.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "stretch",
+    "file": "src\\render\\movie.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "stride_param",
+    "file": "src\\render\\shp_blitter.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "surf_rect",
+    "file": "src\\render\\display.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "surface",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "sx",
+    "file": "src\\render\\shp_render.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "sy",
+    "file": "src\\render\\shp_render.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "sz",
+    "file": "src\\core\\menu_select.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "t",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "tab",
+    "file": "src\\ui\\sidebar.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "tag_owner",
+    "file": "src\\team\\tag.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "target",
+    "file": "src\\object\\techno.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "td_frames",
+    "file": "src\\system\\file_system.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "td_h",
+    "file": "src\\system\\file_system.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "td_valid",
+    "file": "src\\system\\file_system.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "td_w",
+    "file": "src\\system\\file_system.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "template_id",
+    "file": "src\\ui\\dialog_win32.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "text",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "text_render",
+    "file": "src\\ui\\menu_screen.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "tgt",
+    "file": "src\\object\\foot.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "this_bytes",
+    "file": "src\\structure\\building.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "time",
+    "file": "src\\system\\tactical.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "tint_color",
+    "file": "src\\render\\shp_blitter.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "tm",
+    "file": "src\\render\\text_render.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "tmp",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "top",
+    "file": "src\\ui\\gadget.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "total_enc",
+    "file": "src\\system\\mix_file.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "trial_cnt",
+    "file": "src\\system\\mix_file.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "trigger",
+    "file": "src\\team\\tag.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "ts_frames",
+    "file": "src\\system\\file_system.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "ts_h",
+    "file": "src\\system\\file_system.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "ts_valid",
+    "file": "src\\system\\file_system.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "ts_w",
+    "file": "src\\system\\file_system.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "tx",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "ty",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "type",
+    "file": "src\\object\\object.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "type_array_base",
+    "file": "src\\structure\\building.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "type_index",
+    "file": "src\\structure\\building.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "unk",
+    "file": "src\\render\\display.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "unk1",
+    "file": "src\\system\\ini_class.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "unk2",
+    "file": "src\\system\\ini_class.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "unknown",
+    "file": "src\\structure\\building.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "unknown9",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "unused",
+    "file": "src\\ui\\sidebar.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "update_z_buffer",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "v",
+    "file": "src\\core\\init_game.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "v12",
+    "file": "src\\core\\init_game.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "v13",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "v16",
+    "file": "src\\core\\init_game.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "v18",
+    "file": "src\\core\\init_game.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "v19",
+    "file": "src\\core\\init_game.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "v21",
+    "file": "src\\core\\init_game.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "v25",
+    "file": "src\\core\\init_game.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "v29",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "v30",
+    "file": "src\\core\\init_game.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "v35",
+    "file": "src\\core\\init_game.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "v36",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "v38",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "v40",
+    "file": "src\\core\\init_game.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "v41",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "v42",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "v43",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "v45",
+    "file": "src\\core\\init_game.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "v47",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "v48",
+    "file": "src\\core\\init_game.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "v49",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "v52",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "v57",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "v59",
+    "file": "src\\core\\init_game.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "v63",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "v64",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "v67",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "v68",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "v71_ptr",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "v8",
+    "file": "src\\core\\init_game.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "val",
+    "file": "src\\app\\cmdline.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "validate_reachability",
+    "file": "src\\system\\map.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "velocity",
+    "file": "src\\system\\tactical.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "version",
+    "file": "src\\render\\movie.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "visitor",
+    "file": "src\\system\\map.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "vt",
+    "file": "src\\render\\shp_blitter.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "w",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "wParam",
+    "file": "src\\ui\\dialog_win32.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "warhead",
+    "file": "src\\system\\map.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "was_crashing",
+    "file": "src\\object\\foot.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "was_on_bridge",
+    "file": "src\\object\\foot.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "was_sinking",
+    "file": "src\\object\\foot.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "wc",
+    "file": "src\\app\\game_loop.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "weapon_idx",
+    "file": "src\\object\\object.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "wh",
+    "file": "src\\system\\map.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "where",
+    "file": "src\\system\\map.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "width",
+    "file": "src\\render\\movie.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "win_h",
+    "file": "src\\render\\display.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "win_w",
+    "file": "src\\render\\display.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "wn",
+    "file": "src\\system\\mix_blowfish.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "wnd_rect",
+    "file": "src\\render\\display.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "wpitch",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "wrap_hi",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "wrap_lo",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "wrap_sz",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "x",
+    "file": "src\\core\\coordinate.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "x0",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "x1",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "x2",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "xSize",
+    "file": "src\\entity\\voxel.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "x_step",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "xl",
+    "file": "src\\system\\mix_blowfish.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "xr",
+    "file": "src\\system\\mix_blowfish.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "xy1",
+    "file": "src\\system\\tactical.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "xy2",
+    "file": "src\\system\\tactical.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "xy_dst",
+    "file": "src\\render\\display.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "xyz_dst",
+    "file": "src\\render\\display.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "y",
+    "file": "src\\core\\coordinate.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "y0",
+    "file": "src\\core\\menu_select.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "y1",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "y2",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "ySize",
+    "file": "src\\entity\\voxel.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "y_count",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "y_down",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "y_end",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "y_off",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "y_offset",
+    "file": "src\\structure\\building.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "y_start",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "y_step",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "z",
+    "file": "src\\entity\\voxel.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "zSize",
+    "file": "src\\entity\\voxel.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "z_buffer",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "z_surface",
+    "file": "src\\render\\shp_blitter.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "za",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "zbuf",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "zero",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "zptr",
+    "file": "src\\render\\surface.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "zs_x",
+    "file": "src\\render\\shp_blitter.cpp",
+    "is_definition": true,
+    "address_comment": null
+  },
+  {
+    "name": "zs_y",
+    "file": "src\\render\\shp_blitter.cpp",
+    "is_definition": true,
+    "address_comment": null
+  }
+]

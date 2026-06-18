@@ -1,0 +1,113 @@
+{
+  "schema_version": 2,
+  "active_work_id": "complete-symbol-layer-1a2b3c4d",
+  "works": {
+    "function-impl-reverse-47d41664": {
+      "work_id": "function-impl-reverse-47d41664",
+      "active_plan": "D:\\RA2YR_ReSource\\.omo\\plans\\function-impl-reverse.md",
+      "plan_name": "function-impl-reverse",
+      "status": "paused",
+      "started_at": "2026-06-17T01:16:39.133Z",
+      "updated_at": "2026-06-17T03:49:00.000Z",
+      "session_ids": [
+        "opencode:ses_135f43505ffe4pa8PLyhC8rFIO"
+      ],
+      "session_origins": {
+        "opencode:ses_135f43505ffe4pa8PLyhC8rFIO": "direct"
+      },
+      "agent": "atlas",
+      "task_sessions": {}
+    },
+    "function-impl-reverse-bbb0bd55": {
+      "work_id": "function-impl-reverse-bbb0bd55",
+      "active_plan": "D:\\RA2YR_ReSource\\.omo\\plans\\function-impl-reverse.md",
+      "plan_name": "function-impl-reverse",
+      "status": "paused",
+      "started_at": "2026-06-17T01:16:39.146Z",
+      "updated_at": "2026-06-17T03:49:00.000Z",
+      "session_ids": [
+        "opencode:ses_135f43505ffe4pa8PLyhC8rFIO"
+      ],
+      "session_origins": {
+        "opencode:ses_135f43505ffe4pa8PLyhC8rFIO": "direct"
+      },
+      "agent": "atlas",
+      "task_sessions": {}
+    },
+    "ida-class-headers-completion-7f3a1d82": {
+      "work_id": "ida-class-headers-completion-7f3a1d82",
+      "active_plan": "D:\\RA2YR_ReSource\\.omo\\plans\\ida-class-headers-completion.md",
+      "plan_name": "ida-class-headers-completion",
+      "status": "completed",
+      "started_at": "2026-06-17T03:49:00.000Z",
+      "updated_at": "2026-06-17T06:23:39.918Z",
+      "session_ids": [
+        "opencode:ses_12cd71b1bffegYk1g6Rucsvtkl"
+      ],
+      "session_origins": {
+        "opencode:ses_12cd71b1bffegYk1g6Rucsvtkl": "direct"
+      },
+      "agent": "atlas",
+      "task_sessions": {},
+      "ended_at": "2026-06-17T06:23:39.918Z",
+      "elapsed_ms": 9279918
+    },
+    "complete-symbol-layer-1a2b3c4d": {
+      "work_id": "complete-symbol-layer-1a2b3c4d",
+      "active_plan": "D:\\RA2YR_ReSource\\.omo\\plans\\complete-symbol-layer.md",
+      "plan_name": "complete-symbol-layer",
+      "status": "active",
+      "started_at": "2026-06-18T01:01:23.457Z",
+      "updated_at": "2026-06-18T01:13:56.204Z",
+      "session_ids": [
+        "opencode:ses_12a28107fffeTxyjSeELiqzkhL"
+      ],
+      "session_origins": {
+        "opencode:ses_12a28107fffeTxyjSeELiqzkhL": "direct"
+      },
+      "agent": "atlas",
+      "task_sessions": {
+        "todo:1": {
+          "task_key": "todo:1",
+          "task_label": "1",
+          "task_title": "IDA global variable extraction script",
+          "session_id": "opencode:ses_127bfbd46ffeFH82yNp0okOhUd",
+          "agent": "Sisyphus-Junior",
+          "category": "deep",
+          "updated_at": "2026-06-18T01:13:56.204Z",
+          "started_at": "2026-06-18T01:13:03.810Z",
+          "status": "completed",
+          "ended_at": "2026-06-18T01:13:56.203Z",
+          "elapsed_ms": 52393
+        }
+      }
+    }
+  },
+  "active_plan": "D:\\RA2YR_ReSource\\.omo\\plans\\complete-symbol-layer.md",
+  "started_at": "2026-06-18T01:01:23.457Z",
+  "status": "active",
+  "updated_at": "2026-06-18T01:13:56.204Z",
+  "session_ids": [
+    "opencode:ses_12a28107fffeTxyjSeELiqzkhL"
+  ],
+  "session_origins": {
+    "opencode:ses_12a28107fffeTxyjSeELiqzkhL": "direct"
+  },
+  "plan_name": "complete-symbol-layer",
+  "task_sessions": {
+    "todo:1": {
+      "task_key": "todo:1",
+      "task_label": "1",
+      "task_title": "IDA global variable extraction script",
+      "session_id": "opencode:ses_127bfbd46ffeFH82yNp0okOhUd",
+      "agent": "Sisyphus-Junior",
+      "category": "deep",
+      "updated_at": "2026-06-18T01:13:56.204Z",
+      "started_at": "2026-06-18T01:13:03.810Z",
+      "status": "completed",
+      "ended_at": "2026-06-18T01:13:56.203Z",
+      "elapsed_ms": 52393
+    }
+  },
+  "agent": "atlas"
+}

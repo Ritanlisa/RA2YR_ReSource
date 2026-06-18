@@ -1,0 +1,30 @@
+Address Comment Spot-Check
+===========================
+File: src/system/map.hpp
+Checked: 3 random methods with // 0xADDR comments
+IDA instance: gamemd.exe.i64 (port 13337)
+
+=== METHOD 1 ===
+Header:   MapClass::IsVisible(CellStruct cell)      // 0x004ACAC0 (line 147)
+IDA:      MapClass::ProcessVisibilityFlags @ 0x4ACAC0
+Match:    ❌ MISMATCH — header says "IsVisible", IDA says "ProcessVisibilityFlags"
+
+=== METHOD 2 ===
+Header:   MapClass::SetVisibleRect(...)              // 0x00506D50 (line 156)
+IDA:      MapClass::CalcVisibleCellRange @ 0x506D50
+Match:    ❌ MISMATCH — header says "SetVisibleRect", IDA says "CalcVisibleCellRange"
+
+=== METHOD 3 ===
+Header:   static MapClass::DamageArea(...)           // 0x006EEBD0 (line 178)
+IDA:      DamageMapClassArea @ 0x6EEBD0
+Match:    ❌ MISMATCH — header says static member "MapClass::DamageArea",
+          IDA says global function "DamageMapClassArea" (no ClassName:: prefix)
+
+=== SUMMARY ===
+Checked:  3
+Correct:  0
+Wrong:    3 (100% failure rate)
+
+Verdict: FAIL ❌ — All 3 address comments in map.hpp have incorrect function names.
+Addresses themselves exist in the binary, but the associated names are wrong.
+This indicates systematic inaccuracy in header address comments.

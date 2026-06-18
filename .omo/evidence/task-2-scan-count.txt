@@ -1,0 +1,21 @@
+=== Task 2 Scan Count Evidence ===
+Date: 2026-06-18
+Script: tools/scan_existing_defs.py
+Output: tools/existing_defs.json
+
+Results:
+  Total unique entries: 910
+  Definitions:          906
+  Extern declarations:  4
+  With address comment: 157
+  Raw matches:          1587
+  Duplicates removed:   677
+
+Verification:
+  - 910 >= 600: PASS
+  - Known globals found:
+    * g_DDraw_Active     (def, src/app/ddraw_init.cpp,  addr=0xA8ED80)
+    * CurrentFrame        (def, src/core/globals.cpp,     addr=0xA8ED84)
+    * RulesClass_Instance (def, src/core/init_game.cpp,   addr=0x8871E0)
+
+Files scanned: 85 .cpp + 150 .hpp = 235 source files

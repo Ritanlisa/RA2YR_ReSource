@@ -1,0 +1,18 @@
+Build Baseline Check
+===================
+Date: 2026-06-17
+Command: cmake --build build_win --config Debug --target gamemd_core
+Target: gamemd_core (static library)
+
+=== RAW OUTPUT ===
+適用於 .NET Framework MSBuild 版本 17.14.40+3e7442088
+
+  Checking File Globs
+  gamemd_core.vcxproj -> D:\RA2YR_ReSource\build_win\Debug\gamemd_core.lib
+
+=== ANALYSIS ===
+Errors:   0 (no error lines detected)
+Warnings: 0 (no warning lines detected)
+Build:    SUCCESS (gamemd_core.lib produced)
+
+Verdict: PASS ✅ — Clean build, zero errors, zero warnings.
