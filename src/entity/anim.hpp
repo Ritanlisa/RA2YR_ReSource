@@ -34,6 +34,9 @@ public:
     virtual int AnimExtras() { return 0; }
     virtual int GetEnd() const { return 0; }
 
+    void Render(void* surface, int* a2, int* a3);
+    void FreeRenderBuffer();
+
     ProgressTimer       Animation;
     AnimTypeClass*      Type;
     ra2::game::ObjectClass* OwnerObject;

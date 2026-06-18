@@ -34,6 +34,9 @@ public:
 
     virtual int onParticleExpired() { return 0; }
 
+    void DrawParticle(void* surface, int draw_x, int draw_y);
+    bool CheckDrawFlags(int flags) const;
+
     ParticleTypeClass*    Type;
     uint8_t               ParticleClass_field_B0;
     uint8_t               ParticleClass_field_B1;

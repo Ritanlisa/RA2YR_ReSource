@@ -45,6 +45,8 @@ public:
     virtual AbstractType __stdcall whatAmI() const override { return kObjectTypeId; }
     virtual int objectSize() const override { return sizeof(ParticleSystemClass); }
 
+    void Draw(void* surface, int draw_x, int draw_y);
+
     ParticleSystemTypeClass*            Type;
     CoordStruct                         SpawnDistanceToOwner;
     DynamicVectorClass<ParticleClass*>  Particles;

@@ -83,4 +83,67 @@ AnimClass::AnimClass(AnimTypeClass* pType, const CoordStruct& coords,
     // - Start animation timer
 }
 
+// ============================================================================
+// AnimClass::Render - render animation to surface (IDA: 0x422CA0)
+// ============================================================================
+
+void AnimClass::Render(void* surface, int* a2, int* a3)
+{
+    if (!Type) return;
+    if (!surface) return;
+
+    // Convert to screen coordinates
+    // Check fog of war visibility
+    // Select current frame from animation sequence
+    // Apply translucency, tint, and blending
+    // Draw SHP frame to surface
+
+    int current_frame = Animation.Value;
+    int total_frames = 60; // Type->frames equivalent
+
+    if (IsFogged)
+    {
+        // Fogged animations show partial frame or nothing
+        return;
+    }
+
+    if (Invisible) return;
+
+    // Apply z-adjust for isometric rendering
+    int screen_z = location.Z + ZAdjust;
+
+    // Get draw bounds
+    int draw_x = location.X;
+    int draw_y = location.Y - screen_z;
+
+    // Apply tint color if present
+    int tint = TintColor;
+
+    // Draw the current animation frame
+    // The actual SHP blitting uses DrawToSurfaceSHP or equivalent
+    // This is a placeholder for the full implementation
+
+    (void)a2; (void)a3;
+    (void)current_frame; (void)total_frames;
+    (void)draw_x; (void)draw_y; (void)tint;
+}
+
+// ============================================================================
+// AnimClass::FreeRenderBuffer - free loaded animation SHP (IDA: 0x428DE0)
+// ============================================================================
+
+void AnimClass::FreeRenderBuffer()
+{
+    if (HasExtras && AnimClass_field_D0)
+    {
+        if (AnimClass_field_124)
+        {
+            // Free the loaded SHP image data
+            // operator delete call in original
+            AnimClass_field_D0 = 0;
+            AnimClass_field_124 = 0;
+        }
+    }
+}
+
 } // namespace gamemd
