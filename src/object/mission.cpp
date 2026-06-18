@@ -3,16 +3,21 @@
 namespace ra2 {
 namespace game {
 
+extern int& CurrentFrame;
+
 MissionClass::MissionClass() noexcept
-    : currentMission(0)
-    , suspendedMission(0)
-    , queuedMission(0)
+    : currentMission(-1)
+    , suspendedMission(-1)
+    , queuedMission(-1)
     , missionQueued(false)
     , missionStatus(0)
     , missionStartTime(0)
     , missionData(0)
     , missionTimer{}
 {
+    // IDA 0x5B2DA0: RadioClass base constructor sets missionStartTime = CurrentFrame
+    // and initializes all mission fields to -1/0/false
+    missionStartTime = static_cast<int32_t>(CurrentFrame);
 }
 
 bool MissionClass::queueMission(Mission mission, bool start_mission)

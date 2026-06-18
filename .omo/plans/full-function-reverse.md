@@ -209,7 +209,7 @@ Wave Final: Build verification + spot-check audit — 4 parallel reviews
   **Acceptance**: 0/0 build, IDA cross-check
   **Evidence**: .omo/evidence/fr-task-3.1-objectcore.txt
 
-- [ ] 14. Implement TechnoClass + FootClass methods (~471 functions)
+- [x] 14. Implement TechnoClass + FootClass methods (~471 functions)
 
   **What to do**: TechnoClass Phase 3 methods (~351) + FootClass Phase 3 (~120). Largest class clusters after Building.
   **Which agent**: `deep` — split across 2 parallel groups

@@ -29,12 +29,15 @@ public:
     virtual AbstractType __stdcall whatAmI() const override { return kObjectTypeId; }
     virtual int objectSize() const override { return sizeof(InfantryClass); }
 
-    virtual bool IsDeployed() const { return false; }
+    virtual int IsDeployed() const { return 0; }
     virtual bool PlayAnim(Sequence index, bool force = false, bool randomStartFrame = false) { return false; }
 
     int Mission_Enter() override;
     int Mission_ParaDropApproach() override;
     int Mission_ParaDropOverfly() override;
+
+    void Draw(Point2D* screen_pos, RectangleStruct* bounds) const;
+    void DrawShadow(Point2D* screen_pos, RectangleStruct* bounds) const;
 
     InfantryTypeClass* Type;
     Sequence           SequenceAnim;
