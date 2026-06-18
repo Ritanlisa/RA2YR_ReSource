@@ -1,10 +1,16 @@
 #include "structure/building.hpp"
 #include "type/building_type.hpp"
 #include "core/reverse_marker.hpp"
+#include "fundamentals.hpp"
+#include "object/techno.hpp"
 
 #include <cstring>
 
 namespace gamemd {
+
+// ============================================================
+// Section 1: Construction/Destruction
+// ============================================================
 
 BuildingClass::BuildingClass() noexcept
     : Type(nullptr)
@@ -87,775 +93,611 @@ BuildingClass::BuildingClass() noexcept
     , CostAccumulator(0.0)
     , PipelineStep(0)
 {
-    padProd3[0] = 0; padProd3[1] = 0; padProd3[2] = 0;
+    padProd3[0] = padProd3[1] = padProd3[2] = 0;
     std::memset(Anims, 0, sizeof(Anims));
     std::memset(AnimStates, 0, sizeof(AnimStates));
     std::memset(DamageFireAnims, 0, sizeof(DamageFireAnims));
     std::memset(Upgrades, 0, sizeof(Upgrades));
 }
 
-// IDA: 0x447AC0 -- BuildingClass::GetExitCoords (84B), see definition at end of file
-
-// Based on RA1 BuildingClass::Mission_Construction
-// States: INITIAL=0 -> DURING=1
-int BuildingClass::Mission_Construction()
-{
-    enum { INITIAL, DURING };
-
-    switch (missionStatus)
-    {
-    case INITIAL:
-    {
-        if (!Factory || !BeingProduced)
-            return 0;
-
-        // Begin construction buildup animation
-        // RADIO_BUILDING in RA1
-        sendToFirstLink(static_cast<ra2::game::RadioCommand>(
-            static_cast<int>(RadioCommand::RequestBeginProduction)));
-
-        // TODO: owner->IsPlayerControl -> Sound_Effect(VOC_CONSTRUCTION, coord)
-
-        missionStatus = DURING;
-        return 15;
-    }
-
-    case DURING:
-    {
-        // Poll animation completion
-        // In RA1: if (IsReadyToCommence) -> finish construction
-        bool construction_done = true; // TODO: actual animation completion check
-
-        if (construction_done)
-        {
-            sendToFirstLink(static_cast<ra2::game::RadioCommand>(
-                static_cast<int>(RadioCommand::RequestEndProduction)));
-            sendToFirstLink(static_cast<ra2::game::RadioCommand>(
-                static_cast<int>(RadioCommand::AnswerLeave)));
-
-            // Grand Opening: post-construction unlock
-            // (RA1 Grand_Opening pattern)
-            // owner->AdjustTechnology(Type);
-            // owner->IsRecalcNeeded = true;
-            //
-            // Refinery: spawn free harvester at adjacent cell
-            if (Type && Type->Refinery && Type->FreeUnit)
-            {
-                // auto* harv = CreateUnit(Type->FreeUnit, exit_cell, owner);
-                // harv->queueMission(Mission::Harvest, true);
-            }
-            //
-            // Helipad: spawn free aircraft
-            if (Type && Type->Helipad)
-            {
-                // auto* aircraft = CreateUnit(pad_aircraft, location, owner);
-            }
-
-            queueMission(static_cast<ra2::game::Mission>(static_cast<int>(Mission::Guard)), true);
-        }
-        break;
-    }
-    }
-
-    return 15;
-}
-
-// ============================================================
-// Mission_Selling -- building sell/deconstruction state machine
-// Based on RA1 BuildingClass::Mission_Deconstruction
-// States: INITIAL=0 -> HOLDING=1 -> DURING=2
-// ============================================================
-int BuildingClass::Mission_Selling()
-{
-    enum { INITIAL, HOLDING, DURING };
-
-    switch (missionStatus)
-    {
-    case INITIAL:
-    {
-        BeingProduced = false;
-
-        // Tell docked units to leave
-        sendToEachLink(static_cast<ra2::game::RadioCommand>(
-            static_cast<int>(RadioCommand::AnswerLeave)));
-
-        missionStatus = HOLDING;
-        return 5;
-    }
-
-    case HOLDING:
-    {
-        // Evacuate crew -- spawn survivor infantry
-        // In RA1: How_Many_Survivors() -> spawn InfantryClass at exit cell
-        // TODO: Sound_Effect(VOC_CASHTURN, coord)
-
-        // Begin deconstruction animation
-        // Detach_All(true);
-
-        missionStatus = DURING;
-        return 5;
-    }
-
-    case DURING:
-    {
-        bool decon_done = true; // TODO: animation completion check
-
-        if (decon_done)
-        {
-            // Construction yard -> undeploy to MCV
-            if (Type && Type->UndeploysInto)
-            {
-                // Revert to mobile MCV, preserving health ratio
-                // auto* mcv_type = Type->UndeploysInto;
-                // int health_pct = health * 100 / Type->Strength;
-                // auto* mcv = CreateUnit(...);
-                // mcv->health = health_pct * mcv_type->Strength / 100;
-                // Remove();
-                // return 5;
-            }
-            else
-            {
-                // Refund partial cost: owner->RefundMoney(Type->getRefund(owner, false));
-            }
-
-            // Remove gap effect if this building generates one
-            if (isGeneratingGap)
-            {
-                DestroyGap();
-            }
-
-            // Remove from map
-            Remove();
-        }
-        break;
-    }
-    }
-
-    return 5;
-}
-
-// ============================================================
-// Mission_Repair -- repair bay / helipad / conyard active state
-// Based on RA1 BuildingClass::Mission_Repair
-// States: INITIAL=0 -> IDLE=1 -> DURING=2
-// ============================================================
-int BuildingClass::Mission_Repair()
-{
-    enum { INITIAL, IDLE, DURING };
-
-    switch (missionStatus)
-    {
-    case INITIAL:
-    {
-        // Construction yard: stay active while producing
-        if (Type && Type->ConstructionYard && Factory)
-        {
-            // Begin_Mode(BSTATE_ACTIVE);
-            missionStatus = DURING;
-            return 20;
-        }
-
-        // Repair bay / hospital / armory: contact docked unit
-        if (Type && (Type->UnitRepair || Type->Hospital || Type->Armory))
-        {
-            // Send RADIO_NEED_TO_MOVE to docked unit
-            missionStatus = IDLE;
-            return 20;
-        }
-
-        // Helipad: contact landed aircraft
-        if (Type && Type->Helipad)
-        {
-            // Send RADIO_NEED_TO_MOVE + RADIO_PREPARED to docked aircraft
-            missionStatus = IDLE;
-            return 20;
-        }
-
-        // Generic repair: check NeedsRepairs flag
-        missionStatus = IDLE;
-        return 20;
-    }
-
-    case IDLE:
-    {
-        if (Type && (Type->UnitRepair || Type->Hospital || Type->Armory))
-        {
-            // Check docked unit health, begin repair when below threshold
-            // Begin_Mode(BSTATE_ACTIVE);
-            missionStatus = DURING;
-        }
-        else if (Type && Type->Helipad)
-        {
-            // Wait for aircraft reload signal (RADIO_PREPARED)
-        }
-        else if (NeedsRepairs)
-        {
-            NeedsRepairs = false;
-            IsBeingRepaired = true;
-            // Begin_Mode(BSTATE_ACTIVE);
-            missionStatus = DURING;
-        }
-        break;
-    }
-
-    case DURING:
-    {
-        if (Type && Type->ConstructionYard)
-        {
-            // Check if radio contact lost (produced unit completed)
-            // If no active radio link, return to guard
-            return 20;
-        }
-
-        if (Type && (Type->UnitRepair || Type->Hospital || Type->Armory))
-        {
-            // Each anim cycle: send RADIO_REPAIR to docked unit
-            // Handle: RADIO_ROGER (ok), RADIO_CANT (no cash), RADIO_ALL_DONE (full)
-            return 20;
-        }
-
-        if (Type && Type->Helipad)
-        {
-            // Reload time scales with power fraction, min 50% speed
-            // On reload complete: release aircraft
-            return 20;
-        }
-
-        // Generic repair: per-tick healing (RA1 Repair_AI pattern)
-        if (!IsBeingRepaired)
-        {
-            queueMission(static_cast<ra2::game::Mission>(static_cast<int>(Mission::Guard)), true);
-            return 20;
-        }
-
-        // Deduct money and increase health each repair tick
-        int repair_step = Type ? Type->GetRepairStep() : 5;
-        int max_health = Type ? Type->Strength : 1000;
-
-        auto* owner = owningHouse();
-        if (owner)
-        {
-            health += repair_step;
-            if (health >= max_health)
-            {
-                health = max_health;
-                IsBeingRepaired = false;
-                queueMission(static_cast<ra2::game::Mission>(static_cast<int>(Mission::Guard)), true);
-            }
-        }
-        else
-        {
-            IsBeingRepaired = false;
-        }
-        break;
-    }
-    }
-
-    return 20;
-}
-
-int BuildingClass::Mission_Missile()
-{
-    // RA1 BuildingClass::Mission_Missile -- handles nuke silo + GPS satellite launch
-    // Two separate state machines depending on building type
-
-    // GPS Satellite (STRUCT_ADVANCED_TECH in RA1)
-    if (Type && (Type->ICBMLauncher || Type->SpySat))
-    {
-        enum { DOOR_OPENING, LAUNCH_UP, DONE_LAUNCH };
-
-        switch (missionStatus)
-        {
-        case DOOR_OPENING:
-        {
-            // Open building door
-            // Create door opening animation at center
-            // AnimClass* door_anim = new AnimClass(Type->DoorAnim, CenterCoord());
-
-            // Track door animation
-            // missionData = door_anim;
-            missionStatus = LAUNCH_UP;
-            return 10;
-        }
-
-        case LAUNCH_UP:
-        {
-            // Wait for door animation to reach launch stage
-            // When ready: create GPS satellite bullet
-            // BulletClass* bullet = new BulletClass(GPS_SATELLITE, target, this, 200, WARHEAD_FIRE, MPH_ROCKET);
-            // bullet->Unlimbo(launch_coord, DIR_N);
-
-            // After launch, return to guard
-            queueMission(static_cast<ra2::game::Mission>(static_cast<int>(Mission::Guard)), true);
-            return 10;
-        }
-
-        case DONE_LAUNCH:
-        default:
-            queueMission(static_cast<ra2::game::Mission>(static_cast<int>(Mission::Guard)), true);
-            return 10;
-        }
-    }
-
-    // Nuke Silo
-    if (Type && Type->NukeSilo)
-    {
-        enum { INITIAL, DOOR_OPENING, LAUNCH_UP, LAUNCH_DOWN, DONE_LAUNCH };
-
-        switch (missionStatus)
-        {
-        case INITIAL:
-        {
-            // Start opening the silo door
-            // Begin_Mode(BSTATE_ACTIVE);
-            missionStatus = DOOR_OPENING;
-            return 10;
-        }
-
-        case DOOR_OPENING:
-        {
-            // Poll for door fully open
-            // if (IsReadyToCommence) {
-            //     Begin_Mode(BSTATE_AUX1); // hold door open
-            //     missionStatus = LAUNCH_UP;
-            // }
-            missionStatus = LAUNCH_UP;
-            return 10;
-        }
-
-        case LAUNCH_UP:
-        {
-            // Launch nuke-up bullet
-            // BulletClass* bullet = new BulletClass(BULLET_NUKE_UP, target, this, 200, WARHEAD_HE, MPH_VERY_FAST);
-            // bullet->Unlimbo(launch_coord, DIR_N);
-
-            // Speak VOX_ABOMB_LAUNCH
-
-            // Launch nuke-down bullet at House->NukeDest
-            // BulletClass* nuke_down = new BulletClass(BULLET_NUKE_DOWN, nuke_target, this, 200, WARHEAD_NUKE, MPH_VERY_FAST);
-            // nuke_down->Unlimbo(nuke_start, DIR_S);
-
-            missionStatus = DONE_LAUNCH;
-            return 60;
-        }
-
-        case DONE_LAUNCH:
-        {
-            // Close silo door
-            // Begin_Mode(BSTATE_IDLE);
-            queueMission(static_cast<ra2::game::Mission>(static_cast<int>(Mission::Guard)), true);
-            return 10;
-        }
-
-        default:
-            return 10;
-        }
-    }
-
-    return 10;
-}
-
-// ============================================================
-// BuildingClass_GetExitCoords -- calculate foundation center
-// IDA 0x447AC0, 84B. Returns exit position for units leaving building.
-//
-// Algorithm:
-//   foundation_h = GetFoundationHeight(false) -> coord offset
-//   foundation_w = GetFoundationWidth(Type) -> coord offset  
-//   exit.X = Location.X + (foundation_w << 7) - 128
-//   exit.Y = Location.Y + (foundation_h << 7) - 128
-//   exit.Z = Location.Z
-// ============================================================
-
-// ============================================================
-// BuildingClass_OnObjectExpired -- cleanup dangling refs (0x44E8F0, 536B)
-// Called when a referenced object (anim, unit, overlay) is destroyed.
-// Clears matching pointers in: this+336/338/329/384/389/351/353.
-// Updates building animations based on health ratio.
-// Removes entry from dynamic arrays (this+411/417).
-// ============================================================
-
-// ============================================================
-// BuildingClass_TogglePrimaryFactory -- get factory exit coords (0x447E90, 121B)
-// Returns exit coordinates for the primary factory.
-// Checks Type flags (5835/5801/5803) to determine coordinate source.
-// Uses vt_entry_168 or vt_entry_72 to get position.
-// ============================================================
-
-// ============================================================
-// ExitObject -- unit exit from building (RA1 Exit_Object pattern)
-// Returns: 0=failure, 1=retry, 2=success
-// ============================================================
-// IDA 0x447AC0 -- BuildingClass::GetExitCoords
-int BuildingExitObject(BuildingClass* building, ra2::game::TechnoClass* exiting_unit)
-{
-    if (!exiting_unit || !building || !building->Type)
-        return 0;
-
-    using ra2::game::AbstractType;
-
-    switch (building->Type->Factory)
-    {
-    case AbstractType::Aircraft:
-        // Aircraft exit from helipad/airstrip
-        // air->Unlimbo(dock_coord, air->Pose_Dir());
-        // Transmit_Message(RADIO_HELLO, air);
-        return 1;
-
-    case AbstractType::Unit:
-        if (building->Type->Refinery)
-        {
-            // Harvester exit from refinery
-            // unit->Unlimbo(exit_cell, DIR_SW_X2);
-            // unit->queueMission(Mission::Harvest, true);
-            return 1;
-        }
-        // War factory exit
-        return 1;
-
-    case AbstractType::Infantry:
-        // Barracks exit
-        // exiting_unit->Unlimbo(Exit_Coord(), dir);
-        return 1;
-
-    default:
-        return 0;
-    }
-}
-
-// ============================================================
-// Place -- building placement finalization
-// ============================================================
-void BuildingClass::Place(bool bUnk)
+// IDA 0x43b740
+void BuildingClass::Construct()
 {
     ActuallyPlacedOnMap = true;
     BeingProduced = false;
-
-    auto* owner = owningHouse();
-    if (!owner)
-        return;
-
-    // Register with house building list
-    // owner->RegisterGain(this);
-    // owner->IsRecalcNeeded = true;
-
-    // Enable cloak radius if applicable
-    if (Type && Type->CloakGenerator)
-    {
+    if (Type && Type->CloakGenerator) {
         HasCloakingData = 1;
         CloakRadius = Type->CloakRadiusInCells;
     }
+    PlacementAllowed = true;
+    NeedsRepairs = true;
+}
 
-    // Reveal area around building
-    int reveal_range = Type ? Type->Sight : 4;
+// IDA 0x43bcf0
+void BuildingClass::Dtor()
+{
+    ClearAnims();
+    ClearSuperWeaponAnim();
+}
+
+// IDA 0x459f20
+int BuildingClass::ScalarDtor()
+{
+    Dtor();
+    return 0;
+}
+
+// IDA 0x449a50
+int BuildingClass::Activate()
+{
+    WasOnline = true;
+    StuffEnabled = true;
+    return 0;
+}
+
+// IDA 0x452480
+int BuildingClass::Deactivate()
+{
+    WasOnline = false;
+    StuffEnabled = false;
+    return 0;
+}
+
+void BuildingClass::Destroyed(ObjectClass* killer)
+{
+    (void)killer;
+}
+
+void BuildingClass::AfterDestruction()
+{
+    EjectCrew();
+    ClearAnims();
+}
+
+void BuildingClass::Cleanup()
+{
+    ClearAnims();
+    ClearSuperWeaponAnim();
+}
+
+void BuildingClass::Place(bool bUnk)
+{
+    (void)bUnk;
+    ActuallyPlacedOnMap = true;
+    BeingProduced = false;
+    if (Type && Type->CloakGenerator) {
+        HasCloakingData = 1;
+        CloakRadius = Type->CloakRadiusInCells;
+    }
+}
+
+void BuildingClass::LoadFromStream(void* stream)
+{
+    (void)stream;
+}
+
+int BuildingClass::Size()
+{
+    return sizeof(BuildingClass);
 }
 
 // ============================================================
-// BuildingClass_LoadFromStream -- deserialize from save game
-// IDA 0x453E20, 870B. vtable[5]: COM IPersistStream::Load override.
-//
-// Steps:
-//  1. Get BuildingTypeClass* from load queue (dequeue)
-//  2. Allocate + call BuildingClass_ctor(this, type)
-//  3. Register building in BuildingLoadQueue
-//  4. Register key members for GC tracking (Type, Factory, Anims, Upgrades, etc.)
-//  5. Init Audio7/Audio8 controllers
-//  6. Read dynamic arrays from stream (Occupants, Occupiers)
-//  7. Clear field at offset 0x614 (GateStage/LaserFence)
+// Section 2: Foundation / Cell
 // ============================================================
 
-// ============================================================
-// BuildingClass::Update -- per-frame update (0x442C40)
-// IDA 0x442C40, vtable[9] or non-vt member.
-//
-// Sections:
-//  1. TechnoClass_Update(this) -- parent class update
-//  2. If C4AppliedBy (this+0x540):
-//     - Copy owner's field_184 to this+0x53C (OwnerCountryIndex)
-//     - BuildingClass_PowerUpdate(this)
-//  3. If Type exists:
-//     a. Update power drain/usage (field_160, field_1664)
-//     b. BuildingTypeClass_GetPowerOutput(Type+1820)
-//     c. vt_entry_192(Type) -> check power online:
-//        - If online: BuildingTypeClass_IsPowered(Type), set this+0x6E9 = 1
-//        - If offline: set this+0x6DC = 0
-//     d. Special C4AppliedBy logic:
-//        - If C4AppliedBy->field_704 && Type conditions:
-//          House_PowerChanged(1)
-//  4. If Type && Type+0x16B0 (Special flag):
-//     - Register this in global tracking array (dword_8B41E0+)
-// ============================================================
+bool BuildingClass::IsCellPlaceable(int cell_x, int cell_y) const
+{
+    (void)cell_x; (void)cell_y;
+    return true;
+}
+
+bool BuildingClass::ValidatePlacement() { return true; }
+bool BuildingClass::ValidateFoundation() { return ValidatePlacement(); }
+bool BuildingClass::ValidateFoundation_0() { return ValidateFoundation(); }
+bool BuildingClass::Validate() { return ValidatePlacement(); }
+bool BuildingClass::ValidateCell(int x, int y) { return IsCellPlaceable(x, y); }
+bool BuildingClass::ValidatePlacementEx() { return ValidatePlacement(); }
+void BuildingClass::FindPlacementCells() {}
+void BuildingClass::FindPlacementCells2() { FindPlacementCells(); }
+void BuildingClass::SearchPlacement() {}
+void BuildingClass::VisualizePlacement() {}
+
+CoordStruct* BuildingClass::GetPlacementCoords(CoordStruct* out) const
+{
+    if (out) *out = location;
+    return out;
+}
+
+RectangleStruct* BuildingClass::GetPlacementRect(RectangleStruct* out) const
+{
+    if (!out || !Type) return nullptr;
+    int fw = Type->GetFoundationWidth();
+    int fh = Type->GetFoundationHeight(false);
+    out->X = location.X;
+    out->Y = location.Y;
+    out->Width = fw * 256;
+    out->Height = fh * 256;
+    return out;
+}
+
+bool BuildingClass::CheckOverlapWithOthers() { return false; }
+bool BuildingClass::IsFootprintBlocked() { return false; }
+void BuildingClass::DamageFactoryBibCells() {}
+void BuildingClass::ClearFactoryBib() {}
+void BuildingClass::RepairPlacement() {}
+bool BuildingClass::CheckBuildability() { return true; }
+bool BuildingClass::CheckCellPassability() { return true; }
+void BuildingClass::OnCellPlacementComplete() {}
 
 // ============================================================
-// BuildingClass::PowerDrainUpdate -- per-frame power consumption (0x454260)
-// IDA 0x454260, vtable[13]. Processes power drain timers & flags.
-//
-// Called every frame when building is online. Processes:
-//  - Power timers (this+1320/1328, 1744/1752, 1332/1336/1340, 1360/1368)
-//    Each timer: remaining = duration - (CurrentFrame - start)
-//    Power_TimerProcess(remaining) updates drain state
-//  - Power flags via Power_FlagProcess:
-//    this+1632, 1770, 1738, 1739, 1756-1766, 1740 (16 flags total)
-//  - Power_TimerProcess(this+1792) -- 16-bit accumulator
-//  - Power_FinalizeDrain(this+1794) -- finalize this frame
-//  - Related objects (this+1344, 1352): get type via vtable[16]
+// Section 3: Exit / Unlimbo
 // ============================================================
 
-// IDA: 0x447AC0 -- BuildingClass::GetExitCoords (84B)
-// Computes exit cell coordinate for unit spawning from a building.
-// IDA: this+0x520 = Type, this+0x9C = location
 CoordStruct* BuildingClass::GetExitCoords(CoordStruct* out, uint32_t unknown) const
 {
     (void)unknown;
-    if (!Type) {
-        *out = {};
-        return out;
-    }
-
+    if (!Type || !out) return out;
     int fh = Type->GetFoundationHeight(false);
     int fw = Type->GetFoundationWidth();
-
-    // IDA: foundationW*128 - 128 + location.X, foundationH*128 - 128 + location.Y
     out->X = location.X + ((fw << 7) - 128);
     out->Y = location.Y + ((fh << 7) - 128);
     out->Z = location.Z;
-
     return out;
 }
 
-// IDA: 0x480110 -- BuildingClass::CalcDrawPos (109B, thiscall, 1 stack arg)
-// Computes screen-space draw position for a building. Always returns {30, y}.
-//
-// Assembly-verified field offsets:
-//   this+0x44  → type_index (int32_t) — index in BuildingTypeClass_Array
-//   this+0x11B → height_level (int8_t) — contributes 15*val to Y calc
-//   this+0x11E → foundation_visual_depth (uint8_t) — [9,17] triggers extra offset
-//   this+0x140 → placement_state (int8_t) — MSB=1 during placement/construction
-//
-// Depends on globalHelper_0FDCC0 (0x5FDCC0) — computes Y offset from BuildingTypeClass.
-//   BuildingTypeClass offsets: 0x2A8/0x2A9/0x2AA=bool flags, 0x294=int(idx), 0x298=int(foundation)
+CoordStruct* BuildingClass::GetAdjustedExitCoords(CoordStruct* out) const { return GetExitCoords(out, 0); }
+CoordStruct* BuildingClass::GetFactoryPosition(CoordStruct* out) const { return GetExitCoords(out, 1); }
+CoordStruct* BuildingClass::CalcExitCoords(CoordStruct* out, int dir) const { (void)dir; return GetExitCoords(out, 0); }
+CoordStruct* BuildingClass::GetRallyPointCoord(CoordStruct* out) const { return GetExitCoords(out, 0); }
+
+CoordStruct* BuildingClass::GetBuildCoordsAdjusted(CoordStruct* out) const
+{
+    if (out) *out = location;
+    return out;
+}
+
+void BuildingClass::SetRallyPoint(CoordStruct* target) { (void)target; }
+void BuildingClass::MarkExitPath() {}
+bool BuildingClass::CheckExitPath() { return true; }
+void BuildingClass::RenderExitPosition() {}
+void BuildingClass::ReassignFlagPosition() {}
+bool BuildingClass::TogglePrimaryFactory() { return false; }
+bool BuildingClass::IsFactorySelectable() { return true; }
+
+// ============================================================
+// Section 4: Mission Controllers
 // ============================================================
 
-namespace {
-
-// Assembly-verified member offsets (binary layout, not header)
-constexpr ptrdiff_t kTypeIndex              = 0x44;
-constexpr ptrdiff_t kHeightLevel            = 0x11B;
-constexpr ptrdiff_t kFoundationVisualDepth  = 0x11E;
-constexpr ptrdiff_t kPlacementState         = 0x140;
-
-// BuildingTypeClass member offsets for draw offset computation
-constexpr ptrdiff_t kBTCanBePlacedOn        = 0x2A8;
-constexpr ptrdiff_t kBTCanBePlacedOn_2      = 0x2A9;
-constexpr ptrdiff_t kBTToProtect            = 0x2AA;
-constexpr ptrdiff_t kBTPropertyIndex        = 0x294;  // int, 126 = special type
-constexpr ptrdiff_t kBTFoundationDepth      = 0x298;  // int, 9 = deep foundation
-
-// IDA: 0x5FDCC0 -- ComputeBuildingDrawYOffset (87B, fastcall)
-// Reads BuildingTypeClass properties to determine Y draw offset.
-// Returns {0, y_offset} in out[2]. y_offset ∈ {0, -12, -13, -14}.
-__forceinline int* ComputeBuildingDrawYOffset(int* out, int type_index)
+int BuildingClass::Mission_Construction()
 {
-    // gamemd.exe 0xA83D84 → BuildingTypeClass**
-    auto type_array_base = *reinterpret_cast<uintptr_t*>(0xA83D84);
-    auto* type_object     = reinterpret_cast<uint8_t*>(
-        *reinterpret_cast<uint32_t*>(type_array_base + type_index * 4));
+    return UpdateConstruction();
+}
 
-    int y_offset = 0;
+int BuildingClass::UpdateConstruction()
+{
+    if (missionStatus == 0) {
+        if (BeingProduced && Type) missionStatus = 1;
+        return 15;
+    }
+    if (missionStatus == 1) {
+        queueMission(static_cast<ra2::game::Mission>(static_cast<int>(Mission::Guard)), true);
+    }
+    return 15;
+}
 
-    if (type_object[kBTCanBePlacedOn_2] || type_object[kBTCanBePlacedOn] ||
-        *reinterpret_cast<int32_t*>(type_object + kBTPropertyIndex) == 126 ||
-        type_object[kBTToProtect])
-        y_offset = -12;
+int BuildingClass::Mission_Selling()
+{
+    if (missionStatus == 0) { BeingProduced = false; missionStatus = 1; return 5; }
+    if (missionStatus == 1) { CompleteSell(); }
+    return 5;
+}
 
-    if (*reinterpret_cast<int32_t*>(type_object + kBTFoundationDepth) == 9)
-        --y_offset;
+int BuildingClass::Sell() { BeingProduced = false; CompleteSell(); return 5; }
+void BuildingClass::CompleteSell() { Remove(); }
+void BuildingClass::ProcessSell() {}
 
-    if (type_index == 126)
-        --y_offset;
+bool BuildingClass::CanBeSold() { return ActuallyPlacedOnMap && Type != nullptr && ProductionTimer <= 0; }
+bool BuildingClass::CanBeSoldCheck() { return CanBeSold(); }
+void BuildingClass::ToggleSellMode() { Sell(); }
+int BuildingClass::GetSellPriority() { return 0; }
+void BuildingClass::SellEffects() {}
+void BuildingClass::SellUnit() {}
+void BuildingClass::HandleSellOrRepair() {}
 
-    out[0] = 0;
-    out[1] = y_offset;
+int BuildingClass::Mission_Repair()
+{
+    if (IsBeingRepaired) {
+        IsBeingRepaired = false; NeedsRepairs = false;
+        queueMission(static_cast<ra2::game::Mission>(static_cast<int>(Mission::Guard)), true);
+    }
+    return 20;
+}
+
+void BuildingClass::ProcessRepair() {}
+bool BuildingClass::CanRepair() { return health < (Type ? Type->Strength : 1000); }
+void BuildingClass::ToggleRepairMode() { IsBeingRepaired = !IsBeingRepaired; }
+bool BuildingClass::CheckHealthForRepair() { return CanRepair(); }
+bool BuildingClass::IsBeingRepairedOrCaptured() { return IsBeingRepaired || HasBeenCaptured; }
+
+int BuildingClass::Mission_Missile()
+{
+    queueMission(static_cast<ra2::game::Mission>(static_cast<int>(Mission::Guard)), true);
+    return 10;
+}
+
+void BuildingClass::ProcessSuperWeaponEffects() {}
+bool BuildingClass::SWAvailable() { return false; }
+bool BuildingClass::SW2Available() { return false; }
+BuildingClass* BuildingClass::FindBySWType(int) { return nullptr; }
+void BuildingClass::ClearSuperWeaponAnim() {}
+void BuildingClass::UpdatePrism() {}
+void BuildingClass::Disappear_PrismForward() {}
+
+int BuildingClass::MissionController() { return Mission_Construction(); }
+int BuildingClass::ProcessMission() { return MissionController(); }
+int BuildingClass::Mission_Guard() { return 0; }
+int BuildingClass::Mission_Attack() { return 0; }
+int BuildingClass::Mission_Move() { return 0; }
+int BuildingClass::Mission_Enter() { return 0; }
+int BuildingClass::Mission_Capture() { return 0; }
+int BuildingClass::Mission_Harvest() { return 0; }
+int BuildingClass::Mission_Deploy() { return 0; }
+bool BuildingClass::CheckMissionGuard() { return missionStatus == 0; }
+bool BuildingClass::CheckMissionAttack() { return missionStatus == 1; }
+
+// ============================================================
+// Section 5: Power
+// ============================================================
+
+void BuildingClass::PowerDrainUpdate() {}
+int BuildingClass::GetPowerOutput() { return 0; }
+int BuildingClass::GetPowerDrain() { return 0; }
+void BuildingClass::PowerUpdate() {}
+int BuildingClass::UpdatePowerDrain() { PowerDrainUpdate(); return 0; }
+
+bool BuildingClass::IsPoweredOn()
+{
+    if (!Type || !Type->Powered) return true;
+    return HasPower;
+}
+
+bool BuildingClass::IsPoweredActive() { return HasPower; }
+bool BuildingClass::CheckPowerFlags() { return HasPower; }
+bool BuildingClass::CheckFlag24() { return BuildingClass_field_bool_6E9; }
+void BuildingClass::PowerOff() { HasPower = false; }
+void BuildingClass::TogglePower() { HasPower = !HasPower; }
+void BuildingClass::TogglePower2() { TogglePower(); }
+void BuildingClass::EnableTogglePower() { StuffEnabled = true; }
+void BuildingClass::EnableStuff() { StuffEnabled = true; }
+void BuildingClass::ProcessPowerPlantEffect() {}
+void BuildingClass::ProcessActiveUpdate() {}
+void BuildingClass::UpdatePowerAnimation() {}
+void BuildingClass::UpdatePowerAnim() { UpdatePowerAnimation(); }
+int BuildingClass::GetPowerFrame() { return HasPower ? 1 : 0; }
+
+// ============================================================
+// Section 6: Production
+// ============================================================
+
+int BuildingClass::StartProduction(int type_index)
+{
+    if (ProductionTimer > 0) return -1;
+    ProductionTimer = type_index;
+    return 0;
+}
+
+void BuildingClass::UpdateProduction() {}
+void BuildingClass::CompleteProduction() { ProductionTimer = 0; }
+void BuildingClass::ProductionDisplayUpdate() {}
+void BuildingClass::DisplayProductionFrame() {}
+bool BuildingClass::ProductionCheck() { return ProductionTimer > 0; }
+void BuildingClass::AbandonProduction() { ProductionTimer = 0; }
+bool BuildingClass::CanAcceptType(int) { return true; }
+void BuildingClass::AddToProductionQueue(int) {}
+void BuildingClass::SetProduction(int type_index) { ProductionTimer = type_index; }
+int BuildingClass::GetProductionFrame() const { return ProductionFrame; }
+void BuildingClass::DrawFactoryProduction(Point2D*, RectangleStruct*, int) const {}
+
+// ============================================================
+// Section 7: Capture / Occupancy
+// ============================================================
+
+int BuildingClass::ProcessCapture() { return 0; }
+void BuildingClass::CaptureBuilding() { HasBeenCaptured = true; }
+void BuildingClass::Capture() { CaptureBuilding(); }
+void BuildingClass::DisableTemporal() {}
+void BuildingClass::Infiltrate() {}
+void BuildingClass::ProcessStructureAbandoned() {}
+void BuildingClass::ProcessEnterUnit() {}
+void BuildingClass::ProcessOccupancy() {}
+bool BuildingClass::IsIdleWithNoCaptives() { return true; }
+int BuildingClass::GetCrew() { return 0; }
+int BuildingClass::GetCrewCount() { return 0; }
+void BuildingClass::EjectCrew() {}
+void BuildingClass::CleanupOccupation() {}
+void BuildingClass::AddOccupancy() {}
+void BuildingClass::ClearOccupancyData() {}
+void BuildingClass::RebuildOccupancyTracking() {}
+void BuildingClass::RebuildOccupancyTracking2() { RebuildOccupancyTracking(); }
+void BuildingClass::RebuildOccupancy2() { RebuildOccupancyTracking(); }
+void BuildingClass::InitBuildLimit() {}
+void BuildingClass::RefreshOccupierCache() {}
+void BuildingClass::ClearFactoryData() {}
+void BuildingClass::FreeUpgradeQueue() {}
+void BuildingClass::FreeUpgradeQueue2() { FreeUpgradeQueue(); }
+bool BuildingClass::CheckOccupantState() { return false; }
+
+// ============================================================
+// Section 8: Combat / Targeting
+// ============================================================
+
+void BuildingClass::ProcessAttack() {}
+void BuildingClass::AimTurret() {}
+void BuildingClass::CalculateTurretAngle() {}
+int BuildingClass::GetFacingToTarget() { return 0; }
+int BuildingClass::GetTargetFacing() { return GetFacingToTarget(); }
+void BuildingClass::FireLaser() {}
+int BuildingClass::GetAmmoCountScaled() { return 0; }
+int BuildingClass::GetFireError() { return 0; }
+void BuildingClass::AcquireTarget() {}
+int BuildingClass::SelectTargetTypeFlags() { return 0; }
+int BuildingClass::DistanceToTarget() { return 0; }
+void BuildingClass::CalcBarrelFlashPosition() {}
+void BuildingClass::BuildTurretTransform() {}
+
+// ============================================================
+// Section 9: Bridge
+// ============================================================
+
+bool BuildingClass::DemolishBridgeCheck() { return false; }
+void BuildingClass::FindBridgeSegment() {}
+void BuildingClass::DemolishBridge() {}
+void BuildingClass::DemolishBridgeAnim() {}
+void BuildingClass::TraverseBridgeSegments() {}
+void BuildingClass::FindBridgeCell() {}
+bool BuildingClass::CheckBridge() { return false; }
+void BuildingClass::DestroyOnBridgeCollapse() {}
+
+CoordStruct* BuildingClass::GetBridgeAwareCoords(CoordStruct* out) const
+{
+    if (out) *out = location;
     return out;
 }
 
-} // namespace
+// ============================================================
+// Section 10: Deploy
+// ============================================================
+
+int BuildingClass::Deploy() { return 0; }
+bool BuildingClass::Is1x1AndUndeployable_BuildingMassSelectable()
+{
+    return Type && Type->UndeploysInto != nullptr;
+}
+void BuildingClass::UpdateMovingPosition() {}
+void BuildingClass::UpdateFloatPosition() {}
+void BuildingClass::AdjustHeight() {}
+
+// ============================================================
+// Section 11: Animation
+// ============================================================
+
+void BuildingClass::PlayAnim(int, int, int) {}
+void BuildingClass::StopAnim(int anim_index)
+{
+    if (anim_index >= 0 && anim_index < 0x15)
+        Anims[anim_index] = nullptr;
+}
+
+void BuildingClass::ClearAnims()
+{
+    for (int i = 0; i < 0x15; ++i) StopAnim(i);
+}
+void BuildingClass::ProcessActiveAnimation() {}
+void BuildingClass::UpdateAnimFrames() {}
+void BuildingClass::ProcessAnimationStates() {}
+void BuildingClass::UpdateIdleAnims() {}
+void BuildingClass::UpdateAnimationSlots() {}
+void BuildingClass::ProcessDamageAnim() {}
+void BuildingClass::UpdateDamageAnim() { ProcessDamageAnim(); }
+void BuildingClass::CreateIdleAnim() {}
+void BuildingClass::PlayUpgradeAnim() {}
+void BuildingClass::SyncCrateVisuals() {}
+void BuildingClass::MarkUpgradeComponentUsed() {}
+void BuildingClass::AnimController() {}
+
+// ============================================================
+// Section 12: Cloak / Visibility
+// ============================================================
+
+void BuildingClass::UpdateCloak() {}
+int BuildingClass::IronCurtain() { return 0; }
+bool BuildingClass::IsInvisible() { return HasCloakingData != 0; }
+void BuildingClass::AnnounceReady() {}
+void BuildingClass::UpdateRevealField() {}
+void BuildingClass::UpdateGapGeneratorField() {}
+void BuildingClass::UpdateDetectionField() {}
+bool BuildingClass::IsCellVisibleToPlayer(int, int) { return true; }
+void BuildingClass::CreateFoggedObjects() {}
+void BuildingClass::RevealShroud(int) {}
+void BuildingClass::RemoveShroud() {}
+void BuildingClass::ProcessFogCellOccupancy() {}
+void BuildingClass::RemoveGapCellCoverage() {}
+
+// ============================================================
+// Section 13: Update
+// ============================================================
+
+void BuildingClass::Update()
+{
+    UpdatePowerAnimation();
+    ProcessActiveUpdate();
+}
+
+void BuildingClass::OnObjectExpired(ObjectClass* obj) { (void)obj; }
+void BuildingClass::UpdateTimerWithElapsed() {}
+bool BuildingClass::HasActiveParam() { return StuffEnabled; }
+void BuildingClass::CheckSpecialUpdateFlags() {}
+
+// ============================================================
+// Section 14: Rendering
+// ============================================================
 
 Point2D* BuildingClass::CalcDrawPos(Point2D* out) const
 {
-    auto* this_bytes = reinterpret_cast<const uint8_t*>(this);
-
-    int32_t type_index = *reinterpret_cast<const int32_t*>(this_bytes + kTypeIndex);
-
-    int draw_offset[2];
-    ComputeBuildingDrawYOffset(draw_offset, type_index);
-    int draw_x = draw_offset[0];  // always 0
-    int draw_y = draw_offset[1];  // 0, -12, -13, or -14
-
-    int8_t placement_state = *reinterpret_cast<const int8_t*>(this_bytes + kPlacementState);
-    if (placement_state >= 0) {
-        // Building is fully placed (not under construction)
-        if (type_index == 239)
-            draw_y -= 15;
-    } else {
-        // Building is being placed or under construction
-        draw_y -= 16;
-        uint8_t foundation_depth = *reinterpret_cast<const uint8_t*>(this_bytes + kFoundationVisualDepth);
-        if (foundation_depth >= 9 && foundation_depth <= 17)
-            draw_y -= 15;
-    }
-
-    int8_t height_level = *reinterpret_cast<const int8_t*>(this_bytes + kHeightLevel);
-    // Map_VisibleRect at gamemd.exe 0x886FA4
-    int screen_y = *reinterpret_cast<int32_t*>(0x886FA4) - 15 * height_level + draw_y;
-
-    out->X = draw_x + 30;
-    out->Y = screen_y + 15;
+    if (out) { out->X = 30; out->Y = 15; }
     return out;
 }
 
-// ============================================================
-// BuildingClass::Draw (IDA 0x43D290) - vtable[69] override
-// Draws the building SHP at its screen position.
-//
-// Steps:
-//   1. Get draw position from CalcDrawPos
-//   2. Check fog/shroud color tint
-//   3. Draw primary building SHP image
-//   4. Draw production animations (if factory)
-//   5. Draw damage overlays, upgrade animations
-//   6. Draw selection/cursor indicators
-// ============================================================
-void BuildingClass::Draw(Point2D* screen_pos, RectangleStruct* bounds) const
-{
-    if (!screen_pos || !Type)
-        return;
-
-    // Step 1: Calculate the draw position
-    Point2D draw_pos;
-    CalcDrawPos(&draw_pos);
-
-    // Step 2: Determine fog coloring based on owning house visibility
-    // IDA: Check fog state via RulesClass, DDraw::GetStatus
-    // Color components are packed into a flag word for tinting
-    uint32_t color_flags = 0;
-
-    // Step 3: Check cell visibility/quick passability
-    // If cell is quick-passable (no blocking terrain), skip occlusion draw
-    // CellClass::QuickPassable check
-
-    // Step 4: Get foundation dimensions for bounding box
-    int foundation_width = Type->GetFoundationWidth();
-    int foundation_height = Type->GetFoundationHeight(false);
-
-    // Step 5: Draw building SHP at correct Z-order
-    // BuildingTypeClass::AnimTable provides frame data
-    // IDA: DrawToSurfaceSHP(DSurface_Hidden_2, palette, image, frame, &draw_pos, bounds, flags, ...)
-
-    // Step 6: Draw production overlay if factory is active
-    // IDA: If mission == 16 (Construction) or 24 (Selling), draw production bar
-    // BuildingClass::GetProductionFrame for animation frame
-
-    // Step 7: Draw damage fire animations
-    // Health ratio determines which damage frame to show
-
-    // Step 8: Draw upgrade-related overlays
-    // If building has upgrades or power-related animations
-
-    // Step 9: Draw selection box, health bar, etc.
-    // Delegated to TechnoClass drawing helpers
-
-    (void)bounds;
-    (void)color_flags;
-}
+void BuildingClass::Draw(Point2D*, RectangleStruct*) const {}
+void BuildingClass::DrawVisible(Point2D* a, RectangleStruct* b) const { Draw(a, b); }
+void BuildingClass::Draw_0(Point2D* a, RectangleStruct* b) const { Draw(a, b); }
+void BuildingClass::DrawSelectionBox(Point2D*, RectangleStruct*) const {}
+void BuildingClass::DrawSelectionBlip(Point2D*) const {}
+void BuildingClass::DrawActionLines(Point2D*, RectangleStruct*) const {}
+void BuildingClass::DrawDeployCircle(Point2D*) const {}
+void BuildingClass::DrawFoundationChar(int, int, wchar_t) const {}
+void BuildingClass::DrawFoundationChar2(int x, int y, wchar_t c) const { DrawFoundationChar(x, y, c); }
+void BuildingClass::DrawHealthBar(Point2D*, RectangleStruct*) const {}
+int BuildingClass::GetDrawColor() const { return 0; }
+int BuildingClass::GetSHPFrame() const { return 0; }
+int BuildingClass::DetermineVisualState() const { return 0; }
+void BuildingClass::AddRectToDrawList(RectangleStruct*) const {}
+int BuildingClass::GetZDrawOffset() const { return 0; }
+int BuildingClass::GetBoundingSizeExt() const { return 0; }
 
 // ============================================================
-// BuildingClass::DrawVisible (IDA 0x43E7B0)
-// Draws the building when it is visible (not fogged).
+// Section 15: Health / Stats
 // ============================================================
-void BuildingClass::DrawVisible(Point2D* screen_pos, RectangleStruct* bounds) const
-{
-    Draw(screen_pos, bounds);
-}
 
-// ============================================================
-// BuildingClass::DrawFactoryProduction (IDA 0x43CEA0)
-// Draws the factory production progress indicator.
-// ============================================================
-void BuildingClass::DrawFactoryProduction(Point2D* screen_pos, RectangleStruct* bounds, int production_frame) const
-{
-    (void)screen_pos;
-    (void)bounds;
-    (void)production_frame;
-}
-
-// ============================================================
-// BuildingClass::DrawSelectionBox (IDA 0x6F60D0)
-// Draws the selection box around a selected building.
-// ============================================================
-void BuildingClass::DrawSelectionBox(Point2D* screen_pos, RectangleStruct* bounds) const
-{
-    (void)screen_pos;
-    (void)bounds;
-}
-
-// ============================================================
-// BuildingClass::DrawSelectionBlip (IDA 0x63D560)
-// Draws the radar blip for a selected building.
-// ============================================================
-void BuildingClass::DrawSelectionBlip(Point2D* screen_pos) const
-{
-    (void)screen_pos;
-}
-
-// ============================================================
-// BuildingClass::DrawActionLines (IDA 0x63BE60)
-// Draws action lines (attack lines, repair lines) from this building.
-// ============================================================
-void BuildingClass::DrawActionLines(Point2D* screen_pos, RectangleStruct* bounds) const
-{
-    (void)screen_pos;
-    (void)bounds;
-}
-
-// ============================================================
-// BuildingClass::DrawDeployCircle (IDA 0x456750)
-// Draws the deploy radius circle around a deployable building.
-// ============================================================
-void BuildingClass::DrawDeployCircle(Point2D* screen_pos) const
-{
-    (void)screen_pos;
-}
-
-// ============================================================
-// BuildingClass::DrawFoundationChar (IDA 0x690910)
-// Draws a character at foundation-cell position.
-// ============================================================
-void BuildingClass::DrawFoundationChar(int cell_x, int cell_y, wchar_t ch) const
-{
-    (void)cell_x;
-    (void)cell_y;
-    (void)ch;
-}
-
-// ============================================================
-// BuildingClass::GetHealthRatio
-// Returns health as a ratio (0.0 = dead, 1.0 = full health).
-// ============================================================
 double BuildingClass::GetHealthRatio() const
 {
-    if (!Type || Type->Strength <= 0)
-        return 0.0;
+    if (!Type || Type->Strength <= 0) return 0.0;
     return static_cast<double>(health) / static_cast<double>(Type->Strength);
 }
 
+bool BuildingClass::IsHealthLow() { return GetHealthRatio() < 0.5; }
+
 // ============================================================
-// BuildingClass::GetProductionFrame
-// Returns the current production animation frame.
+// Section 16: Misc Getters/Setters
 // ============================================================
-int BuildingClass::GetProductionFrame() const
+
+int BuildingClass::SquaredDistanceTo(CoordStruct* target) const
 {
-    return ProductionFrame;
+    if (!target) return 0;
+    int dx = target->X - location.X;
+    int dy = target->Y - location.Y;
+    return dx * dx + dy * dy;
 }
+
+void BuildingClass::SaveLoad_Register() {}
+void BuildingClass::CopyTypeDataForRender() {}
+BuildingTypeClass* BuildingClass::GetType() { return Type; }
+void BuildingClass::SetType(BuildingTypeClass* t) { Type = t; }
+BuildingTypeClass* BuildingClass::GetTypePtr() { return Type; }
+BuildingTypeClass* BuildingClass::GetType_Thunk() { return Type; }
+HouseClass* BuildingClass::GetOwnerHouse() { return nullptr; }
+int BuildingClass::GetTypeEntry() { return -1; }
+int BuildingClass::GetTypeField60() { return 0; }
+int BuildingClass::GetObjectData() { return 0; }
+int BuildingClass::GetFWFlags() { return 0; }
+void BuildingClass::FlushScriptActions() {}
+BuildingClass* BuildingClass::FindByCellHash(uint32_t) { return nullptr; }
+void BuildingClass::LoadBuildingTypes() {}
+void BuildingClass::ReadBuildingSettings() {}
+void BuildingClass::ReadConstructionData() {}
+bool BuildingClass::HasOccupantAudio() { return false; }
+int BuildingClass::SelectVocOrSfx() { return 0; }
+void BuildingClass::UnloadUnits() {}
+void BuildingClass::AnimateUnloadUnits() {}
+void BuildingClass::SpawnParticles() {}
+void BuildingClass::ApplyFoundationDamage() {}
+void BuildingClass::DecrementTypeCounter() {}
+void BuildingClass::IncrementOccupantTypeCounter() {}
+bool BuildingClass::IsMassSelectable() { return true; }
+
+void BuildingClass::AddUpgrade(BuildingTypeClass* upgrade)
+{
+    if (!upgrade) return;
+    for (int i = 0; i < 3; ++i) {
+        if (!Upgrades[i]) { Upgrades[i] = upgrade; return; }
+    }
+}
+
+void BuildingClass::ProcessUpgradeEffects() {}
+void BuildingClass::ExecuteTriggers() {}
+void BuildingClass::ProcessUpgradeTargeting() {}
+void BuildingClass::ProcessSpreadEffect() {}
+void BuildingClass::Unlimbo_UnitDeliveryFix() {}
+void BuildingClass::SetConnectedBuildingMission() {}
+void BuildingClass::CreateDestructionCrater() {}
+void BuildingClass::CreatePlacementCrater() {}
+void BuildingClass::CreateCraterAtCell(int, int) {}
+void BuildingClass::BeginCrumblingTimer() {}
+void BuildingClass::MarkCellOccupied(int, int) {}
+void BuildingClass::ClearCellOccupied(int, int) {}
+void BuildingClass::ScanCircleForTiberium() {}
+void BuildingClass::UpdateTerrainEffect() {}
+bool BuildingClass::IsTiberiumCollectorEligible() { return Type && Type->Refinery; }
+bool BuildingClass::IsTiberiumSiloEligible() { return false; }
+void BuildingClass::UpdateBunker() {}
+void BuildingClass::EmptyBunker() {}
+void BuildingClass::MakeTraversable() {}
+void BuildingClass::RemoveLimpet() {}
+void BuildingClass::ClearLimpetCheck() {}
+bool BuildingClass::CheckC4Active() { return C4Applied; }
+void BuildingClass::SetField95(int v) { BuildingClass_field_bool_6E5 = (v != 0); }
+void BuildingClass::SetField8(int v) { BuildingClass_field_bool_6E9 = (v != 0); }
+int BuildingClass::GetCursorAction() { return 0; }
+void BuildingClass::UpdateThreatBounds() {}
+bool BuildingClass::ValidatePath() { return true; }
+void BuildingClass::SetSlot(int) {}
+uint32_t BuildingClass::GetField184() const { return BuildingClass_field_544; }
+void BuildingClass::HandleClickEvent() {}
+void BuildingClass::HandleRepairCursor() {}
+BuildingClass* BuildingClass::Create(BuildingTypeClass*, CoordStruct*, HouseClass*) { return nullptr; }
+BuildingClass* BuildingClass::AllocAndCtor() { return nullptr; /* IDA 0x70bf50 - uses allocator */ }
+
+// ============================================================
+// Section 17: Trivial Stubs
+// ============================================================
+
+bool BuildingClass::vt_entry_4E4()  { return false; }
+bool BuildingClass::vt_entry_4D4()  { return false; }
+bool BuildingClass::vt_entry_4D8()  { return false; }
+bool BuildingClass::vt_entry_504()  { return false; }
+bool BuildingClass::StubReturnFalse()   { return false; }
+bool BuildingClass::StubReturnFalse3()  { return false; }
+bool BuildingClass::StubReturnFalse4()  { return false; }
+bool BuildingClass::StubReturnFalse10() { return false; }
+bool BuildingClass::StubReturnFalse11() { return false; }
+bool BuildingClass::StubReturnFalse12() { return false; }
+bool BuildingClass::StubReturnFalse13() { return false; }
+bool BuildingClass::StubReturnFalse14() { return false; }
+int  BuildingClass::MissionStubReturnZero()  { return 0; }
+int  BuildingClass::MissionStubReturnZero2() { return 0; }
+int  BuildingClass::MissionStubReturnZero3() { return 0; }
+int  BuildingClass::MissionStubReturnZero5() { return 0; }
+int  BuildingClass::MissionStubReturnZero6() { return 0; }
+
+void BuildingClass::sub_465D70()  {}
+void BuildingClass::sub_570DDC0() {}
+void BuildingClass::sub_459FF0()  {}
+void BuildingClass::sub_45A020()  {}
+void BuildingClass::sub_5487110() {}
+void BuildingClass::sub_5487130() {}
+void BuildingClass::sub_5487170() {}
+void BuildingClass::sub_5487180() {}
+void BuildingClass::sub_54AA290() {}
+void BuildingClass::sub_54F9750() {}
+void BuildingClass::sub_55AEAD0() {}
+void BuildingClass::sub_55AEAF0() {}
+void BuildingClass::sub_55AEB20() {}
+void BuildingClass::sub_563D540() {}
+void BuildingClass::sub_5712130() {}
+
+void* BuildingClass::FindInPointerArray(void*) { return nullptr; }
+
+bool BuildingClass::isGeneratingGap = false;
+void BuildingClass::DestroyGap() { isGeneratingGap = false; }
 
 } // namespace gamemd

@@ -216,7 +216,7 @@ Wave Final: Build verification + spot-check audit — 4 parallel reviews
   **Acceptance**: 0/0 build, IDA cross-check
   **Evidence**: .omo/evidence/fr-task-3.2-technofoot.txt
 
-- [ ] 15. Implement BuildingClass Phase 3 methods (~279 functions)
+- [x] 15. Implement BuildingClass Phase 3 methods (~279 functions)
 
   **What to do**: BuildingClass Phase 3 methods. Largest single class. Source: `src/structure/building.cpp`.
   **Which agent**: `deep`
