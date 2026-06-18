@@ -212,6 +212,13 @@ public:
 
     void MarkForRedraw();
     void ChainReaction();
+    void Draw(const Point2D* screen_pos, const RectangleStruct* bounds) const;
+    void DrawDispatch(const Point2D* screen_pos, const RectangleStruct* bounds) const;
+    void DrawWithFlags(const Point2D* screen_pos, const RectangleStruct* bounds, int flags) const;
+    RectangleStruct* GetScreenRect(RectangleStruct* out) const;
+    void RegisterForRedraw();
+    void DrawWrapper(const Point2D* screen_pos, const RectangleStruct* bounds) const;
+    bool QuickPassable() const;
     CoordStruct* FindInfantrySubposition(CoordStruct* out, const CoordStruct& coords, bool ignore_contents, bool alt, bool use_cell_coords);
     CoordStruct FindInfantrySubposition(const CoordStruct& coords, bool ignore_contents, bool alt, bool use_cell_coords)
     {

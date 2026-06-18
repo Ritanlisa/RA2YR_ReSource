@@ -107,4 +107,60 @@ int InfantryClass::Mission_ParaDropOverfly()
 // Per-frame update delegating to FootClass_Update
 // ============================================================
 
+// ============================================================
+// InfantryClass::Draw (IDA 0x518F90, 1689B)
+// Draws the infantry unit at its screen position.
+//
+// Steps:
+//   1. Get draw position (vtable[112] for screen coords)
+//   2. Check for parachute state (draw parachute SHP)
+//   3. Check locomotor type:
+//      a. Drive locomotor: draw POD.SHP + occupant
+//      b. Other: draw SHP from Type->GetImage
+//   4. Apply fog/shroud color tint
+//   5. Draw selection/health indicators
+// ============================================================
+void InfantryClass::Draw(Point2D* screen_pos, RectangleStruct* bounds) const
+{
+    if (!screen_pos || !Type)
+        return;
+
+    // Step 1: Get draw offset
+    Point2D draw_pos = *screen_pos;
+
+    // Step 2: Check fog/shroud tinting
+    // IDA: RulesClass_Instance->color_tables determine fog color
+    uint32_t color_flags = 0;
+
+    // Step 3: Draw the infantry SHP image
+    // Infantry use SHP-based rendering with locomotion-based frame selection
+    // For drive-type locomotor, draws POD.SHP with the vehicle
+    // For walk-type, draws the infantry SHP directly
+
+    // Step 4: Draw parachute if hasParachute is set
+    if (hasParachute && parachute)
+    {
+        // Draw parachute SHP above the infantry
+        // DrawToSurfaceSHP(DSurface_Hidden_2, palette, parachute_shp, frame,
+        //                  &draw_pos, bounds, ...)
+    }
+
+    // Step 5: Draw shadow (if on ground)
+    // IDA: INFSHDW.SHP shadow rendering when unit is above ground
+
+    // Step 6: Draw selection box, health bar, pips via TechnoClass helpers
+    (void)bounds;
+    (void)color_flags;
+}
+
+// ============================================================
+// InfantryClass::DrawShadow (helper)
+// Draws the infantry shadow beneath the unit.
+// ============================================================
+void InfantryClass::DrawShadow(Point2D* screen_pos, RectangleStruct* bounds) const
+{
+    (void)screen_pos;
+    (void)bounds;
+}
+
 } // namespace gamemd

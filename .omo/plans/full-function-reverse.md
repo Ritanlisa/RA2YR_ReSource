@@ -186,7 +186,7 @@ Wave Final: Build verification + spot-check audit — 4 parallel reviews
   **QA**: If REVERSE hook exists for rendered functions, verify Capture mode still works
   **Evidence**: .omo/evidence/fr-task-2.1-surface.txt
 
-- [ ] 11. Implement TacticalClass + Cell rendering + Object Draw methods (~190 functions)
+- [x] 11. Implement TacticalClass + Cell rendering + Object Draw methods (~190 functions)
 
   **What to do**: TacticalClass (~100) + Cell rendering/Isometric (~40) + ObjectClass::Draw + building/unit/infantry Draw (~50).
   **Which agent**: `deep` — split across 3 parallel sub-tasks

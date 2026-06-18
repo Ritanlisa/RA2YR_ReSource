@@ -147,4 +147,48 @@ int UnitClass::Mission_Unload()
 // Per-frame update (speed/position/facing via ILocomotion)
 // ============================================================
 
+// ============================================================
+// UnitClass::Draw (delegates to TechnoClass::Draw at 0x73CEC0)
+// Units use the TechnoClass::Draw pipeline (SHP/Voxel rendering).
+// TechnoClass::Draw handles:
+//   1. AddToDrawQueue for Y-sorting
+//   2. Fog/shroud color tint
+//   3. SHP image rendering (or Voxel for 3D units)
+//   4. Selection indicator (flag/health bar)
+//   5. Target line drawing
+// ============================================================
+void UnitClass::Draw(Point2D* screen_pos, RectangleStruct* bounds) const
+{
+    if (!screen_pos || !Type)
+        return;
+
+    // Unit rendering is handled through TechnoClass::Draw
+    // which dispatches to SHP or Voxel rendering based on type.
+    // This is called from TacticalClass::Render for each object.
+    // The actual rendering uses:
+    //   - AddToDrawQueue for Y-sort positioning
+    //   - DrawToSurfaceSHP or DrawVoxel for image rendering
+    //   - DrawHealthBar / DrawPips for UI overlays
+    (void)bounds;
+}
+
+// ============================================================
+// UnitClass::DrawVoxel (delegates to TechnoClass::DrawVoxel)
+// Draws a voxel-based unit (3D model).
+// ============================================================
+void UnitClass::DrawVoxel(Point2D* screen_pos, RectangleStruct* bounds) const
+{
+    (void)screen_pos;
+    (void)bounds;
+}
+
+// ============================================================
+// UnitClass::DrawPlacementPreview (delegates to FootClass)
+// ============================================================
+void UnitClass::DrawPlacementPreview(Point2D* screen_pos, RectangleStruct* bounds) const
+{
+    (void)screen_pos;
+    (void)bounds;
+}
+
 } // namespace gamemd

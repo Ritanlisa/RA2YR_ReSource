@@ -40,6 +40,12 @@ using ra2::game::RectangleStruct;
 
 
 class CellClass;
+class BuildingClass;
+// ObjectClass - use the ra2::game namespace version
+#ifndef GAMEMD_USING_ObjectClass
+#define GAMEMD_USING_ObjectClass
+using ra2::game::ObjectClass;
+#endif
 struct ColorScheme;
 
 class TacticalClass : public AbstractClass
@@ -65,13 +71,68 @@ public:
         return buf;
     }
 
+    // Coordinate transforms
+    CoordStruct* Coord_To_Screen(const CoordStruct& world, Point2D* out) const;
+
     int GetOcclusion(const CellStruct& cell, bool fog) const;
     Point2D* AdjustForZShapeMove(Point2D* dest, Point2D* client);
     static int AdjustForZ(int height);
 
+    // Viewport management
     void FocusOn(CoordStruct* dest, int velocity);
     void RegisterDirtyArea(RectangleStruct area, bool unk);
     void RegisterCellAsVisible(CellClass* cell);
+    void SetView(int view_x, int view_y, int view_width, int view_height);
+    void SetViewDimensions(int width, int height);
+    void InitView();
+    void SetViewportPosition(int x, int y);
+    void ScrollViewport(int dx, int dy);
+    void CalcViewportCells();
+    void updateVisibility();
+    void InterpolateView();
+
+    // Rendering pipeline
+    void Render(ObjectClass* obj);
+    void RenderFrame();
+    void RenderCells();
+    void RenderIsometric(const RectangleStruct& viewRect, int flags);
+    void RenderIsometricOverlay(const RectangleStruct& viewRect);
+    void RenderCellFogOfWar(int cx, int cy);
+    void renderOverlay();
+
+    // Map drawing
+    void DrawMap(const RectangleStruct& viewRect, RectangleStruct* bounds);
+    void DrawTerrain(const RectangleStruct& viewRect);
+    void DrawTerrainPartial(const RectangleStruct& rect);
+    void DrawCellTerrainOverlay(int cx, int cy, RectangleStruct* bounds);
+    void DrawCellOverlay(int cx, int cy, int flags);
+    void DrawBuildings(const RectangleStruct& viewRect);
+    void DrawBuildingsInView(const RectangleStruct& viewRect);
+    void DrawBuildingPlacement(BuildingClass* building, int state);
+    void DrawPlacementCircles(ObjectClass* obj, int range, int color);
+
+    // Draw queue
+    void AddToDrawQueue(ObjectClass* obj, int screen_x, int screen_y);
+    void CalcAllDrawPositions();
+    Point2D* CalcBuildingDrawPos(Point2D* out, BuildingClass* building);
+
+    // Cell visibility
+    void CheckCellVisibility(const Point2D& screen_pos, int flags, bool unk);
+    bool PixelToCellCheck(const Point2D& pixel, CellStruct* out_cell) const;
+    CellStruct ScreenToCellLookup(const Point2D& screen) const;
+    bool IsOccupiedByTechno(const CellStruct& cell) const;
+    bool CheckUnitOverlap(const CellStruct& cell, int facing) const;
+
+    // Input
+    void ProcessScroll();
+    void MouseInput(int x, int y, int buttons);
+    void ProcessMouseClick(int x, int y);
+
+    // Helpers
+    Point2D TransformPixel(const Point2D& pixel) const;
+    uint32_t InterpolateColor(uint32_t elapsed_ms);
+    bool DecrementCounter(uint32_t delta);
+    void MapSpecialDrawMode();
     static int DrawTimer(int index, ColorScheme* scheme, int time, const wchar_t* text, const Point2D* xy1, const Point2D* xy2);
 
     uint32_t        field24;

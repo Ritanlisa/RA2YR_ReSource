@@ -63,7 +63,20 @@ public:
     int Mission_Repair() override;
     int Mission_Missile() override;
 
-    Point2D* CalcDrawPos(Point2D* out);
+    Point2D* CalcDrawPos(Point2D* out) const;
+    Point2D CalcDrawPos() const { Point2D buf; CalcDrawPos(&buf); return buf; }
+
+    // Draw overrides (vtable[69])
+    void Draw(Point2D* screen_pos, RectangleStruct* bounds) const;
+    void DrawVisible(Point2D* screen_pos, RectangleStruct* bounds) const;
+    void DrawFactoryProduction(Point2D* screen_pos, RectangleStruct* bounds, int frame) const;
+    void DrawSelectionBox(Point2D* screen_pos, RectangleStruct* bounds) const;
+    void DrawSelectionBlip(Point2D* screen_pos) const;
+    void DrawActionLines(Point2D* screen_pos, RectangleStruct* bounds) const;
+    void DrawDeployCircle(Point2D* screen_pos) const;
+    void DrawFoundationChar(int cell_x, int cell_y, wchar_t ch) const;
+    double GetHealthRatio() const;
+    int GetProductionFrame() const;
 
     BuildingTypeClass*                    Type;
     FactoryClass*                         Factory;

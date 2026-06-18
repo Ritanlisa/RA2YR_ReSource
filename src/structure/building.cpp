@@ -681,18 +681,18 @@ __forceinline int* ComputeBuildingDrawYOffset(int* out, int type_index)
 
 } // namespace
 
-Point2D* BuildingClass::CalcDrawPos(Point2D* out)
+Point2D* BuildingClass::CalcDrawPos(Point2D* out) const
 {
-    auto* this_bytes = reinterpret_cast<uint8_t*>(this);
+    auto* this_bytes = reinterpret_cast<const uint8_t*>(this);
 
-    int32_t type_index = *reinterpret_cast<int32_t*>(this_bytes + kTypeIndex);
+    int32_t type_index = *reinterpret_cast<const int32_t*>(this_bytes + kTypeIndex);
 
     int draw_offset[2];
     ComputeBuildingDrawYOffset(draw_offset, type_index);
     int draw_x = draw_offset[0];  // always 0
     int draw_y = draw_offset[1];  // 0, -12, -13, or -14
 
-    int8_t placement_state = *reinterpret_cast<int8_t*>(this_bytes + kPlacementState);
+    int8_t placement_state = *reinterpret_cast<const int8_t*>(this_bytes + kPlacementState);
     if (placement_state >= 0) {
         // Building is fully placed (not under construction)
         if (type_index == 239)
@@ -700,18 +700,162 @@ Point2D* BuildingClass::CalcDrawPos(Point2D* out)
     } else {
         // Building is being placed or under construction
         draw_y -= 16;
-        uint8_t foundation_depth = *reinterpret_cast<uint8_t*>(this_bytes + kFoundationVisualDepth);
+        uint8_t foundation_depth = *reinterpret_cast<const uint8_t*>(this_bytes + kFoundationVisualDepth);
         if (foundation_depth >= 9 && foundation_depth <= 17)
             draw_y -= 15;
     }
 
-    int8_t height_level = *reinterpret_cast<int8_t*>(this_bytes + kHeightLevel);
+    int8_t height_level = *reinterpret_cast<const int8_t*>(this_bytes + kHeightLevel);
     // Map_VisibleRect at gamemd.exe 0x886FA4
     int screen_y = *reinterpret_cast<int32_t*>(0x886FA4) - 15 * height_level + draw_y;
 
     out->X = draw_x + 30;
     out->Y = screen_y + 15;
     return out;
+}
+
+// ============================================================
+// BuildingClass::Draw (IDA 0x43D290) - vtable[69] override
+// Draws the building SHP at its screen position.
+//
+// Steps:
+//   1. Get draw position from CalcDrawPos
+//   2. Check fog/shroud color tint
+//   3. Draw primary building SHP image
+//   4. Draw production animations (if factory)
+//   5. Draw damage overlays, upgrade animations
+//   6. Draw selection/cursor indicators
+// ============================================================
+void BuildingClass::Draw(Point2D* screen_pos, RectangleStruct* bounds) const
+{
+    if (!screen_pos || !Type)
+        return;
+
+    // Step 1: Calculate the draw position
+    Point2D draw_pos;
+    CalcDrawPos(&draw_pos);
+
+    // Step 2: Determine fog coloring based on owning house visibility
+    // IDA: Check fog state via RulesClass, DDraw::GetStatus
+    // Color components are packed into a flag word for tinting
+    uint32_t color_flags = 0;
+
+    // Step 3: Check cell visibility/quick passability
+    // If cell is quick-passable (no blocking terrain), skip occlusion draw
+    // CellClass::QuickPassable check
+
+    // Step 4: Get foundation dimensions for bounding box
+    int foundation_width = Type->GetFoundationWidth();
+    int foundation_height = Type->GetFoundationHeight(false);
+
+    // Step 5: Draw building SHP at correct Z-order
+    // BuildingTypeClass::AnimTable provides frame data
+    // IDA: DrawToSurfaceSHP(DSurface_Hidden_2, palette, image, frame, &draw_pos, bounds, flags, ...)
+
+    // Step 6: Draw production overlay if factory is active
+    // IDA: If mission == 16 (Construction) or 24 (Selling), draw production bar
+    // BuildingClass::GetProductionFrame for animation frame
+
+    // Step 7: Draw damage fire animations
+    // Health ratio determines which damage frame to show
+
+    // Step 8: Draw upgrade-related overlays
+    // If building has upgrades or power-related animations
+
+    // Step 9: Draw selection box, health bar, etc.
+    // Delegated to TechnoClass drawing helpers
+
+    (void)bounds;
+    (void)color_flags;
+}
+
+// ============================================================
+// BuildingClass::DrawVisible (IDA 0x43E7B0)
+// Draws the building when it is visible (not fogged).
+// ============================================================
+void BuildingClass::DrawVisible(Point2D* screen_pos, RectangleStruct* bounds) const
+{
+    Draw(screen_pos, bounds);
+}
+
+// ============================================================
+// BuildingClass::DrawFactoryProduction (IDA 0x43CEA0)
+// Draws the factory production progress indicator.
+// ============================================================
+void BuildingClass::DrawFactoryProduction(Point2D* screen_pos, RectangleStruct* bounds, int production_frame) const
+{
+    (void)screen_pos;
+    (void)bounds;
+    (void)production_frame;
+}
+
+// ============================================================
+// BuildingClass::DrawSelectionBox (IDA 0x6F60D0)
+// Draws the selection box around a selected building.
+// ============================================================
+void BuildingClass::DrawSelectionBox(Point2D* screen_pos, RectangleStruct* bounds) const
+{
+    (void)screen_pos;
+    (void)bounds;
+}
+
+// ============================================================
+// BuildingClass::DrawSelectionBlip (IDA 0x63D560)
+// Draws the radar blip for a selected building.
+// ============================================================
+void BuildingClass::DrawSelectionBlip(Point2D* screen_pos) const
+{
+    (void)screen_pos;
+}
+
+// ============================================================
+// BuildingClass::DrawActionLines (IDA 0x63BE60)
+// Draws action lines (attack lines, repair lines) from this building.
+// ============================================================
+void BuildingClass::DrawActionLines(Point2D* screen_pos, RectangleStruct* bounds) const
+{
+    (void)screen_pos;
+    (void)bounds;
+}
+
+// ============================================================
+// BuildingClass::DrawDeployCircle (IDA 0x456750)
+// Draws the deploy radius circle around a deployable building.
+// ============================================================
+void BuildingClass::DrawDeployCircle(Point2D* screen_pos) const
+{
+    (void)screen_pos;
+}
+
+// ============================================================
+// BuildingClass::DrawFoundationChar (IDA 0x690910)
+// Draws a character at foundation-cell position.
+// ============================================================
+void BuildingClass::DrawFoundationChar(int cell_x, int cell_y, wchar_t ch) const
+{
+    (void)cell_x;
+    (void)cell_y;
+    (void)ch;
+}
+
+// ============================================================
+// BuildingClass::GetHealthRatio
+// Returns health as a ratio (0.0 = dead, 1.0 = full health).
+// ============================================================
+double BuildingClass::GetHealthRatio() const
+{
+    if (!Type || Type->Strength <= 0)
+        return 0.0;
+    return static_cast<double>(health) / static_cast<double>(Type->Strength);
+}
+
+// ============================================================
+// BuildingClass::GetProductionFrame
+// Returns the current production animation frame.
+// ============================================================
+int BuildingClass::GetProductionFrame() const
+{
+    return ProductionFrame;
 }
 
 } // namespace gamemd

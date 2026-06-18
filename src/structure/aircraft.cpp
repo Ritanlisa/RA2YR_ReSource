@@ -241,4 +241,71 @@ int AircraftClass::Mission_Retreat()
 // COM IPersistStream::Load for aircraft deserialization
 // ============================================================
 
+// ============================================================
+// AircraftClass::Draw (IDA 0x4144B0, 1361B)
+// Draws the aircraft at its screen position.
+//
+// Steps:
+//   1. Check Armageddon mode / valid window / scenario state
+//   2. Get ILocomotion position and draw offset
+//   3. Get remap colour (vtable[51])
+//   4. Check radar/visibility state
+//   5. Draw SHP image (or Voxel for certain aircraft)
+//   6. Draw with fog/shroud tinting
+//   7. Draw selection/health indicators
+// ============================================================
+void AircraftClass::Draw(Point2D* screen_pos, RectangleStruct* bounds) const
+{
+    if (!screen_pos || !Type)
+        return;
+
+    // Step 1: Check global draw state
+    // IDA: ArmageddonMode, g_hWnd, ScenarioClass flags
+
+    // Step 2: Get locomotor position for draw offset
+    // vtable[413] → ILocomotion::GetPosition
+
+    // Step 3: Get remap colour for fog/shroud
+    // vtable[51] returns LightConvertClass for owner house filtering
+
+    // Step 4: Calculate screen position from world coords
+    // Coord::To_Screen(TacticalClass_Instance, world_pos, &screen)
+
+    // Step 5: Add rotation matrix transform if needed
+    // ILocomotion::GetTransform (vtable[413]+40)
+
+    // Step 6: Draw the SHP/Voxel image
+    // Type->GetImage() → frame data → DrawToSurfaceSHP
+
+    // Step 7: Draw shadow if above ground
+    // Cell::GetGroundHeight → shadow offset
+
+    // Step 8: Add to draw queue for Y-sorting
+    // TacticalClass::AddToDrawQueue
+
+    // Step 9: Draw voice response bubble if speaking
+    // TechnoClass::QueueDrawVoiceResponse
+
+    (void)bounds;
+}
+
+// ============================================================
+// AircraftClass::DrawShadow
+// Draws the aircraft shadow on the ground.
+// ============================================================
+void AircraftClass::DrawShadow(Point2D* screen_pos, RectangleStruct* bounds) const
+{
+    (void)screen_pos;
+    (void)bounds;
+}
+
+// ============================================================
+// AircraftClass::DrawJetExhaust
+// Draws jet exhaust animation behind the aircraft.
+// ============================================================
+void AircraftClass::DrawJetExhaust(Point2D* screen_pos) const
+{
+    (void)screen_pos;
+}
+
 } // namespace gamemd

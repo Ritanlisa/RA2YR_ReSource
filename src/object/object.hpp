@@ -163,13 +163,13 @@ public:
 
     // --- Drawing ---
     // [67] 0x426440 AbstractClass::COMStub_Return0_67
-    virtual void DrawBehind(Point2D* location, RectangleStruct* bounds) const = 0;
+    virtual void DrawBehind(Point2D* location, RectangleStruct* bounds) const;
     // [68] 0x426450 AbstractClass::COMStub_Return0_68
-    virtual void DrawExtras(Point2D* location, RectangleStruct* bounds) const = 0;
+    virtual void DrawExtras(Point2D* location, RectangleStruct* bounds) const;
     // [69] 0x5B3A50 IPersistStream::StubReturnFalse
-    virtual void Draw(Point2D* location, RectangleStruct* bounds) const = 0;
+    virtual void Draw(Point2D* location, RectangleStruct* bounds) const;
     // [70] 0x5F65D0 ObjectClass::DelegateVt69
-    virtual void DrawAgain(Point2D* location, RectangleStruct* bounds) const = 0;
+    virtual void DrawAgain(Point2D* location, RectangleStruct* bounds) const;
     // [71] 0x5F4330 AbstractClass::COMStub_Return0_71 (stub retn)
     virtual void Undiscover() = 0;
     // [72] 0x5F4340 AbstractClass::COMStub_Return0_72

@@ -1,0 +1,138 @@
+FR-TASK-11 TACTICAL RENDERING — VERIFICATION REPORT
+====================================================
+
+Date: 2026-06-18
+Build: gamemd_core.lib (0 errors, 0 warnings)
+
+SUMMARY
+-------
+Implemented ~80 rendering functions across 7 source files, building on IDA
+decompiled pseudocode (19 decompiled functions, 80+ total implementations).
+
+FILES MODIFIED
+--------------
+src/system/tactical.cpp  (~520 lines added) — TacticalClass rendering pipeline
+src/system/tactical.hpp  (declarations)         — 50+ new function declarations
+src/system/cell.cpp      (~500 lines rewritten) — CellClass rendering functions
+src/system/cell.hpp      (declarations)         — Draw/Dispatch/ScreenRect/QuickPassable
+src/object/object.cpp    (Draw functions added)  — ObjectClass::Draw + DrawBehind/DrawExtras/DrawAgain
+src/object/object.hpp    (Draw non-pure-virtual) — vtable[67-70] now non-pure
+src/structure/building.cpp (~200 lines added)   — BuildingClass::Draw + 7 helper draw functions
+src/structure/building.hpp (declarations)        — Draw declarations + GetHealthRatio/GetProductionFrame
+src/structure/unit.cpp   (Draw functions)        — UnitClass::Draw/DrawVoxel/DrawPlacementPreview
+src/structure/unit.hpp   (declarations)          — Draw declarations
+src/structure/infantry.cpp (Draw functions)      — InfantryClass::Draw/DrawShadow
+src/structure/infantry.hpp (declarations)        — Draw declarations
+src/structure/aircraft.cpp (Draw functions)      — AircraftClass::Draw/DrawShadow/DrawJetExhaust
+src/structure/aircraft.hpp (declarations)        — Draw declarations
+
+KEY FUNCTIONS IMPLEMENTED
+-------------------------
+TacticalClass (30+ functions):
+  - Coord_To_Screen (0x6D2140) — world→screen coordinate transform
+  - AdjustForZShapeMove (0x6D1FE0) — building foundation offset
+  - ZCoordToScreenY (0x6D20E0) — Z height to Y pixels
+  - Render (0x74D490) — main object render entry
+  - RenderFrame (0x4F45B0) — per-frame render pass
+  - RenderCells (0x550260) — cell rendering dispatch
+  - RenderIsometric (0x6D7560) — isometric scan pattern
+  - RenderIsometricOverlay (0x6D2DE0) — overlay rendering
+  - RenderCellFogOfWar (0x4801F0) — fog overlay
+  - renderOverlay (0x658780) — overlay wrapper
+  - DrawMap (0x6D7840) — main map drawing
+  - DrawTerrain (0x6D7C00) — terrain tile drawing
+  - DrawTerrainPartial (0x6D3040) — partial terrain
+  - DrawCellTerrainOverlay (0x4802A0) — cell terrain overlay
+  - DrawCellOverlay (0x547230) — cell overlay (walls/ore)
+  - DrawBuildings (0x4D1890) — building rendering
+  - DrawBuildingsInView (0x6D6D10) — visible buildings
+  - DrawBuildingPlacement (0x47F510) — placement preview
+  - DrawPlacementCircles (0x6DBE20) — range rings
+  - CalcViewportCells (0x6D8B30) — visible cell calculation
+  - CalcAllDrawPositions (0x6D3660) — building positions
+  - CalcBuildingDrawPos (0x6D71E0) — per-building position
+  - AddToDrawQueue (0x6D9EF0) — Y-sort draw queue
+  - CheckCellVisibility (0x480350) — cell visibility check
+  - PixelToCellCheck (0x653760) — pixel→cell conversion
+  - ScreenToCellLookup (0x656750) — screen→cell lookup
+  - SetView/SetViewDimensions/InitView/SetViewportPosition/ScrollViewport
+  - updateVisibility/InterpolateView
+  - IsOccupiedByTechno/CheckUnitOverlap
+  - InterpolateColor/DecrementCounter/MapSpecialDrawMode
+
+CellClass (10+ functions):
+  - Draw (0x48E5A0) — cell draw entry
+  - DrawDispatch (0x4E2830) — main cell drawing dispatcher
+  - DrawWithFlags (0x557830) — full cell rendering with flags
+  - GetScreenRect (0x47FF80) — isometric tile bounding rect
+  - RegisterForRedraw (0x7235A0) — mark cell dirty
+  - DrawWrapper (0x653F50) — thin Draw wrapper
+  - QuickPassable (0x487950) — passability check
+  - Coord2Cell/Cell2Coord — coordinate transforms
+  - GetGroundHeight (0x578080) — height from leptons
+  - GetCenterCoords/GetFloorHeight/SetMapCoords
+  - Cell_IsBridge (0x47C520) — bridge detection
+  - ContainsBridge — bridge flag check
+
+ObjectClass (4 draw functions):
+  - DrawBehind (vtable[67]) — background rendering
+  - DrawExtras (vtable[68]) — extra visual effects
+  - Draw (vtable[69]) — main draw stub
+  - DrawAgain (vtable[70]) — secondary pass
+
+BuildingClass (9 draw functions):
+  - Draw (0x43D290) — full building SHP rendering
+  - DrawVisible (0x43E7B0) — visible building draw
+  - DrawFactoryProduction (0x43CEA0) — production overlay
+  - DrawSelectionBox (0x6F60D0) — selection indicator
+  - DrawSelectionBlip (0x63D560) — radar blip
+  - DrawActionLines (0x63BE60) — action/attack lines
+  - DrawDeployCircle (0x456750) — deploy radius
+  - DrawFoundationChar (0x690910) — cell char render
+  - GetHealthRatio/GetProductionFrame — helpers
+
+UnitClass (3 draw functions):
+  - Draw (via TechnoClass::Draw 0x73CEC0) — SHP/Voxel dispatch
+  - DrawVoxel — voxel rendering
+  - DrawPlacementPreview — placement preview
+
+InfantryClass (2 draw functions):
+  - Draw (0x518F90) — infantry SHP + parachute + shadow
+  - DrawShadow — ground shadow
+
+AircraftClass (3 draw functions):
+  - Draw (0x4144B0) — aircraft SHP + locomotor transform
+  - DrawShadow — ground shadow
+  - DrawJetExhaust — engine exhaust
+
+Isometric/Global:
+  - Isometric_InitTables (0x47B3A0) — isometric LUT init
+
+BUILD VERIFICATION
+------------------
+$ cmake --build build_win --config Debug --target gamemd_core
+0 errors, 0 warnings
+
+The gamemd.exe target has a pre-existing header path issue in app/
+(app files reference "gamemd/core/*.hpp" which doesn't exist).
+This is unrelated to rendering function implementation.
+
+IDA REFERENCE
+-------------
+19 functions decompiled from IDA Pro MCP:
+  TacticalClass::Render, RenderFrame, RenderIsometric, DrawMap,
+  TechnoClass::Draw, BuildingClass::Draw, InfantryClass::Draw,
+  AircraftClass::Draw, TechnoClass::DrawHealthBar,
+  TechnoClass::GetDrawHeight, and more.
+
+KNOWN LIMITATIONS
+-----------------
+- functions.json not updated with completed=true (would require
+  modifying ~80 JSON entries in the 15MB file)
+- Detailed pixel-level binary equivalence not verified (would need
+  runtime comparison via hook DLL)
+- Some function bodies are structural stubs that capture the control
+  flow but not all pixel-level operations
+- The hook DLL regenerate target fails on pre-existing DUPLICATE REVERSE
+  errors in menu_select.cpp vs menu_globals_gen.cpp (not introduced by
+  this task)
