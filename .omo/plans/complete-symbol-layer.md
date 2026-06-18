@@ -815,7 +815,7 @@ Max Concurrent: 8 (Waves 2 & 3)
   - Message: `feat(tools): add IDA xref analysis for top-200 batch 2`
   - Files: `tools/xref_analysis_batch2.json`
 
-- [ ] 24. Apply type fixes — batch 1 (globals 1-100)
+- [x] 24. Apply type fixes — batch 1 (globals 1-100)
 
   **What to do**:
   - Read xref_analysis_batch1.json + current type_db.json
@@ -859,7 +859,7 @@ Max Concurrent: 8 (Waves 2 & 3)
   - Message: `fix(globals): apply type corrections for top-200 batch 1`
   - Files: updated type_db.json + globals_*.hpp
 
-- [ ] 25. Apply type fixes — batch 2 (globals 101-200)
+- [x] 25. Apply type fixes — batch 2 (globals 101-200)
 
   **What to do**: Same as Task 24 for batch 2
   **Recommended Agent Profile**: **Category**: `quick`

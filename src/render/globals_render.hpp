@@ -167,7 +167,7 @@ extern uint32_t g_CreditsScreenConfig;
 extern uint32_t DSurface_Tile;
 
 // 0x887300 [confidence: ida_direct]
-extern int32_t DSurface_Sidebar;
+extern void* DSurface_Sidebar;
 
 // 0x887310 [confidence: ida_direct]
 extern int32_t DSurface_Alternate;

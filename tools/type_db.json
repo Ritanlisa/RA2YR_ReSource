@@ -80,12 +80,13 @@
     "write_count": 3
   },
   "ArmageddonMode": {
-    "confidence": "inferred_strong",
+    "confidence": "xref_verified",
     "cpp_type": "uint8_t",
     "read_count": 70,
     "ref_count": 71,
     "source": "size",
-    "write_count": 1
+    "write_count": 1,
+    "xref_observed": "bool"
   },
   "AsyncIO_Instance": {
     "confidence": "ida_direct",
@@ -105,10 +106,10 @@
   },
   "Bases": {
     "confidence": "inferred_strong",
-    "cpp_type": "uint8_t",
+    "cpp_type": "uint32_t",
     "read_count": 13,
     "ref_count": 25,
-    "source": "size",
+    "source": "xref_analysis",
     "write_count": 12
   },
   "Block": {
@@ -145,10 +146,10 @@
   },
   "BridgeDestruction": {
     "confidence": "inferred_strong",
-    "cpp_type": "uint8_t",
+    "cpp_type": "uint32_t",
     "read_count": 10,
     "ref_count": 21,
-    "source": "size",
+    "source": "xref_analysis",
     "write_count": 11
   },
   "Buffer": {
@@ -168,28 +169,31 @@
     "write_count": 2
   },
   "BuildingClass_InstanceArray": {
-    "confidence": "ida_direct",
+    "confidence": "xref_verified",
     "cpp_type": "BuildingClass*",
     "read_count": 36,
     "ref_count": 38,
     "source": "ida",
-    "write_count": 2
+    "write_count": 2,
+    "xref_observed": "pointer"
   },
   "BuildingLoadQueue_Active": {
-    "confidence": "inferred_strong",
+    "confidence": "xref_verified",
     "cpp_type": "uint32_t",
     "read_count": 5,
     "ref_count": 32,
     "source": "purity",
-    "write_count": 27
+    "write_count": 27,
+    "xref_observed": "bool"
   },
   "BuildingLoadQueue_Array": {
-    "confidence": "ida_direct",
+    "confidence": "xref_verified",
     "cpp_type": "void*",
     "read_count": 26,
     "ref_count": 36,
     "source": "ida",
-    "write_count": 10
+    "write_count": 10,
+    "xref_observed": "pointer"
   },
   "BuildingLoadQueue_Capacity": {
     "confidence": "inferred_strong",
@@ -200,36 +204,40 @@
     "write_count": 10
   },
   "BuildingLoadQueue_Count": {
-    "confidence": "ida_direct",
+    "confidence": "xref_verified",
     "cpp_type": "uint32_t",
     "read_count": 25,
     "ref_count": 46,
     "source": "ida",
-    "write_count": 21
+    "write_count": 21,
+    "xref_observed": "int"
   },
   "BuildingLoadQueue_Dirty": {
-    "confidence": "inferred_strong",
+    "confidence": "xref_verified",
     "cpp_type": "uint8_t",
     "read_count": 11,
     "ref_count": 36,
     "source": "size",
-    "write_count": 25
+    "write_count": 25,
+    "xref_observed": "bool"
   },
   "BuildingTypeClass_AnimTable": {
-    "confidence": "ida_direct",
+    "confidence": "xref_verified",
     "cpp_type": "void*",
     "read_count": 66,
     "ref_count": 69,
     "source": "ida",
-    "write_count": 3
+    "write_count": 3,
+    "xref_observed": "pointer"
   },
   "BuildingTypeClass_Array": {
-    "confidence": "ida_direct",
+    "confidence": "xref_verified",
     "cpp_type": "BuildingTypeClass*",
     "read_count": 71,
     "ref_count": 73,
     "source": "ida",
-    "write_count": 2
+    "write_count": 2,
+    "xref_observed": "pointer"
   },
   "BulletClass_Array": {
     "confidence": "inferred_strong",
@@ -408,12 +416,13 @@
     "write_count": 1
   },
   "Crates": {
-    "confidence": "inferred_strong",
+    "confidence": "xref_verified",
     "cpp_type": "uint8_t",
     "read_count": 19,
     "ref_count": 33,
     "source": "size",
-    "write_count": 14
+    "write_count": 14,
+    "xref_observed": "bool"
   },
   "CriticalSection": {
     "confidence": "ida_direct",
@@ -424,59 +433,65 @@
     "write_count": 0
   },
   "CurrentFrame": {
-    "confidence": "ida_direct",
+    "confidence": "xref_verified",
     "cpp_type": "uint16_t*",
     "read_count": 439,
     "ref_count": 449,
     "source": "ida",
-    "write_count": 10
+    "write_count": 10,
+    "xref_observed": "pointer"
   },
   "DSurface_Alternate": {
-    "confidence": "ida_direct",
+    "confidence": "xref_verified",
     "cpp_type": "int32_t",
     "read_count": 70,
     "ref_count": 73,
     "source": "ida",
-    "write_count": 3
+    "write_count": 3,
+    "xref_observed": "pointer"
   },
   "DSurface_Composite": {
-    "confidence": "ida_direct",
+    "confidence": "xref_verified",
     "cpp_type": "int32_t",
     "read_count": 40,
     "ref_count": 45,
     "source": "ida",
-    "write_count": 5
+    "write_count": 5,
+    "xref_observed": "int"
   },
   "DSurface_Hidden": {
-    "confidence": "ida_direct",
+    "confidence": "xref_verified",
     "cpp_type": "int32_t",
     "read_count": 61,
     "ref_count": 64,
     "source": "ida",
-    "write_count": 3
+    "write_count": 3,
+    "xref_observed": "pointer"
   },
   "DSurface_Hidden_2": {
-    "confidence": "inferred_strong",
+    "confidence": "xref_verified",
     "cpp_type": "uint32_t",
     "read_count": 85,
     "ref_count": 98,
     "source": "purity",
-    "write_count": 13
+    "write_count": 13,
+    "xref_observed": "pointer"
   },
   "DSurface_Primary": {
-    "confidence": "inferred_strong",
+    "confidence": "xref_verified",
     "cpp_type": "uint32_t",
     "read_count": 49,
     "ref_count": 52,
     "source": "purity",
-    "write_count": 3
+    "write_count": 3,
+    "xref_observed": "pointer"
   },
   "DSurface_Sidebar": {
-    "confidence": "ida_direct",
-    "cpp_type": "int32_t",
+    "confidence": "inferred_strong",
+    "cpp_type": "void*",
     "read_count": 24,
     "ref_count": 27,
-    "source": "ida",
+    "source": "xref_analysis",
     "write_count": 3
   },
   "DSurface_SidebarBounds": {
@@ -496,12 +511,13 @@
     "write_count": 4
   },
   "DSurface_ViewBounds": {
-    "confidence": "inferred_strong",
+    "confidence": "xref_verified",
     "cpp_type": "uint32_t",
     "read_count": 97,
     "ref_count": 99,
     "source": "purity",
-    "write_count": 2
+    "write_count": 2,
+    "xref_observed": "pointer"
   },
   "DSurface_WindowBounds": {
     "confidence": "inferred_strong",
@@ -536,12 +552,13 @@
     "write_count": 1
   },
   "Direction_X_Offsets": {
-    "confidence": "ida_direct",
+    "confidence": "xref_verified",
     "cpp_type": "int32_t",
     "read_count": 116,
     "ref_count": 117,
     "source": "ida",
-    "write_count": 1
+    "write_count": 1,
+    "xref_observed": "int"
   },
   "Direction_Y_Offsets": {
     "confidence": "inferred_strong",
@@ -592,12 +609,13 @@
     "write_count": 3
   },
   "Factory_ExitCellTable": {
-    "confidence": "ida_direct",
+    "confidence": "xref_verified",
     "cpp_type": "void*",
     "read_count": 33,
     "ref_count": 35,
     "source": "ida",
-    "write_count": 2
+    "write_count": 2,
+    "xref_observed": "pointer"
   },
   "File": {
     "confidence": "ida_direct",
@@ -720,12 +738,13 @@
     "write_count": 0
   },
   "FileSystem_THEATER_PAL": {
-    "confidence": "inferred_strong",
+    "confidence": "xref_verified",
     "cpp_type": "uint32_t",
     "read_count": 35,
     "ref_count": 37,
     "source": "purity",
-    "write_count": 2
+    "write_count": 2,
+    "xref_observed": "pointer"
   },
   "FileSystem_UNITx_PAL": {
     "confidence": "inferred_strong",
@@ -800,28 +819,31 @@
     "write_count": 3
   },
   "GameMode_Current": {
-    "confidence": "ida_direct",
+    "confidence": "xref_verified",
     "cpp_type": "int32_t",
     "read_count": 301,
     "ref_count": 306,
     "source": "ida",
-    "write_count": 5
+    "write_count": 5,
+    "xref_observed": "bool"
   },
   "Game_PlayerCount": {
-    "confidence": "inferred_strong",
+    "confidence": "xref_verified",
     "cpp_type": "uint32_t",
     "read_count": 121,
     "ref_count": 137,
     "source": "purity",
-    "write_count": 16
+    "write_count": 16,
+    "xref_observed": "int"
   },
   "Game_PlayerInfoArray": {
-    "confidence": "inferred_strong",
+    "confidence": "xref_verified",
     "cpp_type": "const uint32_t",
     "read_count": 139,
     "ref_count": 139,
     "source": "purity",
-    "write_count": 0
+    "write_count": 0,
+    "xref_observed": "function pointer"
   },
   "Game_bAllowVRAMSidebar": {
     "confidence": "inferred_strong",
@@ -849,19 +871,21 @@
   },
   "HarvesterTruce": {
     "confidence": "inferred_strong",
-    "cpp_type": "uint8_t",
+    "cpp_type": "uint32_t",
     "read_count": 9,
     "ref_count": 18,
-    "source": "size",
+    "source": "xref_analysis",
     "write_count": 9
   },
   "HouseClass_Array": {
-    "confidence": "ida_direct",
+    "confidence": "xref_verified",
     "cpp_type": "HouseClass*",
     "read_count": 134,
     "ref_count": 136,
     "source": "ida",
-    "write_count": 2
+    "write_count": 2,
+    "xref_count": 217,
+    "xref_observed": "int"
   },
   "HouseClass_Array_0": {
     "confidence": "inferred_strong",
@@ -872,12 +896,13 @@
     "write_count": 2
   },
   "HouseClass_Count": {
-    "confidence": "inferred_strong",
+    "confidence": "xref_verified",
     "cpp_type": "uint32_t",
     "read_count": 74,
     "ref_count": 76,
     "source": "purity",
-    "write_count": 2
+    "write_count": 2,
+    "xref_observed": "int"
   },
   "HouseClass_Observer": {
     "confidence": "inferred_strong",
@@ -888,20 +913,22 @@
     "write_count": 1
   },
   "HouseClass_Player": {
-    "confidence": "ida_direct",
+    "confidence": "xref_verified",
     "cpp_type": "void*",
     "read_count": 256,
     "ref_count": 260,
     "source": "ida",
-    "write_count": 4
+    "write_count": 4,
+    "xref_observed": "pointer"
   },
   "IKnowWhatImDoing": {
-    "confidence": "inferred_strong",
+    "confidence": "xref_verified",
     "cpp_type": "uint32_t",
     "read_count": 106,
     "ref_count": 140,
     "source": "purity",
-    "write_count": 34
+    "write_count": 34,
+    "xref_observed": "bool"
   },
   "InfantryClass_Array": {
     "confidence": "inferred_strong",
@@ -1048,12 +1075,13 @@
     "write_count": 5
   },
   "MCVRedeploy": {
-    "confidence": "inferred_strong",
+    "confidence": "xref_verified",
     "cpp_type": "uint32_t",
     "read_count": 19,
     "ref_count": 32,
     "source": "purity",
-    "write_count": 13
+    "write_count": 13,
+    "xref_observed": "bool"
   },
   "MCV_DeployModeEnabled": {
     "confidence": "inferred_strong",
@@ -1120,12 +1148,13 @@
     "write_count": 1
   },
   "Map_VisibleRect": {
-    "confidence": "ida_direct",
+    "confidence": "xref_verified",
     "cpp_type": "int32_t",
     "read_count": 123,
     "ref_count": 125,
     "source": "ida",
-    "write_count": 2
+    "write_count": 2,
+    "xref_observed": "int"
   },
   "MaxCount": {
     "confidence": "ida_direct",
@@ -1185,10 +1214,10 @@
   },
   "MoveFeedback": {
     "confidence": "inferred_strong",
-    "cpp_type": "uint8_t",
+    "cpp_type": "uint32_t",
     "read_count": 8,
     "ref_count": 19,
-    "source": "size",
+    "source": "xref_analysis",
     "write_count": 11
   },
   "MovieInfo_Array": {
@@ -1280,20 +1309,22 @@
     "write_count": 2
   },
   "Networking_LastEventIndex": {
-    "confidence": "inferred_strong",
+    "confidence": "xref_verified",
     "cpp_type": "uint32_t",
     "read_count": 29,
     "ref_count": 60,
     "source": "purity",
-    "write_count": 31
+    "write_count": 31,
+    "xref_observed": "int"
   },
   "Networking_NextPacketIndex": {
-    "confidence": "inferred_strong",
+    "confidence": "xref_verified",
     "cpp_type": "uint32_t",
     "read_count": 26,
     "ref_count": 55,
     "source": "purity",
-    "write_count": 29
+    "write_count": 29,
+    "xref_observed": "int"
   },
   "NukeFlash_Duration": {
     "confidence": "inferred_strong",
@@ -1424,35 +1455,38 @@
     "write_count": 0
   },
   "RulesClass_Instance": {
-    "confidence": "ida_direct",
+    "confidence": "xref_verified",
     "cpp_type": "RulesClass*",
     "read_count": 537,
     "ref_count": 539,
     "source": "ida",
-    "write_count": 2
+    "write_count": 2,
+    "xref_observed": "pointer"
   },
   "SWAllowed": {
-    "confidence": "inferred_strong",
+    "confidence": "xref_verified",
     "cpp_type": "uint8_t",
     "read_count": 19,
     "ref_count": 33,
     "source": "size",
-    "write_count": 14
+    "write_count": 14,
+    "xref_observed": "bool"
   },
   "ScenarioClass_Instance": {
-    "confidence": "ida_direct",
+    "confidence": "xref_verified",
     "cpp_type": "void*",
     "read_count": 472,
     "ref_count": 474,
     "source": "ida",
-    "write_count": 2
+    "write_count": 2,
+    "xref_observed": "pointer"
   },
   "ShortGame": {
     "confidence": "inferred_strong",
-    "cpp_type": "uint8_t",
+    "cpp_type": "uint32_t",
     "read_count": 17,
     "ref_count": 31,
-    "source": "size",
+    "source": "xref_analysis",
     "write_count": 14
   },
   "SidebarClass_TooltipBuffer": {
@@ -1520,12 +1554,13 @@
     "write_count": 1
   },
   "SrcSizeInBytes": {
-    "confidence": "ida_direct",
+    "confidence": "xref_verified",
     "cpp_type": "uint32_t",
     "read_count": 31,
     "ref_count": 32,
     "source": "ida",
-    "write_count": 1
+    "write_count": 1,
+    "xref_observed": "int"
   },
   "Str": {
     "confidence": "ida_direct",
@@ -1624,12 +1659,13 @@
     "write_count": 2
   },
   "TacticalClass_Instance": {
-    "confidence": "ida_direct",
+    "confidence": "xref_verified",
     "cpp_type": "void*",
     "read_count": 234,
     "ref_count": 244,
     "source": "ida",
-    "write_count": 10
+    "write_count": 10,
+    "xref_observed": "bool"
   },
   "TagClass_Array": {
     "confidence": "inferred_strong",
@@ -1752,20 +1788,23 @@
     "write_count": 2
   },
   "WTFMode": {
-    "confidence": "inferred_strong",
+    "confidence": "xref_verified",
     "cpp_type": "uint8_t",
     "read_count": 67,
     "ref_count": 77,
     "source": "size",
-    "write_count": 10
+    "write_count": 10,
+    "xref_observed": "bool"
   },
   "WWMouseClass_Instance": {
-    "confidence": "inferred_strong",
-    "cpp_type": "uint32_t",
+    "confidence": "xref_verified",
+    "cpp_type": "void*",
     "read_count": 89,
     "ref_count": 93,
-    "source": "purity",
-    "write_count": 4
+    "source": "xref",
+    "write_count": 4,
+    "xref_count": 266,
+    "xref_observed": "pointer"
   },
   "WarheadTypeClass_Array": {
     "confidence": "ida_direct",
@@ -1922,11 +1961,11 @@
     "write_count": 0
   },
   "g_AircraftTypeCount": {
-    "confidence": "ida_direct",
-    "cpp_type": "void*",
+    "confidence": "inferred_strong",
+    "cpp_type": "uint32_t",
     "read_count": 24,
     "ref_count": 26,
-    "source": "ida",
+    "source": "xref_analysis",
     "write_count": 2
   },
   "g_AlphaShapeLimit": {
@@ -1986,12 +2025,13 @@
     "write_count": 0
   },
   "g_AnimManager": {
-    "confidence": "inferred_strong",
+    "confidence": "xref_verified",
     "cpp_type": "uint32_t",
     "read_count": 45,
     "ref_count": 90,
     "source": "purity",
-    "write_count": 45
+    "write_count": 45,
+    "xref_observed": "bool"
   },
   "g_AnimManagerConfig": {
     "confidence": "inferred_strong",
@@ -2002,36 +2042,40 @@
     "write_count": 1
   },
   "g_AnimPoolCount": {
-    "confidence": "ida_direct",
+    "confidence": "xref_verified",
     "cpp_type": "void*",
     "read_count": 46,
     "ref_count": 48,
     "source": "ida",
-    "write_count": 2
+    "write_count": 2,
+    "xref_observed": "pointer"
   },
   "g_AnimPoolLocked": {
     "confidence": "inferred_strong",
-    "cpp_type": "uint8_t",
+    "cpp_type": "bool",
     "read_count": 22,
     "ref_count": 24,
-    "source": "size",
+    "source": "xref_analysis",
     "write_count": 2
   },
   "g_AnimPoolManager": {
-    "confidence": "inferred_strong",
-    "cpp_type": "uint32_t",
+    "confidence": "xref_verified",
+    "cpp_type": "void*",
     "read_count": 46,
     "ref_count": 48,
-    "source": "purity",
-    "write_count": 2
+    "source": "xref",
+    "write_count": 2,
+    "xref_count": 116,
+    "xref_observed": "pointer"
   },
   "g_AnimTypeCount": {
-    "confidence": "ida_direct",
+    "confidence": "xref_verified",
     "cpp_type": "void*",
     "read_count": 34,
     "ref_count": 36,
     "source": "ida",
-    "write_count": 2
+    "write_count": 2,
+    "xref_observed": "pointer"
   },
   "g_AnimTypeInitQueue": {
     "confidence": "inferred_strong",
@@ -2154,67 +2198,75 @@
     "write_count": 3
   },
   "g_BinkMoviePlayer": {
-    "confidence": "ida_direct",
+    "confidence": "xref_verified",
     "cpp_type": "void*",
     "read_count": 74,
     "ref_count": 76,
     "source": "ida",
-    "write_count": 2
+    "write_count": 2,
+    "xref_count": 180,
+    "xref_observed": "bool"
   },
   "g_BitMask_Blue": {
-    "confidence": "inferred_strong",
+    "confidence": "xref_verified",
     "cpp_type": "uint32_t",
     "read_count": 112,
     "ref_count": 113,
     "source": "purity",
-    "write_count": 1
+    "write_count": 1,
+    "xref_observed": "int"
   },
   "g_BitMask_Green": {
-    "confidence": "inferred_strong",
+    "confidence": "xref_verified",
     "cpp_type": "uint32_t",
     "read_count": 113,
     "ref_count": 114,
     "source": "purity",
-    "write_count": 1
+    "write_count": 1,
+    "xref_observed": "int"
   },
   "g_BitMask_Red": {
-    "confidence": "inferred_strong",
+    "confidence": "xref_verified",
     "cpp_type": "uint32_t",
     "read_count": 112,
     "ref_count": 113,
     "source": "purity",
-    "write_count": 1
+    "write_count": 1,
+    "xref_observed": "int"
   },
   "g_BitShift_Blue": {
-    "confidence": "inferred_strong",
+    "confidence": "xref_verified",
     "cpp_type": "uint32_t",
     "read_count": 112,
     "ref_count": 113,
     "source": "purity",
-    "write_count": 1
+    "write_count": 1,
+    "xref_observed": "int"
   },
   "g_BitShift_Green_0": {
-    "confidence": "inferred_strong",
+    "confidence": "xref_verified",
     "cpp_type": "uint32_t",
     "read_count": 113,
     "ref_count": 114,
     "source": "purity",
-    "write_count": 1
+    "write_count": 1,
+    "xref_observed": "int"
   },
   "g_BitShift_Red": {
-    "confidence": "inferred_strong",
+    "confidence": "xref_verified",
     "cpp_type": "uint32_t",
     "read_count": 113,
     "ref_count": 114,
     "source": "purity",
-    "write_count": 1
+    "write_count": 1,
+    "xref_observed": "int"
   },
   "g_BounceClassInit": {
     "confidence": "inferred_strong",
-    "cpp_type": "uint8_t",
+    "cpp_type": "uint32_t",
     "read_count": 11,
     "ref_count": 20,
-    "source": "size",
+    "source": "xref_analysis",
     "write_count": 9
   },
   "g_BridgeCellPool": {
@@ -2258,12 +2310,13 @@
     "write_count": 3
   },
   "g_BuildingClass_InstanceCount": {
-    "confidence": "ida_direct",
+    "confidence": "xref_verified",
     "cpp_type": "void*",
     "read_count": 31,
     "ref_count": 33,
     "source": "ida",
-    "write_count": 2
+    "write_count": 2,
+    "xref_observed": "pointer"
   },
   "g_BuildingInstanceCount": {
     "confidence": "inferred_strong",
@@ -2466,12 +2519,13 @@
     "write_count": 1
   },
   "g_Cell_PositionLUT": {
-    "confidence": "inferred_strong",
+    "confidence": "xref_verified",
     "cpp_type": "uint32_t",
     "read_count": 33,
     "ref_count": 34,
     "source": "purity",
-    "write_count": 1
+    "write_count": 1,
+    "xref_observed": "int"
   },
   "g_ChronoEffectState": {
     "confidence": "inferred_strong",
@@ -2546,19 +2600,19 @@
     "write_count": 3
   },
   "g_CommandExecState": {
-    "confidence": "ida_direct",
-    "cpp_type": "int32_t",
+    "confidence": "inferred_strong",
+    "cpp_type": "void*",
     "read_count": 10,
     "ref_count": 21,
-    "source": "ida",
+    "source": "xref_analysis",
     "write_count": 11
   },
   "g_CommandLineFlags": {
-    "confidence": "ida_direct",
-    "cpp_type": "int32_t",
+    "confidence": "inferred_strong",
+    "cpp_type": "uint32_t",
     "read_count": 14,
     "ref_count": 18,
-    "source": "ida",
+    "source": "xref_analysis",
     "write_count": 4
   },
   "g_CommandLineParam": {
@@ -2594,12 +2648,13 @@
     "write_count": 1
   },
   "g_ControlGroupState": {
-    "confidence": "ida_direct",
+    "confidence": "xref_verified",
     "cpp_type": "int32_t",
     "read_count": 33,
     "ref_count": 34,
     "source": "ida",
-    "write_count": 1
+    "write_count": 1,
+    "xref_observed": "bool"
   },
   "g_CoordScatterManager": {
     "confidence": "inferred_strong",
@@ -2626,11 +2681,11 @@
     "write_count": 3
   },
   "g_CrateSystemState": {
-    "confidence": "ida_direct",
-    "cpp_type": "int32_t",
+    "confidence": "inferred_strong",
+    "cpp_type": "uint32_t",
     "read_count": 1,
     "ref_count": 27,
-    "source": "ida",
+    "source": "xref_analysis",
     "write_count": 26
   },
   "g_CraterCreationState": {
@@ -2691,10 +2746,10 @@
   },
   "g_DDraw_Active": {
     "confidence": "inferred_strong",
-    "cpp_type": "uint8_t",
+    "cpp_type": "uint32_t",
     "read_count": 26,
     "ref_count": 27,
-    "source": "size",
+    "source": "xref_analysis",
     "write_count": 1
   },
   "g_DDraw_AllowOverlayBlit": {
@@ -2850,12 +2905,13 @@
     "write_count": 2
   },
   "g_DSurface_WindowOffset": {
-    "confidence": "inferred_strong",
+    "confidence": "xref_verified",
     "cpp_type": "uint32_t",
     "read_count": 32,
     "ref_count": 34,
     "source": "purity",
-    "write_count": 2
+    "write_count": 2,
+    "xref_observed": "int"
   },
   "g_DialogBuffer": {
     "confidence": "inferred_strong",
@@ -2874,20 +2930,23 @@
     "write_count": 5
   },
   "g_DialogHashMap_Base": {
-    "confidence": "ida_direct",
+    "confidence": "xref_verified",
     "cpp_type": "void*",
     "read_count": 84,
     "ref_count": 87,
     "source": "ida",
-    "write_count": 3
+    "write_count": 3,
+    "xref_count": 207,
+    "xref_observed": "bool"
   },
   "g_DialogHashMap_Buckets": {
-    "confidence": "inferred_strong",
+    "confidence": "xref_verified",
     "cpp_type": "uint32_t",
     "read_count": 81,
     "ref_count": 84,
     "source": "purity",
-    "write_count": 3
+    "write_count": 3,
+    "xref_observed": "int"
   },
   "g_DialogHashMap_Callback": {
     "confidence": "ida_direct",
@@ -2898,12 +2957,13 @@
     "write_count": 1
   },
   "g_DialogHashMap_Count": {
-    "confidence": "inferred_strong",
+    "confidence": "xref_verified",
     "cpp_type": "uint32_t",
     "read_count": 83,
     "ref_count": 90,
     "source": "purity",
-    "write_count": 7
+    "write_count": 7,
+    "xref_observed": "int"
   },
   "g_DialogHashMap_Entries": {
     "confidence": "ida_direct",
@@ -2994,12 +3054,13 @@
     "write_count": 3
   },
   "g_DisplayWidth": {
-    "confidence": "ida_direct",
+    "confidence": "xref_verified",
     "cpp_type": "int32_t[2]",
     "read_count": 56,
     "ref_count": 60,
     "source": "ida",
-    "write_count": 4
+    "write_count": 4,
+    "xref_observed": "int"
   },
   "g_DrawColorState": {
     "confidence": "inferred_strong",
@@ -3066,11 +3127,11 @@
     "write_count": 2
   },
   "g_FileExtensionState": {
-    "confidence": "ida_direct",
-    "cpp_type": "void*",
+    "confidence": "inferred_strong",
+    "cpp_type": "uint32_t",
     "read_count": 10,
     "ref_count": 19,
-    "source": "ida",
+    "source": "xref_analysis",
     "write_count": 9
   },
   "g_FileSystemInitFlag": {
@@ -3090,12 +3151,13 @@
     "write_count": 6
   },
   "g_FogOfWarState": {
-    "confidence": "ida_direct",
+    "confidence": "xref_verified",
     "cpp_type": "int32_t",
     "read_count": 33,
     "ref_count": 35,
     "source": "ida",
-    "write_count": 2
+    "write_count": 2,
+    "xref_observed": "int"
   },
   "g_FootClassConfig": {
     "confidence": "inferred_strong",
@@ -3106,20 +3168,21 @@
     "write_count": 7
   },
   "g_FootClass_Pool": {
-    "confidence": "ida_direct",
-    "cpp_type": "int32_t",
+    "confidence": "inferred_strong",
+    "cpp_type": "uint32_t",
     "read_count": 24,
     "ref_count": 25,
-    "source": "ida",
+    "source": "xref_analysis",
     "write_count": 1
   },
   "g_FrameCounter": {
-    "confidence": "ida_direct",
+    "confidence": "xref_verified",
     "cpp_type": "void*",
     "read_count": 45,
     "ref_count": 47,
     "source": "ida",
-    "write_count": 2
+    "write_count": 2,
+    "xref_observed": "pointer"
   },
   "g_FrameCounter_Samples": {
     "confidence": "inferred_strong",
@@ -3155,10 +3218,10 @@
   },
   "g_GameActive": {
     "confidence": "inferred_strong",
-    "cpp_type": "uint8_t",
+    "cpp_type": "uint32_t",
     "read_count": 9,
     "ref_count": 23,
-    "source": "size",
+    "source": "xref_analysis",
     "write_count": 14
   },
   "g_GameCleanupState": {
@@ -3234,11 +3297,11 @@
     "write_count": 2
   },
   "g_GameModeOptions": {
-    "confidence": "ida_direct",
-    "cpp_type": "uint8_t[4]",
+    "confidence": "inferred_strong",
+    "cpp_type": "uint32_t",
     "read_count": 16,
     "ref_count": 29,
-    "source": "ida",
+    "source": "xref_analysis",
     "write_count": 13
   },
   "g_GameNetworkObject": {
@@ -3266,20 +3329,22 @@
     "write_count": 1
   },
   "g_GameOptionsFlags": {
-    "confidence": "inferred_strong",
+    "confidence": "xref_verified",
     "cpp_type": "uint32_t",
     "read_count": 41,
     "ref_count": 46,
     "source": "purity",
-    "write_count": 5
+    "write_count": 5,
+    "xref_observed": "bool"
   },
   "g_GameRulesOptions": {
-    "confidence": "ida_direct",
+    "confidence": "xref_verified",
     "cpp_type": "int32_t",
     "read_count": 28,
     "ref_count": 47,
     "source": "ida",
-    "write_count": 19
+    "write_count": 19,
+    "xref_observed": "int"
   },
   "g_GameScreenConfig": {
     "confidence": "inferred_strong",
@@ -3354,12 +3419,13 @@
     "write_count": 0
   },
   "g_GameStateFlags": {
-    "confidence": "inferred_strong",
+    "confidence": "xref_verified",
     "cpp_type": "uint32_t",
     "read_count": 64,
     "ref_count": 71,
     "source": "purity",
-    "write_count": 7
+    "write_count": 7,
+    "xref_observed": "pointer"
   },
   "g_GameTypeFlags": {
     "confidence": "inferred_strong",
@@ -3394,12 +3460,13 @@
     "write_count": 3
   },
   "g_HouseClass_ObserverFlags": {
-    "confidence": "ida_direct",
+    "confidence": "xref_verified",
     "cpp_type": "int32_t",
     "read_count": 60,
     "ref_count": 62,
     "source": "ida",
-    "write_count": 2
+    "write_count": 2,
+    "xref_observed": "bool"
   },
   "g_INI_DefaultBuffer": {
     "confidence": "ida_direct",
@@ -5186,11 +5253,11 @@
     "write_count": 0
   },
   "g_InfantryClassLimit": {
-    "confidence": "ida_direct",
-    "cpp_type": "void*",
+    "confidence": "inferred_strong",
+    "cpp_type": "uint32_t",
     "read_count": 19,
     "ref_count": 21,
-    "source": "ida",
+    "source": "xref_analysis",
     "write_count": 2
   },
   "g_InfantryDrawState": {
@@ -5266,19 +5333,20 @@
     "write_count": 14
   },
   "g_LastPerformanceTick": {
-    "confidence": "inferred_strong",
+    "confidence": "xref_verified",
     "cpp_type": "uint32_t",
     "read_count": 30,
     "ref_count": 31,
     "source": "purity",
-    "write_count": 1
+    "write_count": 1,
+    "xref_observed": "int"
   },
   "g_LoadScreenFlag": {
     "confidence": "inferred_strong",
-    "cpp_type": "uint8_t",
+    "cpp_type": "uint32_t",
     "read_count": 7,
     "ref_count": 18,
-    "source": "size",
+    "source": "xref_analysis",
     "write_count": 11
   },
   "g_LoadScreenProgress": {
@@ -5290,60 +5358,68 @@
     "write_count": 4
   },
   "g_Lobby_MaxPlayers": {
-    "confidence": "ida_direct",
+    "confidence": "xref_verified",
     "cpp_type": "int32_t",
     "read_count": 63,
     "ref_count": 65,
     "source": "ida",
-    "write_count": 2
+    "write_count": 2,
+    "xref_observed": "bool"
   },
   "g_Lobby_PlayerColor": {
-    "confidence": "ida_direct",
+    "confidence": "xref_verified",
     "cpp_type": "int32_t",
     "read_count": 40,
     "ref_count": 42,
     "source": "ida",
-    "write_count": 2
+    "write_count": 2,
+    "xref_observed": "bool"
   },
   "g_Lobby_PlayerCount": {
-    "confidence": "ida_direct",
+    "confidence": "xref_verified",
     "cpp_type": "int32_t",
     "read_count": 54,
     "ref_count": 56,
     "source": "ida",
-    "write_count": 2
+    "write_count": 2,
+    "xref_observed": "int"
   },
   "g_Lobby_PlayerReady": {
-    "confidence": "ida_direct",
+    "confidence": "xref_verified",
     "cpp_type": "uint16_t*",
     "read_count": 41,
     "ref_count": 43,
     "source": "ida",
-    "write_count": 2
+    "write_count": 2,
+    "xref_count": 52,
+    "xref_observed": "bool"
   },
   "g_Lobby_PlayerSide": {
-    "confidence": "ida_direct",
+    "confidence": "xref_verified",
     "cpp_type": "int32_t",
     "read_count": 40,
     "ref_count": 42,
     "source": "ida",
-    "write_count": 2
+    "write_count": 2,
+    "xref_observed": "bool"
   },
   "g_Lobby_PlayerTeam": {
-    "confidence": "ida_direct",
+    "confidence": "xref_verified",
     "cpp_type": "int32_t",
     "read_count": 40,
     "ref_count": 42,
     "source": "ida",
-    "write_count": 2
+    "write_count": 2,
+    "xref_observed": "bool"
   },
   "g_MPCooperativeState": {
-    "confidence": "inferred_strong",
+    "confidence": "xref_verified",
     "cpp_type": "uint32_t",
     "read_count": 26,
     "ref_count": 35,
     "source": "purity",
-    "write_count": 9
+    "write_count": 9,
+    "xref_observed": "bool"
   },
   "g_MainGameState": {
     "confidence": "inferred_strong",
@@ -5362,28 +5438,31 @@
     "write_count": 0
   },
   "g_MapCellCount": {
-    "confidence": "inferred_strong",
+    "confidence": "xref_verified",
     "cpp_type": "uint32_t",
     "read_count": 46,
     "ref_count": 47,
     "source": "purity",
-    "write_count": 1
+    "write_count": 1,
+    "xref_observed": "int"
   },
   "g_MapCellHeight_Value": {
-    "confidence": "inferred_strong",
+    "confidence": "xref_verified",
     "cpp_type": "uint32_t",
     "read_count": 46,
     "ref_count": 47,
     "source": "purity",
-    "write_count": 1
+    "write_count": 1,
+    "xref_observed": "int"
   },
   "g_MapCellWidth": {
-    "confidence": "inferred_strong",
+    "confidence": "xref_verified",
     "cpp_type": "uint32_t",
     "read_count": 83,
     "ref_count": 84,
     "source": "purity",
-    "write_count": 1
+    "write_count": 1,
+    "xref_observed": "int"
   },
   "g_MapRenderState": {
     "confidence": "inferred_strong",
@@ -5394,20 +5473,21 @@
     "write_count": 1
   },
   "g_MapSeedState": {
-    "confidence": "ida_direct",
-    "cpp_type": "int32_t",
+    "confidence": "inferred_strong",
+    "cpp_type": "uint32_t",
     "read_count": 26,
     "ref_count": 27,
-    "source": "ida",
+    "source": "xref_analysis",
     "write_count": 1
   },
   "g_MapTileArray": {
-    "confidence": "ida_direct",
+    "confidence": "xref_verified",
     "cpp_type": "void*",
     "read_count": 81,
     "ref_count": 89,
     "source": "ida",
-    "write_count": 8
+    "write_count": 8,
+    "xref_observed": "pointer"
   },
   "g_MapTileArrayEnd": {
     "confidence": "ida_direct",
@@ -5418,12 +5498,13 @@
     "write_count": 11
   },
   "g_Map_GlobalCellIndex": {
-    "confidence": "inferred_strong",
+    "confidence": "xref_verified",
     "cpp_type": "uint32_t",
     "read_count": 0,
     "ref_count": 129,
     "source": "purity",
-    "write_count": 129
+    "write_count": 129,
+    "xref_observed": "pointer"
   },
   "g_Map_TiberiumConfig": {
     "confidence": "ida_direct",
@@ -5434,12 +5515,13 @@
     "write_count": 4
   },
   "g_Map_VisibleRectOffset": {
-    "confidence": "inferred_strong",
+    "confidence": "xref_verified",
     "cpp_type": "uint32_t",
     "read_count": 44,
     "ref_count": 46,
     "source": "purity",
-    "write_count": 2
+    "write_count": 2,
+    "xref_observed": "pointer"
   },
   "g_MatrixTransformState": {
     "confidence": "inferred_strong",
@@ -5490,11 +5572,11 @@
     "write_count": 1
   },
   "g_MenuStateFlags": {
-    "confidence": "ida_direct",
-    "cpp_type": "int32_t",
+    "confidence": "inferred_strong",
+    "cpp_type": "uint32_t",
     "read_count": 20,
     "ref_count": 28,
-    "source": "ida",
+    "source": "xref_analysis",
     "write_count": 8
   },
   "g_MiscFlag": {
@@ -5947,10 +6029,10 @@
   },
   "g_MultiplayerGameState": {
     "confidence": "inferred_strong",
-    "cpp_type": "const uint32_t",
+    "cpp_type": "uint32_t",
     "read_count": 29,
     "ref_count": 29,
-    "source": "purity",
+    "source": "xref_analysis",
     "write_count": 0
   },
   "g_MultiplayerLogBuffer": {
@@ -5987,10 +6069,10 @@
   },
   "g_MultiplayerMode": {
     "confidence": "inferred_strong",
-    "cpp_type": "uint8_t",
+    "cpp_type": "uint32_t",
     "read_count": 9,
     "ref_count": 18,
-    "source": "size",
+    "source": "xref_analysis",
     "write_count": 9
   },
   "g_MultiplayerModeConfig": {
@@ -6074,12 +6156,13 @@
     "write_count": 7
   },
   "g_NetworkInterface": {
-    "confidence": "inferred_strong",
+    "confidence": "xref_verified",
     "cpp_type": "uint32_t",
     "read_count": 34,
     "ref_count": 42,
     "source": "purity",
-    "write_count": 8
+    "write_count": 8,
+    "xref_observed": "pointer"
   },
   "g_NetworkLobbyState": {
     "confidence": "inferred_strong",
@@ -6090,12 +6173,13 @@
     "write_count": 10
   },
   "g_NetworkLobby_Init": {
-    "confidence": "inferred_strong",
+    "confidence": "xref_verified",
     "cpp_type": "uint8_t",
     "read_count": 26,
     "ref_count": 32,
     "source": "size",
-    "write_count": 6
+    "write_count": 6,
+    "xref_observed": "bool"
   },
   "g_NetworkManager": {
     "confidence": "ida_direct",
@@ -6154,12 +6238,13 @@
     "write_count": 3
   },
   "g_NetworkPlayerName": {
-    "confidence": "ida_direct",
+    "confidence": "xref_verified",
     "cpp_type": "int32_t",
     "read_count": 52,
     "ref_count": 65,
     "source": "ida",
-    "write_count": 13
+    "write_count": 13,
+    "xref_observed": "function pointer"
   },
   "g_NetworkQuitFlag": {
     "confidence": "inferred_strong",
@@ -6211,10 +6296,10 @@
   },
   "g_Network_IsHosting": {
     "confidence": "inferred_strong",
-    "cpp_type": "uint8_t",
+    "cpp_type": "uint32_t",
     "read_count": 25,
     "ref_count": 28,
-    "source": "size",
+    "source": "xref_analysis",
     "write_count": 3
   },
   "g_ObjectClass_Capacity": {
@@ -6226,12 +6311,13 @@
     "write_count": 2
   },
   "g_ObjectClass_CurrentCount": {
-    "confidence": "ida_direct",
+    "confidence": "xref_verified",
     "cpp_type": "void*",
     "read_count": 42,
     "ref_count": 45,
     "source": "ida",
-    "write_count": 3
+    "write_count": 3,
+    "xref_observed": "pointer"
   },
   "g_ObjectTrackingPool": {
     "confidence": "ida_direct",
@@ -6282,12 +6368,13 @@
     "write_count": 2
   },
   "g_PerformanceTickOffset": {
-    "confidence": "inferred_strong",
+    "confidence": "xref_verified",
     "cpp_type": "uint32_t",
     "read_count": 30,
     "ref_count": 31,
     "source": "purity",
-    "write_count": 1
+    "write_count": 1,
+    "xref_observed": "int"
   },
   "g_PlacementCellPool": {
     "confidence": "inferred_strong",
@@ -6371,11 +6458,11 @@
     "write_count": 2
   },
   "g_RandomMap_TerrainState": {
-    "confidence": "ida_direct",
-    "cpp_type": "void*",
+    "confidence": "inferred_strong",
+    "cpp_type": "uint32_t",
     "read_count": 22,
     "ref_count": 24,
-    "source": "ida",
+    "source": "xref_analysis",
     "write_count": 2
   },
   "g_RandomMap_TileData": {
@@ -6411,36 +6498,38 @@
     "write_count": 7
   },
   "g_Rules_AlliesAllowed": {
-    "confidence": "ida_direct",
-    "cpp_type": "int32_t",
+    "confidence": "inferred_strong",
+    "cpp_type": "void*",
     "read_count": 14,
     "ref_count": 29,
-    "source": "ida",
+    "source": "xref_analysis",
     "write_count": 15
   },
   "g_Rules_Bases": {
-    "confidence": "ida_direct",
-    "cpp_type": "int32_t",
+    "confidence": "inferred_strong",
+    "cpp_type": "void*",
     "read_count": 16,
     "ref_count": 31,
-    "source": "ida",
+    "source": "xref_analysis",
     "write_count": 15
   },
   "g_Rules_EngineerCount": {
-    "confidence": "inferred_strong",
+    "confidence": "xref_verified",
     "cpp_type": "uint32_t",
     "read_count": 19,
     "ref_count": 33,
     "source": "purity",
-    "write_count": 14
+    "write_count": 14,
+    "xref_observed": "int"
   },
   "g_Rules_MultiEngineer": {
-    "confidence": "ida_direct",
+    "confidence": "xref_verified",
     "cpp_type": "int32_t",
     "read_count": 17,
     "ref_count": 32,
     "source": "ida",
-    "write_count": 15
+    "write_count": 15,
+    "xref_observed": "int"
   },
   "g_Rules_ShortGame": {
     "confidence": "inferred_strong",
@@ -6483,11 +6572,11 @@
     "write_count": 7
   },
   "g_ScenarioState": {
-    "confidence": "ida_direct",
-    "cpp_type": "uint16_t*",
+    "confidence": "inferred_strong",
+    "cpp_type": "uint32_t",
     "read_count": 17,
     "ref_count": 25,
-    "source": "ida",
+    "source": "xref_analysis",
     "write_count": 8
   },
   "g_ScenarioUpdateState": {
@@ -6603,12 +6692,14 @@
     "write_count": 10
   },
   "g_SelectionManager": {
-    "confidence": "ida_direct",
+    "confidence": "xref_verified",
     "cpp_type": "uint16_t*",
     "read_count": 49,
     "ref_count": 54,
     "source": "ida",
-    "write_count": 5
+    "write_count": 5,
+    "xref_count": 81,
+    "xref_observed": "bool"
   },
   "g_SessionClass_Instance": {
     "confidence": "inferred_strong",
@@ -6619,12 +6710,13 @@
     "write_count": 1
   },
   "g_Shroud_CellArray": {
-    "confidence": "inferred_strong",
+    "confidence": "xref_verified",
     "cpp_type": "const uint32_t",
     "read_count": 123,
     "ref_count": 123,
     "source": "purity",
-    "write_count": 0
+    "write_count": 0,
+    "xref_observed": "int"
   },
   "g_SidebarBounds": {
     "confidence": "inferred_strong",
@@ -6667,12 +6759,13 @@
     "write_count": 3
   },
   "g_SidebarState": {
-    "confidence": "inferred_strong",
+    "confidence": "xref_verified",
     "cpp_type": "uint32_t",
     "read_count": 60,
     "ref_count": 63,
     "source": "purity",
-    "write_count": 3
+    "write_count": 3,
+    "xref_observed": "bool"
   },
   "g_SkirmishFlag": {
     "confidence": "inferred_strong",
@@ -9756,20 +9849,22 @@
     "write_count": 2
   },
   "g_SuperWeaponTypeArray": {
-    "confidence": "inferred_strong",
+    "confidence": "xref_verified",
     "cpp_type": "uint32_t",
     "read_count": 28,
     "ref_count": 32,
     "source": "purity",
-    "write_count": 4
+    "write_count": 4,
+    "xref_observed": "int"
   },
   "g_SuperWeaponTypeCount": {
-    "confidence": "ida_direct",
+    "confidence": "xref_verified",
     "cpp_type": "void*",
     "read_count": 39,
     "ref_count": 41,
     "source": "ida",
-    "write_count": 2
+    "write_count": 2,
+    "xref_observed": "pointer"
   },
   "g_SurfaceAnimState": {
     "confidence": "inferred_strong",
@@ -9812,12 +9907,13 @@
     "write_count": 2
   },
   "g_TauntCommandState": {
-    "confidence": "ida_direct",
+    "confidence": "xref_verified",
     "cpp_type": "int32_t",
     "read_count": 24,
     "ref_count": 35,
     "source": "ida",
-    "write_count": 11
+    "write_count": 11,
+    "xref_observed": "int"
   },
   "g_TeamClassPool": {
     "confidence": "ida_direct",
@@ -9876,12 +9972,13 @@
     "write_count": 1
   },
   "g_TechnoClass_Count": {
-    "confidence": "ida_direct",
+    "confidence": "xref_verified",
     "cpp_type": "void*",
     "read_count": 61,
     "ref_count": 63,
     "source": "ida",
-    "write_count": 2
+    "write_count": 2,
+    "xref_observed": "pointer"
   },
   "g_TechnoHouseState": {
     "confidence": "ida_direct",
@@ -10084,12 +10181,14 @@
     "write_count": 2
   },
   "g_TriggerTypeCount": {
-    "confidence": "ida_direct",
+    "confidence": "xref_verified",
     "cpp_type": "void*",
     "read_count": 48,
     "ref_count": 50,
     "source": "ida",
-    "write_count": 2
+    "write_count": 2,
+    "xref_count": 67,
+    "xref_observed": "int"
   },
   "g_TypeClass_DefaultString": {
     "confidence": "ida_direct",
@@ -10108,12 +10207,13 @@
     "write_count": 3
   },
   "g_UIControlState": {
-    "confidence": "ida_direct",
+    "confidence": "xref_verified",
     "cpp_type": "void*",
     "read_count": 32,
     "ref_count": 57,
     "source": "ida",
-    "write_count": 25
+    "write_count": 25,
+    "xref_observed": "function pointer"
   },
   "g_UIManager": {
     "confidence": "ida_direct",
@@ -10164,12 +10264,13 @@
     "write_count": 3
   },
   "g_UnitTypeCount2": {
-    "confidence": "ida_direct",
+    "confidence": "xref_verified",
     "cpp_type": "void*",
     "read_count": 30,
     "ref_count": 32,
     "source": "ida",
-    "write_count": 2
+    "write_count": 2,
+    "xref_observed": "pointer"
   },
   "g_UnitTypeInitState": {
     "confidence": "inferred_strong",
@@ -10204,12 +10305,14 @@
     "write_count": 0
   },
   "g_VisibleSurfaceDescriptor": {
-    "confidence": "ida_direct",
+    "confidence": "xref_verified",
     "cpp_type": "void*",
     "read_count": 65,
     "ref_count": 69,
     "source": "ida",
-    "write_count": 4
+    "write_count": 4,
+    "xref_count": 218,
+    "xref_observed": "bool"
   },
   "g_VocAudioConfig": {
     "confidence": "ida_direct",
@@ -10252,11 +10355,11 @@
     "write_count": 4
   },
   "g_VoxelOffsetTable": {
-    "confidence": "ida_direct",
-    "cpp_type": "int32_t",
+    "confidence": "inferred_strong",
+    "cpp_type": "uint32_t",
     "read_count": 18,
     "ref_count": 30,
-    "source": "ida",
+    "source": "xref_analysis",
     "write_count": 12
   },
   "g_VoxelRenderBuffer": {
@@ -10324,12 +10427,13 @@
     "write_count": 7
   },
   "g_WOL_ChannelList": {
-    "confidence": "inferred_strong",
+    "confidence": "xref_verified",
     "cpp_type": "uint32_t",
     "read_count": 16,
     "ref_count": 39,
     "source": "purity",
-    "write_count": 23
+    "write_count": 23,
+    "xref_observed": "function pointer"
   },
   "g_WOL_ChannelMgr": {
     "confidence": "ida_direct",
@@ -10372,12 +10476,13 @@
     "write_count": 0
   },
   "g_WOL_ConnectionFlags": {
-    "confidence": "ida_direct",
+    "confidence": "xref_verified",
     "cpp_type": "void*",
     "read_count": 51,
     "ref_count": 56,
     "source": "ida",
-    "write_count": 5
+    "write_count": 5,
+    "xref_observed": "bool"
   },
   "g_WOL_ConnectionHandler": {
     "confidence": "ida_direct",
@@ -10620,12 +10725,13 @@
     "write_count": 3
   },
   "g_WOL_State": {
-    "confidence": "ida_direct",
+    "confidence": "xref_verified",
     "cpp_type": "uint32_t",
     "read_count": 51,
     "ref_count": 67,
     "source": "ida",
-    "write_count": 16
+    "write_count": 16,
+    "xref_observed": "bool"
   },
   "g_WOL_StateFlags": {
     "confidence": "inferred_strong",
@@ -10692,12 +10798,14 @@
     "write_count": 11
   },
   "g_ZBufferDescriptor": {
-    "confidence": "ida_direct",
+    "confidence": "xref_verified",
     "cpp_type": "void*",
     "read_count": 92,
     "ref_count": 96,
     "source": "ida",
-    "write_count": 4
+    "write_count": 4,
+    "xref_count": 260,
+    "xref_observed": "bool"
   },
   "g_hCursor": {
     "confidence": "inferred_strong",
@@ -10724,12 +10832,13 @@
     "write_count": 1
   },
   "g_hWnd": {
-    "confidence": "ida_direct",
+    "confidence": "xref_verified",
     "cpp_type": "void*",
     "read_count": 110,
     "ref_count": 112,
     "source": "ida",
-    "write_count": 2
+    "write_count": 2,
+    "xref_observed": "bool"
   },
   "g_lpDirectDraw7": {
     "confidence": "ida_direct",
@@ -10868,11 +10977,11 @@
     "write_count": 0
   },
   "lParam": {
-    "confidence": "ida_direct",
-    "cpp_type": "int32_t",
+    "confidence": "inferred_strong",
+    "cpp_type": "uint32_t",
     "read_count": 20,
     "ref_count": 22,
-    "source": "ida",
+    "source": "xref_analysis",
     "write_count": 2
   },
   "lp": {
@@ -10964,12 +11073,13 @@
     "write_count": 0
   },
   "ppv": {
-    "confidence": "ida_direct",
+    "confidence": "xref_verified",
     "cpp_type": "void*",
     "read_count": 85,
     "ref_count": 88,
     "source": "ida",
-    "write_count": 3
+    "write_count": 3,
+    "xref_observed": "pointer"
   },
   "psz": {
     "confidence": "ida_direct",
