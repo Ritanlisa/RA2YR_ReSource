@@ -373,7 +373,7 @@ Max Concurrent: 8 (Waves 2 & 3)
 
   **Commit**: YES — `feat(tools): add type inference database builder` — `tools/build_type_db.py`, `tools/type_db.json`
 
-- [ ] 5. Organize functions by module and namespace
+- [x] 5. Organize functions by module and namespace
 
   **What to do**:
   - Write `tools/organize_functions.py` that reads `tools/functions_in_scope.json`
