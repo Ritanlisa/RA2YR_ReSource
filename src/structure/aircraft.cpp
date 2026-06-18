@@ -302,10 +302,9 @@ int AircraftClass::Mission_Unload_full()
     return 5;
 }
 
-// IDA: 0x41BE60 (LandingCheckStub, 5B)
+// IDA: 0x41BE60 (LandingCheckStub, 5B) — vtable entry, always returns 0
 int AircraftClass::LandingCheckStub()
 {
-    // Stub for landing check
     return 0;
 }
 

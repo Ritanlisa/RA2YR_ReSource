@@ -383,11 +383,10 @@ int UnitClass::HandleTargetDestroyed()
     return 0;
 }
 
-// IDA: 0x6B4F20 (CheckStatus, 7B)
+// IDA: 0x6B4F20 (CheckStatus, 7B) — returns Type pointer (vtable entry)
 int UnitClass::CheckStatus()
 {
-    // Check unit status
-    return 0;
+    return reinterpret_cast<int>(Type);
 }
 
 // IDA: 0x6B7C60 (ClearTargetRef, 206B)

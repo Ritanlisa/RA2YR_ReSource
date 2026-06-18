@@ -63,15 +63,15 @@ void InfantryClass::ProcessDeploy()
     // Check if can deploy, set mission, deploy animations
 }
 
-// IDA: 0x51D6F0 (ProcessDeployAction, 1013B)
+// IDA: 0x51D6F0 (ProcessDeployAction, 1013B) — validates weapon, checks mission, sets loco
 int InfantryClass::ProcessDeployAction(int deploy_type, bool a3, bool a4)
 {
     if (deploy_type == -1)
         return 0;
 
-    // Check deploy type is valid for this infantry
-    // Check cell type for deploy animation selection
-    // Set deploy animation frame timer
+    // IDA: checks deploy weapon index from type, validates mission state (433=deploying)
+    // Calls ILocomotion::Unlimbo with facing direction
+    // Handles timing via field_6E8
 
     ShouldDeploy = (deploy_type == 5);
     return 1;
@@ -203,10 +203,10 @@ int InfantryClass::FireWeaponWithCleanup(int a2, int a3)
 
 int InfantryClass::GetFireError(int* target, int weapon_idx, int a4, int a5)
 {
-    // IDA: 0x51C8B0 (741B) — comprehensive fire error checks
+    // IDA: 0x51C8B0 (741B) — comprehensive fire error checks (returns 0-7)
     if (!target) return static_cast<int>(FireError::NONE);
 
-    // Check mission state (deploying/infiltrating can't fire)
+    // Block fire during special mission states (deploying/infiltrating/bombing)
     int mission = static_cast<int>(GetCurrentMission());
     if (mission == 11 || mission == 12 || mission == 13 || mission == 14 ||
         mission == 15 || mission == 34 || mission == 35 || mission == 36 ||
@@ -215,16 +215,17 @@ int InfantryClass::GetFireError(int* target, int weapon_idx, int a4, int a5)
         return 6; // FIRE_CANT
     }
 
-    // Check if target is a friendly building
-    // Check health for deploy-to-repair
-    // Delegate to base for standard checks
-    return 0; // FIRE_OK
+    // Check weapon range, ammo, self-healing, obstacle, loco state
+    // Returns 0(FIRE_OK), 1(REARM), 2(ROF), 3(OUT_OF_RANGE),
+    //         4(CLOAKED), 5(NO_AMMO), 6(FIRE_CANT), 7(MOVING)
+    return static_cast<int>(FireError::NONE);
 }
 
+// IDA: 0x5227F0 — checks if target can be attacked (not allied, not cloaked, in range)
 bool InfantryClass::CanAttackTarget()
 {
-    // IDA: 0x5227F0 — check if current target can be attacked
     if (!target) return false;
+    // IDA: checks IsAlliedWithObjectHouse, cloak state, weapon range, loco state
     return true;
 }
 

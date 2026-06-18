@@ -127,7 +127,7 @@ int BuildingClass::ScalarDtor()
     return 0;
 }
 
-// IDA 0x449a50
+// Inherited from TechnoClass::Activate (IDA 0x70fbe0) — BuildingClass does not override
 int BuildingClass::Activate()
 {
     WasOnline = true;
@@ -273,16 +273,17 @@ int BuildingClass::Mission_Construction()
     return UpdateConstruction();
 }
 
+// IDA 0x459ec0: returns 6 (wait timer constant)
 int BuildingClass::UpdateConstruction()
 {
     if (missionStatus == 0) {
         if (BeingProduced && Type) missionStatus = 1;
-        return 15;
+        return 6;
     }
     if (missionStatus == 1) {
         queueMission(static_cast<ra2::game::Mission>(static_cast<int>(Mission::Guard)), true);
     }
-    return 15;
+    return 6;
 }
 
 int BuildingClass::Mission_Selling()
@@ -326,8 +327,15 @@ int BuildingClass::Mission_Missile()
 }
 
 void BuildingClass::ProcessSuperWeaponEffects() {}
-bool BuildingClass::SWAvailable() { return false; }
-bool BuildingClass::SW2Available() { return false; }
+// IDA 0x457630/0x457690: check SuperWeaponType availability from Type
+bool BuildingClass::SWAvailable() {
+    if (!Type) return false;
+    return Type->SuperWeapon != -1;
+}
+bool BuildingClass::SW2Available() {
+    if (!Type) return false;
+    return Type->SuperWeapon2 != -1;
+}
 BuildingClass* BuildingClass::FindBySWType(int) { return nullptr; }
 void BuildingClass::ClearSuperWeaponAnim() {}
 void BuildingClass::UpdatePrism() {}
@@ -335,7 +343,7 @@ void BuildingClass::Disappear_PrismForward() {}
 
 int BuildingClass::MissionController() { return Mission_Construction(); }
 int BuildingClass::ProcessMission() { return MissionController(); }
-int BuildingClass::Mission_Guard() { return 0; }
+int BuildingClass::Mission_Guard() { return 1824; }  // IDA 0x459e70: constant wait timer
 int BuildingClass::Mission_Attack() { return 0; }
 int BuildingClass::Mission_Move() { return 0; }
 int BuildingClass::Mission_Enter() { return 0; }
@@ -350,8 +358,19 @@ bool BuildingClass::CheckMissionAttack() { return missionStatus == 1; }
 // ============================================================
 
 void BuildingClass::PowerDrainUpdate() {}
-int BuildingClass::GetPowerOutput() { return 0; }
-int BuildingClass::GetPowerDrain() { return 0; }
+// IDA 0x44e7b0: base power + bonus, health-scaled (uses Type->Power, not PowerOutput)
+int BuildingClass::GetPowerOutput() {
+    if (!Type || !HasPower) return 0;
+    // IDA: int power = Type->Power; plus OverpowerBonus + upgrades + occupants
+    return 0; // Requires BuildingTypeClass field mapping
+}
+
+// IDA 0x44e880: base drain + overpower drain
+int BuildingClass::GetPowerDrain() {
+    if (!HasPower || !Type) return 0;
+    // IDA: int drain = Type->PowerDrain; plus OverpowerDrain + upgrades
+    return 0; // Requires BuildingTypeClass field mapping
+}
 void BuildingClass::PowerUpdate() {}
 int BuildingClass::UpdatePowerDrain() { PowerDrainUpdate(); return 0; }
 
@@ -390,7 +409,12 @@ void BuildingClass::UpdateProduction() {}
 void BuildingClass::CompleteProduction() { ProductionTimer = 0; }
 void BuildingClass::ProductionDisplayUpdate() {}
 void BuildingClass::DisplayProductionFrame() {}
-bool BuildingClass::ProductionCheck() { return ProductionTimer > 0; }
+// IDA 0x4513d0: checks SecretProduction + BeingProduced, delegates to Type vtable
+bool BuildingClass::ProductionCheck() {
+    if (SecretProduction && BeingProduced)
+        return Type && /*Type->vtable[39]*/false;
+    return Type && /*Type->vtable[48]*/false;
+}
 void BuildingClass::AbandonProduction() { ProductionTimer = 0; }
 bool BuildingClass::CanAcceptType(int) { return true; }
 void BuildingClass::AddToProductionQueue(int) {}
