@@ -244,7 +244,7 @@ Wave Final: Build verification + spot-check audit — 4 parallel reviews
   **Acceptance**: 0/0 build, IDA cross-check
   **Evidence**: .omo/evidence/fr-task-3.6-networkini.txt
 
-- [ ] 19. Implement remaining global functions + sub_* naming (~12,000 functions)
+- [x] 19. Implement remaining global functions + sub_* naming (~12,000 functions)
 
   **What to do**: All remaining unimplemented global functions. For each sub_*: analyze decompile to determine function → name in IDA → `idb_save` → translate to C++. Largest batch — split across 8 parallel groups (~1,500 each).
   **Which agent**: `deep` — 8 parallel sub-tasks
