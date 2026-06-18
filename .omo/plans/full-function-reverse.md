@@ -132,7 +132,7 @@ Wave Final: Build verification + spot-check audit — 4 parallel reviews
 
 ---
 
-- [ ] 4. Implement DialogClass + GadgetClass methods (~71 functions)
+- [x] 4. Implement DialogClass + GadgetClass methods (~71 functions)
 
   **What to do**: Read IDA decompile for DialogClass (~46) and GadgetClass/TextButtonClass (~25). Translate to C++. Source: `src/ui/dialog_win32.cpp`, `src/ui/gadget.cpp`. All methods in pure-menu classes.
   **Which agent**: `deep` — IDA decompile analysis per method

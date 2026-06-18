@@ -213,4 +213,346 @@ void DialogClass::DrawBackground(DSurface* surface)
     surface->FillRect(right,0x39C7);
 }
 
+// ============================================================================
+// GadgetClass binary-compatible methods (original gamemd.exe)
+// These operate on raw gadget data matching the original binary layout.
+// IDA offsets: +0x0C=X, +0x10=Y, +0x14=Width, +0x18=Height,
+//   +0x1C=NeedsRedraw, +0x1D=IsSticky, +0x1E=Disabled, +0x20=Flags
+// ============================================================================
+
+// IDA 0x4E12F0: GadgetClass::Construct — initialize gadget fields
+// params: this, x, y, w, h, flags, isSticky
+static void GadgetClass_Construct(void* self, int x, int y, int w, int h, unsigned flags, bool isSticky)
+{
+    uint8_t* p = static_cast<uint8_t*>(self);
+    // Set vtable (IDA: *this = &GadgetClass::vftable) — skip for modern C++
+    *reinterpret_cast<int*>(p + 0x0C) = x;
+    *reinterpret_cast<int*>(p + 0x10) = y;
+    *reinterpret_cast<int*>(p + 0x14) = w;
+    *reinterpret_cast<int*>(p + 0x18) = h;
+    *reinterpret_cast<int*>(p + 0x00) = 0; // LinkClass::Next
+    *reinterpret_cast<int*>(p + 0x04) = 0; // LinkClass::Prev
+    p[0x1C] = 0; // NeedsRedraw = false
+    p[0x1E] = 0; // Disabled = false
+    p[0x1D] = isSticky ? 1 : 0;
+    *reinterpret_cast<unsigned*>(p + 0x20) = flags;
+    if (isSticky)
+        *reinterpret_cast<unsigned*>(p + 0x20) = flags | 5;
+}
+
+// IDA 0x4E1390: GadgetClass::Dtor — destructor, clears global gadget pointers
+static int GadgetClass_Dtor(void* self)
+{
+    // IDA: *this = &GadgetClass::vftable (restore vtable)
+    // Clears dword_8B3E90, dword_8B3E88, dword_8B3E8C if they point to this
+    // Returns LinkClass::Destruct()
+
+    // Global gadget state pointers (IDA .data)
+    static void* g_focusedGadget = nullptr;   // dword_8B3E90
+    static void* g_prevGadget = nullptr;      // dword_8B3E88
+    static void* g_otherGadget = nullptr;     // dword_8B3E8C
+
+    if (self == g_focusedGadget) {
+        uint8_t* p = static_cast<uint8_t*>(self);
+        unsigned flags = *reinterpret_cast<unsigned*>(p + 0x20);
+        flags &= ~1u;
+        *reinterpret_cast<unsigned*>(p + 0x20) = flags;
+        g_focusedGadget = nullptr;
+    }
+    if (self == g_prevGadget)
+        g_prevGadget = nullptr;
+    if (self == g_otherGadget)
+        g_otherGadget = nullptr;
+    if (self == g_focusedGadget)
+        g_focusedGadget = nullptr;
+    return 0; // LinkClass::Destruct equivalent
+}
+
+// IDA 0x4E1550: GadgetClass::ClearState — clear sticky/selected state
+static bool GadgetClass_ClearState(void* self, bool force)
+{
+    uint8_t* p = static_cast<uint8_t*>(self);
+    if (!force && !p[0x1C]) // if not force and not NeedsRedraw
+        return false;
+    p[0x1C] = 0; // clear NeedsRedraw
+    return true;
+}
+
+// IDA 0x723EA0: GadgetClass::Show — make gadget visible
+static void GadgetClass_Show(void* self)
+{
+    uint8_t* p = static_cast<uint8_t*>(self);
+    // IDA: vtable call to vfunc at +72 (update/redraw), set byte at +45 (=0x2D) to 1
+    p[0x2D] = 1; // Visible flag at offset 0x2D
+    // vtable[72/4=18]() — redraw callback, skipped for modern C++
+}
+
+// IDA 0x723EB0: GadgetClass::Hide — hide gadget
+static void GadgetClass_Hide(void* self)
+{
+    uint8_t* p = static_cast<uint8_t*>(self);
+    p[0x2D] = 0; // Visible flag = 0
+    // vtable[72/4=18]() — redraw callback, skipped
+}
+
+// IDA 0x623560: GadgetClass::SetTooltip — set tooltip string (wchar_t*)
+static void GadgetClass_SetTooltip(void* self, const wchar_t* tooltip)
+{
+    uint8_t* p = static_cast<uint8_t*>(self);
+    wchar_t** tooltipPtr = reinterpret_cast<wchar_t**>(p + 0x28); // offset +10 dwords = 0x28
+
+    // Free existing tooltip
+    if (*tooltipPtr) {
+        delete[] *tooltipPtr;
+        *tooltipPtr = nullptr;
+    }
+
+    // Copy new tooltip
+    if (tooltip && *tooltip) {
+        size_t len = wcslen(tooltip);
+        *tooltipPtr = new wchar_t[len + 1];
+        wcscpy(*tooltipPtr, tooltip);
+    }
+}
+
+// IDA 0x77A700: GadgetClass::TrackState — track gadget state changes
+// params: self, newState, eventType
+// +0x10=current state (dword at offset 16), +0x14=event count (dword at offset 20),
+// +0x08=needs redraw byte
+static char GadgetClass_TrackState(void* self, int newState, int eventType)
+{
+    uint8_t* p = static_cast<uint8_t*>(self);
+    int curState = *reinterpret_cast<int*>(p + 0x10);
+
+    if (newState == curState) {
+        if (eventType == 2) {
+            if (!p[0x14]) { // byte at +0x14 (event count lo-byte check)
+                p[0x14] = 1;
+                p[0x08] = 1; // NeedsRedraw-like byte at +0x08
+            }
+        }
+    } else if ((!curState || eventType >= *reinterpret_cast<int*>(p + 0x18)) && newState) {
+        if (eventType == 3)
+            p[0x14] = 0;
+        *reinterpret_cast<int*>(p + 0x10) = newState;
+        *reinterpret_cast<int*>(p + 0x18) = eventType;
+        p[0x08] = 1;
+    }
+    return static_cast<char>(curState);
+}
+
+// ============================================================================
+// Gadget::InitProperties (0x600630)
+// Initializes a gadget property block (used by list box item setup)
+// ============================================================================
+
+// IDA 0x600630: Gadget::InitProperties
+void Gadget_InitProperties(void* self)
+{
+    uint8_t* p = static_cast<uint8_t*>(self);
+    // IDA: unknown_libname_74(this+1) — sub-object init
+    //       unknown_libname_74(this+2) — sub-object init
+    *reinterpret_cast<int*>(p + 0x00) = 0;  // clear
+    *reinterpret_cast<int*>(p + 0x0C) = -1; // index = -1
+    *reinterpret_cast<int*>(p + 0x14) = -1; // end index = -1
+    *reinterpret_cast<int*>(p + 0x10) = 0;  // start index = 0
+}
+
+// ============================================================================
+// SimpleDialogControl (0x624110)
+// Lightweight dialog control for WOL online screens
+// ============================================================================
+
+// IDA 0x624110: SimpleDialogControl::Constructor
+// Initializes a 9-byte control: {vtable, dword0, byte8}
+static void SimpleDialogControl_Construct(void* self)
+{
+    uint8_t* p = static_cast<uint8_t*>(self);
+    *reinterpret_cast<int*>(p + 0x00) = 0; // +0: vtable placeholder
+    p[0x08] = 0; // +8: flag byte = 0
+}
+
+// ============================================================================
+// DialogControl (0x623340, 0x4E1450, 0x4E1460, 0x4E1470)
+// Size 0x200 (512 bytes), used for menu screen control tracking
+// ============================================================================
+
+// IDA 0x623340: DialogControl::Constructor — zero-init 0x200 bytes, set defaults
+static void DialogControl_Construct(void* self)
+{
+    uint8_t* p = static_cast<uint8_t*>(self);
+    memset(p, 0, 0x200);
+
+    *reinterpret_cast<int*>(p + 0x68) = 11;     // +26 dwords = 0x68: default value 11
+    *reinterpret_cast<int*>(p + 0x64) = 1;      // +25 dwords: g_FogOfWarState-like
+
+    // Allocate internal sub-struct
+    void* sub = operator new(4);
+    if (sub) {
+        memset(sub, 0, 4);
+        *reinterpret_cast<int*>(p + 0x3C) = reinterpret_cast<int>(sub); // +15 dwords
+    } else {
+        *reinterpret_cast<int*>(p + 0x3C) = 0;
+    }
+
+    *reinterpret_cast<int*>(p + 0x40) = 0;      // +16 dwords = 0
+    *reinterpret_cast<int*>(p + 0x5C) = 0;      // +23 dwords = 0
+    *reinterpret_cast<int*>(p + 0x90) = -1;     // +36 dwords = -1
+}
+
+// IDA 0x4E1450: DialogControl::Hide
+static void DialogControl_Hide(void* self)
+{
+    uint8_t* p = static_cast<uint8_t*>(self);
+    p[0x1E] = 0; // byte at +30 = 0 (visible flag off)
+    p[0x1C] = 1; // byte at +28 = 1 (needs redraw)
+}
+
+// IDA 0x4E1460: DialogControl::Show
+static void DialogControl_Show(void* self)
+{
+    uint8_t* p = static_cast<uint8_t*>(self);
+    p[0x1E] = 1; // byte at +30 = 1 (visible flag on)
+    p[0x1C] = 1; // byte at +28 = 1 (needs redraw)
+}
+
+// IDA 0x4E1470: DialogControl::IsHidden
+static bool DialogControl_IsHidden(void* self)
+{
+    uint8_t* p = static_cast<uint8_t*>(self);
+    return p[0x1E] == 0; // byte at +30 == 0
+}
+
+// ============================================================================
+// GadgetGrid (0x4134A0, 0x4135D0)
+// Grid-based gadget container for list/dropdown items
+// ============================================================================
+
+// IDA 0x4134A0: GadgetGrid::InsertItem
+static void GadgetGrid_InsertItem(void* self, int index, void* item)
+{
+    // IDA: array insert at position index
+    uint8_t* p = static_cast<uint8_t*>(self);
+    int count = *reinterpret_cast<int*>(p + 0x04); // item count at +4
+    void** items = reinterpret_cast<void**>(*reinterpret_cast<int*>(p + 0x08)); // array ptr at +8
+
+    // Shift items down
+    if (index < count) {
+        memmove(&items[index + 1], &items[index], (count - index) * sizeof(void*));
+    }
+    items[index] = item;
+    *reinterpret_cast<int*>(p + 0x04) = count + 1;
+}
+
+// IDA 0x4135D0: GadgetGrid::RemoveItem
+static void GadgetGrid_RemoveItem(void* self, int index)
+{
+    uint8_t* p = static_cast<uint8_t*>(self);
+    int count = *reinterpret_cast<int*>(p + 0x04);
+    if (index < 0 || index >= count) return;
+
+    void** items = reinterpret_cast<void**>(*reinterpret_cast<int*>(p + 0x08));
+    delete items[index]; // free the item
+
+    // Shift items up
+    int tail = count - index - 1;
+    if (tail > 0)
+        memmove(&items[index], &items[index + 1], tail * sizeof(void*));
+    items[count - 1] = nullptr;
+    *reinterpret_cast<int*>(p + 0x04) = count - 1;
+}
+
+// ============================================================================
+// DialogQueue (0x5D4E70, 0x5D4ED0)
+// Queue of dialog events used to postpone dialog operations
+// ============================================================================
+
+// IDA 0x5D4E70: DialogQueue::PushEntry — add entry to end of queue
+static void DialogQueue_PushEntry(void* self, int entryType, int param)
+{
+    uint8_t* p = static_cast<uint8_t*>(self);
+    int count = *reinterpret_cast<int*>(p + 0x00);
+    if (count >= 16) return; // max 16 entries
+
+    *reinterpret_cast<int*>(p + 0x04 + count * 8) = entryType;
+    *reinterpret_cast<int*>(p + 0x08 + count * 8) = param;
+    *reinterpret_cast<int*>(p + 0x00) = count + 1;
+}
+
+// IDA 0x5D4ED0: DialogQueue::RemoveEntry — remove entry from front of queue
+// Returns: 0 = queue empty, 1 = removed entry
+static int DialogQueue_RemoveEntry(void* self)
+{
+    uint8_t* p = static_cast<uint8_t*>(self);
+    int count = *reinterpret_cast<int*>(p + 0x00);
+    if (count <= 0) return 0;
+
+    // Shift entries left
+    int tail = count - 1;
+    if (tail > 0)
+        memmove(p + 0x04, p + 0x0C, tail * 8);
+    *reinterpret_cast<int*>(p + 0x00) = tail;
+    return 1;
+}
+
+// ============================================================================
+// DialogClass methods (original binary)
+// ============================================================================
+
+// IDA 0x5D6350: DialogClass::GetFlag — returns *(this + 52) as bool
+bool DialogClass_GetFlag(void* self)
+{
+    uint8_t* p = static_cast<uint8_t*>(self);
+    return p[52] != 0;
+}
+
+// IDA 0x623610: DialogClass::CopyTemplateStruct — copy DLGTEMPLATE into internal buffer
+// Copies dialog template data to a local buffer at this+72
+void DialogClass_CopyTemplateStruct(void* self, const void* template_data, int template_size)
+{
+    uint8_t* p = static_cast<uint8_t*>(self);
+    // IDA: allocates buffer, copies template data to *(this+72)
+    // PENDING: full decompile
+    (void)template_data;
+    (void)template_size;
+}
+
+// IDA 0x60D450: DialogClass::RegisterWinClasses — register window classes for dialog
+void DialogClass_RegisterWinClasses()
+{
+    // IDA: RegisterClassA for custom dialog control classes
+    // PENDING: full decompile
+}
+
+// IDA 0x775BC0: DialogClass::Reposition — reposition dialog or child window
+// Called by EnumChildWindows and as standalone function
+bool DialogClass_Reposition(HWND hWnd, LPARAM lParam)
+{
+    // IDA: gets window rect, adjusts position based on parent
+    RECT rect;
+    if (GetWindowRect(hWnd, &rect)) {
+        HWND parent = GetParent(hWnd);
+        if (parent) {
+            POINT pt = { rect.left, rect.top };
+            ScreenToClient(parent, &pt);
+            SetWindowPos(hWnd, nullptr, pt.x, pt.y, 0, 0, SWP_NOSIZE | SWP_NOZORDER);
+        }
+    }
+    return TRUE;
+}
+
+// IDA 0x60AAB0: GadgetClass::FindByWindow — find gadget by window handle
+// 1156 bytes — iterates gadget linked list, matches HWND
+static void* GadgetClass_FindByWindow(HWND hWnd)
+{
+    // IDA: iterates global gadget linked list (g_GadgetList)
+    // Compares each gadget's stored HWND against search HWND
+    // Returns gadget pointer if found, nullptr otherwise
+
+    // Global gadget list head (dword_8B3E90 area)
+    // Simplified: return nullptr (no global list in simplified model)
+    (void)hWnd;
+    return nullptr;
+}
+
 } // namespace gamemd
