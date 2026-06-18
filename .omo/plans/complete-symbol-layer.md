@@ -337,7 +337,7 @@ Max Concurrent: 8 (Waves 2 & 3)
   - Message: `feat(tools): add function scope filter`
   - Files: `tools/filter_functions.py`, `tools/functions_in_scope.json`
 
-- [ ] 4. Build type inference database from purity_effects.json + IDA xref
+- [x] 4. Build type inference database from purity_effects.json + IDA xref
 
   **What to do**:
   - Write `tools/build_type_db.py` that reads purity_effects.json + globals_extracted.json

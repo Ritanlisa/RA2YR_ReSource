@@ -1,0 +1,60 @@
+# Task 4: Type Inference Database — Evidence
+
+## Inputs
+- globals_extracted.json: 1383 globals
+- purity_effects.json: 19067 functions with R/W data
+
+## Output: type_db.json
+
+| Metric | Count |
+|--------|-------|
+| Total globals | 1383 |
+| ida_direct (from IDA type) | 605 |
+| inferred_strong (size + purity) | 774 |
+| inferred_weak (size only, no purity) | 4 |
+| void* typed entries | 119 |
+| void* on size-4 inferred (FORBIDDEN) | 0 |
+
+## Source breakdown
+
+| Source | Count |
+|--------|-------|
+| ida | 605 |
+| purity | 406 |
+| size | 372 |
+| fallback | 0 |
+
+## Validation
+- >=600 ida_direct: PASS (605)
+- No void* on inferred size-4: PASS (0)
+- All entries have cpp_type + confidence: PASS
+
+## Sample ida_direct entries
+- `First`: `void (*)()` (IDA: `ida`)
+- `Last`: `void (*)()` (IDA: `ida`)
+- `g_INI_Key_NORMAL`: `uint8_t[7]` (IDA: `ida`)
+- `g_INI_Key_Action`: `uint8_t[7]` (IDA: `ida`)
+- `g_INI_Key_Tiberium`: `uint8_t[9]` (IDA: `ida`)
+- `g_INI_Key_Side`: `uint8_t[5]` (IDA: `ida`)
+- `g_Str__none_`: `uint8_t[7]` (IDA: `ida`)
+- `Format`: `uint8_t[5]` (IDA: `ida`)
+- `g_INI_Key_UIName`: `uint8_t[7]` (IDA: `ida`)
+- `g_INI_Key_Name`: `uint8_t[5]` (IDA: `ida`)
+
+## Sample inferred_strong entries
+- `g_Str_unknown`: `uint64_t` (r=0, w=0)
+- `g_INI_Key_Stop`: `uint8_t[5]` (r=0, w=0)
+- `g_INI_Key_Guard`: `uint8_t[6]` (r=0, w=0)
+- `g_INI_Key_Attack`: `uint8_t[7]` (r=0, w=0)
+- `g_INI_Key_Special`: `uint64_t` (r=0, w=0)
+- `g_INI_Key_Infantry`: `uint8_t[9]` (r=0, w=0)
+- `g_Is16BitMode`: `uint8_t` (r=4, w=2)
+- `g_Str_none`: `uint8_t[5]` (r=0, w=0)
+- `g_Str_Trace_Ahandle__PauseAdjust__ld`: `uint8_t[26]` (r=0, w=0)
+- `g_INI_Key_None`: `uint8_t[5]` (r=0, w=0)
+
+## Sample inferred_weak entries
+- `_ZTS2x1`: `uint32_t` (size only, no purity data)
+- `g_Str_Trace__s`: `uint32_t` (size only, no purity data)
+- `g_PlayerHouseFlags`: `uint32_t` (size only, no purity data)
+- `funcs_7CDE2B`: `uint32_t` (size only, no purity data)
