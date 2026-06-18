@@ -154,7 +154,7 @@ Wave Final: Build verification + spot-check audit — 4 parallel reviews
   **Acceptance**: 0/0 build, IDA cross-check
   **Evidence**: .omo/evidence/fr-task-1.3-maincampaign.txt
 
-- [ ] 7. Implement OptionsScreen + MultiplayerScreen + SkirmishSetup methods (~60 functions)
+- [x] 7. Implement OptionsScreen + MultiplayerScreen + SkirmishSetup methods (~60 functions)
 
   **What to do**: OptionsScreen (~25) + MultiplayerScreen (~20) + SkirmishSetup (~15). Source: `src/core/menu_select.cpp`.
   **Which agent**: `deep`

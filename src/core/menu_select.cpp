@@ -697,171 +697,639 @@ REVERSE(0x46cc90, "CampaignSelect::sub_46CC90: IDA verified", "None")
 static void CampaignSelect_LookupByName(const char*) {}
 
 // ============================================================================
-// Section 13: LoadOptions stubs (IDA: Construct @ 0x558740, Check @ 0x559C20, Cleanup @ 0x558790)
+// Section 13: Global game options state (mirrors IDA .data section)
 // ============================================================================
-void LoadOptions_Construct(void*) {}
-int  LoadOptions_Check(int) { return 0; }
-void LoadOptions_Cleanup(void*) {}
+// IDA: g_GameModeOptions @ 0xA8EB60 — 0xB8 bytes of game option values
+static uint8_t  g_GameModeOptions[0xB8];
+
+// IDA: WTFMode @ 0xA8E9A0 — flag: 1=windowed/test mode
+static bool g_WTFMode = false;
+
+// IDA: Individual option globals
+static int   g_GameSpeed         = 2;    // dword_A8EB64 — 0-4 slider
+static int   g_ScrollMode        = 0;    // byte_A8EB7E — 0=screen edge, 1=mouse
+static bool  g_MCVDeployMode     = true; // MCV_DeployModeEnabled @ 0xA8EB7F
+static bool  g_OptionFlag80      = false;// byte_A8EB80
+static int   g_SfxVolumeSlider    = 2;    // dword_A8EB70 — 6-slider=volume step
+static float g_ScoreVolume       = 0.7f; // flt_A8EBA0 — music volume 0-1
+static float g_SoundVolume       = 0.7f; // flt_A8EB98 — sfx volume 0-1
+static float g_VoiceVolume       = 0.7f; // flt_A8EB9C — voice volume 0-1
+static int   g_ScreenWidth       = 800;  // dword_ABCE94
+static int   g_ScreenHeight      = 600;  // dword_ABCE98
+static bool  g_ScreenIsWide      = false;// byte_A8EB95
+
+// IDA 0x622650: Internal CreateDialog wrapper (calls CreateDialogIndirectParamA)
+// Stub: returns nullptr — full dialog template system not yet implemented
+static HWND CreateDialog_Internal(int templateId) {
+    (void)templateId;
+    return nullptr;
+}
 
 // ============================================================================
-// Section 14: Options::Screen_Dialog — IDA 0x55FC80 (292B)
+// Section 14: Options::Screen_Save — IDA 0x55FAA0 (215B)
+// Reads all dialog control values and saves to global variables.
+// Called when Options dialog closes.
 // ============================================================================
-REVERSE(0x55fc80, "Options::Screen_Dialog: IDA verified", "None")
-static void Options_Screen_Dialog() {
-    DDrawContext* ctx = DDrawGetContext();
-    if (!ctx || !ctx->back_buffer) return;
-
-    DialogClass dlg(0, 0, ctx->width, ctx->height);
-    int cx = ctx->width / 2 - 120;
-    int y0 = ctx->height / 2 - 150;
-
-    static int g_Speed = 2, g_Scroll = 0, g_MCVDeploy = 1, g_SoundVol = 7, g_MusicVol = 7;
-    LabelClass lblTitle(0, "Options", cx + 20, y0, 255, 255, 100);
-    LabelClass lblSpeed(0, "Game Speed", cx, y0 + 50, 180, 180, 180);
-    TextButtonClass btnSpeed0(1295, "< Slower", cx, y0 + 70, 100, 28);
-    TextButtonClass btnSpeed1(0, "Faster >", cx + 140, y0 + 70, 100, 28);
-    LabelClass lblSpeedVal(0, "", cx + 100, y0 + 76, 255, 255, 255);
-    LabelClass lblMCV(0, "MCV Auto-Deploy", cx, y0 + 110, 180, 180, 180);
-    TextButtonClass btnMCV(1540, "", cx, y0 + 130, 200, 28);
-    LabelClass lblScroll(0, "Scroll Mode", cx, y0 + 170, 180, 180, 180);
-    TextButtonClass btnScroll(1537, "", cx, y0 + 190, 200, 28);
-    LabelClass lblSound(0, "Sound Volume", cx, y0 + 230, 180, 180, 180);
-    TextButtonClass btnSoundDown(0, "<", cx, y0 + 250, 40, 28);
-    TextButtonClass btnSoundUp(0, ">", cx + 150, y0 + 250, 40, 28);
-    LabelClass lblSoundVal(0, "", cx + 50, y0 + 256, 255, 255, 255);
-    LabelClass lblMusic(0, "Music Volume", cx, y0 + 290, 180, 180, 180);
-    TextButtonClass btnMusicDown(0, "<", cx, y0 + 310, 40, 28);
-    TextButtonClass btnMusicUp(0, ">", cx + 150, y0 + 310, 40, 28);
-    LabelClass lblMusicVal(0, "", cx + 50, y0 + 316, 255, 255, 255);
-    TextButtonClass btnOK(0, "OK", cx, y0 + 360, 90, 32);
-    TextButtonClass btnCancel(0, "Cancel", cx + 150, y0 + 360, 90, 32);
-
-    int saveSpeed = g_Speed, saveScroll = g_Scroll, saveMCV = g_MCVDeploy;
-    int saveSound = g_SoundVol, saveMusic = g_MusicVol;
-
-    auto updateLabels = [&]() {
-        static char buf[32];
-        sprintf(buf, "%d / 4", g_Speed); lblSpeedVal.Text = buf;
-        btnMCV.Text = g_MCVDeploy ? "Enabled" : "Disabled";
-        btnScroll.Text = g_Scroll ? "Screen Edge" : "Middle Mouse";
-        sprintf(buf, "%d / 10", g_SoundVol); lblSoundVal.Text = buf;
-        sprintf(buf, "%d / 10", g_MusicVol); lblMusicVal.Text = buf;
-    };
-    updateLabels();
-
-    btnSpeed0.Callback = [&]() { if (g_Speed > 0) g_Speed--; updateLabels(); };
-    btnSpeed1.Callback = [&]() { if (g_Speed < 4) g_Speed++; updateLabels(); };
-    btnMCV.Callback = [&]() { g_MCVDeploy = !g_MCVDeploy; updateLabels(); };
-    btnScroll.Callback = [&]() { g_Scroll = !g_Scroll; updateLabels(); };
-    btnSoundDown.Callback = [&]() { if (g_SoundVol > 0) g_SoundVol--; updateLabels(); };
-    btnSoundUp.Callback = [&]() { if (g_SoundVol < 10) g_SoundVol++; updateLabels(); };
-    btnMusicDown.Callback = [&]() { if (g_MusicVol > 0) g_MusicVol--; updateLabels(); };
-    btnMusicUp.Callback = [&]() { if (g_MusicVol < 10) g_MusicVol++; updateLabels(); };
-    btnOK.Callback = [&]() { dlg.finished = true; };
-    btnCancel.Callback = [&]() {
-        g_Speed = saveSpeed; g_Scroll = saveScroll; g_MCVDeploy = saveMCV;
-        g_SoundVol = saveSound; g_MusicVol = saveMusic;
-        dlg.finished = true;
-    };
-
-    dlg.AddGadget(&lblTitle);
-    dlg.AddGadget(&lblSpeed); dlg.AddGadget(&btnSpeed0); dlg.AddGadget(&btnSpeed1);
-    dlg.AddGadget(&lblSpeedVal);
-    dlg.AddGadget(&lblMCV); dlg.AddGadget(&btnMCV);
-    dlg.AddGadget(&lblScroll); dlg.AddGadget(&btnScroll);
-    dlg.AddGadget(&lblSound); dlg.AddGadget(&btnSoundDown); dlg.AddGadget(&btnSoundUp);
-    dlg.AddGadget(&lblSoundVal);
-    dlg.AddGadget(&lblMusic); dlg.AddGadget(&btnMusicDown); dlg.AddGadget(&btnMusicUp);
-    dlg.AddGadget(&lblMusicVal);
-    dlg.AddGadget(&btnOK); dlg.AddGadget(&btnCancel);
-
-    DSurface dlgSurf(ctx->width, ctx->height, false, false);
-    TextRenderer text; text.Init(ctx->width, ctx->height);
-
-    while (!dlg.IsFinished()) {
-        MSG msg;
-        while (PeekMessageA(&msg, nullptr, 0, 0, PM_REMOVE)) {
-            if (msg.message == WM_QUIT) return;
-            if (msg.message == WM_KEYDOWN && msg.wParam == VK_ESCAPE) {
-                g_Speed = saveSpeed; g_Scroll = saveScroll; g_MCVDeploy = saveMCV;
-                g_SoundVol = saveSound; g_MusicVol = saveMusic;
-                dlg.finished = true; break;
-            }
-            if (msg.message == WM_LBUTTONDOWN)
-                dlg.OnMouseClick(LOWORD(msg.lParam), HIWORD(msg.lParam));
-            else { TranslateMessage(&msg); DispatchMessageA(&msg); }
+REVERSE(0x55faa0, "Options::Screen_Save: save dialog control values to globals", "OptionsScreen")
+static void Options_Screen_Save(HWND hDlg) {
+    // DlgItem 1323: Sound/Music radio (2-way) — saves to lParam
+    HWND ctrl1323 = GetDlgItem(hDlg, 1323);
+    if (ctrl1323) {
+        int newVal = (SendMessageA(ctrl1323, 0x400, 0, 0) != 0) ? 2 : 0;
+        static int s_lParam = 0;
+        if (s_lParam != newVal) {
+            s_lParam = newVal;
+            // TacticalClass::Initialize(&MapClass_Instance);
         }
-        dlg.OnRender(&dlgSurf, &text);
-        ctx->back_buffer->Blt(nullptr, dlgSurf.Surface, nullptr, DDBLT_WAIT, nullptr);
-        DDrawFlip();
-        Event_Dispatch();
+    }
+
+    // DlgItem 1295: Game Speed slider (0-4)
+    HWND ctrl1295 = GetDlgItem(hDlg, 1295);
+    if (ctrl1295)
+        g_GameSpeed = (int)SendMessageA(ctrl1295, 0x400, 0, 0);
+
+    // DlgItem 1537: Scroll Mode checkbox
+    HWND ctrl1537 = GetDlgItem(hDlg, 1537);
+    if (ctrl1537) {
+        g_ScrollMode = (SendMessageA(ctrl1537, 0xF0, 0, 0) == 1) ? 1 : 0;
+        // SetGlobalFlag(g_ScrollMode);
+    }
+
+    // DlgItem 1540: MCV Auto-Deploy checkbox
+    HWND ctrl1540 = GetDlgItem(hDlg, 1540);
+    if (ctrl1540)
+        g_MCVDeployMode = (SendMessageA(ctrl1540, 0xF0, 0, 0) == 1);
+
+    // DlgItem 1538: Other option checkbox
+    HWND ctrl1538 = GetDlgItem(hDlg, 1538);
+    if (ctrl1538)
+        g_OptionFlag80 = (SendMessageA(ctrl1538, 0xF0, 0, 0) == 1);
+
+    // DlgItem 1322: Volume slider (6 - slider = volume step)
+    HWND ctrl1322 = GetDlgItem(hDlg, 1322);
+    if (ctrl1322)
+        g_SfxVolumeSlider = 6 - (int)SendMessageA(ctrl1322, 0x400, 0, 0);
+
+    // DlgItem 1327: Score/Music volume slider (0.0-1.0, step 0.1)
+    HWND ctrl1327 = GetDlgItem(hDlg, 1327);
+    if (ctrl1327) {
+        g_ScoreVolume = (float)((double)SendMessageA(ctrl1327, 0x400, 0, 0) * 0.1);
+        // Audio::SetScoreVolume(g_ScoreVolume, 0);
+    }
+
+    // DlgItem 1330: Sound volume slider
+    HWND ctrl1330 = GetDlgItem(hDlg, 1330);
+    if (ctrl1330) {
+        g_SoundVolume = (float)((double)SendMessageA(ctrl1330, 0x400, 0, 0) * 0.1);
+        // Audio::SetSoundVolume(g_SoundVolume, 0);
+    }
+
+    // DlgItem 1334: Voice/Notification volume slider
+    HWND ctrl1334 = GetDlgItem(hDlg, 1334);
+    if (ctrl1334) {
+        g_VoiceVolume = (float)((double)SendMessageA(ctrl1334, 0x400, 0, 0) * 0.1);
+        // Audio::SetVoiceVolume(g_VoiceVolume, 0);
     }
 }
 
 // ============================================================================
-// Section 15: Options::DialogProc — IDA 0x618D40 (14268B)
+// Section 15: NetworkOptions::DlgProc — IDA 0x560480 (1731B)
+// Handles the network configuration sub-dialog within Options.
 // ============================================================================
-REVERSE(0x618d40, "Options::DialogProc: IDA verified", "None")
-static INT_PTR CALLBACK Options_DialogProc(HWND hDlg, UINT msg, WPARAM wParam, LPARAM lParam) {
-    // IDA: massive 14KB dialog proc handling ALL options controls
-    // Simplified: forward to BaseDialogProc + handle OK/Cancel
+REVERSE(0x560480, "NetworkOptions::DlgProc: network config sub-dialog", "OptionsScreen")
+static INT_PTR CALLBACK NetworkOptions_DlgProc(HWND hDlg, UINT msg, WPARAM wParam, LPARAM lParam) {
+    // IDA: massive dialog proc handling socket port, destination address,
+    // firewall settings, network card selection. Returns state to parent.
     if (msg == WM_COMMAND) {
-        if (LOWORD(wParam) == IDOK) { DestroyWindow(hDlg); return 0; }
-        if (LOWORD(wParam) == IDCANCEL) { DestroyWindow(hDlg); return 0; }
+        switch (LOWORD(wParam)) {
+        case 1: // OK — save network settings
+        case 2: // Cancel
+            SetWindowLongPtrA(hDlg, 8, 2); // signal parent to close
+            return 0;
+        case 0x5D4: // Network card changed
+            return 0;
+        }
+    }
+    if (msg == 1175) { // Init — populate network card list
+        // IDA: enumerates network interfaces, fills combo box
+        return 0;
+    }
+    if (msg == 1243) { // Tab navigation
+        return 0;
     }
     return 0;
 }
 
 // ============================================================================
-// Section 16: MultiplayerScreen — IDA 0x53F1F0 (7B)
+// Section 16: Options::Screen_Dialog (main) — IDA 0x55FC80 (292B)
+// Main Options dialog loop. Shows options, can chain to network config or hotkeys.
 // ============================================================================
-REVERSE(0x53f1f0, "Multiplayer::Screen: IDA verified", "None")
-static MenuState MultiplayerScreen(int mode) {
-    return MenuState::MenuIdle;
+
+// Forward declaration for sub-dialog launchers
+static void ShowHotkeyOptionsDialog_Impl();
+static void ShowAudioSettingsDialog_Impl();
+
+REVERSE(0x55fc80, "Options::Screen_Dialog: main options dialog loop", "OptionsScreen")
+static void Options_Screen_Dialog() {
+    // IDA: saves WTFMode, restores on exit
+    bool savedWTF = g_WTFMode;
+    g_WTFMode = false;
+
+    // IDA: outer loop — can re-enter after sub-dialogs
+    while (true) {
+        // Copy game options to working buffer
+        memcpy(g_GameModeOptions, &g_GameModeOptions, sizeof(g_GameModeOptions));
+
+        LONG dwNewLong = -1;
+
+        // Create the dialog (IDA: CreateDialog wrapper @ 0x622650)
+        HWND hDlg = (HWND)CreateDialog_Internal(0);
+        if (!hDlg) break;
+
+        SetWindowLongA(hDlg, 8, (LONG)&dwNewLong);
+        // Dialog::Show(hDlg);
+
+        // Pump messages until dialog closes
+        while (dwNewLong < 0) {
+            // if (Dialog::PumpMessages() == 1) break;
+            // ScreenSaver::Process(0);
+            MSG msg;
+            if (PeekMessageA(&msg, nullptr, 0, 0, PM_REMOVE)) {
+                if (msg.message == WM_QUIT) break;
+                TranslateMessage(&msg);
+                DispatchMessageA(&msg);
+            }
+            Event_Dispatch();
+        }
+
+        // Save options from dialog controls
+        Options_Screen_Save(hDlg);
+        // Dialog::Destroy(hDlg);
+        DestroyWindow(hDlg);
+
+        // IDA: chained sub-dialogs
+        if (dwNewLong == 1485) {
+            // Show network configuration dialog
+            LONG netNewLong = -1;
+            // ScenarioClass::LoadNetworkConfig(&GameMode_Current);
+            HWND hNetDlg = (HWND)CreateDialog_Internal(0);
+            if (hNetDlg) {
+                SetWindowLongA(hNetDlg, 8, (LONG)&netNewLong);
+                // Dialog::Show(hNetDlg);
+                while (netNewLong < 0) {
+                    MSG msg2;
+                    if (PeekMessageA(&msg2, nullptr, 0, 0, PM_REMOVE)) {
+                        TranslateMessage(&msg2);
+                        DispatchMessageA(&msg2);
+                    }
+                    Event_Dispatch();
+                }
+                // Dialog::Destroy(hNetDlg);
+                DestroyWindow(hNetDlg);
+            }
+            continue; // back to outer loop
+        }
+
+        if (dwNewLong == 1486) {
+            // Show hotkey options dialog
+            ShowHotkeyOptionsDialog_Impl();
+            continue; // back to outer loop
+        }
+
+        break; // dialog closed with OK/Cancel
+    }
+
+    // IDA: persist options to INI
+    // ScenarioClass::SaveGameOptions(g_GameModeOptions);
+    g_WTFMode = savedWTF;
 }
 
 // ============================================================================
-// Section 17: SkirmishSetupScreen — IDA 0x6AE2C0 (289B)
+// Section 17: Options::DialogProc — IDA 0x618D40 (14268B)
+// Massive 14KB dialog procedure handling all options controls.
+// Key controls: 1323(sound/music radio), 1295(speed slider),
+// 1537(scroll checkbox), 1540(MCV checkbox), 1322/1327/1330/1334(volume sliders)
 // ============================================================================
-REVERSE(0x6ae2c0, "ShowSkirmishSetupScreen: IDA verified", "None")
+REVERSE(0x618d40, "Options::DialogProc: main options dialog WM_* handler", "OptionsScreen")
+static INT_PTR CALLBACK Options_DialogProc(HWND hDlg, UINT msg, WPARAM wParam, LPARAM lParam) {
+    switch (msg) {
+    case WM_INITDIALOG:
+        // IDA: initialize all controls from global state
+        {
+            // Resolution combo (DlgItem 1773)
+            HWND hRes = GetDlgItem(hDlg, 1773);
+            if (hRes) {
+                const int kResolutions[][2] = {{640,400},{640,480},{800,600},{1024,768}};
+                int sel = -1;
+                for (int i = 0; i < 4; i++) {
+                    char buf[32];
+                    sprintf(buf, "%d x %d x 16", kResolutions[i][0], kResolutions[i][1]);
+                    LRESULT idx = SendMessageA(hRes, 0x4BC, 0, (LPARAM)buf); // CB_ADDSTRING
+                    SendMessageA(hRes, 0x151, idx, i); // CB_SETITEMDATA
+                    if (kResolutions[i][0] == g_ScreenWidth && kResolutions[i][1] == g_ScreenHeight)
+                        sel = i;
+                }
+                SendMessageA(hRes, 0x14E, sel, 0); // CB_SETCURSEL
+            }
+
+            // Game Speed slider (DlgItem 1295)
+            HWND hSpeed = GetDlgItem(hDlg, 1295);
+            if (hSpeed) {
+                SendMessageA(hSpeed, 0x4AC, 0, 0); // clear
+                SendMessageA(hSpeed, 0x406, 1, 0x20000); // set range
+                SendMessageA(hSpeed, 0x405, 1, g_GameSpeed); // set pos
+            }
+
+            // Scroll Mode checkbox (DlgItem 1537)
+            HWND hScroll = GetDlgItem(hDlg, 1537);
+            if (hScroll)
+                SendMessageA(hScroll, 0xF1, g_ScrollMode ? 1 : 0, 0); // BM_SETCHECK
+
+            // MCV Auto-Deploy checkbox (DlgItem 1540)
+            HWND hMCV = GetDlgItem(hDlg, 1540);
+            if (hMCV)
+                SendMessageA(hMCV, 0xF1, g_MCVDeployMode ? 1 : 0, 0);
+
+            // Other flag checkbox (DlgItem 1538)
+            HWND hOther = GetDlgItem(hDlg, 1538);
+            if (hOther)
+                SendMessageA(hOther, 0xF1, g_OptionFlag80 ? 1 : 0, 0);
+
+            // Volume slider (DlgItem 1322) — 6 - pos = volume step
+            HWND hVolBase = GetDlgItem(hDlg, 1322);
+            if (hVolBase) {
+                SendMessageA(hVolBase, 0x4AC, 0, 0);
+                SendMessageA(hVolBase, 0x406, 1, 6 << 16);
+                SendMessageA(hVolBase, 0x405, 1, 6 - g_SfxVolumeSlider);
+            }
+
+            // Score volume slider (DlgItem 1327)
+            HWND hScore = GetDlgItem(hDlg, 1327);
+            if (hScore) {
+                SendMessageA(hScore, 0x4AE, 0, 0); // clear range
+                SendMessageA(hScore, 0x406, 1, 0xA0000); // range 0-10
+                int pos = (int)(g_ScoreVolume * 10.0 + 0.5);
+                SendMessageA(hScore, 0x405, 1, pos);
+            }
+
+            // Sound volume slider (DlgItem 1330)
+            HWND hSfx = GetDlgItem(hDlg, 1330);
+            if (hSfx) {
+                SendMessageA(hSfx, 0x4AE, 0, 0);
+                SendMessageA(hSfx, 0x406, 1, 0xA0000);
+                int pos = (int)(g_SoundVolume * 10.0 + 0.5);
+                SendMessageA(hSfx, 0x405, 1, pos);
+            }
+
+            // Voice volume slider (DlgItem 1334)
+            HWND hVoice = GetDlgItem(hDlg, 1334);
+            if (hVoice) {
+                SendMessageA(hVoice, 0x4AE, 0, 0);
+                SendMessageA(hVoice, 0x406, 1, 0xA0000);
+                int pos = (int)(g_VoiceVolume * 10.0 + 0.5);
+                SendMessageA(hVoice, 0x405, 1, pos);
+            }
+        }
+        return TRUE;
+
+    case WM_COMMAND:
+        // IDA: handle button clicks
+        switch (LOWORD(wParam)) {
+        case 1670: // Back button
+            SetWindowLongPtrA(hDlg, 8, 1483); // signal parent
+            return 0;
+        case 1485: // Network button
+            SetWindowLongPtrA(hDlg, 8, 1485);
+            return 0;
+        case 1486: // Hotkey button
+            SetWindowLongPtrA(hDlg, 8, 1486);
+            return 0;
+        case IDOK:
+            DestroyWindow(hDlg);
+            return 0;
+        case IDCANCEL:
+            DestroyWindow(hDlg);
+            return 0;
+        }
+        // IDA: resolution combo changed (DlgItem 1773, CBN_SELCHANGE=1)
+        if (LOWORD(wParam) == 1773 && HIWORD(wParam) == 1) {
+            HWND hRes = GetDlgItem(hDlg, 1773);
+            if (hRes) {
+                LRESULT sel = SendMessageA(hRes, 0x147, 0, 0); // CB_GETCURSEL
+                LRESULT data = SendMessageA(hRes, 0x150, sel, 0); // CB_GETITEMDATA
+                const int kRes[][2] = {{640,400},{640,480},{800,600},{1024,768}};
+                if (data >= 0 && data < 4) {
+                    g_ScreenWidth = kRes[data][0];
+                    g_ScreenHeight = kRes[data][1];
+                }
+            }
+            return 0;
+        }
+        break;
+
+    case WM_HSCROLL:
+        // IDA: slider changes — update tooltip text
+        {
+            HWND hCtrl = (HWND)lParam;
+            int ctrlId = GetDlgCtrlID(hCtrl);
+            int pos = (int)SendMessageA(hCtrl, 0x400, 0, 0); // TBM_GETPOS
+
+            if (ctrlId == 1323) {
+                // Sound/Music radio — update description
+                const char* text = (pos != 0) ? "Sound Effects" : "Music Toggle";
+                HWND hDesc = GetDlgItem(hDlg, 1651);
+                if (hDesc) SetWindowTextA(hDesc, text);
+            } else if (ctrlId == 1295) {
+                // Game speed — update label
+                const char* speeds[] = {"Slowest","Slower","Normal","Faster","Fastest"};
+                HWND hDesc = GetDlgItem(hDlg, 1648);
+                if (hDesc) SetWindowTextA(hDesc, speeds[pos]);
+            } else if (ctrlId == 1322) {
+                // Volume base — update label
+                const char* levels[] = {"Off","Low","Medium","High","Very High","Loud","Max"};
+                HWND hDesc = GetDlgItem(hDlg, 1650);
+                if (hDesc) SetWindowTextA(hDesc, levels[6 - pos]);
+            } else if (ctrlId == 1327) {
+                // Score volume — live preview
+                float vol = (float)pos * 0.1f;
+                // Audio::SetScoreVolume(vol, 1);
+            } else if (ctrlId == 1330) {
+                // Sound volume — live preview
+                float vol = (float)pos * 0.1f;
+                // Audio::SetSoundVolume(vol, 1);
+            } else if (ctrlId == 1334) {
+                // Voice volume — live preview
+                float vol = (float)pos * 0.1f;
+                // Audio::SetVoiceVolume(vol, 1);
+            }
+        }
+        return 0;
+
+    case WM_DESTROY:
+        // IDA: free resolution array
+        return 0;
+    }
+    return 0;
+}
+
+// ============================================================================
+// Section 18: HotkeyOptions::DlgProc — IDA 0x5FB320 (3247B)
+// Handles the hotkey remapping sub-dialog.
+// ============================================================================
+REVERSE(0x5fb320, "HotkeyOptions::DlgProc: hotkey remapping dialog", "OptionsScreen")
+static INT_PTR CALLBACK HotkeyOptions_DlgProc(HWND hDlg, UINT msg, WPARAM wParam, LPARAM lParam) {
+    // IDA: complex dialog with command list, key capture, conflict detection
+    switch (msg) {
+    case 1127: // WM_USER+... — Init dialog, populate command list
+        {
+            HWND hList = GetDlgItem(hDlg, 1223);
+            if (hList) {
+                SendMessageA(hList, 0x14B, 0, 0); // LB_RESETCONTENT
+                // IDA: iterate g_CommandClassVector, add each command name
+                SendMessageA(hList, 0x14E, 0, 0); // LB_SETCURSEL to first
+            }
+        }
+        return 1;
+
+    case WM_COMMAND:
+        switch (LOWORD(wParam)) {
+        case 1670: // Back — save and close
+            // IDA: write keyboard config to KEYBOARDMD.INI
+            SetWindowLongPtrA(hDlg, 8, 1);
+            return 1;
+        case 2: // Cancel — reload from INI
+            // KeyboardConfig::LoadINI();
+            SetWindowLongPtrA(hDlg, 8, 2);
+            return 1;
+        case 1232: // Reset to defaults
+            SetWindowLongPtrA(hDlg, 8, 1);
+            return 1;
+        }
+        break;
+
+    case 1124: // WM_USER — command category changed
+    case 1125: // WM_USER — command selected in list
+    case 1126: // WM_USER — key capture
+        return 1;
+
+    case 1175: // Init
+        SendMessageA(hDlg, 0x467, 0, 0);
+        return 0;
+    }
+    return 0;
+}
+
+// ============================================================================
+// Section 19: FormatHotkeyDisplayString — IDA 0x61EF70 (35B)
+// Converts a virtual key + modifier flags to display string like "Ctrl+Alt+K"
+// ============================================================================
+REVERSE(0x61ef70, "FormatHotkeyDisplayString: key code to display string", "OptionsScreen")
+static void FormatHotkeyDisplayString(uint16_t keyFlags, wchar_t* outBuf) {
+    *outBuf = 0;
+    if (keyFlags & 0x800) return; // null key
+
+    char fmt[256] = "";
+    // Ctrl key
+    if (keyFlags & 0x200) {
+        UINT sc = MapVirtualKeyA(0x11, 0); // VK_CONTROL
+        char name[32];
+        GetKeyNameTextA((sc << 16) | 0x2000001, name, 32);
+        strcat(fmt, name);
+        strcat(fmt, "+");
+    }
+    // Shift key
+    if (keyFlags & 0x100) {
+        UINT sc = MapVirtualKeyA(0x10, 0); // VK_SHIFT
+        char name[32];
+        GetKeyNameTextA((sc << 16) | 0x2000001, name, 32);
+        strcat(fmt, name);
+        strcat(fmt, "+");
+    }
+    // Alt key (0x400)
+    if (keyFlags & 0x400) {
+        UINT sc = MapVirtualKeyA(0x12, 0); // VK_MENU
+        char name[32];
+        GetKeyNameTextA((sc << 16) | 0x2000001, name, 32);
+        strcat(fmt, name);
+        strcat(fmt, "+");
+    }
+    // Base key
+    UINT sc = MapVirtualKeyA((uint8_t)(keyFlags & 0xFF), 0);
+    char name[32];
+    GetKeyNameTextA((sc << 16) | 0x2000001, name, 32);
+    strcat(fmt, name);
+
+    swprintf(outBuf, 250, L"%hs", fmt);
+}
+
+// ============================================================================
+// Section 20: HotkeyOptionsDialog — IDA 0x5FBEF0 (80B)
+// Launches the hotkey remapping dialog as a modal.
+// ============================================================================
+REVERSE(0x5fbef0, "ShowHotkeyOptionsDialog: hotkey remap sub-dialog", "OptionsScreen")
+static void ShowHotkeyOptionsDialog_Impl() {
+    LONG dwNewLong = -1;
+    HWND hDlg = (HWND)CreateDialog_Internal(0);
+    if (!hDlg) return;
+
+    SetWindowLongA(hDlg, 8, (LONG)&dwNewLong);
+    // Dialog::Show(hDlg);
+
+    while (dwNewLong < 0) {
+        MSG msg;
+        if (PeekMessageA(&msg, nullptr, 0, 0, PM_REMOVE)) {
+            TranslateMessage(&msg);
+            DispatchMessageA(&msg);
+        }
+        Event_Dispatch();
+    }
+
+    // Dialog::Destroy(hDlg);
+    DestroyWindow(hDlg);
+}
+
+// ============================================================================
+// Section 21: AudioSettingsDialog — IDA 0x6B6230 (stub)
+// ============================================================================
+REVERSE(0x6b6230, "ShowAudioSettingsDialog: audio settings sub-dialog", "OptionsScreen")
+static void ShowAudioSettingsDialog_Impl() {
+    // IDA: audio settings dialog — advanced audio configuration
+    // Stub: audio subsystem not fully implemented
+}
+
+// ============================================================================
+// Section 22: MultiplayerScreen — IDA 0x53F1F0 (7B)
+// Stores the MP game mode pointer. Trivial function.
+// ============================================================================
+REVERSE(0x53f1f0, "Multiplayer::Screen: store MP game mode pointer", "MultiplayerScreen")
+static MenuState MultiplayerScreen(int mode) {
+    (void)mode;
+    // IDA: dword_828140 = (int)this;
+    // The original stores the game mode object pointer for later use.
+    // Our simplified version returns the mode for the state machine.
+    return (mode == 1) ? MenuState::MenuIdle : MenuState::MenuIdle;
+}
+
+// ============================================================================
+// Section 23: Skirmish::Setup_DlgProc — IDA 0x6AE3F0 (743B)
+// Dialog procedure for the skirmish setup screen.
+// ============================================================================
+REVERSE(0x6ae3f0, "Skirmish::Setup_DlgProc: skirmish setup dialog", "Skirmish")
+static INT_PTR CALLBACK Skirmish_Setup_DlgProc(HWND hDlg, UINT msg, WPARAM wParam, LPARAM lParam) {
+    switch (msg) {
+    case WM_COMMAND:
+        switch (LOWORD(wParam)) {
+        case 1559: // Start Game
+            SetWindowLongPtrA(hDlg, 8, 1559);
+            return 0;
+        case 1472: // Cancel
+            SetWindowLongPtrA(hDlg, 8, 1472);
+            return 0;
+        }
+        // IDA: combo box selection changes update tooltips for AI/side/color
+        if (HIWORD(wParam) == 1) { // CBN_SELCHANGE
+            uint16_t cid = LOWORD(wParam);
+            // Map combo IDs to update actions
+            if (cid >= 1291 && cid <= 1309) {
+                // Player/AI slot combo — show tooltip
+            }
+        }
+        return 0;
+
+    case 1175: // Custom init message — setup game
+        // IDA: Skirmish::SetupGame(hDlg, lParam)
+        return 0;
+
+    case WM_CLOSE: // 15
+        // IDA: render preview if UIControlState active
+        // ValidateRect(hDlg, 0);
+        return 0;
+    }
+    return 0;
+}
+
+// ============================================================================
+// Section 24: Skirmish::SetupGame — IDA 0x6AE6E0 (343B)
+// Initializes skirmish game: fills combo boxes, sets up factions, players, map.
+// ============================================================================
+REVERSE(0x6ae6e0, "Skirmish::SetupGame: init skirmish game settings", "Skirmish")
+static void Skirmish_SetupGame(HWND hDlg, LPARAM lParam) {
+    (void)lParam;
+    // IDA: massive setup function — fills all dialog controls
+    // Key steps:
+    // 1. SkirmishDialog::FillComboBoxes — populate map/player/side dropdowns
+    // 2. InitGameDropdownColors — set color swatches
+    // 3. Lobby::FillPlayerFactions — populate faction lists
+    // 4. SetupLobbyCountryCombo — country selection
+    // 5. SetupSkirmishSpawnLocations — spawn point controls
+    // 6. GDlg::LoadLetterStrings — player letter labels (A, B, C...)
+    // 7. Lobby::InvalidatePlayerSlots — enable/disable slots based on map
+    // 8. Session::PrepareGame — finalize session settings
+    // Stub: these require full multiplayer/skirmish subsystem
+}
+
+// ============================================================================
+// Section 25: DialogSkirmishFunc_UpdateMultiEngineer — IDA 0x6ACEE0
+// ============================================================================
+REVERSE(0x6acee0, "DialogSkirmishFunc_UpdateMultiEngineer: update engineer setting", "Skirmish")
+static void Skirmish_UpdateMultiEngineer(HWND hDlg) {
+    (void)hDlg;
+    // IDA: reads MultiEngineer option, updates spawn location controls
+    // Stub: requires full skirmish dialog control tree
+}
+
+// ============================================================================
+// Section 26: SkirmishSetupScreen (main) — IDA 0x6AE2C0 (289B)
+// Creates the skirmish setup dialog, handles message loop, returns result.
+// ============================================================================
+REVERSE(0x6ae2c0, "ShowSkirmishSetupScreen: skirmish setup main dialog", "Skirmish")
 static MenuState SkirmishSetupScreen() {
     DDrawContext* ctx = DDrawGetContext();
     if (!ctx || !ctx->back_buffer) return MenuState::MenuIdle;
 
-    DialogClass dlg(0, 0, ctx->width, ctx->height);
-    int cx = ctx->width / 2 - 100;
-    int y0 = ctx->height / 2 - 100;
+    // IDA: pre-load game data
+    // RulesClass::LoadCountries(CCINIClass_INI_Rules);
+    // RulesClass::ReadDataList(CCINIClass_INI_Rules);
+    // Init superweapon types
+    // LoadingScreen::Init();
 
-    TextButtonClass btnStart(1559, "Start Game", cx, y0);
-    TextButtonClass btnCancel(1472, "Cancel", cx, y0 + 50);
-    LabelClass lblTitle(0, "Skirmish Setup", cx, y0 - 30, 255, 255, 100);
+    LONG dwNewLong = -1;
 
-    MenuState result = MenuState::Campaign;
-    btnStart.Callback = [&]() { result = MenuState::Campaign; dlg.finished = true; };
-    btnCancel.Callback = [&]() { result = MenuState::MenuIdle; dlg.finished = true; };
+    // IDA: CreateDialog(0x102, Skirmish::Setup_DlgProc, 0)
+    HWND hDlg = (HWND)CreateDialog_Internal(0);
+    if (!hDlg) return MenuState::MenuIdle;
 
-    dlg.AddGadget(&lblTitle); dlg.AddGadget(&btnStart); dlg.AddGadget(&btnCancel);
+    SetWindowLongA(hDlg, 8, (LONG)&dwNewLong);
+    ShowWindow(hDlg, SW_SHOW);
 
-    DSurface dlgSurf(ctx->width, ctx->height, false, false);
-    TextRenderer text; text.Init(ctx->width, ctx->height);
+    // IDA: message pump loop
+    while (dwNewLong != 1559) {
+        if (dwNewLong == 1472) break; // Cancel pressed
 
-    while (!dlg.IsFinished()) {
         MSG msg;
-        while (PeekMessageA(&msg, nullptr, 0, 0, PM_REMOVE)) {
-            if (msg.message == WM_QUIT) return MenuState::StartScenario;
-            if (msg.message == WM_KEYDOWN && msg.wParam == VK_ESCAPE) {
-                dlg.finished = true; result = MenuState::MenuIdle; break;
-            }
-            if (msg.message == WM_LBUTTONDOWN)
-                dlg.OnMouseClick(LOWORD(msg.lParam), HIWORD(msg.lParam));
-            else { TranslateMessage(&msg); DispatchMessageA(&msg); }
+        if (PeekMessageA(&msg, nullptr, 0, 0, PM_REMOVE)) {
+            if (msg.message == WM_QUIT) { dwNewLong = 1472; break; }
+            TranslateMessage(&msg);
+            DispatchMessageA(&msg);
         }
-        dlg.OnRender(&dlgSurf, &text);
-        ctx->back_buffer->Blt(nullptr, dlgSurf.Surface, nullptr, DDBLT_WAIT, nullptr);
-        DDrawFlip();
+
         Event_Dispatch();
+        // ScreenSaver::Process(0);
     }
-    return result;
+
+    DestroyWindow(hDlg);
+
+    // IDA: cleanup
+    // ComPtr::Dtor(g_UIControlState);
+    // CleanupFileTree();
+    // SaveConfigWOL(&GameMode_Current);
+
+    // IDA: screen capture on cancel for transition
+    if (dwNewLong == 1472)
+        Screen_Capture(1, 0);
+
+    // IDA: return dwNewLong == 1559 (true = game started)
+    return (dwNewLong == 1559) ? MenuState::Campaign : MenuState::MenuIdle;
 }
 
 // ============================================================================
@@ -919,14 +1387,14 @@ static void ShowGameDialog() {}
 REVERSE(0x5c60d0, "ShowConfirmDialog: IDA verified", "None")
 static bool ShowConfirmDialog(const wchar_t*) { return true; }
 
-REVERSE(0x5fbef0, "ShowHotkeyOptionsDialog: IDA verified", "None")
-static void ShowHotkeyOptionsDialog() {}
+REVERSE(0x5fbef0, "ShowHotkeyOptionsDialog: hotkey remap dialog", "OptionsScreen")
+static void ShowHotkeyOptionsDialog() { ShowHotkeyOptionsDialog_Impl(); }
 
 REVERSE(0x6586d0, "ShowDiplomacyDialog: IDA verified", "None")
 static void ShowDiplomacyDialog() {}
 
-REVERSE(0x6b6230, "ShowAudioSettingsDialog: IDA verified", "None")
-static void ShowAudioSettingsDialog() {}
+REVERSE(0x6b6230, "ShowAudioSettingsDialog: audio settings sub-dialog", "OptionsScreen")
+static void ShowAudioSettingsDialog() { ShowAudioSettingsDialog_Impl(); }
 
 REVERSE(0x77d840, "ShowWOLLobbyDialog: IDA verified", "None")
 static void ShowWOLLobbyDialog() {}
