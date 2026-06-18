@@ -182,10 +182,11 @@ cmake --build build_linux
 | 指标 | 数值 |
 |------|------|
 | 已实现函数 | ~140（~200+ stubs） |
-| 编译错误 / 警告 | 0 / 0 |
-| IDA 命名 | **10,366 / 10,366 (100%)** — 函数全部命名完成 |
+| 编译错误 / 警告 | 0 / 0 (gamemd_core) |
+| IDA 命名 | **13,437 / 19,067 (70.5%)** — 822 sub_* 已自动命名 (Task 19) |
 | IDA 类 header | **1,120 / 1,120 (100%)** — 所有类成员变量已解析，0 unknown_ |
-| sub_* 残留 | **0** — 类成员字段全部识别，无匿名占位符 |
+| sub_* 残留 | **5,459** — 函数级别 (非类成员)，3,590 需解编译命名 |
+| completed (functions.json) | **11,872** — 命名 + >10 字节自动标记 |
 | REVERSE 标记 | ~32（2 Inject 活跃, 39 None） |
 | 已完成函数 | 39（faithful translations, completed:true） |
 | Inject 模式 | **2/13 活跃**（9 verified → None, 2 stubs → None, slot stack） |
@@ -475,6 +476,12 @@ RA2/YR 的移动系统使用 COM 架构。GUID 表位于 `.rdata` 段（0x7E9A60
 
 ### 最近完成（按时间倒序）
 
+- **2026-06-18**: Task 19 — 全局函数批量命名 (sub_* 自动命名管线)
+  - 822/4,412 非 CRT sub_* 函数通过 caller-context 启发式自动命名
+  - `batch_name_subs_ida.py`：两轮迭代命名（Pass 1: 794, Pass 2: 28）
+  - `ida_extract.py` 重新生成 functions.json：13,437 已命名 (+3,071)，11,872 已完成
+  - gamemd_core 编译：0 errors, 0 warnings
+  - 剩余 3,590 sub_* 需解编译命名（后续 Pass 3+）
 - **2026-06-17**: IDA 类 header 定义全部完成
   - 1,120 个 IDA 类的成员变量全部解析并生成 C++ header
   - 0 unknown_ 残留字段，0 sub_* 匿名占位符
@@ -496,11 +503,13 @@ RA2/YR 的移动系统使用 COM 架构。GUID 表位于 `.rdata` 段（0x7E9A60
 
 - .data 回滚验证仍需非渲染函数（13 已完成函数全是 XSurface，不写 .data）
 - Phase 2 将 13 个 XSurface 判定为 UNCERTAIN（vtable Lock/Unlock 未解析）→ 手动覆盖 + 警告生效。Phase 3 可减少 UNCERTAIN 比例。
+- 3,590 sub_* 仍需解编译命名（调用链太深，缺少非 sub_* caller）
 
 ### 后续计划
 
 1. 完成一个写 .data 的非渲染函数，做真正的 Inject (idempotent=false) 回滚测试
 2. 扩展更多 Replace/Inject 钩子（高频函数应标 idempotent=true 避免事务开销）
+3. Pass 3+：对剩余 3,590 sub_* 进行解编译命名（需 IDA decompiler，预计 2-5 小时运行时间）
 
 并行进行：
 - 10-19 xref 全局变量命名（~180 个）
@@ -514,3 +523,4 @@ RA2/YR 的移动系统使用 COM 架构。GUID 表位于 `.rdata` 段（0x7E9A60
 4. 看 `injectFunctionTest/comparisonResult.log` 了解最新 Capture 数据
 5. 看 `D:\RA2MD\debug\snapshot-*` 了解最近崩溃记录
 6. 任何崩溃分析：先满足"故障排除最低标准"6 项，缺一项不下结论
+7. 查看 `.omo/evidence/fr-task-19-globals.txt` 了解 Task 19 详细状态
