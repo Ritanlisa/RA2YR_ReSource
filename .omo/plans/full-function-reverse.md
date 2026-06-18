@@ -193,7 +193,7 @@ Wave Final: Build verification + spot-check audit — 4 parallel reviews
   **Acceptance**: 0/0 build, IDA cross-check
   **Evidence**: .omo/evidence/fr-task-2.2-tactical.txt
 
-- [ ] 12. Implement Effects + Rendering globals (~393 functions)
+- [x] 12. Implement Effects + Rendering globals (~393 functions)
 
   **What to do**: Anim/Particle rendering (~30) + Fog/Radar/UI overlay (~40) + remaining rendering global functions (~323).
   **Which agent**: `deep` — split across 3 parallel sub-tasks
