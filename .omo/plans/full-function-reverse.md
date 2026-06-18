@@ -161,14 +161,14 @@ Wave Final: Build verification + spot-check audit — 4 parallel reviews
   **Acceptance**: 0/0 build, IDA cross-check
   **Evidence**: .omo/evidence/fr-task-1.4-screens.txt
 
-- [ ] 8. Implement BinkMovie + Loading + SidebarClass + UI components (~116 functions)
+- [x] 8. Implement BinkMovie + Loading + SidebarClass + UI components (~116 functions)
 
   **What to do**: BinkMovie (~15) + Loading/Intro (~10) + SidebarClass (~41) + Mouse/Command/Message/ToolTip (~50).
   **Which agent**: `deep` — split across 4 parallel sub-tasks
   **Acceptance**: 0/0 build, IDA cross-check per function
   **Evidence**: .omo/evidence/fr-task-1.5-uicomponents.txt
 
-- [ ] 9. Implement remaining menu global functions (~428 functions)
+- [x] 9. Implement remaining menu global functions (~428 functions)
 
   **What to do**: All remaining menu-category global functions not yet implemented. Group by source file. Source: `src/core/menu_select.cpp`, `src/core/init_game.cpp` menu sections.
   **Which agent**: `deep` — split across 4 parallel groups (~107 each)

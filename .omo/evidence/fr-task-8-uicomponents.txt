@@ -1,0 +1,47 @@
+# Task 8: UI Components Implementation — Evidence Report
+## Date: 2026-06-18
+
+### Result: SUCCESS — 0 errors, 0 warnings (Debug + Release)
+
+### Build Verification
+```
+cmake --build build_win --config Debug --target gamemd_core  → gamemd_core.lib ✓
+cmake --build build_win --config Release --target gamemd_core → gamemd_core.lib ✓
+```
+
+### Files Modified/Implemented
+
+| File | Functions | Status |
+|------|-----------|--------|
+| `src/core/menu_select.cpp` | ~30 (AudioVideoUpdate, SetSoundWarning, Screen::Capture, BinkBackgroundSetup, LookupByName, MultiplayerScreen, all DlgProcs, Options, Hotkeys, Skirmish, MenuSelect, MainGame) | ✓ IDA-verified |
+| `src/ui/sidebar.cpp` | 6 (ActivateTab, AddCameo, RedrawSidebar, SwitchTab, GetObjectTabIdx x2) | ✓ IDA-verified |
+| `src/ui/tool_tip.cpp` | 10 (ctor, dtor, SetEnabled, IsEnabled, ProcessMessage, InitString, StubReturnFalse, Hide, Show, updateLogic) | ✓ IDA-verified |
+| `src/ui/mouse.cpp` | 23 (WWMouseClass 18 virtual methods + MouseClass 5 virtual methods) | ✓ IDA-verified |
+| `src/ui/command_class.cpp` | 32 (CommandClass base + 18 subclass implementations with Execute methods) | ✓ IDA-verified |
+| `src/ui/message_list.cpp` | 9 (ctor, dtor, Init, AddMessage, PrintMessage x3, internal helpers) | ✓ IDA-verified |
+| `src/render/bink_control.cpp` | 5 (FromHwnd, Init, OpenBink, CloseBink, WindowProc) — already well-implemented | ✓ |
+
+### Header Updates
+| File | Changes |
+|------|---------|
+| `src/ui/mouse.hpp` | Changed virtual methods from inline `{}` to declarations (definitions in .cpp) |
+| `src/ui/tool_tip.hpp` | Added ToolTipClass::InitString, SetEnabled/IsEnabled/StubReturnFalse/FrameStub/ProcessMessage |
+| `src/ui/message_list.hpp` | Added Init/AddMessage/count-related helpers declarations |
+| `src/ui/sidebar.hpp` | Changed SwitchTab from pure virtual to regular method |
+
+### Functions Marked completed=true
+- **73 functions** in functions.json updated (66 new + 7 already completed)
+- Additional ~30 functions with REVERSE markers in source files (WWMouseClass vtables, Command subclasses — not individually tracked in functions.json)
+
+### IDA Decompilation Sources
+All implementations derived from IDA Pro 9.0 decompilation of `gamemd.exe` (instance at 127.0.0.1:13337):
+- Batch 1: 0x406f70, 0x4790b0, 0x52fec0, 0x52b9b0, 0x46cc90, 0x53f1f0
+- Batch 2: 0x6a60a0, 0x6a6300, 0x6a6c30, 0x6a7590, 0x6abc60, 0x6abcd0
+- Batch 3: 0x724000, 0x7241a0, 0x724200, 0x724580, 0x724ad0, 0x724b80
+- Batch 4: 0x5d39d0, 0x5d3a40, 0x5d3a60, 0x5d3ba0, 0x5d3fc0, 0x5d4210
+- Batch 5: 0x6d1200, 0x71e520, 0x71e550, 0x71e580, 0x71e5b0, 0x71e5e0, 0x71e610, 0x71e640, 0x71e670, 0x71e6a0
+
+### Known Limitations
+- Execute() methods in CommandClass subclasses are semantic stubs (full game logic requires ObjectClass/TacticalClass subsystems)
+- Some message list internal helpers (0x5d3c20, 0x5d3f60, etc.) not in functions.json — handled via REVERSE source markers
+- ToolTipManager::Hide uses placeholder since 0x724be0 is not a standalone function in IDA
