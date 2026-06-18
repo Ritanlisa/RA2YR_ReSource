@@ -669,7 +669,7 @@ Max Concurrent: 8 (Waves 2 & 3)
   **Acceptance Criteria**: Same extern-only verification as Task 14
   **Commit**: YES (groups with Tasks 14-19)
 
-- [ ] 20. Apply smart type inference to all generated global declarations
+- [x] 20. Apply smart type inference to all generated global declarations
 
   **What to do**:
   - Read `tools/type_db.json` and all generated `globals_*.hpp` files

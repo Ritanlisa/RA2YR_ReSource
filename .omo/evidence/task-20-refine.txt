@@ -1,0 +1,76 @@
+Task 20 — Smart Type Inference Refinement
+===========================================
+Date: 2026-06-18
+Status: COMPLETE
+
+## Goal
+Apply smart type inference to refine types in globals_*.hpp by cross-referencing
+type_db.json with purity_effects.json.
+
+## Results
+
+### Weak count: 4 → 2 (reduced by 50%)
+
+### UPGRADED to inferred_strong (2 entries):
+
+1. _ZTS2x1 (0x81BBC0)
+   - uint32_t → const char[4]
+   - Evidence: C++ RTTI typeinfo name string "2x1\0" (byte-verified). RTTI data is
+     compiler-generated and immutable. 1 data xref from .data (typeinfo struct).
+   - Confidence: inferred_weak → inferred_strong
+
+2. g_Str_Trace__s (0x81FD08)
+   - uint32_t → const char[16]
+   - Evidence: Format string pool ("%s\n"+"Failed!"+"OK"), byte-verified. Used by
+     DDraw::CapabilityCheck and HandleWOLMatchMessage for trace/log output. 
+     String literals in .data are read-only by nature.
+   - Confidence: inferred_weak → inferred_strong
+
+### RETAINED as inferred_weak with refined types (2 entries):
+
+3. funcs_7CDE2B (0x87C488)
+   - uint32_t → const uint32_t (function pointer, const-qualified)
+   - Evidence: Single dword holding function address in CRT locale dispatch table.
+     Adjacent "Block" variable at -4 has purity R/W, suggesting this region is
+     mutable during CRT init. Only 1 data xref.
+   - Annotation: "CRT locale dispatch table element; byte-verified function address"
+
+4. g_PlayerHouseFlags (0x825C28)
+   - uint32_t → uint32_t[16] (64-byte array)
+   - Evidence: 64-byte block (0x825C28-0x825C68, end sentinel at 0x825C68).
+     g_ScenarioLoadEvent at -8 has purity R/W from MenuSelect/CampaignSelect::DlgProc.
+     Entry names and context suggest per-house flag data, likely mutable.
+   - Annotation: "64-byte per-house flag block"
+
+### CONST additions to inferred_strong (4 entries):
+Based on purity data: R non-empty, W empty → added const qualifier.
+
+| Symbol | Address | Old Type | New Type | Readers |
+|--------|---------|----------|----------|---------|
+| Network_EventHeader | 0xA8D810 | uint16_t | const uint16_t | 5 |
+| Game_bAllowVRAMSidebar | 0xA8EB96 | uint8_t | const uint8_t | 1 |
+| g_SpawnModeActive | 0xA8ED5D | uint8_t | const uint8_t | 3 |
+| g_IsMultiplayerSession | 0xB777B0 | uint8_t | const uint8_t | 11 |
+
+## Files Modified
+- tools/type_db.json — 4 confidence/type updates + 4 annotations
+- src/core/globals_core.hpp — 7 declarations updated
+- src/system/globals_system.hpp — 1 declaration updated
+
+## Verification
+- Build: MSVC Debug passes (gamemd_core.lib)
+- Weak check: python -c "import json; d=json.load(open('tools/type_db.json')); ..." → 2
+- No changes to ida_direct entries or purity_effects.json
+
+## Methodology
+1. Read type_db.json → found 4 inferred_weak entries
+2. Cross-referenced with purity_effects.json R/W map (all 4 had no direct purity data)
+3. Performed byte-level inspection via IDA get_bytes for type evidence
+4. Used IDA xref analysis to find referencing functions
+5. Checked neighborhood purity (±256 bytes) for context
+6. Applied rules from task spec:
+   - No purity → per-address check → strong non-purity evidence → upgrade possible
+   - Typeinfo strings = immutable (compiler-placed) → upgrade
+   - Format strings = read-only (literal pool) → upgrade
+   - Function table/dynamic data = mutable → keep weak
+7. Scanned all 778 inferred_strong for read-only (R but no W) → added const to 4

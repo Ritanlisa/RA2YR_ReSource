@@ -33,7 +33,7 @@ extern char Str1[2];
 // 0x87c484: heap block pointer (ida_type: char*)
 extern char* Block;
 // 0x87c488: function pointer array
-extern uint32_t funcs_7CDE2B;
+extern const uint32_t funcs_7CDE2B;  // CRT locale dispatch table element
 // 0x87c598: CRT ctype table (ida_type: unsigned __int16[])
 extern uint16_t __ctype[];
 // 0x87c79c: source buffer size

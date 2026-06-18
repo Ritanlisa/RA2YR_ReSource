@@ -1808,12 +1808,13 @@
     "write_count": 0
   },
   "_ZTS2x1": {
-    "confidence": "inferred_weak",
-    "cpp_type": "uint32_t",
+    "confidence": "inferred_strong",
+    "cpp_type": "const char[4]",
     "read_count": 0,
     "ref_count": 0,
     "source": "size",
-    "write_count": 0
+    "write_count": 0,
+    "annotation": "C++ RTTI typeinfo name string (immutable); byte-verified '2x1\\0'"
   },
   "__ctype": {
     "confidence": "ida_direct",
@@ -1873,11 +1874,12 @@
   },
   "funcs_7CDE2B": {
     "confidence": "inferred_weak",
-    "cpp_type": "uint32_t",
+    "cpp_type": "const uint32_t",
     "read_count": 0,
     "ref_count": 0,
     "source": "size",
-    "write_count": 0
+    "write_count": 0,
+    "annotation": "CRT locale dispatch table element; byte-verified function address; 'Block' at -4 has R/W"
   },
   "g_AbstractTypePool": {
     "confidence": "inferred_strong",
@@ -6305,11 +6307,12 @@
   },
   "g_PlayerHouseFlags": {
     "confidence": "inferred_weak",
-    "cpp_type": "uint32_t",
+    "cpp_type": "uint32_t[16]",
     "read_count": 0,
     "ref_count": 0,
     "source": "size",
-    "write_count": 0
+    "write_count": 0,
+    "annotation": "64-byte per-house flag block; g_ScenarioLoadEvent at -8 has R/W; likely mutable"
   },
   "g_PlayerHouseFlags_End": {
     "confidence": "inferred_strong",
@@ -9408,12 +9411,13 @@
     "write_count": 0
   },
   "g_Str_Trace__s": {
-    "confidence": "inferred_weak",
-    "cpp_type": "uint32_t",
+    "confidence": "inferred_strong",
+    "cpp_type": "const char[16]",
     "read_count": 0,
     "ref_count": 0,
     "source": "size",
-    "write_count": 0
+    "write_count": 0,
+    "annotation": "Format string pool; byte-verified '%%s\\n'+'Failed!'+'OK'; used by trace/log functions"
   },
   "g_Str_Trace__sBARL": {
     "confidence": "ida_direct",
