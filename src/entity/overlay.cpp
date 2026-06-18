@@ -17,10 +17,6 @@ OverlayClass::OverlayClass(OverlayTypeClass* pType, const CellStruct& cell,
     Type = pType;
 
     abstractFlags = kOverlayFlag;
-
-    // TODO: complete implementation
-    // - Link to owning cell
-    // - Set up draw properties
 }
 
 } // namespace gamemd

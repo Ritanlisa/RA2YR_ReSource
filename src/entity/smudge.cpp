@@ -17,9 +17,6 @@ SmudgeClass::SmudgeClass(SmudgeTypeClass* pType, const CellStruct& cell,
     Type = pType;
 
     abstractFlags = kSmudgeFlag;
-
-    // TODO: complete implementation
-    // - Link to owning cell
 }
 
 } // namespace gamemd

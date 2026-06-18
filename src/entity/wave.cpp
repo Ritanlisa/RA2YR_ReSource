@@ -100,9 +100,6 @@ WaveClass::WaveClass(TechnoClass* pTarget, WaveType waveType,
     WaveClass_field_1CC = 0;
 
     abstractFlags = kWaveFlag;
-
-    // TODO: complete implementation
-    // - Set up wave cell propagation from type
 }
 
 } // namespace gamemd

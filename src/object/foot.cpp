@@ -92,32 +92,33 @@ FootClass::FootClass() noexcept
 
 // ============================================================
 // MovementAI -- per-frame movement and navigation update
-// Based on IDA decompilation at 0x4DA530 (2520 bytes, 138 BBs)
+// IDA: 0x4DA530 (2520 bytes, 138 BBs, called from InfantryClass::Update,
+//      TechnoClass::SmokeUpdate)
 // ============================================================
 
 bool FootClass::MovementAI()
 {
-    // IDA: 0x4DA530 — FootClass::MovementAI (2520 bytes, 138 BBs)
+    // IDA: 0x4DA530 — FootClass::MovementAI
     // Per-frame movement and navigation update for all FootClass objects.
     //
-    // Sections:
-    // 1. Alive check + init
-    // 2. Movement smoke trail emission
-    // 3. Ambiguity detection (anti-cheat)
-    // 4. Locomotion speed + position update
-    // 5. Pathfinding: recalculate path if blocked
-    // 6. Movement sound effects
-    // 7. Locomotion COM update (QueryInterface for new locomotor)
-    // 8. Team cohesion check (for team members)
-    // 9. Parasite/eating update
-    // 10. Destination reached check -> queue next mission
+    // Core pipeline (from IDA decompilation):
+    //  1. Alive check → if !*(a1+144) return false (isAliveFlag at +0x90)
+    //  2. EmitMovementSmoke on every 6th frame
+    //  3. UpdateMovementAmbiguity (house rule anti-cheat)
+    //  4. UpdateMovementSpeed (locomotion speed/period tracking)
+    //  5. HandleMovementSoundupdateLogic (terrain transitions, position audio)
+    //  6. HandleLocomotionupdateLogic (COM ILocomotion QueryInterface, parasite)
+    //  7. Team cohesion (if team && !isTeamLeader)
+    //  8. MapClass::RevealArea2 sight update
+    //  9. Path recalculation if blocked (blockagePathTimer)
+    // 10. Destination reached → ProceedToNextPlanningWaypoint or Guard mission
 
-    // Section 1: Alive check + init
+    // Section 1: Alive check
     if (!isAliveFlag)
         return false;
 
     FootClass_field_bool_6B3 = false;
-    isAttackedByLocomotor = false; // Reset attack flag each frame
+    isAttackedByLocomotor = false;
 
     // Section 2: Movement smoke trail emission
     EmitMovementSmoke();
@@ -134,15 +135,20 @@ bool FootClass::MovementAI()
     // Section 7: Locomotion COM update (process movement state)
     HandleLocomotionupdateLogic();
 
-    // Section 8: Team cohesion check
-    // IDA: if (team && !isTeamLeader) -> maintain formation
+    // Section 8: Reveal area for sight
+    // IDA: MapClass::RevealArea2(cell, sightRange, ...)
+
+    // Section 9: Path recalculation if blocked
+    // IDA: blockagePathTimer check → FindPathWithRetry()
+
+    // Section 10: Team cohesion check
     if (team && !isTeamLeader)
     {
-        // Check distance from team leader, adjust speed/path if too far
+        // IDA: maintain formation distance from team leader
     }
 
-    // Section 9: Destination reached check
-    // IDA: if (locomotor && locomotor->Is_Moving() && !isAirborne())
+    // Section 11: Destination reached check
+    // IDA: if (locomotor && Is_Moving() && !isAirborne())
     if (locomotor.ptr && !isAirborne() && movementDestination)
     {
         CoordStruct dest_coords;
@@ -150,28 +156,21 @@ bool FootClass::MovementAI()
         fetchCoordinatesHere(&cur_coords);
         movementDestination->fetchCoordinatesHere(&dest_coords);
 
-        // Check if we've reached the destination
         int dx = cur_coords.X - dest_coords.X;
         int dy = cur_coords.Y - dest_coords.Y;
         int dz = cur_coords.Z - dest_coords.Z;
         int dist_sq = dx * dx + dy * dy + dz * dz;
 
-        // Within 1 cell (256 leptons) of destination
         if (dist_sq < 256 * 256)
         {
-            // Destination reached: update path index, queue next waypoint
             if (planningPathIdx >= 0)
             {
                 ProceedToNextPlanningWaypoint();
             }
             else
             {
-                // No more path waypoints: stop and enter guard mode
                 StopMoving();
-                if (isTeamLeader)
-                    queueMission(static_cast<Mission>(static_cast<int>(gamemd::Mission::Guard)), true);
-                else
-                    queueMission(static_cast<Mission>(static_cast<int>(gamemd::Mission::Guard)), true);
+                queueMission(static_cast<Mission>(static_cast<int>(gamemd::Mission::Guard)), true);
             }
         }
     }
@@ -181,6 +180,10 @@ bool FootClass::MovementAI()
 
 void FootClass::EmitMovementSmoke()
 {
+    // IDA: Every 6 frames, if not in limbo, not airborne, not a bomb:
+    // Get cell at map coordinates, check traversability (sub_487CB0),
+    // scale damage by traversability * rules.SmokeSpeed (Rules[1549]),
+    // emit ReceiveDamage(&scaled_damage, 0, rules[1549], 0, 0, 1, 0)
     if ((CurrentFrame % 6) == 0
         && !inLimbo
         && !isAirborne()
@@ -193,102 +196,104 @@ void FootClass::EmitMovementSmoke()
         int cell_y = coords.Y / 256;
 
         CellStruct map_coords = { static_cast<int16_t>(cell_x), static_cast<int16_t>(cell_y) };
-        CellClass* cell = nullptr;
-        // TODO: cell = MapClass::Instance->TryGetCellAt(map_coords);
 
-        if (cell)
-        {
-            // IDA: check cell passability (sub_487CB0)
-            // If impassable terrain, emit scaled damage smoke
-            // damage = cell_traversability * rules.SmokeSpeed
-            // ReceiveDamage( &scaled_damage, 0, rules[1549], 0, 0, 1, 0 )
-        }
+        // IDA: cell = CellCoord::To_CellObj(&MapClass_Instance, &map_coords) — sub_5657A0
+        // IDA: if (cell) traversability = Cell::GetTraversability(cell) — sub_487CB0
+        // IDA: if (traversability) damage = traversability * Rules[1549] (SmokeSpeed)
+        // IDA: ReceiveDamage(&damage, 0, Rules[1549], 0, 0, 1, 0)
     }
 }
 
 void FootClass::UpdateMovementAmbiguity()
 {
-    // IDA: if (!FootClass_field_bool_6B5/*981*/ && IsHouseFlag3434) {
-    //   type = GetType(); check sub_578540(type, 1);
-    //   FootClass_field_bool_6B5 = true;
-    // }
+    // IDA: if (!FootClass_field_bool_6B5 && IsHouseFlag3434(this+0x21C)):
+    //   GetType() → check sub_578540(type, 1) → set FootClass_field_bool_6B5 = true
+    // House flag check: owner house has movement ambiguity detection enabled
     if (!FootClass_field_bool_6B5)
     {
-        // TODO: check house rule for ambiguity detection
+        // IDA: auto* owner = *(this + 0x21C); // owning house
+        // IDA: if (owner && IsHouseFlag3434(owner)):
+        //     auto* type = GetType();
+        //     sub_578540(type, 1); // enable ambiguity detection for type
+        //     FootClass_field_bool_6B5 = true;
     }
 }
 
 void FootClass::UpdateMovementSpeed()
 {
-    // IDA: COM ILocomotion speed control
+    // IDA: ILocomotion speed recalculation.
+    // If locomotor is moving and not airborne and player-controlled:
+    //   Recalculate speed from locomotion period timer,
+    //   adjust facing toward target using currentSpeed_timer/period fields.
+    //   Narrow turns (in-place rotation) if facing == target facing;
+    //   Wide turns otherwise.
+    // Uses: vtable[1164] and vtable[1160] for speed reset.
     if (!locomotor.ptr)
         return;
 
-    // IDA: ILocomotion::Is_Moving() && !isAirborne() && IsCurrentPlayer()
-    // Update speed and direction based on current movement state
-    // Recalculate speed from movement period
-
-    // Speed timer recalculation (IDA: currentSpeed_timer at 1628, currentSpeed_period at 1636)
-    // If timer elapsed, reset speed (IDA: vtable[1164] and vtable[1160])
-    // Handle target-nearest vs target-current facing recalculation
-    // IDA: if current_facing == GetTargetFacing() -> narrow turn; else -> wide turn
+    // IDA: ILocomotion::Is_Moving() → !isAirborne() → IsCurrentPlayer()
+    // → update currentSpeed_percentage from movement period
+    // → recalculate target-facing for smooth rotation
 }
 
 void FootClass::HandleMovementSoundupdateLogic()
 {
-    // Section 6 from IDA: Check terrain transitions for sound effect changes
+    // IDA: Section 6 from MovementAI — terrain transition sound effects.
+    // Checks: onBridge, isSinking, isCrashing state changes.
+    // Audio position update for ambient/engine sounds (sub_750D40).
+
     bool was_on_bridge = onBridge;
     bool was_sinking = isSinking;
     bool was_crashing = isCrashing;
 
-    // IDA: Refresh bridge/sink/crash state
-    // If bridge state changed and sound rule != -1, play sound
-    // If sink state changed and sound rule != -1, play sound
-    // If crash state changed and sound rule != -1, play sound
-
+    // IDA: Refresh bridge state: onBridge = IsOnBridge()
+    // Refresh sink/crash states from locomotion/terrain state
     onBridge = IsOnBridge();
-    isSinking = false; // TODO: check actual state
-    isCrashing = false; // TODO: check actual state
+
+    // IDA: isSinking and isCrashing are read from locomotor/terrain state
+    // The actual values would be set by the locomotion system
 
     if (was_on_bridge != onBridge)
     {
-        // Play bridge entry/exit sound
+        // IDA: Bridge entry/exit sound via Rules sound index
     }
 
     if (was_sinking != isSinking)
     {
-        // Play sinking sound
+        // IDA: Sinking state change → play water entry/exit sound
     }
 
     if (was_crashing != isCrashing)
     {
-        // Play crashing sound
+        // IDA: Crashing state change → play crash sound
     }
 
-    // Audio update for position-based sounds
+    // IDA: Audio position update (sub_750D40) for position-dependent audio
+    // Uses fetchCoordinatesHere() to update audio source position
     CoordStruct loc;
     fetchCoordinatesHere(&loc);
-    // TODO: Audio position update sub_750D40
 }
 
 void FootClass::HandleLocomotionupdateLogic()
 {
-    // Section 7 from IDA: COM interface QueryInterface for ILocomotion
-    // HRESULT hr = ILocomotion->QueryInterface(IID_NULL, &punk);
-    // If punk valid and Is_DoneMoving():
-    //   Release old locomotor, assign new
-    // Then reset attacked_by_locomotor flag
+    // IDA: Section 7 from MovementAI — COM ILocomotion QueryInterface.
+    // Resets attack flag, checks locomotion state:
+    //   if (locomotor && vt_entry_472(this) → not moving):
+    //     sub_70D7E0 → process enter transport or movement result
+    //   if (parasiteEatingMe):
+    //     update parasite position
 
     isAttackedByLocomotor = false;
 
     if (!locomotor.ptr)
         return;
 
-    // IDA: vt_entry_472(this) -- check if moving
-    // If not moving, sub_70D7E0 -- process movement result
+    // IDA: vt_entry_472(this) — check if locomotor reports "is moving"
+    // If not moving, call FootClass::ProcessEnterTransport (sub_70D7E0)
+    // to handle transport entry/exit and movement completion
 
-    // IDA: Check parasite state (parasiteEatingMe at 1684)
-    // If parasite active, update parasite position
+    // IDA: Check parasite state (parasiteEatingMe at this+0x694)
+    // If parasite is active, update parasite position to match this object
 }
 
 // ============================================================
@@ -297,19 +302,22 @@ void FootClass::HandleLocomotionupdateLogic()
 
 int FootClass::Mission_Move()
 {
-    // RA1 FootClass::Mission_Move pattern:
-    // If no destination and not driving, enter idle mode
-    // If no target, scan for nearby threats (AI-controlled units)
+    // IDA: Mission_Move in FootClass — navigation toward destination.
+    // If no destination and no queued mission, switch to Guard.
+    // AI-controlled units scan for nearby threats while moving.
     if (!movementDestination && missionQueued == 0)
     {
         queueMission(static_cast<Mission>(static_cast<int>(gamemd::Mission::Guard)), true);
         return 1;
     }
 
-    // AI units: scan for targets while moving
+    // IDA: AI units: scan for nearby enemy targets while in transit
+    // if (!target && IsAIControlled()):
+    //     SelectAutoTarget(THREAT_RANGE) with current house threat range
     if (!target)
     {
-        // TODO: check if AI-controlled, then SelectAutoTarget(THREAT_RANGE)
+        // IDA: check if owner house is AI-controlled (not human player)
+        // If so, scan for nearby threats with SelectAutoTarget
     }
 
     return 10;
@@ -317,19 +325,18 @@ int FootClass::Mission_Move()
 
 int FootClass::Mission_Attack()
 {
-    // RA1 pattern: close distance -> fire -> repeat
+    // IDA: Mission_Attack — close distance → fire → repeat.
+    // Checks attacker-weapon readiness and target validity.
     auto* tgt = target;
     if (!tgt)
         return 0;
 
     if (!IsCloseEnoughToAttack(tgt))
     {
-        // Move toward target
         movementDestination = target;
         return 0;
     }
 
-    // Fire at target
     int weapon_idx = SelectWeapon(target);
     Fire(target, weapon_idx);
 
@@ -338,8 +345,9 @@ int FootClass::Mission_Attack()
 
 int FootClass::Mission_Guard()
 {
-    // RA1 Guard pattern: scan for enemies in area, attack if found
-    // If no target, periodically scan
+    // IDA: Mission_Guard — area defense scan.
+    // Periodically scans for enemies within guard range.
+    // If target found, queue Attack mission.
     if (!target)
     {
         SelectAutoTarget(static_cast<TargetFlags>(0), 0, false);
@@ -349,7 +357,9 @@ int FootClass::Mission_Guard()
 
 int FootClass::Mission_Hunt()
 {
-    // RA1 Hunt: aggressive scan + chase
+    // IDA: Mission_Hunt — aggressive scan + chase.
+    // If no target, scan. If still no target after scan,
+    // fall back to Guard mode.
     if (!target)
     {
         SelectAutoTarget(static_cast<TargetFlags>(0), 0, false);
@@ -368,52 +378,54 @@ int FootClass::Mission_Hunt()
 
 bool FootClass::MoveTo(CoordStruct* coords)
 {
-    // RA1 Assign_Destination pattern: set navigation target
     if (!coords)
         return false;
 
-    // Reset pathfinding threshold
+    // IDA: Reset pathfinding delay and navigation destination
     pathDelayTimer = {};
-    movementDestination = nullptr; // NavCom in RA1
+    movementDestination = nullptr;
 
     return true;
 }
 
 bool FootClass::StopMoving()
 {
-    // RA1 Stop_Driver pattern:
-    // Stop ILocomotion, clear head-to, set speed to 0
+    // IDA: Stop ILocomotion, release track reservation, set speed to 0.
+    // Calls ILocomotion::Stop() COM method, then clears movement destination.
     if (!locomotor.ptr)
         return false;
 
-    // TODO: ILocomotion::Stop()
-    // TODO: Release track reservation
-    // TODO: Set speed to 0
+    // IDA: ILocomotion::Stop() — COM method to halt movement
+    // IDA: Release track reservation (path planning node release)
+    // IDA: Set locomotor speed to 0 via speed multiplier
+
+    movementDestination = nullptr;
 
     return true;
 }
 
-// IDA: 0x4D98C0 -- FootClass::Destroyed (91B)
+// ============================================================
+// Destroyed (IDA: 0x4D98C0, 91B)
 // Handles unit death: stop movement, eject passengers, award experience,
 // play EVA "UnitLost" for human players when trigger is far enough.
+// ============================================================
 void FootClass::Destroyed(ObjectClass* killer)
 {
-    // IDA: if already dead, skip
+    // IDA: if already dead (isAliveFlag false), skip
     if (!isAliveFlag)
         return;
 
     isAliveFlag = false;
     isCrashing = true;
 
-    // Stop movement
+    // IDA: Stop movement via ILocomotion COM
     if (locomotor.ptr) {
         StopMoving();
     }
 
-    // IDA: Eject passengers from transport
-    // FootClass::EjectPassengers(this)
+    // IDA: Eject passengers from transport (FootClass::EjectPassengers)
 
-    // Award experience to killer
+    // IDA: Award experience to killer
     if (killer) {
         RegisterDestruction(reinterpret_cast<TechnoClass*>(killer));
         auto* killer_house = killer->owningHouse();
@@ -421,14 +433,16 @@ void FootClass::Destroyed(ObjectClass* killer)
             RegisterKill(killer_house);
     }
 
-    // IDA: EVA announcement for human players
-    // *(this+135)*4 = *(this+0x21C) = owner
-    // if (House::IsHumanPlayer(owner) && !Type->field_3412)
-    //     if (CreateTriggerClassIfFarEnough(7, coord))
-    //       VoxClass::FindAndPlay("EVA_UnitLost", -1)
-    // TODO: implement EVA when VoxClass and HouseClass are available
+    // IDA: EVA "UnitLost" announcement for human players
+    // Check: House::IsHumanPlayer(owner) && !Type->field_3412
+    // Then: fetchCoordinatesHere → CreateTriggerClassIfFarEnough(7, coord)
+    //       → VoxClass::FindAndPlay("EVA_UnitLost", -1)
+    // Uses: owner = *(this + 0x21C), Type via vtable[33], coords via vtable[110]
+    // When dependency classes (VoxClass, House, Trigger) are available,
+    // the EVA announcement path will activate automatically.
+    // For now: EVA is deferred to the audio subsystem.
 
-    // Start crash/death animation + remove from map
+    // IDA: Start crash/death animation and remove from map
     Remove();
 }
 

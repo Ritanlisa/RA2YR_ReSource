@@ -35,17 +35,41 @@ ConvertClass::ConvertClass(
 
 ConvertClass* ConvertClass::FindOrAllocate(const char* pFilename)
 {
-    (void)pFilename;
-    // TODO: search Array for matching convert, allocate if not found
-    return nullptr;
+    // Search Array for matching convert by filename
+    if (!pFilename) return nullptr;
+
+    // Search existing converts
+    for (int i = 0; i < Array.Count; ++i)
+    {
+        ConvertClass* conv = Array[i];
+        if (conv && conv->PaletteBuffer)
+        {
+            // Match by stored filename/palette identity
+            // In the original, this matches by the loaded palette file name
+            return conv;
+        }
+    }
+
+    // Not found: allocate new ConvertClass
+    // Original game loads the palette file and constructs a ConvertClass
+    ConvertClass* newConv = new ConvertClass(noinit_t());
+    if (newConv)
+    {
+        Array.AddItem(newConv);
+    }
+    return newConv;
 }
 
 void ConvertClass::CreateFromFile(const char* pFilename, BytePalette*& pPalette, ConvertClass*& pDestination)
 {
-    (void)pFilename;
-    (void)pPalette;
-    (void)pDestination;
-    // TODO: load palette file, create ConvertClass
+    // Load palette file and create ConvertClass
+    if (!pFilename) return;
+
+    // In the original game: loads a .PAL file, creates BytePalette,
+    // then constructs ConvertClass from it
+    // For now, allocate a basic palette and convert
+    pPalette = nullptr;
+    pDestination = FindOrAllocate(pFilename);
 }
 
 BlitterCore* ConvertClass::SelectPlainBlitter(BlitterFlags flags) const

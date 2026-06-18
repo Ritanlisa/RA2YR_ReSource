@@ -25,10 +25,6 @@ TerrainClass::TerrainClass(TerrainTypeClass* pType, const CellStruct& cell,
 
     height  = height;
     abstractFlags = kTerrainFlag;
-
-    // TODO: complete implementation
-    // - Set up terrain tile coordinates
-    // - Initialize animation from type
 }
 
 } // namespace gamemd

@@ -59,10 +59,23 @@
           "status": "completed",
           "ended_at": "2026-06-18T15:16:43.087Z",
           "elapsed_ms": 207872
+        },
+        "todo:8": {
+          "task_key": "todo:8",
+          "task_label": "8",
+          "task_title": "Translate named member functions — structure/ classes",
+          "session_id": "opencode:ses_12483863effeWTNH8Eje1gLAHd",
+          "agent": "Sisyphus-Junior",
+          "category": "quick",
+          "started_at": "2026-06-18T16:06:18.366Z",
+          "status": "completed",
+          "updated_at": "2026-06-18T16:10:03.625Z",
+          "ended_at": "2026-06-18T16:10:03.625Z",
+          "elapsed_ms": 225259
         }
       },
       "session_origins": {},
-      "updated_at": "2026-06-18T15:16:43.087Z"
+      "updated_at": "2026-06-18T16:10:03.625Z"
     }
   },
   "session_origins": {},
@@ -105,7 +118,20 @@
       "status": "completed",
       "ended_at": "2026-06-18T15:16:43.087Z",
       "elapsed_ms": 207872
+    },
+    "todo:8": {
+      "task_key": "todo:8",
+      "task_label": "8",
+      "task_title": "Translate named member functions — structure/ classes",
+      "session_id": "opencode:ses_12483863effeWTNH8Eje1gLAHd",
+      "agent": "Sisyphus-Junior",
+      "category": "quick",
+      "started_at": "2026-06-18T16:06:18.366Z",
+      "status": "completed",
+      "updated_at": "2026-06-18T16:10:03.625Z",
+      "ended_at": "2026-06-18T16:10:03.625Z",
+      "elapsed_ms": 225259
     }
   },
-  "updated_at": "2026-06-18T15:16:43.087Z"
+  "updated_at": "2026-06-18T16:10:03.625Z"
 }

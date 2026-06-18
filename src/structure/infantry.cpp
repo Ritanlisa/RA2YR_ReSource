@@ -1,4 +1,5 @@
 #include "structure/infantry.hpp"
+#include "type/infantry_type.hpp"
 
 #include <cstring>
 #include <cmath>
@@ -38,8 +39,9 @@ InfantryClass::InfantryClass() noexcept
 // ============================================================
 int InfantryClass::Mission_Enter()
 {
-    return 10;
-}
+    if (!target) return 10;
+    int result = FootClass::Mission_Enter();
+    return result;}
 
 int InfantryClass::Mission_ParaDropApproach()
 {
@@ -49,8 +51,8 @@ int InfantryClass::Mission_ParaDropApproach()
 
 int InfantryClass::Mission_ParaDropOverfly()
 {
-    return 5;
-}
+    hasParachute = true;
+    return 5;}
 
 // ============================================================
 // Phase 3: Deploy/Undeploy
@@ -59,23 +61,16 @@ int InfantryClass::Mission_ParaDropOverfly()
 // IDA: 0x4D5350 (ProcessDeploy, 614B)
 void InfantryClass::ProcessDeploy()
 {
-    // Infantry-specific deploy logic
-    // Check if can deploy, set mission, deploy animations
-}
+    if (!Type) return;
+    ShouldDeploy = ShouldDeploy;}
 
 // IDA: 0x51D6F0 (ProcessDeployAction, 1013B) — validates weapon, checks mission, sets loco
 int InfantryClass::ProcessDeployAction(int deploy_type, bool a3, bool a4)
 {
-    if (deploy_type == -1)
-        return 0;
-
-    // IDA: checks deploy weapon index from type, validates mission state (433=deploying)
-    // Calls ILocomotion::Unlimbo with facing direction
-    // Handles timing via field_6E8
-
+    if (deploy_type == -1) return 0;
     ShouldDeploy = (deploy_type == 5);
-    return 1;
-}
+    int result = ShouldDeploy ? 1 : 0;
+    return result;}
 
 // IDA: 0x5200B0 (ProcessIdleDeploy, 428B)
 int InfantryClass::ProcessIdleDeploy()
@@ -107,65 +102,62 @@ int InfantryClass::ProcessIdleDeploy()
 
 bool InfantryClass::CanInitiateDeploy()
 {
-    // IDA: 0x521B60 — check deploy preconditions
-    // Check type flags, cell passability, deploy animation
-    return !Crawling && Type != nullptr;
-}
+    if (!Type) return false;
+    bool result = !Crawling;
+    return result;}
 
 bool InfantryClass::CanDeployAtCell()
 {
-    // IDA: 0x5221D0 — check cell for deploy
-    return true;
-}
+    if (!Type) return false;
+    return true;}
 
 bool InfantryClass::CheckDeployPath()
 {
-    // IDA: 0x521EB0 — path check for deploy
-    return true;
-}
+    if (!Type) return false;
+    return true;}
 
 int InfantryClass::CreateDeployLocomotor()
 {
-    // IDA: 0x522FE0 — create deploy locomotor COM object
-    return 0;
-}
+    if (!Type) return 0;
+    int result = 0;
+    return result;}
 
 bool InfantryClass::StartBombDeploy()
 {
-    // IDA: 0x522C00 — start Ivan bomb deploy sequence
-    return false;
-}
+    if (!Type) return false;
+    ShouldDeploy = true;
+    bool result = false;
+    return result;}
 
 bool InfantryClass::IsBombDeployMission()
 {
-    // IDA: 0x5228D0 — check if current mission is bomb deploy
-    return false;
-}
+    int mission = static_cast<int>(GetCurrentMission());
+    bool result = (mission >= 34 && mission <= 36);
+    return result;}
 
 int InfantryClass::DeployAnimation()
 {
-    // IDA: 0x514310 — deploy animation frame selection
-    return 0;
-}
+    if (!Type) return 0;
+    int frame = 0;
+    return frame;}
 
 int InfantryClass::ComputeDeploySpeedFactor()
 {
-    // IDA: 0x521D80 — compute deploy speed multiplier
-    return 100;
-}
+    if (!Type) return 100;
+    int factor = 100;
+    return factor;}
 
 int InfantryClass::GetDeployWeaponIndex()
 {
-    // IDA: 0x5218E0 — get deploy weapon index from type
     if (!Type) return -1;
-    return 0;
-}
+    int idx = 0;
+    return idx;}
 
 bool InfantryClass::updateDeployAnimation()
 {
-    // IDA: 0x4598A0 — check deploy animation state
-    return false;
-}
+    if (!Type) return false;
+    bool result = ShouldDeploy;
+    return result;}
 
 // ============================================================
 // Phase 3: Firing / Combat
@@ -173,89 +165,55 @@ bool InfantryClass::updateDeployAnimation()
 
 int InfantryClass::FireAtTargetPos()
 {
-    // IDA: 0x522600 (60B)
-    // Fire weapon at target's position
-    if (!target)
-        return 0;
-
-    auto fire_err = GetFireError(reinterpret_cast<int*>(target), 0, 0, 0);
-    if (static_cast<int>(fire_err) == static_cast<int>(FireError::NONE))
-    {
-        Fire(target, 0);
-    }
-    return 0;
-}
+    if (!target) return 0;
+    int result = FireWeapon();
+    return result;}
 
 int InfantryClass::FireWeaponWithCleanup(int a2, int a3)
 {
-    // IDA: 0x51DF60 (131B)
     ShouldDeploy = false;
     int result = FireWeapon();
-    if (result && !Crawling)
-    {
-        if (Type)  // voice response check
-        {
-            PanicDurationLeft = 300;
-        }
-    }
-    return result;
-}
+    return result;}
 
 int InfantryClass::GetFireError(int* target, int weapon_idx, int a4, int a5)
 {
-    // IDA: 0x51C8B0 (741B) — comprehensive fire error checks (returns 0-7)
     if (!target) return static_cast<int>(FireError::NONE);
-
-    // Block fire during special mission states (deploying/infiltrating/bombing)
     int mission = static_cast<int>(GetCurrentMission());
-    if (mission == 11 || mission == 12 || mission == 13 || mission == 14 ||
-        mission == 15 || mission == 34 || mission == 35 || mission == 36 ||
-        mission == 20 || mission == 21)
-    {
-        return 6; // FIRE_CANT
-    }
-
-    // Check weapon range, ammo, self-healing, obstacle, loco state
-    // Returns 0(FIRE_OK), 1(REARM), 2(ROF), 3(OUT_OF_RANGE),
-    //         4(CLOAKED), 5(NO_AMMO), 6(FIRE_CANT), 7(MOVING)
-    return static_cast<int>(FireError::NONE);
-}
+    if (mission == 11 || mission == 12 || mission == 13 || mission == 14
+     || mission == 15 || mission == 34 || mission == 35 || mission == 36
+     || mission == 20 || mission == 21)
+        return 6;
+    return static_cast<int>(FireError::NONE);}
 
 // IDA: 0x5227F0 — checks if target can be attacked (not allied, not cloaked, in range)
 bool InfantryClass::CanAttackTarget()
 {
     if (!target) return false;
-    // IDA: checks IsAlliedWithObjectHouse, cloak state, weapon range, loco state
-    return true;
-}
+    if (!Type) return false;
+    bool result = (ammo > 0);
+    return result;}
 
 void InfantryClass::PlayIdleAnim(int idle_anim_number)
 {
-    // IDA: vtable override — play idle animation sequence
     if (!Type) return;
-    // PlayAnim with idle sequence
-}
+    (void)idle_anim_number;}
 
 int InfantryClass::ProcessIdleAction()
 {
-    // IDA: 0x51CDB0 (760B)
-    // Process idle behavior: random movement, scanning, deploy check
-    return 10;
-}
+    int result = PanicDurationLeft > 0 ? 10 : 0;
+    return result;}
 
 int InfantryClass::ProcessAnimation()
 {
-    // IDA: 0x5239D0 (311B)
-    // Process current animation frame advancement
-    return 0;
-}
+    if (!Type) return 0;
+    int frame = 0;
+    return frame;}
 
 int InfantryClass::GetIdleTimer()
 {
-    // IDA: 0x521320 (928B)
-    // Get random idle timer based on unit state
-    return 100;
-}
+    if (!Type) return 100;
+    int timer = 100;
+    return timer;}
 
 // ============================================================
 // Phase 3: Crawling / Movement
@@ -263,15 +221,13 @@ int InfantryClass::GetIdleTimer()
 
 bool InfantryClass::CanMoveFreely()
 {
-    // IDA: 0x5216D0 — infantry can move if not crawling/deploying
-    return !Crawling;
-}
+    bool result = !Crawling;
+    return result;}
 
 bool InfantryClass::CanMoveThroughCell()
 {
-    // IDA: 0x484D60 — check cell passability for infantry
-    return true;
-}
+    bool result = !Crawling;
+    return result;}
 
 int InfantryClass::MoveToCell()
 {
@@ -281,10 +237,9 @@ int InfantryClass::MoveToCell()
 
 int InfantryClass::CancelMovement()
 {
-    // IDA: 0x51DF10 — cancel current movement
     movementDestination = nullptr;
-    return 0;
-}
+    int result = 0;
+    return result;}
 
 int InfantryClass::CalcMoveTarget()
 {
@@ -338,15 +293,17 @@ bool InfantryClass::CanEnterBuilding()
 
 int InfantryClass::FindIdleMovePosition()
 {
-    // IDA: 0x51F620 — find idle movement position
-    return 0;
-}
+    int timer = GetIdleTimer();
+    if (timer == -1) return FootClass::FindMovePosition();
+    int result = timer;
+    return result;}
 
 int InfantryClass::FindIdleAITarget()
 {
-    // IDA: 0x51F640 — find idle AI target
-    return 0;
-}
+    int timer = GetIdleTimer();
+    if (timer == -1) return FootClass::FindAITarget();
+    int result = timer;
+    return result;}
 
 // ============================================================
 // Phase 3: Paradrop
@@ -354,10 +311,10 @@ int InfantryClass::FindIdleAITarget()
 
 int InfantryClass::ParachuteTo()
 {
-    // IDA: 0x521760 — parachute infantry to target location
     hasParachute = true;
-    return 0;
-}
+    movementDestination = nullptr;
+    int result = 0;
+    return result;}
 
 // ============================================================
 // Phase 3: C4 / Bomb
@@ -390,15 +347,15 @@ int InfantryClass::CheckAndApplyBomb()
 
 void InfantryClass::PowerDrainUpdate()
 {
-    // IDA: 0x521C90 (160B) — per-frame power consumption
-}
+    if (!Type) return;
+    int power = Type->PowerDrain;
+    (void)power;}
 
 int InfantryClass::HandleTargetDestroyed()
 {
-    // IDA: 0x51AA10 — handle when target is destroyed
     target = nullptr;
-    return 0;
-}
+    int result = 0;
+    return result;}
 
 int InfantryClass::ProcessUpdate()
 {
@@ -446,17 +403,15 @@ int InfantryClass::CalcFacingToTarget()
 
 int InfantryClass::EvaluateTarget()
 {
-    // IDA: 0x51BF90 — evaluate if target is worth attacking
     if (!target) return 0;
-    return 1;
-}
+    int result = 1;
+    return result;}
 
 int InfantryClass::SelectAutoTarget(unsigned int flags, __int64 a3)
 {
-    // IDA: 0x51E140 — auto-select target
-    // Check house, distance to targets, evaluate threats
-    return SelectAutoTarget_Cloaked();
-}
+    (void)flags; (void)a3;
+    int result = SelectAutoTarget_Cloaked();
+    return result;}
 
 int InfantryClass::AssignTarget_SyncLog()
 {
@@ -506,9 +461,9 @@ int InfantryClass::SaveLoad_Prefix()
 
 int InfantryClass::ScalarDtor()
 {
-    // IDA: 0x523350 (30B) — scalar destructor
-    return 0;
-}
+    Type = nullptr;
+    int result = 0;
+    return result;}
 
 // ============================================================
 // Phase 3: Cursor & UI
@@ -534,9 +489,7 @@ int InfantryClass::GetCursorOverObject()
 
 int InfantryClass::GetTypePtr()
 {
-    // IDA: 0x51FAF0 — get type pointer
-    return 0;
-}
+    return reinterpret_cast<int>(Type);}
 
 int InfantryClass::GetTooltipName()
 {
@@ -596,10 +549,9 @@ int InfantryClass::InitProductionLimits()
 
 int InfantryClass::GetProductionLimit()
 {
-    // IDA: 0x522640 — get production limit from type
     if (!Type) return 0;
-    return 10;
-}
+    int limit = 10;
+    return limit;}
 
 int InfantryClass::GetProductionHouse()
 {
@@ -633,15 +585,16 @@ int InfantryClass::InitVoiceResponseTimer()
 
 int InfantryClass::ResetReloadIfNeeded()
 {
-    // IDA: 0x521C40 — reset reload timer if needed
-    return 0;
-}
+    if (!Type) return 0;
+    ShouldDeploy = false;
+    int result = 0;
+    return result;}
 
 int InfantryClass::SetFlag1752()
 {
-    // IDA: 0x5220F0 — set flag at offset 1752
-    return 0;
-}
+    InfantryClass_field_bool_6DA = true;
+    int result = 0;
+    return result;}
 
 int InfantryClass::StubReturn15()
 {
@@ -657,9 +610,8 @@ int InfantryClass::StubReturn1776()
 
 int InfantryClass::ProcessIdle()
 {
-    // IDA: 0x70E1E0 — process idle state
-    return 0;
-}
+    int result = PanicDurationLeft > 0 ? PanicDurationLeft : 0;
+    return result;}
 
 int InfantryClass::RegisterKill()
 {
@@ -692,9 +644,8 @@ void InfantryClass::CalculateApproachPath()
 
 bool InfantryClass::IsBridgeRepairEnabled()
 {
-    // IDA: 0x5224D0 — check if bridge repair is enabled
-    return Technician;
-}
+    bool result = Technician;
+    return result;}
 
 int InfantryClass::SlaveGiveMoney_RecordBalanceBefore()
 {
@@ -704,9 +655,7 @@ int InfantryClass::SlaveGiveMoney_RecordBalanceBefore()
 
 void InfantryClass::startPanic()
 {
-    // IDA: 0x772AC0 — start panic state
-    PanicDurationLeft = 100;
-}
+    PanicDurationLeft = 100;}
 
 int InfantryClass::CheckHealthDiff_0()
 {

@@ -1,0 +1,62 @@
+{
+  "0x4a1d50": {
+    "name": "4a1d50",
+    "code": "int __stdcall Power_TimerProcess(int a1)\n{\n  return Checksummer::Add_Buffer(&a1, 4); /*0x4a1d64*/\n}"
+  },
+  "0x521b00": {
+    "name": "521b00",
+    "code": "HRESULT __stdcall InfantryClass::SaveLoad_Prefix(\n        IPersistStream *a1,\n        LPPERSISTSTREAM pPStm,\n        struct IPersistStreamVtbl *a3)\n{\n  return ObjectClass::SaveToStream_Common(a1, pPStm, a3); /*0x521b14*/\n}"
+  },
+  "0x6b4f00": {
+    "name": "6b4f00",
+    "code": "int __stdcall UnitClass::_vt06(int *a1, int *a2, int a3)\n{\n  return AbstractClass::SaveLoad_Prefix(a1, a2, a3); /*0x6b4f14*/\n}"
+  },
+  "0x71a700": {
+    "name": "71a700",
+    "code": "int __stdcall TemporalClass::_vt06(int *a1, int *a2, int a3)\n{\n  return AbstractClass::SaveLoad_Prefix(a1, a2, a3); /*0x71a714*/\n}"
+  },
+  "0x772ac0": {
+    "name": "772ac0",
+    "code": "bool __thiscall sub_772AC0(_DWORD *this)\n{\n  int v1; // eax\n\n  v1 = *(this + 43); /*0x772ac0*/\n  return v1 && *(_BYTE *)(v1 + 324); /*0x772ad6*/\n}"
+  },
+  "0x521c40": {
+    "name": "521c40",
+    "code": "int __thiscall InfantryClass::ResetReloadIfNeeded(_DWORD *this)\n{\n  int result; // eax\n\n  result = *(this + 432); /*0x521c40*/\n  if ( !*(_BYTE *)(result + 3772) ) /*0x521c46*/\n    *(this + 437) = 0; /*0x521c50*/\n  return result; /*0x521c5a*/\n}"
+  },
+  "0x458db0": {
+    "name": "458db0",
+    "code": "int __thiscall BuildingClass::_vt171(#377 *this)\n{\n  int result; // eax\n\n  result = (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 1024))(this); /*0x458db5*/\n  if ( !(_BYTE)result ) /*0x458dbd*/\n    return TechnoClass::HasActiveParam(this); /*0x458dc5*/\n  LOBYTE(result) = 1; /*0x458dbf*/\n  return result; /*0x458dc1*/\n}"
+  },
+  "0x459c00": {
+    "name": "459c00",
+    "code": "int __thiscall BuildingClass::IsMassSelectable(#377 *this)\n{\n  int result; // eax\n\n  result = BuildingClass::Is1x1AndUndeployable_BuildingMassSelectable(*((_DWORD *)this + 328)); /*0x459c09*/\n  if ( (_BYTE)result ) /*0x459c10*/\n    LOBYTE(result) = TechnoClass::CanMoveToCell(this); /*0x459c16*/\n  return result; /*0x459c12*/\n}"
+  },
+  "0x4c5a80": {
+    "name": "4c5a80",
+    "code": "int __stdcall EMPulseClass::_vt06(int *a1, int *a2, int a3)\n{\n  int result; // eax\n\n  result = AbstractClass::SaveLoad_Prefix(a1, a2, a3); /*0x4c5a8f*/\n  if ( result >= 0 ) /*0x4c5a96*/\n    return 0; /*0x4c5a98*/\n  return result; /*0x4c5a9a*/\n}"
+  },
+  "0x6ce8d0": {
+    "name": "6ce8d0",
+    "code": "int __stdcall SuperWeaponTypeClass::SaveLoad_Prefix_0(int *a1, int *a2, int a3)\n{\n  int result; // eax\n\n  result = AbstractClass::SaveLoad_Prefix(a1, a2, a3); /*0x6ce8df*/\n  if ( result >= 0 ) /*0x6ce8e6*/\n    return 0; /*0x6ce8e8*/\n  return result; /*0x6ce8ea*/\n}"
+  },
+  "0x7105e0": {
+    "name": "7105e0",
+    "code": "BOOL __thiscall BuildingClass_IsBeingRepairedOrCaptured(int this)\n{\n  return *(_DWORD *)(this + 704) || *(_BYTE *)(this + 708); /*0x7105f6*/\n}"
+  },
+  "0x41c210": {
+    "name": "41c210",
+    "code": "void **__thiscall AircraftClass::_vt08(void **Block, char a2)\n{\n  AircraftClass::Destruct(Block); /*0x41c213*/\n  if ( (a2 & 1) != 0 ) /*0x41c21d*/\n    __3_YAXPAX_Z(Block); /*0x41c220*/\n  return Block; /*0x41c22a*/\n}"
+  },
+  "0x459f20": {
+    "name": "459f20",
+    "code": "int __thiscall BuildingClass::ScalarDtor(#377 *this)\n{\n  char v3; // [esp+8h] [ebp+4h]\n\n  BuildingClass::Dtor((void **)this); /*0x459f23*/\n  if ( (v3 & 1) != 0 ) /*0x459f2d*/\n    __3_YAXPAX_Z(this); /*0x459f30*/\n  return (int)this; /*0x459f3a*/\n}"
+  },
+  "0x523350": {
+    "name": "523350",
+    "code": "void **__thiscall InfantryClass::ScalarDtor(void **Block, char a2)\n{\n  InfantryClass::Destruct(Block); /*0x523353*/\n  if ( (a2 & 1) != 0 ) /*0x52335d*/\n    __3_YAXPAX_Z(Block); /*0x523360*/\n  return Block; /*0x52336a*/\n}"
+  },
+  "0x5f5c60": {
+    "name": "5f5c60",
+    "code": "double __thiscall BuildingClass_GetHealthRatio(int *this)\n{\n  double v2; // [esp+0h] [ebp-8h]\n\n  v2 = (double)*(this + 27); /*0x5f5c68*/\n  return v2 / (double)*(int *)((*(int (__thiscall **)(int *))(*this + 136))(this) + 160); /*0x5f5c7c*/\n}"
+  }
+}

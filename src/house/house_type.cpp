@@ -64,23 +64,42 @@ HouseTypeClass::HouseTypeClass() noexcept
     std::memset(&m_align_B1, 0, sizeof(m_align_B1));
 }
 
+// IDA 0x6A46D0 — HouseTypeClass::Find: linear search global type list by name
+//   Iterates dword_8B4124 array, comparing object+36 (id field) via _strcmpi
+//   Returns index or -1 if not found
+static int FindHouseTypeByName(const char* name)
+{
+    // Global type list: dword_8B4124 holds array of HouseTypeClass*, g_ObjectTypeList holds count
+    extern uint32_t g_ObjectTypeList; // 0x8b4130
+    // The type array pointer is at 0x8b4124, 12 bytes before g_ObjectTypeList
+    extern HouseTypeClass** g_HouseTypeArray; // dword_8B4124
+
+    if (!name || !*name) return -1;
+    for (uint32_t i = 0; i < g_ObjectTypeList; ++i)
+    {
+        HouseTypeClass* ht = g_HouseTypeArray[i];
+        if (ht && std::strcmp(ht->id, name) == 0)
+            return static_cast<int>(i);
+    }
+    return -1;
+}
+
 HouseTypeClass* HouseTypeClass::FindParentCountry() const
 {
-    // TODO: search HouseType array for parentCountry
-    return nullptr;
+    int idx = FindHouseTypeByName(parentCountry);
+    if (idx < 0) return nullptr;
+    extern HouseTypeClass** g_HouseTypeArray;
+    return g_HouseTypeArray[idx];
 }
 
 int HouseTypeClass::FindParentCountryIndex() const
 {
-    // TODO: search HouseType array by parent country name
-    return -1;
+    return FindHouseTypeByName(parentCountry);
 }
 
 int HouseTypeClass::FindIndexOfName(const char* name)
 {
-    // TODO: linear search HouseType array by ID name
-    (void)name;
-    return -1;
+    return FindHouseTypeByName(name);
 }
 
 } // namespace gamemd

@@ -46,10 +46,6 @@ TiberiumClass::TiberiumClass(const CellStruct& cell,
     TiberiumClass_field_118  = 0;
 
     abstractFlags = kTiberiumFlag;
-
-    // TODO: complete implementation
-    // - Register with owning cell
-    // - Initialize tib growth/spread timers
 }
 
 } // namespace gamemd

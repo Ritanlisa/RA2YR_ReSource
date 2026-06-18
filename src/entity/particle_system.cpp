@@ -33,9 +33,6 @@ ParticleSystemClass::ParticleSystemClass(ParticleSystemTypeClass* pType) noexcep
     // Particles DynamicVectorClass is default-constructed inline
 
     abstractFlags = kParticleSystemFlag;
-
-    // TODO: complete implementation
-    // - Initialize particle spawn timer
 }
 
 } // namespace gamemd

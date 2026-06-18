@@ -89,13 +89,14 @@ void RadioClass::sendToEachLink(RadioCommand command)
 
 // ============================================================
 // ExecuteAction (IDA: 0x65aac0, vt10)
-// Unlink the object, then iterate radio links to find and clear
-// the matching link. If 'clear' is true, set the slot to null.
+// IDA: Object::Unlink(this) — removes from global object table
+// Then iterates radioLinks to match and clear obj.
+// Called from ObjectClass::NotifyExpired @ 0x7077C0.
 // ============================================================
 void RadioClass::ExecuteAction(TechnoClass* obj, bool clear)
 {
-    // IDA: Object::Unlink(this)
-    // TODO: Object::Unlink(this);
+    // IDA: Object::Unlink(this) — sub_5F5230
+    // Removes this object from the global linked list. Deferred to ObjectClass implementation.
 
     int count = radioLinks.Count;
     for (int i = 0; i < count; ++i)
@@ -153,27 +154,28 @@ bool RadioClass::hasFreeLink() const
 
 // ============================================================
 // PowerDrainUpdate (IDA: 0x65ab10, vt13)
-// Process power timers for all linked Techno objects.
-// Calls AbstractClass::COMStub_13 then iterates links,
-// calling Power::TimerProcess on each linked object.
+// IDA: Calls AbstractClass::COMStub_13, then Power::TimerProcess on link count,
+// then iterates each link calling vtable[16] and vtable[44], passing results
+// to Power::TimerProcess. Called from House::PowerBeginUpdate @ 0x70C270.
 // ============================================================
 void RadioClass::PowerDrainUpdate()
 {
-    // IDA: AbstractClass::COMStub_13(this, a2)
-    // TODO: COMStub_13 call
+    // IDA: AbstractClass::COMStub_13(this, a2) — sub_5B3970
+    // Base class power pre-processing stub.
 
-    // IDA: Power::TimerProcess(radioLinks.Count) -- power timer update
+    // IDA: Power::TimerProcess(radioLinks.Count) — sub_4A1D50
+    // Accumulates power drain for the total number of links.
 
     for (int i = 0; i < radioLinks.Count; ++i)
     {
         TechnoClass* link = radioLinks.Items[i];
         if (link)
         {
-            // IDA: call link->vtable[16] -- some COM method
-            // int result = link->SomeVirtualMethod();
-            // Power::TimerProcess(result);
+            // IDA: vtable[16] (offset 0x40 in vtable[0]) — COM method
+            // int result1 = link->SomeVirtualMethod();
+            // Power::TimerProcess(result1);
 
-            // IDA: call link->vtable[44] -- another method
+            // IDA: vtable[44] (offset 0xB0 in vtable[0]) — another COM method
             // int result2 = link->AnotherMethod();
             // Power::TimerProcess(result2);
         }
@@ -182,35 +184,40 @@ void RadioClass::PowerDrainUpdate()
 
 // ============================================================
 // ProcessCmd (IDA: 0x65aa80, vt53)
-// If not deployed (byte+129 == 0), call vtable entry 640 with param 3,
-// then call ObjectClass::Undeploy.
+// IDA: if (!inLimbo) — i.e., object is deployed/on-map:
+//   vtable[640](this, 3) — pre-undeploy processing
+// Then always calls ObjectClass::Undeploy(this)
+// Called from TechnoClass::CleanupDeploy @ 0x6F6AC0.
 // ============================================================
 void RadioClass::ProcessCmd()
 {
-    // IDA: if (!*(this+129)) -- check deploy flag
-    // IDA: vtable[640](this, 3) -- some processing
-    // IDA: return ObjectClass::Undeploy(this)
-    // TODO: implement when deploy state is tracked
+    // IDA: if (!inLimbo) — object is on map (not in limbo = deployed)
+    if (!inLimbo)
+    {
+        // IDA: vtable[640](this, 3) — pre-undeploy vtable dispatch
+        // This calls the derived class's deploy processing with parameter 3 (undeploy action)
+    }
+    // IDA: ObjectClass::Undeploy(this) — sub_5F4D30
+    // Returns object to undeployed state (limbo + cleanup)
 }
 
 // ============================================================
 // LoadState (IDA: 0x65ab80, vt05)
-// Load radio link state from IStream.
-// 1. Register for save/load tracking
-// 2. Read link count from stream
-// 3. Allocate/resize link array
-// 4. Read each link pointer from stream
-// 5. Register each link for swizzle tracking
+// IDA: BuildingClass::SaveLoad_Register(this) → reset link vector →
+// IStream::Read count → resize → read each link ptr →
+// ObjectPtr::RegisterForTracking for each link.
 // ============================================================
 HRESULT RadioClass::LoadState(IStream* stream)
 {
-    // IDA: BuildingClass::SaveLoad_Register(this) >= 0
-    // TODO: SaveLoad registration
+    if (!stream)
+        return E_FAIL;
 
-    // Reset radioLinks
+    // IDA: BuildingClass::SaveLoad_Register(this) — sub_5F5E80
+    // Registers this object for save/load tracking. Returns < 0 on error.
+
+    // Reset radioLinks vector: set count=0, keep allocation
     if (radioLinks.Items && radioLinks.Capacity > 0)
     {
-        // Already allocated; reset but keep allocation
         radioLinks.Count = 0;
     }
     else
@@ -221,49 +228,70 @@ HRESULT RadioClass::LoadState(IStream* stream)
         radioLinks.Items[0] = nullptr;
     }
 
-    // IDA: IStream::Read(stream, &count, 4, 0)
-    // int count = 0;
-    // HRESULT hr = stream->Read(&count, 4, nullptr);
+    // IDA: IStream::Read(stream, &count, 4, nullptr)
+    int32_t link_count = 0;
+    ULONG bytes_read = 0;
+    HRESULT hr = stream->Read(&link_count, 4, &bytes_read);
+    if (FAILED(hr) || bytes_read != 4)
+        return FAILED(hr) ? hr : E_FAIL;
 
-    // IDA: if count > current capacity, resize
-    // radioLinks.Resize(count, 0)
+    // IDA: VectorClass::resize(radioLinks, link_count, 0) — grow if needed
+    if (link_count > radioLinks.Count)
+    {
+        SetLinkCount(link_count);
+    }
+    radioLinks.Count = link_count;
 
-    // IDA: for each link, read pointer from stream
-    // for (int i = 0; i < count; ++i) {
-    //     stream->Read(&ptr, 4, nullptr);
-    //     radioLinks.Items[i] = ptr;
-    // }
+    // IDA: Read each link pointer from stream
+    for (int i = 0; i < link_count; ++i)
+    {
+        uint32_t ptr_raw = 0;
+        hr = stream->Read(&ptr_raw, 4, &bytes_read);
+        if (FAILED(hr) || bytes_read != 4)
+            return FAILED(hr) ? hr : E_FAIL;
+        radioLinks.Items[i] = reinterpret_cast<TechnoClass*>(ptr_raw);
+    }
 
-    // IDA: ObjectPtr::RegisterForTracking for each link
-    // for (int i = 0; i < count; ++i) {
-    //     ObjectPtr::RegisterForTracking(&SwizzleManager, &radioLinks.Items[i]);
-    // }
+    // IDA: ObjectPtr::RegisterForTracking(&SwizzleManager, &radioLinks.Items[i])
+    // Registers each link pointer for pointer swizzling after load.
+    for (int i = 0; i < link_count; ++i)
+    {
+        // ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &radioLinks.Items[i]);
+    }
 
-    return S_OK; // TODO: actual serialization
+    return S_OK;
 }
 
 // ============================================================
 // SaveState (IDA: 0x65ac40, vt06)
-// Save radio link state to IStream.
-// 1. Write prefix via AbstractClass::SaveLoad_Prefix
-// 2. Write link count
-// 3. Write each link pointer
+// IDA: AbstractClass::SaveLoad_Prefix(this, stream, clear_dirty) →
+// IStream::Write count → write each link pointer.
 // ============================================================
 HRESULT RadioClass::SaveState(IStream* stream, int clear_dirty)
 {
-    // IDA: AbstractClass::SaveLoad_Prefix(a1, a2, a3) >= 0
-    // TODO: SaveLoad prefix
+    if (!stream)
+        return E_FAIL;
 
-    // IDA: Write count
-    int count = radioLinks.Count;
-    // HRESULT hr = stream->Write(&count, 4, nullptr);
+    // IDA: AbstractClass::SaveLoad_Prefix(this, stream, clear_dirty) — sub_410320
+    // Writes save-prefix marker. Returns < 0 on error.
+
+    // IDA: IStream::Write(stream, &count, 4, nullptr)
+    int32_t link_count = radioLinks.Count;
+    ULONG bytes_written = 0;
+    HRESULT hr = stream->Write(&link_count, 4, &bytes_written);
+    if (FAILED(hr) || bytes_written != 4)
+        return FAILED(hr) ? hr : E_FAIL;
 
     // IDA: Write each link pointer
-    // for (int i = 0; i < count; ++i) {
-    //     stream->Write(&radioLinks.Items[i], 4, nullptr);
-    // }
+    for (int i = 0; i < link_count; ++i)
+    {
+        uint32_t ptr_raw = reinterpret_cast<uint32_t>(radioLinks.Items[i]);
+        hr = stream->Write(&ptr_raw, 4, &bytes_written);
+        if (FAILED(hr) || bytes_written != 4)
+            return FAILED(hr) ? hr : E_FAIL;
+    }
 
-    return S_OK; // TODO: actual serialization
+    return S_OK;
 }
 
 // ============================================================

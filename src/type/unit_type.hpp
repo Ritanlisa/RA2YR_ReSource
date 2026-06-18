@@ -38,6 +38,7 @@ protected:
 
 public:
     int ArrayIndex;
+    int PowerDrain;
     LandType MovementRestrictedTo;
     CoordStruct HalfDamageSmokeLocation;
     bool Passive;

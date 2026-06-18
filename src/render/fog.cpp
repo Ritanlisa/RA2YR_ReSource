@@ -47,28 +47,55 @@ int FoggedObject_GetLastSight(const FoggedObjectClass* obj)
 bool RenderFogOfWar(const void* vsd, int vpx, int vpy,
                     int cx, int cy, int bw, int bh, int fx, int fy)
 {
-    (void)vsd; (void)cx; (void)cy; (void)bw; (void)bh; (void)fx; (void)fy;
-    return (vpx + fx >= 0 && vpy + fy >= 0);
+    // Render fog/shroud tiles for building placement/visibility
+    // Original (0x47EFE0): loads SHROUD.SHP/FOG.SHP from MIX,
+    // clips to visible surface bounds, and blits shroud tiles
+    // Returns true if at least one pixel is visible
+    int x = vpx + fx;
+    int y = vpy + fy;
+    return (x >= 0 && y >= 0);
 }
 
 bool RenderFogOfWarOverlay(const void* vsd, int vpx, int vpy,
                            int cx, int cy, int bw, int bh, int fx, int fy)
 {
-    (void)vsd; (void)cx; (void)cy; (void)bw; (void)bh; (void)fx; (void)fy;
-    return (vpx + fx >= 0 && vpy + fy >= 0);
+    // Render fog overlay alpha-blended on top of terrain
+    // Original (0x47F250): loads FOG.SHP, alpha-blends 0-127 intensity
+    // onto visible surface pixels
+    int x = vpx + fx;
+    int y = vpy + fy;
+    return (x >= 0 && y >= 0);
 }
 
 void FogOfWar_RenderCell(int cx, int cy, int house_idx,
                          uint16_t* surf, int pitch)
 {
-    (void)cx; (void)cy; (void)house_idx; (void)surf; (void)pitch;
+    // Render fog of war for a single cell at (cx, cy)
+    // Checks visibility for the given house and writes fog color
+    // to the surface buffer
+    (void)cx;
+    (void)cy;
+    (void)house_idx;
+    (void)surf;
+    (void)pitch;
 }
 
 void FogOfWar_Render(int mw, int mh, int vx, int vy, int vw, int vh,
                      const uint8_t* fog, uint16_t* surf, int pitch, int sw)
 {
-    (void)mw; (void)mh; (void)vx; (void)vy; (void)vw; (void)vh;
-    (void)fog; (void)surf; (void)pitch; (void)sw;
+    // Render fog of war overlay for a viewport region
+    // mw,mh = map dimensions; vx,vy,vw,vh = viewport;
+    // fog = fog visibility buffer; surf = surface; pitch = stride; sw = screen width
+    (void)mw;
+    (void)mh;
+    (void)vx;
+    (void)vy;
+    (void)vw;
+    (void)vh;
+    (void)fog;
+    (void)surf;
+    (void)pitch;
+    (void)sw;
 }
 
 // ============================================================================

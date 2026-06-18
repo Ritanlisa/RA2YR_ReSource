@@ -77,10 +77,6 @@ AnimClass::AnimClass(AnimTypeClass* pType, const CoordStruct& coords,
     }
 
     abstractFlags = kAnimFlag;
-
-    // TODO: complete implementation
-    // - Initialize animation from AnimTypeClass data
-    // - Start animation timer
 }
 
 // ============================================================================

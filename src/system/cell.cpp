@@ -707,15 +707,15 @@ bool CellClass::Tile_Is_Ramp() const { return (static_cast<uint32_t>(flags) & 0x
 bool CellClass::Tile_Is_Cliff() const { return (static_cast<uint32_t>(flags) & 0x2000) != 0; }
 bool CellClass::Tile_Is_Shore() const { return (static_cast<uint32_t>(flags) & 0x40000000) != 0; }
 bool CellClass::Tile_Is_Wet() const { return (static_cast<uint32_t>(flags) & 0x200) != 0; }
-bool CellClass::Tile_Is_Pave() const { return false; }
-bool CellClass::Tile_Is_DirtRoad() const { return false; }
-bool CellClass::Tile_Is_PavedRoad() const { return false; }
-bool CellClass::Tile_Is_PavedRoadEnd() const { return false; }
-bool CellClass::Tile_Is_PavedRoadSlope() const { return false; }
-bool CellClass::Tile_Is_Median() const { return false; }
+bool CellClass::Tile_Is_Pave() const { return (static_cast<uint32_t>(flags) & 0x1000) != 0; }
+bool CellClass::Tile_Is_DirtRoad() const { return (static_cast<uint32_t>(flags) & 0x4000) != 0; }
+bool CellClass::Tile_Is_PavedRoad() const { return (static_cast<uint32_t>(flags) & 0x20000) != 0; }
+bool CellClass::Tile_Is_PavedRoadEnd() const { return (static_cast<uint32_t>(flags) & 0x40000) != 0; }
+bool CellClass::Tile_Is_PavedRoadSlope() const { return (static_cast<uint32_t>(flags) & 0x80000) != 0; }
+bool CellClass::Tile_Is_Median() const { return (static_cast<uint32_t>(flags) & 0x100000) != 0; }
 bool CellClass::Tile_Is_Bridge() const { return ContainsBridge(); }
-bool CellClass::Tile_Is_WoodBridge() const { return false; }
-bool CellClass::Tile_Is_Green() const { return false; }
+bool CellClass::Tile_Is_WoodBridge() const { return (static_cast<uint32_t>(flags) & 0x200000) != 0; }
+bool CellClass::Tile_Is_Green() const { return (static_cast<uint32_t>(flags) & 0x800000) != 0; }
 bool CellClass::Tile_Is_NotWater() const { return !Tile_Is_Water(); }
 bool CellClass::Tile_Is_DestroyableCliff() const
 {

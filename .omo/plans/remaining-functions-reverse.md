@@ -561,7 +561,7 @@ Max Concurrent: 7 (Wave 3)
   - Message: `feat: eliminate all stubs in misc/core/entity/network/app modules`
   - Files: `src/misc/audio.cpp`, `src/core/globals.cpp`, `src/core/init_game.cpp`, `src/core/load_options.cpp`, `src/entity/*.cpp`, `src/network/session.cpp`, `src/network/multiplayer.cpp`, `src/app/game_loop.cpp`, `src/app/ddraw_init.cpp`
 
-- [ ] 8. Translate named member functions — structure/ classes
+- [x] 8. Translate named member functions — structure/ classes
 
   **What to do**:
   - BuildingClass: 307 methods → 逐个 IDA 反编译完整翻译（工厂生产队列、电力管理、超级武器计时、占领逻辑）
@@ -613,7 +613,7 @@ Max Concurrent: 7 (Wave 3)
   - Message: `feat(structure): complete all member function translations (495 methods)`
   - Files: `src/structure/building.cpp`, `src/structure/infantry.cpp`, `src/structure/unit.cpp`, `src/structure/aircraft.cpp`
 
-- [ ] 9. Translate named member functions — object/ classes
+- [x] 9. Translate named member functions — object/ classes
 
   **What to do**:
   - AbstractClass: 完整翻译（stream I/O、坐标变换、类型转换）
@@ -663,7 +663,7 @@ Max Concurrent: 7 (Wave 3)
   - Message: `feat(object): complete Abstract/Object/Mission/Radio/Techno/Foot translations`
   - Files: `src/object/abstract.cpp`, `src/object/object.cpp`, `src/object/mission.cpp`, `src/object/radio.cpp`, `src/object/techno.cpp`, `src/object/foot.cpp`
 
-- [ ] 10. Translate named member functions — rendering + system + ui classes
+- [x] 10. Translate named member functions — rendering + system + ui classes
 
   **What to do**:
   - DSurface/XSurface/BSurface: 82 methods — 补充 Lock/Unlock/Blit 边界情况
@@ -714,7 +714,7 @@ Max Concurrent: 7 (Wave 3)
   - Message: `feat(render+system+ui): complete all remaining class method translations`
   - Files: `src/render/`, `src/system/`, `src/ui/` (modified files only)
 
-- [ ] 11. Translate named member functions — remaining classes (Jumpjet, House, Type, etc.)
+- [x] 11. Translate named member functions — remaining classes (Jumpjet, House, Type, etc.)
 
   **What to do**:
   - JumpjetLocomotionClass: 43 个不完整方法 → 逐个 IDA 翻译（Jumpjet 飞行物理、高度管理、加速度曲线）
@@ -767,7 +767,7 @@ Max Concurrent: 7 (Wave 3)
   - Message: `feat: complete all remaining class method translations (Jumpjet, House, Entity, Network)`
   - Files: `src/misc/locomotion.cpp` (if created), `src/house/*.cpp`, `src/entity/*.cpp`, `src/network/*.cpp`, `src/wdt/wdt.cpp`
 
-- [ ] 12. Translate named global functions — menu + rendering globals (~500 functions)
+- [x] 12. Translate named global functions — menu + rendering globals (~500 functions)
 
   **What to do**:
   - 翻译 menu/ 类别的命名全局函数（~366 在 functions.json menu category）
@@ -816,7 +816,7 @@ Max Concurrent: 7 (Wave 3)
   - Message: `feat: complete menu + rendering global function translations (~1200 functions)`
   - Files: `src/core/` (new/updated menu files), `src/render/` (new/updated rendering files)
 
-- [ ] 13. Translate named global functions — object/system/combat/AI/network (~1,600 functions)
+- [x] 13. Translate named global functions — object/system/combat/AI/network (~1,600 functions)
 
   **What to do**:
   - 翻译 object/ (member category: 7,194 completed — but this = named, not translated)

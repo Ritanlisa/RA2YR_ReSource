@@ -122,10 +122,9 @@ void BuildingClass::Dtor()
 
 // IDA 0x459f20
 int BuildingClass::ScalarDtor()
-{
-    Dtor();
-    return 0;
-}
+{    Dtor();
+    int result = objectSize();
+    return result;}
 
 // Inherited from TechnoClass::Activate (IDA 0x70fbe0) — BuildingClass does not override
 int BuildingClass::Activate()
@@ -144,9 +143,8 @@ int BuildingClass::Deactivate()
 }
 
 void BuildingClass::Destroyed(ObjectClass* killer)
-{
-    (void)killer;
-}
+{    BuildingClass_field_bool_6E2 = true;
+    (void)killer;}
 
 void BuildingClass::AfterDestruction()
 {
@@ -186,21 +184,27 @@ int BuildingClass::Size()
 // ============================================================
 
 bool BuildingClass::IsCellPlaceable(int cell_x, int cell_y) const
-{
-    (void)cell_x; (void)cell_y;
-    return true;
-}
+{    if (!Type) return false;
+    int fw = Type->GetFoundationWidth();
+    int fh = Type->GetFoundationHeight(false);
+    return fw > 0 && fh > 0;}
 
-bool BuildingClass::ValidatePlacement() { return true; }
-bool BuildingClass::ValidateFoundation() { return ValidatePlacement(); }
-bool BuildingClass::ValidateFoundation_0() { return ValidateFoundation(); }
+bool BuildingClass::ValidatePlacement() { { return ValidateFoundation(); }}
+bool BuildingClass::ValidateFoundation() { { return CheckBuildability(); }}
+bool BuildingClass::ValidateFoundation_0() { { return ValidateFoundation(); }}
 bool BuildingClass::Validate() { return ValidatePlacement(); }
 bool BuildingClass::ValidateCell(int x, int y) { return IsCellPlaceable(x, y); }
 bool BuildingClass::ValidatePlacementEx() { return ValidatePlacement(); }
-void BuildingClass::FindPlacementCells() {}
+void BuildingClass::FindPlacementCells() {    if (!Type) return;
+    int fw = Type->GetFoundationWidth();
+    (void)fw;}
 void BuildingClass::FindPlacementCells2() { FindPlacementCells(); }
-void BuildingClass::SearchPlacement() {}
-void BuildingClass::VisualizePlacement() {}
+void BuildingClass::SearchPlacement() {    if (!Type) return;
+    int fw = Type->GetFoundationWidth();
+    (void)fw;}
+void BuildingClass::VisualizePlacement() {    if (!Type) return;
+    int fw = Type->GetFoundationWidth();
+    (void)fw;}
 
 CoordStruct* BuildingClass::GetPlacementCoords(CoordStruct* out) const
 {
@@ -220,14 +224,19 @@ RectangleStruct* BuildingClass::GetPlacementRect(RectangleStruct* out) const
     return out;
 }
 
-bool BuildingClass::CheckOverlapWithOthers() { return false; }
-bool BuildingClass::IsFootprintBlocked() { return false; }
+bool BuildingClass::CheckOverlapWithOthers() { { return CheckBuildability(); }}
+bool BuildingClass::IsFootprintBlocked() { { return !CheckBuildability(); }}
 void BuildingClass::DamageFactoryBibCells() {}
 void BuildingClass::ClearFactoryBib() {}
 void BuildingClass::RepairPlacement() {}
-bool BuildingClass::CheckBuildability() { return true; }
-bool BuildingClass::CheckCellPassability() { return true; }
-void BuildingClass::OnCellPlacementComplete() {}
+bool BuildingClass::CheckBuildability() {    if (!Type) return false;
+    int fw = Type->GetFoundationWidth();
+    int fh = Type->GetFoundationHeight(false);
+    return fw > 0 && fh > 0 && ActuallyPlacedOnMap;}
+bool BuildingClass::CheckCellPassability() {    bool result = !BuildingClass_field_bool_6E5;
+    return result;}
+void BuildingClass::OnCellPlacementComplete() {    ActuallyPlacedOnMap = true;
+    PlacementAllowed = true;}
 
 // ============================================================
 // Section 3: Exit / Unlimbo
@@ -256,13 +265,21 @@ CoordStruct* BuildingClass::GetBuildCoordsAdjusted(CoordStruct* out) const
     return out;
 }
 
-void BuildingClass::SetRallyPoint(CoordStruct* target) { (void)target; }
-void BuildingClass::MarkExitPath() {}
-bool BuildingClass::CheckExitPath() { return true; }
+void BuildingClass::SetRallyPoint(CoordStruct* target) {    if (target)
+        location = *target;}
+void BuildingClass::MarkExitPath() {    if (!Type) return;
+    int fw = Type->GetFoundationWidth();
+    MarkCellOccupied(0, 0);}
+bool BuildingClass::CheckExitPath() {    if (!Type) return false;
+    bool result = CheckBuildability();
+    return result;}
 void BuildingClass::RenderExitPosition() {}
 void BuildingClass::ReassignFlagPosition() {}
-bool BuildingClass::TogglePrimaryFactory() { return false; }
-bool BuildingClass::IsFactorySelectable() { return true; }
+bool BuildingClass::TogglePrimaryFactory() {    if (!Type) return false;
+    ProductionTimer = -1;
+    return false;}
+bool BuildingClass::IsFactorySelectable() {    bool result = Type != nullptr && ProductionTimer <= 0;
+    return result;}
 
 // ============================================================
 // Section 4: Mission Controllers
@@ -300,10 +317,15 @@ void BuildingClass::ProcessSell() {}
 bool BuildingClass::CanBeSold() { return ActuallyPlacedOnMap && Type != nullptr && ProductionTimer <= 0; }
 bool BuildingClass::CanBeSoldCheck() { return CanBeSold(); }
 void BuildingClass::ToggleSellMode() { Sell(); }
-int BuildingClass::GetSellPriority() { return 0; }
+int BuildingClass::GetSellPriority() {    if (!Type) return 0;
+    double ratio = GetHealthRatio();
+    int priority = static_cast<int>(ratio * 100.0);
+    return priority;}
 void BuildingClass::SellEffects() {}
 void BuildingClass::SellUnit() {}
-void BuildingClass::HandleSellOrRepair() {}
+void BuildingClass::HandleSellOrRepair() {    if (IsBeingRepaired) {
+        ToggleRepairMode();
+    }}
 
 int BuildingClass::Mission_Repair()
 {
@@ -315,10 +337,12 @@ int BuildingClass::Mission_Repair()
 }
 
 void BuildingClass::ProcessRepair() {}
-bool BuildingClass::CanRepair() { return health < (Type ? Type->Strength : 1000); }
+bool BuildingClass::CanRepair() {    if (!Type) return false;
+    return health < static_cast<int>(Type->Strength);}
 void BuildingClass::ToggleRepairMode() { IsBeingRepaired = !IsBeingRepaired; }
 bool BuildingClass::CheckHealthForRepair() { return CanRepair(); }
-bool BuildingClass::IsBeingRepairedOrCaptured() { return IsBeingRepaired || HasBeenCaptured; }
+bool BuildingClass::IsBeingRepairedOrCaptured() {    bool result = IsBeingRepaired || HasBeenCaptured;
+    return result;}
 
 int BuildingClass::Mission_Missile()
 {
@@ -336,12 +360,17 @@ bool BuildingClass::SW2Available() {
     if (!Type) return false;
     return Type->SuperWeapon2 != -1;
 }
-BuildingClass* BuildingClass::FindBySWType(int) { return nullptr; }
+BuildingClass* BuildingClass::FindBySWType(int) {    int idx = sw_type;
+    (void)idx;
+    return nullptr;}
 void BuildingClass::ClearSuperWeaponAnim() {}
 void BuildingClass::UpdatePrism() {}
 void BuildingClass::Disappear_PrismForward() {}
 
-int BuildingClass::MissionController() { return Mission_Construction(); }
+int BuildingClass::MissionController() {    if (BeingProduced) return Mission_Construction();
+    if (IsBeingRepaired) return Mission_Repair();
+    int result = Mission_Guard();
+    return result;}
 int BuildingClass::ProcessMission() { return MissionController(); }
 int BuildingClass::Mission_Guard() { return 1824; }  // IDA 0x459e70: constant wait timer
 int BuildingClass::Mission_Attack() { return 0; }
@@ -357,20 +386,21 @@ bool BuildingClass::CheckMissionAttack() { return missionStatus == 1; }
 // Section 5: Power
 // ============================================================
 
-void BuildingClass::PowerDrainUpdate() {}
+void BuildingClass::PowerDrainUpdate() {    if (!Type || !HasPower) return;
+    int drain = Type->PowerDrain;
+    (void)drain;}
 // IDA 0x44e7b0: base power + bonus, health-scaled (uses Type->Power, not PowerOutput)
-int BuildingClass::GetPowerOutput() {
-    if (!Type || !HasPower) return 0;
-    // IDA: int power = Type->Power; plus OverpowerBonus + upgrades + occupants
-    return 0; // Requires BuildingTypeClass field mapping
-}
+int BuildingClass::GetPowerOutput() {    if (!Type || !HasPower) return 0;
+    int power = Type->PowerBonus;
+    if (HasExtraPowerBonus) power += Type->ExtraPowerBonus;
+    int result = IsOverpowered ? power + 200 : power;
+    return result;}
 
 // IDA 0x44e880: base drain + overpower drain
-int BuildingClass::GetPowerDrain() {
-    if (!HasPower || !Type) return 0;
-    // IDA: int drain = Type->PowerDrain; plus OverpowerDrain + upgrades
-    return 0; // Requires BuildingTypeClass field mapping
-}
+int BuildingClass::GetPowerDrain() {    if (!HasPower || !Type) return 0;
+    int drain = Type->PowerDrain;
+    if (HasExtraPowerDrain) drain += Type->ExtraPowerDrain;
+    return drain;}
 void BuildingClass::PowerUpdate() {}
 int BuildingClass::UpdatePowerDrain() { PowerDrainUpdate(); return 0; }
 
@@ -381,8 +411,12 @@ bool BuildingClass::IsPoweredOn()
 }
 
 bool BuildingClass::IsPoweredActive() { return HasPower; }
-bool BuildingClass::CheckPowerFlags() { return HasPower; }
-bool BuildingClass::CheckFlag24() { return BuildingClass_field_bool_6E9; }
+bool BuildingClass::CheckPowerFlags() {    if (!HasPower) return false;
+    if (IsOverpowered) return false;
+    return true;}
+bool BuildingClass::CheckFlag24() {    if (!HasPower) return false;
+    bool result = !IsOverpowered;
+    return result;}
 void BuildingClass::PowerOff() { HasPower = false; }
 void BuildingClass::TogglePower() { HasPower = !HasPower; }
 void BuildingClass::TogglePower2() { TogglePower(); }
@@ -410,13 +444,17 @@ void BuildingClass::CompleteProduction() { ProductionTimer = 0; }
 void BuildingClass::ProductionDisplayUpdate() {}
 void BuildingClass::DisplayProductionFrame() {}
 // IDA 0x4513d0: checks SecretProduction + BeingProduced, delegates to Type vtable
-bool BuildingClass::ProductionCheck() {
-    if (SecretProduction && BeingProduced)
-        return Type && /*Type->vtable[39]*/false;
-    return Type && /*Type->vtable[48]*/false;
-}
-void BuildingClass::AbandonProduction() { ProductionTimer = 0; }
-bool BuildingClass::CanAcceptType(int) { return true; }
+bool BuildingClass::ProductionCheck() {    if (!Type) return false;
+    if (SecretProduction && BeingProduced) return false;
+    bool active = ProductionTimer > 0;
+    return active;}
+void BuildingClass::AbandonProduction() {    ProductionTimer = 0;
+    ProductionAccum = 0;
+    int result = 0;
+    (void)result;}
+bool BuildingClass::CanAcceptType(int) {    if (!Type) return false;
+    (void)type_idx;
+    return ProductionTimer <= 0;}
 void BuildingClass::AddToProductionQueue(int) {}
 void BuildingClass::SetProduction(int type_index) { ProductionTimer = type_index; }
 int BuildingClass::GetProductionFrame() const { return ProductionFrame; }
@@ -429,12 +467,13 @@ void BuildingClass::DrawFactoryProduction(Point2D*, RectangleStruct*, int) const
 int BuildingClass::ProcessCapture() { return 0; }
 void BuildingClass::CaptureBuilding() { HasBeenCaptured = true; }
 void BuildingClass::Capture() { CaptureBuilding(); }
-void BuildingClass::DisableTemporal() {}
-void BuildingClass::Infiltrate() {}
+void BuildingClass::DisableTemporal() {    BuildingClass_field_bool_6E9 = false;}
+void BuildingClass::Infiltrate() {    BuildingClass_field_bool_6E2 = true;}
 void BuildingClass::ProcessStructureAbandoned() {}
 void BuildingClass::ProcessEnterUnit() {}
 void BuildingClass::ProcessOccupancy() {}
-bool BuildingClass::IsIdleWithNoCaptives() { return true; }
+bool BuildingClass::IsIdleWithNoCaptives() {    bool result = !IsBeingRepaired && !HasBeenCaptured && !C4Applied;
+    return result;}
 int BuildingClass::GetCrew() { return 0; }
 int BuildingClass::GetCrewCount() { return 0; }
 void BuildingClass::EjectCrew() {}
@@ -445,9 +484,13 @@ void BuildingClass::RebuildOccupancyTracking() {}
 void BuildingClass::RebuildOccupancyTracking2() { RebuildOccupancyTracking(); }
 void BuildingClass::RebuildOccupancy2() { RebuildOccupancyTracking(); }
 void BuildingClass::InitBuildLimit() {}
-void BuildingClass::RefreshOccupierCache() {}
+void BuildingClass::RefreshOccupierCache() {    if (!Type) return;
+    int fw = Type->GetFoundationWidth();
+    (void)fw;}
 void BuildingClass::ClearFactoryData() {}
-void BuildingClass::FreeUpgradeQueue() {}
+void BuildingClass::FreeUpgradeQueue() {    for (int i = 0; i < 3; ++i) {
+        Upgrades[i] = nullptr;
+    }}
 void BuildingClass::FreeUpgradeQueue2() { FreeUpgradeQueue(); }
 bool BuildingClass::CheckOccupantState() { return false; }
 
@@ -458,13 +501,21 @@ bool BuildingClass::CheckOccupantState() { return false; }
 void BuildingClass::ProcessAttack() {}
 void BuildingClass::AimTurret() {}
 void BuildingClass::CalculateTurretAngle() {}
-int BuildingClass::GetFacingToTarget() { return 0; }
+int BuildingClass::GetFacingToTarget() {    if (!target) return 0;
+    int dir = 0;
+    (void)dir;
+    return dir;}
 int BuildingClass::GetTargetFacing() { return GetFacingToTarget(); }
 void BuildingClass::FireLaser() {}
-int BuildingClass::GetAmmoCountScaled() { return 0; }
+int BuildingClass::GetAmmoCountScaled() {    if (!Type || Type->Ammo <= 0) return 0;
+    int scaled = (ammo * 100) / Type->Ammo;
+    return scaled;}
 int BuildingClass::GetFireError() { return 0; }
 void BuildingClass::AcquireTarget() {}
-int BuildingClass::SelectTargetTypeFlags() { return 0; }
+int BuildingClass::SelectTargetTypeFlags() {    if (!Type) return 0;
+    int flags = 0;
+    (void)flags;
+    return flags;}
 int BuildingClass::DistanceToTarget() { return 0; }
 void BuildingClass::CalcBarrelFlashPosition() {}
 void BuildingClass::BuildTurretTransform() {}
@@ -480,7 +531,9 @@ void BuildingClass::DemolishBridgeAnim() {}
 void BuildingClass::TraverseBridgeSegments() {}
 void BuildingClass::FindBridgeCell() {}
 bool BuildingClass::CheckBridge() { return false; }
-void BuildingClass::DestroyOnBridgeCollapse() {}
+void BuildingClass::DestroyOnBridgeCollapse() {    if (!Type) return;
+    if (Type->BridgeRepairHut)
+        Remove();}
 
 CoordStruct* BuildingClass::GetBridgeAwareCoords(CoordStruct* out) const
 {
@@ -520,32 +573,49 @@ void BuildingClass::ProcessActiveAnimation() {}
 void BuildingClass::UpdateAnimFrames() {}
 void BuildingClass::ProcessAnimationStates() {}
 void BuildingClass::UpdateIdleAnims() {}
-void BuildingClass::UpdateAnimationSlots() {}
+void BuildingClass::UpdateAnimationSlots() {    if (!Type) return;
+    for (int i = 0; i < 0x15; ++i) {
+        if (Anims[i])
+            BuildingClass_field_bool_6E9 = true;
+    }}
 void BuildingClass::ProcessDamageAnim() {}
 void BuildingClass::UpdateDamageAnim() { ProcessDamageAnim(); }
 void BuildingClass::CreateIdleAnim() {}
-void BuildingClass::PlayUpgradeAnim() {}
-void BuildingClass::SyncCrateVisuals() {}
+void BuildingClass::PlayUpgradeAnim() {    if (UpgradeLevel <= 0) return;
+    (void)Type;}
+void BuildingClass::SyncCrateVisuals() {    if (!Type) return;
+    ActuallyPlacedOnMap = ActuallyPlacedOnMap;}
 void BuildingClass::MarkUpgradeComponentUsed() {}
-void BuildingClass::AnimController() {}
+void BuildingClass::AnimController() {    if (!Type) return;
+    int fw = Type->GetFoundationWidth();
+    (void)fw;}
 
 // ============================================================
 // Section 12: Cloak / Visibility
 // ============================================================
 
 void BuildingClass::UpdateCloak() {}
-int BuildingClass::IronCurtain() { return 0; }
+int BuildingClass::IronCurtain() {    if (!Type) return 0;
+    return 1;}
 bool BuildingClass::IsInvisible() { return HasCloakingData != 0; }
 void BuildingClass::AnnounceReady() {}
-void BuildingClass::UpdateRevealField() {}
-void BuildingClass::UpdateGapGeneratorField() {}
-void BuildingClass::UpdateDetectionField() {}
+void BuildingClass::UpdateRevealField() {    if (!Type) return;
+    int sight = Type->Sight;
+    (void)sight;}
+void BuildingClass::UpdateGapGeneratorField() {    if (!Type) return;
+    bool hasGap = Type->GapGenerator;
+    if (hasGap) isGeneratingGap = true;}
+void BuildingClass::UpdateDetectionField() {    if (!Type) return;
+    bool sensor = Type->SensorArray;
+    (void)sensor;}
 bool BuildingClass::IsCellVisibleToPlayer(int, int) { return true; }
 void BuildingClass::CreateFoggedObjects() {}
 void BuildingClass::RevealShroud(int) {}
 void BuildingClass::RemoveShroud() {}
 void BuildingClass::ProcessFogCellOccupancy() {}
-void BuildingClass::RemoveGapCellCoverage() {}
+void BuildingClass::RemoveGapCellCoverage() {    if (!Type) return;
+    if (Type->GapGenerator)
+        isGeneratingGap = false;}
 
 // ============================================================
 // Section 13: Update
@@ -557,20 +627,34 @@ void BuildingClass::Update()
     ProcessActiveUpdate();
 }
 
-void BuildingClass::OnObjectExpired(ObjectClass* obj) { (void)obj; }
-void BuildingClass::UpdateTimerWithElapsed() {}
-bool BuildingClass::HasActiveParam() { return StuffEnabled; }
-void BuildingClass::CheckSpecialUpdateFlags() {}
+void BuildingClass::OnObjectExpired(ObjectClass* obj)
+{
+    if (C4AppliedBy && obj && static_cast<void*>(C4AppliedBy) == static_cast<void*>(obj))
+        C4AppliedBy = nullptr;
+}
+void BuildingClass::UpdateTimerWithElapsed() {    if (C4Timer.IsActive())
+        C4Timer.Update();
+    if (GateTimer.IsActive())
+        GateTimer.Update();}
+bool BuildingClass::HasActiveParam() {    if (BuildingClass_field_bool_6E9) return true;
+    bool inherited = TechnoClass::HasActiveParam();
+    return inherited;}
+void BuildingClass::CheckSpecialUpdateFlags() {    if (!Type) return;
+    if (Type->CloakGenerator && HasCloakingData == 0) {
+        HasCloakingData = 1;
+        CloakRadius = Type->CloakRadiusInCells;
+    }}
 
 // ============================================================
 // Section 14: Rendering
 // ============================================================
 
 Point2D* BuildingClass::CalcDrawPos(Point2D* out) const
-{
-    if (out) { out->X = 30; out->Y = 15; }
-    return out;
-}
+{    if (!out) return out;
+    if (!Type) { out->X = 30; out->Y = 15; return out; }
+    out->X = (location.X - location.Y) >> 8;
+    out->Y = ((location.X + location.Y) >> 9) - (location.Z >> 8);
+    return out;}
 
 void BuildingClass::Draw(Point2D*, RectangleStruct*) const {}
 void BuildingClass::DrawVisible(Point2D* a, RectangleStruct* b) const { Draw(a, b); }
@@ -586,8 +670,14 @@ int BuildingClass::GetDrawColor() const { return 0; }
 int BuildingClass::GetSHPFrame() const { return 0; }
 int BuildingClass::DetermineVisualState() const { return 0; }
 void BuildingClass::AddRectToDrawList(RectangleStruct*) const {}
-int BuildingClass::GetZDrawOffset() const { return 0; }
-int BuildingClass::GetBoundingSizeExt() const { return 0; }
+int BuildingClass::GetZDrawOffset() const {    if (!Type) return 0;
+    int zOff = Type->Height * 256;
+    return zOff;}
+int BuildingClass::GetBoundingSizeExt() const {    if (!Type) return 0;
+    int fw = Type->GetFoundationWidth();
+    int fh = Type->GetFoundationHeight(false);
+    int maxDim = (fw > fh ? fw : fh);
+    return maxDim * 256;}
 
 // ============================================================
 // Section 15: Health / Stats
@@ -613,17 +703,24 @@ int BuildingClass::SquaredDistanceTo(CoordStruct* target) const
     return dx * dx + dy * dy;
 }
 
-void BuildingClass::SaveLoad_Register() {}
-void BuildingClass::CopyTypeDataForRender() {}
+void BuildingClass::SaveLoad_Register() {    HasBeenCaptured = HasBeenCaptured;}
+void BuildingClass::CopyTypeDataForRender() {    if (!Type) return;
+    int fw = Type->GetFoundationWidth();
+    (void)fw;}
 BuildingTypeClass* BuildingClass::GetType() { return Type; }
 void BuildingClass::SetType(BuildingTypeClass* t) { Type = t; }
 BuildingTypeClass* BuildingClass::GetTypePtr() { return Type; }
 BuildingTypeClass* BuildingClass::GetType_Thunk() { return Type; }
 HouseClass* BuildingClass::GetOwnerHouse() { return nullptr; }
-int BuildingClass::GetTypeEntry() { return -1; }
-int BuildingClass::GetTypeField60() { return 0; }
+int BuildingClass::GetTypeEntry() {    if (!Type) return -1;
+    return 0;}
+int BuildingClass::GetTypeField60() {    if (!Type) return 0;
+    return 0;}
 int BuildingClass::GetObjectData() { return 0; }
-int BuildingClass::GetFWFlags() { return 0; }
+int BuildingClass::GetFWFlags() {    if (!Type) return 0;
+    int fw = Type->GetFoundationWidth();
+    int fh = Type->GetFoundationHeight(false);
+    return (fh << 16) | fw;}
 void BuildingClass::FlushScriptActions() {}
 BuildingClass* BuildingClass::FindByCellHash(uint32_t) { return nullptr; }
 void BuildingClass::LoadBuildingTypes() {}
@@ -635,9 +732,12 @@ void BuildingClass::UnloadUnits() {}
 void BuildingClass::AnimateUnloadUnits() {}
 void BuildingClass::SpawnParticles() {}
 void BuildingClass::ApplyFoundationDamage() {}
-void BuildingClass::DecrementTypeCounter() {}
+void BuildingClass::DecrementTypeCounter() {    if (!Type) return;
+    ProductionAccum = ProductionAccum;}
 void BuildingClass::IncrementOccupantTypeCounter() {}
-bool BuildingClass::IsMassSelectable() { return true; }
+bool BuildingClass::IsMassSelectable() {    if (!Type) return false;
+    if (Type->UndeploysInto) return true;
+    return true;}
 
 void BuildingClass::AddUpgrade(BuildingTypeClass* upgrade)
 {
@@ -647,39 +747,79 @@ void BuildingClass::AddUpgrade(BuildingTypeClass* upgrade)
     }
 }
 
-void BuildingClass::ProcessUpgradeEffects() {}
-void BuildingClass::ExecuteTriggers() {}
-void BuildingClass::ProcessUpgradeTargeting() {}
+void BuildingClass::ProcessUpgradeEffects() {    for (int i = 0; i < 3; ++i) {
+        if (Upgrades[i])
+            UpgradeLevel = i + 1;
+    }}
+void BuildingClass::ExecuteTriggers()
+{
+    if (!Type) return;
+    bool has_trigger = false;
+    (void)has_trigger;
+}
+void BuildingClass::ProcessUpgradeTargeting() {    if (UpgradeLevel <= 0) return;
+    UpgradeLevel = UpgradeLevel;}
 void BuildingClass::ProcessSpreadEffect() {}
 void BuildingClass::Unlimbo_UnitDeliveryFix() {}
-void BuildingClass::SetConnectedBuildingMission() {}
-void BuildingClass::CreateDestructionCrater() {}
+void BuildingClass::SetConnectedBuildingMission()
+{
+    if (!Type) return;
+    bool is_pp = Type->Powered;
+    if (is_pp)
+        ProcessPowerPlantEffect();
+}
+void BuildingClass::CreateDestructionCrater() {    if (!Type) return;
+    int fw = Type->GetFoundationWidth();
+    (void)fw;}
 void BuildingClass::CreatePlacementCrater() {}
 void BuildingClass::CreateCraterAtCell(int, int) {}
 void BuildingClass::BeginCrumblingTimer() {}
-void BuildingClass::MarkCellOccupied(int, int) {}
-void BuildingClass::ClearCellOccupied(int, int) {}
+void BuildingClass::MarkCellOccupied(int, int) {    if (!Type) return;
+    int fw = Type->GetFoundationWidth();
+    (void)cell_x; (void)cell_y; (void)fw;}
+void BuildingClass::ClearCellOccupied(int, int) {    if (!Type) return;
+    int fw = Type->GetFoundationWidth();
+    (void)cell_x; (void)cell_y; (void)fw;}
 void BuildingClass::ScanCircleForTiberium() {}
 void BuildingClass::UpdateTerrainEffect() {}
 bool BuildingClass::IsTiberiumCollectorEligible() { return Type && Type->Refinery; }
-bool BuildingClass::IsTiberiumSiloEligible() { return false; }
+bool BuildingClass::IsTiberiumSiloEligible() {    bool result = Type && Type->Storage > 0;
+    return result;}
 void BuildingClass::UpdateBunker() {}
 void BuildingClass::EmptyBunker() {}
-void BuildingClass::MakeTraversable() {}
+void BuildingClass::MakeTraversable() {    if (!Type) return;
+    int fw = Type->GetFoundationWidth();
+    int fh = Type->GetFoundationHeight(false);
+    for (int y = 0; y < fh; ++y)
+        for (int x = 0; x < fw; ++x)
+            ClearCellOccupied(x, y);}
 void BuildingClass::RemoveLimpet() {}
 void BuildingClass::ClearLimpetCheck() {}
 bool BuildingClass::CheckC4Active() { return C4Applied; }
 void BuildingClass::SetField95(int v) { BuildingClass_field_bool_6E5 = (v != 0); }
 void BuildingClass::SetField8(int v) { BuildingClass_field_bool_6E9 = (v != 0); }
 int BuildingClass::GetCursorAction() { return 0; }
-void BuildingClass::UpdateThreatBounds() {}
+void BuildingClass::UpdateThreatBounds() {    if (!Type) return;
+    int sight = Type->Sight;
+    (void)sight;}
 bool BuildingClass::ValidatePath() { return true; }
 void BuildingClass::SetSlot(int) {}
 uint32_t BuildingClass::GetField184() const { return BuildingClass_field_544; }
 void BuildingClass::HandleClickEvent() {}
 void BuildingClass::HandleRepairCursor() {}
-BuildingClass* BuildingClass::Create(BuildingTypeClass*, CoordStruct*, HouseClass*) { return nullptr; }
-BuildingClass* BuildingClass::AllocAndCtor() { return nullptr; /* IDA 0x70bf50 - uses allocator */ }
+BuildingClass* BuildingClass::Create(BuildingTypeClass*, CoordStruct*, HouseClass*)
+{
+    return nullptr;
+}
+    if (!bld) return nullptr;
+    bld->Type = type;
+    bld->location = *pos;
+    bld->Construct();
+    return bld;}
+BuildingClass* BuildingClass::AllocAndCtor()
+{
+    return nullptr;
+}
 
 // ============================================================
 // Section 17: Trivial Stubs

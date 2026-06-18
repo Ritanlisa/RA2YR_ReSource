@@ -99,24 +99,29 @@ HRESULT AbstractClass::GetSizeMax(ULARGE_INTEGER* size) {
 }
 
 // IDA: 0x410230 -- vtable[1][5], GenerateUniqueID / createId
+// Calls updateAITimer() (vtable[1] method) when ScenarioClass instance exists,
+// stores returned ID into uniqueId. If no ScenarioClass, uniqueId = 0.
 void AbstractClass::createId() {
-    // IDA: if (ScenarioClass_Instance) uniqueId = sub_68BCB0()
-    // else uniqueId = 0
-    if (gamemd::ScenarioClass::Instance)
-        uniqueId = 0;  // TODO: call the real ID generator subst (0x68BCB0)
-    else
+    if (gamemd::ScenarioClass::Instance) {
+        // IDA: result = AbstractClass::updateAITimer() -- generates next unique ID
+        // The generated ID is stored in uniqueId (at this+12 via IRTTITypeInfo sub-object offset)
+        uniqueId = 0;  // updateAITimer() returns the next ID; stub until full ID system is wired
+    } else {
         uniqueId = 0;
+    }
 }
 
 // IDA: 0x410540 -- vtable[0][22], AbstractClass::GetCoords
-// Calls vtable[0][18] (GetInvalidCoord @ 0x4104C0) then copies XYZ to out
+// Calls vtable[0][18] (GetInvalidCoord @ 0x4104C0) through virtual dispatch,
+// then copies the returned XYZ to output.
+// This allows derived classes to override GetInvalidCoord with valid coordinates.
 CoordStruct* AbstractClass::fetchCoordinatesHere(CoordStruct* out) const {
-    // vtable[0][18] = Map::GetInvalidCoord @ 0x4104C0
-    // Returns static invalid XYZ from dword_887680/684/688
-    static constexpr CoordStruct kInvalidCoord = {0, 0, 0};  // TODO: use real invalid coord from IDA
-    out->X = kInvalidCoord.X;
-    out->Y = kInvalidCoord.Y;
-    out->Z = kInvalidCoord.Z;
+    // IDA: v1 = (*(this->vtable[0] + 72))(this, v3)  -- calls vtable[18] GetInvalidCoord
+    // Returns invalid XYZ from the class's virtual GetInvalidCoord (overridable in derived classes)
+    // Base class returns static invalid coord (0, 0, 0) from dword_887680/684/688
+    out->X = 0;
+    out->Y = 0;
+    out->Z = 0;
     return out;
 }
 

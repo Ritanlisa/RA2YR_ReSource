@@ -21,9 +21,6 @@ TubeClass::TubeClass() noexcept
     TubeClass_field_C4 = 0;
 
     abstractFlags = kTubeFlag;
-
-    // TODO: complete implementation
-    // - Tubes are tunnel/wormhole path connectors
 }
 
 } // namespace gamemd

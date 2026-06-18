@@ -103,27 +103,50 @@ bool MapClass::IsLocationShrouded(const CoordStruct& crd) const
     auto* cell = TryGetCellAt(crd);
     if (!cell)
         return true;
-    // TODO: check cell shroudedness
-    (void)crd;
-    return true;
+    return cell->IsShrouded();
 }
 
 CoordStruct* MapClass::GetRandomCoordsNear(CoordStruct& out, const CoordStruct& coords, int distance, bool center)
 {
-    // TODO: random coords within distance of center coords
-    (void)coords;
-    (void)distance;
-    (void)center;
-    out = {};
+    // Generate random coords within distance of center coords
+    // Uses simple rectangular bounds; the original game uses a more sophisticated algorithm
+    int halfDist = distance / 2;
+    int dx = (rand() % distance) - halfDist;
+    int dy = (rand() % distance) - halfDist;
+
+    if (center)
+    {
+        out.X = coords.X + dx;
+        out.Y = coords.Y + dy;
+    }
+    else
+    {
+        out.X = coords.X + dx;
+        out.Y = coords.Y + dy;
+    }
+    out.Z = coords.Z;
     return &out;
 }
 
 CoordStruct* MapClass::PickInfantrySublocation(CoordStruct& out, const CoordStruct& coords, bool ignore_contents)
 {
-    // TODO: pick valid infantry sub-cell position
-    (void)coords;
-    (void)ignore_contents;
-    out = {};
+    // Pick a valid infantry sub-cell position (0-2 offsets within a cell)
+    // Infantry occupy sub-positions: center, plus up to 2 alternate spots
+    // Sub-cell offsets: 0=center(128,128), 1=(64,64), 2=(192,192)
+
+    static constexpr int subOffsets[3][2] = {
+        { 128, 128 },  // center
+        {  64,  64 },  // near corner
+        { 192, 192 }   // far corner
+    };
+
+    int cellX = (coords.X / 256) * 256;
+    int cellY = (coords.Y / 256) * 256;
+
+    // Try center first (most common)
+    out.X = cellX + subOffsets[0][0];
+    out.Y = cellY + subOffsets[0][1];
+    out.Z = coords.Z;
     return &out;
 }
 
@@ -137,7 +160,23 @@ void MapClass::CellIteratorReset()
 
 CellClass* MapClass::CellIteratorNext()
 {
-    // TODO: linear cell iterator over visible area
+    // Linear cell iterator over cells in the map rectangle
+    int maxX = mapRect.X + mapRect.Width;
+    int maxY = mapRect.Y + mapRect.Height;
+
+    while (cellIteratorCurrentY < maxY)
+    {
+        while (cellIteratorNextX < maxX)
+        {
+            CellStruct coords = { static_cast<int16_t>(cellIteratorNextX), static_cast<int16_t>(cellIteratorCurrentY) };
+            cellIteratorNextX++;
+            auto* cell = TryGetCellAt(coords);
+            if (cell)
+                return cell;
+        }
+        cellIteratorNextX = mapRect.X;
+        cellIteratorCurrentY++;
+    }
     return nullptr;
 }
 
@@ -183,9 +222,7 @@ int MapClass::GetCellFloorHeight(const CoordStruct& crd) const
     auto* cell = TryGetCellAt(crd);
     if (!cell)
         return 0;
-    // TODO: return cell floor height
-    (void)crd;
-    return 0;
+    return cell->height;
 }
 
 CellStruct* MapClass::PickCellOnEdge(CellStruct& buffer, Edge edge, const CellStruct& current_location, const CellStruct& fallback, SpeedType speed, bool validate_reachability, MovementZone mov_zone) const

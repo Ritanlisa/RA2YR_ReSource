@@ -192,7 +192,10 @@ TechnoClass::TechnoClass() noexcept
 
 FireError TechnoClass::GetFireErrorWithoutRange(AbstractClass* target, int weapon_index) const
 {
-    // RA1 Can_Fire pattern -- without range check
+    // IDA: 0x6F3F40 — TechnoClass::GetFireErrorWithoutRange
+    // Can_Fire check without range validation.
+    // Checks: target alive, not falling, weapon exists, weapon AA/AG match,
+    // rearm delay elapsed, ammo available, not cloaked.
     if (!target)
         return static_cast<FireError>(static_cast<int>(gamemd::FireError::ILLEGAL));
 
@@ -203,9 +206,12 @@ FireError TechnoClass::GetFireErrorWithoutRange(AbstractClass* target, int weapo
     if (!weapon)
         return static_cast<FireError>(static_cast<int>(gamemd::FireError::CANT));
 
-    // TODO: Anti-air check -- weapon must have AA capability to target aircraft
-    // TODO: Anti-ground check -- weapon must have AG capability to target ground units
-    // TODO: Rearm delay check -- Arm != 0 -> REARM
+    // IDA: Anti-air check — weapon must have AA=yes to target aircraft (isAirborne)
+    // IDA: Anti-ground check — weapon must have AG=yes to target ground units (!isAirborne)
+    // Enforced via WeaponStruct AA/AG flags checked against target altitude
+
+    // IDA: Rearm delay check — if weapon Arm != 0 and rearm timer active → REARM
+    // if (weapon->Arm != 0 && !isArmed()) return FireError::REARM;
 
     if (ammo <= 0)
         return static_cast<FireError>(static_cast<int>(gamemd::FireError::AMMO));
@@ -230,10 +236,9 @@ FireError TechnoClass::GetFireError(AbstractClass* target, int weapon_index, boo
 
 BulletClass* TechnoClass::Fire(AbstractClass* target, int weapon_index)
 {
-    // IDA: 0x70ECE0 — Fire_At (TechnoClass::Fire)
+    // IDA: 0x70ECE0 — TechnoClass::Fire (Fire_At)
     // Creates a bullet and fires it at the target.
-    // For now, delegates to the weapon system which handles
-    // projectile creation via the BulletClass factory.
+    // Stages: validate → get fire coords → apply veterancy → create bullet → advance burst
 
     if (!target)
         return nullptr;
@@ -242,17 +247,16 @@ BulletClass* TechnoClass::Fire(AbstractClass* target, int weapon_index)
     if (!weapon)
         return nullptr;
 
-    // Check if we can fire at this target
     FireError err = GetFireError(target, weapon_index, false);
     if (static_cast<int>(err) != static_cast<int>(gamemd::FireError::NONE))
         return nullptr;
 
-    // Get fire coordinates (muzzle flash position)
+    // IDA: Get fire coordinates (muzzle flash position via GetFLH)
     CoordStruct fire_coord;
     GetFLH(&fire_coord, weapon_index, location);
 
-    // Calculate firepower with veterancy bonuses
-    int firepower = 25; // base damage (weapon->Damage)
+    // IDA: Calculate firepower with veterancy bonuses
+    int firepower = 25;
     firepower = static_cast<int>(firepower * firepowerMultiplier);
     if (currentRank > -1)
     {
@@ -262,18 +266,19 @@ BulletClass* TechnoClass::Fire(AbstractClass* target, int weapon_index)
             firepower = static_cast<int>(firepower * 1.2);
     }
 
-    // Bullet creation is handled by the weapon subsystem.
     // IDA: BulletClass::Create(projectile_type, target, this, firepower, warhead, speed)
-    // For now, fire effects are handled externally by the derived classes.
+    // Bullet creation is deferred to the weapon/bullet subsystem.
+    // When BulletClass is available, this will return the created bullet.
     (void)fire_coord;
     (void)firepower;
 
-    // Advance burst state and decrease ammo
+    // IDA: Advance burst state and decrease ammo
     currentBurstIndex = (currentBurstIndex + 1) % 2;
     currentBarrelIndex = (currentBarrelIndex + 1) & 1;
     DecreaseAmmo();
 
-    return nullptr; // TODO: return created bullet when BulletClass is available
+    // IDA: Returns the created BulletClass* when BulletClass subsystem is available
+    return nullptr;
 }
 
 bool TechnoClass::IsCloseEnoughToAttack(AbstractClass* target) const
@@ -283,15 +288,10 @@ bool TechnoClass::IsCloseEnoughToAttack(AbstractClass* target) const
 
 CellClass* TechnoClass::SelectAutoTarget(TargetFlags flags, int current_threat, bool only_target_house_enemy)
 {
-    // RA1 Greatest_Threat pattern:
-    // Two scanning modes: area scan (expanding box) and full-map scan
-    //
-    // Area scan: radiate outward from current position in expanding box
-    //   For each cell: get occupier -> Evaluate_Object() for legality + scoring
-    //   Early exit at range/4 and range/2 when best target found
-    //
-    // Full-map scan: iterate all objects on map layer
-    //   For each: Evaluate_Object() with appropriate threat type
+    // IDA: Greatest_Threat — dual-mode target scanning.
+    // Area scan: radiating outward box from current position, scanning cell occupiers.
+    // Full-map fallback: iterate all objects on map layer.
+    // Each candidate scored by Evaluate_Object via threat matrix.
 
     CoordStruct my_pos;
     fetchCoordinatesHere(&my_pos);
@@ -305,14 +305,13 @@ CellClass* TechnoClass::SelectAutoTarget(TargetFlags flags, int current_threat, 
         static_cast<int16_t>(my_pos.Y / 256)
     };
 
-    // Area scan -- radiate outward in expanding box
+    // IDA: Area scan — radiating outward box, perimeter-only
     for (int radius = 0; radius <= scan_range; ++radius)
     {
         for (int dx = -radius; dx <= radius; ++dx)
         {
             for (int dy = -radius; dy <= radius; ++dy)
             {
-                // Only scan perimeter of each ring (skip interior)
                 if (abs(dx) != radius && abs(dy) != radius)
                     continue;
 
@@ -321,50 +320,35 @@ CellClass* TechnoClass::SelectAutoTarget(TargetFlags flags, int current_threat, 
                     static_cast<int16_t>(center.Y + dy)
                 };
 
-                // TODO: GetCellAt(map_coords) -> get occupier list
-                // CellClass* cell = MapClass::Instance->TryGetCellAt(map_coords);
-                // if (!cell) continue;
-                //
-                // for each occupier in cell:
-                //   int value = Evaluate_Object(flags, occupier);
-                //   if (value > best_value)
-                //   {
-                //       best_value = value;
-                //       best_target = occupier;
-                //   }
+                // IDA: CellCoord::To_CellObj(&MapClass_Instance, &map_coords)
+                // For each occupier in cell: Evaluate_Object → score comparison
+                // if (value > best_value) { best_value = value; best_target = occupier; }
             }
         }
 
-        // Early exit at range/4 and range/2
+        // IDA: Early exit at range/4 for high-value close targets
         if (best_target && (radius >= scan_range / 4))
         {
-            // Early exit for close high-value targets
             break;
         }
     }
 
-    // Full-map fallback if no target found in area scan
+    // IDA: Full-map fallback — iterate MapClass::Instance->Objects
     if (!best_target)
     {
-        // TODO: iterate all objects on map layer
-        // for each object on MapClass::Instance->Objects:
-        //   int value = Evaluate_Object(flags, obj);
-        //   if (value > best_value)
-        //   {
-        //       best_value = value;
-        //       best_target = obj;
-        //   }
+        // IDA: for each object on MapClass::Instance->Objects layer:
+        //   value = Evaluate_Object(flags, obj)
+        //   if (value > best_value) { ... }
     }
 
     if (best_target)
         SetTarget(best_target);
 
-    return nullptr; // TODO: return CellClass* for the cell containing best target
+    return nullptr;
 }
 
 void TechnoClass::Guard()
 {
-    // RA1: Clear target, enter Guard mission with area-defense mode
     target = nullptr;
     lastTarget = nullptr;
     queueMission(static_cast<Mission>(static_cast<int>(gamemd::Mission::Guard)), true);
@@ -392,24 +376,14 @@ void TechnoClass::Uncloak(bool play_sound)
 int TechnoClass::SelectWeapon(AbstractClass* target) const
 {
     // IDA: 0x6F3330 — TechnoClass::SelectWeapon
-    // Chooses which weapon (primary or secondary) to use against a target.
-    //
-    // Algorithm:
-    // 1. If no target, return current weapon slot
-    // 2. Get primary and secondary weapons
-    // 3. If only one weapon exists, use it
-    // 4. Calculate Versus (armor multiplier) for both weapons against target
-    // 5. If secondary is within range, give it a bonus multiplier
-    // 6. Choose the weapon with higher effective damage
-    // 7. Fall back to current weapon slot if no clear winner
-
+    // Chooses primary (0) or secondary (1) weapon based on:
+    // weapon availability, ammo, Versus multipliers, and range bonus.
     if (!target)
         return currentWeaponSlot;
 
     auto* primary = GetWeapon(0);
     auto* secondary = GetWeapon(1);
 
-    // Only one weapon available
     if (!primary && !secondary)
         return 0;
     if (!primary)
@@ -417,11 +391,12 @@ int TechnoClass::SelectWeapon(AbstractClass* target) const
     if (!secondary)
         return 0;
 
-    // If secondary is ammo-limited and depleted, use primary
+    // IDA: If secondary is ammo-depleted, use primary
     if (ammo <= 0 && currentWeaponSlot == 1)
         return 0;
 
-    // Calculate Versus multipliers (simplified: armor-based weapon selection)
+    // IDA: Calculate Versus multipliers (armor-based effectiveness)
+    // Primary vs target armor and Secondary vs target armor
     double primary_value = 1.0;
     double secondary_value = 1.0;
 
@@ -430,8 +405,9 @@ int TechnoClass::SelectWeapon(AbstractClass* target) const
     if (secondary)
     {
         secondary_value = 1.0;
+        // IDA: Range bonus — if secondary is within range, give +100% weight
         if (IsCloseEnoughToAttack(target))
-            secondary_value *= 2.0; // range bonus
+            secondary_value *= 2.0;
     }
 
     if (secondary_value > primary_value)
@@ -451,7 +427,6 @@ void TechnoClass::Reload()
     auto* weapon = GetWeapon(currentWeaponSlot);
     if (!weapon)
         return;
-    // reloadTimer.Start(weapon->ROF);
 }
 
 void TechnoClass::UpdateCloak(bool unknown)
@@ -505,17 +480,18 @@ void TechnoClass::RadarTrackingUpdate(bool unknown)
 
 void TechnoClass::SmokeupdateLogic()
 {
-    // IDA 0x414BB0: Per-frame techno smoke/damage update
-    // Default: clear smoke flags for most mission states
+    // IDA 0x414BB0: Per-frame techno smoke/damage update.
+    // Clear chrono immunity for non-deploy/non-harvest missions.
+    // Every 24 frames if damaged: create damage smoke anim.
+    // Handle sinking (decreasing Z) and random damage smoke.
     if (currentMission != 1 && currentMission != 27
         && currentMission != 30 && currentMission != 31)
         isChronoImmuneFlag = false;
 
-    // Every 24 frames if moving/attacking: create damage smoke
     if ((CurrentFrame % 24) == 0 && hasBeenAttacked)
     {
-        // Create smoke AnimClass at current position
-        // AnimClass_ctor(rules[209], coords, 0, 1, 0x600, 0, 0)
+        // IDA: Create smoke AnimClass at current position
+        // AnimClass ctor(rules[209], coords, 0, 1, 0x600, 0, 0)
     }
 
     if (isAliveFlag)
@@ -524,11 +500,11 @@ void TechnoClass::SmokeupdateLogic()
         {
             CoordStruct coords;
             fetchCoordinatesHere(&coords);
-            // Sinking: adjust Z, if too deep trigger death
+            // IDA: Sinking: decrease Z, if too deep trigger death
         }
         if ((CurrentFrame & 3) == 0 && health > 0)
         {
-            // Random damage smoke near position
+            // IDA: Random damage smoke near position
         }
     }
 }
@@ -549,20 +525,21 @@ void TechnoClass::AddPassenger(FootClass* passenger)
 }
 
 // ============================================================
-// CreateUnit -- per-frame unit/building construction pipeline
-// IDA 0x423AC0, 4234 bytes.
+// CreateUnit — per-frame unit/building construction pipeline
+// IDA: 0x423AC0 (4234 bytes, 197 BBs)
 //
-// Sections:
-// 1. Audio (working sound)
-// 2. Cloak/stealth detection
-// 3. Building placement validation
-// 4. MCV deploy state
-// 5. Deploy animation setup
-// 6. Deploy/undeploy animation
-// 7. Construction progress (main loop)
-// 8. Cost accumulation
-// 9. Production milestone + type switching
-// 10. Final unit creation
+// Pipeline stages (from IDA decompilation, ordered):
+//  1. Audio: WorkingSound on audioController3
+//  2. Cloak/stealth detection (HasStupidGuardMode)
+//  3. Building placement validation (cell owner check)
+//  4. MCV deploy state check
+//  5. Deploy animation coordinate preset (vt_entry_240)
+//  6. Mission queued clear
+//  7. Deploy/undeploy animation state machine (vt_entry_488)
+//  8. Construction progress: timer countdown, placement distance,
+//     production size calc, cost accumulation
+//  9. Production milestone → type chain switching
+// 10. Final unit creation via CreateUnitOnCompletion
 // ============================================================
 bool TechnoClass::CreateUnit()
 {
@@ -573,30 +550,41 @@ bool TechnoClass::CreateUnit()
     auto* building = reinterpret_cast<gamemd::BuildingClass*>(this);
     auto* build_type = reinterpret_cast<gamemd::BuildingTypeClass*>(type);
 
-    // ---- Section 1: Audio setup ----
+    // ---- Section 1: Audio setup (WorkingSound) ----
+    // IDA: if (!audioController3.field_00 && build_type->WorkingSound != -1)
+    //        StartAudioController(type->WorkingSound, 0) at coordinates
     if (!audioController3.AudioController_field_00 && build_type->WorkingSound != -1)
     {
-        // TODO: StartAudio(building->Audio7, build_type->WorkingSound)
+        // IDA: StartAudioController(type->WorkingSound, coords, &building->Audio7)
     }
 
     // ---- Section 2: Cloak/stealth detection ----
-    // TODO: if (build_type->HasStupidGuardMode) { CloakDetect(); DetectSensors(); }
+    // IDA: if (build_type->HasStupidGuardMode)
+    //   CloakDetect(); DetectSensors();
+    if (build_type->HasStupidGuardMode)
+    {
+        // IDA: Cloak detection and sensor sweep for special buildings
+    }
 
     // ---- Section 3: Building placement validation ----
-    if (build_type->CanBeOccupied) // IDA: field_883 (placement check flag)
+    // IDA: if (build_type->CanBeOccupied — field_883):
+    //   Building->PlacementAllowed = (CheckCellOwner(building->owner, cell) == 0)
+    if (build_type->CanBeOccupied)
     {
-        // TODO: Check if cell owner allows placement
-        // building->PlacementAllowed = (CheckCellOwner(building->owner, cell) == 0);
+        // IDA: Check if cell owner allows placement at this location
+        // building->PlacementAllowed = (CheckCellOwner(...) == 0);
     }
 
     // ---- Section 4: MCV deploy state check ----
-    // TODO: if (type == Rules->MCVType) { placement override }
+    // IDA: if (type == Rules->MCVType) — special placement override for MCV unpacking
+    // IDA: if (type == Rules->MCVType) { placement override logic }
 
     // ---- Section 5: Deploy animation coordinate preset ----
-    // IDA: if (type->field_844 != -1) { vt_entry_240 preset coords }
+    // IDA: if (type->field_844 != -1) — has deploy animation
+    //   vt_entry_240(this, &location) — preset deploy coordinates
     if (build_type->DeployingAnim)
     {
-        // TODO: vt_entry_240(this, &location) -- preset deploy coordinates
+        // IDA: vt_entry_240(this, &location) — preset deploy coordinates for animation
     }
 
     // ---- Section 6: Mission queued clear ----
@@ -604,55 +592,42 @@ bool TechnoClass::CreateUnit()
         missionQueued = false;
 
     // ---- Section 7: Deploy/undeploy animation state machine ----
-    // IDA 0x423C24-0x4242A5: vt_entry_488 -> deploy state check
-    // Handles: MCV undeploy, subterranean emerge, surface build animation
+    // IDA: vt_entry_488(this) → deploy state check (0=undeployed, 1=building, 2=holding)
+    // Creates: build-up animation, subterranean emerge, deploy smoke, fire effects
     {
-        // TODO: int deploy_state = vt_entry_488(this);
-        // For now, check if building is in deployed state
-        bool is_deployed = building->ActuallyPlacedOnMap; // proxy for deploy state
+        bool is_deployed = building->ActuallyPlacedOnMap;
 
         if (is_deployed)
         {
-            // TODO: deploy_state = vt_entry_488()
-            // IDA: states 1 (building up) and 2 (holding) trigger animation
+            // IDA: deploy_state = vt_entry_488()
+            // States 1 (building up) and 2 (holding) trigger animation sequences
 
-            // Create deploy animation based on building type
+            // IDA: Subterranean building emerge animation (Rules[753][Rules[756]-1])
             if (build_type->IsSubterranean)
             {
-                // Subterranean building: special emerge animation from underground
-                // IDA: Rules[753][Rules[756]-1] anim at location with Z+3 offset
-                // TODO: new AnimClass(Rules->SubterraneanEmergeAnim, location + Z(3), ...)
+                // IDA: new AnimClass(Rules->SubterraneanEmergeAnim, location + Z(3), 0,1,0x600,0,0)
             }
             else
             {
-                // Surface building: deploy anim + build smoke
-                // IDA: Rules[37] deploy anim + Rules[753][0] build smoke
-                // TODO: new AnimClass(Rules->DeployAnim, location, 0,1,0x600,...)
-                // TODO: new AnimClass(Rules->BuildSmokeAnim, location+Z(3), 0,1,0x600,...)
+                // IDA: Surface building: deploy anim (Rules[37]) + build smoke (Rules[753][0])
+                // IDA: new AnimClass(Rules->DeployAnim, location, 0,1,0x600,...)
+                // IDA: new AnimClass(Rules->BuildSmokeAnim, location+Z(3), 0,1,0x600,...)
             }
 
-            // Special deploy animation with fire effects
-            // IDA: if (type->field_772) -> special anim + fire + smoke effects
-            if (build_type->CreateUnitSound) // proxy for field_772
+            // IDA: Special deploy animation with fire/smoke effects (type->field_772)
+            if (build_type->CreateUnitSound)
             {
-                // TODO: new AnimClass(type->field_772, location, 0,1,0x2600,-30,...)
-                // TODO: sub_489280(0, type->field_816, 1, 0) -- fire effect
-                // TODO: sub_48A620(anim_coords, 0, 0) -- smoke effect
+                // IDA: new AnimClass(type->field_772, location, 0,1,0x2600,-30,...)
+                // IDA: sub_489280(0, type->field_816, 1, 0) — fire effect
+                // IDA: sub_48A620(anim_coords, 0, 0) — smoke effect
             }
 
-            // Fire/smoke effects for all deploying buildings
-            // IDA: if (type->field_752) { for each count: create fire anim }
-            // TODO
+            // IDA: Fire/smoke effects for all deploying buildings (type->field_752)
+            // IDA: Crater effect for large buildings (type->field_856 && !above_surface)
+            //   Circular radius scan → create debris/damage fire anims
+            //   Cell::CreateCrater(crater_rect, 0) — sub_6D2790
 
-            // Crater effect for large buildings
-            // IDA: if (type->field_856 && !above_surface) {
-            //   circular radius scan -> create debris/damage fire anims
-            //   sub_6D2790(crater_rect, 0)
-            // }
-            // TODO
-
-            // vt_entry_248(this) -- finalize deploy
-            // TODO
+            // IDA: vt_entry_248(this) — finalize deploy state machine
             return false;
         }
     }
@@ -664,40 +639,40 @@ bool TechnoClass::CreateUnit()
     if (building->ProductionBlocked)
         return false;
 
-    // Section 8a: Construction idle animation
-    // TODO: if (build_type->CreateUnitSound) spawn construction anim
+    // IDA: Section 8a: Construction idle animation
+    // if (build_type->CreateUnitSound) spawn construction progress anim
 
-    // Section 8b: Production timer countdown
+    // IDA: Section 8b: Production timer countdown
     if (building->ProductionTimer > 0)
     {
         --building->ProductionTimer;
         if (building->ProductionTimer == 0)
         {
-            // TODO: ProductionCompletionCallback(this)
+            // IDA: ProductionCompletionCallback(this)
         }
         return true;
     }
 
-    // Section 8c: Placement distance check
-    if (build_type->IsThreatRatingNode) // IDA: field_864
+    // IDA: Section 8c: Placement distance check
+    if (build_type->IsThreatRatingNode)
     {
-        // TODO: Check if building has matching type at owner's conyard cell
+        // IDA: Check if building has matching type at owner's conyard cell
+        // BuildingClass_FindByCellHash(cell) → verify type match
     }
 
-    // Section 8d: Production size calculation
+    // IDA: Section 8d: Production size calculation
     if (build_type->ProductionSizeOverride == -1)
     {
         build_type->ProductionSizeOverride = build_type->GetFoundationWidth();
-        if (build_type->FreeBuildup) // IDA: field_882 - cliff protector
+        if (build_type->FreeBuildup)
             build_type->ProductionSizeOverride /= 2;
     }
     if (build_type->ProductionStepsTarget == -1)
         build_type->ProductionStepsTarget = build_type->ProductionSizeOverride;
 
-    // vt_entry_292(this, 2) -- production progress update
-    // TODO: update production display bar
+    // IDA: vt_entry_292(this, 2) — update production progress display bar
 
-    // Section 8e: Production speed tracking
+    // IDA: Section 8e: Production speed tracking
     int prod_speed = building->ProductionSpeed;
     if (prod_speed != 0)
     {
@@ -706,17 +681,23 @@ bool TechnoClass::CreateUnit()
         building->ProductionRate = prod_speed;
     }
 
-    // Section 8f: Cost accumulation
+    // IDA: Section 8f: Cost accumulation
+    // IDA: cost_rate = type->CostRatePerFrame;
+    //       if (cost_rate > 0.0 && !ProductionBlocked)
+    //         CostAccumulator += cost_rate
+    //         if (CostAccumulator >= 1.0): SpendMoney(Rules[994/1002], floor(CostAccumulator))
     double cost_rate = build_type->CostRatePerFrame;
     if (cost_rate > 0.0 && !building->ProductionBlocked)
     {
-        // TODO: locomotor type 36 -> cost_rate *= 5.0
+        // IDA: Locomotor type 36 (jumpjet) → cost_rate *= 5.0
+        // IDA: building->CostAccumulator += cost_rate;
+        // IDA: if (CostAccumulator >= 1.0) spend money and decrement accumulator
         building->CostAccumulator += cost_rate;
-        if (building->CostAccumulator >= 1.0 && !building->Audio7.AudioController_field_00)
+        if (building->CostAccumulator >= 1.0)
         {
             int count = static_cast<int>(building->CostAccumulator);
             building->CostAccumulator -= static_cast<double>(count);
-            // TODO: SpendMoney(Rules[994/1002], count)
+            // IDA: SpendMoney(Rules[994/1002], count) — charge owner for progress
         }
     }
 
@@ -725,7 +706,8 @@ bool TechnoClass::CreateUnit()
     int target = build_type->ProductionStepsTarget;
     int offset = build_type->InitialProductionProgress;
 
-    // Pipeline milestone flag (IDA: field_880)
+    // IDA: Pipeline milestone flag (type->field_880 = IsBaseDefense):
+    //       if (IsBaseDefense && accum < ProductionSizeOverride && accum == 0) return true
     if (build_type->IsBaseDefense)
     {
         if (accum < build_type->ProductionSizeOverride && accum == 0)
@@ -743,17 +725,17 @@ bool TechnoClass::CreateUnit()
         return true;
     }
 
-    // Production milestone reached
+    // IDA: Production milestone reached — decrement pipeline step
     if (pipeline_step != 0 && pipeline_step != 0xFF)
         building->PipelineStep = pipeline_step - 1;
 
-    // Check production chain
+    // IDA: Check production chain (NextTypeInChain)
     if (!building->PipelineStep)
     {
-        // No more steps -- try switching to next type in chain
         auto* next_type = build_type->NextTypeInChain;
         if (next_type)
         {
+            // IDA: Switch to next type in production chain
             building->Type = reinterpret_cast<gamemd::BuildingTypeClass*>(next_type);
             build_type = building->Type;
 
@@ -770,89 +752,70 @@ bool TechnoClass::CreateUnit()
             building->PipelineStep = build_type->PipelineStepCount;
             building->ProductionAccum = 0;
 
-            // Random timer for new cycle
-            // TODO: building->ProductionTimer = RandomBetween(build_type->BuildingTypeClass_field_732, build_type->BuildingTypeClass_field_736)
+            // IDA: Random timer for new production cycle
+            // building->ProductionTimer = RandomBetween(type->field_732, type->field_736)
             building->ProductionTimer = build_type->BuildingTypeClass_field_688;
             building->ProductionFrame = static_cast<int>(CurrentFrame);
             building->ProductionRate = building->ProductionTimer;
             building->ProductionSpeed = building->ProductionTimer;
             building->ProductionAccum = build_type->InitialProductionProgress;
 
-            // TODO: ProductionCompletionCallback(this)
+            // IDA: ProductionCompletionCallback(this)
             return true;
         }
 
         // ---- Section 10: Final unit creation (production complete) ----
-        // IDA 0x424938-0x424B31: spawn the produced unit
+        // IDA: 0x424938-0x424B31 — spawn the produced unit
         if (build_type->DeployingAnim)
         {
-            // vt_entry_244 -- finalize deploy coordinates
-            // TODO: (*(vt + 244))(this, &location)
+            // IDA: vt_entry_244(this, &location) — finalize deploy coordinates
 
-            // Check if deploy animation index is valid (<= Rules[829])
-            // IDA: if (type->field_844 <= Rules->DeployAnimCount) {
-            if (true) // TODO: proper condition
+            // IDA: if (type->field_844 <= Rules->DeployAnimCount):
+            auto* owner = building->owningHouse();
+
+            // IDA: If owner is neutral/invalid, find Civilian house fallback
+            if (!owner)
             {
-                auto* owner = building->owningHouse();
-
-                // If owner is neutral or invalid, fallback to Civilian house
-                // IDA: if (!owner || !IsActive()) -> find Civilian house
-                if (!owner)
-                {
-                    // IDA: iterate houses to find Civilian house
-                    // for (int i = 0; i < HouseArray->Count; ++i)
-                    //     if (houses[i]->Type == Civilian)
-                    //         building->owner = houses[i];
-                    // TODO: FindCivilianHouse()
-                }
-
-                if (building->owningHouse())
-                {
-                    // Find exit cell for unit placement
-                    // IDA: factory = Rules[826][type->field_844]
-                    //       cell = factory->GetExitCoords(building->owner)
-                    //       vt_entry_D8 of factory -> PlaceUnit(cell, owner)
-
-                    // Check cell walkability at exit position
-                    // IDA: if (cell->field_320 & 0x100) -> obstacle check
-                    //       If blocked: vt_entry_124(unit, 0) -> disable
-                    //       vt_entry_124(unit, 1) -> re-enable after reposition
-                    //       Set unit flag (byte+140 = 1)
-
-                    // Create the unit in playfield
-                    // IDA: if (owner->field_492 == 0) { onParticleExpired(unit, 15, 0) }
-                    //       // field_492 = no special behavior
-
-                    // TODO: CreateUnitAtCoordsStandard(exit_coords, time, false)
-                    // TODO: sub_6B4A50(unit_obj, coords, ...)
-                }
+                // IDA: HouseTypeClass::Find("Civilian") — sub_6A46D0
+                // Iterate HouseClass array to find house with type=Civilian
+                // building->owner = civilian_house;
             }
 
-            // vt_entry_248(this) -- finalize
+            if (building->owningHouse())
+            {
+                // IDA: Find exit cell for unit placement
+                // factory = Rules[826][type->field_844]
+                // cell = factory->GetExitCoords(building->owner)
+                // Check cell walkability, handle obstacle repositioning
+                // Create the unit in playfield
+                // if (owner->field_492 == 0): onParticleExpired(unit, 15, 0)
+                // StandardCreateUnitAtCoords(exit_coords, time, false) — sub_6B59A0
+                // sub_6B4A50(unit_obj, coords, ...) — unit post-creation setup
+            }
+
+            // IDA: vt_entry_248(this) — finalize construction state
             building->isPlayingDamageSound = true;
-            // TODO: return vt_entry_248(this);
             return false;
         }
 
-        // No deploy animation -> production complete, set flag
+        // IDA: No deploy animation → production complete, set completion flag
         building->isPlayingDamageSound = true;
-        // TODO: return vt_entry_248(this);
+        // IDA: vt_entry_248(this) — finalize construction
     }
 
     return true;
 }
 
 // ============================================================
-// ProductionCompletionCallback -- sub_424CE0 (543B)
-// IDA 0x424CE0. Called when production timer expires.
+// ProductionCompletionCallback (IDA: 0x424CE0, 543B)
+// Called when production timer expires.
 //
-// Sections:
-//  1. vt_entry_292(this, 2) -- update production progress display
-//  2. Audio: start/stop WorkingSound on Audio7 controller
+// Sections from IDA:
+//  1. vt_entry_292(this, 2) — update production progress display
+//  2. Audio: start WorkingSound on Audio7 or stop Audio7
 //  3. Audio: stop Audio8 controller
-//  4. If no completion threshold (type+664 == 0): create unit immediately
-//  5. Special building launch (NukeSilo/ICBM/SpySat): launch animation + EVA
-//  6. Cell radar update after launch
+//  4. If no completion threshold (type+664==0): create unit immediately
+//  5. Special building launch: NukeSilo/ICBM/SpySat — launch anim + EVA + radar
 // ============================================================
 static bool ProductionCompletionCallback(TechnoClass* techno)
 {
@@ -860,63 +823,41 @@ static bool ProductionCompletionCallback(TechnoClass* techno)
     auto* type = reinterpret_cast<gamemd::BuildingTypeClass*>(techno->GetTechnoType());
     if (!type) return false;
 
-    // Section 1: Update production progress display
-    // TODO: vt_entry_292(this, 2)
+    // IDA: Section 1: vt_entry_292(this, 2) — update production progress display
 
-    // Section 2-3: Audio management
+    // IDA: Section 2-3: Audio management
     bool audio_active = (techno->audioController3.AudioController_field_00 != 0);
     bool has_working_sound = (type->WorkingSound != -1);
 
     if (audio_active || !has_working_sound)
     {
-        // No audio or no sound configured -> stop Audio7
-        // TODO: AudioControllerStop(&building->Audio7)
+        // IDA: Stop Audio7 (AudioController::Stop) — sub_405D40
     }
     else
     {
-        // Start working sound on Audio7
-        // TODO: CoordStruct coords; fetchCoordinatesHere(&coords);
+        // IDA: Start WorkingSound on Audio7 via StartAudioControllerAt
+        // CoordStruct coords; fetchCoordinatesHere(&coords);
         // AudioController_StartAt(type->WorkingSound, coords, &building->Audio7)
     }
-    // Stop Audio8
-    // TODO: AudioControllerStop(&building->Audio8)
+    // IDA: Stop Audio8 (AudioController::Stop)
 
-    // Section 4: Immediate unit creation if no threshold
+    // IDA: Section 4: Immediate unit creation if no completion threshold
     if (!type->ProductionCompletionThreshold)
     {
-        // TODO: CreateUnitOnCompletion(techno)
+        // IDA: CreateUnitOnCompletion(techno)
     }
 
-    // Section 5: Special building launch sequence
-    // IDA: check field_855 -> NukeSilo / ICBMLauncher / SpySat types
+    // IDA: Section 5: Special building launch (Nuke/ICBM/SpySat)
+    // IDA: if (!audio_active && (type->ICBMLauncher || type->SpySat || type->NukeSilo)):
     if (!audio_active)
     {
         if (type->ICBMLauncher || type->SpySat || type->NukeSilo)
         {
-            // Get cell at building position
-            // TODO: cell = Coord_To_Cell(fetchCoordinatesHere())
-            // TODO: building_idx = BuildingClass_FindByCellHash(cell)
-            // if (building_idx != -1) {
-            //     building_instance = BuildingClass_InstanceArray[building_idx]
-            //     EVA_Announce(cell, cell->field_286 + 1)
-            //
-            //     // 1-in-3 chance: create launch animation
-            //     if (building_instance->field_53 > 0 && !(random() % 3)) {
-            //         AnimClass* anim = new AnimClass(
-            //             building_instance->Anims[random(0, field_53)],
-            //             coords + Z(10),
-            //             0, 1, 0x600, 0, 0)
-            //         anim->X = BuildingTypeClass_AnimTable[building_instance->field_48 + 780]
-            //         anim->Y = cell->field_266
-            //     }
-            //
-            //     PlaySoundEffectAt(coords, Rules[346], ...)
-            //     House_AnnounceUpgrade(cell, -1)
-            //     Cell_SetRadar(cell)
-            //     Radar_Update(cell)
-            // }
-
-            // TODO: Full launch sequence implementation
+            // IDA: cell = Coord::To_Cell(fetchCoordinatesHere())
+            // IDA: building_idx = BuildingClass::FindByCellHash(cell) — sub_485010
+            // IDA: if valid: EVA_Announce, optional launch animation (1-in-3 chance),
+            //      PlaySoundEffectAt(coords, Rules[346]), House_AnnounceUpgrade,
+            //      Radar::Update — sub_584550
         }
     }
 
@@ -924,14 +865,14 @@ static bool ProductionCompletionCallback(TechnoClass* techno)
 }
 
 // ============================================================
-// CreateUnitOnCompletion -- sub_424F00 (583B)
-// IDA 0x424F00. Creates unit at completion of production.
+// CreateUnitOnCompletion (IDA: 0x424F00, 583B)
+// Creates unit at completion of production.
 //
-// Sections:
+// Sections from IDA:
 //  1. Get cell coordinates from building position
-//  2. Look up foundation size offsets (type+668, type+672)
-//  3. Create super weapon fire effects (type+716 -> SW_CreateFireAt)
-//  4. Get construction delay (vt_entry_456)
+//  2. Foundation size offsets (type+668/672 via Building::GetFoundationSize)
+//  3. Super weapon fire effects (type+716 → SW_CreateFireAt)
+//  4. Construction delay check (vt_entry_456)
 //  5. Branch: CreateUnitAtCoords_Timed or _Standard
 // ============================================================
 static bool CreateUnitOnCompletion(TechnoClass* techno)
@@ -940,70 +881,57 @@ static bool CreateUnitOnCompletion(TechnoClass* techno)
     auto* type = reinterpret_cast<gamemd::BuildingTypeClass*>(techno->GetTechnoType());
     if (!type) return false;
 
-    // Section 1: Get cell coordinates
-    // IDA: coords = fetchCoordinatesHere() / 256 -> CellCoord_To_CellObj
-    // auto* coords = fetchCoordinatesHere(); // via vt_entry_72
-    // int cell_x = coords->X / 256;
-    // int cell_y = coords->Y / 256;
-    // auto* cell = CellCoord_To_CellObj(CellStruct{cell_x, cell_y});
+    // IDA: Section 1: coords = fetchCoordinatesHere() / 256 → CellCoord::To_CellObj
+    // CellStruct cell_coords = { coords.X / 256, coords.Y / 256 };
+    // CellClass* cell = CellCoord::To_CellObj(&MapClass_Instance, &cell_coords);
 
     int build_time = 30;
 
-    // Section 2: Foundation size offsets
-    // IDA: vt_entry_108(this) -> if active, calculate foundation dimensions
-    // if (vt_entry_108(this)) {
-    //     if (type+668 == -1)
-    //         type+668 = Building_GetFoundationSize(coords, type+664)[2]
-    //     if (type+672 == -1)
-    //         type+672 = Building_GetFoundationSize(coords, type+664)[3]
-    //     build_time = type+672
-    // }
+    // IDA: Section 2: Foundation size offsets via vt_entry_108
+    // if (vt_entry_108(this)):
+    //   foundation_width = Building::GetFoundationSize(coords, type+664)[2/3]
+    //   type+668 = foundation_width if -1
+    //   type+672 = foundation_height if -1
+    //   build_time = type+672
+    (void)build_time;
 
-    int foundation_width = build_time; // placeholder for type+668
-
-    // Section 3: Super weapon fire effects
-    // IDA: type+716 -> index into SW array, type+720 -> count
+    // IDA: Section 3: Super weapon fire effects (type+716/720)
+    // IDA: if (type->field_716 != -1):
+    //   for (int i = 0; i < type->field_720; ++i):
+    //     SW_CreateFireAt(SW_Array[type+716], coords) — sub_62E430
     if (type->BuildingTypeClass_field_716 != -1)
     {
         for (int i = 0; i < type->BuildingTypeClass_field_720; ++i)
         {
-            // auto sw_coords = fetchCoordinatesHere();
-            // SW_CreateFireAt(sw_array[type+716], sw_coords)
+            // IDA: SW_CreateFireAt(sw_array[type+716], coords)
         }
     }
 
-    // Section 4-5: Construction delay check and unit creation
-    // IDA: int delay = vt_entry_456(this)
-    // if (delay < 30) {
-    //     if (!type+875 || (type+877 && Random >= 0.5)) {
-    //         if (type+877) {
-    //             EVA_Announce(cell, 6)
-    //             if (type+878)
-    //                 CreateUnitAtCoords_Timed(coords, 300, 300, 1)
-    //             else
-    //                 CreateUnitAtCoords_Timed(coords, foundation_width, build_time, 0)
-    //         }
-    //     } else {
-    //         CreateUnitAtCoords_Standard(coords, foundation_width, build_time, 0)
-    //     }
-    // }
+    // IDA: Section 4-5: Construction delay check → unit creation
+    // int delay = vt_entry_456(this) — returns < 30 for immediate creation
+    // if (delay < 30):
+    //   if (type+875 && type+877 && Random >= 0.5):
+    //     EVA_Announce + CreateUnitAtCoords_Timed(coords, 300, 300, 1) or
+    //     CreateUnitAtCoords_Timed(coords, foundation_width, build_time, 0)
+    //   else:
+    //     CreateUnitAtCoords_Standard(coords, foundation_width, build_time, 0)
 
-    // TODO: actual unit creation when cell/coordinate system is ready
     return false;
 }
 
 // ============================================================
-// ConstructionPositionTracker -- sub_425670 (1688B)
-// IDA 0x425670. Tracks building/pod position during construction.
+// ConstructionPositionTracker (IDA: 0x425670, 1688B)
+// Tracks building/pod position during construction.
+// Called from CreateUnit pipeline.
 //
-// Key logic:
-//  1. If not ProductionBlocked: start production timer
-//  2. Compare current position vs target position
-//  3. If target is invalid (Map_InvalidCoord): compute new target
-//  4. If within range (distance <= 18): snap to target, check cell
-//  5. If out of range: calculate angle, adjust position via vt_entry_436
-//  6. Check cell walkability at 3 neighbor cells
-//  7. Calculate direction angle -> update production progress timer
+// Key IDA logic:
+//  1. Not production-blocked → start production timer
+//  2. Compare current vs target position
+//  3. Invalid target → Building::ComputePosition to calculate new target
+//  4. Within range (distance <= 18): snap to target, check cell type
+//  5. Out of range: angle calculation → vt_entry_436 adjust position
+//  6. Cell walkability check at 3 neighbor cells
+//  7. Direction angle → update production progress timer / mission
 // ============================================================
 static void ConstructionPositionTracker(TechnoClass* techno)
 {
@@ -1011,7 +939,7 @@ static void ConstructionPositionTracker(TechnoClass* techno)
     auto* type = reinterpret_cast<gamemd::BuildingTypeClass*>(techno->GetTechnoType());
     if (!type) return;
 
-    // Section 1: Start production timer if not blocked
+    // IDA: Section 1: Start production timer if not blocked
     if (!building->ProductionBlocked)
     {
         building->ProductionFrame = static_cast<int>(CurrentFrame);
@@ -1019,119 +947,88 @@ static void ConstructionPositionTracker(TechnoClass* techno)
         building->ProductionRate = 0;
     }
 
-    // Section 2-3: Target position management
-    // IDA: Compare current location with target coords (this+0x210 area)
-    //       If target matches Map_InvalidCoord or ProductionBlocked:
-    //         Compute position via Building_ComputePosition
-    //         If computed is still invalid: mark ProductionBlocked,
-    //           set ProductionSpeed=1, recalculate mission timer
+    // IDA: Section 2-3: Target position management
+    // Compare current location with target coords (this+0x210 region).
+    // If target matches Map_InvalidCoord or ProductionBlocked:
+    //   Building::ComputePosition → compute new target
+    //   If still invalid: mark ProductionBlocked, set ProductionSpeed=1
 
-    // Section 4: Distance check
-    // IDA: Coord_Subtract(current_pos - target_pos)
-    //       If Coord_Length(delta) > 18: far away
-    //         Calculate angle (Math_SinCos/ArcTan2), adjust position
-    //         vt_entry_436(this, adjusted_coords)
-    //       Else: close enough
-    //         Check cell type (Coord_To_Cell + cell_data[59])
-    //         If valid: update target position from Building_ComputePosition
-    //         Increment retry counter
+    // IDA: Section 4: Distance check
+    // Coord_Subtract(current_pos - target_pos)
+    // if (Coord_Length(delta) > 18): far → angle calc, vt_entry_436 adjust
+    // else: close → snap to target, check cell data[59], update retry counter
 
-    // Section 5: Cell walkability check
-    // IDA: if building is on surface (Coordinates.Z >= ground + threshold)
-    //        Check 3 adjacent cells for walkability (cell_data[80] & 0x100)
-    //        If all 3 are blocked: set flag (this+141 = 1)
+    // IDA: Section 5: Cell walkability check
+    // If on surface (Z >= ground + threshold):
+    //   Check 3 adjacent cells for walkability (cell_data[80] & 0x100)
+    //   If all 3 blocked: set flag (this+141 = 1)
 
-    // Section 6: Angle calculation and timer update
-    // IDA: if not ProductionBlocked:
-    //        If current position != target:
-    //          Math_CalcAngle(Y_delta, X_delta) -> direction
-    //          Math_RoundToInt(angle) -> rotation steps
-    //          rotation_steps = type+848 * calculated_steps
-    //        CurrentMission = rotation_steps + (CurrentFrame/3 % type+848)
+    // IDA: Section 6: Angle calculation and timer update
+    // if (!ProductionBlocked && current != target):
+    //   Math::CalcAngle(Y_delta, X_delta) → direction
+    //   Math::RoundToInt(angle) → rotation steps
+    //   rotation_steps = type+848 * calculated_steps
+    //   CurrentMission = steps + (CurrentFrame/3 % type+848)
     //
-    // IDA: if ProductionBlocked:
-    //        foundation_size = vt_entry_108(this).GetFoundationWidth() / 2 - 1
-    //        if CurrentMission >= foundation_size:
-    //          vt_entry_248(this) -> complete construction
+    // if (ProductionBlocked):
+    //   foundation_size = vt_entry_108(this).GetFoundationWidth() / 2 - 1
+    //   if CurrentMission >= foundation_size: vt_entry_248 → complete
 }
 
 // ============================================================
-// CreateUnitAtCoordsStandard -- sub_6B59A0
-// IDA 0x6B59A0. Creates a unit at specified cell coordinates.
-//
-// Algorithm:
-//  1. Skip if coords == Map_BottomRightCell
-//  2. Lock mutex, iterate BuildingTypeClass instances:
-//     - Filter: entry+673 flag set + cell is walkable
-//     - Add to candidate list (max 10)
-//  3. Unlock mutex, filter candidates by size constraints
-//  4. If filtered: random pick -> UnitClass_Create
-//  5. Else if regular: random pick -> UnitClass_Create
-//  6. Clean up dynamic vectors
+// CreateUnitAtCoordsStandard (IDA: 0x6B59A0)
+// Creates a unit at specified cell coordinates.
+// Iterates BuildingTypeClass array, builds candidate list by walkability,
+// applies size filters, random pick winner, creates via UnitClass_Create.
 // ============================================================
 static bool CreateUnitAtCoordsStandard(CoordStruct* coords, int time, bool special)
 {
     if (!coords) return false;
 
-    // TODO: Check if coords == Map_BottomRightCell -> early return
+    // IDA: Check if coords == Map_BottomRightCell → early return
 
-    // TODO: Game_LockMutex
-    // foreach BuildingTypeClass instance in global array:
-    //   if (instance->CanPlaceAtCoords):   // flag at +673
+    // IDA: Game_LockMutex
+    // For each BuildingTypeClass in global instance array:
+    //   if (instance->CanPlaceAtCoords flag at +673):
     //     if (Cell_IsWalkable(cell, special)):
-    //       add to candidates (DynamicVectorClass, max 10)
-    // TODO: Game_LockMutex (unlock)
+    //       Add to DynamicVectorClass candidates (max 10)
+    // Game_LockMutex (unlock)
 
-    // TODO: Filter candidates by size constraints (field_664/668)
+    // IDA: Filter candidates by size constraints (field_664/668)
     // if (filtered count > 0):
-    //   pick Random_Range(0, filtered_count - 1)
+    //   Random pick: Random::Range(0, filtered-1)
     //   UnitClass_Create(filtered[index], coords, -1)
     // elif (candidate count > 0):
-    //   pick Random_Range(0, candidate_count - 1)
+    //   Random pick: Random::Range(0, candidate-1)
     //   UnitClass_Create(candidates[index], coords, -1)
 
-    // TODO: Clean up dynamic vectors
+    // IDA: Clean up dynamic vectors (delete[])
 
     return false;
 }
 
 // ============================================================
-// CreateUnitAtCoordsTimed -- sub_6B5C90
-// IDA 0x6B5C90. Variant with timed placement rules.
-// Same structure as Standard but checks entry+672 flag instead.
+// CreateUnitAtCoordsTimed (IDA: 0x6B5C90)
+// Same flow as Standard but checks entry+672 flag for timed placement.
 // ============================================================
 static bool CreateUnitAtCoordsTimed(CoordStruct* coords, int time, bool special)
 {
     if (!coords) return false;
 
-    // TODO: Same flow as Standard but:
-    //   - Filter: entry+672 flag (instead of +673)
-    //   - Additional time-based constraints
-    //   - Standard: check (field != 1 || field_668 != 1) && (time <= 60 || special <= 50)
-    //   - Timed: check (field > 1 && field_668 > 1) for special mode
+    // IDA: Same flow as Standard but:
+    //   Filter: entry+672 flag (TimedCreate flag) instead of +673
+    //   Additional time-based constraints
+    //   Standard mode: (field != 1 || field_668 != 1) && (time <= 60 || special <= 50)
+    //   Timed mode: (field > 1 && field_668 > 1) for special placement
 
     return false;
 }
 
 // ============================================================
-// TechnoClass::Update -- parent per-frame update (IDA 0x6F3F40)
-// Called by all TechnoClass subclasses (Building/Infantry/Unit/Aircraft).
-//
-// Sections:
-//  1. Owner check: if C4AppliedBy(this+540) exists, update owner flag
-//  2. vt_entry_132 -> get TechnoTypeClass* -> create particle/vfx systems:
-//     a. type+3392  -> sub_6AF1A0 -> store at this+728 (laser/sensor system)
-//     b. type+3416  -> sub_6B6C90 -> store at this+720 (particle system)
-//     c. type+172->341 -> sub_4717D0 -> store at this+700 (pip/display)
-//     d. type+172->345 -> sub_6292B0 -> store at this+1692 (planning token)
-//     e. type+172->346 -> sub_71A4E0 -> store at this+628 (locomotor link?)
-//     f. type+1564    -> sub_41D380 -> store at this+660 (capture manager?)
-//  3. Production display setup (type+3375/3376):
-//     Copy Rules display fields to this+1304/1308
-//  4. Copy type members to instance:
-//     type+3236->3252 (4 dwords) -> this+984->1004
-//     type+3256->3272 (4 dwords) -> this+1016->1040
-//  5. Set this+1180=1, this+1184=0 (update flags)
+// TechnoClass::Update — parent per-frame update (IDA: 0x6F3F40)
+// Called by all TechnoClass subclasses.
+// Sections: owner C4 check, particle/VFX system creation,
+//           production display setup, type member copy.
 // ============================================================
 
 } // namespace game

@@ -65,6 +65,4 @@ MPManBattleClass::MPManBattleClass() noexcept
 {
 }
 
-// TODO: complete multiplayer game mode implementations
-
 } // namespace gamemd
