@@ -334,18 +334,18 @@ public:
 
     virtual ~XSurface() override = default;
 
-    virtual bool BlitWhole(Surface* src, bool option1, bool option2) override { return false; }
+    virtual bool BlitWhole(Surface* src, bool option1, bool option2) override;
     virtual bool BlitPart(
         const RectangleStruct& dest_rect, Surface* src,
-        const RectangleStruct& src_rect, bool option1, bool option2) override { return false; }
+        const RectangleStruct& src_rect, bool option1, bool option2) override;
     virtual bool Blit(
         const RectangleStruct& clip_rect, const RectangleStruct& clip_rect2,
         Surface* src, const RectangleStruct& dest_rect,
-        const RectangleStruct& src_rect, bool option1, bool option2) override { return false; }
+        const RectangleStruct& src_rect, bool option1, bool option2) override;
     virtual bool FillRectEx(
         const RectangleStruct& clip_rect,
-        const RectangleStruct& fill_rect, uint32_t color) override { return false; }
-    virtual bool FillRect(const RectangleStruct& fill_rect, uint32_t color) override { return false; }
+        const RectangleStruct& fill_rect, uint32_t color) override;
+    virtual bool FillRect(const RectangleStruct& fill_rect, uint32_t color) override;
     virtual bool Fill(uint32_t color) override;
     virtual bool FillRectWithFlags(
         const RectangleStruct& clip_rect,
@@ -400,9 +400,17 @@ public:
         const RectangleStruct& draw_rect, uint32_t color) override;
     virtual bool DrawRect(const RectangleStruct& draw_rect, uint32_t color) override;
 
-    virtual void* Lock(int x, int y) override { return nullptr; }
-    virtual bool Unlock() override { return false; }
-    virtual bool CanLock(uint32_t unk1, uint32_t unk2) override { return false; }
+    virtual void* Lock(int x, int y) override
+    {
+        ++LockCount;
+        return nullptr;
+    }
+    virtual bool Unlock() override
+    {
+        --LockCount;
+        return true;
+    }
+    virtual bool CanLock(uint32_t unk1, uint32_t unk2) override { return true; }
     virtual bool IsLocked() const override final { return LockCount > 0; }
 
     virtual bool PutPixel(

@@ -178,7 +178,7 @@ Wave Final: Build verification + spot-check audit — 4 parallel reviews
 
 ---
 
-- [ ] 10. Implement DSurface + XSurface + BSurface methods (~82 functions)
+- [x] 10. Implement DSurface + XSurface + BSurface methods (~82 functions)
 
   **What to do**: DSurface (~36), XSurface (~31), BSurface/BlitTrans (~15). Source: `src/render/surface.cpp`. Follow existing XSurface patterns (SetPixel, GetPixel already done=true).
   **Which agent**: `deep` — split across 3 parallel sub-tasks

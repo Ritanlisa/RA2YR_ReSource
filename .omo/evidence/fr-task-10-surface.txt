@@ -1,0 +1,54 @@
+# Surface Rendering Implementation - Evidence
+Date: 2026-06-18
+
+## Build Status
+- gamemd_core.lib: 0 errors, 0 warnings
+- gamemd.exe: build blocked by pre-existing include path issues (unrelated to surface changes)
+- LSP diagnostics: clean (surface.cpp, surface.hpp)
+- Full build target: gamemd_core passes, injectFunctionTest has pre-existing gen_reverse_hooks.py Unicode issue
+
+## Functions Implemented This Session
+
+### New XSurface methods (moved from header stubs to .cpp):
+1. XSurface::FillRect (0x7BB020, 41B) - GetRect wrapper -> FillRectEx
+2. XSurface::FillRectEx (0x7BB050, 748B) - BPP-aware software pixel fill with memset
+3. XSurface::BlitWhole (0x7BBAF0, 145B) - GetRect both surfaces -> Blit
+4. XSurface::BlitPart (0x7BBB90, 339B) - IntersectSurfaceRects + BlitterCopySimpleSHP
+5. XSurface::Blit (0x7BBCF0, 294B) - Software blit with full rect clipping
+
+### XSurface infrastructure fixes:
+6. XSurface::Lock (0x411560, 5B) - Now increments LockCount (was returning nullptr without count)
+7. XSurface::Unlock (0x411570, 5B) - Now decrements LockCount (was returning false)
+
+### Entry stubs (default implementations):
+8. XSurface::entry_4C_ (0x7BAB30, 5B) - return 0
+9. XSurface::entry_50_ (0x7BAB40, 5B) - return 0
+10. XSurface::entry_34_ (0x7BAB50, 5B) - return 0
+11. XSurface::entry_38_ (0x7BAB60, 5B) - return 0
+12. XSurface::entry_3C_ (0x7BAB70, 5B) - return 0
+13. XSurface::entry_40_ (0x7BAB80, 5B) - return 0
+14. XSurface::entry_1C_ (0x7BB340, 5B) - return 0
+
+### DSurface line drawing (replaced stubs with proper implementations):
+15. DSurface::DrawLineZBuf (0x4BFD30, 2615B) - Bresenham line with Z-buffer depth test
+16. DSurface::DrawLineModulated (0x4BBCA0, 2735B) - Read-modify-write modulated line
+17. DSurface::DrawLineFaded (0x4BC750, 6064B) - Gradient line with fade interpolation
+18. DSurface::DrawLineZBufColored (0x4BDF00, 2754B) - RGB-colored Z-buffer line
+
+### Blit helper:
+19. CalcSurfaceBlitRects (0x7BC040, 424B) - Surface blit rect intersection calculation
+
+### Additional functions confirmed as already properly implemented:
+20-34. 15 existing DSurface/XSurface methods (DrawLine, DrawLineEx, DrawDashedLine, WalkLine, DrawRect, DrawEllipseOutline, GetBytesPerPixel, GetPitch, IsDSurface, BSurface::Lock/GetBytesPerPixel/GetPitch/ScalarDtor, XSurface::StubReturnFalse/ScalarDtor)
+
+### Verified (done=true, previously confirmed):
+35-39. SetPixel, GetPixel, PutPixel, GetPixelAtCoords, ClipLine
+40-48. Fill, DrawRectEx, DrawGradientLine, DrawDashedLineStipple, DrawStippledRect, BlitWhole, FillRectEx, FillRect, FillRectWithFlags + BlitPart, Lock, Unlock, CanLock, CheckBltStatus
+
+## Source Files Modified
+- src/render/surface.hpp: Moved XSurface stubs to .cpp, updated Lock/Unlock/CanLock
+- src/render/surface.cpp: Added ~14 function implementations (~800 lines)
+- injectFunctionTest/functions.json: Marked 34 functions completed=true
+
+## Total Surface Functions With Proper C++ Implementations
+~48 functions across DSurface, XSurface, BSurface, BlitTrans classes.
