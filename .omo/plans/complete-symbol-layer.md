@@ -536,7 +536,7 @@ Max Concurrent: 8 (Waves 2 & 3)
 
 ---
 
-- [ ] 13. Organize globals by module from extracted data
+- [x] 13. Organize globals by module from extracted data
 
   **What to do**:
   - Write `tools/organize_globals.py` that reads `tools/globals_extracted.json` and `tools/existing_defs.json`
