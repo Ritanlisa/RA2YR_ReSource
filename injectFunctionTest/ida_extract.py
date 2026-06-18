@@ -128,7 +128,9 @@ def extract_all():
                 "strategy": "not_hookable" if size < 5 else "stack_hijack",
                 "completed": is_named and size > 10 and not name.startswith("nullsub"),
                 "re_file": None,
-                "re_line": None
+                "re_line": None,
+                "named": is_named,
+                "translated": False
             },
             "test": {
                 "count": 0,
