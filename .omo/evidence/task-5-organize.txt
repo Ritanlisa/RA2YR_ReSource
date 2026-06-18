@@ -1,0 +1,34 @@
+organize_functions.py — execution evidence
+========================================
+Input:  D:\RA2YR_ReSource\tools\functions_in_scope.json
+Output: D:\RA2YR_ReSource\tools\functions_by_module.json
+Total functions in scope: 8285
+Total assigned:          8285
+Integrity: PASS (input == assigned == combined)
+
+Distribution:
+  core                             7186  (gamemd)
+  entity                             62  (gamemd)
+  object                             67  (ra2::game)
+  system                            142  (gamemd)
+  render+ui                         329  (gamemd)
+  structure+house+team              129  (gamemd)
+  misc+network                      370  (gamemd)
+
+Individual module detail:
+  core            → core                        7186
+  entity          → entity                        62
+  house           → structure+house+team          27
+  misc            → misc+network                 329
+  network         → misc+network                  41
+  object          → object                        67
+  render          → render+ui                    166
+  structure       → structure+house+team          70
+  system          → system                       142
+  team            → structure+house+team          32
+  ui              → render+ui                    163
+
+Rules applied:
+  Category direct routing: ['rendering', 'com', 'locomotor', 'menu', 'yrpp_io']
+  Name prefix routing: global + member categories
+  Prefix rules: 11 rule groups

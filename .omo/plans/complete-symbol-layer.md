@@ -422,7 +422,7 @@ Max Concurrent: 8 (Waves 2 & 3)
   - Message: `feat(tools): add function module organizer`
   - Files: `tools/organize_functions.py`, `tools/functions_by_module.json`
 
-- [ ] 6. Generate `src/core/_funcs.hpp` — core/app module declarations
+- [x] 6. Generate `src/core/_funcs.hpp` — core/app module declarations
 
   **What to do**:
   - Generate header with `// IDA: 0xADDR` annotations for all core/app functions
@@ -466,7 +466,7 @@ Max Concurrent: 8 (Waves 2 & 3)
   - Message: `feat(core): add function declarations for core/app modules`
   - Files: `src/core/_funcs.hpp`
 
-- [ ] 7. Generate `src/entity/_funcs.hpp` — entity module declarations
+- [x] 7. Generate `src/entity/_funcs.hpp` — entity module declarations
 
   **What to do**: Same as Task 6 but for entity module functions (AnimClass, ParticleClass, etc.)
 
@@ -494,7 +494,7 @@ Max Concurrent: 8 (Waves 2 & 3)
   **QA Scenarios**: Same verification pattern as Task 6
   **Commit**: YES (groups with Tasks 6-12)
 
-- [ ] 9. Generate `src/system/_funcs.hpp` — system module declarations
+- [x] 9. Generate `src/system/_funcs.hpp` — system module declarations
 
   **What to do**: Same as Task 6 but for system module functions
 
@@ -504,7 +504,7 @@ Max Concurrent: 8 (Waves 2 & 3)
   **QA Scenarios**: Same verification pattern as Task 6
   **Commit**: YES (groups with Tasks 6-12)
 
-- [ ] 10. Generate `src/render/_funcs.hpp` — render/ui module declarations
+- [x] 10. Generate `src/render/_funcs.hpp` — render/ui module declarations
 
   **What to do**: Same as Task 6 but for render + ui module functions
 
@@ -514,7 +514,7 @@ Max Concurrent: 8 (Waves 2 & 3)
   **QA Scenarios**: Same verification pattern as Task 6
   **Commit**: YES (groups with Tasks 6-12)
 
-- [ ] 11. Generate `src/structure/_funcs.hpp` — structure/house/team module declarations
+- [x] 11. Generate `src/structure/_funcs.hpp` — structure/house/team module declarations
 
   **What to do**: Combined header for structure + house + team module functions
 
@@ -524,7 +524,7 @@ Max Concurrent: 8 (Waves 2 & 3)
   **QA Scenarios**: Same verification pattern as Task 6
   **Commit**: YES (groups with Tasks 6-12)
 
-- [ ] 12. Generate `src/misc/_funcs.hpp` — misc/network/type module declarations
+- [x] 12. Generate `src/misc/_funcs.hpp` — misc/network/type module declarations
 
   **What to do**: Combined header for misc + network + type module functions
 

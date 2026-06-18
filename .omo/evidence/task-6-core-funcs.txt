@@ -1,0 +1,8 @@
+Generated: src/core/_funcs.hpp
+Source: tools/functions_by_module.json (core module)
+Total functions: 7186
+Named functions: 2234
+sub_* functions: 4952
+IDA annotations: 7186
+Total lines: 7388
+File size: 663482 bytes
