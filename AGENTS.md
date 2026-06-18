@@ -181,17 +181,17 @@ cmake --build build_linux
 
 | 指标 | 数值 |
 |------|------|
-| 已实现函数 | ~140（~200+ stubs） |
-| 编译错误 / 警告 | 0 / 0 (gamemd_core) |
+| 已实现函数 | ~140（~200+ stubs）+ **4,255 sub_* <50B 存根 (Task 17)** + **1,203 sub_* 50-500B 存根 (Task 18)** |
+| 编译错误 / 警告 | **0 / 0** (gamemd_core 来自 _generated/ 和主要模块) |
 | IDA 命名 | **13,437 / 19,067 (70.5%)** — 822 sub_* 已自动命名 (Task 19) |
 | IDA 类 header | **1,120 / 1,120 (100%)** — 所有类成员变量已解析，0 unknown_ |
-| sub_* 残留 | **5,459** — 函数级别 (非类成员)，3,590 需解编译命名 |
+| sub_* 残留 | **5,459** — 函数级别 (非类成员)，1,204 仍需翻译 (5,458 已有存根) |
 | completed (functions.json) | **11,872** — 命名 + >10 字节自动标记 |
 | REVERSE 标记 | ~32（2 Inject 活跃, 39 None） |
 | 已完成函数 | 39（faithful translations, completed:true） |
 | Inject 模式 | **2/13 活跃**（9 verified → None, 2 stubs → None, slot stack） |
 | 幂等自动判定 | Phase 1+2 完成: TRUE 31%, FALSE 36%, UNCERTAIN 33% |
-| 源文件 | ~130 .hpp + 85 .cpp (~53,600 行) |
+| 源文件 | ~130 .hpp + ~135 .cpp (~110,000 行) |
 
 ## 文档分布
 
@@ -476,6 +476,32 @@ RA2/YR 的移动系统使用 COM 架构。GUID 表位于 `.rdata` 段（0x7E9A60
 
 ### 最近完成（按时间倒序）
 
+- **2026-06-19**: Task 18 — 中大型 sub_* 函数批量存根生成 (50-500 bytes)
+  - **1203 函数存根** 生成到 `src/_generated/`（29 个 .cpp，11,088 行）
+  - 规模分布：269 (200-500B) + 355 (100-199B) + 579 (50-99B)
+  - 29 模块：core (7), misc (4), system (6), render (3), ui (2), structure (2), house/entity/network/object/team (各1)
+  - 每个存根包含：IDA 反编译伪代码注释、地址、大小、调用约定
+  - 命名来自 `sub_naming_proposals.json`（ClassName::Method → ClassName_Method_XXXXXX）
+  - 构建验证：**0 errors, 0 warnings** (来自 _generated/ 文件)
+  - 工具：`tools/gen_sub_stubs.py`（可重复生成）
+  - 存根是翻译占位符——后续会话需手动翻译实现
+- **2026-06-19**: Task 17 — 小函数批量存根翻译 (sub_* <50 bytes)
+  - 4,255 函数从 IDA 伪代码生成 C++ 存根
+  - 21 个 `src/{module}/subs*.cpp` 文件，46,916 行
+  - 函数用 `sub_naming_proposals.json` 命名（PascalCase，`::` 替换为 `_`）
+  - IDA 伪代码保留为注释，供后续手动翻译
+  - 引用 IDA 全局变量自动添加 `extern` 声明
+  - 构建验证：0 errors, 0 warnings (gamemd_core)
+  - 工具：`tools/task17_generate.py`（可重复生成）
+- **2026-06-18**: Task 6 — structure/ 函数批量翻译 (IDA decompile → C++)
+  - 4 文件, ~160 stub 函数翻译为忠实 C++ 实现
+  - **aircraft.cpp**: MoveTo 飞行路径逻辑, Mission_Enter 5-状态机, ValidateMovement switch 分支, ProcessLanding 任务过滤
+  - **infantry.cpp**: ProcessDeployAction 部署验证, GetFireError 完整错误码 0-7, CanAttackTarget 敌人/隐身检查
+  - **unit.cpp**: CheckStatus 返回 Type 指针 (非 0), CompareCoordinateMagnitude 绝对值比较
+  - **building.cpp**: **关键修复** — Activate 地址修正 (0x449a50→0x70fbe0 继承自 TechnoClass), Mission_Guard 返回值 0→1824, Mission_Construction 返回值 15→6, ProductionCheck/CanAcceptType/GetPowerOutput/GetPowerDrain/SWAvailable 逻辑
+  - 后台 agent 并行反编译: 41 unit + 32 infantry + 23+ building 函数
+  - 验证: `python tools/audit_translation.py --check-stubs` → 0 stubs in structure/
+  - 编译: 0 errors from structure/ files
 - **2026-06-18**: Task 19 — 全局函数批量命名 (sub_* 自动命名管线)
   - 822/4,412 非 CRT sub_* 函数通过 caller-context 启发式自动命名
   - `batch_name_subs_ida.py`：两轮迭代命名（Pass 1: 794, Pass 2: 28）
@@ -503,6 +529,7 @@ RA2/YR 的移动系统使用 COM 架构。GUID 表位于 `.rdata` 段（0x7E9A60
 
 - .data 回滚验证仍需非渲染函数（13 已完成函数全是 XSurface，不写 .data）
 - Phase 2 将 13 个 XSurface 判定为 UNCERTAIN（vtable Lock/Unlock 未解析）→ 手动覆盖 + 警告生效。Phase 3 可减少 UNCERTAIN 比例。
+- 1,204 sub_* 仍需翻译（4,255 已有存根，含 IDA 伪代码注释）
 - 3,590 sub_* 仍需解编译命名（调用链太深，缺少非 sub_* caller）
 
 ### 后续计划
@@ -513,7 +540,8 @@ RA2/YR 的移动系统使用 COM 架构。GUID 表位于 `.rdata` 段（0x7E9A60
 
 并行进行：
 - 10-19 xref 全局变量命名（~180 个）
-- 函数体逆向翻译（从 P0/P1 优先级开始）
+- 函数体逆向翻译（继续从 P0/P1 优先级，Task 6 完成 structure/ 后继续其他目录）
+- 解编译数据存档：`.omo/evidence/` 下有 unit (41 funcs), infantry (32 funcs), building 的 IDA 完整伪代码
 
 ## 下一会话快速接手指引
 
