@@ -867,7 +867,7 @@ Max Concurrent: 8 (Waves 2 & 3)
   **Acceptance Criteria**: All 100 globals reviewed; types fixed where xref contradicts; globals_*.hpp compile clean
   **Commit**: YES — `fix(globals): apply type corrections for top-200 batch 2`
 
-- [ ] 26. Rename qualified globals based on xref evidence
+- [x] 26. Rename qualified globals based on xref evidence
 
   **What to do**:
   - For all 200 analyzed globals, check rename criteria:

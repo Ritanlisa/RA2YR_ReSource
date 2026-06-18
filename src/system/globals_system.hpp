@@ -179,4 +179,65 @@ extern uint8_t g_NetworkLobby_Init;
 // 0xb77e28: network lobby state
 extern uint32_t g_NetworkLobbyState;
 
+//===========================================================================
+// High-XRef Globals (xref≥5, ≥2 callers, from xref_analysis_batch)
+//===========================================================================
+
+// 0xB0E844 [confidence: inferred_strong] (was: BuildingLoadQueue_Count)
+extern uint32_t g_BuildingLoadQueue_Count;
+
+// 0x87F6C4 [confidence: inferred_strong] (was: FileSystem_THEATER_PAL)
+extern void* g_FileSystem_THEATER_PAL;
+
+// 0xB0E840 [confidence: inferred_strong] (was: BuildingLoadQueue_Array)
+extern void* g_BuildingLoadQueue_Array;
+
+// 0xB0E84C [confidence: inferred_strong] (was: BuildingLoadQueue_Dirty)
+extern uint32_t g_BuildingLoadQueue_Dirty;
+
+// 0xB0E850 [confidence: inferred_strong] (was: BuildingLoadQueue_Active)
+extern uint32_t g_BuildingLoadQueue_Active;
+
+// 0xB0E848 [confidence: inferred_strong] (was: BuildingLoadQueue_Capacity)
+extern uint32_t g_BuildingLoadQueue_Capacity;
+
+// 0x87F924 [confidence: inferred_strong] shroud cell array (fog of war)
+extern uint32_t g_Shroud_CellArray;
+
+// 0x87E8A4 [confidence: inferred_strong] visible surface descriptor
+extern uint32_t g_VisibleSurfaceDescriptor;
+
+// 0xB73550 [confidence: inferred_strong] main window handle
+extern void* g_hWnd;
+
+// 0x87F770 [confidence: inferred_strong] Bink movie player instance
+extern uint32_t g_BinkMoviePlayer;
+
+// 0xB0F680 [confidence: inferred_strong] animation manager
+extern uint32_t g_AnimManager;
+
+// 0xB0F670 [confidence: inferred_strong] anim pool manager
+extern uint32_t g_AnimPoolManager;
+
+// 0x87F8DC [confidence: inferred_strong] cell position lookup table
+extern uint32_t g_Cell_PositionLUT;
+
+// 0xB0F730 [confidence: inferred_strong] alpha shape pool
+extern uint32_t g_AlphaShapePool;
+
+// 0xB732F0 [confidence: inferred_strong] application instance handle
+extern void* g_hInstance;
+
+// 0x87F8E0 [confidence: inferred_strong] cell position offset
+extern uint32_t g_CellPositionOffset;
+
+// 0xB0F67D [confidence: inferred_strong] anim pool locked flag (uint8_t)
+extern uint8_t g_AnimPoolLocked;
+
+// 0xB0F678 [confidence: inferred_strong] anim type pool
+extern uint32_t g_AnimTypePool;
+
+// 0xB0F684 [confidence: inferred_strong] anim manager config
+extern uint32_t g_AnimManagerConfig;
+
 } // namespace gamemd

@@ -1,0 +1,1451 @@
+{
+  "summary": {
+    "total_analyzed": 200,
+    "qualified": 57,
+    "renamed": 22,
+    "added_already_qualified": 35
+  },
+  "renames": [
+    {
+      "action": "renamed",
+      "old_name": "MoveFeedback",
+      "new_name": "g_MoveFeedback",
+      "addr": "0x00822cf2",
+      "cpp_type": "uint32_t",
+      "section": "core",
+      "header_file": "src/core/globals_core.hpp",
+      "justification": "xref_count=41, 3 distinct callers, usage=ptr_deref:25+int_cmp:15+bool_flag:8",
+      "xref_count": 41,
+      "distinct_funcs": 3,
+      "sample_funcs": [
+        "AnimClass::finalizeAnimation",
+        "DispatchSelectionWaypointMove",
+        "PlayerClass::CheckHumanPlayer"
+      ],
+      "usage_class": "ptr_deref:25+int_cmp:15+bool_flag:8",
+      "observed_type": "int",
+      "classes": [
+        "AnimClass",
+        "PlayerClass"
+      ]
+    },
+    {
+      "action": "renamed",
+      "old_name": "RulesClass_Instance",
+      "new_name": "g_RulesClass_Instance",
+      "addr": "0x008871e0",
+      "cpp_type": "void*",
+      "section": "render",
+      "header_file": "src/render/globals_render.hpp",
+      "justification": "xref_count=1419, 5 distinct callers, usage=unknown:8+float_op:8+int_cmp:7",
+      "xref_count": 1419,
+      "distinct_funcs": 5,
+      "sample_funcs": [
+        "AircraftClass::Draw",
+        "BuildingClass::ProcessAttack",
+        "BuildingClass::ProcessRepair",
+        "BuildingClass::UpdateIdleAnims",
+        "PlacePlayerBeacon"
+      ],
+      "usage_class": "unknown:8+float_op:8+int_cmp:7",
+      "observed_type": "pointer",
+      "classes": [
+        "AircraftClass",
+        "BuildingClass"
+      ]
+    },
+    {
+      "action": "renamed",
+      "old_name": "TacticalClass_Instance",
+      "new_name": "g_TacticalClass_Instance",
+      "addr": "0x00887324",
+      "cpp_type": "uint32_t",
+      "section": "render",
+      "header_file": "src/render/globals_render.hpp",
+      "justification": "xref_count=461, 5 distinct callers, usage=int_cmp:13+bool_flag:8+func_ptr:6",
+      "xref_count": 461,
+      "distinct_funcs": 5,
+      "sample_funcs": [
+        "AircraftClass::Draw",
+        "BuildingClass::AfterDestruction",
+        "BulletClass::ProcessNukeExplosion",
+        "Crate::FindPlacement",
+        "DisplayClass::UpdateCellPassability"
+      ],
+      "usage_class": "int_cmp:13+bool_flag:8+func_ptr:6",
+      "observed_type": "bool",
+      "classes": [
+        "AircraftClass",
+        "BuildingClass",
+        "BulletClass",
+        "Crate",
+        "DisplayClass"
+      ]
+    },
+    {
+      "action": "renamed",
+      "old_name": "DSurface_Hidden_2",
+      "new_name": "g_DSurface_Hidden_2",
+      "addr": "0x00887314",
+      "cpp_type": "void*",
+      "section": "render",
+      "header_file": "src/render/globals_render.hpp",
+      "justification": "xref_count=300, 4 distinct callers, usage=unknown:12+ptr_deref:8+int_cmp:4",
+      "xref_count": 300,
+      "distinct_funcs": 4,
+      "sample_funcs": [
+        "AnimClass::Render",
+        "BuildingLightClass::Draw_Start",
+        "BuildingPlacement::RenderBuildingPlacementPreview",
+        "ColorListClass::DrawColorRect"
+      ],
+      "usage_class": "unknown:12+ptr_deref:8+int_cmp:4",
+      "observed_type": "pointer",
+      "classes": [
+        "AnimClass",
+        "BuildingLightClass",
+        "BuildingPlacement",
+        "ColorListClass"
+      ]
+    },
+    {
+      "action": "renamed",
+      "old_name": "WWMouseClass_Instance",
+      "new_name": "g_WWMouseClass_Instance",
+      "addr": "0x00887640",
+      "cpp_type": "void*",
+      "section": "render",
+      "header_file": "src/render/globals_render.hpp",
+      "justification": "xref_count=266, 5 distinct callers, usage=ptr_deref:23+int_cmp:13+bool_flag:9",
+      "xref_count": 266,
+      "distinct_funcs": 5,
+      "sample_funcs": [
+        "Dial8Class::SetValue",
+        "DisplayClass::ProcessTacticalMouseInput",
+        "DropListClass::GetItem",
+        "RenderTooltipBorder",
+        "sub_4880F0"
+      ],
+      "usage_class": "ptr_deref:23+int_cmp:13+bool_flag:9",
+      "observed_type": "pointer",
+      "classes": [
+        "Dial8Class",
+        "DisplayClass",
+        "DropListClass"
+      ]
+    },
+    {
+      "action": "renamed",
+      "old_name": "DSurface_Hidden",
+      "new_name": "g_DSurface_Hidden",
+      "addr": "0x0088730c",
+      "cpp_type": "void*",
+      "section": "render",
+      "header_file": "src/render/globals_render.hpp",
+      "justification": "xref_count=229, 5 distinct callers, usage=ptr_deref:9+func_ptr:6+int_cmp:6",
+      "xref_count": 229,
+      "distinct_funcs": 5,
+      "sample_funcs": [
+        "BinkMovie::InitFromFile",
+        "CreditsPower::Display",
+        "DisplayBuildingInfoPanel",
+        "LoadScreen::RenderLoop",
+        "TextRenderer::RenderCentered"
+      ],
+      "usage_class": "ptr_deref:9+func_ptr:6+int_cmp:6",
+      "observed_type": "pointer",
+      "classes": [
+        "BinkMovie",
+        "CreditsPower",
+        "LoadScreen",
+        "TextRenderer"
+      ]
+    },
+    {
+      "action": "renamed",
+      "old_name": "Map_VisibleRect",
+      "new_name": "g_Map_VisibleRect",
+      "addr": "0x00886fa4",
+      "cpp_type": "bool",
+      "section": "render",
+      "header_file": "src/render/globals_render.hpp",
+      "justification": "xref_count=202, 5 distinct callers, usage=int_cmp:19+unknown:5+bool_flag:2",
+      "xref_count": 202,
+      "distinct_funcs": 5,
+      "sample_funcs": [
+        "BuildingClass::DrawFactoryProduction",
+        "BuildingClass::SellEffects",
+        "CellClass::DestroyOverlay",
+        "RenderFogOfWarOverlay",
+        "sub_40DA20"
+      ],
+      "usage_class": "int_cmp:19+unknown:5+bool_flag:2",
+      "observed_type": "int",
+      "classes": [
+        "BuildingClass",
+        "CellClass"
+      ]
+    },
+    {
+      "action": "renamed",
+      "old_name": "DSurface_Primary",
+      "new_name": "g_DSurface_Primary",
+      "addr": "0x00887308",
+      "cpp_type": "void*",
+      "section": "render",
+      "header_file": "src/render/globals_render.hpp",
+      "justification": "xref_count=103, 5 distinct callers, usage=unknown:13+int_cmp:8+ptr_deref:4",
+      "xref_count": 103,
+      "distinct_funcs": 5,
+      "sample_funcs": [
+        "BinkMovie::InitFromFile",
+        "BinkMovie::RenderLoop",
+        "CreditsPower::Display",
+        "HouseClass::processTargetSelection",
+        "LoadScreen::RenderLoop"
+      ],
+      "usage_class": "unknown:13+int_cmp:8+ptr_deref:4",
+      "observed_type": "pointer",
+      "classes": [
+        "BinkMovie",
+        "CreditsPower",
+        "HouseClass",
+        "LoadScreen"
+      ]
+    },
+    {
+      "action": "renamed",
+      "old_name": "ScenarioClass_Instance",
+      "new_name": "g_ScenarioClass_Instance",
+      "addr": "0x00a8b230",
+      "cpp_type": "void*",
+      "section": "structure",
+      "header_file": "src/structure/globals_structure.hpp",
+      "justification": "xref_count=1290, 5 distinct callers, usage=int_cmp:19+bool_flag:9+ptr_deref:7",
+      "xref_count": 1290,
+      "distinct_funcs": 5,
+      "sample_funcs": [
+        "AbstractClass::GenerateUniqueID",
+        "CaptureManagerClass::HandleOverload",
+        "CellClass::ProcessBridgeRepair",
+        "CreateDominatorDestructionEffects",
+        "ScenarioClass::LoadMapData"
+      ],
+      "usage_class": "int_cmp:19+bool_flag:9+ptr_deref:7",
+      "observed_type": "pointer",
+      "classes": [
+        "AbstractClass",
+        "CaptureManagerClass",
+        "CellClass",
+        "ScenarioClass"
+      ]
+    },
+    {
+      "action": "renamed",
+      "old_name": "CurrentFrame",
+      "new_name": "g_CurrentFrame",
+      "addr": "0x00a8ed84",
+      "cpp_type": "void*",
+      "section": "structure",
+      "header_file": "src/structure/globals_structure.hpp",
+      "justification": "xref_count=1006, 5 distinct callers, usage=int_cmp:11+ptr_deref:10+bool_flag:9",
+      "xref_count": 1006,
+      "distinct_funcs": 5,
+      "sample_funcs": [
+        "AircraftClass::MoveTo",
+        "BuildingClass::Construct",
+        "BuildingClass::PowerDrainUpdate",
+        "JumpjetLocomotionClass::ComputeVoxelTransform",
+        "sub_4C68E0"
+      ],
+      "usage_class": "int_cmp:11+ptr_deref:10+bool_flag:9",
+      "observed_type": "pointer",
+      "classes": [
+        "AircraftClass",
+        "BuildingClass",
+        "JumpjetLocomotionClass"
+      ]
+    },
+    {
+      "action": "renamed",
+      "old_name": "GameMode_Current",
+      "new_name": "g_GameMode_Current",
+      "addr": "0x00a8b238",
+      "cpp_type": "uint32_t",
+      "section": "structure",
+      "header_file": "src/structure/globals_structure.hpp",
+      "justification": "xref_count=790, 5 distinct callers, usage=int_cmp:19+bool_flag:18+func_ptr:4",
+      "xref_count": 790,
+      "distinct_funcs": 5,
+      "sample_funcs": [
+        "AircraftClass::ProcessMissionTimeout",
+        "BuildingClass::UpdatePowerDrain",
+        "FillLobbyFactionComboBox",
+        "HouseClass::HandleAlliance",
+        "Network::Dispatch"
+      ],
+      "usage_class": "int_cmp:19+bool_flag:18+func_ptr:4",
+      "observed_type": "bool",
+      "classes": [
+        "AircraftClass",
+        "BuildingClass",
+        "HouseClass",
+        "Network"
+      ]
+    },
+    {
+      "action": "renamed",
+      "old_name": "IKnowWhatImDoing",
+      "new_name": "g_IKnowWhatImDoing",
+      "addr": "0x00a8e7ac",
+      "cpp_type": "uint32_t",
+      "section": "structure",
+      "header_file": "src/structure/globals_structure.hpp",
+      "justification": "xref_count=292, 5 distinct callers, usage=int_cmp:19+bool_flag:10+func_ptr:3",
+      "xref_count": 292,
+      "distinct_funcs": 5,
+      "sample_funcs": [
+        "AnimClass::finalizeAnimation",
+        "BuildingClass::EjectCrew",
+        "BuildingClass::UpdateConstruction",
+        "InfantryClass::FindNearbyCell",
+        "SuperWeapon::CreateUnits"
+      ],
+      "usage_class": "int_cmp:19+bool_flag:10+func_ptr:3",
+      "observed_type": "bool",
+      "classes": [
+        "AnimClass",
+        "BuildingClass",
+        "InfantryClass",
+        "SuperWeapon"
+      ]
+    },
+    {
+      "action": "renamed",
+      "old_name": "WTFMode",
+      "new_name": "g_WTFMode",
+      "addr": "0x00a8e9a0",
+      "cpp_type": "uint32_t",
+      "section": "structure",
+      "header_file": "src/structure/globals_structure.hpp",
+      "justification": "xref_count=123, 5 distinct callers, usage=int_cmp:22+bool_flag:17+unknown:3",
+      "xref_count": 123,
+      "distinct_funcs": 5,
+      "sample_funcs": [
+        "AircraftClass::Destruct",
+        "AnimClass::Destruct",
+        "BuildingClass::Sell",
+        "Cell::IsBridge",
+        "CellClass::IsPassable"
+      ],
+      "usage_class": "int_cmp:22+bool_flag:17+unknown:3",
+      "observed_type": "bool",
+      "classes": [
+        "AircraftClass",
+        "AnimClass",
+        "BuildingClass",
+        "Cell",
+        "CellClass"
+      ]
+    },
+    {
+      "action": "renamed",
+      "old_name": "BuildingTypeClass_Array",
+      "new_name": "g_BuildingTypeClass_Array",
+      "addr": "0x00a83d84",
+      "cpp_type": "void*",
+      "section": "structure",
+      "header_file": "src/structure/globals_structure.hpp",
+      "justification": "xref_count=117, 5 distinct callers, usage=int_cmp:20+bool_flag:14+ptr_deref:6",
+      "xref_count": 117,
+      "distinct_funcs": 5,
+      "sample_funcs": [
+        "BuildingClass::Draw_0",
+        "BuildingClass::Sell",
+        "GetCellRadarColors",
+        "House::AnnounceUpgrade",
+        "TechnoClass::CreateUnit"
+      ],
+      "usage_class": "int_cmp:20+bool_flag:14+ptr_deref:6",
+      "observed_type": "pointer",
+      "classes": [
+        "BuildingClass",
+        "House",
+        "TechnoClass"
+      ]
+    },
+    {
+      "action": "renamed",
+      "old_name": "ArmageddonMode",
+      "new_name": "g_ArmageddonMode",
+      "addr": "0x00a8ed6b",
+      "cpp_type": "uint32_t",
+      "section": "structure",
+      "header_file": "src/structure/globals_structure.hpp",
+      "justification": "xref_count=88, 5 distinct callers, usage=int_cmp:25+bool_flag:20+ptr_deref:1",
+      "xref_count": 88,
+      "distinct_funcs": 5,
+      "sample_funcs": [
+        "AircraftClass::Draw",
+        "CellClass::UpdateAnimations",
+        "FootClass::DrawPlacementPreview",
+        "ProcessDataBuildingTypeClass",
+        "TechnoClass::StartOrResumeProduction"
+      ],
+      "usage_class": "int_cmp:25+bool_flag:20+ptr_deref:1",
+      "observed_type": "bool",
+      "classes": [
+        "AircraftClass",
+        "CellClass",
+        "FootClass",
+        "TechnoClass"
+      ]
+    },
+    {
+      "action": "renamed",
+      "old_name": "lParam",
+      "new_name": "g_lParam",
+      "addr": "0x00a8eb78",
+      "cpp_type": "uint32_t",
+      "section": "structure",
+      "header_file": "src/structure/globals_structure.hpp",
+      "justification": "xref_count=26, 4 distinct callers, usage=ptr_deref:22+int_cmp:17+bool_flag:14",
+      "xref_count": 26,
+      "distinct_funcs": 4,
+      "sample_funcs": [
+        "AnimClass::Render",
+        "CreateSmokeEffectAt",
+        "Tactical::CalculateTacticalLighting",
+        "TacticalClass::DrawBuildings"
+      ],
+      "usage_class": "ptr_deref:22+int_cmp:17+bool_flag:14",
+      "observed_type": "int",
+      "classes": [
+        "AnimClass",
+        "Tactical",
+        "TacticalClass"
+      ]
+    },
+    {
+      "action": "renamed",
+      "old_name": "BuildingLoadQueue_Count",
+      "new_name": "g_BuildingLoadQueue_Count",
+      "addr": "0x00b0e844",
+      "cpp_type": "uint32_t",
+      "section": "system",
+      "header_file": "src/system/globals_system.hpp",
+      "justification": "xref_count=177, 5 distinct callers, usage=int_cmp:23+bool_flag:13+ptr_deref:5",
+      "xref_count": 177,
+      "distinct_funcs": 5,
+      "sample_funcs": [
+        "AircraftClass::Construct",
+        "AircraftClass::Destruct",
+        "AircraftClass::LoadFromStream",
+        "BuildingClass::Construct",
+        "BuildingClass::Dtor"
+      ],
+      "usage_class": "int_cmp:23+bool_flag:13+ptr_deref:5",
+      "observed_type": "int",
+      "classes": [
+        "AircraftClass",
+        "BuildingClass"
+      ]
+    },
+    {
+      "action": "renamed",
+      "old_name": "BuildingLoadQueue_Array",
+      "new_name": "g_BuildingLoadQueue_Array",
+      "addr": "0x00b0e840",
+      "cpp_type": "void*",
+      "section": "system",
+      "header_file": "src/system/globals_system.hpp",
+      "justification": "xref_count=160, 4 distinct callers, usage=int_cmp:21+bool_flag:14+ptr_deref:6",
+      "xref_count": 160,
+      "distinct_funcs": 4,
+      "sample_funcs": [
+        "AircraftClass::Construct",
+        "AircraftClass::Destruct",
+        "AircraftClass::LoadFromStream",
+        "BuildingClass::Dtor"
+      ],
+      "usage_class": "int_cmp:21+bool_flag:14+ptr_deref:6",
+      "observed_type": "pointer",
+      "classes": [
+        "AircraftClass",
+        "BuildingClass"
+      ]
+    },
+    {
+      "action": "renamed",
+      "old_name": "BuildingLoadQueue_Active",
+      "new_name": "g_BuildingLoadQueue_Active",
+      "addr": "0x00b0e850",
+      "cpp_type": "uint32_t",
+      "section": "system",
+      "header_file": "src/system/globals_system.hpp",
+      "justification": "xref_count=87, 5 distinct callers, usage=int_cmp:21+bool_flag:19+ptr_deref:2",
+      "xref_count": 87,
+      "distinct_funcs": 5,
+      "sample_funcs": [
+        "AircraftClass::Construct",
+        "AircraftClass::LoadFromStream",
+        "BuildingClass::LoadFromStream",
+        "InfantryClass::Destruct",
+        "sub_6E6A50"
+      ],
+      "usage_class": "int_cmp:21+bool_flag:19+ptr_deref:2",
+      "observed_type": "bool",
+      "classes": [
+        "AircraftClass",
+        "BuildingClass",
+        "InfantryClass"
+      ]
+    },
+    {
+      "action": "renamed",
+      "old_name": "FileSystem_THEATER_PAL",
+      "new_name": "g_FileSystem_THEATER_PAL",
+      "addr": "0x0087f6c4",
+      "cpp_type": "void*",
+      "section": "system",
+      "header_file": "src/system/globals_system.hpp",
+      "justification": "xref_count=78, 5 distinct callers, usage=int_cmp:19+bool_flag:16+ptr_deref:9",
+      "xref_count": 78,
+      "distinct_funcs": 5,
+      "sample_funcs": [
+        "BulletClass::SetupVoxelTransform",
+        "ColorListClass::DrawColorRect",
+        "RenderTooltipBorder",
+        "sub_42E150",
+        "sub_4880F0"
+      ],
+      "usage_class": "int_cmp:19+bool_flag:16+ptr_deref:9",
+      "observed_type": "pointer",
+      "classes": [
+        "BulletClass",
+        "ColorListClass"
+      ]
+    },
+    {
+      "action": "renamed",
+      "old_name": "BuildingLoadQueue_Dirty",
+      "new_name": "g_BuildingLoadQueue_Dirty",
+      "addr": "0x00b0e84c",
+      "cpp_type": "uint32_t",
+      "section": "system",
+      "header_file": "src/system/globals_system.hpp",
+      "justification": "xref_count=67, 5 distinct callers, usage=int_cmp:20+bool_flag:20+unknown:4",
+      "xref_count": 67,
+      "distinct_funcs": 5,
+      "sample_funcs": [
+        "AircraftClass::Construct",
+        "AircraftClass::Destruct",
+        "BuildingClass::Construct",
+        "InfantryClass::Construct",
+        "InfantryClass::Destruct"
+      ],
+      "usage_class": "int_cmp:20+bool_flag:20+unknown:4",
+      "observed_type": "bool",
+      "classes": [
+        "AircraftClass",
+        "BuildingClass",
+        "InfantryClass"
+      ]
+    },
+    {
+      "action": "renamed",
+      "old_name": "BuildingLoadQueue_Capacity",
+      "new_name": "g_BuildingLoadQueue_Capacity",
+      "addr": "0x00b0e848",
+      "cpp_type": "uint32_t",
+      "section": "system",
+      "header_file": "src/system/globals_system.hpp",
+      "justification": "xref_count=31, 3 distinct callers, usage=ptr_deref:25+int_cmp:17+bool_flag:11",
+      "xref_count": 31,
+      "distinct_funcs": 3,
+      "sample_funcs": [
+        "AircraftClass::Construct",
+        "AircraftClass::LoadFromStream",
+        "BuildingClass::Construct"
+      ],
+      "usage_class": "ptr_deref:25+int_cmp:17+bool_flag:11",
+      "observed_type": "int",
+      "classes": [
+        "AircraftClass",
+        "BuildingClass"
+      ]
+    }
+  ],
+  "additions": [
+    {
+      "action": "added",
+      "old_name": "g_ZBufferDescriptor",
+      "new_name": "g_ZBufferDescriptor",
+      "addr": "0x00887644",
+      "cpp_type": "uint32_t",
+      "section": "render",
+      "header_file": "src/render/globals_render.hpp",
+      "justification": "xref_count=260, 5 distinct callers, usage=int_cmp:22+bool_flag:13+unknown:2",
+      "xref_count": 260,
+      "distinct_funcs": 5,
+      "sample_funcs": [
+        "AnimClass::Render",
+        "BlitterRLEBlitSHP",
+        "sub_491EA0",
+        "sub_492370",
+        "sub_492E10"
+      ],
+      "usage_class": "int_cmp:22+bool_flag:13+unknown:2",
+      "observed_type": "bool",
+      "classes": [
+        "AnimClass"
+      ]
+    },
+    {
+      "action": "added",
+      "old_name": "g_BitMask_Green",
+      "new_name": "g_BitMask_Green",
+      "addr": "0x008a0de0",
+      "cpp_type": "bool",
+      "section": "render",
+      "header_file": "src/render/globals_render.hpp",
+      "justification": "xref_count=239, 5 distinct callers, usage=int_cmp:25+bool_flag:1",
+      "xref_count": 239,
+      "distinct_funcs": 5,
+      "sample_funcs": [
+        "DSurface::CreatePrimary",
+        "DrawSidebarCreditsTimer",
+        "DrawTechnoDeployCircle",
+        "RenderBuildingTag",
+        "TacticalClass::HandlePlayerAction"
+      ],
+      "usage_class": "int_cmp:25+bool_flag:1",
+      "observed_type": "int",
+      "classes": [
+        "DSurface",
+        "TacticalClass"
+      ]
+    },
+    {
+      "action": "added",
+      "old_name": "g_BitShift_Blue",
+      "new_name": "g_BitShift_Blue",
+      "addr": "0x008a0dd8",
+      "cpp_type": "bool",
+      "section": "render",
+      "header_file": "src/render/globals_render.hpp",
+      "justification": "xref_count=231, 5 distinct callers, usage=int_cmp:25+bool_flag:1",
+      "xref_count": 231,
+      "distinct_funcs": 5,
+      "sample_funcs": [
+        "DSurface::FillRectWithFlags",
+        "DrawSidebarCreditsTimer",
+        "DrawTechnoDeployCircle",
+        "RenderBuildingTag",
+        "TacticalClass::HandlePlayerAction"
+      ],
+      "usage_class": "int_cmp:25+bool_flag:1",
+      "observed_type": "int",
+      "classes": [
+        "DSurface",
+        "TacticalClass"
+      ]
+    },
+    {
+      "action": "added",
+      "old_name": "g_BitMask_Blue",
+      "new_name": "g_BitMask_Blue",
+      "addr": "0x008a0de4",
+      "cpp_type": "uint32_t",
+      "section": "render",
+      "header_file": "src/render/globals_render.hpp",
+      "justification": "xref_count=231, 5 distinct callers, usage=int_cmp:25",
+      "xref_count": 231,
+      "distinct_funcs": 5,
+      "sample_funcs": [
+        "DSurface::FillRectWithFlags",
+        "DrawSidebarCreditsTimer",
+        "DrawTechnoDeployCircle",
+        "RenderBuildingTag",
+        "TacticalClass::HandlePlayerAction"
+      ],
+      "usage_class": "int_cmp:25",
+      "observed_type": "int",
+      "classes": [
+        "DSurface",
+        "TacticalClass"
+      ]
+    },
+    {
+      "action": "added",
+      "old_name": "g_BitMask_Red",
+      "new_name": "g_BitMask_Red",
+      "addr": "0x008a0ddc",
+      "cpp_type": "uint32_t",
+      "section": "render",
+      "header_file": "src/render/globals_render.hpp",
+      "justification": "xref_count=226, 5 distinct callers, usage=int_cmp:24+unknown:1",
+      "xref_count": 226,
+      "distinct_funcs": 5,
+      "sample_funcs": [
+        "DSurface::FillRectWithFlags",
+        "DrawSidebarCreditsTimer",
+        "DrawTechnoDeployCircle",
+        "RenderBuildingTag",
+        "TacticalClass::HandlePlayerAction"
+      ],
+      "usage_class": "int_cmp:24+unknown:1",
+      "observed_type": "int",
+      "classes": [
+        "DSurface",
+        "TacticalClass"
+      ]
+    },
+    {
+      "action": "added",
+      "old_name": "g_BitShift_Red",
+      "new_name": "g_BitShift_Red",
+      "addr": "0x008a0dd0",
+      "cpp_type": "bool",
+      "section": "render",
+      "header_file": "src/render/globals_render.hpp",
+      "justification": "xref_count=222, 5 distinct callers, usage=int_cmp:24+bool_flag:3+float_op:1",
+      "xref_count": 222,
+      "distinct_funcs": 5,
+      "sample_funcs": [
+        "DSurface::CreatePrimary",
+        "DrawSidebarCreditsTimer",
+        "PackRGB565",
+        "RenderBuildingTag",
+        "TacticalClass::HandlePlayerAction"
+      ],
+      "usage_class": "int_cmp:24+bool_flag:3+float_op:1",
+      "observed_type": "int",
+      "classes": [
+        "DSurface",
+        "TacticalClass"
+      ]
+    },
+    {
+      "action": "added",
+      "old_name": "g_DisplayWidth",
+      "new_name": "g_DisplayWidth",
+      "addr": "0x008a00a4",
+      "cpp_type": "bool",
+      "section": "render",
+      "header_file": "src/render/globals_render.hpp",
+      "justification": "xref_count=114, 5 distinct callers, usage=int_cmp:13+unknown:11+bool_flag:9",
+      "xref_count": 114,
+      "distinct_funcs": 5,
+      "sample_funcs": [
+        "BINK::Background_Setup",
+        "CreditsPower::Display",
+        "InitializeDDraw",
+        "MainMenu::Screen",
+        "sub_552C90"
+      ],
+      "usage_class": "int_cmp:13+unknown:11+bool_flag:9",
+      "observed_type": "int",
+      "classes": [
+        "BINK",
+        "CreditsPower",
+        "MainMenu"
+      ]
+    },
+    {
+      "action": "added",
+      "old_name": "g_lpDirectDraw7",
+      "new_name": "g_lpDirectDraw7",
+      "addr": "0x008a0094",
+      "cpp_type": "uint32_t",
+      "section": "render",
+      "header_file": "src/render/globals_render.hpp",
+      "justification": "xref_count=34, 2 distinct callers, usage=ptr_deref:25+int_cmp:19+bool_flag:11",
+      "xref_count": 34,
+      "distinct_funcs": 2,
+      "sample_funcs": [
+        "sub_4A3FD0",
+        "sub_4A40C0"
+      ],
+      "usage_class": "ptr_deref:25+int_cmp:19+bool_flag:11",
+      "observed_type": "int",
+      "classes": []
+    },
+    {
+      "action": "added",
+      "old_name": "g_LoadScreenFlag",
+      "new_name": "g_LoadScreenFlag",
+      "addr": "0x008a00a0",
+      "cpp_type": "uint32_t",
+      "section": "render",
+      "header_file": "src/render/globals_render.hpp",
+      "justification": "xref_count=21, 3 distinct callers, usage=ptr_deref:21+int_cmp:18+bool_flag:9",
+      "xref_count": 21,
+      "distinct_funcs": 3,
+      "sample_funcs": [
+        "CreditsPower::Display",
+        "InitGame",
+        "LoadScreen::RenderLoop"
+      ],
+      "usage_class": "ptr_deref:21+int_cmp:18+bool_flag:9",
+      "observed_type": "int",
+      "classes": [
+        "CreditsPower",
+        "LoadScreen"
+      ]
+    },
+    {
+      "action": "added",
+      "old_name": "g_Map_GlobalCellIndex",
+      "new_name": "g_Map_GlobalCellIndex",
+      "addr": "0x00abdc74",
+      "cpp_type": "void*",
+      "section": "structure",
+      "header_file": "src/structure/globals_structure.hpp",
+      "justification": "xref_count=443, 5 distinct callers, usage=int_cmp:21+bool_flag:8+ptr_deref:6",
+      "xref_count": 443,
+      "distinct_funcs": 5,
+      "sample_funcs": [
+        "MapClass::FillRevealBuffer",
+        "MapClass::IsCellPassable",
+        "PlaceTerrainCliffsRegion",
+        "RepairMapCliff",
+        "Terrain::PlaceCliffs"
+      ],
+      "usage_class": "int_cmp:21+bool_flag:8+ptr_deref:6",
+      "observed_type": "pointer",
+      "classes": [
+        "MapClass",
+        "Terrain"
+      ]
+    },
+    {
+      "action": "added",
+      "old_name": "g_SelectionManager",
+      "new_name": "g_SelectionManager",
+      "addr": "0x00a8ecc8",
+      "cpp_type": "uint32_t",
+      "section": "structure",
+      "header_file": "src/structure/globals_structure.hpp",
+      "justification": "xref_count=81, 5 distinct callers, usage=int_cmp:23+bool_flag:19+ptr_deref:3",
+      "xref_count": 81,
+      "distinct_funcs": 5,
+      "sample_funcs": [
+        "DispatchSelectionWaypointMove",
+        "MapClass::UnselectAll_ClearLimboLaunchers",
+        "TacticalClass::HandlePlayerAction",
+        "TacticalClass::InterpolateView",
+        "sub_4E7D40"
+      ],
+      "usage_class": "int_cmp:23+bool_flag:19+ptr_deref:3",
+      "observed_type": "bool",
+      "classes": [
+        "MapClass",
+        "TacticalClass"
+      ]
+    },
+    {
+      "action": "added",
+      "old_name": "g_GameModeOptions",
+      "new_name": "g_GameModeOptions",
+      "addr": "0x00a8eb60",
+      "cpp_type": "uint32_t",
+      "section": "structure",
+      "header_file": "src/structure/globals_structure.hpp",
+      "justification": "xref_count=81, 5 distinct callers, usage=ptr_deref:21+func_ptr:12+int_cmp:9",
+      "xref_count": 81,
+      "distinct_funcs": 5,
+      "sample_funcs": [
+        "AnimClass::ctor",
+        "BuildingClass::StartProduction",
+        "DumpNetworkStats",
+        "EventClass::ProcessEvent",
+        "Main::CreateDialog"
+      ],
+      "usage_class": "ptr_deref:21+func_ptr:12+int_cmp:9",
+      "observed_type": "int",
+      "classes": [
+        "AnimClass",
+        "BuildingClass",
+        "EventClass",
+        "Main"
+      ]
+    },
+    {
+      "action": "added",
+      "old_name": "g_TriggerTypeCount",
+      "new_name": "g_TriggerTypeCount",
+      "addr": "0x00a83c6c",
+      "cpp_type": "bool",
+      "section": "structure",
+      "header_file": "src/structure/globals_structure.hpp",
+      "justification": "xref_count=67, 5 distinct callers, usage=int_cmp:19+bool_flag:11+unknown:5",
+      "xref_count": 67,
+      "distinct_funcs": 5,
+      "sample_funcs": [
+        "AITriggerTypeClass::LoadFromINI",
+        "BridgeClass::GetCellData",
+        "BuildingClass::UpdateConstruction",
+        "HouseClass::SaveTriggerNodeData",
+        "Scenario::ReadTeams"
+      ],
+      "usage_class": "int_cmp:19+bool_flag:11+unknown:5",
+      "observed_type": "int",
+      "classes": [
+        "AITriggerTypeClass",
+        "BridgeClass",
+        "BuildingClass",
+        "HouseClass",
+        "Scenario"
+      ]
+    },
+    {
+      "action": "added",
+      "old_name": "g_ObjectClass_CurrentCount",
+      "new_name": "g_ObjectClass_CurrentCount",
+      "addr": "0x00a8ecbc",
+      "cpp_type": "void*",
+      "section": "structure",
+      "header_file": "src/structure/globals_structure.hpp",
+      "justification": "xref_count=67, 4 distinct callers, usage=int_cmp:16+bool_flag:9+unknown:8",
+      "xref_count": 67,
+      "distinct_funcs": 4,
+      "sample_funcs": [
+        "DispatchSelectionWaypointMove",
+        "MapClass::UnselectAll_ClearLimboLaunchers",
+        "TacticalClass::HandlePlayerAction",
+        "TacticalClass::InterpolateView"
+      ],
+      "usage_class": "int_cmp:16+bool_flag:9+unknown:8",
+      "observed_type": "pointer",
+      "classes": [
+        "MapClass",
+        "TacticalClass"
+      ]
+    },
+    {
+      "action": "added",
+      "old_name": "g_ScenarioState",
+      "new_name": "g_ScenarioState",
+      "addr": "0x00a8b550",
+      "cpp_type": "uint32_t",
+      "section": "structure",
+      "header_file": "src/structure/globals_structure.hpp",
+      "justification": "xref_count=66, 4 distinct callers, usage=ptr_deref:25+int_cmp:16+bool_flag:13",
+      "xref_count": 66,
+      "distinct_funcs": 4,
+      "sample_funcs": [
+        "EventClass::ProcessEvent",
+        "GameFrameLoop",
+        "HouseClass::CheckDefeat",
+        "Sidebar::StartSidebarProduction"
+      ],
+      "usage_class": "ptr_deref:25+int_cmp:16+bool_flag:13",
+      "observed_type": "int",
+      "classes": [
+        "EventClass",
+        "HouseClass",
+        "Sidebar"
+      ]
+    },
+    {
+      "action": "added",
+      "old_name": "g_AnimTypeCount",
+      "new_name": "g_AnimTypeCount",
+      "addr": "0x008b4154",
+      "cpp_type": "void*",
+      "section": "structure",
+      "header_file": "src/structure/globals_structure.hpp",
+      "justification": "xref_count=56, 4 distinct callers, usage=unknown:12+int_cmp:12+bool_flag:4",
+      "xref_count": 56,
+      "distinct_funcs": 4,
+      "sample_funcs": [
+        "",
+        "AnimTypeClass::Construct",
+        "AnimTypeClass::LoadFromINI",
+        "TechnoClass::SmokeUpdate"
+      ],
+      "usage_class": "unknown:12+int_cmp:12+bool_flag:4",
+      "observed_type": "pointer",
+      "classes": [
+        "AnimTypeClass",
+        "TechnoClass"
+      ]
+    },
+    {
+      "action": "added",
+      "old_name": "g_NetworkEventPending",
+      "new_name": "g_NetworkEventPending",
+      "addr": "0x00a8d5f8",
+      "cpp_type": "uint32_t",
+      "section": "structure",
+      "header_file": "src/structure/globals_structure.hpp",
+      "justification": "xref_count=52, 2 distinct callers, usage=int_cmp:19+bool_flag:15+ptr_deref:11",
+      "xref_count": 52,
+      "distinct_funcs": 2,
+      "sample_funcs": [
+        "EventClass::ProcessEvent",
+        "MainGame"
+      ],
+      "usage_class": "int_cmp:19+bool_flag:15+ptr_deref:11",
+      "observed_type": "int",
+      "classes": [
+        "EventClass"
+      ]
+    },
+    {
+      "action": "added",
+      "old_name": "g_TriggerClassCount",
+      "new_name": "g_TriggerClassCount",
+      "addr": "0x00a83c78",
+      "cpp_type": "uint32_t",
+      "section": "structure",
+      "header_file": "src/structure/globals_structure.hpp",
+      "justification": "xref_count=50, 4 distinct callers, usage=ptr_deref:25+int_cmp:22+bool_flag:21",
+      "xref_count": 50,
+      "distinct_funcs": 4,
+      "sample_funcs": [
+        "BuildingClass::DemolishBridge",
+        "BuildingTypeClass::CleanupMembers",
+        "BuildingTypeClass::ConstructFull",
+        "FootClass::UpdateSidebar"
+      ],
+      "usage_class": "ptr_deref:25+int_cmp:22+bool_flag:21",
+      "observed_type": "int",
+      "classes": [
+        "BuildingClass",
+        "BuildingTypeClass",
+        "FootClass"
+      ]
+    },
+    {
+      "action": "added",
+      "old_name": "g_IntroMovieObject",
+      "new_name": "g_IntroMovieObject",
+      "addr": "0x00a8e960",
+      "cpp_type": "uint32_t",
+      "section": "structure",
+      "header_file": "src/structure/globals_structure.hpp",
+      "justification": "xref_count=49, 3 distinct callers, usage=ptr_deref:23+int_cmp:16+bool_flag:7",
+      "xref_count": 49,
+      "distinct_funcs": 3,
+      "sample_funcs": [
+        "EventClass::ProcessEvent",
+        "MenuSelect",
+        "PlayIntroSequence"
+      ],
+      "usage_class": "ptr_deref:23+int_cmp:16+bool_flag:7",
+      "observed_type": "int",
+      "classes": [
+        "EventClass"
+      ]
+    },
+    {
+      "action": "added",
+      "old_name": "g_DDraw_Active",
+      "new_name": "g_DDraw_Active",
+      "addr": "0x00a8ed80",
+      "cpp_type": "uint32_t",
+      "section": "structure",
+      "header_file": "src/structure/globals_structure.hpp",
+      "justification": "xref_count=46, 5 distinct callers, usage=int_cmp:25+bool_flag:24+ptr_deref:23",
+      "xref_count": 46,
+      "distinct_funcs": 5,
+      "sample_funcs": [
+        "BinkMovie::RenderLoop",
+        "BinkMovieClass::RenderFrameToSurface",
+        "DSurface::Lock",
+        "DSurface::RestoreIfLost",
+        "DSurface::Unlock"
+      ],
+      "usage_class": "int_cmp:25+bool_flag:24+ptr_deref:23",
+      "observed_type": "int",
+      "classes": [
+        "BinkMovie",
+        "BinkMovieClass",
+        "DSurface"
+      ]
+    },
+    {
+      "action": "added",
+      "old_name": "g_GameActive",
+      "new_name": "g_GameActive",
+      "addr": "0x00a8ed9c",
+      "cpp_type": "uint32_t",
+      "section": "structure",
+      "header_file": "src/structure/globals_structure.hpp",
+      "justification": "xref_count=42, 5 distinct callers, usage=ptr_deref:25+int_cmp:21+bool_flag:19",
+      "xref_count": 42,
+      "distinct_funcs": 5,
+      "sample_funcs": [
+        "",
+        "EventClass::Enqueue",
+        "InputManager::EnqueueInputEvent",
+        "InputManager::WndProc",
+        "MainGame"
+      ],
+      "usage_class": "ptr_deref:25+int_cmp:21+bool_flag:19",
+      "observed_type": "int",
+      "classes": [
+        "EventClass",
+        "InputManager"
+      ]
+    },
+    {
+      "action": "added",
+      "old_name": "g_CommandLineFlags",
+      "new_name": "g_CommandLineFlags",
+      "addr": "0x00a8eb84",
+      "cpp_type": "uint32_t",
+      "section": "structure",
+      "header_file": "src/structure/globals_structure.hpp",
+      "justification": "xref_count=31, 3 distinct callers, usage=ptr_deref:22+int_cmp:16+bool_flag:9",
+      "xref_count": 31,
+      "distinct_funcs": 3,
+      "sample_funcs": [
+        "ParseCommandLine",
+        "ScreenDlgProcOptions",
+        "sub_561180"
+      ],
+      "usage_class": "ptr_deref:22+int_cmp:16+bool_flag:9",
+      "observed_type": "int",
+      "classes": []
+    },
+    {
+      "action": "added",
+      "old_name": "g_Shroud_CellArray",
+      "new_name": "g_Shroud_CellArray",
+      "addr": "0x0087f924",
+      "cpp_type": "bool",
+      "section": "system",
+      "header_file": "src/system/globals_system.hpp",
+      "justification": "xref_count=399, 5 distinct callers, usage=int_cmp:25+bool_flag:22",
+      "xref_count": 399,
+      "distinct_funcs": 5,
+      "sample_funcs": [
+        "BuildingClass::UpdatePowerAnimation",
+        "PlaceTerrainCliffsRegion",
+        "RepairMapCliff",
+        "Terrain::PlaceCliffs",
+        "sub_568140"
+      ],
+      "usage_class": "int_cmp:25+bool_flag:22",
+      "observed_type": "int",
+      "classes": [
+        "BuildingClass",
+        "Terrain"
+      ]
+    },
+    {
+      "action": "added",
+      "old_name": "g_VisibleSurfaceDescriptor",
+      "new_name": "g_VisibleSurfaceDescriptor",
+      "addr": "0x0087e8a4",
+      "cpp_type": "uint32_t",
+      "section": "system",
+      "header_file": "src/system/globals_system.hpp",
+      "justification": "xref_count=218, 5 distinct callers, usage=int_cmp:21+bool_flag:15+unknown:3",
+      "xref_count": 218,
+      "distinct_funcs": 5,
+      "sample_funcs": [
+        "BlitTransLucent50Alpha_ushort::AddRef",
+        "BlitterCopySHP",
+        "RenderFogOfWar",
+        "RenderFogOfWarOverlay",
+        "UpdateSpotlightsFoo"
+      ],
+      "usage_class": "int_cmp:21+bool_flag:15+unknown:3",
+      "observed_type": "bool",
+      "classes": [
+        "BlitTransLucent50Alpha_ushort"
+      ]
+    },
+    {
+      "action": "added",
+      "old_name": "g_hWnd",
+      "new_name": "g_hWnd",
+      "addr": "0x00b73550",
+      "cpp_type": "uint32_t",
+      "section": "system",
+      "header_file": "src/system/globals_system.hpp",
+      "justification": "xref_count=197, 5 distinct callers, usage=unknown:12+int_cmp:12+bool_flag:8",
+      "xref_count": 197,
+      "distinct_funcs": 5,
+      "sample_funcs": [
+        "BinkMovie::RenderLoop",
+        "FootClass::DrawPlacementPreview",
+        "InitializeDDraw",
+        "sub_409470",
+        "sub_4A3FD0"
+      ],
+      "usage_class": "unknown:12+int_cmp:12+bool_flag:8",
+      "observed_type": "bool",
+      "classes": [
+        "BinkMovie",
+        "FootClass"
+      ]
+    },
+    {
+      "action": "added",
+      "old_name": "g_BinkMoviePlayer",
+      "new_name": "g_BinkMoviePlayer",
+      "addr": "0x0087f770",
+      "cpp_type": "uint32_t",
+      "section": "system",
+      "header_file": "src/system/globals_system.hpp",
+      "justification": "xref_count=180, 5 distinct callers, usage=int_cmp:21+bool_flag:18+func_ptr:3",
+      "xref_count": 180,
+      "distinct_funcs": 5,
+      "sample_funcs": [
+        "BinkMovie::Play",
+        "BuildingClass::HandleRepairCursor",
+        "DropListClass::GetCount",
+        "FootClass::ValidateMove",
+        "InputManager::ProcessEvents"
+      ],
+      "usage_class": "int_cmp:21+bool_flag:18+func_ptr:3",
+      "observed_type": "bool",
+      "classes": [
+        "BinkMovie",
+        "BuildingClass",
+        "DropListClass",
+        "FootClass",
+        "InputManager"
+      ]
+    },
+    {
+      "action": "added",
+      "old_name": "g_AnimManager",
+      "new_name": "g_AnimManager",
+      "addr": "0x00b0f680",
+      "cpp_type": "uint32_t",
+      "section": "system",
+      "header_file": "src/system/globals_system.hpp",
+      "justification": "xref_count=165, 5 distinct callers, usage=int_cmp:24+bool_flag:24+func_ptr:1",
+      "xref_count": 165,
+      "distinct_funcs": 5,
+      "sample_funcs": [
+        "",
+        "AbstractClass::Construct",
+        "AnimClass::Destruct",
+        "BulletTypeClass::Construct",
+        "NeuronClass::NeuronClass"
+      ],
+      "usage_class": "int_cmp:24+bool_flag:24+func_ptr:1",
+      "observed_type": "bool",
+      "classes": [
+        "AbstractClass",
+        "AnimClass",
+        "BulletTypeClass",
+        "NeuronClass"
+      ]
+    },
+    {
+      "action": "added",
+      "old_name": "g_AnimPoolManager",
+      "new_name": "g_AnimPoolManager",
+      "addr": "0x00b0f670",
+      "cpp_type": "void*",
+      "section": "system",
+      "header_file": "src/system/globals_system.hpp",
+      "justification": "xref_count=116, 5 distinct callers, usage=ptr_deref:25+int_cmp:19+bool_flag:13",
+      "xref_count": 116,
+      "distinct_funcs": 5,
+      "sample_funcs": [
+        "",
+        "AbstractClass::Construct",
+        "AnimClass::Destruct",
+        "BulletTypeClass::Construct",
+        "NeuronClass::NeuronClass"
+      ],
+      "usage_class": "ptr_deref:25+int_cmp:19+bool_flag:13",
+      "observed_type": "pointer",
+      "classes": [
+        "AbstractClass",
+        "AnimClass",
+        "BulletTypeClass",
+        "NeuronClass"
+      ]
+    },
+    {
+      "action": "added",
+      "old_name": "g_Cell_PositionLUT",
+      "new_name": "g_Cell_PositionLUT",
+      "addr": "0x0087f8dc",
+      "cpp_type": "uint32_t",
+      "section": "system",
+      "header_file": "src/system/globals_system.hpp",
+      "justification": "xref_count=54, 5 distinct callers, usage=int_cmp:20+float_op:3+unknown:2",
+      "xref_count": 54,
+      "distinct_funcs": 5,
+      "sample_funcs": [
+        "BuildingClass::UpdateConstruction",
+        "Cell::PosToIndex",
+        "CellClass::UpdateTerrainAndWaypoints",
+        "GameFrameLoop",
+        "HouseClass::Update_TogglePower"
+      ],
+      "usage_class": "int_cmp:20+float_op:3+unknown:2",
+      "observed_type": "int",
+      "classes": [
+        "BuildingClass",
+        "Cell",
+        "CellClass",
+        "HouseClass"
+      ]
+    },
+    {
+      "action": "added",
+      "old_name": "g_AlphaShapePool",
+      "new_name": "g_AlphaShapePool",
+      "addr": "0x00b0f730",
+      "cpp_type": "uint32_t",
+      "section": "system",
+      "header_file": "src/system/globals_system.hpp",
+      "justification": "xref_count=48, 2 distinct callers, usage=ptr_deref:25+int_cmp:24+bool_flag:19",
+      "xref_count": 48,
+      "distinct_funcs": 2,
+      "sample_funcs": [
+        "AlphaShapeClass::CTOR",
+        "AlphaShapeClass::Constructor"
+      ],
+      "usage_class": "ptr_deref:25+int_cmp:24+bool_flag:19",
+      "observed_type": "int",
+      "classes": [
+        "AlphaShapeClass"
+      ]
+    },
+    {
+      "action": "added",
+      "old_name": "g_hInstance",
+      "new_name": "g_hInstance",
+      "addr": "0x00b732f0",
+      "cpp_type": "void*",
+      "section": "system",
+      "header_file": "src/system/globals_system.hpp",
+      "justification": "xref_count=38, 4 distinct callers, usage=ptr_deref:25+func_ptr:11+int_cmp:9",
+      "xref_count": 38,
+      "distinct_funcs": 4,
+      "sample_funcs": [
+        "InitRules",
+        "MainGame",
+        "NetworkLobby::CreateGame",
+        "sub_4C84E0"
+      ],
+      "usage_class": "ptr_deref:25+func_ptr:11+int_cmp:9",
+      "observed_type": "pointer",
+      "classes": [
+        "NetworkLobby"
+      ]
+    },
+    {
+      "action": "added",
+      "old_name": "g_CellPositionOffset",
+      "new_name": "g_CellPositionOffset",
+      "addr": "0x0087f8e0",
+      "cpp_type": "uint32_t",
+      "section": "system",
+      "header_file": "src/system/globals_system.hpp",
+      "justification": "xref_count=26, 4 distinct callers, usage=ptr_deref:22+int_cmp:17+bool_flag:8",
+      "xref_count": 26,
+      "distinct_funcs": 4,
+      "sample_funcs": [
+        "CellClass::UpdateTerrainAndWaypoints",
+        "GameFrameLoop",
+        "HouseClass::Update_TogglePower",
+        "Object::ComputeAllocationSize"
+      ],
+      "usage_class": "ptr_deref:22+int_cmp:17+bool_flag:8",
+      "observed_type": "int",
+      "classes": [
+        "CellClass",
+        "HouseClass",
+        "Object"
+      ]
+    },
+    {
+      "action": "added",
+      "old_name": "g_AnimPoolLocked",
+      "new_name": "g_AnimPoolLocked",
+      "addr": "0x00b0f67d",
+      "cpp_type": "uint32_t",
+      "section": "system",
+      "header_file": "src/system/globals_system.hpp",
+      "justification": "xref_count=24, 5 distinct callers, usage=int_cmp:23+bool_flag:22+ptr_deref:3",
+      "xref_count": 24,
+      "distinct_funcs": 5,
+      "sample_funcs": [
+        "AbstractClass::Construct",
+        "AnimTypeClass::Construct",
+        "BulletTypeClass::Construct",
+        "HouseClass::Construct",
+        "NeuronClass::NeuronClass"
+      ],
+      "usage_class": "int_cmp:23+bool_flag:22+ptr_deref:3",
+      "observed_type": "bool",
+      "classes": [
+        "AbstractClass",
+        "AnimTypeClass",
+        "BulletTypeClass",
+        "HouseClass",
+        "NeuronClass"
+      ]
+    },
+    {
+      "action": "added",
+      "old_name": "g_AnimTypePool",
+      "new_name": "g_AnimTypePool",
+      "addr": "0x00b0f678",
+      "cpp_type": "uint32_t",
+      "section": "system",
+      "header_file": "src/system/globals_system.hpp",
+      "justification": "xref_count=23, 5 distinct callers, usage=ptr_deref:23+int_cmp:22+bool_flag:21",
+      "xref_count": 23,
+      "distinct_funcs": 5,
+      "sample_funcs": [
+        "AbstractClass::Construct",
+        "AnimTypeClass::Construct",
+        "BulletTypeClass::Construct",
+        "HouseClass::Construct",
+        "NeuronClass::NeuronClass"
+      ],
+      "usage_class": "ptr_deref:23+int_cmp:22+bool_flag:21",
+      "observed_type": "int",
+      "classes": [
+        "AbstractClass",
+        "AnimTypeClass",
+        "BulletTypeClass",
+        "HouseClass",
+        "NeuronClass"
+      ]
+    },
+    {
+      "action": "added",
+      "old_name": "g_AnimManagerConfig",
+      "new_name": "g_AnimManagerConfig",
+      "addr": "0x00b0f684",
+      "cpp_type": "uint32_t",
+      "section": "system",
+      "header_file": "src/system/globals_system.hpp",
+      "justification": "xref_count=22, 5 distinct callers, usage=ptr_deref:22+int_cmp:21+bool_flag:21",
+      "xref_count": 22,
+      "distinct_funcs": 5,
+      "sample_funcs": [
+        "AbstractClass::Construct",
+        "AnimTypeClass::Construct",
+        "BulletTypeClass::Construct",
+        "HouseClass::Construct",
+        "NeuronClass::NeuronClass"
+      ],
+      "usage_class": "ptr_deref:22+int_cmp:21+bool_flag:21",
+      "observed_type": "int",
+      "classes": [
+        "AbstractClass",
+        "AnimTypeClass",
+        "BulletTypeClass",
+        "HouseClass",
+        "NeuronClass"
+      ]
+    }
+  ]
+}

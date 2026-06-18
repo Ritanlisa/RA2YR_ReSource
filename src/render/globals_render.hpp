@@ -290,4 +290,56 @@ extern uint32_t g_BitShift_Green_0;
 // 0x8a0def [confidence: inferred_strong]
 extern uint8_t g_DDraw_Force3D;
 
+// =============================================================================
+// High-XRef Globals (xref≥5, ≥2 callers, from xref_analysis_batch)
+// =============================================================================
+
+// 0x8871e0 [confidence: inferred_strong] (was: RulesClass_Instance)
+extern void* g_RulesClass_Instance;
+
+// 0x887324 [confidence: inferred_strong] (was: TacticalClass_Instance)
+extern uint32_t g_TacticalClass_Instance;
+
+// 0x886fa4 [confidence: inferred_strong] (was: Map_VisibleRect)
+extern bool g_Map_VisibleRect;
+
+// 0x887314 [confidence: inferred_strong] (was: DSurface_Hidden_2)
+extern void* g_DSurface_Hidden_2;
+
+// 0x887640 [confidence: inferred_strong] (was: WWMouseClass_Instance)
+extern void* g_WWMouseClass_Instance;
+
+// 0x88730c [confidence: inferred_strong] (was: DSurface_Hidden)
+extern void* g_DSurface_Hidden;
+
+// 0x887308 [confidence: inferred_strong] (was: DSurface_Primary)
+extern void* g_DSurface_Primary;
+
+// 0x887644 [confidence: inferred_strong] Z-buffer descriptor
+extern uint32_t g_ZBufferDescriptor;
+
+// 0x8A0DE0 [confidence: inferred_strong] green bitmask for pixel format
+extern uint32_t g_BitMask_Green;
+
+// 0x8A0DD8 [confidence: inferred_strong] blue bit shift
+extern uint32_t g_BitShift_Blue;
+
+// 0x8A0DE4 [confidence: inferred_strong] blue bitmask
+extern uint32_t g_BitMask_Blue;
+
+// 0x8A0DDC [confidence: inferred_strong] red bitmask
+extern uint32_t g_BitMask_Red;
+
+// 0x8A0DD0 [confidence: inferred_strong] red bit shift
+extern uint32_t g_BitShift_Red;
+
+// 0x8A00A4 [confidence: inferred_strong] display width in pixels
+extern uint32_t g_DisplayWidth;
+
+// 0x8A0094 [confidence: inferred_strong] DirectDraw7 interface pointer
+extern void* g_lpDirectDraw7;
+
+// 0x8A00A0 [confidence: inferred_strong] load screen flag
+extern uint32_t g_LoadScreenFlag;
+
 } // namespace gamemd

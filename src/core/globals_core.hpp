@@ -147,6 +147,10 @@ extern uint8_t g_INI_Key_OK[3];  // 0x81fd14 [confidence: ida_direct]
 extern uint8_t g_Str_DirectDrawCreate_failed_[26];  // 0x81fd44 [confidence: inferred_strong]
 extern uint8_t g_INI_Key_CellTags[9];  // 0x81ffe4 [confidence: inferred_strong]
 
+// === Section 0x0820000 - high-xref globals (xref≥5, ≥2 callers) ===
+
+extern uint32_t g_MoveFeedback;  // 0x822cf2 [confidence: inferred_strong] (was: MoveFeedback)
+
 // === Section 0x0820000 - .data (172 globals) ===
 
 extern uint8_t g_Str_EVA_CannotDeployHere[21];  // 0x82012c [confidence: inferred_strong]

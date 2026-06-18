@@ -11176,5 +11176,203 @@
     "ref_count": 17,
     "source": "ida",
     "write_count": 1
+  },
+  "g_MoveFeedback": {
+    "confidence": "inferred_strong",
+    "cpp_type": "uint32_t",
+    "read_count": 0,
+    "ref_count": 41,
+    "source": "xref_analysis",
+    "write_count": 0,
+    "was": "MoveFeedback"
+  },
+  "g_RulesClass_Instance": {
+    "confidence": "inferred_strong",
+    "cpp_type": "void*",
+    "read_count": 0,
+    "ref_count": 1419,
+    "source": "xref_analysis",
+    "write_count": 0,
+    "was": "RulesClass_Instance"
+  },
+  "g_TacticalClass_Instance": {
+    "confidence": "inferred_strong",
+    "cpp_type": "uint32_t",
+    "read_count": 0,
+    "ref_count": 461,
+    "source": "xref_analysis",
+    "write_count": 0,
+    "was": "TacticalClass_Instance"
+  },
+  "g_DSurface_Hidden_2": {
+    "confidence": "inferred_strong",
+    "cpp_type": "void*",
+    "read_count": 0,
+    "ref_count": 300,
+    "source": "xref_analysis",
+    "write_count": 0,
+    "was": "DSurface_Hidden_2"
+  },
+  "g_WWMouseClass_Instance": {
+    "confidence": "inferred_strong",
+    "cpp_type": "void*",
+    "read_count": 0,
+    "ref_count": 266,
+    "source": "xref_analysis",
+    "write_count": 0,
+    "was": "WWMouseClass_Instance"
+  },
+  "g_DSurface_Hidden": {
+    "confidence": "inferred_strong",
+    "cpp_type": "void*",
+    "read_count": 0,
+    "ref_count": 229,
+    "source": "xref_analysis",
+    "write_count": 0,
+    "was": "DSurface_Hidden"
+  },
+  "g_Map_VisibleRect": {
+    "confidence": "inferred_strong",
+    "cpp_type": "bool",
+    "read_count": 0,
+    "ref_count": 202,
+    "source": "xref_analysis",
+    "write_count": 0,
+    "was": "Map_VisibleRect"
+  },
+  "g_DSurface_Primary": {
+    "confidence": "inferred_strong",
+    "cpp_type": "void*",
+    "read_count": 0,
+    "ref_count": 103,
+    "source": "xref_analysis",
+    "write_count": 0,
+    "was": "DSurface_Primary"
+  },
+  "g_ScenarioClass_Instance": {
+    "confidence": "inferred_strong",
+    "cpp_type": "void*",
+    "read_count": 0,
+    "ref_count": 1290,
+    "source": "xref_analysis",
+    "write_count": 0,
+    "was": "ScenarioClass_Instance"
+  },
+  "g_CurrentFrame": {
+    "confidence": "inferred_strong",
+    "cpp_type": "void*",
+    "read_count": 0,
+    "ref_count": 1006,
+    "source": "xref_analysis",
+    "write_count": 0,
+    "was": "CurrentFrame"
+  },
+  "g_GameMode_Current": {
+    "confidence": "inferred_strong",
+    "cpp_type": "uint32_t",
+    "read_count": 0,
+    "ref_count": 790,
+    "source": "xref_analysis",
+    "write_count": 0,
+    "was": "GameMode_Current"
+  },
+  "g_IKnowWhatImDoing": {
+    "confidence": "inferred_strong",
+    "cpp_type": "uint32_t",
+    "read_count": 0,
+    "ref_count": 292,
+    "source": "xref_analysis",
+    "write_count": 0,
+    "was": "IKnowWhatImDoing"
+  },
+  "g_WTFMode": {
+    "confidence": "inferred_strong",
+    "cpp_type": "uint32_t",
+    "read_count": 0,
+    "ref_count": 123,
+    "source": "xref_analysis",
+    "write_count": 0,
+    "was": "WTFMode"
+  },
+  "g_BuildingTypeClass_Array": {
+    "confidence": "inferred_strong",
+    "cpp_type": "void*",
+    "read_count": 0,
+    "ref_count": 117,
+    "source": "xref_analysis",
+    "write_count": 0,
+    "was": "BuildingTypeClass_Array"
+  },
+  "g_ArmageddonMode": {
+    "confidence": "inferred_strong",
+    "cpp_type": "uint32_t",
+    "read_count": 0,
+    "ref_count": 88,
+    "source": "xref_analysis",
+    "write_count": 0,
+    "was": "ArmageddonMode"
+  },
+  "g_lParam": {
+    "confidence": "inferred_strong",
+    "cpp_type": "uint32_t",
+    "read_count": 0,
+    "ref_count": 26,
+    "source": "xref_analysis",
+    "write_count": 0,
+    "was": "lParam"
+  },
+  "g_BuildingLoadQueue_Count": {
+    "confidence": "inferred_strong",
+    "cpp_type": "uint32_t",
+    "read_count": 0,
+    "ref_count": 177,
+    "source": "xref_analysis",
+    "write_count": 0,
+    "was": "BuildingLoadQueue_Count"
+  },
+  "g_BuildingLoadQueue_Array": {
+    "confidence": "inferred_strong",
+    "cpp_type": "void*",
+    "read_count": 0,
+    "ref_count": 160,
+    "source": "xref_analysis",
+    "write_count": 0,
+    "was": "BuildingLoadQueue_Array"
+  },
+  "g_BuildingLoadQueue_Active": {
+    "confidence": "inferred_strong",
+    "cpp_type": "uint32_t",
+    "read_count": 0,
+    "ref_count": 87,
+    "source": "xref_analysis",
+    "write_count": 0,
+    "was": "BuildingLoadQueue_Active"
+  },
+  "g_FileSystem_THEATER_PAL": {
+    "confidence": "inferred_strong",
+    "cpp_type": "void*",
+    "read_count": 0,
+    "ref_count": 78,
+    "source": "xref_analysis",
+    "write_count": 0,
+    "was": "FileSystem_THEATER_PAL"
+  },
+  "g_BuildingLoadQueue_Dirty": {
+    "confidence": "inferred_strong",
+    "cpp_type": "uint32_t",
+    "read_count": 0,
+    "ref_count": 67,
+    "source": "xref_analysis",
+    "write_count": 0,
+    "was": "BuildingLoadQueue_Dirty"
+  },
+  "g_BuildingLoadQueue_Capacity": {
+    "confidence": "inferred_strong",
+    "cpp_type": "uint32_t",
+    "read_count": 0,
+    "ref_count": 31,
+    "source": "xref_analysis",
+    "write_count": 0,
+    "was": "BuildingLoadQueue_Capacity"
   }
 }
