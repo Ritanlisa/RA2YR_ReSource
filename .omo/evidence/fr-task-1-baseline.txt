@@ -1,0 +1,104 @@
+FR-TASK-1: Regenerate comparisonResult.log baseline
+====================================================
+Date: 2026-06-18 12:05 UTC+8
+Status: BUILD PASSED, RUN PARTIAL (log not auto-generated — see analysis)
+
+BUILD
+-----
+Command: cmake -B build_hook -G "Visual Studio 17 2022" -A Win32 -DHOOK_OUTPUT_DIR=D:/RA2MD -DCMAKE_CXX_FLAGS="/I D:\RA2YR_ReSource\src"
+         cmake --build build_hook --config Release
+Result: SUCCESS (0 errors, warnings only)
+  - gamemd_core.lib compiled
+  - gamemd.exe compiled
+  - hook_dll.dll (591,360 bytes) compiled and copied to D:\RA2MD\
+  - Note: PYTHONUTF8=1 required for gen_reverse_hooks.py (functions.json has UTF-8 EM DASH at offset 3273417)
+  - Note: include/gamemd junction created (src/ refactoring broke include path)
+
+HOOK DLL LOAD VERIFICATION
+--------------------------
+Syringe log confirms:
+  - hook_dll.dll identified and loaded at 0x03790000
+  - SyringeHandshake returned S_OK (message: "Shadow Execution Framework v1.0")
+  - Ares.dll also loaded (coexists without conflict)
+
+TCP HEADLESS SERVER
+-------------------
+Port 25400 responds after game spawn:
+  > STATS
+  {"ok":true,"mismatch_count":0,"orphan_txn_count":0,"re_depth":0}
+  > QUIT
+  (ExitProcess(0) called)
+
+This confirms:
+  - ExeRun hook (0x7CD810) fired successfully
+  - g_owner_tid set correctly
+  - Headless server running on main thread
+
+HOOK STATUS (gen_reverse_hooks.py output)
+-----------------------------------------
+Found 2 active hooks (37 None-mode):
+  0x7baf90: XSurface::PutPixel(point,color,clip_rect) [OK] mode=Inject
+  0x7baf10: XSurface::GetPixelAtCoords(point,clip_rect) [OK] mode=Inject
+
+None markers (37 total), including the 3 done=true functions:
+  0x7bc2b0: ClipLine
+  0x7baeb0: XSurface::SetPixel
+  0x7bae60: XSurface::GetPixel
+
+ROOT CAUSE ANALYSIS: LOG NOT GENERATED
+---------------------------------------
+comparisonResult.log is created by flush_full() which is called:
+  a) On first hook trigger (write_entry → maybe_flush → flush_full)
+  b) On DLL_PROCESS_DETACH (FinalFlush static destructor → flush_full)
+
+Neither path executes:
+  - No hooks trigger: PutPixel/GetPixelAtCoords are low-level pixel operations.
+    During game startup (loading, menu entry), the rendering path uses
+    DSurface::Blit/DSurface::Fill (higher-level blit operations), not
+    individual pixel writes. The 13 previously-verified XSurface/DSurface
+    hooks are now mode=None (deactivated after verification).
+
+  - DLL_PROCESS_DETACH not reached: Both Stop-Process -Force and taskkill
+    (without /F) terminate the process without sending DLL_PROCESS_DETACH.
+    ExitProcess(0) via TCP QUIT should trigger it, but the log still
+    doesn't appear — possibly because:
+      * std::ostringstream in flush_full() fails if CRT partially shut down
+      * CreateFileA("comparisonResult.log", ...) fails (permissions/path)
+      * Static destructor ordering issue with FinalFlush
+
+EVIDENCE OF PROCESS LIFETIME
+-----------------------------
+- Process stays alive indefinitely with hook DLL (TCP server keeps it alive)
+- Without hook DLL, process exits within 30s (exit code 0)
+- RemoteData.dmp (105,056 bytes) created by game — confirms game initialization
+- ddraw.ini modified — confirms cnc-ddraw layer active
+- syringe.log records full module loading chain (63 modules)
+
+MITIGATION / NEXT STEPS
+------------------------
+To generate comparisonResult.log with "Same Compares":
+1. Reactivate Capture hooks on DSurface functions (BlitWhole, BlitPart,
+   FillRect, etc.) — these fire during menu rendering
+2. OR use WM_PAINT / direct rendering trigger to force pixel ops
+3. OR modify gen/reverse_hooks.cpp to flush on DLL_PROCESS_ATTACH
+   (but gen files are regenerated on each build)
+
+5 DONE=TRUE FUNCTIONS STATUS
+-----------------------------
+| Function         | Address  | Mode  | Expected Section |
+|------------------|----------|-------|-----------------|
+| ClipLine         | 0x7BC2B0 | None  | None Calls       |
+| XSurface::SetPixel    | 0x7BAEB0 | None  | None Calls       |
+| XSurface::GetPixel    | 0x7BAE60 | None  | None Calls       |
+| XSurface::PutPixel    | 0x7BAF90 | Inject| Same/Diff Compares|
+| XSurface::GetPixelAtCoords | 0x7BAF10 | Inject| Same/Diff Compares|
+
+3 of 5 functions are mode=None (previously verified, deactivated).
+2 of 5 functions are active Inject mode but never called during test.
+
+VERDICT
+-------
+Build: PASS
+Run: PARTIAL — hook DLL loads, TCP server responds, but comparison hooks
+     don't fire during menu startup (no rendering reaches pixel-level ops).
+     comparisonResult.log not auto-generated.

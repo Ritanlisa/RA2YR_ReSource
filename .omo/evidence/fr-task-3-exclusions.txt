@@ -1,0 +1,90 @@
+FR Task 3: CRT/Thunk/Library Exclusions Classification
+============================================================
+Source: D:\RA2YR_ReSource\tools\..\injectFunctionTest\functions.json
+Total functions: 19067
+Excluded: 1874 (9.83%)
+
+Reason breakdown:
+  small_thunk: 1483
+  name_prefix: 371
+  blacklist_name: 171
+  crt_exact: 61
+  crt_like: 35
+
+--- Sample entries by reason ---
+
+[blacklist_name] (first 8):
+  0x408530: nullsub_2 (size=1)
+  0x40d260: nullsub_56 (size=1)
+  0x40d300: nullsub_57 (size=1)
+  0x40eb80: nullsub_59 (size=1)
+  0x40ec00: nullsub_60 (size=1)
+  0x40f240: nullsub_61 (size=1)
+  0x40f250: nullsub_62 (size=1)
+  0x40f260: nullsub_63 (size=1)
+
+[crt_exact] (first 8):
+  0x406740: ___setargv (size=11)
+  0x4e4f50: __cfltcvt_init (size=112)
+  0x5bc300: __ioterm (size=105)
+  0x6acbae: ___inc_tmpoff (size=7)
+  0x7c8d20: __strcmpi (size=208)
+  0x7c8ec0: __allmul (size=52)
+  0x7c8f5e: __cfltcvt_init_13 (size=56)
+  0x7c8fb0: __CIpow (size=25)
+
+[crt_like] (first 8):
+  0x4e4f50: __cfltcvt_init (size=112)
+  0x5bc300: __ioterm (size=105)
+  0x6acbae: ___inc_tmpoff (size=7)
+  0x7c8f5e: __cfltcvt_init_13 (size=56)
+  0x7ccb2e: __expandtime (size=1007)
+  0x7ce2a5: __output (size=1825)
+  0x7ceed8: __cfltcvt (size=81)
+  0x7cf77f: ___sbh_heap_init (size=62)
+
+[name_prefix] (first 8):
+  0x406740: ___setargv (size=11)
+  0x499ca0: ??_Gfacet_locale_std__UAEPAXI_Z_4 (size=32)
+  0x499d40: ??_Gfacet_locale_std__UAEPAXI_Z_9 (size=32)
+  0x499d60: ??_Gfacet_locale_std__UAEPAXI_Z_10 (size=32)
+  0x499d80: ??_Gfacet_locale_std__UAEPAXI_Z_11 (size=32)
+  0x499dc0: ??_Gfacet_locale_std__UAEPAXI_Z_13 (size=32)
+  0x499de0: ??_Gfacet_locale_std__UAEPAXI_Z_14 (size=32)
+  0x499e00: ??_Gfacet_locale_std__UAEPAXI_Z_15 (size=32)
+
+[small_thunk] (first 8):
+  0x401940: ObjectClass::GetMember06 (size=4)
+  0x401fb0: sub_401FB0 (size=4)
+  0x402020: sub_402020 (size=4)
+  0x403460: sub_403460 (size=6)
+  0x403810: sub_403810 (size=6)
+  0x406310: sub_406310 (size=4)
+  0x406540: sub_406540 (size=4)
+  0x4065c0: sub_4065C0 (size=4)
+
+--- Game-logic false positive check ---
+Entries with '::' excluded ONLY by small_thunk: 699
+  0x401940: ObjectClass::GetMember06 (size=4)
+  0x4068e0: Debug::Log (size=1)
+  0x407010: Audio::GetEnabled (size=6)
+  0x408d50: AudioStream::GetChannel (size=4)
+  0x40a7a0: Audio::GetDirectSound (size=6)
+  0x40cc00: VectorClass_ptr_IsometricTileClass::sub_40CC00 (size=5)
+  0x40cc10: GenericVector::StubReturnFalse (size=1)
+  0x40d250: DisplayClass::vt_entry_AC (size=3)
+  0x40d270: SidebarClass::InitButtons_0 (size=5)
+  0x410440: AbstractClass::sub_410440 (size=3)
+  0x410470: AbstractClass::StubReturnFalse (size=1)
+  0x410480: AbstractClass::COMStub_Return0_10 (size=3)
+  0x410490: AbstractClass::sub_410490 (size=4)
+  0x4104a0: AbstractClass::COMStub_Return0_15 (size=3)
+  0x4104b0: AbstractClass::COMStub_Return0_16 (size=3)
+  0x410520: AbstractClass::COMStub_Return0_20 (size=3)
+  0x410530: AbstractClass::COMStub_Return0_21 (size=3)
+  0x410570: AbstractClass::COMStub_Return0_23 (size=1)
+  0x410580: AbstractClass::Stub1INoticeSink (size=5)
+  0x410590: AbstractClass::COM_Stub_Return0 (size=3)
+  ... and 679 more
+
+CRT exact matches: 61

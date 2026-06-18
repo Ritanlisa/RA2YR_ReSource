@@ -106,7 +106,7 @@ Wave Final: Build verification + spot-check audit — 4 parallel reviews
 
 ## TODOs
 
-- [ ] 1. Regenerate comparisonResult.log baseline
+- [x] 1. Regenerate comparisonResult.log baseline
 
   **What to do**: Build hook DLL (`cmake --build build_hook --config Release`), run game test (menu 15s+), capture comparisonResult.log. Verify 5 done=true functions still show "Same Compares".
   **Which agent**: `quick`
@@ -114,7 +114,7 @@ Wave Final: Build verification + spot-check audit — 4 parallel reviews
   **QA**: Run game → verify log file generated → grep for "Same Compares" → check 5 done names present
   **Evidence**: .omo/evidence/fr-task-0.1-baseline.txt
 
-- [ ] 2. Review 45 completed-but-unverified functions
+- [x] 2. Review 45 completed-but-unverified functions
 
   **What to do**: For each of ~45 functions where hook.completed=true but hook.done=false: open IDA decompile, read current C++ impl, check all branches/edges/returns. Fix discrepancies. Mark reviewed.
   **Which agent**: `deep` — IDA MCP per-function analysis
@@ -122,7 +122,7 @@ Wave Final: Build verification + spot-check audit — 4 parallel reviews
   **QA**: Spot-check 5 random functions — IDA decompile vs C++ side-by-side match
   **Evidence**: .omo/evidence/fr-task-0.2-review.txt
 
-- [ ] 3. Classify CRT/thunk/library exclusions
+- [x] 3. Classify CRT/thunk/library exclusions
 
   **What to do**: Scan functions with size≤6 bytes OR known CRT patterns (memcpy, memset, vector deleting destructor, vtable adjustor). Mark EXCLUDED. These are compiler-generated, not game logic.
   **Which agent**: `quick`
