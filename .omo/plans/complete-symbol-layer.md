@@ -583,7 +583,7 @@ Max Concurrent: 8 (Waves 2 & 3)
   - Message: `feat(tools): add global variable module organizer`
   - Files: `tools/organize_globals.py`, `tools/globals_by_module.json`
 
-- [ ] 14. Generate `src/core/globals_core.hpp` — core module extern declarations
+- [x] 14. Generate `src/core/globals_core.hpp` — core module extern declarations
 
   **What to do**:
   - Generate header with `extern` declarations for all core globals
@@ -628,7 +628,7 @@ Max Concurrent: 8 (Waves 2 & 3)
   - Message: `feat(core): add extern global declarations for core module`
   - Files: `src/core/globals_core.hpp`
 
-- [ ] 15. Generate `src/render/globals_render.hpp` — render module extern declarations
+- [x] 15. Generate `src/render/globals_render.hpp` — render module extern declarations
 
   **What to do**: Same as Task 14 but for render module globals
   **Recommended Agent Profile**: **Category**: `quick`
@@ -637,7 +637,7 @@ Max Concurrent: 8 (Waves 2 & 3)
   **QA Scenarios**: Same extern-only verification as Task 14
   **Commit**: YES (groups with Tasks 14-19)
 
-- [ ] 16. Generate `src/object/globals_object.hpp` — object module extern declarations
+- [x] 16. Generate `src/object/globals_object.hpp` — object module extern declarations
 
   **What to do**: Same as Task 14 but for object module globals
   **Recommended Agent Profile**: **Category**: `quick`
@@ -645,7 +645,7 @@ Max Concurrent: 8 (Waves 2 & 3)
   **Acceptance Criteria**: Same extern-only verification as Task 14
   **Commit**: YES (groups with Tasks 14-19)
 
-- [ ] 17. Generate `src/structure/globals_structure.hpp` — structure module extern declarations
+- [x] 17. Generate `src/structure/globals_structure.hpp` — structure module extern declarations
 
   **What to do**: Same as Task 14 but for structure module globals
   **Recommended Agent Profile**: **Category**: `quick`
@@ -653,7 +653,7 @@ Max Concurrent: 8 (Waves 2 & 3)
   **Acceptance Criteria**: Same extern-only verification as Task 14
   **Commit**: YES (groups with Tasks 14-19)
 
-- [ ] 18. Generate `src/system/globals_system.hpp` — system/misc/network extern declarations
+- [x] 18. Generate `src/system/globals_system.hpp` — system/misc/network extern declarations
 
   **What to do**: Combined header for system + misc + network globals
   **Recommended Agent Profile**: **Category**: `quick`
@@ -661,7 +661,7 @@ Max Concurrent: 8 (Waves 2 & 3)
   **Acceptance Criteria**: Same extern-only verification as Task 14
   **Commit**: YES (groups with Tasks 14-19)
 
-- [ ] 19. Generate `src/entity/globals_entity.hpp` — entity/house/team extern declarations
+- [x] 19. Generate `src/entity/globals_entity.hpp` — entity/house/team extern declarations
 
   **What to do**: Combined header for entity + house + team globals
   **Recommended Agent Profile**: **Category**: `quick`
