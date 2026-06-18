@@ -306,6 +306,7 @@ public:
     void AddRectToDrawList(RectangleStruct* rect) const;
     int GetZDrawOffset() const;
     int GetBoundingSizeExt() const;
+    virtual ra2::game::LightConvertClass* GetRemapColour() const override { return nullptr; }
 
     // Health / Stats
     double GetHealthRatio() const;

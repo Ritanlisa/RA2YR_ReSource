@@ -1,0 +1,11 @@
+{
+  "address": "0x52FFD0",
+  "name": "sub_52FFD0",
+  "pseudocode": "",
+  "callers": [],
+  "callees": [
+    "0x4F4780"
+  ],
+  "quality": "partial",
+  "error": "decompile returned None"
+}

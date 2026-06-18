@@ -85,10 +85,62 @@
           "updated_at": "2026-06-18T16:15:41.443Z",
           "ended_at": "2026-06-18T16:15:41.443Z",
           "elapsed_ms": 78502
+        },
+        "todo:15": {
+          "task_key": "todo:15",
+          "task_label": "15",
+          "task_title": "IDA decompiler Pass 3 — batch decompile remaining sub_* functions",
+          "session_id": "opencode:ses_1247b312bffek7BHgsQOmiQsw4",
+          "agent": "Sisyphus-Junior",
+          "category": "deep",
+          "updated_at": "2026-06-18T16:24:15.152Z",
+          "started_at": "2026-06-18T16:23:36.633Z",
+          "status": "completed",
+          "ended_at": "2026-06-18T16:24:15.152Z",
+          "elapsed_ms": 38519
+        },
+        "todo:16": {
+          "task_key": "todo:16",
+          "task_label": "16",
+          "task_title": "Auto-name sub_* from decompiler output",
+          "session_id": "opencode:ses_124739f54ffep5VqHzcezBdZhQ",
+          "agent": "Sisyphus-Junior",
+          "category": "deep",
+          "updated_at": "2026-06-18T16:38:58.171Z",
+          "started_at": "2026-06-18T16:38:49.314Z",
+          "status": "completed",
+          "ended_at": "2026-06-18T16:38:58.171Z",
+          "elapsed_ms": 8857
+        },
+        "todo:17": {
+          "task_key": "todo:17",
+          "task_label": "17",
+          "task_title": "Translate sub_* — small functions (<50 bytes, ~2,800 functions)",
+          "session_id": "opencode:ses_12446a401ffeMlL0cxAw2Iu0L5",
+          "agent": "Sisyphus-Junior",
+          "category": "quick",
+          "started_at": "2026-06-18T17:12:14.993Z",
+          "status": "completed",
+          "updated_at": "2026-06-18T17:20:57.354Z",
+          "ended_at": "2026-06-18T17:20:57.354Z",
+          "elapsed_ms": 522361
+        },
+        "todo:19": {
+          "task_key": "todo:19",
+          "task_label": "19",
+          "task_title": "Final functions.json regeneration + full audit",
+          "session_id": "opencode:ses_1243f9e60ffe8EyUxJwmQ6otRo",
+          "agent": "Sisyphus-Junior",
+          "category": "quick",
+          "updated_at": "2026-06-18T17:42:52.237Z",
+          "started_at": "2026-06-18T17:42:11.361Z",
+          "status": "completed",
+          "ended_at": "2026-06-18T17:42:52.237Z",
+          "elapsed_ms": 40876
         }
       },
       "session_origins": {},
-      "updated_at": "2026-06-18T16:15:41.443Z"
+      "updated_at": "2026-06-18T17:42:52.237Z"
     }
   },
   "session_origins": {},
@@ -157,7 +209,59 @@
       "updated_at": "2026-06-18T16:15:41.443Z",
       "ended_at": "2026-06-18T16:15:41.443Z",
       "elapsed_ms": 78502
+    },
+    "todo:15": {
+      "task_key": "todo:15",
+      "task_label": "15",
+      "task_title": "IDA decompiler Pass 3 — batch decompile remaining sub_* functions",
+      "session_id": "opencode:ses_1247b312bffek7BHgsQOmiQsw4",
+      "agent": "Sisyphus-Junior",
+      "category": "deep",
+      "updated_at": "2026-06-18T16:24:15.152Z",
+      "started_at": "2026-06-18T16:23:36.633Z",
+      "status": "completed",
+      "ended_at": "2026-06-18T16:24:15.152Z",
+      "elapsed_ms": 38519
+    },
+    "todo:16": {
+      "task_key": "todo:16",
+      "task_label": "16",
+      "task_title": "Auto-name sub_* from decompiler output",
+      "session_id": "opencode:ses_124739f54ffep5VqHzcezBdZhQ",
+      "agent": "Sisyphus-Junior",
+      "category": "deep",
+      "updated_at": "2026-06-18T16:38:58.171Z",
+      "started_at": "2026-06-18T16:38:49.314Z",
+      "status": "completed",
+      "ended_at": "2026-06-18T16:38:58.171Z",
+      "elapsed_ms": 8857
+    },
+    "todo:17": {
+      "task_key": "todo:17",
+      "task_label": "17",
+      "task_title": "Translate sub_* — small functions (<50 bytes, ~2,800 functions)",
+      "session_id": "opencode:ses_12446a401ffeMlL0cxAw2Iu0L5",
+      "agent": "Sisyphus-Junior",
+      "category": "quick",
+      "started_at": "2026-06-18T17:12:14.993Z",
+      "status": "completed",
+      "updated_at": "2026-06-18T17:20:57.354Z",
+      "ended_at": "2026-06-18T17:20:57.354Z",
+      "elapsed_ms": 522361
+    },
+    "todo:19": {
+      "task_key": "todo:19",
+      "task_label": "19",
+      "task_title": "Final functions.json regeneration + full audit",
+      "session_id": "opencode:ses_1243f9e60ffe8EyUxJwmQ6otRo",
+      "agent": "Sisyphus-Junior",
+      "category": "quick",
+      "updated_at": "2026-06-18T17:42:52.237Z",
+      "started_at": "2026-06-18T17:42:11.361Z",
+      "status": "completed",
+      "ended_at": "2026-06-18T17:42:52.237Z",
+      "elapsed_ms": 40876
     }
   },
-  "updated_at": "2026-06-18T16:15:41.443Z"
+  "updated_at": "2026-06-18T17:42:52.237Z"
 }
