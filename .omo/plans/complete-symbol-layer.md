@@ -716,7 +716,7 @@ Max Concurrent: 8 (Waves 2 & 3)
 
 ---
 
-- [ ] 21. Select top-200 most-referenced globals for type fix and rename
+- [x] 21. Select top-200 most-referenced globals for type fix and rename
 
   **What to do**:
   - Write `tools/select_top_globals.py` that reads `injectFunctionTest/purity_effects.json`

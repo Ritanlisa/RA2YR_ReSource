@@ -1,0 +1,1602 @@
+[
+  {
+    "name": "RulesClass_Instance",
+    "addr": "0x008871e0",
+    "ref_count": 539,
+    "reads": 537,
+    "writes": 2,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "ScenarioClass_Instance",
+    "addr": "0x00a8b230",
+    "ref_count": 474,
+    "reads": 472,
+    "writes": 2,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "CurrentFrame",
+    "addr": "0x00a8ed84",
+    "ref_count": 449,
+    "reads": 439,
+    "writes": 10,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "GameMode_Current",
+    "addr": "0x00a8b238",
+    "ref_count": 306,
+    "reads": 301,
+    "writes": 5,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "HouseClass_Player",
+    "addr": "0x00a83d4c",
+    "ref_count": 260,
+    "reads": 256,
+    "writes": 4,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "TacticalClass_Instance",
+    "addr": "0x00887324",
+    "ref_count": 244,
+    "reads": 234,
+    "writes": 10,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "IKnowWhatImDoing",
+    "addr": "0x00a8e7ac",
+    "ref_count": 140,
+    "reads": 106,
+    "writes": 34,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "Game_PlayerInfoArray",
+    "addr": "0x00a8da78",
+    "ref_count": 139,
+    "reads": 139,
+    "writes": 0,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "Game_PlayerCount",
+    "addr": "0x00a8da84",
+    "ref_count": 137,
+    "reads": 121,
+    "writes": 16,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "HouseClass_Array",
+    "addr": "0x00a8022c",
+    "ref_count": 136,
+    "reads": 134,
+    "writes": 2,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "g_Map_GlobalCellIndex",
+    "addr": "0x00abdc74",
+    "ref_count": 129,
+    "reads": 0,
+    "writes": 129,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "Map_VisibleRect",
+    "addr": "0x00886fa4",
+    "ref_count": 125,
+    "reads": 123,
+    "writes": 2,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "g_Shroud_CellArray",
+    "addr": "0x0087f924",
+    "ref_count": 123,
+    "reads": 123,
+    "writes": 0,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "Direction_X_Offsets",
+    "addr": "0x0089f688",
+    "ref_count": 117,
+    "reads": 116,
+    "writes": 1,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "g_BitShift_Red",
+    "addr": "0x008a0dd0",
+    "ref_count": 114,
+    "reads": 113,
+    "writes": 1,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_BitShift_Green_0",
+    "addr": "0x008a0dd4",
+    "ref_count": 114,
+    "reads": 113,
+    "writes": 1,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_BitMask_Green",
+    "addr": "0x008a0de0",
+    "ref_count": 114,
+    "reads": 113,
+    "writes": 1,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_BitShift_Blue",
+    "addr": "0x008a0dd8",
+    "ref_count": 113,
+    "reads": 112,
+    "writes": 1,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_BitMask_Red",
+    "addr": "0x008a0ddc",
+    "ref_count": 113,
+    "reads": 112,
+    "writes": 1,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_BitMask_Blue",
+    "addr": "0x008a0de4",
+    "ref_count": 113,
+    "reads": 112,
+    "writes": 1,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_hWnd",
+    "addr": "0x00b73550",
+    "ref_count": 112,
+    "reads": 110,
+    "writes": 2,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "DSurface_ViewBounds",
+    "addr": "0x00886fa0",
+    "ref_count": 99,
+    "reads": 97,
+    "writes": 2,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "DSurface_Hidden_2",
+    "addr": "0x00887314",
+    "ref_count": 98,
+    "reads": 85,
+    "writes": 13,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_ZBufferDescriptor",
+    "addr": "0x00887644",
+    "ref_count": 96,
+    "reads": 92,
+    "writes": 4,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "WWMouseClass_Instance",
+    "addr": "0x00887640",
+    "ref_count": 93,
+    "reads": 89,
+    "writes": 4,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_AnimManager",
+    "addr": "0x00b0f680",
+    "ref_count": 90,
+    "reads": 45,
+    "writes": 45,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_DialogHashMap_Count",
+    "addr": "0x00ac1b04",
+    "ref_count": 90,
+    "reads": 83,
+    "writes": 7,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_MapTileArray",
+    "addr": "0x00abed10",
+    "ref_count": 89,
+    "reads": 81,
+    "writes": 8,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "ppv",
+    "addr": "0x00ac116c",
+    "ref_count": 88,
+    "reads": 85,
+    "writes": 3,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "g_DialogHashMap_Base",
+    "addr": "0x00ac1b00",
+    "ref_count": 87,
+    "reads": 84,
+    "writes": 3,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "g_MapCellWidth",
+    "addr": "0x0089c2dc",
+    "ref_count": 84,
+    "reads": 83,
+    "writes": 1,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_DialogHashMap_Buckets",
+    "addr": "0x00ac1b0c",
+    "ref_count": 84,
+    "reads": 81,
+    "writes": 3,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "WTFMode",
+    "addr": "0x00a8e9a0",
+    "ref_count": 77,
+    "reads": 67,
+    "writes": 10,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "HouseClass_Count",
+    "addr": "0x00a80238",
+    "ref_count": 76,
+    "reads": 74,
+    "writes": 2,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_BinkMoviePlayer",
+    "addr": "0x0087f770",
+    "ref_count": 76,
+    "reads": 74,
+    "writes": 2,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "BuildingTypeClass_Array",
+    "addr": "0x00a83d84",
+    "ref_count": 73,
+    "reads": 71,
+    "writes": 2,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "DSurface_Alternate",
+    "addr": "0x00887310",
+    "ref_count": 73,
+    "reads": 70,
+    "writes": 3,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "ArmageddonMode",
+    "addr": "0x00a8ed6b",
+    "ref_count": 71,
+    "reads": 70,
+    "writes": 1,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_GameStateFlags",
+    "addr": "0x00a8b23c",
+    "ref_count": 71,
+    "reads": 64,
+    "writes": 7,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_VisibleSurfaceDescriptor",
+    "addr": "0x0087e8a4",
+    "ref_count": 69,
+    "reads": 65,
+    "writes": 4,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "BuildingTypeClass_AnimTable",
+    "addr": "0x00b054d4",
+    "ref_count": 69,
+    "reads": 66,
+    "writes": 3,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "g_WOL_State",
+    "addr": "0x00b77900",
+    "ref_count": 67,
+    "reads": 51,
+    "writes": 16,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "g_NetworkPlayerName",
+    "addr": "0x00a8da90",
+    "ref_count": 65,
+    "reads": 52,
+    "writes": 13,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "g_Lobby_MaxPlayers",
+    "addr": "0x00ac11b4",
+    "ref_count": 65,
+    "reads": 63,
+    "writes": 2,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "DSurface_Hidden",
+    "addr": "0x0088730c",
+    "ref_count": 64,
+    "reads": 61,
+    "writes": 3,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "g_TechnoClass_Count",
+    "addr": "0x00a8ec7c",
+    "ref_count": 63,
+    "reads": 61,
+    "writes": 2,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "g_SidebarState",
+    "addr": "0x00a8ec88",
+    "ref_count": 63,
+    "reads": 60,
+    "writes": 3,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_HouseClass_ObserverFlags",
+    "addr": "0x00ac119c",
+    "ref_count": 62,
+    "reads": 60,
+    "writes": 2,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "Networking_LastEventIndex",
+    "addr": "0x00a802c8",
+    "ref_count": 60,
+    "reads": 29,
+    "writes": 31,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_DisplayWidth",
+    "addr": "0x008a00a4",
+    "ref_count": 60,
+    "reads": 56,
+    "writes": 4,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "g_UIControlState",
+    "addr": "0x00ac1154",
+    "ref_count": 57,
+    "reads": 32,
+    "writes": 25,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "g_Lobby_PlayerCount",
+    "addr": "0x00ac11a0",
+    "ref_count": 56,
+    "reads": 54,
+    "writes": 2,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "g_WOL_ConnectionFlags",
+    "addr": "0x00b77908",
+    "ref_count": 56,
+    "reads": 51,
+    "writes": 5,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "Networking_NextPacketIndex",
+    "addr": "0x00a802d0",
+    "ref_count": 55,
+    "reads": 26,
+    "writes": 29,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_SelectionManager",
+    "addr": "0x00a8ecc8",
+    "ref_count": 54,
+    "reads": 49,
+    "writes": 5,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "DSurface_Primary",
+    "addr": "0x00887308",
+    "ref_count": 52,
+    "reads": 49,
+    "writes": 3,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_TriggerTypeCount",
+    "addr": "0x00a83c6c",
+    "ref_count": 50,
+    "reads": 48,
+    "writes": 2,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "g_AnimPoolManager",
+    "addr": "0x00b0f670",
+    "ref_count": 48,
+    "reads": 46,
+    "writes": 2,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_AnimPoolCount",
+    "addr": "0x00b0f674",
+    "ref_count": 48,
+    "reads": 46,
+    "writes": 2,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "g_FrameCounter",
+    "addr": "0x00a8ed2c",
+    "ref_count": 47,
+    "reads": 45,
+    "writes": 2,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "g_MapCellHeight_Value",
+    "addr": "0x00abed04",
+    "ref_count": 47,
+    "reads": 46,
+    "writes": 1,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_MapCellCount",
+    "addr": "0x00abed08",
+    "ref_count": 47,
+    "reads": 46,
+    "writes": 1,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_GameRulesOptions",
+    "addr": "0x00a8b254",
+    "ref_count": 47,
+    "reads": 28,
+    "writes": 19,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "g_Map_VisibleRectOffset",
+    "addr": "0x00886fa8",
+    "ref_count": 46,
+    "reads": 44,
+    "writes": 2,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "BuildingLoadQueue_Count",
+    "addr": "0x00b0e844",
+    "ref_count": 46,
+    "reads": 25,
+    "writes": 21,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "g_GameOptionsFlags",
+    "addr": "0x00a8b244",
+    "ref_count": 46,
+    "reads": 41,
+    "writes": 5,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "DSurface_Composite",
+    "addr": "0x0088731c",
+    "ref_count": 45,
+    "reads": 40,
+    "writes": 5,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "g_ObjectClass_CurrentCount",
+    "addr": "0x00a8ecbc",
+    "ref_count": 45,
+    "reads": 42,
+    "writes": 3,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "g_Lobby_PlayerReady",
+    "addr": "0x00ac11b0",
+    "ref_count": 43,
+    "reads": 41,
+    "writes": 2,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "g_NetworkInterface",
+    "addr": "0x00887628",
+    "ref_count": 42,
+    "reads": 34,
+    "writes": 8,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_Lobby_PlayerTeam",
+    "addr": "0x00ac11a4",
+    "ref_count": 42,
+    "reads": 40,
+    "writes": 2,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "g_Lobby_PlayerSide",
+    "addr": "0x00ac11a8",
+    "ref_count": 42,
+    "reads": 40,
+    "writes": 2,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "g_Lobby_PlayerColor",
+    "addr": "0x00ac11ac",
+    "ref_count": 42,
+    "reads": 40,
+    "writes": 2,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "g_SuperWeaponTypeCount",
+    "addr": "0x00a83c9c",
+    "ref_count": 41,
+    "reads": 39,
+    "writes": 2,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "g_WOL_ChannelList",
+    "addr": "0x00b77dc8",
+    "ref_count": 39,
+    "reads": 16,
+    "writes": 23,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "BuildingClass_InstanceArray",
+    "addr": "0x00b0f4ec",
+    "ref_count": 38,
+    "reads": 36,
+    "writes": 2,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "FileSystem_THEATER_PAL",
+    "addr": "0x0087f6c4",
+    "ref_count": 37,
+    "reads": 35,
+    "writes": 2,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "BuildingLoadQueue_Array",
+    "addr": "0x00b0e840",
+    "ref_count": 36,
+    "reads": 26,
+    "writes": 10,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "BuildingLoadQueue_Dirty",
+    "addr": "0x00b0e84c",
+    "ref_count": 36,
+    "reads": 11,
+    "writes": 25,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_AnimTypeCount",
+    "addr": "0x008b4154",
+    "ref_count": 36,
+    "reads": 34,
+    "writes": 2,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "Factory_ExitCellTable",
+    "addr": "0x00a8e34c",
+    "ref_count": 35,
+    "reads": 33,
+    "writes": 2,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "g_FogOfWarState",
+    "addr": "0x0089c4d0",
+    "ref_count": 35,
+    "reads": 33,
+    "writes": 2,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "g_TauntCommandState",
+    "addr": "0x00a8b394",
+    "ref_count": 35,
+    "reads": 24,
+    "writes": 11,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "g_MPCooperativeState",
+    "addr": "0x008316a4",
+    "ref_count": 35,
+    "reads": 26,
+    "writes": 9,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_DSurface_WindowOffset",
+    "addr": "0x00886fac",
+    "ref_count": 34,
+    "reads": 32,
+    "writes": 2,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_Cell_PositionLUT",
+    "addr": "0x0087f8dc",
+    "ref_count": 34,
+    "reads": 33,
+    "writes": 1,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_ControlGroupState",
+    "addr": "0x00a8ef98",
+    "ref_count": 34,
+    "reads": 33,
+    "writes": 1,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "g_BuildingClass_InstanceCount",
+    "addr": "0x00a8eb44",
+    "ref_count": 33,
+    "reads": 31,
+    "writes": 2,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "Crates",
+    "addr": "0x00a8b261",
+    "ref_count": 33,
+    "reads": 19,
+    "writes": 14,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "SWAllowed",
+    "addr": "0x00a8b263",
+    "ref_count": 33,
+    "reads": 19,
+    "writes": 14,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_Rules_EngineerCount",
+    "addr": "0x00a8b268",
+    "ref_count": 33,
+    "reads": 19,
+    "writes": 14,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "BuildingLoadQueue_Active",
+    "addr": "0x00b0e850",
+    "ref_count": 32,
+    "reads": 5,
+    "writes": 27,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_UnitTypeCount2",
+    "addr": "0x00a83ce4",
+    "ref_count": 32,
+    "reads": 30,
+    "writes": 2,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "MCVRedeploy",
+    "addr": "0x00a8b320",
+    "ref_count": 32,
+    "reads": 19,
+    "writes": 13,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_SuperWeaponTypeArray",
+    "addr": "0x00a83ca8",
+    "ref_count": 32,
+    "reads": 28,
+    "writes": 4,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_Rules_MultiEngineer",
+    "addr": "0x00a8b270",
+    "ref_count": 32,
+    "reads": 17,
+    "writes": 15,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "g_NetworkLobby_Init",
+    "addr": "0x00b77dc1",
+    "ref_count": 32,
+    "reads": 26,
+    "writes": 6,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "SrcSizeInBytes",
+    "addr": "0x0087c79c",
+    "ref_count": 32,
+    "reads": 31,
+    "writes": 1,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "g_LastPerformanceTick",
+    "addr": "0x00887338",
+    "ref_count": 31,
+    "reads": 30,
+    "writes": 1,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_PerformanceTickOffset",
+    "addr": "0x00887340",
+    "ref_count": 31,
+    "reads": 30,
+    "writes": 1,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_BuildingProductionState",
+    "addr": "0x00a8eb50",
+    "ref_count": 31,
+    "reads": 29,
+    "writes": 2,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_RadarBlipManager",
+    "addr": "0x00880990",
+    "ref_count": 31,
+    "reads": 13,
+    "writes": 18,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "ShortGame",
+    "addr": "0x00a8b262",
+    "ref_count": 31,
+    "reads": 17,
+    "writes": 14,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_Rules_Bases",
+    "addr": "0x00a8b25c",
+    "ref_count": 31,
+    "reads": 16,
+    "writes": 15,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "g_TacticalRender",
+    "addr": "0x00887368",
+    "ref_count": 30,
+    "reads": 29,
+    "writes": 1,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_RandomMap_TileData",
+    "addr": "0x00abdfa0",
+    "ref_count": 30,
+    "reads": 21,
+    "writes": 9,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_VoxelOffsetTable",
+    "addr": "0x00b45590",
+    "ref_count": 30,
+    "reads": 18,
+    "writes": 12,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "MuteSWLaunches",
+    "addr": "0x00a8b538",
+    "ref_count": 29,
+    "reads": 27,
+    "writes": 2,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_hInstance",
+    "addr": "0x00b732f0",
+    "ref_count": 29,
+    "reads": 28,
+    "writes": 1,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "g_UIPointerTable",
+    "addr": "0x00ac1170",
+    "ref_count": 29,
+    "reads": 26,
+    "writes": 3,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "g_GameModeOptions",
+    "addr": "0x00a8eb60",
+    "ref_count": 29,
+    "reads": 16,
+    "writes": 13,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "g_Rules_AlliesAllowed",
+    "addr": "0x00a8b274",
+    "ref_count": 29,
+    "reads": 14,
+    "writes": 15,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "g_MultiplayerGameState",
+    "addr": "0x00a8b8cc",
+    "ref_count": 29,
+    "reads": 29,
+    "writes": 0,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_AlphaShapePool",
+    "addr": "0x00b0f730",
+    "ref_count": 28,
+    "reads": 14,
+    "writes": 14,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_PathClass_State",
+    "addr": "0x008b413c",
+    "ref_count": 28,
+    "reads": 26,
+    "writes": 2,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "g_TerrainBridgeIndex",
+    "addr": "0x00abad1c",
+    "ref_count": 28,
+    "reads": 27,
+    "writes": 1,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_Network_IsHosting",
+    "addr": "0x00a8dba0",
+    "ref_count": 28,
+    "reads": 25,
+    "writes": 3,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_MenuStateFlags",
+    "addr": "0x00ac10c8",
+    "ref_count": 28,
+    "reads": 20,
+    "writes": 8,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "g_Rules_ShortGame",
+    "addr": "0x00a8b264",
+    "ref_count": 28,
+    "reads": 15,
+    "writes": 13,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_GameScreenState",
+    "addr": "0x00ac48b4",
+    "ref_count": 28,
+    "reads": 14,
+    "writes": 14,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_WindowManager",
+    "addr": "0x00b73aa8",
+    "ref_count": 28,
+    "reads": 17,
+    "writes": 11,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_DDraw_Active",
+    "addr": "0x00a8ed80",
+    "ref_count": 27,
+    "reads": 26,
+    "writes": 1,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_CrateSystemState",
+    "addr": "0x00a83a54",
+    "ref_count": 27,
+    "reads": 1,
+    "writes": 26,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "g_TriggerClassCount",
+    "addr": "0x00a83c78",
+    "ref_count": 27,
+    "reads": 24,
+    "writes": 3,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "DSurface_Sidebar",
+    "addr": "0x00887300",
+    "ref_count": 27,
+    "reads": 24,
+    "writes": 3,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "g_Cell_BuildabilityLUT",
+    "addr": "0x00aa0e28",
+    "ref_count": 27,
+    "reads": 26,
+    "writes": 1,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_MapSeedState",
+    "addr": "0x00abd480",
+    "ref_count": 27,
+    "reads": 26,
+    "writes": 1,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "g_ScenarioLoadFlags",
+    "addr": "0x00a8b54c",
+    "ref_count": 27,
+    "reads": 15,
+    "writes": 12,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_AircraftTypeCount",
+    "addr": "0x00a8b21c",
+    "ref_count": 26,
+    "reads": 24,
+    "writes": 2,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "g_BuildingTypeInstanceCount",
+    "addr": "0x00b0f5c8",
+    "ref_count": 26,
+    "reads": 13,
+    "writes": 13,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_RadarBlipPool",
+    "addr": "0x0088098c",
+    "ref_count": 26,
+    "reads": 11,
+    "writes": 15,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_TerrainSoundConfig",
+    "addr": "0x00aa1028",
+    "ref_count": 26,
+    "reads": 25,
+    "writes": 1,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_TerrainSoundTable2",
+    "addr": "0x00abad30",
+    "ref_count": 26,
+    "reads": 25,
+    "writes": 1,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_LaserDrawConfig",
+    "addr": "0x00b0f6a8",
+    "ref_count": 26,
+    "reads": 12,
+    "writes": 14,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_WOL_RequestManager",
+    "addr": "0x00b76980",
+    "ref_count": 26,
+    "reads": 13,
+    "writes": 13,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_DSurface_SidebarBounds",
+    "addr": "0x00886f94",
+    "ref_count": 25,
+    "reads": 23,
+    "writes": 2,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "Bases",
+    "addr": "0x00a8b258",
+    "ref_count": 25,
+    "reads": 13,
+    "writes": 12,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_ScenarioState",
+    "addr": "0x00a8b550",
+    "ref_count": 25,
+    "reads": 17,
+    "writes": 8,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "g_FootClass_Pool",
+    "addr": "0x008b3d88",
+    "ref_count": 25,
+    "reads": 24,
+    "writes": 1,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "g_AnimPoolLocked",
+    "addr": "0x00b0f67d",
+    "ref_count": 24,
+    "reads": 22,
+    "writes": 2,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_TechnoClassCount",
+    "addr": "0x00a8ed38",
+    "ref_count": 24,
+    "reads": 21,
+    "writes": 3,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_BulletClassPool",
+    "addr": "0x00abcd3c",
+    "ref_count": 24,
+    "reads": 12,
+    "writes": 12,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_RandomMap_TerrainState",
+    "addr": "0x00abdf94",
+    "ref_count": 24,
+    "reads": 22,
+    "writes": 2,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "g_MultiplayerOptions",
+    "addr": "0x00a8b8d8",
+    "ref_count": 24,
+    "reads": 21,
+    "writes": 3,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_NetworkLobbyState",
+    "addr": "0x00b77e28",
+    "ref_count": 24,
+    "reads": 14,
+    "writes": 10,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_ScriptActionPool",
+    "addr": "0x00ac4bf0",
+    "ref_count": 24,
+    "reads": 12,
+    "writes": 12,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "Handles",
+    "addr": "0x00b73684",
+    "ref_count": 24,
+    "reads": 24,
+    "writes": 0,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "g_AudioConfigState",
+    "addr": "0x0087e2a0",
+    "ref_count": 23,
+    "reads": 21,
+    "writes": 2,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "BuildingLoadQueue_Capacity",
+    "addr": "0x00b0e848",
+    "ref_count": 23,
+    "reads": 13,
+    "writes": 10,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_AnimTypePool",
+    "addr": "0x00b0f678",
+    "ref_count": 23,
+    "reads": 21,
+    "writes": 2,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_GameActive",
+    "addr": "0x00a8ed9c",
+    "ref_count": 23,
+    "reads": 9,
+    "writes": 14,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_ClipboardBuffer",
+    "addr": "0x00b72d20",
+    "ref_count": 23,
+    "reads": 17,
+    "writes": 6,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "g_DialogHashMap_Entries",
+    "addr": "0x00ac1b48",
+    "ref_count": 23,
+    "reads": 19,
+    "writes": 4,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "g_DialogHashMap_Grow",
+    "addr": "0x00ac1b4c",
+    "ref_count": 23,
+    "reads": 18,
+    "writes": 5,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_DSurface_ViewBounds",
+    "addr": "0x00886f9c",
+    "ref_count": 22,
+    "reads": 20,
+    "writes": 2,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "lParam",
+    "addr": "0x00a8eb78",
+    "ref_count": 22,
+    "reads": 20,
+    "writes": 2,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "g_AnimManagerConfig",
+    "addr": "0x00b0f684",
+    "ref_count": 22,
+    "reads": 21,
+    "writes": 1,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_LoadScreenProgress",
+    "addr": "0x00a8e358",
+    "ref_count": 22,
+    "reads": 18,
+    "writes": 4,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_NetworkPlayerCount",
+    "addr": "0x00a8da8c",
+    "ref_count": 22,
+    "reads": 18,
+    "writes": 4,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_UnitTypeCount",
+    "addr": "0x008b4148",
+    "ref_count": 22,
+    "reads": 19,
+    "writes": 3,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_NetworkEventPending",
+    "addr": "0x00a8d5f8",
+    "ref_count": 22,
+    "reads": 19,
+    "writes": 3,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_ScenarioLoadState",
+    "addr": "0x00a8b554",
+    "ref_count": 22,
+    "reads": 15,
+    "writes": 7,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_UnitClassPool",
+    "addr": "0x008b410c",
+    "ref_count": 22,
+    "reads": 20,
+    "writes": 2,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "g_HouseClass_BuildState",
+    "addr": "0x008b4118",
+    "ref_count": 22,
+    "reads": 19,
+    "writes": 3,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_TeamClassPool",
+    "addr": "0x008b40ec",
+    "ref_count": 22,
+    "reads": 20,
+    "writes": 2,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "g_HouseClass_AIProductionState",
+    "addr": "0x008b40f8",
+    "ref_count": 22,
+    "reads": 19,
+    "writes": 3,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_GameFlags_Campaign",
+    "addr": "0x00a8dab4",
+    "ref_count": 22,
+    "reads": 13,
+    "writes": 9,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_DialogHashMap_Insert",
+    "addr": "0x00ac1b54",
+    "ref_count": 22,
+    "reads": 18,
+    "writes": 4,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_BuildingProductionQueue",
+    "addr": "0x00a83d9c",
+    "ref_count": 21,
+    "reads": 19,
+    "writes": 2,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "FactoryClass_Array",
+    "addr": "0x00a8ec1c",
+    "ref_count": 21,
+    "reads": 19,
+    "writes": 2,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "g_CrateCount",
+    "addr": "0x00a83cf0",
+    "ref_count": 21,
+    "reads": 18,
+    "writes": 3,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_InfantryClassLimit",
+    "addr": "0x00a83dec",
+    "ref_count": 21,
+    "reads": 19,
+    "writes": 2,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "g_BuildingClass_Count",
+    "addr": "0x00a83df8",
+    "ref_count": 21,
+    "reads": 18,
+    "writes": 3,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_IntroMovieObject",
+    "addr": "0x00a8e960",
+    "ref_count": 21,
+    "reads": 11,
+    "writes": 10,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_GameInitState",
+    "addr": "0x008b41f8",
+    "ref_count": 21,
+    "reads": 10,
+    "writes": 11,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "BridgeDestruction",
+    "addr": "0x00a8b260",
+    "ref_count": 21,
+    "reads": 10,
+    "writes": 11,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_CommandExecState",
+    "addr": "0x00a8b3ac",
+    "ref_count": 21,
+    "reads": 10,
+    "writes": 11,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "g_SidebarBounds",
+    "addr": "0x00b0b4f8",
+    "ref_count": 21,
+    "reads": 20,
+    "writes": 1,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_AnimClassCount",
+    "addr": "0x00a8e9b8",
+    "ref_count": 20,
+    "reads": 15,
+    "writes": 5,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_BuildingInstanceCount",
+    "addr": "0x00b0f5b8",
+    "ref_count": 20,
+    "reads": 18,
+    "writes": 2,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_BounceClassInit",
+    "addr": "0x00a8ed5c",
+    "ref_count": 20,
+    "reads": 11,
+    "writes": 9,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_GameTypeFlags",
+    "addr": "0x00a8b24c",
+    "ref_count": 20,
+    "reads": 11,
+    "writes": 9,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_ScriptState",
+    "addr": "0x00ac4c38",
+    "ref_count": 20,
+    "reads": 10,
+    "writes": 10,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "hMutex",
+    "addr": "0x00b78168",
+    "ref_count": 20,
+    "reads": 19,
+    "writes": 1,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "g_AnimClass_SaveState",
+    "addr": "0x00b054e0",
+    "ref_count": 19,
+    "reads": 14,
+    "writes": 5,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_CellPositionOffset",
+    "addr": "0x0087f8e0",
+    "ref_count": 19,
+    "reads": 18,
+    "writes": 1,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "MoveFeedback",
+    "addr": "0x00822cf2",
+    "ref_count": 19,
+    "reads": 8,
+    "writes": 11,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_SuperWeaponPool",
+    "addr": "0x00a8e334",
+    "ref_count": 19,
+    "reads": 17,
+    "writes": 2,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "g_FileExtensionState",
+    "addr": "0x00ac48f0",
+    "ref_count": 19,
+    "reads": 10,
+    "writes": 9,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "g_AnimClassPool",
+    "addr": "0x00a8e9ac",
+    "ref_count": 18,
+    "reads": 16,
+    "writes": 2,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "g_DirectionOffsetPool",
+    "addr": "0x0089f698",
+    "ref_count": 18,
+    "reads": 17,
+    "writes": 1,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_CrateProcessState",
+    "addr": "0x00b0f4f8",
+    "ref_count": 18,
+    "reads": 15,
+    "writes": 3,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_lpDirectDraw7",
+    "addr": "0x008a0094",
+    "ref_count": 18,
+    "reads": 15,
+    "writes": 3,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "g_LoadScreenFlag",
+    "addr": "0x008a00a0",
+    "ref_count": 18,
+    "reads": 7,
+    "writes": 11,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_TeamTypePool",
+    "addr": "0x00a8eca4",
+    "ref_count": 18,
+    "reads": 16,
+    "writes": 2,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "HarvesterTruce",
+    "addr": "0x00a8b31d",
+    "ref_count": 18,
+    "reads": 9,
+    "writes": 9,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_CommandLineFlags",
+    "addr": "0x00a8eb84",
+    "ref_count": 18,
+    "reads": 14,
+    "writes": 4,
+    "confidence_from_type_db": true
+  },
+  {
+    "name": "g_MultiplayerMode",
+    "addr": "0x00abfd70",
+    "ref_count": 18,
+    "reads": 9,
+    "writes": 9,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_ScriptPool",
+    "addr": "0x00ac4ccc",
+    "ref_count": 18,
+    "reads": 10,
+    "writes": 8,
+    "confidence_from_type_db": false
+  },
+  {
+    "name": "g_WOL_ChatState",
+    "addr": "0x00b76ae0",
+    "ref_count": 18,
+    "reads": 11,
+    "writes": 7,
+    "confidence_from_type_db": true
+  }
+]

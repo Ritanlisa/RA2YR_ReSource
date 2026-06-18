@@ -1,0 +1,50 @@
+=== task-21-top200 Evidence ===
+
+Date: 2026-06-18T09:42:44.663710
+Script: tools/select_top_globals.py
+
+source_purity:  D:\RA2YR_ReSource\injectFunctionTest\purity_effects.json
+source_globals: D:\RA2YR_ReSource\tools\globals_extracted.json
+total_referenced_addrs: 12368
+named_globals_in_refs:  695
+top200_min_ref_count:   18
+top200_max_ref_count:   539
+
+=== Top 30 Globals ===
+  1. RulesClass_Instance                                0x008871e0  ref=  539  r=  537  w=    2
+  2. ScenarioClass_Instance                             0x00a8b230  ref=  474  r=  472  w=    2
+  3. CurrentFrame                                       0x00a8ed84  ref=  449  r=  439  w=   10
+  4. GameMode_Current                                   0x00a8b238  ref=  306  r=  301  w=    5
+  5. HouseClass_Player                                  0x00a83d4c  ref=  260  r=  256  w=    4
+  6. TacticalClass_Instance                             0x00887324  ref=  244  r=  234  w=   10
+  7. IKnowWhatImDoing                                   0x00a8e7ac  ref=  140  r=  106  w=   34
+  8. Game_PlayerInfoArray                               0x00a8da78  ref=  139  r=  139  w=    0
+  9. Game_PlayerCount                                   0x00a8da84  ref=  137  r=  121  w=   16
+ 10. HouseClass_Array                                   0x00a8022c  ref=  136  r=  134  w=    2
+ 11. g_Map_GlobalCellIndex                              0x00abdc74  ref=  129  r=    0  w=  129
+ 12. Map_VisibleRect                                    0x00886fa4  ref=  125  r=  123  w=    2
+ 13. g_Shroud_CellArray                                 0x0087f924  ref=  123  r=  123  w=    0
+ 14. Direction_X_Offsets                                0x0089f688  ref=  117  r=  116  w=    1
+ 15. g_BitShift_Red                                     0x008a0dd0  ref=  114  r=  113  w=    1
+ 16. g_BitShift_Green_0                                 0x008a0dd4  ref=  114  r=  113  w=    1
+ 17. g_BitMask_Green                                    0x008a0de0  ref=  114  r=  113  w=    1
+ 18. g_BitShift_Blue                                    0x008a0dd8  ref=  113  r=  112  w=    1
+ 19. g_BitMask_Red                                      0x008a0ddc  ref=  113  r=  112  w=    1
+ 20. g_BitMask_Blue                                     0x008a0de4  ref=  113  r=  112  w=    1
+ 21. g_hWnd                                             0x00b73550  ref=  112  r=  110  w=    2
+ 22. DSurface_ViewBounds                                0x00886fa0  ref=   99  r=   97  w=    2
+ 23. DSurface_Hidden_2                                  0x00887314  ref=   98  r=   85  w=   13
+ 24. g_ZBufferDescriptor                                0x00887644  ref=   96  r=   92  w=    4
+ 25. WWMouseClass_Instance                              0x00887640  ref=   93  r=   89  w=    4
+ 26. g_AnimManager                                      0x00b0f680  ref=   90  r=   45  w=   45
+ 27. g_DialogHashMap_Count                              0x00ac1b04  ref=   90  r=   83  w=    7
+ 28. g_MapTileArray                                     0x00abed10  ref=   89  r=   81  w=    8
+ 29. ppv                                                0x00ac116c  ref=   88  r=   85  w=    3
+ 30. g_DialogHashMap_Base                               0x00ac1b00  ref=   87  r=   84  w=    3
+
+=== Last 5 Globals (bottom of top200) ===
+195. HarvesterTruce                                     0x00a8b31d  ref=   18  r=    9  w=    9
+196. g_CommandLineFlags                                 0x00a8eb84  ref=   18  r=   14  w=    4
+197. g_MultiplayerMode                                  0x00abfd70  ref=   18  r=    9  w=    9
+198. g_ScriptPool                                       0x00ac4ccc  ref=   18  r=   10  w=    8
+199. g_WOL_ChatState                                    0x00b76ae0  ref=   18  r=   11  w=    7
