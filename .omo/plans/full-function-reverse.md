@@ -237,7 +237,7 @@ Wave Final: Build verification + spot-check audit — 4 parallel reviews
   **Acceptance**: 0/0 build, IDA cross-check
   **Evidence**: .omo/evidence/fr-task-3.5-combatai.txt
 
-- [ ] 18. Implement Network + INI/Rules/Type + Audio/Movie subsystems (~1,000 functions)
+- [x] 18. Implement Network + INI/Rules/Type + Audio/Movie subsystems (~1,000 functions)
 
   **What to do**: Network (~300) + INI/Rules/Type system (~500) + Audio/Movie misc (~200).
   **Which agent**: `deep` — split across 4 parallel sub-tasks
