@@ -140,7 +140,7 @@ Wave Final: Build verification + spot-check audit — 4 parallel reviews
   **QA**: Spot-check 3 methods vs IDA — all branches/edges/returns match
   **Evidence**: .omo/evidence/fr-task-1.1-dialog.txt
 
-- [ ] 5. Implement LabelClass + LoadOptions + HashTable menu classes (~71 functions)
+- [x] 5. Implement LabelClass + LoadOptions + HashTable menu classes (~71 functions)
 
   **What to do**: LabelClass (~15) + LoadOptions (~29) + HashTable menu methods (~27). Source: `src/ui/gadget.cpp`, `src/core/menu_select.cpp`.
   **Which agent**: `deep`

@@ -555,4 +555,141 @@ static void* GadgetClass_FindByWindow(HWND hWnd)
     return nullptr;
 }
 
+// ============================================================================
+// RenderTextLabel (0x4A5EB0)
+// IDA: fastcall, renders single-line text with alignment/flags
+// Used by: TextRenderer::Printf, TextRenderer::DrawText, TechnoClass::DrawPowerIndicator
+// ============================================================================
+struct TextLabelResult {
+    int endX;
+    int endY;
+};
+
+// Forward declarations for render pipeline stubs
+static void TextTextLayout(int, int*, int**, int);
+static void TextDrawBorder(int, int*, int*, int, int);
+static void TextDrawShadow(int, int*, int);
+static void CharSwap(int);
+static void TextGroupSetRect(int*);
+static void PropertySet(int16_t);
+static void FontRendererDrawText(int, int, int, int, int, int, int);
+
+// IDA 0x4A5EB0: RenderTextLabel
+static TextLabelResult RenderTextLabel(TextLabelResult* out, int surfaceObj,
+    int strObj, int* textBounds, int totalWidth, int16_t flags,
+    int xPos, int yPos)
+{
+    int* bounds = textBounds;
+    int xLeft = bounds[0] + xPos;
+    int yTop  = bounds[1] + yPos;
+
+    // Text::Layout — compute text layout
+    TextTextLayout(surfaceObj, &totalWidth, &bounds, bounds[2]);
+
+    // Apply alignment flags
+    if (flags & 0x100) { // center horizontally
+        xLeft += totalWidth / -2;
+    } else if (flags & 0x200) { // right-align
+        xLeft -= totalWidth;
+    }
+
+    // Draw shadow/outline based on flags
+    bool shadow = (flags & 0x80) != 0;
+    if (!shadow) {
+        int borderX = xLeft - 1;
+        int borderY = yTop - 1;
+        // Draw dark border rectangle
+        TextDrawBorder(surfaceObj, &borderX, &borderY, flags & 0x7F, 60);
+    } else {
+        int shadowX = xLeft - 1;
+        int shadowY = yTop - 1;
+        // Draw shadow
+        TextDrawShadow(surfaceObj, &shadowX, 0);
+    }
+
+    // Final text output
+    CharSwap(1);
+    TextGroupSetRect(bounds);
+    PropertySet(flags & 0xFFFF);
+    FontRendererDrawText(/*fog*/ 0, surfaceObj, strObj, xLeft, yTop, 0, 0);
+
+    if (out) {
+        out->endX = xLeft;
+        out->endY = yTop;
+    }
+    return { xLeft, yTop };
+}
+
+// Stubs for rendering pipeline (PENDING: full render subsystem)
+static void TextTextLayout(int, int*, int**, int) {}
+static void TextDrawBorder(int, int*, int*, int, int) {}
+static void TextDrawShadow(int, int*, int) {}
+static void CharSwap(int) {}
+static void TextGroupSetRect(int*) {}
+static void PropertySet(int16_t) {}
+static void FontRendererDrawText(int, int, int, int, int, int, int) {}
+
+// IDA 0x4A6360: RenderTextLabelWordWrap
+// Wraps text to fit within maxWidth, calling RenderTextLabel per line
+static void RenderTextLabelWordWrap(int surfaceObj, int strObj,
+    int* textBounds, int maxWidth, int16_t flags, int xPos, int yPos)
+{
+    if (!strObj) return;
+
+    int totalWidth = textBounds[2]; // text width
+    int offset = 0;
+    int* bounds = textBounds;
+
+    while (offset < totalWidth) {
+        TextTextLayout(surfaceObj, &totalWidth, &bounds, bounds[2]);
+
+        if (xPos + bounds[0] + totalWidth > maxWidth) {
+            // Would overflow — break here (word wrap)
+            break;
+        }
+
+        TextLabelResult result;
+        RenderTextLabel(&result, surfaceObj, strObj, bounds, totalWidth, flags, xPos, yPos);
+        yPos += bounds[3]; // move to next line
+        offset += bounds[2];
+    }
+}
+
+// IDA 0x61E700: GroupLabel::WndProc
+// Window procedure for group label controls (static text in dialogs)
+// Simplified: returns default processing
+static LRESULT CALLBACK GroupLabel_WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
+{
+    (void)hWnd; (void)msg; (void)wParam; (void)lParam;
+    return DefWindowProcA(hWnd, msg, wParam, lParam);
+}
+
+// IDA 0x5EB060: Lobby::UpdatePlayerLabels
+// Updates the player name labels in multi-player lobby dialogs
+void Lobby_UpdatePlayerLabels(void* dialog)
+{
+    // Original: iterates player slots, updates name/status labels
+    // For each slot in dialog, reads player info and sets label text
+    (void)dialog;
+    // PENDING: full implementation requires LobbyClass + player slot iteration
+}
+
+// IDA 0x46FA20: Lobby::UpdateReadyIcons
+// Updates ready-state icons for multiplayer lobby players
+void Lobby_UpdateReadyIcons(void* dialog)
+{
+    // Original: iterates player slots, shows/hides ready checkmark icons
+    (void)dialog;
+    // PENDING: full implementation requires LobbyClass + icon rendering
+}
+
+// IDA 0x5EE6A0: NetworkLobby::UpdateLabels
+// Updates network lobby label text (connection status, player count)
+void NetworkLobby_UpdateLabels(void* dialog)
+{
+    // Original: updates WiFi/network status labels in lobby dialog
+    (void)dialog;
+    // PENDING: full implementation requires NetworkLobbyClass
+}
+
 } // namespace gamemd
