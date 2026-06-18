@@ -1,0 +1,16 @@
+=== TASK 28: Linux cross-compile ===
+Date: 2026-06-18
+Host: Windows 11 (win32)
+
+Command: cmake -B build_linux -G 'Unix Makefiles' && cmake --build build_linux
+
+RESULT: FAILED (exit code 1)
+Reason: CMake 'Unix Makefiles' generator requires make/gmake which is not available on Windows.
+Error: 'CMAKE_MAKE_PROGRAM is not set. You probably need to select a different build tool.'
+Also: 'CMAKE_CXX_COMPILER not set, after EnableLanguage' — no cross-compiler configured.
+
+Verdict: Cannot cross-compile on bare Windows. Requires either:
+  - WSL/Linux environment
+  - MinGW with Unix Makefiles support
+  - MSYS2 with make
+

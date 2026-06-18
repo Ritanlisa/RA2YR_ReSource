@@ -1,0 +1,4 @@
+閫傜敤浜?.NET Framework MSBuild 鐗堟湰 17.14.40+3e7442088
+
+  Checking File Globs
+  gamemd_core.vcxproj -> D:\RA2YR_ReSource\build_win\Debug\gamemd_core.lib

@@ -1,0 +1,5 @@
+Functions  :   8285  (expected 8000-8600)
+Globals    :   1323  (expected 1250-1400)
+
+[PASS] Function count 8285 in [8000, 8600]
+[PASS] Global count 1323 in [1250, 1400]

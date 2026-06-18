@@ -917,7 +917,7 @@ Max Concurrent: 8 (Waves 2 & 3)
 
 ---
 
-- [ ] 27. Windows build verification — 0 errors, 0 warnings gate
+- [x] 27. Windows build verification — 0 errors, 0 warnings gate
 
   **What to do**:
   - Run: `cmake -B build_win -G "Visual Studio 17 2022" -A Win32`
@@ -960,7 +960,7 @@ Max Concurrent: 8 (Waves 2 & 3)
 
   **Commit**: NO (verification step only)
 
-- [ ] 28. Linux cross-compile verification
+- [x] 28. Linux cross-compile verification
 
   **What to do**:
   - Run: `cmake -B build_linux -G "Unix Makefiles"`
@@ -989,7 +989,7 @@ Max Concurrent: 8 (Waves 2 & 3)
 
   **Commit**: NO
 
-- [ ] 29. Duplicate detection self-check
+- [x] 29. Duplicate detection self-check
 
   **What to do**:
   - Write `tools/detect_duplicates.py` that:
@@ -1033,7 +1033,7 @@ Max Concurrent: 8 (Waves 2 & 3)
   - Message: `feat(tools): add duplicate symbol detection script`
   - Files: `tools/detect_duplicates.py`
 
-- [ ] 30. Coverage count assertion
+- [x] 30. Coverage count assertion
 
   **What to do**:
   - Write `tools/verify_decls.py` that:

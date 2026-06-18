@@ -1,0 +1,28 @@
+=== Duplicate Symbol Detector ===
+
+Note: _funcs.hpp is not #included by any .cpp — function overlaps are harmless.
+
+── Scanning generated files ──
+  src\core\_funcs.hpp: 6181 funcs, 0 classes
+  src\entity\_funcs.hpp: 62 funcs, 18 classes
+  src\misc\_funcs.hpp: 369 funcs, 57 classes
+  src\object\_funcs.hpp: 67 funcs, 11 classes
+  src\render\_funcs.hpp: 0 funcs, 80 classes
+  src\structure\_funcs.hpp: 129 funcs, 24 classes
+  src\system\_funcs.hpp: 142 funcs, 34 classes
+  src\core\globals_core.hpp: 1062 vars
+  src\entity\globals_entity.hpp: 4 vars
+  src\object\globals_object.hpp: 49 vars
+  src\render\globals_render.hpp: 86 vars
+  src\structure\globals_structure.hpp: 32 vars
+  src\system\globals_system.hpp: 85 vars
+
+  Total generated: 6950 funcs, 203 classes, 1318 vars
+
+── Scanning existing headers (.hpp) ──
+── Scanning existing sources (.cpp) ──
+  Scanned 150 .hpp + 85 .cpp files
+  HPP funcs: 141, CPP funcs: 1973, HPP non-extern vars: 235
+
+── No duplicates found ──
+DUPLICATES: 0
