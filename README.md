@@ -74,7 +74,7 @@ Build status: 0 errors, 0 warnings. 235 compileable source files (~130 .hpp + 85
 
 | File | Purpose |
 |------|---------|
-| `include/gamemd/core/reverse_marker.hpp` | REVERSE macro definition |
+| `src/core/reverse_marker.hpp` | REVERSE macro definition |
 | `injectFunctionTest/gen_reverse_hooks.py` | Hook code generator |
 | `injectFunctionTest/gen_re_impl.py` | RE function generator |
 | `injectFunctionTest/gen/` | Auto-generated hook/RE code |

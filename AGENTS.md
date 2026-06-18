@@ -75,7 +75,7 @@
 
 - `injectFunctionTest/CMakeLists.txt`          — HOOK_REGEN_GENERATED option
 - `injectFunctionTest/functions.json`          — 19K 函数元数据（completed/done/idempotent）
-- `include/gamemd/core/reverse_marker.hpp`     — REVERSE 宏定义
+- `src/core/reverse_marker.hpp`     — REVERSE 宏定义
 - `functionComparison.md`                      — 对拍管线设计文档
 
 #### 锁定理由

@@ -3,7 +3,7 @@
 // Called from MainGame (0x48CCC0). Returns 0 on success, non-zero on failure.
 //
 // Step count: ~40 sub-steps across 7 logical phases.
-// All stubs declared in include/gamemd/core/init_stubs.hpp
+// All stubs declared in src/core/init_stubs.hpp
 
 #include <windows.h>
 #include <mmsystem.h>

@@ -292,7 +292,7 @@
 
 | # | 描述 | 估算 |
 |---|------|------|
-| L1 | 创建 `include/gamemd/platform_compat.hpp` — 条件定义 Win32 类型别名（`DWORD`、`HWND`、`HRESULT`、`GUID` 等） | ~100 行 |
+| L1 | 创建 `src/platform_compat.hpp` — 条件定义 Win32 类型别名（`DWORD`、`HWND`、`HRESULT`、`GUID` 等） | ~100 行 |
 | L2 | 20 个 header 的 `#include <windows.h>` / `#include <ddraw.h>` 改为 `#ifdef _WIN32` 条件编译 | ~80 行 |
 | L3 | `network/session.hpp` 和 `network/multiplayer.hpp` 中 packed struct 的 `wchar_t` → `char16_t`（Linux 下 `wchar_t` 是 4 字节） | ~10 行 |
 | L4 | `CMakeLists.txt` 添加 Linux 分支（`target_compile_options` 移除 `-m32`，添加 `-Wno-attributes`） | ~20 行 |

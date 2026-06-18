@@ -7,11 +7,11 @@
 namespace gamemd {
 
 // --- Forward-declare classes needed by InitGame ---
-class CCFileClass;      // include/gamemd/system/cc_file.hpp
-class CCINIClass;       // include/gamemd/misc/rules.hpp (fwd)
+class CCFileClass;      // src/system/cc_file.hpp
+class CCINIClass;       // src/misc/rules.hpp (fwd)
 class INIClass;
-class ConvertClass;     // include/gamemd/system/convert_class.hpp
-class WWMouseClass;     // include/gamemd/ui/mouse.hpp
+class ConvertClass;     // src/system/convert_class.hpp
+class WWMouseClass;     // src/ui/mouse.hpp
 
 // ============================================================
 // InitGame pipeline functions (all IDA-annotated stubs)
