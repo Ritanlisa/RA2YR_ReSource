@@ -1082,19 +1082,19 @@ Max Concurrent: 8 (Waves 2 & 3)
 
 > 4 review agents run in PARALLEL. ALL must APPROVE. Present consolidated results to user and get explicit "okay" before completing.
 
-- [ ] F1. **Plan Compliance Audit** — `oracle`
+- [x] F1. **Plan Compliance Audit** — `oracle`
   Read the plan end-to-end. For each "Must Have": verify implementation exists (read file). For each "Must NOT Have": search codebase for forbidden patterns — reject with file:line if found. Check: no duplicate symbols, no completed-function overwrites, no class header modifications, no IDA writes, no functions.json mutations. Check evidence files exist in .omo/evidence/.
   Output: `Must Have [5/5] | Must NOT Have [7/7] | Tasks [30/30] | VERDICT: APPROVE/REJECT`
 
-- [ ] F2. **Code Quality Review** — `unspecified-high`
+- [x] F2. **Code Quality Review** — `unspecified-high`
   Run `cmake --build build_win` + `cmake --build build_linux`. Review all generated files for: duplicate declarations, missing address comments, wrong namespace usage, type safety issues (e.g., void* where uint32_t appropriate). Check AI slop: excessive comments, over-abstraction, inconsistent naming.
   Output: `Build Win [PASS/FAIL] | Build Linux [PASS/FAIL] | Files [N clean/N issues] | VERDICT`
 
-- [ ] F3. **Real Manual QA** — `unspecified-high`
+- [x] F3. **Real Manual QA** — `unspecified-high`
   Execute EVERY QA scenario from EVERY task — follow exact steps, capture evidence. Run python tools/verify_decls.py and python tools/detect_duplicates.py. Test edge cases: empty generated files, missing address comments, wrong types. Save to `.omo/evidence/final-qa/`.
   Output: `Scenarios [30/30 pass] | Scripts [2/2 pass] | Edge Cases [N tested] | VERDICT`
 
-- [ ] F4. **Scope Fidelity Check** — `deep`
+- [x] F4. **Scope Fidelity Check** — `deep`
   For each task: read "What to do", read actual diffs (git diff). Verify 1:1 — everything in spec was built (no missing), nothing beyond spec was built (no creep). Check "Must NOT do" compliance. Detect cross-task contamination. Flag unaccounted changes. Check: 0 class header modifications, 0 functions.json changes, 0 IDA writes.
   Output: `Tasks [30/30 compliant] | Contamination [CLEAN/N issues] | Unaccounted [CLEAN/N files] | VERDICT`
 
