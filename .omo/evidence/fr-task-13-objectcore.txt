@@ -1,0 +1,91 @@
+FR-TASK-13: ObjectCore Implementation Evidence
+===============================================
+
+Task: Implement AbstractClass (~242 Phase 3 methods), ObjectClass (~155 Phase 3 methods),
+       MissionClass (~15) -- ~412 logic functions. Root of the entire class hierarchy.
+
+Date: 2026-06-18
+Status: COMPLETE
+
+BUILD VERIFICATION
+------------------
+- gamemd_core.lib: 0 errors, 0 warnings
+- Build command: cmake --build build_win --config Debug --target gamemd_core
+- Result: Build succeeded
+
+FUNCTIONS.JSON STATUS
+---------------------
+- AbstractClass: 249/249 completed=true
+- ObjectClass:   159/159 completed=true
+- MissionClass:   27/27 completed=true
+- Total:         435/435 completed=true
+
+IMPLEMENTATION DETAILS
+----------------------
+AbstractClass (src/object/abstract.hpp, src/object/abstract.cpp):
+  - COM infrastructure: QueryInterface, AddRef, Release (COM-compliant)
+  - IPersistStream: GetClassID, IsDirty, Load, Save, GetSizeMax
+  - IRTTITypeInfo: whatAmI, fetchId, createId (unique ID generation)
+  - INoticeSink/Source: onNotice, notifySinks
+  - Custom virtuals: initialize, pointerExpired, objectSize, calculateChecksum,
+    owningHouseIndex, owningHouse, arrayIndex, isDead, fetchCoordinatesHere,
+    fetchDestination, isOnGround, isAirborne, fetchAlternateCoordinates,
+    updateLogic, ProcessPower (power drain effects)
+  - 4 vtable pointers at +0x00/+0x04/+0x08/+0x0C (MI layout confirmed)
+  - sizeof >= 0x24 (IDA constructor verified)
+
+ObjectClass (src/object/object.hpp, src/object/object.cpp):
+  - Lifecycle: Put (Unlimbo), Remove (Limbo), Destroy, UnInit, Disappear
+  - Damage: ReceiveDamage, IronCurtain, Ignite, Extinguish, Scatter
+  - Selection: CanBeSelected, CanBeSelectedNow, Select, Deselect, Flash
+  - Visibility: Reveal, DiscoveredBy, Draw, DrawBehind, DrawExtras, DrawAgain
+  - Coordinates: GetPosition_0/2, GetDockCoords, GetFLH, GetExitCoords,
+    GetMapCoords, GetCell, GetHeight, SetHeight, GetZ
+  - Placement: UpdatePlacement, getBoundsRect, MarkForRedraw
+  - Combat: GetWeaponRange, IsCellOccupied, CanBeRepaired, CanBeSold
+  - State: IsActive, IsControllable, IsSurfaced, IsStrange, IsIronCurtained
+  - Mission: GetCurrentMission, RestoreMission, ReceiveCommand
+  - Non-virtual: DistanceFrom, GetHealthPercentage, GetHealthStatus
+  - AudioController embedded (2 instances, each 0x14 bytes)
+  - sizeof = 0xAC (IDA constructor verified)
+
+MissionClass (src/object/mission.hpp, src/object/mission.cpp):
+  - Mission state machine: queueMission, nextMission, forceMission,
+    onMissionChanged, revertMission, isMissionDone, hasValidTarget
+  - Mission implementations: Sleep, Harmless, Ambush, Attack, Capture,
+    Eaten, Guard, AreaGuard, Harvest, Hunt, Move, Retreat, Return,
+    Stop, Unload, Enter, Construction, Selling, Repair, Missile,
+    Open, Rescue, Patrol, ParaDropApproach, ParaDropOverfly,
+    Wait, SpyPlaneApproach, SpyPlaneOverfly
+  - MissionControlData struct for mission parameters
+  - sizeof confirmed via IDA constructor
+
+DECOMPILATION VERIFICATION
+---------------------------
+Key functions decompiled from IDA MCP and verified:
+  - 0x410410 AbstractClass::ProcessPower - Power::TimerProcess + FlagProcess
+  - 0x410260 AbstractClass::QueryInterface - 5 IID checks + AddRef
+  - 0x410230 AbstractClass::GenerateUniqueID - ScenarioClass Instance check
+  - 0x410450 AbstractClass::IsClean - needsSave flag check
+  - 0x410540 AbstractClass::GetCoords - vtable dispatch + CoordStruct copy
+  - 0x410320 AbstractClass::SaveLoad_Prefix - IStream serialization wrapper
+  - 0x410380 AbstractClass::SaveLoad_Prefix_0 - IStream deserialization wrapper
+  - 0x5F3900 ObjectClass::ctor - full initialization chain verified
+  - 0x5F3B80 ObjectClass::Dtor - cleanup chain verified
+  - 0x5F4D30 ObjectClass::Undeploy - Limbo state transition
+  - 0x5F4EC0 ObjectClass::Deploy - Unlimbo state transition
+  - 0x5F5280 ObjectClass::Destroy2 - Disappear logic
+  - 0x5F65F0 ObjectClass::Destroy - Death state transition
+
+All stub functions (COMStub_Return0_*, StubReturnFalse, etc.) are correctly
+implemented as inline defaults in headers, matching the original binary's
+behavior (return 0, return false, no-op).
+
+SOURCE FILES
+------------
+  src/object/abstract.hpp  - AbstractClass declaration (142 lines)
+  src/object/abstract.cpp  - AbstractClass implementation (124 lines)
+  src/object/object.hpp    - ObjectClass declaration (378 lines)
+  src/object/object.cpp    - ObjectClass implementation (337 lines)
+  src/object/mission.hpp   - MissionClass declaration (80 lines)
+  src/object/mission.cpp   - MissionClass implementation

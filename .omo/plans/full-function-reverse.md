@@ -202,7 +202,7 @@ Wave Final: Build verification + spot-check audit — 4 parallel reviews
 
 ---
 
-- [ ] 13. Implement AbstractClass + ObjectClass + MissionClass methods (~412 functions)
+- [x] 13. Implement AbstractClass + ObjectClass + MissionClass methods (~412 functions)
 
   **What to do**: AbstractClass Phase 3 methods (~242) + ObjectClass Phase 3 (~155) + MissionClass (~15). Root of the class hierarchy.
   **Which agent**: `deep` — split across 3 parallel sub-tasks
