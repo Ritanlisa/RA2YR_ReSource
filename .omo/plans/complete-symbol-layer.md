@@ -760,7 +760,7 @@ Max Concurrent: 8 (Waves 2 & 3)
   - Message: `feat(tools): add top-200 global selector`
   - Files: `tools/select_top_globals.py`, `tools/top200_globals.json`
 
-- [ ] 22. IDA xref analysis — batch 1 (globals 1-100)
+- [x] 22. IDA xref analysis — batch 1 (globals 1-100)
 
   **What to do**:
   - For each of the first 100 globals in the top-200 list:
@@ -805,7 +805,7 @@ Max Concurrent: 8 (Waves 2 & 3)
   - Message: `feat(tools): add IDA xref analysis for top-200 batch 1`
   - Files: `tools/analyze_xrefs.py`, `tools/xref_analysis_batch1.json`
 
-- [ ] 23. IDA xref analysis — batch 2 (globals 101-200)
+- [x] 23. IDA xref analysis — batch 2 (globals 101-200)
 
   **What to do**: Same as Task 22 for the second batch of 100 globals
   **Parallelization**: Wave 4 (with Task 22), Blocked By Task 21

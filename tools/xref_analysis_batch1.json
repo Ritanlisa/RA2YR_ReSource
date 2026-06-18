@@ -1,0 +1,5148 @@
+[
+  {
+    "name": "RulesClass_Instance",
+    "addr": "0x008871e0",
+    "usage_class": "unknown:8+float_op:8+int_cmp:7",
+    "observed_type": "pointer",
+    "xref_count": 1419,
+    "sample_xrefs": [
+      {
+        "addr": "0x00414925",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "AircraftClass::Draw"
+      },
+      {
+        "addr": "0x00430d7d",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "PlacePlayerBeacon"
+      },
+      {
+        "addr": "0x00442809",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "BuildingClass::ProcessAttack"
+      },
+      {
+        "addr": "0x0044c0d4",
+        "mnem": "mov",
+        "class": [
+          "float_op"
+        ],
+        "func": "BuildingClass::ProcessRepair"
+      },
+      {
+        "addr": "0x00454758",
+        "mnem": "mov",
+        "class": [
+          "float_op"
+        ],
+        "func": "BuildingClass::UpdateIdleAnims"
+      }
+    ]
+  },
+  {
+    "name": "ScenarioClass_Instance",
+    "addr": "0x00a8b230",
+    "usage_class": "int_cmp:19+bool_flag:9+ptr_deref:7",
+    "observed_type": "pointer",
+    "xref_count": 1290,
+    "sample_xrefs": [
+      {
+        "addr": "0x00410230",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag",
+          "ptr_deref"
+        ],
+        "func": "AbstractClass::GenerateUniqueID"
+      },
+      {
+        "addr": "0x0043c0f0",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "CreateDominatorDestructionEffects"
+      },
+      {
+        "addr": "0x00471bb0",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "CaptureManagerClass::HandleOverload"
+      },
+      {
+        "addr": "0x00485914",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "CellClass::ProcessBridgeRepair"
+      },
+      {
+        "addr": "0x004ad031",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "ScenarioClass::LoadMapData"
+      }
+    ]
+  },
+  {
+    "name": "CurrentFrame",
+    "addr": "0x00a8ed84",
+    "usage_class": "int_cmp:11+ptr_deref:10+bool_flag:9",
+    "observed_type": "pointer",
+    "xref_count": 1006,
+    "sample_xrefs": [
+      {
+        "addr": "0x0041441c",
+        "mnem": "mov",
+        "class": [
+          "ptr_deref"
+        ],
+        "func": "AircraftClass::MoveTo"
+      },
+      {
+        "addr": "0x0043b92b",
+        "mnem": "mov",
+        "class": [
+          "ptr_deref"
+        ],
+        "func": "BuildingClass::Construct"
+      },
+      {
+        "addr": "0x0045427f",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "BuildingClass::PowerDrainUpdate"
+      },
+      {
+        "addr": "0x004b01ca",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "JumpjetLocomotionClass::ComputeVoxelTransform"
+      },
+      {
+        "addr": "0x004c6944",
+        "mnem": "mov",
+        "class": [
+          "ptr_deref"
+        ],
+        "func": "sub_4C68E0"
+      }
+    ]
+  },
+  {
+    "name": "GameMode_Current",
+    "addr": "0x00a8b238",
+    "usage_class": "int_cmp:19+bool_flag:18+func_ptr:4",
+    "observed_type": "bool",
+    "xref_count": 790,
+    "sample_xrefs": [
+      {
+        "addr": "0x00414af3",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "AircraftClass::ProcessMissionTimeout"
+      },
+      {
+        "addr": "0x0045455b",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "BuildingClass::UpdatePowerDrain"
+      },
+      {
+        "addr": "0x0048d59e",
+        "mnem": "cmp",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "Network::Dispatch"
+      },
+      {
+        "addr": "0x004e543d",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "FillLobbyFactionComboBox"
+      },
+      {
+        "addr": "0x004f9c1f",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "HouseClass::HandleAlliance"
+      }
+    ]
+  },
+  {
+    "name": "HouseClass_Player",
+    "addr": "0x00a83d4c",
+    "usage_class": "int_cmp:16+bool_flag:13+ptr_deref:4",
+    "observed_type": "pointer",
+    "xref_count": 534,
+    "sample_xrefs": [
+      {
+        "addr": "0x00414586",
+        "mnem": "mov",
+        "class": [
+          "ptr_deref"
+        ],
+        "func": "AircraftClass::Draw"
+      },
+      {
+        "addr": "0x00431758",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "HouseClass::Render"
+      },
+      {
+        "addr": "0x00445818",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "FootClass::UpdateSidebar"
+      },
+      {
+        "addr": "0x0048cbae",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "MainGameFrame"
+      },
+      {
+        "addr": "0x004ac229",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "PlayerClass::ExecuteCommand"
+      }
+    ]
+  },
+  {
+    "name": "TacticalClass_Instance",
+    "addr": "0x00887324",
+    "usage_class": "int_cmp:13+bool_flag:8+func_ptr:6",
+    "observed_type": "bool",
+    "xref_count": 461,
+    "sample_xrefs": [
+      {
+        "addr": "0x004146c0",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "AircraftClass::Draw"
+      },
+      {
+        "addr": "0x0044217e",
+        "mnem": "mov",
+        "class": [
+          "func_ptr"
+        ],
+        "func": "BuildingClass::AfterDestruction"
+      },
+      {
+        "addr": "0x0046766b",
+        "mnem": "mov",
+        "class": [
+          "func_ptr"
+        ],
+        "func": "BulletClass::ProcessNukeExplosion"
+      },
+      {
+        "addr": "0x00487357",
+        "mnem": "mov",
+        "class": [
+          "func_ptr"
+        ],
+        "func": "Crate::FindPlacement"
+      },
+      {
+        "addr": "0x004a9a2f",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "DisplayClass::UpdateCellPassability"
+      }
+    ]
+  },
+  {
+    "name": "IKnowWhatImDoing",
+    "addr": "0x00a8e7ac",
+    "usage_class": "int_cmp:19+bool_flag:10+func_ptr:3",
+    "observed_type": "bool",
+    "xref_count": 292,
+    "sample_xrefs": [
+      {
+        "addr": "0x00418ecc",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "InfantryClass::FindNearbyCell"
+      },
+      {
+        "addr": "0x00443141",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "BuildingClass::EjectCrew"
+      },
+      {
+        "addr": "0x00444979",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "BuildingClass::UpdateConstruction"
+      },
+      {
+        "addr": "0x00446f22",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "SuperWeapon::CreateUnits"
+      },
+      {
+        "addr": "0x00449e1c",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "AnimClass::finalizeAnimation"
+      }
+    ]
+  },
+  {
+    "name": "Game_PlayerInfoArray",
+    "addr": "0x00a8da78",
+    "usage_class": "int_cmp:14+func_ptr:6+bool_flag:6",
+    "observed_type": "function pointer",
+    "xref_count": 362,
+    "sample_xrefs": [
+      {
+        "addr": "0x00430d99",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "PlacePlayerBeacon"
+      },
+      {
+        "addr": "0x0046e306",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "CampaignScore::DialogProc"
+      },
+      {
+        "addr": "0x0046ecf2",
+        "mnem": "mov",
+        "class": [
+          "func_ptr"
+        ],
+        "func": "CampaignScore::DialogProc"
+      },
+      {
+        "addr": "0x004704fb",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "ptr_deref"
+        ],
+        "func": "CampaignScore::ProcessScreen"
+      },
+      {
+        "addr": "0x0048d654",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "Network::Dispatch"
+      }
+    ]
+  },
+  {
+    "name": "Game_PlayerCount",
+    "addr": "0x00a8da84",
+    "usage_class": "int_cmp:24+bool_flag:19+ptr_deref:2",
+    "observed_type": "int",
+    "xref_count": 356,
+    "sample_xrefs": [
+      {
+        "addr": "0x00430dea",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "PlacePlayerBeacon"
+      },
+      {
+        "addr": "0x0046fdfc",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "CampaignScore::ProcessScreen"
+      },
+      {
+        "addr": "0x004708fd",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "CampaignScore::ProcessScreen"
+      },
+      {
+        "addr": "0x004c7c92",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "EventClass::ProcessEvent"
+      },
+      {
+        "addr": "0x00541a2d",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "Network::ReceiveLoop"
+      }
+    ]
+  },
+  {
+    "name": "HouseClass_Array",
+    "addr": "0x00a8022c",
+    "usage_class": "int_cmp:16+bool_flag:11+unknown:8",
+    "observed_type": "int",
+    "xref_count": 217,
+    "sample_xrefs": [
+      {
+        "addr": "0x0041b1ae",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "PlaceAircraftFromINI"
+      },
+      {
+        "addr": "0x00430b1a",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "RenderAlliedBuildingTags"
+      },
+      {
+        "addr": "0x0043176d",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "HouseClass::Render"
+      },
+      {
+        "addr": "0x00458248",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "BuildingClass::ProcessStructureAbandoned"
+      },
+      {
+        "addr": "0x004a9004",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "GetBuildingPlacement"
+      }
+    ]
+  },
+  {
+    "name": "g_Map_GlobalCellIndex",
+    "addr": "0x00abdc74",
+    "usage_class": "int_cmp:21+bool_flag:8+ptr_deref:6",
+    "observed_type": "pointer",
+    "xref_count": 443,
+    "sample_xrefs": [
+      {
+        "addr": "0x00565712",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "MapClass::IsCellPassable"
+      },
+      {
+        "addr": "0x005684a6",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "MapClass::FillRevealBuffer"
+      },
+      {
+        "addr": "0x005692a9",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "ptr_deref"
+        ],
+        "func": "Terrain::PlaceCliffs"
+      },
+      {
+        "addr": "0x0056a20a",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "ptr_deref"
+        ],
+        "func": "PlaceTerrainCliffsRegion"
+      },
+      {
+        "addr": "0x0056adb4",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "ptr_deref"
+        ],
+        "func": "RepairMapCliff"
+      }
+    ]
+  },
+  {
+    "name": "Map_VisibleRect",
+    "addr": "0x00886fa4",
+    "usage_class": "int_cmp:19+unknown:5+bool_flag:2",
+    "observed_type": "int",
+    "xref_count": 202,
+    "sample_xrefs": [
+      {
+        "addr": "0x0040da31",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "sub_40DA20"
+      },
+      {
+        "addr": "0x0043cf29",
+        "mnem": "mov",
+        "class": [
+          "ptr_deref"
+        ],
+        "func": "BuildingClass::DrawFactoryProduction"
+      },
+      {
+        "addr": "0x0047f381",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "RenderFogOfWarOverlay"
+      },
+      {
+        "addr": "0x00480de8",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "BuildingClass::SellEffects"
+      },
+      {
+        "addr": "0x004a1bb8",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "CellClass::DestroyOverlay"
+      }
+    ]
+  },
+  {
+    "name": "g_Shroud_CellArray",
+    "addr": "0x0087f924",
+    "usage_class": "int_cmp:25+bool_flag:22",
+    "observed_type": "int",
+    "xref_count": 399,
+    "sample_xrefs": [
+      {
+        "addr": "0x00429aa1",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "BuildingClass::UpdatePowerAnimation"
+      },
+      {
+        "addr": "0x00568259",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "sub_568140"
+      },
+      {
+        "addr": "0x0056965e",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "Terrain::PlaceCliffs"
+      },
+      {
+        "addr": "0x0056a2af",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "PlaceTerrainCliffsRegion"
+      },
+      {
+        "addr": "0x0056ada3",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "RepairMapCliff"
+      }
+    ]
+  },
+  {
+    "name": "Direction_X_Offsets",
+    "addr": "0x0089f688",
+    "usage_class": "int_cmp:24+string_ptr:2+ptr_deref:1",
+    "observed_type": "int",
+    "xref_count": 202,
+    "sample_xrefs": [
+      {
+        "addr": "0x00415b4d",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "AircraftClass::FindLandingCell"
+      },
+      {
+        "addr": "0x0042af41",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "BuildingClass::UpdatePowerAnim"
+      },
+      {
+        "addr": "0x0042bd08",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "sub_42BCA0"
+      },
+      {
+        "addr": "0x004532a9",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "BuildingClass::TraverseBridgeSegments"
+      },
+      {
+        "addr": "0x0047e218",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "UpdateCellClassNeighborTerrain"
+      }
+    ]
+  },
+  {
+    "name": "g_BitShift_Red",
+    "addr": "0x008a0dd0",
+    "usage_class": "int_cmp:24+bool_flag:3+float_op:1",
+    "observed_type": "int",
+    "xref_count": 222,
+    "sample_xrefs": [
+      {
+        "addr": "0x004304c0",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "RenderBuildingTag"
+      },
+      {
+        "addr": "0x004355ff",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "PackRGB565"
+      },
+      {
+        "addr": "0x004a259f",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "DrawSidebarCreditsTimer"
+      },
+      {
+        "addr": "0x004ab13c",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "TacticalClass::HandlePlayerAction"
+      },
+      {
+        "addr": "0x004baab0",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "DSurface::CreatePrimary"
+      }
+    ]
+  },
+  {
+    "name": "g_BitShift_Green_0",
+    "addr": "0x008a0dd4",
+    "usage_class": "int_cmp:25+bool_flag:1",
+    "observed_type": "int",
+    "xref_count": 222,
+    "sample_xrefs": [
+      {
+        "addr": "0x004304b8",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "RenderBuildingTag"
+      },
+      {
+        "addr": "0x004355f7",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "PackRGB565"
+      },
+      {
+        "addr": "0x004a2597",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "DrawSidebarCreditsTimer"
+      },
+      {
+        "addr": "0x004ab12e",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "TacticalClass::HandlePlayerAction"
+      },
+      {
+        "addr": "0x004baaa1",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "DSurface::CreatePrimary"
+      }
+    ]
+  },
+  {
+    "name": "g_BitMask_Green",
+    "addr": "0x008a0de0",
+    "usage_class": "int_cmp:25+bool_flag:1",
+    "observed_type": "int",
+    "xref_count": 239,
+    "sample_xrefs": [
+      {
+        "addr": "0x004304b0",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "RenderBuildingTag"
+      },
+      {
+        "addr": "0x00456af6",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "DrawTechnoDeployCircle"
+      },
+      {
+        "addr": "0x004a2405",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "DrawSidebarCreditsTimer"
+      },
+      {
+        "addr": "0x004ab10e",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "TacticalClass::HandlePlayerAction"
+      },
+      {
+        "addr": "0x004baa99",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "DSurface::CreatePrimary"
+      }
+    ]
+  },
+  {
+    "name": "g_BitShift_Blue",
+    "addr": "0x008a0dd8",
+    "usage_class": "int_cmp:25+bool_flag:1",
+    "observed_type": "int",
+    "xref_count": 231,
+    "sample_xrefs": [
+      {
+        "addr": "0x0043048d",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "RenderBuildingTag"
+      },
+      {
+        "addr": "0x00456ae6",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "DrawTechnoDeployCircle"
+      },
+      {
+        "addr": "0x004a23ee",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "DrawSidebarCreditsTimer"
+      },
+      {
+        "addr": "0x004ab122",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "TacticalClass::HandlePlayerAction"
+      },
+      {
+        "addr": "0x004bb901",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "DSurface::FillRectWithFlags"
+      }
+    ]
+  },
+  {
+    "name": "g_BitMask_Red",
+    "addr": "0x008a0ddc",
+    "usage_class": "int_cmp:24+unknown:1",
+    "observed_type": "int",
+    "xref_count": 226,
+    "sample_xrefs": [
+      {
+        "addr": "0x0043047e",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "RenderBuildingTag"
+      },
+      {
+        "addr": "0x00456ac8",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "DrawTechnoDeployCircle"
+      },
+      {
+        "addr": "0x004a2548",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "DrawSidebarCreditsTimer"
+      },
+      {
+        "addr": "0x004ab207",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "TacticalClass::HandlePlayerAction"
+      },
+      {
+        "addr": "0x004bb973",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "DSurface::FillRectWithFlags"
+      }
+    ]
+  },
+  {
+    "name": "g_BitMask_Blue",
+    "addr": "0x008a0de4",
+    "usage_class": "int_cmp:25",
+    "observed_type": "int",
+    "xref_count": 231,
+    "sample_xrefs": [
+      {
+        "addr": "0x004304a8",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "RenderBuildingTag"
+      },
+      {
+        "addr": "0x00456aee",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "DrawTechnoDeployCircle"
+      },
+      {
+        "addr": "0x004a257b",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "DrawSidebarCreditsTimer"
+      },
+      {
+        "addr": "0x004ab1f3",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "TacticalClass::HandlePlayerAction"
+      },
+      {
+        "addr": "0x004bb9a1",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "DSurface::FillRectWithFlags"
+      }
+    ]
+  },
+  {
+    "name": "g_hWnd",
+    "addr": "0x00b73550",
+    "usage_class": "unknown:12+int_cmp:12+bool_flag:8",
+    "observed_type": "bool",
+    "xref_count": 197,
+    "sample_xrefs": [
+      {
+        "addr": "0x004094aa",
+        "mnem": "mov",
+        "class": [
+          "ptr_deref"
+        ],
+        "func": "sub_409470"
+      },
+      {
+        "addr": "0x00432ee4",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "BinkMovie::RenderLoop"
+      },
+      {
+        "addr": "0x0043db7f",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "FootClass::DrawPlacementPreview"
+      },
+      {
+        "addr": "0x004a402a",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "sub_4A3FD0"
+      },
+      {
+        "addr": "0x004a43cd",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag",
+          "ptr_deref"
+        ],
+        "func": "InitializeDDraw"
+      }
+    ]
+  },
+  {
+    "name": "DSurface_ViewBounds",
+    "addr": "0x00886fa0",
+    "usage_class": "int_cmp:16+ptr_deref:8+string_ptr:8",
+    "observed_type": "pointer",
+    "xref_count": 267,
+    "sample_xrefs": [
+      {
+        "addr": "0x0040da2c",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "sub_40DA20"
+      },
+      {
+        "addr": "0x0043cfa0",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "BuildingClass::DrawFactoryProduction"
+      },
+      {
+        "addr": "0x00456dd3",
+        "mnem": "push",
+        "class": [
+          "int_cmp",
+          "ptr_deref",
+          "string_ptr"
+        ],
+        "func": "DrawTechnoDeployCircle"
+      },
+      {
+        "addr": "0x004861d0",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "ptr_deref"
+        ],
+        "func": "BuildingClass::VisualizePlacement"
+      },
+      {
+        "addr": "0x004a8b1e",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "TacticalClass::SetViewDimensions"
+      }
+    ]
+  },
+  {
+    "name": "DSurface_Hidden_2",
+    "addr": "0x00887314",
+    "usage_class": "unknown:12+ptr_deref:8+int_cmp:4",
+    "observed_type": "pointer",
+    "xref_count": 300,
+    "sample_xrefs": [
+      {
+        "addr": "0x004233dd",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "AnimClass::Render"
+      },
+      {
+        "addr": "0x0043615e",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "BuildingLightClass::Draw_Start"
+      },
+      {
+        "addr": "0x0047efae",
+        "mnem": "mov",
+        "class": [
+          "func_ptr"
+        ],
+        "func": "BuildingPlacement::RenderBuildingPlacementPreview"
+      },
+      {
+        "addr": "0x004889e5",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "ColorListClass::DrawColorRect"
+      },
+      {
+        "addr": "0x00488d31",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "ColorListClass::DrawColorRect"
+      }
+    ]
+  },
+  {
+    "name": "g_ZBufferDescriptor",
+    "addr": "0x00887644",
+    "usage_class": "int_cmp:22+bool_flag:13+unknown:2",
+    "observed_type": "bool",
+    "xref_count": 260,
+    "sample_xrefs": [
+      {
+        "addr": "0x00422cb9",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "AnimClass::Render"
+      },
+      {
+        "addr": "0x00437b77",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "BlitterRLEBlitSHP"
+      },
+      {
+        "addr": "0x00491edc",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "sub_491EA0"
+      },
+      {
+        "addr": "0x00492455",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "sub_492370"
+      },
+      {
+        "addr": "0x00492e78",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "sub_492E10"
+      }
+    ]
+  },
+  {
+    "name": "WWMouseClass_Instance",
+    "addr": "0x00887640",
+    "usage_class": "ptr_deref:23+int_cmp:13+bool_flag:9",
+    "observed_type": "pointer",
+    "xref_count": 266,
+    "sample_xrefs": [
+      {
+        "addr": "0x0042e1c8",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "ptr_deref"
+        ],
+        "func": "RenderTooltipBorder"
+      },
+      {
+        "addr": "0x004881ed",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "ptr_deref"
+        ],
+        "func": "sub_4880F0"
+      },
+      {
+        "addr": "0x004a56c1",
+        "mnem": "mov",
+        "class": [
+          "ptr_deref"
+        ],
+        "func": "Dial8Class::SetValue"
+      },
+      {
+        "addr": "0x004aac60",
+        "mnem": "mov",
+        "class": [
+          "ptr_deref"
+        ],
+        "func": "DisplayClass::ProcessTacticalMouseInput"
+      },
+      {
+        "addr": "0x004c3169",
+        "mnem": "mov",
+        "class": [
+          "ptr_deref"
+        ],
+        "func": "DropListClass::GetItem"
+      }
+    ]
+  },
+  {
+    "name": "g_AnimManager",
+    "addr": "0x00b0f680",
+    "usage_class": "int_cmp:24+bool_flag:24+func_ptr:1",
+    "observed_type": "bool",
+    "xref_count": 165,
+    "sample_xrefs": [
+      {
+        "addr": "0x004229eb",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "AnimClass::Destruct"
+      },
+      {
+        "addr": "0x004278bb",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": ""
+      },
+      {
+        "addr": "0x0043a3e9",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "NeuronClass::NeuronClass"
+      },
+      {
+        "addr": "0x0043a8c9",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "AbstractClass::Construct"
+      },
+      {
+        "addr": "0x0046bd89",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "BulletTypeClass::Construct"
+      }
+    ]
+  },
+  {
+    "name": "g_DialogHashMap_Count",
+    "addr": "0x00ac1b04",
+    "usage_class": "int_cmp:22+bool_flag:16+float_op:2",
+    "observed_type": "int",
+    "xref_count": 157,
+    "sample_xrefs": [
+      {
+        "addr": "0x00600a9f",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "sub_600A50"
+      },
+      {
+        "addr": "0x00602491",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "IsValidActionDialog"
+      },
+      {
+        "addr": "0x00603241",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "sub_603240"
+      },
+      {
+        "addr": "0x00603c6c",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "IsDialogWindowClass"
+      },
+      {
+        "addr": "0x00604a26",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "DlgSkirmishMenuProc"
+      }
+    ]
+  },
+  {
+    "name": "g_MapTileArray",
+    "addr": "0x00abed10",
+    "usage_class": "int_cmp:23+bool_flag:13+ptr_deref:6",
+    "observed_type": "pointer",
+    "xref_count": 284,
+    "sample_xrefs": [
+      {
+        "addr": "0x00578e63",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "CreateMapObject"
+      },
+      {
+        "addr": "0x0058570a",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "MapClass::InitializeTileData"
+      },
+      {
+        "addr": "0x0058c1d0",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": ""
+      },
+      {
+        "addr": "0x0058c4b3",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "sub_58C4A0"
+      },
+      {
+        "addr": "0x0058ce40",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "RandomMap::GenerateTerrain"
+      }
+    ]
+  },
+  {
+    "name": "ppv",
+    "addr": "0x00ac116c",
+    "usage_class": "int_cmp:13+ptr_deref:8+bool_flag:5",
+    "observed_type": "pointer",
+    "xref_count": 200,
+    "sample_xrefs": [
+      {
+        "addr": "0x0048d188",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "Event::Dispatch"
+      },
+      {
+        "addr": "0x005e3ab0",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "SendMultiplayerStartSignal"
+      },
+      {
+        "addr": "0x005e80b9",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "MapPreview::Upload"
+      },
+      {
+        "addr": "0x0077e110",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "sub_77E110"
+      },
+      {
+        "addr": "0x0077e3e9",
+        "mnem": "mov",
+        "class": [
+          "func_ptr"
+        ],
+        "func": "FillBuddyListExWOL"
+      }
+    ]
+  },
+  {
+    "name": "g_DialogHashMap_Base",
+    "addr": "0x00ac1b00",
+    "usage_class": "int_cmp:23+bool_flag:18+unknown:1",
+    "observed_type": "bool",
+    "xref_count": 207,
+    "sample_xrefs": [
+      {
+        "addr": "0x00600ac3",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "sub_600A50"
+      },
+      {
+        "addr": "0x0060160c",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "CtlDialogColorHandler"
+      },
+      {
+        "addr": "0x0060306c",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "LoadCampaignMissionData"
+      },
+      {
+        "addr": "0x00603d5e",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "CacheDialogInvalidate"
+      },
+      {
+        "addr": "0x00606825",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "Dialog::MapControlToAction"
+      }
+    ]
+  },
+  {
+    "name": "g_MapCellWidth",
+    "addr": "0x0089c2dc",
+    "usage_class": "int_cmp:23+bool_flag:3+ptr_deref:2",
+    "observed_type": "int",
+    "xref_count": 227,
+    "sample_xrefs": [
+      {
+        "addr": "0x00429c27",
+        "mnem": "imul",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "BuildingClass::UpdatePowerAnimation"
+      },
+      {
+        "addr": "0x0057a0e1",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "MapClass::InitTileData"
+      },
+      {
+        "addr": "0x0058c1f4",
+        "mnem": "imul",
+        "class": [
+          "int_cmp"
+        ],
+        "func": ""
+      },
+      {
+        "addr": "0x0058c5a3",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "sub_58C5A0"
+      },
+      {
+        "addr": "0x0058ce9f",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "sub_58CE90"
+      }
+    ]
+  },
+  {
+    "name": "g_DialogHashMap_Buckets",
+    "addr": "0x00ac1b0c",
+    "usage_class": "int_cmp:25",
+    "observed_type": "int",
+    "xref_count": 132,
+    "sample_xrefs": [
+      {
+        "addr": "0x00600a99",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "sub_600A50"
+      },
+      {
+        "addr": "0x006015fc",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "CtlDialogColorHandler"
+      },
+      {
+        "addr": "0x00602d8b",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": ""
+      },
+      {
+        "addr": "0x0060340c",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "BinkMovie::HandleKeyboard"
+      },
+      {
+        "addr": "0x00603c7f",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "IsDialogWindowClass"
+      }
+    ]
+  },
+  {
+    "name": "WTFMode",
+    "addr": "0x00a8e9a0",
+    "usage_class": "int_cmp:22+bool_flag:17+unknown:3",
+    "observed_type": "bool",
+    "xref_count": 123,
+    "sample_xrefs": [
+      {
+        "addr": "0x004140ae",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "AircraftClass::Destruct"
+      },
+      {
+        "addr": "0x0042290b",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "AnimClass::Destruct"
+      },
+      {
+        "addr": "0x00445ac6",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "BuildingClass::Sell"
+      },
+      {
+        "addr": "0x0047c520",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "Cell::IsBridge"
+      },
+      {
+        "addr": "0x0047c64e",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "CellClass::IsPassable"
+      }
+    ]
+  },
+  {
+    "name": "HouseClass_Count",
+    "addr": "0x00a80238",
+    "usage_class": "int_cmp:23+bool_flag:20+func_ptr:1",
+    "observed_type": "int",
+    "xref_count": 146,
+    "sample_xrefs": [
+      {
+        "addr": "0x0041ec93",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "AITriggerTypeClass::CivilianHouseOwns"
+      },
+      {
+        "addr": "0x00472333",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "HouseClass::AssignCivilianToLowPowerTargets"
+      },
+      {
+        "addr": "0x004e6d11",
+        "mnem": "mov",
+        "class": [
+          "func_ptr"
+        ],
+        "func": "sub_4E6CE0"
+      },
+      {
+        "addr": "0x004f61a1",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "HouseClass::Construct"
+      },
+      {
+        "addr": "0x004fbd57",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "sub_4FBD00"
+      }
+    ]
+  },
+  {
+    "name": "g_BinkMoviePlayer",
+    "addr": "0x0087f770",
+    "usage_class": "int_cmp:21+bool_flag:18+func_ptr:3",
+    "observed_type": "bool",
+    "xref_count": 180,
+    "sample_xrefs": [
+      {
+        "addr": "0x00432c96",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "BinkMovie::Play"
+      },
+      {
+        "addr": "0x0044765d",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "BuildingClass::HandleRepairCursor"
+      },
+      {
+        "addr": "0x004c31f8",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "DropListClass::GetCount"
+      },
+      {
+        "addr": "0x004d79f1",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "FootClass::ValidateMove"
+      },
+      {
+        "addr": "0x004e1777",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "InputManager::ProcessEvents"
+      }
+    ]
+  },
+  {
+    "name": "BuildingTypeClass_Array",
+    "addr": "0x00a83d84",
+    "usage_class": "int_cmp:20+bool_flag:14+ptr_deref:6",
+    "observed_type": "pointer",
+    "xref_count": 117,
+    "sample_xrefs": [
+      {
+        "addr": "0x00424130",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "TechnoClass::CreateUnit"
+      },
+      {
+        "addr": "0x00445b47",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag",
+          "ptr_deref"
+        ],
+        "func": "BuildingClass::Sell"
+      },
+      {
+        "addr": "0x0047c13c",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "GetCellRadarColors"
+      },
+      {
+        "addr": "0x0047d85c",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag",
+          "ptr_deref"
+        ],
+        "func": "House::AnnounceUpgrade"
+      },
+      {
+        "addr": "0x0047f6c2",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "BuildingClass::Draw_0"
+      }
+    ]
+  },
+  {
+    "name": "DSurface_Alternate",
+    "addr": "0x00887310",
+    "usage_class": "unknown:12+int_cmp:7+ptr_deref:7",
+    "observed_type": "pointer",
+    "xref_count": 261,
+    "sample_xrefs": [
+      {
+        "addr": "0x004ad913",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "ptr_deref"
+        ],
+        "func": "MapClass::SaveCellTagsToINI"
+      },
+      {
+        "addr": "0x004f1eed",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "LoadFromINIGraphicMenu"
+      },
+      {
+        "addr": "0x005357f6",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "Performance::Profile"
+      },
+      {
+        "addr": "0x00560e26",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "ChangeVideoMode"
+      },
+      {
+        "addr": "0x005cc403",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "ScenarioClass::AnimateConstructionStage"
+      }
+    ]
+  },
+  {
+    "name": "ArmageddonMode",
+    "addr": "0x00a8ed6b",
+    "usage_class": "int_cmp:25+bool_flag:20+ptr_deref:1",
+    "observed_type": "bool",
+    "xref_count": 88,
+    "sample_xrefs": [
+      {
+        "addr": "0x004144b0",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "AircraftClass::Draw"
+      },
+      {
+        "addr": "0x0043db89",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "FootClass::DrawPlacementPreview"
+      },
+      {
+        "addr": "0x0044d6b4",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "TechnoClass::StartOrResumeProduction"
+      },
+      {
+        "addr": "0x0047dd70",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "CellClass::UpdateAnimations"
+      },
+      {
+        "addr": "0x004a908c",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "ProcessDataBuildingTypeClass"
+      }
+    ]
+  },
+  {
+    "name": "g_GameStateFlags",
+    "addr": "0x00a8b23c",
+    "usage_class": "int_cmp:21+bool_flag:21+ptr_deref:19",
+    "observed_type": "pointer",
+    "xref_count": 174,
+    "sample_xrefs": [
+      {
+        "addr": "0x0046d90b",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag",
+          "ptr_deref"
+        ],
+        "func": "sub_46D8B0"
+      },
+      {
+        "addr": "0x0046f712",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "Count::SetupAllCountriesLobby"
+      },
+      {
+        "addr": "0x004e4131",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag",
+          "ptr_deref"
+        ],
+        "func": "SetupLobbyCountryCombo"
+      },
+      {
+        "addr": "0x004fc5be",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "HouseClass::DefeatPlayer"
+      },
+      {
+        "addr": "0x0055d329",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag",
+          "ptr_deref"
+        ],
+        "func": "GameFrameCheck"
+      }
+    ]
+  },
+  {
+    "name": "g_VisibleSurfaceDescriptor",
+    "addr": "0x0087e8a4",
+    "usage_class": "int_cmp:21+bool_flag:15+unknown:3",
+    "observed_type": "bool",
+    "xref_count": 218,
+    "sample_xrefs": [
+      {
+        "addr": "0x00421164",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "UpdateSpotlightsFoo"
+      },
+      {
+        "addr": "0x00437474",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "BlitterCopySHP"
+      },
+      {
+        "addr": "0x0047f11b",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "RenderFogOfWar"
+      },
+      {
+        "addr": "0x0047f440",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "RenderFogOfWarOverlay"
+      },
+      {
+        "addr": "0x0049421d",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "BlitTransLucent50Alpha_ushort::AddRef"
+      }
+    ]
+  },
+  {
+    "name": "BuildingTypeClass_AnimTable",
+    "addr": "0x00b054d4",
+    "usage_class": "int_cmp:16+bool_flag:8+unknown:7",
+    "observed_type": "pointer",
+    "xref_count": 113,
+    "sample_xrefs": [
+      {
+        "addr": "0x0042313c",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "AnimClass::Render"
+      },
+      {
+        "addr": "0x004253ca",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "AnimClass::SaveLoad_Prefix_0"
+      },
+      {
+        "addr": "0x004683ac",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "BulletClass::SetupVoxelTransform"
+      },
+      {
+        "addr": "0x00471016",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "CampaignScreen::Init"
+      },
+      {
+        "addr": "0x00474b24",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "HouseClass::WriteBuildingTypeNameToINI"
+      }
+    ]
+  },
+  {
+    "name": "g_WOL_State",
+    "addr": "0x00b77900",
+    "usage_class": "int_cmp:18+bool_flag:14+unknown:4",
+    "observed_type": "bool",
+    "xref_count": 247,
+    "sample_xrefs": [
+      {
+        "addr": "0x0077b9c7",
+        "mnem": "mov",
+        "class": [
+          "func_ptr"
+        ],
+        "func": "sub_77B9C0"
+      },
+      {
+        "addr": "0x0077e951",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "AssignWOLPlayerSide"
+      },
+      {
+        "addr": "0x00781da1",
+        "mnem": "cmp",
+        "class": [
+          "unknown"
+        ],
+        "func": "WOLobby::BuildStateList"
+      },
+      {
+        "addr": "0x00781f53",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "WOLobby::BuildStateList"
+      },
+      {
+        "addr": "0x00782141",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "InsertGameSettings"
+      }
+    ]
+  },
+  {
+    "name": "g_NetworkPlayerName",
+    "addr": "0x00a8da90",
+    "usage_class": "int_cmp:13+bool_flag:11+func_ptr:9",
+    "observed_type": "function pointer",
+    "xref_count": 226,
+    "sample_xrefs": [
+      {
+        "addr": "0x0046d434",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": ""
+      },
+      {
+        "addr": "0x0046d931",
+        "mnem": "mov",
+        "class": [
+          "ptr_deref"
+        ],
+        "func": "sub_46D8B0"
+      },
+      {
+        "addr": "0x0046da0e",
+        "mnem": "mov",
+        "class": [
+          "func_ptr"
+        ],
+        "func": "sub_46D8B0"
+      },
+      {
+        "addr": "0x0046e994",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "CampaignScore::DialogProc"
+      },
+      {
+        "addr": "0x0046f664",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "Skirmish::FillPlayerNames"
+      }
+    ]
+  },
+  {
+    "name": "g_Lobby_MaxPlayers",
+    "addr": "0x00ac11b4",
+    "usage_class": "int_cmp:21+bool_flag:19+unknown:4",
+    "observed_type": "bool",
+    "xref_count": 82,
+    "sample_xrefs": [
+      {
+        "addr": "0x0046f770",
+        "mnem": "cmp",
+        "class": [
+          "unknown"
+        ],
+        "func": "Count::SetupAllCountriesLobby"
+      },
+      {
+        "addr": "0x0046f95d",
+        "mnem": "cmp",
+        "class": [
+          "unknown"
+        ],
+        "func": "Skirmish::SetupAllSpawnLocations"
+      },
+      {
+        "addr": "0x004e3bae",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "SkirmishDialog::FillComboBoxes"
+      },
+      {
+        "addr": "0x004e4be9",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag",
+          "ptr_deref"
+        ],
+        "func": "SetupSkirmishSpawnLocations"
+      },
+      {
+        "addr": "0x004e5454",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag",
+          "ptr_deref"
+        ],
+        "func": "FillLobbyFactionComboBox"
+      }
+    ]
+  },
+  {
+    "name": "DSurface_Hidden",
+    "addr": "0x0088730c",
+    "usage_class": "ptr_deref:9+func_ptr:6+int_cmp:6",
+    "observed_type": "pointer",
+    "xref_count": 229,
+    "sample_xrefs": [
+      {
+        "addr": "0x004328de",
+        "mnem": "mov",
+        "class": [
+          "ptr_deref"
+        ],
+        "func": "BinkMovie::InitFromFile"
+      },
+      {
+        "addr": "0x004b8659",
+        "mnem": "mov",
+        "class": [
+          "func_ptr"
+        ],
+        "func": "LoadScreen::RenderLoop"
+      },
+      {
+        "addr": "0x004b97af",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "ptr_deref"
+        ],
+        "func": "TextRenderer::RenderCentered"
+      },
+      {
+        "addr": "0x004b9ac2",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "DisplayBuildingInfoPanel"
+      },
+      {
+        "addr": "0x004c424f",
+        "mnem": "mov",
+        "class": [
+          "func_ptr"
+        ],
+        "func": "CreditsPower::Display"
+      }
+    ]
+  },
+  {
+    "name": "g_TechnoClass_Count",
+    "addr": "0x00a8ec7c",
+    "usage_class": "int_cmp:22+bool_flag:18+ptr_deref:8",
+    "observed_type": "pointer",
+    "xref_count": 74,
+    "sample_xrefs": [
+      {
+        "addr": "0x00449f58",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "AnimClass::finalizeAnimation"
+      },
+      {
+        "addr": "0x004adceb",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "Radar::UpdateReveal"
+      },
+      {
+        "addr": "0x004cff12",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget"
+      },
+      {
+        "addr": "0x004e7a20",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "sub_4E7A20"
+      },
+      {
+        "addr": "0x004f6a3c",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag",
+          "ptr_deref"
+        ],
+        "func": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity"
+      }
+    ]
+  },
+  {
+    "name": "g_SidebarState",
+    "addr": "0x00a8ec88",
+    "usage_class": "int_cmp:21+bool_flag:16+unknown:2",
+    "observed_type": "bool",
+    "xref_count": 99,
+    "sample_xrefs": [
+      {
+        "addr": "0x00449f23",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "AnimClass::finalizeAnimation"
+      },
+      {
+        "addr": "0x004adcd4",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "Radar::UpdateReveal"
+      },
+      {
+        "addr": "0x004e7a11",
+        "mnem": "mov",
+        "class": [
+          "func_ptr"
+        ],
+        "func": "sub_4E79E0"
+      },
+      {
+        "addr": "0x004f6a80",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_0"
+      },
+      {
+        "addr": "0x004f6b31",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_1"
+      }
+    ]
+  },
+  {
+    "name": "g_HouseClass_ObserverFlags",
+    "addr": "0x00ac119c",
+    "usage_class": "int_cmp:21+bool_flag:19+unknown:4",
+    "observed_type": "bool",
+    "xref_count": 79,
+    "sample_xrefs": [
+      {
+        "addr": "0x0046d507",
+        "mnem": "cmp",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "Game::SendCampaignOptions"
+      },
+      {
+        "addr": "0x0046f830",
+        "mnem": "cmp",
+        "class": [
+          "unknown"
+        ],
+        "func": "GetLobbyPlayerColor"
+      },
+      {
+        "addr": "0x0046f9a6",
+        "mnem": "cmp",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "Skirmish::SetupAllSpawnLocations"
+      },
+      {
+        "addr": "0x005daad1",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "HandleNetworkPlayerDisconnect"
+      },
+      {
+        "addr": "0x005e8898",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "LoadNetworkShareStrings"
+      }
+    ]
+  },
+  {
+    "name": "Networking_LastEventIndex",
+    "addr": "0x00a802c8",
+    "usage_class": "int_cmp:18+bool_flag:8+unknown:7",
+    "observed_type": "int",
+    "xref_count": 143,
+    "sample_xrefs": [
+      {
+        "addr": "0x00443499",
+        "mnem": "cmp",
+        "class": [
+          "unknown"
+        ],
+        "func": "BuildingClass::HandleFactoryCommand"
+      },
+      {
+        "addr": "0x004435ff",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "BuildingClass::HandleFactoryCommand"
+      },
+      {
+        "addr": "0x00443a16",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "BuildingClass::SetRallyPoint"
+      },
+      {
+        "addr": "0x0048ca48",
+        "mnem": "cmp",
+        "class": [
+          "unknown"
+        ],
+        "func": "MainGameFrame"
+      },
+      {
+        "addr": "0x0048cb1d",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "MainGameFrame"
+      }
+    ]
+  },
+  {
+    "name": "g_DisplayWidth",
+    "addr": "0x008a00a4",
+    "usage_class": "int_cmp:13+unknown:11+bool_flag:9",
+    "observed_type": "int",
+    "xref_count": 114,
+    "sample_xrefs": [
+      {
+        "addr": "0x004a4423",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "InitializeDDraw"
+      },
+      {
+        "addr": "0x004c4444",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "CreditsPower::Display"
+      },
+      {
+        "addr": "0x0052b9c8",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "BINK::Background_Setup"
+      },
+      {
+        "addr": "0x00531d90",
+        "mnem": "cmp",
+        "class": [
+          "unknown"
+        ],
+        "func": "MainMenu::Screen"
+      },
+      {
+        "addr": "0x00552c9d",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "sub_552C90"
+      }
+    ]
+  },
+  {
+    "name": "g_UIControlState",
+    "addr": "0x00ac1154",
+    "usage_class": "int_cmp:17+bool_flag:13+func_ptr:7",
+    "observed_type": "function pointer",
+    "xref_count": 94,
+    "sample_xrefs": [
+      {
+        "addr": "0x0046e04d",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "CampaignScore::DialogProc"
+      },
+      {
+        "addr": "0x005b4e85",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "GameSetupDialogProc"
+      },
+      {
+        "addr": "0x005b55f9",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "ModemGuest::InitDialog"
+      },
+      {
+        "addr": "0x005b6c94",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "ApplyGameOptions"
+      },
+      {
+        "addr": "0x005b756f",
+        "mnem": "mov",
+        "class": [
+          "func_ptr"
+        ],
+        "func": "ModemGame::ReceiveMapPreview"
+      }
+    ]
+  },
+  {
+    "name": "g_Lobby_PlayerCount",
+    "addr": "0x00ac11a0",
+    "usage_class": "int_cmp:19+bool_flag:17+unknown:4",
+    "observed_type": "int",
+    "xref_count": 75,
+    "sample_xrefs": [
+      {
+        "addr": "0x0046d50f",
+        "mnem": "cmp",
+        "class": [
+          "func_ptr"
+        ],
+        "func": "Game::SendCampaignOptions"
+      },
+      {
+        "addr": "0x0046f840",
+        "mnem": "cmp",
+        "class": [
+          "unknown"
+        ],
+        "func": "GetLobbyPlayerColor"
+      },
+      {
+        "addr": "0x0046f9b5",
+        "mnem": "cmp",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "Skirmish::SetupAllSpawnLocations"
+      },
+      {
+        "addr": "0x005e88a8",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "LoadNetworkShareStrings"
+      },
+      {
+        "addr": "0x005e8a4d",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "sub_5E8A20"
+      }
+    ]
+  },
+  {
+    "name": "g_WOL_ConnectionFlags",
+    "addr": "0x00b77908",
+    "usage_class": "unknown:12+int_cmp:12+bool_flag:10",
+    "observed_type": "bool",
+    "xref_count": 137,
+    "sample_xrefs": [
+      {
+        "addr": "0x0077b9d1",
+        "mnem": "mov",
+        "class": [
+          "func_ptr"
+        ],
+        "func": "sub_77B9C0"
+      },
+      {
+        "addr": "0x0077e26f",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "FillPlayerListWOL"
+      },
+      {
+        "addr": "0x007810d2",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "sub_781090"
+      },
+      {
+        "addr": "0x00782010",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "InsertGameSettings"
+      },
+      {
+        "addr": "0x00782182",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "InsertGameSettings"
+      }
+    ]
+  },
+  {
+    "name": "Networking_NextPacketIndex",
+    "addr": "0x00a802d0",
+    "usage_class": "int_cmp:18+unknown:7+bool_flag:1",
+    "observed_type": "int",
+    "xref_count": 167,
+    "sample_xrefs": [
+      {
+        "addr": "0x004434a5",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "BuildingClass::HandleFactoryCommand"
+      },
+      {
+        "addr": "0x004435ef",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "BuildingClass::HandleFactoryCommand"
+      },
+      {
+        "addr": "0x004439de",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "BuildingClass::SetRallyPoint"
+      },
+      {
+        "addr": "0x00443b61",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "BuildingClass::SetRallyPoint"
+      },
+      {
+        "addr": "0x0048cad5",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "MainGameFrame"
+      }
+    ]
+  },
+  {
+    "name": "g_SelectionManager",
+    "addr": "0x00a8ecc8",
+    "usage_class": "int_cmp:23+bool_flag:19+ptr_deref:3",
+    "observed_type": "bool",
+    "xref_count": 81,
+    "sample_xrefs": [
+      {
+        "addr": "0x0048dc90",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "MapClass::UnselectAll_ClearLimboLaunchers"
+      },
+      {
+        "addr": "0x004ab4f6",
+        "mnem": "cmp",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "TacticalClass::HandlePlayerAction"
+      },
+      {
+        "addr": "0x004ae3d3",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "TacticalClass::InterpolateView"
+      },
+      {
+        "addr": "0x004ae84a",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "DispatchSelectionWaypointMove"
+      },
+      {
+        "addr": "0x004e7d71",
+        "mnem": "mov",
+        "class": [
+          "func_ptr"
+        ],
+        "func": "sub_4E7D40"
+      }
+    ]
+  },
+  {
+    "name": "DSurface_Primary",
+    "addr": "0x00887308",
+    "usage_class": "unknown:13+int_cmp:8+ptr_deref:4",
+    "observed_type": "pointer",
+    "xref_count": 103,
+    "sample_xrefs": [
+      {
+        "addr": "0x00432903",
+        "mnem": "mov",
+        "class": [
+          "ptr_deref"
+        ],
+        "func": "BinkMovie::InitFromFile"
+      },
+      {
+        "addr": "0x00432eda",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "BinkMovie::RenderLoop"
+      },
+      {
+        "addr": "0x004b6ecf",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "LoadScreen::RenderLoop"
+      },
+      {
+        "addr": "0x004c46b7",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "CreditsPower::Display"
+      },
+      {
+        "addr": "0x004f221b",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "HouseClass::processTargetSelection"
+      }
+    ]
+  },
+  {
+    "name": "g_TriggerTypeCount",
+    "addr": "0x00a83c6c",
+    "usage_class": "int_cmp:19+bool_flag:11+unknown:5",
+    "observed_type": "int",
+    "xref_count": 67,
+    "sample_xrefs": [
+      {
+        "addr": "0x0041f7d5",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "AITriggerTypeClass::LoadFromINI"
+      },
+      {
+        "addr": "0x0042e856",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "BridgeClass::GetCellData"
+      },
+      {
+        "addr": "0x0042edd3",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "HouseClass::SaveTriggerNodeData"
+      },
+      {
+        "addr": "0x00445508",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "BuildingClass::UpdateConstruction"
+      },
+      {
+        "addr": "0x0044fb11",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "Scenario::ReadTeams"
+      }
+    ]
+  },
+  {
+    "name": "g_AnimPoolManager",
+    "addr": "0x00b0f670",
+    "usage_class": "ptr_deref:25+int_cmp:19+bool_flag:13",
+    "observed_type": "pointer",
+    "xref_count": 116,
+    "sample_xrefs": [
+      {
+        "addr": "0x004229cf",
+        "mnem": "mov",
+        "class": [
+          "ptr_deref"
+        ],
+        "func": "AnimClass::Destruct"
+      },
+      {
+        "addr": "0x00427888",
+        "mnem": "mov",
+        "class": [
+          "ptr_deref"
+        ],
+        "func": ""
+      },
+      {
+        "addr": "0x0043a40b",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "ptr_deref"
+        ],
+        "func": "NeuronClass::NeuronClass"
+      },
+      {
+        "addr": "0x0043a8e9",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "ptr_deref"
+        ],
+        "func": "AbstractClass::Construct"
+      },
+      {
+        "addr": "0x0046bda9",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "ptr_deref"
+        ],
+        "func": "BulletTypeClass::Construct"
+      }
+    ]
+  },
+  {
+    "name": "g_AnimPoolCount",
+    "addr": "0x00b0f674",
+    "usage_class": "ptr_deref:23+int_cmp:19+bool_flag:6",
+    "observed_type": "pointer",
+    "xref_count": 58,
+    "sample_xrefs": [
+      {
+        "addr": "0x00422a00",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "ptr_deref"
+        ],
+        "func": "AnimClass::Destruct"
+      },
+      {
+        "addr": "0x004278d0",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "ptr_deref"
+        ],
+        "func": ""
+      },
+      {
+        "addr": "0x0043a431",
+        "mnem": "mov",
+        "class": [
+          "ptr_deref"
+        ],
+        "func": "NeuronClass::NeuronClass"
+      },
+      {
+        "addr": "0x0043a90e",
+        "mnem": "mov",
+        "class": [
+          "ptr_deref"
+        ],
+        "func": "AbstractClass::Construct"
+      },
+      {
+        "addr": "0x0046bdce",
+        "mnem": "mov",
+        "class": [
+          "ptr_deref"
+        ],
+        "func": "BulletTypeClass::Construct"
+      }
+    ]
+  },
+  {
+    "name": "g_FrameCounter",
+    "addr": "0x00a8ed2c",
+    "usage_class": "int_cmp:13+ptr_deref:9+unknown:8",
+    "observed_type": "pointer",
+    "xref_count": 79,
+    "sample_xrefs": [
+      {
+        "addr": "0x00465528",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "ptr_deref"
+        ],
+        "func": "BulletTypeClass::ReadArmor"
+      },
+      {
+        "addr": "0x0047c0e3",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "GetCellRadarColors"
+      },
+      {
+        "addr": "0x0047d1da",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "ptr_deref"
+        ],
+        "func": "CellClass::DetermineTileType"
+      },
+      {
+        "addr": "0x00480054",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "CellClass::GetScreenRect"
+      },
+      {
+        "addr": "0x004802d4",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "TacticalClass::DrawCellTerrainOverlay"
+      }
+    ]
+  },
+  {
+    "name": "g_MapCellHeight_Value",
+    "addr": "0x00abed04",
+    "usage_class": "int_cmp:20+bool_flag:13+unknown:4",
+    "observed_type": "int",
+    "xref_count": 107,
+    "sample_xrefs": [
+      {
+        "addr": "0x00566306",
+        "mnem": "mov",
+        "class": [
+          "ptr_deref"
+        ],
+        "func": "CellClass::UpdateTerrainAndWaypoints"
+      },
+      {
+        "addr": "0x0057a874",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "RecursiveCellClassNeighbourUpdate"
+      },
+      {
+        "addr": "0x0058c968",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "RandomMap::GenerateTerrain"
+      },
+      {
+        "addr": "0x0058d298",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "RandomMap::ExpandTerrainCells"
+      },
+      {
+        "addr": "0x0058de46",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "TileSystem::BuildNodes"
+      }
+    ]
+  },
+  {
+    "name": "g_MapCellCount",
+    "addr": "0x00abed08",
+    "usage_class": "int_cmp:18+bool_flag:18+unknown:5",
+    "observed_type": "int",
+    "xref_count": 88,
+    "sample_xrefs": [
+      {
+        "addr": "0x00566317",
+        "mnem": "mov",
+        "class": [
+          "ptr_deref"
+        ],
+        "func": "CellClass::UpdateTerrainAndWaypoints"
+      },
+      {
+        "addr": "0x0057b26b",
+        "mnem": "cmp",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "Cell::GetTerrainMask"
+      },
+      {
+        "addr": "0x0058cce0",
+        "mnem": "cmp",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "RandomMap::GenerateTerrain"
+      },
+      {
+        "addr": "0x0058d4eb",
+        "mnem": "cmp",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "RandomMap::TerrainAlloc"
+      },
+      {
+        "addr": "0x0058e053",
+        "mnem": "cmp",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "TileSystem::BuildNodes"
+      }
+    ]
+  },
+  {
+    "name": "g_GameRulesOptions",
+    "addr": "0x00a8b254",
+    "usage_class": "int_cmp:19+bool_flag:9+ptr_deref:3",
+    "observed_type": "int",
+    "xref_count": 94,
+    "sample_xrefs": [
+      {
+        "addr": "0x005b72de",
+        "mnem": "mov",
+        "class": [
+          "ptr_deref"
+        ],
+        "func": "Game::StartModemMultiplayer"
+      },
+      {
+        "addr": "0x005b9a8a",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "SkirmishDialog::HandleGameStart"
+      },
+      {
+        "addr": "0x005b9ba6",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "SkirmishDialog::HandleGameStart"
+      },
+      {
+        "addr": "0x005b9e2f",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "RandomMap::RegenerateRandomMapPreview"
+      },
+      {
+        "addr": "0x005ba890",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "Game::BuildGameSetupPacket"
+      }
+    ]
+  },
+  {
+    "name": "g_Map_VisibleRectOffset",
+    "addr": "0x00886fa8",
+    "usage_class": "int_cmp:11+unknown:7+ptr_deref:5",
+    "observed_type": "pointer",
+    "xref_count": 73,
+    "sample_xrefs": [
+      {
+        "addr": "0x0040da22",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "sub_40DA20"
+      },
+      {
+        "addr": "0x00456bcb",
+        "mnem": "mov",
+        "class": [
+          "ptr_deref"
+        ],
+        "func": "DrawTechnoDeployCircle"
+      },
+      {
+        "addr": "0x00478dc4",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "CCToolTip::Release"
+      },
+      {
+        "addr": "0x0047f82c",
+        "mnem": "mov",
+        "class": [
+          "ptr_deref"
+        ],
+        "func": "BuildingClass::Draw_0"
+      },
+      {
+        "addr": "0x004a8a26",
+        "mnem": "mov",
+        "class": [
+          "ptr_deref"
+        ],
+        "func": "TacticalClass::SetViewDimensions"
+      }
+    ]
+  },
+  {
+    "name": "BuildingLoadQueue_Count",
+    "addr": "0x00b0e844",
+    "usage_class": "int_cmp:23+bool_flag:13+ptr_deref:5",
+    "observed_type": "int",
+    "xref_count": 177,
+    "sample_xrefs": [
+      {
+        "addr": "0x00413e8e",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "AircraftClass::Construct"
+      },
+      {
+        "addr": "0x00414179",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "AircraftClass::Destruct"
+      },
+      {
+        "addr": "0x0041b499",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "ptr_deref"
+        ],
+        "func": "AircraftClass::LoadFromStream"
+      },
+      {
+        "addr": "0x0043bbda",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "BuildingClass::Construct"
+      },
+      {
+        "addr": "0x0043bfd3",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "BuildingClass::Dtor"
+      }
+    ]
+  },
+  {
+    "name": "g_GameOptionsFlags",
+    "addr": "0x00a8b244",
+    "usage_class": "int_cmp:16+bool_flag:13+unknown:4",
+    "observed_type": "bool",
+    "xref_count": 116,
+    "sample_xrefs": [
+      {
+        "addr": "0x00595fde",
+        "mnem": "cmp",
+        "class": [
+          "unknown"
+        ],
+        "func": "GenerateRandomMapAndMinimap"
+      },
+      {
+        "addr": "0x00598b7f",
+        "mnem": "cmp",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "RandomMap::Generate"
+      },
+      {
+        "addr": "0x0059910b",
+        "mnem": "cmp",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "RandomMap::Generate"
+      },
+      {
+        "addr": "0x0060583b",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "DlgSkirmishMenuProc"
+      },
+      {
+        "addr": "0x006c709e",
+        "mnem": "cmp",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "ProcessGameResults"
+      }
+    ]
+  },
+  {
+    "name": "DSurface_Composite",
+    "addr": "0x0088731c",
+    "usage_class": "unknown:17+int_cmp:6+bool_flag:4",
+    "observed_type": "int",
+    "xref_count": 111,
+    "sample_xrefs": [
+      {
+        "addr": "0x00478e61",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag",
+          "ptr_deref"
+        ],
+        "func": "CCToolTip::Draw2"
+      },
+      {
+        "addr": "0x004c24ec",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "Lightning::Draw"
+      },
+      {
+        "addr": "0x004dc5bd",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "DrawFootTargetLine"
+      },
+      {
+        "addr": "0x004f44cb",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "TacticalMap::Redraw"
+      },
+      {
+        "addr": "0x004f472e",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "TacticalClass::RenderFrame"
+      }
+    ]
+  },
+  {
+    "name": "g_ObjectClass_CurrentCount",
+    "addr": "0x00a8ecbc",
+    "usage_class": "int_cmp:16+bool_flag:9+unknown:8",
+    "observed_type": "pointer",
+    "xref_count": 67,
+    "sample_xrefs": [
+      {
+        "addr": "0x0048dc99",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "ptr_deref"
+        ],
+        "func": "MapClass::UnselectAll_ClearLimboLaunchers"
+      },
+      {
+        "addr": "0x004ab4ff",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "TacticalClass::HandlePlayerAction"
+      },
+      {
+        "addr": "0x004ae2bd",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "TacticalClass::InterpolateView"
+      },
+      {
+        "addr": "0x004ae3ac",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "TacticalClass::InterpolateView"
+      },
+      {
+        "addr": "0x004ae7dd",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "DispatchSelectionWaypointMove"
+      }
+    ]
+  },
+  {
+    "name": "g_Lobby_PlayerReady",
+    "addr": "0x00ac11b0",
+    "usage_class": "int_cmp:23+bool_flag:21+ptr_deref:3",
+    "observed_type": "bool",
+    "xref_count": 52,
+    "sample_xrefs": [
+      {
+        "addr": "0x0046f764",
+        "mnem": "cmp",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "Count::SetupAllCountriesLobby"
+      },
+      {
+        "addr": "0x0046f8c0",
+        "mnem": "cmp",
+        "class": [
+          "unknown"
+        ],
+        "func": "GetHouseClassSideIndex"
+      },
+      {
+        "addr": "0x0046f9c4",
+        "mnem": "cmp",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "Skirmish::SetupAllSpawnLocations"
+      },
+      {
+        "addr": "0x005e41aa",
+        "mnem": "cmp",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "SetupNetworkLobbyDialog"
+      },
+      {
+        "addr": "0x005e89cd",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "LoadNetworkShareStrings"
+      }
+    ]
+  },
+  {
+    "name": "g_NetworkInterface",
+    "addr": "0x00887628",
+    "usage_class": "int_cmp:21+bool_flag:16+ptr_deref:9",
+    "observed_type": "pointer",
+    "xref_count": 135,
+    "sample_xrefs": [
+      {
+        "addr": "0x0048d891",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "Network::Dispatch"
+      },
+      {
+        "addr": "0x0052dc40",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "MenuSelect"
+      },
+      {
+        "addr": "0x0052e2f4",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "MenuSelect"
+      },
+      {
+        "addr": "0x0052e392",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "MenuSelect"
+      },
+      {
+        "addr": "0x0052e83c",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "MenuSelect"
+      }
+    ]
+  },
+  {
+    "name": "g_Lobby_PlayerTeam",
+    "addr": "0x00ac11a4",
+    "usage_class": "int_cmp:24+bool_flag:22+unknown:1",
+    "observed_type": "bool",
+    "xref_count": 62,
+    "sample_xrefs": [
+      {
+        "addr": "0x005e41b2",
+        "mnem": "cmp",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "SetupNetworkLobbyDialog"
+      },
+      {
+        "addr": "0x005e8914",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "LoadNetworkShareStrings"
+      },
+      {
+        "addr": "0x005e8a65",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "sub_5E8A20"
+      },
+      {
+        "addr": "0x005e8c45",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "Player::FindByName"
+      },
+      {
+        "addr": "0x005e8feb",
+        "mnem": "cmp",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "NetworkLobby::SetupPlayers"
+      }
+    ]
+  },
+  {
+    "name": "g_Lobby_PlayerSide",
+    "addr": "0x00ac11a8",
+    "usage_class": "int_cmp:24+bool_flag:23+unknown:1",
+    "observed_type": "bool",
+    "xref_count": 64,
+    "sample_xrefs": [
+      {
+        "addr": "0x005e41ba",
+        "mnem": "cmp",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "SetupNetworkLobbyDialog"
+      },
+      {
+        "addr": "0x005e8951",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "LoadNetworkShareStrings"
+      },
+      {
+        "addr": "0x005e8a7d",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "sub_5E8A20"
+      },
+      {
+        "addr": "0x005e8c62",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "Player::FindByName"
+      },
+      {
+        "addr": "0x005e8ff3",
+        "mnem": "cmp",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "NetworkLobby::SetupPlayers"
+      }
+    ]
+  },
+  {
+    "name": "g_Lobby_PlayerColor",
+    "addr": "0x00ac11ac",
+    "usage_class": "int_cmp:20+bool_flag:17+unknown:5",
+    "observed_type": "bool",
+    "xref_count": 64,
+    "sample_xrefs": [
+      {
+        "addr": "0x005e41c2",
+        "mnem": "cmp",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "SetupNetworkLobbyDialog"
+      },
+      {
+        "addr": "0x005e898f",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "LoadNetworkShareStrings"
+      },
+      {
+        "addr": "0x005e8a95",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "sub_5E8A20"
+      },
+      {
+        "addr": "0x005e8c80",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "Player::FindByName"
+      },
+      {
+        "addr": "0x005e8ffb",
+        "mnem": "cmp",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "NetworkLobby::SetupPlayers"
+      }
+    ]
+  },
+  {
+    "name": "g_SuperWeaponTypeCount",
+    "addr": "0x00a83c9c",
+    "usage_class": "int_cmp:13+unknown:8+ptr_deref:6",
+    "observed_type": "pointer",
+    "xref_count": 56,
+    "sample_xrefs": [
+      {
+        "addr": "0x0041fb70",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "TriggerTypeClass::SaveToINI"
+      },
+      {
+        "addr": "0x004755cd",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "SuperWeaponTypeClass::FindOrCreate"
+      },
+      {
+        "addr": "0x00476a95",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "INIClass::WriteSuperWeaponList"
+      },
+      {
+        "addr": "0x004b7078",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "LoadScreen::RenderLoop"
+      },
+      {
+        "addr": "0x004e6fe7",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "sub_4E6FE0"
+      }
+    ]
+  },
+  {
+    "name": "g_WOL_ChannelList",
+    "addr": "0x00b77dc8",
+    "usage_class": "int_cmp:14+bool_flag:14+func_ptr:10",
+    "observed_type": "function pointer",
+    "xref_count": 72,
+    "sample_xrefs": [
+      {
+        "addr": "0x0077f230",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "RequestChannelListWOL"
+      },
+      {
+        "addr": "0x0077f289",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "RequestChannelListWOL"
+      },
+      {
+        "addr": "0x0077f2d5",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "RequestChannelListWOL"
+      },
+      {
+        "addr": "0x007804e5",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "ResetSystemWOL"
+      },
+      {
+        "addr": "0x007858e1",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "LeaveChannelWOL"
+      }
+    ]
+  },
+  {
+    "name": "BuildingClass_InstanceArray",
+    "addr": "0x00b0f4ec",
+    "usage_class": "int_cmp:16+bool_flag:10+float_op:5",
+    "observed_type": "pointer",
+    "xref_count": 44,
+    "sample_xrefs": [
+      {
+        "addr": "0x00424daa",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "ProductionCompletionCallback"
+      },
+      {
+        "addr": "0x00426235",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "FindBuildingClass"
+      },
+      {
+        "addr": "0x0047f871",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "BuildingClass::Draw_0"
+      },
+      {
+        "addr": "0x0047fbdc",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "House::GetStartCoords"
+      },
+      {
+        "addr": "0x00480b88",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "CellClass::ReduceTiberium"
+      }
+    ]
+  },
+  {
+    "name": "FileSystem_THEATER_PAL",
+    "addr": "0x0087f6c4",
+    "usage_class": "int_cmp:19+bool_flag:16+ptr_deref:9",
+    "observed_type": "pointer",
+    "xref_count": 78,
+    "sample_xrefs": [
+      {
+        "addr": "0x0042e15a",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag",
+          "ptr_deref"
+        ],
+        "func": "sub_42E150"
+      },
+      {
+        "addr": "0x0042e34d",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "RenderTooltipBorder"
+      },
+      {
+        "addr": "0x0046836d",
+        "mnem": "mov",
+        "class": [
+          "func_ptr"
+        ],
+        "func": "BulletClass::SetupVoxelTransform"
+      },
+      {
+        "addr": "0x0048813c",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag",
+          "ptr_deref"
+        ],
+        "func": "sub_4880F0"
+      },
+      {
+        "addr": "0x00488bae",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "ColorListClass::DrawColorRect"
+      }
+    ]
+  },
+  {
+    "name": "BuildingLoadQueue_Array",
+    "addr": "0x00b0e840",
+    "usage_class": "int_cmp:21+bool_flag:14+ptr_deref:6",
+    "observed_type": "pointer",
+    "xref_count": 160,
+    "sample_xrefs": [
+      {
+        "addr": "0x00413ee9",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "ptr_deref"
+        ],
+        "func": "AircraftClass::Construct"
+      },
+      {
+        "addr": "0x004141bd",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "AircraftClass::Destruct"
+      },
+      {
+        "addr": "0x0041b458",
+        "mnem": "sub",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "AircraftClass::LoadFromStream"
+      },
+      {
+        "addr": "0x0041b576",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "ptr_deref"
+        ],
+        "func": "AircraftClass::LoadFromStream"
+      },
+      {
+        "addr": "0x0043bfb5",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "BuildingClass::Dtor"
+      }
+    ]
+  },
+  {
+    "name": "BuildingLoadQueue_Dirty",
+    "addr": "0x00b0e84c",
+    "usage_class": "int_cmp:20+bool_flag:20+unknown:4",
+    "observed_type": "bool",
+    "xref_count": 67,
+    "sample_xrefs": [
+      {
+        "addr": "0x00413f5c",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "AircraftClass::Construct"
+      },
+      {
+        "addr": "0x004141b6",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "AircraftClass::Destruct"
+      },
+      {
+        "addr": "0x0043bca8",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "BuildingClass::Construct"
+      },
+      {
+        "addr": "0x00517ca5",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "InfantryClass::Construct"
+      },
+      {
+        "addr": "0x00517f02",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "InfantryClass::Destruct"
+      }
+    ]
+  },
+  {
+    "name": "g_AnimTypeCount",
+    "addr": "0x008b4154",
+    "usage_class": "unknown:12+int_cmp:12+bool_flag:4",
+    "observed_type": "pointer",
+    "xref_count": 56,
+    "sample_xrefs": [
+      {
+        "addr": "0x00415107",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "TechnoClass::SmokeUpdate"
+      },
+      {
+        "addr": "0x004277c6",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag",
+          "ptr_deref"
+        ],
+        "func": "AnimTypeClass::Construct"
+      },
+      {
+        "addr": "0x00427919",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "ptr_deref"
+        ],
+        "func": ""
+      },
+      {
+        "addr": "0x00427c9e",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": ""
+      },
+      {
+        "addr": "0x0042845f",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "AnimTypeClass::LoadFromINI"
+      }
+    ]
+  },
+  {
+    "name": "Factory_ExitCellTable",
+    "addr": "0x00a8e34c",
+    "usage_class": "int_cmp:13+unknown:11+bool_flag:6",
+    "observed_type": "pointer",
+    "xref_count": 39,
+    "sample_xrefs": [
+      {
+        "addr": "0x0041f78d",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "AITriggerTypeClass::LoadFromINI"
+      },
+      {
+        "addr": "0x00424a0e",
+        "mnem": "mov",
+        "class": [
+          "ptr_deref"
+        ],
+        "func": "TechnoClass::CreateUnit"
+      },
+      {
+        "addr": "0x004457ca",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "FootClass::UpdateSidebar"
+      },
+      {
+        "addr": "0x0047382d",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "ReinforcementClass::CreateObject"
+      },
+      {
+        "addr": "0x004760a2",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "INIClass::ReadExitCellList"
+      }
+    ]
+  },
+  {
+    "name": "g_FogOfWarState",
+    "addr": "0x0089c4d0",
+    "usage_class": "int_cmp:16+unknown:6+bool_flag:5",
+    "observed_type": "int",
+    "xref_count": 57,
+    "sample_xrefs": [
+      {
+        "addr": "0x004303c4",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "RenderBuildingTag"
+      },
+      {
+        "addr": "0x00434afe",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "BitTextClass::LoadFont"
+      },
+      {
+        "addr": "0x00434b29",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": ""
+      },
+      {
+        "addr": "0x004354ea",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": ""
+      },
+      {
+        "addr": "0x00435501",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": ""
+      }
+    ]
+  },
+  {
+    "name": "g_TauntCommandState",
+    "addr": "0x00a8b394",
+    "usage_class": "int_cmp:13+unknown:10+ptr_deref:3",
+    "observed_type": "int",
+    "xref_count": 55,
+    "sample_xrefs": [
+      {
+        "addr": "0x004fc2b5",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "HouseClass::DefeatPlayer"
+      },
+      {
+        "addr": "0x0055e581",
+        "mnem": "mov",
+        "class": [
+          "func_ptr"
+        ],
+        "func": "Chat::ProcessMessages"
+      },
+      {
+        "addr": "0x0055e94c",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "Chat::ProcessMessages"
+      },
+      {
+        "addr": "0x0055e9d1",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "Chat::ProcessMessages"
+      },
+      {
+        "addr": "0x0055ebfa",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "Chat::ProcessMessages"
+      }
+    ]
+  },
+  {
+    "name": "g_MPCooperativeState",
+    "addr": "0x008316a4",
+    "usage_class": "int_cmp:19+bool_flag:17+unknown:3",
+    "observed_type": "bool",
+    "xref_count": 64,
+    "sample_xrefs": [
+      {
+        "addr": "0x005c1a13",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "MPCooperative::CopyTo"
+      },
+      {
+        "addr": "0x005dccea",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "NetworkLobby::CreateGame"
+      },
+      {
+        "addr": "0x005dcd91",
+        "mnem": "cmp",
+        "class": [
+          "unknown"
+        ],
+        "func": "NetworkLobby::CreateGame"
+      },
+      {
+        "addr": "0x005ded78",
+        "mnem": "cmp",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "NetworkLobby::DlgProc"
+      },
+      {
+        "addr": "0x005e08c8",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag",
+          "ptr_deref"
+        ],
+        "func": "NetworkLobby::MessageHandler"
+      }
+    ]
+  },
+  {
+    "name": "g_DSurface_WindowOffset",
+    "addr": "0x00886fac",
+    "usage_class": "int_cmp:14+unknown:7+bool_flag:6",
+    "observed_type": "int",
+    "xref_count": 53,
+    "sample_xrefs": [
+      {
+        "addr": "0x0040da36",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "sub_40DA20"
+      },
+      {
+        "addr": "0x00456bd3",
+        "mnem": "mov",
+        "class": [
+          "ptr_deref"
+        ],
+        "func": "DrawTechnoDeployCircle"
+      },
+      {
+        "addr": "0x004a89a1",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "TacticalClass::SetViewDimensions"
+      },
+      {
+        "addr": "0x004a8a4f",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "TacticalClass::SetViewDimensions"
+      },
+      {
+        "addr": "0x004a8ae9",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "TacticalClass::SetViewDimensions"
+      }
+    ]
+  },
+  {
+    "name": "g_Cell_PositionLUT",
+    "addr": "0x0087f8dc",
+    "usage_class": "int_cmp:20+float_op:3+unknown:2",
+    "observed_type": "int",
+    "xref_count": 54,
+    "sample_xrefs": [
+      {
+        "addr": "0x0042b1c8",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "Cell::PosToIndex"
+      },
+      {
+        "addr": "0x00443d1d",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "BuildingClass::UpdateConstruction"
+      },
+      {
+        "addr": "0x004f88c7",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "HouseClass::Update_TogglePower"
+      },
+      {
+        "addr": "0x0055ddcc",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "GameFrameLoop"
+      },
+      {
+        "addr": "0x00566b63",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "CellClass::UpdateTerrainAndWaypoints"
+      }
+    ]
+  },
+  {
+    "name": "g_ControlGroupState",
+    "addr": "0x00a8ef98",
+    "usage_class": "int_cmp:21+bool_flag:16+ptr_deref:4",
+    "observed_type": "bool",
+    "xref_count": 81,
+    "sample_xrefs": [
+      {
+        "addr": "0x004f50a2",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "sub_4F50A0"
+      },
+      {
+        "addr": "0x004f6bc0",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_3"
+      },
+      {
+        "addr": "0x004f6da2",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_4"
+      },
+      {
+        "addr": "0x004f95dd",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "HouseClass::NotifyUnderAttack"
+      },
+      {
+        "addr": "0x004fb096",
+        "mnem": "cmp",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "SuperWeapon::EvaluateAITarget"
+      }
+    ]
+  },
+  {
+    "name": "g_BuildingClass_InstanceCount",
+    "addr": "0x00a8eb44",
+    "usage_class": "int_cmp:15+bool_flag:13+unknown:8",
+    "observed_type": "pointer",
+    "xref_count": 43,
+    "sample_xrefs": [
+      {
+        "addr": "0x0043bb1e",
+        "mnem": "mov",
+        "class": [
+          "ptr_deref"
+        ],
+        "func": "BuildingClass::Construct"
+      },
+      {
+        "addr": "0x0044fe7c",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "sub_44FE60"
+      },
+      {
+        "addr": "0x00452d4d",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "ProcessDataBuildingClass"
+      },
+      {
+        "addr": "0x00455489",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "BuildingClass::CleanupOccupation"
+      },
+      {
+        "addr": "0x0047d24b",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "CellClass::SetWallOwner"
+      }
+    ]
+  },
+  {
+    "name": "Crates",
+    "addr": "0x00a8b261",
+    "usage_class": "int_cmp:17+bool_flag:9+unknown:7",
+    "observed_type": "bool",
+    "xref_count": 41,
+    "sample_xrefs": [
+      {
+        "addr": "0x00481da5",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "CrateClass::ProcessPickup"
+      },
+      {
+        "addr": "0x0052d1b9",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "InitRules"
+      },
+      {
+        "addr": "0x0056bbec",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "CrateClass::Update"
+      },
+      {
+        "addr": "0x005b54da",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "ModemGuest::InitDialog"
+      },
+      {
+        "addr": "0x005b54f3",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "ModemGuest::InitDialog"
+      }
+    ]
+  },
+  {
+    "name": "SWAllowed",
+    "addr": "0x00a8b263",
+    "usage_class": "int_cmp:19+bool_flag:11+unknown:5",
+    "observed_type": "bool",
+    "xref_count": 41,
+    "sample_xrefs": [
+      {
+        "addr": "0x004f7a9a",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag",
+          "ptr_deref"
+        ],
+        "func": "HouseClass::CanBuild"
+      },
+      {
+        "addr": "0x00505288",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "HouseClass::FirstBuildableFromArray"
+      },
+      {
+        "addr": "0x005055d8",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "HouseClass::GenerateAIBuildListEnsureSanity"
+      },
+      {
+        "addr": "0x0050b092",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "SuperWeapon::UpdateSuperWeaponsOwnedHouseClass"
+      },
+      {
+        "addr": "0x0050b2ae",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "SuperWeapon::UpdateSuperWeaponsUnavailableHouseClass"
+      }
+    ]
+  },
+  {
+    "name": "g_Rules_EngineerCount",
+    "addr": "0x00a8b268",
+    "usage_class": "int_cmp:14+unknown:7+bool_flag:4",
+    "observed_type": "int",
+    "xref_count": 43,
+    "sample_xrefs": [
+      {
+        "addr": "0x0052d17d",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "InitRules"
+      },
+      {
+        "addr": "0x005b52a6",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "ModemGuest::InitDialog"
+      },
+      {
+        "addr": "0x005b52be",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "ModemGuest::InitDialog"
+      },
+      {
+        "addr": "0x005b5c6a",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "Dialog::InitializeGameSettings"
+      },
+      {
+        "addr": "0x005b6911",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "ApplyGameOptions"
+      }
+    ]
+  },
+  {
+    "name": "BuildingLoadQueue_Active",
+    "addr": "0x00b0e850",
+    "usage_class": "int_cmp:21+bool_flag:19+ptr_deref:2",
+    "observed_type": "bool",
+    "xref_count": 87,
+    "sample_xrefs": [
+      {
+        "addr": "0x00413f2a",
+        "mnem": "mov",
+        "class": [
+          "ptr_deref"
+        ],
+        "func": "AircraftClass::Construct"
+      },
+      {
+        "addr": "0x0041b4b2",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "AircraftClass::LoadFromStream"
+      },
+      {
+        "addr": "0x00453ea7",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "BuildingClass::LoadFromStream"
+      },
+      {
+        "addr": "0x00517f7b",
+        "mnem": "mov",
+        "class": [
+          "ptr_deref"
+        ],
+        "func": "InfantryClass::Destruct"
+      },
+      {
+        "addr": "0x006e6a6b",
+        "mnem": "mov",
+        "class": [
+          "func_ptr"
+        ],
+        "func": "sub_6E6A50"
+      }
+    ]
+  },
+  {
+    "name": "g_UnitTypeCount2",
+    "addr": "0x00a83ce4",
+    "usage_class": "int_cmp:12+unknown:11+bool_flag:6",
+    "observed_type": "pointer",
+    "xref_count": 41,
+    "sample_xrefs": [
+      {
+        "addr": "0x0041f7a6",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "AITriggerTypeClass::LoadFromINI"
+      },
+      {
+        "addr": "0x00445789",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "FootClass::UpdateSidebar"
+      },
+      {
+        "addr": "0x00473885",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "ReinforcementClass::CreateObject"
+      },
+      {
+        "addr": "0x004760be",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "INIClass::ReadExitCellList"
+      },
+      {
+        "addr": "0x00476f09",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "INIEntry::GetTechnoType"
+      }
+    ]
+  },
+  {
+    "name": "MCVRedeploy",
+    "addr": "0x00a8b320",
+    "usage_class": "int_cmp:22+bool_flag:14+unknown:2",
+    "observed_type": "bool",
+    "xref_count": 44,
+    "sample_xrefs": [
+      {
+        "addr": "0x00443767",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "ObjectClass::HandleRallyPointCommand"
+      },
+      {
+        "addr": "0x00443aa3",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "BuildingClass::SetRallyPoint"
+      },
+      {
+        "addr": "0x00449c0c",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": ""
+      },
+      {
+        "addr": "0x00449d43",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "AnimClass::finalizeAnimation"
+      },
+      {
+        "addr": "0x0044a814",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "AnimClass::finalizeAnimation"
+      }
+    ]
+  },
+  {
+    "name": "g_SuperWeaponTypeArray",
+    "addr": "0x00a83ca8",
+    "usage_class": "int_cmp:24+bool_flag:21+ptr_deref:2",
+    "observed_type": "int",
+    "xref_count": 54,
+    "sample_xrefs": [
+      {
+        "addr": "0x00475170",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "BulletTypeClass::ReadTrajectoryFlags"
+      },
+      {
+        "addr": "0x0047568e",
+        "mnem": "cmp",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "INIClass::SetHouseName"
+      },
+      {
+        "addr": "0x0049da49",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "SideClass::FindByName"
+      },
+      {
+        "addr": "0x004e3a6a",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "FillComboBoxRandomOnly"
+      },
+      {
+        "addr": "0x00500af1",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "HouseClass::LoadTypeList"
+      }
+    ]
+  },
+  {
+    "name": "g_Rules_MultiEngineer",
+    "addr": "0x00a8b270",
+    "usage_class": "int_cmp:14+unknown:10+bool_flag:3",
+    "observed_type": "int",
+    "xref_count": 40,
+    "sample_xrefs": [
+      {
+        "addr": "0x0052d165",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "InitRules"
+      },
+      {
+        "addr": "0x005b517e",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "ModemGuest::InitDialog"
+      },
+      {
+        "addr": "0x005b518f",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "ModemGuest::InitDialog"
+      },
+      {
+        "addr": "0x005b5bf2",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "Dialog::InitializeGameSettings"
+      },
+      {
+        "addr": "0x005b68cf",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "ApplyGameOptions"
+      }
+    ]
+  },
+  {
+    "name": "g_NetworkLobby_Init",
+    "addr": "0x00b77dc1",
+    "usage_class": "int_cmp:21+bool_flag:14+func_ptr:3",
+    "observed_type": "bool",
+    "xref_count": 41,
+    "sample_xrefs": [
+      {
+        "addr": "0x005e3e7c",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "SetupNetworkLobbyDialog"
+      },
+      {
+        "addr": "0x00775a64",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "MessageDialogLoopAlt"
+      },
+      {
+        "addr": "0x00780522",
+        "mnem": "mov",
+        "class": [
+          "unknown"
+        ],
+        "func": "ResetSystemWOL"
+      },
+      {
+        "addr": "0x00785945",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "LeaveChannelWOL"
+      },
+      {
+        "addr": "0x00785998",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "LeaveChannelWOL"
+      }
+    ]
+  },
+  {
+    "name": "SrcSizeInBytes",
+    "addr": "0x0087c79c",
+    "usage_class": "unknown:18+int_cmp:6+bool_flag:5",
+    "observed_type": "int",
+    "xref_count": 60,
+    "sample_xrefs": [
+      {
+        "addr": "0x007c9878",
+        "mnem": "cmp",
+        "class": [
+          "unknown"
+        ],
+        "func": "_toupper_0"
+      },
+      {
+        "addr": "0x007c993c",
+        "mnem": "cmp",
+        "class": [
+          "unknown"
+        ],
+        "func": "_isupper"
+      },
+      {
+        "addr": "0x007c998c",
+        "mnem": "cmp",
+        "class": [
+          "unknown"
+        ],
+        "func": "_isdigit"
+      },
+      {
+        "addr": "0x007c99e1",
+        "mnem": "cmp",
+        "class": [
+          "unknown"
+        ],
+        "func": "_isspace"
+      },
+      {
+        "addr": "0x007c9a31",
+        "mnem": "cmp",
+        "class": [
+          "unknown"
+        ],
+        "func": "_isalnum"
+      }
+    ]
+  },
+  {
+    "name": "g_LastPerformanceTick",
+    "addr": "0x00887338",
+    "usage_class": "int_cmp:24+bool_flag:17+ptr_deref:5",
+    "observed_type": "int",
+    "xref_count": 191,
+    "sample_xrefs": [
+      {
+        "addr": "0x0040ebdf",
+        "mnem": "mov",
+        "class": [
+          "func_ptr"
+        ],
+        "func": "sub_40EBD0"
+      },
+      {
+        "addr": "0x0048c600",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": ""
+      },
+      {
+        "addr": "0x004c4311",
+        "mnem": "mov",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "CreditsPower::Display"
+      },
+      {
+        "addr": "0x0052e770",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "MenuSelect"
+      },
+      {
+        "addr": "0x00540249",
+        "mnem": "sub",
+        "class": [
+          "int_cmp"
+        ],
+        "func": "IPXGlobalConnClass::ReceivePacket"
+      }
+    ]
+  },
+  {
+    "name": "g_PerformanceTickOffset",
+    "addr": "0x00887340",
+    "usage_class": "int_cmp:24+bool_flag:24+func_ptr:1",
+    "observed_type": "int",
+    "xref_count": 91,
+    "sample_xrefs": [
+      {
+        "addr": "0x0040ebe4",
+        "mnem": "mov",
+        "class": [
+          "func_ptr"
+        ],
+        "func": "sub_40EBD0"
+      },
+      {
+        "addr": "0x0048c48e",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "ConnectionClass::serviceSendQueue"
+      },
+      {
+        "addr": "0x0048d6e0",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "Network::Dispatch"
+      },
+      {
+        "addr": "0x004c47c8",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "CreditsPower::Display"
+      },
+      {
+        "addr": "0x0052e7b3",
+        "mnem": "mov",
+        "class": [
+          "int_cmp",
+          "bool_flag"
+        ],
+        "func": "MenuSelect"
+      }
+    ]
+  }
+]

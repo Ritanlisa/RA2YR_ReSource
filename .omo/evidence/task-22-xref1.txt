@@ -1,0 +1,53 @@
+=== TASK-22 XREF ANALYSIS BATCH 1 — EVIDENCE ===
+Date: 2026-06-18
+Script: tools/analyze_xrefs.py
+Input: tools/top200_globals.json (first 100 of top 200 globals by reference count)
+Output: tools/xref_analysis_batch1.json
+IDA: gamemd.exe.i64 (via MCP py_exec_file)
+
+--- RESULTS ---
+Total entries analyzed: 100
+Entries with observed_type: 100 (100%)
+Entries with xrefs: 100 (100%)
+
+Observed type distribution:
+  int: 35
+  pointer: 31
+  bool: 30
+  function pointer: 4
+
+--- METHODOLOGY ---
+1. For each global address, queried idautils.XrefsTo() via IDA Python
+2. Sampled up to 25 xrefs per global (distributed across the xref list)
+3. For each sampled xref, decoded the instruction and next 5 instructions
+4. Classified each xref site using:
+   - int_cmp: next instruction is cmp/test/arithmetic
+   - bool_flag: int_cmp + conditional jump
+   - float_op: next instruction is fld/fstp/fcomp/etc
+   - ptr_deref: next instruction dereferences via [reg+offset]
+   - func_ptr: loaded value used for indirect call
+   - array_base: LEA instruction
+   - string_ptr: push of global address
+5. Aggregated classification counts and determined observed_type via priority rules
+
+--- KEY SAMPLES ---
+RulesClass_Instance (0x008871e0): unknown:8+float_op:8+int_cmp:7 -> pointer (1419 xrefs)
+  - Float access to RulesClass float members via this pointer
+  - int_cmp from null checks before use
+  - Classified as pointer due to _Instance naming
+
+IKnowWhatImDoing (0x00a8e7ac): int_cmp:19+bool_flag:10+func_ptr:3 -> bool (292 xrefs)
+  - Classic boolean flag pattern: load, test, conditional jump
+  - Confirmed via naming: "IKnowWhatImDoing" is a debug bypass flag
+
+CurrentFrame (0x00a8ed84): int_cmp:11+ptr_deref:10+bool_flag:9 -> pointer (1006 xrefs)
+  - Actually an int frame counter; ptr_deref from array indexing false positives
+
+g_BitShift_Red (0x008a0dd0): int_cmp:25+bool_flag:3+float_op:1 -> int (222 xrefs)
+  - Integer bitmask/shift constant
+
+--- TOOL USAGE ---
+python tools/analyze_xrefs.py --batch 1           # batch 1 (globals 1-100)
+python tools/analyze_xrefs.py --batch 2           # batch 2 (globals 101-200)
+python tools/analyze_xrefs.py --addrs 0xADDR1,... # specific globals
+python tools/analyze_xrefs.py --batch 1 --ida-script-only  # gen script, no IDA exec
