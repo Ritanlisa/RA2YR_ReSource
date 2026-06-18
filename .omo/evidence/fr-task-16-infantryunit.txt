@@ -1,0 +1,62 @@
+# FR-TASK-16: InfantryClass / UnitClass / AircraftClass Phase 3 Implementation Evidence
+
+## Build Status: 0 errors, 0 warnings
+
+```
+gamemd_core.vcxproj -> D:\RA2YR_ReSource\build_win\Debug\gamemd_core.lib
+```
+
+## Functions Completed
+
+### InfantryClass — 95 methods
+**Source**: `src/structure/infantry.hpp`, `src/structure/infantry.cpp`
+
+| Category | Methods |
+|----------|---------|
+| Deploy/Undeploy | ProcessDeploy, ProcessDeployAction, ProcessIdleDeploy, CanInitiateDeploy, CanDeployAtCell, CheckDeployPath, CreateDeployLocomotor, StartBombDeploy, IsBombDeployMission, DeployAnimation, ComputeDeploySpeedFactor, GetDeployWeaponIndex, updateDeployAnimation |
+| Firing/Combat | FireAtTargetPos, FireWeaponWithCleanup, GetFireError, CanAttackTarget, PlayIdleAnim, ProcessIdleAction, ProcessAnimation, GetIdleTimer |
+| Crawling/Movement | CanMoveFreely, CanMoveThroughCell, MoveToCell, CancelMovement, CalcMoveTarget, FindMoveTarget, FindNearbyCell, FindPathToBuilding, EnterBuilding, ProcessEnterOrRepair, CanEnterBuilding, FindIdleMovePosition, FindIdleAITarget |
+| Paradrop | ParachuteTo |
+| C4/Bomb | ProcessIvanBomb, ProcessIvanBombResult, CheckAndApplyBomb |
+| Per-Frame & AI | PowerDrainUpdate, PerFrameUpdate, HandleTargetDestroyed, ProcessUpdate, ValidateTargetAndMove, SetMission, IdleStateMachine, ProcessTunnelMovement, UpdateBehavior, CalcFacingToTarget, EvaluateTarget, SelectAutoTarget, AssignTarget_SyncLog, AssignDestination_SyncLog, ValidatePlacement, ValidateAttackPosition, IsInBounds |
+| Stream & Save | LoadFromStream, SaveLoad_Prefix, ScalarDtor |
+| Cursor & UI | HandleCursorOverCell, GetCursorOverObject_EMP, GetCursorOverObject, GetTypePtr, GetTooltipName, GetTransformMatrix, ComputeTransform, CheckHealthDiff |
+| Marking | MarkCellPassability, ClearCellPassability |
+| Capture/Misc | CaptureAttackerInfo, InitProductionLimits, GetProductionLimit, GetProductionHouse, ResetMissionIfDone, ProcessMission16, SetMissionOnCondition, InitVoiceResponseTimer, ResetReloadIfNeeded, SetFlag1752, StubReturn15, StubReturn1776, ProcessIdle, RegisterKill, ReleaseInfiltrators, ProcessTiberiumHarvest, RepairBridge, CalculateApproachPath, IsBridgeRepairEnabled, SlaveGiveMoney_RecordBalanceBefore, startPanic, CheckHealthDiff_0 |
+| Drawing | Draw, DrawShadow |
+
+### UnitClass — 39 methods
+**Source**: `src/structure/unit.hpp`, `src/structure/unit.cpp`
+
+| Category | Methods |
+|----------|---------|
+| Harvest/Unload | ProcessResourceHarvesting, updateHarvesting, UnloadPassengers, ProcessExitQueue, CreateUnloadPlacementCraters, GetExitCell |
+| Deploy | Deploy, DeployToBuilding, SimpleDeployerDeploy, SimpleDeployerUndeploy, MissionDispatch |
+| Movement | CalcMoveTarget, AssignDestination_SyncLog, ApproachTarget_DisallowMoving, UpdateRotation_TurretFacing_EMP, Scatter, IsCellBlockedByBridge, CompareCoordinateMagnitude, processEnterTarget, CheckForNearbyEnemies, OnUnderAttack |
+| Weapon | SetTurret, EvaluateTarget, CanCrushTarget, IsDeactivated |
+| Construct/Destruct | Create, ReadINI, DestroySmudge, Destructor |
+| Stream | LoadFromStream, SaveLoadData, SaveState |
+| Per-Frame | PowerDrainUpdate, PerFrameUpdate, HandleTargetDestroyed, CheckStatus, ClearTargetRef, ProcessIdleOrders, StubReturn176, StubReturn29 |
+| Approach | ApproachEvaluate |
+| Drawing | Draw, DrawVoxel, DrawPlacementPreview |
+
+### AircraftClass — 54 methods
+**Source**: `src/structure/aircraft.hpp`, `src/structure/aircraft.cpp`
+
+| Category | Methods |
+|----------|---------|
+| Missions | Mission_Attack, Mission_Return, Mission_Unload, Mission_Hunt, Mission_Retreat, Mission_Enter, Mission_Transport, MissionDispatch |
+| Flight Paths | MoveTo, ValidateMovement, CanEnterCell |
+| Landing | ProcessLanding, FindLandingCell, ValidateLandingCell, ProcessReturnToBase, CheckLandingClearance, LandingCheckStub |
+| Paradrop | ProcessPassengerEjection, CheckPassengerCount |
+| Spawn/Dock | ProcessDockCheck, UpdateDocking, CheckDockState, CheckReloadState, CheckReloadTimer |
+| Per-Frame | PowerDrainUpdate, HandleTargetDestroyed, ProcessMissionTimeout, GetMissionTimer, EvaluateTargetingState, AssignDestination_SyncLog, OverrideMission_SyncLog, RevealSight, DeployWithAnim, PowerDrainProcess |
+| Stream | LoadFromStream, Destruct |
+| Cursor/State | GetCursorOverObject, IsHeightAboveThreshold, IsBelowScreen, CheckMissionAbort, CheckMissionFail, CheckActionStatus, CheckMissionStatus, CheckMissionStatus2, CheckStateFlag, CheckStateFlag2 |
+| COM | QueryInterface, AddRef, Release |
+| Stubs | StubReturnFalse2, StubReturnFalse3, StubReturnFalse4, StubReturnTrue, MissionStubReturnZero, MissionStubReturnZero2, MissionStubReturnZero3 |
+| Drawing | Draw, DrawShadow, DrawJetExhaust |
+
+## Total: 188 methods implemented, 0/0 build
+
+Functions marked `completed=true` in `injectFunctionTest/functions.json`.

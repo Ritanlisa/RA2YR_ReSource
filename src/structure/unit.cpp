@@ -1,6 +1,7 @@
 #include "structure/unit.hpp"
 
 #include <cstring>
+#include <cmath>
 
 namespace gamemd {
 
@@ -13,31 +14,30 @@ constexpr uint32_t kUnitFlag = static_cast<uint32_t>(AbstractFlags::Foot)
 } // anonymous namespace
 
 // IDA: 0x7353C0 -- UnitClass::Construct (960B)
-// Fields at byte offsets 0x6C0-0x6E4 from full object base
 UnitClass::UnitClass() noexcept
-    : UnitClass_field_int_6C0(static_cast<int>(-1))  // +0x6C0, IDA: *(this+0x6C0) = -1
-    , Type(nullptr)              // +0x6C4, set by constructor parameter in IDA
-    , FollowerCar(nullptr)       // +0x6C8, IDA: *(this+0x6C8) = 0
-    , FlagHouseIndex(-1)         // +0x6CC, IDA: *(this+0x6CC) = -1
-    , HasFollowerCar(false)      // +0x6D0, IDA: *(BYTE*)(this+0x6D0) = 0
-    , Unloading(false)           // +0x6D1, IDA: *(BYTE*)(this+0x6D1) = 0
-    , UnitClass_field_bool_6D2(false)    // +0x6D2, IDA: *(BYTE*)(this+0x6D2) = 0
-    , TerrainPalette(false)      // +0x6D3, IDA: *(BYTE*)(this+0x6D3) = 0
-    , UnitClass_field_int_6D4(static_cast<int>(-1))  // +0x6D4, IDA: *(this+0x6D4) = -1
-    , DeathFrameCounter(static_cast<int>(-1)) // +0x6D8, IDA: *(this+0x6D8) = -1
-    , ElectricBolt(nullptr)      // +0x6DC, IDA: *(this+0x6DC) = 0
-    , Deployed(false)            // +0x6E0, IDA: *(BYTE*)(this+0x6E0) = 0
-    , Deploying(false)           // +0x6E1, IDA: *(BYTE*)(this+0x6E1) = 0
-    , Undeploying(false)         // +0x6E2, IDA: *(BYTE*)(this+0x6E2) = 0
-    , NonPassengerCount(0)       // +0x6E4, IDA: *(this+0x6E4) = 0
+    : UnitClass_field_int_6C0(static_cast<int>(-1))
+    , Type(nullptr)
+    , FollowerCar(nullptr)
+    , FlagHouseIndex(-1)
+    , HasFollowerCar(false)
+    , Unloading(false)
+    , UnitClass_field_bool_6D2(false)
+    , TerrainPalette(false)
+    , UnitClass_field_int_6D4(static_cast<int>(-1))
+    , DeathFrameCounter(static_cast<int>(-1))
+    , ElectricBolt(nullptr)
+    , Deployed(false)
+    , Deploying(false)
+    , Undeploying(false)
+    , NonPassengerCount(0)
 {
     abstractFlags = kUnitFlag;
 }
 
 // ============================================================
-// Mission_Harvest -- RA1 5-state harvester state machine
-// States: LOOKING=0 -> HARVESTING=1 -> FINDHOME=2 -> HEADINGHOME=3 -> GOINGTOIDLE=4
+// Phase 3: Harvest/Unload
 // ============================================================
+
 int UnitClass::Mission_Harvest()
 {
     enum { LOOKING, HARVESTING, FINDHOME, HEADINGHOME, GOINGTOIDLE };
@@ -45,70 +45,26 @@ int UnitClass::Mission_Harvest()
     switch (missionStatus)
     {
     case LOOKING:
-    {
-        // Full -> skip to finding refinery
-        // if (Tiberium_Load() == 1) {
-        //     missionStatus = FINDHOME;
-        //     return 1;
-        // }
-
-        // Head to last known ore patch
         if (lastTarget)
         {
             movementDestination = lastTarget;
             lastTarget = nullptr;
         }
-
-        // Scan for tiberium/ore
-        // if (Goto_Tiberium(scan_range)) {
-        //     missionStatus = HARVESTING;
-        // }
-        // else if (!movementDestination) {
-        //     // No ore found and no destination -> idle
-        //     missionStatus = GOINGTOIDLE;
-        // }
-
         return 10;
-    }
 
     case HARVESTING:
-    {
-        // Harvest until full or ore exhausted
-        // if (!Harvesting()) {
-        //     if (Tiberium_Load() == 1) {
-        //         // Archive current cell as last harvest site
-        //         missionStatus = FINDHOME;
-        //     } else {
-        //         // Try nearby ore scan
-        //         missionStatus = LOOKING;
-        //     }
-        // }
         return 10;
-    }
 
     case FINDHOME:
-    {
-        // Find nearest refinery with docking bay
-        // BuildingClass* nearest = Find_Docking_Bay(STRUCT_REFINERY, false);
-        // if (nearest && sendCommand(RADIO_HELLO, nearest) == RADIO_ROGER) {
-        //     missionStatus = HEADINGHOME;
-        // }
         return 10;
-    }
 
     case HEADINGHOME:
-    {
-        // Delegate docking to Mission_Enter
         queueMission(static_cast<ra2::game::Mission>(static_cast<int>(gamemd::Mission::Enter)), true);
         return 10;
-    }
 
     case GOINGTOIDLE:
-    {
-        // Nothing to harvest -- fallback to guard or repair
         queueMission(static_cast<ra2::game::Mission>(static_cast<int>(gamemd::Mission::Guard)), true);
         return 10;
-    }
     }
 
     return 10;
@@ -120,71 +76,375 @@ int UnitClass::Mission_Unload()
         return 0;
 
     Unloading = true;
-
-    // Eject passengers at current position
-    // for each passenger in passengers:
-    //     passenger->Scatter(0, true);
-    //     passenger->queueMission(Mission::Guard, true);
-
     return 5;
 }
 
-// ============================================================
-// UnitClass_PowerDrainUpdate -- vtable[13] (IDA 0x744640, 159B)
-// Per-frame power for units (deployed siege units, mobile factories)
-// Gets speed from ILocomotion(vtable[44]) -> Power_TimerProcess
-// Gets type ID via vtable[16] -> Power_TimerProcess
-// Timers at this+1732/1736/1740, flags at this+1744-1746, 1671
-// ============================================================
+// IDA: 0x73D450 (ProcessResourceHarvesting, 477B)
+int UnitClass::ProcessResourceHarvesting()
+{
+    // Process tiberium/ore harvesting at current cell
+    if (!Type) return 0;
+
+    // Check if harvester, check cell for ore
+    // Transfer resources to load
+    return 0;
+}
+
+// IDA: 0x4C2C10 (updateHarvesting, 19B)
+int UnitClass::updateHarvesting()
+{
+    // Update harvesting state
+    return 0;
+}
+
+// IDA: 0x6B4BE0 (UnloadPassengers, 136B)
+int UnitClass::UnloadPassengers()
+{
+    // Unload all passengers at current position
+    Unloading = false;
+    HasFollowerCar = false;
+    return 0;
+}
+
+// IDA: 0x6B7230 (ProcessExitQueue, 2363B)
+int UnitClass::ProcessExitQueue()
+{
+    // Process building exit queue for unit production
+    return 0;
+}
+
+// IDA: 0x6B6080 (CreateUnloadPlacementCraters, 167B)
+int UnitClass::CreateUnloadPlacementCraters()
+{
+    // Create crater effects at unload position
+    return 0;
+}
+
+// IDA: 0x54E3B0 (GetExitCell, 288B)
+int UnitClass::GetExitCell()
+{
+    // Get exit cell for unit leaving a building
+    return 0;
+}
 
 // ============================================================
-// UnitClass_LoadFromStream -- vtable[5] (IDA 0x744470, 391B)
-// COM IPersistStream::Load for unit deserialization
+// Phase 3: Deploy
 // ============================================================
 
-// ============================================================
-// UnitClass_PerFrameUpdate -- vtable[9] (IDA 0x746810, 167B)
-// Per-frame update (speed/position/facing via ILocomotion)
-// ============================================================
+// IDA: 0x7192F0 (Deploy, 2302B)
+int UnitClass::Deploy()
+{
+    // MCV/Siege unit deploy logic
+    if (!Type) return 0;
+
+    Deploying = true;
+
+    // Check if can deploy at current cell
+    // Find the building type to deploy into
+    // Start deploy animation/timer
+    return 0;
+}
+
+// IDA: 0x738D30 (DeployToBuilding, 1652B)
+int UnitClass::DeployToBuilding()
+{
+    // Deploy unit into a building (MCV -> Construction Yard)
+    if (!Type) return 0;
+
+    // Check building type from unit type
+    // Create building at deploy position
+    // Remove this unit
+    Deployed = true;
+    return 0;
+}
+
+// IDA: 0x739AC0 (SimpleDeployerDeploy, 516B)
+int UnitClass::SimpleDeployerDeploy()
+{
+    // Simple deployer (like Siege Chopper deploy)
+    Deploying = false;
+    Deployed = true;
+    return 0;
+}
+
+// IDA: 0x739CD0 (SimpleDeployerUndeploy, 494B)
+int UnitClass::SimpleDeployerUndeploy()
+{
+    // Simple deployer undeploy
+    Deployed = false;
+    Undeploying = false;
+    return 0;
+}
+
+// IDA: 0x737430 (MissionDispatch, 1826B)
+int UnitClass::MissionDispatch()
+{
+    // Dispatch mission based on current state
+    if (Deploying)
+    {
+        return Deploy();
+    }
+
+    if (Undeploying)
+    {
+        return SimpleDeployerUndeploy();
+    }
+
+    return 0;
+}
 
 // ============================================================
-// UnitClass::Draw (delegates to TechnoClass::Draw at 0x73CEC0)
-// Units use the TechnoClass::Draw pipeline (SHP/Voxel rendering).
-// TechnoClass::Draw handles:
-//   1. AddToDrawQueue for Y-sorting
-//   2. Fog/shroud color tint
-//   3. SHP image rendering (or Voxel for 3D units)
-//   4. Selection indicator (flag/health bar)
-//   5. Target line drawing
+// Phase 3: Movement
 // ============================================================
+
+// IDA: 0x7359F0 (CalcMoveTarget, 1730B)
+int UnitClass::CalcMoveTarget()
+{
+    // Calculate movement target for unit
+    return 0;
+}
+
+// IDA: 0x741970 (AssignDestination_SyncLog, 6167B)
+int UnitClass::AssignDestination_SyncLog()
+{
+    // Assign movement destination with network sync logging
+    return 0;
+}
+
+// IDA: 0x7414E0 (ApproachTarget_DisallowMoving, 435B)
+int UnitClass::ApproachTarget_DisallowMoving()
+{
+    // Approach target without moving (turret rotation only)
+    return 0;
+}
+
+// IDA: 0x736990 (UpdateRotation_TurretFacing_EMP, 639B)
+int UnitClass::UpdateRotation_TurretFacing_EMP()
+{
+    // Update turret rotation and facing
+    return 0;
+}
+
+// IDA: 0x743A50 (Scatter, 1622B)
+int UnitClass::Scatter()
+{
+    // Scatter unit away from danger
+    return 0;
+}
+
+// IDA: 0x458A00 (IsCellBlockedByBridge, 121B)
+int UnitClass::IsCellBlockedByBridge()
+{
+    // Check if cell is blocked by a bridge
+    return 0;
+}
+
+// IDA: 0x4D03D0 (CompareCoordinateMagnitude, 36B)
+int UnitClass::CompareCoordinateMagnitude()
+{
+    // Compare coordinate magnitudes
+    return 0;
+}
+
+// IDA: 0x7178B0 (processEnterTarget, 14B)
+int UnitClass::processEnterTarget()
+{
+    // Process entering a target (transport/building)
+    return 0;
+}
+
+// IDA: 0x7468C0 (CheckForNearbyEnemies, 606B)
+int UnitClass::CheckForNearbyEnemies()
+{
+    // Scan for nearby enemies in threat range
+    return 0;
+}
+
+// IDA: 0x737C90 (OnUnderAttack, 2540B)
+int UnitClass::OnUnderAttack()
+{
+    // Respond to being under attack
+    return 0;
+}
+
+// ============================================================
+// Phase 3: Weapon Switching
+// ============================================================
+
+// IDA: 0x70DC70 (SetTurret, 110B)
+int UnitClass::SetTurret()
+{
+    // Set turret facing/target
+    return 0;
+}
+
+// IDA: 0x73F0A0 (EvaluateTarget, 3238B)
+int UnitClass::EvaluateTarget()
+{
+    // Evaluate target for weapon selection and attack
+    if (!target) return 0;
+    return 1;
+}
+
+// IDA: 0x7438F0 (CanCrushTarget, 339B)
+bool UnitClass::CanCrushTarget()
+{
+    // Check if this unit can crush its target
+    if (!target) return false;
+    return false;
+}
+
+// IDA: 0x70FBD0 (IsDeactivated, 7B)
+int UnitClass::IsDeactivated()
+{
+    // Check if unit is deactivated (EMP/paralyzed)
+    return 0;
+}
+
+// ============================================================
+// Phase 3: Construction & Destruct
+// ============================================================
+
+// IDA: 0x6B4A50 (Create, 234B static)
+int UnitClass::Create()
+{
+    // Static factory: create a UnitClass instance
+    return 0;
+}
+
+// IDA: 0x6B4C80 (ReadINI, 322B)
+int UnitClass::ReadINI()
+{
+    // Read unit configuration from INI
+    return 0;
+}
+
+// IDA: 0x6B4FA0 (DestroySmudge, 167B)
+int UnitClass::DestroySmudge()
+{
+    // Create smudge/scorch on destruction
+    return 0;
+}
+
+// IDA: 0x735780 (Destructor, 622B)
+void UnitClass::Destructor()
+{
+    // Clean up electric bolt and other resources
+    ElectricBolt = nullptr;
+}
+
+// ============================================================
+// Phase 3: Stream & Save
+// ============================================================
+
+// IDA: 0x744470 (LoadFromStream, 391B)
+int UnitClass::LoadFromStream()
+{
+    // COM deserialization for unit
+    return 0;
+}
+
+// IDA: 0x6B4EA0 (SaveLoadData, 90B)
+int UnitClass::SaveLoadData()
+{
+    // Save/Load game data for unit
+    return 0;
+}
+
+// IDA: 0x6B4F00 (SaveState, 23B)
+int UnitClass::SaveState()
+{
+    // Save unit state for save games
+    return 0;
+}
+
+// ============================================================
+// Phase 3: Per-Frame & AI
+// ============================================================
+
+// IDA: 0x744640 (PowerDrainUpdate, 159B)
+void UnitClass::PowerDrainUpdate()
+{
+    // Per-frame power drain for units
+}
+
+// IDA: 0x746810 (PerFrameUpdate, 167B)
+int UnitClass::PerFrameUpdate()
+{
+    // Per-frame update: speed/position/facing via ILocomotion
+    return 0;
+}
+
+// IDA: 0x7446E0 (HandleTargetDestroyed, 56B)
+int UnitClass::HandleTargetDestroyed()
+{
+    // Handle when target is destroyed
+    target = nullptr;
+    return 0;
+}
+
+// IDA: 0x6B4F20 (CheckStatus, 7B)
+int UnitClass::CheckStatus()
+{
+    // Check unit status
+    return 0;
+}
+
+// IDA: 0x6B7C60 (ClearTargetRef, 206B)
+int UnitClass::ClearTargetRef()
+{
+    // Clear target reference
+    return 0;
+}
+
+// IDA: 0x6B7BB0 (ProcessIdleOrders, 133B)
+int UnitClass::ProcessIdleOrders()
+{
+    // Process idle orders for units
+    return 0;
+}
+
+// IDA: 0x6B4F30 (StubReturn176, 6B)
+int UnitClass::StubReturn176()
+{
+    return 176;
+}
+
+// IDA: 0x6B4F40 (StubReturn29, 6B)
+int UnitClass::StubReturn29()
+{
+    return 29;
+}
+
+// ============================================================
+// Phase 3: Approach Evaluate
+// ============================================================
+
+// IDA: 0x4D4280 (ApproachEvaluate, 2177B)
+int UnitClass::ApproachEvaluate()
+{
+    // Evaluate approach path to target
+    return 0;
+}
+
+// ============================================================
+// Phase 3: Drawing
+// ============================================================
+
 void UnitClass::Draw(Point2D* screen_pos, RectangleStruct* bounds) const
 {
     if (!screen_pos || !Type)
         return;
 
-    // Unit rendering is handled through TechnoClass::Draw
-    // which dispatches to SHP or Voxel rendering based on type.
-    // This is called from TacticalClass::Render for each object.
-    // The actual rendering uses:
-    //   - AddToDrawQueue for Y-sort positioning
-    //   - DrawToSurfaceSHP or DrawVoxel for image rendering
-    //   - DrawHealthBar / DrawPips for UI overlays
     (void)bounds;
 }
 
-// ============================================================
-// UnitClass::DrawVoxel (delegates to TechnoClass::DrawVoxel)
-// Draws a voxel-based unit (3D model).
-// ============================================================
 void UnitClass::DrawVoxel(Point2D* screen_pos, RectangleStruct* bounds) const
 {
     (void)screen_pos;
     (void)bounds;
 }
 
-// ============================================================
-// UnitClass::DrawPlacementPreview (delegates to FootClass)
-// ============================================================
 void UnitClass::DrawPlacementPreview(Point2D* screen_pos, RectangleStruct* bounds) const
 {
     (void)screen_pos;

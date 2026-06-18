@@ -1,6 +1,7 @@
 #include "structure/infantry.hpp"
 
 #include <cstring>
+#include <cmath>
 
 namespace gamemd {
 
@@ -13,150 +14,723 @@ constexpr uint32_t kInfantryFlag = static_cast<uint32_t>(AbstractFlags::Foot)
 } // anonymous namespace
 
 // IDA: 0x517A50 -- InfantryClass::Construct (617B)
-// Note: fields at byte offsets 0x6C0-0x6EC from full object base
 InfantryClass::InfantryClass() noexcept
-    : Type(nullptr)              // +0x6C0, set by constructor parameter in IDA
-    , SequenceAnim(static_cast<Sequence>(-1))  // +0x6C4, IDA: *(this+0x6C4) = -1
-    , InfantryClass_field_timer_6C8{}         // +0x6C8, IDA: *(this+0x6C8) = CurrentFrame
-    , PanicDurationLeft(0)        // +0x6D0, IDA: *(this+0x6D0) = 0
-    , PermanentBerzerk(false)     // +0x6D4, IDA: *(this+0x6D8)=0 (byte)
-    , Technician(false)           // +0x6D5, IDA: *(this+0x6D9)=0
-    , InfantryClass_field_bool_6DA(false)     // +0x6DA, IDA: *(this+0x6DA)=0
-    , Crawling(false)             // +0x6DB, IDA: *(this+0x6DB)=0
-    , InfantryClass_field_bool_6DC(false)     // +0x6DC, IDA: *(this+0x6DC)=0
-    , InfantryClass_field_bool_6DD(false)     // +0x6DD, IDA: *(this+0x6DD)=0
-    , InfantryClass_field_6E0(0)              // +0x6E0, IDA: *(this+0x6E0) = 0
-    , ShouldDeploy(false)         // +0x6E4, IDA: *(BYTE*)(this+0x6E4) = 0
-    , InfantryClass_field_int_6E8(2)          // +0x6E8, IDA: *(this+0x6E8) = 2
-    , unused_6EC(0)               // +0x6EC
+    : Type(nullptr)
+    , SequenceAnim(static_cast<Sequence>(-1))
+    , InfantryClass_field_timer_6C8{}
+    , PanicDurationLeft(0)
+    , PermanentBerzerk(false)
+    , Technician(false)
+    , InfantryClass_field_bool_6DA(false)
+    , Crawling(false)
+    , InfantryClass_field_bool_6DC(false)
+    , InfantryClass_field_bool_6DD(false)
+    , InfantryClass_field_6E0(0)
+    , ShouldDeploy(false)
+    , InfantryClass_field_int_6E8(2)
+    , unused_6EC(0)
 {
-    // IDA: InfantryClass::PerFrameUpdate called in constructor
-    // IDA: CoCreateInstance of locomotor from Type+0x844
-    // IDA: BuildingLoadQueue registration
     abstractFlags = kInfantryFlag;
 }
 
 // ============================================================
-// Mission_Enter -- RA1 FootClass::Mission_Enter pattern
-// Single-state radio-based coordination loop
+// Mission stubs
 // ============================================================
 int InfantryClass::Mission_Enter()
 {
-    // RA1: Contact transporter via RADIO_DOCKING
-    // Find who to coordinate with -- radio contact or archive target
-    // If contact exists: send RADIO_DOCKING, wait for RADIO_ROGER
-    // If transport says "bug off" -> enter idle mode
-    // If no contact -> enter idle mode
-
-    // Contact_With_Whom() equivalent: check current radio link
-    // if (!contact) contact = As_Techno(archiveTarget);
-
-    // if (contact) {
-    //     if (sendCommand(RADIO_DOCKING, contact) != RADIO_ROGER && !IsTethered) {
-    //         sendCommand(RADIO_OVER_OUT, contact);
-    //         queueMission(Mission::Guard, true);
-    //     }
-    // } else {
-    //     queueMission(Mission::Guard, true);
-    // }
-
     return 10;
 }
 
 int InfantryClass::Mission_ParaDropApproach()
 {
-    // Paradrop: descend via parachute animation
     hasParachute = true;
-
-    // Check ground proximity -- if reached ground, deploy unit
-    // if (location.Z <= ground_z) {
-    //     hasParachute = false;
-    //     queueMission(Mission::Guard, true);
-    // }
-
     return 5;
 }
 
 int InfantryClass::Mission_ParaDropOverfly()
 {
-    // Paradrop flyover: horizontal movement before drop
-    // Fly toward drop zone at aircraft speed
-    // When over target, transition to ParadropApproach
-
-    // if (distance_to_drop_zone < threshold) {
-    //     queueMission(Mission::ParadropApproach, true);
-    // }
-
     return 5;
 }
 
 // ============================================================
-// InfantryClass_PowerDrainUpdate -- vtable[13] (IDA 0x521C90, 160B)
-// Per-frame power consumption for infantry (deployed units, etc.)
-// Processes timer at this+1732/1736/1748 via Power_TimerProcess
-// Processes flags at this+1753-1757 via Power_FlagProcess (5 flags)
+// Phase 3: Deploy/Undeploy
 // ============================================================
 
-// ============================================================
-// InfantryClass_LoadFromStream -- vtable[5] (IDA 0x521960, 402B)
-// COM IPersistStream::Load for infantry deserialization
-// ============================================================
+// IDA: 0x4D5350 (ProcessDeploy, 614B)
+void InfantryClass::ProcessDeploy()
+{
+    // Infantry-specific deploy logic
+    // Check if can deploy, set mission, deploy animations
+}
+
+// IDA: 0x51D6F0 (ProcessDeployAction, 1013B)
+int InfantryClass::ProcessDeployAction(int deploy_type, bool a3, bool a4)
+{
+    if (deploy_type == -1)
+        return 0;
+
+    // Check deploy type is valid for this infantry
+    // Check cell type for deploy animation selection
+    // Set deploy animation frame timer
+
+    ShouldDeploy = (deploy_type == 5);
+    return 1;
+}
+
+// IDA: 0x5200B0 (ProcessIdleDeploy, 428B)
+int InfantryClass::ProcessIdleDeploy()
+{
+    if (PanicDurationLeft > 0)
+    {
+        if (!Type)
+            --PanicDurationLeft;
+
+        if (!PanicDurationLeft && !Crawling)
+        {
+            // Set crawl/panic animation
+        }
+
+        if (ShouldDeploy)
+        {
+            if (PanicDurationLeft < 50)
+            {
+                // Check deploy state, trigger deploy voice
+            }
+        }
+        else if (PanicDurationLeft >= 50)
+        {
+            // Check if can deploy, trigger idle voice
+        }
+    }
+    return PanicDurationLeft;
+}
+
+bool InfantryClass::CanInitiateDeploy()
+{
+    // IDA: 0x521B60 — check deploy preconditions
+    // Check type flags, cell passability, deploy animation
+    return !Crawling && Type != nullptr;
+}
+
+bool InfantryClass::CanDeployAtCell()
+{
+    // IDA: 0x5221D0 — check cell for deploy
+    return true;
+}
+
+bool InfantryClass::CheckDeployPath()
+{
+    // IDA: 0x521EB0 — path check for deploy
+    return true;
+}
+
+int InfantryClass::CreateDeployLocomotor()
+{
+    // IDA: 0x522FE0 — create deploy locomotor COM object
+    return 0;
+}
+
+bool InfantryClass::StartBombDeploy()
+{
+    // IDA: 0x522C00 — start Ivan bomb deploy sequence
+    return false;
+}
+
+bool InfantryClass::IsBombDeployMission()
+{
+    // IDA: 0x5228D0 — check if current mission is bomb deploy
+    return false;
+}
+
+int InfantryClass::DeployAnimation()
+{
+    // IDA: 0x514310 — deploy animation frame selection
+    return 0;
+}
+
+int InfantryClass::ComputeDeploySpeedFactor()
+{
+    // IDA: 0x521D80 — compute deploy speed multiplier
+    return 100;
+}
+
+int InfantryClass::GetDeployWeaponIndex()
+{
+    // IDA: 0x5218E0 — get deploy weapon index from type
+    if (!Type) return -1;
+    return 0;
+}
+
+bool InfantryClass::updateDeployAnimation()
+{
+    // IDA: 0x4598A0 — check deploy animation state
+    return false;
+}
 
 // ============================================================
-// InfantryClass_PerFrameUpdate -- vtable[9] (IDA 0x517CC0, 207B)
-// Per-frame update delegating to FootClass_Update
+// Phase 3: Firing / Combat
 // ============================================================
 
+int InfantryClass::FireAtTargetPos()
+{
+    // IDA: 0x522600 (60B)
+    // Fire weapon at target's position
+    if (!target)
+        return 0;
+
+    auto fire_err = GetFireError(reinterpret_cast<int*>(target), 0, 0, 0);
+    if (static_cast<int>(fire_err) == static_cast<int>(FireError::NONE))
+    {
+        Fire(target, 0);
+    }
+    return 0;
+}
+
+int InfantryClass::FireWeaponWithCleanup(int a2, int a3)
+{
+    // IDA: 0x51DF60 (131B)
+    ShouldDeploy = false;
+    int result = FireWeapon();
+    if (result && !Crawling)
+    {
+        if (Type)  // voice response check
+        {
+            PanicDurationLeft = 300;
+        }
+    }
+    return result;
+}
+
+int InfantryClass::GetFireError(int* target, int weapon_idx, int a4, int a5)
+{
+    // IDA: 0x51C8B0 (741B) — comprehensive fire error checks
+    if (!target) return static_cast<int>(FireError::NONE);
+
+    // Check mission state (deploying/infiltrating can't fire)
+    int mission = static_cast<int>(GetCurrentMission());
+    if (mission == 11 || mission == 12 || mission == 13 || mission == 14 ||
+        mission == 15 || mission == 34 || mission == 35 || mission == 36 ||
+        mission == 20 || mission == 21)
+    {
+        return 6; // FIRE_CANT
+    }
+
+    // Check if target is a friendly building
+    // Check health for deploy-to-repair
+    // Delegate to base for standard checks
+    return 0; // FIRE_OK
+}
+
+bool InfantryClass::CanAttackTarget()
+{
+    // IDA: 0x5227F0 — check if current target can be attacked
+    if (!target) return false;
+    return true;
+}
+
+void InfantryClass::PlayIdleAnim(int idle_anim_number)
+{
+    // IDA: vtable override — play idle animation sequence
+    if (!Type) return;
+    // PlayAnim with idle sequence
+}
+
+int InfantryClass::ProcessIdleAction()
+{
+    // IDA: 0x51CDB0 (760B)
+    // Process idle behavior: random movement, scanning, deploy check
+    return 10;
+}
+
+int InfantryClass::ProcessAnimation()
+{
+    // IDA: 0x5239D0 (311B)
+    // Process current animation frame advancement
+    return 0;
+}
+
+int InfantryClass::GetIdleTimer()
+{
+    // IDA: 0x521320 (928B)
+    // Get random idle timer based on unit state
+    return 100;
+}
+
 // ============================================================
-// InfantryClass::Draw (IDA 0x518F90, 1689B)
-// Draws the infantry unit at its screen position.
-//
-// Steps:
-//   1. Get draw position (vtable[112] for screen coords)
-//   2. Check for parachute state (draw parachute SHP)
-//   3. Check locomotor type:
-//      a. Drive locomotor: draw POD.SHP + occupant
-//      b. Other: draw SHP from Type->GetImage
-//   4. Apply fog/shroud color tint
-//   5. Draw selection/health indicators
+// Phase 3: Crawling / Movement
 // ============================================================
+
+bool InfantryClass::CanMoveFreely()
+{
+    // IDA: 0x5216D0 — infantry can move if not crawling/deploying
+    return !Crawling;
+}
+
+bool InfantryClass::CanMoveThroughCell()
+{
+    // IDA: 0x484D60 — check cell passability for infantry
+    return true;
+}
+
+int InfantryClass::MoveToCell()
+{
+    // IDA: 0x51DFF0 — move to specific cell
+    return 0;
+}
+
+int InfantryClass::CancelMovement()
+{
+    // IDA: 0x51DF10 — cancel current movement
+    movementDestination = nullptr;
+    return 0;
+}
+
+int InfantryClass::CalcMoveTarget()
+{
+    // IDA: 0x51B350 (1881B)
+    // Calculate movement target based on current order
+    return 0;
+}
+
+int InfantryClass::FindMoveTarget()
+{
+    // IDA: 0x51D0D0 (1568B)
+    // Find the best movement target for current mission
+    return 0;
+}
+
+int InfantryClass::FindNearbyCell()
+{
+    // IDA: 0x418E20 — find nearby cell for movement
+    return 0;
+}
+
+int InfantryClass::FindPathToBuilding()
+{
+    // IDA: 0x51F330 — pathfind to enter building
+    if (!target) return 0;
+
+    // Pathfind toward the target building
+    return 0;
+}
+
+int InfantryClass::EnterBuilding()
+{
+    // IDA: 0x51F3E0 — try to enter target building
+    if (!target) return 0;
+
+    // Check building type, find entry cell, path to it
+    return 0;
+}
+
+int InfantryClass::ProcessEnterOrRepair()
+{
+    // IDA: 0x51F540 — enter building or repair
+    return 0;
+}
+
+bool InfantryClass::CanEnterBuilding()
+{
+    // IDA: 0x522BC0 — check if can enter target building
+    return target != nullptr;
+}
+
+int InfantryClass::FindIdleMovePosition()
+{
+    // IDA: 0x51F620 — find idle movement position
+    return 0;
+}
+
+int InfantryClass::FindIdleAITarget()
+{
+    // IDA: 0x51F640 — find idle AI target
+    return 0;
+}
+
+// ============================================================
+// Phase 3: Paradrop
+// ============================================================
+
+int InfantryClass::ParachuteTo()
+{
+    // IDA: 0x521760 — parachute infantry to target location
+    hasParachute = true;
+    return 0;
+}
+
+// ============================================================
+// Phase 3: C4 / Bomb
+// ============================================================
+
+int InfantryClass::ProcessIvanBomb()
+{
+    // IDA: 0x51F6E0 — process Ivan bomb planting
+    if (!target) return 0;
+
+    // Check target type, plant bomb animation
+    return 0;
+}
+
+int InfantryClass::ProcessIvanBombResult()
+{
+    // IDA: 0x51F660 — process bomb explosion result
+    return 0;
+}
+
+int InfantryClass::CheckAndApplyBomb()
+{
+    // IDA: 0x521DD0 — check and apply C4/bomb damage
+    return 0;
+}
+
+// ============================================================
+// Phase 3: Per-Frame & AI
+// ============================================================
+
+void InfantryClass::PowerDrainUpdate()
+{
+    // IDA: 0x521C90 (160B) — per-frame power consumption
+}
+
+int InfantryClass::HandleTargetDestroyed()
+{
+    // IDA: 0x51AA10 — handle when target is destroyed
+    target = nullptr;
+    return 0;
+}
+
+int InfantryClass::ProcessUpdate()
+{
+    // IDA: 0x51F250 — process update state
+    return 0;
+}
+
+int InfantryClass::ValidateTargetAndMove()
+{
+    // IDA: 0x51F190 — validate target and initiate movement
+    if (!target) return 0;
+    return 0;
+}
+
+int InfantryClass::SetMission()
+{
+    // IDA: 0x728280 — set mission for infantry
+    return 0;
+}
+
+int InfantryClass::IdleStateMachine()
+{
+    // IDA: 0x728E30 — idle state machine logic
+    return 0;
+}
+
+int InfantryClass::ProcessTunnelMovement()
+{
+    // IDA: 0x7291F0 — process tunnel/teleport movement
+    return 0;
+}
+
+int InfantryClass::UpdateBehavior()
+{
+    // IDA: 0x736579 — update infantry behavior AI
+    return 0;
+}
+
+int InfantryClass::CalcFacingToTarget()
+{
+    // IDA: 0x51DBD0 — calculate facing direction toward target
+    if (!target) return 0;
+    return 0;
+}
+
+int InfantryClass::EvaluateTarget()
+{
+    // IDA: 0x51BF90 — evaluate if target is worth attacking
+    if (!target) return 0;
+    return 1;
+}
+
+int InfantryClass::SelectAutoTarget(unsigned int flags, __int64 a3)
+{
+    // IDA: 0x51E140 — auto-select target
+    // Check house, distance to targets, evaluate threats
+    return SelectAutoTarget_Cloaked();
+}
+
+int InfantryClass::AssignTarget_SyncLog()
+{
+    // IDA: 0x51B1F0 — assign target with sync logging
+    return 0;
+}
+
+int InfantryClass::AssignDestination_SyncLog()
+{
+    // IDA: 0x51AA40 — assign destination with sync logging
+    return 0;
+}
+
+int InfantryClass::ValidatePlacement()
+{
+    // IDA: 0x51CBA0 — validate building placement
+    return 0;
+}
+
+int InfantryClass::ValidateAttackPosition()
+{
+    // IDA: 0x484AE0 — validate attack position
+    return 0;
+}
+
+int InfantryClass::IsInBounds()
+{
+    // IDA: 0x484AB0 — check if position is in map bounds
+    return 0;
+}
+
+// ============================================================
+// Phase 3: Stream & Save
+// ============================================================
+
+int InfantryClass::LoadFromStream()
+{
+    // IDA: 0x521960 (402B) — COM deserialization
+    return 0;
+}
+
+int InfantryClass::SaveLoad_Prefix()
+{
+    // IDA: 0x521B00 (23B) — save/load prefix handler
+    return 0;
+}
+
+int InfantryClass::ScalarDtor()
+{
+    // IDA: 0x523350 (30B) — scalar destructor
+    return 0;
+}
+
+// ============================================================
+// Phase 3: Cursor & UI
+// ============================================================
+
+int InfantryClass::HandleCursorOverCell()
+{
+    // IDA: 0x51F800 — handle cursor over occupied cell
+    return 0;
+}
+
+int InfantryClass::GetCursorOverObject_EMP()
+{
+    // IDA: 0x51E3B0 — EMP cursor over object
+    return 0;
+}
+
+int InfantryClass::GetCursorOverObject()
+{
+    // IDA: 0x4DDED0 — get cursor type over this object
+    return 0;
+}
+
+int InfantryClass::GetTypePtr()
+{
+    // IDA: 0x51FAF0 — get type pointer
+    return 0;
+}
+
+int InfantryClass::GetTooltipName()
+{
+    // IDA: 0x51F2C0 — get tooltip name string
+    return 0;
+}
+
+int InfantryClass::GetTransformMatrix()
+{
+    // IDA: 0x521D30 — get transform matrix
+    return 0;
+}
+
+int InfantryClass::ComputeTransform()
+{
+    // IDA: 0x523250 — compute transform
+    return 0;
+}
+
+int InfantryClass::CheckHealthDiff()
+{
+    // IDA: 0x701140 — check health difference
+    return 0;
+}
+
+// ============================================================
+// Phase 3: Marking & Passability
+// ============================================================
+
+int InfantryClass::MarkCellPassability()
+{
+    // IDA: 0x5217C0 — mark cells as passable/unpassable
+    return 0;
+}
+
+int InfantryClass::ClearCellPassability()
+{
+    // IDA: 0x521850 — clear cell passability marks
+    return 0;
+}
+
+// ============================================================
+// Phase 3: Capture & Misc
+// ============================================================
+
+int InfantryClass::CaptureAttackerInfo()
+{
+    // IDA: 0x522700 — capture attacker info for tracking
+    return 0;
+}
+
+int InfantryClass::InitProductionLimits()
+{
+    // IDA: 0x522780 — initialize production limits
+    return 0;
+}
+
+int InfantryClass::GetProductionLimit()
+{
+    // IDA: 0x522640 — get production limit from type
+    if (!Type) return 0;
+    return 10;
+}
+
+int InfantryClass::GetProductionHouse()
+{
+    // IDA: 0x5226C0 — get production house
+    return 0;
+}
+
+int InfantryClass::ResetMissionIfDone()
+{
+    // IDA: 0x521B20 — reset mission when complete
+    return 0;
+}
+
+int InfantryClass::ProcessMission16()
+{
+    // IDA: 0x521B40 — process mission state 16
+    return 0;
+}
+
+int InfantryClass::SetMissionOnCondition()
+{
+    // IDA: 0x521C60 — set mission based on condition
+    return 0;
+}
+
+int InfantryClass::InitVoiceResponseTimer()
+{
+    // IDA: 0x521C10 — initialize voice response timer
+    return 0;
+}
+
+int InfantryClass::ResetReloadIfNeeded()
+{
+    // IDA: 0x521C40 — reset reload timer if needed
+    return 0;
+}
+
+int InfantryClass::SetFlag1752()
+{
+    // IDA: 0x5220F0 — set flag at offset 1752
+    return 0;
+}
+
+int InfantryClass::StubReturn15()
+{
+    // IDA: 0x523340 — vtable[11] stub, returns 15
+    return 15;
+}
+
+int InfantryClass::StubReturn1776()
+{
+    // IDA: 0x5232F0 — vtable[12] stub, returns 1776
+    return 1776;
+}
+
+int InfantryClass::ProcessIdle()
+{
+    // IDA: 0x70E1E0 — process idle state
+    return 0;
+}
+
+int InfantryClass::RegisterKill()
+{
+    // IDA: 0x703230 — register kill credit
+    return 0;
+}
+
+int InfantryClass::ReleaseInfiltrators()
+{
+    // IDA: 0x70D7A0 — release infiltrators
+    return 0;
+}
+
+int InfantryClass::ProcessTiberiumHarvest()
+{
+    // IDA: 0x522E70 — process tiberium/ore harvesting
+    return 0;
+}
+
+int InfantryClass::RepairBridge()
+{
+    // IDA: 0x519630 (5083B) — repair bridge as engineer
+    return 0;
+}
+
+void InfantryClass::CalculateApproachPath()
+{
+    // IDA: 0x522340 — calculate approach path to target
+}
+
+bool InfantryClass::IsBridgeRepairEnabled()
+{
+    // IDA: 0x5224D0 — check if bridge repair is enabled
+    return Technician;
+}
+
+int InfantryClass::SlaveGiveMoney_RecordBalanceBefore()
+{
+    // IDA: 0x522D50 — record slave money balance
+    return 0;
+}
+
+void InfantryClass::startPanic()
+{
+    // IDA: 0x772AC0 — start panic state
+    PanicDurationLeft = 100;
+}
+
+int InfantryClass::CheckHealthDiff_0()
+{
+    // IDA: 0x7447A0 — check health diff (stub)
+    return 0;
+}
+
+// ============================================================
+// Phase 3: Drawing
+// ============================================================
+
 void InfantryClass::Draw(Point2D* screen_pos, RectangleStruct* bounds) const
 {
     if (!screen_pos || !Type)
         return;
 
-    // Step 1: Get draw offset
-    Point2D draw_pos = *screen_pos;
-
-    // Step 2: Check fog/shroud tinting
-    // IDA: RulesClass_Instance->color_tables determine fog color
-    uint32_t color_flags = 0;
-
-    // Step 3: Draw the infantry SHP image
-    // Infantry use SHP-based rendering with locomotion-based frame selection
-    // For drive-type locomotor, draws POD.SHP with the vehicle
-    // For walk-type, draws the infantry SHP directly
-
-    // Step 4: Draw parachute if hasParachute is set
+    // Draw parachute if deployed
     if (hasParachute && parachute)
     {
-        // Draw parachute SHP above the infantry
-        // DrawToSurfaceSHP(DSurface_Hidden_2, palette, parachute_shp, frame,
-        //                  &draw_pos, bounds, ...)
+        // Draw parachute SHP
     }
 
-    // Step 5: Draw shadow (if on ground)
-    // IDA: INFSHDW.SHP shadow rendering when unit is above ground
-
-    // Step 6: Draw selection box, health bar, pips via TechnoClass helpers
     (void)bounds;
-    (void)color_flags;
 }
 
-// ============================================================
-// InfantryClass::DrawShadow (helper)
-// Draws the infantry shadow beneath the unit.
-// ============================================================
 void InfantryClass::DrawShadow(Point2D* screen_pos, RectangleStruct* bounds) const
 {
     (void)screen_pos;

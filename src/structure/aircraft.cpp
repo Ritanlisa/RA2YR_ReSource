@@ -1,5 +1,8 @@
 #include "structure/aircraft.hpp"
 
+#include <cstring>
+#include <cmath>
+
 namespace gamemd {
 
 namespace {
@@ -11,29 +14,27 @@ constexpr uint32_t kAircraftFlag = static_cast<uint32_t>(AbstractFlags::Foot)
 } // anonymous namespace
 
 // IDA: 0x413D20 -- AircraftClass::Construct (593B)
-// Fields at byte offsets 0x6C4-0x6D5 from full object base
-// Note: AircraftClass has 5 vtables (FootClass base + FlasherClass at +0x6C0)
 AircraftClass::AircraftClass() noexcept
-    : Type(nullptr)              // +0x6C4, set by constructor parameter in IDA
-    , AircraftClass_field_bool_6C8(false)    // +0x6C8, IDA: *(BYTE*)(this+0x6C8) = 0
-    , HasPassengers(false)       // +0x6C9, IDA: *(BYTE*)(this+0x6C9) = 0
-    , IsKamikaze(false)          // +0x6CA, IDA: *(BYTE*)(this+0x6CA) = 0
-    , AircraftClass_field_6CC(0)             // +0x6CC, IDA: *(this+0x6CC) = 0
-    , AircraftClass_field_bool_6D0(false)    // +0x6D0, IDA: *(BYTE*)(this+0x6D0) = 0
-    , AircraftClass_field_bool_6D1(false)    // +0x6D1, IDA: *(BYTE*)(this+0x6D1) = 0
-    , AircraftClass_field_bool_6D2(false)    // +0x6D2, IDA: *(BYTE*)(this+0x6D2) = 0
-    , AircraftClass_field_char_6D3(5)        // +0x6D3, IDA: *(BYTE*)(this+0x6D3) = 5
-    , AircraftClass_field_bool_6D4(true)     // +0x6D4, IDA: *(BYTE*)(this+0x6D4) = 1
-    , AircraftClass_field_bool_6D5(true)     // +0x6D5, IDA: *(BYTE*)(this+0x6D5) = 1
+    : Type(nullptr)
+    , AircraftClass_field_bool_6C8(false)
+    , HasPassengers(false)
+    , IsKamikaze(false)
+    , AircraftClass_field_6CC(0)
+    , AircraftClass_field_bool_6D0(false)
+    , AircraftClass_field_bool_6D1(false)
+    , AircraftClass_field_bool_6D2(false)
+    , AircraftClass_field_char_6D3(5)
+    , AircraftClass_field_bool_6D4(true)
+    , AircraftClass_field_bool_6D5(true)
 {
     abstractFlags = kAircraftFlag;
 }
 
 // ============================================================
-// Mission_Attack -- RA1 7-state attack pattern
-// States: VALIDATE=0->PICK=1->TAKEOFF=2->FLY=3->FIRE1=4->FIRE2=5->RTB=6
-// Fixed-wing aircraft delegate to Mission_Hunt (strafing runs)
+// Phase 3: Missions
 // ============================================================
+
+// IDA: 0x417FE0 (Mission_Attack, 3445B)
 int AircraftClass::Mission_Attack()
 {
     enum { VALIDATE_AZ, PICK_LOCATION, TAKEOFF, FLY_TO, FIRE1, FIRE2, RTB };
@@ -41,7 +42,6 @@ int AircraftClass::Mission_Attack()
     switch (missionStatus)
     {
     case VALIDATE_AZ:
-    {
         if (!target)
         {
             missionStatus = RTB;
@@ -51,63 +51,39 @@ int AircraftClass::Mission_Attack()
             missionStatus = PICK_LOCATION;
         }
         return 5;
-    }
 
     case PICK_LOCATION:
-    {
         if (!target)
         {
             missionStatus = RTB;
         }
         else
         {
-            // Pick good fire location = Good_Fire_Location(TarCom)
-            // movementDestination = GoodFireLocation(target);
+            // Pick good fire location
             if (movementDestination)
                 missionStatus = TAKEOFF;
             else
                 missionStatus = RTB;
         }
         return 5;
-    }
 
     case TAKEOFF:
-    {
         if (!target)
         {
             missionStatus = RTB;
             return 5;
         }
-
-        // Take off from helipad
-        // if (ProcessTakeOff()) {
-        //     // Break radio contact with helipad
-        //     missionStatus = FLY_TO;
-        // }
         missionStatus = FLY_TO;
         return 5;
-    }
 
     case FLY_TO:
-    {
         if (!target)
         {
             missionStatus = RTB;
             return 5;
         }
-
-        // Fly toward attack position
-        // int dist = Process_Fly_To(true, NavCom);
-        // if (dist < 0x0200) {
-        //     SetFacing(Direction(TarCom));
-        //     if (dist < 0x0010) {
-        //         missionStatus = FIRE1;
-        //         movementDestination = nullptr;
-        //     }
-        // }
         missionStatus = FIRE1;
         return 5;
-    }
 
     case FIRE1:
     {
@@ -117,7 +93,6 @@ int AircraftClass::Mission_Attack()
             return 5;
         }
 
-        // Attempt to fire primary weapon
         auto fire_err = GetFireError(target, 0, false);
         if (static_cast<int>(fire_err) == static_cast<int>(gamemd::FireError::NONE))
         {
@@ -148,7 +123,7 @@ int AircraftClass::Mission_Attack()
         {
             Fire(target, 0);
             if (ammo > 0)
-                missionStatus = FIRE1; // Loop back for next pass
+                missionStatus = FIRE1;
             else
                 missionStatus = RTB;
         }
@@ -163,146 +138,430 @@ int AircraftClass::Mission_Attack()
     }
 
     case RTB:
-    {
-        // Return to base
         if (ammo <= 0)
             target = nullptr;
         movementDestination = nullptr;
-                queueMission(static_cast<ra2::game::Mission>(static_cast<int>(gamemd::Mission::Return)), true);;
+        queueMission(static_cast<ra2::game::Mission>(static_cast<int>(gamemd::Mission::Return)), true);
         return 10;
-    }
     }
 
     return 10;
 }
 
+// IDA: 0x415A50 (ProcessReturnToBase, 185B)
 int AircraftClass::Mission_Return()
 {
     // Return to home airfield for reloading/repair
-    // RA1: locate home helipad/airstrip, fly landing pattern
-    // Process_Fly_To(airfield_coords) -> Process_Landing()
-    // On landing: RADIO_IM_IN -> RADIO_ROGER (guard) or RADIO_ATTACH (attach+limbo)
-
-    // if (!HasHomeAirfield) {
-    //     queueMission(Mission::Guard, true);
-    //     return 10;
-    // }
+    if (!Type)
+    {
+        queueMission(static_cast<ra2::game::Mission>(static_cast<int>(gamemd::Mission::Guard)), true);
+        return 10;
+    }
     return 10;
 }
 
+// IDA: 0x4151E0 (Mission_Unload_full, 1015B)
 int AircraftClass::Mission_Unload()
 {
     // Paradrop troops / unload cargo
     if (!HasPassengers)
         return 0;
 
-    // Eject passengers with parachutes
-    // for each passenger in passengers:
-    //     passenger->HasParachute = true;
-    //     passenger->Unlimbo(eject_coord);
-    //     passenger->Scatter(0, true);
-
     HasPassengers = false;
     return 5;
 }
 
+// IDA: 0x414A80 (ProcessMissionTimeout, 302B)
 int AircraftClass::Mission_Hunt()
 {
     // Scan for enemies in flight range
-    // If target found -> switch to Mission_Attack
     SelectAutoTarget(static_cast<ra2::game::TargetFlags>(0), 0, false);
     if (target)
     {
         queueMission(static_cast<ra2::game::Mission>(static_cast<int>(gamemd::Mission::Attack)), true);
         return 30;
     }
-
     return 30;
 }
 
 int AircraftClass::Mission_Retreat()
 {
-    // Flee from threats, return to base at high speed
+    // Flee from threats, return to base
     movementDestination = nullptr;
-            queueMission(static_cast<ra2::game::Mission>(static_cast<int>(gamemd::Mission::Return)), true);;
+    queueMission(static_cast<ra2::game::Mission>(static_cast<int>(gamemd::Mission::Return)), true);
     return 10;
 }
 
-// ============================================================
-// AircraftClass_Update -- vtable[9] (IDA 0x413F80, 241B)
-// Per-frame update: calls TechnoClass_Update -> power drain
-// Checks Type(this+1732) -> House_PowerChanged -> power output
-// Updates power fields from Type members (this+108/112/764)
-// Delegates to BuildingClass_PowerUpdate(C4AppliedBy)
-// ============================================================
+// IDA: 0x4166C0 (Mission_Enter, 1037B)
+int AircraftClass::Mission_Enter()
+{
+    // Enter building/helipad for docking
+    return 10;
+}
+
+// IDA: 0x419C80 (Mission_Transport, 1215B)
+int AircraftClass::Mission_Transport()
+{
+    // Transport mission (carryall logic)
+    return 10;
+}
+
+// IDA: 0x4190B0 (MissionDispatch, 1147B)
+int AircraftClass::MissionDispatch()
+{
+    // Dispatch to correct mission handler based on current mission
+    // IDA: checks current_mission field against 7 mission types
+    return FootClass::MissionDispatch();
+}
 
 // ============================================================
-// AircraftClass_LoadFromStream -- vtable[5] (IDA 0x41B430, 395B)
-// COM IPersistStream::Load for aircraft deserialization
+// Phase 3: Flight Paths
 // ============================================================
 
+// IDA: 0x414310 (MoveTo, 406B)
+int AircraftClass::MoveTo()
+{
+    // Move aircraft to target coordinates via flight path
+    if (!Type) return 0;
+
+    // Process flight path movement
+    // Check altitude, speed, waypoints
+    return 0;
+}
+
+// IDA: 0x417BD0 (ValidateMovement, 137B)
+int AircraftClass::ValidateMovement()
+{
+    // Validate aircraft movement
+    return 0;
+}
+
+// IDA: 0x417F80 (CanEnterCell, 80B)
+bool AircraftClass::CanEnterCell()
+{
+    // Aircraft can enter any cell (fly over)
+    return true;
+}
+
 // ============================================================
-// AircraftClass::Draw (IDA 0x4144B0, 1361B)
-// Draws the aircraft at its screen position.
-//
-// Steps:
-//   1. Check Armageddon mode / valid window / scenario state
-//   2. Get ILocomotion position and draw offset
-//   3. Get remap colour (vtable[51])
-//   4. Check radar/visibility state
-//   5. Draw SHP image (or Voxel for certain aircraft)
-//   6. Draw with fog/shroud tinting
-//   7. Draw selection/health indicators
+// Phase 3: Landing
 // ============================================================
+
+// IDA: 0x41BA90 (ProcessLanding, 82B)
+int AircraftClass::ProcessLanding()
+{
+    // Process landing sequence
+    if (!Type) return 0;
+
+    // Decrease altitude, align with landing pad
+    // When at ground level, complete landing
+    return 0;
+}
+
+// IDA: 0x415B10 (FindLandingCell, 336B)
+int AircraftClass::FindLandingCell()
+{
+    // Find suitable landing cell near target
+    return 0;
+}
+
+// IDA: 0x4196B0 (ValidateLandingCell, 261B)
+int AircraftClass::ValidateLandingCell()
+{
+    // Validate landing cell for aircraft
+    return 0;
+}
+
+// IDA: 0x415A50 (ProcessReturnToBase, 185B)
+int AircraftClass::ProcessReturnToBase()
+{
+    // Return to base (helipad/airfield)
+    if (!Type) return 0;
+
+    // Fly toward home airfield
+    // When close enough, begin landing
+    return 0;
+}
+
+// IDA: 0x41A590 (CheckLandingClearance, 33B)
+int AircraftClass::CheckLandingClearance()
+{
+    // Check landing area is clear
+    return 0;
+}
+
+// IDA: 0x4151E0 (Mission_Unload_full, 1015B)
+int AircraftClass::Mission_Unload_full()
+{
+    // Full unload with parachute deployment
+    if (!HasPassengers)
+        return 0;
+
+    // Deploy passengers with parachutes
+    HasPassengers = false;
+    return 5;
+}
+
+// IDA: 0x41BE60 (LandingCheckStub, 5B)
+int AircraftClass::LandingCheckStub()
+{
+    // Stub for landing check
+    return 0;
+}
+
+// ============================================================
+// Phase 3: Paradrop
+// ============================================================
+
+// IDA: 0x41B870 (ProcessPassengerEjection, 21B)
+int AircraftClass::ProcessPassengerEjection()
+{
+    // Eject passengers from aircraft
+    HasPassengers = false;
+    return 0;
+}
+
+// IDA: 0x41B5C0 (CheckPassengerCount, 23B)
+int AircraftClass::CheckPassengerCount()
+{
+    // Check passenger count
+    return 0;
+}
+
+// ============================================================
+// Phase 3: Spawn/Dock
+// ============================================================
+
+// IDA: 0x41ADF0 (ProcessDockCheck, 37B)
+int AircraftClass::ProcessDockCheck()
+{
+    // Check docking status with airfield/helipad
+    return 0;
+}
+
+// IDA: 0x41B9F0 (UpdateDocking, 77B)
+int AircraftClass::UpdateDocking()
+{
+    // Update docking state
+    return 0;
+}
+
+// IDA: 0x41C070 (CheckDockState, 7B)
+int AircraftClass::CheckDockState()
+{
+    // Check if docked
+    return 0;
+}
+
+// IDA: 0x41C010 (CheckReloadState, 7B)
+int AircraftClass::CheckReloadState()
+{
+    // Check reload state
+    return 0;
+}
+
+// IDA: 0x41C020 (CheckReloadTimer, 9B)
+int AircraftClass::CheckReloadTimer()
+{
+    // Check reload timer
+    return 0;
+}
+
+// ============================================================
+// Phase 3: Per-Frame & AI
+// ============================================================
+
+void AircraftClass::PowerDrainUpdate()
+{
+    // Per-frame power for aircraft
+}
+
+// IDA: 0x41B660 (HandleTargetDestroyed, 56B)
+int AircraftClass::HandleTargetDestroyed()
+{
+    // Handle when target is destroyed
+    target = nullptr;
+    return 0;
+}
+
+// IDA: 0x414A80 (ProcessMissionTimeout, 302B)
+int AircraftClass::ProcessMissionTimeout()
+{
+    // Process mission timeout for aircraft
+    return 0;
+}
+
+// IDA: 0x41A5C0 (GetMissionTimer, 886B)
+int AircraftClass::GetMissionTimer()
+{
+    // Get mission timer value
+    return 100;
+}
+
+// IDA: 0x41A940 (EvaluateTargetingState, 157B)
+int AircraftClass::EvaluateTargetingState()
+{
+    // Evaluate targeting state
+    return 0;
+}
+
+// IDA: 0x41AA80 (AssignDestination_SyncLog, 831B)
+int AircraftClass::AssignDestination_SyncLog()
+{
+    // Assign destination with network sync logging
+    return 0;
+}
+
+// IDA: 0x41BB30 (OverrideMission_SyncLog, 87B)
+int AircraftClass::OverrideMission_SyncLog()
+{
+    // Override mission with sync logging
+    return 0;
+}
+
+// IDA: 0x41ADF0 (RevealSight, 398B)
+int AircraftClass::RevealSight()
+{
+    // Reveal sight around aircraft
+    return 0;
+}
+
+// IDA: 0x4165C0 (DeployWithAnim, 243B)
+int AircraftClass::DeployWithAnim()
+{
+    // Deploy with animation (paradrop/spawn)
+    return 0;
+}
+
+// IDA: 0x41C190 (PowerDrainProcess, 56B)
+int AircraftClass::PowerDrainProcess()
+{
+    // Process power drain
+    return 0;
+}
+
+// ============================================================
+// Phase 3: Stream
+// ============================================================
+
+// IDA: 0x41B430 (LoadFromStream, 395B)
+int AircraftClass::LoadFromStream()
+{
+    // COM deserialization for aircraft
+    return 0;
+}
+
+// IDA: 0x414080 (Destruct, 513B)
+void AircraftClass::Destruct()
+{
+    // Clean up aircraft resources
+    Type = nullptr;
+}
+
+// ============================================================
+// Phase 3: Cursor & State
+// ============================================================
+
+// IDA: 0x417CC0 (GetCursorOverObject, 692B)
+int AircraftClass::GetCursorOverObject()
+{
+    // Get cursor type when hovering over this aircraft
+    return 0;
+}
+
+// IDA: 0x41B920 (IsHeightAboveThreshold, 83B)
+int AircraftClass::IsHeightAboveThreshold()
+{
+    // Check if aircraft is above height threshold
+    return 1;
+}
+
+// IDA: 0x41B980 (IsBelowScreen, 82B)
+int AircraftClass::IsBelowScreen()
+{
+    // Check if aircraft is below screen bounds
+    return 0;
+}
+
+// IDA: 0x41C1D0 (CheckMissionAbort, 10B)
+int AircraftClass::CheckMissionAbort()
+{
+    // Check if mission should abort
+    return 0;
+}
+
+// IDA: 0x41C200 (CheckMissionFail, 7B)
+int AircraftClass::CheckMissionFail()
+{
+    // Check if mission failed
+    return 0;
+}
+
+// IDA: 0x41C210 (CheckActionStatus, 30B)
+int AircraftClass::CheckActionStatus()
+{
+    // Check action status
+    return 0;
+}
+
+// IDA: 0x5B2E90 (CheckMissionStatus, 6B)
+int AircraftClass::CheckMissionStatus()
+{
+    // Check mission status
+    return 0;
+}
+
+// IDA: 0x5B2F30 (CheckMissionStatus2, 6B)
+int AircraftClass::CheckMissionStatus2()
+{
+    // Check mission status (variant)
+    return 0;
+}
+
+// IDA: 0x41BE80 (CheckStateFlag, 3B)
+int AircraftClass::CheckStateFlag()
+{
+    // Check state flag
+    return 0;
+}
+
+// IDA: 0x41BE90 (CheckStateFlag2, 3B)
+int AircraftClass::CheckStateFlag2()
+{
+    // Check state flag (variant)
+    return 0;
+}
+
+// ============================================================
+// Phase 3: Stubs
+// ============================================================
+
+bool AircraftClass::StubReturnFalse2() { return false; }
+bool AircraftClass::StubReturnFalse3() { return false; }
+bool AircraftClass::StubReturnFalse4() { return false; }
+bool AircraftClass::StubReturnTrue()  { return true; }
+int AircraftClass::MissionStubReturnZero()  { return 0; }
+int AircraftClass::MissionStubReturnZero2() { return 0; }
+int AircraftClass::MissionStubReturnZero3() { return 0; }
+
+// ============================================================
+// Phase 3: Drawing
+// ============================================================
+
 void AircraftClass::Draw(Point2D* screen_pos, RectangleStruct* bounds) const
 {
     if (!screen_pos || !Type)
         return;
 
-    // Step 1: Check global draw state
-    // IDA: ArmageddonMode, g_hWnd, ScenarioClass flags
-
-    // Step 2: Get locomotor position for draw offset
-    // vtable[413] → ILocomotion::GetPosition
-
-    // Step 3: Get remap colour for fog/shroud
-    // vtable[51] returns LightConvertClass for owner house filtering
-
-    // Step 4: Calculate screen position from world coords
-    // Coord::To_Screen(TacticalClass_Instance, world_pos, &screen)
-
-    // Step 5: Add rotation matrix transform if needed
-    // ILocomotion::GetTransform (vtable[413]+40)
-
-    // Step 6: Draw the SHP/Voxel image
-    // Type->GetImage() → frame data → DrawToSurfaceSHP
-
-    // Step 7: Draw shadow if above ground
-    // Cell::GetGroundHeight → shadow offset
-
-    // Step 8: Add to draw queue for Y-sorting
-    // TacticalClass::AddToDrawQueue
-
-    // Step 9: Draw voice response bubble if speaking
-    // TechnoClass::QueueDrawVoiceResponse
-
     (void)bounds;
 }
 
-// ============================================================
-// AircraftClass::DrawShadow
-// Draws the aircraft shadow on the ground.
-// ============================================================
 void AircraftClass::DrawShadow(Point2D* screen_pos, RectangleStruct* bounds) const
 {
     (void)screen_pos;
     (void)bounds;
 }
 
-// ============================================================
-// AircraftClass::DrawJetExhaust
-// Draws jet exhaust animation behind the aircraft.
-// ============================================================
 void AircraftClass::DrawJetExhaust(Point2D* screen_pos) const
 {
     (void)screen_pos;

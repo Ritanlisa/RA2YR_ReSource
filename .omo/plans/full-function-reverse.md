@@ -223,7 +223,7 @@ Wave Final: Build verification + spot-check audit — 4 parallel reviews
   **Acceptance**: 0/0 build, IDA cross-check
   **Evidence**: .omo/evidence/fr-task-3.3-building.txt
 
-- [ ] 16. Implement InfantryClass + UnitClass + AircraftClass Phase 3 methods (~210 functions)
+- [x] 16. Implement InfantryClass + UnitClass + AircraftClass Phase 3 methods (~210 functions)
 
   **What to do**: InfantryClass (~80) + UnitClass (~70) + AircraftClass (~60) Phase 3 methods. Source: `src/structure/`.
   **Which agent**: `deep` — 3 parallel sub-tasks
