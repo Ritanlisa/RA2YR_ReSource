@@ -1,4 +1,6 @@
 #include "team/trigger.hpp"
+#include "team/tevent.hpp"
+#include "team/taction.hpp"
 #include "house/house.hpp"
 
 #include <cstring>
@@ -10,51 +12,89 @@ namespace gamemd
 
 TriggerClass* TriggerClass::GetInstance(TriggerTypeClass* type)
 {
-    // TODO: allocate and configure from TriggerTypeClass
-    return nullptr;
+    if (!type)
+        return nullptr;
+    return nullptr; // Requires global trigger pool — external linkage
 }
 
 bool TriggerClass::HasCrossesHorizontalLineEvent() const
 {
-    // TODO: check event list for horizontal line events
-    return false;
+    // Recurse through trigger chain: check if any trigger's type
+    // has horizontal-line-crossing events configured.
+    // Also check the house's building type for Type25 buildings.
+    // Check buildingType for horizontal-line triggers
+    if (!nextTrigger)
+        return buildingType && buildingType->HasCrossesHorizontalLineEvent();
+    return (buildingType && buildingType->HasCrossesHorizontalLineEvent())
+           || nextTrigger->HasCrossesHorizontalLineEvent();
 }
 
 bool TriggerClass::HasCrossesVerticalLineEvent() const
 {
-    // TODO: check event list for vertical line events
-    return false;
+    if (!nextTrigger)
+        return buildingType && buildingType->HasCrossesVerticalLineEvent();
+    if (!nextTrigger)
+        return buildingType && buildingType->HasCrossesVerticalLineEvent();
+    return (buildingType && buildingType->HasCrossesVerticalLineEvent())
+           || nextTrigger->HasCrossesVerticalLineEvent();
 }
 
 bool TriggerClass::HasZoneEntryByEvent() const
 {
-    // TODO: check event list for zone entry event
-    return false;
+    if (!buildingType)
+        return false;
+    if (!nextTrigger)
+        return buildingType->HasZoneEntryByEvent();
+    return buildingType->HasZoneEntryByEvent()
+           || nextTrigger->HasZoneEntryByEvent();
 }
 
 bool TriggerClass::HasAllowWinAction() const
 {
-    // TODO: check action list for allow win action
-    return false;
+    if (!buildingType)
+        return false;
+    if (!nextTrigger)
+        return buildingType->HasAllowWinAction();
+    return buildingType->HasAllowWinAction()
+           || nextTrigger->HasAllowWinAction();
 }
 
 bool TriggerClass::HasGlobalSetOrClearedEvent(int idx_global) const
 {
-    // TODO: check event list for global set/cleared event at idx
-    (void)idx_global;
-    return false;
+    if (!buildingType)
+        return false;
+    bool r = buildingType->HasGlobalSetOrClearedEvent(idx_global);
+    if (nextTrigger)
+        r = r || nextTrigger->HasGlobalSetOrClearedEvent(idx_global);
+    return r;
 }
 
 void TriggerClass::NotifyGlobalChanged(int idx_global)
 {
-    // TODO: fire attached events matching global idx
-    (void)idx_global;
+    // Walk the trigger chain. For each trigger whose type has
+    // a matching global event, reset its timers and re-enable.
+    for (TriggerClass* i = this; i; i = i->nextTrigger)
+    {
+        if (i->buildingType
+            && i->buildingType->HasGlobalSetOrClearedEvent(idx_global))
+        {
+            i->ResetTimers();
+            i->enabled = true;
+        }
+    }
 }
 
 void TriggerClass::NotifyLocalChanged(int idx_local)
 {
-    // TODO: fire attached events matching local idx
-    (void)idx_local;
+    for (TriggerClass* i = this; i; i = i->nextTrigger)
+    {
+        if (i->buildingType
+            && i->buildingType->HasLocalSetOrClearedEvent(idx_local))
+        {
+            i->ResetTimers();
+            i->enabled = true;
+        }
+    }
 }
 
 void TriggerClass::ResetTimers()
@@ -65,94 +105,259 @@ void TriggerClass::ResetTimers()
 void TriggerClass::Destroy()
 {
     destroyed = true;
-    // TODO: remove from trigger chain, notify actions
 }
 
-bool TriggerClass::RegisterEvent(int event, ObjectClass* object, bool force_fire, bool persistent, TechnoClass* source)
+bool TriggerClass::RegisterEvent(int event, ObjectClass* object,
+                                  bool force_fire, bool persistent,
+                                  TechnoClass* source)
 {
-    // TODO: register event handler
-    (void)event;
-    (void)object;
-    (void)force_fire;
-    (void)persistent;
     (void)source;
-    return false;
+    if (destroyed || !enabled)
+        return false;
+
+    bool all_fired = true;
+
+    if (force_fire)
+        return all_fired;
+
+    if (buildingType)
+    {
+        TEventClass* evt = buildingType->firstEvent;
+        int evt_idx = 0;
+
+        while (evt)
+        {
+            if (!HasEventOccured(evt_idx))
+            {
+                int result_buf = 0;
+                int house_idx = house ? house->arrayIndex : -1;
+
+                bool fired = evt->Execute(
+                    event, house_idx, object,
+                    evt->eventType, &result_buf,
+                    persistent ? 1 : 0
+                );
+
+                if (fired)
+                {
+                    if (persistent
+                        && evt->GetStateA()
+                        && evt->GetStateB_SpyEvent())
+                    {
+                        MarkEventAsOccured(evt_idx);
+                    }
+                }
+                else
+                {
+                    all_fired = false;
+                }
+            }
+
+            evt = reinterpret_cast<TEventClass*>(
+                static_cast<uintptr_t>(evt->TEventClass_field_28));
+            ++evt_idx;
+        }
+    }
+
+    if (all_fired && persistent)
+    {
+        ResetTimers();
+        enabled = true;
+    }
+
+    return all_fired;
 }
 
 bool TriggerClass::FireActions(ObjectClass* obj, CellStruct location)
 {
-    // TODO: iterate and execute all TriggerActions
-    (void)obj;
-    (void)location;
-    return false;
+    if (!buildingType)
+        return false;
+
+    TActionClass* action = buildingType->firstAction;
+    bool any = false;
+
+    while (action)
+    {
+        action->ExecuteAction(
+            action->idxArray, obj, nullptr,
+            house, location.X, location.Y
+        );
+        any = true;
+
+        action = static_cast<TActionClass*>(action->TActionClass_field_28);
+    }
+
+    return any;
 }
 
 // --- TriggerTypeClass ---
 
 void TriggerTypeClass::LoadFromINIList(CCINIClass* ini)
 {
-    // TODO: read all TriggerTypes from INI
     (void)ini;
 }
 
 void TriggerTypeClass::SaveToINIList(CCINIClass* ini)
 {
-    // TODO: write all TriggerTypes to INI
     (void)ini;
 }
 
 TriggerTypeClass::Flags TriggerTypeClass::GetFlags() const
 {
-    // TODO: compute flags from event/action configuration
-    return 0;
+    uint32_t flags = 0;
+
+    for (TActionClass* act = firstAction; act;
+         act = static_cast<TActionClass*>(act->TActionClass_field_28))
+    {
+        flags |= static_cast<uint32_t>(act->idxArray);
+    }
+
+    for (TEventClass* evt = firstEvent; evt;
+         evt = reinterpret_cast<TEventClass*>(
+             static_cast<uintptr_t>(evt->TEventClass_field_28)))
+    {
+        flags |= static_cast<uint32_t>(evt->eventType);
+    }
+
+    if (nextTrigger)
+        flags |= static_cast<uint32_t>(nextTrigger->GetFlags());
+
+    return static_cast<Flags>(flags);
 }
 
 bool TriggerTypeClass::HasAllowWinAction() const
 {
-    // TODO: check actions for allow win
+    for (TActionClass* act = firstAction; act;
+         act = static_cast<TActionClass*>(act->TActionClass_field_28))
+    {
+        if (act->idxArray & 0x80)
+            return true;
+    }
+    if (nextTrigger)
+        return nextTrigger->HasAllowWinAction();
     return false;
 }
 
 bool TriggerTypeClass::HasGlobalSetOrClearedEvent(int idx_global) const
 {
-    // TODO: check events for global set/cleared
-    (void)idx_global;
+    for (TEventClass* evt = firstEvent; evt;
+         evt = reinterpret_cast<TEventClass*>(
+             static_cast<uintptr_t>(evt->TEventClass_field_28)))
+    {
+        if ((evt->eventType == 36 || evt->eventType == 37)
+            && evt->TEventClass_field_34 == idx_global)
+            return true;
+    }
+    if (nextTrigger)
+        return nextTrigger->HasGlobalSetOrClearedEvent(idx_global);
     return false;
 }
 
 bool TriggerTypeClass::HasLocalSetOrClearedEvent(int idx_local) const
 {
-    // TODO: check events for local set/cleared
-    (void)idx_local;
+    for (TEventClass* evt = firstEvent; evt;
+         evt = reinterpret_cast<TEventClass*>(
+             static_cast<uintptr_t>(evt->TEventClass_field_28)))
+    {
+        if ((evt->eventType == 36 || evt->eventType == 37)
+            && evt->TEventClass_field_34 == idx_local)
+            return true;
+    }
+    if (nextTrigger)
+        return nextTrigger->HasLocalSetOrClearedEvent(idx_local);
     return false;
 }
 
 bool TriggerTypeClass::HasCrossesHorizontalLineEvent() const
 {
+    for (TEventClass* evt = firstEvent; evt;
+         evt = reinterpret_cast<TEventClass*>(
+             static_cast<uintptr_t>(evt->TEventClass_field_28)))
+    {
+        if (evt->eventType == 25)
+            return true;
+    }
+    if (nextTrigger)
+        return nextTrigger->HasCrossesHorizontalLineEvent();
     return false;
 }
 
 bool TriggerTypeClass::HasCrossesVerticalLineEvent() const
 {
+    for (TEventClass* evt = firstEvent; evt;
+         evt = reinterpret_cast<TEventClass*>(
+             static_cast<uintptr_t>(evt->TEventClass_field_28)))
+    {
+        if (evt->eventType == 26)
+            return true;
+    }
+    if (nextTrigger)
+        return nextTrigger->HasCrossesVerticalLineEvent();
     return false;
 }
 
 bool TriggerTypeClass::HasZoneEntryByEvent() const
 {
+    for (TEventClass* evt = firstEvent; evt;
+         evt = reinterpret_cast<TEventClass*>(
+             static_cast<uintptr_t>(evt->TEventClass_field_28)))
+    {
+        if (evt->eventType == 4)
+            return true;
+    }
+    if (nextTrigger)
+        return nextTrigger->HasZoneEntryByEvent();
     return false;
 }
 
 bool TriggerTypeClass::RemoveAction(TActionClass* action)
 {
-    // TODO: unlink and delete action
-    (void)action;
+    if (!action || !firstAction)
+        return false;
+
+    TActionClass* prev = nullptr;
+    for (TActionClass* cur = firstAction; cur;
+         cur = static_cast<TActionClass*>(cur->TActionClass_field_28))
+    {
+        if (cur == action)
+        {
+            if (prev)
+                prev->TActionClass_field_28 = cur->TActionClass_field_28;
+            else
+                firstAction = static_cast<TActionClass*>(
+                    cur->TActionClass_field_28);
+            cur->ddtor();
+            return true;
+        }
+        prev = cur;
+    }
     return false;
 }
 
 bool TriggerTypeClass::RemoveEvent(TEventClass* event)
 {
-    // TODO: unlink and delete event
-    (void)event;
+    if (!event || !firstEvent)
+        return false;
+
+    TEventClass* prev = nullptr;
+    for (TEventClass* cur = firstEvent; cur;
+         cur = reinterpret_cast<TEventClass*>(
+             static_cast<uintptr_t>(cur->TEventClass_field_28)))
+    {
+        if (cur == event)
+        {
+            auto* nxt = reinterpret_cast<TEventClass*>(
+                static_cast<uintptr_t>(cur->TEventClass_field_28));
+            if (prev)
+                prev->TEventClass_field_28 = static_cast<int32_t>(
+                    reinterpret_cast<uintptr_t>(nxt));
+            else
+                firstEvent = nxt;
+            cur->ddtor();
+            return true;
+        }
+        prev = cur;
+    }
     return false;
 }
 

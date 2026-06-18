@@ -1,0 +1,36 @@
+// Original function at 0x6B6080 (CreateUnloadPlacementCraters)
+// Line 575896 in gamemd.exe.c
+// Size: 838 bytes
+
+//----- (006B6080) --------------------------------------------------------
+int __thiscall sub_6B6080(int this, _WORD *a2)
+{
+  int result; // eax
+  int i; // ebx
+  _DWORD *v6; // eax
+  int v7; // [esp+4h] [ebp-8h]
+  int v8; // [esp+8h] [ebp-4h] BYREF
+  int v9; // [esp+10h] [ebp+4h]
+
+  v7 = 0;
+  result = *(_DWORD *)(this + 668);
+  if ( result > 0 )
+  {
+    do
+    {
+      for ( i = 0; i < *(_DWORD *)(this + 664); ++i )
+      {
+        LOWORD(v9) = i + *a2;
+        HIWORD(v9) = v7 + a2[1];
+        v8 = v9;
+        v6 = CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)&v8);
+        v6[18] = *(_DWORD *)(this + 660);
+        *((_BYTE *)v6 + 287) = i + *(_BYTE *)(this + 664) * v7;
+        BuildingClass::CreatePlacementCrater(v6);
+      }
+      result = ++v7;
+    }
+    while ( v7 < *(_DWORD *)(this + 668) );
+  }
+  return result;
+}

@@ -1,0 +1,240 @@
+// Original function at 0x737430 (MissionDispatch)
+// Line 678423 in gamemd.exe.c
+// Size: 9357 bytes
+
+//----- (00737430) --------------------------------------------------------
+int __thiscall sub_737430(int this, int a2, int a3, _DWORD *a4)
+{
+  int v4; // ebp
+  int result; // eax
+  _DWORD *v7; // eax
+  _DWORD *v8; // eax
+  int Member; // edi
+  int v10; // edi
+  int v11; // eax
+  int v12; // edx
+  _DWORD *v13; // ebp
+  int v14; // eax
+  int TileIndex; // ebx
+  int v16; // eax
+  int v17; // eax
+  int v18; // eax
+  int v19; // edx
+  int v20; // eax
+  int v21; // eax
+  int v22; // edx
+  double v23; // [esp+10h] [ebp-24h]
+  int v24; // [esp+10h] [ebp-24h]
+  int v25; // [esp+18h] [ebp-1Ch] BYREF
+  int v26; // [esp+1Ch] [ebp-18h] BYREF
+  double v27; // [esp+20h] [ebp-14h]
+  _DWORD v28[3]; // [esp+28h] [ebp-Ch] BYREF
+  _UNKNOWN *retaddr; // [esp+34h] [ebp+0h] BYREF
+  int v30; // [esp+3Ch] [ebp+8h]
+  int v31; // [esp+40h] [ebp+Ch]
+
+  v4 = a3;
+  switch ( a3 )
+  {
+    case 3:
+      if ( (*(int (__thiscall **)(int))(*(_DWORD *)this + 388))(this) == 12 )
+        (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)this + 488))(this, 5, 0);
+      FootClass::MissionDispatch((int *)this, (_DWORD *)a2, a3, a4);
+      return 1;
+    case 7:
+      FootClass::MissionDispatch((int *)this, (_DWORD *)a2, a3, a4);
+      (*(void (__thiscall **)(int, _DWORD, int))(*(_DWORD *)this + 1152))(this, 0, 1);
+      (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)this + 968))(this, 0);
+      (*(void (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)this + 488))(this, 0, 0);
+      FootClass::ClearSomeVector(this);
+      if ( !*(_BYTE *)(this + 1048) || !Team::GetMember((_DWORD *)this, 0) )
+      {
+        (*(void (__thiscall **)(int, int, int))(*(_DWORD *)this + 632))(this, 2, a2);
+        (*(void (__thiscall **)(int, int))(*(_DWORD *)this + 628))(this, 24);
+      }
+      return 1;
+    case 14:
+      if ( !*(_DWORD *)(this + 1652) )
+        WinAPI::Wrapper(-2147467261);
+      if ( ((*(unsigned __int8 (__stdcall **)(_DWORD))(**(_DWORD **)(this + 1652) + 16))(*(_DWORD *)(this + 1652))
+         || *(_DWORD *)(this + 1444))
+        && *(_DWORD *)(this + 172) == 2 )
+      {
+        goto LABEL_54;
+      }
+      if ( Team::GetMember((_DWORD *)this, 0) != a2 )
+      {
+        v24 = *(_DWORD *)(*(_DWORD *)(this + 1732) + 1504);
+        v11 = HouseClass::SumPowerDrain((int *)(this + 276));
+        v12 = *(_DWORD *)a2;
+        v27 = (double)v11;
+        if ( (double)v24 < v27 + *(double *)((*(int (__thiscall **)(int))(v12 + 132))(a2) + 896)
+          || *(double *)((*(int (__thiscall **)(int))(*(_DWORD *)a2 + 132))(a2) + 896) > *(double *)(*(_DWORD *)(this + 1732) + 904) )
+        {
+          goto LABEL_54;
+        }
+        if ( !Team::AllMembersValid((int *)this) )
+          (*(void (__thiscall **)(int, int, int))(*(_DWORD *)this + 632))(this, 2, a2);
+      }
+      if ( *(_DWORD *)(this + 1444) )
+        goto LABEL_69;
+      retaddr = *(_UNKNOWN **)(*(int (__thiscall **)(int))(*(_DWORD *)this + 440))(this);
+      v13 = CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)&retaddr);
+      v14 = (*(int (__thiscall **)(int, _DWORD))(*(_DWORD *)a2 + 132))(a2, 0);
+      TileIndex = MapClass::GetTileIndex(
+                    &MapClass_Instance,
+                    (__int16 *)(this + 1372),
+                    *(_DWORD *)(v14 + 1460),
+                    (char)&v26);
+      v16 = -1;
+      if ( a2 && (*(_BYTE *)(a2 + 20) & 4) != 0 )
+      {
+        v17 = (*(int (__thiscall **)(int))(*(_DWORD *)a2 + 132))(a2);
+        v16 = MapClass::GetTileIndex(&MapClass_Instance, (__int16 *)(a2 + 1372), *(_DWORD *)(v17 + 1460), 0);
+      }
+      if ( TileIndex == v16 && (*(_DWORD *)(this + 1444) || v13[59] != 2) )
+      {
+        v4 = a3;
+LABEL_69:
+        if ( *(int *)(*(_DWORD *)(this + 1732) + 1504) <= 0 )
+          return FootClass::MissionDispatch((int *)this, (_DWORD *)a2, v4, a4);
+        v30 = *(_DWORD *)(*(_DWORD *)(this + 1732) + 1504);
+        v18 = HouseClass::SumPowerDrain((int *)(this + 276));
+        v19 = *(_DWORD *)a2;
+        v27 = (double)v18;
+        v20 = (*(int (__thiscall **)(int))(v19 + 132))(a2);
+        if ( (double)v30 < v27 + *(double *)(v20 + 896)
+          || *(double *)((*(int (__thiscall **)(int))(*(_DWORD *)a2 + 132))(a2) + 896) > *(double *)(*(_DWORD *)(this + 1732) + 904) )
+        {
+          return FootClass::MissionDispatch((int *)this, (_DWORD *)a2, v4, a4);
+        }
+        FootClass::MissionDispatch((int *)this, (_DWORD *)a2, v4, a4);
+        if ( !*(_DWORD *)(this + 1652) )
+          WinAPI::Wrapper(-2147467261);
+        if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(**(_DWORD **)(this + 1652) + 16))(*(_DWORD *)(this + 1652))
+          && !*(_BYTE *)(this + 1711)
+          && !*(_BYTE *)(this + 1048)
+          && (*(int (__thiscall **)(int, int, int))(*(_DWORD *)this + 632))(this, 19, a2) == 1 )
+        {
+          *a4 = this;
+          if ( (*(int (__thiscall **)(int, int, _DWORD *, int))(*(_DWORD *)this + 636))(this, 18, a4, a2) != 1 )
+            (*(void (__thiscall **)(int, int, int))(*(_DWORD *)this + 632))(this, 3, a2);
+        }
+        result = 1;
+      }
+      else
+      {
+        (*(void (__thiscall **)(int, int, int))(*(_DWORD *)this + 1152))(this, a2, 1);
+        result = 14;
+      }
+      break;
+    case 15:
+      if ( !*(_DWORD *)(*(_DWORD *)(this + 1732) + 1504)
+        || !a2
+        || !Object::IsAlliedWithObjectHouse(*(_DWORD **)(this + 540), a2) )
+      {
+        goto LABEL_28;
+      }
+      if ( (*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)this + 468))(this) )
+      {
+        result = 0;
+      }
+      else
+      {
+        v8 = (_DWORD *)(*(int (__thiscall **)(int))(*(_DWORD *)this + 444))(this);
+        if ( Cell::IsBridge(v8) )
+        {
+          result = 0;
+        }
+        else if ( BuildingClass::IsBeingRepairedOrCaptured(a2)
+               || (*(_BYTE *)(a2 + 20) & 4) != 0 && *(_DWORD *)(a2 + 1684)
+               || *(_DWORD *)(a2 + 700) && (unsigned __int8)CellClass::HasContent() )
+        {
+LABEL_28:
+          result = 0;
+        }
+        else
+        {
+          v31 = *(_DWORD *)(*(_DWORD *)(this + 1732) + 1504);
+          v23 = (double)HouseClass::SumPowerDrain((int *)(this + 276));
+          if ( (double)v31 < v23 + *(double *)((*(int (__thiscall **)(int))(*(_DWORD *)a2 + 132))(a2) + 896)
+            || *(double *)((*(int (__thiscall **)(int))(*(_DWORD *)a2 + 132))(a2) + 896) > *(double *)(*(_DWORD *)(this + 1732) + 904) )
+          {
+LABEL_54:
+            result = 10;
+          }
+          else
+          {
+            result = 1;
+          }
+        }
+      }
+      break;
+    case 21:
+      v10 = *(_DWORD *)(*(_DWORD *)(this + 1732) + 1504);
+      if ( HouseClass::SumPowerDrain((int *)(this + 276)) == v10 )
+        Timer::StartDouble((_BYTE *)(this + 848), *(double *)(*(_DWORD *)(this + 1732) + 968));
+      return 5;
+    case 22:
+      FootClass::MissionDispatch((int *)this, (_DWORD *)a2, a3, a4);
+      if ( *(_BYTE *)(this + 1711) || *(_WORD *)ProgressTimer::GetValue((_WORD *)(this + 904), &v25) == 0x4000 )
+      {
+        if ( !*(_DWORD *)(this + 1652) )
+          WinAPI::Wrapper(-2147467261);
+        if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(**(_DWORD **)(this + 1652) + 16))(*(_DWORD *)(this + 1652)) )
+        {
+          Member = Team::GetMember((_DWORD *)this, 0);
+          if ( *(_BYTE *)(this + 1048) )
+          {
+            if ( Member
+              && (*(int (__thiscall **)(int))(*(_DWORD *)Member + 44))(Member) == 6
+              && (*(int (__thiscall **)(int))(*(_DWORD *)this + 388))(this) == 7 )
+            {
+              (*(void (__thiscall **)(int, int, int))(*(_DWORD *)this + 632))(this, 21, Member);
+            }
+          }
+        }
+        return 1;
+      }
+      else
+      {
+        LOWORD(a2) = 0x4000;
+        if ( !*(_DWORD *)(this + 1652) )
+          WinAPI::Wrapper(-2147467261);
+        (*(void (__stdcall **)(_DWORD, int))(**(_DWORD **)(this + 1652) + 76))(*(_DWORD *)(this + 1652), a2);
+        return 1;
+      }
+    case 23:
+      v21 = *(_DWORD *)(this + 1732);
+      if ( *(_BYTE *)(v21 + 3598) || *(_BYTE *)(v21 + 3599) )
+      {
+        if ( *(_BYTE *)(this + 1745) )
+        {
+          v22 = *(_DWORD *)this;
+          *(_BYTE *)(this + 1745) = 0;
+          (*(void (__thiscall **)(int, int *, int, _DWORD))(v22 + 372))(this, &dword_B1CFE8, 1, 0);
+          (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)this + 488))(this, 10, 0);
+          if ( (*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)this + 512))(this) )
+            (*(void (__thiscall **)(int))(*(_DWORD *)this + 492))(this);
+        }
+      }
+      return FootClass::MissionDispatch((int *)this, (_DWORD *)a2, v4, a4);
+    case 36:
+      if ( (*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)this + 468))(this) )
+        return 0;
+      v7 = (_DWORD *)(*(int (__thiscall **)(int, _DWORD *, _DWORD))(*(_DWORD *)this + 76))(this, v28, 0);
+      if ( (*((_DWORD *)Coord::To_Cell(&MapClass_Instance, v7) + 80) & 0x100) != 0
+        && !(*(unsigned __int8 (__thiscall **)(int, _DWORD))(*(_DWORD *)this + 188))(this, 0) )
+      {
+        return 10;
+      }
+      if ( (*(int (__thiscall **)(int))(*(_DWORD *)this + 388))(this) == 16 )
+        return 10;
+      if ( *(_BYTE *)(this + 1048) )
+        return 10;
+      return *(_BYTE *)(this + 1668) != 0xFF ? 10 : 1;
+    default:
+      return FootClass::MissionDispatch((int *)this, (_DWORD *)a2, v4, a4);
+  }
+  return result;
+}

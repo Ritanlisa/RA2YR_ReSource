@@ -1,0 +1,210 @@
+// Original function at 0x738D30 (DeployToBuilding)
+// Line 679400 in gamemd.exe.c
+// Size: 6531 bytes
+
+//----- (00738D30) --------------------------------------------------------
+char __thiscall UnitClass_DeployToBuilding(_DWORD *this)
+{
+  int v3; // eax
+  int v4; // ecx
+  _DWORD *v5; // edx
+  _DWORD *v6; // eax
+  int *v7; // eax
+  int v8; // edx
+  _DWORD *BuildableFromArray; // eax
+  int v10; // edi
+  int v11; // eax
+  __int64 v12; // rax
+  _DWORD *v13; // eax
+  int v14; // edi
+  int v15; // eax
+  int FoundationHeight; // eax
+  int v17; // edi
+  void *v18; // eax
+  int *v19; // edi
+  _WORD *v20; // eax
+  __int16 v21; // cx
+  int v22; // ecx
+  int v23; // edi
+  void *v24; // eax
+  int v25; // [esp-1Ch] [ebp-50h]
+  int v26; // [esp+14h] [ebp-20h] BYREF
+  int v27; // [esp+18h] [ebp-1Ch] BYREF
+  int v28; // [esp+1Ch] [ebp-18h] BYREF
+  int v29; // [esp+20h] [ebp-14h] BYREF
+  _BYTE v30[4]; // [esp+24h] [ebp-10h] BYREF
+  _BYTE v31[12]; // [esp+28h] [ebp-Ch] BYREF
+
+  if ( !*(_DWORD *)(*(this + 433) + 1028) )
+    return 1;
+  (*(void (__thiscall **)(_DWORD *, _DWORD))(*this + 292))(this, 0);
+  v3 = 0;
+  v4 = RulesClass_Instance->NeutralTechBuildings[1];
+  if ( v4 <= 0 )
+    goto LABEL_7;
+  v5 = (_DWORD *)RulesClass_Instance->BuildDummy[2];
+  while ( *v5 != *(_DWORD *)(*(this + 433) + 1028) )
+  {
+    ++v3;
+    ++v5;
+    if ( v3 >= v4 )
+      goto LABEL_7;
+  }
+  if ( *(_BYTE *)((*(int (__thiscall **)(_DWORD *))(*this + 60))(this) + 497) )
+  {
+    if ( !*(this + 361) )
+    {
+      v27 = 0;
+      BuildableFromArray = (_DWORD *)HouseClass::FirstBuildableFromArray(&RulesClass_Instance->NSGates[2]);
+      v10 = BuildingTypeClass::GetFoundationWidth(BuildableFromArray) + 1;
+      v11 = HouseClass::FirstBuildableFromArray(&RulesClass_Instance->NSGates[2]);
+      v25 = BuildingTypeClass::GetFoundationHeight(v11, 0) + 1;
+      v12 = ((__int64 (__thiscall *)(_DWORD *, int *))*(_DWORD *)(*this + 440))(this, &v29);
+      v26 = *LayerClass::Pathfinding_Find(
+               &MapClass_Instance,
+               SHIDWORD(v12),
+               &v28,
+               (__int16 *)v12,
+               5,
+               -1,
+               0,
+               0,
+               v10,
+               v25,
+               0,
+               0,
+               0,
+               1,
+               (__int16 *)&v27,
+               0,
+               0);
+      v27 = 0;
+      v13 = (_DWORD *)HouseClass::FirstBuildableFromArray(&RulesClass_Instance->BuildDummy[1]);
+      v14 = BuildingTypeClass::GetFoundationWidth(v13) + 1;
+      v15 = HouseClass::FirstBuildableFromArray(&RulesClass_Instance->BuildDummy[1]);
+      FoundationHeight = BuildingTypeClass::GetFoundationHeight(v15, 0);
+      v26 = *LayerClass::Pathfinding_Find(
+               &MapClass_Instance,
+               (int)&v27,
+               &v29,
+               (__int16 *)&v26,
+               1,
+               -1,
+               0,
+               0,
+               v14,
+               FoundationHeight + 1,
+               0,
+               0,
+               0,
+               1,
+               (__int16 *)&v27,
+               0,
+               0);
+      if ( v26 != g_UnitSelectionState )
+      {
+        v17 = *this;
+        v18 = CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)&v26);
+        (*(void (__thiscall **)(_DWORD *, void *, int))(v17 + 1152))(this, v18, 1);
+      }
+      *(_BYTE *)((*(int (__thiscall **)(_DWORD *))(*this + 60))(this) + 497) = 0;
+    }
+  }
+  else
+  {
+LABEL_7:
+    if ( !*(this + 361) )
+    {
+      v6 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, _BYTE *))(*this + 72))(this, v31);
+      LOWORD(v27) = *v6 / 256;
+      HIWORD(v27) = v6[1] / 256;
+      v26 = v27;
+      v7 = CellStruct::Add(&v26, &v29, &dword_89F6A4);
+      v8 = *(this + 433);
+      v28 = *v7;
+      if ( (*(unsigned __int8 (__thiscall **)(_DWORD, int *, _DWORD))(**(_DWORD **)(v8 + 1028) + 168))(
+             *(_DWORD *)(v8 + 1028),
+             &v28,
+             0) )
+      {
+        (*(void (__thiscall **)(_DWORD *, int))(*this + 292))(this, 1);
+        return 1;
+      }
+      if ( !*(this + 361) )
+      {
+        if ( (byte_B1CF9D & 1) == 0 )
+        {
+          dword_B1D010 = -65536;
+          byte_B1CF9D |= 1u;
+          dword_B1D014 = -131072;
+          dword_B1D018 = -131071;
+          dword_B1D01C = -65537;
+          dword_B1D020 = -196608;
+          dword_B1D024 = -196607;
+          dword_B1D028 = -131073;
+          dword_B1D02C = -196606;
+          dword_B1D030 = -131074;
+          dword_B1D034 = -262144;
+          dword_B1D038 = -262143;
+          dword_B1D03C = -196609;
+          dword_B1D040 = -262142;
+          dword_B1D044 = -196610;
+          dword_B1D048 = 0x10000;
+          dword_B1D04C = 0x20000;
+          dword_B1D050 = 131073;
+          dword_B1D054 = 196607;
+          dword_B1D058 = 196608;
+          dword_B1D05C = 196609;
+          dword_B1D060 = 0x3FFFF;
+          dword_B1D064 = 196610;
+          dword_B1D068 = 262142;
+          dword_B1D06C = 0x40000;
+          dword_B1D070 = 262145;
+          dword_B1D074 = 327679;
+          dword_B1D078 = 262146;
+          dword_B1D07C = 327678;
+          dword_B1D084 = 65534;
+          dword_B1D088 = 65533;
+          dword_B1D08C = 65532;
+          dword_B1D090 = 1;
+          v27 = 4;
+          dword_B1D080 = 0xFFFF;
+          dword_B1D094 = 2;
+          dword_B1D098 = 3;
+          dword_B1D09C = 4;
+          atexit(nullsub_248);
+        }
+        v19 = &dword_B1D010;
+        while ( 1 )
+        {
+          v20 = (_WORD *)(*(int (__thiscall **)(_DWORD *, _BYTE *))(*this + 440))(this, v30);
+          v21 = v20[1] + *((_WORD *)v19 + 1);
+          LOWORD(v27) = *v20 + *(_WORD *)v19;
+          HIWORD(v27) = v21;
+          v29 = v27;
+          LOWORD(v26) = dword_89F6A4 + v27;
+          HIWORD(v26) = HIWORD(dword_89F6A4) + v21;
+          v22 = *(this + 433);
+          v28 = v26;
+          if ( (*(unsigned __int8 (__thiscall **)(_DWORD, int *, _DWORD))(**(_DWORD **)(v22 + 1028) + 168))(
+                 *(_DWORD *)(v22 + 1028),
+                 &v28,
+                 0) )
+          {
+            break;
+          }
+          if ( (int)++v19 >= (int)&dword_B1D0A0 )
+            goto LABEL_23;
+        }
+        v23 = *this;
+        v24 = CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)&v29);
+        (*(void (__thiscall **)(_DWORD *, void *, int))(v23 + 1152))(this, v24, 1);
+      }
+    }
+  }
+LABEL_23:
+  (*(void (__thiscall **)(_DWORD *, int))(*this + 292))(this, 1);
+  if ( !*(this + 361) && !(unsigned __int8)House::IsCurrentPlayer((#375 *)*(this + 135)) )
+    (*(void (__thiscall **)(_DWORD *, int *, _DWORD, _DWORD))(*this + 372))(this, &dword_B1CFE8, 0, 0);
+  return 0;
+}

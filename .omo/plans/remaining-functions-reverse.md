@@ -410,7 +410,7 @@ Max Concurrent: 7 (Wave 3)
   - Message: `feat(tools): function priority classifier + priority_matrix.json`
   - Files: `tools/classify_priority.py`, `tools/priority_matrix.json`
 
-- [ ] 5. Fix team/ stubs — TriggerClass, TagClass, ScriptClass, CampaignClass, TeamClass
+- [x] 5. Fix team/ stubs — TriggerClass, TagClass, ScriptClass, CampaignClass, TeamClass
 
   **What to do**:
   - 修复 `src/team/` 下全部 5 个文件的 stub 实现
@@ -463,7 +463,7 @@ Max Concurrent: 7 (Wave 3)
   - Message: `feat(team): complete TriggerClass/TagClass/ScriptClass/CampaignClass/TeamClass translations`
   - Files: `src/team/trigger.cpp`, `src/team/tag.cpp`, `src/team/script.cpp`, `src/team/campaign.cpp`, `src/team/team.cpp`
 
-- [ ] 6. Fix structure/ stubs — AircraftClass, InfantryClass, UnitClass, BuildingClass
+- [x] 6. Fix structure/ stubs — AircraftClass, InfantryClass, UnitClass, BuildingClass
 
   **What to do**:
   - aircraft.cpp (~35 TODOs): 飞行状态机、弹药管理、乘客系统
@@ -510,7 +510,7 @@ Max Concurrent: 7 (Wave 3)
   - Message: `feat(structure): complete Aircraft/Infantry/Unit/Building translations`
   - Files: `src/structure/aircraft.cpp`, `src/structure/infantry.cpp`, `src/structure/unit.cpp`, `src/structure/building.cpp`
 
-- [ ] 7. Fix misc/ + core/ + entity/ + network/ + app/ stubs (remaining Wave 2)
+- [x] 7. Fix misc/ + core/ + entity/ + network/ + app/ stubs (remaining Wave 2)
 
   **What to do**:
   - misc/audio.cpp (16 TODOs): VocClass/VoxClass 完整音频播放

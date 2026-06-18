@@ -1,0 +1,9 @@
+// Original function at 0x70FBD0 (IsDeactivated)
+// Line 645840 in gamemd.exe.c
+// Size: 157 bytes
+
+//----- (0070FBD0) --------------------------------------------------------
+char __thiscall UnitClass::IsDeactivated(_BYTE *this)
+{
+  return *(this + 456);
+}

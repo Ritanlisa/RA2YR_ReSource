@@ -1,0 +1,32 @@
+// Original function at 0x6B7BB0 (ProcessIdleOrders)
+// Line 577374 in gamemd.exe.c
+// Size: 707 bytes
+
+//----- (006B7BB0) --------------------------------------------------------
+void __thiscall UnitClass_ProcessIdleOrders(_DWORD *this)
+{
+  int i; // edi
+  int *v3; // eax
+  int v4; // eax
+  int v5; // [esp+Ch] [ebp-8h]
+
+  for ( i = 0; i < *(this + 18); ++i )
+  {
+    v3 = *(int **)(*(this + 15) + 4 * i);
+    if ( v3[1] == 2 )
+    {
+      v4 = *v3;
+      if ( *(_BYTE *)(*(_DWORD *)(v4 + 1732) + 3432) )
+      {
+        UnitClass::GetExitCell(v4, *(this + 26));
+        dword_ABC5F8 = (int)CurrentFrame;
+        dword_ABC5FC = v5;
+        dword_ABC600 = 2;
+        UnitClass::ClearTargetRef(**(_DWORD **)(*(this + 15) + 4 * i));
+      }
+    }
+  }
+  *(this + 28) = 0;
+  *(this + 27) = 0;
+  *(this + 26) = 0;
+}

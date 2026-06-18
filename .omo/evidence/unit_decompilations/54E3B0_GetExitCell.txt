@@ -1,0 +1,58 @@
+// Original function at 0x54E3B0 (GetExitCell)
+// Line 279818 in gamemd.exe.c
+// Size: 1626 bytes
+
+//----- (0054E3B0) --------------------------------------------------------
+int __thiscall UnitClass_GetExitCell(int this, _DWORD *a2, _DWORD *a3)
+{
+  _DWORD *v3; // esi
+  int result; // eax
+  _DWORD *v6; // eax
+  _DWORD *v7; // ecx
+  _DWORD *v8; // ebx
+  bool v9; // zf
+  unsigned int v10; // edi
+  _DWORD *v11; // eax
+  _DWORD *v12; // eax
+  int v13; // ecx
+  int v14; // edx
+  char v15[12]; // [esp+Ch] [ebp-Ch] BYREF
+
+  v3 = a2;
+  if ( !*(_BYTE *)(a2[433] + 3432) )
+    return (*(int (__thiscall **)(_DWORD *, _DWORD))(*a2 + 988))(a2, 0);
+  v6 = __2_YAPAXI_Z(8u);
+  v7 = a3;
+  v8 = v6;
+  v9 = a3 == 0;
+  *v6 = v3;
+  if ( v9 )
+  {
+    v10 = ((unsigned int)((*ProgressTimer::GetValue((_WORD *)v3 + 452, &a2) >> 12) + 1) >> 1) & 7;
+    v11 = (_DWORD *)(*(int (__thiscall **)(_DWORD *))(*v3 + 444))(v3);
+    v8[1] = Cell::GetNeighbourContent(v11, v10);
+  }
+  else
+  {
+    v12 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, char *))(*v7 + 72))(v7, v15);
+    LOWORD(a2) = *v12 / 256;
+    HIWORD(a2) = v12[1] / 256;
+    a3 = a2;
+    v8[1] = CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)&a3);
+  }
+  *((_BYTE *)v3 + 1738) = 1;
+  v3[191] = 1;
+  result = *(_DWORD *)(this + 20);
+  if ( *(_DWORD *)(this + 28) < result
+    || (*(_BYTE *)(this + 25) || !result)
+    && (v13 = *(_DWORD *)(this + 32), v13 > 0)
+    && (result = (*(int (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(this + 12) + 8))(this + 12, result + v13, 0),
+        (_BYTE)result) )
+  {
+    result = *(_DWORD *)(this + 28);
+    v14 = *(_DWORD *)(this + 16);
+    *(_DWORD *)(this + 28) = result + 1;
+    *(_DWORD *)(v14 + 4 * result) = v8;
+  }
+  return result;
+}

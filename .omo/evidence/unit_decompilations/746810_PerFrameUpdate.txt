@@ -1,0 +1,60 @@
+// Original function at 0x746810 (PerFrameUpdate)
+// Line 688771 in gamemd.exe.c
+// Size: 1191 bytes
+
+//----- (00746810) --------------------------------------------------------
+_DWORD *__usercall UnitClass_PerFrameUpdate@<eax>(_DWORD *a1@<ecx>, int a2@<edi>)
+{
+  _DWORD *result; // eax
+  int v4; // edi
+  int v5; // eax
+  int v6; // ecx
+  int v7; // eax
+  int v8; // edx
+  _DWORD *v9; // eax
+  int v10; // eax
+  int v11; // eax
+
+  result = TechnoClass::Update((int)a1, a2);
+  v4 = a1[433];
+  if ( v4 )
+  {
+    v5 = a1[135];
+    if ( v5 )
+    {
+      v6 = 0;
+      v7 = *(_DWORD *)(v5 + 52) + 360;
+      v8 = *(_DWORD *)(v7 + 16);
+      if ( v8 > 0 )
+      {
+        v9 = *(_DWORD **)(v7 + 4);
+        while ( *v9 != v4 )
+        {
+          ++v6;
+          ++v9;
+          if ( v6 >= v8 )
+            goto LABEL_9;
+        }
+        Power::ChangedHouse(a1 + 84, 1);
+      }
+    }
+LABEL_9:
+    v10 = a1[135];
+    if ( v10 )
+    {
+      if ( *(_BYTE *)(v10 + 704) )
+      {
+        v11 = a1[433];
+        if ( !*(_BYTE *)(v11 + 3278) )
+        {
+          if ( *(_BYTE *)(v11 + 3214) )
+            Power::ChangedHouse(a1 + 84, 1);
+        }
+      }
+    }
+    result = (_DWORD *)a1[433];
+    if ( *((_BYTE *)result + 2053) )
+      return (_DWORD *)UnitClass::SetTurret(0);
+  }
+  return result;
+}

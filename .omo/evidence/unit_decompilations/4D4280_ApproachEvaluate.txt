@@ -1,0 +1,394 @@
+// Original function at 0x4D4280 (ApproachEvaluate)
+// Line 177394 in gamemd.exe.c
+// Size: 13498 bytes
+
+//----- (004D4280) --------------------------------------------------------
+int __thiscall UnitClass_ApproachEvaluate(_DWORD *this)
+{
+  int v2; // eax
+  int v3; // ebp
+  int v5; // edx
+  int v6; // eax
+  int v7; // edi
+  int v8; // eax
+  _DWORD *v9; // eax
+  int v10; // eax
+  _DWORD *v11; // eax
+  int v12; // eax
+  int v13; // eax
+  int v14; // eax
+  int v15; // eax
+  int v16; // eax
+  int v17; // eax
+  int v18; // eax
+  char *MissionControl; // eax
+  int v20; // esi
+  int v21; // eax
+  #375 **v22; // edi
+  int v23; // ebx
+  int v24; // edi
+  int v25; // eax
+  int v26; // eax
+  int v27; // ebx
+  int v28; // edi
+  _DWORD *v29; // eax
+  int v30; // ebx
+  int v31; // eax
+  int v32; // eax
+  _DWORD *v33; // eax
+  int v34; // ebx
+  int v35; // eax
+  int v36; // ecx
+  int v37; // eax
+  __int16 *v38; // ebp
+  char v39; // al
+  int v40; // ecx
+  _DWORD *v41; // eax
+  void *v42; // edi
+  int v43; // eax
+  int v44; // ebx
+  int v45; // ecx
+  int v46; // eax
+  int v47; // edx
+  int v48; // edx
+  int v49; // edi
+  int v50; // eax
+  int v51; // ebx
+  int v52; // edi
+  int v53; // eax
+  _DWORD *v54; // eax
+  int v55; // ebx
+  int v56; // eax
+  int v57; // ecx
+  int v58; // eax
+  int v59; // eax
+  int TileIndex; // [esp-4h] [ebp-D0h]
+  int v61; // [esp+0h] [ebp-CCh]
+  int v62; // [esp+24h] [ebp-A8h]
+  int v63; // [esp+34h] [ebp-98h]
+  int v64; // [esp+38h] [ebp-94h]
+  int v65; // [esp+38h] [ebp-94h]
+  int v66; // [esp+38h] [ebp-94h]
+  int v67; // [esp+3Ch] [ebp-90h] BYREF
+  int v68; // [esp+40h] [ebp-8Ch]
+  int v69; // [esp+44h] [ebp-88h] BYREF
+  int v70; // [esp+48h] [ebp-84h] BYREF
+  int v71; // [esp+4Ch] [ebp-80h] BYREF
+  __int16 v72; // [esp+50h] [ebp-7Ch] BYREF
+  int v73; // [esp+54h] [ebp-78h] BYREF
+  int v74; // [esp+58h] [ebp-74h] BYREF
+  _DWORD v75[3]; // [esp+5Ch] [ebp-70h] BYREF
+  int v76; // [esp+68h] [ebp-64h] BYREF
+  _BYTE v77[12]; // [esp+6Ch] [ebp-60h] BYREF
+  _BYTE v78[4]; // [esp+78h] [ebp-54h] BYREF
+  _BYTE v79[20]; // [esp+7Ch] [ebp-50h] BYREF
+  _BYTE v80[12]; // [esp+90h] [ebp-3Ch] BYREF
+  _BYTE v81[12]; // [esp+9Ch] [ebp-30h] BYREF
+  _BYTE v82[12]; // [esp+A8h] [ebp-24h] BYREF
+  _BYTE v83[12]; // [esp+B4h] [ebp-18h] BYREF
+  _BYTE v84[12]; // [esp+C0h] [ebp-Ch] BYREF
+
+  v2 = (*(int (__thiscall **)(_DWORD *, int))(*this + 796))(this, 2);
+  *((_BYTE *)this + 1072) = 1;
+  v3 = v2 / 256 + 6;
+  switch ( *(this + 47) )
+  {
+    case 0:
+      v75[0] = *(this + 39);
+      v5 = *this;
+      v75[1] = *(this + 40);
+      v75[2] = *(this + 41);
+      v6 = (*(int (__thiscall **)(_DWORD *, int, _DWORD *, _DWORD))(v5 + 964))(this, 2, v75, 0);
+      v68 = v6;
+      if ( v6 )
+        v7 = (*(_BYTE *)(v6 + 20) & 2) != 0 ? v6 : 0;
+      else
+        v7 = 0;
+      v8 = (*(int (__thiscall **)(_DWORD *, int))(*this + 740))(this, v7);
+      if ( v7 )
+      {
+        if ( (*(unsigned __int8 (__thiscall **)(_DWORD *, int, int))(*this + 936))(this, v7, v8) )
+          goto LABEL_10;
+        v9 = (_DWORD *)(*(int (__thiscall **)(int))(*(_DWORD *)v7 + 76))(v7);
+        LOWORD(v63) = *v9 / 256;
+        HIWORD(v63) = v9[1] / 256;
+        v10 = *this;
+        v70 = v63;
+        v11 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, _BYTE *, _DWORD))(v10 + 76))(this, v79, 0);
+        LOWORD(v63) = *v11 / 256;
+        HIWORD(v63) = v11[1] / 256;
+        v71 = v63;
+        v12 = (*(int (__thiscall **)(int, _DWORD, int))(*(_DWORD *)v7 + 188))(v7, 0, -1);
+        v13 = (*(int (__thiscall **)(_DWORD *, _DWORD, int))(*this + 188))(this, 0, v12);
+        if ( Pathfinding::CalcDistance((int)g_AudioInitFlag, (__int16 *)&v73, &v72, (int)this, v13, (int)v81, 0) < v3 )
+        {
+LABEL_10:
+          v14 = (*(int (__thiscall **)(_DWORD *))(*this + 452))(this);
+          *(this + 375) = v14;
+          if ( (*(_DWORD *)(v14 + 320) & 0x100) != 0
+            && !(*(unsigned __int8 (__thiscall **)(_DWORD *, _DWORD))(*this + 188))(this, 0) )
+          {
+            v15 = *this;
+            v69 = 0;
+            v61 = *(_DWORD *)((*(int (__thiscall **)(_DWORD *))(v15 + 132))(this) + 1460);
+            v16 = (*(int (__thiscall **)(_DWORD *))(*this + 132))(this);
+            TileIndex = MapClass::GetTileIndex(
+                          &MapClass_Instance,
+                          (__int16 *)(*(this + 375) + 36),
+                          *(_DWORD *)(v16 + 1460),
+                          0);
+            v17 = (*(int (__thiscall **)(_DWORD *))(*this + 132))(this);
+            v67 = *LayerClass::Pathfinding_Find(
+                     &MapClass_Instance,
+                     (int)&v76,
+                     &v76,
+                     (__int16 *)(*(this + 375) + 36),
+                     *(_DWORD *)(v17 + 1660),
+                     TileIndex,
+                     v61,
+                     0,
+                     1,
+                     1,
+                     0,
+                     1,
+                     0,
+                     0,
+                     (__int16 *)&v69,
+                     0,
+                     0);
+            if ( v67 == g_FootClass_Pool )
+            {
+              *(this + 375) = 0;
+              return 60;
+            }
+            *(this + 375) = CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)&v67);
+          }
+          if ( !*(this + 134) )
+          {
+            v18 = *(this + 358);
+            if ( v18 <= 0 )
+            {
+              if ( *(this + 361) )
+                TechnoClass::SetFocus(this, *(this + 361));
+              else
+                TechnoClass::SetFocus(this, *(this + 375));
+            }
+            else
+            {
+              TechnoClass::SetFocus(this, *(_DWORD *)(*(this + 355) + 4 * v18 - 4));
+            }
+          }
+          (*(void (__thiscall **)(_DWORD *, _DWORD, int))(*this + 1152))(this, 0, 1);
+          (*(void (__thiscall **)(_DWORD *, int))(*this + 968))(this, v68);
+          goto LABEL_22;
+        }
+      }
+      if ( !*(this + 361) )
+        goto LABEL_28;
+      if ( !*(this + 413) )
+        WinAPI::Wrapper(-2147467261);
+      if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)*(this + 413) + 16))(*(this + 413)) )
+      {
+LABEL_28:
+        (*(void (__thiscall **)(_DWORD *, _DWORD, int))(*this + 1156))(this, 0, 1);
+        goto LABEL_70;
+      }
+LABEL_23:
+      MissionControl = MissionClass::GetMissionControl(this);
+      v20 = Math::RoundToInt(*((double *)MissionControl + 2) * 900.0);
+      return v20 + Random::Range((_DWORD *)ScenarioClass_Instance + 134, 0, 2);
+    case 1:
+      v21 = *(this + 173);
+      if ( v21 )
+        v22 = (*(_BYTE *)(v21 + 20) & 2) != 0 ? (#375 **)v21 : 0;
+      else
+        v22 = 0;
+      v23 = (*(int (__thiscall **)(_DWORD *, #375 **))(*this + 740))(this, v22);
+      if ( !(*(unsigned __int8 (__thiscall **)(_DWORD *))(*this + 816))(this) )
+        goto LABEL_41;
+      if ( !v22 )
+        goto LABEL_38;
+      if ( (*((int (__thiscall **)(#375 **))*v22 + 11))(v22) == 6
+        && (unsigned __int8)House::IsAlliedWith((#375 *)*(this + 135), v22[135])
+        && BuildingClass::GetHealthRatio((int *)v22) > *(double *)&RulesClass_Instance[1].ChronoSparkle1 )
+      {
+        (*(void (__thiscall **)(_DWORD *, _DWORD))(*this + 968))(this, 0);
+      }
+      else
+      {
+LABEL_41:
+        if ( v22 )
+        {
+          if ( (*(unsigned __int8 (__thiscall **)(_DWORD *, #375 **, int))(*this + 936))(this, v22, v23) )
+            goto LABEL_44;
+          v29 = (_DWORD *)(*((int (__thiscall **)(#375 **, _BYTE *))*v22 + 19))(v22, v83);
+          v30 = *(this + 375);
+          LOWORD(v64) = *v29 / 256;
+          HIWORD(v64) = v29[1] / 256;
+          v69 = v64;
+          v62 = (*((int (__thiscall **)(#375 **, _DWORD, int))*v22 + 47))(v22, 0, -1);
+          v31 = *(_DWORD *)(v30 + 320) >> 8;
+          LOBYTE(v31) = v31 & 1;
+          if ( Pathfinding::CalcDistance(
+                 (int)g_AudioInitFlag,
+                 (__int16 *)(v30 + 36),
+                 (__int16 *)&v70,
+                 (int)this,
+                 v31,
+                 v62,
+                 0) < v3 )
+          {
+LABEL_44:
+            (*(void (__thiscall **)(_DWORD *, _DWORD))(*this + 1340))(this, 0);
+            if ( *(this + 173) )
+              goto LABEL_23;
+            (*(void (__thiscall **)(_DWORD *, _DWORD, int))(*this + 1152))(this, *(this + 134), 1);
+            TechnoClass::SetFocus(this, 0);
+            *(this + 375) = 0;
+            *(this + 47) = 0;
+            return 45;
+          }
+        }
+      }
+LABEL_38:
+      if ( !*(this + 173) )
+      {
+        v24 = *this;
+        v25 = (*(int (__thiscall **)(_DWORD, _BYTE *, _DWORD))(*(_DWORD *)*(this + 375) + 72))(*(this + 375), v77, 0);
+        v26 = (*(int (__thiscall **)(_DWORD *, int, int))(v24 + 964))(this, 2, v25);
+        v27 = v26;
+        v68 = v26;
+        v28 = v26 ? ((*(_BYTE *)(v26 + 20) & 2) != 0 ? v26 : 0) : 0;
+        v32 = (*(int (__thiscall **)(_DWORD *, int))(*this + 740))(this, v28);
+        if ( v28 )
+        {
+          if ( (*(unsigned __int8 (__thiscall **)(_DWORD *, int, int))(*this + 936))(this, v28, v32) )
+          {
+LABEL_51:
+            (*(void (__thiscall **)(_DWORD *, int))(*this + 968))(this, v27);
+            (*(void (__thiscall **)(_DWORD *, _DWORD, int))(*this + 1152))(this, 0, 1);
+            return 1;
+          }
+          v33 = (_DWORD *)(*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)v28 + 76))(v28, v78);
+          v34 = *(this + 375);
+          LOWORD(v65) = *v33 / 256;
+          HIWORD(v65) = v33[1] / 256;
+          v70 = v65;
+          v35 = (*(int (__thiscall **)(int, _DWORD, int))(*(_DWORD *)v28 + 188))(v28, 0, -1);
+          v36 = *(_DWORD *)(v34 + 320) >> 8;
+          LOBYTE(v36) = v36 & 1;
+          if ( Pathfinding::CalcDistance(
+                 (int)g_AudioInitFlag,
+                 (__int16 *)(v34 + 36),
+                 (__int16 *)&v71,
+                 (int)this,
+                 v36,
+                 v35,
+                 0) < v3 )
+          {
+            v27 = v68;
+            goto LABEL_51;
+          }
+        }
+      }
+      v37 = *this;
+      *(this + 47) = 2;
+      (*(void (__thiscall **)(_DWORD *, _DWORD))(v37 + 968))(this, 0);
+      if ( *(this + 134) )
+      {
+        v38 = (__int16 *)(*(int (__thiscall **)(_DWORD *))(*this + 452))(this);
+        v39 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*this + 188))(this, 0);
+        v40 = *(this + 134);
+        LOBYTE(v68) = v39;
+        v41 = (_DWORD *)(*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)v40 + 72))(v40, v80);
+        v42 = Coord::To_Cell(&MapClass_Instance, v41);
+        v43 = *(this + 375);
+        v44 = v68;
+        v45 = *(_DWORD *)(v43 + 320) >> 8;
+        LOBYTE(v45) = v45 & 1;
+        v38 += 18;
+        v46 = Pathfinding::CalcDistance((int)g_AudioInitFlag, v38, (__int16 *)(v43 + 36), (int)this, v68, v45, -1);
+        v47 = *((_DWORD *)v42 + 80) >> 8;
+        LOBYTE(v47) = v47 & 1;
+        v68 = v46;
+        if ( v46 >= Pathfinding::CalcDistance((int)g_AudioInitFlag, v38, (__int16 *)v42 + 18, (int)this, v44, v47, -1) )
+          (*(void (__thiscall **)(_DWORD *, _DWORD, int))(*this + 1152))(this, *(this + 134), 1);
+        else
+          (*(void (__thiscall **)(_DWORD *, _DWORD, int))(*this + 1152))(this, *(this + 375), 1);
+        return 1;
+      }
+      else
+      {
+        v48 = *this;
+        *(this + 47) = 0;
+        (*(void (__thiscall **)(_DWORD *, _DWORD, int))(v48 + 1156))(this, 0, 1);
+        *(this + 47) = 3;
+        return 1;
+      }
+    case 2:
+      v49 = *this;
+      v50 = (*(int (__thiscall **)(_DWORD, _BYTE *, _DWORD))(*(_DWORD *)*(this + 375) + 72))(*(this + 375), v82, 0);
+      v51 = (*(int (__thiscall **)(_DWORD *, int, int))(v49 + 964))(this, 2, v50);
+      v68 = v51;
+      if ( v51 )
+        v52 = (*(_BYTE *)(v51 + 20) & 2) != 0 ? v51 : 0;
+      else
+        v52 = 0;
+      v53 = (*(int (__thiscall **)(_DWORD *, int))(*this + 740))(this, v52);
+      if ( !v52 )
+        goto LABEL_66;
+      if ( (*(unsigned __int8 (__thiscall **)(_DWORD *, int, int))(*this + 936))(this, v52, v53) )
+        goto LABEL_65;
+      v54 = (_DWORD *)(*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)v52 + 76))(v52, v84);
+      v55 = *(this + 375);
+      LOWORD(v66) = *v54 / 256;
+      HIWORD(v66) = v54[1] / 256;
+      v73 = v66;
+      v56 = (*(int (__thiscall **)(int, _DWORD, int))(*(_DWORD *)v52 + 188))(v52, 0, -1);
+      v57 = *(_DWORD *)(v55 + 320) >> 8;
+      LOBYTE(v57) = v57 & 1;
+      if ( Pathfinding::CalcDistance(
+             (int)g_AudioInitFlag,
+             (__int16 *)(v55 + 36),
+             (__int16 *)&v74,
+             (int)this,
+             v57,
+             v56,
+             0) < v3 )
+      {
+        v51 = v68;
+LABEL_65:
+        (*(void (__thiscall **)(_DWORD *, int))(*this + 968))(this, v51);
+        (*(void (__thiscall **)(_DWORD *, _DWORD, int))(*this + 1152))(this, 0, 1);
+LABEL_22:
+        *(this + 47) = 1;
+        goto LABEL_23;
+      }
+LABEL_66:
+      if ( *(this + 361) )
+        goto LABEL_23;
+      (*(void (__thiscall **)(_DWORD *, _DWORD))(*this + 968))(this, 0);
+      v58 = *(this + 134);
+      if ( v58 )
+      {
+        (*(void (__thiscall **)(_DWORD *, int, int))(*this + 1152))(this, v58, 1);
+        TechnoClass::SetFocus(this, 0);
+        *(this + 47) = 0;
+        *(this + 375) = 0;
+        goto LABEL_23;
+      }
+      v59 = *this;
+      *(this + 47) = 0;
+      (*(void (__thiscall **)(_DWORD *, _DWORD, int))(v59 + 1156))(this, 0, 1);
+LABEL_70:
+      *(this + 47) = 3;
+      return 1;
+    case 3:
+      if ( !*(this + 361) )
+        goto LABEL_23;
+      *(this + 47) = 0;
+      return 1;
+    default:
+      goto LABEL_23;
+  }
+}

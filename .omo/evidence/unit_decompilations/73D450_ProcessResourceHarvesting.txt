@@ -1,0 +1,82 @@
+// Original function at 0x73D450 (ProcessResourceHarvesting)
+// Line 682446 in gamemd.exe.c
+// Size: 2259 bytes
+
+//----- (0073D450) --------------------------------------------------------
+char __thiscall sub_73D450(void *this)
+{
+  __int16 *v2; // ebp
+  int v4; // eax
+  int v5; // ebx
+  double v6; // st7
+  int v7; // eax
+  int v8; // eax
+  wchar_t *v9; // eax
+  float v10; // [esp+0h] [ebp-28h]
+  float v11; // [esp+18h] [ebp-10h]
+  float v12; // [esp+18h] [ebp-10h]
+  int v13; // [esp+18h] [ebp-10h]
+  int v14; // [esp+1Ch] [ebp-Ch] BYREF
+  int v15; // [esp+20h] [ebp-8h]
+  int v16; // [esp+24h] [ebp-4h]
+
+  v14 = *((_DWORD *)this + 39);
+  v15 = *((_DWORD *)this + 40);
+  v16 = *((_DWORD *)this + 41);
+  v2 = (__int16 *)Coord::To_Cell(&MapClass_Instance, &v14);
+  if ( *((_DWORD *)this + 361) )
+    return 1;
+  if ( *(_BYTE *)(*((_DWORD *)this + 433) + 3598)
+    && ((double (__thiscall *)(void *))*(_DWORD *)(*(_DWORD *)this + 692))(this) < 1.0
+    && *((_DWORD *)v2 + 59) == 5 )
+  {
+    if ( *(_BYTE *)(*((_DWORD *)this + 433) + 3599) )
+    {
+      Helper_486E30(v2);
+      Float::Accumulate((float *)this + 207, 1.0, 0);
+      *((_DWORD *)this + 62) = 0;
+      v4 = RulesClass_Instance[1].DropPod[1];
+      *((_DWORD *)this + 64) = CurrentFrame;
+      v4 *= 3;
+      *((_DWORD *)this + 65) = v15;
+      *((_DWORD *)this + 66) = v4;
+      *((_DWORD *)this + 67) = v4;
+      return 1;
+    }
+    v5 = BuildingClass::FindByCellHash(v2);
+    v11 = (float)*(int *)(*((_DWORD *)this + 433) + 2048);
+    if ( v11 - Float4::Sum((float *)this + 207) <= 1.0 )
+    {
+      v12 = (float)*(int *)(*((_DWORD *)this + 433) + 2048);
+      v6 = v12 - Float4::Sum((float *)this + 207);
+    }
+    else
+    {
+      v6 = 1.0;
+    }
+    v7 = Math::RoundToInt(v6);
+    v13 = CellClass::ReduceTiberium((int)v2, v7);
+    if ( v13 > 0 )
+    {
+      v10 = (float)v13;
+      Float::Accumulate((float *)this + 207, v10, v5);
+      *((_DWORD *)this + 62) = 0;
+      v8 = RulesClass_Instance[1].DropPod[1];
+      *((_DWORD *)this + 64) = CurrentFrame;
+      *((_DWORD *)this + 65) = v15;
+      *((_DWORD *)this + 66) = v8;
+      *((_DWORD *)this + 67) = v8;
+      return 1;
+    }
+  }
+  else
+  {
+    *((_DWORD *)this + 62) = 0;
+    v9 = CurrentFrame;
+    *((_DWORD *)this + 67) = 0;
+    *((_DWORD *)this + 64) = v9;
+    *((_DWORD *)this + 65) = v15;
+    *((_DWORD *)this + 66) = 0;
+  }
+  return 0;
+}

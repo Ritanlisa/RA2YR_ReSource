@@ -1,0 +1,302 @@
+// Original function at 0x7359F0 (CalcMoveTarget)
+// Line 677460 in gamemd.exe.c
+// Size: 9071 bytes
+
+//----- (007359F0) --------------------------------------------------------
+void __thiscall UnitClass_CalcMoveTarget(int *this)
+{
+  _DWORD *v2; // eax
+  int *v3; // edi
+  int *v4; // eax
+  _DWORD *v5; // ebp
+  int *v6; // eax
+  _WORD *Height; // eax
+  int v8; // edx
+  int v9; // edx
+  int v10; // ecx
+  int v11; // ecx
+  void *v12; // eax
+  int GroundHeight; // ebx
+  int v14; // eax
+  char v15; // bl
+  int v16; // ebx
+  int *v17; // eax
+  _DWORD *v18; // eax
+  int *Coords; // ebp
+  _DWORD *v20; // eax
+  int *v21; // eax
+  int v22; // edx
+  int v23; // ecx
+  int v24; // eax
+  int *v25; // eax
+  int v26; // eax
+  int v27; // edi
+  unsigned int v28; // ebp
+  double v29; // st7
+  double v30; // st7
+  int v31; // eax
+  bool v32; // zf
+  signed int v33; // ebx
+  double v34; // st7
+  int v35; // eax
+  int v36; // edx
+  int v37; // ebp
+  int v38; // edi
+  unsigned int v39; // ebx
+  double v40; // st7
+  double v41; // st7
+  int v42; // eax
+  bool v43; // zf
+  signed int v44; // ebp
+  double v45; // st7
+  __int64 v46; // rax
+  _DWORD *v47; // ebx
+  int v48; // ebp
+  int v49; // eax
+  int v50; // ecx
+  int v51; // eax
+  int i; // ebp
+  _DWORD *v53; // edi
+  int v54; // edx
+  int v55; // edx
+  int v56; // edx
+  int v57; // eax
+  int v58; // edx
+  void *v59; // edx
+  int v60; // eax
+  __int16 *v61; // eax
+  int Type; // eax
+  int v63; // [esp+18h] [ebp-68h]
+  double v64; // [esp+18h] [ebp-68h]
+  int v65; // [esp+24h] [ebp-5Ch]
+  int v66; // [esp+24h] [ebp-5Ch]
+  int v67; // [esp+24h] [ebp-5Ch]
+  int v68; // [esp+24h] [ebp-5Ch]
+  int v69; // [esp+28h] [ebp-58h]
+  double v70; // [esp+28h] [ebp-58h]
+  double v71; // [esp+28h] [ebp-58h]
+  double v72[2]; // [esp+30h] [ebp-50h] BYREF
+  double v73; // [esp+40h] [ebp-40h] BYREF
+  int v74; // [esp+50h] [ebp-30h] BYREF
+  void *v75; // [esp+54h] [ebp-2Ch]
+  int v76; // [esp+58h] [ebp-28h] BYREF
+  void **v77; // [esp+5Ch] [ebp-24h] BYREF
+  void *Block; // [esp+60h] [ebp-20h]
+  int v79; // [esp+64h] [ebp-1Ch]
+  int v80; // [esp+68h] [ebp-18h]
+  int v81; // [esp+6Ch] [ebp-14h]
+  int v82; // [esp+70h] [ebp-10h] BYREF
+  int v83; // [esp+74h] [ebp-Ch] BYREF
+  int v84; // [esp+78h] [ebp-8h]
+  int v85; // [esp+7Ch] [ebp-4h]
+
+  if ( *(_DWORD *)(*((_DWORD *)g_PathClass_State + *((char *)this + 1668)) + 4 * *((char *)this + 1669) + 48) != -1 )
+  {
+    v2 = (_DWORD *)(*(int (__thiscall **)(int *))(*this + 72))(this);
+    v3 = this + 346;
+    v4 = Vector3::Subtract(v2, &v76, this + 346);
+    Coord::Length(v4);
+    v5 = (_DWORD *)*((_DWORD *)g_PathClass_State + *((char *)this + 1668));
+    v6 = (int *)(*(int (__thiscall **)(int *, int *, int *))(*this + 72))(this, &v82, this + 346);
+    Height = Cell::GetHeight(v72, v6, &v83);
+    v8 = *(this + 433);
+    LODWORD(v72[0]) = *(_DWORD *)Height;
+    v63 = Math::RoundToInt((double)*(int *)(v8 + 1656) * 1.5);
+    v65 = v5[10];
+    v74 = ((__int16)v65 << 8) + 128;
+    v9 = (__int16)v5[9];
+    v10 = (SHIWORD(v65) << 8) + 128;
+    v66 = v5[9];
+    v75 = (void *)v10;
+    v76 = 0;
+    v79 = 0;
+    v11 = v5[112];
+    v77 = (void **)((v9 << 8) + 128);
+    v12 = (void *)((SHIWORD(v66) << 8) + 128);
+    v67 = v11;
+    Block = v12;
+    GroundHeight = Cell::GetGroundHeight(&v77);
+    v68 = (Cell::GetGroundHeight(&v74) - GroundHeight) / v67;
+    if ( v69 > v63 )
+    {
+      v37 = v5[*((char *)this + 1669) + 12];
+      v83 = *(this + 39);
+      v84 = *(this + 40);
+      v38 = *(this + 41);
+      LODWORD(v72[0]) = SLOWORD(v72[0]) - 0x3FFF;
+      v73 = (double)SLODWORD(v72[0]) * -0.00009587672516830327;
+      v39 = HIDWORD(v73);
+      v71 = (double)v63;
+      v72[0] = (double)v84;
+      v40 = Math::SinCos(v73);
+      LODWORD(v72[0]) = Math::RoundToInt(v72[0] - v40 * v71);
+      v41 = Math::ArcTan2(COERCE_DOUBLE(__PAIR64__(v39, LODWORD(v73))));
+      v42 = Math::RoundToInt(v41 * v71 + (double)v83);
+      Coord::Subtract(&v77, v42, SLODWORD(v72[0]), v38);
+      v44 = v37 & 0x80000001;
+      v43 = v44 == 0;
+      v74 = (int)v77;
+      v75 = Block;
+      v76 = v79;
+      if ( v44 < 0 )
+        v43 = (((_BYTE)v44 - 1) | 0xFFFFFFFE) == -1;
+      if ( v43 )
+        v45 = 256.0;
+      else
+        v45 = 362.0386719675124;
+      v46 = Math::RoundToInt(v45);
+      v76 = v46;
+      (*(void (__fastcall **)(int *, _DWORD, int *))(*this + 436))(this, HIDWORD(v46), &v74);
+      return;
+    }
+    v14 = *this;
+    v15 = *((_BYTE *)this + 1669) + 1;
+    *((_BYTE *)this + 1669) = v15;
+    v16 = v5[v15 + 12];
+    (*(void (__thiscall **)(int *, int *))(v14 + 436))(this, this + 346);
+    if ( v16 != -1 )
+    {
+      v17 = Coord::Subtract(
+              &v83,
+              dword_89F6D8[2 * (v16 & 7)] + *v3,
+              *(this + 347) + dword_89F6DC[2 * (v16 & 7)],
+              *(this + 348));
+      v74 = *v17;
+      v75 = (void *)v17[1];
+      v76 = v17[2];
+      v18 = Coord::To_Cell(&MapClass_Instance, this + 346);
+      Coords = CellClass::GetCoords(v18, (int *)&v73);
+      v20 = Coord::To_Cell(&MapClass_Instance, &v74);
+      v21 = CellClass::GetCoords(v20, (int *)v72);
+      v22 = *v21 - *Coords + *v3;
+      v23 = v21[1] - Coords[1] + *(this + 347);
+      v24 = *(this + 348);
+      *v3 = v22;
+      *(this + 347) = v23;
+      *(this + 348) = v24;
+      *(this + 348) += v68;
+      v25 = (int *)(*(int (__thiscall **)(int *, int *))(*this + 72))(this, &v83);
+      v26 = (__int16)*(_DWORD *)Cell::GetHeight(v72, v25, this + 346);
+      v83 = *(this + 39);
+      v84 = *(this + 40);
+      v27 = *(this + 41);
+      LODWORD(v72[0]) = v63 - v69;
+      v73 = (double)(v26 - 0x3FFF) * -0.00009587672516830327;
+      v28 = HIDWORD(v73);
+      v64 = (double)(v63 - v69);
+      v70 = (double)v84;
+      v29 = Math::SinCos(v73);
+      LODWORD(v70) = Math::RoundToInt(v70 - v29 * v64);
+      v30 = Math::ArcTan2(COERCE_DOUBLE(__PAIR64__(v28, LODWORD(v73))));
+      v31 = Math::RoundToInt(v30 * v64 + (double)v83);
+      Coord::Subtract(&v74, v31, SLODWORD(v70), v27);
+      v33 = v16 & 0x80000001;
+      v32 = v33 == 0;
+      v77 = (void **)v74;
+      Block = v75;
+      v79 = v76;
+      if ( v33 < 0 )
+        v32 = (((_BYTE)v33 - 1) | 0xFFFFFFFE) == -1;
+      if ( v32 )
+        v34 = 256.0;
+      else
+        v34 = 362.0386719675124;
+      v35 = Math::RoundToInt(v34);
+      v36 = *this;
+      v79 = v35;
+      (*(void (__thiscall **)(int *, void ***))(v36 + 436))(this, &v77);
+      return;
+    }
+  }
+  v83 = *(this + 39);
+  v84 = *(this + 40);
+  v85 = *(this + 41);
+  v47 = Coord::To_Cell(&MapClass_Instance, &v83);
+  v48 = v47[57];
+  if ( v48 )
+  {
+    ObjectVector::Construct(&v77, 0, 0);
+    v49 = v79;
+    v50 = 10;
+    v77 = &DynamicVectorClass<ObjectClass *>::`vftable';
+    v82 = 10;
+    v81 = 0;
+    while ( 1 )
+    {
+      if ( v81 < v49 )
+        goto LABEL_24;
+      if ( (BYTE1(v80) || !v49) && v50 > 0 )
+        break;
+LABEL_26:
+      v48 = *(_DWORD *)(v48 + 48);
+      if ( !v48 )
+      {
+        for ( i = 0; i < v81; ++i )
+        {
+          v53 = (_DWORD *)*((_DWORD *)Block + i);
+          if ( (*(int (__thiscall **)(_DWORD *))(*v53 + 44))(v53) == 1
+            || (*(int (__thiscall **)(_DWORD *))(*v53 + 44))(v53) == 15 )
+          {
+            if ( !v53[413] )
+              WinAPI::Wrapper(-2147467261);
+            if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)v53[413] + 16))(v53[413]) )
+            {
+              v54 = *v53;
+              v83 = 0;
+              v84 = 0;
+              v85 = 0;
+              (*(void (__thiscall **)(_DWORD *, int *, int, int))(v54 + 372))(v53, &v83, 1, 1);
+            }
+          }
+        }
+        (*(void (__thiscall **)(int *, _DWORD, _DWORD))(*this + 1348))(this, 0, 0);
+        v77 = &VectorClass<ObjectClass *>::`vftable';
+        if ( Block && BYTE1(v80) )
+          __3_YAXPAX_Z(Block);
+        return;
+      }
+      v50 = v82;
+    }
+    if ( ((unsigned __int8 (__thiscall *)(void ***, int, _DWORD))v77[2])(&v77, v50 + v49, 0) )
+    {
+LABEL_24:
+      v51 = v81++;
+      *((_DWORD *)Block + v51) = v48;
+    }
+    v49 = v79;
+    goto LABEL_26;
+  }
+  v55 = *(this + 348);
+  LODWORD(v72[0]) = *(_DWORD *)(*((_DWORD *)g_PathClass_State + *((char *)this + 1668)) + 40);
+  v85 = v55;
+  v84 = (SWORD1(v72[0]) << 8) + 128;
+  v83 = (SLOWORD(v72[0]) << 8) + 128;
+  (*(void (__thiscall **)(int *, int *))(*this + 436))(this, &v83);
+  v56 = *this;
+  *((_BYTE *)this + 1668) = -1;
+  (*(void (__thiscall **)(int *, int))(v56 + 292))(this, 1);
+  if ( (_DWORD *)*(this + 361) == v47 )
+  {
+    v57 = *this;
+    v77 = 0;
+    Block = 0;
+    v79 = 0;
+    (*(void (__thiscall **)(int *, void ***, int, int))(v57 + 372))(this, &v77, 1, 1);
+  }
+  v58 = *this;
+  *((_BYTE *)this + 1675) = 1;
+  (*(void (__thiscall **)(int *, int))(v58 + 396))(this, 2);
+  (*(void (__thiscall **)(int *, _DWORD, int))(*this + 1348))(this, 0, 1072693248);
+  v59 = (void *)*(this + 40);
+  v60 = *(this + 41);
+  v77 = (void **)*(this + 39);
+  Block = v59;
+  v79 = v60;
+  v61 = (__int16 *)Coord::To_Cell(&MapClass_Instance, &v77);
+  Type = InfantryClass::GetType(v61);
+  if ( Type )
+  {
+    LOWORD(v72[0]) = (((unsigned __int16)*(_DWORD *)(Type + 44) << 13) - 24577) & 0xE000;
+    FacingClass::Set_SyncLog(v72);
+  }
+}

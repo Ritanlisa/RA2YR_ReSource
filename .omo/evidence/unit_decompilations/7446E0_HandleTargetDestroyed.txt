@@ -1,0 +1,17 @@
+// Original function at 0x7446E0 (HandleTargetDestroyed)
+// Line 687156 in gamemd.exe.c
+// Size: 377 bytes
+
+//----- (007446E0) --------------------------------------------------------
+int __thiscall UnitClass::HandleTargetDestroyed(int *this, int *a2, int *a3)
+{
+  int result; // eax
+
+  FootClass::HandleTargetDestroyed(this, a2, a3);
+  result = 0;
+  if ( (int *)*(this + 434) == a2 )
+    *(this + 434) = 0;
+  if ( (int *)*(this + 433) == a2 )
+    *(this + 433) = 0;
+  return result;
+}

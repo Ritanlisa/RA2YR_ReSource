@@ -1,0 +1,9 @@
+// Original function at 0x6B4F30 (StubReturn176)
+// Line 574994 in gamemd.exe.c
+// Size: 116 bytes
+
+//----- (006B4F30) --------------------------------------------------------
+int UnitClass::_vt12()
+{
+  return 176;
+}

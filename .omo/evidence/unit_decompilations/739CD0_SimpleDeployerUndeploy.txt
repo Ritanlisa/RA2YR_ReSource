@@ -1,0 +1,95 @@
+// Original function at 0x739CD0 (SimpleDeployerUndeploy)
+// Line 679995 in gamemd.exe.c
+// Size: 3102 bytes
+
+//----- (00739CD0) --------------------------------------------------------
+char __thiscall UnitClass::SimpleDeployerUndeploy(int this)
+{
+  int v2; // eax
+  int v3; // eax
+  int v4; // edx
+  int v5; // edi
+  __int16 *PlacementCellsAlt; // eax
+  void *v7; // eax
+  void **v8; // eax
+  void **v9; // eax
+  int v10; // eax
+  wchar_t *v11; // ecx
+  int v12; // eax
+  int v13; // edx
+  int v14; // eax
+  int v16; // [esp+8h] [ebp-10h] BYREF
+  int v17; // [esp+Ch] [ebp-Ch] BYREF
+  int v18; // [esp+10h] [ebp-8h]
+  int v19; // [esp+14h] [ebp-4h]
+
+  LOBYTE(v2) = *(_BYTE *)(this + 1760);
+  if ( (_BYTE)v2 )
+  {
+    if ( *(_BYTE *)(this + 1762) && (v3 = *(_DWORD *)(this + 304)) != 0 )
+    {
+      if ( *(_DWORD *)(this + 248) >= *(_DWORD *)(*(_DWORD *)(v3 + 200) + 704)
+                                    + *(_DWORD *)(*(_DWORD *)(v3 + 200) + 692)
+                                    - 2 )
+      {
+        v4 = *(_DWORD *)this;
+        *(_BYTE *)(this + 1760) = 0;
+        *(_BYTE *)(this + 1762) = 0;
+        if ( *(_BYTE *)((*(int (__thiscall **)(int))(v4 + 132))(this) + 1709) )
+        {
+          v5 = *(_DWORD *)this;
+          PlacementCellsAlt = (__int16 *)MapClass::FindPlacementCellsAlt((char *)this, &v16, this);
+          v7 = CellCoord::To_CellObj(&MapClass_Instance, PlacementCellsAlt);
+          (*(void (__thiscall **)(int, void *, int))(v5 + 1152))(this, v7, 1);
+        }
+      }
+    }
+    else if ( *(_DWORD *)(*(_DWORD *)(this + 1732) + 1724) )
+    {
+      if ( !*(_DWORD *)(this + 304) )
+      {
+        v8 = (void **)__2_YAPAXI_Z(0x1C8u);
+        if ( v8 )
+        {
+          v17 = *(_DWORD *)(this + 156);
+          v18 = *(_DWORD *)(this + 160);
+          v19 = *(_DWORD *)(this + 164);
+          v9 = AnimClass::ctor(v8, *(void **)(*(_DWORD *)(this + 1732) + 1724), &v17, 0, 1, (void *)0x600, 0, 1);
+        }
+        else
+        {
+          v9 = 0;
+        }
+        *(_DWORD *)(this + 304) = v9;
+        BuildingClass::AimTurret(v9, (_BYTE *)this);
+        *(_DWORD *)(*(_DWORD *)(this + 304) + 212) = (*(int (__thiscall **)(int))(*(_DWORD *)this + 484))(this);
+      }
+      v10 = *(_DWORD *)(this + 304);
+      *(_DWORD *)(this + 248) = *(_DWORD *)(*(_DWORD *)(v10 + 200) + 692);
+      v11 = CurrentFrame;
+      v12 = *(_DWORD *)(*(_DWORD *)(v10 + 200) + 688);
+      *(_DWORD *)(this + 268) = v12;
+      *(_DWORD *)(this + 256) = v11;
+      *(_DWORD *)(this + 260) = v18;
+      *(_DWORD *)(this + 264) = v12;
+      *(_BYTE *)(this + 1762) = 1;
+    }
+    else
+    {
+      *(_BYTE *)(this + 1760) = 0;
+    }
+    if ( (*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)this + 196))(this) )
+      (*(void (__thiscall **)(int))(*(_DWORD *)this + 1136))(this);
+    v2 = (*(int (__thiscall **)(int))(*(_DWORD *)this + 132))(this);
+    if ( *(_DWORD *)(v2 + 1392) != -1 )
+    {
+      v17 = *(_DWORD *)(this + 156);
+      v18 = *(_DWORD *)(this + 160);
+      v13 = *(_DWORD *)this;
+      v19 = *(_DWORD *)(this + 164);
+      v14 = (*(int (__thiscall **)(int))(v13 + 132))(this);
+      LOBYTE(v2) = StartAudioControllerAt(*(_DWORD *)(v14 + 1392), (int)&v17, 0);
+    }
+  }
+  return v2;
+}

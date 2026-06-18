@@ -1,0 +1,36 @@
+// Original function at 0x7438F0 (CanCrushTarget)
+// Line 686560 in gamemd.exe.c
+// Size: 1716 bytes
+
+//----- (007438F0) --------------------------------------------------------
+bool __thiscall sub_7438F0(int this, _BYTE *a2)
+{
+  _DWORD *v3; // edi
+  _DWORD *v4; // eax
+  double v5; // st7
+  int v6; // ecx
+  bool result; // al
+  int v8; // [esp+20h] [ebp-20h]
+  int v9; // [esp+24h] [ebp-1Ch]
+  _BYTE v10[12]; // [esp+28h] [ebp-18h] BYREF
+  _BYTE v11[12]; // [esp+34h] [ebp-Ch] BYREF
+
+  result = (*(_BYTE *)(*(_DWORD *)(this + 1732) + 3368) || TechnoTypeClass::HasVoiceResponse((float *)this, 17))
+        && a2
+        && ObjectClass::IsCrushable(a2, (_DWORD **)this)
+        && (v3 = (_DWORD *)(*(int (__thiscall **)(_BYTE *, _BYTE *))(*(_DWORD *)a2 + 72))(a2, v10),
+            v4 = (_DWORD *)(*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)this + 72))(this, v11),
+            v8 = v4[1] - v3[1],
+            v9 = v4[2] - v3[2],
+            v5 = Math::Sqrt((double)(*v4 - *v3) * (double)(*v4 - *v3) + (double)v9 * (double)v9 + (double)v8
+                                                                                                * (double)v8),
+            (int)Math::RoundToInt(v5) <= RulesClass_Instance[1].PrerequisitePower[3])
+        && (!(unsigned __int8)House::IsCurrentPlayer(*(#375 **)(this + 540))
+         || HIBYTE(RulesClass_Instance[1].RadarEventDurations[3])
+         || *(_BYTE *)(*(_DWORD *)(this + 1732) + 3373))
+        && (v6 = *(_DWORD *)(this + 540), *(_DWORD *)(v6 + 388) != 2)
+        && ((unsigned __int8)House::IsCurrentPlayer((#375 *)v6)
+         || *(_DWORD *)(*(_DWORD *)(this + 540) + 588) >= SLODWORD(RulesClass_Instance[1].TiberiumHeal))
+        && (*(unsigned __int8 (__thiscall **)(_BYTE *, _DWORD))(*(_DWORD *)a2 + 200))(a2, *(_DWORD *)(this + 540)) == 0;
+  return result;
+}

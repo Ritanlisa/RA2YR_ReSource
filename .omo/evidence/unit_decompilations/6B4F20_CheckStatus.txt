@@ -1,0 +1,9 @@
+// Original function at 0x6B4F20 (CheckStatus)
+// Line 574988 in gamemd.exe.c
+// Size: 148 bytes
+
+//----- (006B4F20) --------------------------------------------------------
+int __thiscall UnitClass::_vt34(_DWORD *this)
+{
+  return *(this + 43);
+}

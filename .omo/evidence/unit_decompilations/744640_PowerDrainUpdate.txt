@@ -1,0 +1,37 @@
+// Original function at 0x744640 (PowerDrainUpdate)
+// Line 687118 in gamemd.exe.c
+// Size: 1080 bytes
+
+//----- (00744640) --------------------------------------------------------
+int __thiscall UnitClass_PowerDrainUpdate(int this, int *a2)
+{
+  int v3; // eax
+  int v4; // eax
+  int v5; // eax
+  int v6; // eax
+  int v7; // ecx
+  int v8; // edx
+  int v9; // eax
+  int v10; // ecx
+
+  FootClass::BeginPowerUpdate(a2);
+  v3 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 1732) + 44))(*(_DWORD *)(this + 1732));
+  Power::TimerProcess(v3);
+  v4 = (*(int (__stdcall **)(int))(*(_DWORD *)(*(_DWORD *)(this + 1732) + 4) + 16))(*(_DWORD *)(this + 1732) + 4);
+  Power::TimerProcess(v4);
+  v5 = *(_DWORD *)(this + 1736);
+  if ( v5 )
+  {
+    v6 = (*(int (__stdcall **)(int))(*(_DWORD *)(v5 + 4) + 16))(v5 + 4);
+    Power::TimerProcess(v6);
+  }
+  Power::TimerProcess(*(_DWORD *)(this + 1740));
+  LOBYTE(v7) = *(_BYTE *)(this + 1744);
+  Power::FlagProcess(a2, v7);
+  LOBYTE(v8) = *(_BYTE *)(this + 1745);
+  v9 = Power::FlagProcess(a2, v8);
+  LOBYTE(v9) = *(_BYTE *)(this + 1746);
+  Power::FlagProcess(a2, v9);
+  LOBYTE(v10) = *(_BYTE *)(this + 1671);
+  return Power::FlagProcess(a2, v10);
+}

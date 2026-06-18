@@ -1,0 +1,28 @@
+// Original function at 0x70DC70 (SetTurret)
+// Line 643995 in gamemd.exe.c
+// Size: 614 bytes
+
+//----- (0070DC70) --------------------------------------------------------
+int __thiscall UnitClass_SetTurret(_DWORD *this, unsigned int a2)
+{
+  int result; // eax
+
+  result = (*(int (__thiscall **)(_DWORD *))(*this + 132))(this);
+  if ( !*(_BYTE *)(result + 2064) )
+  {
+    (*(void (__thiscall **)(_DWORD *))(*this + 132))(this);
+    if ( a2 > 0x11 )
+    {
+      result = UnitClass::processEnterTarget(0);
+      *(this + 73) = result;
+      *(this + 78) = 0;
+    }
+    else
+    {
+      result = UnitClass::processEnterTarget(a2);
+      *(this + 78) = a2;
+      *(this + 73) = result;
+    }
+  }
+  return result;
+}

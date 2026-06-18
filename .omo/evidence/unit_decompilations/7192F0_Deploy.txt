@@ -1,0 +1,368 @@
+// Original function at 0x7192F0 (Deploy)
+// Line 652843 in gamemd.exe.c
+// Size: 11235 bytes
+
+//----- (007192F0) --------------------------------------------------------
+char __stdcall sub_7192F0(_DWORD *a1)
+{
+  _DWORD *v1; // esi
+  int v2; // ecx
+  int v3; // eax
+  int v4; // edx
+  _DWORD *v6; // ecx
+  _DWORD *v7; // ebp
+  int i; // edi
+  void **v9; // eax
+  int *v10; // ecx
+  _DWORD *v11; // eax
+  int v12; // edi
+  int v13; // ecx
+  int v14; // edx
+  int v15; // eax
+  double v16; // st7
+  int *v17; // edi
+  int v18; // edx
+  _DWORD *v19; // ebx
+  int v20; // eax
+  int v21; // edx
+  int v22; // eax
+  int v23; // ebx
+  int *v24; // eax
+  _DWORD *v25; // edx
+  int v26; // ecx
+  int v27; // edx
+  int v28; // eax
+  int *v29; // edi
+  int v30; // eax
+  int *v31; // edi
+  _DWORD *v32; // ebx
+  int *v33; // edi
+  int v34; // eax
+  int *v35; // edi
+  void **v36; // eax
+  int *v37; // ecx
+  void **v38; // eax
+  int *v39; // edx
+  int *v40; // edi
+  int v41; // eax
+  int *v42; // edi
+  char PlacementPosition; // al
+  int v44; // edi
+  _DWORD *v45; // ebp
+  int *v46; // edi
+  int v47; // eax
+  int *v48; // edi
+  __int16 *v49; // eax
+  _BYTE *v50; // ecx
+  int v51; // ecx
+  void **v52; // eax
+  int *v53; // ecx
+  _DWORD *v54; // [esp+28h] [ebp-20h] BYREF
+  int v55; // [esp+2Ch] [ebp-1Ch] BYREF
+  int v56; // [esp+30h] [ebp-18h]
+  int v57; // [esp+34h] [ebp-14h]
+  char v58[4]; // [esp+38h] [ebp-10h] BYREF
+  int v59; // [esp+3Ch] [ebp-Ch]
+  int v60; // [esp+44h] [ebp-4h]
+
+  v1 = a1;
+  v2 = a1[2];
+  v60 = 0;
+  if ( *(_BYTE *)(v2 + 625) && !a1[13] && !*(_DWORD *)(v2 + 640) )
+    goto LABEL_82;
+  v3 = a1[13];
+  if ( !v3 )
+  {
+    v4 = *(_DWORD *)(v2 + 640);
+    if ( v4 )
+    {
+      a1[13] = v4;
+      return 0;
+    }
+  }
+  if ( *(_BYTE *)(v2 + 636) )
+  {
+    if ( !v3 )
+    {
+      *(_BYTE *)(v2 + 624) = 1;
+      v1[14] = CurrentFrame;
+      v1[15] = v59;
+      v1[16] = 60;
+      ++v1[13];
+      return 0;
+    }
+  }
+  else if ( v3 <= 0 )
+  {
+    if ( (*(unsigned __int8 (__stdcall **)(_DWORD *))(*a1 + 16))(a1) )
+    {
+      v6 = (_DWORD *)v1[2];
+      v7 = v1 + 9;
+      if ( v6[39] == v1[9] && v6[40] == v1[10] && v6[41] == v1[11]
+        || *v7 == dword_B0EBF8 && v1[10] == dword_B0EBFC && v1[11] == dword_B0EC00 )
+      {
+        (*(void (__thiscall **)(_DWORD *, _DWORD, int))(*v6 + 1152))(v6, 0, 1);
+        (*(void (__stdcall **)(_DWORD *))(*v1 + 72))(v1);
+        return 0;
+      }
+      else
+      {
+        AbstractClass::ClearTargetToMeClearManagerTarget(v6);
+        for ( i = dword_A8ED50 - 1; i >= 0; --i )
+        {
+          if ( *(_DWORD *)(*((_DWORD *)dword_A8ED44 + i) + 268) == v1[2] )
+            BulletClass::LoseTarget();
+        }
+        v9 = (void **)__2_YAPAXI_Z(0x1C8u);
+        if ( v9 )
+        {
+          v10 = (int *)(v1[2] + 156);
+          v55 = *v10;
+          v56 = v10[1];
+          v57 = v10[2];
+          AnimClass::ctor(v9, *((void **)RulesClass_Instance + 207), &v55, 0, 1, (void *)0x600, 0, 0);
+        }
+        v11 = (_DWORD *)(*(int (__thiscall **)(_DWORD, char *))(*(_DWORD *)v1[2] + 72))(v1[2], v58);
+        v12 = v1[11];
+        v13 = *v11 - *v7;
+        v14 = v11[1];
+        v15 = v11[2];
+        v55 = v13;
+        v56 = v14 - v1[10];
+        v57 = v15 - v12;
+        v16 = Math::Sqrt((double)v13 * (double)v13 + (double)(v15 - v12) * (double)(v15 - v12) + (double)v56
+                                                                                               * (double)v56);
+        v17 = v1 + 14;
+        v18 = Math::RoundToInt(v16);
+        a1 = (_DWORD *)v18;
+        v1[14] = CurrentFrame;
+        v1[15] = v59;
+        v1[16] = 0;
+        v19 = RulesClass_Instance;
+        if ( *((_BYTE *)RulesClass_Instance + 3064) )
+        {
+          v20 = v18 / *((_DWORD *)RulesClass_Instance + 765);
+          *v17 = (int)CurrentFrame;
+          v1[15] = v59;
+          v1[16] = v20;
+          v19 = RulesClass_Instance;
+        }
+        v21 = *v17;
+        v22 = v1[16];
+        if ( *v17 != -1 )
+        {
+          if ( (int)CurrentFrame - v21 >= v22 )
+            v22 = 0;
+          else
+            v22 -= (int)CurrentFrame - v21;
+        }
+        v23 = v19[767];
+        if ( v22 <= v23 )
+        {
+          v57 = v23;
+          v55 = (int)CurrentFrame;
+          v24 = &v55;
+        }
+        else
+        {
+          v24 = v1 + 14;
+        }
+        *v17 = *v24;
+        v1[15] = v24[1];
+        v25 = a1;
+        v1[16] = v24[2];
+        if ( (int)v25 < *((_DWORD *)RulesClass_Instance + 768) )
+        {
+          v26 = *((_DWORD *)RulesClass_Instance + 767);
+          *v17 = (int)CurrentFrame;
+          v1[15] = v59;
+          v1[16] = v26;
+        }
+        *(_BYTE *)(v1[2] + 625) = 1;
+        if ( (*(int (__thiscall **)(_DWORD))(*(_DWORD *)v1[2] + 44))(v1[2]) == 1
+          && *(_BYTE *)(*(_DWORD *)(v1[2] + 1732) + 3598) )
+        {
+          v27 = v59;
+          *v17 = (int)CurrentFrame;
+          v1[15] = v27;
+          v1[16] = 0;
+          *(_BYTE *)(v1[2] + 625) = 0;
+        }
+        v28 = *(_DWORD *)(v1[2] + 1684);
+        if ( v28 )
+          BuildingClass::Deploy(*(_DWORD *)(v28 + 1692), (int)v7, (int)v17);
+        (*(void (__thiscall **)(_DWORD, _DWORD))(*(_DWORD *)v1[2] + 292))(v1[2], 0);
+        v29 = (int *)v1[2];
+        v30 = *(_DWORD *)((*(int (__thiscall **)(int *))(*v29 + 132))(v29) + 1400);
+        if ( v30 != -1 || (v30 = *((_DWORD *)RulesClass_Instance + 135), v30 != -1) )
+        {
+          v31 = v29 + 39;
+          v55 = *v31;
+          v56 = v31[1];
+          v57 = v31[2];
+          StartAudioControllerAt(v30, (int)&v55, 0);
+        }
+        (*(void (__thiscall **)(_DWORD, _DWORD *))(*(_DWORD *)v1[2] + 436))(v1[2], v1 + 9);
+        LOWORD(a1) = *v7 / 256;
+        HIWORD(a1) = v1[10] / 256;
+        v54 = a1;
+        v32 = CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)&v54);
+        (*(void (__thiscall **)(_DWORD, _DWORD *))(*(_DWORD *)v1[2] + 436))(v1[2], v1 + 9);
+        *(_BYTE *)(v1[2] + 140) = (v32[80] & 0x100) != 0;
+        (*(void (__thiscall **)(_DWORD, _DWORD))(*(_DWORD *)v1[2] + 460))(v1[2], 0);
+        (*(void (__thiscall **)(_DWORD, int))(*(_DWORD *)v1[2] + 292))(v1[2], 1);
+        v33 = (int *)v1[2];
+        v34 = *(_DWORD *)((*(int (__thiscall **)(int *))(*v33 + 132))(v33) + 1396);
+        if ( v34 != -1 || (v34 = *((_DWORD *)RulesClass_Instance + 134), v34 != -1) )
+        {
+          v35 = v33 + 39;
+          v55 = *v35;
+          v56 = v35[1];
+          v57 = v35[2];
+          StartAudioControllerAt(v34, (int)&v55, 0);
+        }
+        (*(void (__thiscall **)(_DWORD, int))(*(_DWORD *)v1[2] + 396))(v1[2], 2);
+        (*(void (__stdcall **)(_DWORD *))(*v1 + 72))(v1);
+        CrateClass::ProcessPickup(v32, v1[2]);
+        (*(void (__thiscall **)(_DWORD, _DWORD, int))(*(_DWORD *)v1[2] + 1152))(v1[2], 0, 1);
+        v36 = (void **)__2_YAPAXI_Z(0x1C8u);
+        if ( v36 )
+        {
+          v37 = (int *)(v1[2] + 156);
+          v55 = *v37;
+          v56 = v37[1];
+          v57 = v37[2];
+          AnimClass::ctor(v36, *((void **)RulesClass_Instance + 207), &v55, 0, 1, (void *)0x600, 0, 0);
+        }
+        *(_DWORD *)(v1[2] + 640) = 0;
+        return 0;
+      }
+    }
+    return 0;
+  }
+  switch ( v3 )
+  {
+    case 1:
+LABEL_82:
+      (*(void (__stdcall **)(_DWORD *))(*(a1 - 1) + 40))(a1 - 1);
+      return 0;
+    case 2:
+      v38 = (void **)__2_YAPAXI_Z(0x1C8u);
+      if ( v38 )
+      {
+        v39 = (int *)(v1[2] + 156);
+        v55 = *v39;
+        v56 = v39[1];
+        v57 = v39[2];
+        AnimClass::ctor(v38, *((void **)RulesClass_Instance + 207), &v55, 0, 1, (void *)0x600, 0, 0);
+      }
+      (*(void (__thiscall **)(_DWORD, _DWORD))(*(_DWORD *)v1[2] + 292))(v1[2], 0);
+      v40 = (int *)v1[2];
+      v41 = *(_DWORD *)((*(int (__thiscall **)(int *))(*v40 + 132))(v40) + 1400);
+      if ( v41 != -1 || (v41 = *((_DWORD *)RulesClass_Instance + 135), v41 != -1) )
+      {
+        v42 = v40 + 39;
+        v55 = *v42;
+        v56 = v42[1];
+        v57 = v42[2];
+        StartAudioControllerAt(v41, (int)&v55, 0);
+      }
+      *(_BYTE *)(v1[2] + 625) = 1;
+      *(_BYTE *)(v1[2] + 636) = 0;
+      *(_BYTE *)(v1[2] + 624) = 0;
+      *(_BYTE *)(v1[2] + 140) = 0;
+      PlacementPosition = ObjectClass::FindPlacementPosition(
+                            v1 - 1,
+                            *(_DWORD *)(v1[2] + 648),
+                            *(_DWORD *)(v1[2] + 652),
+                            *(_DWORD *)(v1[2] + 656),
+                            0);
+      v44 = v1[13] + 1;
+      v1[13] = v44;
+      if ( PlacementPosition )
+      {
+        v1[13] = v44 + 1;
+        return 0;
+      }
+      return 0;
+    case 3:
+      if ( ObjectClass::FindPlacementPosition(
+             a1 - 1,
+             *(_DWORD *)(v2 + 648),
+             *(_DWORD *)(v2 + 652),
+             *(_DWORD *)(v2 + 656),
+             0) )
+      {
+        ++v1[13];
+      }
+      *(_DWORD *)(v1[2] + 644) = *((_DWORD *)RulesClass_Instance + 763);
+      return 0;
+    case 4:
+      ObjectClass::FindPlacementPosition(a1 - 1, *(_DWORD *)(v2 + 648), *(_DWORD *)(v2 + 652), *(_DWORD *)(v2 + 656), 1);
+      (*(void (__thiscall **)(_DWORD, _DWORD *))(*(_DWORD *)v1[2] + 436))(v1[2], v1 + 9);
+      (*(void (__thiscall **)(_DWORD, _DWORD))(*(_DWORD *)v1[2] + 460))(v1[2], 0);
+      (*(void (__thiscall **)(_DWORD, int))(*(_DWORD *)v1[2] + 292))(v1[2], 1);
+      ++v1[13];
+      return 0;
+  }
+  if ( v3 != 5 )
+  {
+    if ( v3 != 6 )
+    {
+      if ( v3 == 7 )
+      {
+        *(_BYTE *)(v2 + 625) = 0;
+        TechnoClass::SetFocus((_DWORD *)v1[2], 0);
+        (*(void (__thiscall **)(_DWORD, _DWORD, int))(*(_DWORD *)v1[2] + 1152))(v1[2], 0, 1);
+        *((_BYTE *)v1 + 48) = 0;
+        *(_DWORD *)(v1[2] + 640) = 0;
+        v1[13] = 0;
+      }
+      return 0;
+    }
+    goto LABEL_82;
+  }
+  v45 = a1 + 9;
+  (*(void (__thiscall **)(int, _DWORD *))(*(_DWORD *)v2 + 436))(v2, a1 + 9);
+  (*(void (__thiscall **)(_DWORD, _DWORD))(*(_DWORD *)v1[2] + 460))(v1[2], 0);
+  (*(void (__thiscall **)(_DWORD, int))(*(_DWORD *)v1[2] + 292))(v1[2], 1);
+  v46 = (int *)v1[2];
+  v47 = *(_DWORD *)((*(int (__thiscall **)(int *))(*v46 + 132))(v46) + 1396);
+  if ( v47 != -1 || (v47 = *((_DWORD *)RulesClass_Instance + 134), v47 != -1) )
+  {
+    v48 = v46 + 39;
+    v55 = *v48;
+    v56 = v48[1];
+    v57 = v48[2];
+    StartAudioControllerAt(v47, (int)&v55, 0);
+  }
+  v49 = (__int16 *)(*(int (__thiscall **)(_DWORD, _DWORD **))(*(_DWORD *)v1[2] + 440))(v1[2], &a1);
+  if ( !LayerClass::IsWithinUsableArea(&MapClass_Instance, v49, 1) )
+    *(_BYTE *)(v1[2] + 981) = 0;
+  if ( !*(_DWORD *)(v1[2] + 640) )
+    ProcessUnitDeploymentAtCell(*v45, v1[10], v1[11]);
+  v50 = (_BYTE *)v1[2];
+  if ( !v50[144] )
+    return 0;
+  (*(void (__thiscall **)(_BYTE *, int))(*(_DWORD *)v50 + 396))(v50, 2);
+  (*(void (__stdcall **)(_DWORD *))(*v1 + 72))(v1);
+  *(_DWORD *)(v1[2] + 1064) = 0;
+  *(_DWORD *)(v1[2] + 1068) = 0;
+  TechnoClass::SetFocus((_DWORD *)v1[2], 0);
+  (*(void (__thiscall **)(_DWORD, _DWORD, int))(*(_DWORD *)v1[2] + 1152))(v1[2], 0, 1);
+  v51 = *(_DWORD *)(v1[2] + 644);
+  v1[14] = CurrentFrame;
+  v1[15] = v59;
+  v1[16] = v51;
+  v52 = (void **)__2_YAPAXI_Z(0x1C8u);
+  if ( v52 )
+  {
+    v53 = (int *)(v1[2] + 156);
+    v55 = *v53;
+    v56 = v53[1];
+    v57 = v53[2];
+    AnimClass::ctor(v52, *((void **)RulesClass_Instance + 207), &v55, 0, 1, (void *)0x600, 0, 0);
+  }
+  ++v1[13];
+  return 0;
+}

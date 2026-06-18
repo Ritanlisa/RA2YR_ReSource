@@ -1,0 +1,39 @@
+// Original function at 0x6B4A50 (Create)
+// Line 574787 in gamemd.exe.c
+// Size: 1060 bytes
+
+//----- (006B4A50) --------------------------------------------------------
+void **__thiscall UnitClass::Create(void **this, void *a2, _DWORD *a3, int a4)
+{
+  int v5; // eax
+
+  ObjectClass::ctor(this);
+  *this = &SmudgeClass::`vftable';
+  *(this + 43) = a2;
+  *(this + 2) = &SmudgeClass::`vftable';
+  *(this + 1) = &SmudgeClass::`vftable';
+  *(this + 3) = &SmudgeClass::`vftable';
+  AbstractClass::GenerateUniqueID((int)(this + 1));
+  if ( dword_A8B1F0 < dword_A8B1E8
+    || (byte_A8B1ED || !dword_A8B1E8)
+    && dword_A8B1F4 > 0
+    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(SmudgeClass_Array + 8))(
+         &SmudgeClass_Array,
+         dword_A8B1E8 + dword_A8B1F4,
+         0) )
+  {
+    v5 = dword_A8B1F0++;
+    *((_DWORD *)dword_A8B1E4 + v5) = this;
+  }
+  if ( *a3 != dword_B0B728 || a3[1] != dword_B0B72C || a3[2] != dword_B0B730 )
+  {
+    dword_83FFD8 = a4;
+    if ( !(unsigned __int8)ObjectClass::Deploy((#374 *)this) )
+    {
+      ObjectClass::Destroy((#374 *)this);
+      return this;
+    }
+    dword_83FFD8 = -1;
+  }
+  return this;
+}

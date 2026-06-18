@@ -1,0 +1,60 @@
+// Original function at 0x6B4C80 (ReadINI)
+// Line 574858 in gamemd.exe.c
+// Size: 1543 bytes
+
+//----- (006B4C80) --------------------------------------------------------
+int __thiscall sub_6B4C80(char *this)
+{
+  int result; // eax
+  int v3; // ecx
+  unsigned __int8 *StringByIndex; // eax
+  char *v5; // eax
+  int v6; // esi
+  char *v7; // eax
+  __int16 v8; // di
+  char *v9; // eax
+  __int16 v10; // bx
+  char *v11; // eax
+  void **v12; // eax
+  int i; // [esp+4h] [ebp-94h]
+  int v14; // [esp+8h] [ebp-90h]
+  int v15[3]; // [esp+Ch] [ebp-8Ch] BYREF
+  char String[128]; // [esp+18h] [ebp-80h] BYREF
+
+  INIClass::ResetSection(this);
+  result = INIClass::GetKeyCount(this, (unsigned __int8 *)aSmudge);
+  v3 = 0;
+  v14 = result;
+  for ( i = 0; i < v14; ++i )
+  {
+    StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(this, (unsigned __int8 *)aSmudge, v3);
+    INIClass::GetString((unsigned __int8 ***)this, (unsigned __int8 *)aSmudge, StringByIndex, 0, String, 128);
+    v5 = strtok(String, Delimiter);
+    v6 = sub_6B5440(v5);
+    if ( v6 != -1 )
+    {
+      v7 = strtok(0, Delimiter);
+      if ( v7 )
+      {
+        v8 = atoi(v7);
+        v9 = strtok(0, Delimiter);
+        v10 = atoi(v9);
+        v11 = strtok(0, Delimiter);
+        if ( !v11 || !atoi(v11) )
+        {
+          v12 = (void **)__2_YAPAXI_Z(0xB0u);
+          if ( v12 )
+          {
+            v15[0] = (v8 << 8) + 128;
+            v15[1] = (v10 << 8) + 128;
+            v15[2] = 0;
+            UnitClass::Create(v12, *((void **)FactoryClass_Array + v6), v15, -1);
+          }
+        }
+      }
+    }
+    result = v14;
+    v3 = i + 1;
+  }
+  return result;
+}

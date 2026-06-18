@@ -1,0 +1,1066 @@
+// Original function at 0x741970 (AssignDestination_SyncLog)
+// Line 685066 in gamemd.exe.c
+// Size: 38732 bytes
+
+//----- (00741970) --------------------------------------------------------
+void __thiscall UnitClass::AssignDestination_SyncLog(_DWORD *this, __int64 a2)
+{
+  __int16 *v3; // ebx
+  int v4; // ecx
+  int v5; // eax
+  int v6; // esi
+  int v7; // eax
+  _DWORD *Value; // esi
+  char v9; // al
+  int Member; // eax
+  int v11; // eax
+  _DWORD *v12; // eax
+  int *v13; // esi
+  int v14; // edx
+  __int16 *v15; // eax
+  __int16 v16; // dx
+  _DWORD *v17; // eax
+  int *v18; // eax
+  void *v19; // eax
+  int v20; // eax
+  int v21; // edi
+  _DWORD *v22; // esi
+  int v23; // eax
+  int v24; // eax
+  int v25; // ecx
+  int v26; // eax
+  int v27; // ecx
+  int v28; // eax
+  int v29; // eax
+  int TileIndex; // eax
+  int v31; // edx
+  _DWORD *v32; // eax
+  void *v33; // eax
+  _DWORD *v34; // eax
+  _DWORD *v35; // eax
+  char v36; // bl
+  int RegionMap; // esi
+  void *v38; // esi
+  double v39; // st7
+  char v40; // al
+  int v41; // ecx
+  int v42; // eax
+  int v43; // ecx
+  LPVOID *v44; // ebx
+  int v45; // edi
+  int v46; // eax
+  int v47; // esi
+  _DWORD *v48; // eax
+  LPVOID v49; // eax
+  int v50; // eax
+  int v51; // eax
+  LPVOID v52; // eax
+  int v53; // eax
+  int v54; // eax
+  int v55; // eax
+  void *v56; // eax
+  int (__stdcall ***v57)(_DWORD, void *, __int64 *); // eax
+  int v58; // esi
+  void *v59; // edi
+  int v60; // ecx
+  int v61; // esi
+  LPVOID v62; // esi
+  LPVOID v63; // eax
+  _DWORD *v64; // esi
+  int v65; // eax
+  int (__stdcall ***Checked)(_DWORD, void *, __int64 *); // eax
+  int v67; // esi
+  LPVOID v68; // eax
+  void *v69; // edi
+  _DWORD *v70; // eax
+  int GroundHeight; // eax
+  _DWORD *v72; // eax
+  _DWORD *v73; // eax
+  void *v74; // eax
+  _DWORD *v75; // eax
+  void *v76; // eax
+  _DWORD *v77; // eax
+  int v78; // eax
+  __int16 *v79; // eax
+  int v80; // eax
+  int **v81; // ebx
+  int (__stdcall ***v82)(_DWORD, void *, __int64 *); // eax
+  int v83; // esi
+  int v84; // eax
+  int v85; // edi
+  int v86; // eax
+  int InstanceCOM; // eax
+  void *v88; // eax
+  int (__stdcall ***v89)(_DWORD, void *, __int64 *); // eax
+  int v90; // esi
+  void *v91; // edi
+  int v92; // ecx
+  int v93; // esi
+  int *v94; // esi
+  LPVOID v95; // eax
+  int *v96; // esi
+  int v97; // edi
+  unsigned __int8 *v98; // eax
+  int *v99; // ebx
+  void *v100; // edi
+  int *v101; // esi
+  int *v102; // esi
+  int v103; // eax
+  int v104; // ecx
+  int v105; // ecx
+  int v106; // edx
+  int v107; // eax
+  _DWORD *v108; // ecx
+  int v109; // eax
+  int v110; // eax
+  _DWORD *v111; // esi
+  int v112; // eax
+  int *v113; // ecx
+  int *v114; // edx
+  int v115; // eax
+  int v116; // ebx
+  int v117; // eax
+  int v118; // ebx
+  int v119; // kr28_4
+  int v120; // eax
+  int v121; // eax
+  int v122; // edx
+  int v123; // [esp+D0h] [ebp-BCh]
+  int v124; // [esp+D0h] [ebp-BCh]
+  char v125; // [esp+10Fh] [ebp-7Dh]
+  char v126; // [esp+110h] [ebp-7Ch]
+  char v127; // [esp+110h] [ebp-7Ch]
+  char IsBuildableAdvanced; // [esp+112h] [ebp-7Ah]
+  char v129; // [esp+113h] [ebp-79h]
+  void *v130; // [esp+114h] [ebp-78h] BYREF
+  LPVOID v131[2]; // [esp+118h] [ebp-74h] BYREF
+  int *v132; // [esp+120h] [ebp-6Ch]
+  LPVOID ppv; // [esp+124h] [ebp-68h] BYREF
+  LPVOID v134; // [esp+128h] [ebp-64h] BYREF
+  int *v135; // [esp+12Ch] [ebp-60h] BYREF
+  int *v136; // [esp+130h] [ebp-5Ch] BYREF
+  int *v137; // [esp+134h] [ebp-58h] BYREF
+  __int64 v138; // [esp+138h] [ebp-54h] BYREF
+  int v139; // [esp+140h] [ebp-4Ch]
+  _DWORD v140[2]; // [esp+144h] [ebp-48h] BYREF
+  int v141; // [esp+14Ch] [ebp-40h]
+  _DWORD v142[3]; // [esp+150h] [ebp-3Ch] BYREF
+  __int16 v143[4]; // [esp+15Ch] [ebp-30h] BYREF
+  int v144; // [esp+164h] [ebp-28h]
+  _BYTE v145[16]; // [esp+16Ch] [ebp-20h] BYREF
+  _BYTE v146[16]; // [esp+17Ch] [ebp-10h] BYREF
+
+  v3 = (__int16 *)a2;
+  if ( *(_BYTE *)(*(this + 433) + 3434) )
+  {
+    if ( !(_DWORD)a2 )
+    {
+      v4 = *(this + 361);
+      if ( v4 )
+      {
+        v5 = *(this + 173);
+        if ( v5 )
+        {
+          if ( v4 == v5
+            || (*(int (__thiscall **)(int))(*(_DWORD *)v4 + 44))(v4) == 11
+            && ((v6 = *(this + 361)) != 0
+              ? (v7 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)v6 + 44))(*(this + 361)) == 11 ? v6 : 0)
+              : (v7 = 0),
+                *(_DWORD *)(v7 + 228) == *(this + 173))
+            || (LOWORD(v136) = 0x4000,
+                Value = ProgressTimer::GetValue((_WORD *)this + 452, &v138),
+                LOWORD(v137) = *(_WORD *)ObjectClass::CalcTargetFacing(this, (int *)&v135, *(this + 173))
+                             - *(_WORD *)Value,
+                UnitClass::CompareCoordinateMagnitude((__int16 *)&v136, (__int16 *)&v137)) )
+          {
+            if ( (*(int (__thiscall **)(_DWORD *))(*this + 388))(this) != 1 )
+              (*(void (__thiscall **)(_DWORD *, int))(*this + 496))(this, 1);
+            return;
+          }
+        }
+      }
+    }
+  }
+  if ( (_DWORD)a2 != *(this + 361) || *((_BYTE *)this + 504) )
+  {
+    v9 = *((_BYTE *)this + 1760);
+    *((_BYTE *)this + 504) = 0;
+    if ( v9 )
+    {
+      if ( !*(this + 172) )
+      {
+LABEL_366:
+        FootClass::ClearPathIndex(this);
+        return;
+      }
+    }
+    else if ( *((_BYTE *)this + 1761) || *((_BYTE *)this + 1762) )
+    {
+      goto LABEL_366;
+    }
+    if ( Team::AllMembersValid(this) )
+    {
+      if ( *(int *)(*(this + 433) + 1504) > 0 )
+      {
+        Member = Team::GetMember(this, 0);
+        if ( (*(int (__thiscall **)(int))(*(_DWORD *)Member + 44))(Member) == 15 )
+        {
+          if ( !(_DWORD)a2 )
+            goto LABEL_49;
+          if ( (*(_BYTE *)(a2 + 20) & 1) != 0 && !Array::Contains(this, a2) )
+            (*(void (__thiscall **)(_DWORD *, int))(*this + 628))(this, 3);
+        }
+      }
+    }
+    if ( (_DWORD)a2 )
+    {
+      if ( Team::AllMembersValid(this) )
+      {
+        if ( !(*(int (__thiscall **)(_DWORD *))(*this + 388))(this) )
+        {
+          if ( *((_BYTE *)this + 1048) )
+          {
+            v11 = Team::GetMember(this, 0);
+            if ( (*(int (__thiscall **)(int))(*(_DWORD *)v11 + 44))(v11) == 2 )
+            {
+              v12 = (_DWORD *)Team::GetMember(this, 0);
+              if ( *(_BYTE *)(v12[433] + 3580) )
+              {
+                (*(void (__thiscall **)(_DWORD *, _DWORD, int))(*v12 + 1152))(v12, 0, 1);
+                (*(void (__thiscall **)(_DWORD *, int))(*this + 628))(this, 25);
+                (*(void (__thiscall **)(_DWORD *, int))(*this + 628))(this, 3);
+              }
+            }
+          }
+        }
+      }
+      v13 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)a2 + 44))(a2) == 6 ? (int *)a2 : 0;
+LABEL_36:
+      v14 = *this;
+      v137 = v13;
+      if ( (*(int (__thiscall **)(_DWORD *))(v14 + 388))(this) == 16 || *(this + 45) == 16 )
+      {
+        v15 = (__int16 *)(*(int (__thiscall **)(_DWORD *, __int64 *))(*this + 440))(this, &v138);
+        v16 = *v15;
+        LOWORD(v15) = HIWORD(Direction_Y_Offsets) + v15[1];
+        LOWORD(v135) = Direction_Y_Offsets + v16;
+        HIWORD(v135) = (_WORD)v15;
+        v136 = v135;
+        v17 = CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)&v136);
+        v18 = Cell::IsBridge(v17);
+        if ( v18 )
+        {
+          if ( *(_BYTE *)(*(this + 433) + 3598) && v18[353] )
+            BuildingClass::ClearAnims(v18, 10);
+        }
+      }
+      if ( (*(int (__thiscall **)(_DWORD *))(*this + 388))(this) != 7 && *(this + 45) != 7
+        || Team::AllMembersValid(this) )
+      {
+        *(this + 376) = -1;
+        goto LABEL_80;
+      }
+      v19 = AbstractClass::IsTechnoType((void *)a2);
+      if ( v19 && (*(int (__thiscall **)(void *))(*(_DWORD *)v19 + 44))(v19) == 1 )
+      {
+        if ( (_DWORD)a2 )
+          v20 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)a2 + 44))(a2) == 1 ? a2 : 0;
+        else
+          v20 = 0;
+        *(this + 320) = v20;
+        TechnoClass::SetFocus(this, 0);
+        v3 = 0;
+        LODWORD(a2) = 0;
+        goto LABEL_80;
+      }
+      if ( !v13 )
+        goto LABEL_74;
+      if ( (*(int (__thiscall **)(int *))(*v13 + 44))(v13) == 6 && *(_BYTE *)(v13[328] + 5806) )
+      {
+        *(this + 320) = v13;
+        TechnoClass::SetFocus(this, 0);
+        v3 = 0;
+        LODWORD(a2) = 0;
+        goto LABEL_80;
+      }
+      if ( (*(int (__thiscall **)(int *))(*v13 + 44))(v13) == 6 )
+      {
+        if ( Team::AllMembersValid(v13) )
+        {
+          if ( !*(_BYTE *)(v13[328] + 5803) )
+            TechnoClass::SetFocus(this, a2);
+          if ( *(_BYTE *)(v13[328] + 5803) )
+          {
+            (*(void (__thiscall **)(_DWORD *, int))(*this + 628))(this, 3);
+            v3 = 0;
+            LODWORD(a2) = 0;
+          }
+          if ( *(_BYTE *)(v13[328] + 5801) )
+          {
+            if ( BuildingClass::GetHealthRatio(this) >= *(double *)&RulesClass_Instance[1].ChronoBeam )
+            {
+              (*(void (__thiscall **)(_DWORD *, int))(*this + 628))(this, 3);
+              v3 = 0;
+            }
+            else
+            {
+              v3 = 0;
+              *(this + 320) = v13;
+            }
+            LODWORD(a2) = 0;
+          }
+          goto LABEL_80;
+        }
+        v21 = *(this + 361);
+        if ( (*(int (__thiscall **)(_DWORD *, int, int *))(*this + 632))(this, 14, v13) != 1 )
+        {
+          (*(void (__thiscall **)(_DWORD *, int))(*this + 628))(this, 3);
+          if ( !*(_BYTE *)(v13[328] + 5801) )
+            goto LABEL_80;
+          goto LABEL_69;
+        }
+        if ( *(_BYTE *)(v13[328] + 5811) && *(this + 361) != v21 )
+        {
+          v3 = (__int16 *)*(this + 361);
+          LODWORD(a2) = v3;
+        }
+      }
+      else
+      {
+LABEL_74:
+        if ( !(_DWORD)a2 || (*(_BYTE *)(a2 + 20) & 1) == 0 )
+          goto LABEL_80;
+        if ( Team::AllMembersValid((int *)a2) )
+        {
+LABEL_69:
+          TechnoClass::SetFocus(this, a2);
+          goto LABEL_80;
+        }
+        if ( (*(int (__thiscall **)(_DWORD *, int, _DWORD))(*this + 632))(this, 2, a2) == 1
+          && (*(int (__thiscall **)(_DWORD *, int))(*this + 628))(this, 14) != 1 )
+        {
+          (*(void (__thiscall **)(_DWORD *, int))(*this + 628))(this, 3);
+        }
+      }
+LABEL_80:
+      if ( v3 && *(_BYTE *)(*(this + 433) + 3372) )
+      {
+        v22 = this + 413;
+        if ( !*(this + 413) )
+          WinAPI::Wrapper(-2147467261);
+        if ( (*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)*v22 + 16))(*v22) )
+        {
+          v23 = *v22;
+          v135 = 0;
+          if ( !v23 )
+            goto LABEL_90;
+          v24 = StreamClass::Set2(&v135, this + 413);
+          if ( v24 < 0 && v24 != -2147467262 )
+            WinAPI::Wrapper(v24);
+          if ( !v135 )
+LABEL_90:
+            WinAPI::Wrapper(-2147467261);
+          (*(void (__stdcall **)(int *, _BYTE *))(*v135 + 12))(v135, v145);
+          if ( !memcmp(v145, &stru_7E9A30, 0x10u) )
+          {
+            v25 = *(this + 365);
+            if ( *(this + 367) < v25
+              || (*((_BYTE *)this + 1465) || !v25)
+              && (v26 = *(this + 368), v26 > 0)
+              && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*(this + 363) + 8))(
+                   this + 363,
+                   v26 + v25,
+                   0) )
+            {
+              v27 = *(this + 367);
+              if ( v27 )
+                memcpy((void *)(*(this + 364) + 4), (const void *)*(this + 364), 4 * v27);
+              *(_DWORD *)*(this + 364) = v3;
+              ++*(this + 367);
+            }
+            (*(void (__thiscall **)(_DWORD *))(*(this + 354) + 12))(this + 354);
+            v28 = (*(int (__thiscall **)(_DWORD *))(*this + 452))(this);
+            v3 = (__int16 *)v28;
+            BYTE4(a2) = 0;
+            LODWORD(a2) = v28;
+            if ( v28 )
+            {
+              if ( (*(_DWORD *)(v28 + 320) & 0x100) != 0
+                && !(*(unsigned __int8 (__thiscall **)(_DWORD *, _DWORD))(*this + 188))(this, 0) )
+              {
+                v29 = *(this + 433);
+                v134 = 0;
+                v123 = *(_DWORD *)(v29 + 1460);
+                TileIndex = MapClass::GetTileIndex(&MapClass_Instance, v3 + 18, v123, 0);
+                v136 = (int *)*LayerClass::Pathfinding_Find(
+                                 &MapClass_Instance,
+                                 v31,
+                                 &v138,
+                                 v3 + 18,
+                                 1,
+                                 TileIndex,
+                                 v123,
+                                 0,
+                                 1,
+                                 1,
+                                 0,
+                                 1,
+                                 0,
+                                 0,
+                                 (__int16 *)&v134,
+                                 0,
+                                 0);
+                if ( v136 != (int *)g_UnitSelectionState )
+                {
+                  v3 = (__int16 *)CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)&v136);
+                  LODWORD(a2) = v3;
+                }
+              }
+            }
+          }
+          if ( v135 )
+            (*(void (__stdcall **)(int *))(*v135 + 8))(v135);
+        }
+      }
+      v125 = 0;
+      if ( !v3 )
+      {
+        (*(void (__thiscall **)(_DWORD *))(*(this + 354) + 12))(this + 354);
+        goto LABEL_143;
+      }
+      if ( !*(_BYTE *)(*(this + 433) + 3372) )
+        goto LABEL_128;
+      if ( !BYTE4(a2) )
+        goto LABEL_143;
+      v126 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*this + 188))(this, 0);
+      v32 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, _DWORD *, _DWORD))(*this + 76))(this, v142, 0);
+      LOWORD(v131[0]) = *v32 / 256;
+      HIWORD(v131[0]) = v32[1] / 256;
+      v134 = v131[0];
+      v33 = CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)&v134);
+      IsBuildableAdvanced = Cell::IsBuildableAdvanced((int)v33);
+      v34 = (_DWORD *)(*(int (__thiscall **)(_DWORD, _DWORD *))(*(_DWORD *)a2 + 72))(a2, v142);
+      LOWORD(v131[0]) = *v34 / 256;
+      HIWORD(v131[0]) = v34[1] / 256;
+      ppv = v131[0];
+      v35 = CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)&ppv);
+      v36 = BYTE1(v35[80]) & 1;
+      v129 = Cell::IsBuildableAdvanced((int)v35);
+      v130 = (void *)(*(int (__thiscall **)(_DWORD *))(*this + 456))(this);
+      if ( v126 )
+      {
+        if ( v36 )
+        {
+          RegionMap = GetRegionMap((int *)&MapClass_Instance, (__int16 *)&v134, 3, 0);
+          if ( RegionMap == GetRegionMap((int *)&MapClass_Instance, (__int16 *)&ppv, 3, 0) && RegionMap != -1 )
+          {
+            if ( *((_BYTE *)dword_87F83C + 16 * RegionMap + 8)
+              || (v38 = (void *)*Pathfinding::SelectRegionPath((int *)&v138, (__int16 *)&v134, (int)&v134),
+                  v131[0] = v38,
+                  LODWORD(v138) = *Pathfinding::SelectRegionPath((int *)&v138, (__int16 *)&ppv, (int)&ppv),
+                  v131[0] = (LPVOID)(__int16)(HIWORD(v38) - WORD1(v138)),
+                  v39 = Math::Sqrt(
+                          (double)(int)v131[0] * (double)(int)v131[0]
+                        + (double)(__int16)((_WORD)v38 - v138) * (double)(__int16)((_WORD)v38 - v138)),
+                  (__int16)Math::RoundToInt(v39) <= 2) )
+            {
+              v125 = 1;
+            }
+          }
+        }
+        if ( !v125 )
+        {
+          v40 = 1;
+          goto LABEL_122;
+        }
+      }
+      else if ( v36 )
+      {
+        v40 = 1;
+        goto LABEL_122;
+      }
+      v40 = 0;
+LABEL_122:
+      if ( (!IsBuildableAdvanced && (int)v130 >= 0 || !v129) && !v125 || v40 )
+      {
+        LODWORD(a2) = BuildingClass::FindPlacementCells(this, a2);
+LABEL_130:
+        if ( !*(this + 413) )
+          WinAPI::Wrapper(-2147467261);
+        if ( (*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)*(this + 413) + 152))(*(this + 413)) )
+        {
+          v41 = *(this + 356);
+          if ( *(this + 358) < v41
+            || (*((_BYTE *)this + 1429) || !v41)
+            && (v42 = *(this + 359), v42 > 0)
+            && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*(this + 354) + 8))(this + 354, v42 + v41, 0) )
+          {
+            v43 = *(this + 358);
+            if ( v43 )
+              memcpy((void *)(*(this + 355) + 4), (const void *)*(this + 355), 4 * v43);
+            *(_DWORD *)*(this + 355) = a2;
+            ++*(this + 358);
+          }
+          v142[0] = *(this + 39);
+          v142[1] = *(this + 40);
+          v142[2] = *(this + 41);
+          LODWORD(a2) = Coord::To_Cell(&MapClass_Instance, v142);
+        }
+LABEL_143:
+        if ( !*(_BYTE *)(*(this + 433) + 3284) || *((_BYTE *)this + 636) || *(this + 172) || *((_BYTE *)this + 1709) )
+          goto LABEL_228;
+        v44 = (LPVOID *)(this + 413);
+        v45 = Team::GetMember(this, 0);
+        v134 = 0;
+        if ( !*(this + 413) )
+          goto LABEL_152;
+        v46 = StreamClass::Set2(&v134, this + 413);
+        if ( v46 < 0 && v46 != -2147467262 )
+          WinAPI::Wrapper(v46);
+        if ( !v134 )
+LABEL_152:
+          WinAPI::Wrapper(-2147467261);
+        (*(void (__stdcall **)(LPVOID, __int16 *))(*(_DWORD *)v134 + 12))(v134, v143);
+        v127 = 1;
+        if ( !v45 )
+          goto LABEL_182;
+        if ( (*(int (__thiscall **)(int))(*(_DWORD *)v45 + 44))(v45) != 6
+          || ((v47 = (*(int (__thiscall **)(int))(*(_DWORD *)v45 + 44))(v45) == 6 ? v45 : 0, (_DWORD)a2)
+            ? (v48 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)a2 + 44))(a2) == 11 ? (_DWORD *)a2 : 0)
+            : (v48 = 0),
+              !*(_BYTE *)(*(_DWORD *)(v47 + 1312) + 5811)
+           || !v48
+           || CellClass::FindBuilding(v48, 0)
+           || (v127 = 0, !memcmp(v143, &g_CLSID_HoverLocomotion, 0x10u))) )
+        {
+LABEL_181:
+          if ( v127 != 1 )
+          {
+LABEL_226:
+            if ( v134 )
+              (*(void (__stdcall **)(LPVOID))(*(_DWORD *)v134 + 8))(v134);
+LABEL_228:
+            if ( (_DWORD)a2 )
+            {
+              v64 = this + 413;
+              if ( !*(this + 413) )
+                WinAPI::Wrapper(-2147467261);
+              if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)*v64 + 16))(*v64) )
+              {
+                v65 = *v64;
+                v134 = 0;
+                if ( !v65 )
+                  goto LABEL_240;
+                Checked = (int (__stdcall ***)(_DWORD, void *, __int64 *))Stream::GetChecked(this + 413);
+                v67 = (**Checked)(Checked, &unk_818858, &v138);
+                if ( v67 >= 0 )
+                {
+                  v69 = (void *)v138;
+                  ComPtr::Release_Alt((int *)&v134);
+                  v68 = v69;
+                }
+                else
+                {
+                  ComPtr::Release_Alt((int *)&v134);
+                  v68 = 0;
+                }
+                v134 = v68;
+                if ( v67 < 0 && v67 != -2147467262 )
+                  WinAPI::Wrapper(v67);
+                if ( !v68 )
+LABEL_240:
+                  WinAPI::Wrapper(-2147467261);
+                (*(void (__stdcall **)(LPVOID, _BYTE *))(*(_DWORD *)v68 + 12))(v68, v146);
+                if ( !memcmp(v146, &stru_7E9A50, 0x10u) && !(*(int (__thiscall **)(_DWORD *))(*this + 456))(this) )
+                {
+                  v70 = (_DWORD *)(*(int (__thiscall **)(_DWORD, __int64 *))(*(_DWORD *)a2 + 72))(a2, &v138);
+                  v140[0] = *v70;
+                  v140[1] = v70[1];
+                  v141 = v70[2];
+                  GroundHeight = Cell::GetGroundHeight(v140);
+                  if ( v141 < GroundHeight )
+                    v141 = GroundHeight;
+                  if ( v125 )
+                    goto LABEL_251;
+                  if ( (*(unsigned __int8 (__thiscall **)(_DWORD *, _DWORD))(*this + 188))(this, 0) )
+                    goto LABEL_251;
+                  v72 = (_DWORD *)(*(int (__thiscall **)(_DWORD, __int64 *))(*(_DWORD *)a2 + 72))(a2, &v138);
+                  if ( (*((_DWORD *)Coord::To_Cell(&MapClass_Instance, v72) + 80) & 0x100) != 0 )
+                    goto LABEL_251;
+                  v73 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, LPVOID *, _DWORD))(*this + 76))(this, v131, 0);
+                  v74 = Coord::To_Cell(&MapClass_Instance, v73);
+                  if ( !Cell::IsBuildableAdvanced((int)v74) )
+                    goto LABEL_251;
+                  v75 = (_DWORD *)(*(int (__thiscall **)(_DWORD, __int16 *))(*(_DWORD *)a2 + 72))(a2, v143);
+                  v76 = Coord::To_Cell(&MapClass_Instance, v75);
+                  if ( !Cell::IsBuildableAdvanced((int)v76)
+                    || (v77 = (_DWORD *)(*(int (__thiscall **)(_DWORD))(*(_DWORD *)a2 + 72))(a2),
+                        LOWORD(v132) = *v77 / 256,
+                        HIWORD(v132) = v77[1] / 256,
+                        v78 = *this,
+                        v137 = v132,
+                        v79 = (__int16 *)(*(int (__thiscall **)(_DWORD *, void **, int **))(v78 + 448))(
+                                           this,
+                                           &v130,
+                                           &v137),
+                        !BuildingTypeClass::IsPlacementValid(this, v79, v143)) )
+                  {
+LABEL_251:
+                    v80 = *(this + 413);
+                    v81 = (int **)(this + 413);
+                    v130 = 0;
+                    if ( v80 )
+                    {
+                      v82 = (int (__stdcall ***)(_DWORD, void *, __int64 *))Stream::GetChecked(this + 413);
+                      v83 = (**v82)(v82, &unk_819088, &v138);
+                      if ( v83 >= 0 )
+                      {
+                        v85 = v138;
+                        Release2COM((int *)&v130);
+                        v84 = v85;
+                      }
+                      else
+                      {
+                        Release2COM((int *)&v130);
+                        v84 = 0;
+                      }
+                      v130 = (void *)v84;
+                      if ( v83 < 0 && v83 != -2147467262 )
+                        WinAPI::Wrapper(v83);
+                      if ( v84 && (*(unsigned __int8 (__stdcall **)(int))(*(_DWORD *)v84 + 28))(v84) )
+                      {
+                        if ( *v81 )
+                          (*(void (__stdcall **)(int *))(**v81 + 8))(*v81);
+                        v86 = (int)v130;
+                        *v81 = 0;
+                        if ( !v86 )
+                          WinAPI::Wrapper(-2147467261);
+                        (*(void (__stdcall **)(int, _DWORD *))(*(_DWORD *)v86 + 16))(v86, this + 413);
+                      }
+                    }
+                    v131[0] = 0;
+                    InstanceCOM = CreateInstanceCOM(v131, (IID *)&stru_7E9A30, 0, 7u);
+                    if ( InstanceCOM < 0 && InstanceCOM != -2147467262 )
+                      WinAPI::Wrapper(InstanceCOM);
+                    if ( !v131[0] )
+                      WinAPI::Wrapper(-2147467261);
+                    (*(void (__stdcall **)(LPVOID, _DWORD *))(*(_DWORD *)v131[0] + 12))(v131[0], this);
+                    v88 = 0;
+                    ppv = 0;
+                    if ( v131[0] )
+                    {
+                      v89 = (int (__stdcall ***)(_DWORD, void *, __int64 *))Stream::GetChecked(v131);
+                      v90 = (**v89)(v89, &unk_819088, &v138);
+                      if ( v90 >= 0 )
+                      {
+                        v91 = (void *)v138;
+                        Release2COM((int *)&ppv);
+                        v88 = v91;
+                      }
+                      else
+                      {
+                        Release2COM((int *)&ppv);
+                        v88 = 0;
+                      }
+                      ppv = v88;
+                      if ( v90 < 0 && v90 != -2147467262 )
+                        WinAPI::Wrapper(v90);
+                    }
+                    v92 = (int)v130;
+                    if ( v130 != v88 )
+                    {
+                      v93 = (int)v130;
+                      v92 = (int)v88;
+                      v130 = v88;
+                      if ( v88 )
+                      {
+                        (*(void (__stdcall **)(void *))(*(_DWORD *)v88 + 4))(v88);
+                        v92 = (int)v130;
+                        v88 = ppv;
+                      }
+                      if ( v93 )
+                      {
+                        (*(void (__stdcall **)(int))(*(_DWORD *)v93 + 8))(v93);
+                        v92 = (int)v130;
+                        v88 = ppv;
+                      }
+                    }
+                    if ( v88 )
+                    {
+                      (*(void (__stdcall **)(void *))(*(_DWORD *)v88 + 8))(v88);
+                      v92 = (int)v130;
+                    }
+                    if ( v92 )
+                    {
+                      (*(void (__stdcall **)(int, int *))(*(_DWORD *)v92 + 12))(v92, *v81);
+                      v94 = *v81;
+                      v95 = v131[0];
+                      if ( *v81 != v131[0] )
+                      {
+                        *v81 = (int *)v131[0];
+                        if ( v95 )
+                          (*(void (__stdcall **)(LPVOID))(*(_DWORD *)v95 + 4))(v95);
+                        if ( v94 )
+                          (*(void (__stdcall **)(int *))(*v94 + 8))(v94);
+                      }
+                      v138 = *(_QWORD *)(this + 39);
+                      v139 = *(this + 41);
+                      if ( !*v81 )
+                        WinAPI::Wrapper(-2147467261);
+                      v96 = *v81;
+                      v97 = **v81;
+                      v98 = (unsigned __int8 *)Coord::To_Cell(&MapClass_Instance, &v138);
+                      (*(void (__stdcall **)(int *, _DWORD))(v97 + 124))(v96, v98[284]);
+                      v92 = (int)v130;
+                    }
+                    if ( v131[0] )
+                    {
+                      (*(void (__stdcall **)(LPVOID))(*(_DWORD *)v131[0] + 8))(v131[0]);
+                      v92 = (int)v130;
+                    }
+                    if ( v92 )
+                      (*(void (__stdcall **)(int))(*(_DWORD *)v92 + 8))(v92);
+                  }
+                }
+                if ( v134 )
+                  (*(void (__stdcall **)(LPVOID))(*(_DWORD *)v134 + 8))(v134);
+              }
+            }
+            v99 = v137;
+            if ( !v137 )
+            {
+              v100 = (void *)a2;
+              goto LABEL_318;
+            }
+            if ( *(_BYTE *)(v137[328] + 5801) )
+            {
+              if ( Team::AllMembersValid(v137) && (_DWORD *)Team::GetMember(v99, 0) != this )
+              {
+                v100 = (void *)a2;
+                TechnoClass::SetFocus(this, a2);
+                goto LABEL_309;
+              }
+              if ( (*(int (__thiscall **)(_DWORD *, int, int *))(*this + 632))(this, 2, v99) == 1 )
+              {
+                if ( (*(int (__thiscall **)(_DWORD *, int))(*this + 628))(this, 14) == 1 )
+                {
+                  FootClass::AssignDestination((int)this, a2, SHIDWORD(a2));
+LABEL_315:
+                  *(this + 376) = -1;
+                  return;
+                }
+                (*(void (__thiscall **)(_DWORD *, int))(*this + 628))(this, 3);
+                v100 = 0;
+                LODWORD(a2) = 0;
+                goto LABEL_309;
+              }
+            }
+            v100 = (void *)a2;
+LABEL_309:
+            if ( *(_BYTE *)(v99[328] + 5803)
+              && (!Team::AllMembersValid(v99) || (_DWORD *)Team::GetMember(v99, 0) == this)
+              && (*(int (__thiscall **)(_DWORD *, int, int *))(*this + 632))(this, 2, v99) == 1 )
+            {
+              if ( (*(int (__thiscall **)(_DWORD *, int))(*this + 628))(this, 14) == 1 )
+              {
+                FootClass::AssignDestination((int)this, (int)v100, SHIDWORD(a2));
+                goto LABEL_315;
+              }
+              (*(void (__thiscall **)(_DWORD *, int))(*this + 628))(this, 3);
+              v100 = 0;
+              LODWORD(a2) = 0;
+            }
+LABEL_318:
+            v101 = (int *)Team::GetMember(this, 0);
+            if ( v101
+              && (*(int (__thiscall **)(int *))(*v101 + 44))(v101) == 6
+              && *(_BYTE *)(v101[328] + 5821)
+              && *(this + 43) != 7 )
+            {
+              if ( *(this + 172) )
+              {
+                (*(void (__thiscall **)(_DWORD *, int))(*this + 628))(this, 3);
+              }
+              else
+              {
+                v102 = v101 + 39;
+                v103 = *v102;
+                v104 = v102[1];
+                v144 = v102[2];
+                LOWORD(v138) = v103 / 256;
+                WORD1(v138) = v104 / 256;
+                LOWORD(v137) = v138 + 4;
+                HIWORD(v137) = WORD1(v138) + 1;
+                LODWORD(v138) = v137;
+                if ( v100 != CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)&v138) )
+                {
+                  (*(void (__thiscall **)(_DWORD *))(*(this + 363) + 12))(this + 363);
+                  (*(void (__thiscall **)(_DWORD *))(*(this + 354) + 12))(this + 354);
+                  if ( v100 )
+                    BuildingClass::AddToProductionQueue((int)this, (int)v100);
+                  return;
+                }
+              }
+            }
+            if ( !v99 )
+              goto LABEL_345;
+            v105 = *(this + 433);
+            if ( *(int *)(v105 + 1016) <= 0 )
+              goto LABEL_345;
+            v106 = *(_DWORD *)(v105 + 1016);
+            v107 = 0;
+            if ( v106 <= 0 )
+              goto LABEL_345;
+            v108 = *(_DWORD **)(v105 + 1004);
+            while ( *v108 != v99[328] )
+            {
+              ++v107;
+              ++v108;
+              if ( v107 >= v106 )
+                goto LABEL_345;
+            }
+            if ( (*(int (__thiscall **)(_DWORD *))(*this + 44))(this) != 1 )
+              goto LABEL_345;
+            v109 = *(this + 433);
+            if ( !*(_BYTE *)(v109 + 3598) && !*(_BYTE *)(v109 + 3599) )
+              goto LABEL_345;
+            if ( (*(int (__thiscall **)(_DWORD *))(*this + 388))(this) == 16 )
+              goto LABEL_345;
+            if ( (int *)Team::GetMember(this, 0) == v99
+              || Team::AllMembersValid(v99)
+              || (*(int (__thiscall **)(_DWORD *, int, int *))(*this + 632))(this, 2, v99) != 1
+              || (*(int (__thiscall **)(_DWORD *))(*this + 388))(this) == 7
+              || (*(int (__thiscall **)(_DWORD *))(*this + 388))(this) == 10 )
+            {
+              if ( !(_DWORD)a2
+                || (*(int (__thiscall **)(_DWORD))(*(_DWORD *)a2 + 44))(a2) != 6
+                || Team::GetMember(this, 0) == (_DWORD)a2 )
+              {
+                goto LABEL_345;
+              }
+              v113 = v99 + 39;
+              v114 = v99 + 39;
+              v136 = 0;
+              v115 = v99[39];
+              v116 = v99[40];
+              v144 = v114[2];
+              LOWORD(v137) = v115 / 256;
+              v117 = v116;
+              v118 = v113[1];
+              HIWORD(v137) = v117 / 256;
+              LODWORD(v138) = v137;
+              v119 = *v113;
+              v144 = v113[2];
+              LOWORD(v137) = v119 / 256;
+              HIWORD(v137) = v118 / 256;
+              v120 = *(this + 433);
+              v135 = v137;
+              v124 = *(_DWORD *)(v120 + 1460);
+              v121 = MapClass::GetTileIndex(&MapClass_Instance, (__int16 *)&v138, v124, 0);
+              v137 = (int *)*LayerClass::Pathfinding_Find(
+                               &MapClass_Instance,
+                               v122,
+                               &v134,
+                               (__int16 *)&v135,
+                               2,
+                               v121,
+                               v124,
+                               0,
+                               1,
+                               1,
+                               0,
+                               1,
+                               0,
+                               0,
+                               (__int16 *)&v136,
+                               0,
+                               0);
+              if ( v137 != (int *)g_UnitSelectionState )
+              {
+                LODWORD(a2) = CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)&v137);
+                goto LABEL_345;
+              }
+            }
+            else
+            {
+              (*(void (__thiscall **)(_DWORD *, int, _DWORD))(*this + 488))(this, 7, 0);
+            }
+            LODWORD(a2) = 0;
+LABEL_345:
+            if ( !*(this + 413) )
+              WinAPI::Wrapper(-2147467261);
+            if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)*(this + 413) + 96))(*(this + 413))
+              && !HouseClass::IonSensitivesShouldBeOffline() )
+            {
+              v110 = (*(int (__thiscall **)(_DWORD *))(*this + 444))(this);
+              if ( (*(_DWORD *)(v110 + 320) & 0x100) == 0 )
+              {
+                v111 = *(_DWORD **)(v110 + 228);
+                if ( v111 )
+                {
+                  while ( 1 )
+                  {
+                    if ( v111 != this && (*(int (__thiscall **)(_DWORD *))(*v111 + 44))(v111) == 6 )
+                    {
+                      v112 = v111[328];
+                      if ( *(_BYTE *)(v112 + 5801) || *(_BYTE *)(v112 + 5803) )
+                        break;
+                    }
+                    v111 = (_DWORD *)v111[12];
+                    if ( !v111 )
+                      goto LABEL_365;
+                  }
+                  if ( !*(this + 413) )
+                    WinAPI::Wrapper(-2147467261);
+                  (*(void (__stdcall **)(_DWORD))(*(_DWORD *)*(this + 413) + 88))(*(this + 413));
+                }
+              }
+            }
+LABEL_365:
+            FootClass::AssignDestination((int)this, a2, SHIDWORD(a2));
+            return;
+          }
+LABEL_182:
+          if ( memcmp(v143, &stru_7E9A30, 0x10u) )
+          {
+            v52 = *v44;
+            v130 = 0;
+            if ( v52 )
+            {
+              v53 = StreamClass::Set(&v130, this + 413);
+              if ( v53 < 0 && v53 != -2147467262 )
+                WinAPI::Wrapper(v53);
+              if ( v130 && (*(unsigned __int8 (__stdcall **)(void *))(*(_DWORD *)v130 + 28))(v130) )
+              {
+                if ( !v130 )
+                  WinAPI::Wrapper(-2147467261);
+                if ( (*(unsigned __int8 (__stdcall **)(void *))(*(_DWORD *)v130 + 20))(v130) )
+                {
+                  if ( *v44 )
+                    (*(void (__stdcall **)(LPVOID))(*(_DWORD *)*v44 + 8))(*v44);
+                  v54 = (int)v130;
+                  *v44 = 0;
+                  if ( !v54 )
+                    WinAPI::Wrapper(-2147467261);
+                  (*(void (__stdcall **)(int, _DWORD *))(*(_DWORD *)v54 + 16))(v54, this + 413);
+                }
+              }
+            }
+            ppv = 0;
+            v55 = CreateInstanceCOM(&ppv, (IID *)&stru_7E9A30, 0, 7u);
+            if ( v55 < 0 && v55 != -2147467262 )
+              WinAPI::Wrapper(v55);
+            if ( !ppv )
+              WinAPI::Wrapper(-2147467261);
+            (*(void (__stdcall **)(LPVOID, _DWORD *))(*(_DWORD *)ppv + 12))(ppv, this);
+            v56 = 0;
+            v131[0] = 0;
+            if ( ppv )
+            {
+              v57 = (int (__stdcall ***)(_DWORD, void *, __int64 *))Stream::GetChecked(&ppv);
+              v58 = (**v57)(v57, &unk_819088, &v138);
+              if ( v58 >= 0 )
+              {
+                v59 = (void *)v138;
+                Release2COM((int *)v131);
+                v56 = v59;
+              }
+              else
+              {
+                Release2COM((int *)v131);
+                v56 = 0;
+              }
+              v131[0] = v56;
+              if ( v58 < 0 && v58 != -2147467262 )
+                WinAPI::Wrapper(v58);
+            }
+            v60 = (int)v130;
+            if ( v130 != v56 )
+            {
+              v61 = (int)v130;
+              v130 = v56;
+              CellClass::SetField2C((int *)&v130);
+              if ( v61 )
+                (*(void (__stdcall **)(int))(*(_DWORD *)v61 + 8))(v61);
+              v60 = (int)v130;
+              v56 = v131[0];
+            }
+            if ( v56 )
+            {
+              (*(void (__stdcall **)(void *))(*(_DWORD *)v56 + 8))(v56);
+              v60 = (int)v130;
+            }
+            if ( v60 )
+            {
+              (*(void (__stdcall **)(int, LPVOID))(*(_DWORD *)v60 + 12))(v60, *v44);
+              v62 = *v44;
+              v63 = ppv;
+              if ( *v44 != ppv )
+              {
+                *v44 = ppv;
+                if ( v63 )
+                  (*(void (__stdcall **)(LPVOID))(*(_DWORD *)v63 + 4))(v63);
+                if ( v62 )
+                  (*(void (__stdcall **)(LPVOID))(*(_DWORD *)v62 + 8))(v62);
+              }
+              v60 = (int)v130;
+            }
+            if ( ppv )
+            {
+              (*(void (__stdcall **)(LPVOID))(*(_DWORD *)ppv + 8))(ppv);
+              v60 = (int)v130;
+            }
+            if ( v60 )
+              (*(void (__stdcall **)(int))(*(_DWORD *)v60 + 8))(v60);
+          }
+          goto LABEL_226;
+        }
+        v49 = *v44;
+        v130 = 0;
+        if ( v49 )
+        {
+          v50 = StreamClass::Set(&v130, this + 413);
+          if ( v50 < 0 && v50 != -2147467262 )
+            WinAPI::Wrapper(v50);
+          if ( v130 && (*(unsigned __int8 (__stdcall **)(void *))(*(_DWORD *)v130 + 28))(v130) )
+          {
+            if ( !v130 )
+              WinAPI::Wrapper(-2147467261);
+            if ( (*(unsigned __int8 (__stdcall **)(void *))(*(_DWORD *)v130 + 20))(v130) )
+            {
+              if ( *v44 )
+                (*(void (__stdcall **)(LPVOID))(*(_DWORD *)*v44 + 8))(*v44);
+              v51 = (int)v130;
+              *v44 = 0;
+              if ( !v51 )
+                WinAPI::Wrapper(-2147467261);
+              (*(void (__stdcall **)(int, _DWORD *))(*(_DWORD *)v51 + 16))(v51, this + 413);
+              goto LABEL_179;
+            }
+          }
+          if ( *v44 )
+          {
+            (*(void (__stdcall **)(LPVOID))(*(_DWORD *)*v44 + 72))(*v44);
+            (*(void (__thiscall **)(_DWORD *, int))(*this + 496))(this, -1);
+            (*(void (__thiscall **)(_DWORD *, int, _DWORD))(*this + 488))(this, 7, 0);
+            *((_BYTE *)this + 1708) = 1;
+            *((_BYTE *)this + 504) = 1;
+LABEL_179:
+            if ( v130 )
+              (*(void (__stdcall **)(void *))(*(_DWORD *)v130 + 8))(v130);
+            goto LABEL_181;
+          }
+        }
+        WinAPI::Wrapper(-2147467261);
+      }
+LABEL_128:
+      if ( !BYTE4(a2) )
+        goto LABEL_143;
+      (*(void (__thiscall **)(_DWORD *))(*(this + 354) + 12))(this + 354);
+      goto LABEL_130;
+    }
+LABEL_49:
+    v13 = 0;
+    goto LABEL_36;
+  }
+}

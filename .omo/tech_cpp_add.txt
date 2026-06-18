@@ -1,0 +1,1445 @@
+int TechnoClass::ApplyIronCurtain() {
+    // IDA: 0x4155f0, 461B
+    return 0;
+}
+
+int TechnoClass::ReturnToBase() {
+    // IDA: 0x4157c0, 274B
+    return 0;
+}
+
+int TechnoClass::ReturnToBaseAndReload() {
+    // IDA: 0x4158e0, 125B
+    return 0;
+}
+
+int TechnoClass::ScatterFromThreat() {
+    // IDA: 0x415960, 227B
+    return 0;
+}
+
+int TechnoClass::ExecuteMissionCommand() {
+    // IDA: 0x417ca0, 28B
+    return 0;
+}
+
+int TechnoClass::FindNearbyBuildCell() {
+    // IDA: 0x4195a0, 260B
+    return 0;
+}
+
+int TechnoClass::FindClosestPlacementCell() {
+    // IDA: 0x41a160, 1028B
+    return 0;
+}
+
+int TechnoClass::GetTurretFacing() const {
+    // IDA: 0x41a570, 29B
+    return 0;
+}
+
+bool TechnoClass::CanFireAtTarget() const {
+    // IDA: 0x41a9e0, 159B
+    return false;
+}
+
+void TechnoClass::ComputeTeamAttackPriority() {
+    // IDA: 0x41b6a0, 185B
+}
+
+int TechnoClass::GetAutoFireDirection() const {
+    // IDA: 0x41b760, 100B
+    return 0;
+}
+
+int TechnoClass::sub_41B7D0() {
+    // IDA: 0x41b7d0, 23B
+    return 0;
+}
+
+bool TechnoClass::HasOnlyOneGarrisonSlot() const {
+    // IDA: 0x41b7f0, 78B
+    return false;
+}
+
+int TechnoClass::sub_41B840() {
+    // IDA: 0x41b840, 23B
+    return 0;
+}
+
+int TechnoClass::sub_41B860() {
+    // IDA: 0x41b860, 12B
+    return 0;
+}
+
+bool TechnoClass::CreateWarheadDamageEffect() {
+    // IDA: 0x41bc30, 412B
+    return false;
+}
+
+int TechnoClass::GetBodyFacing() const {
+    // IDA: 0x41c1e0, 29B
+    return 0;
+}
+
+int TechnoClass::sub_41C670() {
+    // IDA: 0x41c670, 13B
+    return 0;
+}
+
+int TechnoClass::sub_41C680() {
+    // IDA: 0x41c680, 13B
+    return 0;
+}
+
+int TechnoClass::sub_41C690() {
+    // IDA: 0x41c690, 13B
+    return 0;
+}
+
+int TechnoClass::ApplyDamageEffects() {
+    // IDA: 0x438720, 645B
+    return 0;
+}
+
+int TechnoClass::sub_5439080() {
+    // IDA: 0x439080, 71B
+    return 0;
+}
+
+int TechnoClass::RemoveFromDynamicVector() {
+    // IDA: 0x4390d0, 59B
+    return 0;
+}
+
+void TechnoClass::ComputeTargetAngle() {
+    // IDA: 0x43e940, 1012B
+}
+
+int TechnoClass::StartOrResumeProduction() {
+    // IDA: 0x44d6a0, 93B
+    return 0;
+}
+
+int TechnoClass::GetTurretScreenPos() const {
+    // IDA: 0x453a70, 374B
+    return 0;
+}
+
+void TechnoClass::ProcessMissionDeploy() {
+    // IDA: 0x456f80, 40B
+}
+
+int TechnoClass::EvacuateFootprintCells() {
+    // IDA: 0x458a80, 809B
+    return 0;
+}
+
+int TechnoClass::IndexOf() {
+    // IDA: 0x473500, 50B
+    return 0;
+}
+
+int TechnoClass::ApplySplashDamageToNeighbors() {
+    // IDA: 0x487720, 546B
+    return 0;
+}
+
+void TechnoClass::ComputeScanRange() {
+    // IDA: 0x48ab90, 41B
+}
+
+int TechnoClass::sub_54A50F0() {
+    // IDA: 0x4a50f0, 26B
+    return 0;
+}
+
+int TechnoClass::CopyStateFrom() {
+    // IDA: 0x4b5210, 449B
+    return 0;
+}
+
+int TechnoClass::ResetDamageAccumulator() {
+    // IDA: 0x4c1e10, 56B
+    return 0;
+}
+
+bool TechnoClass::CreateTrailParticle() {
+    // IDA: 0x4c2a60, 216B
+    return false;
+}
+
+int TechnoClass::sub_4C2BD0() {
+    // IDA: 0x4c2bd0, 59B
+    return 0;
+}
+
+int TechnoClass::GetWeaponType() const {
+    // IDA: 0x4c9470, 11B
+    return 0;
+}
+
+void TechnoClass::UpdateThunk() {
+    // IDA: 0x4cc770, 27B
+}
+
+int TechnoClass::GetData() const {
+    // IDA: 0x4cf950, 282B
+    return 0;
+}
+
+int TechnoClass::sub_54D28C0() {
+    // IDA: 0x4d28c0, 16B
+    return 0;
+}
+
+void TechnoClass::ComputeThreatLevel() {
+    // IDA: 0x4d97a0, 274B
+}
+
+void TechnoClass::ComputeSpeedFactor() {
+    // IDA: 0x4dafc0, 223B
+}
+
+void TechnoClass::ComputeSpeedFactorEx() {
+    // IDA: 0x4db1a0, 166B
+}
+
+void TechnoClass::CleanupDirection() {
+    // IDA: 0x4db260, 347B
+}
+
+void TechnoClass::SetPositionAnimated() {
+    // IDA: 0x4db810, 133B
+}
+
+int TechnoClass::GetTargetCellCenter() const {
+    // IDA: 0x4dba50, 118B
+    return 0;
+}
+
+int TechnoClass::GetDeployCoords() const {
+    // IDA: 0x4dbdf0, 222B
+    return 0;
+}
+
+int TechnoClass::GetThreatValue() const {
+    // IDA: 0x4ded70, 223B
+    return 0;
+}
+
+int TechnoClass::FindBestMatch() {
+    // IDA: 0x4df040, 129B
+    return 0;
+}
+
+int TechnoClass::vt_entry_4A8() {
+    // IDA: 0x4df1a0, 31B
+    return 0;
+}
+
+int TechnoClass::vt_entry_4AC() {
+    // IDA: 0x4df1c0, 15B
+    return 0;
+}
+
+int TechnoClass::vt_entry_4B8() {
+    // IDA: 0x4df1f0, 140B
+    return 0;
+}
+
+int TechnoClass::vt_entry_4C4() {
+    // IDA: 0x4df310, 15B
+    return 0;
+}
+
+int TechnoClass::vt_entry_4C8() {
+    // IDA: 0x4df320, 118B
+    return 0;
+}
+
+int TechnoClass::vt_entry_4D0() {
+    // IDA: 0x4df4b0, 87B
+    return 0;
+}
+
+int TechnoClass::FindClosestInfantry() {
+    // IDA: 0x4dfa70, 254B
+    return 0;
+}
+
+int TechnoClass::FindClosestUnit() {
+    // IDA: 0x4dfb70, 312B
+    return 0;
+}
+
+int TechnoClass::FindClosestBuilding() {
+    // IDA: 0x4dff40, 311B
+    return 0;
+}
+
+int TechnoClass::GetAnimationValue() const {
+    // IDA: 0x4e0150, 29B
+    return 0;
+}
+
+int TechnoClass::sub_5505180() {
+    // IDA: 0x505180, 95B
+    return 0;
+}
+
+int TechnoClass::GetDamageMultiplier() const {
+    // IDA: 0x50bd30, 128B
+    return 0;
+}
+
+int TechnoClass::GetTargetSpeedMultiplier() const {
+    // IDA: 0x50c050, 76B
+    return 0;
+}
+
+int TechnoClass::FindDeployDestination() {
+    // IDA: 0x50c920, 421B
+    return 0;
+}
+
+void TechnoClass::ProcessTarget() {
+    // IDA: 0x50cad0, 281B
+}
+
+int TechnoClass::sub_550D9C0() {
+    // IDA: 0x50d9c0, 14B
+    return 0;
+}
+
+int TechnoClass::sub_550D9D0() {
+    // IDA: 0x50d9d0, 14B
+    return 0;
+}
+
+int TechnoClass::MapHouseRelationIndex() {
+    // IDA: 0x50dac0, 39B
+    return 0;
+}
+
+int TechnoClass::Find() {
+    // IDA: 0x50e010, 203B
+    return 0;
+}
+
+void TechnoClass::Process() {
+    // IDA: 0x50e1c0, 179B
+}
+
+int TechnoClass::GetTypeFlag() const {
+    // IDA: 0x5224e0, 13B
+    return 0;
+}
+
+int TechnoClass::sub_55224F0() {
+    // IDA: 0x5224f0, 21B
+    return 0;
+}
+
+bool TechnoClass::IsMission27to30() const {
+    // IDA: 0x522510, 35B
+    return false;
+}
+
+int TechnoClass::GarrisonBuilding() {
+    // IDA: 0x522910, 318B
+    return 0;
+}
+
+int TechnoClass::HandleSpecialAction() {
+    // IDA: 0x522a60, 343B
+    return 0;
+}
+
+bool TechnoClass::IsEnteringOrCapturingStructure() const {
+    // IDA: 0x522cb0, 65B
+    return false;
+}
+
+bool TechnoClass::CanBePermaMC() const {
+    // IDA: 0x53c450, 107B
+    return false;
+}
+
+int TechnoClass::GetTileAnimationData() const {
+    // IDA: 0x547150, 85B
+    return 0;
+}
+
+int TechnoClass::CalcFacingFromMatrix() {
+    // IDA: 0x5af410, 93B
+    return 0;
+}
+
+void TechnoClass::CreateDestructionEffect() {
+    // IDA: 0x5f5390, 1213B
+}
+
+int TechnoClass::FindMatchingUnit() {
+    // IDA: 0x5f7900, 396B
+    return 0;
+}
+
+void TechnoClass::ClearArrays() {
+    // IDA: 0x5f99e0, 242B
+}
+
+void TechnoClass::ClearScriptPlanningData() {
+    // IDA: 0x633d30, 280B
+}
+
+bool TechnoClass::IsProductionChainActive() const {
+    // IDA: 0x637840, 104B
+    return false;
+}
+
+int TechnoClass::RemoveBuildingFromScripts() {
+    // IDA: 0x638840, 471B
+    return 0;
+}
+
+bool TechnoClass::CreatePlanningNode() {
+    // IDA: 0x638a80, 195B
+    return false;
+}
+
+int TechnoClass::sub_659470() {
+    // IDA: 0x659470, 22B
+    return 0;
+}
+
+int TechnoClass::sub_6594A0() {
+    // IDA: 0x6594a0, 26B
+    return 0;
+}
+
+int TechnoClass::sub_6594C0() {
+    // IDA: 0x6594c0, 26B
+    return 0;
+}
+
+int TechnoClass::sub_6594F0() {
+    // IDA: 0x6594f0, 17B
+    return 0;
+}
+
+void TechnoClass::CalculateDamage() {
+    // IDA: 0x663030, 688B
+}
+
+int TechnoClass::MutateAll() {
+    // IDA: 0x6b0ae0, 406B
+    return 0;
+}
+
+int TechnoClass::RefreshDeployOccupierState() {
+    // IDA: 0x6b0d10, 65B
+    return 0;
+}
+
+int TechnoClass::CountPassengers() {
+    // IDA: 0x6b7d80, 85B
+    return 0;
+}
+
+bool TechnoClass::HasAnyMission() const {
+    // IDA: 0x6e57c0, 30B
+    return false;
+}
+
+bool TechnoClass::IsWaypointHidden() const {
+    // IDA: 0x6ec300, 98B
+    return false;
+}
+
+void TechnoClass::ProcessBorderTower() {
+    // IDA: 0x6ed4d0, 663B
+}
+
+bool TechnoClass::IsDeployed() const {
+    // IDA: 0x6ef9e0, 46B
+    return false;
+}
+
+int TechnoClass::GetWaypointCoords() const {
+    // IDA: 0x6f18a0, 57B
+    return 0;
+}
+
+bool TechnoClass::Create() {
+    // IDA: 0x6f1920, 131B
+    return false;
+}
+
+bool TechnoClass::IsNotAircraftOrBuilding() const {
+    // IDA: 0x6f3280, 73B
+    return false;
+}
+
+bool TechnoClass::CanInitiateSell() const {
+    // IDA: 0x6f32d0, 92B
+    return false;
+}
+
+bool TechnoClass::CanTargetHouse() const {
+    // IDA: 0x6f3820, 257B
+    return false;
+}
+
+int TechnoClass::GetCrewCount() const {
+    // IDA: 0x6f3950, 24B
+    return 0;
+}
+
+int TechnoClass::GetValue() const {
+    // IDA: 0x6f3970, 337B
+    return 0;
+}
+
+void TechnoClass::ComputeTransform() {
+    // IDA: 0x6f3ad0, 653B
+}
+
+int TechnoClass::GetTurretOffset() const {
+    // IDA: 0x6f3d60, 468B
+    return 0;
+}
+
+void TechnoClass::SetHouseFlag() {
+    // IDA: 0x6f4960, 223B
+}
+
+bool TechnoClass::CheckPlayerOwned() const {
+    // IDA: 0x6f4a40, 36B
+    return false;
+}
+
+void TechnoClass::UpdateProdWithSound() {
+    // IDA: 0x6f4a70, 51B
+}
+
+int TechnoClass::Mission_RepairDispatch() {
+    // IDA: 0x6f4ab0, 938B
+    return 0;
+}
+
+int TechnoClass::PushNearbyUnits() {
+    // IDA: 0x6f4eb0, 475B
+    return 0;
+}
+
+void TechnoClass::CleanupDeploy() {
+    // IDA: 0x6f6ac0, 480B
+}
+
+int TechnoClass::FinishDeploy() {
+    // IDA: 0x6f6ca0, 659B
+    return 0;
+}
+
+void TechnoClass::ComputeSlopeDifference() {
+    // IDA: 0x6f6f60, 369B
+}
+
+void TechnoClass::ComputeSlopePenalty() {
+    // IDA: 0x6f70e0, 317B
+}
+
+bool TechnoClass::CheckTargetLOS() const {
+    // IDA: 0x6f7220, 1088B
+    return false;
+}
+
+bool TechnoClass::IsInRange() const {
+    // IDA: 0x6f7660, 287B
+    return false;
+}
+
+bool TechnoClass::CheckCellPassable2() const {
+    // IDA: 0x6f7780, 34B
+    return false;
+}
+
+int TechnoClass::ValidateTarget() {
+    // IDA: 0x6f77b0, 278B
+    return 0;
+}
+
+bool TechnoClass::CheckAndFireAtTarget() const {
+    // IDA: 0x6f78d0, 86B
+    return false;
+}
+
+bool TechnoClass::CheckCellPassable() const {
+    // IDA: 0x6f7930, 49B
+    return false;
+}
+
+bool TechnoClass::CheckCellPassable3() const {
+    // IDA: 0x6f7970, 40B
+    return false;
+}
+
+int TechnoClass::GetBridgeDamageMult() const {
+    // IDA: 0x6f79a0, 761B
+    return 0;
+}
+
+int TechnoClass::EvaluateTarget() {
+    // IDA: 0x6f7ca0, 3259B
+    return 0;
+}
+
+int TechnoClass::EvaluateBuildingTarget() {
+    // IDA: 0x6f8c10, 478B
+    return 0;
+}
+
+int TechnoClass::SelectAutoTarget_Start_AU() {
+    // IDA: 0x6f8df0, 4031B
+    return 0;
+}
+
+void TechnoClass::SetTargetIfAllowed() {
+    // IDA: 0x6f9dd0, 54B
+}
+
+int TechnoClass::StepAnimFrame() {
+    // IDA: 0x6fb010, 97B
+    return 0;
+}
+
+int TechnoClass::CalcAnimDelay() {
+    // IDA: 0x6fb080, 229B
+    return 0;
+}
+
+bool TechnoClass::ShouldNotBeCloaked() const {
+    // IDA: 0x6fbc90, 301B
+    return false;
+}
+
+bool TechnoClass::ShouldBeCloaked() const {
+    // IDA: 0x6fbdc0, 468B
+    return false;
+}
+
+int TechnoClass::ExecuteMoveCommand() {
+    // IDA: 0x6fbfa0, 141B
+    return 0;
+}
+
+bool TechnoClass::CanMoveToCell() const {
+    // IDA: 0x6fc030, 89B
+    return false;
+}
+
+int TechnoClass::Vt240Thunk() {
+    // IDA: 0x6fc090, 23B
+    return 0;
+}
+
+void TechnoClass::ProcessDeploymentState() {
+    // IDA: 0x6fcd40, 109B
+}
+
+int TechnoClass::AssignTarget_SyncLog() {
+    // IDA: 0x6fcdb0, 485B
+    return 0;
+}
+
+void TechnoClass::CalculateROF() {
+    // IDA: 0x6fcfa0, 613B
+}
+
+bool TechnoClass::CreateFireEffect() {
+    // IDA: 0x6fd210, 588B
+    return false;
+}
+
+bool TechnoClass::CreateRadarBlip() {
+    // IDA: 0x6fd460, 269B
+    return false;
+}
+
+bool TechnoClass::CreateFiringRadarBlip() {
+    // IDA: 0x6fd570, 167B
+    return false;
+}
+
+bool TechnoClass::CreateFireBeamEffect() {
+    // IDA: 0x6fd620, 465B
+    return false;
+}
+
+int TechnoClass::GetFiringAngle() const {
+    // IDA: 0x6fda00, 376B
+    return 0;
+}
+
+void TechnoClass::ComputeAudioFalloffDamage() {
+    // IDA: 0x6fdb80, 450B
+}
+
+void TechnoClass::FireWeapon() {
+    // IDA: 0x6fdd50, 7167B
+}
+
+int TechnoClass::HandleCursorClick() {
+    // IDA: 0x6ffec0, 1842B
+    return 0;
+}
+
+int TechnoClass::HandleCursor() {
+    // IDA: 0x700600, 1586B
+    return 0;
+}
+
+bool TechnoClass::CanReceivePassengers() const {
+    // IDA: 0x700c40, 200B
+    return false;
+}
+
+bool TechnoClass::IsDeadOrInactive() const {
+    // IDA: 0x700d10, 63B
+    return false;
+}
+
+bool TechnoClass::CanAttack() const {
+    // IDA: 0x700d50, 891B
+    return false;
+}
+
+bool TechnoClass::HasValidWeapon() const {
+    // IDA: 0x7010d0, 69B
+    return false;
+}
+
+bool TechnoClass::HasActiveParam() const {
+    // IDA: 0x701120, 26B
+    return false;
+}
+
+int TechnoClass::FindLowestDamage() {
+    // IDA: 0x7012c0, 221B
+    return 0;
+}
+
+void TechnoClass::ProcessCapture() {
+    // IDA: 0x7014a0, 1014B
+}
+
+int TechnoClass::ReceiveDamage_Shield() {
+    // IDA: 0x701900, 5154B
+    return 0;
+}
+
+int TechnoClass::RegisterKill() {
+    // IDA: 0x702d40, 1215B
+    return 0;
+}
+
+int TechnoClass::TransitionEffectState() {
+    // IDA: 0x7036c0, 173B
+    return 0;
+}
+
+int TechnoClass::StartEffectAudio() {
+    // IDA: 0x703770, 211B
+    return 0;
+}
+
+int TechnoClass::Vt279Thunk0() {
+    // IDA: 0x703850, 11B
+    return 0;
+}
+
+void TechnoClass::UpdatePowerDrain() {
+    // IDA: 0x703860, 686B
+}
+
+bool TechnoClass::CheckTargetCell() const {
+    // IDA: 0x703b10, 423B
+    return false;
+}
+
+void TechnoClass::ScanAdjacentCells() {
+    // IDA: 0x703cc0, 423B
+}
+
+void TechnoClass::ScanNeighborCells() {
+    // IDA: 0x703e70, 385B
+}
+
+bool TechnoClass::IsValidBuildingPlacement() const {
+    // IDA: 0x704000, 575B
+    return false;
+}
+
+bool TechnoClass::CheckAdjacencyFlags() const {
+    // IDA: 0x704240, 259B
+    return false;
+}
+
+bool TechnoClass::IsNotBusy() const {
+    // IDA: 0x705d50, 14B
+    return false;
+}
+
+int TechnoClass::GetBuildAnim() const {
+    // IDA: 0x705d70, 138B
+    return 0;
+}
+
+void TechnoClass::UpdateState() {
+    // IDA: 0x706640, 1399B
+}
+
+void TechnoClass::CleanupAll() {
+    // IDA: 0x707cb0, 112B
+}
+
+void TechnoClass::ComputeTotalPowerDrain() {
+    // IDA: 0x707dd0, 139B
+}
+
+void TechnoClass::ComputeScanDistance() {
+    // IDA: 0x707e60, 241B
+}
+
+bool TechnoClass::CheckPlacementTileMatch() const {
+    // IDA: 0x707f60, 278B
+    return false;
+}
+
+int TechnoClass::EvaluateMission() {
+    // IDA: 0x708080, 1846B
+    return 0;
+}
+
+int TechnoClass::GetCostMultiplier() const {
+    // IDA: 0x708b40, 113B
+    return 0;
+}
+
+void TechnoClass::ComputeAverageValue() {
+    // IDA: 0x708bc0, 75B
+}
+
+int TechnoClass::GetGlobalValue() const {
+    // IDA: 0x708c10, 17B
+    return 0;
+}
+
+int TechnoClass::GetAmmoCount() const {
+    // IDA: 0x708c30, 292B
+    return 0;
+}
+
+int TechnoClass::Vt170() {
+    // IDA: 0x708d70, 26B
+    return 0;
+}
+
+void TechnoClass::SetMoveDestination() {
+    // IDA: 0x708d90, 48B
+}
+
+int TechnoClass::GetPrimaryTargetOrFallback() const {
+    // IDA: 0x708dc0, 61B
+    return 0;
+}
+
+int TechnoClass::PickAlternateTarget() {
+    // IDA: 0x708e00, 170B
+    return 0;
+}
+
+int TechnoClass::SelectRandomTarget() {
+    // IDA: 0x708eb0, 257B
+    return 0;
+}
+
+int TechnoClass::ResponseMove_Pickup() {
+    // IDA: 0x708fc0, 86B
+    return 0;
+}
+
+int TechnoClass::GetSecondaryTargetOrFallback() const {
+    // IDA: 0x709020, 61B
+    return 0;
+}
+
+int TechnoClass::GetTertiaryTargetOrFallback() const {
+    // IDA: 0x709060, 61B
+    return 0;
+}
+
+int TechnoClass::BeginFiringSequence() {
+    // IDA: 0x709820, 429B
+    return 0;
+}
+
+bool TechnoClass::IsTimerExpired() const {
+    // IDA: 0x7099e0, 53B
+    return false;
+}
+
+int TechnoClass::CompleteFactoryProduction() {
+    // IDA: 0x709a40, 66B
+    return 0;
+}
+
+int TechnoClass::GetCellCoordsV2() const {
+    // IDA: 0x70ad50, 78B
+    return 0;
+}
+
+int TechnoClass::Vt46Thunk() {
+    // IDA: 0x70ada0, 32B
+    return 0;
+}
+
+int TechnoClass::RevealAreaSmall() {
+    // IDA: 0x70adc0, 386B
+    return 0;
+}
+
+void TechnoClass::ScanForEnemies() {
+    // IDA: 0x70af50, 640B
+}
+
+int TechnoClass::RevealAreaConditional() {
+    // IDA: 0x70b1d0, 165B
+    return 0;
+}
+
+void TechnoClass::ComputeAimVector() {
+    // IDA: 0x70b280, 752B
+}
+
+void TechnoClass::UpdateBodyTilt() {
+    // IDA: 0x70b570, 1850B
+}
+
+int TechnoClass::CalcOffsetFacing() {
+    // IDA: 0x70be50, 42B
+    return 0;
+}
+
+bool TechnoClass::ShouldSelfHealOneStep() const {
+    // IDA: 0x70be80, 199B
+    return false;
+}
+
+void TechnoClass::SetFocus() {
+    // IDA: 0x70c610, 13B
+}
+
+bool TechnoClass::CheckCliffTransition() const {
+    // IDA: 0x70c620, 112B
+    return false;
+}
+
+int TechnoClass::RadarUpdateOn() {
+    // IDA: 0x70cc90, 37B
+    return 0;
+}
+
+int TechnoClass::RadarUpdateOff() {
+    // IDA: 0x70ccc0, 37B
+    return 0;
+}
+
+int TechnoClass::RevealOwnCell() {
+    // IDA: 0x70ccf0, 18B
+    return 0;
+}
+
+void TechnoClass::ComputeDamage() {
+    // IDA: 0x70cd10, 960B
+}
+
+int TechnoClass::GetRangeModifier() const {
+    // IDA: 0x70d190, 49B
+    return 0;
+}
+
+bool TechnoClass::ShouldScanArea() const {
+    // IDA: 0x70d1d0, 579B
+    return false;
+}
+
+bool TechnoClass::IsPlayerCellPassable() const {
+    // IDA: 0x70d420, 60B
+    return false;
+}
+
+bool TechnoClass::IsCellPassableFor() const {
+    // IDA: 0x70d460, 60B
+    return false;
+}
+
+bool TechnoClass::IsCloseEnoughToBuilding() const {
+    // IDA: 0x70d590, 224B
+    return false;
+}
+
+int TechnoClass::DecCounter() {
+    // IDA: 0x70d670, 18B
+    return 0;
+}
+
+void TechnoClass::ComputeCombatDamage() {
+    // IDA: 0x70d690, 265B
+}
+
+int TechnoClass::PlaceAtCell() {
+    // IDA: 0x70d8f0, 142B
+    return 0;
+}
+
+int TechnoClass::OnEnterCell() {
+    // IDA: 0x70d990, 693B
+    return 0;
+}
+
+int TechnoClass::sub_570DC50() {
+    // IDA: 0x70dc50, 15B
+    return 0;
+}
+
+int TechnoClass::OwnerHasPower() {
+    // IDA: 0x70dc60, 15B
+    return 0;
+}
+
+int TechnoClass::sub_570DCE0() {
+    // IDA: 0x70dce0, 15B
+    return 0;
+}
+
+int TechnoClass::GetPoweredWeaponIndex() const {
+    // IDA: 0x70dd20, 34B
+    return 0;
+}
+
+int TechnoClass::GetVt252Byte() const {
+    // IDA: 0x70dd50, 28B
+    return 0;
+}
+
+void TechnoClass::SetSpread() {
+    // IDA: 0x70ddd0, 17B
+}
+
+void TechnoClass::SetMember81() {
+    // IDA: 0x70de00, 17B
+}
+
+int TechnoClass::GattlingValueRateDown_GattlingRateDownDelay() {
+    // IDA: 0x70de40, 37B
+    return 0;
+}
+
+int TechnoClass::GattlingRateUp_GattlingRateDownReset() {
+    // IDA: 0x70de70, 387B
+    return 0;
+}
+
+int TechnoClass::DrainAmmo() {
+    // IDA: 0x70e000, 281B
+    return 0;
+}
+
+int TechnoClass::Vt249to254() {
+    // IDA: 0x70e120, 24B
+    return 0;
+}
+
+int TechnoClass::SelectVocOrSfx() {
+    // IDA: 0x70e140, 85B
+    return 0;
+}
+
+void TechnoClass::UpdatePowered() {
+    // IDA: 0x70e1a0, 56B
+}
+
+bool TechnoClass::ActivateEffect() {
+    // IDA: 0x70e280, 37B
+    return false;
+}
+
+int TechnoClass::IronCurtain() {
+    // IDA: 0x70e2b0, 80B
+    return 0;
+}
+
+int TechnoClass::ResetTimer() {
+    // IDA: 0x70e300, 52B
+    return 0;
+}
+
+int TechnoClass::InvulnerabilityIntensity_SetContext() {
+    // IDA: 0x70e380, 267B
+    return 0;
+}
+
+int TechnoClass::CalcFlashAlpha() {
+    // IDA: 0x70e4b0, 196B
+    return 0;
+}
+
+void TechnoClass::Update2() {
+    // IDA: 0x70ed10, 104B
+}
+
+int TechnoClass::GetAnimationFlags() const {
+    // IDA: 0x70ed80, 163B
+    return 0;
+}
+
+bool TechnoClass::CheckFireCooldown() const {
+    // IDA: 0x70ee30, 195B
+    return false;
+}
+
+bool TechnoClass::CanDamageTarget() const {
+    // IDA: 0x70ef00, 196B
+    return false;
+}
+
+bool TechnoClass::HasPassengers() const {
+    // IDA: 0x70efd0, 14B
+    return false;
+}
+
+int TechnoClass::GetMaxSpeed() const {
+    // IDA: 0x70efe0, 22B
+    return 0;
+}
+
+void TechnoClass::ClearUnknownFlag() {
+    // IDA: 0x70f000, 11B
+}
+
+void TechnoClass::ProcessCellClearance() {
+    // IDA: 0x70f050, 30B
+}
+
+int TechnoClass::GetTypeVt40() const {
+    // IDA: 0x70f070, 18B
+    return 0;
+}
+
+void TechnoClass::SetIdleState() {
+    // IDA: 0x70f850, 51B
+}
+
+bool TechnoClass::CanSelfRepair() const {
+    // IDA: 0x70fb50, 123B
+    return false;
+}
+
+bool TechnoClass::Activate() {
+    // IDA: 0x70fbe0, 166B
+    return false;
+}
+
+bool TechnoClass::Deactivate() {
+    // IDA: 0x70fc90, 223B
+    return false;
+}
+
+int TechnoClass::LinkToBridge() {
+    // IDA: 0x70fd70, 207B
+    return 0;
+}
+
+int TechnoClass::EjectPassengers() {
+    // IDA: 0x70fee0, 278B
+    return 0;
+}
+
+int TechnoClass::EnteredOpenTopped() {
+    // IDA: 0x710470, 43B
+    return 0;
+}
+
+int TechnoClass::ExitedOpenTopped() {
+    // IDA: 0x7104a0, 18B
+    return 0;
+}
+
+int TechnoClass::MarkPassengersAsExited() {
+    // IDA: 0x7104c0, 42B
+    return 0;
+}
+
+int TechnoClass::ScalarDtor() {
+    // IDA: 0x7106e0, 30B
+    return 0;
+}
+
+int TechnoClass::GetBuildCost() const {
+    // IDA: 0x711ec0, 31B
+    return 0;
+}
+
+int TechnoClass::GetAudioEntry() const {
+    // IDA: 0x7177c0, 23B
+    return 0;
+}
+
+int TechnoClass::sub_57177E0() {
+    // IDA: 0x7177e0, 23B
+    return 0;
+}
+
+int TechnoClass::GetSightRange() const {
+    // IDA: 0x717800, 23B
+    return 0;
+}
+
+int TechnoClass::GatherAllBuildings() {
+    // IDA: 0x732050, 181B
+    return 0;
+}
+
+bool TechnoClass::IsOwnedByHuman() const {
+    // IDA: 0x732580, 61B
+    return false;
+}
+
+bool TechnoClass::IsCapturableByPlayer() const {
+    // IDA: 0x7335f0, 78B
+    return false;
+}
+
+void TechnoClass::UpdateUnitAnimation() {
+    // IDA: 0x736ca0, 169B
+}
+
+bool TechnoClass::IsC4AnimationActive() const {
+    // IDA: 0x736d50, 160B
+    return false;
+}
+
+int TechnoClass::DispatchPlayerInput() {
+    // IDA: 0x737ba0, 232B
+    return 0;
+}
+
+bool TechnoClass::CreateDeathAnim() {
+    // IDA: 0x738680, 516B
+    return false;
+}
+
+int TechnoClass::ValidateMoveType() {
+    // IDA: 0x738890, 125B
+    return 0;
+}
+
+int TechnoClass::SpawnInfantryFromBuilding() {
+    // IDA: 0x738910, 88B
+    return 0;
+}
+
+bool TechnoClass::Deploy() {
+    // IDA: 0x7393c0, 1784B
+    return false;
+}
+
+bool TechnoClass::DeployIntoBuilding() {
+    // IDA: 0x73efc0, 212B
+    return false;
+}
+
+int TechnoClass::GetInfantryCursorAction() const {
+    // IDA: 0x7404b0, 863B
+    return 0;
+}
+
+void TechnoClass::ProcessAIDecision() {
+    // IDA: 0x740810, 634B
+}
+
+bool TechnoClass::CheckRepairNeeded() const {
+    // IDA: 0x740a90, 116B
+    return false;
+}
+
+int TechnoClass::sub_740B10() {
+    // IDA: 0x740b10, 65B
+    return 0;
+}
+
+int TechnoClass::FindBestMovementDirection() {
+    // IDA: 0x740b60, 656B
+    return 0;
+}
+
+int TechnoClass::EnterRepairBuilding() {
+    // IDA: 0x740ef0, 144B
+    return 0;
+}
+
+int TechnoClass::GetDeployProgressValue() const {
+    // IDA: 0x740f80, 67B
+    return 0;
+}
+
+bool TechnoClass::CheckUnitFireConstraints() const {
+    // IDA: 0x740fd0, 869B
+    return false;
+}
+
+void TechnoClass::FireWeaponBurst() {
+    // IDA: 0x741340, 331B
+}
+
+int TechnoClass::GetAverageDamageScore() const {
+    // IDA: 0x7414a0, 62B
+    return 0;
+}
+
+void TechnoClass::ProcessSpecialUnitDeployCrush() {
+    // IDA: 0x7416a0, 711B
+}
+
+int TechnoClass::SelectAutoTargetWithGarrison() {
+    // IDA: 0x743190, 214B
+    return 0;
+}
+
+int TechnoClass::ReturnCapturedFlag() {
+    // IDA: 0x7440b0, 80B
+    return 0;
+}
+
+int TechnoClass::SelectAITarget() {
+    // IDA: 0x744100, 117B
+    return 0;
+}
+
+bool TechnoClass::AreBuildingFlagsClear() const {
+    // IDA: 0x744180, 48B
+    return false;
+}
+
+int TechnoClass::MarkCellImpassable() {
+    // IDA: 0x7441b0, 94B
+    return 0;
+}
+
+void TechnoClass::ClearCellImpassable() {
+    // IDA: 0x744210, 83B
+}
+
+bool TechnoClass::CanBeTargeted() const {
+    // IDA: 0x744270, 507B
+    return false;
+}
+
+void TechnoClass::NotifyTeamOnDestruction() {
+    // IDA: 0x744720, 122B
+}
+
+void TechnoClass::ProcessUnitSelfDestruct() {
+    // IDA: 0x746100, 669B
+}
+
+int TechnoClass::TransferSlavedUnit() {
+    // IDA: 0x7463a0, 83B
+    return 0;
+}
+
+int TechnoClass::sub_746400() {
+    // IDA: 0x746400, 22B
+    return 0;
+}
+
+int TechnoClass::CaptureTurret() {
+    // IDA: 0x746420, 188B
+    return 0;
+}
+
+int TechnoClass::TransferTurret() {
+    // IDA: 0x7464e0, 196B
+    return 0;
+}
+
+int TechnoClass::sub_7465B0() {
+    // IDA: 0x7465b0, 52B
+    return 0;
+}
+
+int TechnoClass::sub_7465F0() {
+    // IDA: 0x7465f0, 52B
+    return 0;
+}
+
+int TechnoClass::ApplyObjectEffect() {
+    // IDA: 0x746670, 167B
+    return 0;
+}
+
+void TechnoClass::ClearAllTargets() {
+    // IDA: 0x746720, 40B
+}
+
+bool TechnoClass::IsGuardingTarget() const {
+    // IDA: 0x746750, 185B
+    return false;
+}
+
+int TechnoClass::GetCommandTooltip() const {
+    // IDA: 0x746b20, 357B
+    return 0;
+}
+
+int TechnoClass::sub_746C90() {
+    // IDA: 0x746c90, 27B
+    return 0;
+}
+
+int TechnoClass::SelectAttackWeapon() {
+    // IDA: 0x746cd0, 48B
+    return 0;
+}
+
+int TechnoClass::sub_5746D00() {
+    // IDA: 0x746d00, 13B
+    return 0;
+}
+
+int TechnoClass::sub_746D60() {
+    // IDA: 0x746d60, 17B
+    return 0;
+}
+
+bool TechnoClass::HasDeployFlags() const {
+    // IDA: 0x746db0, 29B
+    return false;
+}
+
+int TechnoClass::sub_746E30() {
+    // IDA: 0x746e30, 73B
+    return 0;
+}
+
+int TechnoClass::sub_5746EA0() {
+    // IDA: 0x746ea0, 27B
+    return 0;
+}
+
+int TechnoClass::GetWeaponRange() const {
+    // IDA: 0x773070, 92B
+    return 0;
+}

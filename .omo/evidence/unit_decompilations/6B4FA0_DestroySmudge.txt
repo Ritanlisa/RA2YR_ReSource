@@ -1,0 +1,34 @@
+// Original function at 0x6B4FA0 (DestroySmudge)
+// Line 575018 in gamemd.exe.c
+// Size: 907 bytes
+
+//----- (006B4FA0) --------------------------------------------------------
+void **__thiscall UnitClass::DestroySmudge(void **Block, char a2)
+{
+  int v3; // eax
+  void **v5; // [esp+4h] [ebp-4h] BYREF
+
+  *Block = &SmudgeClass::`vftable';
+  *(Block + 1) = &SmudgeClass::`vftable';
+  *(Block + 2) = &SmudgeClass::`vftable';
+  *(Block + 3) = &SmudgeClass::`vftable';
+  AbstractClass::AnnounceExpiredPointer(Block);
+  v5 = Block;
+  v3 = (*(int (__thiscall **)(int *, void ***))(SmudgeClass_Array + 16))(&SmudgeClass_Array, &v5);
+  if ( v3 != -1 && v3 < dword_A8B1F0 && v3 < --dword_A8B1F0 )
+  {
+    do
+    {
+      ++v3;
+      *((_DWORD *)dword_A8B1E4 + v3 - 1) = *((_DWORD *)dword_A8B1E4 + v3);
+    }
+    while ( v3 < dword_A8B1F0 );
+  }
+  if ( WTFMode )
+    ObjectClass::Undeploy((#374 *)Block);
+  *(Block + 43) = 0;
+  ObjectClass::Dtor(Block);
+  if ( (a2 & 1) != 0 )
+    __3_YAXPAX_Z(Block);
+  return Block;
+}

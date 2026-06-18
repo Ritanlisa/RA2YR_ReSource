@@ -1,0 +1,244 @@
+// Original function at 0x743A50 (Scatter)
+// Line 686593 in gamemd.exe.c
+// Size: 7227 bytes
+
+//----- (00743A50) --------------------------------------------------------
+int __thiscall UnitClass_Scatter(_DWORD *this, int *a2, int a3, int a4)
+{
+  int result; // eax
+  int v6; // eax
+  _DWORD *v7; // ebx
+  int v8; // eax
+  int *v9; // esi
+  _DWORD *v10; // eax
+  int v11; // ecx
+  int v12; // esi
+  void *v13; // eax
+  double v14; // st7
+  char v15; // al
+  char v16; // di
+  unsigned int v17; // esi
+  int v18; // edx
+  int v19; // edi
+  _DWORD *v20; // eax
+  char *v21; // esi
+  int v22; // esi
+  int v23; // eax
+  char v24; // si
+  int v25; // esi
+  int v26; // ecx
+  __int16 v27; // ax
+  void *v28; // edi
+  int v29; // ebx
+  int LandHeight; // eax
+  int v31; // kr04_4
+  _DWORD *v32; // eax
+  unsigned __int16 v33; // ax
+  int v34; // [esp+44h] [ebp-48h] BYREF
+  int v35; // [esp+48h] [ebp-44h] BYREF
+  int *v36; // [esp+4Ch] [ebp-40h] BYREF
+  int v37; // [esp+50h] [ebp-3Ch]
+  int v38; // [esp+54h] [ebp-38h] BYREF
+  int v39; // [esp+58h] [ebp-34h] BYREF
+  int v40; // [esp+5Ch] [ebp-30h] BYREF
+  int v41; // [esp+60h] [ebp-2Ch] BYREF
+  int v42; // [esp+64h] [ebp-28h] BYREF
+  int v43; // [esp+68h] [ebp-24h]
+  int v44; // [esp+6Ch] [ebp-20h]
+  _BYTE v45[8]; // [esp+70h] [ebp-1Ch] BYREF
+  int v46; // [esp+78h] [ebp-14h]
+  _DWORD v47[4]; // [esp+7Ch] [ebp-10h] BYREF
+
+  result = (*(int (__thiscall **)(_DWORD *))(*this + 652))(this);
+  if ( !(_BYTE)result )
+    return result;
+  v6 = *(this + 413);
+  v7 = this + 413;
+  v34 = 0;
+  if ( !v6 )
+    goto LABEL_7;
+  v8 = StreamClass::Set2(&v34, this + 413);
+  if ( v8 < 0 && v8 != -2147467262 )
+    WinAPI::Wrapper(v8);
+  if ( !v34 )
+LABEL_7:
+    WinAPI::Wrapper(-2147467261);
+  (*(void (__stdcall **)(int, _DWORD *))(*(_DWORD *)v34 + 12))(v34, v47);
+  if ( !memcmp(v47, &g_CLSID_HoverLocomotion, 0x10u) )
+    goto LABEL_66;
+  if ( !MissionClass::GetMissionControl(this)[9] && !(_BYTE)a3 )
+  {
+    result = v34;
+    if ( v34 )
+      return (*(int (__stdcall **)(int))(*(_DWORD *)v34 + 8))(v34);
+    return result;
+  }
+  if ( TimerClass::Active((int)(this + 226)) )
+    goto LABEL_66;
+  if ( *(this + 361) && !(_BYTE)a4 )
+  {
+    result = v34;
+    if ( v34 )
+      return (*(int (__stdcall **)(int))(*(_DWORD *)v34 + 8))(v34);
+    return result;
+  }
+  if ( *((_BYTE *)this + 1760) || *((_BYTE *)this + 1761) || *((_BYTE *)this + 1762) )
+  {
+    result = v34;
+    if ( v34 )
+      return (*(int (__stdcall **)(int))(*(_DWORD *)v34 + 8))(v34);
+    return result;
+  }
+  if ( !*v7 )
+    WinAPI::Wrapper(-2147467261);
+  if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)*v7 + 96))(*v7) )
+  {
+    result = v34;
+    if ( v34 )
+      return (*(int (__stdcall **)(int))(*(_DWORD *)v34 + 8))(v34);
+    return result;
+  }
+  v9 = a2;
+  if ( *a2 == dword_B1CFE8 && a2[1] == dword_B1CFEC && a2[2] == dword_B1CFF0 )
+  {
+    a3 = 0;
+    v10 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, _BYTE *, _DWORD))(*this + 76))(this, v45, 0);
+    v11 = (int)v10;
+    LOWORD(a4) = *v10 / 256;
+    LOBYTE(v11) = *((_BYTE *)this + 140);
+    HIWORD(a4) = v10[1] / 256;
+    v39 = a4;
+    a2 = (int *)*LayerClass::Pathfinding_Find(
+                   &MapClass_Instance,
+                   (int)&v38,
+                   &v38,
+                   (__int16 *)&v39,
+                   *(_DWORD *)(*(this + 433) + 1660),
+                   -1,
+                   0,
+                   v11,
+                   1,
+                   1,
+                   0,
+                   1,
+                   0,
+                   1,
+                   (__int16 *)&a3,
+                   0,
+                   0);
+    if ( a2 != (int *)g_UnitSelectionState )
+    {
+      v12 = *this;
+      v13 = CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)&a2);
+      goto LABEL_65;
+    }
+    goto LABEL_66;
+  }
+  if ( MissionClass::GetMissionControl(this)[7] )
+  {
+    result = v34;
+    if ( v34 )
+      return (*(int (__stdcall **)(int))(*(_DWORD *)v34 + 8))(v34);
+    return result;
+  }
+  if ( (*(int (__thiscall **)(_DWORD *))(*this + 44))(this) == 1 && *((_BYTE *)this + 1745)
+    || *(this + 361) && (!(_BYTE)a4 || *((_BYTE *)this + 1711))
+    || *(this + 173) && !(_BYTE)a3 && Random::Range((_DWORD *)ScenarioClass_Instance + 134, 1, 4) != 1 )
+  {
+    goto LABEL_66;
+  }
+  a4 = *v9;
+  if ( a4 == dword_B1CFE8 && v9[1] == dword_B1CFEC && v9[2] == dword_B1CFF0 )
+  {
+    v17 = ((unsigned int)((*ProgressTimer::GetValue((_WORD *)this + 452, &v40) >> 12) + 1) >> 1) & 7;
+    v16 = Random::Range((_DWORD *)ScenarioClass_Instance + 134, 0, 2) + v17 - 1;
+  }
+  else
+  {
+    v42 = *(this + 39);
+    v43 = *(this + 40);
+    v44 = *(this + 41);
+    v14 = Math::CalcAngle((double)v9[1] - (double)v43, (double)v42 - (double)a4);
+    LOWORD(a4) = Math::RoundToInt((v14 - 1.570796326794897) * -10430.06004058427);
+    v15 = Random::Range((_DWORD *)ScenarioClass_Instance + 134, 0, 2);
+    v16 = v15 + ((((unsigned int)a4 >> 12) + 1) >> 1) - 1;
+  }
+  v18 = *this;
+  v19 = v16 & 7;
+  v37 = v19;
+  a2 = 0;
+  a3 = 0;
+  v20 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, _BYTE *, _DWORD))(v18 + 76))(this, v45, 0);
+  LOWORD(a4) = *v20 / 256;
+  HIWORD(a4) = v20[1] / 256;
+  v35 = a4;
+  v21 = (char *)CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)&v35);
+  v22 = v21[283] + (*(unsigned __int8 (__thiscall **)(_DWORD *, _DWORD))(*this + 188))(this, 0) != 0 ? 4 : 0;
+  (*(void (__thiscall **)(_DWORD *, _BYTE *, _DWORD))(*this + 76))(this, v45, 0);
+  v23 = v22 * dword_B1D0B8;
+  v24 = 0;
+  v46 = v23;
+  v39 = 0;
+  while ( 1 )
+  {
+    v25 = ((_BYTE)v19 + v24) & 7;
+    v26 = v25 & 7;
+    v27 = HIWORD(Direction_X_Offsets[v26]);
+    LOWORD(v38) = LOWORD(Direction_X_Offsets[v26]) + v35;
+    HIWORD(v38) = HIWORD(v35) + v27;
+    a4 = v38;
+    v28 = CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)&a4);
+    if ( !LayerClass::IsWithinUsableArea(&MapClass_Instance, (__int16 *)&a4, 1) )
+      goto LABEL_56;
+    v29 = *this;
+    LandHeight = ObjectClass::GetLandHeight(this);
+    if ( (*(int (__thiscall **)(_DWORD *, void *, int, int, _DWORD, int))(v29 + 428))(this, v28, v25, LandHeight, 0, 1) )
+      goto LABEL_56;
+    v31 = g_UnitSelectionState;
+    if ( a2 == (int *)g_UnitSelectionState )
+      a2 = (int *)a4;
+    if ( !g_UnitSelectionState )
+      break;
+LABEL_57:
+    v24 = ++v39;
+    if ( v39 >= 8 )
+      goto LABEL_60;
+    LOBYTE(v19) = v37;
+  }
+  v43 = (SHIWORD(a4) << 8) + 128;
+  v42 = ((__int16)a4 << 8) + 128;
+  v44 = v46;
+  v32 = Terrain::ClimbCheck(&v41, &v42);
+  if ( a4 != *v32 || (*((_DWORD *)CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)&a4) + 80) & 0x100) != 0 )
+  {
+LABEL_56:
+    v31 = g_UnitSelectionState;
+    goto LABEL_57;
+  }
+  a3 = a4;
+  v31 = g_UnitSelectionState;
+LABEL_60:
+  v33 = a3;
+  v36 = (int *)a3;
+  if ( (_WORD)a3 != (_WORD)v31 )
+    goto LABEL_64;
+  if ( HIWORD(a3) == HIWORD(v31) )
+  {
+    v33 = (unsigned __int16)a2;
+    v36 = a2;
+  }
+  if ( __PAIR32__(HIWORD(v36), v33) != v31 )
+  {
+LABEL_64:
+    (*(void (__thiscall **)(_DWORD *, int, _DWORD))(*this + 488))(this, 2, 0);
+    v12 = *this;
+    v13 = CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)&v36);
+LABEL_65:
+    (*(void (__thiscall **)(_DWORD *, void *, int))(v12 + 1152))(this, v13, 1);
+  }
+LABEL_66:
+  result = v34;
+  if ( v34 )
+    return (*(int (__stdcall **)(int))(*(_DWORD *)v34 + 8))(v34);
+  return result;
+}

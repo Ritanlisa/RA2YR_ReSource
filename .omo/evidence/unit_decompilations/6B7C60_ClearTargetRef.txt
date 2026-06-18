@@ -1,0 +1,64 @@
+// Original function at 0x6B7C60 (ClearTargetRef)
+// Line 577409 in gamemd.exe.c
+// Size: 1279 bytes
+
+//----- (006B7C60) --------------------------------------------------------
+void __thiscall sub_6B7C60(_DWORD *this, int a2)
+{
+  int v3; // eax
+  int v4; // eax
+  int v5; // edx
+  _DWORD **v6; // ecx
+  _DWORD *v7; // ecx
+  int v8; // edx
+  _DWORD *v9; // eax
+  int v10; // [esp+10h] [ebp-8h]
+
+  if ( a2 == *(this + 26) )
+  {
+    v3 = *(this + 27);
+    *(this + 26) = 0;
+    if ( !v3 )
+      UnitClass::ProcessIdleOrders(this);
+  }
+  else if ( a2 == *(this + 27) )
+  {
+    *(this + 27) = 0;
+  }
+  else
+  {
+    v4 = *(this + 18) - 1;
+    if ( v4 < 0 )
+    {
+LABEL_10:
+      if ( a2 == *(this + 9) )
+      {
+        TaskManager::Update(this);
+        UnitClass::ProcessIdleOrders(this);
+      }
+    }
+    else
+    {
+      v5 = *(this + 15);
+      v6 = (_DWORD **)(v5 + 4 * v4);
+      while ( a2 != **v6 )
+      {
+        --v4;
+        --v6;
+        if ( v4 < 0 )
+          goto LABEL_10;
+      }
+      v7 = *(_DWORD **)(v5 + 4 * v4);
+      if ( *(int *)(*v7 + 108) <= 0 || *(_BYTE *)(*v7 + 1738) || v7[5] == 1 )
+      {
+        *v7 = 0;
+        *(_DWORD *)(*(_DWORD *)(*(this + 15) + 4 * v4) + 4) = 7;
+        v8 = *(this + 12);
+        v9 = (_DWORD *)(*(_DWORD *)(*(this + 15) + 4 * v4) + 8);
+        *v9 = CurrentFrame;
+        v9[1] = v10;
+        v9[2] = v8;
+      }
+    }
+  }
+}

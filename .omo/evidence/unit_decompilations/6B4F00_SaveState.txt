@@ -1,0 +1,9 @@
+// Original function at 0x6B4F00 (SaveState)
+// Line 574982 in gamemd.exe.c
+// Size: 189 bytes
+
+//----- (006B4F00) --------------------------------------------------------
+int __stdcall UnitClass::_vt06(int *a1, int *a2, int a3)
+{
+  return AbstractClass::SaveLoad_Prefix(a1, a2, a3);
+}

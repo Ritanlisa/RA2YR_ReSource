@@ -1,0 +1,9 @@
+// Original function at 0x4D03D0 (CompareCoordinateMagnitude)
+// Line 173975 in gamemd.exe.c
+// Size: 176 bytes
+
+//----- (004D03D0) --------------------------------------------------------
+bool __thiscall sub_4D03D0(__int16 *this, __int16 *a2)
+{
+  return abs16(*this) >= (int)abs16(*a2);
+}

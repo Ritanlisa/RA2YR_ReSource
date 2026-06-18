@@ -1,0 +1,24 @@
+// Original function at 0x6B4EA0 (SaveLoadData)
+// Line 574956 in gamemd.exe.c
+// Size: 577 bytes
+
+//----- (006B4EA0) --------------------------------------------------------
+int __thiscall UnitClass::SaveLoadData(#374 *this, _DWORD *a2, int a3)
+{
+  int Register; // edi
+
+  Register = BuildingClass::SaveLoad_Register(this);
+  if ( Register >= 0 )
+  {
+    if ( a2 )
+    {
+      ObjectClass::Init(a2, (int)&a3);
+      *a2 = &SmudgeClass::`vftable';
+      a2[1] = &SmudgeClass::`vftable';
+      a2[2] = &SmudgeClass::`vftable';
+      a2[3] = &SmudgeClass::`vftable';
+    }
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, a2 + 43);
+  }
+  return Register;
+}

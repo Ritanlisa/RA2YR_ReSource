@@ -1,0 +1,124 @@
+// Original function at 0x7468C0 (CheckForNearbyEnemies)
+// Line 688829 in gamemd.exe.c
+// Size: 3274 bytes
+
+//----- (007468C0) --------------------------------------------------------
+int __thiscall UnitClass::CheckForNearbyEnemies(int *this)
+{
+  wchar_t *v2; // ecx
+  int v3; // ebp
+  int *v4; // eax
+  int v5; // edi
+  int v6; // eax
+  _DWORD *v7; // eax
+  _DWORD *ObjectByType; // eax
+  int v9; // edx
+  int v10; // eax
+  int v11; // ecx
+  int v12; // eax
+  int v13; // eax
+  int v14; // edx
+  int result; // eax
+  int TechLevel; // ecx
+  bool v17; // [esp+Dh] [ebp-19h]
+  int v18; // [esp+Eh] [ebp-18h]
+  int v19; // [esp+12h] [ebp-14h] BYREF
+  _DWORD v20[4]; // [esp+16h] [ebp-10h] BYREF
+
+  v17 = 0;
+  if ( !(*(unsigned __int8 (__thiscall **)(int *))(*this + 196))(this) )
+  {
+    if ( !*(this + 413) )
+      WinAPI::Wrapper(-2147467261);
+    if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)*(this + 413) + 16))(*(this + 413))
+      && *(_BYTE *)(*(this + 433) + 3378) )
+    {
+      v17 = Team::GetMember(this, 0) == 0;
+    }
+  }
+  if ( !*(this + 413) )
+    WinAPI::Wrapper(-2147467261);
+  if ( (*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)*(this + 413) + 16))(*(this + 413)) )
+  {
+LABEL_30:
+    (*(void (__thiscall **)(int *))(*this + 1136))(this);
+    goto LABEL_25;
+  }
+  v2 = CurrentFrame;
+  if ( (int)CurrentFrame % 8 )
+  {
+    v3 = *(_DWORD *)(*(int (__thiscall **)(int *, _DWORD *))(*this + 440))(this, v20);
+    v4 = (int *)(*(int (__thiscall **)(int *))(*this + 444))(this);
+    LOBYTE(v20[0]) = Cell::IsInRange(v4);
+    v5 = 0;
+    while ( 1 )
+    {
+      v6 = v5 & 7;
+      LOWORD(v18) = v3 + LOWORD(Direction_X_Offsets[v6]);
+      HIWORD(v18) = HIWORD(v3) + HIWORD(Direction_X_Offsets[v6]);
+      v19 = v18;
+      v7 = CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)&v19);
+      ObjectByType = WTFMode::FindObjectByType(v7, v20[0]);
+      if ( ObjectByType )
+      {
+        if ( !Object::IsAlliedWithObjectHouse((_DWORD *)*(this + 135), (int)ObjectByType) )
+          break;
+      }
+      if ( ++v5 >= 8 )
+      {
+        v2 = CurrentFrame;
+        goto LABEL_16;
+      }
+    }
+    TechLevel = RulesClass_Instance->TechLevel;
+    *(this + 120) = (int)CurrentFrame;
+    *(this + 121) = v20[2];
+    *(this + 122) = TechLevel;
+    goto LABEL_30;
+  }
+LABEL_16:
+  if ( !v17 )
+    goto LABEL_25;
+  v9 = *(this + 120);
+  v10 = *(this + 122);
+  if ( v9 == -1 )
+    goto LABEL_20;
+  v11 = (int)v2 - v9;
+  if ( v11 < v10 )
+  {
+    v10 -= v11;
+LABEL_20:
+    if ( v10 )
+      goto LABEL_25;
+  }
+  v12 = Random::Range((_DWORD *)ScenarioClass_Instance + 134, 0, RulesClass_Instance->MinUnitCount - 1);
+  if ( v12 >= RulesClass_Instance->MinUnitCount - 1 )
+    v12 = RulesClass_Instance->MinUnitCount - 1;
+  v13 = *(_DWORD *)(RulesClass_Instance->Money + 4 * v12);
+  if ( v13 )
+  {
+    v14 = *this;
+    *(this + 326) = v13;
+    *(this + 327) = 0;
+    *((_BYTE *)this + 472) = 1;
+    *(this + 119) = (int)CurrentFrame;
+    (*(void (__thiscall **)(int *))(v14 + 1180))(this);
+  }
+LABEL_25:
+  result = *(this + 178);
+  if ( result )
+  {
+    if ( !(*(unsigned __int8 (__thiscall **)(int *))(*this + 196))(this)
+      || (unsigned __int8)House::IsHumanPlayer((#375 *)*(this + 135)) )
+    {
+      *(_BYTE *)(*(this + 178) + 413) = 0;
+      return 0;
+    }
+    else
+    {
+      *(_BYTE *)(*(this + 178) + 413) = 1;
+      return 1;
+    }
+  }
+  return result;
+}

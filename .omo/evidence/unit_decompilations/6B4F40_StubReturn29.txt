@@ -1,0 +1,9 @@
+// Original function at 0x6B4F40 (StubReturn29)
+// Line 575000 in gamemd.exe.c
+// Size: 115 bytes
+
+//----- (006B4F40) --------------------------------------------------------
+int UnitClass::_vt11()
+{
+  return 29;
+}

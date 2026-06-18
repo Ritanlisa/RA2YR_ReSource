@@ -1,0 +1,102 @@
+// Original function at 0x736990 (UpdateRotation_TurretFacing_EMP)
+// Line 677936 in gamemd.exe.c
+// Size: 3148 bytes
+
+//----- (00736990) --------------------------------------------------------
+char __thiscall UnitClass::UpdateRotation_TurretFacing_EMP(int this)
+{
+  int v2; // eax
+  int v3; // ecx
+  int v4; // eax
+  int v5; // edi
+  int v6; // eax
+  bool v7; // al
+  int v8; // edi
+  bool v9; // cl
+  _WORD *v10; // eax
+  int v11; // eax
+  _WORD *Value; // [esp-4h] [ebp-14h]
+  int v14; // [esp+8h] [ebp-8h] BYREF
+  int v15; // [esp+Ch] [ebp-4h] BYREF
+
+  v2 = *(_DWORD *)(this + 692);
+  if ( v2 && !*(_BYTE *)(this + 1711) )
+  {
+    v3 = *ObjectClass::CalcTargetFacing((void *)this, &v15, v2);
+    v4 = *(_DWORD *)(this + 1732);
+    v14 = v3;
+    if ( *(_BYTE *)(v4 + 3233) )
+    {
+      v5 = (*(int (__thiscall **)(int))(*(_DWORD *)this + 1012))(this);
+      if ( IsNonNullPtr((_DWORD *)v5) && !*(_BYTE *)(*(_DWORD *)v5 + 299) )
+      {
+        if ( *(_BYTE *)(v5 + 24) )
+        {
+          Value = ProgressTimer::GetValue((_WORD *)(this + 904), &v15);
+          FacingClass::Update((char *)(this + 928), Value);
+        }
+        else
+        {
+          FacingClass::Update((char *)(this + 928), &v14);
+        }
+      }
+    }
+    else if ( *(_DWORD *)(v4 + 1660) == 1 && !*(_DWORD *)(this + 1444) )
+    {
+      if ( !*(_DWORD *)(this + 1652) )
+        WinAPI::Wrapper(-2147467261);
+      if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(**(_DWORD **)(this + 1652) + 16))(*(_DWORD *)(this + 1652))
+        && *(_WORD *)ProgressTimer::GetValue((_WORD *)(this + 904), &v15) == (_WORD)v14 )
+      {
+        FacingClass::Update((char *)(this + 904), &v14);
+      }
+    }
+  }
+  v6 = *(_DWORD *)(this + 1732);
+  if ( *(_BYTE *)(v6 + 3361) )
+  {
+    LOWORD(v14) = ((unsigned __int8)((unsigned int)((*ProgressTimer::GetValue((_WORD *)(this + 928), &v15) >> 7) + 1) >> 1)
+                 + 8) << 8;
+    FacingClass::Update((char *)(this + 928), &v14);
+    goto LABEL_38;
+  }
+  *(_BYTE *)(this + 1711) = 0;
+  if ( *(_BYTE *)(v6 + 3233) )
+  {
+    if ( TimerClass::Active(this + 928) )
+    {
+      if ( !*(_BYTE *)(*(_DWORD *)(this + 1732) + 3361) )
+        *(_BYTE *)(this + 1711) = TimerClass::Active(this + 928);
+    }
+    else if ( !*(_DWORD *)(this + 692) )
+    {
+      v7 = (int)CurrentFrame - *(_DWORD *)(this + 288) >= RulesClass_Instance->AIIonCannonEngineerValue[0] + 5;
+      if ( *(_DWORD *)(this + 740) )
+        v7 = 0;
+      if ( (!*(_BYTE *)(*(_DWORD *)(this + 1732) + 3603) || !*(_BYTE *)(this + 1760)) && v7 )
+      {
+        v8 = (*(int (__thiscall **)(int))(*(_DWORD *)this + 1012))(this);
+        v9 = IsNonNullPtr((_DWORD *)v8) && *(_BYTE *)(v8 + 24);
+        if ( !*(_DWORD *)(this + 1444) || v9 )
+        {
+          v10 = ProgressTimer::GetValue((_WORD *)(this + 904), &v15);
+        }
+        else
+        {
+          if ( *(_BYTE *)(this + 1709) )
+            goto LABEL_38;
+          v10 = ObjectClass::CalcTargetFacing((void *)this, &v15, *(_DWORD *)(this + 1444));
+        }
+        FacingClass::Update((char *)(this + 928), v10);
+      }
+    }
+  }
+LABEL_38:
+  LOBYTE(v11) = *(_BYTE *)(*(_DWORD *)(this + 1732) + 3233);
+  if ( (_BYTE)v11 )
+  {
+    v11 = TimerClass::Active(this + 928);
+    *(_DWORD *)(this + 1184) = v11;
+  }
+  return v11;
+}

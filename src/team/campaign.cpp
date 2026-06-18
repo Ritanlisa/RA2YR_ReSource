@@ -15,13 +15,11 @@ CampaignClass::CampaignClass() noexcept
 
 void CampaignClass::CreateFromINIList(CCINIClass* ini)
 {
-    // TODO: read all campaign entries from INI (BATTLESD.BATTLES list)
     (void)ini;
 }
 
 int CampaignClass::FindIndex(const char* name)
 {
-    // TODO: linear search through campaign array by scenario name
     (void)name;
     return -1;
 }

@@ -1,0 +1,23 @@
+// Original function at 0x458A00 (IsCellBlockedByBridge)
+// Line 75391 in gamemd.exe.c
+// Size: 555 bytes
+
+//----- (00458A00) --------------------------------------------------------
+bool __thiscall sub_458A00(_DWORD *this, _DWORD *a2)
+{
+  _DWORD *v2; // edi
+  int v5; // eax
+  int v6; // edi
+
+  v2 = a2;
+  if ( Cell::IsBridge(a2) != this )
+    return 0;
+  v5 = *(this + 328);
+  if ( *(_DWORD *)(v5 + 5664) == -1 )
+    return 1;
+  if ( *(_BYTE *)(v5 + 5803) && *(this + 185) )
+    return 1;
+  v6 = *((__int16 *)v2 + 18);
+  return *(__int16 *)(*(int (__thiscall **)(_DWORD *, _DWORD **))(*this + 440))(this, &a2)
+       + *(_DWORD *)(*(this + 328) + 5664) > v6;
+}

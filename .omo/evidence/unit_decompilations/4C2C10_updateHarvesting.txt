@@ -1,0 +1,17 @@
+// Original function at 0x4C2C10 (updateHarvesting)
+// Line 162685 in gamemd.exe.c
+// Size: 263 bytes
+
+//----- (004C2C10) --------------------------------------------------------
+int __thiscall sub_4C2C10(_DWORD *this)
+{
+  int result; // eax
+
+  result = *(this + 8);
+  if ( result )
+  {
+    *(_DWORD *)(result + 1756) = 0;
+    *(this + 8) = 0;
+  }
+  return result;
+}

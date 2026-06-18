@@ -1,0 +1,342 @@
+    virtual int ApplyIronCurtain() { return 0; }
+    virtual int ReturnToBase() { return 0; }
+    virtual int ReturnToBaseAndReload() { return 0; }
+    virtual int ScatterFromThreat() { return 0; }
+    virtual int ExecuteMissionCommand() { return 0; }
+    virtual int FindNearbyBuildCell() { return -1; }
+    virtual int FindClosestPlacementCell() { return -1; }
+    virtual int GetTurretFacing() const { return 0; }
+    virtual bool CanFireAtTarget() const { return false; }
+    virtual void ComputeTeamAttackPriority() {}
+    virtual int GetAutoFireDirection() const { return 0; }
+    virtual int sub_41B7D0() { return 0; }
+    virtual bool HasOnlyOneGarrisonSlot() const { return false; }
+    virtual int sub_41B840() { return 0; }
+    virtual int sub_41B860() { return 0; }
+    virtual int sub_41B9E0() { return 0; }
+    virtual bool CreateWarheadDamageEffect() { return false; }
+    virtual void sub_41BEF0() {}
+    virtual void vt_entry_428() {}
+    virtual int vt_entry_434() { return 0; }
+    virtual int GetBodyFacing() const { return 0; }
+    virtual int sub_41C640() { return 0; }
+    virtual int sub_41C650() { return 0; }
+    virtual int sub_41C660() { return 0; }
+    virtual int sub_41C670() { return 0; }
+    virtual int sub_41C680() { return 0; }
+    virtual int sub_41C690() { return 0; }
+    virtual int ApplyDamageEffects() { return 0; }
+    virtual int sub_5439080() { return 0; }
+    virtual int RemoveFromDynamicVector() { return 0; }
+    virtual void ComputeTargetAngle() {}
+    virtual int StartOrResumeProduction() { return 0; }
+    virtual int GetTurretScreenPos() const { return 0; }
+    virtual void ProcessMissionDeploy() {}
+    virtual int EvacuateFootprintCells() { return 0; }
+    virtual int MissionStubReturnZero4() { return 0; }
+    virtual bool StubReturnFalse2() { return false; }
+    virtual int sub_546B270() { return 0; }
+    virtual int sub_54722D0() { return 0; }
+    virtual int IndexOf() { return 0; }
+    virtual int ApplySplashDamageToNeighbors() { return 0; }
+    virtual void ComputeScanRange() {}
+    virtual int sub_54A50F0() { return 0; }
+    virtual int CopyStateFrom() { return 0; }
+    virtual int ResetDamageAccumulator() { return 0; }
+    virtual bool CreateTrailParticle() { return false; }
+    virtual int sub_4C2BD0() { return 0; }
+    virtual int GetWeaponType() const { return 0; }
+    virtual void UpdateThunk() {}
+    virtual int GetData() const { return 0; }
+    virtual int sub_54D28C0() { return 0; }
+    virtual void ComputeThreatLevel() {}
+    virtual void ComputeSpeedFactor() {}
+    virtual void ComputeSpeedFactorEx() {}
+    virtual void CleanupDirection() {}
+    virtual void SetPositionAnimated() {}
+    virtual int GetTargetCellCenter() const { return 0; }
+    virtual int GetDeployCoords() const { return 0; }
+    virtual int GetThreatValue() const { return 0; }
+    virtual int FindBestMatch() { return -1; }
+    virtual int vt_entry_4A8() { return 0; }
+    virtual int vt_entry_4AC() { return 0; }
+    virtual int vt_entry_4B0() { return 0; }
+    virtual int vt_entry_4B4() { return 0; }
+    virtual int vt_entry_4B8() { return 0; }
+    virtual int vt_entry_4C4() { return 0; }
+    virtual int vt_entry_4C8() { return 0; }
+    virtual int vt_entry_4D0() { return 0; }
+    virtual int FindClosestInfantry() { return -1; }
+    virtual int FindClosestUnit() { return -1; }
+    virtual int FindClosestBuilding() { return -1; }
+    virtual int GetAnimationValue() const { return 0; }
+    virtual int sub_5505180() { return 0; }
+    virtual int GetDamageMultiplier() const { return 0; }
+    virtual int GetTargetSpeedMultiplier() const { return 0; }
+    virtual int FindDeployDestination() { return -1; }
+    virtual void ProcessTarget() {}
+    virtual int sub_550D9C0() { return 0; }
+    virtual int sub_550D9D0() { return 0; }
+    virtual int MapHouseRelationIndex() { return 0; }
+    virtual int Find() { return -1; }
+    virtual void Process() {}
+    virtual int GetThreatValue_0() const { return 0; }
+    virtual int GetTypeFlag() const { return 0; }
+    virtual int sub_55224F0() { return 0; }
+    virtual bool IsMission27to30() const { return false; }
+    virtual int GarrisonBuilding() { return 0; }
+    virtual int HandleSpecialAction() { return 0; }
+    virtual bool IsEnteringOrCapturingStructure() const { return false; }
+    virtual bool CanBePermaMC() const { return false; }
+    virtual int GetTileAnimationData() const { return 0; }
+    virtual int CalcFacingFromMatrix() { return 0; }
+    virtual int StubReturn450() { return 0; }
+    virtual bool CheckState1() const { return false; }
+    virtual bool CheckState2() const { return false; }
+    virtual void CreateDestructionEffect() {}
+    virtual int FindMatchingUnit() { return -1; }
+    virtual void ClearArrays() {}
+    virtual void ClearScriptPlanningData() {}
+    virtual bool IsProductionChainActive() const { return false; }
+    virtual int RemoveBuildingFromScripts() { return 0; }
+    virtual bool CreatePlanningNode() { return false; }
+    virtual int sub_659470() { return 0; }
+    virtual int sub_659490() { return 0; }
+    virtual int sub_6594A0() { return 0; }
+    virtual int sub_6594C0() { return 0; }
+    virtual int sub_6594E0() { return 0; }
+    virtual int sub_6594F0() { return 0; }
+    virtual int sub_659540() { return 0; }
+    virtual int sub_659550() { return 0; }
+    virtual void CalculateDamage() {}
+    virtual int MutateAll() { return 0; }
+    virtual int RefreshDeployOccupierState() { return 0; }
+    virtual int CountPassengers() { return 0; }
+    virtual bool HasAnyMission() const { return false; }
+    virtual bool IsWaypointHidden() const { return false; }
+    virtual void ProcessBorderTower() {}
+    virtual bool IsDeployed() const { return false; }
+    virtual int GetWaypointCoords() const { return 0; }
+    virtual bool Create() { return false; }
+    virtual bool IsNotAircraftOrBuilding() const { return false; }
+    virtual bool CanInitiateSell() const { return false; }
+    virtual bool CanTargetHouse() const { return false; }
+    virtual int GetCrewCount() const { return 0; }
+    virtual int GetValue() const { return 0; }
+    virtual void ComputeTransform() {}
+    virtual int GetTurretOffset() const { return 0; }
+    virtual void SetHouseFlag() {}
+    virtual bool CheckPlayerOwned() const { return false; }
+    virtual void UpdateProdWithSound() {}
+    virtual int Mission_RepairDispatch() { return 0; }
+    virtual int PushNearbyUnits() { return 0; }
+    virtual void vt_entry_448() {}
+    virtual void CleanupDeploy() {}
+    virtual int FinishDeploy() { return 0; }
+    virtual void ComputeSlopeDifference() {}
+    virtual void ComputeSlopePenalty() {}
+    virtual bool CheckTargetLOS() const { return false; }
+    virtual bool IsInRange() const { return false; }
+    virtual bool CheckCellPassable2() const { return false; }
+    virtual int ValidateTarget() { return 0; }
+    virtual bool CheckAndFireAtTarget() const { return false; }
+    virtual bool CheckCellPassable() const { return false; }
+    virtual bool CheckCellPassable3() const { return false; }
+    virtual int GetBridgeDamageMult() const { return 0; }
+    virtual int EvaluateTarget() { return 0; }
+    virtual int EvaluateBuildingTarget() { return 0; }
+    virtual int SelectAutoTarget_Start_AU() { return 0; }
+    virtual int GetID() const { return 0; }
+    virtual int GetTarget() const { return 0; }
+    virtual void SetTargetIfAllowed() {}
+    virtual int StepAnimFrame() { return 0; }
+    virtual int CalcAnimDelay() { return 0; }
+    virtual bool ShouldNotBeCloaked() const { return false; }
+    virtual bool ShouldBeCloaked() const { return false; }
+    virtual int ExecuteMoveCommand() { return 0; }
+    virtual bool CanMoveToCell() const { return false; }
+    virtual int Vt240Thunk() { return 0; }
+    virtual void ProcessDeploymentState() {}
+    virtual int AssignTarget_SyncLog() { return 0; }
+    virtual void CalculateROF() {}
+    virtual bool CreateFireEffect() { return false; }
+    virtual bool CreateRadarBlip() { return false; }
+    virtual bool CreateFiringRadarBlip() { return false; }
+    virtual bool CreateFireBeamEffect() { return false; }
+    virtual int GetFiringAngle() const { return 0; }
+    virtual void ComputeAudioFalloffDamage() {}
+    virtual void FireWeapon() {}
+    virtual int HandleCursorClick() { return 0; }
+    virtual int HandleCursor() { return 0; }
+    virtual bool CanReceivePassengers() const { return false; }
+    virtual bool IsDeadOrInactive() const { return false; }
+    virtual bool CanAttack() const { return false; }
+    virtual bool HasValidWeapon() const { return false; }
+    virtual bool HasActiveParam() const { return false; }
+    virtual int FindLowestDamage() { return -1; }
+    virtual void ProcessCapture() {}
+    virtual int ReceiveDamage_Shield() { return 0; }
+    virtual int RegisterKill() { return 0; }
+    virtual int TransitionEffectState() { return 0; }
+    virtual int StartEffectAudio() { return 0; }
+    virtual int Vt279Thunk0() { return 0; }
+    virtual void UpdatePowerDrain() {}
+    virtual bool CheckTargetCell() const { return false; }
+    virtual void ScanAdjacentCells() {}
+    virtual void ScanNeighborCells() {}
+    virtual bool IsValidBuildingPlacement() const { return false; }
+    virtual bool CheckAdjacencyFlags() const { return false; }
+    virtual bool IsNotBusy() const { return false; }
+    virtual int GetBuildAnim() const { return 0; }
+    virtual void UpdateState() {}
+    virtual void CleanupAll() {}
+    virtual void ComputeTotalPowerDrain() {}
+    virtual void ComputeScanDistance() {}
+    virtual bool CheckPlacementTileMatch() const { return false; }
+    virtual int EvaluateMission() { return 0; }
+    virtual int GetCostMultiplier() const { return 0; }
+    virtual void ComputeAverageValue() {}
+    virtual int GetGlobalValue() const { return 0; }
+    virtual int GetAmmoCount() const { return 0; }
+    virtual int Vt170() { return 0; }
+    virtual void SetMoveDestination() {}
+    virtual int GetPrimaryTargetOrFallback() const { return 0; }
+    virtual int PickAlternateTarget() { return 0; }
+    virtual int SelectRandomTarget() { return 0; }
+    virtual int ResponseMove_Pickup() { return 0; }
+    virtual int GetSecondaryTargetOrFallback() const { return 0; }
+    virtual int GetTertiaryTargetOrFallback() const { return 0; }
+    virtual int BeginFiringSequence() { return 0; }
+    virtual bool IsTimerExpired() const { return false; }
+    virtual int COMStub_Return0_287() { return 0; }
+    virtual int CompleteFactoryProduction() { return 0; }
+    virtual int GetCellCoordsV2() const { return 0; }
+    virtual int Vt46Thunk() { return 0; }
+    virtual int RevealAreaSmall() { return 0; }
+    virtual void ScanForEnemies() {}
+    virtual int RevealAreaConditional() { return 0; }
+    virtual void ComputeAimVector() {}
+    virtual void UpdateBodyTilt() {}
+    virtual int CalcOffsetFacing() { return 0; }
+    virtual bool ShouldSelfHealOneStep() const { return false; }
+    virtual void SetFocus() {}
+    virtual bool CheckCliffTransition() const { return false; }
+    virtual int RadarUpdateOn() { return 0; }
+    virtual int RadarUpdateOff() { return 0; }
+    virtual int RevealOwnCell() { return 0; }
+    virtual void ComputeDamage() {}
+    virtual int GetRangeModifier() const { return 0; }
+    virtual bool ShouldScanArea() const { return false; }
+    virtual bool IsPlayerCellPassable() const { return false; }
+    virtual bool IsCellPassableFor() const { return false; }
+    virtual bool IsCloseEnoughToBuilding() const { return false; }
+    virtual int DecCounter() { return 0; }
+    virtual void ComputeCombatDamage() {}
+    virtual int PlaceAtCell() { return 0; }
+    virtual int OnEnterCell() { return 0; }
+    virtual int sub_570DC50() { return 0; }
+    virtual int OwnerHasPower() { return 0; }
+    virtual int sub_570DCE0() { return 0; }
+    virtual int sub_570DCF0() { return 0; }
+    virtual int GetPoweredWeaponIndex() const { return 0; }
+    virtual int GetVt252Byte() const { return 0; }
+    virtual int vt_entry_3E8() { return 0; }
+    virtual void SetSpread() {}
+    virtual int GetMember81() const { return 0; }
+    virtual void SetMember81() {}
+    virtual int GattlingValueRateDown_GattlingRateDownDelay() { return 0; }
+    virtual int GattlingRateUp_GattlingRateDownReset() { return 0; }
+    virtual int DrainAmmo() { return 0; }
+    virtual int Vt249to254() { return 0; }
+    virtual int SelectVocOrSfx() { return 0; }
+    virtual void UpdatePowered() {}
+    virtual bool ActivateEffect() { return false; }
+    virtual int IronCurtain() { return 0; }
+    virtual int ResetTimer() { return 0; }
+    virtual int InvulnerabilityIntensity_SetContext() { return 0; }
+    virtual int CalcFlashAlpha() { return 0; }
+    virtual void Update2() {}
+    virtual int GetAnimationFlags() const { return 0; }
+    virtual bool CheckFireCooldown() const { return false; }
+    virtual bool CanDamageTarget() const { return false; }
+    virtual bool HasPassengers() const { return false; }
+    virtual int GetMaxSpeed() const { return 0; }
+    virtual void ClearUnknownFlag() {}
+    virtual int COMStub_Return0_298() { return 0; }
+    virtual bool StubReturnFalse5() { return false; }
+    virtual bool StubReturnFalse6() { return false; }
+    virtual int sub_70F040() { return 0; }
+    virtual void ProcessCellClearance() {}
+    virtual int GetTypeVt40() const { return 0; }
+    virtual bool StubReturnFalse7() { return false; }
+    virtual bool StubReturnFalse8() { return false; }
+    virtual int COMStub_Return0_307() { return 0; }
+    virtual bool StubReturnFalse9() { return false; }
+    virtual void SetIdleState() {}
+    virtual bool CanSelfRepair() const { return false; }
+    virtual bool Activate() { return false; }
+    virtual bool Deactivate() { return false; }
+    virtual int LinkToBridge() { return 0; }
+    virtual int EjectPassengers() { return 0; }
+    virtual int EnteredOpenTopped() { return 0; }
+    virtual int ExitedOpenTopped() { return 0; }
+    virtual int MarkPassengersAsExited() { return 0; }
+    virtual int ScalarDtor() { return 0; }
+    virtual int GetMember388() const { return 0; }
+    virtual int GetBuildCost() const { return 0; }
+    virtual int GetAudioEntry() const { return 0; }
+    virtual int sub_57177E0() { return 0; }
+    virtual int GetSightRange() const { return 0; }
+    virtual int GetField() const { return 0; }
+    virtual int GatherAllBuildings() { return 0; }
+    virtual bool IsOwnedByHuman() const { return false; }
+    virtual bool IsCapturableByPlayer() const { return false; }
+    virtual void UpdateUnitAnimation() {}
+    virtual bool IsC4AnimationActive() const { return false; }
+    virtual int DispatchPlayerInput() { return 0; }
+    virtual bool CreateDeathAnim() { return false; }
+    virtual int ValidateMoveType() { return 0; }
+    virtual int SpawnInfantryFromBuilding() { return 0; }
+    virtual bool Deploy() { return false; }
+    virtual bool DeployIntoBuilding() { return false; }
+    virtual int GetInfantryCursorAction() const { return 0; }
+    virtual void ProcessAIDecision() {}
+    virtual bool CheckRepairNeeded() const { return false; }
+    virtual int sub_740B10() { return 0; }
+    virtual int FindBestMovementDirection() { return -1; }
+    virtual int GetAmmoCount_0() const { return 0; }
+    virtual int GetCrew_0() const { return 0; }
+    virtual int EnterRepairBuilding() { return 0; }
+    virtual int GetDeployProgressValue() const { return 0; }
+    virtual bool CheckUnitFireConstraints() const { return false; }
+    virtual void FireWeaponBurst() {}
+    virtual int sub_741490() { return 0; }
+    virtual int GetAverageDamageScore() const { return 0; }
+    virtual void ProcessSpecialUnitDeployCrush() {}
+    virtual int SelectAutoTargetWithGarrison() { return 0; }
+    virtual int ReturnCapturedFlag() { return 0; }
+    virtual int SelectAITarget() { return 0; }
+    virtual bool AreBuildingFlagsClear() const { return false; }
+    virtual int MarkCellImpassable() { return 0; }
+    virtual void ClearCellImpassable() {}
+    virtual bool CanBeTargeted() const { return false; }
+    virtual void NotifyTeamOnDestruction() {}
+    virtual void ProcessUnitSelfDestruct() {}
+    virtual int TransferSlavedUnit() { return 0; }
+    virtual int sub_746400() { return 0; }
+    virtual int CaptureTurret() { return 0; }
+    virtual int TransferTurret() { return 0; }
+    virtual int sub_7465B0() { return 0; }
+    virtual int sub_7465F0() { return 0; }
+    virtual int ApplyObjectEffect() { return 0; }
+    virtual void ClearAllTargets() {}
+    virtual bool IsGuardingTarget() const { return false; }
+    virtual int GetCommandTooltip() const { return 0; }
+    virtual int sub_746C90() { return 0; }
+    virtual int SelectAttackWeapon() { return 0; }
+    virtual int sub_5746D00() { return 0; }
+    virtual int sub_746D60() { return 0; }
+    virtual bool HasDeployFlags() const { return false; }
+    virtual int sub_746E30() { return 0; }
+    virtual int sub_5746EA0() { return 0; }
+    virtual int GetWeaponRange() const { return 0; }
