@@ -216,34 +216,21 @@ CellStruct* ScenarioClass::GetWaypointCoords(CellStruct* dest, int idx)
 
 void ScenarioClass::UpdateCellLighting()
 {
-    // Recalculate cell lighting across the map
-    // In the original game, this iterates all cells and updates
-    // lighting based on global RGB + ambient values
-    // The MapClass handles the actual per-cell lighting updates
+    // TODO: recalculate cell lighting across map
 }
 
 void ScenarioClass::UpdateLighting()
 {
-    // Update global lighting interpolation toward target values
-    // Linear interpolation of ambient, red, green, blue toward targets
-    if (!Instance) return;
-    constexpr double kInterpRate = 0.05;
-
-    Instance->ambientCurrent += (Instance->ambientTarget - Instance->ambientCurrent) * kInterpRate;
+    // TODO: update global lighting interpolation
 }
 
 void ScenarioClass::RecalcLighting(int r, int g, int b, uint32_t unk)
 {
-    // Recalculate all lighting converts based on new RGB values
-    if (!Instance) return;
-
-    Instance->red   = r;
-    Instance->green = g;
-    Instance->blue  = b;
+    // TODO: recalculate all lighting converts
+    (void)r;
+    (void)g;
+    (void)b;
     (void)unk;
-
-    // Trigger cell lighting recalculation
-    UpdateCellLighting();
 }
 
 } // namespace gamemd

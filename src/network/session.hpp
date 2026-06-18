@@ -16,23 +16,6 @@ class HouseClass;
 struct NodeNameType;
 struct GameTypePreferencesStruct;
 
-enum class GameOption
-{
-    GameSpeed      = 0,
-    StartingCredits = 1,
-    UnitCount      = 2,
-    ShortGame      = 3,
-    SuperWeapons   = 4,
-    BuildOffAlly   = 5,
-    MCVRedeploys   = 6,
-    Crates         = 7,
-    FogOfWar       = 8,
-    AlliesAllowed  = 9,
-    CaptureTheFlag = 10,
-    AICount        = 11,
-    PlayerCount    = 12,
-};
-
 struct PlayerData
 {
     uint8_t  Data[10];
@@ -143,23 +126,7 @@ public:
     bool IsSkirmish()  const { return GameMode == GameMode::Skirmish; }
     bool IsMultiplayer() const { return GameMode == GameMode::Internet || GameMode == GameMode::Skirmish; }
 
-    // IDA-confirmed methods
-    void loadSettings(CCINIClass* ini);                     // 0x5D0070
-    void saveSettings(CCINIClass* ini);                     // 0x5D39D0
-    void initPlayers();                                      // 0x5E64C0
-    NodeNameType* GetEntry(int index);                       // 0x691500
-    void SetField(int index, int field_id, int value);       // 0x6915D0
-    int  GetOption(GameOption opt);                          // 0x696F50
-    int  GetOption2(GameOption opt);                         // 0x696F70
-    void SetPlayerOption(int index, GameOption opt, int value); // 0x696F90
-    void SetPlayerColor(int index, int color);               // 0x696FC0
-    void SetOption(GameOption opt, int value);               // 0x696FF0
-    void SetOption2(GameOption opt, int value);              // 0x697020
-    bool IsValidHouse(int houseIdx);                         // 0x697E70
-    int  GetPlayerColorScheme(int playerIdx);                // 0x69A310
-    void AssignSide(int playerIdx, int sideIdx);             // 0x69B760
-    void AssignColor(int playerIdx, int colorIdx);           // 0x69B7E0
-    int  GetGameSpeed();                                     // 0x69BBE0
+    // TODO: complete SessionClass members
 
 protected:
     SessionClass() noexcept;

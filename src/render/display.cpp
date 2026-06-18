@@ -169,18 +169,7 @@ bool DisplayClass::ProcessClickCoords(
 
 void DisplayClass::SetActiveFoundation(CellStruct* coords)
 {
-    // Set the active building foundation placement cells
-    // Called during building placement preview
-    if (coords)
-    {
-        CurrentFoundation_Data = coords;
-        CurrentFoundation_CenterCell = coords[0];
-    }
-    else
-    {
-        CurrentFoundation_Data = nullptr;
-        CurrentFoundation_CenterCell = {};
-    }
+    (void)coords;
 }
 
 Action DisplayClass::DecideAction(
@@ -213,21 +202,8 @@ CellStruct DisplayClass::FoundationBoundsSize(
 
 void DisplayClass::MarkFoundation(CellStruct* base_cell, bool mark)
 {
-    // Mark/unmark cells for building foundation placement preview
-    if (!base_cell || !CurrentFoundation_Data)
-        return;
-
-    // Walk the foundation cell list and mark each cell
-    CellStruct* cell = CurrentFoundation_Data;
-    while (cell->X != -1 || cell->Y != -1)
-    {
-        CellStruct mapCell = {
-            static_cast<int16_t>(base_cell->X + cell->X),
-            static_cast<int16_t>(base_cell->Y + cell->Y)
-        };
-        // Mark cell for redraw based on placement validity
-        cell++;
-    }
+    (void)base_cell;
+    (void)mark;
 }
 
 } // namespace gamemd

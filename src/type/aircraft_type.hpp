@@ -35,7 +35,6 @@ protected:
 
 public:
     int ArrayIndex;
-    int PowerDrain;
     bool Carryall;
     AnimTypeClass* Trailer;
     int SpawnDelay;

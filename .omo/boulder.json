@@ -72,10 +72,23 @@
           "updated_at": "2026-06-18T16:10:03.625Z",
           "ended_at": "2026-06-18T16:10:03.625Z",
           "elapsed_ms": 225259
+        },
+        "todo:14": {
+          "task_key": "todo:14",
+          "task_label": "14",
+          "task_title": "Mark all translated functions in functions.json + audit",
+          "session_id": "opencode:ses_1247c60b8ffeNkZTiDhznJrh3s",
+          "agent": "Sisyphus-Junior",
+          "category": "quick",
+          "started_at": "2026-06-18T16:14:22.941Z",
+          "status": "completed",
+          "updated_at": "2026-06-18T16:15:41.443Z",
+          "ended_at": "2026-06-18T16:15:41.443Z",
+          "elapsed_ms": 78502
         }
       },
       "session_origins": {},
-      "updated_at": "2026-06-18T16:10:03.625Z"
+      "updated_at": "2026-06-18T16:15:41.443Z"
     }
   },
   "session_origins": {},
@@ -131,7 +144,20 @@
       "updated_at": "2026-06-18T16:10:03.625Z",
       "ended_at": "2026-06-18T16:10:03.625Z",
       "elapsed_ms": 225259
+    },
+    "todo:14": {
+      "task_key": "todo:14",
+      "task_label": "14",
+      "task_title": "Mark all translated functions in functions.json + audit",
+      "session_id": "opencode:ses_1247c60b8ffeNkZTiDhznJrh3s",
+      "agent": "Sisyphus-Junior",
+      "category": "quick",
+      "started_at": "2026-06-18T16:14:22.941Z",
+      "status": "completed",
+      "updated_at": "2026-06-18T16:15:41.443Z",
+      "ended_at": "2026-06-18T16:15:41.443Z",
+      "elapsed_ms": 78502
     }
   },
-  "updated_at": "2026-06-18T16:10:03.625Z"
+  "updated_at": "2026-06-18T16:15:41.443Z"
 }

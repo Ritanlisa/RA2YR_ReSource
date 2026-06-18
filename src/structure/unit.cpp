@@ -1,5 +1,4 @@
 #include "structure/unit.hpp"
-#include "type/unit_type.hpp"
 
 #include <cstring>
 #include <cmath>
@@ -83,23 +82,29 @@ int UnitClass::Mission_Unload()
 // IDA: 0x73D450 (ProcessResourceHarvesting, 477B)
 int UnitClass::ProcessResourceHarvesting()
 {
+    // Process tiberium/ore harvesting at current cell
     if (!Type) return 0;
-    int result = 0;
-    return result;}
+
+    // Check if harvester, check cell for ore
+    // Transfer resources to load
+    return 0;
+}
 
 // IDA: 0x4C2C10 (updateHarvesting, 19B)
 int UnitClass::updateHarvesting()
 {
-    int result = 0;
-    return result;}
+    // Update harvesting state
+    return 0;
+}
 
 // IDA: 0x6B4BE0 (UnloadPassengers, 136B)
 int UnitClass::UnloadPassengers()
 {
+    // Unload all passengers at current position
     Unloading = false;
     HasFollowerCar = false;
-    int result = 0;
-    return result;}
+    return 0;
+}
 
 // IDA: 0x6B7230 (ProcessExitQueue, 2363B)
 int UnitClass::ProcessExitQueue()
@@ -129,42 +134,64 @@ int UnitClass::GetExitCell()
 // IDA: 0x7192F0 (Deploy, 2302B)
 int UnitClass::Deploy()
 {
+    // MCV/Siege unit deploy logic
     if (!Type) return 0;
+
     Deploying = true;
-    int result = 0;
-    return result;}
+
+    // Check if can deploy at current cell
+    // Find the building type to deploy into
+    // Start deploy animation/timer
+    return 0;
+}
 
 // IDA: 0x738D30 (DeployToBuilding, 1652B)
 int UnitClass::DeployToBuilding()
 {
+    // Deploy unit into a building (MCV -> Construction Yard)
     if (!Type) return 0;
+
+    // Check building type from unit type
+    // Create building at deploy position
+    // Remove this unit
     Deployed = true;
-    int result = 0;
-    return result;}
+    return 0;
+}
 
 // IDA: 0x739AC0 (SimpleDeployerDeploy, 516B)
 int UnitClass::SimpleDeployerDeploy()
 {
+    // Simple deployer (like Siege Chopper deploy)
     Deploying = false;
     Deployed = true;
-    int result = 0;
-    return result;}
+    return 0;
+}
 
 // IDA: 0x739CD0 (SimpleDeployerUndeploy, 494B)
 int UnitClass::SimpleDeployerUndeploy()
 {
+    // Simple deployer undeploy
     Deployed = false;
     Undeploying = false;
-    int result = 0;
-    return result;}
+    return 0;
+}
 
 // IDA: 0x737430 (MissionDispatch, 1826B)
 int UnitClass::MissionDispatch()
 {
-    if (Deploying) return Deploy();
-    if (Undeploying) return SimpleDeployerUndeploy();
-    int result = 0;
-    return result;}
+    // Dispatch mission based on current state
+    if (Deploying)
+    {
+        return Deploy();
+    }
+
+    if (Undeploying)
+    {
+        return SimpleDeployerUndeploy();
+    }
+
+    return 0;
+}
 
 // ============================================================
 // Phase 3: Movement
@@ -254,23 +281,25 @@ int UnitClass::SetTurret()
 // IDA: 0x73F0A0 (EvaluateTarget, 3238B)
 int UnitClass::EvaluateTarget()
 {
+    // Evaluate target for weapon selection and attack
     if (!target) return 0;
-    int result = 1;
-    return result;}
+    return 1;
+}
 
 // IDA: 0x7438F0 (CanCrushTarget, 339B)
 bool UnitClass::CanCrushTarget()
 {
+    // Check if this unit can crush its target
     if (!target) return false;
-    bool result = false;
-    return result;}
+    return false;
+}
 
 // IDA: 0x70FBD0 (IsDeactivated, 7B)
 int UnitClass::IsDeactivated()
 {
-    if (!Type) return 0;
-    int result = 0;
-    return result;}
+    // Check if unit is deactivated (EMP/paralyzed)
+    return 0;
+}
 
 // ============================================================
 // Phase 3: Construction & Destruct
@@ -336,9 +365,8 @@ int UnitClass::SaveState()
 // IDA: 0x744640 (PowerDrainUpdate, 159B)
 void UnitClass::PowerDrainUpdate()
 {
-    if (!Type) return;
-    int power = Type->PowerDrain;
-    (void)power;}
+    // Per-frame power drain for units
+}
 
 // IDA: 0x746810 (PerFrameUpdate, 167B)
 int UnitClass::PerFrameUpdate()
@@ -350,14 +378,16 @@ int UnitClass::PerFrameUpdate()
 // IDA: 0x7446E0 (HandleTargetDestroyed, 56B)
 int UnitClass::HandleTargetDestroyed()
 {
+    // Handle when target is destroyed
     target = nullptr;
-    int result = 0;
-    return result;}
+    return 0;
+}
 
 // IDA: 0x6B4F20 (CheckStatus, 7B) — returns Type pointer (vtable entry)
 int UnitClass::CheckStatus()
 {
-    return reinterpret_cast<int>(Type);}
+    return reinterpret_cast<int>(Type);
+}
 
 // IDA: 0x6B7C60 (ClearTargetRef, 206B)
 int UnitClass::ClearTargetRef()

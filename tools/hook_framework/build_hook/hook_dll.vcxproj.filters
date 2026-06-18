@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\RA2YR_ReSource\tools\hook_framework\hook_main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\RA2YR_ReSource\tools\hook_framework\shadow_txn.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\RA2YR_ReSource\tools\hook_framework\headless_server.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\RA2YR_ReSource\tools\hook_framework\test_hooks.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="D:\RA2YR_ReSource\tools\hook_framework\tls_storage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\RA2YR_ReSource\tools\hook_framework\shadow_txn.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\RA2YR_ReSource\tools\hook_framework\shadow_veh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\RA2YR_ReSource\tools\hook_framework\headless_server.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\RA2YR_ReSource\tools\hook_framework\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <MASM Include="D:\RA2YR_ReSource\tools\hook_framework\PostProcStub.asm" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{60D57603-EC37-3856-9F45-A7B96DA22104}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{BE19163D-941B-3368-A33F-33CC8F9C2458}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

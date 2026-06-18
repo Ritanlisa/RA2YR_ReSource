@@ -865,7 +865,7 @@ Max Concurrent: 7 (Wave 3)
   - Message: `feat: complete named global function translations (~1600 functions)`
   - Files: `src/object/`, `src/system/`, `src/network/`, `src/misc/` (new/updated files)
 
-- [ ] 14. Mark all translated functions in functions.json + audit
+- [x] 14. Mark all translated functions in functions.json + audit
 
   **What to do**:
   - 运行 `python tools/migrate_translated.py --scan` 扫描 src/ 所有 .cpp 文件

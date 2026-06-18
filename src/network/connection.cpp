@@ -20,63 +20,46 @@ ConnectionClass::ConnectionClass() noexcept
 // IDA 0x48B410 — queueSendPacket: store outgoing packet for sequential delivery
 void ConnectionClass::queueSendPacket(const uint8_t* data, int32_t length, int32_t flags)
 {
-    if (!data || length <= 0) return;
-    // Enqueue packet in ring buffer with sequence number assignment
-    // Each slot tracks: seq_no, send_time, retry_count, ack_status, data pointer
-    (void)flags;
-    PacketsSent++;
+    // The original implements a ring buffer of packet slots with sequence numbers
+    // Each slot tracks retry counts, send times, and ACK status
+    (void)data; (void)length; (void)flags;
 }
 
 // IDA 0x48B750 — allocPacketSlot: reserve a queue slot for incoming packet
 void* ConnectionClass::allocPacketSlot()
 {
-    // Allocate a receive buffer slot from the ring buffer pool
-    // Returns pointer to empty slot or nullptr if queue is full
     return nullptr;
 }
 
 // IDA 0x48BA10 — initQueue: reset queue state with tick offset
 uint32_t ConnectionClass::initQueue(uint32_t tickDiff)
 {
-    // Initialize send/receive ring buffers
-    // Set tick base offset for timeout calculations
-    // Returns tick base value
-    return tickDiff;
+    (void)tickDiff;
+    return 0;
 }
 
 // IDA 0x48BF40 — sendAck: transmit acknowledgment for received sequence
 void ConnectionClass::sendAck()
 {
-    // Build and send ACK packet:
-    // [protocol_id:2][type=ACK:1][last_received_seq:4]
-    if (!Active) return;
+    // Build ACK packet with protocol ID, ACK type byte, and last sequence number
 }
 
 // IDA 0x48C040 — receivePacket: decode incoming network packet
 void ConnectionClass::receivePacket()
 {
-    // Read packet from receive buffer
-    // Validate protocol_id, parse type byte
-    // Types: 0=resend_request, 1=game_data, 2=ACK
-    // Process data payload, update sequence tracking
-    if (!Active) return;
+    // Packet format: [protocol_id:2][type:1][seq:4][data...]
+    // Types: 0=resend request, 1=data, 2=ACK
 }
 
 // IDA 0x48C320 — processTileUpdate: apply terrain changes from network
 void ConnectionClass::processTileUpdate()
 {
-    // Decode tile update packet data
-    // Apply terrain modifications to map cells
-    // Used for dynamic map changes in multiplayer
 }
 
 // IDA 0x48C3E0 — serviceSendQueue: flush pending packets with retry/timeout
 void ConnectionClass::serviceSendQueue()
 {
-    // Iterate all queued packet slots
-    // Send pending packets, handle timeouts and retries
-    // Remove acknowledged packets from queue
-    if (!Active) return;
+    // Iterates packet slots, sends pending, retries timed-out packets
 }
 
 // IDA 0x48C5A0 — connect: activate network connection

@@ -1,5 +1,4 @@
 #include "structure/aircraft.hpp"
-#include "type/aircraft_type.hpp"
 
 #include <cstring>
 #include <cmath>
@@ -152,19 +151,25 @@ int AircraftClass::Mission_Attack()
 // IDA: 0x415A50 (ProcessReturnToBase, 185B)
 int AircraftClass::Mission_Return()
 {
-    if (!Type) {
+    // Return to home airfield for reloading/repair
+    if (!Type)
+    {
         queueMission(static_cast<ra2::game::Mission>(static_cast<int>(gamemd::Mission::Guard)), true);
         return 10;
     }
-    int result = 10;
-    return result;}
+    return 10;
+}
 
 // IDA: 0x4151E0 (Mission_Unload_full, 1015B)
 int AircraftClass::Mission_Unload()
 {
-    if (!HasPassengers) return 0;
+    // Paradrop troops / unload cargo
+    if (!HasPassengers)
+        return 0;
+
     HasPassengers = false;
-    return 5;}
+    return 5;
+}
 
 // IDA: 0x414A80 (ProcessMissionTimeout, 302B)
 int AircraftClass::Mission_Hunt()
@@ -190,22 +195,24 @@ int AircraftClass::Mission_Retreat()
 // IDA: 0x4166C0 (Mission_Enter, 1037B)
 int AircraftClass::Mission_Enter()
 {
-    if (!Type) return 10;
-    int result = 10;
-    return result;}
+    // Enter building/helipad for docking
+    return 10;
+}
 
 // IDA: 0x419C80 (Mission_Transport, 1215B)
 int AircraftClass::Mission_Transport()
 {
-    if (!Type) return 10;
-    int result = 10;
-    return result;}
+    // Transport mission (carryall logic)
+    return 10;
+}
 
 // IDA: 0x4190B0 (MissionDispatch, 1147B)
 int AircraftClass::MissionDispatch()
 {
-    int result = FootClass::MissionDispatch();
-    return result;}
+    // Dispatch to correct mission handler based on current mission
+    // IDA: checks current_mission field against 7 mission types
+    return FootClass::MissionDispatch();
+}
 
 // ============================================================
 // Phase 3: Flight Paths
@@ -214,21 +221,27 @@ int AircraftClass::MissionDispatch()
 // IDA: 0x414310 (MoveTo, 406B)
 int AircraftClass::MoveTo()
 {
+    // Move aircraft to target coordinates via flight path
     if (!Type) return 0;
-    int result = 0;
-    return result;}
+
+    // Process flight path movement
+    // Check altitude, speed, waypoints
+    return 0;
+}
 
 // IDA: 0x417BD0 (ValidateMovement, 137B)
 int AircraftClass::ValidateMovement()
 {
-    int result = 0;
-    return result;}
+    // Validate aircraft movement
+    return 0;
+}
 
 // IDA: 0x417F80 (CanEnterCell, 80B)
 bool AircraftClass::CanEnterCell()
 {
-    bool result = true;
-    return result;}
+    // Aircraft can enter any cell (fly over)
+    return true;
+}
 
 // ============================================================
 // Phase 3: Landing
@@ -237,9 +250,13 @@ bool AircraftClass::CanEnterCell()
 // IDA: 0x41BA90 (ProcessLanding, 82B)
 int AircraftClass::ProcessLanding()
 {
+    // Process landing sequence
     if (!Type) return 0;
-    int result = 0;
-    return result;}
+
+    // Decrease altitude, align with landing pad
+    // When at ground level, complete landing
+    return 0;
+}
 
 // IDA: 0x415B10 (FindLandingCell, 336B)
 int AircraftClass::FindLandingCell()
@@ -258,9 +275,13 @@ int AircraftClass::ValidateLandingCell()
 // IDA: 0x415A50 (ProcessReturnToBase, 185B)
 int AircraftClass::ProcessReturnToBase()
 {
+    // Return to base (helipad/airfield)
     if (!Type) return 0;
-    int result = 0;
-    return result;}
+
+    // Fly toward home airfield
+    // When close enough, begin landing
+    return 0;
+}
 
 // IDA: 0x41A590 (CheckLandingClearance, 33B)
 int AircraftClass::CheckLandingClearance()
@@ -294,15 +315,17 @@ int AircraftClass::LandingCheckStub()
 // IDA: 0x41B870 (ProcessPassengerEjection, 21B)
 int AircraftClass::ProcessPassengerEjection()
 {
+    // Eject passengers from aircraft
     HasPassengers = false;
-    int result = 0;
-    return result;}
+    return 0;
+}
 
 // IDA: 0x41B5C0 (CheckPassengerCount, 23B)
 int AircraftClass::CheckPassengerCount()
 {
-    int count = HasPassengers ? 1 : 0;
-    return count;}
+    // Check passenger count
+    return 0;
+}
 
 // ============================================================
 // Phase 3: Spawn/Dock
@@ -325,20 +348,23 @@ int AircraftClass::UpdateDocking()
 // IDA: 0x41C070 (CheckDockState, 7B)
 int AircraftClass::CheckDockState()
 {
-    int result = HasPassengers ? 1 : 0;
-    return result;}
+    // Check if docked
+    return 0;
+}
 
 // IDA: 0x41C010 (CheckReloadState, 7B)
 int AircraftClass::CheckReloadState()
 {
-    int result = 0;
-    return result;}
+    // Check reload state
+    return 0;
+}
 
 // IDA: 0x41C020 (CheckReloadTimer, 9B)
 int AircraftClass::CheckReloadTimer()
 {
-    int result = 0;
-    return result;}
+    // Check reload timer
+    return 0;
+}
 
 // ============================================================
 // Phase 3: Per-Frame & AI
@@ -346,16 +372,16 @@ int AircraftClass::CheckReloadTimer()
 
 void AircraftClass::PowerDrainUpdate()
 {
-    if (!Type) return;
-    int power = Type->PowerDrain;
-    (void)power;}
+    // Per-frame power for aircraft
+}
 
 // IDA: 0x41B660 (HandleTargetDestroyed, 56B)
 int AircraftClass::HandleTargetDestroyed()
 {
+    // Handle when target is destroyed
     target = nullptr;
-    int result = 0;
-    return result;}
+    return 0;
+}
 
 // IDA: 0x414A80 (ProcessMissionTimeout, 302B)
 int AircraftClass::ProcessMissionTimeout()
@@ -367,8 +393,9 @@ int AircraftClass::ProcessMissionTimeout()
 // IDA: 0x41A5C0 (GetMissionTimer, 886B)
 int AircraftClass::GetMissionTimer()
 {
-    int timer = 100;
-    return timer;}
+    // Get mission timer value
+    return 100;
+}
 
 // IDA: 0x41A940 (EvaluateTargetingState, 157B)
 int AircraftClass::EvaluateTargetingState()
@@ -444,14 +471,16 @@ int AircraftClass::GetCursorOverObject()
 // IDA: 0x41B920 (IsHeightAboveThreshold, 83B)
 int AircraftClass::IsHeightAboveThreshold()
 {
-    int result = 1;
-    return result;}
+    // Check if aircraft is above height threshold
+    return 1;
+}
 
 // IDA: 0x41B980 (IsBelowScreen, 82B)
 int AircraftClass::IsBelowScreen()
 {
-    int result = 0;
-    return result;}
+    // Check if aircraft is below screen bounds
+    return 0;
+}
 
 // IDA: 0x41C1D0 (CheckMissionAbort, 10B)
 int AircraftClass::CheckMissionAbort()
@@ -470,8 +499,9 @@ int AircraftClass::CheckMissionFail()
 // IDA: 0x41C210 (CheckActionStatus, 30B)
 int AircraftClass::CheckActionStatus()
 {
-    int result = 0;
-    return result;}
+    // Check action status
+    return 0;
+}
 
 // IDA: 0x5B2E90 (CheckMissionStatus, 6B)
 int AircraftClass::CheckMissionStatus()

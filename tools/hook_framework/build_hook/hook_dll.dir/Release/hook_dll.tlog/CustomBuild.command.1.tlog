@@ -1,0 +1,10 @@
+^D:\RA2YR_RESOURCE\TOOLS\HOOK_FRAMEWORK\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/RA2YR_ReSource/tools/hook_framework -BD:/RA2YR_ReSource/tools/hook_framework/build_hook --check-stamp-file D:/RA2YR_ReSource/tools/hook_framework/build_hook/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

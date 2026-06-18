@@ -102,8 +102,7 @@ HWND Create(int template_id, DLGPROC dlg_proc, LPARAM lParam)
     //       then CreateDialogIndirectParamA(g_hInstance, template, g_hWnd, dlg_proc, lParam)
     //       then registers to internal tracking array
 
-    // ResourceFind loads dialog template resource and returns DLGTEMPLATE*
-    // Falls back to CreateDialogParamA if resource template is unavailable
+    // STUB: ResourceFind not yet implemented, use basic CreateDialogParamA for now
     HINSTANCE hInst = GetModuleHandleA(nullptr);
     HWND hWnd = CreateDialogParamA(hInst, MAKEINTRESOURCEA(template_id),
                                     GetActiveWindow(), dlg_proc, lParam);
@@ -271,14 +270,10 @@ int GetCurrentType()
 // Calls EnumChildWindows(hWnd, DialogClass::Reposition, 1) then DialogClass::Reposition(hWnd, 0)
 bool GetField(HWND hWnd)
 {
-    // Enumerate child windows to reposition dialog controls
-    EnumChildWindows(hWnd, [](HWND hChild, LPARAM lParam) -> BOOL {
-        // Reposition each child control
-        SetWindowPos(hChild, nullptr, 0, 0, 0, 0,
-            SWP_NOZORDER | SWP_NOSIZE | SWP_NOACTIVATE);
-        return TRUE;
-    }, 1);
-    return true;
+    // IDA: EnumChildWindows(hWnd, DialogClass::Reposition, 1)
+    //       return DialogClass::Reposition(hWnd, 0)
+    // STUB: DialogClass::Reposition not implemented yet
+    return false;
 }
 
 // IDA 0x5D5DD0: Dialog::GetMode3 — returns 3 if *(this+60) else -2
@@ -467,25 +462,9 @@ void HandleLauncherMessage(int msg_data)
 // Reads vtable-based GetState + SetState from g_ClipboardBuffer (internal dialog data)
 uint32_t CheckButtonState()
 {
-    // Get current state via vtable call on dialog data object
-    // If a specific button condition is met (returns 2), clear bit 7
-    extern void* g_ClipboardBuffer;
-    uint32_t state = 0;
-    if (g_ClipboardBuffer)
-    {
-        auto vtable = reinterpret_cast<uintptr_t*>(*reinterpret_cast<void**>(g_ClipboardBuffer));
-
-        // vtable[3] GetState call
-        auto getStateFn = reinterpret_cast<uint32_t(__thiscall*)(void*)>(vtable[3]);
-        state = getStateFn(g_ClipboardBuffer);
-
-        // vtable[7] check: if result == 2, clear bit 7
-        auto checkFn = reinterpret_cast<int(__thiscall*)(void*, const void*, int, void*, int, int, int, int)>(vtable[7]);
-        int checkResult = checkFn(g_ClipboardBuffer, nullptr, 13, nullptr, 81, 90, 1, -1);
-        if (checkResult == 2)
-            state &= 0xFFFFFF7F;
-    }
-    return state;
+    // IDA: vtable call to get state, then check if specific button is pressed
+    // Returns modified flags (clears bit 7 if button is down)
+    return 0;  // STUB
 }
 
 // sub_624930 and sub_624BE0 defined below

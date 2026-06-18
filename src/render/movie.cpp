@@ -526,15 +526,8 @@ bool VQMovieHandle::AdvanceFrame()
 
 void VQMovieHandle::RenderFrame(DSurface* target)
 {
-    // Decode and render current VQA frame to target surface
-    // Original: decompresses VQAData to DSurface via BINK/VQA codec
-    if (!target || !vqaData || !playing)
-        return;
-
-    // In the original engine, the frame is decoded from vqaData
-    // and blitted to the target surface at (0,0)
-    LOG_TRACE("VQMovieHandle::RenderFrame: frame %d (%dx%d)",
-              currentFrame, width, height);
+    (void)target;
+    LOG_TRACE("VQMovieHandle::RenderFrame: frame %d", currentFrame);
 }
 
 void VQMovieHandle::Stop()

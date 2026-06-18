@@ -59,7 +59,6 @@ protected:
 
 public:
     int ArrayIndex;
-    int PowerDrain;
     PipIndex Pip;
     PipIndex OccupyPip;
     WeaponStruct OccupyWeapon;
