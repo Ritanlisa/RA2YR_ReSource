@@ -37,7 +37,7 @@ struct FileEntryClass {
 // ============================================================================
 class LoadOptions {
 public:
-    LoadOptions();
+    LoadOptions(); // 0x558740
     ~LoadOptions();
 
     // --- Lifecycle ---
@@ -125,10 +125,10 @@ public:
     // --- Accessors ---
     uint32_t GetMode() const;
     void SetMode(uint32_t m);  // 0x7DC468
-    const char* GetExtension() const;
-    void SetExtension(const char* ext);
+    const char* GetExtension() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    void SetExtension(const char* ext); // IDA: UNMATCHED — no_callgraph_match, no_git_history
     uint32_t GetCount() const;
-    FileEntryClass** GetEntries();
+    FileEntryClass** GetEntries(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
     uint32_t GetCapacity() const;
     uint32_t GetMaxEntries() const;
 
@@ -160,6 +160,6 @@ private:
 // LoadSaveDialog::FillList (0x5596A0)
 // Fills a Win32 ListBox with save/load game entries
 // ============================================================================
-void LoadSaveDialog_FillList(LoadOptions* opts, HWND hWnd);
+void LoadSaveDialog_FillList(LoadOptions* opts, HWND hWnd); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
 } // namespace gamemd

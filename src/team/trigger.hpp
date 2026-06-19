@@ -55,34 +55,34 @@ public:
 
     virtual ~TriggerClass() = default;  // 0x726820
 
-    virtual void pointerExpired(AbstractClass* ptr, bool removed) override;
-    virtual AbstractType __stdcall whatAmI() const override;
+    virtual void pointerExpired(AbstractClass* ptr, bool removed) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    virtual AbstractType __stdcall whatAmI() const override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual int objectSize() const override;
-    virtual void calculateChecksum(void* checksum) const;
+    virtual void calculateChecksum(void* checksum) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
-    static TriggerClass* GetInstance(TriggerTypeClass* type);
+    static TriggerClass* GetInstance(TriggerTypeClass* type); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     bool HasCrossesHorizontalLineEvent() const;  // 0x726250
     bool HasCrossesVerticalLineEvent() const;  // 0x726290
     bool HasZoneEntryByEvent() const;
     bool HasAllowWinAction() const;
-    bool HasGlobalSetOrClearedEvent(int idx_global) const;
+    bool HasGlobalSetOrClearedEvent(int idx_global) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     void NotifyGlobalChanged(int idx_global);  // 0x7263A0
     void NotifyLocalChanged(int idx_local);  // 0x7263D0
     void ResetTimers();
 
     void MarkEventAsOccured(int idx);
-    void MarkEventAsNotOccured(int idx);
+    void MarkEventAsNotOccured(int idx); // IDA: UNMATCHED — no_callgraph_match, no_git_history
     bool HasEventOccured(int idx) const;
 
     void Destroy();
-    bool HasBeenDestroyed() const;
+    bool HasBeenDestroyed() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     void SetHouse(HouseClass* house);  // 0x5D8CB0
     HouseClass* GetHouse() const;
 
     void Enable();  // 0x7241A0
-    void Disable();
+    void Disable(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     bool RegisterEvent(int event, ObjectClass* object, bool force_fire, bool persistent, TechnoClass* source);  // 0x7264C0
     bool FireActions(ObjectClass* obj, CellStruct location);
@@ -114,10 +114,10 @@ public:
 
     virtual ~TriggerTypeClass() = default;
 
-    virtual void pointerExpired(AbstractClass* ptr, bool removed) override;
-    virtual AbstractType __stdcall whatAmI() const override;
+    virtual void pointerExpired(AbstractClass* ptr, bool removed) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    virtual AbstractType __stdcall whatAmI() const override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual int objectSize() const override;
-    virtual void calculateChecksum(void* checksum) const;
+    virtual void calculateChecksum(void* checksum) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     // arrayIndex() override inherited, conflicts with member
 
     static void LoadFromINIList(CCINIClass* ini);  // 0x46CE10
@@ -126,7 +126,7 @@ public:
     using Flags = uint8_t;
     Flags GetFlags() const;  // 0x7271E0
     bool HasAllowWinAction() const;
-    bool HasGlobalSetOrClearedEvent(int idx_global) const;
+    bool HasGlobalSetOrClearedEvent(int idx_global) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     bool HasLocalSetOrClearedEvent(int idx_local) const;  // 0x727050
     bool HasCrossesHorizontalLineEvent() const;
     bool HasCrossesVerticalLineEvent() const;

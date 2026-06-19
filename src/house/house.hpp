@@ -123,7 +123,7 @@ public:
 
     ~HouseClass() = default;
 
-    AbstractType __stdcall whatAmI() const override { return AbstractType::House; }
+    AbstractType __stdcall whatAmI() const override { return AbstractType::House; } // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     // --- TODO: IHouse / IPublicHouse / IConnectionPointContainer interfaces from YRpp ---
 
@@ -134,11 +134,11 @@ public:
 
     void MakeAlly(int house_idx, bool announce);  // 0x4F9B50
     void MakeAlly(HouseClass* who, bool announce);  // IDA: 0x4F9B50
-    void MakeEnemy(HouseClass* who, bool announce);
-    void AllyAIHouses();
+    void MakeEnemy(HouseClass* who, bool announce); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    void AllyAIHouses(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     void SDDTORAllAndTriggers();  // 0x4FB920
-    void AcceptDefeat();
+    void AcceptDefeat(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
     void DestroyAll();  // 0x4033C0
     void DestroyAllBuildings();  // 0x4FC790
     void DestroyAllNonBuildingsNonNaval();  // 0x4FC820
@@ -147,11 +147,11 @@ public:
     void RespawnStartingBuildings();  // 0x50D320
     void RespawnStartingForces();  // 0x50D440
 
-    uint8_t Win(bool save_something);
+    uint8_t Win(bool save_something); // IDA: UNMATCHED — no_callgraph_match, no_git_history
     uint8_t Lose(bool save_something);  // 0x6CB7B0
 
     bool CanAlly(HouseClass* other) const;  // 0x501540
-    bool CanOverpower(TechnoClass* target) const;
+    bool CanOverpower(TechnoClass* target) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     void LostPoweredCenter(TechnoTypeClass* type);  // 0x50E0E0
     void GainedPoweredCenter(TechnoTypeClass* type);  // 0x50E1B0
@@ -161,7 +161,7 @@ public:
     bool DoUnitsSelfHeal() const { return unitsSelfHeal > 0; }
     int GetUnitSelfHealStep() const;  // 0x50D9F0
 
-    void UpdatePower();
+    void UpdatePower(); // 0x508C30
     void CreatePowerOutage(int duration);  // 0x50BC90
     double GetPowerPercentage() const;
 
@@ -170,42 +170,42 @@ public:
 
     void CreateRadarOutage(int duration);  // 0x50BCD0
     void ReshroudMap();  // 0x50BD10
-    void Cheer();
+    void Cheer(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
-    void BuildingUnderAttack(BuildingClass* building);
-    void TakeMoney(int amount);
+    void BuildingUnderAttack(BuildingClass* building); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    void TakeMoney(int amount); // IDA: UNMATCHED — no_callgraph_match, no_git_history
     void GiveMoney(int amount);  // 0x522D50
 
-    bool CanTransactMoney(int amount) const { return amount > 0 || AvailableMoney() >= -amount; }
-    void TransactMoney(int amount)
+    bool CanTransactMoney(int amount) const { return amount > 0 || AvailableMoney() >= -amount; } // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    void TransactMoney(int amount) // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         if (amount > 0) GiveMoney(amount);
         else TakeMoney(-amount);
     }
 
-    int AvailableMoney() const;
+    int AvailableMoney() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     void GiveTiberium(float amount, int type);  // 0x4F9610
     void UpdateAllSilos(int prev_storage, int prev_total_storage);  // 0x4F9970
-    double getStoragePercentage();
+    double getStoragePercentage(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     void AcquiredThreatNode();  // 0x509130
 
-    static bool IndexIsMP(int idx);
+    static bool IndexIsMP(int idx); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     void UpdateFactoriesQueues(AbstractType factory_of, bool is_naval, int build_cat) const;
 
-    bool FireLightningStorm(SuperClass* super);
-    bool FireParadrop(SuperClass* super);
-    bool FirePsyDom(SuperClass* super);
-    bool FireGenMutator(SuperClass* super);
+    bool FireLightningStorm(SuperClass* super); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    bool FireParadrop(SuperClass* super); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    bool FirePsyDom(SuperClass* super); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    bool FireGenMutator(SuperClass* super); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     int  AIBaseConstructionupdateLogic();
     void AITryFireSW();  // IDA: 0x5098F0
     bool FireSW(int idx, const CellStruct& coords);   // IDA: 0x5098F0
 
-    CellStruct* PickTargetByType(CellStruct& out, TargetType type) const;
-    CellStruct PickTargetByType(TargetType type) const
+    CellStruct* PickTargetByType(CellStruct& out, TargetType type) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    CellStruct PickTargetByType(TargetType type) const // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         CellStruct out;
         PickTargetByType(out, type);
@@ -220,13 +220,13 @@ public:
         return out;
     }
 
-    bool IsIonCannonEligibleTarget(const TechnoClass* techno) const;
+    bool IsIonCannonEligibleTarget(const TechnoClass* techno) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     void UpdateFlagCoords(class UnitClass* new_carrier, uint32_t unk);
     void DroppedFlag(CellStruct* where, class UnitClass* who);  // 0x4FBF60
     char PickedUpFlag(class UnitClass* who, uint32_t unk);  // 0x4FC060
 
-    FactoryClass* GetPrimaryFactory(AbstractType abs_id, bool naval, int build_cat) const;
+    FactoryClass* GetPrimaryFactory(AbstractType abs_id, bool naval, int build_cat) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     void SetPrimaryFactory(FactoryClass* factory, AbstractType abs_id, bool naval, int build_cat);  // 0x740DF0
 
     const CellStruct& GetBaseCenter() const
@@ -237,7 +237,7 @@ public:
 
     unsigned int GetAIDifficultyIndex() const;
 
-    bool IsNeutral() const;
+    bool IsNeutral() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     bool IsPlayer() const;
     bool IsObserver() const;  // 0x5E9440
     static bool IsPlayerObserver();
@@ -532,8 +532,8 @@ public:
     // TODO: complete remaining members from YRpp (very large class ~969 lines)
 
 protected:
-    HouseClass() = default;
-    HouseClass(HouseTypeClass* pType) noexcept;
+    HouseClass() = default; // IDA: UNMATCHED — defaulted_special_member, no_callgraph_match, no_git_history
+    HouseClass(HouseTypeClass* pType) noexcept; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 };
 
 } // namespace gamemd

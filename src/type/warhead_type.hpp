@@ -20,7 +20,7 @@ struct WarheadFlags
     bool PassiveAcquire;
 
     WarheadFlags(bool FF = true, bool Retal = true, bool Acquire = true)
-        : ForceFire(FF), Retaliate(Retal), PassiveAcquire(Acquire) {}
+        : ForceFire(FF), Retaliate(Retal), PassiveAcquire(Acquire) {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
 };
 
 class WarheadTypeClass : public AbstractTypeClass

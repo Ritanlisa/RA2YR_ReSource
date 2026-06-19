@@ -151,7 +151,7 @@ public:
 class Modem
 {
 public:
-    virtual ~Modem() = default;
+    virtual ~Modem() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void EnumerateDevices(); // 0x5BB6E0
     virtual void CheckStatus(); // 0x5F0690
@@ -387,7 +387,7 @@ public:
 class NetworkID
 {
 public:
-    virtual ~NetworkID() = default;
+    virtual ~NetworkID() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void Assign(); // 0x53ED20
     virtual void Compare(); // 0x53EF30

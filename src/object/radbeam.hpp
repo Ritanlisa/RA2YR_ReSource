@@ -13,14 +13,14 @@ public:
 
     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override;
     virtual HRESULT __stdcall Load(IStream* stream) override;
-    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
+    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     virtual ~RadBeam() = default;
 
-    virtual void pointerExpired(AbstractClass* ptr, bool removed) override;
-    virtual AbstractType __stdcall whatAmI() const override;
+    virtual void pointerExpired(AbstractClass* ptr, bool removed) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    virtual AbstractType __stdcall whatAmI() const override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual int objectSize() const override;
-    virtual void calculateChecksum(void* checksum) const;
+    virtual void calculateChecksum(void* checksum) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     // Construction
     static RadBeam* Create(bool);                                // 0x659110

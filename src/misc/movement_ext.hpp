@@ -3,7 +3,6 @@
 #include <cstdint>
 #include "core/enums.hpp"
 #include "core/math.hpp"
-#include "misc/locomotion.hpp"
 
 namespace gamemd
 {
@@ -70,7 +69,7 @@ public:
 class Locomotor
 {
 public:
-    virtual ~Locomotor() = default;
+    virtual ~Locomotor() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void GetSpeed(); // 0x426630
 
@@ -117,7 +116,7 @@ public:
 class Pathfinding
 {
 public:
-    virtual ~Pathfinding() = default;
+    virtual ~Pathfinding() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void AStar(); // 0x42C290
     virtual void CalcDistance(); // 0x42D170

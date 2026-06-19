@@ -103,7 +103,7 @@ public:
 class DeleteCommandClass : public CommandClass
 {
 public:
-    DeleteCommandClass() = default;
+    DeleteCommandClass() = default; // 0x537F10
     virtual ~DeleteCommandClass() = default;  // 0x537F50
 
     virtual void Construct();
@@ -176,8 +176,8 @@ public:
 class Commands
 {
 public:
-    Commands() = default;
-    ~Commands();
+    Commands() = default; // IDA: UNMATCHED — defaulted_special_member, default_ctor, no_callgraph_match
+    ~Commands(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     // IDA 0x48B2A0 area
     int32_t AddRef();  // 0x537A50

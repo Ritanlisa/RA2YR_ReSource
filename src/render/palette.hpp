@@ -22,12 +22,12 @@ struct TintStruct
     int32_t Blue;
 
     constexpr TintStruct() noexcept
-        : Red(0), Green(0), Blue(0)
+        : Red(0), Green(0), Blue(0) // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
     }
 
     constexpr TintStruct(int32_t r, int32_t g, int32_t b) noexcept
-        : Red(r), Green(g), Blue(b)
+        : Red(r), Green(g), Blue(b) // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
     }
 };

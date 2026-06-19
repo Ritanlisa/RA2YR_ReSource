@@ -50,7 +50,7 @@ class Stream
 {
 public:
     Stream() = default;
-    ~Stream();
+    ~Stream(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     // IDA 0x48B2A0 area
     void FlushAndReset();  // 0x439110
@@ -171,7 +171,7 @@ public:
 class Buffer
 {
 public:
-    virtual ~Buffer() = default;
+    virtual ~Buffer() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void CreateDirectSound(); // 0x40A340
     virtual void sub_40A6D0(); // 0x40A6D0
@@ -279,7 +279,7 @@ public:
 class Text
 {
 public:
-    virtual ~Text() = default;
+    virtual ~Text() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void Layout(); // 0x433CF0
     virtual void MeasureWidth(); // 0x433ED0

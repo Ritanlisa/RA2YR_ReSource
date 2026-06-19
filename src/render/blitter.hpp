@@ -12,8 +12,8 @@ namespace gamemd
 class BlitterCore
 {
 public:
-    BlitterCore() = default;
-    virtual ~BlitterCore() = default;
+    BlitterCore() = default; // IDA: UNMATCHED — defaulted_special_member, default_ctor, no_callgraph_match
+    virtual ~BlitterCore() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void Blit(
         void* dest,
@@ -25,7 +25,7 @@ public:
         uint16_t a_lvl,
         int warp_offset) = 0;
 
-    virtual void CallBlit0(
+    virtual void CallBlit0( // IDA: UNMATCHED — no_callgraph_match, no_git_history
         void* dest,
         byte* src,
         unsigned int length,
@@ -36,7 +36,7 @@ public:
         uint16_t unknown_arg,
         uint32_t useless) = 0;
 
-    virtual void CallBlit1(
+    virtual void CallBlit1( // IDA: UNMATCHED — no_callgraph_match, no_git_history
         void* dest,
         byte* src,
         unsigned int length,
@@ -45,7 +45,7 @@ public:
         uint16_t* a_buf,
         uint16_t a_lvl) = 0;
 
-    virtual void CallBlit2(
+    virtual void CallBlit2( // IDA: UNMATCHED — no_callgraph_match, no_git_history
         void* dest,
         byte* src,
         unsigned int length,
@@ -62,8 +62,8 @@ class Blitter : public BlitterCore
 public:
     using PixelType = T;
 
-    Blitter() = default;
-    virtual ~Blitter() = default;
+    Blitter() = default; // IDA: UNMATCHED — defaulted_special_member, default_ctor, no_callgraph_match
+    virtual ~Blitter() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     byte* Data = nullptr;
 };
@@ -71,10 +71,10 @@ public:
 class RLEBlitterCore
 {
 public:
-    RLEBlitterCore() = default;
-    virtual ~RLEBlitterCore() = default;
+    RLEBlitterCore() = default; // IDA: UNMATCHED — defaulted_special_member, default_ctor, no_callgraph_match
+    virtual ~RLEBlitterCore() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
-    virtual void Blit(
+    virtual void Blit( // IDA: UNMATCHED — no_callgraph_match, no_git_history
         void* dest,
         byte* src,
         byte length,
@@ -98,8 +98,8 @@ class RLEBlitter : public RLEBlitterCore
 public:
     using PixelType = T;
 
-    RLEBlitter() = default;
-    virtual ~RLEBlitter() = default;
+    RLEBlitter() = default; // IDA: UNMATCHED — defaulted_special_member, default_ctor, no_callgraph_match
+    virtual ~RLEBlitter() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 };
 
 //===========================================================================
@@ -150,7 +150,7 @@ public:
         for (unsigned int i = 0; i < length; ++i) { d[i] = s[i]; }
     }
 
-    virtual void CallBlit0(
+    virtual void CallBlit0( // IDA: UNMATCHED — no_callgraph_match, no_git_history
         void* dest, byte* src, unsigned int length,
         uint16_t z_min, uint16_t* z_buf, uint16_t* a_buf, uint16_t a_lvl,
         uint16_t unknown_arg, uint32_t useless) override
@@ -158,14 +158,14 @@ public:
         Blit(dest, src, length, z_min, z_buf, a_buf, a_lvl, 0);
     }
 
-    virtual void CallBlit1(
+    virtual void CallBlit1( // IDA: UNMATCHED — no_callgraph_match, no_git_history
         void* dest, byte* src, unsigned int length,
         uint16_t z_min, uint16_t* z_buf, uint16_t* a_buf, uint16_t a_lvl) override
     {
         Blit(dest, src, length, z_min, z_buf, a_buf, a_lvl, 0);
     }
 
-    virtual void CallBlit2(
+    virtual void CallBlit2( // IDA: UNMATCHED — no_callgraph_match, no_git_history
         void* dest, byte* src, unsigned int length,
         uint16_t z_min, uint16_t* z_buf, uint16_t* a_buf, uint16_t a_lvl,
         uint32_t useless) override
@@ -193,7 +193,7 @@ public:
         }
     }
 
-    virtual void CallBlit0(
+    virtual void CallBlit0( // IDA: UNMATCHED — no_callgraph_match, no_git_history
         void* dest, byte* src, unsigned int length,
         uint16_t z_min, uint16_t* z_buf, uint16_t* a_buf, uint16_t a_lvl,
         uint16_t unknown_arg, uint32_t useless) override
@@ -201,14 +201,14 @@ public:
         Blit(dest, src, length, z_min, z_buf, a_buf, a_lvl, 0);
     }
 
-    virtual void CallBlit1(
+    virtual void CallBlit1( // IDA: UNMATCHED — no_callgraph_match, no_git_history
         void* dest, byte* src, unsigned int length,
         uint16_t z_min, uint16_t* z_buf, uint16_t* a_buf, uint16_t a_lvl) override
     {
         Blit(dest, src, length, z_min, z_buf, a_buf, a_lvl, 0);
     }
 
-    virtual void CallBlit2(
+    virtual void CallBlit2( // IDA: UNMATCHED — no_callgraph_match, no_git_history
         void* dest, byte* src, unsigned int length,
         uint16_t z_min, uint16_t* z_buf, uint16_t* a_buf, uint16_t a_lvl,
         uint32_t useless) override
@@ -471,7 +471,7 @@ class RLEBlitTrans : public RLEBlitter<T>
 public:
     T ColorKey = 0;
 
-    virtual void Blit(
+    virtual void Blit( // IDA: UNMATCHED — no_callgraph_match, no_git_history
         void* dest, byte* src, byte length,
         int encoded_len, int a6, int a7, int a8, int a9, int a10, int a11) override
     {
@@ -496,7 +496,7 @@ template <typename T>
 class RLEBlitTransXlat : public RLEBlitTrans<T>
 {
 public:
-    virtual void Blit(
+    virtual void Blit( // IDA: UNMATCHED — no_callgraph_match, no_git_history
         void* dest, byte* src, byte length,
         int encoded_len, int a6, int a7, int a8, int a9, int a10, int a11) override
     {
@@ -514,7 +514,7 @@ template <typename T>
 class RLEBlitTransXlatZRead : public RLEBlitTransXlat<T>
 {
 public:
-    virtual void Blit(
+    virtual void Blit( // IDA: UNMATCHED — no_callgraph_match, no_git_history
         void* dest, byte* src, byte length,
         int encoded_len, int a6, int a7, int a8, int a9, int a10, int a11) override
     {
@@ -532,7 +532,7 @@ template <typename T>
 class RLEBlitTransXlatAlpha : public RLEBlitTransXlat<T>
 {
 public:
-    virtual void Blit(
+    virtual void Blit( // IDA: UNMATCHED — no_callgraph_match, no_git_history
         void* dest, byte* src, byte length,
         int encoded_len, int a6, int a7, int a8, int a9, int a10, int a11) override
     {

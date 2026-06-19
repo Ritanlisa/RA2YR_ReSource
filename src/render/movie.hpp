@@ -42,24 +42,24 @@ enum class MovieType : uint8_t
 class BinkMovieHandle : public MovieHandle
 {
 public:
-    BinkMovieHandle() : totalFrames(0) {}
+    BinkMovieHandle() : totalFrames(0) {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual ~BinkMovieHandle() override;
 
     virtual int  GetWidth()  const override { return width; }
     virtual int  GetHeight() const override { return height; }
     virtual bool IsPlaying() const override { return playing; }
     virtual bool AdvanceFrame() override;
-    virtual void RenderFrame(DSurface* target) override;
+    virtual void RenderFrame(DSurface* target) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual void Stop() override;
 
-    void RenderFrameRaw(void* locked_buffer, int pitch_bytes, int height,
+    void RenderFrameRaw(void* locked_buffer, int pitch_bytes, int height, // IDA: UNMATCHED — no_callgraph_match, no_git_history
                         int dest_x = 0, int dest_y = 0);
 
     int  GetCurrentFrame() const { return currentFrame; }
     int  GetTotalFrames()  const { return totalFrames; }
     uint32_t GetSurfaceFlags() const { return surfaceFlags; }
 
-    bool OpenFromMemory(const void* data, int size, DSurface* render_target);
+    bool OpenFromMemory(const void* data, int size, DSurface* render_target); // IDA: UNMATCHED — no_callgraph_match, no_git_history
     bool OpenFromFile(const char* filename, DSurface* render_target);
 
 private:
@@ -92,10 +92,10 @@ public:
     virtual int  GetHeight() const override { return height; }
     virtual bool IsPlaying() const override { return playing; }
     virtual bool AdvanceFrame() override;
-    virtual void RenderFrame(DSurface* target) override;
+    virtual void RenderFrame(DSurface* target) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual void Stop() override;
 
-    bool OpenFromMemory(const void* data, int size);
+    bool OpenFromMemory(const void* data, int size); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
 private:
     void*   vqaData      = nullptr;
@@ -113,7 +113,7 @@ private:
 class MoviePlayer
 {
 public:
-    static MoviePlayer& Instance()
+    static MoviePlayer& Instance() // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         static MoviePlayer inst;
         return inst;
@@ -125,7 +125,7 @@ public:
 
     // Play a movie synchronously (blocks until complete or user skip)
     // Implements Movie_Play (0x5BED40) logic
-    bool PlayMovie(const char* filename,
+    bool PlayMovie(const char* filename, // IDA: UNMATCHED — no_callgraph_match, no_git_history
                    DSurface* hidden_surface,
                    bool stretch_to_fit = false,
                    bool show_ui = false);
@@ -134,9 +134,9 @@ public:
     void StopMovie();
 
     // Get current movie type for the last opened file
-    static MovieType DetectFormat(const char* filename);
+    static MovieType DetectFormat(const char* filename); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
-    MovieHandle* CurrentMovie() const { return currentMovie; }
+    MovieHandle* CurrentMovie() const { return currentMovie; } // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
 private:
     MoviePlayer() = default;

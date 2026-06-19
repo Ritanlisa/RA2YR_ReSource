@@ -21,7 +21,7 @@ public:
     {
     }
 
-    virtual ~Surface() = default;
+    virtual ~Surface() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     // [1] 0x04 BlitWhole
     virtual bool BlitWhole(Surface* src, bool option1, bool option2) = 0;
@@ -112,7 +112,7 @@ public:
         bool update_z_buffer) = 0;
 
     // [15] 0x3C DrawLineFaded -- 渐变直线，浮点渐隐参数
-    virtual bool DrawLineFaded(
+    virtual bool DrawLineFaded( // IDA: UNMATCHED — no_callgraph_match, no_git_history
         const Point2D& start,
         const Point2D& end,
         const uint8_t* stipple_pattern,
@@ -198,7 +198,7 @@ public:
     virtual int GetPitch() const = 0;
 
     // [30] 0x78 GetRect
-    virtual RectangleStruct* GetRect(RectangleStruct* out) const
+    virtual RectangleStruct* GetRect(RectangleStruct* out) const // 0x411510
     {
         out->X = 0;
         out->Y = 0;
@@ -208,13 +208,13 @@ public:
     }
 
     // [31] 0x7C GetWidth
-    virtual int GetWidth() const final
+    virtual int GetWidth() const final // 0x411540
     {
         return Width;
     }
 
     // [32] 0x80 GetHeight
-    virtual int GetHeight() const final
+    virtual int GetHeight() const final // 0x411550
     {
         return Height;
     }
@@ -250,14 +250,14 @@ public:
 
     // --- 辅助方法 (非虚函数) ---
 
-    RectangleStruct GetRect() const
+    RectangleStruct GetRect() const // 0x411510
     {
         RectangleStruct buf;
         GetRect(&buf);
         return buf;
     }
 
-    void DrawSHP(
+    void DrawSHP( // IDA: UNMATCHED — no_callgraph_match, no_git_history
         ConvertClass* palette,
         SHPStruct* shp,
         int frame_index,
@@ -274,13 +274,13 @@ public:
         int zs_x,
         int zs_y);
 
-    void DrawSHP(
+    void DrawSHP( // IDA: UNMATCHED — no_callgraph_match, no_git_history
         ConvertClass* palette,
         SHPStruct* shp,
         int frame_index,
         const Point2D& location);
 
-    static Point2D* DrawText(
+    static Point2D* DrawText( // IDA: UNMATCHED — no_callgraph_match, no_git_history
         Point2D* out,
         const wchar_t* text,
         Surface* surface,
@@ -291,7 +291,7 @@ public:
         uint32_t flags,
         uint32_t unknown9);
 
-    static Point2D DrawText(
+    static Point2D DrawText( // IDA: UNMATCHED — no_callgraph_match, no_git_history
         const wchar_t* text,
         Surface* surface,
         const RectangleStruct& bounds,
@@ -301,7 +301,7 @@ public:
         uint32_t flags = 0x16,
         uint32_t unknown9 = 1);
 
-    Point2D DrawText(
+    Point2D DrawText( // IDA: UNMATCHED — no_callgraph_match, no_git_history
         const wchar_t* text,
         const RectangleStruct& bounds,
         const Point2D& location,
@@ -309,7 +309,7 @@ public:
         uint32_t option3 = 0,
         uint32_t flags = 0x16);
 
-    Point2D DrawText(
+    Point2D DrawText( // IDA: UNMATCHED — no_callgraph_match, no_git_history
         const wchar_t* text,
         const Point2D& location,
         uint16_t color,
@@ -334,34 +334,34 @@ public:
 
     virtual ~XSurface() override = default;
 
-    virtual bool BlitWhole(Surface* src, bool option1, bool option2) override;
-    virtual bool BlitPart(
+    virtual bool BlitWhole(Surface* src, bool option1, bool option2) override; // 0x7BBAF0
+    virtual bool BlitPart( // 0x7BBB90
         const RectangleStruct& dest_rect, Surface* src,
         const RectangleStruct& src_rect, bool option1, bool option2) override;
-    virtual bool Blit(
+    virtual bool Blit( // 0x7BBCF0
         const RectangleStruct& clip_rect, const RectangleStruct& clip_rect2,
         Surface* src, const RectangleStruct& dest_rect,
         const RectangleStruct& src_rect, bool option1, bool option2) override;
-    virtual bool FillRectEx(
+    virtual bool FillRectEx( // 0x7BB050
         const RectangleStruct& clip_rect,
         const RectangleStruct& fill_rect, uint32_t color) override;
-    virtual bool FillRect(const RectangleStruct& fill_rect, uint32_t color) override;
+    virtual bool FillRect(const RectangleStruct& fill_rect, uint32_t color) override; // 0x7BB020
     virtual bool Fill(uint32_t color) override;  // IDA: 0x7BBAB0
     virtual bool FillRectWithFlags(
         const RectangleStruct& clip_rect,
         const ColorStruct& color,
         int opacity_percent) override { return false; }
-    virtual bool DrawEllipseOutline(
+    virtual bool DrawEllipseOutline( // 0x7BB350
         const Point2D& center,
         int radius_w, int radius_h,
         const RectangleStruct& clip_rect,
         uint16_t color) override;
     virtual bool SetPixel(const Point2D& point, uint32_t color) override;  // 0x7BAEB0
     virtual uint32_t GetPixel(const Point2D& point) override;  // IDA: 0x7BAE60
-    virtual bool DrawLineEx(
+    virtual bool DrawLineEx( // 0x7BA610
         const RectangleStruct& clip_rect, const Point2D& start,
         const Point2D& end, uint32_t color) override;
-    virtual bool DrawLine(
+    virtual bool DrawLine( // 0x7BA5E0
         const Point2D& start, const Point2D& end, uint32_t color) override;
     virtual bool DrawLineZBuf(
         const Point2D& start, const Point2D& end,
@@ -381,10 +381,10 @@ public:
         const Point2D& start, const Point2D& end,
         const uint8_t src_rgb[3], float brightness,
         int fade_start, int fade_end) override { return false; }
-    virtual bool WalkLine(
+    virtual bool WalkLine( // 0x7BAB90
         const Point2D& start, const Point2D& end,
         void (*callback)(const Point2D&)) override;
-    virtual bool DrawDashedLine(
+    virtual bool DrawDashedLine( // 0x7BA8C0
         const Point2D& start, const Point2D& end,
         uint16_t color, const uint8_t stipple[16],
         int dash_offset) override;
@@ -395,17 +395,17 @@ public:
     virtual bool DrawStippledRect(
         const Point2D& top_left, const Point2D& bottom_right,
         uint16_t color, bool fill_interior) override { return false; }
-    virtual bool DrawRectEx(
+    virtual bool DrawRectEx( // 0x7BADC0
         const RectangleStruct& clip_rect,
         const RectangleStruct& draw_rect, uint32_t color) override;
     virtual bool DrawRect(const RectangleStruct& draw_rect, uint32_t color) override;  // 0x7BAD90
 
-    virtual void* Lock(int x, int y) override
+    virtual void* Lock(int x, int y) override // 0x411560
     {
         ++LockCount;
         return nullptr;
     }
-    virtual bool Unlock() override
+    virtual bool Unlock() override // 0x411570
     {
         --LockCount;
         return true;
@@ -413,12 +413,12 @@ public:
     virtual bool CanLock(uint32_t unk1, uint32_t unk2) override { return true; }  // IDA: 0x4BAEC0
     virtual bool IsLocked() const override final { return LockCount > 0; }  // IDA: 0x411580
 
-    virtual bool PutPixel(
+    virtual bool PutPixel( // 0x7BAF90
         const Point2D& point,
         uint16_t color,
         const RectangleStruct& clip_rect) override;
 
-    virtual uint16_t GetPixelAtCoords(
+    virtual uint16_t GetPixelAtCoords( // 0x7BAF10
         const Point2D& point,
         const RectangleStruct& clip_rect) override;
 
@@ -435,7 +435,7 @@ public:
 
 protected:
     explicit XSurface(noinit_t) noexcept
-        : Surface(noinit_t{})
+        : Surface(noinit_t{}) // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
     }
 };
@@ -452,9 +452,9 @@ public:
 
     virtual ~BSurface() override = default;
 
-    virtual void* Lock(int x, int y) override;
-    virtual int GetBytesPerPixel() const override { return BytesPerPixel; }
-    virtual int GetPitch() const override { return Width * BytesPerPixel; }
+    virtual void* Lock(int x, int y) override; // 0x4115F0
+    virtual int GetBytesPerPixel() const override { return BytesPerPixel; } // 0x411630
+    virtual int GetPitch() const override { return Width * BytesPerPixel; } // 0x411640
     virtual bool IsDSurface() const override final { return false; }  // IDA: 0x4C1AB0
 
     int BytesPerPixel;
@@ -462,7 +462,7 @@ public:
 
 protected:
     explicit BSurface(noinit_t) noexcept
-        : XSurface(noinit_t{})
+        : XSurface(noinit_t{}) // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
     }
 };
@@ -483,18 +483,18 @@ public:
     virtual ~DSurface() override;
 
     virtual bool BlitWhole(Surface* src, bool option1, bool option2) override;  // 0x4C1A90
-    virtual bool BlitPart(
+    virtual bool BlitPart( // 0x4BB080
         const RectangleStruct& dest_rect, Surface* src,
         const RectangleStruct& src_rect, bool option1, bool option2) override;
-    virtual bool Blit(
+    virtual bool Blit( // 0x4BB0D0
         const RectangleStruct& clip_rect, const RectangleStruct& clip_rect2,
         Surface* src, const RectangleStruct& dest_rect,
         const RectangleStruct& src_rect, bool option1, bool option2) override;
-    virtual bool FillRectEx(
+    virtual bool FillRectEx( // 0x4BB620
         const RectangleStruct& clip_rect,
         const RectangleStruct& fill_rect, uint32_t color) override;
     virtual bool FillRect(const RectangleStruct& fill_rect, uint32_t color) override;  // 0x4BB5F0
-    virtual bool FillRectWithFlags(
+    virtual bool FillRectWithFlags( // 0x4BB830
         const RectangleStruct& clip_rect,
         const ColorStruct& color,
         int opacity_percent) override;
@@ -512,23 +512,23 @@ public:
         int fade_start, int fade_end,
         bool z_buffer, float gradient_start,
         float gradient_step, bool flip_dir) override;
-    virtual bool DrawLineZBufColored(
+    virtual bool DrawLineZBufColored( // 0x4BDF00
         const Point2D& start, const Point2D& end,
         const uint8_t src_rgb[3], float brightness,
         int fade_start, int fade_end) override;
-    virtual bool DrawDashedLineStipple(
+    virtual bool DrawDashedLineStipple( // 0x4C0750
         const Point2D& start, const Point2D& end,
         uint16_t color, const uint8_t stipple[16],
         int dash_offset, bool update_z) override;
-    virtual bool DrawStippledRect(
+    virtual bool DrawStippledRect( // 0x4C0E30
         const Point2D& top_left, const Point2D& bottom_right,
         uint16_t color, bool fill_interior) override;
     virtual void* Lock(int x, int y) override;  // 0x4BAD80
     virtual bool Unlock() override;  // 0x4BAF40
     virtual bool CanLock(uint32_t unk1, uint32_t unk2) override;  // IDA: 0x4BAEC0
     virtual int GetBytesPerPixel() const override { return BytesPerPixel; }  // IDA: 0x4BAD60
-    virtual int GetPitch() const override;
-    virtual bool DrawGradientLine(
+    virtual int GetPitch() const override; // 0x4BAD70
+    virtual bool DrawGradientLine( // 0x4BF750
         const Point2D& start, const Point2D& end,
         int palette_idx, int fade_val,
         float* gradient_start, float* gradient_step) override;
@@ -536,7 +536,7 @@ public:
     virtual bool IsDSurface() const override final { return true; }  // IDA: 0x4C1AB0
 
     // IDA: DSurface::CreatePrimary pixel format detection (0x4BA770 bit-shift logic)
-    static void DetectPixelFormat(const DDPIXELFORMAT& pf);
+    static void DetectPixelFormat(const DDPIXELFORMAT& pf); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     // IDA: 0x4BB0D0 — DSurface::Blit full hardware/software implementation
     // Used by REPLACE hook — bypasses Syringe trampoline entirely.
@@ -561,7 +561,7 @@ public:
 
 protected:
     explicit DSurface(noinit_t) noexcept
-        : XSurface(noinit_t{})
+        : XSurface(noinit_t{}) // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
     }
 

@@ -15,7 +15,7 @@ public:
 
     static DynamicVectorClass<OverlayTypeClass*>* Array;
     static OverlayTypeClass* Find(const char* pID);  // 0x5FE250
-    static OverlayTypeClass* FindOrAllocate(const char* pID);
+    static OverlayTypeClass* FindOrAllocate(const char* pID); // IDA: UNMATCHED — no_callgraph_match, no_git_history
     static int FindIndex(const char* pID);
 
     virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override; // 0x5FEC30 (as GetClassIdentifier)
@@ -28,7 +28,7 @@ public:
     virtual AbstractType __stdcall whatAmI() const override; // 0x5FEF00 (as GetTypeIdentifier)
     virtual int objectSize() const override; // 0x5FEF10 (as GetObjectSize)
 
-    virtual CoordStruct* onCellChanged(CoordStruct* pDest, CoordStruct* pSrc) const override;
+    virtual CoordStruct* onCellChanged(CoordStruct* pDest, CoordStruct* pSrc) const override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override;
     virtual ObjectClass* CreateObject(HouseClass* pOwner) override;  // 0x4737F0

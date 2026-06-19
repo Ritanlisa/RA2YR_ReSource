@@ -25,10 +25,10 @@ struct ShpFrameInfo {
 
 class ShpImage {
 public:
-    ~ShpImage();
+    ~ShpImage(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
-    bool LoadFromMemory(const uint8_t* data, int data_size);
-    void Free();
+    bool LoadFromMemory(const uint8_t* data, int data_size); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    void Free(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     int GetFrameCount() const;  // 0x74AA30
     int GetWidth() const;
@@ -36,13 +36,13 @@ public:
 
     const uint8_t* GetPixelData(int frame_index) const;
 
-    void RenderToSurface(
+    void RenderToSurface( // IDA: UNMATCHED — no_callgraph_match, no_git_history
         Surface* surface, int frame_index,
         int dest_x, int dest_y,
         const uint8_t palette[256][4]);
 
 private:
-    bool DecodeRLE3(const uint8_t* src, int src_size, uint8_t* dst,
+    bool DecodeRLE3(const uint8_t* src, int src_size, uint8_t* dst, // IDA: UNMATCHED — no_callgraph_match, no_git_history
                     int dst_width, int dst_height);
 
     ShpHeader         m_header{};

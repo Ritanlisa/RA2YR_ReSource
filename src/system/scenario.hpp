@@ -82,8 +82,8 @@ struct Randomizer
     int32_t next2;
     uint32_t table[250];
 
-    uint32_t Random();
-    int32_t RandomRanged(int n_min, int n_max);
+    uint32_t Random(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    int32_t RandomRanged(int n_min, int n_max); // IDA: UNMATCHED — no_callgraph_match, no_git_history
     double RandomDouble();
 };
 
@@ -102,8 +102,8 @@ public:
     }
 
     static void UpdateCellLighting();
-    static void UpdateLighting();
-    static void RecalcLighting(int r, int g, int b, uint32_t unk);
+    static void UpdateLighting(); // 0x53C280
+    static void RecalcLighting(int r, int g, int b, uint32_t unk); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     ScenarioFlags       specialFlags;
     char                nextScenario[260];

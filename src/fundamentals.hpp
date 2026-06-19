@@ -21,7 +21,7 @@ using dword = uint32;
 
 struct noinit_t
 {
-    constexpr noinit_t() = default;
+    constexpr noinit_t() = default; // IDA: UNMATCHED — defaulted_special_member, default_ctor, no_callgraph_match
 };
 
 struct ProgressTimer

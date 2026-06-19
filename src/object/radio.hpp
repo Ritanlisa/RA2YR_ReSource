@@ -22,11 +22,11 @@ public:
     virtual HRESULT __stdcall Load(IStream* stream) override;  // IDA: 0x65AB80
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;  // IDA: 0x65AC40
 
-    virtual ~RadioClass() = default;
+    virtual ~RadioClass() = default; // 0x65A750
 
-    virtual RadioCommand sendToFirstLink(RadioCommand command);
-    virtual RadioCommand sendCommand(RadioCommand command, TechnoClass* recipient);
-    virtual RadioCommand sendCommandWithData(RadioCommand command, AbstractClass*& inout, TechnoClass* recipient);
+    virtual RadioCommand sendToFirstLink(RadioCommand command); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    virtual RadioCommand sendCommand(RadioCommand command, TechnoClass* recipient); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    virtual RadioCommand sendCommandWithData(RadioCommand command, AbstractClass*& inout, TechnoClass* recipient); // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual void sendToEachLink(RadioCommand command);
 
     // IDA: 0x65AAC0 -- vt10: Remove a specific object from radio links
@@ -44,7 +44,7 @@ public:
     // IDA: 0x65AE60 -- Resize radio link array
     virtual void SetLinkCount(int count);  // IDA: 0x65AE60
 
-    TechnoClass* const& getNthLink(int idx = 0) const;
+    TechnoClass* const& getNthLink(int idx = 0) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     bool hasFreeLink() const;  // 0x65ADC0
     bool hasAnyLink() const;
 
@@ -52,7 +52,7 @@ public:
     VectorClass<TechnoClass*> radioLinks;
 
 protected:
-    RadioClass() noexcept;
+    RadioClass() noexcept; // 0x65A750
 };
 
 } // namespace game

@@ -17,11 +17,11 @@ class AircraftTypeClass;
 class StageClass : public IFlyControl
 {
 public:
-    virtual int __stdcall Landing_Altitude() override;
-    virtual int __stdcall Landing_Direction() override;
-    virtual long __stdcall Is_Loaded() override;
-    virtual long __stdcall Is_Strafe() override;
-    virtual long __stdcall Is_Fighter() override;
+    virtual int __stdcall Landing_Altitude() override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    virtual int __stdcall Landing_Direction() override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    virtual long __stdcall Is_Loaded() override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    virtual long __stdcall Is_Strafe() override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    virtual long __stdcall Is_Fighter() override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual long __stdcall Is_Locked() override;
 };
 
@@ -34,11 +34,11 @@ class AircraftClass : public ra2::game::FootClass, public FlasherClass
 public:
     static constexpr AbstractType kObjectTypeId = AbstractType::Aircraft;
 
-    virtual int __stdcall Landing_Altitude() override;
-    virtual int __stdcall Landing_Direction() override;
-    virtual long __stdcall Is_Loaded() override;
-    virtual long __stdcall Is_Strafe() override;
-    virtual long __stdcall Is_Fighter() override;
+    virtual int __stdcall Landing_Altitude() override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    virtual int __stdcall Landing_Direction() override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    virtual long __stdcall Is_Loaded() override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    virtual long __stdcall Is_Strafe() override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    virtual long __stdcall Is_Fighter() override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual long __stdcall Is_Locked() override;
 
     virtual HRESULT __stdcall QueryInterface(const IID& iid, void** ppvObject) override;  // 0x414290
@@ -47,9 +47,9 @@ public:
 
     virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override;
     virtual HRESULT __stdcall Load(IStream* pStm) override;
-    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;
+    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
-    virtual AbstractType __stdcall whatAmI() const override;
+    virtual AbstractType __stdcall whatAmI() const override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual int objectSize() const override;
 
     virtual ~AircraftClass() override = default;  // 0x414080
@@ -128,8 +128,8 @@ public:
 
     // === Phase 3: Drawing ===
     void Draw(Point2D* screen_pos, RectangleStruct* bounds) const;  // 0x4144B0
-    void DrawShadow(Point2D* screen_pos, RectangleStruct* bounds) const;
-    void DrawJetExhaust(Point2D* screen_pos) const;
+    void DrawShadow(Point2D* screen_pos, RectangleStruct* bounds) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    void DrawJetExhaust(Point2D* screen_pos) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     AircraftTypeClass* Type;
     bool               AircraftClass_field_bool_6C8;

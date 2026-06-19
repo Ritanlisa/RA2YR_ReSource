@@ -21,7 +21,7 @@ public:
 
     static DynamicVectorClass<BulletTypeClass*>* Array;
     static BulletTypeClass* Find(const char* pID);
-    static BulletTypeClass* FindOrAllocate(const char* pID);
+    static BulletTypeClass* FindOrAllocate(const char* pID); // IDA: UNMATCHED — no_callgraph_match, no_git_history
     static int FindIndex(const char* pID);
 
     virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override; // 0x46C750 (as GetClassIdentifier)
@@ -34,10 +34,10 @@ public:
     virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override; // 0x46C880 (as StubReturnFalse)
     virtual ObjectClass* CreateObject(HouseClass* pOwner) override;  // 0x4737F0
 
-    bool Rotates() const;
+    bool Rotates() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     void SetScaledSpawnDelay(int delay); // 0x46C840
 
-    BulletClass* CreateBullet(AbstractClass* pTarget, TechnoClass* pOwner, int nDamage,
+    BulletClass* CreateBullet(AbstractClass* pTarget, TechnoClass* pOwner, int nDamage, // IDA: UNMATCHED — no_callgraph_match, no_git_history
         WarheadTypeClass* pWH, int nSpeed, bool bBright);
 
     BulletTypeClass(const char* pID) noexcept;  // 0x46BBC0 (as Construct)

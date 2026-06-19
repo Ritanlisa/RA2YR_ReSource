@@ -335,7 +335,7 @@ public:
 class LoadProgressMgr
 {
 public:
-    virtual ~LoadProgressMgr() = default;
+    virtual ~LoadProgressMgr() = default; // 0x552AA0
 
     virtual void GetInstance() {} // IDA: 0x552A40
     virtual void Destroy() {} // IDA: 0x552AA0

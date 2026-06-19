@@ -24,24 +24,24 @@ public:
 
     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override; // 0x4CA270 (LoadFromStream)
     virtual HRESULT __stdcall Load(IStream* stream) override;
-    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
+    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     virtual ~FactoryClass() = default;                                                   // 0x4CA230 (ddtor)
 
     virtual AbstractType __stdcall whatAmI() const override; // 0x4CA750 (StubReturn12)
     virtual int objectSize() const override; // 0x4CA760 (StubReturn116)
-    virtual void calculateChecksum(void* checksum) const;
+    virtual void calculateChecksum(void* checksum) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     // production lifecycle
     bool HasProgressChanged();                                                           // 0x4C9C60
     bool DemandProduction(const TechnoTypeClass* type, HouseClass* owner, bool should_queue); // 0x4C9C70
     void SetObject(TechnoClass* object);                                                 // 0x4C9E10
     bool Suspend(bool manual);  // 0x5D2530
-    bool Unsuspend(bool manual);
+    bool Unsuspend(bool manual); // IDA: UNMATCHED — no_callgraph_match, no_git_history
     int GetBuildTimeFrames() const;                                                      // 0x4C9FB0
     bool AbandonProduction();                                                            // 0x4CA580 (Revert)
     int GetProgress() const;                                                            // 0x4CA430 (Stat)
-    bool IsDone() const;
+    bool IsDone() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     int GetCostPerStep() const;
     bool CompletedProduction();                                                          // 0x635060 (FinishProduction)
     void StartProduction();                                                             // 0x4C9E60
@@ -55,7 +55,7 @@ public:
     bool IsQueued(const TechnoTypeClass* type) const;                                    // 0x4CA6B0
 
     // static helpers
-    static FactoryClass* FindByOwnerAndProduct(const HouseClass* house, const TechnoTypeClass* item);
+    static FactoryClass* FindByOwnerAndProduct(const HouseClass* house, const TechnoTypeClass* item); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     // save/load
     void LoadFromStream(IStream* stream);  // IDA: 0x4CA270

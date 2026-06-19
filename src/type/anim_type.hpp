@@ -38,7 +38,7 @@ public:
 
     virtual ~AnimTypeClass() = default;  // 0x428EA0 (as ddtor)
 
-    virtual AbstractType __stdcall whatAmI() const override;
+    virtual AbstractType __stdcall whatAmI() const override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual int objectSize() const override; // 0x428E70 (as GetObjectSize)
 
     virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override; // 0x428E90 (as StubReturnFalse)
@@ -52,7 +52,7 @@ public:
     struct noinit_t {};
 
 protected:
-    AnimTypeClass(noinit_t) noexcept;
+    AnimTypeClass(noinit_t) noexcept; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
 public:
     int ArrayIndex;

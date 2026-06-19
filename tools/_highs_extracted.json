@@ -1,0 +1,1522 @@
+[
+  {
+    "key": "core\\load_options.hpp:40:LoadOptions::LoadOptions",
+    "hpp_file": "core\\load_options.hpp",
+    "hpp_line": 40,
+    "class_name": "LoadOptions",
+    "method_name": "LoadOptions",
+    "ida_addr": "0x558740",
+    "ida_current_name": "Construct",
+    "callgraph_match_type": "ctor_dtor"
+  },
+  {
+    "key": "core\\utility_ext.hpp:932:GraphicMenuAnimItem::~GraphicMenuAnimItem",
+    "hpp_file": "core\\utility_ext.hpp",
+    "hpp_line": 932,
+    "class_name": "GraphicMenuAnimItem",
+    "method_name": "~GraphicMenuAnimItem",
+    "ida_addr": "0x4F3090",
+    "ida_current_name": "Release",
+    "callgraph_match_type": "ctor_dtor"
+  },
+  {
+    "key": "core\\utility_ext.hpp:968:GraphicMenuItem::~GraphicMenuItem",
+    "hpp_file": "core\\utility_ext.hpp",
+    "hpp_line": 968,
+    "class_name": "GraphicMenuItem",
+    "method_name": "~GraphicMenuItem",
+    "ida_addr": "0x4F3A70",
+    "ida_current_name": "Destructor",
+    "callgraph_match_type": "ctor_dtor"
+  },
+  {
+    "key": "entity\\bullet.hpp:111:BulletClass::BulletClass",
+    "hpp_file": "entity\\bullet.hpp",
+    "hpp_line": 111,
+    "class_name": "BulletClass",
+    "method_name": "BulletClass",
+    "ida_addr": "0x466380",
+    "ida_current_name": "BulletClass",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "entity\\bullet.hpp:114:BulletClass::BulletClass",
+    "hpp_file": "entity\\bullet.hpp",
+    "hpp_line": 114,
+    "class_name": "BulletClass",
+    "method_name": "BulletClass",
+    "ida_addr": "0x466380",
+    "ida_current_name": "BulletClass",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "entity\\particle_system.hpp:65:ParticleSystemClass::ParticleSystemClass",
+    "hpp_file": "entity\\particle_system.hpp",
+    "hpp_line": 65,
+    "class_name": "ParticleSystemClass",
+    "method_name": "ParticleSystemClass",
+    "ida_addr": "0x4E8780",
+    "ida_current_name": "initParticleArray",
+    "callgraph_match_type": "ctor_dtor"
+  },
+  {
+    "key": "entity\\particle_system.hpp:68:ParticleSystemClass::ParticleSystemClass",
+    "hpp_file": "entity\\particle_system.hpp",
+    "hpp_line": 68,
+    "class_name": "ParticleSystemClass",
+    "method_name": "ParticleSystemClass",
+    "ida_addr": "0x4E8780",
+    "ida_current_name": "initParticleArray",
+    "callgraph_match_type": "ctor_dtor"
+  },
+  {
+    "key": "entity\\rad_site.hpp:86:RadSiteClass::RadSiteClass",
+    "hpp_file": "entity\\rad_site.hpp",
+    "hpp_line": 86,
+    "class_name": "RadSiteClass",
+    "method_name": "RadSiteClass",
+    "ida_addr": "0x65B1E0",
+    "ida_current_name": "Construct",
+    "callgraph_match_type": "ctor_dtor"
+  },
+  {
+    "key": "entity\\tiberium.hpp:89:TiberiumClass::TiberiumClass",
+    "hpp_file": "entity\\tiberium.hpp",
+    "hpp_line": 89,
+    "class_name": "TiberiumClass",
+    "method_name": "TiberiumClass",
+    "ida_addr": "0x7216C0",
+    "ida_current_name": "TiberiumClass",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "entity\\tiberium.hpp:93:TiberiumClass::TiberiumClass",
+    "hpp_file": "entity\\tiberium.hpp",
+    "hpp_line": 93,
+    "class_name": "TiberiumClass",
+    "method_name": "TiberiumClass",
+    "ida_addr": "0x7216C0",
+    "ida_current_name": "TiberiumClass",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "house\\house.hpp:164:HouseClass::UpdatePower",
+    "hpp_file": "house\\house.hpp",
+    "hpp_line": 164,
+    "class_name": "HouseClass",
+    "method_name": "UpdatePower",
+    "ida_addr": "0x508C30",
+    "ida_current_name": "UpdatePower",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "misc\\audio.hpp:107:VocClass::~VocClass",
+    "hpp_file": "misc\\audio.hpp",
+    "hpp_line": 107,
+    "class_name": "VocClass",
+    "method_name": "~VocClass",
+    "ida_addr": "0x4052F0",
+    "ida_current_name": "Cleanup",
+    "callgraph_match_type": "ctor_dtor"
+  },
+  {
+    "key": "misc\\locomotion.hpp:257:DriveLocomotionClass::AddRef",
+    "hpp_file": "misc\\locomotion.hpp",
+    "hpp_line": 257,
+    "class_name": "DriveLocomotionClass",
+    "method_name": "AddRef",
+    "ida_addr": "0x4B4CB0",
+    "ida_current_name": "AddRef",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "misc\\locomotion.hpp:258:DriveLocomotionClass::Release",
+    "hpp_file": "misc\\locomotion.hpp",
+    "hpp_line": 258,
+    "class_name": "DriveLocomotionClass",
+    "method_name": "Release",
+    "ida_addr": "0x4B4CC0",
+    "ida_current_name": "Release",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "misc\\locomotion.hpp:360:WalkLocomotionClass::AddRef",
+    "hpp_file": "misc\\locomotion.hpp",
+    "hpp_line": 360,
+    "class_name": "WalkLocomotionClass",
+    "method_name": "AddRef",
+    "ida_addr": "0x75CB80",
+    "ida_current_name": "AddRef",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "misc\\locomotion.hpp:361:WalkLocomotionClass::Release",
+    "hpp_file": "misc\\locomotion.hpp",
+    "hpp_line": 361,
+    "class_name": "WalkLocomotionClass",
+    "method_name": "Release",
+    "ida_addr": "0x75CB90",
+    "ida_current_name": "Release",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "misc\\locomotion.hpp:499:RocketLocomotionClass::RocketLocomotionClass",
+    "hpp_file": "misc\\locomotion.hpp",
+    "hpp_line": 499,
+    "class_name": "RocketLocomotionClass",
+    "method_name": "RocketLocomotionClass",
+    "ida_addr": "0x661EC0",
+    "ida_current_name": "RocketLocomotionClass",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "misc\\locomotion.hpp:521:JumpjetLocomotionClass::QueryInterface",
+    "hpp_file": "misc\\locomotion.hpp",
+    "hpp_line": 521,
+    "class_name": "JumpjetLocomotionClass",
+    "method_name": "QueryInterface",
+    "ida_addr": "0x54DC60",
+    "ida_current_name": "QueryInterface",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "misc\\locomotion.hpp:522:JumpjetLocomotionClass::AddRef",
+    "hpp_file": "misc\\locomotion.hpp",
+    "hpp_line": 522,
+    "class_name": "JumpjetLocomotionClass",
+    "method_name": "AddRef",
+    "ida_addr": "0x54DF50",
+    "ida_current_name": "AddRef",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "misc\\locomotion.hpp:523:JumpjetLocomotionClass::Release",
+    "hpp_file": "misc\\locomotion.hpp",
+    "hpp_line": 523,
+    "class_name": "JumpjetLocomotionClass",
+    "method_name": "Release",
+    "ida_addr": "0x54DF60",
+    "ida_current_name": "Release",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "misc\\locomotion.hpp:602:ShipLocomotionClass::AddRef",
+    "hpp_file": "misc\\locomotion.hpp",
+    "hpp_line": 602,
+    "class_name": "ShipLocomotionClass",
+    "method_name": "AddRef",
+    "ida_addr": "0x6A4260",
+    "ida_current_name": "AddRef",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "misc\\locomotion.hpp:603:ShipLocomotionClass::Release",
+    "hpp_file": "misc\\locomotion.hpp",
+    "hpp_line": 603,
+    "class_name": "ShipLocomotionClass",
+    "method_name": "Release",
+    "ida_addr": "0x6A4270",
+    "ida_current_name": "Release",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "misc\\locomotion.hpp:687:TeleportLocomotionClass::~TeleportLocomotionClass",
+    "hpp_file": "misc\\locomotion.hpp",
+    "hpp_line": 687,
+    "class_name": "TeleportLocomotionClass",
+    "method_name": "~TeleportLocomotionClass",
+    "ida_addr": "0x718000",
+    "ida_current_name": "TeleportLocomotionClass",
+    "callgraph_match_type": "fuzzy"
+  },
+  {
+    "key": "misc\\locomotion.hpp:702:TeleportLocomotionClass::TeleportLocomotionClass",
+    "hpp_file": "misc\\locomotion.hpp",
+    "hpp_line": 702,
+    "class_name": "TeleportLocomotionClass",
+    "method_name": "TeleportLocomotionClass",
+    "ida_addr": "0x718000",
+    "ida_current_name": "TeleportLocomotionClass",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "misc\\locomotion.hpp:798:DropPodLocomotionClass::AddRef",
+    "hpp_file": "misc\\locomotion.hpp",
+    "hpp_line": 798,
+    "class_name": "DropPodLocomotionClass",
+    "method_name": "AddRef",
+    "ida_addr": "0x4B66A0",
+    "ida_current_name": "AddRef",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "misc\\locomotion.hpp:799:DropPodLocomotionClass::Release",
+    "hpp_file": "misc\\locomotion.hpp",
+    "hpp_line": 799,
+    "class_name": "DropPodLocomotionClass",
+    "method_name": "Release",
+    "ida_addr": "0x4B66B0",
+    "ida_current_name": "Release",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "misc\\misc_ext.hpp:946:PlanningNodeClass::~PlanningNodeClass",
+    "hpp_file": "misc\\misc_ext.hpp",
+    "hpp_line": 946,
+    "class_name": "PlanningNodeClass",
+    "method_name": "~PlanningNodeClass",
+    "ida_addr": "0x6370B0",
+    "ida_current_name": "CleanupAll",
+    "callgraph_match_type": "ctor_dtor"
+  },
+  {
+    "key": "misc\\misc_ext.hpp:1357:AssetClass::~AssetClass",
+    "hpp_file": "misc\\misc_ext.hpp",
+    "hpp_line": 1357,
+    "class_name": "AssetClass",
+    "method_name": "~AssetClass",
+    "ida_addr": "0x534E50",
+    "ida_current_name": "ReleaseAndReload",
+    "callgraph_match_type": "ctor_dtor"
+  },
+  {
+    "key": "misc\\misc_ext.hpp:1441:BlowStraw::~BlowStraw",
+    "hpp_file": "misc\\misc_ext.hpp",
+    "hpp_line": 1441,
+    "class_name": "BlowStraw",
+    "method_name": "~BlowStraw",
+    "ida_addr": "0x438210",
+    "ida_current_name": "Release",
+    "callgraph_match_type": "ctor_dtor"
+  },
+  {
+    "key": "misc\\misc_ext.hpp:1959:FractalNoise::~FractalNoise",
+    "hpp_file": "misc\\misc_ext.hpp",
+    "hpp_line": 1959,
+    "class_name": "FractalNoise",
+    "method_name": "~FractalNoise",
+    "ida_addr": "0x420270",
+    "ida_current_name": "Release",
+    "callgraph_match_type": "ctor_dtor"
+  },
+  {
+    "key": "misc\\misc_ext.hpp:2143:ImageList::~ImageList",
+    "hpp_file": "misc\\misc_ext.hpp",
+    "hpp_line": 2143,
+    "class_name": "ImageList",
+    "method_name": "~ImageList",
+    "ida_addr": "0x7C89FE",
+    "ida_current_name": "Destroy",
+    "callgraph_match_type": "ctor_dtor"
+  },
+  {
+    "key": "misc\\misc_ext.hpp:2193:IntVector::~IntVector",
+    "hpp_file": "misc\\misc_ext.hpp",
+    "hpp_line": 2193,
+    "class_name": "IntVector",
+    "method_name": "~IntVector",
+    "ida_addr": "0x49F9D0",
+    "ida_current_name": "Destructor",
+    "callgraph_match_type": "ctor_dtor"
+  },
+  {
+    "key": "misc\\misc_ext.hpp:2255:LCWPipe::~LCWPipe",
+    "hpp_file": "misc\\misc_ext.hpp",
+    "hpp_line": 2255,
+    "class_name": "LCWPipe",
+    "method_name": "~LCWPipe",
+    "ida_addr": "0x552060",
+    "ida_current_name": "Destructor",
+    "callgraph_match_type": "ctor_dtor"
+  },
+  {
+    "key": "misc\\misc_ext.hpp:2277:LCWStraw::~LCWStraw",
+    "hpp_file": "misc\\misc_ext.hpp",
+    "hpp_line": 2277,
+    "class_name": "LCWStraw",
+    "method_name": "~LCWStraw",
+    "ida_addr": "0x552450",
+    "ida_current_name": "Destructor",
+    "callgraph_match_type": "ctor_dtor"
+  },
+  {
+    "key": "misc\\misc_ext.hpp:2297:LZOPipe::~LZOPipe",
+    "hpp_file": "misc\\misc_ext.hpp",
+    "hpp_line": 2297,
+    "class_name": "LZOPipe",
+    "method_name": "~LZOPipe",
+    "ida_addr": "0x55C310",
+    "ida_current_name": "Destructor",
+    "callgraph_match_type": "ctor_dtor"
+  },
+  {
+    "key": "misc\\misc_ext.hpp:2319:LZOStraw::~LZOStraw",
+    "hpp_file": "misc\\misc_ext.hpp",
+    "hpp_line": 2319,
+    "class_name": "LZOStraw",
+    "method_name": "~LZOStraw",
+    "ida_addr": "0x55C780",
+    "ida_current_name": "Destructor",
+    "callgraph_match_type": "ctor_dtor"
+  },
+  {
+    "key": "misc\\misc_ext.hpp:2640:MovieContext::~MovieContext",
+    "hpp_file": "misc\\misc_ext.hpp",
+    "hpp_line": 2640,
+    "class_name": "MovieContext",
+    "method_name": "~MovieContext",
+    "ida_addr": "0x5BFF00",
+    "ida_current_name": "Cleanup",
+    "callgraph_match_type": "ctor_dtor"
+  },
+  {
+    "key": "misc\\misc_ext.hpp:2678:NeuronClass::~NeuronClass",
+    "hpp_file": "misc\\misc_ext.hpp",
+    "hpp_line": 2678,
+    "class_name": "NeuronClass",
+    "method_name": "~NeuronClass",
+    "ida_addr": "0x43A350",
+    "ida_current_name": "NeuronClass",
+    "callgraph_match_type": "fuzzy"
+  },
+  {
+    "key": "misc\\misc_ext.hpp:2994:ResultNode::~ResultNode",
+    "hpp_file": "misc\\misc_ext.hpp",
+    "hpp_line": 2994,
+    "class_name": "ResultNode",
+    "method_name": "~ResultNode",
+    "ida_addr": "0x625AB0",
+    "ida_current_name": "CleanupList",
+    "callgraph_match_type": "ctor_dtor"
+  },
+  {
+    "key": "misc\\misc_ext.hpp:4417:TileNode::~TileNode",
+    "hpp_file": "misc\\misc_ext.hpp",
+    "hpp_line": 4417,
+    "class_name": "TileNode",
+    "method_name": "~TileNode",
+    "ida_addr": "0x58C070",
+    "ida_current_name": "Cleanup",
+    "callgraph_match_type": "ctor_dtor"
+  },
+  {
+    "key": "misc\\misc_ext.hpp:4631:WDTState::~WDTState",
+    "hpp_file": "misc\\misc_ext.hpp",
+    "hpp_line": 4631,
+    "class_name": "WDTState",
+    "method_name": "~WDTState",
+    "ida_addr": "0x76AFC0",
+    "ida_current_name": "Constructor_WDTState",
+    "callgraph_match_type": "fuzzy"
+  },
+  {
+    "key": "misc\\rules.hpp:621:RulesClass::RulesClass",
+    "hpp_file": "misc\\rules.hpp",
+    "hpp_line": 621,
+    "class_name": "RulesClass",
+    "method_name": "RulesClass",
+    "ida_addr": "0x665650",
+    "ida_current_name": "Constructor",
+    "callgraph_match_type": "ctor_dtor"
+  },
+  {
+    "key": "misc\\rules.hpp:622:RulesClass::~RulesClass",
+    "hpp_file": "misc\\rules.hpp",
+    "hpp_line": 622,
+    "class_name": "RulesClass",
+    "method_name": "~RulesClass",
+    "ida_addr": "0x667A30",
+    "ida_current_name": "DTOR",
+    "callgraph_match_type": "ctor_dtor"
+  },
+  {
+    "key": "network\\session.hpp:132:SessionClass::SessionClass",
+    "hpp_file": "network\\session.hpp",
+    "hpp_line": 132,
+    "class_name": "SessionClass",
+    "method_name": "SessionClass",
+    "ida_addr": "0x6970A0",
+    "ida_current_name": "SessionClass",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "network\\winsock.hpp:36:WinsockInterfaceClass::WinsockInterfaceClass",
+    "hpp_file": "network\\winsock.hpp",
+    "hpp_line": 36,
+    "class_name": "WinsockInterfaceClass",
+    "method_name": "WinsockInterfaceClass",
+    "ida_addr": "0x7B1AB0",
+    "ida_current_name": "Destructor",
+    "callgraph_match_type": "ctor_dtor"
+  },
+  {
+    "key": "network\\winsock.hpp:37:WinsockInterfaceClass::~WinsockInterfaceClass",
+    "hpp_file": "network\\winsock.hpp",
+    "hpp_line": 37,
+    "class_name": "WinsockInterfaceClass",
+    "method_name": "~WinsockInterfaceClass",
+    "ida_addr": "0x7B1AB0",
+    "ida_current_name": "Destructor",
+    "callgraph_match_type": "ctor_dtor"
+  },
+  {
+    "key": "object\\foot.hpp:70:FootClass::canEnterCell",
+    "hpp_file": "object\\foot.hpp",
+    "hpp_line": 70,
+    "class_name": "FootClass",
+    "method_name": "canEnterCell",
+    "ida_addr": "0x709290",
+    "ida_current_name": "CanEnterCell",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "object\\foot.hpp:85:FootClass::StubReturnVoid",
+    "hpp_file": "object\\foot.hpp",
+    "hpp_line": 85,
+    "class_name": "FootClass",
+    "method_name": "StubReturnVoid",
+    "ida_addr": "0x41C110",
+    "ida_current_name": "StubReturnVoid",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "object\\foot.hpp:95:FootClass::GetCapacity",
+    "hpp_file": "object\\foot.hpp",
+    "hpp_line": 95,
+    "class_name": "FootClass",
+    "method_name": "GetCapacity",
+    "ida_addr": "0x45A540",
+    "ida_current_name": "GetCapacity",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "object\\foot.hpp:105:FootClass::UpdateReveal",
+    "hpp_file": "object\\foot.hpp",
+    "hpp_line": 105,
+    "class_name": "FootClass",
+    "method_name": "UpdateReveal",
+    "ida_addr": "0x4D3780",
+    "ida_current_name": "UpdateReveal",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "object\\foot.hpp:115:FootClass::CalculateApproachPath",
+    "hpp_file": "object\\foot.hpp",
+    "hpp_line": 115,
+    "class_name": "FootClass",
+    "method_name": "CalculateApproachPath",
+    "ida_addr": "0x4D5690",
+    "ida_current_name": "CalculateApproachPath",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "object\\foot.hpp:121:FootClass::GetCoords",
+    "hpp_file": "object\\foot.hpp",
+    "hpp_line": 121,
+    "class_name": "FootClass",
+    "method_name": "GetCoords",
+    "ida_addr": "0x4D8560",
+    "ida_current_name": "GetCoords",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "object\\foot.hpp:123:FootClass::OverrideMission_SyncLog",
+    "hpp_file": "object\\foot.hpp",
+    "hpp_line": 123,
+    "class_name": "FootClass",
+    "method_name": "OverrideMission_SyncLog",
+    "ida_addr": "0x4D8F40",
+    "ida_current_name": "OverrideMission_SyncLog",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "object\\foot.hpp:125:FootClass::MissionDispatch",
+    "hpp_file": "object\\foot.hpp",
+    "hpp_line": 125,
+    "class_name": "FootClass",
+    "method_name": "MissionDispatch",
+    "ida_addr": "0x4D8FB0",
+    "ida_current_name": "MissionDispatch",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "object\\foot.hpp:130:FootClass::HandleTargetDestroyed",
+    "hpp_file": "object\\foot.hpp",
+    "hpp_line": 130,
+    "class_name": "FootClass",
+    "method_name": "HandleTargetDestroyed",
+    "ida_addr": "0x4D9960",
+    "ida_current_name": "HandleTargetDestroyed",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "object\\foot.hpp:139:FootClass::CheckTargetValidity",
+    "hpp_file": "object\\foot.hpp",
+    "hpp_line": 139,
+    "class_name": "FootClass",
+    "method_name": "CheckTargetValidity",
+    "ida_addr": "0x4DA4E0",
+    "ida_current_name": "CheckTargetValidity",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "object\\foot.hpp:150:FootClass::CheckTargetCell",
+    "hpp_file": "object\\foot.hpp",
+    "hpp_line": 150,
+    "class_name": "FootClass",
+    "method_name": "CheckTargetCell",
+    "ida_addr": "0x4DC060",
+    "ida_current_name": "CheckTargetCell",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "object\\foot.hpp:160:FootClass::ValidateFoundation",
+    "hpp_file": "object\\foot.hpp",
+    "hpp_line": 160,
+    "class_name": "FootClass",
+    "method_name": "ValidateFoundation",
+    "ida_addr": "0x4DE580",
+    "ida_current_name": "ValidateFoundation",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "object\\foot.hpp:167:FootClass::CheckCellPassable",
+    "hpp_file": "object\\foot.hpp",
+    "hpp_line": 167,
+    "class_name": "FootClass",
+    "method_name": "CheckCellPassable",
+    "ida_addr": "0x4DE940",
+    "ida_current_name": "CheckCellPassable",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "object\\foot.hpp:178:FootClass::Destru_vt08",
+    "hpp_file": "object\\foot.hpp",
+    "hpp_line": 178,
+    "class_name": "FootClass",
+    "method_name": "Destru_vt08",
+    "ida_addr": "0x4E0170",
+    "ida_current_name": "Destru_vt08",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "object\\foot.hpp:179:FootClass::RemoveFromPointerArray",
+    "hpp_file": "object\\foot.hpp",
+    "hpp_line": 179,
+    "class_name": "FootClass",
+    "method_name": "RemoveFromPointerArray",
+    "ida_addr": "0x4E0ED0",
+    "ida_current_name": "RemoveFromPointerArray",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "object\\foot.hpp:186:FootClass::CompleteProduction",
+    "hpp_file": "object\\foot.hpp",
+    "hpp_line": 186,
+    "class_name": "FootClass",
+    "method_name": "CompleteProduction",
+    "ida_addr": "0x6F5090",
+    "ida_current_name": "CompleteProduction",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "object\\foot.hpp:189:FootClass::SetThreatBounds",
+    "hpp_file": "object\\foot.hpp",
+    "hpp_line": 189,
+    "class_name": "FootClass",
+    "method_name": "SetThreatBounds",
+    "ida_addr": "0x70F670",
+    "ida_current_name": "SetThreatBounds",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "object\\foot.hpp:194:FootClass::Cleanup",
+    "hpp_file": "object\\foot.hpp",
+    "hpp_line": 194,
+    "class_name": "FootClass",
+    "method_name": "Cleanup",
+    "ida_addr": "0x729480",
+    "ida_current_name": "Cleanup",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "object\\foot.hpp:199:FootClass::SetField",
+    "hpp_file": "object\\foot.hpp",
+    "hpp_line": 199,
+    "class_name": "FootClass",
+    "method_name": "SetField",
+    "ida_addr": "0x7500E0",
+    "ida_current_name": "SetField",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "object\\radio.hpp:25:RadioClass::~RadioClass",
+    "hpp_file": "object\\radio.hpp",
+    "hpp_line": 25,
+    "class_name": "RadioClass",
+    "method_name": "~RadioClass",
+    "ida_addr": "0x65A750",
+    "ida_current_name": "RadioClass",
+    "callgraph_match_type": "fuzzy"
+  },
+  {
+    "key": "object\\radio.hpp:55:RadioClass::RadioClass",
+    "hpp_file": "object\\radio.hpp",
+    "hpp_line": 55,
+    "class_name": "RadioClass",
+    "method_name": "RadioClass",
+    "ida_addr": "0x65A750",
+    "ida_current_name": "RadioClass",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "object\\techno.hpp:132:TechnoClass::GetGuardRange",
+    "hpp_file": "object\\techno.hpp",
+    "hpp_line": 132,
+    "class_name": "TechnoClass",
+    "method_name": "GetGuardRange",
+    "ida_addr": "0x773070",
+    "ida_current_name": "GetWeaponRange",
+    "callgraph_match_type": "topology"
+  },
+  {
+    "key": "object\\techno.hpp:207:TechnoClass::drawSelectionBox",
+    "hpp_file": "object\\techno.hpp",
+    "hpp_line": 207,
+    "class_name": "TechnoClass",
+    "method_name": "drawSelectionBox",
+    "ida_addr": "0x659470",
+    "ida_current_name": "drawSelectionBox",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "object\\techno.hpp:272:TechnoClass::ApplyDamageEffects",
+    "hpp_file": "object\\techno.hpp",
+    "hpp_line": 272,
+    "class_name": "TechnoClass",
+    "method_name": "ApplyDamageEffects",
+    "ida_addr": "0x438720",
+    "ida_current_name": "ApplyDamageEffects",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "object\\techno.hpp:280:TechnoClass::MissionStubReturnZero4",
+    "hpp_file": "object\\techno.hpp",
+    "hpp_line": 280,
+    "class_name": "TechnoClass",
+    "method_name": "MissionStubReturnZero4",
+    "ida_addr": "0x459D90",
+    "ida_current_name": "MissionStubReturnZero4",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "object\\techno.hpp:281:TechnoClass::StubReturnFalse2",
+    "hpp_file": "object\\techno.hpp",
+    "hpp_line": 281,
+    "class_name": "TechnoClass",
+    "method_name": "StubReturnFalse2",
+    "ida_addr": "0x459DD0",
+    "ida_current_name": "StubReturnFalse2",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "object\\techno.hpp:284:TechnoClass::IndexOf",
+    "hpp_file": "object\\techno.hpp",
+    "hpp_line": 284,
+    "class_name": "TechnoClass",
+    "method_name": "IndexOf",
+    "ida_addr": "0x473500",
+    "ida_current_name": "IndexOf",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "object\\techno.hpp:289:TechnoClass::GetData",
+    "hpp_file": "object\\techno.hpp",
+    "hpp_line": 289,
+    "class_name": "TechnoClass",
+    "method_name": "GetData",
+    "ida_addr": "0x4CF950",
+    "ida_current_name": "GetData",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "object\\techno.hpp:294:TechnoClass::CheckState2",
+    "hpp_file": "object\\techno.hpp",
+    "hpp_line": 294,
+    "class_name": "TechnoClass",
+    "method_name": "CheckState2",
+    "ida_addr": "0x5B2E80",
+    "ida_current_name": "CheckState2",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "object\\techno.hpp:295:TechnoClass::StubReturn450",
+    "hpp_file": "object\\techno.hpp",
+    "hpp_line": 295,
+    "class_name": "TechnoClass",
+    "method_name": "StubReturn450",
+    "ida_addr": "0x5B2E40",
+    "ida_current_name": "StubReturn450",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "object\\techno.hpp:344:TechnoClass::GetValue",
+    "hpp_file": "object\\techno.hpp",
+    "hpp_line": 344,
+    "class_name": "TechnoClass",
+    "method_name": "GetValue",
+    "ida_addr": "0x6F3970",
+    "ida_current_name": "GetValue",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "object\\techno.hpp:349:TechnoClass::SelectWeapon",
+    "hpp_file": "object\\techno.hpp",
+    "hpp_line": 349,
+    "class_name": "TechnoClass",
+    "method_name": "SelectWeapon",
+    "ida_addr": "0x6F3330",
+    "ida_current_name": "SelectWeapon",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "object\\techno.hpp:359:TechnoClass::HasActiveParam",
+    "hpp_file": "object\\techno.hpp",
+    "hpp_line": 359,
+    "class_name": "TechnoClass",
+    "method_name": "HasActiveParam",
+    "ida_addr": "0x701120",
+    "ida_current_name": "HasActiveParam",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "object\\techno.hpp:405:TechnoClass::Deactivate",
+    "hpp_file": "object\\techno.hpp",
+    "hpp_line": 405,
+    "class_name": "TechnoClass",
+    "method_name": "Deactivate",
+    "ida_addr": "0x70FC90",
+    "ida_current_name": "Deactivate",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "object\\techno.hpp:406:TechnoClass::Activate",
+    "hpp_file": "object\\techno.hpp",
+    "hpp_line": 406,
+    "class_name": "TechnoClass",
+    "method_name": "Activate",
+    "ida_addr": "0x70FBE0",
+    "ida_current_name": "Activate",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "object\\techno.hpp:408:TechnoClass::IronCurtain",
+    "hpp_file": "object\\techno.hpp",
+    "hpp_line": 408,
+    "class_name": "TechnoClass",
+    "method_name": "IronCurtain",
+    "ida_addr": "0x70E2B0",
+    "ida_current_name": "IronCurtain",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "object\\techno.hpp:430:TechnoClass::GetWeaponRange",
+    "hpp_file": "object\\techno.hpp",
+    "hpp_line": 430,
+    "class_name": "TechnoClass",
+    "method_name": "GetWeaponRange",
+    "ida_addr": "0x773070",
+    "ida_current_name": "GetWeaponRange",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "object\\techno.hpp:431:TechnoClass::FireWeapon",
+    "hpp_file": "object\\techno.hpp",
+    "hpp_line": 431,
+    "class_name": "TechnoClass",
+    "method_name": "FireWeapon",
+    "ida_addr": "0x6FDD50",
+    "ida_current_name": "FireWeapon",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "object\\techno.hpp:437:TechnoClass::AssignTarget_SyncLog",
+    "hpp_file": "object\\techno.hpp",
+    "hpp_line": 437,
+    "class_name": "TechnoClass",
+    "method_name": "AssignTarget_SyncLog",
+    "ida_addr": "0x6FCDB0",
+    "ida_current_name": "AssignTarget_SyncLog",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "object\\techno.hpp:457:TechnoClass::IsInRange",
+    "hpp_file": "object\\techno.hpp",
+    "hpp_line": 457,
+    "class_name": "TechnoClass",
+    "method_name": "IsInRange",
+    "ida_addr": "0x6F7660",
+    "ida_current_name": "IsInRange",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "object\\techno.hpp:461:TechnoClass::CheckCellPassable",
+    "hpp_file": "object\\techno.hpp",
+    "hpp_line": 461,
+    "class_name": "TechnoClass",
+    "method_name": "CheckCellPassable",
+    "ida_addr": "0x6F7930",
+    "ida_current_name": "CheckCellPassable",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "object\\techno.hpp:464:TechnoClass::ValidateTarget",
+    "hpp_file": "object\\techno.hpp",
+    "hpp_line": 464,
+    "class_name": "TechnoClass",
+    "method_name": "ValidateTarget",
+    "ida_addr": "0x6F77B0",
+    "ida_current_name": "ValidateTarget",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "object\\techno.hpp:470:TechnoClass::CheckTargetCell",
+    "hpp_file": "object\\techno.hpp",
+    "hpp_line": 470,
+    "class_name": "TechnoClass",
+    "method_name": "CheckTargetCell",
+    "ida_addr": "0x703B10",
+    "ida_current_name": "CheckTargetCell",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "object\\techno.hpp:483:TechnoClass::ScanAdjacentCells2",
+    "hpp_file": "object\\techno.hpp",
+    "hpp_line": 483,
+    "class_name": "TechnoClass",
+    "method_name": "ScanAdjacentCells2",
+    "ida_addr": "0x703CC0",
+    "ida_current_name": "ScanAdjacentCells",
+    "callgraph_match_type": "fuzzy"
+  },
+  {
+    "key": "object\\techno.hpp:489:TechnoClass::UpdatePowerDrain",
+    "hpp_file": "object\\techno.hpp",
+    "hpp_line": 489,
+    "class_name": "TechnoClass",
+    "method_name": "UpdatePowerDrain",
+    "ida_addr": "0x703860",
+    "ida_current_name": "UpdatePowerDrain",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "object\\techno.hpp:491:TechnoClass::UpdateState",
+    "hpp_file": "object\\techno.hpp",
+    "hpp_line": 491,
+    "class_name": "TechnoClass",
+    "method_name": "UpdateState",
+    "ida_addr": "0x706640",
+    "ida_current_name": "UpdateState",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "object\\techno.hpp:502:TechnoClass::Deploy",
+    "hpp_file": "object\\techno.hpp",
+    "hpp_line": 502,
+    "class_name": "TechnoClass",
+    "method_name": "Deploy",
+    "ida_addr": "0x7393C0",
+    "ida_current_name": "Deploy",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "object\\techno.hpp:520:TechnoClass::GetWaypointCoords",
+    "hpp_file": "object\\techno.hpp",
+    "hpp_line": 520,
+    "class_name": "TechnoClass",
+    "method_name": "GetWaypointCoords",
+    "ida_addr": "0x6F18A0",
+    "ida_current_name": "GetWaypointCoords",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "object\\techno.hpp:521:TechnoClass::Create",
+    "hpp_file": "object\\techno.hpp",
+    "hpp_line": 521,
+    "class_name": "TechnoClass",
+    "method_name": "Create",
+    "ida_addr": "0x6F1920",
+    "ida_current_name": "Create",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "object\\techno.hpp:543:TechnoClass::SetSpread",
+    "hpp_file": "object\\techno.hpp",
+    "hpp_line": 543,
+    "class_name": "TechnoClass",
+    "method_name": "SetSpread",
+    "ida_addr": "0x70DDD0",
+    "ida_current_name": "SetSpread",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "object\\techno.hpp:546:TechnoClass::SelectVocOrSfx",
+    "hpp_file": "object\\techno.hpp",
+    "hpp_line": 546,
+    "class_name": "TechnoClass",
+    "method_name": "SelectVocOrSfx",
+    "ida_addr": "0x70E140",
+    "ida_current_name": "SelectVocOrSfx",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "object\\techno.hpp:547:TechnoClass::Update2",
+    "hpp_file": "object\\techno.hpp",
+    "hpp_line": 547,
+    "class_name": "TechnoClass",
+    "method_name": "Update2",
+    "ida_addr": "0x70ED10",
+    "ida_current_name": "Update2",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "object\\techno.hpp:616:TechnoClass::CalculateDamage",
+    "hpp_file": "object\\techno.hpp",
+    "hpp_line": 616,
+    "class_name": "TechnoClass",
+    "method_name": "CalculateDamage",
+    "ida_addr": "0x663030",
+    "ida_current_name": "CalculateDamage",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "object\\techno.hpp:665:TechnoClass::SelectWeapon",
+    "hpp_file": "object\\techno.hpp",
+    "hpp_line": 665,
+    "class_name": "TechnoClass",
+    "method_name": "SelectWeapon",
+    "ida_addr": "0x6F3330",
+    "ida_current_name": "SelectWeapon",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "object\\techno.hpp:667:TechnoClass::CreateUnit",
+    "hpp_file": "object\\techno.hpp",
+    "hpp_line": 667,
+    "class_name": "TechnoClass",
+    "method_name": "CreateUnit",
+    "ida_addr": "0x423AC0",
+    "ida_current_name": "CreateUnit",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "object\\techno.hpp:873:TechnoClass::TechnoClass",
+    "hpp_file": "object\\techno.hpp",
+    "hpp_line": 873,
+    "class_name": "TechnoClass",
+    "method_name": "TechnoClass",
+    "ida_addr": "0x6F2B40",
+    "ida_current_name": "TechnoClass",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "render\\surface.hpp:201:Surface::GetRect",
+    "hpp_file": "render\\surface.hpp",
+    "hpp_line": 201,
+    "class_name": "Surface",
+    "method_name": "GetRect",
+    "ida_addr": "0x411510",
+    "ida_current_name": "GetRect",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "render\\surface.hpp:211:Surface::GetWidth",
+    "hpp_file": "render\\surface.hpp",
+    "hpp_line": 211,
+    "class_name": "Surface",
+    "method_name": "GetWidth",
+    "ida_addr": "0x411540",
+    "ida_current_name": "GetWidth",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "render\\surface.hpp:217:Surface::GetHeight",
+    "hpp_file": "render\\surface.hpp",
+    "hpp_line": 217,
+    "class_name": "Surface",
+    "method_name": "GetHeight",
+    "ida_addr": "0x411550",
+    "ida_current_name": "GetHeight",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "render\\surface.hpp:253:Surface::GetRect",
+    "hpp_file": "render\\surface.hpp",
+    "hpp_line": 253,
+    "class_name": "Surface",
+    "method_name": "GetRect",
+    "ida_addr": "0x411510",
+    "ida_current_name": "GetRect",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "render\\surface.hpp:337:XSurface::BlitWhole",
+    "hpp_file": "render\\surface.hpp",
+    "hpp_line": 337,
+    "class_name": "XSurface",
+    "method_name": "BlitWhole",
+    "ida_addr": "0x7BBAF0",
+    "ida_current_name": "BlitWhole",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "render\\surface.hpp:338:XSurface::BlitPart",
+    "hpp_file": "render\\surface.hpp",
+    "hpp_line": 338,
+    "class_name": "XSurface",
+    "method_name": "BlitPart",
+    "ida_addr": "0x7BBB90",
+    "ida_current_name": "BlitPart",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "render\\surface.hpp:341:XSurface::Blit",
+    "hpp_file": "render\\surface.hpp",
+    "hpp_line": 341,
+    "class_name": "XSurface",
+    "method_name": "Blit",
+    "ida_addr": "0x7BBCF0",
+    "ida_current_name": "Blit",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "render\\surface.hpp:345:XSurface::FillRectEx",
+    "hpp_file": "render\\surface.hpp",
+    "hpp_line": 345,
+    "class_name": "XSurface",
+    "method_name": "FillRectEx",
+    "ida_addr": "0x7BB050",
+    "ida_current_name": "FillRectEx",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "render\\surface.hpp:348:XSurface::FillRect",
+    "hpp_file": "render\\surface.hpp",
+    "hpp_line": 348,
+    "class_name": "XSurface",
+    "method_name": "FillRect",
+    "ida_addr": "0x7BB020",
+    "ida_current_name": "FillRect",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "render\\surface.hpp:354:XSurface::DrawEllipseOutline",
+    "hpp_file": "render\\surface.hpp",
+    "hpp_line": 354,
+    "class_name": "XSurface",
+    "method_name": "DrawEllipseOutline",
+    "ida_addr": "0x7BB350",
+    "ida_current_name": "DrawEllipseOutline",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "render\\surface.hpp:361:XSurface::DrawLineEx",
+    "hpp_file": "render\\surface.hpp",
+    "hpp_line": 361,
+    "class_name": "XSurface",
+    "method_name": "DrawLineEx",
+    "ida_addr": "0x7BA610",
+    "ida_current_name": "DrawLineEx",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "render\\surface.hpp:364:XSurface::DrawLine",
+    "hpp_file": "render\\surface.hpp",
+    "hpp_line": 364,
+    "class_name": "XSurface",
+    "method_name": "DrawLine",
+    "ida_addr": "0x7BA5E0",
+    "ida_current_name": "DrawLine",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "render\\surface.hpp:384:XSurface::WalkLine",
+    "hpp_file": "render\\surface.hpp",
+    "hpp_line": 384,
+    "class_name": "XSurface",
+    "method_name": "WalkLine",
+    "ida_addr": "0x7BAB90",
+    "ida_current_name": "WalkLine",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "render\\surface.hpp:387:XSurface::DrawDashedLine",
+    "hpp_file": "render\\surface.hpp",
+    "hpp_line": 387,
+    "class_name": "XSurface",
+    "method_name": "DrawDashedLine",
+    "ida_addr": "0x7BA8C0",
+    "ida_current_name": "DrawDashedLine",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "render\\surface.hpp:398:XSurface::DrawRectEx",
+    "hpp_file": "render\\surface.hpp",
+    "hpp_line": 398,
+    "class_name": "XSurface",
+    "method_name": "DrawRectEx",
+    "ida_addr": "0x7BADC0",
+    "ida_current_name": "DrawRectEx",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "render\\surface.hpp:403:XSurface::Lock",
+    "hpp_file": "render\\surface.hpp",
+    "hpp_line": 403,
+    "class_name": "XSurface",
+    "method_name": "Lock",
+    "ida_addr": "0x411560",
+    "ida_current_name": "Lock",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "render\\surface.hpp:408:XSurface::Unlock",
+    "hpp_file": "render\\surface.hpp",
+    "hpp_line": 408,
+    "class_name": "XSurface",
+    "method_name": "Unlock",
+    "ida_addr": "0x411570",
+    "ida_current_name": "Unlock",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "render\\surface.hpp:416:XSurface::PutPixel",
+    "hpp_file": "render\\surface.hpp",
+    "hpp_line": 416,
+    "class_name": "XSurface",
+    "method_name": "PutPixel",
+    "ida_addr": "0x7BAF90",
+    "ida_current_name": "PutPixel",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "render\\surface.hpp:421:XSurface::GetPixelAtCoords",
+    "hpp_file": "render\\surface.hpp",
+    "hpp_line": 421,
+    "class_name": "XSurface",
+    "method_name": "GetPixelAtCoords",
+    "ida_addr": "0x7BAF10",
+    "ida_current_name": "GetPixelAtCoords",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "render\\surface.hpp:455:BSurface::Lock",
+    "hpp_file": "render\\surface.hpp",
+    "hpp_line": 455,
+    "class_name": "BSurface",
+    "method_name": "Lock",
+    "ida_addr": "0x4115F0",
+    "ida_current_name": "Lock",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "render\\surface.hpp:456:BSurface::GetBytesPerPixel",
+    "hpp_file": "render\\surface.hpp",
+    "hpp_line": 456,
+    "class_name": "BSurface",
+    "method_name": "GetBytesPerPixel",
+    "ida_addr": "0x411630",
+    "ida_current_name": "GetBytesPerPixel",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "render\\surface.hpp:457:BSurface::GetPitch",
+    "hpp_file": "render\\surface.hpp",
+    "hpp_line": 457,
+    "class_name": "BSurface",
+    "method_name": "GetPitch",
+    "ida_addr": "0x411640",
+    "ida_current_name": "GetPitch",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "render\\surface.hpp:486:DSurface::BlitPart",
+    "hpp_file": "render\\surface.hpp",
+    "hpp_line": 486,
+    "class_name": "DSurface",
+    "method_name": "BlitPart",
+    "ida_addr": "0x4BB080",
+    "ida_current_name": "BlitPart",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "render\\surface.hpp:489:DSurface::Blit",
+    "hpp_file": "render\\surface.hpp",
+    "hpp_line": 489,
+    "class_name": "DSurface",
+    "method_name": "Blit",
+    "ida_addr": "0x4BB0D0",
+    "ida_current_name": "Blit",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "render\\surface.hpp:493:DSurface::FillRectEx",
+    "hpp_file": "render\\surface.hpp",
+    "hpp_line": 493,
+    "class_name": "DSurface",
+    "method_name": "FillRectEx",
+    "ida_addr": "0x4BB620",
+    "ida_current_name": "FillRectEx",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "render\\surface.hpp:497:DSurface::FillRectWithFlags",
+    "hpp_file": "render\\surface.hpp",
+    "hpp_line": 497,
+    "class_name": "DSurface",
+    "method_name": "FillRectWithFlags",
+    "ida_addr": "0x4BB830",
+    "ida_current_name": "FillRectWithFlags",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "render\\surface.hpp:515:DSurface::DrawLineZBufColored",
+    "hpp_file": "render\\surface.hpp",
+    "hpp_line": 515,
+    "class_name": "DSurface",
+    "method_name": "DrawLineZBufColored",
+    "ida_addr": "0x4BDF00",
+    "ida_current_name": "DrawLineZBufColored",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "render\\surface.hpp:519:DSurface::DrawDashedLineStipple",
+    "hpp_file": "render\\surface.hpp",
+    "hpp_line": 519,
+    "class_name": "DSurface",
+    "method_name": "DrawDashedLineStipple",
+    "ida_addr": "0x4C0750",
+    "ida_current_name": "DrawDashedLineStipple",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "render\\surface.hpp:523:DSurface::DrawStippledRect",
+    "hpp_file": "render\\surface.hpp",
+    "hpp_line": 523,
+    "class_name": "DSurface",
+    "method_name": "DrawStippledRect",
+    "ida_addr": "0x4C0E30",
+    "ida_current_name": "DrawStippledRect",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "render\\surface.hpp:530:DSurface::GetPitch",
+    "hpp_file": "render\\surface.hpp",
+    "hpp_line": 530,
+    "class_name": "DSurface",
+    "method_name": "GetPitch",
+    "ida_addr": "0x4BAD70",
+    "ida_current_name": "GetPitch",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "render\\surface.hpp:531:DSurface::DrawGradientLine",
+    "hpp_file": "render\\surface.hpp",
+    "hpp_line": 531,
+    "class_name": "DSurface",
+    "method_name": "DrawGradientLine",
+    "ida_addr": "0x4BF750",
+    "ida_current_name": "DrawGradientLine",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "system\\game_systems.hpp:338:LoadProgressMgr::~LoadProgressMgr",
+    "hpp_file": "system\\game_systems.hpp",
+    "hpp_line": 338,
+    "class_name": "LoadProgressMgr",
+    "method_name": "~LoadProgressMgr",
+    "ida_addr": "0x552AA0",
+    "ida_current_name": "Destroy",
+    "callgraph_match_type": "ctor_dtor"
+  },
+  {
+    "key": "system\\ini_class.hpp:80:CCINIClass::CCINIClass",
+    "hpp_file": "system\\ini_class.hpp",
+    "hpp_line": 80,
+    "class_name": "CCINIClass",
+    "method_name": "CCINIClass",
+    "ida_addr": "0x535B30",
+    "ida_current_name": "Constructor",
+    "callgraph_match_type": "ctor_dtor"
+  },
+  {
+    "key": "system\\ini_class.hpp:81:CCINIClass::~CCINIClass",
+    "hpp_file": "system\\ini_class.hpp",
+    "hpp_line": 81,
+    "class_name": "CCINIClass",
+    "method_name": "~CCINIClass",
+    "ida_addr": "0x501160",
+    "ida_current_name": "Cleanup",
+    "callgraph_match_type": "ctor_dtor"
+  },
+  {
+    "key": "system\\radar.hpp:136:RadarClass::RadarClass",
+    "hpp_file": "system\\radar.hpp",
+    "hpp_line": 136,
+    "class_name": "RadarClass",
+    "method_name": "RadarClass",
+    "ida_addr": "0x4F4220",
+    "ida_current_name": "initRadarSurface",
+    "callgraph_match_type": "ctor_dtor"
+  },
+  {
+    "key": "system\\scenario.hpp:105:ScenarioClass::UpdateLighting",
+    "hpp_file": "system\\scenario.hpp",
+    "hpp_line": 105,
+    "class_name": "ScenarioClass",
+    "method_name": "UpdateLighting",
+    "ida_addr": "0x53C280",
+    "ida_current_name": "UpdateLighting",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "system\\tactical.hpp:87:TacticalClass::InitView",
+    "hpp_file": "system\\tactical.hpp",
+    "hpp_line": 87,
+    "class_name": "TacticalClass",
+    "method_name": "InitView",
+    "ida_addr": "0x537620",
+    "ida_current_name": "InitView",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "system\\tactical.hpp:91:TacticalClass::updateVisibility",
+    "hpp_file": "system\\tactical.hpp",
+    "hpp_line": 91,
+    "class_name": "TacticalClass",
+    "method_name": "updateVisibility",
+    "ida_addr": "0x5090A0",
+    "ida_current_name": "updateVisibility",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "system\\tactical.hpp:95:TacticalClass::Render",
+    "hpp_file": "system\\tactical.hpp",
+    "hpp_line": 95,
+    "class_name": "TacticalClass",
+    "method_name": "Render",
+    "ida_addr": "0x74D490",
+    "ida_current_name": "Render",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "system\\tactical.hpp:111:TacticalClass::DrawBuildingPlacement",
+    "hpp_file": "system\\tactical.hpp",
+    "hpp_line": 111,
+    "class_name": "TacticalClass",
+    "method_name": "DrawBuildingPlacement",
+    "ida_addr": "0x47F510",
+    "ida_current_name": "DrawBuildingPlacement",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "system\\tactical.hpp:127:TacticalClass::ProcessScroll",
+    "hpp_file": "system\\tactical.hpp",
+    "hpp_line": 127,
+    "class_name": "TacticalClass",
+    "method_name": "ProcessScroll",
+    "ida_addr": "0x4AC380",
+    "ida_current_name": "ProcessScroll",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "system\\tactical.hpp:134:TacticalClass::DecrementCounter",
+    "hpp_file": "system\\tactical.hpp",
+    "hpp_line": 134,
+    "class_name": "TacticalClass",
+    "method_name": "DecrementCounter",
+    "ida_addr": "0x631EE0",
+    "ida_current_name": "DecrementCounter",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "team\\campaign.hpp:47:CampaignClass::CampaignClass",
+    "hpp_file": "team\\campaign.hpp",
+    "hpp_line": 47,
+    "class_name": "CampaignClass",
+    "method_name": "CampaignClass",
+    "ida_addr": "0x46CB60",
+    "ida_current_name": "CampaignClass",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "team\\tag.hpp:84:TagClass::TagClass",
+    "hpp_file": "team\\tag.hpp",
+    "hpp_line": 84,
+    "class_name": "TagClass",
+    "method_name": "TagClass",
+    "ida_addr": "0x6E4F60",
+    "ida_current_name": "Destructor",
+    "callgraph_match_type": "ctor_dtor"
+  },
+  {
+    "key": "team\\team_type.hpp:43:TeamTypeClass::Construct",
+    "hpp_file": "team\\team_type.hpp",
+    "hpp_line": 43,
+    "class_name": "TeamTypeClass",
+    "method_name": "Construct",
+    "ida_addr": "0x4C98B0",
+    "ida_current_name": "Construct",
+    "callgraph_match_type": "exact"
+  },
+  {
+    "key": "type\\techno_type.hpp:88:TechnoTypeClass::CanAttackMove",
+    "hpp_file": "type\\techno_type.hpp",
+    "hpp_line": 88,
+    "class_name": "TechnoTypeClass",
+    "method_name": "CanAttackMove",
+    "ida_addr": "0x711E90",
+    "ida_current_name": "CanAttackMove_IgnoreWeapon",
+    "callgraph_match_type": "fuzzy"
+  },
+  {
+    "key": "ui\\command_ext.hpp:106:DeleteCommandClass::DeleteCommandClass",
+    "hpp_file": "ui\\command_ext.hpp",
+    "hpp_line": 106,
+    "class_name": "DeleteCommandClass",
+    "method_name": "DeleteCommandClass",
+    "ida_addr": "0x537F10",
+    "ida_current_name": "Constructor",
+    "callgraph_match_type": "ctor_dtor"
+  },
+  {
+    "key": "ui\\sidebar.hpp:163:SidebarClass::SidebarClass",
+    "hpp_file": "ui\\sidebar.hpp",
+    "hpp_line": 163,
+    "class_name": "SidebarClass",
+    "method_name": "SidebarClass",
+    "ida_addr": "0x40D270",
+    "ida_current_name": "initButtons2",
+    "callgraph_match_type": "ctor_dtor"
+  },
+  {
+    "key": "ui\\tab.hpp:42:TabClass::TabClass",
+    "hpp_file": "ui\\tab.hpp",
+    "hpp_line": 42,
+    "class_name": "TabClass",
+    "method_name": "TabClass",
+    "ida_addr": "0x4A2350",
+    "ida_current_name": "initStripClass",
+    "callgraph_match_type": "ctor_dtor"
+  },
+  {
+    "key": "ui\\ui_ext.hpp:762:SliderClass::~SliderClass",
+    "hpp_file": "ui\\ui_ext.hpp",
+    "hpp_line": 762,
+    "class_name": "SliderClass",
+    "method_name": "~SliderClass",
+    "ida_addr": "0x6B1D00",
+    "ida_current_name": "Destructor",
+    "callgraph_match_type": "ctor_dtor"
+  }
+]

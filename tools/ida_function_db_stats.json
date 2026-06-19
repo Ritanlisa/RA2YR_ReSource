@@ -1,0 +1,20 @@
+{
+  "total_functions_idb": 19067,
+  "named_exported": 13422,
+  "skipped_unnamed": 5645,
+  "without_type_info": 240,
+  "with_thiscall": 11036,
+  "name_index_entries": 13422,
+  "callee_index_entries": 6091,
+  "callee_index_refs": 31284,
+  "segment_distribution": {
+    ".text": 13422
+  },
+  "has_callees": 7893,
+  "has_callers": 6509,
+  "avg_callees": 2.3,
+  "avg_callers": 1.8,
+  "max_callees": 30,
+  "max_callers": 30,
+  "elapsed_seconds": 20.8
+}

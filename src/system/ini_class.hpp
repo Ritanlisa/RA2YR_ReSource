@@ -52,8 +52,8 @@ public:
     virtual const char* GetString(const char* section, const char* key, const char* def, char* buf, int bufSize);  // 0x528A10
     virtual int GetInt(const char* section, const char* key, int def);  // 0x529820
     virtual bool GetBool(const char* section, const char* key, bool def);  // 0x4757D0
-    virtual double GetDouble(const char* section, const char* key, double def);
-    virtual const char* GetGUID(const char* section, const char* key, const char* def);
+    virtual double GetDouble(const char* section, const char* key, double def); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    virtual const char* GetGUID(const char* section, const char* key, const char* def); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
 protected:
     // IDA layout offsets (0x00-0x3F):
@@ -77,8 +77,8 @@ public:
     static constexpr size_t kSize = 0x58;
     static const void* Vtable;
 
-    CCINIClass();
-    virtual ~CCINIClass();
+    CCINIClass(); // 0x535B30
+    virtual ~CCINIClass(); // 0x501160
 
     bool Load(CCFileClass* file, bool unk1, bool unk2) override;  // IDA: 0x4741F0
 

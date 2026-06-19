@@ -22,7 +22,7 @@ union target_composite
     };
 };
 
-inline target_t BuildTarget(AbstractType kind, unsigned value) noexcept
+inline target_t BuildTarget(AbstractType kind, unsigned value) noexcept // IDA: UNMATCHED — inline_likely_inlined, no_callgraph_match, no_git_history
 {
     target_composite tc;
     tc.whole = 0;
@@ -31,14 +31,14 @@ inline target_t BuildTarget(AbstractType kind, unsigned value) noexcept
     return tc.whole;
 }
 
-inline AbstractType TargetKind(target_t t) noexcept
+inline AbstractType TargetKind(target_t t) noexcept // IDA: UNMATCHED — inline_likely_inlined, no_callgraph_match, no_git_history
 {
     target_composite tc;
     tc.whole = t;
     return static_cast<AbstractType>(tc.exponent);
 }
 
-inline unsigned TargetValue(target_t t) noexcept
+inline unsigned TargetValue(target_t t) noexcept // IDA: UNMATCHED — inline_likely_inlined, no_callgraph_match, no_git_history
 {
     target_composite tc;
     tc.whole = t;
@@ -102,25 +102,25 @@ FootClass* AsFoot(target_t target);
 class TargetClass
 {
 public:
-    TargetClass() noexcept : m_target(kTargetNone) {}
-    explicit TargetClass(target_t t) noexcept : m_target(t) {}
+    TargetClass() noexcept : m_target(kTargetNone) {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    explicit TargetClass(target_t t) noexcept : m_target(t) {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
     TargetClass(AbstractType kind, int id) noexcept
-        : m_target(BuildTarget(kind, static_cast<unsigned>(id))) {}
+        : m_target(BuildTarget(kind, static_cast<unsigned>(id))) {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
-    TargetClass(const ObjectClass* obj) noexcept;
-    TargetClass(const CellClass* cell) noexcept;
+    TargetClass(const ObjectClass* obj) noexcept; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    TargetClass(const CellClass* cell) noexcept; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
-    operator target_t() const { return m_target; }
+    operator target_t() const { return m_target; } // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
-    bool operator==(const TargetClass& rhs) const { return m_target == rhs.m_target; }
-    bool operator!=(const TargetClass& rhs) const { return m_target != rhs.m_target; }
+    bool operator==(const TargetClass& rhs) const { return m_target == rhs.m_target; } // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    bool operator!=(const TargetClass& rhs) const { return m_target != rhs.m_target; } // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     AbstractType Kind() const { return TargetKind(m_target); }  // 0x65AD90
-    unsigned Value() const { return TargetValue(m_target); }
+    unsigned Value() const { return TargetValue(m_target); } // IDA: UNMATCHED — no_callgraph_match, no_git_history
     target_t AsTarget() const { return m_target; }
 
     bool IsValid() const { return m_target != kTargetNone; }
-    void Invalidate() { m_target = kTargetNone; }
+    void Invalidate() { m_target = kTargetNone; } // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     ObjectClass* AsObject() const { return gamemd::AsObject(m_target); }
     TechnoClass* AsTechno() const { return gamemd::AsTechno(m_target); }

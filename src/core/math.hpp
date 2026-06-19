@@ -15,66 +15,66 @@ struct Vector2D
     T X = T();
     T Y = T();
 
-    constexpr Vector2D() noexcept = default;
-    constexpr Vector2D(T x, T y) noexcept : X(x), Y(y) {}
+    constexpr Vector2D() noexcept = default; // IDA: UNMATCHED — defaulted_special_member, default_ctor, no_callgraph_match
+    constexpr Vector2D(T x, T y) noexcept : X(x), Y(y) {} // IDA: UNMATCHED — constexpr_no_runtime, no_callgraph_match, no_git_history
 
-    Vector2D operator+(const Vector2D& rhs) const
+    Vector2D operator+(const Vector2D& rhs) const // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         return { static_cast<T>(X + rhs.X), static_cast<T>(Y + rhs.Y) };
     }
 
-    Vector2D& operator+=(const Vector2D& rhs)
+    Vector2D& operator+=(const Vector2D& rhs) // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         X += rhs.X;
         Y += rhs.Y;
         return *this;
     }
 
-    Vector2D operator-(const Vector2D& rhs) const
+    Vector2D operator-(const Vector2D& rhs) const // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         return { static_cast<T>(X - rhs.X), static_cast<T>(Y - rhs.Y) };
     }
 
-    Vector2D& operator-=(const Vector2D& rhs)
+    Vector2D& operator-=(const Vector2D& rhs) // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         X -= rhs.X;
         Y -= rhs.Y;
         return *this;
     }
 
-    Vector2D operator-() const
+    Vector2D operator-() const // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         return { static_cast<T>(-X), static_cast<T>(-Y) };
     }
 
-    bool operator==(const Vector2D& rhs) const
+    bool operator==(const Vector2D& rhs) const // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         return X == rhs.X && Y == rhs.Y;
     }
 
-    bool operator!=(const Vector2D& rhs) const
+    bool operator!=(const Vector2D& rhs) const // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         return !(*this == rhs);
     }
 
-    Vector2D operator*(double scalar) const
+    Vector2D operator*(double scalar) const // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         return { static_cast<T>(X * scalar), static_cast<T>(Y * scalar) };
     }
 
-    Vector2D& operator*=(double scalar)
+    Vector2D& operator*=(double scalar) // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         X = static_cast<T>(X * scalar);
         Y = static_cast<T>(Y * scalar);
         return *this;
     }
 
-    double operator*(const Vector2D& rhs) const
+    double operator*(const Vector2D& rhs) const // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         return static_cast<double>(X) * rhs.X + static_cast<double>(Y) * rhs.Y;
     }
 
-    double MagnitudeSquared() const
+    double MagnitudeSquared() const // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         return static_cast<double>(X) * X + static_cast<double>(Y) * Y;
     }
@@ -84,12 +84,12 @@ struct Vector2D
         return std::sqrt(MagnitudeSquared());
     }
 
-    double DistanceFrom(const Vector2D& rhs) const
+    double DistanceFrom(const Vector2D& rhs) const // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         return (*this - rhs).Magnitude();
     }
 
-    double DistanceFromSquared(const Vector2D& rhs) const
+    double DistanceFromSquared(const Vector2D& rhs) const // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         return (*this - rhs).MagnitudeSquared();
     }
@@ -112,15 +112,15 @@ struct Vector3D
     T Y = T();
     T Z = T();
 
-    constexpr Vector3D() noexcept = default;
-    constexpr Vector3D(T x, T y, T z) noexcept : X(x), Y(y), Z(z) {}
+    constexpr Vector3D() noexcept = default; // IDA: UNMATCHED — defaulted_special_member, default_ctor, no_callgraph_match
+    constexpr Vector3D(T x, T y, T z) noexcept : X(x), Y(y), Z(z) {} // IDA: UNMATCHED — constexpr_no_runtime, no_callgraph_match, no_git_history
 
-    Vector3D operator+(const Vector3D& rhs) const
+    Vector3D operator+(const Vector3D& rhs) const // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         return { static_cast<T>(X + rhs.X), static_cast<T>(Y + rhs.Y), static_cast<T>(Z + rhs.Z) };
     }
 
-    Vector3D& operator+=(const Vector3D& rhs)
+    Vector3D& operator+=(const Vector3D& rhs) // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         X += rhs.X;
         Y += rhs.Y;
@@ -128,12 +128,12 @@ struct Vector3D
         return *this;
     }
 
-    Vector3D operator-(const Vector3D& rhs) const
+    Vector3D operator-(const Vector3D& rhs) const // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         return { static_cast<T>(X - rhs.X), static_cast<T>(Y - rhs.Y), static_cast<T>(Z - rhs.Z) };
     }
 
-    Vector3D& operator-=(const Vector3D& rhs)
+    Vector3D& operator-=(const Vector3D& rhs) // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         X -= rhs.X;
         Y -= rhs.Y;
@@ -141,27 +141,27 @@ struct Vector3D
         return *this;
     }
 
-    Vector3D operator-() const
+    Vector3D operator-() const // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         return { static_cast<T>(-X), static_cast<T>(-Y), static_cast<T>(-Z) };
     }
 
-    bool operator==(const Vector3D& rhs) const
+    bool operator==(const Vector3D& rhs) const // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         return X == rhs.X && Y == rhs.Y && Z == rhs.Z;
     }
 
-    bool operator!=(const Vector3D& rhs) const
+    bool operator!=(const Vector3D& rhs) const // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         return !(*this == rhs);
     }
 
-    Vector3D operator*(double scalar) const
+    Vector3D operator*(double scalar) const // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         return { static_cast<T>(X * scalar), static_cast<T>(Y * scalar), static_cast<T>(Z * scalar) };
     }
 
-    Vector3D& operator*=(double scalar)
+    Vector3D& operator*=(double scalar) // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         X = static_cast<T>(X * scalar);
         Y = static_cast<T>(Y * scalar);
@@ -169,14 +169,14 @@ struct Vector3D
         return *this;
     }
 
-    double operator*(const Vector3D& rhs) const
+    double operator*(const Vector3D& rhs) const // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         return static_cast<double>(X) * rhs.X
              + static_cast<double>(Y) * rhs.Y
              + static_cast<double>(Z) * rhs.Z;
     }
 
-    double MagnitudeSquared() const
+    double MagnitudeSquared() const // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         return static_cast<double>(X) * X + static_cast<double>(Y) * Y + static_cast<double>(Z) * Z;
     }
@@ -186,12 +186,12 @@ struct Vector3D
         return std::sqrt(MagnitudeSquared());
     }
 
-    double DistanceFrom(const Vector3D& rhs) const
+    double DistanceFrom(const Vector3D& rhs) const // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         return (*this - rhs).Magnitude();
     }
 
-    double DistanceFromSquared(const Vector3D& rhs) const
+    double DistanceFromSquared(const Vector3D& rhs) const // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         return (*this - rhs).MagnitudeSquared();
     }
@@ -201,7 +201,7 @@ struct Vector3D
         return CrossProduct(rhs).MagnitudeSquared() == 0;
     }
 
-    Vector3D CrossProduct(const Vector3D& rhs) const
+    Vector3D CrossProduct(const Vector3D& rhs) const // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         return {
             static_cast<T>(Y * rhs.Z - Z * rhs.Y),
@@ -221,7 +221,7 @@ using RGBClass     = Vector3D<std::uint8_t>;
 
 // ostream output for hook DLL comparison logs
 template <typename T>
-inline std::ostream& operator<<(std::ostream& os, const Vector2D<T>& v) {
+inline std::ostream& operator<<(std::ostream& os, const Vector2D<T>& v) { // IDA: UNMATCHED — inline_likely_inlined, no_callgraph_match, no_git_history
     return os << "<Vector2D,X=" << std::dec << v.X << ",Y=" << v.Y << ">";
 }
 
@@ -238,7 +238,7 @@ struct RectangleStruct
     int Height = 0;
 };
 
-inline std::ostream& operator<<(std::ostream& os, const RectangleStruct& r) {
+inline std::ostream& operator<<(std::ostream& os, const RectangleStruct& r) { // IDA: UNMATCHED — inline_likely_inlined, no_callgraph_match, no_git_history
     return os << "<RectangleStruct,X=" << std::dec << r.X << ",Y=" << r.Y
               << ",W=" << r.Width << ",H=" << r.Height << ">";
 }
@@ -253,12 +253,12 @@ struct ColorStruct
     constexpr ColorStruct(std::uint8_t r, std::uint8_t g, std::uint8_t b) noexcept
         : R(r), G(g), B(b) {}   // IDA: 0x4A35A0
 
-    bool operator==(const ColorStruct& rhs) const
+    bool operator==(const ColorStruct& rhs) const // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         return R == rhs.R && G == rhs.G && B == rhs.B;
     }
 
-    bool operator!=(const ColorStruct& rhs) const
+    bool operator!=(const ColorStruct& rhs) const // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         return !(*this == rhs);
     }
@@ -270,8 +270,8 @@ struct TimerStruct
     int32_t __padding = 0;
     int32_t TimeLeft = 0;
 
-    constexpr TimerStruct() noexcept = default;
-    explicit TimerStruct(int duration) noexcept : StartTime(-1), __padding(0), TimeLeft(duration) {}
+    constexpr TimerStruct() noexcept = default; // IDA: UNMATCHED — defaulted_special_member, default_ctor, no_callgraph_match
+    explicit TimerStruct(int duration) noexcept : StartTime(-1), __padding(0), TimeLeft(duration) {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
 };
 
 } // namespace gamemd

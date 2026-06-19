@@ -46,10 +46,10 @@ public:
 
     virtual ~TagClass() = default;  // 0x6E56A0
 
-    virtual void pointerExpired(AbstractClass* ptr, bool removed) override;
-    virtual AbstractType __stdcall whatAmI() const override;
+    virtual void pointerExpired(AbstractClass* ptr, bool removed) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    virtual AbstractType __stdcall whatAmI() const override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual int objectSize() const override;
-    virtual void calculateChecksum(void* checksum) const;
+    virtual void calculateChecksum(void* checksum) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     static void DeleteAll();
     static void NotifyGlobalChanged(int idx_global);  // 0x7263A0
@@ -63,11 +63,11 @@ public:
     void LocalChanged(int idx_local);  // IDA: 0x7263D0
     bool IsOnlyInstanceOfType() const;  // 0x6E5850
 
-    bool RaiseEvent(int event, ObjectClass* tag_owner, CellStruct location, bool force_all = false, TechnoClass* source = nullptr);
+    bool RaiseEvent(int event, ObjectClass* tag_owner, CellStruct location, bool force_all = false, TechnoClass* source = nullptr); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
-    bool ShouldReplace() const;
+    bool ShouldReplace() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     void Destroy();  // 0x6E5230
-    bool HasBeenDestroyed() const;
+    bool HasBeenDestroyed() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     void AddTrigger(TriggerClass* trigger);  // 0x6E55C0
     bool RemoveTrigger(TriggerClass* trigger);  // IDA: 0x577920
     bool ContainsTrigger(TriggerClass* trigger) const;
@@ -81,7 +81,7 @@ public:
     uint8_t         align36[2];
 
 protected:
-    TagClass() = default;
+    TagClass() = default; // 0x6E4F60
 };
 
 // --- TagTypeClass ---
@@ -99,10 +99,10 @@ public:
 
     virtual ~TagTypeClass() = default;  // 0x6E64C0
 
-    virtual void pointerExpired(AbstractClass* ptr, bool removed) override;
-    virtual AbstractType __stdcall whatAmI() const override;
+    virtual void pointerExpired(AbstractClass* ptr, bool removed) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    virtual AbstractType __stdcall whatAmI() const override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual int objectSize() const override;  // 0x6E64A0
-    virtual void calculateChecksum(void* checksum) const;
+    virtual void calculateChecksum(void* checksum) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     // arrayIndex() override inherited, conflicts with member
 
     using Flags = uint8_t;
@@ -117,7 +117,7 @@ public:
     bool ContainsTrigger(class TriggerTypeClass* trigger) const;
 
     static void LoadFromINIList(CCINIClass* ini);  // 0x46CE10
-    static void SaveToINIList(CCINIClass* ini);
+    static void SaveToINIList(CCINIClass* ini); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     int32_t             arrayIndex;
     int32_t             persistence;

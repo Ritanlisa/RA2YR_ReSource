@@ -95,7 +95,7 @@ public:
 class Palette
 {
 public:
-    Palette() = default;
+    Palette() = default; // IDA: UNMATCHED — defaulted_special_member, default_ctor, no_callgraph_match
 
     // IDA 0x4355B0
     static uint16_t SixBitTo16Bit(int32_t r, int32_t g, int32_t b);
@@ -865,7 +865,7 @@ public:
 class RLEBlitTransLucent25AlphaZReadWarp_ushort
 {
 public:
-    virtual ~RLEBlitTransLucent25AlphaZReadWarp_ushort() = default;
+    virtual ~RLEBlitTransLucent25AlphaZReadWarp_ushort() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void AddRef(); // 0x498ED0
     virtual void Release(); // 0x4990A0
@@ -878,7 +878,7 @@ public:
 class RLEBlitTransLucent25AlphaZReadWrite_ushort
 {
 public:
-    virtual ~RLEBlitTransLucent25AlphaZReadWrite_ushort() = default;
+    virtual ~RLEBlitTransLucent25AlphaZReadWrite_ushort() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void AddRef(); // 0x499A90
     virtual void Release(); // 0x499C60
@@ -891,7 +891,7 @@ public:
 class RLEBlitTransLucent25AlphaZRead_ushort
 {
 public:
-    virtual ~RLEBlitTransLucent25AlphaZRead_ushort() = default;
+    virtual ~RLEBlitTransLucent25AlphaZRead_ushort() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void AddRef(); // 0x4988C0
     virtual void Release(); // 0x498A80
@@ -904,7 +904,7 @@ public:
 class RLEBlitTransLucent25Alpha_ushort
 {
 public:
-    virtual ~RLEBlitTransLucent25Alpha_ushort() = default;
+    virtual ~RLEBlitTransLucent25Alpha_ushort() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void AddRef(); // 0x497E60
     virtual void Release(); // 0x497F90
@@ -917,7 +917,7 @@ public:
 class RLEBlitTransLucent50AlphaZReadWarp_ushort
 {
 public:
-    virtual ~RLEBlitTransLucent50AlphaZReadWarp_ushort() = default;
+    virtual ~RLEBlitTransLucent50AlphaZReadWarp_ushort() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void AddRef(); // 0x498CD0
     virtual void Release(); // 0x498E90
@@ -930,7 +930,7 @@ public:
 class RLEBlitTransLucent50AlphaZReadWrite_ushort
 {
 public:
-    virtual ~RLEBlitTransLucent50AlphaZReadWrite_ushort() = default;
+    virtual ~RLEBlitTransLucent50AlphaZReadWrite_ushort() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void AddRef(); // 0x499860
     virtual void Release(); // 0x499A50
@@ -943,7 +943,7 @@ public:
 class RLEBlitTransLucent50AlphaZRead_ushort
 {
 public:
-    virtual ~RLEBlitTransLucent50AlphaZRead_ushort() = default;
+    virtual ~RLEBlitTransLucent50AlphaZRead_ushort() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void AddRef(); // 0x4986D0
     virtual void Release(); // 0x498880
@@ -956,7 +956,7 @@ public:
 class RLEBlitTransLucent50Alpha_ushort
 {
 public:
-    virtual ~RLEBlitTransLucent50Alpha_ushort() = default;
+    virtual ~RLEBlitTransLucent50Alpha_ushort() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void AddRef(); // 0x497CF0
     virtual void Release(); // 0x497E20
@@ -969,7 +969,7 @@ public:
 class RLEBlitTransLucent75AlphaZReadWarp_ushort
 {
 public:
-    virtual ~RLEBlitTransLucent75AlphaZReadWarp_ushort() = default;
+    virtual ~RLEBlitTransLucent75AlphaZReadWarp_ushort() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void AddRef(); // 0x498AC0
     virtual void Release(); // 0x498C90
@@ -982,7 +982,7 @@ public:
 class RLEBlitTransLucent75AlphaZReadWrite_ushort
 {
 public:
-    virtual ~RLEBlitTransLucent75AlphaZReadWrite_ushort() = default;
+    virtual ~RLEBlitTransLucent75AlphaZReadWrite_ushort() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void AddRef(); // 0x499650
     virtual void Release(); // 0x499820
@@ -995,7 +995,7 @@ public:
 class RLEBlitTransLucent75AlphaZRead_ushort
 {
 public:
-    virtual ~RLEBlitTransLucent75AlphaZRead_ushort() = default;
+    virtual ~RLEBlitTransLucent75AlphaZRead_ushort() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void AddRef(); // 0x4984D0
     virtual void Release(); // 0x498690
@@ -1008,7 +1008,7 @@ public:
 class RLEBlitTransLucent75Alpha_ushort
 {
 public:
-    virtual ~RLEBlitTransLucent75Alpha_ushort() = default;
+    virtual ~RLEBlitTransLucent75Alpha_ushort() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void AddRef(); // 0x497B80
     virtual void Release(); // 0x497CB0
@@ -1021,7 +1021,7 @@ public:
 class RLEBlitTransXlatAlphaZReadWrite_ushort
 {
 public:
-    virtual ~RLEBlitTransXlatAlphaZReadWrite_ushort() = default;
+    virtual ~RLEBlitTransXlatAlphaZReadWrite_ushort() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void AddRef(); // 0x4990E0
     virtual void Release(); // 0x499280
@@ -1034,7 +1034,7 @@ public:
 class RLEBlitTransXlatAlphaZRead_ushort
 {
 public:
-    virtual ~RLEBlitTransXlatAlphaZRead_ushort() = default;
+    virtual ~RLEBlitTransXlatAlphaZRead_ushort() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void AddRef(); // 0x497FD0
     virtual void Release(); // 0x498150
@@ -1047,7 +1047,7 @@ public:
 class RLEBlitTransXlatAlpha_ushort
 {
 public:
-    virtual ~RLEBlitTransXlatAlpha_ushort() = default;
+    virtual ~RLEBlitTransXlatAlpha_ushort() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void AddRef(); // 0x4978C0
     virtual void Release(); // 0x4979D0
@@ -1060,7 +1060,7 @@ public:
 class RLEBlitTransZRemapXlatAlphaZReadWrite_ushort
 {
 public:
-    virtual ~RLEBlitTransZRemapXlatAlphaZReadWrite_ushort() = default;
+    virtual ~RLEBlitTransZRemapXlatAlphaZReadWrite_ushort() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void AddRef(); // 0x499430
     virtual void Release(); // 0x499610
@@ -1073,7 +1073,7 @@ public:
 class RLEBlitTransZRemapXlatAlphaZRead_ushort
 {
 public:
-    virtual ~RLEBlitTransZRemapXlatAlphaZRead_ushort() = default;
+    virtual ~RLEBlitTransZRemapXlatAlphaZRead_ushort() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void AddRef(); // 0x4982E0
     virtual void Release(); // 0x498490
@@ -1192,7 +1192,7 @@ public:
 class VoxelModel
 {
 public:
-    virtual ~VoxelModel() = default;
+    virtual ~VoxelModel() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void BuildDrawList(); // 0x755B30
     virtual void LoadVXLHeader(); // 0x756DD0

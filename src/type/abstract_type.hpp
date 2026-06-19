@@ -17,7 +17,7 @@ public:
     static DynamicVectorClass<AbstractTypeClass*>* Array;
 
     static AbstractTypeClass* Find(const char* pID);
-    static AbstractTypeClass* FindOrAllocate(const char* pID);
+    static AbstractTypeClass* FindOrAllocate(const char* pID); // IDA: UNMATCHED — no_callgraph_match, no_git_history
     static int FindIndex(const char* pID);
 
     virtual ~AbstractTypeClass() = default;  // 0x4109C0 (as Dtor)
@@ -28,12 +28,13 @@ public:
 
     const char* get_ID() const { return this->ID; }
 
+    AbstractTypeClass() = default;  // needed for derived class default ctors
     AbstractTypeClass(const char* pID) noexcept;  // 0x410800 (as Constructor)
 
     struct noinit_t {};
 
 protected:
-    AbstractTypeClass(noinit_t) noexcept {}
+    AbstractTypeClass(noinit_t) noexcept {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
 public:
     char ID[0x18];

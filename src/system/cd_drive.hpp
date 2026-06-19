@@ -8,7 +8,7 @@ namespace gamemd
 class CDDriveManagerClass
 {
 public:
-    static CDDriveManagerClass* Global();
+    static CDDriveManagerClass* Global(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     int GetCDNumber();
 
@@ -24,7 +24,7 @@ public:
 class CD
 {
 public:
-    virtual ~CD() = default;
+    virtual ~CD() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual bool ForceAvailable(int nCDNumber);
     virtual bool InsertCDDialog();

@@ -31,11 +31,11 @@ public:
     void Show(const wchar_t* text, const Point2D& location); // calls SetState(true)
     void Hide();            // 0x724BE0
 
-    bool GetToolTipForObject(ObjectClass* pObject, wchar_t* outBuffer, int32_t bufferSize,
+    bool GetToolTipForObject(ObjectClass* pObject, wchar_t* outBuffer, int32_t bufferSize, // IDA: UNMATCHED — no_callgraph_match, no_git_history
                              HouseClass* pHouse, TechnoTypeClass* pTechType);
     // calls ObjectClass::GetTooltipText @ 0x6AC210
 
-    bool GetToolTipForCell(const CellStruct& cell, wchar_t* outBuffer, int32_t bufferSize,
+    bool GetToolTipForCell(const CellStruct& cell, wchar_t* outBuffer, int32_t bufferSize, // IDA: UNMATCHED — no_callgraph_match, no_git_history
                            HouseClass* pHouse);
 
     // --- Member variables ---

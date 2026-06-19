@@ -72,7 +72,7 @@ public:
 
     virtual ~BulletClass() override = default;  // 0x466560
 
-    virtual AbstractType __stdcall whatAmI() const override;
+    virtual AbstractType __stdcall whatAmI() const override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual int objectSize() const override;
 
     virtual uint8_t GetAnimFrame() const;  // 0x468000
@@ -108,10 +108,10 @@ public:
     int32_t             Range;
 
 public:
-    BulletClass(BulletTypeClass* pType) noexcept;
+    BulletClass(BulletTypeClass* pType) noexcept; // 0x466380
 
 protected:
-    BulletClass() = default;
+    BulletClass() = default; // 0x466380
 };
 
 } // namespace gamemd

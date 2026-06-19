@@ -14,31 +14,31 @@ class SHPFile;
 struct SHPStruct
 {
     SHPStruct() noexcept
-        : Type(0), Width(0), Height(0), Frames(0)
+        : Type(0), Width(0), Height(0), Frames(0) // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
     }
 
-    virtual ~SHPStruct();
+    virtual ~SHPStruct(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     void Load();
-    void Unload();
+    void Unload(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     SHPFile* GetData();
 
-    RectangleStruct* GetFrameBounds(RectangleStruct& out, int frame_index) const;
-    RectangleStruct GetFrameBounds(int frame_index) const;
+    RectangleStruct* GetFrameBounds(RectangleStruct& out, int frame_index) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    RectangleStruct GetFrameBounds(int frame_index) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     ColorStruct* GetColor(ColorStruct& out, int frame_index) const;
     ColorStruct GetColor(int frame_index) const;
 
-    byte* GetPixels(int frame_index);
+    byte* GetPixels(int frame_index); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
-    bool HasCompression(int frame_index) const;
+    bool HasCompression(int frame_index) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
-    bool IsReference() const { return Type == 0xFFFF; }
+    bool IsReference() const { return Type == 0xFFFF; } // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
-    SHPReference* AsReference();
-    const SHPReference* AsReference() const;
+    SHPReference* AsReference(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    const SHPReference* AsReference() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     SHPFile* AsFile();
     const SHPFile* AsFile() const;
@@ -63,7 +63,7 @@ struct SHPFrame
 
 class SHPFile : public SHPStruct
 {
-    const SHPFrame& GetFrameHeader(int frame_index) const
+    const SHPFrame& GetFrameHeader(int frame_index) const // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         return (&FirstFrame)[frame_index];
     }
@@ -73,7 +73,7 @@ class SHPFile : public SHPStruct
 
 class SHPReference : public SHPStruct
 {
-    SHPReference(const char* filename);
+    SHPReference(const char* filename); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     char*            Filename;
     SHPStruct*       Data;

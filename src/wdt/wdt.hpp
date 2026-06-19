@@ -44,19 +44,19 @@ public:
     rc_ptr() noexcept = default;
 
     explicit rc_ptr(T* ptr) noexcept
-        : ptr(ptr)
+        : ptr(ptr) // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         if (ptr) { ptr->AddRef(); }
     }
 
     rc_ptr(const rc_ptr& other) noexcept
-        : ptr(other.ptr)
+        : ptr(other.ptr) // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         if (ptr) { ptr->AddRef(); }
     }
 
     rc_ptr(rc_ptr&& other) noexcept
-        : ptr(other.ptr)
+        : ptr(other.ptr) // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         other.ptr = nullptr;
     }
@@ -66,7 +66,7 @@ public:
         if (ptr) { ptr->Release(); }
     }
 
-    rc_ptr& operator=(const rc_ptr& other) noexcept
+    rc_ptr& operator=(const rc_ptr& other) noexcept // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         if (this != &other)
         {
@@ -77,7 +77,7 @@ public:
         return *this;
     }
 
-    rc_ptr& operator=(rc_ptr&& other) noexcept
+    rc_ptr& operator=(rc_ptr&& other) noexcept // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         if (this != &other)
         {
@@ -88,10 +88,10 @@ public:
         return *this;
     }
 
-    T* get() const noexcept { return ptr; }
-    T* operator->() const noexcept { return ptr; }
-    T& operator*() const noexcept { return *ptr; }
-    explicit operator bool() const noexcept { return ptr != nullptr; }
+    T* get() const noexcept { return ptr; } // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    T* operator->() const noexcept { return ptr; } // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    T& operator*() const noexcept { return *ptr; } // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    explicit operator bool() const noexcept { return ptr != nullptr; } // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     void reset(T* ptr = nullptr) noexcept
     {
@@ -100,7 +100,7 @@ public:
         if (ptr) { ptr->AddRef(); }
     }
 
-    T* release() noexcept
+    T* release() noexcept // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         T* tmp = ptr;
         ptr = nullptr;
@@ -115,7 +115,7 @@ class State
 {
 public:
     State();
-    virtual ~State();
+    virtual ~State(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     void AddRef() noexcept {}
     void Release() noexcept {}
@@ -146,7 +146,7 @@ class Map
 {
 public:
     Map();
-    virtual ~Map();
+    virtual ~Map(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     virtual WDTError Load();
     virtual WDTError Draw();
@@ -172,13 +172,13 @@ protected:
 class Territory
 {
 public:
-    Territory();
-    virtual ~Territory();
+    Territory(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    virtual ~Territory(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     virtual WDTError Attach(int player);
-    virtual WDTError Detach();
-    virtual int      Owner() const;
-    virtual int      Income() const;
+    virtual WDTError Detach(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    virtual int      Owner() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    virtual int      Income() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     void AddRef() { ++referenceCount; }
     void Release() { if (--referenceCount == 0) delete this; }
@@ -194,10 +194,10 @@ public:
 class Conflict
 {
 public:
-    Conflict();
-    virtual ~Conflict();
+    Conflict(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    virtual ~Conflict(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
-    virtual WDTError Resolve();
+    virtual WDTError Resolve(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual void     updateLogic();
 
     void AddRef() { ++referenceCount; }
@@ -214,7 +214,7 @@ class Campaign
 {
 public:
     Campaign();
-    virtual ~Campaign();
+    virtual ~Campaign(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     virtual WDTError Start();  // 0x7CD80F
     virtual WDTError End();  // 0x53A090
@@ -231,10 +231,10 @@ public:
 class History
 {
 public:
-    History();
-    virtual ~History();
+    History(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    virtual ~History(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
-    virtual void Record(const char* event);
+    virtual void Record(const char* event); // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual void Clear();
 
     struct Entry

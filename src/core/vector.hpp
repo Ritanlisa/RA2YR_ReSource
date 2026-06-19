@@ -52,7 +52,7 @@ public:
         : Items(other.Items)
         , Capacity(other.Capacity)
         , IsInitialized(other.IsInitialized)
-        , IsAllocated(std::exchange(other.IsAllocated, false))
+        , IsAllocated(std::exchange(other.IsAllocated, false)) // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {}
 
     virtual ~VectorClass() noexcept
@@ -63,19 +63,19 @@ public:
         }
     }
 
-    VectorClass& operator=(const VectorClass& other)
+    VectorClass& operator=(const VectorClass& other) // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         VectorClass(other).Swap(*this);
         return *this;
     }
 
-    VectorClass& operator=(VectorClass&& other) noexcept
+    VectorClass& operator=(VectorClass&& other) noexcept // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         VectorClass(std::move(other)).Swap(*this);
         return *this;
     }
 
-    virtual bool operator==(const VectorClass& other) const
+    virtual bool operator==(const VectorClass& other) const // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         if (Capacity != other.Capacity)
         {
@@ -92,7 +92,7 @@ public:
         return true;
     }
 
-    bool operator!=(const VectorClass& other) const
+    bool operator!=(const VectorClass& other) const // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         return !(*this == other);
     }
@@ -121,7 +121,7 @@ public:
                 }
                 if (IsAllocated)
                 {
-                    GameDeleteArray(Items, static_cast<std::size_t>(Capacity));
+                    GameDeleteArray(Items, static_cast<std::size_t>(Capacity)); // IDA: UNMATCHED — no_callgraph_match, no_git_history
                     Items = nullptr;
                 }
             }
@@ -183,7 +183,7 @@ public:
         return Items[i];
     }
 
-    bool Reserve(int capacity)
+    bool Reserve(int capacity) // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         if (!IsInitialized)
         {
@@ -239,16 +239,16 @@ public:
     DynamicVectorClass(DynamicVectorClass&& other) noexcept
         : VectorClass<T>(std::move(other))
         , Count(other.Count)
-        , CapacityIncrement(other.CapacityIncrement)
+        , CapacityIncrement(other.CapacityIncrement) // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {}
 
-    DynamicVectorClass& operator=(const DynamicVectorClass& other)
+    DynamicVectorClass& operator=(const DynamicVectorClass& other) // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         DynamicVectorClass(other).Swap(*this);
         return *this;
     }
 
-    DynamicVectorClass& operator=(DynamicVectorClass&& other) noexcept
+    DynamicVectorClass& operator=(DynamicVectorClass&& other) noexcept // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         DynamicVectorClass(std::move(other)).Swap(*this);
         return *this;
@@ -286,17 +286,17 @@ public:
         return -1;
     }
 
-    bool ValidIndex(int index) const
+    bool ValidIndex(int index) const // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         return static_cast<unsigned>(index) < static_cast<unsigned>(Count);
     }
 
-    T GetItemOrDefault(int i) const
+    T GetItemOrDefault(int i) const // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         return GetItemOrDefault(i, T());
     }
 
-    T GetItemOrDefault(int i, T def) const
+    T GetItemOrDefault(int i, T def) const // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         if (ValidIndex(i))
         {
@@ -305,22 +305,22 @@ public:
         return def;
     }
 
-    T* begin()
+    T* begin() // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         return &this->Items[0];
     }
 
-    T* end()
+    T* end() // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         return &this->Items[Count];
     }
 
-    const T* begin() const
+    const T* begin() const // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         return &this->Items[0];
     }
 
-    const T* end() const
+    const T* end() const // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         return &this->Items[Count];
     }
@@ -346,7 +346,7 @@ public:
         return true;
     }
 
-    bool AddUnique(const T& item)
+    bool AddUnique(const T& item) // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         int idx = FindItemIndex(item);
         return idx < 0 && AddItem(item);

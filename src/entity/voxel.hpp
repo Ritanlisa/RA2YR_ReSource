@@ -30,9 +30,9 @@ struct VxlLimb
     uint32_t DataOffset;
 
     VxlLimb() : Scale(1.0f), NormalType(0), X(0), Y(0), Z(0),
-                VoxelData(nullptr) , DataSize(0), DataOffset(0);
+                VoxelData(nullptr), DataSize(0), DataOffset(0) {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
-    ~VxlLimb();
+    ~VxlLimb() { delete[] VoxelData; VoxelData = nullptr; } // IDA: UNMATCHED — no_callgraph_match, no_git_history
 };
 
 struct VxlFile
@@ -47,7 +47,7 @@ struct VxlFile
 struct HvaMatrix
 {
     float m[16];  // column-major 4x4
-    HvaMatrix();
+    HvaMatrix(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 };
 
 struct HvaFile
@@ -66,7 +66,7 @@ struct HvaFile
     }
 };
 
-bool VxlLoad(const uint8_t* data, int size, VxlFile* out);
-bool HvaLoad(const uint8_t* data, int size, HvaFile* out);
+bool VxlLoad(const uint8_t* data, int size, VxlFile* out); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+bool HvaLoad(const uint8_t* data, int size, HvaFile* out); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
 } // namespace gamemd

@@ -24,9 +24,9 @@ public:
         Impact = 2
     };
 
-    BounceClass() = default;
+    BounceClass() = default; // IDA: UNMATCHED — defaulted_special_member, default_ctor, no_callgraph_match
 
-    BounceClass(
+    BounceClass( // IDA: UNMATCHED — no_callgraph_match, no_git_history
         const CoordStruct& coords,
         double elasticity,
         double gravity,
@@ -34,7 +34,7 @@ public:
         const Vector3D<float>& velocity,
         double angular_velocity);
 
-    void Initialize(
+    void Initialize( // IDA: UNMATCHED — no_callgraph_match, no_git_history
         const CoordStruct& coords,
         double elasticity,
         double gravity,
@@ -42,11 +42,11 @@ public:
         const Vector3D<float>& velocity,
         double angular_velocity);
 
-    CoordStruct* fetchCoordinatesHere(CoordStruct* out) const;
-    CoordStruct fetchCoordinatesHere() const;
+    CoordStruct* fetchCoordinatesHere(CoordStruct* out) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    CoordStruct fetchCoordinatesHere() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
-    Matrix3D* GetDrawingMatrix(Matrix3D* out) const;
-    Matrix3D GetDrawingMatrix() const;
+    Matrix3D* GetDrawingMatrix(Matrix3D* out) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    Matrix3D GetDrawingMatrix() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     Status updateLogic();
 

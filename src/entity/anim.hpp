@@ -28,11 +28,11 @@ public:
 
     virtual ~AnimClass() override = default;  // 0x4228E0
 
-    virtual AbstractType __stdcall whatAmI() const override;
+    virtual AbstractType __stdcall whatAmI() const override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual int objectSize() const override;
 
     virtual int AnimExtras();
-    virtual int GetEnd() const;
+    virtual int GetEnd() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     void Render(void* surface, int* a2, int* a3);  // 0x422CA0
     void FreeRenderBuffer();  // 0x428DE0

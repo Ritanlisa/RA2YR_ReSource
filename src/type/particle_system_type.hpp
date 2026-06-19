@@ -22,7 +22,7 @@ public:
     static constexpr AbstractType AbsID = AbstractType::ParticleSystemType;
     static DynamicVectorClass<ParticleSystemTypeClass*>* Array;
     static ParticleSystemTypeClass* Find(const char* pID);
-    static ParticleSystemTypeClass* FindOrAllocate(const char* pID);
+    static ParticleSystemTypeClass* FindOrAllocate(const char* pID); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     virtual ~ParticleSystemTypeClass() = default;  // 0x644960 (as ddtor)
 
@@ -32,11 +32,11 @@ public:
     virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override; // 0x644950 (as StubReturnFalse)
     virtual ObjectClass* CreateObject(HouseClass* pOwner) override;  // 0x4737F0
 
-    ParticleSystemTypeClass(const char* pID) noexcept;
+    ParticleSystemTypeClass(const char* pID) noexcept; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
 protected:
     struct noinit_t {};
-    ParticleSystemTypeClass(noinit_t) noexcept : ObjectTypeClass(ObjectTypeClass::noinit_t{}) {}
+    ParticleSystemTypeClass(noinit_t) noexcept : ObjectTypeClass(ObjectTypeClass::noinit_t{}) {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
 public:
     int ArrayIndex;

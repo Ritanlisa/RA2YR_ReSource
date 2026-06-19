@@ -14,7 +14,7 @@ HWND Create(int template_id, DLGPROC dlg_proc, LPARAM lParam);
 
 // IDA 0x5D5A20 area -- Dialog::BaseProc (56 basic blocks)
 // Default dialog procedure handling WM_INITDIALOG/WM_COMMAND/WM_PAINT
-INT_PTR CALLBACK BaseProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
+INT_PTR CALLBACK BaseProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
 // IDA 0x53E770 area -- Dialog::MessageLoop
 // Custom message pump: GameLoopMessagePump + MessageIsDialog + TranslateMessage + DispatchMessage

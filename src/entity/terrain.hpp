@@ -24,11 +24,11 @@ public:
 
     virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override;
     virtual HRESULT __stdcall Load(IStream* pStm) override;  // 0x71CDA0
-    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;
+    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     virtual ~TerrainClass() override = default;
 
-    virtual AbstractType __stdcall whatAmI() const override;
+    virtual AbstractType __stdcall whatAmI() const override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual int objectSize() const override;
 
     ProgressTimer    Animation;

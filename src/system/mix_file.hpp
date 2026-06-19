@@ -25,7 +25,7 @@ template <typename T>
 class Node : public GenericNode
 {
 public:
-    virtual ~Node() override = default;
+    virtual ~Node() override = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     Node() = default;
 
@@ -111,7 +111,7 @@ public:
 
     static bool Bootstrap();  // IDA: MixFileClass::Bootstrap @ 0x5301A0 -- returns bool  // 0x5301A0
 
-    static uint32_t ComputeID(const char* filename);
+    static uint32_t ComputeID(const char* filename); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     virtual ~MixFileClass() override
     {
@@ -121,11 +121,11 @@ public:
             free(MemoryData);
     }
 
-    MixFileClass() noexcept : Node(noinit_t()) {}
-    explicit MixFileClass(const char* pFileName) noexcept;
+    MixFileClass() noexcept : Node(noinit_t()) {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    explicit MixFileClass(const char* pFileName) noexcept; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     // Memory-backed constructor: takes ownership of data buffer
-    MixFileClass(const uint8_t* data, int dataSize, const char* name) noexcept;
+    MixFileClass(const uint8_t* data, int dataSize, const char* name) noexcept; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     int  FindIndex(uint32_t id) const;
     int  FindIndex(const char* filename) const;
@@ -134,14 +134,14 @@ public:
     uint32_t GetFileID(int index) const {
         return (index >= 0 && index < CountFiles) ? Headers[index].ID : 0;
     }
-    bool Extract(int index, void* buffer, int buffer_size) const;
-    bool Extract(const char* filename, void* buffer, int buffer_size) const;
-    bool Peek(int index, void* buffer, int size) const;
+    bool Extract(int index, void* buffer, int buffer_size) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    bool Extract(const char* filename, void* buffer, int buffer_size) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    bool Peek(int index, void* buffer, int size) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     bool IsValid() const;
-    void DumpEntries() const;
+    void DumpEntries() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
 protected:
-    explicit MixFileClass(const noinit_t&) noexcept : Node(noinit_t()) {}
+    explicit MixFileClass(const noinit_t&) noexcept : Node(noinit_t()) {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
 public:
     const char* FileName = nullptr;

@@ -243,8 +243,7 @@ namespace gamemd {
 
 // --- VxlLimb ---
 
- VxlLimb::VoxelData(nullptr) , DataSize(0), DataOffset(0) {}
- VxlLimb::~VxlLimb() { delete[] VoxelData; VoxelData = nullptr; }
+// VxlLimb ctor/dtor defined inline in voxel.hpp
 
 // --- VxlFile ---
 

@@ -25,14 +25,14 @@ public:
         Entry*      next;       // 0x08
         uint32_t    hash;       // 0x0C
 
-        Entry() : next(nullptr), hash(0) {}
+        Entry() : next(nullptr), hash(0) {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
         Entry(const K& k, const V& v, uint32_t h)
-            : key(k), value(v), next(nullptr), hash(h) {}
+            : key(k), value(v), next(nullptr), hash(h) {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
     };
 
     HashTable()
         : m_Buckets(nullptr), m_Count(0), m_Capacity(0),
-          m_GrowThreshold(0), m_Sorted(false), m_LastFound(nullptr)
+          m_GrowThreshold(0), m_Sorted(false), m_LastFound(nullptr) // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         Grow(); // initial allocation
     }
@@ -53,7 +53,7 @@ public:
             }
         }
 
-        Entry* entry = new Entry(key, value, h);
+        Entry* entry = new Entry(key, value, h); // IDA: UNMATCHED — no_callgraph_match, no_git_history
         entry->next = m_Buckets[index];
         m_Buckets[index] = entry;
         ++m_Count;
@@ -311,12 +311,12 @@ public:
     // --- Accessors ---
     uint32_t GetCount() const { return m_Count; }
     uint32_t GetCapacity() const { return m_Capacity; }
-    Entry** GetBuckets() { return m_Buckets; }
+    Entry** GetBuckets() { return m_Buckets; } // IDA: UNMATCHED — no_callgraph_match, no_git_history
     Entry* GetLastFound() const { return m_LastFound; }
 
 private:
     // Rebuild hash table to new capacity
-    void RebuildTo(uint32_t new_capacity)
+    void RebuildTo(uint32_t new_capacity) // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         Entry** old_buckets = m_Buckets;
         uint32_t old_cap = m_Capacity;
@@ -388,13 +388,13 @@ private:
     };
 
     // Compare string key (for string-based tables like INI)
-    static bool CompareStringKey(const K& key, const char* str)
+    static bool CompareStringKey(const K& key, const char* str) // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         return false; // default: no string comparison
     }
 
     // Compare for binary search (int specialization)
-    static int CompareSorted(const K& a, int b)
+    static int CompareSorted(const K& a, int b) // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         if (static_cast<int>(a) < b) return -1;
         if (static_cast<int>(a) > b) return 1;
@@ -448,7 +448,7 @@ public:
 class SHA1
 {
 public:
-    SHA1() { Init(); }
+    SHA1() { Init(); } // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     // IDA 0x69D8C0
     void Init();
@@ -481,7 +481,7 @@ public:
 class CRC32
 {
 public:
-    CRC32() : m_CRC(0xFFFFFFFF), m_Count(0) {}
+    CRC32() : m_CRC(0xFFFFFFFF), m_Count(0) {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     // IDA 0x69E000
     static uint32_t Compute(const void* data, uint32_t size);

@@ -40,7 +40,7 @@ public:
 
     virtual ~RadSiteClass() override = default;  // 0x65B470
 
-    virtual AbstractType __stdcall whatAmI() const override;
+    virtual AbstractType __stdcall whatAmI() const override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual int objectSize() const override;
 
     // 0x65B4C0 SetBaseCell
@@ -83,7 +83,7 @@ public:
     TintStruct         Tint;                // +0x60 (this+24)
 
 protected:
-    RadSiteClass() noexcept = default;
+    RadSiteClass() noexcept = default; // 0x65B1E0
 };
 
 } // namespace gamemd

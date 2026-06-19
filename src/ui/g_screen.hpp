@@ -34,16 +34,16 @@ public:
 
     virtual void OneTime();
     virtual void InitClear();
-    virtual void GetInputAndUpdate(uint32_t* outKeyCode, int* outMouseX, int* outMouseY);
+    virtual void GetInputAndUpdate(uint32_t* outKeyCode, int* outMouseX, int* outMouseY); // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual void Update(const int& keyCode, const Point2D& mouseCoords);
-    virtual bool OnMessage(uint32_t msg);
-    virtual void MarkNeedsRedraw(int flags);
-    virtual void DrawOnTop();
+    virtual bool OnMessage(uint32_t msg); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    virtual void MarkNeedsRedraw(int flags); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    virtual void DrawOnTop(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual void Draw(uint32_t flags);
     virtual void Render();
     virtual bool SetCursor(MouseCursorType cursor, bool miniMap);  // 0x7C87B8
-    virtual bool UpdateCursor(MouseCursorType cursor, bool miniMap);
-    virtual bool RestoreCursor();
+    virtual bool UpdateCursor(MouseCursorType cursor, bool miniMap); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    virtual bool RestoreCursor(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual void UpdateCursorMinimapState(bool miniMap);
 
     virtual HRESULT Load(IStream* stream);
@@ -52,10 +52,10 @@ public:
     virtual const wchar_t* GetToolTip(unsigned int dialog_id);
     virtual void CloseWindow();  // 0x7C865C
     virtual void vt_entry_8C();
-    virtual bool vt_entry_90(const CellStruct& cell, HouseClass* house);
+    virtual bool vt_entry_90(const CellStruct& cell, HouseClass* house); // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual bool vt_entry_94(const CellStruct& cell, HouseClass* house, bool unk);  // 0x4A9CA0
-    virtual bool vt_entry_98(const CellStruct& cell, HouseClass* house);
-    virtual bool vt_entry_9C(const CellStruct& cell, HouseClass* house);
+    virtual bool vt_entry_98(const CellStruct& cell, HouseClass* house); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    virtual bool vt_entry_9C(const CellStruct& cell, HouseClass* house); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     int32_t  ScreenShakeX;
     int32_t  ScreenShakeY;

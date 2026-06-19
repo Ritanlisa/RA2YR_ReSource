@@ -39,14 +39,14 @@ public:
 
     virtual ~ScriptClass() = default;  // 0x6915F0
 
-    virtual AbstractType __stdcall whatAmI() const override;
+    virtual AbstractType __stdcall whatAmI() const override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual int objectSize() const override;
 
-    ScriptActionNode* GetCurrentAction(ScriptActionNode* buffer) const;
+    ScriptActionNode* GetCurrentAction(ScriptActionNode* buffer) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     ScriptActionNode* GetNextAction(ScriptActionNode* buffer) const;  // 0x691540
 
     bool Reset();
-    bool SetCurrentLine(int idx);
+    bool SetCurrentLine(int idx); // IDA: UNMATCHED — no_callgraph_match, no_git_history
     bool NextAction();  // IDA: 0x691540
     bool HasNextAction() const;
 
@@ -73,7 +73,7 @@ public:
 
     virtual ~ScriptTypeClass() = default;  // 0x691FA0
 
-    virtual AbstractType __stdcall whatAmI() const override;
+    virtual AbstractType __stdcall whatAmI() const override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual int objectSize() const override;  // 0x691F80
 
     static bool LoadFromINIList(CCINIClass* ini, bool is_global);  // 0x46CE10

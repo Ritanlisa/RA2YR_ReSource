@@ -39,7 +39,7 @@ public:
     // TODO: complete TabClass members
 
 protected:
-    TabClass() = default;
+    TabClass() = default; // 0x4A2350
 };
 
 } // namespace gamemd

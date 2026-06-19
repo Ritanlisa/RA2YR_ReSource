@@ -1,0 +1,5560 @@
+{
+  "description": "Cross-reference: hpp function names -> functions.json entries",
+  "total_direct_matches": 1096,
+  "total_history_matches": 443,
+  "total_address_matches": 58,
+  "matches": [
+    {
+      "hpp_name": "IDXContainer::LoadSample",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4016f0",
+      "size": 457,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "InputManager_ProcessEvents::AddRef",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x40d230",
+      "size": 8,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "InputManager_ProcessEvents::Release",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x40d240",
+      "size": 8,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "Math::InitDegToRad",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x40ffff",
+      "size": 36,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "AbstractClass::sub_410100",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x410100",
+      "size": 15,
+      "match_type": "via_history",
+      "resolved_to": "AbstractClass::initVtableBase",
+      "old_names": [
+        "AbstractClass::sub_410100"
+      ]
+    },
+    {
+      "hpp_name": "INoticeSink::Dispatch",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x410210",
+      "size": 16,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "AbstractClass::GetVtable3",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x410220",
+      "size": 10,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "AbstractClass::GenerateUniqueID",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x410230",
+      "size": 37,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "AbstractClass::SaveLoad_Prefix",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x410320",
+      "size": 87,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "AbstractClass::SaveLoad_Prefix_0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x410380",
+      "size": 90,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "IRTTITypeInfo::QueryInterface",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4105e0",
+      "size": 10,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "INoticeSource::Dispatch",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4105f0",
+      "size": 10,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "Slider::CalcPosition",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x412a40",
+      "size": 116,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "AbstractClass::GetField9",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x417fd0",
+      "size": 9,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "AirstrikeClass::Write",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x41d6f0",
+      "size": 143,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "AirstrikeClass::Seek",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x41d780",
+      "size": 23,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "AirstrikeClass::ddtor",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x41d7a0",
+      "size": 56,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "AITriggerTypeClass::GetClassIdentifier",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x41e500",
+      "size": 56,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "AITriggerTypeClass::LoadTypeData",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x41e540",
+      "size": 120,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "AITriggerTypeClass::SaveToINI",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x41e5c0",
+      "size": 29,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "AITriggerTypeClass::IronCurtainCharged",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x41f0d0",
+      "size": 171,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "AITriggerTypeClass::ChronoSphereCharged",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x41f180",
+      "size": 171,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "CCINIClass::ReadTypeList",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x41f2e0",
+      "size": 424,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "CCINIClass::ReadInfantryTypeList",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x41f490",
+      "size": 229,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "FractalNoise::Release",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x420270",
+      "size": 126,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "AirstrikeClass::UpdateAll",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x420e90",
+      "size": 170,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "HouseClass::QueryInterface_Helper",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x429210",
+      "size": 91,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "HouseClass::QueryInterface_Dispatch",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x429270",
+      "size": 236,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "BaseClass::LoadBaseNodeClass",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x42ee30",
+      "size": 561,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "BaseClass::sub_42F070",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x42f070",
+      "size": 257,
+      "match_type": "via_history",
+      "resolved_to": "BaseClass::LoadArrayFields",
+      "old_names": [
+        "BaseClass::sub_42F070"
+      ]
+    },
+    {
+      "hpp_name": "Text::MeasureWidth",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x433ed0",
+      "size": 29,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "Font::Print",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x434cd0",
+      "size": 1603,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "Helper::ProcessData",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4371d0",
+      "size": 178,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "BombClass::InitPool",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x438550",
+      "size": 61,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "BombClass::ddtor",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x438b00",
+      "size": 56,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "BombClass::Write",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x438b40",
+      "size": 130,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "BombClass::Seek",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x438bd0",
+      "size": 23,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "COM::GetClassID",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x43a500",
+      "size": 56,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "NeuronClass::Fire",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x43a540",
+      "size": 111,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "NeuronClass::Update",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x43a5b0",
+      "size": 29,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "AbstractClass::sub_464A70",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x464a70",
+      "size": 74,
+      "match_type": "via_history",
+      "resolved_to": "AbstractClass::queryInterface",
+      "old_names": [
+        "AbstractClass::sub_464A70"
+      ]
+    },
+    {
+      "hpp_name": "VectorClass_ptr_BulletClass::sub_46B990",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x46b990",
+      "size": 10,
+      "match_type": "via_history",
+      "resolved_to": "VectorClass_ptr_BulletClass::GetItem",
+      "old_names": [
+        "VectorClass_ptr_BulletClass::sub_46B990"
+      ]
+    },
+    {
+      "hpp_name": "VectorClass_ptr_BulletClass::sub_46B9A0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x46b9a0",
+      "size": 10,
+      "match_type": "via_history",
+      "resolved_to": "VectorClass_ptr_BulletClass::GetItem_0",
+      "old_names": [
+        "VectorClass_ptr_BulletClass::sub_46B9A0"
+      ]
+    },
+    {
+      "hpp_name": "Compare::Field96",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x46dc90",
+      "size": 40,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "CaptureManagerClass::CaptureUnit",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x471d40",
+      "size": 583,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "CaptureManagerClass::FreeUnit",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x471ff0",
+      "size": 333,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "CaptureManagerClass::LoadFromStream",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x472720",
+      "size": 436,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "CaptureManagerClass::SaveToINI",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4728e0",
+      "size": 127,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "CaptureManagerClass::GetClassIdentifier",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x472960",
+      "size": 56,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "Math::InitArcTan",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x473650",
+      "size": 33,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "CCToolTip::Show",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x479050",
+      "size": 38,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "CDROM::DeviceIoControl",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x47a3f0",
+      "size": 366,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "AbstractClass::sub_487E50",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x487e50",
+      "size": 8,
+      "match_type": "via_history",
+      "resolved_to": "AbstractClass::compareType",
+      "old_names": [
+        "AbstractClass::sub_487E50"
+      ]
+    },
+    {
+      "hpp_name": "Rect::Union",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x487f40",
+      "size": 240,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "CheckListClass::OnClick",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x488520",
+      "size": 359,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "COMObject::DetachPrimary",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x488690",
+      "size": 11,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "Return::HRESULT_Fail",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x48ace0",
+      "size": 8,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "Event_Dispatch::Return0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x48d1d0",
+      "size": 8,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "DiskSpace::CheckAvailable",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x48dd50",
+      "size": 284,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "CopyProtection::CheckLauncher",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x49f5c0",
+      "size": 91,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "CopyProtection::NotifyLauncher",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x49f620",
+      "size": 276,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "EnumConnectionsClass::QueryInterface",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x49ff80",
+      "size": 102,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "EnumConnectionsClass::AddRef",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x49fff0",
+      "size": 30,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "EnumConnectionsClass::Release",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4a0010",
+      "size": 157,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "EnumConnectionsClass::ddtor",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4a00b0",
+      "size": 166,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "EnumConnectionsClass::Next",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4a0160",
+      "size": 21,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "EnumConnectionsClass::Skip",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4a0180",
+      "size": 16,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "ConnectionPointClass::QueryInterface",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4a04b0",
+      "size": 97,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "EnumConnectionPointsClass::QueryInterface",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4a0920",
+      "size": 102,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "EnumConnectionPointsClass::AddRef",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4a0990",
+      "size": 30,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "EnumConnectionPointsClass::Release",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4a09b0",
+      "size": 157,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "EnumConnectionPointsClass::ddtor",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4a0a50",
+      "size": 159,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "EnumConnectionPointsClass::Next",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4a0af0",
+      "size": 21,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "EnumConnectionPointsClass::Skip",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4a0b10",
+      "size": 16,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "CStreamClass::AddRef",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4a2930",
+      "size": 30,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "CStreamClass::Release",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4a2950",
+      "size": 55,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "CStreamClass::QueryInterface",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4a2990",
+      "size": 135,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "CStreamClass::sub_4A2A20",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4a2a20",
+      "size": 129,
+      "match_type": "via_history",
+      "resolved_to": "CStreamClass::StubReturnNullPointer",
+      "old_names": [
+        "CStreamClass::sub_4A2A20"
+      ]
+    },
+    {
+      "hpp_name": "CStreamClass::sub_4A2AB0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4a2ab0",
+      "size": 167,
+      "match_type": "via_history",
+      "resolved_to": "CStreamClass::StreamRead",
+      "old_names": [
+        "CStreamClass::sub_4A2AB0"
+      ]
+    },
+    {
+      "hpp_name": "CStreamClass::CopyStreamToBuffer",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4a2cd0",
+      "size": 302,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "CStreamClass::Read",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4a2e00",
+      "size": 78,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "CStreamClass::Write",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4a2e50",
+      "size": 68,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "CStreamClass::Seek",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4a2ea0",
+      "size": 60,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "CStreamClass::SetSize",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4a2ee0",
+      "size": 40,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "CStreamClass::Commit",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4a2f10",
+      "size": 35,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "CStreamClass::Revert",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4a2f40",
+      "size": 60,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "CStreamClass::Stat",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4a2ff0",
+      "size": 40,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "IStream::Read",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4a3020",
+      "size": 184,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "CStreamClass::ddtor",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4a3110",
+      "size": 211,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "CStreamClass::sub_4A3220",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4a3220",
+      "size": 10,
+      "match_type": "via_history",
+      "resolved_to": "CStreamClass::IStreamQueryInterface",
+      "old_names": [
+        "CStreamClass::sub_4A3220"
+      ]
+    },
+    {
+      "hpp_name": "CStreamClass::sub_4A3230",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4a3230",
+      "size": 10,
+      "match_type": "via_history",
+      "resolved_to": "CStreamClass::IStreamAddRef",
+      "old_names": [
+        "CStreamClass::sub_4A3230"
+      ]
+    },
+    {
+      "hpp_name": "CStreamClass::sub_4A3240",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4a3240",
+      "size": 10,
+      "match_type": "via_history",
+      "resolved_to": "CStreamClass::IStreamRelease",
+      "old_names": [
+        "CStreamClass::sub_4A3240"
+      ]
+    },
+    {
+      "hpp_name": "Dial8Class::GetValue",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4a57b0",
+      "size": 413,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "DiskLaserClass::Write",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4a7b90",
+      "size": 115,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "DiskLaserClass::Seek",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4a7c10",
+      "size": 23,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "DiskLaserClass::ddtor",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4a7c30",
+      "size": 56,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "Targeting::Readd",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4a9720",
+      "size": 77,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "DriveLocomotionClass::QueryInterface",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4af720",
+      "size": 93,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "StreamClass::IsInactive",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4b4c30",
+      "size": 17,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "StreamClass::Vt32Thunk",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4b4c50",
+      "size": 16,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "DropListClass::OnKeyUp",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4b5030",
+      "size": 97,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "DropPodLocomotionClass::QueryInterface",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4b6470",
+      "size": 93,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "EMPulseClass::ddtor",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4c59f0",
+      "size": 56,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "EMPulseClass::Write",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4c5a30",
+      "size": 69,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "EMPulseClass::Seek",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4c5a80",
+      "size": 29,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "EventClass::ProcessEvent",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4c6cb0",
+      "size": 5220,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "Math::Sqrt",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4cac40",
+      "size": 110,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "Math::SinCos",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4cacb0",
+      "size": 66,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "Math::ArcTan2",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4cad00",
+      "size": 73,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "Math::Sin",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4cad50",
+      "size": 44,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "Math::ArcTan2_Table",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4cadb0",
+      "size": 40,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "Math::ArcTan",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4cade0",
+      "size": 66,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "Math::CalcAngle",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4cae30",
+      "size": 178,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "TrajectoryHelper::FindFirstObstacle",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4cc100",
+      "size": 526,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "TrajectoryHelper::FindFirstImpenetrableObstacle",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4cc310",
+      "size": 74,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "TrajectoryHelper::GetObstacle",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4cc360",
+      "size": 788,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "FoggedObjectClass::SaveToINI",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4d24a0",
+      "size": 107,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "FoggedObjectClass::LoadTypeData",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4d2510",
+      "size": 627,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "FoggedObjectClass::GetClassIdentifier",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4d27d0",
+      "size": 56,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "COMObject::FindNextActive",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4e1a00",
+      "size": 31,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "Time::GetElapsedMS",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4e24a0",
+      "size": 53,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "GDlg::LoadLetterStrings",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4e5ac0",
+      "size": 119,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "PlayerType::GetName",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4e62b0",
+      "size": 29,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "Options::DlgProc",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4f11b0",
+      "size": 1360,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "COMObject::QueryInterface",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4f4240",
+      "size": 91,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "COMObject::IsSameType",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4f43f0",
+      "size": 27,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "HouseClass::QueryInterface",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4f6830",
+      "size": 215,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6910",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4f6910",
+      "size": 30,
+      "match_type": "via_history",
+      "resolved_to": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItemIndex",
+      "old_names": [
+        "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6910"
+      ]
+    },
+    {
+      "hpp_name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6950",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4f6950",
+      "size": 50,
+      "match_type": "via_history",
+      "resolved_to": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::FindItemIndex",
+      "old_names": [
+        "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6950"
+      ]
+    },
+    {
+      "hpp_name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6990",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4f6990",
+      "size": 58,
+      "match_type": "via_history",
+      "resolved_to": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::FindItemIndex_0",
+      "old_names": [
+        "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6990"
+      ]
+    },
+    {
+      "hpp_name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F69D0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4f69d0",
+      "size": 35,
+      "match_type": "via_history",
+      "resolved_to": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::Destroy",
+      "old_names": [
+        "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F69D0"
+      ]
+    },
+    {
+      "hpp_name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6A00",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4f6a00",
+      "size": 13,
+      "match_type": "via_history",
+      "resolved_to": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem",
+      "old_names": [
+        "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6A00"
+      ]
+    },
+    {
+      "hpp_name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6A10",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4f6a10",
+      "size": 13,
+      "match_type": "via_history",
+      "resolved_to": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_0",
+      "old_names": [
+        "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6A10"
+      ]
+    },
+    {
+      "hpp_name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6A20",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4f6a20",
+      "size": 88,
+      "match_type": "via_history",
+      "resolved_to": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity",
+      "old_names": [
+        "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6A20"
+      ]
+    },
+    {
+      "hpp_name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6A80",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4f6a80",
+      "size": 88,
+      "match_type": "via_history",
+      "resolved_to": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_0",
+      "old_names": [
+        "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6A80"
+      ]
+    },
+    {
+      "hpp_name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6AE0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4f6ae0",
+      "size": 107,
+      "match_type": "via_history",
+      "resolved_to": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_1",
+      "old_names": [
+        "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6AE0"
+      ]
+    },
+    {
+      "hpp_name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6B50",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4f6b50",
+      "size": 107,
+      "match_type": "via_history",
+      "resolved_to": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_2",
+      "old_names": [
+        "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6B50"
+      ]
+    },
+    {
+      "hpp_name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6BC0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4f6bc0",
+      "size": 330,
+      "match_type": "via_history",
+      "resolved_to": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_3",
+      "old_names": [
+        "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6BC0"
+      ]
+    },
+    {
+      "hpp_name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6D10",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4f6d10",
+      "size": 330,
+      "match_type": "via_history",
+      "resolved_to": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_4",
+      "old_names": [
+        "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6D10"
+      ]
+    },
+    {
+      "hpp_name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6E60",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4f6e60",
+      "size": 10,
+      "match_type": "via_history",
+      "resolved_to": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_1",
+      "old_names": [
+        "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6E60"
+      ]
+    },
+    {
+      "hpp_name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_5013A0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5013a0",
+      "size": 85,
+      "match_type": "via_history",
+      "resolved_to": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::ScalarDeletingDestructor",
+      "old_names": [
+        "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_5013A0"
+      ]
+    },
+    {
+      "hpp_name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_501400",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x501400",
+      "size": 319,
+      "match_type": "via_history",
+      "resolved_to": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_5",
+      "old_names": [
+        "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_501400"
+      ]
+    },
+    {
+      "hpp_name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_5024F0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5024f0",
+      "size": 83,
+      "match_type": "via_history",
+      "resolved_to": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::StubReturnNullPointer",
+      "old_names": [
+        "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_5024F0"
+      ]
+    },
+    {
+      "hpp_name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_502550",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x502550",
+      "size": 147,
+      "match_type": "via_history",
+      "resolved_to": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::StubReturnNullPointer_0",
+      "old_names": [
+        "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_502550"
+      ]
+    },
+    {
+      "hpp_name": "AbstractClass::sub_510A20",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x510a20",
+      "size": 10,
+      "match_type": "via_history",
+      "resolved_to": "AbstractClass::saveToStream",
+      "old_names": [
+        "AbstractClass::sub_510A20"
+      ]
+    },
+    {
+      "hpp_name": "AbstractClass::sub_510A30",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x510a30",
+      "size": 10,
+      "match_type": "via_history",
+      "resolved_to": "AbstractClass::loadFromStream",
+      "old_names": [
+        "AbstractClass::sub_510A30"
+      ]
+    },
+    {
+      "hpp_name": "AbstractClass::sub_510A40",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x510a40",
+      "size": 10,
+      "match_type": "via_history",
+      "resolved_to": "AbstractClass::computeSize",
+      "old_names": [
+        "AbstractClass::sub_510A40"
+      ]
+    },
+    {
+      "hpp_name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_510A50",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x510a50",
+      "size": 10,
+      "match_type": "via_history",
+      "resolved_to": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_2",
+      "old_names": [
+        "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_510A50"
+      ]
+    },
+    {
+      "hpp_name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_510A60",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x510a60",
+      "size": 10,
+      "match_type": "via_history",
+      "resolved_to": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_3",
+      "old_names": [
+        "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_510A60"
+      ]
+    },
+    {
+      "hpp_name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_510A70",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x510a70",
+      "size": 10,
+      "match_type": "via_history",
+      "resolved_to": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_4",
+      "old_names": [
+        "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_510A70"
+      ]
+    },
+    {
+      "hpp_name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_510A80",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x510a80",
+      "size": 10,
+      "match_type": "via_history",
+      "resolved_to": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_5",
+      "old_names": [
+        "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_510A80"
+      ]
+    },
+    {
+      "hpp_name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_510A90",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x510a90",
+      "size": 10,
+      "match_type": "via_history",
+      "resolved_to": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_6",
+      "old_names": [
+        "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_510A90"
+      ]
+    },
+    {
+      "hpp_name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_510AA0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x510aa0",
+      "size": 10,
+      "match_type": "via_history",
+      "resolved_to": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_7",
+      "old_names": [
+        "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_510AA0"
+      ]
+    },
+    {
+      "hpp_name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_510AB0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x510ab0",
+      "size": 10,
+      "match_type": "via_history",
+      "resolved_to": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_8",
+      "old_names": [
+        "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_510AB0"
+      ]
+    },
+    {
+      "hpp_name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_510AC0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x510ac0",
+      "size": 10,
+      "match_type": "via_history",
+      "resolved_to": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_9",
+      "old_names": [
+        "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_510AC0"
+      ]
+    },
+    {
+      "hpp_name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_510AD0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x510ad0",
+      "size": 10,
+      "match_type": "via_history",
+      "resolved_to": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_10",
+      "old_names": [
+        "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_510AD0"
+      ]
+    },
+    {
+      "hpp_name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_510AE0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x510ae0",
+      "size": 10,
+      "match_type": "via_history",
+      "resolved_to": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_11",
+      "old_names": [
+        "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_510AE0"
+      ]
+    },
+    {
+      "hpp_name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_510AF0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x510af0",
+      "size": 10,
+      "match_type": "via_history",
+      "resolved_to": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_12",
+      "old_names": [
+        "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_510AF0"
+      ]
+    },
+    {
+      "hpp_name": "HouseTypeClass::QueryInterface",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5125a0",
+      "size": 155,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "SaveGame::WriteObject",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x513cb0",
+      "size": 77,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "KeyboardConfig::LoadINI",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x533d20",
+      "size": 549,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "Game::DestroyAllObjects",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x534450",
+      "size": 1378,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "AssetClass::ReleaseAndReload",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x534e50",
+      "size": 330,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "Performance::Profile",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5355d0",
+      "size": 1129,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "CreateTeamCommand::ddtor",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x535c70",
+      "size": 23,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_535D30",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x535d30",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_3",
+      "old_names": [
+        "CreateTeamCommand::sub_535D30"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_535D50",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x535d50",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_4",
+      "old_names": [
+        "CreateTeamCommand::sub_535D50"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_535D70",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x535d70",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_5",
+      "old_names": [
+        "CreateTeamCommand::sub_535D70"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_535D90",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x535d90",
+      "size": 65,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_6",
+      "old_names": [
+        "CreateTeamCommand::sub_535D90"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_535DF0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x535df0",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_8",
+      "old_names": [
+        "CreateTeamCommand::sub_535DF0"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_535E10",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x535e10",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_9",
+      "old_names": [
+        "CreateTeamCommand::sub_535E10"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_535E30",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x535e30",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_10",
+      "old_names": [
+        "CreateTeamCommand::sub_535E30"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_535E50",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x535e50",
+      "size": 65,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_11",
+      "old_names": [
+        "CreateTeamCommand::sub_535E50"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_535EB0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x535eb0",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_13",
+      "old_names": [
+        "CreateTeamCommand::sub_535EB0"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_535ED0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x535ed0",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_14",
+      "old_names": [
+        "CreateTeamCommand::sub_535ED0"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_535EF0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x535ef0",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_15",
+      "old_names": [
+        "CreateTeamCommand::sub_535EF0"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_535F10",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x535f10",
+      "size": 29,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_16",
+      "old_names": [
+        "CreateTeamCommand::sub_535F10"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_535F40",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x535f40",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_18",
+      "old_names": [
+        "CreateTeamCommand::sub_535F40"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_535F60",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x535f60",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_19",
+      "old_names": [
+        "CreateTeamCommand::sub_535F60"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_535F80",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x535f80",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_20",
+      "old_names": [
+        "CreateTeamCommand::sub_535F80"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_535FA0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x535fa0",
+      "size": 29,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_21",
+      "old_names": [
+        "CreateTeamCommand::sub_535FA0"
+      ]
+    },
+    {
+      "hpp_name": "SelectTeamCommand::ddtor",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536030",
+      "size": 23,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "AddTeamCommand::ddtor",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536120",
+      "size": 23,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "CSF::GetTeamString",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536210",
+      "size": 23,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "TauntCommandClass::ddtor",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536300",
+      "size": 23,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_5365B0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5365b0",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_27",
+      "old_names": [
+        "CreateTeamCommand::sub_5365B0"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_5365D0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5365d0",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_28",
+      "old_names": [
+        "CreateTeamCommand::sub_5365D0"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_5365F0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5365f0",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_29",
+      "old_names": [
+        "CreateTeamCommand::sub_5365F0"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_536610",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536610",
+      "size": 129,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_30",
+      "old_names": [
+        "CreateTeamCommand::sub_536610"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_5366B0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5366b0",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_32",
+      "old_names": [
+        "CreateTeamCommand::sub_5366B0"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_5366D0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5366d0",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_33",
+      "old_names": [
+        "CreateTeamCommand::sub_5366D0"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_5366F0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5366f0",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_34",
+      "old_names": [
+        "CreateTeamCommand::sub_5366F0"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_536710",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536710",
+      "size": 22,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_35",
+      "old_names": [
+        "CreateTeamCommand::sub_536710"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_536740",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536740",
+      "size": 15,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_37",
+      "old_names": [
+        "CreateTeamCommand::sub_536740"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_536750",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536750",
+      "size": 29,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_38",
+      "old_names": [
+        "CreateTeamCommand::sub_536750"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_536780",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536780",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_40",
+      "old_names": [
+        "CreateTeamCommand::sub_536780"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_5367A0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5367a0",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_41",
+      "old_names": [
+        "CreateTeamCommand::sub_5367A0"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_5367C0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5367c0",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_42",
+      "old_names": [
+        "CreateTeamCommand::sub_5367C0"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_5367E0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5367e0",
+      "size": 13,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_43",
+      "old_names": [
+        "CreateTeamCommand::sub_5367E0"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_5367F0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5367f0",
+      "size": 20,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_44",
+      "old_names": [
+        "CreateTeamCommand::sub_5367F0"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_536820",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536820",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_46",
+      "old_names": [
+        "CreateTeamCommand::sub_536820"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_536840",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536840",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_47",
+      "old_names": [
+        "CreateTeamCommand::sub_536840"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_536860",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536860",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_48",
+      "old_names": [
+        "CreateTeamCommand::sub_536860"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_536880",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536880",
+      "size": 13,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_49",
+      "old_names": [
+        "CreateTeamCommand::sub_536880"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_5368A0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5368a0",
+      "size": 15,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_51",
+      "old_names": [
+        "CreateTeamCommand::sub_5368A0"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_5368B0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5368b0",
+      "size": 25,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_52",
+      "old_names": [
+        "CreateTeamCommand::sub_5368B0"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_5368E0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5368e0",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_54",
+      "old_names": [
+        "CreateTeamCommand::sub_5368E0"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_536900",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536900",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_55",
+      "old_names": [
+        "CreateTeamCommand::sub_536900"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_536920",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536920",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_56",
+      "old_names": [
+        "CreateTeamCommand::sub_536920"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_536940",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536940",
+      "size": 13,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_57",
+      "old_names": [
+        "CreateTeamCommand::sub_536940"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_536950",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536950",
+      "size": 20,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_58",
+      "old_names": [
+        "CreateTeamCommand::sub_536950"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_536980",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536980",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_60",
+      "old_names": [
+        "CreateTeamCommand::sub_536980"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_5369A0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5369a0",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_61",
+      "old_names": [
+        "CreateTeamCommand::sub_5369A0"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_5369C0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5369c0",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_62",
+      "old_names": [
+        "CreateTeamCommand::sub_5369C0"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_5369E0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5369e0",
+      "size": 13,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_63",
+      "old_names": [
+        "CreateTeamCommand::sub_5369E0"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_5369F0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5369f0",
+      "size": 20,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_64",
+      "old_names": [
+        "CreateTeamCommand::sub_5369F0"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_536A20",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536a20",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_66",
+      "old_names": [
+        "CreateTeamCommand::sub_536A20"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_536A40",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536a40",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_67",
+      "old_names": [
+        "CreateTeamCommand::sub_536A40"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_536A60",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536a60",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_68",
+      "old_names": [
+        "CreateTeamCommand::sub_536A60"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_536A80",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536a80",
+      "size": 129,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_69",
+      "old_names": [
+        "CreateTeamCommand::sub_536A80"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_536B20",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536b20",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_71",
+      "old_names": [
+        "CreateTeamCommand::sub_536B20"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_536B40",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536b40",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_72",
+      "old_names": [
+        "CreateTeamCommand::sub_536B40"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_536B60",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536b60",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_73",
+      "old_names": [
+        "CreateTeamCommand::sub_536B60"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_536B80",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536b80",
+      "size": 8,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_74",
+      "old_names": [
+        "CreateTeamCommand::sub_536B80"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_536BA0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536ba0",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_76",
+      "old_names": [
+        "CreateTeamCommand::sub_536BA0"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_536BC0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536bc0",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_77",
+      "old_names": [
+        "CreateTeamCommand::sub_536BC0"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_536BE0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536be0",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_78",
+      "old_names": [
+        "CreateTeamCommand::sub_536BE0"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_536C00",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536c00",
+      "size": 8,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_79",
+      "old_names": [
+        "CreateTeamCommand::sub_536C00"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_536C20",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536c20",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_81",
+      "old_names": [
+        "CreateTeamCommand::sub_536C20"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_536C40",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536c40",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_82",
+      "old_names": [
+        "CreateTeamCommand::sub_536C40"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_536C60",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536c60",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_83",
+      "old_names": [
+        "CreateTeamCommand::sub_536C60"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_536C80",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536c80",
+      "size": 8,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_84",
+      "old_names": [
+        "CreateTeamCommand::sub_536C80"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_536CA0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536ca0",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_86",
+      "old_names": [
+        "CreateTeamCommand::sub_536CA0"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_536CC0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536cc0",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_87",
+      "old_names": [
+        "CreateTeamCommand::sub_536CC0"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_536CE0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536ce0",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_88",
+      "old_names": [
+        "CreateTeamCommand::sub_536CE0"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_536D00",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536d00",
+      "size": 8,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_89",
+      "old_names": [
+        "CreateTeamCommand::sub_536D00"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_536D20",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536d20",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_91",
+      "old_names": [
+        "CreateTeamCommand::sub_536D20"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_536D40",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536d40",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_92",
+      "old_names": [
+        "CreateTeamCommand::sub_536D40"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_536D60",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536d60",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_93",
+      "old_names": [
+        "CreateTeamCommand::sub_536D60"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_536D80",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536d80",
+      "size": 8,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_94",
+      "old_names": [
+        "CreateTeamCommand::sub_536D80"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_536DA0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536da0",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_96",
+      "old_names": [
+        "CreateTeamCommand::sub_536DA0"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_536DC0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536dc0",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_97",
+      "old_names": [
+        "CreateTeamCommand::sub_536DC0"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_536DE0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536de0",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_98",
+      "old_names": [
+        "CreateTeamCommand::sub_536DE0"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_536E00",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536e00",
+      "size": 34,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_99",
+      "old_names": [
+        "CreateTeamCommand::sub_536E00"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_536E40",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536e40",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_101",
+      "old_names": [
+        "CreateTeamCommand::sub_536E40"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_536E60",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536e60",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_102",
+      "old_names": [
+        "CreateTeamCommand::sub_536E60"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_536E80",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536e80",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_103",
+      "old_names": [
+        "CreateTeamCommand::sub_536E80"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_536EA0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536ea0",
+      "size": 8,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_104",
+      "old_names": [
+        "CreateTeamCommand::sub_536EA0"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_536EC0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536ec0",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_106",
+      "old_names": [
+        "CreateTeamCommand::sub_536EC0"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_536EE0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536ee0",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_107",
+      "old_names": [
+        "CreateTeamCommand::sub_536EE0"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_536F00",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536f00",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_108",
+      "old_names": [
+        "CreateTeamCommand::sub_536F00"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_536F20",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536f20",
+      "size": 8,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_109",
+      "old_names": [
+        "CreateTeamCommand::sub_536F20"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_536F40",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536f40",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_111",
+      "old_names": [
+        "CreateTeamCommand::sub_536F40"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_536F60",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536f60",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_112",
+      "old_names": [
+        "CreateTeamCommand::sub_536F60"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_536F80",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536f80",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_113",
+      "old_names": [
+        "CreateTeamCommand::sub_536F80"
+      ]
+    },
+    {
+      "hpp_name": "ToggleRepariModeCommandClass::Execute_PlayerAutoRepair",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536fa0",
+      "size": 15,
+      "match_type": "via_history",
+      "resolved_to": "ToggleRepairModeCommandClass::Execute",
+      "old_names": [
+        "ToggleRepariModeCommandClass::Execute_PlayerAutoRepair"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_536FC0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536fc0",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_115",
+      "old_names": [
+        "CreateTeamCommand::sub_536FC0"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_536FE0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536fe0",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_116",
+      "old_names": [
+        "CreateTeamCommand::sub_536FE0"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_537000",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537000",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_117",
+      "old_names": [
+        "CreateTeamCommand::sub_537000"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_537020",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537020",
+      "size": 15,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_118",
+      "old_names": [
+        "CreateTeamCommand::sub_537020"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_537040",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537040",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_120",
+      "old_names": [
+        "CreateTeamCommand::sub_537040"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_537060",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537060",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_121",
+      "old_names": [
+        "CreateTeamCommand::sub_537060"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_537080",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537080",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_122",
+      "old_names": [
+        "CreateTeamCommand::sub_537080"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_5370A0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5370a0",
+      "size": 22,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_123",
+      "old_names": [
+        "CreateTeamCommand::sub_5370A0"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_5370D0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5370d0",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_125",
+      "old_names": [
+        "CreateTeamCommand::sub_5370D0"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_5370F0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5370f0",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_126",
+      "old_names": [
+        "CreateTeamCommand::sub_5370F0"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_537110",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537110",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_127",
+      "old_names": [
+        "CreateTeamCommand::sub_537110"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_537130",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537130",
+      "size": 8,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_128",
+      "old_names": [
+        "CreateTeamCommand::sub_537130"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_537150",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537150",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_130",
+      "old_names": [
+        "CreateTeamCommand::sub_537150"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_537170",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537170",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_131",
+      "old_names": [
+        "CreateTeamCommand::sub_537170"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_537190",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537190",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_132",
+      "old_names": [
+        "CreateTeamCommand::sub_537190"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_5371B0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5371b0",
+      "size": 17,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_133",
+      "old_names": [
+        "CreateTeamCommand::sub_5371B0"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_5371E0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5371e0",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_135",
+      "old_names": [
+        "CreateTeamCommand::sub_5371E0"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_537200",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537200",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_136",
+      "old_names": [
+        "CreateTeamCommand::sub_537200"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_537220",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537220",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_137",
+      "old_names": [
+        "CreateTeamCommand::sub_537220"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_537240",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537240",
+      "size": 17,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_138",
+      "old_names": [
+        "CreateTeamCommand::sub_537240"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_537270",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537270",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_140",
+      "old_names": [
+        "CreateTeamCommand::sub_537270"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_537290",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537290",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_141",
+      "old_names": [
+        "CreateTeamCommand::sub_537290"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_5372B0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5372b0",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_142",
+      "old_names": [
+        "CreateTeamCommand::sub_5372B0"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_5372D0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5372d0",
+      "size": 8,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_143",
+      "old_names": [
+        "CreateTeamCommand::sub_5372D0"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_5372F0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5372f0",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_145",
+      "old_names": [
+        "CreateTeamCommand::sub_5372F0"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_537310",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537310",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_146",
+      "old_names": [
+        "CreateTeamCommand::sub_537310"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_537330",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537330",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_147",
+      "old_names": [
+        "CreateTeamCommand::sub_537330"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_537350",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537350",
+      "size": 126,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_148",
+      "old_names": [
+        "CreateTeamCommand::sub_537350"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_5373E0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5373e0",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_150",
+      "old_names": [
+        "CreateTeamCommand::sub_5373E0"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_537400",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537400",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_151",
+      "old_names": [
+        "CreateTeamCommand::sub_537400"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_537420",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537420",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_152",
+      "old_names": [
+        "CreateTeamCommand::sub_537420"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_537440",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537440",
+      "size": 126,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_153",
+      "old_names": [
+        "CreateTeamCommand::sub_537440"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_5374D0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5374d0",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_155",
+      "old_names": [
+        "CreateTeamCommand::sub_5374D0"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_5374F0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5374f0",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_156",
+      "old_names": [
+        "CreateTeamCommand::sub_5374F0"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_537510",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537510",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_157",
+      "old_names": [
+        "CreateTeamCommand::sub_537510"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_537530",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537530",
+      "size": 126,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_158",
+      "old_names": [
+        "CreateTeamCommand::sub_537530"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_5375C0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5375c0",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_160",
+      "old_names": [
+        "CreateTeamCommand::sub_5375C0"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_5375E0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5375e0",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_161",
+      "old_names": [
+        "CreateTeamCommand::sub_5375E0"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_537600",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537600",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_162",
+      "old_names": [
+        "CreateTeamCommand::sub_537600"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_5376B0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5376b0",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_164",
+      "old_names": [
+        "CreateTeamCommand::sub_5376B0"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_5376D0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5376d0",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_165",
+      "old_names": [
+        "CreateTeamCommand::sub_5376D0"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_5376F0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5376f0",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_166",
+      "old_names": [
+        "CreateTeamCommand::sub_5376F0"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_537710",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537710",
+      "size": 72,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_167",
+      "old_names": [
+        "CreateTeamCommand::sub_537710"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_537770",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537770",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_169",
+      "old_names": [
+        "CreateTeamCommand::sub_537770"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_537790",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537790",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_170",
+      "old_names": [
+        "CreateTeamCommand::sub_537790"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_5377B0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5377b0",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_171",
+      "old_names": [
+        "CreateTeamCommand::sub_5377B0"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_5377D0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5377d0",
+      "size": 72,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_172",
+      "old_names": [
+        "CreateTeamCommand::sub_5377D0"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_537830",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537830",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_174",
+      "old_names": [
+        "CreateTeamCommand::sub_537830"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_537850",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537850",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_175",
+      "old_names": [
+        "CreateTeamCommand::sub_537850"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_537870",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537870",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_176",
+      "old_names": [
+        "CreateTeamCommand::sub_537870"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_537890",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537890",
+      "size": 72,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_177",
+      "old_names": [
+        "CreateTeamCommand::sub_537890"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_5378F0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5378f0",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_179",
+      "old_names": [
+        "CreateTeamCommand::sub_5378F0"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_537910",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537910",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_180",
+      "old_names": [
+        "CreateTeamCommand::sub_537910"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_537930",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537930",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_181",
+      "old_names": [
+        "CreateTeamCommand::sub_537930"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_537950",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537950",
+      "size": 72,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_182",
+      "old_names": [
+        "CreateTeamCommand::sub_537950"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_5379B0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5379b0",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_184",
+      "old_names": [
+        "CreateTeamCommand::sub_5379B0"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_5379D0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5379d0",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_185",
+      "old_names": [
+        "CreateTeamCommand::sub_5379D0"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_5379F0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5379f0",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_186",
+      "old_names": [
+        "CreateTeamCommand::sub_5379F0"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_537A10",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537a10",
+      "size": 59,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_187",
+      "old_names": [
+        "CreateTeamCommand::sub_537A10"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_537AF0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537af0",
+      "size": 67,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_192",
+      "old_names": [
+        "CreateTeamCommand::sub_537AF0"
+      ]
+    },
+    {
+      "hpp_name": "Game::MakeScreenshot",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537bc0",
+      "size": 524,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "PageUserCommandClass::Release",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537df0",
+      "size": 23,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "PageUserCommandClass::ddtor",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537e10",
+      "size": 23,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "PageUserCommandClass::Read",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537e30",
+      "size": 23,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "PageUserCommandClass::Do",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537e50",
+      "size": 17,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_537E90",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537e90",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_194",
+      "old_names": [
+        "CreateTeamCommand::sub_537E90"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_537EB0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537eb0",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_195",
+      "old_names": [
+        "CreateTeamCommand::sub_537EB0"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_537ED0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537ed0",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_196",
+      "old_names": [
+        "CreateTeamCommand::sub_537ED0"
+      ]
+    },
+    {
+      "hpp_name": "CreateTeamCommand::sub_537EF0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537ef0",
+      "size": 18,
+      "match_type": "via_history",
+      "resolved_to": "CreateTeamCommand::performAction_197",
+      "old_names": [
+        "CreateTeamCommand::sub_537EF0"
+      ]
+    },
+    {
+      "hpp_name": "DeleteCommandClass::Release",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537f30",
+      "size": 23,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "DeleteCommandClass::ddtor",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537f50",
+      "size": 23,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "DeleteCommandClass::Read",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537f70",
+      "size": 23,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "DeleteCommandClass::Undo",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537f90",
+      "size": 8,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "LightningStorm::Start",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x539eb0",
+      "size": 478,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "LightningStorm::End",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x53a090",
+      "size": 17,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "NukeFlash::IsActive",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x53a110",
+      "size": 15,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "NukeFlash::ProcessEffect",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x53a120",
+      "size": 15,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "LightningStorm::Strike",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x53a140",
+      "size": 436,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "LightningStorm::Strike2",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x53a300",
+      "size": 925,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "PsyDom::Fire",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x53b080",
+      "size": 877,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "PsyDom::IsActive",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x53b400",
+      "size": 11,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "ChronoScreen::IsActive",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x53bad0",
+      "size": 14,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "AbstractClass::COMStub_6",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5439f0",
+      "size": 29,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "TheatreClass::InitView",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x545000",
+      "size": 330,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "IsometricTileTypeClass::vt_entry_6C",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x549b50",
+      "size": 31,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "IsometricTileTypeClass::LoadTypeData",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x549c80",
+      "size": 225,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "IsometricTileTypeClass::SaveToINI",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x549d70",
+      "size": 29,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "IsometricTileTypeClass::GetClassIdentifier",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x549d90",
+      "size": 56,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "BitArray::TestBit",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x54a950",
+      "size": 50,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "JumpjetLocomotionClass::QueryInterface",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x54dc60",
+      "size": 93,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "LoadProgressMgr::GetInstance",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x552a40",
+      "size": 90,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "LoadProgressMgr::Destroy",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x552aa0",
+      "size": 40,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "LightSourceClass::ddtor",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x555080",
+      "size": 56,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "LightSourceClass::Write",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5550c0",
+      "size": 69,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "LightSourceClass::Seek",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x555110",
+      "size": 29,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "LoadOptions::AddRef",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x559d60",
+      "size": 209,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "LoadOptions::Release",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x559e40",
+      "size": 105,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "LoadOptions::ddtor",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x559eb0",
+      "size": 20,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "LoadOptions::Read",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x559ed0",
+      "size": 379,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "LoadOptions::Write",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x55a050",
+      "size": 23,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "LoadOptions::Seek",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x55a070",
+      "size": 23,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "LoadOptions::Open",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x55a090",
+      "size": 23,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "LoadOptions::Close",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x55a0b0",
+      "size": 23,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "StreamClass::ResetPosition",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x55a710",
+      "size": 19,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "Turret::GetTransform",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x55a730",
+      "size": 159,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "StreamClass::SetDirty",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x55a8f0",
+      "size": 17,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "StreamClass::ClearDirty",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x55a910",
+      "size": 17,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "StreamClass::GetDirty",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x55a930",
+      "size": 10,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "COM::AddRef",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x55a950",
+      "size": 30,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "COM::ReleaseRef",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x55a970",
+      "size": 55,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "LocomotionClass::QueryInterface",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x55a9b0",
+      "size": 164,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "SwizzleManager::SaveLoad",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x55aac0",
+      "size": 122,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "COMObject::ReturnZeroPos",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x55abd0",
+      "size": 16,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "COMObject::GetCoord3D",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x55aca0",
+      "size": 44,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "COMObject::GetSpecialValue",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x55ad10",
+      "size": 18,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "PingPongBuffer::GetWriteOffset",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x55af60",
+      "size": 73,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "SyncDelay::Start",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x55e160",
+      "size": 676,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "LayerClass::Pathfinding_Find",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x56dc20",
+      "size": 2966,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "Cliff::ProcessTransitions",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x579010",
+      "size": 771,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "LayerClass::DestroyCliff",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x581140",
+      "size": 3587,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "Pathfinding::CrossBridge",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x583180",
+      "size": 620,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "Pathfinding::SelectRegionPath",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5833f0",
+      "size": 476,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "Camera::UpdateTilt",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x58b600",
+      "size": 49,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "RandomMap::LoadInfo",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x597d60",
+      "size": 535,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "RandomMap::PlaceShoreObjects",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x59b740",
+      "size": 505,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "Pathfinding::ExpandNode",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5a5360",
+      "size": 1913,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "IPersistStream::SetField",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5b36e0",
+      "size": 18,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "Debug::Printf",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5bd1f0",
+      "size": 76,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "Movie::Play",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5bed40",
+      "size": 1083,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "Movie::PlayWrapper",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5bf260",
+      "size": 69,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "AsyncIO::Shutdown",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5bf450",
+      "size": 168,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "AbstractClass::sub_5C03D0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5c03d0",
+      "size": 177,
+      "match_type": "via_history",
+      "resolved_to": "AbstractClass::getPathDirection",
+      "old_names": [
+        "AbstractClass::sub_5C03D0"
+      ]
+    },
+    {
+      "hpp_name": "Memory::FreeConditional",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5c0e90",
+      "size": 30,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "SafeDelete::Conditional",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5c0eb0",
+      "size": 30,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "Memory::FreeConditional2",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5c0fa0",
+      "size": 30,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "MPCooperative::CheckReady",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5c21a0",
+      "size": 44,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "MPCooperative::sub_5C2DE0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5c2de0",
+      "size": 261,
+      "match_type": "via_history",
+      "resolved_to": "MPCooperative::selectTeam",
+      "old_names": [
+        "MPCooperative::sub_5C2DE0"
+      ]
+    },
+    {
+      "hpp_name": "MPCooperative::GetPlayerCount",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5c2ef0",
+      "size": 451,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "MPCooperative::GetMapData",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5c3220",
+      "size": 715,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "MPCooperative::QueryInterface",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5c4f10",
+      "size": 30,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "BigInt::ArrayArithmetic",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5c6fe0",
+      "size": 507,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "Megawealth::ProcessTick",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5c9430",
+      "size": 15,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "MPScore::DlgProc",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5c9b10",
+      "size": 1535,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "MPBattleClass::sub_5CACF0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5cacf0",
+      "size": 49,
+      "match_type": "via_history",
+      "resolved_to": "MPBattleClass::isValidMap",
+      "old_names": [
+        "MPBattleClass::sub_5CACF0"
+      ]
+    },
+    {
+      "hpp_name": "MPBattleClass::sub_5CAD30",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5cad30",
+      "size": 33,
+      "match_type": "via_history",
+      "resolved_to": "MPBattleClass::needsHouseSelection",
+      "old_names": [
+        "MPBattleClass::sub_5CAD30"
+      ]
+    },
+    {
+      "hpp_name": "MPBattleClass::sub_5CAD60",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5cad60",
+      "size": 44,
+      "match_type": "via_history",
+      "resolved_to": "MPBattleClass::validatePlayer",
+      "old_names": [
+        "MPBattleClass::sub_5CAD60"
+      ]
+    },
+    {
+      "hpp_name": "MPBattleClass::sub_5CAD90",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5cad90",
+      "size": 39,
+      "match_type": "via_history",
+      "resolved_to": "MPBattleClass::startGame",
+      "old_names": [
+        "MPBattleClass::sub_5CAD90"
+      ]
+    },
+    {
+      "hpp_name": "MPBattleClass::sub_5CADC0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5cadc0",
+      "size": 15,
+      "match_type": "via_history",
+      "resolved_to": "MPBattleClass::stopGame",
+      "old_names": [
+        "MPBattleClass::sub_5CADC0"
+      ]
+    },
+    {
+      "hpp_name": "MPBattleClass::sub_5CADD0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5cadd0",
+      "size": 18,
+      "match_type": "via_history",
+      "resolved_to": "MPBattleClass::areTeamChangesAllowed",
+      "old_names": [
+        "MPBattleClass::sub_5CADD0"
+      ]
+    },
+    {
+      "hpp_name": "MPBattleClass::sub_5CADF0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5cadf0",
+      "size": 26,
+      "match_type": "via_history",
+      "resolved_to": "MPBattleClass::isHouseAllyChangeAllowed",
+      "old_names": [
+        "MPBattleClass::sub_5CADF0"
+      ]
+    },
+    {
+      "hpp_name": "Performance::MeasureTicks",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5cafc0",
+      "size": 450,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "MPBattleClass::sub_5CB190",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5cb190",
+      "size": 40,
+      "match_type": "via_history",
+      "resolved_to": "MPBattleClass::onPlayerConnect",
+      "old_names": [
+        "MPBattleClass::sub_5CB190"
+      ]
+    },
+    {
+      "hpp_name": "MPBattleClass::sub_5CB1C0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5cb1c0",
+      "size": 19,
+      "match_type": "via_history",
+      "resolved_to": "MPBattleClass::onPlayerDisconnect",
+      "old_names": [
+        "MPBattleClass::sub_5CB1C0"
+      ]
+    },
+    {
+      "hpp_name": "MPBattleClass::sub_5CB1E0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5cb1e0",
+      "size": 19,
+      "match_type": "via_history",
+      "resolved_to": "MPBattleClass::getMaximumPlayers",
+      "old_names": [
+        "MPBattleClass::sub_5CB1E0"
+      ]
+    },
+    {
+      "hpp_name": "MPBattleClass::sub_5CB200",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5cb200",
+      "size": 19,
+      "match_type": "via_history",
+      "resolved_to": "MPBattleClass::getMinimumPlayers",
+      "old_names": [
+        "MPBattleClass::sub_5CB200"
+      ]
+    },
+    {
+      "hpp_name": "MPBattleClass::sub_5CB220",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5cb220",
+      "size": 19,
+      "match_type": "via_history",
+      "resolved_to": "MPBattleClass::getAlliesLimit",
+      "old_names": [
+        "MPBattleClass::sub_5CB220"
+      ]
+    },
+    {
+      "hpp_name": "MPBattleClass::sub_5CB260",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5cb260",
+      "size": 49,
+      "match_type": "via_history",
+      "resolved_to": "MPBattleClass::canAllyWith",
+      "old_names": [
+        "MPBattleClass::sub_5CB260"
+      ]
+    },
+    {
+      "hpp_name": "MPBattleClass::sub_5CB2D0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5cb2d0",
+      "size": 44,
+      "match_type": "via_history",
+      "resolved_to": "MPBattleClass::onGameBegin",
+      "old_names": [
+        "MPBattleClass::sub_5CB2D0"
+      ]
+    },
+    {
+      "hpp_name": "MPBattleClass::sub_5CB380",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5cb380",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "MPBattleClass::isAIAllowed",
+      "old_names": [
+        "MPBattleClass::sub_5CB380"
+      ]
+    },
+    {
+      "hpp_name": "UnholyAlliance::Read",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5cb3f0",
+      "size": 8,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "UnholyAlliance::Write",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5cb400",
+      "size": 36,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "UnholyAlliance::Seek",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5cb430",
+      "size": 8,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "UnholyAlliance::GetResult",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5cb440",
+      "size": 242,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "MPBattleClass::sub_5CB570",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5cb570",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "MPBattleClass::isTeamsAllowed",
+      "old_names": [
+        "MPBattleClass::sub_5CB570"
+      ]
+    },
+    {
+      "hpp_name": "MPBattleClass::sub_5CEDB0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5cedb0",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "MPBattleClass::firstValidMapIndex",
+      "old_names": [
+        "MPBattleClass::sub_5CEDB0"
+      ]
+    },
+    {
+      "hpp_name": "MPBattleClass::sub_5D1A80",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5d1a80",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "MPBattleClass::populateTeamDropdown",
+      "old_names": [
+        "MPBattleClass::sub_5D1A80"
+      ]
+    },
+    {
+      "hpp_name": "MPBattleClass::sub_5D2DE0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5d2de0",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "MPBattleClass::drawTeamDropdown",
+      "old_names": [
+        "MPBattleClass::sub_5D2DE0"
+      ]
+    },
+    {
+      "hpp_name": "MSFont::AddRef",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5d31d0",
+      "size": 124,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "MPBattleClass::sub_5D3470",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5d3470",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "MPBattleClass::populateTeamDropdownForPlayer",
+      "old_names": [
+        "MPBattleClass::sub_5D3470"
+      ]
+    },
+    {
+      "hpp_name": "MPBattleClass::sub_5D3810",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5d3810",
+      "size": 19,
+      "match_type": "via_history",
+      "resolved_to": "MPBattleClass::validateHouse",
+      "old_names": [
+        "MPBattleClass::sub_5D3810"
+      ]
+    },
+    {
+      "hpp_name": "MPBattleClass::sub_5D3830",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5d3830",
+      "size": 19,
+      "match_type": "via_history",
+      "resolved_to": "MPBattleClass::validateOwner",
+      "old_names": [
+        "MPBattleClass::sub_5D3830"
+      ]
+    },
+    {
+      "hpp_name": "MPBattleClass::sub_5D38F0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5d38f0",
+      "size": 33,
+      "match_type": "via_history",
+      "resolved_to": "MPBattleClass::validateColor",
+      "old_names": [
+        "MPBattleClass::sub_5D38F0"
+      ]
+    },
+    {
+      "hpp_name": "MPBattleClass::sub_5D3920",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5d3920",
+      "size": 44,
+      "match_type": "via_history",
+      "resolved_to": "MPBattleClass::validateStartPosition",
+      "old_names": [
+        "MPBattleClass::sub_5D3920"
+      ]
+    },
+    {
+      "hpp_name": "MPBattleClass::sub_5D3950",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5d3950",
+      "size": 39,
+      "match_type": "via_history",
+      "resolved_to": "MPBattleClass::isDefaultFix",
+      "old_names": [
+        "MPBattleClass::sub_5D3950"
+      ]
+    },
+    {
+      "hpp_name": "MPBattleClass::sub_5D3980",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5d3980",
+      "size": 15,
+      "match_type": "via_history",
+      "resolved_to": "MPBattleClass::isDefaultAI",
+      "old_names": [
+        "MPBattleClass::sub_5D3980"
+      ]
+    },
+    {
+      "hpp_name": "MPBattleClass::sub_5D3990",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5d3990",
+      "size": 18,
+      "match_type": "via_history",
+      "resolved_to": "MPBattleClass::randomHumanCountryIndex",
+      "old_names": [
+        "MPBattleClass::sub_5D3990"
+      ]
+    },
+    {
+      "hpp_name": "MPBattleClass::sub_5D39B0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5d39b0",
+      "size": 26,
+      "match_type": "via_history",
+      "resolved_to": "MPBattleClass::randomAICountryIndex",
+      "old_names": [
+        "MPBattleClass::sub_5D39B0"
+      ]
+    },
+    {
+      "hpp_name": "WideString::WordWrap",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5d4b20",
+      "size": 205,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "MPBattleClass::sub_5D4C30",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5d4c30",
+      "size": 23,
+      "match_type": "via_history",
+      "resolved_to": "MPBattleClass::onDialogCreated",
+      "old_names": [
+        "MPBattleClass::sub_5D4C30"
+      ]
+    },
+    {
+      "hpp_name": "MPBattleClass::sub_5D4C50",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5d4c50",
+      "size": 61,
+      "match_type": "via_history",
+      "resolved_to": "MPBattleClass::onDialogDestroyed",
+      "old_names": [
+        "MPBattleClass::sub_5D4C50"
+      ]
+    },
+    {
+      "hpp_name": "MPBattleClass::sub_5D4CD0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5d4cd0",
+      "size": 61,
+      "match_type": "via_history",
+      "resolved_to": "MPBattleClass::unfixAlliances",
+      "old_names": [
+        "MPBattleClass::sub_5D4CD0"
+      ]
+    },
+    {
+      "hpp_name": "Timer::DisableHighPrecision",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5d5880",
+      "size": 9,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "MPBattleClass::sub_5D58B0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5d58b0",
+      "size": 40,
+      "match_type": "via_history",
+      "resolved_to": "MPBattleClass::startingPositionsToHouseBaseCells",
+      "old_names": [
+        "MPBattleClass::sub_5D58B0"
+      ]
+    },
+    {
+      "hpp_name": "MPBattleClass::sub_5D58E0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5d58e0",
+      "size": 19,
+      "match_type": "via_history",
+      "resolved_to": "MPBattleClass::allyTeams",
+      "old_names": [
+        "MPBattleClass::sub_5D58E0"
+      ]
+    },
+    {
+      "hpp_name": "MPBattleClass::sub_5D5900",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5d5900",
+      "size": 19,
+      "match_type": "via_history",
+      "resolved_to": "MPBattleClass::isMegawealthAllowed",
+      "old_names": [
+        "MPBattleClass::sub_5D5900"
+      ]
+    },
+    {
+      "hpp_name": "MPBattleClass::sub_5D5920",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5d5920",
+      "size": 19,
+      "match_type": "via_history",
+      "resolved_to": "MPBattleClass::onAIJoined",
+      "old_names": [
+        "MPBattleClass::sub_5D5920"
+      ]
+    },
+    {
+      "hpp_name": "PlayerClass::AssignPlayerIndex",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5d62c0",
+      "size": 73,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "ListBox::FillEntries",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5d6450",
+      "size": 109,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "ListBox::Refresh",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5d64c0",
+      "size": 114,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "ListBox::AddEntries",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5d6690",
+      "size": 191,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "ObserverClass::FindStartingCell",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5d6890",
+      "size": 844,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "AI::CreateMCV",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5d7030",
+      "size": 181,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "MPBattleClass::MPBattleClass",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5d8170",
+      "size": 59,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "AbstractClass::sub_5D81F0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5d81f0",
+      "size": 59,
+      "match_type": "via_history",
+      "resolved_to": "AbstractClass::processRevealArea",
+      "old_names": [
+        "AbstractClass::sub_5D81F0"
+      ]
+    },
+    {
+      "hpp_name": "AbstractClass::sub_5D8230",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5d8230",
+      "size": 59,
+      "match_type": "via_history",
+      "resolved_to": "AbstractClass::computeRevealRadius",
+      "old_names": [
+        "AbstractClass::sub_5D8230"
+      ]
+    },
+    {
+      "hpp_name": "AbstractClass::sub_5D8270",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5d8270",
+      "size": 59,
+      "match_type": "via_history",
+      "resolved_to": "AbstractClass::applyRevealToCell",
+      "old_names": [
+        "AbstractClass::sub_5D8270"
+      ]
+    },
+    {
+      "hpp_name": "AbstractClass::sub_5D82B0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5d82b0",
+      "size": 62,
+      "match_type": "via_history",
+      "resolved_to": "AbstractClass::checkRevealCell",
+      "old_names": [
+        "AbstractClass::sub_5D82B0"
+      ]
+    },
+    {
+      "hpp_name": "PlayerClass::IsValidIndex",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5d8c90",
+      "size": 26,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "GameLobby::DlgProc",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5e1ca0",
+      "size": 1623,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "Settings::CheckString",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5e8760",
+      "size": 30,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "GameClass::InitDifficultyButtons",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5e8ae0",
+      "size": 93,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "Game::ResetFlags",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5e8b40",
+      "size": 23,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "GameOption::CheckDuplicate",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5e9560",
+      "size": 31,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "Game::ResetReadyStates",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5e9850",
+      "size": 156,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "Config::SaveObserverMode",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5ee1b0",
+      "size": 75,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "NullModem::TestConnection",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5f03b0",
+      "size": 727,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "Modem::CheckStatus",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5f0690",
+      "size": 1706,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "Modem::DetectAndConnect",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5f0d60",
+      "size": 1480,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "AppState::CallMethod",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5f3320",
+      "size": 19,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "String::NormalizeNewlines",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5f3350",
+      "size": 71,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "Struct::InitTriple256",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5f75e0",
+      "size": 36,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "GlobalInit::RegisterSingleton",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5f7640",
+      "size": 91,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "AbstractClass::SaveLoad_PrefixWrapper",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5f9950",
+      "size": 29,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "COMObject::GetSizeMaxWrapper",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5f9970",
+      "size": 24,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "HotkeyOptions::DlgProc",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x5fb320",
+      "size": 3017,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "GameScreen::DlgProc",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x60d540",
+      "size": 7636,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "ListBox::EditSubclassProc",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x614190",
+      "size": 2075,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "EditControl::WndProc",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x614b30",
+      "size": 2148,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "Checkbox::WndProc",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x6163a0",
+      "size": 1393,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "ComboBoxDropDown::WndProc",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x617250",
+      "size": 6500,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "Scrollbar::DlgProc",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x61c690",
+      "size": 3905,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "GroupLabel::WndProc",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x61e700",
+      "size": 1428,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "ParasiteClass::LoadParasite",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x6295b0",
+      "size": 252,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "ParasiteClass::SaveParasite",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x6296b0",
+      "size": 23,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "ParasiteClass::ddtor",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x6296d0",
+      "size": 56,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "C07EFB9C::ddtor",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x6301a0",
+      "size": 56,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "PlanningNodeClass::CleanupAll",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x6370b0",
+      "size": 446,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "C07F0188::ddtor",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x645620",
+      "size": 56,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "Math::QuaternionSlerp",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x646590",
+      "size": 409,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "Conditions::CheckResult",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x653810",
+      "size": 23,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "Conditions::CheckResult3",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x653830",
+      "size": 28,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "Diplomacy::DlgProc",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x657da0",
+      "size": 1413,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "RadSiteClass::SaveLoad_Prefix",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x65b3d0",
+      "size": 118,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "RadSiteClass::SaveLoad_Prefix_0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x65b450",
+      "size": 23,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "RadSiteClass::ddtor",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x65b470",
+      "size": 56,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "RadSiteClass::Radiate",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x65b9c0",
+      "size": 395,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "RadSiteClass::Deactivate",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x65bb50",
+      "size": 423,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "RadSiteClass::DecreaseRadiation",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x65bd00",
+      "size": 390,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "SideClass::LoadAllFromINI",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x679a10",
+      "size": 679,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "FontClass::CreateGlyphColor",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x68c3b0",
+      "size": 331,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "ScoreScreen::LoadAudio",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x690640",
+      "size": 350,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "ScoreFontClass::AddRef",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x6907e0",
+      "size": 107,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "ScoreAnimClass::AnimateText",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x690d60",
+      "size": 388,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "ScoreScreenClass::ProcessFrame",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x691970",
+      "size": 440,
+      "match_type": "direct",
+      "old_names": []
+    }
+  ],
+  "address_matches": [
+    {
+      "hpp_name": "::sub_410100",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x410100",
+      "json_name": "AbstractClass::initVtableBase",
+      "size": 15,
+      "match_type": "address"
+    },
+    {
+      "hpp_name": "::sub_501400",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x501400",
+      "json_name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_5",
+      "size": 319,
+      "match_type": "address"
+    },
+    {
+      "hpp_name": "::sub_502550",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x502550",
+      "json_name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::StubReturnNullPointer_0",
+      "size": 147,
+      "match_type": "address"
+    },
+    {
+      "hpp_name": "::sub_536610",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536610",
+      "json_name": "CreateTeamCommand::performAction_30",
+      "size": 129,
+      "match_type": "address"
+    },
+    {
+      "hpp_name": "::sub_536710",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536710",
+      "json_name": "CreateTeamCommand::performAction_35",
+      "size": 22,
+      "match_type": "address"
+    },
+    {
+      "hpp_name": "::sub_536740",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536740",
+      "json_name": "CreateTeamCommand::performAction_37",
+      "size": 15,
+      "match_type": "address"
+    },
+    {
+      "hpp_name": "::sub_536750",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536750",
+      "json_name": "CreateTeamCommand::performAction_38",
+      "size": 29,
+      "match_type": "address"
+    },
+    {
+      "hpp_name": "::sub_536780",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536780",
+      "json_name": "CreateTeamCommand::performAction_40",
+      "size": 23,
+      "match_type": "address"
+    },
+    {
+      "hpp_name": "::sub_536820",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536820",
+      "json_name": "CreateTeamCommand::performAction_46",
+      "size": 23,
+      "match_type": "address"
+    },
+    {
+      "hpp_name": "::sub_536840",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536840",
+      "json_name": "CreateTeamCommand::performAction_47",
+      "size": 23,
+      "match_type": "address"
+    },
+    {
+      "hpp_name": "::sub_536860",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536860",
+      "json_name": "CreateTeamCommand::performAction_48",
+      "size": 23,
+      "match_type": "address"
+    },
+    {
+      "hpp_name": "::sub_536880",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536880",
+      "json_name": "CreateTeamCommand::performAction_49",
+      "size": 13,
+      "match_type": "address"
+    },
+    {
+      "hpp_name": "::sub_536900",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536900",
+      "json_name": "CreateTeamCommand::performAction_55",
+      "size": 23,
+      "match_type": "address"
+    },
+    {
+      "hpp_name": "::sub_536920",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536920",
+      "json_name": "CreateTeamCommand::performAction_56",
+      "size": 23,
+      "match_type": "address"
+    },
+    {
+      "hpp_name": "::sub_536940",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536940",
+      "json_name": "CreateTeamCommand::performAction_57",
+      "size": 13,
+      "match_type": "address"
+    },
+    {
+      "hpp_name": "::sub_536950",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536950",
+      "json_name": "CreateTeamCommand::performAction_58",
+      "size": 20,
+      "match_type": "address"
+    },
+    {
+      "hpp_name": "::sub_536980",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x536980",
+      "json_name": "CreateTeamCommand::performAction_60",
+      "size": 23,
+      "match_type": "address"
+    },
+    {
+      "hpp_name": "::sub_537000",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537000",
+      "json_name": "CreateTeamCommand::performAction_117",
+      "size": 23,
+      "match_type": "address"
+    },
+    {
+      "hpp_name": "::sub_537020",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537020",
+      "json_name": "CreateTeamCommand::performAction_118",
+      "size": 15,
+      "match_type": "address"
+    },
+    {
+      "hpp_name": "::sub_537040",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537040",
+      "json_name": "CreateTeamCommand::performAction_120",
+      "size": 23,
+      "match_type": "address"
+    },
+    {
+      "hpp_name": "::sub_537060",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537060",
+      "json_name": "CreateTeamCommand::performAction_121",
+      "size": 23,
+      "match_type": "address"
+    },
+    {
+      "hpp_name": "::sub_537080",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537080",
+      "json_name": "CreateTeamCommand::performAction_122",
+      "size": 23,
+      "match_type": "address"
+    },
+    {
+      "hpp_name": "::sub_537110",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537110",
+      "json_name": "CreateTeamCommand::performAction_127",
+      "size": 23,
+      "match_type": "address"
+    },
+    {
+      "hpp_name": "::sub_537130",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537130",
+      "json_name": "CreateTeamCommand::performAction_128",
+      "size": 8,
+      "match_type": "address"
+    },
+    {
+      "hpp_name": "::sub_537150",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537150",
+      "json_name": "CreateTeamCommand::performAction_130",
+      "size": 23,
+      "match_type": "address"
+    },
+    {
+      "hpp_name": "::sub_537170",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537170",
+      "json_name": "CreateTeamCommand::performAction_131",
+      "size": 23,
+      "match_type": "address"
+    },
+    {
+      "hpp_name": "::sub_537190",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537190",
+      "json_name": "CreateTeamCommand::performAction_132",
+      "size": 23,
+      "match_type": "address"
+    },
+    {
+      "hpp_name": "::sub_537200",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537200",
+      "json_name": "CreateTeamCommand::performAction_136",
+      "size": 23,
+      "match_type": "address"
+    },
+    {
+      "hpp_name": "::sub_537220",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537220",
+      "json_name": "CreateTeamCommand::performAction_137",
+      "size": 23,
+      "match_type": "address"
+    },
+    {
+      "hpp_name": "::sub_537240",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537240",
+      "json_name": "CreateTeamCommand::performAction_138",
+      "size": 17,
+      "match_type": "address"
+    },
+    {
+      "hpp_name": "::sub_537270",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537270",
+      "json_name": "CreateTeamCommand::performAction_140",
+      "size": 23,
+      "match_type": "address"
+    },
+    {
+      "hpp_name": "::sub_537290",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537290",
+      "json_name": "CreateTeamCommand::performAction_141",
+      "size": 23,
+      "match_type": "address"
+    },
+    {
+      "hpp_name": "::sub_537310",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537310",
+      "json_name": "CreateTeamCommand::performAction_146",
+      "size": 23,
+      "match_type": "address"
+    },
+    {
+      "hpp_name": "::sub_537330",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537330",
+      "json_name": "CreateTeamCommand::performAction_147",
+      "size": 23,
+      "match_type": "address"
+    },
+    {
+      "hpp_name": "::sub_537350",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537350",
+      "json_name": "CreateTeamCommand::performAction_148",
+      "size": 126,
+      "match_type": "address"
+    },
+    {
+      "hpp_name": "::sub_537400",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537400",
+      "json_name": "CreateTeamCommand::performAction_151",
+      "size": 23,
+      "match_type": "address"
+    },
+    {
+      "hpp_name": "::sub_537420",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537420",
+      "json_name": "CreateTeamCommand::performAction_152",
+      "size": 23,
+      "match_type": "address"
+    },
+    {
+      "hpp_name": "::sub_537440",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537440",
+      "json_name": "CreateTeamCommand::performAction_153",
+      "size": 126,
+      "match_type": "address"
+    },
+    {
+      "hpp_name": "::sub_537510",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537510",
+      "json_name": "CreateTeamCommand::performAction_157",
+      "size": 23,
+      "match_type": "address"
+    },
+    {
+      "hpp_name": "::sub_537530",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537530",
+      "json_name": "CreateTeamCommand::performAction_158",
+      "size": 126,
+      "match_type": "address"
+    },
+    {
+      "hpp_name": "::sub_537600",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537600",
+      "json_name": "CreateTeamCommand::performAction_162",
+      "size": 23,
+      "match_type": "address"
+    },
+    {
+      "hpp_name": "::sub_537710",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537710",
+      "json_name": "CreateTeamCommand::performAction_167",
+      "size": 72,
+      "match_type": "address"
+    },
+    {
+      "hpp_name": "::sub_537770",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537770",
+      "json_name": "CreateTeamCommand::performAction_169",
+      "size": 23,
+      "match_type": "address"
+    },
+    {
+      "hpp_name": "::sub_537790",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537790",
+      "json_name": "CreateTeamCommand::performAction_170",
+      "size": 23,
+      "match_type": "address"
+    },
+    {
+      "hpp_name": "::sub_537830",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537830",
+      "json_name": "CreateTeamCommand::performAction_174",
+      "size": 23,
+      "match_type": "address"
+    },
+    {
+      "hpp_name": "::sub_537850",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537850",
+      "json_name": "CreateTeamCommand::performAction_175",
+      "size": 23,
+      "match_type": "address"
+    },
+    {
+      "hpp_name": "::sub_537870",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537870",
+      "json_name": "CreateTeamCommand::performAction_176",
+      "size": 23,
+      "match_type": "address"
+    },
+    {
+      "hpp_name": "::sub_537890",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537890",
+      "json_name": "CreateTeamCommand::performAction_177",
+      "size": 72,
+      "match_type": "address"
+    },
+    {
+      "hpp_name": "::sub_537910",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537910",
+      "json_name": "CreateTeamCommand::performAction_180",
+      "size": 23,
+      "match_type": "address"
+    },
+    {
+      "hpp_name": "::sub_537930",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537930",
+      "json_name": "CreateTeamCommand::performAction_181",
+      "size": 23,
+      "match_type": "address"
+    },
+    {
+      "hpp_name": "::sub_537950",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x537950",
+      "json_name": "CreateTeamCommand::performAction_182",
+      "size": 72,
+      "match_type": "address"
+    },
+    {
+      "hpp_name": "::sub_516320",
+      "file": "src\\misc\\_funcs.hpp",
+      "address": "0x516320",
+      "json_name": "JumpjetLocomotionClass::HasScoreDisplayChanged_516320",
+      "size": 77,
+      "match_type": "address"
+    },
+    {
+      "hpp_name": "::sub_516370",
+      "file": "src\\misc\\_funcs.hpp",
+      "address": "0x516370",
+      "json_name": "JumpjetLocomotionClass::UpdateFacingDirection_0",
+      "size": 34,
+      "match_type": "address"
+    },
+    {
+      "hpp_name": "::sub_517100",
+      "file": "src\\misc\\_funcs.hpp",
+      "address": "0x517100",
+      "json_name": "JumpjetLocomotionClass::SmallStub_517100",
+      "size": 8,
+      "match_type": "address"
+    },
+    {
+      "hpp_name": "::sub_517210",
+      "file": "src\\misc\\_funcs.hpp",
+      "address": "0x517210",
+      "json_name": "JumpjetLocomotionClass::IsPositionWithinThreshold",
+      "size": 153,
+      "match_type": "address"
+    },
+    {
+      "hpp_name": "::sub_663460",
+      "file": "src\\misc\\_funcs.hpp",
+      "address": "0x663460",
+      "json_name": "JumpjetLocomotionClass::SmallStub_663460",
+      "size": 8,
+      "match_type": "address"
+    },
+    {
+      "hpp_name": "::sub_718080",
+      "file": "src\\misc\\_funcs.hpp",
+      "address": "0x718080",
+      "json_name": "JumpjetLocomotionClass::ShortFunc_718080",
+      "size": 14,
+      "match_type": "address"
+    },
+    {
+      "hpp_name": "::sub_718230",
+      "file": "src\\misc\\_funcs.hpp",
+      "address": "0x718230",
+      "json_name": "JumpjetLocomotionClass::ResetMovementState",
+      "size": 45,
+      "match_type": "address"
+    }
+  ],
+  "sample_direct": [
+    {
+      "hpp_name": "IDXContainer::LoadSample",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4016f0",
+      "size": 457,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "InputManager_ProcessEvents::AddRef",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x40d230",
+      "size": 8,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "InputManager_ProcessEvents::Release",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x40d240",
+      "size": 8,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "Math::InitDegToRad",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x40ffff",
+      "size": 36,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "INoticeSink::Dispatch",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x410210",
+      "size": 16,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "AbstractClass::GetVtable3",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x410220",
+      "size": 10,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "AbstractClass::GenerateUniqueID",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x410230",
+      "size": 37,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "AbstractClass::SaveLoad_Prefix",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x410320",
+      "size": 87,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "AbstractClass::SaveLoad_Prefix_0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x410380",
+      "size": 90,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "IRTTITypeInfo::QueryInterface",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4105e0",
+      "size": 10,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "INoticeSource::Dispatch",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4105f0",
+      "size": 10,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "Slider::CalcPosition",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x412a40",
+      "size": 116,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "AbstractClass::GetField9",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x417fd0",
+      "size": 9,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "AirstrikeClass::Write",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x41d6f0",
+      "size": 143,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "AirstrikeClass::Seek",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x41d780",
+      "size": 23,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "AirstrikeClass::ddtor",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x41d7a0",
+      "size": 56,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "AITriggerTypeClass::GetClassIdentifier",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x41e500",
+      "size": 56,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "AITriggerTypeClass::LoadTypeData",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x41e540",
+      "size": 120,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "AITriggerTypeClass::SaveToINI",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x41e5c0",
+      "size": 29,
+      "match_type": "direct",
+      "old_names": []
+    },
+    {
+      "hpp_name": "AITriggerTypeClass::IronCurtainCharged",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x41f0d0",
+      "size": 171,
+      "match_type": "direct",
+      "old_names": []
+    }
+  ],
+  "sample_history": [
+    {
+      "hpp_name": "AbstractClass::sub_410100",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x410100",
+      "size": 15,
+      "match_type": "via_history",
+      "resolved_to": "AbstractClass::initVtableBase",
+      "old_names": [
+        "AbstractClass::sub_410100"
+      ]
+    },
+    {
+      "hpp_name": "BaseClass::sub_42F070",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x42f070",
+      "size": 257,
+      "match_type": "via_history",
+      "resolved_to": "BaseClass::LoadArrayFields",
+      "old_names": [
+        "BaseClass::sub_42F070"
+      ]
+    },
+    {
+      "hpp_name": "AbstractClass::sub_464A70",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x464a70",
+      "size": 74,
+      "match_type": "via_history",
+      "resolved_to": "AbstractClass::queryInterface",
+      "old_names": [
+        "AbstractClass::sub_464A70"
+      ]
+    },
+    {
+      "hpp_name": "VectorClass_ptr_BulletClass::sub_46B990",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x46b990",
+      "size": 10,
+      "match_type": "via_history",
+      "resolved_to": "VectorClass_ptr_BulletClass::GetItem",
+      "old_names": [
+        "VectorClass_ptr_BulletClass::sub_46B990"
+      ]
+    },
+    {
+      "hpp_name": "VectorClass_ptr_BulletClass::sub_46B9A0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x46b9a0",
+      "size": 10,
+      "match_type": "via_history",
+      "resolved_to": "VectorClass_ptr_BulletClass::GetItem_0",
+      "old_names": [
+        "VectorClass_ptr_BulletClass::sub_46B9A0"
+      ]
+    },
+    {
+      "hpp_name": "AbstractClass::sub_487E50",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x487e50",
+      "size": 8,
+      "match_type": "via_history",
+      "resolved_to": "AbstractClass::compareType",
+      "old_names": [
+        "AbstractClass::sub_487E50"
+      ]
+    },
+    {
+      "hpp_name": "CStreamClass::sub_4A2A20",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4a2a20",
+      "size": 129,
+      "match_type": "via_history",
+      "resolved_to": "CStreamClass::StubReturnNullPointer",
+      "old_names": [
+        "CStreamClass::sub_4A2A20"
+      ]
+    },
+    {
+      "hpp_name": "CStreamClass::sub_4A2AB0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4a2ab0",
+      "size": 167,
+      "match_type": "via_history",
+      "resolved_to": "CStreamClass::StreamRead",
+      "old_names": [
+        "CStreamClass::sub_4A2AB0"
+      ]
+    },
+    {
+      "hpp_name": "CStreamClass::sub_4A3220",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4a3220",
+      "size": 10,
+      "match_type": "via_history",
+      "resolved_to": "CStreamClass::IStreamQueryInterface",
+      "old_names": [
+        "CStreamClass::sub_4A3220"
+      ]
+    },
+    {
+      "hpp_name": "CStreamClass::sub_4A3230",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4a3230",
+      "size": 10,
+      "match_type": "via_history",
+      "resolved_to": "CStreamClass::IStreamAddRef",
+      "old_names": [
+        "CStreamClass::sub_4A3230"
+      ]
+    },
+    {
+      "hpp_name": "CStreamClass::sub_4A3240",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4a3240",
+      "size": 10,
+      "match_type": "via_history",
+      "resolved_to": "CStreamClass::IStreamRelease",
+      "old_names": [
+        "CStreamClass::sub_4A3240"
+      ]
+    },
+    {
+      "hpp_name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6910",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4f6910",
+      "size": 30,
+      "match_type": "via_history",
+      "resolved_to": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItemIndex",
+      "old_names": [
+        "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6910"
+      ]
+    },
+    {
+      "hpp_name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6950",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4f6950",
+      "size": 50,
+      "match_type": "via_history",
+      "resolved_to": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::FindItemIndex",
+      "old_names": [
+        "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6950"
+      ]
+    },
+    {
+      "hpp_name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6990",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4f6990",
+      "size": 58,
+      "match_type": "via_history",
+      "resolved_to": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::FindItemIndex_0",
+      "old_names": [
+        "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6990"
+      ]
+    },
+    {
+      "hpp_name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F69D0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4f69d0",
+      "size": 35,
+      "match_type": "via_history",
+      "resolved_to": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::Destroy",
+      "old_names": [
+        "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F69D0"
+      ]
+    },
+    {
+      "hpp_name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6A00",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4f6a00",
+      "size": 13,
+      "match_type": "via_history",
+      "resolved_to": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem",
+      "old_names": [
+        "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6A00"
+      ]
+    },
+    {
+      "hpp_name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6A10",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4f6a10",
+      "size": 13,
+      "match_type": "via_history",
+      "resolved_to": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_0",
+      "old_names": [
+        "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6A10"
+      ]
+    },
+    {
+      "hpp_name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6A20",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4f6a20",
+      "size": 88,
+      "match_type": "via_history",
+      "resolved_to": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity",
+      "old_names": [
+        "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6A20"
+      ]
+    },
+    {
+      "hpp_name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6A80",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4f6a80",
+      "size": 88,
+      "match_type": "via_history",
+      "resolved_to": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_0",
+      "old_names": [
+        "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6A80"
+      ]
+    },
+    {
+      "hpp_name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6AE0",
+      "file": "src\\core\\_funcs.hpp",
+      "address": "0x4f6ae0",
+      "size": 107,
+      "match_type": "via_history",
+      "resolved_to": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_1",
+      "old_names": [
+        "VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6AE0"
+      ]
+    }
+  ]
+}

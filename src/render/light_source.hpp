@@ -31,16 +31,16 @@ public:
     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override;
 
     virtual HRESULT __stdcall Load(IStream* stream) override;
-    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
+    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     virtual ~LightSourceClass() override = default;  // 0x555080
 
-    virtual AbstractType __stdcall whatAmI() const override;
+    virtual AbstractType __stdcall whatAmI() const override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual int objectSize() const override;
 
     void Activate(uint32_t zero = 0);
     void Deactivate(uint32_t zero = 0);
-    void ChangeLevels(int intensity, const TintStruct& tint, int8_t mode);
+    void ChangeLevels(int intensity, const TintStruct& tint, int8_t mode); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     int32_t        LightIntensity;
     TintStruct     LightTint;

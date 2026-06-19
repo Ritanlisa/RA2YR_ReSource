@@ -54,10 +54,10 @@ struct DDrawContext {
 };
 
 // IDA: DDrawInitialize @ 0x4A42F0
-int DDrawInitialize(int a1, DWORD width, DWORD height, DWORD bpp);
+int DDrawInitialize(int a1, DWORD width, DWORD height, DWORD bpp); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 bool DDrawInit(HWND hwnd, int width, int height, bool windowed);  // 0x4A3640
-void DDrawShutdown();
-void DDrawFlip();
+void DDrawShutdown(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+void DDrawFlip(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 DDrawContext* DDrawGetContext();
 
 extern bool CmdLine_NoCD;  // 0x89E410

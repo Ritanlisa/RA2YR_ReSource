@@ -1,0 +1,5180 @@
+[
+  {
+    "file": "core\\checksummer.hpp",
+    "line": 29,
+    "signature": "Checksummer() noexcept = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_ctor, no_callgraph_match"
+  },
+  {
+    "file": "core\\coordinate.hpp",
+    "line": 11,
+    "signature": "inline CoordStruct Cell2Coord(const CellStruct& cell, int z = 0) noexcept {",
+    "annotation": "// IDA: UNMATCHED \u2014 inline_likely_inlined, no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\coordinate.hpp",
+    "line": 20,
+    "signature": "inline CellStruct Coord2Cell(const CoordStruct& crd) noexcept {",
+    "annotation": "// IDA: UNMATCHED \u2014 inline_likely_inlined, no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\coordinate.hpp",
+    "line": 28,
+    "signature": "inline int Distance(const CoordStruct& a, const CoordStruct& b) noexcept {",
+    "annotation": "// IDA: UNMATCHED \u2014 inline_likely_inlined, no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\coordinate.hpp",
+    "line": 52,
+    "signature": "uint8_t Direction8(const CoordStruct& from, const CoordStruct& to) noexcept;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\coordinate.hpp",
+    "line": 53,
+    "signature": "uint8_t Direction32(const CoordStruct& from, const CoordStruct& to) noexcept;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\coordinate.hpp",
+    "line": 55,
+    "signature": "CoordStruct CoordMove(const CoordStruct& start, uint8_t dir32, uint16_t distance) noexcept;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\coordinate.hpp",
+    "line": 57,
+    "signature": "CellStruct AdjacentCell(const CellStruct& cell, uint8_t facing8) noexcept;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\ddraw_init.hpp",
+    "line": 57,
+    "signature": "int DDrawInitialize(int a1, DWORD width, DWORD height, DWORD bpp);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\ddraw_init.hpp",
+    "line": 59,
+    "signature": "void DDrawShutdown();",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\ddraw_init.hpp",
+    "line": 60,
+    "signature": "void DDrawFlip();",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\enums.hpp",
+    "line": 94,
+    "signature": "constexpr AbstractFlags operator|(AbstractFlags a, AbstractFlags b) noexcept {",
+    "annotation": "// IDA: UNMATCHED \u2014 constexpr_no_runtime, no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\enums.hpp",
+    "line": 100,
+    "signature": "constexpr AbstractFlags operator&(AbstractFlags a, AbstractFlags b) noexcept {",
+    "annotation": "// IDA: UNMATCHED \u2014 constexpr_no_runtime, no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\enums.hpp",
+    "line": 106,
+    "signature": "constexpr AbstractFlags operator~(AbstractFlags a) noexcept {",
+    "annotation": "// IDA: UNMATCHED \u2014 constexpr_no_runtime, no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\enums.hpp",
+    "line": 111,
+    "signature": "constexpr AbstractFlags& operator|=(AbstractFlags& a, AbstractFlags b) noexcept {",
+    "annotation": "// IDA: UNMATCHED \u2014 constexpr_no_runtime, no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\enums.hpp",
+    "line": 117,
+    "signature": "constexpr AbstractFlags& operator&=(AbstractFlags& a, AbstractFlags b) noexcept {",
+    "annotation": "// IDA: UNMATCHED \u2014 constexpr_no_runtime, no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\enums.hpp",
+    "line": 512,
+    "signature": "constexpr SpotlightFlags operator|(SpotlightFlags a, SpotlightFlags b) noexcept {",
+    "annotation": "// IDA: UNMATCHED \u2014 constexpr_no_runtime, no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\enums.hpp",
+    "line": 518,
+    "signature": "constexpr SpotlightFlags operator&(SpotlightFlags a, SpotlightFlags b) noexcept {",
+    "annotation": "// IDA: UNMATCHED \u2014 constexpr_no_runtime, no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\enums.hpp",
+    "line": 524,
+    "signature": "constexpr SpotlightFlags operator~(SpotlightFlags a) noexcept {",
+    "annotation": "// IDA: UNMATCHED \u2014 constexpr_no_runtime, no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\enums.hpp",
+    "line": 529,
+    "signature": "constexpr SpotlightFlags& operator|=(SpotlightFlags& a, SpotlightFlags b) noexcept {",
+    "annotation": "// IDA: UNMATCHED \u2014 constexpr_no_runtime, no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\enums.hpp",
+    "line": 535,
+    "signature": "constexpr SpotlightFlags& operator&=(SpotlightFlags& a, SpotlightFlags b) noexcept {",
+    "annotation": "// IDA: UNMATCHED \u2014 constexpr_no_runtime, no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\enums.hpp",
+    "line": 1232,
+    "signature": "constexpr SoundType operator|(SoundType a, SoundType b) noexcept {",
+    "annotation": "// IDA: UNMATCHED \u2014 constexpr_no_runtime, no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\enums.hpp",
+    "line": 1238,
+    "signature": "constexpr SoundType operator&(SoundType a, SoundType b) noexcept {",
+    "annotation": "// IDA: UNMATCHED \u2014 constexpr_no_runtime, no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\enums.hpp",
+    "line": 1244,
+    "signature": "constexpr SoundType operator~(SoundType a) noexcept {",
+    "annotation": "// IDA: UNMATCHED \u2014 constexpr_no_runtime, no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\enums.hpp",
+    "line": 1249,
+    "signature": "constexpr SoundType& operator|=(SoundType& a, SoundType b) noexcept {",
+    "annotation": "// IDA: UNMATCHED \u2014 constexpr_no_runtime, no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\enums.hpp",
+    "line": 1255,
+    "signature": "constexpr SoundType& operator&=(SoundType& a, SoundType b) noexcept {",
+    "annotation": "// IDA: UNMATCHED \u2014 constexpr_no_runtime, no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\enums.hpp",
+    "line": 1274,
+    "signature": "constexpr SoundControl operator|(SoundControl a, SoundControl b) noexcept {",
+    "annotation": "// IDA: UNMATCHED \u2014 constexpr_no_runtime, no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\enums.hpp",
+    "line": 1280,
+    "signature": "constexpr SoundControl operator&(SoundControl a, SoundControl b) noexcept {",
+    "annotation": "// IDA: UNMATCHED \u2014 constexpr_no_runtime, no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\enums.hpp",
+    "line": 1286,
+    "signature": "constexpr SoundControl operator~(SoundControl a) noexcept {",
+    "annotation": "// IDA: UNMATCHED \u2014 constexpr_no_runtime, no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\enums.hpp",
+    "line": 1291,
+    "signature": "constexpr SoundControl& operator|=(SoundControl& a, SoundControl b) noexcept {",
+    "annotation": "// IDA: UNMATCHED \u2014 constexpr_no_runtime, no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\enums.hpp",
+    "line": 1297,
+    "signature": "constexpr SoundControl& operator&=(SoundControl& a, SoundControl b) noexcept {",
+    "annotation": "// IDA: UNMATCHED \u2014 constexpr_no_runtime, no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\enums.hpp",
+    "line": 1364,
+    "signature": "constexpr TargetFlags operator|(TargetFlags a, TargetFlags b) noexcept {",
+    "annotation": "// IDA: UNMATCHED \u2014 constexpr_no_runtime, no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\enums.hpp",
+    "line": 1370,
+    "signature": "constexpr TargetFlags operator&(TargetFlags a, TargetFlags b) noexcept {",
+    "annotation": "// IDA: UNMATCHED \u2014 constexpr_no_runtime, no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\enums.hpp",
+    "line": 1376,
+    "signature": "constexpr TargetFlags operator~(TargetFlags a) noexcept {",
+    "annotation": "// IDA: UNMATCHED \u2014 constexpr_no_runtime, no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\enums.hpp",
+    "line": 1381,
+    "signature": "constexpr TargetFlags& operator|=(TargetFlags& a, TargetFlags b) noexcept {",
+    "annotation": "// IDA: UNMATCHED \u2014 constexpr_no_runtime, no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\enums.hpp",
+    "line": 1387,
+    "signature": "constexpr TargetFlags& operator&=(TargetFlags& a, TargetFlags b) noexcept {",
+    "annotation": "// IDA: UNMATCHED \u2014 constexpr_no_runtime, no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\enums.hpp",
+    "line": 1418,
+    "signature": "constexpr BlitterFlags operator|(BlitterFlags a, BlitterFlags b) noexcept {",
+    "annotation": "// IDA: UNMATCHED \u2014 constexpr_no_runtime, no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\enums.hpp",
+    "line": 1424,
+    "signature": "constexpr BlitterFlags operator&(BlitterFlags a, BlitterFlags b) noexcept {",
+    "annotation": "// IDA: UNMATCHED \u2014 constexpr_no_runtime, no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\enums.hpp",
+    "line": 1430,
+    "signature": "constexpr BlitterFlags operator~(BlitterFlags a) noexcept {",
+    "annotation": "// IDA: UNMATCHED \u2014 constexpr_no_runtime, no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\enums.hpp",
+    "line": 1435,
+    "signature": "constexpr BlitterFlags& operator|=(BlitterFlags& a, BlitterFlags b) noexcept {",
+    "annotation": "// IDA: UNMATCHED \u2014 constexpr_no_runtime, no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\enums.hpp",
+    "line": 1441,
+    "signature": "constexpr BlitterFlags& operator&=(BlitterFlags& a, BlitterFlags b) noexcept {",
+    "annotation": "// IDA: UNMATCHED \u2014 constexpr_no_runtime, no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\enums.hpp",
+    "line": 1459,
+    "signature": "constexpr MouseEvent operator|(MouseEvent a, MouseEvent b) noexcept {",
+    "annotation": "// IDA: UNMATCHED \u2014 constexpr_no_runtime, no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\enums.hpp",
+    "line": 1465,
+    "signature": "constexpr MouseEvent operator&(MouseEvent a, MouseEvent b) noexcept {",
+    "annotation": "// IDA: UNMATCHED \u2014 constexpr_no_runtime, no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\enums.hpp",
+    "line": 1471,
+    "signature": "constexpr MouseEvent operator~(MouseEvent a) noexcept {",
+    "annotation": "// IDA: UNMATCHED \u2014 constexpr_no_runtime, no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\enums.hpp",
+    "line": 1476,
+    "signature": "constexpr MouseEvent& operator|=(MouseEvent& a, MouseEvent b) noexcept {",
+    "annotation": "// IDA: UNMATCHED \u2014 constexpr_no_runtime, no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\enums.hpp",
+    "line": 1482,
+    "signature": "constexpr MouseEvent& operator&=(MouseEvent& a, MouseEvent b) noexcept {",
+    "annotation": "// IDA: UNMATCHED \u2014 constexpr_no_runtime, no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\game_loop.hpp",
+    "line": 10,
+    "signature": "bool SpawnModeEnter();",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\game_loop.hpp",
+    "line": 13,
+    "signature": "bool GameLoopInit(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\game_loop.hpp",
+    "line": 18,
+    "signature": "bool TranslateMessageDispatch(MSG* msg);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\hash_table.hpp",
+    "line": 28,
+    "signature": "Entry() : next(nullptr), hash(0) {}",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\hash_table.hpp",
+    "line": 30,
+    "signature": ": key(k), value(v), next(nullptr), hash(h) {}",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\hash_table.hpp",
+    "line": 35,
+    "signature": "m_GrowThreshold(0), m_Sorted(false), m_LastFound(nullptr) {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\hash_table.hpp",
+    "line": 56,
+    "signature": "Entry* entry = new Entry(key, value, h);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\hash_table.hpp",
+    "line": 314,
+    "signature": "Entry** GetBuckets() { return m_Buckets; }",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\hash_table.hpp",
+    "line": 319,
+    "signature": "void RebuildTo(uint32_t new_capacity) {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\hash_table.hpp",
+    "line": 391,
+    "signature": "static bool CompareStringKey(const K& key, const char* str) {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\hash_table.hpp",
+    "line": 397,
+    "signature": "static int CompareSorted(const K& a, int b) {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\hash_table.hpp",
+    "line": 451,
+    "signature": "SHA1() { Init(); }",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\hash_table.hpp",
+    "line": 484,
+    "signature": "CRC32() : m_CRC(0xFFFFFFFF), m_Count(0) {}",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 25,
+    "signature": "virtual bool __stdcall INoticeSink_Unknown(DWORD dwUnknown) = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 38,
+    "signature": "virtual HRESULT __stdcall Swizzle(void** pointer) = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 39,
+    "signature": "virtual HRESULT __stdcall Fetch_Swizzle_ID(void* pointer, long* id) const = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 41,
+    "signature": "virtual HRESULT __stdcall Save_Interface(IStream* stream, IUnknown* pointer) = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 42,
+    "signature": "virtual HRESULT __stdcall Load_Interface(IStream* stream, GUID* riid, void** pointer) = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 43,
+    "signature": "virtual HRESULT __stdcall Get_Save_Size(int* size) const = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 49,
+    "signature": "virtual HRESULT __stdcall FullName(BSTR* retval) = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 50,
+    "signature": "virtual HRESULT __stdcall Name(BSTR* retval) = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 52,
+    "signature": "virtual HRESULT __stdcall ScenarioName(BSTR* retval) = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 53,
+    "signature": "virtual HRESULT __stdcall FrameCount(long* retval) = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 54,
+    "signature": "virtual HRESULT __stdcall Swizzle_Interface(ISwizzle** pVal) = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 60,
+    "signature": "virtual long __stdcall ID_Number() const = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 61,
+    "signature": "virtual BSTR __stdcall Name() const = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 62,
+    "signature": "virtual IApplication* __stdcall Get_Application() = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 63,
+    "signature": "virtual long __stdcall AvailableMoney() const = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 64,
+    "signature": "virtual long __stdcall Available_Storage() const = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 67,
+    "signature": "virtual long __stdcall Category_Quantity(Category category) const = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 68,
+    "signature": "virtual long __stdcall Category_Power(Category category) const = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 69,
+    "signature": "virtual CellStruct __stdcall Base_Center() const = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 70,
+    "signature": "virtual HRESULT __stdcall Fire_Sale() const = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 71,
+    "signature": "virtual HRESULT __stdcall All_To_Hunt() = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 77,
+    "signature": "virtual long __stdcall ID_Number() const = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 78,
+    "signature": "virtual BSTR __stdcall Name() const = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 79,
+    "signature": "virtual long __stdcall Apparent_Category_Quantity(Category category) const = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 80,
+    "signature": "virtual long __stdcall Apparent_Category_Power(Category category) const = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 81,
+    "signature": "virtual CellStruct __stdcall Apparent_Base_Center() const = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 88,
+    "signature": "virtual HRESULT __stdcall RemoteNext(unsigned long cConnections, CONNECTDATA* rgcd, unsigned long* pcFetched) = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 89,
+    "signature": "virtual HRESULT __stdcall Skip(unsigned long cConnections) = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 91,
+    "signature": "virtual HRESULT __stdcall Clone(IEnumConnections** ppEnum) = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 100,
+    "signature": "virtual HRESULT __stdcall GetConnectionPointContainer(IConnectionPointContainer** ppCPC) = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 101,
+    "signature": "virtual HRESULT __stdcall Advise(IUnknown* pUnkSink, unsigned long* pdwCookie) = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 111,
+    "signature": "virtual HRESULT __stdcall EnumConnectionPoints(IEnumConnectionPoints** ppEnum) = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 112,
+    "signature": "virtual HRESULT __stdcall FindConnectionPoint(GUID* riid, IConnectionPoint** ppCP) = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 118,
+    "signature": "virtual HRESULT __stdcall RemoteNext(unsigned long cConnections, IConnectionPoint** ppCP, unsigned long* pcFetched) = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 119,
+    "signature": "virtual HRESULT __stdcall Skip(unsigned long cConnections) = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 121,
+    "signature": "virtual HRESULT __stdcall Clone(IEnumConnectionPoints** ppEnum) = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 127,
+    "signature": "virtual long __stdcall Is_Visible(CellStruct cell) = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 133,
+    "signature": "virtual HRESULT __stdcall Link_Stream(IUnknown* stream) = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 134,
+    "signature": "virtual HRESULT __stdcall Unlink_Stream(IUnknown** stream) = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 140,
+    "signature": "virtual int __stdcall Landing_Altitude() = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 141,
+    "signature": "virtual int __stdcall Landing_Direction() = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 142,
+    "signature": "virtual long __stdcall Is_Loaded() = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 143,
+    "signature": "virtual long __stdcall Is_Strafe() = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 144,
+    "signature": "virtual long __stdcall Is_Fighter() = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 152,
+    "signature": "virtual bool __stdcall Is_Moving() = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 153,
+    "signature": "virtual CoordStruct* __stdcall Destination(CoordStruct* pcoord) = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 155,
+    "signature": "virtual Move __stdcall Can_Enter_Cell(CellStruct cell) = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 157,
+    "signature": "virtual Matrix3D* __stdcall Draw_Matrix(Matrix3D* pMatrix, int* key) = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 158,
+    "signature": "virtual Matrix3D* __stdcall Shadow_Matrix(Matrix3D* pMatrix, int* key) = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 159,
+    "signature": "virtual Point2D* __stdcall Draw_Point(Point2D* pPoint) = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 160,
+    "signature": "virtual Point2D* __stdcall Shadow_Point(Point2D* pPoint) = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 161,
+    "signature": "virtual VisualType __stdcall Visual_Character(VARIANT_BOOL unused) = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 162,
+    "signature": "virtual int __stdcall Z_Adjust() = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 163,
+    "signature": "virtual ZGradient __stdcall Z_Gradient() = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 165,
+    "signature": "virtual void __stdcall Move_To(CoordStruct to) = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 166,
+    "signature": "virtual void __stdcall Stop_Moving() = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 167,
+    "signature": "virtual void __stdcall Do_Turn(unsigned short facing) = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 169,
+    "signature": "virtual void __stdcall Tilt_Pitch_AI() = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 173,
+    "signature": "virtual bool __stdcall Is_Ion_Sensitive() = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 174,
+    "signature": "virtual bool __stdcall Push(unsigned short dir) = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 175,
+    "signature": "virtual bool __stdcall Shove(unsigned short dir) = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 176,
+    "signature": "virtual void __stdcall Force_Track(int track, CoordStruct coord) = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 178,
+    "signature": "virtual void __stdcall Force_Immediate_Destination(CoordStruct coord) = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 179,
+    "signature": "virtual void __stdcall Force_New_Slope(int ramp) = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 180,
+    "signature": "virtual bool __stdcall Is_Moving_Now() = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 181,
+    "signature": "virtual int __stdcall Apparent_Speed() = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 182,
+    "signature": "virtual int __stdcall Drawing_Code() = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 186,
+    "signature": "virtual bool __stdcall Is_Surfacing() = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 187,
+    "signature": "virtual void __stdcall Mark_All_Occupation_Bits(int mark) = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 188,
+    "signature": "virtual bool __stdcall Is_Moving_Here(CoordStruct to) = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 189,
+    "signature": "virtual bool __stdcall Will_Jump_Tracks() = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 190,
+    "signature": "virtual bool __stdcall Is_Really_Moving_Now() = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 192,
+    "signature": "virtual void __stdcall Lock() = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 194,
+    "signature": "virtual void __stdcall ILocomotion_B8() = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 203,
+    "signature": "virtual HRESULT __stdcall Begin_Piggyback(ILocomotion* pointer) = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 204,
+    "signature": "virtual HRESULT __stdcall End_Piggyback(ILocomotion** pointer) = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 206,
+    "signature": "virtual HRESULT __stdcall Piggyback_CLSID(GUID* classid) = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\interfaces.hpp",
+    "line": 207,
+    "signature": "virtual bool __stdcall Is_Piggybacking() = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\load_options.hpp",
+    "line": 128,
+    "signature": "const char* GetExtension() const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\load_options.hpp",
+    "line": 129,
+    "signature": "void SetExtension(const char* ext);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\load_options.hpp",
+    "line": 131,
+    "signature": "FileEntryClass** GetEntries();",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\load_options.hpp",
+    "line": 163,
+    "signature": "void LoadSaveDialog_FillList(LoadOptions* opts, HWND hWnd);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\logging.hpp",
+    "line": 16,
+    "signature": "void LogSetLevel(LogLevel level);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\logging.hpp",
+    "line": 17,
+    "signature": "void LogWrite(LogLevel level, const char* fmt, ...);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\logging.hpp",
+    "line": 18,
+    "signature": "void LogClose();",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\math.hpp",
+    "line": 18,
+    "signature": "constexpr Vector2D() noexcept = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_ctor, no_callgraph_match"
+  },
+  {
+    "file": "core\\math.hpp",
+    "line": 19,
+    "signature": "constexpr Vector2D(T x, T y) noexcept : X(x), Y(y) {}",
+    "annotation": "// IDA: UNMATCHED \u2014 constexpr_no_runtime, no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\math.hpp",
+    "line": 21,
+    "signature": "Vector2D operator+(const Vector2D& rhs) const {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\math.hpp",
+    "line": 26,
+    "signature": "Vector2D& operator+=(const Vector2D& rhs) {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\math.hpp",
+    "line": 33,
+    "signature": "Vector2D operator-(const Vector2D& rhs) const {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\math.hpp",
+    "line": 38,
+    "signature": "Vector2D& operator-=(const Vector2D& rhs) {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\math.hpp",
+    "line": 45,
+    "signature": "Vector2D operator-() const {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\math.hpp",
+    "line": 50,
+    "signature": "bool operator==(const Vector2D& rhs) const {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\math.hpp",
+    "line": 55,
+    "signature": "bool operator!=(const Vector2D& rhs) const {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\math.hpp",
+    "line": 60,
+    "signature": "Vector2D operator*(double scalar) const {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\math.hpp",
+    "line": 65,
+    "signature": "Vector2D& operator*=(double scalar) {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\math.hpp",
+    "line": 72,
+    "signature": "double operator*(const Vector2D& rhs) const {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\math.hpp",
+    "line": 77,
+    "signature": "double MagnitudeSquared() const {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\math.hpp",
+    "line": 87,
+    "signature": "double DistanceFrom(const Vector2D& rhs) const {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\math.hpp",
+    "line": 92,
+    "signature": "double DistanceFromSquared(const Vector2D& rhs) const {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\math.hpp",
+    "line": 115,
+    "signature": "constexpr Vector3D() noexcept = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_ctor, no_callgraph_match"
+  },
+  {
+    "file": "core\\math.hpp",
+    "line": 116,
+    "signature": "constexpr Vector3D(T x, T y, T z) noexcept : X(x), Y(y), Z(z) {}",
+    "annotation": "// IDA: UNMATCHED \u2014 constexpr_no_runtime, no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\math.hpp",
+    "line": 118,
+    "signature": "Vector3D operator+(const Vector3D& rhs) const {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\math.hpp",
+    "line": 123,
+    "signature": "Vector3D& operator+=(const Vector3D& rhs) {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\math.hpp",
+    "line": 131,
+    "signature": "Vector3D operator-(const Vector3D& rhs) const {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\math.hpp",
+    "line": 136,
+    "signature": "Vector3D& operator-=(const Vector3D& rhs) {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\math.hpp",
+    "line": 144,
+    "signature": "Vector3D operator-() const {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\math.hpp",
+    "line": 149,
+    "signature": "bool operator==(const Vector3D& rhs) const {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\math.hpp",
+    "line": 154,
+    "signature": "bool operator!=(const Vector3D& rhs) const {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\math.hpp",
+    "line": 159,
+    "signature": "Vector3D operator*(double scalar) const {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\math.hpp",
+    "line": 164,
+    "signature": "Vector3D& operator*=(double scalar) {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\math.hpp",
+    "line": 172,
+    "signature": "double operator*(const Vector3D& rhs) const {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\math.hpp",
+    "line": 179,
+    "signature": "double MagnitudeSquared() const {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\math.hpp",
+    "line": 189,
+    "signature": "double DistanceFrom(const Vector3D& rhs) const {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\math.hpp",
+    "line": 194,
+    "signature": "double DistanceFromSquared(const Vector3D& rhs) const {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\math.hpp",
+    "line": 204,
+    "signature": "Vector3D CrossProduct(const Vector3D& rhs) const {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\math.hpp",
+    "line": 224,
+    "signature": "inline std::ostream& operator<<(std::ostream& os, const Vector2D<T>& v) {",
+    "annotation": "// IDA: UNMATCHED \u2014 inline_likely_inlined, no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\math.hpp",
+    "line": 241,
+    "signature": "inline std::ostream& operator<<(std::ostream& os, const RectangleStruct& r) {",
+    "annotation": "// IDA: UNMATCHED \u2014 inline_likely_inlined, no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\math.hpp",
+    "line": 256,
+    "signature": "bool operator==(const ColorStruct& rhs) const {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\math.hpp",
+    "line": 261,
+    "signature": "bool operator!=(const ColorStruct& rhs) const {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\math.hpp",
+    "line": 273,
+    "signature": "constexpr TimerStruct() noexcept = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_ctor, no_callgraph_match"
+  },
+  {
+    "file": "core\\math.hpp",
+    "line": 274,
+    "signature": "explicit TimerStruct(int duration) noexcept : StartTime(-1), __padding(0), TimeLeft(duration) {}",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\memory.hpp",
+    "line": 17,
+    "signature": "constexpr GameAllocator() noexcept = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_ctor, no_callgraph_match"
+  },
+  {
+    "file": "core\\memory.hpp",
+    "line": 20,
+    "signature": "constexpr GameAllocator(const GameAllocator<U>&) noexcept {}",
+    "annotation": "// IDA: UNMATCHED \u2014 constexpr_no_runtime, no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\memory.hpp",
+    "line": 22,
+    "signature": "constexpr bool operator==(const GameAllocator&) const noexcept { return true; }",
+    "annotation": "// IDA: UNMATCHED \u2014 constexpr_no_runtime, no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\memory.hpp",
+    "line": 23,
+    "signature": "constexpr bool operator!=(const GameAllocator&) const noexcept { return false; }",
+    "annotation": "// IDA: UNMATCHED \u2014 constexpr_no_runtime, no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\memory.hpp",
+    "line": 25,
+    "signature": "T* allocate(std::size_t count) {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\memory.hpp",
+    "line": 31,
+    "signature": "void deallocate(T* ptr, std::size_t count) {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\memory.hpp",
+    "line": 54,
+    "signature": "static void Delete(TAlloc& alloc, T* ptr) {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\memory.hpp",
+    "line": 82,
+    "signature": "static void DeleteArray(TAlloc& alloc, T* ptr, std::size_t capacity) {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\memory.hpp",
+    "line": 99,
+    "signature": "T* GameCreate(TArgs&&... args) {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\memory.hpp",
+    "line": 114,
+    "signature": "T* GameCreateArray(std::size_t capacity, TArgs&&... args) {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\memory.hpp",
+    "line": 122,
+    "signature": "void GameDeleteArray(T* ptr, std::size_t capacity) {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\memory.hpp",
+    "line": 131,
+    "signature": "void operator()(T* ptr) const noexcept {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\spawn_config.hpp",
+    "line": 79,
+    "signature": "SpawnConfig SpawnConfig_LoadFromINI(const char* filename);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\stream_ext.hpp",
+    "line": 53,
+    "signature": "~Stream();",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\stream_ext.hpp",
+    "line": 174,
+    "signature": "virtual ~Buffer() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "core\\stream_ext.hpp",
+    "line": 282,
+    "signature": "virtual ~Text() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "core\\target.hpp",
+    "line": 25,
+    "signature": "inline target_t BuildTarget(AbstractType kind, unsigned value) noexcept {",
+    "annotation": "// IDA: UNMATCHED \u2014 inline_likely_inlined, no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\target.hpp",
+    "line": 34,
+    "signature": "inline AbstractType TargetKind(target_t t) noexcept {",
+    "annotation": "// IDA: UNMATCHED \u2014 inline_likely_inlined, no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\target.hpp",
+    "line": 41,
+    "signature": "inline unsigned TargetValue(target_t t) noexcept {",
+    "annotation": "// IDA: UNMATCHED \u2014 inline_likely_inlined, no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\target.hpp",
+    "line": 105,
+    "signature": "TargetClass() noexcept : m_target(kTargetNone) {}",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\target.hpp",
+    "line": 106,
+    "signature": "explicit TargetClass(target_t t) noexcept : m_target(t) {}",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\target.hpp",
+    "line": 108,
+    "signature": ": m_target(BuildTarget(kind, static_cast<unsigned>(id))) {}",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\target.hpp",
+    "line": 110,
+    "signature": "TargetClass(const ObjectClass* obj) noexcept;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\target.hpp",
+    "line": 111,
+    "signature": "TargetClass(const CellClass* cell) noexcept;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\target.hpp",
+    "line": 113,
+    "signature": "operator target_t() const { return m_target; }",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\target.hpp",
+    "line": 115,
+    "signature": "bool operator==(const TargetClass& rhs) const { return m_target == rhs.m_target; }",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\target.hpp",
+    "line": 116,
+    "signature": "bool operator!=(const TargetClass& rhs) const { return m_target != rhs.m_target; }",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\target.hpp",
+    "line": 119,
+    "signature": "unsigned Value() const { return TargetValue(m_target); }",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\target.hpp",
+    "line": 123,
+    "signature": "void Invalidate() { m_target = kTargetNone; }",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\utility_ext.hpp",
+    "line": 160,
+    "signature": "~Delegate();",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\utility_ext.hpp",
+    "line": 789,
+    "signature": "virtual ~CRC32() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "core\\utility_ext.hpp",
+    "line": 820,
+    "signature": "virtual ~CountdownTimer() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "core\\utility_ext.hpp",
+    "line": 890,
+    "signature": "virtual ~Flag() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "core\\utility_ext.hpp",
+    "line": 912,
+    "signature": "virtual ~Float4() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "core\\utility_ext.hpp",
+    "line": 1001,
+    "signature": "virtual ~Hash() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "core\\utility_ext.hpp",
+    "line": 1162,
+    "signature": "virtual ~Queue() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "core\\utility_ext.hpp",
+    "line": 1171,
+    "signature": "virtual ~Random() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "core\\utility_ext.hpp",
+    "line": 1217,
+    "signature": "virtual ~SHA1() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "core\\utility_ext.hpp",
+    "line": 1303,
+    "signature": "virtual ~Timeout() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "core\\utility_ext.hpp",
+    "line": 1339,
+    "signature": "virtual ~Vector2() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "core\\utility_ext.hpp",
+    "line": 1350,
+    "signature": "virtual ~Vector3() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "core\\utility_ext.hpp",
+    "line": 1363,
+    "signature": "virtual ~Vector4() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "core\\utility_ext.hpp",
+    "line": 1374,
+    "signature": "virtual ~Vector8() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "core\\vector.hpp",
+    "line": 55,
+    "signature": ", IsAllocated(std::exchange(other.IsAllocated, false)) {}",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\vector.hpp",
+    "line": 66,
+    "signature": "VectorClass& operator=(const VectorClass& other) {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\vector.hpp",
+    "line": 72,
+    "signature": "VectorClass& operator=(VectorClass&& other) noexcept {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\vector.hpp",
+    "line": 78,
+    "signature": "virtual bool operator==(const VectorClass& other) const {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\vector.hpp",
+    "line": 95,
+    "signature": "bool operator!=(const VectorClass& other) const {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\vector.hpp",
+    "line": 124,
+    "signature": "GameDeleteArray(Items, static_cast<std::size_t>(Capacity));",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\vector.hpp",
+    "line": 186,
+    "signature": "bool Reserve(int capacity) {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\vector.hpp",
+    "line": 242,
+    "signature": ", CapacityIncrement(other.CapacityIncrement) {}",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\vector.hpp",
+    "line": 245,
+    "signature": "DynamicVectorClass& operator=(const DynamicVectorClass& other) {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\vector.hpp",
+    "line": 251,
+    "signature": "DynamicVectorClass& operator=(DynamicVectorClass&& other) noexcept {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\vector.hpp",
+    "line": 289,
+    "signature": "bool ValidIndex(int index) const {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\vector.hpp",
+    "line": 294,
+    "signature": "T GetItemOrDefault(int i) const {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\vector.hpp",
+    "line": 299,
+    "signature": "T GetItemOrDefault(int i, T def) const {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\vector.hpp",
+    "line": 308,
+    "signature": "T* begin() {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\vector.hpp",
+    "line": 313,
+    "signature": "T* end() {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\vector.hpp",
+    "line": 318,
+    "signature": "const T* begin() const {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\vector.hpp",
+    "line": 323,
+    "signature": "const T* end() const {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "core\\vector.hpp",
+    "line": 349,
+    "signature": "bool AddUnique(const T& item) {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "entity\\anim.hpp",
+    "line": 31,
+    "signature": "virtual AbstractType __stdcall whatAmI() const override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "entity\\anim.hpp",
+    "line": 35,
+    "signature": "virtual int GetEnd() const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "entity\\bullet.hpp",
+    "line": 75,
+    "signature": "virtual AbstractType __stdcall whatAmI() const override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "entity\\ebolt.hpp",
+    "line": 43,
+    "signature": "EBolt() noexcept = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_ctor, no_callgraph_match"
+  },
+  {
+    "file": "entity\\ebolt.hpp",
+    "line": 44,
+    "signature": "~EBolt() noexcept = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "entity\\overlay.hpp",
+    "line": 29,
+    "signature": "virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "entity\\overlay.hpp",
+    "line": 33,
+    "signature": "virtual AbstractType __stdcall whatAmI() const override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "entity\\overlay.hpp",
+    "line": 39,
+    "signature": "OverlayClass() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_ctor, no_callgraph_match"
+  },
+  {
+    "file": "entity\\overlay.hpp",
+    "line": 41,
+    "signature": "OverlayClass(OverlayTypeClass* pType, const CellStruct& cell, HouseClass* owner) noexcept;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "entity\\particle.hpp",
+    "line": 28,
+    "signature": "virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "entity\\particle.hpp",
+    "line": 32,
+    "signature": "virtual AbstractType __stdcall whatAmI() const override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "entity\\particle_system.hpp",
+    "line": 45,
+    "signature": "virtual AbstractType __stdcall whatAmI() const override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "entity\\rad_site.hpp",
+    "line": 43,
+    "signature": "virtual AbstractType __stdcall whatAmI() const override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "entity\\smudge.hpp",
+    "line": 29,
+    "signature": "virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "entity\\smudge.hpp",
+    "line": 33,
+    "signature": "virtual AbstractType __stdcall whatAmI() const override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "entity\\smudge.hpp",
+    "line": 39,
+    "signature": "SmudgeClass() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_ctor, no_callgraph_match"
+  },
+  {
+    "file": "entity\\smudge.hpp",
+    "line": 41,
+    "signature": "SmudgeClass(SmudgeTypeClass* pType, const CellStruct& cell, HouseClass* owner) noexcept;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "entity\\terrain.hpp",
+    "line": 27,
+    "signature": "virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "entity\\terrain.hpp",
+    "line": 31,
+    "signature": "virtual AbstractType __stdcall whatAmI() const override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "entity\\tiberium.hpp",
+    "line": 57,
+    "signature": "virtual HRESULT __stdcall GetSizeMax(ULARGE_INTEGER* pcbSize) override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "entity\\tiberium.hpp",
+    "line": 61,
+    "signature": "virtual AbstractType __stdcall whatAmI() const override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "entity\\tube.hpp",
+    "line": 40,
+    "signature": "virtual AbstractType __stdcall whatAmI() const override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "entity\\voxel.hpp",
+    "line": 33,
+    "signature": "VoxelData(nullptr) , DataSize(0), DataOffset(0);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "entity\\voxel.hpp",
+    "line": 35,
+    "signature": "~VxlLimb();",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "entity\\voxel.hpp",
+    "line": 50,
+    "signature": "HvaMatrix();",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "entity\\voxel.hpp",
+    "line": 69,
+    "signature": "bool VxlLoad(const uint8_t* data, int size, VxlFile* out);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "entity\\voxel.hpp",
+    "line": 70,
+    "signature": "bool HvaLoad(const uint8_t* data, int size, HvaFile* out);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "entity\\voxel_anim.hpp",
+    "line": 58,
+    "signature": "virtual AbstractType __stdcall whatAmI() const override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "entity\\wave.hpp",
+    "line": 38,
+    "signature": "virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "entity\\wave.hpp",
+    "line": 43,
+    "signature": "virtual AbstractType __stdcall whatAmI() const override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "fundamentals.hpp",
+    "line": 24,
+    "signature": "constexpr noinit_t() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_ctor, no_callgraph_match"
+  },
+  {
+    "file": "house\\house.hpp",
+    "line": 126,
+    "signature": "AbstractType __stdcall whatAmI() const override { return AbstractType::House; }",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "house\\house.hpp",
+    "line": 137,
+    "signature": "void MakeEnemy(HouseClass* who, bool announce);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "house\\house.hpp",
+    "line": 138,
+    "signature": "void AllyAIHouses();",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "house\\house.hpp",
+    "line": 141,
+    "signature": "void AcceptDefeat();",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "house\\house.hpp",
+    "line": 150,
+    "signature": "uint8_t Win(bool save_something);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "house\\house.hpp",
+    "line": 154,
+    "signature": "bool CanOverpower(TechnoClass* target) const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "house\\house.hpp",
+    "line": 173,
+    "signature": "void Cheer();",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "house\\house.hpp",
+    "line": 175,
+    "signature": "void BuildingUnderAttack(BuildingClass* building);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "house\\house.hpp",
+    "line": 176,
+    "signature": "void TakeMoney(int amount);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "house\\house.hpp",
+    "line": 179,
+    "signature": "bool CanTransactMoney(int amount) const { return amount > 0 || AvailableMoney() >= -amount; }",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "house\\house.hpp",
+    "line": 180,
+    "signature": "void TransactMoney(int amount) {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "house\\house.hpp",
+    "line": 186,
+    "signature": "int AvailableMoney() const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "house\\house.hpp",
+    "line": 190,
+    "signature": "double getStoragePercentage();",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "house\\house.hpp",
+    "line": 194,
+    "signature": "static bool IndexIsMP(int idx);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "house\\house.hpp",
+    "line": 198,
+    "signature": "bool FireLightningStorm(SuperClass* super);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "house\\house.hpp",
+    "line": 199,
+    "signature": "bool FireParadrop(SuperClass* super);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "house\\house.hpp",
+    "line": 200,
+    "signature": "bool FirePsyDom(SuperClass* super);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "house\\house.hpp",
+    "line": 201,
+    "signature": "bool FireGenMutator(SuperClass* super);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "house\\house.hpp",
+    "line": 207,
+    "signature": "CellStruct* PickTargetByType(CellStruct& out, TargetType type) const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "house\\house.hpp",
+    "line": 208,
+    "signature": "CellStruct PickTargetByType(TargetType type) const {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "house\\house.hpp",
+    "line": 223,
+    "signature": "bool IsIonCannonEligibleTarget(const TechnoClass* techno) const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "house\\house.hpp",
+    "line": 229,
+    "signature": "FactoryClass* GetPrimaryFactory(AbstractType abs_id, bool naval, int build_cat) const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "house\\house.hpp",
+    "line": 240,
+    "signature": "bool IsNeutral() const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "house\\house.hpp",
+    "line": 535,
+    "signature": "HouseClass() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "house\\house.hpp",
+    "line": 536,
+    "signature": "HouseClass(HouseTypeClass* pType) noexcept;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "house\\house_type.hpp",
+    "line": 37,
+    "signature": "virtual AbstractType __stdcall whatAmI() const override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "house\\side.hpp",
+    "line": 36,
+    "signature": "virtual AbstractType __stdcall whatAmI() const override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "misc\\audio_ext.hpp",
+    "line": 175,
+    "signature": "virtual ~Audio3D() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "misc\\locomotion.hpp",
+    "line": 98,
+    "signature": "virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "misc\\locomotion.hpp",
+    "line": 105,
+    "signature": "virtual HRESULT __stdcall GetSizeMax(ULARGE_INTEGER* size) override {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "misc\\locomotion.hpp",
+    "line": 119,
+    "signature": "virtual CoordStruct* __stdcall Destination(CoordStruct* out) override {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "misc\\locomotion.hpp",
+    "line": 205,
+    "signature": "static void ChangeLocomotorTo(FootClass* object, const CLSID& clsid) {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "misc\\locomotion.hpp",
+    "line": 306,
+    "signature": "DriveLocomotionClass() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_ctor, no_callgraph_match"
+  },
+  {
+    "file": "misc\\locomotion.hpp",
+    "line": 307,
+    "signature": "explicit DriveLocomotionClass(noinit_t) noexcept : LocomotionClass(noinit_t{}) {}",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "misc\\locomotion.hpp",
+    "line": 348,
+    "signature": "HoverLocomotionClass() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_ctor, no_callgraph_match"
+  },
+  {
+    "file": "misc\\locomotion.hpp",
+    "line": 349,
+    "signature": "explicit HoverLocomotionClass(noinit_t) noexcept : LocomotionClass(noinit_t{}) {}",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "misc\\locomotion.hpp",
+    "line": 399,
+    "signature": "WalkLocomotionClass() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_ctor, no_callgraph_match"
+  },
+  {
+    "file": "misc\\locomotion.hpp",
+    "line": 400,
+    "signature": "explicit WalkLocomotionClass(noinit_t) noexcept : LocomotionClass(noinit_t{}) {}",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "misc\\locomotion.hpp",
+    "line": 649,
+    "signature": "ShipLocomotionClass() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_ctor, no_callgraph_match"
+  },
+  {
+    "file": "misc\\locomotion.hpp",
+    "line": 650,
+    "signature": "explicit ShipLocomotionClass(noinit_t) noexcept : LocomotionClass(noinit_t{}) {}",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "misc\\locomotion.hpp",
+    "line": 749,
+    "signature": "TunnelLocomotionClass() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_ctor, no_callgraph_match"
+  },
+  {
+    "file": "misc\\locomotion.hpp",
+    "line": 750,
+    "signature": "explicit TunnelLocomotionClass(noinit_t) noexcept : LocomotionClass(noinit_t{}) {}",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "misc\\locomotion.hpp",
+    "line": 785,
+    "signature": "MechLocomotionClass() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_ctor, no_callgraph_match"
+  },
+  {
+    "file": "misc\\locomotion.hpp",
+    "line": 786,
+    "signature": "explicit MechLocomotionClass(noinit_t) noexcept : LocomotionClass(noinit_t{}) {}",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "misc\\locomotion.hpp",
+    "line": 804,
+    "signature": "virtual HRESULT __stdcall Begin_Piggyback(ILocomotion* pointer) override { return S_OK; } // stub",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "misc\\locomotion.hpp",
+    "line": 805,
+    "signature": "virtual HRESULT __stdcall End_Piggyback(ILocomotion** pointer) override { return S_OK; } // stub",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "misc\\locomotion.hpp",
+    "line": 807,
+    "signature": "virtual HRESULT __stdcall Piggyback_CLSID(GUID* classid) override { return S_OK; } // stub",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "misc\\locomotion.hpp",
+    "line": 808,
+    "signature": "virtual bool __stdcall Is_Piggybacking() override { return false; } // stub",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "misc\\locomotion.hpp",
+    "line": 834,
+    "signature": "DropPodLocomotionClass() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_ctor, no_callgraph_match"
+  },
+  {
+    "file": "misc\\locomotion.hpp",
+    "line": 835,
+    "signature": "explicit DropPodLocomotionClass(noinit_t) noexcept : LocomotionClass(noinit_t{}) {}",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "misc\\misc_ext.hpp",
+    "line": 498,
+    "signature": "virtual ~Coord2D() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "misc\\misc_ext.hpp",
+    "line": 509,
+    "signature": "virtual ~Coord3D() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "misc\\misc_ext.hpp",
+    "line": 522,
+    "signature": "virtual ~CoordBounds() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "misc\\misc_ext.hpp",
+    "line": 694,
+    "signature": "virtual ~IsoCoord() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "misc\\misc_ext.hpp",
+    "line": 762,
+    "signature": "virtual ~Lightning() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "misc\\misc_ext.hpp",
+    "line": 898,
+    "signature": "virtual ~Matrix() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "misc\\misc_ext.hpp",
+    "line": 909,
+    "signature": "virtual ~Matrix2D() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "misc\\misc_ext.hpp",
+    "line": 918,
+    "signature": "virtual ~Matrix3x3() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "misc\\misc_ext.hpp",
+    "line": 1250,
+    "signature": "virtual ~Actions() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "misc\\misc_ext.hpp",
+    "line": 1338,
+    "signature": "virtual ~ArtConfig() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "misc\\misc_ext.hpp",
+    "line": 1366,
+    "signature": "virtual ~BTree() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "misc\\misc_ext.hpp",
+    "line": 1392,
+    "signature": "virtual ~BigInt() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "misc\\misc_ext.hpp",
+    "line": 1570,
+    "signature": "virtual ~CDROM() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "misc\\misc_ext.hpp",
+    "line": 1626,
+    "signature": "virtual ~Char() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "misc\\misc_ext.hpp",
+    "line": 1635,
+    "signature": "virtual ~Chat() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "misc\\misc_ext.hpp",
+    "line": 1682,
+    "signature": "virtual ~Cliff() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "misc\\misc_ext.hpp",
+    "line": 1720,
+    "signature": "virtual ~Compression() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "misc\\misc_ext.hpp",
+    "line": 1729,
+    "signature": "virtual ~Conditions() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "misc\\misc_ext.hpp",
+    "line": 1802,
+    "signature": "virtual ~Crypto() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "misc\\misc_ext.hpp",
+    "line": 1950,
+    "signature": "virtual ~Field() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "misc\\misc_ext.hpp",
+    "line": 1968,
+    "signature": "virtual ~Function() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "misc\\misc_ext.hpp",
+    "line": 1988,
+    "signature": "virtual ~GDlg() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "misc\\misc_ext.hpp",
+    "line": 2087,
+    "signature": "virtual ~HVAAnimation() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "misc\\misc_ext.hpp",
+    "line": 2098,
+    "signature": "virtual ~Heap() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "misc\\misc_ext.hpp",
+    "line": 2107,
+    "signature": "virtual ~HexCoord() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "misc\\misc_ext.hpp",
+    "line": 2125,
+    "signature": "virtual ~IDXContainer() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "misc\\misc_ext.hpp",
+    "line": 2162,
+    "signature": "virtual ~Int4() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "misc\\misc_ext.hpp",
+    "line": 2173,
+    "signature": "virtual ~Int64() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "misc\\misc_ext.hpp",
+    "line": 2215,
+    "signature": "virtual ~KeyValuePair() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "misc\\misc_ext.hpp",
+    "line": 2242,
+    "signature": "virtual ~LCW() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "misc\\misc_ext.hpp",
+    "line": 2339,
+    "signature": "virtual ~Lobby() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "misc\\misc_ext.hpp",
+    "line": 2590,
+    "signature": "virtual ~Megawealth() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "misc\\misc_ext.hpp",
+    "line": 2601,
+    "signature": "virtual ~Miles() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "misc\\misc_ext.hpp",
+    "line": 2658,
+    "signature": "virtual ~Multiplay() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "misc\\misc_ext.hpp",
+    "line": 2667,
+    "signature": "virtual ~NetMessage() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "misc\\misc_ext.hpp",
+    "line": 2697,
+    "signature": "virtual ~NullGuard() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "misc\\misc_ext.hpp",
+    "line": 2774,
+    "signature": "virtual ~OptionQueue() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "misc\\misc_ext.hpp",
+    "line": 2825,
+    "signature": "virtual ~Performance() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "misc\\misc_ext.hpp",
+    "line": 2956,
+    "signature": "virtual ~Property() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "misc\\misc_ext.hpp",
+    "line": 2976,
+    "signature": "virtual ~RateScaler() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "misc\\misc_ext.hpp",
+    "line": 3121,
+    "signature": "virtual ~Sides() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "misc\\misc_ext.hpp",
+    "line": 3293,
+    "signature": "virtual ~Subzone() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "misc\\misc_ext.hpp",
+    "line": 3382,
+    "signature": "virtual ~TAction() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "misc\\misc_ext.hpp",
+    "line": 4343,
+    "signature": "virtual ~Targeting() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "misc\\misc_ext.hpp",
+    "line": 4470,
+    "signature": "virtual ~Triple() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "misc\\misc_ext.hpp",
+    "line": 4561,
+    "signature": "virtual ~Viewport() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "misc\\misc_ext.hpp",
+    "line": 4653,
+    "signature": "virtual ~WString() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "misc\\misc_ext.hpp",
+    "line": 4737,
+    "signature": "virtual ~World() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "misc\\misc_ext.hpp",
+    "line": 4764,
+    "signature": "virtual ~ZBuffer() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "misc\\movement_ext.hpp",
+    "line": 73,
+    "signature": "virtual ~Locomotor() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "misc\\movement_ext.hpp",
+    "line": 120,
+    "signature": "virtual ~Pathfinding() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "misc\\rules.hpp",
+    "line": 65,
+    "signature": "RocketStruct() noexcept;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "misc\\rules.hpp",
+    "line": 66,
+    "signature": "explicit RocketStruct(noinit_t) noexcept;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "misc\\rules.hpp",
+    "line": 98,
+    "signature": "void ReadVoxelAnims(CCINIClass* pINI);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "misc\\rules.hpp",
+    "line": 104,
+    "signature": "void ReadLandCharacteristics(CCINIClass* pINI);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "misc\\rules.hpp",
+    "line": 106,
+    "signature": "void ReadJumpjetControls(CCINIClass* pINI);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "misc\\rules.hpp",
+    "line": 107,
+    "signature": "void ReadDifficulties(CCINIClass* pINI);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "misc\\rules.hpp",
+    "line": 109,
+    "signature": "void ReadAdvancedCommandBar(CCINIClass* pINI);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "misc\\super_weapon.hpp",
+    "line": 173,
+    "signature": "explicit SuperClass(noinit_t) noexcept;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "misc\\super_weapon.hpp",
+    "line": 197,
+    "signature": "static void PrintMessage();",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "misc\\super_weapon.hpp",
+    "line": 213,
+    "signature": "static void PrintMessage();",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "misc\\super_weapon.hpp",
+    "line": 239,
+    "signature": "static bool IsFadingOut();",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "network\\connection.hpp",
+    "line": 32,
+    "signature": "virtual int32_t GetLatency() const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "network\\connection.hpp",
+    "line": 34,
+    "signature": "virtual void OnMessageReceived(const NetworkEvent&);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "network\\connection.hpp",
+    "line": 36,
+    "signature": "virtual bool IsHost() const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "network\\multiplayer.hpp",
+    "line": 137,
+    "signature": "virtual bool StartingPositionsToHouseBaseCells2(bool) override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "network\\multiplayer.hpp",
+    "line": 141,
+    "signature": "virtual void OnAllCompleted() override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "network\\multiplayer.hpp",
+    "line": 149,
+    "signature": "virtual bool IsDefeated(int32_t,void*,int32_t,int16_t,int32_t,int32_t,int32_t) override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "network\\multiplayer.hpp",
+    "line": 150,
+    "signature": "virtual int32_t IsWinner() override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "network\\multiplayer.hpp",
+    "line": 152,
+    "signature": "virtual void CreateMPTeams(DynamicVectorClass<MPTeam*>*) override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "network\\multiplayer.hpp",
+    "line": 153,
+    "signature": "virtual CellStruct* AssignStartingPositionsToHouse(CellStruct*, int32_t, DynamicVectorClass<CellStruct>*, uint8_t*) override { return nullptr; }",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "network\\multiplayer.hpp",
+    "line": 155,
+    "signature": "virtual bool SpawnBaseUnits(HouseClass*, uint32_t) override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "network\\multiplayer.hpp",
+    "line": 156,
+    "signature": "virtual bool GenerateStartingUnits(HouseClass*, int32_t&) override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "network\\multiplayer.hpp",
+    "line": 181,
+    "signature": "virtual bool SpawnBaseUnits(HouseClass*, uint32_t) override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "network\\multiplayer.hpp",
+    "line": 194,
+    "signature": "virtual bool StartingPositionsToHouseBaseCells2(bool) override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "network\\multiplayer.hpp",
+    "line": 195,
+    "signature": "virtual void CreateMPTeams(DynamicVectorClass<MPTeam*>*) override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "network\\multiplayer.hpp",
+    "line": 196,
+    "signature": "virtual bool SpawnBaseUnits(HouseClass*, uint32_t) override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "network\\network_ext.hpp",
+    "line": 154,
+    "signature": "virtual ~Modem() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "network\\network_ext.hpp",
+    "line": 390,
+    "signature": "virtual ~NetworkID() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "network\\session.hpp",
+    "line": 126,
+    "signature": "bool IsSkirmish() const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "network\\winsock.hpp",
+    "line": 16,
+    "signature": "bool initialize();",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "network\\winsock.hpp",
+    "line": 24,
+    "signature": "int32_t ReceiveFrom(uint8_t* buffer, int32_t maxLen, uint32_t* outAddress, uint16_t* outPort);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "network\\winsock.hpp",
+    "line": 25,
+    "signature": "bool SetNonBlocking(bool nonBlock);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "network\\winsock.hpp",
+    "line": 26,
+    "signature": "bool JoinMulticastGroup(uint32_t groupAddress);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "network\\winsock.hpp",
+    "line": 45,
+    "signature": "bool initialize();",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "network\\winsock.hpp",
+    "line": 75,
+    "signature": "bool initialize();",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "network\\winsock.hpp",
+    "line": 79,
+    "signature": "bool CreateSocket(uint16_t port);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "network\\winsock.hpp",
+    "line": 83,
+    "signature": "bool SetNonBlocking(bool nonBlock);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "network\\winsock.hpp",
+    "line": 84,
+    "signature": "bool SetBroadcast(bool enable);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "object\\abstract.hpp",
+    "line": 27,
+    "signature": "constexpr DirStruct() noexcept : Raw(0) {}",
+    "annotation": "// IDA: UNMATCHED \u2014 constexpr_no_runtime, no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "object\\abstract.hpp",
+    "line": 28,
+    "signature": "explicit constexpr DirStruct(uint32_t val) noexcept : Raw(val) {}",
+    "annotation": "// IDA: UNMATCHED \u2014 constexpr_no_runtime, no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "object\\abstract.hpp",
+    "line": 44,
+    "signature": "virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "object\\abstract.hpp",
+    "line": 50,
+    "signature": "virtual AbstractType __stdcall whatAmI() const = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "object\\abstract.hpp",
+    "line": 51,
+    "signature": "virtual int __stdcall fetchId() const = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "object\\abstract.hpp",
+    "line": 57,
+    "signature": "virtual bool __stdcall onNotice(unsigned long event) = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "object\\abstract.hpp",
+    "line": 62,
+    "signature": "virtual void __stdcall notifySinks() = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "object\\abstract.hpp",
+    "line": 84,
+    "signature": "virtual HRESULT __stdcall GetSizeMax(ULARGE_INTEGER* size) override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "object\\abstract.hpp",
+    "line": 87,
+    "signature": "virtual AbstractType __stdcall whatAmI() const override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "object\\abstract.hpp",
+    "line": 88,
+    "signature": "virtual int __stdcall fetchId() const override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "object\\abstract.hpp",
+    "line": 92,
+    "signature": "virtual bool __stdcall onNotice(unsigned long event) override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "object\\abstract.hpp",
+    "line": 95,
+    "signature": "virtual void __stdcall notifySinks() override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "object\\abstract.hpp",
+    "line": 109,
+    "signature": "virtual void pointerExpired(AbstractClass* ptr, bool removed);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "object\\abstract.hpp",
+    "line": 111,
+    "signature": "virtual void calculateChecksum(Checksummer& checksum) const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "object\\abstract.hpp",
+    "line": 116,
+    "signature": "virtual CoordStruct* fetchCoordinatesHere(CoordStruct* out) const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "object\\abstract.hpp",
+    "line": 117,
+    "signature": "virtual CoordStruct* fetchDestination(CoordStruct* out, TechnoClass* docker = nullptr) const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "object\\abstract.hpp",
+    "line": 119,
+    "signature": "virtual bool isAirborne() const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "object\\abstract.hpp",
+    "line": 120,
+    "signature": "virtual CoordStruct* fetchAlternateCoordinates(CoordStruct* out) const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "object\\abstract.hpp",
+    "line": 123,
+    "signature": "CoordStruct fetchCoordinatesHere() const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "object\\abstract.hpp",
+    "line": 124,
+    "signature": "CoordStruct fetchDestination(TechnoClass* docker = nullptr) const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "object\\abstract.hpp",
+    "line": 125,
+    "signature": "CoordStruct fetchAlternateCoordinates() const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "object\\abstract.hpp",
+    "line": 127,
+    "signature": "bool operator<(const AbstractClass& rhs) const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "object\\airstrike.hpp",
+    "line": 19,
+    "signature": "virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "object\\airstrike.hpp",
+    "line": 23,
+    "signature": "virtual void pointerExpired(AbstractClass* ptr, bool removed) override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "object\\airstrike.hpp",
+    "line": 24,
+    "signature": "virtual AbstractType __stdcall whatAmI() const override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "object\\airstrike.hpp",
+    "line": 26,
+    "signature": "virtual void calculateChecksum(void* checksum) const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "object\\bomb.hpp",
+    "line": 19,
+    "signature": "virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "object\\bomb.hpp",
+    "line": 23,
+    "signature": "virtual void pointerExpired(AbstractClass* ptr, bool removed) override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "object\\bomb.hpp",
+    "line": 24,
+    "signature": "virtual AbstractType __stdcall whatAmI() const override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "object\\bomb.hpp",
+    "line": 26,
+    "signature": "virtual void calculateChecksum(void* checksum) const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "object\\capture_manager.hpp",
+    "line": 21,
+    "signature": "virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { return 0; }",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "object\\capture_manager.hpp",
+    "line": 25,
+    "signature": "virtual void pointerExpired(AbstractClass* ptr, bool removed) override {}",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "object\\capture_manager.hpp",
+    "line": 26,
+    "signature": "virtual AbstractType __stdcall whatAmI() const override { return kObjectDeriveId; }",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "object\\capture_manager.hpp",
+    "line": 28,
+    "signature": "virtual void calculateChecksum(void* checksum) const {}",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "object\\mission.hpp",
+    "line": 30,
+    "signature": "virtual void forceMission(Mission mission);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "object\\mission.hpp",
+    "line": 31,
+    "signature": "virtual void onMissionChanged(Mission mission);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "object\\parasite.hpp",
+    "line": 23,
+    "signature": "virtual void pointerExpired(AbstractClass* ptr, bool removed) override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "object\\parasite.hpp",
+    "line": 24,
+    "signature": "virtual AbstractType __stdcall whatAmI() const override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "object\\parasite.hpp",
+    "line": 26,
+    "signature": "virtual void calculateChecksum(void* checksum) const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "object\\radbeam.hpp",
+    "line": 16,
+    "signature": "virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "object\\radbeam.hpp",
+    "line": 20,
+    "signature": "virtual void pointerExpired(AbstractClass* ptr, bool removed) override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "object\\radbeam.hpp",
+    "line": 21,
+    "signature": "virtual AbstractType __stdcall whatAmI() const override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "object\\radbeam.hpp",
+    "line": 23,
+    "signature": "virtual void calculateChecksum(void* checksum) const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "object\\radio.hpp",
+    "line": 27,
+    "signature": "virtual RadioCommand sendToFirstLink(RadioCommand command);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "object\\radio.hpp",
+    "line": 28,
+    "signature": "virtual RadioCommand sendCommand(RadioCommand command, TechnoClass* recipient);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "object\\radio.hpp",
+    "line": 29,
+    "signature": "virtual RadioCommand sendCommandWithData(RadioCommand command, AbstractClass*& inout, TechnoClass* recipient);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "object\\radio.hpp",
+    "line": 47,
+    "signature": "TechnoClass* const& getNthLink(int idx = 0) const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "object\\slave_manager.hpp",
+    "line": 29,
+    "signature": "virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { return 0; }",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "object\\slave_manager.hpp",
+    "line": 33,
+    "signature": "virtual void pointerExpired(AbstractClass* ptr, bool removed) override {}",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "object\\slave_manager.hpp",
+    "line": 34,
+    "signature": "virtual AbstractType __stdcall whatAmI() const override { return kObjectDeriveId; }",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "object\\slave_manager.hpp",
+    "line": 36,
+    "signature": "virtual void calculateChecksum(void* checksum) const {}",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "object\\spawn_manager.hpp",
+    "line": 31,
+    "signature": "virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { return 0; }",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "object\\spawn_manager.hpp",
+    "line": 35,
+    "signature": "virtual void pointerExpired(AbstractClass* ptr, bool removed) override {}",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "object\\spawn_manager.hpp",
+    "line": 36,
+    "signature": "virtual AbstractType __stdcall whatAmI() const override { return kObjectDeriveId; }",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "object\\spawn_manager.hpp",
+    "line": 38,
+    "signature": "virtual void calculateChecksum(void* checksum) const {}",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "object\\temporal.hpp",
+    "line": 22,
+    "signature": "virtual void pointerExpired(AbstractClass* ptr, bool removed) override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "object\\temporal.hpp",
+    "line": 23,
+    "signature": "virtual AbstractType __stdcall whatAmI() const override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "object\\temporal.hpp",
+    "line": 25,
+    "signature": "virtual void calculateChecksum(void* checksum) const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\bink_control.hpp",
+    "line": 19,
+    "signature": "static BinkPlayerControl* FromHwnd(HWND h);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\bink_control.hpp",
+    "line": 21,
+    "signature": "static LRESULT CALLBACK WindowProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam, UINT_PTR uIdSubclass, DWORD_PTR dwRefData);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\bink_control.hpp",
+    "line": 27,
+    "signature": "BinkMovieHandle* Movie();",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\bink_control.hpp",
+    "line": 33,
+    "signature": "void OpenBink(const char* filename);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\blitter.hpp",
+    "line": 15,
+    "signature": "BlitterCore() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_ctor, no_callgraph_match"
+  },
+  {
+    "file": "render\\blitter.hpp",
+    "line": 16,
+    "signature": "virtual ~BlitterCore() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "render\\blitter.hpp",
+    "line": 28,
+    "signature": "virtual void CallBlit0( void* dest, byte* src, unsigned int length, uint16_t z_min, uint16_t* z_buf, uint16_t* a_buf, uint16_t a_lvl, uint16_t unknown_arg, uint32_t useless) = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\blitter.hpp",
+    "line": 39,
+    "signature": "virtual void CallBlit1( void* dest, byte* src, unsigned int length, uint16_t z_min, uint16_t* z_buf, uint16_t* a_buf, uint16_t a_lvl) = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\blitter.hpp",
+    "line": 48,
+    "signature": "virtual void CallBlit2( void* dest, byte* src, unsigned int length, uint16_t z_min, uint16_t* z_buf, uint16_t* a_buf, uint16_t a_lvl, uint32_t useless) = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\blitter.hpp",
+    "line": 65,
+    "signature": "Blitter() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_ctor, no_callgraph_match"
+  },
+  {
+    "file": "render\\blitter.hpp",
+    "line": 66,
+    "signature": "virtual ~Blitter() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "render\\blitter.hpp",
+    "line": 74,
+    "signature": "RLEBlitterCore() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_ctor, no_callgraph_match"
+  },
+  {
+    "file": "render\\blitter.hpp",
+    "line": 75,
+    "signature": "virtual ~RLEBlitterCore() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "render\\blitter.hpp",
+    "line": 77,
+    "signature": "virtual void Blit( void* dest, byte* src, byte length, int encoded_len, int a6, int a7, int a8, int a9, int a10, int a11) = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\blitter.hpp",
+    "line": 101,
+    "signature": "RLEBlitter() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_ctor, no_callgraph_match"
+  },
+  {
+    "file": "render\\blitter.hpp",
+    "line": 102,
+    "signature": "virtual ~RLEBlitter() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "render\\blitter.hpp",
+    "line": 153,
+    "signature": "virtual void CallBlit0( void* dest, byte* src, unsigned int length, uint16_t z_min, uint16_t* z_buf, uint16_t* a_buf, uint16_t a_lvl, uint16_t unknown_arg, uint32_t useless) override {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\blitter.hpp",
+    "line": 161,
+    "signature": "virtual void CallBlit1( void* dest, byte* src, unsigned int length, uint16_t z_min, uint16_t* z_buf, uint16_t* a_buf, uint16_t a_lvl) override {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\blitter.hpp",
+    "line": 168,
+    "signature": "virtual void CallBlit2( void* dest, byte* src, unsigned int length, uint16_t z_min, uint16_t* z_buf, uint16_t* a_buf, uint16_t a_lvl, uint32_t useless) override {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\blitter.hpp",
+    "line": 196,
+    "signature": "virtual void CallBlit0( void* dest, byte* src, unsigned int length, uint16_t z_min, uint16_t* z_buf, uint16_t* a_buf, uint16_t a_lvl, uint16_t unknown_arg, uint32_t useless) override {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\blitter.hpp",
+    "line": 204,
+    "signature": "virtual void CallBlit1( void* dest, byte* src, unsigned int length, uint16_t z_min, uint16_t* z_buf, uint16_t* a_buf, uint16_t a_lvl) override {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\blitter.hpp",
+    "line": 211,
+    "signature": "virtual void CallBlit2( void* dest, byte* src, unsigned int length, uint16_t z_min, uint16_t* z_buf, uint16_t* a_buf, uint16_t a_lvl, uint32_t useless) override {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\blitter.hpp",
+    "line": 474,
+    "signature": "virtual void Blit( void* dest, byte* src, byte length, int encoded_len, int a6, int a7, int a8, int a9, int a10, int a11) override {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\blitter.hpp",
+    "line": 499,
+    "signature": "virtual void Blit( void* dest, byte* src, byte length, int encoded_len, int a6, int a7, int a8, int a9, int a10, int a11) override {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\blitter.hpp",
+    "line": 517,
+    "signature": "virtual void Blit( void* dest, byte* src, byte length, int encoded_len, int a6, int a7, int a8, int a9, int a10, int a11) override {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\blitter.hpp",
+    "line": 535,
+    "signature": "virtual void Blit( void* dest, byte* src, byte length, int encoded_len, int a6, int a7, int a8, int a9, int a10, int a11) override {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\bounce.hpp",
+    "line": 27,
+    "signature": "BounceClass() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_ctor, no_callgraph_match"
+  },
+  {
+    "file": "render\\bounce.hpp",
+    "line": 29,
+    "signature": "BounceClass( const CoordStruct& coords, double elasticity, double gravity, double max_velocity, const Vector3D<float>& velocity, double angular_velocity);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\bounce.hpp",
+    "line": 37,
+    "signature": "void Initialize( const CoordStruct& coords, double elasticity, double gravity, double max_velocity, const Vector3D<float>& velocity, double angular_velocity);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\bounce.hpp",
+    "line": 45,
+    "signature": "CoordStruct* fetchCoordinatesHere(CoordStruct* out) const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\bounce.hpp",
+    "line": 46,
+    "signature": "CoordStruct fetchCoordinatesHere() const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\bounce.hpp",
+    "line": 48,
+    "signature": "Matrix3D* GetDrawingMatrix(Matrix3D* out) const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\bounce.hpp",
+    "line": 49,
+    "signature": "Matrix3D GetDrawingMatrix() const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\display.hpp",
+    "line": 34,
+    "signature": "virtual bool vt_entry_90(const CellStruct& cell, HouseClass* house);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\display.hpp",
+    "line": 36,
+    "signature": "virtual bool vt_entry_98(const CellStruct& cell, HouseClass* house);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\display.hpp",
+    "line": 37,
+    "signature": "virtual bool vt_entry_9C(const CellStruct& cell, HouseClass* house);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\display.hpp",
+    "line": 59,
+    "signature": "virtual bool vt_entry_90(const CellStruct& cell, HouseClass* house) override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\display.hpp",
+    "line": 61,
+    "signature": "virtual bool vt_entry_98(const CellStruct& cell, HouseClass* house) override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\display.hpp",
+    "line": 62,
+    "signature": "virtual bool vt_entry_9C(const CellStruct& cell, HouseClass* house) override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\display.hpp",
+    "line": 71,
+    "signature": "virtual bool ConvertAction( const CellStruct& cell, bool shrouded, ObjectClass* object, Action action, uint32_t unk) { return false; }",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\display.hpp",
+    "line": 78,
+    "signature": "virtual void LeftMouseButtonDown(const Point2D& point);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\display.hpp",
+    "line": 79,
+    "signature": "virtual void LeftMouseButtonUp( const CoordStruct& coords, const CellStruct& cell, ObjectClass* object, Action action, uint32_t unk2) {}",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\display.hpp",
+    "line": 85,
+    "signature": "virtual void RightMouseButtonUp(uint32_t unk);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\display.hpp",
+    "line": 87,
+    "signature": "bool ProcessClickCoords( Point2D* src, CellStruct* xy_dst, CoordStruct* xyz_dst, ObjectClass** target, byte* a5, byte* a6);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\display.hpp",
+    "line": 95,
+    "signature": "void SetActiveFoundation(CellStruct* coords);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\display.hpp",
+    "line": 97,
+    "signature": "Action DecideAction( const CellStruct& cell, ObjectClass* object, uint32_t unk);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\display.hpp",
+    "line": 102,
+    "signature": "CellStruct* FoundationBoundsSize( CellStruct& out, const CellStruct* foundation_data) const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\display.hpp",
+    "line": 106,
+    "signature": "CellStruct FoundationBoundsSize( const CellStruct* foundation_data) const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\display.hpp",
+    "line": 109,
+    "signature": "void MarkFoundation(CellStruct* base_cell, bool mark);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\fog.hpp",
+    "line": 34,
+    "signature": "virtual AbstractType __stdcall whatAmI() const override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\font_render.hpp",
+    "line": 131,
+    "signature": "inline void FontDrawText(uint16_t* buf, int pitch, int x, int y, int w, int h, const char* text, uint16_t color) {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\light_source.hpp",
+    "line": 34,
+    "signature": "virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\light_source.hpp",
+    "line": 38,
+    "signature": "virtual AbstractType __stdcall whatAmI() const override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\light_source.hpp",
+    "line": 43,
+    "signature": "void ChangeLevels(int intensity, const TintStruct& tint, int8_t mode);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\movie.hpp",
+    "line": 45,
+    "signature": "BinkMovieHandle() : totalFrames(0) {}",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\movie.hpp",
+    "line": 52,
+    "signature": "virtual void RenderFrame(DSurface* target) override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\movie.hpp",
+    "line": 55,
+    "signature": "void RenderFrameRaw(void* locked_buffer, int pitch_bytes, int height, int dest_x = 0, int dest_y = 0);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\movie.hpp",
+    "line": 62,
+    "signature": "bool OpenFromMemory(const void* data, int size, DSurface* render_target);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\movie.hpp",
+    "line": 95,
+    "signature": "virtual void RenderFrame(DSurface* target) override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\movie.hpp",
+    "line": 98,
+    "signature": "bool OpenFromMemory(const void* data, int size);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\movie.hpp",
+    "line": 116,
+    "signature": "static MoviePlayer& Instance() {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\movie.hpp",
+    "line": 128,
+    "signature": "bool PlayMovie(const char* filename, DSurface* hidden_surface, bool stretch_to_fit = false, bool show_ui = false);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\movie.hpp",
+    "line": 137,
+    "signature": "static MovieType DetectFormat(const char* filename);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\movie.hpp",
+    "line": 139,
+    "signature": "MovieHandle* CurrentMovie() const { return currentMovie; }",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\palette.hpp",
+    "line": 25,
+    "signature": ": Red(0), Green(0), Blue(0) {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\palette.hpp",
+    "line": 30,
+    "signature": ": Red(r), Green(g), Blue(b) {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\render_ext.hpp",
+    "line": 98,
+    "signature": "Palette() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_ctor, no_callgraph_match"
+  },
+  {
+    "file": "render\\render_ext.hpp",
+    "line": 868,
+    "signature": "virtual ~RLEBlitTransLucent25AlphaZReadWarp_ushort() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "render\\render_ext.hpp",
+    "line": 881,
+    "signature": "virtual ~RLEBlitTransLucent25AlphaZReadWrite_ushort() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "render\\render_ext.hpp",
+    "line": 894,
+    "signature": "virtual ~RLEBlitTransLucent25AlphaZRead_ushort() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "render\\render_ext.hpp",
+    "line": 907,
+    "signature": "virtual ~RLEBlitTransLucent25Alpha_ushort() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "render\\render_ext.hpp",
+    "line": 920,
+    "signature": "virtual ~RLEBlitTransLucent50AlphaZReadWarp_ushort() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "render\\render_ext.hpp",
+    "line": 933,
+    "signature": "virtual ~RLEBlitTransLucent50AlphaZReadWrite_ushort() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "render\\render_ext.hpp",
+    "line": 946,
+    "signature": "virtual ~RLEBlitTransLucent50AlphaZRead_ushort() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "render\\render_ext.hpp",
+    "line": 959,
+    "signature": "virtual ~RLEBlitTransLucent50Alpha_ushort() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "render\\render_ext.hpp",
+    "line": 972,
+    "signature": "virtual ~RLEBlitTransLucent75AlphaZReadWarp_ushort() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "render\\render_ext.hpp",
+    "line": 985,
+    "signature": "virtual ~RLEBlitTransLucent75AlphaZReadWrite_ushort() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "render\\render_ext.hpp",
+    "line": 998,
+    "signature": "virtual ~RLEBlitTransLucent75AlphaZRead_ushort() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "render\\render_ext.hpp",
+    "line": 1011,
+    "signature": "virtual ~RLEBlitTransLucent75Alpha_ushort() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "render\\render_ext.hpp",
+    "line": 1024,
+    "signature": "virtual ~RLEBlitTransXlatAlphaZReadWrite_ushort() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "render\\render_ext.hpp",
+    "line": 1037,
+    "signature": "virtual ~RLEBlitTransXlatAlphaZRead_ushort() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "render\\render_ext.hpp",
+    "line": 1050,
+    "signature": "virtual ~RLEBlitTransXlatAlpha_ushort() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "render\\render_ext.hpp",
+    "line": 1063,
+    "signature": "virtual ~RLEBlitTransZRemapXlatAlphaZReadWrite_ushort() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "render\\render_ext.hpp",
+    "line": 1076,
+    "signature": "virtual ~RLEBlitTransZRemapXlatAlphaZRead_ushort() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "render\\render_ext.hpp",
+    "line": 1195,
+    "signature": "virtual ~VoxelModel() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "render\\shp_blitter.hpp",
+    "line": 26,
+    "signature": "void (__thiscall *BlitRowT)(void* _this, int dest, int* src_pixels, int count, int stride, unsigned int zbuf, unsigned int vsurf, int param, int flags, int tint);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\shp_blitter.hpp",
+    "line": 31,
+    "signature": "void (__thiscall *BlitRow)(void* _this, int dest, int* src_pixels, int count, int stride, unsigned int zbuf, unsigned int vsurf, int param, int flags);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\shp_blitter.hpp",
+    "line": 36,
+    "signature": "void (__stdcall *BlitRowTint)(int dest, int* src_pixels, int count, int param1, int param2, int param3, int tint);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\shp_blitter.hpp",
+    "line": 40,
+    "signature": "void (__stdcall *BlitRowDirect)(int dest, int* src_pixels, int count, int param1, int param2, int param3, int param4, int param5);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\shp_blitter.hpp",
+    "line": 50,
+    "signature": "bool SHPBlitterCopy( DSurface* dst, int dst_x, int dst_y, const DSurface* src, int src_x, int src_y, int w, int h, BlitterFlags flags);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\shp_blitter.hpp",
+    "line": 58,
+    "signature": "bool SHPBlitterRLEBlit( Surface* dest_surface, Surface* src_surface, Surface* z_surface, void* blitter_vtable, const RectangleStruct& clip_rect, int* src_rect, int stride_param, int flags, int tint_color, int opacity, SHPStruct* building_shadow, int zs_x, int zs_y);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\shp_render.hpp",
+    "line": 28,
+    "signature": "~ShpImage();",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\shp_render.hpp",
+    "line": 30,
+    "signature": "bool LoadFromMemory(const uint8_t* data, int data_size);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\shp_render.hpp",
+    "line": 31,
+    "signature": "void Free();",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\shp_render.hpp",
+    "line": 39,
+    "signature": "void RenderToSurface( Surface* surface, int frame_index, int dest_x, int dest_y, const uint8_t palette[256][4]);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\shp_render.hpp",
+    "line": 45,
+    "signature": "bool DecodeRLE3(const uint8_t* src, int src_size, uint8_t* dst, int dst_width, int dst_height);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\shp_struct.hpp",
+    "line": 17,
+    "signature": ": Type(0), Width(0), Height(0), Frames(0) {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\shp_struct.hpp",
+    "line": 21,
+    "signature": "virtual ~SHPStruct();",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\shp_struct.hpp",
+    "line": 24,
+    "signature": "void Unload();",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\shp_struct.hpp",
+    "line": 28,
+    "signature": "RectangleStruct* GetFrameBounds(RectangleStruct& out, int frame_index) const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\shp_struct.hpp",
+    "line": 29,
+    "signature": "RectangleStruct GetFrameBounds(int frame_index) const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\shp_struct.hpp",
+    "line": 34,
+    "signature": "byte* GetPixels(int frame_index);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\shp_struct.hpp",
+    "line": 36,
+    "signature": "bool HasCompression(int frame_index) const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\shp_struct.hpp",
+    "line": 38,
+    "signature": "bool IsReference() const { return Type == 0xFFFF; }",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\shp_struct.hpp",
+    "line": 40,
+    "signature": "SHPReference* AsReference();",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\shp_struct.hpp",
+    "line": 41,
+    "signature": "const SHPReference* AsReference() const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\shp_struct.hpp",
+    "line": 66,
+    "signature": "const SHPFrame& GetFrameHeader(int frame_index) const {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\shp_struct.hpp",
+    "line": 76,
+    "signature": "SHPReference(const char* filename);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\surface.hpp",
+    "line": 24,
+    "signature": "virtual ~Surface() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "render\\surface.hpp",
+    "line": 115,
+    "signature": "virtual bool DrawLineFaded( const Point2D& start, const Point2D& end, const uint8_t* stipple_pattern, int fade_start, int fade_end, bool z_buffer, float gradient_start, float gradient_step, bool flip_dir) = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\surface.hpp",
+    "line": 260,
+    "signature": "void DrawSHP( ConvertClass* palette, SHPStruct* shp, int frame_index, const Point2D& pos, const RectangleStruct& bounds, BlitterFlags flags, uint32_t arg7, int arg8, uint32_t arg9, uint32_t argA, int tint_color, SHPStruct* buildingz_sha, uint32_t argD, int zs_x, int zs_y);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\surface.hpp",
+    "line": 277,
+    "signature": "void DrawSHP( ConvertClass* palette, SHPStruct* shp, int frame_index, const Point2D& location);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\surface.hpp",
+    "line": 283,
+    "signature": "static Point2D* DrawText( Point2D* out, const wchar_t* text, Surface* surface, const RectangleStruct& bounds, const Point2D& location, uint16_t color, uint32_t option3, uint32_t flags, uint32_t unknown9);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\surface.hpp",
+    "line": 294,
+    "signature": "static Point2D DrawText( const wchar_t* text, Surface* surface, const RectangleStruct& bounds, const Point2D& location, uint16_t color, uint32_t option3 = 0, uint32_t flags = 0x16, uint32_t unknown9 = 1);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\surface.hpp",
+    "line": 304,
+    "signature": "Point2D DrawText( const wchar_t* text, const RectangleStruct& bounds, const Point2D& location, uint16_t color, uint32_t option3 = 0, uint32_t flags = 0x16);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\surface.hpp",
+    "line": 312,
+    "signature": "Point2D DrawText( const wchar_t* text, const Point2D& location, uint16_t color, uint32_t option3 = 0, uint32_t flags = 0x16);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\surface.hpp",
+    "line": 438,
+    "signature": ": Surface(noinit_t{})",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\surface.hpp",
+    "line": 465,
+    "signature": ": XSurface(noinit_t{})",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\surface.hpp",
+    "line": 539,
+    "signature": "static void DetectPixelFormat(const DDPIXELFORMAT& pf);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\surface.hpp",
+    "line": 564,
+    "signature": ": XSurface(noinit_t{})",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\text_render.hpp",
+    "line": 17,
+    "signature": "void DrawText(DSurface* target, int x, int y, const wchar_t* text, uint8_t r, uint8_t g, uint8_t b);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\text_render.hpp",
+    "line": 20,
+    "signature": "void DrawText(DSurface* target, int x, int y, const char* text, uint8_t r, uint8_t g, uint8_t b);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\voxel.hpp",
+    "line": 45,
+    "signature": "void InitLimits( int32_t hva_min_x, int32_t hva_min_y, int32_t hva_min_z, int32_t hva_max_x, int32_t hva_max_y, int32_t hva_max_z);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\voxel.hpp",
+    "line": 118,
+    "signature": "virtual AbstractType __stdcall WhatAmI() const override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "render\\voxel.hpp",
+    "line": 174,
+    "signature": "virtual AbstractType __stdcall WhatAmI() const override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "structure\\aircraft.hpp",
+    "line": 20,
+    "signature": "virtual int __stdcall Landing_Altitude() override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "structure\\aircraft.hpp",
+    "line": 21,
+    "signature": "virtual int __stdcall Landing_Direction() override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "structure\\aircraft.hpp",
+    "line": 22,
+    "signature": "virtual long __stdcall Is_Loaded() override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "structure\\aircraft.hpp",
+    "line": 23,
+    "signature": "virtual long __stdcall Is_Strafe() override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "structure\\aircraft.hpp",
+    "line": 24,
+    "signature": "virtual long __stdcall Is_Fighter() override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "structure\\aircraft.hpp",
+    "line": 37,
+    "signature": "virtual int __stdcall Landing_Altitude() override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "structure\\aircraft.hpp",
+    "line": 38,
+    "signature": "virtual int __stdcall Landing_Direction() override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "structure\\aircraft.hpp",
+    "line": 39,
+    "signature": "virtual long __stdcall Is_Loaded() override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "structure\\aircraft.hpp",
+    "line": 40,
+    "signature": "virtual long __stdcall Is_Strafe() override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "structure\\aircraft.hpp",
+    "line": 41,
+    "signature": "virtual long __stdcall Is_Fighter() override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "structure\\aircraft.hpp",
+    "line": 50,
+    "signature": "virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "structure\\aircraft.hpp",
+    "line": 52,
+    "signature": "virtual AbstractType __stdcall whatAmI() const override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "structure\\aircraft.hpp",
+    "line": 131,
+    "signature": "void DrawShadow(Point2D* screen_pos, RectangleStruct* bounds) const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "structure\\aircraft.hpp",
+    "line": 132,
+    "signature": "void DrawJetExhaust(Point2D* screen_pos) const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "structure\\building_light.hpp",
+    "line": 37,
+    "signature": "virtual HRESULT __stdcall Save(IStream*, int) override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "structure\\building_light.hpp",
+    "line": 41,
+    "signature": "virtual AbstractType __stdcall whatAmI() const override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "structure\\unit.hpp",
+    "line": 26,
+    "signature": "virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "structure\\unit.hpp",
+    "line": 30,
+    "signature": "virtual AbstractType __stdcall whatAmI() const override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "structure\\unit.hpp",
+    "line": 33,
+    "signature": "virtual void DrawAsVXL(Point2D* coords, RectangleStruct* bounding_rect, uint32_t dwUnk7, uint32_t dwUnk8);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "structure\\unit.hpp",
+    "line": 34,
+    "signature": "virtual void DrawAsSHP(Point2D* coords, RectangleStruct* bounding_rect, uint32_t dwUnk7, uint32_t dwUnk8);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\cc_file.hpp",
+    "line": 13,
+    "signature": "constexpr MemoryBuffer() noexcept = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_ctor, no_callgraph_match"
+  },
+  {
+    "file": "system\\cc_file.hpp",
+    "line": 16,
+    "signature": ": MemoryBuffer(nullptr, size) {}",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\cc_file.hpp",
+    "line": 21,
+    "signature": ", Size(size) {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\cc_file.hpp",
+    "line": 30,
+    "signature": "~MemoryBuffer() noexcept {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\cc_file.hpp",
+    "line": 40,
+    "signature": ", Size(other.Size) {}",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\cc_file.hpp",
+    "line": 46,
+    "signature": ", Allocated(other.Allocated) {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\cc_file.hpp",
+    "line": 51,
+    "signature": "MemoryBuffer& operator=(const MemoryBuffer& other) noexcept {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\cc_file.hpp",
+    "line": 63,
+    "signature": "MemoryBuffer& operator=(MemoryBuffer&& other) noexcept {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\cd_drive.hpp",
+    "line": 11,
+    "signature": "static CDDriveManagerClass* Global();",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\cd_drive.hpp",
+    "line": 27,
+    "signature": "virtual ~CD() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "system\\cd_file.hpp",
+    "line": 13,
+    "signature": "CDFileClass() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_ctor, no_callgraph_match"
+  },
+  {
+    "file": "system\\cd_file.hpp",
+    "line": 16,
+    "signature": "explicit CDFileClass(const noinit_t&) noexcept : BufferIOFileClass(noinit_t()) {}",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\convert_class.hpp",
+    "line": 23,
+    "signature": "static void CreateFromFile(const char* pFilename, BytePalette*& pPalette, ConvertClass*& pDestination);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\convert_class.hpp",
+    "line": 25,
+    "signature": "BlitterCore* SelectPlainBlitter(BlitterFlags flags) const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\factory.hpp",
+    "line": 27,
+    "signature": "virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\factory.hpp",
+    "line": 33,
+    "signature": "virtual void calculateChecksum(void* checksum) const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\factory.hpp",
+    "line": 40,
+    "signature": "bool Unsuspend(bool manual);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\factory.hpp",
+    "line": 44,
+    "signature": "bool IsDone() const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\factory.hpp",
+    "line": 58,
+    "signature": "static FactoryClass* FindByOwnerAndProduct(const HouseClass* house, const TechnoTypeClass* item);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\file_class.hpp",
+    "line": 35,
+    "signature": "virtual bool OpenEx(const char* pFileName, FileAccessMode access) = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\file_class.hpp",
+    "line": 43,
+    "signature": "virtual void CDCheck(uint32_t errorCode, bool bUnk, const char* pFilename) = 0;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\file_class.hpp",
+    "line": 81,
+    "signature": "bool OpenEx(const char* pFileName, FileAccessMode access) override { return false; }",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\file_class.hpp",
+    "line": 87,
+    "signature": "void CDCheck(uint32_t errorCode, bool bUnk, const char* pFilename) override {}",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\file_system.hpp",
+    "line": 33,
+    "signature": "static void* LoadFileWithSize(const char* pFileName, int* outSize, bool bLoadAsSHP);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\file_system.hpp",
+    "line": 54,
+    "signature": "static T* AllocateFile(const char* pFilename) {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\file_system.hpp",
+    "line": 60,
+    "signature": "static BytePalette* AllocatePalette(const char* pFilename);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\ini_class.hpp",
+    "line": 55,
+    "signature": "virtual double GetDouble(const char* section, const char* key, double def);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\ini_class.hpp",
+    "line": 56,
+    "signature": "virtual const char* GetGUID(const char* section, const char* key, const char* def);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\map.hpp",
+    "line": 86,
+    "signature": "bool operator==(const ZoneConnectionClass& other) const {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\map.hpp",
+    "line": 113,
+    "signature": "static bool IsCliffHit(const CellClass* source, const CellClass* before, const CellClass* after);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\map.hpp",
+    "line": 114,
+    "signature": "static bool IsWallHit(const CellClass* source, const CellClass* check, const CellClass* target, const HouseClass* owner);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\map.hpp",
+    "line": 146,
+    "signature": "virtual void DestructCells() {}",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\map.hpp",
+    "line": 147,
+    "signature": "virtual void ConstructCells() {}",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\map.hpp",
+    "line": 149,
+    "signature": "virtual bool DraggingInProgress() { return false; }",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\map.hpp",
+    "line": 151,
+    "signature": "virtual void CreateEmptyMap(const RectangleStruct& map_rect, bool reuse, int8_t n_level, bool unk2) {}",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\map.hpp",
+    "line": 152,
+    "signature": "virtual void SetVisibleRect(const RectangleStruct& map_rect) {}",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\map.hpp",
+    "line": 165,
+    "signature": "int GetThreatPosed(const CellStruct& cell, HouseClass* house) const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\map.hpp",
+    "line": 168,
+    "signature": "static CoordStruct* GetRandomCoordsNear(CoordStruct& out, const CoordStruct& coords, int distance, bool center);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\map.hpp",
+    "line": 169,
+    "signature": "static CoordStruct GetRandomCoordsNear(const CoordStruct& coords, int distance, bool center) {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\map.hpp",
+    "line": 176,
+    "signature": "static CoordStruct* PickInfantrySublocation(CoordStruct& out, const CoordStruct& coords, bool ignore_contents = false);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\map.hpp",
+    "line": 177,
+    "signature": "static CoordStruct PickInfantrySublocation(const CoordStruct& coords, bool ignore_contents = false) {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\map.hpp",
+    "line": 188,
+    "signature": "static AnimTypeClass* SelectDamageAnimation(int damage, WarheadTypeClass* wh, LandType land_type, const CoordStruct& coords);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\map.hpp",
+    "line": 189,
+    "signature": "static void FlashbangWarheadAt(int damage, WarheadTypeClass* wh, CoordStruct coords, bool force = false, int cl_disable_flags = 0);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\map.hpp",
+    "line": 190,
+    "signature": "static int GetTotalDamage(int damage, const WarheadTypeClass* warhead, Armor armor, int distance);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\map.hpp",
+    "line": 194,
+    "signature": "CellStruct* PickCellOnEdge(CellStruct& buffer, Edge edge, const CellStruct& current_location, const CellStruct& fallback, SpeedType speed, bool validate_reachability, MovementZone mov_zone) const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\map.hpp",
+    "line": 195,
+    "signature": "CellStruct PickCellOnEdge(Edge edge, const CellStruct& current_location, const CellStruct& fallback, SpeedType speed, bool validate_reachability, MovementZone mov_zone) const {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\map.hpp",
+    "line": 203,
+    "signature": "void UpdatePathfinding2(const CellStruct* where, int count);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\map.hpp",
+    "line": 205,
+    "signature": "CellStruct* PathfindingFind(CellStruct& out, const CellStruct& position, SpeedType speed, int a5, MovementZone mov_zone, bool alt, int space_size_x, int space_size_y, bool disallow_overlay, bool a11, bool require_burrowable, bool allow_bridge, const CellStruct& close_to, bool a15, bool buildable);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\map.hpp",
+    "line": 206,
+    "signature": "CellStruct PathfindingFind(const CellStruct& position, SpeedType speed, int a5, MovementZone mov_zone, bool alt, int space_size_x, int space_size_y, bool disallow_overlay, bool a11, bool require_burrowable, bool allow_bridge, const CellStruct& close_to, bool a15, bool buildable) {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\map.hpp",
+    "line": 213,
+    "signature": "void AddContentAt(CellStruct* coords, TechnoClass* content);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\map.hpp",
+    "line": 231,
+    "signature": "void RevealArea3(CoordStruct* coords, int height, int radius, bool skip_reveal);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\map.hpp",
+    "line": 237,
+    "signature": "void SetTogglePowerMode(int mode);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\map.hpp",
+    "line": 238,
+    "signature": "void SetPlaceBeaconMode(int mode);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\map.hpp",
+    "line": 239,
+    "signature": "void SetSellMode(int mode);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\map.hpp",
+    "line": 240,
+    "signature": "void SetRepairMode(int mode);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\mix_blowfish.hpp",
+    "line": 16,
+    "signature": "void SetKey(const uint8_t* key, int cb_key);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\mix_blowfish.hpp",
+    "line": 17,
+    "signature": "void Encipher(uint32_t& xl, uint32_t& xr) const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\mix_blowfish.hpp",
+    "line": 18,
+    "signature": "void Decipher(uint32_t& xl, uint32_t& xr) const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\mix_blowfish.hpp",
+    "line": 19,
+    "signature": "void Decipher(const void* src, void* dst, int size) const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\mix_blowfish.hpp",
+    "line": 22,
+    "signature": "uint32_t S(uint32_t x, int i) const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\mix_blowfish.hpp",
+    "line": 23,
+    "signature": "uint32_t BF_F(uint32_t x) const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\mix_blowfish.hpp",
+    "line": 24,
+    "signature": "void Round(uint32_t& a, uint32_t b, int n) const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\mix_blowfish.hpp",
+    "line": 37,
+    "signature": "void ComputeBlowfishKey(const uint8_t* key_source, uint8_t* key_out);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\mix_file.hpp",
+    "line": 28,
+    "signature": "virtual ~Node() override = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "system\\mix_file.hpp",
+    "line": 114,
+    "signature": "static uint32_t ComputeID(const char* filename);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\mix_file.hpp",
+    "line": 124,
+    "signature": "MixFileClass() noexcept : Node(noinit_t()) {}",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\mix_file.hpp",
+    "line": 125,
+    "signature": "explicit MixFileClass(const char* pFileName) noexcept;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\mix_file.hpp",
+    "line": 128,
+    "signature": "MixFileClass(const uint8_t* data, int dataSize, const char* name) noexcept;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\mix_file.hpp",
+    "line": 137,
+    "signature": "bool Extract(int index, void* buffer, int buffer_size) const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\mix_file.hpp",
+    "line": 138,
+    "signature": "bool Extract(const char* filename, void* buffer, int buffer_size) const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\mix_file.hpp",
+    "line": 139,
+    "signature": "bool Peek(int index, void* buffer, int size) const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\mix_file.hpp",
+    "line": 141,
+    "signature": "void DumpEntries() const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\mix_file.hpp",
+    "line": 144,
+    "signature": "explicit MixFileClass(const noinit_t&) noexcept : Node(noinit_t()) {}",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\radar.hpp",
+    "line": 27,
+    "signature": "virtual void SetVisibleRect(const RectangleStruct& map_rect);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\radar.hpp",
+    "line": 28,
+    "signature": "virtual void DisposeOfArt();",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\radar.hpp",
+    "line": 30,
+    "signature": "virtual void onRadarClick(uint32_t unk);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\scenario.hpp",
+    "line": 85,
+    "signature": "uint32_t Random();",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\scenario.hpp",
+    "line": 86,
+    "signature": "int32_t RandomRanged(int n_min, int n_max);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\scenario.hpp",
+    "line": 106,
+    "signature": "static void RecalcLighting(int r, int g, int b, uint32_t unk);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\waypoint_path.hpp",
+    "line": 28,
+    "signature": "virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { return 0; }",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\waypoint_path.hpp",
+    "line": 32,
+    "signature": "virtual void pointerExpired(AbstractClass* ptr, bool removed) override {}",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\waypoint_path.hpp",
+    "line": 33,
+    "signature": "virtual AbstractType __stdcall whatAmI() const override { return kObjectDeriveId; }",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\waypoint_path.hpp",
+    "line": 35,
+    "signature": "virtual void calculateChecksum(void* checksum) const {}",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "system\\xcc_names.hpp",
+    "line": 14306,
+    "signature": "inline const char* XccLookup(uint32_t hash) {",
+    "annotation": "// IDA: UNMATCHED \u2014 inline_likely_inlined, no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "team\\campaign.hpp",
+    "line": 35,
+    "signature": "virtual AbstractType __stdcall whatAmI() const override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "team\\campaign.hpp",
+    "line": 38,
+    "signature": "static void CreateFromINIList(CCINIClass* ini);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "team\\script.hpp",
+    "line": 42,
+    "signature": "virtual AbstractType __stdcall whatAmI() const override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "team\\script.hpp",
+    "line": 45,
+    "signature": "ScriptActionNode* GetCurrentAction(ScriptActionNode* buffer) const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "team\\script.hpp",
+    "line": 49,
+    "signature": "bool SetCurrentLine(int idx);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "team\\script.hpp",
+    "line": 76,
+    "signature": "virtual AbstractType __stdcall whatAmI() const override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "team\\taction.hpp",
+    "line": 28,
+    "signature": "virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { return 0; }",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "team\\taction.hpp",
+    "line": 32,
+    "signature": "virtual void pointerExpired(AbstractClass* ptr, bool removed) override {}",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "team\\taction.hpp",
+    "line": 33,
+    "signature": "virtual AbstractType __stdcall whatAmI() const override { return kObjectDeriveId; }",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "team\\taction.hpp",
+    "line": 35,
+    "signature": "virtual void calculateChecksum(void* checksum) const {}",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "team\\tag.hpp",
+    "line": 49,
+    "signature": "virtual void pointerExpired(AbstractClass* ptr, bool removed) override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "team\\tag.hpp",
+    "line": 50,
+    "signature": "virtual AbstractType __stdcall whatAmI() const override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "team\\tag.hpp",
+    "line": 52,
+    "signature": "virtual void calculateChecksum(void* checksum) const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "team\\tag.hpp",
+    "line": 66,
+    "signature": "bool RaiseEvent(int event, ObjectClass* tag_owner, CellStruct location, bool force_all = false, TechnoClass* source = nullptr);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "team\\tag.hpp",
+    "line": 68,
+    "signature": "bool ShouldReplace() const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "team\\tag.hpp",
+    "line": 70,
+    "signature": "bool HasBeenDestroyed() const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "team\\tag.hpp",
+    "line": 102,
+    "signature": "virtual void pointerExpired(AbstractClass* ptr, bool removed) override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "team\\tag.hpp",
+    "line": 103,
+    "signature": "virtual AbstractType __stdcall whatAmI() const override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "team\\tag.hpp",
+    "line": 105,
+    "signature": "virtual void calculateChecksum(void* checksum) const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "team\\tag.hpp",
+    "line": 120,
+    "signature": "static void SaveToINIList(CCINIClass* ini);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "team\\team_type.hpp",
+    "line": 29,
+    "signature": "virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { return 0; }",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "team\\team_type.hpp",
+    "line": 33,
+    "signature": "virtual void pointerExpired(AbstractClass* ptr, bool removed) override {}",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "team\\team_type.hpp",
+    "line": 34,
+    "signature": "virtual AbstractType __stdcall whatAmI() const override { return kObjectDeriveId; }",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "team\\team_type.hpp",
+    "line": 36,
+    "signature": "virtual void calculateChecksum(void* checksum) const {}",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "team\\tevent.hpp",
+    "line": 27,
+    "signature": "virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { return 0; }",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "team\\tevent.hpp",
+    "line": 31,
+    "signature": "virtual void pointerExpired(AbstractClass* ptr, bool removed) override {}",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "team\\tevent.hpp",
+    "line": 32,
+    "signature": "virtual AbstractType __stdcall whatAmI() const override { return kObjectDeriveId; }",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "team\\tevent.hpp",
+    "line": 34,
+    "signature": "virtual void calculateChecksum(void* checksum) const {}",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "team\\trigger.hpp",
+    "line": 58,
+    "signature": "virtual void pointerExpired(AbstractClass* ptr, bool removed) override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "team\\trigger.hpp",
+    "line": 59,
+    "signature": "virtual AbstractType __stdcall whatAmI() const override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "team\\trigger.hpp",
+    "line": 61,
+    "signature": "virtual void calculateChecksum(void* checksum) const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "team\\trigger.hpp",
+    "line": 63,
+    "signature": "static TriggerClass* GetInstance(TriggerTypeClass* type);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "team\\trigger.hpp",
+    "line": 69,
+    "signature": "bool HasGlobalSetOrClearedEvent(int idx_global) const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "team\\trigger.hpp",
+    "line": 75,
+    "signature": "void MarkEventAsNotOccured(int idx);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "team\\trigger.hpp",
+    "line": 79,
+    "signature": "bool HasBeenDestroyed() const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "team\\trigger.hpp",
+    "line": 85,
+    "signature": "void Disable();",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "team\\trigger.hpp",
+    "line": 117,
+    "signature": "virtual void pointerExpired(AbstractClass* ptr, bool removed) override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "team\\trigger.hpp",
+    "line": 118,
+    "signature": "virtual AbstractType __stdcall whatAmI() const override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "team\\trigger.hpp",
+    "line": 120,
+    "signature": "virtual void calculateChecksum(void* checksum) const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "team\\trigger.hpp",
+    "line": 129,
+    "signature": "bool HasGlobalSetOrClearedEvent(int idx_global) const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "type\\abstract_type.hpp",
+    "line": 20,
+    "signature": "static AbstractTypeClass* FindOrAllocate(const char* pID);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "type\\abstract_type.hpp",
+    "line": 36,
+    "signature": "AbstractTypeClass(noinit_t) noexcept {}",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "type\\aircraft_type.hpp",
+    "line": 18,
+    "signature": "static AircraftTypeClass* FindOrAllocate(const char* pID);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "type\\anim_type.hpp",
+    "line": 41,
+    "signature": "virtual AbstractType __stdcall whatAmI() const override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "type\\anim_type.hpp",
+    "line": 55,
+    "signature": "AnimTypeClass(noinit_t) noexcept;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "type\\building_type.hpp",
+    "line": 54,
+    "signature": "bool IsVehicle() const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "type\\building_type.hpp",
+    "line": 57,
+    "signature": "bool CanPlaceHere(CellStruct* cell, HouseClass* owner) const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "type\\building_type.hpp",
+    "line": 63,
+    "signature": "BuildingAnimStruct& GetBuildingAnim(BuildingAnimSlot slot);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "type\\building_type.hpp",
+    "line": 64,
+    "signature": "const BuildingAnimStruct& GetBuildingAnim(BuildingAnimSlot slot) const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "type\\bullet_type.hpp",
+    "line": 24,
+    "signature": "static BulletTypeClass* FindOrAllocate(const char* pID);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "type\\bullet_type.hpp",
+    "line": 37,
+    "signature": "bool Rotates() const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "type\\bullet_type.hpp",
+    "line": 40,
+    "signature": "BulletClass* CreateBullet(AbstractClass* pTarget, TechnoClass* pOwner, int nDamage, WarheadTypeClass* pWH, int nSpeed, bool bBright);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "type\\infantry_type.hpp",
+    "line": 26,
+    "signature": "SubSequenceStruct& GetSequence(Sequence sequence);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "type\\infantry_type.hpp",
+    "line": 27,
+    "signature": "const SubSequenceStruct& GetSequence(Sequence sequence) const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "type\\infantry_type.hpp",
+    "line": 39,
+    "signature": "static InfantryTypeClass* FindOrAllocate(const char* pID);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "type\\object_type.hpp",
+    "line": 26,
+    "signature": "virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "type\\object_type.hpp",
+    "line": 27,
+    "signature": "virtual HRESULT __stdcall GetSizeMax(ULARGE_INTEGER* pcbSize) override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "type\\object_type.hpp",
+    "line": 32,
+    "signature": "virtual DWORD GetOwners() const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "type\\object_type.hpp",
+    "line": 34,
+    "signature": "virtual void onTypeLoadComplete(DWORD dwUnk) const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "type\\object_type.hpp",
+    "line": 35,
+    "signature": "virtual void onTypeUnload(DWORD dwUnk);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "type\\object_type.hpp",
+    "line": 37,
+    "signature": "virtual int GetActualCost(HouseClass* pHouse) const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "type\\object_type.hpp",
+    "line": 40,
+    "signature": "virtual CellStruct* GetFoundationData(bool IncludeBib) const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "type\\object_type.hpp",
+    "line": 41,
+    "signature": "virtual BuildingClass* FindFactory(bool allowOccupied, bool requirePower, bool requireCanBuild, HouseClass const* pHouse) const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "type\\object_type.hpp",
+    "line": 43,
+    "signature": "virtual SHPStruct* GetImage() const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "type\\object_type.hpp",
+    "line": 45,
+    "signature": "static bool IsBuildCat5(AbstractType abstractID, int idx);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "type\\object_type.hpp",
+    "line": 53,
+    "signature": "ObjectTypeClass(noinit_t) noexcept;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "type\\overlay_type.hpp",
+    "line": 18,
+    "signature": "static OverlayTypeClass* FindOrAllocate(const char* pID);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "type\\overlay_type.hpp",
+    "line": 31,
+    "signature": "virtual CoordStruct* onCellChanged(CoordStruct* pDest, CoordStruct* pSrc) const override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "type\\particle_system_type.hpp",
+    "line": 25,
+    "signature": "static ParticleSystemTypeClass* FindOrAllocate(const char* pID);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "type\\particle_system_type.hpp",
+    "line": 35,
+    "signature": "ParticleSystemTypeClass(const char* pID) noexcept;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "type\\particle_system_type.hpp",
+    "line": 39,
+    "signature": "ParticleSystemTypeClass(noinit_t) noexcept : ObjectTypeClass(ObjectTypeClass::noinit_t{}) {}",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "type\\particle_type.hpp",
+    "line": 25,
+    "signature": "static ParticleTypeClass* FindOrAllocate(const char* pID);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "type\\particle_type.hpp",
+    "line": 39,
+    "signature": "ParticleTypeClass(noinit_t) noexcept : ObjectTypeClass(ObjectTypeClass::noinit_t{}) {}",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "type\\smudge_type.hpp",
+    "line": 16,
+    "signature": "static SmudgeTypeClass* FindOrAllocate(const char* pID);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "type\\smudge_type.hpp",
+    "line": 32,
+    "signature": "virtual void onTypeLoaded(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4, DWORD dwUnk5);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "type\\techno_type.hpp",
+    "line": 64,
+    "signature": ", TurretLocked(false) {}",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "type\\techno_type.hpp",
+    "line": 67,
+    "signature": "bool operator==(const WeaponStruct& rhs) const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "type\\techno_type.hpp",
+    "line": 68,
+    "signature": "bool operator!=(const WeaponStruct& rhs) const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "type\\techno_type.hpp",
+    "line": 83,
+    "signature": "virtual HRESULT __stdcall GetSizeMax(ULARGE_INTEGER* pcbSize) override;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "type\\techno_type.hpp",
+    "line": 93,
+    "signature": "virtual int getRefund(HouseClass* pHouse, bool bUnk) const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "type\\techno_type.hpp",
+    "line": 98,
+    "signature": "bool HasMultipleTurrets() const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "type\\techno_type.hpp",
+    "line": 104,
+    "signature": "bool InRequiredHouses(DWORD bitHouseType) const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "type\\techno_type.hpp",
+    "line": 105,
+    "signature": "bool InForbiddenHouses(DWORD bitHouseType) const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "type\\techno_type.hpp",
+    "line": 107,
+    "signature": "WeaponStruct& GetWeapon(size_t index, bool elite);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "type\\techno_type.hpp",
+    "line": 108,
+    "signature": "const WeaponStruct& GetWeapon(size_t index, bool elite) const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "type\\type_classes.hpp",
+    "line": 8,
+    "signature": "bool isArmed() const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "type\\type_classes.hpp",
+    "line": 10,
+    "signature": "WeaponTypeClass* getWeapon(int weaponIdx) const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "type\\warhead_type.hpp",
+    "line": 23,
+    "signature": ": ForceFire(FF), Retaliate(Retal), PassiveAcquire(Acquire) {}",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "type\\weapon_type.hpp",
+    "line": 24,
+    "signature": "static WeaponTypeClass* FindOrAllocate(const char* pID);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "ui\\command_ext.hpp",
+    "line": 179,
+    "signature": "Commands() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_ctor, no_callgraph_match"
+  },
+  {
+    "file": "ui\\command_ext.hpp",
+    "line": 180,
+    "signature": "~Commands();",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "ui\\dialog.hpp",
+    "line": 17,
+    "signature": "INT_PTR CALLBACK BaseProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "ui\\g_screen.hpp",
+    "line": 37,
+    "signature": "virtual void GetInputAndUpdate(uint32_t* outKeyCode, int* outMouseX, int* outMouseY);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "ui\\g_screen.hpp",
+    "line": 39,
+    "signature": "virtual bool OnMessage(uint32_t msg);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "ui\\g_screen.hpp",
+    "line": 40,
+    "signature": "virtual void MarkNeedsRedraw(int flags);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "ui\\g_screen.hpp",
+    "line": 41,
+    "signature": "virtual void DrawOnTop();",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "ui\\g_screen.hpp",
+    "line": 45,
+    "signature": "virtual bool UpdateCursor(MouseCursorType cursor, bool miniMap);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "ui\\g_screen.hpp",
+    "line": 46,
+    "signature": "virtual bool RestoreCursor();",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "ui\\g_screen.hpp",
+    "line": 55,
+    "signature": "virtual bool vt_entry_90(const CellStruct& cell, HouseClass* house);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "ui\\g_screen.hpp",
+    "line": 57,
+    "signature": "virtual bool vt_entry_98(const CellStruct& cell, HouseClass* house);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "ui\\g_screen.hpp",
+    "line": 58,
+    "signature": "virtual bool vt_entry_9C(const CellStruct& cell, HouseClass* house);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "ui\\gadget.hpp",
+    "line": 67,
+    "signature": "TextButtonClass(uint32_t id, const char* text, int x, int y, int w = 200, int h = 32);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "ui\\gadget.hpp",
+    "line": 86,
+    "signature": "LabelClass(uint32_t id, const char* text, int x, int y, uint8_t r = 200, uint8_t g = 200, uint8_t b = 200);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "ui\\gadget.hpp",
+    "line": 103,
+    "signature": "ShpButtonClass(uint32_t id, int x, int y, ShpImage* img, const uint8_t palette[256][4]);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "ui\\gadget.hpp",
+    "line": 112,
+    "signature": "const uint8_t (*Palette)[4] = nullptr;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "ui\\gadget.hpp",
+    "line": 123,
+    "signature": "DialogClass(int x, int y, int w, int h);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "ui\\gadget.hpp",
+    "line": 127,
+    "signature": "virtual void OnupdateLogic();",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "ui\\gadget.hpp",
+    "line": 128,
+    "signature": "virtual bool OnMouseClick(int mouse_x, int mouse_y);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "ui\\gadget.hpp",
+    "line": 129,
+    "signature": "virtual void OnMouseMove(int mouse_x, int mouse_y);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "ui\\gadget.hpp",
+    "line": 132,
+    "signature": "void AddGadget(GadgetClass* gadget);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "ui\\gadget.hpp",
+    "line": 134,
+    "signature": "void SetVisible(bool visible);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "ui\\gadget.hpp",
+    "line": 136,
+    "signature": "bool IsFinished() const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "ui\\gadget.hpp",
+    "line": 137,
+    "signature": "void Finish(int result);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "ui\\gadget.hpp",
+    "line": 143,
+    "signature": "std::vector<GadgetClass*>& Gadgets();",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "ui\\message_list.hpp",
+    "line": 42,
+    "signature": "void PrintMessage(const wchar_t* pLabel, uint32_t unk1, const wchar_t* pMessage, int32_t colorIndex, uint32_t unk2, int32_t duration, bool silent);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "ui\\message_list.hpp",
+    "line": 46,
+    "signature": "void PrintMessage(const wchar_t* pMessage, int32_t durationFrames = 150, int32_t colorIndex = 0, bool silent = false);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "ui\\message_list.hpp",
+    "line": 50,
+    "signature": "void PrintMessage(const wchar_t* pMessage, double durationMinutes, int32_t colorIndex = 0, bool silent = false);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "ui\\mouse.hpp",
+    "line": 37,
+    "signature": "MiniFrame(miniFrame), MiniCount(miniCount), HotX(hotX), HotY(hotY) {}",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "ui\\mouse.hpp",
+    "line": 55,
+    "signature": "virtual void CallFunc10() {}",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "ui\\mouse.hpp",
+    "line": 57,
+    "signature": "virtual int32_t GetX() const { return 0; }",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "ui\\mouse.hpp",
+    "line": 58,
+    "signature": "virtual int32_t GetY() const { return 0; }",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "ui\\mouse.hpp",
+    "line": 59,
+    "signature": "virtual Point2D* fetchCoordinatesHere(Point2D* out) const { return nullptr; }",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "ui\\mouse.hpp",
+    "line": 60,
+    "signature": "virtual void SetCoords(const Point2D& buffer) {}",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "ui\\mouse.hpp",
+    "line": 63,
+    "signature": "virtual void GetDimensions(int32_t* outWidth, int32_t* outHeight) {}",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "ui\\mouse.hpp",
+    "line": 95,
+    "signature": "virtual bool RestoreCursor() override { return false; }",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "ui\\sidebar.hpp",
+    "line": 50,
+    "signature": "FlashEndFrame(0) {}",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "ui\\sidebar.hpp",
+    "line": 57,
+    "signature": "FlashEndFrame(0) {}",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "ui\\sidebar.hpp",
+    "line": 59,
+    "signature": "bool operator==(const CameoDataStruct& rhs) const noexcept {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "ui\\sidebar.hpp",
+    "line": 64,
+    "signature": "bool operator!=(const CameoDataStruct& rhs) const noexcept {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "ui\\tool_tip.hpp",
+    "line": 34,
+    "signature": "bool GetToolTipForObject(ObjectClass* pObject, wchar_t* outBuffer, int32_t bufferSize, HouseClass* pHouse, TechnoTypeClass* pTechType);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "ui\\tool_tip.hpp",
+    "line": 38,
+    "signature": "bool GetToolTipForCell(const CellStruct& cell, wchar_t* outBuffer, int32_t bufferSize, HouseClass* pHouse);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "ui\\ui_ext.hpp",
+    "line": 281,
+    "signature": "virtual ~Bitmap() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "ui\\ui_ext.hpp",
+    "line": 429,
+    "signature": "virtual ~Checkbox() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "ui\\ui_ext.hpp",
+    "line": 438,
+    "signature": "virtual ~Checksum() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "ui\\ui_ext.hpp",
+    "line": 621,
+    "signature": "virtual ~GadgetGrid() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "ui\\ui_ext.hpp",
+    "line": 666,
+    "signature": "virtual ~Keyboard() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "ui\\ui_ext.hpp",
+    "line": 675,
+    "signature": "virtual ~List() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "ui\\ui_ext.hpp",
+    "line": 735,
+    "signature": "virtual ~Main() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "ui\\ui_ext.hpp",
+    "line": 753,
+    "signature": "virtual ~Slider() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "ui\\ui_ext.hpp",
+    "line": 835,
+    "signature": "virtual ~Tooltip() = default;",
+    "annotation": "// IDA: UNMATCHED \u2014 defaulted_special_member, default_dtor, no_callgraph_match"
+  },
+  {
+    "file": "wdt\\wdt.hpp",
+    "line": 47,
+    "signature": ": ptr(ptr) {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "wdt\\wdt.hpp",
+    "line": 53,
+    "signature": ": ptr(other.ptr) {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "wdt\\wdt.hpp",
+    "line": 59,
+    "signature": ": ptr(other.ptr) {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "wdt\\wdt.hpp",
+    "line": 69,
+    "signature": "rc_ptr& operator=(const rc_ptr& other) noexcept {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "wdt\\wdt.hpp",
+    "line": 80,
+    "signature": "rc_ptr& operator=(rc_ptr&& other) noexcept {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "wdt\\wdt.hpp",
+    "line": 91,
+    "signature": "T* get() const noexcept { return ptr; }",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "wdt\\wdt.hpp",
+    "line": 92,
+    "signature": "T* operator->() const noexcept { return ptr; }",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "wdt\\wdt.hpp",
+    "line": 93,
+    "signature": "T& operator*() const noexcept { return *ptr; }",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "wdt\\wdt.hpp",
+    "line": 94,
+    "signature": "explicit operator bool() const noexcept { return ptr != nullptr; }",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "wdt\\wdt.hpp",
+    "line": 103,
+    "signature": "T* release() noexcept {",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "wdt\\wdt.hpp",
+    "line": 118,
+    "signature": "virtual ~State();",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "wdt\\wdt.hpp",
+    "line": 149,
+    "signature": "virtual ~Map();",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "wdt\\wdt.hpp",
+    "line": 175,
+    "signature": "Territory();",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "wdt\\wdt.hpp",
+    "line": 176,
+    "signature": "virtual ~Territory();",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "wdt\\wdt.hpp",
+    "line": 179,
+    "signature": "virtual WDTError Detach();",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "wdt\\wdt.hpp",
+    "line": 180,
+    "signature": "virtual int Owner() const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "wdt\\wdt.hpp",
+    "line": 181,
+    "signature": "virtual int Income() const;",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "wdt\\wdt.hpp",
+    "line": 197,
+    "signature": "Conflict();",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "wdt\\wdt.hpp",
+    "line": 198,
+    "signature": "virtual ~Conflict();",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "wdt\\wdt.hpp",
+    "line": 200,
+    "signature": "virtual WDTError Resolve();",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "wdt\\wdt.hpp",
+    "line": 217,
+    "signature": "virtual ~Campaign();",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "wdt\\wdt.hpp",
+    "line": 234,
+    "signature": "History();",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "wdt\\wdt.hpp",
+    "line": 235,
+    "signature": "virtual ~History();",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  },
+  {
+    "file": "wdt\\wdt.hpp",
+    "line": 237,
+    "signature": "virtual void Record(const char* event);",
+    "annotation": "// IDA: UNMATCHED \u2014 no_callgraph_match, no_git_history"
+  }
+]

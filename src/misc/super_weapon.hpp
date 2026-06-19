@@ -170,7 +170,7 @@ public:
     // TODO: complete SuperClass
 
 protected:
-    explicit SuperClass(noinit_t) noexcept;
+    explicit SuperClass(noinit_t) noexcept; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 };
 
 class LightningStorm
@@ -194,7 +194,7 @@ public:
     static bool HasDeferment();                                              // 0x53A100 (IsActive)
     static void Strike(const CellStruct& cell);                              // 0x53A140
     static void Strike2(const CoordStruct& coords);                          // 0x53A300
-    static void PrintMessage();
+    static void PrintMessage(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
     static void End();  // IDA: 0x53A090
     static bool IsActive();  // IDA: 0x53A100
 };
@@ -210,7 +210,7 @@ public:
     static void Start(HouseClass* pOwner, const CellStruct& coords);  // 0x7CD80F
     static void updateLogic();
     static void Fire();                                               // 0x53B080
-    static void PrintMessage();
+    static void PrintMessage(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
     static bool Active();                                             // 0x53B400 (IsActive)
 };
 
@@ -236,7 +236,7 @@ public:
     static void FadeIn();                // 0x53A110 (IsActive)
     static void FadeOut();               // 0x53A120 (ProcessEffect)
     static bool IsFadingIn();
-    static bool IsFadingOut();
+    static bool IsFadingOut(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
     static bool IsActive();  // IDA: 0x53A110
     static void ProcessEffect();  // IDA: 0x53A120
 };

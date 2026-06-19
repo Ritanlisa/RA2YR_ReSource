@@ -23,8 +23,8 @@ struct SubSequenceStruct
 
 struct SequenceStruct
 {
-    SubSequenceStruct& GetSequence(Sequence sequence);
-    const SubSequenceStruct& GetSequence(Sequence sequence) const;
+    SubSequenceStruct& GetSequence(Sequence sequence); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    const SubSequenceStruct& GetSequence(Sequence sequence) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     SubSequenceStruct Sequences[42];
 };
@@ -36,7 +36,7 @@ public:
 
     static DynamicVectorClass<InfantryTypeClass*>* Array;
     static InfantryTypeClass* Find(const char* pID);  // 0x772FA0
-    static InfantryTypeClass* FindOrAllocate(const char* pID);
+    static InfantryTypeClass* FindOrAllocate(const char* pID); // IDA: UNMATCHED — no_callgraph_match, no_git_history
     static int FindIndex(const char* pID);
 
     virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override; // 0x524C70 (as GetClassIdentifier)

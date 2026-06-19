@@ -19,10 +19,10 @@ public:
 
     virtual ~TemporalClass() = default;  // 0x71A720
 
-    virtual void pointerExpired(AbstractClass* ptr, bool removed) override;
-    virtual AbstractType __stdcall whatAmI() const override;
+    virtual void pointerExpired(AbstractClass* ptr, bool removed) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    virtual AbstractType __stdcall whatAmI() const override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual int objectSize() const override;
-    virtual void calculateChecksum(void* checksum) const;
+    virtual void calculateChecksum(void* checksum) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     // Construction
     TemporalClass();                                             // 0x71A4E0

@@ -1,34 +1,17 @@
 #pragma once
 
+#define GAMEMD_VOXEL_STRUCT_FULL  // prevents stub in object_type.hpp
+
 #include <cstdint>
 
 #include "core/math.hpp"
 #include "core/enums.hpp"
 #include "core/vector.hpp"
 #include "fundamentals.hpp"
-#include "type/object_type.hpp"
-#include "object/object.hpp"
-#include "bounce.hpp"
 
 namespace gamemd {
 
-#ifndef GAMEMD_USING_ObjectClass
-#define GAMEMD_USING_ObjectClass
-using ra2::game::ObjectClass;
-#endif
-#ifndef GAMEMD_USING_AbstractType
-#define GAMEMD_USING_AbstractType
-using ra2::game::AbstractType;
-#endif
-#ifndef GAMEMD_USING_AudioController
-#define GAMEMD_USING_AudioController
-using ra2::game::AudioController;
-#endif
-
-
-
-
-
+// Forward declarations needed by VoxelStruct
 class AnimTypeClass;
 class HouseClass;
 class ParticleSystemClass;
@@ -42,7 +25,7 @@ struct VoxLib
     void Start();  // 0x7CD80F
     bool Loaded();  // IDA: 0x544C80
     void Clear();
-    void InitLimits(
+    void InitLimits( // IDA: UNMATCHED — no_callgraph_match, no_git_history
         int32_t hva_min_x, int32_t hva_min_y, int32_t hva_min_z,
         int32_t hva_max_x, int32_t hva_max_y, int32_t hva_max_z);
 
@@ -98,6 +81,8 @@ struct MotLib
     int16_t MotLib_field_1E;
 };
 
+// Define VoxelStruct BEFORE including object_type.hpp
+// (object_type.hpp has a stub that is skipped via GAMEMD_VOXEL_STRUCT_FULL)
 struct VoxelStruct
 {
     VoxLib* VXL;
@@ -105,6 +90,27 @@ struct VoxelStruct
     bool    VoxelStruct_field_8;
     uint8_t pad[3];
 };
+
+} // namespace gamemd
+
+#include "type/object_type.hpp"
+#include "object/object.hpp"
+#include "bounce.hpp"
+
+namespace gamemd {
+
+#ifndef GAMEMD_USING_ObjectClass
+#define GAMEMD_USING_ObjectClass
+using ra2::game::ObjectClass;
+#endif
+#ifndef GAMEMD_USING_AbstractType
+#define GAMEMD_USING_AbstractType
+using ra2::game::AbstractType;
+#endif
+#ifndef GAMEMD_USING_AudioController
+#define GAMEMD_USING_AudioController
+using ra2::game::AudioController;
+#endif
 
 class VoxelAnimTypeClass : public ObjectTypeClass
 {
@@ -115,8 +121,8 @@ public:
 
     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override;
 
-    virtual AbstractType __stdcall WhatAmI() const override;
-    virtual int Size() const override;  // 0x454190
+    virtual AbstractType __stdcall WhatAmI() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    virtual int Size() const;  // 0x454190
 
     virtual bool SpawnAtMapCoords(CellStruct* coords, HouseClass* owner);
     virtual ObjectClass* CreateObject(HouseClass* owner) override;  // 0x4737F0
@@ -171,8 +177,8 @@ public:
 
     virtual ~VoxelAnimClass() override = default;  // 0x74AAD0
 
-    virtual AbstractType __stdcall WhatAmI() const override;
-    virtual int Size() const override;  // IDA: 0x454190
+    virtual AbstractType __stdcall WhatAmI() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    virtual int Size() const;  // IDA: 0x454190
 
     uint32_t                align_AC;
     BounceClass             Bounce;

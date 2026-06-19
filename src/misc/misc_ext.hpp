@@ -495,7 +495,7 @@ public:
 class Coord2D
 {
 public:
-    virtual ~Coord2D() = default;
+    virtual ~Coord2D() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void Add() {} // IDA: 0x437F10
     virtual void Sub() {} // IDA: 0x487F20
@@ -506,7 +506,7 @@ public:
 class Coord3D
 {
 public:
-    virtual ~Coord3D() = default;
+    virtual ~Coord3D() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void Set() {} // IDA: 0x437090
     virtual void Equals() {} // IDA: 0x459F60
@@ -519,7 +519,7 @@ public:
 class CoordBounds
 {
 public:
-    virtual ~CoordBounds() = default;
+    virtual ~CoordBounds() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void Constructor() {} // IDA: 0x403870
 
@@ -691,7 +691,7 @@ public:
 class IsoCoord
 {
 public:
-    virtual ~IsoCoord() = default;
+    virtual ~IsoCoord() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void ToPixel() {} // IDA: 0x6D1EB0
     virtual void ToScreenOffset() {} // IDA: 0x6D62E0
@@ -759,7 +759,7 @@ public:
 class Lightning
 {
 public:
-    virtual ~Lightning() = default;
+    virtual ~Lightning() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void Draw() {} // IDA: 0x4C1F20
 
@@ -895,7 +895,7 @@ public:
 class Matrix
 {
 public:
-    virtual ~Matrix() = default;
+    virtual ~Matrix() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void Copy12Float() {} // IDA: 0x5AE5E0
     virtual void Scale() {} // IDA: 0x5BD730
@@ -906,7 +906,7 @@ public:
 class Matrix2D
 {
 public:
-    virtual ~Matrix2D() = default;
+    virtual ~Matrix2D() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void Rotate() {} // IDA: 0x5AF1A0
 
@@ -915,7 +915,7 @@ public:
 class Matrix3x3
 {
 public:
-    virtual ~Matrix3x3() = default;
+    virtual ~Matrix3x3() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void Multiply() {} // IDA: 0x5AE8F0
     virtual void ApplyCol0() {} // IDA: 0x5AE9B0
@@ -943,7 +943,7 @@ public:
 class PlanningNodeClass
 {
 public:
-    virtual ~PlanningNodeClass() = default;
+    virtual ~PlanningNodeClass() = default; // 0x6370B0
 
     virtual void CleanupAll() {} // IDA: 0x6370B0
     virtual void sub_63EBD0() {} // IDA: 0x63EBD0
@@ -1247,7 +1247,7 @@ public:
 class Actions
 {
 public:
-    virtual ~Actions() = default;
+    virtual ~Actions() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void Reset() {} // IDA: 0x5BDDC0
 
@@ -1335,7 +1335,7 @@ public:
 class ArtConfig
 {
 public:
-    virtual ~ArtConfig() = default;
+    virtual ~ArtConfig() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void loadConfig() {} // IDA: 0x5CC760
     virtual void ReadLayout() {} // IDA: 0x7681E0
@@ -1354,7 +1354,7 @@ public:
 class AssetClass
 {
 public:
-    virtual ~AssetClass() = default;
+    virtual ~AssetClass() = default; // 0x534E50
 
     virtual void ReleaseAndReload() {} // IDA: 0x534E50
 
@@ -1363,7 +1363,7 @@ public:
 class BTree
 {
 public:
-    virtual ~BTree() = default;
+    virtual ~BTree() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void DeleteSubtree() {} // IDA: 0x69E100
 
@@ -1389,7 +1389,7 @@ public:
 class BigInt
 {
 public:
-    virtual ~BigInt() = default;
+    virtual ~BigInt() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void ArrayArithmetic() {} // IDA: 0x5C6FE0
     virtual void DecryptBlock() {} // IDA: 0x632740
@@ -1438,7 +1438,7 @@ public:
 class BlowStraw
 {
 public:
-    virtual ~BlowStraw() = default;
+    virtual ~BlowStraw() = default; // 0x438210
 
     virtual void Release() {} // IDA: 0x438210
     virtual void QueryInterface() {} // IDA: 0x5B45C0
@@ -1567,7 +1567,7 @@ public:
 class CDROM
 {
 public:
-    virtual ~CDROM() = default;
+    virtual ~CDROM() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void DeviceIoControl() {} // IDA: 0x47A3F0
     virtual void LockVolume() {} // IDA: 0x47A6F0
@@ -1623,7 +1623,7 @@ public:
 class Char
 {
 public:
-    virtual ~Char() = default;
+    virtual ~Char() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void Swap() {} // IDA: 0x433C90
 
@@ -1632,7 +1632,7 @@ public:
 class Chat
 {
 public:
-    virtual ~Chat() = default;
+    virtual ~Chat() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void ProcessMessages() {} // IDA: 0x55E420
     virtual void sub_55D4390() {} // IDA: 0x5D4390
@@ -1679,7 +1679,7 @@ public:
 class Cliff
 {
 public:
-    virtual ~Cliff() = default;
+    virtual ~Cliff() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void ProcessTransitions() {} // IDA: 0x579010
 
@@ -1717,7 +1717,7 @@ public:
 class Compression
 {
 public:
-    virtual ~Compression() = default;
+    virtual ~Compression() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void Read() {} // IDA: 0x55C350
 
@@ -1726,7 +1726,7 @@ public:
 class Conditions
 {
 public:
-    virtual ~Conditions() = default;
+    virtual ~Conditions() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void CheckResult() {} // IDA: 0x653810
     virtual void CheckResult3() {} // IDA: 0x653830
@@ -1799,7 +1799,7 @@ public:
 class Crypto
 {
 public:
-    virtual ~Crypto() = default;
+    virtual ~Crypto() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void DecodeByte() {} // IDA: 0x632AA0
 
@@ -1947,7 +1947,7 @@ public:
 class Field
 {
 public:
-    virtual ~Field() = default;
+    virtual ~Field() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void Int_Set() {} // IDA: 0x434110
 
@@ -1956,7 +1956,7 @@ public:
 class FractalNoise
 {
 public:
-    virtual ~FractalNoise() = default;
+    virtual ~FractalNoise() = default; // 0x420270
 
     virtual void Release() {} // IDA: 0x420270
 
@@ -1965,7 +1965,7 @@ public:
 class Function
 {
 public:
-    virtual ~Function() = default;
+    virtual ~Function() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void 41C430() {} // IDA: 0x41C430
     virtual void 424CA0() {} // IDA: 0x424CA0
@@ -1985,7 +1985,7 @@ public:
 class GDlg
 {
 public:
-    virtual ~GDlg() = default;
+    virtual ~GDlg() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void LoadLetterStrings() {} // IDA: 0x4E5AC0
 
@@ -2084,7 +2084,7 @@ public:
 class HVAAnimation
 {
 public:
-    virtual ~HVAAnimation() = default;
+    virtual ~HVAAnimation() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void LoadFromFile() {} // IDA: 0x759540
     virtual void ParseFrames() {} // IDA: 0x759670
@@ -2095,7 +2095,7 @@ public:
 class Heap
 {
 public:
-    virtual ~Heap() = default;
+    virtual ~Heap() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void SiftDown() {} // IDA: 0x5AD870
 
@@ -2104,7 +2104,7 @@ public:
 class HexCoord
 {
 public:
-    virtual ~HexCoord() = default;
+    virtual ~HexCoord() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void Convert() {} // IDA: 0x5654A0
 
@@ -2122,7 +2122,7 @@ public:
 class IDXContainer
 {
 public:
-    virtual ~IDXContainer() = default;
+    virtual ~IDXContainer() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void LoadSample() {} // IDA: 0x4016F0
 
@@ -2140,7 +2140,7 @@ public:
 class ImageList
 {
 public:
-    virtual ~ImageList() = default;
+    virtual ~ImageList() = default; // 0x7C89FE
 
     virtual void DragEnter() {} // IDA: 0x7C89F2
     virtual void BeginDrag() {} // IDA: 0x7C89F8
@@ -2159,7 +2159,7 @@ public:
 class Int4
 {
 public:
-    virtual ~Int4() = default;
+    virtual ~Int4() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void Set() {} // IDA: 0x645C30
     virtual void Set2() {} // IDA: 0x645C50
@@ -2170,7 +2170,7 @@ public:
 class Int64
 {
 public:
-    virtual ~Int64() = default;
+    virtual ~Int64() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void Equal() {} // IDA: 0x517310
 
@@ -2190,7 +2190,7 @@ public:
 class IntVector
 {
 public:
-    virtual ~IntVector() = default;
+    virtual ~IntVector() = default; // 0x49F9D0
 
     virtual void Copy() {} // IDA: 0x477B60
     virtual void Destructor() {} // IDA: 0x49F9D0
@@ -2212,7 +2212,7 @@ public:
 class KeyValuePair
 {
 public:
-    virtual ~KeyValuePair() = default;
+    virtual ~KeyValuePair() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void Init() {} // IDA: 0x52AEC0
 
@@ -2239,7 +2239,7 @@ public:
 class LCW
 {
 public:
-    virtual ~LCW() = default;
+    virtual ~LCW() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void Compress() {} // IDA: 0x5520A0
     virtual void DecompressReader() {} // IDA: 0x552490
@@ -2252,7 +2252,7 @@ public:
 class LCWPipe
 {
 public:
-    virtual ~LCWPipe() = default;
+    virtual ~LCWPipe() = default; // 0x552060
 
     virtual void Constructor() {} // IDA: 0x551FF0
     virtual void Destructor() {} // IDA: 0x552060
@@ -2274,7 +2274,7 @@ public:
 class LCWStraw
 {
 public:
-    virtual ~LCWStraw() = default;
+    virtual ~LCWStraw() = default; // 0x552450
 
     virtual void Constructor() {} // IDA: 0x5523E0
     virtual void Destructor() {} // IDA: 0x552450
@@ -2294,7 +2294,7 @@ public:
 class LZOPipe
 {
 public:
-    virtual ~LZOPipe() = default;
+    virtual ~LZOPipe() = default; // 0x55C310
 
     virtual void Constructor() {} // IDA: 0x55C2B0
     virtual void Destructor() {} // IDA: 0x55C310
@@ -2316,7 +2316,7 @@ public:
 class LZOStraw
 {
 public:
-    virtual ~LZOStraw() = default;
+    virtual ~LZOStraw() = default; // 0x55C780
 
     virtual void Constructor() {} // IDA: 0x55C720
     virtual void Destructor() {} // IDA: 0x55C780
@@ -2336,7 +2336,7 @@ public:
 class Lobby
 {
 public:
-    virtual ~Lobby() = default;
+    virtual ~Lobby() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void UpdateReadyIcons() {} // IDA: 0x46FA20
     virtual void SetupAllFactionSlots() {} // IDA: 0x46FAC0
@@ -2587,7 +2587,7 @@ public:
 class Megawealth
 {
 public:
-    virtual ~Megawealth() = default;
+    virtual ~Megawealth() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void ProcessTick() {} // IDA: 0x5C9430
     virtual void QueryInterface() {} // IDA: 0x5C9440
@@ -2598,7 +2598,7 @@ public:
 class Miles
 {
 public:
-    virtual ~Miles() = default;
+    virtual ~Miles() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void DriverGet() {} // IDA: 0x753C70
 
@@ -2637,7 +2637,7 @@ public:
 class MovieContext
 {
 public:
-    virtual ~MovieContext() = default;
+    virtual ~MovieContext() = default; // 0x5BFF00
 
     virtual void Cleanup() {} // IDA: 0x5BFF00
 
@@ -2655,7 +2655,7 @@ public:
 class Multiplay
 {
 public:
-    virtual ~Multiplay() = default;
+    virtual ~Multiplay() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void LogToSYNC_NOMPDEBUG() {} // IDA: 0x64DEA0
 
@@ -2664,7 +2664,7 @@ public:
 class NetMessage
 {
 public:
-    virtual ~NetMessage() = default;
+    virtual ~NetMessage() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void Pack4() {} // IDA: 0x4CB700
     virtual void Pack() {} // IDA: 0x4CB830
@@ -2675,7 +2675,7 @@ public:
 class NeuronClass
 {
 public:
-    virtual ~NeuronClass() = default;
+    virtual ~NeuronClass() = default; // 0x43A350
 
     virtual void NeuronClass() {} // IDA: 0x43A350
     virtual void Fire() {} // IDA: 0x43A540
@@ -2694,7 +2694,7 @@ public:
 class NullGuard
 {
 public:
-    virtual ~NullGuard() = default;
+    virtual ~NullGuard() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void Call() {} // IDA: 0x4F3B10
 
@@ -2771,7 +2771,7 @@ public:
 class OptionQueue
 {
 public:
-    virtual ~OptionQueue() = default;
+    virtual ~OptionQueue() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void PushEntry() {} // IDA: 0x4F1AA0
 
@@ -2822,7 +2822,7 @@ public:
 class Performance
 {
 public:
-    virtual ~Performance() = default;
+    virtual ~Performance() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void Profile() {} // IDA: 0x5355D0
     virtual void MeasureTicks() {} // IDA: 0x5CAFC0
@@ -2953,7 +2953,7 @@ public:
 class Property
 {
 public:
-    virtual ~Property() = default;
+    virtual ~Property() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void Set() {} // IDA: 0x433C70
     virtual void GetField11() {} // IDA: 0x726910
@@ -2973,7 +2973,7 @@ public:
 class RateScaler
 {
 public:
-    virtual ~RateScaler() = default;
+    virtual ~RateScaler() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void Init() {} // IDA: 0x4A51F0
 
@@ -2991,7 +2991,7 @@ public:
 class ResultNode
 {
 public:
-    virtual ~ResultNode() = default;
+    virtual ~ResultNode() = default; // 0x625AB0
 
     virtual void Init() {} // IDA: 0x4CB890
     virtual void CleanupList() {} // IDA: 0x625AB0
@@ -3118,7 +3118,7 @@ public:
 class Sides
 {
 public:
-    virtual ~Sides() = default;
+    virtual ~Sides() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void MixFileYuriFiles3() {} // IDA: 0x72FBC0
 
@@ -3290,7 +3290,7 @@ public:
 class Subzone
 {
 public:
-    virtual ~Subzone() = default;
+    virtual ~Subzone() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void BuildGraph() {} // IDA: 0x581F90
     virtual void Constructor() {} // IDA: 0x589100
@@ -3379,7 +3379,7 @@ public:
 class TAction
 {
 public:
-    virtual ~TAction() = default;
+    virtual ~TAction() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void CenterOnStartCoords() {} // IDA: 0x7315A0
 
@@ -4340,7 +4340,7 @@ public:
 class Targeting
 {
 public:
-    virtual ~Targeting() = default;
+    virtual ~Targeting() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void Readd() {} // IDA: 0x4A9720
 
@@ -4414,7 +4414,7 @@ public:
 class TileNode
 {
 public:
-    virtual ~TileNode() = default;
+    virtual ~TileNode() = default; // 0x58C070
 
     virtual void Cleanup() {} // IDA: 0x58C070
 
@@ -4467,7 +4467,7 @@ public:
 class Triple
 {
 public:
-    virtual ~Triple() = default;
+    virtual ~Triple() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void Set() {} // IDA: 0x43A0B0
 
@@ -4558,7 +4558,7 @@ public:
 class Viewport
 {
 public:
-    virtual ~Viewport() = default;
+    virtual ~Viewport() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void ProcessScroll() {} // IDA: 0x692B60
     virtual void Clear() {} // IDA: 0x753E00
@@ -4628,7 +4628,7 @@ public:
 class WDTState
 {
 public:
-    virtual ~WDTState() = default;
+    virtual ~WDTState() = default; // 0x76AFC0
 
     virtual void Constructor_WDTState() {} // IDA: 0x76AFC0
     virtual void QueryInterface() {} // IDA: 0x76B6F0
@@ -4650,7 +4650,7 @@ public:
 class WString
 {
 public:
-    virtual ~WString() = default;
+    virtual ~WString() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void Append() {} // IDA: 0x7B6970
     virtual void TrimRight() {} // IDA: 0x7B6F40
@@ -4734,7 +4734,7 @@ public:
 class World
 {
 public:
-    virtual ~World() = default;
+    virtual ~World() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void ToScreen() {} // IDA: 0x6D2070
 
@@ -4761,7 +4761,7 @@ public:
 class ZBuffer
 {
 public:
-    virtual ~ZBuffer() = default;
+    virtual ~ZBuffer() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void RenderSprite() {} // IDA: 0x53D580
 

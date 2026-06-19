@@ -40,8 +40,8 @@ public:
     bool           AlternateColor;  // +0x2C
 
 protected:
-    EBolt() noexcept = default;
-    ~EBolt() noexcept = default;
+    EBolt() noexcept = default; // IDA: UNMATCHED — defaulted_special_member, default_ctor, no_callgraph_match
+    ~EBolt() noexcept = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 };
 
 } // namespace gamemd

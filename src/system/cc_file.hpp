@@ -10,15 +10,15 @@ namespace gamemd
 class MemoryBuffer
 {
 public:
-    constexpr MemoryBuffer() noexcept = default;
+    constexpr MemoryBuffer() noexcept = default; // IDA: UNMATCHED — defaulted_special_member, default_ctor, no_callgraph_match
 
     explicit MemoryBuffer(int size) noexcept
-        : MemoryBuffer(nullptr, size)
+        : MemoryBuffer(nullptr, size) // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {}
 
     MemoryBuffer(void* pBuffer, int size) noexcept
         : Buffer(pBuffer)
-        , Size(size)
+        , Size(size) // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         if (!Buffer && Size > 0)
         {
@@ -27,7 +27,7 @@ public:
         }
     }
 
-    ~MemoryBuffer() noexcept
+    ~MemoryBuffer() noexcept // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         if (Allocated)
         {
@@ -37,18 +37,18 @@ public:
 
     MemoryBuffer(const MemoryBuffer& other) noexcept
         : Buffer(other.Buffer)
-        , Size(other.Size)
+        , Size(other.Size) // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {}
 
     MemoryBuffer(MemoryBuffer&& other) noexcept
         : Buffer(other.Buffer)
         , Size(other.Size)
-        , Allocated(other.Allocated)
+        , Allocated(other.Allocated) // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         other.Allocated = false;
     }
 
-    MemoryBuffer& operator=(const MemoryBuffer& other) noexcept
+    MemoryBuffer& operator=(const MemoryBuffer& other) noexcept // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         if (this != &other)
         {
@@ -60,7 +60,7 @@ public:
         return *this;
     }
 
-    MemoryBuffer& operator=(MemoryBuffer&& other) noexcept
+    MemoryBuffer& operator=(MemoryBuffer&& other) noexcept // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         MemoryBuffer tmp(std::move(*this));
         Buffer = other.Buffer;

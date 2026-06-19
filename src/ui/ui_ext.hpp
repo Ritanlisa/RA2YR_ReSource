@@ -278,7 +278,7 @@ public:
 class Bitmap
 {
 public:
-    virtual ~Bitmap() = default;
+    virtual ~Bitmap() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void GetNumberBitmapWOL() {} // IDA: 0x783A90
 
@@ -426,7 +426,7 @@ public:
 class Checkbox
 {
 public:
-    virtual ~Checkbox() = default;
+    virtual ~Checkbox() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void WndProc() {} // IDA: 0x6163A0
 
@@ -435,7 +435,7 @@ public:
 class Checksum
 {
 public:
-    virtual ~Checksum() = default;
+    virtual ~Checksum() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void AddString() {} // IDA: 0x4A1DB0
 
@@ -618,7 +618,7 @@ public:
 class GadgetGrid
 {
 public:
-    virtual ~GadgetGrid() = default;
+    virtual ~GadgetGrid() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void InsertItem() {} // IDA: 0x4134A0
     virtual void RemoveItem() {} // IDA: 0x4135D0
@@ -663,7 +663,7 @@ public:
 class Keyboard
 {
 public:
-    virtual ~Keyboard() = default;
+    virtual ~Keyboard() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void MapKey() {} // IDA: 0x54F450
 
@@ -672,7 +672,7 @@ public:
 class List
 {
 public:
-    virtual ~List() = default;
+    virtual ~List() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void FindByValue() {} // IDA: 0x5943E0
 
@@ -732,7 +732,7 @@ public:
 class Main
 {
 public:
-    virtual ~Main() = default;
+    virtual ~Main() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void CreateDialog() {} // IDA: 0x4E1D00
 
@@ -750,7 +750,7 @@ public:
 class Slider
 {
 public:
-    virtual ~Slider() = default;
+    virtual ~Slider() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void CalcPosition() {} // IDA: 0x412A40
 
@@ -759,7 +759,7 @@ public:
 class SliderClass
 {
 public:
-    virtual ~SliderClass() = default;
+    virtual ~SliderClass() = default; // 0x6B1D00
 
     virtual void ?() {} // IDA: 0x558120
     virtual void QueryInterface() {} // IDA: 0x558180
@@ -832,7 +832,7 @@ public:
 class Tooltip
 {
 public:
-    virtual ~Tooltip() = default;
+    virtual ~Tooltip() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void Enable() {} // IDA: 0x7241A0
 

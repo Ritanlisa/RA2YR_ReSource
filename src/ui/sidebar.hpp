@@ -47,21 +47,21 @@ struct CameoDataStruct
           CurrentFactory(nullptr), CameoDataStruct_field_10(0), Progress(0),
           ProgressHasChanged(false), ProgressTimerStart(-1), ProgressTimerCurrent(0),
           ProgressTimerTimeLeft(0), ProgressRate(0), ProgressStep(1),
-          FlashEndFrame(0) {}
+          FlashEndFrame(0) {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     CameoDataStruct(int32_t itemIndex, AbstractType itemType) noexcept
         : ItemIndex(itemIndex), ItemType(itemType), IsAlt(false),
           CurrentFactory(nullptr), CameoDataStruct_field_10(0), Progress(0),
           ProgressHasChanged(false), ProgressTimerStart(-1), ProgressTimerCurrent(0),
           ProgressTimerTimeLeft(0), ProgressRate(0), ProgressStep(1),
-          FlashEndFrame(0) {}
+          FlashEndFrame(0) {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
-    bool operator==(const CameoDataStruct& rhs) const noexcept
+    bool operator==(const CameoDataStruct& rhs) const noexcept // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         return ItemIndex == rhs.ItemIndex && ItemType == rhs.ItemType;
     }
 
-    bool operator!=(const CameoDataStruct& rhs) const noexcept
+    bool operator!=(const CameoDataStruct& rhs) const noexcept // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         return ItemIndex != rhs.ItemIndex || ItemType != rhs.ItemType;
     }
@@ -160,7 +160,7 @@ public:
     SuperClass*      CurrentSuperWeapon;        // 0x3FD4
 
 protected:
-    SidebarClass() = default;
+    SidebarClass() = default; // 0x40D270
 };
 
 } // namespace gamemd

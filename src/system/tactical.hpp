@@ -84,15 +84,15 @@ public:
     void RegisterCellAsVisible(CellClass* cell);
     void SetView(int view_x, int view_y, int view_width, int view_height);  // 0x483E30
     void SetViewDimensions(int width, int height);  // 0x4A8960
-    void InitView();
+    void InitView(); // 0x537620
     void SetViewportPosition(int x, int y);  // 0x6D5F60
     void ScrollViewport(int dx, int dy);  // 0x6D2540
     void CalcViewportCells();  // 0x6D8B30
-    void updateVisibility();
+    void updateVisibility(); // 0x5090A0
     void InterpolateView();  // 0x4AE290
 
     // Rendering pipeline
-    void Render(ObjectClass* obj);
+    void Render(ObjectClass* obj); // 0x74D490
     void RenderFrame();
     void RenderCells();  // 0x550260
     void RenderIsometric(const RectangleStruct& viewRect, int flags);  // 0x6D7560
@@ -108,7 +108,7 @@ public:
     void DrawCellOverlay(int cx, int cy, int flags);  // 0x547230
     void DrawBuildings(const RectangleStruct& viewRect);  // 0x4D1890
     void DrawBuildingsInView(const RectangleStruct& viewRect);  // 0x6D6D10
-    void DrawBuildingPlacement(BuildingClass* building, int state);
+    void DrawBuildingPlacement(BuildingClass* building, int state); // 0x47F510
     void DrawPlacementCircles(ObjectClass* obj, int range, int color);  // 0x6DBE20
 
     // Draw queue
@@ -124,14 +124,14 @@ public:
     bool CheckUnitOverlap(const CellStruct& cell, int facing) const;  // 0x6D9B50
 
     // Input
-    void ProcessScroll();
+    void ProcessScroll(); // 0x4AC380
     void MouseInput(int x, int y, int buttons);  // 0x653850
     void ProcessMouseClick(int x, int y);  // 0x6539D0
 
     // Helpers
     Point2D TransformPixel(const Point2D& pixel) const;  // 0x6D2280
     uint32_t InterpolateColor(uint32_t elapsed_ms);  // 0x631E50
-    bool DecrementCounter(uint32_t delta);
+    bool DecrementCounter(uint32_t delta); // 0x631EE0
     void MapSpecialDrawMode();  // 0x70F0B0
     static int DrawTimer(int index, ColorScheme* scheme, int time, const wchar_t* text, const Point2D* xy1, const Point2D* xy2);
 

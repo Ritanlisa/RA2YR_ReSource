@@ -31,7 +31,7 @@ public:
 
     virtual ~FoggedObjectClass() override = default;  // 0x4D2910
 
-    virtual AbstractType __stdcall whatAmI() const override;
+    virtual AbstractType __stdcall whatAmI() const override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual int objectSize() const override;  // 0x4D27C0
 
     int32_t      LastSight;

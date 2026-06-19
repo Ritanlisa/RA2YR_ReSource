@@ -55,7 +55,7 @@ public:
 
     virtual ~VoxelAnimClass() override = default;  // 0x74AAD0
 
-    virtual AbstractType __stdcall whatAmI() const override;
+    virtual AbstractType __stdcall whatAmI() const override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual int objectSize() const override;
 
     uint32_t               unused_AC;

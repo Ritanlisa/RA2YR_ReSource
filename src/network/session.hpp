@@ -123,13 +123,13 @@ public:
     bool                         CurrentlyInGame;
 
     bool IsCampaign() const;
-    bool IsSkirmish() const;
+    bool IsSkirmish() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     bool IsMultiplayer() const;  // 0x77D940
 
     // TODO: complete SessionClass members
 
 protected:
-    SessionClass() noexcept;
+    SessionClass() noexcept; // 0x6970A0
     ~SessionClass() noexcept;
 };
 

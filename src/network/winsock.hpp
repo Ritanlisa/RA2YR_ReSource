@@ -13,7 +13,7 @@ class WinsockInterfaceClass
 public:
     static WinsockInterfaceClass* Instance;
 
-    bool initialize();
+    bool initialize(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
     void Shutdown();
     bool IsAvailable() const;  // 0x4F6540
 
@@ -21,9 +21,9 @@ public:
     void CloseSocket();  // 0x7C8992
     bool Bind(uint16_t port);  // 0x7C8998
     bool SendTo(uint32_t address, uint16_t port, const uint8_t* data, int32_t length);  // 0x7C89B0
-    int32_t ReceiveFrom(uint8_t* buffer, int32_t maxLen, uint32_t* outAddress, uint16_t* outPort);
-    bool SetNonBlocking(bool nonBlock);
-    bool JoinMulticastGroup(uint32_t groupAddress);
+    int32_t ReceiveFrom(uint8_t* buffer, int32_t maxLen, uint32_t* outAddress, uint16_t* outPort); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    bool SetNonBlocking(bool nonBlock); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    bool JoinMulticastGroup(uint32_t groupAddress); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     uint32_t  Socket;
     bool      Initialized;
@@ -33,8 +33,8 @@ public:
     // TODO: complete WinsockInterfaceClass
 
 protected:
-    WinsockInterfaceClass() noexcept;
-    ~WinsockInterfaceClass() noexcept;
+    WinsockInterfaceClass() noexcept; // 0x7B1AB0
+    ~WinsockInterfaceClass() noexcept; // 0x7B1AB0
 };
 
 class IPXInterfaceClass
@@ -42,7 +42,7 @@ class IPXInterfaceClass
 public:
     static IPXInterfaceClass* Instance;
 
-    bool initialize();
+    bool initialize(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
     void Shutdown();
     bool IsAvailable() const;  // IDA: 0x4F6540
 
@@ -72,16 +72,16 @@ class UDPInterfaceClass
 public:
     static UDPInterfaceClass* Instance;
 
-    bool initialize();
+    bool initialize(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
     void Shutdown();
     bool IsAvailable() const;  // IDA: 0x4F6540
 
-    bool CreateSocket(uint16_t port);
+    bool CreateSocket(uint16_t port); // IDA: UNMATCHED — no_callgraph_match, no_git_history
     void CloseSocket();  // IDA: 0x7C8992
     bool SendTo(const char* address, uint16_t port, const uint8_t* data, int32_t length);  // IDA: 0x7C89B0
     int32_t ReceiveFrom(uint8_t* buffer, int32_t maxLen, char* outAddress, int32_t addrSize, uint16_t* outPort);
-    bool SetNonBlocking(bool nonBlock);
-    bool SetBroadcast(bool enable);
+    bool SetNonBlocking(bool nonBlock); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    bool SetBroadcast(bool enable); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     uint32_t  Socket;
     bool      Initialized;

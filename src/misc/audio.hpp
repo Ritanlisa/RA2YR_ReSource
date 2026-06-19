@@ -104,7 +104,7 @@ public:
     uint32_t         VocClass_field_144;          // 0x144
 
     VocClass() = delete;
-    ~VocClass() = delete;
+    ~VocClass() = delete; // 0x4052F0
 };
 
 class VoxClass

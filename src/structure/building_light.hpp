@@ -34,11 +34,11 @@ public:
     static constexpr AbstractType kObjectTypeId = AbstractType::BuildingLight;
 
     virtual HRESULT __stdcall GetClassID(CLSID*) override;
-    virtual HRESULT __stdcall Save(IStream*, int) override;
+    virtual HRESULT __stdcall Save(IStream*, int) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     virtual ~BuildingLightClass() override = default;  // 0x4370C0
 
-    virtual AbstractType __stdcall whatAmI() const override;
+    virtual AbstractType __stdcall whatAmI() const override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual int objectSize() const override;
 
     // 0x436BE0 FindTarget / SetBehaviour

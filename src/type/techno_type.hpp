@@ -61,11 +61,11 @@ struct WeaponStruct
         , FLH()
         , BarrelLength(0)
         , BarrelThickness(0)
-        , TurretLocked(false)
+        , TurretLocked(false) // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {}
 
-    bool operator==(const WeaponStruct& rhs) const;
-    bool operator!=(const WeaponStruct& rhs) const;
+    bool operator==(const WeaponStruct& rhs) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    bool operator!=(const WeaponStruct& rhs) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 };
 
 class TechnoTypeClass : public ObjectTypeClass
@@ -80,32 +80,32 @@ public:
 
     virtual HRESULT __stdcall Load(IStream* pStm) override;
     virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;
-    virtual HRESULT __stdcall GetSizeMax(ULARGE_INTEGER* pcbSize) override;
+    virtual HRESULT __stdcall GetSizeMax(ULARGE_INTEGER* pcbSize) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     virtual ~TechnoTypeClass() = default;  // 0x711AE0 (as DTOR)
 
     virtual bool onTypeLoaded();
-    virtual bool CanAttackMove() const;
+    virtual bool CanAttackMove() const; // 0x711E90
     virtual bool CanCreateHere(const CellStruct& mapCoords, HouseClass* pOwner) const;
     virtual int GetCost() const;  // 0x708B40
     virtual int GetRepairStepCost() const;
     virtual int GetRepairStep() const;  // 0x459840
-    virtual int getRefund(HouseClass* pHouse, bool bUnk) const;
+    virtual int getRefund(HouseClass* pHouse, bool bUnk) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual int GetFlightLevel() const;
 
     static TechnoTypeClass* GetByTypeAndIndex(AbstractType abs, int index);  // 0x48DCD0
 
-    bool HasMultipleTurrets() const;
+    bool HasMultipleTurrets() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     CoordStruct* GetParticleSysOffset(CoordStruct* pBuffer) const;
     CoordStruct GetParticleSysOffset() const;
 
     bool InOwners(DWORD bitHouseType) const { return (this->GetOwners() & bitHouseType) != 0; }
-    bool InRequiredHouses(DWORD bitHouseType) const;
-    bool InForbiddenHouses(DWORD bitHouseType) const;
+    bool InRequiredHouses(DWORD bitHouseType) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    bool InForbiddenHouses(DWORD bitHouseType) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
-    WeaponStruct& GetWeapon(size_t index, bool elite);
-    const WeaponStruct& GetWeapon(size_t index, bool elite) const;
+    WeaponStruct& GetWeapon(size_t index, bool elite); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    const WeaponStruct& GetWeapon(size_t index, bool elite) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     TechnoTypeClass(const char* id, SpeedType speedtype) noexcept;  // 0x711840 (as Construct)
 

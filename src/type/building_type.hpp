@@ -51,17 +51,17 @@ public:
 
     virtual SHPStruct* LoadBuildup();
 
-    bool IsVehicle() const;
+    bool IsVehicle() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     short GetFoundationWidth() const;  // 0x45EC90
     short GetFoundationHeight(bool bIncludeBib) const;  // 0x45ECA0
-    bool CanPlaceHere(CellStruct* cell, HouseClass* owner) const;
+    bool CanPlaceHere(CellStruct* cell, HouseClass* owner) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     bool HasSuperWeapon(int index) const;
     bool HasSuperWeapon() const;
     bool CanTogglePower() const;  // 0x508DF0
 
-    BuildingAnimStruct& GetBuildingAnim(BuildingAnimSlot slot);
-    const BuildingAnimStruct& GetBuildingAnim(BuildingAnimSlot slot) const;
+    BuildingAnimStruct& GetBuildingAnim(BuildingAnimSlot slot); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    const BuildingAnimStruct& GetBuildingAnim(BuildingAnimSlot slot) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     BuildingTypeClass(const char* pID) noexcept;  // 0x644BE0 (as Construct)
 

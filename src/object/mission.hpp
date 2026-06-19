@@ -27,8 +27,8 @@ public:
 
     virtual bool queueMission(Mission mission, bool start_mission);  // 0x4E01C0
     virtual bool nextMission();
-    virtual void forceMission(Mission mission);
-    virtual void onMissionChanged(Mission mission);
+    virtual void forceMission(Mission mission); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    virtual void onMissionChanged(Mission mission); // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual bool revertMission();
     virtual bool isMissionDone() const;
     virtual bool hasValidTarget() const;  // 0x5B3A10

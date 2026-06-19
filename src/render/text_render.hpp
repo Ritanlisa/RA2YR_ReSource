@@ -14,10 +14,10 @@ public:
     bool Init(int max_width, int max_height);
     void Shutdown();
 
-    void DrawText(DSurface* target, int x, int y, const wchar_t* text,
+    void DrawText(DSurface* target, int x, int y, const wchar_t* text, // IDA: UNMATCHED — no_callgraph_match, no_git_history
                   uint8_t r, uint8_t g, uint8_t b);
 
-    void DrawText(DSurface* target, int x, int y, const char* text,
+    void DrawText(DSurface* target, int x, int y, const char* text, // IDA: UNMATCHED — no_callgraph_match, no_git_history
                   uint8_t r, uint8_t g, uint8_t b);
 
     int GetTextWidth(const wchar_t* text);

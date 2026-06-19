@@ -62,8 +62,8 @@ struct RocketStruct
     bool              LazyCurve;
     AircraftTypeClass* Type;
 
-    RocketStruct() noexcept;
-    explicit RocketStruct(noinit_t) noexcept;
+    RocketStruct() noexcept; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    explicit RocketStruct(noinit_t) noexcept; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 };
 
 class RulesClass
@@ -95,18 +95,18 @@ public:
     void ReadSmudgeTypes(CCINIClass* pINI);  // 0x67A730
     void ReadOverlayTypes(CCINIClass* pINI);  // 0x67A7C0
     void ReadAnimations(CCINIClass* pINI);  // 0x67A7D0
-    void ReadVoxelAnims(CCINIClass* pINI);
+    void ReadVoxelAnims(CCINIClass* pINI); // IDA: UNMATCHED — no_callgraph_match, no_git_history
     void ReadWarheads(CCINIClass* pINI);  // 0x67A8A0
     void ReadParticles(CCINIClass* pINI);  // 0x67A8B0
     void ReadParticleSystems(CCINIClass* pINI);  // 0x67A8E0
     void ReadAI(CCINIClass* pINI);  // 0x67B480
     void ReadPowerups(CCINIClass* pINI);  // 0x673E80
-    void ReadLandCharacteristics(CCINIClass* pINI);
+    void ReadLandCharacteristics(CCINIClass* pINI); // IDA: UNMATCHED — no_callgraph_match, no_git_history
     void ReadIQ(CCINIClass* pINI);  // 0x67C430
-    void ReadJumpjetControls(CCINIClass* pINI);
-    void ReadDifficulties(CCINIClass* pINI);
+    void ReadJumpjetControls(CCINIClass* pINI); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    void ReadDifficulties(CCINIClass* pINI); // IDA: UNMATCHED — no_callgraph_match, no_git_history
     void ReadMovies(CCINIClass* pINI);  // 0x674550
-    void ReadAdvancedCommandBar(CCINIClass* pINI);
+    void ReadAdvancedCommandBar(CCINIClass* pINI); // IDA: UNMATCHED — no_callgraph_match, no_git_history
     void PointerGotInvalid(AbstractClass* pInvalid, bool removed);  // 0x4A7900
 
     int32_t              DetailMinFrameRateNormal;
@@ -618,8 +618,8 @@ public:
     // TODO: complete RulesClass members (many TypeList<> arrays, building lists, etc.)
 
 protected:
-    RulesClass() = default;
-    ~RulesClass() = default;
+    RulesClass() = default; // 0x665650
+    ~RulesClass() = default; // 0x667A30
 };
 
 } // namespace gamemd

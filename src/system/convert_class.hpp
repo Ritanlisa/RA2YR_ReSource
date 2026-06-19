@@ -20,9 +20,9 @@ public:
     // IDA 0x48E740 -- ConvertClass::Construct (builds palette+blitter tables)
 
     static ConvertClass* FindOrAllocate(const char* pFilename);
-    static void CreateFromFile(const char* pFilename, BytePalette*& pPalette, ConvertClass*& pDestination);
+    static void CreateFromFile(const char* pFilename, BytePalette*& pPalette, ConvertClass*& pDestination); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
-    BlitterCore* SelectPlainBlitter(BlitterFlags flags) const;
+    BlitterCore* SelectPlainBlitter(BlitterFlags flags) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     RLEBlitterCore* SelectRLEBlitter(BlitterFlags flags) const;  // 0x490E50
 
     virtual ~ConvertClass() = default;  // 0x491430

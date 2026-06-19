@@ -25,14 +25,14 @@ public:
 
     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return 0; }
     virtual HRESULT __stdcall Load(IStream* stream) override { return 0; }
-    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { return 0; }
+    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { return 0; } // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     virtual ~TActionClass() = default;  // 0x6E3D70
 
-    virtual void pointerExpired(AbstractClass* ptr, bool removed) override {}
-    virtual AbstractType __stdcall whatAmI() const override { return kObjectDeriveId; }
+    virtual void pointerExpired(AbstractClass* ptr, bool removed) override {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    virtual AbstractType __stdcall whatAmI() const override { return kObjectDeriveId; } // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual int objectSize() const override { return 0x98; }
-    virtual void calculateChecksum(void* checksum) const {}
+    virtual void calculateChecksum(void* checksum) const {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     // Construction
     TActionClass() noexcept { }                               // IDA: 0x71E6A0

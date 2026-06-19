@@ -54,11 +54,11 @@ public:
     virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override;
     virtual HRESULT __stdcall Load(IStream* pStm) override;
     virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;
-    virtual HRESULT __stdcall GetSizeMax(ULARGE_INTEGER* pcbSize) override;
+    virtual HRESULT __stdcall GetSizeMax(ULARGE_INTEGER* pcbSize) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     virtual ~TiberiumClass() override = default;  // 0x721E40
 
-    virtual AbstractType __stdcall whatAmI() const override;
+    virtual AbstractType __stdcall whatAmI() const override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual int objectSize() const override;
 
     int32_t                  ArrayIndex;
@@ -86,11 +86,11 @@ public:
     TimerStruct              GrowthTimer;
 
 public:
-    TiberiumClass(const CellStruct& cell, int spread, int growth,
+    TiberiumClass(const CellStruct& cell, int spread, int growth, // 0x7216C0
                   int value, int power) noexcept;
 
 protected:
-    TiberiumClass() = default;
+    TiberiumClass() = default; // 0x7216C0
 };
 
 } // namespace gamemd

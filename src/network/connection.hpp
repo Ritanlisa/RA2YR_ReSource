@@ -29,11 +29,11 @@ public:
     virtual bool  IsConnected() const;  // 0x5E2BE0
     virtual bool  Send(const uint8_t*, int32_t); // 0x53F5D0
     virtual int32_t Receive(uint8_t*, int32_t); // 0x53F650
-    virtual int32_t GetLatency() const;
+    virtual int32_t GetLatency() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual const char* GetAddress() const; // 0x542350
-    virtual void  OnMessageReceived(const NetworkEvent&);
+    virtual void  OnMessageReceived(const NetworkEvent&); // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual void  Flush();
-    virtual bool  IsHost() const;
+    virtual bool  IsHost() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     void queueSendPacket(const uint8_t*, int32_t, int32_t);                                   // 0x48B410
     void* allocPacketSlot();                                                                  // 0x48B750

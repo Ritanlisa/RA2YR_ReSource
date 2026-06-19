@@ -42,7 +42,7 @@ public:
 
     virtual ~ParticleSystemClass() override = default;  // 0x630230
 
-    virtual AbstractType __stdcall whatAmI() const override;
+    virtual AbstractType __stdcall whatAmI() const override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual int objectSize() const override;  // 0x630200
 
     void Draw(void* surface, int draw_x, int draw_y);  // 0x62FE60
@@ -62,10 +62,10 @@ public:
     ra2::game::HouseClass*              OwnerHouse;
 
 public:
-    ParticleSystemClass(ParticleSystemTypeClass* pType) noexcept;
+    ParticleSystemClass(ParticleSystemTypeClass* pType) noexcept; // 0x4E8780
 
 protected:
-    ParticleSystemClass() = default;
+    ParticleSystemClass() = default; // 0x4E8780
 };
 
 } // namespace gamemd

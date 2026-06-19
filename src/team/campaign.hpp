@@ -32,10 +32,10 @@ public:
 
     virtual ~CampaignClass() = default;  // 0x46D090
 
-    virtual AbstractType __stdcall whatAmI() const override;
+    virtual AbstractType __stdcall whatAmI() const override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual int objectSize() const override;
 
-    static void CreateFromINIList(CCINIClass* ini);
+    static void CreateFromINIList(CCINIClass* ini); // IDA: UNMATCHED — no_callgraph_match, no_git_history
     static int FindIndex(const char* name);
 
     int32_t     idxCd;
@@ -44,7 +44,7 @@ public:
     wchar_t     description[128];
 
 protected:
-    CampaignClass() noexcept;
+    CampaignClass() noexcept; // 0x46CB60
 };
 
 } // namespace gamemd

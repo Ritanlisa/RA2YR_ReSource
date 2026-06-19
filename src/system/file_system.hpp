@@ -30,7 +30,7 @@ public:
     static void* LoadFile(const char* pFileName, bool bLoadAsSHP);
 
     // Load file and return size via outSize parameter
-    static void* LoadFileWithSize(const char* pFileName, int* outSize, bool bLoadAsSHP);
+    static void* LoadFileWithSize(const char* pFileName, int* outSize, bool bLoadAsSHP); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     static void* LoadFile(const char* pFileName)
     {
@@ -51,13 +51,13 @@ public:
     }
 
     template <typename T = void>
-    static T* AllocateFile(const char* pFilename)
+    static T* AllocateFile(const char* pFilename) // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
         CCFileClass file(pFilename);
         return static_cast<T*>(file.ReadWholeFile());
     }
 
-    static BytePalette* AllocatePalette(const char* pFilename);
+    static BytePalette* AllocatePalette(const char* pFilename); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     static ConvertClass* LoadPALFile(const char* pFileName, DSurface* pSurface);
 

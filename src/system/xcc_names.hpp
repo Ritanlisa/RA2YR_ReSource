@@ -14303,7 +14303,7 @@ static constexpr HashName kXccNames[] = {
 };
 
 
-inline const char* XccLookup(uint32_t hash) {
+inline const char* XccLookup(uint32_t hash) { // IDA: UNMATCHED — inline_likely_inlined, no_callgraph_match, no_git_history
     int lo = 0, hi = kXccNameCount - 1;
     while (lo <= hi) {
         int mid = (lo + hi) / 2;

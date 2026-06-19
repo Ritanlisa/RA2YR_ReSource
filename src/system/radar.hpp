@@ -24,10 +24,10 @@ public:
     virtual ~RadarClass() = default;  // 0x652C00
 
     virtual void CreateEmptyMap(const RectangleStruct& map_rect, bool reuse, int8_t n_level, bool unk);
-    virtual void SetVisibleRect(const RectangleStruct& map_rect);
-    virtual void DisposeOfArt();
+    virtual void SetVisibleRect(const RectangleStruct& map_rect); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    virtual void DisposeOfArt(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual void* worldToScreenCoords(void* out, Point2D* point);
-    virtual void onRadarClick(uint32_t unk);
+    virtual void onRadarClick(uint32_t unk); // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual void InitForHouse();
 
     // 0x11E8: spy satellite / zoom state (all zeroed in constructor)
@@ -133,7 +133,7 @@ public:
     TimerStruct                 RadarClass_field_timer_1500;       // 0x1500
 
 protected:
-    RadarClass() = default;
+    RadarClass() = default; // 0x4F4220
 };
 
 } // namespace gamemd

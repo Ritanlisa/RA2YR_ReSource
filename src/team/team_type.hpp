@@ -26,21 +26,21 @@ public:
 
     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return 0; }
     virtual HRESULT __stdcall Load(IStream* stream) override { return 0; }
-    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { return 0; }
+    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { return 0; } // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     virtual ~TeamTypeClass() = default;  // 0x6F20D0
 
-    virtual void pointerExpired(AbstractClass* ptr, bool removed) override {}
-    virtual AbstractType __stdcall whatAmI() const override { return kObjectDeriveId; }
+    virtual void pointerExpired(AbstractClass* ptr, bool removed) override {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    virtual AbstractType __stdcall whatAmI() const override { return kObjectDeriveId; } // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual int objectSize() const override { return 0; }
-    virtual void calculateChecksum(void* checksum) const {}
+    virtual void calculateChecksum(void* checksum) const {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     // Construction
     TeamTypeClass() noexcept { }                             // IDA: 0x4C98B0 (Construct)
     void ddtor();
 
     // Methods
-    void Construct();
+    void Construct(); // 0x4C98B0
     void Check();                                            // 0x6EF5F0
     void CreateScriptType(TechnoClass*);                     // 0x691C00
     void DestroyAllInstances();                              // 0x6F0A70

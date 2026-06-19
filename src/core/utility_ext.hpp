@@ -157,7 +157,7 @@ class Delegate
 public:
     // IDA 0x52AE20
     Delegate();
-    ~Delegate();
+    ~Delegate(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     // IDA 0x42DDB0
     void ProcessBitmapStream();  // 0x42DDB0
@@ -786,7 +786,7 @@ public:
 class CRC32
 {
 public:
-    virtual ~CRC32() = default;
+    virtual ~CRC32() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void Compute() {} // IDA: 0x4A1FB0
 
@@ -817,7 +817,7 @@ public:
 class CountdownTimer
 {
 public:
-    virtual ~CountdownTimer() = default;
+    virtual ~CountdownTimer() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void UpdateDisplay() {} // IDA: 0x4A2600
 
@@ -887,7 +887,7 @@ public:
 class Flag
 {
 public:
-    virtual ~Flag() = default;
+    virtual ~Flag() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void CheckNone() {} // IDA: 0x4A51D0
     virtual void IsZero() {} // IDA: 0x4F4CA0
@@ -909,7 +909,7 @@ public:
 class Float4
 {
 public:
-    virtual ~Float4() = default;
+    virtual ~Float4() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void Copy() {} // IDA: 0x645D20
     virtual void Sum() {} // IDA: 0x6C9650
@@ -929,7 +929,7 @@ public:
 class GraphicMenuAnimItem
 {
 public:
-    virtual ~GraphicMenuAnimItem() = default;
+    virtual ~GraphicMenuAnimItem() = default; // 0x4F3090
 
     virtual void Release() {} // IDA: 0x4F3090
     virtual void QueryInterface() {} // IDA: 0x4F30E0
@@ -965,7 +965,7 @@ public:
 class GraphicMenuItem
 {
 public:
-    virtual ~GraphicMenuItem() = default;
+    virtual ~GraphicMenuItem() = default; // 0x4F3A70
 
     virtual void Constructor() {} // IDA: 0x4F3A50
     virtual void Destructor() {} // IDA: 0x4F3A70
@@ -998,7 +998,7 @@ public:
 class Hash
 {
 public:
-    virtual ~Hash() = default;
+    virtual ~Hash() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void ComputeHashSHA1() {} // IDA: 0x476D80
     virtual void InsertOrdered() {} // IDA: 0x4F4410
@@ -1159,7 +1159,7 @@ public:
 class Queue
 {
 public:
-    virtual ~Queue() = default;
+    virtual ~Queue() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void GetNext() {} // IDA: 0x407470
 
@@ -1168,7 +1168,7 @@ public:
 class Random
 {
 public:
-    virtual ~Random() = default;
+    virtual ~Random() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void Gaussian() {} // IDA: 0x5980C0
     virtual void State() {} // IDA: 0x65C780
@@ -1214,7 +1214,7 @@ public:
 class SHA1
 {
 public:
-    virtual ~SHA1() = default;
+    virtual ~SHA1() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void sub_69D8C0() {} // IDA: 0x69D8C0
     virtual void Process() {} // IDA: 0x69D960
@@ -1300,7 +1300,7 @@ public:
 class Timeout
 {
 public:
-    virtual ~Timeout() = default;
+    virtual ~Timeout() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void GetRemaining() {} // IDA: 0x4B4D70
 
@@ -1336,7 +1336,7 @@ public:
 class Vector2
 {
 public:
-    virtual ~Vector2() = default;
+    virtual ~Vector2() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void NormalizeNonZero() {} // IDA: 0x41C460
     virtual void Subtract() {} // IDA: 0x6DC4C0
@@ -1347,7 +1347,7 @@ public:
 class Vector3
 {
 public:
-    virtual ~Vector3() = default;
+    virtual ~Vector3() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void Magnitude() {} // IDA: 0x41C3C0
     virtual void Subtract() {} // IDA: 0x437160
@@ -1360,7 +1360,7 @@ public:
 class Vector4
 {
 public:
-    virtual ~Vector4() = default;
+    virtual ~Vector4() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void EraseAt() {} // IDA: 0x5AD790
     virtual void EraseAt_Copy() {} // IDA: 0x63EF70
@@ -1371,7 +1371,7 @@ public:
 class Vector8
 {
 public:
-    virtual ~Vector8() = default;
+    virtual ~Vector8() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void EraseAt() {} // IDA: 0x589290
 
