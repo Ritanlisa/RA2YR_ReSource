@@ -26,31 +26,31 @@ public:
     ~MoveFeedback();
 
     // IDA 0x7327D0
-    int32_t ProcessCommand(int32_t cmd, uint32_t param);
+    int32_t ProcessCommand(int32_t cmd, uint32_t param);  // 0x7327d0
     // IDA 0x40B640
-    void ClearBuffer();
+    void ClearBuffer();  // 0x40b640
     // IDA 0x40B670
-    int32_t PointerToIndex(void* ptr);
+    int32_t PointerToIndex(void* ptr);  // 0x40b670
     // IDA 0x40B6D0
-    void Update();
+    void Update();  // 0x40b6d0
     // IDA 0x40B6F0
-    void Show();
+    void Show();  // 0x40b6f0
     // IDA 0x40B930
-    void* FindItem(int32_t index);
+    void* FindItem(int32_t index);  // 0x40b930
     // IDA 0x40C0E0
-    void* FindMoveItem(int32_t index);
+    void* FindMoveItem(int32_t index);  // 0x40c0e0
     // IDA 0x40BE80
-    int32_t GetIndex2(void* ptr);
+    int32_t GetIndex2(void* ptr);  // 0x40be80
     // IDA 0x40BB90
-    void Draw(DSurface* surface);
+    void Draw(DSurface* surface);  // 0x40bb90
     // IDA 0x40C030
-    void SetCapacity(int32_t capacity);
+    void SetCapacity(int32_t capacity);  // 0x40c030
     // IDA 0x40B960
-    int32_t AddRef();
+    int32_t AddRef();  // 0x40b960
     // IDA 0x40BCB0
-    HRESULT QueryInterface(const GUID& riid, void** ppv);
+    HRESULT QueryInterface(const GUID& riid, void** ppv);  // 0x40bcb0
     // IDA 0x40BE50
-    void Destroy();
+    void Destroy();  // 0x40be50
 
     // VectorClass<CommandClass const*> base
     void**      m_Items;                // 0x00 (VectorClass::Items)
@@ -75,29 +75,29 @@ class LoadGame
 {
 public:
     // IDA 0x67E730
-    static bool Start(const char* filename);
+    static bool Start(const char* filename);  // 0x67e730
     // IDA 0x4136C0
-    static void LoadIteratedData();
+    static void LoadIteratedData();  // 0x4136c0
     // IDA 0x413800
-    static void ClearAllSlots();
+    static void ClearAllSlots();  // 0x413800
     // IDA 0x439260
-    static void DeserializePointerArrays();
+    static void DeserializePointerArrays();  // 0x439260
     // IDA 0x4C6320
-    static void LoadBlock68();
+    static void LoadBlock68();  // 0x4c6320
     // IDA 0x54E6F0
-    static void CleanupArray();
+    static void CleanupArray();  // 0x54e6f0
     // IDA 0x54E7B0
-    static void LoadPointArray();
+    static void LoadPointArray();  // 0x54e7b0
     // IDA 0x660840
-    static void LoadTriggerEvents();
+    static void LoadTriggerEvents();  // 0x660840
     // IDA 0x660F10
-    static void RemoveItem();
+    static void RemoveItem();  // 0x660f10
     // IDA 0x69B5B0
-    static void LoadBlock300();
+    static void LoadBlock300();  // 0x69b5b0
     // IDA 0x751710
-    static void RestoreAudioState();
+    static void RestoreAudioState();  // 0x751710
     // IDA 0x7533F0
-    static void LoadMagicAndAudio();
+    static void LoadMagicAndAudio();  // 0x7533f0
 
     static bool     s_IsLoading;        // 0x00
     static uint32_t s_LoadVersion;      // 0x04
@@ -114,27 +114,27 @@ public:
     Buffer() = default;
 
     // IDA 0x40A340
-    int32_t CreateDirectSound();
+    int32_t CreateDirectSound();  // 0x40a340
     // IDA 0x40A6D0
     int32_t sub_40A6D0();
     // IDA 0x40CCD0
-    bool CompareEqual(const Buffer& other) const;
+    bool CompareEqual(const Buffer& other) const;  // 0x40ccd0
     // IDA 0x410ED0
-    int32_t FillCircularBufferScroll();
+    int32_t FillCircularBufferScroll();  // 0x410ed0
     // IDA 0x42F7C0
-    void Cleanup();
+    void Cleanup();  // 0x42f7c0
     // IDA 0x43AD00
-    void Init();
+    void Init();  // 0x43ad00
     // IDA 0x488030
     void Constructor_VectorClass_ObjectClass();
     // IDA 0x632B70
-    void RotateBufferCrypto();
+    void RotateBufferCrypto();  // 0x632b70
     // IDA 0x6C89E0
-    void AppendCellData();
+    void AppendCellData();  // 0x6c89e0
     // IDA 0x7BCB50
-    int32_t FillCircularBufferScroll2();
+    int32_t FillCircularBufferScroll2();  // 0x7bcb50
     // IDA 0x7C1730
-    void AllocateCodecFrameBuffers();
+    void AllocateCodecFrameBuffers();  // 0x7c1730
 
     uint32_t    Buffer_field_00;           // 0x00
     uint32_t    Buffer_field_04;           // 0x04
@@ -160,25 +160,25 @@ public:
     ~Delegate();
 
     // IDA 0x42DDB0
-    void ProcessBitmapStream();
+    void ProcessBitmapStream();  // 0x42ddb0
     // IDA 0x42DF40
     void sub_42DF40();
     // IDA 0x4A2780
     void sub_4A2780();
     // IDA 0x52AE70
-    void ClearVectorAndStraw();
+    void ClearVectorAndStraw();  // 0x52ae70
     // IDA 0x52AEA0
-    void DestroyStraw();
+    void DestroyStraw();  // 0x52aea0
     // IDA 0x52AEE0
-    void DestroyPipe();
+    void DestroyPipe();  // 0x52aee0
     // IDA 0x631D10
-    void Dispatch();
+    void Dispatch();  // 0x631d10
     // IDA 0x6C95E0
-    int32_t GetField();
+    int32_t GetField();  // 0x6c95e0
     // IDA 0x6C9890
-    void Set(int32_t value);
+    void Set(int32_t value);  // 0x6c9890
     // IDA 0x6C98E0
-    void Invoke();
+    void Invoke();  // 0x6c98e0
 
     void*       m_items;            // 0x00 (GenericNode base)
     int32_t     m_count;            // 0x04
@@ -200,11 +200,11 @@ class Struct
 {
 public:
     // IDA 0x48B2A0
-    static void ZeroInit32(void* ptr, int32_t count);
+    static void ZeroInit32(void* ptr, int32_t count);  // 0x4085a0
     // IDA 0x4B9BD0
-    static void Zero3(void* ptr, int32_t count);
+    static void Zero3(void* ptr, int32_t count);  // 0x4b9bd0
     // IDA 0x48B2A0 area
-    static void ZeroInitAndSetup(void* ptr, int32_t size);
+    static void ZeroInitAndSetup(void* ptr, int32_t size);  // 0x48bf10
     // IDA 0x48B2A0 area
     static void InitArray(void* arr, int32_t stride, int32_t count);
     // IDA 0x48B2A0 area
@@ -231,11 +231,11 @@ class Count
 {
 public:
     // IDA 0x40A7A0 area
-    static int32_t DecrementRefCountsAudio();
+    static int32_t DecrementRefCountsAudio();  // 0x408e70
     // IDA 0x48B2A0 area
-    static void SetupAllCountriesLobby();
+    static void SetupAllCountriesLobby();  // 0x46f6d0
     // IDA 0x48B2A0 area
-    static int32_t GetCountQueue();
+    static int32_t GetCountQueue();  // 0x5f1ea0
     // IDA 0x48B2A0 area
     static void IncrementRefCount();
     // IDA 0x48B2A0 area
@@ -257,11 +257,11 @@ public:
     Rect(int32_t x, int32_t y, int32_t w, int32_t h);
 
     // IDA 0x4D9C00 area
-    void Set(int32_t x, int32_t y, int32_t w, int32_t h);
+    void Set(int32_t x, int32_t y, int32_t w, int32_t h);  // 0x42e410
     // IDA 0x4D9C00 area
-    void Construct(int32_t x, int32_t y, int32_t w, int32_t h);
+    void Construct(int32_t x, int32_t y, int32_t w, int32_t h);  // 0x45a130
     // IDA 0x4D9C00 area
-    void Union(const Rect& other);
+    void Union(const Rect& other);  // 0x487f40
     // IDA 0x4D9C00 area
     bool Intersects(const Rect& other) const;
     // IDA 0x4D9C00 area
@@ -283,11 +283,11 @@ class COM
 {
 public:
     // IDA 0x40BCB0 area
-    static HRESULT GetClassID(const GUID& riid, GUID* pClassID);
+    static HRESULT GetClassID(const GUID& riid, GUID* pClassID);  // 0x43a500
     // IDA 0x40B960 area
-    static int32_t AddRef(void* obj);
+    static int32_t AddRef(void* obj);  // 0x55a950
     // IDA 0x40BE50 area
-    static int32_t ReleaseRef(void* obj);
+    static int32_t ReleaseRef(void* obj);  // 0x55a970
 
     int32_t     COM_field_00;       // 0x00
 };
@@ -300,9 +300,9 @@ class RefCount
 {
 public:
     // IDA 0x40B960 area
-    int32_t Increment();
+    int32_t Increment();  // 0x49fa00
     // IDA 0x40BE50 area
-    int32_t Decrement();
+    int32_t Decrement();  // 0x401f90
 
     int32_t     m_RefCount;     // 0x00
     int32_t     RefCount_field_04;       // 0x04
@@ -316,7 +316,7 @@ class Helper
 {
 public:
     // IDA 0x4B9BD0 area
-    static void ProcessData(void* data, int32_t size);
+    static void ProcessData(void* data, int32_t size);  // 0x4371d0
 
     int32_t     Helper_field_00;       // 0x00
 };
@@ -329,7 +329,7 @@ class Compare
 {
 public:
     // IDA 0x4D9C00 area
-    static bool Field96(int32_t a, int32_t b);
+    static bool Field96(int32_t a, int32_t b);  // 0x46dc90
 
     int32_t     Compare_field_00;       // 0x00
 };
@@ -342,7 +342,7 @@ class Value
 {
 public:
     // IDA 0x4D9C00 area
-    static bool InRange(int32_t value, int32_t min, int32_t max);
+    static bool InRange(int32_t value, int32_t min, int32_t max);  // 0x486730
 
     int32_t     Value_field_00;       // 0x00
 };
@@ -355,7 +355,7 @@ class Return
 {
 public:
     // IDA 0x40BCB0 area
-    static HRESULT HRESULT_Fail();
+    static HRESULT HRESULT_Fail();  // 0x48ace0
 
     int32_t     Return_field_00;       // 0x00
 };
@@ -368,11 +368,11 @@ class EventQueue
 {
 public:
     // IDA 0x54F000
-    static void Process(void* bink_player);
+    static void Process(void* bink_player);  // 0x54f000
     // IDA 0x54F000 area
-    static void Read();
+    static void Read();  // 0x54f050
     // IDA 0x54F000 area
-    static bool Check();
+    static bool Check();  // 0x54f650
     // IDA 0x54F000 area
     static void Clear();
 
@@ -388,7 +388,7 @@ class Event_Dispatch
 {
 public:
     // IDA 0x54F000 area
-    static int32_t Return0();
+    static int32_t Return0();  // 0x48d1d0
 
     int32_t     Event_Dispatch_field_00;       // 0x00
 };
@@ -401,11 +401,11 @@ class Selection
 {
 public:
     // IDA 0x724BD0 area
-    void SetCurrent(ObjectClass* obj);
+    void SetCurrent(ObjectClass* obj);  // 0x731d00
     // IDA 0x724BD0 area
-    bool GetFlag() const;
+    bool GetFlag() const;  // 0x732d00
     // IDA 0x724BD0 area
-    void ClearGlobals();
+    void ClearGlobals();  // 0x734270
 
     ObjectClass* m_Current;     // 0x00
     bool        m_Flag;         // 0x04
@@ -420,11 +420,11 @@ class Player
 {
 public:
     // IDA 0x48B2A0 area
-    static HouseClass* FindByName(const char* name);
+    static HouseClass* FindByName(const char* name);  // 0x5e8bf0
     // IDA 0x48B2A0 area
-    static void BuildListString();
+    static void BuildListString();  // 0x5e8dc0
     // IDA 0x48B2A0 area
-    static bool IsObserver(HouseClass* house);
+    static bool IsObserver(HouseClass* house);  // 0x5e9440
     // IDA 0x48B2A0 area
     static int32_t GetCount();
 
@@ -439,9 +439,9 @@ class FrameTimer
 {
 public:
     // IDA 0x54F720 area
-    bool HasRemaining() const;
+    bool HasRemaining() const;  // 0x41bf40
     // IDA 0x54F720 area
-    void Init25();
+    void Init25();  // 0x70d150
 
     int32_t     m_StartFrame;   // 0x00
     int32_t     m_Duration;     // 0x04
@@ -455,9 +455,9 @@ class Time
 {
 public:
     // IDA 0x54F720 area
-    static int32_t GetElapsedMS();
+    static int32_t GetElapsedMS();  // 0x4e24a0
     // IDA 0x54F720 area
-    static void FormatDate(char* buffer, int32_t size);
+    static void FormatDate(char* buffer, int32_t size);  // 0x777ac0
 
     int32_t     Time_field_00;       // 0x00
 };
@@ -470,9 +470,9 @@ class Float
 {
 public:
     // IDA 0x4D9C00 area
-    static float Accumulate(float* dest, float value);
+    static float Accumulate(float* dest, float value);  // 0x6c9690
     // IDA 0x4D9C00 area
-    static float SubtractClamped(float a, float b, float min);
+    static float SubtractClamped(float a, float b, float min);  // 0x6c96b0
 
     int32_t     Float_field_00;       // 0x00
 };
@@ -485,7 +485,7 @@ class Config
 {
 public:
     // IDA 0x48B2A0 area
-    static void SaveObserverMode(bool enabled);
+    static void SaveObserverMode(bool enabled);  // 0x5ee1b0
 
     int32_t     Config_field_00;       // 0x00
 };
@@ -498,7 +498,7 @@ class Settings
 {
 public:
     // IDA 0x48B2A0 area
-    static bool CheckString(const char* str);
+    static bool CheckString(const char* str);  // 0x5e8760
 
     int32_t     Settings_field_00;       // 0x00
 };
@@ -511,7 +511,7 @@ class Init
 {
 public:
     // IDA 0x60D430
-    static void StubPlaceholder();
+    static void StubPlaceholder();  // 0x60d430
 
     int32_t     Init_field_00;       // 0x00
 };
@@ -524,7 +524,7 @@ class Process
 {
 public:
     // IDA 0x54F000 area
-    static void WaitForExit();
+    static void WaitForExit();  // 0x664610
 
     int32_t     Process_field_00;       // 0x00
 };
@@ -537,7 +537,7 @@ class Main
 {
 public:
     // IDA 0x6BB9A0 area
-    static void* CreateDialog(int32_t dlg_id);
+    static void* CreateDialog(int32_t dlg_id);  // 0x4e1d00
 
     int32_t     Main_field_00;       // 0x00
 };
@@ -550,7 +550,7 @@ class Stub
 {
 public:
     // IDA 0x6BB9A0 area
-    static void InfiniteLoop();
+    static void InfiniteLoop();  // 0x4f4d80
 
     int32_t     Stub_field_00;       // 0x00
 };
@@ -563,7 +563,7 @@ class Type
 {
 public:
     // IDA 0x48B2A0 area
-    static bool CheckAmbiguity();
+    static bool CheckAmbiguity();  // 0x578540
 
     int32_t     Type_field_00;       // 0x00
 };
@@ -579,13 +579,13 @@ public:
     ~unknown();
 
     // IDA 0x48B2A0 area
-    void ddtor();
+    void ddtor();  // 0x588ce0
     // IDA 0x48B2A0 area
-    void Write(const void* data, int32_t size);
+    void Write(const void* data, int32_t size);  // 0x588d10
     // IDA 0x48B2A0 area
-    void Seek(int32_t offset);
+    void Seek(int32_t offset);  // 0x588d30
     // IDA 0x48B2A0 area
-    int32_t Read(void* buf, int32_t size);
+    int32_t Read(void* buf, int32_t size);  // 0x5896a0
     // IDA 0x48B2A0 area
     void Flush();
     // IDA 0x48B2A0 area
@@ -609,11 +609,11 @@ class WinMain
 {
 public:
     // IDA 0x6BB9A0 area
-    static void CleanupResource();
+    static void CleanupResource();  // 0x49f8b0
     // IDA 0x6BB9A0 area
     static void Constructor_VectorClass_Wstring();
     // IDA 0x6BB9A0 area
-    static void ShutdownCleanup();
+    static void ShutdownCleanup();  // 0x734d30
 
     static HWND    s_hWnd;        // 0x00
     static HINSTANCE s_hInstance; // 0x04

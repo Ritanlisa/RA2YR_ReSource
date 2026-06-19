@@ -10,15 +10,15 @@ class Checksummer
 {
 public:
     // 0x4A1D30 Add_WORD (uint16)
-    void Add_WORD(uint16_t) {}
+    void Add_WORD(uint16_t);  // 0x4a1d30
     // 0x4A1D70 Add_float
-    void Add_float(float) {}
+    void Add_float(float);  // 0x4a1d70
     // 0x4A1D90 Add_double
-    void Add_double(double) {}
+    void Add_double(double);  // 0x4a1d90
     // 0x4A1DE0 Add_Buffer
-    int Add_Buffer(const uint8_t* buf, int len) { return 0; }
+    int Add_Buffer(const uint8_t* buf, int len);  // 0x4a1de0
     // 0x5F9E80 HashString
-    static int HashString(const char* str) { return 0; }
+    static int HashString(const char* str);  // 0x5f9e80
 
     uint32_t  crcValue;     // +0x00 (this+0)
     uint32_t  bytePos;      // +0x04 (this+1)

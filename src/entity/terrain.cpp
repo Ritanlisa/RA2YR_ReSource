@@ -28,3 +28,17 @@ TerrainClass::TerrainClass(TerrainTypeClass* pType, const CellStruct& cell,
 }
 
 } // namespace gamemd
+
+#include "entity/terrain.hpp"
+
+namespace gamemd {
+
+// --- TerrainClass ---
+
+HRESULT __stdcall TerrainClass::GetClassID(CLSID* pClassID) { return E_NOTIMPL; }
+HRESULT __stdcall TerrainClass::Load(IStream* pStm) { return S_OK; }
+HRESULT __stdcall TerrainClass::Save(IStream* pStm, BOOL fClearDirty) { return S_OK; }
+AbstractType __stdcall TerrainClass::whatAmI() const { return kObjectTypeId; }
+int TerrainClass::objectSize() const { return sizeof(TerrainClass); }
+
+} // namespace gamemd

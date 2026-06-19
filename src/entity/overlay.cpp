@@ -20,3 +20,17 @@ OverlayClass::OverlayClass(OverlayTypeClass* pType, const CellStruct& cell,
 }
 
 } // namespace gamemd
+
+#include "entity/overlay.hpp"
+
+namespace gamemd {
+
+// --- OverlayClass ---
+
+HRESULT __stdcall OverlayClass::GetClassID(CLSID* pClassID) { return E_NOTIMPL; }
+HRESULT __stdcall OverlayClass::Load(IStream* pStm) { return S_OK; }
+HRESULT __stdcall OverlayClass::Save(IStream* pStm, BOOL fClearDirty) { return S_OK; }
+AbstractType __stdcall OverlayClass::whatAmI() const { return kObjectTypeId; }
+int OverlayClass::objectSize() const { return sizeof(OverlayClass); }
+
+} // namespace gamemd

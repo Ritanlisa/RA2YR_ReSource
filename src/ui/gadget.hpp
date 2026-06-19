@@ -46,7 +46,7 @@ public:
     virtual ~GadgetClass() = default;
 
     virtual void Draw(DSurface* surface, TextRenderer* text) = 0;
-    virtual bool OnClick(int x, int y) { return false; }
+    virtual bool OnClick(int x, int y);
     virtual void OnMouseEnter() = 0;
     virtual void OnMouseLeave() = 0;
 
@@ -87,8 +87,8 @@ public:
                uint8_t r = 200, uint8_t g = 200, uint8_t b = 200);
 
     void Draw(DSurface* surface, TextRenderer* text) override;
-    void OnMouseEnter() override {}
-    void OnMouseLeave() override {}
+    void OnMouseEnter() override;
+    void OnMouseLeave() override;
 
     std::string Text;
     uint8_t R, G, B;
@@ -132,15 +132,15 @@ public:
     void AddGadget(GadgetClass* gadget);
     void ClearGadgets();
     void SetVisible(bool visible);
-    bool IsVisible() const { return visible; }
-    bool IsFinished() const { return finished; }
-    void Finish(int result) { finished = true; this->result = result; }
-    int GetResult() const { return result; }
+    bool IsVisible() const;
+    bool IsFinished() const;
+    void Finish(int result);
+    int GetResult() const;
 
     bool finished = false;
     int result = 0;
     bool drawBackground = true;
-    std::vector<GadgetClass*>& Gadgets() { return gadgets; }
+    std::vector<GadgetClass*>& Gadgets();
 
 protected:
     void DrawBackground(DSurface* surface);

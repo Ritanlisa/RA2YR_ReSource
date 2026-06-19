@@ -28,15 +28,15 @@ class LightSourceClass : public AbstractClass
 public:
     static constexpr AbstractType kObjectTypeId = AbstractType::LightSource;
 
-    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return E_NOTIMPL; }
+    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override;
 
-    virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }
-    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { return S_OK; }
+    virtual HRESULT __stdcall Load(IStream* stream) override;
+    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
 
     virtual ~LightSourceClass() override = default;
 
-    virtual AbstractType __stdcall whatAmI() const override { return AbstractType::LightSource; }
-    virtual int objectSize() const override { return sizeof(*this); }
+    virtual AbstractType __stdcall whatAmI() const override;
+    virtual int objectSize() const override;
 
     void Activate(uint32_t zero = 0);
     void Deactivate(uint32_t zero = 0);
@@ -53,7 +53,7 @@ protected:
     LightSourceClass() = default;
     LightSourceClass(const CoordStruct& location, int intensity, int visibility,
                      const TintStruct& tint, int detail_level) noexcept;
-    explicit LightSourceClass(noinit_t) noexcept {}
+    explicit LightSourceClass(noinit_t) noexcept;
 };
 
 } // namespace gamemd

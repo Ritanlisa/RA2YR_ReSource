@@ -442,3 +442,24 @@ void LoadSaveDialog_FillList(LoadOptions* opts, HWND hWnd) {
 }
 
 } // namespace gamemd
+
+#include "core/load_options.hpp"
+
+namespace gamemd {
+
+// --- LoadOptions ---
+
+char* LoadOptions::GetDataPtr() { return reinterpret_cast<char*>(this) + 264; }
+uint32_t LoadOptions::GetFlag98() const { return *reinterpret_cast<const uint32_t*>(reinterpret_cast<const char*>(this) + 0x188); }
+uint32_t LoadOptions::GetFlag99() const { return *reinterpret_cast<const uint32_t*>(reinterpret_cast<const char*>(this) + 0x18C); }
+uint32_t LoadOptions::GetFlag252() const { return *reinterpret_cast<const uint32_t*>(reinterpret_cast<const char*>(this) + 0x3F0); }
+uint32_t LoadOptions::GetMode() const { return mode; }
+void LoadOptions::SetMode(uint32_t m) { mode = m; }
+const char* LoadOptions::GetExtension() const { return extension; }
+void LoadOptions::SetExtension(const char* ext) { extension = ext; }
+uint32_t LoadOptions::GetCount() const { return count; }
+FileEntryClass** LoadOptions::GetEntries() { return entries; }
+uint32_t LoadOptions::GetCapacity() const { return capacity; }
+uint32_t LoadOptions::GetMaxEntries() const { return max_entries; }
+
+} // namespace gamemd

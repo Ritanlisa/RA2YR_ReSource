@@ -22,15 +22,15 @@ class FactoryClass : public AbstractClass
 public:
     static constexpr AbstractType kObjectDeriveId = AbstractType::Factory;
 
-    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return 0; }       // 0x4CA270 (LoadFromStream)
-    virtual HRESULT __stdcall Load(IStream* stream) override { return 0; }             // 0x4CA270
-    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { return 0; } // 0x4CA270
+    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override; // 0x4CA270 (LoadFromStream)
+    virtual HRESULT __stdcall Load(IStream* stream) override; // 0x4CA270
+    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override; // 0x4CA270
 
     virtual ~FactoryClass() = default;                                                   // 0x4CA230 (ddtor)
 
-    virtual AbstractType __stdcall whatAmI() const override { return AbstractType::Factory; } // 0x4CA750 (StubReturn12)
-    virtual int objectSize() const override { return 0; }                               // 0x4CA760 (StubReturn116)
-    virtual void calculateChecksum(void* checksum) const {}                             // 0x4CA760
+    virtual AbstractType __stdcall whatAmI() const override; // 0x4CA750 (StubReturn12)
+    virtual int objectSize() const override; // 0x4CA760 (StubReturn116)
+    virtual void calculateChecksum(void* checksum) const; // 0x4CA760
 
     // production lifecycle
     bool HasProgressChanged();                                                           // 0x4C9C60

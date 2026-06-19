@@ -24,3 +24,17 @@ TubeClass::TubeClass() noexcept
 }
 
 } // namespace gamemd
+
+#include "entity/tube.hpp"
+
+namespace gamemd {
+
+// --- TubeClass ---
+
+HRESULT __stdcall TubeClass::GetClassID(CLSID* pClassID) { return E_NOTIMPL; }
+HRESULT __stdcall TubeClass::Load(IStream* pStm) { return S_OK; }
+HRESULT __stdcall TubeClass::Save(IStream* pStm, BOOL fClearDirty) { return S_OK; }
+AbstractType __stdcall TubeClass::whatAmI() const { return kObjectTypeId; }
+int TubeClass::objectSize() const { return sizeof(TubeClass); }
+
+} // namespace gamemd

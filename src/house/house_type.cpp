@@ -103,3 +103,17 @@ int HouseTypeClass::FindIndexOfName(const char* name)
 }
 
 } // namespace gamemd
+
+#include "house/house_type.hpp"
+
+namespace gamemd {
+
+// --- HouseTypeClass ---
+
+HRESULT __stdcall HouseTypeClass::GetClassID(CLSID* class_id) { return 0; }
+HRESULT __stdcall HouseTypeClass::Load(IStream* stream) { return 0; }
+HRESULT __stdcall HouseTypeClass::Save(IStream* stream, int clear_dirty) { return 0; }
+AbstractType __stdcall HouseTypeClass::whatAmI() const { return AbstractType::HouseType; }
+int HouseTypeClass::objectSize() const { return 0; }
+
+} // namespace gamemd

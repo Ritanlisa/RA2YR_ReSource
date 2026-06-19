@@ -18,22 +18,22 @@ class ConnectionClass
 public:
     ConnectionClass() noexcept;                          // 0x48BE60
 
-    virtual HRESULT __stdcall QueryInterface(const IID&, void**) { return E_NOINTERFACE; } // 0x48C650
-    virtual ULONG   __stdcall AddRef()                             { return 1; }            // 0x48BF10
-    virtual ULONG   __stdcall Release()                            { return 1; }            // 0x48BF40
+    virtual HRESULT __stdcall QueryInterface(const IID&, void**); // 0x48C650
+    virtual ULONG   __stdcall AddRef(); // 0x48BF10
+    virtual ULONG   __stdcall Release(); // 0x48BF40
 
     virtual ~ConnectionClass() = default;                                                    // 0x48BEE0
 
-    virtual bool  Open()                                     { return false; }               // 0x48C590
-    virtual void  Close()                                    {}                              // 0x48C590
-    virtual bool  IsConnected() const                        { return false; }               // 0x48C590
-    virtual bool  Send(const uint8_t*, int32_t)              { return false; }               // 0x53F5D0
-    virtual int32_t Receive(uint8_t*, int32_t)               { return 0; }                   // 0x53F650
-    virtual int32_t GetLatency() const                       { return 0; }                   // 0x48C590
-    virtual const char* GetAddress() const                   { return nullptr; }             // 0x542350
-    virtual void  OnMessageReceived(const NetworkEvent&)     {}                              // 0x48C590
-    virtual void  Flush()                                    {}                              // 0x48C590
-    virtual bool  IsHost() const                             { return false; }               // 0x48C590
+    virtual bool  Open(); // 0x48C590
+    virtual void  Close(); // 0x48C590
+    virtual bool  IsConnected() const; // 0x48C590
+    virtual bool  Send(const uint8_t*, int32_t); // 0x53F5D0
+    virtual int32_t Receive(uint8_t*, int32_t); // 0x53F650
+    virtual int32_t GetLatency() const; // 0x48C590
+    virtual const char* GetAddress() const; // 0x542350
+    virtual void  OnMessageReceived(const NetworkEvent&); // 0x48C590
+    virtual void  Flush(); // 0x48C590
+    virtual bool  IsHost() const; // 0x48C590
 
     void queueSendPacket(const uint8_t*, int32_t, int32_t);                                   // 0x48B410
     void* allocPacketSlot();                                                                  // 0x48B750
@@ -58,9 +58,9 @@ class IPXConnClass : public ConnectionClass
 public:
     IPXConnClass() noexcept;                              // 0x53F430
     virtual ~IPXConnClass() = default;
-    virtual bool Open() override { return false; }         // 0x69BC20
+    virtual bool Open() override; // 0x69BC20
 
-    virtual HRESULT __stdcall QueryInterface(const IID&, void**) override { return E_NOINTERFACE; } // 0x53F850
+    virtual HRESULT __stdcall QueryInterface(const IID&, void**) override; // 0x53F850
     bool initConnection();                                // 0x48BE60
     bool closeConnection();                               // 0x69BC20
     bool send(const uint8_t*, int32_t);                    // 0x53F5D0
@@ -109,7 +109,7 @@ class ModemConnectionClass : public ConnectionClass
 public:
     ModemConnectionClass() noexcept;                        // 0x5F16E0
     virtual ~ModemConnectionClass() = default;
-    virtual bool Open() override { return false; }           // 0x5F1BC0
+    virtual bool Open() override; // 0x5F1BC0
 
     bool Init();                                            // 0x5F16E0
     bool Connect();                                         // 0x5F1BC0
@@ -128,7 +128,7 @@ class NullModemClass : public ConnectionClass
 public:
     NullModemClass() noexcept;                              // 0x5F16E0
     virtual ~NullModemClass() = default;
-    virtual bool Open() override { return false; }           // 0x5F1BC0
+    virtual bool Open() override; // 0x5F1BC0
 
     bool initConnection();                                  // 0x5EF100
     bool closeConnection();                                 // 0x5EF170

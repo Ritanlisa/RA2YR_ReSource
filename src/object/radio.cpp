@@ -328,3 +328,17 @@ void RadioClass::SetLinkCount(int count)
 
 } // namespace game
 } // namespace ra2
+
+#include "object/radio.hpp"
+
+namespace ra2 { namespace game {
+
+// --- RadioClass ---
+
+HRESULT __stdcall RadioClass::Load(IStream* stream) { return S_OK; }
+HRESULT __stdcall RadioClass::Save(IStream* stream, int clear_dirty) { return S_OK; }
+TechnoClass* const& RadioClass::getNthLink(int idx) const { return radioLinks.Items[idx]; }
+bool RadioClass::hasAnyLink() const { return radioLinks.Count > 0; }
+
+} // namespace game
+} // namespace ra2

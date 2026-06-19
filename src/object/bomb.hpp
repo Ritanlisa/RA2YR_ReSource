@@ -14,16 +14,16 @@ class BombClass : public AbstractClass
 public:
     static constexpr AbstractType kObjectDeriveId = AbstractType::Bomb;
 
-    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return 0; }
-    virtual HRESULT __stdcall Load(IStream* stream) override { return 0; }
-    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { return 0; }
+    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override;
+    virtual HRESULT __stdcall Load(IStream* stream) override;
+    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
 
     virtual ~BombClass() = default;
 
-    virtual void pointerExpired(AbstractClass* ptr, bool removed) override {}
-    virtual AbstractType __stdcall whatAmI() const override { return kObjectDeriveId; }
-    virtual int objectSize() const override { return 0; }
-    virtual void calculateChecksum(void* checksum) const {}
+    virtual void pointerExpired(AbstractClass* ptr, bool removed) override;
+    virtual AbstractType __stdcall whatAmI() const override;
+    virtual int objectSize() const override;
+    virtual void calculateChecksum(void* checksum) const;
 
     // Construction
     BombClass();                                                 // 0x4385D0 (AbstractClass)
@@ -40,8 +40,8 @@ public:
     void CopyTo(BombClass*);                                     // 0x4393F0
 
     // Stubs
-    int StubReturn68() const { return 68; }                       // 0x4393E0
-    int StubReturn92() const { return 92; }                       // 0x4393D0
+    int StubReturn68() const; // 0x4393E0
+    int StubReturn92() const; // 0x4393D0
 
     int32_t     BombClass_field_28;           // +0x28 (this+40)
     int32_t     BombClass_field_2C;           // +0x2C (this+44)

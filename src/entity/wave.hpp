@@ -34,14 +34,14 @@ public:
     WaveClass(ra2::game::TechnoClass* pTarget, WaveType waveType,
               const Point2D& coords, uint32_t intensity) noexcept;
 
-    virtual HRESULT __stdcall Load(IStream* pStm) override { return S_OK; }
-    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override { return S_OK; }
-    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override { return E_NOTIMPL; }
+    virtual HRESULT __stdcall Load(IStream* pStm) override;
+    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;
+    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override;
 
     virtual ~WaveClass() override = default;
 
-    virtual AbstractType __stdcall whatAmI() const override { return kObjectTypeId; }
-    virtual int objectSize() const override { return sizeof(WaveClass); }
+    virtual AbstractType __stdcall whatAmI() const override;
+    virtual int objectSize() const override;
 
     ra2::game::TechnoClass*          Target;
     WaveType                         Type;

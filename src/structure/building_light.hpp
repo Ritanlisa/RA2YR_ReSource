@@ -33,16 +33,16 @@ class BuildingLightClass : public ObjectClass
 public:
     static constexpr AbstractType kObjectTypeId = AbstractType::BuildingLight;
 
-    virtual HRESULT __stdcall GetClassID(CLSID*) override { return E_NOTIMPL; }
-    virtual HRESULT __stdcall Save(IStream*, int) override { return S_OK; }
+    virtual HRESULT __stdcall GetClassID(CLSID*) override;
+    virtual HRESULT __stdcall Save(IStream*, int) override;
 
     virtual ~BuildingLightClass() override = default;
 
-    virtual AbstractType __stdcall whatAmI() const override { return kObjectTypeId; }
-    virtual int objectSize() const override { return sizeof(BuildingLightClass); }
+    virtual AbstractType __stdcall whatAmI() const override;
+    virtual int objectSize() const override;
 
     // 0x436BE0 FindTarget / SetBehaviour
-    void SetBehaviour(int mode) {}
+    void SetBehaviour(int mode);
 
     // IDA ctor 0x435820: +0xB0..+0xE4
     double            Speed;              // +0xB0  (this+44)

@@ -20,3 +20,17 @@ SmudgeClass::SmudgeClass(SmudgeTypeClass* pType, const CellStruct& cell,
 }
 
 } // namespace gamemd
+
+#include "entity/smudge.hpp"
+
+namespace gamemd {
+
+// --- SmudgeClass ---
+
+HRESULT __stdcall SmudgeClass::GetClassID(CLSID* pClassID) { return E_NOTIMPL; }
+HRESULT __stdcall SmudgeClass::Load(IStream* pStm) { return S_OK; }
+HRESULT __stdcall SmudgeClass::Save(IStream* pStm, BOOL fClearDirty) { return S_OK; }
+AbstractType __stdcall SmudgeClass::whatAmI() const { return kObjectTypeId; }
+int SmudgeClass::objectSize() const { return sizeof(SmudgeClass); }
+
+} // namespace gamemd

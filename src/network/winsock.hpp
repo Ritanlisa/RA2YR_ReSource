@@ -18,9 +18,9 @@ public:
     bool IsAvailable() const;
 
     bool CreateSocket();
-    void CloseSocket();
-    bool Bind(uint16_t port);
-    bool SendTo(uint32_t address, uint16_t port, const uint8_t* data, int32_t length);
+    void CloseSocket();  // 0x7c8992
+    bool Bind(uint16_t port);  // 0x7c8998
+    bool SendTo(uint32_t address, uint16_t port, const uint8_t* data, int32_t length);  // 0x7c89b0
     int32_t ReceiveFrom(uint8_t* buffer, int32_t maxLen, uint32_t* outAddress, uint16_t* outPort);
     bool SetNonBlocking(bool nonBlock);
     bool JoinMulticastGroup(uint32_t groupAddress);
@@ -47,8 +47,8 @@ public:
     bool IsAvailable() const;
 
     bool CreateSocket();
-    void CloseSocket();
-    bool Bind(uint32_t network, const uint8_t node[6], uint16_t socket);
+    void CloseSocket();  // 0x7c8992
+    bool Bind(uint32_t network, const uint8_t node[6], uint16_t socket);  // 0x7b10c0
     bool SendTo(uint32_t destNetwork, const uint8_t destNode[6], uint16_t destSocket,
                 const uint8_t* data, int32_t length);
     int32_t ReceiveFrom(uint8_t* buffer, int32_t maxLen,
@@ -77,8 +77,8 @@ public:
     bool IsAvailable() const;
 
     bool CreateSocket(uint16_t port);
-    void CloseSocket();
-    bool SendTo(const char* address, uint16_t port, const uint8_t* data, int32_t length);
+    void CloseSocket();  // 0x7c8992
+    bool SendTo(const char* address, uint16_t port, const uint8_t* data, int32_t length);  // 0x7c89b0
     int32_t ReceiveFrom(uint8_t* buffer, int32_t maxLen, char* outAddress, int32_t addrSize, uint16_t* outPort);
     bool SetNonBlocking(bool nonBlock);
     bool SetBroadcast(bool enable);

@@ -448,3 +448,157 @@ void FootClass::Destroyed(ObjectClass* killer)
 
 } // namespace game
 } // namespace ra2
+
+#include "object/foot.hpp"
+
+namespace ra2 { namespace game {
+
+// --- FootClass ---
+
+void FootClass::onBuildingPlacement(uint32_t a, uint32_t b) {}
+void FootClass::ReceiveGunner(FootClass* gunner) {}
+void FootClass::RemoveGunner(FootClass* gunner) {}
+bool FootClass::IsLeavingMap() const { return false; }
+bool FootClass::canMove() const { return false; }
+bool FootClass::onProductionComplete() const { return false; }
+void FootClass::onCellEntry(CellStruct* cell) {}
+void FootClass::processSuperWeapon(CellStruct* cell) {}
+CoordStruct* FootClass::getMoveCoords(CoordStruct* out) { return nullptr; }
+void FootClass::onMoveStart() {}
+bool FootClass::canStop() { return false; }
+bool FootClass::canRecruitTeamMember() { return false; }
+void FootClass::onDrawComplete() {}
+void FootClass::PlayIdleAnim(int idle_anim_number) {}
+uint32_t FootClass::getMovementMode() { return 0; }
+uint32_t FootClass::getPathDistance(uint32_t a, uint32_t b, uint32_t c) const { return 0; }
+uint32_t FootClass::getPathCost(uint32_t a, uint32_t b, uint32_t c, uint32_t d) const { return 0; }
+uint32_t FootClass::isAreaClear(uint32_t a, uint32_t b, uint32_t c) const { return 0; }
+void FootClass::onAreaEntry(uint32_t a, uint32_t b) {}
+uint32_t FootClass::getWaypointData(uint32_t a) { return 0; }
+void FootClass::onWaypointReached(uint32_t a) {}
+void FootClass::onPathComplete() {}
+void FootClass::onMovementDone() {}
+bool FootClass::canEnterCell(uint32_t a) { return false; }
+int FootClass::MissionMoveCarryallLand() { return 0; }
+void FootClass::vt_entry_4F8() {}
+int FootClass::Destru_vt323() { return 0; }
+void FootClass::vt_entry_514() {}
+bool FootClass::StubReturnFalse() { return false; }
+void FootClass::StubReturnVoid() {}
+void FootClass::vt_entry_534() {}
+void FootClass::vt_entry_540() {}
+int FootClass::GetTurretAngle() const { return 0; }
+void FootClass::ProcessDemolish() {}
+void FootClass::UpdateSidebar() {}
+void FootClass::ProcessPrimarySelect() {}
+int FootClass::StubReturn0() { return 0; }
+void FootClass::ScanCircleForUnits() {}
+void FootClass::ScanCircleForUnits2() {}
+int FootClass::GetCapacity() const { return 0; }
+int FootClass::ResizeOccupiedCellList() { return 0; }
+int FootClass::sub_4734B0() { return 0; }
+int FootClass::sub_487150() { return 0; }
+int FootClass::sub_487160() { return 0; }
+int FootClass::FindPathWithRetry() { return -1; }
+void FootClass::ProcessDeployMission() {}
+void FootClass::UpdateDeployMovement() {}
+int FootClass::PostLoadInit() { return 0; }
+int FootClass::Destru_vt337() { return 0; }
+void FootClass::UpdateReveal() {}
+bool FootClass::CheckTileSeed() const { return false; }
+int FootClass::MovementStep() { return 0; }
+int FootClass::Destru_vt139() { return 0; }
+bool FootClass::CheckVoiceResponse() const { return false; }
+void FootClass::ProcessMissionVoice() {}
+int FootClass::FindMovePosition() { return -1; }
+int FootClass::PlayCOM_audio() { return 0; }
+int FootClass::Destru_vt319() { return 0; }
+int FootClass::EnterAttackState() { return 0; }
+void FootClass::CalculateApproachPath() {}
+int FootClass::FindAITarget() { return -1; }
+int FootClass::DispatchInput() { return 0; }
+void FootClass::ProcessDeploy() {}
+int FootClass::ValidateMove() { return 0; }
+int FootClass::ValidatePlacement() { return 0; }
+int FootClass::GetCoords() const { return 0; }
+void FootClass::UpdateAI() {}
+int FootClass::OverrideMission_SyncLog() { return 0; }
+int FootClass::ConditionalAction() { return 0; }
+int FootClass::MissionDispatch() { return 0; }
+void FootClass::ProcessTeamAction() {}
+int FootClass::AssignDestination() { return 0; }
+int FootClass::DispatchSell() { return 0; }
+int FootClass::SelectAutoTarget_Cloaked() { return 0; }
+int FootClass::HandleTargetDestroyed() { return 0; }
+void FootClass::vt_entry_524() {}
+int FootClass::Destru_vt107() { return 0; }
+int FootClass::vt_entry_4F0() { return 0; }
+void FootClass::ClearSomeVector() {}
+bool FootClass::CanBeControlled() const { return false; }
+bool FootClass::CanBeRecruited() const { return false; }
+void FootClass::ClearSomeVector2() {}
+void FootClass::ProcessMovement() {}
+bool FootClass::CheckTargetValidity() const { return false; }
+int FootClass::UpdateState() { return 0; }
+int FootClass::GetAttackSpeed() const { return 0; }
+int FootClass::Destru_vt30() { return 0; }
+void FootClass::vt_entry_548() {}
+void FootClass::vt_entry_54C() {}
+int FootClass::BeginPowerUpdate() { return 0; }
+bool FootClass::CanBeHunted() const { return false; }
+int FootClass::LiberateMember() { return 0; }
+int FootClass::vt_entry_4E0() { return 0; }
+int FootClass::vt_entry_4F4() { return 0; }
+int FootClass::CheckTargetCell() const { return 0; }
+int FootClass::Destru_vt311() { return 0; }
+void FootClass::SetBuildingType() {}
+int FootClass::MoveToTiberium() { return 0; }
+int FootClass::FindMoveTarget() { return -1; }
+int FootClass::MoveToWeed() { return 0; }
+bool FootClass::CheckHeightDiff() const { return false; }
+int FootClass::ValidateTargetCell() { return 0; }
+int FootClass::HandleCursorWithCheck() { return 0; }
+void FootClass::ProcessMissionState() {}
+int FootClass::ValidateFoundation() { return 0; }
+int FootClass::PreDestroy() { return 0; }
+int FootClass::OnCompleteAction() { return 0; }
+int FootClass::RemovePassenger() { return 0; }
+int FootClass::PopAndProcess() { return 0; }
+bool FootClass::IsTimerActive() const { return false; }
+bool FootClass::IsTargetInRange() const { return false; }
+int FootClass::CheckCellPassable() const { return 0; }
+bool FootClass::DeployAction() { return false; }
+void FootClass::UpdateTeamAI() {}
+int FootClass::vt_entry_530() { return 0; }
+void FootClass::ClearPathIndex() {}
+int FootClass::MissionSell_Dispatch() { return 0; }
+void FootClass::UpdateAttackMove_SelectNewTarget() {}
+void FootClass::ScanAdjacentCells() {}
+int FootClass::Destru_vt322() { return 0; }
+bool FootClass::IsNotAttackAndPlayer() const { return false; }
+int FootClass::Jumpjet_OccupyCell() { return 0; }
+int FootClass::Destru_vt08() { return 0; }
+int FootClass::RemoveFromPointerArray() { return 0; }
+int FootClass::sub_550DAA0() { return 0; }
+int FootClass::FindNearestApproachableCell() { return -1; }
+bool FootClass::CreateWakes() { return false; }
+int FootClass::sub_56E52F0() { return 0; }
+int FootClass::LinkToTransporter() { return 0; }
+int FootClass::GetGameSpeedFromSession() const { return 0; }
+int FootClass::CompleteProduction() { return 0; }
+void FootClass::UpdateLocomotion() {}
+int FootClass::ProcessEnterTransport() { return 0; }
+void FootClass::SetThreatBounds() {}
+int FootClass::ApplyThreatBounds() { return 0; }
+int FootClass::sub_570F7E0() { return 0; }
+int FootClass::sub_70FEB0() { return 0; }
+void FootClass::UpdatePassengerCoords() {}
+void FootClass::Cleanup() {}
+int FootClass::RespondToDestruction() { return 0; }
+int FootClass::sub_5746D80() { return 0; }
+bool FootClass::CheckAccelLimit() const { return false; }
+int FootClass::GetField() const { return 0; }
+void FootClass::SetField() {}
+
+} // namespace game
+} // namespace ra2

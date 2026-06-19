@@ -24,9 +24,9 @@ public:
     virtual ~SelectTeamCommand() = default;
 
     // IDA 0x48B2A0 area
-    virtual void Construct();
-    virtual int32_t AddRef();
-    virtual int32_t Release();
+    virtual void Construct();  // 0x535fc0
+    virtual int32_t AddRef();  // 0x535fe0
+    virtual int32_t Release();  // 0x536000
     virtual const char* GetName() const override;
     virtual const wchar_t* GetUIName() const override;
     virtual void Execute(uint32_t context) const override;
@@ -46,9 +46,9 @@ public:
     virtual ~AddTeamCommand() = default;
 
     // IDA 0x48B2A0 area
-    virtual void Construct();
-    virtual int32_t AddRef();
-    virtual int32_t Release();
+    virtual void Construct();  // 0x5360b0
+    virtual int32_t AddRef();  // 0x5360d0
+    virtual int32_t Release();  // 0x5360f0
     virtual const char* GetName() const override;
     virtual const wchar_t* GetUIName() const override;
     virtual void Execute(uint32_t context) const override;
@@ -66,9 +66,9 @@ public:
     TauntCommandClass() = default;
     virtual ~TauntCommandClass() = default;
 
-    virtual void Construct();
-    virtual int32_t AddRef();
-    virtual int32_t Release();
+    virtual void Construct();  // 0x536290
+    virtual int32_t AddRef();  // 0x5362b0
+    virtual int32_t Release();  // 0x5362d0
     virtual const char* GetName() const override;
     virtual const wchar_t* GetUIName() const override;
     virtual void Execute(uint32_t context) const override;
@@ -87,8 +87,8 @@ public:
     virtual ~PageUserCommandClass() = default;
 
     virtual void Construct();
-    virtual int32_t AddRef();
-    virtual int32_t Release();
+    virtual int32_t AddRef();  // 0x537de0
+    virtual int32_t Release();  // 0x537df0
     virtual const char* GetName() const override;
     virtual const wchar_t* GetUIName() const override;
     virtual void Execute(uint32_t context) const override;
@@ -107,8 +107,8 @@ public:
     virtual ~DeleteCommandClass() = default;
 
     virtual void Construct();
-    virtual int32_t AddRef();
-    virtual int32_t Release();
+    virtual int32_t AddRef();  // 0x537f20
+    virtual int32_t Release();  // 0x537f30
     virtual const char* GetName() const override;
     virtual const wchar_t* GetUIName() const override;
     virtual void Execute(uint32_t context) const override;
@@ -126,9 +126,9 @@ public:
     CenterTeamCommand() = default;
     virtual ~CenterTeamCommand() = default;
 
-    virtual void Construct();
-    virtual int32_t AddRef();
-    virtual int32_t Release();
+    virtual void Construct();  // 0x5361a0
+    virtual int32_t AddRef();  // 0x5361c0
+    virtual int32_t Release();  // 0x5361e0
     virtual const char* GetName() const override;
     virtual void Execute(uint32_t context) const override;
 
@@ -144,11 +144,11 @@ public:
     ScreenCaptureCommandClass() = default;
     virtual ~ScreenCaptureCommandClass() = default;
 
-    virtual void Constructor();
-    virtual int32_t AddRef();
-    virtual void ddtor();
+    virtual void Constructor();  // 0x537b40
+    virtual int32_t AddRef();  // 0x537b50
+    virtual void ddtor();  // 0x537b60
     virtual const char* GetName() const override;
-    virtual void Execute(uint32_t context) const override;
+    virtual void Execute(uint32_t context) const override;  // 0x537ba0
 
     int32_t     ScreenCaptureCommandClass_field_00;       // 0x00
 };
@@ -162,7 +162,7 @@ public:
     CursorPositionCommandClass() = default;
     virtual ~CursorPositionCommandClass() = default;
 
-    virtual void Constructor();
+    virtual void Constructor();  // 0x537e70
     virtual const char* GetName() const override;
     virtual void Execute(uint32_t context) const override;
 
@@ -180,9 +180,9 @@ public:
     ~Commands();
 
     // IDA 0x48B2A0 area
-    int32_t AddRef();
-    void ddtor();
-    int32_t Release();
+    int32_t AddRef();  // 0x537a50
+    void ddtor();  // 0x537a60
+    int32_t Release();  // 0x537a70
     static void BuildBar();
     static void AddAction(CommandClass* cmd);
 

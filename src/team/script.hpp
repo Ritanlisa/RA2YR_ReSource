@@ -33,21 +33,21 @@ class ScriptClass : public AbstractClass
 public:
     static constexpr AbstractType kObjectDeriveId = AbstractType::Script;
 
-    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return 0; }
-    virtual HRESULT __stdcall Load(IStream* stream) override { return 0; }
-    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { return 0; }
+    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override;
+    virtual HRESULT __stdcall Load(IStream* stream) override;
+    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
 
     virtual ~ScriptClass() = default;
 
-    virtual AbstractType __stdcall whatAmI() const override { return AbstractType::Script; }
-    virtual int objectSize() const override { return 0; }
+    virtual AbstractType __stdcall whatAmI() const override;
+    virtual int objectSize() const override;
 
     ScriptActionNode* GetCurrentAction(ScriptActionNode* buffer) const;
-    ScriptActionNode* GetNextAction(ScriptActionNode* buffer) const;
+    ScriptActionNode* GetNextAction(ScriptActionNode* buffer) const;  // 0x691540
 
-    bool Reset() { idxCurrentLine = -1; return true; }
-    bool SetCurrentLine(int idx) { idxCurrentLine = idx; return true; }
-    bool NextAction() { ++idxCurrentLine; return HasNextAction(); }
+    bool Reset();
+    bool SetCurrentLine(int idx);
+    bool NextAction();
     bool HasNextAction() const;
 
     ScriptTypeClass*    buildingType;
@@ -67,14 +67,14 @@ class ScriptTypeClass : public AbstractClass
 public:
     static constexpr AbstractType kObjectDeriveId = AbstractType::ScriptType;
 
-    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return 0; }
-    virtual HRESULT __stdcall Load(IStream* stream) override { return 0; }
-    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { return 0; }
+    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override;
+    virtual HRESULT __stdcall Load(IStream* stream) override;
+    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
 
     virtual ~ScriptTypeClass() = default;
 
-    virtual AbstractType __stdcall whatAmI() const override { return AbstractType::ScriptType; }
-    virtual int objectSize() const override { return 0; }
+    virtual AbstractType __stdcall whatAmI() const override;
+    virtual int objectSize() const override;
 
     static bool LoadFromINIList(CCINIClass* ini, bool is_global);
 

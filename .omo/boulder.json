@@ -33,10 +33,62 @@
           "status": "completed",
           "ended_at": "2026-06-19T01:47:07.194Z",
           "elapsed_ms": 265763
+        },
+        "todo:3": {
+          "task_key": "todo:3",
+          "task_label": "3",
+          "task_title": "修复 .hpp 地址注释",
+          "session_id": "opencode:ses_12267b5ebffeaPa2gSMUgp90AG",
+          "agent": "Sisyphus-Junior",
+          "category": "quick",
+          "started_at": "2026-06-19T01:54:54.051Z",
+          "status": "completed",
+          "updated_at": "2026-06-19T02:00:42.900Z",
+          "ended_at": "2026-06-19T02:00:42.900Z",
+          "elapsed_ms": 348849
+        },
+        "todo:4": {
+          "task_key": "todo:4",
+          "task_label": "4",
+          "task_title": "分离 .hpp 中的声明与实现",
+          "session_id": "opencode:ses_12263301affe23PooCcb6DWUGu",
+          "agent": "Sisyphus-Junior",
+          "category": "deep",
+          "updated_at": "2026-06-19T02:53:57.211Z",
+          "started_at": "2026-06-19T02:53:30.639Z",
+          "status": "completed",
+          "ended_at": "2026-06-19T02:53:57.211Z",
+          "elapsed_ms": 26572
+        },
+        "todo:5": {
+          "task_key": "todo:5",
+          "task_label": "5",
+          "task_title": "补充缺失地址 — 为无地址的函数声明添加注释",
+          "session_id": "opencode:ses_12232d683ffep9azmVQrWMIW6a",
+          "agent": "Sisyphus-Junior",
+          "category": "deep",
+          "updated_at": "2026-06-19T03:16:31.925Z",
+          "started_at": "2026-06-19T03:16:07.888Z",
+          "status": "completed",
+          "ended_at": "2026-06-19T03:16:31.925Z",
+          "elapsed_ms": 24037
+        },
+        "todo:7": {
+          "task_key": "todo:7",
+          "task_label": "7",
+          "task_title": "地址匹配 + 更新 functions.json",
+          "session_id": "opencode:ses_1221e51c9ffeQZyjaubHuwGnS2",
+          "agent": "Sisyphus-Junior",
+          "category": "quick",
+          "updated_at": "2026-06-19T03:20:24.512Z",
+          "started_at": "2026-06-19T03:19:56.727Z",
+          "status": "completed",
+          "ended_at": "2026-06-19T03:20:24.512Z",
+          "elapsed_ms": 27785
         }
       },
       "session_origins": {},
-      "updated_at": "2026-06-19T01:47:07.194Z"
+      "updated_at": "2026-06-19T03:20:24.512Z"
     }
   },
   "session_origins": {},
@@ -53,7 +105,59 @@
       "status": "completed",
       "ended_at": "2026-06-19T01:47:07.194Z",
       "elapsed_ms": 265763
+    },
+    "todo:3": {
+      "task_key": "todo:3",
+      "task_label": "3",
+      "task_title": "修复 .hpp 地址注释",
+      "session_id": "opencode:ses_12267b5ebffeaPa2gSMUgp90AG",
+      "agent": "Sisyphus-Junior",
+      "category": "quick",
+      "started_at": "2026-06-19T01:54:54.051Z",
+      "status": "completed",
+      "updated_at": "2026-06-19T02:00:42.900Z",
+      "ended_at": "2026-06-19T02:00:42.900Z",
+      "elapsed_ms": 348849
+    },
+    "todo:4": {
+      "task_key": "todo:4",
+      "task_label": "4",
+      "task_title": "分离 .hpp 中的声明与实现",
+      "session_id": "opencode:ses_12263301affe23PooCcb6DWUGu",
+      "agent": "Sisyphus-Junior",
+      "category": "deep",
+      "updated_at": "2026-06-19T02:53:57.211Z",
+      "started_at": "2026-06-19T02:53:30.639Z",
+      "status": "completed",
+      "ended_at": "2026-06-19T02:53:57.211Z",
+      "elapsed_ms": 26572
+    },
+    "todo:5": {
+      "task_key": "todo:5",
+      "task_label": "5",
+      "task_title": "补充缺失地址 — 为无地址的函数声明添加注释",
+      "session_id": "opencode:ses_12232d683ffep9azmVQrWMIW6a",
+      "agent": "Sisyphus-Junior",
+      "category": "deep",
+      "updated_at": "2026-06-19T03:16:31.925Z",
+      "started_at": "2026-06-19T03:16:07.888Z",
+      "status": "completed",
+      "ended_at": "2026-06-19T03:16:31.925Z",
+      "elapsed_ms": 24037
+    },
+    "todo:7": {
+      "task_key": "todo:7",
+      "task_label": "7",
+      "task_title": "地址匹配 + 更新 functions.json",
+      "session_id": "opencode:ses_1221e51c9ffeQZyjaubHuwGnS2",
+      "agent": "Sisyphus-Junior",
+      "category": "quick",
+      "updated_at": "2026-06-19T03:20:24.512Z",
+      "started_at": "2026-06-19T03:19:56.727Z",
+      "status": "completed",
+      "ended_at": "2026-06-19T03:20:24.512Z",
+      "elapsed_ms": 27785
     }
   },
-  "updated_at": "2026-06-19T01:47:07.194Z"
+  "updated_at": "2026-06-19T03:20:24.512Z"
 }

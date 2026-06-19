@@ -110,14 +110,14 @@ public:
     virtual ~SidebarClass() = default;
 
     // IDA 0x6A6C30
-    virtual void Draw(uint32_t flags) override = 0;
+    virtual void Draw(uint32_t flags) override = 0;  // 0x4c9c50
     // IDA 0x6A7590 (SwitchTab)
     virtual bool OnTabClick(int32_t tabIndex) = 0;
 
     // IDA: inline — sets redraw flags, calls RedrawSidebar + Draw
     void SidebarNeedsRepaint(int32_t mode = 0);
     // IDA 0x6A6300
-    bool AddCameo(AbstractType absType, int32_t idxType);
+    bool AddCameo(AbstractType absType, int32_t idxType);  // 0x6a6300
     // IDA 0x6A60A0
     void RepaintSidebar(int32_t tab = 0);
     // IDA 0x6A6C30 (same as Draw)

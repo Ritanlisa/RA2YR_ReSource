@@ -30,9 +30,9 @@ struct VxlLimb
     uint32_t DataOffset;
 
     VxlLimb() : Scale(1.0f), NormalType(0), X(0), Y(0), Z(0),
-                VoxelData(nullptr), DataSize(0), DataOffset(0) {}
+                VoxelData(nullptr) , DataSize(0), DataOffset(0);
 
-    ~VxlLimb() { delete[] VoxelData; VoxelData = nullptr; }
+    ~VxlLimb();
 };
 
 struct VxlFile
@@ -41,13 +41,13 @@ struct VxlFile
     VxlLimb* Limbs;
 
     VxlFile() : LimbCount(0), Limbs(nullptr) {}
-    ~VxlFile() { delete[] Limbs; Limbs = nullptr; }
+    ~VxlFile();
 };
 
 struct HvaMatrix
 {
     float m[16];  // column-major 4x4
-    HvaMatrix() { std::memset(m, 0, sizeof(m)); m[0] = m[5] = m[10] = m[15] = 1.0f; }
+    HvaMatrix();
 };
 
 struct HvaFile

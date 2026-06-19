@@ -693,3 +693,26 @@ void NetworkLobby_UpdateLabels(void* dialog)
 }
 
 } // namespace gamemd
+
+#include "ui/gadget.hpp"
+
+namespace gamemd {
+
+// --- GadgetClass ---
+
+bool GadgetClass::OnClick(int x, int y) { return false; }
+
+// --- LabelClass ---
+
+void LabelClass::OnMouseEnter() {}
+void LabelClass::OnMouseLeave() {}
+
+// --- DialogClass ---
+
+bool DialogClass::IsVisible() const { return visible; }
+bool DialogClass::IsFinished() const { return finished; }
+void DialogClass::Finish(int result) { finished = true; this->result = result; }
+int DialogClass::GetResult() const { return result; }
+std::vector<GadgetClass*>& DialogClass::Gadgets() { return gadgets; }
+
+} // namespace gamemd

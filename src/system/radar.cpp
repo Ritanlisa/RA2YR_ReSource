@@ -32,3 +32,18 @@ void RenderRadarToSurface(void*, const uint8_t*, int, int, int, int) {}
 void LoadToSurfaceSHP(void*, const void*, int, int, int) {}
 
 } // namespace gamemd
+
+#include "system/radar.hpp"
+
+namespace gamemd {
+
+// --- RadarClass ---
+
+void RadarClass::CreateEmptyMap(const RectangleStruct& map_rect, bool reuse, int8_t n_level, bool unk) {}
+void RadarClass::SetVisibleRect(const RectangleStruct& map_rect) {}
+void RadarClass::DisposeOfArt() {}
+void* RadarClass::worldToScreenCoords(void* out, Point2D* point) { return nullptr; }
+void RadarClass::onRadarClick(uint32_t unk) {}
+void RadarClass::InitForHouse() {}
+
+} // namespace gamemd

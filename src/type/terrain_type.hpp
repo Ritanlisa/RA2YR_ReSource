@@ -16,18 +16,18 @@ public:
     static TerrainTypeClass* FindOrAllocate(const char* pID);  // 0x71e2a0 (as FindOrCreate)
     static int FindIndex(const char* pID);
 
-    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override { return E_NOTIMPL; }  // 0x71e260 (as GetClassIdentifier)
+    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override; // 0x71e260 (as GetClassIdentifier)
 
-    virtual HRESULT __stdcall Load(IStream* pStm) override { return S_OK; }  // 0x71dea0 (as LoadFromINI)
-    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override { return S_OK; }
+    virtual HRESULT __stdcall Load(IStream* pStm) override; // 0x71dea0 (as LoadFromINI)
+    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;
 
     virtual ~TerrainTypeClass() = default;  // 0x71e360 (as ddtor)
 
-    virtual AbstractType __stdcall whatAmI() const override { return AbstractType::TerrainType; }  // 0x71e330 (as GetTypeIdentifier)
-    virtual int objectSize() const override { return 0; }  // 0x71e340 (as GetObjectSize)
+    virtual AbstractType __stdcall whatAmI() const override; // 0x71e330 (as GetTypeIdentifier)
+    virtual int objectSize() const override; // 0x71e340 (as GetObjectSize)
 
-    virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override { return false; }
-    virtual ObjectClass* CreateObject(HouseClass* pOwner) override { return nullptr; }
+    virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override;
+    virtual ObjectClass* CreateObject(HouseClass* pOwner) override;
 
     TerrainTypeClass(const char* pID) noexcept;  // 0x5447c0 (as Construct)
 

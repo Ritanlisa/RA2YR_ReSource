@@ -23,19 +23,19 @@ class AnimClass : public ra2::game::ObjectClass
 public:
     static constexpr AbstractType kObjectTypeId = AbstractType::Anim;
 
-    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override { return E_NOTIMPL; }
-    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override { return S_OK; }
+    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override;
+    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;
 
     virtual ~AnimClass() override = default;
 
-    virtual AbstractType __stdcall whatAmI() const override { return kObjectTypeId; }
-    virtual int objectSize() const override { return sizeof(AnimClass); }
+    virtual AbstractType __stdcall whatAmI() const override;
+    virtual int objectSize() const override;
 
-    virtual int AnimExtras() { return 0; }
-    virtual int GetEnd() const { return 0; }
+    virtual int AnimExtras();
+    virtual int GetEnd() const;
 
-    void Render(void* surface, int* a2, int* a3);
-    void FreeRenderBuffer();
+    void Render(void* surface, int* a2, int* a3);  // 0x422ca0
+    void FreeRenderBuffer();  // 0x428de0
 
     ProgressTimer       Animation;
     AnimTypeClass*      Type;

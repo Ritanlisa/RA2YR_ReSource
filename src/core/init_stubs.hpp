@@ -18,16 +18,16 @@ class WWMouseClass;     // src/ui/mouse.hpp
 // ============================================================
 
 // IDA 0x4A3C30 -- FadePalette
-void FadePalette(int mode);
+void FadePalette(int mode);  // 0x4a3c30
 
 // IDA 0x4790B0 -- SetSoundWarning
-void SetSoundWarning(int level);
+void SetSoundWarning(int level);  // 0x4790b0
 
 // IDA 0x54F000 -- EventQueue::Process (per-frame event pump)
 void EventQueueProcess(void* bink_player);
 
 // IDA 0x5BC450 -- GetTextBufferEntry
-int GetTextBufferEntry(int index);
+int GetTextBufferEntry(int index);  // 0x5bc450
 
 // IDA 0x5BCC90 -- TextBuffer::Init
 void TextBufferInit(int buffer);
@@ -39,10 +39,10 @@ void* BitTextClassLoadFont(void* mem);
 void InitStubPlaceholder();
 
 // IDA 0x72AA40 -- LoadMouseClassResources
-void LoadMouseClassResources();
+void LoadMouseClassResources();  // 0x72aa40
 
 // IDA 0x406B10 -- InitializeAudioSubsystem
-int InitializeAudioSubsystem(void* hwnd_or_flag);
+int InitializeAudioSubsystem(void* hwnd_or_flag);  // 0x406b10
 
 // IDA 0x6C8C40 -- Timer::GetTicks (returns timeGetTime() >> 4)
 int TimerGetTicks();
@@ -72,10 +72,10 @@ void VoxelProjectionSetup();
 void ArrayForEach3ByteZero(void* buf, int stride, int count);
 
 // IDA 0x530000 -- LoadExpansionMixFiles
-bool LoadExpansionMixFiles();
+bool LoadExpansionMixFiles();  // 0x530000
 
 // IDA 0x4A38D0 -- LoadFileSHP
-int LoadFileSHP(const char* filename);
+int LoadFileSHP(const char* filename);  // 0x4a38d0
 
 // IDA 0x5BDA80 -- Mission::SetAndCall
 void MissionSetAndCall(int a, int b);
@@ -96,7 +96,7 @@ bool MixFileLoadAll();
 void MoviePlay(int a1, int a2, int a3, int a4);
 
 // IDA 0x5312A0 -- ShowLoadingScreen
-void ShowLoadingScreen();
+void ShowLoadingScreen();  // 0x5312a0
 
 // IDA 0x52CB90 -- Credits::Screen
 void CreditsScreen();
@@ -108,7 +108,7 @@ void GameSettingsRead(int mode);
 void AnimSystemInit();
 
 // IDA 0x75A7D0 -- ResetAnimSystem
-void ResetAnimSystem(int mode);
+void ResetAnimSystem(int mode);  // 0x75a7d0
 
 // IDA 0x6D1C20 -- TacticalMap::Construct
 void* TacticalMapConstruct(void* mem);
@@ -129,10 +129,10 @@ void AudioLoadSoundINI();
 void AudioInitFromINI(void* ini);
 
 // IDA 0x7531A0 -- LoadINIEVA
-void LoadINIEVA();
+void LoadINIEVA();  // 0x7531a0
 
 // IDA 0x753000 -- InitFromINIEVA
-void InitFromINIEVA(void* ini);
+void InitFromINIEVA(void* ini);  // 0x753000
 
 // IDA 0x720770 -- ThemeManager::Cleanup
 void ThemeManagerCleanup();
@@ -144,25 +144,25 @@ void ThemeClassInitializeThemes(void* ini);
 void AudioLoadWAVFiles();
 
 // IDA 0x531680 -- InitBulkData
-bool InitBulkData();
+bool InitBulkData();  // 0x531680
 
 // IDA 0x52CD70 -- InitRules
-bool InitRules();
+bool InitRules();  // 0x52cd70
 
 // IDA 0x4093B0 -- Audio::Callback
 int AudioCallback();
 
 // IDA 0x52CB50 -- PlayIntroSequence
-void PlayIntroSequence();
+void PlayIntroSequence();  // 0x52cb50
 
 // IDA 0x52FC20 -- InitRandomSeed
-void InitRandomSeed();
+void InitRandomSeed();  // 0x52fc20
 
 // IDA 0x532150 -- InitCommands
-void InitCommands();
+void InitCommands();  // 0x532150
 
 // IDA 0x5D7CE0 -- CompleteGameInit
-void CompleteGameInit();
+void CompleteGameInit();  // 0x5d7ce0
 
 // IDA 0x6BB390 -- RegisterClassesCOM (single class registry writer)
 // IDA 0x6BB9A0 -- RegisterAllClasses (iterates TClassFactory table, 63-71 entries)

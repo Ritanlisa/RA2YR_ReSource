@@ -14,16 +14,16 @@ class AirstrikeClass : public AbstractClass
 public:
     static constexpr AbstractType kObjectDeriveId = AbstractType::Airstrike;
 
-    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return 0; }
-    virtual HRESULT __stdcall Load(IStream* stream) override { return 0; }
-    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { return 0; }
+    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override;
+    virtual HRESULT __stdcall Load(IStream* stream) override;
+    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
 
     virtual ~AirstrikeClass() = default;
 
-    virtual void pointerExpired(AbstractClass* ptr, bool removed) override {}
-    virtual AbstractType __stdcall whatAmI() const override { return kObjectDeriveId; }
-    virtual int objectSize() const override { return 0; }
-    virtual void calculateChecksum(void* checksum) const {}
+    virtual void pointerExpired(AbstractClass* ptr, bool removed) override;
+    virtual AbstractType __stdcall whatAmI() const override;
+    virtual int objectSize() const override;
+    virtual void calculateChecksum(void* checksum) const;
 
     // Construction
     AirstrikeClass(TechnoClass*);                                // 0x41D380
@@ -41,9 +41,9 @@ public:
     void Seek(IStream*);                                         // 0x41D780
 
     // Stubs
-    bool StubReturnFalse() const { return false; }                // 0x41DC50
-    int StubReturn71() const { return 71; }                       // 0x41DD40
-    int StubReturn96() const { return 96; }                       // 0x41DD30
+    bool StubReturnFalse() const; // 0x41DC50
+    int StubReturn71() const; // 0x41DD40
+    int StubReturn96() const; // 0x41DD30
 
     int32_t     AirstrikeClass_field_24;           // +0x24 (this+36)
     int32_t     AirstrikeClass_field_28;           // +0x28 (this+40)

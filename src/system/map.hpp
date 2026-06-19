@@ -112,9 +112,9 @@ struct TrajectoryHelper
 {
     static bool IsCliffHit(const CellClass* source, const CellClass* before, const CellClass* after);
     static bool IsWallHit(const CellClass* source, const CellClass* check, const CellClass* target, const HouseClass* owner);
-    static CellClass* GetObstacle(const CellClass* cell_source, const CellClass* cell_target, const CellClass* cell_bullet, CoordStruct crd_cur, const BulletTypeClass* type, const HouseClass* owner);
-    static CellClass* FindFirstObstacle(const CoordStruct& crd_src, const CoordStruct& crd_target, const BulletTypeClass* type, const HouseClass* owner);
-    static CellClass* FindFirstImpenetrableObstacle(const CoordStruct& crd_src, const CoordStruct& crd_target, const WeaponTypeClass* weapon, const HouseClass* owner);
+    static CellClass* GetObstacle(const CellClass* cell_source, const CellClass* cell_target, const CellClass* cell_bullet, CoordStruct crd_cur, const BulletTypeClass* type, const HouseClass* owner);  // 0x4cc360
+    static CellClass* FindFirstObstacle(const CoordStruct& crd_src, const CoordStruct& crd_target, const BulletTypeClass* type, const HouseClass* owner);  // 0x4cc100
+    static CellClass* FindFirstImpenetrableObstacle(const CoordStruct& crd_src, const CoordStruct& crd_target, const WeaponTypeClass* weapon, const HouseClass* owner);  // 0x4cc310
 };
 
 class LogicClass : LayerClass

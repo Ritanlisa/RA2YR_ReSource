@@ -42,10 +42,10 @@ public:
 
     // --- Lifecycle ---
     // IDA 0x558740: Construct — init fields + DynamicVectorClass
-    void Construct();
+    void Construct();  // 0x558740
 
     // IDA 0x558790: Cleanup — free entries, reset vector
-    void Cleanup();
+    void Cleanup();  // 0x558790
 
     // IDA 0x55A0D0: vt00 (QueryInterface) — scoped destruction
     void VT00_Destroy(char free_self);
@@ -55,10 +55,10 @@ public:
 
     // --- Operations ---
     // IDA 0x5587F0: Run — launch save/load dialog
-    int Run();
+    int Run();  // 0x5587f0
 
     // IDA 0x559C20: Check — scan directory for save files
-    bool Check();
+    bool Check();  // 0x559c20
 
     // IDA 0x559D60: AddRef (vt01) — load saved game
     bool LoadGame(const char* filename);
@@ -71,16 +71,16 @@ public:
 
     // --- Vector management (compat wrappers for original DynamicVectorClass) ---
     // IDA 0x55A1F0: CopyItems — resize vector, copy existing entries
-    bool CopyItems(uint32_t new_size, FileEntryClass** out_buffer = nullptr);
+    bool CopyItems(uint32_t new_size, FileEntryClass** out_buffer = nullptr);  // 0x55a1f0
 
     // IDA 0x55A2A0: ClearBuffer — free entry memory, reset count
-    void ClearBuffer();
+    void ClearBuffer();  // 0x55a2a0
 
     // IDA 0x55A2D0: FindItem — linear search by dword key
-    int FindItem(const uint32_t* key);
+    int FindItem(const uint32_t* key);  // 0x55a2d0
 
     // IDA 0x55A310: PointerToIndex — compute index from pointer
-    uint32_t PointerToIndex(FileEntryClass* ptr);
+    uint32_t PointerToIndex(FileEntryClass* ptr);  // 0x55a310
 
     // IDA 0x55A180: vt05 — pointer to index (compat alias)
     uint32_t VT05_PointerToIndex(FileEntryClass* ptr);
@@ -111,26 +111,26 @@ public:
     static const wchar_t* GetGameSavedStr();
 
     // IDA 0x681100: GetData — get pointer to data field (this + 264)
-    char* GetDataPtr() { return reinterpret_cast<char*>(this) + 264; }
+    char* GetDataPtr();
 
     // IDA 0x681120: GetFlag98 — get dword at offset 98
-    uint32_t GetFlag98() const { return *reinterpret_cast<const uint32_t*>(reinterpret_cast<const char*>(this) + 0x188); }
+    uint32_t GetFlag98() const;  // 0x681120
 
     // IDA 0x681140: GetFlag99 — get dword at offset 99
-    uint32_t GetFlag99() const { return *reinterpret_cast<const uint32_t*>(reinterpret_cast<const char*>(this) + 0x18C); }
+    uint32_t GetFlag99() const;  // 0x681140
 
     // IDA 0x6812D0: GetFlag252 — get dword at offset 252
-    uint32_t GetFlag252() const { return *reinterpret_cast<const uint32_t*>(reinterpret_cast<const char*>(this) + 0x3F0); }
+    uint32_t GetFlag252() const;  // 0x6812d0
 
     // --- Accessors ---
-    uint32_t GetMode() const { return mode; }
-    void SetMode(uint32_t m) { mode = m; }
-    const char* GetExtension() const { return extension; }
-    void SetExtension(const char* ext) { extension = ext; }
-    uint32_t GetCount() const { return count; }
-    FileEntryClass** GetEntries() { return entries; }
-    uint32_t GetCapacity() const { return capacity; }
-    uint32_t GetMaxEntries() const { return max_entries; }
+    uint32_t GetMode() const;
+    void SetMode(uint32_t m);
+    const char* GetExtension() const;
+    void SetExtension(const char* ext);
+    uint32_t GetCount() const;
+    FileEntryClass** GetEntries();
+    uint32_t GetCapacity() const;
+    uint32_t GetMaxEntries() const;
 
     // --- Vector destructor helpers ---
     // IDA 0x55A410: VectorClass dtor (dynamic)

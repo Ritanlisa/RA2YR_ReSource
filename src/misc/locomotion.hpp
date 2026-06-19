@@ -253,7 +253,7 @@ class DriveLocomotionClass : public LocomotionClass, public IPiggyback
 {
 public:
     // IUnknown (shared with base)
-    virtual HRESULT __stdcall QueryInterface(const IID&, void** ppv) override { if (ppv) { *ppv = static_cast<ILocomotion*>(this); AddRef(); return S_OK; } return E_POINTER; }
+    virtual HRESULT __stdcall QueryInterface(const IID&, void** ppv) override { if (ppv) { *ppv = static_cast<ILocomotion*>(this); AddRef(); return S_OK; } return E_POINTER; }  // 0x4af720
     virtual ULONG __stdcall AddRef() override { return ++RefCount; }
     virtual ULONG __stdcall Release() override { if (--RefCount == 0) { delete this; return 0; } return RefCount; }
 
@@ -356,7 +356,7 @@ protected:
 class WalkLocomotionClass : public LocomotionClass, public IPiggyback
 {
 public:
-    virtual HRESULT __stdcall QueryInterface(const IID&, void** ppv) override { if (ppv) { *ppv = static_cast<ILocomotion*>(static_cast<void*>(this)); AddRef(); return S_OK; } return E_POINTER; }
+    virtual HRESULT __stdcall QueryInterface(const IID&, void** ppv) override { if (ppv) { *ppv = static_cast<ILocomotion*>(static_cast<void*>(this)); AddRef(); return S_OK; } return E_POINTER; }  // 0x75c7f0
     virtual ULONG __stdcall AddRef() override { return ++RefCount; }
     virtual ULONG __stdcall Release() override { if (--RefCount == 0) { delete this; return 0; } return RefCount; }
 
@@ -598,7 +598,7 @@ static_assert(sizeof(JumpjetLocomotionClass) == 0x98, "JumpjetLocomotionClass si
 class ShipLocomotionClass : public LocomotionClass, public IPiggyback
 {
 public:
-    virtual HRESULT __stdcall QueryInterface(const IID&, void** ppv) override { if (ppv) { *ppv = static_cast<ILocomotion*>(static_cast<void*>(this)); AddRef(); return S_OK; } return E_POINTER; }
+    virtual HRESULT __stdcall QueryInterface(const IID&, void** ppv) override { if (ppv) { *ppv = static_cast<ILocomotion*>(static_cast<void*>(this)); AddRef(); return S_OK; } return E_POINTER; }  // 0x69ee30
     virtual ULONG __stdcall AddRef() override { return ++RefCount; }
     virtual ULONG __stdcall Release() override { if (--RefCount == 0) { delete this; return 0; } return RefCount; }
 
@@ -794,7 +794,7 @@ static_assert(sizeof(MechLocomotionClass) == 0x34, "MechLocomotionClass size");
 class DropPodLocomotionClass : public LocomotionClass, public IPiggyback
 {
 public:
-    virtual HRESULT __stdcall QueryInterface(const IID&, void** ppv) override { if (ppv) { *ppv = static_cast<ILocomotion*>(static_cast<void*>(this)); AddRef(); return S_OK; } return E_POINTER; }
+    virtual HRESULT __stdcall QueryInterface(const IID&, void** ppv) override { if (ppv) { *ppv = static_cast<ILocomotion*>(static_cast<void*>(this)); AddRef(); return S_OK; } return E_POINTER; }  // 0x4b6470
     virtual ULONG __stdcall AddRef() override { return ++RefCount; }
     virtual ULONG __stdcall Release() override { if (--RefCount == 0) { delete this; return 0; } return RefCount; }
 

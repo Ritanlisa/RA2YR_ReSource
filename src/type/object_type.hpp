@@ -22,25 +22,25 @@ class TechnoTypeClass;
 class ObjectTypeClass : public AbstractTypeClass
 {
 public:
-    virtual HRESULT __stdcall Load(IStream* pStm) override { return S_OK; }  // 0x5f92d0 (as LoadFromINI)
-    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override { return S_OK; }
-    virtual HRESULT __stdcall GetSizeMax(ULARGE_INTEGER* pcbSize) override { return E_NOTIMPL; }
+    virtual HRESULT __stdcall Load(IStream* pStm) override; // 0x5f92d0 (as LoadFromINI)
+    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;
+    virtual HRESULT __stdcall GetSizeMax(ULARGE_INTEGER* pcbSize) override;
 
     virtual ~ObjectTypeClass() = default;  // 0x5f7400 (as Destruct)
 
-    virtual CoordStruct* onCellChanged(CoordStruct* pDest, CoordStruct* pSrc) const { return nullptr; }  // 0x41cbf0 (as vt_entry_7C)
-    virtual DWORD GetOwners() const { return 0; }
-    virtual int GetPipMax() const { return 0; }
-    virtual void onTypeLoadComplete(DWORD dwUnk) const {}
-    virtual void onTypeUnload(DWORD dwUnk) {}
+    virtual CoordStruct* onCellChanged(CoordStruct* pDest, CoordStruct* pSrc) const; // 0x41cbf0 (as vt_entry_7C)
+    virtual DWORD GetOwners() const;
+    virtual int GetPipMax() const;
+    virtual void onTypeLoadComplete(DWORD dwUnk) const;
+    virtual void onTypeUnload(DWORD dwUnk);
     virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) = 0;
-    virtual int GetActualCost(HouseClass* pHouse) const { return 0; }
-    virtual int GetBuildSpeed() const { return 0; }
+    virtual int GetActualCost(HouseClass* pHouse) const;
+    virtual int GetBuildSpeed() const;
     virtual ObjectClass* CreateObject(HouseClass* pOwner) = 0;
-    virtual CellStruct* GetFoundationData(bool IncludeBib) const { return nullptr; }
-    virtual BuildingClass* FindFactory(bool allowOccupied, bool requirePower, bool requireCanBuild, HouseClass const* pHouse) const { return nullptr; }
-    virtual SHPStruct* GetCameo() const { return nullptr; }
-    virtual SHPStruct* GetImage() const { return nullptr; }
+    virtual CellStruct* GetFoundationData(bool IncludeBib) const;
+    virtual BuildingClass* FindFactory(bool allowOccupied, bool requirePower, bool requireCanBuild, HouseClass const* pHouse) const;
+    virtual SHPStruct* GetCameo() const;
+    virtual SHPStruct* GetImage() const;
 
     static bool IsBuildCat5(AbstractType abstractID, int idx);
     static TechnoTypeClass* GetTechnoType(AbstractType abstractID, int idx);

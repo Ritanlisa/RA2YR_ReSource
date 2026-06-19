@@ -230,3 +230,15 @@ void ShpImage::RenderToSurface(
 }
 
 } // namespace gamemd
+
+#include "render/shp_render.hpp"
+
+namespace gamemd {
+
+// --- ShpImage ---
+
+int ShpImage::GetFrameCount() const { return m_frame_count; }
+int ShpImage::GetWidth() const { return m_header.max_width; }
+int ShpImage::GetHeight() const { return m_header.max_height; }
+
+} // namespace gamemd

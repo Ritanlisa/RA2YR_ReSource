@@ -47,11 +47,11 @@ public:
     virtual void Draw(const CellStruct& coords, const SHPStruct* pImage, int32_t idxFrame) {}
     virtual bool IsRefCountNegative() { return false; }
     virtual void HideCursor() {}
-    virtual void ShowCursor() {}
+    virtual void ShowCursor() {}  // 0x7c868c
     virtual void ReleaseMouse() {}
     virtual void CaptureMouse() {}
     virtual uint8_t GetField10() { return 0; }
-    virtual void InvalidateRect(const RectangleStruct& rect) {}
+    virtual void InvalidateRect(const RectangleStruct& rect) {}  // 0x7c8608
     virtual void CallFunc10() {}
     virtual uint32_t GetRefCount() { return 0; }
     virtual int32_t GetX() const { return 0; }
@@ -90,7 +90,7 @@ public:
 
     virtual ~MouseClass() = default;
 
-    virtual bool SetCursor(MouseCursorType cursor, bool miniMap) override { return false; }
+    virtual bool SetCursor(MouseCursorType cursor, bool miniMap) override { return false; }  // 0x7c87b8
     virtual bool UpdateCursor(MouseCursorType cursor, bool miniMap) override { return false; }
     virtual bool RestoreCursor() override { return false; }
     virtual void UpdateCursorMinimapState(bool miniMap) override {}

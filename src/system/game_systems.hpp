@@ -18,11 +18,11 @@ class Skirmish
 {
 public:
     // IDA 0x48B2A0 area
-    static void FillPlayerNames();
+    static void FillPlayerNames();  // 0x46f600
     // IDA 0x48B2A0 area
-    static void SetupAllSpawnLocations();
+    static void SetupAllSpawnLocations();  // 0x46f8f0
     // IDA 0x48B2A0 area
-    static void ReadSettings();
+    static void ReadSettings();  // 0x596c70
     // IDA 0x48B2A0 area
     static void WriteSettings();
     // IDA 0x48B2A0 area
@@ -46,11 +46,11 @@ class GameOption
 {
 public:
     // IDA 0x48B2A0 area
-    static bool CheckDuplicate(const char* name);
+    static bool CheckDuplicate(const char* name);  // 0x5e9560
     // IDA 0x48B2A0 area
-    static int32_t GetField(const char* name);
+    static int32_t GetField(const char* name);  // 0x69acc0
     // IDA 0x48B2A0 area
-    static void SetDescriptionWStr(const wchar_t* desc);
+    static void SetDescriptionWStr(const wchar_t* desc);  // 0x69acd0
     // IDA 0x48B2A0 area
     static const wchar_t* GetDescription();
 
@@ -66,9 +66,9 @@ class GameMode
 {
 public:
     // IDA 0x48B2A0 area
-    static bool IsValid(int32_t mode);
+    static bool IsValid(int32_t mode);  // 0x5d5de0
     // IDA 0x48B2A0 area
-    static void ReadFlagsFromINI();
+    static void ReadFlagsFromINI();  // 0x6b8ca0
 
     static int32_t  s_CurrentMode;  // 0x00
     static int32_t  s_Flags;        // 0x04
@@ -82,11 +82,11 @@ class GameSettings
 {
 public:
     // IDA 0x5FB050
-    static void Read();
+    static void Read();  // 0x5fa620
     // IDA 0x5FB050 area
     static void sub_5FB050();
     // IDA 0x5FB050 area
-    static int32_t FindFlagged(int32_t flag);
+    static int32_t FindFlagged(int32_t flag);  // 0x7931a0
 
     static int32_t  s_Settings[32]; // 0x00
 };
@@ -99,7 +99,7 @@ class SkirmishSetup
 {
 public:
     // IDA 0x608260
-    static int32_t DlgProc(HWND hDlg, UINT msg, WPARAM wParam, LPARAM lParam);
+    static int32_t DlgProc(HWND hDlg, UINT msg, WPARAM wParam, LPARAM lParam);  // 0x5e6920
     // IDA 0x608260 area
     void sub_608260();
 
@@ -115,9 +115,9 @@ class SyncDelay
 {
 public:
     // IDA 0x48B2A0 area
-    static void Start(int32_t frames);
+    static void Start(int32_t frames);  // 0x55e160
     // IDA 0x48B2A0 area
-    static bool Check();
+    static bool Check();  // 0x55f6c0
 
     static int32_t  s_DelayFrames;  // 0x00
     static int32_t  s_CurrentFrame; // 0x04
@@ -131,7 +131,7 @@ class GameLoop
 {
 public:
     // IDA 0x48B2A0 area
-    static void Thunk();
+    static void Thunk();  // 0x77d710
 
     static bool     s_Running;      // 0x00
 };
@@ -144,11 +144,11 @@ class CopyProtection
 {
 public:
     // IDA 0x48B2A0 area
-    static bool CheckLauncher();
+    static bool CheckLauncher();  // 0x49f5c0
     // IDA 0x48B2A0 area
-    static void NotifyLauncher();
+    static void NotifyLauncher();  // 0x49f620
     // IDA 0x48B2A0 area
-    static bool CheckProtectedData();
+    static bool CheckProtectedData();  // 0x49f7a0
 
     static bool     s_LauncherOK;   // 0x00
     static bool     s_DataOK;       // 0x01
@@ -162,7 +162,7 @@ class CaptureManager
 {
 public:
     // IDA 0x48B2A0 area
-    static void FreeAll();
+    static void FreeAll();  // 0x472140
 
     static int32_t  s_Count;        // 0x00
 };
@@ -175,7 +175,7 @@ class Queue
 {
 public:
     // IDA 0x48B2A0 area
-    static void* GetNext();
+    static void* GetNext();  // 0x407470
 
     static void*   s_Head;         // 0x00
     static void*   s_Tail;         // 0x04
@@ -189,11 +189,11 @@ class Random
 {
 public:
     // IDA 0x48B2A0 area
-    static float Gaussian();
+    static float Gaussian();  // 0x5980c0
     // IDA 0x48B2A0 area
-    static uint32_t State();
+    static uint32_t State();  // 0x65c780
     // IDA 0x48B2A0 area
-    static int32_t Range(int32_t min, int32_t max);
+    static int32_t Range(int32_t min, int32_t max);  // 0x65c7e0
     // IDA 0x48B2A0 area
     static void Seed(uint32_t seed);
 

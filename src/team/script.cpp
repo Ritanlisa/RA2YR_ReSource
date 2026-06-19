@@ -63,3 +63,28 @@ bool ScriptTypeClass::LoadFromINIList(CCINIClass* ini, bool is_global)
 }
 
 } // namespace gamemd
+
+#include "team/script.hpp"
+
+namespace gamemd {
+
+// --- ScriptClass ---
+
+HRESULT __stdcall ScriptClass::GetClassID(CLSID* class_id) { return 0; }
+HRESULT __stdcall ScriptClass::Load(IStream* stream) { return 0; }
+HRESULT __stdcall ScriptClass::Save(IStream* stream, int clear_dirty) { return 0; }
+AbstractType __stdcall ScriptClass::whatAmI() const { return AbstractType::Script; }
+int ScriptClass::objectSize() const { return 0; }
+bool ScriptClass::Reset() { idxCurrentLine = -1; return true; }
+bool ScriptClass::SetCurrentLine(int idx) { idxCurrentLine = idx; return true; }
+bool ScriptClass::NextAction() { ++idxCurrentLine; return HasNextAction(); }
+
+// --- ScriptTypeClass ---
+
+HRESULT __stdcall ScriptTypeClass::GetClassID(CLSID* class_id) { return 0; }
+HRESULT __stdcall ScriptTypeClass::Load(IStream* stream) { return 0; }
+HRESULT __stdcall ScriptTypeClass::Save(IStream* stream, int clear_dirty) { return 0; }
+AbstractType __stdcall ScriptTypeClass::whatAmI() const { return AbstractType::ScriptType; }
+int ScriptTypeClass::objectSize() const { return 0; }
+
+} // namespace gamemd

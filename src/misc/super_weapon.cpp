@@ -104,3 +104,20 @@ SuperClass::SuperClass(noinit_t) noexcept
 // LightningStorm, PsyDom, NukeFlash, ChronoScreenEffect
 
 } // namespace gamemd
+
+#include "misc/super_weapon.hpp"
+
+namespace gamemd {
+
+// --- SuperWeaponTypeClass ---
+
+AbstractType __stdcall SuperWeaponTypeClass::whatAmI() const { return AbsID; }
+int32_t SuperWeaponTypeClass::objectSize() const { return sizeof(SuperWeaponTypeClass); }
+Action SuperWeaponTypeClass::MouseOverObject(const CellStruct& cell, ObjectClass* pObjBelowMouse) const { return Action::None; }
+
+// --- SuperClass ---
+
+AbstractType __stdcall SuperClass::whatAmI() const { return AbsID; }
+int32_t SuperClass::objectSize() const { return sizeof(SuperClass); }
+
+} // namespace gamemd

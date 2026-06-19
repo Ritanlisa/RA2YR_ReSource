@@ -40,9 +40,9 @@ public:
 
     virtual ~SuperWeaponTypeClass() = default;                                       // 0x6CEFE0 (SDDTOR)
 
-    virtual AbstractType __stdcall whatAmI() const override { return AbsID; }        // 0x6CE8F0 (SD_vt11)
-    virtual int32_t objectSize() const override { return sizeof(SuperWeaponTypeClass); } // 0x6CE900 (SD_vt12)
-    virtual Action MouseOverObject(const CellStruct& cell, ObjectClass* pObjBelowMouse) const { return Action::None; } // 0x6CEA10 (SD_vt16)
+    virtual AbstractType __stdcall whatAmI() const override; // 0x6CE8F0 (SD_vt11)
+    virtual int32_t objectSize() const override; // 0x6CE900 (SD_vt12)
+    virtual Action MouseOverObject(const CellStruct& cell, ObjectClass* pObjBelowMouse) const; // 0x6CEA10 (SD_vt16)
 
     static SuperWeaponTypeClass* FindFirstOfAction(Action action);                    // 0x6CEEB0
 
@@ -91,7 +91,7 @@ public:
     // TODO: complete SuperWeaponTypeClass
 
 protected:
-    explicit SuperWeaponTypeClass(noinit_t) noexcept;
+    explicit SuperWeaponTypeClass(noinit_t) noexcept;  // 0x6ce5b0
 };
 
 class SuperClass : public AbstractClass
@@ -102,8 +102,8 @@ public:
 
     virtual ~SuperClass() = default;                                                 // 0x6CDEB0 (ddtor)
 
-    virtual AbstractType __stdcall whatAmI() const override { return AbsID; }        // 0x6CE020 (PowerDrainUpdate area)
-    virtual int32_t objectSize() const override { return sizeof(SuperClass); }       // 0x6CE020
+    virtual AbstractType __stdcall whatAmI() const override; // 0x6CE020 (PowerDrainUpdate area)
+    virtual int32_t objectSize() const override; // 0x6CE020
 
     void Reset();                                                                    // 0x6CE0B0
     bool SetOnHold(bool onHold);                                                     // 0x6CB4D0

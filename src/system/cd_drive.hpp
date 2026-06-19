@@ -26,9 +26,9 @@ class CD
 public:
     virtual ~CD() = default;
 
-    virtual bool ForceAvailable(int nCDNumber) { return false; }
-    virtual bool InsertCDDialog() { return false; }
-    virtual void SwapToDisk() {}
+    virtual bool ForceAvailable(int nCDNumber);
+    virtual bool InsertCDDialog();
+    virtual void SwapToDisk();
 
 protected:
     CD() = default;

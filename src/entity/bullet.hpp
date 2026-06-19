@@ -67,17 +67,17 @@ class BulletClass : public ObjectClass
 public:
     static constexpr AbstractType kObjectTypeId = AbstractType::Bullet;
 
-    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override { return E_NOTIMPL; }
-    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override { return S_OK; }
+    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override;
+    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;
 
     virtual ~BulletClass() override = default;
 
-    virtual AbstractType __stdcall whatAmI() const override { return kObjectTypeId; }
-    virtual int objectSize() const override { return sizeof(BulletClass); }
+    virtual AbstractType __stdcall whatAmI() const override;
+    virtual int objectSize() const override;
 
-    virtual uint8_t GetAnimFrame() const { return 0; }
-    virtual void SetTarget(AbstractClass* pTarget) {}
-    virtual bool MoveTo(const CoordStruct& where, const BulletVelocity& velocity) { return false; }
+    virtual uint8_t GetAnimFrame() const;  // 0x468000
+    virtual void SetTarget(AbstractClass* pTarget);
+    virtual bool MoveTo(const CoordStruct& where, const BulletVelocity& velocity);
 
     BulletTypeClass*    Type;
     TechnoClass*        Owner;

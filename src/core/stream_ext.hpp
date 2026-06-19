@@ -16,11 +16,11 @@ public:
     virtual ~StreamClass() = default;
 
     // IDA 0x48B2A0 area
-    virtual int32_t WriteBytes(const void* data, int32_t size);
+    virtual int32_t WriteBytes(const void* data, int32_t size);  // 0x411310
     // IDA 0x48B2A0 area
-    virtual int32_t ReadAndSeek(void* buf, int32_t size);
+    virtual int32_t ReadAndSeek(void* buf, int32_t size);  // 0x4114b0
     // IDA 0x48B2A0 area
-    virtual void Set2(int32_t val);
+    virtual void Set2(int32_t val);  // 0x45aea0
     // IDA 0x48B2A0 area
     virtual int32_t Read(void* buf, int32_t size);
     // IDA 0x48B2A0 area
@@ -53,11 +53,11 @@ public:
     ~Stream();
 
     // IDA 0x48B2A0 area
-    void FlushAndReset();
+    void FlushAndReset();  // 0x439110
     // IDA 0x48B2A0 area
-    int32_t GetChecked() const;
+    int32_t GetChecked() const;  // 0x45a050
     // IDA 0x48B2A0 area
-    void ReadIntArray(int32_t* arr, int32_t count);
+    void ReadIntArray(int32_t* arr, int32_t count);  // 0x49fb70
     // IDA 0x48B2A0 area
     int32_t ReadInt();
     // IDA 0x48B2A0 area
@@ -88,11 +88,11 @@ class AsyncIO
 {
 public:
     // IDA 0x48B2A0 area
-    static void Shutdown();
+    static void Shutdown();  // 0x5bf450
     // IDA 0x48B2A0 area
-    static int32_t Read(const char* filename, void* buffer, int32_t size);
+    static int32_t Read(const char* filename, void* buffer, int32_t size);  // 0x5bf500
     // IDA 0x48B2A0 area
-    static void WaitCompletion();
+    static void WaitCompletion();  // 0x774bc0
 
     static bool    s_Initialized;  // 0x00
     static uint32_t s_Handle;      // 0x04
@@ -106,7 +106,7 @@ class IStream
 {
 public:
     // IDA 0x48B2A0 area
-    virtual HRESULT Read(void* pv, uint32_t cb, uint32_t* pcbRead) = 0;
+    virtual HRESULT Read(void* pv, uint32_t cb, uint32_t* pcbRead) = 0;  // 0x4a3020
 
     void*       IStream_field_00;       // 0x00
 };
@@ -119,7 +119,7 @@ class BulkData
 {
 public:
     // IDA 0x48B2A0 area
-    static void InitMissionHashing();
+    static void InitMissionHashing();  // 0x697ad0
 
     static int32_t  s_DataSize; // 0x00
 };
@@ -132,7 +132,7 @@ class Block
 {
 public:
     // IDA 0x48B2A0 area
-    static void Copy(void* dst, const void* src, int32_t size);
+    static void Copy(void* dst, const void* src, int32_t size);  // 0x6260d0
 
     int32_t     Block_field_00;       // 0x00
 };
@@ -145,7 +145,7 @@ class Byte
 {
 public:
     // IDA 0x48B2A0 area
-    static void Zero(void* ptr, int32_t count);
+    static void Zero(void* ptr, int32_t count);  // 0x4f4c20
 
     int32_t     Byte_field_00;       // 0x00
 };
@@ -158,7 +158,7 @@ class TextBuffer
 {
 public:
     // IDA 0x5BCC90
-    static void Init(int32_t buffer);
+    static void Init(int32_t buffer);  // 0x5bcc90
 
     static char*    s_Buffer;       // 0x00
     static int32_t  s_BufferSize;   // 0x04
@@ -173,11 +173,11 @@ class Buffer
 public:
     virtual ~Buffer() = default;
 
-    virtual void CreateDirectSound() {} // 0x40a340
-    virtual void sub_40A6D0() {} // 0x40a6d0
-    virtual void CompareEqual() {} // 0x40ccd0
-    virtual void FillCircularBufferScroll() {} // 0x410ed0
-    virtual void Cleanup() {} // 0x42f7c0
+    virtual void CreateDirectSound(); // 0x40a340
+    virtual void sub_40A6D0(); // 0x40a6d0
+    virtual void CompareEqual(); // 0x40ccd0
+    virtual void FillCircularBufferScroll(); // 0x410ed0
+    virtual void Cleanup(); // 0x42f7c0
     // +6 more virtual methods
 
     uint8_t Buffer_field_0x04[4];
@@ -197,7 +197,7 @@ class BufferClass
 public:
     virtual ~BufferClass() = default;
 
-    virtual void CompareEqual() {} // 0x477c30
+    virtual void CompareEqual(); // 0x477c30
 
 };
 // 3 methods in IDA
@@ -206,9 +206,9 @@ class BufferIO
 public:
     virtual ~BufferIO() = default;
 
-    virtual void FindActiveChannel() {} // 0x431170
-    virtual void Flush() {} // 0x431dd0
-    virtual void Cleanup() {} // 0x434990
+    virtual void FindActiveChannel(); // 0x431170
+    virtual void Flush(); // 0x431dd0
+    virtual void Cleanup(); // 0x434990
 
     uint8_t BufferIO_field_0x04[4];
     uint8_t BufferIO_field_0x08[4];
@@ -219,11 +219,11 @@ class CStreamClass
 public:
     virtual ~CStreamClass() = default;
 
-    virtual void AddRef() {} // 0x4a2930
-    virtual void Release() {} // 0x4a2950
-    virtual void QueryInterface() {} // 0x4a2990
-    virtual void StubReturnNullPointer() {} // 0x4a2a20
-    virtual void StreamRead() {} // 0x4a2ab0
+    virtual void AddRef(); // 0x4a2930
+    virtual void Release(); // 0x4a2950
+    virtual void QueryInterface(); // 0x4a2990
+    virtual void StubReturnNullPointer(); // 0x4a2a20
+    virtual void StreamRead(); // 0x4a2ab0
     // +21 more virtual methods
 
     uint8_t CStreamClass_field_0x04[4];
@@ -253,7 +253,7 @@ class StreamObj
 public:
     virtual ~StreamObj() = default;
 
-    virtual void Release() {} // 0x410e50
+    virtual void Release(); // 0x410e50
 
 };
 // 6 methods in IDA
@@ -262,11 +262,11 @@ class StreamWrapper
 public:
     virtual ~StreamWrapper() = default;
 
-    virtual void Read() {} // 0x5c5d40
-    virtual void Write() {} // 0x5c5d90
-    virtual void Seek() {} // 0x5c5dd0
-    virtual void readData() {} // 0x5d6620
-    virtual void StubReturnFalse() {} // 0x6241e0
+    virtual void Read(); // 0x5c5d40
+    virtual void Write(); // 0x5c5d90
+    virtual void Seek(); // 0x5c5dd0
+    virtual void readData(); // 0x5d6620
+    virtual void StubReturnFalse(); // 0x6241e0
     // +1 more virtual methods
 
     uint8_t StreamWrapper_field_0x04[4];
@@ -281,10 +281,10 @@ class Text
 public:
     virtual ~Text() = default;
 
-    virtual void Layout() {} // 0x433cf0
-    virtual void MeasureWidth() {} // 0x433ed0
-    virtual void sub_5BD3D0() {} // 0x5bd3d0
-    virtual void DrawRepeated() {} // 0x5bd490
+    virtual void Layout(); // 0x433cf0
+    virtual void MeasureWidth(); // 0x433ed0
+    virtual void sub_5BD3D0(); // 0x5bd3d0
+    virtual void DrawRepeated(); // 0x5bd490
 
     uint8_t Text_field_0x04[4];
     uint8_t Text_field_0x08[4];
@@ -296,7 +296,7 @@ class TextGroup
 public:
     virtual ~TextGroup() = default;
 
-    virtual void SetRect() {} // 0x433ca0
+    virtual void SetRect(); // 0x433ca0
 
 };
 

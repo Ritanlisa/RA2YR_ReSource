@@ -101,3 +101,18 @@ void LightSourceClass::ChangeLevels(int intensity, const TintStruct& tint, int8_
 }
 
 } // namespace gamemd
+
+#include "render/light_source.hpp"
+
+namespace gamemd {
+
+// --- LightSourceClass ---
+
+HRESULT __stdcall LightSourceClass::GetClassID(CLSID* class_id) { return E_NOTIMPL; }
+HRESULT __stdcall LightSourceClass::Load(IStream* stream) { return S_OK; }
+HRESULT __stdcall LightSourceClass::Save(IStream* stream, int clear_dirty) { return S_OK; }
+AbstractType __stdcall LightSourceClass::whatAmI() const { return AbstractType::LightSource; }
+int LightSourceClass::objectSize() const { return sizeof(*this); }
+ LightSourceClass::LightSourceClass(noinit_t) noexcept {}
+
+} // namespace gamemd

@@ -14,16 +14,16 @@ class ParasiteClass : public AbstractClass
 public:
     static constexpr AbstractType kObjectDeriveId = AbstractType::Parasite;
 
-    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return 0; }
-    virtual HRESULT __stdcall Load(IStream* stream) override { return 0; }
-    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { return 0; }
+    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override;
+    virtual HRESULT __stdcall Load(IStream* stream) override;
+    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
 
     virtual ~ParasiteClass() = default;
 
-    virtual void pointerExpired(AbstractClass* ptr, bool removed) override {}
-    virtual AbstractType __stdcall whatAmI() const override { return kObjectDeriveId; }
-    virtual int objectSize() const override { return 0; }
-    virtual void calculateChecksum(void* checksum) const {}
+    virtual void pointerExpired(AbstractClass* ptr, bool removed) override;
+    virtual AbstractType __stdcall whatAmI() const override;
+    virtual int objectSize() const override;
+    virtual void calculateChecksum(void* checksum) const;
 
     // Construction
     ParasiteClass();                                             // 0x6292B0
@@ -43,8 +43,8 @@ public:
     void Update();                                               // 0x62BD50
 
     // Stubs
-    int StubReturn67() const { return 67; }                       // 0x62AF60
-    int StubReturn88() const { return 88; }                       // 0x62AF50
+    int StubReturn67() const; // 0x62AF60
+    int StubReturn88() const; // 0x62AF50
 
     int32_t     creationFrame;       // +0x2C (this+44)
     int32_t     ParasiteClass_field_30;           // +0x30 (this+48)

@@ -16,20 +16,20 @@ public:
     static SmudgeTypeClass* FindOrAllocate(const char* pID);  // 0x6b5260
     static int FindIndex(const char* pID);
 
-    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override { return E_NOTIMPL; }  // 0x6b58d0 (as GetClassIdentifier)
+    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override; // 0x6b58d0 (as GetClassIdentifier)
 
-    virtual HRESULT __stdcall Load(IStream* pStm) override { return S_OK; }  // 0x6b5850 (as LoadTypeData)
-    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override { return S_OK; }  // 0x6b58b0 (as SaveToINI)
+    virtual HRESULT __stdcall Load(IStream* pStm) override; // 0x6b5850 (as LoadTypeData)
+    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override; // 0x6b58b0 (as SaveToINI)
 
     virtual ~SmudgeTypeClass() = default;  // 0x6b6160 (as ddtor)
 
-    virtual AbstractType __stdcall whatAmI() const override { return AbstractType::SmudgeType; }  // 0x6b6130 (as GetTypeIdentifier)
-    virtual int objectSize() const override { return 0; }  // 0x6b6140 (as GetObjectSize)
+    virtual AbstractType __stdcall whatAmI() const override; // 0x6b6130 (as GetTypeIdentifier)
+    virtual int objectSize() const override; // 0x6b6140 (as GetObjectSize)
 
-    virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override { return false; }
-    virtual ObjectClass* CreateObject(HouseClass* pOwner) override { return nullptr; }
+    virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override;
+    virtual ObjectClass* CreateObject(HouseClass* pOwner) override;
 
-    virtual void onTypeLoaded(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4, DWORD dwUnk5) {}
+    virtual void onTypeLoaded(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4, DWORD dwUnk5);
 
     SmudgeTypeClass(const char* pID) noexcept;  // 0x6b5260
 

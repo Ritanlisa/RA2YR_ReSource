@@ -24,17 +24,17 @@ class GScreenClass
 public:
     virtual ~GScreenClass() = default;
 
-    virtual HRESULT Load(IStream* stream) { return S_OK; }
-    virtual HRESULT Save(IStream* stream) { return S_OK; }
+    virtual HRESULT Load(IStream* stream);
+    virtual HRESULT Save(IStream* stream);
 
-    virtual void LoadFromINI(CCINIClass* ini) {}
-    virtual const wchar_t* GetToolTip(unsigned int dialog_id) { return nullptr; }
-    virtual void CloseWindow() {}
-    virtual void vt_entry_8C() {}
-    virtual bool vt_entry_90(const CellStruct& cell, HouseClass* house) { return false; }
-    virtual bool vt_entry_94(const CellStruct& cell, HouseClass* house, bool unk) { return false; }
-    virtual bool vt_entry_98(const CellStruct& cell, HouseClass* house) { return false; }
-    virtual bool vt_entry_9C(const CellStruct& cell, HouseClass* house) { return false; }
+    virtual void LoadFromINI(CCINIClass* ini);
+    virtual const wchar_t* GetToolTip(unsigned int dialog_id);
+    virtual void CloseWindow();  // 0x7c865c
+    virtual void vt_entry_8C();
+    virtual bool vt_entry_90(const CellStruct& cell, HouseClass* house);
+    virtual bool vt_entry_94(const CellStruct& cell, HouseClass* house, bool unk);
+    virtual bool vt_entry_98(const CellStruct& cell, HouseClass* house);
+    virtual bool vt_entry_9C(const CellStruct& cell, HouseClass* house);
 };
 #endif
 
@@ -52,21 +52,21 @@ class DisplayClass : public MapClass
 public:
     virtual ~DisplayClass() override = default;
 
-    virtual void LoadFromINI(CCINIClass* ini) override {}
-    virtual const wchar_t* GetToolTip(unsigned int dialog_id) override { return nullptr; }
-    virtual void CloseWindow() override {}
-    virtual void vt_entry_8C() override {}
-    virtual bool vt_entry_90(const CellStruct& cell, HouseClass* house) override { return false; }
-    virtual bool vt_entry_94(const CellStruct& cell, HouseClass* house, bool unk) override { return false; }
-    virtual bool vt_entry_98(const CellStruct& cell, HouseClass* house) override { return false; }
-    virtual bool vt_entry_9C(const CellStruct& cell, HouseClass* house) override { return false; }
+    virtual void LoadFromINI(CCINIClass* ini) override;
+    virtual const wchar_t* GetToolTip(unsigned int dialog_id) override;
+    virtual void CloseWindow() override;  // 0x7c865c
+    virtual void vt_entry_8C() override;
+    virtual bool vt_entry_90(const CellStruct& cell, HouseClass* house) override;
+    virtual bool vt_entry_94(const CellStruct& cell, HouseClass* house, bool unk) override;  // 0x4a9ca0
+    virtual bool vt_entry_98(const CellStruct& cell, HouseClass* house) override;
+    virtual bool vt_entry_9C(const CellStruct& cell, HouseClass* house) override;
 
     virtual MouseCursorType GetLastMouseCursor() = 0;
-    virtual bool vt_entry_A4(uint32_t unk1, uint32_t unk2, uint32_t unk3) { return false; }
-    virtual void SetViewDimensions(const RectangleStruct& rect) {}
-    virtual void vt_entry_AC(uint32_t unk) {}
-    virtual void vt_entry_B0(uint32_t unk) {}
-    virtual void vt_entry_B4(Point2D* point) {}
+    virtual bool vt_entry_A4(uint32_t unk1, uint32_t unk2, uint32_t unk3);
+    virtual void SetViewDimensions(const RectangleStruct& rect);
+    virtual void vt_entry_AC(uint32_t unk);  // 0x40d250
+    virtual void vt_entry_B0(uint32_t unk);  // 0x4aad20
+    virtual void vt_entry_B4(Point2D* point);
 
     virtual bool ConvertAction(
         const CellStruct& cell,
@@ -75,14 +75,14 @@ public:
         Action action,
         uint32_t unk) { return false; }
 
-    virtual void LeftMouseButtonDown(const Point2D& point) {}
+    virtual void LeftMouseButtonDown(const Point2D& point);
     virtual void LeftMouseButtonUp(
         const CoordStruct& coords,
         const CellStruct& cell,
         ObjectClass* object,
         Action action,
         uint32_t unk2) {}
-    virtual void RightMouseButtonUp(uint32_t unk) {}
+    virtual void RightMouseButtonUp(uint32_t unk);
 
     bool ProcessClickCoords(
         Point2D* src,

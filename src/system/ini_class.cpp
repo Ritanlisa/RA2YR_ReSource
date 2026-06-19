@@ -225,3 +225,26 @@ int CCINIClass::GetInt(const char* section, const char* key, int def)
 }
 
 } // namespace gamemd
+
+#include "system/ini_class.hpp"
+
+namespace gamemd {
+
+// --- INIClass ---
+
+bool INIClass::Load(CCFileClass* file, bool unk1, bool unk2) { return true; }
+const char* INIClass::GetString(const char* section, const char* key, const char* def, char* buf, int bufSize) { return def; }
+int INIClass::GetInt(const char* section, const char* key, int def) { return def; }
+bool INIClass::GetBool(const char* section, const char* key, bool def) { return def; }
+double INIClass::GetDouble(const char* section, const char* key, double def) { return def; }
+const char* INIClass::GetGUID(const char* section, const char* key, const char* def) { return def; }
+
+// --- CCINIClass ---
+
+CCFileClass* CCINIClass::GetFile() const { return ccFile; }
+
+// --- INIHashTable ---
+
+ INIHashTable::INIHashTable() { std::memset(this, 0, sizeof(*this)); }
+
+} // namespace gamemd

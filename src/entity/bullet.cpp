@@ -54,3 +54,19 @@ BulletClass::BulletClass(BulletTypeClass* pType) noexcept
 }
 
 } // namespace gamemd
+
+#include "entity/bullet.hpp"
+
+namespace gamemd {
+
+// --- BulletClass ---
+
+HRESULT __stdcall BulletClass::GetClassID(CLSID* pClassID) { return E_NOTIMPL; }
+HRESULT __stdcall BulletClass::Save(IStream* pStm, BOOL fClearDirty) { return S_OK; }
+AbstractType __stdcall BulletClass::whatAmI() const { return kObjectTypeId; }
+int BulletClass::objectSize() const { return sizeof(BulletClass); }
+uint8_t BulletClass::GetAnimFrame() const { return 0; }
+void BulletClass::SetTarget(AbstractClass* pTarget) {}
+bool BulletClass::MoveTo(const CoordStruct& where, const BulletVelocity& velocity) { return false; }
+
+} // namespace gamemd

@@ -26,11 +26,11 @@ public:
 
     virtual ~ParticleTypeClass() = default;  // 0x645950 (as ddtor)
 
-    virtual AbstractType __stdcall whatAmI() const override { return AbstractType::ParticleType; }  // 0x645920 (as GetTypeIdentifier)
-    virtual int objectSize() const override { return 0; }  // 0x645910 (as GetObjectSize)
+    virtual AbstractType __stdcall whatAmI() const override; // 0x645920 (as GetTypeIdentifier)
+    virtual int objectSize() const override; // 0x645910 (as GetObjectSize)
 
-    virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override { return false; }  // 0x645940 (as StubReturnFalse)
-    virtual ObjectClass* CreateObject(HouseClass* pOwner) override { return nullptr; }
+    virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override; // 0x645940 (as StubReturnFalse)
+    virtual ObjectClass* CreateObject(HouseClass* pOwner) override;
 
     ParticleTypeClass(const char* pID) noexcept;
 

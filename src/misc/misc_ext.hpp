@@ -23,11 +23,11 @@ class Warhead
 {
 public:
     // IDA 0x452820
-    static int32_t GetWarheadSound(int32_t type);
+    static int32_t GetWarheadSound(int32_t type);  // 0x41d7e0
     // IDA 0x452820 area
     static void sub_452820();
     // IDA 0x452820 area
-    static void ApplyDamage(ObjectClass* target, int32_t damage, HouseClass* owner);
+    static void ApplyDamage(ObjectClass* target, int32_t damage, HouseClass* owner);  // 0x4690b0
     // IDA 0x452820 area
     static bool IsLocomotor();
     // IDA 0x452820 area
@@ -44,7 +44,7 @@ class DamageArea
 {
 public:
     // IDA 0x4D0180
-    static void ApplyScatter(const CoordStruct& center, int32_t damage, int32_t radius, HouseClass* owner);
+    static void ApplyScatter(const CoordStruct& center, int32_t damage, int32_t radius, HouseClass* owner);  // 0x4cd600
     // IDA 0x4D0180 area
     static void sub_4D0180();
     // IDA 0x565660
@@ -61,11 +61,11 @@ class UnholyAlliance
 {
 public:
     // IDA 0x48B2A0 area
-    void Read();
+    void Read();  // 0x5cb3f0
     // IDA 0x48B2A0 area
-    void Write();
+    void Write();  // 0x5cb400
     // IDA 0x48B2A0 area
-    void Seek();
+    void Seek();  // 0x5cb430
     // IDA 0x48B2A0 area
     bool IsEnabled() const;
     // IDA 0x48B2A0 area
@@ -84,7 +84,7 @@ class Weapon
 {
 public:
     // IDA 0x48B2A0 area
-    static void DestroyTerrain(const CellStruct& cell);
+    static void DestroyTerrain(const CellStruct& cell);  // 0x70c690
 
     int32_t     Weapon_field_00;       // 0x00
 };
@@ -97,9 +97,9 @@ class Turret
 {
 public:
     // IDA 0x48B2A0 area
-    static void GetTransform(float* matrix, int32_t facing);
+    static void GetTransform(float* matrix, int32_t facing);  // 0x55a730
     // IDA 0x48B2A0 area
-    static void LoadVoxelTurretAndBarrel(TechnoClass* tech);
+    static void LoadVoxelTurretAndBarrel(TechnoClass* tech);  // 0x5f8ce0
 
     int32_t     Turret_field_00;       // 0x00
 };
@@ -112,7 +112,7 @@ class DropPod
 {
 public:
     // IDA 0x48B2A0 area
-    static void ProcessLanding();
+    static void ProcessLanding();  // 0x4ce840
 
     static int32_t  s_DropState;    // 0x00
 };
@@ -125,7 +125,7 @@ class Carryall
 {
 public:
     // IDA 0x48B2A0 area
-    static void MissionStateMachine(FootClass* carryall);
+    static void MissionStateMachine(FootClass* carryall);  // 0x416d50
 
     int32_t     Carryall_field_00;       // 0x00
 };
@@ -138,7 +138,7 @@ class Locomotor
 {
 public:
     // IDA 0x48B2A0 area
-    static int32_t GetSpeed(TechnoClass* tech);
+    static int32_t GetSpeed(TechnoClass* tech);  // 0x426630
 
     int32_t     Locomotor_field_00;       // 0x00
 };
@@ -151,7 +151,7 @@ class Explosion
 {
 public:
     // IDA 0x48B2A0 area
-    static void RemoveItem(int32_t index);
+    static void RemoveItem(int32_t index);  // 0x53dda0
 
     int32_t     Explosion_field_00;       // 0x00
 };
@@ -164,7 +164,7 @@ class BINK
 {
 public:
     // IDA 0x48B2A0 area
-    static void Background_Setup(DSurface* surface);
+    static void Background_Setup(DSurface* surface);  // 0x52b9b0
 
     int32_t     BINK_field_00;       // 0x00
 };
@@ -177,7 +177,7 @@ class CSF
 {
 public:
     // IDA 0x48B2A0 area
-    static const wchar_t* GetTeamString(int32_t index);
+    static const wchar_t* GetTeamString(int32_t index);  // 0x536210
 
     int32_t     CSF_field_00;       // 0x00
 };
@@ -190,7 +190,7 @@ class AI
 {
 public:
     // IDA 0x48B2A0 area
-    static void CreateMCV(HouseClass* house);
+    static void CreateMCV(HouseClass* house);  // 0x5d7030
 
     int32_t     AI_field_00;       // 0x00
 };
@@ -203,7 +203,7 @@ class Isometric
 {
 public:
     // IDA 0x48B2A0 area
-    static void InitTables();
+    static void InitTables();  // 0x47b3a0
 
     static int32_t  s_IsoX[512];    // 0x00
     static int32_t  s_IsoY[512];    // 0x800
@@ -217,7 +217,7 @@ class Shroud
 {
 public:
     // IDA 0x48B2A0 area
-    static void ProcessCellVisibility();
+    static void ProcessCellVisibility();  // 0x654490
 
     static uint8_t* s_ShroudMap;    // 0x00
 };
@@ -260,7 +260,7 @@ class TriggerActionQueue
 {
 public:
     // IDA 0x48B2A0 area
-    static void ProcessAll();
+    static void ProcessAll();  // 0x6e5820
 
     static int32_t  s_Count;        // 0x00
 };
@@ -273,7 +273,7 @@ class AnimSystem
 {
 public:
     // IDA 0x48B2A0 area
-    static void Init();
+    static void Init();  // 0x75a790
 
     static int32_t  s_AnimationCount;   // 0x00
 };
@@ -293,7 +293,7 @@ public:
     virtual HRESULT __stdcall LockServer(bool fLock) override;
     // IUnknown
     virtual HRESULT __stdcall QueryInterface(const GUID& riid, void** ppv) override;
-    virtual ULONG __stdcall AddRef() override;
+    virtual ULONG __stdcall AddRef() override;  // 0x6c4d40
     virtual ULONG __stdcall Release() override;
 
     int32_t     m_RefCount;     // 0x04
@@ -309,11 +309,11 @@ public:
     BuildingLoadQueue() = default;
 
     // IDA 0x48B2A0 area
-    void* GetNext();
+    void* GetNext();  // 0x6e6e20
     // IDA 0x48B2A0 area
-    void* Find(int32_t index);
+    void* Find(int32_t index);  // 0x6e6f20
     // IDA 0x48B2A0 area
-    void* FindObject(ObjectClass* obj);
+    void* FindObject(ObjectClass* obj);  // 0x6e6ff0
     // IDA 0x48B2A0 area
     void Add(ObjectClass* obj);
 
@@ -330,11 +330,11 @@ class Matrix3x4
 {
 public:
     // IDA 0x5AE860
-    static void Identity(float* m);
+    static void Identity(float* m);  // 0x5ae860
     // IDA 0x5AE860 area
-    static void Translate(float* m, float x, float y, float z);
+    static void Translate(float* m, float x, float y, float z);  // 0x5ae980
     // IDA 0x5AE860 area
-    static CellStruct TransformCell(const float* m, const CellStruct& cell);
+    static CellStruct TransformCell(const float* m, const CellStruct& cell);  // 0x6d2360
 
     float       m_Data[12];     // 0x00 (3 rows × 4 columns)
 };
@@ -349,9 +349,9 @@ public:
     InputManager_ProcessEvents() = default;
 
     // IDA 0x48B2A0 area
-    int32_t AddRef();
-    int32_t Release();
-    bool StubReturnFalse();
+    int32_t AddRef();  // 0x40d230
+    int32_t Release();  // 0x40d240
+    bool StubReturnFalse();  // 0x4aebd0
     void Process();
     void Clear();
 

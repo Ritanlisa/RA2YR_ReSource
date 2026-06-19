@@ -23,12 +23,12 @@ class RadarClass : public DisplayClass
 public:
     virtual ~RadarClass() = default;
 
-    virtual void CreateEmptyMap(const RectangleStruct& map_rect, bool reuse, int8_t n_level, bool unk) {}
-    virtual void SetVisibleRect(const RectangleStruct& map_rect) {}
-    virtual void DisposeOfArt() {}
-    virtual void* worldToScreenCoords(void* out, Point2D* point) { return nullptr; }
-    virtual void onRadarClick(uint32_t unk) {}
-    virtual void InitForHouse() {}
+    virtual void CreateEmptyMap(const RectangleStruct& map_rect, bool reuse, int8_t n_level, bool unk);
+    virtual void SetVisibleRect(const RectangleStruct& map_rect);
+    virtual void DisposeOfArt();
+    virtual void* worldToScreenCoords(void* out, Point2D* point);
+    virtual void onRadarClick(uint32_t unk);
+    virtual void InitForHouse();
 
     // 0x11E8: spy satellite / zoom state (all zeroed in constructor)
     int32_t                     SpiedSatelliteCount;    // 0x11E8

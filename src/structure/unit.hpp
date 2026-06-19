@@ -21,76 +21,76 @@ class UnitClass : public ra2::game::FootClass
 public:
     static constexpr AbstractType kObjectTypeId = AbstractType::Unit;
 
-    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override { return E_NOTIMPL; }
-    virtual HRESULT __stdcall Load(IStream* pStm) override { return S_OK; }
-    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override { return S_OK; }
+    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override;  // 0x6b4f50
+    virtual HRESULT __stdcall Load(IStream* pStm) override;
+    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;
 
     virtual ~UnitClass() override = default;
 
-    virtual AbstractType __stdcall whatAmI() const override { return kObjectTypeId; }
-    virtual int objectSize() const override { return sizeof(UnitClass); }
+    virtual AbstractType __stdcall whatAmI() const override;
+    virtual int objectSize() const override;
 
-    virtual void DrawAsVXL(Point2D* coords, RectangleStruct* bounding_rect, uint32_t dwUnk7, uint32_t dwUnk8) {}
-    virtual void DrawAsSHP(Point2D* coords, RectangleStruct* bounding_rect, uint32_t dwUnk7, uint32_t dwUnk8) {}
+    virtual void DrawAsVXL(Point2D* coords, RectangleStruct* bounding_rect, uint32_t dwUnk7, uint32_t dwUnk8);
+    virtual void DrawAsSHP(Point2D* coords, RectangleStruct* bounding_rect, uint32_t dwUnk7, uint32_t dwUnk8);
 
     // === Phase 3: Harvest/Unload ===
     int Mission_Harvest() override;
     int Mission_Unload() override;
-    int ProcessResourceHarvesting();
-    int updateHarvesting();
-    int UnloadPassengers();
-    int ProcessExitQueue();
-    int CreateUnloadPlacementCraters();
-    int GetExitCell();
+    int ProcessResourceHarvesting();  // 0x73d450
+    int updateHarvesting();  // 0x4c2c10
+    int UnloadPassengers();  // 0x6b4be0
+    int ProcessExitQueue();  // 0x6b7230
+    int CreateUnloadPlacementCraters();  // 0x6b6080
+    int GetExitCell();  // 0x54e3b0
 
     // === Phase 3: Deploy ===
-    int Deploy();
-    int DeployToBuilding();
-    int SimpleDeployerDeploy();
-    int SimpleDeployerUndeploy();
-    int MissionDispatch();
+    int Deploy();  // 0x7192f0
+    int DeployToBuilding();  // 0x738d30
+    int SimpleDeployerDeploy();  // 0x739ac0
+    int SimpleDeployerUndeploy();  // 0x739cd0
+    int MissionDispatch();  // 0x737430
 
     // === Phase 3: Movement ===
-    virtual int CalcMoveTarget();
-    virtual int AssignDestination_SyncLog();
-    virtual int ApproachTarget_DisallowMoving();
-    int UpdateRotation_TurretFacing_EMP();
-    int Scatter();
-    int IsCellBlockedByBridge();
-    int CompareCoordinateMagnitude();
-    int processEnterTarget();
-    int CheckForNearbyEnemies();
-    int OnUnderAttack();
+    virtual int CalcMoveTarget();  // 0x7359f0
+    virtual int AssignDestination_SyncLog();  // 0x741970
+    virtual int ApproachTarget_DisallowMoving();  // 0x7414e0
+    int UpdateRotation_TurretFacing_EMP();  // 0x736990
+    int Scatter();  // 0x743a50
+    int IsCellBlockedByBridge();  // 0x458a00
+    int CompareCoordinateMagnitude();  // 0x4d03d0
+    int processEnterTarget();  // 0x7178b0
+    int CheckForNearbyEnemies();  // 0x7468c0
+    int OnUnderAttack();  // 0x737c90
 
     // === Phase 3: Weapon Switching ===
-    int SetTurret();
-    virtual int EvaluateTarget();
-    bool CanCrushTarget();
-    int IsDeactivated();
+    int SetTurret();  // 0x70dc70
+    virtual int EvaluateTarget();  // 0x73f0a0
+    bool CanCrushTarget();  // 0x7438f0
+    int IsDeactivated();  // 0x70fbd0
 
     // === Phase 3: Construction & Destruct ===
-    static int Create();
-    int ReadINI();
-    int DestroySmudge();
-    void Destructor();
+    static int Create();  // 0x6b4a50
+    int ReadINI();  // 0x6b4c80
+    int DestroySmudge();  // 0x6b4fa0
+    void Destructor();  // 0x735780
 
     // === Phase 3: Stream & Save ===
-    virtual int LoadFromStream();
-    virtual int SaveLoadData();
-    virtual int SaveState();
+    virtual int LoadFromStream();  // 0x744470
+    virtual int SaveLoadData();  // 0x6b4ea0
+    virtual int SaveState();  // 0x6b4f00
 
     // === Phase 3: Per-Frame & AI ===
-    void PowerDrainUpdate() override;
-    virtual int PerFrameUpdate();
-    virtual int HandleTargetDestroyed();
-    int CheckStatus();
-    int ClearTargetRef();
-    int ProcessIdleOrders();
-    int StubReturn176();
-    int StubReturn29();
+    void PowerDrainUpdate() override;  // 0x744640
+    virtual int PerFrameUpdate();  // 0x746810
+    virtual int HandleTargetDestroyed();  // 0x7446e0
+    int CheckStatus();  // 0x6b4f20
+    int ClearTargetRef();  // 0x6b7c60
+    int ProcessIdleOrders();  // 0x6b7bb0
+    int StubReturn176();  // 0x6b4f30
+    int StubReturn29();  // 0x6b4f40
 
     // === Phase 3: Approach Evaluate ===
-    int ApproachEvaluate();
+    int ApproachEvaluate();  // 0x4d4280
 
     // === Phase 3: Drawing ===
     void Draw(Point2D* screen_pos, RectangleStruct* bounds) const;

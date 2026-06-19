@@ -26,22 +26,22 @@ public:
 
     virtual ~FootClass() = default;
 
-    virtual void Destroyed(ObjectClass* killer) override;
-    virtual void onBuildingPlacement(uint32_t a, uint32_t b) override {}
+    virtual void Destroyed(ObjectClass* killer) override;  // 0x4d98c0
+    virtual void onBuildingPlacement(uint32_t a, uint32_t b) override;
 
-    virtual void ReceiveGunner(FootClass* gunner) {}
-    virtual void RemoveGunner(FootClass* gunner) {}
-    virtual bool IsLeavingMap() const { return false; }
-    virtual bool canMove() const { return false; }
-    virtual bool onProductionComplete() const { return false; }
-    virtual void onCellEntry(CellStruct* cell) {}
-    virtual void processSuperWeapon(CellStruct* cell) {}
-    virtual CoordStruct* getMoveCoords(CoordStruct* out) { return nullptr; }
-    virtual void onMoveStart() {}
-    virtual bool canStop() { return false; }
+    virtual void ReceiveGunner(FootClass* gunner);
+    virtual void RemoveGunner(FootClass* gunner);
+    virtual bool IsLeavingMap() const;
+    virtual bool canMove() const;
+    virtual bool onProductionComplete() const;
+    virtual void onCellEntry(CellStruct* cell);
+    virtual void processSuperWeapon(CellStruct* cell);
+    virtual CoordStruct* getMoveCoords(CoordStruct* out);
+    virtual void onMoveStart();
+    virtual bool canStop();
     virtual bool MoveTo(CoordStruct* coords);
     virtual bool StopMoving();
-    virtual bool canRecruitTeamMember() { return false; }
+    virtual bool canRecruitTeamMember();
     virtual bool ChronoWarpTo(CoordStruct dest);
     virtual void Draw_A_SHP(
         SHPStruct* shp, int facing_idx, Point2D* coords, RectangleStruct* rect,
@@ -52,22 +52,22 @@ public:
         VoxelStruct* vxl, int hva_frame_index, int flags, SomeVoxelCache* cache,
         RectangleStruct* rect, Point2D* center_point, Matrix3DStruct* matrix,
         uint32_t a8, uint32_t draw_flags, uint32_t a10) {}
-    virtual void onDrawComplete() {}
+    virtual void onDrawComplete();
     virtual void Panic();
     virtual void UnPanic();
-    virtual void PlayIdleAnim(int idle_anim_number) {}
-    virtual uint32_t getMovementMode() { return 0; }
-    virtual uint32_t getPathDistance(uint32_t a, uint32_t b, uint32_t c) const { return 0; }
-    virtual uint32_t getPathCost(uint32_t a, uint32_t b, uint32_t c, uint32_t d) const { return 0; }
-    virtual uint32_t isAreaClear(uint32_t a, uint32_t b, uint32_t c) const { return 0; }
-    virtual void onAreaEntry(uint32_t a, uint32_t b) {}
+    virtual void PlayIdleAnim(int idle_anim_number);
+    virtual uint32_t getMovementMode();
+    virtual uint32_t getPathDistance(uint32_t a, uint32_t b, uint32_t c) const;
+    virtual uint32_t getPathCost(uint32_t a, uint32_t b, uint32_t c, uint32_t d) const;
+    virtual uint32_t isAreaClear(uint32_t a, uint32_t b, uint32_t c) const;
+    virtual void onAreaEntry(uint32_t a, uint32_t b);
     virtual int GetCurrentSpeed() const;
-    virtual uint32_t getWaypointData(uint32_t a) { return 0; }
-    virtual void onWaypointReached(uint32_t a) {}
+    virtual uint32_t getWaypointData(uint32_t a);
+    virtual void onWaypointReached(uint32_t a);
     virtual void SetSpeedPercentage(double percentage);
-    virtual void onPathComplete() {}
-    virtual void onMovementDone() {}
-    virtual bool canEnterCell(uint32_t a) { return false; }
+    virtual void onPathComplete();
+    virtual void onMovementDone();
+    virtual bool canEnterCell(uint32_t a);
 
     bool MovementAI();
 
@@ -77,126 +77,126 @@ public:
     int Mission_Hunt() override;
 
     // === Phase 3 generated declarations (IDA functions.json) ===
-    virtual int MissionMoveCarryallLand() { return 0; }
-    virtual void vt_entry_4F8() {}
-    virtual int Destru_vt323() { return 0; }
-    virtual void vt_entry_514() {}
-    virtual bool StubReturnFalse() { return false; }
-    virtual void StubReturnVoid() {}
-    virtual void vt_entry_534() {}
-    virtual void vt_entry_540() {}
-    virtual int GetTurretAngle() const { return 0; }
-    virtual void ProcessDemolish() {}
-    virtual void UpdateSidebar() {}
-    virtual void ProcessPrimarySelect() {}
-    virtual int StubReturn0() { return 0; }
-    virtual void ScanCircleForUnits() {}
-    virtual void ScanCircleForUnits2() {}
-    virtual int GetCapacity() const { return 0; }
-    virtual int ResizeOccupiedCellList() { return 0; }
-    virtual int sub_4734B0() { return 0; }
-    virtual int sub_487150() { return 0; }
-    virtual int sub_487160() { return 0; }
-    virtual int FindPathWithRetry() { return -1; }
-    virtual void ProcessDeployMission() {}
-    virtual void UpdateDeployMovement() {}
-    virtual int PostLoadInit() { return 0; }
-    virtual int Destru_vt337() { return 0; }
-    virtual void UpdateReveal() {}
-    virtual bool CheckTileSeed() const { return false; }
-    virtual int MovementStep() { return 0; }
-    virtual int Destru_vt139() { return 0; }
-    virtual bool CheckVoiceResponse() const { return false; }
-    virtual void ProcessMissionVoice() {}
-    virtual int FindMovePosition() { return -1; }
-    virtual int PlayCOM_audio() { return 0; }
-    virtual int Destru_vt319() { return 0; }
-    virtual int EnterAttackState() { return 0; }
-    virtual void CalculateApproachPath() {}
-    virtual int FindAITarget() { return -1; }
-    virtual int DispatchInput() { return 0; }
-    virtual void ProcessDeploy() {}
-    virtual int ValidateMove() { return 0; }
-    virtual int ValidatePlacement() { return 0; }
-    virtual int GetCoords() const { return 0; }
-    virtual void UpdateAI() {}
-    virtual int OverrideMission_SyncLog() { return 0; }
-    virtual int ConditionalAction() { return 0; }
-    virtual int MissionDispatch() { return 0; }
-    virtual void ProcessTeamAction() {}
-    virtual int AssignDestination() { return 0; }
-    virtual int DispatchSell() { return 0; }
-    virtual int SelectAutoTarget_Cloaked() { return 0; }
-    virtual int HandleTargetDestroyed() { return 0; }
-    virtual void vt_entry_524() {}
-    virtual int Destru_vt107() { return 0; }
-    virtual int vt_entry_4F0() { return 0; }
-    virtual void ClearSomeVector() {}
-    virtual bool CanBeControlled() const { return false; }
-    virtual bool CanBeRecruited() const { return false; }
-    virtual void ClearSomeVector2() {}
-    virtual void ProcessMovement() {}
-    virtual bool CheckTargetValidity() const { return false; }
-    virtual int UpdateState() { return 0; }
-    virtual int GetAttackSpeed() const { return 0; }
-    virtual int Destru_vt30() { return 0; }
-    virtual void vt_entry_548() {}
-    virtual void vt_entry_54C() {}
-    virtual int BeginPowerUpdate() { return 0; }
-    virtual bool CanBeHunted() const { return false; }
-    virtual int LiberateMember() { return 0; }
-    virtual int vt_entry_4E0() { return 0; }
-    virtual int vt_entry_4F4() { return 0; }
-    virtual int CheckTargetCell() const { return 0; }
-    virtual int Destru_vt311() { return 0; }
-    virtual void SetBuildingType() {}
-    virtual int MoveToTiberium() { return 0; }
-    virtual int FindMoveTarget() { return -1; }
-    virtual int MoveToWeed() { return 0; }
-    virtual bool CheckHeightDiff() const { return false; }
-    virtual int ValidateTargetCell() { return 0; }
-    virtual int HandleCursorWithCheck() { return 0; }
-    virtual void ProcessMissionState() {}
-    virtual int ValidateFoundation() { return 0; }
-    virtual int PreDestroy() { return 0; }
-    virtual int OnCompleteAction() { return 0; }
-    virtual int RemovePassenger() { return 0; }
-    virtual int PopAndProcess() { return 0; }
-    virtual bool IsTimerActive() const { return false; }
-    virtual bool IsTargetInRange() const { return false; }
-    virtual int CheckCellPassable() const { return 0; }
-    virtual bool DeployAction() { return false; }
-    virtual void UpdateTeamAI() {}
-    virtual int vt_entry_530() { return 0; }
-    virtual void ClearPathIndex() {}
-    virtual int MissionSell_Dispatch() { return 0; }
-    virtual void UpdateAttackMove_SelectNewTarget() {}
-    virtual void ScanAdjacentCells() {}
-    virtual int Destru_vt322() { return 0; }
-    virtual bool IsNotAttackAndPlayer() const { return false; }
-    virtual int Jumpjet_OccupyCell() { return 0; }
-    virtual int Destru_vt08() { return 0; }
-    virtual int RemoveFromPointerArray() { return 0; }
-    virtual int sub_550DAA0() { return 0; }
-    virtual int FindNearestApproachableCell() { return -1; }
-    virtual bool CreateWakes() { return false; }
-    virtual int sub_56E52F0() { return 0; }
-    virtual int LinkToTransporter() { return 0; }
-    virtual int GetGameSpeedFromSession() const { return 0; }
-    virtual int CompleteProduction() { return 0; }
-    virtual void UpdateLocomotion() {}
-    virtual int ProcessEnterTransport() { return 0; }
-    virtual void SetThreatBounds() {}
-    virtual int ApplyThreatBounds() { return 0; }
-    virtual int sub_570F7E0() { return 0; }
-    virtual int sub_70FEB0() { return 0; }
-    virtual void UpdatePassengerCoords() {}
-    virtual void Cleanup() {}
-    virtual int RespondToDestruction() { return 0; }
-    virtual int sub_5746D80() { return 0; }
-    virtual bool CheckAccelLimit() const { return false; }
-    virtual int GetField() const { return 0; }
-    virtual void SetField() {}
+    virtual int MissionMoveCarryallLand();
+    virtual void vt_entry_4F8();
+    virtual int Destru_vt323();
+    virtual void vt_entry_514();
+    virtual bool StubReturnFalse();
+    virtual void StubReturnVoid();
+    virtual void vt_entry_534();
+    virtual void vt_entry_540();
+    virtual int GetTurretAngle() const;
+    virtual void ProcessDemolish();
+    virtual void UpdateSidebar();
+    virtual void ProcessPrimarySelect();
+    virtual int StubReturn0();
+    virtual void ScanCircleForUnits();
+    virtual void ScanCircleForUnits2();
+    virtual int GetCapacity() const;
+    virtual int ResizeOccupiedCellList();
+    virtual int sub_4734B0();
+    virtual int sub_487150();
+    virtual int sub_487160();
+    virtual int FindPathWithRetry();  // 0x42c900
+    virtual void ProcessDeployMission();
+    virtual void UpdateDeployMovement();
+    virtual int PostLoadInit();
+    virtual int Destru_vt337();
+    virtual void UpdateReveal();
+    virtual bool CheckTileSeed() const;
+    virtual int MovementStep();
+    virtual int Destru_vt139();
+    virtual bool CheckVoiceResponse() const;
+    virtual void ProcessMissionVoice();
+    virtual int FindMovePosition();
+    virtual int PlayCOM_audio();
+    virtual int Destru_vt319();
+    virtual int EnterAttackState();
+    virtual void CalculateApproachPath();
+    virtual int FindAITarget();
+    virtual int DispatchInput();
+    virtual void ProcessDeploy();
+    virtual int ValidateMove();
+    virtual int ValidatePlacement();
+    virtual int GetCoords() const;
+    virtual void UpdateAI();
+    virtual int OverrideMission_SyncLog();
+    virtual int ConditionalAction();
+    virtual int MissionDispatch();
+    virtual void ProcessTeamAction();
+    virtual int AssignDestination();
+    virtual int DispatchSell();
+    virtual int SelectAutoTarget_Cloaked();
+    virtual int HandleTargetDestroyed();
+    virtual void vt_entry_524();
+    virtual int Destru_vt107();
+    virtual int vt_entry_4F0();
+    virtual void ClearSomeVector();
+    virtual bool CanBeControlled() const;
+    virtual bool CanBeRecruited() const;
+    virtual void ClearSomeVector2();
+    virtual void ProcessMovement();
+    virtual bool CheckTargetValidity() const;
+    virtual int UpdateState();
+    virtual int GetAttackSpeed() const;
+    virtual int Destru_vt30();
+    virtual void vt_entry_548();
+    virtual void vt_entry_54C();
+    virtual int BeginPowerUpdate();
+    virtual bool CanBeHunted() const;
+    virtual int LiberateMember();
+    virtual int vt_entry_4E0();
+    virtual int vt_entry_4F4();
+    virtual int CheckTargetCell() const;
+    virtual int Destru_vt311();
+    virtual void SetBuildingType();
+    virtual int MoveToTiberium();
+    virtual int FindMoveTarget();
+    virtual int MoveToWeed();
+    virtual bool CheckHeightDiff() const;
+    virtual int ValidateTargetCell();
+    virtual int HandleCursorWithCheck();
+    virtual void ProcessMissionState();
+    virtual int ValidateFoundation();
+    virtual int PreDestroy();
+    virtual int OnCompleteAction();
+    virtual int RemovePassenger();
+    virtual int PopAndProcess();
+    virtual bool IsTimerActive() const;
+    virtual bool IsTargetInRange() const;
+    virtual int CheckCellPassable() const;
+    virtual bool DeployAction();
+    virtual void UpdateTeamAI();
+    virtual int vt_entry_530();
+    virtual void ClearPathIndex();
+    virtual int MissionSell_Dispatch();
+    virtual void UpdateAttackMove_SelectNewTarget();
+    virtual void ScanAdjacentCells();
+    virtual int Destru_vt322();
+    virtual bool IsNotAttackAndPlayer() const;
+    virtual int Jumpjet_OccupyCell();
+    virtual int Destru_vt08();
+    virtual int RemoveFromPointerArray();
+    virtual int sub_550DAA0();
+    virtual int FindNearestApproachableCell();
+    virtual bool CreateWakes();
+    virtual int sub_56E52F0();
+    virtual int LinkToTransporter();
+    virtual int GetGameSpeedFromSession() const;
+    virtual int CompleteProduction();
+    virtual void UpdateLocomotion();
+    virtual int ProcessEnterTransport();
+    virtual void SetThreatBounds();
+    virtual int ApplyThreatBounds();
+    virtual int sub_570F7E0();
+    virtual int sub_70FEB0();
+    virtual void UpdatePassengerCoords();
+    virtual void Cleanup();
+    virtual int RespondToDestruction();
+    virtual int sub_5746D80();
+    virtual bool CheckAccelLimit() const;
+    virtual int GetField() const;
+    virtual void SetField();
 
 protected:
     void EmitMovementSmoke();

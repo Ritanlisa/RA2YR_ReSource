@@ -96,3 +96,18 @@ const FoggedDrawEntry* FoggedObjectDrawList_Get(int i)
 }
 
 } // namespace gamemd
+
+#include "render/fog.hpp"
+
+namespace gamemd {
+
+// --- FoggedObjectClass ---
+
+HRESULT __stdcall FoggedObjectClass::GetClassID(CLSID* class_id) { return E_NOTIMPL; }
+HRESULT __stdcall FoggedObjectClass::Load(IStream* stream) { return S_OK; }
+HRESULT __stdcall FoggedObjectClass::Save(IStream* stream, int clear_dirty) { return S_OK; }
+AbstractType __stdcall FoggedObjectClass::whatAmI() const { return AbstractType::FoggedObject; }
+int FoggedObjectClass::objectSize() const { return sizeof(*this); }
+ FoggedObjectClass::FoggedObjectClass(noinit_t) noexcept {}
+
+} // namespace gamemd

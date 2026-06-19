@@ -21,14 +21,14 @@ class EBolt
 {
 public:
     // SetOwner: stores owner ptr and weapon index (called from Fire path)
-    void SetOwner(UnitClass* owner, int weaponIdx) {}
+    void SetOwner(UnitClass* owner, int weaponIdx);
     // 0x4C1E50 ClearOwner
-    void ClearOwner() {}
+    void ClearOwner();
     // 0x4C2B40 GetSourceCoords
-    CoordStruct* GetSourceCoords(CoordStruct* out) const { return out; }
-    CoordStruct  GetSourceCoords() const { CoordStruct b; GetSourceCoords(&b); return b; }
+    CoordStruct* GetSourceCoords(CoordStruct* out) const;
+    CoordStruct  GetSourceCoords() const;
     // 0x4C2A60 Fire
-    void Fire(const CoordStruct&, const CoordStruct&, uint32_t) {}
+    void Fire(const CoordStruct&, const CoordStruct&, uint32_t);
 
     CoordStruct    Point1;          // +0x00
     CoordStruct    Point2;          // +0x0C

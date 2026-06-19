@@ -50,13 +50,13 @@ class VoxelAnimClass : public ObjectClass
 public:
     static constexpr AbstractType kObjectTypeId = AbstractType::VoxelAnim;
 
-    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override { return E_NOTIMPL; }
-    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override { return S_OK; }
+    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override;
+    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;
 
     virtual ~VoxelAnimClass() override = default;
 
-    virtual AbstractType __stdcall whatAmI() const override { return kObjectTypeId; }
-    virtual int objectSize() const override { return sizeof(VoxelAnimClass); }
+    virtual AbstractType __stdcall whatAmI() const override;
+    virtual int objectSize() const override;
 
     uint32_t               unused_AC;
     BounceClass            Bounce;

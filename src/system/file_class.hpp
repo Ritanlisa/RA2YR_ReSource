@@ -26,20 +26,20 @@ public:
     virtual ~FileClass() = default;
 
     virtual const char* GetFileName() const = 0;
-    virtual const char* SetFileName(const char* pFileName) = 0;
+    virtual const char* SetFileName(const char* pFileName) = 0;  // 0x473fc0
     virtual bool CreateFile() = 0;
     virtual bool DeleteFile() = 0;
     virtual bool Exists(bool writeShared = false) = 0;
     virtual bool HasHandle() = 0;
-    virtual bool Open(FileAccessMode access) = 0;
+    virtual bool Open(FileAccessMode access) = 0;  // 0x65cbf0
     virtual bool OpenEx(const char* pFileName, FileAccessMode access) = 0;
     virtual int ReadBytes(void* pBuffer, int nNumBytes) = 0;
-    virtual int Seek(int offset, FileSeekMode seek) = 0;
-    virtual int GetFileSize() = 0;
+    virtual int Seek(int offset, FileSeekMode seek) = 0;  // 0x65cf00
+    virtual int GetFileSize() = 0;  // 0x7c8512
     virtual int WriteBytes(void* pBuffer, int nNumBytes) = 0;
-    virtual void Close() = 0;
-    virtual uint32_t GetFileTime() { return 0; }
-    virtual bool SetFileTime(uint32_t fileTime) { return false; }
+    virtual void Close() = 0;  // 0x65d150
+    virtual uint32_t GetFileTime() { return 0; }  // 0x7c855a
+    virtual bool SetFileTime(uint32_t fileTime) { return false; }  // 0x7c8524
     virtual void CDCheck(uint32_t errorCode, bool bUnk, const char* pFilename) = 0;
 
     void* ReadWholeFile();
@@ -81,7 +81,7 @@ public:
     bool OpenEx(const char* pFileName, FileAccessMode access) override { return false; }
     int ReadBytes(void* pBuffer, int nNumBytes) override { return 0; }
     int Seek(int offset, FileSeekMode seek) override { return 0; }
-    int GetFileSize() override { return FileSize; }
+    int GetFileSize() override { return FileSize; }  // 0x7c8512
     int WriteBytes(void* pBuffer, int nNumBytes) override { return 0; }
     void Close() override {}
     void CDCheck(uint32_t errorCode, bool bUnk, const char* pFilename) override {}

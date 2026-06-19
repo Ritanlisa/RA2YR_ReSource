@@ -1416,3 +1416,28 @@ bool BuildingClass::isGeneratingGap = false;
 void BuildingClass::DestroyGap() { isGeneratingGap = false; }
 
 } // namespace gamemd
+
+#include "structure/building.hpp"
+
+namespace gamemd {
+
+// --- BuildingClass ---
+
+HRESULT __stdcall BuildingClass::GetClassID(CLSID* pClassID) { return E_NOTIMPL; }
+AbstractType __stdcall BuildingClass::whatAmI() const { return kObjectTypeId; }
+int BuildingClass::objectSize() const { return sizeof(BuildingClass); }
+void BuildingClass::onBuildingPlacement(uint32_t dwUnk, uint32_t dwUnk2) {}
+CellStruct* BuildingClass::getFoundationCell(CellStruct* pCellStruct, uint32_t dwUnk, uint32_t dwUnk2) const { return nullptr; }
+int BuildingClass::canPlaceHere(ObjectClass* pObj) const { return 0; }
+void BuildingClass::UpdateConstructionOptions() {}
+void BuildingClass::onProductionComplete(uint32_t dwUnk, uint32_t dwUnk2) {}
+void BuildingClass::processSuperWeapon(uint32_t dwUnk, uint32_t dwUnk2, uint32_t dwUnk3, uint32_t dwUnk4) {}
+void BuildingClass::SensorArrayActivate(CellStruct cell) {}
+void BuildingClass::SensorArrayDeactivate(CellStruct cell) {}
+void BuildingClass::DisguiseDetectorActivate(CellStruct cell) {}
+void BuildingClass::DisguiseDetectorDeactivate(CellStruct cell) {}
+Point2D BuildingClass::CalcDrawPos() const { Point2D buf; CalcDrawPos(&buf); return buf; }
+ra2::game::LightConvertClass* BuildingClass::GetRemapColour() const { return nullptr; }
+int BuildingClass::AssignTarget_SyncLog() { return 0; }
+
+} // namespace gamemd

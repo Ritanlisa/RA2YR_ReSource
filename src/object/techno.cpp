@@ -1033,3 +1033,553 @@ static bool CreateUnitAtCoordsTimed(CoordStruct* coords, int time, bool special)
 
 } // namespace game
 } // namespace ra2
+
+#include "object/techno.hpp"
+
+namespace ra2 { namespace game {
+
+// --- TechnoClass ---
+
+HRESULT __stdcall TechnoClass::Load(IStream* stream) { return S_OK; }
+HRESULT __stdcall TechnoClass::Save(IStream* stream, int clear_dirty) { return S_OK; }
+bool TechnoClass::isUnitfactory() const { return false; }
+bool TechnoClass::isCloakable() const { return false; }
+bool TechnoClass::canScatter() const { return true; }
+bool TechnoClass::belongsToATeam() const { return false; }
+bool TechnoClass::shouldSelfHealOneStep() const { return false; }
+bool TechnoClass::isVoxel() const { return false; }
+bool TechnoClass::canSelfRepair() { return false; }
+bool TechnoClass::shouldBeCloaked() const { return false; }
+bool TechnoClass::shouldNotBeCloaked() const { return false; }
+DirStruct* TechnoClass::getFacing(DirStruct* buffer) const { return nullptr; }
+bool TechnoClass::isArmed() const { return false; }
+void TechnoClass::onSpawnComplete() const {}
+double TechnoClass::getStoragePercentage() const { return 0.0; }
+int TechnoClass::getPipFillLevel() const { return 0; }
+int TechnoClass::getRefund() const { return 0; }
+int TechnoClass::getThreatValue() const { return 0; }
+bool TechnoClass::canBeAttacked(uint32_t a) { return false; }
+uint32_t TechnoClass::getSpecialValue(uint32_t a, uint32_t b) { return 0; }
+bool TechnoClass::canCrush(uint32_t a) { return false; }
+int TechnoClass::getCrewCount() const { return 0; }
+int TechnoClass::getAntiAirValue() const { return 0; }
+int TechnoClass::getAntiArmorValue() const { return 0; }
+int TechnoClass::getAntiInfantryValue() const { return 0; }
+void TechnoClass::gotHijacked() {}
+int TechnoClass::selectNavalTargeting(AbstractClass* target) const { return 0; }
+int TechnoClass::getZAdjustment() const { return 0; }
+ZGradient TechnoClass::GetZGradient() const { return static_cast<ZGradient>(-1); }
+CellStruct* TechnoClass::GetSomeCellStruct() const { return nullptr; }
+void TechnoClass::SetSomeCellStruct(CellStruct* buffer) {}
+CellStruct* TechnoClass::getOccupiedCell(CellStruct* buffer, uint32_t a, uint32_t b) const { return nullptr; }
+CoordStruct* TechnoClass::getTurretCoords(CoordStruct* buffer, uint32_t a) const { return nullptr; }
+uint32_t TechnoClass::getWeaponRangeValue(uint32_t a, uint32_t b) const { return 0; }
+DirStruct* TechnoClass::GetRealFacing(DirStruct* buffer) const { return nullptr; }
+InfantryTypeClass* TechnoClass::GetCrew() const { return nullptr; }
+bool TechnoClass::isInAirAlt() const { return false; }
+int TechnoClass::GetROF(int weapon) const { return 0; }
+int TechnoClass::GetGuardRange(int unknown) const { return 0; }
+bool TechnoClass::canEnterTransport() const { return false; }
+bool TechnoClass::IsRadarVisible(int* out_detection) const { return false; }
+bool TechnoClass::IsSensorVisibleToPlayer() const { return false; }
+bool TechnoClass::IsSensorVisibleToHouse(HouseClass* house) const { return false; }
+bool TechnoClass::IsEngineer() const { return false; }
+void TechnoClass::ProceedToNextPlanningWaypoint() {}
+uint32_t TechnoClass::ScanForTiberium(uint32_t a, uint32_t b, uint32_t c) const { return 0; }
+bool TechnoClass::isPowerOnline() const { return true; }
+void TechnoClass::QueueVoice(int idx_voc) {}
+int TechnoClass::VoiceEnter() { return 0; }
+int TechnoClass::VoiceHarvest() { return 0; }
+int TechnoClass::VoiceSelect() { return 0; }
+int TechnoClass::VoiceCapture() { return 0; }
+int TechnoClass::VoiceMove() { return 0; }
+int TechnoClass::VoiceDeploy() { return 0; }
+int TechnoClass::VoiceAttack(ObjectClass* target) { return 0; }
+bool TechnoClass::ClickedEvent(NetworkEvents event) { return false; }
+bool TechnoClass::ClickedMission(Mission mission, ObjectClass* target, CellClass* target_cell, CellClass* nearest_target_cell) { return false; }
+bool TechnoClass::isUnderEmp() const { return false; }
+bool TechnoClass::isParalyzed() const { return false; }
+bool TechnoClass::canCheer() const { return false; }
+void TechnoClass::Cheer(bool force) {}
+int TechnoClass::GetDefaultSpeed() const { return 0; }
+bool TechnoClass::CanDisguiseAs(AbstractClass* target) const { return false; }
+bool TechnoClass::TargetAndEstimateDamage(uint32_t a, uint32_t b) { return false; }
+uint32_t TechnoClass::getDamageReduction() { return 0; }
+bool TechnoClass::TriggersCellInset(AbstractClass* target) { return false; }
+bool TechnoClass::IsCloseEnough(AbstractClass* target, int weapon_idx) const { return false; }
+bool TechnoClass::IsCloseEnoughToAttackCoords(const CoordStruct& coords) const { return false; }
+uint32_t TechnoClass::getSightRange(uint32_t a) const { return 0; }
+bool TechnoClass::SetOwningHouse(HouseClass* house, bool announce) { return false; }
+void TechnoClass::onHouseChange(uint32_t a, uint32_t b, uint32_t c) {}
+bool TechnoClass::Crash(ObjectClass* killer) { return false; }
+bool TechnoClass::isAreaFire() const { return false; }
+int TechnoClass::isNotSprayAttack() const { return 0; }
+int TechnoClass::canAct() { return 0; }
+int TechnoClass::isNotSprayAttack2() const { return 0; }
+WeaponStruct* TechnoClass::GetDeployWeapon() const { return nullptr; }
+WeaponStruct* TechnoClass::GetTurretWeapon() const { return nullptr; }
+WeaponStruct* TechnoClass::GetWeapon(int weapon_index) const { return nullptr; }
+bool TechnoClass::hasTurret() const { return false; }
+bool TechnoClass::canOccupyFire() const { return false; }
+int TechnoClass::getOccupyRangeBonus() const { return 0; }
+int TechnoClass::getOccupantCount() const { return 0; }
+void TechnoClass::OnFinishRepair() {}
+void TechnoClass::onBridgeRepair() {}
+void TechnoClass::Sensed() {}
+void TechnoClass::onReloadComplete() {}
+CoordStruct* TechnoClass::GetTargetCoords(CoordStruct* pCrd) const { return nullptr; }
+bool TechnoClass::IsNotWarpingIn() const { return false; }
+bool TechnoClass::canChronoShift(uint32_t dwUnk) const { return false; }
+void TechnoClass::DrawActionLines(bool force, uint32_t dwUnk2) {}
+uint32_t TechnoClass::GetDisguiseFlags(uint32_t existingFlags) const { return 0; }
+bool TechnoClass::isClearlyVisibleTo(HouseClass* house) const { return false; }
+void TechnoClass::onSelect(uint32_t a, uint32_t b) {}
+void TechnoClass::DrawHealthBar(Point2D* pLocation, RectangleStruct* pBounds, bool bUnk3) const {}
+void TechnoClass::DrawPipScalePips(Point2D* pLocation, Point2D* pOriginalLocation, RectangleStruct* pBounds) const {}
+void TechnoClass::DrawVeterancyPips(Point2D* pLocation, RectangleStruct* pBounds) const {}
+void TechnoClass::DrawExtraInfo(Point2D const& location, Point2D const& originalLocation, RectangleStruct const& bounds) const {}
+uint32_t TechnoClass::getSight(uint32_t dwUnk) const { return 0; }
+void TechnoClass::UpdateRefinerySmokeSystems() {}
+uint32_t TechnoClass::DisguiseAs(AbstractClass* pTarget) { return 0; }
+void TechnoClass::ClearDisguise() {}
+bool TechnoClass::IsItTimeForIdleActionYet() const { return false; }
+bool TechnoClass::UpdateIdleAction() { return false; }
+void TechnoClass::onDamage(uint32_t dwUnk) {}
+bool TechnoClass::canRecruit(uint32_t dwUnk, uint32_t dwUnk2) { return false; }
+void TechnoClass::onPlacement(uint32_t a, uint32_t b, uint32_t c, uint32_t d) {}
+void TechnoClass::onRadarEvent(uint32_t a) {}
+void TechnoClass::onSpawn() {}
+bool TechnoClass::canSpawn() const { return false; }
+bool TechnoClass::isSpawning() const { return false; }
+int TechnoClass::getSpawnCount() const { return 0; }
+CoordStruct* TechnoClass::getSpawnCoords(CoordStruct* out) { return nullptr; }
+uint32_t TechnoClass::processSpawn() { return 0; }
+bool TechnoClass::canAttackOnTheMove() const { return false; }
+bool TechnoClass::canTarget() const { return false; }
+bool TechnoClass::selectTarget() { return false; }
+void TechnoClass::onTargetChange() {}
+bool TechnoClass::canFire() { return false; }
+int TechnoClass::ApplyIronCurtain() { return 0; }
+int TechnoClass::ReturnToBase() { return 0; }
+int TechnoClass::ReturnToBaseAndReload() { return 0; }
+int TechnoClass::ScatterFromThreat() { return 0; }
+int TechnoClass::ExecuteMissionCommand() { return 0; }
+int TechnoClass::FindNearbyBuildCell() { return -1; }
+int TechnoClass::FindClosestPlacementCell() { return -1; }
+int TechnoClass::GetTurretFacing() const { return 0; }
+void TechnoClass::ComputeTeamAttackPriority() {}
+int TechnoClass::GetAutoFireDirection() const { return 0; }
+int TechnoClass::sub_41B7D0() { return 0; }
+bool TechnoClass::HasOnlyOneGarrisonSlot() const { return false; }
+int TechnoClass::sub_41B840() { return 0; }
+int TechnoClass::sub_41B860() { return 0; }
+int TechnoClass::sub_41B9E0() { return 0; }
+bool TechnoClass::CreateWarheadDamageEffect() { return false; }
+void TechnoClass::sub_41BEF0() {}
+void TechnoClass::vt_entry_428() {}
+int TechnoClass::vt_entry_434() { return 0; }
+int TechnoClass::GetBodyFacing() const { return 0; }
+int TechnoClass::sub_41C640() { return 0; }
+int TechnoClass::sub_41C650() { return 0; }
+int TechnoClass::sub_41C660() { return 0; }
+int TechnoClass::sub_41C670() { return 0; }
+int TechnoClass::sub_41C680() { return 0; }
+int TechnoClass::sub_41C690() { return 0; }
+int TechnoClass::ApplyDamageEffects() { return 0; }
+int TechnoClass::sub_5439080() { return 0; }
+int TechnoClass::RemoveFromDynamicVector() { return 0; }
+void TechnoClass::ComputeTargetAngle() {}
+int TechnoClass::StartOrResumeProduction() { return 0; }
+int TechnoClass::GetTurretScreenPos() const { return 0; }
+void TechnoClass::ProcessMissionDeploy() {}
+int TechnoClass::EvacuateFootprintCells() { return 0; }
+int TechnoClass::MissionStubReturnZero4() { return 0; }
+bool TechnoClass::StubReturnFalse2() { return false; }
+int TechnoClass::sub_546B270() { return 0; }
+int TechnoClass::sub_54722D0() { return 0; }
+int TechnoClass::IndexOf() { return 0; }
+int TechnoClass::CalcFacingFromMatrix() const { return 0; }
+void TechnoClass::CreateTrailParticle() {}
+int TechnoClass::sub_4C2BD0() { return 0; }
+int TechnoClass::UpdateThunk() { return 0; }
+int TechnoClass::GetData() const { return 0; }
+int TechnoClass::sub_54A50F0() { return 0; }
+int TechnoClass::CreatePlanningNode() { return 0; }
+int TechnoClass::GetBuildCost() const { return 0; }
+int TechnoClass::CheckState1() const { return false; }
+int TechnoClass::CheckState2() const { return false; }
+int TechnoClass::StubReturn450() { return 0; }
+void TechnoClass::vt_entry_448() {}
+int TechnoClass::sub_54D28C0() { return 0; }
+int TechnoClass::GetTypeFlag() const { return 0; }
+int TechnoClass::sub_5505180() { return 0; }
+int TechnoClass::FindClosestBuilding() { return -1; }
+int TechnoClass::FindBestMatch() { return -1; }
+int TechnoClass::FindClosestInfantry() { return -1; }
+int TechnoClass::FindClosestUnit() { return -1; }
+int TechnoClass::FindBestMovementDirection() { return -1; }
+int TechnoClass::vt_entry_4A8() { return 0; }
+int TechnoClass::vt_entry_4AC() { return 0; }
+int TechnoClass::vt_entry_4B0() { return 0; }
+int TechnoClass::vt_entry_4B4() { return 0; }
+int TechnoClass::vt_entry_4B8() { return 0; }
+int TechnoClass::vt_entry_4C4() { return 0; }
+int TechnoClass::vt_entry_4C8() { return 0; }
+int TechnoClass::vt_entry_4D0() { return 0; }
+int TechnoClass::GetAnimationValue() const { return 0; }
+int TechnoClass::FindDeployDestination() { return -1; }
+int TechnoClass::sub_550D9C0() { return 0; }
+int TechnoClass::sub_550D9D0() { return 0; }
+int TechnoClass::MapHouseRelationIndex() { return 0; }
+int TechnoClass::GetDamageMultiplier() const { return 0; }
+int TechnoClass::ProcessTarget() { return 0; }
+int TechnoClass::sub_55224F0() { return 0; }
+int TechnoClass::GetDeployCoords() { return 0; }
+int TechnoClass::CanBePermaMC() const { return false; }
+int TechnoClass::GarrisonBuilding() { return 0; }
+int TechnoClass::IsMission27to30() const { return false; }
+int TechnoClass::HandleSpecialAction() { return 0; }
+int TechnoClass::IsEnteringOrCapturingStructure() const { return false; }
+void TechnoClass::CreateDestructionEffect() {}
+int TechnoClass::FindMatchingUnit() { return -1; }
+int TechnoClass::ClearArrays() { return 0; }
+int TechnoClass::ComputeScanRange() const { return 0; }
+int TechnoClass::sub_659470() { return 0; }
+int TechnoClass::sub_659490() { return 0; }
+int TechnoClass::sub_6594A0() { return 0; }
+int TechnoClass::sub_6594C0() { return 0; }
+int TechnoClass::sub_6594E0() { return 0; }
+int TechnoClass::sub_6594F0() { return 0; }
+int TechnoClass::sub_659540() { return 0; }
+int TechnoClass::sub_659550() { return 0; }
+int TechnoClass::ClearScriptPlanningData() { return 0; }
+int TechnoClass::GetTileAnimationData() const { return 0; }
+int TechnoClass::MutateAll() { return 0; }
+int TechnoClass::RefreshDeployOccupierState() { return 0; }
+int TechnoClass::CountPassengers() const { return 0; }
+int TechnoClass::GetValue() const { return 0; }
+int TechnoClass::ComputeTransform() { return 0; }
+int TechnoClass::CanMoveToCell() const { return false; }
+int TechnoClass::CanInitiateSell() const { return false; }
+int TechnoClass::IsNotAircraftOrBuilding() const { return false; }
+int TechnoClass::SelectWeapon() { return 0; }
+int TechnoClass::CanTargetHouse() const { return false; }
+int TechnoClass::CanSelfRepair() { return false; }
+int TechnoClass::Mission_RepairDispatch() { return 0; }
+int TechnoClass::PushNearbyUnits() { return 0; }
+int TechnoClass::SetFocus() { return 0; }
+int TechnoClass::SetHouseFlag() { return 0; }
+int TechnoClass::ProcessAIDecision() { return 0; }
+int TechnoClass::CheckPlayerOwned() const { return false; }
+int TechnoClass::UpdateProdWithSound() { return 0; }
+int TechnoClass::HasActiveParam() const { return false; }
+int TechnoClass::HasOnlyOneGarrisonSlot2() const { return false; }
+int TechnoClass::FindLowestDamage() { return -1; }
+int TechnoClass::ProcessCapture() { return 0; }
+int TechnoClass::GetRangeModifier() const { return 0; }
+int TechnoClass::ShouldScanArea() const { return false; }
+int TechnoClass::IsCloseEnoughToBuilding() const { return false; }
+int TechnoClass::IsCellPassableFor() const { return false; }
+int TechnoClass::IsPlayerCellPassable() const { return false; }
+int TechnoClass::SetMoveDestination() { return 0; }
+int TechnoClass::GetPrimaryTargetOrFallback() const { return 0; }
+int TechnoClass::PickAlternateTarget() { return 0; }
+int TechnoClass::SelectRandomTarget() { return 0; }
+int TechnoClass::GetSecondaryTargetOrFallback() const { return 0; }
+int TechnoClass::SetPositionAnimated() { return 0; }
+int TechnoClass::GetTargetCellCenter() { return 0; }
+int TechnoClass::ComputeSpeedFactor() { return 0; }
+int TechnoClass::ComputeSpeedFactorEx() { return 0; }
+int TechnoClass::CleanupDirection() { return 0; }
+int TechnoClass::GetDeployProgressValue() const { return 0; }
+int TechnoClass::ComputeAverageValue() const { return 0; }
+int TechnoClass::GetGlobalValue() const { return 0; }
+int TechnoClass::SetIdleState() { return 0; }
+int TechnoClass::ComputeAimVector() { return 0; }
+int TechnoClass::RevealAreaConditional() { return 0; }
+int TechnoClass::GetCellCoordsV2() const { return 0; }
+int TechnoClass::Vt46Thunk() { return 0; }
+int TechnoClass::RevealAreaSmall() { return 0; }
+int TechnoClass::ScanForEnemies() { return 0; }
+int TechnoClass::GetTargetCoords() { return 0; }
+int TechnoClass::CalcOffsetFacing() const { return 0; }
+int TechnoClass::ShouldSelfHealOneStep() const { return false; }
+int TechnoClass::ComputeThreatLevel() { return 0; }
+int TechnoClass::CanBeTargeted() const { return false; }
+int TechnoClass::GetCommandTooltip() const { return 0; }
+int TechnoClass::ShouldBeCloaked() const { return false; }
+int TechnoClass::ShouldNotBeCloaked() const { return false; }
+int TechnoClass::SetTargetIfAllowed() { return 0; }
+int TechnoClass::CanReceivePassengers() const { return false; }
+int TechnoClass::GetTarget() const { return 0; }
+int TechnoClass::GetID() const { return 0; }
+int TechnoClass::GetSightRange() const { return 0; }
+int TechnoClass::CheckAndFireAtTarget() { return 0; }
+int TechnoClass::GattlingRateUp_GattlingRateDownReset() { return 0; }
+int TechnoClass::GattlingValueRateDown_GattlingRateDownDelay() { return 0; }
+int TechnoClass::SetMember81() { return 0; }
+int TechnoClass::Deactivate() { return 0; }
+int TechnoClass::Activate() { return 0; }
+int TechnoClass::ActivateEffect() { return 0; }
+int TechnoClass::IronCurtain() { return 0; }
+int TechnoClass::InvulnerabilityIntensity_SetContext() { return 0; }
+int TechnoClass::ResetTimer() { return 0; }
+int TechnoClass::CalcAnimDelay() const { return 0; }
+int TechnoClass::StepAnimFrame() { return 0; }
+int TechnoClass::BeginFiringSequence() { return 0; }
+int TechnoClass::CompleteFactoryProduction() { return 0; }
+int TechnoClass::IsTimerExpired() const { return false; }
+int TechnoClass::GetAudioEntry() const { return 0; }
+int TechnoClass::GetTertiaryTargetOrFallback() const { return 0; }
+int TechnoClass::VoiceAttack() { return 0; }
+int TechnoClass::ResponseMove_Pickup() { return 0; }
+int TechnoClass::Vt170() { return 0; }
+int TechnoClass::CanAttack() const { return false; }
+int TechnoClass::IsDeadOrInactive() const { return false; }
+int TechnoClass::CalculateROF() { return 0; }
+int TechnoClass::GetAmmoCount() const { return 0; }
+int TechnoClass::GetAmmoCount_0() const { return 0; }
+int TechnoClass::SelectAttackWeapon() { return 0; }
+int TechnoClass::GetAverageDamageScore() const { return 0; }
+int TechnoClass::ProcessSpecialUnitDeployCrush() { return 0; }
+int TechnoClass::FireWeaponBurst() { return 0; }
+int TechnoClass::GetWeaponRange(int weapon_index) const { return 0; }
+int TechnoClass::FireWeapon() { return 0; }
+int TechnoClass::CreateFireEffect() { return 0; }
+int TechnoClass::CreateFireBeamEffect() { return 0; }
+int TechnoClass::CreateFiringRadarBlip() { return 0; }
+int TechnoClass::CreateRadarBlip() { return 0; }
+int TechnoClass::GetFiringAngle() const { return 0; }
+int TechnoClass::AssignTarget_SyncLog() { return 0; }
+int TechnoClass::ProcessDeploymentState() { return 0; }
+int TechnoClass::ComputeAudioFalloffDamage() { return 0; }
+int TechnoClass::ComputeCombatDamage() { return 0; }
+int TechnoClass::CheckFireCooldown() const { return false; }
+int TechnoClass::CanDamageTarget() const { return false; }
+int TechnoClass::COMStub_Return0_298() { return 0; }
+int TechnoClass::HasPassengers() const { return false; }
+int TechnoClass::COMStub_Return0_307() { return 0; }
+int TechnoClass::sub_70F040() { return 0; }
+int TechnoClass::ProcessCellClearance() { return 0; }
+int TechnoClass::GetTypeVt40() const { return 0; }
+int TechnoClass::GetMaxSpeed() const { return 0; }
+int TechnoClass::DrainAmmo() { return 0; }
+int TechnoClass::EjectPassengers() { return 0; }
+int TechnoClass::RadarUpdateOn() { return 0; }
+int TechnoClass::RadarUpdateOff() { return 0; }
+int TechnoClass::RevealOwnCell() { return 0; }
+int TechnoClass::ComputeDamage() { return 0; }
+int TechnoClass::GetCostMultiplier() const { return 0; }
+int TechnoClass::IsInRange() const { return false; }
+int TechnoClass::GetCrew() { return 0; }
+int TechnoClass::GetCrew_0() { return 0; }
+int TechnoClass::GetCrewCount() { return 0; }
+int TechnoClass::CheckCellPassable() const { return false; }
+int TechnoClass::CheckCellPassable2() const { return false; }
+int TechnoClass::CheckCellPassable3() const { return false; }
+int TechnoClass::ValidateTarget() const { return false; }
+int TechnoClass::GetBridgeDamageMult() const { return 0; }
+int TechnoClass::CheckAndFireAtTarget2() { return 0; }
+int TechnoClass::EvaluateTarget() { return 0; }
+int TechnoClass::SelectAutoTarget_Start_AU() { return 0; }
+int TechnoClass::CheckTargetLOS() const { return false; }
+int TechnoClass::CheckTargetCell() const { return false; }
+int TechnoClass::CheckPlacementTileMatch() const { return false; }
+int TechnoClass::ComputeScanDistance() const { return 0; }
+int TechnoClass::ComputeTotalPowerDrain() { return 0; }
+int TechnoClass::EvaluateBuildingTarget() { return 0; }
+int TechnoClass::GetBuildAnim() const { return 0; }
+int TechnoClass::IsNotBusy() const { return false; }
+int TechnoClass::EvaluateMission() { return 0; }
+int TechnoClass::GetThreatValue() const { return 0; }
+int TechnoClass::GetThreatValue_0() const { return 0; }
+int TechnoClass::ProcessBorderTower() { return 0; }
+int TechnoClass::HandleCursor() { return 0; }
+int TechnoClass::HandleCursorClick() { return 0; }
+int TechnoClass::ScanAdjacentCells2() { return 0; }
+int TechnoClass::ScanNeighborCells() { return 0; }
+int TechnoClass::IsValidBuildingPlacement() { return false; }
+int TechnoClass::StartEffectAudio() { return 0; }
+int TechnoClass::TransitionEffectState() { return 0; }
+int TechnoClass::Vt279Thunk0() { return 0; }
+int TechnoClass::UpdatePowerDrain() { return 0; }
+int TechnoClass::UpdatePowered() { return 0; }
+int TechnoClass::UpdateState() { return 0; }
+int TechnoClass::UpdateUnitAnimation() { return 0; }
+int TechnoClass::GetInfantryCursorAction() const { return 0; }
+int TechnoClass::GetThreatValueEx() const { return 0; }
+int TechnoClass::ComputeSlopeDifference() { return 0; }
+int TechnoClass::ComputeSlopePenalty() { return 0; }
+int TechnoClass::IsOwnedByHuman() const { return false; }
+int TechnoClass::IsCapturableByPlayer() const { return false; }
+int TechnoClass::IsC4AnimationActive() const { return false; }
+int TechnoClass::CreateDeathAnim() { return 0; }
+int TechnoClass::DispatchPlayerInput() { return 0; }
+int TechnoClass::Deploy() { return 0; }
+int TechnoClass::DeployIntoBuilding() { return 0; }
+int TechnoClass::SpawnInfantryFromBuilding() { return 0; }
+int TechnoClass::CleanupDeploy() { return 0; }
+int TechnoClass::ClearAllTargets() { return 0; }
+int TechnoClass::SelectAITarget() { return 0; }
+int TechnoClass::ReturnCapturedFlag() { return 0; }
+int TechnoClass::AreBuildingFlagsClear() const { return false; }
+int TechnoClass::MarkCellImpassable() { return 0; }
+int TechnoClass::ClearCellImpassable() { return 0; }
+int TechnoClass::CaptureTurret() { return 0; }
+int TechnoClass::TransferSlavedUnit() { return 0; }
+int TechnoClass::TransferTurret() { return 0; }
+int TechnoClass::ApplyObjectEffect() { return 0; }
+int TechnoClass::IsGuardingTarget() const { return false; }
+int TechnoClass::ProcessUnitSelfDestruct() { return 0; }
+int TechnoClass::NotifyTeamOnDestruction() { return 0; }
+int TechnoClass::RespondToDestruction() { return 0; }
+int TechnoClass::GetWaypointCoords() const { return 0; }
+int TechnoClass::Create() { return 0; }
+int TechnoClass::CopyStateFrom() { return 0; }
+int TechnoClass::ScalarDtor() { return 0; }
+int TechnoClass::EnteredOpenTopped() { return 0; }
+int TechnoClass::MarkPassengersAsExited() { return 0; }
+int TechnoClass::ExitedOpenTopped() { return 0; }
+int TechnoClass::GetMember388() const { return 0; }
+int TechnoClass::GetBuildCost2() const { return 0; }
+int TechnoClass::FindBestMatch2() { return -1; }
+int TechnoClass::IsWaypointHidden() const { return false; }
+int TechnoClass::LinkToBridge() { return 0; }
+int TechnoClass::ResetDamageAccumulator() { return 0; }
+int TechnoClass::UpdateBodyTilt() { return 0; }
+int TechnoClass::CheckCliffTransition() const { return false; }
+int TechnoClass::OnEnterCell() { return 0; }
+int TechnoClass::sub_570DC50() { return 0; }
+int TechnoClass::OwnerHasPower() const { return false; }
+int TechnoClass::sub_570DCE0() { return 0; }
+int TechnoClass::sub_570DCF0() { return 0; }
+int TechnoClass::GetPoweredWeaponIndex() const { return 0; }
+int TechnoClass::GetVt252Byte() const { return 0; }
+int TechnoClass::vt_entry_3E8() { return 0; }
+int TechnoClass::SetSpread() { return 0; }
+int TechnoClass::DecCounter() { return 0; }
+int TechnoClass::PlaceAtCell() { return 0; }
+int TechnoClass::SelectVocOrSfx() { return 0; }
+int TechnoClass::Update2() { return 0; }
+int TechnoClass::GetAnimationFlags() const { return 0; }
+int TechnoClass::GetTargetSpeedMultiplier() const { return 0; }
+int TechnoClass::ProcessEnterTransport() { return 0; }
+int TechnoClass::IsCloseEnoughToBuilding2() const { return false; }
+int TechnoClass::IsDeployed() const { return false; }
+int TechnoClass::CheckAdjacencyFlags() const { return false; }
+int TechnoClass::IsProductionChainActive() const { return false; }
+int TechnoClass::HasDeployFlags() const { return false; }
+int TechnoClass::RemoveBuildingFromScripts() { return 0; }
+int TechnoClass::FinishDeploy() { return 0; }
+int TechnoClass::ValidateMoveType() { return 0; }
+int TechnoClass::ComputeSlopePenalty2() { return 0; }
+int TechnoClass::sub_740B10() { return 0; }
+int TechnoClass::CheckRepairNeeded() const { return false; }
+int TechnoClass::EnterRepairBuilding() { return 0; }
+int TechnoClass::CheckUnitFireConstraints() const { return false; }
+int TechnoClass::sub_741490() { return 0; }
+int TechnoClass::sub_7441B0() { return 0; }
+int TechnoClass::sub_744180() { return 0; }
+int TechnoClass::sub_744210() { return 0; }
+int TechnoClass::sub_744270() { return 0; }
+int TechnoClass::sub_744720() { return 0; }
+int TechnoClass::sub_7440B0() { return 0; }
+int TechnoClass::sub_744100() { return 0; }
+int TechnoClass::sub_743190() { return 0; }
+int TechnoClass::sub_746400() { return 0; }
+int TechnoClass::sub_746420() { return 0; }
+int TechnoClass::sub_7464E0() { return 0; }
+int TechnoClass::sub_7465B0() { return 0; }
+int TechnoClass::sub_7465F0() { return 0; }
+int TechnoClass::sub_7463A0() { return 0; }
+int TechnoClass::sub_746670() { return 0; }
+int TechnoClass::sub_746720() { return 0; }
+int TechnoClass::sub_746750() { return 0; }
+int TechnoClass::sub_746B20() { return 0; }
+int TechnoClass::sub_746C90() { return 0; }
+int TechnoClass::sub_746CD0() { return 0; }
+int TechnoClass::sub_746D00() { return 0; }
+int TechnoClass::sub_746D60() { return 0; }
+int TechnoClass::sub_746DB0() { return 0; }
+int TechnoClass::sub_746E30() { return 0; }
+int TechnoClass::sub_746EA0() { return 0; }
+int TechnoClass::sub_746100() { return 0; }
+int TechnoClass::sub_746F80() { return 0; }
+int TechnoClass::sub_70F850() { return 0; }
+int TechnoClass::sub_70FB50() { return 0; }
+int TechnoClass::sub_70FC90() { return 0; }
+int TechnoClass::sub_70FD70() { return 0; }
+int TechnoClass::sub_70FEE0() { return 0; }
+int TechnoClass::sub_710000() { return 0; }
+int TechnoClass::sub_710470() { return 0; }
+int TechnoClass::sub_7104A0() { return 0; }
+int TechnoClass::sub_7104C0() { return 0; }
+int TechnoClass::sub_7106E0() { return 0; }
+int TechnoClass::sub_710F70() { return 0; }
+int TechnoClass::sub_711E00() { return 0; }
+int TechnoClass::sub_711EB0() { return 0; }
+int TechnoClass::sub_73EFC0() { return 0; }
+int TechnoClass::sub_7393C0() { return 0; }
+int TechnoClass::sub_737BA0() { return 0; }
+int TechnoClass::sub_738910() { return 0; }
+int TechnoClass::sub_732050() { return 0; }
+int TechnoClass::sub_732580() { return 0; }
+int TechnoClass::sub_731CF0() { return 0; }
+int TechnoClass::sub_729AA0() { return 0; }
+int TechnoClass::sub_729480() { return 0; }
+int TechnoClass::sub_71F010() { return 0; }
+int TechnoClass::sub_71A130() { return 0; }
+int TechnoClass::CalculateDamage() { return 0; }
+int TechnoClass::UpdateBodyTilt2() { return 0; }
+int TechnoClass::GattlingRateUp_GattlingRateDownReset2() { return 0; }
+int TechnoClass::ApplySplashDamageToNeighbors() { return 0; }
+int TechnoClass::ReceiveDamage_Shield() { return 0; }
+int TechnoClass::sub_70B1D0() { return 0; }
+int TechnoClass::sub_70B280() { return 0; }
+int TechnoClass::sub_70B570() { return 0; }
+int TechnoClass::sub_70BCB0() { return 0; }
+int TechnoClass::sub_70BE80() { return 0; }
+int TechnoClass::sub_70D1D0() { return 0; }
+int TechnoClass::sub_70D990() { return 0; }
+int TechnoClass::sub_70DE70() { return 0; }
+int TechnoClass::sub_70DE00() { return 0; }
+int TechnoClass::sub_70DD20() { return 0; }
+int TechnoClass::sub_70DD50() { return 0; }
+int TechnoClass::sub_70DDD0() { return 0; }
+int TechnoClass::sub_70DE40() { return 0; }
+int TechnoClass::sub_70E120() { return 0; }
+int TechnoClass::sub_70E140() { return 0; }
+int TechnoClass::sub_70E1A0() { return 0; }
+int TechnoClass::sub_70E280() { return 0; }
+int TechnoClass::sub_70E2B0() { return 0; }
+int TechnoClass::sub_70E300() { return 0; }
+int TechnoClass::sub_70E380() { return 0; }
+int TechnoClass::sub_70E4B0() { return 0; }
+int TechnoClass::sub_70EC0A() { return 0; }
+int TechnoClass::sub_70ED10() { return 0; }
+int TechnoClass::sub_70ED80() { return 0; }
+int TechnoClass::sub_70EE30() { return 0; }
+int TechnoClass::sub_70EFD0() { return 0; }
+int TechnoClass::sub_70EF00() { return 0; }
+int TechnoClass::sub_70F010() { return 0; }
+int TechnoClass::sub_70F000() { return 0; }
+int TechnoClass::sub_70ECE0() { return 0; }
+int TechnoClass::sub_70CCC0() { return 0; }
+int TechnoClass::sub_70CC90() { return 0; }
+int TechnoClass::sub_70CD10() { return 0; }
+int TechnoClass::sub_70D190() { return 0; }
+int TechnoClass::sub_70D460() { return 0; }
+int TechnoClass::sub_70D590() { return 0; }
+int TechnoClass::sub_70D670() { return 0; }
+int TechnoClass::sub_70D690() { return 0; }
+int TechnoClass::sub_70D8F0() { return 0; }
+int TechnoClass::sub_70DD90() { return 0; }
+int TechnoClass::sub_70BE50() { return 0; }
+int TechnoClass::sub_70C620() { return 0; }
+int TechnoClass::sub_70C610() { return 0; }
+int TechnoClass::GetIonCannonValue(AIDifficulty difficulty) const { return 0; }
+DirStruct TechnoClass::getFacing() const { DirStruct ret; getFacing(&ret); return ret; }
+DirStruct TechnoClass::GetRealFacing() const { DirStruct ret; GetRealFacing(&ret); return ret; }
+
+} // namespace game
+} // namespace ra2

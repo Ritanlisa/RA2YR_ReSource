@@ -24,15 +24,15 @@ class FoggedObjectClass : public AbstractClass
 public:
     static constexpr AbstractType kObjectTypeId = AbstractType::FoggedObject;
 
-    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return E_NOTIMPL; }
+    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override;
 
-    virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }
-    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { return S_OK; }
+    virtual HRESULT __stdcall Load(IStream* stream) override;
+    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
 
     virtual ~FoggedObjectClass() override = default;
 
-    virtual AbstractType __stdcall whatAmI() const override { return AbstractType::FoggedObject; }
-    virtual int objectSize() const override { return sizeof(*this); }
+    virtual AbstractType __stdcall whatAmI() const override;
+    virtual int objectSize() const override;
 
     int32_t      LastSight;
     HouseClass*  House;
@@ -40,7 +40,7 @@ public:
 
 protected:
     FoggedObjectClass() noexcept;
-    explicit FoggedObjectClass(noinit_t) noexcept {}
+    explicit FoggedObjectClass(noinit_t) noexcept;
 };
 
 } // namespace gamemd

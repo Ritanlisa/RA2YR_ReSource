@@ -133,3 +133,18 @@ void UpdateDeferredLightSurfaces(void* surface)
 }
 
 } // namespace gamemd
+
+#include "entity/particle.hpp"
+
+namespace gamemd {
+
+// --- ParticleClass ---
+
+HRESULT __stdcall ParticleClass::GetClassID(CLSID* pClassID) { return E_NOTIMPL; }
+HRESULT __stdcall ParticleClass::Load(IStream* pStm) { return S_OK; }
+HRESULT __stdcall ParticleClass::Save(IStream* pStm, BOOL fClearDirty) { return S_OK; }
+AbstractType __stdcall ParticleClass::whatAmI() const { return kObjectTypeId; }
+int ParticleClass::objectSize() const { return sizeof(ParticleClass); }
+int ParticleClass::onParticleExpired() { return 0; }
+
+} // namespace gamemd

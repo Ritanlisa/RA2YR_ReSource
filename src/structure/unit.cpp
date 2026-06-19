@@ -451,3 +451,19 @@ void UnitClass::DrawPlacementPreview(Point2D* screen_pos, RectangleStruct* bound
 }
 
 } // namespace gamemd
+
+#include "structure/unit.hpp"
+
+namespace gamemd {
+
+// --- UnitClass ---
+
+HRESULT __stdcall UnitClass::GetClassID(CLSID* pClassID) { return E_NOTIMPL; }
+HRESULT __stdcall UnitClass::Load(IStream* pStm) { return S_OK; }
+HRESULT __stdcall UnitClass::Save(IStream* pStm, BOOL fClearDirty) { return S_OK; }
+AbstractType __stdcall UnitClass::whatAmI() const { return kObjectTypeId; }
+int UnitClass::objectSize() const { return sizeof(UnitClass); }
+void UnitClass::DrawAsVXL(Point2D* coords, RectangleStruct* bounding_rect, uint32_t dwUnk7, uint32_t dwUnk8) {}
+void UnitClass::DrawAsSHP(Point2D* coords, RectangleStruct* bounding_rect, uint32_t dwUnk7, uint32_t dwUnk8) {}
+
+} // namespace gamemd

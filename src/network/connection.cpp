@@ -219,3 +219,38 @@ bool NullModemClass::DetectModem() { return false; }
 bool NullModemClass::Negotiate() { return false; }
 
 } // namespace gamemd
+
+#include "network/connection.hpp"
+
+namespace gamemd {
+
+// --- ConnectionClass ---
+
+HRESULT __stdcall ConnectionClass::QueryInterface(const IID&, void**) { return E_NOINTERFACE; }
+ULONG   __stdcall ConnectionClass::AddRef() { return 1; }
+ULONG   __stdcall ConnectionClass::Release() { return 1; }
+bool ConnectionClass::Open() { return false; }
+void ConnectionClass::Close() {}
+bool ConnectionClass::IsConnected() const { return false; }
+bool ConnectionClass::Send(const uint8_t*, int32_t) { return false; }
+int32_t ConnectionClass::Receive(uint8_t*, int32_t) { return 0; }
+int32_t ConnectionClass::GetLatency() const { return 0; }
+const char* ConnectionClass::GetAddress() const { return nullptr; }
+void ConnectionClass::OnMessageReceived(const NetworkEvent&) {}
+void ConnectionClass::Flush() {}
+bool ConnectionClass::IsHost() const { return false; }
+
+// --- IPXConnClass ---
+
+bool IPXConnClass::Open() { return false; }
+HRESULT __stdcall IPXConnClass::QueryInterface(const IID&, void**) { return E_NOINTERFACE; }
+
+// --- ModemConnectionClass ---
+
+bool ModemConnectionClass::Open() { return false; }
+
+// --- NullModemClass ---
+
+bool NullModemClass::Open() { return false; }
+
+} // namespace gamemd

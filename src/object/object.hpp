@@ -40,7 +40,7 @@ public:
     void Start(int32_t soundIndex);  // 0x405B90
     void Pause();         // 0x405C80
     void Resume();        // 0x405CA0
-    static bool IsSoundEnabled() { return false; } // IDA 0x407000
+    static bool IsSoundEnabled(); // IDA 0x407000
 };
 
 // ============================================================================
@@ -99,7 +99,7 @@ public:
     // [38] 0x5F42C0 AbstractClass::COMStub_Return0_38 (return false stub)
     virtual bool CanBeSold() const;
     // [39] 0x5F42D0 AbstractClass::COMStub_Return0_39 (return false stub)
-    virtual bool IsActive() const;
+    virtual bool IsActive() const;  // 0x5f6690
     // [40] 0x5F42E0 AbstractClass::COMStub_Return0_40 (return false stub)
     virtual bool IsControllable() const;
 
@@ -131,7 +131,7 @@ public:
 
     // --- Lifecycle ---
     // [53] 0x5F4D30 ObjectClass::Undeploy (Limbo)
-    virtual bool Remove();
+    virtual bool Remove();  // 0x5f44a0
     // [54] 0x5F4EC0 ObjectClass::Deploy (Unlimbo)
     virtual bool Put(const CoordStruct& coords, unsigned int face_dir);
     // [55] 0x5F5280 ObjectClass::Destroy2 (Disappear)
@@ -179,13 +179,13 @@ public:
     // [73] 0x5F5850 ObjectClass::UpdateProductionDisplay (UpdatePlacement)
     virtual bool UpdatePlacement(int placement_type) = 0;
     // [74] 0x5F4730 ObjectClass::GetPlacementScreenRect
-    virtual RectangleStruct* getBoundsRect(RectangleStruct* out) const = 0;
+    virtual RectangleStruct* getBoundsRect(RectangleStruct* out) const = 0;  // 0x5f4870
     // [75] 0x5F4870 ObjectClass::GetBoundsRect
     virtual RectangleStruct* getBoundsRectMut(RectangleStruct* out) = 0;
     // [76] 0x41BE80 AircraftClass::CheckStateFlag
     virtual void DrawRadialIndicator(uint32_t unknown) = 0;
     // [77] 0x5F4D10 ObjectClass::MarkForRedraw
-    virtual void MarkForRedraw();
+    virtual void MarkForRedraw();  // 0x5f4d10
 
     // --- Selection ---
     // [78] 0x5F6C30 ObjectClass::IsPlayerOwnedAndCheck
@@ -193,7 +193,7 @@ public:
     // [79] 0x5F6C70 AbstractClass::COMStub_79
     virtual bool CanBeSelectedNow() const;
     // [80] 0x5F4360 AbstractClass::COMStub_80
-    virtual bool spawnInfantry(uint32_t a, uint32_t b, uint32_t c, uint32_t d) = 0;
+    virtual bool spawnInfantry(uint32_t a, uint32_t b, uint32_t c, uint32_t d) = 0;  // 0x4d7d50
     // [81] 0x5F4350 AbstractClass::COMStub_81
     virtual bool ClickedAction(Action action, ObjectClass* target, bool unknown) = 0;
 
@@ -222,7 +222,7 @@ public:
     virtual DamageState ReceiveDamage(int* damage, int distance_from_epicenter, WarheadTypeClass* wh,
         ObjectClass* attacker, bool ignore_defenses, bool prevent_passenger_escape, HouseClass* attacking_house);
     // [92] 0x4264A0 AbstractClass::COMStub_Return0_92 (stub retn)
-    virtual void Destroy();
+    virtual void Destroy();  // 0x5f65f0
     // [93] 0x5F43A0 AbstractClass::COMStub_Return0_93
     virtual void Scatter(const CoordStruct& coords, bool ignore_mission, bool ignore_destination);
     // [94] 0x5F43B0 AircraftClass::StubReturnFalse3
@@ -266,7 +266,7 @@ public:
     // [110] 0x41BEA0 ObjectClass::GetCellCoords_Alt
     virtual CellStruct* GetMapCoords(CellStruct* out) const = 0;
     // [111] 0x5F6960 ObjectClass::GetCellCoords
-    virtual CellClass* GetCell() const = 0;
+    virtual CellClass* GetCell() const = 0;  // 0x5f6a10
     // [112] 0x5F69C0 ObjectClass::CoordToCell
     virtual CellStruct* GetMapCoordsAgain(CellStruct* out) const = 0;
     // [113] 0x5F6A10 ObjectClass::GetCell
@@ -274,7 +274,7 @@ public:
 
     // --- Height / Z ---
     // [114] 0x5F5F40 ObjectClass::GetZAboveGround
-    virtual int GetHeight() const;
+    virtual int GetHeight() const;  // 0x556630
     // [115] 0x5F5FA0 ObjectClass::SetZ
     virtual void SetHeight(uint32_t height);
     // [116] 0x5F5F30 ObjectClass::GetMember41

@@ -119,3 +119,14 @@ LRESULT CALLBACK BinkPlayerControl::WindowProc(HWND hWnd, UINT msg, WPARAM wPara
 }
 
 } // namespace gamemd
+
+#include "render/bink_control.hpp"
+
+namespace gamemd {
+
+// --- BinkPlayerControl ---
+
+bool BinkPlayerControl::IsPlaying() const { return playing; }
+BinkMovieHandle* BinkPlayerControl::Movie() { return movie.get(); }
+
+} // namespace gamemd

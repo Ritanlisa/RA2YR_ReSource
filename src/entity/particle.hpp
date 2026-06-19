@@ -23,19 +23,19 @@ class ParticleClass : public ra2::game::ObjectClass
 public:
     static constexpr AbstractType kObjectTypeId = AbstractType::Particle;
 
-    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override { return E_NOTIMPL; }
-    virtual HRESULT __stdcall Load(IStream* pStm) override { return S_OK; }
-    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override { return S_OK; }
+    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override;
+    virtual HRESULT __stdcall Load(IStream* pStm) override;
+    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;
 
     virtual ~ParticleClass() override = default;
 
-    virtual AbstractType __stdcall whatAmI() const override { return kObjectTypeId; }
-    virtual int objectSize() const override { return sizeof(ParticleClass); }
+    virtual AbstractType __stdcall whatAmI() const override;
+    virtual int objectSize() const override;
 
-    virtual int onParticleExpired() { return 0; }
+    virtual int onParticleExpired();
 
-    void DrawParticle(void* surface, int draw_x, int draw_y);
-    bool CheckDrawFlags(int flags) const;
+    void DrawParticle(void* surface, int draw_x, int draw_y);  // 0x62cec0
+    bool CheckDrawFlags(int flags) const;  // 0x62d710
 
     ParticleTypeClass*    Type;
     uint8_t               ParticleClass_field_B0;

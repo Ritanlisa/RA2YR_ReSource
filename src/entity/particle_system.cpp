@@ -36,3 +36,17 @@ ParticleSystemClass::ParticleSystemClass(ParticleSystemTypeClass* pType) noexcep
 }
 
 } // namespace gamemd
+
+#include "entity/particle_system.hpp"
+
+namespace gamemd {
+
+// --- ParticleSystemClass ---
+
+HRESULT __stdcall ParticleSystemClass::GetClassID(CLSID* pClassID) { return E_NOTIMPL; }
+HRESULT __stdcall ParticleSystemClass::Load(IStream* pStm) { return S_OK; }
+HRESULT __stdcall ParticleSystemClass::Save(IStream* pStm, BOOL fClearDirty) { return S_OK; }
+AbstractType __stdcall ParticleSystemClass::whatAmI() const { return kObjectTypeId; }
+int ParticleSystemClass::objectSize() const { return sizeof(ParticleSystemClass); }
+
+} // namespace gamemd

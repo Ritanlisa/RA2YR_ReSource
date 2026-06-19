@@ -103,3 +103,17 @@ WaveClass::WaveClass(TechnoClass* pTarget, WaveType waveType,
 }
 
 } // namespace gamemd
+
+#include "entity/wave.hpp"
+
+namespace gamemd {
+
+// --- WaveClass ---
+
+HRESULT __stdcall WaveClass::Load(IStream* pStm) { return S_OK; }
+HRESULT __stdcall WaveClass::Save(IStream* pStm, BOOL fClearDirty) { return S_OK; }
+HRESULT __stdcall WaveClass::GetClassID(CLSID* pClassID) { return E_NOTIMPL; }
+AbstractType __stdcall WaveClass::whatAmI() const { return kObjectTypeId; }
+int WaveClass::objectSize() const { return sizeof(WaveClass); }
+
+} // namespace gamemd

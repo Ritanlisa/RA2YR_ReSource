@@ -64,8 +64,8 @@ struct WeaponStruct
         , TurretLocked(false)
     {}
 
-    bool operator==(const WeaponStruct& rhs) const { return false; }
-    bool operator!=(const WeaponStruct& rhs) const { return !(*this == rhs); }
+    bool operator==(const WeaponStruct& rhs) const;
+    bool operator!=(const WeaponStruct& rhs) const;
 };
 
 class TechnoTypeClass : public ObjectTypeClass
@@ -78,34 +78,34 @@ public:
     static TechnoTypeClass* Find(const char* pID);
     static int FindIndex(const char* pID);
 
-    virtual HRESULT __stdcall Load(IStream* pStm) override { return S_OK; }
-    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override { return S_OK; }
-    virtual HRESULT __stdcall GetSizeMax(ULARGE_INTEGER* pcbSize) override { return E_NOTIMPL; }
+    virtual HRESULT __stdcall Load(IStream* pStm) override;
+    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;
+    virtual HRESULT __stdcall GetSizeMax(ULARGE_INTEGER* pcbSize) override;
 
     virtual ~TechnoTypeClass() = default;  // 0x711ae0 (as DTOR)
 
-    virtual bool onTypeLoaded() { return false; }
-    virtual bool CanAttackMove() const { return false; }
-    virtual bool CanCreateHere(const CellStruct& mapCoords, HouseClass* pOwner) const { return false; }
-    virtual int GetCost() const { return 0; }
-    virtual int GetRepairStepCost() const { return 0; }
-    virtual int GetRepairStep() const { return 0; }
-    virtual int getRefund(HouseClass* pHouse, bool bUnk) const { return 0; }
-    virtual int GetFlightLevel() const { return 0; }
+    virtual bool onTypeLoaded();
+    virtual bool CanAttackMove() const;
+    virtual bool CanCreateHere(const CellStruct& mapCoords, HouseClass* pOwner) const;
+    virtual int GetCost() const;
+    virtual int GetRepairStepCost() const;
+    virtual int GetRepairStep() const;
+    virtual int getRefund(HouseClass* pHouse, bool bUnk) const;
+    virtual int GetFlightLevel() const;
 
     static TechnoTypeClass* GetByTypeAndIndex(AbstractType abs, int index);  // 0x48dcd0
 
-    bool HasMultipleTurrets() const { return this->TurretCount > 0; }
+    bool HasMultipleTurrets() const;
 
     CoordStruct* GetParticleSysOffset(CoordStruct* pBuffer) const;
-    CoordStruct GetParticleSysOffset() const { CoordStruct buffer; GetParticleSysOffset(&buffer); return buffer; }
+    CoordStruct GetParticleSysOffset() const;
 
     bool InOwners(DWORD bitHouseType) const { return (this->GetOwners() & bitHouseType) != 0; }
     bool InRequiredHouses(DWORD bitHouseType) const;
     bool InForbiddenHouses(DWORD bitHouseType) const;
 
-    WeaponStruct& GetWeapon(size_t index, bool elite) { return elite ? this->EliteWeapon[index] : this->Weapon[index]; }
-    const WeaponStruct& GetWeapon(size_t index, bool elite) const { return elite ? this->EliteWeapon[index] : this->Weapon[index]; }
+    WeaponStruct& GetWeapon(size_t index, bool elite);
+    const WeaponStruct& GetWeapon(size_t index, bool elite) const;
 
     TechnoTypeClass(const char* id, SpeedType speedtype) noexcept;  // 0x711840 (as Construct)
 

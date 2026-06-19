@@ -165,7 +165,7 @@ Max Concurrent: 2 (Wave 1)
 
   **Commit**: `feat(tools): address annotation auto-fix + safety backup`
 
-- [ ] 3. 修复 .hpp 地址注释
+- [x] 3. 修复 .hpp 地址注释
 
   **What to do**:
   - 运行 `python tools/normalize_addresses.py --fix` 对所有 src/**/*.hpp
@@ -181,7 +181,7 @@ Max Concurrent: 2 (Wave 1)
 
     **Commit**: `style: normalize address annotations in .hpp files`
 
-- [ ] 4. 分离 .hpp 中的声明与实现
+- [x] 4. 分离 .hpp 中的声明与实现
 
   **What to do**:
   - 扫描 .hpp，找到带 `{}` 函数体的内联实现
@@ -193,7 +193,7 @@ Max Concurrent: 2 (Wave 1)
 
   **Commit**: `refactor: separate inline impl from .hpp declarations`
 
-- [ ] 5. 补充缺失地址 — 为无地址的函数声明添加注释
+- [x] 5. 补充缺失地址 — 为无地址的函数声明添加注释
 
   **What to do**:
   - 扫描所有 src/**/*.hpp，提取每个函数声明（类名 + 方法名）
@@ -208,7 +208,7 @@ Max Concurrent: 2 (Wave 1)
 
   **Commit**: `feat: add address annotations to all function declarations`
 
-- [ ] 6. 清理 .hpp 中的 REVERSE 宏
+- [x] 6. 清理 .hpp 中的 REVERSE 宏
 
   **What to do**:
   - 搜索所有 .hpp 文件中的 REVERSE 宏
@@ -221,7 +221,7 @@ Max Concurrent: 2 (Wave 1)
 
   **Commit**: `style: remove REVERSE macros from .hpp files`
 
-- [ ] 7. 地址匹配 + 更新 functions.json
+- [x] 7. 地址匹配 + 更新 functions.json
 
   **What to do**:
   - 实现 `tools/normalize_addresses.py` 的 `--match` 模式

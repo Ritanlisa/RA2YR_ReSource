@@ -39,10 +39,10 @@ class Checksummer;
 class IPersistStream : IUnknown {
 public:
     virtual HRESULT __stdcall GetClassID(CLSID* class_id) = 0;
-    virtual HRESULT __stdcall IsDirty() = 0;
+    virtual HRESULT __stdcall IsDirty() = 0;  // 0x7099d0
     virtual HRESULT __stdcall Load(IStream* stream) = 0;
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) = 0;
-    virtual HRESULT __stdcall GetSizeMax(ULARGE_INTEGER* size) = 0;
+    virtual HRESULT __stdcall GetSizeMax(ULARGE_INTEGER* size) = 0;  // 0x70c250
 };
 
 class IRTTITypeInfo : IUnknown {
@@ -74,8 +74,8 @@ public:
     static constexpr AbstractType kObjectTypeId = static_cast<AbstractType>(52);
 
     // --- IPersistStream (vtable[0]) ---
-    virtual HRESULT __stdcall QueryInterface(const IID& iid, void** ppv) override;
-    virtual ULONG   __stdcall AddRef() override;
+    virtual HRESULT __stdcall QueryInterface(const IID& iid, void** ppv) override;  // 0x410260
+    virtual ULONG   __stdcall AddRef() override;  // 0x464ac0
     virtual ULONG   __stdcall Release() override;
     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override;
     virtual HRESULT __stdcall IsDirty() override;
@@ -84,15 +84,15 @@ public:
     virtual HRESULT __stdcall GetSizeMax(ULARGE_INTEGER* size) override;
 
     // --- IRTTITypeInfo (vtable[1]) ---
-    virtual AbstractType __stdcall whatAmI() const override { return kObjectTypeId; }
-    virtual int __stdcall fetchId() const override { return 0; }
+    virtual AbstractType __stdcall whatAmI() const override;
+    virtual int __stdcall fetchId() const override;
     virtual void __stdcall createId() override;
 
     // --- INoticeSink (vtable[2]) ---
-    virtual bool __stdcall onNotice(unsigned long event) override { return false; }
+    virtual bool __stdcall onNotice(unsigned long event) override;
 
     // --- INoticeSource (vtable[3]) ---
-    virtual void __stdcall notifySinks() override {}
+    virtual void __stdcall notifySinks() override;
 
     // --- AbstractClass custom virtuals (vtable[0] entries 8+) ---
     // IDA: vtable[0][8]  = COMStub_8    (0x4105A0)
@@ -105,26 +105,26 @@ public:
     // IDA: vtable[0][22] = GetCoords (0x410540)
     virtual ~AbstractClass() = default;
 
-    virtual void initialize() {}
-    virtual void pointerExpired(AbstractClass* ptr, bool removed) {}
-    virtual int objectSize() const { return 0; }
-    virtual void calculateChecksum(Checksummer& checksum) const {}
-    virtual int owningHouseIndex() const { return -1; }
-    virtual HouseClass* owningHouse() const { return nullptr; }
-    virtual int arrayIndex() const { return -1; }
-    virtual bool isDead() const { return false; }
+    virtual void initialize();  // 0x438e70
+    virtual void pointerExpired(AbstractClass* ptr, bool removed);
+    virtual int objectSize() const;
+    virtual void calculateChecksum(Checksummer& checksum) const;
+    virtual int owningHouseIndex() const;
+    virtual HouseClass* owningHouse() const;
+    virtual int arrayIndex() const;
+    virtual bool isDead() const;
     virtual CoordStruct* fetchCoordinatesHere(CoordStruct* out) const;
-    virtual CoordStruct* fetchDestination(CoordStruct* out, TechnoClass* docker = nullptr) const { return nullptr; }
-    virtual bool isOnGround() const { return false; }
-    virtual bool isAirborne() const { return false; }
-    virtual CoordStruct* fetchAlternateCoordinates(CoordStruct* out) const { return nullptr; }
-    virtual void updateLogic() {}
+    virtual CoordStruct* fetchDestination(CoordStruct* out, TechnoClass* docker = nullptr) const;
+    virtual bool isOnGround() const;
+    virtual bool isAirborne() const;
+    virtual CoordStruct* fetchAlternateCoordinates(CoordStruct* out) const;
+    virtual void updateLogic();
 
-    CoordStruct fetchCoordinatesHere() const { CoordStruct crd; fetchCoordinatesHere(&crd); return crd; }
-    CoordStruct fetchDestination(TechnoClass* docker = nullptr) const { CoordStruct crd; fetchDestination(&crd, docker); return crd; }
-    CoordStruct fetchAlternateCoordinates() const { CoordStruct crd; fetchAlternateCoordinates(&crd); return crd; }
+    CoordStruct fetchCoordinatesHere() const;
+    CoordStruct fetchDestination(TechnoClass* docker = nullptr) const;
+    CoordStruct fetchAlternateCoordinates() const;
 
-    bool operator<(const AbstractClass& rhs) const { return uniqueId < rhs.uniqueId; }
+    bool operator<(const AbstractClass& rhs) const;
 
     // IDA ctor confirmed offsets:
     uint32_t    uniqueId;         // +0x10, init = -1 (0xFFFFFFFF)

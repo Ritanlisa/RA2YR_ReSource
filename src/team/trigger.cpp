@@ -362,3 +362,37 @@ bool TriggerTypeClass::RemoveEvent(TEventClass* event)
 }
 
 } // namespace gamemd
+
+#include "team/trigger.hpp"
+
+namespace gamemd {
+
+// --- TriggerClass ---
+
+HRESULT __stdcall TriggerClass::GetClassID(CLSID* class_id) { return 0; }
+HRESULT __stdcall TriggerClass::Load(IStream* stream) { return 0; }
+HRESULT __stdcall TriggerClass::Save(IStream* stream, int clear_dirty) { return 0; }
+void TriggerClass::pointerExpired(AbstractClass* ptr, bool removed) {}
+AbstractType __stdcall TriggerClass::whatAmI() const { return AbstractType::Trigger; }
+int TriggerClass::objectSize() const { return 0; }
+void TriggerClass::calculateChecksum(void* checksum) const {}
+void TriggerClass::MarkEventAsOccured(int idx) { occuredEvents |= (1u << idx); }
+void TriggerClass::MarkEventAsNotOccured(int idx) { occuredEvents &= ~(1u << idx); }
+bool TriggerClass::HasEventOccured(int idx) const { return (occuredEvents & (1u << idx)) != 0u; }
+bool TriggerClass::HasBeenDestroyed() const { return destroyed; }
+void TriggerClass::SetHouse(HouseClass* house) { house = house; }
+HouseClass* TriggerClass::GetHouse() const { return house; }
+void TriggerClass::Enable() { enabled = true; ResetTimers(); }
+void TriggerClass::Disable() { enabled = false; }
+
+// --- TriggerTypeClass ---
+
+HRESULT __stdcall TriggerTypeClass::GetClassID(CLSID* class_id) { return 0; }
+HRESULT __stdcall TriggerTypeClass::Load(IStream* stream) { return 0; }
+HRESULT __stdcall TriggerTypeClass::Save(IStream* stream, int clear_dirty) { return 0; }
+void TriggerTypeClass::pointerExpired(AbstractClass* ptr, bool removed) {}
+AbstractType __stdcall TriggerTypeClass::whatAmI() const { return AbstractType::TriggerType; }
+int TriggerTypeClass::objectSize() const { return 0; }
+void TriggerTypeClass::calculateChecksum(void* checksum) const {}
+
+} // namespace gamemd

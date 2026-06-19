@@ -20,11 +20,11 @@ public:
 
     static LRESULT CALLBACK WindowProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam, UINT_PTR uIdSubclass, DWORD_PTR dwRefData);
 
-    bool IsPlaying() const { return playing; }
+    bool IsPlaying() const;
     int  GetWidth()  const { return movie ? movie->GetWidth() : 0; }
     int  GetHeight() const { return movie ? movie->GetHeight() : 0; }
 
-    BinkMovieHandle* Movie() { return movie.get(); }
+    BinkMovieHandle* Movie();
 
 private:
     BinkPlayerControl() = default;

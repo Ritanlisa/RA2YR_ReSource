@@ -739,3 +739,17 @@ void InfantryClass::DrawShadow(Point2D* screen_pos, RectangleStruct* bounds) con
 }
 
 } // namespace gamemd
+
+#include "structure/infantry.hpp"
+
+namespace gamemd {
+
+// --- InfantryClass ---
+
+HRESULT __stdcall InfantryClass::GetClassID(CLSID* pClassID) { return E_NOTIMPL; }
+AbstractType __stdcall InfantryClass::whatAmI() const { return kObjectTypeId; }
+int InfantryClass::objectSize() const { return sizeof(InfantryClass); }
+int InfantryClass::IsDeployed() const { return 0; }
+bool InfantryClass::PlayAnim(Sequence index, bool force, bool randomStartFrame) { return false; }
+
+} // namespace gamemd

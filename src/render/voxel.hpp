@@ -39,7 +39,7 @@ class VoxelAnimTypeClass;
 
 struct VoxLib
 {
-    void Start();
+    void Start();  // 0x7cd80f
     bool Loaded();
     void Clear();
     void InitLimits(
@@ -113,13 +113,13 @@ public:
 
     static DynamicVectorClass<VoxelAnimTypeClass*>* Array;
 
-    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return E_NOTIMPL; }
+    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override;
 
-    virtual AbstractType __stdcall WhatAmI() const override { return AbstractType::VoxelAnimType; }
-    virtual int Size() const override { return sizeof(*this); }
+    virtual AbstractType __stdcall WhatAmI() const override;
+    virtual int Size() const override;
 
-    virtual bool SpawnAtMapCoords(CellStruct* coords, HouseClass* owner) { return false; }
-    virtual ObjectClass* CreateObject(HouseClass* owner) override { return nullptr; }
+    virtual bool SpawnAtMapCoords(CellStruct* coords, HouseClass* owner);
+    virtual ObjectClass* CreateObject(HouseClass* owner) override;
 
     virtual ~VoxelAnimTypeClass() override = default;
 
@@ -153,7 +153,7 @@ public:
 
 protected:
     VoxelAnimTypeClass() = default;
-    explicit VoxelAnimTypeClass(noinit_t) noexcept {}
+    explicit VoxelAnimTypeClass(noinit_t) noexcept;
 };
 
 
@@ -165,14 +165,14 @@ public:
 
     static DynamicVectorClass<VoxelAnimClass*>* Array;
 
-    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return E_NOTIMPL; }
+    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override;
 
-    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { return S_OK; }
+    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
 
     virtual ~VoxelAnimClass() override = default;
 
-    virtual AbstractType __stdcall WhatAmI() const override { return AbstractType::VoxelAnim; }
-    virtual int Size() const override { return sizeof(*this); }
+    virtual AbstractType __stdcall WhatAmI() const override;
+    virtual int Size() const override;
 
     uint32_t                align_AC;
     BounceClass             Bounce;
@@ -191,7 +191,7 @@ public:
 
 protected:
     VoxelAnimClass() = default;
-    explicit VoxelAnimClass(noinit_t) noexcept {}
+    explicit VoxelAnimClass(noinit_t) noexcept;
 };
 
 } // namespace gamemd

@@ -122,9 +122,9 @@ public:
     uint8_t                      SessionClass_field_2854[0x884];
     bool                         CurrentlyInGame;
 
-    bool IsCampaign()  const { return GameMode == GameMode::Campaign; }
-    bool IsSkirmish()  const { return GameMode == GameMode::Skirmish; }
-    bool IsMultiplayer() const { return GameMode == GameMode::Internet || GameMode == GameMode::Skirmish; }
+    bool IsCampaign() const;
+    bool IsSkirmish() const;
+    bool IsMultiplayer() const;
 
     // TODO: complete SessionClass members
 

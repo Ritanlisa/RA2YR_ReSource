@@ -236,3 +236,22 @@ constexpr float TSNormals[36][3] = {
 };
 
 } // namespace gamemd
+
+#include "entity/voxel.hpp"
+
+namespace gamemd {
+
+// --- VxlLimb ---
+
+ VxlLimb::VoxelData(nullptr) , DataSize(0), DataOffset(0) {}
+ VxlLimb::~VxlLimb() { delete[] VoxelData; VoxelData = nullptr; }
+
+// --- VxlFile ---
+
+ VxlFile::~VxlFile() { delete[] Limbs; Limbs = nullptr; }
+
+// --- HvaMatrix ---
+
+ HvaMatrix::HvaMatrix() { std::memset(m, 0, sizeof(m)); m[0] = m[5] = m[10] = m[15] = 1.0f; }
+
+} // namespace gamemd

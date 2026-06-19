@@ -51,15 +51,15 @@ class TiberiumClass : public ObjectClass
 public:
     static constexpr AbstractType kObjectTypeId = AbstractType::Tiberium;
 
-    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override { return E_NOTIMPL; }
-    virtual HRESULT __stdcall Load(IStream* pStm) override { return S_OK; }
-    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override { return S_OK; }
-    virtual HRESULT __stdcall GetSizeMax(ULARGE_INTEGER* pcbSize) override { return E_NOTIMPL; }
+    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override;
+    virtual HRESULT __stdcall Load(IStream* pStm) override;
+    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;
+    virtual HRESULT __stdcall GetSizeMax(ULARGE_INTEGER* pcbSize) override;
 
     virtual ~TiberiumClass() override = default;
 
-    virtual AbstractType __stdcall whatAmI() const override { return kObjectTypeId; }
-    virtual int objectSize() const override { return sizeof(TiberiumClass); }
+    virtual AbstractType __stdcall whatAmI() const override;
+    virtual int objectSize() const override;
 
     int32_t                  ArrayIndex;
     int32_t                  Spread;

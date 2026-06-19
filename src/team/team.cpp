@@ -49,3 +49,17 @@ void TeamClass::LiberateMember(FootClass* foot, int idx,
 }
 
 } // namespace gamemd
+
+#include "team/team.hpp"
+
+namespace gamemd {
+
+// --- TeamClass ---
+
+HRESULT __stdcall TeamClass::GetClassID(CLSID* class_id) { return 0; }
+HRESULT __stdcall TeamClass::Load(IStream* stream) { return 0; }
+HRESULT __stdcall TeamClass::Save(IStream* stream, int clear_dirty) { return 0; }
+AbstractType __stdcall TeamClass::whatAmI() const { return AbstractType::Team; }
+int TeamClass::objectSize() const { return 0; }
+
+} // namespace gamemd

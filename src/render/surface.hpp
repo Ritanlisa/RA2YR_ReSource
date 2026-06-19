@@ -482,7 +482,7 @@ public:
 
     virtual ~DSurface() override;
 
-    virtual bool BlitWhole(Surface* src, bool option1, bool option2) override;
+    virtual bool BlitWhole(Surface* src, bool option1, bool option2) override;  // 0x4c1a90
     virtual bool BlitPart(
         const RectangleStruct& dest_rect, Surface* src,
         const RectangleStruct& src_rect, bool option1, bool option2) override;
@@ -493,7 +493,7 @@ public:
     virtual bool FillRectEx(
         const RectangleStruct& clip_rect,
         const RectangleStruct& fill_rect, uint32_t color) override;
-    virtual bool FillRect(const RectangleStruct& fill_rect, uint32_t color) override;
+    virtual bool FillRect(const RectangleStruct& fill_rect, uint32_t color) override;  // 0x4bb5f0
     virtual bool FillRectWithFlags(
         const RectangleStruct& clip_rect,
         const ColorStruct& color,
@@ -523,10 +523,10 @@ public:
     virtual bool DrawStippledRect(
         const Point2D& top_left, const Point2D& bottom_right,
         uint16_t color, bool fill_interior) override;
-    virtual void* Lock(int x, int y) override;
-    virtual bool Unlock() override;
-    virtual bool CanLock(uint32_t unk1, uint32_t unk2) override;
-    virtual int GetBytesPerPixel() const override { return BytesPerPixel; }
+    virtual void* Lock(int x, int y) override;  // 0x4bad80
+    virtual bool Unlock() override;  // 0x4baf40
+    virtual bool CanLock(uint32_t unk1, uint32_t unk2) override;  // 0x4baec0
+    virtual int GetBytesPerPixel() const override { return BytesPerPixel; }  // 0x4bad60
     virtual int GetPitch() const override;
     virtual bool DrawGradientLine(
         const Point2D& start, const Point2D& end,

@@ -49,3 +49,15 @@ SessionClass::~SessionClass()
 // TODO: complete SessionClass implementation
 
 } // namespace gamemd
+
+#include "network/session.hpp"
+
+namespace gamemd {
+
+// --- SessionClass ---
+
+bool SessionClass::IsCampaign() const { return GameMode == GameMode::Campaign; }
+bool SessionClass::IsSkirmish() const { return GameMode == GameMode::Skirmish; }
+bool SessionClass::IsMultiplayer() const { return GameMode == GameMode::Internet || GameMode == GameMode::Skirmish; }
+
+} // namespace gamemd

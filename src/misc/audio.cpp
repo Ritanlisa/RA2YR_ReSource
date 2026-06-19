@@ -198,3 +198,14 @@ IDirectSound* Audio_GetDirectSound()  // IDA 0x40A7A0
 // --- AudioController member functions (defined in object.cpp, namespace ra2) ---
 
 } // namespace gamemd
+
+#include "misc/audio.hpp"
+
+namespace gamemd {
+
+// --- AudioEventHandle ---
+
+bool AudioEventHandle::IsPlaying() const { return false; }
+void AudioEventHandle::Stop() {}
+
+} // namespace gamemd

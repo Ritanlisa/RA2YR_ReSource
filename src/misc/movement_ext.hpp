@@ -25,7 +25,7 @@ public:
     // IDA 0x4A5150
     void sub_4A5150();
     // IDA 0x487E00 area
-    bool Check(FootClass* foot);
+    bool Check(FootClass* foot);  // 0x4a5360
     // IDA 0x487E00 area
     void Update(FootClass* foot);
     // IDA 0x487E00 area
@@ -50,9 +50,9 @@ class Movement
 {
 public:
     // IDA 0x5B2970
-    static float CalcVelocity(float speed, int32_t dir);
+    static float CalcVelocity(float speed, int32_t dir);  // 0x5b20f0
     // IDA 0x5B2970 area
-    static bool Check(FootClass* foot, const CoordStruct& dest);
+    static bool Check(FootClass* foot, const CoordStruct& dest);  // 0x5b2930
     // IDA 0x5B2970 area
     static void sub_5B2970();
     // IDA 0x5B2970 area
@@ -72,7 +72,7 @@ class Locomotor
 public:
     virtual ~Locomotor() = default;
 
-    virtual void GetSpeed() {} // 0x426630
+    virtual void GetSpeed(); // 0x426630
 
 };
 // 14 methods in IDA
@@ -81,11 +81,11 @@ class MoveFeedback
 public:
     virtual ~MoveFeedback() = default;
 
-    virtual void ClearBuffer() {} // 0x40b640
-    virtual void PointerToIndex() {} // 0x40b670
-    virtual void Update() {} // 0x40b6d0
-    virtual void Show() {} // 0x40b6f0
-    virtual void FindItem() {} // 0x40b930
+    virtual void ClearBuffer(); // 0x40b640
+    virtual void PointerToIndex(); // 0x40b670
+    virtual void Update(); // 0x40b6d0
+    virtual void Show(); // 0x40b6f0
+    virtual void FindItem(); // 0x40b930
     // +9 more virtual methods
 
     uint8_t MoveFeedback_field_0x04[4];
@@ -108,8 +108,8 @@ class MovementClass
 public:
     virtual ~MovementClass() = default;
 
-    virtual void CompareAbsCoords() {} // 0x4c9530
-    virtual void CalcSpeed() {} // 0x54bff0
+    virtual void CompareAbsCoords(); // 0x4c9530
+    virtual void CalcSpeed(); // 0x54bff0
 
     uint8_t MovementClass_field_0x04[4];
 };
@@ -119,11 +119,11 @@ class Pathfinding
 public:
     virtual ~Pathfinding() = default;
 
-    virtual void AStar() {} // 0x42c290
-    virtual void CalcDistance() {} // 0x42d170
-    virtual void sub_42DCA0() {} // 0x42dca0
-    virtual void CrossBridge() {} // 0x583180
-    virtual void SelectRegionPath() {} // 0x5833f0
+    virtual void AStar(); // 0x42c290
+    virtual void CalcDistance(); // 0x42d170
+    virtual void sub_42DCA0(); // 0x42dca0
+    virtual void CrossBridge(); // 0x583180
+    virtual void SelectRegionPath(); // 0x5833f0
     // +2 more virtual methods
 
     uint8_t Pathfinding_field_0x04[4];
@@ -139,7 +139,7 @@ class PathfindingClass
 public:
     virtual ~PathfindingClass() = default;
 
-    virtual void FindPath() {} // 0x4ffb20
+    virtual void FindPath(); // 0x4ffb20
 
 };
 

@@ -30,9 +30,9 @@ public:
     bool LoadFromMemory(const uint8_t* data, int data_size);
     void Free();
 
-    int GetFrameCount() const { return m_frame_count; }
-    int GetWidth() const { return m_header.max_width; }
-    int GetHeight() const { return m_header.max_height; }
+    int GetFrameCount() const;
+    int GetWidth() const;
+    int GetHeight() const;
 
     const uint8_t* GetPixelData(int frame_index) const;
 

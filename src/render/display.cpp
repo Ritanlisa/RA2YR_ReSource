@@ -207,3 +207,40 @@ void DisplayClass::MarkFoundation(CellStruct* base_cell, bool mark)
 }
 
 } // namespace gamemd
+
+#include "render/display.hpp"
+
+namespace gamemd {
+
+// --- GScreenClass ---
+
+HRESULT GScreenClass::Load(IStream* stream) { return S_OK; }
+HRESULT GScreenClass::Save(IStream* stream) { return S_OK; }
+void GScreenClass::LoadFromINI(CCINIClass* ini) {}
+const wchar_t* GScreenClass::GetToolTip(unsigned int dialog_id) { return nullptr; }
+void GScreenClass::CloseWindow() {}
+void GScreenClass::vt_entry_8C() {}
+bool GScreenClass::vt_entry_90(const CellStruct& cell, HouseClass* house) { return false; }
+bool GScreenClass::vt_entry_94(const CellStruct& cell, HouseClass* house, bool unk) { return false; }
+bool GScreenClass::vt_entry_98(const CellStruct& cell, HouseClass* house) { return false; }
+bool GScreenClass::vt_entry_9C(const CellStruct& cell, HouseClass* house) { return false; }
+
+// --- DisplayClass ---
+
+void DisplayClass::LoadFromINI(CCINIClass* ini) {}
+const wchar_t* DisplayClass::GetToolTip(unsigned int dialog_id) { return nullptr; }
+void DisplayClass::CloseWindow() {}
+void DisplayClass::vt_entry_8C() {}
+bool DisplayClass::vt_entry_90(const CellStruct& cell, HouseClass* house) { return false; }
+bool DisplayClass::vt_entry_94(const CellStruct& cell, HouseClass* house, bool unk) { return false; }
+bool DisplayClass::vt_entry_98(const CellStruct& cell, HouseClass* house) { return false; }
+bool DisplayClass::vt_entry_9C(const CellStruct& cell, HouseClass* house) { return false; }
+bool DisplayClass::vt_entry_A4(uint32_t unk1, uint32_t unk2, uint32_t unk3) { return false; }
+void DisplayClass::SetViewDimensions(const RectangleStruct& rect) {}
+void DisplayClass::vt_entry_AC(uint32_t unk) {}
+void DisplayClass::vt_entry_B0(uint32_t unk) {}
+void DisplayClass::vt_entry_B4(Point2D* point) {}
+void DisplayClass::LeftMouseButtonDown(const Point2D& point) {}
+void DisplayClass::RightMouseButtonUp(uint32_t unk) {}
+
+} // namespace gamemd

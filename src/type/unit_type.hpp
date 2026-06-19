@@ -18,18 +18,18 @@ public:
     static UnitTypeClass* FindOrAllocate(const char* pID);  // 0x74b960 (as FindOrCreate)
     static int FindIndex(const char* pID);
 
-    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override { return E_NOTIMPL; }  // 0x747f30 (as GetClassIdentifier)
+    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override; // 0x747f30 (as GetClassIdentifier)
 
-    virtual HRESULT __stdcall Load(IStream* pStm) override { return S_OK; }  // 0x747620 (as LoadFromINI)
-    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override { return S_OK; }  // 0x7480b0 (as SaveToINI)
+    virtual HRESULT __stdcall Load(IStream* pStm) override; // 0x747620 (as LoadFromINI)
+    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override; // 0x7480b0 (as SaveToINI)
 
     virtual ~UnitTypeClass() = default;  // 0x748190 (as ddtor)
 
-    virtual AbstractType __stdcall whatAmI() const override { return AbstractType::UnitType; }  // 0x748170 (as GetTypeIdentifier)
-    virtual int objectSize() const override { return 0; }  // 0x748160 (as GetObjectSize)
+    virtual AbstractType __stdcall whatAmI() const override; // 0x748170 (as GetTypeIdentifier)
+    virtual int objectSize() const override; // 0x748160 (as GetObjectSize)
 
-    virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override { return false; }
-    virtual ObjectClass* CreateObject(HouseClass* pOwner) override { return nullptr; }  // 0x7474b0 (as CreateUnit)
+    virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override;
+    virtual ObjectClass* CreateObject(HouseClass* pOwner) override; // 0x7474b0 (as CreateUnit)
 
     UnitTypeClass(const char* pID) noexcept;  // 0x7470d0
 

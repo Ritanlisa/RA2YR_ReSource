@@ -48,12 +48,12 @@ public:
     virtual ~INIClass() = default;
 
     // INI reading interface
-    virtual bool Load(CCFileClass* file, bool unk1, bool unk2) { return true; }
-    virtual const char* GetString(const char* section, const char* key, const char* def, char* buf, int bufSize) { return def; }
-    virtual int GetInt(const char* section, const char* key, int def) { return def; }
-    virtual bool GetBool(const char* section, const char* key, bool def) { return def; }
-    virtual double GetDouble(const char* section, const char* key, double def) { return def; }
-    virtual const char* GetGUID(const char* section, const char* key, const char* def) { return def; }
+    virtual bool Load(CCFileClass* file, bool unk1, bool unk2);
+    virtual const char* GetString(const char* section, const char* key, const char* def, char* buf, int bufSize);  // 0x528a10
+    virtual int GetInt(const char* section, const char* key, int def);  // 0x529820
+    virtual bool GetBool(const char* section, const char* key, bool def);  // 0x4757d0
+    virtual double GetDouble(const char* section, const char* key, double def);
+    virtual const char* GetGUID(const char* section, const char* key, const char* def);
 
 protected:
     // IDA layout offsets (0x00-0x3F):
@@ -80,9 +80,9 @@ public:
     CCINIClass();
     virtual ~CCINIClass();
 
-    bool Load(CCFileClass* file, bool unk1, bool unk2) override;
+    bool Load(CCFileClass* file, bool unk1, bool unk2) override;  // 0x4741f0
 
-    CCFileClass* GetFile() const { return ccFile; }
+    CCFileClass* GetFile() const;
 
     int GetKeyCount(const char* section);
     const char* GetStringByIndex(const char* section, int index);
@@ -107,7 +107,7 @@ protected:
 // Hash table for INI section lookup (used by INIClass::BinarySearchSection)
 class INIHashTable {
 public:
-    INIHashTable() { std::memset(this, 0, sizeof(*this)); }
+    INIHashTable();
     // TODO: hash table implementation
     uint32_t table[256];
 };

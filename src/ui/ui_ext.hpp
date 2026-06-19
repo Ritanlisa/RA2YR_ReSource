@@ -19,11 +19,11 @@ class Control
 {
 public:
     // IDA 0x48B2A0 area
-    static int32_t DispatchClick(HWND hDlg, int32_t ctrlID);
+    static int32_t DispatchClick(HWND hDlg, int32_t ctrlID);  // 0x48e620
     // IDA 0x48B2A0 area
-    static void RepositionControlsDialog(HWND hDlg);
+    static void RepositionControlsDialog(HWND hDlg);  // 0x60b950
     // IDA 0x48B2A0 area
-    static bool CheckControlTypeDialog(HWND hDlg, int32_t ctrlID, int32_t type);
+    static bool CheckControlTypeDialog(HWND hDlg, int32_t ctrlID, int32_t type);  // 0x60c540
     // IDA 0x48B2A0 area
     static void SetControlText(HWND hDlg, int32_t ctrlID, const wchar_t* text);
 
@@ -38,9 +38,9 @@ class Text
 {
 public:
     // IDA 0x5BD3D0
-    static void Layout(const wchar_t* text, int32_t maxWidth);
+    static void Layout(const wchar_t* text, int32_t maxWidth);  // 0x433cf0
     // IDA 0x5BD3D0 area
-    static int32_t MeasureWidth(const wchar_t* text);
+    static int32_t MeasureWidth(const wchar_t* text);  // 0x433ed0
     // IDA 0x5BD3D0 area
     static void sub_5BD3D0();
     // IDA 0x5BD3D0 area
@@ -59,7 +59,7 @@ public:
     // IDA 0x4346C0
     void sub_4346C0();
     // IDA 0x4346C0 area
-    void Print(const char* text, int32_t x, int32_t y, uint32_t color);
+    void Print(const char* text, int32_t x, int32_t y, uint32_t color);  // 0x434cd0
 
     void*       m_FontData;     // 0x00
     int32_t     Font_field_04;       // 0x04
@@ -74,9 +74,9 @@ class BitTextClass
 {
 public:
     // IDA 0x434AD0
-    void ParseFontData(void* mem);
+    void ParseFontData(void* mem);  // 0x433880
     // IDA 0x434AD0 area
-    static void* LoadFont(void* mem);
+    static void* LoadFont(void* mem);  // 0x434ad0
 
     void*       m_FontBitmap;   // 0x00
     int32_t     m_CharWidth;    // 0x04
@@ -92,9 +92,9 @@ class Window
 {
 public:
     // IDA 0x48B2A0 area
-    static bool IsVisible(HWND hWnd);
+    static bool IsVisible(HWND hWnd);  // 0x4a5110
     // IDA 0x48B2A0 area
-    static void ClampToScreen(RECT* rect);
+    static void ClampToScreen(RECT* rect);  // 0x776d80
 
     int32_t     Window_field_00;       // 0x00
 };
@@ -107,9 +107,9 @@ class MainMenu
 {
 public:
     // IDA 0x48B2A0 area
-    static void Screen();
+    static void Screen();  // 0x531cc0
     // IDA 0x48B2A0 area
-    static int32_t DlgProc(HWND hDlg, UINT msg, WPARAM wParam, LPARAM lParam);
+    static int32_t DlgProc(HWND hDlg, UINT msg, WPARAM wParam, LPARAM lParam);  // 0x531f60
 
     static int32_t  s_State;        // 0x00
 };
@@ -122,7 +122,7 @@ class Menu
 {
 public:
     // IDA 0x48B2A0 area
-    static void Reset();
+    static void Reset();  // 0x4c6140
 
     static int32_t  s_MenuState;    // 0x00
 };
@@ -135,9 +135,9 @@ class CreditsScreen
 {
 public:
     // IDA 0x48B2A0 area
-    static void Init();
+    static void Init();  // 0x4a3c00
     // IDA 0x48B2A0 area
-    static int32_t DlgProc(HWND hDlg, UINT msg, WPARAM wParam, LPARAM lParam);
+    static int32_t DlgProc(HWND hDlg, UINT msg, WPARAM wParam, LPARAM lParam);  // 0x531a00
 
     static int32_t  s_ScrollPos;    // 0x00
 };
@@ -150,7 +150,7 @@ class Credits
 {
 public:
     // IDA 0x48B2A0 area
-    static void Screen();
+    static void Screen();  // 0x52cb90
 
     static int32_t  s_Credits;      // 0x00
 };
@@ -163,7 +163,7 @@ class CampaignScreen
 {
 public:
     // IDA 0x48B2A0 area
-    static void Init();
+    static void Init();  // 0x470d30
 
     static int32_t  s_MissionIndex; // 0x00
 };
@@ -176,9 +176,9 @@ class Diplomacy
 {
 public:
     // IDA 0x48B2A0 area
-    int32_t GetField(HouseClass* house) const;
+    int32_t GetField(HouseClass* house) const;  // 0x656580
     // IDA 0x48B2A0 area
-    static int32_t DlgProc(HWND hDlg, UINT msg, WPARAM wParam, LPARAM lParam);
+    static int32_t DlgProc(HWND hDlg, UINT msg, WPARAM wParam, LPARAM lParam);  // 0x657da0
 
     int32_t     Diplomacy_field_00;       // 0x00
     int32_t     Diplomacy_field_04;       // 0x04
@@ -192,9 +192,9 @@ class Progress
 {
 public:
     // IDA 0x48B2A0 area
-    float GetAverage() const;
+    float GetAverage() const;  // 0x6433d0
     // IDA 0x48B2A0 area
-    float GetWeighted() const;
+    float GetWeighted() const;  // 0x643e90
 
     float       m_Values[8];    // 0x00
     int32_t     m_Index;        // 0x20
@@ -209,9 +209,9 @@ class KeyboardConfig
 {
 public:
     // IDA 0x533D20
-    static void LoadINI();
+    static void LoadINI();  // 0x533d20
     // IDA 0x533D20 area
-    static void ReleaseBuffer();
+    static void ReleaseBuffer();  // 0x538b80
 
     static int32_t  s_KeyMap[256];  // 0x00
 };
@@ -224,7 +224,7 @@ class HotkeyOptions
 {
 public:
     // IDA 0x5FB320
-    static int32_t DlgProc(HWND hDlg, UINT msg, WPARAM wParam, LPARAM lParam);
+    static int32_t DlgProc(HWND hDlg, UINT msg, WPARAM wParam, LPARAM lParam);  // 0x5fb320
 
     static int32_t  s_CurrentKey;   // 0x00
 };
@@ -240,9 +240,9 @@ public:
     virtual ~LinkClass();
 
     // IDA 0x48B2A0 area
-    void Destroy();
-    void Destru_vt00();
-    void Destruct();
+    void Destroy();  // 0x4e1480
+    void Destru_vt00();  // 0x4e1ad0
+    void Destruct();  // 0x5565a0
 
     LinkClass*  m_Next;         // 0x04 (after vtable)
     LinkClass*  m_Prev;         // 0x08
@@ -257,7 +257,7 @@ class Input
 {
 public:
     // IDA 0x48B2A0 area
-    static int32_t OffsetToDirection(int32_t dx, int32_t dy);
+    static int32_t OffsetToDirection(int32_t dx, int32_t dy);  // 0x4810a0
 
     int32_t     Input_field_00;       // 0x00
 };

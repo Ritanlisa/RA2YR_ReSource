@@ -375,3 +375,14 @@ void AudioController::Resume() { }
 
 } // namespace game
 } // namespace ra2
+
+#include "object/object.hpp"
+
+namespace ra2 { namespace game {
+
+// --- AudioController ---
+
+bool AudioController::IsSoundEnabled() { return false; }
+
+} // namespace game
+} // namespace ra2

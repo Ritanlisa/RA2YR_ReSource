@@ -23,8 +23,8 @@ struct SubSequenceStruct
 
 struct SequenceStruct
 {
-    SubSequenceStruct& GetSequence(Sequence sequence) { return this->Sequences[static_cast<int>(sequence)]; }
-    const SubSequenceStruct& GetSequence(Sequence sequence) const { return this->Sequences[static_cast<int>(sequence)]; }
+    SubSequenceStruct& GetSequence(Sequence sequence);
+    const SubSequenceStruct& GetSequence(Sequence sequence) const;
 
     SubSequenceStruct Sequences[42];
 };
@@ -39,18 +39,18 @@ public:
     static InfantryTypeClass* FindOrAllocate(const char* pID);  // 0x772fa0
     static int FindIndex(const char* pID);  // 0x772fa0
 
-    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override { return E_NOTIMPL; }  // 0x524c70 (as GetClassIdentifier)
+    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override; // 0x524c70 (as GetClassIdentifier)
 
-    virtual HRESULT __stdcall Load(IStream* pStm) override { return S_OK; }  // 0x524960 (as LoadTypeData)
-    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override { return S_OK; }
+    virtual HRESULT __stdcall Load(IStream* pStm) override; // 0x524960 (as LoadTypeData)
+    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;
 
     virtual ~InfantryTypeClass() = default;  // 0x524d70 (as ddtor)
 
-    virtual AbstractType __stdcall whatAmI() const override { return AbstractType::InfantryType; }  // 0x524d40 (as GetTypeIdentifier)
-    virtual int objectSize() const override { return 0; }  // 0x524d50 (as GetObjectSize)
+    virtual AbstractType __stdcall whatAmI() const override; // 0x524d40 (as GetTypeIdentifier)
+    virtual int objectSize() const override; // 0x524d50 (as GetObjectSize)
 
-    virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override { return false; }  // 0x5247a0 (as StubReturnFalse)
-    virtual ObjectClass* CreateObject(HouseClass* pOwner) override { return nullptr; }  // 0x523b40 (as CreateInfantry)
+    virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override; // 0x5247a0 (as StubReturnFalse)
+    virtual ObjectClass* CreateObject(HouseClass* pOwner) override; // 0x523b40 (as CreateInfantry)
 
     InfantryTypeClass(const char* pID) noexcept;  // 0x5236a0 (as Constructor)
 

@@ -21,7 +21,7 @@ class WaypointClass
 public:
     // 0x502160 FindOrAddPath
     // 0x5022F0 IsCoordinateUsed
-    bool IsCoordinateUsed(const CellStruct&) const { return false; }
+    bool IsCoordinateUsed(const CellStruct&) const { return false; }  // 0x5022f0
     // 0x502460 FindOrCreate
     bool FindOrCreate(int, unsigned int*, unsigned char*) { return false; }
 

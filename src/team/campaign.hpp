@@ -26,14 +26,14 @@ class CampaignClass : public AbstractClass
 public:
     static constexpr AbstractType kObjectDeriveId = AbstractType::Campaign;
 
-    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return 0; }
-    virtual HRESULT __stdcall Load(IStream* stream) override { return 0; }
-    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { return 0; }
+    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override;
+    virtual HRESULT __stdcall Load(IStream* stream) override;
+    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
 
     virtual ~CampaignClass() = default;
 
-    virtual AbstractType __stdcall whatAmI() const override { return AbstractType::Campaign; }
-    virtual int objectSize() const override { return 0; }
+    virtual AbstractType __stdcall whatAmI() const override;
+    virtual int objectSize() const override;
 
     static void CreateFromINIList(CCINIClass* ini);
     static int FindIndex(const char* name);

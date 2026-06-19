@@ -72,40 +72,40 @@ public:
     static RulesClass* Instance;
 
     void Init(CCINIClass* pINI);
-    void ReadFile(CCINIClass* pINI);
+    void ReadFile(CCINIClass* pINI);  // 0x7c850c
     void ReadGeneral(CCINIClass* pINI);
-    void ReadCombatDamage(CCINIClass* pINI);
-    void ReadAudioVisual(CCINIClass* pINI);
-    void ReadSpecialWeapons(CCINIClass* pINI);
-    void ReadCrateRules(CCINIClass* pINI);
-    void ReadRadiation(CCINIClass* pINI);
-    void ReadColors(CCINIClass* pINI);
-    void ReadColorAdd(CCINIClass* pINI);
-    void ReadDifficulty(CCINIClass* pINI);
+    void ReadCombatDamage(CCINIClass* pINI);  // 0x661510
+    void ReadAudioVisual(CCINIClass* pINI);  // 0x66d150
+    void ReadSpecialWeapons(CCINIClass* pINI);  // 0x66d1f0
+    void ReadCrateRules(CCINIClass* pINI);  // 0x672280
+    void ReadRadiation(CCINIClass* pINI);  // 0x6723d0
+    void ReadColors(CCINIClass* pINI);  // 0x66d3a0
+    void ReadColorAdd(CCINIClass* pINI);  // 0x66d480
+    void ReadDifficulty(CCINIClass* pINI);  // 0x6743d0
     void ReadMultiplayerDialogSettings(CCINIClass* pINI);
-    void ReadMaximums(CCINIClass* pINI);
-    void ReadInfantryTypes(CCINIClass* pINI);
-    void ReadCountries(CCINIClass* pINI);
-    void ReadVehicleTypes(CCINIClass* pINI);
-    void ReadAircraftTypes(CCINIClass* pINI);
+    void ReadMaximums(CCINIClass* pINI);  // 0x679fa0
+    void ReadInfantryTypes(CCINIClass* pINI);  // 0x679fd0
+    void ReadCountries(CCINIClass* pINI);  // 0x67a000
+    void ReadVehicleTypes(CCINIClass* pINI);  // 0x67a060
+    void ReadAircraftTypes(CCINIClass* pINI);  // 0x67a190
     void ReadSides(CCINIClass* pINI);
-    void ReadSuperWeaponTypes(CCINIClass* pINI);
-    void ReadBuildingTypes(CCINIClass* pINI);
-    void ReadTerrainTypes(CCINIClass* pINI);
-    void ReadSmudgeTypes(CCINIClass* pINI);
-    void ReadOverlayTypes(CCINIClass* pINI);
-    void ReadAnimations(CCINIClass* pINI);
+    void ReadSuperWeaponTypes(CCINIClass* pINI);  // 0x67a210
+    void ReadBuildingTypes(CCINIClass* pINI);  // 0x67a310
+    void ReadTerrainTypes(CCINIClass* pINI);  // 0x67a3c0
+    void ReadSmudgeTypes(CCINIClass* pINI);  // 0x67a730
+    void ReadOverlayTypes(CCINIClass* pINI);  // 0x67a7c0
+    void ReadAnimations(CCINIClass* pINI);  // 0x67a7d0
     void ReadVoxelAnims(CCINIClass* pINI);
-    void ReadWarheads(CCINIClass* pINI);
-    void ReadParticles(CCINIClass* pINI);
-    void ReadParticleSystems(CCINIClass* pINI);
-    void ReadAI(CCINIClass* pINI);
+    void ReadWarheads(CCINIClass* pINI);  // 0x67a8a0
+    void ReadParticles(CCINIClass* pINI);  // 0x67a8b0
+    void ReadParticleSystems(CCINIClass* pINI);  // 0x67a8e0
+    void ReadAI(CCINIClass* pINI);  // 0x67b480
     void ReadPowerups(CCINIClass* pINI);
     void ReadLandCharacteristics(CCINIClass* pINI);
-    void ReadIQ(CCINIClass* pINI);
+    void ReadIQ(CCINIClass* pINI);  // 0x67c430
     void ReadJumpjetControls(CCINIClass* pINI);
     void ReadDifficulties(CCINIClass* pINI);
-    void ReadMovies(CCINIClass* pINI);
+    void ReadMovies(CCINIClass* pINI);  // 0x674550
     void ReadAdvancedCommandBar(CCINIClass* pINI);
     void PointerGotInvalid(AbstractClass* pInvalid, bool removed);
 

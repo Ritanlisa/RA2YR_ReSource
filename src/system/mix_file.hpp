@@ -109,7 +109,7 @@ public:
     static MixFileClass& MULTI;
     static GenericMixFiles& Generics;
 
-    static bool Bootstrap();  // IDA: MixFileClass::Bootstrap @ 0x5301A0 -- returns bool
+    static bool Bootstrap();  // IDA: MixFileClass::Bootstrap @ 0x5301A0 -- returns bool  // 0x5301a0
 
     static uint32_t ComputeID(const char* filename);
 

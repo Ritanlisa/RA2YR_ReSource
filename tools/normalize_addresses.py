@@ -33,6 +33,8 @@ RE_ADDR_STANDALONE = re.compile(
     r"^\s*//\s*0x([0-9A-Fa-f]+)\s*(?:\[.*\])?\s*$"
 )  # standalone // 0xADDR
 RE_LOWERCASE_HEX = re.compile(r"//\s*(?:IDA:\s*)?0x([0-9A-Fa-f]*[a-f][0-9A-Fa-f]*)")
+# For dedup: strip trailing // 0xADDR comment (including any annotation text after the hex)
+RE_ADDR_COMMENT_END = re.compile(r"\s*//\s*0x[A-Fa-f0-9]+.*$")
 
 # Function declaration detection — matches lines that look like C++ func decls
 RE_FUNC_LIKE = re.compile(
@@ -444,9 +446,10 @@ def fix_file(filepath: Path, dry_run: bool = False) -> list:
         del new_lines[idx]
 
     # ── Step 4: Deduplicate addresses ──
-    # Rebuild addr_positions after line removal
+    # When the same address appears on multiple lines (e.g., base class + derived),
+    # keep ALL declarations but strip the duplicate address comment.
+    # Only the first occurrence retains its // 0xADDR annotation.
     addr_seen = {}  # formatted_addr → first_line_idx
-    dup_indices = set()
     for i, line in enumerate(new_lines):
         raw, formatted = extract_addr_from_line(line)
         if not raw:
@@ -457,15 +460,15 @@ def fix_file(filepath: Path, dry_run: bool = False) -> list:
             else:
                 continue
         if formatted in addr_seen:
-            dup_indices.add(i)
-            changes.append(
-                f"  L{i+1}: removed duplicate 0x{formatted} (first at L{addr_seen[formatted]+1})"
-            )
+            # Strip the // 0xADDR comment from the duplicate line
+            new_line = RE_ADDR_COMMENT_END.sub("", line)
+            if new_line != line:
+                new_lines[i] = new_line
+                changes.append(
+                    f"  L{i+1}: stripped duplicate 0x{formatted} comment (first at L{addr_seen[formatted]+1}), kept declaration"
+                )
         else:
             addr_seen[formatted] = i
-
-    for i in sorted(dup_indices, reverse=True):
-        del new_lines[i]
 
     # ── Step 5: Rebuild content ──
     new_content = "\n".join(new_lines) + "\n"

@@ -143,3 +143,18 @@ void AnimClass::FreeRenderBuffer()
 }
 
 } // namespace gamemd
+
+#include "entity/anim.hpp"
+
+namespace gamemd {
+
+// --- AnimClass ---
+
+HRESULT __stdcall AnimClass::GetClassID(CLSID* pClassID) { return E_NOTIMPL; }
+HRESULT __stdcall AnimClass::Save(IStream* pStm, BOOL fClearDirty) { return S_OK; }
+AbstractType __stdcall AnimClass::whatAmI() const { return kObjectTypeId; }
+int AnimClass::objectSize() const { return sizeof(AnimClass); }
+int AnimClass::AnimExtras() { return 0; }
+int AnimClass::GetEnd() const { return 0; }
+
+} // namespace gamemd

@@ -49,3 +49,18 @@ TiberiumClass::TiberiumClass(const CellStruct& cell,
 }
 
 } // namespace gamemd
+
+#include "entity/tiberium.hpp"
+
+namespace gamemd {
+
+// --- TiberiumClass ---
+
+HRESULT __stdcall TiberiumClass::GetClassID(CLSID* pClassID) { return E_NOTIMPL; }
+HRESULT __stdcall TiberiumClass::Load(IStream* pStm) { return S_OK; }
+HRESULT __stdcall TiberiumClass::Save(IStream* pStm, BOOL fClearDirty) { return S_OK; }
+HRESULT __stdcall TiberiumClass::GetSizeMax(ULARGE_INTEGER* pcbSize) { return E_NOTIMPL; }
+AbstractType __stdcall TiberiumClass::whatAmI() const { return kObjectTypeId; }
+int TiberiumClass::objectSize() const { return sizeof(TiberiumClass); }
+
+} // namespace gamemd

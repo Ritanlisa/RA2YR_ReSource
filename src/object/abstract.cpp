@@ -127,3 +127,34 @@ CoordStruct* AbstractClass::fetchCoordinatesHere(CoordStruct* out) const {
 
 } // namespace game
 } // namespace ra2
+
+#include "object/abstract.hpp"
+
+namespace ra2 { namespace game {
+
+// --- AbstractClass ---
+
+AbstractType __stdcall AbstractClass::whatAmI() const { return kObjectTypeId; }
+int __stdcall AbstractClass::fetchId() const { return 0; }
+bool __stdcall AbstractClass::onNotice(unsigned long event) { return false; }
+void __stdcall AbstractClass::notifySinks() {}
+void AbstractClass::initialize() {}
+void AbstractClass::pointerExpired(AbstractClass* ptr, bool removed) {}
+int AbstractClass::objectSize() const { return 0; }
+void AbstractClass::calculateChecksum(Checksummer& checksum) const {}
+int AbstractClass::owningHouseIndex() const { return -1; }
+HouseClass* AbstractClass::owningHouse() const { return nullptr; }
+int AbstractClass::arrayIndex() const { return -1; }
+bool AbstractClass::isDead() const { return false; }
+CoordStruct* AbstractClass::fetchDestination(CoordStruct* out, TechnoClass* docker) const { return nullptr; }
+bool AbstractClass::isOnGround() const { return false; }
+bool AbstractClass::isAirborne() const { return false; }
+CoordStruct* AbstractClass::fetchAlternateCoordinates(CoordStruct* out) const { return nullptr; }
+void AbstractClass::updateLogic() {}
+CoordStruct AbstractClass::fetchCoordinatesHere() const { CoordStruct crd; fetchCoordinatesHere(&crd); return crd; }
+CoordStruct AbstractClass::fetchDestination(TechnoClass* docker) const { CoordStruct crd; fetchDestination(&crd, docker); return crd; }
+CoordStruct AbstractClass::fetchAlternateCoordinates() const { CoordStruct crd; fetchAlternateCoordinates(&crd); return crd; }
+bool AbstractClass::operator<(const AbstractClass& rhs) const { return uniqueId < rhs.uniqueId; }
+
+} // namespace game
+} // namespace ra2

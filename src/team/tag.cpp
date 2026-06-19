@@ -313,3 +313,30 @@ void TagTypeClass::SaveToINIList(CCINIClass* ini)
 }
 
 } // namespace gamemd
+
+#include "team/tag.hpp"
+
+namespace gamemd {
+
+// --- TagClass ---
+
+HRESULT __stdcall TagClass::GetClassID(CLSID* class_id) { return 0; }
+HRESULT __stdcall TagClass::Load(IStream* stream) { return 0; }
+HRESULT __stdcall TagClass::Save(IStream* stream, int clear_dirty) { return 0; }
+void TagClass::pointerExpired(AbstractClass* ptr, bool removed) {}
+AbstractType __stdcall TagClass::whatAmI() const { return AbstractType::Tag; }
+int TagClass::objectSize() const { return 0; }
+void TagClass::calculateChecksum(void* checksum) const {}
+bool TagClass::HasBeenDestroyed() const { return destroyed; }
+
+// --- TagTypeClass ---
+
+HRESULT __stdcall TagTypeClass::GetClassID(CLSID* class_id) { return 0; }
+HRESULT __stdcall TagTypeClass::Load(IStream* stream) { return 0; }
+HRESULT __stdcall TagTypeClass::Save(IStream* stream, int clear_dirty) { return 0; }
+void TagTypeClass::pointerExpired(AbstractClass* ptr, bool removed) {}
+AbstractType __stdcall TagTypeClass::whatAmI() const { return AbstractType::TagType; }
+int TagTypeClass::objectSize() const { return 0; }
+void TagTypeClass::calculateChecksum(void* checksum) const {}
+
+} // namespace gamemd

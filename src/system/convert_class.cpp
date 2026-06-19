@@ -91,3 +91,17 @@ LightConvertClass::LightConvertClass(
 }
 
 } // namespace gamemd
+
+#include "system/convert_class.hpp"
+
+namespace gamemd {
+
+// --- ConvertClass ---
+
+ ConvertClass::ConvertClass(const noinit_t&) noexcept {}
+
+// --- LightConvertClass ---
+
+void LightConvertClass::UpdateColors(int red, int green, int blue, bool tinted) {}
+
+} // namespace gamemd

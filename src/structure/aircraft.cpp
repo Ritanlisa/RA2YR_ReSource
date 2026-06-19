@@ -567,3 +567,35 @@ void AircraftClass::DrawJetExhaust(Point2D* screen_pos) const
 }
 
 } // namespace gamemd
+
+#include "structure/aircraft.hpp"
+
+namespace gamemd {
+
+// --- StageClass ---
+
+int __stdcall StageClass::Landing_Altitude() { return 0; }
+int __stdcall StageClass::Landing_Direction() { return 0; }
+long __stdcall StageClass::Is_Loaded() { return 0; }
+long __stdcall StageClass::Is_Strafe() { return 0; }
+long __stdcall StageClass::Is_Fighter() { return 0; }
+long __stdcall StageClass::Is_Locked() { return 0; }
+
+// --- AircraftClass ---
+
+int __stdcall AircraftClass::Landing_Altitude() { return 0; }
+int __stdcall AircraftClass::Landing_Direction() { return 0; }
+long __stdcall AircraftClass::Is_Loaded() { return 0; }
+long __stdcall AircraftClass::Is_Strafe() { return 0; }
+long __stdcall AircraftClass::Is_Fighter() { return 0; }
+long __stdcall AircraftClass::Is_Locked() { return 0; }
+HRESULT __stdcall AircraftClass::QueryInterface(const IID& iid, void** ppvObject) { return E_NOINTERFACE; }
+ULONG __stdcall AircraftClass::AddRef() { return 0; }
+ULONG __stdcall AircraftClass::Release() { return 0; }
+HRESULT __stdcall AircraftClass::GetClassID(CLSID* pClassID) { return E_NOTIMPL; }
+HRESULT __stdcall AircraftClass::Load(IStream* pStm) { return S_OK; }
+HRESULT __stdcall AircraftClass::Save(IStream* pStm, BOOL fClearDirty) { return S_OK; }
+AbstractType __stdcall AircraftClass::whatAmI() const { return kObjectTypeId; }
+int AircraftClass::objectSize() const { return sizeof(AircraftClass); }
+
+} // namespace gamemd

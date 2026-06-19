@@ -34,18 +34,18 @@ public:
     static AnimTypeClass* FindOrAllocate(const char* pID);  // 0x428b80 (as FindOrCreate)
     static int FindIndex(const char* pID);  // 0x427cb0
 
-    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override { return E_NOTIMPL; }  // 0x428990 (as GetClassIdentifier)
+    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override; // 0x428990 (as GetClassIdentifier)
 
     virtual ~AnimTypeClass() = default;  // 0x428ea0 (as ddtor)
 
-    virtual AbstractType __stdcall whatAmI() const override { return AbstractType::AnimType; }
-    virtual int objectSize() const override { return 0; }  // 0x428e70 (as GetObjectSize)
+    virtual AbstractType __stdcall whatAmI() const override;
+    virtual int objectSize() const override; // 0x428e70 (as GetObjectSize)
 
-    virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override { return false; }  // 0x428e90 (as StubReturnFalse)
-    virtual ObjectClass* CreateObject(HouseClass* pOwner) override { return nullptr; }
+    virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override; // 0x428e90 (as StubReturnFalse)
+    virtual ObjectClass* CreateObject(HouseClass* pOwner) override;
 
-    virtual SHPStruct* LoadImage() { return nullptr; }
-    virtual void Load2DArt() {}
+    virtual SHPStruct* LoadImage();
+    virtual void Load2DArt();
 
     AnimTypeClass(const char* pID) noexcept;  // 0x427530 (as Construct)
 

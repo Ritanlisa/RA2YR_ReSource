@@ -25,3 +25,17 @@ int CampaignClass::FindIndex(const char* name)
 }
 
 } // namespace gamemd
+
+#include "team/campaign.hpp"
+
+namespace gamemd {
+
+// --- CampaignClass ---
+
+HRESULT __stdcall CampaignClass::GetClassID(CLSID* class_id) { return 0; }
+HRESULT __stdcall CampaignClass::Load(IStream* stream) { return 0; }
+HRESULT __stdcall CampaignClass::Save(IStream* stream, int clear_dirty) { return 0; }
+AbstractType __stdcall CampaignClass::whatAmI() const { return AbstractType::Campaign; }
+int CampaignClass::objectSize() const { return 0; }
+
+} // namespace gamemd

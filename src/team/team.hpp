@@ -36,14 +36,14 @@ class TeamClass : public AbstractClass
 public:
     static constexpr AbstractType kObjectDeriveId = AbstractType::Team;
 
-    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return 0; }       // 0x6EC540 (SaveLoad_Prefix_0)
-    virtual HRESULT __stdcall Load(IStream* stream) override { return 0; }             // 0x6EC450 (SaveLoad_Prefix)
-    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { return 0; } // 0x6EC540
+    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override; // 0x6EC540 (SaveLoad_Prefix_0)
+    virtual HRESULT __stdcall Load(IStream* stream) override; // 0x6EC450 (SaveLoad_Prefix)
+    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override; // 0x6EC540
 
     virtual ~TeamClass() = default;                                                      // 0x6EC560 (ddtor)
 
-    virtual AbstractType __stdcall whatAmI() const override { return AbstractType::Team; } // 0x6EC560
-    virtual int objectSize() const override { return 0; }                               // 0x6EC560
+    virtual AbstractType __stdcall whatAmI() const override; // 0x6EC560
+    virtual int objectSize() const override; // 0x6EC560
 
     // core methods
     void GetTaskForceMissingMemberTypes(TechnoTypeClass** dest, int& dest_count) const;  // 0x6F1FA0 (TeamTypeClass::ProcessTaskForce)

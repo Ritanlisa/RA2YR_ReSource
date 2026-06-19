@@ -24,18 +24,18 @@ public:
     static BulletTypeClass* FindOrAllocate(const char* pID);
     static int FindIndex(const char* pID);
 
-    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override { return E_NOTIMPL; }  // 0x46c750 (as GetClassIdentifier)
+    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override; // 0x46c750 (as GetClassIdentifier)
 
     virtual ~BulletTypeClass() = default;  // 0x46c890 (as ddtor)
 
-    virtual AbstractType __stdcall whatAmI() const override { return AbstractType::BulletType; }  // 0x46c850 (as GetTypeIdentifier)
-    virtual int objectSize() const override { return 0; }  // 0x46c860 (as GetObjectSize)
+    virtual AbstractType __stdcall whatAmI() const override; // 0x46c850 (as GetTypeIdentifier)
+    virtual int objectSize() const override; // 0x46c860 (as GetObjectSize)
 
-    virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override { return false; }  // 0x46c880 (as StubReturnFalse)
-    virtual ObjectClass* CreateObject(HouseClass* pOwner) override { return nullptr; }
+    virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override; // 0x46c880 (as StubReturnFalse)
+    virtual ObjectClass* CreateObject(HouseClass* pOwner) override;
 
-    bool Rotates() const { return !this->NoRotate; }
-    void SetScaledSpawnDelay(int delay) { this->ScaledSpawnDelay = delay; }  // 0x46c840
+    bool Rotates() const;
+    void SetScaledSpawnDelay(int delay); // 0x46c840
 
     BulletClass* CreateBullet(AbstractClass* pTarget, TechnoClass* pOwner, int nDamage,
         WarheadTypeClass* pWH, int nSpeed, bool bBright);

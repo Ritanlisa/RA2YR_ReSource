@@ -21,46 +21,46 @@ struct MissionControlData
 class MissionClass : public ObjectClass
 {
 public:
-    virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }
+    virtual HRESULT __stdcall Load(IStream* stream) override;
 
     virtual ~MissionClass() = default;
 
     virtual bool queueMission(Mission mission, bool start_mission);
     virtual bool nextMission();
     virtual void forceMission(Mission mission);
-    virtual void onMissionChanged(Mission mission) {}
+    virtual void onMissionChanged(Mission mission);
     virtual bool revertMission();
-    virtual bool isMissionDone() const { return false; }
-    virtual bool hasValidTarget() const { return false; }
+    virtual bool isMissionDone() const;
+    virtual bool hasValidTarget() const;  // 0x5b3a10
 
-    virtual int Mission_Sleep() { return 0; }
-    virtual int Mission_Harmless() { return 0; }
-    virtual int Mission_Ambush() { return 0; }
-    virtual int Mission_Attack() { return 0; }
-    virtual int Mission_Capture() { return 0; }
-    virtual int Mission_Eaten() { return 0; }
-    virtual int Mission_Guard() { return 0; }
-    virtual int Mission_AreaGuard() { return 0; }
-    virtual int Mission_Harvest() { return 0; }
-    virtual int Mission_Hunt() { return 0; }
-    virtual int Mission_Move() { return 0; }
-    virtual int Mission_Retreat() { return 0; }
-    virtual int Mission_Return() { return 0; }
-    virtual int Mission_Stop() { return 0; }
-    virtual int Mission_Unload() { return 0; }
-    virtual int Mission_Enter() { return 0; }
-    virtual int Mission_Construction() { return 0; }
-    virtual int Mission_Selling() { return 0; }
-    virtual int Mission_Repair() { return 0; }
-    virtual int Mission_Missile() { return 0; }
-    virtual int Mission_Open() { return 0; }
-    virtual int Mission_Rescue() { return 0; }
-    virtual int Mission_Patrol() { return 0; }
-    virtual int Mission_ParaDropApproach() { return 0; }
-    virtual int Mission_ParaDropOverfly() { return 0; }
-    virtual int Mission_Wait() { return 0; }
-    virtual int Mission_SpyPlaneApproach() { return 0; }
-    virtual int Mission_SpyPlaneOverfly() { return 0; }
+    virtual int Mission_Sleep();
+    virtual int Mission_Harmless();
+    virtual int Mission_Ambush();
+    virtual int Mission_Attack();
+    virtual int Mission_Capture();
+    virtual int Mission_Eaten();
+    virtual int Mission_Guard();
+    virtual int Mission_AreaGuard();
+    virtual int Mission_Harvest();
+    virtual int Mission_Hunt();
+    virtual int Mission_Move();
+    virtual int Mission_Retreat();
+    virtual int Mission_Return();
+    virtual int Mission_Stop();
+    virtual int Mission_Unload();
+    virtual int Mission_Enter();
+    virtual int Mission_Construction();
+    virtual int Mission_Selling();
+    virtual int Mission_Repair();
+    virtual int Mission_Missile();
+    virtual int Mission_Open();
+    virtual int Mission_Rescue();
+    virtual int Mission_Patrol();
+    virtual int Mission_ParaDropApproach();
+    virtual int Mission_ParaDropOverfly();
+    virtual int Mission_Wait();
+    virtual int Mission_SpyPlaneApproach();
+    virtual int Mission_SpyPlaneOverfly();
 
     int32_t     currentMission;
     int32_t     suspendedMission;

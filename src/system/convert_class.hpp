@@ -35,7 +35,7 @@ public:
         bool skipBlitters);
 
 protected:
-    explicit ConvertClass(const noinit_t&) noexcept {}
+    explicit ConvertClass(const noinit_t&) noexcept;
 
 public:
     int BytesPerPixel = 0;
@@ -57,7 +57,7 @@ public:
 
     virtual ~LightConvertClass() override = default;
 
-    virtual void UpdateColors(int red, int green, int blue, bool tinted) {}
+    virtual void UpdateColors(int red, int green, int blue, bool tinted);  // 0x556090
 
     LightConvertClass(
         BytePalette const& palette1,
