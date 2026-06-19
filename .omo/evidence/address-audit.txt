@@ -1,0 +1,2064 @@
+================================================================================
+ADDRESS ANNOTATION AUDIT REPORT
+Date: 2026-06-19 | Files: 164 .hpp + 139 .cpp = 303
+Total // 0x... comments: 5917
+================================================================================
+
+================================================================================
+EXECUTIVE SUMMARY
+================================================================================
+
+  1. Address BEFORE function (separate line): 68
+  2. Inline implementation in .hpp with address: 1925
+  3. Duplicate addresses (same addr on multiple functions): 249
+  4. REVERSE() macro in .hpp: 2
+  5. Non-canonical format (spacing issues): 1
+  6. Forward declarations with address comment: 0
+  7. Missing addresses (funcs without // 0x annotation): 91
+
+  Duplicate addrs (global vars, expected): 24
+  REVERSE() macros in .cpp: 407
+  Files WITH addr annotations: 105
+  Files WITHOUT (has funcs): 91
+
+  TOTAL ANOMALIES: 2336
+
+================================================================================
+WORST FILES BY ANOMALY COUNT
+================================================================================
+
+    868: src\misc\misc_ext.hpp
+    209: src\render\render_ext.hpp
+    190: src\misc\locomotion.hpp
+    136: src\core\utility_ext.hpp
+    126: src\network\multiplayer.hpp
+     98: src\ui\ui_ext.hpp
+     81: src\network\network_ext.hpp
+     53: src\system\game_systems.hpp
+     27: src\misc\audio_ext.hpp
+     25: src\core\stream_ext.hpp
+     20: src\network\connection.hpp
+     14: src\misc\movement_ext.hpp
+     12: src\entity\rad_site.hpp
+      7: src\type\infantry_type.hpp
+      7: src\type\unit_type.hpp
+      6: src\type\aircraft_type.hpp
+      6: src\type\bullet_type.hpp
+      6: src\type\overlay_type.hpp
+      6: src\type\smudge_type.hpp
+      6: src\type\terrain_type.hpp
+      6: src\type\warhead_type.hpp
+      6: src\system\factory.hpp
+      5: src\core\checksummer.hpp
+      5: src\misc\super_weapon.hpp
+      5: src\team\team.hpp
+
+  Duplicate global var addrs (expected):
+      17: src\misc\locomotion.hpp
+       6: src\misc\super_weapon.hpp
+       6: src\network\connection.hpp
+       4: src\core\load_options.hpp
+       2: src\core\hash_table.hpp
+       2: src\ui\sidebar.hpp
+       2: src\misc\audio.hpp
+       2: src\system\factory.hpp
+       1: src\core\ddraw_init.hpp
+       1: src\core\init_game.cpp
+
+
+================================================================================
+1. Address BEFORE function (separate line) (68 occurrences)
+================================================================================
+
+  src\core\checksummer.hpp:12->13: addr 0x4A1D30 separate line
+    L12:     // 0x4A1D30 Add_WORD (uint16)
+    L13:     void Add_WORD(uint16_t) {}
+  src\core\checksummer.hpp:14->15: addr 0x4A1D70 separate line
+    L14:     // 0x4A1D70 Add_float
+    L15:     void Add_float(float) {}
+  src\core\checksummer.hpp:16->17: addr 0x4A1D90 separate line
+    L16:     // 0x4A1D90 Add_double
+    L17:     void Add_double(double) {}
+  src\core\checksummer.hpp:18->19: addr 0x4A1DE0 separate line
+    L18:     // 0x4A1DE0 Add_Buffer
+    L19:     int Add_Buffer(const uint8_t* buf, int len) { return 0; }
+  src\core\checksummer.hpp:20->21: addr 0x5F9E80 separate line
+    L20:     // 0x5F9E80 HashString
+    L21:     static int HashString(const char* str) { return 0; }
+  src\entity\ebolt.hpp:25->26: addr 0x4C1E50 separate line
+    L25:     // 0x4C1E50 ClearOwner
+    L26:     void ClearOwner() {}
+  src\entity\ebolt.hpp:27->28: addr 0x4C2B40 separate line
+    L27:     // 0x4C2B40 GetSourceCoords
+    L28:     CoordStruct* GetSourceCoords(CoordStruct* out) const { return out; }
+  src\entity\ebolt.hpp:30->31: addr 0x4C2A60 separate line
+    L30:     // 0x4C2A60 Fire
+    L31:     void Fire(const CoordStruct&, const CoordStruct&, uint32_t) {}
+  src\entity\rad_site.hpp:46->47: addr 0x65B4C0 separate line
+    L46:     // 0x65B4C0 SetBaseCell
+    L47:     void SetBaseCell(CellStruct* cell) {}
+  src\entity\rad_site.hpp:48->49: addr 0x65B4B0 separate line
+    L48:     // 0x65B4B0 GetSpread
+    L49:     int GetSpread() const { return 0; }
+  src\entity\rad_site.hpp:50->51: addr 0x65B4D0 separate line
+    L50:     // 0x65B4D0 SetSpread
+    L51:     void SetSpread(int cells) {}
+  src\entity\rad_site.hpp:52->53: addr 0x65B4F0 separate line
+    L52:     // 0x65B4F0 SetRadLevel
+    L53:     void SetRadLevel(int level) {}
+  src\entity\rad_site.hpp:54->55: addr 0x65B510 separate line
+    L54:     // 0x65B510 GetRadLevel
+    L55:     int GetRadLevel() const { return 0; }
+  src\entity\rad_site.hpp:56->57: addr 0x65B530 separate line
+    L56:     // 0x65B530 Add
+    L57:     void Add(int radLevel) {}
+  src\entity\rad_site.hpp:58->59: addr 0x65B580 separate line
+    L58:     // 0x65B580 Activate
+    L59:     void Activate() {}
+  src\entity\rad_site.hpp:60->61: addr 0x65B8F0 separate line
+    L60:     // 0x65B8F0 GetRadLevelAt
+    L61:     int GetRadLevelAt(CellStruct* cell) { return 0; }
+  src\entity\rad_site.hpp:62->63: addr 0x65B9C0 separate line
+    L62:     // 0x65B9C0 Radiate
+    L63:     void Radiate() {}
+  src\entity\rad_site.hpp:64->65: addr 0x65BB50 separate line
+    L64:     // 0x65BB50 Deactivate
+    L65:     void Deactivate() {}
+  src\entity\rad_site.hpp:66->67: addr 0x65BD00 separate line
+    L66:     // 0x65BD00 DecreaseRadiation
+    L67:     void DecreaseRadiation() {}
+  src\entity\rad_site.hpp:68->69: addr 0x65BE90 separate line
+    L68:     // 0x65BE90 DecreaseLight
+    L69:     void DecreaseLight() {}
+  src\misc\locomotion.hpp:97->98: addr 0x55AAC0 separate line
+    L97:     virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }           // 0x55AAC0
+    L98:     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override
+  src\misc\locomotion.hpp:118->119: addr 0x55ACD0 separate line
+    L118:     virtual bool __stdcall Is_Moving() override { return false; }                        // 0x55ACD0
+    L119:     virtual CoordStruct* __stdcall Destination(CoordStruct* out) override
+  src\misc\locomotion.hpp:124->125: addr 0x55AC70 separate line
+    L124:     }                                         // 0x55AC70
+    L125:     virtual CoordStruct* __stdcall Head_To_Coord(CoordStruct* out) override
+  src\misc\locomotion.hpp:132->133: addr 0x55ABE0 separate line
+    L132:     virtual bool __stdcall Is_To_Have_Shadow() override { return true; }                 // 0x55ABE0
+    L133:     virtual Matrix3D* __stdcall Draw_Matrix(Matrix3D* out, int* key) override
+  src\misc\locomotion.hpp:139->140: addr 0x55A730 separate line
+    L139:     }                                    // 0x55A730
+    L140:     virtual Matrix3D* __stdcall Shadow_Matrix(Matrix3D* out, int* key) override
+  src\misc\locomotion.hpp:143->144: addr 0x55A7D0 separate line
+    L143:     }                                  // 0x55A7D0
+    L144:     virtual Point2D* __stdcall Draw_Point(Point2D* out) override
+  src\misc\locomotion.hpp:149->150: addr 0x55ABD0 separate line
+    L149:     }                                 // 0x55ABD0
+    L150:     virtual Point2D* __stdcall Shadow_Point(Point2D* out) override
+  src\misc\locomotion.hpp:261->262: addr 0x5B0960 separate line
+    L261:     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return S_OK; }  // 0x5B0960
+    L262:     virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }         // stub
+  src\misc\locomotion.hpp:317->318: addr 0x513D00 separate line
+    L317:     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return S_OK; }  // 0x513D00
+    L318:     virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }         // stub
+  src\misc\locomotion.hpp:363->364: addr 0x75A9E0 separate line
+    L363:     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return S_OK; }  // 0x75A9E0
+    L364:     virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }         // stub
+  src\misc\locomotion.hpp:414->415: addr 0x4CC950 separate line
+    L414:     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return S_OK; }  // 0x4CC950
+    L415:     virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }         // stub
+  src\misc\locomotion.hpp:467->468: addr 0x661EC0 separate line
+    L467:     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return S_OK; }  // 0x661EC0
+    L468:     virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }         // stub
+  src\misc\locomotion.hpp:525->526: addr 0x54A8E0 separate line
+    L525:     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return S_OK; }  // 0x54A8E0
+    L526:     virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }         // stub
+  src\misc\locomotion.hpp:605->606: addr 0x69EDF0 separate line
+    L605:     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return S_OK; }  // 0x69EDF0
+    L606:     virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }         // stub
+  src\misc\locomotion.hpp:725->726: addr 0x728BC0 separate line
+    L725:     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return S_OK; }  // 0x728BC0
+    L726:     virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }         // stub
+  src\misc\locomotion.hpp:762->763: addr 0x5B1960 separate line
+    L762:     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return S_OK; }  // 0x5B1960
+    L763:     virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }         // stub
+  src\network\connection.hpp:59->60: addr 0x53F430 separate line
+    L59:     IPXConnClass() noexcept;                              // 0x53F430
+    L60:     virtual ~IPXConnClass() = default;
+  src\network\connection.hpp:110->111: addr 0x5F16E0 separate line
+    L110:     ModemConnectionClass() noexcept;                        // 0x5F16E0
+    L111:     virtual ~ModemConnectionClass() = default;
+  src\network\connection.hpp:129->130: addr 0x5F16E0 separate line
+    L129:     NullModemClass() noexcept;                              // 0x5F16E0
+    L130:     virtual ~NullModemClass() = default;
+  src\network\multiplayer.hpp:103->104: addr 0x5D8170 separate line
+    L103:     MPBattleClass() noexcept;                                                    // 0x5D8170
+    L104:     virtual ~MPBattleClass() = default;
+  src\network\multiplayer.hpp:164->165: addr 0x5C5CE0 separate line
+    L164:     MPFreeForAllClass() noexcept;                                       // 0x5C5CE0 (MPBattleClass::
+    L165:     virtual ~MPFreeForAllClass() = default;
+  src\network\multiplayer.hpp:176->177: addr 0x5CB3A0 separate line
+    L176:     MPUnholyAllianceClass() noexcept;                                    // 0x5CB3A0 (MPBattleClass:
+    L177:     virtual ~MPUnholyAllianceClass() = default;
+  src\network\multiplayer.hpp:187->188: addr 0x5CA630 separate line
+    L187:     MPSiegeClass() noexcept;                                              // 0x5CA630 (MPBattleClass
+    L188:     virtual ~MPSiegeClass() = default;
+  src\network\multiplayer.hpp:202->203: addr 0x5C93E0 separate line
+    L202:     MPMegawealthClass() noexcept;                                  // 0x5C93E0 (MPBattleClass::MPMeg
+    L203:     virtual ~MPMegawealthClass() = default;
+  src\network\multiplayer.hpp:210->211: addr 0x5C6150 separate line
+    L210:     MPManBattleClass() noexcept;  // 0x5C6150 (MPBattleClass::MPManBattleClass)
+    L211:     virtual ~MPManBattleClass() = default;
+  src\object\object.hpp:42->43: addr 0x405CA0 separate line
+    L42:     void Resume();        // 0x405CA0
+    L43:     static bool IsSoundEnabled() { return false; } // IDA 0x407000
+  src\object\object.hpp:300->301: addr 0x5F5DD0 separate line
+    L300:     HealthState GetHealthStatus() const {         // 0x5F5DD0
+    L301:         auto pct = GetHealthPercentage();
+  src\render\colorscheme.hpp:11->12: addr 0x68C8D0 separate line
+    L11:     // 0x68C8D0 Destructor
+    L12:     void Destructor();
+  src\render\globals_render.hpp:278->279: addr 0x8a00b0 separate line
+    L278: // 0x8a00b0 [confidence: ida_direct]
+    L279: extern void (*g_DDraw_ErrorCallback)();
+  src\structure\building_light.hpp:44->45: addr 0x436BE0 separate line
+    L44:     // 0x436BE0 FindTarget / SetBehaviour
+    L45:     void SetBehaviour(int mode) {}
+  src\system\waypoint.hpp:23->24: addr 0x5022F0 separate line
+    L23:     // 0x5022F0 IsCoordinateUsed
+    L24:     bool IsCoordinateUsed(const CellStruct&) const { return false; }
+  src\system\waypoint.hpp:25->26: addr 0x502460 separate line
+    L25:     // 0x502460 FindOrCreate
+    L26:     bool FindOrCreate(int, unsigned int*, unsigned char*) { return false; }
+  src\type\aircraft_type.hpp:18->19: addr 0x41c8b0 separate line
+    L18:     static AircraftTypeClass* FindOrAllocate(const char* pID);  // 0x41c8b0
+    L19:     static int FindIndex(const char* pID);
+  src\type\anim_type.hpp:44->45: addr 0x428e90 separate line
+    L44:     virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override { return fals
+    L45:     virtual ObjectClass* CreateObject(HouseClass* pOwner) override { return nullptr; }
+  src\type\building_type.hpp:56->57: addr 0x45eca0 separate line
+    L56:     short GetFoundationHeight(bool bIncludeBib) const;  // 0x45eca0
+    L57:     bool CanPlaceHere(CellStruct* cell, HouseClass* owner) const;
+  src\type\bullet_type.hpp:34->35: addr 0x46c880 separate line
+    L34:     virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override { return fals
+    L35:     virtual ObjectClass* CreateObject(HouseClass* pOwner) override { return nullptr; }
+  src\type\infantry_type.hpp:44->45: addr 0x524960 separate line
+    L44:     virtual HRESULT __stdcall Load(IStream* pStm) override { return S_OK; }  // 0x524960 (as LoadTyp
+    L45:     virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override { return S_OK; }
+  src\type\object_type.hpp:25->26: addr 0x5f92d0 separate line
+    L25:     virtual HRESULT __stdcall Load(IStream* pStm) override { return S_OK; }  // 0x5f92d0 (as LoadFro
+    L26:     virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override { return S_OK; }
+  src\type\object_type.hpp:31->32: addr 0x41cbf0 separate line
+    L31:     virtual CoordStruct* onCellChanged(CoordStruct* pDest, CoordStruct* pSrc) const { return nullptr
+    L32:     virtual DWORD GetOwners() const { return 0; }
+  src\type\overlay_type.hpp:18->19: addr 0x5fe250 separate line
+    L18:     static OverlayTypeClass* FindOrAllocate(const char* pID);  // 0x5fe250
+    L19:     static int FindIndex(const char* pID);
+  src\type\overlay_type.hpp:23->24: addr 0x5fe770 separate line
+    L23:     virtual HRESULT __stdcall Load(IStream* pStm) override { return S_OK; }  // 0x5fe770 (as LoadFro
+    L24:     virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override { return S_OK; }
+  src\type\particle_system_type.hpp:32->33: addr 0x644950 separate line
+    L32:     virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override { return fals
+    L33:     virtual ObjectClass* CreateObject(HouseClass* pOwner) override { return nullptr; }
+  src\type\particle_type.hpp:32->33: addr 0x645940 separate line
+    L32:     virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override { return fals
+    L33:     virtual ObjectClass* CreateObject(HouseClass* pOwner) override { return nullptr; }
+  src\type\smudge_type.hpp:16->17: addr 0x6b5260 separate line
+    L16:     static SmudgeTypeClass* FindOrAllocate(const char* pID);  // 0x6b5260
+    L17:     static int FindIndex(const char* pID);
+  src\type\terrain_type.hpp:16->17: addr 0x71e2a0 separate line
+    L16:     static TerrainTypeClass* FindOrAllocate(const char* pID);  // 0x71e2a0 (as FindOrCreate)
+    L17:     static int FindIndex(const char* pID);
+  src\type\terrain_type.hpp:21->22: addr 0x71dea0 separate line
+    L21:     virtual HRESULT __stdcall Load(IStream* pStm) override { return S_OK; }  // 0x71dea0 (as LoadFro
+    L22:     virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override { return S_OK; }
+  src\type\unit_type.hpp:18->19: addr 0x74b960 separate line
+    L18:     static UnitTypeClass* FindOrAllocate(const char* pID);  // 0x74b960 (as FindOrCreate)
+    L19:     static int FindIndex(const char* pID);
+  src\type\warhead_type.hpp:33->34: addr 0x75e3b0 separate line
+    L33:     static WarheadTypeClass* FindOrAllocate(const char* pID);  // 0x75e3b0 (as FindOrCreate)
+    L34:     static int FindIndex(const char* pID);
+
+
+================================================================================
+2. Inline implementation in .hpp with address (1925 occurrences)
+================================================================================
+
+  src\core\stream_ext.hpp:176: inline .hpp addr 0x40a340 |     virtual void CreateDirectSound() {} // 0x40a340
+  src\core\stream_ext.hpp:177: inline .hpp addr 0x40a6d0 |     virtual void sub_40A6D0() {} // 0x40a6d0
+  src\core\stream_ext.hpp:178: inline .hpp addr 0x40ccd0 |     virtual void CompareEqual() {} // 0x40ccd0
+  src\core\stream_ext.hpp:179: inline .hpp addr 0x410ed0 |     virtual void FillCircularBufferScroll() {} // 0x410ed0
+  src\core\stream_ext.hpp:180: inline .hpp addr 0x42f7c0 |     virtual void Cleanup() {} // 0x42f7c0
+  src\core\stream_ext.hpp:200: inline .hpp addr 0x477c30 |     virtual void CompareEqual() {} // 0x477c30
+  src\core\stream_ext.hpp:209: inline .hpp addr 0x431170 |     virtual void FindActiveChannel() {} // 0x431170
+  src\core\stream_ext.hpp:210: inline .hpp addr 0x431dd0 |     virtual void Flush() {} // 0x431dd0
+  src\core\stream_ext.hpp:211: inline .hpp addr 0x434990 |     virtual void Cleanup() {} // 0x434990
+  src\core\stream_ext.hpp:222: inline .hpp addr 0x4a2930 |     virtual void AddRef() {} // 0x4a2930
+  src\core\stream_ext.hpp:223: inline .hpp addr 0x4a2950 |     virtual void Release() {} // 0x4a2950
+  src\core\stream_ext.hpp:224: inline .hpp addr 0x4a2990 |     virtual void QueryInterface() {} // 0x4a2990
+  src\core\stream_ext.hpp:225: inline .hpp addr 0x4a2a20 |     virtual void StubReturnNullPointer() {} // 0x4a2a20
+  src\core\stream_ext.hpp:226: inline .hpp addr 0x4a2ab0 |     virtual void StreamRead() {} // 0x4a2ab0
+  src\core\stream_ext.hpp:256: inline .hpp addr 0x410e50 |     virtual void Release() {} // 0x410e50
+  src\core\stream_ext.hpp:265: inline .hpp addr 0x5c5d40 |     virtual void Read() {} // 0x5c5d40
+  src\core\stream_ext.hpp:266: inline .hpp addr 0x5c5d90 |     virtual void Write() {} // 0x5c5d90
+  src\core\stream_ext.hpp:267: inline .hpp addr 0x5c5dd0 |     virtual void Seek() {} // 0x5c5dd0
+  src\core\stream_ext.hpp:268: inline .hpp addr 0x5d6620 |     virtual void readData() {} // 0x5d6620
+  src\core\stream_ext.hpp:269: inline .hpp addr 0x6241e0 |     virtual void StubReturnFalse() {} // 0x6241e0
+  src\core\stream_ext.hpp:284: inline .hpp addr 0x433cf0 |     virtual void Layout() {} // 0x433cf0
+  src\core\stream_ext.hpp:285: inline .hpp addr 0x433ed0 |     virtual void MeasureWidth() {} // 0x433ed0
+  src\core\stream_ext.hpp:286: inline .hpp addr 0x5bd3d0 |     virtual void sub_5BD3D0() {} // 0x5bd3d0
+  src\core\stream_ext.hpp:287: inline .hpp addr 0x5bd490 |     virtual void DrawRepeated() {} // 0x5bd490
+  src\core\stream_ext.hpp:299: inline .hpp addr 0x433ca0 |     virtual void SetRect() {} // 0x433ca0
+  src\core\utility_ext.hpp:631: inline .hpp addr 0x7be5d0 |     virtual void Dispatch() {} // 0x7be5d0
+  src\core\utility_ext.hpp:640: inline .hpp addr 0x490490 |     virtual void RegisterAll() {} // 0x490490
+  src\core\utility_ext.hpp:641: inline .hpp addr 0x65d670 |     virtual void ReleaseRef() {} // 0x65d670
+  src\core\utility_ext.hpp:642: inline .hpp addr 0x65d6a0 |     virtual void initInterface() {} // 0x65d6a0
+  src\core\utility_ext.hpp:643: inline .hpp addr 0x765680 |     virtual void queryProperty() {} // 0x765680
+  src\core\utility_ext.hpp:644: inline .hpp addr 0x7656b0 |     virtual void setProperty() {} // 0x7656b0
+  src\core\utility_ext.hpp:674: inline .hpp addr 0x6bedb0 |     virtual void Register() {} // 0x6bedb0
+  src\core\utility_ext.hpp:675: inline .hpp addr 0x6c0ac0 |     virtual void CreateInstance() {} // 0x6c0ac0
+  src\core\utility_ext.hpp:685: inline .hpp addr 0x6bfbc0 |     virtual void Construct() {} // 0x6bfbc0
+  src\core\utility_ext.hpp:694: inline .hpp addr 0x6bf140 |     virtual void Construct() {} // 0x6bf140
+  src\core\utility_ext.hpp:703: inline .hpp addr 0x6bf2c0 |     virtual void Construct() {} // 0x6bf2c0
+  src\core\utility_ext.hpp:712: inline .hpp addr 0x6bf440 |     virtual void Construct() {} // 0x6bf440
+  src\core\utility_ext.hpp:721: inline .hpp addr 0x6bf5c0 |     virtual void Construct() {} // 0x6bf5c0
+  src\core\utility_ext.hpp:730: inline .hpp addr 0x6bf740 |     virtual void Construct() {} // 0x6bf740
+  src\core\utility_ext.hpp:739: inline .hpp addr 0x6bf8c0 |     virtual void Construct() {} // 0x6bf8c0
+  src\core\utility_ext.hpp:748: inline .hpp addr 0x6bfa40 |     virtual void Construct() {} // 0x6bfa40
+  src\core\utility_ext.hpp:757: inline .hpp addr 0x437fc0 |     virtual void Release() {} // 0x437fc0
+  src\core\utility_ext.hpp:758: inline .hpp addr 0x488690 |     virtual void DetachPrimary() {} // 0x488690
+  src\core\utility_ext.hpp:759: inline .hpp addr 0x48c3b0 |     virtual void IsValid() {} // 0x48c3b0
+  src\core\utility_ext.hpp:760: inline .hpp addr 0x48e600 |     virtual void SetMember10() {} // 0x48e600
+  src\core\utility_ext.hpp:761: inline .hpp addr 0x48e610 |     virtual void GetMember09() {} // 0x48e610
+  src\core\utility_ext.hpp:791: inline .hpp addr 0x4a1fb0 |     virtual void Compute() {} // 0x4a1fb0
+  src\core\utility_ext.hpp:800: inline .hpp addr 0x4b4d50 |     virtual void Release_Alt() {} // 0x4b4d50
+  src\core\utility_ext.hpp:801: inline .hpp addr 0x4d0490 |     virtual void ReleaseAndSet() {} // 0x4d0490
+  src\core\utility_ext.hpp:802: inline .hpp addr 0x6406f0 |     virtual void Dtor() {} // 0x6406f0
+  src\core\utility_ext.hpp:803: inline .hpp addr 0x65d430 |     virtual void Constructor() {} // 0x65d430
+  src\core\utility_ext.hpp:804: inline .hpp addr 0x65d460 |     virtual void Release() {} // 0x65d460
+  src\core\utility_ext.hpp:822: inline .hpp addr 0x4a2600 |     virtual void UpdateDisplay() {} // 0x4a2600
+  src\core\utility_ext.hpp:831: inline .hpp addr 0x4e3830 |     virtual void IDToIndex() {} // 0x4e3830
+  src\core\utility_ext.hpp:840: inline .hpp addr 0x4a0920 |     virtual void QueryInterface() {} // 0x4a0920
+  src\core\utility_ext.hpp:841: inline .hpp addr 0x4a0990 |     virtual void AddRef() {} // 0x4a0990
+  src\core\utility_ext.hpp:842: inline .hpp addr 0x4a09b0 |     virtual void Release() {} // 0x4a09b0
+  src\core\utility_ext.hpp:843: inline .hpp addr 0x4a0a50 |     virtual void ddtor() {} // 0x4a0a50
+  src\core\utility_ext.hpp:844: inline .hpp addr 0x4a0af0 |     virtual void Next() {} // 0x4a0af0
+  src\core\utility_ext.hpp:864: inline .hpp addr 0x49ff80 |     virtual void QueryInterface() {} // 0x49ff80
+  src\core\utility_ext.hpp:865: inline .hpp addr 0x49fff0 |     virtual void AddRef() {} // 0x49fff0
+  src\core\utility_ext.hpp:866: inline .hpp addr 0x4a0010 |     virtual void Release() {} // 0x4a0010
+  src\core\utility_ext.hpp:867: inline .hpp addr 0x4a00b0 |     virtual void ddtor() {} // 0x4a00b0
+  src\core\utility_ext.hpp:868: inline .hpp addr 0x4a0160 |     virtual void Next() {} // 0x4a0160
+  src\core\utility_ext.hpp:883: inline .hpp addr 0x54f1c0 |     virtual void Enqueue() {} // 0x54f1c0
+  src\core\utility_ext.hpp:892: inline .hpp addr 0x4a51d0 |     virtual void CheckNone() {} // 0x4a51d0
+  src\core\utility_ext.hpp:893: inline .hpp addr 0x4f4ca0 |     virtual void IsZero() {} // 0x4f4ca0
+  src\core\utility_ext.hpp:894: inline .hpp addr 0x5176b0 |     virtual void IsNot2() {} // 0x5176b0
+  src\core\utility_ext.hpp:905: inline .hpp addr 0x626690 |     virtual void GetNextActive() {} // 0x626690
+  src\core\utility_ext.hpp:914: inline .hpp addr 0x645d20 |     virtual void Copy() {} // 0x645d20
+  src\core\utility_ext.hpp:915: inline .hpp addr 0x6c9650 |     virtual void Sum() {} // 0x6c9650
+  src\core\utility_ext.hpp:925: inline .hpp addr 0x6c9680 |     virtual void Get() {} // 0x6c9680
+  src\core\utility_ext.hpp:934: inline .hpp addr 0x4f3090 |     virtual void Release() {} // 0x4f3090
+  src\core\utility_ext.hpp:935: inline .hpp addr 0x4f30e0 |     virtual void QueryInterface() {} // 0x4f30e0
+  src\core\utility_ext.hpp:936: inline .hpp addr 0x4f3ad0 |     virtual void StubReturnFalse() {} // 0x4f3ad0
+  src\core\utility_ext.hpp:937: inline .hpp addr 0x4f3ae0 |     virtual void Stub() {} // 0x4f3ae0
+  src\core\utility_ext.hpp:938: inline .hpp addr 0x4f3b00 |     virtual void AddRef() {} // 0x4f3b00
+  src\core\utility_ext.hpp:953: inline .hpp addr 0x4f3640 |     virtual void Release() {} // 0x4f3640
+  src\core\utility_ext.hpp:954: inline .hpp addr 0x4f3690 |     virtual void Load() {} // 0x4f3690
+  src\core\utility_ext.hpp:955: inline .hpp addr 0x4f3720 |     virtual void Draw() {} // 0x4f3720
+  src\core\utility_ext.hpp:956: inline .hpp addr 0x4f37a0 |     virtual void ddtor() {} // 0x4f37a0
+  src\core\utility_ext.hpp:957: inline .hpp addr 0x4f3840 |     virtual void QueryInterface() {} // 0x4f3840
+  src\core\utility_ext.hpp:970: inline .hpp addr 0x4f3a50 |     virtual void Constructor() {} // 0x4f3a50
+  src\core\utility_ext.hpp:971: inline .hpp addr 0x4f3a70 |     virtual void Destructor() {} // 0x4f3a70
+  src\core\utility_ext.hpp:981: inline .hpp addr 0x4f3af0 |     virtual void Release() {} // 0x4f3af0
+  src\core\utility_ext.hpp:982: inline .hpp addr 0x4f3b20 |     virtual void QueryInterface() {} // 0x4f3b20
+  src\core\utility_ext.hpp:992: inline .hpp addr 0x4f3ee0 |     virtual void AddRef() {} // 0x4f3ee0
+  src\core\utility_ext.hpp:993: inline .hpp addr 0x4f3f60 |     virtual void QueryInterface() {} // 0x4f3f60
+  src\core\utility_ext.hpp:1003: inline .hpp addr 0x476d80 |     virtual void ComputeHashSHA1() {} // 0x476d80
+  src\core\utility_ext.hpp:1004: inline .hpp addr 0x4f4410 |     virtual void InsertOrdered() {} // 0x4f4410
+  src\core\utility_ext.hpp:1005: inline .hpp addr 0x5565f0 |     virtual void Reset() {} // 0x5565f0
+  src\core\utility_ext.hpp:1016: inline .hpp addr 0x624c80 |     virtual void ComputeIndex() {} // 0x624c80
+  src\core\utility_ext.hpp:1017: inline .hpp addr 0x7adf70 |     virtual void Shrink2() {} // 0x7adf70
+  src\core\utility_ext.hpp:1018: inline .hpp addr 0x7ae0c0 |     virtual void ComputeIndex_2() {} // 0x7ae0c0
+  src\core\utility_ext.hpp:1019: inline .hpp addr 0x7ae460 |     virtual void Shrink() {} // 0x7ae460
+  src\core\utility_ext.hpp:1031: inline .hpp addr 0x5256f0 |     virtual void DestroyHashTableINIClass() {} // 0x5256f0
+  src\core\utility_ext.hpp:1032: inline .hpp addr 0x52b390 |     virtual void BinarySearch() {} // 0x52b390
+  src\core\utility_ext.hpp:1033: inline .hpp addr 0x52b4f0 |     virtual void BinarySearchAlt() {} // 0x52b4f0
+  src\core\utility_ext.hpp:1034: inline .hpp addr 0x608440 |     virtual void LookupAndMark() {} // 0x608440
+  src\core\utility_ext.hpp:1035: inline .hpp addr 0x624140 |     virtual void FindAndMark() {} // 0x624140
+  src\core\utility_ext.hpp:1065: inline .hpp addr 0x526b10 |     virtual void FindSection() {} // 0x526b10
+  src\core\utility_ext.hpp:1074: inline .hpp addr 0x5b4270 |     virtual void MarkEntry() {} // 0x5b4270
+  src\core\utility_ext.hpp:1083: inline .hpp addr 0x58aff0 |     virtual void Construct() {} // 0x58aff0
+  src\core\utility_ext.hpp:1092: inline .hpp addr 0x4e0c40 |     virtual void PushBack() {} // 0x4e0c40
+  src\core\utility_ext.hpp:1101: inline .hpp addr 0x430f70 |     virtual void sub_430F70() {} // 0x430f70
+  src\core\utility_ext.hpp:1102: inline .hpp addr 0x4ab9b0 |     virtual void ExecuteCommand() {} // 0x4ab9b0
+  src\core\utility_ext.hpp:1103: inline .hpp addr 0x4ac2b0 |     virtual void CheckHumanPlayer() {} // 0x4ac2b0
+  src\core\utility_ext.hpp:1104: inline .hpp addr 0x4c6650 |     virtual void SetTargetOrClear() {} // 0x4c6650
+  src\core\utility_ext.hpp:1105: inline .hpp addr 0x5c5d30 |     virtual void AssignPlayerIndex_0() {} // 0x5c5d30
+  src\core\utility_ext.hpp:1126: inline .hpp addr 0x77b030 |     virtual void QueryInterface() {} // 0x77b030
+  src\core\utility_ext.hpp:1135: inline .hpp addr 0x510fb0 |     virtual void NameToDialogID() {} // 0x510fb0
+  src\core\utility_ext.hpp:1136: inline .hpp addr 0x5e98f0 |     virtual void IndexToDlgID() {} // 0x5e98f0
+  src\core\utility_ext.hpp:1146: inline .hpp addr 0x4e62b0 |     virtual void GetName() {} // 0x4e62b0
+  src\core\utility_ext.hpp:1155: inline .hpp addr 0x5c6120 |     virtual void Destroy() {} // 0x5c6120
+  src\core\utility_ext.hpp:1164: inline .hpp addr 0x407470 |     virtual void GetNext() {} // 0x407470
+  src\core\utility_ext.hpp:1173: inline .hpp addr 0x5980c0 |     virtual void Gaussian() {} // 0x5980c0
+  src\core\utility_ext.hpp:1174: inline .hpp addr 0x65c780 |     virtual void State() {} // 0x65c780
+  src\core\utility_ext.hpp:1175: inline .hpp addr 0x65c7e0 |     virtual void Range() {} // 0x65c7e0
+  src\core\utility_ext.hpp:1176: inline .hpp addr 0x661850 |     virtual void sub_661850() {} // 0x661850
+  src\core\utility_ext.hpp:1188: inline .hpp addr 0x65c8b0 |     virtual void sub_65C8B0() {} // 0x65c8b0
+  src\core\utility_ext.hpp:1189: inline .hpp addr 0x661c10 |     virtual void Release() {} // 0x661c10
+  src\core\utility_ext.hpp:1190: inline .hpp addr 0x661c70 |     virtual void QueryInterface() {} // 0x661c70
+  src\core\utility_ext.hpp:1201: inline .hpp addr 0x4e1a20 |     virtual void Set() {} // 0x4e1a20
+  src\core\utility_ext.hpp:1210: inline .hpp addr 0x65d660 |     virtual void Constructor() {} // 0x65d660
+  src\core\utility_ext.hpp:1219: inline .hpp addr 0x69d8c0 |     virtual void sub_69D8C0() {} // 0x69d8c0
+  src\core\utility_ext.hpp:1220: inline .hpp addr 0x69d960 |     virtual void Process() {} // 0x69d960
+  src\core\utility_ext.hpp:1221: inline .hpp addr 0x69d9e0 |     virtual void Compute() {} // 0x69d9e0
+  src\core\utility_ext.hpp:1222: inline .hpp addr 0x69db30 |     virtual void Transform() {} // 0x69db30
+  src\core\utility_ext.hpp:1223: inline .hpp addr 0x69dff0 |     virtual void Reset() {} // 0x69dff0
+  src\core\utility_ext.hpp:1238: inline .hpp addr 0x5975e0 |     virtual void ClampValues() {} // 0x5975e0
+  src\core\utility_ext.hpp:1247: inline .hpp addr 0x5f33a0 |     virtual void Reset() {} // 0x5f33a0
+  src\core\utility_ext.hpp:1256: inline .hpp addr 0x721210 |     virtual void Find() {} // 0x721210
+  src\core\utility_ext.hpp:1265: inline .hpp addr 0x40dce0 |     virtual void Lookup() {} // 0x40dce0
+  src\core\utility_ext.hpp:1266: inline .hpp addr 0x5cf6b0 |     virtual void Find() {} // 0x5cf6b0
+  src\core\utility_ext.hpp:1276: inline .hpp addr 0x49ee60 |     virtual void Release() {} // 0x49ee60
+  src\core\utility_ext.hpp:1277: inline .hpp addr 0x49ef10 |     virtual void ddtor() {} // 0x49ef10
+  src\core\utility_ext.hpp:1278: inline .hpp addr 0x49ef40 |     virtual void Add() {} // 0x49ef40
+  src\core\utility_ext.hpp:1279: inline .hpp addr 0x49ef80 |     virtual void Remove() {} // 0x49ef80
+  src\core\utility_ext.hpp:1280: inline .hpp addr 0x49efa0 |     virtual void QueryInterface() {} // 0x49efa0
+  src\core\utility_ext.hpp:1296: inline .hpp addr 0x4a3840 |     virtual void Append() {} // 0x4a3840
+  src\core\utility_ext.hpp:1305: inline .hpp addr 0x4b4d70 |     virtual void GetRemaining() {} // 0x4b4d70
+  src\core\utility_ext.hpp:1314: inline .hpp addr 0x53e3c0 |     virtual void AllocSlot() {} // 0x53e3c0
+  src\core\utility_ext.hpp:1323: inline .hpp addr 0x5b4080 |     virtual void Destructor() {} // 0x5b4080
+  src\core\utility_ext.hpp:1332: inline .hpp addr 0x41caa0 |     virtual void FindByName() {} // 0x41caa0
+  src\core\utility_ext.hpp:1341: inline .hpp addr 0x41c460 |     virtual void NormalizeNonZero() {} // 0x41c460
+  src\core\utility_ext.hpp:1342: inline .hpp addr 0x6dc4c0 |     virtual void Subtract() {} // 0x6dc4c0
+  src\core\utility_ext.hpp:1352: inline .hpp addr 0x41c3c0 |     virtual void Magnitude() {} // 0x41c3c0
+  src\core\utility_ext.hpp:1353: inline .hpp addr 0x437160 |     virtual void Subtract() {} // 0x437160
+  src\core\utility_ext.hpp:1354: inline .hpp addr 0x43a100 |     virtual void AddAssign() {} // 0x43a100
+  src\core\utility_ext.hpp:1365: inline .hpp addr 0x5ad790 |     virtual void EraseAt() {} // 0x5ad790
+  src\core\utility_ext.hpp:1366: inline .hpp addr 0x63ef70 |     virtual void EraseAt_Copy() {} // 0x63ef70
+  src\core\utility_ext.hpp:1376: inline .hpp addr 0x589290 |     virtual void EraseAt() {} // 0x589290
+  src\core\utility_ext.hpp:1385: inline .hpp addr 0x42dc50 |     virtual void Constructor() {} // 0x42dc50
+  src\core\utility_ext.hpp:1394: inline .hpp addr 0x76f0c0 |     virtual void Construct() {} // 0x76f0c0
+  src\core\utility_ext.hpp:1395: inline .hpp addr 0x76f0e0 |     virtual void HasNext() {} // 0x76f0e0
+  src\core\utility_ext.hpp:1396: inline .hpp addr 0x76f100 |     virtual void initCursor() {} // 0x76f100
+  src\core\utility_ext.hpp:1397: inline .hpp addr 0x76f120 |     virtual void updateCursor() {} // 0x76f120
+  src\core\utility_ext.hpp:1398: inline .hpp addr 0x76f140 |     virtual void drawCursor() {} // 0x76f140
+  src\core\utility_ext.hpp:1414: inline .hpp addr 0x4f3fc0 |     virtual void AddRef() {} // 0x4f3fc0
+  src\core\utility_ext.hpp:1415: inline .hpp addr 0x4f3ff0 |     virtual void Release() {} // 0x4f3ff0
+  src\core\utility_ext.hpp:1416: inline .hpp addr 0x4f4000 |     virtual void ddtor() {} // 0x4f4000
+  src\misc\audio_ext.hpp:177: inline .hpp addr 0x55a7d0 |     virtual void ComputeRotation() {} // 0x55a7d0
+  src\misc\audio_ext.hpp:186: inline .hpp addr 0x409c40 |     virtual void InitializePlayback() {} // 0x409c40
+  src\misc\audio_ext.hpp:195: inline .hpp addr 0x4010a0 |     virtual void IsActive() {} // 0x4010a0
+  src\misc\audio_ext.hpp:196: inline .hpp addr 0x402600 |     virtual void DeactivatePlay() {} // 0x402600
+  src\misc\audio_ext.hpp:197: inline .hpp addr 0x402650 |     virtual void ActivatePlay() {} // 0x402650
+  src\misc\audio_ext.hpp:208: inline .hpp addr 0x7c81db |     virtual void Decode() {} // 0x7c81db
+  src\misc\audio_ext.hpp:217: inline .hpp addr 0x754be0 |     virtual void InitDefault() {} // 0x754be0
+  src\misc\audio_ext.hpp:226: inline .hpp addr 0x752db0 |     virtual void LoadFromINI() {} // 0x752db0
+  src\misc\audio_ext.hpp:235: inline .hpp addr 0x4026a0 |     virtual void GetCallback() {} // 0x4026a0
+  src\misc\audio_ext.hpp:236: inline .hpp addr 0x405fd0 |     virtual void Stop() {} // 0x405fd0
+  src\misc\audio_ext.hpp:246: inline .hpp addr 0x405c00 |     virtual void Release() {} // 0x405c00
+  src\misc\audio_ext.hpp:255: inline .hpp addr 0x407fb0 |     virtual void ProcessAudioFrame() {} // 0x407fb0
+  src\misc\audio_ext.hpp:256: inline .hpp addr 0x7535b0 |     virtual void CounterInc() {} // 0x7535b0
+  src\misc\audio_ext.hpp:266: inline .hpp addr 0x401640 |     virtual void GetSampleInformation() {} // 0x401640
+  src\misc\audio_ext.hpp:275: inline .hpp addr 0x407480 |     virtual void GetNextEntry() {} // 0x407480
+  src\misc\audio_ext.hpp:284: inline .hpp addr 0x408600 |     virtual void Release() {} // 0x408600
+  src\misc\audio_ext.hpp:293: inline .hpp addr 0x756bb0 |     virtual void ComputeBoundingVertices() {} // 0x756bb0
+  src\misc\audio_ext.hpp:302: inline .hpp addr 0x5fb160 |     virtual void ApplySettings() {} // 0x5fb160
+  src\misc\audio_ext.hpp:311: inline .hpp addr 0x405190 |     virtual void ProcessQueue() {} // 0x405190
+  src\misc\audio_ext.hpp:320: inline .hpp addr 0x4024a0 |     virtual void sub_4024A0() {} // 0x4024a0
+  src\misc\audio_ext.hpp:321: inline .hpp addr 0x407a90 |     virtual void Destructor() {} // 0x407a90
+  src\misc\audio_ext.hpp:322: inline .hpp addr 0x4080d0 |     virtual void IsBuffering() {} // 0x4080d0
+  src\misc\audio_ext.hpp:323: inline .hpp addr 0x408840 |     virtual void InitLinkedList() {} // 0x408840
+  src\misc\audio_ext.hpp:324: inline .hpp addr 0x408930 |     virtual void SetField() {} // 0x408930
+  src\misc\audio_ext.hpp:337: inline .hpp addr 0x406130 |     virtual void Get() {} // 0x406130
+  src\misc\audio_ext.hpp:346: inline .hpp addr 0x403920 |     virtual void UpdateStats() {} // 0x403920
+  src\misc\audio_ext.hpp:355: inline .hpp addr 0x408230 |     virtual void DecrementAll() {} // 0x408230
+  src\misc\locomotion.hpp:96: inline .hpp addr 0x4B4C30 |     virtual HRESULT __stdcall IsDirty() override { return Dirty ? S_OK : S_FALSE; }     // 0x4B4C30
+  src\misc\locomotion.hpp:97: inline .hpp addr 0x55AAC0 |     virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }           // 0x55AAC0
+  src\misc\locomotion.hpp:118: inline .hpp addr 0x55ACD0 |     virtual bool __stdcall Is_Moving() override { return false; }                        // 0x55ACD0
+  src\misc\locomotion.hpp:131: inline .hpp addr 0x55ABF0 |     virtual Move __stdcall Can_Enter_Cell(CellStruct cell) override { return Move::OK; } // 0x55ABF0
+  src\misc\locomotion.hpp:132: inline .hpp addr 0x55ABE0 |     virtual bool __stdcall Is_To_Have_Shadow() override { return true; }                 // 0x55ABE0
+  src\misc\locomotion.hpp:154: inline .hpp addr 0x55ABC0 |     virtual VisualType __stdcall Visual_Character(VARIANT_BOOL unused) override { return VisualType::Normal; } // 0x55ABC0
+  src\misc\locomotion.hpp:155: inline .hpp addr 0x55ABA0 |     virtual int __stdcall Z_Adjust() override { return 0; }                              // 0x55ABA0
+  src\misc\locomotion.hpp:156: inline .hpp addr 0x55ABB0 |     virtual ZGradient __stdcall Z_Gradient() override { return ZGradient::Deg90; }       // 0x55ABB0
+  src\misc\locomotion.hpp:157: inline .hpp addr 0x55AC60 |     virtual bool __stdcall Process() override { return true; }                           // 0x55AC60
+  src\misc\locomotion.hpp:158: inline .hpp addr 0x55AC50 |     virtual void __stdcall Move_To(CoordStruct to) override {}                           // 0x55AC50
+  src\misc\locomotion.hpp:159: inline .hpp addr 0x55AC40 |     virtual void __stdcall Stop_Moving() override {}                                     // 0x55AC40
+  src\misc\locomotion.hpp:160: inline .hpp addr 0x55AC30 |     virtual void __stdcall Do_Turn(unsigned short facing) override {}                    // 0x55AC30
+  src\misc\locomotion.hpp:161: inline .hpp addr 0x55AC20 |     virtual void __stdcall Unlimbo() override {}                                         // 0x55AC20
+  src\misc\locomotion.hpp:162: inline .hpp addr 0x55AB90 |     virtual void __stdcall Tilt_Pitch_AI() override {}                                   // 0x55AB90
+  src\misc\locomotion.hpp:163: inline .hpp addr 0x55A8F0 |     virtual bool __stdcall Power_On() override { Powered = true; return Is_Powered(); }  // 0x55A8F0
+  src\misc\locomotion.hpp:164: inline .hpp addr 0x55A910 |     virtual bool __stdcall Power_Off() override { Powered = false; return Is_Powered(); }// 0x55A910
+  src\misc\locomotion.hpp:165: inline .hpp addr 0x55A930 |     virtual bool __stdcall Is_Powered() override { return Powered; }                     // 0x55A930
+  src\misc\locomotion.hpp:166: inline .hpp addr 0x55A940 |     virtual bool __stdcall Is_Ion_Sensitive() override { return false; }                 // 0x55A940
+  src\misc\locomotion.hpp:167: inline .hpp addr 0x55AB70 |     virtual bool __stdcall Push(unsigned short dir) override { return false; }           // 0x55AB70
+  src\misc\locomotion.hpp:168: inline .hpp addr 0x55AB80 |     virtual bool __stdcall Shove(unsigned short dir) override { return false; }          // 0x55AB80
+  src\misc\locomotion.hpp:169: inline .hpp addr 0x55AC10 |     virtual void __stdcall Force_Track(int track, CoordStruct coord) override {}         // 0x55AC10
+  src\misc\locomotion.hpp:170: inline .hpp addr 0x55AC00 |     virtual void __stdcall Force_Immediate_Destination(CoordStruct coord) override {}     // 0x55AC00
+  src\misc\locomotion.hpp:171: inline .hpp addr 0x55ACE0 |     virtual void __stdcall Force_New_Slope(int ramp) override {}                         // 0x55ACE0
+  src\misc\locomotion.hpp:172: inline .hpp addr 0x4B6610 |     virtual bool __stdcall Is_Moving_Now() override { return Is_Moving(); }              // 0x4B6610
+  src\misc\locomotion.hpp:173: inline .hpp addr 0x55AD10 |     virtual int __stdcall Apparent_Speed() override { return 0; }                        // 0x55AD10
+  src\misc\locomotion.hpp:174: inline .hpp addr 0x55ACF0 |     virtual int __stdcall Drawing_Code() override { return 0; }                          // 0x55ACF0
+  src\misc\locomotion.hpp:175: inline .hpp addr 0x55AD00 |     virtual FireError __stdcall Can_Fire() override { return FireError::OK; }            // 0x55AD00
+  src\misc\locomotion.hpp:176: inline .hpp addr 0x4B4C60 |     virtual int __stdcall Get_Status() override { return 0; }                            // 0x4B4C60
+  src\misc\locomotion.hpp:177: inline .hpp addr 0x4B4C70 |     virtual void __stdcall Acquire_Hunter_Seeker_Target() override {}                    // 0x4B4C70
+  src\misc\locomotion.hpp:178: inline .hpp addr 0x4B4C80 |     virtual bool __stdcall Is_Surfacing() override { return false; }                     // 0x4B4C80
+  src\misc\locomotion.hpp:179: inline .hpp addr 0x4B6620 |     virtual void __stdcall Mark_All_Occupation_Bits(int mark) override {}                // 0x4B6620
+  src\misc\locomotion.hpp:180: inline .hpp addr 0x4B6630 |     virtual bool __stdcall Is_Moving_Here(CoordStruct to) override { return false; }     // 0x4B6630
+  src\misc\locomotion.hpp:181: inline .hpp addr 0x4B6640 |     virtual bool __stdcall Will_Jump_Tracks() override { return false; }                 // 0x4B6640
+  src\misc\locomotion.hpp:182: inline .hpp addr 0x4B4C50 |     virtual bool __stdcall Is_Really_Moving_Now() override { return Is_Moving_Now(); }   // 0x4B4C50
+  src\misc\locomotion.hpp:183: inline .hpp addr 0x4B4C90 |     virtual void __stdcall Stop_Movement_Animation() override {}                         // 0x4B4C90
+  src\misc\locomotion.hpp:184: inline .hpp addr 0x4B6650 |     virtual void __stdcall Lock() override {}                                            // 0x4B6650
+  src\misc\locomotion.hpp:185: inline .hpp addr 0x4B6660 |     virtual void __stdcall Unlock() override {}                                          // 0x4B6660
+  src\misc\locomotion.hpp:186: inline .hpp addr 0x4B4CA0 |     virtual void __stdcall ILocomotion_B8() override {}                                  // 0x4B4CA0 (aka Limbo in YRpp)
+  src\misc\locomotion.hpp:187: inline .hpp addr 0x4B6670 |     virtual int __stdcall Get_Track_Number() override { return -1; }                     // 0x4B6670
+  src\misc\locomotion.hpp:188: inline .hpp addr 0x4B6680 |     virtual int __stdcall Get_Track_Index() override { return -1; }                      // 0x4B6680
+  src\misc\locomotion.hpp:189: inline .hpp addr 0x4B6690 |     virtual int __stdcall Get_Speed_Accum() override { return -1; }                      // 0x4B6690
+  src\misc\locomotion.hpp:261: inline .hpp addr 0x5B0960 |     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return S_OK; }  // 0x5B0960
+  src\misc\locomotion.hpp:266: inline .hpp addr 0x45AF20 |     virtual HRESULT __stdcall Begin_Piggyback(ILocomotion* pointer) override { return S_OK; }         // 0x45AF20
+  src\misc\locomotion.hpp:267: inline .hpp addr 0x4AF5E0 |     virtual HRESULT __stdcall End_Piggyback(ILocomotion** pointer) override { return S_OK; }          // 0x4AF5E0
+  src\misc\locomotion.hpp:268: inline .hpp addr 0x4AF600 |     virtual bool __stdcall Is_Ok_To_End() override { return false; }                                   // 0x4AF600
+  src\misc\locomotion.hpp:269: inline .hpp addr 0x4AF610 |     virtual HRESULT __stdcall Piggyback_CLSID(GUID* classid) override { return S_OK; }                // 0x4AF610
+  src\misc\locomotion.hpp:270: inline .hpp addr 0x4AF630 |     virtual bool __stdcall Is_Piggybacking() override { return false; }                                // 0x4AF630
+  src\misc\locomotion.hpp:273: inline .hpp addr 0x4AFB80 |     virtual bool __stdcall Is_Moving() override { return false; }              // 0x4AFB80
+  src\misc\locomotion.hpp:274: inline .hpp addr 0x4AEFD0 |     virtual CoordStruct* __stdcall Destination(CoordStruct* out) override { return nullptr; }            // 0x4AEFD0
+  src\misc\locomotion.hpp:275: inline .hpp addr 0x4B4870 |     virtual bool __stdcall Process() override { return false; }                // 0x4B4870
+  src\misc\locomotion.hpp:276: inline .hpp addr 0x4B4880 |     virtual void __stdcall Move_To(CoordStruct to) override { (void)to; }  // 0x4B4880
+  src\misc\locomotion.hpp:277: inline .hpp addr 0x4AF310 |     virtual void __stdcall Stop_Moving() override {}            // 0x4AF310
+  src\misc\locomotion.hpp:278: inline .hpp addr 0x4AF020 |     virtual void __stdcall Do_Turn(unsigned short facing) override {}                   // 0x4AF020
+  src\misc\locomotion.hpp:279: inline .hpp addr 0x4AF390 |     virtual void __stdcall Mark_All_Occupation_Bits(int mark) override {}               // 0x4AF390
+  src\misc\locomotion.hpp:280: inline .hpp addr 0x4AF3A0 |     virtual void __stdcall ILocomotion_B8() override {}                                  // 0x4AF3A0 (Limbo)
+  src\misc\locomotion.hpp:317: inline .hpp addr 0x513D00 |     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return S_OK; }  // 0x513D00
+  src\misc\locomotion.hpp:321: inline .hpp addr 0x513C30 |     virtual bool __stdcall Is_Moving() override { return false; }              // 0x513C30
+  src\misc\locomotion.hpp:322: inline .hpp addr 0x513C40 |     virtual CoordStruct* __stdcall Destination(CoordStruct* out) override { return nullptr; }            // 0x513C40
+  src\misc\locomotion.hpp:323: inline .hpp addr 0x513E10 |     virtual bool __stdcall Process() override { return false; }                // 0x513E10
+  src\misc\locomotion.hpp:324: inline .hpp addr 0x5140E0 |     virtual void __stdcall Move_To(CoordStruct to) override { (void)to; }  // 0x5140E0
+  src\misc\locomotion.hpp:325: inline .hpp addr 0x514120 |     virtual void __stdcall Stop_Moving() override {}            // 0x514120
+  src\misc\locomotion.hpp:326: inline .hpp addr 0x513C50 |     virtual void __stdcall Do_Turn(unsigned short facing) override {}                   // 0x513C50
+  src\misc\locomotion.hpp:327: inline .hpp addr 0x514160 |     virtual void __stdcall Mark_All_Occupation_Bits(int mark) override {}               // 0x514160
+  src\misc\locomotion.hpp:328: inline .hpp addr 0x5140B0 |     virtual void __stdcall ILocomotion_B8() override {}                                  // 0x5140B0 (Limbo)
+  src\misc\locomotion.hpp:363: inline .hpp addr 0x75A9E0 |     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return S_OK; }  // 0x75A9E0
+  src\misc\locomotion.hpp:368: inline .hpp addr 0x75AB80 |     virtual HRESULT __stdcall Begin_Piggyback(ILocomotion* pointer) override { return S_OK; }         // 0x75AB80
+  src\misc\locomotion.hpp:369: inline .hpp addr 0x75AC00 |     virtual HRESULT __stdcall End_Piggyback(ILocomotion** pointer) override { return S_OK; }          // 0x75AC00
+  src\misc\locomotion.hpp:370: inline .hpp addr 0x75AC40 |     virtual bool __stdcall Is_Ok_To_End() override { return false; }                                   // 0x75AC40
+  src\misc\locomotion.hpp:371: inline .hpp addr 0x75AC50 |     virtual HRESULT __stdcall Piggyback_CLSID(GUID* classid) override { return S_OK; }                // 0x75AC50
+  src\misc\locomotion.hpp:372: inline .hpp addr 0x75AC70 |     virtual bool __stdcall Is_Piggybacking() override { return false; }                                // 0x75AC70
+  src\misc\locomotion.hpp:374: inline .hpp addr 0x75A8F0 |     virtual bool __stdcall Is_Moving() override { return false; }                                      // 0x75A8F0
+  src\misc\locomotion.hpp:375: inline .hpp addr 0x758F20 |     virtual CoordStruct* __stdcall Destination(CoordStruct* out) override { return nullptr; }            // 0x758F20
+  src\misc\locomotion.hpp:376: inline .hpp addr 0x75AE80 |     virtual bool __stdcall Process() override { return false; }                                        // 0x75AE80
+  src\misc\locomotion.hpp:377: inline .hpp addr 0x75C170 |     virtual void __stdcall Move_To(CoordStruct to) override { (void)to; }                          // 0x75C170
+  src\misc\locomotion.hpp:378: inline .hpp addr 0x75C1F0 |     virtual void __stdcall Stop_Moving() override {}                                    // 0x75C1F0
+  src\misc\locomotion.hpp:379: inline .hpp addr 0x7579A0 |     virtual void __stdcall Do_Turn(unsigned short facing) override {}                   // 0x7579A0
+  src\misc\locomotion.hpp:380: inline .hpp addr 0x7593B0 |     virtual bool __stdcall Is_Moving_Now() override { return false; }                                  // 0x7593B0
+  src\misc\locomotion.hpp:381: inline .hpp addr 0x7593C0 |     virtual bool __stdcall Is_Really_Moving_Now() override { return false; }                           // 0x7593C0
+  src\misc\locomotion.hpp:382: inline .hpp addr 0x75C200 |     virtual void __stdcall Stop_Movement_Animation() override {}                        // 0x75C200
+  src\misc\locomotion.hpp:383: inline .hpp addr 0x75C300 |     virtual void __stdcall Mark_All_Occupation_Bits(int mark) override {}               // 0x75C300
+  src\misc\locomotion.hpp:384: inline .hpp addr 0x75C310 |     virtual void __stdcall ILocomotion_B8() override {}                                  // 0x75C310 (Limbo)
+  src\misc\locomotion.hpp:414: inline .hpp addr 0x4CC950 |     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return S_OK; }  // 0x4CC950
+  src\misc\locomotion.hpp:418: inline .hpp addr 0x4CC9E0 |     virtual bool __stdcall Is_Moving() override { return false; }                                      // 0x4CC9E0
+  src\misc\locomotion.hpp:419: inline .hpp addr 0x4CCA70 |     virtual CoordStruct* __stdcall Destination(CoordStruct* out) override { return nullptr; }            // 0x4CCA70
+  src\misc\locomotion.hpp:420: inline .hpp addr 0x4CCAD0 |     virtual bool __stdcall Process() override { return false; }                                        // 0x4CCAD0
+  src\misc\locomotion.hpp:421: inline .hpp addr 0x4CD3A0 |     virtual void __stdcall Move_To(CoordStruct to) override { (void)to; }                          // 0x4CD3A0
+  src\misc\locomotion.hpp:422: inline .hpp addr 0x4CD400 |     virtual void __stdcall Stop_Moving() override {}                                    // 0x4CD400
+  src\misc\locomotion.hpp:423: inline .hpp addr 0x4CC9B0 |     virtual void __stdcall Do_Turn(unsigned short facing) override {}                   // 0x4CC9B0
+  src\misc\locomotion.hpp:424: inline .hpp addr 0x4CC9D0 |     virtual Layer __stdcall In_Which_Layer() override { return static_cast<Layer>(0); }                                // 0x4CC9D0
+  src\misc\locomotion.hpp:425: inline .hpp addr 0x4CD3B0 |     virtual void __stdcall Mark_All_Occupation_Bits(int mark) override {}               // 0x4CD3B0
+  src\misc\locomotion.hpp:426: inline .hpp addr 0x4CD520 |     virtual void __stdcall ILocomotion_B8() override {}                                  // 0x4CD520 (Limbo)
+  src\misc\locomotion.hpp:467: inline .hpp addr 0x661EC0 |     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return S_OK; }  // 0x661EC0
+  src\misc\locomotion.hpp:471: inline .hpp addr 0x661F00 |     virtual bool __stdcall Is_Moving() override { return false; }                                      // 0x661F00
+  src\misc\locomotion.hpp:472: inline .hpp addr 0x661F90 |     virtual CoordStruct* __stdcall Destination(CoordStruct* out) override { return nullptr; }            // 0x661F90
+  src\misc\locomotion.hpp:473: inline .hpp addr 0x661FF0 |     virtual bool __stdcall Process() override { return false; }                                        // 0x661FF0
+  src\misc\locomotion.hpp:474: inline .hpp addr 0x6624B0 |     virtual void __stdcall Move_To(CoordStruct to) override { (void)to; }                          // 0x6624B0
+  src\misc\locomotion.hpp:475: inline .hpp addr 0x662510 |     virtual void __stdcall Stop_Moving() override {}                                    // 0x662510
+  src\misc\locomotion.hpp:476: inline .hpp addr 0x661ED0 |     virtual void __stdcall Do_Turn(unsigned short facing) override {}                   // 0x661ED0
+  src\misc\locomotion.hpp:477: inline .hpp addr 0x661EF0 |     virtual Layer __stdcall In_Which_Layer() override { return static_cast<Layer>(0); }                                // 0x661EF0
+  src\misc\locomotion.hpp:478: inline .hpp addr 0x6624C0 |     virtual void __stdcall Mark_All_Occupation_Bits(int mark) override {}               // 0x6624C0
+  src\misc\locomotion.hpp:479: inline .hpp addr 0x662650 |     virtual void __stdcall ILocomotion_B8() override {}                                  // 0x662650 (Limbo)
+  src\misc\locomotion.hpp:525: inline .hpp addr 0x54A8E0 |     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return S_OK; }  // 0x54A8E0
+  src\misc\locomotion.hpp:530: inline .hpp addr 0x54A520 |     virtual HRESULT __stdcall Begin_Piggyback(ILocomotion* pointer) override { return S_OK; }         // 0x54A520
+  src\misc\locomotion.hpp:531: inline .hpp addr 0x54A5E0 |     virtual HRESULT __stdcall End_Piggyback(ILocomotion** pointer) override { return S_OK; }          // 0x54A5E0
+  src\misc\locomotion.hpp:532: inline .hpp addr 0x54A650 |     virtual bool __stdcall Is_Ok_To_End() override { return false; }                                   // 0x54A650
+  src\misc\locomotion.hpp:533: inline .hpp addr 0x54A670 |     virtual HRESULT __stdcall Piggyback_CLSID(GUID* classid) override { return S_OK; }                // 0x54A670
+  src\misc\locomotion.hpp:534: inline .hpp addr 0x54A690 |     virtual bool __stdcall Is_Piggybacking() override { return false; }                                // 0x54A690
+  src\misc\locomotion.hpp:536: inline .hpp addr 0x54AC80 |     virtual bool __stdcall Is_Moving() override { return false; }                                      // 0x54AC80
+  src\misc\locomotion.hpp:537: inline .hpp addr 0x54AD30 |     virtual CoordStruct* __stdcall Destination(CoordStruct* out) override { return nullptr; }            // 0x54AD30
+  src\misc\locomotion.hpp:538: inline .hpp addr 0x54AD90 |     virtual bool __stdcall Process() override { return false; }                                        // 0x54AD90
+  src\misc\locomotion.hpp:539: inline .hpp addr 0x54B8F0 |     virtual void __stdcall Move_To(CoordStruct to) override { (void)to; }                          // 0x54B8F0
+  src\misc\locomotion.hpp:540: inline .hpp addr 0x54B950 |     virtual void __stdcall Stop_Moving() override {}                                    // 0x54B950
+
+  ... 1625 more truncated
+
+
+================================================================================
+3. Duplicate addresses (same addr on multiple functions) (249 occurrences)
+================================================================================
+
+  addr 0XA8E960 appears 3x:
+    src\app\cmdline.hpp:27: // 0xA8E960: g_IntroMovieObject
+    src\structure\globals_structure.hpp:114: // 0xA8E960 [confidence: inferred_strong] intro movie object handle
+    src\core\globals.cpp:25: int  g_IntroMovieObject    = 0;   // 0xA8E960
+  addr 0XA8ED6B appears 3x:
+    src\app\cmdline.hpp:30: // 0xA8ED6B: ArmageddonMode
+    src\structure\globals_structure.hpp:81: // 0xA8ED6B [confidence: inferred_strong] (was: ArmageddonMode)
+    src\core\globals.cpp:26: bool ArmageddonMode        = false; // 0xA8ED6B
+  addr 0X840A70 appears 3x:
+    src\app\cmdline.hpp:33: // 0x840A70: g_Audio_MixerEnabled
+    src\core\globals.cpp:27: uint32_t g_Audio_MixerEnabled = 1; // 0x840A70 (default: audio enabled)
+    src\core\init_game.cpp:68: extern uint32_t g_Audio_MixerEnabled;    // 0x840A70 (defined in globals.cpp)
+  addr 0XA8F784 appears 2x:
+    src\app\cmdline.hpp:36: // 0xA8F784: dword_A8F784 (record/playback mode)
+    src\core\globals.cpp:28: int  dword_A8F784          = 0;   // 0xA8F784 (record/playback: 0=normal, 1=record, 2=play)
+  addr 0X89E3A0 appears 3x:
+    src\app\cmdline.hpp:39: // 0x89E3A0: byte_89E3A0 (CD mode flag)
+    src\core\globals.cpp:29: bool byte_89E3A0           = false; // 0x89E3A0 (-CD flag)
+    src\core\init_game.cpp:66: extern bool byte_89E3A0;                  // 0x89E3A0
+  addr 0XA8D600 appears 2x:
+    src\app\cmdline.hpp:42: // 0xA8D600/A8D604/A8D608: dest IP address
+    src\core\globals.cpp:30: uint32_t dword_A8D600      = 0;   // 0xA8D600 (dest IP net)
+  addr 0XB04880 appears 2x:
+    src\app\cmdline.hpp:48: // 0xB04880, 0xA8B8B4: MP debug flags
+    src\core\globals.cpp:34: bool byte_B04880           = false; // 0xB04880 (MP debug)
+  addr 0XA8EDDC appears 2x:
+    src\app\cmdline.hpp:52: // 0xA8EDDC: byte_A8EDDC (speed control)
+    src\core\globals.cpp:36: bool byte_A8EDDC           = false; // 0xA8EDDC (-SPEEDCONTROL)
+  addr 0XB77E18 appears 2x:
+    src\app\cmdline.hpp:55: // 0xB77E18: dword_B77E18 (router type)
+    src\core\globals.cpp:37: int  dword_B77E18          = 0;   // 0xB77E18 (router: 0=default, 1=DLINK1, 2=NETGEAR)
+  addr 0XA8E2C8 appears 2x:
+    src\app\cmdline.hpp:58: // 0xA8E2C8: byte_A8E2C8 (no router)
+    src\core\globals.cpp:38: bool byte_A8E2C8           = true;  // 0xA8E2C8 (no router, default: router enabled)
+  addr 0XA8D60C appears 2x:
+    src\app\cmdline.hpp:61: // 0xA8D60C: byte_A8D60C (stealth)
+    src\core\globals.cpp:39: bool byte_A8D60C           = false; // 0xA8D60C (-STEALTH)
+  addr 0XA8D60D appears 2x:
+    src\app\cmdline.hpp:64: // 0xA8D60D: byte_A8D60D (messages)
+    src\core\globals.cpp:40: bool byte_A8D60D           = true;  // 0xA8D60D (-MESSAGES, default: messages)
+  addr 0XA8D5F8 appears 3x:
+    src\app\cmdline.hpp:67: // 0xA8D5F8: g_NetworkEventPending
+    src\structure\globals_structure.hpp:108: // 0xA8D5F8 [confidence: inferred_strong] network event pending flag
+    src\core\globals.cpp:41: int  g_NetworkEventPending = 0;   // 0xA8D5F8 (network event flags)
+  addr 0XA8EB84 appears 3x:
+    src\app\cmdline.hpp:70: // 0xA8EB84/A8EB88: g_CommandLineFlags / g_CommandLineParam
+    src\structure\globals_structure.hpp:123: // 0xA8EB84 [confidence: inferred_strong] command line flags
+    src\core\globals.cpp:42: int  g_CommandLineFlags    = 0;   // 0xA8EB84
+  addr 0X8175B0 appears 3x:
+    src\app\cmdline.hpp:74: // 0x8175B0: g_Is16BitMode
+    src\core\globals.cpp:44: bool g_Is16BitMode         = false; // 0x8175B0
+    src\core\init_game.cpp:65: extern bool g_Is16BitMode;               // 0x8175B0
+  addr 0X89F978 appears 3x:
+    src\app\cmdline.hpp:77: // 0x89F978: g_DDraw_Initialized (window mode)
+    src\core\ddraw_init.hpp:12: // 0x89F978: g_DDraw_Initialized -- window mode flag (-WIN)
+    src\core\globals.cpp:45: int  g_DDraw_Initialized   = 0;   // 0x89F978 (window mode flag)
+  addr 0XA8ED64 appears 2x:
+    src\app\cmdline.hpp:80: // 0xA8ED64: byte_A8ED64 (-XQ / -OQ flag)
+    src\core\globals.cpp:46: bool byte_A8ED64           = false; // 0xA8ED64 (-XQ / -OQ)
+  addr 0X734F50 appears 2x:
+    src\app\cmdline.hpp:84: void RestartNetworkSession(int mode);     // 0x734F50
+    src\core\globals.cpp:55: // 0x734F50: RestartNetworkSession
+  addr 0X734F80 appears 2x:
+    src\app\cmdline.hpp:85: void ToggleNetworkSession(int enable);    // 0x734F80
+    src\core\globals.cpp:58: // 0x734F80: ToggleNetworkSession
+  addr 0X6B8AE0 appears 2x:
+    src\app\cmdline.hpp:86: void ResetIntroFlags(int* obj);           // 0x6B8AE0 (ScenarioClass::ResetIntroFlags)
+    src\core\globals.cpp:61: // 0x6B8AE0: ScenarioClass::ResetIntroFlags
+  addr 0X47AB10 appears 2x:
+    src\app\cmdline.hpp:87: void FindGameDirectoryCD(const char* path); // 0x47AB10 (Game::FindGameDirectoryCD)
+    src\core\globals.cpp:64: // 0x47AB10: Game::FindGameDirectoryCD
+  addr 0X53ECE0 appears 2x:
+    src\app\cmdline.hpp:88: void NetworkAssignAddress(void* addr, void* port, int arg); // 0x53ECE0 (NetworkAddress::Assign)
+    src\core\globals.cpp:67: // 0x53ECE0: NetworkAddress::Assign
+  addr 0X542430 appears 2x:
+    src\app\cmdline.hpp:89: void NetworkGetField(int port);           // 0x542430 (Network::GetField)
+    src\core\globals.cpp:70: // 0x542430: Network::GetField
+  addr 0X5F9E80 appears 3x:
+    src\app\cmdline.hpp:93: int  HashString(const char* str);         // 0x5F9E80 (Checksummer::HashString)
+    src\core\checksummer.hpp:20: // 0x5F9E80 HashString
+    src\core\globals.cpp:249: // 0x5F9E80: Checksummer::HashString
+  addr 0X734E60 appears 2x:
+    src\app\cmdline.hpp:94: const wchar_t* GetCSFString(const wchar_t* key, const char* file, int line); // 0x734E60 (GetStringCSF)
+    src\core\globals.cpp:261: // 0x734E60: GetStringCSF -- returns "TXT_KEY" as placeholder
+  addr 0X8A0094 appears 2x:
+    src\core\ddraw_init.hpp:10: // 0x8A0094: g_lpDirectDraw7 -- main DDraw7 object
+    src\render\globals_render.hpp:339: // 0x8A0094 [confidence: inferred_strong] DirectDraw7 interface pointer
+  addr 0XA8ED80 appears 4x:
+    src\core\ddraw_init.hpp:14: // 0xA8ED80: g_DDraw_Active -- DDraw activity flag
+    src\structure\globals_structure.hpp:117: // 0xA8ED80 [confidence: inferred_strong] DirectDraw active flag
+    src\core\globals.cpp:48: // 0xA8ED80 -- g_DDraw_Active (defined in ddraw_init.cpp, declared here for core access)
+    src\core\init_game.cpp:67: extern bool g_DDraw_Active;               // 0xA8ED80
+  addr 0X8A00A4 appears 2x:
+    src\core\ddraw_init.hpp:16: // 0x8A00A4/A8/AC: g_DisplayWidth/Height/BPP
+    src\render\globals_render.hpp:336: // 0x8A00A4 [confidence: inferred_strong] display width in pixels
+  addr 0X8A0DD0 appears 2x:
+    src\core\ddraw_init.hpp:28: // 0x8A0DD0/D4/D8: RGB bit shifts
+    src\render\globals_render.hpp:333: // 0x8A0DD0 [confidence: inferred_strong] red bit shift
+  addr 0X8A0DDC appears 2x:
+    src\core\ddraw_init.hpp:32: // 0x8A0DDC/E0/E4: RGB bit mask widths
+    src\render\globals_render.hpp:330: // 0x8A0DDC [confidence: inferred_strong] red bitmask
+  addr 0XA8BC60 appears 2x:
+    src\core\globals_core.hpp:811: extern MessageListClass g_GameNetworkObject;  // 0xa8bc60 [confidence: ida_direct]
+    src\ui\message_list.hpp:19: static MessageListClass* Instance; // 0xA8BC60
+  addr 0XA8E828 appears 2x:
+    src\core\globals_core.hpp:848: extern uint8_t BombClass_Array;  // 0xa8e828 [confidence: inferred_strong]
+    src\misc\super_weapon.hpp:206: static CellStruct              Coords;   // 0xA8E828
+  addr 0X00 appears 134x:
+    src\core\hash_table.hpp:23: K           key;        // 0x00
+    src\core\hash_table.hpp:404: Entry**     m_Buckets;          // 0x00
+    src\core\hash_table.hpp:441: uint32_t    Hash_field_00;       // 0x00
+    src\core\hash_table.hpp:471: uint32_t    state[5];       // 0x00
+    src\core\hash_table.hpp:489: uint32_t    m_CRC;          // 0x00
+    src\core\stream_ext.hpp:39: void*       m_Data;         // 0x00
+    src\core\stream_ext.hpp:76: StreamClass* m_Stream;      // 0x00
+    src\core\stream_ext.hpp:97: static bool    s_Initialized;  // 0x00
+    src\core\stream_ext.hpp:111: void*       IStream_field_00;       // 0x00
+    src\core\stream_ext.hpp:124: static int32_t  s_DataSize; // 0x00
+    src\core\stream_ext.hpp:137: int32_t     Block_field_00;       // 0x00
+    src\core\stream_ext.hpp:150: int32_t     Byte_field_00;       // 0x00
+    src\core\stream_ext.hpp:163: static char*    s_Buffer;       // 0x00
+    src\core\utility_ext.hpp:56: void**      m_Items;                // 0x00 (VectorClass::Items)
+    src\core\utility_ext.hpp:102: static bool     s_IsLoading;        // 0x00
+    src\core\utility_ext.hpp:139: uint32_t    Buffer_field_00;           // 0x00
+    src\core\utility_ext.hpp:183: void*       m_items;            // 0x00 (GenericNode base)
+    src\core\utility_ext.hpp:223: int32_t     Struct_field_00;       // 0x00
+    src\core\utility_ext.hpp:246: int32_t     m_RefCount;     // 0x00
+    src\core\utility_ext.hpp:272: int32_t     X;              // 0x00
+    src\core\utility_ext.hpp:292: int32_t     COM_field_00;       // 0x00
+    src\core\utility_ext.hpp:307: int32_t     m_RefCount;     // 0x00
+    src\core\utility_ext.hpp:321: int32_t     Helper_field_00;       // 0x00
+    src\core\utility_ext.hpp:334: int32_t     Compare_field_00;       // 0x00
+    src\core\utility_ext.hpp:347: int32_t     Value_field_00;       // 0x00
+    src\core\utility_ext.hpp:360: int32_t     Return_field_00;       // 0x00
+    src\core\utility_ext.hpp:379: static int32_t  s_EventCount;   // 0x00
+    src\core\utility_ext.hpp:393: int32_t     Event_Dispatch_field_00;       // 0x00
+    src\core\utility_ext.hpp:410: ObjectClass* m_Current;     // 0x00
+    src\core\utility_ext.hpp:431: static int32_t  s_PlayerCount; // 0x00
+    src\core\utility_ext.hpp:446: int32_t     m_StartFrame;   // 0x00
+    src\core\utility_ext.hpp:462: int32_t     Time_field_00;       // 0x00
+    src\core\utility_ext.hpp:477: int32_t     Float_field_00;       // 0x00
+    src\core\utility_ext.hpp:490: int32_t     Config_field_00;       // 0x00
+    src\core\utility_ext.hpp:503: int32_t     Settings_field_00;       // 0x00
+    src\core\utility_ext.hpp:516: int32_t     Init_field_00;       // 0x00
+    src\core\utility_ext.hpp:529: int32_t     Process_field_00;       // 0x00
+    src\core\utility_ext.hpp:542: int32_t     Main_field_00;       // 0x00
+    src\core\utility_ext.hpp:555: int32_t     Stub_field_00;       // 0x00
+    src\core\utility_ext.hpp:568: int32_t     Type_field_00;       // 0x00
+    src\core\utility_ext.hpp:598: void*       m_Data;         // 0x00
+    src\core\utility_ext.hpp:618: static HWND    s_hWnd;        // 0x00
+    src\misc\audio.hpp:39: int32_t  Volume;          // 0x00: raw INI volume (0-16384); bit0=stopped, bit2=playing
+    src\misc\audio.hpp:67: VocClassHeader   Header;             // 0x00 (0x0C bytes)
+    src\misc\audio.hpp:144: char           Name[0x28];       // 0x00: eva.ini sound name
+    src\misc\audio_ext.hpp:41: uint32_t    AudioMixer_field_00;       // 0x00
+    src\misc\audio_ext.hpp:67: bool        m_Flag68;       // 0x00
+    src\misc\audio_ext.hpp:86: static int32_t  s_ActiveChannels; // 0x00
+    src\misc\audio_ext.hpp:101: int32_t     Mixer_field_00;       // 0x00
+    src\misc\audio_ext.hpp:128: int32_t     ThemeClass_field_00;       // 0x00
+    src\misc\audio_ext.hpp:149: static int32_t  s_CurrentTheme;  // 0x00
+    src\misc\audio_ext.hpp:165: static int32_t  s_CallbackState; // 0x00
+    src\misc\misc_ext.hpp:36: static int32_t  s_WarheadType;  // 0x00
+    src\misc\misc_ext.hpp:53: int32_t     DamageArea_field_00;       // 0x00
+    src\misc\misc_ext.hpp:74: bool        m_Enabled;      // 0x00
+    src\misc\misc_ext.hpp:89: int32_t     Weapon_field_00;       // 0x00
+    src\misc\misc_ext.hpp:104: int32_t     Turret_field_00;       // 0x00
+    src\misc\misc_ext.hpp:117: static int32_t  s_DropState;    // 0x00
+    src\misc\misc_ext.hpp:130: int32_t     Carryall_field_00;       // 0x00
+    src\misc\misc_ext.hpp:143: int32_t     Locomotor_field_00;       // 0x00
+    src\misc\misc_ext.hpp:156: int32_t     Explosion_field_00;       // 0x00
+    src\misc\misc_ext.hpp:169: int32_t     BINK_field_00;       // 0x00
+    src\misc\misc_ext.hpp:182: int32_t     CSF_field_00;       // 0x00
+    src\misc\misc_ext.hpp:195: int32_t     AI_field_00;       // 0x00
+    src\misc\misc_ext.hpp:208: static int32_t  s_IsoX[512];    // 0x00
+    src\misc\misc_ext.hpp:222: static uint8_t* s_ShroudMap;    // 0x00
+    src\misc\misc_ext.hpp:236: int32_t     GUIDUtil_field_00;       // 0x00
+    src\misc\misc_ext.hpp:250: int32_t     X;              // 0x00
+    src\misc\misc_ext.hpp:265: static int32_t  s_Count;        // 0x00
+    src\misc\misc_ext.hpp:278: static int32_t  s_AnimationCount;   // 0x00
+    src\misc\misc_ext.hpp:320: void*       m_Queue;        // 0x00
+    src\misc\misc_ext.hpp:339: float       m_Data[12];     // 0x00 (3 rows × 4 columns)
+    src\misc\misc_ext.hpp:358: int32_t     m_RefCount;     // 0x00
+    src\misc\movement_ext.hpp:38: CoordStruct m_Target;       // 0x00
+    src\misc\movement_ext.hpp:63: int32_t     Movement_field_00;       // 0x00
+    src\network\network_ext.hpp:37: int32_t     MultiplayerSiege_field_00;       // 0x00
+    src\network\network_ext.hpp:60: static int32_t  s_MaxPlayers;   // 0x00
+    src\network\network_ext.hpp:74: int32_t     WOL_field_00;       // 0x00
+    src\network\network_ext.hpp:87: uint32_t    m_IP;           // 0x00
+    src\network\network_ext.hpp:102: int32_t     m_Socket;       // 0x00
+    src\network\network_ext.hpp:117: int32_t     MultiplayerManBattle_field_00;       // 0x00
+    src\render\render_ext.hpp:48: int32_t     TacticalMap_field_00;       // 0x00
+    src\render\render_ext.hpp:85: static IDirectDraw7* s_DD;          // 0x00
+    src\render\render_ext.hpp:113: uint32_t    m_Colors[256];  // 0x00
+    src\render\render_ext.hpp:135: int32_t     Color_field_00;       // 0x00
+    src\render\render_ext.hpp:154: static int32_t  s_TransitionType;    // 0x00
+    src\render\render_ext.hpp:174: CoordStruct m_Position;     // 0x00
+    src\render\render_ext.hpp:192: int32_t     Render_field_00;       // 0x00
+    src\render\render_ext.hpp:211: static uint8_t* s_FogMap;       // 0x00
+    src\render\render_ext.hpp:228: static int32_t  s_FrameCount;   // 0x00
+    src\render\render_ext.hpp:242: int32_t     Draw_field_00;       // 0x00
+    src\render\render_ext.hpp:257: int32_t     m_ScrollX;      // 0x00
+    src\render\render_ext.hpp:273: int32_t     Bounds_field_00;       // 0x00
+    src\render\render_ext.hpp:286: int32_t     Transform_field_00;       // 0x00
+    src\render\render_ext.hpp:301: static uint32_t s_Palette[256]; // 0x00
+    src\render\render_ext.hpp:320: static int32_t  s_FrameCount;   // 0x00
+    src\render\render_ext.hpp:333: int32_t     BuildingAnim_field_00;       // 0x00
+    src\system\game_systems.hpp:37: static int32_t  s_PlayerCount;  // 0x00
+    src\system\game_systems.hpp:57: static char     m_Name[64];     // 0x00
+    src\system\game_systems.hpp:73: static int32_t  s_CurrentMode;  // 0x00
+    src\system\game_systems.hpp:91: static int32_t  s_Settings[32]; // 0x00
+    src\system\game_systems.hpp:106: int32_t     SkirmishSetup_field_00;       // 0x00
+    src\system\game_systems.hpp:122: static int32_t  s_DelayFrames;  // 0x00
+    src\system\game_systems.hpp:136: static bool     s_Running;      // 0x00
+    src\system\game_systems.hpp:153: static bool     s_LauncherOK;   // 0x00
+    src\system\game_systems.hpp:167: static int32_t  s_Count;        // 0x00
+    src\system\game_systems.hpp:180: static void*   s_Head;         // 0x00
+    src\system\game_systems.hpp:200: static uint32_t s_Seed;         // 0x00
+    src\ui\command_ext.hpp:34: int32_t     SelectTeamCommand_field_00;       // 0x00
+    src\ui\command_ext.hpp:56: int32_t     AddTeamCommand_field_00;       // 0x00
+    src\ui\command_ext.hpp:76: int32_t     TauntCommandClass_field_00;       // 0x00
+    src\ui\command_ext.hpp:96: int32_t     PageUserCommandClass_field_00;       // 0x00
+    src\ui\command_ext.hpp:116: int32_t     DeleteCommandClass_field_00;       // 0x00
+    src\ui\command_ext.hpp:135: int32_t     CenterTeamCommand_field_00;       // 0x00
+    src\ui\command_ext.hpp:153: int32_t     ScreenCaptureCommandClass_field_00;       // 0x00
+    src\ui\command_ext.hpp:169: int32_t     CursorPositionCommandClass_field_00;       // 0x00
+    src\ui\command_ext.hpp:189: int32_t     m_RefCount;     // 0x00
+    src\ui\sidebar.hpp:28: int32_t          ItemIndex;              // 0x00: build queue item index
+    src\ui\sidebar.hpp:75: int32_t          TabProgressValue;       // 0x00: StageClass::Value
+    src\ui\ui_ext.hpp:30: int32_t     Control_field_00;       // 0x00
+    src\ui\ui_ext.hpp:49: int32_t     Text_field_00;       // 0x00
+    src\ui\ui_ext.hpp:64: void*       m_FontData;     // 0x00
+    src\ui\ui_ext.hpp:81: void*       m_FontBitmap;   // 0x00
+    src\ui\ui_ext.hpp:99: int32_t     Window_field_00;       // 0x00
+    src\ui\ui_ext.hpp:114: static int32_t  s_State;        // 0x00
+    src\ui\ui_ext.hpp:127: static int32_t  s_MenuState;    // 0x00
+    src\ui\ui_ext.hpp:142: static int32_t  s_ScrollPos;    // 0x00
+    src\ui\ui_ext.hpp:155: static int32_t  s_Credits;      // 0x00
+    src\ui\ui_ext.hpp:168: static int32_t  s_MissionIndex; // 0x00
+    src\ui\ui_ext.hpp:183: int32_t     Diplomacy_field_00;       // 0x00
+    src\ui\ui_ext.hpp:199: float       m_Values[8];    // 0x00
+    src\ui\ui_ext.hpp:216: static int32_t  s_KeyMap[256];  // 0x00
+    src\ui\ui_ext.hpp:229: static int32_t  s_CurrentKey;   // 0x00
+    src\ui\ui_ext.hpp:262: int32_t     Input_field_00;       // 0x00
+  addr 0X04 appears 58x:
+    src\core\hash_table.hpp:24: V           value;      // 0x04
+    src\core\hash_table.hpp:405: uint32_t    m_Count;            // 0x04
+    src\core\hash_table.hpp:442: uint32_t    Hash_field_04;       // 0x04
+    src\core\hash_table.hpp:490: uint32_t    m_Count;        // 0x04
+    src\core\load_options.hpp:143: uint32_t        mode;           // 0x04 — 1=load, 2=save, 3=delete
+    src\core\stream_ext.hpp:40: int32_t     m_Position;     // 0x04
+    src\core\stream_ext.hpp:77: int32_t     Stream_field_04;       // 0x04
+    src\core\stream_ext.hpp:98: static uint32_t s_Handle;      // 0x04
+    src\core\stream_ext.hpp:164: static int32_t  s_BufferSize;   // 0x04
+    src\core\utility_ext.hpp:57: int32_t     m_Capacity;             // 0x04
+    src\core\utility_ext.hpp:103: static uint32_t s_LoadVersion;      // 0x04
+    src\core\utility_ext.hpp:140: uint32_t    Buffer_field_04;           // 0x04
+    src\core\utility_ext.hpp:184: int32_t     m_count;            // 0x04
+    src\core\utility_ext.hpp:273: int32_t     Y;              // 0x04
+    src\core\utility_ext.hpp:308: int32_t     RefCount_field_04;       // 0x04
+    src\core\utility_ext.hpp:380: static void*    s_Queue;        // 0x04
+    src\core\utility_ext.hpp:411: bool        m_Flag;         // 0x04
+    src\core\utility_ext.hpp:447: int32_t     m_Duration;     // 0x04
+    src\core\utility_ext.hpp:599: int32_t     m_Position;     // 0x04
+    src\core\utility_ext.hpp:619: static HINSTANCE s_hInstance; // 0x04
+    src\misc\audio.hpp:40: int32_t  AudioState;      // 0x04: set to 4 during cleanup (VocClass::Cleanup), uninitialized otherwise
+    src\misc\audio_ext.hpp:42: uint32_t    AudioMixer_field_04;       // 0x04
+    src\misc\audio_ext.hpp:70: int32_t     AudioSettings_field_04;       // 0x04
+    src\misc\audio_ext.hpp:129: int32_t     ThemeClass_field_04;       // 0x04
+    src\misc\audio_ext.hpp:150: static bool     s_IsPlaying;     // 0x04
+    src\misc\locomotion.hpp:217: // 0x04: vtable[1] (IPersistStream/COM)
+    src\misc\misc_ext.hpp:76: int32_t     UnholyAlliance_field_04;       // 0x04
+    src\misc\misc_ext.hpp:251: int32_t     Y;              // 0x04
+    src\misc\misc_ext.hpp:299: int32_t     m_RefCount;     // 0x04
+    src\misc\misc_ext.hpp:321: int32_t     m_Count;        // 0x04
+    src\misc\misc_ext.hpp:359: int32_t     InputManager_ProcessEvents_field_04;       // 0x04
+    src\network\network_ext.hpp:38: int32_t     MultiplayerSiege_field_04;       // 0x04
+    src\network\network_ext.hpp:61: static int32_t  s_GameMode;     // 0x04
+    src\network\network_ext.hpp:88: uint16_t    m_Port;         // 0x04
+    src\network\network_ext.hpp:103: int32_t     m_SendBufSize;  // 0x04
+    src\render\render_ext.hpp:49: int32_t     TacticalMap_field_04;       // 0x04
+    src\render\render_ext.hpp:86: static IDirectDrawSurface7* s_Primary; // 0x04
+    src\render\render_ext.hpp:155: static int32_t  s_TransitionStep;    // 0x04
+    src\render\render_ext.hpp:212: static int32_t  s_MapWidth;     // 0x04
+    src\render\render_ext.hpp:229: static bool     s_VSync;        // 0x04
+    src\render\render_ext.hpp:258: int32_t     m_ScrollY;      // 0x04
+    src\system\game_systems.hpp:38: static int32_t  s_MapSize;      // 0x04
+    src\system\game_systems.hpp:74: static int32_t  s_Flags;        // 0x04
+    src\system\game_systems.hpp:107: int32_t     SkirmishSetup_field_04;       // 0x04
+    src\system\game_systems.hpp:123: static int32_t  s_CurrentFrame; // 0x04
+    src\system\game_systems.hpp:181: static void*   s_Tail;         // 0x04
+    src\system\game_systems.hpp:201: static uint32_t s_State[4];     // 0x04
+    src\ui\command_ext.hpp:35: int32_t     SelectTeamCommand_field_04;       // 0x04
+    src\ui\command_ext.hpp:57: int32_t     AddTeamCommand_field_04;       // 0x04
+    src\ui\command_ext.hpp:77: int32_t     TauntCommandClass_field_04;       // 0x04
+    src\ui\command_ext.hpp:97: int32_t     PageUserCommandClass_field_04;       // 0x04
+    src\ui\command_ext.hpp:117: int32_t     DeleteCommandClass_field_04;       // 0x04
+    src\ui\sidebar.hpp:29: AbstractType     ItemType;               // 0x04: build queue item type
+    src\ui\sidebar.hpp:76: bool             TabProgressHasChanged;  // 0x04: StageClass::HasChanged
+    src\ui\ui_ext.hpp:65: int32_t     Font_field_04;       // 0x04
+    src\ui\ui_ext.hpp:82: int32_t     m_CharWidth;    // 0x04
+    src\ui\ui_ext.hpp:184: int32_t     Diplomacy_field_04;       // 0x04
+    src\ui\ui_ext.hpp:247: LinkClass*  m_Next;         // 0x04 (after vtable)
+  addr 0X08 appears 30x:
+    src\core\hash_table.hpp:25: Entry*      next;       // 0x08
+    src\core\hash_table.hpp:406: uint32_t    m_Capacity;         // 0x08
+    src\core\load_options.hpp:144: const char*     extension;      // 0x08 — file extension (e.g. "SAV")
+    src\core\stream_ext.hpp:41: int32_t     m_Size;         // 0x08
+    src\core\stream_ext.hpp:78: int32_t     Stream_field_08;       // 0x08
+    src\core\utility_ext.hpp:58: int32_t     m_Count;                // 0x08 (DynamicVectorClass::Count)
+    src\core\utility_ext.hpp:104: static uint32_t s_BlockIndex;       // 0x08
+    src\core\utility_ext.hpp:141: uint32_t    Buffer_field_08;           // 0x08
+    src\core\utility_ext.hpp:185: int32_t     Delegate_field_08;           // 0x08
+    src\core\utility_ext.hpp:274: int32_t     Width;          // 0x08
+    src\core\utility_ext.hpp:600: int32_t     m_Size;         // 0x08
+    src\misc\audio.hpp:41: int32_t  ScaledVolume;    // 0x08: Volume * 1024 (default = MaxVolume * 1024)
+    src\misc\audio_ext.hpp:43: uint32_t    AudioMixer_field_08;       // 0x08
+    src\misc\audio_ext.hpp:71: int32_t     AudioSettings_field_08;       // 0x08
+    src\misc\audio_ext.hpp:130: char        m_Name[32];     // 0x08
+    src\misc\locomotion.hpp:218: FootClass*   Owner;      // 0x08
+    src\misc\misc_ext.hpp:252: int32_t     Z;              // 0x08
+    src\misc\misc_ext.hpp:322: int32_t     m_Capacity;     // 0x08
+    src\misc\misc_ext.hpp:360: int32_t     InputManager_ProcessEvents_field_08;       // 0x08
+    src\network\network_ext.hpp:39: int32_t     MultiplayerSiege_field_08;       // 0x08
+    src\network\network_ext.hpp:104: int32_t     m_RecvBufSize;  // 0x08
+    src\render\render_ext.hpp:50: int32_t     TacticalMap_field_08;       // 0x08
+    src\render\render_ext.hpp:87: static IDirectDrawSurface7* s_BackBuffer; // 0x08
+    src\render\render_ext.hpp:213: static int32_t  s_MapHeight;    // 0x08
+    src\render\render_ext.hpp:259: int32_t     m_MaxX;         // 0x08
+    src\ui\sidebar.hpp:30: bool             IsAlt;                  // 0x08: alternate cameo (multi-factory buildings)
+    src\ui\sidebar.hpp:78: int32_t          TabProgressTimerStart;  // 0x08: CDTimerClass::StartTime
+    src\ui\ui_ext.hpp:66: int32_t     Font_field_08;       // 0x08
+    src\ui\ui_ext.hpp:83: int32_t     m_CharHeight;   // 0x08
+    src\ui\ui_ext.hpp:248: LinkClass*  m_Prev;         // 0x08
+  addr 0X0C appears 24x:
+    src\core\hash_table.hpp:26: uint32_t    hash;       // 0x0C
+    src\core\hash_table.hpp:407: uint32_t    m_GrowThreshold;    // 0x0C
+    src\core\load_options.hpp:145: uint32_t        field_0C;       // 0x0C — dialog state flag
+    src\core\stream_ext.hpp:42: int32_t     StreamClass_field_0C;       // 0x0C
+    src\core\stream_ext.hpp:79: int32_t     Stream_field_0C;       // 0x0C
+    src\core\utility_ext.hpp:59: bool        m_IsAllocated;          // 0x0C
+    src\core\utility_ext.hpp:142: uint32_t    Buffer_field_0C;           // 0x0C
+    src\core\utility_ext.hpp:186: bool        m_allocated;        // 0x0C
+    src\core\utility_ext.hpp:275: int32_t     Height;         // 0x0C
+    src\core\utility_ext.hpp:601: int32_t     unknown_field_0C;       // 0x0C
+    src\misc\audio.hpp:42: int32_t  FadeIncrement;   // 0x0C: default 1073741 — fade step size
+    src\misc\audio.hpp:68: int32_t          SamplesOK;          // 0x0C: 0 or 1, all samples usable
+    src\misc\audio_ext.hpp:44: uint32_t    AudioMixer_field_0C;       // 0x0C
+    src\misc\locomotion.hpp:219: FootClass*   LinkedTo;   // 0x0C
+    src\misc\movement_ext.hpp:39: int32_t     m_State;        // 0x0C
+    src\network\network_ext.hpp:40: int32_t     MultiplayerSiege_field_0C;       // 0x0C
+    src\render\render_ext.hpp:51: int32_t     TacticalMap_field_0C;       // 0x0C
+    src\render\render_ext.hpp:88: static bool     s_Initialized;      // 0x0C
+    src\render\render_ext.hpp:175: CoordStruct m_Target;       // 0x0C
+    src\render\render_ext.hpp:260: int32_t     m_MaxY;         // 0x0C
+    src\ui\sidebar.hpp:32: FactoryClass*    CurrentFactory;         // 0x0C: factory producing this item
+    src\ui\sidebar.hpp:79: int32_t          TabProgressTimerCur;    // 0x0C: CDTimerClass::CurrentTime
+    src\ui\ui_ext.hpp:84: int32_t     BitTextClass_field_0C;       // 0x0C
+    src\ui\ui_ext.hpp:249: int32_t     LinkClass_field_0C;       // 0x0C
+  addr 0X10 appears 15x:
+    src\core\hash_table.hpp:408: bool        m_Sorted;           // 0x10
+    src\core\load_options.hpp:146: uint32_t        max_entries;    // 0x10 — max entries (=2048)
+    src\core\stream_ext.hpp:80: int32_t     Stream_field_10;       // 0x10
+    src\core\utility_ext.hpp:60: int32_t     m_CapacityIncrement;    // 0x10
+    src\core\utility_ext.hpp:143: uint32_t    Buffer_field_10;           // 0x10
+    src\core\utility_ext.hpp:187: int32_t     Delegate_field_10;           // 0x10
+    src\misc\audio.hpp:43: int32_t  FadeDuration;    // 0x10: default 1000 ms — total fade time
+    src\misc\audio.hpp:69: SoundControl     Control;            // 0x10: sound.ini Control flags (bit5→Attack, bit6→Decay)
+    src\misc\audio_ext.hpp:45: uint32_t    AudioMixer_field_10;       // 0x10
+    src\misc\locomotion.hpp:220: bool         Powered;    // 0x10
+    src\misc\movement_ext.hpp:40: int32_t     MovementAI_field_10;       // 0x10
+    src\network\network_ext.hpp:41: int32_t     MultiplayerSiege_field_10;       // 0x10
+    src\render\render_ext.hpp:52: int32_t     TacticalMap_field_10;       // 0x10
+    src\ui\sidebar.hpp:33: uint32_t         CameoDataStruct_field_10;               // 0x10: unknown — YRpp: CameoDataStruct_field_10
+    src\ui\sidebar.hpp:80: int32_t          TabProgressTimerLeft;   // 0x10: CDTimerClass::TimeLeft
+  addr 0X14 appears 14x:
+    src\core\hash_table.hpp:410: Entry*      m_LastFound;        // 0x14
+    src\core\hash_table.hpp:472: uint64_t    count;          // 0x14
+    src\core\load_options.hpp:147: uint32_t        field_14;       // 0x14
+    src\core\utility_ext.hpp:61: int32_t     MoveFeedback_field_14;               // 0x14
+    src\core\utility_ext.hpp:144: uint32_t    Buffer_field_14;           // 0x14
+    src\core\utility_ext.hpp:188: int32_t     Delegate_field_14;           // 0x14
+    src\misc\audio.hpp:44: int32_t  FadeLevel;       // 0x14: default 0 — current fade level
+    src\misc\audio.hpp:70: SoundType        Type;               // 0x14: sound.ini Type flags
+    src\misc\audio_ext.hpp:46: uint32_t    AudioMixer_field_14;       // 0x14
+    src\misc\locomotion.hpp:223: int32_t      RefCount;   // 0x14
+    src\misc\movement_ext.hpp:41: int32_t     MovementAI_field_14;       // 0x14
+    src\render\render_ext.hpp:53: int32_t     TacticalMap_field_14;       // 0x14
+    src\ui\sidebar.hpp:35: int32_t          Progress;               // 0x14: StageClass::Value — gclock animation level (0–54)
+    src\ui\sidebar.hpp:81: int32_t          TabProgressRate;        // 0x14: StageClass::Rate
+  addr 0X1C appears 15x:
+    src\core\hash_table.hpp:473: uint8_t     buffer[64];     // 0x1C
+    src\core\utility_ext.hpp:63: int32_t     MoveFeedback_field_1C;               // 0x1C
+    src\core\utility_ext.hpp:146: uint32_t    Buffer_field_1C;           // 0x1C
+    src\core\utility_ext.hpp:190: void*       m_pipe;             // 0x1C
+    src\misc\audio.hpp:46: int32_t  MaxVolume;       // 0x1C: default 16384 — maximum volume
+    src\misc\locomotion.hpp:287: int           PreviousRamp;       // 0x1C
+    src\misc\locomotion.hpp:434: CoordStruct    MovingDestination;  // 0x1C
+    src\misc\locomotion.hpp:551: int32_t       Speed;              // 0x1C
+    src\misc\locomotion.hpp:630: int           PreviousRamp;       // 0x1C
+    src\misc\locomotion.hpp:743: CoordStruct   Coords;              // 0x1C
+    src\misc\locomotion.hpp:829: CoordStruct   DestinationCoords;  // 0x1C
+    src\render\render_ext.hpp:55: int32_t     TacticalMap_field_1C;       // 0x1C
+    src\render\render_ext.hpp:177: float       m_Tilt;         // 0x1C
+    src\ui\sidebar.hpp:38: int32_t          ProgressTimerStart;     // 0x1C: CDTimerClass::StartTime
+    src\ui\sidebar.hpp:84: bool             AllowedToDraw;          // 0x1C: prevents redraw during layout
+  addr 0X5C appears 6x:
+    src\core\hash_table.hpp:474: uint8_t     buffer_index;   // 0x5C
+    src\misc\audio.hpp:82: int32_t          MaxDelay;           // 0x5C: sound.ini Delay max
+    src\misc\locomotion.hpp:295: int           TrackIndex;         // 0x5C
+    src\misc\locomotion.hpp:447: bool           IsElevating;        // 0x5C
+    src\misc\locomotion.hpp:496: uint32_t      RocketLocomotionClass_field_5C;          // 0x5C
+    src\misc\locomotion.hpp:638: int           TrackIndex;         // 0x5C
+  addr 0X24 appears 12x:
+    src\core\load_options.hpp:150: FileEntryClass** entries;       // 0x24 — entries array
+    src\core\utility_ext.hpp:65: int32_t     MoveFeedback_field_24;               // 0x24
+    src\core\utility_ext.hpp:148: uint32_t    Buffer_field_24;           // 0x24
+    src\core\utility_ext.hpp:192: int32_t     Delegate_field_24;           // 0x24
+    src\misc\locomotion.hpp:335: CoordStruct   HeadToCoord;        // 0x24
+    src\misc\locomotion.hpp:391: CoordStruct   HeadToCoord;        // 0x24
+    src\misc\locomotion.hpp:486: RateTimer     MissionTimer;        // 0x24
+    src\misc\locomotion.hpp:553: float         Crash;              // 0x24
+    src\misc\locomotion.hpp:692: CoordStruct   LastCoords;          // 0x24 — marked occupation bits here
+    src\misc\locomotion.hpp:780: CoordStruct   HeadToCoord;         // 0x24
+    src\ui\sidebar.hpp:40: int32_t          ProgressTimerTimeLeft;  // 0x24: CDTimerClass::TimeLeft
+    src\ui\ui_ext.hpp:201: int32_t     m_Count;        // 0x24
+  addr 0X28 appears 10x:
+    src\core\load_options.hpp:151: uint32_t        count;          // 0x28 — current count
+    src\core\utility_ext.hpp:66: int32_t     MoveFeedback_field_28;               // 0x28
+    src\misc\audio.hpp:145: float          Volume;           // 0x28: eva.ini Volume
+    src\misc\audio_ext.hpp:131: int32_t     ThemeClass_field_28;       // 0x28
+    src\misc\locomotion.hpp:435: CoordStruct    XYZ2;               // 0x28
+    src\misc\locomotion.hpp:554: int32_t       Height;             // 0x28
+    src\misc\locomotion.hpp:744: RateTimer     DigTimer;            // 0x28
+    src\misc\locomotion.hpp:830: ILocomotion*  Piggybackee;        // 0x28
+    src\ui\sidebar.hpp:41: int32_t          ProgressRate;           // 0x28: StageClass::Rate
+    src\ui\sidebar.hpp:87: RectangleStruct  Bounds;                 // 0x28: tab clickable bounds
+  addr 0X2C appears 7x:
+    src\core\load_options.hpp:152: uint8_t         is_active;      // 0x2C — active flag
+    src\core\utility_ext.hpp:67: int32_t     MoveFeedback_field_2C;               // 0x2C
+    src\misc\audio.hpp:146: char           YuriVoice[9];     // 0x2C: eva.ini Yuri voice
+    src\misc\audio_ext.hpp:132: int32_t     ThemeClass_field_2C;       // 0x2C
+    src\misc\locomotion.hpp:555: float         Accel;              // 0x2C
+    src\misc\locomotion.hpp:831: // padding 4 bytes            // 0x2C-0x2F (for 8-byte alignment?)
+    src\ui\sidebar.hpp:42: int32_t          ProgressStep;           // 0x2C: StageClass::Step (default 1)
+  addr 0X30 appears 9x:
+    src\core\load_options.hpp:155: uint32_t        capacity;       // 0x30 — allocated capacity
+    src\misc\locomotion.hpp:289: CoordStruct   Destination;        // 0x30
+    src\misc\locomotion.hpp:336: FacingClass   LocomotionFacing;   // 0x30
+    src\misc\locomotion.hpp:392: bool          IsMoving;           // 0x30
+    src\misc\locomotion.hpp:556: float         Wobbles;            // 0x30
+    src\misc\locomotion.hpp:632: CoordStruct   Destination;        // 0x30
+    src\misc\locomotion.hpp:693: bool          Moving;              // 0x30
+    src\misc\locomotion.hpp:781: bool          IsMoving;            // 0x30
+    src\ui\sidebar.hpp:43: int32_t          FlashEndFrame;          // 0x30: frame when build-complete flash ends
+  addr 0X34 appears 6x:
+    src\core\load_options.hpp:156: uint32_t        grow_step;      // 0x34 — grow step (=10)
+    src\misc\locomotion.hpp:396: ILocomotion*  Piggybackee;        // 0x34
+    src\misc\locomotion.hpp:436: bool           HasMoveOrder;       // 0x34
+    src\misc\locomotion.hpp:487: CDTimerClass  TrailerTimer;        // 0x34
+    src\misc\locomotion.hpp:557: int32_t       Deviation;          // 0x34
+    src\misc\locomotion.hpp:697: int32_t       State;               // 0x34
+  addr 0X18 appears 21x:
+    src\core\utility_ext.hpp:62: int32_t     MoveFeedback_field_18;               // 0x18
+    src\core\utility_ext.hpp:145: uint32_t    Buffer_field_18;           // 0x18
+    src\core\utility_ext.hpp:189: void*       m_straw;            // 0x18
+    src\misc\audio.hpp:45: uint32_t hBuffer;         // 0x18: ds:87E848h — DirectSound buffer handle or internal ref
+    src\misc\audio.hpp:71: VolumeStruct     Volume;             // 0x18: volume/fade/buffer state (0x20 bytes)
+    src\misc\locomotion.hpp:286: int           CurrentRamp;        // 0x18
+    src\misc\locomotion.hpp:334: CoordStruct   Destination;        // 0x18
+    src\misc\locomotion.hpp:390: CoordStruct   Destination;        // 0x18
+    src\misc\locomotion.hpp:432: bool           AirportBound;       // 0x18
+    src\misc\locomotion.hpp:485: CoordStruct   MovingDestination;   // 0x18
+    src\misc\locomotion.hpp:550: int32_t       TurnRate;           // 0x18
+    src\misc\locomotion.hpp:629: int           CurrentRamp;        // 0x18
+    src\misc\locomotion.hpp:691: CoordStruct   MovingDestination;   // 0x18
+    src\misc\locomotion.hpp:742: State         CurrentState;        // 0x18
+    src\misc\locomotion.hpp:779: CoordStruct   MovingDestination;   // 0x18
+    src\misc\locomotion.hpp:827: bool          IsOutOfMap;         // 0x18
+    src\misc\movement_ext.hpp:42: int32_t     MovementAI_field_18;       // 0x18
+    src\render\render_ext.hpp:54: float       m_TintFactor;   // 0x18
+    src\render\render_ext.hpp:176: int32_t     m_Zoom;         // 0x18
+    src\ui\sidebar.hpp:36: bool             ProgressHasChanged;     // 0x18: StageClass::HasChanged
+    src\ui\sidebar.hpp:82: int32_t          TabProgressStep;        // 0x18: StageClass::Step
+  addr 0X20 appears 10x:
+    src\core\utility_ext.hpp:64: int32_t     MoveFeedback_field_20;               // 0x20
+    src\core\utility_ext.hpp:147: uint32_t    Buffer_field_20;           // 0x20
+    src\core\utility_ext.hpp:191: int32_t     Delegate_field_20;           // 0x20
+    src\misc\locomotion.hpp:288: RateTimer     SlopeTimer;         // 0x20
+    src\misc\locomotion.hpp:552: float         Climb;              // 0x20
+    src\misc\locomotion.hpp:631: RateTimer     SlopeTimer;         // 0x20
+    src\render\render_ext.hpp:56: int32_t     TacticalMap_field_20;       // 0x20
+    src\ui\sidebar.hpp:39: int32_t          ProgressTimerCurrent;   // 0x20: CDTimerClass::CurrentTime (FrameTimer, stateless)
+    src\ui\sidebar.hpp:86: Point2D          Location;               // 0x20: tab location on screen
+    src\ui\ui_ext.hpp:200: int32_t     m_Index;        // 0x20
+  addr 0X38 appears 7x:
+    src\misc\audio.hpp:72: // 0x38: VocClass::Cleanup iterates 4 DS buffer slots at this+0x28
+    src\misc\audio.hpp:73: uint32_t         VocClass_field_38;           // 0x38
+    src\misc\locomotion.hpp:438: int32_t        FlightLevel;        // 0x38
+    src\misc\locomotion.hpp:558: bool          NoWobbles;          // 0x38
+    src\misc\locomotion.hpp:698: CDTimerClass  Timer;               // 0x38
+    src\misc\locomotion.hpp:745: bool          IsMoving;            // 0x38
+    src\ui\sidebar.hpp:88: int32_t          Index;                  // 0x38: tab index (0–3)
+  addr 0X3C appears 5x:
+    src\misc\audio.hpp:74: uint32_t         VocClass_field_3C;           // 0x3C
+    src\misc\locomotion.hpp:290: CoordStruct   HeadToCoord;        // 0x3C
+    src\misc\locomotion.hpp:562: CoordStruct   DestinationCoords;  // 0x3C
+    src\misc\locomotion.hpp:633: CoordStruct   HeadToCoord;        // 0x3C
+    src\ui\sidebar.hpp:89: bool             NeedsRedraw;            // 0x3C: tab needs redraw flag
+  addr 0X40 appears 5x:
+    src\misc\audio.hpp:75: SoundPriority    Priority;           // 0x40: sound.ini Priority
+    src\misc\locomotion.hpp:439: double         TargetSpeed;        // 0x40
+    src\misc\locomotion.hpp:488: int32_t       MissionState;        // 0x40
+    src\system\game_systems.hpp:58: static int32_t  m_Value;        // 0x40
+    src\ui\sidebar.hpp:93: uint32_t         TabDataStruct_field_40;               // 0x40: unknown (YRpp: TabDataStruct_field_40)
+  addr 0X44 appears 5x:
+    src\misc\audio.hpp:76: uint32_t         VocClass_field_44;           // 0x44: between Priority and Limit
+    src\misc\locomotion.hpp:489: uint32_t      RocketLocomotionClass_field_44;          // 0x44
+    src\misc\locomotion.hpp:699: ILocomotion*  Piggybackee;         // 0x44
+    src\ui\sidebar.hpp:94: int32_t          TopRowIndex;            // 0x44: scroll position — topmost visible row
+    src\app\ddraw_init.cpp:125: DDPCAPS_8BIT | DDPCAPS_ALLOW256, // 0x44
+  addr 0X48 appears 9x:
+    src\misc\audio.hpp:77: int32_t          Limit;              // 0x48: sound.ini Limit — max simultaneous plays
+    src\misc\audio.hpp:150: VoxType        Type;             // 0x48: eva.ini Type (1 byte enum)
+    src\misc\locomotion.hpp:291: int           SpeedAccum;         // 0x48
+    src\misc\locomotion.hpp:337: double        MaxSpeed;           // 0x48
+    src\misc\locomotion.hpp:440: double         CurrentSpeed;       // 0x48
+    src\misc\locomotion.hpp:490: double        CurrentSpeed;        // 0x48
+    src\misc\locomotion.hpp:563: bool          IsMoving;           // 0x48
+    src\misc\locomotion.hpp:634: int           SpeedAccum;         // 0x48
+    src\ui\sidebar.hpp:95: uint32_t         TabDataStruct_field_48;               // 0x48: unknown — scroll-related (YRpp: TabDataStruct_
+  addr 0X4C appears 6x:
+    src\misc\audio.hpp:78: int32_t          Loop;               // 0x4C: sound.ini Loop
+    src\misc\audio.hpp:151: int32_t        voiceIndex;       // 0x4C: EVA voice index (YRpp: VoxClass_field_int_50)
+    src\misc\locomotion.hpp:292: // padding 4 bytes            // 0x4C-0x4F
+    src\misc\locomotion.hpp:567: State         CurrentState;       // 0x4C
+    src\misc\locomotion.hpp:635: // padding 4 bytes            // 0x4C-0x4F
+    src\ui\sidebar.hpp:96: uint32_t         TabDataStruct_field_4C;               // 0x4C: unknown (YRpp: TabDataStruct_field_4C)
+  addr 0X50 appears 8x:
+    src\misc\audio.hpp:79: int32_t          Range;              // 0x50: sound.ini Range
+    src\misc\locomotion.hpp:293: double        MovementSpeed;      // 0x50
+    src\misc\locomotion.hpp:338: double        CurrentSpeed;       // 0x50
+    src\misc\locomotion.hpp:441: int8_t         IsTakingOff;        // 0x50
+    src\misc\locomotion.hpp:491: bool          RocketLocomotionClass_field_bool_4C;     // 0x50
+    src\misc\locomotion.hpp:568: FacingClass   LocomotionFacing;   // 0x50
+    src\misc\locomotion.hpp:636: double        MovementSpeed;      // 0x50
+    src\ui\sidebar.hpp:97: uint32_t         TabDataStruct_field_50;               // 0x50: unknown (YRpp: TabDataStruct_field_50)
+  addr 0X54 appears 4x:
+    src\misc\audio.hpp:80: float            MinVolume;          // 0x54: sound.ini MinVolume (0.0–1.0)
+    src\misc\locomotion.hpp:445: uint32_t       FlyLocomotionClass_field_54;         // 0x54
+    src\misc\locomotion.hpp:494: float         CurrentPitch;        // 0x54
+    src\ui\sidebar.hpp:98: int32_t          CameoCount;             // 0x54: number of filled cameo slots
+  addr 0X58 appears 7x:
+    src\misc\audio.hpp:81: int32_t          MinDelay;           // 0x58: sound.ini Delay min
+    src\misc\locomotion.hpp:294: int           TrackNumber;        // 0x58
+    src\misc\locomotion.hpp:339: double        BoostSpeed;         // 0x58
+    src\misc\locomotion.hpp:446: uint32_t       FlyLocomotionClass_field_58;         // 0x58
+    src\misc\locomotion.hpp:495: uint32_t      RocketLocomotionClass_field_58;          // 0x58
+    src\misc\locomotion.hpp:637: int           TrackNumber;        // 0x58
+    src\ui\sidebar.hpp:99: CameoDataStruct  Cameos[kMaxCameosPerTab]; // 0x58: cameo grid entries (75 * 0x34 = 0xF3C)
+  addr 0X60 appears 4x:
+    src\misc\audio.hpp:83: int32_t          MinFDelta;          // 0x60: sound.ini FShift min (frequency delta)
+    src\misc\locomotion.hpp:296: bool          IsOnShortTrack;     // 0x60
+    src\misc\locomotion.hpp:340: double        CurrentWobbles;     // 0x60
+    src\misc\locomotion.hpp:639: bool          IsOnShortTrack;     // 0x60
+  addr 0X64 appears 3x:
+    src\misc\audio.hpp:84: int32_t          MaxFDelta;          // 0x64: sound.ini FShift max
+    src\misc\locomotion.hpp:300: bool          IsRocking;          // 0x64
+    src\misc\locomotion.hpp:643: bool          IsRocking;          // 0x64
+  addr 0X68 appears 5x:
+    src\misc\audio.hpp:85: int32_t          VShift;             // 0x68: sound.ini VShift (volume shift, 0–100)
+    src\misc\locomotion.hpp:303: ILocomotion*  Piggybackee;        // 0x68
+    src\misc\locomotion.hpp:341: bool          HoverLocomotionClass_field_bool_68;    // 0x68
+    src\misc\locomotion.hpp:569: uint8_t       JumpjetLocomotionClass_field_6C;         // 0x68
+    src\misc\locomotion.hpp:646: ILocomotion*  Piggybackee;        // 0x68
+  addr 0X6C appears 3x:
+    src\misc\audio.hpp:86: char             Name[0x20];         // 0x6C: sound.ini section name
+    src\misc\locomotion.hpp:343: int32_t       HoverLocomotionClass_field_6C;         // 0x6C
+    src\misc\locomotion.hpp:573: // 4-byte alignment pad       // 0x6C-0x6F
+  addr 0X8C appears 2x:
+    src\misc\audio.hpp:87: // 0x8C–0xA7: audio channel state / buffer context (10 dwords)
+    src\misc\audio.hpp:88: uint32_t         VocClass_field_8C;           // 0x8C
+  addr 0X94 appears 2x:
+    src\misc\audio.hpp:90: uint32_t         VocClass_field_94;           // 0x94
+    src\misc\locomotion.hpp:586: ILocomotion*  Piggybackee;        // 0x94
+  addr 0X35 appears 2x:
+    src\misc\audio.hpp:147: char           RussianVoice[9];  // 0x35: eva.ini Russian voice
+    src\misc\locomotion.hpp:437: // padding 3 bytes            // 0x35-0x37
+  addr 0X55A7D0 appears 2x:
+    src\misc\audio_ext.hpp:177: virtual void ComputeRotation() {} // 0x55a7d0
+    src\misc\locomotion.hpp:143: }                                  // 0x55A7D0
+  addr 0X55AAC0 appears 2x:
+    src\misc\locomotion.hpp:97: virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }           // 0x55AAC0
+    src\misc\misc_ext.hpp:3339: virtual void SaveLoad() {} // 0x55aac0
+  addr 0X66 appears 2x:
+    src\misc\locomotion.hpp:302: // padding 2 bytes            // 0x66-0x67
+    src\misc\locomotion.hpp:645: // padding 2 bytes            // 0x66-0x67
+  addr 0X69 appears 2x:
+    src\misc\locomotion.hpp:342: // padding 3 bytes            // 0x69-0x6B
+    src\misc\locomotion.hpp:570: uint8_t       JumpjetLocomotionClass_field_6D;         // 0x69
+  addr 0X31 appears 3x:
+    src\misc\locomotion.hpp:393: bool          IsInProcessing;     // 0x31
+    src\misc\locomotion.hpp:694: bool          TeleportLocomotionClass_field_bool_35;     // 0x31
+    src\misc\locomotion.hpp:782: // padding 3 bytes            // 0x31-0x33
+  addr 0X33 appears 2x:
+    src\misc\locomotion.hpp:395: // padding 1 byte             // 0x33
+    src\misc\locomotion.hpp:696: // padding 1 byte             // 0x33
+  addr 0X19 appears 3x:
+    src\misc\locomotion.hpp:433: // padding 3 bytes            // 0x19-0x1B
+    src\misc\locomotion.hpp:828: // padding 3 bytes            // 0x19-0x1B
+    src\ui\sidebar.hpp:37: uint8_t          _pad_progress[3];       // 0x19
+  addr 0X52 appears 2x:
+    src\misc\locomotion.hpp:443: bool           WasLanding;         // 0x52
+    src\misc\locomotion.hpp:493: // padding 2 bytes            // 0x52-0x53
+  addr 0X39 appears 2x:
+    src\misc\locomotion.hpp:559: uint8_t       JumpjetLocomotionClass_field_3D;         // 0x39
+    src\misc\locomotion.hpp:746: // padding 3 bytes            // 0x39-0x3B
+  addr 0X5D3A40 appears 2x:
+    src\misc\misc_ext.hpp:2708: virtual void InitMessageList() {} // 0x5d3a40
+    src\ui\message_list.hpp:69: ~MessageListClass() = default; // 0x5D3A40
+  addr 0X536FA0 appears 2x:
+    src\misc\misc_ext.hpp:4463: virtual void Execute() {} // 0x536fa0
+    src\ui\command_class.hpp:244: virtual void           Execute(uint32_t context) const override; // 0x536FA0
+  addr 0X87F668 appears 2x:
+    src\misc\super_weapon.hpp:39: static DynamicVectorClass<AbstractTypeClass*>* Array; // 0x87F668
+    src\system\globals_system.hpp:123: // 0x87f668: command class vector state
+  addr 0X6CEFE0 appears 2x:
+    src\misc\super_weapon.hpp:41: virtual ~SuperWeaponTypeClass() = default;                                       // 0x6CEFE0 (SDDTOR)
+    src\misc\super_weapon.hpp:61: void SDDTOR();                                                                    // 0x6CEFE0
+  addr 0X5113F0 appears 2x:
+    src\misc\super_weapon.hpp:49: SuperWeaponTypeClass(const char* pID) noexcept;                                   // 0x5113F0 (Construct)
+    src\misc\super_weapon.hpp:56: void Construct(const char* pID);                                                   // 0x5113F0
+  addr 0X6CE020 appears 2x:
+    src\misc\super_weapon.hpp:105: virtual AbstractType __stdcall whatAmI() const override { return AbsID; }        // 0x6CE020 (PowerDrainUpdate
+    src\misc\super_weapon.hpp:106: virtual int32_t objectSize() const override { return sizeof(SuperClass); }       // 0x6CE020
+  addr 0X6CE0B0 appears 2x:
+    src\misc\super_weapon.hpp:108: void Reset();                                                                    // 0x6CE0B0
+    src\misc\super_weapon.hpp:136: void PowerDrainUpdate();                                                         // 0x6CE0B0
+  addr 0X6CB560 appears 2x:
+    src\misc\super_weapon.hpp:110: bool Grant(bool oneTime, bool announce, bool onHold);                            // 0x6CB560 (StartTimer)
+    src\misc\super_weapon.hpp:134: void StartTimer(int32_t duration);                                                // 0x6CB560
+  addr 0X6CC080 appears 4x:
+    src\misc\super_weapon.hpp:118: bool HasChargeProgressed(bool isPlayer);                                          // 0x6CC080 (AnnounceReady)
+    src\misc\super_weapon.hpp:119: int32_t GetCameoChargeState() const;                                              // 0x6CC080
+    src\misc\super_weapon.hpp:121: int32_t GetRechargeTime() const;                                                  // 0x6CC080
+    src\misc\super_weapon.hpp:137: void AnnounceReady();                                                            // 0x6CC080
+  addr 0X6CAEC0 appears 2x:
+    src\misc\super_weapon.hpp:128: SuperClass(SuperWeaponTypeClass* pSWType, HouseClass* pOwner) noexcept;           // 0x6CAEC0 (Constructor)
+    src\misc\super_weapon.hpp:131: void Constructor(SuperWeaponTypeClass* pSWType, HouseClass* pOwner);              // 0x6CAEC0
+  addr 0X53AE50 appears 3x:
+    src\misc\super_weapon.hpp:138: void LaunchPsychicDominator(const CellStruct& cell);                              // 0x53AE50
+    src\misc\super_weapon.hpp:210: static void Start(HouseClass* pOwner, const CellStruct& coords); // 0x53AE50 area
+    src\misc\super_weapon.hpp:211: static void updateLogic();                                        // 0x53AE50 area
+  addr 0X539EB0 appears 2x:
+    src\misc\super_weapon.hpp:192: static void Start(int32_t duration, int32_t deferment, const CellStruct& cell, HouseClass* pOwner); // 0x539EB
+    src\misc\super_weapon.hpp:197: static void PrintMessage();                                              // 0x539EB0 area
+  addr 0X53A090 appears 2x:
+    src\misc\super_weapon.hpp:193: static void RequestStop();                                               // 0x53A090 (End)
+    src\misc\super_weapon.hpp:198: static void End();                                                       // 0x53A090
+  addr 0X53B080 appears 2x:
+    src\misc\super_weapon.hpp:212: static void Fire();                                               // 0x53B080
+    src\misc\super_weapon.hpp:213: static void PrintMessage();                                       // 0x53B080 area
+  addr 0X753580 appears 4x:
+    src\misc\super_weapon.hpp:223: static void Start(int32_t duration);      // 0x753580 (DecrementCounter)
+    src\misc\super_weapon.hpp:224: static void updateLogic();                 // 0x753580 area
+    src\misc\super_weapon.hpp:225: static bool Active();                      // 0x753580 area
+    src\misc\super_weapon.hpp:226: static void DecrementCounter();            // 0x753580
+  addr 0X53A110 appears 3x:
+    src\misc\super_weapon.hpp:236: static void FadeIn();                // 0x53A110 (IsActive)
+    src\misc\super_weapon.hpp:238: static bool IsFadingIn();            // 0x53A110 (IsActive)
+    src\misc\super_weapon.hpp:240: static bool IsActive();              // 0x53A110
+  addr 0X53A120 appears 3x:
+    src\misc\super_weapon.hpp:237: static void FadeOut();               // 0x53A120 (ProcessEffect)
+    src\misc\super_weapon.hpp:239: static bool IsFadingOut();           // 0x53A120 (ProcessEffect)
+    src\misc\super_weapon.hpp:241: static void ProcessEffect();         // 0x53A120
+  addr 0X48BE60 appears 2x:
+    src\network\connection.hpp:19: ConnectionClass() noexcept;                          // 0x48BE60
+    src\network\connection.hpp:64: bool initConnection();                                // 0x48BE60
+  addr 0X48BF40 appears 2x:
+    src\network\connection.hpp:23: virtual ULONG   __stdcall Release()                            { return 1; }            // 0x48BF40
+    src\network\connection.hpp:41: void sendAck();                                                                           // 0x48BF40
+  addr 0X48C590 appears 7x:
+    src\network\connection.hpp:27: virtual bool  Open()                                     { return false; }               // 0x48C590
+    src\network\connection.hpp:28: virtual void  Close()                                    {}                              // 0x48C590
+    src\network\connection.hpp:29: virtual bool  IsConnected() const                        { return false; }               // 0x48C590
+    src\network\connection.hpp:32: virtual int32_t GetLatency() const                       { return 0; }                   // 0x48C590
+    src\network\connection.hpp:34: virtual void  OnMessageReceived(const NetworkEvent&)     {}                              // 0x48C590
+    src\network\connection.hpp:35: virtual void  Flush()                                    {}                              // 0x48C590
+    src\network\connection.hpp:36: virtual bool  IsHost() const                             { return false; }               // 0x48C590
+  addr 0X53F5D0 appears 2x:
+    src\network\connection.hpp:30: virtual bool  Send(const uint8_t*, int32_t)              { return false; }               // 0x53F5D0
+    src\network\connection.hpp:66: bool send(const uint8_t*, int32_t);                    // 0x53F5D0
+  addr 0X53F650 appears 2x:
+    src\network\connection.hpp:31: virtual int32_t Receive(uint8_t*, int32_t)               { return 0; }                   // 0x53F650
+    src\network\connection.hpp:67: int32_t receive(uint8_t*, int32_t);                    // 0x53F650
+  addr 0X542350 appears 2x:
+    src\network\connection.hpp:33: virtual const char* GetAddress() const                   { return nullptr; }             // 0x542350
+    src\network\connection.hpp:94: const char* GetAddress(char*);                                    // 0x542350
+  addr 0X69BC20 appears 2x:
+    src\network\connection.hpp:61: virtual bool Open() override { return false; }         // 0x69BC20
+    src\network\connection.hpp:65: bool closeConnection();                               // 0x69BC20
+  addr 0X542FE0 appears 3x:
+    src\network\connection.hpp:78: IPXManagerClass() noexcept;                                       // 0x542FE0
+    src\network\connection.hpp:81: void Init();                                                      // 0x542FE0
+    src\network\connection.hpp:82: bool OpenSession();                                               // 0x542FE0
+  addr 0X5414C0 appears 2x:
+    src\network\connection.hpp:83: void CloseSession();                                              // 0x5414C0
+    src\network\connection.hpp:92: void release();                                                   // 0x5414C0
+  addr 0X5424A0 appears 2x:
+    src\network\connection.hpp:86: bool IsIPXAvailable() const;                                       // 0x5424A0
+    src\network\connection.hpp:97: int32_t CheckStatus();                                            // 0x5424A0
+  addr 0X5F16E0 appears 4x:
+    src\network\connection.hpp:110: ModemConnectionClass() noexcept;                        // 0x5F16E0
+    src\network\connection.hpp:114: bool Init();                                            // 0x5F16E0
+    src\network\connection.hpp:129: NullModemClass() noexcept;                              // 0x5F16E0
+    src\network\connection.hpp:135: bool Init();                                            // 0x5F16E0
+  addr 0X5F1BC0 appears 4x:
+    src\network\connection.hpp:112: virtual bool Open() override { return false; }           // 0x5F1BC0
+    src\network\connection.hpp:115: bool Connect();                                         // 0x5F1BC0
+    src\network\connection.hpp:131: virtual bool Open() override { return false; }           // 0x5F1BC0
+    src\network\connection.hpp:136: bool Connect();                                         // 0x5F1BC0
+  addr 0X5F1F00 appears 2x:
+    src\network\connection.hpp:116: void FlushCom();                                        // 0x5F1F00
+    src\network\connection.hpp:137: void FlushCom();                                        // 0x5F1F00
+  addr 0X5CACF0 appears 2x:
+    src\network\multiplayer.hpp:29: virtual bool   IsValidMap()                                       { return false; }      // 0x5CACF0 (MPBattle
+    src\network\multiplayer.hpp:106: virtual bool IsValidMap() override { return false; }                         // 0x5CACF0
+  addr 0X5CAD30 appears 2x:
+    src\network\multiplayer.hpp:30: virtual bool   NeedsHouseSelection()                              { return false; }      // 0x5CAD30 (MPBattle
+    src\network\multiplayer.hpp:107: virtual bool NeedsHouseSelection() override { return false; }                // 0x5CAD30
+  addr 0X5CAD60 appears 2x:
+    src\network\multiplayer.hpp:31: virtual bool   ValidatePlayer(int32_t idx)                        { return true; }       // 0x5CAD60 (MPBattle
+    src\network\multiplayer.hpp:127: virtual bool ValidatePlayer(int32_t idx) override { return true; }            // 0x5CAD60
+  addr 0X5CAD90 appears 5x:
+    src\network\multiplayer.hpp:32: virtual bool   StartGame()                                        { return false; }      // 0x5CAD90 (MPBattle
+    src\network\multiplayer.hpp:108: virtual bool StartGame() override { return false; }                          // 0x5CAD90
+    src\network\multiplayer.hpp:166: virtual bool StartGame() override { return false; }                 // 0x5CAD90
+    src\network\multiplayer.hpp:178: virtual bool StartGame() override { return false; }                  // 0x5CAD90
+    src\network\multiplayer.hpp:189: virtual bool StartGame() override { return false; }                   // 0x5CAD90
+  addr 0X5CADC0 appears 5x:
+    src\network\multiplayer.hpp:33: virtual bool   StopGame(int32_t reason)                           { return true; }       // 0x5CADC0 (MPBattle
+    src\network\multiplayer.hpp:109: virtual bool StopGame(int32_t reason) override { return false; }             // 0x5CADC0
+    src\network\multiplayer.hpp:167: virtual bool StopGame(int32_t reason) override { return false; }    // 0x5CADC0
+    src\network\multiplayer.hpp:179: virtual bool StopGame(int32_t reason) override { return false; }     // 0x5CADC0
+    src\network\multiplayer.hpp:190: virtual bool StopGame(int32_t reason) override { return false; }      // 0x5CADC0
+  addr 0X5CADD0 appears 5x:
+    src\network\multiplayer.hpp:34: virtual bool   AreTeamChangesAllowed()                            { return true; }       // 0x5CADD0 (MPBattle
+    src\network\multiplayer.hpp:130: virtual bool AreTeamChangesAllowed() override { return true; }               // 0x5CADD0
+    src\network\multiplayer.hpp:168: virtual bool AreTeamChangesAllowed() override { return false; }     // 0x5CADD0
+    src\network\multiplayer.hpp:180: virtual bool AreTeamChangesAllowed() override { return false; }      // 0x5CADD0
+    src\network\multiplayer.hpp:191: virtual bool AreTeamChangesAllowed() override { return false; }       // 0x5CADD0
+  addr 0X5CADF0 appears 2x:
+    src\network\multiplayer.hpp:35: virtual bool   IsHouseAllyChangeAllowed()                         { return true; }       // 0x5CADF0 (MPBattle
+    src\network\multiplayer.hpp:131: virtual bool IsHouseAllyChangeAllowed() override { return true; }            // 0x5CADF0
+  addr 0X5CB190 appears 2x:
+    src\network\multiplayer.hpp:36: virtual void   OnPlayerConnect(int32_t idx)                       {}                     // 0x5CB190 (MPBattle
+    src\network\multiplayer.hpp:110: virtual void OnPlayerConnect(int32_t idx) override {}                        // 0x5CB190
+  addr 0X5CB1C0 appears 2x:
+    src\network\multiplayer.hpp:37: virtual void   OnPlayerDisconnect(int32_t idx)                    {}                     // 0x5CB1C0 (MPBattle
+    src\network\multiplayer.hpp:111: virtual void OnPlayerDisconnect(int32_t idx) override {}                     // 0x5CB1C0
+  addr 0X5CB1E0 appears 2x:
+    src\network\multiplayer.hpp:38: virtual int32_t GetMaximumPlayers()                               { return -2; }         // 0x5CB1E0 (MPBattle
+    src\network\multiplayer.hpp:112: virtual int32_t GetMaximumPlayers() override { return -2; }                  // 0x5CB1E0
+  addr 0X5CB200 appears 2x:
+    src\network\multiplayer.hpp:39: virtual int32_t GetMinimumPlayers()                               { return MustAlly ? 0 : -2; } // 0x5CB200 (M
+    src\network\multiplayer.hpp:113: virtual int32_t GetMinimumPlayers() override { return -2; }                  // 0x5CB200
+  addr 0X5CB220 appears 2x:
+    src\network\multiplayer.hpp:40: virtual int32_t GetAlliesLimit()                                  { return AlliesAllowed ? 3 : -2; } // 0x5CB2
+    src\network\multiplayer.hpp:114: virtual int32_t GetAlliesLimit() override { return -2; }                     // 0x5CB220
+  addr 0X5CB260 appears 2x:
+    src\network\multiplayer.hpp:41: virtual bool   CanAllyWith(int32_t idx)                           { return false; }      // 0x5CB260 (MPBattle
+    src\network\multiplayer.hpp:115: virtual bool CanAllyWith(int32_t idx) override { return false; }             // 0x5CB260
+  addr 0X5CB2D0 appears 2x:
+    src\network\multiplayer.hpp:42: virtual void   OnGameBegin(int32_t seed)                          {}                     // 0x5CB2D0 (MPBattle
+    src\network\multiplayer.hpp:116: virtual void OnGameBegin(int32_t seed) override {}                           // 0x5CB2D0
+  addr 0X5CB380 appears 3x:
+    src\network\multiplayer.hpp:43: virtual bool   IsAIAllowed()                                      { return AIAllowed; }  // 0x5CB380 (MPBattle
+    src\network\multiplayer.hpp:117: virtual bool IsAIAllowed() override { return false; }                        // 0x5CB380
+    src\network\multiplayer.hpp:192: virtual bool IsAIAllowed() override { return false; }                 // 0x5CB380
+  addr 0X5CB570 appears 3x:
+    src\network\multiplayer.hpp:44: virtual bool   IsTeamsAllowed()                                   { return false; }      // 0x5CB570 (MPBattle
+    src\network\multiplayer.hpp:105: virtual bool IsTeamsAllowed() override { return true; }                      // 0x5CB570
+    src\network\multiplayer.hpp:169: virtual bool IsTeamsAllowed() override { return true; }             // 0x5CB570
+  addr 0X5CEDB0 appears 2x:
+    src\network\multiplayer.hpp:45: virtual int32_t FirstValidMapIndex()                              { return 0; }         // 0x5CEDB0 (MPBattleC
+    src\network\multiplayer.hpp:118: virtual int32_t FirstValidMapIndex() override { return 0; }                  // 0x5CEDB0
+  addr 0X5D1A80 appears 2x:
+    src\network\multiplayer.hpp:46: virtual void   PopulateTeamDropdown(HWND, DynamicVectorClass<MPTeam*>*, MPTeam*) {}      // 0x5D1A80 (MPBattle
+    src\network\multiplayer.hpp:119: virtual void PopulateTeamDropdown(HWND, DynamicVectorClass<MPTeam*>*, MPTeam*) override {} // 0x5D1A80
+  addr 0X5D2DE0 appears 2x:
+    src\network\multiplayer.hpp:47: virtual void   DrawTeamDropdown(HWND, DynamicVectorClass<MPTeam*>*, MPTeam*) {}          // 0x5D2DE0 (MPBattle
+    src\network\multiplayer.hpp:134: virtual void DrawTeamDropdown(HWND, DynamicVectorClass<MPTeam*>*, MPTeam*) override {} // 0x5D2DE0
+  addr 0X5D3470 appears 3x:
+    src\network\multiplayer.hpp:48: virtual void   PopulateTeamDropdownForPlayer(HWND, int32_t) {}                            // 0x5D3470 (MPBattl
+    src\network\multiplayer.hpp:120: virtual void PopulateTeamDropdownForPlayer(HWND, int32_t) override {}         // 0x5D3470
+    src\network\multiplayer.hpp:170: virtual void PopulateTeamDropdownForPlayer(HWND, int32_t) override {} // 0x5D3470
+  addr 0X5D3810 appears 2x:
+    src\network\multiplayer.hpp:49: virtual bool   ValidateHouse(int32_t,int32_t,void*,int32_t,int16_t,int32_t,int32_t) { return false; } // 0x5D3
+    src\network\multiplayer.hpp:121: virtual bool ValidateHouse(int32_t,int32_t,void*,int32_t,int16_t,int32_t,int32_t) override { return false; } /
+  addr 0X5D3830 appears 2x:
+    src\network\multiplayer.hpp:50: virtual bool   ValidateOwner(int32_t,int32_t,void*,int32_t,int16_t,int32_t,int32_t,int32_t,int32_t) { return f
+    src\network\multiplayer.hpp:122: virtual bool ValidateOwner(int32_t,int32_t,void*,int32_t,int16_t,int32_t,int32_t,int32_t,int32_t) override { r
+  addr 0X5D38F0 appears 2x:
+    src\network\multiplayer.hpp:51: virtual bool   ValidateColor(int32_t,int32_t,int32_t)              { return true; }      // 0x5D38F0 (MPBattle
+    src\network\multiplayer.hpp:123: virtual bool ValidateColor(int32_t,int32_t,int32_t) override { return true; } // 0x5D38F0
+  addr 0X5D3920 appears 2x:
+    src\network\multiplayer.hpp:52: virtual bool   ValidateStartPosition()                            { return true; }       // 0x5D3920 (MPBattle
+    src\network\multiplayer.hpp:124: virtual bool ValidateStartPosition() override { return true; }                // 0x5D3920
+  addr 0X5D3950 appears 2x:
+    src\network\multiplayer.hpp:53: virtual bool   IsDefaultFix()                                     { return true; }       // 0x5D3950 (MPBattle
+    src\network\multiplayer.hpp:125: virtual bool IsDefaultFix() override { return true; }                         // 0x5D3950
+  addr 0X5D3980 appears 2x:
+    src\network\multiplayer.hpp:54: virtual bool   IsDefaultAI()                                      { return true; }       // 0x5D3980 (MPBattle
+    src\network\multiplayer.hpp:126: virtual bool IsDefaultAI() override { return true; }                          // 0x5D3980
+  addr 0X5D3990 appears 2x:
+    src\network\multiplayer.hpp:55: virtual int32_t RandomHumanCountryIndex()                         { return 0; }         // 0x5D3990 (MPBattleC
+    src\network\multiplayer.hpp:128: virtual int32_t RandomHumanCountryIndex() override { return 0; }             // 0x5D3990
+  addr 0X5D39B0 appears 2x:
+    src\network\multiplayer.hpp:56: virtual int32_t RandomAICountryIndex()                            { return RandomHumanCountryIndex(); } // 0x5
+    src\network\multiplayer.hpp:129: virtual int32_t RandomAICountryIndex() override { return 0; }               // 0x5D39B0
+  addr 0X5D4C30 appears 2x:
+    src\network\multiplayer.hpp:57: virtual void   OnDialogCreated(int32_t, int32_t)                  {}                     // 0x5D4C30 (MPBattle
+    src\network\multiplayer.hpp:132: virtual void OnDialogCreated(int32_t, int32_t) override {}                    // 0x5D4C30
+  addr 0X5D4C50 appears 2x:
+    src\network\multiplayer.hpp:58: virtual void   OnDialogDestroyed(int32_t)                         {}                     // 0x5D4C50 (MPBattle
+    src\network\multiplayer.hpp:133: virtual void OnDialogDestroyed(int32_t) override {}                           // 0x5D4C50
+  addr 0X5D4CD0 appears 3x:
+    src\network\multiplayer.hpp:59: virtual bool   UnfixAlliances()                                   { return false; }      // 0x5D4CD0 (MPBattle
+    src\network\multiplayer.hpp:135: virtual bool UnfixAlliances() override { return false; }                      // 0x5D4CD0
+    src\network\multiplayer.hpp:193: virtual bool UnfixAlliances() override { return MPGameModeClass::UnfixAlliances(); } // 0x5D4CD0
+  addr 0X5D58B0 appears 2x:
+    src\network\multiplayer.hpp:60: virtual bool   StartingPositionsToHouseBaseCells(int8_t)          { return false; }      // 0x5D58B0 (MPBattle
+    src\network\multiplayer.hpp:136: virtual bool StartingPositionsToHouseBaseCells(int8_t) override { return false; }  // 0x5D58B0
+  addr 0X5D6310 appears 3x:
+    src\network\multiplayer.hpp:61: virtual bool   StartingPositionsToHouseBaseCells2(bool)           { return false; }      // 0x5D6310 (Scenario
+    src\network\multiplayer.hpp:137: virtual bool StartingPositionsToHouseBaseCells2(bool) override { return false; }   // 0x5D6310
+    src\network\multiplayer.hpp:194: virtual bool StartingPositionsToHouseBaseCells2(bool) override { return false; } // 0x5D6310
+  addr 0X5D58E0 appears 2x:
+    src\network\multiplayer.hpp:62: virtual bool   AllyTeams()                                        { return false; }      // 0x5D58E0 (MPBattle
+    src\network\multiplayer.hpp:138: virtual bool AllyTeams() override { return false; }                           // 0x5D58E0
+  addr 0X5D5900 appears 3x:
+    src\network\multiplayer.hpp:63: virtual bool   IsMegawealthAllowed()                              { return true; }       // 0x5D5900 (MPBattle
+    src\network\multiplayer.hpp:139: virtual bool IsMegawealthAllowed() override { return true; }                  // 0x5D5900
+    src\network\multiplayer.hpp:204: virtual bool IsMegawealthAllowed() override { return false; }  // 0x5D5900 (MPBattleClass::isMegawealthAllowed
+  addr 0X5D5920 appears 2x:
+    src\network\multiplayer.hpp:64: virtual void   OnAIJoined()                                       {}                     // 0x5D5920 (MPBattle
+    src\network\multiplayer.hpp:140: virtual void OnAIJoined() override {}                                         // 0x5D5920
+  addr 0X5C0E60 appears 2x:
+    src\network\multiplayer.hpp:65: virtual void   OnAllCompleted()                                   {}                     // 0x5C0E60 (Scenario
+    src\network\multiplayer.hpp:141: virtual void OnAllCompleted() override {}                                     // 0x5C0E60
+  addr 0X5D5DC0 appears 2x:
+    src\network\multiplayer.hpp:66: virtual int32_t GetScoreMode()                                    { return -1; }         // 0x5D5DC0 (Dialog::
+    src\network\multiplayer.hpp:142: virtual int32_t GetScoreMode() override { return -1; }                       // 0x5D5DC0
+  addr 0X5C0EE0 appears 2x:
+    src\network\multiplayer.hpp:67: virtual void   OnNewScenario()                                    {}                     // 0x5C0EE0 (Scenario
+    src\network\multiplayer.hpp:143: virtual void OnNewScenario() override {}                                      // 0x5C0EE0
+  addr 0X5C0EF0 appears 2x:
+    src\network\multiplayer.hpp:68: virtual void   OnInitGame(int32_t)                                {}                     // 0x5C0EF0 (Scenario
+    src\network\multiplayer.hpp:144: virtual void OnInitGame(int32_t) override {}                                  // 0x5C0EF0
+  addr 0X5C0F00 appears 2x:
+    src\network\multiplayer.hpp:69: virtual void   OnGameSpeedChanged(int32_t)                        {}                     // 0x5C0F00 (Scenario
+    src\network\multiplayer.hpp:145: virtual void OnGameSpeedChanged(int32_t) override {}                          // 0x5C0F00
+  addr 0X5D5DE0 appears 2x:
+    src\network\multiplayer.hpp:70: virtual bool   IsGameOver()                                       { return false; }      // 0x5D5DE0 (GameMode
+    src\network\multiplayer.hpp:146: virtual bool IsGameOver() override { return false; }                          // 0x5D5DE0
+  addr 0X5C0F10 appears 2x:
+    src\network\multiplayer.hpp:71: virtual void   OnEndOfFrame()                                     {}                     // 0x5C0F10 (Scenario
+    src\network\multiplayer.hpp:147: virtual void OnEndOfFrame() override {}                                       // 0x5C0F10
+  addr 0X5C0F20 appears 2x:
+    src\network\multiplayer.hpp:72: virtual void   OnDrawDialog()                                     {}                     // 0x5C0F20 (Scenario
+    src\network\multiplayer.hpp:148: virtual void OnDrawDialog() override {}                                       // 0x5C0F20
+  addr 0X5D6430 appears 2x:
+    src\network\multiplayer.hpp:73: virtual bool   IsDefeated(int32_t,void*,int32_t,int16_t,int32_t,int32_t,int32_t) { return false; } // 0x5D6430
+    src\network\multiplayer.hpp:149: virtual bool IsDefeated(int32_t,void*,int32_t,int16_t,int32_t,int32_t,int32_t) override { return false; } // 0
+  addr 0X5D6350 appears 2x:
+    src\network\multiplayer.hpp:74: virtual int32_t IsWinner()                                        { return 0; }         // 0x5D6350 (DialogCla
+    src\network\multiplayer.hpp:150: virtual int32_t IsWinner() override { return 0; }                             // 0x5D6350
+  addr 0X5C0F40 appears 2x:
+    src\network\multiplayer.hpp:75: virtual bool   IsPlayerEliminated()                               { return true; }      // 0x5C0F40 (ScenarioC
+    src\network\multiplayer.hpp:151: virtual bool IsPlayerEliminated() override { return true; }                   // 0x5C0F40
+  addr 0X5C0F30 appears 3x:
+    src\network\multiplayer.hpp:76: virtual void   CreateMPTeams(DynamicVectorClass<MPTeam*>*)        {}                     // 0x5C0F30 (Scenario
+    src\network\multiplayer.hpp:152: virtual void CreateMPTeams(DynamicVectorClass<MPTeam*>*) override {}          // 0x5C0F30
+    src\network\multiplayer.hpp:195: virtual void CreateMPTeams(DynamicVectorClass<MPTeam*>*) override {}  // 0x5C0F30
+  addr 0X5D6BE0 appears 2x:
+    src\network\multiplayer.hpp:78: DynamicVectorClass<CellStruct>*, uint8_t*) { return nullptr; }       // 0x5D6BE0 (ScenarioClass::AssignStartPo
+    src\network\multiplayer.hpp:154: DynamicVectorClass<CellStruct>*, uint8_t*) override { return nullptr; } // 0x5D6BE0
+  addr 0X5D6340 appears 4x:
+    src\network\multiplayer.hpp:79: virtual bool   SpawnBaseUnits(HouseClass*, uint32_t)              { return false; }      // 0x5D6340 (Scenario
+    src\network\multiplayer.hpp:155: virtual bool SpawnBaseUnits(HouseClass*, uint32_t) override { return false; } // 0x5D6340
+    src\network\multiplayer.hpp:181: virtual bool SpawnBaseUnits(HouseClass*, uint32_t) override { return false; } // 0x5D6340
+    src\network\multiplayer.hpp:196: virtual bool SpawnBaseUnits(HouseClass*, uint32_t) override { return false; } // 0x5D6340
+  addr 0X5D6440 appears 2x:
+    src\network\multiplayer.hpp:80: virtual bool   GenerateStartingUnits(HouseClass*, int32_t&)       { return false; }      // 0x5D6440 (Scenario
+    src\network\multiplayer.hpp:156: virtual bool GenerateStartingUnits(HouseClass*, int32_t&) override { return false; } // 0x5D6440
+  addr 0X5D8170 appears 2x:
+    src\network\multiplayer.hpp:97: MPGameModeClass() noexcept; // 0x5D8170 (MPBattleClass ctor area)
+    src\network\multiplayer.hpp:103: MPBattleClass() noexcept;                                                    // 0x5D8170
+  addr 0X885780 appears 2x:
+    src\render\globals_render.hpp:125: // 0x885780 [confidence: inferred_strong]
+    src\core\init_game.cpp:55: static uint8_t FileSystem_TEMPERAT_PAL[768]; // 0x885780
+  addr 0X8871E0 appears 2x:
+    src\render\globals_render.hpp:297: // 0x8871e0 [confidence: inferred_strong] (was: RulesClass_Instance)
+    src\core\init_game.cpp:33: void* RulesClass_Instance = nullptr;        // 0x8871E0
+  addr 0X887324 appears 3x:
+    src\render\globals_render.hpp:300: // 0x887324 [confidence: inferred_strong] (was: TacticalClass_Instance)
+    src\core\globals.cpp:283: void* TacticalClass_Instance = nullptr; // 0x887324
+    src\core\init_game.cpp:87: extern void* TacticalClass_Instance;      // 0x887324 (globals.cpp)
+  addr 0X886FA4 appears 2x:
+    src\render\globals_render.hpp:303: // 0x886fa4 [confidence: inferred_strong] (was: Map_VisibleRect)
+    src\core\globals.cpp:378: // 0x886FA4: Map_VisibleRect — visible map Y coordinate (int32)
+  addr 0X887314 appears 3x:
+    src\render\globals_render.hpp:306: // 0x887314 [confidence: inferred_strong] (was: DSurface_Hidden_2)
+    src\core\globals.cpp:285: void* DSurface_Hidden_2 = nullptr;      // 0x887314
+    src\core\init_game.cpp:73: extern void* DSurface_Hidden_2;           // 0x887314
+  addr 0X887640 appears 2x:
+    src\render\globals_render.hpp:309: // 0x887640 [confidence: inferred_strong] (was: WWMouseClass_Instance)
+    src\core\init_game.cpp:85: extern void* WWMouseClass_Instance;       // 0x887640 (globals.cpp)
+  addr 0X88730C appears 3x:
+    src\render\globals_render.hpp:312: // 0x88730c [confidence: inferred_strong] (was: DSurface_Hidden)
+    src\core\globals.cpp:284: void* DSurface_Hidden = nullptr;        // 0x88730C
+    src\core\init_game.cpp:72: extern void* DSurface_Hidden;             // 0x88730C
+  addr 0X887308 appears 3x:
+    src\render\globals_render.hpp:315: // 0x887308 [confidence: inferred_strong] (was: DSurface_Primary)
+    src\core\globals.cpp:286: void* DSurface_Primary = nullptr;       // 0x887308
+    src\core\init_game.cpp:71: extern void* DSurface_Primary;            // 0x887308 (defined in ddraw_init.cpp)
+  addr 0X8A00A0 appears 2x:
+    src\render\globals_render.hpp:342: // 0x8A00A0 [confidence: inferred_strong] load screen flag
+    src\core\init_game.cpp:46: int   g_LoadScreenFlag = 0;                // 0x8A00A0
+  addr 0XA8B230 appears 2x:
+    src\structure\globals_structure.hpp:63: // 0xA8B230 [confidence: inferred_strong] (was: ScenarioClass_Instance)
+    src\core\init_game.cpp:34: void* ScenarioClass_Instance = nullptr;     // 0xA8B230
+  addr 0XA8ED84 appears 2x:
+    src\structure\globals_structure.hpp:66: // 0xA8ED84 [confidence: inferred_strong] (was: CurrentFrame)
+    src\core\globals.cpp:94: // 0xA8ED84: CurrentFrame -- frame counter
+  addr 0XA8B238 appears 2x:
+    src\structure\globals_structure.hpp:69: // 0xA8B238 [confidence: inferred_strong] (was: GameMode_Current)
+    src\core\globals.cpp:85: // 0xA8B238: GameMode_Current -- current game mode (0=menu, 1/2=campaign, 3=internet, 4=skirmish, 5=setup)
+  addr 0XA8E7AC appears 2x:
+    src\structure\globals_structure.hpp:72: // 0xA8E7AC [confidence: inferred_strong] (was: IKnowWhatImDoing)
+    src\core\globals.cpp:82: // 0xA8E7AC: IKnowWhatImDoing -- developer skip flag
+  addr 0XA8E9A0 appears 2x:
+    src\structure\globals_structure.hpp:75: // 0xA8E9A0 [confidence: inferred_strong] (was: WTFMode)
+    src\core\globals.cpp:166: // 0xA8E9A0: WTFMode -- game loop control flag
+  addr 0XA83D84 appears 2x:
+    src\structure\globals_structure.hpp:78: // 0xA83D84 [confidence: inferred_strong] (was: BuildingTypeClass_Array)
+    src\core\globals.cpp:375: // 0xA83D84: BuildingTypeClass_Array — pointer to array of BuildingTypeClass*
+  addr 0XABDC74 appears 2x:
+    src\structure\globals_structure.hpp:87: // 0xABDC74 [confidence: inferred_strong] global cell index for map
+    src\core\globals.cpp:346: int   g_Map_GlobalCellIndex = 0;     // 0xABDC74
+  addr 0XA8EB60 appears 2x:
+    src\structure\globals_structure.hpp:93: // 0xA8EB60 [confidence: inferred_strong] game mode options flags
+    src\core\init_game.cpp:45: int   g_GameModeOptions = 0;               // 0xA8EB60
+  addr 0XA83C6C appears 2x:
+    src\structure\globals_structure.hpp:96: // 0xA83C6C [confidence: inferred_strong] trigger type count
+    src\core\init_game.cpp:41: void* g_TriggerTypeCount = nullptr;        // 0xA83C6C
+  addr 0XA8B550 appears 2x:
+    src\structure\globals_structure.hpp:102: // 0xA8B550 [confidence: inferred_strong] scenario state flag
+    src\core\globals.cpp:178: // 0xA8B550: g_ScenarioState -- scenario state counter
+  addr 0X8B4154 appears 2x:
+    src\structure\globals_structure.hpp:105: // 0x8B4154 [confidence: inferred_strong] anim type count
+    src\core\init_game.cpp:40: void* g_AnimTypeCount = nullptr;           // 0x8B4154
+  addr 0XA83C78 appears 2x:
+    src\structure\globals_structure.hpp:111: // 0xA83C78 [confidence: inferred_strong] trigger class count
+    src\core\init_game.cpp:42: int   g_TriggerClassCount = 0;             // 0xA83C78
+  addr 0XA8ED9C appears 2x:
+    src\structure\globals_structure.hpp:120: // 0xA8ED9C [confidence: inferred_strong] game active state flag
+    src\core\globals.cpp:91: // 0xA8ED9C: g_GameActive -- game active flag
+  addr 0X4CA270 appears 4x:
+    src\system\factory.hpp:25: virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return 0; }       // 0x4CA270 (LoadFromStream
+    src\system\factory.hpp:26: virtual HRESULT __stdcall Load(IStream* stream) override { return 0; }             // 0x4CA270
+    src\system\factory.hpp:27: virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { return 0; } // 0x4CA270
+    src\system\factory.hpp:61: void LoadFromStream(IStream* stream);                                                // 0x4CA270
+  addr 0X4CA760 appears 2x:
+    src\system\factory.hpp:32: virtual int objectSize() const override { return 0; }                               // 0x4CA760 (StubReturn116
+    src\system\factory.hpp:33: virtual void calculateChecksum(void* checksum) const {}                             // 0x4CA760
+  addr 0X4C9C70 appears 4x:
+    src\system\factory.hpp:37: bool DemandProduction(const TechnoTypeClass* type, HouseClass* owner, bool should_queue); // 0x4C9C70
+    src\system\factory.hpp:39: bool Suspend(bool manual);                                                           // 0x4C9C70 area
+    src\system\factory.hpp:40: bool Unsuspend(bool manual);                                                         // 0x4C9C70 area
+    src\system\factory.hpp:58: static FactoryClass* FindByOwnerAndProduct(const HouseClass* house, const TechnoTypeClass* item); // 0x4C9C70 
+  addr 0X4CA580 appears 2x:
+    src\system\factory.hpp:42: bool AbandonProduction();                                                            // 0x4CA580 (Revert)
+    src\system\factory.hpp:64: void Revert();                                                                       // 0x4CA580
+  addr 0X4CA430 appears 3x:
+    src\system\factory.hpp:43: int GetProgress() const;                                                            // 0x4CA430 (Stat)
+    src\system\factory.hpp:45: int GetCostPerStep() const;                                                         // 0x4CA430
+    src\system\factory.hpp:62: void Stat(IStream* stream);                                                          // 0x4CA430
+  addr 0X635060 appears 2x:
+    src\system\factory.hpp:46: bool CompletedProduction();                                                          // 0x635060 (FinishProduc
+    src\system\factory.hpp:50: void FinishProduction();                                                            // 0x635060
+  addr 0X4C9B20 appears 2x:
+    src\system\factory.hpp:49: void UpdateProduction();                                                            // 0x4C9B20
+    src\system\factory.hpp:84: FactoryClass() = default; // 0x4C9B20 (UpdateProduction area)
+  addr 0X87E734 appears 2x:
+    src\system\globals_system.hpp:67: // 0x87e734-0x87e738: MIX file handles
+    src\system\globals_system.hpp:68: // 0x87e734: AUDIO.MIX
+  addr 0X87E73C appears 2x:
+    src\system\globals_system.hpp:73: // 0x87e73c-0x87e754: mixer channel indices
+    src\system\globals_system.hpp:74: extern uint32_t g_MixerChannel_SFX;     // 0x87e73c
+  addr 0X87F658 appears 3x:
+    src\system\globals_system.hpp:115: // 0x87f658: command class vector (DynamicVectorClass*)
+    src\ui\command_class.hpp:29: static DynamicVectorClass<CommandClass*>* Array; // 0x87F658
+    src\ui\command_ext.hpp:190: static DynamicVectorClass<CommandClass*>* Array; // 0x87F658
+  addr 0X87F6BC appears 2x:
+    src\system\globals_system.hpp:142: // 0x87f6bc: TIBERIUM.PAL file handle
+    src\core\init_game.cpp:80: void* FileSystem_GRFXTXT_TIBERIUM_PAL = nullptr; // 0x87F6BC
+  addr 0XB0E844 appears 2x:
+    src\system\globals_system.hpp:186: // 0xB0E844 [confidence: inferred_strong] (was: BuildingLoadQueue_Count)
+    src\core\globals.cpp:150: // 0xB0E844: BuildingLoadQueue_Count -- number of entries in queue
+  addr 0X87F6C4 appears 2x:
+    src\system\globals_system.hpp:189: // 0x87F6C4 [confidence: inferred_strong] (was: FileSystem_THEATER_PAL)
+    src\core\init_game.cpp:76: void* FileSystem_THEATER_PAL = nullptr;    // 0x87F6C4
+  addr 0XB0E840 appears 2x:
+    src\system\globals_system.hpp:192: // 0xB0E840 [confidence: inferred_strong] (was: BuildingLoadQueue_Array)
+    src\core\globals.cpp:147: // 0xB0E840: BuildingLoadQueue_Array -- array of (id, object*) pairs
+  addr 0XB0E84C appears 2x:
+    src\system\globals_system.hpp:195: // 0xB0E84C [confidence: inferred_strong] (was: BuildingLoadQueue_Dirty)
+    src\core\globals.cpp:156: // 0xB0E84C: BuildingLoadQueue_Dirty -- queue needs resort
+  addr 0XB0E850 appears 2x:
+    src\system\globals_system.hpp:198: // 0xB0E850 [confidence: inferred_strong] (was: BuildingLoadQueue_Active)
+    src\core\globals.cpp:159: // 0xB0E850: BuildingLoadQueue_Active -- cached active entry
+  addr 0XB0E848 appears 2x:
+    src\system\globals_system.hpp:201: // 0xB0E848 [confidence: inferred_strong] (was: BuildingLoadQueue_Capacity)
+    src\core\globals.cpp:153: // 0xB0E848: BuildingLoadQueue_Capacity -- allocated capacity
+  addr 0X87F924 appears 2x:
+    src\system\globals_system.hpp:204: // 0x87F924 [confidence: inferred_strong] shroud cell array (fog of war)
+    src\core\globals.cpp:344: void* g_Shroud_CellArray = nullptr; // 0x87F924
+  addr 0X87F770 appears 2x:
+    src\system\globals_system.hpp:213: // 0x87F770 [confidence: inferred_strong] Bink movie player instance
+    src\core\init_game.cpp:86: extern void* g_BinkMoviePlayer;           // 0x87F770 (globals.cpp)
+  addr 0XB0F680 appears 2x:
+    src\system\globals_system.hpp:216: // 0xB0F680 [confidence: inferred_strong] animation manager
+    src\core\globals.cpp:330: void* g_AnimManager = nullptr;     // 0xB0F680
+  addr 0XB0F670 appears 2x:
+    src\system\globals_system.hpp:219: // 0xB0F670 [confidence: inferred_strong] anim pool manager
+    src\core\globals.cpp:333: void* g_AnimPoolManager = nullptr; // 0xB0F670
+  addr 0X87F8DC appears 2x:
+    src\system\globals_system.hpp:222: // 0x87F8DC [confidence: inferred_strong] cell position lookup table
+    src\core\globals.cpp:235: // 0x87F8DC: g_Cell_PositionLUT -- cell position lookup table
+  addr 0XB0F730 appears 2x:
+    src\system\globals_system.hpp:225: // 0xB0F730 [confidence: inferred_strong] alpha shape pool
+    src\core\globals.cpp:322: int   g_AlphaShapePool = 0;       // 0xB0F730
+  addr 0X87F8E0 appears 2x:
+    src\system\globals_system.hpp:231: // 0x87F8E0 [confidence: inferred_strong] cell position offset
+    src\core\globals.cpp:238: // 0x87F8E0: g_CellPositionOffset -- cell position offset
+  addr 0XB0F67D appears 2x:
+    src\system\globals_system.hpp:234: // 0xB0F67D [confidence: inferred_strong] anim pool locked flag (uint8_t)
+    src\core\globals.cpp:331: bool  g_AnimPoolLocked = false;    // 0xB0F67D
+  addr 0XB0F678 appears 2x:
+    src\system\globals_system.hpp:237: // 0xB0F678 [confidence: inferred_strong] anim type pool
+    src\core\globals.cpp:329: int   g_AnimTypePool = 0;         // 0xB0F678
+  addr 0XB0F684 appears 2x:
+    src\system\globals_system.hpp:240: // 0xB0F684 [confidence: inferred_strong] anim manager config
+    src\core\globals.cpp:332: int   g_AnimManagerConfig = 0;     // 0xB0F684
+  addr 0X11E8 appears 2x:
+    src\system\radar.hpp:33: // 0x11E8: spy satellite / zoom state (all zeroed in constructor)
+    src\system\radar.hpp:34: int32_t                     SpiedSatelliteCount;    // 0x11E8
+  addr 0X1200 appears 2x:
+    src\system\radar.hpp:41: // 0x1200: additional state fields
+    src\system\radar.hpp:42: int32_t                     RadarClass_field_1200;             // 0x1200
+  addr 0X120C appears 2x:
+    src\system\radar.hpp:46: // 0x120C: radar nominal bounds rect (default {0,0,0,0})
+    src\system\radar.hpp:47: RectangleStruct             RadarBounds;            // 0x120C
+  addr 0X121C appears 2x:
+    src\system\radar.hpp:49: // 0x121C: secondary DSurface used for radar blit operations
+    src\system\radar.hpp:50: DSurface*                   RadarSurfaceAlt;        // 0x121C
+  addr 0X1220 appears 2x:
+    src\system\radar.hpp:52: // 0x1220: primary DSurface holding the radar thumbnail image
+    src\system\radar.hpp:53: DSurface*                   RadarSurface;           // 0x1220
+  addr 0X1224 appears 2x:
+    src\system\radar.hpp:55: // 0x1224: cells currently tracked on the radar minimap
+    src\system\radar.hpp:56: DynamicVectorClass<CellStruct> RadarCells;          // 0x1224 (0x18 bytes → ends 0x123C)
+  addr 0X123C appears 2x:
+    src\system\radar.hpp:58: // 0x123C: cached pixel buffer for radar cell rendering
+    src\system\radar.hpp:59: void*                       RadarCellBuffer;        // 0x123C
+  addr 0X1240 appears 2x:
+    src\system\radar.hpp:61: // 0x1240–0x1254: radar cell tracking state
+    src\system\radar.hpp:62: int32_t                     RadarClass_field_1240;             // 0x1240
+  addr 0X1258 appears 2x:
+    src\system\radar.hpp:69: // 0x1258: hash table mapping radar blip positions → TechnoClass*
+    src\system\radar.hpp:70: void*                       RadarHash;              // 0x1258 (HashTable<RadarTrackingStruct, TechnoClass*>*)
+  addr 0X125C appears 2x:
+    src\system\radar.hpp:72: // 0x125C: pixel points rendered on the radar surface
+    src\system\radar.hpp:73: DynamicVectorClass<Point2D> RadarPoints;            // 0x125C (0x18 bytes → ends 0x1274)
+  addr 0X1274 appears 2x:
+    src\system\radar.hpp:75: // 0x1274: cached pixel buffer for radar point rendering
+    src\system\radar.hpp:76: void*                       RadarPointBuffer;       // 0x1274
+  addr 0X1278 appears 2x:
+    src\system\radar.hpp:78: // 0x1278: pre-computed pixel shapes for each foundation type (0–21)
+    src\system\radar.hpp:79: DynamicVectorClass<Point2D> foundationTypePixels[22]; // 0x1278 (22 × 0x18 = 0x210 → ends 0x1488)
+  addr 0X1488 appears 2x:
+    src\system\radar.hpp:81: // 0x1488: radar zoom scale factor (float)
+    src\system\radar.hpp:82: float                       radarSizeFactor;        // 0x1488
+  addr 0X148C appears 2x:
+    src\system\radar.hpp:84: // 0x148C–0x1498: render state counters
+    src\system\radar.hpp:85: int32_t                     RadarClass_field_148C;             // 0x148C — initialized to 1
+  addr 0X149C appears 2x:
+    src\system\radar.hpp:90: // 0x149C: radar viewport clip rectangle
+    src\system\radar.hpp:91: RectangleStruct             RadarClipRect;          // 0x149C
+  addr 0X14AC appears 2x:
+    src\system\radar.hpp:93: // 0x14AC: animation state (0=?, 2=hidden, 3=anim-in, 4=anim-out)
+    src\system\radar.hpp:94: int32_t                     RadarAnimState;         // 0x14AC
+  addr 0X14B0 appears 2x:
+    src\system\radar.hpp:96: // 0x14B0: current radar view mode (0=off, 1=small, 3=large)
+    src\system\radar.hpp:97: int32_t                     RadarViewMode;          // 0x14B0
+  addr 0X14B4 appears 2x:
+    src\system\radar.hpp:99: // 0x14B4: pending view mode during transition animation
+    src\system\radar.hpp:100: int32_t                     RadarQueueViewMode;     // 0x14B4
+  addr 0X14C0 appears 2x:
+    src\system\radar.hpp:107: // 0x14C0: Mixer audio channel handle for radar toggle sound
+    src\system\radar.hpp:108: int32_t                     RadarSoundChannel;      // 0x14C0
+  addr 0X14DC appears 2x:
+    src\system\radar.hpp:121: // 0x14DC: secondary bounds rectangle
+    src\system\radar.hpp:122: RectangleStruct             RadarClass_field_14DC;             // 0x14DC
+  addr 0X14FC appears 2x:
+    src\system\radar.hpp:129: // 0x14FC: animation delay counter (SetViewMode sets to 25 during transition)
+    src\system\radar.hpp:130: int32_t                     RadarAnimDelay;         // 0x14FC
+  addr 0X1500 appears 2x:
+    src\system\radar.hpp:132: // 0x1500: radar animation / update timer
+    src\system\radar.hpp:133: TimerStruct                 RadarClass_field_timer_1500;       // 0x1500
+  addr 0X763810 appears 2x:
+    src\system\waypoint_path.hpp:38: WaypointPathClass() noexcept;                            // 0x763810 (Construct)
+    src\system\waypoint_path.hpp:43: void Construct();                                        // 0x763810
+  addr 0X71E6A0 appears 2x:
+    src\team\taction.hpp:38: TActionClass() noexcept { }                               // 0x71E6A0
+    src\ui\command_class.hpp:255: virtual void           Execute(uint32_t context) const override; // 0x71E6A0
+  addr 0X6EC540 appears 3x:
+    src\team\team.hpp:39: virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return 0; }       // 0x6EC540 (SaveLoad_Prefi
+    src\team\team.hpp:41: virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { return 0; } // 0x6EC540
+    src\team\team.hpp:98: void SaveLoad_Prefix_0(IStream* stream);                                              // 0x6EC540
+  addr 0X6EC450 appears 2x:
+    src\team\team.hpp:40: virtual HRESULT __stdcall Load(IStream* stream) override { return 0; }             // 0x6EC450 (SaveLoad_Prefi
+    src\team\team.hpp:97: void SaveLoad_Prefix(IStream* stream);                                                // 0x6EC450
+  addr 0X6EC560 appears 3x:
+    src\team\team.hpp:43: virtual ~TeamClass() = default;                                                      // 0x6EC560 (ddtor)
+    src\team\team.hpp:45: virtual AbstractType __stdcall whatAmI() const override { return AbstractType::Team; } // 0x6EC560
+    src\team\team.hpp:46: virtual int objectSize() const override { return 0; }                               // 0x6EC560
+  addr 0X6F1FA0 appears 2x:
+    src\team\team.hpp:49: void GetTaskForceMissingMemberTypes(TechnoTypeClass** dest, int& dest_count) const;  // 0x6F1FA0 (TeamTypeClas
+    src\team\team_type.hpp:61: void ProcessTaskForce();                                 // 0x6F1FA0
+  addr 0X6EA870 appears 2x:
+    src\team\team.hpp:50: void LiberateMember(FootClass* foot, int idx = -1, uint8_t count = 0);               // 0x6EA870 (LiberateMemb
+    src\team\team.hpp:51: void LiberateMember_Start(FootClass* foot, int idx, uint8_t count);                  // 0x6EA870
+  addr 0X4C98B0 appears 2x:
+    src\team\team_type.hpp:39: TeamTypeClass() noexcept { }                             // 0x4C98B0 (Construct)
+    src\team\team_type.hpp:43: void Construct();                                        // 0x4C98B0
+  addr 0X410800 appears 2x:
+    src\type\abstract_type.hpp:31: AbstractTypeClass(const char* pID) noexcept;  // 0x410800 (as Constructor)
+    src\type\abstract_type.hpp:36: AbstractTypeClass(noinit_t) noexcept {}  // 0x410800 (as Constructor)
+  addr 0X41C8B0 appears 4x:
+    src\type\aircraft_type.hpp:17: static AircraftTypeClass* Find(const char* pID);  // 0x41c8b0
+    src\type\aircraft_type.hpp:18: static AircraftTypeClass* FindOrAllocate(const char* pID);  // 0x41c8b0
+    src\type\aircraft_type.hpp:31: AircraftTypeClass(const char* pID) noexcept;  // 0x41c8b0
+    src\type\aircraft_type.hpp:34: AircraftTypeClass(noinit_t) noexcept;  // 0x41c8b0
+  addr 0X427530 appears 2x:
+    src\type\anim_type.hpp:50: AnimTypeClass(const char* pID) noexcept;  // 0x427530 (as Construct)
+    src\type\anim_type.hpp:55: AnimTypeClass(noinit_t) noexcept;  // 0x427530 (as Construct)
+  addr 0X644BE0 appears 2x:
+    src\type\building_type.hpp:66: BuildingTypeClass(const char* pID) noexcept;  // 0x644be0 (as Construct)
+    src\type\building_type.hpp:69: BuildingTypeClass(noinit_t) noexcept;  // 0x644be0 (as Construct)
+  addr 0X46BBC0 appears 2x:
+    src\type\bullet_type.hpp:43: BulletTypeClass(const char* pID) noexcept;  // 0x46bbc0 (as Construct)
+    src\type\bullet_type.hpp:46: BulletTypeClass(noinit_t) noexcept;  // 0x46bbc0 (as Construct)
+  addr 0X772FA0 appears 3x:
+    src\type\infantry_type.hpp:38: static InfantryTypeClass* Find(const char* pID);  // 0x772fa0
+    src\type\infantry_type.hpp:39: static InfantryTypeClass* FindOrAllocate(const char* pID);  // 0x772fa0
+    src\type\infantry_type.hpp:40: static int FindIndex(const char* pID);  // 0x772fa0
+  addr 0X5236A0 appears 2x:
+    src\type\infantry_type.hpp:55: InfantryTypeClass(const char* pID) noexcept;  // 0x5236a0 (as Constructor)
+    src\type\infantry_type.hpp:58: InfantryTypeClass(noinit_t) noexcept;  // 0x5236a0 (as Constructor)
+  addr 0X5F7320 appears 2x:
+    src\type\object_type.hpp:48: ObjectTypeClass(const char* pID) noexcept;  // 0x5f7320 (as Construct)
+    src\type\object_type.hpp:53: ObjectTypeClass(noinit_t) noexcept;  // 0x5f7320 (as Construct)
+  addr 0X5FE250 appears 2x:
+    src\type\overlay_type.hpp:17: static OverlayTypeClass* Find(const char* pID);  // 0x5fe250
+    src\type\overlay_type.hpp:18: static OverlayTypeClass* FindOrAllocate(const char* pID);  // 0x5fe250
+  addr 0X6440A0 appears 2x:
+    src\type\overlay_type.hpp:38: OverlayTypeClass(const char* pID) noexcept;  // 0x6440a0 (as Construct)
+    src\type\overlay_type.hpp:41: OverlayTypeClass(noinit_t) noexcept;  // 0x6440a0 (as Construct)
+  addr 0X6B5260 appears 4x:
+    src\type\smudge_type.hpp:15: static SmudgeTypeClass* Find(const char* pID);  // 0x6b5260
+    src\type\smudge_type.hpp:16: static SmudgeTypeClass* FindOrAllocate(const char* pID);  // 0x6b5260
+    src\type\smudge_type.hpp:34: SmudgeTypeClass(const char* pID) noexcept;  // 0x6b5260
+    src\type\smudge_type.hpp:37: SmudgeTypeClass(noinit_t) noexcept;  // 0x6b5260
+  addr 0X711840 appears 2x:
+    src\type\techno_type.hpp:110: TechnoTypeClass(const char* id, SpeedType speedtype) noexcept;  // 0x711840 (as Construct)
+    src\type\techno_type.hpp:113: TechnoTypeClass(noinit_t) noexcept;  // 0x711840 (as Construct)
+  addr 0X5447C0 appears 2x:
+    src\type\terrain_type.hpp:32: TerrainTypeClass(const char* pID) noexcept;  // 0x5447c0 (as Construct)
+    src\type\terrain_type.hpp:35: TerrainTypeClass(noinit_t) noexcept;  // 0x5447c0 (as Construct)
+  addr 0X7470D0 appears 3x:
+    src\type\unit_type.hpp:17: static UnitTypeClass* Find(const char* pID);  // 0x7470d0
+    src\type\unit_type.hpp:34: UnitTypeClass(const char* pID) noexcept;  // 0x7470d0
+    src\type\unit_type.hpp:37: UnitTypeClass(noinit_t) noexcept;  // 0x7470d0
+  addr 0X75CEC0 appears 2x:
+    src\type\warhead_type.hpp:46: WarheadTypeClass(const char* pID) noexcept;  // 0x75cec0 (as Construct)
+    src\type\warhead_type.hpp:49: WarheadTypeClass(noinit_t) noexcept;  // 0x75cec0 (as Construct)
+  addr 0X771C70 appears 2x:
+    src\type\weapon_type.hpp:39: WeaponTypeClass(const char* pID = nullptr) noexcept;  // 0x771c70 (as Constructor)
+    src\type\weapon_type.hpp:42: WeaponTypeClass(noinit_t) noexcept;  // 0x771c70 (as Constructor)
+
+
+================================================================================
+4. REVERSE() macro in .hpp (2 occurrences)
+================================================================================
+
+  src\core\reverse_marker.hpp:4: //   REVERSE(0x4A0820, "IsCloseEnough: Manhattan distance check", "Capture")
+  src\core\reverse_marker.hpp:25: #define REVERSE(addr, desc, mode) \
+
+
+================================================================================
+5. Non-canonical format (spacing issues) (1 occurrences)
+================================================================================
+
+  src\misc\locomotion.hpp:164: no space before // |     virtual bool __stdcall Power_Off() override { Powered = false; return Is_Powered(); }// 0x55A910
+
+
+================================================================================
+6. Forward declarations with address comment (0 occurrences)
+================================================================================
+
+  NONE FOUND
+
+
+================================================================================
+7. Missing addresses (funcs without // 0x annotation) (91 occurrences)
+================================================================================
+
+  src\core\_funcs.hpp: ~6200 func decls, no // 0x annotations
+  src\core\com_defs.hpp: ~2 func decls, no // 0x annotations
+  src\core\coordinate.hpp: ~15 func decls, no // 0x annotations
+  src\core\enums.hpp: ~56 func decls, no // 0x annotations
+  src\core\game_loop.hpp: ~12 func decls, no // 0x annotations
+  src\core\init_stubs.hpp: ~54 func decls, no // 0x annotations
+  src\core\interfaces.hpp: ~109 func decls, no // 0x annotations
+  src\core\logging.hpp: ~3 func decls, no // 0x annotations
+  src\core\math.hpp: ~86 func decls, no // 0x annotations
+  src\core\memory.hpp: ~35 func decls, no // 0x annotations
+  src\core\spawn_config.hpp: ~1 func decls, no // 0x annotations
+  src\core\target.hpp: ~33 func decls, no // 0x annotations
+  src\core\vector.hpp: ~83 func decls, no // 0x annotations
+  src\entity\_funcs.hpp: ~62 func decls, no // 0x annotations
+  src\entity\anim.hpp: ~10 func decls, no // 0x annotations
+  src\entity\bullet.hpp: ~10 func decls, no // 0x annotations
+  src\entity\overlay.hpp: ~8 func decls, no // 0x annotations
+  src\entity\particle.hpp: ~10 func decls, no // 0x annotations
+  src\entity\particle_system.hpp: ~9 func decls, no // 0x annotations
+  src\entity\smudge.hpp: ~8 func decls, no // 0x annotations
+  src\entity\terrain.hpp: ~8 func decls, no // 0x annotations
+  src\entity\tiberium.hpp: ~8 func decls, no // 0x annotations
+  src\entity\tube.hpp: ~7 func decls, no // 0x annotations
+  src\entity\voxel.hpp: ~12 func decls, no // 0x annotations
+  src\entity\voxel_anim.hpp: ~6 func decls, no // 0x annotations
+  src\entity\wave.hpp: ~7 func decls, no // 0x annotations
+  src\fundamentals.hpp: ~1 func decls, no // 0x annotations
+  src\house\house.hpp: ~76 func decls, no // 0x annotations
+  src\house\house_type.hpp: ~10 func decls, no // 0x annotations
+  src\house\side.hpp: ~7 func decls, no // 0x annotations
+  src\misc\_funcs.hpp: ~370 func decls, no // 0x annotations
+  src\misc\repeatable_timer.hpp: ~1 func decls, no // 0x annotations
+  src\misc\rules.hpp: ~41 func decls, no // 0x annotations
+  src\network\session.hpp: ~5 func decls, no // 0x annotations
+  src\network\winsock.hpp: ~31 func decls, no // 0x annotations
+  src\object\_funcs.hpp: ~67 func decls, no // 0x annotations
+  src\object\abstract.hpp: ~48 func decls, no // 0x annotations
+  src\object\foot.hpp: ~165 func decls, no // 0x annotations
+  src\object\mission.hpp: ~38 func decls, no // 0x annotations
+  src\object\radio.hpp: ~19 func decls, no // 0x annotations
+  src\object\techno.hpp: ~575 func decls, no // 0x annotations
+  src\render\bink_control.hpp: ~10 func decls, no // 0x annotations
+  src\render\blitter.hpp: ~67 func decls, no // 0x annotations
+  src\render\bounce.hpp: ~6 func decls, no // 0x annotations
+  src\render\display.hpp: ~32 func decls, no // 0x annotations
+  src\render\fog.hpp: ~8 func decls, no // 0x annotations
+  src\render\font_render.hpp: ~1 func decls, no // 0x annotations
+  src\render\light_source.hpp: ~11 func decls, no // 0x annotations
+  src\render\movie.hpp: ~38 func decls, no // 0x annotations
+  src\render\palette.hpp: ~4 func decls, no // 0x annotations
+  src\render\shp_blitter.hpp: ~4 func decls, no // 0x annotations
+  src\render\shp_render.hpp: ~7 func decls, no // 0x annotations
+  src\render\shp_struct.hpp: ~28 func decls, no // 0x annotations
+  src\render\surface.hpp: ~66 func decls, no // 0x annotations
+  src\render\text_render.hpp: ~6 func decls, no // 0x annotations
+  src\render\voxel.hpp: ~19 func decls, no // 0x annotations
+  src\render\vxl_format.hpp: ~4 func decls, no // 0x annotations
+  src\structure\_funcs.hpp: ~129 func decls, no // 0x annotations
+  src\structure\aircraft.hpp: ~79 func decls, no // 0x annotations
+  src\structure\building.hpp: ~330 func decls, no // 0x annotations
+  src\structure\infantry.hpp: ~102 func decls, no // 0x annotations
+  src\structure\unit.hpp: ~55 func decls, no // 0x annotations
+  src\system\_funcs.hpp: ~142 func decls, no // 0x annotations
+  src\system\buffer_io_file.hpp: ~3 func decls, no // 0x annotations
+  src\system\cc_file.hpp: ~28 func decls, no // 0x annotations
+  src\system\cd_drive.hpp: ~8 func decls, no // 0x annotations
+  src\system\cd_file.hpp: ~3 func decls, no // 0x annotations
+  src\system\cell.hpp: ~97 func decls, no // 0x annotations
+  src\system\convert_class.hpp: ~9 func decls, no // 0x annotations
+  src\system\file_class.hpp: ~41 func decls, no // 0x annotations
+  src\system\file_system.hpp: ~17 func decls, no // 0x annotations
+  src\system\ini_class.hpp: ~21 func decls, no // 0x annotations
+  src\system\map.hpp: ~69 func decls, no // 0x annotations
+  src\system\mix_blowfish.hpp: ~8 func decls, no // 0x annotations
+  src\system\mix_file.hpp: ~30 func decls, no // 0x annotations
+  src\system\scenario.hpp: ~12 func decls, no // 0x annotations
+  src\system\tactical.hpp: ~58 func decls, no // 0x annotations
+  src\system\xcc_names.hpp: ~2 func decls, no // 0x annotations
+  src\team\campaign.hpp: ~9 func decls, no // 0x annotations
+  src\team\script.hpp: ~21 func decls, no // 0x annotations
+  src\team\tag.hpp: ~45 func decls, no // 0x annotations
+  src\team\trigger.hpp: ~49 func decls, no // 0x annotations
+  src\type\type_classes.hpp: ~5 func decls, no // 0x annotations
+  src\ui\dialog.hpp: ~47 func decls, no // 0x annotations
+  src\ui\g_screen.hpp: ~25 func decls, no // 0x annotations
+  src\ui\gadget.hpp: ~39 func decls, no // 0x annotations
+  src\ui\menu_screen.hpp: ~1 func decls, no // 0x annotations
+  src\ui\mouse.hpp: ~29 func decls, no // 0x annotations
+  src\ui\power.hpp: ~2 func decls, no // 0x annotations
+  src\ui\tab.hpp: ~2 func decls, no // 0x annotations
+  src\wdt\wdt.hpp: ~54 func decls, no // 0x annotations
+
+
+================================================================================
+REVERSE() IN .cpp (407 total)
+================================================================================
+
+  src\app\cmdline.cpp: 2
+    L15: REVERSE(0x52F620, "ParseCommandLine: full CLI parser (1531B)", false)
+    L16: REVERSE(0x52f620, "ParseCommandLine: IDA verified", false) // auto-marked completed
+  src\app\main.cpp: 1
+    L8: REVERSE(0x6bb9a0, "WinMain: IDA verified", false) // auto-marked completed
+  src\core\init_game.cpp: 6
+    L139: REVERSE(0x6C8C40, "Timer::GetTicks: timeGetTime() >> 4", "None") /* first-5-bytes unsafe */
+    L149: REVERSE(0x4355B0, "Palette6BitTo16Bit: pack 6-bit RGB to 24-bit", "None") /* first-5-bytes unsafe */
+    L173: REVERSE(0x4a38d0, "LoadFileSHP: IDA verified", "None")
+    ... +3 more
+  src\core\menu_globals_gen.cpp: 325
+    L9: REVERSE(0x4134A0, "IDA decompilation", "None")
+    L15: REVERSE(0x4135D0, "IDA decompilation", "None")
+    L21: REVERSE(0x41F230, "IDA decompilation", "None")
+    ... +322 more
+  src\core\menu_select.cpp: 36
+    L68: REVERSE(0x55d360, "GameFrameLoop: IDA verified", "None")
+    L70: REVERSE(0x55cfd0, "GameFrameCheck: IDA verified", "None")
+    L72: REVERSE(0x48c8b0, "MainGameFrame: IDA verified", "None")
+    ... +33 more
+  src\misc\rules.cpp: 1
+    L45: REVERSE(0x530000, "LoadExpansionMixFiles: IDA verified", "None")
+  src\object\abstract.cpp: 1
+    L28: REVERSE(0x410260, "AbstractClass::QueryInterface: IDA verified", "None")
+  src\render\surface.cpp: 28
+    L42: REVERSE(0x421B60, "ClipRectIntersection: rect intersection", "None")
+    L116: REVERSE(0x7bc2b0, "ClipLine: Cohen-Sutherland line clip", "None")
+    L292: REVERSE(0x4C1A90, "DSurface::BlitWhole: Thin wrapper around Blit", "None")
+    ... +25 more
+  src\system\cc_file.cpp: 3
+    L26: REVERSE(0x473c50, "CCFileClass::Open: IDA verified", "None")
+    L79: REVERSE(0x4a3890, "CCFileClass::ReadEntireFile: IDA verified", "None")
+    L91: REVERSE(0x473ce0, "CCFileClass::Reset: IDA verified", "None")
+  src\system\ini_class.cpp: 3
+    L39: REVERSE(0x535aa0, "INIClass::Constructor: IDA verified", "None")
+    L48: REVERSE(0x535b30, "CCINIClass::Constructor: IDA verified", "None")
+    L79: REVERSE(0x4741f0, "CCINIClass::Load: IDA verified", "None")
+  src\system\mix_file.cpp: 1
+    L419: REVERSE(0x5301a0, "MixFileClass::Bootstrap: IDA verified", "None")
+
+
+================================================================================
+ADDRESS DENSITY BY FILE (105 files)
+================================================================================
+
+   1066: src\core\globals_core.hpp
+    900: src\misc\misc_ext.hpp
+    611: src\_generated\core\misc_sub.cpp
+    331: src\misc\locomotion.hpp
+    247: src\render\render_ext.hpp
+    208: src\core\utility_ext.hpp
+    171: src\_generated\misc\rules.cpp
+    132: src\network\multiplayer.hpp
+    127: src\ui\ui_ext.hpp
+    110: src\core\globals.cpp
+     96: src\network\network_ext.hpp
+     93: src\misc\super_weapon.hpp
+     87: src\render\globals_render.hpp
+     87: src\system\globals_system.hpp
+     74: src\system\radar.hpp
+     74: src\_generated\core\string.cpp
+     72: src\system\game_systems.hpp
+     70: src\network\connection.hpp
+     66: src\ui\sidebar.hpp
+     59: src\team\taction.hpp
+     58: src\_generated\misc\audio.cpp
+     53: src\misc\audio.hpp
+     50: src\_generated\core\math.cpp
+     49: src\object\globals_object.hpp
+     48: src\misc\audio_ext.hpp
+     46: src\core\init_game.cpp
+     46: src\team\team.hpp
+     46: src\_generated\ui\gadget.cpp
+     42: src\core\stream_ext.hpp
+     40: src\_generated\system\map.cpp
+     36: src\_generated\render\surface.cpp
+     32: src\structure\globals_structure.hpp
+     32: src\object\capture_manager.hpp
+     32: src\system\factory.hpp
+     29: src\app\cmdline.cpp
+     26: src\core\load_options.hpp
+     25: src\app\cmdline.hpp
+     24: src\team\team_type.hpp
+     21: src\object\slave_manager.hpp
+     20: src\core\hash_table.hpp
+     20: src\misc\movement_ext.hpp
+     20: src\ui\command_ext.hpp
+     18: src\object\object.hpp
+     16: src\_generated\misc\super.cpp
+     16: src\object\abstract.cpp
+     15: src\object\parasite.hpp
+     14: src\core\ddraw_init.hpp
+     14: src\object\airstrike.hpp
+     14: src\object\spawn_manager.hpp
+     13: src\ui\command_class.hpp
+     13: src\team\tevent.hpp
+     13: src\_generated\system\file.cpp
+     12: src\entity\rad_site.hpp
+     12: src\object\bomb.hpp
+     12: src\object\temporal.hpp
+     12: src\type\infantry_type.hpp
+     12: src\_generated\core\vtables.cpp
+     11: src\system\waypoint_path.hpp
+     11: src\type\unit_type.hpp
+     10: src\type\aircraft_type.hpp
+     10: src\type\building_type.hpp
+     10: src\type\smudge_type.hpp
+     10: src\_generated\core\random.cpp
+     10: src\_generated\structure\building.cpp
+      9: src\type\overlay_type.hpp
+      9: src\type\terrain_type.hpp
+      9: src\type\warhead_type.hpp
+      9: src\_generated\core\containers.cpp
+      9: src\_generated\core\timer.cpp
+      8: src\type\anim_type.hpp
+      8: src\type\bullet_type.hpp
+      7: src\type\weapon_type.hpp
+      7: src\_generated\ui\menu.cpp
+      6: src\_generated\house\house.cpp
+      6: src\_generated\system\scenario.cpp
+      5: src\core\checksummer.hpp
+      5: src\type\abstract_type.hpp
+      5: src\type\object_type.hpp
+      5: src\_generated\object\object.cpp
+      5: src\render\movie.cpp
+      4: src\entity\globals_entity.hpp
+      4: src\type\particle_system_type.hpp
+      4: src\type\particle_type.hpp
+      4: src\type\techno_type.hpp
+      3: src\ui\message_list.hpp
+      3: src\entity\ebolt.hpp
+      3: src\system\waypoint.hpp
+      3: src\ui\tool_tip.hpp
+      2: src\object\radbeam.hpp
+      2: src\_generated\misc\locomotor.cpp
+      2: src\_generated\render\movie.cpp
+      2: src\_generated\structure\aircraft.cpp
+      2: src\_generated\team\team.cpp
+      2: src\ui\dialog_win32.cpp
+      1: src\house\house_type.cpp
+      1: src\core\guid.hpp
+      1: src\app\ddraw_init.cpp
+      1: src\render\colorscheme.hpp
+      1: src\structure\building_light.hpp
+      1: src\_generated\entity\anim.cpp
+      1: src\_generated\network\network.cpp
+      1: src\_generated\render\shp.cpp
+      1: src\_generated\system\factory.cpp
+      1: src\_generated\system\mix.cpp
+      1: src\_generated\system\radar.cpp
