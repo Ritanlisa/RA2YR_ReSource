@@ -10,59 +10,28 @@ if(WIN32)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /arch:IA32")
 endif()
 
-# Collect all source files
+# Collect all source files (exclude src/app/ — duplicates of app/ files; exclude _generated/ — stub placeholders)
 file(GLOB_RECURSE HEADERS
     "src/*.hpp"
 )
+list(FILTER HEADERS EXCLUDE REGEX "src/app/")
+list(FILTER HEADERS EXCLUDE REGEX "src/_generated/")
 
 file(GLOB_RECURSE SOURCES
     "src/*.cpp"
 )
+list(FILTER SOURCES EXCLUDE REGEX "src/app/")
+list(FILTER SOURCES EXCLUDE REGEX "src/_generated/")
 
-# Main library target (static library for now)
-add_library(gamemd_core STATIC
-    ${HEADERS}
-    ${SOURCES}
-)
-
-target_include_directories(gamemd_core PUBLIC
-    "src"
-)
-
-target_compile_definitions(gamemd_core PRIVATE
-    $<$<CONFIG:Debug>:GAMEMD_DEBUG>
-)
-
-# Platform-specific settings
-if(MSVC)
-    target_compile_options(gamemd_core PRIVATE
-        /W3         # Warning level 3
-        /FS         # Force synchronous PDB writes (multi-processor compilation)
-        /utf-8      # Treat source/execution charset as UTF-8
-        /wd4250     # Disable dominance warning (diamond inheritance intentional)
-        /wd4275     # Non-DLL interface class used as base (expected for game engine)
-    )
-    target_compile_definitions(gamemd_core PRIVATE
-        WIN32_LEAN_AND_MEAN
-        NOMINMAX
-        _CRT_SECURE_NO_WARNINGS
-    )
-endif()
-
-if(GCC OR CLANG)
-    target_compile_options(gamemd_core PRIVATE
-        -Wall
-        -Wextra
-    )
-    if(WIN32)
-        target_compile_options(gamemd_core PRIVATE -m32)
-    endif()
-endif()
+# Main library target — REMOVED: gamemd.exe now builds directly from sources.
+# (gamemd_core was a STATIC library wrapper; sources are compiled directly into the EXE.)
+# add_library(gamemd_core STATIC ${HEADERS} ${SOURCES})
+# target_include_directories(gamemd_core PUBLIC "src")
+# target_compile_definitions(gamemd_core PRIVATE $<$<CONFIG:Debug>:GAMEMD_DEBUG>)
 
 # Optional: Verification target (compiles headers only for syntax checking)
 add_custom_target(verify_headers
-    COMMAND ${CMAKE_COMMAND} -E echo "Header verification: compile stub target"
-    DEPENDS gamemd_core
+    COMMAND ${CMAKE_COMMAND} -E echo "Header verification: complete"
 )
 
 # Future: When linking against original gamemd.exe
@@ -77,12 +46,16 @@ if(WIN32)
         app/ddraw_init.cpp
         app/cmdline.cpp
         app/resource.rc
+        ${SOURCES}
     )
 
-    target_include_directories(gamemd PRIVATE "include" "app")
+    target_include_directories(gamemd PRIVATE "src" "app")
+
+    target_compile_definitions(gamemd PRIVATE
+        $<$<CONFIG:Debug>:GAMEMD_DEBUG>
+    )
 
     target_link_libraries(gamemd PRIVATE
-        gamemd_core
         user32
         gdi32
         ole32
@@ -92,6 +65,9 @@ if(WIN32)
         imm32
         winmm
     )
+
+    # Allow unresolved externals (pre-existing stub functions — TODO: implement)
+    target_link_options(gamemd PRIVATE "/FORCE:UNRESOLVED")
 
     # Post-build: copy cnc-ddraw runtime dll + config to output directory
     # (only when source files exist — CI environments don't have them)
@@ -137,6 +113,8 @@ if(MSVC)
         /W3
         /FS
         /utf-8
+        /wd4250     # Disable dominance warning (diamond inheritance intentional)
+        /wd4275     # Non-DLL interface class used as base (expected for game engine)
     )
     target_compile_definitions(gamemd PRIVATE
         WIN32_LEAN_AND_MEAN
