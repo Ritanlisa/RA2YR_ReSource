@@ -28,7 +28,7 @@ public:
 class INoticeSource
 {
 public:
-    virtual void __stdcall INoticeSource_Unknown() = 0;
+    virtual void __stdcall INoticeSource_Unknown() = 0; // IDA: NOT_FOUND
 };
 
 class ISwizzle : public IUnknown

@@ -27,9 +27,9 @@ public:
     virtual void Construct();  // 0x535FC0
     virtual int32_t AddRef();  // 0x535FE0
     virtual int32_t Release();  // 0x536000
-    virtual const char* GetName() const override;
+    virtual const char* GetName() const override; // IDA: NOT_FOUND
     virtual const wchar_t* GetUIName() const override;  // 0x484FF0
-    virtual void Execute(uint32_t context) const override;
+    virtual void Execute(uint32_t context) const override; // IDA: NOT_FOUND
 
     int32_t     SelectTeamCommand_field_00;       // 0x00
     int32_t     SelectTeamCommand_field_04;       // 0x04
@@ -49,9 +49,9 @@ public:
     virtual void Construct();  // 0x5360B0
     virtual int32_t AddRef();  // 0x5360D0
     virtual int32_t Release();  // 0x5360F0
-    virtual const char* GetName() const override;
+    virtual const char* GetName() const override; // IDA: NOT_FOUND
     virtual const wchar_t* GetUIName() const override;  // IDA: 0x484FF0
-    virtual void Execute(uint32_t context) const override;
+    virtual void Execute(uint32_t context) const override; // IDA: NOT_FOUND
 
     int32_t     AddTeamCommand_field_00;       // 0x00
     int32_t     AddTeamCommand_field_04;       // 0x04
@@ -69,9 +69,9 @@ public:
     virtual void Construct();  // 0x536290
     virtual int32_t AddRef();  // 0x5362B0
     virtual int32_t Release();  // 0x5362D0
-    virtual const char* GetName() const override;
+    virtual const char* GetName() const override; // IDA: NOT_FOUND
     virtual const wchar_t* GetUIName() const override;  // IDA: 0x484FF0
-    virtual void Execute(uint32_t context) const override;
+    virtual void Execute(uint32_t context) const override; // IDA: NOT_FOUND
 
     int32_t     TauntCommandClass_field_00;       // 0x00
     int32_t     TauntCommandClass_field_04;       // 0x04
@@ -89,9 +89,9 @@ public:
     virtual void Construct();  // 0x537DD0
     virtual int32_t AddRef();  // 0x537DE0
     virtual int32_t Release();  // 0x537DF0
-    virtual const char* GetName() const override;
+    virtual const char* GetName() const override; // IDA: NOT_FOUND
     virtual const wchar_t* GetUIName() const override;  // IDA: 0x484FF0
-    virtual void Execute(uint32_t context) const override;
+    virtual void Execute(uint32_t context) const override; // IDA: NOT_FOUND
 
     int32_t     PageUserCommandClass_field_00;       // 0x00
     int32_t     PageUserCommandClass_field_04;       // 0x04
@@ -106,12 +106,12 @@ public:
     DeleteCommandClass() = default; // 0x537F10
     virtual ~DeleteCommandClass() = default;  // 0x537F50
 
-    virtual void Construct();
+    virtual void Construct(); // IDA: NOT_FOUND
     virtual int32_t AddRef();  // 0x537F20
     virtual int32_t Release();  // 0x537F30
-    virtual const char* GetName() const override;
+    virtual const char* GetName() const override; // IDA: NOT_FOUND
     virtual const wchar_t* GetUIName() const override;  // IDA: 0x484FF0
-    virtual void Execute(uint32_t context) const override;
+    virtual void Execute(uint32_t context) const override; // IDA: NOT_FOUND
 
     int32_t     DeleteCommandClass_field_00;       // 0x00
     int32_t     DeleteCommandClass_field_04;       // 0x04
@@ -124,13 +124,13 @@ class CenterTeamCommand : public CommandClass
 {
 public:
     CenterTeamCommand() = default;
-    virtual ~CenterTeamCommand() = default;
+    virtual ~CenterTeamCommand() = default; // IDA: NOT_FOUND
 
     virtual void Construct();  // 0x5361A0
     virtual int32_t AddRef();  // 0x5361C0
     virtual int32_t Release();  // 0x5361E0
-    virtual const char* GetName() const override;
-    virtual void Execute(uint32_t context) const override;
+    virtual const char* GetName() const override; // IDA: NOT_FOUND
+    virtual void Execute(uint32_t context) const override; // IDA: NOT_FOUND
 
     int32_t     CenterTeamCommand_field_00;       // 0x00
 };
@@ -147,7 +147,7 @@ public:
     virtual void Constructor();  // 0x537B40
     virtual int32_t AddRef();  // 0x537B50
     virtual void ddtor();  // IDA: 0x537B60
-    virtual const char* GetName() const override;
+    virtual const char* GetName() const override; // IDA: NOT_FOUND
     virtual void Execute(uint32_t context) const override;  // 0x537BA0
 
     int32_t     ScreenCaptureCommandClass_field_00;       // 0x00
@@ -160,11 +160,11 @@ class CursorPositionCommandClass : public CommandClass
 {
 public:
     CursorPositionCommandClass() = default;
-    virtual ~CursorPositionCommandClass() = default;
+    virtual ~CursorPositionCommandClass() = default; // IDA: NOT_FOUND
 
     virtual void Constructor();  // 0x537E70
-    virtual const char* GetName() const override;
-    virtual void Execute(uint32_t context) const override;
+    virtual const char* GetName() const override; // IDA: NOT_FOUND
+    virtual void Execute(uint32_t context) const override; // IDA: NOT_FOUND
 
     int32_t     CursorPositionCommandClass_field_00;       // 0x00
 };
@@ -197,7 +197,7 @@ public:
 class CursorAnim
 {
 public:
-    virtual ~CursorAnim() = default;
+    virtual ~CursorAnim() = default; // IDA: NOT_FOUND
 
     virtual void Load() {} // IDA: 0x6D1800
 
@@ -206,7 +206,7 @@ public:
 class DeleteAndZero
 {
 public:
-    virtual ~DeleteAndZero() = default;
+    virtual ~DeleteAndZero() = default; // IDA: NOT_FOUND
 
     virtual void OrFree() {} // IDA: 0x624480
     virtual void Alt2() {} // IDA: 0x7B5340
@@ -219,7 +219,7 @@ public:
 class ScreenCapture
 {
 public:
-    virtual ~ScreenCapture() = default;
+    virtual ~ScreenCapture() = default; // IDA: NOT_FOUND
 
     virtual void Frame() {} // IDA: 0x55CC20
 

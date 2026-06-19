@@ -16,7 +16,7 @@ public:
     static DynamicVectorClass<UnitTypeClass*>* Array;
     static UnitTypeClass* Find(const char* pID);  // 0x7470D0
     static UnitTypeClass* FindOrAllocate(const char* pID);  // 0x74B960 (as FindOrCreate)
-    static int FindIndex(const char* pID);
+    static int FindIndex(const char* pID); // IDA: NOT_FOUND
 
     virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override; // 0x747F30 (as GetClassIdentifier)
 
@@ -28,7 +28,7 @@ public:
     virtual AbstractType __stdcall whatAmI() const override; // 0x748170 (as GetTypeIdentifier)
     virtual int objectSize() const override; // 0x748160 (as GetObjectSize)
 
-    virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override;
+    virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override; // IDA: NOT_FOUND
     virtual ObjectClass* CreateObject(HouseClass* pOwner) override; // 0x7474B0 (as CreateUnit)
 
     UnitTypeClass(const char* pID) noexcept;

@@ -75,32 +75,32 @@ public:
 
     static DynamicVectorClass<TechnoTypeClass*>* Array;
 
-    static TechnoTypeClass* Find(const char* pID);
-    static int FindIndex(const char* pID);
+    static TechnoTypeClass* Find(const char* pID); // IDA: NOT_FOUND
+    static int FindIndex(const char* pID); // IDA: NOT_FOUND
 
-    virtual HRESULT __stdcall Load(IStream* pStm) override;
-    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;
+    virtual HRESULT __stdcall Load(IStream* pStm) override; // IDA: NOT_FOUND
+    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override; // IDA: NOT_FOUND
     virtual HRESULT __stdcall GetSizeMax(ULARGE_INTEGER* pcbSize) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     virtual ~TechnoTypeClass() = default;  // 0x711AE0 (as DTOR)
 
-    virtual bool onTypeLoaded();
+    virtual bool onTypeLoaded(); // IDA: NOT_FOUND
     virtual bool CanAttackMove() const; // 0x711E90
-    virtual bool CanCreateHere(const CellStruct& mapCoords, HouseClass* pOwner) const;
+    virtual bool CanCreateHere(const CellStruct& mapCoords, HouseClass* pOwner) const; // IDA: NOT_FOUND
     virtual int GetCost() const;  // 0x708B40
-    virtual int GetRepairStepCost() const;
+    virtual int GetRepairStepCost() const; // IDA: NOT_FOUND
     virtual int GetRepairStep() const;  // 0x459840
     virtual int getRefund(HouseClass* pHouse, bool bUnk) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual int GetFlightLevel() const;
+    virtual int GetFlightLevel() const; // IDA: NOT_FOUND
 
     static TechnoTypeClass* GetByTypeAndIndex(AbstractType abs, int index);  // 0x48DCD0
 
     bool HasMultipleTurrets() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
-    CoordStruct* GetParticleSysOffset(CoordStruct* pBuffer) const;
-    CoordStruct GetParticleSysOffset() const;
+    CoordStruct* GetParticleSysOffset(CoordStruct* pBuffer) const; // IDA: NOT_FOUND
+    CoordStruct GetParticleSysOffset() const; // IDA: NOT_FOUND
 
-    bool InOwners(DWORD bitHouseType) const { return (this->GetOwners() & bitHouseType) != 0; }
+    bool InOwners(DWORD bitHouseType) const { return (this->GetOwners() & bitHouseType) != 0; } // IDA: NOT_FOUND
     bool InRequiredHouses(DWORD bitHouseType) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     bool InForbiddenHouses(DWORD bitHouseType) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 

@@ -31,17 +31,17 @@ public:
     // IDA 0x48B2A0 area
     void MultiplyByScalar(float scalar);  // 0x5AEA10
     // IDA 0x48B2A0 area
-    void RenderTiles();
+    void RenderTiles(); // IDA: NOT_FOUND
     // IDA 0x48B2A0 area
     void RenderOverlay();  // 0x658780
     // IDA 0x48B2A0 area
-    void RenderFog();
+    void RenderFog(); // IDA: NOT_FOUND
     // IDA 0x48B2A0 area
-    void RenderShroud();
+    void RenderShroud(); // IDA: NOT_FOUND
     // IDA 0x48B2A0 area
-    void SetViewport(const RectangleStruct& rect);
+    void SetViewport(const RectangleStruct& rect); // IDA: NOT_FOUND
     // IDA 0x48B2A0 area
-    void UpdateVisibility();
+    void UpdateVisibility(); // IDA: NOT_FOUND
     // IDA 0x48B2A0 area
     void ProcessCellVisibility();  // 0x654490
 
@@ -70,17 +70,17 @@ public:
     // IDA 0x48B2A0 area
     static void LogError(HRESULT hr);  // 0x4A3DD0
     // IDA 0x48B2A0 area
-    static void CreatePrimarySurface();
+    static void CreatePrimarySurface(); // IDA: NOT_FOUND
     // IDA 0x48B2A0 area
     static void CreateBackBuffer();  // 0x4BAC60
     // IDA 0x48B2A0 area
-    static void RestoreSurfaces();
+    static void RestoreSurfaces(); // IDA: NOT_FOUND
     // IDA 0x48B2A0 area
-    static void SetCooperativeLevel(HWND hWnd);
+    static void SetCooperativeLevel(HWND hWnd); // IDA: NOT_FOUND
     // IDA 0x48B2A0 area
     static void SetDisplayMode(int32_t w, int32_t h, int32_t bpp);  // 0x4AC700
     // IDA 0x48B2A0 area
-    static void Shutdown();
+    static void Shutdown(); // IDA: NOT_FOUND
 
     static IDirectDraw7* s_DD;          // 0x00
     static IDirectDrawSurface7* s_Primary; // 0x04
@@ -98,7 +98,7 @@ public:
     Palette() = default; // IDA: UNMATCHED — defaulted_special_member, default_ctor, no_callgraph_match
 
     // IDA 0x4355B0
-    static uint16_t SixBitTo16Bit(int32_t r, int32_t g, int32_t b);
+    static uint16_t SixBitTo16Bit(int32_t r, int32_t g, int32_t b); // IDA: NOT_FOUND
     // IDA 0x4355B0 area
     static int32_t FindClosestColor(uint8_t r, uint8_t g, uint8_t b);  // 0x626200
     // IDA 0x4355B0 area
@@ -106,9 +106,9 @@ public:
     // IDA 0x4355B0 area
     void SetPalette(const PALETTEENTRY* entries);  // 0x5CEA40
     // IDA 0x4355B0 area
-    void FadeTo(const PALETTEENTRY* target, int32_t steps);
+    void FadeTo(const PALETTEENTRY* target, int32_t steps); // IDA: NOT_FOUND
     // IDA 0x4355B0 area
-    void Apply();
+    void Apply(); // IDA: NOT_FOUND
 
     uint32_t    m_Colors[256];  // 0x00
     int32_t     Palette_field_400;      // 0x400
@@ -128,9 +128,9 @@ public:
     // IDA 0x48B2A0 area
     static uint32_t ScaleRGB(uint32_t color, float scale);  // 0x661190
     // IDA 0x48B2A0 area
-    static void HSVtoRGB(float h, float s, float v, uint8_t* r, uint8_t* g, uint8_t* b);
+    static void HSVtoRGB(float h, float s, float v, uint8_t* r, uint8_t* g, uint8_t* b); // IDA: NOT_FOUND
     // IDA 0x48B2A0 area
-    static uint32_t Blend(uint32_t color1, uint32_t color2, float alpha);
+    static uint32_t Blend(uint32_t color1, uint32_t color2, float alpha); // IDA: NOT_FOUND
 
     int32_t     Color_field_00;       // 0x00
 };
@@ -149,7 +149,7 @@ public:
     // IDA 0x48B2A0 area
     static void TransitionLoop();  // 0x690160
     // IDA 0x48B2A0 area
-    static void SetTransition(int32_t type);
+    static void SetTransition(int32_t type); // IDA: NOT_FOUND
 
     static int32_t  s_TransitionType;    // 0x00
     static int32_t  s_TransitionStep;    // 0x04
@@ -169,7 +169,7 @@ public:
     // IDA 0x48B2A0 area
     void StubReturnVoid();  // 0x58B7C0
     // IDA 0x48B2A0 area
-    void SetPosition(const CoordStruct& pos);
+    void SetPosition(const CoordStruct& pos); // IDA: NOT_FOUND
 
     CoordStruct m_Position;     // 0x00
     CoordStruct m_Target;       // 0x0C
@@ -206,7 +206,7 @@ public:
     // IDA 0x48B2A0 area
     static void RevealCell(const CellStruct& cell, HouseClass* house);  // 0x6562D0
     // IDA 0x48B2A0 area
-    static bool IsCellRevealed(const CellStruct& cell, HouseClass* house);
+    static bool IsCellRevealed(const CellStruct& cell, HouseClass* house); // IDA: NOT_FOUND
 
     static uint8_t* s_FogMap;       // 0x00
     static int32_t  s_MapWidth;     // 0x04
@@ -315,7 +315,7 @@ public:
     // IDA 0x48B2A0 area
     static int32_t UpdateBobOffset(int32_t frame, int32_t period, int32_t amplitude);  // 0x661D80
     // IDA 0x48B2A0 area
-    static void UpdateAllAnimations();
+    static void UpdateAllAnimations(); // IDA: NOT_FOUND
 
     static int32_t  s_FrameCount;   // 0x00
 };
@@ -679,7 +679,7 @@ public:
 class BlitterList
 {
 public:
-    virtual ~BlitterList() = default;
+    virtual ~BlitterList() = default; // IDA: NOT_FOUND
 
     virtual void CopyEntry(); // 0x4B5630
 
@@ -688,7 +688,7 @@ public:
 class BuildingDebris
 {
 public:
-    virtual ~BuildingDebris() = default;
+    virtual ~BuildingDebris() = default; // IDA: NOT_FOUND
 
     virtual void Init(); // 0x631D40
 
@@ -697,7 +697,7 @@ public:
 class BuildingLightQueue
 {
 public:
-    virtual ~BuildingLightQueue() = default;
+    virtual ~BuildingLightQueue() = default; // IDA: NOT_FOUND
 
     virtual void RemoveEntry(); // 0x5FF2D0
 
@@ -706,7 +706,7 @@ public:
 class BuildingLoadQueue
 {
 public:
-    virtual ~BuildingLoadQueue() = default;
+    virtual ~BuildingLoadQueue() = default; // IDA: NOT_FOUND
 
     virtual void GetNext(); // 0x6E6E20
     virtual void Find(); // 0x6E6F20
@@ -721,7 +721,7 @@ public:
 class BuildingPlacement
 {
 public:
-    virtual ~BuildingPlacement() = default;
+    virtual ~BuildingPlacement() = default; // IDA: NOT_FOUND
 
     virtual void RenderBuildingPlacementShadow(); // 0x430650
     virtual void RenderBuildingPlacementPreview(); // 0x47EC90
@@ -743,7 +743,7 @@ public:
 class BuildingPlacementClass
 {
 public:
-    virtual ~BuildingPlacementClass() = default;
+    virtual ~BuildingPlacementClass() = default; // IDA: NOT_FOUND
 
     virtual void Draw(); // 0x4E2B50
 
@@ -752,7 +752,7 @@ public:
 class BuildingPrerequisiteClass
 {
 public:
-    virtual ~BuildingPrerequisiteClass() = default;
+    virtual ~BuildingPrerequisiteClass() = default; // IDA: NOT_FOUND
 
     virtual void ReadNodeGraph(); // 0x42EBE0
 
@@ -761,7 +761,7 @@ public:
 class BuildingQueue
 {
 public:
-    virtual ~BuildingQueue() = default;
+    virtual ~BuildingQueue() = default; // IDA: NOT_FOUND
 
     virtual void IsCellSuitable(); // 0x42E780
     virtual void AllocSlot(); // 0x42EB20
@@ -774,7 +774,7 @@ public:
 class ColorListClass
 {
 public:
-    virtual ~ColorListClass() = default;
+    virtual ~ColorListClass() = default; // IDA: NOT_FOUND
 
     virtual void GetIndex(); // 0x488850
     virtual void AddColor(); // 0x4888B0
@@ -797,7 +797,7 @@ public:
 class ColorSchemeClass
 {
 public:
-    virtual ~ColorSchemeClass() = default;
+    virtual ~ColorSchemeClass() = default; // IDA: NOT_FOUND
 
     virtual void LoadAllSchemes(); // 0x627B20
 
@@ -825,7 +825,7 @@ public:
 class FrameSnapshot
 {
 public:
-    virtual ~FrameSnapshot() = default;
+    virtual ~FrameSnapshot() = default; // IDA: NOT_FOUND
 
     virtual void Init(); // 0x4C91C0
     virtual void InitMax(); // 0x4C91E0
@@ -836,7 +836,7 @@ public:
 class FrameTimer
 {
 public:
-    virtual ~FrameTimer() = default;
+    virtual ~FrameTimer() = default; // IDA: NOT_FOUND
 
     virtual void HasRemaining(); // 0x41BF40
     virtual void Init25(); // 0x70D150
@@ -847,7 +847,7 @@ public:
 class PaletteClass
 {
 public:
-    virtual ~PaletteClass() = default;
+    virtual ~PaletteClass() = default; // IDA: NOT_FOUND
 
     virtual void Load(); // 0x5CB590
 
@@ -856,7 +856,7 @@ public:
 class PaletteManager
 {
 public:
-    virtual ~PaletteManager() = default;
+    virtual ~PaletteManager() = default; // IDA: NOT_FOUND
 
     virtual void Load(); // 0x72B530
 
@@ -1086,7 +1086,7 @@ public:
 class RLEBlitTransZRemapXlatAlpha_ushort
 {
 public:
-    virtual ~RLEBlitTransZRemapXlatAlpha_ushort() = default;
+    virtual ~RLEBlitTransZRemapXlatAlpha_ushort() = default; // IDA: NOT_FOUND
 
     virtual void Blit_Alpha_ZReadWrite_Lucent25(); // 0x4974B0
     virtual void CallBlit0(); // 0x4975D0
@@ -1111,7 +1111,7 @@ public:
 class ScreenEffect
 {
 public:
-    virtual ~ScreenEffect() = default;
+    virtual ~ScreenEffect() = default; // IDA: NOT_FOUND
 
     virtual void StubReturnFalse(); // 0x6528C0
     virtual void StubReturnVoid(); // 0x652910
@@ -1137,7 +1137,7 @@ public:
 class Scrollbar
 {
 public:
-    virtual ~Scrollbar() = default;
+    virtual ~Scrollbar() = default; // IDA: NOT_FOUND
 
     virtual void DlgProc(); // 0x61C690
 
@@ -1146,7 +1146,7 @@ public:
 class ScrollingText
 {
 public:
-    virtual ~ScrollingText() = default;
+    virtual ~ScrollingText() = default; // IDA: NOT_FOUND
 
     virtual void AddLine(); // 0x5D3FC0
 
@@ -1155,7 +1155,7 @@ public:
 class TacticalMapClass
 {
 public:
-    virtual ~TacticalMapClass() = default;
+    virtual ~TacticalMapClass() = default; // IDA: NOT_FOUND
 
     virtual void SetCameraPosition(); // 0x6D6000
     virtual void ProcessCell(); // 0x6D7F20
@@ -1166,7 +1166,7 @@ public:
 class VoxClass_Vector
 {
 public:
-    virtual ~VoxClass_Vector() = default;
+    virtual ~VoxClass_Vector() = default; // IDA: NOT_FOUND
 
     virtual void getItem(); // 0x753650
     virtual void getItemAt(); // 0x753680
@@ -1183,7 +1183,7 @@ public:
 class VoxelAnimTypeVector
 {
 public:
-    virtual ~VoxelAnimTypeVector() = default;
+    virtual ~VoxelAnimTypeVector() = default; // IDA: NOT_FOUND
 
     virtual void Constructor(); // 0x67C310
 
@@ -1205,7 +1205,7 @@ public:
 class VoxelPalette
 {
 public:
-    virtual ~VoxelPalette() = default;
+    virtual ~VoxelPalette() = default; // IDA: NOT_FOUND
 
     virtual void Init(); // 0x758950
     virtual void Reset(); // 0x7589C0
@@ -1216,7 +1216,7 @@ public:
 class VoxelRenderer
 {
 public:
-    virtual ~VoxelRenderer() = default;
+    virtual ~VoxelRenderer() = default; // IDA: NOT_FOUND
 
     virtual void DrawSection(); // 0x7575A0
     virtual void DrawSectionLines(); // 0x757790
@@ -1236,7 +1236,7 @@ public:
 class VoxelSection
 {
 public:
-    virtual ~VoxelSection() = default;
+    virtual ~VoxelSection() = default; // IDA: NOT_FOUND
 
     virtual void GetInfo(); // 0x7564B0
 
@@ -1245,7 +1245,7 @@ public:
 class VoxelTypeClass
 {
 public:
-    virtual ~VoxelTypeClass() = default;
+    virtual ~VoxelTypeClass() = default; // IDA: NOT_FOUND
 
     virtual void ReadINI(); // 0x73E5E0
 
@@ -1254,7 +1254,7 @@ public:
 class Voxel_Section
 {
 public:
-    virtual ~Voxel_Section() = default;
+    virtual ~Voxel_Section() = default; // IDA: NOT_FOUND
 
     virtual void Draw(); // 0x75D3A0
     virtual void Constructor(); // 0x75E6B0

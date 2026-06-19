@@ -6,9 +6,9 @@ namespace ra2 { namespace game {
 class TechnoTypeClass : public ObjectTypeClass {
 public:
     bool isArmed() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    int getWeaponRange(int weaponIdx) const;
+    int getWeaponRange(int weaponIdx) const; // IDA: NOT_FOUND
     WeaponTypeClass* getWeapon(int weaponIdx) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    bool hasTurret() const { return false; }
+    bool hasTurret() const { return false; } // IDA: NOT_FOUND
 
     // INI-loaded members
     bool armed; bool hasTurretFlag;

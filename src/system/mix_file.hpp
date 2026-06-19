@@ -9,12 +9,12 @@ namespace gamemd
 class GenericNode
 {
 public:
-    virtual ~GenericNode() = default;
+    virtual ~GenericNode() = default; // IDA: NOT_FOUND
 
     GenericNode() = default;
 
 protected:
-    explicit GenericNode(const noinit_t&) noexcept {}
+    explicit GenericNode(const noinit_t&) noexcept {} // IDA: NOT_FOUND
 
 public:
     GenericNode* Next = nullptr;
@@ -37,12 +37,12 @@ template <typename T>
 class LinkedList
 {
 public:
-    virtual ~LinkedList() = default;
+    virtual ~LinkedList() = default; // IDA: NOT_FOUND
 
     LinkedList() = default;
 
 protected:
-    explicit LinkedList(const noinit_t&) noexcept {}
+    explicit LinkedList(const noinit_t&) noexcept {} // IDA: NOT_FOUND
 
 public:
     GenericNode Head;
@@ -98,7 +98,7 @@ public:
     };
 
     // Global search pool -- all loaded MIX files (including sub-MIX)
-    static DynamicVectorClass<MixFileClass*>& GetMixPool();
+    static DynamicVectorClass<MixFileClass*>& GetMixPool(); // IDA: NOT_FOUND
 
     static LinkedList<MixFileClass*>& MIXes;
     static DynamicVectorClass<MixFileClass*>& Array;
@@ -127,17 +127,17 @@ public:
     // Memory-backed constructor: takes ownership of data buffer
     MixFileClass(const uint8_t* data, int dataSize, const char* name) noexcept; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
-    int  FindIndex(uint32_t id) const;
-    int  FindIndex(const char* filename) const;
-    int  GetSize(int index) const;
-    int  GetSize(const char* filename) const;
-    uint32_t GetFileID(int index) const {
+    int  FindIndex(uint32_t id) const; // IDA: NOT_FOUND
+    int  FindIndex(const char* filename) const; // IDA: NOT_FOUND
+    int  GetSize(int index) const; // IDA: NOT_FOUND
+    int  GetSize(const char* filename) const; // IDA: NOT_FOUND
+    uint32_t GetFileID(int index) const { // IDA: NOT_FOUND
         return (index >= 0 && index < CountFiles) ? Headers[index].ID : 0;
     }
     bool Extract(int index, void* buffer, int buffer_size) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     bool Extract(const char* filename, void* buffer, int buffer_size) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     bool Peek(int index, void* buffer, int size) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    bool IsValid() const;
+    bool IsValid() const; // IDA: NOT_FOUND
     void DumpEntries() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
 protected:

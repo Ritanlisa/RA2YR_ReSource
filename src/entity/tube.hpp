@@ -31,14 +31,14 @@ class TubeClass : public ObjectClass
 public:
     static constexpr AbstractType kObjectTypeId = AbstractType::Tube;
 
-    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override;
+    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override; // IDA: NOT_FOUND
     virtual HRESULT __stdcall Load(IStream* pStm) override;  // 0x7281A0
     virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;  // 0x7281E0
 
     virtual ~TubeClass() override = default;  // 0x7286D0
 
     virtual AbstractType __stdcall whatAmI() const override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual int objectSize() const override;
+    virtual int objectSize() const override; // IDA: NOT_FOUND
 
     int32_t TubeClass_field_AC;
     int32_t TubeClass_field_B0;

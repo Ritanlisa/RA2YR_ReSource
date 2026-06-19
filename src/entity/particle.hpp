@@ -27,12 +27,12 @@ public:
     virtual HRESULT __stdcall Load(IStream* pStm) override;  // 0x62D7A0
     virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
-    virtual ~ParticleClass() override = default;
+    virtual ~ParticleClass() override = default; // IDA: NOT_FOUND
 
     virtual AbstractType __stdcall whatAmI() const override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual int objectSize() const override;  // 0x62D970
 
-    virtual int onParticleExpired();
+    virtual int onParticleExpired(); // IDA: NOT_FOUND
 
     void DrawParticle(void* surface, int draw_x, int draw_y);  // 0x62CEC0
     bool CheckDrawFlags(int flags) const;  // 0x62D710

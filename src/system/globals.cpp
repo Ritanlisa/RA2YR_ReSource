@@ -45,7 +45,7 @@ void InsertIntoHashTree(int* a1, int** a2)
         int* node = *cur;
         // Compare the key at offset 2 (node[2] vs a1[2])
         if (node[2] < a1[2])
-            cur = &node[1];   // go to next (right)
+            cur = reinterpret_cast<int**>(&node[1]);   // go to next (right)
         else
             cur = reinterpret_cast<int**>(node);  // go to left
     }

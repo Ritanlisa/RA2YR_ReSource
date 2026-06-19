@@ -13,7 +13,7 @@ namespace gamemd
 class StreamClass
 {
 public:
-    virtual ~StreamClass() = default;
+    virtual ~StreamClass() = default; // IDA: NOT_FOUND
 
     // IDA 0x48B2A0 area
     virtual int32_t WriteBytes(const void* data, int32_t size);  // 0x411310
@@ -22,19 +22,19 @@ public:
     // IDA 0x48B2A0 area
     virtual void Set2(int32_t val);  // 0x45AEA0
     // IDA 0x48B2A0 area
-    virtual int32_t Read(void* buf, int32_t size);
+    virtual int32_t Read(void* buf, int32_t size); // IDA: NOT_FOUND
     // IDA 0x48B2A0 area
-    virtual int32_t Write(const void* data, int32_t size);
+    virtual int32_t Write(const void* data, int32_t size); // IDA: NOT_FOUND
     // IDA 0x48B2A0 area
-    virtual int32_t Seek(int32_t offset);
+    virtual int32_t Seek(int32_t offset); // IDA: NOT_FOUND
     // IDA 0x48B2A0 area
-    virtual int32_t GetSize();
+    virtual int32_t GetSize(); // IDA: NOT_FOUND
     // IDA 0x48B2A0 area
     virtual void Flush();  // 0x7AEF50
     // IDA 0x48B2A0 area
     virtual void Close();  // 0x76B090
     // IDA 0x48B2A0 area
-    virtual int32_t GetPosition();
+    virtual int32_t GetPosition(); // IDA: NOT_FOUND
 
     void*       m_Data;         // 0x00
     int32_t     m_Position;     // 0x04
@@ -67,7 +67,7 @@ public:
     // IDA 0x48B2A0 area
     int32_t ReadBytes(void* buf, int32_t size);  // 0x774B30
     // IDA 0x48B2A0 area
-    void Seek(int32_t offset);
+    void Seek(int32_t offset); // IDA: NOT_FOUND
     // IDA 0x48B2A0 area
     int32_t GetPosition();  // 0x7C3960
     // IDA 0x48B2A0 area
@@ -195,7 +195,7 @@ public:
 class BufferClass
 {
 public:
-    virtual ~BufferClass() = default;
+    virtual ~BufferClass() = default; // IDA: NOT_FOUND
 
     virtual void CompareEqual(); // 0x477C30
 
@@ -204,7 +204,7 @@ public:
 class BufferIO
 {
 public:
-    virtual ~BufferIO() = default;
+    virtual ~BufferIO() = default; // IDA: NOT_FOUND
 
     virtual void FindActiveChannel(); // 0x431170
     virtual void Flush(); // 0x431DD0
@@ -251,7 +251,7 @@ public:
 class StreamObj
 {
 public:
-    virtual ~StreamObj() = default;
+    virtual ~StreamObj() = default; // IDA: NOT_FOUND
 
     virtual void Release(); // 0x410E50
 
@@ -260,7 +260,7 @@ public:
 class StreamWrapper
 {
 public:
-    virtual ~StreamWrapper() = default;
+    virtual ~StreamWrapper() = default; // IDA: NOT_FOUND
 
     virtual void Read(); // 0x5C5D40
     virtual void Write(); // 0x5C5D90
@@ -294,7 +294,7 @@ public:
 class TextGroup
 {
 public:
-    virtual ~TextGroup() = default;
+    virtual ~TextGroup() = default; // IDA: NOT_FOUND
 
     virtual void SetRect(); // 0x433CA0
 

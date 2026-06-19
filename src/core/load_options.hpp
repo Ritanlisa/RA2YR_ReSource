@@ -48,10 +48,10 @@ public:
     void Cleanup();  // 0x558790
 
     // IDA 0x55A0D0: vt00 (QueryInterface) — scoped destruction
-    void VT00_Destroy(char free_self);
+    void VT00_Destroy(char free_self); // IDA: NOT_FOUND
 
     // IDA 0x559EB0: ddtor (vt03) — DeleteFile wrapper
-    static bool DeleteSaveFile(const char* filename);
+    static bool DeleteSaveFile(const char* filename); // IDA: NOT_FOUND
 
     // --- Operations ---
     // IDA 0x5587F0: Run — launch save/load dialog
@@ -67,7 +67,7 @@ public:
     bool SaveGame(const char* filename, const wchar_t* description);  // 0x5D6320
 
     // IDA 0x559ED0: Read (vt04) — populate entry from file
-    bool ReadEntry(FileEntryClass* dest, int a2);
+    bool ReadEntry(FileEntryClass* dest, int a2); // IDA: NOT_FOUND
 
     // --- Vector management (compat wrappers for original DynamicVectorClass) ---
     // IDA 0x55A1F0: CopyItems — resize vector, copy existing entries
@@ -83,35 +83,35 @@ public:
     uint32_t PointerToIndex(FileEntryClass* ptr);  // 0x55A310
 
     // IDA 0x55A180: vt05 — pointer to index (compat alias)
-    uint32_t VT05_PointerToIndex(FileEntryClass* ptr);
+    uint32_t VT05_PointerToIndex(FileEntryClass* ptr); // IDA: NOT_FOUND
 
     // IDA 0x55A1A0: vt06 — get entry at index
-    FileEntryClass* VT06_GetAt(int index);
+    FileEntryClass* VT06_GetAt(int index); // IDA: NOT_FOUND
 
     // IDA 0x55A1B0: vt01 (compat) — compare vector content
-    bool VT01_Compare(const LoadOptions& other);
+    bool VT01_Compare(const LoadOptions& other); // IDA: NOT_FOUND
 
     // IDA 0x55A3E0: vt04 (compat) — find index of entry by key
-    int VT04_FindByKey(const uint32_t* key);
+    int VT04_FindByKey(const uint32_t* key); // IDA: NOT_FOUND
 
     // IDA 0x55A330: vt02 (compat) — resize vector (like CopyItems)
-    bool VT02_Resize(uint32_t new_size, FileEntryClass** out_buffer = nullptr);
+    bool VT02_Resize(uint32_t new_size, FileEntryClass** out_buffer = nullptr); // IDA: NOT_FOUND
 
     // --- Static helpers ---
     // IDA 0x55A050: vt05 — get "Load Mission" CSF string
-    static const wchar_t* GetLoadMissionStr();
+    static const wchar_t* GetLoadMissionStr(); // IDA: NOT_FOUND
 
     // IDA 0x55A070: Seek (vt06) — get "Save Mission" CSF string
-    static const wchar_t* GetSaveMissionStr();
+    static const wchar_t* GetSaveMissionStr(); // IDA: NOT_FOUND
 
     // IDA 0x55A090: Open (vt07) — get "Delete Mission" CSF string
-    static const wchar_t* GetDeleteMissionStr();
+    static const wchar_t* GetDeleteMissionStr(); // IDA: NOT_FOUND
 
     // IDA 0x55A0B0: Close (vt08) — get "Game Was Saved" CSF string
-    static const wchar_t* GetGameSavedStr();
+    static const wchar_t* GetGameSavedStr(); // IDA: NOT_FOUND
 
     // IDA 0x681100: GetData — get pointer to data field (this + 264)
-    char* GetDataPtr();
+    char* GetDataPtr(); // IDA: NOT_FOUND
 
     // IDA 0x681120: GetFlag98 — get dword at offset 98
     uint32_t GetFlag98() const;  // 0x681120
@@ -123,21 +123,21 @@ public:
     uint32_t GetFlag252() const;  // 0x6812D0
 
     // --- Accessors ---
-    uint32_t GetMode() const;
+    uint32_t GetMode() const; // IDA: NOT_FOUND
     void SetMode(uint32_t m);  // 0x7DC468
     const char* GetExtension() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     void SetExtension(const char* ext); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    uint32_t GetCount() const;
+    uint32_t GetCount() const; // IDA: NOT_FOUND
     FileEntryClass** GetEntries(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    uint32_t GetCapacity() const;
-    uint32_t GetMaxEntries() const;
+    uint32_t GetCapacity() const; // IDA: NOT_FOUND
+    uint32_t GetMaxEntries() const; // IDA: NOT_FOUND
 
     // --- Vector destructor helpers ---
     // IDA 0x55A410: VectorClass dtor (dynamic)
-    static void VectorClass_Dtor(void* block, char free_self);
+    static void VectorClass_Dtor(void* block, char free_self); // IDA: NOT_FOUND
 
     // IDA 0x55A460: VectorClass dtor (static)
-    static void VectorClass_Dtor2(void* block, char free_self);
+    static void VectorClass_Dtor2(void* block, char free_self); // IDA: NOT_FOUND
 
 private:
     uint32_t        mode;           // 0x04 — 1=load, 2=save, 3=delete

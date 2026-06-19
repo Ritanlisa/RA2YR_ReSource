@@ -92,8 +92,8 @@ class ScenarioClass
 public:
     static ScenarioClass* Instance;
 
-    bool IsDefinedWaypoint(int idx);
-    CellStruct* GetWaypointCoords(CellStruct* dest, int idx);
+    bool IsDefinedWaypoint(int idx); // IDA: NOT_FOUND
+    CellStruct* GetWaypointCoords(CellStruct* dest, int idx); // IDA: NOT_FOUND
     CellStruct GetWaypointCoords(int idx)
     {
         CellStruct dest;
@@ -101,7 +101,7 @@ public:
         return dest;
     }
 
-    static void UpdateCellLighting();
+    static void UpdateCellLighting(); // IDA: NOT_FOUND
     static void UpdateLighting(); // 0x53C280
     static void RecalcLighting(int r, int g, int b, uint32_t unk); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 

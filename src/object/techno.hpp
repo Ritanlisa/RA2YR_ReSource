@@ -88,158 +88,158 @@ public:
     static constexpr AbstractType kObjectDeriveId = static_cast<AbstractType>(0x1);
 
     virtual HRESULT __stdcall Load(IStream* stream) override;  // IDA: 0x4158E0
-    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
+    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override; // IDA: NOT_FOUND
 
     virtual ~TechnoClass() = default;  // 0x6F4500
 
-    virtual bool isUnitfactory() const;
-    virtual bool isCloakable() const;
-    virtual bool canScatter() const;
-    virtual bool belongsToATeam() const;
+    virtual bool isUnitfactory() const; // IDA: NOT_FOUND
+    virtual bool isCloakable() const; // IDA: NOT_FOUND
+    virtual bool canScatter() const; // IDA: NOT_FOUND
+    virtual bool belongsToATeam() const; // IDA: NOT_FOUND
     virtual bool shouldSelfHealOneStep() const;  // 0x70BE80
-    virtual bool isVoxel() const;
+    virtual bool isVoxel() const; // IDA: NOT_FOUND
     virtual bool canSelfRepair();  // 0x70FB50
     virtual bool shouldBeCloaked() const;  // 0x6FBDC0
     virtual bool shouldNotBeCloaked() const;  // 0x6FBC90
-    virtual DirStruct* getFacing(DirStruct* buffer) const;
-    virtual bool isArmed() const;
-    virtual void onSpawnComplete() const;
-    virtual double getStoragePercentage() const;
-    virtual int getPipFillLevel() const;
-    virtual int getRefund() const;
+    virtual DirStruct* getFacing(DirStruct* buffer) const; // IDA: NOT_FOUND
+    virtual bool isArmed() const; // IDA: NOT_FOUND
+    virtual void onSpawnComplete() const; // IDA: NOT_FOUND
+    virtual double getStoragePercentage() const; // IDA: NOT_FOUND
+    virtual int getPipFillLevel() const; // IDA: NOT_FOUND
+    virtual int getRefund() const; // IDA: NOT_FOUND
     virtual int getThreatValue() const;  // 0x4DED70
-    virtual bool canBeAttacked(uint32_t a);
+    virtual bool canBeAttacked(uint32_t a); // IDA: NOT_FOUND
     virtual uint32_t getSpecialValue(uint32_t a, uint32_t b);  // 0x55AD10
     virtual bool canCrush(uint32_t a);  // 0x7438F0
     virtual int getCrewCount() const;  // 0x6F3950
-    virtual int getAntiAirValue() const;
-    virtual int getAntiArmorValue() const;
-    virtual int getAntiInfantryValue() const;
-    virtual void gotHijacked();
-    virtual int selectNavalTargeting(AbstractClass* target) const;
-    virtual int getZAdjustment() const;
-    virtual ZGradient GetZGradient() const;
-    virtual CellStruct* GetSomeCellStruct() const;
-    virtual void SetSomeCellStruct(CellStruct* buffer);
-    virtual CellStruct* getOccupiedCell(CellStruct* buffer, uint32_t a, uint32_t b) const;
-    virtual CoordStruct* getTurretCoords(CoordStruct* buffer, uint32_t a) const;
-    virtual uint32_t getWeaponRangeValue(uint32_t a, uint32_t b) const;
-    virtual DirStruct* GetRealFacing(DirStruct* buffer) const;
+    virtual int getAntiAirValue() const; // IDA: NOT_FOUND
+    virtual int getAntiArmorValue() const; // IDA: NOT_FOUND
+    virtual int getAntiInfantryValue() const; // IDA: NOT_FOUND
+    virtual void gotHijacked(); // IDA: NOT_FOUND
+    virtual int selectNavalTargeting(AbstractClass* target) const; // IDA: NOT_FOUND
+    virtual int getZAdjustment() const; // IDA: NOT_FOUND
+    virtual ZGradient GetZGradient() const; // IDA: NOT_FOUND
+    virtual CellStruct* GetSomeCellStruct() const; // IDA: NOT_FOUND
+    virtual void SetSomeCellStruct(CellStruct* buffer); // IDA: NOT_FOUND
+    virtual CellStruct* getOccupiedCell(CellStruct* buffer, uint32_t a, uint32_t b) const; // IDA: NOT_FOUND
+    virtual CoordStruct* getTurretCoords(CoordStruct* buffer, uint32_t a) const; // IDA: NOT_FOUND
+    virtual uint32_t getWeaponRangeValue(uint32_t a, uint32_t b) const; // IDA: NOT_FOUND
+    virtual DirStruct* GetRealFacing(DirStruct* buffer) const; // IDA: NOT_FOUND
     virtual InfantryTypeClass* GetCrew() const;  // 0x707D20
-    virtual bool isInAirAlt() const;
-    virtual bool CanDeploySlashUnload() const;
+    virtual bool isInAirAlt() const; // IDA: NOT_FOUND
+    virtual bool CanDeploySlashUnload() const; // IDA: NOT_FOUND
     virtual int GetROF(int weapon) const;  // 0x46C4F0
     virtual int GetGuardRange(int unknown) const; // 0x773070
-    virtual bool canEnterTransport() const;
-    virtual bool IsRadarVisible(int* out_detection) const;
-    virtual bool IsSensorVisibleToPlayer() const;
-    virtual bool IsSensorVisibleToHouse(HouseClass* house) const;
-    virtual bool IsEngineer() const;
-    virtual void ProceedToNextPlanningWaypoint();
-    virtual uint32_t ScanForTiberium(uint32_t a, uint32_t b, uint32_t c) const;
-    virtual bool EnterGrinder();
-    virtual bool EnterBioReactor();
-    virtual bool EnterTankBunker();
-    virtual bool EnterBattleBunker();
-    virtual bool GarrisonStructure();
-    virtual bool isPowerOnline() const;
-    virtual void QueueVoice(int idx_voc);
-    virtual int VoiceEnter();
-    virtual int VoiceHarvest();
-    virtual int VoiceSelect();
-    virtual int VoiceCapture();
-    virtual int VoiceMove();
-    virtual int VoiceDeploy();
+    virtual bool canEnterTransport() const; // IDA: NOT_FOUND
+    virtual bool IsRadarVisible(int* out_detection) const; // IDA: NOT_FOUND
+    virtual bool IsSensorVisibleToPlayer() const; // IDA: NOT_FOUND
+    virtual bool IsSensorVisibleToHouse(HouseClass* house) const; // IDA: NOT_FOUND
+    virtual bool IsEngineer() const; // IDA: NOT_FOUND
+    virtual void ProceedToNextPlanningWaypoint(); // IDA: NOT_FOUND
+    virtual uint32_t ScanForTiberium(uint32_t a, uint32_t b, uint32_t c) const; // IDA: NOT_FOUND
+    virtual bool EnterGrinder(); // IDA: NOT_FOUND
+    virtual bool EnterBioReactor(); // IDA: NOT_FOUND
+    virtual bool EnterTankBunker(); // IDA: NOT_FOUND
+    virtual bool EnterBattleBunker(); // IDA: NOT_FOUND
+    virtual bool GarrisonStructure(); // IDA: NOT_FOUND
+    virtual bool isPowerOnline() const; // IDA: NOT_FOUND
+    virtual void QueueVoice(int idx_voc); // IDA: NOT_FOUND
+    virtual int VoiceEnter(); // IDA: NOT_FOUND
+    virtual int VoiceHarvest(); // IDA: NOT_FOUND
+    virtual int VoiceSelect(); // IDA: NOT_FOUND
+    virtual int VoiceCapture(); // IDA: NOT_FOUND
+    virtual int VoiceMove(); // IDA: NOT_FOUND
+    virtual int VoiceDeploy(); // IDA: NOT_FOUND
     virtual int VoiceAttack(ObjectClass* target);  // 0x7090A0
-    virtual bool ClickedEvent(NetworkEvents event);
-    virtual bool ClickedMission(Mission mission, ObjectClass* target, CellClass* target_cell, CellClass* nearest_target_cell);
-    virtual bool isUnderEmp() const;
-    virtual bool isParalyzed() const;
-    virtual bool canCheer() const;
-    virtual void Cheer(bool force);
-    virtual int GetDefaultSpeed() const;
-    virtual void DecreaseAmmo();
-    virtual void AddPassenger(FootClass* passenger);
-    virtual bool CanDisguiseAs(AbstractClass* target) const;
-    virtual bool TargetAndEstimateDamage(uint32_t a, uint32_t b);
-    virtual uint32_t getDamageReduction();
-    virtual bool TriggersCellInset(AbstractClass* target);
+    virtual bool ClickedEvent(NetworkEvents event); // IDA: NOT_FOUND
+    virtual bool ClickedMission(Mission mission, ObjectClass* target, CellClass* target_cell, CellClass* nearest_target_cell); // IDA: NOT_FOUND
+    virtual bool isUnderEmp() const; // IDA: NOT_FOUND
+    virtual bool isParalyzed() const; // IDA: NOT_FOUND
+    virtual bool canCheer() const; // IDA: NOT_FOUND
+    virtual void Cheer(bool force); // IDA: NOT_FOUND
+    virtual int GetDefaultSpeed() const; // IDA: NOT_FOUND
+    virtual void DecreaseAmmo(); // IDA: NOT_FOUND
+    virtual void AddPassenger(FootClass* passenger); // IDA: NOT_FOUND
+    virtual bool CanDisguiseAs(AbstractClass* target) const; // IDA: NOT_FOUND
+    virtual bool TargetAndEstimateDamage(uint32_t a, uint32_t b); // IDA: NOT_FOUND
+    virtual uint32_t getDamageReduction(); // IDA: NOT_FOUND
+    virtual bool TriggersCellInset(AbstractClass* target); // IDA: NOT_FOUND
     virtual bool IsCloseEnough(AbstractClass* target, int weapon_idx) const;  // IDA: 0x70D590
-    virtual bool IsCloseEnoughToAttack(AbstractClass* target) const;
-    virtual bool IsCloseEnoughToAttackCoords(const CoordStruct& coords) const;
+    virtual bool IsCloseEnoughToAttack(AbstractClass* target) const; // IDA: NOT_FOUND
+    virtual bool IsCloseEnoughToAttackCoords(const CoordStruct& coords) const; // IDA: NOT_FOUND
     virtual uint32_t getSightRange(uint32_t a) const;  // 0x717800
-    virtual void Destroyed(ObjectClass* killer) = 0;
-    virtual FireError GetFireErrorWithoutRange(AbstractClass* target, int weapon_index) const;
-    virtual FireError GetFireError(AbstractClass* target, int weapon_index, bool ignore_range) const;
+    virtual void Destroyed(ObjectClass* killer) = 0; // IDA: NOT_FOUND
+    virtual FireError GetFireErrorWithoutRange(AbstractClass* target, int weapon_index) const; // IDA: NOT_FOUND
+    virtual FireError GetFireError(AbstractClass* target, int weapon_index, bool ignore_range) const; // IDA: NOT_FOUND
     virtual CellClass* SelectAutoTarget(TargetFlags flags, int current_threat, bool only_target_house_enemy);  // 0x51E140
     virtual void SetTarget(AbstractClass* target);  // IDA: 0x6F9DD0
     virtual BulletClass* Fire(AbstractClass* target, int weapon_index);  // 0x70ECE0
-    virtual void Guard();
-    virtual bool SetOwningHouse(HouseClass* house, bool announce = true);
-    virtual void onHouseChange(uint32_t a, uint32_t b, uint32_t c);
-    virtual bool Crash(ObjectClass* killer);
-    virtual bool isAreaFire() const;
-    virtual int isNotSprayAttack() const;
-    virtual int canAct();
-    virtual int isNotSprayAttack2() const;
+    virtual void Guard(); // IDA: NOT_FOUND
+    virtual bool SetOwningHouse(HouseClass* house, bool announce = true); // IDA: NOT_FOUND
+    virtual void onHouseChange(uint32_t a, uint32_t b, uint32_t c); // IDA: NOT_FOUND
+    virtual bool Crash(ObjectClass* killer); // IDA: NOT_FOUND
+    virtual bool isAreaFire() const; // IDA: NOT_FOUND
+    virtual int isNotSprayAttack() const; // IDA: NOT_FOUND
+    virtual int canAct(); // IDA: NOT_FOUND
+    virtual int isNotSprayAttack2() const; // IDA: NOT_FOUND
     virtual WeaponStruct* GetDeployWeapon() const;  // 0x5218E0
-    virtual WeaponStruct* GetTurretWeapon() const;
-    virtual WeaponStruct* GetWeapon(int weapon_index) const;
-    virtual bool hasTurret() const;
-    virtual bool canOccupyFire() const;
-    virtual int getOccupyRangeBonus() const;
-    virtual int getOccupantCount() const;
-    virtual void OnFinishRepair();
+    virtual WeaponStruct* GetTurretWeapon() const; // IDA: NOT_FOUND
+    virtual WeaponStruct* GetWeapon(int weapon_index) const; // IDA: NOT_FOUND
+    virtual bool hasTurret() const; // IDA: NOT_FOUND
+    virtual bool canOccupyFire() const; // IDA: NOT_FOUND
+    virtual int getOccupyRangeBonus() const; // IDA: NOT_FOUND
+    virtual int getOccupantCount() const; // IDA: NOT_FOUND
+    virtual void OnFinishRepair(); // IDA: NOT_FOUND
 
     virtual void UpdateCloak(bool unknown = true);  // 0x457770
-    virtual void CreateGap();
-    virtual void DestroyGap();
-    virtual void onBridgeRepair();
-    virtual void Sensed();
+    virtual void CreateGap(); // IDA: NOT_FOUND
+    virtual void DestroyGap(); // IDA: NOT_FOUND
+    virtual void onBridgeRepair(); // IDA: NOT_FOUND
+    virtual void Sensed(); // IDA: NOT_FOUND
     virtual void Reload();  // IDA: 0x4158E0
-    virtual void onReloadComplete();
+    virtual void onReloadComplete(); // IDA: NOT_FOUND
     virtual CoordStruct* GetTargetCoords(CoordStruct* pCrd) const;  // 0x70BCB0
-    virtual bool IsNotWarpingIn() const;
-    virtual bool canChronoShift(uint32_t dwUnk) const;
+    virtual bool IsNotWarpingIn() const; // IDA: NOT_FOUND
+    virtual bool canChronoShift(uint32_t dwUnk) const; // IDA: NOT_FOUND
     virtual void DrawActionLines(bool force, uint32_t dwUnk2);  // 0x63BE60
-    virtual uint32_t GetDisguiseFlags(uint32_t existingFlags) const;
-    virtual bool isClearlyVisibleTo(HouseClass* house) const;
+    virtual uint32_t GetDisguiseFlags(uint32_t existingFlags) const; // IDA: NOT_FOUND
+    virtual bool isClearlyVisibleTo(HouseClass* house) const; // IDA: NOT_FOUND
     virtual void drawSelectionBox(uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5, // 0x659470
         uint32_t a6, uint32_t a7, uint32_t a8, uint32_t a9, uint32_t a10) {}
     virtual void onSelect(uint32_t a, uint32_t b);  // 0x6EFC70
     virtual void DrawHealthBar(Point2D* pLocation, RectangleStruct* pBounds, bool bUnk3) const;
-    virtual void DrawPipScalePips(Point2D* pLocation, Point2D* pOriginalLocation, RectangleStruct* pBounds) const;
-    virtual void DrawVeterancyPips(Point2D* pLocation, RectangleStruct* pBounds) const;
-    virtual void DrawExtraInfo(Point2D const& location, Point2D const& originalLocation, RectangleStruct const& bounds) const;
-    virtual void Uncloak(bool play_sound);
-    virtual void Cloak(bool play_sound);
+    virtual void DrawPipScalePips(Point2D* pLocation, Point2D* pOriginalLocation, RectangleStruct* pBounds) const; // IDA: NOT_FOUND
+    virtual void DrawVeterancyPips(Point2D* pLocation, RectangleStruct* pBounds) const; // IDA: NOT_FOUND
+    virtual void DrawExtraInfo(Point2D const& location, Point2D const& originalLocation, RectangleStruct const& bounds) const; // IDA: NOT_FOUND
+    virtual void Uncloak(bool play_sound); // IDA: NOT_FOUND
+    virtual void Cloak(bool play_sound); // IDA: NOT_FOUND
     virtual uint32_t getSight(uint32_t dwUnk) const;  // IDA: 0x717800
-    virtual void UpdateRefinerySmokeSystems();
-    virtual uint32_t DisguiseAs(AbstractClass* pTarget);
-    virtual void ClearDisguise();
-    virtual bool IsItTimeForIdleActionYet() const;
-    virtual bool UpdateIdleAction();
+    virtual void UpdateRefinerySmokeSystems(); // IDA: NOT_FOUND
+    virtual uint32_t DisguiseAs(AbstractClass* pTarget); // IDA: NOT_FOUND
+    virtual void ClearDisguise(); // IDA: NOT_FOUND
+    virtual bool IsItTimeForIdleActionYet() const; // IDA: NOT_FOUND
+    virtual bool UpdateIdleAction(); // IDA: NOT_FOUND
     virtual void onDamage(uint32_t dwUnk);  // 0x45EE70
-    virtual void SetDestination(AbstractClass* dest, bool unknown);
-    virtual bool canRecruit(uint32_t dwUnk, uint32_t dwUnk2);
+    virtual void SetDestination(AbstractClass* dest, bool unknown); // IDA: NOT_FOUND
+    virtual bool canRecruit(uint32_t dwUnk, uint32_t dwUnk2); // IDA: NOT_FOUND
     virtual void UpdateSight(uint32_t a, uint32_t b, uint32_t c, uint32_t d, uint32_t e);  // 0x4C2BD0
-    virtual void onPlacement(uint32_t a, uint32_t b, uint32_t c, uint32_t d);
-    virtual void onBuildingPlacement(uint32_t a, uint32_t b) = 0;
-    virtual void RadarTrackingStart();
-    virtual void RadarTrackingStop();
-    virtual void RadarTrackingFlash();
-    virtual void RadarTrackingUpdate(bool unknown);
-    virtual void onRadarEvent(uint32_t a);
-    virtual void onSpawn();
-    virtual bool canSpawn() const;
-    virtual bool isSpawning() const;
-    virtual int getSpawnCount() const;
-    virtual CoordStruct* getSpawnCoords(CoordStruct* out);
+    virtual void onPlacement(uint32_t a, uint32_t b, uint32_t c, uint32_t d); // IDA: NOT_FOUND
+    virtual void onBuildingPlacement(uint32_t a, uint32_t b) = 0; // IDA: NOT_FOUND
+    virtual void RadarTrackingStart(); // IDA: NOT_FOUND
+    virtual void RadarTrackingStop(); // IDA: NOT_FOUND
+    virtual void RadarTrackingFlash(); // IDA: NOT_FOUND
+    virtual void RadarTrackingUpdate(bool unknown); // IDA: NOT_FOUND
+    virtual void onRadarEvent(uint32_t a); // IDA: NOT_FOUND
+    virtual void onSpawn(); // IDA: NOT_FOUND
+    virtual bool canSpawn() const; // IDA: NOT_FOUND
+    virtual bool isSpawning() const; // IDA: NOT_FOUND
+    virtual int getSpawnCount() const; // IDA: NOT_FOUND
+    virtual CoordStruct* getSpawnCoords(CoordStruct* out); // IDA: NOT_FOUND
     virtual uint32_t processSpawn();  // 0x71D000
-    virtual bool canAttackOnTheMove() const;
-    virtual bool canTarget() const;
+    virtual bool canAttackOnTheMove() const; // IDA: NOT_FOUND
+    virtual bool canTarget() const; // IDA: NOT_FOUND
     virtual bool selectTarget();  // 0x41BEF0
-    virtual void onTargetChange();
+    virtual void onTargetChange(); // IDA: NOT_FOUND
     virtual bool canFire();  // 0x6CC360
 
     // === Phase 3 generated declarations (IDA functions.json) ===
@@ -259,7 +259,7 @@ public:
     virtual int sub_41B860();
     virtual int sub_41B9E0();
     virtual bool CreateWarheadDamageEffect();  // 0x41BC30
-    virtual void sub_41BEF0();
+    virtual void sub_41BEF0(); // IDA: NOT_FOUND
     virtual void vt_entry_428();  // 0x41BFE0
     virtual int vt_entry_434();  // 0x41BFF0
     virtual int GetBodyFacing() const;  // 0x41C1E0
@@ -270,7 +270,7 @@ public:
     virtual int sub_41C680();
     virtual int sub_41C690();
     virtual int ApplyDamageEffects(); // 0x438720
-    virtual int sub_5439080();
+    virtual int sub_5439080(); // IDA: NOT_FOUND
     virtual int RemoveFromDynamicVector();  // 0x4390D0
     virtual void ComputeTargetAngle();  // 0x43E940
     virtual int StartOrResumeProduction();  // 0x44D6A0
@@ -279,24 +279,24 @@ public:
     virtual int EvacuateFootprintCells();  // 0x458A80
     virtual int MissionStubReturnZero4(); // 0x459D90
     virtual bool StubReturnFalse2(); // 0x459DD0
-    virtual int sub_546B270();
-    virtual int sub_54722D0();
+    virtual int sub_546B270(); // IDA: NOT_FOUND
+    virtual int sub_54722D0(); // IDA: NOT_FOUND
     virtual int IndexOf(); // 0x473500
     virtual int CalcFacingFromMatrix() const;  // 0x5AF410
     virtual void CreateTrailParticle();  // 0x4C2A60
-    virtual int sub_4C2BD0();
+    virtual int sub_4C2BD0(); // IDA: NOT_FOUND
     virtual int UpdateThunk();  // 0x4CC770
     virtual int GetData() const; // 0x4CF950
-    virtual int sub_54A50F0();
+    virtual int sub_54A50F0(); // IDA: NOT_FOUND
     virtual int CreatePlanningNode();  // 0x638A80
     virtual int GetBuildCost() const;  // 0x711EC0
     virtual int CheckState1() const;  // 0x5B2E70
     virtual int CheckState2() const; // 0x5B2E80
     virtual int StubReturn450(); // 0x5B2E40
     virtual void vt_entry_448();  // 0x6F60C0
-    virtual int sub_54D28C0();
+    virtual int sub_54D28C0(); // IDA: NOT_FOUND
     virtual int GetTypeFlag() const;  // 0x5224E0
-    virtual int sub_5505180();
+    virtual int sub_5505180(); // IDA: NOT_FOUND
     virtual int FindClosestBuilding();  // 0x4DFF40
     virtual int FindBestMatch();  // 0x4DF040
     virtual int FindClosestInfantry();  // 0x4DFA70
@@ -312,12 +312,12 @@ public:
     virtual int vt_entry_4D0();  // 0x4DF4B0
     virtual int GetAnimationValue() const;  // 0x4E0150
     virtual int FindDeployDestination();  // 0x50C920
-    virtual int sub_550D9C0();
-    virtual int sub_550D9D0();
+    virtual int sub_550D9C0(); // IDA: NOT_FOUND
+    virtual int sub_550D9D0(); // IDA: NOT_FOUND
     virtual int MapHouseRelationIndex();  // 0x50DAC0
     virtual int GetDamageMultiplier() const;  // 0x50BD30
     virtual int ProcessTarget();  // 0x50CAD0
-    virtual int sub_55224F0();
+    virtual int sub_55224F0(); // IDA: NOT_FOUND
     virtual int GetDeployCoords();  // 0x4DBDF0
     virtual int CanBePermaMC() const;  // 0x53C450
     virtual int GarrisonBuilding();  // 0x522910
@@ -328,14 +328,14 @@ public:
     virtual int FindMatchingUnit();  // 0x5F7900
     virtual int ClearArrays();  // 0x5F99E0
     virtual int ComputeScanRange() const;  // 0x48AB90
-    virtual int sub_659470();
-    virtual int sub_659490();
+    virtual int drawSelectionBox();
+    virtual int drawHealthBar();
     virtual int sub_6594A0();
     virtual int sub_6594C0();
     virtual int sub_6594E0();
     virtual int sub_6594F0();
-    virtual int sub_659540();
-    virtual int sub_659550();
+    virtual int drawMindControlPips();
+    virtual int drawPassengerPips();
     virtual int ClearScriptPlanningData();  // 0x633D30
     virtual int GetTileAnimationData() const;  // 0x547150
     virtual int MutateAll();  // 0x6B0AE0
@@ -357,7 +357,7 @@ public:
     virtual int CheckPlayerOwned() const;  // 0x6F4A40
     virtual int UpdateProdWithSound();  // 0x6F4A70
     virtual int HasActiveParam() const; // 0x701120
-    virtual int HasOnlyOneGarrisonSlot2() const;
+    virtual int HasOnlyOneGarrisonSlot2() const; // IDA: NOT_FOUND
     virtual int FindLowestDamage();  // 0x7012C0
     virtual int ProcessCapture();
     virtual int GetRangeModifier() const;  // 0x70D190
@@ -427,7 +427,7 @@ public:
     virtual int GetAverageDamageScore() const;  // 0x7414A0
     virtual int ProcessSpecialUnitDeployCrush();  // 0x7416A0
     virtual int FireWeaponBurst();  // 0x741340
-    virtual int GetWeaponRange(int weapon_index) const; // 0x773070
+    virtual int GetWeaponRange(int weapon_index) const; // IDA: NOT_FOUND
     virtual int FireWeapon(); // 0x6FDD50
     virtual int CreateFireEffect();  // 0x6FD210
     virtual int CreateFireBeamEffect();  // 0x6FD620
@@ -455,15 +455,15 @@ public:
     virtual int ComputeDamage();  // 0x70CD10
     virtual int GetCostMultiplier() const;  // 0x708B40
     virtual int IsInRange() const; // 0x6F7660
-    virtual int GetCrew();
+    virtual int GetCrew();  // 0x707D20
     virtual int GetCrew_0();  // 0x740EE0
-    virtual int GetCrewCount();
+    virtual int GetCrewCount();  // 0x6F3950
     virtual int CheckCellPassable() const; // 0x6F7930
     virtual int CheckCellPassable2() const;  // 0x6F7780
     virtual int CheckCellPassable3() const;  // 0x6F7970
     virtual int ValidateTarget() const; // 0x6F77B0
     virtual int GetBridgeDamageMult() const;  // 0x6F79A0
-    virtual int CheckAndFireAtTarget2();
+    virtual int CheckAndFireAtTarget2(); // IDA: NOT_FOUND
     virtual int EvaluateTarget();
     virtual int SelectAutoTarget_Start_AU();  // 0x6F8DF0
     virtual int CheckTargetLOS() const;  // 0x6F7220
@@ -491,7 +491,7 @@ public:
     virtual int UpdateState(); // 0x706640
     virtual int UpdateUnitAnimation();  // 0x736CA0
     virtual int GetInfantryCursorAction() const;  // 0x7404B0
-    virtual int GetThreatValueEx() const;
+    virtual int GetThreatValueEx() const; // IDA: NOT_FOUND
     virtual int ComputeSlopeDifference();  // 0x6F6F60
     virtual int ComputeSlopePenalty();  // 0x6F70E0
     virtual int IsOwnedByHuman() const;  // 0x732580
@@ -525,18 +525,18 @@ public:
     virtual int MarkPassengersAsExited();  // 0x7104C0
     virtual int ExitedOpenTopped();  // 0x7104A0
     virtual int GetMember388() const;  // 0x711EB0
-    virtual int GetBuildCost2() const;
-    virtual int FindBestMatch2();
+    virtual int GetBuildCost2() const; // IDA: NOT_FOUND
+    virtual int FindBestMatch2(); // IDA: NOT_FOUND
     virtual int IsWaypointHidden() const;  // 0x6EC300
     virtual int LinkToBridge();  // 0x70FD70
     virtual int ResetDamageAccumulator();  // 0x4C1E10
     virtual int UpdateBodyTilt();  // 0x70B570
     virtual int CheckCliffTransition() const;  // 0x70C620
     virtual int OnEnterCell();  // 0x70D990
-    virtual int sub_570DC50();
+    virtual int sub_570DC50(); // IDA: NOT_FOUND
     virtual int OwnerHasPower() const;  // 0x70DC60
-    virtual int sub_570DCE0();
-    virtual int sub_570DCF0();
+    virtual int sub_570DCE0(); // IDA: NOT_FOUND
+    virtual int sub_570DCF0(); // IDA: NOT_FOUND
     virtual int GetPoweredWeaponIndex() const;  // 0x70DD20
     virtual int GetVt252Byte() const;  // 0x70DD50
     virtual int vt_entry_3E8();  // 0x70DD90
@@ -548,7 +548,7 @@ public:
     virtual int GetAnimationFlags() const;  // 0x70ED80
     virtual int GetTargetSpeedMultiplier() const;  // 0x50C050
     virtual int ProcessEnterTransport();  // 0x70D7E0
-    virtual int IsCloseEnoughToBuilding2() const;
+    virtual int IsCloseEnoughToBuilding2() const; // IDA: NOT_FOUND
     virtual int IsDeployed() const;  // 0x6EF9E0
     virtual int CheckAdjacencyFlags() const;  // 0x704240
     virtual int IsProductionChainActive() const;  // 0x637840
@@ -556,120 +556,120 @@ public:
     virtual int RemoveBuildingFromScripts();  // 0x638840
     virtual int FinishDeploy();  // 0x6F6CA0
     virtual int ValidateMoveType();  // 0x738890
-    virtual int ComputeSlopePenalty2();
+    virtual int ComputeSlopePenalty2(); // IDA: NOT_FOUND
     virtual int sub_740B10();
     virtual int CheckRepairNeeded() const;  // 0x740A90
     virtual int EnterRepairBuilding();  // 0x740EF0
     virtual int CheckUnitFireConstraints() const;  // 0x740FD0
-    virtual int sub_741490();
-    virtual int sub_7441B0();
-    virtual int sub_744180();
-    virtual int sub_744210();
-    virtual int sub_744270();
-    virtual int sub_744720();
-    virtual int sub_7440B0();
-    virtual int sub_744100();
-    virtual int sub_743190();
-    virtual int sub_746400();
-    virtual int sub_746420();
-    virtual int sub_7464E0();
+    virtual int checkTargetValidity();
+    virtual int sub_7441B0(); // IDA: NOT_FOUND
+    virtual int sub_744180(); // IDA: NOT_FOUND
+    virtual int sub_744210(); // IDA: NOT_FOUND
+    virtual int sub_744270(); // IDA: NOT_FOUND
+    virtual int sub_744720(); // IDA: NOT_FOUND
+    virtual int sub_7440B0(); // IDA: NOT_FOUND
+    virtual int sub_744100(); // IDA: NOT_FOUND
+    virtual int SelectAutoTargetWithGarrison();
+    virtual int processParasiteAttachment();
+    virtual int sub_746420(); // IDA: NOT_FOUND
+    virtual int sub_7464E0(); // IDA: NOT_FOUND
     virtual int sub_7465B0();
     virtual int sub_7465F0();
-    virtual int sub_7463A0();
-    virtual int sub_746670();
-    virtual int sub_746720();
-    virtual int sub_746750();
-    virtual int sub_746B20();
+    virtual int sub_7463A0(); // IDA: NOT_FOUND
+    virtual int sub_746670(); // IDA: NOT_FOUND
+    virtual int sub_746720(); // IDA: NOT_FOUND
+    virtual int sub_746750(); // IDA: NOT_FOUND
+    virtual int sub_746B20(); // IDA: NOT_FOUND
     virtual int sub_746C90();
-    virtual int sub_746CD0();
+    virtual int sub_746CD0(); // IDA: NOT_FOUND
     virtual int sub_746D00();
     virtual int sub_746D60();
-    virtual int sub_746DB0();
+    virtual int sub_746DB0(); // IDA: NOT_FOUND
     virtual int sub_746E30();
     virtual int sub_746EA0();
-    virtual int sub_746100();
-    virtual int sub_746F80();
-    virtual int sub_70F850();
-    virtual int sub_70FB50();
+    virtual int sub_746100(); // IDA: NOT_FOUND
+    virtual int sub_746F80(); // IDA: NOT_FOUND
+    virtual int sub_70F850(); // IDA: NOT_FOUND
+    virtual int sub_70FB50(); // IDA: NOT_FOUND
     virtual int sub_70FC90();
-    virtual int sub_70FD70();
-    virtual int sub_70FEE0();
-    virtual int sub_710000();
-    virtual int sub_710470();
-    virtual int sub_7104A0();
-    virtual int sub_7104C0();
+    virtual int sub_70FD70(); // IDA: NOT_FOUND
+    virtual int sub_70FEE0(); // IDA: NOT_FOUND
+    virtual int sub_710000(); // IDA: NOT_FOUND
+    virtual int sub_710470(); // IDA: NOT_FOUND
+    virtual int sub_7104A0(); // IDA: NOT_FOUND
+    virtual int sub_7104C0(); // IDA: NOT_FOUND
     virtual int sub_7106E0();
-    virtual int sub_710F70();
-    virtual int sub_711E00();
-    virtual int sub_711EB0();
-    virtual int sub_73EFC0();
+    virtual int sub_710F70(); // IDA: NOT_FOUND
+    virtual int sub_711E00(); // IDA: NOT_FOUND
+    virtual int sub_711EB0(); // IDA: NOT_FOUND
+    virtual int sub_73EFC0(); // IDA: NOT_FOUND
     virtual int sub_7393C0();
-    virtual int sub_737BA0();
-    virtual int sub_738910();
-    virtual int sub_732050();
-    virtual int sub_732580();
+    virtual int sub_737BA0(); // IDA: NOT_FOUND
+    virtual int sub_738910(); // IDA: NOT_FOUND
+    virtual int GatherAllBuildings();
+    virtual int sub_732580(); // IDA: NOT_FOUND
     virtual int sub_731CF0();
-    virtual int sub_729AA0();
-    virtual int sub_729480();
-    virtual int sub_71F010();
-    virtual int sub_71A130();
+    virtual int sub_729AA0(); // IDA: NOT_FOUND
+    virtual int sub_729480(); // IDA: NOT_FOUND
+    virtual int sub_71F010(); // IDA: NOT_FOUND
+    virtual int sub_71A130(); // IDA: NOT_FOUND
     virtual int CalculateDamage(); // 0x663030
-    virtual int UpdateBodyTilt2();
-    virtual int GattlingRateUp_GattlingRateDownReset2();
+    virtual int UpdateBodyTilt2(); // IDA: NOT_FOUND
+    virtual int GattlingRateUp_GattlingRateDownReset2(); // IDA: NOT_FOUND
     virtual int ApplySplashDamageToNeighbors();  // 0x487720
     virtual int ReceiveDamage_Shield();  // 0x701900
-    virtual int sub_70B1D0();
-    virtual int sub_70B280();
-    virtual int sub_70B570();
-    virtual int sub_70BCB0();
-    virtual int sub_70BE80();
-    virtual int sub_70D1D0();
-    virtual int sub_70D990();
-    virtual int sub_70DE70();
-    virtual int sub_70DE00();
-    virtual int sub_70DD20();
-    virtual int sub_70DD50();
+    virtual int sub_70B1D0(); // IDA: NOT_FOUND
+    virtual int sub_70B280(); // IDA: NOT_FOUND
+    virtual int sub_70B570(); // IDA: NOT_FOUND
+    virtual int sub_70BCB0(); // IDA: NOT_FOUND
+    virtual int sub_70BE80(); // IDA: NOT_FOUND
+    virtual int sub_70D1D0(); // IDA: NOT_FOUND
+    virtual int sub_70D990(); // IDA: NOT_FOUND
+    virtual int sub_70DE70(); // IDA: NOT_FOUND
+    virtual int sub_70DE00(); // IDA: NOT_FOUND
+    virtual int sub_70DD20(); // IDA: NOT_FOUND
+    virtual int sub_70DD50(); // IDA: NOT_FOUND
     virtual int sub_70DDD0();
-    virtual int sub_70DE40();
+    virtual int sub_70DE40(); // IDA: NOT_FOUND
     virtual int sub_70E120();
     virtual int sub_70E140();
-    virtual int sub_70E1A0();
-    virtual int sub_70E280();
+    virtual int sub_70E1A0(); // IDA: NOT_FOUND
+    virtual int sub_70E280(); // IDA: NOT_FOUND
     virtual int sub_70E2B0();
-    virtual int sub_70E300();
-    virtual int sub_70E380();
+    virtual int sub_70E300(); // IDA: NOT_FOUND
+    virtual int sub_70E380(); // IDA: NOT_FOUND
     virtual int sub_70E4B0();
-    virtual int sub_70EC0A();
+    virtual int sub_70EC0A(); // IDA: NOT_FOUND
     virtual int sub_70ED10();
-    virtual int sub_70ED80();
-    virtual int sub_70EE30();
-    virtual int sub_70EFD0();
-    virtual int sub_70EF00();
-    virtual int sub_70F010();
+    virtual int sub_70ED80(); // IDA: NOT_FOUND
+    virtual int sub_70EE30(); // IDA: NOT_FOUND
+    virtual int sub_70EFD0(); // IDA: NOT_FOUND
+    virtual int sub_70EF00(); // IDA: NOT_FOUND
+    virtual int sub_70F010(); // IDA: NOT_FOUND
     virtual int sub_70F000();
-    virtual int sub_70ECE0();
-    virtual int sub_70CCC0();
-    virtual int sub_70CC90();
-    virtual int sub_70CD10();
-    virtual int sub_70D190();
-    virtual int sub_70D460();
+    virtual int sub_70ECE0(); // IDA: NOT_FOUND
+    virtual int sub_70CCC0(); // IDA: NOT_FOUND
+    virtual int sub_70CC90(); // IDA: NOT_FOUND
+    virtual int sub_70CD10(); // IDA: NOT_FOUND
+    virtual int sub_70D190(); // IDA: NOT_FOUND
+    virtual int sub_70D460(); // IDA: NOT_FOUND
     virtual int sub_70D590();
-    virtual int sub_70D670();
-    virtual int sub_70D690();
-    virtual int sub_70D8F0();
-    virtual int sub_70DD90();
-    virtual int sub_70BE50();
-    virtual int sub_70C620();
+    virtual int sub_70D670(); // IDA: NOT_FOUND
+    virtual int sub_70D690(); // IDA: NOT_FOUND
+    virtual int sub_70D8F0(); // IDA: NOT_FOUND
+    virtual int sub_70DD90(); // IDA: NOT_FOUND
+    virtual int sub_70BE50(); // IDA: NOT_FOUND
+    virtual int sub_70C620(); // IDA: NOT_FOUND
     virtual int sub_70C610();
 
     virtual int SelectWeapon(AbstractClass* target) const; // 0x6F3330
-    void SmokeupdateLogic();
+    void SmokeupdateLogic(); // IDA: NOT_FOUND
     bool CreateUnit(); // 0x423AC0
 
-    int GetIonCannonValue(AIDifficulty difficulty) const;
+    int GetIonCannonValue(AIDifficulty difficulty) const; // IDA: NOT_FOUND
 
-    DirStruct getFacing() const;
-    DirStruct GetRealFacing() const;
+    DirStruct getFacing() const; // IDA: NOT_FOUND
+    DirStruct GetRealFacing() const; // IDA: NOT_FOUND
 
     // ---- member variables ----
 

@@ -88,11 +88,11 @@ public:
         if (iid == IID_IPersistStream) { *ppv = static_cast<IPersistStream*>(this); AddRef(); return S_OK; }
         *ppv = static_cast<ILocomotion*>(this); AddRef(); return S_OK;
     }
-    virtual ULONG __stdcall AddRef() override { return ++RefCount; }
-    virtual ULONG __stdcall Release() override { if (--RefCount == 0) { delete this; return 0; } return RefCount; }
+    virtual ULONG __stdcall AddRef() override { return ++RefCount; } // IDA: NOT_FOUND
+    virtual ULONG __stdcall Release() override { if (--RefCount == 0) { delete this; return 0; } return RefCount; } // IDA: NOT_FOUND
 
     // IPersistStream
-    virtual HRESULT __stdcall GetClassID(CLSID* class_id) = 0;                          // pure, per-class
+    virtual HRESULT __stdcall GetClassID(CLSID* class_id) = 0;                          // pure, per-class // IDA: NOT_FOUND
     virtual HRESULT __stdcall IsDirty() override { return Dirty ? S_OK : S_FALSE; }     // IDA: 0x4B4C30
     virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }           // IDA: 0x55AAC0
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override // IDA: UNMATCHED — no_callgraph_match, no_git_history
@@ -188,7 +188,7 @@ public:
     virtual int __stdcall Get_Track_Index() override { return -1; }                      // IDA: 0x4B6680
     virtual int __stdcall Get_Speed_Accum() override { return -1; }                      // IDA: 0x4B6690
 
-    virtual ~LocomotionClass() {} // COM objects use Release(), no base virtual dtor to override
+    virtual ~LocomotionClass() {} // COM objects use Release(), no base virtual dtor to override // IDA: NOT_FOUND
 
     virtual int Size() = 0;  // 0x454190
 
@@ -259,8 +259,8 @@ public:
 
     // IPersistStream
     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return S_OK; }  // IDA: 0x5B0960
-    virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }         // stub
-    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { if (!stream) return E_POINTER; HRESULT hr = stream->Write((const char*)this + 0x18, Size() - 0x18, nullptr); if (SUCCEEDED(hr) && clear_dirty) Dirty = false; return hr; }
+    virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }         // stub // IDA: NOT_FOUND
+    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { if (!stream) return E_POINTER; HRESULT hr = stream->Write((const char*)this + 0x18, Size() - 0x18, nullptr); if (SUCCEEDED(hr) && clear_dirty) Dirty = false; return hr; } // IDA: NOT_FOUND
 
     // IPiggyback
     virtual HRESULT __stdcall Begin_Piggyback(ILocomotion* pointer) override { return S_OK; }         // IDA: 0x45AF20
@@ -315,7 +315,7 @@ class HoverLocomotionClass : public LocomotionClass
 {
 public:
     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return S_OK; }  // IDA: 0x513D00
-    virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }         // stub
+    virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }         // stub // IDA: NOT_FOUND
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { (void)stream; (void)clear_dirty; return S_OK; }  // IDA: 0x513C80
 
     virtual bool __stdcall Is_Moving() override { return false; }              // IDA: 0x513C30
@@ -361,7 +361,7 @@ public:
     virtual ULONG __stdcall Release() override { if (--RefCount == 0) { delete this; return 0; } return RefCount; } // 0x75CB90
 
     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return S_OK; }  // IDA: 0x75A9E0
-    virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }         // stub
+    virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }         // stub // IDA: NOT_FOUND
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { (void)stream; (void)clear_dirty; return S_OK; }  // IDA: 0x75A950
 
     // IPiggyback
@@ -408,11 +408,11 @@ class FlyLocomotionClass : public LocomotionClass
 {
 public:
     virtual HRESULT __stdcall QueryInterface(const IID&, void** ppv) override { if (ppv) { *ppv = static_cast<ILocomotion*>(static_cast<void*>(this)); AddRef(); return S_OK; } return E_POINTER; }  // IDA: 0x55A9B0
-    virtual ULONG __stdcall AddRef() override { return ++RefCount; }
-    virtual ULONG __stdcall Release() override { if (--RefCount == 0) { delete this; return 0; } return RefCount; }
+    virtual ULONG __stdcall AddRef() override { return ++RefCount; } // IDA: NOT_FOUND
+    virtual ULONG __stdcall Release() override { if (--RefCount == 0) { delete this; return 0; } return RefCount; } // IDA: NOT_FOUND
 
     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return S_OK; }  // IDA: 0x4CC950
-    virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }         // stub
+    virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }         // stub // IDA: NOT_FOUND
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { (void)stream; (void)clear_dirty; return S_OK; }  // IDA: 0x4CC8B0
 
     virtual bool __stdcall Is_Moving() override { return false; }                                      // IDA: 0x4CC9E0
@@ -451,7 +451,7 @@ public:
 
 protected:
     FlyLocomotionClass() = default;
-    explicit FlyLocomotionClass(noinit_t) noexcept : LocomotionClass(noinit_t{}) {}
+    explicit FlyLocomotionClass(noinit_t) noexcept : LocomotionClass(noinit_t{}) {} // IDA: NOT_FOUND
 };
 
 //============================================================================
@@ -461,11 +461,11 @@ class RocketLocomotionClass : public LocomotionClass
 {
 public:
     virtual HRESULT __stdcall QueryInterface(const IID&, void** ppv) override { if (ppv) { *ppv = static_cast<ILocomotion*>(static_cast<void*>(this)); AddRef(); return S_OK; } return E_POINTER; }  // IDA: 0x664AC0
-    virtual ULONG __stdcall AddRef() override { return ++RefCount; }
-    virtual ULONG __stdcall Release() override { if (--RefCount == 0) { delete this; return 0; } return RefCount; }
+    virtual ULONG __stdcall AddRef() override { return ++RefCount; } // IDA: NOT_FOUND
+    virtual ULONG __stdcall Release() override { if (--RefCount == 0) { delete this; return 0; } return RefCount; } // IDA: NOT_FOUND
 
     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return S_OK; }  // IDA: 0x661EC0
-    virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }         // stub
+    virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }         // stub // IDA: NOT_FOUND
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { (void)stream; (void)clear_dirty; return S_OK; }  // IDA: 0x661DF0
 
     virtual bool __stdcall Is_Moving() override { return false; }                                      // IDA: 0x661F00
@@ -523,7 +523,7 @@ public:
     virtual ULONG __stdcall Release() override { if (--RefCount == 0) { delete this; return 0; } return RefCount; } // 0x54DF60
 
     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return S_OK; }  // IDA: 0x54A8E0
-    virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }         // stub
+    virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }         // stub // IDA: NOT_FOUND
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { (void)stream; (void)clear_dirty; return S_OK; }  // IDA: 0x54A850
 
     // IPiggyback
@@ -543,7 +543,7 @@ public:
     virtual void __stdcall Mark_All_Occupation_Bits(int mark) override {}               // IDA: 0x54B9C0
     virtual void __stdcall ILocomotion_B8() override {}                                  // IDA: 0x54BAD0 (Limbo)
 
-    virtual ~JumpjetLocomotionClass() override = default;
+    virtual ~JumpjetLocomotionClass() override = default; // IDA: NOT_FOUND
 
     virtual int Size() override { return sizeof(*this); }  // IDA: 0x454190
 
@@ -587,7 +587,7 @@ public:
 
 protected:
     JumpjetLocomotionClass() = default;
-    explicit JumpjetLocomotionClass(noinit_t) noexcept : LocomotionClass(noinit_t{}) {}
+    explicit JumpjetLocomotionClass(noinit_t) noexcept : LocomotionClass(noinit_t{}) {} // IDA: NOT_FOUND
 };
 static_assert(sizeof(JumpjetLocomotionClass) == 0x98, "JumpjetLocomotionClass size");
 
@@ -603,7 +603,7 @@ public:
     virtual ULONG __stdcall Release() override { if (--RefCount == 0) { delete this; return 0; } return RefCount; } // 0x6A4270
 
     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return S_OK; }  // IDA: 0x69EDF0
-    virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }         // stub
+    virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }         // stub // IDA: NOT_FOUND
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { (void)stream; (void)clear_dirty; return S_OK; }  // IDA: 0x69ED70
 
     // IPiggyback
@@ -658,8 +658,8 @@ class TeleportLocomotionClass : public LocomotionClass, public IPiggyback
 {
 public:
     virtual HRESULT __stdcall QueryInterface(const IID&, void** ppv) override { if (ppv) { *ppv = static_cast<ILocomotion*>(static_cast<void*>(this)); AddRef(); return S_OK; } return E_POINTER; }  // IDA: 0x55A9B0
-    virtual ULONG __stdcall AddRef() override { return ++RefCount; }
-    virtual ULONG __stdcall Release() override { if (--RefCount == 0) { delete this; return 0; } return RefCount; }
+    virtual ULONG __stdcall AddRef() override { return ++RefCount; } // IDA: NOT_FOUND
+    virtual ULONG __stdcall Release() override { if (--RefCount == 0) { delete this; return 0; } return RefCount; } // IDA: NOT_FOUND
 
     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return S_OK; }  // IDA: 0x7180B0
 
@@ -681,7 +681,7 @@ public:
     virtual void __stdcall Mark_All_Occupation_Bits(int mark) override {}               // IDA: 0x7187A0
     virtual void __stdcall ILocomotion_B8() override {}                                  // IDA: 0x7187C0 (Limbo)
 
-    virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }         // stub
+    virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }         // stub // IDA: NOT_FOUND
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { (void)stream; (void)clear_dirty; return S_OK; }  // IDA: 0x718010
 
     virtual ~TeleportLocomotionClass() override = default; // 0x718000
@@ -723,7 +723,7 @@ public:
     };
 
     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return S_OK; }  // IDA: 0x728BC0
-    virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }         // stub
+    virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }         // stub // IDA: NOT_FOUND
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { (void)stream; (void)clear_dirty; return S_OK; }  // IDA: 0x728B40
 
     virtual bool __stdcall Is_Moving() override { return false; }                                      // IDA: 0x728A10
@@ -760,7 +760,7 @@ class MechLocomotionClass : public LocomotionClass
 {
 public:
     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return S_OK; }  // IDA: 0x5B1960
-    virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }         // stub
+    virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }         // stub // IDA: NOT_FOUND
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { (void)stream; (void)clear_dirty; return S_OK; }  // IDA: 0x5B19A0
 
     virtual bool __stdcall Is_Moving() override { return false; }                                      // IDA: 0x5AFEF0
@@ -803,7 +803,7 @@ public:
     // IPiggyback
     virtual HRESULT __stdcall Begin_Piggyback(ILocomotion* pointer) override { return S_OK; }         // stub // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual HRESULT __stdcall End_Piggyback(ILocomotion** pointer) override { return S_OK; }          // stub // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual bool __stdcall Is_Ok_To_End() override { return false; }                                   // stub
+    virtual bool __stdcall Is_Ok_To_End() override { return false; }                                   // stub // IDA: NOT_FOUND
     virtual HRESULT __stdcall Piggyback_CLSID(GUID* classid) override { return S_OK; }               // stub // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual bool __stdcall Is_Piggybacking() override { return false; }                                // stub // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
@@ -817,7 +817,7 @@ public:
     virtual void __stdcall Mark_All_Occupation_Bits(int mark) override {}               // IDA: 0x4B5E50
     virtual void __stdcall ILocomotion_B8() override {}                                  // IDA: 0x4B5E80 (Limbo)
 
-    virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }         // stub
+    virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }         // stub // IDA: NOT_FOUND
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { (void)stream; (void)clear_dirty; return S_OK; }  // IDA: 0x4B5B00
 
     virtual ~DropPodLocomotionClass() override = default;  // 0x4B6200

@@ -23,24 +23,24 @@ class WaypointPathClass : public AbstractClass
 public:
     static constexpr AbstractType kObjectDeriveId = AbstractType::Waypoint;
 
-    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return 0; }
-    virtual HRESULT __stdcall Load(IStream* stream) override { return 0; }
+    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return 0; } // IDA: NOT_FOUND
+    virtual HRESULT __stdcall Load(IStream* stream) override { return 0; } // IDA: NOT_FOUND
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { return 0; } // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     virtual ~WaypointPathClass() = default;  // 0x763C30
 
     virtual void pointerExpired(AbstractClass* ptr, bool removed) override {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual AbstractType __stdcall whatAmI() const override { return kObjectDeriveId; } // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual int objectSize() const override { return 0; }
+    virtual int objectSize() const override { return 0; } // IDA: NOT_FOUND
     virtual void calculateChecksum(void* checksum) const {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     // Construction
     WaypointPathClass() noexcept;                            // 0x763810 (Construct)
-    void ddtor();
+    void ddtor();  // 0x763C30
 
     // Methods
     void Init();                                             // 0x763730
-    void Construct();
+    void Construct();  // 0x763810
     void PowerDrainUpdate();                                 // 0x763C00
     void LoadState(IStream*);                                // 0x763C70
     void SaveState(IStream*);                                // 0x763D90

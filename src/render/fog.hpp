@@ -40,7 +40,7 @@ public:
 
 protected:
     FoggedObjectClass() noexcept;
-    explicit FoggedObjectClass(noinit_t) noexcept;
+    explicit FoggedObjectClass(noinit_t) noexcept; // IDA: NOT_FOUND
 };
 
 } // namespace gamemd

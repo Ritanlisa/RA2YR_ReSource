@@ -103,7 +103,7 @@ public:
     virtual ~SuperClass() = default;                                                 // 0x6CDEB0 (ddtor)
 
     virtual AbstractType __stdcall whatAmI() const override; // 0x6CE020 (PowerDrainUpdate area)
-    virtual int32_t objectSize() const override;
+    virtual int32_t objectSize() const override; // IDA: NOT_FOUND
 
     void Reset();                                                                    // 0x6CE0B0
     bool SetOnHold(bool onHold);                                                     // 0x6CB4D0
@@ -116,9 +116,9 @@ public:
     int8_t StopPreclickAnim(bool isPlayer);                                           // 0x6CB830
     int8_t ClickFire(bool isPlayer, const CellStruct& cell);                          // 0x6CB920
     bool HasChargeProgressed(bool isPlayer);                                          // 0x6CC080 (AnnounceReady)
-    int32_t GetCameoChargeState() const;
+    int32_t GetCameoChargeState() const; // IDA: NOT_FOUND
     void SetCharge(int32_t percentage);                                               // 0x6CC1E0
-    int32_t GetRechargeTime() const;
+    int32_t GetRechargeTime() const; // IDA: NOT_FOUND
     void SetRechargeTime(int32_t time);                                               // 0x6CC280
     void ResetRechargeTime();                                                        // 0x6CC290
     const wchar_t* NameReadiness() const;                                             // 0x6CC2B0
@@ -208,7 +208,7 @@ public:
     static AnimClass*              Anim;     // 0xA8E834
 
     static void Start(HouseClass* pOwner, const CellStruct& coords);  // 0x7CD80F
-    static void updateLogic();
+    static void updateLogic(); // IDA: NOT_FOUND
     static void Fire();                                               // 0x53B080
     static void PrintMessage(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
     static bool Active();                                             // 0x53B400 (IsActive)
@@ -221,7 +221,7 @@ public:
     static int32_t Duration; // 0xA8E83C
 
     static void Start(int32_t duration);      // 0x753580 (DecrementCounter)
-    static void updateLogic();
+    static void updateLogic(); // IDA: NOT_FOUND
     static bool Active();  // 0x4C9480
     static void DecrementCounter();  // IDA: 0x753580
 };
@@ -235,7 +235,7 @@ public:
 
     static void FadeIn();                // 0x53A110 (IsActive)
     static void FadeOut();               // 0x53A120 (ProcessEffect)
-    static bool IsFadingIn();
+    static bool IsFadingIn(); // IDA: NOT_FOUND
     static bool IsFadingOut(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
     static bool IsActive();  // IDA: 0x53A110
     static void ProcessEffect();  // IDA: 0x53A120

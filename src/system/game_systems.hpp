@@ -24,15 +24,15 @@ public:
     // IDA 0x48B2A0 area
     static void ReadSettings();  // 0x596C70
     // IDA 0x48B2A0 area
-    static void WriteSettings();
+    static void WriteSettings(); // IDA: NOT_FOUND
     // IDA 0x48B2A0 area
-    static void SelectMap(const char* mapName);
+    static void SelectMap(const char* mapName); // IDA: NOT_FOUND
     // IDA 0x48B2A0 area
-    static void SetupAI();
+    static void SetupAI(); // IDA: NOT_FOUND
     // IDA 0x48B2A0 area
-    static void SetupColors();
+    static void SetupColors(); // IDA: NOT_FOUND
     // IDA 0x48B2A0 area
-    static void StartGame();
+    static void StartGame(); // IDA: NOT_FOUND
 
     static int32_t  s_PlayerCount;  // 0x00
     static int32_t  s_MapSize;      // 0x04
@@ -52,7 +52,7 @@ public:
     // IDA 0x48B2A0 area
     static void SetDescriptionWStr(const wchar_t* desc);  // 0x69ACD0
     // IDA 0x48B2A0 area
-    static const wchar_t* GetDescription();
+    static const wchar_t* GetDescription(); // IDA: NOT_FOUND
 
     static char     m_Name[64];     // 0x00
     static int32_t  m_Value;        // 0x40
@@ -84,7 +84,7 @@ public:
     // IDA 0x5FB050
     static void Read();  // 0x5FA620
     // IDA 0x5FB050 area
-    static void sub_5FB050();
+    static void sub_5FB050(); // IDA: NOT_FOUND
     // IDA 0x5FB050 area
     static int32_t FindFlagged(int32_t flag);  // 0x7931A0
 
@@ -101,7 +101,7 @@ public:
     // IDA 0x608260
     static int32_t DlgProc(HWND hDlg, UINT msg, WPARAM wParam, LPARAM lParam);  // 0x5E6920
     // IDA 0x608260 area
-    void sub_608260();
+    void sub_608260(); // IDA: NOT_FOUND
 
     int32_t     SkirmishSetup_field_00;       // 0x00
     int32_t     SkirmishSetup_field_04;       // 0x04
@@ -195,7 +195,7 @@ public:
     // IDA 0x48B2A0 area
     static int32_t Range(int32_t min, int32_t max);  // 0x65C7E0
     // IDA 0x48B2A0 area
-    static void Seed(uint32_t seed);
+    static void Seed(uint32_t seed); // IDA: NOT_FOUND
 
     static uint32_t s_Seed;         // 0x00
     static uint32_t s_State[4];     // 0x04
@@ -208,7 +208,7 @@ public:
 class GameInit
 {
 public:
-    virtual ~GameInit() = default;
+    virtual ~GameInit() = default; // IDA: NOT_FOUND
 
     virtual void InitMultiplayerModes() {} // IDA: 0x5D86D0
 
@@ -217,7 +217,7 @@ public:
 class GameLobby
 {
 public:
-    virtual ~GameLobby() = default;
+    virtual ~GameLobby() = default; // IDA: NOT_FOUND
 
     virtual void DlgProc() {} // IDA: 0x5E1CA0
 
@@ -226,7 +226,7 @@ public:
 class GameOption_WorldDominationTour
 {
 public:
-    virtual ~GameOption_WorldDominationTour() = default;
+    virtual ~GameOption_WorldDominationTour() = default; // IDA: NOT_FOUND
 
     virtual void QueryInterface() {} // IDA: 0x766A60
     virtual void Constructor() {} // IDA: 0x767300
@@ -237,7 +237,7 @@ public:
 class GameOptions
 {
 public:
-    virtual ~GameOptions() = default;
+    virtual ~GameOptions() = default; // IDA: NOT_FOUND
 
     virtual void GameSpeedChanged() {} // IDA: 0x4E1DE0
     virtual void ReadSettings() {} // IDA: 0x5B8CE0
@@ -252,7 +252,7 @@ public:
 class GameOptionsClass
 {
 public:
-    virtual ~GameOptionsClass() = default;
+    virtual ~GameOptionsClass() = default; // IDA: NOT_FOUND
 
     virtual void UnlockMovieIfNeeded_MoviesList() {} // IDA: 0x5FBF80
     virtual void PopulateMovieList() {} // IDA: 0x5FC000
@@ -263,7 +263,7 @@ public:
 class GameResult
 {
 public:
-    virtual ~GameResult() = default;
+    virtual ~GameResult() = default; // IDA: NOT_FOUND
 
     virtual void CalcScore() {} // IDA: 0x4C6210
 
@@ -272,7 +272,7 @@ public:
 class GameScreen
 {
 public:
-    virtual ~GameScreen() = default;
+    virtual ~GameScreen() = default; // IDA: NOT_FOUND
 
     virtual void DlgProc() {} // IDA: 0x60D540
 
@@ -281,7 +281,7 @@ public:
 class GameSetup
 {
 public:
-    virtual ~GameSetup() = default;
+    virtual ~GameSetup() = default; // IDA: NOT_FOUND
 
     virtual void sub_477440() {} // IDA: 0x477440
     virtual void FormatToString() {} // IDA: 0x477510
@@ -301,7 +301,7 @@ public:
 class GameState
 {
 public:
-    virtual ~GameState() = default;
+    virtual ~GameState() = default; // IDA: NOT_FOUND
 
     virtual void Reset() {} // IDA: 0x680FF0
 
@@ -310,7 +310,7 @@ public:
 class LoadGame
 {
 public:
-    virtual ~LoadGame() = default;
+    virtual ~LoadGame() = default; // IDA: NOT_FOUND
 
     virtual void LoadIteratedData() {} // IDA: 0x4136C0
     virtual void ClearAllSlots() {} // IDA: 0x413800
@@ -348,7 +348,7 @@ public:
 class LoadSaveDialog
 {
 public:
-    virtual ~LoadSaveDialog() = default;
+    virtual ~LoadSaveDialog() = default; // IDA: NOT_FOUND
 
     virtual void FillList() {} // IDA: 0x5596A0
 
@@ -357,7 +357,7 @@ public:
 class LoadScreen
 {
 public:
-    virtual ~LoadScreen() = default;
+    virtual ~LoadScreen() = default; // IDA: NOT_FOUND
 
     virtual void RenderLoop() {} // IDA: 0x4B6C30
     virtual void InitVtable() {} // IDA: 0x4BA2F0
@@ -376,7 +376,7 @@ public:
 class LoadingScreen
 {
 public:
-    virtual ~LoadingScreen() = default;
+    virtual ~LoadingScreen() = default; // IDA: NOT_FOUND
 
     virtual void Render() {} // IDA: 0x552D60
     virtual void AdjustForResolution() {} // IDA: 0x554100
@@ -425,7 +425,7 @@ public:
 class SaveLoad
 {
 public:
-    virtual ~SaveLoad() = default;
+    virtual ~SaveLoad() = default; // IDA: NOT_FOUND
 
     virtual void StreamVector() {} // IDA: 0x67A770
 
@@ -434,7 +434,7 @@ public:
 class SaveLoadDialog
 {
 public:
-    virtual ~SaveLoadDialog() = default;
+    virtual ~SaveLoadDialog() = default; // IDA: NOT_FOUND
 
     virtual void DlgProc() {} // IDA: 0x558DD0
     virtual void LookupDialogHash() {} // IDA: 0x608380
@@ -447,7 +447,7 @@ public:
 class SkirmishDialog
 {
 public:
-    virtual ~SkirmishDialog() = default;
+    virtual ~SkirmishDialog() = default; // IDA: NOT_FOUND
 
     virtual void FillComboBoxes() {} // IDA: 0x4E3B90
     virtual void HandleGameStart() {} // IDA: 0x5B9A60
@@ -460,7 +460,7 @@ public:
 class SkirmishMapGen
 {
 public:
-    virtual ~SkirmishMapGen() = default;
+    virtual ~SkirmishMapGen() = default; // IDA: NOT_FOUND
 
     virtual void DlgProc() {} // IDA: 0x596300
     virtual void LookupDialogHash() {} // IDA: 0x6067A0
@@ -471,7 +471,7 @@ public:
 class SkirmishVector
 {
 public:
-    virtual ~SkirmishVector() = default;
+    virtual ~SkirmishVector() = default; // IDA: NOT_FOUND
 
     virtual void PushBack() {} // IDA: 0x5EEE40
 
@@ -480,7 +480,7 @@ public:
 class SyncDelayClass
 {
 public:
-    virtual ~SyncDelayClass() = default;
+    virtual ~SyncDelayClass() = default; // IDA: NOT_FOUND
 
     virtual void ProcessNetworkSync() {} // IDA: 0x55DEE0
 

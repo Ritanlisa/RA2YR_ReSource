@@ -32,7 +32,7 @@ public:
     virtual int32_t GetLatency() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual const char* GetAddress() const; // 0x542350
     virtual void  OnMessageReceived(const NetworkEvent&); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual void  Flush();
+    virtual void  Flush(); // IDA: NOT_FOUND
     virtual bool  IsHost() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     void queueSendPacket(const uint8_t*, int32_t, int32_t);                                   // 0x48B410
@@ -57,7 +57,7 @@ class IPXConnClass : public ConnectionClass
 {
 public:
     IPXConnClass() noexcept;                              // 0x53F430
-    virtual ~IPXConnClass() = default;
+    virtual ~IPXConnClass() = default; // IDA: NOT_FOUND
     virtual bool Open() override; // 0x69BC20
 
     virtual HRESULT __stdcall QueryInterface(const IID&, void**) override; // 0x53F850
@@ -79,7 +79,7 @@ public:
     static IPXManagerClass* Instance;                                  // 0xA8EBE4
 
     void Init();  // 0x48BA90
-    bool OpenSession();
+    bool OpenSession(); // IDA: NOT_FOUND
     void CloseSession();                                              // 0x5414C0
     bool SendPacket(const uint8_t*, int32_t);                          // 0x540D80
     int32_t ReceivePacket(uint8_t*, int32_t);                          // 0x541070
@@ -128,13 +128,13 @@ class NullModemClass : public ConnectionClass
 public:
     NullModemClass() noexcept;
     virtual ~NullModemClass() = default;  // 0x5F35A0
-    virtual bool Open() override;
+    virtual bool Open() override; // IDA: NOT_FOUND
 
     bool initConnection();                                  // 0x5EF100
     bool closeConnection();                                 // 0x5EF170
     bool Init();  // IDA: 0x5F16E0
     bool Connect();  // IDA: 0x5F1BC0
-    void FlushCom();
+    void FlushCom(); // IDA: NOT_FOUND
     bool SendPacket(const uint8_t*, int32_t);  // IDA: 0x5F1F70
     bool DetectModem();  // IDA: 0x5F1FA0
     bool Negotiate();  // IDA: 0x5F3170

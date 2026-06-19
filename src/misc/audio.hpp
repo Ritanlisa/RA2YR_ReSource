@@ -53,16 +53,16 @@ public:
     static bool VoicesEnabled;
 
     // IDA 0x7514D0
-    static VocClass* Find(const char* pName);
+    static VocClass* Find(const char* pName); // IDA: NOT_FOUND
     // IDA 0x7514D0 (same address, Find calls FindIndex)
     static int32_t FindIndex(const char* pName);  // 0x7514D0
 
     // IDA 0x750920
-    static void PlayGlobal(int32_t index, int32_t panning, float volume, AudioController* pCtrl = nullptr);
+    static void PlayGlobal(int32_t index, int32_t panning, float volume, AudioController* pCtrl = nullptr); // IDA: NOT_FOUND
     // IDA 0x7509E0
-    static void PlayAt(int32_t index, const CoordStruct& coords, AudioController* pCtrl = nullptr);
+    static void PlayAt(int32_t index, const CoordStruct& coords, AudioController* pCtrl = nullptr); // IDA: NOT_FOUND
     // IDA 0x750E20
-    static void PlayIndexAtPos(int32_t index, const CoordStruct& coords, int32_t a3 = 0);
+    static void PlayIndexAtPos(int32_t index, const CoordStruct& coords, int32_t a3 = 0); // IDA: NOT_FOUND
 
     VocClassHeader   Header;             // 0x00 (0x0C bytes)
     int32_t          SamplesOK;          // 0x0C: 0 or 1, all samples usable
@@ -114,22 +114,22 @@ public:
     static int32_t EVAIndex;
 
     // IDA 0x753250
-    static VoxClass* Find(const char* pName);
+    static VoxClass* Find(const char* pName); // IDA: NOT_FOUND
     // IDA 0x752CB0 wrapper (uses Array search)
-    static int32_t FindIndex(const char* pName);
+    static int32_t FindIndex(const char* pName); // IDA: NOT_FOUND
 
     // IDA 0x752700
     static void Play(const char* pName, int32_t unk1 = -1, int32_t unk2 = -1);  // 0x752700
     // IDA 0x752480
-    static void PlayIndex(int32_t index, int32_t unk1 = -1, int32_t unk2 = -1);
+    static void PlayIndex(int32_t index, int32_t unk1 = -1, int32_t unk2 = -1); // IDA: NOT_FOUND
     // IDA 0x750E20
-    static void PlayAtPos(int32_t index, CoordStruct* pCoords, uint32_t unk = 0);
+    static void PlayAtPos(int32_t index, CoordStruct* pCoords, uint32_t unk = 0); // IDA: NOT_FOUND
     // IDA 0x752A40
-    static void SilenceIndex(int32_t index);
+    static void SilenceIndex(int32_t index); // IDA: NOT_FOUND
     // IDA 0x753330
-    static const char* GetName(int32_t index);
+    static const char* GetName(int32_t index); // IDA: NOT_FOUND
     // IDA 0x7531A0
-    static void DeleteAll();
+    static void DeleteAll(); // IDA: NOT_FOUND
 
     // IDA 0x752CB0
     VoxClass(const char* pName);
@@ -137,9 +137,9 @@ public:
     ~VoxClass();
 
     // IDA 0x753380
-    const char* GetFilename() const;
+    const char* GetFilename() const; // IDA: NOT_FOUND
     // IDA 0x752DB0
-    bool LoadFromINI(CCINIClass* pINI);
+    bool LoadFromINI(CCINIClass* pINI); // IDA: NOT_FOUND
 
     char           Name[0x28];       // 0x00: eva.ini sound name
     float          Volume;           // 0x28: eva.ini Volume

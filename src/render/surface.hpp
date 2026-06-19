@@ -24,7 +24,7 @@ public:
     virtual ~Surface() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     // [1] 0x04 BlitWhole
-    virtual bool BlitWhole(Surface* src, bool option1, bool option2) = 0;
+    virtual bool BlitWhole(Surface* src, bool option1, bool option2) = 0; // IDA: NOT_FOUND
 
     // [2] 0x08 BlitPart
     virtual bool BlitPart(
@@ -174,10 +174,10 @@ public:
         uint32_t color) = 0;
 
     // [23] 0x5C Lock
-    virtual void* Lock(int x, int y) = 0;
+    virtual void* Lock(int x, int y) = 0; // IDA: NOT_FOUND
 
     // [24] 0x60 Unlock
-    virtual bool Unlock() = 0;
+    virtual bool Unlock() = 0; // IDA: NOT_FOUND
 
     // [25] 0x64 CanLock
     virtual bool CanLock(uint32_t unk1, uint32_t unk2) = 0;  // 0x4BAEC0
@@ -192,10 +192,10 @@ public:
     virtual bool IsLocked() const = 0;  // 0x411580
 
     // [28] 0x70 GetBytesPerPixel
-    virtual int GetBytesPerPixel() const = 0;
+    virtual int GetBytesPerPixel() const = 0; // IDA: NOT_FOUND
 
     // [29] 0x74 GetPitch
-    virtual int GetPitch() const = 0;
+    virtual int GetPitch() const = 0; // IDA: NOT_FOUND
 
     // [30] 0x78 GetRect
     virtual RectangleStruct* GetRect(RectangleStruct* out) const // 0x411510
@@ -320,7 +320,7 @@ public:
     int Height;
 
 protected:
-    explicit Surface(noinit_t) noexcept {}
+    explicit Surface(noinit_t) noexcept {} // IDA: NOT_FOUND
 };
 
 class XSurface : public Surface
@@ -332,7 +332,7 @@ public:
     {
     }
 
-    virtual ~XSurface() override = default;
+    virtual ~XSurface() override = default; // IDA: NOT_FOUND
 
     virtual bool BlitWhole(Surface* src, bool option1, bool option2) override; // 0x7BBAF0
     virtual bool BlitPart( // 0x7BBB90
@@ -450,7 +450,7 @@ public:
     {
     }
 
-    virtual ~BSurface() override = default;
+    virtual ~BSurface() override = default; // IDA: NOT_FOUND
 
     virtual void* Lock(int x, int y) override; // 0x4115F0
     virtual int GetBytesPerPixel() const override { return BytesPerPixel; } // 0x411630
@@ -480,7 +480,7 @@ public:
 
     DSurface(int width, int height, bool back_buffer, bool force_3d) noexcept;
 
-    virtual ~DSurface() override;
+    virtual ~DSurface() override; // IDA: NOT_FOUND
 
     virtual bool BlitWhole(Surface* src, bool option1, bool option2) override;  // 0x4C1A90
     virtual bool BlitPart( // 0x4BB080

@@ -88,7 +88,7 @@ class CCFileClass : public CDFileClass
 public:
     virtual ~CCFileClass() override = default;  // 0x535A70
 
-    explicit CCFileClass(const char* pFileName) noexcept;
+    explicit CCFileClass(const char* pFileName) noexcept; // IDA: NOT_FOUND
 
     bool  Open(const char* pFileName);  // 0x473C50
     void* ReadEntireFile();  // 0x4A3890

@@ -16,12 +16,12 @@ public:
     static DynamicVectorClass<OverlayTypeClass*>* Array;
     static OverlayTypeClass* Find(const char* pID);  // 0x5FE250
     static OverlayTypeClass* FindOrAllocate(const char* pID); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    static int FindIndex(const char* pID);
+    static int FindIndex(const char* pID); // IDA: NOT_FOUND
 
     virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override; // 0x5FEC30 (as GetClassIdentifier)
 
     virtual HRESULT __stdcall Load(IStream* pStm) override; // 0x5FE770 (as LoadFromINI)
-    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;
+    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override; // IDA: NOT_FOUND
 
     virtual ~OverlayTypeClass() = default;  // 0x5FEF30 (as ddtor)
 
@@ -30,10 +30,10 @@ public:
 
     virtual CoordStruct* onCellChanged(CoordStruct* pDest, CoordStruct* pSrc) const override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
-    virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override;
+    virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override; // IDA: NOT_FOUND
     virtual ObjectClass* CreateObject(HouseClass* pOwner) override;  // 0x4737F0
 
-    virtual void Draw(Point2D* pClientCoords, RectangleStruct* pClipRect, int nFrame);
+    virtual void Draw(Point2D* pClientCoords, RectangleStruct* pClipRect, int nFrame); // IDA: NOT_FOUND
 
     OverlayTypeClass(const char* pID) noexcept;  // 0x6440A0 (as Construct)
 

@@ -23,44 +23,44 @@ class MissionClass : public ObjectClass
 public:
     virtual HRESULT __stdcall Load(IStream* stream) override;  // 0x5B3760
 
-    virtual ~MissionClass() = default;
+    virtual ~MissionClass() = default; // IDA: NOT_FOUND
 
     virtual bool queueMission(Mission mission, bool start_mission);  // 0x4E01C0
-    virtual bool nextMission();
+    virtual bool nextMission(); // IDA: NOT_FOUND
     virtual void forceMission(Mission mission); // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual void onMissionChanged(Mission mission); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual bool revertMission();
-    virtual bool isMissionDone() const;
+    virtual bool revertMission(); // IDA: NOT_FOUND
+    virtual bool isMissionDone() const; // IDA: NOT_FOUND
     virtual bool hasValidTarget() const;  // 0x5B3A10
 
-    virtual int Mission_Sleep();
-    virtual int Mission_Harmless();
-    virtual int Mission_Ambush();
+    virtual int Mission_Sleep(); // IDA: NOT_FOUND
+    virtual int Mission_Harmless(); // IDA: NOT_FOUND
+    virtual int Mission_Ambush(); // IDA: NOT_FOUND
     virtual int Mission_Attack();  // 0x417FE0
-    virtual int Mission_Capture();
-    virtual int Mission_Eaten();
+    virtual int Mission_Capture(); // IDA: NOT_FOUND
+    virtual int Mission_Eaten(); // IDA: NOT_FOUND
     virtual int Mission_Guard();  // 0x459E70
-    virtual int Mission_AreaGuard();
-    virtual int Mission_Harvest();
-    virtual int Mission_Hunt();
-    virtual int Mission_Move();
-    virtual int Mission_Retreat();
-    virtual int Mission_Return();
-    virtual int Mission_Stop();
+    virtual int Mission_AreaGuard(); // IDA: NOT_FOUND
+    virtual int Mission_Harvest(); // IDA: NOT_FOUND
+    virtual int Mission_Hunt(); // IDA: NOT_FOUND
+    virtual int Mission_Move(); // IDA: NOT_FOUND
+    virtual int Mission_Retreat(); // IDA: NOT_FOUND
+    virtual int Mission_Return(); // IDA: NOT_FOUND
+    virtual int Mission_Stop(); // IDA: NOT_FOUND
     virtual int Mission_Unload();  // 0x4151E0
     virtual int Mission_Enter();  // 0x4166C0
     virtual int Mission_Construction();  // 0x459EC0
-    virtual int Mission_Selling();
+    virtual int Mission_Selling(); // IDA: NOT_FOUND
     virtual int Mission_Repair();  // 0x6F4AB0
-    virtual int Mission_Missile();
-    virtual int Mission_Open();
-    virtual int Mission_Rescue();
-    virtual int Mission_Patrol();
-    virtual int Mission_ParaDropApproach();
-    virtual int Mission_ParaDropOverfly();
-    virtual int Mission_Wait();
-    virtual int Mission_SpyPlaneApproach();
-    virtual int Mission_SpyPlaneOverfly();
+    virtual int Mission_Missile(); // IDA: NOT_FOUND
+    virtual int Mission_Open(); // IDA: NOT_FOUND
+    virtual int Mission_Rescue(); // IDA: NOT_FOUND
+    virtual int Mission_Patrol(); // IDA: NOT_FOUND
+    virtual int Mission_ParaDropApproach(); // IDA: NOT_FOUND
+    virtual int Mission_ParaDropOverfly(); // IDA: NOT_FOUND
+    virtual int Mission_Wait(); // IDA: NOT_FOUND
+    virtual int Mission_SpyPlaneApproach(); // IDA: NOT_FOUND
+    virtual int Mission_SpyPlaneOverfly(); // IDA: NOT_FOUND
 
     int32_t     currentMission;
     int32_t     suspendedMission;

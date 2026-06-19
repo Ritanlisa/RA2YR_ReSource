@@ -30,7 +30,7 @@ public:
     static constexpr AbstractType AbsID = AbstractType::AnimType;
 
     static DynamicVectorClass<AnimTypeClass*>* Array;
-    static AnimTypeClass* Find(const char* pID);
+    static AnimTypeClass* Find(const char* pID); // IDA: NOT_FOUND
     static AnimTypeClass* FindOrAllocate(const char* pID);  // 0x428B80 (as FindOrCreate)
     static int FindIndex(const char* pID);  // 0x427CB0
 
@@ -44,7 +44,7 @@ public:
     virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override; // 0x428E90 (as StubReturnFalse)
     virtual ObjectClass* CreateObject(HouseClass* pOwner) override;  // 0x4737F0
 
-    virtual SHPStruct* LoadImage();
+    virtual SHPStruct* LoadImage(); // IDA: NOT_FOUND
     virtual void Load2DArt();  // 0x5F9070
 
     AnimTypeClass(const char* pID) noexcept;  // 0x427530 (as Construct)

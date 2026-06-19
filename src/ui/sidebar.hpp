@@ -107,26 +107,26 @@ public:
     static constexpr uint32_t kTooltipBufferSize = 0x42;
     static wchar_t TooltipBuffer[kTooltipBufferSize];
 
-    virtual ~SidebarClass() = default;
+    virtual ~SidebarClass() = default; // IDA: NOT_FOUND
 
     // IDA 0x6A6C30
     virtual void Draw(uint32_t flags) override = 0;  // 0x4C9C50
     // IDA 0x6A7590 (SwitchTab)
-    virtual bool OnTabClick(int32_t tabIndex) = 0;
+    virtual bool OnTabClick(int32_t tabIndex) = 0; // IDA: NOT_FOUND
 
     // IDA: inline — sets redraw flags, calls RedrawSidebar + Draw
-    void SidebarNeedsRepaint(int32_t mode = 0);
+    void SidebarNeedsRepaint(int32_t mode = 0); // IDA: NOT_FOUND
     // IDA 0x6A6300
     bool AddCameo(AbstractType absType, int32_t idxType);  // 0x6A6300
     // IDA 0x6A60A0
-    void RepaintSidebar(int32_t tab = 0);
+    void RepaintSidebar(int32_t tab = 0); // IDA: NOT_FOUND
     // IDA 0x6A6C30 (same as Draw)
-    void RedrawSidebar(int32_t mode);
+    void RedrawSidebar(int32_t mode); // IDA: NOT_FOUND
 
     // IDA 0x6ABC60
-    static int32_t GetObjectTabIdx(AbstractType absType, int32_t idxType, int32_t unused);
+    static int32_t GetObjectTabIdx(AbstractType absType, int32_t idxType, int32_t unused); // IDA: NOT_FOUND
     // IDA 0x6ABCD0
-    static int32_t GetObjectTabIdx(AbstractType absType, BuildCat buildCat, bool isNaval);
+    static int32_t GetObjectTabIdx(AbstractType absType, BuildCat buildCat, bool isNaval); // IDA: NOT_FOUND
 
     TabDataStruct    Tabs[kMaxTabs];            // 0x0000: 4 tabs * 3988 = 0x3E50 bytes (to 0x3E50)
     uint32_t         tabProductionFlashTimer;    // 0x3E50 (YRpp: 0x5394)

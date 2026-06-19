@@ -37,7 +37,7 @@ public:
     static DynamicVectorClass<InfantryTypeClass*>* Array;
     static InfantryTypeClass* Find(const char* pID);  // 0x772FA0
     static InfantryTypeClass* FindOrAllocate(const char* pID); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    static int FindIndex(const char* pID);
+    static int FindIndex(const char* pID); // IDA: NOT_FOUND
 
     virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override; // 0x524C70 (as GetClassIdentifier)
 

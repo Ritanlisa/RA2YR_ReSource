@@ -147,7 +147,7 @@ public:
     virtual void ConstructCells() {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual void PointerGotInvalid(AbstractClass* ptr, bool unk) {}  // IDA: 0x4A7900
     virtual bool DraggingInProgress() { return false; } // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual void UpdateCrates() {}
+    virtual void UpdateCrates() {} // IDA: NOT_FOUND
     virtual void CreateEmptyMap(const RectangleStruct& map_rect, bool reuse, int8_t n_level, bool unk2) {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual void SetVisibleRect(const RectangleStruct& map_rect) {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
@@ -156,10 +156,10 @@ public:
         return (map_coords.Y << 9) + map_coords.X;
     }
 
-    CellClass* TryGetCellAt(const CellStruct& map_coords) const;
-    CellClass* TryGetCellAt(const CoordStruct& crd) const;
-    CellClass* GetCellAt(const CellStruct& map_coords) const;
-    CellClass* GetCellAt(const CoordStruct& crd) const;
+    CellClass* TryGetCellAt(const CellStruct& map_coords) const; // IDA: NOT_FOUND
+    CellClass* TryGetCellAt(const CoordStruct& crd) const; // IDA: NOT_FOUND
+    CellClass* GetCellAt(const CellStruct& map_coords) const; // IDA: NOT_FOUND
+    CellClass* GetCellAt(const CoordStruct& crd) const; // IDA: NOT_FOUND
     bool CellExists(const CellStruct& map_coords) const;  // 0x5657E0
 
     int GetThreatPosed(const CellStruct& cell, HouseClass* house) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
@@ -189,7 +189,7 @@ public:
     static void FlashbangWarheadAt(int damage, WarheadTypeClass* wh, CoordStruct coords, bool force = false, int cl_disable_flags = 0); // IDA: UNMATCHED — no_callgraph_match, no_git_history
     static int GetTotalDamage(int damage, const WarheadTypeClass* warhead, Armor armor, int distance); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
-    int GetCellFloorHeight(const CoordStruct& crd) const;
+    int GetCellFloorHeight(const CoordStruct& crd) const; // IDA: NOT_FOUND
 
     CellStruct* PickCellOnEdge(CellStruct& buffer, Edge edge, const CellStruct& current_location, const CellStruct& fallback, SpeedType speed, bool validate_reachability, MovementZone mov_zone) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     CellStruct PickCellOnEdge(Edge edge, const CellStruct& current_location, const CellStruct& fallback, SpeedType speed, bool validate_reachability, MovementZone mov_zone) const // IDA: UNMATCHED — no_callgraph_match, no_git_history
@@ -199,7 +199,7 @@ public:
         return buffer;
     }
 
-    void UpdatePathfinding1();
+    void UpdatePathfinding1(); // IDA: NOT_FOUND
     void UpdatePathfinding2(const CellStruct* where, int count); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     CellStruct* PathfindingFind(CellStruct& out, const CellStruct& position, SpeedType speed, int a5, MovementZone mov_zone, bool alt, int space_size_x, int space_size_y, bool disallow_overlay, bool a11, bool require_burrowable, bool allow_bridge, const CellStruct& close_to, bool a15, bool buildable); // IDA: UNMATCHED — no_callgraph_match, no_git_history
@@ -211,7 +211,7 @@ public:
     }
 
     void AddContentAt(CellStruct* coords, TechnoClass* content); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    void RemoveContentAt(CellStruct* coords, TechnoClass* content);
+    void RemoveContentAt(CellStruct* coords, TechnoClass* content); // IDA: NOT_FOUND
 
     bool IsWithinUsableArea(const CellStruct& cell, bool check_level) const;  // 0x578460
     bool IsWithinUsableArea(CellClass* cell, bool check_level) const;  // IDA: 0x578460
@@ -233,7 +233,7 @@ public:
     void Reveal(HouseClass* house);  // 0x577D90
     void Reshroud(HouseClass* house);  // 0x50BD10
 
-    void RedrawSidebar(int mode);
+    void RedrawSidebar(int mode); // IDA: NOT_FOUND
     void SetTogglePowerMode(int mode); // IDA: UNMATCHED — no_callgraph_match, no_git_history
     void SetPlaceBeaconMode(int mode); // IDA: UNMATCHED — no_callgraph_match, no_git_history
     void SetSellMode(int mode); // IDA: UNMATCHED — no_callgraph_match, no_git_history
@@ -242,7 +242,7 @@ public:
     bool MakeTraversable(const ObjectClass* visitor, const CellStruct& cell) const;  // 0x452540
 
     // IDA 0x4F42F0 -- MapClass::MarkForRedraw (44B)
-    void MarkForRedraw(int flags) { (void)flags; /* TODO: full IDA translation */ }
+    void MarkForRedraw(int flags) { (void)flags; /* TODO: full IDA translation */ } // 0x4F42F0
 
     uint32_t                        unknown10;
     void*                           unknownPointer14;

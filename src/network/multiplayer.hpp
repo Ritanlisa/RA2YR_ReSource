@@ -101,7 +101,7 @@ class MPBattleClass : public MPGameModeClass
 {
 public:
     MPBattleClass() noexcept;
-    virtual ~MPBattleClass() = default;
+    virtual ~MPBattleClass() = default; // IDA: NOT_FOUND
     virtual bool IsTeamsAllowed() override;  // IDA: 0x5CB570
     virtual bool IsValidMap() override;  // IDA: 0x5CACF0
     virtual bool NeedsHouseSelection() override;  // IDA: 0x5CAD30
@@ -139,16 +139,16 @@ public:
     virtual bool IsMegawealthAllowed() override;  // IDA: 0x5D5900
     virtual void OnAIJoined() override;  // IDA: 0x5D5920
     virtual void OnAllCompleted() override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual int32_t GetScoreMode() override;
-    virtual void OnNewScenario() override;
-    virtual void OnInitGame(int32_t) override;
-    virtual void OnGameSpeedChanged(int32_t) override;
-    virtual bool IsGameOver() override;
-    virtual void OnEndOfFrame() override;
-    virtual void OnDrawDialog() override;
+    virtual int32_t GetScoreMode() override; // IDA: NOT_FOUND
+    virtual void OnNewScenario() override; // IDA: NOT_FOUND
+    virtual void OnInitGame(int32_t) override; // IDA: NOT_FOUND
+    virtual void OnGameSpeedChanged(int32_t) override; // IDA: NOT_FOUND
+    virtual bool IsGameOver() override; // IDA: NOT_FOUND
+    virtual void OnEndOfFrame() override; // IDA: NOT_FOUND
+    virtual void OnDrawDialog() override; // IDA: NOT_FOUND
     virtual bool IsDefeated(int32_t,void*,int32_t,int16_t,int32_t,int32_t,int32_t) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual int32_t IsWinner() override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual bool IsPlayerEliminated() override;
+    virtual bool IsPlayerEliminated() override; // IDA: NOT_FOUND
     virtual void CreateMPTeams(DynamicVectorClass<MPTeam*>*) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual CellStruct* AssignStartingPositionsToHouse(CellStruct*, int32_t, // IDA: UNMATCHED — no_callgraph_match, no_git_history
                         DynamicVectorClass<CellStruct>*, uint8_t*) override { return nullptr; }

@@ -21,7 +21,7 @@ class ParticleTypeClass : public ObjectTypeClass
 public:
     static constexpr AbstractType AbsID = AbstractType::ParticleType;
     static DynamicVectorClass<ParticleTypeClass*>* Array;
-    static ParticleTypeClass* Find(const char* pID);
+    static ParticleTypeClass* Find(const char* pID); // IDA: NOT_FOUND
     static ParticleTypeClass* FindOrAllocate(const char* pID); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     virtual ~ParticleTypeClass() = default;  // 0x645950 (as ddtor)

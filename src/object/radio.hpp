@@ -14,7 +14,7 @@ public:
     int32_t Count;
     int32_t Capacity;
 
-    constexpr VectorClass() noexcept : Items(nullptr), Count(0), Capacity(0) {}
+    constexpr VectorClass() noexcept : Items(nullptr), Count(0), Capacity(0) {} // IDA: NOT_FOUND
 };
 
 class RadioClass : public MissionClass {
@@ -27,7 +27,7 @@ public:
     virtual RadioCommand sendToFirstLink(RadioCommand command); // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual RadioCommand sendCommand(RadioCommand command, TechnoClass* recipient); // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual RadioCommand sendCommandWithData(RadioCommand command, AbstractClass*& inout, TechnoClass* recipient); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual void sendToEachLink(RadioCommand command);
+    virtual void sendToEachLink(RadioCommand command); // IDA: NOT_FOUND
 
     // IDA: 0x65AAC0 -- vt10: Remove a specific object from radio links
     virtual void ExecuteAction(TechnoClass* obj, bool clear);  // IDA: 0x65AAC0
@@ -46,7 +46,7 @@ public:
 
     TechnoClass* const& getNthLink(int idx = 0) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     bool hasFreeLink() const;  // 0x65ADC0
-    bool hasAnyLink() const;
+    bool hasAnyLink() const; // IDA: NOT_FOUND
 
     int32_t             lastCommands[3];
     VectorClass<TechnoClass*> radioLinks;

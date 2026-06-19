@@ -309,10 +309,10 @@ public:
     }
 
     // --- Accessors ---
-    uint32_t GetCount() const { return m_Count; }
-    uint32_t GetCapacity() const { return m_Capacity; }
+    uint32_t GetCount() const { return m_Count; } // IDA: NOT_FOUND
+    uint32_t GetCapacity() const { return m_Capacity; } // IDA: NOT_FOUND
     Entry** GetBuckets() { return m_Buckets; } // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    Entry* GetLastFound() const { return m_LastFound; }
+    Entry* GetLastFound() const { return m_LastFound; } // IDA: NOT_FOUND
 
 private:
     // Rebuild hash table to new capacity
@@ -423,7 +423,7 @@ inline bool HashTable<const char*, int>::CompareStringKey(const char* const& key
 class Hash
 {
 public:
-    Hash() : Hash_field_00(0), Hash_field_04(0) {}
+    Hash() : Hash_field_00(0), Hash_field_04(0) {} // IDA: NOT_FOUND
 
     // IDA 0x69D8C0
     static uint32_t ComputeHashSHA1(const void* data, uint32_t size);  // 0x476D80
@@ -451,22 +451,22 @@ public:
     SHA1() { Init(); } // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     // IDA 0x69D8C0
-    void Init();
+    void Init(); // IDA: NOT_FOUND
 
     // IDA 0x69DA00
-    void Process(const void* data, uint32_t size);
+    void Process(const void* data, uint32_t size);  // 0x69D960
 
     // IDA 0x69DC00
-    void Compute(uint8_t digest[20]);
+    void Compute(uint8_t digest[20]);  // 0x69D9E0
 
     // IDA 0x69D8C0 area
     void Transform();  // 0x69DB30
 
     // IDA 0x69D8C0 area
-    void PadMessage();
+    void PadMessage(); // IDA: NOT_FOUND
 
     // IDA 0x69D8C0 area
-    static void DigestToHex(const uint8_t digest[20], char hex[41]);
+    static void DigestToHex(const uint8_t digest[20], char hex[41]); // IDA: NOT_FOUND
 
     uint32_t    state[5];       // 0x00
     uint64_t    count;          // 0x14
@@ -484,7 +484,7 @@ public:
     CRC32() : m_CRC(0xFFFFFFFF), m_Count(0) {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     // IDA 0x69E000
-    static uint32_t Compute(const void* data, uint32_t size);
+    static uint32_t Compute(const void* data, uint32_t size);  // 0x4A1FB0
 
     uint32_t    m_CRC;          // 0x00
     uint32_t    m_Count;        // 0x04

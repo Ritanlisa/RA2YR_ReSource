@@ -25,13 +25,13 @@ public:
     // IDA 0x452820
     static int32_t GetWarheadSound(int32_t type);  // 0x41D7E0
     // IDA 0x452820 area
-    static void sub_452820();
+    static void sub_452820(); // IDA: NOT_FOUND
     // IDA 0x452820 area
     static void ApplyDamage(ObjectClass* target, int32_t damage, HouseClass* owner);  // 0x4690B0
     // IDA 0x452820 area
-    static bool IsLocomotor();
+    static bool IsLocomotor(); // IDA: NOT_FOUND
     // IDA 0x452820 area
-    static float GetVerses(int32_t armor);
+    static float GetVerses(int32_t armor); // IDA: NOT_FOUND
 
     static int32_t  s_WarheadType;  // 0x00
 };
@@ -46,9 +46,9 @@ public:
     // IDA 0x4D0180
     static void ApplyScatter(const CoordStruct& center, int32_t damage, int32_t radius, HouseClass* owner);  // 0x4CD600
     // IDA 0x4D0180 area
-    static void sub_4D0180();
+    static void sub_4D0180(); // IDA: NOT_FOUND
     // IDA 0x565660
-    static void sub_565660();
+    static void sub_565660(); // IDA: NOT_FOUND
 
     int32_t     DamageArea_field_00;       // 0x00
 };
@@ -67,9 +67,9 @@ public:
     // IDA 0x48B2A0 area
     void Seek();  // 0x5CB430
     // IDA 0x48B2A0 area
-    bool IsEnabled() const;
+    bool IsEnabled() const; // IDA: NOT_FOUND
     // IDA 0x48B2A0 area
-    void SetEnabled(bool enabled);
+    void SetEnabled(bool enabled); // IDA: NOT_FOUND
 
     bool        m_Enabled;      // 0x00
     uint8_t     _pad_01[3];     // 0x01
@@ -289,12 +289,12 @@ public:
     virtual ~TClassFactory_MechLocomotionClass() = default;  // 0x6C4D90
 
     // IClassFactory
-    virtual HRESULT __stdcall CreateInstance(IUnknown* pUnkOuter, const GUID& riid, void** ppv) override;
+    virtual HRESULT __stdcall CreateInstance(IUnknown* pUnkOuter, const GUID& riid, void** ppv) override; // IDA: NOT_FOUND
     virtual HRESULT __stdcall LockServer(bool fLock) override;  // 0x767010
     // IUnknown
     virtual HRESULT __stdcall QueryInterface(const GUID& riid, void** ppv) override;  // 0x55A9B0
     virtual ULONG __stdcall AddRef() override;  // 0x6C4D40
-    virtual ULONG __stdcall Release() override;
+    virtual ULONG __stdcall Release() override; // IDA: NOT_FOUND
 
     int32_t     m_RefCount;     // 0x04
 };
@@ -315,7 +315,7 @@ public:
     // IDA 0x48B2A0 area
     void* FindObject(ObjectClass* obj);  // 0x6E6FF0
     // IDA 0x48B2A0 area
-    void Add(ObjectClass* obj);
+    void Add(ObjectClass* obj); // IDA: NOT_FOUND
 
     void*       m_Queue;        // 0x00
     int32_t     m_Count;        // 0x04
@@ -352,8 +352,8 @@ public:
     int32_t AddRef();  // 0x40D230
     int32_t Release();  // 0x40D240
     bool StubReturnFalse();  // 0x4AEBD0
-    void Process();
-    void Clear();
+    void Process(); // IDA: NOT_FOUND
+    void Clear(); // IDA: NOT_FOUND
 
     int32_t     m_RefCount;     // 0x00
     int32_t     InputManager_ProcessEvents_field_04;       // 0x04
@@ -416,7 +416,7 @@ public:
 class AnimSequence
 {
 public:
-    virtual ~AnimSequence() = default;
+    virtual ~AnimSequence() = default; // IDA: NOT_FOUND
 
     virtual void Parse() {} // IDA: 0x523D00
 
@@ -425,7 +425,7 @@ public:
 class AnimTypeList
 {
 public:
-    virtual ~AnimTypeList() = default;
+    virtual ~AnimTypeList() = default; // IDA: NOT_FOUND
 
     virtual void Constructor() {} // IDA: 0x67A470
 
@@ -434,7 +434,7 @@ public:
 class AnimTypeVector
 {
 public:
-    virtual ~AnimTypeVector() = default;
+    virtual ~AnimTypeVector() = default; // IDA: NOT_FOUND
 
     virtual void Constructor() {} // IDA: 0x525680
 
@@ -443,7 +443,7 @@ public:
 class CSFClass
 {
 public:
-    virtual ~CSFClass() = default;
+    virtual ~CSFClass() = default; // IDA: NOT_FOUND
 
     virtual void CopyString() {} // IDA: 0x595710
     virtual void sub_6977C0() {} // IDA: 0x6977C0
@@ -456,7 +456,7 @@ public:
 class CaptureManager
 {
 public:
-    virtual ~CaptureManager() = default;
+    virtual ~CaptureManager() = default; // IDA: NOT_FOUND
 
     virtual void FreeAll() {} // IDA: 0x472140
 
@@ -465,7 +465,7 @@ public:
 class ChronoScreen
 {
 public:
-    virtual ~ChronoScreen() = default;
+    virtual ~ChronoScreen() = default; // IDA: NOT_FOUND
 
     virtual void IsActive() {} // IDA: 0x53BAD0
 
@@ -528,7 +528,7 @@ public:
 class CoordList
 {
 public:
-    virtual ~CoordList() = default;
+    virtual ~CoordList() = default; // IDA: NOT_FOUND
 
     virtual void GetBounds() {} // IDA: 0x4A94F0
 
@@ -537,7 +537,7 @@ public:
 class CoordinateTables
 {
 public:
-    virtual ~CoordinateTables() = default;
+    virtual ~CoordinateTables() = default; // IDA: NOT_FOUND
 
     virtual void Init() {} // IDA: 0x561910
 
@@ -546,7 +546,7 @@ public:
 class DamageAnimClass
 {
 public:
-    virtual ~DamageAnimClass() = default;
+    virtual ~DamageAnimClass() = default; // IDA: NOT_FOUND
 
     virtual void Constructor() {} // IDA: 0x7493B0
 
@@ -576,7 +576,7 @@ public:
 class ExplosionClass
 {
 public:
-    virtual ~ExplosionClass() = default;
+    virtual ~ExplosionClass() = default; // IDA: NOT_FOUND
 
     virtual void ProcessFrame() {} // IDA: 0x53CBE0
 
@@ -585,7 +585,7 @@ public:
 class FileExtension
 {
 public:
-    virtual ~FileExtension() = default;
+    virtual ~FileExtension() = default; // IDA: NOT_FOUND
 
     virtual void MapHandler() {} // IDA: 0x6263D0
     virtual void Constructor() {} // IDA: 0x628240
@@ -600,7 +600,7 @@ public:
 class FileFind
 {
 public:
-    virtual ~FileFind() = default;
+    virtual ~FileFind() = default; // IDA: NOT_FOUND
 
     virtual void Next() {} // IDA: 0x47B0C0
     virtual void CloseHandle() {} // IDA: 0x47B130
@@ -615,7 +615,7 @@ public:
 class FilePipe
 {
 public:
-    virtual ~FilePipe() = default;
+    virtual ~FilePipe() = default; // IDA: NOT_FOUND
 
     virtual void QueryInterface() {} // IDA: 0x477790
     virtual void Destructor() {} // IDA: 0x7BA420
@@ -630,7 +630,7 @@ public:
 class FileStraw
 {
 public:
-    virtual ~FileStraw() = default;
+    virtual ~FileStraw() = default; // IDA: NOT_FOUND
 
     virtual void Open() {} // IDA: 0x525A10
     virtual void Destructor() {} // IDA: 0x7BA590
@@ -641,7 +641,7 @@ public:
 class FileStraw_Destru
 {
 public:
-    virtual ~FileStraw_Destru() = default;
+    virtual ~FileStraw_Destru() = default; // IDA: NOT_FOUND
 
     virtual void QueryInterface() {} // IDA: 0x477770
     virtual void Release() {} // IDA: 0x7BA530
@@ -652,7 +652,7 @@ public:
 class FileTree
 {
 public:
-    virtual ~FileTree() = default;
+    virtual ~FileTree() = default; // IDA: NOT_FOUND
 
     virtual void CleanupAll() {} // IDA: 0x730100
 
@@ -661,7 +661,7 @@ public:
 class FileTreeNode
 {
 public:
-    virtual ~FileTreeNode() = default;
+    virtual ~FileTreeNode() = default; // IDA: NOT_FOUND
 
     virtual void Destroy() {} // IDA: 0x69E500
 
@@ -670,7 +670,7 @@ public:
 class InfantryTypeVector
 {
 public:
-    virtual ~InfantryTypeVector() = default;
+    virtual ~InfantryTypeVector() = default; // IDA: NOT_FOUND
 
     virtual void QueryInterface() {} // IDA: 0x512AE0
     virtual void Release() {} // IDA: 0x512C80
@@ -702,7 +702,7 @@ public:
 class IsoTile
 {
 public:
-    virtual ~IsoTile() = default;
+    virtual ~IsoTile() = default; // IDA: NOT_FOUND
 
     virtual void Decode16Bit() {} // IDA: 0x748750
     virtual void Decode8BitV2() {} // IDA: 0x748C30
@@ -717,7 +717,7 @@ public:
 class IsometricTileClass
 {
 public:
-    virtual ~IsometricTileClass() = default;
+    virtual ~IsometricTileClass() = default; // IDA: NOT_FOUND
 
     virtual void IsometricTileClass() {} // IDA: 0x543780
 
@@ -768,7 +768,7 @@ public:
 class MapCoords
 {
 public:
-    virtual ~MapCoords() = default;
+    virtual ~MapCoords() = default; // IDA: NOT_FOUND
 
     virtual void Init() {} // IDA: 0x6B5240
 
@@ -777,7 +777,7 @@ public:
 class MapData
 {
 public:
-    virtual ~MapData() = default;
+    virtual ~MapData() = default; // IDA: NOT_FOUND
 
     virtual void InitHeights() {} // IDA: 0x45B1C0
 
@@ -806,7 +806,7 @@ public:
 class MapPreview
 {
 public:
-    virtual ~MapPreview() = default;
+    virtual ~MapPreview() = default; // IDA: NOT_FOUND
 
     virtual void Check() {} // IDA: 0x5D63E0
     virtual void Upload() {} // IDA: 0x5E7EB0
@@ -817,7 +817,7 @@ public:
 class MapResourceClass
 {
 public:
-    virtual ~MapResourceClass() = default;
+    virtual ~MapResourceClass() = default; // IDA: NOT_FOUND
 
     virtual void Constructor() {} // IDA: 0x595740
 
@@ -826,7 +826,7 @@ public:
 class MapSeed
 {
 public:
-    virtual ~MapSeed() = default;
+    virtual ~MapSeed() = default; // IDA: NOT_FOUND
 
     virtual void CheckTileMatch() {} // IDA: 0x56D100
     virtual void IsInitialized() {} // IDA: 0x58B7D0
@@ -886,7 +886,7 @@ public:
 class Map_WorldDominationTour
 {
 public:
-    virtual ~Map_WorldDominationTour() = default;
+    virtual ~Map_WorldDominationTour() = default; // IDA: NOT_FOUND
 
     virtual void QueryInterface() {} // IDA: 0x769C00
 
@@ -932,7 +932,7 @@ public:
 class PlacementList
 {
 public:
-    virtual ~PlacementList() = default;
+    virtual ~PlacementList() = default; // IDA: NOT_FOUND
 
     virtual void FindByID() {} // IDA: 0x47C4D0
     virtual void FindByType() {} // IDA: 0x47EBF0
@@ -980,7 +980,7 @@ public:
 class ScoreAnimClass
 {
 public:
-    virtual ~ScoreAnimClass() = default;
+    virtual ~ScoreAnimClass() = default; // IDA: NOT_FOUND
 
     virtual void sub_690C00() {} // IDA: 0x690C00
     virtual void AnimateText() {} // IDA: 0x690D60
@@ -1001,7 +1001,7 @@ public:
 class ScoreBoard
 {
 public:
-    virtual ~ScoreBoard() = default;
+    virtual ~ScoreBoard() = default; // IDA: NOT_FOUND
 
     virtual void Render() {} // IDA: 0x542620
 
@@ -1010,7 +1010,7 @@ public:
 class ScoreClass
 {
 public:
-    virtual ~ScoreClass() = default;
+    virtual ~ScoreClass() = default; // IDA: NOT_FOUND
 
     virtual void SetState() {} // IDA: 0x5CD3C0
 
@@ -1019,7 +1019,7 @@ public:
 class ScoreFontClass
 {
 public:
-    virtual ~ScoreFontClass() = default;
+    virtual ~ScoreFontClass() = default; // IDA: NOT_FOUND
 
     virtual void Release() {} // IDA: 0x6907A0
     virtual void AddRef() {} // IDA: 0x6907E0
@@ -1034,7 +1034,7 @@ public:
 class ScoreScreen
 {
 public:
-    virtual ~ScoreScreen() = default;
+    virtual ~ScoreScreen() = default; // IDA: NOT_FOUND
 
     virtual void Display() {} // IDA: 0x68CD20
     virtual void Check() {} // IDA: 0x68EC00
@@ -1057,7 +1057,7 @@ public:
 class ScoreScreenClass
 {
 public:
-    virtual ~ScoreScreenClass() = default;
+    virtual ~ScoreScreenClass() = default; // IDA: NOT_FOUND
 
     virtual void ProcessFrame() {} // IDA: 0x691970
 
@@ -1066,7 +1066,7 @@ public:
 class ScoreText
 {
 public:
-    virtual ~ScoreText() = default;
+    virtual ~ScoreText() = default; // IDA: NOT_FOUND
 
     virtual void ShowAlt() {} // IDA: 0x76EA20
     virtual void Show() {} // IDA: 0x76EAF0
@@ -1077,7 +1077,7 @@ public:
 class ShroudClass
 {
 public:
-    virtual ~ShroudClass() = default;
+    virtual ~ShroudClass() = default; // IDA: NOT_FOUND
 
     virtual void UpdateVisibility() {} // IDA: 0x567230
     virtual void Reset() {} // IDA: 0x577AB0
@@ -1088,7 +1088,7 @@ public:
 class SpawnControlVector
 {
 public:
-    virtual ~SpawnControlVector() = default;
+    virtual ~SpawnControlVector() = default; // IDA: NOT_FOUND
 
     virtual void Constructor() {} // IDA: 0x6B8880
 
@@ -1097,7 +1097,7 @@ public:
 class SuperClassVector
 {
 public:
-    virtual ~SuperClassVector() = default;
+    virtual ~SuperClassVector() = default; // IDA: NOT_FOUND
 
     virtual void Construct() {} // IDA: 0x510500
 
@@ -1106,7 +1106,7 @@ public:
 class SuperWeaponClass
 {
 public:
-    virtual ~SuperWeaponClass() = default;
+    virtual ~SuperWeaponClass() = default; // IDA: NOT_FOUND
 
     virtual void LoadFromSaveStream() {} // IDA: 0x539890
     virtual void ProcessCharged() {} // IDA: 0x6C5640
@@ -1204,7 +1204,7 @@ public:
 class TeamTypeVector
 {
 public:
-    virtual ~TeamTypeVector() = default;
+    virtual ~TeamTypeVector() = default; // IDA: NOT_FOUND
 
     virtual void CopyConstruct() {} // IDA: 0x50E830
 
@@ -1238,7 +1238,7 @@ public:
 class ActionQueue
 {
 public:
-    virtual ~ActionQueue() = default;
+    virtual ~ActionQueue() = default; // IDA: NOT_FOUND
 
     virtual void PushEntry() {} // IDA: 0x53CB10
 
@@ -1256,7 +1256,7 @@ public:
 class AircraftTrackerClass
 {
 public:
-    virtual ~AircraftTrackerClass() = default;
+    virtual ~AircraftTrackerClass() = default; // IDA: NOT_FOUND
 
     virtual void FillCurrentVector() {} // IDA: 0x412B40
 
@@ -1265,7 +1265,7 @@ public:
 class AircraftTypeVector
 {
 public:
-    virtual ~AircraftTypeVector() = default;
+    virtual ~AircraftTypeVector() = default; // IDA: NOT_FOUND
 
     virtual void Constructor() {} // IDA: 0x513990
 
@@ -1297,7 +1297,7 @@ public:
 class AngerVector
 {
 public:
-    virtual ~AngerVector() = default;
+    virtual ~AngerVector() = default; // IDA: NOT_FOUND
 
     virtual void Construct() {} // IDA: 0x5106E0
 
@@ -1306,7 +1306,7 @@ public:
 class AppState
 {
 public:
-    virtual ~AppState() = default;
+    virtual ~AppState() = default; // IDA: NOT_FOUND
 
     virtual void CallMethod() {} // IDA: 0x5F3320
 
@@ -1315,7 +1315,7 @@ public:
 class ArcTan
 {
 public:
-    virtual ~ArcTan() = default;
+    virtual ~ArcTan() = default; // IDA: NOT_FOUND
 
     virtual void Update() {} // IDA: 0x7492B0
 
@@ -1324,7 +1324,7 @@ public:
 class ArmorType
 {
 public:
-    virtual ~ArmorType() = default;
+    virtual ~ArmorType() = default; // IDA: NOT_FOUND
 
     virtual void FindIndex() {} // IDA: 0x4753F0
     virtual void LookupByName() {} // IDA: 0x772A50
@@ -1404,7 +1404,7 @@ public:
 class BinkMovieClass
 {
 public:
-    virtual ~BinkMovieClass() = default;
+    virtual ~BinkMovieClass() = default; // IDA: NOT_FOUND
 
     virtual void SetPosition() {} // IDA: 0x433180
     virtual void RenderFrameToSurface() {} // IDA: 0x4333F0
@@ -1421,7 +1421,7 @@ public:
 class BlowPipe
 {
 public:
-    virtual ~BlowPipe() = default;
+    virtual ~BlowPipe() = default; // IDA: NOT_FOUND
 
     virtual void Draw() {} // IDA: 0x438000
     virtual void DrawAlt() {} // IDA: 0x438030
@@ -1451,7 +1451,7 @@ public:
 class BoolVector
 {
 public:
-    virtual ~BoolVector() = default;
+    virtual ~BoolVector() = default; // IDA: NOT_FOUND
 
     virtual void Construct() {} // IDA: 0x510920
 
@@ -1460,7 +1460,7 @@ public:
 class BridgeClass
 {
 public:
-    virtual ~BridgeClass() = default;
+    virtual ~BridgeClass() = default; // IDA: NOT_FOUND
 
     virtual void GetCellData() {} // IDA: 0x42E820
 
@@ -1469,7 +1469,7 @@ public:
 class BuildLocation
 {
 public:
-    virtual ~BuildLocation() = default;
+    virtual ~BuildLocation() = default; // IDA: NOT_FOUND
 
     virtual void InitCandidate() {} // IDA: 0x50E450
 
@@ -1478,7 +1478,7 @@ public:
 class BuildLocationVector
 {
 public:
-    virtual ~BuildLocationVector() = default;
+    virtual ~BuildLocationVector() = default; // IDA: NOT_FOUND
 
     virtual void Grow() {} // IDA: 0x510860
 
@@ -1522,7 +1522,7 @@ public:
 class CCToolTip
 {
 public:
-    virtual ~CCToolTip() = default;
+    virtual ~CCToolTip() = default; // IDA: NOT_FOUND
 
     virtual void CalculatePopupPosition() {} // IDA: 0x478BA0
     virtual void Release() {} // IDA: 0x478DB0
@@ -1541,7 +1541,7 @@ public:
 class CChatEventSink
 {
 public:
-    virtual ~CChatEventSink() = default;
+    virtual ~CChatEventSink() = default; // IDA: NOT_FOUND
 
     virtual void HandleServerList() {} // IDA: 0x7A41C0
     virtual void HandleChatEvent() {} // IDA: 0x7A5890
@@ -1578,7 +1578,7 @@ public:
 class CarryoverClass
 {
 public:
-    virtual ~CarryoverClass() = default;
+    virtual ~CarryoverClass() = default; // IDA: NOT_FOUND
 
     virtual void QueryInterface() {} // IDA: 0x473920
 
@@ -1596,7 +1596,7 @@ public:
 class CellCoord
 {
 public:
-    virtual ~CellCoord() = default;
+    virtual ~CellCoord() = default; // IDA: NOT_FOUND
 
     virtual void To_CellObj() {} // IDA: 0x5657A0
 
@@ -1605,7 +1605,7 @@ public:
 class CellLand
 {
 public:
-    virtual ~CellLand() = default;
+    virtual ~CellLand() = default; // IDA: NOT_FOUND
 
     virtual void IsBuildable() {} // IDA: 0x4863D0
 
@@ -1614,7 +1614,7 @@ public:
 class CellSystem
 {
 public:
-    virtual ~CellSystem() = default;
+    virtual ~CellSystem() = default; // IDA: NOT_FOUND
 
     virtual void UpdateVisibility() {} // IDA: 0x578100
 
@@ -1643,7 +1643,7 @@ public:
 class ChatDialog
 {
 public:
-    virtual ~ChatDialog() = default;
+    virtual ~ChatDialog() = default; // IDA: NOT_FOUND
 
     virtual void DlgProc() {} // IDA: 0x79DB50
 
@@ -1652,7 +1652,7 @@ public:
 class ChatEvent
 {
 public:
-    virtual ~ChatEvent() = default;
+    virtual ~ChatEvent() = default; // IDA: NOT_FOUND
 
     virtual void ProcessStrings() {} // IDA: 0x6B9740
 
@@ -1661,7 +1661,7 @@ public:
 class ClassFactory_CStream
 {
 public:
-    virtual ~ClassFactory_CStream() = default;
+    virtual ~ClassFactory_CStream() = default; // IDA: NOT_FOUND
 
     virtual void Construct() {} // IDA: 0x6BEE40
 
@@ -1670,7 +1670,7 @@ public:
 class ClassFactory_Wave
 {
 public:
-    virtual ~ClassFactory_Wave() = default;
+    virtual ~ClassFactory_Wave() = default; // IDA: NOT_FOUND
 
     virtual void Construct() {} // IDA: 0x6BEFC0
 
@@ -1737,7 +1737,7 @@ public:
 class Conflict_WorldDominationTour
 {
 public:
-    virtual ~Conflict_WorldDominationTour() = default;
+    virtual ~Conflict_WorldDominationTour() = default; // IDA: NOT_FOUND
 
     virtual void QueryInterface() {} // IDA: 0x7667A0
 
@@ -1768,7 +1768,7 @@ public:
 class ConnectionPointVector
 {
 public:
-    virtual ~ConnectionPointVector() = default;
+    virtual ~ConnectionPointVector() = default; // IDA: NOT_FOUND
 
     virtual void Construct() {} // IDA: 0x5105F0
 
@@ -1777,7 +1777,7 @@ public:
 class CrateClass
 {
 public:
-    virtual ~CrateClass() = default;
+    virtual ~CrateClass() = default; // IDA: NOT_FOUND
 
     virtual void ProcessPickup() {} // IDA: 0x481A00
     virtual void Update() {} // IDA: 0x56BBE0
@@ -1808,7 +1808,7 @@ public:
 class DListNode
 {
 public:
-    virtual ~DListNode() = default;
+    virtual ~DListNode() = default; // IDA: NOT_FOUND
 
     virtual void Init() {} // IDA: 0x4072C0
     virtual void InitEmpty() {} // IDA: 0x4072D0
@@ -1819,7 +1819,7 @@ public:
 class Dial8Class
 {
 public:
-    virtual ~Dial8Class() = default;
+    virtual ~Dial8Class() = default; // IDA: NOT_FOUND
 
     virtual void Constructor() {} // IDA: 0x4A53B0
     virtual void SetValue() {} // IDA: 0x4A5660
@@ -1858,7 +1858,7 @@ public:
 class DiskSpace
 {
 public:
-    virtual ~DiskSpace() = default;
+    virtual ~DiskSpace() = default; // IDA: NOT_FOUND
 
     virtual void CheckAvailable() {} // IDA: 0x48DD50
 
@@ -1867,7 +1867,7 @@ public:
 class DistributionVector_BuildingType
 {
 public:
-    virtual ~DistributionVector_BuildingType() = default;
+    virtual ~DistributionVector_BuildingType() = default; // IDA: NOT_FOUND
 
     virtual void Construct() {} // IDA: 0x510970
 
@@ -1876,7 +1876,7 @@ public:
 class DynamicArray
 {
 public:
-    virtual ~DynamicArray() = default;
+    virtual ~DynamicArray() = default; // IDA: NOT_FOUND
 
     virtual void AddFromList() {} // IDA: 0x4129C0
     virtual void Resize() {} // IDA: 0x6249A0
@@ -1893,7 +1893,7 @@ public:
 class DynamicClass
 {
 public:
-    virtual ~DynamicClass() = default;
+    virtual ~DynamicClass() = default; // IDA: NOT_FOUND
 
     virtual void Insert() {} // IDA: 0x7ACA00
 
@@ -1902,7 +1902,7 @@ public:
 class DynamicStringArray
 {
 public:
-    virtual ~DynamicStringArray() = default;
+    virtual ~DynamicStringArray() = default; // IDA: NOT_FOUND
 
     virtual void Get() {} // IDA: 0x7ACE30
 
@@ -1911,7 +1911,7 @@ public:
 class DynamicVectorArray
 {
 public:
-    virtual ~DynamicVectorArray() = default;
+    virtual ~DynamicVectorArray() = default; // IDA: NOT_FOUND
 
     virtual void Constructor() {} // IDA: 0x628070
 
@@ -1920,7 +1920,7 @@ public:
 class ErrorCode
 {
 public:
-    virtual ~ErrorCode() = default;
+    virtual ~ErrorCode() = default; // IDA: NOT_FOUND
 
     virtual void Map() {} // IDA: 0x46F5E0
 
@@ -1929,7 +1929,7 @@ public:
 class Exception
 {
 public:
-    virtual ~Exception() = default;
+    virtual ~Exception() = default; // IDA: NOT_FOUND
 
     virtual void Destructor() {} // IDA: 0x7D2F41
 
@@ -1938,7 +1938,7 @@ public:
 class ExceptionHandler
 {
 public:
-    virtual ~ExceptionHandler() = default;
+    virtual ~ExceptionHandler() = default; // IDA: NOT_FOUND
 
     virtual void GenerateReport() {} // IDA: 0x4C85E0
 
@@ -1994,7 +1994,7 @@ public:
 class GaugeClass
 {
 public:
-    virtual ~GaugeClass() = default;
+    virtual ~GaugeClass() = default; // IDA: NOT_FOUND
 
     virtual void SetValue() {} // IDA: 0x4E2580
     virtual void GetValue() {} // IDA: 0x4E25A0
@@ -2015,7 +2015,7 @@ public:
 class GenericVector
 {
 public:
-    virtual ~GenericVector() = default;
+    virtual ~GenericVector() = default; // IDA: NOT_FOUND
 
     virtual void StubReturnFalse() {} // IDA: 0x40CC10
     virtual void Resize() {} // IDA: 0x40CE50
@@ -2055,7 +2055,7 @@ public:
 class GlobalArray
 {
 public:
-    virtual ~GlobalArray() = default;
+    virtual ~GlobalArray() = default; // IDA: NOT_FOUND
 
     virtual void FindString() {} // IDA: 0x422B20
 
@@ -2064,7 +2064,7 @@ public:
 class GlobalInit
 {
 public:
-    virtual ~GlobalInit() = default;
+    virtual ~GlobalInit() = default; // IDA: NOT_FOUND
 
     virtual void RegisterSingleton() {} // IDA: 0x5F7640
     virtual void SingletonGetter() {} // IDA: 0x71DE40
@@ -2075,7 +2075,7 @@ public:
 class GroupLabel
 {
 public:
-    virtual ~GroupLabel() = default;
+    virtual ~GroupLabel() = default; // IDA: NOT_FOUND
 
     virtual void WndProc() {} // IDA: 0x61E700
 
@@ -2113,7 +2113,7 @@ public:
 class History_WorldDominationTour
 {
 public:
-    virtual ~History_WorldDominationTour() = default;
+    virtual ~History_WorldDominationTour() = default; // IDA: NOT_FOUND
 
     virtual void QueryInterface() {} // IDA: 0x767C10
 
@@ -2131,7 +2131,7 @@ public:
 class INISectionList
 {
 public:
-    virtual ~INISectionList() = default;
+    virtual ~INISectionList() = default; // IDA: NOT_FOUND
 
     virtual void Constructor() {} // IDA: 0x49E8E0
 
@@ -2179,7 +2179,7 @@ public:
 class IntDynamicVector
 {
 public:
-    virtual ~IntDynamicVector() = default;
+    virtual ~IntDynamicVector() = default; // IDA: NOT_FOUND
 
     virtual void QueryInterface() {} // IDA: 0x477B10
     virtual void Construct() {} // IDA: 0x717BD0
@@ -2201,7 +2201,7 @@ public:
 class IsRandMap
 {
 public:
-    virtual ~IsRandMap() = default;
+    virtual ~IsRandMap() = default; // IDA: NOT_FOUND
 
     virtual void Sed() {} // IDA: 0x69ADF0
     virtual void Sed2() {} // IDA: 0x69AE70
@@ -2221,7 +2221,7 @@ public:
 class KeywordClass
 {
 public:
-    virtual ~KeywordClass() = default;
+    virtual ~KeywordClass() = default; // IDA: NOT_FOUND
 
     virtual void FindOrCreate() {} // IDA: 0x41CEF0
 
@@ -2230,7 +2230,7 @@ public:
 class KeywordType
 {
 public:
-    virtual ~KeywordType() = default;
+    virtual ~KeywordType() = default; // IDA: NOT_FOUND
 
     virtual void FindOrCreate2() {} // IDA: 0x524CB0
 
@@ -2263,7 +2263,7 @@ public:
 class LCWPipe_Destru
 {
 public:
-    virtual ~LCWPipe_Destru() = default;
+    virtual ~LCWPipe_Destru() = default; // IDA: NOT_FOUND
 
     virtual void AddRef() {} // IDA: 0x5522D0
     virtual void QueryInterface() {} // IDA: 0x552390
@@ -2285,7 +2285,7 @@ public:
 class LCWStraw_Destru
 {
 public:
-    virtual ~LCWStraw_Destru() = default;
+    virtual ~LCWStraw_Destru() = default; // IDA: NOT_FOUND
 
     virtual void QueryInterface() {} // IDA: 0x5525F0
 
@@ -2305,7 +2305,7 @@ public:
 class LZOPipe_Destru
 {
 public:
-    virtual ~LZOPipe_Destru() = default;
+    virtual ~LZOPipe_Destru() = default; // IDA: NOT_FOUND
 
     virtual void AddRef() {} // IDA: 0x55C5E0
     virtual void QueryInterface() {} // IDA: 0x55C6D0
@@ -2327,7 +2327,7 @@ public:
 class LZOStraw_Destru
 {
 public:
-    virtual ~LZOStraw_Destru() = default;
+    virtual ~LZOStraw_Destru() = default; // IDA: NOT_FOUND
 
     virtual void QueryInterface() {} // IDA: 0x55C990
 
@@ -2358,7 +2358,7 @@ public:
 class MIXClass
 {
 public:
-    virtual ~MIXClass() = default;
+    virtual ~MIXClass() = default; // IDA: NOT_FOUND
 
     virtual void CopyHeader() {} // IDA: 0x4A8D50
 
@@ -2367,7 +2367,7 @@ public:
 class MPCombatTeam
 {
 public:
-    virtual ~MPCombatTeam() = default;
+    virtual ~MPCombatTeam() = default; // IDA: NOT_FOUND
 
     virtual void Constructor() {} // IDA: 0x5C9470
     virtual void MPTeam() {} // IDA: 0x5CAE10
@@ -2382,7 +2382,7 @@ public:
 class MPScore
 {
 public:
-    virtual ~MPScore() = default;
+    virtual ~MPScore() = default; // IDA: NOT_FOUND
 
     virtual void DlgProc() {} // IDA: 0x5C9B10
 
@@ -2391,7 +2391,7 @@ public:
 class MSAnim
 {
 public:
-    virtual ~MSAnim() = default;
+    virtual ~MSAnim() = default; // IDA: NOT_FOUND
 
     virtual void GetField() {} // IDA: 0x5CB840
     virtual void SetField() {} // IDA: 0x5CB860
@@ -2404,7 +2404,7 @@ public:
 class MSBinkAnim
 {
 public:
-    virtual ~MSBinkAnim() = default;
+    virtual ~MSBinkAnim() = default; // IDA: NOT_FOUND
 
     virtual void Pause() {} // IDA: 0x5CC850
     virtual void Stop() {} // IDA: 0x5CC880
@@ -2421,7 +2421,7 @@ public:
 class MSBitPrintAnim
 {
 public:
-    virtual ~MSBitPrintAnim() = default;
+    virtual ~MSBitPrintAnim() = default; // IDA: NOT_FOUND
 
     virtual void Construct() {} // IDA: 0x5CD330
     virtual void Update() {} // IDA: 0x5CD3D0
@@ -2440,7 +2440,7 @@ public:
 class MSChoiceClass
 {
 public:
-    virtual ~MSChoiceClass() = default;
+    virtual ~MSChoiceClass() = default; // IDA: NOT_FOUND
 
     virtual void LoadFromINI() {} // IDA: 0x5CF8E0
     virtual void DeleteAndZero() {} // IDA: 0x5D0290
@@ -2451,7 +2451,7 @@ public:
 class MSEngine_Destru
 {
 public:
-    virtual ~MSEngine_Destru() = default;
+    virtual ~MSEngine_Destru() = default; // IDA: NOT_FOUND
 
     virtual void CheckStringNotEmpty() {} // IDA: 0x5AE4C0
     virtual void StubReturnFalse() {} // IDA: 0x5AE590
@@ -2487,7 +2487,7 @@ public:
 class MSOverlayAnim
 {
 public:
-    virtual ~MSOverlayAnim() = default;
+    virtual ~MSOverlayAnim() = default; // IDA: NOT_FOUND
 
     virtual void Load() {} // IDA: 0x5CB880
     virtual void Draw() {} // IDA: 0x5CBB80
@@ -2507,7 +2507,7 @@ public:
 class MSPCXAnim
 {
 public:
-    virtual ~MSPCXAnim() = default;
+    virtual ~MSPCXAnim() = default; // IDA: NOT_FOUND
 
     virtual void Construct() {} // IDA: 0x5CE640
     virtual void Load() {} // IDA: 0x5CE7D0
@@ -2527,7 +2527,7 @@ public:
 class MSPrintAnim
 {
 public:
-    virtual ~MSPrintAnim() = default;
+    virtual ~MSPrintAnim() = default; // IDA: NOT_FOUND
 
     virtual void SetText() {} // IDA: 0x5CDC50
     virtual void Draw() {} // IDA: 0x5CDEE0
@@ -2546,7 +2546,7 @@ public:
 class MSSfxClass
 {
 public:
-    virtual ~MSSfxClass() = default;
+    virtual ~MSSfxClass() = default; // IDA: NOT_FOUND
 
     virtual void FindByName() {} // IDA: 0x76EBE0
 
@@ -2566,7 +2566,7 @@ public:
 class MSVQAnim
 {
 public:
-    virtual ~MSVQAnim() = default;
+    virtual ~MSVQAnim() = default; // IDA: NOT_FOUND
 
     virtual void Construct() {} // IDA: 0x5CCA20
     virtual void ConstructMSVQAnimHidden() {} // IDA: 0x5CCC30
@@ -2607,7 +2607,7 @@ public:
 class MiniMap
 {
 public:
-    virtual ~MiniMap() = default;
+    virtual ~MiniMap() = default; // IDA: NOT_FOUND
 
     virtual void Render() {} // IDA: 0x641140
     virtual void SavePreviewToINI() {} // IDA: 0x6418B0
@@ -2618,7 +2618,7 @@ public:
 class MovieClass
 {
 public:
-    virtual ~MovieClass() = default;
+    virtual ~MovieClass() = default; // IDA: NOT_FOUND
 
     virtual void ReadConfig() {} // IDA: 0x5C23B0
     virtual void Create() {} // IDA: 0x5C3EC0
@@ -2646,7 +2646,7 @@ public:
 class MultiMissionVector
 {
 public:
-    virtual ~MultiMissionVector() = default;
+    virtual ~MultiMissionVector() = default; // IDA: NOT_FOUND
 
     virtual void Constructor() {} // IDA: 0x5EF0B0
 
@@ -2703,7 +2703,7 @@ public:
 class ObjectManager
 {
 public:
-    virtual ~ObjectManager() = default;
+    virtual ~ObjectManager() = default; // IDA: NOT_FOUND
 
     virtual void InitMessageList() {} // IDA: 0x5D3A40
     virtual void CleanupArrays() {} // IDA: 0x697840
@@ -2714,7 +2714,7 @@ public:
 class ObjectPlacement
 {
 public:
-    virtual ~ObjectPlacement() = default;
+    virtual ~ObjectPlacement() = default; // IDA: NOT_FOUND
 
     virtual void CalcPosition() {} // IDA: 0x481180
     virtual void CalcPosition_Wrapper() {} // IDA: 0x4ACA10
@@ -2725,7 +2725,7 @@ public:
 class ObjectPtr
 {
 public:
-    virtual ~ObjectPtr() = default;
+    virtual ~ObjectPtr() = default; // IDA: NOT_FOUND
 
     virtual void RegisterForTracking() {} // IDA: 0x6CF240
 
@@ -2753,7 +2753,7 @@ public:
 class ObserverClass
 {
 public:
-    virtual ~ObserverClass() = default;
+    virtual ~ObserverClass() = default; // IDA: NOT_FOUND
 
     virtual void FindStartingCell() {} // IDA: 0x5D6890
 
@@ -2780,7 +2780,7 @@ public:
 class OreManagerClass
 {
 public:
-    virtual ~OreManagerClass() = default;
+    virtual ~OreManagerClass() = default; // IDA: NOT_FOUND
 
     virtual void AssignMinerToRefinery() {} // IDA: 0x71AF20
 
@@ -2789,7 +2789,7 @@ public:
 class OwnerDrawControl
 {
 public:
-    virtual ~OwnerDrawControl() = default;
+    virtual ~OwnerDrawControl() = default; // IDA: NOT_FOUND
 
     virtual void InitVtable() {} // IDA: 0x624130
 
@@ -2798,7 +2798,7 @@ public:
 class PKStrawClass
 {
 public:
-    virtual ~PKStrawClass() = default;
+    virtual ~PKStrawClass() = default; // IDA: NOT_FOUND
 
     virtual void Initialize() {} // IDA: 0x633050
     virtual void RelayBlowfishKey() {} // IDA: 0x6330C0
@@ -2811,7 +2811,7 @@ public:
 class PacketQueue
 {
 public:
-    virtual ~PacketQueue() = default;
+    virtual ~PacketQueue() = default; // IDA: NOT_FOUND
 
     virtual void ExtractEntry() {} // IDA: 0x48B570
     virtual void ReleaseEntry() {} // IDA: 0x48B890
@@ -2833,7 +2833,7 @@ public:
 class PhoneEditor
 {
 public:
-    virtual ~PhoneEditor() = default;
+    virtual ~PhoneEditor() = default; // IDA: NOT_FOUND
 
     virtual void PopulateList() {} // IDA: 0x631060
 
@@ -2842,7 +2842,7 @@ public:
 class PingPongBuffer
 {
 public:
-    virtual ~PingPongBuffer() = default;
+    virtual ~PingPongBuffer() = default; // IDA: NOT_FOUND
 
     virtual void GetWriteOffset() {} // IDA: 0x55AF60
 
@@ -2866,7 +2866,7 @@ public:
 class PlanManager
 {
 public:
-    virtual ~PlanManager() = default;
+    virtual ~PlanManager() = default; // IDA: NOT_FOUND
 
     virtual void Notify() {} // IDA: 0x63A230
 
@@ -2875,7 +2875,7 @@ public:
 class PowerBar
 {
 public:
-    virtual ~PowerBar() = default;
+    virtual ~PowerBar() = default; // IDA: NOT_FOUND
 
     virtual void CalcFill() {} // IDA: 0x63F850
     virtual void ComputeFill() {} // IDA: 0x63F960
@@ -2886,7 +2886,7 @@ public:
 class PreviewClass
 {
 public:
-    virtual ~PreviewClass() = default;
+    virtual ~PreviewClass() = default; // IDA: NOT_FOUND
 
     virtual void ReadPreview() {} // IDA: 0x641EE0
     virtual void RenderMapPreview() {} // IDA: 0x689D30
@@ -2897,7 +2897,7 @@ public:
 class PriQueue
 {
 public:
-    virtual ~PriQueue() = default;
+    virtual ~PriQueue() = default; // IDA: NOT_FOUND
 
     virtual void GetItemPtr() {} // IDA: 0x5D4400
 
@@ -2906,7 +2906,7 @@ public:
 class PrintTimerOnTactical
 {
 public:
-    virtual ~PrintTimerOnTactical() = default;
+    virtual ~PrintTimerOnTactical() = default; // IDA: NOT_FOUND
 
     virtual void Start() {} // IDA: 0x6D4B50
 
@@ -2915,7 +2915,7 @@ public:
 class PriorityQueue
 {
 public:
-    virtual ~PriorityQueue() = default;
+    virtual ~PriorityQueue() = default; // IDA: NOT_FOUND
 
     virtual void Pop() {} // IDA: 0x5AC960
     virtual void Add() {} // IDA: 0x5D1C20
@@ -2926,7 +2926,7 @@ public:
 class ProductionClass
 {
 public:
-    virtual ~ProductionClass() = default;
+    virtual ~ProductionClass() = default; // IDA: NOT_FOUND
 
     virtual void StartTimer() {} // IDA: 0x4C9EA0
 
@@ -2935,7 +2935,7 @@ public:
 class ProductionQueue
 {
 public:
-    virtual ~ProductionQueue() = default;
+    virtual ~ProductionQueue() = default; // IDA: NOT_FOUND
 
     virtual void CompleteOrCancel() {} // IDA: 0x4CA1A0
 
@@ -2944,7 +2944,7 @@ public:
 class ProjectileTrail
 {
 public:
-    virtual ~ProjectileTrail() = default;
+    virtual ~ProjectileTrail() = default; // IDA: NOT_FOUND
 
     virtual void ComputeRenderData() {} // IDA: 0x659AC0
 
@@ -2964,7 +2964,7 @@ public:
 class PushCommandClass
 {
 public:
-    virtual ~PushCommandClass() = default;
+    virtual ~PushCommandClass() = default; // IDA: NOT_FOUND
 
     virtual void Execute() {} // IDA: 0x6D09C0
 
@@ -2982,7 +2982,7 @@ public:
 class ReinforcementClass
 {
 public:
-    virtual ~ReinforcementClass() = default;
+    virtual ~ReinforcementClass() = default; // IDA: NOT_FOUND
 
     virtual void CreateObject() {} // IDA: 0x4737F0
 
@@ -3002,7 +3002,7 @@ public:
 class SHPClass
 {
 public:
-    virtual ~SHPClass() = default;
+    virtual ~SHPClass() = default; // IDA: NOT_FOUND
 
     virtual void Load() {} // IDA: 0x642C20
 
@@ -3011,7 +3011,7 @@ public:
 class SafeDelete
 {
 public:
-    virtual ~SafeDelete() = default;
+    virtual ~SafeDelete() = default; // IDA: NOT_FOUND
 
     virtual void Conditional() {} // IDA: 0x5C0EB0
     virtual void Ptr() {} // IDA: 0x7B7040
@@ -3031,7 +3031,7 @@ public:
 class ScalarDtor
 {
 public:
-    virtual ~ScalarDtor() = default;
+    virtual ~ScalarDtor() = default; // IDA: NOT_FOUND
 
     virtual void DeleteAndZero() {} // IDA: 0x7AD310
 
@@ -3040,7 +3040,7 @@ public:
 class ScoutVector
 {
 public:
-    virtual ~ScoutVector() = default;
+    virtual ~ScoutVector() = default; // IDA: NOT_FOUND
 
     virtual void Construct() {} // IDA: 0x510780
 
@@ -3049,7 +3049,7 @@ public:
 class ScriptActionQueue
 {
 public:
-    virtual ~ScriptActionQueue() = default;
+    virtual ~ScriptActionQueue() = default; // IDA: NOT_FOUND
 
     virtual void PushNext() {} // IDA: 0x660B80
 
@@ -3058,7 +3058,7 @@ public:
 class ScriptActionVector
 {
 public:
-    virtual ~ScriptActionVector() = default;
+    virtual ~ScriptActionVector() = default; // IDA: NOT_FOUND
 
     virtual void PushBack() {} // IDA: 0x63EB80
 
@@ -3067,7 +3067,7 @@ public:
 class ScriptQueue
 {
 public:
-    virtual ~ScriptQueue() = default;
+    virtual ~ScriptQueue() = default; // IDA: NOT_FOUND
 
     virtual void PushEntry() {} // IDA: 0x6378B0
 
@@ -3076,7 +3076,7 @@ public:
 class SerialPort
 {
 public:
-    virtual ~SerialPort() = default;
+    virtual ~SerialPort() = default; // IDA: NOT_FOUND
 
     virtual void Close() {} // IDA: 0x774950
 
@@ -3085,7 +3085,7 @@ public:
 class ShapeButton
 {
 public:
-    virtual ~ShapeButton() = default;
+    virtual ~ShapeButton() = default; // IDA: NOT_FOUND
 
     virtual void SetShape() {} // IDA: 0x69DE00
     virtual void Draw() {} // IDA: 0x69DEB0
@@ -3096,7 +3096,7 @@ public:
 class ShapeButtonClass
 {
 public:
-    virtual ~ShapeButtonClass() = default;
+    virtual ~ShapeButtonClass() = default; // IDA: NOT_FOUND
 
     virtual void Init() {} // IDA: 0x69DCF0
     virtual void Constructor() {} // IDA: 0x69DD30
@@ -3109,7 +3109,7 @@ public:
 class ShapeButtonClass_Destru
 {
 public:
-    virtual ~ShapeButtonClass_Destru() = default;
+    virtual ~ShapeButtonClass_Destru() = default; // IDA: NOT_FOUND
 
     virtual void QueryInterface() {} // IDA: 0x4B57F0
 
@@ -3127,7 +3127,7 @@ public:
 class SimpleDialogControl
 {
 public:
-    virtual ~SimpleDialogControl() = default;
+    virtual ~SimpleDialogControl() = default; // IDA: NOT_FOUND
 
     virtual void Constructor() {} // IDA: 0x624110
 
@@ -3136,7 +3136,7 @@ public:
 class SlaveControlVector
 {
 public:
-    virtual ~SlaveControlVector() = default;
+    virtual ~SlaveControlVector() = default; // IDA: NOT_FOUND
 
     virtual void Constructor() {} // IDA: 0x6B1AB0
 
@@ -3145,7 +3145,7 @@ public:
 class SmudgeTypeList
 {
 public:
-    virtual ~SmudgeTypeList() = default;
+    virtual ~SmudgeTypeList() = default; // IDA: NOT_FOUND
 
     virtual void Copy() {} // IDA: 0x67C280
 
@@ -3154,7 +3154,7 @@ public:
 class SmudgeTypeVector
 {
 public:
-    virtual ~SmudgeTypeVector() = default;
+    virtual ~SmudgeTypeVector() = default; // IDA: NOT_FOUND
 
     virtual void Release() {} // IDA: 0x67AEB0
     virtual void AddSmudge() {} // IDA: 0x67AF90
@@ -3173,7 +3173,7 @@ public:
 class SortedArray
 {
 public:
-    virtual ~SortedArray() = default;
+    virtual ~SortedArray() = default; // IDA: NOT_FOUND
 
     virtual void GetIndex() {} // IDA: 0x42D570
     virtual void Find() {} // IDA: 0x52B170
@@ -3195,7 +3195,7 @@ public:
 class SortedStateVector
 {
 public:
-    virtual ~SortedStateVector() = default;
+    virtual ~SortedStateVector() = default; // IDA: NOT_FOUND
 
     virtual void BinarySearch() {} // IDA: 0x7107E0
 
@@ -3204,7 +3204,7 @@ public:
 class SortedVector
 {
 public:
-    virtual ~SortedVector() = default;
+    virtual ~SortedVector() = default; // IDA: NOT_FOUND
 
     virtual void BinarySearch() {} // IDA: 0x55F6E0
 
@@ -3213,7 +3213,7 @@ public:
 class SquadClass
 {
 public:
-    virtual ~SquadClass() = default;
+    virtual ~SquadClass() = default; // IDA: NOT_FOUND
 
     virtual void SelectAllMembers() {} // IDA: 0x7314C0
     virtual void ProcessMove() {} // IDA: 0x731840
@@ -3224,7 +3224,7 @@ public:
 class StartCombo
 {
 public:
-    virtual ~StartCombo() = default;
+    virtual ~StartCombo() = default; // IDA: NOT_FOUND
 
     virtual void IDToIndex() {} // IDA: 0x4E4230
 
@@ -3233,7 +3233,7 @@ public:
 class StartingTechnoVector
 {
 public:
-    virtual ~StartingTechnoVector() = default;
+    virtual ~StartingTechnoVector() = default; // IDA: NOT_FOUND
 
     virtual void Construct() {} // IDA: 0x510690
 
@@ -3242,7 +3242,7 @@ public:
 class State_WorldDominationTour
 {
 public:
-    virtual ~State_WorldDominationTour() = default;
+    virtual ~State_WorldDominationTour() = default; // IDA: NOT_FOUND
 
     virtual void QueryInterface() {} // IDA: 0x76F6C0
 
@@ -3251,7 +3251,7 @@ public:
 class StaticButtonClass
 {
 public:
-    virtual ~StaticButtonClass() = default;
+    virtual ~StaticButtonClass() = default; // IDA: NOT_FOUND
 
     virtual void ReleaseBuffer() {} // IDA: 0x43AE10
     virtual void SetText() {} // IDA: 0x6C6640
@@ -3270,7 +3270,7 @@ public:
 class StaticString
 {
 public:
-    virtual ~StaticString() = default;
+    virtual ~StaticString() = default; // IDA: NOT_FOUND
 
     virtual void Factory() {} // IDA: 0x7AF2A0
 
@@ -3316,7 +3316,7 @@ public:
 class SubzoneHashVector
 {
 public:
-    virtual ~SubzoneHashVector() = default;
+    virtual ~SubzoneHashVector() = default; // IDA: NOT_FOUND
 
     virtual void Construct() {} // IDA: 0x58B070
 
@@ -3334,7 +3334,7 @@ public:
 class SwizzleManager
 {
 public:
-    virtual ~SwizzleManager() = default;
+    virtual ~SwizzleManager() = default; // IDA: NOT_FOUND
 
     virtual void SaveLoad() {} // IDA: 0x55AAC0
     virtual void ConvertWrapper() {} // IDA: 0x6CF230
@@ -3345,7 +3345,7 @@ public:
 class SwizzleManagerClass
 {
 public:
-    virtual ~SwizzleManagerClass() = default;
+    virtual ~SwizzleManagerClass() = default; // IDA: NOT_FOUND
 
     virtual void Register() {} // IDA: 0x6CF0F0
     virtual void Here_I_Am() {} // IDA: 0x6CF2C0
@@ -3368,7 +3368,7 @@ public:
 class SymbolTable
 {
 public:
-    virtual ~SymbolTable() = default;
+    virtual ~SymbolTable() = default; // IDA: NOT_FOUND
 
     virtual void Rebuild() {} // IDA: 0x6234B0
     virtual void Insert() {} // IDA: 0x624530
@@ -3388,7 +3388,7 @@ public:
 class TClassFactory_AITriggerTypeClass
 {
 public:
-    virtual ~TClassFactory_AITriggerTypeClass() = default;
+    virtual ~TClassFactory_AITriggerTypeClass() = default; // IDA: NOT_FOUND
 
     virtual void AddRef() {} // IDA: 0x6C5C40
     virtual void GetClassName() {} // IDA: 0x6C5C60
@@ -3418,7 +3418,7 @@ public:
 class TClassFactory_AircraftTypeClass
 {
 public:
-    virtual ~TClassFactory_AircraftTypeClass() = default;
+    virtual ~TClassFactory_AircraftTypeClass() = default; // IDA: NOT_FOUND
 
     virtual void AddRef() {} // IDA: 0x6C2AC0
     virtual void GetClassName() {} // IDA: 0x6C2AE0
@@ -3463,7 +3463,7 @@ public:
 class TClassFactory_AnimTypeClass
 {
 public:
-    virtual ~TClassFactory_AnimTypeClass() = default;
+    virtual ~TClassFactory_AnimTypeClass() = default; // IDA: NOT_FOUND
 
     virtual void AddRef() {} // IDA: 0x6C3B40
     virtual void GetClassName() {} // IDA: 0x6C3B60
@@ -3523,7 +3523,7 @@ public:
 class TClassFactory_BuildingTypeClass
 {
 public:
-    virtual ~TClassFactory_BuildingTypeClass() = default;
+    virtual ~TClassFactory_BuildingTypeClass() = default; // IDA: NOT_FOUND
 
     virtual void AddRef() {} // IDA: 0x6C2940
     virtual void GetClassName() {} // IDA: 0x6C2960
@@ -3538,7 +3538,7 @@ public:
 class TClassFactory_BulletTypeClass
 {
 public:
-    virtual ~TClassFactory_BulletTypeClass() = default;
+    virtual ~TClassFactory_BulletTypeClass() = default; // IDA: NOT_FOUND
 
     virtual void AddRef() {} // IDA: 0x6C2DC0
     virtual void GetClassName() {} // IDA: 0x6C2DE0
@@ -3673,7 +3673,7 @@ public:
 class TClassFactory_HouseTypeClass
 {
 public:
-    virtual ~TClassFactory_HouseTypeClass() = default;
+    virtual ~TClassFactory_HouseTypeClass() = default; // IDA: NOT_FOUND
 
     virtual void AddRef() {} // IDA: 0x6C3CC0
     virtual void GetClassName() {} // IDA: 0x6C3CE0
@@ -3718,7 +3718,7 @@ public:
 class TClassFactory_InfantryTypeClass
 {
 public:
-    virtual ~TClassFactory_InfantryTypeClass() = default;
+    virtual ~TClassFactory_InfantryTypeClass() = default; // IDA: NOT_FOUND
 
     virtual void AddRef() {} // IDA: 0x6C2C40
     virtual void GetClassName() {} // IDA: 0x6C2C60
@@ -3733,7 +3733,7 @@ public:
 class TClassFactory_IsometricTileTypeClass
 {
 public:
-    virtual ~TClassFactory_IsometricTileTypeClass() = default;
+    virtual ~TClassFactory_IsometricTileTypeClass() = default; // IDA: NOT_FOUND
 
     virtual void AddRef() {} // IDA: 0x6C2F40
     virtual void GetClassName() {} // IDA: 0x6C2F60
@@ -3793,7 +3793,7 @@ public:
 class TClassFactory_OverlayTypeClass
 {
 public:
-    virtual ~TClassFactory_OverlayTypeClass() = default;
+    virtual ~TClassFactory_OverlayTypeClass() = default; // IDA: NOT_FOUND
 
     virtual void AddRef() {} // IDA: 0x6C30C0
     virtual void GetClassName() {} // IDA: 0x6C30E0
@@ -3851,7 +3851,7 @@ public:
 class TClassFactory_ParticleSystemTypeClass
 {
 public:
-    virtual ~TClassFactory_ParticleSystemTypeClass() = default;
+    virtual ~TClassFactory_ParticleSystemTypeClass() = default; // IDA: NOT_FOUND
 
     virtual void AddRef() {} // IDA: 0x6C5AC0
     virtual void GetClassName() {} // IDA: 0x6C5AE0
@@ -3866,7 +3866,7 @@ public:
 class TClassFactory_ParticleTypeClass
 {
 public:
-    virtual ~TClassFactory_ParticleTypeClass() = default;
+    virtual ~TClassFactory_ParticleTypeClass() = default; // IDA: NOT_FOUND
 
     virtual void AddRef() {} // IDA: 0x6C57C0
     virtual void GetClassName() {} // IDA: 0x6C57E0
@@ -3926,7 +3926,7 @@ public:
 class TClassFactory_ScriptTypeClass
 {
 public:
-    virtual ~TClassFactory_ScriptTypeClass() = default;
+    virtual ~TClassFactory_ScriptTypeClass() = default; // IDA: NOT_FOUND
 
     virtual void AddRef() {} // IDA: 0x6C1EC0
     virtual void GetClassName() {} // IDA: 0x6C1EE0
@@ -3986,7 +3986,7 @@ public:
 class TClassFactory_SmudgeTypeClass
 {
 public:
-    virtual ~TClassFactory_SmudgeTypeClass() = default;
+    virtual ~TClassFactory_SmudgeTypeClass() = default; // IDA: NOT_FOUND
 
     virtual void AddRef() {} // IDA: 0x6C3240
     virtual void GetClassName() {} // IDA: 0x6C3260
@@ -4061,7 +4061,7 @@ public:
 class TClassFactory_TagTypeClass
 {
 public:
-    virtual ~TClassFactory_TagTypeClass() = default;
+    virtual ~TClassFactory_TagTypeClass() = default; // IDA: NOT_FOUND
 
     virtual void AddRef() {} // IDA: 0x6C21C0
     virtual void GetClassName() {} // IDA: 0x6C21E0
@@ -4106,7 +4106,7 @@ public:
 class TClassFactory_TeamTypeClass
 {
 public:
-    virtual ~TClassFactory_TeamTypeClass() = default;
+    virtual ~TClassFactory_TeamTypeClass() = default; // IDA: NOT_FOUND
 
     virtual void AddRef() {} // IDA: 0x6C24C0
     virtual void GetClassName() {} // IDA: 0x6C24E0
@@ -4181,7 +4181,7 @@ public:
 class TClassFactory_TriggerTypeClass
 {
 public:
-    virtual ~TClassFactory_TriggerTypeClass() = default;
+    virtual ~TClassFactory_TriggerTypeClass() = default; // IDA: NOT_FOUND
 
     virtual void AddRef() {} // IDA: 0x6C1BC0
     virtual void GetClassName() {} // IDA: 0x6C1BE0
@@ -4226,7 +4226,7 @@ public:
 class TClassFactory_UnitTypeClass
 {
 public:
-    virtual ~TClassFactory_UnitTypeClass() = default;
+    virtual ~TClassFactory_UnitTypeClass() = default; // IDA: NOT_FOUND
 
     virtual void AddRef() {} // IDA: 0x6C27C0
     virtual void GetClassName() {} // IDA: 0x6C27E0
@@ -4256,7 +4256,7 @@ public:
 class TClassFactory_VoxelAnimTypeClass
 {
 public:
-    virtual ~TClassFactory_VoxelAnimTypeClass() = default;
+    virtual ~TClassFactory_VoxelAnimTypeClass() = default; // IDA: NOT_FOUND
 
     virtual void AddRef() {} // IDA: 0x6C15C0
     virtual void GetClassName() {} // IDA: 0x6C15E0
@@ -4286,7 +4286,7 @@ public:
 class TClassFactory_WarheadTypeClass
 {
 public:
-    virtual ~TClassFactory_WarheadTypeClass() = default;
+    virtual ~TClassFactory_WarheadTypeClass() = default; // IDA: NOT_FOUND
 
     virtual void AddRef() {} // IDA: 0x6C5340
     virtual void GetClassName() {} // IDA: 0x6C5360
@@ -4316,7 +4316,7 @@ public:
 class TClassFactory_WeaponTypeClass
 {
 public:
-    virtual ~TClassFactory_WeaponTypeClass() = default;
+    virtual ~TClassFactory_WeaponTypeClass() = default; // IDA: NOT_FOUND
 
     virtual void AddRef() {} // IDA: 0x6C54C0
     virtual void GetClassName() {} // IDA: 0x6C54E0
@@ -4331,7 +4331,7 @@ public:
 class TagClassVector
 {
 public:
-    virtual ~TagClassVector() = default;
+    virtual ~TagClassVector() = default; // IDA: NOT_FOUND
 
     virtual void Construct() {} // IDA: 0x510640
 
@@ -4349,7 +4349,7 @@ public:
 class TaskManager
 {
 public:
-    virtual ~TaskManager() = default;
+    virtual ~TaskManager() = default; // IDA: NOT_FOUND
 
     virtual void Update() {} // IDA: 0x6B7100
 
@@ -4358,7 +4358,7 @@ public:
 class TechnoTypeVector
 {
 public:
-    virtual ~TechnoTypeVector() = default;
+    virtual ~TechnoTypeVector() = default; // IDA: NOT_FOUND
 
     virtual void Constructor() {} // IDA: 0x4CABF0
     virtual void Construct() {} // IDA: 0x68C200
@@ -4369,7 +4369,7 @@ public:
 class TeknoClass
 {
 public:
-    virtual ~TeknoClass() = default;
+    virtual ~TeknoClass() = default; // IDA: NOT_FOUND
 
     virtual void GetType() {} // IDA: 0x6E4DE0
 
@@ -4378,7 +4378,7 @@ public:
 class TerrainTypeVector
 {
 public:
-    virtual ~TerrainTypeVector() = default;
+    virtual ~TerrainTypeVector() = default; // IDA: NOT_FOUND
 
     virtual void Construct() {} // IDA: 0x67B370
 
@@ -4387,7 +4387,7 @@ public:
 class Territory_WorldDominationTour
 {
 public:
-    virtual ~Territory_WorldDominationTour() = default;
+    virtual ~Territory_WorldDominationTour() = default; // IDA: NOT_FOUND
 
     virtual void QueryInterface() {} // IDA: 0x770020
 
@@ -4396,7 +4396,7 @@ public:
 class TheatreClass
 {
 public:
-    virtual ~TheatreClass() = default;
+    virtual ~TheatreClass() = default; // IDA: NOT_FOUND
 
     virtual void InitView() {} // IDA: 0x545000
 
@@ -4405,7 +4405,7 @@ public:
 class TileData
 {
 public:
-    virtual ~TileData() = default;
+    virtual ~TileData() = default; // IDA: NOT_FOUND
 
     virtual void Constructor() {} // IDA: 0x58BDC0
 
@@ -4423,7 +4423,7 @@ public:
 class TileSystem
 {
 public:
-    virtual ~TileSystem() = default;
+    virtual ~TileSystem() = default; // IDA: NOT_FOUND
 
     virtual void LookupMapTile() {} // IDA: 0x58D0A0
     virtual void BuildNodes() {} // IDA: 0x58D620
@@ -4438,7 +4438,7 @@ public:
 class TileVector
 {
 public:
-    virtual ~TileVector() = default;
+    virtual ~TileVector() = default; // IDA: NOT_FOUND
 
     virtual void PushBack() {} // IDA: 0x589C50
 
@@ -4447,7 +4447,7 @@ public:
 class ToggleClass
 {
 public:
-    virtual ~ToggleClass() = default;
+    virtual ~ToggleClass() = default; // IDA: NOT_FOUND
 
     virtual void QueryInterface() {} // IDA: 0x4B5810
     virtual void Construct() {} // IDA: 0x723E60
@@ -4458,7 +4458,7 @@ public:
 class ToggleRepairModeCommandClass
 {
 public:
-    virtual ~ToggleRepairModeCommandClass() = default;
+    virtual ~ToggleRepairModeCommandClass() = default; // IDA: NOT_FOUND
 
     virtual void Execute() {} // IDA: 0x536FA0
 
@@ -4476,7 +4476,7 @@ public:
 class UnitTypeList
 {
 public:
-    virtual ~UnitTypeList() = default;
+    virtual ~UnitTypeList() = default; // IDA: NOT_FOUND
 
     virtual void Constructor() {} // IDA: 0x67A740
 
@@ -4485,7 +4485,7 @@ public:
 class UnitTypeVector
 {
 public:
-    virtual ~UnitTypeVector() = default;
+    virtual ~UnitTypeVector() = default; // IDA: NOT_FOUND
 
     virtual void QueryInterface() {} // IDA: 0x512B30
     virtual void Release() {} // IDA: 0x513050
@@ -4505,7 +4505,7 @@ public:
 class VQAClass
 {
 public:
-    virtual ~VQAClass() = default;
+    virtual ~VQAClass() = default; // IDA: NOT_FOUND
 
     virtual void AdvanceFrame() {} // IDA: 0x759C30
 
@@ -4514,7 +4514,7 @@ public:
 class VeinholeClass
 {
 public:
-    virtual ~VeinholeClass() = default;
+    virtual ~VeinholeClass() = default; // IDA: NOT_FOUND
 
     virtual void SelectGrowthPosition() {} // IDA: 0x74DC00
     virtual void GetState() {} // IDA: 0x74FFF0
@@ -4549,7 +4549,7 @@ public:
 class VersionInfo
 {
 public:
-    virtual ~VersionInfo() = default;
+    virtual ~VersionInfo() = default; // IDA: NOT_FOUND
 
     virtual void Read() {} // IDA: 0x74F760
 
@@ -4569,7 +4569,7 @@ public:
 class VtableStub
 {
 public:
-    virtual ~VtableStub() = default;
+    virtual ~VtableStub() = default; // IDA: NOT_FOUND
 
     virtual void Push_407510() {} // IDA: 0x407510
     virtual void 425270() {} // IDA: 0x425270
@@ -4591,7 +4591,7 @@ public:
 class WDTClass
 {
 public:
-    virtual ~WDTClass() = default;
+    virtual ~WDTClass() = default; // IDA: NOT_FOUND
 
     virtual void GetCellType() {} // IDA: 0x76F600
     virtual void CountCellType() {} // IDA: 0x76F670
@@ -4602,7 +4602,7 @@ public:
 class WDTGame
 {
 public:
-    virtual ~WDTGame() = default;
+    virtual ~WDTGame() = default; // IDA: NOT_FOUND
 
     virtual void ToggleTeamMode() {} // IDA: 0x7693F0
     virtual void ProcessTerritorySelection() {} // IDA: 0x76D180
@@ -4617,7 +4617,7 @@ public:
 class WDTObject
 {
 public:
-    virtual ~WDTObject() = default;
+    virtual ~WDTObject() = default; // IDA: NOT_FOUND
 
     virtual void GetSize() {} // IDA: 0x76BFA0
     virtual void GetAndClearFlag() {} // IDA: 0x76FF30
@@ -4639,7 +4639,7 @@ public:
 class WDTSurface
 {
 public:
-    virtual ~WDTSurface() = default;
+    virtual ~WDTSurface() = default; // IDA: NOT_FOUND
 
     virtual void ToggleState() {} // IDA: 0x7693A0
     virtual void PointInRect() {} // IDA: 0x769440
@@ -4661,7 +4661,7 @@ public:
 class WaypointPath
 {
 public:
-    virtual ~WaypointPath() = default;
+    virtual ~WaypointPath() = default; // IDA: NOT_FOUND
 
     virtual void Constructor() {} // IDA: 0x5A9A70
 
@@ -4670,7 +4670,7 @@ public:
 class WideChar
 {
 public:
-    virtual ~WideChar() = default;
+    virtual ~WideChar() = default; // IDA: NOT_FOUND
 
     virtual void ToLong() {} // IDA: 0x7CBB76
 
@@ -4679,7 +4679,7 @@ public:
 class WinAPI
 {
 public:
-    virtual ~WinAPI() = default;
+    virtual ~WinAPI() = default; // IDA: NOT_FOUND
 
     virtual void Wrapper() {} // IDA: 0x7DC720
 
@@ -4716,7 +4716,7 @@ public:
 class WonlineStringDialogControl
 {
 public:
-    virtual ~WonlineStringDialogControl() = default;
+    virtual ~WonlineStringDialogControl() = default; // IDA: NOT_FOUND
 
     virtual void QueryInterface() {} // IDA: 0x7AC5D0
 
@@ -4725,7 +4725,7 @@ public:
 class WordVector
 {
 public:
-    virtual ~WordVector() = default;
+    virtual ~WordVector() = default; // IDA: NOT_FOUND
 
     virtual void Constructor() {} // IDA: 0x42DD60
 
@@ -4743,7 +4743,7 @@ public:
 class WorldDomination
 {
 public:
-    virtual ~WorldDomination() = default;
+    virtual ~WorldDomination() = default; // IDA: NOT_FOUND
 
     virtual void SetupTerritoryNodes() {} // IDA: 0x7680C0
 
@@ -4752,7 +4752,7 @@ public:
 class WorldDominationTour
 {
 public:
-    virtual ~WorldDominationTour() = default;
+    virtual ~WorldDominationTour() = default; // IDA: NOT_FOUND
 
     virtual void Territory::Constructor() {} // IDA: 0x76F970
 

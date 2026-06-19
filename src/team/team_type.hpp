@@ -24,20 +24,20 @@ class TeamTypeClass : public AbstractClass
 public:
     static constexpr AbstractType kObjectDeriveId = AbstractType::TeamType;
 
-    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return 0; }
-    virtual HRESULT __stdcall Load(IStream* stream) override { return 0; }
+    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return 0; } // IDA: NOT_FOUND
+    virtual HRESULT __stdcall Load(IStream* stream) override { return 0; } // IDA: NOT_FOUND
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { return 0; } // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     virtual ~TeamTypeClass() = default;  // 0x6F20D0
 
     virtual void pointerExpired(AbstractClass* ptr, bool removed) override {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual AbstractType __stdcall whatAmI() const override { return kObjectDeriveId; } // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual int objectSize() const override { return 0; }
+    virtual int objectSize() const override { return 0; } // IDA: NOT_FOUND
     virtual void calculateChecksum(void* checksum) const {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     // Construction
     TeamTypeClass() noexcept { }                             // IDA: 0x4C98B0 (Construct)
-    void ddtor();
+    void ddtor();  // 0x6F20D0
 
     // Methods
     void Construct(); // 0x4C98B0

@@ -497,8 +497,8 @@ void FootClass::ScanCircleForUnits2() {}
 int FootClass::GetCapacity() const { return 0; }
 int FootClass::ResizeOccupiedCellList() { return 0; }
 int FootClass::sub_4734B0() { return 0; }
-int FootClass::sub_487150() { return 0; }
-int FootClass::sub_487160() { return 0; }
+int FootClass::checkTerrainSpeed() { return 0; }
+int FootClass::updateLocomotion() { return 0; }
 int FootClass::FindPathWithRetry() { return -1; }
 void FootClass::ProcessDeployMission() {}
 void FootClass::UpdateDeployMovement() {}

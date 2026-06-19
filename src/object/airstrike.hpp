@@ -14,15 +14,15 @@ class AirstrikeClass : public AbstractClass
 public:
     static constexpr AbstractType kObjectDeriveId = AbstractType::Airstrike;
 
-    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override;
-    virtual HRESULT __stdcall Load(IStream* stream) override;
+    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override; // IDA: NOT_FOUND
+    virtual HRESULT __stdcall Load(IStream* stream) override; // IDA: NOT_FOUND
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     virtual ~AirstrikeClass() = default;  // 0x41D7A0
 
     virtual void pointerExpired(AbstractClass* ptr, bool removed) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual AbstractType __stdcall whatAmI() const override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual int objectSize() const override;
+    virtual int objectSize() const override; // IDA: NOT_FOUND
     virtual void calculateChecksum(void* checksum) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     // Construction

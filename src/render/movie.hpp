@@ -43,24 +43,24 @@ class BinkMovieHandle : public MovieHandle
 {
 public:
     BinkMovieHandle() : totalFrames(0) {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual ~BinkMovieHandle() override;
+    virtual ~BinkMovieHandle() override; // IDA: NOT_FOUND
 
-    virtual int  GetWidth()  const override { return width; }
-    virtual int  GetHeight() const override { return height; }
-    virtual bool IsPlaying() const override { return playing; }
-    virtual bool AdvanceFrame() override;
+    virtual int  GetWidth()  const override { return width; } // IDA: NOT_FOUND
+    virtual int  GetHeight() const override { return height; } // IDA: NOT_FOUND
+    virtual bool IsPlaying() const override { return playing; } // IDA: NOT_FOUND
+    virtual bool AdvanceFrame() override; // IDA: NOT_FOUND
     virtual void RenderFrame(DSurface* target) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual void Stop() override;
+    virtual void Stop() override; // IDA: NOT_FOUND
 
     void RenderFrameRaw(void* locked_buffer, int pitch_bytes, int height, // IDA: UNMATCHED — no_callgraph_match, no_git_history
                         int dest_x = 0, int dest_y = 0);
 
-    int  GetCurrentFrame() const { return currentFrame; }
-    int  GetTotalFrames()  const { return totalFrames; }
-    uint32_t GetSurfaceFlags() const { return surfaceFlags; }
+    int  GetCurrentFrame() const { return currentFrame; } // IDA: NOT_FOUND
+    int  GetTotalFrames()  const { return totalFrames; } // IDA: NOT_FOUND
+    uint32_t GetSurfaceFlags() const { return surfaceFlags; } // IDA: NOT_FOUND
 
     bool OpenFromMemory(const void* data, int size, DSurface* render_target); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    bool OpenFromFile(const char* filename, DSurface* render_target);
+    bool OpenFromFile(const char* filename, DSurface* render_target); // IDA: NOT_FOUND
 
 private:
     void*     binkHandle   = nullptr;

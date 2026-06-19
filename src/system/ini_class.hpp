@@ -45,7 +45,7 @@ public:
     static constexpr size_t kSize = 0x40;
 
     INIClass();
-    virtual ~INIClass() = default;
+    virtual ~INIClass() = default; // IDA: NOT_FOUND
 
     // INI reading interface
     virtual bool Load(CCFileClass* file, bool unk1, bool unk2);  // 0x4741F0
@@ -82,7 +82,7 @@ public:
 
     bool Load(CCFileClass* file, bool unk1, bool unk2) override;  // IDA: 0x4741F0
 
-    CCFileClass* GetFile() const;
+    CCFileClass* GetFile() const; // IDA: NOT_FOUND
 
     int GetKeyCount(const char* section);  // 0x526960
     const char* GetStringByIndex(const char* section, int index);  // 0x526CC0

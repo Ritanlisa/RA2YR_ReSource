@@ -20,17 +20,17 @@ public:
     MovementAI() = default;
 
     // IDA 0x487E00
-    void sub_487E00();
+    void sub_487E00(); // IDA: NOT_FOUND
     // IDA 0x4A5150
-    void sub_4A5150();
+    void sub_4A5150(); // IDA: NOT_FOUND
     // IDA 0x487E00 area
     bool Check(FootClass* foot);  // 0x4A5360
     // IDA 0x487E00 area
-    void Update(FootClass* foot);
+    void Update(FootClass* foot); // IDA: NOT_FOUND
     // IDA 0x487E00 area
-    void Reset();
+    void Reset(); // IDA: NOT_FOUND
     // IDA 0x487E00 area
-    void SetTarget(const CoordStruct& target);
+    void SetTarget(const CoordStruct& target); // IDA: NOT_FOUND
     // IDA 0x487E00 area
     CoordStruct GetTarget() const;  // 0x6F9DC0
 
@@ -53,11 +53,11 @@ public:
     // IDA 0x5B2970 area
     static bool Check(FootClass* foot, const CoordStruct& dest);  // 0x5B2930
     // IDA 0x5B2970 area
-    static void sub_5B2970();
+    static void sub_5B2970(); // IDA: NOT_FOUND
     // IDA 0x5B2970 area
-    static bool IsMoving(TechnoClass* tech);
+    static bool IsMoving(TechnoClass* tech); // IDA: NOT_FOUND
     // IDA 0x5B2970 area
-    static void StopMoving(TechnoClass* tech);
+    static void StopMoving(TechnoClass* tech); // IDA: NOT_FOUND
 
     int32_t     Movement_field_00;       // 0x00
 };
@@ -78,7 +78,7 @@ public:
 class MoveFeedback
 {
 public:
-    virtual ~MoveFeedback() = default;
+    virtual ~MoveFeedback() = default; // IDA: NOT_FOUND
 
     virtual void ClearBuffer(); // 0x40B640
     virtual void PointerToIndex(); // 0x40B670
@@ -105,7 +105,7 @@ public:
 class MovementClass
 {
 public:
-    virtual ~MovementClass() = default;
+    virtual ~MovementClass() = default; // IDA: NOT_FOUND
 
     virtual void CompareAbsCoords(); // 0x4C9530
     virtual void CalcSpeed(); // 0x54BFF0
@@ -136,7 +136,7 @@ public:
 class PathfindingClass
 {
 public:
-    virtual ~PathfindingClass() = default;
+    virtual ~PathfindingClass() = default; // IDA: NOT_FOUND
 
     virtual void FindPath(); // 0x4FFB20
 

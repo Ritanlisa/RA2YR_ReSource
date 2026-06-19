@@ -156,17 +156,17 @@ public:
     void LostPoweredCenter(TechnoTypeClass* type);  // 0x50E0E0
     void GainedPoweredCenter(TechnoTypeClass* type);  // 0x50E1B0
 
-    bool DoInfantrySelfHeal() const { return infantrySelfHeal > 0; }
+    bool DoInfantrySelfHeal() const { return infantrySelfHeal > 0; } // IDA: NOT_FOUND
     int GetInfSelfHealStep() const;  // 0x50D9E0
-    bool DoUnitsSelfHeal() const { return unitsSelfHeal > 0; }
+    bool DoUnitsSelfHeal() const { return unitsSelfHeal > 0; } // IDA: NOT_FOUND
     int GetUnitSelfHealStep() const;  // 0x50D9F0
 
     void UpdatePower(); // 0x508C30
     void CreatePowerOutage(int duration);  // 0x50BC90
-    double GetPowerPercentage() const;
+    double GetPowerPercentage() const; // IDA: NOT_FOUND
 
-    bool HasFullPower() const { return powerOutput >= powerDrain || !powerDrain; }
-    bool HasLowPower() const { return powerOutput < powerDrain && powerDrain; }
+    bool HasFullPower() const { return powerOutput >= powerDrain || !powerDrain; } // IDA: NOT_FOUND
+    bool HasLowPower() const { return powerOutput < powerDrain && powerDrain; } // IDA: NOT_FOUND
 
     void CreateRadarOutage(int duration);  // 0x50BCD0
     void ReshroudMap();  // 0x50BD10
@@ -193,14 +193,14 @@ public:
 
     static bool IndexIsMP(int idx); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
-    void UpdateFactoriesQueues(AbstractType factory_of, bool is_naval, int build_cat) const;
+    void UpdateFactoriesQueues(AbstractType factory_of, bool is_naval, int build_cat) const; // IDA: NOT_FOUND
 
     bool FireLightningStorm(SuperClass* super); // IDA: UNMATCHED — no_callgraph_match, no_git_history
     bool FireParadrop(SuperClass* super); // IDA: UNMATCHED — no_callgraph_match, no_git_history
     bool FirePsyDom(SuperClass* super); // IDA: UNMATCHED — no_callgraph_match, no_git_history
     bool FireGenMutator(SuperClass* super); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
-    int  AIBaseConstructionupdateLogic();
+    int  AIBaseConstructionupdateLogic(); // IDA: NOT_FOUND
     void AITryFireSW();  // IDA: 0x5098F0
     bool FireSW(int idx, const CellStruct& coords);   // IDA: 0x5098F0
 
@@ -212,7 +212,7 @@ public:
         return out;
     }
 
-    CellStruct* PickIonCannonTarget(CellStruct& out) const;
+    CellStruct* PickIonCannonTarget(CellStruct& out) const; // IDA: NOT_FOUND
     CellStruct PickIonCannonTarget() const
     {
         CellStruct out;
@@ -222,7 +222,7 @@ public:
 
     bool IsIonCannonEligibleTarget(const TechnoClass* techno) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
-    void UpdateFlagCoords(class UnitClass* new_carrier, uint32_t unk);
+    void UpdateFlagCoords(class UnitClass* new_carrier, uint32_t unk); // IDA: NOT_FOUND
     void DroppedFlag(CellStruct* where, class UnitClass* who);  // 0x4FBF60
     char PickedUpFlag(class UnitClass* who, uint32_t unk);  // 0x4FC060
 
@@ -235,12 +235,12 @@ public:
         return baseSpawnCell;
     }
 
-    unsigned int GetAIDifficultyIndex() const;
+    unsigned int GetAIDifficultyIndex() const; // IDA: NOT_FOUND
 
     bool IsNeutral() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    bool IsPlayer() const;
+    bool IsPlayer() const; // IDA: NOT_FOUND
     bool IsObserver() const;  // 0x5E9440
-    static bool IsPlayerObserver();
+    static bool IsPlayerObserver(); // IDA: NOT_FOUND
 
     // ---- member variables ----
 

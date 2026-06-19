@@ -1244,14 +1244,14 @@ void TechnoClass::CreateDestructionEffect() {}
 int TechnoClass::FindMatchingUnit() { return -1; }
 int TechnoClass::ClearArrays() { return 0; }
 int TechnoClass::ComputeScanRange() const { return 0; }
-int TechnoClass::sub_659470() { return 0; }
-int TechnoClass::sub_659490() { return 0; }
+int TechnoClass::drawSelectionBox() { return 0; }
+int TechnoClass::drawHealthBar() { return 0; }
 int TechnoClass::sub_6594A0() { return 0; }
 int TechnoClass::sub_6594C0() { return 0; }
 int TechnoClass::sub_6594E0() { return 0; }
 int TechnoClass::sub_6594F0() { return 0; }
-int TechnoClass::sub_659540() { return 0; }
-int TechnoClass::sub_659550() { return 0; }
+int TechnoClass::drawMindControlPips() { return 0; }
+int TechnoClass::drawPassengerPips() { return 0; }
 int TechnoClass::ClearScriptPlanningData() { return 0; }
 int TechnoClass::GetTileAnimationData() const { return 0; }
 int TechnoClass::MutateAll() { return 0; }
@@ -1477,7 +1477,7 @@ int TechnoClass::sub_740B10() { return 0; }
 int TechnoClass::CheckRepairNeeded() const { return false; }
 int TechnoClass::EnterRepairBuilding() { return 0; }
 int TechnoClass::CheckUnitFireConstraints() const { return false; }
-int TechnoClass::sub_741490() { return 0; }
+int TechnoClass::checkTargetValidity() { return 0; }
 int TechnoClass::sub_7441B0() { return 0; }
 int TechnoClass::sub_744180() { return 0; }
 int TechnoClass::sub_744210() { return 0; }
@@ -1485,8 +1485,8 @@ int TechnoClass::sub_744270() { return 0; }
 int TechnoClass::sub_744720() { return 0; }
 int TechnoClass::sub_7440B0() { return 0; }
 int TechnoClass::sub_744100() { return 0; }
-int TechnoClass::sub_743190() { return 0; }
-int TechnoClass::sub_746400() { return 0; }
+int TechnoClass::SelectAutoTargetWithGarrison() { return 0; }
+int TechnoClass::processParasiteAttachment() { return 0; }
 int TechnoClass::sub_746420() { return 0; }
 int TechnoClass::sub_7464E0() { return 0; }
 int TechnoClass::sub_7465B0() { return 0; }
@@ -1522,7 +1522,7 @@ int TechnoClass::sub_73EFC0() { return 0; }
 int TechnoClass::sub_7393C0() { return 0; }
 int TechnoClass::sub_737BA0() { return 0; }
 int TechnoClass::sub_738910() { return 0; }
-int TechnoClass::sub_732050() { return 0; }
+int TechnoClass::GatherAllBuildings() { return 0; }
 int TechnoClass::sub_732580() { return 0; }
 int TechnoClass::sub_731CF0() { return 0; }
 int TechnoClass::sub_729AA0() { return 0; }

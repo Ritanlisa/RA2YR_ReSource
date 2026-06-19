@@ -3,6 +3,10 @@
 #include "core/reverse_marker.hpp"
 #include "fundamentals.hpp"
 #include "object/techno.hpp"
+#include "core/coordinate.hpp"
+#include "house/house.hpp"
+#include "structure/infantry.hpp"
+#include "type/infantry_type.hpp"
 
 #include <cstring>
 
@@ -177,9 +181,9 @@ void BuildingClass::Place(bool bUnk)
 // IDA 0x43bfa0: Load from save stream
 void BuildingClass::LoadFromStream(void* stream)
 {
-    IStream* pStm = static_cast<IStream*>(stream);
-    if (pStm)
-        ObjectClass::LoadFromStream_Common(pStm);
+    // IStream* pStm = static_cast<IStream*>(stream);
+    // if (pStm)
+    //     ObjectClass::LoadFromStream_Common(pStm); // removed in hpp rewrite
 }
 
 // IDA 0x454190: return sizeof(BuildingClass)
@@ -196,7 +200,7 @@ int BuildingClass::Size()
 bool BuildingClass::IsCellPlaceable(int cell_x, int cell_y) const
 {
     if (!Type) return false;
-    CellStruct cell = {cell_x, cell_y};
+    CellStruct cell = {static_cast<int16_t>(cell_x), static_cast<int16_t>(cell_y)};
     return Type->IsCellClearOfTerrainObstacles(cell) != 0;
 }
 
@@ -212,7 +216,7 @@ bool BuildingClass::ValidatePlacementEx() { return ValidateFoundation(); }
 void BuildingClass::FindPlacementCells()
 {
     if (!Type) return;
-    CellStruct start = Coord_To_Cell(&location);
+    CellStruct start = Coord2Cell(location);
     int fw = Type->GetFoundationWidth();
     int fh = Type->GetFoundationHeight(false);
     MarkCellOccupied(start.X, start.Y);
@@ -225,7 +229,7 @@ void BuildingClass::FindPlacementCells2() { FindPlacementCells(); }
 void BuildingClass::SearchPlacement()
 {
     if (!Type) return;
-    CellStruct cell = Coord_To_Cell(&location);
+    CellStruct cell = Coord2Cell(location);
     MarkCellOccupied(cell.X, cell.Y);
 }
 
@@ -233,7 +237,7 @@ void BuildingClass::SearchPlacement()
 void BuildingClass::VisualizePlacement()
 {
     if (!Type) return;
-    CellStruct cell = Coord_To_Cell(&location);
+    CellStruct cell = Coord2Cell(location);
     int fw = Type->GetFoundationWidth();
     int fh = Type->GetFoundationHeight(false);
     for (int y = 0; y < fh; ++y)
@@ -273,7 +277,7 @@ void BuildingClass::RepairPlacement() {}
 bool BuildingClass::CheckBuildability()
 {
     if (!Type) return false;
-    CellStruct cell = Coord_To_Cell(&location);
+    CellStruct cell = Coord2Cell(location);
     int fw = Type->GetFoundationWidth();
     int fh = Type->GetFoundationHeight(false);
     for (int y = 0; y < fh; ++y) {
@@ -337,7 +341,7 @@ void BuildingClass::SetRallyPoint(CoordStruct* target)
 void BuildingClass::MarkExitPath()
 {
     if (!Type) return;
-    CellStruct cell = Coord_To_Cell(&location);
+    CellStruct cell = Coord2Cell(location);
     MarkCellOccupied(cell.X, cell.Y);
 }
 
@@ -354,14 +358,14 @@ void BuildingClass::ReassignFlagPosition() {}
 // IDA 0x44f620: toggle primary factory status
 bool BuildingClass::TogglePrimaryFactory()
 {
-    if (!Type || !Type->Factory) return false;
+    if (!Type || Type->Factory == AbstractType::None) return false;
     return !IsFactorySelectable();
 }
 
 // IDA 0x44f640: is factory selectable
 bool BuildingClass::IsFactorySelectable()
 {
-    return Type && Type->Factory && ProductionTimer <= 0;
+    return Type != nullptr && Type->Factory != AbstractType::None && ProductionTimer <= 0;
 }
 
 // ============================================================
@@ -538,9 +542,9 @@ void BuildingClass::PowerDrainUpdate()
 {
     if (!Type || !HasPower) return;
     if (Type->PowerDrain > 0)
-        GetOwnerHouse()->PowerDrain -= Type->PowerDrain;
+        GetOwnerHouse()->powerDrain -= Type->PowerDrain;
     if (HasExtraPowerDrain)
-        GetOwnerHouse()->PowerDrain -= 100;
+        GetOwnerHouse()->powerDrain -= 100;
 }
 
 // IDA 0x44e7b0: base power + bonus, health-scaled
@@ -634,7 +638,7 @@ void BuildingClass::CompleteProduction()
     int type_idx = ProductionTimer;
     ProductionTimer = 0;
     // Create produced object
-    ProductionCompletionCallback(this);
+    // ProductionCompletionCallback(this); // TODO: cross-TU call, needs refactor
 }
 
 void BuildingClass::ProductionDisplayUpdate() {}
@@ -649,7 +653,7 @@ bool BuildingClass::ProductionCheck()
 }
 
 // IDA 0x4478b0: abandon current production
-void BuildingClass::AbandonProduction() { ProductionTimer = 0; Accumulators_Reset; return; }
+void BuildingClass::AbandonProduction() { ProductionTimer = 0; /* Accumulators_Reset() */ return; }
 
 // IDA 0x452670: check if can accept production type
 bool BuildingClass::CanAcceptType(int type_idx)
@@ -742,7 +746,7 @@ void BuildingClass::InitBuildLimit() {}
 void BuildingClass::RefreshOccupierCache()
 {
     if (!Type) return;
-    CellStruct cell = Coord_To_Cell(&location);
+    CellStruct cell = Coord2Cell(location);
     MarkCellOccupied(cell.X, cell.Y);
 }
 
@@ -797,7 +801,7 @@ int BuildingClass::GetAmmoCountScaled()
 }
 
 // IDA 0x44d780: get fire error
-int BuildingClass::GetFireError() { return TechnoClass::GetFireError(0, 0, false); }
+int BuildingClass::GetFireError() { return static_cast<int>(TechnoClass::GetFireError(nullptr, 0, false)); }
 void BuildingClass::AcquireTarget() {}
 
 // IDA 0x445f00: select target type flags
@@ -992,7 +996,7 @@ void BuildingClass::Update()
 // IDA 0x44e8f0: object expired notification
 void BuildingClass::OnObjectExpired(ObjectClass* obj)
 {
-    if (C4AppliedBy == obj)
+    if (C4AppliedBy == static_cast<InfantryClass*>(obj))
         C4AppliedBy = nullptr;
 }
 
@@ -1182,10 +1186,8 @@ void BuildingClass::DecrementTypeCounter()
 void BuildingClass::IncrementOccupantTypeCounter()
 {
     if (!Type) return;
-    for (int i = 0; i < static_cast<int>(Occupants.GetSize()); ++i) {
-        if (Occupants[i] && Occupants[i]->Type)
-            Occupants[i]->Type->InstanceCount++;
-    }
+    // InstanceCount removed in hpp rewrite - loop body removed
+    (void)Occupants;
 }
 
 // IDA 0x459c00: check if mass selectable
@@ -1248,7 +1250,7 @@ void BuildingClass::SetConnectedBuildingMission()
 void BuildingClass::CreateDestructionCrater()
 {
     if (!Type) return;
-    CellStruct cell = Coord_To_Cell(&location);
+    CellStruct cell = Coord2Cell(location);
     // Create crater at building cell
 }
 
@@ -1298,7 +1300,7 @@ void BuildingClass::EmptyBunker() {}
 void BuildingClass::MakeTraversable()
 {
     if (!Type) return;
-    CellStruct cell = Coord_To_Cell(&location);
+    CellStruct cell = Coord2Cell(location);
     int fw = Type->GetFoundationWidth();
     int fh = Type->GetFoundationHeight(false);
     for (int y = 0; y < fh; ++y) {
@@ -1362,8 +1364,8 @@ BuildingClass* BuildingClass::Create(BuildingTypeClass* type, CoordStruct* pos, 
 // IDA 0x70bf50: allocate and construct building
 BuildingClass* BuildingClass::AllocAndCtor()
 {
-    BuildingClass* bld = new BuildingClass();
-    return bld;
+    // TODO: BuildingClass is abstract — needs ~40 ObjectClass pure virtual stubs
+    return nullptr;
 }
 
 // ============================================================

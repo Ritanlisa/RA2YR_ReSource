@@ -34,7 +34,7 @@ public:
     // IDA 0x407150 area
     void SetVolume(int32_t volume);  // 0x406650
     // IDA 0x407150 area
-    void SetPan(int32_t pan);
+    void SetPan(int32_t pan); // IDA: NOT_FOUND
     // IDA 0x407150 area
     bool IsPlaying(int32_t channel);  // 0x7529E0
 
@@ -62,7 +62,7 @@ public:
     // IDA 0x48B2A0 area
     void LoadINI();  // 0x533D20
     // IDA 0x48B2A0 area
-    void SaveINI();
+    void SaveINI(); // IDA: NOT_FOUND
 
     bool        m_Flag68;       // 0x00
     bool        m_Flag70;       // 0x01
@@ -117,13 +117,13 @@ public:
     // IDA 0x48B2A0 area
     void ReadThemeEntry(const char* name);  // 0x720480
     // IDA 0x48B2A0 area
-    void LoadThemeINI();
+    void LoadThemeINI(); // IDA: NOT_FOUND
     // IDA 0x48B2A0 area
-    int32_t GetThemeIndex(const char* name);
+    int32_t GetThemeIndex(const char* name); // IDA: NOT_FOUND
     // IDA 0x48B2A0 area
-    const char* GetThemeName(int32_t index);
+    const char* GetThemeName(int32_t index); // IDA: NOT_FOUND
     // IDA 0x48B2A0 area
-    bool IsThemeValid(int32_t index);
+    bool IsThemeValid(int32_t index); // IDA: NOT_FOUND
 
     int32_t     ThemeClass_field_00;       // 0x00
     int32_t     ThemeClass_field_04;       // 0x04
@@ -181,7 +181,7 @@ public:
 class AudioBuffer
 {
 public:
-    virtual ~AudioBuffer() = default;
+    virtual ~AudioBuffer() = default; // IDA: NOT_FOUND
 
     virtual void InitializePlayback(); // 0x409C40
 
@@ -190,7 +190,7 @@ public:
 class AudioChannel
 {
 public:
-    virtual ~AudioChannel() = default;
+    virtual ~AudioChannel() = default; // IDA: NOT_FOUND
 
     virtual void IsActive(); // 0x4010A0
     virtual void DeactivatePlay(); // 0x402600
@@ -203,7 +203,7 @@ public:
 class AudioCodec
 {
 public:
-    virtual ~AudioCodec() = default;
+    virtual ~AudioCodec() = default; // IDA: NOT_FOUND
 
     virtual void Decode(); // 0x7C81DB
 
@@ -212,7 +212,7 @@ public:
 class AudioConfig
 {
 public:
-    virtual ~AudioConfig() = default;
+    virtual ~AudioConfig() = default; // IDA: NOT_FOUND
 
     virtual void InitDefault(); // 0x754BE0
 
@@ -221,7 +221,7 @@ public:
 class AudioEvent
 {
 public:
-    virtual ~AudioEvent() = default;
+    virtual ~AudioEvent() = default; // IDA: NOT_FOUND
 
     virtual void LoadFromINI(); // 0x752DB0
 
@@ -230,7 +230,7 @@ public:
 class AudioFile
 {
 public:
-    virtual ~AudioFile() = default;
+    virtual ~AudioFile() = default; // IDA: NOT_FOUND
 
     virtual void GetCallback(); // 0x4026A0
     virtual void Stop(); // 0x405FD0
@@ -241,7 +241,7 @@ public:
 class AudioFileClass
 {
 public:
-    virtual ~AudioFileClass() = default;
+    virtual ~AudioFileClass() = default; // IDA: NOT_FOUND
 
     virtual void Release(); // 0x405C00
 
@@ -250,7 +250,7 @@ public:
 class AudioFrame
 {
 public:
-    virtual ~AudioFrame() = default;
+    virtual ~AudioFrame() = default; // IDA: NOT_FOUND
 
     virtual void ProcessAudioFrame(); // 0x407FB0
     virtual void CounterInc(); // 0x7535B0
@@ -261,7 +261,7 @@ public:
 class AudioIndex
 {
 public:
-    virtual ~AudioIndex() = default;
+    virtual ~AudioIndex() = default; // IDA: NOT_FOUND
 
     virtual void GetSampleInformation(); // 0x401640
 
@@ -270,7 +270,7 @@ public:
 class AudioList
 {
 public:
-    virtual ~AudioList() = default;
+    virtual ~AudioList() = default; // IDA: NOT_FOUND
 
     virtual void GetNextEntry(); // 0x407480
 
@@ -279,7 +279,7 @@ public:
 class AudioNode
 {
 public:
-    virtual ~AudioNode() = default;
+    virtual ~AudioNode() = default; // IDA: NOT_FOUND
 
     virtual void Release(); // 0x408600
 
@@ -288,7 +288,7 @@ public:
 class AudioOcclusion
 {
 public:
-    virtual ~AudioOcclusion() = default;
+    virtual ~AudioOcclusion() = default; // IDA: NOT_FOUND
 
     virtual void ComputeBoundingVertices(); // 0x756BB0
 
@@ -297,7 +297,7 @@ public:
 class AudioOptionsClass
 {
 public:
-    virtual ~AudioOptionsClass() = default;
+    virtual ~AudioOptionsClass() = default; // IDA: NOT_FOUND
 
     virtual void ApplySettings(); // 0x5FB160
 
@@ -306,7 +306,7 @@ public:
 class AudioPool
 {
 public:
-    virtual ~AudioPool() = default;
+    virtual ~AudioPool() = default; // IDA: NOT_FOUND
 
     virtual void ProcessQueue(); // 0x405190
 
@@ -315,7 +315,7 @@ public:
 class AudioSample
 {
 public:
-    virtual ~AudioSample() = default;
+    virtual ~AudioSample() = default; // IDA: NOT_FOUND
 
     virtual void sub_4024A0(); // 0x4024A0
     virtual void Destructor(); // 0x407A90
@@ -332,7 +332,7 @@ public:
 class AudioSource
 {
 public:
-    virtual ~AudioSource() = default;
+    virtual ~AudioSource() = default; // IDA: NOT_FOUND
 
     virtual void Get(); // 0x406130
 
@@ -341,7 +341,7 @@ public:
 class AudioThread
 {
 public:
-    virtual ~AudioThread() = default;
+    virtual ~AudioThread() = default; // IDA: NOT_FOUND
 
     virtual void UpdateStats(); // 0x403920
 
@@ -350,7 +350,7 @@ public:
 class AudioTimer
 {
 public:
-    virtual ~AudioTimer() = default;
+    virtual ~AudioTimer() = default; // IDA: NOT_FOUND
 
     virtual void DecrementAll(); // 0x408230
 

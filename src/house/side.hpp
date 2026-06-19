@@ -27,14 +27,14 @@ class SideClass : public AbstractClass
 public:
     static constexpr AbstractType kObjectDeriveId = AbstractType::Side;
 
-    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override;
-    virtual HRESULT __stdcall Load(IStream* stream) override;
-    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
+    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override; // IDA: NOT_FOUND
+    virtual HRESULT __stdcall Load(IStream* stream) override; // IDA: NOT_FOUND
+    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override; // IDA: NOT_FOUND
 
     virtual ~SideClass() = default;  // 0x6A4740
 
     virtual AbstractType __stdcall whatAmI() const override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual int objectSize() const override;
+    virtual int objectSize() const override; // IDA: NOT_FOUND
 
     char                    id[24];
     uint8_t                 m_zero_3C;

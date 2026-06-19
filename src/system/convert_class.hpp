@@ -19,7 +19,7 @@ public:
     static DynamicVectorClass<ConvertClass*>& Array;
     // IDA 0x48E740 -- ConvertClass::Construct (builds palette+blitter tables)
 
-    static ConvertClass* FindOrAllocate(const char* pFilename);
+    static ConvertClass* FindOrAllocate(const char* pFilename); // IDA: NOT_FOUND
     static void CreateFromFile(const char* pFilename, BytePalette*& pPalette, ConvertClass*& pDestination); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     BlitterCore* SelectPlainBlitter(BlitterFlags flags) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
@@ -35,7 +35,7 @@ public:
         bool skipBlitters);
 
 protected:
-    explicit ConvertClass(const noinit_t&) noexcept;
+    explicit ConvertClass(const noinit_t&) noexcept; // IDA: NOT_FOUND
 
 public:
     int BytesPerPixel = 0;
@@ -55,7 +55,7 @@ class LightConvertClass : public ConvertClass
 public:
     static DynamicVectorClass<LightConvertClass*>& Array;
 
-    virtual ~LightConvertClass() override = default;
+    virtual ~LightConvertClass() override = default; // IDA: NOT_FOUND
 
     virtual void UpdateColors(int red, int green, int blue, bool tinted);  // 0x556090
 

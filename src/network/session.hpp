@@ -122,7 +122,7 @@ public:
     uint8_t                      SessionClass_field_2854[0x884];
     bool                         CurrentlyInGame;
 
-    bool IsCampaign() const;
+    bool IsCampaign() const; // IDA: NOT_FOUND
     bool IsSkirmish() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     bool IsMultiplayer() const;  // 0x77D940
 

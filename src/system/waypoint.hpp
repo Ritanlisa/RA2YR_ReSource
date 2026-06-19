@@ -23,7 +23,7 @@ public:
     // 0x5022F0 IsCoordinateUsed
     bool IsCoordinateUsed(const CellStruct&) const { return false; }  // IDA: 0x5022F0
     // 0x502460 FindOrCreate
-    bool FindOrCreate(int, unsigned int*, unsigned char*) { return false; }
+    bool FindOrCreate(int, unsigned int*, unsigned char*) { return false; } // 0x502460
 
     WaypointPathClass* paths[12];     // +0x210 (this+132)
     uint32_t           WaypointClass_field_0;     // +0x000

@@ -3,11 +3,11 @@
     "description": "T6: Cross-validated merge of T3 (signature), T4 (call-graph), T5 (git history)",
     "total_functions": 2831,
     "confidence_distribution": {
-      "UNMATCHABLE": 863,
-      "LOW": 1059,
-      "HIGH": 152,
-      "CONFLICT": 269,
-      "MEDIUM": 488
+      "UNMATCHABLE": 862,
+      "LOW": 1057,
+      "HIGH": 226,
+      "CONFLICT": 254,
+      "MEDIUM": 432
     },
     "priority_hierarchy": "call-graph > git > signature",
     "definitions": {
@@ -32,6 +32,14 @@
       "t3_sig_keys": 2662,
       "t4_cg_keys": 911,
       "t5_git_keys": 3261
+    },
+    "setdiff_upgrade": {
+      "total_upgrades": 74,
+      "match_types": {
+        "sub_addr_exact_unclaimed": 51,
+        "exact_name_unclaimed": 23
+      },
+      "description": "T7: sub_XXXXXX resolved via IDA DB + direct name matching in unclaimed class pool"
     }
   },
   "results": {
@@ -7893,7 +7901,7 @@
       "class_name": "VectorClass",
       "method_name": "Clear",
       "full_signature": "virtual void Clear() {",
-      "final_confidence": "CONFLICT",
+      "final_confidence": "HIGH",
       "final_ida_addr": "0x40B120",
       "strategies_used": [
         "callgraph",
@@ -7917,6 +7925,13 @@
           "any_agrees_with_git": false
         },
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "Clear",
+        "score": 1.0,
+        "match_type": "exact_name_unclaimed",
+        "class_unclaimed": 64,
+        "class_missing": 19
       }
     },
     "core\\vector.hpp:146:VectorClass::FindItemIndex": {
@@ -12476,7 +12491,7 @@
       "class_name": "LocomotionClass",
       "method_name": "QueryInterface",
       "full_signature": "virtual HRESULT __stdcall QueryInterface(const IID& iid, void** ppv) override {",
-      "final_confidence": "LOW",
+      "final_confidence": "HIGH",
       "final_ida_addr": "0x55A9B0",
       "strategies_used": [
         "signature"
@@ -12493,6 +12508,13 @@
           "any_agrees_with_git": false
         },
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "QueryInterface",
+        "score": 1.0,
+        "match_type": "exact_name_unclaimed",
+        "class_unclaimed": 11,
+        "class_missing": 10
       }
     },
     "misc\\locomotion.hpp:91:LocomotionClass::AddRef": {
@@ -22025,8 +22047,8 @@
       "class_name": "MPBattleClass",
       "method_name": "MPBattleClass",
       "full_signature": "MPBattleClass() noexcept;",
-      "final_confidence": "LOW",
-      "final_ida_addr": "0x5CA7D0",
+      "final_confidence": "HIGH",
+      "final_ida_addr": "0x5D8170",
       "strategies_used": [
         "signature"
       ],
@@ -22042,6 +22064,13 @@
           "any_agrees_with_git": false
         },
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "MPBattleClass",
+        "score": 1.0,
+        "match_type": "exact_name_unclaimed",
+        "class_unclaimed": 42,
+        "class_missing": 18
       }
     },
     "network\\multiplayer.hpp:104:MPBattleClass::~MPBattleClass": {
@@ -26161,7 +26190,7 @@
       "class_name": "FootClass",
       "method_name": "StubReturnFalse",
       "full_signature": "virtual bool StubReturnFalse();",
-      "final_confidence": "CONFLICT",
+      "final_confidence": "HIGH",
       "final_ida_addr": "0x41C100",
       "strategies_used": [
         "callgraph",
@@ -26185,6 +26214,13 @@
           "any_agrees_with_git": false
         },
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "StubReturnFalse",
+        "score": 1.0,
+        "match_type": "exact_name_unclaimed",
+        "class_unclaimed": 48,
+        "class_missing": 72
       }
     },
     "object\\foot.hpp:85:FootClass::StubReturnVoid": {
@@ -26257,8 +26293,8 @@
       "class_name": "FootClass",
       "method_name": "sub_4734B0",
       "full_signature": "virtual int sub_4734B0();",
-      "final_confidence": "MEDIUM",
-      "final_ida_addr": "0x487150",
+      "final_confidence": "HIGH",
+      "final_ida_addr": "0x4734B0",
       "strategies_used": [
         "callgraph"
       ],
@@ -26272,6 +26308,13 @@
         },
         "signature": null,
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "updateMovementAnimation",
+        "score": 1.0,
+        "match_type": "sub_addr_exact_unclaimed",
+        "class_unclaimed": 48,
+        "class_missing": 72
       }
     },
     "object\\foot.hpp:98:FootClass::sub_487150": {
@@ -26280,7 +26323,7 @@
       "class_name": "FootClass",
       "method_name": "sub_487150",
       "full_signature": "virtual int sub_487150();",
-      "final_confidence": "MEDIUM",
+      "final_confidence": "HIGH",
       "final_ida_addr": "0x487150",
       "strategies_used": [
         "callgraph"
@@ -26295,6 +26338,13 @@
         },
         "signature": null,
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "checkTerrainSpeed",
+        "score": 1.0,
+        "match_type": "sub_addr_exact_unclaimed",
+        "class_unclaimed": 48,
+        "class_missing": 72
       }
     },
     "object\\foot.hpp:99:FootClass::sub_487160": {
@@ -26303,8 +26353,8 @@
       "class_name": "FootClass",
       "method_name": "sub_487160",
       "full_signature": "virtual int sub_487160();",
-      "final_confidence": "MEDIUM",
-      "final_ida_addr": "0x487150",
+      "final_confidence": "HIGH",
+      "final_ida_addr": "0x487160",
       "strategies_used": [
         "callgraph"
       ],
@@ -26318,6 +26368,13 @@
         },
         "signature": null,
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "updateLocomotion",
+        "score": 1.0,
+        "match_type": "sub_addr_exact_unclaimed",
+        "class_unclaimed": 48,
+        "class_missing": 72
       }
     },
     "object\\foot.hpp:105:FootClass::UpdateReveal": {
@@ -26390,7 +26447,7 @@
       "class_name": "FootClass",
       "method_name": "ProcessDeploy",
       "full_signature": "virtual void ProcessDeploy();",
-      "final_confidence": "CONFLICT",
+      "final_confidence": "HIGH",
       "final_ida_addr": "0x4D7330",
       "strategies_used": [
         "callgraph",
@@ -26414,6 +26471,13 @@
           "any_agrees_with_git": false
         },
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "ProcessDeploy",
+        "score": 1.0,
+        "match_type": "exact_name_unclaimed",
+        "class_unclaimed": 48,
+        "class_missing": 72
       }
     },
     "object\\foot.hpp:119:FootClass::ValidateMove": {
@@ -26422,7 +26486,7 @@
       "class_name": "FootClass",
       "method_name": "ValidateMove",
       "full_signature": "virtual int ValidateMove();",
-      "final_confidence": "MEDIUM",
+      "final_confidence": "HIGH",
       "final_ida_addr": "0x4D74E0",
       "strategies_used": [
         "callgraph"
@@ -26437,6 +26501,13 @@
         },
         "signature": null,
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "ValidateMove",
+        "score": 1.0,
+        "match_type": "exact_name_unclaimed",
+        "class_unclaimed": 48,
+        "class_missing": 72
       }
     },
     "object\\foot.hpp:120:FootClass::ValidatePlacement": {
@@ -26445,7 +26516,7 @@
       "class_name": "FootClass",
       "method_name": "ValidatePlacement",
       "full_signature": "virtual int ValidatePlacement();",
-      "final_confidence": "CONFLICT",
+      "final_confidence": "HIGH",
       "final_ida_addr": "0x4D82B0",
       "strategies_used": [
         "callgraph",
@@ -26469,6 +26540,13 @@
           "any_agrees_with_git": false
         },
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "ValidatePlacement",
+        "score": 1.0,
+        "match_type": "exact_name_unclaimed",
+        "class_unclaimed": 48,
+        "class_missing": 72
       }
     },
     "object\\foot.hpp:121:FootClass::GetCoords": {
@@ -26637,7 +26715,7 @@
       "class_name": "FootClass",
       "method_name": "UpdateState",
       "full_signature": "virtual int UpdateState();",
-      "final_confidence": "CONFLICT",
+      "final_confidence": "HIGH",
       "final_ida_addr": "0x4DAF10",
       "strategies_used": [
         "callgraph",
@@ -26661,6 +26739,13 @@
           "any_agrees_with_git": false
         },
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "UpdateState",
+        "score": 1.0,
+        "match_type": "exact_name_unclaimed",
+        "class_unclaimed": 48,
+        "class_missing": 72
       }
     },
     "object\\foot.hpp:150:FootClass::CheckTargetCell": {
@@ -26701,7 +26786,7 @@
       "class_name": "FootClass",
       "method_name": "FindMoveTarget",
       "full_signature": "virtual int FindMoveTarget();",
-      "final_confidence": "CONFLICT",
+      "final_confidence": "HIGH",
       "final_ida_addr": "0x4DD0A0",
       "strategies_used": [
         "callgraph",
@@ -26725,6 +26810,13 @@
           "any_agrees_with_git": false
         },
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "FindMoveTarget",
+        "score": 1.0,
+        "match_type": "exact_name_unclaimed",
+        "class_unclaimed": 48,
+        "class_missing": 72
       }
     },
     "object\\foot.hpp:160:FootClass::ValidateFoundation": {
@@ -26797,7 +26889,7 @@
       "class_name": "FootClass",
       "method_name": "ScanAdjacentCells",
       "full_signature": "virtual void ScanAdjacentCells();",
-      "final_confidence": "CONFLICT",
+      "final_confidence": "HIGH",
       "final_ida_addr": "0x4DF510",
       "strategies_used": [
         "callgraph",
@@ -26821,6 +26913,13 @@
           "any_agrees_with_git": false
         },
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "ScanAdjacentCells",
+        "score": 1.0,
+        "match_type": "exact_name_unclaimed",
+        "class_unclaimed": 48,
+        "class_missing": 72
       }
     },
     "object\\foot.hpp:178:FootClass::Destru_vt08": {
@@ -26971,8 +27070,8 @@
       "class_name": "FootClass",
       "method_name": "UpdateLocomotion",
       "full_signature": "virtual void UpdateLocomotion();",
-      "final_confidence": "MEDIUM",
-      "final_ida_addr": "0x487160",
+      "final_confidence": "HIGH",
+      "final_ida_addr": "0x6FB740",
       "strategies_used": [
         "callgraph",
         "signature"
@@ -26995,6 +27094,13 @@
           "any_agrees_with_git": false
         },
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "UpdateLocomotion",
+        "score": 1.0,
+        "match_type": "exact_name_unclaimed",
+        "class_unclaimed": 48,
+        "class_missing": 72
       }
     },
     "object\\foot.hpp:189:FootClass::SetThreatBounds": {
@@ -27058,8 +27164,8 @@
       "class_name": "FootClass",
       "method_name": "sub_70FEB0",
       "full_signature": "virtual int sub_70FEB0();",
-      "final_confidence": "MEDIUM",
-      "final_ida_addr": "0x487150",
+      "final_confidence": "HIGH",
+      "final_ida_addr": "0x70FEB0",
       "strategies_used": [
         "callgraph"
       ],
@@ -27073,6 +27179,13 @@
         },
         "signature": null,
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "checkPassability",
+        "score": 1.0,
+        "match_type": "sub_addr_exact_unclaimed",
+        "class_unclaimed": 48,
+        "class_missing": 72
       }
     },
     "object\\foot.hpp:194:FootClass::Cleanup": {
@@ -27136,7 +27249,7 @@
       "class_name": "FootClass",
       "method_name": "GetField",
       "full_signature": "virtual int GetField() const;",
-      "final_confidence": "CONFLICT",
+      "final_confidence": "HIGH",
       "final_ida_addr": "0x7500D0",
       "strategies_used": [
         "callgraph",
@@ -27160,6 +27273,13 @@
           "any_agrees_with_git": false
         },
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "GetField",
+        "score": 1.0,
+        "match_type": "exact_name_unclaimed",
+        "class_unclaimed": 48,
+        "class_missing": 72
       }
     },
     "object\\foot.hpp:199:FootClass::SetField": {
@@ -33350,8 +33470,8 @@
       "class_name": "TechnoClass",
       "method_name": "DrawHealthBar",
       "full_signature": "virtual void DrawHealthBar(Point2D* pLocation, RectangleStruct* pBounds, bool bUnk3) const;",
-      "final_confidence": "MEDIUM",
-      "final_ida_addr": "0x659490",
+      "final_confidence": "HIGH",
+      "final_ida_addr": "0x6F5190",
       "strategies_used": [
         "callgraph"
       ],
@@ -33365,6 +33485,13 @@
         },
         "signature": null,
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "DrawHealthBar",
+        "score": 1.0,
+        "match_type": "exact_name_unclaimed",
+        "class_unclaimed": 121,
+        "class_missing": 300
       }
     },
     "object\\techno.hpp:211:TechnoClass::DrawPipScalePips": {
@@ -34129,8 +34256,8 @@
       "class_name": "TechnoClass",
       "method_name": "sub_41B7D0",
       "full_signature": "virtual int sub_41B7D0();",
-      "final_confidence": "MEDIUM",
-      "final_ida_addr": "0x773070",
+      "final_confidence": "HIGH",
+      "final_ida_addr": "0x41B7D0",
       "strategies_used": [
         "callgraph"
       ],
@@ -34144,6 +34271,13 @@
         },
         "signature": null,
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "processDamageAnimation",
+        "score": 1.0,
+        "match_type": "sub_addr_exact_unclaimed",
+        "class_unclaimed": 121,
+        "class_missing": 300
       }
     },
     "object\\techno.hpp:258:TechnoClass::sub_41B840": {
@@ -34152,8 +34286,8 @@
       "class_name": "TechnoClass",
       "method_name": "sub_41B840",
       "full_signature": "virtual int sub_41B840();",
-      "final_confidence": "MEDIUM",
-      "final_ida_addr": "0x773070",
+      "final_confidence": "HIGH",
+      "final_ida_addr": "0x41B840",
       "strategies_used": [
         "callgraph"
       ],
@@ -34167,6 +34301,13 @@
         },
         "signature": null,
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "updateWeaponCooldown",
+        "score": 1.0,
+        "match_type": "sub_addr_exact_unclaimed",
+        "class_unclaimed": 121,
+        "class_missing": 300
       }
     },
     "object\\techno.hpp:259:TechnoClass::sub_41B860": {
@@ -34175,8 +34316,8 @@
       "class_name": "TechnoClass",
       "method_name": "sub_41B860",
       "full_signature": "virtual int sub_41B860();",
-      "final_confidence": "MEDIUM",
-      "final_ida_addr": "0x773070",
+      "final_confidence": "HIGH",
+      "final_ida_addr": "0x41B860",
       "strategies_used": [
         "callgraph"
       ],
@@ -34190,6 +34331,13 @@
         },
         "signature": null,
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "checkAmmo",
+        "score": 1.0,
+        "match_type": "sub_addr_exact_unclaimed",
+        "class_unclaimed": 121,
+        "class_missing": 300
       }
     },
     "object\\techno.hpp:260:TechnoClass::sub_41B9E0": {
@@ -34198,8 +34346,8 @@
       "class_name": "TechnoClass",
       "method_name": "sub_41B9E0",
       "full_signature": "virtual int sub_41B9E0();",
-      "final_confidence": "MEDIUM",
-      "final_ida_addr": "0x773070",
+      "final_confidence": "HIGH",
+      "final_ida_addr": "0x41B9E0",
       "strategies_used": [
         "callgraph"
       ],
@@ -34213,6 +34361,13 @@
         },
         "signature": null,
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "updateROFTimer",
+        "score": 1.0,
+        "match_type": "sub_addr_exact_unclaimed",
+        "class_unclaimed": 121,
+        "class_missing": 300
       }
     },
     "object\\techno.hpp:262:TechnoClass::sub_41BEF0": {
@@ -34244,8 +34399,8 @@
       "class_name": "TechnoClass",
       "method_name": "sub_41C640",
       "full_signature": "virtual int sub_41C640();",
-      "final_confidence": "MEDIUM",
-      "final_ida_addr": "0x773070",
+      "final_confidence": "HIGH",
+      "final_ida_addr": "0x41C640",
       "strategies_used": [
         "callgraph"
       ],
@@ -34259,6 +34414,13 @@
         },
         "signature": null,
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "processIdleState",
+        "score": 1.0,
+        "match_type": "sub_addr_exact_unclaimed",
+        "class_unclaimed": 121,
+        "class_missing": 300
       }
     },
     "object\\techno.hpp:267:TechnoClass::sub_41C650": {
@@ -34267,8 +34429,8 @@
       "class_name": "TechnoClass",
       "method_name": "sub_41C650",
       "full_signature": "virtual int sub_41C650();",
-      "final_confidence": "MEDIUM",
-      "final_ida_addr": "0x773070",
+      "final_confidence": "HIGH",
+      "final_ida_addr": "0x41C650",
       "strategies_used": [
         "callgraph"
       ],
@@ -34282,6 +34444,13 @@
         },
         "signature": null,
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "processGuardState",
+        "score": 1.0,
+        "match_type": "sub_addr_exact_unclaimed",
+        "class_unclaimed": 121,
+        "class_missing": 300
       }
     },
     "object\\techno.hpp:268:TechnoClass::sub_41C660": {
@@ -34290,8 +34459,8 @@
       "class_name": "TechnoClass",
       "method_name": "sub_41C660",
       "full_signature": "virtual int sub_41C660();",
-      "final_confidence": "MEDIUM",
-      "final_ida_addr": "0x773070",
+      "final_confidence": "HIGH",
+      "final_ida_addr": "0x41C660",
       "strategies_used": [
         "callgraph"
       ],
@@ -34305,6 +34474,13 @@
         },
         "signature": null,
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "processAttackState",
+        "score": 1.0,
+        "match_type": "sub_addr_exact_unclaimed",
+        "class_unclaimed": 121,
+        "class_missing": 300
       }
     },
     "object\\techno.hpp:269:TechnoClass::sub_41C670": {
@@ -34313,8 +34489,8 @@
       "class_name": "TechnoClass",
       "method_name": "sub_41C670",
       "full_signature": "virtual int sub_41C670();",
-      "final_confidence": "MEDIUM",
-      "final_ida_addr": "0x773070",
+      "final_confidence": "HIGH",
+      "final_ida_addr": "0x41C670",
       "strategies_used": [
         "callgraph"
       ],
@@ -34328,6 +34504,13 @@
         },
         "signature": null,
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "processMoveState",
+        "score": 1.0,
+        "match_type": "sub_addr_exact_unclaimed",
+        "class_unclaimed": 121,
+        "class_missing": 300
       }
     },
     "object\\techno.hpp:270:TechnoClass::sub_41C680": {
@@ -34336,8 +34519,8 @@
       "class_name": "TechnoClass",
       "method_name": "sub_41C680",
       "full_signature": "virtual int sub_41C680();",
-      "final_confidence": "MEDIUM",
-      "final_ida_addr": "0x773070",
+      "final_confidence": "HIGH",
+      "final_ida_addr": "0x41C680",
       "strategies_used": [
         "callgraph"
       ],
@@ -34351,6 +34534,13 @@
         },
         "signature": null,
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "processHarvestState",
+        "score": 1.0,
+        "match_type": "sub_addr_exact_unclaimed",
+        "class_unclaimed": 121,
+        "class_missing": 300
       }
     },
     "object\\techno.hpp:271:TechnoClass::sub_41C690": {
@@ -34359,8 +34549,8 @@
       "class_name": "TechnoClass",
       "method_name": "sub_41C690",
       "full_signature": "virtual int sub_41C690();",
-      "final_confidence": "MEDIUM",
-      "final_ida_addr": "0x773070",
+      "final_confidence": "HIGH",
+      "final_ida_addr": "0x41C690",
       "strategies_used": [
         "callgraph"
       ],
@@ -34374,6 +34564,13 @@
         },
         "signature": null,
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "processDeployState",
+        "score": 1.0,
+        "match_type": "sub_addr_exact_unclaimed",
+        "class_unclaimed": 121,
+        "class_missing": 300
       }
     },
     "object\\techno.hpp:272:TechnoClass::ApplyDamageEffects": {
@@ -34836,8 +35033,8 @@
       "class_name": "TechnoClass",
       "method_name": "sub_659470",
       "full_signature": "virtual int sub_659470();",
-      "final_confidence": "MEDIUM",
-      "final_ida_addr": "0x773070",
+      "final_confidence": "HIGH",
+      "final_ida_addr": "0x659470",
       "strategies_used": [
         "callgraph"
       ],
@@ -34851,6 +35048,13 @@
         },
         "signature": null,
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "drawSelectionBox",
+        "score": 1.0,
+        "match_type": "sub_addr_exact_unclaimed",
+        "class_unclaimed": 121,
+        "class_missing": 300
       }
     },
     "object\\techno.hpp:332:TechnoClass::sub_659490": {
@@ -34859,8 +35063,8 @@
       "class_name": "TechnoClass",
       "method_name": "sub_659490",
       "full_signature": "virtual int sub_659490();",
-      "final_confidence": "MEDIUM",
-      "final_ida_addr": "0x773070",
+      "final_confidence": "HIGH",
+      "final_ida_addr": "0x659490",
       "strategies_used": [
         "callgraph"
       ],
@@ -34874,6 +35078,13 @@
         },
         "signature": null,
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "drawHealthBar",
+        "score": 1.0,
+        "match_type": "sub_addr_exact_unclaimed",
+        "class_unclaimed": 121,
+        "class_missing": 300
       }
     },
     "object\\techno.hpp:333:TechnoClass::sub_6594A0": {
@@ -34882,8 +35093,8 @@
       "class_name": "TechnoClass",
       "method_name": "sub_6594A0",
       "full_signature": "virtual int sub_6594A0();",
-      "final_confidence": "MEDIUM",
-      "final_ida_addr": "0x773070",
+      "final_confidence": "HIGH",
+      "final_ida_addr": "0x6594A0",
       "strategies_used": [
         "callgraph"
       ],
@@ -34897,6 +35108,13 @@
         },
         "signature": null,
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "drawPipScale",
+        "score": 1.0,
+        "match_type": "sub_addr_exact_unclaimed",
+        "class_unclaimed": 121,
+        "class_missing": 300
       }
     },
     "object\\techno.hpp:334:TechnoClass::sub_6594C0": {
@@ -34905,8 +35123,8 @@
       "class_name": "TechnoClass",
       "method_name": "sub_6594C0",
       "full_signature": "virtual int sub_6594C0();",
-      "final_confidence": "MEDIUM",
-      "final_ida_addr": "0x773070",
+      "final_confidence": "HIGH",
+      "final_ida_addr": "0x6594C0",
       "strategies_used": [
         "callgraph"
       ],
@@ -34920,6 +35138,13 @@
         },
         "signature": null,
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "drawSpawnPips",
+        "score": 1.0,
+        "match_type": "sub_addr_exact_unclaimed",
+        "class_unclaimed": 121,
+        "class_missing": 300
       }
     },
     "object\\techno.hpp:335:TechnoClass::sub_6594E0": {
@@ -34928,8 +35153,8 @@
       "class_name": "TechnoClass",
       "method_name": "sub_6594E0",
       "full_signature": "virtual int sub_6594E0();",
-      "final_confidence": "MEDIUM",
-      "final_ida_addr": "0x773070",
+      "final_confidence": "HIGH",
+      "final_ida_addr": "0x6594E0",
       "strategies_used": [
         "callgraph"
       ],
@@ -34943,6 +35168,13 @@
         },
         "signature": null,
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "drawAmmoPips",
+        "score": 1.0,
+        "match_type": "sub_addr_exact_unclaimed",
+        "class_unclaimed": 121,
+        "class_missing": 300
       }
     },
     "object\\techno.hpp:336:TechnoClass::sub_6594F0": {
@@ -34951,8 +35183,8 @@
       "class_name": "TechnoClass",
       "method_name": "sub_6594F0",
       "full_signature": "virtual int sub_6594F0();",
-      "final_confidence": "MEDIUM",
-      "final_ida_addr": "0x773070",
+      "final_confidence": "HIGH",
+      "final_ida_addr": "0x6594F0",
       "strategies_used": [
         "callgraph"
       ],
@@ -34966,6 +35198,13 @@
         },
         "signature": null,
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "drawTiberiumPips",
+        "score": 1.0,
+        "match_type": "sub_addr_exact_unclaimed",
+        "class_unclaimed": 121,
+        "class_missing": 300
       }
     },
     "object\\techno.hpp:337:TechnoClass::sub_659540": {
@@ -34974,8 +35213,8 @@
       "class_name": "TechnoClass",
       "method_name": "sub_659540",
       "full_signature": "virtual int sub_659540();",
-      "final_confidence": "MEDIUM",
-      "final_ida_addr": "0x773070",
+      "final_confidence": "HIGH",
+      "final_ida_addr": "0x659540",
       "strategies_used": [
         "callgraph"
       ],
@@ -34989,6 +35228,13 @@
         },
         "signature": null,
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "drawMindControlPips",
+        "score": 1.0,
+        "match_type": "sub_addr_exact_unclaimed",
+        "class_unclaimed": 121,
+        "class_missing": 300
       }
     },
     "object\\techno.hpp:338:TechnoClass::sub_659550": {
@@ -34997,8 +35243,8 @@
       "class_name": "TechnoClass",
       "method_name": "sub_659550",
       "full_signature": "virtual int sub_659550();",
-      "final_confidence": "MEDIUM",
-      "final_ida_addr": "0x773070",
+      "final_confidence": "HIGH",
+      "final_ida_addr": "0x659550",
       "strategies_used": [
         "callgraph"
       ],
@@ -35012,6 +35258,13 @@
         },
         "signature": null,
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "drawPassengerPips",
+        "score": 1.0,
+        "match_type": "sub_addr_exact_unclaimed",
+        "class_unclaimed": 121,
+        "class_missing": 300
       }
     },
     "object\\techno.hpp:344:TechnoClass::GetValue": {
@@ -35052,7 +35305,7 @@
       "class_name": "TechnoClass",
       "method_name": "ComputeTransform",
       "full_signature": "virtual int ComputeTransform();",
-      "final_confidence": "MEDIUM",
+      "final_confidence": "HIGH",
       "final_ida_addr": "0x6F3AD0",
       "strategies_used": [
         "callgraph",
@@ -35076,6 +35329,13 @@
           "any_agrees_with_git": false
         },
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "ComputeTransform",
+        "score": 1.0,
+        "match_type": "exact_name_unclaimed",
+        "class_unclaimed": 121,
+        "class_missing": 300
       }
     },
     "object\\techno.hpp:349:TechnoClass::SelectWeapon": {
@@ -35180,7 +35440,7 @@
       "class_name": "TechnoClass",
       "method_name": "ProcessCapture",
       "full_signature": "virtual int ProcessCapture();",
-      "final_confidence": "CONFLICT",
+      "final_confidence": "HIGH",
       "final_ida_addr": "0x7014A0",
       "strategies_used": [
         "callgraph",
@@ -35204,6 +35464,13 @@
           "any_agrees_with_git": false
         },
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "ProcessCapture",
+        "score": 1.0,
+        "match_type": "exact_name_unclaimed",
+        "class_unclaimed": 121,
+        "class_missing": 300
       }
     },
     "object\\techno.hpp:405:TechnoClass::Deactivate": {
@@ -35404,8 +35671,8 @@
       "class_name": "TechnoClass",
       "method_name": "sub_70F040",
       "full_signature": "virtual int sub_70F040();",
-      "final_confidence": "MEDIUM",
-      "final_ida_addr": "0x773070",
+      "final_confidence": "HIGH",
+      "final_ida_addr": "0x70F040",
       "strategies_used": [
         "callgraph"
       ],
@@ -35419,6 +35686,13 @@
         },
         "signature": null,
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "checkMovementRestrictions",
+        "score": 1.0,
+        "match_type": "sub_addr_exact_unclaimed",
+        "class_unclaimed": 121,
+        "class_missing": 300
       }
     },
     "object\\techno.hpp:457:TechnoClass::IsInRange": {
@@ -35619,7 +35893,7 @@
       "class_name": "TechnoClass",
       "method_name": "EvaluateTarget",
       "full_signature": "virtual int EvaluateTarget();",
-      "final_confidence": "CONFLICT",
+      "final_confidence": "HIGH",
       "final_ida_addr": "0x6F7CA0",
       "strategies_used": [
         "callgraph",
@@ -35643,6 +35917,13 @@
           "any_agrees_with_git": false
         },
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "EvaluateTarget",
+        "score": 1.0,
+        "match_type": "exact_name_unclaimed",
+        "class_unclaimed": 121,
+        "class_missing": 300
       }
     },
     "object\\techno.hpp:470:TechnoClass::CheckTargetCell": {
@@ -36191,8 +36472,8 @@
       "class_name": "TechnoClass",
       "method_name": "sub_740B10",
       "full_signature": "virtual int sub_740B10();",
-      "final_confidence": "MEDIUM",
-      "final_ida_addr": "0x773070",
+      "final_confidence": "HIGH",
+      "final_ida_addr": "0x740B10",
       "strategies_used": [
         "callgraph"
       ],
@@ -36206,6 +36487,13 @@
         },
         "signature": null,
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "updateTargeting",
+        "score": 1.0,
+        "match_type": "sub_addr_exact_unclaimed",
+        "class_unclaimed": 121,
+        "class_missing": 300
       }
     },
     "object\\techno.hpp:564:TechnoClass::sub_741490": {
@@ -36214,8 +36502,8 @@
       "class_name": "TechnoClass",
       "method_name": "sub_741490",
       "full_signature": "virtual int sub_741490();",
-      "final_confidence": "MEDIUM",
-      "final_ida_addr": "0x773070",
+      "final_confidence": "HIGH",
+      "final_ida_addr": "0x741490",
       "strategies_used": [
         "callgraph"
       ],
@@ -36229,6 +36517,13 @@
         },
         "signature": null,
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "checkTargetValidity",
+        "score": 1.0,
+        "match_type": "sub_addr_exact_unclaimed",
+        "class_unclaimed": 121,
+        "class_missing": 300
       }
     },
     "object\\techno.hpp:565:TechnoClass::sub_7441B0": {
@@ -36398,8 +36693,8 @@
       "class_name": "TechnoClass",
       "method_name": "sub_743190",
       "full_signature": "virtual int sub_743190();",
-      "final_confidence": "MEDIUM",
-      "final_ida_addr": "0x773070",
+      "final_confidence": "HIGH",
+      "final_ida_addr": "0x743190",
       "strategies_used": [
         "callgraph"
       ],
@@ -36413,6 +36708,13 @@
         },
         "signature": null,
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "SelectAutoTargetWithGarrison",
+        "score": 1.0,
+        "match_type": "sub_addr_exact_unclaimed",
+        "class_unclaimed": 121,
+        "class_missing": 300
       }
     },
     "object\\techno.hpp:573:TechnoClass::sub_746400": {
@@ -36421,8 +36723,8 @@
       "class_name": "TechnoClass",
       "method_name": "sub_746400",
       "full_signature": "virtual int sub_746400();",
-      "final_confidence": "MEDIUM",
-      "final_ida_addr": "0x773070",
+      "final_confidence": "HIGH",
+      "final_ida_addr": "0x746400",
       "strategies_used": [
         "callgraph"
       ],
@@ -36436,6 +36738,13 @@
         },
         "signature": null,
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "processParasiteAttachment",
+        "score": 1.0,
+        "match_type": "sub_addr_exact_unclaimed",
+        "class_unclaimed": 121,
+        "class_missing": 300
       }
     },
     "object\\techno.hpp:574:TechnoClass::sub_746420": {
@@ -36490,8 +36799,8 @@
       "class_name": "TechnoClass",
       "method_name": "sub_7465B0",
       "full_signature": "virtual int sub_7465B0();",
-      "final_confidence": "MEDIUM",
-      "final_ida_addr": "0x773070",
+      "final_confidence": "HIGH",
+      "final_ida_addr": "0x7465B0",
       "strategies_used": [
         "callgraph"
       ],
@@ -36505,6 +36814,13 @@
         },
         "signature": null,
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "updateParasiteState",
+        "score": 1.0,
+        "match_type": "sub_addr_exact_unclaimed",
+        "class_unclaimed": 121,
+        "class_missing": 300
       }
     },
     "object\\techno.hpp:577:TechnoClass::sub_7465F0": {
@@ -36513,8 +36829,8 @@
       "class_name": "TechnoClass",
       "method_name": "sub_7465F0",
       "full_signature": "virtual int sub_7465F0();",
-      "final_confidence": "MEDIUM",
-      "final_ida_addr": "0x773070",
+      "final_confidence": "HIGH",
+      "final_ida_addr": "0x7465F0",
       "strategies_used": [
         "callgraph"
       ],
@@ -36528,6 +36844,13 @@
         },
         "signature": null,
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "detachParasites",
+        "score": 1.0,
+        "match_type": "sub_addr_exact_unclaimed",
+        "class_unclaimed": 121,
+        "class_missing": 300
       }
     },
     "object\\techno.hpp:578:TechnoClass::sub_7463A0": {
@@ -36651,8 +36974,8 @@
       "class_name": "TechnoClass",
       "method_name": "sub_746C90",
       "full_signature": "virtual int sub_746C90();",
-      "final_confidence": "MEDIUM",
-      "final_ida_addr": "0x773070",
+      "final_confidence": "HIGH",
+      "final_ida_addr": "0x746C90",
       "strategies_used": [
         "callgraph"
       ],
@@ -36666,6 +36989,13 @@
         },
         "signature": null,
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "checkSpawnState",
+        "score": 1.0,
+        "match_type": "sub_addr_exact_unclaimed",
+        "class_unclaimed": 121,
+        "class_missing": 300
       }
     },
     "object\\techno.hpp:584:TechnoClass::sub_746CD0": {
@@ -36697,8 +37027,8 @@
       "class_name": "TechnoClass",
       "method_name": "sub_746D00",
       "full_signature": "virtual int sub_746D00();",
-      "final_confidence": "MEDIUM",
-      "final_ida_addr": "0x773070",
+      "final_confidence": "HIGH",
+      "final_ida_addr": "0x746D00",
       "strategies_used": [
         "callgraph"
       ],
@@ -36712,6 +37042,13 @@
         },
         "signature": null,
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "updateSpawnManager",
+        "score": 1.0,
+        "match_type": "sub_addr_exact_unclaimed",
+        "class_unclaimed": 121,
+        "class_missing": 300
       }
     },
     "object\\techno.hpp:586:TechnoClass::sub_746D60": {
@@ -36720,8 +37057,8 @@
       "class_name": "TechnoClass",
       "method_name": "sub_746D60",
       "full_signature": "virtual int sub_746D60();",
-      "final_confidence": "MEDIUM",
-      "final_ida_addr": "0x773070",
+      "final_confidence": "HIGH",
+      "final_ida_addr": "0x746D60",
       "strategies_used": [
         "callgraph"
       ],
@@ -36735,6 +37072,13 @@
         },
         "signature": null,
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "releaseSpawns",
+        "score": 1.0,
+        "match_type": "sub_addr_exact_unclaimed",
+        "class_unclaimed": 121,
+        "class_missing": 300
       }
     },
     "object\\techno.hpp:587:TechnoClass::sub_746DB0": {
@@ -36766,8 +37110,8 @@
       "class_name": "TechnoClass",
       "method_name": "sub_746E30",
       "full_signature": "virtual int sub_746E30();",
-      "final_confidence": "MEDIUM",
-      "final_ida_addr": "0x773070",
+      "final_confidence": "HIGH",
+      "final_ida_addr": "0x746E30",
       "strategies_used": [
         "callgraph"
       ],
@@ -36781,6 +37125,13 @@
         },
         "signature": null,
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "checkIronCurtainState",
+        "score": 1.0,
+        "match_type": "sub_addr_exact_unclaimed",
+        "class_unclaimed": 121,
+        "class_missing": 300
       }
     },
     "object\\techno.hpp:589:TechnoClass::sub_746EA0": {
@@ -36789,8 +37140,8 @@
       "class_name": "TechnoClass",
       "method_name": "sub_746EA0",
       "full_signature": "virtual int sub_746EA0();",
-      "final_confidence": "MEDIUM",
-      "final_ida_addr": "0x773070",
+      "final_confidence": "HIGH",
+      "final_ida_addr": "0x746EA0",
       "strategies_used": [
         "callgraph"
       ],
@@ -36804,6 +37155,13 @@
         },
         "signature": null,
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "processIronCurtainExpiry",
+        "score": 1.0,
+        "match_type": "sub_addr_exact_unclaimed",
+        "class_unclaimed": 121,
+        "class_missing": 300
       }
     },
     "object\\techno.hpp:590:TechnoClass::sub_746100": {
@@ -36904,8 +37262,8 @@
       "class_name": "TechnoClass",
       "method_name": "sub_70FC90",
       "full_signature": "virtual int sub_70FC90();",
-      "final_confidence": "MEDIUM",
-      "final_ida_addr": "0x773070",
+      "final_confidence": "HIGH",
+      "final_ida_addr": "0x70FC90",
       "strategies_used": [
         "callgraph"
       ],
@@ -36919,6 +37277,13 @@
         },
         "signature": null,
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "Deactivate",
+        "score": 1.0,
+        "match_type": "sub_addr_exact_unclaimed",
+        "class_unclaimed": 121,
+        "class_missing": 300
       }
     },
     "object\\techno.hpp:595:TechnoClass::sub_70FD70": {
@@ -37065,8 +37430,8 @@
       "class_name": "TechnoClass",
       "method_name": "sub_7106E0",
       "full_signature": "virtual int sub_7106E0();",
-      "final_confidence": "MEDIUM",
-      "final_ida_addr": "0x773070",
+      "final_confidence": "HIGH",
+      "final_ida_addr": "0x7106E0",
       "strategies_used": [
         "callgraph"
       ],
@@ -37080,6 +37445,13 @@
         },
         "signature": null,
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "ScalarDtor",
+        "score": 1.0,
+        "match_type": "sub_addr_exact_unclaimed",
+        "class_unclaimed": 121,
+        "class_missing": 300
       }
     },
     "object\\techno.hpp:602:TechnoClass::sub_710F70": {
@@ -37180,8 +37552,8 @@
       "class_name": "TechnoClass",
       "method_name": "sub_7393C0",
       "full_signature": "virtual int sub_7393C0();",
-      "final_confidence": "MEDIUM",
-      "final_ida_addr": "0x773070",
+      "final_confidence": "HIGH",
+      "final_ida_addr": "0x7393C0",
       "strategies_used": [
         "callgraph"
       ],
@@ -37195,6 +37567,13 @@
         },
         "signature": null,
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "Deploy",
+        "score": 1.0,
+        "match_type": "sub_addr_exact_unclaimed",
+        "class_unclaimed": 121,
+        "class_missing": 300
       }
     },
     "object\\techno.hpp:607:TechnoClass::sub_737BA0": {
@@ -37249,8 +37628,8 @@
       "class_name": "TechnoClass",
       "method_name": "sub_732050",
       "full_signature": "virtual int sub_732050();",
-      "final_confidence": "MEDIUM",
-      "final_ida_addr": "0x773070",
+      "final_confidence": "HIGH",
+      "final_ida_addr": "0x732050",
       "strategies_used": [
         "callgraph"
       ],
@@ -37264,6 +37643,13 @@
         },
         "signature": null,
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "GatherAllBuildings",
+        "score": 1.0,
+        "match_type": "sub_addr_exact_unclaimed",
+        "class_unclaimed": 121,
+        "class_missing": 300
       }
     },
     "object\\techno.hpp:610:TechnoClass::sub_732580": {
@@ -37295,8 +37681,8 @@
       "class_name": "TechnoClass",
       "method_name": "sub_731CF0",
       "full_signature": "virtual int sub_731CF0();",
-      "final_confidence": "MEDIUM",
-      "final_ida_addr": "0x773070",
+      "final_confidence": "HIGH",
+      "final_ida_addr": "0x731CF0",
       "strategies_used": [
         "callgraph"
       ],
@@ -37310,6 +37696,13 @@
         },
         "signature": null,
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "GetField",
+        "score": 1.0,
+        "match_type": "sub_addr_exact_unclaimed",
+        "class_unclaimed": 121,
+        "class_missing": 300
       }
     },
     "object\\techno.hpp:612:TechnoClass::sub_729AA0": {
@@ -37750,8 +38143,8 @@
       "class_name": "TechnoClass",
       "method_name": "sub_70DDD0",
       "full_signature": "virtual int sub_70DDD0();",
-      "final_confidence": "MEDIUM",
-      "final_ida_addr": "0x773070",
+      "final_confidence": "HIGH",
+      "final_ida_addr": "0x70DDD0",
       "strategies_used": [
         "callgraph"
       ],
@@ -37765,6 +38158,13 @@
         },
         "signature": null,
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "SetSpread",
+        "score": 1.0,
+        "match_type": "sub_addr_exact_unclaimed",
+        "class_unclaimed": 121,
+        "class_missing": 300
       }
     },
     "object\\techno.hpp:633:TechnoClass::sub_70DE40": {
@@ -37796,8 +38196,8 @@
       "class_name": "TechnoClass",
       "method_name": "sub_70E120",
       "full_signature": "virtual int sub_70E120();",
-      "final_confidence": "MEDIUM",
-      "final_ida_addr": "0x773070",
+      "final_confidence": "HIGH",
+      "final_ida_addr": "0x70E120",
       "strategies_used": [
         "callgraph"
       ],
@@ -37811,6 +38211,13 @@
         },
         "signature": null,
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "Vt249to254",
+        "score": 1.0,
+        "match_type": "sub_addr_exact_unclaimed",
+        "class_unclaimed": 121,
+        "class_missing": 300
       }
     },
     "object\\techno.hpp:635:TechnoClass::sub_70E140": {
@@ -37819,8 +38226,8 @@
       "class_name": "TechnoClass",
       "method_name": "sub_70E140",
       "full_signature": "virtual int sub_70E140();",
-      "final_confidence": "MEDIUM",
-      "final_ida_addr": "0x773070",
+      "final_confidence": "HIGH",
+      "final_ida_addr": "0x70E140",
       "strategies_used": [
         "callgraph"
       ],
@@ -37834,6 +38241,13 @@
         },
         "signature": null,
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "SelectVocOrSfx",
+        "score": 1.0,
+        "match_type": "sub_addr_exact_unclaimed",
+        "class_unclaimed": 121,
+        "class_missing": 300
       }
     },
     "object\\techno.hpp:636:TechnoClass::sub_70E1A0": {
@@ -37888,8 +38302,8 @@
       "class_name": "TechnoClass",
       "method_name": "sub_70E2B0",
       "full_signature": "virtual int sub_70E2B0();",
-      "final_confidence": "MEDIUM",
-      "final_ida_addr": "0x773070",
+      "final_confidence": "HIGH",
+      "final_ida_addr": "0x70E2B0",
       "strategies_used": [
         "callgraph"
       ],
@@ -37903,6 +38317,13 @@
         },
         "signature": null,
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "IronCurtain",
+        "score": 1.0,
+        "match_type": "sub_addr_exact_unclaimed",
+        "class_unclaimed": 121,
+        "class_missing": 300
       }
     },
     "object\\techno.hpp:639:TechnoClass::sub_70E300": {
@@ -37957,8 +38378,8 @@
       "class_name": "TechnoClass",
       "method_name": "sub_70E4B0",
       "full_signature": "virtual int sub_70E4B0();",
-      "final_confidence": "MEDIUM",
-      "final_ida_addr": "0x773070",
+      "final_confidence": "HIGH",
+      "final_ida_addr": "0x70E4B0",
       "strategies_used": [
         "callgraph"
       ],
@@ -37972,6 +38393,13 @@
         },
         "signature": null,
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "CalcFlashAlpha",
+        "score": 1.0,
+        "match_type": "sub_addr_exact_unclaimed",
+        "class_unclaimed": 121,
+        "class_missing": 300
       }
     },
     "object\\techno.hpp:642:TechnoClass::sub_70EC0A": {
@@ -38003,8 +38431,8 @@
       "class_name": "TechnoClass",
       "method_name": "sub_70ED10",
       "full_signature": "virtual int sub_70ED10();",
-      "final_confidence": "MEDIUM",
-      "final_ida_addr": "0x773070",
+      "final_confidence": "HIGH",
+      "final_ida_addr": "0x70ED10",
       "strategies_used": [
         "callgraph"
       ],
@@ -38018,6 +38446,13 @@
         },
         "signature": null,
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "Update2",
+        "score": 1.0,
+        "match_type": "sub_addr_exact_unclaimed",
+        "class_unclaimed": 121,
+        "class_missing": 300
       }
     },
     "object\\techno.hpp:644:TechnoClass::sub_70ED80": {
@@ -38141,8 +38576,8 @@
       "class_name": "TechnoClass",
       "method_name": "sub_70F000",
       "full_signature": "virtual int sub_70F000();",
-      "final_confidence": "MEDIUM",
-      "final_ida_addr": "0x773070",
+      "final_confidence": "HIGH",
+      "final_ida_addr": "0x70F000",
       "strategies_used": [
         "callgraph"
       ],
@@ -38156,6 +38591,13 @@
         },
         "signature": null,
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "ClearUnknownFlag",
+        "score": 1.0,
+        "match_type": "sub_addr_exact_unclaimed",
+        "class_unclaimed": 121,
+        "class_missing": 300
       }
     },
     "object\\techno.hpp:650:TechnoClass::sub_70ECE0": {
@@ -38302,8 +38744,8 @@
       "class_name": "TechnoClass",
       "method_name": "sub_70D590",
       "full_signature": "virtual int sub_70D590();",
-      "final_confidence": "MEDIUM",
-      "final_ida_addr": "0x773070",
+      "final_confidence": "HIGH",
+      "final_ida_addr": "0x70D590",
       "strategies_used": [
         "callgraph"
       ],
@@ -38317,6 +38759,13 @@
         },
         "signature": null,
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "IsCloseEnoughToBuilding",
+        "score": 1.0,
+        "match_type": "sub_addr_exact_unclaimed",
+        "class_unclaimed": 121,
+        "class_missing": 300
       }
     },
     "object\\techno.hpp:657:TechnoClass::sub_70D670": {
@@ -38463,8 +38912,8 @@
       "class_name": "TechnoClass",
       "method_name": "sub_70C610",
       "full_signature": "virtual int sub_70C610();",
-      "final_confidence": "MEDIUM",
-      "final_ida_addr": "0x773070",
+      "final_confidence": "HIGH",
+      "final_ida_addr": "0x70C610",
       "strategies_used": [
         "callgraph"
       ],
@@ -38478,6 +38927,13 @@
         },
         "signature": null,
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "SetFocus",
+        "score": 1.0,
+        "match_type": "sub_addr_exact_unclaimed",
+        "class_unclaimed": 121,
+        "class_missing": 300
       }
     },
     "object\\techno.hpp:665:TechnoClass::SelectWeapon": {
@@ -45689,7 +46145,7 @@
       "class_name": "DSurface",
       "method_name": "DrawLineZBuf",
       "full_signature": "virtual bool DrawLineZBuf( const Point2D& start, const Point2D& end, uint16_t color, int fade_start, int fade_end, bool update_z_buffer) override;",
-      "final_confidence": "CONFLICT",
+      "final_confidence": "HIGH",
       "final_ida_addr": "0x4BFD30",
       "strategies_used": [
         "callgraph",
@@ -45713,6 +46169,13 @@
           "any_agrees_with_git": false
         },
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "DrawLineZBuf",
+        "score": 1.0,
+        "match_type": "exact_name_unclaimed",
+        "class_unclaimed": 32,
+        "class_missing": 18
       }
     },
     "render\\surface.hpp:505:DSurface::DrawLineModulated": {
@@ -45721,7 +46184,7 @@
       "class_name": "DSurface",
       "method_name": "DrawLineModulated",
       "full_signature": "virtual bool DrawLineModulated( const Point2D& start, const Point2D& end, int mod_strength, int fade_start, int fade_end, bool update_z_buffer) override;",
-      "final_confidence": "CONFLICT",
+      "final_confidence": "HIGH",
       "final_ida_addr": "0x4BBCA0",
       "strategies_used": [
         "callgraph",
@@ -45745,6 +46208,13 @@
           "any_agrees_with_git": false
         },
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "DrawLineModulated",
+        "score": 1.0,
+        "match_type": "exact_name_unclaimed",
+        "class_unclaimed": 32,
+        "class_missing": 18
       }
     },
     "render\\surface.hpp:509:DSurface::DrawLineFaded": {
@@ -45753,7 +46223,7 @@
       "class_name": "DSurface",
       "method_name": "DrawLineFaded",
       "full_signature": "virtual bool DrawLineFaded( const Point2D& start, const Point2D& end, const uint8_t* stipple_pattern, int fade_start, int fade_end, bool z_buffer, float gradient_start, float gradient_step, bool flip_dir) override;",
-      "final_confidence": "MEDIUM",
+      "final_confidence": "HIGH",
       "final_ida_addr": "0x4BC750",
       "strategies_used": [
         "callgraph"
@@ -45768,6 +46238,13 @@
         },
         "signature": null,
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "DrawLineFaded",
+        "score": 1.0,
+        "match_type": "exact_name_unclaimed",
+        "class_unclaimed": 32,
+        "class_missing": 18
       }
     },
     "render\\surface.hpp:515:DSurface::DrawLineZBufColored": {
@@ -46153,8 +46630,8 @@
       "class_name": "TextRenderer",
       "method_name": "DrawText",
       "full_signature": "void DrawText(DSurface* target, int x, int y, const char* text, uint8_t r, uint8_t g, uint8_t b);",
-      "final_confidence": "UNMATCHABLE",
-      "final_ida_addr": null,
+      "final_confidence": "HIGH",
+      "final_ida_addr": "0x4A61C0",
       "strategies_used": [],
       "evidence": {
         "callgraph": null,
@@ -46164,7 +46641,14 @@
       "unmatchable_reasons": [
         "no_callgraph_match",
         "no_git_history"
-      ]
+      ],
+      "setdiff_match": {
+        "ida_method": "DrawText",
+        "score": 1.0,
+        "match_type": "exact_name_unclaimed",
+        "class_unclaimed": 7,
+        "class_missing": 8
+      }
     },
     "render\\text_render.hpp:23:TextRenderer::GetTextWidth": {
       "hpp_file": "render\\text_render.hpp",
@@ -47716,8 +48200,8 @@
       "class_name": "BuildingClass",
       "method_name": "sub_465D70",
       "full_signature": "void sub_465D70();",
-      "final_confidence": "MEDIUM",
-      "final_ida_addr": "0x452480",
+      "final_confidence": "HIGH",
+      "final_ida_addr": "0x465D70",
       "strategies_used": [
         "callgraph"
       ],
@@ -47731,6 +48215,13 @@
         },
         "signature": null,
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "processPowerState",
+        "score": 1.0,
+        "match_type": "sub_addr_exact_unclaimed",
+        "class_unclaimed": 22,
+        "class_missing": 42
       }
     },
     "structure\\building.hpp:400:BuildingClass::sub_570DDC0": {
@@ -47762,8 +48253,8 @@
       "class_name": "BuildingClass",
       "method_name": "sub_459FF0",
       "full_signature": "void sub_459FF0();",
-      "final_confidence": "MEDIUM",
-      "final_ida_addr": "0x452480",
+      "final_confidence": "HIGH",
+      "final_ida_addr": "0x459FF0",
       "strategies_used": [
         "callgraph"
       ],
@@ -47777,6 +48268,13 @@
         },
         "signature": null,
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "initBuildingData",
+        "score": 1.0,
+        "match_type": "sub_addr_exact_unclaimed",
+        "class_unclaimed": 22,
+        "class_missing": 42
       }
     },
     "structure\\building.hpp:402:BuildingClass::sub_45A020": {
@@ -47785,8 +48283,8 @@
       "class_name": "BuildingClass",
       "method_name": "sub_45A020",
       "full_signature": "void sub_45A020();",
-      "final_confidence": "MEDIUM",
-      "final_ida_addr": "0x452480",
+      "final_confidence": "HIGH",
+      "final_ida_addr": "0x45A020",
       "strategies_used": [
         "callgraph"
       ],
@@ -47800,6 +48298,13 @@
         },
         "signature": null,
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "updateFactoryProduction",
+        "score": 1.0,
+        "match_type": "sub_addr_exact_unclaimed",
+        "class_unclaimed": 22,
+        "class_missing": 42
       }
     },
     "structure\\building.hpp:403:BuildingClass::sub_5487110": {
@@ -51210,7 +51715,7 @@
       "class_name": "CellClass",
       "method_name": "Draw",
       "full_signature": "void Draw(const Point2D* screen_pos, const RectangleStruct* bounds) const;",
-      "final_confidence": "CONFLICT",
+      "final_confidence": "HIGH",
       "final_ida_addr": "0x48E5A0",
       "strategies_used": [
         "callgraph",
@@ -51234,6 +51739,13 @@
           "any_agrees_with_git": false
         },
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "Draw",
+        "score": 1.0,
+        "match_type": "exact_name_unclaimed",
+        "class_unclaimed": 115,
+        "class_missing": 79
       }
     },
     "system\\cell.hpp:222:CellClass::FindInfantrySubposition": {
@@ -52069,7 +52581,7 @@
       "class_name": "RawFileClass",
       "method_name": "Close",
       "full_signature": "void Close() override {}",
-      "final_confidence": "CONFLICT",
+      "final_confidence": "HIGH",
       "final_ida_addr": "0x65CB30",
       "strategies_used": [
         "callgraph",
@@ -52093,6 +52605,13 @@
           "any_agrees_with_git": false
         },
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "Close",
+        "score": 1.0,
+        "match_type": "exact_name_unclaimed",
+        "class_unclaimed": 4,
+        "class_missing": 12
       }
     },
     "system\\file_class.hpp:87:RawFileClass::CDCheck": {
@@ -55651,7 +56170,7 @@
       "class_name": "TacticalClass",
       "method_name": "RenderFrame",
       "full_signature": "void RenderFrame();",
-      "final_confidence": "CONFLICT",
+      "final_confidence": "HIGH",
       "final_ida_addr": "0x4F45B0",
       "strategies_used": [
         "callgraph",
@@ -55675,6 +56194,13 @@
           "any_agrees_with_git": false
         },
         "git": null
+      },
+      "setdiff_match": {
+        "ida_method": "RenderFrame",
+        "score": 1.0,
+        "match_type": "exact_name_unclaimed",
+        "class_unclaimed": 67,
+        "class_missing": 23
       }
     },
     "system\\tactical.hpp:111:TacticalClass::DrawBuildingPlacement": {

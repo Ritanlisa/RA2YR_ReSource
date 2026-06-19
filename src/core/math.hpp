@@ -270,8 +270,11 @@ struct TimerStruct
     int32_t __padding = 0;
     int32_t TimeLeft = 0;
 
-    constexpr TimerStruct() noexcept = default; // IDA: UNMATCHED — defaulted_special_member, default_ctor, no_callgraph_match
-    explicit TimerStruct(int duration) noexcept : StartTime(-1), __padding(0), TimeLeft(duration) {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    constexpr TimerStruct() noexcept = default;
+    explicit TimerStruct(int duration) noexcept : StartTime(-1), __padding(0), TimeLeft(duration) {}
+
+    bool IsActive() const { return TimeLeft > 0; }
+    void Update() { if (TimeLeft > 0) --TimeLeft; }
 };
 
 } // namespace gamemd

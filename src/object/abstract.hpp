@@ -77,10 +77,10 @@ public:
     virtual HRESULT __stdcall QueryInterface(const IID& iid, void** ppv) override;  // 0x410260
     virtual ULONG   __stdcall AddRef() override;  // 0x464AC0
     virtual ULONG   __stdcall Release() override;  // 0x4E0360
-    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override;
+    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override; // IDA: NOT_FOUND
     virtual HRESULT __stdcall IsDirty() override;  // IDA: 0x7099D0
-    virtual HRESULT __stdcall Load(IStream* stream) override;
-    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
+    virtual HRESULT __stdcall Load(IStream* stream) override; // IDA: NOT_FOUND
+    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override; // IDA: NOT_FOUND
     virtual HRESULT __stdcall GetSizeMax(ULARGE_INTEGER* size) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     // --- IRTTITypeInfo (vtable[1]) ---
@@ -107,18 +107,19 @@ public:
 
     virtual void initialize();  // 0x438E70
     virtual void pointerExpired(AbstractClass* ptr, bool removed); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual int objectSize() const;
+    virtual int objectSize() const; // IDA: NOT_FOUND
     virtual void calculateChecksum(Checksummer& checksum) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual int owningHouseIndex() const;
-    virtual HouseClass* owningHouse() const;
-    virtual int arrayIndex() const;
+    virtual int owningHouseIndex() const; // IDA: NOT_FOUND
+    virtual HouseClass* owningHouse() const; // IDA: NOT_FOUND
+    virtual int arrayIndex() const; // IDA: NOT_FOUND
     virtual bool isDead() const;  // 0x700D10
     virtual CoordStruct* fetchCoordinatesHere(CoordStruct* out) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual CoordStruct* fetchDestination(CoordStruct* out, TechnoClass* docker = nullptr) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual bool isOnGround() const;
+    virtual CoordStruct* GetCoords(CoordStruct* out) const;  // IDA: 0x410540
+    virtual bool isOnGround() const; // IDA: NOT_FOUND
     virtual bool isAirborne() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual CoordStruct* fetchAlternateCoordinates(CoordStruct* out) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual void updateLogic();
+    virtual void updateLogic(); // IDA: NOT_FOUND
 
     CoordStruct fetchCoordinatesHere() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     CoordStruct fetchDestination(TechnoClass* docker = nullptr) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history

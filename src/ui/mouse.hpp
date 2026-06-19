@@ -42,10 +42,10 @@ class WWMouseClass
 public:
     static WWMouseClass* Instance;
 
-    virtual ~WWMouseClass() = default;
+    virtual ~WWMouseClass() = default; // IDA: NOT_FOUND
 
-    virtual void Draw(const CellStruct& coords, const SHPStruct* pImage, int32_t idxFrame) {}
-    virtual bool IsRefCountNegative() { return false; }
+    virtual void Draw(const CellStruct& coords, const SHPStruct* pImage, int32_t idxFrame) {} // IDA: NOT_FOUND
+    virtual bool IsRefCountNegative() { return false; } // IDA: NOT_FOUND
     virtual void HideCursor() {}  // IDA: 0x7B9930
     virtual void ShowCursor() {}  // IDA: 0x7C868C
     virtual void ReleaseMouse() {}  // IDA: 0x7B9C30
@@ -53,13 +53,13 @@ public:
     virtual uint8_t GetField10() { return 0; }  // IDA: 0x6CC2A0
     virtual void InvalidateRect(const RectangleStruct& rect) {}  // IDA: 0x7C8608
     virtual void CallFunc10() {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual uint32_t GetRefCount() { return 0; }
+    virtual uint32_t GetRefCount() { return 0; } // IDA: NOT_FOUND
     virtual int32_t GetX() const { return 0; } // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual int32_t GetY() const { return 0; } // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual Point2D* fetchCoordinatesHere(Point2D* out) const { return nullptr; } // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual void SetCoords(const Point2D& buffer) {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual void InitSurface(DSurface* pSurface, bool unk) {}  // IDA: 0x7B9040
-    virtual void InitCursor(DSurface* pSurface, bool unk) {}
+    virtual void InitCursor(DSurface* pSurface, bool unk) {} // IDA: NOT_FOUND
     virtual void GetDimensions(int32_t* outWidth, int32_t* outHeight) {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     SHPStruct*       Image;
@@ -88,13 +88,13 @@ class MouseClass : public RadarClass
 public:
     static MouseClass* Instance;
 
-    virtual ~MouseClass() = default;
+    virtual ~MouseClass() = default; // IDA: NOT_FOUND
 
     virtual bool SetCursor(MouseCursorType cursor, bool miniMap) override { return false; }  // IDA: 0x7C87B8
-    virtual bool UpdateCursor(MouseCursorType cursor, bool miniMap) override { return false; }
+    virtual bool UpdateCursor(MouseCursorType cursor, bool miniMap) override { return false; } // IDA: NOT_FOUND
     virtual bool RestoreCursor() override { return false; } // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual void UpdateCursorMinimapState(bool miniMap) override {}
-    virtual MouseCursorType GetLastMouseCursor() { return MouseCursorType::Default; }
+    virtual void UpdateCursorMinimapState(bool miniMap) override {} // IDA: NOT_FOUND
+    virtual MouseCursorType GetLastMouseCursor() { return MouseCursorType::Default; } // IDA: NOT_FOUND
 
     bool              MouseCursorIsMini;
     uint8_t           padding_01[3];

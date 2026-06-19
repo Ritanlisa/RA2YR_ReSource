@@ -22,19 +22,19 @@ public:
     static constexpr AbstractType kObjectTypeId = AbstractType::Unit;
 
     virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override;  // 0x6B4F50
-    virtual HRESULT __stdcall Load(IStream* pStm) override;
+    virtual HRESULT __stdcall Load(IStream* pStm) override; // IDA: NOT_FOUND
     virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
-    virtual ~UnitClass() override = default;
+    virtual ~UnitClass() override = default; // IDA: NOT_FOUND
 
     virtual AbstractType __stdcall whatAmI() const override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual int objectSize() const override;
+    virtual int objectSize() const override; // IDA: NOT_FOUND
 
     virtual void DrawAsVXL(Point2D* coords, RectangleStruct* bounding_rect, uint32_t dwUnk7, uint32_t dwUnk8); // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual void DrawAsSHP(Point2D* coords, RectangleStruct* bounding_rect, uint32_t dwUnk7, uint32_t dwUnk8); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     // === Phase 3: Harvest/Unload ===
-    int Mission_Harvest() override;
+    int Mission_Harvest() override; // IDA: NOT_FOUND
     int Mission_Unload() override;  // 0x4151E0
     int ProcessResourceHarvesting();  // 0x73D450
     int updateHarvesting();  // 0x4C2C10
@@ -93,9 +93,9 @@ public:
     int ApproachEvaluate();  // 0x4D4280
 
     // === Phase 3: Drawing ===
-    void Draw(Point2D* screen_pos, RectangleStruct* bounds) const;
-    void DrawVoxel(Point2D* screen_pos, RectangleStruct* bounds) const;
-    void DrawPlacementPreview(Point2D* screen_pos, RectangleStruct* bounds) const;
+    void Draw(Point2D* screen_pos, RectangleStruct* bounds) const; // IDA: NOT_FOUND
+    void DrawVoxel(Point2D* screen_pos, RectangleStruct* bounds) const; // IDA: NOT_FOUND
+    void DrawPlacementPreview(Point2D* screen_pos, RectangleStruct* bounds) const; // IDA: NOT_FOUND
 
     int32_t            UnitClass_field_int_6C0;
     UnitTypeClass*     Type;

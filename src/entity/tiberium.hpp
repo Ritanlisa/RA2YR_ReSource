@@ -51,15 +51,15 @@ class TiberiumClass : public ObjectClass
 public:
     static constexpr AbstractType kObjectTypeId = AbstractType::Tiberium;
 
-    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override;
-    virtual HRESULT __stdcall Load(IStream* pStm) override;
-    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;
+    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override; // IDA: NOT_FOUND
+    virtual HRESULT __stdcall Load(IStream* pStm) override; // IDA: NOT_FOUND
+    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override; // IDA: NOT_FOUND
     virtual HRESULT __stdcall GetSizeMax(ULARGE_INTEGER* pcbSize) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     virtual ~TiberiumClass() override = default;  // 0x721E40
 
     virtual AbstractType __stdcall whatAmI() const override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual int objectSize() const override;
+    virtual int objectSize() const override; // IDA: NOT_FOUND
 
     int32_t                  ArrayIndex;
     int32_t                  Spread;

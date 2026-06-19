@@ -24,14 +24,14 @@ class OverlayClass : public ObjectClass
 public:
     static constexpr AbstractType kObjectTypeId = AbstractType::Overlay;
 
-    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override;
-    virtual HRESULT __stdcall Load(IStream* pStm) override;
+    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override; // IDA: NOT_FOUND
+    virtual HRESULT __stdcall Load(IStream* pStm) override; // IDA: NOT_FOUND
     virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
-    virtual ~OverlayClass() override = default;
+    virtual ~OverlayClass() override = default; // IDA: NOT_FOUND
 
     virtual AbstractType __stdcall whatAmI() const override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual int objectSize() const override;
+    virtual int objectSize() const override; // IDA: NOT_FOUND
 
     OverlayTypeClass* Type;
 

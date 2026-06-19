@@ -28,12 +28,12 @@ class CommandClass
 public:
     static DynamicVectorClass<CommandClass*>* Array; // 0x87F658
 
-    virtual ~CommandClass() = default;                   // vt[0]
+    virtual ~CommandClass() = default;                   // vt[0] // IDA: NOT_FOUND
 
-    virtual const char*    GetName() const          = 0; // vt[1]
+    virtual const char*    GetName() const          = 0; // vt[1] // IDA: NOT_FOUND
     virtual const wchar_t* GetUIName() const        = 0; // vt[2]  // 0x484FF0
-    virtual const wchar_t* GetUICategory() const    = 0; // vt[3]
-    virtual const wchar_t* GetUIDescription() const = 0; // vt[4]
+    virtual const wchar_t* GetUICategory() const    = 0; // vt[3] // IDA: NOT_FOUND
+    virtual const wchar_t* GetUIDescription() const = 0; // vt[4] // IDA: NOT_FOUND
 
     virtual bool IsValid(uint32_t context) const         // vt[5] 0x724BD0
         { return false; }
@@ -44,7 +44,7 @@ public:
     virtual bool IsActive(uint32_t context) const        // vt[7] 0x724BD0
         { return false; }
 
-    virtual void Execute(uint32_t context) const = 0;    // vt[8]
+    virtual void Execute(uint32_t context) const = 0;    // vt[8] // IDA: NOT_FOUND
 };
 
 // ============================================================================

@@ -28,11 +28,11 @@ public:
     // IDA 0x48B2A0 area
     void Process();  // 0x5CA800
     // IDA 0x48B2A0 area
-    void Reset();
+    void Reset(); // IDA: NOT_FOUND
     // IDA 0x48B2A0 area
-    bool IsActive() const;
+    bool IsActive() const; // IDA: NOT_FOUND
     // IDA 0x48B2A0 area
-    int32_t GetTimeRemaining() const;
+    int32_t GetTimeRemaining() const; // IDA: NOT_FOUND
 
     int32_t     MultiplayerSiege_field_00;       // 0x00
     int32_t     MultiplayerSiege_field_04;       // 0x04
@@ -53,7 +53,7 @@ public:
     // IDA 0x68C2B0
     static void FindStartPositions();  // 0x688380
     // IDA 0x68C2B0 area
-    static void sub_68C2B0();
+    static void sub_68C2B0(); // IDA: NOT_FOUND
     // IDA 0x48B2A0 area
     static void SetupGame();  // 0x6AE6E0
 
@@ -166,7 +166,7 @@ public:
 class ModemGame
 {
 public:
-    virtual ~ModemGame() = default;
+    virtual ~ModemGame() = default; // IDA: NOT_FOUND
 
     virtual void sub_5B59B0(); // 0x5B59B0
     virtual void sub_5B5AD0(); // 0x5B5AD0
@@ -183,7 +183,7 @@ public:
 class ModemGuest
 {
 public:
-    virtual ~ModemGuest() = default;
+    virtual ~ModemGuest() = default; // IDA: NOT_FOUND
 
     virtual void Dialog(); // 0x5B49B0
     virtual void InitDialog(); // 0x5B4EE0
@@ -198,7 +198,7 @@ public:
 class ModemHost
 {
 public:
-    virtual ~ModemHost() = default;
+    virtual ~ModemHost() = default; // IDA: NOT_FOUND
 
     virtual void Dialog(); // 0x5B77E0
     virtual void InitDialog(); // 0x5B82F0
@@ -211,7 +211,7 @@ public:
 class MultiplayerBattleTeam
 {
 public:
-    virtual ~MultiplayerBattleTeam() = default;
+    virtual ~MultiplayerBattleTeam() = default; // IDA: NOT_FOUND
 
     virtual void AddRef(); // 0x5C1090
     virtual void Release(); // 0x5C10B0
@@ -224,7 +224,7 @@ public:
 class MultiplayerConfig
 {
 public:
-    virtual ~MultiplayerConfig() = default;
+    virtual ~MultiplayerConfig() = default; // IDA: NOT_FOUND
 
     virtual void Cleanup(); // 0x5D5B20
 
@@ -233,7 +233,7 @@ public:
 class MultiplayerLobby
 {
 public:
-    virtual ~MultiplayerLobby() = default;
+    virtual ~MultiplayerLobby() = default; // IDA: NOT_FOUND
 
     virtual void FillSlots(); // 0x5EC030
 
@@ -260,7 +260,7 @@ public:
 class MultiplayerObserverTeam
 {
 public:
-    virtual ~MultiplayerObserverTeam() = default;
+    virtual ~MultiplayerObserverTeam() = default; // IDA: NOT_FOUND
 
     virtual void AddRef(); // 0x5C94C0
     virtual void QueryInterface(); // 0x5C94D0
@@ -271,7 +271,7 @@ public:
 class MultiplayerSiegeAttackerTeam
 {
 public:
-    virtual ~MultiplayerSiegeAttackerTeam() = default;
+    virtual ~MultiplayerSiegeAttackerTeam() = default; // IDA: NOT_FOUND
 
     virtual void QueryInterface(); // 0x5CAF40
 
@@ -280,7 +280,7 @@ public:
 class MultiplayerSiegeDefenderTeam
 {
 public:
-    virtual ~MultiplayerSiegeDefenderTeam() = default;
+    virtual ~MultiplayerSiegeDefenderTeam() = default; // IDA: NOT_FOUND
 
     virtual void AddRef(); // 0x5CAE70
     virtual void QueryInterface(); // 0x5CAF10
@@ -291,7 +291,7 @@ public:
 class MultiplayerTeam
 {
 public:
-    virtual ~MultiplayerTeam() = default;
+    virtual ~MultiplayerTeam() = default; // IDA: NOT_FOUND
 
     virtual void Constructor(); // 0x5D8C50
     virtual void Destructor(); // 0x5D8C80
@@ -311,7 +311,7 @@ public:
 class MultiplayerTeam_Destru
 {
 public:
-    virtual ~MultiplayerTeam_Destru() = default;
+    virtual ~MultiplayerTeam_Destru() = default; // IDA: NOT_FOUND
 
     virtual void QueryInterface(); // 0x5D8D50
 
@@ -320,7 +320,7 @@ public:
 class NetworkBuffer
 {
 public:
-    virtual ~NetworkBuffer() = default;
+    virtual ~NetworkBuffer() = default; // IDA: NOT_FOUND
 
     virtual void GetField(); // 0x74FD50
     virtual void UpdateWindow(); // 0x74FD60
@@ -335,7 +335,7 @@ public:
 class NetworkDialog
 {
 public:
-    virtual ~NetworkDialog() = default;
+    virtual ~NetworkDialog() = default; // IDA: NOT_FOUND
 
     virtual void InitModemSettings(); // 0x695FD0
     virtual void Dispatch(); // 0x6964C0
@@ -348,7 +348,7 @@ public:
 class NetworkEventClass
 {
 public:
-    virtual ~NetworkEventClass() = default;
+    virtual ~NetworkEventClass() = default; // IDA: NOT_FOUND
 
     virtual void Process(); // 0x645820
 
@@ -357,7 +357,7 @@ public:
 class NetworkEventQueueClass
 {
 public:
-    virtual ~NetworkEventQueueClass() = default;
+    virtual ~NetworkEventQueueClass() = default; // IDA: NOT_FOUND
 
     virtual void WaitForResponse(); // 0x664530
 
@@ -366,7 +366,7 @@ public:
 class NetworkGameSetup
 {
 public:
-    virtual ~NetworkGameSetup() = default;
+    virtual ~NetworkGameSetup() = default; // IDA: NOT_FOUND
 
     virtual void DlgProc(); // 0x5B7970
     virtual void ReadRulesInitConfig(); // 0x5B9680
@@ -398,7 +398,7 @@ public:
 class NetworkManager
 {
 public:
-    virtual ~NetworkManager() = default;
+    virtual ~NetworkManager() = default; // IDA: NOT_FOUND
 
     virtual void SetPlayerAddress(); // 0x664240
     virtual void RemovePlayer(); // 0x6646C0
@@ -409,7 +409,7 @@ public:
 class NetworkOptions
 {
 public:
-    virtual ~NetworkOptions() = default;
+    virtual ~NetworkOptions() = default; // IDA: NOT_FOUND
 
     virtual void DlgProc(); // 0x560480
     virtual void sub_7B0F50(); // 0x7B0F50
@@ -420,7 +420,7 @@ public:
 class NetworkScore
 {
 public:
-    virtual ~NetworkScore() = default;
+    virtual ~NetworkScore() = default; // IDA: NOT_FOUND
 
     virtual void DlgProc(); // 0x64AE50
 
@@ -429,7 +429,7 @@ public:
 class NetworkSession
 {
 public:
-    virtual ~NetworkSession() = default;
+    virtual ~NetworkSession() = default; // IDA: NOT_FOUND
 
     virtual void ResetState(); // 0x54EE60
     virtual void IsPlayerInGame(); // 0x69B600
@@ -440,7 +440,7 @@ public:
 class NetworkSettings
 {
 public:
-    virtual ~NetworkSettings() = default;
+    virtual ~NetworkSettings() = default; // IDA: NOT_FOUND
 
     virtual void DlgProc(); // 0x5DDBD0
 
@@ -449,7 +449,7 @@ public:
 class NetworkShare
 {
 public:
-    virtual ~NetworkShare() = default;
+    virtual ~NetworkShare() = default; // IDA: NOT_FOUND
 
     virtual void GetField(); // 0x5E8DA0
 
@@ -485,7 +485,7 @@ public:
 class WOLGameClass
 {
 public:
-    virtual ~WOLGameClass() = default;
+    virtual ~WOLGameClass() = default; // IDA: NOT_FOUND
 
     virtual void ParseChatMessage(); // 0x78E030
 
@@ -494,7 +494,7 @@ public:
 class WOLGameList
 {
 public:
-    virtual ~WOLGameList() = default;
+    virtual ~WOLGameList() = default; // IDA: NOT_FOUND
 
     virtual void sub_77A7C0(); // 0x77A7C0
     virtual void Check(); // 0x77A840
@@ -511,7 +511,7 @@ public:
 class WOLLogin
 {
 public:
-    virtual ~WOLLogin() = default;
+    virtual ~WOLLogin() = default; // IDA: NOT_FOUND
 
     virtual void DlgProc(); // 0x78DB70
 
@@ -520,7 +520,7 @@ public:
 class WOLOption
 {
 public:
-    virtual ~WOLOption() = default;
+    virtual ~WOLOption() = default; // IDA: NOT_FOUND
 
     virtual void SetValue(); // 0x77A4A0
 
@@ -529,7 +529,7 @@ public:
 class WOLPersona
 {
 public:
-    virtual ~WOLPersona() = default;
+    virtual ~WOLPersona() = default; // IDA: NOT_FOUND
 
     virtual void FormatDateTime(); // 0x77A4D0
 
@@ -538,7 +538,7 @@ public:
 class WOLobby
 {
 public:
-    virtual ~WOLobby() = default;
+    virtual ~WOLobby() = default; // IDA: NOT_FOUND
 
     virtual void FindPlayerIndex(); // 0x5E8D00
     virtual void BuildStateList(); // 0x781D20

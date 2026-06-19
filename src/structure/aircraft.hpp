@@ -39,27 +39,27 @@ public:
     virtual long __stdcall Is_Loaded() override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual long __stdcall Is_Strafe() override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual long __stdcall Is_Fighter() override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual long __stdcall Is_Locked() override;
+    virtual long __stdcall Is_Locked() override; // IDA: NOT_FOUND
 
     virtual HRESULT __stdcall QueryInterface(const IID& iid, void** ppvObject) override;  // 0x414290
     virtual ULONG __stdcall AddRef() override;  // 0x4142F0
     virtual ULONG __stdcall Release() override;  // 0x414300
 
-    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override;
-    virtual HRESULT __stdcall Load(IStream* pStm) override;
+    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override; // IDA: NOT_FOUND
+    virtual HRESULT __stdcall Load(IStream* pStm) override; // IDA: NOT_FOUND
     virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     virtual AbstractType __stdcall whatAmI() const override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual int objectSize() const override;
+    virtual int objectSize() const override; // IDA: NOT_FOUND
 
     virtual ~AircraftClass() override = default;  // 0x414080
 
     // === Phase 3: Missions ===
     int Mission_Attack() override;  // 0x417FE0
-    int Mission_Return() override;
+    int Mission_Return() override; // IDA: NOT_FOUND
     int Mission_Unload() override;  // 0x4151E0
-    int Mission_Hunt() override;
-    int Mission_Retreat() override;
+    int Mission_Hunt() override; // IDA: NOT_FOUND
+    int Mission_Retreat() override; // IDA: NOT_FOUND
     int Mission_Enter() override;  // 0x4166C0
     int Mission_Transport();  // 0x419C80
     int MissionDispatch();  // 0x4190B0
@@ -75,7 +75,7 @@ public:
     int ValidateLandingCell();  // 0x4196B0
     int ProcessReturnToBase();  // 0x415A50
     int CheckLandingClearance();  // 0x41A590
-    int Mission_Unload_full();
+    int Mission_Unload_full(); // IDA: NOT_FOUND
     int LandingCheckStub();  // 0x41BE60
 
     // === Phase 3: Paradrop ===

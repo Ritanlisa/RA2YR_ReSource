@@ -28,18 +28,18 @@ class HouseTypeClass : public AbstractClass
 public:
     static constexpr AbstractType kObjectDeriveId = AbstractType::HouseType;
 
-    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override;
-    virtual HRESULT __stdcall Load(IStream* stream) override;
-    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
+    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override; // IDA: NOT_FOUND
+    virtual HRESULT __stdcall Load(IStream* stream) override; // IDA: NOT_FOUND
+    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override; // IDA: NOT_FOUND
 
     virtual ~HouseTypeClass() = default;  // 0x5116A0
 
     virtual AbstractType __stdcall whatAmI() const override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual int objectSize() const override;  // 0x512720
 
-    HouseTypeClass* FindParentCountry() const;
-    int FindParentCountryIndex() const;
-    static int FindIndexOfName(const char* name);
+    HouseTypeClass* FindParentCountry() const; // IDA: NOT_FOUND
+    int FindParentCountryIndex() const; // IDA: NOT_FOUND
+    static int FindIndexOfName(const char* name); // IDA: NOT_FOUND
 
     char                    id[24];
     uint8_t                 m_zero_3C;

@@ -117,11 +117,11 @@ public:
     State();
     virtual ~State(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
-    void AddRef() noexcept {}
-    void Release() noexcept {}
+    void AddRef() noexcept {} // IDA: NOT_FOUND
+    void Release() noexcept {} // IDA: NOT_FOUND
 
-    virtual WDTError LoadConfig();
-    virtual WDTError SaveConfig();
+    virtual WDTError LoadConfig(); // IDA: NOT_FOUND
+    virtual WDTError SaveConfig(); // IDA: NOT_FOUND
 
     int             Players;
     int             AIPlayers;
@@ -148,12 +148,12 @@ public:
     Map();
     virtual ~Map(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
-    virtual WDTError Load();
-    virtual WDTError Draw();
-    virtual void    updateLogic();
+    virtual WDTError Load(); // IDA: NOT_FOUND
+    virtual WDTError Draw(); // IDA: NOT_FOUND
+    virtual void    updateLogic(); // IDA: NOT_FOUND
 
-    void AddRef() noexcept { ++refcount; }
-    void Release() noexcept { if (--refcount == 0) delete this; }
+    void AddRef() noexcept { ++refcount; } // IDA: NOT_FOUND
+    void Release() noexcept { if (--refcount == 0) delete this; } // IDA: NOT_FOUND
 
     int         Width;
     int         Height;
@@ -198,10 +198,10 @@ public:
     virtual ~Conflict(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     virtual WDTError Resolve(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual void     updateLogic();
+    virtual void     updateLogic(); // IDA: NOT_FOUND
 
-    void AddRef() { ++referenceCount; }
-    void Release() { if (--referenceCount == 0) delete this; }
+    void AddRef() { ++referenceCount; } // IDA: NOT_FOUND
+    void Release() { if (--referenceCount == 0) delete this; } // IDA: NOT_FOUND
 
     Territory*    Attacker;
     Territory*    Defender;
@@ -218,9 +218,9 @@ public:
 
     virtual WDTError Start();  // 0x7CD80F
     virtual WDTError End();  // 0x53A090
-    virtual void     updateLogic();
-    virtual WDTError Save(const char* filename);
-    virtual WDTError Load(const char* filename);
+    virtual void     updateLogic(); // IDA: NOT_FOUND
+    virtual WDTError Save(const char* filename); // IDA: NOT_FOUND
+    virtual WDTError Load(const char* filename); // IDA: NOT_FOUND
 
     rc_ptr<State>   state;
     rc_ptr<Map>     map;

@@ -46,9 +46,9 @@ public:
     virtual ~GadgetClass() = default;  // 0x4E1390
 
     virtual void Draw(DSurface* surface, TextRenderer* text) = 0;  // 0x557920
-    virtual bool OnClick(int x, int y);
-    virtual void OnMouseEnter() = 0;
-    virtual void OnMouseLeave() = 0;
+    virtual bool OnClick(int x, int y); // IDA: NOT_FOUND
+    virtual void OnMouseEnter() = 0; // IDA: NOT_FOUND
+    virtual void OnMouseLeave() = 0; // IDA: NOT_FOUND
 
     int X = 0;           // binary offset +0x0C
     int Y = 0;           // binary offset +0x10
@@ -121,21 +121,21 @@ public:
 class DialogClass {
 public:
     DialogClass(int x, int y, int w, int h); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual ~DialogClass() = default;
+    virtual ~DialogClass() = default; // IDA: NOT_FOUND
 
     virtual void OnRender(DSurface* surface, TextRenderer* text);  // 0x68F060
     virtual void OnupdateLogic(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual bool OnMouseClick(int mouse_x, int mouse_y); // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual void OnMouseMove(int mouse_x, int mouse_y); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual bool OnKeyDown(int key);
+    virtual bool OnKeyDown(int key); // IDA: NOT_FOUND
 
     void AddGadget(GadgetClass* gadget); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    void ClearGadgets();
+    void ClearGadgets(); // IDA: NOT_FOUND
     void SetVisible(bool visible); // IDA: UNMATCHED — no_callgraph_match, no_git_history
     bool IsVisible() const;  // 0x4A5110
     bool IsFinished() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     void Finish(int result); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    int GetResult() const;
+    int GetResult() const; // IDA: NOT_FOUND
 
     bool finished = false;
     int result = 0;

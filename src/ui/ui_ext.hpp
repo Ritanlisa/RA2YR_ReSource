@@ -25,7 +25,7 @@ public:
     // IDA 0x48B2A0 area
     static bool CheckControlTypeDialog(HWND hDlg, int32_t ctrlID, int32_t type);  // 0x60C540
     // IDA 0x48B2A0 area
-    static void SetControlText(HWND hDlg, int32_t ctrlID, const wchar_t* text);
+    static void SetControlText(HWND hDlg, int32_t ctrlID, const wchar_t* text); // IDA: NOT_FOUND
 
     int32_t     Control_field_00;       // 0x00
 };
@@ -42,7 +42,7 @@ public:
     // IDA 0x5BD3D0 area
     static int32_t MeasureWidth(const wchar_t* text);  // 0x433ED0
     // IDA 0x5BD3D0 area
-    static void sub_5BD3D0();
+    static void sub_5BD3D0(); // IDA: NOT_FOUND
     // IDA 0x5BD3D0 area
     static void DrawText(DSurface* surface, const wchar_t* text, int32_t x, int32_t y, uint32_t color);  // 0x4A61C0
 
@@ -57,7 +57,7 @@ class Font
 {
 public:
     // IDA 0x4346C0
-    void sub_4346C0();
+    void sub_4346C0(); // IDA: NOT_FOUND
     // IDA 0x4346C0 area
     void Print(const char* text, int32_t x, int32_t y, uint32_t color);  // 0x434CD0
 
@@ -269,7 +269,7 @@ public:
 class BitArray
 {
 public:
-    virtual ~BitArray() = default;
+    virtual ~BitArray() = default; // IDA: NOT_FOUND
 
     virtual void TestBit() {} // IDA: 0x54A950
 
@@ -287,7 +287,7 @@ public:
 class BitmapClass
 {
 public:
-    virtual ~BitmapClass() = default;
+    virtual ~BitmapClass() = default; // IDA: NOT_FOUND
 
     virtual void ProcessFrame() {} // IDA: 0x42DF90
 
@@ -296,7 +296,7 @@ public:
 class ButtonClass
 {
 public:
-    virtual ~ButtonClass() = default;
+    virtual ~ButtonClass() = default; // IDA: NOT_FOUND
 
     virtual void SetState() {} // IDA: 0x69DEA0
 
@@ -305,7 +305,7 @@ public:
 class ButtonOwnerDraw
 {
 public:
-    virtual ~ButtonOwnerDraw() = default;
+    virtual ~ButtonOwnerDraw() = default; // IDA: NOT_FOUND
 
     virtual void DlgProc() {} // IDA: 0x616980
 
@@ -314,7 +314,7 @@ public:
 class CampaignCoop
 {
 public:
-    virtual ~CampaignCoop() = default;
+    virtual ~CampaignCoop() = default; // IDA: NOT_FOUND
 
     virtual void Setup() {} // IDA: 0x5C21D0
 
@@ -323,7 +323,7 @@ public:
 class CampaignMenu
 {
 public:
-    virtual ~CampaignMenu() = default;
+    virtual ~CampaignMenu() = default; // IDA: NOT_FOUND
 
     virtual void DlgProc() {} // IDA: 0x52D640
 
@@ -332,7 +332,7 @@ public:
 class CampaignProperties_WorldDominationTour
 {
 public:
-    virtual ~CampaignProperties_WorldDominationTour() = default;
+    virtual ~CampaignProperties_WorldDominationTour() = default; // IDA: NOT_FOUND
 
     virtual void QueryInterface() {} // IDA: 0x76C030
 
@@ -341,7 +341,7 @@ public:
 class CampaignScore
 {
 public:
-    virtual ~CampaignScore() = default;
+    virtual ~CampaignScore() = default; // IDA: NOT_FOUND
 
     virtual void DialogProc() {} // IDA: 0x46DFD0
     virtual void ProcessScreen() {} // IDA: 0x46FC00
@@ -363,7 +363,7 @@ public:
 class CampaignSelect
 {
 public:
-    virtual ~CampaignSelect() = default;
+    virtual ~CampaignSelect() = default; // IDA: NOT_FOUND
 
     virtual void LookupByName() {} // IDA: 0x46CC90
     virtual void DlgProc() {} // IDA: 0x52EC00
@@ -374,7 +374,7 @@ public:
 class Campaign_WorldDominationTour
 {
 public:
-    virtual ~Campaign_WorldDominationTour() = default;
+    virtual ~Campaign_WorldDominationTour() = default; // IDA: NOT_FOUND
 
     virtual void QueryInterface() {} // IDA: 0x765600
 
@@ -417,7 +417,7 @@ public:
 class CheckSum
 {
 public:
-    virtual ~CheckSum() = default;
+    virtual ~CheckSum() = default; // IDA: NOT_FOUND
 
     virtual void AccumulateModulo() {} // IDA: 0x632C40
 
@@ -444,7 +444,7 @@ public:
 class ComboBoxDropDown
 {
 public:
-    virtual ~ComboBoxDropDown() = default;
+    virtual ~ComboBoxDropDown() = default; // IDA: NOT_FOUND
 
     virtual void WndProc() {} // IDA: 0x617250
 
@@ -453,7 +453,7 @@ public:
 class ComboBoxOwnerDraw
 {
 public:
-    virtual ~ComboBoxOwnerDraw() = default;
+    virtual ~ComboBoxOwnerDraw() = default; // IDA: NOT_FOUND
 
     virtual void GetWidthHeight() {} // IDA: 0x600670
     virtual void MatchDimensions() {} // IDA: 0x600680
@@ -473,7 +473,7 @@ public:
 class ControlClass
 {
 public:
-    virtual ~ControlClass() = default;
+    virtual ~ControlClass() = default; // IDA: NOT_FOUND
 
     virtual void Construct() {} // IDA: 0x48E520
     virtual void CtorFromData() {} // IDA: 0x48E570
@@ -488,7 +488,7 @@ public:
 class CreditsPower
 {
 public:
-    virtual ~CreditsPower() = default;
+    virtual ~CreditsPower() = default; // IDA: NOT_FOUND
 
     virtual void sub_4C3D00() {} // IDA: 0x4C3D00
     virtual void Display() {} // IDA: 0x4C3E30
@@ -499,7 +499,7 @@ public:
 class DialogControl
 {
 public:
-    virtual ~DialogControl() = default;
+    virtual ~DialogControl() = default; // IDA: NOT_FOUND
 
     virtual void Hide() {} // IDA: 0x4E1450
     virtual void Show() {} // IDA: 0x4E1460
@@ -514,7 +514,7 @@ public:
 class DialogQueue
 {
 public:
-    virtual ~DialogQueue() = default;
+    virtual ~DialogQueue() = default; // IDA: NOT_FOUND
 
     virtual void PushEntry() {} // IDA: 0x5D4E70
     virtual void RemoveEntry() {} // IDA: 0x5D4ED0
@@ -525,7 +525,7 @@ public:
 class DropListClass
 {
 public:
-    virtual ~DropListClass() = default;
+    virtual ~DropListClass() = default; // IDA: NOT_FOUND
 
     virtual void OnClick() {} // IDA: 0x4B4EE0
     virtual void ?() {} // IDA: 0x4B4F20
@@ -559,7 +559,7 @@ public:
 class DropPod
 {
 public:
-    virtual ~DropPod() = default;
+    virtual ~DropPod() = default; // IDA: NOT_FOUND
 
     virtual void ProcessLanding() {} // IDA: 0x4CE840
 
@@ -568,7 +568,7 @@ public:
 class EditClass
 {
 public:
-    virtual ~EditClass() = default;
+    virtual ~EditClass() = default; // IDA: NOT_FOUND
 
     virtual void QueryInterface() {} // IDA: 0x4B57D0
 
@@ -577,7 +577,7 @@ public:
 class EditControl
 {
 public:
-    virtual ~EditControl() = default;
+    virtual ~EditControl() = default; // IDA: NOT_FOUND
 
     virtual void WndProc() {} // IDA: 0x614B30
     virtual void GrowBuffer() {} // IDA: 0x7B72F0
@@ -588,7 +588,7 @@ public:
 class FontClass
 {
 public:
-    virtual ~FontClass() = default;
+    virtual ~FontClass() = default; // IDA: NOT_FOUND
 
     virtual void RenderGlyph() {} // IDA: 0x434120
     virtual void RenderText() {} // IDA: 0x434500
@@ -607,7 +607,7 @@ public:
 class FontRenderer
 {
 public:
-    virtual ~FontRenderer() = default;
+    virtual ~FontRenderer() = default; // IDA: NOT_FOUND
 
     virtual void InitContext() {} // IDA: 0x4348F0
     virtual void DrawText() {} // IDA: 0x434B90
@@ -629,7 +629,7 @@ public:
 class InputManager
 {
 public:
-    virtual ~InputManager() = default;
+    virtual ~InputManager() = default; // IDA: NOT_FOUND
 
     virtual void sub_4E15A0() {} // IDA: 0x4E15A0
     virtual void ProcessEvents() {} // IDA: 0x4E1640
@@ -646,7 +646,7 @@ public:
 class InputManager_ProcessEvents
 {
 public:
-    virtual ~InputManager_ProcessEvents() = default;
+    virtual ~InputManager_ProcessEvents() = default; // IDA: NOT_FOUND
 
     virtual void AddRef() {} // IDA: 0x40D230
     virtual void Release() {} // IDA: 0x40D240
@@ -681,7 +681,7 @@ public:
 class ListBox
 {
 public:
-    virtual ~ListBox() = default;
+    virtual ~ListBox() = default; // IDA: NOT_FOUND
 
     virtual void Constructor() {} // IDA: 0x5C1030
     virtual void FillEntries() {} // IDA: 0x5D6450
@@ -723,7 +723,7 @@ public:
 class ListNode
 {
 public:
-    virtual ~ListNode() = default;
+    virtual ~ListNode() = default; // IDA: NOT_FOUND
 
     virtual void Alloc() {} // IDA: 0x5A9A20
 
@@ -741,7 +741,7 @@ public:
 class ProgressAnim
 {
 public:
-    virtual ~ProgressAnim() = default;
+    virtual ~ProgressAnim() = default; // IDA: NOT_FOUND
 
     virtual void Init() {} // IDA: 0x642A60
 
@@ -785,7 +785,7 @@ public:
 class TabCameoListClass
 {
 public:
-    virtual ~TabCameoListClass() = default;
+    virtual ~TabCameoListClass() = default; // IDA: NOT_FOUND
 
     virtual void AddCameo_ReplaceItAll() {} // IDA: 0x6A8710
 
@@ -794,7 +794,7 @@ public:
 class TabControl
 {
 public:
-    virtual ~TabControl() = default;
+    virtual ~TabControl() = default; // IDA: NOT_FOUND
 
     virtual void WndProc() {} // IDA: 0x612B70
     virtual void DlgProc() {} // IDA: 0x61D950

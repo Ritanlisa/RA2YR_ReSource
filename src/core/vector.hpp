@@ -15,7 +15,7 @@ public:
     static_assert(!needs_vector_delete<T>::value || (alignof(T) <= 4),
         "Alignment of T needs to be less than or equal to 4.");
 
-    constexpr VectorClass() noexcept = default;
+    constexpr VectorClass() noexcept = default; // IDA: NOT_FOUND
 
     explicit VectorClass(int capacity, T* mem = nullptr)
     {
@@ -214,7 +214,7 @@ template <typename T>
 class DynamicVectorClass : public VectorClass<T>
 {
 public:
-    constexpr DynamicVectorClass() noexcept = default;
+    constexpr DynamicVectorClass() noexcept = default; // IDA: NOT_FOUND
 
     explicit DynamicVectorClass(int capacity, T* mem = nullptr)
         : VectorClass<T>(capacity, mem)
@@ -263,6 +263,8 @@ public:
         }
         return result;
     }
+
+    int GetSize() const { return Count; } // IDA: NOT_FOUND
 
     void Clear() override
     {

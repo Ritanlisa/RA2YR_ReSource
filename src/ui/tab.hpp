@@ -26,7 +26,7 @@ class TabClass : public SidebarClass
 public:
     static TabClass* Instance;
 
-    virtual ~TabClass() = default;
+    virtual ~TabClass() = default; // IDA: NOT_FOUND
 
     TabDataClass  TabData;
     TimerStruct   TabClass_field_timer_552C;

@@ -26,9 +26,9 @@ class CD
 public:
     virtual ~CD() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
-    virtual bool ForceAvailable(int nCDNumber);
-    virtual bool InsertCDDialog();
-    virtual void SwapToDisk();
+    virtual bool ForceAvailable(int nCDNumber); // IDA: NOT_FOUND
+    virtual bool InsertCDDialog(); // IDA: NOT_FOUND
+    virtual void SwapToDisk(); // IDA: NOT_FOUND
 
 protected:
     CD() = default;

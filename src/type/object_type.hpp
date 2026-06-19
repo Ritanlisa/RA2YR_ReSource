@@ -32,12 +32,12 @@ public:
 
     virtual CoordStruct* onCellChanged(CoordStruct* pDest, CoordStruct* pSrc) const; // 0x41CBF0 (as vt_entry_7C)
     virtual DWORD GetOwners() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual int GetPipMax() const;
+    virtual int GetPipMax() const; // IDA: NOT_FOUND
     virtual void onTypeLoadComplete(DWORD dwUnk) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual void onTypeUnload(DWORD dwUnk); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) = 0;
+    virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) = 0; // IDA: NOT_FOUND
     virtual int GetActualCost(HouseClass* pHouse) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual int GetBuildSpeed() const;
+    virtual int GetBuildSpeed() const; // IDA: NOT_FOUND
     virtual ObjectClass* CreateObject(HouseClass* pOwner) = 0;  // 0x4737F0
     virtual CellStruct* GetFoundationData(bool IncludeBib) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual BuildingClass* FindFactory(bool allowOccupied, bool requirePower, bool requireCanBuild, HouseClass const* pHouse) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history

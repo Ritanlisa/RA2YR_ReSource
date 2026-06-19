@@ -67,17 +67,17 @@ class BulletClass : public ObjectClass
 public:
     static constexpr AbstractType kObjectTypeId = AbstractType::Bullet;
 
-    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override;
-    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;
+    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override; // IDA: NOT_FOUND
+    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override; // IDA: NOT_FOUND
 
     virtual ~BulletClass() override = default;  // 0x466560
 
     virtual AbstractType __stdcall whatAmI() const override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual int objectSize() const override;
+    virtual int objectSize() const override; // IDA: NOT_FOUND
 
     virtual uint8_t GetAnimFrame() const;  // 0x468000
-    virtual void SetTarget(AbstractClass* pTarget);
-    virtual bool MoveTo(const CoordStruct& where, const BulletVelocity& velocity);
+    virtual void SetTarget(AbstractClass* pTarget); // IDA: NOT_FOUND
+    virtual bool MoveTo(const CoordStruct& where, const BulletVelocity& velocity); // IDA: NOT_FOUND
 
     BulletTypeClass*    Type;
     TechnoClass*        Owner;

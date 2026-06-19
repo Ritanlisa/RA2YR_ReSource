@@ -16,7 +16,7 @@ class PowerClass : public RadarClass
 public:
     static PowerClass* Instance;
 
-    virtual ~PowerClass() = default;
+    virtual ~PowerClass() = default; // IDA: NOT_FOUND
 
     int32_t      PowerOutput;
     int32_t      PowerDrain;

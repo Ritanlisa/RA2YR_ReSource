@@ -1,0 +1,531 @@
+{
+  "total": 74,
+  "stats": {
+    "sub_addr_exact_unclaimed": 51,
+    "from_MEDIUM": 56,
+    "exact_name_unclaimed": 23,
+    "from_CONFLICT": 15,
+    "from_LOW": 2,
+    "from_UNMATCHABLE": 1
+  },
+  "upgrades": [
+    {
+      "key": "structure\\building.hpp:399:BuildingClass::sub_465D70",
+      "old": "MEDIUM",
+      "new": "HIGH",
+      "addr": "0x465D70",
+      "type": "sub_addr_exact_unclaimed"
+    },
+    {
+      "key": "structure\\building.hpp:401:BuildingClass::sub_459FF0",
+      "old": "MEDIUM",
+      "new": "HIGH",
+      "addr": "0x459FF0",
+      "type": "sub_addr_exact_unclaimed"
+    },
+    {
+      "key": "structure\\building.hpp:402:BuildingClass::sub_45A020",
+      "old": "MEDIUM",
+      "new": "HIGH",
+      "addr": "0x45A020",
+      "type": "sub_addr_exact_unclaimed"
+    },
+    {
+      "key": "system\\cell.hpp:215:CellClass::Draw",
+      "old": "CONFLICT",
+      "new": "HIGH",
+      "addr": "0x48E5A0",
+      "type": "exact_name_unclaimed"
+    },
+    {
+      "key": "render\\surface.hpp:501:DSurface::DrawLineZBuf",
+      "old": "CONFLICT",
+      "new": "HIGH",
+      "addr": "0x4BFD30",
+      "type": "exact_name_unclaimed"
+    },
+    {
+      "key": "render\\surface.hpp:505:DSurface::DrawLineModulated",
+      "old": "CONFLICT",
+      "new": "HIGH",
+      "addr": "0x4BBCA0",
+      "type": "exact_name_unclaimed"
+    },
+    {
+      "key": "render\\surface.hpp:509:DSurface::DrawLineFaded",
+      "old": "MEDIUM",
+      "new": "HIGH",
+      "addr": "0x4BC750",
+      "type": "exact_name_unclaimed"
+    },
+    {
+      "key": "object\\foot.hpp:84:FootClass::StubReturnFalse",
+      "old": "CONFLICT",
+      "new": "HIGH",
+      "addr": "0x41C100",
+      "type": "exact_name_unclaimed"
+    },
+    {
+      "key": "object\\foot.hpp:97:FootClass::sub_4734B0",
+      "old": "MEDIUM",
+      "new": "HIGH",
+      "addr": "0x4734B0",
+      "type": "sub_addr_exact_unclaimed"
+    },
+    {
+      "key": "object\\foot.hpp:98:FootClass::sub_487150",
+      "old": "MEDIUM",
+      "new": "HIGH",
+      "addr": "0x487150",
+      "type": "sub_addr_exact_unclaimed"
+    },
+    {
+      "key": "object\\foot.hpp:99:FootClass::sub_487160",
+      "old": "MEDIUM",
+      "new": "HIGH",
+      "addr": "0x487160",
+      "type": "sub_addr_exact_unclaimed"
+    },
+    {
+      "key": "object\\foot.hpp:118:FootClass::ProcessDeploy",
+      "old": "CONFLICT",
+      "new": "HIGH",
+      "addr": "0x4D7330",
+      "type": "exact_name_unclaimed"
+    },
+    {
+      "key": "object\\foot.hpp:119:FootClass::ValidateMove",
+      "old": "MEDIUM",
+      "new": "HIGH",
+      "addr": "0x4D74E0",
+      "type": "exact_name_unclaimed"
+    },
+    {
+      "key": "object\\foot.hpp:120:FootClass::ValidatePlacement",
+      "old": "CONFLICT",
+      "new": "HIGH",
+      "addr": "0x4D82B0",
+      "type": "exact_name_unclaimed"
+    },
+    {
+      "key": "object\\foot.hpp:140:FootClass::UpdateState",
+      "old": "CONFLICT",
+      "new": "HIGH",
+      "addr": "0x4DAF10",
+      "type": "exact_name_unclaimed"
+    },
+    {
+      "key": "object\\foot.hpp:154:FootClass::FindMoveTarget",
+      "old": "CONFLICT",
+      "new": "HIGH",
+      "addr": "0x4DD0A0",
+      "type": "exact_name_unclaimed"
+    },
+    {
+      "key": "object\\foot.hpp:174:FootClass::ScanAdjacentCells",
+      "old": "CONFLICT",
+      "new": "HIGH",
+      "addr": "0x4DF510",
+      "type": "exact_name_unclaimed"
+    },
+    {
+      "key": "object\\foot.hpp:187:FootClass::UpdateLocomotion",
+      "old": "MEDIUM",
+      "new": "HIGH",
+      "addr": "0x6FB740",
+      "type": "exact_name_unclaimed"
+    },
+    {
+      "key": "object\\foot.hpp:192:FootClass::sub_70FEB0",
+      "old": "MEDIUM",
+      "new": "HIGH",
+      "addr": "0x70FEB0",
+      "type": "sub_addr_exact_unclaimed"
+    },
+    {
+      "key": "object\\foot.hpp:198:FootClass::GetField",
+      "old": "CONFLICT",
+      "new": "HIGH",
+      "addr": "0x7500D0",
+      "type": "exact_name_unclaimed"
+    },
+    {
+      "key": "misc\\locomotion.hpp:84:LocomotionClass::QueryInterface",
+      "old": "LOW",
+      "new": "HIGH",
+      "addr": "0x55A9B0",
+      "type": "exact_name_unclaimed"
+    },
+    {
+      "key": "network\\multiplayer.hpp:103:MPBattleClass::MPBattleClass",
+      "old": "LOW",
+      "new": "HIGH",
+      "addr": "0x5D8170",
+      "type": "exact_name_unclaimed"
+    },
+    {
+      "key": "system\\file_class.hpp:86:RawFileClass::Close",
+      "old": "CONFLICT",
+      "new": "HIGH",
+      "addr": "0x65CB30",
+      "type": "exact_name_unclaimed"
+    },
+    {
+      "key": "system\\tactical.hpp:96:TacticalClass::RenderFrame",
+      "old": "CONFLICT",
+      "new": "HIGH",
+      "addr": "0x4F45B0",
+      "type": "exact_name_unclaimed"
+    },
+    {
+      "key": "object\\techno.hpp:210:TechnoClass::DrawHealthBar",
+      "old": "MEDIUM",
+      "new": "HIGH",
+      "addr": "0x6F5190",
+      "type": "exact_name_unclaimed"
+    },
+    {
+      "key": "object\\techno.hpp:256:TechnoClass::sub_41B7D0",
+      "old": "MEDIUM",
+      "new": "HIGH",
+      "addr": "0x41B7D0",
+      "type": "sub_addr_exact_unclaimed"
+    },
+    {
+      "key": "object\\techno.hpp:258:TechnoClass::sub_41B840",
+      "old": "MEDIUM",
+      "new": "HIGH",
+      "addr": "0x41B840",
+      "type": "sub_addr_exact_unclaimed"
+    },
+    {
+      "key": "object\\techno.hpp:259:TechnoClass::sub_41B860",
+      "old": "MEDIUM",
+      "new": "HIGH",
+      "addr": "0x41B860",
+      "type": "sub_addr_exact_unclaimed"
+    },
+    {
+      "key": "object\\techno.hpp:260:TechnoClass::sub_41B9E0",
+      "old": "MEDIUM",
+      "new": "HIGH",
+      "addr": "0x41B9E0",
+      "type": "sub_addr_exact_unclaimed"
+    },
+    {
+      "key": "object\\techno.hpp:266:TechnoClass::sub_41C640",
+      "old": "MEDIUM",
+      "new": "HIGH",
+      "addr": "0x41C640",
+      "type": "sub_addr_exact_unclaimed"
+    },
+    {
+      "key": "object\\techno.hpp:267:TechnoClass::sub_41C650",
+      "old": "MEDIUM",
+      "new": "HIGH",
+      "addr": "0x41C650",
+      "type": "sub_addr_exact_unclaimed"
+    },
+    {
+      "key": "object\\techno.hpp:268:TechnoClass::sub_41C660",
+      "old": "MEDIUM",
+      "new": "HIGH",
+      "addr": "0x41C660",
+      "type": "sub_addr_exact_unclaimed"
+    },
+    {
+      "key": "object\\techno.hpp:269:TechnoClass::sub_41C670",
+      "old": "MEDIUM",
+      "new": "HIGH",
+      "addr": "0x41C670",
+      "type": "sub_addr_exact_unclaimed"
+    },
+    {
+      "key": "object\\techno.hpp:270:TechnoClass::sub_41C680",
+      "old": "MEDIUM",
+      "new": "HIGH",
+      "addr": "0x41C680",
+      "type": "sub_addr_exact_unclaimed"
+    },
+    {
+      "key": "object\\techno.hpp:271:TechnoClass::sub_41C690",
+      "old": "MEDIUM",
+      "new": "HIGH",
+      "addr": "0x41C690",
+      "type": "sub_addr_exact_unclaimed"
+    },
+    {
+      "key": "object\\techno.hpp:331:TechnoClass::sub_659470",
+      "old": "MEDIUM",
+      "new": "HIGH",
+      "addr": "0x659470",
+      "type": "sub_addr_exact_unclaimed"
+    },
+    {
+      "key": "object\\techno.hpp:332:TechnoClass::sub_659490",
+      "old": "MEDIUM",
+      "new": "HIGH",
+      "addr": "0x659490",
+      "type": "sub_addr_exact_unclaimed"
+    },
+    {
+      "key": "object\\techno.hpp:333:TechnoClass::sub_6594A0",
+      "old": "MEDIUM",
+      "new": "HIGH",
+      "addr": "0x6594A0",
+      "type": "sub_addr_exact_unclaimed"
+    },
+    {
+      "key": "object\\techno.hpp:334:TechnoClass::sub_6594C0",
+      "old": "MEDIUM",
+      "new": "HIGH",
+      "addr": "0x6594C0",
+      "type": "sub_addr_exact_unclaimed"
+    },
+    {
+      "key": "object\\techno.hpp:335:TechnoClass::sub_6594E0",
+      "old": "MEDIUM",
+      "new": "HIGH",
+      "addr": "0x6594E0",
+      "type": "sub_addr_exact_unclaimed"
+    },
+    {
+      "key": "object\\techno.hpp:336:TechnoClass::sub_6594F0",
+      "old": "MEDIUM",
+      "new": "HIGH",
+      "addr": "0x6594F0",
+      "type": "sub_addr_exact_unclaimed"
+    },
+    {
+      "key": "object\\techno.hpp:337:TechnoClass::sub_659540",
+      "old": "MEDIUM",
+      "new": "HIGH",
+      "addr": "0x659540",
+      "type": "sub_addr_exact_unclaimed"
+    },
+    {
+      "key": "object\\techno.hpp:338:TechnoClass::sub_659550",
+      "old": "MEDIUM",
+      "new": "HIGH",
+      "addr": "0x659550",
+      "type": "sub_addr_exact_unclaimed"
+    },
+    {
+      "key": "object\\techno.hpp:345:TechnoClass::ComputeTransform",
+      "old": "MEDIUM",
+      "new": "HIGH",
+      "addr": "0x6F3AD0",
+      "type": "exact_name_unclaimed"
+    },
+    {
+      "key": "object\\techno.hpp:362:TechnoClass::ProcessCapture",
+      "old": "CONFLICT",
+      "new": "HIGH",
+      "addr": "0x7014A0",
+      "type": "exact_name_unclaimed"
+    },
+    {
+      "key": "object\\techno.hpp:446:TechnoClass::sub_70F040",
+      "old": "MEDIUM",
+      "new": "HIGH",
+      "addr": "0x70F040",
+      "type": "sub_addr_exact_unclaimed"
+    },
+    {
+      "key": "object\\techno.hpp:467:TechnoClass::EvaluateTarget",
+      "old": "CONFLICT",
+      "new": "HIGH",
+      "addr": "0x6F7CA0",
+      "type": "exact_name_unclaimed"
+    },
+    {
+      "key": "object\\techno.hpp:560:TechnoClass::sub_740B10",
+      "old": "MEDIUM",
+      "new": "HIGH",
+      "addr": "0x740B10",
+      "type": "sub_addr_exact_unclaimed"
+    },
+    {
+      "key": "object\\techno.hpp:564:TechnoClass::sub_741490",
+      "old": "MEDIUM",
+      "new": "HIGH",
+      "addr": "0x741490",
+      "type": "sub_addr_exact_unclaimed"
+    },
+    {
+      "key": "object\\techno.hpp:572:TechnoClass::sub_743190",
+      "old": "MEDIUM",
+      "new": "HIGH",
+      "addr": "0x743190",
+      "type": "sub_addr_exact_unclaimed"
+    },
+    {
+      "key": "object\\techno.hpp:573:TechnoClass::sub_746400",
+      "old": "MEDIUM",
+      "new": "HIGH",
+      "addr": "0x746400",
+      "type": "sub_addr_exact_unclaimed"
+    },
+    {
+      "key": "object\\techno.hpp:576:TechnoClass::sub_7465B0",
+      "old": "MEDIUM",
+      "new": "HIGH",
+      "addr": "0x7465B0",
+      "type": "sub_addr_exact_unclaimed"
+    },
+    {
+      "key": "object\\techno.hpp:577:TechnoClass::sub_7465F0",
+      "old": "MEDIUM",
+      "new": "HIGH",
+      "addr": "0x7465F0",
+      "type": "sub_addr_exact_unclaimed"
+    },
+    {
+      "key": "object\\techno.hpp:583:TechnoClass::sub_746C90",
+      "old": "MEDIUM",
+      "new": "HIGH",
+      "addr": "0x746C90",
+      "type": "sub_addr_exact_unclaimed"
+    },
+    {
+      "key": "object\\techno.hpp:585:TechnoClass::sub_746D00",
+      "old": "MEDIUM",
+      "new": "HIGH",
+      "addr": "0x746D00",
+      "type": "sub_addr_exact_unclaimed"
+    },
+    {
+      "key": "object\\techno.hpp:586:TechnoClass::sub_746D60",
+      "old": "MEDIUM",
+      "new": "HIGH",
+      "addr": "0x746D60",
+      "type": "sub_addr_exact_unclaimed"
+    },
+    {
+      "key": "object\\techno.hpp:588:TechnoClass::sub_746E30",
+      "old": "MEDIUM",
+      "new": "HIGH",
+      "addr": "0x746E30",
+      "type": "sub_addr_exact_unclaimed"
+    },
+    {
+      "key": "object\\techno.hpp:589:TechnoClass::sub_746EA0",
+      "old": "MEDIUM",
+      "new": "HIGH",
+      "addr": "0x746EA0",
+      "type": "sub_addr_exact_unclaimed"
+    },
+    {
+      "key": "object\\techno.hpp:594:TechnoClass::sub_70FC90",
+      "old": "MEDIUM",
+      "new": "HIGH",
+      "addr": "0x70FC90",
+      "type": "sub_addr_exact_unclaimed"
+    },
+    {
+      "key": "object\\techno.hpp:601:TechnoClass::sub_7106E0",
+      "old": "MEDIUM",
+      "new": "HIGH",
+      "addr": "0x7106E0",
+      "type": "sub_addr_exact_unclaimed"
+    },
+    {
+      "key": "object\\techno.hpp:606:TechnoClass::sub_7393C0",
+      "old": "MEDIUM",
+      "new": "HIGH",
+      "addr": "0x7393C0",
+      "type": "sub_addr_exact_unclaimed"
+    },
+    {
+      "key": "object\\techno.hpp:609:TechnoClass::sub_732050",
+      "old": "MEDIUM",
+      "new": "HIGH",
+      "addr": "0x732050",
+      "type": "sub_addr_exact_unclaimed"
+    },
+    {
+      "key": "object\\techno.hpp:611:TechnoClass::sub_731CF0",
+      "old": "MEDIUM",
+      "new": "HIGH",
+      "addr": "0x731CF0",
+      "type": "sub_addr_exact_unclaimed"
+    },
+    {
+      "key": "object\\techno.hpp:632:TechnoClass::sub_70DDD0",
+      "old": "MEDIUM",
+      "new": "HIGH",
+      "addr": "0x70DDD0",
+      "type": "sub_addr_exact_unclaimed"
+    },
+    {
+      "key": "object\\techno.hpp:634:TechnoClass::sub_70E120",
+      "old": "MEDIUM",
+      "new": "HIGH",
+      "addr": "0x70E120",
+      "type": "sub_addr_exact_unclaimed"
+    },
+    {
+      "key": "object\\techno.hpp:635:TechnoClass::sub_70E140",
+      "old": "MEDIUM",
+      "new": "HIGH",
+      "addr": "0x70E140",
+      "type": "sub_addr_exact_unclaimed"
+    },
+    {
+      "key": "object\\techno.hpp:638:TechnoClass::sub_70E2B0",
+      "old": "MEDIUM",
+      "new": "HIGH",
+      "addr": "0x70E2B0",
+      "type": "sub_addr_exact_unclaimed"
+    },
+    {
+      "key": "object\\techno.hpp:641:TechnoClass::sub_70E4B0",
+      "old": "MEDIUM",
+      "new": "HIGH",
+      "addr": "0x70E4B0",
+      "type": "sub_addr_exact_unclaimed"
+    },
+    {
+      "key": "object\\techno.hpp:643:TechnoClass::sub_70ED10",
+      "old": "MEDIUM",
+      "new": "HIGH",
+      "addr": "0x70ED10",
+      "type": "sub_addr_exact_unclaimed"
+    },
+    {
+      "key": "object\\techno.hpp:649:TechnoClass::sub_70F000",
+      "old": "MEDIUM",
+      "new": "HIGH",
+      "addr": "0x70F000",
+      "type": "sub_addr_exact_unclaimed"
+    },
+    {
+      "key": "object\\techno.hpp:656:TechnoClass::sub_70D590",
+      "old": "MEDIUM",
+      "new": "HIGH",
+      "addr": "0x70D590",
+      "type": "sub_addr_exact_unclaimed"
+    },
+    {
+      "key": "object\\techno.hpp:663:TechnoClass::sub_70C610",
+      "old": "MEDIUM",
+      "new": "HIGH",
+      "addr": "0x70C610",
+      "type": "sub_addr_exact_unclaimed"
+    },
+    {
+      "key": "render\\text_render.hpp:20:TextRenderer::DrawText",
+      "old": "UNMATCHABLE",
+      "new": "HIGH",
+      "addr": "0x4A61C0",
+      "type": "exact_name_unclaimed"
+    },
+    {
+      "key": "core\\vector.hpp:139:VectorClass::Clear",
+      "old": "CONFLICT",
+      "new": "HIGH",
+      "addr": "0x40B120",
+      "type": "exact_name_unclaimed"
+    }
+  ]
+}

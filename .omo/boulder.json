@@ -1,21 +1,21 @@
 {
   "schema_version": 2,
-  "active_work_id": "ida-precise-matching",
-  "active_plan": "D:\\RA2YR_ReSource\\.omo\\plans\\ida-precise-matching.md",
-  "plan_name": "ida-precise-matching",
+  "active_work_id": "ida-rewrite-hpp",
+  "active_plan": "D:\\RA2YR_ReSource\\.omo\\plans\\ida-rewrite-hpp.md",
+  "plan_name": "ida-rewrite-hpp",
   "status": "active",
-  "started_at": "2026-06-19T06:15:39.965Z",
+  "started_at": "2026-06-19T09:59:06.886Z",
   "session_ids": [
     "opencode:ses_12a28107fffeTxyjSeELiqzkhL"
   ],
   "agent": "atlas",
   "works": {
-    "ida-precise-matching": {
-      "work_id": "ida-precise-matching",
-      "active_plan": "D:\\RA2YR_ReSource\\.omo\\plans\\ida-precise-matching.md",
-      "plan_name": "ida-precise-matching",
+    "ida-rewrite-hpp": {
+      "work_id": "ida-rewrite-hpp",
+      "active_plan": "D:\\RA2YR_ReSource\\.omo\\plans\\ida-rewrite-hpp.md",
+      "plan_name": "ida-rewrite-hpp",
       "status": "active",
-      "started_at": "2026-06-19T06:15:39.965Z",
+      "started_at": "2026-06-19T09:59:06.886Z",
       "session_ids": [
         "opencode:ses_12a28107fffeTxyjSeELiqzkhL"
       ],
@@ -24,58 +24,71 @@
         "todo:1": {
           "task_key": "todo:1",
           "task_label": "1",
-          "task_title": "提取缺失函数清单",
-          "session_id": "opencode:ses_1217a3bdbffeEpDUVI2tZkjXEv",
+          "task_title": "从 IDA 按类导出成员函数清单",
+          "session_id": "opencode:ses_120ad977fffe40BYhfZdJ8QCBR",
           "agent": "Sisyphus-Junior",
-          "category": "quick",
-          "updated_at": "2026-06-19T06:25:20.172Z",
-          "started_at": "2026-06-19T06:25:06.170Z",
+          "category": "deep",
+          "updated_at": "2026-06-19T10:22:22.661Z",
+          "started_at": "2026-06-19T10:22:13.231Z",
           "status": "completed",
-          "ended_at": "2026-06-19T06:25:20.172Z",
-          "elapsed_ms": 14002
+          "ended_at": "2026-06-19T10:22:22.661Z",
+          "elapsed_ms": 9430
+        },
+        "todo:2": {
+          "task_key": "todo:2",
+          "task_label": "2",
+          "task_title": "生成重写工具",
+          "session_id": "opencode:ses_120988e74ffev7FFeZ0v2NrOAo",
+          "agent": "Sisyphus-Junior",
+          "category": "deep",
+          "updated_at": "2026-06-19T10:37:09.536Z",
+          "started_at": "2026-06-19T10:36:57.027Z",
+          "status": "completed",
+          "ended_at": "2026-06-19T10:37:09.536Z",
+          "elapsed_ms": 12509
         },
         "todo:3": {
           "task_key": "todo:3",
           "task_label": "3",
-          "task_title": "签名匹配",
-          "session_id": "opencode:ses_121719d94ffeColzyZd7KLjyH0",
+          "task_title": "按类批量重写 hpp 声明",
+          "session_id": "opencode:ses_1208af78bffeqUOCMGBTN5rciq",
           "agent": "Sisyphus-Junior",
           "category": "deep",
-          "updated_at": "2026-06-19T06:40:03.748Z",
-          "started_at": "2026-06-19T06:39:54.411Z",
+          "updated_at": "2026-06-19T10:50:07.598Z",
+          "started_at": "2026-06-19T10:49:34.709Z",
           "status": "completed",
-          "ended_at": "2026-06-19T06:40:03.748Z",
-          "elapsed_ms": 9337
+          "ended_at": "2026-06-19T10:50:07.598Z",
+          "elapsed_ms": 32889
         },
-        "todo:6": {
-          "task_key": "todo:6",
-          "task_label": "6",
-          "task_title": "交叉验证 + 确认",
-          "session_id": "opencode:ses_121642003ffe5Yfl5meSbBrlby",
+        "todo:4": {
+          "task_key": "todo:4",
+          "task_label": "4",
+          "task_title": "更新 functions.json 同步",
+          "session_id": "opencode:ses_1207f3f55ffeSC2Nb2EW4FI2Mc",
           "agent": "Sisyphus-Junior",
-          "category": "deep",
-          "updated_at": "2026-06-19T06:48:47.485Z",
-          "started_at": "2026-06-19T06:48:32.104Z",
+          "category": "quick",
+          "updated_at": "2026-06-19T10:55:37.670Z",
+          "started_at": "2026-06-19T10:55:28.106Z",
           "status": "completed",
-          "ended_at": "2026-06-19T06:48:47.485Z",
-          "elapsed_ms": 15381
+          "ended_at": "2026-06-19T10:55:37.670Z",
+          "elapsed_ms": 9564
         },
-        "todo:7": {
-          "task_key": "todo:7",
-          "task_label": "7",
-          "task_title": "批量更新 IDA + hpp + functions.json",
-          "session_id": "opencode:ses_1215c2e70ffepU7l8LaN36zpHd",
+        "todo:5": {
+          "task_key": "todo:5",
+          "task_label": "5",
+          "task_title": "全量编译验证 + 修复",
+          "session_id": "opencode:ses_12079f614ffeuO8I0uo3QWCNGg",
           "agent": "Sisyphus-Junior",
           "category": "deep",
-          "updated_at": "2026-06-19T08:55:37.427Z",
-          "started_at": "2026-06-19T08:50:40.902Z",
+          "updated_at": "2026-06-19T11:05:26.259Z",
+          "started_at": "2026-06-19T11:05:11.927Z",
           "status": "completed",
-          "ended_at": "2026-06-19T08:55:37.426Z",
-          "elapsed_ms": 296524
+          "ended_at": "2026-06-19T11:05:26.259Z",
+          "elapsed_ms": 14332
         }
       },
       "session_origins": {},
-      "updated_at": "2026-06-19T08:55:37.427Z"
+      "updated_at": "2026-06-19T11:05:26.259Z"
     }
   },
   "session_origins": {},
@@ -83,55 +96,68 @@
     "todo:1": {
       "task_key": "todo:1",
       "task_label": "1",
-      "task_title": "提取缺失函数清单",
-      "session_id": "opencode:ses_1217a3bdbffeEpDUVI2tZkjXEv",
+      "task_title": "从 IDA 按类导出成员函数清单",
+      "session_id": "opencode:ses_120ad977fffe40BYhfZdJ8QCBR",
       "agent": "Sisyphus-Junior",
-      "category": "quick",
-      "updated_at": "2026-06-19T06:25:20.172Z",
-      "started_at": "2026-06-19T06:25:06.170Z",
+      "category": "deep",
+      "updated_at": "2026-06-19T10:22:22.661Z",
+      "started_at": "2026-06-19T10:22:13.231Z",
       "status": "completed",
-      "ended_at": "2026-06-19T06:25:20.172Z",
-      "elapsed_ms": 14002
+      "ended_at": "2026-06-19T10:22:22.661Z",
+      "elapsed_ms": 9430
+    },
+    "todo:2": {
+      "task_key": "todo:2",
+      "task_label": "2",
+      "task_title": "生成重写工具",
+      "session_id": "opencode:ses_120988e74ffev7FFeZ0v2NrOAo",
+      "agent": "Sisyphus-Junior",
+      "category": "deep",
+      "updated_at": "2026-06-19T10:37:09.536Z",
+      "started_at": "2026-06-19T10:36:57.027Z",
+      "status": "completed",
+      "ended_at": "2026-06-19T10:37:09.536Z",
+      "elapsed_ms": 12509
     },
     "todo:3": {
       "task_key": "todo:3",
       "task_label": "3",
-      "task_title": "签名匹配",
-      "session_id": "opencode:ses_121719d94ffeColzyZd7KLjyH0",
+      "task_title": "按类批量重写 hpp 声明",
+      "session_id": "opencode:ses_1208af78bffeqUOCMGBTN5rciq",
       "agent": "Sisyphus-Junior",
       "category": "deep",
-      "updated_at": "2026-06-19T06:40:03.748Z",
-      "started_at": "2026-06-19T06:39:54.411Z",
+      "updated_at": "2026-06-19T10:50:07.598Z",
+      "started_at": "2026-06-19T10:49:34.709Z",
       "status": "completed",
-      "ended_at": "2026-06-19T06:40:03.748Z",
-      "elapsed_ms": 9337
+      "ended_at": "2026-06-19T10:50:07.598Z",
+      "elapsed_ms": 32889
     },
-    "todo:6": {
-      "task_key": "todo:6",
-      "task_label": "6",
-      "task_title": "交叉验证 + 确认",
-      "session_id": "opencode:ses_121642003ffe5Yfl5meSbBrlby",
+    "todo:4": {
+      "task_key": "todo:4",
+      "task_label": "4",
+      "task_title": "更新 functions.json 同步",
+      "session_id": "opencode:ses_1207f3f55ffeSC2Nb2EW4FI2Mc",
       "agent": "Sisyphus-Junior",
-      "category": "deep",
-      "updated_at": "2026-06-19T06:48:47.485Z",
-      "started_at": "2026-06-19T06:48:32.104Z",
+      "category": "quick",
+      "updated_at": "2026-06-19T10:55:37.670Z",
+      "started_at": "2026-06-19T10:55:28.106Z",
       "status": "completed",
-      "ended_at": "2026-06-19T06:48:47.485Z",
-      "elapsed_ms": 15381
+      "ended_at": "2026-06-19T10:55:37.670Z",
+      "elapsed_ms": 9564
     },
-    "todo:7": {
-      "task_key": "todo:7",
-      "task_label": "7",
-      "task_title": "批量更新 IDA + hpp + functions.json",
-      "session_id": "opencode:ses_1215c2e70ffepU7l8LaN36zpHd",
+    "todo:5": {
+      "task_key": "todo:5",
+      "task_label": "5",
+      "task_title": "全量编译验证 + 修复",
+      "session_id": "opencode:ses_12079f614ffeuO8I0uo3QWCNGg",
       "agent": "Sisyphus-Junior",
       "category": "deep",
-      "updated_at": "2026-06-19T08:55:37.427Z",
-      "started_at": "2026-06-19T08:50:40.902Z",
+      "updated_at": "2026-06-19T11:05:26.259Z",
+      "started_at": "2026-06-19T11:05:11.927Z",
       "status": "completed",
-      "ended_at": "2026-06-19T08:55:37.426Z",
-      "elapsed_ms": 296524
+      "ended_at": "2026-06-19T11:05:26.259Z",
+      "elapsed_ms": 14332
     }
   },
-  "updated_at": "2026-06-19T08:55:37.427Z"
+  "updated_at": "2026-06-19T11:05:26.259Z"
 }

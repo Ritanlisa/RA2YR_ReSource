@@ -23,7 +23,7 @@ public:
     static constexpr AbstractType kObjectDeriveId = AbstractType::Factory;
 
     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override; // 0x4CA270 (LoadFromStream)
-    virtual HRESULT __stdcall Load(IStream* stream) override;
+    virtual HRESULT __stdcall Load(IStream* stream) override; // IDA: NOT_FOUND
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     virtual ~FactoryClass() = default;                                                   // 0x4CA230 (ddtor)
@@ -42,7 +42,7 @@ public:
     bool AbandonProduction();                                                            // 0x4CA580 (Revert)
     int GetProgress() const;                                                            // 0x4CA430 (Stat)
     bool IsDone() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    int GetCostPerStep() const;
+    int GetCostPerStep() const; // IDA: NOT_FOUND
     bool CompletedProduction();                                                          // 0x635060 (FinishProduction)
     void StartProduction();                                                             // 0x4C9E60
     void StartProduction_2();                                                            // 0x4CA5A0

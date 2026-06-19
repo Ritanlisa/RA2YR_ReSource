@@ -40,7 +40,7 @@ class TagClass : public AbstractClass
 public:
     static constexpr AbstractType kObjectDeriveId = AbstractType::Tag;
 
-    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override;
+    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override; // IDA: NOT_FOUND
     virtual HRESULT __stdcall Load(IStream* stream) override;  // 0x6E5730
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;  // 0x6E57A0
 
@@ -48,17 +48,17 @@ public:
 
     virtual void pointerExpired(AbstractClass* ptr, bool removed) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual AbstractType __stdcall whatAmI() const override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual int objectSize() const override;
+    virtual int objectSize() const override; // IDA: NOT_FOUND
     virtual void calculateChecksum(void* checksum) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
-    static void DeleteAll();
+    static void DeleteAll(); // IDA: NOT_FOUND
     static void NotifyGlobalChanged(int idx_global);  // 0x7263A0
     static void NotifyLocalChanged(int idx_local);  // 0x7263D0
 
     bool HasCrossesHorizontalLineEvent() const;  // 0x6E5320
     bool HasCrossesVerticalLineEvent() const;  // 0x6E5300
     bool HasZoneEntryByEvent() const;  // 0x6E5340
-    bool HasAllowWinAction() const;
+    bool HasAllowWinAction() const; // IDA: NOT_FOUND
     void GlobalChanged(int idx_global);  // IDA: 0x7263A0
     void LocalChanged(int idx_local);  // IDA: 0x7263D0
     bool IsOnlyInstanceOfType() const;  // 0x6E5850
@@ -70,7 +70,7 @@ public:
     bool HasBeenDestroyed() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     void AddTrigger(TriggerClass* trigger);  // 0x6E55C0
     bool RemoveTrigger(TriggerClass* trigger);  // IDA: 0x577920
-    bool ContainsTrigger(TriggerClass* trigger) const;
+    bool ContainsTrigger(TriggerClass* trigger) const; // IDA: NOT_FOUND
 
     TagTypeClass*   buildingType;
     TriggerClass*   firstTrigger;
@@ -93,8 +93,8 @@ class TagTypeClass : public AbstractClass
 public:
     static constexpr AbstractType kObjectDeriveId = AbstractType::TagType;
 
-    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override;
-    virtual HRESULT __stdcall Load(IStream* stream) override;
+    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override; // IDA: NOT_FOUND
+    virtual HRESULT __stdcall Load(IStream* stream) override; // IDA: NOT_FOUND
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;  // 0x6E6470
 
     virtual ~TagTypeClass() = default;  // 0x6E64C0
@@ -108,13 +108,13 @@ public:
     using Flags = uint8_t;
 
     Flags GetFlags() const;  // 0x7271E0
-    bool HasAllowWinAction() const;
+    bool HasAllowWinAction() const; // IDA: NOT_FOUND
     bool HasCrossesHorizontalLineEvent() const;  // 0x6E6250
     bool HasCrossesVerticalLineEvent() const;  // 0x6E6280
     bool HasZoneEntryByEvent() const;  // 0x6E62B0
     bool AddTrigger(class TriggerTypeClass* trigger);  // IDA: 0x6E55C0
     bool RemoveTrigger(class TriggerTypeClass* trigger);   // IDA: 0x577920
-    bool ContainsTrigger(class TriggerTypeClass* trigger) const;
+    bool ContainsTrigger(class TriggerTypeClass* trigger) const; // IDA: NOT_FOUND
 
     static void LoadFromINIList(CCINIClass* ini);  // 0x46CE10
     static void SaveToINIList(CCINIClass* ini); // IDA: UNMATCHED — no_callgraph_match, no_git_history

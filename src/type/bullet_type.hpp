@@ -20,9 +20,9 @@ public:
     static constexpr AbstractType AbsID = AbstractType::BulletType;
 
     static DynamicVectorClass<BulletTypeClass*>* Array;
-    static BulletTypeClass* Find(const char* pID);
+    static BulletTypeClass* Find(const char* pID); // IDA: NOT_FOUND
     static BulletTypeClass* FindOrAllocate(const char* pID); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    static int FindIndex(const char* pID);
+    static int FindIndex(const char* pID); // IDA: NOT_FOUND
 
     virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override; // 0x46C750 (as GetClassIdentifier)
 

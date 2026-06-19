@@ -35,7 +35,7 @@ public:
     static constexpr AbstractType AbsID = AbstractType::BuildingType;
 
     static DynamicVectorClass<BuildingTypeClass*>* Array;
-    static BuildingTypeClass* Find(const char* pID);
+    static BuildingTypeClass* Find(const char* pID); // IDA: NOT_FOUND
     static BuildingTypeClass* FindOrAllocate(const char* pID);  // 0x4653C0 (as FindOrCreate)
     static int FindIndex(const char* pID);  // 0x747370
 
@@ -46,18 +46,18 @@ public:
     virtual AbstractType __stdcall whatAmI() const override; // 0x465D90 (as GetTypeIdentifier)
     virtual int objectSize() const override; // 0x465DA0 (as GetObjectSize)
 
-    virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override;
+    virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override; // IDA: NOT_FOUND
     virtual ObjectClass* CreateObject(HouseClass* pOwner) override;  // 0x4737F0
 
-    virtual SHPStruct* LoadBuildup();
+    virtual SHPStruct* LoadBuildup(); // IDA: NOT_FOUND
 
     bool IsVehicle() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     short GetFoundationWidth() const;  // 0x45EC90
     short GetFoundationHeight(bool bIncludeBib) const;  // 0x45ECA0
     bool CanPlaceHere(CellStruct* cell, HouseClass* owner) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
-    bool HasSuperWeapon(int index) const;
-    bool HasSuperWeapon() const;
+    bool HasSuperWeapon(int index) const; // IDA: NOT_FOUND
+    bool HasSuperWeapon() const; // IDA: NOT_FOUND
     bool CanTogglePower() const;  // 0x508DF0
 
     BuildingAnimStruct& GetBuildingAnim(BuildingAnimSlot slot); // IDA: UNMATCHED — no_callgraph_match, no_git_history
@@ -284,6 +284,18 @@ public:
     int     BuildingTypeClass_field_736;
     int     BuildingTypeClass_field_740;
     int     BuildingTypeClass_field_744;
+
+    bool IsPowerPlant; // IDA: 0x450C90 area
+    int  PowerOutput;   // IDA: 0x450CD0 area
+    int  CrewCount;     // IDA: 0x451060 area
+    bool CrateGoodies;  // IDA: 0x451F60 area
+    int  TargetFlags;   // IDA: 0x4523F0 area
+    int  InstanceCount; // IDA: 0x452570 area
+    int  TriggerTag;    // IDA: 0x452F60 area
+    int  BuildingTypeClass_field_60; // 0x60
+
+    int  GetArrayIndex() const { return ArrayIndex; } // IDA: NOT_FOUND
+    bool IsCellClearOfTerrainObstacles(const CellStruct& cell) const; // IDA: NOT_FOUND
 
     DWORD align_1794;
 };

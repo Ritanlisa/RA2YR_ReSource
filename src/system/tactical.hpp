@@ -53,17 +53,17 @@ class TacticalClass : public AbstractClass
 public:
     static constexpr AbstractType kObjectDeriveId = AbstractType::TacticalMap;
 
-    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return 0; }
-    virtual HRESULT __stdcall Load(IStream* stream) override { return 0; }
-    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { return 0; }
+    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return 0; } // IDA: NOT_FOUND
+    virtual HRESULT __stdcall Load(IStream* stream) override { return 0; } // IDA: NOT_FOUND
+    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { return 0; } // IDA: NOT_FOUND
 
-    virtual ~TacticalClass() = default;
+    virtual ~TacticalClass() = default; // IDA: NOT_FOUND
 
-    virtual AbstractType __stdcall whatAmI() const override { return AbstractType::TacticalMap; }
-    virtual int objectSize() const override { return 0; }
+    virtual AbstractType __stdcall whatAmI() const override { return AbstractType::TacticalMap; } // IDA: NOT_FOUND
+    virtual int objectSize() const override { return 0; } // IDA: NOT_FOUND
 
-    bool CoordsToClient(const CoordStruct& coords, Point2D* out_client) const;
-    CoordStruct* ClientToCoords(CoordStruct* out, const Point2D& client) const;
+    bool CoordsToClient(const CoordStruct& coords, Point2D* out_client) const; // IDA: NOT_FOUND
+    CoordStruct* ClientToCoords(CoordStruct* out, const Point2D& client) const; // IDA: NOT_FOUND
     CoordStruct ClientToCoords(const Point2D& client) const
     {
         CoordStruct buf;
@@ -72,16 +72,16 @@ public:
     }
 
     // Coordinate transforms
-    CoordStruct* Coord_To_Screen(const CoordStruct& world, Point2D* out) const;
+    CoordStruct* Coord_To_Screen(const CoordStruct& world, Point2D* out) const; // IDA: NOT_FOUND
 
-    int GetOcclusion(const CellStruct& cell, bool fog) const;
+    int GetOcclusion(const CellStruct& cell, bool fog) const; // IDA: NOT_FOUND
     Point2D* AdjustForZShapeMove(Point2D* dest, Point2D* client);  // 0x6D1FE0
     static int AdjustForZ(int height);  // IDA: 0x6D1FE0
 
     // Viewport management
-    void FocusOn(CoordStruct* dest, int velocity);
-    void RegisterDirtyArea(RectangleStruct area, bool unk);
-    void RegisterCellAsVisible(CellClass* cell);
+    void FocusOn(CoordStruct* dest, int velocity); // IDA: NOT_FOUND
+    void RegisterDirtyArea(RectangleStruct area, bool unk); // IDA: NOT_FOUND
+    void RegisterCellAsVisible(CellClass* cell); // IDA: NOT_FOUND
     void SetView(int view_x, int view_y, int view_width, int view_height);  // 0x483E30
     void SetViewDimensions(int width, int height);  // 0x4A8960
     void InitView(); // 0x537620
@@ -133,7 +133,7 @@ public:
     uint32_t InterpolateColor(uint32_t elapsed_ms);  // 0x631E50
     bool DecrementCounter(uint32_t delta); // 0x631EE0
     void MapSpecialDrawMode();  // 0x70F0B0
-    static int DrawTimer(int index, ColorScheme* scheme, int time, const wchar_t* text, const Point2D* xy1, const Point2D* xy2);
+    static int DrawTimer(int index, ColorScheme* scheme, int time, const wchar_t* text, const Point2D* xy1, const Point2D* xy2); // IDA: NOT_FOUND
 
     uint32_t        field24;
     uint32_t        field28;

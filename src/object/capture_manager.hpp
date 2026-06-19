@@ -17,21 +17,21 @@ public:
     static constexpr AbstractType kObjectDeriveId = AbstractType::CaptureManager;
 
     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return 0; }  // IDA: 0x472960
-    virtual HRESULT __stdcall Load(IStream* stream) override { return 0; }
+    virtual HRESULT __stdcall Load(IStream* stream) override { return 0; } // IDA: NOT_FOUND
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { return 0; } // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     virtual ~CaptureManagerClass() = default;  // 0x4729C0
 
     virtual void pointerExpired(AbstractClass* ptr, bool removed) override {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual AbstractType __stdcall whatAmI() const override { return kObjectDeriveId; } // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual int objectSize() const override { return 0; }
+    virtual int objectSize() const override { return 0; } // IDA: NOT_FOUND
     virtual void calculateChecksum(void* checksum) const {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     // Construction
     CaptureManagerClass(TechnoClass* owner, HouseClass* originalOwner, bool); // 0x4717D0
     void Constructor_VectorClass_ControlNode(int, int);                // 0x473000
     void Constructor_473140(int);                                      // 0x473140
-    void ddtor();
+    void ddtor();  // 0x4729C0
     void Destroy();                                                    // 0x472C30
 
     // IUnknown (separate COM interface, not overriding AbstractClass)

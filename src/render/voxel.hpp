@@ -119,12 +119,12 @@ public:
 
     static DynamicVectorClass<VoxelAnimTypeClass*>* Array;
 
-    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override;
+    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override; // IDA: NOT_FOUND
 
     virtual AbstractType __stdcall WhatAmI() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual int Size() const;  // 0x454190
 
-    virtual bool SpawnAtMapCoords(CellStruct* coords, HouseClass* owner);
+    virtual bool SpawnAtMapCoords(CellStruct* coords, HouseClass* owner); // IDA: NOT_FOUND
     virtual ObjectClass* CreateObject(HouseClass* owner) override;  // 0x4737F0
 
     virtual ~VoxelAnimTypeClass() override = default;  // 0x74BA30
@@ -159,7 +159,7 @@ public:
 
 protected:
     VoxelAnimTypeClass() = default;
-    explicit VoxelAnimTypeClass(noinit_t) noexcept;
+    explicit VoxelAnimTypeClass(noinit_t) noexcept; // IDA: NOT_FOUND
 };
 
 
@@ -171,9 +171,9 @@ public:
 
     static DynamicVectorClass<VoxelAnimClass*>* Array;
 
-    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override;
+    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override; // IDA: NOT_FOUND
 
-    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
+    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override; // IDA: NOT_FOUND
 
     virtual ~VoxelAnimClass() override = default;  // 0x74AAD0
 
@@ -197,7 +197,7 @@ public:
 
 protected:
     VoxelAnimClass() = default;
-    explicit VoxelAnimClass(noinit_t) noexcept;
+    explicit VoxelAnimClass(noinit_t) noexcept; // IDA: NOT_FOUND
 };
 
 } // namespace gamemd

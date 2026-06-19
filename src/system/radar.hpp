@@ -23,12 +23,12 @@ class RadarClass : public DisplayClass
 public:
     virtual ~RadarClass() = default;  // 0x652C00
 
-    virtual void CreateEmptyMap(const RectangleStruct& map_rect, bool reuse, int8_t n_level, bool unk);
+    virtual void CreateEmptyMap(const RectangleStruct& map_rect, bool reuse, int8_t n_level, bool unk); // IDA: NOT_FOUND
     virtual void SetVisibleRect(const RectangleStruct& map_rect); // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual void DisposeOfArt(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual void* worldToScreenCoords(void* out, Point2D* point);
+    virtual void* worldToScreenCoords(void* out, Point2D* point); // IDA: NOT_FOUND
     virtual void onRadarClick(uint32_t unk); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual void InitForHouse();
+    virtual void InitForHouse(); // IDA: NOT_FOUND
 
     // 0x11E8: spy satellite / zoom state (all zeroed in constructor)
     int32_t                     SpiedSatelliteCount;    // 0x11E8
