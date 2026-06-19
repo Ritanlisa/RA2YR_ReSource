@@ -164,7 +164,7 @@ struct AudioEventHandle
     uint8_t          padding[2];
     CoordStruct*     Position3D;
 
-    bool IsPlaying() const;  // 0x7529e0
+    bool IsPlaying() const;  // 0x7529E0
     void Stop();
 };
 

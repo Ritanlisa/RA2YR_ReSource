@@ -75,64 +75,64 @@ public:
     CoordStruct* Coord_To_Screen(const CoordStruct& world, Point2D* out) const;
 
     int GetOcclusion(const CellStruct& cell, bool fog) const;
-    Point2D* AdjustForZShapeMove(Point2D* dest, Point2D* client);  // 0x6d1fe0
+    Point2D* AdjustForZShapeMove(Point2D* dest, Point2D* client);  // 0x6D1FE0
     static int AdjustForZ(int height);
 
     // Viewport management
     void FocusOn(CoordStruct* dest, int velocity);
     void RegisterDirtyArea(RectangleStruct area, bool unk);
     void RegisterCellAsVisible(CellClass* cell);
-    void SetView(int view_x, int view_y, int view_width, int view_height);  // 0x483e30
-    void SetViewDimensions(int width, int height);  // 0x4a8960
+    void SetView(int view_x, int view_y, int view_width, int view_height);  // 0x483E30
+    void SetViewDimensions(int width, int height);  // 0x4A8960
     void InitView();
-    void SetViewportPosition(int x, int y);  // 0x6d5f60
-    void ScrollViewport(int dx, int dy);  // 0x6d2540
-    void CalcViewportCells();  // 0x6d8b30
+    void SetViewportPosition(int x, int y);  // 0x6D5F60
+    void ScrollViewport(int dx, int dy);  // 0x6D2540
+    void CalcViewportCells();  // 0x6D8B30
     void updateVisibility();
-    void InterpolateView();  // 0x4ae290
+    void InterpolateView();  // 0x4AE290
 
     // Rendering pipeline
     void Render(ObjectClass* obj);
     void RenderFrame();
     void RenderCells();  // 0x550260
-    void RenderIsometric(const RectangleStruct& viewRect, int flags);  // 0x6d7560
-    void RenderIsometricOverlay(const RectangleStruct& viewRect);  // 0x6d2de0
-    void RenderCellFogOfWar(int cx, int cy);  // 0x4801f0
+    void RenderIsometric(const RectangleStruct& viewRect, int flags);  // 0x6D7560
+    void RenderIsometricOverlay(const RectangleStruct& viewRect);  // 0x6D2DE0
+    void RenderCellFogOfWar(int cx, int cy);  // 0x4801F0
     void renderOverlay();  // 0x658780
 
     // Map drawing
-    void DrawMap(const RectangleStruct& viewRect, RectangleStruct* bounds);  // 0x6d7840
-    void DrawTerrain(const RectangleStruct& viewRect);  // 0x6d7c00
-    void DrawTerrainPartial(const RectangleStruct& rect);  // 0x6d3040
-    void DrawCellTerrainOverlay(int cx, int cy, RectangleStruct* bounds);  // 0x4802a0
+    void DrawMap(const RectangleStruct& viewRect, RectangleStruct* bounds);  // 0x6D7840
+    void DrawTerrain(const RectangleStruct& viewRect);  // 0x6D7C00
+    void DrawTerrainPartial(const RectangleStruct& rect);  // 0x6D3040
+    void DrawCellTerrainOverlay(int cx, int cy, RectangleStruct* bounds);  // 0x4802A0
     void DrawCellOverlay(int cx, int cy, int flags);  // 0x547230
-    void DrawBuildings(const RectangleStruct& viewRect);  // 0x4d1890
-    void DrawBuildingsInView(const RectangleStruct& viewRect);  // 0x6d6d10
+    void DrawBuildings(const RectangleStruct& viewRect);  // 0x4D1890
+    void DrawBuildingsInView(const RectangleStruct& viewRect);  // 0x6D6D10
     void DrawBuildingPlacement(BuildingClass* building, int state);
-    void DrawPlacementCircles(ObjectClass* obj, int range, int color);  // 0x6dbe20
+    void DrawPlacementCircles(ObjectClass* obj, int range, int color);  // 0x6DBE20
 
     // Draw queue
-    void AddToDrawQueue(ObjectClass* obj, int screen_x, int screen_y);  // 0x6d9ef0
-    void CalcAllDrawPositions();  // 0x6d3660
-    Point2D* CalcBuildingDrawPos(Point2D* out, BuildingClass* building);  // 0x6d71e0
+    void AddToDrawQueue(ObjectClass* obj, int screen_x, int screen_y);  // 0x6D9EF0
+    void CalcAllDrawPositions();  // 0x6D3660
+    Point2D* CalcBuildingDrawPos(Point2D* out, BuildingClass* building);  // 0x6D71E0
 
     // Cell visibility
     void CheckCellVisibility(const Point2D& screen_pos, int flags, bool unk);  // 0x480350
     bool PixelToCellCheck(const Point2D& pixel, CellStruct* out_cell) const;  // 0x653760
     CellStruct ScreenToCellLookup(const Point2D& screen) const;  // 0x656750
-    bool IsOccupiedByTechno(const CellStruct& cell) const;  // 0x6da380
-    bool CheckUnitOverlap(const CellStruct& cell, int facing) const;  // 0x6d9b50
+    bool IsOccupiedByTechno(const CellStruct& cell) const;  // 0x6DA380
+    bool CheckUnitOverlap(const CellStruct& cell, int facing) const;  // 0x6D9B50
 
     // Input
     void ProcessScroll();
     void MouseInput(int x, int y, int buttons);  // 0x653850
-    void ProcessMouseClick(int x, int y);  // 0x6539d0
+    void ProcessMouseClick(int x, int y);  // 0x6539D0
 
     // Helpers
-    Point2D TransformPixel(const Point2D& pixel) const;  // 0x6d2280
-    uint32_t InterpolateColor(uint32_t elapsed_ms);  // 0x631e50
+    Point2D TransformPixel(const Point2D& pixel) const;  // 0x6D2280
+    uint32_t InterpolateColor(uint32_t elapsed_ms);  // 0x631E50
     bool DecrementCounter(uint32_t delta);
-    void MapSpecialDrawMode();  // 0x70f0b0
+    void MapSpecialDrawMode();  // 0x70F0B0
     static int DrawTimer(int index, ColorScheme* scheme, int time, const wchar_t* text, const Point2D* xy1, const Point2D* xy2);
 
     uint32_t        field24;

@@ -55,32 +55,32 @@ public:
 
     // --- Operations ---
     // IDA 0x5587F0: Run — launch save/load dialog
-    int Run();  // 0x5587f0
+    int Run();  // 0x5587F0
 
     // IDA 0x559C20: Check — scan directory for save files
-    bool Check();  // 0x559c20
+    bool Check();  // 0x559C20
 
     // IDA 0x559D60: AddRef (vt01) — load saved game
-    bool LoadGame(const char* filename);
+    bool LoadGame(const char* filename);  // 0x5D6330
 
     // IDA 0x559E40: Release (vt02) — save game
-    bool SaveGame(const char* filename, const wchar_t* description);
+    bool SaveGame(const char* filename, const wchar_t* description);  // 0x5D6320
 
     // IDA 0x559ED0: Read (vt04) — populate entry from file
     bool ReadEntry(FileEntryClass* dest, int a2);
 
     // --- Vector management (compat wrappers for original DynamicVectorClass) ---
     // IDA 0x55A1F0: CopyItems — resize vector, copy existing entries
-    bool CopyItems(uint32_t new_size, FileEntryClass** out_buffer = nullptr);  // 0x55a1f0
+    bool CopyItems(uint32_t new_size, FileEntryClass** out_buffer = nullptr);  // 0x55A1F0
 
     // IDA 0x55A2A0: ClearBuffer — free entry memory, reset count
-    void ClearBuffer();  // 0x55a2a0
+    void ClearBuffer();  // 0x55A2A0
 
     // IDA 0x55A2D0: FindItem — linear search by dword key
-    int FindItem(const uint32_t* key);  // 0x55a2d0
+    int FindItem(const uint32_t* key);  // 0x55A2D0
 
     // IDA 0x55A310: PointerToIndex — compute index from pointer
-    uint32_t PointerToIndex(FileEntryClass* ptr);  // 0x55a310
+    uint32_t PointerToIndex(FileEntryClass* ptr);  // 0x55A310
 
     // IDA 0x55A180: vt05 — pointer to index (compat alias)
     uint32_t VT05_PointerToIndex(FileEntryClass* ptr);
@@ -120,7 +120,7 @@ public:
     uint32_t GetFlag99() const;  // 0x681140
 
     // IDA 0x6812D0: GetFlag252 — get dword at offset 252
-    uint32_t GetFlag252() const;  // 0x6812d0
+    uint32_t GetFlag252() const;  // 0x6812D0
 
     // --- Accessors ---
     uint32_t GetMode() const;

@@ -119,9 +119,9 @@ public:
     virtual int Size() const override;  // 0x454190
 
     virtual bool SpawnAtMapCoords(CellStruct* coords, HouseClass* owner);
-    virtual ObjectClass* CreateObject(HouseClass* owner) override;  // 0x4737f0
+    virtual ObjectClass* CreateObject(HouseClass* owner) override;  // 0x4737F0
 
-    virtual ~VoxelAnimTypeClass() override = default;  // 0x74ba30
+    virtual ~VoxelAnimTypeClass() override = default;  // 0x74BA30
 
     bool Normalized;
     bool Translucent;
@@ -169,10 +169,10 @@ public:
 
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
 
-    virtual ~VoxelAnimClass() override = default;  // 0x74aad0
+    virtual ~VoxelAnimClass() override = default;  // 0x74AAD0
 
     virtual AbstractType __stdcall WhatAmI() const override;
-    virtual int Size() const override;  // 0x454190
+    virtual int Size() const override;
 
     uint32_t                align_AC;
     BounceClass             Bounce;

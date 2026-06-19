@@ -20,7 +20,7 @@ public:
     virtual HRESULT __stdcall Load(IStream* stream) override { return 0; }
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { return 0; }
 
-    virtual ~CaptureManagerClass() = default;  // 0x4729c0
+    virtual ~CaptureManagerClass() = default;  // 0x4729C0
 
     virtual void pointerExpired(AbstractClass* ptr, bool removed) override {}
     virtual AbstractType __stdcall whatAmI() const override { return kObjectDeriveId; }
@@ -31,7 +31,7 @@ public:
     CaptureManagerClass(TechnoClass* owner, HouseClass* originalOwner, bool); // 0x4717D0
     void Constructor_VectorClass_ControlNode(int, int);                // 0x473000
     void Constructor_473140(int);                                      // 0x473140
-    void ddtor();                                                      // 0x4729C0
+    void ddtor();
     void Destroy();                                                    // 0x472C30
 
     // IUnknown (separate COM interface, not overriding AbstractClass)

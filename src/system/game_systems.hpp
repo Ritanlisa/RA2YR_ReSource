@@ -405,7 +405,7 @@ public:
 class MultiplayerGameMode
 {
 public:
-    virtual ~MultiplayerGameMode() = default;  // 0x5d5d20
+    virtual ~MultiplayerGameMode() = default;  // 0x5D5D20
 
     virtual void Construct() {} // IDA: 0x5D5B60
     virtual void Dtor() {} // IDA: 0x5D5D20

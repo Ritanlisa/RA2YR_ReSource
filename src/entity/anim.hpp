@@ -26,7 +26,7 @@ public:
     virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override;
     virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;
 
-    virtual ~AnimClass() override = default;
+    virtual ~AnimClass() override = default;  // 0x4228E0
 
     virtual AbstractType __stdcall whatAmI() const override;
     virtual int objectSize() const override;
@@ -34,8 +34,8 @@ public:
     virtual int AnimExtras();
     virtual int GetEnd() const;
 
-    void Render(void* surface, int* a2, int* a3);  // 0x422ca0
-    void FreeRenderBuffer();  // 0x428de0
+    void Render(void* surface, int* a2, int* a3);  // 0x422CA0
+    void FreeRenderBuffer();  // 0x428DE0
 
     ProgressTimer       Animation;
     AnimTypeClass*      Type;

@@ -41,7 +41,7 @@ public:
     virtual void DrawOnTop();
     virtual void Draw(uint32_t flags);
     virtual void Render();
-    virtual bool SetCursor(MouseCursorType cursor, bool miniMap);  // 0x7c87b8
+    virtual bool SetCursor(MouseCursorType cursor, bool miniMap);  // 0x7C87B8
     virtual bool UpdateCursor(MouseCursorType cursor, bool miniMap);
     virtual bool RestoreCursor();
     virtual void UpdateCursorMinimapState(bool miniMap);
@@ -50,10 +50,10 @@ public:
     virtual HRESULT Save(IStream* stream);
     virtual void LoadFromINI(CCINIClass* ini);
     virtual const wchar_t* GetToolTip(unsigned int dialog_id);
-    virtual void CloseWindow();  // 0x7c865c
+    virtual void CloseWindow();  // 0x7C865C
     virtual void vt_entry_8C();
     virtual bool vt_entry_90(const CellStruct& cell, HouseClass* house);
-    virtual bool vt_entry_94(const CellStruct& cell, HouseClass* house, bool unk);
+    virtual bool vt_entry_94(const CellStruct& cell, HouseClass* house, bool unk);  // 0x4a9ca0
     virtual bool vt_entry_98(const CellStruct& cell, HouseClass* house);
     virtual bool vt_entry_9C(const CellStruct& cell, HouseClass* house);
 

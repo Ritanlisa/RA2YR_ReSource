@@ -28,7 +28,7 @@ public:
     virtual int32_t AddRef();  // 0x535FE0
     virtual int32_t Release();  // 0x536000
     virtual const char* GetName() const override;
-    virtual const wchar_t* GetUIName() const override;  // 0x484ff0
+    virtual const wchar_t* GetUIName() const override;  // 0x484FF0
     virtual void Execute(uint32_t context) const override;
 
     int32_t     SelectTeamCommand_field_00;       // 0x00
@@ -50,7 +50,7 @@ public:
     virtual int32_t AddRef();  // 0x5360D0
     virtual int32_t Release();  // 0x5360F0
     virtual const char* GetName() const override;
-    virtual const wchar_t* GetUIName() const override;  // 0x484ff0
+    virtual const wchar_t* GetUIName() const override;
     virtual void Execute(uint32_t context) const override;
 
     int32_t     AddTeamCommand_field_00;       // 0x00
@@ -70,7 +70,7 @@ public:
     virtual int32_t AddRef();  // 0x5362B0
     virtual int32_t Release();  // 0x5362D0
     virtual const char* GetName() const override;
-    virtual const wchar_t* GetUIName() const override;  // 0x484ff0
+    virtual const wchar_t* GetUIName() const override;
     virtual void Execute(uint32_t context) const override;
 
     int32_t     TauntCommandClass_field_00;       // 0x00
@@ -84,13 +84,13 @@ class PageUserCommandClass : public CommandClass
 {
 public:
     PageUserCommandClass() = default;
-    virtual ~PageUserCommandClass() = default;  // 0x537e10
+    virtual ~PageUserCommandClass() = default;  // 0x537E10
 
     virtual void Construct();
     virtual int32_t AddRef();  // 0x537DE0
     virtual int32_t Release();  // 0x537DF0
     virtual const char* GetName() const override;
-    virtual const wchar_t* GetUIName() const override;  // 0x484ff0
+    virtual const wchar_t* GetUIName() const override;
     virtual void Execute(uint32_t context) const override;
 
     int32_t     PageUserCommandClass_field_00;       // 0x00
@@ -104,13 +104,13 @@ class DeleteCommandClass : public CommandClass
 {
 public:
     DeleteCommandClass() = default;
-    virtual ~DeleteCommandClass() = default;  // 0x537f50
+    virtual ~DeleteCommandClass() = default;  // 0x537F50
 
     virtual void Construct();
     virtual int32_t AddRef();  // 0x537F20
     virtual int32_t Release();  // 0x537F30
     virtual const char* GetName() const override;
-    virtual const wchar_t* GetUIName() const override;  // 0x484ff0
+    virtual const wchar_t* GetUIName() const override;
     virtual void Execute(uint32_t context) const override;
 
     int32_t     DeleteCommandClass_field_00;       // 0x00
@@ -142,11 +142,11 @@ class ScreenCaptureCommandClass : public CommandClass
 {
 public:
     ScreenCaptureCommandClass() = default;
-    virtual ~ScreenCaptureCommandClass() = default;  // 0x537b60
+    virtual ~ScreenCaptureCommandClass() = default;  // 0x537B60
 
     virtual void Constructor();  // 0x537B40
     virtual int32_t AddRef();  // 0x537B50
-    virtual void ddtor();  // 0x537B60
+    virtual void ddtor();
     virtual const char* GetName() const override;
     virtual void Execute(uint32_t context) const override;  // 0x537BA0
 
@@ -183,7 +183,7 @@ public:
     int32_t AddRef();  // 0x537A50
     void ddtor();  // 0x537A60
     int32_t Release();  // 0x537A70
-    static void BuildBar();  // 0x6d1200
+    static void BuildBar();  // 0x6D1200
     static void AddAction(CommandClass* cmd);  // 0x724580
 
     int32_t     m_RefCount;     // 0x00

@@ -38,7 +38,7 @@ public:
     void queueSendPacket(const uint8_t*, int32_t, int32_t);                                   // 0x48B410
     void* allocPacketSlot();                                                                  // 0x48B750
     uint32_t initQueue(uint32_t);                                                             // 0x48BA10
-    void sendAck();  // 0x48bf40
+    void sendAck();
     void receivePacket();                                                                     // 0x48C040
     void processTileUpdate();                                                                 // 0x48C320
     void serviceSendQueue();                                                                  // 0x48C3E0
@@ -61,10 +61,10 @@ public:
     virtual bool Open() override; // 0x69BC20
 
     virtual HRESULT __stdcall QueryInterface(const IID&, void**) override; // 0x53F850
-    bool initConnection();  // 0x48be60
-    bool closeConnection();  // 0x69bc20
-    bool send(const uint8_t*, int32_t);  // 0x53f5d0
-    int32_t receive(uint8_t*, int32_t);  // 0x53f650
+    bool initConnection();
+    bool closeConnection();
+    bool send(const uint8_t*, int32_t);
+    int32_t receive(uint8_t*, int32_t);
 
     uint32_t  Socket;
     uint32_t  RemoteAddress[3];
@@ -78,23 +78,23 @@ public:
     IPXManagerClass() noexcept;                                       // 0x542FE0
     static IPXManagerClass* Instance;                                  // 0xA8EBE4
 
-    void Init();  // 0x48ba90
+    void Init();  // 0x48BA90
     bool OpenSession();
     void CloseSession();                                              // 0x5414C0
     bool SendPacket(const uint8_t*, int32_t);                          // 0x540D80
     int32_t ReceivePacket(uint8_t*, int32_t);                          // 0x541070
     bool IsIPXAvailable() const;                                       // 0x5424A0
 
-    void init();                                                      // 0x48BA90
+    void init();
     void processPacket();                                             // 0x5409F0
     IPXConnClass* createConnection();                                 // 0x540D40
     void destroyConnection(IPXConnClass*);                             // 0x540D60
-    void release();  // 0x5414c0
+    void release();
     int32_t GetConnectionCount();                                      // 0x542330
-    const char* GetAddress(char*);  // 0x542350
+    const char* GetAddress(char*);
     void SetAddress(const char*);                                     // 0x5423C0
     uint32_t GetQueueSize();                                          // 0x542450
-    int32_t CheckStatus();  // 0x5424a0
+    int32_t CheckStatus();
     void ProcessQueue();                                              // 0x542520
     void Flush();                                                     // 0x542EC0
     int32_t getPlayerName();                                          // 0x543100
@@ -112,7 +112,7 @@ public:
     virtual bool Open() override; // 0x5F1BC0
 
     bool Init();
-    bool Connect();  // 0x48c5a0
+    bool Connect();
     void FlushCom();                                        // 0x5F1F00
     bool SendPacket(const uint8_t*, int32_t);                // 0x5F1F70
     bool DetectModem();                                     // 0x5F1FA0
@@ -127,17 +127,17 @@ class NullModemClass : public ConnectionClass
 {
 public:
     NullModemClass() noexcept;
-    virtual ~NullModemClass() = default;  // 0x5f35a0
+    virtual ~NullModemClass() = default;  // 0x5F35A0
     virtual bool Open() override;
 
     bool initConnection();                                  // 0x5EF100
     bool closeConnection();                                 // 0x5EF170
-    bool Init();  // 0x5f16e0
-    bool Connect();  // 0x5f1bc0
+    bool Init();
+    bool Connect();
     void FlushCom();
-    bool SendPacket(const uint8_t*, int32_t);  // 0x5f1f70
-    bool DetectModem();  // 0x5f1fa0
-    bool Negotiate();  // 0x5f3170
+    bool SendPacket(const uint8_t*, int32_t);
+    bool DetectModem();
+    bool Negotiate();
 
 };
 

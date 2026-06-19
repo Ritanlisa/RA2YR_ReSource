@@ -44,7 +44,7 @@ public:
     virtual HRESULT __stdcall Load(IStream* stream) override;
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
 
-    virtual ~TagClass() = default;
+    virtual ~TagClass() = default;  // 0x6E56A0
 
     virtual void pointerExpired(AbstractClass* ptr, bool removed) override;
     virtual AbstractType __stdcall whatAmI() const override;
@@ -52,23 +52,23 @@ public:
     virtual void calculateChecksum(void* checksum) const;
 
     static void DeleteAll();
-    static void NotifyGlobalChanged(int idx_global);
-    static void NotifyLocalChanged(int idx_local);
+    static void NotifyGlobalChanged(int idx_global);  // 0x7263A0
+    static void NotifyLocalChanged(int idx_local);  // 0x7263D0
 
-    bool HasCrossesHorizontalLineEvent() const;  // 0x6e5320
-    bool HasCrossesVerticalLineEvent() const;  // 0x6e5300
-    bool HasZoneEntryByEvent() const;  // 0x6e5340
+    bool HasCrossesHorizontalLineEvent() const;  // 0x6E5320
+    bool HasCrossesVerticalLineEvent() const;  // 0x6E5300
+    bool HasZoneEntryByEvent() const;  // 0x6E5340
     bool HasAllowWinAction() const;
     void GlobalChanged(int idx_global);
     void LocalChanged(int idx_local);
-    bool IsOnlyInstanceOfType() const;  // 0x6e5850
+    bool IsOnlyInstanceOfType() const;  // 0x6E5850
 
     bool RaiseEvent(int event, ObjectClass* tag_owner, CellStruct location, bool force_all = false, TechnoClass* source = nullptr);
 
     bool ShouldReplace() const;
-    void Destroy();  // 0x6e5230
+    void Destroy();  // 0x6E5230
     bool HasBeenDestroyed() const;
-    void AddTrigger(TriggerClass* trigger);  // 0x6e55c0
+    void AddTrigger(TriggerClass* trigger);  // 0x6E55C0
     bool RemoveTrigger(TriggerClass* trigger);
     bool ContainsTrigger(TriggerClass* trigger) const;
 
@@ -97,7 +97,7 @@ public:
     virtual HRESULT __stdcall Load(IStream* stream) override;
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
 
-    virtual ~TagTypeClass() = default;
+    virtual ~TagTypeClass() = default;  // 0x6E64C0
 
     virtual void pointerExpired(AbstractClass* ptr, bool removed) override;
     virtual AbstractType __stdcall whatAmI() const override;
@@ -107,16 +107,16 @@ public:
 
     using Flags = uint8_t;
 
-    Flags GetFlags() const;
+    Flags GetFlags() const;  // 0x7271E0
     bool HasAllowWinAction() const;
-    bool HasCrossesHorizontalLineEvent() const;  // 0x6e6250
-    bool HasCrossesVerticalLineEvent() const;  // 0x6e6280
-    bool HasZoneEntryByEvent() const;  // 0x6e62b0
-    bool AddTrigger(class TriggerTypeClass* trigger);
+    bool HasCrossesHorizontalLineEvent() const;  // 0x6E6250
+    bool HasCrossesVerticalLineEvent() const;  // 0x6E6280
+    bool HasZoneEntryByEvent() const;  // 0x6E62B0
+    bool AddTrigger(class TriggerTypeClass* trigger);  // 0x6E55C0
     bool RemoveTrigger(class TriggerTypeClass* trigger);
     bool ContainsTrigger(class TriggerTypeClass* trigger) const;
 
-    static void LoadFromINIList(CCINIClass* ini);
+    static void LoadFromINIList(CCINIClass* ini);  // 0x46CE10
     static void SaveToINIList(CCINIClass* ini);
 
     int32_t             arrayIndex;

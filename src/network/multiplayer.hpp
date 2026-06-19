@@ -102,42 +102,42 @@ class MPBattleClass : public MPGameModeClass
 public:
     MPBattleClass() noexcept;
     virtual ~MPBattleClass() = default;
-    virtual bool IsTeamsAllowed() override;  // 0x5cb570
-    virtual bool IsValidMap() override;  // 0x5cacf0
-    virtual bool NeedsHouseSelection() override;  // 0x5cad30
-    virtual bool StartGame() override;  // 0x5cad90
-    virtual bool StopGame(int32_t reason) override;  // 0x5cadc0
-    virtual void OnPlayerConnect(int32_t idx) override;  // 0x5cb190
-    virtual void OnPlayerDisconnect(int32_t idx) override;  // 0x5cb1c0
-    virtual int32_t GetMaximumPlayers() override;  // 0x5cb1e0
-    virtual int32_t GetMinimumPlayers() override;  // 0x5cb200
-    virtual int32_t GetAlliesLimit() override;  // 0x5cb220
-    virtual bool CanAllyWith(int32_t idx) override;  // 0x5cb260
-    virtual void OnGameBegin(int32_t seed) override;  // 0x5cb2d0
-    virtual bool IsAIAllowed() override;  // 0x5cb380
-    virtual int32_t FirstValidMapIndex() override;  // 0x5cedb0
-    virtual void PopulateTeamDropdown(HWND, DynamicVectorClass<MPTeam*>*, MPTeam*) override;  // 0x5d1a80
-    virtual void PopulateTeamDropdownForPlayer(HWND, int32_t) override;  // 0x5d3470
-    virtual bool ValidateHouse(int32_t,int32_t,void*,int32_t,int16_t,int32_t,int32_t) override;  // 0x5d3810
-    virtual bool ValidateOwner(int32_t,int32_t,void*,int32_t,int16_t,int32_t,int32_t,int32_t,int32_t) override;  // 0x5d3830
-    virtual bool ValidateColor(int32_t,int32_t,int32_t) override;  // 0x5d38f0
-    virtual bool ValidateStartPosition() override;  // 0x5d3920
-    virtual bool IsDefaultFix() override;  // 0x5d3950
-    virtual bool IsDefaultAI() override;  // 0x5d3980
-    virtual bool ValidatePlayer(int32_t idx) override;  // 0x5cad60
-    virtual int32_t RandomHumanCountryIndex() override;  // 0x5d3990
-    virtual int32_t RandomAICountryIndex() override;  // 0x5d39b0
-    virtual bool AreTeamChangesAllowed() override;  // 0x5cadd0
-    virtual bool IsHouseAllyChangeAllowed() override;  // 0x5cadf0
-    virtual void OnDialogCreated(int32_t, int32_t) override;  // 0x5d4c30
-    virtual void OnDialogDestroyed(int32_t) override;  // 0x5d4c50
-    virtual void DrawTeamDropdown(HWND, DynamicVectorClass<MPTeam*>*, MPTeam*) override;  // 0x5d2de0
-    virtual bool UnfixAlliances() override;  // 0x5d4cd0
-    virtual bool StartingPositionsToHouseBaseCells(int8_t) override;  // 0x5d58b0
+    virtual bool IsTeamsAllowed() override;
+    virtual bool IsValidMap() override;
+    virtual bool NeedsHouseSelection() override;
+    virtual bool StartGame() override;
+    virtual bool StopGame(int32_t reason) override;
+    virtual void OnPlayerConnect(int32_t idx) override;
+    virtual void OnPlayerDisconnect(int32_t idx) override;
+    virtual int32_t GetMaximumPlayers() override;
+    virtual int32_t GetMinimumPlayers() override;
+    virtual int32_t GetAlliesLimit() override;
+    virtual bool CanAllyWith(int32_t idx) override;
+    virtual void OnGameBegin(int32_t seed) override;
+    virtual bool IsAIAllowed() override;
+    virtual int32_t FirstValidMapIndex() override;
+    virtual void PopulateTeamDropdown(HWND, DynamicVectorClass<MPTeam*>*, MPTeam*) override;
+    virtual void PopulateTeamDropdownForPlayer(HWND, int32_t) override;
+    virtual bool ValidateHouse(int32_t,int32_t,void*,int32_t,int16_t,int32_t,int32_t) override;
+    virtual bool ValidateOwner(int32_t,int32_t,void*,int32_t,int16_t,int32_t,int32_t,int32_t,int32_t) override;
+    virtual bool ValidateColor(int32_t,int32_t,int32_t) override;
+    virtual bool ValidateStartPosition() override;
+    virtual bool IsDefaultFix() override;
+    virtual bool IsDefaultAI() override;
+    virtual bool ValidatePlayer(int32_t idx) override;
+    virtual int32_t RandomHumanCountryIndex() override;
+    virtual int32_t RandomAICountryIndex() override;
+    virtual bool AreTeamChangesAllowed() override;
+    virtual bool IsHouseAllyChangeAllowed() override;
+    virtual void OnDialogCreated(int32_t, int32_t) override;
+    virtual void OnDialogDestroyed(int32_t) override;
+    virtual void DrawTeamDropdown(HWND, DynamicVectorClass<MPTeam*>*, MPTeam*) override;
+    virtual bool UnfixAlliances() override;
+    virtual bool StartingPositionsToHouseBaseCells(int8_t) override;
     virtual bool StartingPositionsToHouseBaseCells2(bool) override;
-    virtual bool AllyTeams() override;  // 0x5d58e0
-    virtual bool IsMegawealthAllowed() override;  // 0x5d5900
-    virtual void OnAIJoined() override;  // 0x5d5920
+    virtual bool AllyTeams() override;
+    virtual bool IsMegawealthAllowed() override;
+    virtual void OnAIJoined() override;
     virtual void OnAllCompleted() override;
     virtual int32_t GetScoreMode() override;
     virtual void OnNewScenario() override;
@@ -164,10 +164,10 @@ public:
     MPFreeForAllClass() noexcept;                                       // 0x5C5CE0 (MPBattleClass::MPFreeForAllClass)
     virtual ~MPFreeForAllClass() = default;
     virtual bool StartGame() override;
-    virtual bool StopGame(int32_t reason) override;  // 0x5cadc0
-    virtual bool AreTeamChangesAllowed() override;  // 0x5cadd0
-    virtual bool IsTeamsAllowed() override;  // 0x5cb570
-    virtual void PopulateTeamDropdownForPlayer(HWND, int32_t) override;  // 0x5d3470
+    virtual bool StopGame(int32_t reason) override;
+    virtual bool AreTeamChangesAllowed() override;
+    virtual bool IsTeamsAllowed() override;
+    virtual void PopulateTeamDropdownForPlayer(HWND, int32_t) override;
 };
 
 class MPUnholyAllianceClass : public MPGameModeClass
@@ -176,8 +176,8 @@ public:
     MPUnholyAllianceClass() noexcept;                                    // 0x5CB3A0 (MPBattleClass::MPUnholyAllianceClass)
     virtual ~MPUnholyAllianceClass() = default;
     virtual bool StartGame() override;
-    virtual bool StopGame(int32_t reason) override;  // 0x5cadc0
-    virtual bool AreTeamChangesAllowed() override;  // 0x5cadd0
+    virtual bool StopGame(int32_t reason) override;
+    virtual bool AreTeamChangesAllowed() override;
     virtual bool SpawnBaseUnits(HouseClass*, uint32_t) override;
 };
 
@@ -187,10 +187,10 @@ public:
     MPSiegeClass() noexcept;                                              // 0x5CA630 (MPBattleClass::MPSiegeClass)
     virtual ~MPSiegeClass() = default;
     virtual bool StartGame() override;
-    virtual bool StopGame(int32_t reason) override;  // 0x5cadc0
-    virtual bool AreTeamChangesAllowed() override;  // 0x5cadd0
-    virtual bool IsAIAllowed() override;  // 0x5cb380
-    virtual bool UnfixAlliances() override;  // 0x5d4cd0
+    virtual bool StopGame(int32_t reason) override;
+    virtual bool AreTeamChangesAllowed() override;
+    virtual bool IsAIAllowed() override;
+    virtual bool UnfixAlliances() override;
     virtual bool StartingPositionsToHouseBaseCells2(bool) override;
     virtual void CreateMPTeams(DynamicVectorClass<MPTeam*>*) override;
     virtual bool SpawnBaseUnits(HouseClass*, uint32_t) override;
@@ -201,7 +201,7 @@ class MPMegawealthClass : public MPGameModeClass
 public:
     MPMegawealthClass() noexcept;                                  // 0x5C93E0 (MPBattleClass::MPMegawealthClass)
     virtual ~MPMegawealthClass() = default;
-    virtual bool IsMegawealthAllowed() override;  // 0x5d5900
+    virtual bool IsMegawealthAllowed() override;
 };
 
 class MPManBattleClass : public MPGameModeClass

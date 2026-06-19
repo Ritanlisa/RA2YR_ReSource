@@ -390,6 +390,23 @@ def fuzzy_class_match(hpp_class: str, json_classes: list) -> str:
 
 # ── Main Annotation Logic ──────────────────────────────────────────────────
 
+def collect_existing_addresses(lines: list) -> set:
+    """Collect all uppercase addresses already present in the file."""
+    existing = set()
+    for line in lines:
+        m = RE_ADDR_TAIL.search(line)
+        if m:
+            raw = m.group(1)
+            if int(raw, 16) >= MIN_ADDR_VALUE:
+                existing.add(raw.upper())
+        m = RE_ADDR_IDA.search(line)
+        if m:
+            raw = m.group(1)
+            if int(raw, 16) >= MIN_ADDR_VALUE:
+                existing.add(raw.upper())
+    return existing
+
+
 def annotate_file(filepath: Path, class_method_lookup: dict, global_lookup: dict,
                   ctor_lookup: dict, dtor_lookup: dict,
                   method_to_classes: dict,
@@ -408,6 +425,9 @@ def annotate_file(filepath: Path, class_method_lookup: dict, global_lookup: dict
     lines = original.splitlines()
     changes = []
     new_lines = list(lines)
+    
+    # Pre-collect existing addresses to avoid creating duplicates
+    existing_addresses = collect_existing_addresses(lines)
     
     # Parse class context
     line_to_class = parse_class_context(lines)
@@ -488,12 +508,22 @@ def annotate_file(filepath: Path, class_method_lookup: dict, global_lookup: dict
         if not addr:
             continue
         
+        # Normalize to uppercase hex (preserve "0x" prefix casing)
+        addr_upper = "0x" + addr[2:].upper() if addr.startswith("0x") else addr.upper()
+        
+        # Skip if this address already exists elsewhere in the file
+        # (prevents normalize --fix from stripping it as duplicate)
+        # Strip "0x" prefix for comparison (existing_addresses stores raw hex from regex group 1)
+        addr_hex = addr_upper[2:] if addr_upper.startswith("0x") else addr_upper
+        if addr_hex in existing_addresses:
+            continue
+        
         # Add annotation
         stripped = lines[i].rstrip()
-        # Check that we're not adding a duplicate trailing annotation
-        annotation = f"  // {addr}"
+        annotation = f"  // {addr_upper}"
         new_lines[i] = stripped + annotation
-        changes.append(f"  L{i+1}: {label} -> {addr}")
+        existing_addresses.add(addr_hex)  # track for subsequent lines
+        changes.append(f"  L{i+1}: {label} -> {addr_upper}")
         match_types[label.split(":")[0]] += 1
     
     if changes and not dry_run:

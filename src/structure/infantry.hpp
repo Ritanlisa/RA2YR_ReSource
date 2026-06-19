@@ -21,15 +21,15 @@ public:
 
     virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override;  // 0x523300
 
-    virtual ~InfantryClass() override = default;  // 0x517d90
+    virtual ~InfantryClass() override = default;  // 0x517D90
 
     virtual AbstractType __stdcall whatAmI() const override;
     virtual int objectSize() const override;
 
-    virtual int IsDeployed() const;  // 0x6ef9e0
+    virtual int IsDeployed() const;  // 0x6EF9E0
     virtual bool PlayAnim(Sequence index, bool force = false, bool randomStartFrame = false);  // 0x451890
 
-    int Mission_Enter() override;  // 0x4166c0
+    int Mission_Enter() override;  // 0x4166C0
     int Mission_ParaDropApproach() override;
     int Mission_ParaDropOverfly() override;
 

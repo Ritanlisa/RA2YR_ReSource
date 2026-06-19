@@ -31,7 +31,7 @@ public:
     virtual CoordStruct* onCellChanged(CoordStruct* pDest, CoordStruct* pSrc) const override;
 
     virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override;
-    virtual ObjectClass* CreateObject(HouseClass* pOwner) override;  // 0x4737f0
+    virtual ObjectClass* CreateObject(HouseClass* pOwner) override;  // 0x4737F0
 
     virtual void Draw(Point2D* pClientCoords, RectangleStruct* pClipRect, int nFrame);
 

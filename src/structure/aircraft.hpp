@@ -103,7 +103,7 @@ public:
 
     // === Phase 3: Stream ===
     virtual int LoadFromStream();  // 0x41B430
-    void Destruct();  // 0x414080
+    void Destruct();
 
     // === Phase 3: Cursor & State ===
     virtual int GetCursorOverObject();  // 0x417CC0

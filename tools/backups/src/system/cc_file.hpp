@@ -86,13 +86,13 @@ public:
 class CCFileClass : public CDFileClass
 {
 public:
-    virtual ~CCFileClass() override = default;
+    virtual ~CCFileClass() override = default;  // 0x535a70
 
     explicit CCFileClass(const char* pFileName) noexcept;
 
-    bool  Open(const char* pFileName);  // 0x473c50
-    void* ReadEntireFile();  // 0x4a3890
-    void  Reset();  // 0x473ce0
+    bool  Open(const char* pFileName);  // 0x473C50
+    void* ReadEntireFile();  // 0x4A3890
+    void  Reset();  // 0x473CE0
 
 protected:
     explicit CCFileClass(const noinit_t&) noexcept : CDFileClass(noinit_t()) {}

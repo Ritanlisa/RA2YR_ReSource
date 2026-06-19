@@ -44,7 +44,7 @@ public:
     // IDA 0x5BD3D0 area
     static void sub_5BD3D0();
     // IDA 0x5BD3D0 area
-    static void DrawText(DSurface* surface, const wchar_t* text, int32_t x, int32_t y, uint32_t color);  // 0x4a61c0
+    static void DrawText(DSurface* surface, const wchar_t* text, int32_t x, int32_t y, uint32_t color);  // 0x4A61C0
 
     int32_t     Text_field_00;       // 0x00
 };
@@ -237,12 +237,12 @@ class LinkClass
 {
 public:
     LinkClass() = default;
-    virtual ~LinkClass();  // 0x5565a0
+    virtual ~LinkClass();  // 0x5565A0
 
     // IDA 0x48B2A0 area
     void Destroy();  // 0x4E1480
     void Destru_vt00();  // 0x4E1AD0
-    void Destruct();  // 0x5565A0
+    void Destruct();
 
     LinkClass*  m_Next;         // 0x04 (after vtable)
     LinkClass*  m_Prev;         // 0x08
@@ -383,7 +383,7 @@ public:
 class CheckListClass
 {
 public:
-    virtual ~CheckListClass() = default;  // 0x557e10
+    virtual ~CheckListClass() = default;  // 0x557E10
 
     virtual void ?() {} // IDA: 0x488310
     virtual void Clear() {} // IDA: 0x488350
@@ -805,7 +805,7 @@ public:
 class ToolTipClass
 {
 public:
-    virtual ~ToolTipClass() = default;  // 0x724c30
+    virtual ~ToolTipClass() = default;  // 0x724C30
 
     virtual void updateString() {} // IDA: 0x7240B0
     virtual void initString() {} // IDA: 0x724AD0
@@ -841,7 +841,7 @@ public:
 class TooltipClass
 {
 public:
-    virtual ~TooltipClass() = default;  // 0x724c30
+    virtual ~TooltipClass() = default;
 
     virtual void GetText() {} // IDA: 0x7248C0
 

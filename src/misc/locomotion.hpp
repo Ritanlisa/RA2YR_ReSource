@@ -383,7 +383,7 @@ public:
     virtual void __stdcall Mark_All_Occupation_Bits(int mark) override {}               // IDA: 0x75C300
     virtual void __stdcall ILocomotion_B8() override {}                                  // IDA: 0x75C310 (Limbo)
 
-    virtual ~WalkLocomotionClass() override = default;  // 0x75c640
+    virtual ~WalkLocomotionClass() override = default;  // 0x75C640
 
     virtual int Size() override { return sizeof(*this); }  // IDA: 0x454190
 
@@ -425,7 +425,7 @@ public:
     virtual void __stdcall Mark_All_Occupation_Bits(int mark) override {}               // IDA: 0x4CD3B0
     virtual void __stdcall ILocomotion_B8() override {}                                  // IDA: 0x4CD520 (Limbo)
 
-    virtual ~FlyLocomotionClass() override = default;  // 0x4cfc80
+    virtual ~FlyLocomotionClass() override = default;  // 0x4CFC80
 
     virtual int Size() override { return sizeof(*this); }  // IDA: 0x454190
 
@@ -478,7 +478,7 @@ public:
     virtual void __stdcall Mark_All_Occupation_Bits(int mark) override {}               // IDA: 0x6624C0
     virtual void __stdcall ILocomotion_B8() override {}                                  // IDA: 0x662650 (Limbo)
 
-    virtual ~RocketLocomotionClass() override = default;  // 0x6633d0
+    virtual ~RocketLocomotionClass() override = default;  // 0x6633D0
 
     virtual int Size() override { return sizeof(*this); }  // IDA: 0x454190
 
@@ -622,7 +622,7 @@ public:
     virtual void __stdcall Mark_All_Occupation_Bits(int mark) override {}               // IDA: 0x69EFD0
     virtual void __stdcall ILocomotion_B8() override {}                                  // IDA: 0x69F0F0 (Limbo)
 
-    virtual ~ShipLocomotionClass() override = default;  // 0x6a3e60
+    virtual ~ShipLocomotionClass() override = default;  // 0x6A3E60
 
     virtual int Size() override { return sizeof(*this); }  // IDA: 0x454190
 
@@ -735,7 +735,7 @@ public:
     virtual void __stdcall Mark_All_Occupation_Bits(int mark) override {}               // IDA: 0x7291E0
     virtual void __stdcall ILocomotion_B8() override {}                                  // IDA: 0x729C30 (Limbo)
 
-    virtual ~TunnelLocomotionClass() override = default;  // 0x72a110
+    virtual ~TunnelLocomotionClass() override = default;  // 0x72A110
 
     virtual int Size() override { return sizeof(*this); }  // IDA: 0x454190
 
@@ -772,7 +772,7 @@ public:
     virtual void __stdcall Mark_All_Occupation_Bits(int mark) override {}               // IDA: 0x5B1B30
     virtual void __stdcall ILocomotion_B8() override {}                                  // IDA: 0x5B1B40 (Limbo)
 
-    virtual ~MechLocomotionClass() override = default;  // 0x5b1960
+    virtual ~MechLocomotionClass() override = default;
 
     virtual int Size() override { return sizeof(*this); }  // IDA: 0x454190
 
@@ -820,7 +820,7 @@ public:
     virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }         // stub
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { (void)stream; (void)clear_dirty; return S_OK; }  // IDA: 0x4B5B00
 
-    virtual ~DropPodLocomotionClass() override = default;  // 0x4b6200
+    virtual ~DropPodLocomotionClass() override = default;  // 0x4B6200
 
     virtual int Size() override { return sizeof(*this); }  // IDA: 0x454190
 

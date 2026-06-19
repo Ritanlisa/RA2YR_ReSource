@@ -32,7 +32,7 @@ public:
     virtual void CloseWindow();  // 0x7C865C
     virtual void vt_entry_8C();
     virtual bool vt_entry_90(const CellStruct& cell, HouseClass* house);
-    virtual bool vt_entry_94(const CellStruct& cell, HouseClass* house, bool unk);  // 0x4a9ca0
+    virtual bool vt_entry_94(const CellStruct& cell, HouseClass* house, bool unk);  // 0x4A9CA0
     virtual bool vt_entry_98(const CellStruct& cell, HouseClass* house);
     virtual bool vt_entry_9C(const CellStruct& cell, HouseClass* house);
 };
@@ -43,27 +43,27 @@ public:
 class MapClass : public GScreenClass
 {
 public:
-    virtual ~MapClass() override = default;  // 0x5652c0
+    virtual ~MapClass() override = default;  // 0x5652C0
 };
 #endif
 
 class DisplayClass : public MapClass
 {
 public:
-    virtual ~DisplayClass() override = default;  // 0x4a8930
+    virtual ~DisplayClass() override = default;  // 0x4A8930
 
     virtual void LoadFromINI(CCINIClass* ini) override;
     virtual const wchar_t* GetToolTip(unsigned int dialog_id) override;
-    virtual void CloseWindow() override;  // 0x7c865c
+    virtual void CloseWindow() override;
     virtual void vt_entry_8C() override;
     virtual bool vt_entry_90(const CellStruct& cell, HouseClass* house) override;
-    virtual bool vt_entry_94(const CellStruct& cell, HouseClass* house, bool unk) override;  // 0x4A9CA0
+    virtual bool vt_entry_94(const CellStruct& cell, HouseClass* house, bool unk) override;
     virtual bool vt_entry_98(const CellStruct& cell, HouseClass* house) override;
     virtual bool vt_entry_9C(const CellStruct& cell, HouseClass* house) override;
 
     virtual MouseCursorType GetLastMouseCursor() = 0;
     virtual bool vt_entry_A4(uint32_t unk1, uint32_t unk2, uint32_t unk3);
-    virtual void SetViewDimensions(const RectangleStruct& rect);  // 0x4a8960
+    virtual void SetViewDimensions(const RectangleStruct& rect);  // 0x4A8960
     virtual void vt_entry_AC(uint32_t unk);  // 0x40D250
     virtual void vt_entry_B0(uint32_t unk);  // 0x4AAD20
     virtual void vt_entry_B4(Point2D* point);

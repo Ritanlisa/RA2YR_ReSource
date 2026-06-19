@@ -36,7 +36,7 @@ public:
     virtual HRESULT __stdcall GetClassID(CLSID*) override;
     virtual HRESULT __stdcall Save(IStream*, int) override;
 
-    virtual ~BuildingLightClass() override = default;  // 0x4370c0
+    virtual ~BuildingLightClass() override = default;  // 0x4370C0
 
     virtual AbstractType __stdcall whatAmI() const override;
     virtual int objectSize() const override;

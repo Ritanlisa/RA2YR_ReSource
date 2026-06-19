@@ -127,49 +127,49 @@ public:
 
     // --- TODO: IHouse / IPublicHouse / IConnectionPointContainer interfaces from YRpp ---
 
-    bool IsAlliedWith(int idx_house) const;  // 0x4f9a50
-    bool IsAlliedWith(const HouseClass* house) const;  // 0x4f9a50
-    bool IsAlliedWith(const ObjectClass* object) const;  // 0x4f9a50
-    bool IsAlliedWith(const AbstractClass* abstract) const;  // 0x4f9a50
+    bool IsAlliedWith(int idx_house) const;  // 0x4F9A50
+    bool IsAlliedWith(const HouseClass* house) const;
+    bool IsAlliedWith(const ObjectClass* object) const;
+    bool IsAlliedWith(const AbstractClass* abstract) const;
 
-    void MakeAlly(int house_idx, bool announce);  // 0x4f9b50
-    void MakeAlly(HouseClass* who, bool announce);  // 0x4f9b50
+    void MakeAlly(int house_idx, bool announce);  // 0x4F9B50
+    void MakeAlly(HouseClass* who, bool announce);
     void MakeEnemy(HouseClass* who, bool announce);
     void AllyAIHouses();
 
-    void SDDTORAllAndTriggers();  // 0x4fb920
+    void SDDTORAllAndTriggers();  // 0x4FB920
     void AcceptDefeat();
-    void DestroyAll();  // 0x4033c0
-    void DestroyAllBuildings();  // 0x4fc790
-    void DestroyAllNonBuildingsNonNaval();  // 0x4fc820
-    void DestroyAllNonBuildingsNaval();  // 0x4fc8d0
+    void DestroyAll();  // 0x4033C0
+    void DestroyAllBuildings();  // 0x4FC790
+    void DestroyAllNonBuildingsNonNaval();  // 0x4FC820
+    void DestroyAllNonBuildingsNaval();  // 0x4FC8D0
 
-    void RespawnStartingBuildings();  // 0x50d320
-    void RespawnStartingForces();  // 0x50d440
+    void RespawnStartingBuildings();  // 0x50D320
+    void RespawnStartingForces();  // 0x50D440
 
     uint8_t Win(bool save_something);
-    uint8_t Lose(bool save_something);  // 0x6cb7b0
+    uint8_t Lose(bool save_something);  // 0x6CB7B0
 
     bool CanAlly(HouseClass* other) const;  // 0x501540
     bool CanOverpower(TechnoClass* target) const;
 
-    void LostPoweredCenter(TechnoTypeClass* type);  // 0x50e0e0
-    void GainedPoweredCenter(TechnoTypeClass* type);  // 0x50e1b0
+    void LostPoweredCenter(TechnoTypeClass* type);  // 0x50E0E0
+    void GainedPoweredCenter(TechnoTypeClass* type);  // 0x50E1B0
 
     bool DoInfantrySelfHeal() const { return infantrySelfHeal > 0; }
-    int GetInfSelfHealStep() const;  // 0x50d9e0
+    int GetInfSelfHealStep() const;  // 0x50D9E0
     bool DoUnitsSelfHeal() const { return unitsSelfHeal > 0; }
-    int GetUnitSelfHealStep() const;  // 0x50d9f0
+    int GetUnitSelfHealStep() const;  // 0x50D9F0
 
     void UpdatePower();
-    void CreatePowerOutage(int duration);  // 0x50bc90
+    void CreatePowerOutage(int duration);  // 0x50BC90
     double GetPowerPercentage() const;
 
     bool HasFullPower() const { return powerOutput >= powerDrain || !powerDrain; }
     bool HasLowPower() const { return powerOutput < powerDrain && powerDrain; }
 
-    void CreateRadarOutage(int duration);  // 0x50bcd0
-    void ReshroudMap();  // 0x50bd10
+    void CreateRadarOutage(int duration);  // 0x50BCD0
+    void ReshroudMap();  // 0x50BD10
     void Cheer();
 
     void BuildingUnderAttack(BuildingClass* building);
@@ -186,7 +186,7 @@ public:
     int AvailableMoney() const;
 
     void GiveTiberium(float amount, int type);
-    void UpdateAllSilos(int prev_storage, int prev_total_storage);  // 0x4f9970
+    void UpdateAllSilos(int prev_storage, int prev_total_storage);  // 0x4F9970
     double getStoragePercentage();
 
     void AcquiredThreatNode();  // 0x509130
@@ -223,11 +223,11 @@ public:
     bool IsIonCannonEligibleTarget(const TechnoClass* techno) const;
 
     void UpdateFlagCoords(class UnitClass* new_carrier, uint32_t unk);
-    void DroppedFlag(CellStruct* where, class UnitClass* who);  // 0x4fbf60
-    char PickedUpFlag(class UnitClass* who, uint32_t unk);  // 0x4fc060
+    void DroppedFlag(CellStruct* where, class UnitClass* who);  // 0x4FBF60
+    char PickedUpFlag(class UnitClass* who, uint32_t unk);  // 0x4FC060
 
     FactoryClass* GetPrimaryFactory(AbstractType abs_id, bool naval, int build_cat) const;
-    void SetPrimaryFactory(FactoryClass* factory, AbstractType abs_id, bool naval, int build_cat);  // 0x740df0
+    void SetPrimaryFactory(FactoryClass* factory, AbstractType abs_id, bool naval, int build_cat);  // 0x740DF0
 
     const CellStruct& GetBaseCenter() const
     {
@@ -239,7 +239,7 @@ public:
 
     bool IsNeutral() const;
     bool IsPlayer() const;
-    bool IsObserver() const;  // 0x5e9440
+    bool IsObserver() const;  // 0x5E9440
     static bool IsPlayerObserver();
 
     // ---- member variables ----

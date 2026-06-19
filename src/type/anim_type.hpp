@@ -42,10 +42,10 @@ public:
     virtual int objectSize() const override; // 0x428E70 (as GetObjectSize)
 
     virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override; // 0x428E90 (as StubReturnFalse)
-    virtual ObjectClass* CreateObject(HouseClass* pOwner) override;  // 0x4737f0
+    virtual ObjectClass* CreateObject(HouseClass* pOwner) override;  // 0x4737F0
 
     virtual SHPStruct* LoadImage();
-    virtual void Load2DArt();  // 0x5f9070
+    virtual void Load2DArt();  // 0x5F9070
 
     AnimTypeClass(const char* pID) noexcept;  // 0x427530 (as Construct)
 

@@ -18,7 +18,7 @@ public:
     virtual HRESULT __stdcall Load(IStream* stream) override;
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
 
-    virtual ~AirstrikeClass() = default;  // 0x41d7a0
+    virtual ~AirstrikeClass() = default;  // 0x41D7A0
 
     virtual void pointerExpired(AbstractClass* ptr, bool removed) override;
     virtual AbstractType __stdcall whatAmI() const override;
@@ -27,7 +27,7 @@ public:
 
     // Construction
     AirstrikeClass(TechnoClass*);                                // 0x41D380
-    void ddtor();                                                // 0x41D7A0
+    void ddtor();
 
     // Methods
     void StartMission();                                         // 0x41D830

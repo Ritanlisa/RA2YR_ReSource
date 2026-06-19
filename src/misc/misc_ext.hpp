@@ -231,7 +231,7 @@ class GUIDUtil
 {
 public:
     // IDA 0x48B2A0 area
-    static bool Compare(const ::GUID& a, const ::GUID& b);  // 0x53ee70
+    static bool Compare(const ::GUID& a, const ::GUID& b);  // 0x53EE70
 
     int32_t     GUIDUtil_field_00;       // 0x00
 };
@@ -286,13 +286,13 @@ class TClassFactory_MechLocomotionClass : public IClassFactory
 {
 public:
     TClassFactory_MechLocomotionClass() = default;
-    virtual ~TClassFactory_MechLocomotionClass() = default;  // 0x6c4d90
+    virtual ~TClassFactory_MechLocomotionClass() = default;  // 0x6C4D90
 
     // IClassFactory
     virtual HRESULT __stdcall CreateInstance(IUnknown* pUnkOuter, const GUID& riid, void** ppv) override;
     virtual HRESULT __stdcall LockServer(bool fLock) override;  // 0x767010
     // IUnknown
-    virtual HRESULT __stdcall QueryInterface(const GUID& riid, void** ppv) override;  // 0x55a9b0
+    virtual HRESULT __stdcall QueryInterface(const GUID& riid, void** ppv) override;  // 0x55A9B0
     virtual ULONG __stdcall AddRef() override;  // 0x6C4D40
     virtual ULONG __stdcall Release() override;
 
@@ -367,7 +367,7 @@ public:
 class AITriggerTypeClass
 {
 public:
-    virtual ~AITriggerTypeClass() = default;  // 0x41fff0
+    virtual ~AITriggerTypeClass() = default;  // 0x41FFF0
 
     virtual void GetClassIdentifier() {} // IDA: 0x41E500
     virtual void LoadTypeData() {} // IDA: 0x41E540
@@ -396,7 +396,7 @@ public:
 class AnimFile
 {
 public:
-    virtual ~AnimFile() = default;  // 0x426a90
+    virtual ~AnimFile() = default;  // 0x426A90
 
     virtual void AddRef() {} // IDA: 0x426750
     virtual void Release() {} // IDA: 0x426790
@@ -474,7 +474,7 @@ public:
 class CoopCampaignVector
 {
 public:
-    virtual ~CoopCampaignVector() = default;  // 0x5c56e0
+    virtual ~CoopCampaignVector() = default;  // 0x5C56E0
 
     virtual void Seek() {} // IDA: 0x5C5120
     virtual void AddRef() {} // IDA: 0x5C55F0
@@ -555,7 +555,7 @@ public:
 class EMPulseClass
 {
 public:
-    virtual ~EMPulseClass() = default;  // 0x4c59f0
+    virtual ~EMPulseClass() = default;  // 0x4C59F0
 
     virtual void sub_54C58C0() {} // IDA: 0x4C58C0
     virtual void Stat() {} // IDA: 0x4C59A0
@@ -726,7 +726,7 @@ public:
 class IsometricTileTypeClass
 {
 public:
-    virtual ~IsometricTileTypeClass() = default;  // 0x54a170
+    virtual ~IsometricTileTypeClass() = default;  // 0x54A170
 
     virtual void CleanupMembers() {} // IDA: 0x544A70
     virtual void LoadTileFileData() {} // IDA: 0x544CB0
@@ -786,7 +786,7 @@ public:
 class MapFile
 {
 public:
-    virtual ~MapFile() = default;  // 0x69c500
+    virtual ~MapFile() = default;  // 0x69C500
 
     virtual void LoadDescription() {} // IDA: 0x69A3B0
     virtual void ddtor() {} // IDA: 0x69C500
@@ -848,7 +848,7 @@ public:
 class MapSeedClass
 {
 public:
-    virtual ~MapSeedClass() = default;  // 0x597d50
+    virtual ~MapSeedClass() = default;  // 0x597D50
 
     virtual void Constructor() {} // IDA: 0x595680
     virtual void Release() {} // IDA: 0x597760
@@ -954,7 +954,7 @@ public:
 class RadarHashVector
 {
 public:
-    virtual ~RadarHashVector() = default;  // 0x658a70
+    virtual ~RadarHashVector() = default;  // 0x658A70
 
     virtual void Clear() {} // IDA: 0x658890
     virtual void GetCount() {} // IDA: 0x6588C0
@@ -1123,7 +1123,7 @@ public:
 class TClassFactory_AnimClass
 {
 public:
-    virtual ~TClassFactory_AnimClass() = default;  // 0x6c3a10
+    virtual ~TClassFactory_AnimClass() = default;  // 0x6C3A10
 
     virtual void AddRef() {} // IDA: 0x6C39C0
     virtual void GetClassName() {} // IDA: 0x6C39E0
@@ -1138,7 +1138,7 @@ public:
 class TClassFactory_BulletClass
 {
 public:
-    virtual ~TClassFactory_BulletClass() = default;  // 0x6c5090
+    virtual ~TClassFactory_BulletClass() = default;  // 0x6C5090
 
     virtual void AddRef() {} // IDA: 0x6C5040
     virtual void GetClassName() {} // IDA: 0x6C5060
@@ -1153,7 +1153,7 @@ public:
 class TClassFactory_CampaignClass
 {
 public:
-    virtual ~TClassFactory_CampaignClass() = default;  // 0x6c0290
+    virtual ~TClassFactory_CampaignClass() = default;  // 0x6C0290
 
     virtual void sub_6C00C0() {} // IDA: 0x6C00C0
     virtual void Release() {} // IDA: 0x6C00E0
@@ -1174,7 +1174,7 @@ public:
 class TClassFactory_CellClass
 {
 public:
-    virtual ~TClassFactory_CellClass() = default;  // 0x6bf990
+    virtual ~TClassFactory_CellClass() = default;  // 0x6BF990
 
     virtual void AddRef() {} // IDA: 0x6BF940
     virtual void GetClassName() {} // IDA: 0x6BF960
@@ -1189,7 +1189,7 @@ public:
 class TClassFactory_EMPulseClass
 {
 public:
-    virtual ~TClassFactory_EMPulseClass() = default;  // 0x6bfb10
+    virtual ~TClassFactory_EMPulseClass() = default;  // 0x6BFB10
 
     virtual void AddRef() {} // IDA: 0x6BFAC0
     virtual void GetClassName() {} // IDA: 0x6BFAE0
@@ -1217,7 +1217,7 @@ public:
 class AbstractClassVector
 {
 public:
-    virtual ~AbstractClassVector() = default;  // 0x4e0410
+    virtual ~AbstractClassVector() = default;  // 0x4E0410
 
     virtual void Seek() {} // IDA: 0x4E01E0
     virtual void QueryInterface() {} // IDA: 0x4E02D0
@@ -1372,7 +1372,7 @@ public:
 class BaseNodeClass_Vector
 {
 public:
-    virtual ~BaseNodeClass_Vector() = default;  // 0x42fab0
+    virtual ~BaseNodeClass_Vector() = default;  // 0x42FAB0
 
     virtual void Release() {} // IDA: 0x42F9C0
     virtual void ddtor() {} // IDA: 0x42FAB0
@@ -1487,7 +1487,7 @@ public:
 class C07EFB9C
 {
 public:
-    virtual ~C07EFB9C() = default;  // 0x6301a0
+    virtual ~C07EFB9C() = default;  // 0x6301A0
 
     virtual void ddtor() {} // IDA: 0x6301A0
 
@@ -1505,7 +1505,7 @@ public:
 class C07F5C70
 {
 public:
-    virtual ~C07F5C70() = default;  // 0x746de0
+    virtual ~C07F5C70() = default;  // 0x746DE0
 
     virtual void Write() {} // IDA: 0x744600
     virtual void StubReturn2280() {} // IDA: 0x746DD0
@@ -1587,7 +1587,7 @@ public:
 class CellClassVector
 {
 public:
-    virtual ~CellClassVector() = default;  // 0x5ad570
+    virtual ~CellClassVector() = default;  // 0x5AD570
 
     virtual void Destruct() {} // IDA: 0x5AD570
 
@@ -1688,7 +1688,7 @@ public:
 class ComStreamClass
 {
 public:
-    virtual ~ComStreamClass() = default;  // 0x7a40f0
+    virtual ~ComStreamClass() = default;  // 0x7A40F0
 
     virtual void initStream() {} // IDA: 0x76B080
     virtual void closeStream() {} // IDA: 0x76B090
@@ -1746,7 +1746,7 @@ public:
 class ConnectionPointClass
 {
 public:
-    virtual ~ConnectionPointClass() = default;  // 0x4a05d0
+    virtual ~ConnectionPointClass() = default;  // 0x4A05D0
 
     virtual void QueryInterface() {} // IDA: 0x4A04B0
     virtual void AddRef() {} // IDA: 0x4A0520
@@ -1834,7 +1834,7 @@ public:
 class DiskLaserClass
 {
 public:
-    virtual ~DiskLaserClass() = default;  // 0x4a7c30
+    virtual ~DiskLaserClass() = default;  // 0x4A7C30
 
     virtual void Fire() {} // IDA: 0x4A71A0
     virtual void Update() {} // IDA: 0x4A7340
@@ -2468,7 +2468,7 @@ public:
 class MSFont
 {
 public:
-    virtual ~MSFont() = default;  // 0x5d3330
+    virtual ~MSFont() = default;  // 0x5D3330
 
     virtual void Constructor_MSFont() {} // IDA: 0x5D2E30
     virtual void Release() {} // IDA: 0x5D3170
@@ -2555,7 +2555,7 @@ public:
 class MSShapeAnim
 {
 public:
-    virtual ~MSShapeAnim() = default;  // 0x5cebd0
+    virtual ~MSShapeAnim() = default;  // 0x5CEBD0
 
     virtual void Constructor() {} // IDA: 0x5CB6D0
     virtual void Destruct() {} // IDA: 0x5CEBD0
@@ -2734,7 +2734,7 @@ public:
 class ObjectVector
 {
 public:
-    virtual ~ObjectVector() = default;  // 0x40cdc0
+    virtual ~ObjectVector() = default;  // 0x40CDC0
 
     virtual void Release() {} // IDA: 0x40CD10
     virtual void ddtor() {} // IDA: 0x40CDC0
@@ -2851,7 +2851,7 @@ public:
 class Pipe
 {
 public:
-    virtual ~Pipe() = default;  // 0x631c80
+    virtual ~Pipe() = default;  // 0x631C80
 
     virtual void QueryInterface() {} // IDA: 0x4AEC80
     virtual void Dtor() {} // IDA: 0x631C80
@@ -3022,7 +3022,7 @@ public:
 class Scalar
 {
 public:
-    virtual ~Scalar() = default;  // 0x5ac340
+    virtual ~Scalar() = default;  // 0x5AC340
 
     virtual void Dtor() {} // IDA: 0x5AC340
 
@@ -3279,7 +3279,7 @@ public:
 class Straw
 {
 public:
-    virtual ~Straw() = default;  // 0x6c9850
+    virtual ~Straw() = default;  // 0x6C9850
 
     virtual void QueryInterface() {} // IDA: 0x4AEC10
     virtual void Dtor() {} // IDA: 0x6C9850
@@ -3303,7 +3303,7 @@ public:
 class SubzoneConnectionVector
 {
 public:
-    virtual ~SubzoneConnectionVector() = default;  // 0x40b070
+    virtual ~SubzoneConnectionVector() = default;  // 0x40B070
 
     virtual void Destruct() {} // IDA: 0x40B070
     virtual void ClearAndFree() {} // IDA: 0x588D60
@@ -3325,7 +3325,7 @@ public:
 class SubzoneTrackingVector
 {
 public:
-    virtual ~SubzoneTrackingVector() = default;  // 0x58a5b0
+    virtual ~SubzoneTrackingVector() = default;  // 0x58A5B0
 
     virtual void Destruct() {} // IDA: 0x58A5B0
 
@@ -3403,7 +3403,7 @@ public:
 class TClassFactory_AircraftClass
 {
 public:
-    virtual ~TClassFactory_AircraftClass() = default;  // 0x6c3710
+    virtual ~TClassFactory_AircraftClass() = default;  // 0x6C3710
 
     virtual void AddRef() {} // IDA: 0x6C36C0
     virtual void GetClassName() {} // IDA: 0x6C36E0
@@ -3433,7 +3433,7 @@ public:
 class TClassFactory_AirstrikeClass
 {
 public:
-    virtual ~TClassFactory_AirstrikeClass() = default;  // 0x6c0890
+    virtual ~TClassFactory_AirstrikeClass() = default;  // 0x6C0890
 
     virtual void AddRef() {} // IDA: 0x6C0840
     virtual void GetClassName() {} // IDA: 0x6C0860
@@ -3448,7 +3448,7 @@ public:
 class TClassFactory_AlphaShapeClass
 {
 public:
-    virtual ~TClassFactory_AlphaShapeClass() = default;  // 0x6c6110
+    virtual ~TClassFactory_AlphaShapeClass() = default;  // 0x6C6110
 
     virtual void AddRef() {} // IDA: 0x6C60C0
     virtual void GetClassName() {} // IDA: 0x6C60E0
@@ -3478,7 +3478,7 @@ public:
 class TClassFactory_BombClass
 {
 public:
-    virtual ~TClassFactory_BombClass() = default;  // 0x6c1190
+    virtual ~TClassFactory_BombClass() = default;  // 0x6C1190
 
     virtual void AddRef() {} // IDA: 0x6C1140
     virtual void GetClassName() {} // IDA: 0x6C1160
@@ -3493,7 +3493,7 @@ public:
 class TClassFactory_BuildingClass
 {
 public:
-    virtual ~TClassFactory_BuildingClass() = default;  // 0x6c3590
+    virtual ~TClassFactory_BuildingClass() = default;  // 0x6C3590
 
     virtual void AddRef() {} // IDA: 0x6C3540
     virtual void GetClassName() {} // IDA: 0x6C3560
@@ -3508,7 +3508,7 @@ public:
 class TClassFactory_BuildingLightClass
 {
 public:
-    virtual ~TClassFactory_BuildingLightClass() = default;  // 0x6c0410
+    virtual ~TClassFactory_BuildingLightClass() = default;  // 0x6C0410
 
     virtual void AddRef() {} // IDA: 0x6C03C0
     virtual void GetClassName() {} // IDA: 0x6C03E0
@@ -3553,7 +3553,7 @@ public:
 class TClassFactory_CaptureManagerClass
 {
 public:
-    virtual ~TClassFactory_CaptureManagerClass() = default;  // 0x6c0d10
+    virtual ~TClassFactory_CaptureManagerClass() = default;  // 0x6C0D10
 
     virtual void AddRef() {} // IDA: 0x6C0CC0
     virtual void GetClassName() {} // IDA: 0x6C0CE0
@@ -3568,7 +3568,7 @@ public:
 class TClassFactory_DiskLaserClass
 {
 public:
-    virtual ~TClassFactory_DiskLaserClass() = default;  // 0x6c0e90
+    virtual ~TClassFactory_DiskLaserClass() = default;  // 0x6C0E90
 
     virtual void AddRef() {} // IDA: 0x6C0E40
     virtual void GetClassName() {} // IDA: 0x6C0E60
@@ -3583,7 +3583,7 @@ public:
 class TClassFactory_DriveLocomotionClass
 {
 public:
-    virtual ~TClassFactory_DriveLocomotionClass() = default;  // 0x6c4010
+    virtual ~TClassFactory_DriveLocomotionClass() = default;  // 0x6C4010
 
     virtual void AddRef() {} // IDA: 0x6C3FC0
     virtual void GetClassName() {} // IDA: 0x6C3FE0
@@ -3598,7 +3598,7 @@ public:
 class TClassFactory_DropPodLocomotionClass
 {
 public:
-    virtual ~TClassFactory_DropPodLocomotionClass() = default;  // 0x6c4910
+    virtual ~TClassFactory_DropPodLocomotionClass() = default;  // 0x6C4910
 
     virtual void AddRef() {} // IDA: 0x6C48C0
     virtual void GetClassName() {} // IDA: 0x6C48E0
@@ -3613,7 +3613,7 @@ public:
 class TClassFactory_FactoryClass
 {
 public:
-    virtual ~TClassFactory_FactoryClass() = default;  // 0x6c5210
+    virtual ~TClassFactory_FactoryClass() = default;  // 0x6C5210
 
     virtual void AddRef() {} // IDA: 0x6C51C0
     virtual void GetClassName() {} // IDA: 0x6C51E0
@@ -3628,7 +3628,7 @@ public:
 class TClassFactory_FlyLocomotionClass
 {
 public:
-    virtual ~TClassFactory_FlyLocomotionClass() = default;  // 0x6c4a90
+    virtual ~TClassFactory_FlyLocomotionClass() = default;  // 0x6C4A90
 
     virtual void AddRef() {} // IDA: 0x6C4A40
     virtual void GetClassName() {} // IDA: 0x6C4A60
@@ -3643,7 +3643,7 @@ public:
 class TClassFactory_FoggedObjectClass
 {
 public:
-    virtual ~TClassFactory_FoggedObjectClass() = default;  // 0x6c5f90
+    virtual ~TClassFactory_FoggedObjectClass() = default;  // 0x6C5F90
 
     virtual void AddRef() {} // IDA: 0x6C5F40
     virtual void GetClassName() {} // IDA: 0x6C5F60
@@ -3658,7 +3658,7 @@ public:
 class TClassFactory_HouseClass
 {
 public:
-    virtual ~TClassFactory_HouseClass() = default;  // 0x6c3e90
+    virtual ~TClassFactory_HouseClass() = default;  // 0x6C3E90
 
     virtual void AddRef() {} // IDA: 0x6C3E40
     virtual void GetClassName() {} // IDA: 0x6C3E60
@@ -3688,7 +3688,7 @@ public:
 class TClassFactory_HoverLocomotionClass
 {
 public:
-    virtual ~TClassFactory_HoverLocomotionClass() = default;  // 0x6c4310
+    virtual ~TClassFactory_HoverLocomotionClass() = default;  // 0x6C4310
 
     virtual void AddRef() {} // IDA: 0x6C42C0
     virtual void GetClassName() {} // IDA: 0x6C42E0
@@ -3703,7 +3703,7 @@ public:
 class TClassFactory_InfantryClass
 {
 public:
-    virtual ~TClassFactory_InfantryClass() = default;  // 0x6c3890
+    virtual ~TClassFactory_InfantryClass() = default;  // 0x6C3890
 
     virtual void AddRef() {} // IDA: 0x6C3840
     virtual void GetClassName() {} // IDA: 0x6C3860
@@ -3748,7 +3748,7 @@ public:
 class TClassFactory_JumpjetLocomotionClass
 {
 public:
-    virtual ~TClassFactory_JumpjetLocomotionClass() = default;  // 0x6c4190
+    virtual ~TClassFactory_JumpjetLocomotionClass() = default;  // 0x6C4190
 
     virtual void AddRef() {} // IDA: 0x6C4140
     virtual void GetClassName() {} // IDA: 0x6C4160
@@ -3763,7 +3763,7 @@ public:
 class TClassFactory_LightSourceClass
 {
 public:
-    virtual ~TClassFactory_LightSourceClass() = default;  // 0x6bfc90
+    virtual ~TClassFactory_LightSourceClass() = default;  // 0x6BFC90
 
     virtual void AddRef() {} // IDA: 0x6BFC40
     virtual void GetClassName() {} // IDA: 0x6BFC60
@@ -3778,7 +3778,7 @@ public:
 class TClassFactory_NeuronClass
 {
 public:
-    virtual ~TClassFactory_NeuronClass() = default;  // 0x6c5e10
+    virtual ~TClassFactory_NeuronClass() = default;  // 0x6C5E10
 
     virtual void AddRef() {} // IDA: 0x6C5DC0
     virtual void GetClassName() {} // IDA: 0x6C5DE0
@@ -3808,7 +3808,7 @@ public:
 class TClassFactory_ParasiteClass
 {
 public:
-    virtual ~TClassFactory_ParasiteClass() = default;  // 0x6c1010
+    virtual ~TClassFactory_ParasiteClass() = default;  // 0x6C1010
 
     virtual void AddRef() {} // IDA: 0x6C0FC0
     virtual void GetClassName() {} // IDA: 0x6C0FE0
@@ -3823,7 +3823,7 @@ public:
 class TClassFactory_ParticleClass
 {
 public:
-    virtual ~TClassFactory_ParticleClass() = default;  // 0x6c5690
+    virtual ~TClassFactory_ParticleClass() = default;  // 0x6C5690
 
     virtual void GetClassName() {} // IDA: 0x6C5660
     virtual void ddtor() {} // IDA: 0x6C5690
@@ -3836,7 +3836,7 @@ public:
 class TClassFactory_ParticleSystemClass
 {
 public:
-    virtual ~TClassFactory_ParticleSystemClass() = default;  // 0x6c5990
+    virtual ~TClassFactory_ParticleSystemClass() = default;  // 0x6C5990
 
     virtual void AddRef() {} // IDA: 0x6C5940
     virtual void GetClassName() {} // IDA: 0x6C5960
@@ -3881,7 +3881,7 @@ public:
 class TClassFactory_RadSiteClass
 {
 public:
-    virtual ~TClassFactory_RadSiteClass() = default;  // 0x6c1310
+    virtual ~TClassFactory_RadSiteClass() = default;  // 0x6C1310
 
     virtual void AddRef() {} // IDA: 0x6C12C0
     virtual void GetClassName() {} // IDA: 0x6C12E0
@@ -3896,7 +3896,7 @@ public:
 class TClassFactory_RocketLocomotionClass
 {
 public:
-    virtual ~TClassFactory_RocketLocomotionClass() = default;  // 0x6c4490
+    virtual ~TClassFactory_RocketLocomotionClass() = default;  // 0x6C4490
 
     virtual void AddRef() {} // IDA: 0x6C4440
     virtual void GetClassName() {} // IDA: 0x6C4460
@@ -3911,7 +3911,7 @@ public:
 class TClassFactory_ScriptClass
 {
 public:
-    virtual ~TClassFactory_ScriptClass() = default;  // 0x6c1d90
+    virtual ~TClassFactory_ScriptClass() = default;  // 0x6C1D90
 
     virtual void AddRef() {} // IDA: 0x6C1D40
     virtual void GetClassName() {} // IDA: 0x6C1D60
@@ -3941,7 +3941,7 @@ public:
 class TClassFactory_ShipLocomotionClass
 {
 public:
-    virtual ~TClassFactory_ShipLocomotionClass() = default;  // 0x6c4f10
+    virtual ~TClassFactory_ShipLocomotionClass() = default;  // 0x6C4F10
 
     virtual void AddRef() {} // IDA: 0x6C4EC0
     virtual void GetClassName() {} // IDA: 0x6C4EE0
@@ -3956,7 +3956,7 @@ public:
 class TClassFactory_SideClass
 {
 public:
-    virtual ~TClassFactory_SideClass() = default;  // 0x6bfe10
+    virtual ~TClassFactory_SideClass() = default;  // 0x6BFE10
 
     virtual void AddRef() {} // IDA: 0x6BFDC0
     virtual void GetClassName() {} // IDA: 0x6BFDE0
@@ -3971,7 +3971,7 @@ public:
 class TClassFactory_SlaveManagerClass
 {
 public:
-    virtual ~TClassFactory_SlaveManagerClass() = default;  // 0x6c0b90
+    virtual ~TClassFactory_SlaveManagerClass() = default;  // 0x6C0B90
 
     virtual void AddRef() {} // IDA: 0x6C0B40
     virtual void GetClassName() {} // IDA: 0x6C0B60
@@ -4001,7 +4001,7 @@ public:
 class TClassFactory_SpawnManagerClass
 {
 public:
-    virtual ~TClassFactory_SpawnManagerClass() = default;  // 0x6c0a10
+    virtual ~TClassFactory_SpawnManagerClass() = default;  // 0x6C0A10
 
     virtual void AddRef() {} // IDA: 0x6C09C0
     virtual void GetClassName() {} // IDA: 0x6C09E0
@@ -4016,7 +4016,7 @@ public:
 class TClassFactory_TActionClass
 {
 public:
-    virtual ~TClassFactory_TActionClass() = default;  // 0x6c1910
+    virtual ~TClassFactory_TActionClass() = default;  // 0x6C1910
 
     virtual void AddRef() {} // IDA: 0x6C18C0
     virtual void GetClassName() {} // IDA: 0x6C18E0
@@ -4031,7 +4031,7 @@ public:
 class TClassFactory_TEventClass
 {
 public:
-    virtual ~TClassFactory_TEventClass() = default;  // 0x6c1490
+    virtual ~TClassFactory_TEventClass() = default;  // 0x6C1490
 
     virtual void AddRef() {} // IDA: 0x6C1440
     virtual void GetClassName() {} // IDA: 0x6C1460
@@ -4046,7 +4046,7 @@ public:
 class TClassFactory_TagClass
 {
 public:
-    virtual ~TClassFactory_TagClass() = default;  // 0x6c2090
+    virtual ~TClassFactory_TagClass() = default;  // 0x6C2090
 
     virtual void AddRef() {} // IDA: 0x6C2040
     virtual void GetClassName() {} // IDA: 0x6C2060
@@ -4076,7 +4076,7 @@ public:
 class TClassFactory_TaskForceClass
 {
 public:
-    virtual ~TClassFactory_TaskForceClass() = default;  // 0x6c2690
+    virtual ~TClassFactory_TaskForceClass() = default;  // 0x6C2690
 
     virtual void AddRef() {} // IDA: 0x6C2640
     virtual void GetClassName() {} // IDA: 0x6C2660
@@ -4091,7 +4091,7 @@ public:
 class TClassFactory_TeamClass
 {
 public:
-    virtual ~TClassFactory_TeamClass() = default;  // 0x6c2390
+    virtual ~TClassFactory_TeamClass() = default;  // 0x6C2390
 
     virtual void AddRef() {} // IDA: 0x6C2340
     virtual void GetClassName() {} // IDA: 0x6C2360
@@ -4121,7 +4121,7 @@ public:
 class TClassFactory_TeleportLocomotionClass
 {
 public:
-    virtual ~TClassFactory_TeleportLocomotionClass() = default;  // 0x6c4c10
+    virtual ~TClassFactory_TeleportLocomotionClass() = default;  // 0x6C4C10
 
     virtual void AddRef() {} // IDA: 0x6C4BC0
     virtual void GetClassName() {} // IDA: 0x6C4BE0
@@ -4136,7 +4136,7 @@ public:
 class TClassFactory_TemporalClass
 {
 public:
-    virtual ~TClassFactory_TemporalClass() = default;  // 0x6c0710
+    virtual ~TClassFactory_TemporalClass() = default;  // 0x6C0710
 
     virtual void AddRef() {} // IDA: 0x6C06C0
     virtual void GetClassName() {} // IDA: 0x6C06E0
@@ -4151,7 +4151,7 @@ public:
 class TClassFactory_TiberiumClass
 {
 public:
-    virtual ~TClassFactory_TiberiumClass() = default;  // 0x6bff90
+    virtual ~TClassFactory_TiberiumClass() = default;  // 0x6BFF90
 
     virtual void AddRef() {} // IDA: 0x6BFF40
     virtual void GetClassName() {} // IDA: 0x6BFF60
@@ -4166,7 +4166,7 @@ public:
 class TClassFactory_TriggerClass
 {
 public:
-    virtual ~TClassFactory_TriggerClass() = default;  // 0x6c1a90
+    virtual ~TClassFactory_TriggerClass() = default;  // 0x6C1A90
 
     virtual void AddRef() {} // IDA: 0x6C1A40
     virtual void GetClassName() {} // IDA: 0x6C1A60
@@ -4196,7 +4196,7 @@ public:
 class TClassFactory_TunnelLocomotionClass
 {
 public:
-    virtual ~TClassFactory_TunnelLocomotionClass() = default;  // 0x6c4610
+    virtual ~TClassFactory_TunnelLocomotionClass() = default;  // 0x6C4610
 
     virtual void AddRef() {} // IDA: 0x6C45C0
     virtual void GetClassName() {} // IDA: 0x6C45E0
@@ -4211,7 +4211,7 @@ public:
 class TClassFactory_UnitClass
 {
 public:
-    virtual ~TClassFactory_UnitClass() = default;  // 0x6c3410
+    virtual ~TClassFactory_UnitClass() = default;  // 0x6C3410
 
     virtual void AddRef() {} // IDA: 0x6C33C0
     virtual void GetClassName() {} // IDA: 0x6C33E0
@@ -4241,7 +4241,7 @@ public:
 class TClassFactory_VoxelAnimClass
 {
 public:
-    virtual ~TClassFactory_VoxelAnimClass() = default;  // 0x6c1790
+    virtual ~TClassFactory_VoxelAnimClass() = default;  // 0x6C1790
 
     virtual void AddRef() {} // IDA: 0x6C1740
     virtual void GetClassName() {} // IDA: 0x6C1760
@@ -4271,7 +4271,7 @@ public:
 class TClassFactory_WalkLocomotionClass
 {
 public:
-    virtual ~TClassFactory_WalkLocomotionClass() = default;  // 0x6c4790
+    virtual ~TClassFactory_WalkLocomotionClass() = default;  // 0x6C4790
 
     virtual void AddRef() {} // IDA: 0x6C4740
     virtual void GetClassName() {} // IDA: 0x6C4760
@@ -4301,7 +4301,7 @@ public:
 class TClassFactory_WaypointPathClass
 {
 public:
-    virtual ~TClassFactory_WaypointPathClass() = default;  // 0x6c0590
+    virtual ~TClassFactory_WaypointPathClass() = default;  // 0x6C0590
 
     virtual void AddRef() {} // IDA: 0x6C0540
     virtual void GetClassName() {} // IDA: 0x6C0560
@@ -4525,7 +4525,7 @@ public:
 class VeinholeMonsterClass
 {
 public:
-    virtual ~VeinholeMonsterClass() = default;  // 0x74f2d0
+    virtual ~VeinholeMonsterClass() = default;  // 0x74F2D0
 
     virtual void Construct() {} // IDA: 0x74C420
     virtual void Constructor() {} // IDA: 0x74C5B0
@@ -4688,7 +4688,7 @@ public:
 class WinModemClass
 {
 public:
-    virtual ~WinModemClass() = default;  // 0x7754a0
+    virtual ~WinModemClass() = default;  // 0x7754A0
 
     virtual void Construct() {} // IDA: 0x774120
     virtual void AddRef() {} // IDA: 0x774410
@@ -4770,7 +4770,7 @@ public:
 class ZoneConnectionVector
 {
 public:
-    virtual ~ZoneConnectionVector() = default;  // 0x58a3d0
+    virtual ~ZoneConnectionVector() = default;  // 0x58A3D0
 
     virtual void Destruct() {} // IDA: 0x58A3D0
 

@@ -61,7 +61,7 @@ public:
 
     // === Destructor ===
     // [8] 0x5F6DC0 ObjectClass::CreateInstance (dtor thunk)
-    virtual ~ObjectClass() = default;  // 0x5f3b80
+    virtual ~ObjectClass() = default;  // 0x5F3B80
 
     // ========================================================================
     // ObjectClass virtuals (vtable[0] entries [24]-[121])
@@ -87,17 +87,17 @@ public:
     // [32] 0x4263B0 AbstractClass::COMStub_Return0_32 (return false stub)
     virtual bool IsStrange() const;
     // [33] 0x5F6BC0 AbstractClass::COMStub_Return0_33
-    virtual TechnoTypeClass* GetTechnoType() const = 0;  // 0x476eb0
+    virtual TechnoTypeClass* GetTechnoType() const = 0;  // 0x476EB0
     // [34] 0x4E0130 AbstractClass::COMStub_Return0_34
     virtual ObjectTypeClass* GetType() const = 0;
     // [35] 0x5F42A0 AbstractClass::COMStub_Ret2147483647_35
     virtual uint32_t GetTypeOwners() const = 0;
     // [36] 0x4263C0 AbstractClass::COMStub_Ret8487648_36
-    virtual const wchar_t* GetUIName() const = 0;  // 0x484ff0
+    virtual const wchar_t* GetUIName() const = 0;  // 0x484FF0
     // [37] 0x5F42B0 AbstractClass::COMStub_Return0_37 (return false stub)
     virtual bool CanBeRepaired() const;
     // [38] 0x5F42C0 AbstractClass::COMStub_Return0_38 (return false stub)
-    virtual bool CanBeSold() const;  // 0x4494c0
+    virtual bool CanBeSold() const;  // 0x4494C0
     // [39] 0x5F42D0 AbstractClass::COMStub_Return0_39 (return false stub)
     virtual bool IsActive() const;  // 0x5F6690
     // [40] 0x5F42E0 AbstractClass::COMStub_Return0_40 (return false stub)
@@ -113,7 +113,7 @@ public:
     // [44] 0x4263D0 ObjectClass::GetDrawPosition
     virtual CoordStruct* GetFLH(CoordStruct* dest, int weapon_idx, CoordStruct base_coords) const = 0;
     // [45] 0x41BE30 ObjectClass::GetCoordsThunk3
-    virtual CoordStruct* GetExitCoords(CoordStruct* out, uint32_t unknown) const = 0;  // 0x447ac0
+    virtual CoordStruct* GetExitCoords(CoordStruct* out, uint32_t unknown) const = 0;  // 0x447AC0
     // [46] 0x5F6BD0 ObjectClass::GetBoundingSize (YRpp: GetYSort)
     virtual int GetYSort() const = 0;
     // [47] 0x5F6A70 ObjectClass::CheckGroundHeightDiff
@@ -153,7 +153,7 @@ public:
 
     // --- Visibility / Discovery ---
     // [63] 0x5F4310 AbstractClass::COMStub_Return0_63 (stub retn)
-    virtual void Reveal();  // 0x577d90
+    virtual void Reveal();  // 0x577D90
     // [64] 0x5F4320 AbstractClass::COMStub_64
     virtual KickOutResult KickOutUnit(TechnoClass* techno, CellStruct cell) = 0;
     // [65] 0x5F4B10 ObjectClass::CalcDrawRect
@@ -201,9 +201,9 @@ public:
     // [82] 0x5F4370 AbstractClass::COMStub_Return0_82
     virtual void Flash(int duration);
     // [83] 0x5F4520 ObjectClass::HandleSelection
-    virtual bool Select();  // 0x6ab990
+    virtual bool Select();  // 0x6AB990
     // [84] 0x5F44A0 ObjectClass::Remove (Deselect)
-    virtual void Deselect();  // 0x6ab9e0
+    virtual void Deselect();  // 0x6AB9E0
 
     // --- Combat / Armor ---
     // [85] 0x426460 AbstractClass::COMStub_Return0_85
@@ -224,7 +224,7 @@ public:
     // [92] 0x4264A0 AbstractClass::COMStub_Return0_92 (stub retn)
     virtual void Destroy();  // 0x5F65F0
     // [93] 0x5F43A0 AbstractClass::COMStub_Return0_93
-    virtual void Scatter(const CoordStruct& coords, bool ignore_mission, bool ignore_destination);  // 0x743a50
+    virtual void Scatter(const CoordStruct& coords, bool ignore_mission, bool ignore_destination);  // 0x743A50
     // [94] 0x5F43B0 AircraftClass::StubReturnFalse3
     virtual bool Ignite();
     // [95] 0x5F43C0 AircraftClass::StubReturnTrue
@@ -234,11 +234,11 @@ public:
 
     // --- Mission / Command ---
     // [97] 0x5F43E0 AbstractClass::processStateUpdate
-    virtual Mission GetCurrentMission() const = 0;  // 0x4e0140
+    virtual Mission GetCurrentMission() const = 0;  // 0x4E0140
     // [98] 0x41BE90 AircraftClass::CheckStateFlag2
     virtual void RestoreMission(Mission mission);
     // [99] 0x4264B0 AbstractClass::COMStub_Return0_99
-    virtual void UpdatePosition(int unknown) = 0;  // 0x7ba360
+    virtual void UpdatePosition(int unknown) = 0;  // 0x7BA360
     // [100] 0x5F5C20 ObjectClass::Fire
     virtual BuildingClass* FindFactory(bool allow_occupied, bool require_power) const = 0;
     // [101] 0x5F5320 ObjectClass::ProcessInputKey
@@ -256,7 +256,7 @@ public:
 
     // --- Movement / Occupation ---
     // [107] 0x4264C0 AbstractClass::COMStub_107
-    virtual Move IsCellOccupied(CellClass* dest_cell, int facing, int level, CellClass* source_cell, bool alt) const;  // 0x4fbe40
+    virtual Move IsCellOccupied(CellClass* dest_cell, int facing, int level, CellClass* source_cell, bool alt) const;  // 0x4FBE40
     // [108] 0x4264D0 ObjectClass::COMStub_108
     virtual uint32_t canDeployHere(uint32_t a, uint32_t b, uint32_t c, uint32_t d, uint32_t e) = 0;
     // [109] 0x5F6940 ObjectClass::SetPosition
@@ -264,7 +264,7 @@ public:
 
     // --- Cell / Coordinate queries ---
     // [110] 0x41BEA0 ObjectClass::GetCellCoords_Alt
-    virtual CellStruct* GetMapCoords(CellStruct* out) const = 0;  // 0x426a80
+    virtual CellStruct* GetMapCoords(CellStruct* out) const = 0;  // 0x426A80
     // [111] 0x5F6960 ObjectClass::GetCellCoords
     virtual CellClass* GetCell() const = 0;  // 0x5F6A10
     // [112] 0x5F69C0 ObjectClass::CoordToCell

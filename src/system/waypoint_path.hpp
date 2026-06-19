@@ -27,7 +27,7 @@ public:
     virtual HRESULT __stdcall Load(IStream* stream) override { return 0; }
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { return 0; }
 
-    virtual ~WaypointPathClass() = default;  // 0x763c30
+    virtual ~WaypointPathClass() = default;  // 0x763C30
 
     virtual void pointerExpired(AbstractClass* ptr, bool removed) override {}
     virtual AbstractType __stdcall whatAmI() const override { return kObjectDeriveId; }
@@ -36,7 +36,7 @@ public:
 
     // Construction
     WaypointPathClass() noexcept;                            // 0x763810 (Construct)
-    void ddtor();                                            // 0x763C30
+    void ddtor();
 
     // Methods
     void Init();                                             // 0x763730

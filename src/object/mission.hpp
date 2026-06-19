@@ -25,7 +25,7 @@ public:
 
     virtual ~MissionClass() = default;
 
-    virtual bool queueMission(Mission mission, bool start_mission);  // 0x4e01c0
+    virtual bool queueMission(Mission mission, bool start_mission);  // 0x4E01C0
     virtual bool nextMission();
     virtual void forceMission(Mission mission);
     virtual void onMissionChanged(Mission mission);
@@ -36,10 +36,10 @@ public:
     virtual int Mission_Sleep();
     virtual int Mission_Harmless();
     virtual int Mission_Ambush();
-    virtual int Mission_Attack();  // 0x417fe0
+    virtual int Mission_Attack();  // 0x417FE0
     virtual int Mission_Capture();
     virtual int Mission_Eaten();
-    virtual int Mission_Guard();  // 0x459e70
+    virtual int Mission_Guard();  // 0x459E70
     virtual int Mission_AreaGuard();
     virtual int Mission_Harvest();
     virtual int Mission_Hunt();
@@ -47,9 +47,9 @@ public:
     virtual int Mission_Retreat();
     virtual int Mission_Return();
     virtual int Mission_Stop();
-    virtual int Mission_Unload();  // 0x4151e0
-    virtual int Mission_Enter();  // 0x4166c0
-    virtual int Mission_Construction();  // 0x459ec0
+    virtual int Mission_Unload();  // 0x4151E0
+    virtual int Mission_Enter();  // 0x4166C0
+    virtual int Mission_Construction();  // 0x459EC0
     virtual int Mission_Selling();
     virtual int Mission_Repair();
     virtual int Mission_Missile();

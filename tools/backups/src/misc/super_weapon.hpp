@@ -53,12 +53,12 @@ public:
     static SuperWeaponTypeClass* FindOrCreate(const char* name);                       // 0x475540
     static SuperWeaponTypeClass* FindByName(const char* name);                         // 0x5117D0
     bool IsAvailable() const;                                                         // 0x4F6540
-    void Construct(const char* pID);                                                   // 0x5113F0
+    void Construct(const char* pID);  // 0x5113F0
 
     // vtable helpers
     void SaveLoad_Prefix(IStream* stream);                                             // 0x6CE800
     void SaveLoad_Prefix_0(IStream* stream);                                           // 0x6CE8D0
-    void SDDTOR();                                                                    // 0x6CEFE0
+    void SDDTOR();  // 0x6CEFE0
 
     int32_t             ArrayIndex;
     WeaponTypeClass*    WeaponType;
@@ -91,7 +91,7 @@ public:
     // TODO: complete SuperWeaponTypeClass
 
 protected:
-    explicit SuperWeaponTypeClass(noinit_t) noexcept;  // 0x6ce5b0
+    explicit SuperWeaponTypeClass(noinit_t) noexcept;  // 0x6CE5B0
 };
 
 class SuperClass : public AbstractClass
@@ -103,38 +103,38 @@ public:
     virtual ~SuperClass() = default;                                                 // 0x6CDEB0 (ddtor)
 
     virtual AbstractType __stdcall whatAmI() const override; // 0x6CE020 (PowerDrainUpdate area)
-    virtual int32_t objectSize() const override; // 0x6CE020
+    virtual int32_t objectSize() const override;
 
     void Reset();                                                                    // 0x6CE0B0
     bool SetOnHold(bool onHold);                                                     // 0x6CB4D0
     bool Grant(bool oneTime, bool announce, bool onHold);                            // 0x6CB560 (StartTimer)
     bool Lose();                                                                     // 0x6CB7B0
-    bool IsPowered() const;                                                          // 0x6CB7B0 area
+    bool IsPowered() const;  // 0x465AF0
     void Launch(const CellStruct& cell, bool isPlayer);                              // 0x6CC390
     int8_t CanFire() const;                                                           // 0x6CC360
     void SetReadiness(bool ready);                                                    // 0x6CB820
     int8_t StopPreclickAnim(bool isPlayer);                                           // 0x6CB830
     int8_t ClickFire(bool isPlayer, const CellStruct& cell);                          // 0x6CB920
     bool HasChargeProgressed(bool isPlayer);                                          // 0x6CC080 (AnnounceReady)
-    int32_t GetCameoChargeState() const;                                              // 0x6CC080
+    int32_t GetCameoChargeState() const;
     void SetCharge(int32_t percentage);                                               // 0x6CC1E0
-    int32_t GetRechargeTime() const;                                                  // 0x6CC080
+    int32_t GetRechargeTime() const;
     void SetRechargeTime(int32_t time);                                               // 0x6CC280
     void ResetRechargeTime();                                                        // 0x6CC290
     const wchar_t* NameReadiness() const;                                             // 0x6CC2B0
     bool ShouldDrawProgress() const;                                                  // 0x6CDE90
-    bool ShouldFlashTab() const;                                                      // 0x6CDE90 area
+    bool ShouldFlashTab() const;  // 0x6CE1A0
 
     SuperClass(SuperWeaponTypeClass* pSWType, HouseClass* pOwner) noexcept;           // 0x6CAEC0 (Constructor)
 
     // lifecycle
-    void Constructor(SuperWeaponTypeClass* pSWType, HouseClass* pOwner);              // 0x6CAEC0
+    void Constructor(SuperWeaponTypeClass* pSWType, HouseClass* pOwner);  // 0x6CAEC0
     void Construct();                                                                // 0x6CAF90
     void CleanupMembers();                                                           // 0x6CB120
-    void StartTimer(int32_t duration);                                                // 0x6CB560
+    void StartTimer(int32_t duration);  // 0x6CB560
     void ExecuteAction(Action action);                                                // 0x6CDFF0
-    void PowerDrainUpdate();                                                         // 0x6CE0B0
-    void AnnounceReady();                                                            // 0x6CC080
+    void PowerDrainUpdate();  // 0x6CE020
+    void AnnounceReady();  // 0x6CC080
     void LaunchPsychicDominator(const CellStruct& cell);                              // 0x53AE50
     void CreateChronoAnim(const CellStruct& cell);                                    // 0x6CB3A0
 
@@ -194,9 +194,9 @@ public:
     static bool HasDeferment();                                              // 0x53A100 (IsActive)
     static void Strike(const CellStruct& cell);                              // 0x53A140
     static void Strike2(const CoordStruct& coords);                          // 0x53A300
-    static void PrintMessage();                                              // 0x539EB0 area
-    static void End();                                                       // 0x53A090
-    static bool IsActive();                                                  // 0x53A100
+    static void PrintMessage();
+    static void End();  // 0x53A090
+    static bool IsActive();  // 0x53A100
 };
 
 class PsyDom
@@ -207,10 +207,10 @@ public:
     static HouseClass*             Owner;    // 0xA8E830
     static AnimClass*              Anim;     // 0xA8E834
 
-    static void Start(HouseClass* pOwner, const CellStruct& coords); // 0x53AE50 area
-    static void updateLogic();                                        // 0x53AE50 area
+    static void Start(HouseClass* pOwner, const CellStruct& coords);  // 0x7CD80F
+    static void updateLogic();
     static void Fire();                                               // 0x53B080
-    static void PrintMessage();                                       // 0x53B080 area
+    static void PrintMessage();
     static bool Active();                                             // 0x53B400 (IsActive)
 };
 
@@ -221,9 +221,9 @@ public:
     static int32_t Duration; // 0xA8E83C
 
     static void Start(int32_t duration);      // 0x753580 (DecrementCounter)
-    static void updateLogic();                 // 0x753580 area
-    static bool Active();                      // 0x753580 area
-    static void DecrementCounter();            // 0x753580
+    static void updateLogic();
+    static bool Active();  // 0x4C9480
+    static void DecrementCounter();  // 0x753580
 };
 
 class NukeFlash
@@ -235,10 +235,10 @@ public:
 
     static void FadeIn();                // 0x53A110 (IsActive)
     static void FadeOut();               // 0x53A120 (ProcessEffect)
-    static bool IsFadingIn();            // 0x53A110 (IsActive)
-    static bool IsFadingOut();           // 0x53A120 (ProcessEffect)
-    static bool IsActive();              // 0x53A110
-    static void ProcessEffect();         // 0x53A120
+    static bool IsFadingIn();
+    static bool IsFadingOut();
+    static bool IsActive();  // 0x53A110
+    static void ProcessEffect();  // 0x53A120
 };
 
 } // namespace gamemd

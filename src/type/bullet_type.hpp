@@ -32,7 +32,7 @@ public:
     virtual int objectSize() const override; // 0x46C860 (as GetObjectSize)
 
     virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override; // 0x46C880 (as StubReturnFalse)
-    virtual ObjectClass* CreateObject(HouseClass* pOwner) override;  // 0x4737f0
+    virtual ObjectClass* CreateObject(HouseClass* pOwner) override;  // 0x4737F0
 
     bool Rotates() const;
     void SetScaledSpawnDelay(int delay); // 0x46C840

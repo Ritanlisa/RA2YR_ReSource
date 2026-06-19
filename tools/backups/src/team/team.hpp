@@ -38,17 +38,17 @@ public:
 
     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override; // 0x6EC540 (SaveLoad_Prefix_0)
     virtual HRESULT __stdcall Load(IStream* stream) override; // 0x6EC450 (SaveLoad_Prefix)
-    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override; // 0x6EC540
+    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
 
     virtual ~TeamClass() = default;                                                      // 0x6EC560 (ddtor)
 
-    virtual AbstractType __stdcall whatAmI() const override; // 0x6EC560
-    virtual int objectSize() const override; // 0x6EC560
+    virtual AbstractType __stdcall whatAmI() const override;
+    virtual int objectSize() const override;
 
     // core methods
     void GetTaskForceMissingMemberTypes(TechnoTypeClass** dest, int& dest_count) const;  // 0x6F1FA0 (TeamTypeClass::ProcessTaskForce)
     void LiberateMember(FootClass* foot, int idx = -1, uint8_t count = 0);               // 0x6EA870 (LiberateMember_Start)
-    void LiberateMember_Start(FootClass* foot, int idx, uint8_t count);                  // 0x6EA870
+    void LiberateMember_Start(FootClass* foot, int idx, uint8_t count);  // 0x6EA870
     void RecruitMember(FootClass* foot, int idx);                                        // 0x6EAA90
     void AddMember(FootClass* foot);                                                     // 0x6EA500
     bool ValidateMember(FootClass* foot);                                                // 0x6EA610
@@ -94,8 +94,8 @@ public:
     void PowerDrainUpdate();                                                             // 0x6EC5A0
 
     // save/load
-    void SaveLoad_Prefix(IStream* stream);                                                // 0x6EC450
-    void SaveLoad_Prefix_0(IStream* stream);                                              // 0x6EC540
+    void SaveLoad_Prefix(IStream* stream);  // 0x6EC450
+    void SaveLoad_Prefix_0(IStream* stream);  // 0x6EC540
 
     TeamTypeClass*  buildingType;
     ScriptClass*    currentScript;

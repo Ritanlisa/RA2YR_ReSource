@@ -15,7 +15,7 @@ public:
 
     bool initialize();
     void Shutdown();
-    bool IsAvailable() const;  // 0x4f6540
+    bool IsAvailable() const;  // 0x4F6540
 
     bool CreateSocket();
     void CloseSocket();  // 0x7C8992
@@ -44,10 +44,10 @@ public:
 
     bool initialize();
     void Shutdown();
-    bool IsAvailable() const;  // 0x4f6540
+    bool IsAvailable() const;
 
     bool CreateSocket();
-    void CloseSocket();  // 0x7c8992
+    void CloseSocket();
     bool Bind(uint32_t network, const uint8_t node[6], uint16_t socket);  // 0x7B10C0
     bool SendTo(uint32_t destNetwork, const uint8_t destNode[6], uint16_t destSocket,
                 const uint8_t* data, int32_t length);
@@ -74,11 +74,11 @@ public:
 
     bool initialize();
     void Shutdown();
-    bool IsAvailable() const;  // 0x4f6540
+    bool IsAvailable() const;
 
     bool CreateSocket(uint16_t port);
-    void CloseSocket();  // 0x7c8992
-    bool SendTo(const char* address, uint16_t port, const uint8_t* data, int32_t length);  // 0x7c89b0
+    void CloseSocket();
+    bool SendTo(const char* address, uint16_t port, const uint8_t* data, int32_t length);
     int32_t ReceiveFrom(uint8_t* buffer, int32_t maxLen, char* outAddress, int32_t addrSize, uint16_t* outPort);
     bool SetNonBlocking(bool nonBlock);
     bool SetBroadcast(bool enable);

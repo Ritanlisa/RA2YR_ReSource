@@ -30,19 +30,19 @@ public:
     virtual void sendToEachLink(RadioCommand command);
 
     // IDA: 0x65AAC0 -- vt10: Remove a specific object from radio links
-    virtual void ExecuteAction(TechnoClass* obj, bool clear);  // 0x65aac0
+    virtual void ExecuteAction(TechnoClass* obj, bool clear);
     // IDA: 0x65AD90 -- Linear search for linked object index
-    virtual int FindLinkIndex(TechnoClass* obj);  // 0x65ad90
+    virtual int FindLinkIndex(TechnoClass* obj);
     // IDA: 0x65AB10 -- vt13: Update power drain for all linked objects
-    virtual void PowerDrainUpdate();  // 0x65ab10
+    virtual void PowerDrainUpdate();
     // IDA: 0x65AA80 -- vt53: Process undeploy command
-    virtual void ProcessCmd();  // 0x65aa80
+    virtual void ProcessCmd();
     // IDA: 0x65AB80 -- Load radio link state from stream
-    virtual HRESULT __stdcall LoadState(IStream* stream);  // 0x65ab80
+    virtual HRESULT __stdcall LoadState(IStream* stream);
     // IDA: 0x65AC40 -- Save radio link state to stream
-    virtual HRESULT __stdcall SaveState(IStream* stream, int clear_dirty);  // 0x65ac40
+    virtual HRESULT __stdcall SaveState(IStream* stream, int clear_dirty);
     // IDA: 0x65AE60 -- Resize radio link array
-    virtual void SetLinkCount(int count);  // 0x65ae60
+    virtual void SetLinkCount(int count);
 
     TechnoClass* const& getNthLink(int idx = 0) const;
     bool hasFreeLink() const;  // 0x65ADC0

@@ -30,7 +30,7 @@ public:
     virtual HRESULT __stdcall Load(IStream* stream) override { return 0; }
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { return 0; }
 
-    virtual ~SpawnManagerClass() = default;  // 0x6b7ed0
+    virtual ~SpawnManagerClass() = default;  // 0x6B7ED0
 
     virtual void pointerExpired(AbstractClass* ptr, bool removed) override {}
     virtual AbstractType __stdcall whatAmI() const override { return kObjectDeriveId; }
@@ -42,7 +42,7 @@ public:
     void Constructor();                                          // 0x6B6EA0
     void Constructor_SpawnManagerClass();                        // 0x6B7010
     void Constructor_6B83A0(int);                                // 0x6B83A0
-    void ddtor();                                                // 0x6B7ED0
+    void ddtor();
 
     // Spawn management
     void SetTarget(AbstractClass*);                              // 0x6B7B90

@@ -48,7 +48,7 @@ public:
     // core methods
     void GetTaskForceMissingMemberTypes(TechnoTypeClass** dest, int& dest_count) const;  // 0x6F1FA0 (TeamTypeClass::ProcessTaskForce)
     void LiberateMember(FootClass* foot, int idx = -1, uint8_t count = 0);               // 0x6EA870 (LiberateMember_Start)
-    void LiberateMember_Start(FootClass* foot, int idx, uint8_t count);  // 0x6ea870
+    void LiberateMember_Start(FootClass* foot, int idx, uint8_t count);
     void RecruitMember(FootClass* foot, int idx);                                        // 0x6EAA90
     void AddMember(FootClass* foot);                                                     // 0x6EA500
     bool ValidateMember(FootClass* foot);                                                // 0x6EA610
@@ -94,8 +94,8 @@ public:
     void PowerDrainUpdate();                                                             // 0x6EC5A0
 
     // save/load
-    void SaveLoad_Prefix(IStream* stream);  // 0x6ec450
-    void SaveLoad_Prefix_0(IStream* stream);  // 0x6ec540
+    void SaveLoad_Prefix(IStream* stream);
+    void SaveLoad_Prefix_0(IStream* stream);
 
     TeamTypeClass*  buildingType;
     ScriptClass*    currentScript;

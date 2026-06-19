@@ -217,7 +217,7 @@ public:
     virtual ~Campaign();
 
     virtual WDTError Start();  // 0x7CD80F
-    virtual WDTError End();  // 0x53a090
+    virtual WDTError End();  // 0x53A090
     virtual void     updateLogic();
     virtual WDTError Save(const char* filename);
     virtual WDTError Load(const char* filename);

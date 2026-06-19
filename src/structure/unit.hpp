@@ -35,7 +35,7 @@ public:
 
     // === Phase 3: Harvest/Unload ===
     int Mission_Harvest() override;
-    int Mission_Unload() override;  // 0x4151e0
+    int Mission_Unload() override;  // 0x4151E0
     int ProcessResourceHarvesting();  // 0x73D450
     int updateHarvesting();  // 0x4C2C10
     int UnloadPassengers();  // 0x6B4BE0

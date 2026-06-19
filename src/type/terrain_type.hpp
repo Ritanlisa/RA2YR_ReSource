@@ -27,7 +27,7 @@ public:
     virtual int objectSize() const override; // 0x71E340 (as GetObjectSize)
 
     virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override;
-    virtual ObjectClass* CreateObject(HouseClass* pOwner) override;  // 0x4737f0
+    virtual ObjectClass* CreateObject(HouseClass* pOwner) override;  // 0x4737F0
 
     TerrainTypeClass(const char* pID) noexcept;  // 0x5447C0 (as Construct)
 

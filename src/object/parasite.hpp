@@ -18,7 +18,7 @@ public:
     virtual HRESULT __stdcall Load(IStream* stream) override;
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
 
-    virtual ~ParasiteClass() = default;  // 0x6296d0
+    virtual ~ParasiteClass() = default;  // 0x6296D0
 
     virtual void pointerExpired(AbstractClass* ptr, bool removed) override;
     virtual AbstractType __stdcall whatAmI() const override;
@@ -28,7 +28,7 @@ public:
     // Construction
     ParasiteClass();                                             // 0x6292B0
     void Constructor();                                          // 0x629210
-    void ddtor();                                                // 0x6296D0
+    void ddtor();
 
     // Parasite logic
     void Attach(FootClass*);                                     // 0x6294D0

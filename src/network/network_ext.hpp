@@ -55,7 +55,7 @@ public:
     // IDA 0x68C2B0 area
     static void sub_68C2B0();
     // IDA 0x48B2A0 area
-    static void SetupGame();  // 0x6ae6e0
+    static void SetupGame();  // 0x6AE6E0
 
     static int32_t  s_MaxPlayers;   // 0x00
     static int32_t  s_GameMode;     // 0x04
@@ -242,18 +242,18 @@ public:
 class MultiplayerModeVector
 {
 public:
-    virtual ~MultiplayerModeVector() = default;  // 0x5d88b0
+    virtual ~MultiplayerModeVector() = default;  // 0x5D88B0
 
-    virtual void Destruct(); // 0x5D88B0
+    virtual void Destruct();
 
 };
 // 1 methods in IDA
 class MultiplayerModeVector2
 {
 public:
-    virtual ~MultiplayerModeVector2() = default;  // 0x5d8900
+    virtual ~MultiplayerModeVector2() = default;  // 0x5D8900
 
-    virtual void Destruct(); // 0x5D8900
+    virtual void Destruct();
 
 };
 // 2 methods in IDA
@@ -302,9 +302,9 @@ public:
 class MultiplayerTeamVector
 {
 public:
-    virtual ~MultiplayerTeamVector() = default;  // 0x5d8860
+    virtual ~MultiplayerTeamVector() = default;  // 0x5D8860
 
-    virtual void Destruct(); // 0x5D8860
+    virtual void Destruct();
 
 };
 // 1 methods in IDA
@@ -458,7 +458,7 @@ public:
 class UDPInterfaceClass_Destru
 {
 public:
-    virtual ~UDPInterfaceClass_Destru() = default;  // 0x7b36c0
+    virtual ~UDPInterfaceClass_Destru() = default;  // 0x7B36C0
 
     virtual void GetQueueSize(); // 0x7B2F90
     virtual void Flush(); // 0x7B2FF0

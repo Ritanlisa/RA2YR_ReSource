@@ -63,13 +63,13 @@ public:
     // IDA 0x48B2A0 area
     void WriteInt(int32_t val);
     // IDA 0x48B2A0 area
-    void WriteBytes(const void* data, int32_t size);  // 0x411310
+    void WriteBytes(const void* data, int32_t size);
     // IDA 0x48B2A0 area
-    int32_t ReadBytes(void* buf, int32_t size);  // 0x774b30
+    int32_t ReadBytes(void* buf, int32_t size);  // 0x774B30
     // IDA 0x48B2A0 area
     void Seek(int32_t offset);
     // IDA 0x48B2A0 area
-    int32_t GetPosition();  // 0x7c3960
+    int32_t GetPosition();  // 0x7C3960
     // IDA 0x48B2A0 area
     int32_t GetSize();
 
@@ -217,7 +217,7 @@ public:
 class CStreamClass
 {
 public:
-    virtual ~CStreamClass() = default;  // 0x4a3110
+    virtual ~CStreamClass() = default;  // 0x4A3110
 
     virtual void AddRef(); // 0x4A2930
     virtual void Release(); // 0x4A2950

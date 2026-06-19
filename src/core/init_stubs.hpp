@@ -84,7 +84,7 @@ void MissionSetAndCall(int a, int b);
 void EventDispatchEx();
 
 // IDA 0x47AB10 -- Game::FindGameDirectoryCD
-int FindGameDirectoryCD(const char* drives);  // 0x47ab10
+int FindGameDirectoryCD(const char* drives);  // 0x47AB10
 
 // IDA 0x5D3490 -- Dialog::ShowMessageBox (returns 1=OK, 0=Cancel)
 int DialogShowMessageBox(const wchar_t* msg, const wchar_t* ok, const wchar_t* cancel, int a4, int a5);
@@ -120,7 +120,7 @@ void INIClassConstruct(void* buf);
 bool CCINIClassLoad(void* ini, void* file, int a2, int a3);
 
 // IDA 0x5256F0 -- HashTable::DestroyHashTableINIClass
-void DestroyHashTableINIClass(void* ini);  // 0x5256f0
+void DestroyHashTableINIClass(void* ini);  // 0x5256F0
 
 // IDA 0x7513F0 -- Audio::LoadSoundINI
 void AudioLoadSoundINI();

@@ -90,7 +90,7 @@ public:
     virtual HRESULT __stdcall Load(IStream* stream) override;
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
 
-    virtual ~TechnoClass() = default;  // 0x6f4500
+    virtual ~TechnoClass() = default;  // 0x6F4500
 
     virtual bool isUnitfactory() const;
     virtual bool isCloakable() const;
@@ -109,7 +109,7 @@ public:
     virtual int getRefund() const;
     virtual int getThreatValue() const;  // 0x4DED70
     virtual bool canBeAttacked(uint32_t a);
-    virtual uint32_t getSpecialValue(uint32_t a, uint32_t b);  // 0x55ad10
+    virtual uint32_t getSpecialValue(uint32_t a, uint32_t b);  // 0x55AD10
     virtual bool canCrush(uint32_t a);
     virtual int getCrewCount() const;  // 0x6F3950
     virtual int getAntiAirValue() const;
@@ -128,7 +128,7 @@ public:
     virtual InfantryTypeClass* GetCrew() const;  // 0x707D20
     virtual bool isInAirAlt() const;
     virtual bool CanDeploySlashUnload() const;
-    virtual int GetROF(int weapon) const;  // 0x46c4f0
+    virtual int GetROF(int weapon) const;  // 0x46C4F0
     virtual int GetGuardRange(int unknown) const;
     virtual bool canEnterTransport() const;
     virtual bool IsRadarVisible(int* out_detection) const;
@@ -171,7 +171,7 @@ public:
     virtual void Destroyed(ObjectClass* killer) = 0;
     virtual FireError GetFireErrorWithoutRange(AbstractClass* target, int weapon_index) const;
     virtual FireError GetFireError(AbstractClass* target, int weapon_index, bool ignore_range) const;
-    virtual CellClass* SelectAutoTarget(TargetFlags flags, int current_threat, bool only_target_house_enemy);  // 0x51e140
+    virtual CellClass* SelectAutoTarget(TargetFlags flags, int current_threat, bool only_target_house_enemy);  // 0x51E140
     virtual void SetTarget(AbstractClass* target);
     virtual BulletClass* Fire(AbstractClass* target, int weapon_index);  // 0x70ECE0
     virtual void Guard();
@@ -201,7 +201,7 @@ public:
     virtual CoordStruct* GetTargetCoords(CoordStruct* pCrd) const;  // 0x70BCB0
     virtual bool IsNotWarpingIn() const;
     virtual bool canChronoShift(uint32_t dwUnk) const;
-    virtual void DrawActionLines(bool force, uint32_t dwUnk2);  // 0x63be60
+    virtual void DrawActionLines(bool force, uint32_t dwUnk2);  // 0x63BE60
     virtual uint32_t GetDisguiseFlags(uint32_t existingFlags) const;
     virtual bool isClearlyVisibleTo(HouseClass* house) const;
     virtual void drawSelectionBox(uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5,
@@ -238,31 +238,31 @@ public:
     virtual uint32_t processSpawn();
     virtual bool canAttackOnTheMove() const;
     virtual bool canTarget() const;
-    virtual bool selectTarget();  // 0x41bef0
+    virtual bool selectTarget();  // 0x41BEF0
     virtual void onTargetChange();
-    virtual bool canFire();  // 0x6cc360
+    virtual bool canFire();  // 0x6CC360
 
     // === Phase 3 generated declarations (IDA functions.json) ===
-    virtual int ApplyIronCurtain();  // 0x4155f0
-    virtual int ReturnToBase();  // 0x4157c0
-    virtual int ReturnToBaseAndReload();  // 0x4158e0
+    virtual int ApplyIronCurtain();  // 0x4155F0
+    virtual int ReturnToBase();  // 0x4157C0
+    virtual int ReturnToBaseAndReload();  // 0x4158E0
     virtual int ScatterFromThreat();  // 0x415960
-    virtual int ExecuteMissionCommand();  // 0x417ca0
-    virtual int FindNearbyBuildCell();  // 0x4195a0
-    virtual int FindClosestPlacementCell();  // 0x41a160
-    virtual int GetTurretFacing() const;  // 0x41a570
-    virtual void ComputeTeamAttackPriority();  // 0x41b6a0
-    virtual int GetAutoFireDirection() const;  // 0x41b760
+    virtual int ExecuteMissionCommand();  // 0x417CA0
+    virtual int FindNearbyBuildCell();  // 0x4195A0
+    virtual int FindClosestPlacementCell();  // 0x41A160
+    virtual int GetTurretFacing() const;  // 0x41A570
+    virtual void ComputeTeamAttackPriority();  // 0x41B6A0
+    virtual int GetAutoFireDirection() const;  // 0x41B760
     virtual int sub_41B7D0();
-    virtual bool HasOnlyOneGarrisonSlot() const;  // 0x41b7f0
+    virtual bool HasOnlyOneGarrisonSlot() const;  // 0x41B7F0
     virtual int sub_41B840();
     virtual int sub_41B860();
     virtual int sub_41B9E0();
-    virtual bool CreateWarheadDamageEffect();  // 0x41bc30
+    virtual bool CreateWarheadDamageEffect();  // 0x41BC30
     virtual void sub_41BEF0();
-    virtual void vt_entry_428();  // 0x41bfe0
-    virtual int vt_entry_434();  // 0x41bff0
-    virtual int GetBodyFacing() const;  // 0x41c1e0
+    virtual void vt_entry_428();  // 0x41BFE0
+    virtual int vt_entry_434();  // 0x41BFF0
+    virtual int GetBodyFacing() const;  // 0x41C1E0
     virtual int sub_41C640();
     virtual int sub_41C650();
     virtual int sub_41C660();
@@ -271,63 +271,63 @@ public:
     virtual int sub_41C690();
     virtual int ApplyDamageEffects();
     virtual int sub_5439080();
-    virtual int RemoveFromDynamicVector();  // 0x4390d0
-    virtual void ComputeTargetAngle();  // 0x43e940
-    virtual int StartOrResumeProduction();  // 0x44d6a0
-    virtual int GetTurretScreenPos() const;  // 0x453a70
-    virtual void ProcessMissionDeploy();  // 0x456f80
-    virtual int EvacuateFootprintCells();  // 0x458a80
+    virtual int RemoveFromDynamicVector();  // 0x4390D0
+    virtual void ComputeTargetAngle();  // 0x43E940
+    virtual int StartOrResumeProduction();  // 0x44D6A0
+    virtual int GetTurretScreenPos() const;  // 0x453A70
+    virtual void ProcessMissionDeploy();  // 0x456F80
+    virtual int EvacuateFootprintCells();  // 0x458A80
     virtual int MissionStubReturnZero4();
     virtual bool StubReturnFalse2();
     virtual int sub_546B270();
     virtual int sub_54722D0();
     virtual int IndexOf();
-    virtual int CalcFacingFromMatrix() const;  // 0x5af410
-    virtual void CreateTrailParticle();  // 0x4c2a60
+    virtual int CalcFacingFromMatrix() const;  // 0x5AF410
+    virtual void CreateTrailParticle();  // 0x4C2A60
     virtual int sub_4C2BD0();
-    virtual int UpdateThunk();  // 0x4cc770
+    virtual int UpdateThunk();  // 0x4CC770
     virtual int GetData() const;
     virtual int sub_54A50F0();
-    virtual int CreatePlanningNode();  // 0x638a80
-    virtual int GetBuildCost() const;  // 0x711ec0
-    virtual int CheckState1() const;  // 0x5b2e70
+    virtual int CreatePlanningNode();  // 0x638A80
+    virtual int GetBuildCost() const;  // 0x711EC0
+    virtual int CheckState1() const;  // 0x5B2E70
     virtual int CheckState2() const;
     virtual int StubReturn450();
-    virtual void vt_entry_448();  // 0x6f60c0
+    virtual void vt_entry_448();  // 0x6F60C0
     virtual int sub_54D28C0();
-    virtual int GetTypeFlag() const;  // 0x5224e0
+    virtual int GetTypeFlag() const;  // 0x5224E0
     virtual int sub_5505180();
-    virtual int FindClosestBuilding();  // 0x4dff40
-    virtual int FindBestMatch();  // 0x4df040
-    virtual int FindClosestInfantry();  // 0x4dfa70
-    virtual int FindClosestUnit();  // 0x4dfb70
-    virtual int FindBestMovementDirection();  // 0x740b60
-    virtual int vt_entry_4A8();  // 0x4df1a0
-    virtual int vt_entry_4AC();  // 0x4df1c0
-    virtual int vt_entry_4B0();  // 0x4df1d0
-    virtual int vt_entry_4B4();  // 0x4df1e0
-    virtual int vt_entry_4B8();  // 0x4df1f0
-    virtual int vt_entry_4C4();  // 0x4df310
-    virtual int vt_entry_4C8();  // 0x4df320
-    virtual int vt_entry_4D0();  // 0x4df4b0
-    virtual int GetAnimationValue() const;  // 0x4e0150
-    virtual int FindDeployDestination();  // 0x50c920
+    virtual int FindClosestBuilding();  // 0x4DFF40
+    virtual int FindBestMatch();  // 0x4DF040
+    virtual int FindClosestInfantry();  // 0x4DFA70
+    virtual int FindClosestUnit();  // 0x4DFB70
+    virtual int FindBestMovementDirection();  // 0x740B60
+    virtual int vt_entry_4A8();  // 0x4DF1A0
+    virtual int vt_entry_4AC();  // 0x4DF1C0
+    virtual int vt_entry_4B0();  // 0x4DF1D0
+    virtual int vt_entry_4B4();  // 0x4DF1E0
+    virtual int vt_entry_4B8();  // 0x4DF1F0
+    virtual int vt_entry_4C4();  // 0x4DF310
+    virtual int vt_entry_4C8();  // 0x4DF320
+    virtual int vt_entry_4D0();  // 0x4DF4B0
+    virtual int GetAnimationValue() const;  // 0x4E0150
+    virtual int FindDeployDestination();  // 0x50C920
     virtual int sub_550D9C0();
     virtual int sub_550D9D0();
-    virtual int MapHouseRelationIndex();  // 0x50dac0
-    virtual int GetDamageMultiplier() const;  // 0x50bd30
-    virtual int ProcessTarget();  // 0x50cad0
+    virtual int MapHouseRelationIndex();  // 0x50DAC0
+    virtual int GetDamageMultiplier() const;  // 0x50BD30
+    virtual int ProcessTarget();  // 0x50CAD0
     virtual int sub_55224F0();
-    virtual int GetDeployCoords();  // 0x4dbdf0
-    virtual int CanBePermaMC() const;  // 0x53c450
+    virtual int GetDeployCoords();  // 0x4DBDF0
+    virtual int CanBePermaMC() const;  // 0x53C450
     virtual int GarrisonBuilding();  // 0x522910
     virtual int IsMission27to30() const;  // 0x522510
-    virtual int HandleSpecialAction();  // 0x522a60
-    virtual int IsEnteringOrCapturingStructure() const;  // 0x522cb0
-    virtual void CreateDestructionEffect();  // 0x5f5390
-    virtual int FindMatchingUnit();  // 0x5f7900
-    virtual int ClearArrays();  // 0x5f99e0
-    virtual int ComputeScanRange() const;  // 0x48ab90
+    virtual int HandleSpecialAction();  // 0x522A60
+    virtual int IsEnteringOrCapturingStructure() const;  // 0x522CB0
+    virtual void CreateDestructionEffect();  // 0x5F5390
+    virtual int FindMatchingUnit();  // 0x5F7900
+    virtual int ClearArrays();  // 0x5F99E0
+    virtual int ComputeScanRange() const;  // 0x48AB90
     virtual int sub_659470();
     virtual int sub_659490();
     virtual int sub_6594A0();
@@ -336,182 +336,182 @@ public:
     virtual int sub_6594F0();
     virtual int sub_659540();
     virtual int sub_659550();
-    virtual int ClearScriptPlanningData();  // 0x633d30
+    virtual int ClearScriptPlanningData();  // 0x633D30
     virtual int GetTileAnimationData() const;  // 0x547150
-    virtual int MutateAll();  // 0x6b0ae0
-    virtual int RefreshDeployOccupierState();  // 0x6b0d10
-    virtual int CountPassengers() const;  // 0x6b7d80
+    virtual int MutateAll();  // 0x6B0AE0
+    virtual int RefreshDeployOccupierState();  // 0x6B0D10
+    virtual int CountPassengers() const;  // 0x6B7D80
     virtual int GetValue() const;
     virtual int ComputeTransform();
-    virtual int CanMoveToCell() const;  // 0x6fc030
-    virtual int CanInitiateSell() const;  // 0x6f32d0
-    virtual int IsNotAircraftOrBuilding() const;  // 0x6f3280
+    virtual int CanMoveToCell() const;  // 0x6FC030
+    virtual int CanInitiateSell() const;  // 0x6F32D0
+    virtual int IsNotAircraftOrBuilding() const;  // 0x6F3280
     virtual int SelectWeapon();
-    virtual int CanTargetHouse() const;  // 0x6f3820
-    virtual int CanSelfRepair();  // 0x70fb50
-    virtual int Mission_RepairDispatch();  // 0x6f4ab0
-    virtual int PushNearbyUnits();  // 0x6f4eb0
+    virtual int CanTargetHouse() const;  // 0x6F3820
+    virtual int CanSelfRepair();
+    virtual int Mission_RepairDispatch();  // 0x6F4AB0
+    virtual int PushNearbyUnits();  // 0x6F4EB0
     virtual int SetFocus();  // 0x7C8674
-    virtual int SetHouseFlag();  // 0x6f4960
+    virtual int SetHouseFlag();  // 0x6F4960
     virtual int ProcessAIDecision();  // 0x740810
-    virtual int CheckPlayerOwned() const;  // 0x6f4a40
-    virtual int UpdateProdWithSound();  // 0x6f4a70
+    virtual int CheckPlayerOwned() const;  // 0x6F4A40
+    virtual int UpdateProdWithSound();  // 0x6F4A70
     virtual int HasActiveParam() const;
     virtual int HasOnlyOneGarrisonSlot2() const;
-    virtual int FindLowestDamage();  // 0x7012c0
+    virtual int FindLowestDamage();  // 0x7012C0
     virtual int ProcessCapture();
-    virtual int GetRangeModifier() const;  // 0x70d190
-    virtual int ShouldScanArea() const;  // 0x70d1d0
-    virtual int IsCloseEnoughToBuilding() const;  // 0x70d590
-    virtual int IsCellPassableFor() const;  // 0x70d460
-    virtual int IsPlayerCellPassable() const;  // 0x70d420
-    virtual int SetMoveDestination();  // 0x708d90
-    virtual int GetPrimaryTargetOrFallback() const;  // 0x708dc0
-    virtual int PickAlternateTarget();  // 0x708e00
-    virtual int SelectRandomTarget();  // 0x708eb0
+    virtual int GetRangeModifier() const;  // 0x70D190
+    virtual int ShouldScanArea() const;  // 0x70D1D0
+    virtual int IsCloseEnoughToBuilding() const;  // 0x70D590
+    virtual int IsCellPassableFor() const;  // 0x70D460
+    virtual int IsPlayerCellPassable() const;  // 0x70D420
+    virtual int SetMoveDestination();  // 0x708D90
+    virtual int GetPrimaryTargetOrFallback() const;  // 0x708DC0
+    virtual int PickAlternateTarget();  // 0x708E00
+    virtual int SelectRandomTarget();  // 0x708EB0
     virtual int GetSecondaryTargetOrFallback() const;  // 0x709020
-    virtual int SetPositionAnimated();  // 0x4db810
-    virtual int GetTargetCellCenter();  // 0x4dba50
-    virtual int ComputeSpeedFactor();  // 0x4dafc0
-    virtual int ComputeSpeedFactorEx();  // 0x4db1a0
-    virtual int CleanupDirection();  // 0x4db260
-    virtual int GetDeployProgressValue() const;  // 0x740f80
-    virtual int ComputeAverageValue() const;  // 0x708bc0
-    virtual int GetGlobalValue() const;  // 0x708c10
-    virtual int SetIdleState();  // 0x70f850
-    virtual int ComputeAimVector();  // 0x70b280
-    virtual int RevealAreaConditional();  // 0x70b1d0
-    virtual int GetCellCoordsV2() const;  // 0x70ad50
-    virtual int Vt46Thunk();  // 0x70ada0
-    virtual int RevealAreaSmall();  // 0x70adc0
-    virtual int ScanForEnemies();  // 0x70af50
-    virtual int GetTargetCoords();  // 0x70bcb0
-    virtual int CalcOffsetFacing() const;  // 0x70be50
-    virtual int ShouldSelfHealOneStep() const;  // 0x70be80
-    virtual int ComputeThreatLevel();  // 0x4d97a0
+    virtual int SetPositionAnimated();  // 0x4DB810
+    virtual int GetTargetCellCenter();  // 0x4DBA50
+    virtual int ComputeSpeedFactor();  // 0x4DAFC0
+    virtual int ComputeSpeedFactorEx();  // 0x4DB1A0
+    virtual int CleanupDirection();  // 0x4DB260
+    virtual int GetDeployProgressValue() const;  // 0x740F80
+    virtual int ComputeAverageValue() const;  // 0x708BC0
+    virtual int GetGlobalValue() const;  // 0x708C10
+    virtual int SetIdleState();  // 0x70F850
+    virtual int ComputeAimVector();  // 0x70B280
+    virtual int RevealAreaConditional();  // 0x70B1D0
+    virtual int GetCellCoordsV2() const;  // 0x70AD50
+    virtual int Vt46Thunk();  // 0x70ADA0
+    virtual int RevealAreaSmall();  // 0x70ADC0
+    virtual int ScanForEnemies();  // 0x70AF50
+    virtual int GetTargetCoords();
+    virtual int CalcOffsetFacing() const;  // 0x70BE50
+    virtual int ShouldSelfHealOneStep() const;
+    virtual int ComputeThreatLevel();  // 0x4D97A0
     virtual int CanBeTargeted() const;  // 0x744270
-    virtual int GetCommandTooltip() const;  // 0x746b20
-    virtual int ShouldBeCloaked() const;  // 0x6fbdc0
-    virtual int ShouldNotBeCloaked() const;  // 0x6fbc90
-    virtual int SetTargetIfAllowed();  // 0x6f9dd0
-    virtual int CanReceivePassengers() const;  // 0x700c40
-    virtual int GetTarget() const;  // 0x6f9dc0
-    virtual int GetID() const;  // 0x6f9db0
-    virtual int GetSightRange() const;  // 0x717800
-    virtual int CheckAndFireAtTarget();  // 0x6f78d0
-    virtual int GattlingRateUp_GattlingRateDownReset();  // 0x70de70
-    virtual int GattlingValueRateDown_GattlingRateDownDelay();  // 0x70de40
-    virtual int SetMember81();  // 0x70de00
+    virtual int GetCommandTooltip() const;  // 0x746B20
+    virtual int ShouldBeCloaked() const;
+    virtual int ShouldNotBeCloaked() const;
+    virtual int SetTargetIfAllowed();  // 0x6F9DD0
+    virtual int CanReceivePassengers() const;  // 0x700C40
+    virtual int GetTarget() const;  // 0x6F9DC0
+    virtual int GetID() const;  // 0x6F9DB0
+    virtual int GetSightRange() const;
+    virtual int CheckAndFireAtTarget();  // 0x6F78D0
+    virtual int GattlingRateUp_GattlingRateDownReset();  // 0x70DE70
+    virtual int GattlingValueRateDown_GattlingRateDownDelay();  // 0x70DE40
+    virtual int SetMember81();  // 0x70DE00
     virtual int Deactivate();
     virtual int Activate();
-    virtual int ActivateEffect();  // 0x70e280
+    virtual int ActivateEffect();  // 0x70E280
     virtual int IronCurtain();
-    virtual int InvulnerabilityIntensity_SetContext();  // 0x70e380
-    virtual int ResetTimer();  // 0x70e300
-    virtual int CalcAnimDelay() const;  // 0x6fb080
-    virtual int StepAnimFrame();  // 0x6fb010
+    virtual int InvulnerabilityIntensity_SetContext();  // 0x70E380
+    virtual int ResetTimer();  // 0x70E300
+    virtual int CalcAnimDelay() const;  // 0x6FB080
+    virtual int StepAnimFrame();  // 0x6FB010
     virtual int BeginFiringSequence();  // 0x709820
-    virtual int CompleteFactoryProduction();  // 0x709a40
-    virtual int IsTimerExpired() const;  // 0x7099e0
-    virtual int GetAudioEntry() const;  // 0x7177c0
+    virtual int CompleteFactoryProduction();  // 0x709A40
+    virtual int IsTimerExpired() const;  // 0x7099E0
+    virtual int GetAudioEntry() const;  // 0x7177C0
     virtual int GetTertiaryTargetOrFallback() const;  // 0x709060
-    virtual int VoiceAttack();  // 0x7090a0
-    virtual int ResponseMove_Pickup();  // 0x708fc0
-    virtual int Vt170();  // 0x708d70
-    virtual int CanAttack() const;  // 0x700d50
-    virtual int IsDeadOrInactive() const;  // 0x700d10
-    virtual int CalculateROF();  // 0x6fcfa0
-    virtual int GetAmmoCount() const;  // 0x708c30
-    virtual int GetAmmoCount_0() const;  // 0x740e50
-    virtual int SelectAttackWeapon();  // 0x746cd0
-    virtual int GetAverageDamageScore() const;  // 0x7414a0
-    virtual int ProcessSpecialUnitDeployCrush();  // 0x7416a0
+    virtual int VoiceAttack();
+    virtual int ResponseMove_Pickup();  // 0x708FC0
+    virtual int Vt170();  // 0x708D70
+    virtual int CanAttack() const;  // 0x700D50
+    virtual int IsDeadOrInactive() const;  // 0x700D10
+    virtual int CalculateROF();  // 0x6FCFA0
+    virtual int GetAmmoCount() const;  // 0x708C30
+    virtual int GetAmmoCount_0() const;  // 0x740E50
+    virtual int SelectAttackWeapon();  // 0x746CD0
+    virtual int GetAverageDamageScore() const;  // 0x7414A0
+    virtual int ProcessSpecialUnitDeployCrush();  // 0x7416A0
     virtual int FireWeaponBurst();  // 0x741340
     virtual int GetWeaponRange(int weapon_index) const;
     virtual int FireWeapon();
-    virtual int CreateFireEffect();  // 0x6fd210
-    virtual int CreateFireBeamEffect();  // 0x6fd620
-    virtual int CreateFiringRadarBlip();  // 0x6fd570
-    virtual int CreateRadarBlip();  // 0x6fd460
-    virtual int GetFiringAngle() const;  // 0x6fda00
+    virtual int CreateFireEffect();  // 0x6FD210
+    virtual int CreateFireBeamEffect();  // 0x6FD620
+    virtual int CreateFiringRadarBlip();  // 0x6FD570
+    virtual int CreateRadarBlip();  // 0x6FD460
+    virtual int GetFiringAngle() const;  // 0x6FDA00
     virtual int AssignTarget_SyncLog();
-    virtual int ProcessDeploymentState();  // 0x6fcd40
-    virtual int ComputeAudioFalloffDamage();  // 0x6fdb80
-    virtual int ComputeCombatDamage();  // 0x70d690
-    virtual int CheckFireCooldown() const;  // 0x70ee30
-    virtual int CanDamageTarget() const;  // 0x70ef00
-    virtual int COMStub_Return0_298();  // 0x70f010
-    virtual int HasPassengers() const;  // 0x70efd0
-    virtual int COMStub_Return0_307();  // 0x70f100
+    virtual int ProcessDeploymentState();  // 0x6FCD40
+    virtual int ComputeAudioFalloffDamage();  // 0x6FDB80
+    virtual int ComputeCombatDamage();  // 0x70D690
+    virtual int CheckFireCooldown() const;  // 0x70EE30
+    virtual int CanDamageTarget() const;  // 0x70EF00
+    virtual int COMStub_Return0_298();  // 0x70F010
+    virtual int HasPassengers() const;  // 0x70EFD0
+    virtual int COMStub_Return0_307();  // 0x70F100
     virtual int sub_70F040();
-    virtual int ProcessCellClearance();  // 0x70f050
-    virtual int GetTypeVt40() const;  // 0x70f070
-    virtual int GetMaxSpeed() const;  // 0x70efe0
-    virtual int DrainAmmo();  // 0x70e000
-    virtual int EjectPassengers();  // 0x70fee0
-    virtual int RadarUpdateOn();  // 0x70cc90
-    virtual int RadarUpdateOff();  // 0x70ccc0
-    virtual int RevealOwnCell();  // 0x70ccf0
-    virtual int ComputeDamage();  // 0x70cd10
-    virtual int GetCostMultiplier() const;  // 0x708b40
+    virtual int ProcessCellClearance();  // 0x70F050
+    virtual int GetTypeVt40() const;  // 0x70F070
+    virtual int GetMaxSpeed() const;  // 0x70EFE0
+    virtual int DrainAmmo();  // 0x70E000
+    virtual int EjectPassengers();  // 0x70FEE0
+    virtual int RadarUpdateOn();  // 0x70CC90
+    virtual int RadarUpdateOff();  // 0x70CCC0
+    virtual int RevealOwnCell();  // 0x70CCF0
+    virtual int ComputeDamage();  // 0x70CD10
+    virtual int GetCostMultiplier() const;  // 0x708B40
     virtual int IsInRange() const;
     virtual int GetCrew();
-    virtual int GetCrew_0();  // 0x740ee0
+    virtual int GetCrew_0();  // 0x740EE0
     virtual int GetCrewCount();
     virtual int CheckCellPassable() const;
-    virtual int CheckCellPassable2() const;  // 0x6f7780
-    virtual int CheckCellPassable3() const;  // 0x6f7970
+    virtual int CheckCellPassable2() const;  // 0x6F7780
+    virtual int CheckCellPassable3() const;  // 0x6F7970
     virtual int ValidateTarget() const;
-    virtual int GetBridgeDamageMult() const;  // 0x6f79a0
+    virtual int GetBridgeDamageMult() const;  // 0x6F79A0
     virtual int CheckAndFireAtTarget2();
     virtual int EvaluateTarget();
-    virtual int SelectAutoTarget_Start_AU();  // 0x6f8df0
-    virtual int CheckTargetLOS() const;  // 0x6f7220
+    virtual int SelectAutoTarget_Start_AU();  // 0x6F8DF0
+    virtual int CheckTargetLOS() const;  // 0x6F7220
     virtual int CheckTargetCell() const;
-    virtual int CheckPlacementTileMatch() const;  // 0x707f60
-    virtual int ComputeScanDistance() const;  // 0x707e60
-    virtual int ComputeTotalPowerDrain();  // 0x707dd0
-    virtual int EvaluateBuildingTarget();  // 0x6f8c10
-    virtual int GetBuildAnim() const;  // 0x705d70
-    virtual int IsNotBusy() const;  // 0x705d50
+    virtual int CheckPlacementTileMatch() const;  // 0x707F60
+    virtual int ComputeScanDistance() const;  // 0x707E60
+    virtual int ComputeTotalPowerDrain();  // 0x707DD0
+    virtual int EvaluateBuildingTarget();  // 0x6F8C10
+    virtual int GetBuildAnim() const;  // 0x705D70
+    virtual int IsNotBusy() const;  // 0x705D50
     virtual int EvaluateMission();  // 0x708080
-    virtual int GetThreatValue() const;  // 0x4ded70
-    virtual int GetThreatValue_0() const;  // 0x5216c0
-    virtual int ProcessBorderTower();  // 0x6ed4d0
+    virtual int GetThreatValue() const;
+    virtual int GetThreatValue_0() const;  // 0x5216C0
+    virtual int ProcessBorderTower();  // 0x6ED4D0
     virtual int HandleCursor();  // 0x700600
-    virtual int HandleCursorClick();  // 0x6ffec0
+    virtual int HandleCursorClick();  // 0x6FFEC0
     virtual int ScanAdjacentCells2();
-    virtual int ScanNeighborCells();  // 0x703e70
+    virtual int ScanNeighborCells();  // 0x703E70
     virtual int IsValidBuildingPlacement();  // 0x704000
     virtual int StartEffectAudio();  // 0x703770
-    virtual int TransitionEffectState();  // 0x7036c0
+    virtual int TransitionEffectState();  // 0x7036C0
     virtual int Vt279Thunk0();  // 0x703850
     virtual int UpdatePowerDrain();
-    virtual int UpdatePowered();  // 0x70e1a0
+    virtual int UpdatePowered();  // 0x70E1A0
     virtual int UpdateState();
-    virtual int UpdateUnitAnimation();  // 0x736ca0
-    virtual int GetInfantryCursorAction() const;  // 0x7404b0
+    virtual int UpdateUnitAnimation();  // 0x736CA0
+    virtual int GetInfantryCursorAction() const;  // 0x7404B0
     virtual int GetThreatValueEx() const;
-    virtual int ComputeSlopeDifference();  // 0x6f6f60
-    virtual int ComputeSlopePenalty();  // 0x6f70e0
+    virtual int ComputeSlopeDifference();  // 0x6F6F60
+    virtual int ComputeSlopePenalty();  // 0x6F70E0
     virtual int IsOwnedByHuman() const;  // 0x732580
-    virtual int IsCapturableByPlayer() const;  // 0x7335f0
-    virtual int IsC4AnimationActive() const;  // 0x736d50
+    virtual int IsCapturableByPlayer() const;  // 0x7335F0
+    virtual int IsC4AnimationActive() const;  // 0x736D50
     virtual int CreateDeathAnim();  // 0x738680
-    virtual int DispatchPlayerInput();  // 0x737ba0
+    virtual int DispatchPlayerInput();  // 0x737BA0
     virtual int Deploy();
-    virtual int DeployIntoBuilding();  // 0x73efc0
+    virtual int DeployIntoBuilding();  // 0x73EFC0
     virtual int SpawnInfantryFromBuilding();  // 0x738910
-    virtual int CleanupDeploy();  // 0x6f6ac0
+    virtual int CleanupDeploy();  // 0x6F6AC0
     virtual int ClearAllTargets();  // 0x746720
     virtual int SelectAITarget();  // 0x744100
-    virtual int ReturnCapturedFlag();  // 0x7440b0
+    virtual int ReturnCapturedFlag();  // 0x7440B0
     virtual int AreBuildingFlagsClear() const;  // 0x744180
-    virtual int MarkCellImpassable();  // 0x7441b0
+    virtual int MarkCellImpassable();  // 0x7441B0
     virtual int ClearCellImpassable();  // 0x744210
     virtual int CaptureTurret();  // 0x746420
-    virtual int TransferSlavedUnit();  // 0x7463a0
-    virtual int TransferTurret();  // 0x7464e0
+    virtual int TransferSlavedUnit();  // 0x7463A0
+    virtual int TransferTurret();  // 0x7464E0
     virtual int ApplyObjectEffect();  // 0x746670
     virtual int IsGuardingTarget() const;  // 0x746750
     virtual int ProcessUnitSelfDestruct();  // 0x746100
@@ -519,48 +519,48 @@ public:
     virtual int RespondToDestruction();  // 0x738970
     virtual int GetWaypointCoords() const;
     virtual int Create();
-    virtual int CopyStateFrom();  // 0x4b5210
+    virtual int CopyStateFrom();  // 0x4B5210
     virtual int ScalarDtor();
     virtual int EnteredOpenTopped();  // 0x710470
-    virtual int MarkPassengersAsExited();  // 0x7104c0
-    virtual int ExitedOpenTopped();  // 0x7104a0
-    virtual int GetMember388() const;  // 0x711eb0
+    virtual int MarkPassengersAsExited();  // 0x7104C0
+    virtual int ExitedOpenTopped();  // 0x7104A0
+    virtual int GetMember388() const;  // 0x711EB0
     virtual int GetBuildCost2() const;
     virtual int FindBestMatch2();
-    virtual int IsWaypointHidden() const;  // 0x6ec300
-    virtual int LinkToBridge();  // 0x70fd70
-    virtual int ResetDamageAccumulator();  // 0x4c1e10
-    virtual int UpdateBodyTilt();  // 0x70b570
-    virtual int CheckCliffTransition() const;  // 0x70c620
-    virtual int OnEnterCell();  // 0x70d990
+    virtual int IsWaypointHidden() const;  // 0x6EC300
+    virtual int LinkToBridge();  // 0x70FD70
+    virtual int ResetDamageAccumulator();  // 0x4C1E10
+    virtual int UpdateBodyTilt();  // 0x70B570
+    virtual int CheckCliffTransition() const;  // 0x70C620
+    virtual int OnEnterCell();  // 0x70D990
     virtual int sub_570DC50();
-    virtual int OwnerHasPower() const;  // 0x70dc60
+    virtual int OwnerHasPower() const;  // 0x70DC60
     virtual int sub_570DCE0();
     virtual int sub_570DCF0();
-    virtual int GetPoweredWeaponIndex() const;  // 0x70dd20
-    virtual int GetVt252Byte() const;  // 0x70dd50
-    virtual int vt_entry_3E8();  // 0x70dd90
+    virtual int GetPoweredWeaponIndex() const;  // 0x70DD20
+    virtual int GetVt252Byte() const;  // 0x70DD50
+    virtual int vt_entry_3E8();  // 0x70DD90
     virtual int SetSpread();
-    virtual int DecCounter();  // 0x70d670
-    virtual int PlaceAtCell();  // 0x70d8f0
+    virtual int DecCounter();  // 0x70D670
+    virtual int PlaceAtCell();  // 0x70D8F0
     virtual int SelectVocOrSfx();
     virtual int Update2();
-    virtual int GetAnimationFlags() const;  // 0x70ed80
-    virtual int GetTargetSpeedMultiplier() const;  // 0x50c050
-    virtual int ProcessEnterTransport();  // 0x70d7e0
+    virtual int GetAnimationFlags() const;  // 0x70ED80
+    virtual int GetTargetSpeedMultiplier() const;  // 0x50C050
+    virtual int ProcessEnterTransport();  // 0x70D7E0
     virtual int IsCloseEnoughToBuilding2() const;
-    virtual int IsDeployed() const;  // 0x6ef9e0
+    virtual int IsDeployed() const;  // 0x6EF9E0
     virtual int CheckAdjacencyFlags() const;  // 0x704240
     virtual int IsProductionChainActive() const;  // 0x637840
-    virtual int HasDeployFlags() const;  // 0x746db0
+    virtual int HasDeployFlags() const;  // 0x746DB0
     virtual int RemoveBuildingFromScripts();  // 0x638840
-    virtual int FinishDeploy();  // 0x6f6ca0
+    virtual int FinishDeploy();  // 0x6F6CA0
     virtual int ValidateMoveType();  // 0x738890
     virtual int ComputeSlopePenalty2();
     virtual int sub_740B10();
-    virtual int CheckRepairNeeded() const;  // 0x740a90
-    virtual int EnterRepairBuilding();  // 0x740ef0
-    virtual int CheckUnitFireConstraints() const;  // 0x740fd0
+    virtual int CheckRepairNeeded() const;  // 0x740A90
+    virtual int EnterRepairBuilding();  // 0x740EF0
+    virtual int CheckUnitFireConstraints() const;  // 0x740FD0
     virtual int sub_741490();
     virtual int sub_7441B0();
     virtual int sub_744180();

@@ -28,7 +28,7 @@ public:
     virtual HRESULT __stdcall Load(IStream* stream) override { return 0; }
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { return 0; }
 
-    virtual ~SlaveManagerClass() = default;  // 0x6b1130
+    virtual ~SlaveManagerClass() = default;  // 0x6B1130
 
     virtual void pointerExpired(AbstractClass* ptr, bool removed) override {}
     virtual AbstractType __stdcall whatAmI() const override { return kObjectDeriveId; }
@@ -39,7 +39,7 @@ public:
     SlaveManagerClass(TechnoClass*, HouseClass*, HouseClass*, int, int); // 0x6AF1A0 (ctor)
     void Constructor(int, int);                                  // 0x6AF360
     void Constructor_SlaveManagerClass(int, int);                // 0x6AF4A0
-    void ddtor();                                                // 0x6B1130
+    void ddtor();
 
     // Slave management
     void Check();                                                // 0x522D00

@@ -82,7 +82,7 @@ public:
     void ReadColors(CCINIClass* pINI);  // 0x66D3A0
     void ReadColorAdd(CCINIClass* pINI);  // 0x66D480
     void ReadDifficulty(CCINIClass* pINI);  // 0x6743D0
-    void ReadMultiplayerDialogSettings(CCINIClass* pINI);  // 0x671ea0
+    void ReadMultiplayerDialogSettings(CCINIClass* pINI);  // 0x671EA0
     void ReadMaximums(CCINIClass* pINI);  // 0x679FA0
     void ReadInfantryTypes(CCINIClass* pINI);  // 0x679FD0
     void ReadCountries(CCINIClass* pINI);  // 0x67A000
@@ -107,7 +107,7 @@ public:
     void ReadDifficulties(CCINIClass* pINI);
     void ReadMovies(CCINIClass* pINI);  // 0x674550
     void ReadAdvancedCommandBar(CCINIClass* pINI);
-    void PointerGotInvalid(AbstractClass* pInvalid, bool removed);  // 0x4a7900
+    void PointerGotInvalid(AbstractClass* pInvalid, bool removed);  // 0x4A7900
 
     int32_t              DetailMinFrameRateNormal;
     int32_t              DetailMinFrameRateMovie;

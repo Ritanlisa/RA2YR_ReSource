@@ -39,10 +39,10 @@ class Checksummer;
 class IPersistStream : IUnknown {
 public:
     virtual HRESULT __stdcall GetClassID(CLSID* class_id) = 0;
-    virtual HRESULT __stdcall IsDirty() = 0;  // 0x7099d0
+    virtual HRESULT __stdcall IsDirty() = 0;  // 0x7099D0
     virtual HRESULT __stdcall Load(IStream* stream) = 0;
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) = 0;
-    virtual HRESULT __stdcall GetSizeMax(ULARGE_INTEGER* size) = 0;  // 0x70c250
+    virtual HRESULT __stdcall GetSizeMax(ULARGE_INTEGER* size) = 0;  // 0x70C250
 };
 
 class IRTTITypeInfo : IUnknown {
@@ -75,10 +75,10 @@ public:
 
     // --- IPersistStream (vtable[0]) ---
     virtual HRESULT __stdcall QueryInterface(const IID& iid, void** ppv) override;  // 0x410260
-    virtual ULONG   __stdcall AddRef() override;  // 0x464ac0
-    virtual ULONG   __stdcall Release() override;
+    virtual ULONG   __stdcall AddRef() override;  // 0x464AC0
+    virtual ULONG   __stdcall Release() override;  // 0x4E0360
     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override;
-    virtual HRESULT __stdcall IsDirty() override;
+    virtual HRESULT __stdcall IsDirty() override;  // 0x7099D0
     virtual HRESULT __stdcall Load(IStream* stream) override;
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
     virtual HRESULT __stdcall GetSizeMax(ULARGE_INTEGER* size) override;
@@ -103,9 +103,9 @@ public:
     // IDA: vtable[0][18] = GetInvalidCoord (0x4104C0)
     // IDA: vtable[0][19] = GetCoordsEx (0x4104F0)
     // IDA: vtable[0][22] = GetCoords (0x410540)
-    virtual ~AbstractClass() = default;
+    virtual ~AbstractClass() = default;  // 0x4101F0
 
-    virtual void initialize();  // 0x438e70
+    virtual void initialize();  // 0x438E70
     virtual void pointerExpired(AbstractClass* ptr, bool removed);
     virtual int objectSize() const;
     virtual void calculateChecksum(Checksummer& checksum) const;

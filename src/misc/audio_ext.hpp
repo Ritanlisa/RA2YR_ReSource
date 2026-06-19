@@ -28,7 +28,7 @@ public:
     // IDA 0x407150 area
     void ReleaseChannel(int32_t channel);  // 0x406060
     // IDA 0x407150 area
-    void RequestAllBuffers();  // 0x4083d0
+    void RequestAllBuffers();  // 0x4083D0
     // IDA 0x407150 area
     void StopAll();
     // IDA 0x407150 area
@@ -36,7 +36,7 @@ public:
     // IDA 0x407150 area
     void SetPan(int32_t pan);
     // IDA 0x407150 area
-    bool IsPlaying(int32_t channel);  // 0x7529e0
+    bool IsPlaying(int32_t channel);  // 0x7529E0
 
     uint32_t    AudioMixer_field_00;       // 0x00
     uint32_t    AudioMixer_field_04;       // 0x04
@@ -60,7 +60,7 @@ public:
     // IDA 0x48B2A0 area
     static int32_t DlgProc(HWND hDlg, UINT msg, WPARAM wParam, LPARAM lParam);  // 0x6B6300
     // IDA 0x48B2A0 area
-    void LoadINI();  // 0x533d20
+    void LoadINI();  // 0x533D20
     // IDA 0x48B2A0 area
     void SaveINI();
 
@@ -94,9 +94,9 @@ class Mixer
 {
 public:
     // IDA 0x407150 area
-    static void ReleaseChannel(int32_t channel);  // 0x406060
+    static void ReleaseChannel(int32_t channel);
     // IDA 0x407150 area
-    static void RequestAllBuffers();  // 0x4083D0
+    static void RequestAllBuffers();
 
     int32_t     Mixer_field_00;       // 0x00
 };

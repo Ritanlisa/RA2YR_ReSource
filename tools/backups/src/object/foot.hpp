@@ -24,9 +24,9 @@ class FootClass : public TechnoClass {
 public:
     static constexpr AbstractType kObjectDeriveId = static_cast<AbstractType>(0x4);
 
-    virtual ~FootClass() = default;
+    virtual ~FootClass() = default;  // 0x4d3590
 
-    virtual void Destroyed(ObjectClass* killer) override;  // 0x4d98c0
+    virtual void Destroyed(ObjectClass* killer) override;  // 0x4D98C0
     virtual void onBuildingPlacement(uint32_t a, uint32_t b) override;
 
     virtual void ReceiveGunner(FootClass* gunner);
@@ -55,7 +55,7 @@ public:
     virtual void onDrawComplete();
     virtual void Panic();
     virtual void UnPanic();
-    virtual void PlayIdleAnim(int idle_anim_number);
+    virtual void PlayIdleAnim(int idle_anim_number);  // 0x51daf0
     virtual uint32_t getMovementMode();
     virtual uint32_t getPathDistance(uint32_t a, uint32_t b, uint32_t c) const;
     virtual uint32_t getPathCost(uint32_t a, uint32_t b, uint32_t c, uint32_t d) const;
@@ -69,132 +69,132 @@ public:
     virtual void onMovementDone();
     virtual bool canEnterCell(uint32_t a);
 
-    bool MovementAI();
+    bool MovementAI();  // 0x4da530
 
     int Mission_Move() override;
-    int Mission_Attack() override;
-    int Mission_Guard() override;
+    int Mission_Attack() override;  // 0x417fe0
+    int Mission_Guard() override;  // 0x459e70
     int Mission_Hunt() override;
 
     // === Phase 3 generated declarations (IDA functions.json) ===
-    virtual int MissionMoveCarryallLand();
-    virtual void vt_entry_4F8();
-    virtual int Destru_vt323();
-    virtual void vt_entry_514();
+    virtual int MissionMoveCarryallLand();  // 0x416af0
+    virtual void vt_entry_4F8();  // 0x41c080
+    virtual int Destru_vt323();  // 0x41c090
+    virtual void vt_entry_514();  // 0x41c0f0
     virtual bool StubReturnFalse();
     virtual void StubReturnVoid();
-    virtual void vt_entry_534();
-    virtual void vt_entry_540();
-    virtual int GetTurretAngle() const;
-    virtual void ProcessDemolish();
-    virtual void UpdateSidebar();
-    virtual void ProcessPrimarySelect();
-    virtual int StubReturn0();
-    virtual void ScanCircleForUnits();
-    virtual void ScanCircleForUnits2();
+    virtual void vt_entry_534();  // 0x41c130
+    virtual void vt_entry_540();  // 0x41c140
+    virtual int GetTurretAngle() const;  // 0x43ed40
+    virtual void ProcessDemolish();  // 0x4415f0
+    virtual void UpdateSidebar();  // 0x4456d0
+    virtual void ProcessPrimarySelect();  // 0x448160
+    virtual int StubReturn0();  // 0x452250
+    virtual void ScanCircleForUnits();  // 0x4556d0
+    virtual void ScanCircleForUnits2();  // 0x455820
     virtual int GetCapacity() const;
-    virtual int ResizeOccupiedCellList();
+    virtual int ResizeOccupiedCellList();  // 0x45a560
     virtual int sub_4734B0();
     virtual int sub_487150();
     virtual int sub_487160();
-    virtual int FindPathWithRetry();  // 0x42c900
-    virtual void ProcessDeployMission();
-    virtual void UpdateDeployMovement();
-    virtual int PostLoadInit();
-    virtual int Destru_vt337();
+    virtual int FindPathWithRetry();  // 0x42C900
+    virtual void ProcessDeployMission();  // 0x4cd2a0
+    virtual void UpdateDeployMovement();  // 0x4ce680
+    virtual int PostLoadInit();  // 0x4d3540
+    virtual int Destru_vt337();  // 0x4d3710
     virtual void UpdateReveal();
-    virtual bool CheckTileSeed() const;
-    virtual int MovementStep();
-    virtual int Destru_vt139();
-    virtual bool CheckVoiceResponse() const;
-    virtual void ProcessMissionVoice();
-    virtual int FindMovePosition();
-    virtual int PlayCOM_audio();
-    virtual int Destru_vt319();
-    virtual int EnterAttackState();
+    virtual bool CheckTileSeed() const;  // 0x4d3810
+    virtual int MovementStep();  // 0x4d3920
+    virtual int Destru_vt139();  // 0x4d4200
+    virtual bool CheckVoiceResponse() const;  // 0x4d4b20
+    virtual void ProcessMissionVoice();  // 0x4d4cb0
+    virtual int FindMovePosition();  // 0x4d5070
+    virtual int PlayCOM_audio();  // 0x4d55c0
+    virtual int Destru_vt319();  // 0x4d55f0
+    virtual int EnterAttackState();  // 0x4d5660
     virtual void CalculateApproachPath();
-    virtual int FindAITarget();
-    virtual int DispatchInput();
+    virtual int FindAITarget();  // 0x4d6aa0
+    virtual int DispatchInput();  // 0x4d7170
     virtual void ProcessDeploy();
     virtual int ValidateMove();
     virtual int ValidatePlacement();
     virtual int GetCoords() const;
-    virtual void UpdateAI();
+    virtual void UpdateAI();  // 0x4d85d0
     virtual int OverrideMission_SyncLog();
-    virtual int ConditionalAction();
+    virtual int ConditionalAction();  // 0x4d8f80
     virtual int MissionDispatch();
-    virtual void ProcessTeamAction();
-    virtual int AssignDestination();
-    virtual int DispatchSell();
-    virtual int SelectAutoTarget_Cloaked();
+    virtual void ProcessTeamAction();  // 0x4d9290
+    virtual int AssignDestination();  // 0x4d94b0
+    virtual int DispatchSell();  // 0x4d9720
+    virtual int SelectAutoTarget_Cloaked();  // 0x4d9920
     virtual int HandleTargetDestroyed();
-    virtual void vt_entry_524();
-    virtual int Destru_vt107();
-    virtual int vt_entry_4F0();
-    virtual void ClearSomeVector();
-    virtual bool CanBeControlled() const;
-    virtual bool CanBeRecruited() const;
-    virtual void ClearSomeVector2();
-    virtual void ProcessMovement();
+    virtual void vt_entry_524();  // 0x4d9c00
+    virtual int Destru_vt107();  // 0x4d9c10
+    virtual int vt_entry_4F0();  // 0x4d9ff0
+    virtual void ClearSomeVector();  // 0x4da1c0
+    virtual bool CanBeControlled() const;  // 0x4da1d0
+    virtual bool CanBeRecruited() const;  // 0x4da230
+    virtual void ClearSomeVector2();  // 0x4da2a0
+    virtual void ProcessMovement();  // 0x4da2c0
     virtual bool CheckTargetValidity() const;
     virtual int UpdateState();
-    virtual int GetAttackSpeed() const;
-    virtual int Destru_vt30();
-    virtual void vt_entry_548();
-    virtual void vt_entry_54C();
-    virtual int BeginPowerUpdate();
-    virtual bool CanBeHunted() const;
-    virtual int LiberateMember();
-    virtual int vt_entry_4E0();
-    virtual int vt_entry_4F4();
+    virtual int GetAttackSpeed() const;  // 0x4db0a0
+    virtual int Destru_vt30();  // 0x4db7e0
+    virtual void vt_entry_548();  // 0x4dba30
+    virtual void vt_entry_54C();  // 0x4dba40
+    virtual int BeginPowerUpdate();  // 0x4dbad0
+    virtual bool CanBeHunted() const;  // 0x4dbda0
+    virtual int LiberateMember();  // 0x4dbed0
+    virtual int vt_entry_4E0();  // 0x4dbfd0
+    virtual int vt_entry_4F4();  // 0x4dc030
     virtual int CheckTargetCell() const;
-    virtual int Destru_vt311();
-    virtual void SetBuildingType();
-    virtual int MoveToTiberium();
+    virtual int Destru_vt311();  // 0x4dc790
+    virtual void SetBuildingType();  // 0x4dc810
+    virtual int MoveToTiberium();  // 0x4dcfe0
     virtual int FindMoveTarget();
-    virtual int MoveToWeed();
-    virtual bool CheckHeightDiff() const;
-    virtual int ValidateTargetCell();
-    virtual int HandleCursorWithCheck();
-    virtual void ProcessMissionState();
+    virtual int MoveToWeed();  // 0x4ddb90
+    virtual bool CheckHeightDiff() const;  // 0x4ddc40
+    virtual int ValidateTargetCell();  // 0x4ddc60
+    virtual int HandleCursorWithCheck();  // 0x4ddde0
+    virtual void ProcessMissionState();  // 0x4ddf90
     virtual int ValidateFoundation();
-    virtual int PreDestroy();
-    virtual int OnCompleteAction();
-    virtual int RemovePassenger();
-    virtual int PopAndProcess();
-    virtual bool IsTimerActive() const;
-    virtual bool IsTargetInRange() const;
+    virtual int PreDestroy();  // 0x4de5d0
+    virtual int OnCompleteAction();  // 0x4de630
+    virtual int RemovePassenger();  // 0x4de670
+    virtual int PopAndProcess();  // 0x4de710
+    virtual bool IsTimerActive() const;  // 0x4de770
+    virtual bool IsTargetInRange() const;  // 0x4de7b0
     virtual int CheckCellPassable() const;
-    virtual bool DeployAction();
-    virtual void UpdateTeamAI();
-    virtual int vt_entry_530();
-    virtual void ClearPathIndex();
-    virtual int MissionSell_Dispatch();
-    virtual void UpdateAttackMove_SelectNewTarget();
+    virtual bool DeployAction();  // 0x4deae0
+    virtual void UpdateTeamAI();  // 0x4debb0
+    virtual int vt_entry_530();  // 0x4dee50
+    virtual void ClearPathIndex();  // 0x4df0d0
+    virtual int MissionSell_Dispatch();  // 0x4df0e0
+    virtual void UpdateAttackMove_SelectNewTarget();  // 0x4df3a0
     virtual void ScanAdjacentCells();
-    virtual int Destru_vt322();
-    virtual bool IsNotAttackAndPlayer() const;
-    virtual int Jumpjet_OccupyCell();
+    virtual int Destru_vt322();  // 0x4df7f0
+    virtual bool IsNotAttackAndPlayer() const;  // 0x4dfa50
+    virtual int Jumpjet_OccupyCell();  // 0x4e00b0
     virtual int Destru_vt08();
     virtual int RemoveFromPointerArray();
     virtual int sub_550DAA0();
-    virtual int FindNearestApproachableCell();
-    virtual bool CreateWakes();
+    virtual int FindNearestApproachableCell();  // 0x586fc0
+    virtual bool CreateWakes();  // 0x629e90
     virtual int sub_56E52F0();
-    virtual int LinkToTransporter();
-    virtual int GetGameSpeedFromSession() const;
+    virtual int LinkToTransporter();  // 0x6eb380
+    virtual int GetGameSpeedFromSession() const;  // 0x6f03b0
     virtual int CompleteProduction();
     virtual void UpdateLocomotion();
-    virtual int ProcessEnterTransport();
+    virtual int ProcessEnterTransport();  // 0x70d7e0
     virtual void SetThreatBounds();
-    virtual int ApplyThreatBounds();
+    virtual int ApplyThreatBounds();  // 0x70f6a0
     virtual int sub_570F7E0();
     virtual int sub_70FEB0();
-    virtual void UpdatePassengerCoords();
+    virtual void UpdatePassengerCoords();  // 0x7104f0
     virtual void Cleanup();
-    virtual int RespondToDestruction();
+    virtual int RespondToDestruction();  // 0x738970
     virtual int sub_5746D80();
-    virtual bool CheckAccelLimit() const;
+    virtual bool CheckAccelLimit() const;  // 0x750030
     virtual int GetField() const;
     virtual void SetField();
 

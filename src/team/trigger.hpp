@@ -78,10 +78,10 @@ public:
     void Destroy();
     bool HasBeenDestroyed() const;
 
-    void SetHouse(HouseClass* house);  // 0x5d8cb0
+    void SetHouse(HouseClass* house);  // 0x5D8CB0
     HouseClass* GetHouse() const;
 
-    void Enable();  // 0x7241a0
+    void Enable();  // 0x7241A0
     void Disable();
 
     bool RegisterEvent(int event, ObjectClass* object, bool force_fire, bool persistent, TechnoClass* source);  // 0x7264C0
@@ -120,7 +120,7 @@ public:
     virtual void calculateChecksum(void* checksum) const;
     // arrayIndex() override inherited, conflicts with member
 
-    static void LoadFromINIList(CCINIClass* ini);  // 0x46ce10
+    static void LoadFromINIList(CCINIClass* ini);  // 0x46CE10
     static void SaveToINIList(CCINIClass* ini);
 
     using Flags = uint8_t;

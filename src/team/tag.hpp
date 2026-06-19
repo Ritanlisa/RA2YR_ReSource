@@ -44,7 +44,7 @@ public:
     virtual HRESULT __stdcall Load(IStream* stream) override;
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
 
-    virtual ~TagClass() = default;  // 0x6e56a0
+    virtual ~TagClass() = default;  // 0x6E56A0
 
     virtual void pointerExpired(AbstractClass* ptr, bool removed) override;
     virtual AbstractType __stdcall whatAmI() const override;
@@ -52,8 +52,8 @@ public:
     virtual void calculateChecksum(void* checksum) const;
 
     static void DeleteAll();
-    static void NotifyGlobalChanged(int idx_global);  // 0x7263a0
-    static void NotifyLocalChanged(int idx_local);  // 0x7263d0
+    static void NotifyGlobalChanged(int idx_global);  // 0x7263A0
+    static void NotifyLocalChanged(int idx_local);  // 0x7263D0
 
     bool HasCrossesHorizontalLineEvent() const;  // 0x6E5320
     bool HasCrossesVerticalLineEvent() const;  // 0x6E5300
@@ -97,7 +97,7 @@ public:
     virtual HRESULT __stdcall Load(IStream* stream) override;
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
 
-    virtual ~TagTypeClass() = default;  // 0x6e64c0
+    virtual ~TagTypeClass() = default;  // 0x6E64C0
 
     virtual void pointerExpired(AbstractClass* ptr, bool removed) override;
     virtual AbstractType __stdcall whatAmI() const override;
@@ -107,16 +107,16 @@ public:
 
     using Flags = uint8_t;
 
-    Flags GetFlags() const;  // 0x7271e0
+    Flags GetFlags() const;  // 0x7271E0
     bool HasAllowWinAction() const;
     bool HasCrossesHorizontalLineEvent() const;  // 0x6E6250
     bool HasCrossesVerticalLineEvent() const;  // 0x6E6280
     bool HasZoneEntryByEvent() const;  // 0x6E62B0
-    bool AddTrigger(class TriggerTypeClass* trigger);  // 0x6e55c0
+    bool AddTrigger(class TriggerTypeClass* trigger);
     bool RemoveTrigger(class TriggerTypeClass* trigger);
     bool ContainsTrigger(class TriggerTypeClass* trigger) const;
 
-    static void LoadFromINIList(CCINIClass* ini);  // 0x46ce10
+    static void LoadFromINIList(CCINIClass* ini);  // 0x46CE10
     static void SaveToINIList(CCINIClass* ini);
 
     int32_t             arrayIndex;

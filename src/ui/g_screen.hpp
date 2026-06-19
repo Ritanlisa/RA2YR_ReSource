@@ -53,7 +53,7 @@ public:
     virtual void CloseWindow();  // 0x7C865C
     virtual void vt_entry_8C();
     virtual bool vt_entry_90(const CellStruct& cell, HouseClass* house);
-    virtual bool vt_entry_94(const CellStruct& cell, HouseClass* house, bool unk);  // 0x4a9ca0
+    virtual bool vt_entry_94(const CellStruct& cell, HouseClass* house, bool unk);  // 0x4A9CA0
     virtual bool vt_entry_98(const CellStruct& cell, HouseClass* house);
     virtual bool vt_entry_9C(const CellStruct& cell, HouseClass* house);
 

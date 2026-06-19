@@ -30,7 +30,7 @@ public:
     bool LoadFromMemory(const uint8_t* data, int data_size);
     void Free();
 
-    int GetFrameCount() const;  // 0x74aa30
+    int GetFrameCount() const;  // 0x74AA30
     int GetWidth() const;
     int GetHeight() const;
 

@@ -239,7 +239,7 @@ public:
     // IDA 0x48B2A0 area
     static void IncrementRefCount();
     // IDA 0x48B2A0 area
-    static void DecrementRefCount();  // 0x6351e0
+    static void DecrementRefCount();  // 0x6351E0
     // IDA 0x48B2A0 area
     static int32_t GetRefCount();
 
@@ -795,7 +795,7 @@ public:
 class ComPtr
 {
 public:
-    virtual ~ComPtr() = default;  // 0x6406f0
+    virtual ~ComPtr() = default;  // 0x6406F0
 
     virtual void Release_Alt() {} // IDA: 0x4B4D50
     virtual void ReleaseAndSet() {} // IDA: 0x4D0490
@@ -835,7 +835,7 @@ public:
 class EnumConnectionPointsClass
 {
 public:
-    virtual ~EnumConnectionPointsClass() = default;  // 0x4a0a50
+    virtual ~EnumConnectionPointsClass() = default;  // 0x4A0A50
 
     virtual void QueryInterface() {} // IDA: 0x4A0920
     virtual void AddRef() {} // IDA: 0x4A0990
@@ -859,7 +859,7 @@ public:
 class EnumConnectionsClass
 {
 public:
-    virtual ~EnumConnectionsClass() = default;  // 0x4a00b0
+    virtual ~EnumConnectionsClass() = default;  // 0x4A00B0
 
     virtual void QueryInterface() {} // IDA: 0x49FF80
     virtual void AddRef() {} // IDA: 0x49FFF0
@@ -948,7 +948,7 @@ public:
 class GraphicMenuImageItem
 {
 public:
-    virtual ~GraphicMenuImageItem() = default;  // 0x4f37a0
+    virtual ~GraphicMenuImageItem() = default;  // 0x4F37A0
 
     virtual void Release() {} // IDA: 0x4F3640
     virtual void Load() {} // IDA: 0x4F3690
@@ -1271,7 +1271,7 @@ public:
 class StringVector
 {
 public:
-    virtual ~StringVector() = default;  // 0x49ef10
+    virtual ~StringVector() = default;  // 0x49EF10
 
     virtual void Release() {} // IDA: 0x49EE60
     virtual void ddtor() {} // IDA: 0x49EF10
@@ -1389,7 +1389,7 @@ public:
 class VectorCursor
 {
 public:
-    virtual ~VectorCursor() = default;  // 0x76f190
+    virtual ~VectorCursor() = default;  // 0x76F190
 
     virtual void Construct() {} // IDA: 0x76F0C0
     virtual void HasNext() {} // IDA: 0x76F0E0
@@ -1409,7 +1409,7 @@ public:
 class VectorCursor_uint_DynamicVectorClass_uint
 {
 public:
-    virtual ~VectorCursor_uint_DynamicVectorClass_uint() = default;  // 0x4f4000
+    virtual ~VectorCursor_uint_DynamicVectorClass_uint() = default;  // 0x4F4000
 
     virtual void AddRef() {} // IDA: 0x4F3FC0
     virtual void Release() {} // IDA: 0x4F3FF0

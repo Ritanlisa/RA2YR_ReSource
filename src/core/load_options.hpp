@@ -42,7 +42,7 @@ public:
 
     // --- Lifecycle ---
     // IDA 0x558740: Construct — init fields + DynamicVectorClass
-    void Construct();  // 0x558740
+    void Construct();
 
     // IDA 0x558790: Cleanup — free entries, reset vector
     void Cleanup();  // 0x558790
@@ -61,10 +61,10 @@ public:
     bool Check();  // 0x559C20
 
     // IDA 0x559D60: AddRef (vt01) — load saved game
-    bool LoadGame(const char* filename);  // 0x5d6330
+    bool LoadGame(const char* filename);  // 0x5D6330
 
     // IDA 0x559E40: Release (vt02) — save game
-    bool SaveGame(const char* filename, const wchar_t* description);  // 0x5d6320
+    bool SaveGame(const char* filename, const wchar_t* description);  // 0x5D6320
 
     // IDA 0x559ED0: Read (vt04) — populate entry from file
     bool ReadEntry(FileEntryClass* dest, int a2);

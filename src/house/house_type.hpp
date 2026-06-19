@@ -32,7 +32,7 @@ public:
     virtual HRESULT __stdcall Load(IStream* stream) override;
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
 
-    virtual ~HouseTypeClass() = default;  // 0x5116a0
+    virtual ~HouseTypeClass() = default;  // 0x5116A0
 
     virtual AbstractType __stdcall whatAmI() const override;
     virtual int objectSize() const override;

@@ -18,7 +18,7 @@ public:
     virtual HRESULT __stdcall Load(IStream* stream) override;
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
 
-    virtual ~BombClass() = default;  // 0x438b00
+    virtual ~BombClass() = default;  // 0x438B00
 
     virtual void pointerExpired(AbstractClass* ptr, bool removed) override;
     virtual AbstractType __stdcall whatAmI() const override;
@@ -27,7 +27,7 @@ public:
 
     // Construction
     BombClass();                                                 // 0x4385D0 (AbstractClass)
-    void ddtor();                                                // 0x438B00
+    void ddtor();
 
     // Methods
     static void InitPool();                                      // 0x438550

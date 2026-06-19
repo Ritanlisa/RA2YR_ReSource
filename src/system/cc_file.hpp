@@ -86,7 +86,7 @@ public:
 class CCFileClass : public CDFileClass
 {
 public:
-    virtual ~CCFileClass() override = default;  // 0x535a70
+    virtual ~CCFileClass() override = default;  // 0x535A70
 
     explicit CCFileClass(const char* pFileName) noexcept;
 

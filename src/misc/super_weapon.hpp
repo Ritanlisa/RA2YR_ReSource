@@ -53,12 +53,12 @@ public:
     static SuperWeaponTypeClass* FindOrCreate(const char* name);                       // 0x475540
     static SuperWeaponTypeClass* FindByName(const char* name);                         // 0x5117D0
     bool IsAvailable() const;                                                         // 0x4F6540
-    void Construct(const char* pID);  // 0x5113f0
+    void Construct(const char* pID);
 
     // vtable helpers
     void SaveLoad_Prefix(IStream* stream);                                             // 0x6CE800
     void SaveLoad_Prefix_0(IStream* stream);                                           // 0x6CE8D0
-    void SDDTOR();  // 0x6cefe0
+    void SDDTOR();
 
     int32_t             ArrayIndex;
     WeaponTypeClass*    WeaponType;
@@ -109,7 +109,7 @@ public:
     bool SetOnHold(bool onHold);                                                     // 0x6CB4D0
     bool Grant(bool oneTime, bool announce, bool onHold);                            // 0x6CB560 (StartTimer)
     bool Lose();                                                                     // 0x6CB7B0
-    bool IsPowered() const;  // 0x465af0
+    bool IsPowered() const;  // 0x465AF0
     void Launch(const CellStruct& cell, bool isPlayer);                              // 0x6CC390
     int8_t CanFire() const;                                                           // 0x6CC360
     void SetReadiness(bool ready);                                                    // 0x6CB820
@@ -123,18 +123,18 @@ public:
     void ResetRechargeTime();                                                        // 0x6CC290
     const wchar_t* NameReadiness() const;                                             // 0x6CC2B0
     bool ShouldDrawProgress() const;                                                  // 0x6CDE90
-    bool ShouldFlashTab() const;  // 0x6ce1a0
+    bool ShouldFlashTab() const;  // 0x6CE1A0
 
     SuperClass(SuperWeaponTypeClass* pSWType, HouseClass* pOwner) noexcept;           // 0x6CAEC0 (Constructor)
 
     // lifecycle
-    void Constructor(SuperWeaponTypeClass* pSWType, HouseClass* pOwner);  // 0x6caec0
+    void Constructor(SuperWeaponTypeClass* pSWType, HouseClass* pOwner);
     void Construct();                                                                // 0x6CAF90
     void CleanupMembers();                                                           // 0x6CB120
-    void StartTimer(int32_t duration);  // 0x6cb560
+    void StartTimer(int32_t duration);
     void ExecuteAction(Action action);                                                // 0x6CDFF0
-    void PowerDrainUpdate();  // 0x6ce020
-    void AnnounceReady();  // 0x6cc080
+    void PowerDrainUpdate();
+    void AnnounceReady();
     void LaunchPsychicDominator(const CellStruct& cell);                              // 0x53AE50
     void CreateChronoAnim(const CellStruct& cell);                                    // 0x6CB3A0
 
@@ -195,8 +195,8 @@ public:
     static void Strike(const CellStruct& cell);                              // 0x53A140
     static void Strike2(const CoordStruct& coords);                          // 0x53A300
     static void PrintMessage();
-    static void End();  // 0x53a090
-    static bool IsActive();  // 0x53a100
+    static void End();
+    static bool IsActive();
 };
 
 class PsyDom
@@ -207,7 +207,7 @@ public:
     static HouseClass*             Owner;    // 0xA8E830
     static AnimClass*              Anim;     // 0xA8E834
 
-    static void Start(HouseClass* pOwner, const CellStruct& coords);  // 0x7cd80f
+    static void Start(HouseClass* pOwner, const CellStruct& coords);  // 0x7CD80F
     static void updateLogic();
     static void Fire();                                               // 0x53B080
     static void PrintMessage();
@@ -222,8 +222,8 @@ public:
 
     static void Start(int32_t duration);      // 0x753580 (DecrementCounter)
     static void updateLogic();
-    static bool Active();  // 0x4c9480
-    static void DecrementCounter();  // 0x753580
+    static bool Active();  // 0x4C9480
+    static void DecrementCounter();
 };
 
 class NukeFlash
@@ -237,8 +237,8 @@ public:
     static void FadeOut();               // 0x53A120 (ProcessEffect)
     static bool IsFadingIn();
     static bool IsFadingOut();
-    static bool IsActive();  // 0x53a110
-    static void ProcessEffect();  // 0x53a120
+    static bool IsActive();
+    static void ProcessEffect();
 };
 
 } // namespace gamemd

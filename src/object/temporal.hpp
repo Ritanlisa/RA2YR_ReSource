@@ -17,7 +17,7 @@ public:
     virtual HRESULT __stdcall Load(IStream* stream) override;
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
 
-    virtual ~TemporalClass() = default;  // 0x71a720
+    virtual ~TemporalClass() = default;  // 0x71A720
 
     virtual void pointerExpired(AbstractClass* ptr, bool removed) override;
     virtual AbstractType __stdcall whatAmI() const override;
@@ -27,7 +27,7 @@ public:
     // Construction
     TemporalClass();                                             // 0x71A4E0
     void Constructor();                                          // 0x71A450
-    void ddtor();                                                // 0x71A720
+    void ddtor();
 
     // Methods
     void SetTarget(TechnoClass*);                                // 0x71A650

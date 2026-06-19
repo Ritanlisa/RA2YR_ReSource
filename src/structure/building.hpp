@@ -38,14 +38,14 @@ public:
 
     virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override;
 
-    virtual ~BuildingClass() override = default;  // 0x43bcf0
+    virtual ~BuildingClass() override = default;  // 0x43BCF0
 
     virtual AbstractType __stdcall whatAmI() const override;
     virtual int objectSize() const override;
 
     // Construction / destruction lifecycle
     void Construct();  // 0x43B740
-    void Dtor();  // 0x43BCF0
+    void Dtor();
     int ScalarDtor() override;  // 0x459F20
     int Activate() override;
     int Deactivate() override;  // 0x452480
@@ -154,9 +154,9 @@ public:
     int MissionController();  // 0x43C2D0
     int ProcessMission();  // 0x5B01C0
     int Mission_Guard();  // 0x459E70
-    int Mission_Attack();  // 0x417fe0
+    int Mission_Attack();  // 0x417FE0
     int Mission_Move();
-    int Mission_Enter();  // 0x4166c0
+    int Mission_Enter();  // 0x4166C0
     int Mission_Capture();
     int Mission_Harvest();
     int Mission_Deploy();
@@ -288,7 +288,7 @@ public:
 
     // Rendering
     Point2D* CalcDrawPos(Point2D* out) const;  // 0x480110
-    Point2D CalcDrawPos() const;  // 0x480110
+    Point2D CalcDrawPos() const;
     void Draw(Point2D* screen_pos, RectangleStruct* bounds) const;  // 0x43D290
     void DrawVisible(Point2D* screen_pos, RectangleStruct* bounds) const;  // 0x43E7B0
     void Draw_0(Point2D* screen_pos, RectangleStruct* bounds) const;  // 0x47F6A0

@@ -47,7 +47,7 @@ public:
     virtual int objectSize() const override; // 0x465DA0 (as GetObjectSize)
 
     virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override;
-    virtual ObjectClass* CreateObject(HouseClass* pOwner) override;  // 0x4737f0
+    virtual ObjectClass* CreateObject(HouseClass* pOwner) override;  // 0x4737F0
 
     virtual SHPStruct* LoadBuildup();
 
@@ -58,7 +58,7 @@ public:
 
     bool HasSuperWeapon(int index) const;
     bool HasSuperWeapon() const;
-    bool CanTogglePower() const;  // 0x508df0
+    bool CanTogglePower() const;  // 0x508DF0
 
     BuildingAnimStruct& GetBuildingAnim(BuildingAnimSlot slot);
     const BuildingAnimStruct& GetBuildingAnim(BuildingAnimSlot slot) const;

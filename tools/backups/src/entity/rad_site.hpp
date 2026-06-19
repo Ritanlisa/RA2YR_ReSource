@@ -38,35 +38,35 @@ public:
     virtual HRESULT __stdcall Load(IStream* stream) override;
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
 
-    virtual ~RadSiteClass() override = default;
+    virtual ~RadSiteClass() override = default;  // 0x65B470
 
     virtual AbstractType __stdcall whatAmI() const override;
     virtual int objectSize() const override;
 
     // 0x65B4C0 SetBaseCell
-    void SetBaseCell(CellStruct* cell);  // 0x65b4c0
+    void SetBaseCell(CellStruct* cell);  // 0x65B4C0
     // 0x65B4B0 GetSpread
-    int GetSpread() const;  // 0x65b4b0
+    int GetSpread() const;  // 0x65B4B0
     // 0x65B4D0 SetSpread
-    void SetSpread(int cells);  // 0x65b4d0
+    void SetSpread(int cells);  // 0x65B4D0
     // 0x65B4F0 SetRadLevel
-    void SetRadLevel(int level);  // 0x65b4f0
+    void SetRadLevel(int level);  // 0x65B4F0
     // 0x65B510 GetRadLevel
     int GetRadLevel() const;
     // 0x65B530 Add
-    void Add(int radLevel);  // 0x65b530
+    void Add(int radLevel);  // 0x65B530
     // 0x65B580 Activate
     void Activate();
     // 0x65B8F0 GetRadLevelAt
-    int GetRadLevelAt(CellStruct* cell);  // 0x65b8f0
+    int GetRadLevelAt(CellStruct* cell);  // 0x65B8F0
     // 0x65B9C0 Radiate
-    void Radiate();  // 0x65b9c0
+    void Radiate();  // 0x65B9C0
     // 0x65BB50 Deactivate
-    void Deactivate();  // 0x65bb50
+    void Deactivate();  // 0x65BB50
     // 0x65BD00 DecreaseRadiation
-    void DecreaseRadiation();  // 0x65bd00
+    void DecreaseRadiation();  // 0x65BD00
     // 0x65BE90 DecreaseLight
-    void DecreaseLight();  // 0x65be90
+    void DecreaseLight();  // 0x65BE90
 
     // IDA ctor 0x65B1E0 member layout
     LightSourceClass*  LightSource;        // +0x24 (this+9)

@@ -33,7 +33,7 @@ public:
     virtual bool HasHandle() = 0;
     virtual bool Open(FileAccessMode access) = 0;  // 0x65CBF0
     virtual bool OpenEx(const char* pFileName, FileAccessMode access) = 0;
-    virtual int ReadBytes(void* pBuffer, int nNumBytes) = 0;  // 0x774b30
+    virtual int ReadBytes(void* pBuffer, int nNumBytes) = 0;  // 0x774B30
     virtual int Seek(int offset, FileSeekMode seek) = 0;  // 0x65CF00
     virtual int GetFileSize() = 0;  // 0x7C8512
     virtual int WriteBytes(void* pBuffer, int nNumBytes) = 0;  // 0x411310
@@ -47,13 +47,13 @@ public:
     template <typename T>
     bool Read(T& obj, int size = sizeof(T))
     {
-        return ReadBytes(&obj, size) == size;  // 0x774b30
+        return ReadBytes(&obj, size) == size;
     }
 
     template <typename T>
     bool Write(T& obj, int size = sizeof(T))
     {
-        return WriteBytes(&obj, size) == size;  // 0x411310
+        return WriteBytes(&obj, size) == size;
     }
 
 protected:
@@ -69,7 +69,7 @@ private:
 class RawFileClass : public FileClass
 {
 public:
-    virtual ~RawFileClass() override = default;  // 0x65ca00
+    virtual ~RawFileClass() override = default;  // 0x65CA00
 
     const char* GetFileName() const override { return FileName; }
     const char* SetFileName(const char* pFileName) override;

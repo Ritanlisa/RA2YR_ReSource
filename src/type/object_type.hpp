@@ -36,14 +36,14 @@ public:
     virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) = 0;
     virtual int GetActualCost(HouseClass* pHouse) const;
     virtual int GetBuildSpeed() const;
-    virtual ObjectClass* CreateObject(HouseClass* pOwner) = 0;  // 0x4737f0
+    virtual ObjectClass* CreateObject(HouseClass* pOwner) = 0;  // 0x4737F0
     virtual CellStruct* GetFoundationData(bool IncludeBib) const;
     virtual BuildingClass* FindFactory(bool allowOccupied, bool requirePower, bool requireCanBuild, HouseClass const* pHouse) const;
     virtual SHPStruct* GetCameo() const;
     virtual SHPStruct* GetImage() const;
 
     static bool IsBuildCat5(AbstractType abstractID, int idx);
-    static TechnoTypeClass* GetTechnoType(AbstractType abstractID, int idx);  // 0x476eb0
+    static TechnoTypeClass* GetTechnoType(AbstractType abstractID, int idx);  // 0x476EB0
 
     ObjectTypeClass(const char* pID) noexcept;  // 0x5F7320 (as Construct)
 

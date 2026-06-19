@@ -37,7 +37,7 @@ public:
     virtual HRESULT __stdcall Load(IStream* stream) override;
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
 
-    virtual ~ScriptClass() = default;  // 0x6915f0
+    virtual ~ScriptClass() = default;  // 0x6915F0
 
     virtual AbstractType __stdcall whatAmI() const override;
     virtual int objectSize() const override;
@@ -71,12 +71,12 @@ public:
     virtual HRESULT __stdcall Load(IStream* stream) override;
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
 
-    virtual ~ScriptTypeClass() = default;  // 0x691fa0
+    virtual ~ScriptTypeClass() = default;  // 0x691FA0
 
     virtual AbstractType __stdcall whatAmI() const override;
     virtual int objectSize() const override;
 
-    static bool LoadFromINIList(CCINIClass* ini, bool is_global);  // 0x46ce10
+    static bool LoadFromINIList(CCINIClass* ini, bool is_global);  // 0x46CE10
 
     int32_t             arrayIndex;
     bool                isGlobal;

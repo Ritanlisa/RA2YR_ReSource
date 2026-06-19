@@ -30,7 +30,7 @@ public:
     virtual int objectSize() const override; // 0x645910 (as GetObjectSize)
 
     virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override; // 0x645940 (as StubReturnFalse)
-    virtual ObjectClass* CreateObject(HouseClass* pOwner) override;  // 0x4737f0
+    virtual ObjectClass* CreateObject(HouseClass* pOwner) override;  // 0x4737F0
 
     ParticleTypeClass(const char* pID) noexcept;
 

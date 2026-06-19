@@ -33,7 +33,7 @@ public:
     // IDA 0x487E00 area
     void SetTarget(const CoordStruct& target);
     // IDA 0x487E00 area
-    CoordStruct GetTarget() const;  // 0x6f9dc0
+    CoordStruct GetTarget() const;  // 0x6F9DC0
 
     CoordStruct m_Target;       // 0x00
     int32_t     m_State;        // 0x0C

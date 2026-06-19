@@ -28,7 +28,7 @@ public:
     virtual HRESULT __stdcall Load(IStream* stream) override { return 0; }
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { return 0; }
 
-    virtual ~TeamTypeClass() = default;  // 0x6f20d0
+    virtual ~TeamTypeClass() = default;  // 0x6F20D0
 
     virtual void pointerExpired(AbstractClass* ptr, bool removed) override {}
     virtual AbstractType __stdcall whatAmI() const override { return kObjectDeriveId; }
@@ -37,7 +37,7 @@ public:
 
     // Construction
     TeamTypeClass() noexcept { }                             // IDA: 0x4C98B0 (Construct)
-    void ddtor();                                            // 0x6F20D0
+    void ddtor();
 
     // Methods
     void Construct();

@@ -47,7 +47,7 @@ public:
     void StartProduction();                                                             // 0x4C9E60
     void StartProduction_2();                                                            // 0x4CA5A0
     void UpdateProduction();                                                            // 0x4C9B20
-    void FinishProduction();  // 0x635060
+    void FinishProduction();
 
     // queue management
     bool RemoveOneFromQueue(const TechnoTypeClass* item);                                // 0x4CA620
@@ -58,10 +58,10 @@ public:
     static FactoryClass* FindByOwnerAndProduct(const HouseClass* house, const TechnoTypeClass* item);
 
     // save/load
-    void LoadFromStream(IStream* stream);  // 0x4ca270
-    void Stat(IStream* stream);  // 0x4ca430
+    void LoadFromStream(IStream* stream);
+    void Stat(IStream* stream);
     void Seek(IStream* stream);                                                          // 0x4CA3C0
-    void Revert();  // 0x4ca580
+    void Revert();
     void CopyTo(void* dest);                                                            // 0x4CA770
 
     uint32_t        production[3];
