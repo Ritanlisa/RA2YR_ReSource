@@ -124,7 +124,7 @@ public:
 
     bool IsCampaign() const;
     bool IsSkirmish() const;
-    bool IsMultiplayer() const;
+    bool IsMultiplayer() const;  // 0x77D940
 
     // TODO: complete SessionClass members
 

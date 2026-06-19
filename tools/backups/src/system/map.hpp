@@ -215,7 +215,7 @@ public:
 
     bool IsWithinUsableArea(const CellStruct& cell, bool check_level) const;  // 0x578460
     bool IsWithinUsableArea(CellClass* cell, bool check_level) const;  // 0x578460
-    bool IsWithinUsableArea(const CoordStruct& coords) const;
+    bool IsWithinUsableArea(const CoordStruct& coords) const;  // 0x578460
     bool CoordinatesLegal(const CellStruct& cell) const;  // 0x568300
 
     CoordStruct* FindFirstFirestorm(CoordStruct* out, const CoordStruct& start, const CoordStruct& end, const HouseClass* house = nullptr) const;  // 0x5880A0

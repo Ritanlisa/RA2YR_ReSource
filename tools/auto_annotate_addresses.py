@@ -511,20 +511,24 @@ def annotate_file(filepath: Path, class_method_lookup: dict, global_lookup: dict
         # Normalize to uppercase hex (preserve "0x" prefix casing)
         addr_upper = "0x" + addr[2:].upper() if addr.startswith("0x") else addr.upper()
         
-        # Skip if this address already exists elsewhere in the file
-        # (prevents normalize --fix from stripping it as duplicate)
         # Strip "0x" prefix for comparison (existing_addresses stores raw hex from regex group 1)
         addr_hex = addr_upper[2:] if addr_upper.startswith("0x") else addr_upper
-        if addr_hex in existing_addresses:
-            continue
         
-        # Add annotation
         stripped = lines[i].rstrip()
-        annotation = f"  // {addr_upper}"
-        new_lines[i] = stripped + annotation
-        existing_addresses.add(addr_hex)  # track for subsequent lines
-        changes.append(f"  L{i+1}: {label} -> {addr_upper}")
-        match_types[label.split(":")[0]] += 1
+        if addr_hex in existing_addresses:
+            # Address already used (e.g., base class)→ add as // IDA: 0xADDR format
+            # to preserve address info without triggering duplicate_address in normalize --check
+            annotation = f"  // IDA: {addr_upper}"
+            new_lines[i] = stripped + annotation
+            changes.append(f"  L{i+1}: {label} -> IDA:{addr_upper} (shared)")
+            match_types["ida_shared"] += 1
+        else:
+            # First occurrence — standard // 0xADDR format
+            annotation = f"  // {addr_upper}"
+            new_lines[i] = stripped + annotation
+            existing_addresses.add(addr_hex)  # track for subsequent lines
+            changes.append(f"  L{i+1}: {label} -> {addr_upper}")
+            match_types[label.split(":")[0]] += 1
     
     if changes and not dry_run:
         new_content = "\n".join(new_lines)

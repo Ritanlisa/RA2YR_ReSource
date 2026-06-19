@@ -23,7 +23,7 @@ public:
     static constexpr AbstractType kObjectTypeId = AbstractType::Terrain;
 
     virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override;
-    virtual HRESULT __stdcall Load(IStream* pStm) override;
+    virtual HRESULT __stdcall Load(IStream* pStm) override;  // 0x71CDA0
     virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;
 
     virtual ~TerrainClass() override = default;

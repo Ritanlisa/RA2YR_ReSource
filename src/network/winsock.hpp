@@ -44,10 +44,10 @@ public:
 
     bool initialize();
     void Shutdown();
-    bool IsAvailable() const;
+    bool IsAvailable() const;  // IDA: 0x4F6540
 
     bool CreateSocket();
-    void CloseSocket();
+    void CloseSocket();  // IDA: 0x7C8992
     bool Bind(uint32_t network, const uint8_t node[6], uint16_t socket);  // 0x7B10C0
     bool SendTo(uint32_t destNetwork, const uint8_t destNode[6], uint16_t destSocket,
                 const uint8_t* data, int32_t length);
@@ -74,11 +74,11 @@ public:
 
     bool initialize();
     void Shutdown();
-    bool IsAvailable() const;
+    bool IsAvailable() const;  // IDA: 0x4F6540
 
     bool CreateSocket(uint16_t port);
-    void CloseSocket();
-    bool SendTo(const char* address, uint16_t port, const uint8_t* data, int32_t length);
+    void CloseSocket();  // IDA: 0x7C8992
+    bool SendTo(const char* address, uint16_t port, const uint8_t* data, int32_t length);  // IDA: 0x7C89B0
     int32_t ReceiveFrom(uint8_t* buffer, int32_t maxLen, char* outAddress, int32_t addrSize, uint16_t* outPort);
     bool SetNonBlocking(bool nonBlock);
     bool SetBroadcast(bool enable);

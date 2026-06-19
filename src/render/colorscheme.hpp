@@ -9,7 +9,7 @@ namespace gamemd {
 struct ColorScheme
 {
     // 0x68C8D0 Destructor
-    void Destructor();
+    void Destructor();  // IDA: 0x68C8D0
 
     // Large member layout - exact structure undetermined
     uint8_t     data[0x310];        // +0x000..+0x30F

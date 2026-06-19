@@ -40,7 +40,7 @@ class IPersistStream : IUnknown {
 public:
     virtual HRESULT __stdcall GetClassID(CLSID* class_id) = 0;
     virtual HRESULT __stdcall IsDirty() = 0;  // 0x7099D0
-    virtual HRESULT __stdcall Load(IStream* stream) = 0;
+    virtual HRESULT __stdcall Load(IStream* stream) = 0;  // 0x55AA60
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) = 0;
     virtual HRESULT __stdcall GetSizeMax(ULARGE_INTEGER* size) = 0;  // 0x70C250
 };
@@ -49,7 +49,7 @@ class IRTTITypeInfo : IUnknown {
 public:
     virtual AbstractType __stdcall whatAmI() const = 0;
     virtual int __stdcall fetchId() const = 0;
-    virtual void __stdcall createId() = 0;
+    virtual void __stdcall createId() = 0;  // IDA: 0x486920
 };
 
 class INoticeSink {
@@ -78,7 +78,7 @@ public:
     virtual ULONG   __stdcall AddRef() override;  // 0x464AC0
     virtual ULONG   __stdcall Release() override;  // 0x4E0360
     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override;
-    virtual HRESULT __stdcall IsDirty() override;
+    virtual HRESULT __stdcall IsDirty() override;  // IDA: 0x7099D0
     virtual HRESULT __stdcall Load(IStream* stream) override;
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
     virtual HRESULT __stdcall GetSizeMax(ULARGE_INTEGER* size) override;
@@ -86,7 +86,7 @@ public:
     // --- IRTTITypeInfo (vtable[1]) ---
     virtual AbstractType __stdcall whatAmI() const override;
     virtual int __stdcall fetchId() const override;
-    virtual void __stdcall createId() override;
+    virtual void __stdcall createId() override;   // IDA: 0x486920
 
     // --- INoticeSink (vtable[2]) ---
     virtual bool __stdcall onNotice(unsigned long event) override;
@@ -112,7 +112,7 @@ public:
     virtual int owningHouseIndex() const;
     virtual HouseClass* owningHouse() const;
     virtual int arrayIndex() const;
-    virtual bool isDead() const;
+    virtual bool isDead() const;  // 0x700D10
     virtual CoordStruct* fetchCoordinatesHere(CoordStruct* out) const;
     virtual CoordStruct* fetchDestination(CoordStruct* out, TechnoClass* docker = nullptr) const;
     virtual bool isOnGround() const;

@@ -115,7 +115,7 @@ public:
     bool operator==(const TargetClass& rhs) const { return m_target == rhs.m_target; }
     bool operator!=(const TargetClass& rhs) const { return m_target != rhs.m_target; }
 
-    AbstractType Kind() const { return TargetKind(m_target); }
+    AbstractType Kind() const { return TargetKind(m_target); }  // 0x65AD90
     unsigned Value() const { return TargetValue(m_target); }
     target_t AsTarget() const { return m_target; }
 

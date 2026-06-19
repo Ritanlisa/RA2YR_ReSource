@@ -50,8 +50,8 @@ public:
     static constexpr AbstractType kObjectDeriveId = AbstractType::Trigger;
 
     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override;
-    virtual HRESULT __stdcall Load(IStream* stream) override;
-    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
+    virtual HRESULT __stdcall Load(IStream* stream) override;  // 0x726860
+    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;  // 0x7268D0
 
     virtual ~TriggerClass() = default;  // 0x726820
 

@@ -126,7 +126,7 @@ public:
     // IDA 0x43AD00
     void Init();  // 0x43AD00
     // IDA 0x488030
-    void Constructor_VectorClass_ObjectClass();
+    void Constructor_VectorClass_ObjectClass();  // 0x488030
     // IDA 0x632B70
     void RotateBufferCrypto();  // 0x632B70
     // IDA 0x6C89E0
@@ -206,13 +206,13 @@ public:
     // IDA 0x48B2A0 area
     static void ZeroInitAndSetup(void* ptr, int32_t size);  // 0x48BF10
     // IDA 0x48B2A0 area
-    static void InitArray(void* arr, int32_t stride, int32_t count);
+    static void InitArray(void* arr, int32_t stride, int32_t count);  // 0x5C6940
     // IDA 0x48B2A0 area
-    static void MemSet(void* dst, uint8_t val, int32_t count);
+    static void MemSet(void* dst, uint8_t val, int32_t count);  // 0x7D75E0
     // IDA 0x48B2A0 area
     static void MemCopy(void* dst, const void* src, int32_t count);
     // IDA 0x48B2A0 area
-    static void FillZero(void* ptr, int32_t count);
+    static void FillZero(void* ptr, int32_t count);  // 0x7D79FB
     // IDA 0x48B2A0 area
     static void InitBlock(void* ptr, int32_t size);
     // IDA 0x48B2A0 area
@@ -263,11 +263,11 @@ public:
     // IDA 0x4D9C00 area
     void Union(const Rect& other);  // 0x487F40
     // IDA 0x4D9C00 area
-    bool Intersects(const Rect& other) const;
+    bool Intersects(const Rect& other) const;  // 0x7BBE20
     // IDA 0x4D9C00 area
     bool Contains(int32_t x, int32_t y) const;
     // IDA 0x4D9C00 area
-    void Clip(const Rect& clip);
+    void Clip(const Rect& clip);  // 0x421B60
 
     int32_t     X;              // 0x00
     int32_t     Y;              // 0x04
@@ -611,7 +611,7 @@ public:
     // IDA 0x6BB9A0 area
     static void CleanupResource();  // 0x49F8B0
     // IDA 0x6BB9A0 area
-    static void Constructor_VectorClass_Wstring();
+    static void Constructor_VectorClass_Wstring();  // 0x69A1F0
     // IDA 0x6BB9A0 area
     static void ShutdownCleanup();  // 0x734D30
 

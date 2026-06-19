@@ -383,7 +383,7 @@ private:
     {
         static uint32_t Do(const T& val)
         {
-            return HashString(val.c_str());
+            return HashString(val.c_str());  // IDA: 0x5F9E80
         }
     };
 

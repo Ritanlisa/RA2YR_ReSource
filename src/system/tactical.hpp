@@ -76,7 +76,7 @@ public:
 
     int GetOcclusion(const CellStruct& cell, bool fog) const;
     Point2D* AdjustForZShapeMove(Point2D* dest, Point2D* client);  // 0x6D1FE0
-    static int AdjustForZ(int height);
+    static int AdjustForZ(int height);  // IDA: 0x6D1FE0
 
     // Viewport management
     void FocusOn(CoordStruct* dest, int velocity);

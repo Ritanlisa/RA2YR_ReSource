@@ -772,7 +772,7 @@ public:
     virtual void __stdcall Mark_All_Occupation_Bits(int mark) override {}               // IDA: 0x5B1B30
     virtual void __stdcall ILocomotion_B8() override {}                                  // IDA: 0x5B1B40 (Limbo)
 
-    virtual ~MechLocomotionClass() override = default;
+    virtual ~MechLocomotionClass() override = default;  // IDA: 0x5B1960
 
     virtual int Size() override { return sizeof(*this); }  // IDA: 0x454190
 

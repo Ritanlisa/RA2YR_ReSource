@@ -54,10 +54,10 @@ public:
 
     virtual void LoadFromINI(CCINIClass* ini) override;
     virtual const wchar_t* GetToolTip(unsigned int dialog_id) override;
-    virtual void CloseWindow() override;
+    virtual void CloseWindow() override;  // IDA: 0x7C865C
     virtual void vt_entry_8C() override;
     virtual bool vt_entry_90(const CellStruct& cell, HouseClass* house) override;
-    virtual bool vt_entry_94(const CellStruct& cell, HouseClass* house, bool unk) override;
+    virtual bool vt_entry_94(const CellStruct& cell, HouseClass* house, bool unk) override;  // IDA: 0x4A9CA0
     virtual bool vt_entry_98(const CellStruct& cell, HouseClass* house) override;
     virtual bool vt_entry_9C(const CellStruct& cell, HouseClass* house) override;
 

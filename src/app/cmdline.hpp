@@ -89,7 +89,7 @@ void NetworkAssignAddress(void* addr, void* port, int arg); // 0x53ECE0 (Network
 void NetworkGetField(int port);           // 0x542430 (Network::GetField)
 // IDA 0x7B2720 -- SessionClass::SetInstance
 struct SessionClass;
-void SessionClassSetInstance(int value);
+void SessionClassSetInstance(int value);  // 0x7B2720
 int  HashString(const char* str);         // 0x5F9E80 (Checksummer::HashString)
 const wchar_t* GetCSFString(const wchar_t* key, const char* file, int line); // 0x734E60 (GetStringCSF)
 

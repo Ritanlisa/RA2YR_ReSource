@@ -160,7 +160,7 @@ public:
     CellClass* TryGetCellAt(const CoordStruct& crd) const;
     CellClass* GetCellAt(const CellStruct& map_coords) const;
     CellClass* GetCellAt(const CoordStruct& crd) const;
-    bool CellExists(const CellStruct& map_coords) const;
+    bool CellExists(const CellStruct& map_coords) const;  // 0x5657E0
 
     int GetThreatPosed(const CellStruct& cell, HouseClass* house) const;
     bool IsLocationShrouded(const CoordStruct& crd) const;  // 0x4112D0
@@ -214,8 +214,8 @@ public:
     void RemoveContentAt(CellStruct* coords, TechnoClass* content);
 
     bool IsWithinUsableArea(const CellStruct& cell, bool check_level) const;  // 0x578460
-    bool IsWithinUsableArea(CellClass* cell, bool check_level) const;
-    bool IsWithinUsableArea(const CoordStruct& coords) const;
+    bool IsWithinUsableArea(CellClass* cell, bool check_level) const;  // IDA: 0x578460
+    bool IsWithinUsableArea(const CoordStruct& coords) const;  // IDA: 0x578460
     bool CoordinatesLegal(const CellStruct& cell) const;  // 0x568300
 
     CoordStruct* FindFirstFirestorm(CoordStruct* out, const CoordStruct& start, const CoordStruct& end, const HouseClass* house = nullptr) const;  // 0x5880A0
@@ -231,7 +231,7 @@ public:
     void RevealArea3(CoordStruct* coords, int height, int radius, bool skip_reveal);
 
     void Reveal(HouseClass* house);  // 0x577D90
-    void Reshroud(HouseClass* house);
+    void Reshroud(HouseClass* house);  // 0x50BD10
 
     void RedrawSidebar(int mode);
     void SetTogglePowerMode(int mode);

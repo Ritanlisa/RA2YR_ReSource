@@ -81,7 +81,7 @@ public:
     // [29] 0x5F4240 AbstractClass::COMStub_29
     virtual Action MouseOverObject(const ObjectClass* object, bool ignore_force = false) const = 0;
     // [30] 0x5F4260 ObjectClass::GetThreatLevel
-    virtual Layer InWhichLayer() const = 0;
+    virtual Layer InWhichLayer() const = 0;  // 0x424CB0
     // [31] 0x5F6C10 ObjectClass::IsAboveScreenMargin (YRpp: IsSurfaced)
     virtual bool IsSurfaced();
     // [32] 0x4263B0 AbstractClass::COMStub_Return0_32 (return false stub)
@@ -135,7 +135,7 @@ public:
     // [54] 0x5F4EC0 ObjectClass::Deploy (Unlimbo)
     virtual bool Put(const CoordStruct& coords, unsigned int face_dir);
     // [55] 0x5F5280 ObjectClass::Destroy2 (Disappear)
-    virtual void Disappear(bool permanently) = 0;
+    virtual void Disappear(bool permanently) = 0;  // 0x44EBF0
     // [56] 0x5F42F0 AbstractClass::COMStub_Return0_56
     virtual void RegisterDestruction(TechnoClass* destroyer) = 0;
     // [57] 0x5F4300 AbstractClass::COMStub_Return0_57
@@ -143,7 +143,7 @@ public:
     // [58] 0x5F5940 ObjectClass::ParachuteDrop
     virtual bool SpawnParachuted(const CoordStruct& coords) = 0;
     // [59] 0x5F4160 ObjectClass::DropAsBomb_Track
-    virtual void DropAsBomb() = 0;
+    virtual void DropAsBomb() = 0;  // 0x5F4160
     // [60] 0x5F60A0 MapClass::SetCellOverlayFlag
     virtual void MarkAllOccupationBits(const CoordStruct& coords) = 0;
     // [61] 0x5F6120 MapClass::ClearCellOverlayFlag
@@ -173,7 +173,7 @@ public:
     // [71] 0x5F4330 AbstractClass::COMStub_Return0_71 (stub retn)
     virtual void Undiscover() = 0;
     // [72] 0x5F4340 AbstractClass::COMStub_Return0_72
-    virtual void See(uint32_t unknown1, uint32_t unknown2) = 0;
+    virtual void See(uint32_t unknown1, uint32_t unknown2) = 0;  // 0x4E0240
 
     // --- Placement / Bounds ---
     // [73] 0x5F5850 ObjectClass::UpdateProductionDisplay (UpdatePlacement)
@@ -278,7 +278,7 @@ public:
     // [115] 0x5F5FA0 ObjectClass::SetZ
     virtual void SetHeight(uint32_t height);
     // [116] 0x5F5F30 ObjectClass::GetMember41
-    virtual int GetZ() const;
+    virtual int GetZ() const;  // 0x5F5F40
 
     // --- Warping state ---
     // [117] 0x4264E0 AbstractClass::COMStub_Return0_117

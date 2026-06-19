@@ -346,7 +346,7 @@ public:
         const RectangleStruct& clip_rect,
         const RectangleStruct& fill_rect, uint32_t color) override;
     virtual bool FillRect(const RectangleStruct& fill_rect, uint32_t color) override;
-    virtual bool Fill(uint32_t color) override;
+    virtual bool Fill(uint32_t color) override;  // IDA: 0x7BBAB0
     virtual bool FillRectWithFlags(
         const RectangleStruct& clip_rect,
         const ColorStruct& color,
@@ -357,7 +357,7 @@ public:
         const RectangleStruct& clip_rect,
         uint16_t color) override;
     virtual bool SetPixel(const Point2D& point, uint32_t color) override;  // 0x7BAEB0
-    virtual uint32_t GetPixel(const Point2D& point) override;
+    virtual uint32_t GetPixel(const Point2D& point) override;  // IDA: 0x7BAE60
     virtual bool DrawLineEx(
         const RectangleStruct& clip_rect, const Point2D& start,
         const Point2D& end, uint32_t color) override;
@@ -525,14 +525,14 @@ public:
         uint16_t color, bool fill_interior) override;
     virtual void* Lock(int x, int y) override;  // 0x4BAD80
     virtual bool Unlock() override;  // 0x4BAF40
-    virtual bool CanLock(uint32_t unk1, uint32_t unk2) override;
+    virtual bool CanLock(uint32_t unk1, uint32_t unk2) override;  // IDA: 0x4BAEC0
     virtual int GetBytesPerPixel() const override { return BytesPerPixel; }  // IDA: 0x4BAD60
     virtual int GetPitch() const override;
     virtual bool DrawGradientLine(
         const Point2D& start, const Point2D& end,
         int palette_idx, int fade_val,
         float* gradient_start, float* gradient_step) override;
-    virtual bool CheckBltStatus() override;
+    virtual bool CheckBltStatus() override;  // IDA: 0x4BAF20
     virtual bool IsDSurface() const override final { return true; }  // IDA: 0x4C1AB0
 
     // IDA: DSurface::CreatePrimary pixel format detection (0x4BA770 bit-shift logic)

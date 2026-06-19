@@ -39,7 +39,7 @@ public:
     virtual ObjectClass* CreateObject(HouseClass* pOwner) = 0;  // 0x4737F0
     virtual CellStruct* GetFoundationData(bool IncludeBib) const;
     virtual BuildingClass* FindFactory(bool allowOccupied, bool requirePower, bool requireCanBuild, HouseClass const* pHouse) const;
-    virtual SHPStruct* GetCameo() const;
+    virtual SHPStruct* GetCameo() const;  // 0x5471B0
     virtual SHPStruct* GetImage() const;
 
     static bool IsBuildCat5(AbstractType abstractID, int idx);

@@ -48,7 +48,7 @@ class IApplication : public IUnknown
 public:
     virtual HRESULT __stdcall FullName(BSTR* retval) = 0;
     virtual HRESULT __stdcall Name(BSTR* retval) = 0;
-    virtual HRESULT __stdcall Quit() = 0;
+    virtual HRESULT __stdcall Quit() = 0;  // 0x7C87B2
     virtual HRESULT __stdcall ScenarioName(BSTR* retval) = 0;
     virtual HRESULT __stdcall FrameCount(long* retval) = 0;
     virtual HRESULT __stdcall Swizzle_Interface(ISwizzle** pVal) = 0;
@@ -165,7 +165,7 @@ public:
     virtual void __stdcall Move_To(CoordStruct to) = 0;
     virtual void __stdcall Stop_Moving() = 0;
     virtual void __stdcall Do_Turn(unsigned short facing) = 0;
-    virtual void __stdcall Unlimbo() = 0;
+    virtual void __stdcall Unlimbo() = 0;  // 0x440580
     virtual void __stdcall Tilt_Pitch_AI() = 0;
     virtual bool __stdcall Power_On() = 0;
     virtual bool __stdcall Power_Off() = 0;

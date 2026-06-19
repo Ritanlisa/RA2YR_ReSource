@@ -42,7 +42,7 @@ public:
     virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override; // 0x524C70 (as GetClassIdentifier)
 
     virtual HRESULT __stdcall Load(IStream* pStm) override; // 0x524960 (as LoadTypeData)
-    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;
+    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;  // 0x524B60
 
     virtual ~InfantryTypeClass() = default;  // 0x524D70 (as ddtor)
 

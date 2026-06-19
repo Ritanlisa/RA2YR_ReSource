@@ -19,8 +19,8 @@ public:
 
 class RadioClass : public MissionClass {
 public:
-    virtual HRESULT __stdcall Load(IStream* stream) override;
-    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
+    virtual HRESULT __stdcall Load(IStream* stream) override;  // IDA: 0x65AB80
+    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;  // IDA: 0x65AC40
 
     virtual ~RadioClass() = default;
 
@@ -30,19 +30,19 @@ public:
     virtual void sendToEachLink(RadioCommand command);
 
     // IDA: 0x65AAC0 -- vt10: Remove a specific object from radio links
-    virtual void ExecuteAction(TechnoClass* obj, bool clear);
+    virtual void ExecuteAction(TechnoClass* obj, bool clear);  // IDA: 0x65AAC0
     // IDA: 0x65AD90 -- Linear search for linked object index
-    virtual int FindLinkIndex(TechnoClass* obj);
+    virtual int FindLinkIndex(TechnoClass* obj);  // IDA: 0x65AD90
     // IDA: 0x65AB10 -- vt13: Update power drain for all linked objects
-    virtual void PowerDrainUpdate();
+    virtual void PowerDrainUpdate();  // IDA: 0x65AB10
     // IDA: 0x65AA80 -- vt53: Process undeploy command
-    virtual void ProcessCmd();
+    virtual void ProcessCmd();  // IDA: 0x65AA80
     // IDA: 0x65AB80 -- Load radio link state from stream
-    virtual HRESULT __stdcall LoadState(IStream* stream);
+    virtual HRESULT __stdcall LoadState(IStream* stream);  // IDA: 0x65AB80
     // IDA: 0x65AC40 -- Save radio link state to stream
-    virtual HRESULT __stdcall SaveState(IStream* stream, int clear_dirty);
+    virtual HRESULT __stdcall SaveState(IStream* stream, int clear_dirty);  // IDA: 0x65AC40
     // IDA: 0x65AE60 -- Resize radio link array
-    virtual void SetLinkCount(int count);
+    virtual void SetLinkCount(int count);  // IDA: 0x65AE60
 
     TechnoClass* const& getNthLink(int idx = 0) const;
     bool hasFreeLink() const;  // 0x65ADC0

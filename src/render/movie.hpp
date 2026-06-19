@@ -21,7 +21,7 @@ public:
     virtual int  GetHeight() const = 0;   // Movie pixel height
     virtual bool IsPlaying() const = 0;   // Is a frame currently playing?
     virtual bool AdvanceFrame() = 0;      // Advance to next frame
-    virtual void RenderFrame(DSurface* target) = 0;  // Blit current frame to surface
+    virtual void RenderFrame(DSurface* target) = 0;  // Blit current frame to surface  // 0x432AB0
     virtual void Stop() = 0;              // Stop playback
 };
 

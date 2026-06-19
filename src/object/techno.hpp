@@ -87,7 +87,7 @@ class TechnoClass : public RadioClass {
 public:
     static constexpr AbstractType kObjectDeriveId = static_cast<AbstractType>(0x1);
 
-    virtual HRESULT __stdcall Load(IStream* stream) override;
+    virtual HRESULT __stdcall Load(IStream* stream) override;  // IDA: 0x4158E0
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
 
     virtual ~TechnoClass() = default;  // 0x6F4500
@@ -110,7 +110,7 @@ public:
     virtual int getThreatValue() const;  // 0x4DED70
     virtual bool canBeAttacked(uint32_t a);
     virtual uint32_t getSpecialValue(uint32_t a, uint32_t b);  // 0x55AD10
-    virtual bool canCrush(uint32_t a);
+    virtual bool canCrush(uint32_t a);  // 0x7438F0
     virtual int getCrewCount() const;  // 0x6F3950
     virtual int getAntiAirValue() const;
     virtual int getAntiArmorValue() const;
@@ -164,7 +164,7 @@ public:
     virtual bool TargetAndEstimateDamage(uint32_t a, uint32_t b);
     virtual uint32_t getDamageReduction();
     virtual bool TriggersCellInset(AbstractClass* target);
-    virtual bool IsCloseEnough(AbstractClass* target, int weapon_idx) const;
+    virtual bool IsCloseEnough(AbstractClass* target, int weapon_idx) const;  // IDA: 0x70D590
     virtual bool IsCloseEnoughToAttack(AbstractClass* target) const;
     virtual bool IsCloseEnoughToAttackCoords(const CoordStruct& coords) const;
     virtual uint32_t getSightRange(uint32_t a) const;  // 0x717800
@@ -172,7 +172,7 @@ public:
     virtual FireError GetFireErrorWithoutRange(AbstractClass* target, int weapon_index) const;
     virtual FireError GetFireError(AbstractClass* target, int weapon_index, bool ignore_range) const;
     virtual CellClass* SelectAutoTarget(TargetFlags flags, int current_threat, bool only_target_house_enemy);  // 0x51E140
-    virtual void SetTarget(AbstractClass* target);
+    virtual void SetTarget(AbstractClass* target);  // IDA: 0x6F9DD0
     virtual BulletClass* Fire(AbstractClass* target, int weapon_index);  // 0x70ECE0
     virtual void Guard();
     virtual bool SetOwningHouse(HouseClass* house, bool announce = true);
@@ -182,7 +182,7 @@ public:
     virtual int isNotSprayAttack() const;
     virtual int canAct();
     virtual int isNotSprayAttack2() const;
-    virtual WeaponStruct* GetDeployWeapon() const;
+    virtual WeaponStruct* GetDeployWeapon() const;  // 0x5218E0
     virtual WeaponStruct* GetTurretWeapon() const;
     virtual WeaponStruct* GetWeapon(int weapon_index) const;
     virtual bool hasTurret() const;
@@ -196,7 +196,7 @@ public:
     virtual void DestroyGap();
     virtual void onBridgeRepair();
     virtual void Sensed();
-    virtual void Reload();
+    virtual void Reload();  // IDA: 0x4158E0
     virtual void onReloadComplete();
     virtual CoordStruct* GetTargetCoords(CoordStruct* pCrd) const;  // 0x70BCB0
     virtual bool IsNotWarpingIn() const;
@@ -206,23 +206,23 @@ public:
     virtual bool isClearlyVisibleTo(HouseClass* house) const;
     virtual void drawSelectionBox(uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5,
         uint32_t a6, uint32_t a7, uint32_t a8, uint32_t a9, uint32_t a10) {}
-    virtual void onSelect(uint32_t a, uint32_t b);
+    virtual void onSelect(uint32_t a, uint32_t b);  // 0x6EFC70
     virtual void DrawHealthBar(Point2D* pLocation, RectangleStruct* pBounds, bool bUnk3) const;
     virtual void DrawPipScalePips(Point2D* pLocation, Point2D* pOriginalLocation, RectangleStruct* pBounds) const;
     virtual void DrawVeterancyPips(Point2D* pLocation, RectangleStruct* pBounds) const;
     virtual void DrawExtraInfo(Point2D const& location, Point2D const& originalLocation, RectangleStruct const& bounds) const;
     virtual void Uncloak(bool play_sound);
     virtual void Cloak(bool play_sound);
-    virtual uint32_t getSight(uint32_t dwUnk) const;
+    virtual uint32_t getSight(uint32_t dwUnk) const;  // IDA: 0x717800
     virtual void UpdateRefinerySmokeSystems();
     virtual uint32_t DisguiseAs(AbstractClass* pTarget);
     virtual void ClearDisguise();
     virtual bool IsItTimeForIdleActionYet() const;
     virtual bool UpdateIdleAction();
-    virtual void onDamage(uint32_t dwUnk);
+    virtual void onDamage(uint32_t dwUnk);  // 0x45EE70
     virtual void SetDestination(AbstractClass* dest, bool unknown);
     virtual bool canRecruit(uint32_t dwUnk, uint32_t dwUnk2);
-    virtual void UpdateSight(uint32_t a, uint32_t b, uint32_t c, uint32_t d, uint32_t e);
+    virtual void UpdateSight(uint32_t a, uint32_t b, uint32_t c, uint32_t d, uint32_t e);  // 0x4C2BD0
     virtual void onPlacement(uint32_t a, uint32_t b, uint32_t c, uint32_t d);
     virtual void onBuildingPlacement(uint32_t a, uint32_t b) = 0;
     virtual void RadarTrackingStart();
@@ -235,7 +235,7 @@ public:
     virtual bool isSpawning() const;
     virtual int getSpawnCount() const;
     virtual CoordStruct* getSpawnCoords(CoordStruct* out);
-    virtual uint32_t processSpawn();
+    virtual uint32_t processSpawn();  // 0x71D000
     virtual bool canAttackOnTheMove() const;
     virtual bool canTarget() const;
     virtual bool selectTarget();  // 0x41BEF0
@@ -245,7 +245,7 @@ public:
     // === Phase 3 generated declarations (IDA functions.json) ===
     virtual int ApplyIronCurtain();  // 0x4155F0
     virtual int ReturnToBase();  // 0x4157C0
-    virtual int ReturnToBaseAndReload();  // 0x4158E0
+    virtual int ReturnToBaseAndReload();   // IDA: 0x4158E0
     virtual int ScatterFromThreat();  // 0x415960
     virtual int ExecuteMissionCommand();  // 0x417CA0
     virtual int FindNearbyBuildCell();  // 0x4195A0
@@ -348,7 +348,7 @@ public:
     virtual int IsNotAircraftOrBuilding() const;  // 0x6F3280
     virtual int SelectWeapon();
     virtual int CanTargetHouse() const;  // 0x6F3820
-    virtual int CanSelfRepair();
+    virtual int CanSelfRepair();  // IDA: 0x70FB50
     virtual int Mission_RepairDispatch();  // 0x6F4AB0
     virtual int PushNearbyUnits();  // 0x6F4EB0
     virtual int SetFocus();  // 0x7C8674
@@ -362,7 +362,7 @@ public:
     virtual int ProcessCapture();
     virtual int GetRangeModifier() const;  // 0x70D190
     virtual int ShouldScanArea() const;  // 0x70D1D0
-    virtual int IsCloseEnoughToBuilding() const;  // 0x70D590
+    virtual int IsCloseEnoughToBuilding() const;   // IDA: 0x70D590
     virtual int IsCellPassableFor() const;  // 0x70D460
     virtual int IsPlayerCellPassable() const;  // 0x70D420
     virtual int SetMoveDestination();  // 0x708D90
@@ -385,19 +385,19 @@ public:
     virtual int Vt46Thunk();  // 0x70ADA0
     virtual int RevealAreaSmall();  // 0x70ADC0
     virtual int ScanForEnemies();  // 0x70AF50
-    virtual int GetTargetCoords();
+    virtual int GetTargetCoords();  // IDA: 0x70BCB0
     virtual int CalcOffsetFacing() const;  // 0x70BE50
-    virtual int ShouldSelfHealOneStep() const;
+    virtual int ShouldSelfHealOneStep() const;  // IDA: 0x70BE80
     virtual int ComputeThreatLevel();  // 0x4D97A0
     virtual int CanBeTargeted() const;  // 0x744270
     virtual int GetCommandTooltip() const;  // 0x746B20
-    virtual int ShouldBeCloaked() const;
-    virtual int ShouldNotBeCloaked() const;
-    virtual int SetTargetIfAllowed();  // 0x6F9DD0
+    virtual int ShouldBeCloaked() const;  // IDA: 0x6FBDC0
+    virtual int ShouldNotBeCloaked() const;  // IDA: 0x6FBC90
+    virtual int SetTargetIfAllowed();   // IDA: 0x6F9DD0
     virtual int CanReceivePassengers() const;  // 0x700C40
     virtual int GetTarget() const;  // 0x6F9DC0
     virtual int GetID() const;  // 0x6F9DB0
-    virtual int GetSightRange() const;
+    virtual int GetSightRange() const;  // IDA: 0x717800
     virtual int CheckAndFireAtTarget();  // 0x6F78D0
     virtual int GattlingRateUp_GattlingRateDownReset();  // 0x70DE70
     virtual int GattlingValueRateDown_GattlingRateDownDelay();  // 0x70DE40
@@ -415,7 +415,7 @@ public:
     virtual int IsTimerExpired() const;  // 0x7099E0
     virtual int GetAudioEntry() const;  // 0x7177C0
     virtual int GetTertiaryTargetOrFallback() const;  // 0x709060
-    virtual int VoiceAttack();
+    virtual int VoiceAttack();  // IDA: 0x7090A0
     virtual int ResponseMove_Pickup();  // 0x708FC0
     virtual int Vt170();  // 0x708D70
     virtual int CanAttack() const;  // 0x700D50
@@ -475,7 +475,7 @@ public:
     virtual int GetBuildAnim() const;  // 0x705D70
     virtual int IsNotBusy() const;  // 0x705D50
     virtual int EvaluateMission();  // 0x708080
-    virtual int GetThreatValue() const;
+    virtual int GetThreatValue() const;  // IDA: 0x4DED70
     virtual int GetThreatValue_0() const;  // 0x5216C0
     virtual int ProcessBorderTower();  // 0x6ED4D0
     virtual int HandleCursor();  // 0x700600
@@ -520,7 +520,7 @@ public:
     virtual int GetWaypointCoords() const;
     virtual int Create();
     virtual int CopyStateFrom();  // 0x4B5210
-    virtual int ScalarDtor();
+    virtual int ScalarDtor();  // 0x5AC340
     virtual int EnteredOpenTopped();  // 0x710470
     virtual int MarkPassengersAsExited();  // 0x7104C0
     virtual int ExitedOpenTopped();  // 0x7104A0

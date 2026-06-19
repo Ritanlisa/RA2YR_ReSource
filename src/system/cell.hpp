@@ -113,7 +113,7 @@ public:
 
     static CoordStruct Cell2Coord(const CellStruct& cell, int z = 0)
     {
-        return CoordStruct(cell.X * 256 + 128, cell.Y * 256 + 128, z);
+        return CoordStruct(cell.X * 256 + 128, cell.Y * 256 + 128, z);  // 0x642740
     }
 
     static CellStruct Coord2Cell(const CoordStruct& crd)
@@ -125,7 +125,7 @@ public:
     ObjectClass* FindObjectOfType(AbstractType type, bool alt) const;
     BuildingClass* GetBuilding() const;
     UnitClass* GetUnit(bool alt) const;
-    InfantryClass* GetInfantry(bool alt) const;
+    InfantryClass* GetInfantry(bool alt) const;  // 0x7404B0
     AircraftClass* GetAircraft(bool alt) const;
     TerrainClass* GetTerrain(bool alt) const;
     ObjectClass* GetSomeObject(const CoordStruct& coords, bool alt) const;
@@ -172,7 +172,7 @@ public:
     void SetRadSite(RadSiteClass* rad) { radSite = rad; }
     RadSiteClass* GetRadSite() const { return radSite; }
     bool IsRadiated() const;
-    int GetRadLevel() const;
+    int GetRadLevel() const;  // 0x65B8F0
     void RadLevelIncrease(double amount);
     void RadLevelDecrease(double amount);
 

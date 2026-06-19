@@ -45,7 +45,7 @@ public:
     GadgetClass() = default;
     virtual ~GadgetClass() = default;  // 0x4E1390
 
-    virtual void Draw(DSurface* surface, TextRenderer* text) = 0;
+    virtual void Draw(DSurface* surface, TextRenderer* text) = 0;  // 0x557920
     virtual bool OnClick(int x, int y);
     virtual void OnMouseEnter() = 0;
     virtual void OnMouseLeave() = 0;
@@ -123,7 +123,7 @@ public:
     DialogClass(int x, int y, int w, int h);
     virtual ~DialogClass() = default;
 
-    virtual void OnRender(DSurface* surface, TextRenderer* text);
+    virtual void OnRender(DSurface* surface, TextRenderer* text);  // 0x68F060
     virtual void OnupdateLogic();
     virtual bool OnMouseClick(int mouse_x, int mouse_y);
     virtual void OnMouseMove(int mouse_x, int mouse_y);

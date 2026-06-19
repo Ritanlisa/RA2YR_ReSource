@@ -1,0 +1,1535 @@
+{
+  "found": 156,
+  "total": 2622,
+  "exact_count": 33,
+  "substr_count": 123,
+  "results": [
+    {
+      "file": "src\\core\\coordinate.hpp",
+      "line": 59,
+      "class_name": null,
+      "func_name": "IsCloseEnough",
+      "declaration": "bool IsCloseEnough(const CoordStruct& a, const CoordStruct& b, int range) noexcept;",
+      "address": "0x70D590",
+      "ida_match": "TechnoClass::IsCloseEnoughToBuilding",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\core\\interfaces.hpp",
+      "line": 51,
+      "class_name": "IApplication",
+      "func_name": "Quit",
+      "declaration": "virtual HRESULT __stdcall Quit() = 0;",
+      "address": "0x7C87B2",
+      "ida_match": "PostQuitMessage",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\core\\interfaces.hpp",
+      "line": 168,
+      "class_name": "ILocomotion",
+      "func_name": "Unlimbo",
+      "declaration": "virtual void __stdcall Unlimbo() = 0;",
+      "address": "0x440580",
+      "ida_match": "BuildingClass::Unlimbo_UnitDeliveryFix",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\core\\load_options.hpp",
+      "line": 127,
+      "class_name": "LoadOptions",
+      "func_name": "SetMode",
+      "declaration": "void SetMode(uint32_t m);",
+      "address": "0x7DC468",
+      "ida_match": "__setmode_lk",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\core\\math.hpp",
+      "line": 252,
+      "class_name": "ColorStruct",
+      "func_name": "ColorStruct",
+      "declaration": "constexpr ColorStruct() noexcept = default;",
+      "address": "0x4A35A0",
+      "ida_match": "ColorStruct::SetRGB",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\core\\math.hpp",
+      "line": 254,
+      "class_name": "ColorStruct",
+      "func_name": "R",
+      "declaration": ": R(r), G(g), B(b) {}",
+      "address": "0x4A35A0",
+      "ida_match": "ColorStruct::SetRGB",
+      "match_type": "substring+class"
+    },
+    {
+      "file": "src\\core\\stream_ext.hpp",
+      "line": 33,
+      "class_name": "StreamClass",
+      "func_name": "Flush",
+      "declaration": "virtual void Flush();",
+      "address": "0x7AEF50",
+      "ida_match": "ComStreamClass::flushStream",
+      "match_type": "substring+class"
+    },
+    {
+      "file": "src\\core\\stream_ext.hpp",
+      "line": 35,
+      "class_name": "StreamClass",
+      "func_name": "Close",
+      "declaration": "virtual void Close();",
+      "address": "0x76B090",
+      "ida_match": "ComStreamClass::closeStream",
+      "match_type": "substring+class"
+    },
+    {
+      "file": "src\\core\\stream_ext.hpp",
+      "line": 62,
+      "class_name": "Stream",
+      "func_name": "ReadInt",
+      "declaration": "int32_t ReadInt();",
+      "address": "0x49FB70",
+      "ida_match": "Stream::ReadIntArray",
+      "match_type": "substring+class"
+    },
+    {
+      "file": "src\\core\\stream_ext.hpp",
+      "line": 64,
+      "class_name": "Stream",
+      "func_name": "WriteInt",
+      "declaration": "void WriteInt(int32_t val);",
+      "address": "0x67A4A0",
+      "ida_match": "Stream::WriteIntArray",
+      "match_type": "substring+class"
+    },
+    {
+      "file": "src\\core\\stream_ext.hpp",
+      "line": 74,
+      "class_name": "Stream",
+      "func_name": "GetSize",
+      "declaration": "int32_t GetSize();",
+      "address": "0x70C250",
+      "ida_match": "IPersistStream::GetSizeMax",
+      "match_type": "substring+class"
+    },
+    {
+      "file": "src\\core\\target.hpp",
+      "line": 118,
+      "class_name": null,
+      "func_name": "Kind",
+      "declaration": "AbstractType Kind() const { return TargetKind(m_target); }",
+      "address": "0x65AD90",
+      "ida_match": "RadioClass::FindLinkIndex",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\core\\utility_ext.hpp",
+      "line": 129,
+      "class_name": "Buffer",
+      "func_name": "Constructor_VectorClass_ObjectClass",
+      "declaration": "void Constructor_VectorClass_ObjectClass();",
+      "address": "0x488030",
+      "ida_match": "Buffer::Constructor_VectorClass_ObjectClass___",
+      "match_type": "substring+class"
+    },
+    {
+      "file": "src\\core\\utility_ext.hpp",
+      "line": 209,
+      "class_name": "Struct",
+      "func_name": "InitArray",
+      "declaration": "static void InitArray(void* arr, int32_t stride, int32_t count);",
+      "address": "0x5C6940",
+      "ida_match": "InitArrayWithValue",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\core\\utility_ext.hpp",
+      "line": 211,
+      "class_name": "Struct",
+      "func_name": "MemSet",
+      "declaration": "static void MemSet(void* dst, uint8_t val, int32_t count);",
+      "address": "0x7D75E0",
+      "ida_match": "_memset",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\core\\utility_ext.hpp",
+      "line": 215,
+      "class_name": "Struct",
+      "func_name": "FillZero",
+      "declaration": "static void FillZero(void* ptr, int32_t count);",
+      "address": "0x7D79FB",
+      "ida_match": "__FillZeroMan",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\core\\utility_ext.hpp",
+      "line": 266,
+      "class_name": "Rect",
+      "func_name": "Intersects",
+      "declaration": "bool Intersects(const Rect& other) const;",
+      "address": "0x7BBE20",
+      "ida_match": "IntersectSurfaceRects",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\core\\utility_ext.hpp",
+      "line": 270,
+      "class_name": "Rect",
+      "func_name": "Clip",
+      "declaration": "void Clip(const Rect& clip);",
+      "address": "0x421B60",
+      "ida_match": "ClipRectIntersection",
+      "match_type": "substring+class"
+    },
+    {
+      "file": "src\\core\\utility_ext.hpp",
+      "line": 614,
+      "class_name": "WinMain",
+      "func_name": "Constructor_VectorClass_Wstring",
+      "declaration": "static void Constructor_VectorClass_Wstring();",
+      "address": "0x69A1F0",
+      "ida_match": "WinMain::Constructor_VectorClass_Wstring_",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\entity\\particle.hpp",
+      "line": 26,
+      "class_name": "ParticleClass",
+      "func_name": "GetClassID",
+      "declaration": "virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override;",
+      "address": "0x62D930",
+      "ida_match": "ParticleClass::GetClassIdentifier",
+      "match_type": "substring+class"
+    },
+    {
+      "file": "src\\entity\\particle.hpp",
+      "line": 27,
+      "class_name": "ParticleClass",
+      "func_name": "Load",
+      "declaration": "virtual HRESULT __stdcall Load(IStream* pStm) override;",
+      "address": "0x62D7A0",
+      "ida_match": "ParticleClass::LoadParticleData",
+      "match_type": "substring+class"
+    },
+    {
+      "file": "src\\entity\\particle.hpp",
+      "line": 33,
+      "class_name": "ParticleClass",
+      "func_name": "objectSize",
+      "declaration": "virtual int objectSize() const override;",
+      "address": "0x62D970",
+      "ida_match": "ParticleClass::GetObjectSize",
+      "match_type": "substring+class"
+    },
+    {
+      "file": "src\\entity\\particle_system.hpp",
+      "line": 39,
+      "class_name": "ParticleSystemClass",
+      "func_name": "GetClassID",
+      "declaration": "virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override;",
+      "address": "0x4E8470",
+      "ida_match": "ParticleSystemClass::GetClassIdentifier",
+      "match_type": "substring+class"
+    },
+    {
+      "file": "src\\entity\\particle_system.hpp",
+      "line": 40,
+      "class_name": "ParticleSystemClass",
+      "func_name": "Load",
+      "declaration": "virtual HRESULT __stdcall Load(IStream* pStm) override;",
+      "address": "0x4E84A0",
+      "ida_match": "ParticleSystemClass::LoadTypeData",
+      "match_type": "substring+class"
+    },
+    {
+      "file": "src\\entity\\particle_system.hpp",
+      "line": 41,
+      "class_name": "ParticleSystemClass",
+      "func_name": "Save",
+      "declaration": "virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;",
+      "address": "0x4E84C0",
+      "ida_match": "ParticleSystemClass::SaveToINI",
+      "match_type": "substring+class"
+    },
+    {
+      "file": "src\\entity\\particle_system.hpp",
+      "line": 46,
+      "class_name": "ParticleSystemClass",
+      "func_name": "objectSize",
+      "declaration": "virtual int objectSize() const override;",
+      "address": "0x630200",
+      "ida_match": "ParticleSystemClass::GetObjectSize",
+      "match_type": "substring+class"
+    },
+    {
+      "file": "src\\entity\\rad_site.hpp",
+      "line": 55,
+      "class_name": "RadSiteClass",
+      "func_name": "GetRadLevel",
+      "declaration": "int GetRadLevel() const;",
+      "address": "0x65B8F0",
+      "ida_match": "RadSiteClass::GetRadLevelAt",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\entity\\rad_site.hpp",
+      "line": 59,
+      "class_name": "RadSiteClass",
+      "func_name": "Activate",
+      "declaration": "void Activate();",
+      "address": "0x65BB50",
+      "ida_match": "RadSiteClass::Deactivate",
+      "match_type": "substring+class"
+    },
+    {
+      "file": "src\\entity\\terrain.hpp",
+      "line": 26,
+      "class_name": "TerrainClass",
+      "func_name": "Load",
+      "declaration": "virtual HRESULT __stdcall Load(IStream* pStm) override;",
+      "address": "0x71CDA0",
+      "ida_match": "TerrainClass::LoadFromStream",
+      "match_type": "substring+class"
+    },
+    {
+      "file": "src\\entity\\tube.hpp",
+      "line": 35,
+      "class_name": "TubeClass",
+      "func_name": "Load",
+      "declaration": "virtual HRESULT __stdcall Load(IStream* pStm) override;",
+      "address": "0x7281A0",
+      "ida_match": "TubeClass::LoadState",
+      "match_type": "substring+class"
+    },
+    {
+      "file": "src\\entity\\tube.hpp",
+      "line": 36,
+      "class_name": "TubeClass",
+      "func_name": "Save",
+      "declaration": "virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;",
+      "address": "0x7281E0",
+      "ida_match": "TubeClass::SaveState",
+      "match_type": "substring+class"
+    },
+    {
+      "file": "src\\entity\\wave.hpp",
+      "line": 37,
+      "class_name": "WaveClass",
+      "func_name": "Load",
+      "declaration": "virtual HRESULT __stdcall Load(IStream* pStm) override;",
+      "address": "0x75F650",
+      "ida_match": "WaveClass::LoadWaveData",
+      "match_type": "substring+class"
+    },
+    {
+      "file": "src\\entity\\wave.hpp",
+      "line": 39,
+      "class_name": "WaveClass",
+      "func_name": "GetClassID",
+      "declaration": "virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override;",
+      "address": "0x75F840",
+      "ida_match": "WaveClass::GetClassIdentifier",
+      "match_type": "substring+class"
+    },
+    {
+      "file": "src\\entity\\wave.hpp",
+      "line": 44,
+      "class_name": "WaveClass",
+      "func_name": "objectSize",
+      "declaration": "virtual int objectSize() const override;",
+      "address": "0x75F880",
+      "ida_match": "WaveClass::GetObjectSize",
+      "match_type": "substring+class"
+    },
+    {
+      "file": "src\\house\\house.hpp",
+      "line": 177,
+      "class_name": null,
+      "func_name": "GiveMoney",
+      "declaration": "void GiveMoney(int amount);",
+      "address": "0x522D50",
+      "ida_match": "InfantryClass::SlaveGiveMoney_RecordBalanceBefore",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\house\\house.hpp",
+      "line": 188,
+      "class_name": null,
+      "func_name": "GiveTiberium",
+      "declaration": "void GiveTiberium(float amount, int type);",
+      "address": "0x4F9610",
+      "ida_match": "HouseClass::GiveTiberium_Storage",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\house\\house.hpp",
+      "line": 204,
+      "class_name": null,
+      "func_name": "AITryFireSW",
+      "declaration": "void AITryFireSW();",
+      "address": "0x5098F0",
+      "ida_match": "HouseClass::UpdateAITryFireSW",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\house\\house.hpp",
+      "line": 205,
+      "class_name": null,
+      "func_name": "FireSW",
+      "declaration": "bool FireSW(int idx, const CellStruct& coords);",
+      "address": "0x5098F0",
+      "ida_match": "HouseClass::UpdateAITryFireSW",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\house\\house_type.hpp",
+      "line": 38,
+      "class_name": "HouseTypeClass",
+      "func_name": "objectSize",
+      "declaration": "virtual int objectSize() const override;",
+      "address": "0x512720",
+      "ida_match": "HouseTypeClass::GetObjectSize",
+      "match_type": "substring+class"
+    },
+    {
+      "file": "src\\misc\\audio.hpp",
+      "line": 122,
+      "class_name": "VoxClass",
+      "func_name": "Play",
+      "declaration": "static void Play(const char* pName, int32_t unk1 = -1, int32_t unk2 = -1);",
+      "address": "0x752700",
+      "ida_match": "VoxClass::FindAndPlay",
+      "match_type": "substring+class"
+    },
+    {
+      "file": "src\\misc\\audio_ext.hpp",
+      "line": 33,
+      "class_name": "AudioMixer",
+      "func_name": "StopAll",
+      "declaration": "void StopAll();",
+      "address": "0x403730",
+      "ida_match": "AudioQueue::StopAllVoices",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\misc\\rules.hpp",
+      "line": 74,
+      "class_name": "RulesClass",
+      "func_name": "Init",
+      "declaration": "void Init(CCINIClass* pINI);",
+      "address": "0x538B30",
+      "ida_match": "RulesClass::InitINIChain",
+      "match_type": "substring+class"
+    },
+    {
+      "file": "src\\misc\\rules.hpp",
+      "line": 76,
+      "class_name": "RulesClass",
+      "func_name": "ReadGeneral",
+      "declaration": "void ReadGeneral(CCINIClass* pINI);",
+      "address": "0x6614F0",
+      "ida_match": "RulesClass::readGeneralSection",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\misc\\rules.hpp",
+      "line": 91,
+      "class_name": "RulesClass",
+      "func_name": "ReadSides",
+      "declaration": "void ReadSides(CCINIClass* pINI);",
+      "address": "0x6725F0",
+      "ida_match": "RulesClass::ReadSidesList",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\misc\\rules.hpp",
+      "line": 103,
+      "class_name": "RulesClass",
+      "func_name": "ReadPowerups",
+      "declaration": "void ReadPowerups(CCINIClass* pINI);",
+      "address": "0x673E80",
+      "ida_match": "RulesClass::ReadPowerupsSection",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\network\\connection.hpp",
+      "line": 29,
+      "class_name": "ConnectionClass",
+      "func_name": "IsConnected",
+      "declaration": "virtual bool  IsConnected() const;",
+      "address": "0x5E2BE0",
+      "ida_match": "Network::CountDisconnectedHouses",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\network\\network_ext.hpp",
+      "line": 29,
+      "class_name": "MultiplayerSiege",
+      "func_name": "Process",
+      "declaration": "void Process();",
+      "address": "0x5CA800",
+      "ida_match": "MultiplayerSiege::ProcessTurn",
+      "match_type": "substring+class"
+    },
+    {
+      "file": "src\\network\\session.hpp",
+      "line": 127,
+      "class_name": "SessionClass",
+      "func_name": "IsMultiplayer",
+      "declaration": "bool IsMultiplayer() const;",
+      "address": "0x77D940",
+      "ida_match": "Network::IsMultiplayerActive",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\object\\abstract.hpp",
+      "line": 43,
+      "class_name": "IPersistStream",
+      "func_name": "Load",
+      "declaration": "virtual HRESULT __stdcall Load(IStream* stream) = 0;",
+      "address": "0x55AA60",
+      "ida_match": "LoadIPersistStream",
+      "match_type": "substring+class"
+    },
+    {
+      "file": "src\\object\\abstract.hpp",
+      "line": 52,
+      "class_name": "IRTTITypeInfo",
+      "func_name": "createId",
+      "declaration": "virtual void __stdcall createId() = 0;",
+      "address": "0x486920",
+      "ida_match": "BuildingClass::CreateIdleAnim",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\object\\abstract.hpp",
+      "line": 89,
+      "class_name": "AbstractClass",
+      "func_name": "createId",
+      "declaration": "virtual void __stdcall createId() override;",
+      "address": "0x486920",
+      "ida_match": "BuildingClass::CreateIdleAnim",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\object\\abstract.hpp",
+      "line": 115,
+      "class_name": "AbstractClass",
+      "func_name": "isDead",
+      "declaration": "virtual bool isDead() const;",
+      "address": "0x700D10",
+      "ida_match": "TechnoClass::IsDeadOrInactive",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\object\\capture_manager.hpp",
+      "line": 19,
+      "class_name": "CaptureManagerClass",
+      "func_name": "GetClassID",
+      "declaration": "virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return 0; }",
+      "address": "0x472960",
+      "ida_match": "CaptureManagerClass::GetClassIdentifier",
+      "match_type": "substring+class"
+    },
+    {
+      "file": "src\\object\\foot.hpp",
+      "line": 38,
+      "class_name": "FootClass",
+      "func_name": "processSuperWeapon",
+      "declaration": "virtual void processSuperWeapon(CellStruct* cell);",
+      "address": "0x44C980",
+      "ida_match": "BuildingClass::ProcessSuperWeaponEffects",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\object\\foot.hpp",
+      "line": 56,
+      "class_name": null,
+      "func_name": "Panic",
+      "declaration": "virtual void Panic();",
+      "address": "0x772AC0",
+      "ida_match": "InfantryClass::startPanic",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\object\\foot.hpp",
+      "line": 62,
+      "class_name": null,
+      "func_name": "isAreaClear",
+      "declaration": "virtual uint32_t isAreaClear(uint32_t a, uint32_t b, uint32_t c) const;",
+      "address": "0x5A7250",
+      "ida_match": "IsAreaClearMap",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\object\\mission.hpp",
+      "line": 24,
+      "class_name": "MissionClass",
+      "func_name": "Load",
+      "declaration": "virtual HRESULT __stdcall Load(IStream* stream) override;",
+      "address": "0x5B3760",
+      "ida_match": "MissionClass::LoadFromINI",
+      "match_type": "substring+class"
+    },
+    {
+      "file": "src\\object\\mission.hpp",
+      "line": 54,
+      "class_name": "MissionClass",
+      "func_name": "Mission_Repair",
+      "declaration": "virtual int Mission_Repair();",
+      "address": "0x6F4AB0",
+      "ida_match": "TechnoClass::Mission_RepairDispatch",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\object\\object.hpp",
+      "line": 84,
+      "class_name": "ObjectClass",
+      "func_name": "InWhichLayer",
+      "declaration": "virtual Layer InWhichLayer() const = 0;",
+      "address": "0x424CB0",
+      "ida_match": "AnimClass::InWhichLayer_AttachedObjectLayer",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\object\\object.hpp",
+      "line": 138,
+      "class_name": "ObjectClass",
+      "func_name": "Disappear",
+      "declaration": "virtual void Disappear(bool permanently) = 0;",
+      "address": "0x44EBF0",
+      "ida_match": "BuildingClass::Disappear_PrismForward",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\object\\object.hpp",
+      "line": 146,
+      "class_name": "ObjectClass",
+      "func_name": "DropAsBomb",
+      "declaration": "virtual void DropAsBomb() = 0;",
+      "address": "0x5F4160",
+      "ida_match": "ObjectClass::DropAsBomb_Track",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\object\\object.hpp",
+      "line": 176,
+      "class_name": "ObjectClass",
+      "func_name": "See",
+      "declaration": "virtual void See(uint32_t unknown1, uint32_t unknown2) = 0;",
+      "address": "0x4E0240",
+      "ida_match": "FoggedObjectClass[42]::Seek",
+      "match_type": "substring+class"
+    },
+    {
+      "file": "src\\object\\object.hpp",
+      "line": 281,
+      "class_name": "ObjectClass",
+      "func_name": "GetZ",
+      "declaration": "virtual int GetZ() const;",
+      "address": "0x5F5F40",
+      "ida_match": "ObjectClass::GetZAboveGround",
+      "match_type": "substring+class"
+    },
+    {
+      "file": "src\\object\\parasite.hpp",
+      "line": 18,
+      "class_name": "ParasiteClass",
+      "func_name": "Load",
+      "declaration": "virtual HRESULT __stdcall Load(IStream* stream) override;",
+      "address": "0x6295B0",
+      "ida_match": "ParasiteClass::LoadParasite",
+      "match_type": "substring+class"
+    },
+    {
+      "file": "src\\object\\parasite.hpp",
+      "line": 19,
+      "class_name": "ParasiteClass",
+      "func_name": "Save",
+      "declaration": "virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;",
+      "address": "0x6296B0",
+      "ida_match": "ParasiteClass::SaveParasite",
+      "match_type": "substring+class"
+    },
+    {
+      "file": "src\\object\\radio.hpp",
+      "line": 22,
+      "class_name": "RadioClass",
+      "func_name": "Load",
+      "declaration": "virtual HRESULT __stdcall Load(IStream* stream) override;",
+      "address": "0x65AB80",
+      "ida_match": "RadioClass::LoadState",
+      "match_type": "substring+class"
+    },
+    {
+      "file": "src\\object\\radio.hpp",
+      "line": 23,
+      "class_name": "RadioClass",
+      "func_name": "Save",
+      "declaration": "virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;",
+      "address": "0x65AC40",
+      "ida_match": "RadioClass::SaveState",
+      "match_type": "substring+class"
+    },
+    {
+      "file": "src\\object\\techno.hpp",
+      "line": 90,
+      "class_name": "TechnoClass",
+      "func_name": "Load",
+      "declaration": "virtual HRESULT __stdcall Load(IStream* stream) override;",
+      "address": "0x4158E0",
+      "ida_match": "TechnoClass::ReturnToBaseAndReload",
+      "match_type": "substring+class"
+    },
+    {
+      "file": "src\\object\\techno.hpp",
+      "line": 113,
+      "class_name": "TechnoClass",
+      "func_name": "canCrush",
+      "declaration": "virtual bool canCrush(uint32_t a);",
+      "address": "0x7438F0",
+      "ida_match": "UnitClass::CanCrushTarget",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\object\\techno.hpp",
+      "line": 167,
+      "class_name": "TechnoClass",
+      "func_name": "IsCloseEnough",
+      "declaration": "virtual bool IsCloseEnough(AbstractClass* target, int weapon_idx) const;",
+      "address": "0x70D590",
+      "ida_match": "TechnoClass::IsCloseEnoughToBuilding",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\object\\techno.hpp",
+      "line": 175,
+      "class_name": "TechnoClass",
+      "func_name": "SetTarget",
+      "declaration": "virtual void SetTarget(AbstractClass* target);",
+      "address": "0x6F9DD0",
+      "ida_match": "TechnoClass::SetTargetIfAllowed",
+      "match_type": "substring+class"
+    },
+    {
+      "file": "src\\object\\techno.hpp",
+      "line": 185,
+      "class_name": "TechnoClass",
+      "func_name": "GetDeployWeapon",
+      "declaration": "virtual WeaponStruct* GetDeployWeapon() const;",
+      "address": "0x5218E0",
+      "ida_match": "InfantryClass::GetDeployWeaponIndex",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\object\\techno.hpp",
+      "line": 199,
+      "class_name": "TechnoClass",
+      "func_name": "Reload",
+      "declaration": "virtual void Reload();",
+      "address": "0x4158E0",
+      "ida_match": "TechnoClass::ReturnToBaseAndReload",
+      "match_type": "substring+class"
+    },
+    {
+      "file": "src\\object\\techno.hpp",
+      "line": 209,
+      "class_name": null,
+      "func_name": "onSelect",
+      "declaration": "virtual void onSelect(uint32_t a, uint32_t b);",
+      "address": "0x6EFC70",
+      "ida_match": "ProcessAISuperWeaponSelection",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\object\\techno.hpp",
+      "line": 216,
+      "class_name": null,
+      "func_name": "getSight",
+      "declaration": "virtual uint32_t getSight(uint32_t dwUnk) const;",
+      "address": "0x717800",
+      "ida_match": "TechnoClass::GetSightRange",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\object\\techno.hpp",
+      "line": 222,
+      "class_name": null,
+      "func_name": "onDamage",
+      "declaration": "virtual void onDamage(uint32_t dwUnk);",
+      "address": "0x45EE70",
+      "ida_match": "BuildingClass::ApplyFoundationDamage",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\object\\techno.hpp",
+      "line": 225,
+      "class_name": null,
+      "func_name": "UpdateSight",
+      "declaration": "virtual void UpdateSight(uint32_t a, uint32_t b, uint32_t c, uint32_t d, uint32_t e);",
+      "address": "0x4C2BD0",
+      "ida_match": "TechnoClass::updateSightRange",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\object\\techno.hpp",
+      "line": 238,
+      "class_name": null,
+      "func_name": "processSpawn",
+      "declaration": "virtual uint32_t processSpawn();",
+      "address": "0x71D000",
+      "ida_match": "TerrainClass::ProcessSpawnAnim",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\object\\temporal.hpp",
+      "line": 17,
+      "class_name": "TemporalClass",
+      "func_name": "Load",
+      "declaration": "virtual HRESULT __stdcall Load(IStream* stream) override;",
+      "address": "0x71A660",
+      "ida_match": "TemporalClass::LoadTemporal",
+      "match_type": "substring+class"
+    },
+    {
+      "file": "src\\object\\temporal.hpp",
+      "line": 18,
+      "class_name": "TemporalClass",
+      "func_name": "Save",
+      "declaration": "virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;",
+      "address": "0x71A700",
+      "ida_match": "TemporalClass::SaveTemporal",
+      "match_type": "substring+class"
+    },
+    {
+      "file": "src\\render\\fog.hpp",
+      "line": 27,
+      "class_name": "FoggedObjectClass",
+      "func_name": "GetClassID",
+      "declaration": "virtual HRESULT __stdcall GetClassID(CLSID* class_id) override;",
+      "address": "0x4D27D0",
+      "ida_match": "FoggedObjectClass::GetClassIdentifier",
+      "match_type": "substring+class"
+    },
+    {
+      "file": "src\\render\\fog.hpp",
+      "line": 29,
+      "class_name": "FoggedObjectClass",
+      "func_name": "Load",
+      "declaration": "virtual HRESULT __stdcall Load(IStream* stream) override;",
+      "address": "0x4D2510",
+      "ida_match": "FoggedObjectClass::LoadTypeData",
+      "match_type": "substring+class"
+    },
+    {
+      "file": "src\\render\\fog.hpp",
+      "line": 30,
+      "class_name": "FoggedObjectClass",
+      "func_name": "Save",
+      "declaration": "virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;",
+      "address": "0x4D24A0",
+      "ida_match": "FoggedObjectClass::SaveToINI",
+      "match_type": "substring+class"
+    },
+    {
+      "file": "src\\render\\fog.hpp",
+      "line": 35,
+      "class_name": "FoggedObjectClass",
+      "func_name": "objectSize",
+      "declaration": "virtual int objectSize() const override;",
+      "address": "0x4D27C0",
+      "ida_match": "FoggedObjectClass::GetObjectSize",
+      "match_type": "substring+class"
+    },
+    {
+      "file": "src\\render\\movie.hpp",
+      "line": 24,
+      "class_name": "MovieHandle",
+      "func_name": "RenderFrame",
+      "declaration": "virtual void RenderFrame(DSurface* target) = 0;  // Blit current frame to surface",
+      "address": "0x432AB0",
+      "ida_match": "BinkMovieHandle::RenderFrameClipped",
+      "match_type": "substring+class"
+    },
+    {
+      "file": "src\\render\\voxel.hpp",
+      "line": 43,
+      "class_name": "VoxLib",
+      "func_name": "Loaded",
+      "declaration": "bool Loaded();",
+      "address": "0x544C80",
+      "ida_match": "CellClass::EnsureFileLoaded",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\render\\voxel.hpp",
+      "line": 86,
+      "class_name": "MotLib",
+      "func_name": "Loaded",
+      "declaration": "bool Loaded();",
+      "address": "0x544C80",
+      "ida_match": "CellClass::EnsureFileLoaded",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\structure\\building.hpp",
+      "line": 50,
+      "class_name": "BuildingClass",
+      "func_name": "Activate",
+      "declaration": "int Activate() override;",
+      "address": "0x452480",
+      "ida_match": "BuildingClass::Deactivate",
+      "match_type": "substring+class"
+    },
+    {
+      "file": "src\\structure\\building.hpp",
+      "line": 135,
+      "class_name": "BuildingClass",
+      "func_name": "Mission_Repair",
+      "declaration": "virtual int Mission_Repair() override;",
+      "address": "0x6F4AB0",
+      "ida_match": "TechnoClass::Mission_RepairDispatch",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\structure\\building.hpp",
+      "line": 144,
+      "class_name": "BuildingClass",
+      "func_name": "processSuperWeapon",
+      "declaration": "virtual void processSuperWeapon(uint32_t dwUnk, uint32_t dwUnk2, uint32_t dwUnk3, uint32_t dwUnk4);",
+      "address": "0x44C980",
+      "ida_match": "BuildingClass::ProcessSuperWeaponEffects",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\system\\cell.hpp",
+      "line": 116,
+      "class_name": null,
+      "func_name": "CoordStruct",
+      "declaration": "return CoordStruct(cell.X * 256 + 128, cell.Y * 256 + 128, z);",
+      "address": "0x642740",
+      "ida_match": "CoordStruct::Set2",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\system\\cell.hpp",
+      "line": 128,
+      "class_name": null,
+      "func_name": "GetInfantry",
+      "declaration": "InfantryClass* GetInfantry(bool alt) const;",
+      "address": "0x7404B0",
+      "ida_match": "TechnoClass::GetInfantryCursorAction",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\system\\cell.hpp",
+      "line": 175,
+      "class_name": null,
+      "func_name": "GetRadLevel",
+      "declaration": "int GetRadLevel() const;",
+      "address": "0x65B8F0",
+      "ida_match": "RadSiteClass::GetRadLevelAt",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\system\\factory.hpp",
+      "line": 39,
+      "class_name": "FactoryClass",
+      "func_name": "Suspend",
+      "declaration": "bool Suspend(bool manual);",
+      "address": "0x5D2530",
+      "ida_match": "DDraw::HandleSuspend",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\system\\file_class.hpp",
+      "line": 30,
+      "class_name": "FileClass",
+      "func_name": "CreateFile",
+      "declaration": "virtual bool CreateFile() = 0;",
+      "address": "0x7C83E0",
+      "ida_match": "CreateFileA",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\system\\file_class.hpp",
+      "line": 31,
+      "class_name": "FileClass",
+      "func_name": "DeleteFile",
+      "declaration": "virtual bool DeleteFile() = 0;",
+      "address": "0x7C84B2",
+      "ida_match": "DeleteFileA",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\system\\file_class.hpp",
+      "line": 76,
+      "class_name": null,
+      "func_name": "CreateFile",
+      "declaration": "bool CreateFile() override { return false; }",
+      "address": "0x7C83E0",
+      "ida_match": "CreateFileA",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\system\\file_class.hpp",
+      "line": 77,
+      "class_name": null,
+      "func_name": "DeleteFile",
+      "declaration": "bool DeleteFile() override { return false; }",
+      "address": "0x7C84B2",
+      "ida_match": "DeleteFileA",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\system\\map.hpp",
+      "line": 234,
+      "class_name": null,
+      "func_name": "Reshroud",
+      "declaration": "void Reshroud(HouseClass* house);",
+      "address": "0x50BD10",
+      "ida_match": "HouseClass::ReshroudMap",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\system\\tactical.hpp",
+      "line": 79,
+      "class_name": null,
+      "func_name": "AdjustForZ",
+      "declaration": "static int AdjustForZ(int height);",
+      "address": "0x6D1FE0",
+      "ida_match": "TacticalClass::AdjustForZShapeMove",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\team\\campaign.hpp",
+      "line": 31,
+      "class_name": "CampaignClass",
+      "func_name": "Save",
+      "declaration": "virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;",
+      "address": "0x49C5A0",
+      "ida_match": "CampaignClass::SaveProgress",
+      "match_type": "substring+class"
+    },
+    {
+      "file": "src\\team\\script.hpp",
+      "line": 37,
+      "class_name": "ScriptClass",
+      "func_name": "Load",
+      "declaration": "virtual HRESULT __stdcall Load(IStream* stream) override;",
+      "address": "0x691630",
+      "ida_match": "ScriptClass::LoadState",
+      "match_type": "substring+class"
+    },
+    {
+      "file": "src\\team\\script.hpp",
+      "line": 38,
+      "class_name": "ScriptClass",
+      "func_name": "Save",
+      "declaration": "virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;",
+      "address": "0x691690",
+      "ida_match": "ScriptClass::SaveState",
+      "match_type": "substring+class"
+    },
+    {
+      "file": "src\\team\\script.hpp",
+      "line": 50,
+      "class_name": "ScriptClass",
+      "func_name": "NextAction",
+      "declaration": "bool NextAction();",
+      "address": "0x691540",
+      "ida_match": "ScriptClass::GetNextAction",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\team\\script.hpp",
+      "line": 72,
+      "class_name": "ScriptTypeClass",
+      "func_name": "Save",
+      "declaration": "virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;",
+      "address": "0x691DE0",
+      "ida_match": "ScriptTypeClass::SaveToINI",
+      "match_type": "substring+class"
+    },
+    {
+      "file": "src\\team\\script.hpp",
+      "line": 77,
+      "class_name": "ScriptTypeClass",
+      "func_name": "objectSize",
+      "declaration": "virtual int objectSize() const override;",
+      "address": "0x691F80",
+      "ida_match": "ScriptTypeClass::GetObjectSize",
+      "match_type": "substring+class"
+    },
+    {
+      "file": "src\\team\\tag.hpp",
+      "line": 44,
+      "class_name": "TagClass",
+      "func_name": "Load",
+      "declaration": "virtual HRESULT __stdcall Load(IStream* stream) override;",
+      "address": "0x6E5730",
+      "ida_match": "TagClass::LoadTag",
+      "match_type": "substring+class"
+    },
+    {
+      "file": "src\\team\\tag.hpp",
+      "line": 45,
+      "class_name": "TagClass",
+      "func_name": "Save",
+      "declaration": "virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;",
+      "address": "0x6E57A0",
+      "ida_match": "TagClass::SaveTag",
+      "match_type": "substring+class"
+    },
+    {
+      "file": "src\\team\\tag.hpp",
+      "line": 62,
+      "class_name": "TagClass",
+      "func_name": "GlobalChanged",
+      "declaration": "void GlobalChanged(int idx_global);",
+      "address": "0x7263A0",
+      "ida_match": "TriggerClass::NotifyGlobalChanged",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\team\\tag.hpp",
+      "line": 63,
+      "class_name": "TagClass",
+      "func_name": "LocalChanged",
+      "declaration": "void LocalChanged(int idx_local);",
+      "address": "0x7263D0",
+      "ida_match": "TriggerClass::NotifyLocalChanged",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\team\\tag.hpp",
+      "line": 72,
+      "class_name": "TagClass",
+      "func_name": "RemoveTrigger",
+      "declaration": "bool RemoveTrigger(TriggerClass* trigger);",
+      "address": "0x577920",
+      "ida_match": "MapClass::RemoveTriggerRef",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\team\\tag.hpp",
+      "line": 98,
+      "class_name": "TagTypeClass",
+      "func_name": "Save",
+      "declaration": "virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;",
+      "address": "0x6E6470",
+      "ida_match": "TagTypeClass::SaveToINI",
+      "match_type": "substring+class"
+    },
+    {
+      "file": "src\\team\\tag.hpp",
+      "line": 104,
+      "class_name": "TagTypeClass",
+      "func_name": "objectSize",
+      "declaration": "virtual int objectSize() const override;",
+      "address": "0x6E64A0",
+      "ida_match": "TagTypeClass::GetObjectSize",
+      "match_type": "substring+class"
+    },
+    {
+      "file": "src\\team\\tag.hpp",
+      "line": 116,
+      "class_name": "TagTypeClass",
+      "func_name": "RemoveTrigger",
+      "declaration": "bool RemoveTrigger(class TriggerTypeClass* trigger);",
+      "address": "0x577920",
+      "ida_match": "MapClass::RemoveTriggerRef",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\team\\trigger.hpp",
+      "line": 53,
+      "class_name": "TriggerClass",
+      "func_name": "Load",
+      "declaration": "virtual HRESULT __stdcall Load(IStream* stream) override;",
+      "address": "0x726860",
+      "ida_match": "TriggerClass::LoadTrigger",
+      "match_type": "substring+class"
+    },
+    {
+      "file": "src\\team\\trigger.hpp",
+      "line": 54,
+      "class_name": "TriggerClass",
+      "func_name": "Save",
+      "declaration": "virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;",
+      "address": "0x7268D0",
+      "ida_match": "TriggerClass::SaveTrigger",
+      "match_type": "substring+class"
+    },
+    {
+      "file": "src\\type\\infantry_type.hpp",
+      "line": 45,
+      "class_name": "InfantryTypeClass",
+      "func_name": "Save",
+      "declaration": "virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;",
+      "address": "0x524B60",
+      "ida_match": "InfantryTypeClass::SaveLoad_Prefix",
+      "match_type": "substring+class"
+    },
+    {
+      "file": "src\\type\\object_type.hpp",
+      "line": 42,
+      "class_name": "ObjectTypeClass",
+      "func_name": "GetCameo",
+      "declaration": "virtual SHPStruct* GetCameo() const;",
+      "address": "0x5471B0",
+      "ida_match": "HouseClass::GetCameoTypeIndex",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\type\\techno_type.hpp",
+      "line": 90,
+      "class_name": "TechnoTypeClass",
+      "func_name": "GetCost",
+      "declaration": "virtual int GetCost() const;",
+      "address": "0x708B40",
+      "ida_match": "TechnoClass::GetCostMultiplier",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\type\\techno_type.hpp",
+      "line": 92,
+      "class_name": "TechnoTypeClass",
+      "func_name": "GetRepairStep",
+      "declaration": "virtual int GetRepairStep() const;",
+      "address": "0x459840",
+      "ida_match": "HouseClass::GetRepairStepAmount",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\ui\\command_ext.hpp",
+      "line": 89,
+      "class_name": "PageUserCommandClass",
+      "func_name": "Construct",
+      "declaration": "virtual void Construct();",
+      "address": "0x537DD0",
+      "ida_match": "PageUserCommandClass::Constructor",
+      "match_type": "substring+class"
+    },
+    {
+      "file": "src\\ui\\gadget.hpp",
+      "line": 48,
+      "class_name": "GadgetClass",
+      "func_name": "Draw",
+      "declaration": "virtual void Draw(DSurface* surface, TextRenderer* text) = 0;",
+      "address": "0x557920",
+      "ida_match": "GadgetClass::DrawBuildingPlacement",
+      "match_type": "substring+class"
+    },
+    {
+      "file": "src\\ui\\gadget.hpp",
+      "line": 126,
+      "class_name": "DialogClass",
+      "func_name": "OnRender",
+      "declaration": "virtual void OnRender(DSurface* surface, TextRenderer* text);",
+      "address": "0x68F060",
+      "ida_match": "Screen::TransitionRender",
+      "match_type": "substring"
+    },
+    {
+      "file": "src\\app\\cmdline.hpp",
+      "line": 92,
+      "class_name": null,
+      "func_name": "SessionClassSetInstance",
+      "declaration": "void SessionClassSetInstance(int value);",
+      "address": "0x7B2720",
+      "ida_match": "SessionClass::SetInstance"
+    },
+    {
+      "file": "src\\core\\ddraw_init.hpp",
+      "line": 58,
+      "class_name": null,
+      "func_name": "DDrawInit",
+      "declaration": "bool DDrawInit(HWND hwnd, int width, int height, bool windowed);",
+      "address": "0x4A3640",
+      "ida_match": "DDraw::Init"
+    },
+    {
+      "file": "src\\core\\init_stubs.hpp",
+      "line": 27,
+      "class_name": null,
+      "func_name": "EventQueueProcess",
+      "declaration": "void EventQueueProcess(void* bink_player);",
+      "address": "0x54F000",
+      "ida_match": "EventQueue::Process"
+    },
+    {
+      "file": "src\\core\\init_stubs.hpp",
+      "line": 33,
+      "class_name": null,
+      "func_name": "TextBufferInit",
+      "declaration": "void TextBufferInit(int buffer);",
+      "address": "0x5BCC90",
+      "ida_match": "TextBuffer::Init"
+    },
+    {
+      "file": "src\\core\\init_stubs.hpp",
+      "line": 36,
+      "class_name": null,
+      "func_name": "BitTextClassLoadFont",
+      "declaration": "void* BitTextClassLoadFont(void* mem);",
+      "address": "0x434AD0",
+      "ida_match": "BitTextClass::LoadFont"
+    },
+    {
+      "file": "src\\core\\init_stubs.hpp",
+      "line": 39,
+      "class_name": null,
+      "func_name": "InitStubPlaceholder",
+      "declaration": "void InitStubPlaceholder();",
+      "address": "0x60D430",
+      "ida_match": "Init::StubPlaceholder"
+    },
+    {
+      "file": "src\\core\\init_stubs.hpp",
+      "line": 48,
+      "class_name": null,
+      "func_name": "TimerGetTicks",
+      "declaration": "int TimerGetTicks();",
+      "address": "0x6C8C40",
+      "ida_match": "Timer::GetTicks"
+    },
+    {
+      "file": "src\\core\\init_stubs.hpp",
+      "line": 51,
+      "class_name": null,
+      "func_name": "TimerPumpMessages",
+      "declaration": "void TimerPumpMessages(void* bink_player);",
+      "address": "0x54F720",
+      "ida_match": "Timer::PumpMessages"
+    },
+    {
+      "file": "src\\core\\init_stubs.hpp",
+      "line": 57,
+      "class_name": null,
+      "func_name": "StructZero3",
+      "declaration": "void StructZero3(void* ptr, int count);",
+      "address": "0x4B9BD0",
+      "ida_match": "Struct::Zero3"
+    },
+    {
+      "file": "src\\core\\init_stubs.hpp",
+      "line": 60,
+      "class_name": null,
+      "func_name": "VoxelPaletteLoadFromFile",
+      "declaration": "void VoxelPaletteLoadFromFile(const char* path);",
+      "address": "0x753B70",
+      "ida_match": "VoxelPaletteClass::LoadFromFile"
+    },
+    {
+      "file": "src\\core\\init_stubs.hpp",
+      "line": 66,
+      "class_name": null,
+      "func_name": "VoxelSetProjectionAngle",
+      "declaration": "void VoxelSetProjectionAngle(float angle);",
+      "address": "0x754C00",
+      "ida_match": "Voxel::SetProjectionAngle"
+    },
+    {
+      "file": "src\\core\\init_stubs.hpp",
+      "line": 81,
+      "class_name": null,
+      "func_name": "MissionSetAndCall",
+      "declaration": "void MissionSetAndCall(int a, int b);",
+      "address": "0x5BDA80",
+      "ida_match": "Mission::SetAndCall"
+    },
+    {
+      "file": "src\\core\\init_stubs.hpp",
+      "line": 90,
+      "class_name": null,
+      "func_name": "DialogShowMessageBox",
+      "declaration": "int DialogShowMessageBox(const wchar_t* msg, const wchar_t* ok, const wchar_t* cancel, int a4, int a5);",
+      "address": "0x5D3490",
+      "ida_match": "Dialog::ShowMessageBox"
+    },
+    {
+      "file": "src\\core\\init_stubs.hpp",
+      "line": 93,
+      "class_name": null,
+      "func_name": "MixFileLoadAll",
+      "declaration": "bool MixFileLoadAll();",
+      "address": "0x530460",
+      "ida_match": "MixFile::LoadAll"
+    },
+    {
+      "file": "src\\core\\init_stubs.hpp",
+      "line": 96,
+      "class_name": null,
+      "func_name": "MoviePlay",
+      "declaration": "void MoviePlay(int a1, int a2, int a3, int a4);",
+      "address": "0x5BED40",
+      "ida_match": "Movie::Play"
+    },
+    {
+      "file": "src\\core\\init_stubs.hpp",
+      "line": 102,
+      "class_name": null,
+      "func_name": "CreditsScreen",
+      "declaration": "void CreditsScreen();",
+      "address": "0x52CB90",
+      "ida_match": "Credits::Screen"
+    },
+    {
+      "file": "src\\core\\init_stubs.hpp",
+      "line": 105,
+      "class_name": null,
+      "func_name": "GameSettingsRead",
+      "declaration": "void GameSettingsRead(int mode);",
+      "address": "0x5FA620",
+      "ida_match": "GameSettings::Read"
+    },
+    {
+      "file": "src\\core\\init_stubs.hpp",
+      "line": 108,
+      "class_name": null,
+      "func_name": "AnimSystemInit",
+      "declaration": "void AnimSystemInit();",
+      "address": "0x75A790",
+      "ida_match": "AnimSystem::Init"
+    },
+    {
+      "file": "src\\core\\init_stubs.hpp",
+      "line": 114,
+      "class_name": null,
+      "func_name": "TacticalMapConstruct",
+      "declaration": "void* TacticalMapConstruct(void* mem);",
+      "address": "0x6D1C20",
+      "ida_match": "TacticalMap::Construct"
+    },
+    {
+      "file": "src\\core\\init_stubs.hpp",
+      "line": 120,
+      "class_name": null,
+      "func_name": "CCINIClassLoad",
+      "declaration": "bool CCINIClassLoad(void* ini, void* file, int a2, int a3);",
+      "address": "0x4741F0",
+      "ida_match": "CCINIClass::Load"
+    },
+    {
+      "file": "src\\core\\init_stubs.hpp",
+      "line": 126,
+      "class_name": null,
+      "func_name": "AudioLoadSoundINI",
+      "declaration": "void AudioLoadSoundINI();",
+      "address": "0x7513F0",
+      "ida_match": "Audio::LoadSoundINI"
+    },
+    {
+      "file": "src\\core\\init_stubs.hpp",
+      "line": 129,
+      "class_name": null,
+      "func_name": "AudioInitFromINI",
+      "declaration": "void AudioInitFromINI(void* ini);",
+      "address": "0x7510D0",
+      "ida_match": "Audio::InitFromINI"
+    },
+    {
+      "file": "src\\core\\init_stubs.hpp",
+      "line": 138,
+      "class_name": null,
+      "func_name": "ThemeManagerCleanup",
+      "declaration": "void ThemeManagerCleanup();",
+      "address": "0x720770",
+      "ida_match": "ThemeManager::Cleanup"
+    },
+    {
+      "file": "src\\core\\init_stubs.hpp",
+      "line": 141,
+      "class_name": null,
+      "func_name": "ThemeClassInitializeThemes",
+      "declaration": "void ThemeClassInitializeThemes(void* ini);",
+      "address": "0x720590",
+      "ida_match": "ThemeClass::InitializeThemes"
+    },
+    {
+      "file": "src\\core\\init_stubs.hpp",
+      "line": 144,
+      "class_name": null,
+      "func_name": "AudioLoadWAVFiles",
+      "declaration": "void AudioLoadWAVFiles();",
+      "address": "0x7207F0",
+      "ida_match": "Audio::LoadWAVFiles"
+    },
+    {
+      "file": "src\\core\\init_stubs.hpp",
+      "line": 153,
+      "class_name": null,
+      "func_name": "AudioCallback",
+      "declaration": "int AudioCallback();",
+      "address": "0x4093B0",
+      "ida_match": "Audio::Callback"
+    },
+    {
+      "file": "src\\core\\init_stubs.hpp",
+      "line": 172,
+      "class_name": null,
+      "func_name": "CopyProtectionCheckLauncher",
+      "declaration": "bool CopyProtectionCheckLauncher();",
+      "address": "0x49F5C0",
+      "ida_match": "CopyProtection::CheckLauncher"
+    },
+    {
+      "file": "src\\core\\init_stubs.hpp",
+      "line": 175,
+      "class_name": null,
+      "func_name": "CopyProtectionNotifyLauncher",
+      "declaration": "bool CopyProtectionNotifyLauncher();",
+      "address": "0x49F620",
+      "ida_match": "CopyProtection::NotifyLauncher"
+    },
+    {
+      "file": "src\\core\\init_stubs.hpp",
+      "line": 178,
+      "class_name": null,
+      "func_name": "CopyProtectionCheckProtectedData",
+      "declaration": "bool CopyProtectionCheckProtectedData();",
+      "address": "0x49F7A0",
+      "ida_match": "CopyProtection::CheckProtectedData"
+    },
+    {
+      "file": "src\\misc\\audio.hpp",
+      "line": 176,
+      "class_name": null,
+      "func_name": "AudioShutdown",
+      "declaration": "void AudioShutdown();",
+      "address": "0x406D40",
+      "ida_match": "Audio::Shutdown"
+    },
+    {
+      "file": "src\\misc\\audio.hpp",
+      "line": 178,
+      "class_name": null,
+      "func_name": "AudioIsSoundEnabled",
+      "declaration": "bool AudioIsSoundEnabled();",
+      "address": "0x407000",
+      "ida_match": "Audio::IsSoundEnabled"
+    },
+    {
+      "file": "src\\object\\techno.hpp",
+      "line": 523,
+      "class_name": null,
+      "func_name": "ScalarDtor",
+      "declaration": "virtual int ScalarDtor();",
+      "address": "0x5AC340",
+      "ida_match": "Scalar::Dtor"
+    },
+    {
+      "file": "src\\system\\map.hpp",
+      "line": 163,
+      "class_name": null,
+      "func_name": "CellExists",
+      "declaration": "bool CellExists(const CellStruct& map_coords) const;",
+      "address": "0x5657E0",
+      "ida_match": "Cell::Exists"
+    }
+  ]
+}

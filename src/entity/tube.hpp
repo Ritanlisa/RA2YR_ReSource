@@ -32,8 +32,8 @@ public:
     static constexpr AbstractType kObjectTypeId = AbstractType::Tube;
 
     virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override;
-    virtual HRESULT __stdcall Load(IStream* pStm) override;
-    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;
+    virtual HRESULT __stdcall Load(IStream* pStm) override;  // 0x7281A0
+    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;  // 0x7281E0
 
     virtual ~TubeClass() override = default;  // 0x7286D0
 

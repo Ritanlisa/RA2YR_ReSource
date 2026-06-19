@@ -27,8 +27,8 @@ public:
 
     virtual const char* GetFileName() const = 0;
     virtual const char* SetFileName(const char* pFileName) = 0;  // 0x473FC0
-    virtual bool CreateFile() = 0;
-    virtual bool DeleteFile() = 0;
+    virtual bool CreateFile() = 0;  // IDA: 0x7C83E0
+    virtual bool DeleteFile() = 0;  // IDA: 0x7C84B2
     virtual bool Exists(bool writeShared = false) = 0;
     virtual bool HasHandle() = 0;
     virtual bool Open(FileAccessMode access) = 0;  // 0x65CBF0
@@ -47,13 +47,13 @@ public:
     template <typename T>
     bool Read(T& obj, int size = sizeof(T))
     {
-        return ReadBytes(&obj, size) == size;  // 0x774B30
+        return ReadBytes(&obj, size) == size;  // IDA: 0x774B30
     }
 
     template <typename T>
     bool Write(T& obj, int size = sizeof(T))
     {
-        return WriteBytes(&obj, size) == size;  // 0x411310
+        return WriteBytes(&obj, size) == size;  // IDA: 0x411310
     }
 
 protected:
@@ -73,8 +73,8 @@ public:
 
     const char* GetFileName() const override { return FileName; }
     const char* SetFileName(const char* pFileName) override;
-    bool CreateFile() override { return false; }
-    bool DeleteFile() override { return false; }
+    bool CreateFile() override { return false; }  // 0x7C83E0
+    bool DeleteFile() override { return false; }  // 0x7C84B2
     bool Exists(bool writeShared = false) override { return false; }
     bool HasHandle() override { return Handle != nullptr; }
     bool Open(FileAccessMode access) override { return false; }

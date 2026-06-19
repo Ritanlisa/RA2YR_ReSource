@@ -27,7 +27,7 @@ public:
 
     // Construction
     AirstrikeClass(TechnoClass*);                                // 0x41D380
-    void ddtor();
+    void ddtor();  // IDA: 0x41D7A0
 
     // Methods
     void StartMission();                                         // 0x41D830

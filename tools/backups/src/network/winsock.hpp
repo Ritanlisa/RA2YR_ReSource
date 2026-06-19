@@ -74,10 +74,10 @@ public:
 
     bool initialize();
     void Shutdown();
-    bool IsAvailable() const;
+    bool IsAvailable() const;  // 0x4F6540
 
     bool CreateSocket(uint16_t port);
-    void CloseSocket();
+    void CloseSocket();  // 0x7C8992
     bool SendTo(const char* address, uint16_t port, const uint8_t* data, int32_t length);  // 0x7C89B0
     int32_t ReceiveFrom(uint8_t* buffer, int32_t maxLen, char* outAddress, int32_t addrSize, uint16_t* outPort);
     bool SetNonBlocking(bool nonBlock);

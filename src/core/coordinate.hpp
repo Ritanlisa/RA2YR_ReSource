@@ -56,6 +56,6 @@ CoordStruct CoordMove(const CoordStruct& start, uint8_t dir32, uint16_t distance
 
 CellStruct AdjacentCell(const CellStruct& cell, uint8_t facing8) noexcept;
 
-bool IsCloseEnough(const CoordStruct& a, const CoordStruct& b, int range) noexcept;
+bool IsCloseEnough(const CoordStruct& a, const CoordStruct& b, int range) noexcept;  // 0x70D590
 
 } // namespace gamemd

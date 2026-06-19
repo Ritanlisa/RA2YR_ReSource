@@ -42,7 +42,7 @@ public:
 
     // --- Lifecycle ---
     // IDA 0x558740: Construct — init fields + DynamicVectorClass
-    void Construct();
+    void Construct();  // IDA: 0x558740
 
     // IDA 0x558790: Cleanup — free entries, reset vector
     void Cleanup();  // 0x558790
@@ -124,7 +124,7 @@ public:
 
     // --- Accessors ---
     uint32_t GetMode() const;
-    void SetMode(uint32_t m);
+    void SetMode(uint32_t m);  // 0x7DC468
     const char* GetExtension() const;
     void SetExtension(const char* ext);
     uint32_t GetCount() const;

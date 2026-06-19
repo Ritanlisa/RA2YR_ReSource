@@ -28,7 +28,7 @@ public:
 
     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override;
     virtual HRESULT __stdcall Load(IStream* stream) override;
-    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
+    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;  // 0x49C5A0
 
     virtual ~CampaignClass() = default;  // 0x46D090
 

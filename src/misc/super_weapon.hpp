@@ -53,12 +53,12 @@ public:
     static SuperWeaponTypeClass* FindOrCreate(const char* name);                       // 0x475540
     static SuperWeaponTypeClass* FindByName(const char* name);                         // 0x5117D0
     bool IsAvailable() const;                                                         // 0x4F6540
-    void Construct(const char* pID);
+    void Construct(const char* pID);  // IDA: 0x5113F0
 
     // vtable helpers
     void SaveLoad_Prefix(IStream* stream);                                             // 0x6CE800
     void SaveLoad_Prefix_0(IStream* stream);                                           // 0x6CE8D0
-    void SDDTOR();
+    void SDDTOR();  // IDA: 0x6CEFE0
 
     int32_t             ArrayIndex;
     WeaponTypeClass*    WeaponType;
@@ -128,13 +128,13 @@ public:
     SuperClass(SuperWeaponTypeClass* pSWType, HouseClass* pOwner) noexcept;           // 0x6CAEC0 (Constructor)
 
     // lifecycle
-    void Constructor(SuperWeaponTypeClass* pSWType, HouseClass* pOwner);
+    void Constructor(SuperWeaponTypeClass* pSWType, HouseClass* pOwner);  // IDA: 0x6CAEC0
     void Construct();                                                                // 0x6CAF90
     void CleanupMembers();                                                           // 0x6CB120
-    void StartTimer(int32_t duration);
+    void StartTimer(int32_t duration);  // IDA: 0x6CB560
     void ExecuteAction(Action action);                                                // 0x6CDFF0
-    void PowerDrainUpdate();
-    void AnnounceReady();
+    void PowerDrainUpdate();  // IDA: 0x6CE020
+    void AnnounceReady();  // IDA: 0x6CC080
     void LaunchPsychicDominator(const CellStruct& cell);                              // 0x53AE50
     void CreateChronoAnim(const CellStruct& cell);                                    // 0x6CB3A0
 
@@ -195,8 +195,8 @@ public:
     static void Strike(const CellStruct& cell);                              // 0x53A140
     static void Strike2(const CoordStruct& coords);                          // 0x53A300
     static void PrintMessage();
-    static void End();
-    static bool IsActive();
+    static void End();  // IDA: 0x53A090
+    static bool IsActive();  // IDA: 0x53A100
 };
 
 class PsyDom
@@ -223,7 +223,7 @@ public:
     static void Start(int32_t duration);      // 0x753580 (DecrementCounter)
     static void updateLogic();
     static bool Active();  // 0x4C9480
-    static void DecrementCounter();
+    static void DecrementCounter();  // IDA: 0x753580
 };
 
 class NukeFlash
@@ -237,8 +237,8 @@ public:
     static void FadeOut();               // 0x53A120 (ProcessEffect)
     static bool IsFadingIn();
     static bool IsFadingOut();
-    static bool IsActive();
-    static void ProcessEffect();
+    static bool IsActive();  // IDA: 0x53A110
+    static void ProcessEffect();  // IDA: 0x53A120
 };
 
 } // namespace gamemd

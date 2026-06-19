@@ -34,8 +34,8 @@ public:
     static constexpr AbstractType kObjectDeriveId = AbstractType::Script;
 
     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override;
-    virtual HRESULT __stdcall Load(IStream* stream) override;
-    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
+    virtual HRESULT __stdcall Load(IStream* stream) override;  // 0x691630
+    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;  // 0x691690
 
     virtual ~ScriptClass() = default;  // 0x6915F0
 
@@ -47,7 +47,7 @@ public:
 
     bool Reset();
     bool SetCurrentLine(int idx);
-    bool NextAction();
+    bool NextAction();  // IDA: 0x691540
     bool HasNextAction() const;
 
     ScriptTypeClass*    buildingType;
@@ -69,12 +69,12 @@ public:
 
     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override;
     virtual HRESULT __stdcall Load(IStream* stream) override;
-    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
+    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;  // 0x691DE0
 
     virtual ~ScriptTypeClass() = default;  // 0x691FA0
 
     virtual AbstractType __stdcall whatAmI() const override;
-    virtual int objectSize() const override;
+    virtual int objectSize() const override;  // 0x691F80
 
     static bool LoadFromINIList(CCINIClass* ini, bool is_global);  // 0x46CE10
 

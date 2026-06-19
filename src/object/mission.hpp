@@ -21,7 +21,7 @@ struct MissionControlData
 class MissionClass : public ObjectClass
 {
 public:
-    virtual HRESULT __stdcall Load(IStream* stream) override;
+    virtual HRESULT __stdcall Load(IStream* stream) override;  // 0x5B3760
 
     virtual ~MissionClass() = default;
 
@@ -51,7 +51,7 @@ public:
     virtual int Mission_Enter();  // 0x4166C0
     virtual int Mission_Construction();  // 0x459EC0
     virtual int Mission_Selling();
-    virtual int Mission_Repair();
+    virtual int Mission_Repair();  // 0x6F4AB0
     virtual int Mission_Missile();
     virtual int Mission_Open();
     virtual int Mission_Rescue();

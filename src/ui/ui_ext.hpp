@@ -242,7 +242,7 @@ public:
     // IDA 0x48B2A0 area
     void Destroy();  // 0x4E1480
     void Destru_vt00();  // 0x4E1AD0
-    void Destruct();
+    void Destruct();  // IDA: 0x5565A0
 
     LinkClass*  m_Next;         // 0x04 (after vtable)
     LinkClass*  m_Prev;         // 0x08
@@ -841,7 +841,7 @@ public:
 class TooltipClass
 {
 public:
-    virtual ~TooltipClass() = default;
+    virtual ~TooltipClass() = default;  // IDA: 0x724C30
 
     virtual void GetText() {} // IDA: 0x7248C0
 

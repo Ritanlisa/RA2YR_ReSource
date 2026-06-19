@@ -70,7 +70,7 @@ public:
     virtual int32_t AddRef();  // 0x5362B0
     virtual int32_t Release();  // 0x5362D0
     virtual const char* GetName() const override;
-    virtual const wchar_t* GetUIName() const override;
+    virtual const wchar_t* GetUIName() const override;  // 0x484FF0
     virtual void Execute(uint32_t context) const override;
 
     int32_t     TauntCommandClass_field_00;       // 0x00
@@ -90,7 +90,7 @@ public:
     virtual int32_t AddRef();  // 0x537DE0
     virtual int32_t Release();  // 0x537DF0
     virtual const char* GetName() const override;
-    virtual const wchar_t* GetUIName() const override;
+    virtual const wchar_t* GetUIName() const override;  // 0x484FF0
     virtual void Execute(uint32_t context) const override;
 
     int32_t     PageUserCommandClass_field_00;       // 0x00
@@ -110,7 +110,7 @@ public:
     virtual int32_t AddRef();  // 0x537F20
     virtual int32_t Release();  // 0x537F30
     virtual const char* GetName() const override;
-    virtual const wchar_t* GetUIName() const override;
+    virtual const wchar_t* GetUIName() const override;  // 0x484FF0
     virtual void Execute(uint32_t context) const override;
 
     int32_t     DeleteCommandClass_field_00;       // 0x00

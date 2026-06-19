@@ -36,14 +36,14 @@ class ParticleSystemClass : public ra2::game::ObjectClass
 public:
     static constexpr AbstractType kObjectTypeId = AbstractType::ParticleSystem;
 
-    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override;
-    virtual HRESULT __stdcall Load(IStream* pStm) override;
-    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;
+    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override;  // 0x4E8470
+    virtual HRESULT __stdcall Load(IStream* pStm) override;  // 0x4E84A0
+    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;  // 0x4E84C0
 
     virtual ~ParticleSystemClass() override = default;  // 0x630230
 
     virtual AbstractType __stdcall whatAmI() const override;
-    virtual int objectSize() const override;
+    virtual int objectSize() const override;  // 0x630200
 
     void Draw(void* surface, int draw_x, int draw_y);  // 0x62FE60
 

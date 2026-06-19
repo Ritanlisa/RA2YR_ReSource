@@ -24,15 +24,15 @@ class FoggedObjectClass : public AbstractClass
 public:
     static constexpr AbstractType kObjectTypeId = AbstractType::FoggedObject;
 
-    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override;
+    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override;  // 0x4D27D0
 
-    virtual HRESULT __stdcall Load(IStream* stream) override;
-    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
+    virtual HRESULT __stdcall Load(IStream* stream) override;  // 0x4D2510
+    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;  // 0x4D24A0
 
     virtual ~FoggedObjectClass() override = default;  // 0x4D2910
 
     virtual AbstractType __stdcall whatAmI() const override;
-    virtual int objectSize() const override;
+    virtual int objectSize() const override;  // 0x4D27C0
 
     int32_t      LastSight;
     HouseClass*  House;

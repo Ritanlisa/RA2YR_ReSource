@@ -35,7 +35,7 @@ public:
     virtual bool canMove() const;
     virtual bool onProductionComplete() const;
     virtual void onCellEntry(CellStruct* cell);
-    virtual void processSuperWeapon(CellStruct* cell);
+    virtual void processSuperWeapon(CellStruct* cell);  // 0x44C980
     virtual CoordStruct* getMoveCoords(CoordStruct* out);
     virtual void onMoveStart();
     virtual bool canStop();
@@ -53,13 +53,13 @@ public:
         RectangleStruct* rect, Point2D* center_point, Matrix3DStruct* matrix,
         uint32_t a8, uint32_t draw_flags, uint32_t a10) {}
     virtual void onDrawComplete();
-    virtual void Panic();
+    virtual void Panic();  // 0x772AC0
     virtual void UnPanic();
     virtual void PlayIdleAnim(int idle_anim_number);  // 0x51DAF0
     virtual uint32_t getMovementMode();
     virtual uint32_t getPathDistance(uint32_t a, uint32_t b, uint32_t c) const;
     virtual uint32_t getPathCost(uint32_t a, uint32_t b, uint32_t c, uint32_t d) const;
-    virtual uint32_t isAreaClear(uint32_t a, uint32_t b, uint32_t c) const;
+    virtual uint32_t isAreaClear(uint32_t a, uint32_t b, uint32_t c) const;  // 0x5A7250
     virtual void onAreaEntry(uint32_t a, uint32_t b);
     virtual int GetCurrentSpeed() const;
     virtual uint32_t getWaypointData(uint32_t a);

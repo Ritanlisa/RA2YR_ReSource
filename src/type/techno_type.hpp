@@ -87,9 +87,9 @@ public:
     virtual bool onTypeLoaded();
     virtual bool CanAttackMove() const;
     virtual bool CanCreateHere(const CellStruct& mapCoords, HouseClass* pOwner) const;
-    virtual int GetCost() const;
+    virtual int GetCost() const;  // 0x708B40
     virtual int GetRepairStepCost() const;
-    virtual int GetRepairStep() const;
+    virtual int GetRepairStep() const;  // 0x459840
     virtual int getRefund(HouseClass* pHouse, bool bUnk) const;
     virtual int GetFlightLevel() const;
 

@@ -119,7 +119,7 @@ public:
     static int32_t FindIndex(const char* pName);
 
     // IDA 0x752700
-    static void Play(const char* pName, int32_t unk1 = -1, int32_t unk2 = -1);
+    static void Play(const char* pName, int32_t unk1 = -1, int32_t unk2 = -1);  // 0x752700
     // IDA 0x752480
     static void PlayIndex(int32_t index, int32_t unk1 = -1, int32_t unk2 = -1);
     // IDA 0x750E20
@@ -173,9 +173,9 @@ struct AudioEventHandle
 // IDA 0x40A7A0: initializes DirectSound, sets ppDS (0x87E89C), creates primary buffer
 bool AudioInit(HWND hWnd);
 // IDA 0x40A950: releases DirectSound, zeros ppDS
-void AudioShutdown();
+void AudioShutdown();  // 0x406D40
 // IDA 0x407000: checks g_AudioConfigState (0x87E2A0) and g_SoundEnabled (0x87E728)
-bool AudioIsSoundEnabled();
+bool AudioIsSoundEnabled();  // 0x407000
 // IDA 0x40A7A0: returns *ppDS (dword_87E89C)
 IDirectSound* Audio_GetDirectSound();
 

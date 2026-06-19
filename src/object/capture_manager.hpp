@@ -16,7 +16,7 @@ class CaptureManagerClass : public AbstractClass
 public:
     static constexpr AbstractType kObjectDeriveId = AbstractType::CaptureManager;
 
-    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return 0; }
+    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return 0; }  // IDA: 0x472960
     virtual HRESULT __stdcall Load(IStream* stream) override { return 0; }
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { return 0; }
 
@@ -58,7 +58,7 @@ public:
     void LoadTypeData();                                               // 0x472AB0
     void SaveToINI();                                                  // 0x4728E0
     void PowerDrainUpdate();                                           // 0x4726F0
-    int GetClassIdentifier();                                          // 0x472960
+    int GetClassIdentifier();                                           // IDA: 0x472960
     int GetObjectSize();                                               // 0x4729A0
     int GetTypeIdentifier();                                           // 0x4729B0
 

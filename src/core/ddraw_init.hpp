@@ -55,7 +55,7 @@ struct DDrawContext {
 
 // IDA: DDrawInitialize @ 0x4A42F0
 int DDrawInitialize(int a1, DWORD width, DWORD height, DWORD bpp);
-bool DDrawInit(HWND hwnd, int width, int height, bool windowed);
+bool DDrawInit(HWND hwnd, int width, int height, bool windowed);  // 0x4A3640
 void DDrawShutdown();
 void DDrawFlip();
 DDrawContext* DDrawGetContext();

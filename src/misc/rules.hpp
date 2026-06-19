@@ -71,9 +71,9 @@ class RulesClass
 public:
     static RulesClass* Instance;
 
-    void Init(CCINIClass* pINI);
+    void Init(CCINIClass* pINI);  // 0x538B30
     void ReadFile(CCINIClass* pINI);  // 0x7C850C
-    void ReadGeneral(CCINIClass* pINI);
+    void ReadGeneral(CCINIClass* pINI);  // 0x6614F0
     void ReadCombatDamage(CCINIClass* pINI);  // 0x661510
     void ReadAudioVisual(CCINIClass* pINI);  // 0x66D150
     void ReadSpecialWeapons(CCINIClass* pINI);  // 0x66D1F0
@@ -88,7 +88,7 @@ public:
     void ReadCountries(CCINIClass* pINI);  // 0x67A000
     void ReadVehicleTypes(CCINIClass* pINI);  // 0x67A060
     void ReadAircraftTypes(CCINIClass* pINI);  // 0x67A190
-    void ReadSides(CCINIClass* pINI);
+    void ReadSides(CCINIClass* pINI);  // 0x6725F0
     void ReadSuperWeaponTypes(CCINIClass* pINI);  // 0x67A210
     void ReadBuildingTypes(CCINIClass* pINI);  // 0x67A310
     void ReadTerrainTypes(CCINIClass* pINI);  // 0x67A3C0
@@ -100,7 +100,7 @@ public:
     void ReadParticles(CCINIClass* pINI);  // 0x67A8B0
     void ReadParticleSystems(CCINIClass* pINI);  // 0x67A8E0
     void ReadAI(CCINIClass* pINI);  // 0x67B480
-    void ReadPowerups(CCINIClass* pINI);
+    void ReadPowerups(CCINIClass* pINI);  // 0x673E80
     void ReadLandCharacteristics(CCINIClass* pINI);
     void ReadIQ(CCINIClass* pINI);  // 0x67C430
     void ReadJumpjetControls(CCINIClass* pINI);

@@ -3,7 +3,7 @@
   "active_work_id": "normalize-address-annotations",
   "active_plan": "D:\\RA2YR_ReSource\\.omo\\plans\\normalize-address-annotations.md",
   "plan_name": "normalize-address-annotations",
-  "status": "active",
+  "status": "completed",
   "started_at": "2026-06-19T01:39:07.538Z",
   "session_ids": [
     "opencode:ses_12a28107fffeTxyjSeELiqzkhL"
@@ -14,7 +14,7 @@
       "work_id": "normalize-address-annotations",
       "active_plan": "D:\\RA2YR_ReSource\\.omo\\plans\\normalize-address-annotations.md",
       "plan_name": "normalize-address-annotations",
-      "status": "active",
+      "status": "completed",
       "started_at": "2026-06-19T01:39:07.538Z",
       "session_ids": [
         "opencode:ses_12a28107fffeTxyjSeELiqzkhL"
@@ -88,7 +88,9 @@
         }
       },
       "session_origins": {},
-      "updated_at": "2026-06-19T03:20:24.512Z"
+      "updated_at": "2026-06-19T03:21:51.587Z",
+      "ended_at": "2026-06-19T03:21:51.587Z",
+      "elapsed_ms": 6164049
     }
   },
   "session_origins": {},
@@ -159,5 +161,7 @@
       "elapsed_ms": 27785
     }
   },
-  "updated_at": "2026-06-19T03:20:24.512Z"
+  "updated_at": "2026-06-19T03:21:51.587Z",
+  "ended_at": "2026-06-19T03:21:51.587Z",
+  "elapsed_ms": 6164049
 }

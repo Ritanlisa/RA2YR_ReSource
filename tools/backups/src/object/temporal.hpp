@@ -14,8 +14,8 @@ public:
     static constexpr AbstractType kObjectDeriveId = AbstractType::Temporal;
 
     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override;
-    virtual HRESULT __stdcall Load(IStream* stream) override;
-    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
+    virtual HRESULT __stdcall Load(IStream* stream) override;  // IDA: 0x71A660
+    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;  // IDA: 0x71A700
 
     virtual ~TemporalClass() = default;  // 0x71A720
 
@@ -27,7 +27,7 @@ public:
     // Construction
     TemporalClass();                                             // 0x71A4E0
     void Constructor();                                          // 0x71A450
-    void ddtor();  // 0x71A720
+    void ddtor();  // IDA: 0x71A720
 
     // Methods
     void SetTarget(TechnoClass*);                                // 0x71A650

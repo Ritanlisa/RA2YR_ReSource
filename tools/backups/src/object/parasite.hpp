@@ -15,8 +15,8 @@ public:
     static constexpr AbstractType kObjectDeriveId = AbstractType::Parasite;
 
     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override;
-    virtual HRESULT __stdcall Load(IStream* stream) override;
-    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
+    virtual HRESULT __stdcall Load(IStream* stream) override;  // IDA: 0x6295B0
+    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;  // IDA: 0x6296B0
 
     virtual ~ParasiteClass() = default;  // 0x6296D0
 
@@ -28,7 +28,7 @@ public:
     // Construction
     ParasiteClass();                                             // 0x6292B0
     void Constructor();                                          // 0x629210
-    void ddtor();  // 0x6296D0
+    void ddtor();  // IDA: 0x6296D0
 
     // Parasite logic
     void Attach(FootClass*);                                     // 0x6294D0

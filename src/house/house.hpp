@@ -128,12 +128,12 @@ public:
     // --- TODO: IHouse / IPublicHouse / IConnectionPointContainer interfaces from YRpp ---
 
     bool IsAlliedWith(int idx_house) const;  // 0x4F9A50
-    bool IsAlliedWith(const HouseClass* house) const;
-    bool IsAlliedWith(const ObjectClass* object) const;
-    bool IsAlliedWith(const AbstractClass* abstract) const;
+    bool IsAlliedWith(const HouseClass* house) const;  // IDA: 0x4F9A50
+    bool IsAlliedWith(const ObjectClass* object) const;  // IDA: 0x4F9A50
+    bool IsAlliedWith(const AbstractClass* abstract) const;  // IDA: 0x4F9A50
 
     void MakeAlly(int house_idx, bool announce);  // 0x4F9B50
-    void MakeAlly(HouseClass* who, bool announce);
+    void MakeAlly(HouseClass* who, bool announce);  // IDA: 0x4F9B50
     void MakeEnemy(HouseClass* who, bool announce);
     void AllyAIHouses();
 
@@ -174,7 +174,7 @@ public:
 
     void BuildingUnderAttack(BuildingClass* building);
     void TakeMoney(int amount);
-    void GiveMoney(int amount);
+    void GiveMoney(int amount);  // 0x522D50
 
     bool CanTransactMoney(int amount) const { return amount > 0 || AvailableMoney() >= -amount; }
     void TransactMoney(int amount)
@@ -185,7 +185,7 @@ public:
 
     int AvailableMoney() const;
 
-    void GiveTiberium(float amount, int type);
+    void GiveTiberium(float amount, int type);  // 0x4F9610
     void UpdateAllSilos(int prev_storage, int prev_total_storage);  // 0x4F9970
     double getStoragePercentage();
 
@@ -201,8 +201,8 @@ public:
     bool FireGenMutator(SuperClass* super);
 
     int  AIBaseConstructionupdateLogic();
-    void AITryFireSW();
-    bool FireSW(int idx, const CellStruct& coords);
+    void AITryFireSW();  // IDA: 0x5098F0
+    bool FireSW(int idx, const CellStruct& coords);   // IDA: 0x5098F0
 
     CellStruct* PickTargetByType(CellStruct& out, TargetType type) const;
     CellStruct PickTargetByType(TargetType type) const

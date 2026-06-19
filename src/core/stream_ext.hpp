@@ -30,9 +30,9 @@ public:
     // IDA 0x48B2A0 area
     virtual int32_t GetSize();
     // IDA 0x48B2A0 area
-    virtual void Flush();
+    virtual void Flush();  // 0x7AEF50
     // IDA 0x48B2A0 area
-    virtual void Close();
+    virtual void Close();  // 0x76B090
     // IDA 0x48B2A0 area
     virtual int32_t GetPosition();
 
@@ -59,11 +59,11 @@ public:
     // IDA 0x48B2A0 area
     void ReadIntArray(int32_t* arr, int32_t count);  // 0x49FB70
     // IDA 0x48B2A0 area
-    int32_t ReadInt();
+    int32_t ReadInt();  // IDA: 0x49FB70
     // IDA 0x48B2A0 area
-    void WriteInt(int32_t val);
+    void WriteInt(int32_t val);  // 0x67A4A0
     // IDA 0x48B2A0 area
-    void WriteBytes(const void* data, int32_t size);
+    void WriteBytes(const void* data, int32_t size);  // IDA: 0x411310
     // IDA 0x48B2A0 area
     int32_t ReadBytes(void* buf, int32_t size);  // 0x774B30
     // IDA 0x48B2A0 area
@@ -71,7 +71,7 @@ public:
     // IDA 0x48B2A0 area
     int32_t GetPosition();  // 0x7C3960
     // IDA 0x48B2A0 area
-    int32_t GetSize();
+    int32_t GetSize();  // 0x70C250
 
     StreamClass* m_Stream;      // 0x00
     int32_t     Stream_field_04;       // 0x04

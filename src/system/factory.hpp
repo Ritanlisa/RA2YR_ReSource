@@ -36,7 +36,7 @@ public:
     bool HasProgressChanged();                                                           // 0x4C9C60
     bool DemandProduction(const TechnoTypeClass* type, HouseClass* owner, bool should_queue); // 0x4C9C70
     void SetObject(TechnoClass* object);                                                 // 0x4C9E10
-    bool Suspend(bool manual);
+    bool Suspend(bool manual);  // 0x5D2530
     bool Unsuspend(bool manual);
     int GetBuildTimeFrames() const;                                                      // 0x4C9FB0
     bool AbandonProduction();                                                            // 0x4CA580 (Revert)
@@ -47,7 +47,7 @@ public:
     void StartProduction();                                                             // 0x4C9E60
     void StartProduction_2();                                                            // 0x4CA5A0
     void UpdateProduction();                                                            // 0x4C9B20
-    void FinishProduction();
+    void FinishProduction();  // IDA: 0x635060
 
     // queue management
     bool RemoveOneFromQueue(const TechnoTypeClass* item);                                // 0x4CA620
@@ -58,10 +58,10 @@ public:
     static FactoryClass* FindByOwnerAndProduct(const HouseClass* house, const TechnoTypeClass* item);
 
     // save/load
-    void LoadFromStream(IStream* stream);
-    void Stat(IStream* stream);
+    void LoadFromStream(IStream* stream);  // IDA: 0x4CA270
+    void Stat(IStream* stream);  // IDA: 0x4CA430
     void Seek(IStream* stream);                                                          // 0x4CA3C0
-    void Revert();
+    void Revert();  // IDA: 0x4CA580
     void CopyTo(void* dest);                                                            // 0x4CA770
 
     uint32_t        production[3];

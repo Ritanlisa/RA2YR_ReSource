@@ -50,7 +50,7 @@ public:
     virtual int32_t AddRef();  // 0x5360D0
     virtual int32_t Release();  // 0x5360F0
     virtual const char* GetName() const override;
-    virtual const wchar_t* GetUIName() const override;
+    virtual const wchar_t* GetUIName() const override;  // IDA: 0x484FF0
     virtual void Execute(uint32_t context) const override;
 
     int32_t     AddTeamCommand_field_00;       // 0x00
@@ -70,7 +70,7 @@ public:
     virtual int32_t AddRef();  // 0x5362B0
     virtual int32_t Release();  // 0x5362D0
     virtual const char* GetName() const override;
-    virtual const wchar_t* GetUIName() const override;
+    virtual const wchar_t* GetUIName() const override;  // IDA: 0x484FF0
     virtual void Execute(uint32_t context) const override;
 
     int32_t     TauntCommandClass_field_00;       // 0x00
@@ -86,11 +86,11 @@ public:
     PageUserCommandClass() = default;
     virtual ~PageUserCommandClass() = default;  // 0x537E10
 
-    virtual void Construct();
+    virtual void Construct();  // 0x537DD0
     virtual int32_t AddRef();  // 0x537DE0
     virtual int32_t Release();  // 0x537DF0
     virtual const char* GetName() const override;
-    virtual const wchar_t* GetUIName() const override;
+    virtual const wchar_t* GetUIName() const override;  // IDA: 0x484FF0
     virtual void Execute(uint32_t context) const override;
 
     int32_t     PageUserCommandClass_field_00;       // 0x00
@@ -110,7 +110,7 @@ public:
     virtual int32_t AddRef();  // 0x537F20
     virtual int32_t Release();  // 0x537F30
     virtual const char* GetName() const override;
-    virtual const wchar_t* GetUIName() const override;
+    virtual const wchar_t* GetUIName() const override;  // IDA: 0x484FF0
     virtual void Execute(uint32_t context) const override;
 
     int32_t     DeleteCommandClass_field_00;       // 0x00
@@ -146,7 +146,7 @@ public:
 
     virtual void Constructor();  // 0x537B40
     virtual int32_t AddRef();  // 0x537B50
-    virtual void ddtor();
+    virtual void ddtor();  // IDA: 0x537B60
     virtual const char* GetName() const override;
     virtual void Execute(uint32_t context) const override;  // 0x537BA0
 

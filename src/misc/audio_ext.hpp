@@ -30,7 +30,7 @@ public:
     // IDA 0x407150 area
     void RequestAllBuffers();  // 0x4083D0
     // IDA 0x407150 area
-    void StopAll();
+    void StopAll();  // 0x403730
     // IDA 0x407150 area
     void SetVolume(int32_t volume);  // 0x406650
     // IDA 0x407150 area
@@ -94,9 +94,9 @@ class Mixer
 {
 public:
     // IDA 0x407150 area
-    static void ReleaseChannel(int32_t channel);
+    static void ReleaseChannel(int32_t channel);  // IDA: 0x406060
     // IDA 0x407150 area
-    static void RequestAllBuffers();
+    static void RequestAllBuffers();  // IDA: 0x4083D0
 
     int32_t     Mixer_field_00;       // 0x00
 };

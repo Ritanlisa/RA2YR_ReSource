@@ -164,10 +164,10 @@ public:
     MPFreeForAllClass() noexcept;                                       // 0x5C5CE0 (MPBattleClass::MPFreeForAllClass)
     virtual ~MPFreeForAllClass() = default;
     virtual bool StartGame() override;
-    virtual bool StopGame(int32_t reason) override;
-    virtual bool AreTeamChangesAllowed() override;
-    virtual bool IsTeamsAllowed() override;
-    virtual void PopulateTeamDropdownForPlayer(HWND, int32_t) override;
+    virtual bool StopGame(int32_t reason) override;  // 0x5CADC0
+    virtual bool AreTeamChangesAllowed() override;  // 0x5CADD0
+    virtual bool IsTeamsAllowed() override;  // 0x5CB570
+    virtual void PopulateTeamDropdownForPlayer(HWND, int32_t) override;  // 0x5D3470
 };
 
 class MPUnholyAllianceClass : public MPGameModeClass
@@ -176,8 +176,8 @@ public:
     MPUnholyAllianceClass() noexcept;                                    // 0x5CB3A0 (MPBattleClass::MPUnholyAllianceClass)
     virtual ~MPUnholyAllianceClass() = default;
     virtual bool StartGame() override;
-    virtual bool StopGame(int32_t reason) override;
-    virtual bool AreTeamChangesAllowed() override;
+    virtual bool StopGame(int32_t reason) override;  // 0x5CADC0
+    virtual bool AreTeamChangesAllowed() override;  // 0x5CADD0
     virtual bool SpawnBaseUnits(HouseClass*, uint32_t) override;
 };
 
@@ -187,10 +187,10 @@ public:
     MPSiegeClass() noexcept;                                              // 0x5CA630 (MPBattleClass::MPSiegeClass)
     virtual ~MPSiegeClass() = default;
     virtual bool StartGame() override;
-    virtual bool StopGame(int32_t reason) override;
-    virtual bool AreTeamChangesAllowed() override;
-    virtual bool IsAIAllowed() override;
-    virtual bool UnfixAlliances() override;
+    virtual bool StopGame(int32_t reason) override;  // 0x5CADC0
+    virtual bool AreTeamChangesAllowed() override;  // 0x5CADD0
+    virtual bool IsAIAllowed() override;  // 0x5CB380
+    virtual bool UnfixAlliances() override;  // 0x5D4CD0
     virtual bool StartingPositionsToHouseBaseCells2(bool) override;
     virtual void CreateMPTeams(DynamicVectorClass<MPTeam*>*) override;
     virtual bool SpawnBaseUnits(HouseClass*, uint32_t) override;
@@ -201,7 +201,7 @@ class MPMegawealthClass : public MPGameModeClass
 public:
     MPMegawealthClass() noexcept;                                  // 0x5C93E0 (MPBattleClass::MPMegawealthClass)
     virtual ~MPMegawealthClass() = default;
-    virtual bool IsMegawealthAllowed() override;
+    virtual bool IsMegawealthAllowed() override;  // 0x5D5900
 };
 
 class MPManBattleClass : public MPGameModeClass

@@ -267,15 +267,19 @@ def check_file(filepath: Path) -> list:
                 )
 
     # --- duplicate addresses ---
+    # Only count // 0xADDR format (not // IDA: 0xADDR) for duplicate detection.
+    # // IDA: format is intentionally used for derived classes sharing base class
+    # vtable addresses — preserving address info without triggering false duplicates.
     for addr, occurrences in addr_map.items():
-        if len(occurrences) > 1:
-            lines_str = ", ".join(f"L{ln}" for ln, _ in occurrences)
+        non_ida = [(ln, txt) for ln, txt in occurrences if "ida:" not in txt.lower()]
+        if len(non_ida) > 1:
+            lines_str = ", ".join(f"L{ln}" for ln, _ in non_ida)
             violations.append(
                 {
                     "file": str(filepath),
-                    "line": occurrences[0][0],
+                    "line": non_ida[0][0],
                     "type": "duplicate_address",
-                    "detail": f"0x{addr} appears {len(occurrences)} times: {lines_str}",
+                    "detail": f"0x{addr} appears {len(non_ida)} times (non-IDA): {lines_str}",
                 }
             )
 
@@ -447,7 +451,8 @@ def fix_file(filepath: Path, dry_run: bool = False) -> list:
 
     # ── Step 4: Deduplicate addresses ──
     # When the same address appears on multiple lines (e.g., base class + derived),
-    # keep ALL declarations but strip the duplicate address comment.
+    # convert duplicate // 0xADDR to // IDA: 0xADDR format (preserves address info
+    # without triggering duplicate_address anomaly in --check).
     # Only the first occurrence retains its // 0xADDR annotation.
     addr_seen = {}  # formatted_addr → first_line_idx
     for i, line in enumerate(new_lines):
@@ -460,13 +465,17 @@ def fix_file(filepath: Path, dry_run: bool = False) -> list:
             else:
                 continue
         if formatted in addr_seen:
-            # Strip the // 0xADDR comment from the duplicate line
-            new_line = RE_ADDR_COMMENT_END.sub("", line)
-            if new_line != line:
-                new_lines[i] = new_line
-                changes.append(
-                    f"  L{i+1}: stripped duplicate 0x{formatted} comment (first at L{addr_seen[formatted]+1}), kept declaration"
+            # Convert // 0xADDR to // IDA: 0xADDR for the duplicate line
+            # Only transform if it's currently in the plain // 0xADDR format (not already IDA:)
+            if not RE_ADDR_IDA.search(line):
+                new_line = RE_ADDR_TAIL.sub(
+                    lambda m: f" // IDA: 0x{m.group(1).upper()}", line, count=1
                 )
+                if new_line != line:
+                    new_lines[i] = new_line
+                    changes.append(
+                        f"  L{i+1}: converted duplicate 0x{formatted} to // IDA: 0x{formatted} (first at L{addr_seen[formatted]+1})"
+                    )
         else:
             addr_seen[formatted] = i
 

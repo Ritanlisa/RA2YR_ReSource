@@ -35,7 +35,7 @@ public:
     virtual ~HouseTypeClass() = default;  // 0x5116A0
 
     virtual AbstractType __stdcall whatAmI() const override;
-    virtual int objectSize() const override;
+    virtual int objectSize() const override;  // 0x512720
 
     HouseTypeClass* FindParentCountry() const;
     int FindParentCountryIndex() const;

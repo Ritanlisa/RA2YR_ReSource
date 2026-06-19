@@ -343,7 +343,7 @@ public:
     virtual ~BlitPlainXlatAlpha_ushort() = default;  // 0x493D60
 
     virtual void AddRef(); // 0x493CC0
-    virtual void ddtor();
+    virtual void ddtor();  // IDA: 0x493D60
     virtual void Release(); // 0x493D90
     virtual void Blit(); // 0x493DC0
     virtual void QueryInterface(); // 0x49A200
@@ -360,7 +360,7 @@ public:
     virtual ~BlitTransLucent25AlphaZReadWarp_ushort() = default;  // 0x495840
 
     virtual void AddRef(); // 0x495730
-    virtual void ddtor();
+    virtual void ddtor();  // IDA: 0x495840
     virtual void BlitRect(); // 0x495870
     virtual void GetSize(); // 0x4958A0
     virtual void Blit(); // 0x49A5E0
@@ -377,7 +377,7 @@ public:
     virtual ~BlitTransLucent25AlphaZReadWrite_ushort() = default;  // 0x496010
 
     virtual void AddRef(); // 0x495F00
-    virtual void ddtor();
+    virtual void ddtor();  // IDA: 0x496010
     virtual void BlitRect(); // 0x496040
     virtual void GetSize(); // 0x496070
     virtual void Blit_RLE_Xlat(); // 0x4960A0
@@ -404,7 +404,7 @@ public:
     virtual ~BlitTransLucent25AlphaZRead_ushort() = default;  // 0x495360
 
     virtual void AddRef(); // 0x495250
-    virtual void ddtor();
+    virtual void ddtor();  // IDA: 0x495360
     virtual void BlitRect(); // 0x495390
     virtual void GetSize(); // 0x4953C0
     virtual void Blit(); // 0x49A520
@@ -421,7 +421,7 @@ public:
     virtual ~BlitTransLucent25Alpha_ushort() = default;  // 0x494400
 
     virtual void AddRef(); // 0x494330
-    virtual void ddtor();
+    virtual void ddtor();  // IDA: 0x494400
     virtual void BlitRect(); // 0x494430
     virtual void GetSize(); // 0x494460
     virtual void Blit_ZRead_AlphaBlend(); // 0x494490
@@ -444,7 +444,7 @@ public:
     virtual ~BlitTransLucent50AlphaZReadWarp_ushort() = default;  // 0x4956A0
 
     virtual void AddRef(); // 0x495590
-    virtual void ddtor();
+    virtual void ddtor();  // IDA: 0x4956A0
     virtual void BlitRect(); // 0x4956D0
     virtual void GetSize(); // 0x495700
     virtual void Blit(); // 0x49A5A0
@@ -461,7 +461,7 @@ public:
     virtual ~BlitTransLucent50AlphaZReadWrite_ushort() = default;  // 0x495E70
 
     virtual void AddRef(); // 0x495D60
-    virtual void ddtor();
+    virtual void ddtor();  // IDA: 0x495E70
     virtual void BlitRect(); // 0x495EA0
     virtual void GetSize(); // 0x495ED0
     virtual void Blit(); // 0x49A6E0
@@ -478,7 +478,7 @@ public:
     virtual ~BlitTransLucent50AlphaZRead_ushort() = default;  // 0x4951C0
 
     virtual void AddRef(); // 0x4950C0
-    virtual void ddtor();
+    virtual void ddtor();  // IDA: 0x4951C0
     virtual void BlitRect(); // 0x4951F0
     virtual void GetSize(); // 0x495220
     virtual void Blit(); // 0x49A4E0
@@ -495,7 +495,7 @@ public:
     virtual ~BlitTransLucent50Alpha_ushort() = default;  // 0x4942A0
 
     virtual void AddRef(); // 0x4941E0
-    virtual void ddtor();
+    virtual void ddtor();  // IDA: 0x4942A0
     virtual void BlitRect(); // 0x4942D0
     virtual void GetSize(); // 0x494300
     virtual void Blit(); // 0x49A300
@@ -512,7 +512,7 @@ public:
     virtual ~BlitTransLucent75AlphaZReadWarp_ushort() = default;  // 0x495500
 
     virtual void AddRef(); // 0x4953F0
-    virtual void ddtor();
+    virtual void ddtor();  // IDA: 0x495500
     virtual void BlitRect(); // 0x495530
     virtual void GetSize(); // 0x495560
     virtual void Blit(); // 0x49A560
@@ -529,7 +529,7 @@ public:
     virtual ~BlitTransLucent75AlphaZReadWrite_ushort() = default;  // 0x495CD0
 
     virtual void AddRef(); // 0x495BC0
-    virtual void ddtor();
+    virtual void ddtor();  // IDA: 0x495CD0
     virtual void BlitRect(); // 0x495D00
     virtual void GetSize(); // 0x495D30
     virtual void Blit(); // 0x49A6A0
@@ -546,7 +546,7 @@ public:
     virtual ~BlitTransLucent75AlphaZRead_ushort() = default;  // 0x495030
 
     virtual void AddRef(); // 0x494F20
-    virtual void ddtor();
+    virtual void ddtor();  // IDA: 0x495030
     virtual void BlitRect(); // 0x495060
     virtual void GetSize(); // 0x495090
     virtual void Blit(); // 0x49A4A0
@@ -563,7 +563,7 @@ public:
     virtual ~BlitTransLucent75Alpha_ushort() = default;  // 0x494150
 
     virtual void AddRef(); // 0x494080
-    virtual void ddtor();
+    virtual void ddtor();  // IDA: 0x494150
     virtual void BlitRect(); // 0x494180
     virtual void GetSize(); // 0x4941B0
     virtual void Blit(); // 0x49A2C0
@@ -580,7 +580,7 @@ public:
     virtual ~BlitTransXlatAlphaZReadWrite_ushort() = default;  // 0x4959C0
 
     virtual void AddRef(); // 0x4958D0
-    virtual void ddtor();
+    virtual void ddtor();  // IDA: 0x4959C0
     virtual void BlitRect(); // 0x4959F0
     virtual void GetSize(); // 0x495A20
     virtual void Blit(); // 0x49A620
@@ -631,7 +631,7 @@ public:
     virtual ~BlitTransZRemapXlatAlphaZReadWrite_ushort() = default;  // 0x495B30
 
     virtual void AddRef(); // 0x495A50
-    virtual void ddtor();
+    virtual void ddtor();  // IDA: 0x495B30
     virtual void BlitRect(); // 0x495B60
     virtual void GetSize(); // 0x495B90
     virtual void Blit(); // 0x49A660
@@ -648,7 +648,7 @@ public:
     virtual ~BlitTransZRemapXlatAlphaZRead_ushort() = default;  // 0x494E90
 
     virtual void AddRef(); // 0x494D90
-    virtual void ddtor();
+    virtual void ddtor();  // IDA: 0x494E90
     virtual void BlitRect(); // 0x494EC0
     virtual void GetSize(); // 0x494EF0
     virtual void Blit(); // 0x49A460
@@ -665,7 +665,7 @@ public:
     virtual ~BlitTransZRemapXlatAlpha_ushort() = default;  // 0x493FF0
 
     virtual void AddRef(); // 0x493F30
-    virtual void ddtor();
+    virtual void ddtor();  // IDA: 0x493FF0
     virtual void BlitRect(); // 0x494020
     virtual void GetSize(); // 0x494050
     virtual void Blit(); // 0x49A280
@@ -810,7 +810,7 @@ public:
 
     virtual void Seek(); // 0x4D2980
     virtual void Release(); // 0x4D2A10
-    virtual void ddtor();
+    virtual void ddtor();  // IDA: 0x4D2B20
     virtual void Read(); // 0x4D2B50
     virtual void Write(); // 0x4D2BA0
     // +1 more virtual methods
