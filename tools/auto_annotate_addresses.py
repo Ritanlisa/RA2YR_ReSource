@@ -3,6 +3,14 @@
 auto_annotate_addresses.py — Add // 0xADDR comments to function declarations 
 in .hpp files by matching against functions.json.
 
+Matching strategies (tried in order):
+  1. Constructor matching: ClassName(args) → call.class_name == call.method_name
+  2. Destructor matching: ~ClassName() → call.method_name ∈ {ddtor, DTOR, SDDTOR, Destruct}
+  3. Class + method exact: ClassName::method → (class_name, method_name) lookup
+  4. Method-only unique: method_name has exactly one class match in functions.json
+  5. Fuzzy class matching: class name appears as substring of functions.json class_name
+  6. Global function: function_name → global_lookup
+
 Usage:
   python tools/auto_annotate_addresses.py --dry-run   (preview only)
   python tools/auto_annotate_addresses.py              (apply changes)
@@ -48,6 +56,14 @@ RE_ADDR_IDA = re.compile(r"//\s*IDA:\s*0x([0-9A-Fa-f]+)")
 # Member offset patterns (NOT addresses — skip these)
 RE_MEMBER_OFFSET = re.compile(r"/\*\s*0x[0-9A-Fa-f]+\s*\*/")
 RE_OFFSET_COMMENT = re.compile(r"//\s*\+0x[0-9A-Fa-f]+")
+
+# Constructor declaration: ClassName(…) or ClassName(Type1 a1, …);
+RE_CTOR_DECL = re.compile(
+    r"^\s+([A-Z]\w+)\([^)]*\)\s*(?:const\s*)?;\s*(?://.*)?$"
+)
+
+# Destructor declaration: ~ClassName(); already matched by RE_FUNC_PATTERN
+RE_DTOR_NAME = re.compile(r"~(\w+)")
 
 # ── Utility Functions ──────────────────────────────────────────────────────
 
@@ -113,6 +129,46 @@ def is_func_declaration(line: str) -> bool:
     return bool(RE_FUNC_PATTERN.match(before_term))
 
 
+def is_ctor_declaration(line: str) -> tuple:
+    """Check if line is a constructor declaration (no return type).
+    Returns (class_name, line) or (None, None)."""
+    m = RE_CTOR_DECL.match(line)
+    if not m:
+        return None, None
+    
+    class_name = m.group(1)
+    
+    # Filter out obvious non-constructors
+    # Keywords that indicate this is NOT a constructor
+    non_ctor = {"virtual", "static", "constexpr", "inline", "explicit", "friend",
+                "return", "if", "while", "for", "switch", "case", "goto",
+                "class", "struct", "enum", "union", "namespace", "typedef"}
+    if class_name in non_ctor:
+        return None, None
+    
+    # Skip lines that look like inline method calls with bodies
+    # Check for common patterns: Grow(), Shrink(), Clear(), Rebuild(), RebuildTo()
+    # These are typically template/inline methods, not constructors
+    common_methods = {"grow", "shrink", "clear", "rebuild", "rebuildto", 
+                      "addref", "release", "queryinterface", "clone",
+                      "push", "pop", "top", "front", "back", "size", "empty",
+                      "begin", "end", "insert", "erase", "find", "contains",
+                      "reserve", "capacity", "data"}
+    if class_name.lower() in common_methods:
+        return None, None
+    
+    # Also skip function calls like GameDelete(ptr), GetRect(&buf)
+    # that look like constructors but have args that look like variables
+    after_paren = line[line.index("(")+1:]
+    close_paren = after_paren.index(")")
+    args_str = after_paren[:close_paren].strip()
+    # If args contain operators or look like function calls, skip
+    if args_str and any(op in args_str for op in ["->", ".", "=", "+", "-", "*", "/", "&", "|"]):
+        return None, None
+    
+    return class_name, line
+
+
 def extract_func_name(line: str) -> str:
     """Extract the function name from a declaration line.
     Returns the function name (e.g., 'GetClassID', '~ClassName', 'operator<') or None."""
@@ -152,13 +208,21 @@ def is_forward_declaration(line: str) -> bool:
 
 # ── Build Lookup Tables ────────────────────────────────────────────────────
 
-def build_lookup(functions_json_path: Path) -> dict:
-    """Build (class_name, method_name) -> address lookup from functions.json."""
+def build_lookup(functions_json_path: Path) -> tuple:
+    """Build lookup tables from functions.json.
+    Returns (class_method_lookup, global_lookup, ctor_lookup, dtor_lookup, method_to_classes).
+    """
     with open(functions_json_path, "r", encoding="utf-8") as f:
         data = json.load(f)
     
-    class_method_lookup = {}  # (class_name, method_name) -> address
-    global_lookup = {}        # name -> address
+    class_method_lookup = {}   # (class_name, method_name) -> address
+    global_lookup = {}         # name -> address
+    ctor_lookup = {}           # class_name -> address  (mn == cn)
+    dtor_lookup = {}           # class_name -> address  (mn is ddtor/DTOR/etc)
+    method_to_classes = defaultdict(list)  # method_name -> [(class_name, address), ...]
+    
+    dtor_names = {"ddtor", "dtor", "sddtor", "destruct", 
+                  "scalar deleting destructor", "vector deleting destructor"}
     
     for entry in data["functions"]:
         addr = entry.get("address", "")
@@ -172,7 +236,17 @@ def build_lookup(functions_json_path: Path) -> dict:
             key = (cn.lower(), mn.lower())
             if key not in class_method_lookup:
                 class_method_lookup[key] = addr
-            # else keep first occurrence
+            
+            # Track method name → classes mapping (for method-only matching)
+            method_to_classes[mn.lower()].append((cn, addr))
+            
+            # Constructor: method_name == class_name
+            if mn == cn:
+                ctor_lookup[cn.lower()] = addr
+            
+            # Destructor
+            if mn.lower() in dtor_names:
+                dtor_lookup[cn.lower()] = addr
         
         if name and not cn:
             # Global function
@@ -180,26 +254,10 @@ def build_lookup(functions_json_path: Path) -> dict:
             if n not in global_lookup:
                 global_lookup[n] = addr
     
-    return class_method_lookup, global_lookup
+    return class_method_lookup, global_lookup, ctor_lookup, dtor_lookup, method_to_classes
 
 
 # ── Parse Class Context ─────────────────────────────────────────────────────
-
-def get_namespace_prefix(lines, line_idx):
-    """Get the namespace prefix for a given line number (0-indexed in lines list).
-    Returns e.g., 'gamemd' or 'ra2::game'."""
-    # Simple approach: find namespace declarations before this line
-    namespaces = []
-    for i in range(line_idx):
-        line = lines[i].strip()
-        m = re.match(r'namespace\s+(\w+)\s*\{?', line)
-        if m:
-            namespaces.append(m.group(1))
-        if '}' in line and 'namespace' not in line.lower():
-            # Could be closing a namespace - but this is imprecise
-            pass
-    return "::".join(namespaces) if namespaces else ""
-
 
 def parse_class_context(lines):
     """
@@ -207,7 +265,7 @@ def parse_class_context(lines):
     Handles nested classes, multi-line class definitions, and namespace blocks.
     Returns line_to_class dict.
     """
-    classes = []
+    classes_ = []
     stack = []  # (class_name, start_line)
     
     i = 0
@@ -254,18 +312,18 @@ def parse_class_context(lines):
         for _ in range(close_count):
             if stack:
                 cn, start = stack.pop()
-                classes.append((start, i, cn, [s[0] for s in stack]))
+                classes_.append((start, i, cn, [s[0] for s in stack]))
         
         i += 1
     
     # Classes not closed (implicit close at end of file)
     while stack:
         cn, start = stack.pop()
-        classes.append((start, len(lines) - 1, cn, [s[0] for s in stack]))
+        classes_.append((start, len(lines) - 1, cn, [s[0] for s in stack]))
     
     # Build line -> class list map
     line_to_class = defaultdict(list)
-    for start, end, cn, parents in classes:
+    for start, end, cn, parents in classes_:
         for li in range(start, end + 1):
             line_to_class[li].append((cn, parents))
     
@@ -282,9 +340,59 @@ def get_class_name_at_line(line_to_class, line_idx):
     return deepest[0]
 
 
+# ── Fuzzy Matching Helpers ──────────────────────────────────────────────────
+
+def fuzzy_class_match(hpp_class: str, json_classes: list) -> str:
+    """
+    Try to match an hpp class name against a list of functions.json class names.
+    Returns the best matching class name or None.
+    
+    Strategies (tried in order):
+    1. Exact match (case-insensitive)
+    2. hpp_class is a substring of json_class (e.g., "Infantry" → "InfantryClass")
+    3. json_class is a substring of hpp_class
+    4. hpp_class + "Class" matches json_class
+    """
+    hpp_lower = hpp_class.lower()
+    
+    # Strategy 1: exact match
+    exact_matches = [cn for cn, _ in json_classes if cn.lower() == hpp_lower]
+    if len(exact_matches) == 1:
+        return exact_matches[0]
+    
+    # Strategy 2: hpp_class is substring of json_class
+    substr_matches = [(cn, addr) for cn, addr in json_classes 
+                      if hpp_lower in cn.lower() and cn.lower() != hpp_lower]
+    if len(substr_matches) == 1:
+        return substr_matches[0][0]
+    
+    # Strategy 3: json_class is substring of hpp_class
+    rev_substr = [(cn, addr) for cn, addr in json_classes
+                  if cn.lower() in hpp_lower and cn.lower() != hpp_lower]
+    if len(rev_substr) == 1:
+        return rev_substr[0][0]
+    
+    # Strategy 4: hpp_class + "Class" matches
+    suffix_match = [(cn, addr) for cn, addr in json_classes
+                    if cn.lower() == hpp_lower + "class"]
+    if len(suffix_match) == 1:
+        return suffix_match[0][0]
+    
+    # Strategy 5: hpp_class without "Class" suffix matches
+    if hpp_lower.endswith("class") and len(hpp_lower) > 5:
+        base = hpp_lower[:-5]
+        base_matches = [(cn, addr) for cn, addr in json_classes if cn.lower() == base]
+        if len(base_matches) == 1:
+            return base_matches[0][0]
+    
+    return None
+
+
 # ── Main Annotation Logic ──────────────────────────────────────────────────
 
-def annotate_file(filepath: Path, class_method_lookup: dict, global_lookup: dict, 
+def annotate_file(filepath: Path, class_method_lookup: dict, global_lookup: dict,
+                  ctor_lookup: dict, dtor_lookup: dict,
+                  method_to_classes: dict,
                   dry_run: bool = False) -> list:
     """
     Annotate a single .hpp file. Returns list of change descriptions.
@@ -304,56 +412,89 @@ def annotate_file(filepath: Path, class_method_lookup: dict, global_lookup: dict
     # Parse class context
     line_to_class = parse_class_context(lines)
     
+    # Collect per-file stats for reporting
+    match_types = defaultdict(int)
+    
     # Scan for function declarations
     for i, line in enumerate(lines):
         # Skip if already has address annotation
         if has_address_annotation(line):
             continue
         
-        # Skip if not a function declaration
-        if not is_func_declaration(line):
-            continue
-        
-        # Skip forward declarations
-        if is_forward_declaration(line):
-            continue
-        
-        # Extract function name
-        func_name = extract_func_name(line)
-        if not func_name:
-            continue
-        
-        # Skip destructors (no entries in functions.json)
-        if func_name.startswith("~"):
-            continue
-        
-        # Skip operators (no entries in functions.json)
-        if func_name.startswith("operator"):
-            continue
-        
         addr = None
+        label = ""
         
-        # Try class method lookup
-        class_name = get_class_name_at_line(line_to_class, i)
-        if class_name:
-            key = (class_name.lower(), func_name.lower())
-            if key in class_method_lookup:
-                addr = class_method_lookup[key]
+        # ── Strategy 1: Constructor matching ──
+        ctor_class, _ = is_ctor_declaration(line)
+        if ctor_class:
+            if ctor_class.lower() in ctor_lookup:
+                addr = ctor_lookup[ctor_class.lower()]
+                label = f"ctor:{ctor_class}"
         
-        # If not found in class context, try global lookup
+        # ── Strategy 2: Regular function declarations (including destructors) ──
         if not addr:
-            key = func_name.lower()
-            if key in global_lookup:
-                addr = global_lookup[key]
+            if not is_func_declaration(line):
+                continue
+            if is_forward_declaration(line):
+                continue
+            
+            func_name = extract_func_name(line)
+            if not func_name:
+                continue
+            
+            class_name = get_class_name_at_line(line_to_class, i)
+            
+            # ── Strategy 2a: Destructor matching ──
+            if func_name.startswith("~"):
+                dtor_class = func_name[1:]  # strip ~
+                if dtor_class.lower() in dtor_lookup:
+                    addr = dtor_lookup[dtor_class.lower()]
+                    label = f"dtor:{dtor_class}"
+            
+            # ── Strategy 2b: Class + method exact match ──
+            if not addr and class_name:
+                key = (class_name.lower(), func_name.lower())
+                if key in class_method_lookup:
+                    addr = class_method_lookup[key]
+                    label = "class_method"
+            
+            # ── Strategy 2c: Method-only unique match ──
+            if not addr:
+                candidates = method_to_classes.get(func_name.lower(), [])
+                if len(candidates) == 1:
+                    addr = candidates[0][1]
+                    label = f"method_only:{candidates[0][0]}"
+            
+            # ── Strategy 2d: Fuzzy class matching ──
+            if not addr and class_name and func_name.lower() in method_to_classes:
+                candidates = method_to_classes[func_name.lower()]
+                if len(candidates) > 1:
+                    matched_class = fuzzy_class_match(class_name, candidates)
+                    if matched_class:
+                        # Find the address for the matched class
+                        for cn, a in candidates:
+                            if cn == matched_class:
+                                addr = a
+                                label = f"fuzzy:{class_name}→{matched_class}"
+                                break
+            
+            # ── Strategy 2e: Global function lookup ──
+            if not addr:
+                key = func_name.lower()
+                if key in global_lookup:
+                    addr = global_lookup[key]
+                    label = "global"
         
-        if addr:
-            # Add annotation
-            original_line = lines[i]
-            # Determine indentation
-            stripped = original_line.rstrip()
-            annotation = f"  // {addr}"
-            new_lines[i] = stripped + annotation
-            changes.append(f"  L{i+1}: {func_name} -> {addr}")
+        if not addr:
+            continue
+        
+        # Add annotation
+        stripped = lines[i].rstrip()
+        # Check that we're not adding a duplicate trailing annotation
+        annotation = f"  // {addr}"
+        new_lines[i] = stripped + annotation
+        changes.append(f"  L{i+1}: {label} -> {addr}")
+        match_types[label.split(":")[0]] += 1
     
     if changes and not dry_run:
         new_content = "\n".join(new_lines)
@@ -374,9 +515,13 @@ def main():
     
     # Build lookups
     print("Building lookup tables from functions.json...")
-    class_method_lookup, global_lookup = build_lookup(FUNCTIONS_JSON)
+    class_method_lookup, global_lookup, ctor_lookup, dtor_lookup, method_to_classes = \
+        build_lookup(FUNCTIONS_JSON)
     print(f"  Class methods: {len(class_method_lookup)}")
     print(f"  Global functions: {len(global_lookup)}")
+    print(f"  Constructors: {len(ctor_lookup)}")
+    print(f"  Destructors: {len(dtor_lookup)}")
+    print(f"  Unique method names: {sum(1 for v in method_to_classes.values() if len(v) == 1)} / {len(method_to_classes)} total")
     
     # Get files to process
     if args.file:
@@ -390,9 +535,11 @@ def main():
     
     total_changes = 0
     files_changed = 0
+    all_match_types = defaultdict(int)
     
     for fp in files:
-        changes = annotate_file(fp, class_method_lookup, global_lookup, 
+        changes = annotate_file(fp, class_method_lookup, global_lookup,
+                               ctor_lookup, dtor_lookup, method_to_classes,
                                dry_run=args.dry_run)
         if changes:
             files_changed += 1

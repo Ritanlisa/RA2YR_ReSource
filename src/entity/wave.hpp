@@ -38,7 +38,7 @@ public:
     virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;
     virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override;
 
-    virtual ~WaveClass() override = default;
+    virtual ~WaveClass() override = default;  // 0x763200
 
     virtual AbstractType __stdcall whatAmI() const override;
     virtual int objectSize() const override;

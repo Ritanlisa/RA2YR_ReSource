@@ -26,7 +26,7 @@ public:
     virtual HRESULT __stdcall Load(IStream* stream) override { return 0; }
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { return 0; }
 
-    virtual ~TEventClass() = default;
+    virtual ~TEventClass() = default;  // 0x71f880
 
     virtual void pointerExpired(AbstractClass* ptr, bool removed) override {}
     virtual AbstractType __stdcall whatAmI() const override { return kObjectDeriveId; }
@@ -38,14 +38,14 @@ public:
     void PrepareSaveToINI();                                 // 0x71F390
     bool CheckConditions(int);                               // 0x71F800
     void ProcessEvent();                                     // 0x71F820
-    void ddtor() { }                                         // 0x71F880
+    void ddtor() { }                                         // IDA: 0x71F880
     void SaveLoad_Prefix(IStream*);                          // 0x71F8C0
     void SaveLoad_Prefix_0(IStream*);                        // 0x71F930
     int GetStateA() const;                                   // 0x71F950
     int GetStateB_SpyEvent() const;                          // 0x71F9C0
-    int StubReturn48() const { return 48; }                   // 0x71FA60
-    int StubReturn88() const { return 88; }                   // 0x71FA50
-    void Stub() { }                                          // 0x71FA70
+    int StubReturn48() const { return 48; }                   // IDA: 0x71FA60
+    int StubReturn88() const { return 88; }                   // IDA: 0x71FA50
+    void Stub() { }                                          // IDA: 0x71FA70
     void Fire(TechnoClass*, int);                            // 0x71FA80
 
     int32_t     eventType;          // +0x24 (this+36)

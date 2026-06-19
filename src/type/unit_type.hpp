@@ -14,14 +14,14 @@ public:
     static constexpr AbstractType AbsID = AbstractType::UnitType;
 
     static DynamicVectorClass<UnitTypeClass*>* Array;
-    static UnitTypeClass* Find(const char* pID);  // 0x7470d0
-    static UnitTypeClass* FindOrAllocate(const char* pID);  // 0x74b960 (as FindOrCreate)
+    static UnitTypeClass* Find(const char* pID);  // 0x7470D0
+    static UnitTypeClass* FindOrAllocate(const char* pID);  // 0x74B960 (as FindOrCreate)
     static int FindIndex(const char* pID);
 
-    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override; // 0x747f30 (as GetClassIdentifier)
+    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override; // 0x747F30 (as GetClassIdentifier)
 
     virtual HRESULT __stdcall Load(IStream* pStm) override; // 0x747620 (as LoadFromINI)
-    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override; // 0x7480b0 (as SaveToINI)
+    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override; // 0x7480B0 (as SaveToINI)
 
     virtual ~UnitTypeClass() = default;  // 0x748190 (as ddtor)
 
@@ -29,12 +29,12 @@ public:
     virtual int objectSize() const override; // 0x748160 (as GetObjectSize)
 
     virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override;
-    virtual ObjectClass* CreateObject(HouseClass* pOwner) override; // 0x7474b0 (as CreateUnit)
+    virtual ObjectClass* CreateObject(HouseClass* pOwner) override; // 0x7474B0 (as CreateUnit)
 
-    UnitTypeClass(const char* pID) noexcept;  // 0x7470d0
+    UnitTypeClass(const char* pID) noexcept;
 
 protected:
-    UnitTypeClass(noinit_t) noexcept;  // 0x7470d0
+    UnitTypeClass(noinit_t) noexcept;
 
 public:
     int ArrayIndex;

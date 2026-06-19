@@ -56,7 +56,7 @@ public:
     virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;
     virtual HRESULT __stdcall GetSizeMax(ULARGE_INTEGER* pcbSize) override;
 
-    virtual ~TiberiumClass() override = default;
+    virtual ~TiberiumClass() override = default;  // 0x721e40
 
     virtual AbstractType __stdcall whatAmI() const override;
     virtual int objectSize() const override;

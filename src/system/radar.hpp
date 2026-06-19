@@ -21,7 +21,7 @@ struct RadarTrackingStruct;
 class RadarClass : public DisplayClass
 {
 public:
-    virtual ~RadarClass() = default;
+    virtual ~RadarClass() = default;  // 0x652c00
 
     virtual void CreateEmptyMap(const RectangleStruct& map_rect, bool reuse, int8_t n_level, bool unk);
     virtual void SetVisibleRect(const RectangleStruct& map_rect);

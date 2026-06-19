@@ -43,7 +43,7 @@ struct GadgetEvent {
 class GadgetClass {
 public:
     GadgetClass() = default;
-    virtual ~GadgetClass() = default;
+    virtual ~GadgetClass() = default;  // 0x4e1390
 
     virtual void Draw(DSurface* surface, TextRenderer* text) = 0;
     virtual bool OnClick(int x, int y);
@@ -132,7 +132,7 @@ public:
     void AddGadget(GadgetClass* gadget);
     void ClearGadgets();
     void SetVisible(bool visible);
-    bool IsVisible() const;
+    bool IsVisible() const;  // 0x4a5110
     bool IsFinished() const;
     void Finish(int result);
     int GetResult() const;
@@ -143,7 +143,7 @@ public:
     std::vector<GadgetClass*>& Gadgets();
 
 protected:
-    void DrawBackground(DSurface* surface);
+    void DrawBackground(DSurface* surface);  // 0x621e90
 
     int x, y, w, h;
     bool visible = true;

@@ -55,7 +55,7 @@ public:
     // IDA 0x7514D0
     static VocClass* Find(const char* pName);
     // IDA 0x7514D0 (same address, Find calls FindIndex)
-    static int32_t FindIndex(const char* pName);  // 0x7514d0
+    static int32_t FindIndex(const char* pName);  // 0x7514D0
 
     // IDA 0x750920
     static void PlayGlobal(int32_t index, int32_t panning, float volume, AudioController* pCtrl = nullptr);
@@ -164,7 +164,7 @@ struct AudioEventHandle
     uint8_t          padding[2];
     CoordStruct*     Position3D;
 
-    bool IsPlaying() const;
+    bool IsPlaying() const;  // 0x7529e0
     void Stop();
 };
 

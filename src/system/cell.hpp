@@ -130,27 +130,27 @@ public:
     TerrainClass* GetTerrain(bool alt) const;
     ObjectClass* GetSomeObject(const CoordStruct& coords, bool alt) const;
 
-    void SetWallOwner();
+    void SetWallOwner();  // 0x47d210
     bool IsShrouded() const;
-    void Unshroud();
+    void Unshroud();  // 0x4876f0
     void SetupLAT();
-    void Setup(uint32_t unk);
+    void Setup(uint32_t unk);  // 0x5c21d0
     void BlowUpBridge();
     bool CanThisExistHere(SpeedType speed, BuildingTypeClass* object, HouseClass* owner) const;
     void ScatterContent(const CoordStruct& crd, bool ignore_mission, bool ignore_dest, bool alt);
     CellClass* GetNeighbourCell(unsigned int direction) const;
-    void UpdateThreat(unsigned int source_house, int threat_level);
+    void UpdateThreat(unsigned int source_house, int threat_level);  // 0x70f7e0
     void CollectCrate(FootClass* collector);
     void ProcessColourComponents(int* arg0, int* intensity, int* ambient, int* a5, int* a6, int* tint_r, int* tint_g, int* tint_b);
     TubeClass* GetTunnel();
     RectangleStruct* GetContainingRect(RectangleStruct* dest) const;
-    const wchar_t* GetUIName() const;
+    const wchar_t* GetUIName() const;  // 0x484ff0
     bool ConnectsToOverlay(int idx_overlay = -1, int direction = -1) const;
     int GetContainedTiberiumIndex() const;
     int GetContainedTiberiumValue() const;
     bool IncreaseTiberium(int idx_tiberium, int amount);
-    void ReduceTiberium(int amount);
-    void SetMapCoords(const CoordStruct& coords);
+    void ReduceTiberium(int amount);  // 0x480a80
+    void SetMapCoords(const CoordStruct& coords);  // 0x427270
     int GetFloorHeight(const Point2D& subcoords) const;
     CoordStruct* GetCenterCoords(CoordStruct* out) const;
     CoordStruct GetCenterCoords() const { CoordStruct buf; GetCenterCoords(&buf); return buf; }
@@ -213,12 +213,12 @@ public:
     void MarkForRedraw();
     void ChainReaction();
     void Draw(const Point2D* screen_pos, const RectangleStruct* bounds) const;
-    void DrawDispatch(const Point2D* screen_pos, const RectangleStruct* bounds) const;
-    void DrawWithFlags(const Point2D* screen_pos, const RectangleStruct* bounds, int flags) const;
-    RectangleStruct* GetScreenRect(RectangleStruct* out) const;
-    void RegisterForRedraw();
-    void DrawWrapper(const Point2D* screen_pos, const RectangleStruct* bounds) const;
-    bool QuickPassable() const;
+    void DrawDispatch(const Point2D* screen_pos, const RectangleStruct* bounds) const;  // 0x4e2830
+    void DrawWithFlags(const Point2D* screen_pos, const RectangleStruct* bounds, int flags) const;  // 0x557830
+    RectangleStruct* GetScreenRect(RectangleStruct* out) const;  // 0x47ff80
+    void RegisterForRedraw();  // 0x7235a0
+    void DrawWrapper(const Point2D* screen_pos, const RectangleStruct* bounds) const;  // 0x653f50
+    bool QuickPassable() const;  // 0x487950
     CoordStruct* FindInfantrySubposition(CoordStruct* out, const CoordStruct& coords, bool ignore_contents, bool alt, bool use_cell_coords);
     CoordStruct FindInfantrySubposition(const CoordStruct& coords, bool ignore_contents, bool alt, bool use_cell_coords)
     {
@@ -227,8 +227,8 @@ public:
         return buf;
     }
     bool TryAssignJumpjet(FootClass* object);
-    void AddContent(ObjectClass* content, bool on_bridge);
-    void RemoveContent(ObjectClass* content, bool on_bridge);
+    void AddContent(ObjectClass* content, bool on_bridge);  // 0x47e8a0
+    void RemoveContent(ObjectClass* content, bool on_bridge);  // 0x47ea90
     void ReplaceTag(TagClass* tag);
 
     CellStruct              mapCoords;

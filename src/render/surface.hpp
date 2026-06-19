@@ -56,7 +56,7 @@ public:
         uint32_t color) = 0;
 
     // [6] 0x18 Fill
-    virtual bool Fill(uint32_t color) = 0;
+    virtual bool Fill(uint32_t color) = 0;  // 0x7bbab0
 
     // [7] 0x1C FillRectWithFlags -- CPU像素写入，16bpp RGB565，支持alpha混合
     virtual bool FillRectWithFlags(
@@ -78,7 +78,7 @@ public:
         uint32_t color) = 0;
 
     // [10] 0x28 GetPixel
-    virtual uint32_t GetPixel(const Point2D& point) = 0;
+    virtual uint32_t GetPixel(const Point2D& point) = 0;  // 0x7bae60
 
     // [11] 0x2C DrawLineEx
     virtual bool DrawLineEx(
@@ -180,7 +180,7 @@ public:
     virtual bool Unlock() = 0;
 
     // [25] 0x64 CanLock
-    virtual bool CanLock(uint32_t unk1, uint32_t unk2) = 0;
+    virtual bool CanLock(uint32_t unk1, uint32_t unk2) = 0;  // 0x4baec0
 
     // [26] 0x68 vt_entry_68 -- returns true (final in XSurface/BSurface)
     virtual bool vt_entry_68(uint32_t unk1, uint32_t unk2)
@@ -189,7 +189,7 @@ public:
     }
 
     // [27] 0x6C IsLocked
-    virtual bool IsLocked() const = 0;
+    virtual bool IsLocked() const = 0;  // 0x411580
 
     // [28] 0x70 GetBytesPerPixel
     virtual int GetBytesPerPixel() const = 0;
@@ -246,7 +246,7 @@ public:
         float* gradient_step) = 0;
 
     // [37] 0x94 CheckBltStatus -- IDirectDrawSurface7::GetBltStatus
-    virtual bool CheckBltStatus() = 0;
+    virtual bool CheckBltStatus() = 0;  // 0x4baf20
 
     // --- 辅助方法 (非虚函数) ---
 
@@ -346,7 +346,7 @@ public:
         const RectangleStruct& clip_rect,
         const RectangleStruct& fill_rect, uint32_t color) override;
     virtual bool FillRect(const RectangleStruct& fill_rect, uint32_t color) override;
-    virtual bool Fill(uint32_t color) override;
+    virtual bool Fill(uint32_t color) override;  // 0x7bbab0
     virtual bool FillRectWithFlags(
         const RectangleStruct& clip_rect,
         const ColorStruct& color,
@@ -356,8 +356,8 @@ public:
         int radius_w, int radius_h,
         const RectangleStruct& clip_rect,
         uint16_t color) override;
-    virtual bool SetPixel(const Point2D& point, uint32_t color) override;
-    virtual uint32_t GetPixel(const Point2D& point) override;
+    virtual bool SetPixel(const Point2D& point, uint32_t color) override;  // 0x7baeb0
+    virtual uint32_t GetPixel(const Point2D& point) override;  // 0x7bae60
     virtual bool DrawLineEx(
         const RectangleStruct& clip_rect, const Point2D& start,
         const Point2D& end, uint32_t color) override;
@@ -398,7 +398,7 @@ public:
     virtual bool DrawRectEx(
         const RectangleStruct& clip_rect,
         const RectangleStruct& draw_rect, uint32_t color) override;
-    virtual bool DrawRect(const RectangleStruct& draw_rect, uint32_t color) override;
+    virtual bool DrawRect(const RectangleStruct& draw_rect, uint32_t color) override;  // 0x7bad90
 
     virtual void* Lock(int x, int y) override
     {
@@ -410,8 +410,8 @@ public:
         --LockCount;
         return true;
     }
-    virtual bool CanLock(uint32_t unk1, uint32_t unk2) override { return true; }
-    virtual bool IsLocked() const override final { return LockCount > 0; }
+    virtual bool CanLock(uint32_t unk1, uint32_t unk2) override { return true; }  // IDA: 0x4BAEC0
+    virtual bool IsLocked() const override final { return LockCount > 0; }  // IDA: 0x411580
 
     virtual bool PutPixel(
         const Point2D& point,
@@ -427,9 +427,9 @@ public:
         int palette_idx, int fade_val,
         float* gradient_start, float* gradient_step) override { return false; }
 
-    virtual bool CheckBltStatus() override { return false; }
+    virtual bool CheckBltStatus() override { return false; }  // IDA: 0x4BAF20
 
-    virtual bool IsDSurface() const override { return false; }
+    virtual bool IsDSurface() const override { return false; }  // IDA: 0x4C1AB0
 
     int LockCount;
 
@@ -455,7 +455,7 @@ public:
     virtual void* Lock(int x, int y) override;
     virtual int GetBytesPerPixel() const override { return BytesPerPixel; }
     virtual int GetPitch() const override { return Width * BytesPerPixel; }
-    virtual bool IsDSurface() const override final { return false; }
+    virtual bool IsDSurface() const override final { return false; }  // IDA: 0x4C1AB0
 
     int BytesPerPixel;
     byte* Buffer;
@@ -482,7 +482,7 @@ public:
 
     virtual ~DSurface() override;
 
-    virtual bool BlitWhole(Surface* src, bool option1, bool option2) override;  // 0x4c1a90
+    virtual bool BlitWhole(Surface* src, bool option1, bool option2) override;  // 0x4C1A90
     virtual bool BlitPart(
         const RectangleStruct& dest_rect, Surface* src,
         const RectangleStruct& src_rect, bool option1, bool option2) override;
@@ -493,7 +493,7 @@ public:
     virtual bool FillRectEx(
         const RectangleStruct& clip_rect,
         const RectangleStruct& fill_rect, uint32_t color) override;
-    virtual bool FillRect(const RectangleStruct& fill_rect, uint32_t color) override;  // 0x4bb5f0
+    virtual bool FillRect(const RectangleStruct& fill_rect, uint32_t color) override;  // 0x4BB5F0
     virtual bool FillRectWithFlags(
         const RectangleStruct& clip_rect,
         const ColorStruct& color,
@@ -523,17 +523,17 @@ public:
     virtual bool DrawStippledRect(
         const Point2D& top_left, const Point2D& bottom_right,
         uint16_t color, bool fill_interior) override;
-    virtual void* Lock(int x, int y) override;  // 0x4bad80
-    virtual bool Unlock() override;  // 0x4baf40
-    virtual bool CanLock(uint32_t unk1, uint32_t unk2) override;  // 0x4baec0
-    virtual int GetBytesPerPixel() const override { return BytesPerPixel; }  // 0x4bad60
+    virtual void* Lock(int x, int y) override;  // 0x4BAD80
+    virtual bool Unlock() override;  // 0x4BAF40
+    virtual bool CanLock(uint32_t unk1, uint32_t unk2) override;  // 0x4BAEC0
+    virtual int GetBytesPerPixel() const override { return BytesPerPixel; }  // IDA: 0x4BAD60
     virtual int GetPitch() const override;
     virtual bool DrawGradientLine(
         const Point2D& start, const Point2D& end,
         int palette_idx, int fade_val,
         float* gradient_start, float* gradient_step) override;
-    virtual bool CheckBltStatus() override;
-    virtual bool IsDSurface() const override final { return true; }
+    virtual bool CheckBltStatus() override;  // 0x4baf20
+    virtual bool IsDSurface() const override final { return true; }  // IDA: 0x4C1AB0
 
     // IDA: DSurface::CreatePrimary pixel format detection (0x4BA770 bit-shift logic)
     static void DetectPixelFormat(const DDPIXELFORMAT& pf);

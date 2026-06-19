@@ -33,7 +33,7 @@ public:
     virtual HRESULT __stdcall Load(IStream* stream) override;
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
 
-    virtual ~LightSourceClass() override = default;
+    virtual ~LightSourceClass() override = default;  // 0x555080
 
     virtual AbstractType __stdcall whatAmI() const override;
     virtual int objectSize() const override;

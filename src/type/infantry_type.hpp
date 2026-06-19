@@ -35,27 +35,27 @@ public:
     static constexpr AbstractType AbsID = AbstractType::InfantryType;
 
     static DynamicVectorClass<InfantryTypeClass*>* Array;
-    static InfantryTypeClass* Find(const char* pID);  // 0x772fa0
-    static InfantryTypeClass* FindOrAllocate(const char* pID);  // 0x772fa0
-    static int FindIndex(const char* pID);  // 0x772fa0
+    static InfantryTypeClass* Find(const char* pID);  // 0x772FA0
+    static InfantryTypeClass* FindOrAllocate(const char* pID);
+    static int FindIndex(const char* pID);
 
-    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override; // 0x524c70 (as GetClassIdentifier)
+    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override; // 0x524C70 (as GetClassIdentifier)
 
     virtual HRESULT __stdcall Load(IStream* pStm) override; // 0x524960 (as LoadTypeData)
     virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;
 
-    virtual ~InfantryTypeClass() = default;  // 0x524d70 (as ddtor)
+    virtual ~InfantryTypeClass() = default;  // 0x524D70 (as ddtor)
 
-    virtual AbstractType __stdcall whatAmI() const override; // 0x524d40 (as GetTypeIdentifier)
-    virtual int objectSize() const override; // 0x524d50 (as GetObjectSize)
+    virtual AbstractType __stdcall whatAmI() const override; // 0x524D40 (as GetTypeIdentifier)
+    virtual int objectSize() const override; // 0x524D50 (as GetObjectSize)
 
-    virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override; // 0x5247a0 (as StubReturnFalse)
-    virtual ObjectClass* CreateObject(HouseClass* pOwner) override; // 0x523b40 (as CreateInfantry)
+    virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override; // 0x5247A0 (as StubReturnFalse)
+    virtual ObjectClass* CreateObject(HouseClass* pOwner) override; // 0x523B40 (as CreateInfantry)
 
-    InfantryTypeClass(const char* pID) noexcept;  // 0x5236a0 (as Constructor)
+    InfantryTypeClass(const char* pID) noexcept;  // 0x5236A0 (as Constructor)
 
 protected:
-    InfantryTypeClass(noinit_t) noexcept;  // 0x5236a0 (as Constructor)
+    InfantryTypeClass(noinit_t) noexcept;
 
 public:
     int ArrayIndex;

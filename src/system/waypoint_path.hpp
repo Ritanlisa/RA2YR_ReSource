@@ -27,7 +27,7 @@ public:
     virtual HRESULT __stdcall Load(IStream* stream) override { return 0; }
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { return 0; }
 
-    virtual ~WaypointPathClass() = default;
+    virtual ~WaypointPathClass() = default;  // 0x763c30
 
     virtual void pointerExpired(AbstractClass* ptr, bool removed) override {}
     virtual AbstractType __stdcall whatAmI() const override { return kObjectDeriveId; }
@@ -40,14 +40,14 @@ public:
 
     // Methods
     void Init();                                             // 0x763730
-    void Construct();                                        // 0x763810
+    void Construct();
     void PowerDrainUpdate();                                 // 0x763C00
     void LoadState(IStream*);                                // 0x763C70
     void SaveState(IStream*);                                // 0x763D90
     void ProcessEvent();                                     // 0x763E20
     void computePath();                                      // 0x764760
-    int StubReturn51() const { return 51; }                   // 0x763E10
-    int StubReturn64() const { return 64; }                   // 0x763E00
+    int StubReturn51() const { return 51; }                   // IDA: 0x763E10
+    int StubReturn64() const { return 64; }                   // IDA: 0x763E00
 
     int32_t     idxArray;           // +0x24 (this+36)
     DynamicVectorClass<WaypointClass> waypoints; // +0x28 (this+40)

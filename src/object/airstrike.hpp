@@ -18,7 +18,7 @@ public:
     virtual HRESULT __stdcall Load(IStream* stream) override;
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
 
-    virtual ~AirstrikeClass() = default;
+    virtual ~AirstrikeClass() = default;  // 0x41d7a0
 
     virtual void pointerExpired(AbstractClass* ptr, bool removed) override;
     virtual AbstractType __stdcall whatAmI() const override;

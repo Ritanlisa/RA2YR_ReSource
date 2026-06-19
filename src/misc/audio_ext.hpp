@@ -22,13 +22,13 @@ public:
     // IDA 0x407150
     int32_t Init();  // 0x401000
     // IDA 0x4071C0
-    int32_t PlayBuffer(int32_t index, int32_t volume, int32_t pan);  // 0x4061d0
+    int32_t PlayBuffer(int32_t index, int32_t volume, int32_t pan);  // 0x4061D0
     // IDA 0x4071C0 area
     int32_t RequestOrEndBuffer(int32_t index);  // 0x406270
     // IDA 0x407150 area
-    void ReleaseChannel(int32_t channel);
+    void ReleaseChannel(int32_t channel);  // 0x406060
     // IDA 0x407150 area
-    void RequestAllBuffers();
+    void RequestAllBuffers();  // 0x4083d0
     // IDA 0x407150 area
     void StopAll();
     // IDA 0x407150 area
@@ -36,7 +36,7 @@ public:
     // IDA 0x407150 area
     void SetPan(int32_t pan);
     // IDA 0x407150 area
-    bool IsPlaying(int32_t channel);
+    bool IsPlaying(int32_t channel);  // 0x7529e0
 
     uint32_t    AudioMixer_field_00;       // 0x00
     uint32_t    AudioMixer_field_04;       // 0x04
@@ -54,13 +54,13 @@ class AudioSettings
 {
 public:
     // IDA 0x48B2A0 area
-    void SetFlag70();  // 0x5fa440
+    void SetFlag70();  // 0x5FA440
     // IDA 0x48B2A0 area
-    void SetFlag68();  // 0x5fa470
+    void SetFlag68();  // 0x5FA470
     // IDA 0x48B2A0 area
-    static int32_t DlgProc(HWND hDlg, UINT msg, WPARAM wParam, LPARAM lParam);  // 0x6b6300
+    static int32_t DlgProc(HWND hDlg, UINT msg, WPARAM wParam, LPARAM lParam);  // 0x6B6300
     // IDA 0x48B2A0 area
-    void LoadINI();
+    void LoadINI();  // 0x533d20
     // IDA 0x48B2A0 area
     void SaveINI();
 
@@ -79,7 +79,7 @@ class Voice
 {
 public:
     // IDA 0x407150 area
-    static void Stop(int32_t channel);  // 0x4025b0
+    static void Stop(int32_t channel);  // 0x4025B0
     // IDA 0x407150 area
     static void DetachChannel(AudioController* ctrl);  // 0x404140
 
@@ -96,7 +96,7 @@ public:
     // IDA 0x407150 area
     static void ReleaseChannel(int32_t channel);  // 0x406060
     // IDA 0x407150 area
-    static void RequestAllBuffers();  // 0x4083d0
+    static void RequestAllBuffers();  // 0x4083D0
 
     int32_t     Mixer_field_00;       // 0x00
 };
@@ -111,7 +111,7 @@ public:
     ThemeClass() = default;
 
     // IDA 0x48B2A0 area
-    void RequestBuffer(int32_t index);  // 0x4080c0
+    void RequestBuffer(int32_t index);  // 0x4080C0
     // IDA 0x48B2A0 area
     int32_t GetValue() const;  // 0x408140
     // IDA 0x48B2A0 area
@@ -140,11 +140,11 @@ class Theme
 {
 public:
     // IDA 0x48B2A0 area
-    static void QueueSong(int32_t index);  // 0x720b20
+    static void QueueSong(int32_t index);  // 0x720B20
     // IDA 0x48B2A0 area
-    static void Stop();  // 0x720ea0
+    static void Stop();  // 0x720EA0
     // IDA 0x48B2A0 area
-    static bool IsPlaying();  // 0x720fd0
+    static bool IsPlaying();  // 0x720FD0
 
     static int32_t  s_CurrentTheme;  // 0x00
     static bool     s_IsPlaying;     // 0x04
@@ -158,7 +158,7 @@ class ThemeManager
 {
 public:
     // IDA 0x48B2A0 area
-    static void ProcessCallback();  // 0x4080f0
+    static void ProcessCallback();  // 0x4080F0
     // IDA 0x48B2A0 area
     static void Cleanup();  // 0x720770
 
@@ -174,7 +174,7 @@ class Audio3D
 public:
     virtual ~Audio3D() = default;
 
-    virtual void ComputeRotation(); // 0x55a7d0
+    virtual void ComputeRotation(); // 0x55A7D0
 
 };
 // 1 methods in IDA
@@ -183,7 +183,7 @@ class AudioBuffer
 public:
     virtual ~AudioBuffer() = default;
 
-    virtual void InitializePlayback(); // 0x409c40
+    virtual void InitializePlayback(); // 0x409C40
 
 };
 // 3 methods in IDA
@@ -192,7 +192,7 @@ class AudioChannel
 public:
     virtual ~AudioChannel() = default;
 
-    virtual void IsActive(); // 0x4010a0
+    virtual void IsActive(); // 0x4010A0
     virtual void DeactivatePlay(); // 0x402600
     virtual void ActivatePlay(); // 0x402650
 
@@ -205,7 +205,7 @@ class AudioCodec
 public:
     virtual ~AudioCodec() = default;
 
-    virtual void Decode(); // 0x7c81db
+    virtual void Decode(); // 0x7C81DB
 
 };
 // 1 methods in IDA
@@ -214,7 +214,7 @@ class AudioConfig
 public:
     virtual ~AudioConfig() = default;
 
-    virtual void InitDefault(); // 0x754be0
+    virtual void InitDefault(); // 0x754BE0
 
 };
 // 1 methods in IDA
@@ -223,7 +223,7 @@ class AudioEvent
 public:
     virtual ~AudioEvent() = default;
 
-    virtual void LoadFromINI(); // 0x752db0
+    virtual void LoadFromINI(); // 0x752DB0
 
 };
 // 2 methods in IDA
@@ -232,8 +232,8 @@ class AudioFile
 public:
     virtual ~AudioFile() = default;
 
-    virtual void GetCallback(); // 0x4026a0
-    virtual void Stop(); // 0x405fd0
+    virtual void GetCallback(); // 0x4026A0
+    virtual void Stop(); // 0x405FD0
 
     uint8_t AudioFile_field_0x04[4];
 };
@@ -243,7 +243,7 @@ class AudioFileClass
 public:
     virtual ~AudioFileClass() = default;
 
-    virtual void Release(); // 0x405c00
+    virtual void Release(); // 0x405C00
 
 };
 // 2 methods in IDA
@@ -252,8 +252,8 @@ class AudioFrame
 public:
     virtual ~AudioFrame() = default;
 
-    virtual void ProcessAudioFrame(); // 0x407fb0
-    virtual void CounterInc(); // 0x7535b0
+    virtual void ProcessAudioFrame(); // 0x407FB0
+    virtual void CounterInc(); // 0x7535B0
 
     uint8_t AudioFrame_field_0x04[4];
 };
@@ -290,7 +290,7 @@ class AudioOcclusion
 public:
     virtual ~AudioOcclusion() = default;
 
-    virtual void ComputeBoundingVertices(); // 0x756bb0
+    virtual void ComputeBoundingVertices(); // 0x756BB0
 
 };
 // 1 methods in IDA
@@ -299,7 +299,7 @@ class AudioOptionsClass
 public:
     virtual ~AudioOptionsClass() = default;
 
-    virtual void ApplySettings(); // 0x5fb160
+    virtual void ApplySettings(); // 0x5FB160
 
 };
 // 1 methods in IDA
@@ -317,9 +317,9 @@ class AudioSample
 public:
     virtual ~AudioSample() = default;
 
-    virtual void sub_4024A0(); // 0x4024a0
-    virtual void Destructor(); // 0x407a90
-    virtual void IsBuffering(); // 0x4080d0
+    virtual void sub_4024A0(); // 0x4024A0
+    virtual void Destructor(); // 0x407A90
+    virtual void IsBuffering(); // 0x4080D0
     virtual void InitLinkedList(); // 0x408840
     virtual void SetField(); // 0x408930
 

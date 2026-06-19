@@ -20,11 +20,11 @@ public:
     MultiplayerSiege() = default;
 
     // IDA 0x48B2A0 area
-    void Read();  // 0x5ca680
+    void Read();  // 0x5CA680
     // IDA 0x48B2A0 area
-    void Write();  // 0x5ca6d0
+    void Write();  // 0x5CA6D0
     // IDA 0x48B2A0 area
-    bool StubReturnFalse();  // 0x5ca7e0
+    bool StubReturnFalse();  // 0x5CA7E0
     // IDA 0x48B2A0 area
     void Process();
     // IDA 0x48B2A0 area
@@ -49,13 +49,13 @@ class Multiplayer
 {
 public:
     // IDA 0x48B2A0 area
-    static void Screen();  // 0x53f1f0
+    static void Screen();  // 0x53F1F0
     // IDA 0x68C2B0
     static void FindStartPositions();  // 0x688380
     // IDA 0x68C2B0 area
     static void sub_68C2B0();
     // IDA 0x48B2A0 area
-    static void SetupGame();
+    static void SetupGame();  // 0x6ae6e0
 
     static int32_t  s_MaxPlayers;   // 0x00
     static int32_t  s_GameMode;     // 0x04
@@ -69,7 +69,7 @@ class WOL
 {
 public:
     // IDA 0x48B2A0 area
-    static HRESULT QueryInterface(const GUID& riid, void** ppv);  // 0x76efe0
+    static HRESULT QueryInterface(const GUID& riid, void** ppv);  // 0x76EFE0
 
     int32_t     WOL_field_00;       // 0x00
 };
@@ -82,7 +82,7 @@ class NetworkAddress
 {
 public:
     // IDA 0x48B2A0 area
-    void Assign(uint32_t ip, uint16_t port);  // 0x53ece0
+    void Assign(uint32_t ip, uint16_t port);  // 0x53ECE0
 
     uint32_t    m_IP;           // 0x00
     uint16_t    m_Port;         // 0x04
@@ -97,7 +97,7 @@ class Socket
 {
 public:
     // IDA 0x48B2A0 area
-    void ConfigureBuffers(int32_t sendSize, int32_t recvSize);  // 0x7b2630
+    void ConfigureBuffers(int32_t sendSize, int32_t recvSize);  // 0x7B2630
 
     int32_t     m_Socket;       // 0x00
     int32_t     m_SendBufSize;  // 0x04
@@ -112,7 +112,7 @@ class MultiplayerManBattle
 {
 public:
     // IDA 0x48B2A0 area
-    static HRESULT QueryInterface(const GUID& riid, void** ppv);  // 0x5c61a0
+    static HRESULT QueryInterface(const GUID& riid, void** ppv);  // 0x5C61A0
 
     int32_t     MultiplayerManBattle_field_00;       // 0x00
 };
@@ -124,11 +124,11 @@ public:
 class IPXGlobalConnClass
 {
 public:
-    virtual ~IPXGlobalConnClass() = default;
+    virtual ~IPXGlobalConnClass() = default;  // 0x540630
 
-    virtual void Flush(); // 0x53fbd0
-    virtual void GetQueueSize(); // 0x53fcb0
-    virtual void ConnectToHost(); // 0x53ff10
+    virtual void Flush(); // 0x53FBD0
+    virtual void GetQueueSize(); // 0x53FCB0
+    virtual void ConnectToHost(); // 0x53FF10
     virtual void Disconnect(); // 0x540030
     virtual void GetAddress(); // 0x540050
     // +9 more virtual methods
@@ -153,10 +153,10 @@ class Modem
 public:
     virtual ~Modem() = default;
 
-    virtual void EnumerateDevices(); // 0x5bb6e0
-    virtual void CheckStatus(); // 0x5f0690
-    virtual void DetectAndConnect(); // 0x5f0d60
-    virtual void OpenPort(); // 0x5f19e0
+    virtual void EnumerateDevices(); // 0x5BB6E0
+    virtual void CheckStatus(); // 0x5F0690
+    virtual void DetectAndConnect(); // 0x5F0D60
+    virtual void OpenPort(); // 0x5F19E0
 
     uint8_t Modem_field_0x04[4];
     uint8_t Modem_field_0x08[4];
@@ -168,11 +168,11 @@ class ModemGame
 public:
     virtual ~ModemGame() = default;
 
-    virtual void sub_5B59B0(); // 0x5b59b0
-    virtual void sub_5B5AD0(); // 0x5b5ad0
-    virtual void ProcessPacket(); // 0x5b6020
-    virtual void ReceiveMapPreview(); // 0x5b7360
-    virtual void RenderPaletteImage(); // 0x6425f0
+    virtual void sub_5B59B0(); // 0x5B59B0
+    virtual void sub_5B5AD0(); // 0x5B5AD0
+    virtual void ProcessPacket(); // 0x5B6020
+    virtual void ReceiveMapPreview(); // 0x5B7360
+    virtual void RenderPaletteImage(); // 0x6425F0
 
     uint8_t ModemGame_field_0x04[4];
     uint8_t ModemGame_field_0x08[4];
@@ -185,10 +185,10 @@ class ModemGuest
 public:
     virtual ~ModemGuest() = default;
 
-    virtual void Dialog(); // 0x5b49b0
-    virtual void InitDialog(); // 0x5b4ee0
-    virtual void sub_5B9550(); // 0x5b9550
-    virtual void ProcessPacket(); // 0x5ba060
+    virtual void Dialog(); // 0x5B49B0
+    virtual void InitDialog(); // 0x5B4EE0
+    virtual void sub_5B9550(); // 0x5B9550
+    virtual void ProcessPacket(); // 0x5BA060
 
     uint8_t ModemGuest_field_0x04[4];
     uint8_t ModemGuest_field_0x08[4];
@@ -200,9 +200,9 @@ class ModemHost
 public:
     virtual ~ModemHost() = default;
 
-    virtual void Dialog(); // 0x5b77e0
-    virtual void InitDialog(); // 0x5b82f0
-    virtual void StartGame(); // 0x5bac60
+    virtual void Dialog(); // 0x5B77E0
+    virtual void InitDialog(); // 0x5B82F0
+    virtual void StartGame(); // 0x5BAC60
 
     uint8_t ModemHost_field_0x04[4];
     uint8_t ModemHost_field_0x08[4];
@@ -213,9 +213,9 @@ class MultiplayerBattleTeam
 public:
     virtual ~MultiplayerBattleTeam() = default;
 
-    virtual void AddRef(); // 0x5c1090
-    virtual void Release(); // 0x5c10b0
-    virtual void QueryInterface(); // 0x5c10d0
+    virtual void AddRef(); // 0x5C1090
+    virtual void Release(); // 0x5C10B0
+    virtual void QueryInterface(); // 0x5C10D0
 
     uint8_t MultiplayerBattleTeam_field_0x04[4];
     uint8_t MultiplayerBattleTeam_field_0x08[4];
@@ -226,7 +226,7 @@ class MultiplayerConfig
 public:
     virtual ~MultiplayerConfig() = default;
 
-    virtual void Cleanup(); // 0x5d5b20
+    virtual void Cleanup(); // 0x5D5B20
 
 };
 // 1 methods in IDA
@@ -235,25 +235,25 @@ class MultiplayerLobby
 public:
     virtual ~MultiplayerLobby() = default;
 
-    virtual void FillSlots(); // 0x5ec030
+    virtual void FillSlots(); // 0x5EC030
 
 };
 // 1 methods in IDA
 class MultiplayerModeVector
 {
 public:
-    virtual ~MultiplayerModeVector() = default;
+    virtual ~MultiplayerModeVector() = default;  // 0x5d88b0
 
-    virtual void Destruct(); // 0x5d88b0
+    virtual void Destruct(); // 0x5D88B0
 
 };
 // 1 methods in IDA
 class MultiplayerModeVector2
 {
 public:
-    virtual ~MultiplayerModeVector2() = default;
+    virtual ~MultiplayerModeVector2() = default;  // 0x5d8900
 
-    virtual void Destruct(); // 0x5d8900
+    virtual void Destruct(); // 0x5D8900
 
 };
 // 2 methods in IDA
@@ -262,8 +262,8 @@ class MultiplayerObserverTeam
 public:
     virtual ~MultiplayerObserverTeam() = default;
 
-    virtual void AddRef(); // 0x5c94c0
-    virtual void QueryInterface(); // 0x5c94d0
+    virtual void AddRef(); // 0x5C94C0
+    virtual void QueryInterface(); // 0x5C94D0
 
     uint8_t MultiplayerObserverTeam_field_0x04[4];
 };
@@ -273,7 +273,7 @@ class MultiplayerSiegeAttackerTeam
 public:
     virtual ~MultiplayerSiegeAttackerTeam() = default;
 
-    virtual void QueryInterface(); // 0x5caf40
+    virtual void QueryInterface(); // 0x5CAF40
 
 };
 // 2 methods in IDA
@@ -282,8 +282,8 @@ class MultiplayerSiegeDefenderTeam
 public:
     virtual ~MultiplayerSiegeDefenderTeam() = default;
 
-    virtual void AddRef(); // 0x5cae70
-    virtual void QueryInterface(); // 0x5caf10
+    virtual void AddRef(); // 0x5CAE70
+    virtual void QueryInterface(); // 0x5CAF10
 
     uint8_t MultiplayerSiegeDefenderTeam_field_0x04[4];
 };
@@ -293,8 +293,8 @@ class MultiplayerTeam
 public:
     virtual ~MultiplayerTeam() = default;
 
-    virtual void Constructor(); // 0x5d8c50
-    virtual void Destructor(); // 0x5d8c80
+    virtual void Constructor(); // 0x5D8C50
+    virtual void Destructor(); // 0x5D8C80
 
     uint8_t MultiplayerTeam_field_0x04[4];
 };
@@ -302,9 +302,9 @@ public:
 class MultiplayerTeamVector
 {
 public:
-    virtual ~MultiplayerTeamVector() = default;
+    virtual ~MultiplayerTeamVector() = default;  // 0x5d8860
 
-    virtual void Destruct(); // 0x5d8860
+    virtual void Destruct(); // 0x5D8860
 
 };
 // 1 methods in IDA
@@ -313,7 +313,7 @@ class MultiplayerTeam_Destru
 public:
     virtual ~MultiplayerTeam_Destru() = default;
 
-    virtual void QueryInterface(); // 0x5d8d50
+    virtual void QueryInterface(); // 0x5D8D50
 
 };
 // 4 methods in IDA
@@ -322,10 +322,10 @@ class NetworkBuffer
 public:
     virtual ~NetworkBuffer() = default;
 
-    virtual void GetField(); // 0x74fd50
-    virtual void UpdateWindow(); // 0x74fd60
-    virtual void GetField2(); // 0x74fda0
-    virtual void GetField3(); // 0x74fdb0
+    virtual void GetField(); // 0x74FD50
+    virtual void UpdateWindow(); // 0x74FD60
+    virtual void GetField2(); // 0x74FDA0
+    virtual void GetField3(); // 0x74FDB0
 
     uint8_t NetworkBuffer_field_0x04[4];
     uint8_t NetworkBuffer_field_0x08[4];
@@ -337,8 +337,8 @@ class NetworkDialog
 public:
     virtual ~NetworkDialog() = default;
 
-    virtual void InitModemSettings(); // 0x695fd0
-    virtual void Dispatch(); // 0x6964c0
+    virtual void InitModemSettings(); // 0x695FD0
+    virtual void Dispatch(); // 0x6964C0
     virtual void sub_696610(); // 0x696610
 
     uint8_t NetworkDialog_field_0x04[4];
@@ -368,11 +368,11 @@ class NetworkGameSetup
 public:
     virtual ~NetworkGameSetup() = default;
 
-    virtual void DlgProc(); // 0x5b7970
-    virtual void ReadRulesInitConfig(); // 0x5b9680
-    virtual void ReadRulesBases(); // 0x5b96b0
-    virtual void ReadRulesAlliesAllowed(); // 0x5b96e0
-    virtual void ReadRulesEngineerCount(); // 0x5b9710
+    virtual void DlgProc(); // 0x5B7970
+    virtual void ReadRulesInitConfig(); // 0x5B9680
+    virtual void ReadRulesBases(); // 0x5B96B0
+    virtual void ReadRulesAlliesAllowed(); // 0x5B96E0
+    virtual void ReadRulesEngineerCount(); // 0x5B9710
     // +3 more virtual methods
 
     uint8_t NetworkGameSetup_field_0x04[4];
@@ -389,8 +389,8 @@ class NetworkID
 public:
     virtual ~NetworkID() = default;
 
-    virtual void Assign(); // 0x53ed20
-    virtual void Compare(); // 0x53ef30
+    virtual void Assign(); // 0x53ED20
+    virtual void Compare(); // 0x53EF30
 
     uint8_t NetworkID_field_0x04[4];
 };
@@ -401,7 +401,7 @@ public:
     virtual ~NetworkManager() = default;
 
     virtual void SetPlayerAddress(); // 0x664240
-    virtual void RemovePlayer(); // 0x6646c0
+    virtual void RemovePlayer(); // 0x6646C0
 
     uint8_t NetworkManager_field_0x04[4];
 };
@@ -412,7 +412,7 @@ public:
     virtual ~NetworkOptions() = default;
 
     virtual void DlgProc(); // 0x560480
-    virtual void sub_7B0F50(); // 0x7b0f50
+    virtual void sub_7B0F50(); // 0x7B0F50
 
     uint8_t NetworkOptions_field_0x04[4];
 };
@@ -422,7 +422,7 @@ class NetworkScore
 public:
     virtual ~NetworkScore() = default;
 
-    virtual void DlgProc(); // 0x64ae50
+    virtual void DlgProc(); // 0x64AE50
 
 };
 // 2 methods in IDA
@@ -431,8 +431,8 @@ class NetworkSession
 public:
     virtual ~NetworkSession() = default;
 
-    virtual void ResetState(); // 0x54ee60
-    virtual void IsPlayerInGame(); // 0x69b600
+    virtual void ResetState(); // 0x54EE60
+    virtual void IsPlayerInGame(); // 0x69B600
 
     uint8_t NetworkSession_field_0x04[4];
 };
@@ -442,7 +442,7 @@ class NetworkSettings
 public:
     virtual ~NetworkSettings() = default;
 
-    virtual void DlgProc(); // 0x5ddbd0
+    virtual void DlgProc(); // 0x5DDBD0
 
 };
 // 1 methods in IDA
@@ -451,20 +451,20 @@ class NetworkShare
 public:
     virtual ~NetworkShare() = default;
 
-    virtual void GetField(); // 0x5e8da0
+    virtual void GetField(); // 0x5E8DA0
 
 };
 // 14 methods in IDA
 class UDPInterfaceClass_Destru
 {
 public:
-    virtual ~UDPInterfaceClass_Destru() = default;
+    virtual ~UDPInterfaceClass_Destru() = default;  // 0x7b36c0
 
-    virtual void GetQueueSize(); // 0x7b2f90
-    virtual void Flush(); // 0x7b2ff0
-    virtual void Send(); // 0x7b30b0
-    virtual void SetAddress(); // 0x7b31e0
-    virtual void GetAddress(); // 0x7b3430
+    virtual void GetQueueSize(); // 0x7B2F90
+    virtual void Flush(); // 0x7B2FF0
+    virtual void Send(); // 0x7B30B0
+    virtual void SetAddress(); // 0x7B31E0
+    virtual void GetAddress(); // 0x7B3430
     // +9 more virtual methods
 
     uint8_t UDPInterfaceClass_Destru_field_0x04[4];
@@ -487,7 +487,7 @@ class WOLGameClass
 public:
     virtual ~WOLGameClass() = default;
 
-    virtual void ParseChatMessage(); // 0x78e030
+    virtual void ParseChatMessage(); // 0x78E030
 
 };
 // 5 methods in IDA
@@ -496,11 +496,11 @@ class WOLGameList
 public:
     virtual ~WOLGameList() = default;
 
-    virtual void sub_77A7C0(); // 0x77a7c0
-    virtual void Check(); // 0x77a840
-    virtual void PopulateLobbyLists(); // 0x7a3100
-    virtual void EnsureCapacity(); // 0x7ada70
-    virtual void GrowBuffer(); // 0x7ae020
+    virtual void sub_77A7C0(); // 0x77A7C0
+    virtual void Check(); // 0x77A840
+    virtual void PopulateLobbyLists(); // 0x7A3100
+    virtual void EnsureCapacity(); // 0x7ADA70
+    virtual void GrowBuffer(); // 0x7AE020
 
     uint8_t WOLGameList_field_0x04[4];
     uint8_t WOLGameList_field_0x08[4];
@@ -513,7 +513,7 @@ class WOLLogin
 public:
     virtual ~WOLLogin() = default;
 
-    virtual void DlgProc(); // 0x78db70
+    virtual void DlgProc(); // 0x78DB70
 
 };
 // 1 methods in IDA
@@ -522,7 +522,7 @@ class WOLOption
 public:
     virtual ~WOLOption() = default;
 
-    virtual void SetValue(); // 0x77a4a0
+    virtual void SetValue(); // 0x77A4A0
 
 };
 // 1 methods in IDA
@@ -531,7 +531,7 @@ class WOLPersona
 public:
     virtual ~WOLPersona() = default;
 
-    virtual void FormatDateTime(); // 0x77a4d0
+    virtual void FormatDateTime(); // 0x77A4D0
 
 };
 // 7 methods in IDA
@@ -540,11 +540,11 @@ class WOLobby
 public:
     virtual ~WOLobby() = default;
 
-    virtual void FindPlayerIndex(); // 0x5e8d00
-    virtual void BuildStateList(); // 0x781d20
+    virtual void FindPlayerIndex(); // 0x5E8D00
+    virtual void BuildStateList(); // 0x781D20
     virtual void BuildPlayerList(); // 0x783800
-    virtual void DlgProc(); // 0x78ac10
-    virtual void sub_78F5C0(); // 0x78f5c0
+    virtual void DlgProc(); // 0x78AC10
+    virtual void sub_78F5C0(); // 0x78F5C0
     // +2 more virtual methods
 
     uint8_t WOLobby_field_0x04[4];

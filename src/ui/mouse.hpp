@@ -28,7 +28,7 @@ struct MouseCursor
     int32_t  HotY;
 
     MouseCursor() noexcept
-        : Frame(0), Count(1), Interval(1), MiniFrame(-1), MiniCount(0), HotX(0), HotY(0) {}
+        : Frame(0), Count(1), Interval(1), MiniFrame(-1), MiniCount(0), HotX(0), HotY(0) {}  // IDA: 0x55CC20
 
     MouseCursor(int32_t frame, int32_t count, int32_t interval,
                 int32_t miniFrame, int32_t miniCount,
@@ -46,19 +46,19 @@ public:
 
     virtual void Draw(const CellStruct& coords, const SHPStruct* pImage, int32_t idxFrame) {}
     virtual bool IsRefCountNegative() { return false; }
-    virtual void HideCursor() {}
-    virtual void ShowCursor() {}  // 0x7c868c
-    virtual void ReleaseMouse() {}
-    virtual void CaptureMouse() {}
-    virtual uint8_t GetField10() { return 0; }
-    virtual void InvalidateRect(const RectangleStruct& rect) {}  // 0x7c8608
+    virtual void HideCursor() {}  // IDA: 0x7B9930
+    virtual void ShowCursor() {}  // IDA: 0x7C868C
+    virtual void ReleaseMouse() {}  // IDA: 0x7B9C30
+    virtual void CaptureMouse() {}  // IDA: 0x7B9A60
+    virtual uint8_t GetField10() { return 0; }  // IDA: 0x6CC2A0
+    virtual void InvalidateRect(const RectangleStruct& rect) {}  // IDA: 0x7C8608
     virtual void CallFunc10() {}
     virtual uint32_t GetRefCount() { return 0; }
     virtual int32_t GetX() const { return 0; }
     virtual int32_t GetY() const { return 0; }
     virtual Point2D* fetchCoordinatesHere(Point2D* out) const { return nullptr; }
     virtual void SetCoords(const Point2D& buffer) {}
-    virtual void InitSurface(DSurface* pSurface, bool unk) {}
+    virtual void InitSurface(DSurface* pSurface, bool unk) {}  // IDA: 0x7B9040
     virtual void InitCursor(DSurface* pSurface, bool unk) {}
     virtual void GetDimensions(int32_t* outWidth, int32_t* outHeight) {}
 
@@ -90,7 +90,7 @@ public:
 
     virtual ~MouseClass() = default;
 
-    virtual bool SetCursor(MouseCursorType cursor, bool miniMap) override { return false; }  // 0x7c87b8
+    virtual bool SetCursor(MouseCursorType cursor, bool miniMap) override { return false; }  // IDA: 0x7C87B8
     virtual bool UpdateCursor(MouseCursorType cursor, bool miniMap) override { return false; }
     virtual bool RestoreCursor() override { return false; }
     virtual void UpdateCursorMinimapState(bool miniMap) override {}

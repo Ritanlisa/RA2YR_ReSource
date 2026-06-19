@@ -60,7 +60,7 @@ struct HvaFile
     HvaFile() : FrameCount(0), LimbCount(0), Transforms(nullptr), LimbNames(nullptr) {}
     ~HvaFile() { delete[] Transforms; if (LimbNames) { for (int i = 0; i < LimbCount; ++i) delete[] LimbNames[i]; delete[] LimbNames; } }
 
-    const HvaMatrix* GetTransform(int frame, int limb) const {
+    const HvaMatrix* GetTransform(int frame, int limb) const {  // 0x55a730
         if (frame < 0 || frame >= FrameCount || limb < 0 || limb >= LimbCount) return nullptr;
         return &Transforms[frame * LimbCount + limb];
     }

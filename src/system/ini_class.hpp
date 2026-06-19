@@ -48,10 +48,10 @@ public:
     virtual ~INIClass() = default;
 
     // INI reading interface
-    virtual bool Load(CCFileClass* file, bool unk1, bool unk2);
-    virtual const char* GetString(const char* section, const char* key, const char* def, char* buf, int bufSize);  // 0x528a10
+    virtual bool Load(CCFileClass* file, bool unk1, bool unk2);  // 0x4741f0
+    virtual const char* GetString(const char* section, const char* key, const char* def, char* buf, int bufSize);  // 0x528A10
     virtual int GetInt(const char* section, const char* key, int def);  // 0x529820
-    virtual bool GetBool(const char* section, const char* key, bool def);  // 0x4757d0
+    virtual bool GetBool(const char* section, const char* key, bool def);  // 0x4757D0
     virtual double GetDouble(const char* section, const char* key, double def);
     virtual const char* GetGUID(const char* section, const char* key, const char* def);
 
@@ -80,16 +80,16 @@ public:
     CCINIClass();
     virtual ~CCINIClass();
 
-    bool Load(CCFileClass* file, bool unk1, bool unk2) override;  // 0x4741f0
+    bool Load(CCFileClass* file, bool unk1, bool unk2) override;  // 0x4741F0
 
     CCFileClass* GetFile() const;
 
-    int GetKeyCount(const char* section);
-    const char* GetStringByIndex(const char* section, int index);
-    int BinarySearchSection(const char* section);
+    int GetKeyCount(const char* section);  // 0x526960
+    const char* GetStringByIndex(const char* section, int index);  // 0x526cc0
+    int BinarySearchSection(const char* section);  // 0x526810
 
-    const char* GetString(const char* section, const char* key, const char* def, char* buf, int bufSize) override;
-    int GetInt(const char* section, const char* key, int def) override;
+    const char* GetString(const char* section, const char* key, const char* def, char* buf, int bufSize) override;  // 0x528a10
+    int GetInt(const char* section, const char* key, int def) override;  // 0x529820
 
 protected:
     CCFileClass* ccFile;

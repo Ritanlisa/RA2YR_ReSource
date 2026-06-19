@@ -40,12 +40,12 @@ public:
     virtual HRESULT __stdcall Load(IStream* pStm) override;
     virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;
 
-    virtual ~ParticleSystemClass() override = default;
+    virtual ~ParticleSystemClass() override = default;  // 0x630230
 
     virtual AbstractType __stdcall whatAmI() const override;
     virtual int objectSize() const override;
 
-    void Draw(void* surface, int draw_x, int draw_y);  // 0x62fe60
+    void Draw(void* surface, int draw_x, int draw_y);  // 0x62FE60
 
     ParticleSystemTypeClass*            Type;
     CoordStruct                         SpawnDistanceToOwner;

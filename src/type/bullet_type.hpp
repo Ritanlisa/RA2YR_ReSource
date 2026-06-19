@@ -24,26 +24,26 @@ public:
     static BulletTypeClass* FindOrAllocate(const char* pID);
     static int FindIndex(const char* pID);
 
-    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override; // 0x46c750 (as GetClassIdentifier)
+    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override; // 0x46C750 (as GetClassIdentifier)
 
-    virtual ~BulletTypeClass() = default;  // 0x46c890 (as ddtor)
+    virtual ~BulletTypeClass() = default;  // 0x46C890 (as ddtor)
 
-    virtual AbstractType __stdcall whatAmI() const override; // 0x46c850 (as GetTypeIdentifier)
-    virtual int objectSize() const override; // 0x46c860 (as GetObjectSize)
+    virtual AbstractType __stdcall whatAmI() const override; // 0x46C850 (as GetTypeIdentifier)
+    virtual int objectSize() const override; // 0x46C860 (as GetObjectSize)
 
-    virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override; // 0x46c880 (as StubReturnFalse)
-    virtual ObjectClass* CreateObject(HouseClass* pOwner) override;
+    virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override; // 0x46C880 (as StubReturnFalse)
+    virtual ObjectClass* CreateObject(HouseClass* pOwner) override;  // 0x4737f0
 
     bool Rotates() const;
-    void SetScaledSpawnDelay(int delay); // 0x46c840
+    void SetScaledSpawnDelay(int delay); // 0x46C840
 
     BulletClass* CreateBullet(AbstractClass* pTarget, TechnoClass* pOwner, int nDamage,
         WarheadTypeClass* pWH, int nSpeed, bool bBright);
 
-    BulletTypeClass(const char* pID) noexcept;  // 0x46bbc0 (as Construct)
+    BulletTypeClass(const char* pID) noexcept;  // 0x46BBC0 (as Construct)
 
 protected:
-    BulletTypeClass(noinit_t) noexcept;  // 0x46bbc0 (as Construct)
+    BulletTypeClass(noinit_t) noexcept;
 
 public:
     bool Airburst;

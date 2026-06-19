@@ -85,7 +85,7 @@ public:
     // IDA 0x625F60: FindString — search by string key
     V* FindString(const char* key)
     {
-        return LookupString(key);
+        return LookupString(key);  // 0x7adc60
     }
 
     // IDA 0x625FB0: FindChunk — find entry by key
@@ -121,7 +121,7 @@ public:
     // IDA 0x608440: LookupAndMark
     Entry* LookupAndMark(const K& key)
     {
-        return FindAndMark(key);
+        return FindAndMark(key);  // 0x624140
     }
 
     // IDA 0x624760: Get — return value copy
@@ -373,7 +373,7 @@ private:
     {
         static uint32_t Do(const T& val)
         {
-            return HashString(val);
+            return HashString(val);  // 0x5f9e80
         }
     };
 
@@ -383,7 +383,7 @@ private:
     {
         static uint32_t Do(const T& val)
         {
-            return HashString(val.c_str());
+            return HashString(val.c_str());  // 0x5f9e80
         }
     };
 
@@ -426,10 +426,10 @@ public:
     Hash() : Hash_field_00(0), Hash_field_04(0) {}
 
     // IDA 0x69D8C0
-    static uint32_t ComputeHashSHA1(const void* data, uint32_t size);
+    static uint32_t ComputeHashSHA1(const void* data, uint32_t size);  // 0x476d80
 
     // IDA 0x52B720
-    static void InsertOrdered(void* table, const void* entry);
+    static void InsertOrdered(void* table, const void* entry);  // 0x4f4410
 
     // IDA 0x69D8C0 area
     void Reset()
@@ -460,7 +460,7 @@ public:
     void Compute(uint8_t digest[20]);
 
     // IDA 0x69D8C0 area
-    void Transform();
+    void Transform();  // 0x69db30
 
     // IDA 0x69D8C0 area
     void PadMessage();

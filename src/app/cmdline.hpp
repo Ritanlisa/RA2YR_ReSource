@@ -95,6 +95,6 @@ const wchar_t* GetCSFString(const wchar_t* key, const char* file, int line); // 
 
 // IDA: ParseCommandLine @ 0x52F620
 // Returns 1 on success, 0 on unrecognized argument
-int ParseCommandLine(int argc, char** argv);  // 0x52f620
+int ParseCommandLine(int argc, char** argv);  // 0x52F620
 
 } // namespace gamemd

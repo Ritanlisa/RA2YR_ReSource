@@ -35,7 +35,7 @@ public:
     virtual HRESULT __stdcall Load(IStream* pStm) override;
     virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;
 
-    virtual ~TubeClass() override = default;
+    virtual ~TubeClass() override = default;  // 0x7286d0
 
     virtual AbstractType __stdcall whatAmI() const override;
     virtual int objectSize() const override;

@@ -36,37 +36,37 @@ public:
 
     static DynamicVectorClass<BuildingTypeClass*>* Array;
     static BuildingTypeClass* Find(const char* pID);
-    static BuildingTypeClass* FindOrAllocate(const char* pID);  // 0x4653c0 (as FindOrCreate)
+    static BuildingTypeClass* FindOrAllocate(const char* pID);  // 0x4653C0 (as FindOrCreate)
     static int FindIndex(const char* pID);  // 0x747370
 
     virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override; // 0x465380 (as GetClassIdentifier)
 
-    virtual ~BuildingTypeClass() = default;  // 0x465dc0 (as ddtor)
+    virtual ~BuildingTypeClass() = default;  // 0x465DC0 (as ddtor)
 
-    virtual AbstractType __stdcall whatAmI() const override; // 0x465d90 (as GetTypeIdentifier)
-    virtual int objectSize() const override; // 0x465da0 (as GetObjectSize)
+    virtual AbstractType __stdcall whatAmI() const override; // 0x465D90 (as GetTypeIdentifier)
+    virtual int objectSize() const override; // 0x465DA0 (as GetObjectSize)
 
     virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override;
-    virtual ObjectClass* CreateObject(HouseClass* pOwner) override;
+    virtual ObjectClass* CreateObject(HouseClass* pOwner) override;  // 0x4737f0
 
     virtual SHPStruct* LoadBuildup();
 
     bool IsVehicle() const;
-    short GetFoundationWidth() const;  // 0x45ec90
-    short GetFoundationHeight(bool bIncludeBib) const;  // 0x45eca0
+    short GetFoundationWidth() const;  // 0x45EC90
+    short GetFoundationHeight(bool bIncludeBib) const;  // 0x45ECA0
     bool CanPlaceHere(CellStruct* cell, HouseClass* owner) const;
 
     bool HasSuperWeapon(int index) const;
     bool HasSuperWeapon() const;
-    bool CanTogglePower() const;
+    bool CanTogglePower() const;  // 0x508df0
 
     BuildingAnimStruct& GetBuildingAnim(BuildingAnimSlot slot);
     const BuildingAnimStruct& GetBuildingAnim(BuildingAnimSlot slot) const;
 
-    BuildingTypeClass(const char* pID) noexcept;  // 0x644be0 (as Construct)
+    BuildingTypeClass(const char* pID) noexcept;  // 0x644BE0 (as Construct)
 
 protected:
-    BuildingTypeClass(noinit_t) noexcept;  // 0x644be0 (as Construct)
+    BuildingTypeClass(noinit_t) noexcept;
 
 public:
     int ArrayIndex;

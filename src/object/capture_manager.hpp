@@ -20,7 +20,7 @@ public:
     virtual HRESULT __stdcall Load(IStream* stream) override { return 0; }
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { return 0; }
 
-    virtual ~CaptureManagerClass() = default;
+    virtual ~CaptureManagerClass() = default;  // 0x4729c0
 
     virtual void pointerExpired(AbstractClass* ptr, bool removed) override {}
     virtual AbstractType __stdcall whatAmI() const override { return kObjectDeriveId; }

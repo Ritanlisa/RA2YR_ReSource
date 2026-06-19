@@ -53,7 +53,7 @@ public:
     virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override;
     virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;
 
-    virtual ~VoxelAnimClass() override = default;
+    virtual ~VoxelAnimClass() override = default;  // 0x74aad0
 
     virtual AbstractType __stdcall whatAmI() const override;
     virtual int objectSize() const override;

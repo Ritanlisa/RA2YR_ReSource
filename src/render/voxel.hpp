@@ -39,7 +39,7 @@ class VoxelAnimTypeClass;
 
 struct VoxLib
 {
-    void Start();  // 0x7cd80f
+    void Start();  // 0x7CD80F
     bool Loaded();
     void Clear();
     void InitLimits(
@@ -116,12 +116,12 @@ public:
     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override;
 
     virtual AbstractType __stdcall WhatAmI() const override;
-    virtual int Size() const override;
+    virtual int Size() const override;  // 0x454190
 
     virtual bool SpawnAtMapCoords(CellStruct* coords, HouseClass* owner);
-    virtual ObjectClass* CreateObject(HouseClass* owner) override;
+    virtual ObjectClass* CreateObject(HouseClass* owner) override;  // 0x4737f0
 
-    virtual ~VoxelAnimTypeClass() override = default;
+    virtual ~VoxelAnimTypeClass() override = default;  // 0x74ba30
 
     bool Normalized;
     bool Translucent;
@@ -169,10 +169,10 @@ public:
 
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
 
-    virtual ~VoxelAnimClass() override = default;
+    virtual ~VoxelAnimClass() override = default;  // 0x74aad0
 
     virtual AbstractType __stdcall WhatAmI() const override;
-    virtual int Size() const override;
+    virtual int Size() const override;  // 0x454190
 
     uint32_t                align_AC;
     BounceClass             Bounce;

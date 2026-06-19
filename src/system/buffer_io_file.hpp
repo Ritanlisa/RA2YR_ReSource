@@ -8,7 +8,7 @@ namespace gamemd
 class BufferIOFileClass : public RawFileClass
 {
 public:
-    virtual ~BufferIOFileClass() override = default;
+    virtual ~BufferIOFileClass() override = default;  // 0x535a60
 
     BufferIOFileClass() = default;
 

@@ -23,9 +23,9 @@ public:
     static void CreateFromFile(const char* pFilename, BytePalette*& pPalette, ConvertClass*& pDestination);
 
     BlitterCore* SelectPlainBlitter(BlitterFlags flags) const;
-    RLEBlitterCore* SelectRLEBlitter(BlitterFlags flags) const;
+    RLEBlitterCore* SelectRLEBlitter(BlitterFlags flags) const;  // 0x490e50
 
-    virtual ~ConvertClass() = default;
+    virtual ~ConvertClass() = default;  // 0x491430
 
     ConvertClass(
         BytePalette const& palette,

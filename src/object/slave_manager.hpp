@@ -28,7 +28,7 @@ public:
     virtual HRESULT __stdcall Load(IStream* stream) override { return 0; }
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { return 0; }
 
-    virtual ~SlaveManagerClass() = default;
+    virtual ~SlaveManagerClass() = default;  // 0x6b1130
 
     virtual void pointerExpired(AbstractClass* ptr, bool removed) override {}
     virtual AbstractType __stdcall whatAmI() const override { return kObjectDeriveId; }
@@ -61,8 +61,8 @@ public:
     void SaveManager(IStream*);                                  // 0x6B1300
 
     // Stubs
-    int StubReturn72() const { return 72; }                       // 0x6B1380
-    int StubReturn100() const { return 100; }                     // 0x6B1370
+    int StubReturn72() const { return 72; }                       // IDA: 0x6B1380
+    int StubReturn100() const { return 100; }                     // IDA: 0x6B1370
 
     TechnoClass*                master;             // +0x24 (this+36)
     HouseClass*                 house;              // +0x28 (this+40)

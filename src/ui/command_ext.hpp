@@ -21,14 +21,14 @@ class SelectTeamCommand : public CommandClass
 {
 public:
     SelectTeamCommand() = default;
-    virtual ~SelectTeamCommand() = default;
+    virtual ~SelectTeamCommand() = default;  // 0x536030
 
     // IDA 0x48B2A0 area
-    virtual void Construct();  // 0x535fc0
-    virtual int32_t AddRef();  // 0x535fe0
+    virtual void Construct();  // 0x535FC0
+    virtual int32_t AddRef();  // 0x535FE0
     virtual int32_t Release();  // 0x536000
     virtual const char* GetName() const override;
-    virtual const wchar_t* GetUIName() const override;
+    virtual const wchar_t* GetUIName() const override;  // 0x484ff0
     virtual void Execute(uint32_t context) const override;
 
     int32_t     SelectTeamCommand_field_00;       // 0x00
@@ -43,14 +43,14 @@ class AddTeamCommand : public CommandClass
 {
 public:
     AddTeamCommand() = default;
-    virtual ~AddTeamCommand() = default;
+    virtual ~AddTeamCommand() = default;  // 0x536120
 
     // IDA 0x48B2A0 area
-    virtual void Construct();  // 0x5360b0
-    virtual int32_t AddRef();  // 0x5360d0
-    virtual int32_t Release();  // 0x5360f0
+    virtual void Construct();  // 0x5360B0
+    virtual int32_t AddRef();  // 0x5360D0
+    virtual int32_t Release();  // 0x5360F0
     virtual const char* GetName() const override;
-    virtual const wchar_t* GetUIName() const override;
+    virtual const wchar_t* GetUIName() const override;  // 0x484ff0
     virtual void Execute(uint32_t context) const override;
 
     int32_t     AddTeamCommand_field_00;       // 0x00
@@ -64,13 +64,13 @@ class TauntCommandClass : public CommandClass
 {
 public:
     TauntCommandClass() = default;
-    virtual ~TauntCommandClass() = default;
+    virtual ~TauntCommandClass() = default;  // 0x536300
 
     virtual void Construct();  // 0x536290
-    virtual int32_t AddRef();  // 0x5362b0
-    virtual int32_t Release();  // 0x5362d0
+    virtual int32_t AddRef();  // 0x5362B0
+    virtual int32_t Release();  // 0x5362D0
     virtual const char* GetName() const override;
-    virtual const wchar_t* GetUIName() const override;
+    virtual const wchar_t* GetUIName() const override;  // 0x484ff0
     virtual void Execute(uint32_t context) const override;
 
     int32_t     TauntCommandClass_field_00;       // 0x00
@@ -84,13 +84,13 @@ class PageUserCommandClass : public CommandClass
 {
 public:
     PageUserCommandClass() = default;
-    virtual ~PageUserCommandClass() = default;
+    virtual ~PageUserCommandClass() = default;  // 0x537e10
 
     virtual void Construct();
-    virtual int32_t AddRef();  // 0x537de0
-    virtual int32_t Release();  // 0x537df0
+    virtual int32_t AddRef();  // 0x537DE0
+    virtual int32_t Release();  // 0x537DF0
     virtual const char* GetName() const override;
-    virtual const wchar_t* GetUIName() const override;
+    virtual const wchar_t* GetUIName() const override;  // 0x484ff0
     virtual void Execute(uint32_t context) const override;
 
     int32_t     PageUserCommandClass_field_00;       // 0x00
@@ -104,13 +104,13 @@ class DeleteCommandClass : public CommandClass
 {
 public:
     DeleteCommandClass() = default;
-    virtual ~DeleteCommandClass() = default;
+    virtual ~DeleteCommandClass() = default;  // 0x537f50
 
     virtual void Construct();
-    virtual int32_t AddRef();  // 0x537f20
-    virtual int32_t Release();  // 0x537f30
+    virtual int32_t AddRef();  // 0x537F20
+    virtual int32_t Release();  // 0x537F30
     virtual const char* GetName() const override;
-    virtual const wchar_t* GetUIName() const override;
+    virtual const wchar_t* GetUIName() const override;  // 0x484ff0
     virtual void Execute(uint32_t context) const override;
 
     int32_t     DeleteCommandClass_field_00;       // 0x00
@@ -126,9 +126,9 @@ public:
     CenterTeamCommand() = default;
     virtual ~CenterTeamCommand() = default;
 
-    virtual void Construct();  // 0x5361a0
-    virtual int32_t AddRef();  // 0x5361c0
-    virtual int32_t Release();  // 0x5361e0
+    virtual void Construct();  // 0x5361A0
+    virtual int32_t AddRef();  // 0x5361C0
+    virtual int32_t Release();  // 0x5361E0
     virtual const char* GetName() const override;
     virtual void Execute(uint32_t context) const override;
 
@@ -142,13 +142,13 @@ class ScreenCaptureCommandClass : public CommandClass
 {
 public:
     ScreenCaptureCommandClass() = default;
-    virtual ~ScreenCaptureCommandClass() = default;
+    virtual ~ScreenCaptureCommandClass() = default;  // 0x537b60
 
-    virtual void Constructor();  // 0x537b40
-    virtual int32_t AddRef();  // 0x537b50
-    virtual void ddtor();  // 0x537b60
+    virtual void Constructor();  // 0x537B40
+    virtual int32_t AddRef();  // 0x537B50
+    virtual void ddtor();  // 0x537B60
     virtual const char* GetName() const override;
-    virtual void Execute(uint32_t context) const override;  // 0x537ba0
+    virtual void Execute(uint32_t context) const override;  // 0x537BA0
 
     int32_t     ScreenCaptureCommandClass_field_00;       // 0x00
 };
@@ -162,7 +162,7 @@ public:
     CursorPositionCommandClass() = default;
     virtual ~CursorPositionCommandClass() = default;
 
-    virtual void Constructor();  // 0x537e70
+    virtual void Constructor();  // 0x537E70
     virtual const char* GetName() const override;
     virtual void Execute(uint32_t context) const override;
 
@@ -180,11 +180,11 @@ public:
     ~Commands();
 
     // IDA 0x48B2A0 area
-    int32_t AddRef();  // 0x537a50
-    void ddtor();  // 0x537a60
-    int32_t Release();  // 0x537a70
-    static void BuildBar();
-    static void AddAction(CommandClass* cmd);
+    int32_t AddRef();  // 0x537A50
+    void ddtor();  // 0x537A60
+    int32_t Release();  // 0x537A70
+    static void BuildBar();  // 0x6d1200
+    static void AddAction(CommandClass* cmd);  // 0x724580
 
     int32_t     m_RefCount;     // 0x00
     static DynamicVectorClass<CommandClass*>* Array; // 0x87F658
@@ -199,7 +199,7 @@ class CursorAnim
 public:
     virtual ~CursorAnim() = default;
 
-    virtual void Load() {} // 0x6d1800
+    virtual void Load() {} // IDA: 0x6D1800
 
 };
 // 3 methods in IDA
@@ -208,9 +208,9 @@ class DeleteAndZero
 public:
     virtual ~DeleteAndZero() = default;
 
-    virtual void OrFree() {} // 0x624480
-    virtual void Alt2() {} // 0x7b5340
-    virtual void Alt() {} // 0x7b6760
+    virtual void OrFree() {} // IDA: 0x624480
+    virtual void Alt2() {} // IDA: 0x7B5340
+    virtual void Alt() {} // IDA: 0x7B6760
 
     uint8_t DeleteAndZero_field_0x04[4];
     uint8_t DeleteAndZero_field_0x08[4];
@@ -221,7 +221,7 @@ class ScreenCapture
 public:
     virtual ~ScreenCapture() = default;
 
-    virtual void Frame() {} // 0x55cc20
+    virtual void Frame() {} // IDA: 0x55CC20
 
 };
 

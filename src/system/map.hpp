@@ -112,9 +112,9 @@ struct TrajectoryHelper
 {
     static bool IsCliffHit(const CellClass* source, const CellClass* before, const CellClass* after);
     static bool IsWallHit(const CellClass* source, const CellClass* check, const CellClass* target, const HouseClass* owner);
-    static CellClass* GetObstacle(const CellClass* cell_source, const CellClass* cell_target, const CellClass* cell_bullet, CoordStruct crd_cur, const BulletTypeClass* type, const HouseClass* owner);  // 0x4cc360
-    static CellClass* FindFirstObstacle(const CoordStruct& crd_src, const CoordStruct& crd_target, const BulletTypeClass* type, const HouseClass* owner);  // 0x4cc100
-    static CellClass* FindFirstImpenetrableObstacle(const CoordStruct& crd_src, const CoordStruct& crd_target, const WeaponTypeClass* weapon, const HouseClass* owner);  // 0x4cc310
+    static CellClass* GetObstacle(const CellClass* cell_source, const CellClass* cell_target, const CellClass* cell_bullet, CoordStruct crd_cur, const BulletTypeClass* type, const HouseClass* owner);  // 0x4CC360
+    static CellClass* FindFirstObstacle(const CoordStruct& crd_src, const CoordStruct& crd_target, const BulletTypeClass* type, const HouseClass* owner);  // 0x4CC100
+    static CellClass* FindFirstImpenetrableObstacle(const CoordStruct& crd_src, const CoordStruct& crd_target, const WeaponTypeClass* weapon, const HouseClass* owner);  // 0x4CC310
 };
 
 class LogicClass : LayerClass
@@ -138,14 +138,14 @@ class MapClass : public GScreenClass
 public:
     static constexpr int kMaxCells = 0x40000;
 
-    virtual int32_t __stdcall IsVisible(CellStruct cell) { return 0; }
+    virtual int32_t __stdcall IsVisible(CellStruct cell) { return 0; }  // IDA: 0x4A5110
 
-    virtual ~MapClass() = default;
+    virtual ~MapClass() = default;  // 0x5652c0
 
-    virtual void AllocateCells() {}
+    virtual void AllocateCells() {}  // IDA: 0x5D80B0
     virtual void DestructCells() {}
     virtual void ConstructCells() {}
-    virtual void PointerGotInvalid(AbstractClass* ptr, bool unk) {}
+    virtual void PointerGotInvalid(AbstractClass* ptr, bool unk) {}  // IDA: 0x4A7900
     virtual bool DraggingInProgress() { return false; }
     virtual void UpdateCrates() {}
     virtual void CreateEmptyMap(const RectangleStruct& map_rect, bool reuse, int8_t n_level, bool unk2) {}
@@ -163,7 +163,7 @@ public:
     bool CellExists(const CellStruct& map_coords) const;
 
     int GetThreatPosed(const CellStruct& cell, HouseClass* house) const;
-    bool IsLocationShrouded(const CoordStruct& crd) const;
+    bool IsLocationShrouded(const CoordStruct& crd) const;  // 0x4112d0
 
     static CoordStruct* GetRandomCoordsNear(CoordStruct& out, const CoordStruct& coords, int distance, bool center);
     static CoordStruct GetRandomCoordsNear(const CoordStruct& coords, int distance, bool center)
@@ -181,10 +181,10 @@ public:
         return out;
     }
 
-    void CellIteratorReset();
-    CellClass* CellIteratorNext();
+    void CellIteratorReset();  // 0x578350
+    CellClass* CellIteratorNext();  // 0x578290
 
-    static DamageAreaResult DamageArea(const CoordStruct& coords, int damage, TechnoClass* source, WarheadTypeClass* wh, bool affects_tiberium, HouseClass* source_house);
+    static DamageAreaResult DamageArea(const CoordStruct& coords, int damage, TechnoClass* source, WarheadTypeClass* wh, bool affects_tiberium, HouseClass* source_house);  // 0x75f330
     static AnimTypeClass* SelectDamageAnimation(int damage, WarheadTypeClass* wh, LandType land_type, const CoordStruct& coords);
     static void FlashbangWarheadAt(int damage, WarheadTypeClass* wh, CoordStruct coords, bool force = false, int cl_disable_flags = 0);
     static int GetTotalDamage(int damage, const WarheadTypeClass* warhead, Armor armor, int distance);
@@ -213,12 +213,12 @@ public:
     void AddContentAt(CellStruct* coords, TechnoClass* content);
     void RemoveContentAt(CellStruct* coords, TechnoClass* content);
 
-    bool IsWithinUsableArea(const CellStruct& cell, bool check_level) const;
-    bool IsWithinUsableArea(CellClass* cell, bool check_level) const;
-    bool IsWithinUsableArea(const CoordStruct& coords) const;
-    bool CoordinatesLegal(const CellStruct& cell) const;
+    bool IsWithinUsableArea(const CellStruct& cell, bool check_level) const;  // 0x578460
+    bool IsWithinUsableArea(CellClass* cell, bool check_level) const;  // 0x578460
+    bool IsWithinUsableArea(const CoordStruct& coords) const;  // 0x578460
+    bool CoordinatesLegal(const CellStruct& cell) const;  // 0x568300
 
-    CoordStruct* FindFirstFirestorm(CoordStruct* out, const CoordStruct& start, const CoordStruct& end, const HouseClass* house = nullptr) const;
+    CoordStruct* FindFirstFirestorm(CoordStruct* out, const CoordStruct& start, const CoordStruct& end, const HouseClass* house = nullptr) const;  // 0x5880a0
     CoordStruct FindFirstFirestorm(const CoordStruct& start, const CoordStruct& end, const HouseClass* house = nullptr) const
     {
         CoordStruct out;
@@ -226,11 +226,11 @@ public:
         return out;
     }
 
-    void RevealArea1(CoordStruct* coords, int radius, HouseClass* owner, CellStruct arg4, uint8_t reveal_by_height, uint8_t arg6, uint8_t arg7, uint8_t arg8);
-    void RevealArea2(CoordStruct* coords, int radius, HouseClass* owner, uint32_t arg4, uint8_t reveal_by_height, uint8_t arg6, uint8_t arg7, uint8_t arg8);
+    void RevealArea1(CoordStruct* coords, int radius, HouseClass* owner, CellStruct arg4, uint8_t reveal_by_height, uint8_t arg6, uint8_t arg7, uint8_t arg8);  // 0x5678e0
+    void RevealArea2(CoordStruct* coords, int radius, HouseClass* owner, uint32_t arg4, uint8_t reveal_by_height, uint8_t arg6, uint8_t arg7, uint8_t arg8);  // 0x567da0
     void RevealArea3(CoordStruct* coords, int height, int radius, bool skip_reveal);
 
-    void Reveal(HouseClass* house);
+    void Reveal(HouseClass* house);  // 0x577d90
     void Reshroud(HouseClass* house);
 
     void RedrawSidebar(int mode);
@@ -238,8 +238,8 @@ public:
     void SetPlaceBeaconMode(int mode);
     void SetSellMode(int mode);
     void SetRepairMode(int mode);
-    void DestroyCliff(CellClass* cell);
-    bool MakeTraversable(const ObjectClass* visitor, const CellStruct& cell) const;
+    void DestroyCliff(CellClass* cell);  // 0x581140
+    bool MakeTraversable(const ObjectClass* visitor, const CellStruct& cell) const;  // 0x452540
 
     // IDA 0x4F42F0 -- MapClass::MarkForRedraw (44B)
     void MarkForRedraw(int flags) { (void)flags; /* TODO: full IDA translation */ }

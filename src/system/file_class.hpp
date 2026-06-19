@@ -26,20 +26,20 @@ public:
     virtual ~FileClass() = default;
 
     virtual const char* GetFileName() const = 0;
-    virtual const char* SetFileName(const char* pFileName) = 0;  // 0x473fc0
+    virtual const char* SetFileName(const char* pFileName) = 0;  // 0x473FC0
     virtual bool CreateFile() = 0;
     virtual bool DeleteFile() = 0;
     virtual bool Exists(bool writeShared = false) = 0;
     virtual bool HasHandle() = 0;
-    virtual bool Open(FileAccessMode access) = 0;  // 0x65cbf0
+    virtual bool Open(FileAccessMode access) = 0;  // 0x65CBF0
     virtual bool OpenEx(const char* pFileName, FileAccessMode access) = 0;
-    virtual int ReadBytes(void* pBuffer, int nNumBytes) = 0;
-    virtual int Seek(int offset, FileSeekMode seek) = 0;  // 0x65cf00
-    virtual int GetFileSize() = 0;  // 0x7c8512
-    virtual int WriteBytes(void* pBuffer, int nNumBytes) = 0;
-    virtual void Close() = 0;  // 0x65d150
-    virtual uint32_t GetFileTime() { return 0; }  // 0x7c855a
-    virtual bool SetFileTime(uint32_t fileTime) { return false; }  // 0x7c8524
+    virtual int ReadBytes(void* pBuffer, int nNumBytes) = 0;  // 0x774b30
+    virtual int Seek(int offset, FileSeekMode seek) = 0;  // 0x65CF00
+    virtual int GetFileSize() = 0;  // 0x7C8512
+    virtual int WriteBytes(void* pBuffer, int nNumBytes) = 0;  // 0x411310
+    virtual void Close() = 0;  // 0x65D150
+    virtual uint32_t GetFileTime() { return 0; }  // IDA: 0x7C855A
+    virtual bool SetFileTime(uint32_t fileTime) { return false; }  // IDA: 0x7C8524
     virtual void CDCheck(uint32_t errorCode, bool bUnk, const char* pFilename) = 0;
 
     void* ReadWholeFile();
@@ -47,13 +47,13 @@ public:
     template <typename T>
     bool Read(T& obj, int size = sizeof(T))
     {
-        return ReadBytes(&obj, size) == size;
+        return ReadBytes(&obj, size) == size;  // 0x774b30
     }
 
     template <typename T>
     bool Write(T& obj, int size = sizeof(T))
     {
-        return WriteBytes(&obj, size) == size;
+        return WriteBytes(&obj, size) == size;  // 0x411310
     }
 
 protected:
@@ -69,7 +69,7 @@ private:
 class RawFileClass : public FileClass
 {
 public:
-    virtual ~RawFileClass() override = default;
+    virtual ~RawFileClass() override = default;  // 0x65ca00
 
     const char* GetFileName() const override { return FileName; }
     const char* SetFileName(const char* pFileName) override;
@@ -79,10 +79,10 @@ public:
     bool HasHandle() override { return Handle != nullptr; }
     bool Open(FileAccessMode access) override { return false; }
     bool OpenEx(const char* pFileName, FileAccessMode access) override { return false; }
-    int ReadBytes(void* pBuffer, int nNumBytes) override { return 0; }
+    int ReadBytes(void* pBuffer, int nNumBytes) override { return 0; }  // IDA: 0x774B30
     int Seek(int offset, FileSeekMode seek) override { return 0; }
-    int GetFileSize() override { return FileSize; }  // 0x7c8512
-    int WriteBytes(void* pBuffer, int nNumBytes) override { return 0; }
+    int GetFileSize() override { return FileSize; }  // IDA: 0x65D0D0
+    int WriteBytes(void* pBuffer, int nNumBytes) override { return 0; }  // IDA: 0x411310
     void Close() override {}
     void CDCheck(uint32_t errorCode, bool bUnk, const char* pFilename) override {}
 

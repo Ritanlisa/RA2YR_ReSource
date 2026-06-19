@@ -121,7 +121,7 @@ public:
 
     // Create a movie handle from a filename
     // Returns nullptr if format unsupported or file not found
-    static MovieHandle* CreateMovie(const char* filename, DSurface* render_target);  // 0x5c07d0
+    static MovieHandle* CreateMovie(const char* filename, DSurface* render_target);  // 0x5C07D0
 
     // Play a movie synchronously (blocks until complete or user skip)
     // Implements Movie_Play (0x5BED40) logic

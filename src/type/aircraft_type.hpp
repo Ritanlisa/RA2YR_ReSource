@@ -14,24 +14,24 @@ public:
     static constexpr AbstractType AbsID = AbstractType::AircraftType;
 
     static DynamicVectorClass<AircraftTypeClass*>* Array;
-    static AircraftTypeClass* Find(const char* pID);  // 0x41c8b0
-    static AircraftTypeClass* FindOrAllocate(const char* pID);  // 0x41c8b0
+    static AircraftTypeClass* Find(const char* pID);  // 0x41C8B0
+    static AircraftTypeClass* FindOrAllocate(const char* pID);
     static int FindIndex(const char* pID);
 
-    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override; // 0x41ceb0 (as GetClassIdentifier)
+    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override; // 0x41CEB0 (as GetClassIdentifier)
 
-    virtual ~AircraftTypeClass() = default;  // 0x41cfe0 (as ddtor)
+    virtual ~AircraftTypeClass() = default;  // 0x41CFE0 (as ddtor)
 
-    virtual AbstractType __stdcall whatAmI() const override; // 0x41cfb0 (as GetTypeIdentifier)
-    virtual int objectSize() const override; // 0x41cfc0 (as GetObjectSize)
+    virtual AbstractType __stdcall whatAmI() const override; // 0x41CFB0 (as GetTypeIdentifier)
+    virtual int objectSize() const override; // 0x41CFC0 (as GetObjectSize)
 
-    virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override; // 0x41cb60 (as StubReturnFalse)
-    virtual ObjectClass* CreateObject(HouseClass* pOwner) override; // 0x41cb70 (as CreateAircraft)
+    virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override; // 0x41CB60 (as StubReturnFalse)
+    virtual ObjectClass* CreateObject(HouseClass* pOwner) override; // 0x41CB70 (as CreateAircraft)
 
-    AircraftTypeClass(const char* pID) noexcept;  // 0x41c8b0
+    AircraftTypeClass(const char* pID) noexcept;
 
 protected:
-    AircraftTypeClass(noinit_t) noexcept;  // 0x41c8b0
+    AircraftTypeClass(noinit_t) noexcept;
 
 public:
     int ArrayIndex;

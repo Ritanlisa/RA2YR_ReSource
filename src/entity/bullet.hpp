@@ -70,7 +70,7 @@ public:
     virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override;
     virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;
 
-    virtual ~BulletClass() override = default;
+    virtual ~BulletClass() override = default;  // 0x466560
 
     virtual AbstractType __stdcall whatAmI() const override;
     virtual int objectSize() const override;

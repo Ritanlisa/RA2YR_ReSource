@@ -31,28 +31,28 @@ public:
 
     static DynamicVectorClass<AnimTypeClass*>* Array;
     static AnimTypeClass* Find(const char* pID);
-    static AnimTypeClass* FindOrAllocate(const char* pID);  // 0x428b80 (as FindOrCreate)
-    static int FindIndex(const char* pID);  // 0x427cb0
+    static AnimTypeClass* FindOrAllocate(const char* pID);  // 0x428B80 (as FindOrCreate)
+    static int FindIndex(const char* pID);  // 0x427CB0
 
     virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override; // 0x428990 (as GetClassIdentifier)
 
-    virtual ~AnimTypeClass() = default;  // 0x428ea0 (as ddtor)
+    virtual ~AnimTypeClass() = default;  // 0x428EA0 (as ddtor)
 
     virtual AbstractType __stdcall whatAmI() const override;
-    virtual int objectSize() const override; // 0x428e70 (as GetObjectSize)
+    virtual int objectSize() const override; // 0x428E70 (as GetObjectSize)
 
-    virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override; // 0x428e90 (as StubReturnFalse)
-    virtual ObjectClass* CreateObject(HouseClass* pOwner) override;
+    virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override; // 0x428E90 (as StubReturnFalse)
+    virtual ObjectClass* CreateObject(HouseClass* pOwner) override;  // 0x4737f0
 
     virtual SHPStruct* LoadImage();
-    virtual void Load2DArt();
+    virtual void Load2DArt();  // 0x5f9070
 
     AnimTypeClass(const char* pID) noexcept;  // 0x427530 (as Construct)
 
     struct noinit_t {};
 
 protected:
-    AnimTypeClass(noinit_t) noexcept;  // 0x427530 (as Construct)
+    AnimTypeClass(noinit_t) noexcept;
 
 public:
     int ArrayIndex;
