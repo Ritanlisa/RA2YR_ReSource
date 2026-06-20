@@ -4,1119 +4,1119 @@ namespace gamemd {
 
 // === Section 0x0810000 - .data (142 globals) ===
 
-extern void (*First)(); // 0x815DA8
-extern void (*Last)(); // 0x815DBC
-extern uint8_t g_INI_Key_NORMAL[7]; // 0x8161D4
-extern uint64_t g_Str_unknown; // 0x816210
-extern uint8_t g_INI_Key_Stop[5]; // 0x816E00
-extern uint8_t g_INI_Key_Guard[6]; // 0x816E44
-extern uint8_t g_INI_Key_Attack[7]; // 0x816E64
-extern uint8_t g_INI_Key_Action[7]; // 0x817270
-extern uint8_t g_INI_Key_Tiberium[9]; // 0x817278
-extern uint64_t g_INI_Key_Special; // 0x817318
-extern uint8_t g_INI_Key_Side[5]; // 0x817334
-extern uint8_t g_INI_Key_Infantry[9]; // 0x8173D0
-extern uint8_t g_Str__none_[7]; // 0x817474
-extern uint8_t g_Str_none[5]; // 0x817694
-extern uint8_t Format[5]; // 0x817828
-extern uint8_t g_INI_Key_UIName[7]; // 0x81784C
-extern uint8_t g_INI_Key_Name[5]; // 0x817854
-extern uint8_t g_Str_Trace_Ahandle__PauseAdjust__ld[26]; // 0x8178C0
-extern GUID riid[4]; // 0x817BC0
-extern uint8_t g_INI_Key_None[5]; // 0x817F64
-extern uint8_t g_Str_Trace__d[3]; // 0x817F6C
-extern uint8_t Delimiter[2]; // 0x817F70
-extern uint8_t g_INI_Key_Easy[5]; // 0x818134
-extern uint8_t g_INI_Key_Civilian[9]; // 0x818164
-extern uint8_t Ext[5]; // 0x81834C
-extern uint64_t g_INI_Key_Warhead; // 0x8183B4
-extern uint8_t g_INI_Key_StopSound[10]; // 0x818404
-extern uint8_t g_INI_Key_StartSound[11]; // 0x818418
-extern uint8_t g_INI_Key_Spawns[7]; // 0x8184C8
-extern uint8_t g_INI_Key_Elasticity[11]; // 0x8184F4
-extern uint8_t g_INI_Key_DetailLevel[12]; // 0x81855C
-extern uint8_t g_INI_Key_Damage[7]; // 0x81859C
-extern uint8_t g_INI_Key_Rate[5]; // 0x8185A4
-extern uint8_t g_INI_Key_Normalized[11]; // 0x818610
-extern uint8_t g_INI_Key_Flat[5]; // 0x818624
-extern uint8_t g_INI_Key_Theater[8]; // 0x818658
-extern uint16_t psz[2]; // 0x8186E8
-extern uint8_t g_Str_Trace__d__d__d[9]; // 0x8189B0
-extern uint8_t g_Str_Trace___d[4]; // 0x8190DC
-extern uint8_t g_Str_EVA_BuildingInfiltrated[24]; // 0x819198
-extern uint8_t g_INI_Key_Image[6]; // 0x819420
-extern uint8_t g_Str_File__HVA[5]; // 0x8194A0
-extern uint8_t g_Str_File__VXL[5]; // 0x8194AC
-extern uint8_t g_INI_Key_Foundation[11]; // 0x81A734
-extern uint8_t g_INI_Key_Height[7]; // 0x81A7A8
-extern uint8_t g_INI_Key_IsBaseDefense[14]; // 0x81A7EC
-extern uint8_t g_INI_Key_Wall[5]; // 0x81AC58
-extern uint8_t g_INI_Key_NukePayload[12]; // 0x81AFA0
-extern uint8_t g_INI_Key_Level[6]; // 0x81B0D4
-extern uint8_t g_INI_Key_Color[6]; // 0x81B138
-extern uint8_t g_INI_Key_Description[12]; // 0x81B1A4
-extern uint8_t g_INI_Key_Scenario[9]; // 0x81B1BC
-extern uint64_t g_INI_Key_Battles; // 0x81B1D8
-extern uint8_t g_Str_File_wolacpt_pcx[12]; // 0x81B2AC
-extern uint8_t g_Str_File_wolhost_pcx[12]; // 0x81B2B8
-extern uint16_t g_Str_TXT_TIME_FORMAT_HOURS[11]; // 0x81B2EC
-extern uint8_t g_Str_File_CampScor_cpp[26]; // 0x81B304
-extern const uint16_t g_Str_Fmt_PctD[2]; // 0x81B3D0
-extern uint8_t g_INI_Key_Loser[6]; // 0x81B41C
-extern uint8_t g_INI_Key_Winner[7]; // 0x81B424
-extern uint16_t g_Str_TXT_WAITING[6]; // 0x81B448
-extern uint16_t g_Str_TXT_READY[5]; // 0x81B454
-extern uint8_t g_Str_Trace___s___s[16]; // 0x81B460
-extern uint16_t g_Str_GUI_DifficultyString[10]; // 0x81B4E8
-extern int32_t _ZTI2x1; // 0x81B9DC
-extern uint8_t g_INI_Key_Water[6]; // 0x81BAE8
-extern uint8_t g_INI_Key_Amphibious[11]; // 0x81BB18
-extern uint8_t g_INI_Key_Normal[7]; // 0x81BB60
-extern const char _ZTS2x1[4]; // 0x81BBC0 C++ RTTI typeinfo name
-extern uint8_t g_INI_Key_Digest[7]; // 0x81BFE0
-extern uint8_t g_Str_Trace__d__d[6]; // 0x81C000
-extern uint8_t g_Str__random_[9]; // 0x81C008
-extern uint8_t g_Str_File_THEME_MIX[10]; // 0x81C220
-extern uint8_t g_Str_File_THEMEMD_MIX[12]; // 0x81C24C
-extern uint8_t g_Str_File_MULTIMD_MIX[12]; // 0x81C284
-extern uint8_t g_Str_FAILED_[14]; // 0x81C2B4
-extern uint8_t g_Str_Trace_Initializing__s[22]; // 0x81C2D4
-extern uint8_t g_Str_Trace_Releasing__s[19]; // 0x81C320
-extern uint8_t g_Str_Trace_DeviceIoControl_failed_to_eject_media__E[54]; // 0x81C358
-extern uint8_t g_Str_Trace_DeviceIoControl_failed_to_prevent_media_[64]; // 0x81C390
-extern uint8_t g_Str_Trace_DeviceIoControl_failed_to_dismount_volum[58]; // 0x81C3D0
-extern uint8_t g_Str_Trace_DeviceIoControl_failed_to_lock_volume__E[54]; // 0x81C40C
-extern uint8_t g_Str_Trace_Unable_to_open_drive__c__for_ejection[39]; // 0x81C444
-extern uint8_t g_Str_Trace______c_[8]; // 0x81C46C
-extern uint8_t g_Str_Attempt_to_open_non_removable_[62]; // 0x81C474
-extern uint8_t g_Str_Trace__c__[5]; // 0x81C4B4
-extern uint8_t g_Str_Trace_DeviceIoControl_failed_to_unlock_volume_[56]; // 0x81C4BC
-extern uint8_t g_Str_Trace_DeviceIoControl_failed_to_perform_DOS_IO[74]; // 0x81C51C
-extern uint8_t g_Str_Trace_Unable_to_lock_volume__c_[27]; // 0x81C590
-extern uint8_t g_Str_____vwin32[11]; // 0x81C5AC
-extern uint8_t g_Str_false[6]; // 0x81C5E8
-extern uint8_t g_Str_true[5]; // 0x81C5F0
-extern void* hFindFile; // 0x81C8EC
-extern uint8_t Str2[3]; // 0x81C8F8
-extern uint8_t g_Str_File_Conquer_CPP[25]; // 0x81D4F8
-extern uint16_t g_Str_TXT_SHORT_TITLE[8]; // 0x81D57C
-extern uint8_t ProcName[20]; // 0x81D80C
-extern uint8_t ModuleName[13]; // 0x81D820
-extern uint8_t g_Str_Trace_Percent_lost___d[18]; // 0x81D850
-extern uint8_t g_Str_Trace_Lost___d[10]; // 0x81D864
-extern uint8_t g_Str_Trace_Command_cound_stalls___d[26]; // 0x81D870
-extern uint8_t g_Str_Trace_Frame_sync_stalls___d[23]; // 0x81D88C
-extern uint8_t g_Str_Trace_Resends___d[13]; // 0x81D8A4
-extern uint8_t g_Str_Trace_Max_round_trip___d[20]; // 0x81D8B4
-extern uint8_t g_Str_Trace_Max_avg_round_trip___d[24]; // 0x81D8C8
-extern uint8_t g_Str_Trace_Name___s[11]; // 0x81D8F0
-extern uint8_t g_Str_Trace_Local_address___d__d__d__d[28]; // 0x81D8FC
-extern uint8_t g_Str_Trace_Game_speed_setting___d[24]; // 0x81D918
-extern uint8_t g_Str_Trace_Latency_setting___d[21]; // 0x81D930
-extern uint8_t g_Str_Trace_Max_MaxAhead___d[18]; // 0x81D948
-extern uint8_t g_Str_Trace_Average_FPS___d[17]; // 0x81D95C
-extern uint8_t g_Str_Trace_Frames___d[12]; // 0x81D970
-extern uint8_t Mode[3]; // 0x81D988
-extern uint8_t g_INI_Key_Speed[6]; // 0x81D9CC
-extern uint8_t g_INI_Key_Armor[6]; // 0x81D9D4
-extern uint8_t g_INI_Key_Ground[7]; // 0x81DB84
-extern uint8_t g_INI_Key_FloatBeach[11]; // 0x81DBA0
-extern uint8_t g_INI_Key_Float[6]; // 0x81DBAC
-extern uint8_t g_INI_Key_Hover[6]; // 0x81DBBC
-extern uint8_t g_INI_Key_Wheel[6]; // 0x81DBC4
-extern uint8_t g_INI_Key_Track[6]; // 0x81DBCC
-extern uint8_t g_INI_Key_Foot[5]; // 0x81DBD4
-extern uint8_t g_INI_Key_Clear[6]; // 0x81DC1C
-extern uint8_t g_Str_File_coopsave_ini[13]; // 0x81F0F8
-extern uint8_t g_Str_undefined[10]; // 0x81F108
-extern uint8_t g_Str_Trace_Map_d[6]; // 0x81F114
-extern uint8_t g_INI_Key_Time[5]; // 0x81F11C
-extern uint8_t g_INI_Key_CurrentMap[11]; // 0x81F19C
-extern uint8_t g_Str_Trace__s_d[5]; // 0x81F31C
-extern uint8_t g_INI_Key_Campaigns[10]; // 0x81F3B4
-extern uint8_t g_Str_File_CoopCampMD_ini[15]; // 0x81F3C0
-extern uint8_t ValueName[3]; // 0x81F550
-extern uint8_t SubKey[12]; // 0x81F554
-extern int32_t CRC32_Table; // 0x81F7B4
-extern uint8_t g_Str_Direct_X[9]; // 0x81FC70
-extern uint8_t g_Str_Trace_DDRAW_DLL_Error_code____08X[28]; // 0x81FC7C
-extern uint8_t Text[46]; // 0x81FC98
-extern uint8_t Caption[5]; // 0x81FCC8
-extern const char g_Str_Trace__s[16]; // 0x81FD08 format string pool
-extern uint8_t g_INI_Key_OK[3]; // 0x81FD14
-extern uint8_t g_Str_DirectDrawCreate_failed_[26]; // 0x81FD44
-extern uint8_t g_INI_Key_CellTags[9]; // 0x81FFE4
+extern void (*First)(); // data: 0x815DA8
+extern void (*Last)(); // data: 0x815DBC
+extern uint8_t g_INI_Key_NORMAL[7]; // data: 0x8161D4
+extern uint64_t g_Str_unknown; // data: 0x816210
+extern uint8_t g_INI_Key_Stop[5]; // data: 0x816E00
+extern uint8_t g_INI_Key_Guard[6]; // data: 0x816E44
+extern uint8_t g_INI_Key_Attack[7]; // data: 0x816E64
+extern uint8_t g_INI_Key_Action[7]; // data: 0x817270
+extern uint8_t g_INI_Key_Tiberium[9]; // data: 0x817278
+extern uint64_t g_INI_Key_Special; // data: 0x817318
+extern uint8_t g_INI_Key_Side[5]; // data: 0x817334
+extern uint8_t g_INI_Key_Infantry[9]; // data: 0x8173D0
+extern uint8_t g_Str__none_[7]; // data: 0x817474
+extern uint8_t g_Str_none[5]; // data: 0x817694
+extern uint8_t Format[5]; // data: 0x817828
+extern uint8_t g_INI_Key_UIName[7]; // data: 0x81784C
+extern uint8_t g_INI_Key_Name[5]; // data: 0x817854
+extern uint8_t g_Str_Trace_Ahandle__PauseAdjust__ld[26]; // data: 0x8178C0
+extern GUID riid[4]; // data: 0x817BC0
+extern uint8_t g_INI_Key_None[5]; // data: 0x817F64
+extern uint8_t g_Str_Trace__d[3]; // data: 0x817F6C
+extern uint8_t Delimiter[2]; // data: 0x817F70
+extern uint8_t g_INI_Key_Easy[5]; // data: 0x818134
+extern uint8_t g_INI_Key_Civilian[9]; // data: 0x818164
+extern uint8_t Ext[5]; // data: 0x81834C
+extern uint64_t g_INI_Key_Warhead; // data: 0x8183B4
+extern uint8_t g_INI_Key_StopSound[10]; // data: 0x818404
+extern uint8_t g_INI_Key_StartSound[11]; // data: 0x818418
+extern uint8_t g_INI_Key_Spawns[7]; // data: 0x8184C8
+extern uint8_t g_INI_Key_Elasticity[11]; // data: 0x8184F4
+extern uint8_t g_INI_Key_DetailLevel[12]; // data: 0x81855C
+extern uint8_t g_INI_Key_Damage[7]; // data: 0x81859C
+extern uint8_t g_INI_Key_Rate[5]; // data: 0x8185A4
+extern uint8_t g_INI_Key_Normalized[11]; // data: 0x818610
+extern uint8_t g_INI_Key_Flat[5]; // data: 0x818624
+extern uint8_t g_INI_Key_Theater[8]; // data: 0x818658
+extern uint16_t psz[2]; // data: 0x8186E8
+extern uint8_t g_Str_Trace__d__d__d[9]; // data: 0x8189B0
+extern uint8_t g_Str_Trace___d[4]; // data: 0x8190DC
+extern uint8_t g_Str_EVA_BuildingInfiltrated[24]; // data: 0x819198
+extern uint8_t g_INI_Key_Image[6]; // data: 0x819420
+extern uint8_t g_Str_File__HVA[5]; // data: 0x8194A0
+extern uint8_t g_Str_File__VXL[5]; // data: 0x8194AC
+extern uint8_t g_INI_Key_Foundation[11]; // data: 0x81A734
+extern uint8_t g_INI_Key_Height[7]; // data: 0x81A7A8
+extern uint8_t g_INI_Key_IsBaseDefense[14]; // data: 0x81A7EC
+extern uint8_t g_INI_Key_Wall[5]; // data: 0x81AC58
+extern uint8_t g_INI_Key_NukePayload[12]; // data: 0x81AFA0
+extern uint8_t g_INI_Key_Level[6]; // data: 0x81B0D4
+extern uint8_t g_INI_Key_Color[6]; // data: 0x81B138
+extern uint8_t g_INI_Key_Description[12]; // data: 0x81B1A4
+extern uint8_t g_INI_Key_Scenario[9]; // data: 0x81B1BC
+extern uint64_t g_INI_Key_Battles; // data: 0x81B1D8
+extern uint8_t g_Str_File_wolacpt_pcx[12]; // data: 0x81B2AC
+extern uint8_t g_Str_File_wolhost_pcx[12]; // data: 0x81B2B8
+extern uint16_t g_Str_TXT_TIME_FORMAT_HOURS[11]; // data: 0x81B2EC
+extern uint8_t g_Str_File_CampScor_cpp[26]; // data: 0x81B304
+extern const uint16_t g_Str_Fmt_PctD[2]; // data: 0x81B3D0
+extern uint8_t g_INI_Key_Loser[6]; // data: 0x81B41C
+extern uint8_t g_INI_Key_Winner[7]; // data: 0x81B424
+extern uint16_t g_Str_TXT_WAITING[6]; // data: 0x81B448
+extern uint16_t g_Str_TXT_READY[5]; // data: 0x81B454
+extern uint8_t g_Str_Trace___s___s[16]; // data: 0x81B460
+extern uint16_t g_Str_GUI_DifficultyString[10]; // data: 0x81B4E8
+extern int32_t _ZTI2x1; // data: 0x81B9DC
+extern uint8_t g_INI_Key_Water[6]; // data: 0x81BAE8
+extern uint8_t g_INI_Key_Amphibious[11]; // data: 0x81BB18
+extern uint8_t g_INI_Key_Normal[7]; // data: 0x81BB60
+extern const char _ZTS2x1[4]; // data: 0x81BBC0 C++ RTTI typeinfo name
+extern uint8_t g_INI_Key_Digest[7]; // data: 0x81BFE0
+extern uint8_t g_Str_Trace__d__d[6]; // data: 0x81C000
+extern uint8_t g_Str__random_[9]; // data: 0x81C008
+extern uint8_t g_Str_File_THEME_MIX[10]; // data: 0x81C220
+extern uint8_t g_Str_File_THEMEMD_MIX[12]; // data: 0x81C24C
+extern uint8_t g_Str_File_MULTIMD_MIX[12]; // data: 0x81C284
+extern uint8_t g_Str_FAILED_[14]; // data: 0x81C2B4
+extern uint8_t g_Str_Trace_Initializing__s[22]; // data: 0x81C2D4
+extern uint8_t g_Str_Trace_Releasing__s[19]; // data: 0x81C320
+extern uint8_t g_Str_Trace_DeviceIoControl_failed_to_eject_media__E[54]; // data: 0x81C358
+extern uint8_t g_Str_Trace_DeviceIoControl_failed_to_prevent_media_[64]; // data: 0x81C390
+extern uint8_t g_Str_Trace_DeviceIoControl_failed_to_dismount_volum[58]; // data: 0x81C3D0
+extern uint8_t g_Str_Trace_DeviceIoControl_failed_to_lock_volume__E[54]; // data: 0x81C40C
+extern uint8_t g_Str_Trace_Unable_to_open_drive__c__for_ejection[39]; // data: 0x81C444
+extern uint8_t g_Str_Trace______c_[8]; // data: 0x81C46C
+extern uint8_t g_Str_Attempt_to_open_non_removable_[62]; // data: 0x81C474
+extern uint8_t g_Str_Trace__c__[5]; // data: 0x81C4B4
+extern uint8_t g_Str_Trace_DeviceIoControl_failed_to_unlock_volume_[56]; // data: 0x81C4BC
+extern uint8_t g_Str_Trace_DeviceIoControl_failed_to_perform_DOS_IO[74]; // data: 0x81C51C
+extern uint8_t g_Str_Trace_Unable_to_lock_volume__c_[27]; // data: 0x81C590
+extern uint8_t g_Str_____vwin32[11]; // data: 0x81C5AC
+extern uint8_t g_Str_false[6]; // data: 0x81C5E8
+extern uint8_t g_Str_true[5]; // data: 0x81C5F0
+extern void* hFindFile; // data: 0x81C8EC
+extern uint8_t Str2[3]; // data: 0x81C8F8
+extern uint8_t g_Str_File_Conquer_CPP[25]; // data: 0x81D4F8
+extern uint16_t g_Str_TXT_SHORT_TITLE[8]; // data: 0x81D57C
+extern uint8_t ProcName[20]; // data: 0x81D80C
+extern uint8_t ModuleName[13]; // data: 0x81D820
+extern uint8_t g_Str_Trace_Percent_lost___d[18]; // data: 0x81D850
+extern uint8_t g_Str_Trace_Lost___d[10]; // data: 0x81D864
+extern uint8_t g_Str_Trace_Command_cound_stalls___d[26]; // data: 0x81D870
+extern uint8_t g_Str_Trace_Frame_sync_stalls___d[23]; // data: 0x81D88C
+extern uint8_t g_Str_Trace_Resends___d[13]; // data: 0x81D8A4
+extern uint8_t g_Str_Trace_Max_round_trip___d[20]; // data: 0x81D8B4
+extern uint8_t g_Str_Trace_Max_avg_round_trip___d[24]; // data: 0x81D8C8
+extern uint8_t g_Str_Trace_Name___s[11]; // data: 0x81D8F0
+extern uint8_t g_Str_Trace_Local_address___d__d__d__d[28]; // data: 0x81D8FC
+extern uint8_t g_Str_Trace_Game_speed_setting___d[24]; // data: 0x81D918
+extern uint8_t g_Str_Trace_Latency_setting___d[21]; // data: 0x81D930
+extern uint8_t g_Str_Trace_Max_MaxAhead___d[18]; // data: 0x81D948
+extern uint8_t g_Str_Trace_Average_FPS___d[17]; // data: 0x81D95C
+extern uint8_t g_Str_Trace_Frames___d[12]; // data: 0x81D970
+extern uint8_t Mode[3]; // data: 0x81D988
+extern uint8_t g_INI_Key_Speed[6]; // data: 0x81D9CC
+extern uint8_t g_INI_Key_Armor[6]; // data: 0x81D9D4
+extern uint8_t g_INI_Key_Ground[7]; // data: 0x81DB84
+extern uint8_t g_INI_Key_FloatBeach[11]; // data: 0x81DBA0
+extern uint8_t g_INI_Key_Float[6]; // data: 0x81DBAC
+extern uint8_t g_INI_Key_Hover[6]; // data: 0x81DBBC
+extern uint8_t g_INI_Key_Wheel[6]; // data: 0x81DBC4
+extern uint8_t g_INI_Key_Track[6]; // data: 0x81DBCC
+extern uint8_t g_INI_Key_Foot[5]; // data: 0x81DBD4
+extern uint8_t g_INI_Key_Clear[6]; // data: 0x81DC1C
+extern uint8_t g_Str_File_coopsave_ini[13]; // data: 0x81F0F8
+extern uint8_t g_Str_undefined[10]; // data: 0x81F108
+extern uint8_t g_Str_Trace_Map_d[6]; // data: 0x81F114
+extern uint8_t g_INI_Key_Time[5]; // data: 0x81F11C
+extern uint8_t g_INI_Key_CurrentMap[11]; // data: 0x81F19C
+extern uint8_t g_Str_Trace__s_d[5]; // data: 0x81F31C
+extern uint8_t g_INI_Key_Campaigns[10]; // data: 0x81F3B4
+extern uint8_t g_Str_File_CoopCampMD_ini[15]; // data: 0x81F3C0
+extern uint8_t ValueName[3]; // data: 0x81F550
+extern uint8_t SubKey[12]; // data: 0x81F554
+extern int32_t CRC32_Table; // data: 0x81F7B4
+extern uint8_t g_Str_Direct_X[9]; // data: 0x81FC70
+extern uint8_t g_Str_Trace_DDRAW_DLL_Error_code____08X[28]; // data: 0x81FC7C
+extern uint8_t Text[46]; // data: 0x81FC98
+extern uint8_t Caption[5]; // data: 0x81FCC8
+extern const char g_Str_Trace__s[16]; // data: 0x81FD08 format string pool
+extern uint8_t g_INI_Key_OK[3]; // data: 0x81FD14
+extern uint8_t g_Str_DirectDrawCreate_failed_[26]; // data: 0x81FD44
+extern uint8_t g_INI_Key_CellTags[9]; // data: 0x81FFE4
 
 // === Section 0x0820000 - high-xref globals (xref≥5, ≥2 callers) ===
 
-extern uint32_t g_MoveFeedback; // 0x822CF2 (was: MoveFeedback)
+extern uint32_t g_MoveFeedback; // data: 0x822CF2 (was: MoveFeedback)
 
 // === Section 0x0820000 - .data (172 globals) ===
 
-extern uint8_t g_Str_EVA_CannotDeployHere[21]; // 0x82012C
-extern uint8_t g_INI_Key_LocalSize[10]; // 0x820164
-extern uint8_t g_INI_Key_Size[5]; // 0x820178
-extern uint8_t g_Str_File_XXICON_SHP[11]; // 0x8204FC
-extern uint8_t g_INI_Key_Green[6]; // 0x82053C
-extern uint8_t g_DDraw_AllowOverlayBlit; // 0x8205D5
-extern uint8_t g_Str_DSurface__Create_Primary_done[31]; // 0x82061C
-extern uint8_t g_INI_Key_Blue[5]; // 0x8207DC
-extern uint8_t g_Str_Trace_Adding_event__s[17]; // 0x820BF0
-extern uint8_t g_Str_Trace_LatencyFudge_is__d[20]; // 0x820C54
-extern uint8_t MultiByteStr[13]; // 0x820DAC
-extern uint8_t g_Str_File_Event_CPP[23]; // 0x820E44
-extern const char* lpString2; // 0x820E8C
-extern uint8_t g_Str_Trace_CPU__s__MMX__s__Vendor___s[29]; // 0x821EE4
-extern uint8_t g_INI_Key_No[3]; // 0x821F04
-extern uint8_t g_Str_Trace_Release_Build___s_by__s____s[31]; // 0x821F0C
-extern uint8_t String[18]; // 0x822024
-extern uint8_t String2[3]; // 0x822050
-extern uint8_t LibFileName[13]; // 0x822174
-extern uint8_t FileName[11]; // 0x8221F8
-extern uint8_t g_INI_Key_Grey[5]; // 0x822728
-extern uint8_t g_Str_TXT_FASTEST[12]; // 0x8227B8
-extern uint8_t g_Str_TXT_FASTER[11]; // 0x8227C4
-extern uint8_t g_Str_TXT_FAST[9]; // 0x8227D0
-extern uint8_t g_Str_TXT_MEDIUM[11]; // 0x8227DC
-extern uint8_t g_Str_TXT_SLOW[9]; // 0x8227E8
-extern uint8_t g_Str_TXT_SLOWER[11]; // 0x8227F4
-extern uint8_t g_Str_TXT_SLOWEST[12]; // 0x822800
-extern uint8_t g_Str_File_GDlgSupp_cpp[26]; // 0x8229C0
-extern uint16_t g_Str_GUI_RandomAsSymbols[10]; // 0x822B7C
-extern int32_t g_RulesInitConfig; // 0x822CF4
-extern uint8_t g_Str_gsmallwoo[10]; // 0x822D20
-extern uint64_t FileTime; // 0x822D5C
-extern uint8_t g_Str_File_GOptions_CPP[26]; // 0x8240BC
-extern uint16_t g_Str_GUI_Observe[6]; // 0x8240D8
-extern uint8_t g_INI_Key_Theme[6]; // 0x824194
-extern uint8_t g_Str_File__PCX[5]; // 0x8241AC
-extern uint8_t g_INI_Key_Intro[6]; // 0x8241C0
-extern uint64_t g_INI_Key_Palette; // 0x824254
-extern uint8_t g_INI_Key_Type[5]; // 0x824314
-extern uint8_t g_Str_File_House_CPP[23]; // 0x824724
-extern uint8_t g_Str_EVA_OreMinerUnderAttack[24]; // 0x824784
-extern uint8_t g_INI_Key_Country[8]; // 0x824D4C
-extern uint8_t g_INI_Key_Houses[7]; // 0x824D54
-extern uint8_t g_INI_Key_IQ[3]; // 0x824DD8
-extern uint8_t g_INI_Key_Credits[8]; // 0x824E38
-extern uint8_t g_INI_Key_TechLevel[10]; // 0x824E40
-extern uint8_t g_Str_EVA_RobotTanksOffline[22]; // 0x824E4C
-extern uint16_t g_Str_TXT_COMPUTER[6]; // 0x824FC8
-extern uint8_t g_INI_Key_Computer[9]; // 0x824FD8
-extern uint8_t g_Str__Player___H_[13]; // 0x825000
-extern uint8_t g_Str__Player___G_[13]; // 0x825010
-extern uint8_t g_Str__Player___F_[13]; // 0x825020
-extern uint8_t g_Str__Player___E_[13]; // 0x825030
-extern uint8_t g_Str__Player___D_[13]; // 0x825040
-extern uint8_t g_Str__Player___C_[13]; // 0x825050
-extern uint8_t g_Str__Player___B_[13]; // 0x825060
-extern uint8_t g_Str__Player___A_[13]; // 0x825070
-extern uint8_t g_INI_Key_Cost[5]; // 0x825470
-extern uint8_t g_INI_Key_Options[8]; // 0x8254DC
-extern uint8_t g_Str_SOFTWARE_Westwood_WOLAPI_[26]; // 0x8254E4
-extern uint8_t g_INI_Key_SecondaryProne[15]; // 0x825670
-extern uint8_t g_INI_Key_Cheer[6]; // 0x8256E4
-extern uint8_t g_INI_Key_Deploy[7]; // 0x825724
-extern uint16_t g_Str_W; // 0x8258C0
-extern uint8_t g_Str_Trace__d__d__d__d[12]; // 0x825BBC
-extern uint8_t g_Str_File_Ini_CPP[21]; // 0x825BDC
-extern uint8_t g_Str_no[3]; // 0x825BF4
-extern uint8_t g_Str_Trace__f__f__f[9]; // 0x825BFC
-extern uint32_t g_ScenarioLoadEvent; // 0x825C20
-extern uint32_t g_PlayerHouseFlags[16]; // 0x825C28 64-byte flag block
-extern const uint32_t g_PlayerHouseFlags_End; // 0x825C68
-extern uint32_t g_WOLReturnCode; // 0x825C84
-extern uint16_t g_Str_TXT_OK[3]; // 0x825FB0
-extern uint8_t g_Str_File_Init_CPP[22]; // 0x825FB8
-extern uint16_t g_Str_TXT_CANCEL[5]; // 0x825FD0
-extern uint8_t g_Str_File_MOUSE_SHA[10]; // 0x82604C
-extern uint64_t g_INI_Key_General; // 0x826278
-extern uint8_t g_Str_Trace_Loaded_recording_values_for_scenario____[43]; // 0x82637C
-extern uint8_t g_INI_Key_INTRO[6]; // 0x8263A8
-extern uint8_t g_INI_Key_MultiPlayer[12]; // 0x82642C
-extern uint8_t g_Str_File_RA2MD_INI[10]; // 0x826444
-extern uint8_t SubStr[4]; // 0x8265A8
-extern uint8_t g_Str_File_CACHE_MIX[11]; // 0x826668
-extern uint8_t g_Str_File_MOVMD__MIX[11]; // 0x826748
-extern uint16_t g_Str_TXT_TEAM[4]; // 0x826FA4
-extern uint16_t g_Str_TXT_INTERFACE[7]; // 0x826FEC
-extern uint16_t g_Str_TXT_SELECTION[7]; // 0x827250
-extern uint8_t g_INI_Key_PlanningMode[13]; // 0x827278
-extern uint16_t g_Str_TXT_CONTROL[6]; // 0x82729C
-extern uint8_t g_INI_Key_TypeSelect[11]; // 0x827304
-extern const uint16_t g_INI_Key_De[2]; // 0x8278B4
-extern uint8_t g_INI_Key_Hotkey[7]; // 0x827B80
-extern uint8_t g_Str_SYSTEM_MEMORY[14]; // 0x827C78
-extern uint8_t g_INI_Key_VRAM[5]; // 0x827C88
-extern uint8_t g_Str_File__s_MIX[7]; // 0x827D64
-extern uint8_t g_Str_Trace_Initilizing__s[21]; // 0x827DF4
-extern uint32_t LightningStorm_StartTime; // 0x827FC0
-extern uint32_t LightningStorm_Duration; // 0x827FC4
-extern uint32_t NukeFlash_StartTime; // 0x827FC8
-extern uint32_t NukeFlash_Duration; // 0x827FCC
-extern uint8_t g_Str_File_Ion_cpp[21]; // 0x828034
-extern uint8_t g_Str_Trace_Send_overflow__d[18]; // 0x8283D4
-extern uint8_t g_Str_No_Name[8]; // 0x829284
-extern uint8_t PrefixString[4]; // 0x829774
-extern uint8_t ExistingFileName[12]; // 0x829ABC
-extern uint8_t g_Str_File_LdPrgMgr_cpp[26]; // 0x829AC8
-extern uint16_t g_Str_TXT_YES[4]; // 0x829F14
-extern uint16_t g_Str_TXT_NO[3]; // 0x829F1C
-extern uint8_t g_Str_File_LoadDlg_CPP[25]; // 0x829F5C
-extern uint16_t g_Str_TXT_REPLY_COMMAND_SHORT[12]; // 0x82A0BC
-extern uint16_t g_Str_TXT_REPLY_COMMAND[9]; // 0x82A0D4
-extern uint16_t g_Str_TXT_CANT_SEND_BLANK_PAGE[12]; // 0x82A108
-extern uint16_t g_Str_TXT_NO_NAME_SPECIFIED[11]; // 0x82A124
-extern uint16_t g_Str_TXT_PAGE_COMMAND[8]; // 0x82A13C
-extern uint16_t g_Str_TXT_FROM[4]; // 0x82A150
-extern uint8_t g_Str_File_MainLoop_CPP[26]; // 0x82A170
-extern uint8_t g_Str_File_MainOpt_cpp[25]; // 0x82A2A8
-extern uint8_t g_Str_We_tried_to_reset_the_shroud_w[46]; // 0x82AD48
-extern uint64_t g_INI_Key_Neutral; // 0x82BA08
-extern uint16_t g_Str_TXT_RANDOM_MAP_DESCRIPTION[13]; // 0x82BA2C
-extern uint8_t g_Str_File_MapGen_cpp[24]; // 0x82BA48
-extern uint8_t PathName[8]; // 0x82BB1C
-extern uint8_t g_INI_Key_RandomMap[10]; // 0x82BB24
-extern uint8_t g_INI_Key_NumPlayers[11]; // 0x82BBD8
-extern uint8_t g_INI_Key_Width[6]; // 0x82BBE4
-extern uint8_t g_Str_File_RandMap_Sed[12]; // 0x82BC30
-extern uint8_t g_Str_RMG__Recalculating_cell_attrib[36]; // 0x82BE9C
-extern uint8_t g_INI_Key_IonLevel[9]; // 0x82BF28
-extern uint8_t g_INI_Key_IonGround[10]; // 0x82BF34
-extern uint8_t g_INI_Key_IonBlue[8]; // 0x82BF40
-extern uint8_t g_INI_Key_IonGreen[9]; // 0x82BF48
-extern uint8_t g_INI_Key_IonRed[7]; // 0x82BF54
-extern uint8_t g_INI_Key_IonAmbient[11]; // 0x82BF5C
-extern uint8_t g_INI_Key_Lighting[9]; // 0x82BF88
-extern uint8_t g_INI_Key_Ambient[8]; // 0x82BF94
-extern uint8_t g_INI_Key_Basic[6]; // 0x82BF9C
-extern uint8_t g_INI_Key_Player[7]; // 0x82BFA4
-extern uint8_t g_Str_File_MapSel_CPP[24]; // 0x82C11C
-extern uint8_t g_Str_Trace_Harvester_Truce___s[21]; // 0x82C3A8
-extern uint8_t g_Str_Trace_BridgeDestroy___s[19]; // 0x82C3C0
-extern uint8_t g_Str_Trace_FogOfWar___s[14]; // 0x82C3D4
-extern uint8_t g_Str_Trace_Crates___s[12]; // 0x82C3E4
-extern uint8_t g_Str_Trace_Crap_Engineers___s[20]; // 0x82C3F0
-extern uint8_t g_Str_Trace_Short_Game___s[16]; // 0x82C42C
-extern uint8_t g_Str_Trace_Bases___s[11]; // 0x82C43C
-extern uint8_t g_Str_Trace_AIDifficulty___d[18]; // 0x82C464
-extern uint8_t g_Str_Trace_Game_Speed___d[16]; // 0x82C478
-extern uint8_t g_Str_Trace_AIPlayers___d[15]; // 0x82C488
-extern uint8_t g_Str_Trace_Credits___d[13]; // 0x82C498
-extern uint8_t g_Str_Trace_TechLevel___d[15]; // 0x82C4A8
-extern uint8_t g_Str_Trace_UnitCount___d[15]; // 0x82C4B8
-extern uint8_t g_Str_Trace_Color___d[11]; // 0x82C4C8
-extern uint8_t g_Str_File_ModemGst_cpp[26]; // 0x82C534
-extern uint8_t g_Str_Trace_Name___ls[11]; // 0x82C550
-extern uint16_t g_Str_TXT_MISMATCH[6]; // 0x82C6D4
-extern uint16_t g_Str_TXT_YOURGAME_OUTDATED[11]; // 0x82C6E4
-extern uint16_t g_Str_TXT_DESTGAME_OUTDATED[11]; // 0x82C6FC
-extern uint16_t g_Str_TXT_SYSTEM_NOT_RESPONDING[13]; // 0x82C754
-extern uint8_t g_Str_File_ModemHst_cpp[26]; // 0x82C9A4
-extern uint16_t g_Str_TXT_SCENARIO_TOO_SMALL[11]; // 0x82C9FC
-extern uint8_t g_Str_File_Preview_bin[12]; // 0x82CC50
-extern int32_t MouseClass_Cursors; // 0x82D028
-extern uint8_t g_INI_Key_Waypoints[10]; // 0x82DB0C
-extern uint8_t g_Str_File_MPCoop_cpp[24]; // 0x82DC4C
-extern uint8_t g_Str_Trace_Assigning_Starting_Points_for_house__d__[45]; // 0x82DD2C
-extern uint8_t g_Str_File__s_MAP[7]; // 0x82DEA0
-extern uint8_t g_Str_File__MAP[5]; // 0x82DF18
-extern uint8_t g_Str_Trace_Max_ping_is__d_ms[19]; // 0x82E0D0
-extern uint8_t g_Str_File_MPScore_cpp[25]; // 0x82FE24
-extern uint8_t g_INI_Key_SCORE[6]; // 0x82FEBC
-extern uint8_t g_Str_File_MPSiege_cpp[25]; // 0x82FF2C
+extern uint8_t g_Str_EVA_CannotDeployHere[21]; // data: 0x82012C
+extern uint8_t g_INI_Key_LocalSize[10]; // data: 0x820164
+extern uint8_t g_INI_Key_Size[5]; // data: 0x820178
+extern uint8_t g_Str_File_XXICON_SHP[11]; // data: 0x8204FC
+extern uint8_t g_INI_Key_Green[6]; // data: 0x82053C
+extern uint8_t g_DDraw_AllowOverlayBlit; // data: 0x8205D5
+extern uint8_t g_Str_DSurface__Create_Primary_done[31]; // data: 0x82061C
+extern uint8_t g_INI_Key_Blue[5]; // data: 0x8207DC
+extern uint8_t g_Str_Trace_Adding_event__s[17]; // data: 0x820BF0
+extern uint8_t g_Str_Trace_LatencyFudge_is__d[20]; // data: 0x820C54
+extern uint8_t MultiByteStr[13]; // data: 0x820DAC
+extern uint8_t g_Str_File_Event_CPP[23]; // data: 0x820E44
+extern const char* lpString2; // data: 0x820E8C
+extern uint8_t g_Str_Trace_CPU__s__MMX__s__Vendor___s[29]; // data: 0x821EE4
+extern uint8_t g_INI_Key_No[3]; // data: 0x821F04
+extern uint8_t g_Str_Trace_Release_Build___s_by__s____s[31]; // data: 0x821F0C
+extern uint8_t String[18]; // data: 0x822024
+extern uint8_t String2[3]; // data: 0x822050
+extern uint8_t LibFileName[13]; // data: 0x822174
+extern uint8_t FileName[11]; // data: 0x8221F8
+extern uint8_t g_INI_Key_Grey[5]; // data: 0x822728
+extern uint8_t g_Str_TXT_FASTEST[12]; // data: 0x8227B8
+extern uint8_t g_Str_TXT_FASTER[11]; // data: 0x8227C4
+extern uint8_t g_Str_TXT_FAST[9]; // data: 0x8227D0
+extern uint8_t g_Str_TXT_MEDIUM[11]; // data: 0x8227DC
+extern uint8_t g_Str_TXT_SLOW[9]; // data: 0x8227E8
+extern uint8_t g_Str_TXT_SLOWER[11]; // data: 0x8227F4
+extern uint8_t g_Str_TXT_SLOWEST[12]; // data: 0x822800
+extern uint8_t g_Str_File_GDlgSupp_cpp[26]; // data: 0x8229C0
+extern uint16_t g_Str_GUI_RandomAsSymbols[10]; // data: 0x822B7C
+extern int32_t g_RulesInitConfig; // data: 0x822CF4
+extern uint8_t g_Str_gsmallwoo[10]; // data: 0x822D20
+extern uint64_t FileTime; // data: 0x822D5C
+extern uint8_t g_Str_File_GOptions_CPP[26]; // data: 0x8240BC
+extern uint16_t g_Str_GUI_Observe[6]; // data: 0x8240D8
+extern uint8_t g_INI_Key_Theme[6]; // data: 0x824194
+extern uint8_t g_Str_File__PCX[5]; // data: 0x8241AC
+extern uint8_t g_INI_Key_Intro[6]; // data: 0x8241C0
+extern uint64_t g_INI_Key_Palette; // data: 0x824254
+extern uint8_t g_INI_Key_Type[5]; // data: 0x824314
+extern uint8_t g_Str_File_House_CPP[23]; // data: 0x824724
+extern uint8_t g_Str_EVA_OreMinerUnderAttack[24]; // data: 0x824784
+extern uint8_t g_INI_Key_Country[8]; // data: 0x824D4C
+extern uint8_t g_INI_Key_Houses[7]; // data: 0x824D54
+extern uint8_t g_INI_Key_IQ[3]; // data: 0x824DD8
+extern uint8_t g_INI_Key_Credits[8]; // data: 0x824E38
+extern uint8_t g_INI_Key_TechLevel[10]; // data: 0x824E40
+extern uint8_t g_Str_EVA_RobotTanksOffline[22]; // data: 0x824E4C
+extern uint16_t g_Str_TXT_COMPUTER[6]; // data: 0x824FC8
+extern uint8_t g_INI_Key_Computer[9]; // data: 0x824FD8
+extern uint8_t g_Str__Player___H_[13]; // data: 0x825000
+extern uint8_t g_Str__Player___G_[13]; // data: 0x825010
+extern uint8_t g_Str__Player___F_[13]; // data: 0x825020
+extern uint8_t g_Str__Player___E_[13]; // data: 0x825030
+extern uint8_t g_Str__Player___D_[13]; // data: 0x825040
+extern uint8_t g_Str__Player___C_[13]; // data: 0x825050
+extern uint8_t g_Str__Player___B_[13]; // data: 0x825060
+extern uint8_t g_Str__Player___A_[13]; // data: 0x825070
+extern uint8_t g_INI_Key_Cost[5]; // data: 0x825470
+extern uint8_t g_INI_Key_Options[8]; // data: 0x8254DC
+extern uint8_t g_Str_SOFTWARE_Westwood_WOLAPI_[26]; // data: 0x8254E4
+extern uint8_t g_INI_Key_SecondaryProne[15]; // data: 0x825670
+extern uint8_t g_INI_Key_Cheer[6]; // data: 0x8256E4
+extern uint8_t g_INI_Key_Deploy[7]; // data: 0x825724
+extern uint16_t g_Str_W; // data: 0x8258C0
+extern uint8_t g_Str_Trace__d__d__d__d[12]; // data: 0x825BBC
+extern uint8_t g_Str_File_Ini_CPP[21]; // data: 0x825BDC
+extern uint8_t g_Str_no[3]; // data: 0x825BF4
+extern uint8_t g_Str_Trace__f__f__f[9]; // data: 0x825BFC
+extern uint32_t g_ScenarioLoadEvent; // data: 0x825C20
+extern uint32_t g_PlayerHouseFlags[16]; // data: 0x825C28 64-byte flag block
+extern const uint32_t g_PlayerHouseFlags_End; // data: 0x825C68
+extern uint32_t g_WOLReturnCode; // data: 0x825C84
+extern uint16_t g_Str_TXT_OK[3]; // data: 0x825FB0
+extern uint8_t g_Str_File_Init_CPP[22]; // data: 0x825FB8
+extern uint16_t g_Str_TXT_CANCEL[5]; // data: 0x825FD0
+extern uint8_t g_Str_File_MOUSE_SHA[10]; // data: 0x82604C
+extern uint64_t g_INI_Key_General; // data: 0x826278
+extern uint8_t g_Str_Trace_Loaded_recording_values_for_scenario____[43]; // data: 0x82637C
+extern uint8_t g_INI_Key_INTRO[6]; // data: 0x8263A8
+extern uint8_t g_INI_Key_MultiPlayer[12]; // data: 0x82642C
+extern uint8_t g_Str_File_RA2MD_INI[10]; // data: 0x826444
+extern uint8_t SubStr[4]; // data: 0x8265A8
+extern uint8_t g_Str_File_CACHE_MIX[11]; // data: 0x826668
+extern uint8_t g_Str_File_MOVMD__MIX[11]; // data: 0x826748
+extern uint16_t g_Str_TXT_TEAM[4]; // data: 0x826FA4
+extern uint16_t g_Str_TXT_INTERFACE[7]; // data: 0x826FEC
+extern uint16_t g_Str_TXT_SELECTION[7]; // data: 0x827250
+extern uint8_t g_INI_Key_PlanningMode[13]; // data: 0x827278
+extern uint16_t g_Str_TXT_CONTROL[6]; // data: 0x82729C
+extern uint8_t g_INI_Key_TypeSelect[11]; // data: 0x827304
+extern const uint16_t g_INI_Key_De[2]; // data: 0x8278B4
+extern uint8_t g_INI_Key_Hotkey[7]; // data: 0x827B80
+extern uint8_t g_Str_SYSTEM_MEMORY[14]; // data: 0x827C78
+extern uint8_t g_INI_Key_VRAM[5]; // data: 0x827C88
+extern uint8_t g_Str_File__s_MIX[7]; // data: 0x827D64
+extern uint8_t g_Str_Trace_Initilizing__s[21]; // data: 0x827DF4
+extern uint32_t LightningStorm_StartTime; // data: 0x827FC0
+extern uint32_t LightningStorm_Duration; // data: 0x827FC4
+extern uint32_t NukeFlash_StartTime; // data: 0x827FC8
+extern uint32_t NukeFlash_Duration; // data: 0x827FCC
+extern uint8_t g_Str_File_Ion_cpp[21]; // data: 0x828034
+extern uint8_t g_Str_Trace_Send_overflow__d[18]; // data: 0x8283D4
+extern uint8_t g_Str_No_Name[8]; // data: 0x829284
+extern uint8_t PrefixString[4]; // data: 0x829774
+extern uint8_t ExistingFileName[12]; // data: 0x829ABC
+extern uint8_t g_Str_File_LdPrgMgr_cpp[26]; // data: 0x829AC8
+extern uint16_t g_Str_TXT_YES[4]; // data: 0x829F14
+extern uint16_t g_Str_TXT_NO[3]; // data: 0x829F1C
+extern uint8_t g_Str_File_LoadDlg_CPP[25]; // data: 0x829F5C
+extern uint16_t g_Str_TXT_REPLY_COMMAND_SHORT[12]; // data: 0x82A0BC
+extern uint16_t g_Str_TXT_REPLY_COMMAND[9]; // data: 0x82A0D4
+extern uint16_t g_Str_TXT_CANT_SEND_BLANK_PAGE[12]; // data: 0x82A108
+extern uint16_t g_Str_TXT_NO_NAME_SPECIFIED[11]; // data: 0x82A124
+extern uint16_t g_Str_TXT_PAGE_COMMAND[8]; // data: 0x82A13C
+extern uint16_t g_Str_TXT_FROM[4]; // data: 0x82A150
+extern uint8_t g_Str_File_MainLoop_CPP[26]; // data: 0x82A170
+extern uint8_t g_Str_File_MainOpt_cpp[25]; // data: 0x82A2A8
+extern uint8_t g_Str_We_tried_to_reset_the_shroud_w[46]; // data: 0x82AD48
+extern uint64_t g_INI_Key_Neutral; // data: 0x82BA08
+extern uint16_t g_Str_TXT_RANDOM_MAP_DESCRIPTION[13]; // data: 0x82BA2C
+extern uint8_t g_Str_File_MapGen_cpp[24]; // data: 0x82BA48
+extern uint8_t PathName[8]; // data: 0x82BB1C
+extern uint8_t g_INI_Key_RandomMap[10]; // data: 0x82BB24
+extern uint8_t g_INI_Key_NumPlayers[11]; // data: 0x82BBD8
+extern uint8_t g_INI_Key_Width[6]; // data: 0x82BBE4
+extern uint8_t g_Str_File_RandMap_Sed[12]; // data: 0x82BC30
+extern uint8_t g_Str_RMG__Recalculating_cell_attrib[36]; // data: 0x82BE9C
+extern uint8_t g_INI_Key_IonLevel[9]; // data: 0x82BF28
+extern uint8_t g_INI_Key_IonGround[10]; // data: 0x82BF34
+extern uint8_t g_INI_Key_IonBlue[8]; // data: 0x82BF40
+extern uint8_t g_INI_Key_IonGreen[9]; // data: 0x82BF48
+extern uint8_t g_INI_Key_IonRed[7]; // data: 0x82BF54
+extern uint8_t g_INI_Key_IonAmbient[11]; // data: 0x82BF5C
+extern uint8_t g_INI_Key_Lighting[9]; // data: 0x82BF88
+extern uint8_t g_INI_Key_Ambient[8]; // data: 0x82BF94
+extern uint8_t g_INI_Key_Basic[6]; // data: 0x82BF9C
+extern uint8_t g_INI_Key_Player[7]; // data: 0x82BFA4
+extern uint8_t g_Str_File_MapSel_CPP[24]; // data: 0x82C11C
+extern uint8_t g_Str_Trace_Harvester_Truce___s[21]; // data: 0x82C3A8
+extern uint8_t g_Str_Trace_BridgeDestroy___s[19]; // data: 0x82C3C0
+extern uint8_t g_Str_Trace_FogOfWar___s[14]; // data: 0x82C3D4
+extern uint8_t g_Str_Trace_Crates___s[12]; // data: 0x82C3E4
+extern uint8_t g_Str_Trace_Crap_Engineers___s[20]; // data: 0x82C3F0
+extern uint8_t g_Str_Trace_Short_Game___s[16]; // data: 0x82C42C
+extern uint8_t g_Str_Trace_Bases___s[11]; // data: 0x82C43C
+extern uint8_t g_Str_Trace_AIDifficulty___d[18]; // data: 0x82C464
+extern uint8_t g_Str_Trace_Game_Speed___d[16]; // data: 0x82C478
+extern uint8_t g_Str_Trace_AIPlayers___d[15]; // data: 0x82C488
+extern uint8_t g_Str_Trace_Credits___d[13]; // data: 0x82C498
+extern uint8_t g_Str_Trace_TechLevel___d[15]; // data: 0x82C4A8
+extern uint8_t g_Str_Trace_UnitCount___d[15]; // data: 0x82C4B8
+extern uint8_t g_Str_Trace_Color___d[11]; // data: 0x82C4C8
+extern uint8_t g_Str_File_ModemGst_cpp[26]; // data: 0x82C534
+extern uint8_t g_Str_Trace_Name___ls[11]; // data: 0x82C550
+extern uint16_t g_Str_TXT_MISMATCH[6]; // data: 0x82C6D4
+extern uint16_t g_Str_TXT_YOURGAME_OUTDATED[11]; // data: 0x82C6E4
+extern uint16_t g_Str_TXT_DESTGAME_OUTDATED[11]; // data: 0x82C6FC
+extern uint16_t g_Str_TXT_SYSTEM_NOT_RESPONDING[13]; // data: 0x82C754
+extern uint8_t g_Str_File_ModemHst_cpp[26]; // data: 0x82C9A4
+extern uint16_t g_Str_TXT_SCENARIO_TOO_SMALL[11]; // data: 0x82C9FC
+extern uint8_t g_Str_File_Preview_bin[12]; // data: 0x82CC50
+extern int32_t MouseClass_Cursors; // data: 0x82D028
+extern uint8_t g_INI_Key_Waypoints[10]; // data: 0x82DB0C
+extern uint8_t g_Str_File_MPCoop_cpp[24]; // data: 0x82DC4C
+extern uint8_t g_Str_Trace_Assigning_Starting_Points_for_house__d__[45]; // data: 0x82DD2C
+extern uint8_t g_Str_File__s_MAP[7]; // data: 0x82DEA0
+extern uint8_t g_Str_File__MAP[5]; // data: 0x82DF18
+extern uint8_t g_Str_Trace_Max_ping_is__d_ms[19]; // data: 0x82E0D0
+extern uint8_t g_Str_File_MPScore_cpp[25]; // data: 0x82FE24
+extern uint8_t g_INI_Key_SCORE[6]; // data: 0x82FEBC
+extern uint8_t g_Str_File_MPSiege_cpp[25]; // data: 0x82FF2C
 
 // === Section 0x0830000 - .data (189 globals) ===
 
-extern uint8_t g_Str_File_FULLFNT3_SHP[13]; // 0x830664
-extern uint8_t g_INI_Key_FirewallDelta[14]; // 0x830CB0
-extern uint8_t g_INI_Key_FirewallSettings[17]; // 0x830CC0
-extern uint8_t g_Str_Trace_gethostbyname_failed__Error_code__d[37]; // 0x830E28
-extern uint16_t g_Str_TXT_NOD[4]; // 0x831278
-extern uint64_t g_Str_TXT_GDI; // 0x831280
-extern uint8_t g_Str_File_netdlg2_cpp[25]; // 0x831288
-extern uint8_t g_Str_SOFTWARE_Westwood_Yuri_s_Reven[33]; // 0x8313B0
-extern uint16_t g_Str_TXT_CANNOT_ALLY[8]; // 0x831450
-extern uint16_t g_Str_GUI_HostNoMap[7]; // 0x831460
-extern uint8_t g_Str_TXT_NAME_ERROR[15]; // 0x8315B0
-extern uint16_t g_Str_TXT_OBSERVER_FULL[9]; // 0x8315FC
-extern uint8_t g_INI_Key_A1[3]; // 0x831688
-extern uint32_t g_MPCooperativeState; // 0x8316A4
-extern uint8_t g_Str_File_netshare_cpp[26]; // 0x8317D8
-extern uint8_t g_Str_Trace_Sending_public_options_string__s[34]; // 0x831B60
-extern uint16_t g_Str_GUI_OpenObserver[8]; // 0x831C2C
-extern uint16_t g_Str_GUI_AIHard[5]; // 0x831C4C
-extern uint16_t g_Str_GUI_AINormal[6]; // 0x831C58
-extern uint16_t g_Str_GUI_AIEasy[5]; // 0x831C68
-extern uint16_t g_Str_GUI_Closed[5]; // 0x831C74
-extern uint16_t g_Str_GUI_Open[4]; // 0x831C80
-extern uint16_t g_Str_STT_PlayerGeniusAI[9]; // 0x831CE4
-extern uint16_t g_Str_STT_PlayerSmartAI[9]; // 0x831CF8
-extern uint16_t g_Str_STT_PlayerDumbAI[8]; // 0x831D0C
-extern uint8_t g_Str_Trace__d_[4]; // 0x831D44
-extern uint8_t g_Str_File_wolob_pcx[10]; // 0x831DDC
-extern uint16_t g_Str_TXT_SELECT_SETTINGS[10]; // 0x831E70
-extern uint8_t g_Str_File_NullDlg_CPP[25]; // 0x831E84
-extern uint16_t g_Str_TXT_ERROR_TIMEOUT[9]; // 0x831F54
-extern uint16_t g_Str_TXT_UNABLE_FIND_MODEM[11]; // 0x8320F0
-extern uint8_t g_INI_Key_CLEAR[6]; // 0x832174
-extern uint16_t g_Str_TXT_IGNORE[5]; // 0x832618
-extern uint8_t g_Str_Trace_Command_response_was__s[25]; // 0x8326D8
-extern uint8_t g_Str_File_NullMgr_CPP[25]; // 0x832730
-extern uint8_t g_Str_Trace_Dial_result_is__s[19]; // 0x8327C4
-extern uint8_t g_Str_Fmt_PctS[3]; // 0x832904
-extern uint8_t g_Str_Trace_Result_is__s[14]; // 0x832924
-extern uint8_t g_Str_Trace__sTUR[6]; // 0x832ABC
-extern uint8_t g_Str_Trace__sBARL[7]; // 0x832AD0
-extern uint8_t g_Str_Trace_ScoreShuffle_is__s[20]; // 0x832F74
-extern uint8_t g_Str_Trace_ScoreRepeat_is__s[19]; // 0x832F88
-extern uint8_t g_Str_Trace_ScoreVolume____f[18]; // 0x832F9C
-extern uint8_t g_Str_Trace_SoundVolume____f[18]; // 0x832FB0
-extern uint8_t g_Str_Trace_VoiceVolume____f[18]; // 0x832FC4
-extern uint8_t g_INI_Key_DestNet[8]; // 0x83300C
-extern uint8_t g_INI_Key_Socket[7]; // 0x83301C
-extern uint64_t g_INI_Key_Network; // 0x833060
-extern uint8_t g_INI_Key_Audio[6]; // 0x8330B4
-extern uint8_t g_INI_Key_ScreenHeight[13]; // 0x833150
-extern uint8_t g_INI_Key_Video[6]; // 0x833160
-extern uint8_t g_INI_Key_ScreenWidth[12]; // 0x833168
-extern uint8_t g_INI_Key_GameSpeed[10]; // 0x8332E8
-extern uint8_t g_Str_File_Options_CPP[25]; // 0x833370
-extern uint8_t g_INI_Key_OverlayDataPack[16]; // 0x833474
-extern uint8_t g_INI_Key_OverlayPack[12]; // 0x833484
-extern uint8_t g_INI_Key_ComboBox[9]; // 0x83370C
-extern uint8_t g_INI_Key_ListBox[8]; // 0x833718
-extern uint64_t g_INI_Key_NewEdit; // 0x833720
-extern uint8_t g_INI_Key_Edit[5]; // 0x833728
-extern uint8_t g_Str_File_ownrdraw_cpp[26]; // 0x833730
-extern uint16_t g_Str_STT_HostComboPlayer[10]; // 0x833768
-extern uint16_t g_Str_STT_GuestComboPlayer[10]; // 0x8338D4
-extern uint8_t g_Str_STT_WOLNewGameCancel[21]; // 0x833FF0
-extern uint8_t g_Str_STT_WOLManageAccount[21]; // 0x834228
-extern uint8_t g_Str_STT_WOLNewAccount[18]; // 0x834268
-extern uint8_t g_Str_STT_WOLMyInformationLocale[27]; // 0x8342FC
-extern uint8_t g_Str_STT_WOLPageButton[18]; // 0x834318
-extern uint8_t g_Str_STT_WOLBuddy[13]; // 0x83443C
-extern uint8_t g_Str_STT_ObserverToggle[19]; // 0x835354
-extern uint8_t ClassName[10]; // 0x8357B0
-extern uint64_t g_Str_Trace__hs; // 0x835874
-extern uint8_t g_Str_File_tab_tlu_pcx[12]; // 0x835944
-extern uint8_t g_Str_File_pingr_pcx[10]; // 0x835C90
-extern uint8_t g_Str_File_pingy_pcx[10]; // 0x835C9C
-extern uint8_t g_Str_File_pingg_pcx[10]; // 0x835CA8
-extern uint8_t g_Str_File_wolreslk_pcx[13]; // 0x835D14
-extern uint8_t g_Str_File_number1_pcx[12]; // 0x835FBC
-extern uint8_t g_Str_File_number0_pcx[12]; // 0x835FC8
-extern uint8_t g_Str_File_cooperat_pcx[13]; // 0x835FD4
-extern uint8_t g_Str_File_comchief_pcx[13]; // 0x835FE4
-extern uint8_t g_Str_File_gt18_pcx[9]; // 0x836070
-extern uint8_t g_Str_File_wolrslkob_pcx[14]; // 0x83608C
-extern uint8_t g_Str_File_wolclan_pcx[12]; // 0x83609C
-extern uint8_t g_Str_File_wolpriv_pcx[12]; // 0x8360A8
-extern uint8_t g_Str_File_woltrny_pcx[12]; // 0x8360D0
-extern uint8_t g_Str_File_wodref_pcx[11]; // 0x836134
-extern uint8_t g_Str_File_wouref_pcx[11]; // 0x836140
-extern uint8_t g_Str_File_wodact_pcx[11]; // 0x83614C
-extern uint8_t g_Str_File_wouact_pcx[11]; // 0x836158
-extern uint8_t g_Str_File_rusi_pcx[9]; // 0x836340
-extern uint8_t g_Str_File_lati_pcx[9]; // 0x83634C
-extern uint8_t g_Str_File_arbi_pcx[9]; // 0x836358
-extern uint8_t g_Str_File_djbi_pcx[9]; // 0x836364
-extern uint8_t g_Str_File_gbri_pcx[9]; // 0x836370
-extern uint8_t g_Str_File_geri_pcx[9]; // 0x83637C
-extern uint8_t g_Str_File_frai_pcx[9]; // 0x836388
-extern uint8_t g_Str_File_japi_pcx[9]; // 0x836394
-extern uint8_t g_Str_File_usai_pcx[9]; // 0x8363A0
-extern uint16_t g_Str_TXT_NONAME[5]; // 0x83676C
-extern uint8_t g_Str_File_PhoneEd_cpp[25]; // 0x836778
-extern uint16_t g_Str_MSG_NodeMaximum[8]; // 0x836B8C
-extern uint16_t g_Str_MSG_PostContinualCommand[12]; // 0x836B9C
-extern uint16_t g_Str_MSG_PostTerminatingCommand[13]; // 0x836BB8
-extern uint8_t g_Str_File_PlanMgr_cpp[25]; // 0x836BD4
-extern uint16_t g_Str_MSG_PlanningModeNoScatter[13]; // 0x836C00
-extern uint16_t g_Str_MSG_PlanningModeNoStop[11]; // 0x836C1C
-extern uint8_t g_Str_MSG_PlanningModeNoDeploy[25]; // 0x836C34
-extern uint8_t g_INI_Key_SovietLoad[11]; // 0x836EB4
-extern uint8_t g_INI_Key_AlliedLoad[11]; // 0x836EC0
-extern uint8_t g_INI_Key_LightGrey[10]; // 0x836ECC
-extern uint64_t g_INI_Key_Railgun; // 0x836EF4
-extern uint8_t g_INI_Key_Fire[5]; // 0x836F04
-extern uint8_t g_INI_Key_Smoke[6]; // 0x836F0C
-extern uint8_t g_Str_None[5]; // 0x8373A4
-extern uint16_t g_Str_TXT_QUEUE_FULL[7]; // 0x837474
-extern uint16_t g_Str_TXT_SCENARIOS_DO_NOT_MATCH[13]; // 0x837484
-extern uint8_t g_Str_File_Queue_CPP[23]; // 0x8374A0
-extern uint8_t g_Str_Index_____CRC[15]; // 0x838828
-extern uint8_t g_Str_Trace_Owner___s[11]; // 0x83894C
-extern uint8_t g_Str_Trace__s__Type__d_[14]; // 0x838AA0
-extern uint8_t g_Str_Trace__s__Type__d__s__[18]; // 0x838AB0
-extern uint8_t g_Str_Trace_Object__d___x[15]; // 0x838AC4
-extern uint8_t g_Str_File_OPTBTN_SHP[11]; // 0x83927C
-extern uint64_t g_INI_Key_PDPLANE; // 0x839708
-extern uint8_t g_INI_Key_Briefing[9]; // 0x839718
-extern uint8_t ApplicationName[10]; // 0x8399EC
-extern uint8_t g_Str_Trace_mphmd_exe__d__d__d__d[22]; // 0x839B84
-extern uint8_t g_INI_Key_Warheads[9]; // 0x83A0D0
-extern uint8_t g_INI_Key_TiberiumExplosive[18]; // 0x83AD2C
-extern uint8_t g_INI_Key_FogOfWar[9]; // 0x83CF78
-extern uint8_t g_INI_Key_BuildOffAlly[13]; // 0x83CF84
-extern uint8_t g_INI_Key_SuperWeaponsAllowed[20]; // 0x83CF94
-extern uint8_t g_INI_Key_ShortGame[10]; // 0x83CFA8
-extern uint8_t g_INI_Key_TiberiumGrows[14]; // 0x83D000
-extern uint8_t g_INI_Key_UnitCount[10]; // 0x83D06C
-extern uint8_t g_INI_Key_Animations[11]; // 0x83D0DC
-extern uint8_t g_INI_Key_VoxelAnims[11]; // 0x83D0E8
-extern uint8_t g_INI_Key_Particles[10]; // 0x83D0F4
-extern uint8_t g_INI_Key_ParticleSystems[16]; // 0x83D100
-extern uint8_t g_Str_______FAILED_[16]; // 0x83D584
-extern uint8_t g_INI_Key_GameType[18]; // 0x83D6C0
-extern uint8_t g_INI_Key_VariableNames[14]; // 0x83D824
-extern uint8_t g_Str_File_Scenario_CPP[26]; // 0x83D838
-extern uint8_t g_INI_Key_Brief[6]; // 0x83D8A8
-extern uint8_t g_Str_Toggle_display_mode_back_to_sh[39]; // 0x83D924
-extern uint8_t g_Str_File_PROGBARM_SHP[13]; // 0x83DA30
-extern uint8_t g_INI_Key_LS800BkgdPal[13]; // 0x83DBA8
-extern uint8_t g_INI_Key_LS800BkgdName[14]; // 0x83DBB8
-extern uint8_t g_INI_Key_LS640BkgdName[14]; // 0x83DBC8
-extern uint8_t g_INI_Key_LS800BriefLocY[15]; // 0x83DBD8
-extern uint8_t g_INI_Key_LS800BriefLocX[15]; // 0x83DBE8
-extern uint8_t g_INI_Key_LS640BriefLocY[15]; // 0x83DBF8
-extern uint8_t g_INI_Key_LS640BriefLocX[15]; // 0x83DC08
-extern uint8_t g_INI_Key_LSLoadBriefing[15]; // 0x83DC18
-extern uint8_t g_INI_Key_LSLoadMessage[14]; // 0x83DC28
-extern uint8_t g_INI_Key_Official[9]; // 0x83DC5C
-extern uint8_t g_Str_Trace_Waypoint_d[11]; // 0x83DE24
-extern uint8_t g_INI_Key_NumCoopHumanStartSpots[23]; // 0x83DE30
-extern uint8_t g_INI_Key_NumberStartingPoints[21]; // 0x83DE48
-extern uint8_t g_INI_Key_StartY[7]; // 0x83DE60
-extern uint8_t g_INI_Key_Header[7]; // 0x83DE68
-extern uint8_t g_INI_Key_StartX[7]; // 0x83DE70
-extern uint64_t g_INI_Key_Ranking; // 0x83DFC4
-extern uint8_t g_INI_Key_Lose[5]; // 0x83E180
-extern uint8_t g_Str_File_Score_CPP[23]; // 0x83E3C4
-extern uint8_t g_INI_Key_Back[5]; // 0x83E3E8
-extern uint8_t g_INI_Key_BarGraph[9]; // 0x83E3F0
-extern uint8_t g_INI_Key_Efficiency[11]; // 0x83E3FC
-extern uint8_t g_INI_Key_BestBox[8]; // 0x83E408
-extern uint8_t g_INI_Key_Emblem[7]; // 0x83E410
-extern uint8_t g_INI_Key_Wipe[5]; // 0x83E418
-extern uint8_t g_INI_Key_ScriptTypes[12]; // 0x83E728
-extern uint16_t g_Str_TXT_CUSTOM[5]; // 0x83EBBC
-extern uint8_t g_Str_File_SerialEd_cpp[26]; // 0x83EC28
-extern uint8_t g_Str_T[2]; // 0x83ED5C
-extern uint8_t g_Str_File_Session_CPP[25]; // 0x83EEB8
-extern uint8_t g_INI_Key_GameMode[9]; // 0x83EFD0
-extern uint64_t g_INI_Key_SyncBug; // 0x83F040
-extern uint8_t g_INI_Key_PhoneBook[10]; // 0x83F050
-extern uint8_t g_INI_Key_InitStrings[12]; // 0x83F05C
-extern uint8_t g_INI_Key_SerialDefaults[15]; // 0x83F0D8
-extern uint8_t g_Str_No_Digest[10]; // 0x83F3E4
-extern uint16_t g_Str_MSG_NoDescription[9]; // 0x83F4B8
-extern uint8_t g_INI_Key_MultiMaps[10]; // 0x83F514
-extern uint8_t g_INI_Key_DescriptionText[16]; // 0x83F648
-extern uint8_t g_Str_File_Sidebar_CPP[25]; // 0x83FAC4
-extern uint16_t g_Str_TXT_UNRANKED[6]; // 0x83FB1C
-extern uint8_t g_Str_File_Skirmish_cpp[26]; // 0x83FC4C
+extern uint8_t g_Str_File_FULLFNT3_SHP[13]; // data: 0x830664
+extern uint8_t g_INI_Key_FirewallDelta[14]; // data: 0x830CB0
+extern uint8_t g_INI_Key_FirewallSettings[17]; // data: 0x830CC0
+extern uint8_t g_Str_Trace_gethostbyname_failed__Error_code__d[37]; // data: 0x830E28
+extern uint16_t g_Str_TXT_NOD[4]; // data: 0x831278
+extern uint64_t g_Str_TXT_GDI; // data: 0x831280
+extern uint8_t g_Str_File_netdlg2_cpp[25]; // data: 0x831288
+extern uint8_t g_Str_SOFTWARE_Westwood_Yuri_s_Reven[33]; // data: 0x8313B0
+extern uint16_t g_Str_TXT_CANNOT_ALLY[8]; // data: 0x831450
+extern uint16_t g_Str_GUI_HostNoMap[7]; // data: 0x831460
+extern uint8_t g_Str_TXT_NAME_ERROR[15]; // data: 0x8315B0
+extern uint16_t g_Str_TXT_OBSERVER_FULL[9]; // data: 0x8315FC
+extern uint8_t g_INI_Key_A1[3]; // data: 0x831688
+extern uint32_t g_MPCooperativeState; // data: 0x8316A4
+extern uint8_t g_Str_File_netshare_cpp[26]; // data: 0x8317D8
+extern uint8_t g_Str_Trace_Sending_public_options_string__s[34]; // data: 0x831B60
+extern uint16_t g_Str_GUI_OpenObserver[8]; // data: 0x831C2C
+extern uint16_t g_Str_GUI_AIHard[5]; // data: 0x831C4C
+extern uint16_t g_Str_GUI_AINormal[6]; // data: 0x831C58
+extern uint16_t g_Str_GUI_AIEasy[5]; // data: 0x831C68
+extern uint16_t g_Str_GUI_Closed[5]; // data: 0x831C74
+extern uint16_t g_Str_GUI_Open[4]; // data: 0x831C80
+extern uint16_t g_Str_STT_PlayerGeniusAI[9]; // data: 0x831CE4
+extern uint16_t g_Str_STT_PlayerSmartAI[9]; // data: 0x831CF8
+extern uint16_t g_Str_STT_PlayerDumbAI[8]; // data: 0x831D0C
+extern uint8_t g_Str_Trace__d_[4]; // data: 0x831D44
+extern uint8_t g_Str_File_wolob_pcx[10]; // data: 0x831DDC
+extern uint16_t g_Str_TXT_SELECT_SETTINGS[10]; // data: 0x831E70
+extern uint8_t g_Str_File_NullDlg_CPP[25]; // data: 0x831E84
+extern uint16_t g_Str_TXT_ERROR_TIMEOUT[9]; // data: 0x831F54
+extern uint16_t g_Str_TXT_UNABLE_FIND_MODEM[11]; // data: 0x8320F0
+extern uint8_t g_INI_Key_CLEAR[6]; // data: 0x832174
+extern uint16_t g_Str_TXT_IGNORE[5]; // data: 0x832618
+extern uint8_t g_Str_Trace_Command_response_was__s[25]; // data: 0x8326D8
+extern uint8_t g_Str_File_NullMgr_CPP[25]; // data: 0x832730
+extern uint8_t g_Str_Trace_Dial_result_is__s[19]; // data: 0x8327C4
+extern uint8_t g_Str_Fmt_PctS[3]; // data: 0x832904
+extern uint8_t g_Str_Trace_Result_is__s[14]; // data: 0x832924
+extern uint8_t g_Str_Trace__sTUR[6]; // data: 0x832ABC
+extern uint8_t g_Str_Trace__sBARL[7]; // data: 0x832AD0
+extern uint8_t g_Str_Trace_ScoreShuffle_is__s[20]; // data: 0x832F74
+extern uint8_t g_Str_Trace_ScoreRepeat_is__s[19]; // data: 0x832F88
+extern uint8_t g_Str_Trace_ScoreVolume____f[18]; // data: 0x832F9C
+extern uint8_t g_Str_Trace_SoundVolume____f[18]; // data: 0x832FB0
+extern uint8_t g_Str_Trace_VoiceVolume____f[18]; // data: 0x832FC4
+extern uint8_t g_INI_Key_DestNet[8]; // data: 0x83300C
+extern uint8_t g_INI_Key_Socket[7]; // data: 0x83301C
+extern uint64_t g_INI_Key_Network; // data: 0x833060
+extern uint8_t g_INI_Key_Audio[6]; // data: 0x8330B4
+extern uint8_t g_INI_Key_ScreenHeight[13]; // data: 0x833150
+extern uint8_t g_INI_Key_Video[6]; // data: 0x833160
+extern uint8_t g_INI_Key_ScreenWidth[12]; // data: 0x833168
+extern uint8_t g_INI_Key_GameSpeed[10]; // data: 0x8332E8
+extern uint8_t g_Str_File_Options_CPP[25]; // data: 0x833370
+extern uint8_t g_INI_Key_OverlayDataPack[16]; // data: 0x833474
+extern uint8_t g_INI_Key_OverlayPack[12]; // data: 0x833484
+extern uint8_t g_INI_Key_ComboBox[9]; // data: 0x83370C
+extern uint8_t g_INI_Key_ListBox[8]; // data: 0x833718
+extern uint64_t g_INI_Key_NewEdit; // data: 0x833720
+extern uint8_t g_INI_Key_Edit[5]; // data: 0x833728
+extern uint8_t g_Str_File_ownrdraw_cpp[26]; // data: 0x833730
+extern uint16_t g_Str_STT_HostComboPlayer[10]; // data: 0x833768
+extern uint16_t g_Str_STT_GuestComboPlayer[10]; // data: 0x8338D4
+extern uint8_t g_Str_STT_WOLNewGameCancel[21]; // data: 0x833FF0
+extern uint8_t g_Str_STT_WOLManageAccount[21]; // data: 0x834228
+extern uint8_t g_Str_STT_WOLNewAccount[18]; // data: 0x834268
+extern uint8_t g_Str_STT_WOLMyInformationLocale[27]; // data: 0x8342FC
+extern uint8_t g_Str_STT_WOLPageButton[18]; // data: 0x834318
+extern uint8_t g_Str_STT_WOLBuddy[13]; // data: 0x83443C
+extern uint8_t g_Str_STT_ObserverToggle[19]; // data: 0x835354
+extern uint8_t ClassName[10]; // data: 0x8357B0
+extern uint64_t g_Str_Trace__hs; // data: 0x835874
+extern uint8_t g_Str_File_tab_tlu_pcx[12]; // data: 0x835944
+extern uint8_t g_Str_File_pingr_pcx[10]; // data: 0x835C90
+extern uint8_t g_Str_File_pingy_pcx[10]; // data: 0x835C9C
+extern uint8_t g_Str_File_pingg_pcx[10]; // data: 0x835CA8
+extern uint8_t g_Str_File_wolreslk_pcx[13]; // data: 0x835D14
+extern uint8_t g_Str_File_number1_pcx[12]; // data: 0x835FBC
+extern uint8_t g_Str_File_number0_pcx[12]; // data: 0x835FC8
+extern uint8_t g_Str_File_cooperat_pcx[13]; // data: 0x835FD4
+extern uint8_t g_Str_File_comchief_pcx[13]; // data: 0x835FE4
+extern uint8_t g_Str_File_gt18_pcx[9]; // data: 0x836070
+extern uint8_t g_Str_File_wolrslkob_pcx[14]; // data: 0x83608C
+extern uint8_t g_Str_File_wolclan_pcx[12]; // data: 0x83609C
+extern uint8_t g_Str_File_wolpriv_pcx[12]; // data: 0x8360A8
+extern uint8_t g_Str_File_woltrny_pcx[12]; // data: 0x8360D0
+extern uint8_t g_Str_File_wodref_pcx[11]; // data: 0x836134
+extern uint8_t g_Str_File_wouref_pcx[11]; // data: 0x836140
+extern uint8_t g_Str_File_wodact_pcx[11]; // data: 0x83614C
+extern uint8_t g_Str_File_wouact_pcx[11]; // data: 0x836158
+extern uint8_t g_Str_File_rusi_pcx[9]; // data: 0x836340
+extern uint8_t g_Str_File_lati_pcx[9]; // data: 0x83634C
+extern uint8_t g_Str_File_arbi_pcx[9]; // data: 0x836358
+extern uint8_t g_Str_File_djbi_pcx[9]; // data: 0x836364
+extern uint8_t g_Str_File_gbri_pcx[9]; // data: 0x836370
+extern uint8_t g_Str_File_geri_pcx[9]; // data: 0x83637C
+extern uint8_t g_Str_File_frai_pcx[9]; // data: 0x836388
+extern uint8_t g_Str_File_japi_pcx[9]; // data: 0x836394
+extern uint8_t g_Str_File_usai_pcx[9]; // data: 0x8363A0
+extern uint16_t g_Str_TXT_NONAME[5]; // data: 0x83676C
+extern uint8_t g_Str_File_PhoneEd_cpp[25]; // data: 0x836778
+extern uint16_t g_Str_MSG_NodeMaximum[8]; // data: 0x836B8C
+extern uint16_t g_Str_MSG_PostContinualCommand[12]; // data: 0x836B9C
+extern uint16_t g_Str_MSG_PostTerminatingCommand[13]; // data: 0x836BB8
+extern uint8_t g_Str_File_PlanMgr_cpp[25]; // data: 0x836BD4
+extern uint16_t g_Str_MSG_PlanningModeNoScatter[13]; // data: 0x836C00
+extern uint16_t g_Str_MSG_PlanningModeNoStop[11]; // data: 0x836C1C
+extern uint8_t g_Str_MSG_PlanningModeNoDeploy[25]; // data: 0x836C34
+extern uint8_t g_INI_Key_SovietLoad[11]; // data: 0x836EB4
+extern uint8_t g_INI_Key_AlliedLoad[11]; // data: 0x836EC0
+extern uint8_t g_INI_Key_LightGrey[10]; // data: 0x836ECC
+extern uint64_t g_INI_Key_Railgun; // data: 0x836EF4
+extern uint8_t g_INI_Key_Fire[5]; // data: 0x836F04
+extern uint8_t g_INI_Key_Smoke[6]; // data: 0x836F0C
+extern uint8_t g_Str_None[5]; // data: 0x8373A4
+extern uint16_t g_Str_TXT_QUEUE_FULL[7]; // data: 0x837474
+extern uint16_t g_Str_TXT_SCENARIOS_DO_NOT_MATCH[13]; // data: 0x837484
+extern uint8_t g_Str_File_Queue_CPP[23]; // data: 0x8374A0
+extern uint8_t g_Str_Index_____CRC[15]; // data: 0x838828
+extern uint8_t g_Str_Trace_Owner___s[11]; // data: 0x83894C
+extern uint8_t g_Str_Trace__s__Type__d_[14]; // data: 0x838AA0
+extern uint8_t g_Str_Trace__s__Type__d__s__[18]; // data: 0x838AB0
+extern uint8_t g_Str_Trace_Object__d___x[15]; // data: 0x838AC4
+extern uint8_t g_Str_File_OPTBTN_SHP[11]; // data: 0x83927C
+extern uint64_t g_INI_Key_PDPLANE; // data: 0x839708
+extern uint8_t g_INI_Key_Briefing[9]; // data: 0x839718
+extern uint8_t ApplicationName[10]; // data: 0x8399EC
+extern uint8_t g_Str_Trace_mphmd_exe__d__d__d__d[22]; // data: 0x839B84
+extern uint8_t g_INI_Key_Warheads[9]; // data: 0x83A0D0
+extern uint8_t g_INI_Key_TiberiumExplosive[18]; // data: 0x83AD2C
+extern uint8_t g_INI_Key_FogOfWar[9]; // data: 0x83CF78
+extern uint8_t g_INI_Key_BuildOffAlly[13]; // data: 0x83CF84
+extern uint8_t g_INI_Key_SuperWeaponsAllowed[20]; // data: 0x83CF94
+extern uint8_t g_INI_Key_ShortGame[10]; // data: 0x83CFA8
+extern uint8_t g_INI_Key_TiberiumGrows[14]; // data: 0x83D000
+extern uint8_t g_INI_Key_UnitCount[10]; // data: 0x83D06C
+extern uint8_t g_INI_Key_Animations[11]; // data: 0x83D0DC
+extern uint8_t g_INI_Key_VoxelAnims[11]; // data: 0x83D0E8
+extern uint8_t g_INI_Key_Particles[10]; // data: 0x83D0F4
+extern uint8_t g_INI_Key_ParticleSystems[16]; // data: 0x83D100
+extern uint8_t g_Str_______FAILED_[16]; // data: 0x83D584
+extern uint8_t g_INI_Key_GameType[18]; // data: 0x83D6C0
+extern uint8_t g_INI_Key_VariableNames[14]; // data: 0x83D824
+extern uint8_t g_Str_File_Scenario_CPP[26]; // data: 0x83D838
+extern uint8_t g_INI_Key_Brief[6]; // data: 0x83D8A8
+extern uint8_t g_Str_Toggle_display_mode_back_to_sh[39]; // data: 0x83D924
+extern uint8_t g_Str_File_PROGBARM_SHP[13]; // data: 0x83DA30
+extern uint8_t g_INI_Key_LS800BkgdPal[13]; // data: 0x83DBA8
+extern uint8_t g_INI_Key_LS800BkgdName[14]; // data: 0x83DBB8
+extern uint8_t g_INI_Key_LS640BkgdName[14]; // data: 0x83DBC8
+extern uint8_t g_INI_Key_LS800BriefLocY[15]; // data: 0x83DBD8
+extern uint8_t g_INI_Key_LS800BriefLocX[15]; // data: 0x83DBE8
+extern uint8_t g_INI_Key_LS640BriefLocY[15]; // data: 0x83DBF8
+extern uint8_t g_INI_Key_LS640BriefLocX[15]; // data: 0x83DC08
+extern uint8_t g_INI_Key_LSLoadBriefing[15]; // data: 0x83DC18
+extern uint8_t g_INI_Key_LSLoadMessage[14]; // data: 0x83DC28
+extern uint8_t g_INI_Key_Official[9]; // data: 0x83DC5C
+extern uint8_t g_Str_Trace_Waypoint_d[11]; // data: 0x83DE24
+extern uint8_t g_INI_Key_NumCoopHumanStartSpots[23]; // data: 0x83DE30
+extern uint8_t g_INI_Key_NumberStartingPoints[21]; // data: 0x83DE48
+extern uint8_t g_INI_Key_StartY[7]; // data: 0x83DE60
+extern uint8_t g_INI_Key_Header[7]; // data: 0x83DE68
+extern uint8_t g_INI_Key_StartX[7]; // data: 0x83DE70
+extern uint64_t g_INI_Key_Ranking; // data: 0x83DFC4
+extern uint8_t g_INI_Key_Lose[5]; // data: 0x83E180
+extern uint8_t g_Str_File_Score_CPP[23]; // data: 0x83E3C4
+extern uint8_t g_INI_Key_Back[5]; // data: 0x83E3E8
+extern uint8_t g_INI_Key_BarGraph[9]; // data: 0x83E3F0
+extern uint8_t g_INI_Key_Efficiency[11]; // data: 0x83E3FC
+extern uint8_t g_INI_Key_BestBox[8]; // data: 0x83E408
+extern uint8_t g_INI_Key_Emblem[7]; // data: 0x83E410
+extern uint8_t g_INI_Key_Wipe[5]; // data: 0x83E418
+extern uint8_t g_INI_Key_ScriptTypes[12]; // data: 0x83E728
+extern uint16_t g_Str_TXT_CUSTOM[5]; // data: 0x83EBBC
+extern uint8_t g_Str_File_SerialEd_cpp[26]; // data: 0x83EC28
+extern uint8_t g_Str_T[2]; // data: 0x83ED5C
+extern uint8_t g_Str_File_Session_CPP[25]; // data: 0x83EEB8
+extern uint8_t g_INI_Key_GameMode[9]; // data: 0x83EFD0
+extern uint64_t g_INI_Key_SyncBug; // data: 0x83F040
+extern uint8_t g_INI_Key_PhoneBook[10]; // data: 0x83F050
+extern uint8_t g_INI_Key_InitStrings[12]; // data: 0x83F05C
+extern uint8_t g_INI_Key_SerialDefaults[15]; // data: 0x83F0D8
+extern uint8_t g_Str_No_Digest[10]; // data: 0x83F3E4
+extern uint16_t g_Str_MSG_NoDescription[9]; // data: 0x83F4B8
+extern uint8_t g_INI_Key_MultiMaps[10]; // data: 0x83F514
+extern uint8_t g_INI_Key_DescriptionText[16]; // data: 0x83F648
+extern uint8_t g_Str_File_Sidebar_CPP[25]; // data: 0x83FAC4
+extern uint16_t g_Str_TXT_UNRANKED[6]; // data: 0x83FB1C
+extern uint8_t g_Str_File_Skirmish_cpp[26]; // data: 0x83FC4C
 
 // === Section 0x0840000 - .data (155 globals) ===
 
-extern uint8_t Game_bVideoBackBuffer; // 0x840A6C
-extern uint32_t dwRegister; // 0x840A74
-extern uint16_t szFile[2]; // 0x840AD0
-extern uint8_t g_Str_WW_TiberianSun[15]; // 0x840B34
-extern uint8_t g_INI_Key_CLSID[6]; // 0x840B44
-extern uint8_t Data[13]; // 0x840B4C
-extern uint8_t g_Str_WW_TiberianSun_1[17]; // 0x840B5C
-extern uint8_t g_Str_Trace__s__s[6]; // 0x840B78
-extern uint16_t g_Str_File_comctl32_dll[6]; // 0x840C48
-extern uint8_t g_Str_File_Startup_CPP[25]; // 0x840E0C
-extern uint8_t g_Str_Fmt_D_D[7]; // 0x840F5C
-extern uint16_t hostshort[2]; // 0x841F30
-extern uint8_t g_INI_Key_BROK[5]; // 0x842058
-extern const uint16_t g_INI_Key_BeginMovie[11]; // 0x842354
-extern const uint16_t Control[3]; // 0x8423D8
-extern uint8_t g_Str_EVA_PsychicRevealReady[23]; // 0x8423FC
-extern uint8_t g_Str_EVA_GeneticMutatorReady[24]; // 0x842414
-extern uint8_t g_Str_EVA_SpyPlaneReady[18]; // 0x84242C
-extern uint8_t g_Str_EVA_ReinforcementsReady[24]; // 0x842440
-extern uint8_t g_Str_EVA_ChronosphereReady[22]; // 0x842458
-extern uint8_t g_Str_EVA_PsychicDominatorReady[26]; // 0x842470
-extern uint8_t g_Str_EVA_LightningStormReady[24]; // 0x84248C
-extern uint8_t g_Str_EVA_ForceShieldReady[21]; // 0x8424A4
-extern uint8_t g_Str_EVA_IronCurtainReady[21]; // 0x8424BC
-extern uint8_t g_Str_EVA_NuclearMissileReady[24]; // 0x8424D4
-extern uint8_t g_Str_File_Super_CPP[23]; // 0x842510
-extern uint8_t g_INI_Key_MultiMissile[13]; // 0x8425F0
-extern uint8_t g_INI_Key_Range[6]; // 0x842690
-extern uint8_t g_INI_Key_Beacon[7]; // 0x8427FC
-extern uint8_t g_Str_Tip_ThumbClosed[16]; // 0x842838
-extern uint8_t g_Str_File_TAction_CPP[25]; // 0x842BF8
-extern uint8_t g_INI_Key_TaskForces[11]; // 0x842DB8
-extern uint8_t g_INI_Key_Group[6]; // 0x842DC4
-extern uint8_t g_INI_Key_TRUCKA[7]; // 0x842DCC
-extern uint8_t g_INI_Key_TRUCKB[7]; // 0x842DD4
-extern uint8_t g_INI_Key_Priority[9]; // 0x84301C
-extern uint8_t g_INI_Key_Suicide[8]; // 0x843050
-extern uint8_t g_INI_Key_TeamTypes[10]; // 0x8430FC
-extern uint8_t g_Str_File_Techno_CPP[24]; // 0x843178
-extern uint8_t g_INI_Key_Cameo[6]; // 0x843350
-extern uint8_t g_INI_Key_Points[7]; // 0x8439A8
-extern uint8_t g_INI_Key_XXICON[7]; // 0x844530
-extern uint8_t g_INI_Key_Themes[7]; // 0x844760
-extern uint8_t g_Str_File__WAV[5]; // 0x844768
-extern uint8_t g_Str_Trace_Theme__QueueSong__d_[22]; // 0x8447D4
-extern uint8_t g_INI_Key_Tiberiums[10]; // 0x84492C
-extern uint16_t g_Str_MSG_NothingSelected[10]; // 0x845584
-extern uint8_t g_Str_File_UICmnds_cpp[25]; // 0x845598
-extern uint16_t g_Str_MSG_SelAcrossScreen[10]; // 0x8455B4
-extern uint16_t g_Str_MSG_SelAcrossMap[8]; // 0x8455C8
-extern uint16_t g_Str_MSG_Mixed[5]; // 0x84560C
-extern uint32_t CSF_Language; // 0x845728
-extern uint8_t g_Str_File_Unit_CPP[22]; // 0x845964
-extern uint8_t g_Str_File_VERSION_TXT[12]; // 0x84635C
-extern uint8_t SubBlock[25]; // 0x84639C
-extern uint8_t VocClass_VoicesEnabled; // 0x8464AC
-extern uint8_t g_INI_Key_Volume[7]; // 0x846568
-extern uint8_t g_Str_Invalid_Voc[12]; // 0x846574
-extern uint8_t g_INI_Key_SoundList[10]; // 0x846580
-extern uint8_t g_INI_Key_Defaults[9]; // 0x84658C
-extern uint8_t g_INI_Key_DialogList[11]; // 0x8467D4
-extern uint8_t funcs_756843[128]; // 0x846840
-extern uint8_t g_INI_Key_CampaignID[11]; // 0x847FD0
-extern uint64_t g_INI_Key_LastDay; // 0x8481AC
-extern uint8_t g_Str_File_WDTHist_ini[12]; // 0x8481F0
-extern uint8_t g_Str_File_WDTGameOptions_cpp[32]; // 0x8486AC
-extern uint8_t g_Str_File_WDTSel_cpp[24]; // 0x848DE4
-extern uint16_t g_Str_WDT_TerritorySelectToolTip[13]; // 0x848F24
-extern uint8_t g_Str_WWD_Allied[11]; // 0x8491F0
-extern uint8_t g_Str_WWD_Soviet[11]; // 0x8491FC
-extern uint8_t g_Str_Starting_up_WOLBrowser[24]; // 0x849594
-extern uint8_t g_Str_Creating_WOLBrowser_component_[32]; // 0x8495AC
-extern uint8_t g_Str_Instantiating_embedded_WebBrow[35]; // 0x8495CC
-extern uint8_t g_INI_Key_HTMLPath[9]; // 0x849640
-extern uint8_t g_Str_Software_Westwood_Yuri_s_Reven[33]; // 0x84964C
-extern uint8_t g_Str_WOL_URL_RegKey[37]; // 0x849690
-extern uint8_t g_Str_Closing_serial_port[21]; // 0x8497A4
-extern uint8_t g_Str_Trace_SetCommState_returned_error__s_[33]; // 0x849830
-extern uint8_t g_Str_Trace_Writing_to_port_handle_failed_with_error[45]; // 0x849AA4
-extern uint8_t szHelp[8]; // 0x849E2C
-extern uint8_t WindowName[15]; // 0x849F48
-extern uint8_t g_INI_Key_UpdateDate[11]; // 0x849F64
-extern uint8_t g_INI_Key_UpdateTime[11]; // 0x849F70
-extern uint8_t g_INI_Key_Locale[7]; // 0x849F7C
-extern uint8_t g_INI_Key_Server[7]; // 0x849F84
-extern uint8_t g_Str_File_wolinfoMD_ini[14]; // 0x849F8C
-extern uint16_t g_Str_TXT_DECEMBER[6]; // 0x849FDC
-extern const uint16_t g_INI_Key_Dec[4]; // 0x849FEC
-extern uint16_t g_Str_TXT_NOVEMBER[6]; // 0x849FF4
-extern const uint16_t g_INI_Key_Nov[4]; // 0x84A004
-extern uint16_t g_Str_TXT_OCTOBER[6]; // 0x84A00C
-extern const uint16_t g_INI_Key_Oct[4]; // 0x84A018
-extern uint16_t g_Str_TXT_SEPTEMBER[7]; // 0x84A020
-extern const uint16_t g_INI_Key_Sep[4]; // 0x84A030
-extern uint16_t g_Str_TXT_AUGUST[5]; // 0x84A038
-extern const uint16_t g_INI_Key_Aug[4]; // 0x84A044
-extern uint16_t g_Str_TXT_JULY[4]; // 0x84A04C
-extern const uint16_t g_INI_Key_Jul[4]; // 0x84A058
-extern uint16_t g_Str_TXT_JUNE[4]; // 0x84A060
-extern const uint16_t g_INI_Key_Jun[4]; // 0x84A06C
-extern uint16_t g_Str_TXT_MAY[4]; // 0x84A074
-extern const uint16_t g_INI_Key_May[4]; // 0x84A07C
-extern uint16_t g_Str_TXT_APRIL[5]; // 0x84A084
-extern const uint16_t g_INI_Key_Apr[4]; // 0x84A090
-extern uint16_t g_Str_TXT_MARCH[5]; // 0x84A098
-extern const uint16_t g_INI_Key_Mar[4]; // 0x84A0A4
-extern uint16_t g_Str_TXT_FEBRUARY[6]; // 0x84A0AC
-extern const uint16_t g_INI_Key_Feb[4]; // 0x84A0BC
-extern uint16_t g_Str_TXT_JANUARY[6]; // 0x84A0C4
-extern uint8_t g_Str_File_WOLPersonaInformation_cpp[39]; // 0x84A0D0
-extern const uint16_t g_INI_Key_Jan[4]; // 0x84A0F8
-extern uint8_t g_INI_Key_AutoLogin[10]; // 0x84A120
-extern uint8_t g_INI_Key_DefaultPersona[15]; // 0x84A13C
-extern uint16_t g_Str_GUI_UnknownStats[8]; // 0x84A16C
-extern uint8_t g_Str_Lob_41_[8]; // 0x84A214
-extern uint8_t g_Str_Lob_40_[8]; // 0x84A21C
-extern uint32_t g_NetworkRematchState; // 0x84A234
-extern uint32_t uElapse; // 0x84A248
-extern uint8_t g_Str_File_wonline_cpp[25]; // 0x84A430
-extern uint8_t g_INI_Key_Battleclans[12]; // 0x84A45C
-extern uint8_t g_INI_Key_Ladder[7]; // 0x84A468
-extern uint8_t g_INI_Key_Manage[7]; // 0x84A478
-extern uint64_t g_INI_Key_WOnline; // 0x84A52C
-extern uint8_t g_Str_Trace_Requesting_channel_list_type____d__ping_[46]; // 0x84A554
-extern uint16_t g_Str_TXT_CANT_CONNECT[8]; // 0x84A5BC
-extern uint16_t g_Str_TXT_RANK[4]; // 0x84A690
-extern uint16_t g_Str_TXT_UNKNOWN_PING[8]; // 0x84A6AC
-extern uint16_t g_Str_TXT_OPER[4]; // 0x84A770
-extern uint8_t g_Str_Trace__s__d[12]; // 0x84A788
-extern uint16_t g_Str_TXT_BADPASS[6]; // 0x84AC84
-extern uint8_t g_Str_Trace_Requesting_ping_for__s_at__s[30]; // 0x84ACE0
-extern uint16_t g_Str_TXT_CHANNEL_FULL[8]; // 0x84AD60
-extern uint8_t g_Str_Trace___hs___s[18]; // 0x84B020
-extern uint8_t g_Str_Trace__hs__s[14]; // 0x84B224
-extern uint16_t g_Str_TXT_WDT_NET_ERR[8]; // 0x84B420
-extern uint16_t g_Str_TXT_FETCHING_SERVLIST[11]; // 0x84B5D0
-extern uint16_t g_Str_TXT_JOINLOB[6]; // 0x84B5E8
-extern uint8_t g_Str_File_WDT_MIX[8]; // 0x84B63C
-extern uint16_t g_Str_WOL_LeavingChannel[9]; // 0x84B644
-extern uint8_t g_Str_Trace_Leave_Channel__channel__s_type__d[35]; // 0x84B658
-extern uint16_t g_Str_TXT_OBSERVER_CANT_PAGE[11]; // 0x84B90C
-extern uint8_t g_Str_Fmt_Hs_S_Bracket[18]; // 0x84B94C
-extern uint8_t g_Str_Trace___hs____s___s[28]; // 0x84B9B0
-extern uint8_t g_Str_TXT_NAME_TOO_LONG[18]; // 0x84B9CC
-extern uint16_t g_Str_TXT_ENTER_MESSAGE[9]; // 0x84B9E0
-extern uint16_t g_Str_TXT_NOT_IN_CHAN[8]; // 0x84B9F4
-extern uint16_t g_Str_TXT_CLAN_NOSTART[8]; // 0x84BB6C
-extern uint8_t g_INI_Key_Community[10]; // 0x84CD6C
-extern uint16_t g_Str_WOL_MatchFailExit[9]; // 0x84D060
-extern uint8_t g_Str_File_WorldDom_cpp[26]; // 0x84D818
-extern int32_t iProtocols; // 0x84DD90
-extern uint8_t optval[2]; // 0x84DDA0
-extern uint8_t g_Str_Trace_Warning__Probable_deadlock_occurred_on_M[64]; // 0x84E5DC
-extern uint8_t g_Str_File_wwmous_cpp[24]; // 0x84E61C
-extern uint8_t Source[14]; // 0x84E865
+extern uint8_t Game_bVideoBackBuffer; // data: 0x840A6C
+extern uint32_t dwRegister; // data: 0x840A74
+extern uint16_t szFile[2]; // data: 0x840AD0
+extern uint8_t g_Str_WW_TiberianSun[15]; // data: 0x840B34
+extern uint8_t g_INI_Key_CLSID[6]; // data: 0x840B44
+extern uint8_t Data[13]; // data: 0x840B4C
+extern uint8_t g_Str_WW_TiberianSun_1[17]; // data: 0x840B5C
+extern uint8_t g_Str_Trace__s__s[6]; // data: 0x840B78
+extern uint16_t g_Str_File_comctl32_dll[6]; // data: 0x840C48
+extern uint8_t g_Str_File_Startup_CPP[25]; // data: 0x840E0C
+extern uint8_t g_Str_Fmt_D_D[7]; // data: 0x840F5C
+extern uint16_t hostshort[2]; // data: 0x841F30
+extern uint8_t g_INI_Key_BROK[5]; // data: 0x842058
+extern const uint16_t g_INI_Key_BeginMovie[11]; // data: 0x842354
+extern const uint16_t Control[3]; // data: 0x8423D8
+extern uint8_t g_Str_EVA_PsychicRevealReady[23]; // data: 0x8423FC
+extern uint8_t g_Str_EVA_GeneticMutatorReady[24]; // data: 0x842414
+extern uint8_t g_Str_EVA_SpyPlaneReady[18]; // data: 0x84242C
+extern uint8_t g_Str_EVA_ReinforcementsReady[24]; // data: 0x842440
+extern uint8_t g_Str_EVA_ChronosphereReady[22]; // data: 0x842458
+extern uint8_t g_Str_EVA_PsychicDominatorReady[26]; // data: 0x842470
+extern uint8_t g_Str_EVA_LightningStormReady[24]; // data: 0x84248C
+extern uint8_t g_Str_EVA_ForceShieldReady[21]; // data: 0x8424A4
+extern uint8_t g_Str_EVA_IronCurtainReady[21]; // data: 0x8424BC
+extern uint8_t g_Str_EVA_NuclearMissileReady[24]; // data: 0x8424D4
+extern uint8_t g_Str_File_Super_CPP[23]; // data: 0x842510
+extern uint8_t g_INI_Key_MultiMissile[13]; // data: 0x8425F0
+extern uint8_t g_INI_Key_Range[6]; // data: 0x842690
+extern uint8_t g_INI_Key_Beacon[7]; // data: 0x8427FC
+extern uint8_t g_Str_Tip_ThumbClosed[16]; // data: 0x842838
+extern uint8_t g_Str_File_TAction_CPP[25]; // data: 0x842BF8
+extern uint8_t g_INI_Key_TaskForces[11]; // data: 0x842DB8
+extern uint8_t g_INI_Key_Group[6]; // data: 0x842DC4
+extern uint8_t g_INI_Key_TRUCKA[7]; // data: 0x842DCC
+extern uint8_t g_INI_Key_TRUCKB[7]; // data: 0x842DD4
+extern uint8_t g_INI_Key_Priority[9]; // data: 0x84301C
+extern uint8_t g_INI_Key_Suicide[8]; // data: 0x843050
+extern uint8_t g_INI_Key_TeamTypes[10]; // data: 0x8430FC
+extern uint8_t g_Str_File_Techno_CPP[24]; // data: 0x843178
+extern uint8_t g_INI_Key_Cameo[6]; // data: 0x843350
+extern uint8_t g_INI_Key_Points[7]; // data: 0x8439A8
+extern uint8_t g_INI_Key_XXICON[7]; // data: 0x844530
+extern uint8_t g_INI_Key_Themes[7]; // data: 0x844760
+extern uint8_t g_Str_File__WAV[5]; // data: 0x844768
+extern uint8_t g_Str_Trace_Theme__QueueSong__d_[22]; // data: 0x8447D4
+extern uint8_t g_INI_Key_Tiberiums[10]; // data: 0x84492C
+extern uint16_t g_Str_MSG_NothingSelected[10]; // data: 0x845584
+extern uint8_t g_Str_File_UICmnds_cpp[25]; // data: 0x845598
+extern uint16_t g_Str_MSG_SelAcrossScreen[10]; // data: 0x8455B4
+extern uint16_t g_Str_MSG_SelAcrossMap[8]; // data: 0x8455C8
+extern uint16_t g_Str_MSG_Mixed[5]; // data: 0x84560C
+extern uint32_t CSF_Language; // data: 0x845728
+extern uint8_t g_Str_File_Unit_CPP[22]; // data: 0x845964
+extern uint8_t g_Str_File_VERSION_TXT[12]; // data: 0x84635C
+extern uint8_t SubBlock[25]; // data: 0x84639C
+extern uint8_t VocClass_VoicesEnabled; // data: 0x8464AC
+extern uint8_t g_INI_Key_Volume[7]; // data: 0x846568
+extern uint8_t g_Str_Invalid_Voc[12]; // data: 0x846574
+extern uint8_t g_INI_Key_SoundList[10]; // data: 0x846580
+extern uint8_t g_INI_Key_Defaults[9]; // data: 0x84658C
+extern uint8_t g_INI_Key_DialogList[11]; // data: 0x8467D4
+extern uint8_t funcs_756843[128]; // data: 0x846840
+extern uint8_t g_INI_Key_CampaignID[11]; // data: 0x847FD0
+extern uint64_t g_INI_Key_LastDay; // data: 0x8481AC
+extern uint8_t g_Str_File_WDTHist_ini[12]; // data: 0x8481F0
+extern uint8_t g_Str_File_WDTGameOptions_cpp[32]; // data: 0x8486AC
+extern uint8_t g_Str_File_WDTSel_cpp[24]; // data: 0x848DE4
+extern uint16_t g_Str_WDT_TerritorySelectToolTip[13]; // data: 0x848F24
+extern uint8_t g_Str_WWD_Allied[11]; // data: 0x8491F0
+extern uint8_t g_Str_WWD_Soviet[11]; // data: 0x8491FC
+extern uint8_t g_Str_Starting_up_WOLBrowser[24]; // data: 0x849594
+extern uint8_t g_Str_Creating_WOLBrowser_component_[32]; // data: 0x8495AC
+extern uint8_t g_Str_Instantiating_embedded_WebBrow[35]; // data: 0x8495CC
+extern uint8_t g_INI_Key_HTMLPath[9]; // data: 0x849640
+extern uint8_t g_Str_Software_Westwood_Yuri_s_Reven[33]; // data: 0x84964C
+extern uint8_t g_Str_WOL_URL_RegKey[37]; // data: 0x849690
+extern uint8_t g_Str_Closing_serial_port[21]; // data: 0x8497A4
+extern uint8_t g_Str_Trace_SetCommState_returned_error__s_[33]; // data: 0x849830
+extern uint8_t g_Str_Trace_Writing_to_port_handle_failed_with_error[45]; // data: 0x849AA4
+extern uint8_t szHelp[8]; // data: 0x849E2C
+extern uint8_t WindowName[15]; // data: 0x849F48
+extern uint8_t g_INI_Key_UpdateDate[11]; // data: 0x849F64
+extern uint8_t g_INI_Key_UpdateTime[11]; // data: 0x849F70
+extern uint8_t g_INI_Key_Locale[7]; // data: 0x849F7C
+extern uint8_t g_INI_Key_Server[7]; // data: 0x849F84
+extern uint8_t g_Str_File_wolinfoMD_ini[14]; // data: 0x849F8C
+extern uint16_t g_Str_TXT_DECEMBER[6]; // data: 0x849FDC
+extern const uint16_t g_INI_Key_Dec[4]; // data: 0x849FEC
+extern uint16_t g_Str_TXT_NOVEMBER[6]; // data: 0x849FF4
+extern const uint16_t g_INI_Key_Nov[4]; // data: 0x84A004
+extern uint16_t g_Str_TXT_OCTOBER[6]; // data: 0x84A00C
+extern const uint16_t g_INI_Key_Oct[4]; // data: 0x84A018
+extern uint16_t g_Str_TXT_SEPTEMBER[7]; // data: 0x84A020
+extern const uint16_t g_INI_Key_Sep[4]; // data: 0x84A030
+extern uint16_t g_Str_TXT_AUGUST[5]; // data: 0x84A038
+extern const uint16_t g_INI_Key_Aug[4]; // data: 0x84A044
+extern uint16_t g_Str_TXT_JULY[4]; // data: 0x84A04C
+extern const uint16_t g_INI_Key_Jul[4]; // data: 0x84A058
+extern uint16_t g_Str_TXT_JUNE[4]; // data: 0x84A060
+extern const uint16_t g_INI_Key_Jun[4]; // data: 0x84A06C
+extern uint16_t g_Str_TXT_MAY[4]; // data: 0x84A074
+extern const uint16_t g_INI_Key_May[4]; // data: 0x84A07C
+extern uint16_t g_Str_TXT_APRIL[5]; // data: 0x84A084
+extern const uint16_t g_INI_Key_Apr[4]; // data: 0x84A090
+extern uint16_t g_Str_TXT_MARCH[5]; // data: 0x84A098
+extern const uint16_t g_INI_Key_Mar[4]; // data: 0x84A0A4
+extern uint16_t g_Str_TXT_FEBRUARY[6]; // data: 0x84A0AC
+extern const uint16_t g_INI_Key_Feb[4]; // data: 0x84A0BC
+extern uint16_t g_Str_TXT_JANUARY[6]; // data: 0x84A0C4
+extern uint8_t g_Str_File_WOLPersonaInformation_cpp[39]; // data: 0x84A0D0
+extern const uint16_t g_INI_Key_Jan[4]; // data: 0x84A0F8
+extern uint8_t g_INI_Key_AutoLogin[10]; // data: 0x84A120
+extern uint8_t g_INI_Key_DefaultPersona[15]; // data: 0x84A13C
+extern uint16_t g_Str_GUI_UnknownStats[8]; // data: 0x84A16C
+extern uint8_t g_Str_Lob_41_[8]; // data: 0x84A214
+extern uint8_t g_Str_Lob_40_[8]; // data: 0x84A21C
+extern uint32_t g_NetworkRematchState; // data: 0x84A234
+extern uint32_t uElapse; // data: 0x84A248
+extern uint8_t g_Str_File_wonline_cpp[25]; // data: 0x84A430
+extern uint8_t g_INI_Key_Battleclans[12]; // data: 0x84A45C
+extern uint8_t g_INI_Key_Ladder[7]; // data: 0x84A468
+extern uint8_t g_INI_Key_Manage[7]; // data: 0x84A478
+extern uint64_t g_INI_Key_WOnline; // data: 0x84A52C
+extern uint8_t g_Str_Trace_Requesting_channel_list_type____d__ping_[46]; // data: 0x84A554
+extern uint16_t g_Str_TXT_CANT_CONNECT[8]; // data: 0x84A5BC
+extern uint16_t g_Str_TXT_RANK[4]; // data: 0x84A690
+extern uint16_t g_Str_TXT_UNKNOWN_PING[8]; // data: 0x84A6AC
+extern uint16_t g_Str_TXT_OPER[4]; // data: 0x84A770
+extern uint8_t g_Str_Trace__s__d[12]; // data: 0x84A788
+extern uint16_t g_Str_TXT_BADPASS[6]; // data: 0x84AC84
+extern uint8_t g_Str_Trace_Requesting_ping_for__s_at__s[30]; // data: 0x84ACE0
+extern uint16_t g_Str_TXT_CHANNEL_FULL[8]; // data: 0x84AD60
+extern uint8_t g_Str_Trace___hs___s[18]; // data: 0x84B020
+extern uint8_t g_Str_Trace__hs__s[14]; // data: 0x84B224
+extern uint16_t g_Str_TXT_WDT_NET_ERR[8]; // data: 0x84B420
+extern uint16_t g_Str_TXT_FETCHING_SERVLIST[11]; // data: 0x84B5D0
+extern uint16_t g_Str_TXT_JOINLOB[6]; // data: 0x84B5E8
+extern uint8_t g_Str_File_WDT_MIX[8]; // data: 0x84B63C
+extern uint16_t g_Str_WOL_LeavingChannel[9]; // data: 0x84B644
+extern uint8_t g_Str_Trace_Leave_Channel__channel__s_type__d[35]; // data: 0x84B658
+extern uint16_t g_Str_TXT_OBSERVER_CANT_PAGE[11]; // data: 0x84B90C
+extern uint8_t g_Str_Fmt_Hs_S_Bracket[18]; // data: 0x84B94C
+extern uint8_t g_Str_Trace___hs____s___s[28]; // data: 0x84B9B0
+extern uint8_t g_Str_TXT_NAME_TOO_LONG[18]; // data: 0x84B9CC
+extern uint16_t g_Str_TXT_ENTER_MESSAGE[9]; // data: 0x84B9E0
+extern uint16_t g_Str_TXT_NOT_IN_CHAN[8]; // data: 0x84B9F4
+extern uint16_t g_Str_TXT_CLAN_NOSTART[8]; // data: 0x84BB6C
+extern uint8_t g_INI_Key_Community[10]; // data: 0x84CD6C
+extern uint16_t g_Str_WOL_MatchFailExit[9]; // data: 0x84D060
+extern uint8_t g_Str_File_WorldDom_cpp[26]; // data: 0x84D818
+extern int32_t iProtocols; // data: 0x84DD90
+extern uint8_t optval[2]; // data: 0x84DDA0
+extern uint8_t g_Str_Trace_Warning__Probable_deadlock_occurred_on_M[64]; // data: 0x84E5DC
+extern uint8_t g_Str_File_wwmous_cpp[24]; // data: 0x84E61C
+extern uint8_t Source[14]; // data: 0x84E865
 
 // === Section 0x0890000 - .data (21 globals) ===
 
-extern uint32_t Map_InvalidCoord_X; // 0x89A178
-extern uint32_t Map_InvalidCoord_Y; // 0x89A17C
-extern uint32_t Map_InvalidCoord_Z; // 0x89A180
-extern uint32_t Map_MaxHeight; // 0x89A1B4
-extern uint32_t Map_CellHeight; // 0x89A1C0
-extern void* punk; // 0x89A29C
-extern uint32_t g_MapCellWidth; // 0x89C2DC
-extern int32_t g_VisibilitySystem[24]; // 0x89C3B0
-extern int32_t g_FogOfWarState; // 0x89C4D0
-extern uint32_t g_TerrainTypeTable; // 0x89C818
-extern uint32_t g_BuildingClassPool; // 0x89C848
-extern uint32_t FileSystem_POWEROFF_SHP; // 0x89DDC4
-extern uint32_t FileSystem_WRENCH_SHP; // 0x89DDC8
-extern uint32_t g_GameModeOptionState; // 0x89E000
-extern uint8_t g_IsWindowed; // 0x89ED18
-extern int32_t Direction_X_Offsets; // 0x89F688
-extern uint32_t g_CellDirectionOffsets; // 0x89F690
-extern uint32_t g_DirectionOffsetPool; // 0x89F698
-extern uint32_t Direction_Y_Offsets; // 0x89F6A0
-extern void* lpBaseAddress; // 0x89F75C
-extern void* hLibModule; // 0x89F974
+extern uint32_t Map_InvalidCoord_X; // data: 0x89A178
+extern uint32_t Map_InvalidCoord_Y; // data: 0x89A17C
+extern uint32_t Map_InvalidCoord_Z; // data: 0x89A180
+extern uint32_t Map_MaxHeight; // data: 0x89A1B4
+extern uint32_t Map_CellHeight; // data: 0x89A1C0
+extern void* punk; // data: 0x89A29C
+extern uint32_t g_MapCellWidth; // data: 0x89C2DC
+extern int32_t g_VisibilitySystem[24]; // data: 0x89C3B0
+extern int32_t g_FogOfWarState; // data: 0x89C4D0
+extern uint32_t g_TerrainTypeTable; // data: 0x89C818
+extern uint32_t g_BuildingClassPool; // data: 0x89C848
+extern uint32_t FileSystem_POWEROFF_SHP; // data: 0x89DDC4
+extern uint32_t FileSystem_WRENCH_SHP; // data: 0x89DDC8
+extern uint32_t g_GameModeOptionState; // data: 0x89E000
+extern uint8_t g_IsWindowed; // data: 0x89ED18
+extern int32_t Direction_X_Offsets; // data: 0x89F688
+extern uint32_t g_CellDirectionOffsets; // data: 0x89F690
+extern uint32_t g_DirectionOffsetPool; // data: 0x89F698
+extern uint32_t Direction_Y_Offsets; // data: 0x89F6A0
+extern void* lpBaseAddress; // data: 0x89F75C
+extern void* hLibModule; // data: 0x89F974
 
 // === Section 0x08A0000 - .data (2 globals) ===
 
-extern uint64_t g_DrawColorState; // 0x8A0DF8
-extern uint8_t Buffer[65652]; // 0x8A3A08
+extern uint64_t g_DrawColorState; // data: 0x8A0DF8
+extern uint8_t Buffer[65652]; // data: 0x8A3A08
 
 // === Section 0x08B0000 - .data (22 globals) ===
 
-extern uint32_t g_ExceptionReturnStack; // 0x8B3A7C
-extern uint32_t g_ExceptionReturnAddr; // 0x8B3A80
-extern uint32_t g_ExceptionReturnFrame; // 0x8B3A84
-extern void* g_MissionPool; // 0x8B3CC0
-extern uint32_t g_MissionState; // 0x8B3CC4
-extern uint32_t g_FootClassConfig; // 0x8B3D20
-extern uint32_t g_FootClass_Pool; // 0x8B3D88
-extern uint32_t FootClass_Array; // 0x8B3DC0
-extern uint32_t g_ScenarioUpdateState; // 0x8B40D8
-extern uint32_t TeamClass_Array; // 0x8B40E8
-extern uint32_t UnitClass_Array; // 0x8B4108
-extern uint32_t g_ObjectTypeList; // 0x8B4130
-extern void* g_PathClass_State; // 0x8B413C
-extern uint32_t AnimTypeClass_Array; // 0x8B4150
-extern uint32_t LightConvertClass_Array; // 0x8B4180
-extern uint32_t g_MultiplayerLogBuffer; // 0x8B4188
-extern void* g_MultiplayerSyncState; // 0x8B41CC
-extern uint32_t g_MultiplayerDebugState; // 0x8B41D8
-extern uint32_t g_GameInitState; // 0x8B41F8
-extern uint32_t g_MenuInitFlags; // 0x8B41FC
-extern uint32_t g_MenuInitState; // 0x8B4200
-extern uint8_t g_MenuInitComplete; // 0x8B4204
+extern uint32_t g_ExceptionReturnStack; // data: 0x8B3A7C
+extern uint32_t g_ExceptionReturnAddr; // data: 0x8B3A80
+extern uint32_t g_ExceptionReturnFrame; // data: 0x8B3A84
+extern void* g_MissionPool; // data: 0x8B3CC0
+extern uint32_t g_MissionState; // data: 0x8B3CC4
+extern uint32_t g_FootClassConfig; // data: 0x8B3D20
+extern uint32_t g_FootClass_Pool; // data: 0x8B3D88
+extern uint32_t FootClass_Array; // data: 0x8B3DC0
+extern uint32_t g_ScenarioUpdateState; // data: 0x8B40D8
+extern uint32_t TeamClass_Array; // data: 0x8B40E8
+extern uint32_t UnitClass_Array; // data: 0x8B4108
+extern uint32_t g_ObjectTypeList; // data: 0x8B4130
+extern void* g_PathClass_State; // data: 0x8B413C
+extern uint32_t AnimTypeClass_Array; // data: 0x8B4150
+extern uint32_t LightConvertClass_Array; // data: 0x8B4180
+extern uint32_t g_MultiplayerLogBuffer; // data: 0x8B4188
+extern void* g_MultiplayerSyncState; // data: 0x8B41CC
+extern uint32_t g_MultiplayerDebugState; // data: 0x8B41D8
+extern uint32_t g_GameInitState; // data: 0x8B41F8
+extern uint32_t g_MenuInitFlags; // data: 0x8B41FC
+extern uint32_t g_MenuInitState; // data: 0x8B4200
+extern uint8_t g_MenuInitComplete; // data: 0x8B4204
 
 // === Section 0x0A80000 - .data (165 globals) ===
 
-extern uint32_t g_GameCleanupState; // 0xA80218
-extern uint32_t HouseClass_Array_0; // 0xA80228
-extern HouseClass* HouseClass_Array; // 0xA8022C
-extern uint32_t HouseClass_Count; // 0xA80238
-extern uint32_t Networking_LastEventIndex; // 0xA802C8
-extern uint32_t g_NetworkEventIndex; // 0xA802CC
-extern uint32_t Networking_NextPacketIndex; // 0xA802D0
-extern uint8_t g_NetworkPacketIndex; // 0xA802D4
-extern uint32_t g_CrateSystemState; // 0xA83A54
-extern uint32_t BulletTypeClass_Array; // 0xA83C80
-extern uint32_t g_BulletTypeInitState; // 0xA83C90
-extern void* g_SuperWeaponTypeCount; // 0xA83C9C
-extern uint32_t g_SuperWeaponTypeArray; // 0xA83CA8
-extern uint32_t UnitTypeClass_Array; // 0xA83CE0
-extern void* g_UnitTypeCount2; // 0xA83CE4
-extern uint32_t g_CrateCount; // 0xA83CF0
-extern void* g_CampaignTypeArray; // 0xA83CFC
-extern uint32_t g_UnitTypeInitState; // 0xA83D08
-extern void* HouseClass_Player; // 0xA83D4C
-extern uint32_t SuperClass_ShowTimers; // 0xA83D50
-extern uint32_t g_InfantryTypeInitState; // 0xA83D78
-extern uint32_t g_ObjectTypeConfig; // 0xA83D90
-extern void* g_BuildingProductionQueue; // 0xA83D9C
-extern uint32_t g_BuildingTypeInitState; // 0xA83DA8
-extern uint32_t InfantryClass_Array; // 0xA83DE8
-extern uint32_t g_InfantryClassLimit; // 0xA83DEC
-extern uint32_t g_BuildingClass_Count; // 0xA83DF8
-extern void* g_TeamTypeCount; // 0xA83E34
-extern uint32_t g_TeamTypeCapacity; // 0xA83E40
-extern uint32_t SmudgeClass_Array; // 0xA8B1E0
-extern uint32_t AITriggerTypeClass_Array; // 0xA8B200
-extern uint32_t g_AnimTypeInitQueue; // 0xA8B210
-extern uint32_t AircraftTypeClass_Array; // 0xA8B218
-extern uint32_t g_AircraftTypeCount; // 0xA8B21C
-extern uint32_t g_TypeClass_FindCache; // 0xA8B228
-extern uint32_t g_GameStateFlags; // 0xA8B23C
-extern uint8_t g_GameDifficulty[4]; // 0xA8B240
-extern uint32_t g_GameOptionsFlags; // 0xA8B244
-extern uint32_t g_GameTypeFlags; // 0xA8B24C
-extern uint8_t g_ScenarioFlags[4]; // 0xA8B250
-extern int32_t g_GameRulesOptions; // 0xA8B254
-extern uint32_t Bases; // 0xA8B258
-extern void* g_Rules_Bases; // 0xA8B25C
-extern uint32_t BridgeDestruction; // 0xA8B260
-extern uint8_t Crates; // 0xA8B261
-extern uint32_t ShortGame; // 0xA8B262
-extern uint8_t SWAllowed; // 0xA8B263
-extern uint32_t g_Rules_ShortGame; // 0xA8B264
-extern uint32_t g_Rules_EngineerCount; // 0xA8B268
-extern uint8_t MultiEngineer; // 0xA8B26C
-extern int32_t g_Rules_MultiEngineer; // 0xA8B270
-extern void* g_Rules_AlliesAllowed; // 0xA8B274
-extern int32_t g_CampaignPlayerArray; // 0xA8B29C
-extern int32_t g_CampaignConfig; // 0xA8B2BC
-extern int32_t g_CampaignSideIndex; // 0xA8B2DC
-extern int32_t g_CampaignFactionSlot; // 0xA8B2FC
-extern uint8_t AlliesAllowed; // 0xA8B31C
-extern uint32_t HarvesterTruce; // 0xA8B31D
-extern uint8_t CTF; // 0xA8B31E
-extern uint8_t FOW; // 0xA8B31F
-extern uint32_t MCVRedeploy; // 0xA8B320
-extern uint8_t g_GameSetupBuffer[20]; // 0xA8B380
-extern int32_t g_TauntCommandState; // 0xA8B394
-extern void* g_CommandExecState; // 0xA8B3AC
-extern uint32_t MuteSWLaunches; // 0xA8B538
-extern uint32_t g_ScenarioLoadFlags; // 0xA8B54C
-extern uint32_t g_ScenarioLoadState; // 0xA8B554
-extern uint32_t g_GameSessionPool; // 0xA8B56C
-extern uint32_t g_GameSessionFlags; // 0xA8B570
-extern uint32_t g_MultiplayerGameState; // 0xA8B8CC
-extern uint32_t g_MultiplayerOptions; // 0xA8B8D8
-extern uint8_t Destination; // 0xA8B8E0
-extern uint8_t g_MultiplayerFlags; // 0xA8BAE2
-extern uint32_t g_MultiplayerConfigState; // 0xA8BB04
-extern uint32_t g_MultiplayerSetupState; // 0xA8BB08
-extern uint32_t g_NetworkRematchObject; // 0xA8BB1C
-extern MessageListClass g_GameNetworkObject; // 0xA8BC60
-extern uint32_t g_CampaignScoreFlags; // 0xA8D580
-extern int32_t g_MainLoopObject; // 0xA8D58C
-extern uint8_t g_NetworkQuitFlag; // 0xA8D60E
-extern uint16_t g_CurrentPlayerName; // 0xA8D610
-extern uint32_t Network_EventType; // 0xA8D638
-extern uint8_t g_NetworkPlayerBuffer[20]; // 0xA8D63C
-extern uint32_t Network_EventValue; // 0xA8D804
-extern const uint16_t Network_EventHeader; // 0xA8D810
-extern const uint32_t g_GameSetupFlags; // 0xA8DA48
-extern uint32_t g_GameSetupConfig; // 0xA8DA54
-extern const uint32_t g_NetworkPlayerConfig; // 0xA8DA60
-extern uint32_t g_NetworkPlayerList; // 0xA8DA6C
-extern const uint32_t g_PlayerInfoCount; // 0xA8DA74
-extern const uint32_t Game_PlayerInfoArray; // 0xA8DA78
-extern uint32_t Game_PlayerCount; // 0xA8DA84
-extern uint32_t g_NetworkPlayerCount; // 0xA8DA8C
-extern int32_t g_NetworkPlayerName; // 0xA8DA90
-extern uint8_t g_PlayerNameListEnd; // 0xA8DAB0
-extern uint32_t g_GameFlags_Campaign; // 0xA8DAB4
-extern uint32_t GameFlags_Campaign; // 0xA8DAB8
-extern uint32_t g_GameFlagsMisc; // 0xA8DABC
-extern uint32_t g_EventDispatchState; // 0xA8DB30
-extern void* g_EventProcessState; // 0xA8DB38
-extern uint16_t* g_NetworkHostState; // 0xA8DB9C
-extern uint32_t g_Network_IsHosting; // 0xA8DBA0
-extern int32_t Network_LastPacketTime; // 0xA8E284
-extern uint32_t Network_PlayerPorts; // 0xA8E2B2
-extern uint32_t g_RulesClassInitState; // 0xA8E328
-extern void* g_SuperWeaponPool; // 0xA8E334
-extern uint32_t g_HouseClassInitState; // 0xA8E340
-extern uint32_t InfantryTypeClass_Array; // 0xA8E348
-extern void* Factory_ExitCellTable; // 0xA8E34C
-extern uint32_t g_LoadScreenProgress; // 0xA8E358
-extern uint32_t AircraftClass_Array; // 0xA8E390
-extern uint32_t g_AircraftClassCount; // 0xA8E3A0
-extern uint32_t g_MixFile_LoadCount[30]; // 0xA8E7B0
-extern uint8_t BombClass_Array; // 0xA8E828
-extern void* pUnk; // 0xA8E8C8
-extern void* g_MultiplayerLogEntry; // 0xA8E8D4
-extern uint32_t g_MultiplayerLogFlags; // 0xA8E8E0
-extern uint32_t g_AbstractTypePool; // 0xA8E978
-extern uint32_t AnimClass_Array; // 0xA8E9A8
-extern void* g_AnimClassPool; // 0xA8E9AC
-extern uint32_t g_AnimClassCount; // 0xA8E9B8
-extern int32_t g_NetworkManager; // 0xA8E9C0
-extern uint32_t g_EventManager; // 0xA8EA70
-extern uint32_t TriggerClass_Array; // 0xA8EAE8
-extern void* g_TriggerClassCapacity; // 0xA8EAEC
-extern uint32_t g_ProductionQueueState; // 0xA8EAF8
-extern uint32_t VoxelAnimTypeClass_Array; // 0xA8EB28
-extern uint32_t g_MultiplayerPool; // 0xA8EB38
-extern uint32_t BuildingClass_Array; // 0xA8EB40
-extern void* g_BuildingClass_InstanceCount; // 0xA8EB44
-extern uint32_t g_BuildingProductionState; // 0xA8EB50
-extern uint8_t MCV_DeployModeEnabled; // 0xA8EB7F
-extern int32_t xRight; // 0xA8EB8C
-extern int32_t yBottom; // 0xA8EB90
-extern const uint8_t Game_bAllowVRAMSidebar; // 0xA8EB96
-extern void* FactoryClass_Array; // 0xA8EC1C
-extern uint32_t FactoryClass_Count; // 0xA8EC28
-extern uint8_t g_GameObjectManager; // 0xA8EC44
-extern uint32_t OverlayClass_Array; // 0xA8EC50
-extern void* g_ObjectClass_Capacity; // 0xA8EC54
-extern uint8_t g_ThemeMIXLoaded; // 0xA8EC74
-extern TechnoClass* TechnoClass_Array; // 0xA8EC78
-extern void* g_TechnoClass_Count; // 0xA8EC7C
-extern uint32_t g_SidebarState; // 0xA8EC88
-extern uint32_t TeamTypeClass_Array; // 0xA8ECA0
-extern void* g_TeamTypePool; // 0xA8ECA4
-extern uint32_t g_MultiplayerLogState; // 0xA8ECB0
-extern uint32_t g_CoordScatterManager; // 0xA8ECE0
-extern void* g_FrameCounter; // 0xA8ED2C
-extern uint32_t g_TechnoClassCount; // 0xA8ED38
-extern uint32_t BulletClass_Array; // 0xA8ED40
-extern uint32_t BounceClass_Array; // 0xA8ED58
-extern uint32_t g_BounceClassInit; // 0xA8ED5C
-extern const uint8_t g_SpawnModeActive; // 0xA8ED5D
-extern uint32_t g_MenuRandomSeed; // 0xA8ED94
-extern int32_t g_ControlGroupState; // 0xA8EF98
-extern uint32_t g_ControlGroupPool; // 0xA8EFF8
-extern uint32_t g_ControlGroupConfig; // 0xA8EFFC
-extern uint32_t g_ControlGroupLimit; // 0xA8F000
-extern uint32_t g_ScoreDisplayState1; // 0xA8F180
-extern uint32_t g_ScoreDisplayState2; // 0xA8F184
-extern uint32_t g_ScoreDisplayState3; // 0xA8F188
-extern uint16_t g_TeamCommandBuffer; // 0xA8F654
-extern int32_t nIDDlgItem; // 0xA8F7A8
-extern uint8_t Str; // 0xA8F7B8
+extern uint32_t g_GameCleanupState; // data: 0xA80218
+extern uint32_t HouseClass_Array_0; // data: 0xA80228
+extern HouseClass* HouseClass_Array; // data: 0xA8022C
+extern uint32_t HouseClass_Count; // data: 0xA80238
+extern uint32_t Networking_LastEventIndex; // data: 0xA802C8
+extern uint32_t g_NetworkEventIndex; // data: 0xA802CC
+extern uint32_t Networking_NextPacketIndex; // data: 0xA802D0
+extern uint8_t g_NetworkPacketIndex; // data: 0xA802D4
+extern uint32_t g_CrateSystemState; // data: 0xA83A54
+extern uint32_t BulletTypeClass_Array; // data: 0xA83C80
+extern uint32_t g_BulletTypeInitState; // data: 0xA83C90
+extern void* g_SuperWeaponTypeCount; // data: 0xA83C9C
+extern uint32_t g_SuperWeaponTypeArray; // data: 0xA83CA8
+extern uint32_t UnitTypeClass_Array; // data: 0xA83CE0
+extern void* g_UnitTypeCount2; // data: 0xA83CE4
+extern uint32_t g_CrateCount; // data: 0xA83CF0
+extern void* g_CampaignTypeArray; // data: 0xA83CFC
+extern uint32_t g_UnitTypeInitState; // data: 0xA83D08
+extern void* HouseClass_Player; // data: 0xA83D4C
+extern uint32_t SuperClass_ShowTimers; // data: 0xA83D50
+extern uint32_t g_InfantryTypeInitState; // data: 0xA83D78
+extern uint32_t g_ObjectTypeConfig; // data: 0xA83D90
+extern void* g_BuildingProductionQueue; // data: 0xA83D9C
+extern uint32_t g_BuildingTypeInitState; // data: 0xA83DA8
+extern uint32_t InfantryClass_Array; // data: 0xA83DE8
+extern uint32_t g_InfantryClassLimit; // data: 0xA83DEC
+extern uint32_t g_BuildingClass_Count; // data: 0xA83DF8
+extern void* g_TeamTypeCount; // data: 0xA83E34
+extern uint32_t g_TeamTypeCapacity; // data: 0xA83E40
+extern uint32_t SmudgeClass_Array; // data: 0xA8B1E0
+extern uint32_t AITriggerTypeClass_Array; // data: 0xA8B200
+extern uint32_t g_AnimTypeInitQueue; // data: 0xA8B210
+extern uint32_t AircraftTypeClass_Array; // data: 0xA8B218
+extern uint32_t g_AircraftTypeCount; // data: 0xA8B21C
+extern uint32_t g_TypeClass_FindCache; // data: 0xA8B228
+extern uint32_t g_GameStateFlags; // data: 0xA8B23C
+extern uint8_t g_GameDifficulty[4]; // data: 0xA8B240
+extern uint32_t g_GameOptionsFlags; // data: 0xA8B244
+extern uint32_t g_GameTypeFlags; // data: 0xA8B24C
+extern uint8_t g_ScenarioFlags[4]; // data: 0xA8B250
+extern int32_t g_GameRulesOptions; // data: 0xA8B254
+extern uint32_t Bases; // data: 0xA8B258
+extern void* g_Rules_Bases; // data: 0xA8B25C
+extern uint32_t BridgeDestruction; // data: 0xA8B260
+extern uint8_t Crates; // data: 0xA8B261
+extern uint32_t ShortGame; // data: 0xA8B262
+extern uint8_t SWAllowed; // data: 0xA8B263
+extern uint32_t g_Rules_ShortGame; // data: 0xA8B264
+extern uint32_t g_Rules_EngineerCount; // data: 0xA8B268
+extern uint8_t MultiEngineer; // data: 0xA8B26C
+extern int32_t g_Rules_MultiEngineer; // data: 0xA8B270
+extern void* g_Rules_AlliesAllowed; // data: 0xA8B274
+extern int32_t g_CampaignPlayerArray; // data: 0xA8B29C
+extern int32_t g_CampaignConfig; // data: 0xA8B2BC
+extern int32_t g_CampaignSideIndex; // data: 0xA8B2DC
+extern int32_t g_CampaignFactionSlot; // data: 0xA8B2FC
+extern uint8_t AlliesAllowed; // data: 0xA8B31C
+extern uint32_t HarvesterTruce; // data: 0xA8B31D
+extern uint8_t CTF; // data: 0xA8B31E
+extern uint8_t FOW; // data: 0xA8B31F
+extern uint32_t MCVRedeploy; // data: 0xA8B320
+extern uint8_t g_GameSetupBuffer[20]; // data: 0xA8B380
+extern int32_t g_TauntCommandState; // data: 0xA8B394
+extern void* g_CommandExecState; // data: 0xA8B3AC
+extern uint32_t MuteSWLaunches; // data: 0xA8B538
+extern uint32_t g_ScenarioLoadFlags; // data: 0xA8B54C
+extern uint32_t g_ScenarioLoadState; // data: 0xA8B554
+extern uint32_t g_GameSessionPool; // data: 0xA8B56C
+extern uint32_t g_GameSessionFlags; // data: 0xA8B570
+extern uint32_t g_MultiplayerGameState; // data: 0xA8B8CC
+extern uint32_t g_MultiplayerOptions; // data: 0xA8B8D8
+extern uint8_t Destination; // data: 0xA8B8E0
+extern uint8_t g_MultiplayerFlags; // data: 0xA8BAE2
+extern uint32_t g_MultiplayerConfigState; // data: 0xA8BB04
+extern uint32_t g_MultiplayerSetupState; // data: 0xA8BB08
+extern uint32_t g_NetworkRematchObject; // data: 0xA8BB1C
+extern MessageListClass g_GameNetworkObject; // data: 0xA8BC60
+extern uint32_t g_CampaignScoreFlags; // data: 0xA8D580
+extern int32_t g_MainLoopObject; // data: 0xA8D58C
+extern uint8_t g_NetworkQuitFlag; // data: 0xA8D60E
+extern uint16_t g_CurrentPlayerName; // data: 0xA8D610
+extern uint32_t Network_EventType; // data: 0xA8D638
+extern uint8_t g_NetworkPlayerBuffer[20]; // data: 0xA8D63C
+extern uint32_t Network_EventValue; // data: 0xA8D804
+extern const uint16_t Network_EventHeader; // data: 0xA8D810
+extern const uint32_t g_GameSetupFlags; // data: 0xA8DA48
+extern uint32_t g_GameSetupConfig; // data: 0xA8DA54
+extern const uint32_t g_NetworkPlayerConfig; // data: 0xA8DA60
+extern uint32_t g_NetworkPlayerList; // data: 0xA8DA6C
+extern const uint32_t g_PlayerInfoCount; // data: 0xA8DA74
+extern const uint32_t Game_PlayerInfoArray; // data: 0xA8DA78
+extern uint32_t Game_PlayerCount; // data: 0xA8DA84
+extern uint32_t g_NetworkPlayerCount; // data: 0xA8DA8C
+extern int32_t g_NetworkPlayerName; // data: 0xA8DA90
+extern uint8_t g_PlayerNameListEnd; // data: 0xA8DAB0
+extern uint32_t g_GameFlags_Campaign; // data: 0xA8DAB4
+extern uint32_t GameFlags_Campaign; // data: 0xA8DAB8
+extern uint32_t g_GameFlagsMisc; // data: 0xA8DABC
+extern uint32_t g_EventDispatchState; // data: 0xA8DB30
+extern void* g_EventProcessState; // data: 0xA8DB38
+extern uint16_t* g_NetworkHostState; // data: 0xA8DB9C
+extern uint32_t g_Network_IsHosting; // data: 0xA8DBA0
+extern int32_t Network_LastPacketTime; // data: 0xA8E284
+extern uint32_t Network_PlayerPorts; // data: 0xA8E2B2
+extern uint32_t g_RulesClassInitState; // data: 0xA8E328
+extern void* g_SuperWeaponPool; // data: 0xA8E334
+extern uint32_t g_HouseClassInitState; // data: 0xA8E340
+extern uint32_t InfantryTypeClass_Array; // data: 0xA8E348
+extern void* Factory_ExitCellTable; // data: 0xA8E34C
+extern uint32_t g_LoadScreenProgress; // data: 0xA8E358
+extern uint32_t AircraftClass_Array; // data: 0xA8E390
+extern uint32_t g_AircraftClassCount; // data: 0xA8E3A0
+extern uint32_t g_MixFile_LoadCount[30]; // data: 0xA8E7B0
+extern uint8_t BombClass_Array; // data: 0xA8E828
+extern void* pUnk; // data: 0xA8E8C8
+extern void* g_MultiplayerLogEntry; // data: 0xA8E8D4
+extern uint32_t g_MultiplayerLogFlags; // data: 0xA8E8E0
+extern uint32_t g_AbstractTypePool; // data: 0xA8E978
+extern uint32_t AnimClass_Array; // data: 0xA8E9A8
+extern void* g_AnimClassPool; // data: 0xA8E9AC
+extern uint32_t g_AnimClassCount; // data: 0xA8E9B8
+extern int32_t g_NetworkManager; // data: 0xA8E9C0
+extern uint32_t g_EventManager; // data: 0xA8EA70
+extern uint32_t TriggerClass_Array; // data: 0xA8EAE8
+extern void* g_TriggerClassCapacity; // data: 0xA8EAEC
+extern uint32_t g_ProductionQueueState; // data: 0xA8EAF8
+extern uint32_t VoxelAnimTypeClass_Array; // data: 0xA8EB28
+extern uint32_t g_MultiplayerPool; // data: 0xA8EB38
+extern uint32_t BuildingClass_Array; // data: 0xA8EB40
+extern void* g_BuildingClass_InstanceCount; // data: 0xA8EB44
+extern uint32_t g_BuildingProductionState; // data: 0xA8EB50
+extern uint8_t MCV_DeployModeEnabled; // data: 0xA8EB7F
+extern int32_t xRight; // data: 0xA8EB8C
+extern int32_t yBottom; // data: 0xA8EB90
+extern const uint8_t Game_bAllowVRAMSidebar; // data: 0xA8EB96
+extern void* FactoryClass_Array; // data: 0xA8EC1C
+extern uint32_t FactoryClass_Count; // data: 0xA8EC28
+extern uint8_t g_GameObjectManager; // data: 0xA8EC44
+extern uint32_t OverlayClass_Array; // data: 0xA8EC50
+extern void* g_ObjectClass_Capacity; // data: 0xA8EC54
+extern uint8_t g_ThemeMIXLoaded; // data: 0xA8EC74
+extern TechnoClass* TechnoClass_Array; // data: 0xA8EC78
+extern void* g_TechnoClass_Count; // data: 0xA8EC7C
+extern uint32_t g_SidebarState; // data: 0xA8EC88
+extern uint32_t TeamTypeClass_Array; // data: 0xA8ECA0
+extern void* g_TeamTypePool; // data: 0xA8ECA4
+extern uint32_t g_MultiplayerLogState; // data: 0xA8ECB0
+extern uint32_t g_CoordScatterManager; // data: 0xA8ECE0
+extern void* g_FrameCounter; // data: 0xA8ED2C
+extern uint32_t g_TechnoClassCount; // data: 0xA8ED38
+extern uint32_t BulletClass_Array; // data: 0xA8ED40
+extern uint32_t BounceClass_Array; // data: 0xA8ED58
+extern uint32_t g_BounceClassInit; // data: 0xA8ED5C
+extern const uint8_t g_SpawnModeActive; // data: 0xA8ED5D
+extern uint32_t g_MenuRandomSeed; // data: 0xA8ED94
+extern int32_t g_ControlGroupState; // data: 0xA8EF98
+extern uint32_t g_ControlGroupPool; // data: 0xA8EFF8
+extern uint32_t g_ControlGroupConfig; // data: 0xA8EFFC
+extern uint32_t g_ControlGroupLimit; // data: 0xA8F000
+extern uint32_t g_ScoreDisplayState1; // data: 0xA8F180
+extern uint32_t g_ScoreDisplayState2; // data: 0xA8F184
+extern uint32_t g_ScoreDisplayState3; // data: 0xA8F188
+extern uint16_t g_TeamCommandBuffer; // data: 0xA8F654
+extern int32_t nIDDlgItem; // data: 0xA8F7A8
+extern uint8_t Str; // data: 0xA8F7B8
 
 // === Section 0x0A90000 - .data (16 globals) ===
 
-extern uint32_t LightningStorm_Coords; // 0xA9F9CC
-extern uint32_t LightningStorm_CloudsPresent; // 0xA9F9D0
-extern uint32_t LightningStorm_BoltsPresent; // 0xA9FA18
-extern uint32_t PsyDom_Coords; // 0xA9FA48
-extern uint32_t LightningStorm_CloudsManifesting; // 0xA9FA60
-extern uint32_t ChronoScreenEffect_Duration; // 0xA9FA98
-extern uint32_t g_ChronoEffectState; // 0xA9FA9C
-extern uint32_t ChronoScreenEffect_Status; // 0xA9FAB0
-extern uint8_t LightningStorm_Active; // 0xA9FAB4
-extern uint32_t LightningStorm_Deferment; // 0xA9FAB8
-extern uint32_t NukeFlash_Status; // 0xA9FABC
-extern uint32_t PsyDom_Status; // 0xA9FAC0
-extern uint32_t PsyDom_Anim; // 0xA9FAC4
-extern void* PsyDom_Owner; // 0xA9FAC8
-extern void* LightningStorm_Owner; // 0xA9FACC
-extern uint8_t LightningStorm_TimeToEnd; // 0xA9FAD0
+extern uint32_t LightningStorm_Coords; // data: 0xA9F9CC
+extern uint32_t LightningStorm_CloudsPresent; // data: 0xA9F9D0
+extern uint32_t LightningStorm_BoltsPresent; // data: 0xA9FA18
+extern uint32_t PsyDom_Coords; // data: 0xA9FA48
+extern uint32_t LightningStorm_CloudsManifesting; // data: 0xA9FA60
+extern uint32_t ChronoScreenEffect_Duration; // data: 0xA9FA98
+extern uint32_t g_ChronoEffectState; // data: 0xA9FA9C
+extern uint32_t ChronoScreenEffect_Status; // data: 0xA9FAB0
+extern uint8_t LightningStorm_Active; // data: 0xA9FAB4
+extern uint32_t LightningStorm_Deferment; // data: 0xA9FAB8
+extern uint32_t NukeFlash_Status; // data: 0xA9FABC
+extern uint32_t PsyDom_Status; // data: 0xA9FAC0
+extern uint32_t PsyDom_Anim; // data: 0xA9FAC4
+extern void* PsyDom_Owner; // data: 0xA9FAC8
+extern void* LightningStorm_Owner; // data: 0xA9FACC
+extern uint8_t LightningStorm_TimeToEnd; // data: 0xA9FAD0
 
 // === Section 0x0AA0000 - .data (19 globals) ===
 
-extern void* hHandle; // 0xAA03F8
-extern uint32_t g_StreamBufferState; // 0xAA0444
-extern uint32_t g_StreamPool; // 0xAA0448
-extern uint32_t g_StreamConfig; // 0xAA0464
-extern void* Stream; // 0xAA0468
-extern uint32_t g_CellPassabilityLUT; // 0xAA0738
-extern uint32_t g_Cell_BuildabilityLUT; // 0xAA0E28
-extern uint32_t g_TerrainBuildConfig; // 0xAA1020
-extern uint32_t g_TerrainSoundConfig; // 0xAA1028
-extern uint32_t g_TerrainNoiseAmplitude; // 0xAA10B8
-extern uint32_t g_TerrainNoisePhase; // 0xAA10BC
-extern uint32_t g_TerrainNoiseSeed1; // 0xAA10C4
-extern uint32_t g_TerrainNoiseParam; // 0xAA10C8
-extern uint32_t g_TerrainNoiseSeed2; // 0xAA10CC
-extern uint32_t g_TerrainNoiseDataPtr1; // 0xAA10D8
-extern uint32_t g_TerrainNoiseDataPtr2; // 0xAA10DC
-extern uint32_t g_TerrainNoisePhaseX; // 0xAA10E8
-extern uint32_t g_TerrainNoisePhaseY; // 0xAA10EC
-extern uint32_t g_TerrainNoiseFrequency; // 0xAA10F8
+extern void* hHandle; // data: 0xAA03F8
+extern uint32_t g_StreamBufferState; // data: 0xAA0444
+extern uint32_t g_StreamPool; // data: 0xAA0448
+extern uint32_t g_StreamConfig; // data: 0xAA0464
+extern void* Stream; // data: 0xAA0468
+extern uint32_t g_CellPassabilityLUT; // data: 0xAA0738
+extern uint32_t g_Cell_BuildabilityLUT; // data: 0xAA0E28
+extern uint32_t g_TerrainBuildConfig; // data: 0xAA1020
+extern uint32_t g_TerrainSoundConfig; // data: 0xAA1028
+extern uint32_t g_TerrainNoiseAmplitude; // data: 0xAA10B8
+extern uint32_t g_TerrainNoisePhase; // data: 0xAA10BC
+extern uint32_t g_TerrainNoiseSeed1; // data: 0xAA10C4
+extern uint32_t g_TerrainNoiseParam; // data: 0xAA10C8
+extern uint32_t g_TerrainNoiseSeed2; // data: 0xAA10CC
+extern uint32_t g_TerrainNoiseDataPtr1; // data: 0xAA10D8
+extern uint32_t g_TerrainNoiseDataPtr2; // data: 0xAA10DC
+extern uint32_t g_TerrainNoisePhaseX; // data: 0xAA10E8
+extern uint32_t g_TerrainNoisePhaseY; // data: 0xAA10EC
+extern uint32_t g_TerrainNoiseFrequency; // data: 0xAA10F8
 
 // === Section 0x0AB0000 - .data (35 globals) ===
 
-extern uint32_t g_TerrainBridgeIndex; // 0xABAD1C
-extern uint32_t g_TerrainSoundTable2; // 0xABAD30
-extern uint32_t g_CellTileTypeCache; // 0xABBEC8
-extern uint32_t g_CellTileLookup; // 0xABC1D8
-extern uint32_t g_TerrainTypeTable2; // 0xABC1F8
-extern void* lpBuffer; // 0xABC554
-extern uint32_t g_TimerPool; // 0xABC888
-extern uint32_t g_BridgeCellPool; // 0xABCA20
-extern uint32_t g_FrameCounter_Total; // 0xABCD48
-extern uint32_t g_FrameCounter_Samples; // 0xABCD4C
-extern uint32_t g_MapSeedState; // 0xABD480
-extern uint32_t g_CellClassArray[9]; // 0xABDC50
-extern uint32_t g_MapRenderState; // 0xABDE88
-extern uint32_t g_RandomMap_BuildObject; // 0xABDF90
-extern uint32_t g_RandomMap_TerrainState; // 0xABDF94
-extern uint32_t g_RandomMap_TileData; // 0xABDFA0
-extern uint8_t g_TileSystemInit; // 0xABDFB8
-extern void* g_Map_TiberiumConfig; // 0xABE154
-extern uint32_t g_Randomizer; // 0xABE890
-extern uint32_t g_MapCellHeight_Value; // 0xABED04
-extern uint32_t g_MapCellCount; // 0xABED08
-extern void* g_MapTileArray; // 0xABED10
-extern uint32_t g_MapTileArrayEnd; // 0xABED14
-extern uint32_t g_MatrixTransformState; // 0xABEE10
-extern uint32_t g_MixFilePool_Root; // 0xABEFF0
-extern void* g_FileCacheHashRoot; // 0xABF00C
-extern void* hWndParent; // 0xABF234
-extern uint8_t g_MiscFlag; // 0xABF23A
-extern uint32_t MovieInfo_Array; // 0xABF390
-extern uint32_t g_BigIntPool; // 0xABF3F4
-extern uint32_t g_BigIntModExpObject; // 0xABF6BC
-extern uint32_t g_MultiplayerMode; // 0xABFD70
-extern uint32_t g_MultiplayerModeConfig; // 0xABFDA0
-extern void* Src; // 0xABFDA4
-extern uint32_t g_MultiplayerGameList; // 0xABFDB0
+extern uint32_t g_TerrainBridgeIndex; // data: 0xABAD1C
+extern uint32_t g_TerrainSoundTable2; // data: 0xABAD30
+extern uint32_t g_CellTileTypeCache; // data: 0xABBEC8
+extern uint32_t g_CellTileLookup; // data: 0xABC1D8
+extern uint32_t g_TerrainTypeTable2; // data: 0xABC1F8
+extern void* lpBuffer; // data: 0xABC554
+extern uint32_t g_TimerPool; // data: 0xABC888
+extern uint32_t g_BridgeCellPool; // data: 0xABCA20
+extern uint32_t g_FrameCounter_Total; // data: 0xABCD48
+extern uint32_t g_FrameCounter_Samples; // data: 0xABCD4C
+extern uint32_t g_MapSeedState; // data: 0xABD480
+extern uint32_t g_CellClassArray[9]; // data: 0xABDC50
+extern uint32_t g_MapRenderState; // data: 0xABDE88
+extern uint32_t g_RandomMap_BuildObject; // data: 0xABDF90
+extern uint32_t g_RandomMap_TerrainState; // data: 0xABDF94
+extern uint32_t g_RandomMap_TileData; // data: 0xABDFA0
+extern uint8_t g_TileSystemInit; // data: 0xABDFB8
+extern void* g_Map_TiberiumConfig; // data: 0xABE154
+extern uint32_t g_Randomizer; // data: 0xABE890
+extern uint32_t g_MapCellHeight_Value; // data: 0xABED04
+extern uint32_t g_MapCellCount; // data: 0xABED08
+extern void* g_MapTileArray; // data: 0xABED10
+extern uint32_t g_MapTileArrayEnd; // data: 0xABED14
+extern uint32_t g_MatrixTransformState; // data: 0xABEE10
+extern uint32_t g_MixFilePool_Root; // data: 0xABEFF0
+extern void* g_FileCacheHashRoot; // data: 0xABF00C
+extern void* hWndParent; // data: 0xABF234
+extern uint8_t g_MiscFlag; // data: 0xABF23A
+extern uint32_t MovieInfo_Array; // data: 0xABF390
+extern uint32_t g_BigIntPool; // data: 0xABF3F4
+extern uint32_t g_BigIntModExpObject; // data: 0xABF6BC
+extern uint32_t g_MultiplayerMode; // data: 0xABFD70
+extern uint32_t g_MultiplayerModeConfig; // data: 0xABFDA0
+extern void* Src; // data: 0xABFDA4
+extern uint32_t g_MultiplayerGameList; // data: 0xABFDB0
 
 // === Section 0x0AC0000 - .data (38 globals) ===
 
-extern void* hDlg; // 0xAC0D40
-extern uint32_t g_MenuStateFlags; // 0xAC10C8
-extern void* g_UIControlState; // 0xAC1154
-extern void* ppv; // 0xAC116C
-extern void* g_UIPointerTable; // 0xAC1170
-extern uint32_t HouseClass_Observer; // 0xAC1198
-extern int32_t g_Lobby_PlayerCount; // 0xAC11A0
-extern int32_t g_Lobby_PlayerTeam; // 0xAC11A4
-extern int32_t g_Lobby_PlayerSide; // 0xAC11A8
-extern int32_t g_Lobby_PlayerColor; // 0xAC11AC
-extern uint16_t* g_Lobby_PlayerReady; // 0xAC11B0
-extern int32_t g_Lobby_MaxPlayers; // 0xAC11B4
-extern uint32_t FileSystem_PIPBRD_SHP; // 0xAC1478
-extern uint32_t FileSystem_PIPS_SHP; // 0xAC147C
-extern uint32_t FileSystem_PIPS2_SHP; // 0xAC1480
-extern uint32_t FileSystem_TALKBUBL_SHP; // 0xAC1484
-extern uint32_t yTop; // 0xAC18A4
-extern void* g_DialogPool; // 0xAC18C0
-extern uint32_t g_DialogPoolCount; // 0xAC18C4
-extern uint32_t g_DialogBuffer; // 0xAC18C8
-extern void* g_DialogHashMap_Base; // 0xAC1B00
-extern uint32_t g_DialogHashMap_Count; // 0xAC1B04
-extern uint32_t g_DialogHashMap_Buckets; // 0xAC1B0C
-extern void (*g_DialogHashMap_Hasher)(); // 0xAC1B18
-extern void* g_DialogHashMap_Entries; // 0xAC1B48
-extern uint32_t g_DialogHashMap_Grow; // 0xAC1B4C
-extern uint32_t g_DialogHashMap_Insert; // 0xAC1B54
-extern void (*g_DialogHashMap_Callback)(); // 0xAC1B60
-extern uint32_t g_ComboBoxState; // 0xAC1DE0
-extern int32_t g_DialogHashTable; // 0xAC4848
-extern uint32_t g_GameScreenState; // 0xAC48B4
-extern uint32_t g_ScreenSaverState; // 0xAC48B8
-extern uint32_t g_CreditsScreenState; // 0xAC48BC
-extern void* g_GameScreenManager; // 0xAC48D0
-extern uint32_t g_FileExtensionState; // 0xAC48F0
-extern uint8_t g_PlanningModeActive; // 0xAC4C08
-extern int32_t g_UIManager; // 0xAC4F58
-extern uint8_t Networking_CurrentFrameCRC[4]; // 0xAC51FC
+extern void* hDlg; // data: 0xAC0D40
+extern uint32_t g_MenuStateFlags; // data: 0xAC10C8
+extern void* g_UIControlState; // data: 0xAC1154
+extern void* ppv; // data: 0xAC116C
+extern void* g_UIPointerTable; // data: 0xAC1170
+extern uint32_t HouseClass_Observer; // data: 0xAC1198
+extern int32_t g_Lobby_PlayerCount; // data: 0xAC11A0
+extern int32_t g_Lobby_PlayerTeam; // data: 0xAC11A4
+extern int32_t g_Lobby_PlayerSide; // data: 0xAC11A8
+extern int32_t g_Lobby_PlayerColor; // data: 0xAC11AC
+extern uint16_t* g_Lobby_PlayerReady; // data: 0xAC11B0
+extern int32_t g_Lobby_MaxPlayers; // data: 0xAC11B4
+extern uint32_t FileSystem_PIPBRD_SHP; // data: 0xAC1478
+extern uint32_t FileSystem_PIPS_SHP; // data: 0xAC147C
+extern uint32_t FileSystem_PIPS2_SHP; // data: 0xAC1480
+extern uint32_t FileSystem_TALKBUBL_SHP; // data: 0xAC1484
+extern uint32_t yTop; // data: 0xAC18A4
+extern void* g_DialogPool; // data: 0xAC18C0
+extern uint32_t g_DialogPoolCount; // data: 0xAC18C4
+extern uint32_t g_DialogBuffer; // data: 0xAC18C8
+extern void* g_DialogHashMap_Base; // data: 0xAC1B00
+extern uint32_t g_DialogHashMap_Count; // data: 0xAC1B04
+extern uint32_t g_DialogHashMap_Buckets; // data: 0xAC1B0C
+extern void (*g_DialogHashMap_Hasher)(); // data: 0xAC1B18
+extern void* g_DialogHashMap_Entries; // data: 0xAC1B48
+extern uint32_t g_DialogHashMap_Grow; // data: 0xAC1B4C
+extern uint32_t g_DialogHashMap_Insert; // data: 0xAC1B54
+extern void (*g_DialogHashMap_Callback)(); // data: 0xAC1B60
+extern uint32_t g_ComboBoxState; // data: 0xAC1DE0
+extern int32_t g_DialogHashTable; // data: 0xAC4848
+extern uint32_t g_GameScreenState; // data: 0xAC48B4
+extern uint32_t g_ScreenSaverState; // data: 0xAC48B8
+extern uint32_t g_CreditsScreenState; // data: 0xAC48BC
+extern void* g_GameScreenManager; // data: 0xAC48D0
+extern uint32_t g_FileExtensionState; // data: 0xAC48F0
+extern uint8_t g_PlanningModeActive; // data: 0xAC4C08
+extern int32_t g_UIManager; // data: 0xAC4F58
+extern uint8_t Networking_CurrentFrameCRC[4]; // data: 0xAC51FC
 
 // === Section 0x0B10000 - .data (5 globals) ===
 
-extern void* g_VoxelDrawState; // 0xB1D294
-extern uint32_t g_VeinholePool; // 0xB1D2A0
-extern void* g_VeinholeMonsterPool; // 0xB1D2F0
-extern void* g_VocAudioConfig; // 0xB1D37C
-extern uint32_t g_VocPlayState; // 0xB1D388
+extern void* g_VoxelDrawState; // data: 0xB1D294
+extern uint32_t g_VeinholePool; // data: 0xB1D2A0
+extern void* g_VeinholeMonsterPool; // data: 0xB1D2F0
+extern void* g_VocAudioConfig; // data: 0xB1D37C
+extern uint32_t g_VocPlayState; // data: 0xB1D388
 
 // === Section 0x0B20000 - .data (2 globals) ===
 
-extern uint8_t g_VoxelRenderBuffer; // 0xB2FF78
-extern uint8_t g_VoxelDepthBuffer; // 0xB2FF79
+extern uint8_t g_VoxelRenderBuffer; // data: 0xB2FF78
+extern uint8_t g_VoxelDepthBuffer; // data: 0xB2FF79
 
 // === Section 0x0B40000 - .data (8 globals) ===
 
-extern uint8_t g_VoxelColorPalette; // 0xB41178
-extern uint32_t g_VoxelOffsetTable; // 0xB45590
-extern uint8_t g_VoxelShadeTable; // 0xB45990
-extern void* AsyncIO_Instance; // 0xB45B5C
-extern uint32_t g_AsyncIOState; // 0xB45B68
-extern uint32_t g_AsyncMovieState; // 0xB45BE8
-extern uint32_t g_MovieFrameState1; // 0xB45BEC
-extern uint32_t g_MovieFrameState2; // 0xB45BF0
+extern uint8_t g_VoxelColorPalette; // data: 0xB41178
+extern uint32_t g_VoxelOffsetTable; // data: 0xB45590
+extern uint8_t g_VoxelShadeTable; // data: 0xB45990
+extern void* AsyncIO_Instance; // data: 0xB45B5C
+extern uint32_t g_AsyncIOState; // data: 0xB45B68
+extern uint32_t g_AsyncMovieState; // data: 0xB45BE8
+extern uint32_t g_MovieFrameState1; // data: 0xB45BEC
+extern uint32_t g_MovieFrameState2; // data: 0xB45BF0
 
 // === Section 0x0B70000 - .data (74 globals) ===
 
-extern void* g_ClipboardBuffer; // 0xB72D20
-extern uint32_t g_DialogTrackingList; // 0xB72F50
-extern void* dwInitParam; // 0xB72F54
-extern void* himl; // 0xB730A8
-extern uint16_t WideCharStr; // 0xB73318
-extern uint32_t MaxCount; // 0xB73568
-extern void* Handles; // 0xB73684
-extern void* hEvent; // 0xB73698
-extern void* g_WOL_RequestObject[8]; // 0xB736CC
-extern uint32_t g_WOL_IdleHandler; // 0xB73A20
-extern uint32_t g_WindowManager; // 0xB73AA8
-extern void* g_WOL_LoginQueue; // 0xB73AB0
-extern const char* g_WOL_AuthObject; // 0xB73ACC
-extern uint32_t g_WOL_AuthPool; // 0xB73E10
-extern const uint32_t g_WebBrowser; // 0xB73E40
-extern uint8_t g_WOL_ConnectFlag[128]; // 0xB761A8
-extern int32_t Addend; // 0xB7649C
-extern void* g_WOL_RequestState; // 0xB76520
-extern uint32_t g_WOL_RequestToken; // 0xB76524
-extern void* g_WOL_RequestFlags; // 0xB76528
-extern void* g_WOL_ConnectionPool; // 0xB76530
-extern uint32_t g_WOL_LoginToken; // 0xB765F8
-extern void* g_WOL_EventQueue; // 0xB76608
-extern uint32_t g_WOL_PacketQueue; // 0xB76610
-extern void* g_WOL_MessageQueue; // 0xB76680
-extern uint32_t g_WOL_MessageConfig; // 0xB76684
-extern uint32_t g_WOL_MsgPool; // 0xB76688
-extern void* g_WOL_ListParser; // 0xB768C0
-extern uint32_t g_WOL_LoginPool; // 0xB76970
-extern uint32_t g_WOL_RequestManager; // 0xB76980
-extern void* g_WOL_SessionID; // 0xB76988
-extern void* g_WOL_AccountInfo; // 0xB76990
-extern uint32_t g_WOL_ConnectionToken; // 0xB76AD0
-extern void* g_WOL_ObjectState; // 0xB76AD8
-extern uint32_t g_WOL_ChatState; // 0xB76AE0
-extern void* g_WOL_ConnectionHandler; // 0xB76AE8
-extern const uint32_t g_WOL_ProcessIdle; // 0xB76B10
-extern uint8_t g_WOL_IdleFlag; // 0xB76B44
-extern const char* g_WOL_LoginObject; // 0xB76E24
-extern char* g_WebBrowserConfig; // 0xB7778C
-extern uint32_t g_WOL_ChatPool; // 0xB777A0
-extern const uint8_t g_IsMultiplayerSession; // 0xB777B0
-extern uint32_t g_WOL_UserList; // 0xB778D8
-extern uint32_t g_WOL_State; // 0xB77900
-extern uint32_t g_WOL_StateFlags; // 0xB77904
-extern void* g_WOL_ConnectionFlags; // 0xB77908
-extern uint32_t g_WOL_BuddyList; // 0xB779B0
-extern void* g_WOL_ChannelMgr; // 0xB779B8
-extern uint32_t g_WOL_ParseState; // 0xB779D0
-extern uint32_t g_WOL_GameListPool; // 0xB77A88
-extern uint32_t g_WOL_GameConfig; // 0xB77A90
-extern uint32_t g_WOL_GameProcessState; // 0xB77D70
-extern uint32_t g_WOL_ChannelList; // 0xB77DC8
-extern uint32_t g_WOL_ChannelState; // 0xB77DD0
-extern uint32_t g_WOL_ChannelLeaveState; // 0xB77DD8
-extern uint32_t CCINIClass_RulesHash; // 0xB77E00
-extern uint32_t CCINIClass_ArtHash; // 0xB77E04
-extern uint32_t CCINIClass_AIHash; // 0xB77E08
-extern uint32_t g_WOL_HashTable; // 0xB77E0C
-extern uint32_t g_WOL_GameListState; // 0xB77E14
-extern uint32_t g_WOL_GameListRender; // 0xB77E44
-extern void* hMutex; // 0xB78168
-extern uint32_t CodePage; // 0xB782B0
-extern TIME_ZONE_INFORMATION TimeZoneInformation; // 0xB782F8
-extern uint8_t Filename[260]; // 0xB783F8
-extern uint32_t Locale; // 0xB78544
-extern void* lpfn; // 0xB7856C
-extern uint16_t LCData; // 0xB7858C
-extern uint32_t g_GameScreenFlags; // 0xB78834
-extern uint32_t g_GameScreenConfig; // 0xB78838
-extern uint32_t uNumber; // 0xB78B80
-extern void* lp; // 0xB78B98
-extern void* hHeap; // 0xB78B9C
-extern uint32_t Count; // 0xB79BE0
+extern void* g_ClipboardBuffer; // data: 0xB72D20
+extern uint32_t g_DialogTrackingList; // data: 0xB72F50
+extern void* dwInitParam; // data: 0xB72F54
+extern void* himl; // data: 0xB730A8
+extern uint16_t WideCharStr; // data: 0xB73318
+extern uint32_t MaxCount; // data: 0xB73568
+extern void* Handles; // data: 0xB73684
+extern void* hEvent; // data: 0xB73698
+extern void* g_WOL_RequestObject[8]; // data: 0xB736CC
+extern uint32_t g_WOL_IdleHandler; // data: 0xB73A20
+extern uint32_t g_WindowManager; // data: 0xB73AA8
+extern void* g_WOL_LoginQueue; // data: 0xB73AB0
+extern const char* g_WOL_AuthObject; // data: 0xB73ACC
+extern uint32_t g_WOL_AuthPool; // data: 0xB73E10
+extern const uint32_t g_WebBrowser; // data: 0xB73E40
+extern uint8_t g_WOL_ConnectFlag[128]; // data: 0xB761A8
+extern int32_t Addend; // data: 0xB7649C
+extern void* g_WOL_RequestState; // data: 0xB76520
+extern uint32_t g_WOL_RequestToken; // data: 0xB76524
+extern void* g_WOL_RequestFlags; // data: 0xB76528
+extern void* g_WOL_ConnectionPool; // data: 0xB76530
+extern uint32_t g_WOL_LoginToken; // data: 0xB765F8
+extern void* g_WOL_EventQueue; // data: 0xB76608
+extern uint32_t g_WOL_PacketQueue; // data: 0xB76610
+extern void* g_WOL_MessageQueue; // data: 0xB76680
+extern uint32_t g_WOL_MessageConfig; // data: 0xB76684
+extern uint32_t g_WOL_MsgPool; // data: 0xB76688
+extern void* g_WOL_ListParser; // data: 0xB768C0
+extern uint32_t g_WOL_LoginPool; // data: 0xB76970
+extern uint32_t g_WOL_RequestManager; // data: 0xB76980
+extern void* g_WOL_SessionID; // data: 0xB76988
+extern void* g_WOL_AccountInfo; // data: 0xB76990
+extern uint32_t g_WOL_ConnectionToken; // data: 0xB76AD0
+extern void* g_WOL_ObjectState; // data: 0xB76AD8
+extern uint32_t g_WOL_ChatState; // data: 0xB76AE0
+extern void* g_WOL_ConnectionHandler; // data: 0xB76AE8
+extern const uint32_t g_WOL_ProcessIdle; // data: 0xB76B10
+extern uint8_t g_WOL_IdleFlag; // data: 0xB76B44
+extern const char* g_WOL_LoginObject; // data: 0xB76E24
+extern char* g_WebBrowserConfig; // data: 0xB7778C
+extern uint32_t g_WOL_ChatPool; // data: 0xB777A0
+extern const uint8_t g_IsMultiplayerSession; // data: 0xB777B0
+extern uint32_t g_WOL_UserList; // data: 0xB778D8
+extern uint32_t g_WOL_State; // data: 0xB77900
+extern uint32_t g_WOL_StateFlags; // data: 0xB77904
+extern void* g_WOL_ConnectionFlags; // data: 0xB77908
+extern uint32_t g_WOL_BuddyList; // data: 0xB779B0
+extern void* g_WOL_ChannelMgr; // data: 0xB779B8
+extern uint32_t g_WOL_ParseState; // data: 0xB779D0
+extern uint32_t g_WOL_GameListPool; // data: 0xB77A88
+extern uint32_t g_WOL_GameConfig; // data: 0xB77A90
+extern uint32_t g_WOL_GameProcessState; // data: 0xB77D70
+extern uint32_t g_WOL_ChannelList; // data: 0xB77DC8
+extern uint32_t g_WOL_ChannelState; // data: 0xB77DD0
+extern uint32_t g_WOL_ChannelLeaveState; // data: 0xB77DD8
+extern uint32_t CCINIClass_RulesHash; // data: 0xB77E00
+extern uint32_t CCINIClass_ArtHash; // data: 0xB77E04
+extern uint32_t CCINIClass_AIHash; // data: 0xB77E08
+extern uint32_t g_WOL_HashTable; // data: 0xB77E0C
+extern uint32_t g_WOL_GameListState; // data: 0xB77E14
+extern uint32_t g_WOL_GameListRender; // data: 0xB77E44
+extern void* hMutex; // data: 0xB78168
+extern uint32_t CodePage; // data: 0xB782B0
+extern TIME_ZONE_INFORMATION TimeZoneInformation; // data: 0xB782F8
+extern uint8_t Filename[260]; // data: 0xB783F8
+extern uint32_t Locale; // data: 0xB78544
+extern void* lpfn; // data: 0xB7856C
+extern uint16_t LCData; // data: 0xB7858C
+extern uint32_t g_GameScreenFlags; // data: 0xB78834
+extern uint32_t g_GameScreenConfig; // data: 0xB78838
+extern uint32_t uNumber; // data: 0xB78B80
+extern void* lp; // data: 0xB78B98
+extern void* hHeap; // data: 0xB78B9C
+extern uint32_t Count; // data: 0xB79BE0
 
 } // namespace gamemd

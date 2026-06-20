@@ -17,7 +17,7 @@ struct CellStruct;
 class MPGameModeClass
 {
 public:
-    static DynamicVectorClass<MPGameModeClass*>* GameModes; // 0xA80260
+    static DynamicVectorClass<MPGameModeClass*>* GameModes; // data: 0xA80260
 
     // IUnknown
     virtual HRESULT __stdcall QueryInterface(const IID&, void**);
@@ -100,7 +100,7 @@ protected:
 class MPBattleClass : public MPGameModeClass
 {
 public:
-    MPBattleClass() noexcept;
+    MPBattleClass() noexcept;  // 0x5d8170
     virtual ~MPBattleClass() = default; // IDA: NOT_FOUND
     virtual bool IsTeamsAllowed() override;  // 0x5CB570
     virtual bool IsValidMap() override;  // 0x5CACF0

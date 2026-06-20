@@ -24,60 +24,60 @@ struct GameConfig {
 
 // --- Global variables (IDA addresses) ---
 
-// 0xA8E960: g_IntroMovieObject
+// data: 0xA8E960: g_IntroMovieObject
 extern int  g_IntroMovieObject;
 
-// 0xA8ED6B: ArmageddonMode
+// data: 0xA8ED6B: ArmageddonMode
 extern bool ArmageddonMode;
 
-// 0x840A70: g_Audio_MixerEnabled
+// data: 0x840A70: g_Audio_MixerEnabled
 extern uint32_t g_Audio_MixerEnabled;
 
-// 0xA8F784: dword_A8F784 (record/playback mode)
+// data: 0xA8F784: dword_A8F784 (record/playback mode)
 extern int  dword_A8F784;
 
-// 0x89E3A0: byte_89E3A0 (CD mode flag)
+// data: 0x89E3A0: byte_89E3A0 (CD mode flag)
 extern bool byte_89E3A0;
 
-// 0xA8D600/A8D604/A8D608: dest IP address
+// data: 0xA8D600/A8D604/A8D608: dest IP address
 extern uint32_t dword_A8D600;
 extern uint32_t dword_A8D604;
 extern uint32_t dword_A8D608;
 extern bool dword_A8D5FC;
 
-// 0xB04880, 0xA8B8B4: MP debug flags
+// data: 0xB04880, 0xA8B8B4: MP debug flags
 extern bool byte_B04880;
 extern bool byte_A8B8B4;
 
-// 0xA8EDDC: byte_A8EDDC (speed control)
+// data: 0xA8EDDC: byte_A8EDDC (speed control)
 extern bool byte_A8EDDC;
 
-// 0xB77E18: dword_B77E18 (router type)
+// data: 0xB77E18: dword_B77E18 (router type)
 extern int  dword_B77E18;
 
-// 0xA8E2C8: byte_A8E2C8 (no router)
+// data: 0xA8E2C8: byte_A8E2C8 (no router)
 extern bool byte_A8E2C8;
 
-// 0xA8D60C: byte_A8D60C (stealth)
+// data: 0xA8D60C: byte_A8D60C (stealth)
 extern bool byte_A8D60C;
 
-// 0xA8D60D: byte_A8D60D (messages)
+// data: 0xA8D60D: byte_A8D60D (messages)
 extern bool byte_A8D60D;
 
-// 0xA8D5F8: g_NetworkEventPending
+// data: 0xA8D5F8: g_NetworkEventPending
 extern int  g_NetworkEventPending;
 
-// 0xA8EB84/A8EB88: g_CommandLineFlags / g_CommandLineParam
+// data: 0xA8EB84/A8EB88: g_CommandLineFlags / g_CommandLineParam
 extern int  g_CommandLineFlags;
 extern int  g_CommandLineParam;
 
-// 0x8175B0: g_Is16BitMode
+// data: 0x8175B0: g_Is16BitMode
 extern bool g_Is16BitMode;
 
-// 0x89F978: g_DDraw_Initialized (window mode)
+// data: 0x89F978: g_DDraw_Initialized (window mode)
 extern int  g_DDraw_Initialized;
 
-// 0xA8ED64: byte_A8ED64 (-XQ / -OQ flag)
+// data: 0xA8ED64: byte_A8ED64 (-XQ / -OQ flag)
 extern bool byte_A8ED64;
 
 // Forward declarations

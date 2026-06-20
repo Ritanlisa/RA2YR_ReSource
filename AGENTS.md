@@ -476,6 +476,17 @@ RA2/YR 的移动系统使用 COM 架构。GUID 表位于 `.rdata` 段（0x7E9A60
 
 ### 最近完成（按时间倒序）
 
+- **2026-06-20**: Task 5 — 修复 131 orphan `// 0xADDR` 注解 (hpp 中地址不在 functions.json 中)
+  - **1498 hpp_only 孤儿** 分类: 1367 data-section (`.data`/`.rdata`), 131 code-section (`.text`)
+  - **Phase 2 (data-section)**: 1382 行 `// 0xADDR` → `// data: 0xADDR` 前缀 (14 hpp 文件)
+  - **Phase 3 (code-section)**: 122 地址修正 (指向含函数起始地址), 9 移除 (非函数), 66 新条目加入 functions.json
+  - 通过 IDA MCP 验证所有 131 code-section 地址的包含函数
+  - locomotion.hpp: 113 虚拟桩修正; building_type.hpp: 6 area 标记修正
+  - object.hpp: 5 Audio 函数修正; command_class.hpp: 5 Execute 覆盖修正
+  - **结果: `audit_consistency.py` → 0 hpp_only orphans**
+  - Evidence: `.omo/evidence/task5-orphans-fixed.txt`
+  - 工具: `tools/task5_fix_orphans.py` (Phase 2), `tools/task5_phase3_fix.py` (Phase 3)
+
 - **2026-06-20**: Task 8 — 双注解解析 (hpp // 0xADDR + // IDA: 0xADDR → 单一 // 0xADDR)
   - **9964 IDA 地址注解** 转换为洁净 `// 0xADDR` 格式（跨 63 个 hpp 文件）
   - 180 真双重注解 (同函数两种格式 → 合并, 移除重复注释行 16 条)

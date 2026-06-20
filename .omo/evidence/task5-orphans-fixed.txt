@@ -1,0 +1,124 @@
+Task 5: Orphan Annotation Fix Report
+============================================================
+
+Fixed to containing function: 122
+Removed (not a function): 9
+Missing functions added to json: 66
+Total lines changed: 131
+
+
+Removed annotations:
+  0X004AF5E0
+  0X004AF600
+  0X004B5B00
+  0X004B5B20
+  0X004C1E50
+  0X0054A8E0
+  0X00661FF0
+  0X00724BE0
+  0X007291C0
+
+Added to functions.json:
+  0X00405b50: sub_405B50
+  0X00405c00: AudioFileClass::Release
+  0X004509d0: BuildingClass::UpdateAnimFrames
+  0X00452360: BuildingClass::PowerOff
+  0X00452540: BuildingClass::MakeTraversable
+  0X00452dc0: BuildingClass::DemolishBridge
+  0X004aed70: DrawToSurfaceSHP
+  0X004af2a0: BlitterDrawSHP
+  0X004af380: sub_4AF380
+  0X004af610: JumpjetLocomotionClass::LoadLocomotionFromStream
+  0X004b5b70: DroppodLocomotionClass::ILoco_Process
+  0X004cc8a0: sub_4CC8A0
+  0X004cc940: sub_4CC940
+  0X004cc9a0: FlyLocomotionClass::LocomotionClass
+  0X004ccac0: JumpjetLocomotionClass::ComputeFloatExpression_0
+  0X004cd2a0: FootClass::ProcessDeployMission
+  0X004cd510: JumpjetLocomotionClass::IsMapCoordVisible
+  0X00513c20: LocomotionClass::ProcessData
+  0X00513d20: BuildingLightClass::UpdateOscillation
+  0X00513f40: ObjectClass::BuildTransform
+  0X00536f80: CreateTeamCommand::performAction_113
+  0X0054a4f0: VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass::Release
+  0X0054a5d0: VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass::GetSize
+  0X0054a630: VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass::SetCapacity
+  0X0054ac40: LocomotionClass::Update
+  0X0054ad30: JumpjetLocomotionClass::InitMovementParams
+  0X0054b8d0: JumpjetLocomotionClass::ConvertCoordToCell_0
+  0X0054b980: HouseClass::Set
+  0X0054ba30: UpdateFootMovement
+  0X005b01c0: BuildingClass::ProcessMission
+  0X005b19e0: JumpjetLocomotionClass::StubReturnTrue_4
+  0X005b1aa0: JumpjetLocomotionClass::IsPositionWithinThreshold_0
+  0X005f5cd0: BuildingClass::IsHealthLow
+  0X00661ec0: RocketLocomotionClass::RocketLocomotionClass
+  0X006622c0: UpdateBullets
+  0X0069ec50: LocomotionClass::Process
+  0X0069ed20: JumpjetLocomotionClass::LoadLocomotionFromStream_2
+  0X0069ee30: ShipLocomotionClass::QueryInterface
+  0X0069ef10: ShipLocomotionClass::LoadFromStream
+  0X0069f040: JumpjetLocomotionClass::StubReturnZero_13
+  0X0069f080: JumpjetLocomotionClass::CheckPiggybackState_0
+  0X0069f0c0: sub_69F0C0
+  0X00718000: TeleportLocomotionClass::Release
+  0X007180a0: JumpjetLocomotionClass::GetCoordinateConditional
+  0X00718100: JumpjetLocomotionClass::ProcessFactoryExit
+  0X00718230: JumpjetLocomotionClass::ResetMovementState
+  0X00718260: ObjectClass::FindPlacementPosition
+  0X007187a0: ProcessUnitDeploymentAtCell
+  0X0071e4e0: sub_71E4E0
+  0X0071e600: sub_71E600
+  0X0071e620: sub_71E620
+  0X0071e660: sub_71E660
+  0X00728a00: SmallFunc_728A00
+  0X00728af0: JumpjetLocomotionClass::SyncMovementPosition
+  0X00728c00: TunnelLocomotionClass::ProcessFormationPosition
+  0X00728e30: InfantryClass::IdleStateMachine
+  0X007291d0: JumpjetLocomotionClass::StubReturnZero_21
+  0X00729b40: JumpjetLocomotionClass::ComputeTurretTransform
+  0X00757980: ProcessVoxelColorScanline
+  0X00758ea0: VoxelRenderer::ProjectVertex
+  0X00759260: Stream::InitializeBinkAudio
+  0X0075ab40: JumpjetLocomotionClass::ComputeFloatExpression_4
+  0X0075ac00: JumpjetLocomotionClass::GetRenderCoordinate_2
+  0X0075ae30: JumpjetLocomotionClass::DispatchVirtualCall_9
+  0X0075aec0: VoxelAnim::Draw
+  0X0075c240: Voxel::DrawHelper
+
+
+Changes by file:
+  src\entity\ebolt.hpp: 1 lines
+    L25: // 0x4C1E50 ClearOwner ¡ú 
+  src\misc\locomotion.hpp: 113 lines
+    L821: virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { (void)stream; (void)clear_dirty; return S_OK; }  // 0x4B5B00 ¡ú virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { (void)stream; (void)clear_dirty; return S_OK; }
+    L818: virtual void __stdcall ILocomotion_B8() override {}                                  // 0x4B5E80 (Limbo) ¡ú virtual void __stdcall ILocomotion_B8() override {}                                  // 0x4b5b70 (Limbo)
+    L817: virtual void __stdcall Mark_All_Occupation_Bits(int mark) override {}               // 0x4B5E50 ¡ú virtual void __stdcall Mark_All_Occupation_Bits(int mark) override {}               // 0x4b5b70
+    L816: virtual int __stdcall Drawing_Code() override { return 0; }                                    // 0x4B5BF0 ¡ú virtual int __stdcall Drawing_Code() override { return 0; }                                    // 0x4b5b70
+    L815: virtual void __stdcall Do_Turn(unsigned short facing) override {}                   // 0x4B5BE0 ¡ú virtual void __stdcall Do_Turn(unsigned short facing) override {}                   // 0x4b5b70
+    L814: virtual void __stdcall Stop_Moving() override {}                                    // 0x4B5E40 ¡ú virtual void __stdcall Stop_Moving() override {}                                    // 0x4b5b70
+    L813: virtual void __stdcall Move_To(CoordStruct to) override { (void)to; }                          // 0x4B5E10 ¡ú virtual void __stdcall Move_To(CoordStruct to) override { (void)to; }                          // 0x4b5b70
+    L812: virtual bool __stdcall Process() override { return false; }                                        // 0x4B5C60 ¡ú virtual bool __stdcall Process() override { return false; }                                        // 0x4b5b70
+    L811: virtual CoordStruct* __stdcall Destination(CoordStruct* out) override { return nullptr; }            // 0x4B5BD0 ¡ú virtual CoordStruct* __stdcall Destination(CoordStruct* out) override { return nullptr; }            // 0x4b5b70
+    L810: virtual bool __stdcall Is_Moving() override { return false; }                                      // 0x4B5BC0 ¡ú virtual bool __stdcall Is_Moving() override { return false; }                                      // 0x4b5b70
+  src\object\object.hpp: 5 lines
+    L298: virtual double GetHealthPercentage() const;   // 0x5F5CF0 ¡ú virtual double GetHealthPercentage() const;   // 0x5f5cd0
+    L42: void Resume();        // 0x405CA0 ¡ú void Resume();        // 0x405c00
+    L41: void Pause();         // 0x405C80 ¡ú void Pause();         // 0x405c00
+    L40: void Start(int32_t soundIndex);  // 0x405B90 ¡ú void Start(int32_t soundIndex);  // 0x405b50
+    L39: void Stop();          // 0x405B70 ¡ú void Stop();          // 0x405b50
+  src\type\building_type.hpp: 6 lines
+    L294: int  TriggerTag;    // 0x452F60 area ¡ú int  TriggerTag;    // 0x452dc0 area
+    L293: int  InstanceCount; // 0x452570 area ¡ú int  InstanceCount; // 0x452540 area
+    L292: int  TargetFlags;   // 0x4523F0 area ¡ú int  TargetFlags;   // 0x452360 area
+    L290: int  CrewCount;     // 0x451060 area ¡ú int  CrewCount;     // 0x4509d0 area
+    L289: int  PowerOutput;   // 0x450CD0 area ¡ú int  PowerOutput;   // 0x4509d0 area
+    L288: bool IsPowerPlant; // 0x450C90 area ¡ú bool IsPowerPlant; // 0x4509d0 area
+  src\ui\command_class.hpp: 5 lines
+    L233: virtual void           Execute(uint32_t context) const override; // 0x536F90 ¡ú virtual void           Execute(uint32_t context) const override; // 0x536f80
+    L189: virtual void           Execute(uint32_t context) const override; // 0x71E670 ¡ú virtual void           Execute(uint32_t context) const override; // 0x71e660
+    L176: virtual void           Execute(uint32_t context) const override; // 0x71E640 ¡ú virtual void           Execute(uint32_t context) const override; // 0x71e620
+    L165: virtual void           Execute(uint32_t context) const override; // 0x71E610 ¡ú virtual void           Execute(uint32_t context) const override; // 0x71e600
+    L99: virtual void           Execute(uint32_t context) const override; // 0x71E4F0 ¡ú virtual void           Execute(uint32_t context) const override; // 0x71e4e0
+  src\ui\tool_tip.hpp: 1 lines
+    L32: void Hide();            // 0x724BE0 ¡ú void Hide();

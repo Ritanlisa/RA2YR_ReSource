@@ -187,7 +187,7 @@ public:
     static void AddAction(CommandClass* cmd);  // 0x724580
 
     int32_t     m_RefCount;     // 0x00
-    static DynamicVectorClass<CommandClass*>* Array; // 0x87F658
+    static DynamicVectorClass<CommandClass*>* Array; // data: 0x87F658
 };
 
 

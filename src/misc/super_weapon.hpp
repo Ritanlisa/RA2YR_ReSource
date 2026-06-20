@@ -36,7 +36,7 @@ class SuperWeaponTypeClass : public AbstractTypeClass
 {
 public:
     static constexpr AbstractType AbsID = AbstractType::SuperWeaponType;
-    static DynamicVectorClass<AbstractTypeClass*>* Array; // 0x87F668
+    static DynamicVectorClass<AbstractTypeClass*>* Array; // data: 0x87F668
 
     virtual ~SuperWeaponTypeClass() = default;                                       // 0x6CEFE0 (SDDTOR)
 
@@ -98,7 +98,7 @@ class SuperClass : public AbstractClass
 {
 public:
     static constexpr AbstractType AbsID = AbstractType::Super;
-    static DynamicVectorClass<SuperClass*>* Array; // 0x87F670
+    static DynamicVectorClass<SuperClass*>* Array; // data: 0x87F670
 
     virtual ~SuperClass() = default;                                                 // 0x6CDEB0 (ddtor)
 
@@ -176,18 +176,18 @@ protected:
 class LightningStorm
 {
 public:
-    static double      CloudHeightFactor;           // 0xA8E7B8
-    static CellStruct  Coords;                      // 0xA8E7C0
-    static HouseClass* Owner;                       // 0xA8E7C8
-    static int32_t     Deferment;                   // 0xA8E7CC
-    static int32_t     Duration;                    // 0xA8E7D0
-    static int32_t     StartTime;                   // 0xA8E7D4
-    static bool        Active;                      // 0xA8E7D8
-    static bool        TimeToEnd;                   // 0xA8E7D9
+    static double      CloudHeightFactor;           // data: 0xA8E7B8
+    static CellStruct  Coords;                      // data: 0xA8E7C0
+    static HouseClass* Owner;                       // data: 0xA8E7C8
+    static int32_t     Deferment;                   // data: 0xA8E7CC
+    static int32_t     Duration;                    // data: 0xA8E7D0
+    static int32_t     StartTime;                   // data: 0xA8E7D4
+    static bool        Active;                      // data: 0xA8E7D8
+    static bool        TimeToEnd;                   // data: 0xA8E7D9
 
-    static DynamicVectorClass<AnimClass*> CloudsPresent;     // 0xA8E7DC
-    static DynamicVectorClass<AnimClass*> CloudsManifesting; // 0xA8E7F4
-    static DynamicVectorClass<AnimClass*> BoltsPresent;      // 0xA8E80C
+    static DynamicVectorClass<AnimClass*> CloudsPresent;     // data: 0xA8E7DC
+    static DynamicVectorClass<AnimClass*> CloudsManifesting; // data: 0xA8E7F4
+    static DynamicVectorClass<AnimClass*> BoltsPresent;      // data: 0xA8E80C
 
     static void Start(int32_t duration, int32_t deferment, const CellStruct& cell, HouseClass* pOwner); // 0x539EB0
     static void RequestStop();                                               // 0x53A090 (End)
@@ -202,10 +202,10 @@ public:
 class PsyDom
 {
 public:
-    static PsychicDominatorStatus  Status;   // 0xA8E824
-    static CellStruct              Coords;   // 0xA8E828
-    static HouseClass*             Owner;    // 0xA8E830
-    static AnimClass*              Anim;     // 0xA8E834
+    static PsychicDominatorStatus  Status;   // data: 0xA8E824
+    static CellStruct              Coords;   // data: 0xA8E828
+    static HouseClass*             Owner;    // data: 0xA8E830
+    static AnimClass*              Anim;     // data: 0xA8E834
 
     static void Start(HouseClass* pOwner, const CellStruct& coords);  // 0x7CD80F
     static void updateLogic(); // IDA: NOT_FOUND
@@ -217,8 +217,8 @@ public:
 class ChronoScreenEffect
 {
 public:
-    static int32_t Status;   // 0xA8E838
-    static int32_t Duration; // 0xA8E83C
+    static int32_t Status;   // data: 0xA8E838
+    static int32_t Duration; // data: 0xA8E83C
 
     static void Start(int32_t duration);      // 0x753580 (DecrementCounter)
     static void updateLogic(); // IDA: NOT_FOUND
@@ -229,9 +229,9 @@ public:
 class NukeFlash
 {
 public:
-    static NukeFlashStatus  Status;     // 0xA8E840
-    static int32_t          StartTime;  // 0xA8E844
-    static int32_t          Duration;   // 0xA8E848
+    static NukeFlashStatus  Status;     // data: 0xA8E840
+    static int32_t          StartTime;  // data: 0xA8E844
+    static int32_t          Duration;   // data: 0xA8E848
 
     static void FadeIn();                // 0x53A110 (IsActive)
     static void FadeOut();               // 0x53A120 (ProcessEffect)

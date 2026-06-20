@@ -36,10 +36,10 @@ public:
     uint32_t AudioController_field_0C;   // +0x0C, init &dword_87E294
     uint32_t AudioController_field_10;   // +0x10, not initialized by Init
 
-    void Stop();          // 0x405B70
-    void Start(int32_t soundIndex);  // 0x405B90
-    void Pause();         // 0x405C80
-    void Resume();        // 0x405CA0
+    void Stop();          // 0x405b50
+    void Start(int32_t soundIndex);  // 0x405b50
+    void Pause();         // 0x405c00
+    void Resume();        // 0x405c00
     static bool IsSoundEnabled(); // IDA 0x407000  // 0x407000
 };
 
@@ -295,7 +295,7 @@ public:
     // === Non-virtual methods ===
     int DistanceFrom(AbstractClass* that) const;  // 0x5F6360 ObjectClass::DistanceTo
 
-    virtual double GetHealthPercentage() const;   // 0x5F5CF0
+    virtual double GetHealthPercentage() const;   // 0x5f5cd0
 
     HealthState GetHealthStatus() const {         // 0x5F5DD0
         auto pct = GetHealthPercentage();
