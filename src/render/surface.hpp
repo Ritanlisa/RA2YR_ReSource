@@ -346,7 +346,7 @@ public:
         const RectangleStruct& clip_rect,
         const RectangleStruct& fill_rect, uint32_t color) override;
     virtual bool FillRect(const RectangleStruct& fill_rect, uint32_t color) override; // 0x7BB020
-    virtual bool Fill(uint32_t color) override;  // IDA: 0x7BBAB0
+    virtual bool Fill(uint32_t color) override;  // 0x7BBAB0
     virtual bool FillRectWithFlags(
         const RectangleStruct& clip_rect,
         const ColorStruct& color,
@@ -357,7 +357,7 @@ public:
         const RectangleStruct& clip_rect,
         uint16_t color) override;
     virtual bool SetPixel(const Point2D& point, uint32_t color) override;  // 0x7BAEB0
-    virtual uint32_t GetPixel(const Point2D& point) override;  // IDA: 0x7BAE60
+    virtual uint32_t GetPixel(const Point2D& point) override;  // 0x7BAE60
     virtual bool DrawLineEx( // 0x7BA610
         const RectangleStruct& clip_rect, const Point2D& start,
         const Point2D& end, uint32_t color) override;
@@ -410,8 +410,8 @@ public:
         --LockCount;
         return true;
     }
-    virtual bool CanLock(uint32_t unk1, uint32_t unk2) override { return true; }  // IDA: 0x4BAEC0
-    virtual bool IsLocked() const override final { return LockCount > 0; }  // IDA: 0x411580
+    virtual bool CanLock(uint32_t unk1, uint32_t unk2) override { return true; }  // 0x4BAEC0
+    virtual bool IsLocked() const override final { return LockCount > 0; }  // 0x411580
 
     virtual bool PutPixel( // 0x7BAF90
         const Point2D& point,
@@ -427,9 +427,9 @@ public:
         int palette_idx, int fade_val,
         float* gradient_start, float* gradient_step) override { return false; }
 
-    virtual bool CheckBltStatus() override { return false; }  // IDA: 0x4BAF20
+    virtual bool CheckBltStatus() override { return false; }  // 0x4BAF20
 
-    virtual bool IsDSurface() const override { return false; }  // IDA: 0x4C1AB0
+    virtual bool IsDSurface() const override { return false; }  // 0x4C1AB0
 
     int LockCount;
 
@@ -455,7 +455,7 @@ public:
     virtual void* Lock(int x, int y) override; // 0x4115F0
     virtual int GetBytesPerPixel() const override { return BytesPerPixel; } // 0x411630
     virtual int GetPitch() const override { return Width * BytesPerPixel; } // 0x411640
-    virtual bool IsDSurface() const override final { return false; }  // IDA: 0x4C1AB0
+    virtual bool IsDSurface() const override final { return false; }  // 0x4C1AB0
 
     int BytesPerPixel;
     byte* Buffer;
@@ -525,20 +525,20 @@ public:
         uint16_t color, bool fill_interior) override;
     virtual void* Lock(int x, int y) override;  // 0x4BAD80
     virtual bool Unlock() override;  // 0x4BAF40
-    virtual bool CanLock(uint32_t unk1, uint32_t unk2) override;  // IDA: 0x4BAEC0
-    virtual int GetBytesPerPixel() const override { return BytesPerPixel; }  // IDA: 0x4BAD60
+    virtual bool CanLock(uint32_t unk1, uint32_t unk2) override;  // 0x4BAEC0
+    virtual int GetBytesPerPixel() const override { return BytesPerPixel; }  // 0x4BAD60
     virtual int GetPitch() const override; // 0x4BAD70
     virtual bool DrawGradientLine( // 0x4BF750
         const Point2D& start, const Point2D& end,
         int palette_idx, int fade_val,
         float* gradient_start, float* gradient_step) override;
-    virtual bool CheckBltStatus() override;  // IDA: 0x4BAF20
-    virtual bool IsDSurface() const override final { return true; }  // IDA: 0x4C1AB0
+    virtual bool CheckBltStatus() override;  // 0x4BAF20
+    virtual bool IsDSurface() const override final { return true; }  // 0x4C1AB0
 
     // IDA: DSurface::CreatePrimary pixel format detection (0x4BA770 bit-shift logic)
     static void DetectPixelFormat(const DDPIXELFORMAT& pf); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
-    // IDA: 0x4BB0D0 — DSurface::Blit full hardware/software implementation
+    // 0x4BB0D0 — DSurface::Blit full hardware/software implementation
     // Used by REPLACE hook — bypasses Syringe trampoline entirely.
     // Takes raw int* parameters matching binary calling convention.
     static char BlitTracker(

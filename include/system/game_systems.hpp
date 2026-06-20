@@ -210,7 +210,7 @@ class GameInit
 public:
     virtual ~GameInit() = default; // IDA: NOT_FOUND
 
-    virtual void InitMultiplayerModes() {} // IDA: 0x5D86D0
+    virtual void InitMultiplayerModes() {} // 0x5D86D0
 
 };
 // 1 methods in IDA
@@ -219,7 +219,7 @@ class GameLobby
 public:
     virtual ~GameLobby() = default; // IDA: NOT_FOUND
 
-    virtual void DlgProc() {} // IDA: 0x5E1CA0
+    virtual void DlgProc() {} // 0x5E1CA0
 
 };
 // 2 methods in IDA
@@ -228,8 +228,8 @@ class GameOption_WorldDominationTour
 public:
     virtual ~GameOption_WorldDominationTour() = default; // IDA: NOT_FOUND
 
-    virtual void QueryInterface() {} // IDA: 0x766A60
-    virtual void Constructor() {} // IDA: 0x767300
+    virtual void QueryInterface() {} // 0x766A60
+    virtual void Constructor() {} // 0x767300
 
     uint8_t GameOption_WorldDominationTour_field_0x04[4];
 };
@@ -239,10 +239,10 @@ class GameOptions
 public:
     virtual ~GameOptions() = default; // IDA: NOT_FOUND
 
-    virtual void GameSpeedChanged() {} // IDA: 0x4E1DE0
-    virtual void ReadSettings() {} // IDA: 0x5B8CE0
-    virtual void SaveLoad() {} // IDA: 0x6812E0
-    virtual void GetEntry() {} // IDA: 0x777B50
+    virtual void GameSpeedChanged() {} // 0x4E1DE0
+    virtual void ReadSettings() {} // 0x5B8CE0
+    virtual void SaveLoad() {} // 0x6812E0
+    virtual void GetEntry() {} // 0x777B50
 
     uint8_t GameOptions_field_0x04[4];
     uint8_t GameOptions_field_0x08[4];
@@ -254,8 +254,8 @@ class GameOptionsClass
 public:
     virtual ~GameOptionsClass() = default; // IDA: NOT_FOUND
 
-    virtual void UnlockMovieIfNeeded_MoviesList() {} // IDA: 0x5FBF80
-    virtual void PopulateMovieList() {} // IDA: 0x5FC000
+    virtual void UnlockMovieIfNeeded_MoviesList() {} // 0x5FBF80
+    virtual void PopulateMovieList() {} // 0x5FC000
 
     uint8_t GameOptionsClass_field_0x04[4];
 };
@@ -265,7 +265,7 @@ class GameResult
 public:
     virtual ~GameResult() = default; // IDA: NOT_FOUND
 
-    virtual void CalcScore() {} // IDA: 0x4C6210
+    virtual void CalcScore() {} // 0x4C6210
 
 };
 // 1 methods in IDA
@@ -274,7 +274,7 @@ class GameScreen
 public:
     virtual ~GameScreen() = default; // IDA: NOT_FOUND
 
-    virtual void DlgProc() {} // IDA: 0x60D540
+    virtual void DlgProc() {} // 0x60D540
 
 };
 // 7 methods in IDA
@@ -283,11 +283,11 @@ class GameSetup
 public:
     virtual ~GameSetup() = default; // IDA: NOT_FOUND
 
-    virtual void sub_477440() {} // IDA: 0x477440
-    virtual void FormatToString() {} // IDA: 0x477510
-    virtual void GetColorTooltip() {} // IDA: 0x4E42A0
-    virtual void DisplayPlayers() {} // IDA: 0x5DAFE0
-    virtual void CompareWideString() {} // IDA: 0x5E2670
+    virtual void sub_477440() {} // 0x477440
+    virtual void FormatToString() {} // 0x477510
+    virtual void GetColorTooltip() {} // 0x4E42A0
+    virtual void DisplayPlayers() {} // 0x5DAFE0
+    virtual void CompareWideString() {} // 0x5E2670
     // +2 more virtual methods
 
     uint8_t GameSetup_field_0x04[4];
@@ -303,7 +303,7 @@ class GameState
 public:
     virtual ~GameState() = default; // IDA: NOT_FOUND
 
-    virtual void Reset() {} // IDA: 0x680FF0
+    virtual void Reset() {} // 0x680FF0
 
 };
 // 12 methods in IDA
@@ -312,11 +312,11 @@ class LoadGame
 public:
     virtual ~LoadGame() = default; // IDA: NOT_FOUND
 
-    virtual void LoadIteratedData() {} // IDA: 0x4136C0
-    virtual void ClearAllSlots() {} // IDA: 0x413800
-    virtual void DeserializePointerArrays() {} // IDA: 0x439260
-    virtual void LoadBlock68() {} // IDA: 0x4C6320
-    virtual void CleanupArray() {} // IDA: 0x54E6F0
+    virtual void LoadIteratedData() {} // 0x4136C0
+    virtual void ClearAllSlots() {} // 0x413800
+    virtual void DeserializePointerArrays() {} // 0x439260
+    virtual void LoadBlock68() {} // 0x4C6320
+    virtual void CleanupArray() {} // 0x54E6F0
     // +7 more virtual methods
 
     uint8_t LoadGame_field_0x04[4];
@@ -337,9 +337,9 @@ class LoadProgressMgr
 public:
     virtual ~LoadProgressMgr() = default; // 0x552AA0
 
-    virtual void GetInstance() {} // IDA: 0x552A40
-    virtual void Destroy() {} // IDA: 0x552AA0
-    virtual void ReleaseBuffer() {} // IDA: 0x554370
+    virtual void GetInstance() {} // 0x552A40
+    virtual void Destroy() {} // 0x552AA0
+    virtual void ReleaseBuffer() {} // 0x554370
 
     uint8_t LoadProgressMgr_field_0x04[4];
     uint8_t LoadProgressMgr_field_0x08[4];
@@ -350,7 +350,7 @@ class LoadSaveDialog
 public:
     virtual ~LoadSaveDialog() = default; // IDA: NOT_FOUND
 
-    virtual void FillList() {} // IDA: 0x5596A0
+    virtual void FillList() {} // 0x5596A0
 
 };
 // 6 methods in IDA
@@ -359,11 +359,11 @@ class LoadScreen
 public:
     virtual ~LoadScreen() = default; // IDA: NOT_FOUND
 
-    virtual void RenderLoop() {} // IDA: 0x4B6C30
-    virtual void InitVtable() {} // IDA: 0x4BA2F0
-    virtual void Constructor() {} // IDA: 0x4BA340
-    virtual void RenderProgressBackground() {} // IDA: 0x643400
-    virtual void Render() {} // IDA: 0x643AE0
+    virtual void RenderLoop() {} // 0x4B6C30
+    virtual void InitVtable() {} // 0x4BA2F0
+    virtual void Constructor() {} // 0x4BA340
+    virtual void RenderProgressBackground() {} // 0x643400
+    virtual void Render() {} // 0x643AE0
     // +1 more virtual methods
 
     uint8_t LoadScreen_field_0x04[4];
@@ -378,11 +378,11 @@ class LoadingScreen
 public:
     virtual ~LoadingScreen() = default; // IDA: NOT_FOUND
 
-    virtual void Render() {} // IDA: 0x552D60
-    virtual void AdjustForResolution() {} // IDA: 0x554100
-    virtual void sub_554150() {} // IDA: 0x554150
-    virtual void GetValue() {} // IDA: 0x642B20
-    virtual void FindLoadScreenAnim() {} // IDA: 0x642B30
+    virtual void Render() {} // 0x552D60
+    virtual void AdjustForResolution() {} // 0x554100
+    virtual void sub_554150() {} // 0x554150
+    virtual void GetValue() {} // 0x642B20
+    virtual void FindLoadScreenAnim() {} // 0x642B30
     // +11 more virtual methods
 
     uint8_t LoadingScreen_field_0x04[4];
@@ -407,11 +407,11 @@ class MultiplayerGameMode
 public:
     virtual ~MultiplayerGameMode() = default;  // 0x5D5D20
 
-    virtual void Construct() {} // IDA: 0x5D5B60
-    virtual void Dtor() {} // IDA: 0x5D5D20
-    virtual void GetFirst() {} // IDA: 0x5D5E10
-    virtual void ListGet() {} // IDA: 0x5D5ED0
-    virtual void Find() {} // IDA: 0x5D5F30
+    virtual void Construct() {} // 0x5D5B60
+    virtual void Dtor() {} // 0x5D5D20
+    virtual void GetFirst() {} // 0x5D5E10
+    virtual void ListGet() {} // 0x5D5ED0
+    virtual void Find() {} // 0x5D5F30
     // +2 more virtual methods
 
     uint8_t MultiplayerGameMode_field_0x04[4];
@@ -427,7 +427,7 @@ class SaveLoad
 public:
     virtual ~SaveLoad() = default; // IDA: NOT_FOUND
 
-    virtual void StreamVector() {} // IDA: 0x67A770
+    virtual void StreamVector() {} // 0x67A770
 
 };
 // 3 methods in IDA
@@ -436,9 +436,9 @@ class SaveLoadDialog
 public:
     virtual ~SaveLoadDialog() = default; // IDA: NOT_FOUND
 
-    virtual void DlgProc() {} // IDA: 0x558DD0
-    virtual void LookupDialogHash() {} // IDA: 0x608380
-    virtual void FindDialogTemplate() {} // IDA: 0x6083E0
+    virtual void DlgProc() {} // 0x558DD0
+    virtual void LookupDialogHash() {} // 0x608380
+    virtual void FindDialogTemplate() {} // 0x6083E0
 
     uint8_t SaveLoadDialog_field_0x04[4];
     uint8_t SaveLoadDialog_field_0x08[4];
@@ -449,9 +449,9 @@ class SkirmishDialog
 public:
     virtual ~SkirmishDialog() = default; // IDA: NOT_FOUND
 
-    virtual void FillComboBoxes() {} // IDA: 0x4E3B90
-    virtual void HandleGameStart() {} // IDA: 0x5B9A60
-    virtual void Show() {} // IDA: 0x5E68A0
+    virtual void FillComboBoxes() {} // 0x4E3B90
+    virtual void HandleGameStart() {} // 0x5B9A60
+    virtual void Show() {} // 0x5E68A0
 
     uint8_t SkirmishDialog_field_0x04[4];
     uint8_t SkirmishDialog_field_0x08[4];
@@ -462,8 +462,8 @@ class SkirmishMapGen
 public:
     virtual ~SkirmishMapGen() = default; // IDA: NOT_FOUND
 
-    virtual void DlgProc() {} // IDA: 0x596300
-    virtual void LookupDialogHash() {} // IDA: 0x6067A0
+    virtual void DlgProc() {} // 0x596300
+    virtual void LookupDialogHash() {} // 0x6067A0
 
     uint8_t SkirmishMapGen_field_0x04[4];
 };
@@ -473,7 +473,7 @@ class SkirmishVector
 public:
     virtual ~SkirmishVector() = default; // IDA: NOT_FOUND
 
-    virtual void PushBack() {} // IDA: 0x5EEE40
+    virtual void PushBack() {} // 0x5EEE40
 
 };
 // 1 methods in IDA
@@ -482,7 +482,7 @@ class SyncDelayClass
 public:
     virtual ~SyncDelayClass() = default; // IDA: NOT_FOUND
 
-    virtual void ProcessNetworkSync() {} // IDA: 0x55DEE0
+    virtual void ProcessNetworkSync() {} // 0x55DEE0
 
 };
 

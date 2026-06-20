@@ -11,7 +11,7 @@ namespace gamemd
 
 // ============================================================================
 // HashTable — generic hash table (chained, ~27 methods)
-// IDA: 0x5256F0 (dtor), 0x52B390 (BinarySearch), 0x52B4F0 (BinarySearchAlt)
+// 0x5256F0 (dtor), 0x52B390 (BinarySearch), 0x52B4F0 (BinarySearchAlt)
 // Used by: INIClass, RadarClass, WDT loading, ScenarioClass
 // ============================================================================
 template <typename K, typename V>
@@ -383,7 +383,7 @@ private:
     {
         static uint32_t Do(const T& val)
         {
-            return HashString(val.c_str());  // IDA: 0x5F9E80
+            return HashString(val.c_str());  // 0x5F9E80
         }
     };
 

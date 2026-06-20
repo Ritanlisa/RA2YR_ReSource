@@ -56,8 +56,8 @@ public:
     void PowerDrainUpdate();                                     // 0x6B7DE0
 
     // Stubs
-    int StubReturn65() const { return 65; }                       // IDA: 0x6B8130
-    int StubReturn116() const { return 116; }                     // IDA: 0x6B8120
+    int StubReturn65() const { return 65; }                       // 0x6B8130
+    int StubReturn116() const { return 116; }                     // 0x6B8120
 
     TechnoClass*                owner;              // +0x24 (this+36)
     HouseClass*                 spawnOwner;         // +0x28 (this+40)

@@ -46,8 +46,8 @@ public:
     void SaveState(IStream*);                                // 0x763D90
     void ProcessEvent();                                     // 0x763E20
     void computePath();                                      // 0x764760
-    int StubReturn51() const { return 51; }                   // IDA: 0x763E10
-    int StubReturn64() const { return 64; }                   // IDA: 0x763E00
+    int StubReturn51() const { return 51; }                   // 0x763E10
+    int StubReturn64() const { return 64; }                   // 0x763E00
 
     int32_t     idxArray;           // +0x24 (this+36)
     DynamicVectorClass<WaypointClass> waypoints; // +0x28 (this+40)

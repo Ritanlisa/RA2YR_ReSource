@@ -476,6 +476,26 @@ RA2/YR 的移动系统使用 COM 架构。GUID 表位于 `.rdata` 段（0x7E9A60
 
 ### 最近完成（按时间倒序）
 
+- **2026-06-20**: Task 8 — 双注解解析 (hpp // 0xADDR + // IDA: 0xADDR → 单一 // 0xADDR)
+  - **9964 IDA 地址注解** 转换为洁净 `// 0xADDR` 格式（跨 63 个 hpp 文件）
+  - 180 真双重注解 (同函数两种格式 → 合并, 移除重复注释行 16 条)
+  - 9784 单注解 (仅 `// IDA: 0xADDR` → `// 0xADDR`)
+  - 特殊 IDA 注解保留 (NOT_FOUND, UNMATCHED 等 2427 条)
+  - **结果: 0 `// IDA: 0xADDR` 地址注解残留**, 0 文件同时存在两种格式
+  - 未修改函数签名/类型, 0 处语法破坏
+  - 工具: `tools/resolve_double_annotations.py`（可重复运行, 支持 --dry-run/--apply）
+  - 证据: `.omo/evidence/task-8-dedup-check.txt`, `.omo/evidence/task-8-addr-match.txt`
+- **2026-06-19**: Task 6 (T6) — 三策略交叉验证合并 missing hpp 函数 IDA 地址匹配
+  - **2,831 missing hpp 函数** 从 T3 (signature), T4 (call-graph), T5 (git history) 交叉验证
+  - 输出：`tools/ida_match_results.json` (2.1MB, 完整 2,831 条目)
+  - 置信度分布：HIGH 152 (5.4%), MEDIUM 488 (17.2%), LOW 1,059 (37.4%), CONFLICT 269 (9.5%), UNMATCHABLE 863 (30.5%)
+  - 优先级层级：call-graph > git > signature
+  - T4 仅覆盖 911/2,831 函数 → HIGH 目标 600 无法达成（数据覆盖率瓶颈）
+  - **Spot-verification (72 样本)**: 70.8% 精确匹配 (51/72), 29.2% 同类别名不同 (21/72), 0% 错误类别
+  - 同类别名不同主要是 ctor/dtor 命名约定差异 (Destructor/Release, Constructor/Construct)
+  - 关键发现：T5 git history 与 T1 missing functions 几乎无交集 (仅 2/2831) — git history 跟踪已实现函数的重命名，不覆盖未实现函数
+  - 合并逻辑：检查 ALL T3 candidates (非仅 top), 匹配 call-graph 地址 → HIGH；call-graph 仅 → MEDIUM
+  - 工具：`tools/t6_merge.py`（可重复生成）
 - **2026-06-19**: Task 18 — 中大型 sub_* 函数批量存根生成 (50-500 bytes)
   - **1203 函数存根** 生成到 `src/_generated/`（29 个 .cpp，11,088 行）
   - 规模分布：269 (200-500B) + 355 (100-199B) + 579 (50-99B)

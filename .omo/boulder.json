@@ -46,10 +46,23 @@
           "status": "completed",
           "ended_at": "2026-06-20T06:27:02.857Z",
           "elapsed_ms": 30606
+        },
+        "todo:8": {
+          "task_key": "todo:8",
+          "task_label": "8",
+          "task_title": "Resolve double annotations (661 conflicting)",
+          "session_id": "opencode:ses_11c494be7ffeqJfeLZpqbHSKqw",
+          "agent": "Sisyphus-Junior",
+          "category": "deep",
+          "updated_at": "2026-06-20T06:52:31.936Z",
+          "started_at": "2026-06-20T06:49:50.036Z",
+          "status": "completed",
+          "ended_at": "2026-06-20T06:52:31.936Z",
+          "elapsed_ms": 161900
         }
       },
       "session_origins": {},
-      "updated_at": "2026-06-20T06:27:02.857Z"
+      "updated_at": "2026-06-20T06:52:31.936Z"
     }
   },
   "session_origins": {},
@@ -79,7 +92,20 @@
       "status": "completed",
       "ended_at": "2026-06-20T06:27:02.857Z",
       "elapsed_ms": 30606
+    },
+    "todo:8": {
+      "task_key": "todo:8",
+      "task_label": "8",
+      "task_title": "Resolve double annotations (661 conflicting)",
+      "session_id": "opencode:ses_11c494be7ffeqJfeLZpqbHSKqw",
+      "agent": "Sisyphus-Junior",
+      "category": "deep",
+      "updated_at": "2026-06-20T06:52:31.936Z",
+      "started_at": "2026-06-20T06:49:50.036Z",
+      "status": "completed",
+      "ended_at": "2026-06-20T06:52:31.936Z",
+      "elapsed_ms": 161900
     }
   },
-  "updated_at": "2026-06-20T06:27:02.857Z"
+  "updated_at": "2026-06-20T06:52:31.936Z"
 }

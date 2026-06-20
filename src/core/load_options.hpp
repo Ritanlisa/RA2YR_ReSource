@@ -31,7 +31,7 @@ struct FileEntryClass {
 
 // ============================================================================
 // LoadOptions — save/load game dialog controller (~31 methods)
-// IDA: 0x558740 (Construct), 0x558790 (Cleanup), 0x5587F0 (Run)
+// 0x558740 (Construct), 0x558790 (Cleanup), 0x5587F0 (Run)
 // vtable: 0x7ED2E4
 // Used by: Options::DlgProc, CampaignMenu::DlgProc, MenuSelect, SkirmishMapGen
 // ============================================================================
@@ -42,7 +42,7 @@ public:
 
     // --- Lifecycle ---
     // IDA 0x558740: Construct — init fields + DynamicVectorClass
-    void Construct();  // IDA: 0x558740
+    void Construct();  // 0x558740
 
     // IDA 0x558790: Cleanup — free entries, reset vector
     void Cleanup();  // 0x558790

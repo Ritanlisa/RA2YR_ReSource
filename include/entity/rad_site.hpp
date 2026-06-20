@@ -43,30 +43,22 @@ public:
     virtual AbstractType __stdcall whatAmI() const override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual int objectSize() const override; // IDA: NOT_FOUND
 
-    // 0x65B4C0 SetBaseCell
-    void SetBaseCell(CellStruct* cell);  // IDA: 0x65B4C0
-    // 0x65B4B0 GetSpread
-    int GetSpread() const;  // IDA: 0x65B4B0
-    // 0x65B4D0 SetSpread
-    void SetSpread(int cells);  // IDA: 0x65B4D0
-    // 0x65B4F0 SetRadLevel
-    void SetRadLevel(int level);  // IDA: 0x65B4F0
+    void SetBaseCell(CellStruct* cell);  // 0x65B4C0
+    int GetSpread() const;  // 0x65B4B0
+    void SetSpread(int cells);  // 0x65B4D0
+    void SetRadLevel(int level);  // 0x65B4F0
     // 0x65B510 GetRadLevel
-    int GetRadLevel() const;  // IDA: 0x65B8F0
-    // 0x65B530 Add
-    void Add(int radLevel);  // IDA: 0x65B530
+    int GetRadLevel() const;  // 0x65B8F0
+    void Add(int radLevel);  // 0x65B530
     // 0x65B580 Activate
-    void Activate();  // IDA: 0x65BB50
-     // IDA: 0x65B8F0 GetRadLevelAt
-    int GetRadLevelAt(CellStruct* cell);  // IDA: 0x65B8F0
-    // 0x65B9C0 Radiate
-    void Radiate();  // IDA: 0x65B9C0
-     // IDA: 0x65BB50 Deactivate
-    void Deactivate();  // IDA: 0x65BB50
-    // 0x65BD00 DecreaseRadiation
-    void DecreaseRadiation();  // IDA: 0x65BD00
-    // 0x65BE90 DecreaseLight
-    void DecreaseLight();  // IDA: 0x65BE90
+    void Activate();  // 0x65BB50
+     // 0x65B8F0 GetRadLevelAt
+    int GetRadLevelAt(CellStruct* cell);  // 0x65B8F0
+    void Radiate();  // 0x65B9C0
+     // 0x65BB50 Deactivate
+    void Deactivate();  // 0x65BB50
+    void DecreaseRadiation();  // 0x65BD00
+    void DecreaseLight();  // 0x65BE90
 
     // IDA ctor 0x65B1E0 member layout
     LightSourceClass*  LightSource;        // +0x24 (this+9)

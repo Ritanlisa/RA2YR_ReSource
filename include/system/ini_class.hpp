@@ -80,7 +80,7 @@ public:
     CCINIClass(); // 0x535B30
     virtual ~CCINIClass(); // 0x501160
 
-    bool Load(CCFileClass* file, bool unk1, bool unk2) override;  // IDA: 0x4741F0
+    bool Load(CCFileClass* file, bool unk1, bool unk2) override;  // 0x4741F0
 
     CCFileClass* GetFile() const; // IDA: NOT_FOUND
 
@@ -88,8 +88,8 @@ public:
     const char* GetStringByIndex(const char* section, int index);  // 0x526CC0
     int BinarySearchSection(const char* section);  // 0x526810
 
-    const char* GetString(const char* section, const char* key, const char* def, char* buf, int bufSize) override;  // IDA: 0x528A10
-    int GetInt(const char* section, const char* key, int def) override;  // IDA: 0x529820
+    const char* GetString(const char* section, const char* key, const char* def, char* buf, int bufSize) override;  // 0x528A10
+    int GetInt(const char* section, const char* key, int def) override;  // 0x529820
 
 protected:
     CCFileClass* ccFile;

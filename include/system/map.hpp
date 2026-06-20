@@ -138,14 +138,14 @@ class MapClass : public GScreenClass
 public:
     static constexpr int kMaxCells = 0x40000;
 
-    virtual int32_t __stdcall IsVisible(CellStruct cell) { return 0; }  // IDA: 0x4A5110
+    virtual int32_t __stdcall IsVisible(CellStruct cell) { return 0; }  // 0x4A5110
 
     virtual ~MapClass() = default;  // 0x5652C0
 
-    virtual void AllocateCells() {}  // IDA: 0x5D80B0
+    virtual void AllocateCells() {}  // 0x5D80B0
     virtual void DestructCells() {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual void ConstructCells() {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual void PointerGotInvalid(AbstractClass* ptr, bool unk) {}  // IDA: 0x4A7900
+    virtual void PointerGotInvalid(AbstractClass* ptr, bool unk) {}  // 0x4A7900
     virtual bool DraggingInProgress() { return false; } // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual void UpdateCrates() {} // IDA: NOT_FOUND
     virtual void CreateEmptyMap(const RectangleStruct& map_rect, bool reuse, int8_t n_level, bool unk2) {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
@@ -214,8 +214,8 @@ public:
     void RemoveContentAt(CellStruct* coords, TechnoClass* content); // IDA: NOT_FOUND
 
     bool IsWithinUsableArea(const CellStruct& cell, bool check_level) const;  // 0x578460
-    bool IsWithinUsableArea(CellClass* cell, bool check_level) const;  // IDA: 0x578460
-    bool IsWithinUsableArea(const CoordStruct& coords) const;  // IDA: 0x578460
+    bool IsWithinUsableArea(CellClass* cell, bool check_level) const;  // 0x578460
+    bool IsWithinUsableArea(const CoordStruct& coords) const;  // 0x578460
     bool CoordinatesLegal(const CellStruct& cell) const;  // 0x568300
 
     CoordStruct* FindFirstFirestorm(CoordStruct* out, const CoordStruct& start, const CoordStruct& end, const HouseClass* house = nullptr) const;  // 0x5880A0

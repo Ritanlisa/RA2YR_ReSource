@@ -38,7 +38,7 @@ public:
     void queueSendPacket(const uint8_t*, int32_t, int32_t);                                   // 0x48B410
     void* allocPacketSlot();                                                                  // 0x48B750
     uint32_t initQueue(uint32_t);                                                             // 0x48BA10
-    void sendAck();  // IDA: 0x48BF40
+    void sendAck();  // 0x48BF40
     void receivePacket();                                                                     // 0x48C040
     void processTileUpdate();                                                                 // 0x48C320
     void serviceSendQueue();                                                                  // 0x48C3E0
@@ -61,10 +61,10 @@ public:
     virtual bool Open() override; // 0x69BC20
 
     virtual HRESULT __stdcall QueryInterface(const IID&, void**) override; // 0x53F850
-    bool initConnection();  // IDA: 0x48BE60
-    bool closeConnection();  // IDA: 0x69BC20
-    bool send(const uint8_t*, int32_t);  // IDA: 0x53F5D0
-    int32_t receive(uint8_t*, int32_t);  // IDA: 0x53F650
+    bool initConnection();  // 0x48BE60
+    bool closeConnection();  // 0x69BC20
+    bool send(const uint8_t*, int32_t);  // 0x53F5D0
+    int32_t receive(uint8_t*, int32_t);  // 0x53F650
 
     uint32_t  Socket;
     uint32_t  RemoteAddress[3];
@@ -85,16 +85,16 @@ public:
     int32_t ReceivePacket(uint8_t*, int32_t);                          // 0x541070
     bool IsIPXAvailable() const;                                       // 0x5424A0
 
-    void init();  // IDA: 0x48BA90
+    void init();  // 0x48BA90
     void processPacket();                                             // 0x5409F0
     IPXConnClass* createConnection();                                 // 0x540D40
     void destroyConnection(IPXConnClass*);                             // 0x540D60
-    void release();  // IDA: 0x5414C0
+    void release();  // 0x5414C0
     int32_t GetConnectionCount();                                      // 0x542330
-    const char* GetAddress(char*);  // IDA: 0x542350
+    const char* GetAddress(char*);  // 0x542350
     void SetAddress(const char*);                                     // 0x5423C0
     uint32_t GetQueueSize();                                          // 0x542450
-    int32_t CheckStatus();  // IDA: 0x5424A0
+    int32_t CheckStatus();  // 0x5424A0
     void ProcessQueue();                                              // 0x542520
     void Flush();                                                     // 0x542EC0
     int32_t getPlayerName();                                          // 0x543100
@@ -112,7 +112,7 @@ public:
     virtual bool Open() override; // 0x5F1BC0
 
     bool Init();
-    bool Connect();  // IDA: 0x48C5A0
+    bool Connect();  // 0x48C5A0
     void FlushCom();                                        // 0x5F1F00
     bool SendPacket(const uint8_t*, int32_t);                // 0x5F1F70
     bool DetectModem();                                     // 0x5F1FA0
@@ -132,12 +132,12 @@ public:
 
     bool initConnection();                                  // 0x5EF100
     bool closeConnection();                                 // 0x5EF170
-    bool Init();  // IDA: 0x5F16E0
-    bool Connect();  // IDA: 0x5F1BC0
+    bool Init();  // 0x5F16E0
+    bool Connect();  // 0x5F1BC0
     void FlushCom(); // IDA: NOT_FOUND
-    bool SendPacket(const uint8_t*, int32_t);  // IDA: 0x5F1F70
-    bool DetectModem();  // IDA: 0x5F1FA0
-    bool Negotiate();  // IDA: 0x5F3170
+    bool SendPacket(const uint8_t*, int32_t);  // 0x5F1F70
+    bool DetectModem();  // 0x5F1FA0
+    bool Negotiate();  // 0x5F3170
 
 };
 

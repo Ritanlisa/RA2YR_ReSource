@@ -36,7 +36,7 @@ public:
     virtual void calculateChecksum(void* checksum) const {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     // Construction
-    TeamTypeClass() noexcept { }                             // IDA: 0x4C98B0 (Construct)
+    TeamTypeClass() noexcept { }                             // 0x4C98B0 (Construct)
     void ddtor();  // 0x6F20D0
 
     // Methods

@@ -244,7 +244,7 @@ class MultiplayerModeVector
 public:
     virtual ~MultiplayerModeVector() = default;  // 0x5D88B0
 
-    virtual void Destruct();  // IDA: 0x5D88B0
+    virtual void Destruct();  // 0x5D88B0
 
 };
 // 1 methods in IDA
@@ -253,7 +253,7 @@ class MultiplayerModeVector2
 public:
     virtual ~MultiplayerModeVector2() = default;  // 0x5D8900
 
-    virtual void Destruct();  // IDA: 0x5D8900
+    virtual void Destruct();  // 0x5D8900
 
 };
 // 2 methods in IDA
@@ -304,7 +304,7 @@ class MultiplayerTeamVector
 public:
     virtual ~MultiplayerTeamVector() = default;  // 0x5D8860
 
-    virtual void Destruct();  // IDA: 0x5D8860
+    virtual void Destruct();  // 0x5D8860
 
 };
 // 1 methods in IDA

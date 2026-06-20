@@ -50,7 +50,7 @@ public:
     virtual int32_t AddRef();  // 0x5360D0
     virtual int32_t Release();  // 0x5360F0
     virtual const char* GetName() const override; // IDA: NOT_FOUND
-    virtual const wchar_t* GetUIName() const override;  // IDA: 0x484FF0
+    virtual const wchar_t* GetUIName() const override;  // 0x484FF0
     virtual void Execute(uint32_t context) const override; // IDA: NOT_FOUND
 
     int32_t     AddTeamCommand_field_00;       // 0x00
@@ -70,7 +70,7 @@ public:
     virtual int32_t AddRef();  // 0x5362B0
     virtual int32_t Release();  // 0x5362D0
     virtual const char* GetName() const override; // IDA: NOT_FOUND
-    virtual const wchar_t* GetUIName() const override;  // IDA: 0x484FF0
+    virtual const wchar_t* GetUIName() const override;  // 0x484FF0
     virtual void Execute(uint32_t context) const override; // IDA: NOT_FOUND
 
     int32_t     TauntCommandClass_field_00;       // 0x00
@@ -90,7 +90,7 @@ public:
     virtual int32_t AddRef();  // 0x537DE0
     virtual int32_t Release();  // 0x537DF0
     virtual const char* GetName() const override; // IDA: NOT_FOUND
-    virtual const wchar_t* GetUIName() const override;  // IDA: 0x484FF0
+    virtual const wchar_t* GetUIName() const override;  // 0x484FF0
     virtual void Execute(uint32_t context) const override; // IDA: NOT_FOUND
 
     int32_t     PageUserCommandClass_field_00;       // 0x00
@@ -110,7 +110,7 @@ public:
     virtual int32_t AddRef();  // 0x537F20
     virtual int32_t Release();  // 0x537F30
     virtual const char* GetName() const override; // IDA: NOT_FOUND
-    virtual const wchar_t* GetUIName() const override;  // IDA: 0x484FF0
+    virtual const wchar_t* GetUIName() const override;  // 0x484FF0
     virtual void Execute(uint32_t context) const override; // IDA: NOT_FOUND
 
     int32_t     DeleteCommandClass_field_00;       // 0x00
@@ -146,7 +146,7 @@ public:
 
     virtual void Constructor();  // 0x537B40
     virtual int32_t AddRef();  // 0x537B50
-    virtual void ddtor();  // IDA: 0x537B60
+    virtual void ddtor();  // 0x537B60
     virtual const char* GetName() const override; // IDA: NOT_FOUND
     virtual void Execute(uint32_t context) const override;  // 0x537BA0
 
@@ -199,7 +199,7 @@ class CursorAnim
 public:
     virtual ~CursorAnim() = default; // IDA: NOT_FOUND
 
-    virtual void Load() {} // IDA: 0x6D1800
+    virtual void Load() {} // 0x6D1800
 
 };
 // 3 methods in IDA
@@ -208,9 +208,9 @@ class DeleteAndZero
 public:
     virtual ~DeleteAndZero() = default; // IDA: NOT_FOUND
 
-    virtual void OrFree() {} // IDA: 0x624480
-    virtual void Alt2() {} // IDA: 0x7B5340
-    virtual void Alt() {} // IDA: 0x7B6760
+    virtual void OrFree() {} // 0x624480
+    virtual void Alt2() {} // 0x7B5340
+    virtual void Alt() {} // 0x7B6760
 
     uint8_t DeleteAndZero_field_0x04[4];
     uint8_t DeleteAndZero_field_0x08[4];
@@ -221,7 +221,7 @@ class ScreenCapture
 public:
     virtual ~ScreenCapture() = default; // IDA: NOT_FOUND
 
-    virtual void Frame() {} // IDA: 0x55CC20
+    virtual void Frame() {} // 0x55CC20
 
 };
 

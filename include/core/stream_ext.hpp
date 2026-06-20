@@ -59,11 +59,11 @@ public:
     // IDA 0x48B2A0 area
     void ReadIntArray(int32_t* arr, int32_t count);  // 0x49FB70
     // IDA 0x48B2A0 area
-    int32_t ReadInt();  // IDA: 0x49FB70
+    int32_t ReadInt();  // 0x49FB70
     // IDA 0x48B2A0 area
     void WriteInt(int32_t val);  // 0x67A4A0
     // IDA 0x48B2A0 area
-    void WriteBytes(const void* data, int32_t size);  // IDA: 0x411310
+    void WriteBytes(const void* data, int32_t size);  // 0x411310
     // IDA 0x48B2A0 area
     int32_t ReadBytes(void* buf, int32_t size);  // 0x774B30
     // IDA 0x48B2A0 area

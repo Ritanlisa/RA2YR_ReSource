@@ -23,7 +23,7 @@ class VoxelAnimTypeClass;
 struct VoxLib
 {
     void Start();  // 0x7CD80F
-    bool Loaded();  // IDA: 0x544C80
+    bool Loaded();  // 0x544C80
     void Clear();
     void InitLimits( // IDA: UNMATCHED — no_callgraph_match, no_git_history
         int32_t hva_min_x, int32_t hva_min_y, int32_t hva_min_z,
@@ -66,7 +66,7 @@ struct VoxLib
 
 struct MotLib
 {
-    bool Loaded();   // IDA: 0x544C80
+    bool Loaded();   // 0x544C80
     int32_t Frames;
     int32_t Layers;
     int32_t MotLib_field_8;
@@ -178,7 +178,7 @@ public:
     virtual ~VoxelAnimClass() override = default;  // 0x74AAD0
 
     virtual AbstractType __stdcall WhatAmI() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual int Size() const;  // IDA: 0x454190
+    virtual int Size() const;  // 0x454190
 
     uint32_t                align_AC;
     BounceClass             Bounce;

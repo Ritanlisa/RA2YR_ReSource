@@ -35,9 +35,9 @@ public:
     virtual void calculateChecksum(void* checksum) const {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     // Construction
-    TActionClass() noexcept { }                               // IDA: 0x71E6A0
+    TActionClass() noexcept { }                               // 0x71E6A0
     void Destructor();                                        // 0x6E4660
-    void ddtor() { Destructor(); }                           // IDA: 0x6E3D70
+    void ddtor() { Destructor(); }                           // 0x6E3D70
 
     // Save/Load
     void SaveLoad_Prefix(IStream*);                          // 0x6E3DB0
@@ -101,9 +101,9 @@ public:
     void SpawnMeteorShower();                                // 0x6E2C40
 
     // Stubs
-    void Stub() { }                                          // IDA: 0x6E4650
-    void StubReturn47() { }                                  // IDA: 0x6E4640
-    void StubReturn148() { }                                 // IDA: 0x6E4630
+    void Stub() { }                                          // 0x6E4650
+    void StubReturn47() { }                                  // 0x6E4640
+    void StubReturn148() { }                                 // 0x6E4630
 
     int32_t     idxArray;           // +0x24 (this+36)
     void*       TActionClass_field_28;           // +0x28 (this+40)

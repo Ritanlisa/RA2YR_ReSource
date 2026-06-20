@@ -61,8 +61,8 @@ public:
     void SaveManager(IStream*);                                  // 0x6B1300
 
     // Stubs
-    int StubReturn72() const { return 72; }                       // IDA: 0x6B1380
-    int StubReturn100() const { return 100; }                     // IDA: 0x6B1370
+    int StubReturn72() const { return 72; }                       // 0x6B1380
+    int StubReturn100() const { return 100; }                     // 0x6B1370
 
     TechnoClass*                master;             // +0x24 (this+36)
     HouseClass*                 house;              // +0x28 (this+40)

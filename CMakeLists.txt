@@ -46,6 +46,8 @@ if(WIN32)
         app/ddraw_init.cpp
         app/cmdline.cpp
         app/resource.rc
+        src/_generated/named_free_stubs.cpp
+        src/_generated/sub_stubs.cpp
         ${SOURCES}
     )
 

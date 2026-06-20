@@ -27,7 +27,7 @@ public:
 
     // Construction
     BombClass();                                                 // 0x4385D0 (AbstractClass)
-    void ddtor();  // IDA: 0x438B00
+    void ddtor();  // 0x438B00
 
     // Methods
     static void InitPool();                                      // 0x438550

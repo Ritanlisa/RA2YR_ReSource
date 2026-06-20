@@ -44,249 +44,249 @@ struct RectangleStruct;
 
 // ======== Global Functions ========
 
-               int  EndFrameAudioMixer();                  // IDA: 0x4010c0
-              int*  LoadSampleAudioMixer();                  // IDA: 0x401c00
-               int  SetupSampleAudioMixer();                  // IDA: 0x407100
-               int  EndBufferMixer();                  // IDA: 0x407150
-               int  RequestBufferMixer();                  // IDA: 0x407170
-               int  SetRateMixerSample();                  // IDA: 0x4071a0
-               int  ThreadAudioMixerMain();                  // IDA: 0x407b60
-               int  LoadFileClassToBuffer();                  // IDA: 0x4a3970
-              void  LoadTheaterClassMIX();                  // IDA: 0x5349c0
-               int  AccumulateMIXFileIndex();                  // IDA: 0x544e30
-              int*  InsertIntoHashTree();                  // IDA: 0x5b3ff0
-              void  RehashGenericHashMap();                  // IDA: 0x5e5f10
-               int  ComputeHashModPrime();                  // IDA: 0x620cd0
-               int  HashStringMod31();                  // IDA: 0x626660
-            float*  ConvertMatrixToQuaternion();                  // IDA: 0x646730
-               int  ComputeNetworkFrameCRC();                  // IDA: 0x64dab0
-               int  ComputeHash();                  // IDA: 0x64de80
-          wchar_t*  GetStringCSF();                  // IDA: 0x734e60
-              void  ConvertDateMonthNames();                  // IDA: 0x779230
-               int  DSP_AudioMixBuffers();                  // IDA: 0x7bf740
-               int  ___crtGetStringTypeA();                  // IDA: 0x7d9729
-               int  ___crtGetStringTypeW();                  // IDA: 0x7da0f1
-      unsigned int  ConvertRGB24to556();                  // IDA: 0x7de200
-      unsigned int  ConvertRGB24toRGB565();                  // IDA: 0x7de53a
-      unsigned int  ConvertRGB24to655();                  // IDA: 0x7de87a
-      unsigned int  ConvertRGB24to565();                  // IDA: 0x7debba
+               int  EndFrameAudioMixer();                  // 0x4010C0
+              int*  LoadSampleAudioMixer();                  // 0x401C00
+               int  SetupSampleAudioMixer();                  // 0x407100
+               int  EndBufferMixer();                  // 0x407150
+               int  RequestBufferMixer();                  // 0x407170
+               int  SetRateMixerSample();                  // 0x4071A0
+               int  ThreadAudioMixerMain();                  // 0x407B60
+               int  LoadFileClassToBuffer();                  // 0x4A3970
+              void  LoadTheaterClassMIX();                  // 0x5349C0
+               int  AccumulateMIXFileIndex();                  // 0x544E30
+              int*  InsertIntoHashTree();                  // 0x5B3FF0
+              void  RehashGenericHashMap();                  // 0x5E5F10
+               int  ComputeHashModPrime();                  // 0x620CD0
+               int  HashStringMod31();                  // 0x626660
+            float*  ConvertMatrixToQuaternion();                  // 0x646730
+               int  ComputeNetworkFrameCRC();                  // 0x64DAB0
+               int  ComputeHash();                  // 0x64DE80
+          wchar_t*  GetStringCSF();                  // 0x734E60
+              void  ConvertDateMonthNames();                  // 0x779230
+               int  DSP_AudioMixBuffers();                  // 0x7BF740
+               int  ___crtGetStringTypeA();                  // 0x7D9729
+               int  ___crtGetStringTypeW();                  // 0x7DA0F1
+      unsigned int  ConvertRGB24to556();                  // 0x7DE200
+      unsigned int  ConvertRGB24toRGB565();                  // 0x7DE53A
+      unsigned int  ConvertRGB24to655();                  // 0x7DE87A
+      unsigned int  ConvertRGB24to565();                  // 0x7DEBBA
 
 // ── AlphaShapeClass ────────────────────────────────────────
 
-               int  AlphaShapeClass_SD_vt03();                  // IDA: 0x420d40
-               int  AlphaShapeClass_SD_vt05();                  // IDA: 0x420de0
-               int  AlphaShapeClass_SD_vt06();                  // IDA: 0x420e40
+               int  AlphaShapeClass_SD_vt03();                  // 0x420D40
+               int  AlphaShapeClass_SD_vt05();                  // 0x420DE0
+               int  AlphaShapeClass_SD_vt06();                  // 0x420E40
 
 // ── AudioMixer ─────────────────────────────────────────────
 
-               int  AudioMixer_PlayBuffer();                  // IDA: 0x4061d0
-               int  AudioMixer_Pump();                  // IDA: 0x753620
-               int  AudioMixer_RequestOrEndBuffer();                  // IDA: 0x406270
-               int  AudioMixer_Shutdown();                  // IDA: 0x406e80
+               int  AudioMixer_PlayBuffer();                  // 0x4061D0
+               int  AudioMixer_Pump();                  // 0x753620
+               int  AudioMixer_RequestOrEndBuffer();                  // 0x406270
+               int  AudioMixer_Shutdown();                  // 0x406E80
 
 // ── COMObject ──────────────────────────────────────────────
 
-               int  COMObject_GetStringValue();                  // IDA: 0x55ab40
+               int  COMObject_GetStringValue();                  // 0x55AB40
 
 // ── CRC32 ──────────────────────────────────────────────────
 
-               int  CRC32_Compute();                  // IDA: 0x4a1fb0
+               int  CRC32_Compute();                  // 0x4A1FB0
 
 // ── Cell ───────────────────────────────────────────────────
 
-              char  Cell_CanPlaceBuilding();                  // IDA: 0x43b4c0
-              char  Cell_CreateCrater();                  // IDA: 0x6d2790
-               int  Cell_GetAdjacencyFlags();                  // IDA: 0x579b70
-               int  Cell_GetAdjacentPassableMask();                  // IDA: 0x6d8700
-               int  Cell_GetGroundHeight();                  // IDA: 0x578080
-              bool  Cell_IsPassable();                  // IDA: 0x586360
-              char  Cell_IsPassableAllied();                  // IDA: 0x578ad0
-               int  Cell_PosToLinearIndex();                  // IDA: 0x56bc50
-              char  Cell_SetTileType();                  // IDA: 0x56eb80
-              char  Cell_UpdateTileType();                  // IDA: 0x56e990
+              char  Cell_CanPlaceBuilding();                  // 0x43B4C0
+              char  Cell_CreateCrater();                  // 0x6D2790
+               int  Cell_GetAdjacencyFlags();                  // 0x579B70
+               int  Cell_GetAdjacentPassableMask();                  // 0x6D8700
+               int  Cell_GetGroundHeight();                  // 0x578080
+              bool  Cell_IsPassable();                  // 0x586360
+              char  Cell_IsPassableAllied();                  // 0x578AD0
+               int  Cell_PosToLinearIndex();                  // 0x56BC50
+              char  Cell_SetTileType();                  // 0x56EB80
+              char  Cell_UpdateTileType();                  // 0x56E990
 
 // ── CellClass ──────────────────────────────────────────────
 
-              char  CellClass_CheckTilePassable();                  // IDA: 0x57ccf0
-              char  CellClass_CheckTilePassable2();                  // IDA: 0x57baa0
-               int  CellClass_GetByte284();                  // IDA: 0x6d6ad0
-               int  CellClass_GetTileData();                  // IDA: 0x56bcd0
-              char  CellClass_SetTileType13();                  // IDA: 0x572b80
-              char  CellClass_SetTileType14();                  // IDA: 0x572c90
-               int  CellClass_SetWallOwner();                  // IDA: 0x47d210
-               int  CellClass_SpiralFindClosest();                  // IDA: 0x5865f0
-              char  CellClass_UpdateTerrain();                  // IDA: 0x56f8b0
-              char  CellClass_UpdateTileVariant2();                  // IDA: 0x56fc80
-              char  CellClass_UpdateVariant3();                  // IDA: 0x56ef50
-              char  CellClass_UpdateVariant4();                  // IDA: 0x56f2f0
-              char  CellClass_UpdateVariant5();                  // IDA: 0x572da0
-              char  CellClass_UpdateVariant6();                  // IDA: 0x573170
-              char  CellClass_UpdateVariant7();                  // IDA: 0x572440
-              char  CellClass_UpdateVariant8();                  // IDA: 0x5727e0
+              char  CellClass_CheckTilePassable();                  // 0x57CCF0
+              char  CellClass_CheckTilePassable2();                  // 0x57BAA0
+               int  CellClass_GetByte284();                  // 0x6D6AD0
+               int  CellClass_GetTileData();                  // 0x56BCD0
+              char  CellClass_SetTileType13();                  // 0x572B80
+              char  CellClass_SetTileType14();                  // 0x572C90
+               int  CellClass_SetWallOwner();                  // 0x47D210
+               int  CellClass_SpiralFindClosest();                  // 0x5865F0
+              char  CellClass_UpdateTerrain();                  // 0x56F8B0
+              char  CellClass_UpdateTileVariant2();                  // 0x56FC80
+              char  CellClass_UpdateVariant3();                  // 0x56EF50
+              char  CellClass_UpdateVariant4();                  // 0x56F2F0
+              char  CellClass_UpdateVariant5();                  // 0x572DA0
+              char  CellClass_UpdateVariant6();                  // 0x573170
+              char  CellClass_UpdateVariant7();                  // 0x572440
+              char  CellClass_UpdateVariant8();                  // 0x5727E0
 
 // ── Coord ──────────────────────────────────────────────────
 
-              int*  Coord_To_ScreenRaw();                  // IDA: 0x6d1f10
+              int*  Coord_To_ScreenRaw();                  // 0x6D1F10
 
 // ── CoordList ──────────────────────────────────────────────
 
-              int*  CoordList_GetBounds();                  // IDA: 0x4a94f0
+              int*  CoordList_GetBounds();                  // 0x4A94F0
 
 // ── CoordinateTables ───────────────────────────────────────
 
-              int*  CoordinateTables_Init();                  // IDA: 0x561910
+              int*  CoordinateTables_Init();                  // 0x561910
 
 // ── Factory ────────────────────────────────────────────────
 
-              char  Factory_CalculateExitCell();                  // IDA: 0x718b70
-               int  Factory_IdleHandler();                  // IDA: 0x731cd0
+              char  Factory_CalculateExitCell();                  // 0x718B70
+               int  Factory_IdleHandler();                  // 0x731CD0
 
 // ── FactoryClass ───────────────────────────────────────────
 
-               int  FactoryClass_LoadFromStream();                  // IDA: 0x4ca270
-               int  FactoryClass_Seek();                  // IDA: 0x4ca3c0
-               int  FactoryClass_ddtor();                  // IDA: 0x4ca230
+               int  FactoryClass_LoadFromStream();                  // 0x4CA270
+               int  FactoryClass_Seek();                  // 0x4CA3C0
+               int  FactoryClass_ddtor();                  // 0x4CA230
 
 // ── FileFind ───────────────────────────────────────────────
 
-            HANDLE  FileFind_CloseHandle();                  // IDA: 0x47b130
+            HANDLE  FileFind_CloseHandle();                  // 0x47B130
 
 // ── FileSystem ─────────────────────────────────────────────
 
-              void  FileSystem_CleanupTrees();                  // IDA: 0x72d350
-              void  FileSystem_InitPipShapes();                  // IDA: 0x5f76b0
-               int  FileSystem_ProcessNextFileExtension();                  // IDA: 0x626da0
+              void  FileSystem_CleanupTrees();                  // 0x72D350
+              void  FileSystem_InitPipShapes();                  // 0x5F76B0
+               int  FileSystem_ProcessNextFileExtension();                  // 0x626DA0
 
 // ── FileTree ───────────────────────────────────────────────
 
-              void  FileTree_CleanupAll();                  // IDA: 0x730100
+              void  FileTree_CleanupAll();                  // 0x730100
 
 // ── GameConfig ─────────────────────────────────────────────
 
-             char*  GameConfig_ComputeCRC();                  // IDA: 0x5e84d0
-               int  GameConfig_ComputeHash();                  // IDA: 0x679d90
+             char*  GameConfig_ComputeCRC();                  // 0x5E84D0
+               int  GameConfig_ComputeHash();                  // 0x679D90
 
 // ── INIClass ───────────────────────────────────────────────
 
-               int  INIClass_ReadCoord();                  // IDA: 0x474620
-               int  INIClass_ReadInt();                  // IDA: 0x5278f0
+               int  INIClass_ReadCoord();                  // 0x474620
+               int  INIClass_ReadInt();                  // 0x5278F0
 
 // ── LinkedList ─────────────────────────────────────────────
 
-              char  LinkedList_LoadScenarioMixFiles();                  // IDA: 0x4791f0
+              char  LinkedList_LoadScenarioMixFiles();                  // 0x4791F0
 
 // ── Map ────────────────────────────────────────────────────
 
-      unsigned int  Map_IsCellFlag();                  // IDA: 0x535be0
+      unsigned int  Map_IsCellFlag();                  // 0x535BE0
 
 // ── MapClass ───────────────────────────────────────────────
 
-               int  MapClass_CalcVisibleCellRange();                  // IDA: 0x506d50
-              char  MapClass_CheckCellsBuildable();                  // IDA: 0x56e7c0
-               int  MapClass_Cleanup();                  // IDA: 0x594700
-              int*  MapClass_FindFirstFirestorm();                  // IDA: 0x5880a0
-               int  MapClass_FindPassableNeighbor();                  // IDA: 0x5a17f0
-               int  MapClass_GetTileDataField14();                  // IDA: 0x5a00c0
-              char  MapClass_InitTileData();                  // IDA: 0x57a0c0
-               int  MapClass_IsCellPassable();                  // IDA: 0x5656d0
-               int  MapClass_SetObstruction();                  // IDA: 0x5a0090
-               int  MapClass_TransitionCliff();                  // IDA: 0x574780
-               int  MapClass_TriggerEVA();                  // IDA: 0x57b790
-               int  MapClass_UnselectAll_ClearLimboLaunchers();                  // IDA: 0x48dc90
-               int  MapClass_UpdateLightingPostProcess();                  // IDA: 0x4ae4c0
+               int  MapClass_CalcVisibleCellRange();                  // 0x506D50
+              char  MapClass_CheckCellsBuildable();                  // 0x56E7C0
+               int  MapClass_Cleanup();                  // 0x594700
+              int*  MapClass_FindFirstFirestorm();                  // 0x5880A0
+               int  MapClass_FindPassableNeighbor();                  // 0x5A17F0
+               int  MapClass_GetTileDataField14();                  // 0x5A00C0
+              char  MapClass_InitTileData();                  // 0x57A0C0
+               int  MapClass_IsCellPassable();                  // 0x5656D0
+               int  MapClass_SetObstruction();                  // 0x5A0090
+               int  MapClass_TransitionCliff();                  // 0x574780
+               int  MapClass_TriggerEVA();                  // 0x57B790
+               int  MapClass_UnselectAll_ClearLimboLaunchers();                  // 0x48DC90
+               int  MapClass_UpdateLightingPostProcess();                  // 0x4AE4C0
 
 // ── MapCoords ──────────────────────────────────────────────
 
-               int  MapCoords_Init();                  // IDA: 0x6b5240
+               int  MapCoords_Init();                  // 0x6B5240
 
 // ── MapData ────────────────────────────────────────────────
 
-               int  MapData_InitHeights();                  // IDA: 0x45b1c0
+               int  MapData_InitHeights();                  // 0x45B1C0
 
 // ── MapSeedClass ───────────────────────────────────────────
 
-          wchar_t*  MapSeedClass_Generate();                  // IDA: 0x597f80
-          wchar_t*  MapSeedClass_GetCell();                  // IDA: 0x597fa0
-          wchar_t*  MapSeedClass_SetCell();                  // IDA: 0x597fc0
-          wchar_t*  MapSeedClass_Validate();                  // IDA: 0x597fe0
-              bool  MapSeedClass_ddtor();                  // IDA: 0x597d50
+          wchar_t*  MapSeedClass_Generate();                  // 0x597F80
+          wchar_t*  MapSeedClass_GetCell();                  // 0x597FA0
+          wchar_t*  MapSeedClass_SetCell();                  // 0x597FC0
+          wchar_t*  MapSeedClass_Validate();                  // 0x597FE0
+              bool  MapSeedClass_ddtor();                  // 0x597D50
 
 // ── MapSizeGameOption_WorldDominationTour ──────────────────
 
-         wchar_t**  MapSizeGameOption_WorldDominationTour_Read();                  // IDA: 0x767740
-               int  MapSizeGameOption_WorldDominationTour_ddtor();                  // IDA: 0x767800
+         wchar_t**  MapSizeGameOption_WorldDominationTour_Read();                  // 0x767740
+               int  MapSizeGameOption_WorldDominationTour_ddtor();                  // 0x767800
 
 // ── MixFile ────────────────────────────────────────────────
 
-              bool  MixFile_LoadAll();                  // IDA: 0x530460
+              bool  MixFile_LoadAll();                  // 0x530460
 
 // ── MixFileClass ───────────────────────────────────────────
 
-              void  MixFileClass_CleanupCache();                  // IDA: 0x69e210
-              void  MixFileClass_DestroyCache();                  // IDA: 0x69e180
+              void  MixFileClass_CleanupCache();                  // 0x69E210
+              void  MixFileClass_DestroyCache();                  // 0x69E180
 
 // ── Mixer ──────────────────────────────────────────────────
 
-               int  Mixer_RequestAllBuffers();                  // IDA: 0x4083d0
+               int  Mixer_RequestAllBuffers();                  // 0x4083D0
 
 // ── Radar ──────────────────────────────────────────────────
 
-               int  Radar_ScanWaypoints();                  // IDA: 0x692610
-              void  Radar_UpdateReveal();                  // IDA: 0x4adcd0
+               int  Radar_ScanWaypoints();                  // 0x692610
+              void  Radar_UpdateReveal();                  // 0x4ADCD0
 
 // ── RadarClass ─────────────────────────────────────────────
 
-              void  RadarClass_Destru_vt50();                  // IDA: 0x652d90
-              bool  RadarClass_GetBlip();                  // IDA: 0x6a8420
+              void  RadarClass_Destru_vt50();                  // 0x652D90
+              bool  RadarClass_GetBlip();                  // 0x6A8420
 
 // ── Scenario ───────────────────────────────────────────────
 
-              HWND  Scenario_ClearScreen();                  // IDA: 0x684240
-              char  Scenario_EndGame();                  // IDA: 0x685dc0
-             short  Scenario_EndGameFlow();                  // IDA: 0x685670
-               int  Scenario_PreGameInit();                  // IDA: 0x5e7460
+              HWND  Scenario_ClearScreen();                  // 0x684240
+              char  Scenario_EndGame();                  // 0x685DC0
+             short  Scenario_EndGameFlow();                  // 0x685670
+               int  Scenario_PreGameInit();                  // 0x5E7460
 
 // ── ScenarioClass ──────────────────────────────────────────
 
-              bool  ScenarioClass_AnimateConstructionStage();                  // IDA: 0x5cc330
-              char  ScenarioClass_AssignStartPositions();                  // IDA: 0x5d6be0
-               int  ScenarioClass_CleanupTemporary();                  // IDA: 0x683eb0
-              char  ScenarioClass_ClearFlag();                  // IDA: 0x5d6790
-              char  ScenarioClass_Construct();                  // IDA: 0x686730
-             void*  ScenarioClass_CopyStartPositions();                  // IDA: 0x58bb30
-              char  ScenarioClass_LoadMap();                  // IDA: 0x686b20
-              char  ScenarioClass_LoadScenarioAndStart();                  // IDA: 0x683ab0
-    unsigned char*  ScenarioClass_ProcessIntroTimer();                  // IDA: 0x684180
-              char  ScenarioClass_ReadMapINI();                  // IDA: 0x689e90
-               int  ScenarioClass_UpdateLighting();                  // IDA: 0x53c280
-               int  ScenarioClass_sub_5D6430();                  // IDA: 0x5d6430
+              bool  ScenarioClass_AnimateConstructionStage();                  // 0x5CC330
+              char  ScenarioClass_AssignStartPositions();                  // 0x5D6BE0
+               int  ScenarioClass_CleanupTemporary();                  // 0x683EB0
+              char  ScenarioClass_ClearFlag();                  // 0x5D6790
+              char  ScenarioClass_Construct();                  // 0x686730
+             void*  ScenarioClass_CopyStartPositions();                  // 0x58BB30
+              char  ScenarioClass_LoadMap();                  // 0x686B20
+              char  ScenarioClass_LoadScenarioAndStart();                  // 0x683AB0
+    unsigned char*  ScenarioClass_ProcessIntroTimer();                  // 0x684180
+              char  ScenarioClass_ReadMapINI();                  // 0x689E90
+               int  ScenarioClass_UpdateLighting();                  // 0x53C280
+               int  ScenarioClass_sub_5D6430();                  // 0x5D6430
 
 // ── Sides ──────────────────────────────────────────────────
 
-               int  Sides_MixFileYuriFiles3();                  // IDA: 0x72fbc0
+               int  Sides_MixFileYuriFiles3();                  // 0x72FBC0
 
 // ── Tactical ───────────────────────────────────────────────
 
-               int  Tactical_InitMap();                  // IDA: 0x6dbd20
-              char  Tactical_MouseOver();                  // IDA: 0x692300
-              int*  Tactical_ScrollMap();                  // IDA: 0x6da560
-               int  Tactical_UpdateMapView();                  // IDA: 0x6dbe00
-               int  Tactical_ddtor();                  // IDA: 0x6dbce0
+               int  Tactical_InitMap();                  // 0x6DBD20
+              char  Tactical_MouseOver();                  // 0x692300
+              int*  Tactical_ScrollMap();                  // 0x6DA560
+               int  Tactical_UpdateMapView();                  // 0x6DBE00
+               int  Tactical_ddtor();                  // 0x6DBCE0
 
 // ── TacticalClass ──────────────────────────────────────────
 
-              char  TacticalClass_BuildCommandBar();                  // IDA: 0x6d04f0
-              void  TacticalClass_CleanupResources();                  // IDA: 0x6d0270
-              int*  TacticalClass_CollectSelectedIDs();                  // IDA: 0x732d10
-               int  TacticalClass_FindBuilding();                  // IDA: 0x6d9920
-               int  TacticalClass_FindOverlay();                  // IDA: 0x6d97d0
-              int*  TacticalClass_InitView();                  // IDA: 0x537620
-              void  TacticalClass_InterpolateView();                  // IDA: 0x4ae290
-               int  TacticalClass_SetPositionThunk();                  // IDA: 0x653f70
-              void  TacticalClass_SetViewDimensions();                  // IDA: 0x4a8960
+              char  TacticalClass_BuildCommandBar();                  // 0x6D04F0
+              void  TacticalClass_CleanupResources();                  // 0x6D0270
+              int*  TacticalClass_CollectSelectedIDs();                  // 0x732D10
+               int  TacticalClass_FindBuilding();                  // 0x6D9920
+               int  TacticalClass_FindOverlay();                  // 0x6D97D0
+              int*  TacticalClass_InitView();                  // 0x537620
+              void  TacticalClass_InterpolateView();                  // 0x4AE290
+               int  TacticalClass_SetPositionThunk();                  // 0x653F70
+              void  TacticalClass_SetViewDimensions();                  // 0x4A8960
 
 // ── Winsock ────────────────────────────────────────────────
 
-              char  Winsock_VerifyCRC();                  // IDA: 0x7b2050
+              char  Winsock_VerifyCRC();                  // 0x7B2050
 
 } // namespace gamemd

@@ -23,8 +23,8 @@ public:
     virtual ~AbstractTypeClass() = default;  // 0x4109C0 (as Dtor)
 
     virtual void LoadTheaterSpecificArt(TheaterType th_type) {} // IDA: NOT_FOUND
-    virtual bool LoadFromINI(CCINIClass* pINI) { return false; }  // IDA: 0x410A60
-    virtual bool SaveToINI(CCINIClass* pINI) { return false; }  // IDA: 0x410B90 (as WriteINI)
+    virtual bool LoadFromINI(CCINIClass* pINI) { return false; }  // 0x410A60
+    virtual bool SaveToINI(CCINIClass* pINI) { return false; }  // 0x410B90 (as WriteINI)
 
     const char* get_ID() const { return this->ID; } // IDA: NOT_FOUND
 

@@ -45,10 +45,10 @@ public:
 
     // Construction / destruction lifecycle
     void Construct();  // 0x43B740
-    void Dtor();  // IDA: 0x43BCF0
+    void Dtor();  // 0x43BCF0
     int ScalarDtor() override;  // 0x459F20
-    int Activate() override;  // IDA: 0x452480
-    int Deactivate() override;   // IDA: 0x452480
+    int Activate() override;  // 0x452480
+    int Deactivate() override;   // 0x452480
     virtual void Destroyed(ObjectClass* killer) override;  // 0x459E80
     void AfterDestruction();  // 0x441F60
     void Cleanup();  // 0x43EEB0
@@ -141,8 +141,8 @@ public:
 
     // Missile / Super weapons
     virtual int Mission_Missile() override; // IDA: NOT_FOUND
-    virtual void processSuperWeapon(uint32_t dwUnk, uint32_t dwUnk2, uint32_t dwUnk3, uint32_t dwUnk4);  // IDA: 0x44C980
-    void ProcessSuperWeaponEffects();   // IDA: 0x44C980
+    virtual void processSuperWeapon(uint32_t dwUnk, uint32_t dwUnk2, uint32_t dwUnk3, uint32_t dwUnk4);  // 0x44C980
+    void ProcessSuperWeaponEffects();   // 0x44C980
     bool SWAvailable();  // 0x457630
     bool SW2Available();  // 0x457690
     static BuildingClass* FindBySWType(int sw_type);  // 0x505310
@@ -288,7 +288,7 @@ public:
 
     // Rendering
     Point2D* CalcDrawPos(Point2D* out) const;  // 0x480110
-    Point2D CalcDrawPos() const;  // IDA: 0x480110
+    Point2D CalcDrawPos() const;  // 0x480110
     void Draw(Point2D* screen_pos, RectangleStruct* bounds) const;  // 0x43D290
     void DrawVisible(Point2D* screen_pos, RectangleStruct* bounds) const;  // 0x43E7B0
     void Draw_0(Point2D* screen_pos, RectangleStruct* bounds) const;  // 0x47F6A0

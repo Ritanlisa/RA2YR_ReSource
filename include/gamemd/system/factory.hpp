@@ -47,7 +47,7 @@ public:
     void StartProduction();                                                             // 0x4C9E60
     void StartProduction_2();                                                            // 0x4CA5A0
     void UpdateProduction();                                                            // 0x4C9B20
-    void FinishProduction();  // IDA: 0x635060
+    void FinishProduction();  // 0x635060
 
     // queue management
     bool RemoveOneFromQueue(const TechnoTypeClass* item);                                // 0x4CA620
@@ -58,10 +58,10 @@ public:
     static FactoryClass* FindByOwnerAndProduct(const HouseClass* house, const TechnoTypeClass* item); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     // save/load
-    void LoadFromStream(IStream* stream);  // IDA: 0x4CA270
-    void Stat(IStream* stream);  // IDA: 0x4CA430
+    void LoadFromStream(IStream* stream);  // 0x4CA270
+    void Stat(IStream* stream);  // 0x4CA430
     void Seek(IStream* stream);                                                          // 0x4CA3C0
-    void Revert();  // IDA: 0x4CA580
+    void Revert();  // 0x4CA580
     void CopyTo(void* dest);                                                            // 0x4CA770
 
     uint32_t        production[3];

@@ -54,10 +54,10 @@ public:
 
     virtual void LoadFromINI(CCINIClass* ini) override; // IDA: NOT_FOUND
     virtual const wchar_t* GetToolTip(unsigned int dialog_id) override; // IDA: NOT_FOUND
-    virtual void CloseWindow() override;  // IDA: 0x7C865C
+    virtual void CloseWindow() override;  // 0x7C865C
     virtual void vt_entry_8C() override; // IDA: NOT_FOUND
     virtual bool vt_entry_90(const CellStruct& cell, HouseClass* house) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual bool vt_entry_94(const CellStruct& cell, HouseClass* house, bool unk) override;  // IDA: 0x4A9CA0
+    virtual bool vt_entry_94(const CellStruct& cell, HouseClass* house, bool unk) override;  // 0x4A9CA0
     virtual bool vt_entry_98(const CellStruct& cell, HouseClass* house) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     virtual bool vt_entry_9C(const CellStruct& cell, HouseClass* house) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
 

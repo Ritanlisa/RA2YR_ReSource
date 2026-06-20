@@ -128,12 +128,12 @@ public:
     // --- TODO: IHouse / IPublicHouse / IConnectionPointContainer interfaces from YRpp ---
 
     bool IsAlliedWith(int idx_house) const;  // 0x4F9A50
-    bool IsAlliedWith(const HouseClass* house) const;  // IDA: 0x4F9A50
-    bool IsAlliedWith(const ObjectClass* object) const;  // IDA: 0x4F9A50
-    bool IsAlliedWith(const AbstractClass* abstract) const;  // IDA: 0x4F9A50
+    bool IsAlliedWith(const HouseClass* house) const;  // 0x4F9A50
+    bool IsAlliedWith(const ObjectClass* object) const;  // 0x4F9A50
+    bool IsAlliedWith(const AbstractClass* abstract) const;  // 0x4F9A50
 
     void MakeAlly(int house_idx, bool announce);  // 0x4F9B50
-    void MakeAlly(HouseClass* who, bool announce);  // IDA: 0x4F9B50
+    void MakeAlly(HouseClass* who, bool announce);  // 0x4F9B50
     void MakeEnemy(HouseClass* who, bool announce); // IDA: UNMATCHED — no_callgraph_match, no_git_history
     void AllyAIHouses(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
@@ -201,8 +201,8 @@ public:
     bool FireGenMutator(SuperClass* super); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     int  AIBaseConstructionupdateLogic(); // IDA: NOT_FOUND
-    void AITryFireSW();  // IDA: 0x5098F0
-    bool FireSW(int idx, const CellStruct& coords);   // IDA: 0x5098F0
+    void AITryFireSW();  // 0x5098F0
+    bool FireSW(int idx, const CellStruct& coords);   // 0x5098F0
 
     CellStruct* PickTargetByType(CellStruct& out, TargetType type) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     CellStruct PickTargetByType(TargetType type) const // IDA: UNMATCHED — no_callgraph_match, no_git_history

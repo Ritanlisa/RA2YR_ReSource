@@ -47,7 +47,7 @@ public:
 
     bool Reset(); // IDA: NOT_FOUND
     bool SetCurrentLine(int idx); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    bool NextAction();  // IDA: 0x691540
+    bool NextAction();  // 0x691540
     bool HasNextAction() const; // IDA: NOT_FOUND
 
     ScriptTypeClass*    buildingType;

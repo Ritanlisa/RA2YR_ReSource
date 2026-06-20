@@ -19,91 +19,91 @@ namespace ra2 {
 namespace game {
 
 // === FootClass ===
-int FootClass::Destru_vt323(); // IDA: 0x41c090
-int FootClass::CheckVoiceResponse(); // IDA: 0x4d4b20
-int FootClass::ProcessMissionVoice(); // IDA: 0x4d4cb0
-int FootClass::FindAITarget(); // IDA: 0x4d6aa0
-int FootClass::ProcessDeploy(); // IDA: 0x4d7330
-char FootClass::ValidatePlacement(); // IDA: 0x4d82b0
-char FootClass::UpdateAI(); // IDA: 0x4d85d0
-void FootClass::ValidateFoundation(); // IDA: 0x4de580
-int FootClass::DeployAction(); // IDA: 0x4deae0
-char FootClass::ScanAdjacentCells(); // IDA: 0x4df510
-bool FootClass::CanEnterCell(); // IDA: 0x709290
-char FootClass::RespondToDestruction(); // IDA: 0x738970
+int FootClass::Destru_vt323(); // 0x41C090
+int FootClass::CheckVoiceResponse(); // 0x4D4B20
+int FootClass::ProcessMissionVoice(); // 0x4D4CB0
+int FootClass::FindAITarget(); // 0x4D6AA0
+int FootClass::ProcessDeploy(); // 0x4D7330
+char FootClass::ValidatePlacement(); // 0x4D82B0
+char FootClass::UpdateAI(); // 0x4D85D0
+void FootClass::ValidateFoundation(); // 0x4DE580
+int FootClass::DeployAction(); // 0x4DEAE0
+char FootClass::ScanAdjacentCells(); // 0x4DF510
+bool FootClass::CanEnterCell(); // 0x709290
+char FootClass::RespondToDestruction(); // 0x738970
 
 // === Object ===
-int Object::ComputeAllocationSize(); // IDA: 0x42b1f0
-int Object::SaveObject(); // IDA: 0x5fd950
-int Object::ddtor(); // IDA: 0x5fdf10
+int Object::ComputeAllocationSize(); // 0x42B1F0
+int Object::SaveObject(); // 0x5FD950
+int Object::ddtor(); // 0x5FDF10
 
 // === ObjectClass ===
-bool ObjectClass::HasLinkedObject(); // IDA: 0x4135a0
-int ObjectClass::CheckCellFlags(); // IDA: 0x4d9c60
-int ObjectClass::LoadFromStream_Common(); // IDA: 0x4db3c0
-long ObjectClass::SaveToStream_Common(); // IDA: 0x4db690
-uint32_t* ObjectClass::FindPlacementCell(); // IDA: 0x4de1d0
-float* ObjectClass::BuildTransform(); // IDA: 0x513f40
-uint32_t* ObjectClass::ComputeScreenYOffset(); // IDA: 0x55a8c0
-char ObjectClass::SetDeployState(); // IDA: 0x55baa0
-void ObjectClass::CleanupSidebarResources(); // IDA: 0x6a5bf0
-int ObjectClass::sub_6ABA40(); // IDA: 0x6aba40
-int ObjectClass::FindOwner(); // IDA: 0x6e45e0
+bool ObjectClass::HasLinkedObject(); // 0x4135A0
+int ObjectClass::CheckCellFlags(); // 0x4D9C60
+int ObjectClass::LoadFromStream_Common(); // 0x4DB3C0
+long ObjectClass::SaveToStream_Common(); // 0x4DB690
+uint32_t* ObjectClass::FindPlacementCell(); // 0x4DE1D0
+float* ObjectClass::BuildTransform(); // 0x513F40
+uint32_t* ObjectClass::ComputeScreenYOffset(); // 0x55A8C0
+char ObjectClass::SetDeployState(); // 0x55BAA0
+void ObjectClass::CleanupSidebarResources(); // 0x6A5BF0
+int ObjectClass::sub_6ABA40(); // 0x6ABA40
+int ObjectClass::FindOwner(); // 0x6E45E0
 
 // === ObjectPlacement ===
-int* ObjectPlacement::CalcPosition_Wrapper(); // IDA: 0x4aca10
+int* ObjectPlacement::CalcPosition_Wrapper(); // 0x4ACA10
 
 // === ObjectPtr ===
-int ObjectPtr::RegisterForTracking(); // IDA: 0x6cf240
+int ObjectPtr::RegisterForTracking(); // 0x6CF240
 
 // === ObjectTypeClass ===
-uint32_t* ObjectTypeClass::vt_entry_7C(); // IDA: 0x41cbf0
-uint32_t* ObjectTypeClass::Copy(); // IDA: 0x41cf80
-uint32_t* ObjectTypeClass::InitTripleTen(); // IDA: 0x5f75c0
-void ObjectTypeClass::UnloadPipsSHP(); // IDA: 0x5f77f0
-int ObjectTypeClass::LoadCleanup(); // IDA: 0x5f9720
-char ObjectTypeClass::LoadExtras(); // IDA: 0x712170
+uint32_t* ObjectTypeClass::vt_entry_7C(); // 0x41CBF0
+uint32_t* ObjectTypeClass::Copy(); // 0x41CF80
+uint32_t* ObjectTypeClass::InitTripleTen(); // 0x5F75C0
+void ObjectTypeClass::UnloadPipsSHP(); // 0x5F77F0
+int ObjectTypeClass::LoadCleanup(); // 0x5F9720
+char ObjectTypeClass::LoadExtras(); // 0x712170
 
 // === RadioClass ===
-int RadioClass::SaveState(); // IDA: 0x65ac40
+int RadioClass::SaveState(); // 0x65AC40
 
 // === Techno ===
-int Techno::StartInvulnerability(); // IDA: 0x70e360
+int Techno::StartInvulnerability(); // 0x70E360
 
 // === TechnoClass ===
-int TechnoClass::CanFireAtTarget(); // IDA: 0x41a9e0
-int TechnoClass::ComputeTeamAttackPriority(); // IDA: 0x41b6a0
-int TechnoClass::GetAutoFireDirection(); // IDA: 0x41b760
-int TechnoClass::sub_41B7D0(); // IDA: 0x41b7d0
-uint32_t* TechnoClass::HasOnlyOneGarrisonSlot(); // IDA: 0x41b7f0
-int TechnoClass::sub_41B840(); // IDA: 0x41b840
-int TechnoClass::sub_41B860(); // IDA: 0x41b860
-char TechnoClass::CreateWarheadDamageEffect(); // IDA: 0x41bc30
-int TechnoClass::ClearArrays(); // IDA: 0x5f99e0
-void TechnoClass::ProcessBorderTower(); // IDA: 0x6ed4d0
-uint32_t* TechnoClass::Update(); // IDA: 0x6f3f40
-int TechnoClass::Mission_RepairDispatch(); // IDA: 0x6f4ab0
-char TechnoClass::FinishDeploy(); // IDA: 0x6f6ca0
-void* TechnoClass::SelectAutoTarget_Start_AU(); // IDA: 0x6f8df0
-int* TechnoClass::GetFiringAngle(); // IDA: 0x6fda00
-char TechnoClass::ProcessCapture(); // IDA: 0x7014a0
-int TechnoClass::ReceiveDamage_Shield(); // IDA: 0x701900
-void TechnoClass::PickAlternateTarget(); // IDA: 0x708e00
-char TechnoClass::EnteredOpenTopped(); // IDA: 0x710470
-int TechnoClass::ExitedOpenTopped(); // IDA: 0x7104a0
-void TechnoClass::GetField(); // IDA: 0x731cf0
-uint32_t* TechnoClass::GatherAllBuildings(); // IDA: 0x732050
-int TechnoClass::CheckUnitFireConstraints(); // IDA: 0x740fd0
-void TechnoClass::ProcessSpecialUnitDeployCrush(); // IDA: 0x7416a0
-void* TechnoClass::SelectAutoTargetWithGarrison(); // IDA: 0x743190
-int TechnoClass::MarkCellImpassable(); // IDA: 0x7441b0
-char TechnoClass::ClearCellImpassable(); // IDA: 0x744210
-char TechnoClass::ProcessUnitSelfDestruct(); // IDA: 0x746100
+int TechnoClass::CanFireAtTarget(); // 0x41A9E0
+int TechnoClass::ComputeTeamAttackPriority(); // 0x41B6A0
+int TechnoClass::GetAutoFireDirection(); // 0x41B760
+int TechnoClass::sub_41B7D0(); // 0x41B7D0
+uint32_t* TechnoClass::HasOnlyOneGarrisonSlot(); // 0x41B7F0
+int TechnoClass::sub_41B840(); // 0x41B840
+int TechnoClass::sub_41B860(); // 0x41B860
+char TechnoClass::CreateWarheadDamageEffect(); // 0x41BC30
+int TechnoClass::ClearArrays(); // 0x5F99E0
+void TechnoClass::ProcessBorderTower(); // 0x6ED4D0
+uint32_t* TechnoClass::Update(); // 0x6F3F40
+int TechnoClass::Mission_RepairDispatch(); // 0x6F4AB0
+char TechnoClass::FinishDeploy(); // 0x6F6CA0
+void* TechnoClass::SelectAutoTarget_Start_AU(); // 0x6F8DF0
+int* TechnoClass::GetFiringAngle(); // 0x6FDA00
+char TechnoClass::ProcessCapture(); // 0x7014A0
+int TechnoClass::ReceiveDamage_Shield(); // 0x701900
+void TechnoClass::PickAlternateTarget(); // 0x708E00
+char TechnoClass::EnteredOpenTopped(); // 0x710470
+int TechnoClass::ExitedOpenTopped(); // 0x7104A0
+void TechnoClass::GetField(); // 0x731CF0
+uint32_t* TechnoClass::GatherAllBuildings(); // 0x732050
+int TechnoClass::CheckUnitFireConstraints(); // 0x740FD0
+void TechnoClass::ProcessSpecialUnitDeployCrush(); // 0x7416A0
+void* TechnoClass::SelectAutoTargetWithGarrison(); // 0x743190
+int TechnoClass::MarkCellImpassable(); // 0x7441B0
+char TechnoClass::ClearCellImpassable(); // 0x744210
+char TechnoClass::ProcessUnitSelfDestruct(); // 0x746100
 
 // === TechnoTypeClass ===
-int TechnoTypeClass::GetByTypeAndIndex(); // IDA: 0x48dcd0
-int TechnoTypeClass::SaveLoad_Prefix(); // IDA: 0x7162f0
-int TechnoTypeClass::SaveLoad_Prefix_0(); // IDA: 0x716dc0
+int TechnoTypeClass::GetByTypeAndIndex(); // 0x48DCD0
+int TechnoTypeClass::SaveLoad_Prefix(); // 0x7162F0
+int TechnoTypeClass::SaveLoad_Prefix_0(); // 0x716DC0
 
 } // namespace game
 } // namespace ra2

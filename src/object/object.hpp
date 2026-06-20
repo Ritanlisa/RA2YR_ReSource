@@ -305,7 +305,7 @@ public:
     }
 
     // === Convenience wrappers ===
-    CellStruct GetMapCoords() const { CellStruct ret{}; GetMapCoords(&ret); return ret; }  // IDA: 0x426A80
+    CellStruct GetMapCoords() const { CellStruct ret{}; GetMapCoords(&ret); return ret; }  // 0x426A80
     CellStruct GetMapCoordsAgain() const { CellStruct ret{}; GetMapCoordsAgain(&ret); return ret; } // IDA: NOT_FOUND
     CoordStruct GetFLH(int weapon_idx, const CoordStruct& base) const { CoordStruct ret{}; GetFLH(&ret, weapon_idx, base); return ret; } // IDA: NOT_FOUND
 

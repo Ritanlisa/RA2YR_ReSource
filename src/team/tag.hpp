@@ -59,8 +59,8 @@ public:
     bool HasCrossesVerticalLineEvent() const;  // 0x6E5300
     bool HasZoneEntryByEvent() const;  // 0x6E5340
     bool HasAllowWinAction() const; // IDA: NOT_FOUND
-    void GlobalChanged(int idx_global);  // IDA: 0x7263A0
-    void LocalChanged(int idx_local);  // IDA: 0x7263D0
+    void GlobalChanged(int idx_global);  // 0x7263A0
+    void LocalChanged(int idx_local);  // 0x7263D0
     bool IsOnlyInstanceOfType() const;  // 0x6E5850
 
     bool RaiseEvent(int event, ObjectClass* tag_owner, CellStruct location, bool force_all = false, TechnoClass* source = nullptr); // IDA: UNMATCHED — no_callgraph_match, no_git_history
@@ -69,7 +69,7 @@ public:
     void Destroy();  // 0x6E5230
     bool HasBeenDestroyed() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
     void AddTrigger(TriggerClass* trigger);  // 0x6E55C0
-    bool RemoveTrigger(TriggerClass* trigger);  // IDA: 0x577920
+    bool RemoveTrigger(TriggerClass* trigger);  // 0x577920
     bool ContainsTrigger(TriggerClass* trigger) const; // IDA: NOT_FOUND
 
     TagTypeClass*   buildingType;
@@ -112,8 +112,8 @@ public:
     bool HasCrossesHorizontalLineEvent() const;  // 0x6E6250
     bool HasCrossesVerticalLineEvent() const;  // 0x6E6280
     bool HasZoneEntryByEvent() const;  // 0x6E62B0
-    bool AddTrigger(class TriggerTypeClass* trigger);  // IDA: 0x6E55C0
-    bool RemoveTrigger(class TriggerTypeClass* trigger);   // IDA: 0x577920
+    bool AddTrigger(class TriggerTypeClass* trigger);  // 0x6E55C0
+    bool RemoveTrigger(class TriggerTypeClass* trigger);   // 0x577920
     bool ContainsTrigger(class TriggerTypeClass* trigger) const; // IDA: NOT_FOUND
 
     static void LoadFromINIList(CCINIClass* ini);  // 0x46CE10

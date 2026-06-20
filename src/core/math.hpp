@@ -249,9 +249,9 @@ struct ColorStruct
     std::uint8_t G = 0;
     std::uint8_t B = 0;
 
-    constexpr ColorStruct() noexcept = default;  // IDA: 0x4A35A0
+    constexpr ColorStruct() noexcept = default;  // 0x4A35A0
     constexpr ColorStruct(std::uint8_t r, std::uint8_t g, std::uint8_t b) noexcept
-        : R(r), G(g), B(b) {}   // IDA: 0x4A35A0
+        : R(r), G(g), B(b) {}   // 0x4A35A0
 
     bool operator==(const ColorStruct& rhs) const // IDA: UNMATCHED — no_callgraph_match, no_git_history
     {
