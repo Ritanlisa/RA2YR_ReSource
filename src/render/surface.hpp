@@ -27,7 +27,7 @@ public:
     virtual bool BlitWhole(Surface* src, bool option1, bool option2) = 0; // IDA: NOT_FOUND
 
     // [2] 0x08 BlitPart
-    virtual bool BlitPart(
+    virtual bool BlitPart(  // 0x7bbb90
         const RectangleStruct& dest_rect,
         Surface* src,
         const RectangleStruct& src_rect,
@@ -35,7 +35,7 @@ public:
         bool option2) = 0;
 
     // [3] 0x0C Blit
-    virtual bool Blit(
+    virtual bool Blit(  // 0x7bbcf0
         const RectangleStruct& clip_rect,
         const RectangleStruct& clip_rect2,
         Surface* src,
@@ -45,13 +45,13 @@ public:
         bool option2) = 0;
 
     // [4] 0x10 FillRectEx
-    virtual bool FillRectEx(
+    virtual bool FillRectEx(  // 0x7bb050
         const RectangleStruct& clip_rect,
         const RectangleStruct& fill_rect,
         uint32_t color) = 0;
 
     // [5] 0x14 FillRect
-    virtual bool FillRect(
+    virtual bool FillRect(  // 0x7bb020
         const RectangleStruct& fill_rect,
         uint32_t color) = 0;
 
@@ -59,13 +59,13 @@ public:
     virtual bool Fill(uint32_t color) = 0;  // 0x7BBAB0
 
     // [7] 0x1C FillRectWithFlags -- CPU像素写入，16bpp RGB565，支持alpha混合
-    virtual bool FillRectWithFlags(
+    virtual bool FillRectWithFlags(  // 0x4bb830
         const RectangleStruct& clip_rect,
         const ColorStruct& color,
         int opacity_percent) = 0;
 
     // [8] 0x20 DrawEllipseOutline -- 中点椭圆算法轮廓
-    virtual bool DrawEllipseOutline(
+    virtual bool DrawEllipseOutline(  // 0x7bb350
         const Point2D& center,
         int radius_w,
         int radius_h,
@@ -73,7 +73,7 @@ public:
         uint16_t color) = 0;
 
     // [9] 0x24 SetPixel
-    virtual bool SetPixel(
+    virtual bool SetPixel(  // 0x7baeb0
         const Point2D& point,
         uint32_t color) = 0;
 
@@ -81,20 +81,20 @@ public:
     virtual uint32_t GetPixel(const Point2D& point) = 0;  // 0x7BAE60
 
     // [11] 0x2C DrawLineEx
-    virtual bool DrawLineEx(
+    virtual bool DrawLineEx(  // 0x7ba610
         const RectangleStruct& clip_rect,
         const Point2D& start,
         const Point2D& end,
         uint32_t color) = 0;
 
     // [12] 0x30 DrawLine
-    virtual bool DrawLine(
+    virtual bool DrawLine(  // 0x7ba5e0
         const Point2D& start,
         const Point2D& end,
         uint32_t color) = 0;
 
     // [13] 0x34 DrawLineZBuf -- Z-Buffer直线，写像素+写ZBuffer
-    virtual bool DrawLineZBuf(
+    virtual bool DrawLineZBuf(  // 0x4bfd30
         const Point2D& start,
         const Point2D& end,
         uint16_t color,
@@ -103,7 +103,7 @@ public:
         bool update_z_buffer) = 0;
 
     // [14] 0x38 DrawLineModulated -- 读取目标像素，调色混合后写回
-    virtual bool DrawLineModulated(
+    virtual bool DrawLineModulated(  // 0x4bbca0
         const Point2D& start,
         const Point2D& end,
         int mod_strength,
@@ -124,7 +124,7 @@ public:
         bool flip_dir) = 0;
 
     // [16] 0x40 DrawLineZBufColored -- Z-Buffer着色直线，float亮度缩放
-    virtual bool DrawLineZBufColored(
+    virtual bool DrawLineZBufColored(  // 0x4bdf00
         const Point2D& start,
         const Point2D& end,
         const uint8_t src_rgb[3],
@@ -133,13 +133,13 @@ public:
         int fade_end) = 0;
 
     // [17] 0x44 WalkLine -- Bresenham像素遍历，回调模式
-    virtual bool WalkLine(
+    virtual bool WalkLine(  // 0x7bab90
         const Point2D& start,
         const Point2D& end,
         void (*callback)(const Point2D&)) = 0;
 
     // [18] 0x48 DrawDashedLine -- 虚线(模板模式, 16B数组)
-    virtual bool DrawDashedLine(
+    virtual bool DrawDashedLine(  // 0x7ba8c0
         const Point2D& start,
         const Point2D& end,
         uint16_t color,
@@ -147,7 +147,7 @@ public:
         int dash_offset) = 0;
 
     // [19] 0x4C DrawDashedLineStipple -- DSurface版虚线，含Z-Buffer
-    virtual bool DrawDashedLineStipple(
+    virtual bool DrawDashedLineStipple(  // 0x4c0750
         const Point2D& start,
         const Point2D& end,
         uint16_t color,
@@ -156,20 +156,20 @@ public:
         bool update_z) = 0;
 
     // [20] 0x50 DrawStippledRect -- 模板矩形
-    virtual bool DrawStippledRect(
+    virtual bool DrawStippledRect(  // 0x4c0e30
         const Point2D& top_left,
         const Point2D& bottom_right,
         uint16_t color,
         bool fill_interior) = 0;
 
     // [21] 0x54 DrawRectEx
-    virtual bool DrawRectEx(
+    virtual bool DrawRectEx(  // 0x7badc0
         const RectangleStruct& clip_rect,
         const RectangleStruct& draw_rect,
         uint32_t color) = 0;
 
     // [22] 0x58 DrawRect
-    virtual bool DrawRect(
+    virtual bool DrawRect(  // 0x7bad90
         const RectangleStruct& draw_rect,
         uint32_t color) = 0;
 
@@ -226,18 +226,18 @@ public:
     }
 
     // [34] 0x88 PutPixel -- 单像素写入，边界检查
-    virtual bool PutPixel(
+    virtual bool PutPixel(  // 0x7baf90
         const Point2D& point,
         uint16_t color,
         const RectangleStruct& clip_rect) = 0;
 
     // [35] 0x8C GetPixelAtCoords -- 单像素读取，边界检查
-    virtual uint16_t GetPixelAtCoords(
+    virtual uint16_t GetPixelAtCoords(  // 0x7baf10
         const Point2D& point,
         const RectangleStruct& clip_rect) = 0;
 
     // [36] 0x90 DrawGradientLine -- 渐变颜色线
-    virtual bool DrawGradientLine(
+    virtual bool DrawGradientLine(  // 0x4bf750
         const Point2D& start,
         const Point2D& end,
         int palette_idx,
@@ -253,7 +253,7 @@ public:
     RectangleStruct GetRect() const // 0x411510
     {
         RectangleStruct buf;
-        GetRect(&buf);
+        GetRect(&buf);  // 0x411510
         return buf;
     }
 
@@ -347,7 +347,7 @@ public:
         const RectangleStruct& fill_rect, uint32_t color) override;
     virtual bool FillRect(const RectangleStruct& fill_rect, uint32_t color) override; // 0x7BB020
     virtual bool Fill(uint32_t color) override;  // 0x7BBAB0
-    virtual bool FillRectWithFlags(
+    virtual bool FillRectWithFlags(  // 0x4bb830
         const RectangleStruct& clip_rect,
         const ColorStruct& color,
         int opacity_percent) override { return false; }
@@ -363,21 +363,21 @@ public:
         const Point2D& end, uint32_t color) override;
     virtual bool DrawLine( // 0x7BA5E0
         const Point2D& start, const Point2D& end, uint32_t color) override;
-    virtual bool DrawLineZBuf(
+    virtual bool DrawLineZBuf(  // 0x4bfd30
         const Point2D& start, const Point2D& end,
         uint16_t color, int fade_start, int fade_end,
         bool update_z_buffer) override { return false; }
-    virtual bool DrawLineModulated(
+    virtual bool DrawLineModulated(  // 0x4bbca0
         const Point2D& start, const Point2D& end,
         int mod_strength, int fade_start, int fade_end,
         bool update_z_buffer) override { return false; }
-    virtual bool DrawLineFaded(
+    virtual bool DrawLineFaded(  // 0x4bc750
         const Point2D& start, const Point2D& end,
         const uint8_t* stipple_pattern,
         int fade_start, int fade_end,
         bool z_buffer, float gradient_start,
         float gradient_step, bool flip_dir) override { return false; }
-    virtual bool DrawLineZBufColored(
+    virtual bool DrawLineZBufColored(  // 0x4bdf00
         const Point2D& start, const Point2D& end,
         const uint8_t src_rgb[3], float brightness,
         int fade_start, int fade_end) override { return false; }
@@ -388,11 +388,11 @@ public:
         const Point2D& start, const Point2D& end,
         uint16_t color, const uint8_t stipple[16],
         int dash_offset) override;
-    virtual bool DrawDashedLineStipple(
+    virtual bool DrawDashedLineStipple(  // 0x4c0750
         const Point2D& start, const Point2D& end,
         uint16_t color, const uint8_t stipple[16],
         int dash_offset, bool update_z) override { return false; }
-    virtual bool DrawStippledRect(
+    virtual bool DrawStippledRect(  // 0x4c0e30
         const Point2D& top_left, const Point2D& bottom_right,
         uint16_t color, bool fill_interior) override { return false; }
     virtual bool DrawRectEx( // 0x7BADC0
@@ -422,7 +422,7 @@ public:
         const Point2D& point,
         const RectangleStruct& clip_rect) override;
 
-    virtual bool DrawGradientLine(
+    virtual bool DrawGradientLine(  // 0x4bf750
         const Point2D& start, const Point2D& end,
         int palette_idx, int fade_val,
         float* gradient_start, float* gradient_step) override { return false; }
@@ -498,15 +498,15 @@ public:
         const RectangleStruct& clip_rect,
         const ColorStruct& color,
         int opacity_percent) override;
-    virtual bool DrawLineZBuf(
+    virtual bool DrawLineZBuf(  // 0x4bfd30
         const Point2D& start, const Point2D& end,
         uint16_t color, int fade_start, int fade_end,
         bool update_z_buffer) override;
-    virtual bool DrawLineModulated(
+    virtual bool DrawLineModulated(  // 0x4bbca0
         const Point2D& start, const Point2D& end,
         int mod_strength, int fade_start, int fade_end,
         bool update_z_buffer) override;
-    virtual bool DrawLineFaded(
+    virtual bool DrawLineFaded(  // 0x4bc750
         const Point2D& start, const Point2D& end,
         const uint8_t* stipple_pattern,
         int fade_start, int fade_end,

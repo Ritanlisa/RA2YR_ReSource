@@ -131,7 +131,7 @@ public:
         }
         else
         {
-            Clear();
+            Clear();  // 0x40b120
         }
         return true;
     }
@@ -268,7 +268,7 @@ public:
 
     void Clear() override
     {
-        VectorClass<T>::Clear();
+        VectorClass<T>::Clear();  // 0x40b120
         Count = 0;
     }
 

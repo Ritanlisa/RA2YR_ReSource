@@ -16,7 +16,7 @@ namespace gamemd
 class MessageListClass
 {
 public:
-    static MessageListClass* Instance; // 0xA8BC60
+    static MessageListClass* Instance; // data: 0xA8BC60
 
     // --- Core API (from YRpp) ---
 

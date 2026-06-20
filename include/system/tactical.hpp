@@ -93,7 +93,7 @@ public:
 
     // Rendering pipeline
     void Render(ObjectClass* obj); // 0x74D490
-    void RenderFrame();
+    void RenderFrame();  // 0x4f45b0
     void RenderCells();  // 0x550260
     void RenderIsometric(const RectangleStruct& viewRect, int flags);  // 0x6D7560
     void RenderIsometricOverlay(const RectangleStruct& viewRect);  // 0x6D2DE0

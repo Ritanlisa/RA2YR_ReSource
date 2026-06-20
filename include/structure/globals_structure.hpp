@@ -11,116 +11,84 @@ namespace gamemd {
 // Unit globals
 // ============================================================
 
-// 0x8B410C — Dynamic pool of UnitClass instances (void*) [ida_direct]
-extern void* g_UnitClassPool;
+extern void* g_UnitClassPool; // data: 0x8B410C
 
-// 0x8B4148 — Counter: number of unit types active [inferred_strong]
-extern uint32_t g_UnitTypeCount;
+extern uint32_t g_UnitTypeCount; // data: 0x8B4148
 
-// 0xB1CFB8 — Unit selection state (int32_t) [ida_direct]
-extern int32_t g_UnitSelectionState;
+extern int32_t g_UnitSelectionState; // data: 0xB1CFB8
 
 // ============================================================
 // Infantry globals
 // ============================================================
 
-// 0xB1D4A4 — Infantry render pool pointer (void*) [ida_direct]
-extern void* g_InfantryRenderPool;
+extern void* g_InfantryRenderPool; // data: 0xB1D4A4
 
-// 0xB1D4B0 — Infantry selection state (uint32_t) [inferred_strong]
-extern uint32_t g_InfantrySelectState;
+extern uint32_t g_InfantrySelectState; // data: 0xB1D4B0
 
-// 0xB1D4CC — Infantry draw state pointer (void*) [ida_direct]
-extern void* g_InfantryDrawState;
+extern void* g_InfantryDrawState; // data: 0xB1D4CC
 
 // ============================================================
 // Team globals
 // ============================================================
 
-// 0x8B40EC — TeamClass pool pointer (void*) [ida_direct]
-extern void* g_TeamClassPool;
+extern void* g_TeamClassPool; // data: 0x8B40EC
 
 // ============================================================
 // Script globals
 // ============================================================
 
-// 0xAC4BF0 — Script action pool (uint32_t) [inferred_strong]
-extern uint32_t g_ScriptActionPool;
+extern uint32_t g_ScriptActionPool; // data: 0xAC4BF0
 
-// 0xAC4C38 — Script state (uint32_t) [inferred_strong]
-extern uint32_t g_ScriptState;
+extern uint32_t g_ScriptState; // data: 0xAC4C38
 
-// 0xAC4C98 — Script configuration (uint32_t) [inferred_strong]
-extern uint32_t g_ScriptConfig;
+extern uint32_t g_ScriptConfig; // data: 0xAC4C98
 
-// 0xAC4CCC — Script pool handle (uint32_t) [inferred_strong]
-extern uint32_t g_ScriptPool;
+extern uint32_t g_ScriptPool; // data: 0xAC4CCC
 
 // ============================================================
 // High-XRef Globals (xref≥5, ≥2 callers, from xref_analysis_batch)
 // ============================================================
 
-// 0xA8B230 [confidence: inferred_strong] (was: ScenarioClass_Instance)
-extern void* g_ScenarioClass_Instance;
+extern void* g_ScenarioClass_Instance; // data: 0xA8B230
 
-// 0xA8ED84 [confidence: inferred_strong] (was: CurrentFrame)
-extern void* g_CurrentFrame;
+extern void* g_CurrentFrame; // data: 0xA8ED84
 
-// 0xA8B238 [confidence: inferred_strong] (was: GameMode_Current)
-extern uint32_t g_GameMode_Current;
+extern uint32_t g_GameMode_Current; // data: 0xA8B238
 
-// 0xA8E7AC [confidence: inferred_strong] (was: IKnowWhatImDoing)
-extern uint32_t g_IKnowWhatImDoing;
+extern uint32_t g_IKnowWhatImDoing; // data: 0xA8E7AC
 
-// 0xA8E9A0 [confidence: inferred_strong] (was: WTFMode)
-extern uint32_t g_WTFMode;
+extern uint32_t g_WTFMode; // data: 0xA8E9A0
 
-// 0xA83D84 [confidence: inferred_strong] (was: BuildingTypeClass_Array)
-extern void* g_BuildingTypeClass_Array;
+extern void* g_BuildingTypeClass_Array; // data: 0xA83D84
 
-// 0xA8ED6B [confidence: inferred_strong] (was: ArmageddonMode)
-extern uint32_t g_ArmageddonMode;
+extern uint32_t g_ArmageddonMode; // data: 0xA8ED6B
 
-// 0xA8EB78 [confidence: inferred_strong] (was: lParam)
-extern uint32_t g_lParam;
+extern uint32_t g_lParam; // data: 0xA8EB78
 
-// 0xABDC74 [confidence: inferred_strong] global cell index for map
-extern uint32_t g_Map_GlobalCellIndex;
+extern uint32_t g_Map_GlobalCellIndex; // data: 0xABDC74
 
-// 0xA8ECC8 [confidence: inferred_strong] selection manager instance
-extern uint32_t g_SelectionManager;
+extern uint32_t g_SelectionManager; // data: 0xA8ECC8
 
-// 0xA8EB60 [confidence: inferred_strong] game mode options flags
-extern uint32_t g_GameModeOptions;
+extern uint32_t g_GameModeOptions; // data: 0xA8EB60
 
-// 0xA83C6C [confidence: inferred_strong] trigger type count
-extern uint32_t g_TriggerTypeCount;
+extern uint32_t g_TriggerTypeCount; // data: 0xA83C6C
 
-// 0xA8ECBC [confidence: inferred_strong] current object class count
-extern uint32_t g_ObjectClass_CurrentCount;
+extern uint32_t g_ObjectClass_CurrentCount; // data: 0xA8ECBC
 
-// 0xA8B550 [confidence: inferred_strong] scenario state flag
-extern uint32_t g_ScenarioState;
+extern uint32_t g_ScenarioState; // data: 0xA8B550
 
-// 0x8B4154 [confidence: inferred_strong] anim type count
-extern uint32_t g_AnimTypeCount;
+extern uint32_t g_AnimTypeCount; // data: 0x8B4154
 
-// 0xA8D5F8 [confidence: inferred_strong] network event pending flag
-extern uint32_t g_NetworkEventPending;
+extern uint32_t g_NetworkEventPending; // data: 0xA8D5F8
 
-// 0xA83C78 [confidence: inferred_strong] trigger class count
-extern uint32_t g_TriggerClassCount;
+extern uint32_t g_TriggerClassCount; // data: 0xA83C78
 
-// 0xA8E960 [confidence: inferred_strong] intro movie object handle
-extern uint32_t g_IntroMovieObject;
+extern uint32_t g_IntroMovieObject; // data: 0xA8E960
 
-// 0xA8ED80 [confidence: inferred_strong] DirectDraw active flag
-extern uint32_t g_DDraw_Active;
+extern uint32_t g_DDraw_Active; // data: 0xA8ED80
 
-// 0xA8ED9C [confidence: inferred_strong] game active state flag
-extern uint32_t g_GameActive;
+extern uint32_t g_GameActive; // data: 0xA8ED9C
 
-// 0xA8EB84 [confidence: inferred_strong] command line flags
-extern uint32_t g_CommandLineFlags;
+extern uint32_t g_CommandLineFlags; // data: 0xA8EB84
 
 } // namespace gamemd

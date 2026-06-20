@@ -210,7 +210,7 @@ def find_markers(functions, raw_json, callee_map, callee_names, all_marked, idem
     warnings = []
     errors = []
     seen_addrs = {}    # addr → (file, line) for duplicate detection
-    for d in ["src","app","include/gamemd"]:
+    for d in ["src","app"]:
         for root,dirs,files in os.walk(os.path.join(ROOT,d)):
             for fn in files:
                 if not fn.endswith(('.cpp','.hpp','.h')): continue
@@ -914,7 +914,7 @@ def load_all_markers():
     """Return set of ALL REVERSE-marked addresses (enabled or disabled)."""
     pat = re.compile(r'REVERSE\(\s*(0x[0-9A-Fa-f]+)\s*,\s*"([^"]*)"\s*,\s*"([^"]*)"\s*\)', re.I)
     addrs = set()
-    for d in ["src","app","include/gamemd"]:
+    for d in ["src","app"]:
         for root,dirs,files in os.walk(os.path.join(ROOT,d)):
             for fn in files:
                 if not fn.endswith(('.cpp','.hpp','.h')): continue

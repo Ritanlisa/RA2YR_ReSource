@@ -285,13 +285,13 @@ public:
     int     BuildingTypeClass_field_740;
     int     BuildingTypeClass_field_744;
 
-    bool IsPowerPlant; // 0x450C90 area
-    int  PowerOutput;   // 0x450CD0 area
-    int  CrewCount;     // 0x451060 area
+    bool IsPowerPlant; // 0x4509d0 area
+    int  PowerOutput;   // 0x4509d0 area
+    int  CrewCount;     // 0x4509d0 area
     bool CrateGoodies;  // 0x451F60 area
-    int  TargetFlags;   // 0x4523F0 area
-    int  InstanceCount; // 0x452570 area
-    int  TriggerTag;    // 0x452F60 area
+    int  TargetFlags;   // 0x452360 area
+    int  InstanceCount; // 0x452540 area
+    int  TriggerTag;    // 0x452dc0 area
     int  BuildingTypeClass_field_60; // 0x60
 
     int  GetArrayIndex() const { return ArrayIndex; } // IDA: NOT_FOUND

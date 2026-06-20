@@ -44,7 +44,7 @@ public:
     void serviceSendQueue();                                                                  // 0x48C3E0
     bool connect();                                                                           // 0x48C5A0
 
-    static ConnectionClass* Instance;                                                         // 0xA8B7C0
+    static ConnectionClass* Instance;                                                         // data: 0xA8B7C0
 
     int32_t      PlayerIndex;
     bool         Active;
@@ -76,7 +76,7 @@ class IPXManagerClass
 {
 public:
     IPXManagerClass() noexcept;                                       // 0x542FE0
-    static IPXManagerClass* Instance;                                  // 0xA8EBE4
+    static IPXManagerClass* Instance;                                  // data: 0xA8EBE4
 
     void Init();  // 0x48BA90
     bool OpenSession(); // IDA: NOT_FOUND
@@ -111,7 +111,7 @@ public:
     virtual ~ModemConnectionClass() = default;
     virtual bool Open() override; // 0x5F1BC0
 
-    bool Init();
+    bool Init();  // 0x542fe0
     bool Connect();  // 0x48C5A0
     void FlushCom();                                        // 0x5F1F00
     bool SendPacket(const uint8_t*, int32_t);                // 0x5F1F70

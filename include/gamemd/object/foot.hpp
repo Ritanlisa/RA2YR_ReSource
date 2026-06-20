@@ -67,7 +67,7 @@ public:
     virtual void SetSpeedPercentage(double percentage); // IDA: NOT_FOUND
     virtual void onPathComplete(); // IDA: NOT_FOUND
     virtual void onMovementDone(); // IDA: NOT_FOUND
-    virtual bool canEnterCell(uint32_t a); // 0x709290
+    virtual bool CanEnterCell(uint32_t a); // 0x709290
 
     bool MovementAI();  // 0x4DA530
 
@@ -81,7 +81,7 @@ public:
     virtual void vt_entry_4F8();  // 0x41C080
     virtual int Destru_vt323();  // 0x41C090
     virtual void vt_entry_514();  // 0x41C0F0
-    virtual bool StubReturnFalse();
+    virtual bool StubReturnFalse();  // 0x41c100
     virtual void StubReturnVoid(); // 0x41C110
     virtual void vt_entry_534();  // 0x41C130
     virtual void vt_entry_540();  // 0x41C140
@@ -95,8 +95,8 @@ public:
     virtual int GetCapacity() const; // 0x45A540
     virtual int ResizeOccupiedCellList();  // 0x45A560
     virtual int sub_4734B0();
-    virtual int checkTerrainSpeed();
-    virtual int updateLocomotion();
+    virtual int checkTerrainSpeed();  // 0x487150
+    virtual int updateLocomotion();  // 0x487160
     virtual int FindPathWithRetry();  // 0x42C900
     virtual void ProcessDeployMission();  // 0x4CD2A0
     virtual void UpdateDeployMovement();  // 0x4CE680
@@ -115,9 +115,9 @@ public:
     virtual void CalculateApproachPath(); // 0x4D5690
     virtual int FindAITarget();  // 0x4D6AA0
     virtual int DispatchInput();  // 0x4D7170
-    virtual void ProcessDeploy();
-    virtual int ValidateMove();
-    virtual int ValidatePlacement();
+    virtual void ProcessDeploy();  // 0x4d7330
+    virtual int ValidateMove();  // 0x4d74e0
+    virtual int ValidatePlacement();  // 0x4d82b0
     virtual int GetCoords() const; // 0x4D8560
     virtual void UpdateAI();  // 0x4D85D0
     virtual int OverrideMission_SyncLog(); // 0x4D8F40
@@ -137,7 +137,7 @@ public:
     virtual void ClearSomeVector2();  // 0x4DA2A0
     virtual void ProcessMovement();  // 0x4DA2C0
     virtual bool CheckTargetValidity() const; // 0x4DA4E0
-    virtual int UpdateState();
+    virtual int UpdateState();  // 0x4daf10
     virtual int GetAttackSpeed() const;  // 0x4DB0A0
     virtual int Destru_vt30();  // 0x4DB7E0
     virtual void vt_entry_548();  // 0x4DBA30
@@ -151,7 +151,7 @@ public:
     virtual int Destru_vt311();  // 0x4DC790
     virtual void SetBuildingType();  // 0x4DC810
     virtual int MoveToTiberium();  // 0x4DCFE0
-    virtual int FindMoveTarget();
+    virtual int FindMoveTarget();  // 0x4dd0a0
     virtual int MoveToWeed();  // 0x4DDB90
     virtual bool CheckHeightDiff() const;  // 0x4DDC40
     virtual int ValidateTargetCell();  // 0x4DDC60
@@ -171,7 +171,7 @@ public:
     virtual void ClearPathIndex();  // 0x4DF0D0
     virtual int MissionSell_Dispatch();  // 0x4DF0E0
     virtual void UpdateAttackMove_SelectNewTarget();  // 0x4DF3A0
-    virtual void ScanAdjacentCells();
+    virtual void ScanAdjacentCells();  // 0x4df510
     virtual int Destru_vt322();  // 0x4DF7F0
     virtual bool IsNotAttackAndPlayer() const;  // 0x4DFA50
     virtual int Jumpjet_OccupyCell();  // 0x4E00B0
@@ -184,7 +184,7 @@ public:
     virtual int LinkToTransporter();  // 0x6EB380
     virtual int GetGameSpeedFromSession() const;  // 0x6F03B0
     virtual int CompleteProduction(); // 0x6F5090
-    virtual void UpdateLocomotion();
+    virtual void UpdateLocomotion();  // 0x6fb740
     virtual int ProcessEnterTransport();  // 0x70D7E0
     virtual void SetThreatBounds(); // 0x70F670
     virtual int ApplyThreatBounds();  // 0x70F6A0
@@ -195,7 +195,7 @@ public:
     virtual int RespondToDestruction();  // 0x738970
     virtual int sub_5746D80(); // IDA: NOT_FOUND
     virtual bool CheckAccelLimit() const;  // 0x750030
-    virtual int GetField() const;
+    virtual int GetField() const;  // 0x7500d0
     virtual void SetField(); // 0x7500E0
 
 protected:

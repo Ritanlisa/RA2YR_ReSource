@@ -1,21 +1,21 @@
 {
   "schema_version": 2,
-  "active_work_id": "complete-symbol-layer-v2",
-  "active_plan": "D:\\RA2YR_ReSource\\.omo\\plans\\complete-symbol-layer-v2.md",
-  "plan_name": "complete-symbol-layer-v2",
+  "active_work_id": "ida-consistency-lockdown",
+  "active_plan": "D:\\RA2YR_ReSource\\.omo\\plans\\ida-consistency-lockdown.md",
+  "plan_name": "ida-consistency-lockdown",
   "status": "active",
-  "started_at": "2026-06-20T06:08:55.052Z",
+  "started_at": "2026-06-20T10:44:30.948Z",
   "session_ids": [
     "opencode:ses_12a28107fffeTxyjSeELiqzkhL"
   ],
   "agent": "atlas",
   "works": {
-    "complete-symbol-layer-v2": {
-      "work_id": "complete-symbol-layer-v2",
-      "active_plan": "D:\\RA2YR_ReSource\\.omo\\plans\\complete-symbol-layer-v2.md",
-      "plan_name": "complete-symbol-layer-v2",
+    "ida-consistency-lockdown": {
+      "work_id": "ida-consistency-lockdown",
+      "active_plan": "D:\\RA2YR_ReSource\\.omo\\plans\\ida-consistency-lockdown.md",
+      "plan_name": "ida-consistency-lockdown",
       "status": "active",
-      "started_at": "2026-06-20T06:08:55.052Z",
+      "started_at": "2026-06-20T10:44:30.948Z",
       "session_ids": [
         "opencode:ses_12a28107fffeTxyjSeELiqzkhL"
       ],
@@ -24,45 +24,45 @@
         "todo:1": {
           "task_key": "todo:1",
           "task_label": "1",
-          "task_title": "Audit and document NOT_FOUND + UNMATCHED categories",
-          "session_id": "opencode:ses_11c59ca43fferC3sRUGk3BMECQ",
-          "agent": "Sisyphus-Junior",
-          "category": "quick",
-          "updated_at": "2026-06-20T06:22:43.233Z",
-          "started_at": "2026-06-20T06:16:46.476Z",
-          "status": "completed",
-          "ended_at": "2026-06-20T06:22:43.233Z",
-          "elapsed_ms": 356757
-        },
-        "todo:3": {
-          "task_key": "todo:3",
-          "task_label": "3",
-          "task_title": "Build stub generation + functions.json update tool",
-          "session_id": "opencode:ses_11c4d8f5bffecuUAA5GPnZw5Wm",
+          "task_title": "Strip functions.json + archive non-REVERSE tools",
+          "session_id": "opencode:ses_11b5d8b30ffegzVf6EeJjtGBs6",
           "agent": "Sisyphus-Junior",
           "category": "deep",
-          "updated_at": "2026-06-20T06:27:02.857Z",
-          "started_at": "2026-06-20T06:26:32.251Z",
+          "updated_at": "2026-06-20T10:50:18.895Z",
+          "started_at": "2026-06-20T10:50:04.647Z",
           "status": "completed",
-          "ended_at": "2026-06-20T06:27:02.857Z",
-          "elapsed_ms": 30606
+          "ended_at": "2026-06-20T10:50:18.895Z",
+          "elapsed_ms": 14248
         },
-        "todo:8": {
-          "task_key": "todo:8",
-          "task_label": "8",
-          "task_title": "Resolve double annotations (661 conflicting)",
-          "session_id": "opencode:ses_11c494be7ffeqJfeLZpqbHSKqw",
+        "todo:2": {
+          "task_key": "todo:2",
+          "task_label": "2",
+          "task_title": "Fix 9 name mismatches (IDA authoritative)",
+          "session_id": "opencode:ses_11b58a1adffevvV88yaLjdc8MV",
           "agent": "Sisyphus-Junior",
           "category": "deep",
-          "updated_at": "2026-06-20T06:52:31.936Z",
-          "started_at": "2026-06-20T06:49:50.036Z",
+          "updated_at": "2026-06-20T11:06:18.602Z",
+          "started_at": "2026-06-20T10:53:44.401Z",
           "status": "completed",
-          "ended_at": "2026-06-20T06:52:31.936Z",
-          "elapsed_ms": 161900
+          "ended_at": "2026-06-20T11:06:18.602Z",
+          "elapsed_ms": 754201
+        },
+        "todo:6": {
+          "task_key": "todo:6",
+          "task_label": "6",
+          "task_title": "Full consistency audit + REVERSE pipeline regression",
+          "session_id": "opencode:ses_11b49fceaffe86MRn0S9eqWVb3",
+          "agent": "Sisyphus-Junior",
+          "category": "deep",
+          "updated_at": "2026-06-20T11:08:51.741Z",
+          "started_at": "2026-06-20T11:08:44.135Z",
+          "status": "completed",
+          "ended_at": "2026-06-20T11:08:51.741Z",
+          "elapsed_ms": 7606
         }
       },
       "session_origins": {},
-      "updated_at": "2026-06-20T06:52:31.936Z"
+      "updated_at": "2026-06-20T11:08:51.741Z"
     }
   },
   "session_origins": {},
@@ -70,42 +70,42 @@
     "todo:1": {
       "task_key": "todo:1",
       "task_label": "1",
-      "task_title": "Audit and document NOT_FOUND + UNMATCHED categories",
-      "session_id": "opencode:ses_11c59ca43fferC3sRUGk3BMECQ",
-      "agent": "Sisyphus-Junior",
-      "category": "quick",
-      "updated_at": "2026-06-20T06:22:43.233Z",
-      "started_at": "2026-06-20T06:16:46.476Z",
-      "status": "completed",
-      "ended_at": "2026-06-20T06:22:43.233Z",
-      "elapsed_ms": 356757
-    },
-    "todo:3": {
-      "task_key": "todo:3",
-      "task_label": "3",
-      "task_title": "Build stub generation + functions.json update tool",
-      "session_id": "opencode:ses_11c4d8f5bffecuUAA5GPnZw5Wm",
+      "task_title": "Strip functions.json + archive non-REVERSE tools",
+      "session_id": "opencode:ses_11b5d8b30ffegzVf6EeJjtGBs6",
       "agent": "Sisyphus-Junior",
       "category": "deep",
-      "updated_at": "2026-06-20T06:27:02.857Z",
-      "started_at": "2026-06-20T06:26:32.251Z",
+      "updated_at": "2026-06-20T10:50:18.895Z",
+      "started_at": "2026-06-20T10:50:04.647Z",
       "status": "completed",
-      "ended_at": "2026-06-20T06:27:02.857Z",
-      "elapsed_ms": 30606
+      "ended_at": "2026-06-20T10:50:18.895Z",
+      "elapsed_ms": 14248
     },
-    "todo:8": {
-      "task_key": "todo:8",
-      "task_label": "8",
-      "task_title": "Resolve double annotations (661 conflicting)",
-      "session_id": "opencode:ses_11c494be7ffeqJfeLZpqbHSKqw",
+    "todo:2": {
+      "task_key": "todo:2",
+      "task_label": "2",
+      "task_title": "Fix 9 name mismatches (IDA authoritative)",
+      "session_id": "opencode:ses_11b58a1adffevvV88yaLjdc8MV",
       "agent": "Sisyphus-Junior",
       "category": "deep",
-      "updated_at": "2026-06-20T06:52:31.936Z",
-      "started_at": "2026-06-20T06:49:50.036Z",
+      "updated_at": "2026-06-20T11:06:18.602Z",
+      "started_at": "2026-06-20T10:53:44.401Z",
       "status": "completed",
-      "ended_at": "2026-06-20T06:52:31.936Z",
-      "elapsed_ms": 161900
+      "ended_at": "2026-06-20T11:06:18.602Z",
+      "elapsed_ms": 754201
+    },
+    "todo:6": {
+      "task_key": "todo:6",
+      "task_label": "6",
+      "task_title": "Full consistency audit + REVERSE pipeline regression",
+      "session_id": "opencode:ses_11b49fceaffe86MRn0S9eqWVb3",
+      "agent": "Sisyphus-Junior",
+      "category": "deep",
+      "updated_at": "2026-06-20T11:08:51.741Z",
+      "started_at": "2026-06-20T11:08:44.135Z",
+      "status": "completed",
+      "ended_at": "2026-06-20T11:08:51.741Z",
+      "elapsed_ms": 7606
     }
   },
-  "updated_at": "2026-06-20T06:52:31.936Z"
+  "updated_at": "2026-06-20T11:08:51.741Z"
 }

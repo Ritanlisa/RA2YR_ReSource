@@ -478,7 +478,7 @@ uint32_t FootClass::getWaypointData(uint32_t a) { return 0; }
 void FootClass::onWaypointReached(uint32_t a) {}
 void FootClass::onPathComplete() {}
 void FootClass::onMovementDone() {}
-bool FootClass::canEnterCell(uint32_t a) { return false; }
+bool FootClass::CanEnterCell(uint32_t a) { return false; }
 int FootClass::MissionMoveCarryallLand() { return 0; }
 void FootClass::vt_entry_4F8() {}
 int FootClass::Destru_vt323() { return 0; }

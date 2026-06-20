@@ -83,7 +83,7 @@ public:
     int Seek(int offset, FileSeekMode seek) override { return 0; } // IDA: NOT_FOUND
     int GetFileSize() override { return FileSize; }  // 0x65D0D0
     int WriteBytes(void* pBuffer, int nNumBytes) override { return 0; }  // 0x411310
-    void Close() override {}
+    void Close() override {}  // 0x65d150
     void CDCheck(uint32_t errorCode, bool bUnk, const char* pFilename) override {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     RawFileClass() = default;

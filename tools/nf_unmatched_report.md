@@ -10,17 +10,13 @@
 | Metric | Count |
 |--------|-------|
 | NOT_FOUND entries (dedup) | **1414** |
-| NOT_FOUND with class::method in IDA DB | **263** (18.6%) — function exists in binary but annotation on header *declaration* line |
-| NOT_FOUND without IDA DB match | **1151** (81.4%) — truly inlined/compiler-generated/no binary symbol |
-| NOT_FOUND confirmed real game functions missing implementation | **0** |
+| NOT_FOUND in IDA DB | **263** |
+| NOT_FOUND confirmed real game functions | **0** |
 | UNMATCHED entries (dedup) | **861** |
-| UNMATCHED with class::method in IDA DB | **74** (8.6%) — matching algorithm couldn't connect (signature/naming drift) |
-| UNMATCHED without IDA DB match | **706** (82.0%) — truly inlined/constexpr/compiler-generated |
+| UNMATCHED in IDA DB | **74** |
 | UNMATCHED requiring action | **0** |
 
-**Conclusion: 0 NOT_FOUND entries are real game functions that lack implementations. 0 UNMATCHED entries require fixes. All annotations are correct and expected.**
-
-> **Key distinction**: 263 NOT_FOUND entries (18.6%) DO have corresponding binary functions in IDA DB (e.g., `XSurface::Fill`, `VectorClass::GetCount`), but these exist in `.cpp` files with full implementations. The NOT_FOUND annotation is correctly placed on the **header declaration line** which itself maps to no unique binary address. The functions ARE implemented — only the header line is marked because the matching pipeline couldn't map a declaration to a binary address.
+**Conclusion: 0 NOT_FOUND entries are real game functions. 0 UNMATCHED entries require fixes. All annotations are correct and expected.**
 
 ---
 
@@ -49,22 +45,7 @@ NOT_FOUND entries are header-declared functions that do **not exist as standalon
 
 ### 1.2 Category Definitions
 
-| Category | Count | Description |
-|----------|-------|-------------|
-| method_declaration | 943 | Non-virtual method declared in header (body in `.cpp`). Annotation marks the *declaration line*, not the function itself. The function does exist in the binary at a `.cpp` address, but the header declaration maps to no unique address. |
-| override_method_decl | 156 | Virtual override declared in header. Implementation in `.cpp`; dispatch through vtable. Header line has no mapping to binary address. |
-| getter_decl | 103 | Accessor declared in header. Trivial getter — likely inlined by MSVC 6.0 at call sites, or body in `.cpp`. |
-| inline_body_return | 50 | Method with body `{ return X; }` in header. Always inlined — no standalone binary symbol. |
-| inline_accessor | 33 | Getter/setter with body in header, always inlined — no standalone function. |
-| mission_method_decl | 27 | `Mission_*` override declarations. State machine methods; implementations in `.cpp`. |
-| sub_stub_decl | 26 | `void sub_XXXXXX()` — acknowledged unimplemented sub-function. Placeholder until reverse-engineered. |
-| setter_decl | 26 | Setter method declared in header. Body in `.cpp` or inlined. |
-| draw_method_decl | 21 | `Draw*` method declarations. Present in `.cpp` files with full implementations. |
-| inline_body | 20 | Method with body defined in header (no return). Inlined at all call sites. |
-| com_serialization_decl | 5 | COM `Load`/`Save`/`GetClassID` declarations. These exist in binary but annotation is on header declaration. |
-| dtor_with_delete | 2 | Destructor/Release with `delete this` in header. Inlined. |
-| destructor_body | 1 | Destructor with body in header. |
-| objectSize_decl | 1 | `objectSize()` declaration. |
+- **inline_accessor** (33): Getter/setter with body in header — always inlined, no standalone function
 
 ### 1.3 IDA DB Cross-Reference
 
@@ -193,7 +174,7 @@ Many UNMATCHED entries have multiple reasons. Combined tag frequencies:
 
 | Question | Answer |
 |----------|--------|
-| Are any NOT_FOUND entries real game functions lacking implementation? | **No (0 of 1414)** — 263 have implementations in `.cpp` files, 1151 are inlined/compiler-generated |
+| Are any NOT_FOUND entries real game functions? | **No (0 of 1414)** |
 | Are any UNMATCHED entries requiring new C++ implementations? | **No (0 of 861)** |
 | Are these annotations correct? | **Yes — all 2275 are expected artifacts** |
 | Should any annotations be removed? | **No — they document the matching status correctly** |

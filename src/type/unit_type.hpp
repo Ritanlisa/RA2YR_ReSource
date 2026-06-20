@@ -31,10 +31,10 @@ public:
     virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override; // IDA: NOT_FOUND
     virtual ObjectClass* CreateObject(HouseClass* pOwner) override; // 0x7474B0 (as CreateUnit)
 
-    UnitTypeClass(const char* pID) noexcept;
+    UnitTypeClass(const char* pID) noexcept;  // 0x7470d0
 
 protected:
-    UnitTypeClass(noinit_t) noexcept;
+    UnitTypeClass(noinit_t) noexcept;  // 0x7470d0
 
 public:
     int ArrayIndex;

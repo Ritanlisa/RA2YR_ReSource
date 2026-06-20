@@ -29,7 +29,7 @@ public:
 
     void updateLogic();     // calls Process @ 0x724AD0 // IDA: NOT_FOUND
     void Show(const wchar_t* text, const Point2D& location); // calls SetState(true) // IDA: NOT_FOUND
-    void Hide();            // 0x724BE0
+    void Hide();
 
     bool GetToolTipForObject(ObjectClass* pObject, wchar_t* outBuffer, int32_t bufferSize, // IDA: UNMATCHED — no_callgraph_match, no_git_history
                              HouseClass* pHouse, TechnoTypeClass* pTechType);

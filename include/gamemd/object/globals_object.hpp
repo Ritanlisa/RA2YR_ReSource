@@ -13,232 +13,183 @@ namespace game {
 // RadBeam / RadSite
 // ============================================================
 
-// 0xB04A60 [inferred_strong, purity]
-extern uint32_t RadBeam_Array;
+extern uint32_t RadBeam_Array; // data: 0xB04A60
 
-// 0xB04BD0 [inferred_strong, purity]
-extern uint32_t RadSiteClass_Array;
+extern uint32_t RadSiteClass_Array; // data: 0xB04BD0
 
 // ============================================================
 // Trigger / Event
 // ============================================================
 
-// 0xB04DAC [ida_direct]
-extern void* g_TriggerPool;
+extern void* g_TriggerPool; // data: 0xB04DAC
 
-// 0xB04DB8 [inferred_strong, purity]
-extern uint32_t g_TriggerEventState;
+extern uint32_t g_TriggerEventState; // data: 0xB04DB8
 
-// 0xB052D0 [inferred_strong, purity]
-extern uint32_t g_NetworkEventQueue;
+extern uint32_t g_NetworkEventQueue; // data: 0xB052D0
 
 // ============================================================
 // ColorScheme / BuildingTypeAnim
 // ============================================================
 
-// 0xB054D0 [inferred_strong, purity]
-extern uint32_t ColorScheme_Array;
+extern uint32_t ColorScheme_Array; // data: 0xB054D0
 
-// 0xB054D4 [ida_direct]
-extern void* BuildingTypeClass_AnimTable;
+extern void* BuildingTypeClass_AnimTable; // data: 0xB054D4
 
 // ============================================================
 // Animation
 // ============================================================
 
-// 0xB054E0 [inferred_strong, purity]
-extern uint32_t g_AnimClass_SaveState;
+extern uint32_t g_AnimClass_SaveState; // data: 0xB054E0
 
-// 0xB0BC88 [inferred_strong, purity]
-extern uint32_t g_AnimationManager;
+extern uint32_t g_AnimationManager; // data: 0xB0BC88
 
-// 0xB0BC90 [inferred_strong, purity]
-extern uint32_t g_AnimClass_Capacity;
+extern uint32_t g_AnimClass_Capacity; // data: 0xB0BC90
 
-// 0xB0F674 [ida_direct]
-extern void* g_AnimPoolCount;
+extern void* g_AnimPoolCount; // data: 0xB0F674
 
-// 0xB0F688 [inferred_strong, size]
-extern uint64_t g_AnimFrameCounter;
+extern uint64_t g_AnimFrameCounter; // data: 0xB0F688
 
 // ============================================================
 // OverlayType
 // ============================================================
 
-// 0xB077F8 [inferred_strong, purity]
-extern uint32_t g_OverlayTypeConfig;
+extern uint32_t g_OverlayTypeConfig; // data: 0xB077F8
 
 // ============================================================
 // Sidebar / Tooltip / Gadget
 // ============================================================
 
-// 0xB07BC4 [ida_direct]
-extern uint16_t SidebarClass_TooltipBuffer;
+extern uint16_t SidebarClass_TooltipBuffer; // data: 0xB07BC4
 
-// 0xB0B408 [ida_direct]
-extern uint8_t g_SidebarFlag[12];
+extern uint8_t g_SidebarFlag[12]; // data: 0xB0B408
 
-// 0xB0B4F8 [inferred_strong, purity]
-extern uint32_t g_SidebarBounds;
+extern uint32_t g_SidebarBounds; // data: 0xB0B4F8
 
-// 0xB0B518 [inferred_strong, size]
-extern uint8_t g_TooltipActive;
+extern uint8_t g_TooltipActive; // data: 0xB0B518
 
-// 0xB0BD50 [inferred_strong, purity]
-extern uint32_t g_SidebarButtonState;
+extern uint32_t g_SidebarButtonState; // data: 0xB0BD50
 
-// 0xB0BD58 [ida_direct]
-extern void* g_SidebarPool;
+extern void* g_SidebarPool; // data: 0xB0BD58
 
-// 0xB0FC1C [ida_direct]
-extern void* g_GadgetAnimState;
+extern void* g_GadgetAnimState; // data: 0xB0FC1C
 
 // ============================================================
 // SlaveManager / SpawnManager
 // ============================================================
 
-// 0xB0B5F0 [inferred_strong, purity]
-extern uint32_t SlaveManagerClass_Array;
+extern uint32_t SlaveManagerClass_Array; // data: 0xB0B5F0
 
-// 0xB0B660 [inferred_strong, purity]
-extern uint32_t g_SlaveMgrPool;
+extern uint32_t g_SlaveMgrPool; // data: 0xB0B660
 
-// 0xB0B6EC [ida_direct]
-extern void* g_SlaveManagerPool;
+extern void* g_SlaveManagerPool; // data: 0xB0B6EC
 
-// 0xB0B880 [inferred_strong, purity]
-extern uint32_t SpawnManagerClass_Array;
+extern uint32_t SpawnManagerClass_Array; // data: 0xB0B880
 
 // ============================================================
 // Map
 // ============================================================
 
-// 0xB0B788 [inferred_strong, purity]
-extern uint32_t Map_BottomRightCell;
+extern uint32_t Map_BottomRightCell; // data: 0xB0B788
 
 // ============================================================
 // DWORD registration
 // ============================================================
 
-// 0xB0BCEC [ida_direct]
-extern uint32_t pdwRegister;
+extern uint32_t pdwRegister; // data: 0xB0BCEC
 
 // ============================================================
 // SwizzleManager / PaletteManager
 // ============================================================
 
-// 0xB0C110 [inferred_strong, purity]
-extern uint32_t SwizzleManagerClass_Instance;
+extern uint32_t SwizzleManagerClass_Instance; // data: 0xB0C110
 
-// 0xB0FB98 [inferred_strong, purity]
-extern uint32_t g_PaletteManagerPool;
+extern uint32_t g_PaletteManagerPool; // data: 0xB0FB98
 
 // ============================================================
 // ObjectTrackingPool
 // ============================================================
 
-// 0xB0CB78 [ida_direct]
-extern int32_t g_ObjectTrackingPool;
+extern int32_t g_ObjectTrackingPool; // data: 0xB0CB78
 
 // ============================================================
 // LightningStorm
 // ============================================================
 
-// 0xB0CDD8 [inferred_strong, size]
-extern uint64_t LightningStorm_CloudHeightFactor;
+extern uint64_t LightningStorm_CloudHeightFactor; // data: 0xB0CDD8
 
 // ============================================================
 // Crater
 // ============================================================
 
-// 0xB0CE7C [ida_direct]
-extern void* g_CraterPool;
+extern void* g_CraterPool; // data: 0xB0CE7C
 
-// 0xB0CE88 [inferred_strong, purity]
-extern uint32_t g_CraterCreationState;
+extern uint32_t g_CraterCreationState; // data: 0xB0CE88
 
 // ============================================================
 // TagClass
 // ============================================================
 
-// 0xB0E720 [inferred_strong, purity]
-extern uint32_t TagClass_Array;
+extern uint32_t TagClass_Array; // data: 0xB0E720
 
-// 0xB0E724 [ida_direct]
-extern void* g_TagClassCount;
+extern void* g_TagClassCount; // data: 0xB0E724
 
 // ============================================================
 // GameObject / Multiplayer Cleanup
 // ============================================================
 
-// 0xB0E730 [inferred_strong, purity]
-extern uint32_t g_GameObjectCleanup;
+extern uint32_t g_GameObjectCleanup; // data: 0xB0E730
 
-// 0xB0E790 [inferred_strong, purity]
-extern uint32_t g_MultiplayerCleanup;
+extern uint32_t g_MultiplayerCleanup; // data: 0xB0E790
 
 // ============================================================
 // Techno
 // ============================================================
 
-// 0xB0EA50 [ida_direct]
-extern int32_t g_TechnoHouseState;
+extern int32_t g_TechnoHouseState; // data: 0xB0EA50
 
-// 0xB0EA90 [inferred_strong, purity]
-extern uint32_t g_TechnoClassPool;
+extern uint32_t g_TechnoClassPool; // data: 0xB0EA90
 
 // ============================================================
 // Building
 // ============================================================
 
-// 0xB0F4EC [ida_direct]
-extern class BuildingClass* BuildingClass_InstanceArray;
+extern class BuildingClass* BuildingClass_InstanceArray; // data: 0xB0F4EC
 
-// 0xB0F4F8 [inferred_strong, purity]
-extern uint32_t g_CrateProcessState;
+extern uint32_t g_CrateProcessState; // data: 0xB0F4F8
 
-// 0xB0F540 [inferred_strong, size]
-extern uint64_t g_BuildingClass_Capacity;
+extern uint64_t g_BuildingClass_Capacity; // data: 0xB0F540
 
-// 0xB0F5B8 [inferred_strong, purity]
-extern uint32_t g_BuildingInstanceCount;
+extern uint32_t g_BuildingInstanceCount; // data: 0xB0F5B8
 
-// 0xB0F5BC [ida_direct]
-extern void* g_BuildingClassPoolManager;
+extern void* g_BuildingClassPoolManager; // data: 0xB0F5BC
 
-// 0xB0F5C8 [inferred_strong, purity]
-extern uint32_t g_BuildingTypeInstanceCount;
+extern uint32_t g_BuildingTypeInstanceCount; // data: 0xB0F5C8
 
 // ============================================================
 // TActionClass
 // ============================================================
 
-// 0xB0F658 [inferred_strong, purity]
-extern uint32_t TActionClass_Array;
+extern uint32_t TActionClass_Array; // data: 0xB0F658
 
-// 0xB0F668 [inferred_strong, purity]
-extern uint32_t g_TActionClassState;
+extern uint32_t g_TActionClassState; // data: 0xB0F668
 
 // ============================================================
 // AbstractClass
 // ============================================================
 
-// 0xB0F720 [inferred_strong, purity]
-extern uint32_t AbstractClass_Array;
+extern uint32_t AbstractClass_Array; // data: 0xB0F720
 
 // ============================================================
 // DialogControl
 // ============================================================
 
-// 0xB0FB50 [ida_direct]
-extern void* g_DialogControlPool;
+extern void* g_DialogControlPool; // data: 0xB0FB50
 
 // ============================================================
 // UnitTooltip
 // ============================================================
 
-// 0xB0FE6C [inferred_strong, purity]
-extern uint32_t g_UnitTooltipState;
+extern uint32_t g_UnitTooltipState; // data: 0xB0FE6C
 
 } // namespace game
 } // namespace ra2

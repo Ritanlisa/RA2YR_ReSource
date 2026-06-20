@@ -212,7 +212,7 @@ public:
 
     void MarkForRedraw(); // IDA: NOT_FOUND
     void ChainReaction(); // IDA: NOT_FOUND
-    void Draw(const Point2D* screen_pos, const RectangleStruct* bounds) const;
+    void Draw(const Point2D* screen_pos, const RectangleStruct* bounds) const;  // 0x48e5a0
     void DrawDispatch(const Point2D* screen_pos, const RectangleStruct* bounds) const;  // 0x4E2830
     void DrawWithFlags(const Point2D* screen_pos, const RectangleStruct* bounds, int flags) const;  // 0x557830
     RectangleStruct* GetScreenRect(RectangleStruct* out) const;  // 0x47FF80

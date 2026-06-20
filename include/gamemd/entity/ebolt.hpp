@@ -22,7 +22,7 @@ class EBolt
 public:
     // SetOwner: stores owner ptr and weapon index (called from Fire path)
     void SetOwner(UnitClass* owner, int weaponIdx);  // 0x6AF580
-    // 0x4C1E50 ClearOwner
+
     void ClearOwner();
     // 0x4C2B40 GetSourceCoords
     CoordStruct* GetSourceCoords(CoordStruct* out) const;

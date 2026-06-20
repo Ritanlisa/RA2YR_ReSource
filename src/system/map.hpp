@@ -222,7 +222,7 @@ public:
     CoordStruct FindFirstFirestorm(const CoordStruct& start, const CoordStruct& end, const HouseClass* house = nullptr) const
     {
         CoordStruct out;
-        FindFirstFirestorm(&out, start, end, house);
+        FindFirstFirestorm(&out, start, end, house);  // 0x5880a0
         return out;
     }
 

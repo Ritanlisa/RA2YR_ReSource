@@ -207,7 +207,7 @@ public:
     virtual void drawSelectionBox(uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5, // 0x659470
         uint32_t a6, uint32_t a7, uint32_t a8, uint32_t a9, uint32_t a10) {}
     virtual void onSelect(uint32_t a, uint32_t b);  // 0x6EFC70
-    virtual void DrawHealthBar(Point2D* pLocation, RectangleStruct* pBounds, bool bUnk3) const;
+    virtual void DrawHealthBar(Point2D* pLocation, RectangleStruct* pBounds, bool bUnk3) const;  // 0x6f5190
     virtual void DrawPipScalePips(Point2D* pLocation, Point2D* pOriginalLocation, RectangleStruct* pBounds) const; // IDA: NOT_FOUND
     virtual void DrawVeterancyPips(Point2D* pLocation, RectangleStruct* pBounds) const; // IDA: NOT_FOUND
     virtual void DrawExtraInfo(Point2D const& location, Point2D const& originalLocation, RectangleStruct const& bounds) const; // IDA: NOT_FOUND
@@ -328,21 +328,21 @@ public:
     virtual int FindMatchingUnit();  // 0x5F7900
     virtual int ClearArrays();  // 0x5F99E0
     virtual int ComputeScanRange() const;  // 0x48AB90
-    virtual int drawSelectionBox();
-    virtual int drawHealthBar();
+    virtual int drawSelectionBox();  // 0x659470
+    virtual int drawHealthBar();  // 0x659490
     virtual int sub_6594A0();
     virtual int sub_6594C0();
     virtual int sub_6594E0();
     virtual int sub_6594F0();
-    virtual int drawMindControlPips();
-    virtual int drawPassengerPips();
+    virtual int drawMindControlPips();  // 0x659540
+    virtual int drawPassengerPips();  // 0x659550
     virtual int ClearScriptPlanningData();  // 0x633D30
     virtual int GetTileAnimationData() const;  // 0x547150
     virtual int MutateAll();  // 0x6B0AE0
     virtual int RefreshDeployOccupierState();  // 0x6B0D10
     virtual int CountPassengers() const;  // 0x6B7D80
     virtual int GetValue() const; // 0x6F3970
-    virtual int ComputeTransform();
+    virtual int ComputeTransform();  // 0x6f3ad0
     virtual int CanMoveToCell() const;  // 0x6FC030
     virtual int CanInitiateSell() const;  // 0x6F32D0
     virtual int IsNotAircraftOrBuilding() const;  // 0x6F3280
@@ -359,7 +359,7 @@ public:
     virtual int HasActiveParam() const; // 0x701120
     virtual int HasOnlyOneGarrisonSlot2() const; // IDA: NOT_FOUND
     virtual int FindLowestDamage();  // 0x7012C0
-    virtual int ProcessCapture();
+    virtual int ProcessCapture();  // 0x7014a0
     virtual int GetRangeModifier() const;  // 0x70D190
     virtual int ShouldScanArea() const;  // 0x70D1D0
     virtual int IsCloseEnoughToBuilding() const;   // 0x70D590
@@ -464,7 +464,7 @@ public:
     virtual int ValidateTarget() const; // 0x6F77B0
     virtual int GetBridgeDamageMult() const;  // 0x6F79A0
     virtual int CheckAndFireAtTarget2(); // IDA: NOT_FOUND
-    virtual int EvaluateTarget();
+    virtual int EvaluateTarget();  // 0x6f7ca0
     virtual int SelectAutoTarget_Start_AU();  // 0x6F8DF0
     virtual int CheckTargetLOS() const;  // 0x6F7220
     virtual int CheckTargetCell() const; // 0x703B10
@@ -561,7 +561,7 @@ public:
     virtual int CheckRepairNeeded() const;  // 0x740A90
     virtual int EnterRepairBuilding();  // 0x740EF0
     virtual int CheckUnitFireConstraints() const;  // 0x740FD0
-    virtual int checkTargetValidity();
+    virtual int checkTargetValidity();  // 0x741490
     virtual int sub_7441B0(); // IDA: NOT_FOUND
     virtual int sub_744180(); // IDA: NOT_FOUND
     virtual int sub_744210(); // IDA: NOT_FOUND
@@ -569,8 +569,8 @@ public:
     virtual int sub_744720(); // IDA: NOT_FOUND
     virtual int sub_7440B0(); // IDA: NOT_FOUND
     virtual int sub_744100(); // IDA: NOT_FOUND
-    virtual int SelectAutoTargetWithGarrison();
-    virtual int processParasiteAttachment();
+    virtual int SelectAutoTargetWithGarrison();  // 0x743190
+    virtual int processParasiteAttachment();  // 0x746400
     virtual int sub_746420(); // IDA: NOT_FOUND
     virtual int sub_7464E0(); // IDA: NOT_FOUND
     virtual int sub_7465B0();
@@ -606,7 +606,7 @@ public:
     virtual int sub_7393C0();
     virtual int sub_737BA0(); // IDA: NOT_FOUND
     virtual int sub_738910(); // IDA: NOT_FOUND
-    virtual int GatherAllBuildings();
+    virtual int GatherAllBuildings();  // 0x732050
     virtual int sub_732580(); // IDA: NOT_FOUND
     virtual int sub_731CF0();
     virtual int sub_729AA0(); // IDA: NOT_FOUND

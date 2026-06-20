@@ -26,7 +26,7 @@ class CellClass;
 class CommandClass
 {
 public:
-    static DynamicVectorClass<CommandClass*>* Array; // 0x87F658
+    static DynamicVectorClass<CommandClass*>* Array; // data: 0x87F658
 
     virtual ~CommandClass() = default;                   // vt[0] // IDA: NOT_FOUND
 
@@ -96,7 +96,7 @@ public:
     virtual const wchar_t* GetUIName() const override;  // 0x484FF0
     virtual const wchar_t* GetUICategory() const override;
     virtual const wchar_t* GetUIDescription() const override;
-    virtual void           Execute(uint32_t context) const override; // 0x71E4F0
+    virtual void           Execute(uint32_t context) const override; // 0x71e4e0
 };
 
 class GuardCommandClass : public CommandClass       // RTTI @ 0x826F20
@@ -162,7 +162,7 @@ public:
     virtual const wchar_t* GetUIName() const override;  // 0x484FF0
     virtual const wchar_t* GetUICategory() const override;
     virtual const wchar_t* GetUIDescription() const override;
-    virtual void           Execute(uint32_t context) const override; // 0x71E610
+    virtual void           Execute(uint32_t context) const override; // 0x71e600
 };
 
 class TogglePowerCommandClass : public CommandClass // RTTI @ 0x826FB0
@@ -173,7 +173,7 @@ public:
     virtual const wchar_t* GetUIName() const override;  // 0x484FF0
     virtual const wchar_t* GetUICategory() const override;
     virtual const wchar_t* GetUIDescription() const override;
-    virtual void           Execute(uint32_t context) const override; // 0x71E640
+    virtual void           Execute(uint32_t context) const override; // 0x71e620
 };
 
 // --- Extended Commands (7 new) ---
@@ -186,7 +186,7 @@ public:
     virtual const wchar_t* GetUIName() const override;  // 0x484FF0
     virtual const wchar_t* GetUICategory() const override;
     virtual const wchar_t* GetUIDescription() const override;
-    virtual void           Execute(uint32_t context) const override; // 0x71E670
+    virtual void           Execute(uint32_t context) const override; // 0x71e660
 };
 
 class C4CommandClass : public CommandClass          // RTTI @ 0x826FE0
@@ -230,7 +230,7 @@ public:
     virtual const wchar_t* GetUIName() const override;  // 0x484FF0
     virtual const wchar_t* GetUICategory() const override;
     virtual const wchar_t* GetUIDescription() const override;
-    virtual void           Execute(uint32_t context) const override; // 0x536F90
+    virtual void           Execute(uint32_t context) const override; // 0x536f80
 };
 
 class ToggleRepairCommandClass : public CommandClass // RTTI @ 0x826980

@@ -245,7 +245,7 @@ class CoordUtil
 {
 public:
     // IDA 0x48B2A0 area
-    void Set2(int32_t x, int32_t y, int32_t z);
+    void Set2(int32_t x, int32_t y, int32_t z);  // 0x645c50
 
     int32_t     X;              // 0x00
     int32_t     Y;              // 0x04
