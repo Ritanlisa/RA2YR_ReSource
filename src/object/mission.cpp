@@ -17,7 +17,7 @@ MissionClass::MissionClass() noexcept
 {
     // IDA 0x5B2DA0: RadioClass base constructor sets missionStartTime = CurrentFrame
     // and initializes all mission fields to -1/0/false
-    missionStartTime = static_cast<int32_t>(CurrentFrame);
+    missionStartTime = (int32_t)(CurrentFrame);
 }
 
 bool MissionClass::queueMission(Mission mission, bool start_mission)
@@ -25,12 +25,12 @@ bool MissionClass::queueMission(Mission mission, bool start_mission)
     if (start_mission)
     {
         suspendedMission = currentMission;
-        currentMission = static_cast<int32_t>(mission);
+        currentMission = (int32_t)(mission);
         missionQueued = false;
         return true;
     }
 
-    queuedMission = static_cast<int32_t>(mission);
+    queuedMission = (int32_t)(mission);
     missionQueued = true;
     return true;
 }
@@ -50,7 +50,7 @@ bool MissionClass::nextMission()
 void MissionClass::forceMission(Mission mission)
 {
     suspendedMission = currentMission;
-    currentMission = static_cast<int32_t>(mission);
+    currentMission = (int32_t)(mission);
     missionQueued = false;
     missionStatus = 0;
 }

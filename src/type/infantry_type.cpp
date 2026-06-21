@@ -4,8 +4,8 @@ namespace gamemd {
 
 // --- SequenceStruct ---
 
-SubSequenceStruct& SequenceStruct::GetSequence(Sequence sequence) { return this->Sequences[static_cast<int>(sequence)]; }
-const SubSequenceStruct& SequenceStruct::GetSequence(Sequence sequence) const { return this->Sequences[static_cast<int>(sequence)]; }
+SubSequenceStruct& SequenceStruct::GetSequence(Sequence sequence) { return this->Sequences[(int)(sequence)]; }
+const SubSequenceStruct& SequenceStruct::GetSequence(Sequence sequence) const { return this->Sequences[(int)(sequence)]; }
 
 // --- InfantryTypeClass ---
 

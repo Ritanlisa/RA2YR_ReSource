@@ -12,7 +12,7 @@ namespace game {
 // IDA: 0x410170 -- AbstractClass::Constructor
 // Layout confirmed: 4 vtables at 0x00/0x04/0x08/0x0C, fields at 0x10-0x20
 AbstractClass::AbstractClass() noexcept
-    : uniqueId(static_cast<uint32_t>(-1))  // 0x410191: mov [eax+0x10], 0xFFFFFFFF
+    : uniqueId((uint32_t)(-1))  // 0x410191: mov [eax+0x10], 0xFFFFFFFF
     , abstractFlags(0)                      // 0x4101B3: mov [eax+0x14], cl (preserved & 0xF8 from caller)
     , nextArrayIndex(0)                          // 0x410182: mov [eax+0x18], 0
     , referenceCount(0)                           // 0x410185: mov [eax+0x1C], 0
@@ -37,19 +37,19 @@ HRESULT AbstractClass::QueryInterface(const IID& iid, void** ppv) {
 
     // 0x410290: if iid == IID_IUnknown -- *ppv = this (IPersistStream sub-object)
     if (iid == IID_IUnknown)
-        *ppv = static_cast<IPersistStream*>(this);
+        *ppv = (IPersistStream*)(this);
 
     // 0x4102A5: if iid == IID_IPersistStream -- *ppv = this
     if (iid == IID_IPersistStream)
-        *ppv = static_cast<IPersistStream*>(this);
+        *ppv = (IPersistStream*)(this);
 
     // 0x4102B9: if iid == IID_IPersist -- *ppv = this
     if (iid == IID_IPersist)
-        *ppv = static_cast<IPersistStream*>(this);
+        *ppv = (IPersistStream*)(this);
 
     // 0x4102CE: if iid == IID_IRTTITypeInfo -- *ppv = IRTTITypeInfo sub-object (vtable[1])
     if (iid == IID_IRTTITypeInfo)
-        *ppv = static_cast<IRTTITypeInfo*>(this);
+        *ppv = (IRTTITypeInfo*)(this);
 
     // 0x4102E1: if !*ppv -- return E_NOINTERFACE
     if (!*ppv)

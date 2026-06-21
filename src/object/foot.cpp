@@ -170,7 +170,7 @@ bool FootClass::MovementAI()
             else
             {
                 StopMoving();
-                queueMission(static_cast<Mission>(static_cast<int>(gamemd::Mission::Guard)), true);
+                queueMission((Mission)((int)(gamemd::Mission::Guard)), true);
             }
         }
     }
@@ -195,7 +195,7 @@ void FootClass::EmitMovementSmoke()
         int cell_x = coords.X / 256;
         int cell_y = coords.Y / 256;
 
-        CellStruct map_coords = { static_cast<int16_t>(cell_x), static_cast<int16_t>(cell_y) };
+        CellStruct map_coords = { (int16_t)(cell_x), (int16_t)(cell_y) };
 
         // IDA: cell = CellCoord::To_CellObj(&MapClass_Instance, &map_coords) — sub_5657A0
         // IDA: if (cell) traversability = Cell::GetTraversability(cell) — sub_487CB0
@@ -307,7 +307,7 @@ int FootClass::Mission_Move()
     // AI-controlled units scan for nearby threats while moving.
     if (!movementDestination && missionQueued == 0)
     {
-        queueMission(static_cast<Mission>(static_cast<int>(gamemd::Mission::Guard)), true);
+        queueMission((Mission)((int)(gamemd::Mission::Guard)), true);
         return 1;
     }
 
@@ -350,7 +350,7 @@ int FootClass::Mission_Guard()
     // If target found, queue Attack mission.
     if (!target)
     {
-        SelectAutoTarget(static_cast<TargetFlags>(0), 0, false);
+        SelectAutoTarget((TargetFlags)(0), 0, false);
     }
     return 30;
 }
@@ -362,11 +362,11 @@ int FootClass::Mission_Hunt()
     // fall back to Guard mode.
     if (!target)
     {
-        SelectAutoTarget(static_cast<TargetFlags>(0), 0, false);
+        SelectAutoTarget((TargetFlags)(0), 0, false);
     }
     if (!target)
     {
-        queueMission(static_cast<Mission>(static_cast<int>(gamemd::Mission::Guard)), true);
+        queueMission((Mission)((int)(gamemd::Mission::Guard)), true);
         return 30;
     }
     return 0;
@@ -427,7 +427,7 @@ void FootClass::Destroyed(ObjectClass* killer)
 
     // IDA: Award experience to killer
     if (killer) {
-        RegisterDestruction(reinterpret_cast<TechnoClass*>(killer));
+        RegisterDestruction((TechnoClass*)(killer));
         auto* killer_house = killer->owningHouse();
         if (killer_house)
             RegisterKill(killer_house);

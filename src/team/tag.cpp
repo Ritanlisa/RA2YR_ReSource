@@ -212,9 +212,9 @@ TagTypeClass::Flags TagTypeClass::GetFlags() const
     for (TriggerTypeClass* tt = firstTrigger; tt;
          tt = tt->nextTrigger)
     {
-        flags |= static_cast<uint32_t>(tt->GetFlags());
+        flags |= (uint32_t)(tt->GetFlags());
     }
-    return static_cast<Flags>(flags);
+    return (Flags)(flags);
 }
 
 bool TagTypeClass::HasAllowWinAction() const

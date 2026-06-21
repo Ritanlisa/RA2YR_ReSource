@@ -82,9 +82,9 @@ SuperClass::SuperClass(SuperWeaponTypeClass* pSWType, HouseClass* pOwner) noexce
 
     ReadinessFrame         = 0;
     CameoChargeState       = 0;
-    ChargeDrainState       = static_cast<gamemd::ChargeDrainState>(0);
+    ChargeDrainState       = (gamemd::ChargeDrainState)(0);
 
-    uniqueId      = static_cast<uint32_t>(-1);
+    uniqueId      = (uint32_t)(-1);
     abstractFlags = 0;
     nextArrayIndex     = 0;
     referenceCount      = 0;

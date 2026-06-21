@@ -29,11 +29,11 @@ void RGBToHSV(const RGBColor& rgb, HSVClass& hsv)
     float delta = max_val - min_val;
 
     // Value
-    hsv.Value = static_cast<int32_t>(max_val * 100.0f);
+    hsv.Value = (int32_t)(max_val * 100.0f);
 
     // Saturation
     if (max_val > 0.0f)
-        hsv.Saturation = static_cast<int32_t>((delta / max_val) * 100.0f);
+        hsv.Saturation = (int32_t)((delta / max_val) * 100.0f);
     else
         hsv.Saturation = 0;
 
@@ -53,19 +53,19 @@ void RGBToHSV(const RGBColor& rgb, HSVClass& hsv)
             hue = 60.0f * ((r - g) / delta + 4.0f);
 
         if (hue < 0.0f) hue += 360.0f;
-        hsv.Hue = static_cast<int32_t>(hue);
+        hsv.Hue = (int32_t)(hue);
     }
 }
 
 void HSVToRGB(const HSVClass& hsv, RGBColor& rgb)
 {
-    float h = static_cast<float>(hsv.Hue);
+    float h = (float)(hsv.Hue);
     float s = hsv.Saturation / 100.0f;
     float v = hsv.Value / 100.0f;
 
     if (s == 0.0f)
     {
-        uint8_t c = static_cast<uint8_t>(v * 255.0f);
+        uint8_t c = (uint8_t)(v * 255.0f);
         rgb.R = c;
         rgb.G = c;
         rgb.B = c;
@@ -73,7 +73,7 @@ void HSVToRGB(const HSVClass& hsv, RGBColor& rgb)
     }
 
     float hh = h / 60.0f;
-    int i = static_cast<int>(hh);
+    int i = (int)(hh);
     float f = hh - i;
     float p = v * (1.0f - s);
     float q = v * (1.0f - s * f);
@@ -91,9 +91,9 @@ void HSVToRGB(const HSVClass& hsv, RGBColor& rgb)
         default: r = 0; g = 0; b = 0; break;
     }
 
-    rgb.R = static_cast<uint8_t>(r * 255.0f);
-    rgb.G = static_cast<uint8_t>(g * 255.0f);
-    rgb.B = static_cast<uint8_t>(b * 255.0f);
+    rgb.R = (uint8_t)(r * 255.0f);
+    rgb.G = (uint8_t)(g * 255.0f);
+    rgb.B = (uint8_t)(b * 255.0f);
 }
 
 // ============================================================================
@@ -102,13 +102,13 @@ void HSVToRGB(const HSVClass& hsv, RGBColor& rgb)
 
 void ApplyTint(const TintStruct& tint, RGBColor& color)
 {
-    int r = static_cast<int>(color.R) + tint.Red;
-    int g = static_cast<int>(color.G) + tint.Green;
-    int b = static_cast<int>(color.B) + tint.Blue;
+    int r = (int)(color.R) + tint.Red;
+    int g = (int)(color.G) + tint.Green;
+    int b = (int)(color.B) + tint.Blue;
 
-    color.R = static_cast<uint8_t>(r < 0 ? 0 : (r > 255 ? 255 : r));
-    color.G = static_cast<uint8_t>(g < 0 ? 0 : (g > 255 ? 255 : g));
-    color.B = static_cast<uint8_t>(b < 0 ? 0 : (b > 255 ? 255 : b));
+    color.R = (uint8_t)(r < 0 ? 0 : (r > 255 ? 255 : r));
+    color.G = (uint8_t)(g < 0 ? 0 : (g > 255 ? 255 : g));
+    color.B = (uint8_t)(b < 0 ? 0 : (b > 255 ? 255 : b));
 }
 
 // ============================================================================
@@ -124,19 +124,19 @@ uint8_t FindClosestColor(const uint8_t* palette, int num_entries, const RGBColor
 
     for (int i = 0; i < num_entries; ++i)
     {
-        int r = static_cast<int>(palette[i * 4 + 0]);
-        int g = static_cast<int>(palette[i * 4 + 1]);
-        int b = static_cast<int>(palette[i * 4 + 2]);
+        int r = (int)(palette[i * 4 + 0]);
+        int g = (int)(palette[i * 4 + 1]);
+        int b = (int)(palette[i * 4 + 2]);
 
-        int dr = r - static_cast<int>(target.R);
-        int dg = g - static_cast<int>(target.G);
-        int db = b - static_cast<int>(target.B);
+        int dr = r - (int)(target.R);
+        int dg = g - (int)(target.G);
+        int db = b - (int)(target.B);
 
         int dist = dr * dr + dg * dg + db * db;
         if (dist < best_dist)
         {
             best_dist = dist;
-            best_index = static_cast<uint8_t>(i);
+            best_index = (uint8_t)(i);
             if (dist == 0) break;
         }
     }
@@ -232,7 +232,7 @@ void ApplyGamma(const uint8_t* in_palette, uint8_t* out_palette, int num_entries
         {
             float val = in_palette[i * 4 + c] / 255.0f;
             float adjusted = powf(val, 1.0f / gamma);
-            out_palette[i * 4 + c] = static_cast<uint8_t>(adjusted * 255.0f);
+            out_palette[i * 4 + c] = (uint8_t)(adjusted * 255.0f);
         }
         out_palette[i * 4 + 3] = in_palette[i * 4 + 3];
     }

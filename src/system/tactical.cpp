@@ -114,24 +114,24 @@ static CoordStruct* Coord_To_Screen_Impl(const TacticalClass* tac, const CoordSt
     // Use the stored transform matrix for accurate projection
     const float* m = tac->floats; // 12 floats = 3x4 matrix
 
-    float wx = static_cast<float>(world.X);
-    float wy = static_cast<float>(world.Y);
-    float wz = static_cast<float>(world.Z);
+    float wx = (float)(world.X);
+    float wy = (float)(world.Y);
+    float wz = (float)(world.Z);
 
     float sx = m[0] * wx + m[1] * wy + m[2]  * wz + m[3];
     float sy = m[4] * wx + m[5] * wy + m[6]  * wz + m[7];
     // m[8]*wx + m[9]*wy + m[10]*wz + m[11] = transformed Z (depth)
 
-    out->X = static_cast<int>(sx);
-    out->Y = static_cast<int>(sy);
-    return reinterpret_cast<CoordStruct*>(out); // Point2D and CoordStruct are binary-compatible at offset 0,4
+    out->X = (int)(sx);
+    out->Y = (int)(sy);
+    return (CoordStruct*)(out); // Point2D and CoordStruct are binary-compatible at offset 0,4
 }
 
 // IDA: 0x6D2140 wrapper
 CoordStruct* TacticalClass::Coord_To_Screen(const CoordStruct& world, Point2D* out) const
 {
     Coord_To_Screen_Impl(this, world, out);
-    return reinterpret_cast<CoordStruct*>(out);
+    return (CoordStruct*)(out);
 }
 
 // IDA: 0x6D1FE0 -- AdjustForZShapeMove
@@ -142,8 +142,8 @@ Point2D* TacticalClass::AdjustForZShapeMove(Point2D* dest, Point2D* client)
         return dest;
 
     // Applies shape-specific adjustment based on TacticalClass_field_D64
-    int offset_x = static_cast<int>(TacticalClass_field_D64);
-    int offset_y = static_cast<int>(TacticalClass_field_D68);
+    int offset_x = (int)(TacticalClass_field_D64);
+    int offset_y = (int)(TacticalClass_field_D68);
 
     dest->X += offset_x;
     dest->Y += offset_y;
@@ -178,8 +178,8 @@ void TacticalClass::RenderIsometric(const RectangleStruct& viewRect, int flags)
     int screen_x = view_x - 0; // DSurface_ViewBounds (0x886FA0)
     int screen_y = view_y - 0; // Map_VisibleRect (0x886FA4)
 
-    float world_x = static_cast<float>(screen_x);
-    float world_y = static_cast<float>(screen_y);
+    float world_x = (float)(screen_x);
+    float world_y = (float)(screen_y);
 
     // Transform screen coordinates back to world using inverse matrix
     // The inverse transform is computed from the stored floats[0..11] matrix
@@ -188,8 +188,8 @@ void TacticalClass::RenderIsometric(const RectangleStruct& viewRect, int flags)
     float wx = inv[0] * world_x + inv[1] * world_y + inv[2]  * 0 + inv[3];
     float wy = inv[4] * world_x + inv[5] * world_y + inv[6]  * 0 + inv[7];
 
-    int cell_x = static_cast<int>(wx) / 256;
-    int cell_y = static_cast<int>(wy) / 256;
+    int cell_x = (int)(wx) / 256;
+    int cell_y = (int)(wy) / 256;
 
     // View dimensions in cells
     int view_height = viewRect.Height / 15 + 17;
@@ -233,8 +233,8 @@ void TacticalClass::CheckCellVisibility(const Point2D& screen_pos, int flags, bo
 {
     // Convert screen position to cell coordinates and check if within viewport
     CellStruct cell;
-    cell.X = static_cast<int16_t>(screen_pos.X / 256);
-    cell.Y = static_cast<int16_t>(screen_pos.Y / 256);
+    cell.X = (int16_t)(screen_pos.X / 256);
+    cell.Y = (int16_t)(screen_pos.Y / 256);
 
     // Register visible cell for rendering
     if (visibleCellCount < 800)
@@ -261,15 +261,15 @@ void TacticalClass::DrawMap(const RectangleStruct& viewRect, RectangleStruct* bo
     int screen_y = scroll_y + viewRect.Y - 0; // Map_VisibleRect
 
     // Transform to world coords
-    float wx = static_cast<float>(screen_x);
-    float wy = static_cast<float>(screen_y);
+    float wx = (float)(screen_x);
+    float wy = (float)(screen_y);
 
     const float* inv = floats; // inverse transform from base floats array
     float tx = inv[0] * wx + inv[1] * wy + inv[3];
     float ty = inv[4] * wx + inv[5] * wy + inv[7];
 
-    int cell_x = static_cast<int>(tx) / 256;
-    int cell_y = static_cast<int>(ty) / 256;
+    int cell_x = (int)(tx) / 256;
+    int cell_y = (int)(ty) / 256;
 
     int view_h = viewRect.Height / 15 + 17;
     int view_w = viewRect.Width  / 60 + 4;
@@ -467,8 +467,8 @@ bool TacticalClass::PixelToCellCheck(const Point2D& pixel, CellStruct* out_cell)
     // Inverse transform: screen pixel → world coordinate → cell coordinate
     if (out_cell)
     {
-        out_cell->X = static_cast<int16_t>(pixel.X / 256);
-        out_cell->Y = static_cast<int16_t>(pixel.Y / 256);
+        out_cell->X = (int16_t)(pixel.X / 256);
+        out_cell->Y = (int16_t)(pixel.Y / 256);
     }
     return true;
 }
@@ -560,8 +560,8 @@ void TacticalClass::Render(ObjectClass* obj)
     // Get cell coordinates from object position (this+0xF8 = view cell X, +0xFA = view cell Y)
     // IDA: field24 (this+0xB0) = object screen X, field28 (this+0xB4) = object screen Y
     // Convert to cell
-    int cell_x = static_cast<int>(field24);
-    int cell_y = static_cast<int>(field28);
+    int cell_x = (int)(field24);
+    int cell_y = (int)(field28);
 
     CoordStruct world_pos = { (cell_x << 8) + 128, (cell_y << 8) + 128, 0 };
 
@@ -747,8 +747,8 @@ bool TacticalClass::CoordsToClient(const CoordStruct& coords, Point2D* out_clien
     if (out_client)
     {
         // Client = screen - viewOffset
-        out_client->X = screen.X - static_cast<int>(field24);
-        out_client->Y = screen.Y - static_cast<int>(field28);
+        out_client->X = screen.X - (int)(field24);
+        out_client->Y = screen.Y - (int)(field28);
     }
     return true;
 }
@@ -759,12 +759,12 @@ CoordStruct* TacticalClass::ClientToCoords(CoordStruct* out, const Point2D& clie
         return out;
 
     // Reverse: screen = client + viewOffset, then inverse transform
-    float sx = static_cast<float>(client.X + static_cast<int>(field24));
-    float sy = static_cast<float>(client.Y + static_cast<int>(field28));
+    float sx = (float)(client.X + (int)(field24));
+    float sy = (float)(client.Y + (int)(field28));
 
     const float* inv = floats; // inverse transform from base floats array
-    out->X = static_cast<int>(inv[0] * sx + inv[1] * sy + inv[3]);
-    out->Y = static_cast<int>(inv[4] * sx + inv[5] * sy + inv[7]);
+    out->X = (int)(inv[0] * sx + inv[1] * sy + inv[3]);
+    out->Y = (int)(inv[4] * sx + inv[5] * sy + inv[7]);
     out->Z = 0;
     return out;
 }

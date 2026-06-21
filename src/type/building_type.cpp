@@ -13,7 +13,7 @@ SHPStruct* BuildingTypeClass::LoadBuildup() { return nullptr; }
 bool BuildingTypeClass::HasSuperWeapon(int index) const { return (this->SuperWeapon == index || this->SuperWeapon2 == index); }
 bool BuildingTypeClass::HasSuperWeapon() const { return (this->SuperWeapon != -1 || this->SuperWeapon2 != -1); }
 bool BuildingTypeClass::CanTogglePower() const { return this->TogglePower && (this->PowerDrain > 0 || this->Powered); }
-BuildingAnimStruct& BuildingTypeClass::GetBuildingAnim(BuildingAnimSlot slot) { return this->BuildingAnim[static_cast<int>(slot)]; }
-const BuildingAnimStruct& BuildingTypeClass::GetBuildingAnim(BuildingAnimSlot slot) const { return this->BuildingAnim[static_cast<int>(slot)]; }
+BuildingAnimStruct& BuildingTypeClass::GetBuildingAnim(BuildingAnimSlot slot) { return this->BuildingAnim[(int)(slot)]; }
+const BuildingAnimStruct& BuildingTypeClass::GetBuildingAnim(BuildingAnimSlot slot) const { return this->BuildingAnim[(int)(slot)]; }
 
 } // namespace gamemd

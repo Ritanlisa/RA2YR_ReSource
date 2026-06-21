@@ -81,7 +81,7 @@ BuildingClass::BuildingClass() noexcept
     , BuildingClass_field_short_700(0)
     , UpgradeLevel(0)
     , GateStage(0)
-    , PrismStage(static_cast<PrismChargeState>(0))
+    , PrismStage((PrismChargeState)(0))
     , PrismTargetCoords{}
     , DelayBeforeFiring(0)
     , BunkerState(0)
@@ -181,7 +181,7 @@ void BuildingClass::Place(bool bUnk)
 // IDA 0x43bfa0: Load from save stream
 void BuildingClass::LoadFromStream(void* stream)
 {
-    // IStream* pStm = static_cast<IStream*>(stream);
+    // IStream* pStm = (IStream*)(stream);
     // if (pStm)
     //     ObjectClass::LoadFromStream_Common(pStm); // removed in hpp rewrite
 }
@@ -200,7 +200,7 @@ int BuildingClass::Size()
 bool BuildingClass::IsCellPlaceable(int cell_x, int cell_y) const
 {
     if (!Type) return false;
-    CellStruct cell = {static_cast<int16_t>(cell_x), static_cast<int16_t>(cell_y)};
+    CellStruct cell = {(int16_t)(cell_x), (int16_t)(cell_y)};
     return Type->IsCellClearOfTerrainObstacles(cell) != 0;
 }
 
@@ -385,7 +385,7 @@ int BuildingClass::UpdateConstruction()
         return 6;
     }
     if (missionStatus == 1) {
-        queueMission(static_cast<ra2::game::Mission>(static_cast<int>(Mission::Guard)), true);
+        queueMission((ra2::game::Mission)((int)(Mission::Guard)), true);
     }
     return 6;
 }
@@ -420,7 +420,7 @@ void BuildingClass::ToggleSellMode() { Sell(); }
 int BuildingClass::GetSellPriority()
 {
     double ratio = GetHealthRatio();
-    return static_cast<int>(ratio * 100.0);
+    return (int)(ratio * 100.0);
 }
 
 // IDA 0x44d2c0: sell effects at location
@@ -458,7 +458,7 @@ int BuildingClass::Mission_Repair()
 {
     if (IsBeingRepaired) {
         IsBeingRepaired = false; NeedsRepairs = false;
-        queueMission(static_cast<ra2::game::Mission>(static_cast<int>(Mission::Guard)), true);
+        queueMission((ra2::game::Mission)((int)(Mission::Guard)), true);
     }
     return 20;
 }
@@ -466,7 +466,7 @@ int BuildingClass::Mission_Repair()
 void BuildingClass::ProcessRepair() {}
 
 // IDA 0x44f480: can repair - health below max
-bool BuildingClass::CanRepair() { return Type && health < static_cast<int>(Type->Strength); }
+bool BuildingClass::CanRepair() { return Type && health < (int)(Type->Strength); }
 void BuildingClass::ToggleRepairMode() { IsBeingRepaired = !IsBeingRepaired; }
 
 // IDA 0x452630: check health below threshold for repair
@@ -478,7 +478,7 @@ bool BuildingClass::IsBeingRepairedOrCaptured() { return IsBeingRepaired || HasB
 // IDA 0x459ed0: missile building mission
 int BuildingClass::Mission_Missile()
 {
-    queueMission(static_cast<ra2::game::Mission>(static_cast<int>(Mission::Guard)), true);
+    queueMission((ra2::game::Mission)((int)(Mission::Guard)), true);
     return 10;
 }
 
@@ -499,7 +499,7 @@ BuildingClass* BuildingClass::FindBySWType(int sw_type)
 {
     // Iterate all buildings to find one with matching SuperWeapon
     for (int i = 0; i < 0x1000; ++i) {
-        BuildingClass* bld = reinterpret_cast<BuildingClass*>(0x812000 + i * sizeof(BuildingClass));
+        BuildingClass* bld = (BuildingClass*)(0x812000 + i * sizeof(BuildingClass));
         if (bld && bld->Type && (bld->Type->SuperWeapon == sw_type || bld->Type->SuperWeapon2 == sw_type))
             return bld;
     }
@@ -554,8 +554,8 @@ int BuildingClass::GetPowerOutput()
     int power = Type->PowerOutput;
     if (IsOverpowered) power += 200;
     if (HasExtraPowerBonus) power += 100;
-    if (health < static_cast<int>(Type->Strength))
-        power = (power * health) / static_cast<int>(Type->Strength);
+    if (health < (int)(Type->Strength))
+        power = (power * health) / (int)(Type->Strength);
     return power;
 }
 
@@ -785,7 +785,7 @@ int BuildingClass::GetFacingToTarget()
     target->GetCoords(&tgtPos);
     int dx = tgtPos.X - location.X;
     int dy = tgtPos.Y - location.Y;
-    int dir = static_cast<int>(std::atan2(static_cast<double>(dy), static_cast<double>(dx)) * 128.0 / 3.14159265358979323846);
+    int dir = (int)(std::atan2((double)(dy), (double)(dx)) * 128.0 / 3.14159265358979323846);
     return dir & 0xFF;
 }
 
@@ -801,14 +801,14 @@ int BuildingClass::GetAmmoCountScaled()
 }
 
 // IDA 0x44d780: get fire error
-int BuildingClass::GetFireError() { return static_cast<int>(TechnoClass::GetFireError(nullptr, 0, false)); }
+int BuildingClass::GetFireError() { return (int)(TechnoClass::GetFireError(nullptr, 0, false)); }
 void BuildingClass::AcquireTarget() {}
 
 // IDA 0x445f00: select target type flags
 int BuildingClass::SelectTargetTypeFlags()
 {
     if (!Type) return 0;
-    return static_cast<int>(Type->TargetFlags);
+    return (int)(Type->TargetFlags);
 }
 
 int BuildingClass::DistanceToTarget() { return 0; }
@@ -996,7 +996,7 @@ void BuildingClass::Update()
 // IDA 0x44e8f0: object expired notification
 void BuildingClass::OnObjectExpired(ObjectClass* obj)
 {
-    if (C4AppliedBy == static_cast<InfantryClass*>(obj))
+    if (C4AppliedBy == (InfantryClass*)(obj))
         C4AppliedBy = nullptr;
 }
 
@@ -1083,7 +1083,7 @@ int BuildingClass::GetBoundingSizeExt() const
 double BuildingClass::GetHealthRatio() const
 {
     if (!Type || Type->Strength <= 0) return 0.0;
-    return static_cast<double>(health) / static_cast<double>(Type->Strength);
+    return (double)(health) / (double)(Type->Strength);
 }
 
 // IDA 0x5f5cd0: check health below 50%
@@ -1129,7 +1129,9 @@ BuildingTypeClass* BuildingClass::GetType_Thunk() { return Type; }
 // IDA 0x449a40: get owner house via vtable
 HouseClass* BuildingClass::GetOwnerHouse()
 {
-    return reinterpret_cast<HouseClass*(__thiscall*)(TechnoClass*)>(*(void***)this + 135)(static_cast<TechnoClass*>(this));
+    auto* vtable = *(void***)this;
+    auto* vfunc = (HouseClass*(__thiscall*)(TechnoClass*))(void*)(vtable[135]);
+    return vfunc((TechnoClass*)(this));
 }
 
 // IDA 0x6347b0: get type entry index

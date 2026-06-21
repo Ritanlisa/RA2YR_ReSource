@@ -197,14 +197,14 @@ FireError TechnoClass::GetFireErrorWithoutRange(AbstractClass* target, int weapo
     // Checks: target alive, not falling, weapon exists, weapon AA/AG match,
     // rearm delay elapsed, ammo available, not cloaked.
     if (!target)
-        return static_cast<FireError>(static_cast<int>(gamemd::FireError::ILLEGAL));
+        return (FireError)((int)(gamemd::FireError::ILLEGAL));
 
     if (isFallingDown)
-        return static_cast<FireError>(static_cast<int>(gamemd::FireError::CANT));
+        return (FireError)((int)(gamemd::FireError::CANT));
 
     auto* weapon = GetWeapon(weapon_index);
     if (!weapon)
-        return static_cast<FireError>(static_cast<int>(gamemd::FireError::CANT));
+        return (FireError)((int)(gamemd::FireError::CANT));
 
     // IDA: Anti-air check — weapon must have AA=yes to target aircraft (isAirborne)
     // IDA: Anti-ground check — weapon must have AG=yes to target ground units (!isAirborne)
@@ -214,24 +214,24 @@ FireError TechnoClass::GetFireErrorWithoutRange(AbstractClass* target, int weapo
     // if (weapon->Arm != 0 && !isArmed()) return FireError::REARM;
 
     if (ammo <= 0)
-        return static_cast<FireError>(static_cast<int>(gamemd::FireError::AMMO));
+        return (FireError)((int)(gamemd::FireError::AMMO));
 
-    if (cloakState == static_cast<uint32_t>(gamemd::CloakState::Cloaked))
-        return static_cast<FireError>(static_cast<int>(gamemd::FireError::CLOAKED));
+    if (cloakState == (uint32_t)(gamemd::CloakState::Cloaked))
+        return (FireError)((int)(gamemd::FireError::CLOAKED));
 
-    return static_cast<FireError>(static_cast<int>(gamemd::FireError::NONE));
+    return (FireError)((int)(gamemd::FireError::NONE));
 }
 
 FireError TechnoClass::GetFireError(AbstractClass* target, int weapon_index, bool ignore_range) const
 {
     auto result = GetFireErrorWithoutRange(target, weapon_index);
-    if (static_cast<int>(result) != static_cast<int>(gamemd::FireError::NONE))
+    if ((int)(result) != (int)(gamemd::FireError::NONE))
         return result;
 
     if (!IsCloseEnoughToAttack(target) && !ignore_range)
-        return static_cast<FireError>(static_cast<int>(gamemd::FireError::RANGE));
+        return (FireError)((int)(gamemd::FireError::RANGE));
 
-    return static_cast<FireError>(static_cast<int>(gamemd::FireError::NONE));
+    return (FireError)((int)(gamemd::FireError::NONE));
 }
 
 BulletClass* TechnoClass::Fire(AbstractClass* target, int weapon_index)
@@ -248,7 +248,7 @@ BulletClass* TechnoClass::Fire(AbstractClass* target, int weapon_index)
         return nullptr;
 
     FireError err = GetFireError(target, weapon_index, false);
-    if (static_cast<int>(err) != static_cast<int>(gamemd::FireError::NONE))
+    if ((int)(err) != (int)(gamemd::FireError::NONE))
         return nullptr;
 
     // IDA: Get fire coordinates (muzzle flash position via GetFLH)
@@ -257,13 +257,13 @@ BulletClass* TechnoClass::Fire(AbstractClass* target, int weapon_index)
 
     // IDA: Calculate firepower with veterancy bonuses
     int firepower = 25;
-    firepower = static_cast<int>(firepower * firepowerMultiplier);
+    firepower = (int)(firepower * firepowerMultiplier);
     if (currentRank > -1)
     {
-        if (static_cast<int>(gamemd::Rank::Veteran) <= currentRank)
-            firepower = static_cast<int>(firepower * 1.1);
-        if (static_cast<int>(gamemd::Rank::Elite) <= currentRank)
-            firepower = static_cast<int>(firepower * 1.2);
+        if ((int)(gamemd::Rank::Veteran) <= currentRank)
+            firepower = (int)(firepower * 1.1);
+        if ((int)(gamemd::Rank::Elite) <= currentRank)
+            firepower = (int)(firepower * 1.2);
     }
 
     // IDA: BulletClass::Create(projectile_type, target, this, firepower, warhead, speed)
@@ -301,8 +301,8 @@ CellClass* TechnoClass::SelectAutoTarget(TargetFlags flags, int current_threat, 
     int scan_range = GetWeaponRange(currentWeaponSlot);
 
     CellStruct center = {
-        static_cast<int16_t>(my_pos.X / 256),
-        static_cast<int16_t>(my_pos.Y / 256)
+        (int16_t)(my_pos.X / 256),
+        (int16_t)(my_pos.Y / 256)
     };
 
     // IDA: Area scan — radiating outward box, perimeter-only
@@ -316,8 +316,8 @@ CellClass* TechnoClass::SelectAutoTarget(TargetFlags flags, int current_threat, 
                     continue;
 
                 CellStruct map_coords = {
-                    static_cast<int16_t>(center.X + dx),
-                    static_cast<int16_t>(center.Y + dy)
+                    (int16_t)(center.X + dx),
+                    (int16_t)(center.Y + dy)
                 };
 
                 // IDA: CellCoord::To_CellObj(&MapClass_Instance, &map_coords)
@@ -351,7 +351,7 @@ void TechnoClass::Guard()
 {
     target = nullptr;
     lastTarget = nullptr;
-    queueMission(static_cast<Mission>(static_cast<int>(gamemd::Mission::Guard)), true);
+    queueMission((Mission)((int)(gamemd::Mission::Guard)), true);
 }
 
 void TechnoClass::SetTarget(AbstractClass* target)
@@ -364,13 +364,13 @@ void TechnoClass::SetTarget(AbstractClass* target)
 
 void TechnoClass::Cloak(bool play_sound)
 {
-    cloakState = static_cast<uint32_t>(gamemd::CloakState::Cloaked);
+    cloakState = (uint32_t)(gamemd::CloakState::Cloaked);
     isCloakableFlag = true;
 }
 
 void TechnoClass::Uncloak(bool play_sound)
 {
-    cloakState = static_cast<uint32_t>(gamemd::CloakState::Uncloaking);
+    cloakState = (uint32_t)(gamemd::CloakState::Uncloaking);
 }
 
 int TechnoClass::SelectWeapon(AbstractClass* target) const
@@ -437,9 +437,9 @@ void TechnoClass::UpdateCloak(bool unknown)
     bool should_cloak = shouldBeCloaked();
     bool should_uncloak = shouldNotBeCloaked();
 
-    if (should_cloak && cloakState != static_cast<uint32_t>(gamemd::CloakState::Cloaked))
+    if (should_cloak && cloakState != (uint32_t)(gamemd::CloakState::Cloaked))
         Cloak(true);
-    else if (should_uncloak && cloakState != static_cast<uint32_t>(gamemd::CloakState::Uncloaked))
+    else if (should_uncloak && cloakState != (uint32_t)(gamemd::CloakState::Uncloaked))
         Uncloak(true);
 }
 
@@ -547,8 +547,8 @@ bool TechnoClass::CreateUnit()
     if (!type)
         return false;
 
-    auto* building = reinterpret_cast<gamemd::BuildingClass*>(this);
-    auto* build_type = reinterpret_cast<gamemd::BuildingTypeClass*>(type);
+    auto* building = (gamemd::BuildingClass*)(this);
+    auto* build_type = (gamemd::BuildingTypeClass*)(type);
 
     // ---- Section 1: Audio setup (WorkingSound) ----
     // IDA: if (!audioController3.field_00 && build_type->WorkingSound != -1)
@@ -677,7 +677,7 @@ bool TechnoClass::CreateUnit()
     if (prod_speed != 0)
     {
         building->ProductionAccum += prod_speed;
-        building->ProductionFrame = static_cast<int>(CurrentFrame);
+        building->ProductionFrame = (int)(CurrentFrame);
         building->ProductionRate = prod_speed;
     }
 
@@ -695,8 +695,8 @@ bool TechnoClass::CreateUnit()
         building->CostAccumulator += cost_rate;
         if (building->CostAccumulator >= 1.0)
         {
-            int count = static_cast<int>(building->CostAccumulator);
-            building->CostAccumulator -= static_cast<double>(count);
+            int count = (int)(building->CostAccumulator);
+            building->CostAccumulator -= (double)(count);
             // IDA: SpendMoney(Rules[994/1002], count) — charge owner for progress
         }
     }
@@ -736,7 +736,7 @@ bool TechnoClass::CreateUnit()
         if (next_type)
         {
             // IDA: Switch to next type in production chain
-            building->Type = reinterpret_cast<gamemd::BuildingTypeClass*>(next_type);
+            building->Type = (gamemd::BuildingTypeClass*)(next_type);
             build_type = building->Type;
 
             if (build_type->ProductionSizeOverride == -1)
@@ -755,7 +755,7 @@ bool TechnoClass::CreateUnit()
             // IDA: Random timer for new production cycle
             // building->ProductionTimer = RandomBetween(type->field_732, type->field_736)
             building->ProductionTimer = build_type->BuildingTypeClass_field_688;
-            building->ProductionFrame = static_cast<int>(CurrentFrame);
+            building->ProductionFrame = (int)(CurrentFrame);
             building->ProductionRate = building->ProductionTimer;
             building->ProductionSpeed = building->ProductionTimer;
             building->ProductionAccum = build_type->InitialProductionProgress;
@@ -819,8 +819,8 @@ bool TechnoClass::CreateUnit()
 // ============================================================
 static bool ProductionCompletionCallback(TechnoClass* techno)
 {
-    auto* building = reinterpret_cast<gamemd::BuildingClass*>(techno);
-    auto* type = reinterpret_cast<gamemd::BuildingTypeClass*>(techno->GetTechnoType());
+    auto* building = (gamemd::BuildingClass*)(techno);
+    auto* type = (gamemd::BuildingTypeClass*)(techno->GetTechnoType());
     if (!type) return false;
 
     // IDA: Section 1: vt_entry_292(this, 2) — update production progress display
@@ -877,8 +877,8 @@ static bool ProductionCompletionCallback(TechnoClass* techno)
 // ============================================================
 static bool CreateUnitOnCompletion(TechnoClass* techno)
 {
-    auto* building = reinterpret_cast<gamemd::BuildingClass*>(techno);
-    auto* type = reinterpret_cast<gamemd::BuildingTypeClass*>(techno->GetTechnoType());
+    auto* building = (gamemd::BuildingClass*)(techno);
+    auto* type = (gamemd::BuildingTypeClass*)(techno->GetTechnoType());
     if (!type) return false;
 
     // IDA: Section 1: coords = fetchCoordinatesHere() / 256 → CellCoord::To_CellObj
@@ -935,14 +935,14 @@ static bool CreateUnitOnCompletion(TechnoClass* techno)
 // ============================================================
 static void ConstructionPositionTracker(TechnoClass* techno)
 {
-    auto* building = reinterpret_cast<gamemd::BuildingClass*>(techno);
-    auto* type = reinterpret_cast<gamemd::BuildingTypeClass*>(techno->GetTechnoType());
+    auto* building = (gamemd::BuildingClass*)(techno);
+    auto* type = (gamemd::BuildingTypeClass*)(techno->GetTechnoType());
     if (!type) return;
 
     // IDA: Section 1: Start production timer if not blocked
     if (!building->ProductionBlocked)
     {
-        building->ProductionFrame = static_cast<int>(CurrentFrame);
+        building->ProductionFrame = (int)(CurrentFrame);
         building->ProductionSpeed = 0;
         building->ProductionRate = 0;
     }
@@ -1068,7 +1068,7 @@ int TechnoClass::getAntiInfantryValue() const { return 0; }
 void TechnoClass::gotHijacked() {}
 int TechnoClass::selectNavalTargeting(AbstractClass* target) const { return 0; }
 int TechnoClass::getZAdjustment() const { return 0; }
-ZGradient TechnoClass::GetZGradient() const { return static_cast<ZGradient>(-1); }
+ZGradient TechnoClass::GetZGradient() const { return (ZGradient)(-1); }
 CellStruct* TechnoClass::GetSomeCellStruct() const { return nullptr; }
 void TechnoClass::SetSomeCellStruct(CellStruct* buffer) {}
 CellStruct* TechnoClass::getOccupiedCell(CellStruct* buffer, uint32_t a, uint32_t b) const { return nullptr; }

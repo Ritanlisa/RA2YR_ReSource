@@ -12,7 +12,7 @@ TargetClass::TargetClass(const ObjectClass* obj) noexcept
 {
     if (obj)
     {
-        m_target = BuildTarget(obj->whatAmI(), static_cast<unsigned>(obj->arrayIndex()));
+        m_target = BuildTarget(obj->whatAmI(), (unsigned)(obj->arrayIndex()));
     }
     else
     {
@@ -49,7 +49,7 @@ ObjectClass* AsObject(target_t target)
         return nullptr;
 
     auto kind = TargetKind(target);
-    auto id = static_cast<int>(TargetValue(target));
+    auto id = (int)(TargetValue(target));
 
     auto* obj = FindObjectByTypeAndId(kind, id);
     if (obj && obj->isAliveFlag)
@@ -64,7 +64,7 @@ TechnoClass* AsTechno(target_t target)
         return nullptr;
 
     auto* obj = AsObject(target);
-    return reinterpret_cast<TechnoClass*>(obj);
+    return (TechnoClass*)(obj);
 }
 
 FootClass* AsFoot(target_t target)
@@ -73,7 +73,7 @@ FootClass* AsFoot(target_t target)
         return nullptr;
 
     auto* obj = AsObject(target);
-    return reinterpret_cast<FootClass*>(obj);
+    return (FootClass*)(obj);
 }
 
 } // namespace gamemd

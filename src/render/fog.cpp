@@ -19,8 +19,8 @@ void FoggedObject_InitDrawRecord(FoggedObjectClass* obj, int house_index, int ce
 {
     if (!obj) return;
     obj->LastSight = house_index;
-    obj->Cell.X = static_cast<int16_t>(cell_x);
-    obj->Cell.Y = static_cast<int16_t>(cell_y);
+    obj->Cell.X = (int16_t)(cell_x);
+    obj->Cell.Y = (int16_t)(cell_y);
 }
 
 bool FoggedObject_IsVisibleToHouse(const FoggedObjectClass* obj, int house_index)

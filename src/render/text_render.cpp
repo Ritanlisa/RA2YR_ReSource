@@ -33,7 +33,7 @@ bool TextRenderer::Init(int max_width, int max_height)
     bmi.bmiHeader.biCompression = BI_RGB;
 
     m_bmp = CreateDIBSection(hdc, &bmi, DIB_RGB_COLORS,
-                              reinterpret_cast<void**>(&m_bits), nullptr, 0);
+                              (void**)(&m_bits), nullptr, 0);
     if (!m_bmp) {
         DeleteDC(m_hdc);
         ReleaseDC(nullptr, hdc);
@@ -41,7 +41,7 @@ bool TextRenderer::Init(int max_width, int max_height)
         return false;
     }
 
-    m_old_bmp = static_cast<HBITMAP>(SelectObject(m_hdc, m_bmp));
+    m_old_bmp = (HBITMAP)(SelectObject(m_hdc, m_bmp));
 
     m_font = CreateFontA(16, 0, 0, 0, FW_NORMAL, FALSE, FALSE, FALSE,
                           DEFAULT_CHARSET, OUT_DEFAULT_PRECIS,
@@ -53,7 +53,7 @@ bool TextRenderer::Init(int max_width, int max_height)
     SetTextColor(m_hdc, RGB(255, 255, 255));
 
     RECT rc = { 0, 0, max_width, max_height };
-    FillRect(m_hdc, &rc, static_cast<HBRUSH>(GetStockObject(BLACK_BRUSH)));
+    FillRect(m_hdc, &rc, (HBRUSH)(GetStockObject(BLACK_BRUSH)));
 
     ReleaseDC(nullptr, hdc);
     return true;
@@ -81,18 +81,18 @@ void TextRenderer::DrawText(DSurface* target, int x, int y,
     desc.dwSize = sizeof(desc);
     if (FAILED(target->Surface->Lock(nullptr, &desc, DDLOCK_WAIT, nullptr))) return;
 
-    uint16_t* dst = static_cast<uint16_t*>(desc.lpSurface);
+    uint16_t* dst = (uint16_t*)(desc.lpSurface);
     int pitch = desc.lPitch / 2;
 
     for (int row = 0; row < m_height && (y + row) < target->Height; ++row) {
         for (int col = 0; col < m_width && (x + col) < target->Width; ++col) {
             uint8_t* src_px = &m_bits[(row * m_width + col) * 4];
             if (src_px[3] > 0) {
-                uint16_t r5 = static_cast<uint16_t>(src_px[2] >> 3);
-                uint16_t g6 = static_cast<uint16_t>(src_px[1] >> 2);
-                uint16_t b5 = static_cast<uint16_t>(src_px[0] >> 3);
+                uint16_t r5 = (uint16_t)(src_px[2] >> 3);
+                uint16_t g6 = (uint16_t)(src_px[1] >> 2);
+                uint16_t b5 = (uint16_t)(src_px[0] >> 3);
                 dst[(y + row) * pitch + (x + col)] =
-                    static_cast<uint16_t>((r5 << 11) | (g6 << 5) | b5);
+                    (uint16_t)((r5 << 11) | (g6 << 5) | b5);
             }
         }
     }

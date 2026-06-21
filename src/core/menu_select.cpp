@@ -287,7 +287,7 @@ static INT_PTR CALLBACK MainMenu_DlgProc(HWND hDlg, UINT msg, WPARAM wParam, LPA
         for (int i = 0; i < 6; i++) {
             if (pt.x >= d->btnX && pt.x < d->btnX + d->btnW &&
                 pt.y >= d->btnPosY[i] && pt.y < d->btnPosY[i] + d->btnH) {
-                *d->state = static_cast<LONG>(kMainMenuBtns[i].target);
+                *d->state = (LONG)(kMainMenuBtns[i].target);
                 return 0;
             }
         }
@@ -296,7 +296,7 @@ static INT_PTR CALLBACK MainMenu_DlgProc(HWND hDlg, UINT msg, WPARAM wParam, LPA
     // IDA: WM_COMMAND — button clicked, set state based on control ID
     if (msg == WM_COMMAND && HIWORD(wParam) == BN_CLICKED && d && d->state) {
         for (auto& bd : kMainMenuBtns) {
-            if ((DWORD)bd.id == LOWORD(wParam)) { *d->state = static_cast<LONG>(bd.target); return 0; }
+            if ((DWORD)bd.id == LOWORD(wParam)) { *d->state = (LONG)(bd.target); return 0; }
         }
     }
 

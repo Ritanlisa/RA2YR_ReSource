@@ -17,10 +17,10 @@ uint32_t Hash::ComputeHashSHA1(const void* data, uint32_t size)
     uint8_t digest[20];
     sha1.Compute(digest);
     // Return first 4 bytes as uint32_t hash
-    return (static_cast<uint32_t>(digest[0]) << 24) |
-           (static_cast<uint32_t>(digest[1]) << 16) |
-           (static_cast<uint32_t>(digest[2]) << 8)  |
-           static_cast<uint32_t>(digest[3]);
+    return ((uint32_t)(digest[0]) << 24) |
+           ((uint32_t)(digest[1]) << 16) |
+           ((uint32_t)(digest[2]) << 8)  |
+           (uint32_t)(digest[3]);
 }
 
 // IDA 0x52B720: InsertOrdered (stub)
@@ -62,7 +62,7 @@ void SHA1::Init()
 // IDA 0x69DA00: Process
 void SHA1::Process(const void* data, uint32_t size)
 {
-    const uint8_t* p = static_cast<const uint8_t*>(data);
+    const uint8_t* p = (const uint8_t*)(data);
     for (uint32_t i = 0; i < size; ++i) {
         buffer[buffer_index++] = p[i];
         count += 8;
@@ -79,10 +79,10 @@ void SHA1::Compute(uint8_t digest[20])
 {
     PadMessage();
     for (int i = 0; i < 5; ++i) {
-        digest[i * 4 + 0] = static_cast<uint8_t>((state[i] >> 24) & 0xFF);
-        digest[i * 4 + 1] = static_cast<uint8_t>((state[i] >> 16) & 0xFF);
-        digest[i * 4 + 2] = static_cast<uint8_t>((state[i] >> 8) & 0xFF);
-        digest[i * 4 + 3] = static_cast<uint8_t>(state[i] & 0xFF);
+        digest[i * 4 + 0] = (uint8_t)((state[i] >> 24) & 0xFF);
+        digest[i * 4 + 1] = (uint8_t)((state[i] >> 16) & 0xFF);
+        digest[i * 4 + 2] = (uint8_t)((state[i] >> 8) & 0xFF);
+        digest[i * 4 + 3] = (uint8_t)(state[i] & 0xFF);
     }
 }
 
@@ -92,10 +92,10 @@ void SHA1::Transform()
     uint32_t w[80];
     // Copy chunk into w[0..15]
     for (int i = 0; i < 16; ++i) {
-        w[i] = (static_cast<uint32_t>(buffer[i * 4]) << 24) |
-               (static_cast<uint32_t>(buffer[i * 4 + 1]) << 16) |
-               (static_cast<uint32_t>(buffer[i * 4 + 2]) << 8) |
-               static_cast<uint32_t>(buffer[i * 4 + 3]);
+        w[i] = ((uint32_t)(buffer[i * 4]) << 24) |
+               ((uint32_t)(buffer[i * 4 + 1]) << 16) |
+               ((uint32_t)(buffer[i * 4 + 2]) << 8) |
+               (uint32_t)(buffer[i * 4 + 3]);
     }
     // Extend w[16..79]
     for (int i = 16; i < 80; ++i) {
@@ -141,7 +141,7 @@ void SHA1::PadMessage()
     while (buffer_index < 56) buffer[buffer_index++] = 0;
     // Append length in big-endian
     for (int i = 7; i >= 0; --i) {
-        buffer[56 + i] = static_cast<uint8_t>(original_bits & 0xFF);
+        buffer[56 + i] = (uint8_t)(original_bits & 0xFF);
         original_bits >>= 8;
     }
     Transform();
@@ -202,7 +202,7 @@ static const uint32_t crc32_table[256] = {
 uint32_t CRC32::Compute(const void* data, uint32_t size)
 {
     uint32_t crc = 0xFFFFFFFF;
-    const uint8_t* p = static_cast<const uint8_t*>(data);
+    const uint8_t* p = (const uint8_t*)(data);
     for (uint32_t i = 0; i < size; ++i) {
         crc = (crc >> 8) ^ crc32_table[(crc ^ p[i]) & 0xFF];
     }

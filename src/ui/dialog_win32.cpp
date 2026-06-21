@@ -279,14 +279,14 @@ bool GetField(HWND hWnd)
 // IDA 0x5D5DD0: Dialog::GetMode3 — returns 3 if *(this+60) else -2
 int GetMode3(void* dialog_data)
 {
-    uint8_t* ptr = static_cast<uint8_t*>(dialog_data);
+    uint8_t* ptr = (uint8_t*)(dialog_data);
     return ptr[60] != 0 ? 3 : -2;
 }
 
 // IDA 0x5D5DC0: Dialog::GetModeNeg2 — returns 0 if *(this+63) else -2
 int GetModeNeg2(void* dialog_data)
 {
-    uint8_t* ptr = static_cast<uint8_t*>(dialog_data);
+    uint8_t* ptr = (uint8_t*)(dialog_data);
     return ptr[63] != 0 ? 0 : -2;
 }
 
@@ -294,7 +294,7 @@ int GetModeNeg2(void* dialog_data)
 // Gets parent HWND from window user data, calls SetDialogParent if non-null
 HWND RestoreParent(HWND hWnd)
 {
-    HWND parent = reinterpret_cast<HWND>(GetWindowLongPtrA(hWnd, GWLP_USERDATA));
+    HWND parent = (HWND)(GetWindowLongPtrA(hWnd, GWLP_USERDATA));
     if (parent) {
         // IDA: SetDialogParent(hWnd, parent)
         SetParent(hWnd, parent);
@@ -344,26 +344,26 @@ void IdleProcess(HWND hWnd)
 void CleanupTree(void* dialog_data)
 {
     // IDA: free *(this+40), cleanup linked list at *(this+52), DeleteAndZero::Alt *(this+60)
-    uint8_t* base = static_cast<uint8_t*>(dialog_data);
-    uint32_t* ptr40 = reinterpret_cast<uint32_t*>(base + 40);
-    uint32_t* ptr52 = reinterpret_cast<uint32_t*>(base + 52);
-    uint32_t* ptr60 = reinterpret_cast<uint32_t*>(base + 60);
+    uint8_t* base = (uint8_t*)(dialog_data);
+    uint32_t* ptr40 = (uint32_t*)(base + 40);
+    uint32_t* ptr52 = (uint32_t*)(base + 52);
+    uint32_t* ptr60 = (uint32_t*)(base + 60);
 
     if (*ptr40) {
         // IDA: operator delete(*(this+40))
-        delete reinterpret_cast<void*>(*ptr40);
+        delete (void*)(*ptr40);
         *ptr40 = 0;
     }
 
     // Cleanup linked list at offset 52
     while (*ptr52) {
-        uint32_t* node = reinterpret_cast<uint32_t*>(*ptr52);
+        uint32_t* node = (uint32_t*)(*ptr52);
         uint32_t* prev = nullptr;
         uint32_t* curr = node;
         // Find node that points back to itself (end of chain)
-        while (curr && reinterpret_cast<uint32_t*>(*curr) != node) {
+        while (curr && (uint32_t*)(*curr) != node) {
             prev = curr;
-            curr = reinterpret_cast<uint32_t*>(*curr);
+            curr = (uint32_t*)(*curr);
         }
         if (prev)
             *prev = *node;  // unlink
@@ -375,7 +375,7 @@ void CleanupTree(void* dialog_data)
     // Cleanup vector at offset 60
     if (*ptr60) {
         // IDA: DeleteAndZero::Alt(v5), then operator delete(v5)
-        void** vec = reinterpret_cast<void**>(*ptr60);
+        void** vec = (void**)(*ptr60);
         // Delete all elements in the vector
         void** end = vec + 1;  // simplified
         for (void** it = vec; it != end; ++it) {
@@ -452,7 +452,7 @@ void HandleLauncherMessage(int msg_data)
     //   Debug::Log("COPYPROTECTION - Received message from launcher.\n")
     //   MapViewOfFileEx(...)
     //   Debug::Log("***** MapViewOfFileEx() Failed!" or "The message says: %s\n")
-    uint32_t* data = reinterpret_cast<uint32_t*>(msg_data);
+    uint32_t* data = (uint32_t*)(msg_data);
     if (data[1] == 0xBEEF) {
         // Copy protection handshake from launcher - STUB
     }
@@ -530,7 +530,7 @@ void ShowMessage(const wchar_t* message)
 
     // Walk parent chain to find dialog with the message control
     HWND hParent = hCurrent;
-    while ((hParent = FindByPtr(reinterpret_cast<int>(hParent))) != 0) {
+    while ((hParent = FindByPtr((int)(hParent))) != 0) {
         ctrl = GetDlgItem(hParent, 1343);
         if (ctrl) {
             SetWindowTextW(ctrl, message);
@@ -553,7 +553,7 @@ void ShowStatusText(const wchar_t* text)
     }
 
     HWND hParent = hCurrent;
-    while ((hParent = FindByPtr(reinterpret_cast<int>(hParent))) != 0) {
+    while ((hParent = FindByPtr((int)(hParent))) != 0) {
         ctrl = GetDlgItem(hParent, 1461);
         if (ctrl) {
             SetWindowTextW(ctrl, text);
@@ -593,7 +593,7 @@ bool InitWindow(HWND hWnd, LPARAM lParam)
     // Simplified: allocate dialog user data
     void* ctrlData = new uint8_t[0x200];
     memset(ctrlData, 0, 0x200);
-    SetWindowLongPtrA(hWnd, GWLP_USERDATA, reinterpret_cast<LONG_PTR>(ctrlData));
+    SetWindowLongPtrA(hWnd, GWLP_USERDATA, (LONG_PTR)(ctrlData));
     return true;
 }
 
@@ -710,7 +710,7 @@ void ReadMultiplayerDialogSettings(HWND hWnd)
         HWND ctrl = GetDlgItem(hWnd, ctrl_id);
         if (ctrl) {
             // Read control state and store in settings
-            int state = static_cast<int>(SendMessageA(ctrl, BM_GETCHECK, 0, 0));
+            int state = (int)(SendMessageA(ctrl, BM_GETCHECK, 0, 0));
             (void)state;
         }
     }
@@ -755,7 +755,7 @@ void BindGadgetData(HWND hWnd)
     // Simplified: enumerate children, bind IDs
     EnumChildWindows(hWnd, [](HWND hChild, LPARAM) -> BOOL {
         int ctrl_id = GetDlgCtrlID(hChild);
-        SetWindowLongPtrA(hChild, GWLP_USERDATA, static_cast<LONG_PTR>(ctrl_id));
+        SetWindowLongPtrA(hChild, GWLP_USERDATA, (LONG_PTR)(ctrl_id));
         return TRUE;
     }, 0);
 }

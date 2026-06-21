@@ -7,15 +7,15 @@ namespace gamemd {
 
 namespace {
 
-constexpr uint32_t kUnitFlag = static_cast<uint32_t>(AbstractFlags::Foot)
-                              | static_cast<uint32_t>(AbstractFlags::Object)
-                              | static_cast<uint32_t>(AbstractFlags::Techno);
+constexpr uint32_t kUnitFlag = (uint32_t)(AbstractFlags::Foot)
+                              | (uint32_t)(AbstractFlags::Object)
+                              | (uint32_t)(AbstractFlags::Techno);
 
 } // anonymous namespace
 
 // IDA: 0x7353C0 -- UnitClass::Construct (960B)
 UnitClass::UnitClass() noexcept
-    : UnitClass_field_int_6C0(static_cast<int>(-1))
+    : UnitClass_field_int_6C0((int)(-1))
     , Type(nullptr)
     , FollowerCar(nullptr)
     , FlagHouseIndex(-1)
@@ -23,8 +23,8 @@ UnitClass::UnitClass() noexcept
     , Unloading(false)
     , UnitClass_field_bool_6D2(false)
     , TerrainPalette(false)
-    , UnitClass_field_int_6D4(static_cast<int>(-1))
-    , DeathFrameCounter(static_cast<int>(-1))
+    , UnitClass_field_int_6D4((int)(-1))
+    , DeathFrameCounter((int)(-1))
     , ElectricBolt(nullptr)
     , Deployed(false)
     , Deploying(false)
@@ -59,11 +59,11 @@ int UnitClass::Mission_Harvest()
         return 10;
 
     case HEADINGHOME:
-        queueMission(static_cast<ra2::game::Mission>(static_cast<int>(gamemd::Mission::Enter)), true);
+        queueMission((ra2::game::Mission)((int)(gamemd::Mission::Enter)), true);
         return 10;
 
     case GOINGTOIDLE:
-        queueMission(static_cast<ra2::game::Mission>(static_cast<int>(gamemd::Mission::Guard)), true);
+        queueMission((ra2::game::Mission)((int)(gamemd::Mission::Guard)), true);
         return 10;
     }
 
@@ -386,7 +386,7 @@ int UnitClass::HandleTargetDestroyed()
 // IDA: 0x6B4F20 (CheckStatus, 7B) — returns Type pointer (vtable entry)
 int UnitClass::CheckStatus()
 {
-    return reinterpret_cast<int>(Type);
+    return (int)(Type);
 }
 
 // IDA: 0x6B7C60 (ClearTargetRef, 206B)

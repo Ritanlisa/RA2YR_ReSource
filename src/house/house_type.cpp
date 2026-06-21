@@ -79,7 +79,7 @@ static int FindHouseTypeByName(const char* name)
     {
         HouseTypeClass* ht = g_HouseTypeArray[i];
         if (ht && std::strcmp(ht->id, name) == 0)
-            return static_cast<int>(i);
+            return (int)(i);
     }
     return -1;
 }

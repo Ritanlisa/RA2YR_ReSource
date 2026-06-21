@@ -68,7 +68,7 @@ void ParticleClass::DrawParticle(void* surface, int draw_x, int draw_y)
     if (Type)
     {
         int size = 2;
-        uint8_t color = static_cast<uint8_t>(64 + Translucency);
+        uint8_t color = (uint8_t)(64 + Translucency);
         
         for (int dy = -size; dy <= size; ++dy)
             for (int dx = -size; dx <= size; ++dx)

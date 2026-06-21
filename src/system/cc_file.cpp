@@ -65,7 +65,7 @@ bool CCFileClass::Open(const char* pFileName)
     long sz = ftell(fp);
     fseek(fp, 0, SEEK_SET);
 
-    Buffer = MemoryBuffer(static_cast<int>(sz));
+    Buffer = MemoryBuffer((int)(sz));
     if (fread(Buffer.Buffer, 1, sz, fp) == (size_t)sz) {
         fclose(fp);
         return true;

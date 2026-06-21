@@ -261,14 +261,14 @@ void CCINIClassConstruct(void* buf) { new (buf) CCINIClass(); }
 
 // IDA 0x4741F0 -- CCINIClass::Load: loads an INI file into the CCINIClass
 bool CCINIClassLoad(void* ini, void* file, int a2, int a3) {
-    auto* ccini = static_cast<CCINIClass*>(ini);
-    auto* ccfile = static_cast<CCFileClass*>(file);
+    auto* ccini = (CCINIClass*)(ini);
+    auto* ccfile = (CCFileClass*)(file);
     return ccini && ccini->Load(ccfile, a2 != 0, a3 != 0);
 }
 
 // IDA 0x5256F0 -- DestroyHashTableINIClass: cleans up INI sections/keys
 void DestroyHashTableINIClass(void* ini) {
-    auto* ccini = static_cast<CCINIClass*>(ini);
+    auto* ccini = (CCINIClass*)(ini);
     if (ccini) ccini->~CCINIClass();
 }
 // IDA 0x7513F0 -- Audio::LoadSoundINI
@@ -360,7 +360,7 @@ void* CCFileClassConstruct(void* /*stack_buf*/, const char* filename) {
 }
 // IDA 0x473C50 -- CCFileClass::Open
 bool CCFileClassOpen(void* file, int mode) {
-    auto* f = static_cast<CCFileClass*>(file);
+    auto* f = (CCFileClass*)(file);
     if (!f) return false;
     // CCFileClass was already constructed and opened in CCFileClassConstruct
     (void)mode;
@@ -368,23 +368,23 @@ bool CCFileClassOpen(void* file, int mode) {
 }
 // IDA 0x4A3890 -- CCFileClass::ReadEntireFile
 void* CCFileClassReadEntireFile(void* file) {
-    auto* f = static_cast<CCFileClass*>(file);
+    auto* f = (CCFileClass*)(file);
     return f ? f->ReadEntireFile() : nullptr;
 }
 // IDA 0x473CE0 -- CCFileClass::Reset
 void CCFileClassReset(void* file) {
-    auto* f = static_cast<CCFileClass*>(file);
+    auto* f = (CCFileClass*)(file);
     if (f) f->Reset();
 }
 // IDA 0x535A70 -- CCFileClass::Destruct (BufferIOFileClass::Dtor)
 void CCFileClassDestruct(void* file) {
-    auto* f = static_cast<CCFileClass*>(file);
+    auto* f = (CCFileClass*)(file);
     if (f) { f->~CCFileClass(); delete f; }
 }
 // IDA 0x43AE50 -- Vector::Clear: resets vector count to 0
 void VectorClear(void* vec) {
     // Calls VectorClass::Clear() which sets Count=0 and optionally frees Items
-    auto* v = static_cast<VectorClass<int>*>(vec); // generic VectorClass<T>
+    auto* v = (VectorClass<int>*)(vec); // generic VectorClass<T>
     v->Clear();
 }
 // IDA 0x6728B0 -- RulesClass::LoadAnimTypes
@@ -394,9 +394,9 @@ void LoadBuildingTypes(void* rules_ini) { (void)rules_ini; }
 // IDA 0x48E740 -- ConvertClass::Constructor: creates DDraw palette surface
 void* ConvertClassConstruct(void* palette, void* temperat_pal, void* surface, int count, int flags) {
     return new ConvertClass(
-        *static_cast<BytePalette*>(palette),
-        *static_cast<BytePalette*>(temperat_pal),
-        static_cast<DSurface*>(surface),
+        *(BytePalette*)(palette),
+        *(BytePalette*)(temperat_pal),
+        (DSurface*)(surface),
         count > 0 ? (size_t)count : 1,
         flags != 0
     );
@@ -538,10 +538,9 @@ int InitGame(bool no_cd)
 
     // --- Voxel palette loop --- 0x52BD85
     {
-        uint8_t* v19 = (uint8_t*)0xB2FB78; // IDA unk_B2FB79 - 1
+        // uint8_t* v19 = (uint8_t*)0xB2FB78; // IDA unk_B2FB79 - 1 (unused stub)
         int v18 = 0;
         // TODO: proper voxel palette from binary constant data
-        (void)v19;
         for (v18 = 0; v18 < 256; ++v18) {
             int packed = Palette6BitTo16Bit(0, 0, 0);
             uint8_t* v21 = &voxel_palette_buf[3 * v18];
@@ -664,8 +663,9 @@ int InitGame(bool no_cd)
             FileSystem_GRFXTXT_PAL = CCFileClassReadEntireFile(fbuf);
             CCFileClassReset(fbuf);
             if (FileSystem_GRFXTXT_PAL) {
+                uint8_t* pal = (uint8_t*)FileSystem_GRFXTXT_PAL;
                 for (int i = 0; i < 256; ++i) {
-                    uint8_t* v48 = (uint8_t*)FileSystem_GRFXTXT_PAL + 3 * i;
+                    uint8_t* v48 = pal + 3 * i;
                     int packed = Palette6BitTo16Bit(4 * v48[0], 4 * v48[1], 4 * v48[2]);
                     *(uint16_t*)v48 = (uint16_t)packed;
                     v48[2] = (uint8_t)(packed >> 16);
@@ -873,7 +873,8 @@ int InitGame(bool no_cd)
     // IDA 0x52CA70: State variable initialization
     {
         void* p = RulesClass_Instance;
-        int v59 = p ? ((int*)p)[1332] : 0; // RulesClass + 0x14D0
+        int* rules_data = (int*)p;
+        int v59 = p ? rules_data[1332] : 0; // RulesClass + 0x14D0
         dword_81C1D0 = 0; // static area
         (void)v59;
     }

@@ -111,9 +111,9 @@ BytePalette* FileSystem::AllocatePalette(const char* pFilename)
     void* data = LoadFile(pFilename, false);
     if (!data) return nullptr;
 
-    uint8_t* raw = static_cast<uint8_t*>(data);
+    uint8_t* raw = (uint8_t*)(data);
 
-    auto* palette = static_cast<BytePalette*>(malloc(sizeof(BytePalette)));
+    auto* palette = (BytePalette*)(malloc(sizeof(BytePalette)));
     if (!palette) { free(data); return nullptr; }
 
     for (int i = 0; i < 256; ++i) {

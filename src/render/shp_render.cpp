@@ -50,10 +50,8 @@ bool ShpImage::LoadFromMemory(const uint8_t* data, int data_size)
     // Sanity: 24 bytes per frame entry must fit
     if (8 + m_frame_count * 24 > data_size) return false;
 
-    m_frames = static_cast<ShpFrameInfo*>(
-        calloc(m_frame_count, sizeof(ShpFrameInfo)));
-    m_pixel_data = static_cast<uint8_t**>(
-        calloc(m_frame_count, sizeof(uint8_t*)));
+    m_frames = (ShpFrameInfo*)(calloc(m_frame_count, sizeof(ShpFrameInfo)));
+    m_pixel_data = (uint8_t**)(calloc(m_frame_count, sizeof(uint8_t*)));
 
     if (!m_frames || !m_pixel_data) { Free(); return false; }
 
@@ -83,7 +81,7 @@ bool ShpImage::LoadFromMemory(const uint8_t* data, int data_size)
         if (dataWidth  % 2 == 1) dataWidth++;
         if (dataHeight % 2 == 1) dataHeight++;
 
-        m_pixel_data[i] = static_cast<uint8_t*>(malloc(dataWidth * dataHeight));
+        m_pixel_data[i] = (uint8_t*)(malloc(dataWidth * dataHeight));
         if (!m_pixel_data[i]) continue;
         memset(m_pixel_data[i], 0, dataWidth * dataHeight);
 
@@ -198,13 +196,13 @@ void ShpImage::RenderToSurface(
     DDSURFACEDESC2 desc = {};
     desc.dwSize = sizeof(desc);
 
-    auto* dsurf = dynamic_cast<DSurface*>(surface);
+    auto* dsurf = (DSurface*)(surface);
     if (!dsurf || !dsurf->Surface) return;
 
     if (FAILED(dsurf->Surface->Lock(nullptr, &desc, DDLOCK_WAIT, nullptr)))
         return;
 
-    uint16_t* buf = static_cast<uint16_t*>(desc.lpSurface);
+    uint16_t* buf = (uint16_t*)(desc.lpSurface);
     int pitch = desc.lPitch / 2;
 
     for (int y = 0; y < fh; ++y) {
@@ -222,7 +220,7 @@ void ShpImage::RenderToSurface(
             uint16_t r5 = px[0] >> 3;
             uint16_t g6 = px[1] >> 2;
             uint16_t b5 = px[2] >> 3;
-            buf[sy * pitch + sx] = static_cast<uint16_t>((r5 << 11) | (g6 << 5) | b5);
+            buf[sy * pitch + sx] = (uint16_t)((r5 << 11) | (g6 << 5) | b5);
         }
     }
 

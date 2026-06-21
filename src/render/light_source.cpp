@@ -20,7 +20,7 @@ LightSourceClass::LightSourceClass(const CoordStruct& location,
     Activated       = false;
 
     // Initialize AbstractClass base fields
-    uniqueId      = static_cast<uint32_t>(-1);
+    uniqueId      = (uint32_t)(-1);
     abstractFlags = 0;
     nextArrayIndex     = 0;
     referenceCount      = 0;
@@ -72,16 +72,16 @@ void LightSourceClass::ChangeLevels(int intensity, const TintStruct& tint, int8_
         case 1: // Smooth transition - interpolate
         {
             float step = 0.1f;
-            int steps = static_cast<int>(1.0f / step) + 1;
+            int steps = (int)(1.0f / step) + 1;
             for (int i = 1; i <= steps; ++i)
             {
-                float t = static_cast<float>(i) * step;
+                float t = (float)(i) * step;
                 if (t > 1.0f) t = 1.0f;
 
-                LightIntensity = old_intensity + static_cast<int32_t>((intensity - old_intensity) * t);
-                LightTint.Red   = old_tint.Red   + static_cast<int32_t>((tint.Red   - old_tint.Red)   * t);
-                LightTint.Green = old_tint.Green + static_cast<int32_t>((tint.Green - old_tint.Green) * t);
-                LightTint.Blue  = old_tint.Blue  + static_cast<int32_t>((tint.Blue  - old_tint.Blue)  * t);
+                LightIntensity = old_intensity + (int32_t)((intensity - old_intensity) * t);
+                LightTint.Red   = old_tint.Red   + (int32_t)((tint.Red   - old_tint.Red)   * t);
+                LightTint.Green = old_tint.Green + (int32_t)((tint.Green - old_tint.Green) * t);
+                LightTint.Blue  = old_tint.Blue  + (int32_t)((tint.Blue  - old_tint.Blue)  * t);
             }
             break;
         }

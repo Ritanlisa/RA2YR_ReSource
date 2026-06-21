@@ -53,9 +53,9 @@ RadioCommand RadioClass::sendToFirstLink(RadioCommand command)
     if (hasAnyLink())
     {
         AbstractClass* dummy = nullptr;
-        return getNthLink(0)->ReceiveCommand(static_cast<TechnoClass*>(this), command, dummy);
+        return getNthLink(0)->ReceiveCommand((TechnoClass*)(this), command, dummy);
     }
-    return static_cast<RadioCommand>(0);
+    return (RadioCommand)(0);
 }
 
 RadioCommand RadioClass::sendCommand(RadioCommand command, TechnoClass* recipient)
@@ -63,16 +63,16 @@ RadioCommand RadioClass::sendCommand(RadioCommand command, TechnoClass* recipien
     if (recipient)
     {
         AbstractClass* dummy = nullptr;
-        return recipient->ReceiveCommand(static_cast<TechnoClass*>(this), command, dummy);
+        return recipient->ReceiveCommand((TechnoClass*)(this), command, dummy);
     }
-    return static_cast<RadioCommand>(0);
+    return (RadioCommand)(0);
 }
 
 RadioCommand RadioClass::sendCommandWithData(RadioCommand command, AbstractClass*& inout, TechnoClass* recipient)
 {
     if (recipient)
-        return recipient->ReceiveCommand(static_cast<TechnoClass*>(this), command, inout);
-    return static_cast<RadioCommand>(0);
+        return recipient->ReceiveCommand((TechnoClass*)(this), command, inout);
+    return (RadioCommand)(0);
 }
 
 void RadioClass::sendToEachLink(RadioCommand command)
@@ -82,7 +82,7 @@ void RadioClass::sendToEachLink(RadioCommand command)
         if (radioLinks.Items[i])
         {
             AbstractClass* dummy = nullptr;
-            radioLinks.Items[i]->ReceiveCommand(static_cast<TechnoClass*>(this), command, dummy);
+            radioLinks.Items[i]->ReceiveCommand((TechnoClass*)(this), command, dummy);
         }
     }
 }
@@ -249,7 +249,7 @@ HRESULT RadioClass::LoadState(IStream* stream)
         hr = stream->Read(&ptr_raw, 4, &bytes_read);
         if (FAILED(hr) || bytes_read != 4)
             return FAILED(hr) ? hr : E_FAIL;
-        radioLinks.Items[i] = reinterpret_cast<TechnoClass*>(ptr_raw);
+        radioLinks.Items[i] = (TechnoClass*)(ptr_raw);
     }
 
     // IDA: ObjectPtr::RegisterForTracking(&SwizzleManager, &radioLinks.Items[i])
@@ -285,7 +285,7 @@ HRESULT RadioClass::SaveState(IStream* stream, int clear_dirty)
     // IDA: Write each link pointer
     for (int i = 0; i < link_count; ++i)
     {
-        uint32_t ptr_raw = reinterpret_cast<uint32_t>(radioLinks.Items[i]);
+        uint32_t ptr_raw = (uint32_t)(radioLinks.Items[i]);
         hr = stream->Write(&ptr_raw, 4, &bytes_written);
         if (FAILED(hr) || bytes_written != 4)
             return FAILED(hr) ? hr : E_FAIL;

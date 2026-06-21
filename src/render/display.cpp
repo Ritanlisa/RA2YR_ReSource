@@ -128,11 +128,11 @@ bool FramePresent(Surface* composite_surface, int flags, int arg3, int arg4)
         return false;
     }
 
-    uint8_t* dst_row = static_cast<uint8_t*>(desc.lpSurface);
+    uint8_t* dst_row = (uint8_t*)(desc.lpSurface);
     int dst_pitch = desc.lPitch;
 
     // Copy scanlines from composite to primary
-    uint8_t* src_row = static_cast<uint8_t*>(src_buf);
+    uint8_t* src_row = (uint8_t*)(src_buf);
     int row_bytes = src_w * bpp;
 
     for (int y = 0; y < src_h; ++y)
@@ -180,7 +180,7 @@ Action DisplayClass::DecideAction(
     (void)cell;
     (void)object;
     (void)unk;
-    return static_cast<Action>(0);
+    return (Action)(0);
 }
 
 CellStruct* DisplayClass::FoundationBoundsSize(

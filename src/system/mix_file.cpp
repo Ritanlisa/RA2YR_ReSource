@@ -104,7 +104,7 @@ uint32_t ComputeId(const char* filename)
 
 uint32_t Crc32(const void* data, size_t len, uint32_t crc = 0xFFFFFFFF)
 {
-    auto* bytes = static_cast<const uint8_t*>(data);
+    auto* bytes = (const uint8_t*)(data);
     for (size_t i = 0; i < len; ++i) {
         crc ^= bytes[i];
         for (int j = 0; j < 8; ++j)
@@ -208,17 +208,17 @@ MixFileClass::MixFileClass(const char* pFileName) noexcept
             }
 
             // Total encrypted = header(6B) + index(count*12B), padded to 8B
-            int total_enc = static_cast<int>(sizeof(mix::TdHeader))
-                          + CountFiles * static_cast<int>(sizeof(mix::IndexEntry));
+            int total_enc = (int)(sizeof(mix::TdHeader))
+                          + CountFiles * (int)(sizeof(mix::IndexEntry));
             int padded = ((total_enc + 7) / 8) * 8;
 
-            uint8_t* enc_buf = static_cast<uint8_t*>(malloc(padded));
+            uint8_t* enc_buf = (uint8_t*)(malloc(padded));
             if (!enc_buf) { fclose(fp); return; }
 
             memcpy(enc_buf, first_block, 8);
             int remaining = padded - 8;
             if (remaining > 0) {
-                if (fread(enc_buf + 8, 1, remaining, fp) != static_cast<size_t>(remaining)) {
+                if (fread(enc_buf + 8, 1, remaining, fp) != (size_t)(remaining)) {
                     free(enc_buf); fclose(fp); return;
                 }
             }
@@ -232,10 +232,10 @@ MixFileClass::MixFileClass(const char* pFileName) noexcept
             CountFiles = hdr.file_count;
             FileSize   = hdr.body_size;
 
-            Headers = static_cast<MixHeaderData*>(malloc(sizeof(MixHeaderData) * CountFiles));
+            Headers = (MixHeaderData*)(malloc(sizeof(MixHeaderData) * CountFiles));
             if (!Headers) { free(enc_buf); fclose(fp); return; }
 
-            auto* idx = reinterpret_cast<mix::IndexEntry*>(enc_buf + sizeof(mix::TdHeader));
+            auto* idx = (mix::IndexEntry*)(enc_buf + sizeof(mix::TdHeader));
             for (int i = 0; i < CountFiles; ++i) {
                 Headers[i].ID     = idx[i].id;
                 Headers[i].Offset = idx[i].offset;
@@ -276,7 +276,7 @@ MixFileClass::MixFileClass(const char* pFileName) noexcept
         return;
     }
 
-    Headers = static_cast<MixHeaderData*>(malloc(sizeof(MixHeaderData) * CountFiles));
+    Headers = (MixHeaderData*)(malloc(sizeof(MixHeaderData) * CountFiles));
     if (!Headers) {
         fclose(fp);
         return;
@@ -296,7 +296,7 @@ MixFileClass::MixFileClass(const char* pFileName) noexcept
         Headers[i].Size   = entry.size;
     }
 
-    FileStartOffset = body_start_offset + CountFiles * static_cast<int>(sizeof(mix::IndexEntry));
+    FileStartOffset = body_start_offset + CountFiles * (int)(sizeof(mix::IndexEntry));
 
     fclose(fp);
 }
@@ -588,13 +588,13 @@ bool MixFileClass::Extract(int index, void* buffer, int buffer_size) const
 {
     if (index < 0 || index >= CountFiles || !buffer)
         return false;
-    if (buffer_size < static_cast<int>(Headers[index].Size))
+    if (buffer_size < (int)(Headers[index].Size))
         return false;
 
     // Memory-backed: read directly from MemoryData buffer
     if (MemoryData) {
-        int pos = FileStartOffset + static_cast<int>(Headers[index].Offset);
-        int sz  = static_cast<int>(Headers[index].Size);
+        int pos = FileStartOffset + (int)(Headers[index].Offset);
+        int sz  = (int)(Headers[index].Size);
         if (pos + sz > MemoryDataSize) return false;
         memcpy(buffer, MemoryData + pos, sz);
         return true;
@@ -606,13 +606,13 @@ bool MixFileClass::Extract(int index, void* buffer, int buffer_size) const
     if (!fp)
         return false;
 
-    int file_pos = FileStartOffset + static_cast<int>(Headers[index].Offset);
+    int file_pos = FileStartOffset + (int)(Headers[index].Offset);
     fseek(fp, file_pos, SEEK_SET);
 
-    size_t read = fread(buffer, 1, static_cast<size_t>(Headers[index].Size), fp);
+    size_t read = fread(buffer, 1, (size_t)(Headers[index].Size), fp);
     fclose(fp);
 
-    return read == static_cast<size_t>(Headers[index].Size);
+    return read == (size_t)(Headers[index].Size);
 }
 
 bool MixFileClass::Extract(const char* filename, void* buffer, int buffer_size) const
@@ -624,12 +624,12 @@ bool MixFileClass::Peek(int index, void* buffer, int size) const
 {
     if (index < 0 || index >= CountFiles || !buffer)
         return false;
-    if (size > static_cast<int>(Headers[index].Size))
-        size = static_cast<int>(Headers[index].Size);
+    if (size > (int)(Headers[index].Size))
+        size = (int)(Headers[index].Size);
 
     // Memory-backed
     if (MemoryData) {
-        int pos = FileStartOffset + static_cast<int>(Headers[index].Offset);
+        int pos = FileStartOffset + (int)(Headers[index].Offset);
         if (pos + size > MemoryDataSize) return false;
         memcpy(buffer, MemoryData + pos, size);
         return true;
@@ -639,11 +639,11 @@ bool MixFileClass::Peek(int index, void* buffer, int size) const
 
     FILE* fp = fopen(FileName, "rb");
     if (!fp) return false;
-    int pos = FileStartOffset + static_cast<int>(Headers[index].Offset);
+    int pos = FileStartOffset + (int)(Headers[index].Offset);
     fseek(fp, pos, SEEK_SET);
     size_t read = fread(buffer, 1, size, fp);
     fclose(fp);
-    return read == static_cast<size_t>(size);
+    return read == (size_t)(size);
 }
 
 // ============================================================

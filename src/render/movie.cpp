@@ -74,7 +74,7 @@ MovieType MoviePlayer::DetectFormat(const char* filename)
     if (!data) return MovieType::Unknown;
 
     MovieType result = MovieType::Unknown;
-    auto* hdr = static_cast<const uint32_t*>(data);
+    auto* hdr = (const uint32_t*)(data);
 
     // BINK signatures: 'BIKb', 'BIKi', 'BIKf', 'KB2a', 'KB2i', 'KB2f'
     uint32_t sig = hdr[0];
@@ -114,7 +114,7 @@ MovieHandle* MoviePlayer::CreateMovie(const char* filename, DSurface* render_tar
         FILE* fp = fopen(filename, "rb");
         if (fp) {
             fseek(fp, 0, SEEK_END);
-            size = static_cast<int>(ftell(fp));
+            size = (int)(ftell(fp));
             fclose(fp);
         }
     }
@@ -344,7 +344,7 @@ bool BinkMovieHandle::OpenFromMemory(const void* data, int size, DSurface* rende
     renderTarget = render_target;
     dataSize = size;
 
-    auto* hdr = static_cast<const BinkFileHeader*>(data);
+    auto* hdr = (const BinkFileHeader*)(data);
     width  = hdr->width;
     height = hdr->height;
     totalFrames = hdr->num_frames;
@@ -447,7 +447,7 @@ void BinkMovieHandle::RenderFrame(DSurface* target)
         DDSURFACEDESC2 desc = {};
         desc.dwSize = sizeof(desc);
         if (SUCCEEDED(target->Surface->Lock(nullptr, &desc, DDLOCK_WAIT, nullptr))) {
-            auto* buf = static_cast<uint16_t*>(desc.lpSurface);
+            auto* buf = (uint16_t*)(desc.lpSurface);
             int pitch = desc.lPitch / 2;
             for (int y = 0; y < height && y < 600; y++)
                 for (int x = 0; x < width && x < 800; x++)
@@ -502,7 +502,7 @@ bool VQMovieHandle::OpenFromMemory(const void* data, int size)
     vqaData  = const_cast<void*>(data);
     dataSize = size;
 
-    auto* hdr = static_cast<const VQAFileHeader*>(data);
+    auto* hdr = (const VQAFileHeader*)(data);
     width  = hdr->width;
     height = hdr->height;
     currentFrame = 0;
@@ -516,7 +516,7 @@ bool VQMovieHandle::AdvanceFrame()
 {
     if (!playing || !vqaData) return false;
 
-    auto* hdr = static_cast<const VQAFileHeader*>(vqaData);
+    auto* hdr = (const VQAFileHeader*)(vqaData);
     if (currentFrame >= hdr->num_frames)
         return false;
 

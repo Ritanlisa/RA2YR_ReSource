@@ -91,10 +91,10 @@
 
 ### Wave 1: 核心类方法（最高优先级）
 
-- [ ] 1. structure/ 类方法 — BuildingClass, InfantryClass, UnitClass, AircraftClass
-  > 四类约 495 方法。已有 ~160 部分翻译（2026-06-18），剩余 ~335 从 IDA 反编译完整实现。
-  > 实时 IDA 反编译 → 优化还原原始 C++ → 编译验证 → translated=true。
-  > **Agent**: `deep` | **Parallel**: 四个类可并行分派
+- [~] 1. structure/ 类方法 — BuildingClass, InfantryClass, UnitClass, AircraftClass
+  > **阻塞**: 6 次子 agent 翻译尝试全部失败——注释壳、raw pointer、成员名错误、删除源文件。
+  > 管线工具就位（member_lookup.json、fix_member_access.py、编译门控），但子 agent 无法执行翻译本身。
+  > **等待**: 用户决定新翻译策略。
 
 - [ ] 2. object/ 类方法 — TechnoClass, FootClass, ObjectClass, MissionClass, RadioClass, AbstractClass
   > 六类约 600+ 方法。核心对象层次。

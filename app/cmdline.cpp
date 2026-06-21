@@ -173,7 +173,7 @@ int ParseCommandLine(int argc, char** argv)
         }
 
         // 0x52FA01: -%dX%d custom resolution
-        if (isdigit(static_cast<unsigned char>(tok[1]))) {
+        if (isdigit((unsigned char)(tok[1]))) {
             sscanf(tok, "-%dX%d", &g_CommandLineFlags, &g_CommandLineParam);
             continue;
         }
@@ -208,7 +208,7 @@ int ParseCommandLine(int argc, char** argv)
 
         do {
             ++p;
-            if (toupper(static_cast<unsigned char>(c)) == 'Q') {
+            if (toupper((unsigned char)(c)) == 'Q') {
                 byte_A8ED64 = true;
                 c = *p;
                 if (!c)

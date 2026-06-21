@@ -27,7 +27,7 @@ int HashStringMod31(const char* a1)
     int result = 0;
     while (*a1)
     {
-        result = (static_cast<int>(*a1) + 26 * result) % 31;
+        result = ((int)(*a1) + 26 * result) % 31;
         ++a1;
     }
     return result;
@@ -45,9 +45,9 @@ void InsertIntoHashTree(int* a1, int** a2)
         int* node = *cur;
         // Compare the key at offset 2 (node[2] vs a1[2])
         if (node[2] < a1[2])
-            cur = reinterpret_cast<int**>(&node[1]);   // go to next (right)
+            cur = (int**)(&node[1]);   // go to next (right)
         else
-            cur = reinterpret_cast<int**>(node);  // go to left
+            cur = (int**)(node);  // go to left
     }
     *cur = a1;
     a1[0] = 0;

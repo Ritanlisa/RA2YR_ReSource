@@ -153,8 +153,7 @@ bool TriggerClass::RegisterEvent(int event, ObjectClass* object,
                 }
             }
 
-            evt = reinterpret_cast<TEventClass*>(
-                static_cast<uintptr_t>(evt->TEventClass_field_28));
+            evt = (TEventClass*)((uintptr_t)(evt->TEventClass_field_28));
             ++evt_idx;
         }
     }
@@ -184,7 +183,7 @@ bool TriggerClass::FireActions(ObjectClass* obj, CellStruct location)
         );
         any = true;
 
-        action = static_cast<TActionClass*>(action->TActionClass_field_28);
+        action = (TActionClass*)(action->TActionClass_field_28);
     }
 
     return any;
@@ -207,28 +206,27 @@ TriggerTypeClass::Flags TriggerTypeClass::GetFlags() const
     uint32_t flags = 0;
 
     for (TActionClass* act = firstAction; act;
-         act = static_cast<TActionClass*>(act->TActionClass_field_28))
+         act = (TActionClass*)(act->TActionClass_field_28))
     {
-        flags |= static_cast<uint32_t>(act->idxArray);
+        flags |= (uint32_t)(act->idxArray);
     }
 
     for (TEventClass* evt = firstEvent; evt;
-         evt = reinterpret_cast<TEventClass*>(
-             static_cast<uintptr_t>(evt->TEventClass_field_28)))
+         evt = (TEventClass*)((uintptr_t)(evt->TEventClass_field_28)))
     {
-        flags |= static_cast<uint32_t>(evt->eventType);
+        flags |= (uint32_t)(evt->eventType);
     }
 
     if (nextTrigger)
-        flags |= static_cast<uint32_t>(nextTrigger->GetFlags());
+        flags |= (uint32_t)(nextTrigger->GetFlags());
 
-    return static_cast<Flags>(flags);
+    return (Flags)(flags);
 }
 
 bool TriggerTypeClass::HasAllowWinAction() const
 {
     for (TActionClass* act = firstAction; act;
-         act = static_cast<TActionClass*>(act->TActionClass_field_28))
+         act = (TActionClass*)(act->TActionClass_field_28))
     {
         if (act->idxArray & 0x80)
             return true;
@@ -241,8 +239,7 @@ bool TriggerTypeClass::HasAllowWinAction() const
 bool TriggerTypeClass::HasGlobalSetOrClearedEvent(int idx_global) const
 {
     for (TEventClass* evt = firstEvent; evt;
-         evt = reinterpret_cast<TEventClass*>(
-             static_cast<uintptr_t>(evt->TEventClass_field_28)))
+         evt = (TEventClass*)((uintptr_t)(evt->TEventClass_field_28)))
     {
         if ((evt->eventType == 36 || evt->eventType == 37)
             && evt->TEventClass_field_34 == idx_global)
@@ -256,8 +253,7 @@ bool TriggerTypeClass::HasGlobalSetOrClearedEvent(int idx_global) const
 bool TriggerTypeClass::HasLocalSetOrClearedEvent(int idx_local) const
 {
     for (TEventClass* evt = firstEvent; evt;
-         evt = reinterpret_cast<TEventClass*>(
-             static_cast<uintptr_t>(evt->TEventClass_field_28)))
+         evt = (TEventClass*)((uintptr_t)(evt->TEventClass_field_28)))
     {
         if ((evt->eventType == 36 || evt->eventType == 37)
             && evt->TEventClass_field_34 == idx_local)
@@ -271,8 +267,7 @@ bool TriggerTypeClass::HasLocalSetOrClearedEvent(int idx_local) const
 bool TriggerTypeClass::HasCrossesHorizontalLineEvent() const
 {
     for (TEventClass* evt = firstEvent; evt;
-         evt = reinterpret_cast<TEventClass*>(
-             static_cast<uintptr_t>(evt->TEventClass_field_28)))
+         evt = (TEventClass*)((uintptr_t)(evt->TEventClass_field_28)))
     {
         if (evt->eventType == 25)
             return true;
@@ -285,8 +280,7 @@ bool TriggerTypeClass::HasCrossesHorizontalLineEvent() const
 bool TriggerTypeClass::HasCrossesVerticalLineEvent() const
 {
     for (TEventClass* evt = firstEvent; evt;
-         evt = reinterpret_cast<TEventClass*>(
-             static_cast<uintptr_t>(evt->TEventClass_field_28)))
+         evt = (TEventClass*)((uintptr_t)(evt->TEventClass_field_28)))
     {
         if (evt->eventType == 26)
             return true;
@@ -299,8 +293,7 @@ bool TriggerTypeClass::HasCrossesVerticalLineEvent() const
 bool TriggerTypeClass::HasZoneEntryByEvent() const
 {
     for (TEventClass* evt = firstEvent; evt;
-         evt = reinterpret_cast<TEventClass*>(
-             static_cast<uintptr_t>(evt->TEventClass_field_28)))
+         evt = (TEventClass*)((uintptr_t)(evt->TEventClass_field_28)))
     {
         if (evt->eventType == 4)
             return true;
@@ -317,15 +310,14 @@ bool TriggerTypeClass::RemoveAction(TActionClass* action)
 
     TActionClass* prev = nullptr;
     for (TActionClass* cur = firstAction; cur;
-         cur = static_cast<TActionClass*>(cur->TActionClass_field_28))
+         cur = (TActionClass*)(cur->TActionClass_field_28))
     {
         if (cur == action)
         {
             if (prev)
                 prev->TActionClass_field_28 = cur->TActionClass_field_28;
             else
-                firstAction = static_cast<TActionClass*>(
-                    cur->TActionClass_field_28);
+                firstAction = (TActionClass*)(cur->TActionClass_field_28);
             cur->ddtor();
             return true;
         }
@@ -341,16 +333,13 @@ bool TriggerTypeClass::RemoveEvent(TEventClass* event)
 
     TEventClass* prev = nullptr;
     for (TEventClass* cur = firstEvent; cur;
-         cur = reinterpret_cast<TEventClass*>(
-             static_cast<uintptr_t>(cur->TEventClass_field_28)))
+         cur = (TEventClass*)((uintptr_t)(cur->TEventClass_field_28)))
     {
         if (cur == event)
         {
-            auto* nxt = reinterpret_cast<TEventClass*>(
-                static_cast<uintptr_t>(cur->TEventClass_field_28));
+            auto* nxt = (TEventClass*)((uintptr_t)(cur->TEventClass_field_28));
             if (prev)
-                prev->TEventClass_field_28 = static_cast<int32_t>(
-                    reinterpret_cast<uintptr_t>(nxt));
+                prev->TEventClass_field_28 = (int32_t)((uintptr_t)(nxt));
             else
                 firstEvent = nxt;
             cur->ddtor();

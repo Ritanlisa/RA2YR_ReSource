@@ -125,17 +125,17 @@ bool ClipLine(int start[2], int end[2], int clip_rect[4])
 
     auto outcode = [clip_x, clip_y, clip_r, clip_b](double x, double y) -> int {
         int code = 0;
-        if (x < static_cast<double>(clip_x))    code |= 1;
-        if (x > static_cast<double>(clip_r - 1)) code |= 2;
-        if (y > static_cast<double>(clip_b - 1)) code |= 4;
-        if (y < static_cast<double>(clip_y))     code |= 8;
+        if (x < (double)(clip_x))    code |= 1;
+        if (x > (double)(clip_r - 1)) code |= 2;
+        if (y > (double)(clip_b - 1)) code |= 4;
+        if (y < (double)(clip_y))     code |= 8;
         return code;
     };
 
-    double x0 = static_cast<double>(start[0]);
-    double y0 = static_cast<double>(start[1]);
-    double x1 = static_cast<double>(end[0]);
-    double y1 = static_cast<double>(end[1]);
+    double x0 = (double)(start[0]);
+    double y0 = (double)(start[1]);
+    double x1 = (double)(end[0]);
+    double y1 = (double)(end[1]);
 
     int c0 = outcode(x0, y0);
     int c1 = outcode(x1, y1);
@@ -144,10 +144,10 @@ bool ClipLine(int start[2], int end[2], int clip_rect[4])
     {
         if (!c0 && !c1)
         {
-            start[0] = static_cast<int>(x0);
-            start[1] = static_cast<int>(y0);
-            end[0]   = static_cast<int>(x1);
-            end[1]   = static_cast<int>(y1);
+            start[0] = (int)(x0);
+            start[1] = (int)(y0);
+            end[0]   = (int)(x1);
+            end[1]   = (int)(y1);
             return true;
         }
 
@@ -165,23 +165,23 @@ bool ClipLine(int start[2], int end[2], int clip_rect[4])
 
         if (c & 8)
         {
-            nx = (static_cast<double>(clip_y) - y0) * dxdy + x0;
-            ny = static_cast<double>(clip_y);
+            nx = ((double)(clip_y) - y0) * dxdy + x0;
+            ny = (double)(clip_y);
         }
         else if (c & 4)
         {
-            ny = static_cast<double>(clip_b - 1);
+            ny = (double)(clip_b - 1);
             nx = (ny - y0) * dxdy + x0;
         }
         else if (c & 2)
         {
-            nx = static_cast<double>(clip_r - 1);
+            nx = (double)(clip_r - 1);
             ny = (nx - x0) * dydx + y0;
         }
         else
         {
-            ny = (static_cast<double>(clip_x) - x0) * dydx + y0;
-            nx = static_cast<double>(clip_x);
+            ny = ((double)(clip_x) - x0) * dydx + y0;
+            nx = (double)(clip_x);
         }
 
         if (c == c0)
@@ -307,7 +307,7 @@ bool DSurface::BlitPart(
     if (!Surface || !src)
         return false;
 
-    auto* src_dsurf = dynamic_cast<DSurface*>(src);
+    auto* src_dsurf = (DSurface*)(src);
     if (!src_dsurf || !src_dsurf->Surface
         || src->GetBytesPerPixel() != GetBytesPerPixel()
         || src_dsurf->GetPitch() != GetPitch())
@@ -453,9 +453,9 @@ char DSurface::BlitCore(
      || a6[2] <= 0 || a6[3] <= 0)
         return 0;
 
-    auto* dst = reinterpret_cast<DSurface*>(self);
-    auto* src = reinterpret_cast<class Surface*>(a4);
-    auto* src_dsurf = dynamic_cast<DSurface*>(src);
+    auto* dst = (DSurface*)(self);
+    auto* src = (class Surface*)(a4);
+    auto* src_dsurf = (DSurface*)(src);
 
     // --- Determine hardware vs software blit path ---
     // v42 == true → software (XSurface::BlitPart), false → hardware (DDraw Blt)
@@ -463,7 +463,7 @@ char DSurface::BlitCore(
 
     if (!src->IsDSurface()
      || src->IsLocked()
-     || static_cast<char>(a7) == 1
+     || (char)(a7) == 1
      || src->GetBytesPerPixel() != dst->GetBytesPerPixel())
     {
         v42 = true;
@@ -530,7 +530,7 @@ char DSurface::BlitCore(
 
     // --- Get source surface rect ---
     int src_srf[4];
-    src->GetRect(reinterpret_cast<RectangleStruct*>(src_srf));
+    src->GetRect((RectangleStruct*)(src_srf));
     int v43 = src_srf[0], v44 = src_srf[1];
     int v45 = src_srf[2], v46 = src_srf[3];
 
@@ -578,7 +578,7 @@ hw_check:
     // --- Get destination surface rect ---
     RectangleStruct dst_srf_storage;
     dst->GetRect(&dst_srf_storage);
-    int* v71_ptr = reinterpret_cast<int*>(&dst_srf_storage);
+    int* v71_ptr = (int*)(&dst_srf_storage);
 
     int v35 = v71_ptr[0], v37 = v71_ptr[1];
     int v38 = v71_ptr[2], v39 = v71_ptr[3];
@@ -665,10 +665,10 @@ bool DSurface::Blit(
     int a6[4] = { src_rect.X,   src_rect.Y,   src_rect.Width,   src_rect.Height   };
 
     return BlitCore(
-        reinterpret_cast<int*>(this),
+        (int*)(this),
         a2, a3, src, a5, a6,
-        static_cast<int>(option1),
-        static_cast<char>(option2)) != 0;
+        (int)(option1),
+        (char)(option2)) != 0;
 }
 
 // BlitTracker — same as Blit but records element info for headless tracking.
@@ -681,10 +681,10 @@ char DSurface::BlitTracker(
     if (src_surface && src_rect && dst_rect)
     {
         elements::RecordBlit(
-            reinterpret_cast<uint32_t>(src_surface),
+            (uint32_t)(src_surface),
             src_rect[0], src_rect[1], src_rect[2], src_rect[3],
             dst_rect[0], dst_rect[1],
-            static_cast<uint32_t>(flags));
+            (uint32_t)(flags));
     }
     return BlitCore(self, dst_rect, src_rect, src_surface, clip_dst, clip_src, flags, option2);
 }
@@ -813,9 +813,9 @@ bool DSurface::FillRectWithFlags(
     //   green_mask = (0xFF >> g_BitMask_Blue)  << g_BitMask_Green
     //   blue_mask  = (0xFF >> g_BitMask_Red)   << g_BitShift_Blue
     // All globals are word-sized (16-bit) in the binary.
-    const auto red_mask   = static_cast<uint16_t>((0xFFu >> g_BitShift_Green) << g_BitShift_Red);
-    const auto green_mask = static_cast<uint16_t>((0xFFu >> g_BitMask_Blue)  << g_BitMask_Green);
-    const auto blue_mask  = static_cast<uint16_t>((0xFFu >> g_BitMask_Red)   << g_BitShift_Blue);
+    const auto red_mask   = (uint16_t)((0xFFu >> g_BitShift_Green) << g_BitShift_Red);
+    const auto green_mask = (uint16_t)((0xFFu >> g_BitMask_Blue)  << g_BitMask_Green);
+    const auto blue_mask  = (uint16_t)((0xFFu >> g_BitMask_Red)   << g_BitShift_Blue);
 
     // IDA: 0x4BB91B-0x4BB938 — Lock at clipped origin
     // CellStruct::Copy stores clipped rect as a local CellStruct copy;
@@ -827,16 +827,16 @@ bool DSurface::FillRectWithFlags(
 
     // IDA: 0x4BB94A-0x4BB970 — Opacity scaling: 0–100 clamped, then *255/100
     const int opacity_clamped = (opacity_percent > 100) ? 100 : opacity_percent;
-    const auto src_alpha = static_cast<uint16_t>(255 * opacity_clamped / 100);
+    const auto src_alpha = (uint16_t)(255 * opacity_clamped / 100);
     const uint16_t dst_alpha = 255 - src_alpha;
 
     // IDA: 0x4BB98F-0x4BB9D2 — Convert RGB888 source color to native 16-bit
     //   blue  = (B >> g_BitMask_Red)   << g_BitShift_Blue
     //   green = (G >> g_BitMask_Blue)  << g_BitMask_Green
     //   red   = (R >> g_BitShift_Green) << g_BitShift_Red
-    const auto src_blue  = static_cast<uint16_t>((color.B >> g_BitMask_Red)   << g_BitShift_Blue);
-    const auto src_green = static_cast<uint16_t>((color.G >> g_BitMask_Blue)  << g_BitMask_Green);
-    const auto src_red   = static_cast<uint16_t>((color.R >> g_BitShift_Green) << g_BitShift_Red);
+    const auto src_blue  = (uint16_t)((color.B >> g_BitMask_Red)   << g_BitShift_Blue);
+    const auto src_green = (uint16_t)((color.G >> g_BitMask_Blue)  << g_BitMask_Green);
+    const auto src_red   = (uint16_t)((color.R >> g_BitShift_Green) << g_BitShift_Red);
     const uint16_t src_color = src_blue | src_green | src_red;
 
     // IDA: 0x4BB9E6 — GetPitch() for row stride calculation
@@ -858,8 +858,7 @@ bool DSurface::FillRectWithFlags(
         const uint32_t src_blue_blend  = src_alpha * (src_color & blue_mask);
 
         // IDA: 0x4BBA50 — Row pointer: buf + row * pitch → pixel at (clipped.X, clipped.Y+row)
-        auto* pixel_row = reinterpret_cast<uint16_t*>(
-            static_cast<uint8_t*>(buf) + row * pitch);
+        auto* pixel_row = (uint16_t*)((uint8_t*)(buf) + row * pitch);
 
         // IDA: 0x4BBA68-0x4BBABB — Column loop: blend each pixel left to right
         for (int col = 0; col < clipped.Width; ++col)
@@ -875,8 +874,7 @@ bool DSurface::FillRectWithFlags(
 
             // IDA: 0x4BBAA8 — Assemble: mask each channel result and OR together
             // Red/green are masked; blue result fits naturally (LSB field, no mask needed)
-            pixel_row[col] = static_cast<uint16_t>(
-                (new_green & green_mask) | (new_red & red_mask) | new_blue);
+            pixel_row[col] = (uint16_t)((new_green & green_mask) | (new_red & red_mask) | new_blue);
         }
     }
 
@@ -928,7 +926,7 @@ void* DSurface::Lock(int x, int y)
     {
         ++LockCount;
         int pitch = GetPitch();
-        return static_cast<uint8_t*>(LockedSurface)
+        return (uint8_t*)(LockedSurface)
              + x * GetBytesPerPixel() + y * pitch;
     }
 
@@ -957,8 +955,8 @@ void* DSurface::Lock(int x, int y)
 
     // LABEL_14: common tail — increment count, compute byte offset
     ++LockCount;
-    return static_cast<uint8_t*>(LockedSurface)
-         + x * BytesPerPixel + y * static_cast<int>(desc.lPitch);
+    return (uint8_t*)(LockedSurface)
+         + x * BytesPerPixel + y * (int)(desc.lPitch);
 }
 
 // IDA: 0x4BAF40 -- DSurface::Unlock (154B)
@@ -1186,9 +1184,9 @@ bool XSurface::SetPixel(const Point2D& point, uint32_t color)
         return false;
 
     if (GetBytesPerPixel() == 2)
-        *static_cast<uint16_t*>(buf) = static_cast<uint16_t>(color);
+        *(uint16_t*)(buf) = (uint16_t)(color);
     else
-        *static_cast<uint8_t*>(buf) = static_cast<uint8_t>(color);
+        *(uint8_t*)(buf) = (uint8_t)(color);
 
     Unlock();
     return true;
@@ -1206,9 +1204,9 @@ uint32_t XSurface::GetPixel(const Point2D& point)
         return result;
 
     if (GetBytesPerPixel() == 2)
-        result = *static_cast<uint16_t*>(buf);
+        result = *(uint16_t*)(buf);
     else
-        result = *static_cast<uint8_t*>(buf);
+        result = *(uint8_t*)(buf);
 
     Unlock();
     return result;
@@ -1233,9 +1231,9 @@ bool XSurface::PutPixel(const Point2D& point, uint16_t color, const RectangleStr
         return false;
 
     if (GetBytesPerPixel() == 2)
-        *static_cast<uint16_t*>(buf) = color;
+        *(uint16_t*)(buf) = color;
     else
-        *static_cast<uint8_t*>(buf) = static_cast<uint8_t>(color);
+        *(uint8_t*)(buf) = (uint8_t)(color);
 
     Unlock();
     return true;
@@ -1262,9 +1260,9 @@ uint16_t XSurface::GetPixelAtCoords(const Point2D& point, const RectangleStruct&
         return result;
 
     if (GetBytesPerPixel() == 2)
-        result = *static_cast<uint16_t*>(buf);
+        result = *(uint16_t*)(buf);
     else
-        result = *static_cast<uint8_t*>(buf);
+        result = *(uint8_t*)(buf);
 
     Unlock();
     return result;
@@ -1291,7 +1289,7 @@ bool XSurface::WalkLine(
 
     int p1[2] = { sx, sy };
     int p2[2] = { ex, ey };
-    if (!ClipLine(p1, p2, reinterpret_cast<int*>(&clipped)))
+    if (!ClipLine(p1, p2, (int*)(&clipped)))
         return false;
 
     if (p1[0] > p2[0])
@@ -1371,7 +1369,7 @@ bool XSurface::DrawLineEx(
 
     int p1[2] = { sx, sy };
     int p2[2] = { ex, ey };
-    if (!ClipLine(p1, p2, reinterpret_cast<int*>(&clipped)))
+    if (!ClipLine(p1, p2, (int*)(&clipped)))
         return false;
 
     if (p1[0] > p2[0])
@@ -1395,15 +1393,15 @@ bool XSurface::DrawLineEx(
     {
         if (bpp == 1)
         {
-            auto* p = static_cast<uint8_t*>(buf);
+            auto* p = (uint8_t*)(buf);
             for (int x = x1; x <= x2; ++x)
-                p[x - x1] = static_cast<uint8_t>(color);
+                p[x - x1] = (uint8_t)(color);
         }
         else
         {
-            auto* p = static_cast<uint16_t*>(buf);
+            auto* p = (uint16_t*)(buf);
             for (int x = x1; x <= x2; ++x)
-                p[x - x1] = static_cast<uint16_t>(color);
+                p[x - x1] = (uint16_t)(color);
         }
         Unlock();
         return true;
@@ -1417,22 +1415,22 @@ bool XSurface::DrawLineEx(
 
         if (bpp == 1)
         {
-            uint8_t* p = static_cast<uint8_t*>(buf);
+            uint8_t* p = (uint8_t*)(buf);
             for (int i = 0; i <= y_count; ++i)
             {
-                *p = static_cast<uint8_t>(color);
-                p = reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(p) + (y_down ? pitch : -pitch));
+                *p = (uint8_t)(color);
+                p = (uint8_t*)((char*)(p) + (y_down ? pitch : -pitch));
             }
         }
         else
         {
-            uint16_t* p = static_cast<uint16_t*>(buf);
+            uint16_t* p = (uint16_t*)(buf);
             for (int i = 0; i <= y_count; ++i)
             {
-                *p = static_cast<uint16_t>(color);
-                uint8_t* bp = reinterpret_cast<uint8_t*>(p);
+                *p = (uint16_t)(color);
+                uint8_t* bp = (uint8_t*)(p);
                 bp += (y_down ? pitch : -pitch);
-                p = reinterpret_cast<uint16_t*>(bp);
+                p = (uint16_t*)(bp);
             }
         }
         Unlock();
@@ -1452,8 +1450,8 @@ bool XSurface::DrawLineEx(
 
         if (bpp == 1)
         {
-            uint8_t* p = static_cast<uint8_t*>(buf);
-            uint8_t  bc = static_cast<uint8_t>(color);
+            uint8_t* p = (uint8_t*)(buf);
+            uint8_t  bc = (uint8_t)(color);
             int row_offset = step_y * pitch;
 
             for (int x = 0; x <= dx; ++x)
@@ -1465,8 +1463,8 @@ bool XSurface::DrawLineEx(
         }
         else
         {
-            uint16_t* p = static_cast<uint16_t*>(buf);
-            uint16_t  wc = static_cast<uint16_t>(color);
+            uint16_t* p = (uint16_t*)(buf);
+            uint16_t  wc = (uint16_t)(color);
             int row_offset = step_y * (pitch / 2);
 
             for (int x = 0; x <= dx; ++x)
@@ -1488,8 +1486,8 @@ bool XSurface::DrawLineEx(
 
         if (bpp == 1)
         {
-            uint8_t* p = static_cast<uint8_t*>(buf);
-            uint8_t  bc = static_cast<uint8_t>(color);
+            uint8_t* p = (uint8_t*)(buf);
+            uint8_t  bc = (uint8_t)(color);
             int row_offset = (y_down ? pitch : -pitch);
 
             for (int y = y_start; y <= y_end; ++y)
@@ -1497,13 +1495,13 @@ bool XSurface::DrawLineEx(
                 p[cur_x] = bc;
                 if (d > 0) { ++cur_x; d -= 2 * abs_dy; }
                 d += 2 * dx;
-                p = reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(p) + row_offset);
+                p = (uint8_t*)((char*)(p) + row_offset);
             }
         }
         else
         {
-            uint16_t* p = static_cast<uint16_t*>(buf);
-            uint16_t  wc = static_cast<uint16_t>(color);
+            uint16_t* p = (uint16_t*)(buf);
+            uint16_t  wc = (uint16_t)(color);
             int row_offset = y_down ? (pitch / 2) : -(pitch / 2);
 
             for (int y = y_start; y <= y_end; ++y)
@@ -1567,19 +1565,19 @@ bool XSurface::DrawDashedLine(
         {
             if (bpp == 1)
             {
-                uint8_t* p = static_cast<uint8_t*>(buf);
+                uint8_t* p = (uint8_t*)(buf);
                 for (int x = 0; x <= x2 - x1; ++x)
                 {
                     int idx = dash_offset + x;
                     while (idx < 0) idx += 16;
                     idx %= 16;
                     if (stipple[idx])
-                        p[x] = static_cast<uint8_t>(color);
+                        p[x] = (uint8_t)(color);
                 }
             }
             else
             {
-                uint16_t* p = static_cast<uint16_t*>(buf);
+                uint16_t* p = (uint16_t*)(buf);
                 for (int x = 0; x <= x2 - x1; ++x)
                 {
                     int idx = dash_offset + x;
@@ -1598,20 +1596,20 @@ bool XSurface::DrawDashedLine(
 
         if (bpp == 1)
         {
-            uint8_t* p = static_cast<uint8_t*>(buf);
+            uint8_t* p = (uint8_t*)(buf);
             for (int i = 0; i <= y_count; ++i)
             {
                 int idx = dash_offset + i;
                 while (idx < 0) idx += 16;
                 idx %= 16;
                 if (stipple[idx])
-                    *p = static_cast<uint8_t>(color);
-                p = reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(p) + y_step);
+                    *p = (uint8_t)(color);
+                p = (uint8_t*)((char*)(p) + y_step);
             }
         }
         else
         {
-            uint16_t* p = static_cast<uint16_t*>(buf);
+            uint16_t* p = (uint16_t*)(buf);
             int y_off = y_step / 2;
             for (int i = 0; i <= y_count; ++i)
             {
@@ -1634,21 +1632,21 @@ bool XSurface::DrawDashedLine(
 
         if (bpp == 1)
         {
-            uint8_t* p = static_cast<uint8_t*>(buf);
+            uint8_t* p = (uint8_t*)(buf);
             for (int x = 0; x < dx; ++x)
             {
                 int idx = dash_offset + x;
                 while (idx < 0) idx += 16;
                 idx %= 16;
                 if (stipple[idx])
-                    p[x] = static_cast<uint8_t>(color);
-                if (d > 0) { cur_y += y_step; p = reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(p) + y_step * pitch); d -= 2 * dx; }
+                    p[x] = (uint8_t)(color);
+                if (d > 0) { cur_y += y_step; p = (uint8_t*)((char*)(p) + y_step * pitch); d -= 2 * dx; }
                 d += 2 * ady;
             }
         }
         else
         {
-            uint16_t* p = static_cast<uint16_t*>(buf);
+            uint16_t* p = (uint16_t*)(buf);
             int row_step = y_step * (pitch / 2);
             for (int x = 0; x < dx; ++x)
             {
@@ -1673,22 +1671,22 @@ bool XSurface::DrawDashedLine(
 
         if (bpp == 1)
         {
-            uint8_t* p = static_cast<uint8_t*>(buf);
+            uint8_t* p = (uint8_t*)(buf);
             for (int i = 0; i <= y_count; ++i)
             {
                 int idx = dash_offset + i;
                 while (idx < 0) idx += 16;
                 idx %= 16;
                 if (stipple[idx])
-                    p[cur_x] = static_cast<uint8_t>(color);
+                    p[cur_x] = (uint8_t)(color);
                 if (d > 0) { ++cur_x; d -= 2 * dy; }
                 d += 2 * adx;
-                p = reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(p) + y_step);
+                p = (uint8_t*)((char*)(p) + y_step);
             }
         }
         else
         {
-            uint16_t* p = static_cast<uint16_t*>(buf);
+            uint16_t* p = (uint16_t*)(buf);
             int row_step = y_step / 2;
             for (int i = 0; i <= y_count; ++i)
             {
@@ -1872,22 +1870,22 @@ bool XSurface::FillRectEx(
 
     if (bpp == 1)
     {
-        auto* row = static_cast<uint8_t*>(buf);
+        auto* row = (uint8_t*)(buf);
         for (int y = 0; y < cr.Height; ++y)
         {
-            std::memset(row, static_cast<uint8_t>(color), cr.Width);
+            std::memset(row, (uint8_t)(color), cr.Width);
             row += pitch;
         }
     }
     else
     {
         // 16bpp+ fill: handle alignment for unaligned starts
-        auto* row = static_cast<uint8_t*>(buf);
-        uint8_t low   = static_cast<uint8_t>(color);
-        uint8_t high  = static_cast<uint8_t>(color >> 8);
+        auto* row = (uint8_t*)(buf);
+        uint8_t low   = (uint8_t)(color);
+        uint8_t high  = (uint8_t)(color >> 8);
         int bytes = cr.Width * 2;
 
-        uintptr_t addr = reinterpret_cast<uintptr_t>(row);
+        uintptr_t addr = (uintptr_t)(row);
         if ((addr & 3) != 0)
         {
             // Unaligned start: fill first byte(s) individually, then aligned
@@ -1896,26 +1894,26 @@ bool XSurface::FillRectEx(
                 // Start at WORD boundary
                 for (int y = 0; y < cr.Height; ++y)
                 {
-                    auto* p = reinterpret_cast<uint16_t*>(row);
+                    auto* p = (uint16_t*)(row);
                     int remaining = cr.Width;
                     // Fill one at a time for short rows
                     if (cr.Width <= 1)
                     {
-                        p[0] = static_cast<uint16_t>(color);
+                        p[0] = (uint16_t)(color);
                     }
                     else
                     {
                         // First pixel
-                        p[0] = static_cast<uint16_t>(color);
+                        p[0] = (uint16_t)(color);
                         // Remaining pixels as DWORD pairs (2 pixels per DWORD)
                         int dw_count = (cr.Width - 1) / 2;
                         uint32_t dw_val = color | (color << 16);
-                        auto* dw = reinterpret_cast<uint32_t*>(p + 1);
+                        auto* dw = (uint32_t*)(p + 1);
                         for (int i = 0; i < dw_count; ++i)
                             dw[i] = dw_val;
                         // Odd pixel tail
                         if ((cr.Width - 1) & 1)
-                            p[cr.Width - 1] = static_cast<uint16_t>(color);
+                            p[cr.Width - 1] = (uint16_t)(color);
                     }
                     row += pitch;
                     (void)remaining;
@@ -1926,14 +1924,14 @@ bool XSurface::FillRectEx(
                 // byte-aligned
                 for (int y = 0; y < cr.Height; ++y)
                 {
-                    auto* p = reinterpret_cast<uint16_t*>(row);
+                    auto* p = (uint16_t*)(row);
                     int dw_count = cr.Width / 2;
                     uint32_t dw_val = color | (color << 16);
-                    auto* dw = reinterpret_cast<uint32_t*>(p);
+                    auto* dw = (uint32_t*)(p);
                     for (int i = 0; i < dw_count; ++i)
                         dw[i] = dw_val;
                     if (cr.Width & 1)
-                        p[cr.Width - 1] = static_cast<uint16_t>(color);
+                        p[cr.Width - 1] = (uint16_t)(color);
                     row += pitch;
                 }
             }
@@ -1943,14 +1941,14 @@ bool XSurface::FillRectEx(
             // Aligned start
             for (int y = 0; y < cr.Height; ++y)
             {
-                auto* p = reinterpret_cast<uint16_t*>(row);
+                auto* p = (uint16_t*)(row);
                 int dw_count = cr.Width / 2;
                 uint32_t dw_val = color | (color << 16);
-                auto* dw = reinterpret_cast<uint32_t*>(p);
+                auto* dw = (uint32_t*)(p);
                 for (int i = 0; i < dw_count; ++i)
                     dw[i] = dw_val;
                 if (cr.Width & 1)
-                    p[cr.Width - 1] = static_cast<uint16_t>(color);
+                    p[cr.Width - 1] = (uint16_t)(color);
                 row += pitch;
             }
         }
@@ -2172,9 +2170,9 @@ static uint16_t PackColor(uint8_t r, uint8_t g, uint8_t b)
     int mr = g_BitMask_Red,   mg = g_BitMask_Green,   mb = g_BitMask_Blue;
     int sr = g_BitShift_Red,  sg = g_BitShift_Green,  sb = g_BitShift_Blue;
 
-    uint16_t rv = mr > 0 ? static_cast<uint16_t>((r >> (8 - mr)) << sr) : 0;
-    uint16_t gv = mg > 0 ? static_cast<uint16_t>((g >> (8 - mg)) << sg) : 0;
-    uint16_t bv = mb > 0 ? static_cast<uint16_t>((b >> (8 - mb)) << sb) : 0;
+    uint16_t rv = mr > 0 ? (uint16_t)((r >> (8 - mr)) << sr) : 0;
+    uint16_t gv = mg > 0 ? (uint16_t)((g >> (8 - mg)) << sg) : 0;
+    uint16_t bv = mb > 0 ? (uint16_t)((b >> (8 - mb)) << sb) : 0;
     return rv | gv | bv;
 }
 
@@ -2191,7 +2189,7 @@ static uint16_t LerpColor(uint16_t a, uint16_t b, float t)
         if (bits <= 0) return 0;
         int val = (c >> shift) & ((1 << bits) - 1);
         // Bit-replicate: 5-bit→8-bit: (v<<3)|(v>>2); 6-bit→8-bit: (v<<2)|(v>>4)
-        return static_cast<uint8_t>((val << (8 - bits)) | (val >> (2 * bits - 8)));
+        return (uint8_t)((val << (8 - bits)) | (val >> (2 * bits - 8)));
     };
 
     uint8_t ar = extract(a, sr, mr);
@@ -2202,9 +2200,9 @@ static uint16_t LerpColor(uint16_t a, uint16_t b, float t)
     uint8_t bb = extract(b, sb, mb);
 
     float inv = 1.0f - t;
-    uint8_t lr = static_cast<uint8_t>(ar * inv + br * t + 0.5f);
-    uint8_t lg = static_cast<uint8_t>(ag * inv + bg * t + 0.5f);
-    uint8_t lb = static_cast<uint8_t>(ab * inv + bb * t + 0.5f);
+    uint8_t lr = (uint8_t)(ar * inv + br * t + 0.5f);
+    uint8_t lg = (uint8_t)(ag * inv + bg * t + 0.5f);
+    uint8_t lb = (uint8_t)(ab * inv + bb * t + 0.5f);
 
     return PackColor(lr, lg, lb);
 }
@@ -2237,7 +2235,7 @@ bool DSurface::DrawGradientLine(
     // --- Cohen-Sutherland line clipping ---
     int p1[2] = { sx, sy };
     int p2[2] = { ex, ey };
-    if (!ClipLine(p1, p2, reinterpret_cast<int*>(&clipped)))
+    if (!ClipLine(p1, p2, (int*)(&clipped)))
         return false;
 
     // --- Ensure start is left of end ---
@@ -2252,8 +2250,8 @@ bool DSurface::DrawGradientLine(
     int x2 = p2[0], y2 = p2[1];
 
     // --- Cast input colors to 16-bit ---
-    uint16_t clr_start = static_cast<uint16_t>(palette_idx);
-    uint16_t clr_end   = static_cast<uint16_t>(fade_val);
+    uint16_t clr_start = (uint16_t)(palette_idx);
+    uint16_t clr_end   = (uint16_t)(fade_val);
 
     // --- Lock surface at start pixel ---
     void* buf = Lock(x1, y1);
@@ -2261,7 +2259,7 @@ bool DSurface::DrawGradientLine(
         return false;
 
     int  pitch  = GetPitch();
-    auto* pixels = static_cast<uint16_t*>(buf);
+    auto* pixels = (uint16_t*)(buf);
 
     // --- Horizontal line ---
     if (y1 == y2)
@@ -2299,7 +2297,7 @@ bool DSurface::DrawGradientLine(
             if (t > 1.0f) { *gradient_step = 1.0f; *gradient_start = -*gradient_start; }
             if (t < 0.0f) { *gradient_step = 0.0f; *gradient_start = -*gradient_start; }
 
-            p = reinterpret_cast<uint16_t*>(reinterpret_cast<char*>(p) + y_step);
+            p = (uint16_t*)((char*)(p) + y_step);
         }
         Unlock();
         return true;
@@ -2364,7 +2362,7 @@ bool DSurface::DrawGradientLine(
                 d -= 2 * abs_dy;
             }
             d += 2 * dx;
-            p = reinterpret_cast<uint16_t*>(reinterpret_cast<char*>(p) + y_step);
+            p = (uint16_t*)((char*)(p) + y_step);
         }
     }
 
@@ -2872,7 +2870,7 @@ bool DSurface::DrawLineZBuf(
     // Clip line
     int p1[2] = { x1, y1 };
     int p2[2] = { x2, y2 };
-    if (!ClipLine(p1, p2, reinterpret_cast<int*>(&clipped)))
+    if (!ClipLine(p1, p2, (int*)(&clipped)))
         return false;
 
     // Ensure x1 <= x2
@@ -2906,7 +2904,7 @@ bool DSurface::DrawLineZBuf(
     int mr = g_BitMask_Red,   mg = g_BitMask_Green,   mb = g_BitMask_Blue;
     int sr = g_BitShift_Red,  sg = g_BitShift_Green,  sb = g_BitShift_Blue;
 
-    auto* pixels = static_cast<uint16_t*>(buf);
+    auto* pixels = (uint16_t*)(buf);
     uint16_t color16 = color;
 
     // Bresenham line walk with Z-buffer
@@ -2964,7 +2962,7 @@ bool DSurface::DrawLineZBuf(
                 d -= 2 * abs_dy;
             }
             d += 2 * dx;
-            p = reinterpret_cast<uint16_t*>(reinterpret_cast<uint8_t*>(p) + y_step_bytes);
+            p = (uint16_t*)((uint8_t*)(p) + y_step_bytes);
         }
     }
 
@@ -3006,7 +3004,7 @@ bool DSurface::DrawLineModulated(
 
     int p1[2] = { x1, y1 };
     int p2[2] = { x2, y2 };
-    if (!ClipLine(p1, p2, reinterpret_cast<int*>(&clipped)))
+    if (!ClipLine(p1, p2, (int*)(&clipped)))
         return false;
 
     if (p1[0] > p2[0])
@@ -3031,7 +3029,7 @@ bool DSurface::DrawLineModulated(
         return false;
 
     int pitch = GetPitch();
-    auto* pixels = static_cast<uint16_t*>(buf);
+    auto* pixels = (uint16_t*)(buf);
 
     int mr = g_BitMask_Red,   mg = g_BitMask_Green,   mb = g_BitMask_Blue;
     int sr = g_BitShift_Red,  sg = g_BitShift_Green,  sb = g_BitShift_Blue;
@@ -3046,9 +3044,9 @@ bool DSurface::DrawLineModulated(
     auto modulate = [mod_strength, mr, mg, mb, sr, sg, sb](uint16_t val) -> uint16_t
     {
         // Extract channels
-        int r = static_cast<int>((val >> sr) & ((1 << mr) - 1));
-        int g = static_cast<int>((val >> sg) & ((1 << mg) - 1));
-        int b = static_cast<int>((val >> sb) & ((1 << mb) - 1));
+        int r = (int)((val >> sr) & ((1 << mr) - 1));
+        int g = (int)((val >> sg) & ((1 << mg) - 1));
+        int b = (int)((val >> sb) & ((1 << mb) - 1));
 
         // Expand to 8-bit
         r = (r << (8 - mr)) | (r >> (2 * mr - 8));
@@ -3065,9 +3063,9 @@ bool DSurface::DrawLineModulated(
         if (b > 255) b = 255;
 
         // Repack
-        uint16_t nr = static_cast<uint16_t>((r >> (8 - mr)) << sr);
-        uint16_t ng = static_cast<uint16_t>((g >> (8 - mg)) << sg);
-        uint16_t nb = static_cast<uint16_t>((b >> (8 - mb)) << sb);
+        uint16_t nr = (uint16_t)((r >> (8 - mr)) << sr);
+        uint16_t ng = (uint16_t)((g >> (8 - mg)) << sg);
+        uint16_t nb = (uint16_t)((b >> (8 - mb)) << sb);
         return nr | ng | nb;
     };
 
@@ -3117,7 +3115,7 @@ bool DSurface::DrawLineModulated(
                 d -= 2 * abs_dy;
             }
             d += 2 * dx;
-            p = reinterpret_cast<uint16_t*>(reinterpret_cast<uint8_t*>(p) + y_step);
+            p = (uint16_t*)((uint8_t*)(p) + y_step);
         }
     }
 
@@ -3138,9 +3136,9 @@ bool DSurface::DrawLineZBufColored(
     int fade_start, int fade_end)
 {
     // Compute scaled RGB values
-    int r_scaled = static_cast<int>(static_cast<float>(src_rgb[0]) * brightness);
-    int g_scaled = static_cast<int>(static_cast<float>(src_rgb[1]) * brightness);
-    int b_scaled = static_cast<int>(static_cast<float>(src_rgb[2]) * brightness);
+    int r_scaled = (int)((float)(src_rgb[0]) * brightness);
+    int g_scaled = (int)((float)(src_rgb[1]) * brightness);
+    int b_scaled = (int)((float)(src_rgb[2]) * brightness);
 
     // Too dark → skip
     if (r_scaled < 8 && g_scaled < 8 && b_scaled < 8)
@@ -3166,7 +3164,7 @@ bool DSurface::DrawLineZBufColored(
 
     int p1[2] = { x1, y1 };
     int p2[2] = { x2, y2 };
-    if (!ClipLine(p1, p2, reinterpret_cast<int*>(&clipped)))
+    if (!ClipLine(p1, p2, (int*)(&clipped)))
         return false;
 
     if (p1[0] > p2[0])
@@ -3191,7 +3189,7 @@ bool DSurface::DrawLineZBufColored(
         return false;
 
     int pitch = GetPitch();
-    auto* pixels = static_cast<uint16_t*>(buf);
+    auto* pixels = (uint16_t*)(buf);
 
     int mr = g_BitMask_Red,   mg = g_BitMask_Green,   mb = g_BitMask_Blue;
     int sr = g_BitShift_Red,  sg = g_BitShift_Green,  sb = g_BitShift_Blue;
@@ -3202,9 +3200,9 @@ bool DSurface::DrawLineZBufColored(
     auto pack = [mr, mg, mb, sr, sg, sb](int r, int g, int b) -> uint16_t
     {
         if (r > 255) r = 255; if (g > 255) g = 255; if (b > 255) b = 255;
-        uint16_t nr = static_cast<uint16_t>((r >> (8 - mr)) << sr);
-        uint16_t ng = static_cast<uint16_t>((g >> (8 - mg)) << sg);
-        uint16_t nb = static_cast<uint16_t>((b >> (8 - mb)) << sb);
+        uint16_t nr = (uint16_t)((r >> (8 - mr)) << sr);
+        uint16_t ng = (uint16_t)((g >> (8 - mg)) << sg);
+        uint16_t nb = (uint16_t)((b >> (8 - mb)) << sb);
         return nr | ng | nb;
     };
 
@@ -3261,7 +3259,7 @@ bool DSurface::DrawLineZBufColored(
                 d -= 2 * abs_dy;
             }
             d += 2 * dx;
-            p = reinterpret_cast<uint16_t*>(reinterpret_cast<uint8_t*>(p) + y_step);
+            p = (uint16_t*)((uint8_t*)(p) + y_step);
         }
     }
 
@@ -3310,7 +3308,7 @@ bool DSurface::DrawLineFaded(
 
     int p1[2] = { x1, y1 };
     int p2[2] = { x2, y2 };
-    if (!ClipLine(p1, p2, reinterpret_cast<int*>(&clipped)))
+    if (!ClipLine(p1, p2, (int*)(&clipped)))
         return false;
 
     int fs = fade_start, fe = fade_end;
@@ -3348,13 +3346,12 @@ bool DSurface::DrawLineFaded(
     int len_sq = dx * dx + dy * dy;
 
     // Simple gradient: interpolate between fade_start and fade_end color
-    auto* pixels = static_cast<uint16_t*>(buf);
+    auto* pixels = (uint16_t*)(buf);
 
     auto inline_draw = [&](int i, int total)
     {
-        float t = (total > 0) ? static_cast<float>(i) / static_cast<float>(total) : 0.0f;
-        uint16_t val = static_cast<uint16_t>(
-            static_cast<int>(fs + (fe - fs) * t));
+        float t = (total > 0) ? (float)(i) / (float)(total) : 0.0f;
+        uint16_t val = (uint16_t)((int)(fs + (fe - fs) * t));
         return val;
     };
 
@@ -3408,7 +3405,7 @@ bool DSurface::DrawLineFaded(
                 d -= 2 * abs_dy;
             }
             d += 2 * dx;
-            p = reinterpret_cast<uint16_t*>(reinterpret_cast<uint8_t*>(p) + y_step);
+            p = (uint16_t*)((uint8_t*)(p) + y_step);
         }
     }
 

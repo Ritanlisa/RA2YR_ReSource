@@ -41,9 +41,20 @@
           "started_at": "2026-06-21T05:13:18.081Z",
           "status": "running",
           "updated_at": "2026-06-21T06:36:45.632Z"
+        },
+        "todo:2": {
+          "task_key": "todo:2",
+          "task_label": "2",
+          "task_title": "object/ 类方法 — TechnoClass, FootClass, ObjectClass, MissionClass, RadioClass, AbstractClass",
+          "session_id": "opencode:ses_116de0f57ffe1vTTpikne9npGj",
+          "agent": "Sisyphus-Junior",
+          "category": "deep",
+          "started_at": "2026-06-21T07:30:51.051Z",
+          "status": "running",
+          "updated_at": "2026-06-21T08:02:13.269Z"
         }
       },
-      "updated_at": "2026-06-21T06:36:45.632Z"
+      "updated_at": "2026-06-21T08:02:13.267Z"
     }
   },
   "session_origins": {},
@@ -57,7 +68,18 @@
       "started_at": "2026-06-21T05:13:18.081Z",
       "status": "running",
       "updated_at": "2026-06-21T06:36:45.632Z"
+    },
+    "todo:2": {
+      "task_key": "todo:2",
+      "task_label": "2",
+      "task_title": "object/ 类方法 — TechnoClass, FootClass, ObjectClass, MissionClass, RadioClass, AbstractClass",
+      "session_id": "opencode:ses_116de0f57ffe1vTTpikne9npGj",
+      "agent": "Sisyphus-Junior",
+      "category": "deep",
+      "started_at": "2026-06-21T07:30:51.051Z",
+      "status": "running",
+      "updated_at": "2026-06-21T08:02:13.269Z"
     }
   },
-  "updated_at": "2026-06-21T06:36:45.632Z"
+  "updated_at": "2026-06-21T08:02:13.267Z"
 }

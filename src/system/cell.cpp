@@ -43,7 +43,7 @@ CellClass::CellClass()
     , jumpjet(nullptr)
     , firstObject(nullptr)
     , altObject(nullptr)
-    , landType(static_cast<int>(LandType::Clear))
+    , landType((int)(LandType::Clear))
     , radLevel(0.0)
     , radSite(nullptr)
     , CellClass_field_FC(0)
@@ -100,7 +100,7 @@ ObjectClass* FindFromList(ObjectClass* head)
 template <typename T>
 T* CastTo(ObjectClass* obj)
 {
-    return reinterpret_cast<T*>(obj);
+    return (T*)(obj);
 }
 
 } // anonymous namespace
@@ -155,8 +155,8 @@ TechnoClass* CellClass::FindTechnoNearestTo(
         {
             CoordStruct crd;
             as_techno->fetchCoordinatesHere(&crd);
-            double dx = static_cast<double>(crd.X) - static_cast<double>(offset.X);
-            double dy = static_cast<double>(crd.Y) - static_cast<double>(offset.Y);
+            double dx = (double)(crd.X) - (double)(offset.X);
+            double dy = (double)(crd.Y) - (double)(offset.Y);
             double dist = dx * dx + dy * dy;
             if (dist < best_dist)
             {
@@ -298,11 +298,11 @@ RectangleStruct* CellClass::GetScreenRect(RectangleStruct* out) const
     // Center calculation:
     //   screen_x = (mapCoords.X - mapCoords.Y) * 30
     //   screen_y = (mapCoords.X + mapCoords.Y) * 15 - height * 15
-    int cx = static_cast<int>(mapCoords.X);
-    int cy = static_cast<int>(mapCoords.Y);
+    int cx = (int)(mapCoords.X);
+    int cy = (int)(mapCoords.Y);
 
     int center_x = (cx - cy) * 30;
-    int center_y = (cx + cy) * 15 - static_cast<int>(height) * 15;
+    int center_y = (cx + cy) * 15 - (int)(height) * 15;
 
     // Bounding rect: tile width 60, height 30
     out->X      = center_x - 30;
@@ -428,7 +428,7 @@ bool CellClass::QuickPassable() const
     // Check flags for blocking terrain
     // Check if any buildings/units occupy this cell
     // Returns true if cell can be moved through
-    return (static_cast<uint32_t>(flags) & 0x10) == 0;
+    return ((uint32_t)(flags) & 0x10) == 0;
 }
 
 // IDA: 0x47C520 -- Cell::IsBridge
@@ -497,9 +497,9 @@ CoordStruct* CellClass::GetCenterCoords(CoordStruct* out) const
     if (!out)
         return out;
     // Center = cell top-left + half cell width in leptons
-    out->X = static_cast<int>(mapCoords.X) * 256 + 128;
-    out->Y = static_cast<int>(mapCoords.Y) * 256 + 128;
-    out->Z = static_cast<int>(height);
+    out->X = (int)(mapCoords.X) * 256 + 128;
+    out->Y = (int)(mapCoords.Y) * 256 + 128;
+    out->Z = (int)(height);
     return out;
 }
 
@@ -507,14 +507,14 @@ int CellClass::GetFloorHeight(const Point2D& subcoords) const
 {
     // Get floor height at sub-cell position
     (void)subcoords;
-    return static_cast<int>(height);
+    return (int)(height);
 }
 
 void CellClass::SetMapCoords(const CoordStruct& coords)
 {
-    mapCoords.X = static_cast<int16_t>(coords.X / 256);
-    mapCoords.Y = static_cast<int16_t>(coords.Y / 256);
-    height = static_cast<int8_t>(coords.Z);
+    mapCoords.X = (int16_t)(coords.X / 256);
+    mapCoords.Y = (int16_t)(coords.Y / 256);
+    height = (int8_t)(coords.Z);
 }
 
 CoordStruct* CellClass::FindInfantrySubposition(CoordStruct* out, const CoordStruct& coords,
@@ -575,8 +575,7 @@ void CellClass::BlowUpBridge()
     if (ContainsBridge())
     {
         // Destroy bridge, scatter content
-        flags = static_cast<CellFlags>(
-            static_cast<uint32_t>(flags) & ~0x8000u);
+        flags = (CellFlags)((uint32_t)(flags) & ~0x8000u);
     }
 }
 
@@ -685,7 +684,7 @@ bool CellClass::IsRadiated() const
 
 int CellClass::GetRadLevel() const
 {
-    return static_cast<int>(radLevel);
+    return (int)(radLevel);
 }
 
 void CellClass::RadLevelIncrease(double amount)
@@ -700,13 +699,13 @@ void CellClass::RadLevelDecrease(double amount)
         radLevel = 0.0;
 }
 
-bool CellClass::Tile_Is_Tunnel() const { return (static_cast<uint32_t>(flags) & 0x400000) != 0; }
-bool CellClass::Tile_Is_Water() const { return (static_cast<uint32_t>(flags) & 0x800) != 0; }
+bool CellClass::Tile_Is_Tunnel() const { return ((uint32_t)(flags) & 0x400000) != 0; }
+bool CellClass::Tile_Is_Water() const { return ((uint32_t)(flags) & 0x800) != 0; }
 bool CellClass::Tile_Is_Blank() const { return slopeIndex == 0; }
-bool CellClass::Tile_Is_Ramp() const { return (static_cast<uint32_t>(flags) & 0x10000) != 0; }
-bool CellClass::Tile_Is_Cliff() const { return (static_cast<uint32_t>(flags) & 0x2000) != 0; }
-bool CellClass::Tile_Is_Shore() const { return (static_cast<uint32_t>(flags) & 0x40000000) != 0; }
-bool CellClass::Tile_Is_Wet() const { return (static_cast<uint32_t>(flags) & 0x200) != 0; }
+bool CellClass::Tile_Is_Ramp() const { return ((uint32_t)(flags) & 0x10000) != 0; }
+bool CellClass::Tile_Is_Cliff() const { return ((uint32_t)(flags) & 0x2000) != 0; }
+bool CellClass::Tile_Is_Shore() const { return ((uint32_t)(flags) & 0x40000000) != 0; }
+bool CellClass::Tile_Is_Wet() const { return ((uint32_t)(flags) & 0x200) != 0; }
 bool CellClass::Tile_Is_Pave() const { return false; }
 bool CellClass::Tile_Is_DirtRoad() const { return false; }
 bool CellClass::Tile_Is_PavedRoad() const { return false; }
@@ -719,7 +718,7 @@ bool CellClass::Tile_Is_Green() const { return false; }
 bool CellClass::Tile_Is_NotWater() const { return !Tile_Is_Water(); }
 bool CellClass::Tile_Is_DestroyableCliff() const
 {
-    return (static_cast<uint32_t>(flags) & 0x08000000) != 0;
+    return ((uint32_t)(flags) & 0x08000000) != 0;
 }
 
 } // namespace gamemd

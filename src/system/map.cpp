@@ -70,7 +70,7 @@ CellClass* MapClass::TryGetCellAt(const CellStruct& map_coords) const
 
 CellClass* MapClass::TryGetCellAt(const CoordStruct& crd) const
 {
-    CellStruct cell = { static_cast<int16_t>(crd.X / 256), static_cast<int16_t>(crd.Y / 256) };
+    CellStruct cell = { (int16_t)(crd.X / 256), (int16_t)(crd.Y / 256) };
     return TryGetCellAt(cell);
 }
 
@@ -81,7 +81,7 @@ CellClass* MapClass::GetCellAt(const CellStruct& map_coords) const
 
 CellClass* MapClass::GetCellAt(const CoordStruct& crd) const
 {
-    CellStruct cell = { static_cast<int16_t>(crd.X / 256), static_cast<int16_t>(crd.Y / 256) };
+    CellStruct cell = { (int16_t)(crd.X / 256), (int16_t)(crd.Y / 256) };
     return GetCellAt(cell);
 }
 

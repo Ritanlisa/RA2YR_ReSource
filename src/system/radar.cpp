@@ -9,16 +9,16 @@ uint16_t BlendMinimapPixel(uint16_t a1, uint16_t a2, int opacity_level)
     switch (opacity_level)
     {
         case 0:  return a2;
-        case 25: return static_cast<uint16_t>(((a2 & kGrayMask) * 3 + (a1 & kGrayMask)) / 4);
-        case 50: return static_cast<uint16_t>(((a2 & kGrayMask) + (a1 & kGrayMask)) / 2);
-        case 75: return static_cast<uint16_t>(((a2 & kGrayMask) + (a1 & kGrayMask) * 3) / 4);
+        case 25: return (uint16_t)(((a2 & kGrayMask) * 3 + (a1 & kGrayMask)) / 4);
+        case 50: return (uint16_t)(((a2 & kGrayMask) + (a1 & kGrayMask)) / 2);
+        case 75: return (uint16_t)(((a2 & kGrayMask) + (a1 & kGrayMask) * 3) / 4);
         default: return a1;
     }
 }
 
 Point2D* ToCoordPixel(Point2D* out, const CoordStruct* coord)
 {
-    if (out && coord) { out->X = static_cast<int>(coord->X); out->Y = static_cast<int>(coord->Y); }
+    if (out && coord) { out->X = (int)(coord->X); out->Y = (int)(coord->Y); }
     return out;
 }
 

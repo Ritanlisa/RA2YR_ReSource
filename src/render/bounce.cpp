@@ -16,12 +16,12 @@ BounceClass::BounceClass(
     : Elasticity(elasticity)
     , Gravity(gravity)
     , MaxVelocity(max_velocity)
-    , Coords(static_cast<float>(coords.X), static_cast<float>(coords.Y), static_cast<float>(coords.Z))
+    , Coords((float)(coords.X), (float)(coords.Y), (float)(coords.Z))
     , Velocity(velocity)
 {
     // Initialize angular velocity quaternion from scalar
-    AngularVelocity.W = static_cast<float>(cos(angular_velocity * 0.5));
-    float half_sin = static_cast<float>(sin(angular_velocity * 0.5));
+    AngularVelocity.W = (float)(cos(angular_velocity * 0.5));
+    float half_sin = (float)(sin(angular_velocity * 0.5));
     AngularVelocity.X = half_sin;
     AngularVelocity.Y = 0.0f;
     AngularVelocity.Z = 0.0f;
@@ -38,11 +38,11 @@ void BounceClass::Initialize(
     Elasticity = elasticity;
     Gravity = gravity;
     MaxVelocity = max_velocity;
-    Coords = { static_cast<float>(coords.X), static_cast<float>(coords.Y), static_cast<float>(coords.Z) };
+    Coords = { (float)(coords.X), (float)(coords.Y), (float)(coords.Z) };
     Velocity = velocity;
 
-    AngularVelocity.W = static_cast<float>(cos(angular_velocity * 0.5));
-    float half_sin = static_cast<float>(sin(angular_velocity * 0.5));
+    AngularVelocity.W = (float)(cos(angular_velocity * 0.5));
+    float half_sin = (float)(sin(angular_velocity * 0.5));
     AngularVelocity.X = half_sin;
     AngularVelocity.Y = 0.0f;
     AngularVelocity.Z = 0.0f;
@@ -52,9 +52,9 @@ CoordStruct* BounceClass::fetchCoordinatesHere(CoordStruct* out) const
 {
     if (out)
     {
-        out->X = static_cast<int32_t>(Coords.X);
-        out->Y = static_cast<int32_t>(Coords.Y);
-        out->Z = static_cast<int32_t>(Coords.Z);
+        out->X = (int32_t)(Coords.X);
+        out->Y = (int32_t)(Coords.Y);
+        out->Z = (int32_t)(Coords.Z);
     }
     return out;
 }
@@ -125,7 +125,7 @@ Matrix3D BounceClass::GetDrawingMatrix() const
 BounceClass::Status BounceClass::updateLogic()
 {
     // Apply gravity
-    Velocity.Z -= static_cast<float>(Gravity);
+    Velocity.Z -= (float)(Gravity);
 
     // Update position
     Coords.X += Velocity.X;
@@ -155,7 +155,7 @@ BounceClass::Status BounceClass::updateLogic()
         Coords.Z = 0.0f;
         if (Velocity.Z < 0.0f)
         {
-            Velocity.Z = -Velocity.Z * static_cast<float>(Elasticity);
+            Velocity.Z = -Velocity.Z * (float)(Elasticity);
 
             // Check if bounce is too small - impact event
             if (fabsf(Velocity.Z) < 0.5f)
@@ -178,7 +178,7 @@ BounceClass::Status BounceClass::updateLogic()
     float speed = sqrtf(Velocity.X * Velocity.X +
                         Velocity.Y * Velocity.Y +
                         Velocity.Z * Velocity.Z);
-    float max_v = static_cast<float>(MaxVelocity);
+    float max_v = (float)(MaxVelocity);
     if (speed > max_v)
     {
         float scale = max_v / speed;

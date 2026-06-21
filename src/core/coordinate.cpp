@@ -89,13 +89,13 @@ uint8_t Atan2(int y, int x) noexcept
     if (x == 0)
         return y > 0 ? 64 : 192;
 
-    int angle = static_cast<int>(std::atan2(static_cast<double>(y), static_cast<double>(x))
+    int angle = (int)(std::atan2((double)(y), (double)(x))
         * 128.0 / 3.14159265358979323846);
 
     if (angle < 0)
         angle += 256;
 
-    return static_cast<uint8_t>(angle & 0xFF);
+    return (uint8_t)(angle & 0xFF);
 }
 
 } // anonymous namespace
@@ -108,11 +108,11 @@ uint8_t Direction8(const CoordStruct& from, const CoordStruct& to) noexcept
     if (dx == 0 && dy == 0)
         return 0;
 
-    int dir32 = static_cast<int>(Atan2(dx, dy)) + 16;
+    int dir32 = (int)(Atan2(dx, dy)) + 16;
     if (dir32 < 0) dir32 += 256;
     dir32 &= 0xFF;
 
-    return static_cast<uint8_t>((dir32 / 32) & 0x07);
+    return (uint8_t)((dir32 / 32) & 0x07);
 }
 
 uint8_t Direction32(const CoordStruct& from, const CoordStruct& to) noexcept
@@ -123,16 +123,16 @@ uint8_t Direction32(const CoordStruct& from, const CoordStruct& to) noexcept
     if (dx == 0 && dy == 0)
         return 0;
 
-    int dir32 = static_cast<int>(Atan2(dx, dy)) + 16;
+    int dir32 = (int)(Atan2(dx, dy)) + 16;
     if (dir32 < 0) dir32 += 256;
 
-    return static_cast<uint8_t>(dir32 & 0xFF);
+    return (uint8_t)(dir32 & 0xFF);
 }
 
 CoordStruct CoordMove(const CoordStruct& start, uint8_t dir32, uint16_t distance) noexcept
 {
-    int x = start.X + (static_cast<int>(kCosTable8[dir32]) * static_cast<int>(distance) * 2);
-    int y = start.Y - (static_cast<int>(kSinTable8[dir32]) * static_cast<int>(distance) * 2);
+    int x = start.X + ((int)(kCosTable8[dir32]) * (int)(distance) * 2);
+    int y = start.Y - ((int)(kSinTable8[dir32]) * (int)(distance) * 2);
     return CoordStruct(x, y, start.Z);
 }
 
@@ -140,8 +140,8 @@ CellStruct AdjacentCell(const CellStruct& cell, uint8_t facing8) noexcept
 {
     int idx = facing8 & 0x07;
     return CellStruct(
-        static_cast<int16_t>(cell.X + kAdjacentX[idx]),
-        static_cast<int16_t>(cell.Y + kAdjacentY[idx])
+        (int16_t)(cell.X + kAdjacentX[idx]),
+        (int16_t)(cell.Y + kAdjacentY[idx])
     );
 }
 

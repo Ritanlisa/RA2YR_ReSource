@@ -71,7 +71,7 @@ extern int SwizzleManagerClass_Instance;
 // IDA 0x558740: LoadOptions::Construct
 void LoadOptions::Construct() {
     mode         = 0;
-    extension    = reinterpret_cast<const char*>(0x829EA0); // off_829EA0
+    extension    = (const char*)(0x829EA0); // off_829EA0
     field_0C     = 0;
     max_entries  = 2048;
     field_14     = 0;
@@ -178,7 +178,7 @@ bool LoadOptions::SaveGame(const char* filename, const wchar_t* description) {
 bool LoadOptions::ReadEntry(FileEntryClass* dest, int a2) {
     if (!dest && !a2) return false;
 
-    const char* filename = reinterpret_cast<const char*>(a2 + 44);
+    const char* filename = (const char*)(a2 + 44);
     if (_stricmp(filename, "SAVEGAME.NET") == 0)
         return false;
 
@@ -237,8 +237,8 @@ int LoadOptions::FindItem(const uint32_t* key) {
     if (count == 0) return -1;
 
     for (uint32_t i = 0; i < count; ++i) {
-        if (entries[i] && *reinterpret_cast<const uint32_t*>(entries[i]) == *key) {
-            return static_cast<int>(i);
+        if (entries[i] && *(const uint32_t*)(entries[i]) == *key) {
+            return (int)(i);
         }
     }
     return -1;
@@ -247,18 +247,18 @@ int LoadOptions::FindItem(const uint32_t* key) {
 // IDA 0x55A310: PointerToIndex
 uint32_t LoadOptions::PointerToIndex(FileEntryClass* ptr) {
     if (!is_active) return 0;
-    return static_cast<uint32_t>(reinterpret_cast<char*>(ptr) - reinterpret_cast<char*>(entries)) / sizeof(FileEntryClass*);
+    return (uint32_t)((char*)(ptr) - (char*)(entries)) / sizeof(FileEntryClass*);
 }
 
 // IDA 0x55A180: vt05 — PointerToIndex compat
 uint32_t LoadOptions::VT05_PointerToIndex(FileEntryClass* ptr) {
     if (!is_active) return 0;
-    return static_cast<uint32_t>(reinterpret_cast<char*>(ptr) - reinterpret_cast<char*>(entries)) / sizeof(FileEntryClass*);
+    return (uint32_t)((char*)(ptr) - (char*)(entries)) / sizeof(FileEntryClass*);
 }
 
 // IDA 0x55A1A0: vt06 — get entry at index
 FileEntryClass* LoadOptions::VT06_GetAt(int index) {
-    if (index < 0 || static_cast<uint32_t>(index) >= count || !entries)
+    if (index < 0 || (uint32_t)(index) >= count || !entries)
         return nullptr;
     return entries[index];
 }
@@ -268,8 +268,8 @@ bool LoadOptions::VT01_Compare(const LoadOptions& other) {
     if (count != other.count) return false;
     if (count == 0) return true;
 
-    const uint32_t* my_data = reinterpret_cast<const uint32_t*>(entries);
-    const uint32_t* ot_data = reinterpret_cast<const uint32_t*>(other.entries);
+    const uint32_t* my_data = (const uint32_t*)(entries);
+    const uint32_t* ot_data = (const uint32_t*)(other.entries);
 
     for (uint32_t i = 0; i < count; ++i) {
         if (my_data[i] != ot_data[i])
@@ -283,8 +283,8 @@ int LoadOptions::VT04_FindByKey(const uint32_t* key) {
     if (count == 0) return -1;
 
     for (uint32_t i = 0; i < count; ++i) {
-        if (entries[i] && *reinterpret_cast<const uint32_t*>(entries[i]) == *key)
-            return static_cast<int>(i);
+        if (entries[i] && *(const uint32_t*)(entries[i]) == *key)
+            return (int)(i);
     }
     return -1;
 }
@@ -319,14 +319,14 @@ const wchar_t* LoadOptions::GetGameSavedStr() {
 
 // IDA 0x55A410: VectorClass_Dtor (dynamic heap)
 void LoadOptions::VectorClass_Dtor(void* block, char free_self) {
-    char* base = static_cast<char*>(block);
-    char** data_ptr = reinterpret_cast<char**>(base + 0x04);
+    char* base = (char*)(block);
+    char** data_ptr = (char**)(base + 0x04);
     if (*data_ptr && base[0x0D]) { // offset +13 = owns_memory byte
         delete[] *data_ptr;
         *data_ptr = nullptr;
     }
     base[0x0D] = 0;
-    *reinterpret_cast<uint32_t*>(base + 0x08) = 0; // count = 0
+    *(uint32_t*)(base + 0x08) = 0; // count = 0
     if (free_self & 1) {
         delete[] base;
     }
@@ -389,18 +389,18 @@ void LoadSaveDialog_FillList(LoadOptions* opts, HWND hWnd) {
         // Set default values
         entry->field_436 = 1;  // is_available
         entry->field_437 = 0;  // is_multiplayer
-        entry->field_72  = static_cast<uint32_t>(-1);
-        entry->field_73  = static_cast<uint32_t>(-1);
-        entry->field_106 = static_cast<uint32_t>(-1);
+        entry->field_72  = (uint32_t)(-1);
+        entry->field_73  = (uint32_t)(-1);
+        entry->field_106 = (uint32_t)(-1);
 
         // Set display name from filename
-        int len = static_cast<int>(strlen(fd.cFileName));
+        int len = (int)(strlen(fd.cFileName));
         // Remove extension for display
         const char* dot = strrchr(fd.cFileName, '.');
-        int name_len = dot ? static_cast<int>(dot - fd.cFileName) : len;
+        int name_len = dot ? (int)(dot - fd.cFileName) : len;
         if (name_len > 147) name_len = 147;
         for (int j = 0; j < name_len; ++j) {
-            entry->EntryName[j] = static_cast<wchar_t>(fd.cFileName[j]);
+            entry->EntryName[j] = (wchar_t)(fd.cFileName[j]);
         }
         entry->EntryName[name_len] = L'\0';
 
@@ -411,22 +411,22 @@ void LoadSaveDialog_FillList(LoadOptions* opts, HWND hWnd) {
     // Sort entries by write time (newest first)
     std::sort(found.begin(), found.end(),
               [](const FileEntryClass* a, const FileEntryClass* b) {
-                  uint64_t ta = (static_cast<uint64_t>(a->FileTime_hi) << 32) | a->FileTime_lo;
-                  uint64_t tb = (static_cast<uint64_t>(b->FileTime_hi) << 32) | b->FileTime_lo;
+                  uint64_t ta = ((uint64_t)(a->FileTime_hi) << 32) | a->FileTime_lo;
+                  uint64_t tb = ((uint64_t)(b->FileTime_hi) << 32) | b->FileTime_lo;
                   return ta > tb; // newest first
               });
 
     // Populate the LoadOptions vector
-    uint32_t num = static_cast<uint32_t>(found.size());
+    uint32_t num = (uint32_t)(found.size());
     if (num > 0) {
         FileEntryClass** buf = new FileEntryClass*[num > 10 ? num : 10];
         for (uint32_t i = 0; i < num; ++i) {
             buf[i] = found[i];
         }
         // Set LoadOptions fields directly
-        *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(opts) + 0x24) = reinterpret_cast<uint32_t>(buf);
-        *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(opts) + 0x28) = num;
-        *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(opts) + 0x2D) = 1;
+        *(uint32_t*)((char*)(opts) + 0x24) = (uint32_t)(buf);
+        *(uint32_t*)((char*)(opts) + 0x28) = num;
+        *(uint8_t*)((char*)(opts) + 0x2D) = 1;
     }
 
     // Send LB_RESETCONTENT + fill listbox
@@ -434,8 +434,8 @@ void LoadSaveDialog_FillList(LoadOptions* opts, HWND hWnd) {
         SendMessageA(hWnd, 0x0184, 0, 0); // LB_RESETCONTENT
         for (uint32_t i = 0; i < num; ++i) {
             if (!found[i]->field_437) { // not multiplayer only
-                LRESULT idx = SendMessageA(hWnd, 0x04CD, 0, reinterpret_cast<LPARAM>(found[i])); // LB_ADDSTRING
-                SendMessageA(hWnd, 0x019A, idx, reinterpret_cast<LPARAM>(found[i])); // LB_SETITEMDATA
+                LRESULT idx = SendMessageA(hWnd, 0x04CD, 0, (LPARAM)(found[i])); // LB_ADDSTRING
+                SendMessageA(hWnd, 0x019A, idx, (LPARAM)(found[i])); // LB_SETITEMDATA
             }
         }
     }
@@ -449,10 +449,10 @@ namespace gamemd {
 
 // --- LoadOptions ---
 
-char* LoadOptions::GetDataPtr() { return reinterpret_cast<char*>(this) + 264; }
-uint32_t LoadOptions::GetFlag98() const { return *reinterpret_cast<const uint32_t*>(reinterpret_cast<const char*>(this) + 0x188); }
-uint32_t LoadOptions::GetFlag99() const { return *reinterpret_cast<const uint32_t*>(reinterpret_cast<const char*>(this) + 0x18C); }
-uint32_t LoadOptions::GetFlag252() const { return *reinterpret_cast<const uint32_t*>(reinterpret_cast<const char*>(this) + 0x3F0); }
+char* LoadOptions::GetDataPtr() { return (char*)(this) + 264; }
+uint32_t LoadOptions::GetFlag98() const { return *(const uint32_t*)((const char*)(this) + 0x188); }
+uint32_t LoadOptions::GetFlag99() const { return *(const uint32_t*)((const char*)(this) + 0x18C); }
+uint32_t LoadOptions::GetFlag252() const { return *(const uint32_t*)((const char*)(this) + 0x3F0); }
 uint32_t LoadOptions::GetMode() const { return mode; }
 void LoadOptions::SetMode(uint32_t m) { mode = m; }
 const char* LoadOptions::GetExtension() const { return extension; }

@@ -78,11 +78,11 @@ bool SHPBlitterCopy(
 
     // Select correct function based on the blitter vtable at runtime
     // The specific vtable varies by template instantiation
-    auto* vt = static_cast<void**>(blitter_vtable);
+    auto* vt = (void**)(blitter_vtable);
     if (opacity != 0) {
-        blit_row_tint = reinterpret_cast<BlitFnTint>(vt[3]);  // vtable[12/4]
+        blit_row_tint = (BlitFnTint)(vt[3]);  // vtable[12/4]
     } else {
-        blit_row = reinterpret_cast<BlitFn>(vt[1]);           // vtable[4/4]
+        blit_row = (BlitFn)(vt[1]);           // vtable[4/4]
     }
 
     // --- 3. Lock destination surface ---
@@ -101,8 +101,7 @@ bool SHPBlitterCopy(
         int srcx = src_x;
 
         int dest_offset = srcy * dest_stride + srcx;
-        int* src_pixels = reinterpret_cast<int*>(
-            static_cast<uint8_t*>(dest_lock) + dest_offset * dest_surface->GetBytesPerPixel());
+        int* src_pixels = (int*)((uint8_t*)(dest_lock) + dest_offset * dest_surface->GetBytesPerPixel());
 
         if (blit_row) {
             blit_row(dest_offset, src_pixels,

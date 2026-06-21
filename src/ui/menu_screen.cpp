@@ -34,7 +34,7 @@ static bool LoadMenuBackground(ShpImage& img)
         return false;
     }
 
-    bool ok = img.LoadFromMemory(static_cast<const uint8_t*>(shp_data), shp_size);
+    bool ok = img.LoadFromMemory((const uint8_t*)(shp_data), shp_size);
     free(shp_data);
 
     char buf[128];
@@ -63,15 +63,15 @@ static bool LoadMenuPalette()
     if (!pal_data) {
         OutputDebugStringA("[gamemd] Menu: no palette found in MIX files\n");
         for (int i = 0; i < 256; ++i) {
-            g_palette[i][0] = static_cast<uint8_t>(i);
-            g_palette[i][1] = static_cast<uint8_t>(i);
-            g_palette[i][2] = static_cast<uint8_t>(i);
+            g_palette[i][0] = (uint8_t)(i);
+            g_palette[i][1] = (uint8_t)(i);
+            g_palette[i][2] = (uint8_t)(i);
             g_palette[i][3] = 0;
         }
         return false;
     }
 
-    uint8_t* raw = static_cast<uint8_t*>(pal_data);
+    uint8_t* raw = (uint8_t*)(pal_data);
     for (int i = 0; i < 256; ++i) {
         g_palette[i][0] = raw[i * 3 + 0] << 2;
         g_palette[i][1] = raw[i * 3 + 1] << 2;
@@ -196,8 +196,8 @@ MenuResult ShowMainMenu()
                 break;
             }
             case WM_KEYDOWN:
-                if (static_cast<int>(msg.wParam) == VK_ESCAPE) return MenuResult::Exit;
-                menu.OnKeyDown(static_cast<int>(msg.wParam));
+                if ((int)(msg.wParam) == VK_ESCAPE) return MenuResult::Exit;
+                menu.OnKeyDown((int)(msg.wParam));
                 break;
             default:
                 TranslateMessage(&msg);
@@ -214,8 +214,8 @@ MenuResult ShowMainMenu()
             DDSURFACEDESC2 src_desc = {};
             src_desc.dwSize = sizeof(src_desc);
             if (SUCCEEDED(back_surface.Surface->Lock(nullptr, &src_desc, DDLOCK_WAIT, nullptr))) {
-                uint8_t* dst = static_cast<uint8_t*>(desc.lpSurface);
-                uint8_t* src = static_cast<uint8_t*>(src_desc.lpSurface);
+                uint8_t* dst = (uint8_t*)(desc.lpSurface);
+                uint8_t* src = (uint8_t*)(src_desc.lpSurface);
                 for (int y = 0; y < ctx->height; ++y) {
                     memcpy(dst + y * desc.lPitch,
                            src + y * src_desc.lPitch,

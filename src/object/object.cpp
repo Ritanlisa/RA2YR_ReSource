@@ -18,7 +18,7 @@ constexpr uint32_t kObjectFlag = 0x2u;
 
 double ObjectClass::GetHealthPercentage() const
 {
-    return health > 0 ? static_cast<double>(health) / reinterpret_cast<gamemd::ObjectTypeClass*>(GetType())->Strength : 0.0;
+    return health > 0 ? (double)(health) / ((gamemd::ObjectTypeClass*)(void*)(GetType()))->Strength : 0.0;
 }
 
 bool ObjectClass::Put(const CoordStruct& coords, unsigned int face_dir)
@@ -80,12 +80,12 @@ DamageState ObjectClass::ReceiveDamage(int* damage, int distance_from_epicenter,
     // 4. Return ALIVE if no damage taken
 
     if (!isAliveFlag || !isOnMap)
-        return static_cast<DamageState>(0);
+        return (DamageState)(0);
 
     if (health <= 0)
     {
         Destroy();
-        return static_cast<DamageState>(0);
+        return (DamageState)(0);
     }
 
     if (damage && *damage > 0)
@@ -111,16 +111,16 @@ DamageState ObjectClass::ReceiveDamage(int* damage, int distance_from_epicenter,
             health = 0;
             Destroy();
             if (attacker)
-                RegisterDestruction(reinterpret_cast<TechnoClass*>(attacker));
+                RegisterDestruction((TechnoClass*)(attacker));
             if (attacking_house)
                 RegisterKill(attacking_house);
-            return static_cast<DamageState>(1); // DEAD
+            return (DamageState)(1); // DEAD
         }
 
-        return static_cast<DamageState>(2); // DAMAGED
+        return (DamageState)(2); // DAMAGED
     }
 
-    return static_cast<DamageState>(0); // NONE
+    return (DamageState)(0); // NONE
 }
 
 void ObjectClass::Scatter(const CoordStruct& coords, bool ignore_mission, bool ignore_destination)
@@ -143,7 +143,7 @@ void ObjectClass::Extinguish()
 
 int ObjectClass::GetWeaponRange(int weapon_idx) const
 {
-    auto* type = reinterpret_cast<gamemd::ObjectTypeClass*>(GetType());
+    auto* type = (gamemd::ObjectTypeClass*)(GetType());
     if (!type)
         return 0;
     (void)weapon_idx;
@@ -162,14 +162,14 @@ int ObjectClass::DistanceFrom(AbstractClass* that) const
     int dy = my_coords.Y - their_coords.Y;
     int dz = my_coords.Z - their_coords.Z;
 
-    return static_cast<int>(std::sqrt(static_cast<double>(dx*dx + dy*dy + dz*dz)));
+    return (int)(std::sqrt((double)(dx*dx + dy*dy + dz*dz)));
 }
 
 Move ObjectClass::IsCellOccupied(CellClass* dest_cell, int facing, int level, CellClass* source_cell, bool alt) const
 {
     if (!dest_cell)
-        return static_cast<Move>(0);
-    return static_cast<Move>(1);
+        return (Move)(0);
+    return (Move)(1);
 }
 
 int ObjectClass::GetHeight() const
@@ -179,7 +179,7 @@ int ObjectClass::GetHeight() const
 
 void ObjectClass::SetHeight(uint32_t height)
 {
-    location.Z = static_cast<int>(height);
+    location.Z = (int)(height);
 }
 
 int ObjectClass::GetZ() const
@@ -228,17 +228,17 @@ DamageState ObjectClass::IronCurtain(int duration, HouseClass* source, bool forc
     // Base class stub: actual implementation in TechnoClass.
 
     if (!isAliveFlag || !isOnMap)
-        return static_cast<DamageState>(0);
+        return (DamageState)(0);
 
     if (duration <= 0)
-        return static_cast<DamageState>(0);
+        return (DamageState)(0);
 
     // Base class: objects just mark themselves as invulnerable for the duration.
     // TechnoClass overrides this with full visual tint + timer management.
     (void)source;
     (void)force_shield;
 
-    return static_cast<DamageState>(2);
+    return (DamageState)(2);
 }
 
 bool ObjectClass::IsIronCurtained() const
@@ -337,7 +337,7 @@ ObjectClass::ObjectClass() noexcept
     , nextObject(nullptr)
     , attachedTag(nullptr)
     , attachedBomb(nullptr)
-    , customSound(static_cast<int32_t>(-1))
+    , customSound((int32_t)(-1))
     , bombVisible(false)
     , health(255)
     , estimatedHealth(255)
@@ -355,7 +355,7 @@ ObjectClass::ObjectClass() noexcept
     , wasFallingDown(false)
     , isBomb(false)
     , isAliveFlag(true)
-    , lastLayer(static_cast<uint32_t>(-1))
+    , lastLayer((uint32_t)(-1))
     , isInLogic(false)
     , isVisible(true)
     , location{}

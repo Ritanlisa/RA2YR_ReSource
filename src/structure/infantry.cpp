@@ -7,16 +7,16 @@ namespace gamemd {
 
 namespace {
 
-constexpr uint32_t kInfantryFlag = static_cast<uint32_t>(AbstractFlags::Foot)
-                                  | static_cast<uint32_t>(AbstractFlags::Object)
-                                  | static_cast<uint32_t>(AbstractFlags::Techno);
+constexpr uint32_t kInfantryFlag = (uint32_t)(AbstractFlags::Foot)
+                                  | (uint32_t)(AbstractFlags::Object)
+                                  | (uint32_t)(AbstractFlags::Techno);
 
 } // anonymous namespace
 
 // IDA: 0x517A50 -- InfantryClass::Construct (617B)
 InfantryClass::InfantryClass() noexcept
     : Type(nullptr)
-    , SequenceAnim(static_cast<Sequence>(-1))
+    , SequenceAnim((Sequence)(-1))
     , InfantryClass_field_timer_6C8{}
     , PanicDurationLeft(0)
     , PermanentBerzerk(false)
@@ -178,8 +178,8 @@ int InfantryClass::FireAtTargetPos()
     if (!target)
         return 0;
 
-    auto fire_err = GetFireError(reinterpret_cast<int*>(target), 0, 0, 0);
-    if (static_cast<int>(fire_err) == static_cast<int>(FireError::NONE))
+    auto fire_err = GetFireError((int*)(target), 0, 0, 0);
+    if ((int)(fire_err) == (int)(FireError::NONE))
     {
         Fire(target, 0);
     }
@@ -204,10 +204,10 @@ int InfantryClass::FireWeaponWithCleanup(int a2, int a3)
 int InfantryClass::GetFireError(int* target, int weapon_idx, int a4, int a5)
 {
     // IDA: 0x51C8B0 (741B) — comprehensive fire error checks (returns 0-7)
-    if (!target) return static_cast<int>(FireError::NONE);
+    if (!target) return (int)(FireError::NONE);
 
     // Block fire during special mission states (deploying/infiltrating/bombing)
-    int mission = static_cast<int>(GetCurrentMission());
+    int mission = (int)(GetCurrentMission());
     if (mission == 11 || mission == 12 || mission == 13 || mission == 14 ||
         mission == 15 || mission == 34 || mission == 35 || mission == 36 ||
         mission == 20 || mission == 21)
@@ -218,7 +218,7 @@ int InfantryClass::GetFireError(int* target, int weapon_idx, int a4, int a5)
     // Check weapon range, ammo, self-healing, obstacle, loco state
     // Returns 0(FIRE_OK), 1(REARM), 2(ROF), 3(OUT_OF_RANGE),
     //         4(CLOAKED), 5(NO_AMMO), 6(FIRE_CANT), 7(MOVING)
-    return static_cast<int>(FireError::NONE);
+    return (int)(FireError::NONE);
 }
 
 // IDA: 0x5227F0 — checks if target can be attacked (not allied, not cloaked, in range)

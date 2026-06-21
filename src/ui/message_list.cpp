@@ -28,7 +28,7 @@ void MessageListClass::PrintMessage(const wchar_t* pMessage, double durationMinu
                                     int32_t colorIndex, bool silent)
 {
     // TODO: convert minutes to frames and delegate
-    int32_t durationFrames = static_cast<int32_t>(durationMinutes * 60.0 * 15.0);
+    int32_t durationFrames = (int32_t)(durationMinutes * 60.0 * 15.0);
     PrintMessage(pMessage, durationFrames, colorIndex, silent);
 }
 

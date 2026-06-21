@@ -5,8 +5,8 @@
 namespace gamemd
 {
 
-DynamicVectorClass<ConvertClass*>& ConvertClass::Array = *reinterpret_cast<DynamicVectorClass<ConvertClass*>*>(nullptr);
-DynamicVectorClass<LightConvertClass*>& LightConvertClass::Array = *reinterpret_cast<DynamicVectorClass<LightConvertClass*>*>(nullptr);
+DynamicVectorClass<ConvertClass*>& ConvertClass::Array = *(DynamicVectorClass<ConvertClass*>*)(nullptr);
+DynamicVectorClass<LightConvertClass*>& LightConvertClass::Array = *(DynamicVectorClass<LightConvertClass*>*)(nullptr);
 
 ConvertClass::ConvertClass(
     BytePalette const& palette,
@@ -50,7 +50,7 @@ void ConvertClass::CreateFromFile(const char* pFilename, BytePalette*& pPalette,
 
 BlitterCore* ConvertClass::SelectPlainBlitter(BlitterFlags flags) const
 {
-    int idx = static_cast<int>(static_cast<unsigned int>(flags));
+    int idx = (int)((unsigned int)(flags));
     if (idx >= 0 && idx < 50)
         return Blitters[idx];
     return nullptr;
@@ -58,7 +58,7 @@ BlitterCore* ConvertClass::SelectPlainBlitter(BlitterFlags flags) const
 
 RLEBlitterCore* ConvertClass::SelectRLEBlitter(BlitterFlags flags) const
 {
-    int idx = static_cast<int>(static_cast<unsigned int>(flags));
+    int idx = (int)((unsigned int)(flags));
     if (idx >= 0 && idx < 39)
         return RLEBlitters[idx];
     return nullptr;
@@ -81,7 +81,7 @@ LightConvertClass::LightConvertClass(
     , UsedPalette2(&palette2)
     , LightConvertClass_field_buffer_190(nullptr)
     , UsageCount(0)
-    , Color1(static_cast<uint32_t>(color_R) | (static_cast<uint32_t>(color_G) << 8) | (static_cast<uint32_t>(color_B) << 16))
+    , Color1((uint32_t)(color_R) | ((uint32_t)(color_G) << 8) | ((uint32_t)(color_B) << 16))
     , Color2(0)
     , Tinted(false)
 {

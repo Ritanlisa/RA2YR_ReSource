@@ -7,9 +7,9 @@ namespace gamemd {
 
 namespace {
 
-constexpr uint32_t kAircraftFlag = static_cast<uint32_t>(AbstractFlags::Foot)
-                                  | static_cast<uint32_t>(AbstractFlags::Object)
-                                  | static_cast<uint32_t>(AbstractFlags::Techno);
+constexpr uint32_t kAircraftFlag = (uint32_t)(AbstractFlags::Foot)
+                                  | (uint32_t)(AbstractFlags::Object)
+                                  | (uint32_t)(AbstractFlags::Techno);
 
 } // anonymous namespace
 
@@ -94,16 +94,16 @@ int AircraftClass::Mission_Attack()
         }
 
         auto fire_err = GetFireError(target, 0, false);
-        if (static_cast<int>(fire_err) == static_cast<int>(gamemd::FireError::NONE))
+        if ((int)(fire_err) == (int)(gamemd::FireError::NONE))
         {
             Fire(target, 0);
             missionStatus = FIRE2;
         }
-        else if (static_cast<int>(fire_err) == static_cast<int>(gamemd::FireError::CLOAKED))
+        else if ((int)(fire_err) == (int)(gamemd::FireError::CLOAKED))
         {
             Uncloak(true);
         }
-        else if (static_cast<int>(fire_err) == static_cast<int>(gamemd::FireError::AMMO))
+        else if ((int)(fire_err) == (int)(gamemd::FireError::AMMO))
         {
             missionStatus = RTB;
         }
@@ -119,7 +119,7 @@ int AircraftClass::Mission_Attack()
         }
 
         auto fire_err = GetFireError(target, 0, false);
-        if (static_cast<int>(fire_err) == static_cast<int>(gamemd::FireError::NONE))
+        if ((int)(fire_err) == (int)(gamemd::FireError::NONE))
         {
             Fire(target, 0);
             if (ammo > 0)
@@ -141,7 +141,7 @@ int AircraftClass::Mission_Attack()
         if (ammo <= 0)
             target = nullptr;
         movementDestination = nullptr;
-        queueMission(static_cast<ra2::game::Mission>(static_cast<int>(gamemd::Mission::Return)), true);
+        queueMission((ra2::game::Mission)((int)(gamemd::Mission::Return)), true);
         return 10;
     }
 
@@ -154,7 +154,7 @@ int AircraftClass::Mission_Return()
     // Return to home airfield for reloading/repair
     if (!Type)
     {
-        queueMission(static_cast<ra2::game::Mission>(static_cast<int>(gamemd::Mission::Guard)), true);
+        queueMission((ra2::game::Mission)((int)(gamemd::Mission::Guard)), true);
         return 10;
     }
     return 10;
@@ -175,10 +175,10 @@ int AircraftClass::Mission_Unload()
 int AircraftClass::Mission_Hunt()
 {
     // Scan for enemies in flight range
-    SelectAutoTarget(static_cast<ra2::game::TargetFlags>(0), 0, false);
+    SelectAutoTarget((ra2::game::TargetFlags)(0), 0, false);
     if (target)
     {
-        queueMission(static_cast<ra2::game::Mission>(static_cast<int>(gamemd::Mission::Attack)), true);
+        queueMission((ra2::game::Mission)((int)(gamemd::Mission::Attack)), true);
         return 30;
     }
     return 30;
@@ -188,7 +188,7 @@ int AircraftClass::Mission_Retreat()
 {
     // Flee from threats, return to base
     movementDestination = nullptr;
-    queueMission(static_cast<ra2::game::Mission>(static_cast<int>(gamemd::Mission::Return)), true);
+    queueMission((ra2::game::Mission)((int)(gamemd::Mission::Return)), true);
     return 10;
 }
 
