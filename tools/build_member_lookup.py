@@ -224,6 +224,12 @@ def main():
         if cn in vis:return OrderedDict()
         vis.add(cn)
         r=OrderedDict()
+        # First add THIS class's own members from output
+        if cn in output:
+            for o,m in output[cn].items():
+                if o not in r:
+                    r[o]=dict(m)
+        # Then add parent members (recursively, own members override inherited)
         for b in parents.get(cn,[]):
             bn=b.split('::')[-1]
             for o,m in get_inh(bn,vis.copy()).items():
