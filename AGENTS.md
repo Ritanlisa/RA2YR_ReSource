@@ -181,15 +181,14 @@ cmake --build build_linux
 
 | 指标 | 数值 |
 |------|------|
-| 已实现函数 | ~140（~200+ stubs）+ **4,255 sub_* <50B 存根 (Task 17)** + **1,203 sub_* 50-500B 存根 (Task 18)** |
+| 已实现函数（存根） | ~140（~200+ stubs）+ **4,255 sub_* <50B 存根 (Task 17)** + **1,203 sub_* 50-500B 存根 (Task 18)** |
 | 编译错误 / 警告 | **0 / 0** (gamemd_core 来自 _generated/ 和主要模块) |
+| completed (符号定义) | **19,133 / 19,133 (100%)** — 所有函数在 IDA/functions.json/hpp 中有名称和地址 |
+| translated (完整IDA对照) | **472** — 完整 C++ 实现经 IDA 反编译验证（58 REVERSE + 183 structure + 312 other − 62 dedup） |
 | IDA 命名 | **13,437 / 19,067 (70.5%)** — 822 sub_* 已自动命名 (Task 19) |
 | IDA 类 header | **1,120 / 1,120 (100%)** — 所有类成员变量已解析，0 unknown_ |
-| sub_* 残留 | **5,459** — 函数级别 (非类成员)，1,204 仍需翻译 (5,458 已有存根) |
-| completed (functions.json) | **11,872** — 命名 + >10 字节自动标记 |
+| sub_* 残留 | **5,468** — 函数级别 (非类成员)，0 已翻译 |
 | REVERSE 标记 | ~32（2 Inject 活跃, 39 None） |
-| 已完成函数 | 39（faithful translations, completed:true） |
-| Inject 模式 | **2/13 活跃**（9 verified → None, 2 stubs → None, slot stack） |
 | 幂等自动判定 | Phase 1+2 完成: TRUE 31%, FALSE 36%, UNCERTAIN 33% |
 | 源文件 | ~130 .hpp + ~135 .cpp (~110,000 行) |
 
@@ -299,6 +298,35 @@ Phase 4: 清理
 5. RA1 看结构、YRpp 看偏移、IDA 验证、cnc-ddraw 接口参考
 6. 前向声明匹配实际定义（class vs struct）
 7. MIX 文件名仅存 hash ID
+8. **C 风格强制转换**: 用 `(Type)expr` 或 `Type(expr)`，禁止 `static_cast`/`reinterpret_cast`/`dynamic_cast`（MSVC 6.0 原始风格）
+9. **类成员访问**: 只用 `.` 和 `->` 运算符，禁止指针算术访问成员
+
+### 类成员访问——模式识别规则（强制）
+
+**IDA 反编译器输出 raw offset 是因为它不知道类布局。我们有 1,120 个完整 class header，知道每个 offset 对应的成员名。必须还原。**
+
+以下 ANY 模式出现 = 类成员访问，必须改写为 `ptr->MemberName`：
+
+| 模式 | 示例 | 改写 |
+|------|------|------|
+| `(int*)(this) + N` | `*(int*)(this) + 47` | `this->memberAtOffset188` |
+| `((int*)ptr)[N]` | `((int*)this)[191] = 1` | `this->memberAtOffset764 = 1` |
+| `typeData[N/4]` | `typeData[2048/4]` | `type->MemberAt2048` |
+| `*(int*)((uint8_t*)ptr + N)` | `*(int*)((uint8_t*)*target + 704)` | `(*target)->MemberAt704` |
+| `(int*)((uint8_t*)ptr + N)` | `(int*)((uint8_t*)this + 20)` | `&this->MemberAt20` |
+
+**识别口诀**：
+- 指针 + 常数偏移 → 成员变量（`this+188` = `this->field_BC`）
+- 数组索引 + `/4` 倍率 → 成员变量（`ptr[588/4]` = `ptr->field_24C`）
+- `ax+b` 线性偏移 → 类的数组 or 成员是数组的类
+- 对指针做常数偏移加法后再类型转换 → 确定是类成员变量
+
+**方法**：
+1. 从 IDA 反编译看到 `*(int*)((uint8_t*)house + 588)`
+2. 查 `house.hpp`：588 对应 `AvailableCredits`
+3. 写 `house->AvailableCredits`
+
+**违规 = 翻译不合格，整个批次驳回。**
 
 ### 跨 namespace 枚举桥接
 

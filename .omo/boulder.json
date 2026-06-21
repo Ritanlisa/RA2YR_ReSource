@@ -1,10 +1,10 @@
 {
   "schema_version": 2,
-  "active_work_id": "ida-consistency-lockdown",
-  "active_plan": "D:\\RA2YR_ReSource\\.omo\\plans\\ida-consistency-lockdown.md",
-  "plan_name": "ida-consistency-lockdown",
+  "active_work_id": "remaining-functions-reverse",
+  "active_plan": "D:\\RA2YR_ReSource\\.omo\\plans\\remaining-functions-reverse.md",
+  "plan_name": "remaining-functions-reverse",
   "status": "active",
-  "started_at": "2026-06-20T10:44:30.948Z",
+  "started_at": "2026-06-21T05:04:21.263Z",
   "session_ids": [
     "opencode:ses_12a28107fffeTxyjSeELiqzkhL"
   ],
@@ -14,55 +14,36 @@
       "work_id": "ida-consistency-lockdown",
       "active_plan": "D:\\RA2YR_ReSource\\.omo\\plans\\ida-consistency-lockdown.md",
       "plan_name": "ida-consistency-lockdown",
-      "status": "active",
+      "status": "completed",
       "started_at": "2026-06-20T10:44:30.948Z",
+      "elapsed_ms": 1695003,
+      "session_ids": [],
+      "session_origins": {}
+    },
+    "remaining-functions-reverse": {
+      "work_id": "remaining-functions-reverse",
+      "active_plan": "D:\\RA2YR_ReSource\\.omo\\plans\\remaining-functions-reverse.md",
+      "plan_name": "remaining-functions-reverse",
+      "status": "active",
+      "started_at": "2026-06-21T05:04:21.263Z",
       "session_ids": [
         "opencode:ses_12a28107fffeTxyjSeELiqzkhL"
       ],
       "agent": "atlas",
+      "session_origins": {},
       "task_sessions": {
         "todo:1": {
           "task_key": "todo:1",
           "task_label": "1",
-          "task_title": "Strip functions.json + archive non-REVERSE tools",
-          "session_id": "opencode:ses_11b5d8b30ffegzVf6EeJjtGBs6",
+          "task_title": "structure/ 类方法 — BuildingClass, InfantryClass, UnitClass, AircraftClass",
+          "session_id": "opencode:ses_1172abfceffeDBTJMMUlDmNaFU",
           "agent": "Sisyphus-Junior",
-          "category": "deep",
-          "updated_at": "2026-06-20T10:50:18.895Z",
-          "started_at": "2026-06-20T10:50:04.647Z",
-          "status": "completed",
-          "ended_at": "2026-06-20T10:50:18.895Z",
-          "elapsed_ms": 14248
-        },
-        "todo:2": {
-          "task_key": "todo:2",
-          "task_label": "2",
-          "task_title": "Fix 9 name mismatches (IDA authoritative)",
-          "session_id": "opencode:ses_11b58a1adffevvV88yaLjdc8MV",
-          "agent": "Sisyphus-Junior",
-          "category": "deep",
-          "updated_at": "2026-06-20T11:06:18.602Z",
-          "started_at": "2026-06-20T10:53:44.401Z",
-          "status": "completed",
-          "ended_at": "2026-06-20T11:06:18.602Z",
-          "elapsed_ms": 754201
-        },
-        "todo:6": {
-          "task_key": "todo:6",
-          "task_label": "6",
-          "task_title": "Full consistency audit + REVERSE pipeline regression",
-          "session_id": "opencode:ses_11b49fceaffe86MRn0S9eqWVb3",
-          "agent": "Sisyphus-Junior",
-          "category": "deep",
-          "updated_at": "2026-06-20T11:08:51.741Z",
-          "started_at": "2026-06-20T11:08:44.135Z",
-          "status": "completed",
-          "ended_at": "2026-06-20T11:08:51.741Z",
-          "elapsed_ms": 7606
+          "started_at": "2026-06-21T05:13:18.081Z",
+          "status": "running",
+          "updated_at": "2026-06-21T06:36:45.632Z"
         }
       },
-      "session_origins": {},
-      "updated_at": "2026-06-20T11:08:51.741Z"
+      "updated_at": "2026-06-21T06:36:45.632Z"
     }
   },
   "session_origins": {},
@@ -70,42 +51,13 @@
     "todo:1": {
       "task_key": "todo:1",
       "task_label": "1",
-      "task_title": "Strip functions.json + archive non-REVERSE tools",
-      "session_id": "opencode:ses_11b5d8b30ffegzVf6EeJjtGBs6",
+      "task_title": "structure/ 类方法 — BuildingClass, InfantryClass, UnitClass, AircraftClass",
+      "session_id": "opencode:ses_1172abfceffeDBTJMMUlDmNaFU",
       "agent": "Sisyphus-Junior",
-      "category": "deep",
-      "updated_at": "2026-06-20T10:50:18.895Z",
-      "started_at": "2026-06-20T10:50:04.647Z",
-      "status": "completed",
-      "ended_at": "2026-06-20T10:50:18.895Z",
-      "elapsed_ms": 14248
-    },
-    "todo:2": {
-      "task_key": "todo:2",
-      "task_label": "2",
-      "task_title": "Fix 9 name mismatches (IDA authoritative)",
-      "session_id": "opencode:ses_11b58a1adffevvV88yaLjdc8MV",
-      "agent": "Sisyphus-Junior",
-      "category": "deep",
-      "updated_at": "2026-06-20T11:06:18.602Z",
-      "started_at": "2026-06-20T10:53:44.401Z",
-      "status": "completed",
-      "ended_at": "2026-06-20T11:06:18.602Z",
-      "elapsed_ms": 754201
-    },
-    "todo:6": {
-      "task_key": "todo:6",
-      "task_label": "6",
-      "task_title": "Full consistency audit + REVERSE pipeline regression",
-      "session_id": "opencode:ses_11b49fceaffe86MRn0S9eqWVb3",
-      "agent": "Sisyphus-Junior",
-      "category": "deep",
-      "updated_at": "2026-06-20T11:08:51.741Z",
-      "started_at": "2026-06-20T11:08:44.135Z",
-      "status": "completed",
-      "ended_at": "2026-06-20T11:08:51.741Z",
-      "elapsed_ms": 7606
+      "started_at": "2026-06-21T05:13:18.081Z",
+      "status": "running",
+      "updated_at": "2026-06-21T06:36:45.632Z"
     }
   },
-  "updated_at": "2026-06-20T11:08:51.741Z"
+  "updated_at": "2026-06-21T06:36:45.632Z"
 }

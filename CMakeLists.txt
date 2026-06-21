@@ -107,6 +107,20 @@ if(WIN32)
     else()
         message(STATUS "Skipping hook_dll: requires Python3 + YRpp/Syringe.h submodule")
     endif()
+
+    # ── Compile-time enforcement: no raw pointer access on class members ──
+    # Scans all .cpp files for forbidden patterns like (uint8_t*)this.
+    if(Python3_FOUND)
+        add_custom_target(check_member_access
+            COMMAND "${Python3_EXECUTABLE}" "${CMAKE_SOURCE_DIR}/tools/check_all_members.py"
+                    "${CMAKE_SOURCE_DIR}/src" "${CMAKE_SOURCE_DIR}/app"
+            WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}"
+            COMMENT "Checking for raw pointer access violations..."
+        )
+        add_dependencies(gamemd check_member_access)
+    else()
+        message(WARNING "Python3 not found — skipping member access checks")
+    endif()
 endif()
 
 # Platform-specific settings for executable

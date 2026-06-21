@@ -6,7 +6,7 @@
 // Accesses game globals directly by address (hook DLL shares process with game).
 #include <windows.h>
 #include <ddraw.h>
-#include "gamemd/render/surface.hpp"
+#include "render/surface.hpp"
 #include "element_tracker.h"
 
 // Game globals accessed by address (IDA: 0x89F978, 0xA8ED80)

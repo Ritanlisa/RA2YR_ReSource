@@ -13,7 +13,7 @@
 // and returning directly, we avoid the trampoline entirely.
 #include <windows.h>
 #include "Syringe.h"
-#include "gamemd/render/surface.hpp"
+#include "render/surface.hpp"
 #include "element_tracker.h"
 
 // ============================================================
