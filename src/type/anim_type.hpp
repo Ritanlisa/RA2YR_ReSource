@@ -31,7 +31,7 @@ public:
 
     static DynamicVectorClass<AnimTypeClass*>* Array;
     static AnimTypeClass* Find(const char* pID); // IDA: NOT_FOUND
-    static AnimTypeClass* FindOrAllocate(const char* pID);  // 0x428B80 (as FindOrCreate)
+    static AnimTypeClass* FindOrCreate(const char* pID);  // 0x428B80 (as FindOrCreate)
     static int FindIndex(const char* pID);  // 0x427CB0
 
     virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override; // 0x428990 (as GetClassIdentifier)

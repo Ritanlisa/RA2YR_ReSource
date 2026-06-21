@@ -36,7 +36,7 @@ public:
 
     static DynamicVectorClass<BuildingTypeClass*>* Array;
     static BuildingTypeClass* Find(const char* pID); // IDA: NOT_FOUND
-    static BuildingTypeClass* FindOrAllocate(const char* pID);  // 0x4653C0 (as FindOrCreate)
+    static BuildingTypeClass* FindOrCreate(const char* pID);  // 0x4653C0 (as FindOrCreate)
     static int FindIndex(const char* pID);  // 0x747370
 
     virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override; // 0x465380 (as GetClassIdentifier)

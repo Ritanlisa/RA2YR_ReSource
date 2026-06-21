@@ -17,7 +17,7 @@ public:
     static DynamicVectorClass<AbstractTypeClass*>* Array;
 
     static AbstractTypeClass* Find(const char* pID); // IDA: NOT_FOUND
-    static AbstractTypeClass* FindOrAllocate(const char* pID); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    static AbstractTypeClass* FindOrCreate(const char* pID); // IDA: UNMATCHED — no_callgraph_match, no_git_history
     static int FindIndex(const char* pID); // IDA: NOT_FOUND
 
     virtual ~AbstractTypeClass() = default;  // 0x4109C0 (as Dtor)

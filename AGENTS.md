@@ -504,6 +504,33 @@ RA2/YR 的移动系统使用 COM 架构。GUID 表位于 `.rdata` 段（0x7E9A60
 
 ### 最近完成（按时间倒序）
 
+- **2026-06-21**: Name mismatch fix (Phase 4) — 343 → 215 剩余命名不一致 (-37.3%)
+  - **audit_consistency.py 增强**:
+    - `addr_pattern` 现在也匹配 `// IDA 0xADDR` 格式（不仅 `// 0xADDR`）
+    - 前一行的 IDA 注释提取（`// IDA 0xADDR -- ClassName::Method` → 解析为 hpp 名称）
+    - `_find_enclosing_class()` 也识别 `struct` 和 `namespace`（不仅 `class`）
+    - 注释名优先于函数名（`// IDA 0xADDR -- Dialog::OptionIDToIndex` 优先于 `OptionIDToIndex`）
+    - 名称更新逻辑改进：带有 `::` 的注释名覆盖非限定名
+    - `normalize_name()` 函数：去除尾部下划线（IDA `___` 产物）、规范化 `vt[NN]` ↔ `vt_NN`、减少连续下划线
+  - **Phase 1 (no_scope)**: 65 → 0 不匹配 ✅
+    - 28 个 `ClassNameMethodName` 条目通过注释提取解决
+    - 36 个 namespace/struct 上下文条目通过 `_find_enclosing_class()` 扩展解决
+    - 2 个手动注释添加至 hpp 文件（`ddraw_init.hpp`, `locomotion.hpp`）
+  - **Phase 2 (method_diff)**: 64 → 59
+    - `FindOrAllocate` → `FindOrCreate` 全局替换（16 文件）
+    - `Construct()` → `Constructor()` 修复
+    - 名称规范化解决了 5 个误报
+  - **Phase 3 (wrong_class)**: 180 → 116（通过命名空间/结构体上下文识别减少了 64 个）
+  - **Phase 4 (other)**: 34 → 40（净变化 +6）
+  - **构建验证**: 0 错误, 0 警告（gamemd_core）
+  - 工具: `tools/audit_consistency.py`（已增强）, `tools/fix_phase2_easy.py`
+  - 证据: `.omo/no_scope_v2.txt`, `.omo/method_diff_v2.txt`, `.omo/wrong_class_v2.txt`, `.omo/other_v2.txt`
+
+- **2026-06-21**: Name mismatch fix (Phase 1-3) — 2,574 → 343 (-86.7%)
+  - 增强 audit_consistency.py: 类上下文、注释名提取、namespace/struct 识别、名称规范化
+  - 385 C-style → `ClassName::Method` 在 `_funcs.hpp` 文件
+  - 构建: 0 错误, 0 警告
+
 - **2026-06-20**: Task 5 — 修复 131 orphan `// 0xADDR` 注解 (hpp 中地址不在 functions.json 中)
   - **1498 hpp_only 孤儿** 分类: 1367 data-section (`.data`/`.rdata`), 131 code-section (`.text`)
   - **Phase 2 (data-section)**: 1382 行 `// 0xADDR` → `// data: 0xADDR` 前缀 (14 hpp 文件)
@@ -590,6 +617,10 @@ RA2/YR 的移动系统使用 COM 架构。GUID 表位于 `.rdata` 段（0x7E9A60
 - Phase 2 将 13 个 XSurface 判定为 UNCERTAIN（vtable Lock/Unlock 未解析）→ 手动覆盖 + 警告生效。Phase 3 可减少 UNCERTAIN 比例。
 - 1,204 sub_* 仍需翻译（4,255 已有存根，含 IDA 伪代码注释）
 - 3,590 sub_* 仍需解编译命名（调用链太深，缺少非 sub_* caller）
+- 215 命名不一致剩余 (59 method_diff, 116 wrong_class, 40 other) — 需要逐个函数审查
+  - method_diff: 大部分是 IDA ↔ hpp 函数名别名差异，需逐函数查 IDA 确认
+  - wrong_class: 函数声明在错误类体中，需要结构调整（移动声明）
+  - other: 函数签名/命名差异，没有简单模式可自动修复
 
 ### 后续计划
 

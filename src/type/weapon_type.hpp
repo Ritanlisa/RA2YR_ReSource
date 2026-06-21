@@ -21,7 +21,7 @@ public:
 
     static DynamicVectorClass<WeaponTypeClass*>* Array;
     static WeaponTypeClass* Find(const char* pID); // IDA: NOT_FOUND
-    static WeaponTypeClass* FindOrAllocate(const char* pID); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    static WeaponTypeClass* FindOrCreate(const char* pID); // IDA: UNMATCHED — no_callgraph_match, no_git_history
     static int FindIndex(const char* pID); // IDA: NOT_FOUND
 
     virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override; // 0x772C90 (as GetClassIdentifier)

@@ -19,7 +19,7 @@ public:
     static DynamicVectorClass<ConvertClass*>& Array;
     // IDA 0x48E740 -- ConvertClass::Construct (builds palette+blitter tables)
 
-    static ConvertClass* FindOrAllocate(const char* pFilename); // IDA: NOT_FOUND
+    static ConvertClass* FindOrCreate(const char* pFilename); // IDA: NOT_FOUND
     static void CreateFromFile(const char* pFilename, BytePalette*& pPalette, ConvertClass*& pDestination); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     BlitterCore* SelectPlainBlitter(BlitterFlags flags) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history

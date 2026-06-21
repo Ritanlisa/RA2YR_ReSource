@@ -15,7 +15,7 @@ public:
 
     static DynamicVectorClass<OverlayTypeClass*>* Array;
     static OverlayTypeClass* Find(const char* pID);  // 0x5FE250
-    static OverlayTypeClass* FindOrAllocate(const char* pID); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    static OverlayTypeClass* FindOrCreate(const char* pID); // IDA: UNMATCHED — no_callgraph_match, no_git_history
     static int FindIndex(const char* pID); // IDA: NOT_FOUND
 
     virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override; // 0x5FEC30 (as GetClassIdentifier)

@@ -13,7 +13,7 @@ public:
 
     static DynamicVectorClass<SmudgeTypeClass*>* Array;
     static SmudgeTypeClass* Find(const char* pID);  // 0x6B5260
-    static SmudgeTypeClass* FindOrAllocate(const char* pID); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    static SmudgeTypeClass* FindOrCreate(const char* pID); // IDA: UNMATCHED — no_callgraph_match, no_git_history
     static int FindIndex(const char* pID); // IDA: NOT_FOUND
 
     virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override; // 0x6B58D0 (as GetClassIdentifier)

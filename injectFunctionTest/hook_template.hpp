@@ -6,7 +6,7 @@
 #include <sstream>
 #include <string>
 #include <iomanip>
-#include <gamemd/core/math.hpp>
+#include "core/math.hpp"
 
 // ---- shared constants ----
 

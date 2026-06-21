@@ -170,7 +170,7 @@ void BuildingLoadQueue::FindBuilding() {}
 void BuildingPlacement::RenderBuildingPlacementShadow() {}
 void BuildingPlacement::RenderBuildingPlacementPreview() {}
 void BuildingPlacement::ValidateType() {}
-void BuildingPlacement::sub_481130() {}
+void BuildingPlacement::IsPlacementFlagSet() {}
 void BuildingPlacement::HandleClick() {}
 
 // --- BuildingPlacementClass ---

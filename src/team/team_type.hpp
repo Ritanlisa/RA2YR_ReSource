@@ -61,7 +61,7 @@ public:
     void ProcessTaskForce();                                 // 0x6F1FA0
     void ReadScriptData();                                   // 0x6F1AB0
     void SaveToINI();                                        // 0x6F1B90
-    void sub_56E85F0();                                      // 0x6E85F0
+    void FindOrCreateTaskForce();                                      // 0x6E85F0
 
     int32_t     TeamTypeClass_field_24;           // +0x24 (this+36)
     uint8_t     TeamTypeClass_field_28;           // +0x28 (this+40)

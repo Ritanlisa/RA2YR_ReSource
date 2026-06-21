@@ -53,7 +53,7 @@ public:
     bool ShouldWakeUpNow() const;                                // 0x6B1020
     void AssignTask(FootClass*);                                 // 0x6B10F0
     void ProcessOrders();                                        // 0x6B1390
-    void sub_5522FC0();                                          // 0x522FC0
+    void IsMasterHarvester();                                          // 0x522FC0
     float Calc2DDistance(int, int, int, int);                    // 0x6B1A70
 
     // Save/Load

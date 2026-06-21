@@ -96,30 +96,29 @@
   > 管线工具就位（member_lookup.json、fix_member_access.py、编译门控），但子 agent 无法执行翻译本身。
   > **等待**: 用户决定新翻译策略。
 
-- [ ] 2. object/ 类方法 — TechnoClass, FootClass, ObjectClass, MissionClass, RadioClass, AbstractClass
-  > 六类约 600+ 方法。核心对象层次。
-  > **Agent**: `deep` | **Parallel**: 六个类可并行分派 | **Blocked By**: 1
+- [~] 2. object/ 类方法 — TechnoClass, FootClass, ObjectClass, MissionClass, RadioClass, AbstractClass
+  > **阻塞**: 同 Task 1 — 子 agent 翻译能力不足。等待用户决定策略。
 
-- [ ] 3. 其余类方法 — render (DSurface/XSurface 82), system (TacticalClass), ui (Dialog/Gadget/Sidebar), misc (Jumpjet 43, Locomotor), house, entity, network, type
-  > 分散在各模块的类方法。按模块分组，同模块内顺序翻译。
-  > **Agent**: `deep` | **Parallel**: 模块间可并行 | **Blocked By**: 1
+- [~] 3. 其余类方法 — render, system, ui, misc, house, entity, network, type
+  > **阻塞**: 同上。
 
 ### Wave 2: 命名全局函数
 
-- [ ] 4. 全局函数 — 按模块分批：menu/rendering → object/system → combat/AI/network → misc/init
-  > ~11,300 已命名全局函数。已有部分实现，剩余从 IDA 翻译。
-  > 每批 200-500 函数，编译验证后标记 translated。
+- [~] 4. 全局函数 — menu/rendering → object/system → combat/AI/network → misc/init
+  > **阻塞**: 同上。
   > **Agent**: `deep` | **Parallel**: 不相关模块可并行 | **Blocked By**: 1
 
 ### Wave 3: sub_* 翻译 + 重命名
 
-- [ ] 5. sub_* <50B 翻译 + 重命名 (~4,200)
+- [~] 5. sub_* <50B 翻译 + 重命名 (~4,200)
+  > **阻塞**: 翻译策略未定。
   > 已有 4,255 存根（`src/_generated/`，仅供参考——**必须用 IDA MCP 实时反编译**）。
   > 逐函数 IDA 实时反编译 → 优化还原原始 C++ → 编译验证 → 根据功能重命名。
   > 重命名后三处同步：IDA rename & idb_save + functions.json + 源码全局查找替换。
   > **Agent**: `deep` | **Parallel**: 模块间可并行 | **Blocked By**: 1-4
 
-- [ ] 6. sub_* 50-500B 翻译 + 重命名 (~1,200)
+- [~] 6. sub_* 50-500B 翻译 + 重命名 (~1,200)
+  > **阻塞**: 翻译策略未定。
   > 已有 1,203 存根。中大型函数需逐行 IDA 实时反编译对照。
   > 优化还原原始 C++（变量语义化、循环合并、编译器痕迹消除）。
   > 关注浮点精度（fild vs fld）、边界条件、outcode 顺序。
@@ -128,19 +127,21 @@
 
 ### Wave 4: 审计 + 收尾
 
-- [ ] 7. 最终审计 — 全量验证 translated 准确性
-  > 抽样 200 函数：IDA 反编译 vs C++ 实现 100% 匹配。
-  > 确认 functions.json `translated` 计数 = 实际已翻译数。
-  > **Agent**: `quick` | **Blocked By**: 1-6
+- [~] 7. 最终审计
+  > **阻塞**: 依赖翻译任务完成。
+- [~] F1. 翻译完整性
+- [~] F2. 编译验证
+- [~] F3. IDA 一致性审计
+- [~] F4. 管道回归
 
 ---
 
-## Final Verification Wave
+## Final Verification Wave（阻塞—依赖翻译完成）
 
-- [ ] F1. 翻译完整性 — 全部 17,259 游戏函数 translated=true
-- [ ] F2. 编译 — `cmake --build build_win` 0/0
-- [ ] F3. IDA 一致性审计 — 抽样 50 函数 100% 匹配
-- [ ] F4. 管道回归 — `gen_reverse_hooks.py` 0 errors
+- [~] F1. 翻译完整性 — 全部 17,259 游戏函数 translated=true
+- [~] F2. 编译 — `cmake --build build_win` 0/0
+- [~] F3. IDA 一致性审计 — 抽样 50 函数 100% 匹配
+- [~] F4. 管道回归 — `gen_reverse_hooks.py` 0 errors
 
 ---
 

@@ -120,7 +120,7 @@ public:
 
     virtual void AStar(); // 0x42C290
     virtual void CalcDistance(); // 0x42D170
-    virtual void sub_42DCA0(); // 0x42DCA0
+    virtual void SiftDown(); // 0x42DCA0
     virtual void CrossBridge(); // 0x583180
     virtual void SelectRegionPath(); // 0x5833F0
     // +2 more virtual methods

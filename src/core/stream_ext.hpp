@@ -174,7 +174,7 @@ public:
     virtual ~Buffer() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
 
     virtual void CreateDirectSound(); // 0x40A340
-    virtual void sub_40A6D0(); // 0x40A6D0
+    virtual void UpdateVolumeSettings(); // 0x40A6D0
     virtual void CompareEqual(); // 0x40CCD0
     virtual void FillCircularBufferScroll(); // 0x410ED0
     virtual void Cleanup(); // 0x42F7C0
@@ -283,7 +283,7 @@ public:
 
     virtual void Layout(); // 0x433CF0
     virtual void MeasureWidth(); // 0x433ED0
-    virtual void sub_5BD3D0(); // 0x5BD3D0
+    virtual void DrawCharAtGrid(); // 0x5BD3D0
     virtual void DrawRepeated(); // 0x5BD490
 
     uint8_t Text_field_0x04[4];

@@ -33,7 +33,7 @@ ConvertClass::ConvertClass(
     // TODO: build blitter lookup tables from palette
 }
 
-ConvertClass* ConvertClass::FindOrAllocate(const char* pFilename)
+ConvertClass* ConvertClass::FindOrCreate(const char* pFilename)
 {
     (void)pFilename;
     // TODO: search Array for matching convert, allocate if not found

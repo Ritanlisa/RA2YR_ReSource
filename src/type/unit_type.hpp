@@ -15,7 +15,7 @@ public:
 
     static DynamicVectorClass<UnitTypeClass*>* Array;
     static UnitTypeClass* Find(const char* pID);  // 0x7470D0
-    static UnitTypeClass* FindOrAllocate(const char* pID);  // 0x74B960 (as FindOrCreate)
+    static UnitTypeClass* FindOrCreate(const char* pID);  // 0x74B960 (as FindOrCreate)
     static int FindIndex(const char* pID); // IDA: NOT_FOUND
 
     virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override; // 0x747F30 (as GetClassIdentifier)

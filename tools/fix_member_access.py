@@ -66,26 +66,55 @@ def check_line(code: str) -> List[str]:
 
     m = _RE_PTR_ARITH.search(code)
     if m:
-        violations.append(f"ptr-arithmetic: {m.group().strip()[:60]}")
+        violations.append(f"ptr-arithmetic: {m.group().strip()[:60]} {_fix_ptr_arith(m.group())}")
 
     if not m:
         m = _RE_CAST_INDEX.search(code)
         if m:
-            violations.append(f"cast-index: {m.group().strip()[:60]}")
+            violations.append(f"cast-index: {m.group().strip()[:60]} {_fix_cast_index(m.group())}")
         else:
             m = _RE_ARRAY_DIV.search(code)
             if m:
-                violations.append(f"array-div: {m.group().strip()[:60]}")
+                violations.append(f"array-div: {m.group().strip()[:60]} → use ->member access instead of array-div subscript")
 
     m = _RE_CPP_CAST.search(code)
     if m:
-        violations.append(f"C++-cast ({m.group(1)}): {code.strip()[:70]}")
+        violations.append(f"C++-cast ({m.group(1)}): {code.strip()[:70]} → use C-style cast: (type)(expr)")
 
     m = _RE_HEX_PTR.search(code)
     if m:
-        violations.append(f"hex-ptr: {m.group().strip()[:60]}")
+        addr_match = re.search(r'0x[0-9A-Fa-f]+', m.group())
+        addr = addr_match.group(0) if addr_match else ''
+        violations.append(f"hex-ptr: {m.group().strip()[:60]} → use named global variable instead. Check src/**/globals_*.hpp{(' (IDA: ' + addr + ')') if addr else ''}")
 
     return violations
+
+
+def _fix_ptr_arith(match_text: str) -> str:
+    """Generate fix suggestion for ptr-arithmetic violation."""
+    m = re.search(r'\(\s*(?:const\s+)?(?:uint8_t|char)\s*\*\s*\)\s*(\w+)\s*\+\s*(\d+)', match_text)
+    if m:
+        var_name = m.group(1)
+        offset = m.group(2)
+        if var_name == 'this':
+            return f'→ use this->memberName instead. Run: lookup_member.py <ClassName> {offset}'
+        else:
+            return f'→ use {var_name}->memberName instead. Run: lookup_member.py <ClassName> {offset}'
+    return '→ use ->member access instead of pointer arithmetic'
+
+
+def _fix_cast_index(match_text: str) -> str:
+    """Generate fix suggestion for cast-index violation."""
+    m = re.search(r'\(\s*\(\s*\w+\s*\*\s*\)\s*(\w+)\s*\)\s*\[\s*(\d+)', match_text)
+    if m:
+        var_name = m.group(1)
+        idx = int(m.group(2))
+        byte_offset = idx * 4
+        if var_name == 'this':
+            return f'→ use this->memberName instead. Run: lookup_member.py <ClassName> {byte_offset}'
+        else:
+            return f'→ use {var_name}->memberName instead. Run: lookup_member.py <ClassName> {byte_offset}'
+    return '→ use ->member access instead of pointer subscript'
 
 
 def check_file(file_path: str) -> List[Tuple[str, int, str]]:
@@ -237,6 +266,14 @@ def main():
         for _, _, desc in all_violations:
             key = desc.split(':')[0]
             by_type[key] = by_type.get(key, 0) + 1
+
+        # Per-line violations (with fix suggestions embedded in the desc string)
+        for fp, ln, desc in all_violations:
+            try:
+                rel = os.path.relpath(fp)
+            except ValueError:
+                rel = fp
+            print(f"{rel}:{ln}: error: {desc}")
 
         print(f"\n  FAIL: {len(files)} files scanned, "
               f"{len(set(f[0] for f in all_violations))} files with violations")

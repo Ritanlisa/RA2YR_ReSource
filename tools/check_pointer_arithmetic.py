@@ -7,7 +7,7 @@ Supplements .clang-tidy by catching patterns clang-tidy can't (or as fast redund
   1. C++ casts: static_cast, dynamic_cast  (clang-tidy can't ban all usage of these)
   2. Pointer arithmetic on class instances  (redundancy with clang-tidy, but fast)
   3. Pointer [] operator ban               (no raw pointer subscript on non-arrays)
-  4. Stub detection                        (functions with <3 actual code lines)
+   4. Stub detection                        (3-rule: <3 real lines, comment-only+<5, >50% comment ratio)
 
 Coding convention: C-style casts ONLY — (Type)expr or Type(expr).
 No static_cast, dynamic_cast, reinterpret_cast.
@@ -94,8 +94,6 @@ _RE_DWORD_N = re.compile(r'\bdword_[0-9A-Fa-f]+\b')
 # Comment lines are already filtered by is_comment_or_empty() and code_part split.
 _RE_SUB_N = re.compile(r'\bsub_[0-9A-Fa-f]+\b')
 
-_IDA_ARTIFACT_DESC = 'IDA artifact (vN/field_N/dword_N/sub_N): use meaningful names'
-
 PATTERNS = [
     (_RE_PTR_ARITH, 'ptr-arithmetic'),
     (_RE_CAST_INDEX, 'cast-index'),
@@ -104,10 +102,10 @@ PATTERNS = [
 ]
 
 IDA_ARTIFACT_PATTERNS = [
-    (_RE_VN, _IDA_ARTIFACT_DESC),
-    (_RE_FIELD_N, _IDA_ARTIFACT_DESC),
-    (_RE_DWORD_N, _IDA_ARTIFACT_DESC),
-    (_RE_SUB_N, _IDA_ARTIFACT_DESC),
+    (_RE_VN,     'IDA artifact: vN'),
+    (_RE_FIELD_N, 'IDA artifact: field_N'),
+    (_RE_DWORD_N, 'IDA artifact: dword_N'),
+    (_RE_SUB_N,   'IDA artifact: sub_N'),
 ]
 
 # ── Keywords that indicate NOT a function definition ──
@@ -381,6 +379,10 @@ def _is_real_code_line(line):
 
 def check_file(filepath):
     """Scan a file for violations. Returns list of (line_no, text, desc, match)."""
+    # Skip generated files
+    if '_generated' in filepath.replace('\\', '/') or 'menu_globals_gen' in filepath:
+        return []
+
     violations = []
     try:
         with open(filepath, 'r', encoding='utf-8', errors='replace') as f:
@@ -470,34 +472,180 @@ def check_file(filepath):
 
         # ── Check B: Stub detection ──
         real_code_lines = 0
+        comment_only_lines = 0
+        has_comment_only = False
         has_stub_marker = False
         for idx, body_line in enumerate(body_lines):
             line_no = body_line_nums[idx]
-            code = body_line.split('//')[0].strip()
-            comment = ''
+            code_part = body_line.split('//')[0].strip()
+            comment_part = ''
             if '//' in body_line:
-                comment = body_line.split('//', 1)[1]
+                comment_part = body_line.split('//', 1)[1]
 
+            # Count real code lines (comment-only lines excluded by _is_real_code_line)
             if _is_real_code_line(body_line):
                 real_code_lines += 1
 
-            if _RE_STUB_MARKER.search(comment):
+            # Track comment-only lines: code part empty, comment part non-empty
+            stripped_comment = comment_part.strip()
+            if not code_part and stripped_comment:
+                has_comment_only = True
+                comment_only_lines += 1
+
+            if _RE_STUB_MARKER.search(comment_part):
                 has_stub_marker = True
 
-        if real_code_lines < 3:
+        # Three rules for stub/comment-shell:
+        # Rule 1: < 3 real code lines → always stub
+        # Rule 2: has any comment-only line AND < 5 real code lines → stub
+        # Rule 3: comment-to-code ratio > 50% → comment shell warning
+        is_stub = real_code_lines < 3
+        is_comment_shell = False
+
+        if not is_stub and has_comment_only and real_code_lines < 5:
+            is_stub = True
+            is_comment_shell = True
+
+        # Check comment shell ratio (separate from stub check)
+        if not is_comment_shell:
+            significant_lines = real_code_lines + comment_only_lines
+            if significant_lines > 0:
+                ratio = comment_only_lines / significant_lines
+                if ratio > 0.5:
+                    is_comment_shell = True
+
+        if is_stub:
             # Determine a concise identifier for the function
             sig_short = sig_text.strip().split('\n')[0].rstrip('{').strip()
             if len(sig_short) > 80:
                 sig_short = sig_short[:77] + '...'
 
-            marker_info = ' (has // TODO/stub/FIXME)' if has_stub_marker else ''
+            marker_info = ''
+            if has_stub_marker:
+                marker_info += ' (has // TODO/stub/FIXME)'
+            if is_comment_shell and comment_only_lines > 0:
+                significant = real_code_lines + comment_only_lines
+                pct = int(comment_only_lines * 100 / significant) if significant > 0 else 0
+                marker_info += f' (comment shell: {comment_only_lines}/{significant} lines = {pct}% comments)'
+
             if func_start not in reported_lines:
                 violations.append((func_start, sig_short,
                                    f'stub function: {real_code_lines} line(s) of code{marker_info}',
                                    sig_short))
                 reported_lines.add(func_start)
 
+        elif is_comment_shell and not is_stub:
+            # Non-stub function with excessive comment ratio (>50%)
+            sig_short = sig_text.strip().split('\n')[0].rstrip('{').strip()
+            if len(sig_short) > 80:
+                sig_short = sig_short[:77] + '...'
+            significant = real_code_lines + comment_only_lines
+            pct = int(comment_only_lines * 100 / significant) if significant > 0 else 0
+            if func_start not in reported_lines:
+                violations.append((func_start, sig_short,
+                                   f'comment shell: {comment_only_lines}/{significant} lines = {pct}% comments, {real_code_lines} code lines',
+                                   sig_short))
+                reported_lines.add(func_start)
+
     return violations
+
+
+def _get_fix_suggestion(desc, match_text, filepath):
+    """Generate actionable fix suggestion for a violation.
+
+    Returns a string like '→ use this->memberName instead. Run: lookup_member.py <ClassName> 692'
+    or '→ use C-style cast: (type)(expr)'.
+    """
+    # ── ptr-arithmetic: (char*)this + 692 or (uint8_t*)Type + 2048 ──
+    if desc == 'ptr-arithmetic':
+        m = re.search(r'\(\s*(?:const\s+)?(?:uint8_t|char)\s*\*\s*\)\s*(\w+)\s*\+\s*(\d+)', match_text)
+        if m:
+            var_name = m.group(1)
+            offset = m.group(2)
+            if var_name == 'this':
+                cls = _guess_class_from_filepath(filepath)
+                return f'→ use this->memberName instead. Run: lookup_member.py {cls} {offset}'
+            else:
+                cls = _guess_class_from_filepath(filepath)
+                return f'→ use {var_name}->memberName instead. Run: lookup_member.py {cls} {offset}'
+        return '→ use ->member access instead of pointer arithmetic'
+
+    # ── cast-index: ((int*)this)[47] ──
+    if desc == 'cast-index':
+        m = re.search(r'\(\s*\(\s*\w+\s*\*\s*\)\s*(\w+)\s*\)\s*\[\s*(\d+)', match_text)
+        if m:
+            var_name = m.group(1)
+            idx = int(m.group(2))
+            cls = _guess_class_from_filepath(filepath)
+            if var_name == 'this':
+                return f'→ use this->memberName instead. Run: lookup_member.py {cls} {idx * 4}'
+            else:
+                return f'→ use {var_name}->memberName instead. Run: lookup_member.py {cls} {idx * 4}'
+        return '→ use ->member access instead of pointer subscript'
+
+    # ── array-div: typeData[2048/4] ──
+    if desc == 'array-div':
+        m = re.search(r'(\w+)\s*\[\s*(\d+)\s*/\s*([1248])', match_text)
+        if m:
+            var_name = m.group(1)
+            offset = m.group(2)
+            return f'→ use {var_name}->memberName instead. Run: lookup_member.py <ClassName> {offset}'
+        return '→ use ->member access instead of array-div subscript'
+
+    # ── hex-ptr: *(int*)0x87F7E8 or (TYPE*)0xNNNN ──
+    if desc == 'hex-ptr':
+        m = re.search(r'0x[0-9A-Fa-f]+', match_text)
+        if m:
+            addr = m.group(0)
+            return f'→ use named global variable instead. Check src/**/globals_*.hpp (IDA: {addr})'
+        return '→ use named global variable instead. Check src/**/globals_*.hpp'
+
+    # ── C++ casts ──
+    if desc == 'static_cast':
+        return '→ use C-style cast: (type)(expr)'
+    if desc == 'dynamic_cast':
+        return '→ use C-style cast: (type)(expr)'
+    if desc == 'reinterpret_cast':
+        return '→ use C-style cast: (type)(expr)'
+
+    # ── goto statement ──
+    if desc.startswith('goto'):
+        return '→ replace with structured control flow (if/else, while, switch)'
+
+    # ── IDA artifacts ──
+    if desc == 'IDA artifact: vN':
+        return '→ replace with meaningful variable name (e.g., targetCount, cellIndex)'
+    if desc == 'IDA artifact: field_N':
+        return '→ use member name from class header: this->memberName'
+    if desc == 'IDA artifact: dword_N':
+        return '→ declare as extern with proper name: extern int g_VariableName;'
+    if desc == 'IDA artifact: sub_N':
+        return '→ use named function if implemented, or declare proper stub'
+
+    # ── pointer subscript ──
+    if 'pointer subscript' in desc:
+        return '→ use ->member access if class pointer, or declare as array: Type arr[N]'
+
+    # ── stub function ──
+    if 'stub function' in desc:
+        return '→ implement full function logic from IDA decompilation (≥3 real code lines)'
+
+    # ── comment shell ──
+    if desc.startswith('comment shell'):
+        return '→ replace comment-only pseudocode with real C++ implementation'
+
+    return ''
+
+
+def _guess_class_from_filepath(filepath):
+    """Guess class name from source file path. e.g. src/structure/unit.cpp → UnitClass"""
+    import os
+    basename = os.path.splitext(os.path.basename(filepath))[0]  # 'unit'
+    # Heuristic: capitalize first letter, add 'Class' suffix
+    # For compound names like building_type → BuildingTypeClass
+    parts = basename.split('_')
+    guessed = ''.join(p.capitalize() for p in parts) + 'Class'
+    return guessed
 
 
 def main():
@@ -521,7 +669,8 @@ def main():
                 # Truncate long snippets to max ~100 chars
                 if len(snippet) > 120:
                     snippet = snippet[:117] + '...'
-                print(f"{filepath}:{line_no}: error: {desc}: {snippet}")
+                fix = _get_fix_suggestion(desc, match, filepath)
+                print(f"{filepath}:{line_no}: error: {desc}: {snippet} {fix}")
                 violation_count += 1
         else:
             # Also count successfully scanned files

@@ -699,7 +699,7 @@ public:
     ILocomotion*  Piggybackee;         // 0x44
 
 protected:
-    TeleportLocomotionClass() = default; // 0x718000
+    TeleportLocomotionClass() = default; // IDA 0x718000 -- TeleportLocomotionClass::TeleportLocomotionClass; 0x718000
     explicit TeleportLocomotionClass(noinit_t) noexcept : LocomotionClass(noinit_t{}) {}  // 0x718000
 };
 

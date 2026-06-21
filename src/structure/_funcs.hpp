@@ -60,7 +60,7 @@ namespace gamemd {
 // === BuildingClass ===
 // 15 member function(s)
     int BuildingClass::PlayAnim(); // 0x451890
-    int BuildingClass::Create(); // 0x466000
+    int BuildingClass::BuildingClass::Create(); // 0x466000
     char BuildingClass::ValidateFoundation_0(); // 0x4DC8C0
     char BuildingClass::FindClosestForRepair(); // 0x4DFCB0
     char BuildingClass::FindClosestForRepair2(); // 0x4DFE00
@@ -68,7 +68,7 @@ namespace gamemd {
     char BuildingClass::SetProduction(); // 0x6395B0
     int BuildingClass::CompleteProduction(); // 0x639740
     int BuildingClass::LoadBuildingTypes(); // 0x67B720
-    int BuildingClass::AllocAndCtor(); // 0x70BF50
+    int BuildingClass::BuildingClass::AllocAndCtor(); // 0x70BF50
     int BuildingClass::ClearFactoryData(); // 0x722240
     int BuildingClass::FreeUpgradeQueue(); // 0x722390
     int BuildingClass::ClearOccupancyData(); // 0x722D00
@@ -147,8 +147,8 @@ namespace gamemd {
     void** HouseClass::PsiWarn(); // 0x43B5E0
     void HouseClass::ResetObjectOrders(); // 0x4ADEE0
     int HouseClass::RevealShroudForAllies(); // 0x4ADFF0
-    int HouseClass::sub_4E8240(); // 0x4E8240
-    int HouseClass::sub_4E8250(); // 0x4E8250
+    int HouseClass::vt_placeholder_00(); // 0x4E8240
+    int HouseClass::vt_placeholder_01(); // 0x4E8250
     char HouseClass::CanDetect(); // 0x501640
     HRESULT HouseClass::SaveLoad_Prefix(); // 0x503040
     char HouseClass::PrerequisitesForTechnoTypeAreListed(); // 0x505360
@@ -169,9 +169,9 @@ namespace gamemd {
     int HouseTypeClass::GetClassIdentifier(); // 0x512640
     int HouseTypeClass::AddRef(); // 0x512740
     int HouseTypeClass::Release(); // 0x512750
-    int HouseTypeClass::sub_5139E0(); // 0x5139E0
-    int HouseTypeClass::sub_5139F0(); // 0x5139F0
-    int HouseTypeClass::sub_513A00(); // 0x513A00
+    int HouseTypeClass::readBaseDefenses(); // 0x5139E0
+    int HouseTypeClass::readAiBuildLists(); // 0x5139F0
+    int HouseTypeClass::readLoadoutData(); // 0x513A00
     int HouseTypeClass::ReadCountryName(); // 0x67B8F0
 
 // === TriggerClass ===

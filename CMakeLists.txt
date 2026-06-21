@@ -108,18 +108,19 @@ if(WIN32)
         message(STATUS "Skipping hook_dll: requires Python3 + YRpp/Syringe.h submodule")
     endif()
 
-    # ── Compile-time enforcement: no raw pointer access on class members ──
-    # Scans all .cpp files for forbidden patterns like (uint8_t*)this.
+    # ── Code quality check: modified functions only ──
+    # Checks: stubs, comment shells, pointer arithmetic, C++ casts, gotos, IDA artifacts
+    #          name consistency audit (functions.json ↔ IDA ↔ hpp annotations)
     if(Python3_FOUND)
-        add_custom_target(check_member_access
-            COMMAND "${Python3_EXECUTABLE}" "${CMAKE_SOURCE_DIR}/tools/check_all_members.py"
-                    "${CMAKE_SOURCE_DIR}/src" "${CMAKE_SOURCE_DIR}/app"
-            WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}"
-            COMMENT "Checking for raw pointer access violations..."
+        add_custom_target(check_code_quality
+            COMMAND ${Python3_EXECUTABLE} "${CMAKE_SOURCE_DIR}/tools/check_translated_functions.py"
+            COMMAND ${Python3_EXECUTABLE} "${CMAKE_SOURCE_DIR}/tools/audit_consistency.py" --check-only
+            WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+            COMMENT "Checking code quality (modified functions + name consistency audit)"
         )
-        add_dependencies(gamemd check_member_access)
+        add_dependencies(gamemd check_code_quality)
     else()
-        message(WARNING "Python3 not found — skipping member access checks")
+        message(WARNING "Python3 not found — skipping code quality checks")
     endif()
 endif()
 

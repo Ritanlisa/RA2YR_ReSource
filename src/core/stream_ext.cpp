@@ -5,7 +5,7 @@ namespace gamemd {
 // --- Buffer ---
 
 void Buffer::CreateDirectSound() {}
-void Buffer::sub_40A6D0() {}
+void Buffer::UpdateVolumeSettings() {}
 void Buffer::CompareEqual() {}
 void Buffer::FillCircularBufferScroll() {}
 void Buffer::Cleanup() {}
@@ -44,7 +44,7 @@ void StreamWrapper::StubReturnFalse() {}
 
 void Text::Layout() {}
 void Text::MeasureWidth() {}
-void Text::sub_5BD3D0() {}
+void Text::DrawCharAtGrid() {}
 void Text::DrawRepeated() {}
 
 // --- TextGroup ---

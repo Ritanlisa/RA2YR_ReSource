@@ -24,7 +24,7 @@ public:
 
     // Construction
     static RadBeam* Create(bool);                                // 0x659110
-    void sub_6593F0();                                           // 0x6593F0
+    void InitState();                                           // 0x6593F0
 
     double      range;              // +0x18 (this+24)
     uint8_t     data[0xA0];         // +0x20..+0xBF (padding to sizeof 0xC8)

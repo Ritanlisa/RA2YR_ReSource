@@ -1490,9 +1490,9 @@ HWND NetworkDialog_sub_6964C0(void* /*NetworkDialog*/ self) {
     return nullptr;
 }
 
-// NetworkDialog::sub_696610 @ 0x696610 (181B)
+// NetworkDialog::UpdateListBox @ 0x696610 (181B)
 REVERSE(0x696610, "IDA decompilation", "None")
-HWND NetworkDialog_sub_696610(void* /*NetworkDialog*/ self) {
+HWND NetworkDialog_UpdateListBox(void* /*NetworkDialog*/ self) {
     return nullptr;
 }
 

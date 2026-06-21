@@ -19,8 +19,8 @@ void Modem::OpenPort() {}
 
 // --- ModemGame ---
 
-void ModemGame::sub_5B59B0() {}
-void ModemGame::sub_5B5AD0() {}
+void ModemGame::AdvanceTauntCommand() {}
+void ModemGame::UpdatePlayerNameAndColor() {}
 void ModemGame::ProcessPacket() {}
 void ModemGame::ReceiveMapPreview() {}
 void ModemGame::RenderPaletteImage() {}
@@ -29,7 +29,7 @@ void ModemGame::RenderPaletteImage() {}
 
 void ModemGuest::Dialog() {}
 void ModemGuest::InitDialog() {}
-void ModemGuest::sub_5B9550() {}
+void ModemGuest::UpdateGuestPlayerInfo() {}
 void ModemGuest::ProcessPacket() {}
 
 // --- ModemHost ---
@@ -98,7 +98,7 @@ void NetworkBuffer::GetField3() {}
 
 void NetworkDialog::InitModemSettings() {}
 void NetworkDialog::Dispatch() {}
-void NetworkDialog::sub_696610() {}
+void NetworkDialog::UpdateListBox() {}
 
 // --- NetworkEventClass ---
 
@@ -129,7 +129,7 @@ void NetworkManager::RemovePlayer() {}
 // --- NetworkOptions ---
 
 void NetworkOptions::DlgProc() {}
-void NetworkOptions::sub_7B0F50() {}
+void NetworkOptions::ApplySettings() {}
 
 // --- NetworkScore ---
 
@@ -162,7 +162,7 @@ void WOLGameClass::ParseChatMessage() {}
 
 // --- WOLGameList ---
 
-void WOLGameList::sub_77A7C0() {}
+void WOLGameList::UpdatePlayerStats() {}
 void WOLGameList::Check() {}
 void WOLGameList::PopulateLobbyLists() {}
 void WOLGameList::EnsureCapacity() {}
@@ -186,6 +186,6 @@ void WOLobby::FindPlayerIndex() {}
 void WOLobby::BuildStateList() {}
 void WOLobby::BuildPlayerList() {}
 void WOLobby::DlgProc() {}
-void WOLobby::sub_78F5C0() {}
+void WOLobby::FormatLatencyText() {}
 
 } // namespace gamemd

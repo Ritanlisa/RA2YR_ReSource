@@ -68,7 +68,7 @@ void AudioPool::ProcessQueue() {}
 
 // --- AudioSample ---
 
-void AudioSample::sub_4024A0() {}
+void AudioSample::ResetState() {}
 void AudioSample::Destructor() {}
 void AudioSample::IsBuffering() {}
 void AudioSample::InitLinkedList() {}

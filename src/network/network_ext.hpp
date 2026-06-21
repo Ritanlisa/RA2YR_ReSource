@@ -168,8 +168,8 @@ class ModemGame
 public:
     virtual ~ModemGame() = default; // IDA: NOT_FOUND
 
-    virtual void sub_5B59B0(); // 0x5B59B0
-    virtual void sub_5B5AD0(); // 0x5B5AD0
+    virtual void AdvanceTauntCommand(); // 0x5B59B0
+    virtual void UpdatePlayerNameAndColor(); // 0x5B5AD0
     virtual void ProcessPacket(); // 0x5B6020
     virtual void ReceiveMapPreview(); // 0x5B7360
     virtual void RenderPaletteImage(); // 0x6425F0
@@ -187,7 +187,7 @@ public:
 
     virtual void Dialog(); // 0x5B49B0
     virtual void InitDialog(); // 0x5B4EE0
-    virtual void sub_5B9550(); // 0x5B9550
+    virtual void UpdateGuestPlayerInfo(); // 0x5B9550
     virtual void ProcessPacket(); // 0x5BA060
 
     uint8_t ModemGuest_field_0x04[4];
@@ -339,7 +339,7 @@ public:
 
     virtual void InitModemSettings(); // 0x695FD0
     virtual void Dispatch(); // 0x6964C0
-    virtual void sub_696610(); // 0x696610
+    virtual void UpdateListBox(); // 0x696610
 
     uint8_t NetworkDialog_field_0x04[4];
     uint8_t NetworkDialog_field_0x08[4];
@@ -412,7 +412,7 @@ public:
     virtual ~NetworkOptions() = default; // IDA: NOT_FOUND
 
     virtual void DlgProc(); // 0x560480
-    virtual void sub_7B0F50(); // 0x7B0F50
+    virtual void ApplySettings(); // 0x7B0F50
 
     uint8_t NetworkOptions_field_0x04[4];
 };
@@ -496,7 +496,7 @@ class WOLGameList
 public:
     virtual ~WOLGameList() = default; // IDA: NOT_FOUND
 
-    virtual void sub_77A7C0(); // 0x77A7C0
+    virtual void UpdatePlayerStats(); // 0x77A7C0
     virtual void Check(); // 0x77A840
     virtual void PopulateLobbyLists(); // 0x7A3100
     virtual void EnsureCapacity(); // 0x7ADA70
@@ -544,7 +544,7 @@ public:
     virtual void BuildStateList(); // 0x781D20
     virtual void BuildPlayerList(); // 0x783800
     virtual void DlgProc(); // 0x78AC10
-    virtual void sub_78F5C0(); // 0x78F5C0
+    virtual void FormatLatencyText(); // 0x78F5C0
     // +2 more virtual methods
 
     uint8_t WOLobby_field_0x04[4];

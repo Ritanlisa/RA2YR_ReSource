@@ -23,7 +23,7 @@ void MovementClass::CalcSpeed() {}
 
 void Pathfinding::AStar() {}
 void Pathfinding::CalcDistance() {}
-void Pathfinding::sub_42DCA0() {}
+void Pathfinding::SiftDown() {}
 void Pathfinding::CrossBridge() {}
 void Pathfinding::SelectRegionPath() {}
 

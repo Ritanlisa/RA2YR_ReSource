@@ -726,7 +726,7 @@ public:
     virtual void RenderBuildingPlacementShadow(); // 0x430650
     virtual void RenderBuildingPlacementPreview(); // 0x47EC90
     virtual void ValidateType(); // 0x480510
-    virtual void sub_481130(); // 0x481130
+    virtual void IsPlacementFlagSet(); // 0x481130
     virtual void HandleClick(); // 0x4E2690
     // +4 more virtual methods
 

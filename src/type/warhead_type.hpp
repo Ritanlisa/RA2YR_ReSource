@@ -30,7 +30,7 @@ public:
 
     static DynamicVectorClass<WarheadTypeClass*>* Array;
     static WarheadTypeClass* Find(const char* pID); // IDA: NOT_FOUND
-    static WarheadTypeClass* FindOrAllocate(const char* pID);  // 0x75E3B0 (as FindOrCreate)
+    static WarheadTypeClass* FindOrCreate(const char* pID);  // 0x75E3B0 (as FindOrCreate)
     static int FindIndex(const char* pID); // IDA: NOT_FOUND
 
     virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override { return E_NOTIMPL; }  // 0x524ED0 (as GetClassIdentifier)

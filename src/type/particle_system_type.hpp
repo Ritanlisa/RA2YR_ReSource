@@ -22,7 +22,7 @@ public:
     static constexpr AbstractType AbsID = AbstractType::ParticleSystemType;
     static DynamicVectorClass<ParticleSystemTypeClass*>* Array;
     static ParticleSystemTypeClass* Find(const char* pID); // IDA: NOT_FOUND
-    static ParticleSystemTypeClass* FindOrAllocate(const char* pID); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    static ParticleSystemTypeClass* FindOrCreate(const char* pID); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     virtual ~ParticleSystemTypeClass() = default;  // 0x644960 (as ddtor)
 

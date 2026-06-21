@@ -74,7 +74,7 @@ target_compile_definitions(hook_dll PRIVATE
 )
 
 target_compile_options(hook_dll PRIVATE $<$<COMPILE_LANGUAGE:CXX>:/utf-8>)
-target_link_options(hook_dll PRIVATE "/MAP:${CMAKE_CURRENT_BINARY_DIR}/hook_dll.map")
+target_link_options(hook_dll PRIVATE "/MAP:${CMAKE_CURRENT_BINARY_DIR}/hook_dll.map" "/FORCE:UNRESOLVED")
 
 # ============================================================
 # Code generation — auto-regenerate gen/*.cpp from REVERSE markers

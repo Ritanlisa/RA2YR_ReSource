@@ -13,7 +13,7 @@ public:
 
     static DynamicVectorClass<TerrainTypeClass*>* Array;
     static TerrainTypeClass* Find(const char* pID);  // 0x71DA80
-    static TerrainTypeClass* FindOrAllocate(const char* pID);  // 0x71E2A0 (as FindOrCreate)
+    static TerrainTypeClass* FindOrCreate(const char* pID);  // 0x71E2A0 (as FindOrCreate)
     static int FindIndex(const char* pID); // IDA: NOT_FOUND
 
     virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override; // 0x71E260 (as GetClassIdentifier)

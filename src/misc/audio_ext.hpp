@@ -317,7 +317,7 @@ class AudioSample
 public:
     virtual ~AudioSample() = default; // IDA: NOT_FOUND
 
-    virtual void sub_4024A0(); // 0x4024A0
+    virtual void ResetState(); // 0x4024A0
     virtual void Destructor(); // 0x407A90
     virtual void IsBuffering(); // 0x4080D0
     virtual void InitLinkedList(); // 0x408840
