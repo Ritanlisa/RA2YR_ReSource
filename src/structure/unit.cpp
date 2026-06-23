@@ -39,36 +39,7 @@ UnitClass::UnitClass() noexcept
 // ============================================================
 
 int UnitClass::Mission_Harvest()
-{
-    enum { LOOKING, HARVESTING, FINDHOME, HEADINGHOME, GOINGTOIDLE };
-
-    switch (missionStatus)
-    {
-    case LOOKING:
-        if (lastTarget)
-        {
-            movementDestination = lastTarget;
-            lastTarget = nullptr;
-        }
-        return 10;
-
-    case HARVESTING:
-        return 10;
-
-    case FINDHOME:
-        return 10;
-
-    case HEADINGHOME:
-        queueMission((ra2::game::Mission)((int)(gamemd::Mission::Enter)), true);
-        return 10;
-
-    case GOINGTOIDLE:
-        queueMission((ra2::game::Mission)((int)(gamemd::Mission::Guard)), true);
-        return 10;
-    }
-
-    return 10;
-}
+{}
 
 int UnitClass::Mission_Unload()
 {
@@ -114,32 +85,8 @@ int UnitClass::ProcessExitQueue()
 }
 
 // IDA: 0x6B6080 (CreateUnloadPlacementCraters, 167B)
-int UnitClass::CreateUnloadPlacementCraters()
-{
-    // Binary: int __thiscall CreateUnloadPlacementCraters(CellStruct* cell)
-    // Creates craters in a grid pattern at unload position.
-    // Uses storedTiberium.Amount1 as column count, Amount2 as row count.
-    // Uses hijackerInfantryType as crater type set on cells.
-
-    int rowCount = *(int*)&this->storedTiberium.Amount2;
-    if (rowCount <= 0)
-        return 0;
-
-    int colCount = *(int*)&this->storedTiberium.Amount1;
-    int y = 0;
-    do {
-        for (int x = 0; x < colCount; x++) {
-            // CellStruct cell = { (short)(x + cellParam->X), (short)(y + cellParam->Y) };
-            // CellClass* cellObj = CellCoord::To_CellObj(&MapClass_Instance, &cell);
-            // cellObj->field_48 = this->hijackerInfantryType;
-            // cellObj->field_11F = (uint8_t)(x + (uint8_t)colCount * y);
-            // BuildingClass::CreatePlacementCrater(cellObj);
-        }
-        y++;
-    } while (y < rowCount);
-
-    return y;
-}
+int UnitClass::CreateUnloadPlacementCraters(CellStruct* cell)
+{}
 
 // IDA: 0x54E3B0 (GetExitCell, 288B)
 int UnitClass::GetExitCell()
@@ -247,68 +194,8 @@ int UnitClass::UpdateRotation_TurretFacing_EMP()
 }
 
 // IDA: 0x743A50 (Scatter, 1622B)
-int UnitClass::Scatter()
-{
-    // Binary: int __thiscall Scatter(CellStruct* threatPos, bool a3, bool a4)
-    // Scatters unit away from danger/threat position.
-
-    // 1. canScatter() check via vtable[652/4=163]
-    // if (!((bool(__thiscall*)(UnitClass*))this->vfptr_0[163])(this))
-    //     return 0;
-
-    // 2. Locomotor COM interface check
-    // ILocomotion* loco = this->locomotor.ptr;
-    // if (!loco) return 0;
-    // COM: StreamClass::Set2 → GetClassID → compare with g_CLSID_HoverLocomotion
-    // If Hover locomotion, skip scatter (return)
-
-    // 3. Mission control check
-    // Mission* mc = MissionClass::GetMissionControl(this);
-    // if (mc[9] && !a3) return 0;
-
-    // 4. Timer and flag checks
-    // if (TimerClass::Active((int)((uint8_t*)this + 904))) return 0;
-    // if (*(int*)((uint8_t*)this + 1444) && !a4) return 0;
-
-    // 5. Deploy flags check
-    if (this->Deployed || this->Deploying || this->Undeploying)
-        return 0;
-
-    // 6. Locomotor movement capability check
-    // if (!loco->IsMoving()) return 0;
-
-    // 7. Compute scatter direction from threat position
-    // int curX = this->location.X;
-    // int curY = this->location.Y;
-    // int curZ = this->location.Z;
-
-    // int threatX = threatPos->X; int threatY = threatPos->Y; int threatZ = threatPos->Z;
-    // If threat matches current: use Pathfinding_Find to get safe cell
-    // If mission control[7]: return
-    // Special check: vtable[44]==1 && byte_1745 || offset_1444 check
-    // offset_692 check with a3 for random abort
-
-    // Compute angle away from threat:
-    // double angle = Math::CalcAngle(threatY - curY, curX - threatX);
-    // int dir = Math::RoundToInt((angle - 1.5708) * -10430.06);
-    // int scatterDir = (Random::Range(0, 2) + ((dir >> 12) + 1) / 2 - 1) & 7;
-
-    // 8. Get current cell, scan 8 directions for safe cell
-    // CellClass* curCell = CellCoord::To_CellObj(&MapClass_Instance, &curCellCoord);
-    // int extraStep = curCell->field_283 + vtable[188] ? 4 : 0;
-    // Loop 8 directions using Direction_X_Offsets:
-    //   LayerClass::IsWithinUsableArea → ObjectClass::GetLandHeight → vtable[428]
-    //   Terrain::ClimbCheck → validate cell
-    // First valid cell used as scatter destination
-
-    // 9. Set destination and mission
-    // vtable[1152](this, destCell, 1) → set move destination
-    // vtable[488](this, 2, 0) → set mission to Move
-
-    // 10. COM cleanup: loco->Release()
-
-    return 0;
-}
+int UnitClass::Scatter(CellStruct* threatPos, bool a3, bool a4)
+{}
 
 // IDA: 0x458A00 (IsCellBlockedByBridge, 121B)
 int UnitClass::IsCellBlockedByBridge()
@@ -339,74 +226,8 @@ int UnitClass::CheckForNearbyEnemies()
 }
 
 // IDA: 0x737C90 (OnUnderAttack, 2540B)
-int UnitClass::OnUnderAttack()
-{
-    // Binary: OnUnderAttack(ObjectClass* attacker, int damage, int weaponIdx,
-    //                        CellStruct* sourceCell, int a8, bool a9, void* a10)
-
-    // 1. Human player check → isHumanControlled flag
-    // bool isHumanControlled = false;
-    // if (this->isSelected)
-    //     isHumanControlled = House::IsHumanPlayer(this->owner);
-
-    // 2. Team bridge check (when !a8):
-    // Team::GetMember(this, 0) → if member is UnitClass (vtable[44]==6)
-    //   and member type flag at offset 5821:
-    //     Coord::To_Cell(&ScenarioClass_Instance, &this->location) → Cell::IsBridge
-    //     if bridge belongs to member → return 0
-
-    // 3. FootClass::ProcessDeploy(this, ...) returns result
-    // int deployResult = 5; // Simulated: ProcessDeploy returns 5 (early exit)
-
-    // If result == 5: return result (early exit)
-    // If result == 4: death handling path
-    // If result == 0 or other: continue processing
-
-    // ===== Death path (result == 4) =====
-    // BuildingClass* linkedBuilding = (BuildingClass*)this->field_740;
-    // if (linkedBuilding && linkedBuilding->vtable[44]() == 6)
-    //     BuildingClass::UpdateDamageAnim(linkedBuilding);
-
-    // UnitTypeClass* type = this->Type;
-    // if (type->spawnCount > 0) { ... death without animation ... }
-    // else { ... death with animation ... }
-
-    // vtable[292]: SetMission(0)
-    // if (type->field_1508) TechnoClass::MarkPassengersAsExited(this);
-    // if (vtable[456]() > 208) TechnoClass::CleanupAll(this, attacker);
-
-    // ===== Passenger ejection loop =====
-    // while (this->field_70) {
-    //     FootClass* passenger = FootClass::PopAndProcess(this);
-    //     if (!passenger) break;
-    //     // Check cell passability, set passenger position
-    //     // Release with scatter or add to team or set mission 15
-    //     // If isHumanControlled: vtable[332] notify
-    // }
-
-    // ===== Infantry crew spawn =====
-    // if (this->field_824 != -1) {
-    //     InfantryClass::Construct(crewType, typeData[field_824], owner);
-    // } else if (!a9 && type->field_3277 && type->field_1504 == 0) {
-    //     Random check: if random < type->field_1472:
-    //         vtable[780] → InfantryTypeClass* crewType
-    //         InfantryClass::Construct(crewType, crewType, owner) → spawn infantry
-    //         Set infantry health, position, scatter
-    // }
-
-    // ===== Building placement for deployables =====
-    // if (type->field_3610 && CheckRulesFlags):
-    //     vtable[440] → get coords → Pathfinding_Find → BuildingClass::SearchPlacement
-
-    // ===== Self-destruct check =====
-    // if (type->field_3477) {
-    //     if (!vtable[988](this, 0)) vtable[248](this); // undeploy → self-destruct
-    // } else if (!this->field_973) {
-    //     vtable[248](this); // self-destruct
-    // }
-
-    return 0;
-}
+int UnitClass::OnUnderAttack(ObjectClass* attacker, int damage, int weaponIdx, CellStruct* sourceCell, int a8, bool a9, void* a10)
+{}
 
 // ============================================================
 // Phase 3: Weapon Switching
