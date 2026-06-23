@@ -96,6 +96,14 @@ IDA_CACHE_DIR = PROJECT_ROOT / ".omo" / "ida_cache"
 DATA_SECTION_START = 0x800000
 DATA_SECTION_END = 0xB7A000
 
+# STEP3(0) element-exemption hook (.omo/plans/code-verifier.md §D-STEP3(0)).
+# A FUTURE task populates this with element-level exemptions (unresolved-member
+# WRITEs / trivial-getter untranslated-inline regions) as a SET of exact canonical
+# event strings to excuse. EMPTY on the active path: the goldens are fully
+# offset-mapped, so nothing is exempted today. This is a clean seam only -- the
+# element-exemption RULE itself is not implemented here.
+STEP3_0_ELEMENT_EXEMPT = frozenset()
+
 # Names that look like calls but are keywords / CRT / intrinsics / casts.
 # Applied identically on both sides so they never produce events.
 SKIP_NAMES = {
@@ -774,6 +782,7 @@ def _load_efv():
         import efv_match
         import efv_cpp_reject
         import efv_inline
+        import efv_necessary
         _EFV = {
             "model": efv_model,
             "ida_cfg": efv_ida_cfg,
@@ -784,6 +793,7 @@ def _load_efv():
             "match": efv_match,
             "reject": efv_cpp_reject,
             "inline": efv_inline,
+            "necessary": efv_necessary,
         }
     return _EFV
 
@@ -961,6 +971,62 @@ def _build_cpp_cfg_events(efv, cpp_text, class_name, M, signals):
     cfg = efv["normalize"].normalize(cfg)
     canonicalize_branch_polarity(cfg)
     return cfg
+
+
+def step3_0_check(efv, ida_cfg, cpp_cfg, M, signals,
+                  get_callee=None, element_exempt=STEP3_0_ELEMENT_EXEMPT):
+    """STEP3(0) — the function-level, BIJECTION-INDEPENDENT necessary condition
+    (.omo/plans/code-verifier.md §D-STEP3(0)).
+
+    Returns `(ok: bool, missing: list[str])`. `ok` is True iff EVERY IDA-side
+    external operation (CALL target / WRITE offset) appears AT LEAST ONCE on the
+    C++ side; `missing` is the sorted list of IDA CALL/WRITE event strings absent
+    from the C++ side (the FAIL witnesses; EMPTY when ok). Presence-only, never
+    count-based (a faithful C++ contains each external op at least once; the
+    binary may CLONE ops via tail-duplication / loop-unrolling, so equal counts
+    would false-positive faithful code).
+
+    Translated inlined callees are spliced into the C++ side first (reusing
+    `efv_inline.expand_cpp_cfg`) so their CALL/WRITE ops count; the C++
+    external-op set is the UNION of the raw and the inline-EXPANDED CFGs —
+    presence-only means a union can only ADD ops, never invent the IDA side's
+    missing one, so this stays ZERO-false-positive (and, since the structural
+    bijection already forces per-block CALL/WRITE list equality, any function the
+    bijection PASSES necessarily satisfies STEP3(0) — STEP3(0) can never flip a
+    current PASS to FAIL).
+
+    Computed purely from the event-extracted CFGs, so it runs — and can FAIL —
+    even when `cfg_match` returns False / is abandoned (decoupled from the
+    bijection SEARCH).
+
+    RESIDUAL GAP (documented, not silently ignored): a callee the binary INLINED
+    but that is NOT translated (no C++ source / unverifiable construct) is not
+    expanded, so its inlined CALL/WRITE ops cannot appear on the C++ side and
+    STEP3(0) would FAIL — the intended FAIL-by-contract per §D-STEP3 (author must
+    mirror the inline body or translate the callee). A trivial (READ/RET-only)
+    inlined region already cannot trip this gate (no CALL/WRITE to miss). The
+    element-level exemption for the remaining narrow case is a FUTURE task wired
+    through `element_exempt` (empty on the active path)."""
+    nec = efv["necessary"]
+    cpp_ops = nec.collect_external_ops(cpp_cfg)
+    if get_callee is None:
+        get_callee = make_callee_cfg_provider(efv, M, signals)
+    try:
+        expanded = efv["inline"].expand_cpp_cfg(
+            cpp_cfg, ida_cfg, get_callee,
+            normalize=efv["normalize"].normalize,
+            canonicalize=canonicalize_branch_polarity)
+        cpp_ops = cpp_ops | nec.collect_external_ops(expanded)
+    except Exception:
+        # Expansion is best-effort: the raw cpp_ops are already collected. A crash
+        # here cannot manufacture a false PASS — it only forgoes the EXTRA inlined
+        # ops, so at worst it over-FAILs an inlined-callee case, never under-FAILs.
+        # (Full crash-isolation is a separate, later task.)
+        pass
+    ida_ops = nec.collect_external_ops(ida_cfg)
+    exempt = set(element_exempt) if element_exempt else set()
+    missing = sorted((ida_ops - cpp_ops) - exempt)
+    return (not missing), missing
 
 
 def _dump_cfg(label, cfg):
@@ -1183,7 +1249,32 @@ def verify_single_function(ida_addr, func_name, display_name, M,
         _dump_cfg("IDA", ida_cfg)
         _dump_cfg("C++", cpp_cfg)
 
-    # ---- verdict: structural CFG bijection ----
+    # ---- STEP3(0): function-level necessary condition (BIJECTION-INDEPENDENT) ----
+    # §D-STEP3(0): every IDA-side external op (CALL target / WRITE offset) MUST
+    # appear at least once on the C++ side (translated inlined callees are
+    # expanded first so their ops count). It is computed from the flattened event
+    # sets — NOT the bijection search — so it runs and can FAIL even when
+    # cfg_match returns False / is abandoned. A missing external op FAILs the
+    # function with PRECEDENCE over any structural skip (§D-STEP4 总原则).
+    info = {"reject": False, "reason": None}
+    get_callee = make_callee_cfg_provider(efv, M, signals)
+    step3_0_ok, step3_0_missing = step3_0_check(
+        efv, ida_cfg, cpp_cfg, M, signals, get_callee=get_callee,
+        element_exempt=STEP3_0_ELEMENT_EXEMPT)
+    info["step3_0_ok"] = step3_0_ok
+    if step3_0_missing:
+        info["step3_0_missing"] = step3_0_missing
+    if verbose:
+        if step3_0_ok:
+            print("  STEP3(0)   : OK (every IDA external op present on C++ side)",
+                  file=sys.stderr)
+        else:
+            print("  STEP3(0)   : FAIL ({} IDA external op(s) absent on C++ side)"
+                  .format(len(step3_0_missing)), file=sys.stderr)
+            for ev in step3_0_missing:
+                print("    missing: {}".format(ev), file=sys.stderr)
+
+    # ---- verdict: structural CFG bijection (existing v1 ordered matching) ----
     matched = efv["match"].cfg_match(ida_cfg, cpp_cfg)
 
     # ---- T22 inline-expansion fallback ----
@@ -1193,9 +1284,7 @@ def verify_single_function(ida_addr, func_name, display_name, M,
     # callee's CFG at each such C++ CALL (one absent from the caller's IDA
     # call-set) and re-run the SAME cfg_match. This never relaxes the matcher —
     # it only re-blocks the C++ CFG to mirror what the binary actually did.
-    info = {"reject": False, "reason": None}
     if not matched:
-        get_callee = make_callee_cfg_provider(efv, M, signals)
         inlined = efv["inline"].try_inline_match(
             ida_cfg, cpp_cfg, get_callee,
             cfg_match=efv["match"].cfg_match,
@@ -1207,7 +1296,14 @@ def verify_single_function(ida_addr, func_name, display_name, M,
             if verbose:
                 print("  matched via INLINE expansion of an inlined callee",
                       file=sys.stderr)
-    return matched, info
+
+    # ---- final verdict: PASS iff STEP3(0) holds AND the bijection holds ----
+    # STEP3(0) FAIL takes PRECEDENCE: a missing external op FAILs the function
+    # regardless of the structural result (incl. a skipped / abandoned bijection).
+    # `step3_0_ok` is computed independently of `matched`, so STEP3(0) can FAIL the
+    # function even if cfg_match were True/abandoned.
+    passed = bool(step3_0_ok and matched)
+    return passed, info
 
 
 def load_all_maps():

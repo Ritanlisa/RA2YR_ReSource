@@ -75,7 +75,7 @@ except ImportError:  # pragma: no cover - script / direct import path
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
     import efv_model
 
-__all__ = ["try_inline_match", "ida_call_addrs"]
+__all__ = ["try_inline_match", "expand_cpp_cfg", "ida_call_addrs"]
 
 # Belt-and-suspenders guard against pathological expansion (the absent-from-IDA
 # rule + cycle guard already terminate; this caps total inline depth regardless).
@@ -281,3 +281,42 @@ def _try(ida_cfg, cpp_cfg, get_callee_cfg, cfg_match, normalize, canonicalize):
     if canonicalize is not None:
         canonicalize(expanded)
     return bool(cfg_match(ida_cfg, expanded))
+
+
+def expand_cpp_cfg(cpp_cfg, ida_cfg, get_callee_cfg,
+                   normalize, canonicalize=None,
+                   max_depth=_MAX_INLINE_DEPTH):
+    """Return a NEW C++ CFG with every TRANSLATED inlined callee spliced in --
+    the SAME faithful substitution `try_inline_match` runs, exposed so the
+    bijection-INDEPENDENT STEP3(0) gate (`efv_necessary`) can collect the inlined
+    callees' CALL/WRITE ops on the C++ side.
+
+    Reuses the exact `_expand_cfg` machinery: at every C++ `CALL(addr)` whose
+    `addr` is ABSENT from the caller's IDA call-set (= the binary inlined it), the
+    (recursively expanded) translated callee CFG is spliced at the call site; the
+    result is then re-normalized and (optionally) branch-polarity canonicalized,
+    so it reaches the same block granularity as the IDA side. A callee with no
+    translated source (or an unverifiable construct) is simply left as its `CALL`
+    -- never a fabricated op (so STEP3(0) over the expanded CFG can only ADD ops,
+    never invent the IDA side's missing one -> presence-only stays zero-FP).
+
+    Parameters mirror `try_inline_match`'s injected callables (no import cycle):
+        normalize(cfg) -> cfg        : T17 normalizer (REQUIRED).
+        canonicalize(cfg) -> cfg|None: branch-polarity canonicaliser (optional;
+                                       applied in place, mirroring the IDA side).
+    Side-effect free w.r.t. the inputs (operates on clones). Returns the expanded
+    CFG (a clone even when nothing was expandable, so the caller may use it
+    uniformly)."""
+    global _MAX_INLINE_DEPTH
+    saved = _MAX_INLINE_DEPTH
+    _MAX_INLINE_DEPTH = max_depth
+    try:
+        ida_calls = ida_call_addrs(ida_cfg)
+        expanded = _expand_cfg(cpp_cfg, ida_calls, get_callee_cfg,
+                               depth=0, in_progress=frozenset(), counter=_Counter())
+        expanded = normalize(expanded)
+        if canonicalize is not None:
+            canonicalize(expanded)
+        return expanded
+    finally:
+        _MAX_INLINE_DEPTH = saved
