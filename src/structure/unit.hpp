@@ -40,7 +40,7 @@ public:
     int updateHarvesting();  // 0x4C2C10
     int UnloadPassengers();  // 0x6B4BE0
     int ProcessExitQueue();  // 0x6B7230
-    int CreateUnloadPlacementCraters();  // 0x6B6080
+    int CreateUnloadPlacementCraters(CellStruct* cell);  // 0x6B6080
     int GetExitCell();  // 0x54E3B0
 
     // === Phase 3: Deploy ===
@@ -55,12 +55,12 @@ public:
     virtual int AssignDestination_SyncLog();  // 0x741970
     virtual int ApproachTarget_DisallowMoving();  // 0x7414E0
     int UpdateRotation_TurretFacing_EMP();  // 0x736990
-    int Scatter();  // 0x743A50
+    int Scatter(CellStruct* threatPos, bool a3, bool a4);  // 0x743A50
     int IsCellBlockedByBridge();  // 0x458A00
     int CompareCoordinateMagnitude();  // 0x4D03D0
     int processEnterTarget();  // 0x7178B0
     int CheckForNearbyEnemies();  // 0x7468C0
-    int OnUnderAttack();  // 0x737C90
+    int OnUnderAttack(ObjectClass* attacker, int damage, int weaponIdx, CellStruct* sourceCell, int a8, bool a9, void* a10);  // 0x737C90
 
     // === Phase 3: Weapon Switching ===
     int SetTurret();  // 0x70DC70
