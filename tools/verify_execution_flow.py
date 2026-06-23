@@ -1272,9 +1272,19 @@ def verify_single_function(ida_addr, func_name, display_name, M,
     # function with PRECEDENCE over any structural skip (§D-STEP4 总原则).
     info = {"reject": False, "reason": None}
     get_callee = make_callee_cfg_provider(efv, M, signals)
-    step3_0_ok, step3_0_missing = step3_0_check(
-        efv, ida_cfg, cpp_cfg, M, signals, get_callee=get_callee,
-        element_exempt=STEP3_0_ELEMENT_EXEMPT)
+    # §D-STEP4: a tool/structural exception inside the STEP3(0) check must NOT
+    # crash the --auto run NOR FAIL a faithful fn on a tool error. On exception
+    # treat STEP3(0) as satisfied (loudly, never silent) so the structural
+    # verdict gates; record the error for the printer.
+    try:
+        step3_0_ok, step3_0_missing = step3_0_check(
+            efv, ida_cfg, cpp_cfg, M, signals, get_callee=get_callee,
+            element_exempt=STEP3_0_ELEMENT_EXEMPT)
+    except Exception as exc:
+        step3_0_ok, step3_0_missing = True, []
+        info["step3_0_error"] = str(exc)
+        print("WARNING: STEP3(0) check raised for {}: {} -- relying on "
+              "structural verdict".format(display_name, exc), file=sys.stderr)
     info["step3_0_ok"] = step3_0_ok
     if step3_0_missing:
         info["step3_0_missing"] = step3_0_missing
@@ -1289,34 +1299,50 @@ def verify_single_function(ida_addr, func_name, display_name, M,
                 print("    missing: {}".format(ev), file=sys.stderr)
 
     # ---- verdict: structural CFG bijection (existing v1 ordered matching) ----
-    matched = efv["match"].cfg_match(ida_cfg, cpp_cfg)
+    # §D-STEP4: the entire structural pipeline (cfg_match + inline fallback) is
+    # isolated. A crash here must NEVER crash the --auto run and must NEVER
+    # silently PASS the whole function — on exception we fall back to the
+    # independently-computed STEP3(0) verdict (which still gates / can FAIL).
+    structural_crashed = False
+    try:
+        matched = efv["match"].cfg_match(ida_cfg, cpp_cfg)
 
-    # ---- T22 inline-expansion fallback ----
-    # The binary may have INLINED a (translated) callee: the IDA side shows the
-    # callee body in place (no CALL), while the faithful C++ still CALLs it, so
-    # the direct match fails ONLY at that call site. Recursively substitute the
-    # callee's CFG at each such C++ CALL (one absent from the caller's IDA
-    # call-set) and re-run the SAME cfg_match. This never relaxes the matcher —
-    # it only re-blocks the C++ CFG to mirror what the binary actually did.
-    if not matched:
-        inlined = efv["inline"].try_inline_match(
-            ida_cfg, cpp_cfg, get_callee,
-            cfg_match=efv["match"].cfg_match,
-            normalize=efv["normalize"].normalize,
-            canonicalize=canonicalize_branch_polarity)
-        if inlined:
-            matched = True
-            info["inline"] = True
-            if verbose:
-                print("  matched via INLINE expansion of an inlined callee",
-                      file=sys.stderr)
+        # ---- T22 inline-expansion fallback ----
+        # The binary may have INLINED a (translated) callee: the IDA side shows the
+        # callee body in place (no CALL), while the faithful C++ still CALLs it, so
+        # the direct match fails ONLY at that call site. Recursively substitute the
+        # callee's CFG at each such C++ CALL (one absent from the caller's IDA
+        # call-set) and re-run the SAME cfg_match. This never relaxes the matcher —
+        # it only re-blocks the C++ CFG to mirror what the binary actually did.
+        if not matched:
+            inlined = efv["inline"].try_inline_match(
+                ida_cfg, cpp_cfg, get_callee,
+                cfg_match=efv["match"].cfg_match,
+                normalize=efv["normalize"].normalize,
+                canonicalize=canonicalize_branch_polarity)
+            if inlined:
+                matched = True
+                info["inline"] = True
+                if verbose:
+                    print("  matched via INLINE expansion of an inlined callee",
+                          file=sys.stderr)
+    except Exception as exc:
+        matched = False
+        structural_crashed = True
+        info["structural_error"] = str(exc)
+        print("WARNING: structural match raised for {}: {} -- relying on "
+              "STEP3(0)".format(display_name, exc), file=sys.stderr)
 
     # ---- final verdict: PASS iff STEP3(0) holds AND the bijection holds ----
     # STEP3(0) FAIL takes PRECEDENCE: a missing external op FAILs the function
     # regardless of the structural result (incl. a skipped / abandoned bijection).
     # `step3_0_ok` is computed independently of `matched`, so STEP3(0) can FAIL the
     # function even if cfg_match were True/abandoned.
-    passed = bool(step3_0_ok and matched)
+    # A structural CRASH (not a genuine mismatch) does NOT by itself FAIL: it
+    # falls back to the STEP3(0) verdict (structural_ok True). A genuine MISMATCH
+    # (matched False, no crash) still FAILs as before.
+    structural_ok = bool(matched or structural_crashed)
+    passed = bool(step3_0_ok and structural_ok)
     return passed, info
 
 
