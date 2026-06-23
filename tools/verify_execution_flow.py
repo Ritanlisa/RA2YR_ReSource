@@ -1026,6 +1026,17 @@ def step3_0_check(efv, ida_cfg, cpp_cfg, M, signals,
     ida_ops = nec.collect_external_ops(ida_cfg)
     exempt = set(element_exempt) if element_exempt else set()
     missing = sorted((ida_ops - cpp_ops) - exempt)
+    # P1.3 element-scoped exemption (unresolved members): each C++ 'WRITE(member,?)'
+    # wildcard -- emitted by the C++ leaf when a syntactically-certain this->Member
+    # has no signals.json byte offset (the P2 address-mapping gap) -- excuses
+    # EXACTLY ONE otherwise-missing IDA this-relative member WRITE. CALL targets and
+    # global WRITEs are NEVER excused, so a dropped resolvable CALL/WRITE still FAILs
+    # (the §D-STEP4 总原则: confirmed-missing CALL/WRITE FAILs with precedence over
+    # any skip; skip excuses only the un-encodable element). Counted over the raw
+    # cpp_cfg (this function's own unresolved members); an inlined-callee wildcard
+    # would only UNDER-exempt here -- the safe (over-FAIL) direction.
+    missing = nec.apply_member_wildcard_exemption(
+        missing, nec.count_member_write_wildcards(cpp_cfg))
     return (not missing), missing
 
 

@@ -77,11 +77,22 @@ __all__ = [
     "collect_external_ops",
     "missing_external_ops",
     "step3_0_holds",
+    "count_member_write_wildcards",
+    "apply_member_wildcard_exemption",
 ]
 
 # The verbs that name an EXTERNAL OPERATION for STEP3(0). READ is advisory and
 # RET is existential/structural -- neither participates here.
 _EXTERNAL_VERBS = frozenset({efv_model.VERB_CALL, efv_model.VERB_WRITE})
+
+# Unresolved-member WRITE wildcard (efv_model): a this-relative member WRITE whose
+# byte offset the C++ leaf could not resolve (signals.json has no entry, the P2
+# address-mapping gap). Each occurrence element-scoped-excuses exactly ONE
+# otherwise-missing IDA this-relative member WRITE (see
+# apply_member_wildcard_exemption). It is NOT a real external op the IDA side has,
+# so it never covers an IDA op by string equality.
+_MEMBER_WRITE_PREFIX = "WRITE(member,"
+_MEMBER_WRITE_WILDCARD = "WRITE(member,?)"
 
 
 def collect_external_ops(cfg):
@@ -104,18 +115,65 @@ def collect_external_ops(cfg):
     return ops
 
 
+def count_member_write_wildcards(cfg):
+    """Number of UNRESOLVED member-WRITE wildcard occurrences ('WRITE(member,?)')
+    over the REACHABLE blocks of `cfg` (the same universe `collect_external_ops`
+    uses). Each one element-scoped-excuses exactly ONE otherwise-missing IDA
+    this-relative member WRITE in STEP3(0). Counting OCCURRENCES (not a set) keeps
+    the exemption count-bounded and SOUND: it can only ever remove up to
+    `min(count, #missing-member-writes)` from `missing`, so a dropped RESOLVABLE
+    member WRITE (which ADDS to #missing without adding a wildcard) still leaves a
+    witness -> FAIL. CALL targets and global WRITEs are NEVER counted/excused."""
+    if cfg is None:
+        return 0
+    n = 0
+    for bid in cfg.reachable_blocks():
+        blk = cfg.get_block(bid)
+        if blk is None:
+            continue
+        for ev in blk.ordered_events:
+            if ev == _MEMBER_WRITE_WILDCARD:
+                n += 1
+    return n
+
+
+def apply_member_wildcard_exemption(missing, n_wild):
+    """Remove up to `n_wild` this-relative member WRITE strings from the (sorted)
+    `missing` witness list -- the element-scoped, count-bounded exemption for
+    unresolved members. ONLY resolved member WRITEs ('WRITE(member,N)') are
+    removable; CALL(...) targets, WRITE(global,...) and the wildcard itself are
+    NEVER removed (so a dropped resolvable CALL/global-WRITE still FAILs, and the
+    exemption can never excuse more member WRITEs than there are wildcards).
+    Deterministic given a sorted `missing`."""
+    if n_wild <= 0:
+        return missing
+    out = []
+    excused = 0
+    for ev in missing:
+        if (excused < n_wild
+                and ev.startswith(_MEMBER_WRITE_PREFIX)
+                and ev != _MEMBER_WRITE_WILDCARD):
+            excused += 1
+            continue
+        out.append(ev)
+    return out
+
+
 def missing_external_ops(ida_cfg, cpp_cfg, element_exempt=None):
     """IDA-side external operations ABSENT from the C++ side -- the STEP3(0)
     failure witnesses.
 
-    Presence-only (>=1x) set-coverage: returns the SORTED list of IDA CALL/WRITE
-    event strings that do NOT appear anywhere in the C++ external-op set (after
-    removing any `element_exempt` strings). An EMPTY list means STEP3(0) HOLDS.
+    Presence-only (>=1x) set-coverage: the SORTED list of IDA CALL/WRITE event
+    strings that do NOT appear anywhere in the C++ external-op set (after removing
+    any static `element_exempt` strings), THEN minus the P1.3 unresolved-member
+    exemption: each `WRITE(member,?)` wildcard on the C++ side excuses exactly one
+    otherwise-missing IDA this-relative member WRITE (CALLs / global WRITEs never
+    excused). An EMPTY list means STEP3(0) HOLDS.
 
     `cpp_cfg` SHOULD already have its translated inlined callees spliced in (so an
     inlined callee's ops count on the C++ side); expansion is the caller's job.
-    `element_exempt` is a future element-exemption seam (a set of exact canonical
-    event strings to excuse); EMPTY on the active path.
+    `element_exempt` is a STATIC set of exact canonical event strings to excuse
+    (EMPTY on the active path).
 
     Computed purely from the two event-extracted CFGs -> INDEPENDENT of the
     structural bijection search: it can run, and FAIL, even when `cfg_match`
@@ -123,7 +181,9 @@ def missing_external_ops(ida_cfg, cpp_cfg, element_exempt=None):
     exempt = set(element_exempt) if element_exempt else set()
     ida_ops = collect_external_ops(ida_cfg)
     cpp_ops = collect_external_ops(cpp_cfg)
-    return sorted((ida_ops - cpp_ops) - exempt)
+    missing = sorted((ida_ops - cpp_ops) - exempt)
+    return apply_member_wildcard_exemption(
+        missing, count_member_write_wildcards(cpp_cfg))
 
 
 def step3_0_holds(ida_cfg, cpp_cfg, element_exempt=None):

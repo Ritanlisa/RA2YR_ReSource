@@ -146,6 +146,48 @@ def write_global(addr):
 
 
 # ============================================================
+# Unresolved-member wildcard (P1.3 transition-window safety)
+# ============================================================
+#
+# When a C++ access is SYNTACTICALLY CERTAIN to be a this-relative member (the
+# `this->Member` form) but signals.json has NO byte offset for it (the P2
+# address-mapping gap), the C++ leaf cannot encode the exact `READ(member,N)` /
+# `WRITE(member,N)`. Rather than SILENTLY DROP the event -- which would make the
+# C++ block MISS a READ/WRITE the IDA side has and FALSE-POSITIVE faithful code --
+# the leaf emits this WILDCARD (offset operand `?`) and records the member to the
+# offset-TODO log + a stderr WARN. The wildcard is element-scoped: it excuses ONLY
+# that one un-encodable member (READ advisory anyway; WRITE excused 1-for-1 by
+# count in STEP3(0), order/identity-free in the bijection's member-write dimension)
+# while CALL targets (resolved by ADDRESS) and ALL resolvable members keep gating
+# strictly. P2 makes offsets correct and these wildcards vanish.
+
+MEMBER_WILDCARD = "?"  # offset-operand placeholder for an unresolved member
+
+
+def read_member_unresolved():
+    """this-relative member READ whose byte offset is UNRESOLVED (signals.json has
+    no entry) -> 'READ(member,?)'. READ is advisory, so this never gates; it is
+    emitted (instead of a silent drop) only so the unresolved member is WARNed +
+    recorded to the offset-TODO log for P2."""
+    return "READ(member,{})".format(MEMBER_WILDCARD)
+
+
+def write_member_unresolved():
+    """this-relative member WRITE whose byte offset is UNRESOLVED (signals.json has
+    no entry) -> 'WRITE(member,?)'. Element-scoped exemption target: STEP3(0)
+    excuses exactly ONE otherwise-missing IDA member WRITE per wildcard, and the
+    bijection treats the member-write dimension identity-free when one is present.
+    CALL / global writes are NEVER excused by it."""
+    return "WRITE(member,{})".format(MEMBER_WILDCARD)
+
+
+def is_member_wildcard(event_str):
+    """True iff `event_str` is an unresolved-offset member READ/WRITE wildcard
+    ('READ(member,?)' / 'WRITE(member,?)')."""
+    return event_str in ("READ(member,?)", "WRITE(member,?)")
+
+
+# ============================================================
 # Event classification
 # ============================================================
 

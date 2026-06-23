@@ -99,32 +99,77 @@ except ImportError:  # pragma: no cover - exercised by the script entry point
 # Per-block match
 # ============================================================
 
+# An unresolved-member WRITE wildcard ('WRITE(member,?)', efv_model) is emitted by
+# the C++ leaf when a `this->Member` is syntactically certain to be a member but
+# signals.json has no byte offset for it (the P2 address-mapping gap). It must NOT
+# make a faithful block fail to match (that would be a false-positive). It is the
+# ONLY trigger for the identity-free member-WRITE comparison below; a normal
+# (resolved) block never sees it, so non-wildcard blocks -- the goldens included --
+# stay on the EXACT v2 set-equality path and are a strict NO-OP.
+_MEMBER_WRITE_PREFIX = "WRITE(member,"
+_MEMBER_WRITE_WILDCARD = "WRITE(member,?)"
+_MEMBER_WRITE_BLIND_TOKEN = "WRITE(member,#)"
+
+
+def _has_member_write_wildcard(seq_set):
+    """True iff the sequenced-event SET contains an unresolved-member WRITE wildcard."""
+    return _MEMBER_WRITE_WILDCARD in seq_set
+
+
+def _member_write_blind(seq_set):
+    """The block's sequenced-event SET with the member-WRITE DIMENSION made
+    identity-free: every this-relative member WRITE (resolved 'WRITE(member,N)' OR
+    the unresolved 'WRITE(member,?)' wildcard) is collapsed to a single presence
+    token 'WRITE(member,#)'. CALL targets, global WRITEs and RET are untouched.
+
+    This is the canonical form used BOTH as the prune signature and in the
+    wildcard-aware match branch, which makes the prune invariant
+    `block_match(a,b) ==> block_signature(a) == block_signature(b)` an exact
+    equivalence on the wildcard path (signature == this collapsed set)."""
+    out = set()
+    has_member_write = False
+    for e in seq_set:
+        if e.startswith(_MEMBER_WRITE_PREFIX):     # resolved offset OR '?' wildcard
+            has_member_write = True
+            continue
+        out.add(e)
+    if has_member_write:
+        out.add(_MEMBER_WRITE_BLIND_TOKEN)
+    return out
+
+
 def block_match(ida_block, cpp_block):
-    """Return True iff the two blocks' events match under the v2 SET policy.
+    """Return True iff the two blocks' events match under the v2 SET policy, with the
+    P1.3 element-scoped exemption for an UNRESOLVED-member WRITE wildcard.
 
-    Both arguments are `efv_model.Block` instances (one extracted from the IDA
-    Hex-Rays CFG, one from the faithful C++ CFG). v2 reduces the decision to a
-    SINGLE check:
+    Both arguments are `efv_model.Block` instances. The SEQUENCED check (CALL /
+    WRITE / RET) is a per-block PYTHON SET equality (intra-block ORDER and COUNT
+    relaxed -- presence only). READ is ADVISORY in v2 and is NOT consulted (it can
+    never reject a pair). Two empty blocks match. Never raises for well-formed Blocks.
 
-      SEQUENCED check (CALL / WRITE / RET) -- per-block PYTHON SET equality.
-         Uses `Block.sequenced_events()`, deduped via `set(...)`. Intra-block
-         ORDER is ignored (block-internal reorder is a designed-in false-negative
-         relaxation), and so is intra-block COUNT (it is a SET, NOT a multiset --
-         CALL/WRITE/RET are compared by PRESENCE). Equal CALL targets
-         (0xADDR / vfptr+N), WRITE offsets, and RET-presence -> match.
+    FAST PATH (the goldens + every fully-mapped block -- a strict NO-OP vs the prior
+    v2 matcher): when NEITHER block carries an unresolved-member WRITE wildcard, the
+    decision is exact `set(ida.sequenced) == set(cpp.sequenced)`. A wrong member
+    WRITE offset, a deleted WRITE, a wrong/extra CALL target -- all still gate here.
 
-    READ is ADVISORY in v2 and is NOT checked here: it can never reject a pair,
-    so `Block.set_events()` is intentionally not consulted. (Cross-block ordering
-    is still enforced by `cfg_match`'s successor correspondence; only the
-    block-INTERNAL order/count of external ops is relaxed.)
-
-    Two empty blocks (no sequenced events) match. The function never raises for
-    well-formed Block inputs.
-    """
-    # v2: sequenced events (CALL/WRITE/RET) as a per-block SET -- intra-block
-    # order AND count are relaxed (presence only). READ is advisory and is NOT
-    # consulted (it must never reject a pair).
-    return set(ida_block.sequenced_events()) == set(cpp_block.sequenced_events())
+    WILDCARD-AWARE PATH (element-scoped exemption): when a `WRITE(member,?)` is
+    present in the pair, the C++ side genuinely cannot name the exact member-WRITE
+    offset it failed to resolve, so the member-WRITE DIMENSION is compared
+    identity-free (`_member_write_blind`): every member WRITE on either side
+    collapses to one presence token. CALL targets, global WRITEs and RET STILL gate
+    by EXACT PRESENCE here, so a dropped resolvable CALL is still caught. The narrow
+    count-level evasion this relaxes -- dropping a RESOLVABLE member WRITE while an
+    unresolved one is present -- is backstopped by STEP3(0)'s count-based element
+    exemption (1 wildcard excuses exactly 1 missing member WRITE), which gates the
+    SAME final verdict (`passed = step3_0_ok AND matched`)."""
+    ida_seq = set(ida_block.sequenced_events())
+    cpp_seq = set(cpp_block.sequenced_events())
+    if (not _has_member_write_wildcard(cpp_seq)
+            and not _has_member_write_wildcard(ida_seq)):
+        # No unresolved-member wildcard anywhere -> verbatim v2 set equality.
+        return ida_seq == cpp_seq
+    # A wildcard is present -> compare the member-WRITE dimension identity-free.
+    return _member_write_blind(ida_seq) == _member_write_blind(cpp_seq)
 
 
 # ============================================================
@@ -132,28 +177,34 @@ def block_match(ida_block, cpp_block):
 # ============================================================
 
 def block_signature(block):
-    """A hashable PRUNING key for T18's bijection search (v2 SET policy).
+    """A hashable PRUNING key for T18's bijection search (v2 SET policy + P1.3
+    wildcard awareness).
 
-    Shape: a single flat tuple of the block's sorted, deduped SEQUENCED event
-    strings (the full CALL/WRITE/RET SET, full operand encoding):
+    Shape: a flat tuple of the block's sorted, deduped SEQUENCED events with the
+    member-WRITE dimension collapsed (`_member_write_blind`): every member WRITE
+    (resolved 'WRITE(member,N)' or unresolved 'WRITE(member,?)') becomes the single
+    token 'WRITE(member,#)'; CALL targets / global WRITEs / RET are kept exact.
 
-        tuple[str]   # e.g. ('CALL(0x401000)', 'CALL(0x402000)', 'RET')
+        tuple[str]   # e.g. ('CALL(0x401000)', 'RET', 'WRITE(member,#)')
 
-    This is the canonical (order-free, dedup) form of exactly what `block_match`
-    compares, so the NECESSARY-condition prune contract holds:
+    This is exactly the canonical form `block_match` compares on its wildcard path,
+    so the NECESSARY-condition prune contract holds (in fact as an EQUIVALENCE on
+    that path):
 
         block_match(a, b) ==> block_signature(a) == block_signature(b)
 
-    because a v2 match forces `set(sequenced_events())` equal, hence equal
-    sorted-unique sequenced event tuples. Under v2 it is in fact an EQUIVALENCE
-    (signature-equal blocks always match), so the prune never drops a true match.
+    * On the FAST (non-wildcard) path block_match is EXACT set equality; exact-equal
+      sets collapse to equal blind sets, so the invariant still holds. Collapsing the
+      member-WRITE offset only COARSENS the prune (it can MERGE buckets that
+      block_match still distinguishes exactly) -- a coarser prune never drops a true
+      match and never lets a wrong block through (block_match remains the authority),
+      so NO verdict changes for the goldens.
+    * On the WILDCARD path a faithful unresolved-member WRITE wildcard now buckets
+      together with the IDA-side resolved WRITE it matches, so the true pair is not
+      pruned away.
 
-    READ is ADVISORY in v2 and is DROPPED from the signature: keeping a read-set
-    component would OVER-prune (split blocks that v2 considers a match into
-    different buckets) and make the bijection search miss true matches. So the
-    signature consults ONLY the sequenced (CALL/WRITE/RET) set.
-    """
-    return tuple(sorted(set(block.sequenced_events())))
+    READ is ADVISORY and excluded (it is not a sequenced event)."""
+    return tuple(sorted(_member_write_blind(set(block.sequenced_events()))))
 
 
 # ============================================================

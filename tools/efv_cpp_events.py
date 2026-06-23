@@ -110,6 +110,8 @@ from efv_model import (
     call_virtual,
     read_global,
     write_global,
+    read_member_unresolved,   # P1.3: unresolved this->Member (advisory READ wildcard)
+    write_member_unresolved,  # P1.3: unresolved this->Member (element-exempt WRITE wildcard)
     RET,
 )
 
@@ -177,6 +179,76 @@ def get_signals():
     if _SIGNALS is None:
         _SIGNALS = Signals(_SIGNALS_PATH)
     return _SIGNALS
+
+
+# ============================================================
+# Unresolved-member WARN + offset-TODO log (P1.3)
+# ============================================================
+#
+# When `this->Member` is SYNTACTICALLY CERTAIN to be a member but signals.json has
+# no byte offset for it, the leaf emits an efv_model wildcard (element-scoped
+# exemption) INSTEAD of silently dropping the event, AND records it here: a stderr
+# WARN naming class + member + access kind, plus an append to the offset-TODO log
+# so P2 (address-mapping) can resolve it later. The unresolved member is NEVER
+# silently swallowed. Per process we dedup by (class, member, verb) so a member
+# touched across many blocks WARNs once; the file append additionally dedups
+# against lines already present. Logging is BEST-EFFORT (never raises): a log
+# failure must never break verification.
+
+def _offset_todo_path():
+    """Absolute, repo-root-anchored offset-TODO path (never relative -- the verifier
+    / injected DLL may run from an unexpected CWD; project rule 12.7)."""
+    return os.path.join(os.path.dirname(_HERE), ".omo", "evidence", "offset-todo.txt")
+
+
+_UNRESOLVED_SEEN = set()        # (class, member, verb) already WARNed this process
+_OFFSET_TODO_EXISTING = None    # set[str] of TODO lines already on disk (lazy-loaded)
+
+
+def _load_offset_todo_existing():
+    """The set of offset-TODO lines already on disk (for append dedup); lazy + cached.
+    Missing/unreadable file -> empty set (never raises)."""
+    global _OFFSET_TODO_EXISTING
+    if _OFFSET_TODO_EXISTING is not None:
+        return _OFFSET_TODO_EXISTING
+    existing = set()
+    try:
+        with open(_offset_todo_path(), "r", encoding="utf-8", errors="replace") as fh:
+            for ln in fh:
+                existing.add(ln.rstrip("\n"))
+    except OSError:
+        pass
+    _OFFSET_TODO_EXISTING = existing
+    return existing
+
+
+def _record_unresolved_member(class_name, member, verb):
+    """WARN (stderr) + append one offset-TODO line for an unresolved `this->member`
+    access of kind `verb` ('READ' / 'WRITE'). Deduped per process by
+    (class, member, verb) and against existing file content. ASCII-only output
+    (cp936 console safety). Best-effort I/O: never raises."""
+    cls = class_name or "<free-function>"
+    key = (cls, member, verb)
+    if key in _UNRESOLVED_SEEN:
+        return
+    _UNRESOLVED_SEEN.add(key)
+    sys.stderr.write(
+        "WARN [efv_cpp_events] unresolved member offset: {}::{} ({}) -- "
+        "element-scoped exemption applied; recorded to offset-TODO for P2\n"
+        .format(cls, member, verb))
+    line = "{}::{}\t{}\tunresolved-member-offset (signals.json has no entry)".format(
+        cls, member, verb)
+    existing = _load_offset_todo_existing()
+    if line in existing:
+        return
+    existing.add(line)
+    try:
+        path = _offset_todo_path()
+        os.makedirs(os.path.dirname(path), exist_ok=True)
+        with open(path, "a", encoding="utf-8") as fh:
+            fh.write(line + "\n")
+    except OSError:
+        pass
 
 
 # ============================================================
@@ -304,6 +376,35 @@ def make_cpp_leaf(class_name, locals_set, M, signals):
                     else read_global(val))
         return None  # "local" / unknown -> not an observable event
 
+    def _this_member_event(member_name, text, end_pos):
+        """Resolve a SYNTACTICALLY-CERTAIN `this->member_name` access (the caller has
+        already established the `this->` prefix and that no `(` follows -> a value
+        access, not a method call) to a member / global READ or WRITE event.
+
+        Because `this->X` is UNAMBIGUOUSLY a `this`-relative member, a Resolver miss
+        here means an UNRESOLVED member -- signals.json has no byte offset for it --
+        NOT a non-data identifier. The OLD behaviour silently DROPPED it (returned
+        None), so the C++ block MISSED a READ/WRITE the IDA side has -> the block
+        sets differ -> the bijection FAILs -> a FALSE-POSITIVE on faithful code that
+        merely touches a not-yet-mapped member. Instead, emit an element-scoped
+        WILDCARD (efv_model) and record the member (WARN + offset-TODO for P2):
+          * READ  -> read_member_unresolved()  (advisory; never gates)
+          * WRITE -> write_member_unresolved() (excused 1-for-1 by STEP3(0); the
+                     bijection treats the member-write dimension identity-free when
+                     a wildcard is present). CALLs / resolvable members keep gating.
+        Never returns None (the access is always a member event of some shape)."""
+        kind, val = member_resolver.resolve(member_name)
+        if kind == "member":
+            return (write_member(val) if _is_write(text, end_pos)
+                    else read_member(val))
+        if kind == "global":
+            return (write_global(val) if _is_write(text, end_pos)
+                    else read_global(val))
+        # UNRESOLVED member: `this->` guarantees member-ness, but no signals offset.
+        is_wr = _is_write(text, end_pos)
+        _record_unresolved_member(class_name, member_name, "WRITE" if is_wr else "READ")
+        return write_member_unresolved() if is_wr else read_member_unresolved()
+
     def leaf(text):
         if not text:
             return []
@@ -350,9 +451,11 @@ def make_cpp_leaf(class_name, locals_set, M, signals):
                             if addr:
                                 hits.append((t.pos, _tok_end(mtok), call_direct(addr)))
                     else:
-                        # this->Member value access (member never shadowed)
-                        ev = _member_or_global_event(
-                            member_resolver.resolve(mtok.value), text, _tok_end(mtok))
+                        # this->Member value access (member never shadowed). A
+                        # Resolver MISS here is an UNRESOLVED member, not a non-data
+                        # identifier -> element-scoped wildcard + WARN + offset-TODO
+                        # (never a silent drop -> no false-positive on faithful code).
+                        ev = _this_member_event(mtok.value, text, _tok_end(mtok))
                         if ev is not None:
                             hits.append((t.pos, _tok_end(mtok), ev))
                     i = j + 1
