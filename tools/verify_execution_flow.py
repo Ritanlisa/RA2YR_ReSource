@@ -1358,6 +1358,12 @@ def main():
         for mf in modified:
             addr, name = mf["addr"], mf["name"]
             disp = name or f"sub_{addr:X}"
+            # §D-STEP4.6 completed-scope gating: only completed=true functions get
+            # a strict verdict; completed=false / unknown are SKIPPED (not verified,
+            # not FAIL, no effect on exit code).
+            if M.name_to_completed.get(name) is not True:
+                print(f"SKIP (completed != true): {disp}")
+                continue
             ida_decomp, cached = load_ida_cache(addr)
             if not ida_decomp or not ida_decomp.strip():
                 print(f"  WARNING: IDA cache missing for 0x{addr:X} ({disp})", file=sys.stderr)
