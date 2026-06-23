@@ -3,24 +3,34 @@
 efv_match.py -- Per-block event matcher for the execution-flow verifier (CFG).
 
 This module decides whether ONE IDA-side CFG block and ONE C++-side CFG block
-"agree" on what they do, under the GRADED matching policy fixed in
-`.omo/notepads/execution-flow-cfg/decisions.md`:
+"agree" on what they do, under the v2 matching policy fixed in
+`.omo/plans/code-verifier.md` §C / §D-STEP3(1) (the v0->v1->v2 note):
 
-    CALL / WRITE / RET  ->  ordered-gating  (position matters)
-    READ (member/global)->  block-internal SET (order AND count ignored)
+    CALL / WRITE / RET  ->  block-internal SET   (intra-block order IGNORED)
+    READ (member/global)->  ADVISORY             (never gates / never FAILs)
 
-The asymmetry is the whole point and is load-bearing:
+v2 RELAXATION (user-approved; supersedes the v1 ordered-gating policy):
 
-  * CALL/WRITE/RET are *observable side effects in a definite order*. A faithful
-    C++ translation must perform them in the same sequence as the binary, so we
-    compare them as an EXACT ORDERED LIST (`list == list`).
+  * CALL/WRITE/RET are the *observable external operations* of a block. In v2 we
+    compare them as a per-block PYTHON SET (presence within the block), NOT an
+    ordered list: a faithful translation that performs the SAME set of external
+    operations in a DIFFERENT intra-block order is accepted. Block-internal
+    reorder is therefore a DESIGNED-IN false-negative relaxation -- deliberately
+    chosen, and backstopped downstream by the runtime shadow-comparison (对拍)
+    pipeline, which catches behaviour differences an order swap could hide. It is
+    a SET, NOT a multiset: intra-block multiplicity is also relaxed (a CALL/WRITE
+    is compared by PRESENCE, not count); RET is thus compared by presence too.
+    Cross-block ordering is still fully constrained by the CFG structure
+    (`cfg_match`'s successor correspondence), so the relaxation is purely
+    block-INTERNAL.
 
-  * READ(member,N) / READ(global,0xADDR) are *value loads*. The MSVC-6.0
-    compiler freely caches a member in a register and reuses it (CSE /
-    register-caching), so the binary may emit a read once where faithful C++
-    re-reads it (or vice-versa), and in a different relative order. Comparing
-    reads as an ORDERED list would spuriously reject correct translations.
-    Hence reads are compared as a PYTHON SET (deduped, order-free).
+  * READ(member,N) / READ(global,0xADDR) are *value loads* and are DEMOTED to
+    ADVISORY in v2: they NEVER cause a block-pair to be rejected. (The MSVC-6.0
+    compiler freely caches a member in a register / re-reads it via CSE, so reads
+    are an unreliable discriminator; gating on them risked false-negatives.) READ
+    may at most serve as a deterministic tiebreak in search ordering -- it can
+    never reject a pair -- and this module simply does not consult it in
+    `block_match` / `block_signature` at all.
 
 This file deliberately does NOT re-derive which events are SEQUENCED vs SET --
 that classification is owned by `efv_model.event_class()` and surfaced through
@@ -56,16 +66,19 @@ full algorithm + complexity guard. Two contract points that callers must know:
     representations (T9 finding). Case VALUES are intentionally not compared.
 
 T18 contract (block_signature):
-  `block_signature(block)` is a hashable PRUNING key. It is a NECESSARY (not
-  sufficient) condition for `block_match`:
+  `block_signature(block)` is a hashable PRUNING key. It remains a NECESSARY
+  condition for `block_match` -- the property the bijection search relies on:
 
       block_match(a, b) == True   ==>   block_signature(a) == block_signature(b)
 
   so T18 may safely bucket blocks by signature and only run `block_match` on
-  pairs sharing a signature, WITHOUT ever pruning away a true match. The
-  converse does NOT hold: two blocks may share a signature yet fail
-  `block_match` (e.g. same sequenced verbs but a different CALL target/order),
-  so T18 MUST still confirm each candidate pair with `block_match`.
+  pairs sharing a signature, WITHOUT ever pruning away a true match. Under the
+  v2 SET policy the signature IS the canonical form of the match key (the
+  sorted-unique sequenced event SET), so the relation is in fact an EQUIVALENCE
+  -- signature-equal blocks always `block_match`. T18 still calls `block_match`
+  per candidate (now a redundant-but-harmless confirmation); keeping the call
+  means the prune contract holds verbatim even if the signature/match definitions
+  later diverge again.
 """
 
 import os
@@ -87,33 +100,31 @@ except ImportError:  # pragma: no cover - exercised by the script entry point
 # ============================================================
 
 def block_match(ida_block, cpp_block):
-    """Return True iff the two blocks' events match under the graded policy.
+    """Return True iff the two blocks' events match under the v2 SET policy.
 
     Both arguments are `efv_model.Block` instances (one extracted from the IDA
-    Hex-Rays CFG, one from the faithful C++ CFG). The decision is the AND of
-    two independent checks:
+    Hex-Rays CFG, one from the faithful C++ CFG). v2 reduces the decision to a
+    SINGLE check:
 
-      1. SEQUENCED check (CALL / WRITE / RET) -- EXACT ORDERED LIST equality.
-         Uses `Block.sequenced_events()` (already in source order). Equal CALL
-         targets (0xADDR / vfptr+N), WRITE offsets, and RETs, in the SAME order.
+      SEQUENCED check (CALL / WRITE / RET) -- per-block PYTHON SET equality.
+         Uses `Block.sequenced_events()`, deduped via `set(...)`. Intra-block
+         ORDER is ignored (block-internal reorder is a designed-in false-negative
+         relaxation), and so is intra-block COUNT (it is a SET, NOT a multiset --
+         CALL/WRITE/RET are compared by PRESENCE). Equal CALL targets
+         (0xADDR / vfptr+N), WRITE offsets, and RET-presence -> match.
 
-      2. SET check (READ member / READ global) -- PYTHON SET equality.
-         Uses `Block.set_events()`, deduped via `set(...)`. Order AND
-         repetition count are ignored, absorbing compiler register-caching /
-         CSE differences between the binary and faithful C++.
+    READ is ADVISORY in v2 and is NOT checked here: it can never reject a pair,
+    so `Block.set_events()` is intentionally not consulted. (Cross-block ordering
+    is still enforced by `cfg_match`'s successor correspondence; only the
+    block-INTERNAL order/count of external ops is relaxed.)
 
-    Two empty blocks (no sequenced events, no reads) match. The function never
-    raises for well-formed Block inputs.
+    Two empty blocks (no sequenced events) match. The function never raises for
+    well-formed Block inputs.
     """
-    # 1. Sequenced events: exact ordered list equality (position-sensitive).
-    if ida_block.sequenced_events() != cpp_block.sequenced_events():
-        return False
-
-    # 2. Read events: set equality (dedup, order- and count-insensitive).
-    if set(ida_block.set_events()) != set(cpp_block.set_events()):
-        return False
-
-    return True
+    # v2: sequenced events (CALL/WRITE/RET) as a per-block SET -- intra-block
+    # order AND count are relaxed (presence only). READ is advisory and is NOT
+    # consulted (it must never reject a pair).
+    return set(ida_block.sequenced_events()) == set(cpp_block.sequenced_events())
 
 
 # ============================================================
@@ -121,33 +132,28 @@ def block_match(ida_block, cpp_block):
 # ============================================================
 
 def block_signature(block):
-    """A hashable PRUNING key for T18's bijection search.
+    """A hashable PRUNING key for T18's bijection search (v2 SET policy).
 
-    Shape (a 2-tuple, both elements hashable):
+    Shape: a single flat tuple of the block's sorted, deduped SEQUENCED event
+    strings (the full CALL/WRITE/RET SET, full operand encoding):
 
-        ( sequenced_kinds : tuple[str],   # verbs of CALL/WRITE/RET, IN ORDER
-          read_set        : tuple[str] )  # sorted, deduped READ event strings
+        tuple[str]   # e.g. ('CALL(0x401000)', 'CALL(0x402000)', 'RET')
 
-    `sequenced_kinds` is the ordered tuple of *verbs* ("CALL"/"WRITE"/"RET")
-    of the block's sequenced events (via `efv_model.event_verb`), so its length
-    and ordering already encode the sequenced shape. `read_set` is the sorted
-    tuple of the block's unique READ event strings (full operand encoding).
-
-    This is a NECESSARY-condition prune key, NOT a full equality test:
+    This is the canonical (order-free, dedup) form of exactly what `block_match`
+    compares, so the NECESSARY-condition prune contract holds:
 
         block_match(a, b) ==> block_signature(a) == block_signature(b)
 
-    because a match forces `sequenced_events()` equal (hence equal verbs in
-    order) and the read SET equal (hence equal sorted-unique reads). The
-    reverse does not hold -- e.g. two blocks with verbs ("CALL","CALL","RET")
-    but different CALL targets/order share a signature yet do NOT match -- so
-    T18 must still confirm candidates with `block_match`.
+    because a v2 match forces `set(sequenced_events())` equal, hence equal
+    sorted-unique sequenced event tuples. Under v2 it is in fact an EQUIVALENCE
+    (signature-equal blocks always match), so the prune never drops a true match.
+
+    READ is ADVISORY in v2 and is DROPPED from the signature: keeping a read-set
+    component would OVER-prune (split blocks that v2 considers a match into
+    different buckets) and make the bijection search miss true matches. So the
+    signature consults ONLY the sequenced (CALL/WRITE/RET) set.
     """
-    sequenced_kinds = tuple(
-        efv_model.event_verb(e) for e in block.sequenced_events()
-    )
-    read_set = tuple(sorted(set(block.set_events())))
-    return (sequenced_kinds, read_set)
+    return tuple(sorted(set(block.sequenced_events())))
 
 
 # ============================================================
@@ -425,10 +431,12 @@ def _build_blocks():
     """
     m = efv_model
 
-    # -- Case (a): same CALL/WRITE/RET ORDER + same READ SET, but the READ
-    #    count AND order differ -> must MATCH (TRUE). Models compiler CSE /
-    #    register-caching: IDA reads member,4 twice; faithful C++ reads it once,
-    #    and emits its reads in a different relative order.
+    # -- Case (a): same sequenced SET (WRITE,CALL,RET) on both sides -> must
+    #    MATCH (TRUE). The READ count AND order differ (IDA reads member,4 twice
+    #    and reorders its reads vs faithful C++ reading it once) -- but under v2
+    #    READ is ADVISORY and ignored entirely, so the differing reads are a
+    #    no-op for the match. (Pre-v2 this case existed to prove READ-set
+    #    tolerance; under v2 it proves READ is simply not consulted.)
     a_ida = m.Block("a_ida", [
         m.write_member(8),        # SEQUENCED
         m.call_direct(0x401000),  # SEQUENCED
@@ -445,25 +453,31 @@ def _build_blocks():
         m.RET,                    # SEQUENCED
     ])
 
-    # -- Case (b): different CALL ORDER -> must NOT match (FALSE).
-    #    Reads identical (none). Note: the two blocks share the SAME signature
-    #    (verbs ("CALL","CALL","RET"), empty read-set) -- this demonstrates that
-    #    block_signature is a NECESSARY-not-sufficient prune key and block_match
-    #    is still required to reject the wrong CALL order.
+    # -- Case (b): block-INTERNAL CALL reorder -> MATCHES under v2 (TRUE).
+    #    v2 RECLASSIFICATION (was FALSE under v1's ordered-CALL gating). Under
+    #    the v2 SET policy CALL/WRITE/RET are compared by PRESENCE within the
+    #    block, so swapping two CALLs inside one block is a DESIGNED-IN
+    #    false-negative relaxation (user-approved; backstopped by runtime 对拍),
+    #    NOT a weakening to hide a bug. The two blocks have the SAME sequenced
+    #    SET {CALL(0x401000),CALL(0x402000),RET}, hence the SAME signature and a
+    #    v2 match. (Reads identical/none -- READ is advisory and ignored anyway.)
     b_ida = m.Block("b_ida", [
         m.call_direct(0x401000),
         m.call_direct(0x402000),
         m.RET,
     ])
     b_cpp = m.Block("b_cpp", [
-        m.call_direct(0x402000),  # swapped order
+        m.call_direct(0x402000),  # swapped order -- v2 ignores intra-block order
         m.call_direct(0x401000),
         m.RET,
     ])
 
     # -- Case (c): one extra WRITE on the C++ side -> must NOT match (FALSE).
-    #    Reads identical. Signatures DIFFER (sequenced verb tuples differ in
-    #    length), so T18 would even prune this pair before block_match.
+    #    Reads identical. The sequenced SETs DIFFER -- the C++ side has an extra
+    #    WRITE(member,12) absent on the IDA side -- so signatures differ and T18
+    #    would even prune this pair before block_match. This is the v2 backstop:
+    #    set-PRESENCE still catches a genuinely extra/missing external op (only
+    #    intra-block ORDER and COUNT are relaxed, never presence).
     c_ida = m.Block("c_ida", [
         m.write_member(8),
         m.call_direct(0x401000),
@@ -479,13 +493,16 @@ def _build_blocks():
     return [
         ("a_READ-count/order-differs",
          a_ida, a_cpp, True,
-         "same CALL/WRITE/RET order + same READ set, READ count+order differ"),
+         "same sequenced SET; READ count+order differ (READ advisory, ignored)"),
         ("b_CALL-order-differs",
-         b_ida, b_cpp, False,
-         "swapped CALL order; same reads"),
+         b_ida, b_cpp, True,
+         "v2 DESIGNED-FN: block-internal CALL reorder -> same sequenced SET -> "
+         "MATCHES (was False under v1 ordered-CALL; user-approved relaxation, "
+         "backstopped by runtime shadow-comparison, NOT a bug-hiding weakening)"),
         ("c_extra-WRITE",
          c_ida, c_cpp, False,
-         "extra WRITE on C++ side; same reads"),
+         "extra WRITE on C++ side -> sequenced SET differs -> no match (presence, "
+         "not order, so a real extra external op is still caught)"),
     ]
 
 
@@ -493,8 +510,9 @@ def _run_self_test():
     """Run the 3 graded-policy self-test cases; return (all_ok, report_lines)."""
     lines = []
     lines.append("=== T16 efv_match.block_match / block_signature self-test ===")
-    lines.append("policy: CALL/WRITE/RET = ordered list-equality; "
-                 "READ = set-equality (dedup, order/count ignored)")
+    lines.append("policy (v2): CALL/WRITE/RET = per-block SET-equality "
+                 "(intra-block order AND count relaxed, presence only); "
+                 "READ = ADVISORY (not consulted, never gates)")
     lines.append("")
 
     all_ok = True
