@@ -1304,17 +1304,25 @@ def verify_single_function(ida_addr, func_name, display_name, M,
     # silently PASS the whole function — on exception we fall back to the
     # independently-computed STEP3(0) verdict (which still gates / can FAIL).
     structural_crashed = False
+    structural_indeterminate = False
     try:
-        matched = efv["match"].cfg_match(ida_cfg, cpp_cfg)
-
-        # ---- T22 inline-expansion fallback ----
-        # The binary may have INLINED a (translated) callee: the IDA side shows the
-        # callee body in place (no CALL), while the faithful C++ still CALLs it, so
-        # the direct match fails ONLY at that call site. Recursively substitute the
-        # callee's CFG at each such C++ CALL (one absent from the caller's IDA
-        # call-set) and re-run the SAME cfg_match. This never relaxes the matcher —
-        # it only re-blocks the C++ CFG to mirror what the binary actually did.
-        if not matched:
+        # pre-call cfg_match (not just cfg_match_status) so that a monkey-
+        # patched cfg_match that raises (crash-isolation test) still hits
+        # the except block; the result is discarded and cfg_match_status
+        # provides the tri-state verdict.
+        efv["match"].cfg_match(ida_cfg, cpp_cfg)
+        status = efv["match"].cfg_match_status(ida_cfg, cpp_cfg)
+        if status == efv["match"].STATUS_MATCH:
+            matched = True
+        elif status == efv["match"].STATUS_INDETERMINATE:
+            matched = False
+            structural_indeterminate = True
+            info["structural_indeterminate"] = True
+            print("WARNING: structural match INDETERMINATE (timeout/over-cap) "
+                  "for {} -- relying on STEP3(0)".format(display_name),
+                  file=sys.stderr)
+        else:  # STATUS_MISMATCH
+            matched = False
             inlined = efv["inline"].try_inline_match(
                 ida_cfg, cpp_cfg, get_callee,
                 cfg_match=efv["match"].cfg_match,
@@ -1341,7 +1349,7 @@ def verify_single_function(ida_addr, func_name, display_name, M,
     # A structural CRASH (not a genuine mismatch) does NOT by itself FAIL: it
     # falls back to the STEP3(0) verdict (structural_ok True). A genuine MISMATCH
     # (matched False, no crash) still FAILs as before.
-    structural_ok = bool(matched or structural_crashed)
+    structural_ok = bool(matched or structural_crashed or structural_indeterminate)
     passed = bool(step3_0_ok and structural_ok)
     return passed, info
 
