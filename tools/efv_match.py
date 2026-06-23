@@ -253,6 +253,14 @@ _MATCH_BLOCK_THRESHOLD = 64       # documented tractability boundary (blocks)
 _MATCH_HARD_CAP = 512             # > this many reachable blocks -> give up
 _MATCH_STEP_BUDGET = 100000       # max candidate assignments before giving up
 
+# -- tri-state bijection status (T18 abandonment-aware) ----------------------
+# Exposes the search's EXISTING abandonment (over-cap / step-budget) as a
+# distinct verdict so a TIMEOUT is distinguishable from a genuine no-bijection.
+# `cfg_match` (bool) is unchanged; these are additive.
+STATUS_MATCH = "MATCH"                # a bijection was found
+STATUS_MISMATCH = "MISMATCH"          # clean no-bijection (search ran to completion)
+STATUS_INDETERMINATE = "INDETERMINATE"  # search abandoned under the complexity guard
+
 
 class _BudgetExceeded(Exception):
     """Internal: raised to unwind the backtracker when the step budget is hit."""
@@ -337,14 +345,21 @@ def _verify_full_bijection(forward, succ_i, succ_c):
     return True
 
 
-def _find_bijection(ida_cfg, cpp_cfg):
+def _find_bijection(ida_cfg, cpp_cfg, status=None):
     """Return a bijection dict {ida_id -> cpp_id} proving `ida_cfg` and `cpp_cfg`
     are execution-flow equivalent (entry-anchored, block_match per pair, T9
     successor correspondence), or None if no such bijection exists / the search
     is abandoned under the complexity guard.
 
     PRECONDITION: both CFGs are already NORMALIZED (T17). This function does not
-    normalize and adds no dependency on efv_normalize."""
+    normalize and adds no dependency on efv_normalize.
+
+    `status`: an OPTIONAL mutable dict. When the search is ABANDONED under the
+    complexity guard (reachable blocks > `_MATCH_HARD_CAP`, OR the step-budget
+    `_MATCH_STEP_BUDGET` is exceeded), this sets `status["abandoned"] = True`.
+    It is NOT set on a clean no-bijection (search ran to completion). Callers
+    that pass no `status` are entirely unaffected -- the return type stays
+    dict | None exactly as before."""
     ie = ida_cfg.entry()
     ce = cpp_cfg.entry()
     if ie is None or ce is None:
@@ -358,6 +373,8 @@ def _find_bijection(ida_cfg, cpp_cfg):
     if n == 0:
         return None
     if n > _MATCH_HARD_CAP:                 # too large to attempt safely
+        if status is not None:
+            status["abandoned"] = True
         return None
 
     # Anchor: the two entry blocks must themselves match.
@@ -458,7 +475,27 @@ def _find_bijection(ida_cfg, cpp_cfg):
             return dict(forward)
         return None
     except _BudgetExceeded:
+        if status is not None:
+            status["abandoned"] = True
         return None
+
+
+def cfg_match_status(ida_cfg, cpp_cfg) -> str:
+    """Tri-state verdict for the CFG bijection search (BOTH CFGs already
+    NORMALIZED, T17):
+
+      STATUS_MATCH         -- a structural bijection exists.
+      STATUS_MISMATCH      -- the search ran to completion and proved no bijection
+                              exists (a genuine flow difference).
+      STATUS_INDETERMINATE -- the search was ABANDONED by the complexity guard
+                              (over hard-cap / step-budget exceeded), so MATCH vs
+                              MISMATCH is undecided -- distinct from a clean no-match.
+
+    Never raises. This is the abandonment-aware companion to `cfg_match`."""
+    st = {}
+    result = _find_bijection(ida_cfg, cpp_cfg, status=st)
+    return (STATUS_MATCH if result is not None
+            else (STATUS_INDETERMINATE if st.get("abandoned") else STATUS_MISMATCH))
 
 
 def cfg_match(ida_cfg, cpp_cfg):
@@ -467,8 +504,12 @@ def cfg_match(ida_cfg, cpp_cfg):
     between their reachable blocks where every paired block satisfies
     `block_match` and the paired successor structure corresponds under the
     bijection (distinct targets + label KINDS, T9). Returns False (never raises)
-    if no bijection exists or the search is abandoned by the complexity guard."""
-    return _find_bijection(ida_cfg, cpp_cfg) is not None
+    if no bijection exists or the search is abandoned by the complexity guard.
+
+    Behaviorally identical to before: an abandoned search still returns False.
+    `cfg_match_status` distinguishes those two False cases (MISMATCH vs
+    INDETERMINATE)."""
+    return cfg_match_status(ida_cfg, cpp_cfg) == STATUS_MATCH
 
 
 # ============================================================
@@ -753,6 +794,7 @@ def _fmt_bijection(mapping):
 
 def _run_cfg_self_test():
     """Run the T18 cfg_match cases; return (all_ok, report_lines)."""
+    global _MATCH_STEP_BUDGET   # the (c) assertion below temporarily shrinks it
     lines = []
     lines.append("=== T18 efv_match.cfg_match self-test ===")
     lines.append("policy: entry-anchored structural bijection; per-pair block_match; "
@@ -781,6 +823,44 @@ def _run_cfg_self_test():
         lines.append("    cfg_match      : got={} expect={}".format(got, expect))
         lines.append("    bijection      : {}".format(_fmt_bijection(bij)))
         lines.append("")
+
+    # ---- tri-state cfg_match_status assertions (abandonment-aware) --------
+    pairs_by_label = {p[0]: p for p in _build_cfg_pairs()}
+    iso = pairs_by_label["1_isomorphic-diamond"]
+    mis = (pairs_by_label.get("2a_missing-block")
+           or pairs_by_label["2b_nonmatching-block"])
+
+    lines.append("--- cfg_match_status tri-state ---")
+
+    # (a) isomorphic diamond -> MATCH
+    st_a = cfg_match_status(iso[1], iso[2])
+    ok_a = (st_a == STATUS_MATCH)
+    all_ok = all_ok and ok_a
+    lines.append("[{}] status_a_isomorphic-diamond  (got={} expect={})".format(
+        "PASS" if ok_a else "FAIL", st_a, STATUS_MATCH))
+
+    # (b) missing / non-matching block -> MISMATCH (genuine no-bijection)
+    st_b = cfg_match_status(mis[1], mis[2])
+    ok_b = (st_b == STATUS_MISMATCH)
+    all_ok = all_ok and ok_b
+    lines.append("[{}] status_b_{}  (got={} expect={})".format(
+        "PASS" if ok_b else "FAIL", mis[0], st_b, STATUS_MISMATCH))
+
+    # (c) FORCE INDETERMINATE: shrink the step budget so the diamond search is
+    #     abandoned under the complexity guard, then RESTORE the budget.
+    _saved_budget = _MATCH_STEP_BUDGET
+    _MATCH_STEP_BUDGET = 1
+    try:
+        st_c = cfg_match_status(iso[1], iso[2])
+    finally:
+        _MATCH_STEP_BUDGET = _saved_budget
+    ok_c = (st_c == STATUS_INDETERMINATE)
+    all_ok = all_ok and ok_c
+    lines.append("[{}] status_c_forced-INDETERMINATE  (got={} expect={}; "
+                 "budget restored to {})".format(
+                     "PASS" if ok_c else "FAIL", st_c, STATUS_INDETERMINATE,
+                     _MATCH_STEP_BUDGET))
+    lines.append("")
 
     lines.append("RESULT: {}".format("ALL PASS" if all_ok else "FAILURES PRESENT"))
     return all_ok, lines
