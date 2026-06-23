@@ -122,6 +122,7 @@ if(WIN32)
     if(Python3_FOUND)
         add_custom_target(check_code_quality
             COMMAND ${Python3_EXECUTABLE} "${CMAKE_SOURCE_DIR}/tools/check_translated_functions.py"
+            COMMAND ${Python3_EXECUTABLE} "${CMAKE_SOURCE_DIR}/tools/check_pointer_arithmetic.py" "${CMAKE_SOURCE_DIR}/src/" "${CMAKE_SOURCE_DIR}/app/"
             WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
             COMMENT "Checking code quality (modified functions only)"
         )
