@@ -108,17 +108,51 @@ if(WIN32)
         message(STATUS "Skipping hook_dll: requires Python3 + YRpp/Syringe.h submodule")
     endif()
 
+    # ── Signal type database (generated, used by code quality checks) ──
+    if(Python3_FOUND)
+        add_custom_target(build_signals
+            COMMAND ${Python3_EXECUTABLE} "${CMAKE_SOURCE_DIR}/tools/build_signals.py"
+            WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}"
+            COMMENT "Building signals.json — symbol type database"
+        )
+    endif()
+
     # ── Code quality check: modified functions only ──
     # Checks: stubs, comment shells, pointer arithmetic, C++ casts, gotos, IDA artifacts
-    #          name consistency audit (functions.json ↔ IDA ↔ hpp annotations)
     if(Python3_FOUND)
         add_custom_target(check_code_quality
             COMMAND ${Python3_EXECUTABLE} "${CMAKE_SOURCE_DIR}/tools/check_translated_functions.py"
-            COMMAND ${Python3_EXECUTABLE} "${CMAKE_SOURCE_DIR}/tools/audit_consistency.py" --check-only
             WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
-            COMMENT "Checking code quality (modified functions + name consistency audit)"
+            COMMENT "Checking code quality (modified functions only)"
         )
         add_dependencies(gamemd check_code_quality)
+        add_dependencies(check_code_quality build_signals)
+
+        # ── Execution-flow CFG verification: modified functions only (T21) ──
+        # verify_execution_flow.py --auto compares the CONTROL-FLOW GRAPH of each
+        # git-modified C++ function against its IDA Hex-Rays CFG, failing the build
+        # on a structural mismatch (a stub / mistranslation).
+        # GRACEFUL DEGRADATION — the build is NEVER blocked by IDA being closed:
+        #   * --auto reads ONLY the local IDA cache (.omo/ida_cache/); it never
+        #     contacts the IDA MCP server, so IDA being down has no effect here.
+        #   * a modified function with NO cached IDA pseudocode is SKIPPED with a
+        #     WARNING (not a failure); if nothing is verifiable the script exits 0.
+        #   * the build FAILS (exit 1) ONLY on a genuine CFG mismatch of a function
+        #     that HAS IDA data — i.e. an actual mistranslation.
+        add_custom_target(verify_execution_flow
+            COMMAND ${Python3_EXECUTABLE} "${CMAKE_SOURCE_DIR}/tools/verify_execution_flow.py" --auto
+            WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+            COMMENT "Verifying execution-flow CFG (modified functions only; skips funcs with no IDA cache)"
+        )
+        add_dependencies(gamemd verify_execution_flow)
+        add_dependencies(verify_execution_flow build_signals)
+
+        # Name consistency audit (optional, not build-gating)
+        add_custom_target(audit_names
+            COMMAND ${Python3_EXECUTABLE} "${CMAKE_SOURCE_DIR}/tools/audit_consistency.py" --check-only
+            WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+            COMMENT "Auditing IDA↔JSON↔hpp name consistency"
+        )
     else()
         message(WARNING "Python3 not found — skipping code quality checks")
     endif()

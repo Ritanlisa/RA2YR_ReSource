@@ -506,7 +506,41 @@ BuildingClass* BuildingClass::FindBySWType(int sw_type)
     return nullptr;
 }
 
-void BuildingClass::ClearSuperWeaponAnim() {}
+// GOLDEN: 0x451690
+// BuildingClass::ClearSuperWeaponAnim — pop the most-recently-added upgrade
+// (which may grant a super weapon), clear its anim slot, and (if it granted a
+// super weapon) refresh the owning house's super-weapon collection.
+// Faithful 1:1 with IDA: count read, if/else on the upgrade's flags, dense
+// ordered member WRITES, two direct calls, multiple returns, no loop.
+char BuildingClass::ClearSuperWeaponAnim()
+{
+    char result = (char)this->UpgradeLevel;            // result = *(_BYTE*)(this+1794)
+    if (!result)
+        return result;                                 // 0 upgrades -> return 0
+
+    int count = result;                                // v3 = result
+    bool didGrantSW = false;                           // v4 = 0
+    BuildingTypeClass* upgrade = Upgrades[count - 1];  // v5 = *(this + 4*result + 1512) = Upgrades[result-1]
+    if (upgrade && (didGrantSW = (upgrade->SuperWeapon != -1), upgrade->Powered)) {
+        this->ClearAnims();                            // ClearAnims(this, 9)
+        Upgrades[this->UpgradeLevel - 1] = nullptr;    // *(this + 4*UpgradeLevel + 1512) = 0 -> Upgrades[UpgradeLevel-1]
+        this->UpgradeLevel = 0;                        // *(_BYTE*)(this+1794) = 0
+        this->BuildingClass_field_5FC = (uint32_t)-1;  // *(this+1532) = -1
+        if (didGrantSW) {
+            SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(this->group);  // arg = *(this+540)
+            return 1;
+        }
+    } else {
+        this->ClearAnims();                            // ClearAnims(this, v3 - 1)
+        int dec = this->UpgradeLevel - 1;              // v6 = *(_BYTE*)(this+1794) - 1
+        this->UpgradeLevel = (uint8_t)dec;             // *(_BYTE*)(this+1794) = v6
+        Upgrades[dec] = nullptr;                       // *(this + 4*v6 + 1516) = 0 -> Upgrades[v6]
+        if (didGrantSW)
+            SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(this->group);
+    }
+    return 1;
+}
+
 void BuildingClass::UpdatePrism() {}
 void BuildingClass::Disappear_PrismForward() {}
 
@@ -547,16 +581,45 @@ void BuildingClass::PowerDrainUpdate()
         GetOwnerHouse()->powerDrain -= 100;
 }
 
-// IDA 0x44e7b0: base power + bonus, health-scaled
+// GOLDEN: 0x44E7B0 — BuildingClass::GetPowerOutput.  Faithful 1:1 with IDA.
+// Base output (+bonus, +overpower scaling, +summed upgrade outputs), gated by a
+// virtual vtable[+468] dispatch and HasPower, then scaled by the health ratio.
+// Structure: Type read, vtable call + early return, flag branches, 3-slot
+// do-while over Upgrades, two direct calls, multiple returns.  vtable +468 =
+// slot 117 = Mission_Harvest (project header vtable; binary impl IDA-labels GetShroudByte).
 int BuildingClass::GetPowerOutput()
 {
-    if (!Type || !HasPower) return 0;
-    int power = Type->PowerOutput;
-    if (IsOverpowered) power += 200;
-    if (HasExtraPowerBonus) power += 100;
-    if (health < (int)(Type->Strength))
-        power = (power * health) / (int)(Type->Strength);
-    return power;
+    int power = this->Type->PowerOutput;               // v2 = *(this->Type + 3808)
+    if (this->Mission_Harvest())                       // (*(*this + 468))(this) -> bool
+        return 0;
+    if (this->HasExtraPowerBonus)                      // *(_BYTE*)(this + 1640)
+        power += this->Type->PowerBonus;               // v2 += *(this->Type + 3816)
+    BuildingTypeClass* type = this->Type;              // v3 = *(this + 328)
+    if (type->Overpowerable || type->PoweredSpecial)   // *(v3+5806) || *(v3+5807)
+    {
+        int bonus = type->PowerBonus;                  // v4 = *(v3 + 3816)
+        if (bonus > 0)
+        {
+            int overpowerers = this->secondaryTurretIndex;  // v5 = *(this + 276)
+            if (overpowerers > 0)
+                power += overpowerers * bonus;         // v2 += v5 * v4
+        }
+    }
+    if (this->UpgradeLevel)                            // *(_BYTE*)(this + 1794)
+    {
+        int slot = 0;                                  // v6 = this + 1516 (Upgrades), v7 = 3
+        do
+        {
+            if (Upgrades[slot])                        // *v6   (local pointer walk, no this-read)
+                power += Upgrades[slot]->PowerOutput;  // v2 += *(*v6 + 3808)
+            ++slot;
+        }
+        while (slot < 3);
+    }
+    if (power <= 0 || !this->HasPower)                 // v2 <= 0 || !*(_BYTE*)(this + 1632)
+        return 0;
+    double healthRatio = this->GetHealthRatio();       // 0x5F5C60
+    return Math::RoundToInt(healthRatio * (double)power);  // 0x7C5F00
 }
 
 // IDA 0x44e880: base drain + overpower drain
@@ -605,8 +668,58 @@ void BuildingClass::ProcessActiveUpdate() {}
 void BuildingClass::UpdatePowerAnimation() {}
 void BuildingClass::UpdatePowerAnim() { UpdatePowerAnimation(); }
 
-// IDA 0x4566b0: get power frame (0=off, 1=on)
-int BuildingClass::GetPowerFrame() { return HasPower ? 1 : 0; }
+// IsNonNullPtr (global helper @ 0x70E240, __stdcall, BOOL(void*)).  core/_funcs.hpp
+// declares it argument-less (its generated `/* param_bytes: 4 */` was never lowered
+// to a real parameter), so forward-declare the true 1-arg form here for the faithful
+// call in GetPowerFrame — avoids pulling the whole _funcs.hpp into this TU.
+int IsNonNullPtr(int handle) noexcept;
+
+// GOLDEN: 0x4566B0 — BuildingClass::GetPowerFrame.  Faithful 1:1 with IDA.
+// Returns the radial-indicator radius (in cells) for this building's effect:
+// PsychicDetectionRadius override > GapGenerator radius > Cloak/Sensor radius >
+// radius derived from the powered object.  (IDA labels it GetPowerFrame; the
+// binary computes the radial-effect radius.)  Structure: Type read, result<=0
+// gate, gap/cloak/sensor branches, two direct calls in the fall-through,
+// multiple returns.  Type-relative (type->) reads emit no verifier events; their
+// binary // *(v2+OFF) offsets were validated against BuildingTypeClass::Construct-
+// Full (0x45DD90) defaults + the INI reader at 0x460BEA:
+//   5831 = CloakGenerator (INI "CloakGenerator"),  5832 = SensorArray,
+//   5895 = CloakRadiusInCells,                     5900 = PsychicDetectionRadius;
+//   3281/3282/3283 = GapGenerator/GapRadiusInCells/SuperGapRadiusInCells
+//   (inherited TechnoTypeClass members).
+int BuildingClass::GetPowerFrame()
+{
+    BuildingTypeClass* type = this->Type;                 // v2 = *(this + 1312)  [Type]
+    int result = type->PsychicDetectionRadius;            // result = *(v2 + 5900)
+    if (result <= 0)
+    {
+        if (type->GapGenerator)                           // *(v2 + 3281)
+        {
+            if (this->gapSuperCharged)                    // *(this + 616)
+                return type->SuperGapRadiusInCells;       // *(v2 + 3283)
+            else
+                return type->GapRadiusInCells;            // *(v2 + 3282)
+        }
+        else if (type->SensorArray || type->CloakGenerator)   // *(v2 + 5832) || *(v2 + 5831)
+        {
+            return type->CloakRadiusInCells;              // *(v2 + 5895)
+        }
+        else
+        {
+            int updated = UpdatePowered();                // TechnoClass::UpdatePowered(this) -- 0x70E1A0
+            if (IsNonNullPtr(updated))                    // 0x70E240
+            {
+                // *(*(_DWORD*)updated + 180) — radius (leptons) of the powered
+                // object, read through the opaque handle UpdatePowered returns.
+                int radius = *(int *)(*(int *)updated + 180);
+                if (radius > 0)
+                    return radius / 256;                  // leptons -> cells
+            }
+            return 0;
+        }
+    }
+    return result;
+}
 
 // ============================================================
 // Section 6: Production

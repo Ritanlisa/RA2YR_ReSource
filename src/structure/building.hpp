@@ -146,7 +146,7 @@ public:
     bool SWAvailable();  // 0x457630
     bool SW2Available();  // 0x457690
     static BuildingClass* FindBySWType(int sw_type);  // 0x505310
-    void ClearSuperWeaponAnim();  // 0x451690
+    char ClearSuperWeaponAnim();  // 0x451690
     void UpdatePrism();  // 0x4503F0
     void Disappear_PrismForward();  // 0x44EBF0
 
@@ -515,5 +515,27 @@ protected:
 extern RulesClass* RulesClass_Instance;
 extern bool IKnowWhatImDoing;
 extern bool MCVRedeploy;
+
+// ------------------------------------------------------------
+// Faithful callees referenced by BuildingClass::GetPowerOutput (0x44E7B0) and
+// BuildingClass::ClearSuperWeaponAnim (0x451690). Declared with their canonical
+// IDA-qualified names so the call sites resolve to the right binary addresses
+// (Math::RoundToInt @ 0x7C5F00, SuperWeapon::UpdateSuperWeaponsOwnedHouseClass @
+// 0x50AF10). Defined inline here so the golden functions link without a separate
+// TU; the callee BODIES are outside this task's golden scope.
+namespace Math {
+inline int RoundToInt(double value)  // 0x7C5F00 — round to nearest
+{
+    return (int)(value >= 0.0 ? value + 0.5 : value - 0.5);
+}
+} // namespace Math
+
+class SuperWeapon {
+public:
+    static void UpdateSuperWeaponsOwnedHouseClass(int ownerHouse)  // 0x50AF10
+    {
+        (void)ownerHouse;  // refresh owning house's super-weapon collection (callee body out of scope)
+    }
+};
 
 } // namespace gamemd

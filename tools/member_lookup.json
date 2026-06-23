@@ -1,43 +1,96 @@
 {
   "AbstractClass": {
     "0": {
-      "name": "vfptr_0",
-      "type": "void*"
+      "name": "vtable0",
+      "type": "void *"
     },
     "4": {
-      "name": "vfptr_1",
-      "type": "void*"
+      "name": "vtable1",
+      "type": "void *"
     },
     "8": {
-      "name": "vfptr_2",
-      "type": "void*"
+      "name": "vtable2",
+      "type": "void *"
     },
     "12": {
-      "name": "vfptr_3",
-      "type": "void*"
+      "name": "vtable3",
+      "type": "void *"
     },
     "16": {
       "name": "uniqueId",
-      "type": "uint32_t"
+      "type": "unsigned int"
     },
     "20": {
       "name": "abstractFlags",
-      "type": "uint32_t"
+      "type": "unsigned int"
     },
     "24": {
       "name": "nextArrayIndex",
-      "type": "uint32_t"
+      "type": "unsigned int"
     },
     "28": {
       "name": "referenceCount",
-      "type": "int32_t"
+      "type": "int"
     },
     "32": {
       "name": "needsSave",
-      "type": "bool"
+      "type": "unsigned __int8"
+    },
+    "33": {
+      "name": "_pad21",
+      "type": "unsigned __int8[3]"
     }
   },
   "ObjectClass": {
+    "0": {
+      "name": "vtable0",
+      "type": "void *",
+      "inherited_from": "AbstractClass"
+    },
+    "4": {
+      "name": "vtable1",
+      "type": "void *",
+      "inherited_from": "AbstractClass"
+    },
+    "8": {
+      "name": "vtable2",
+      "type": "void *",
+      "inherited_from": "AbstractClass"
+    },
+    "12": {
+      "name": "vtable3",
+      "type": "void *",
+      "inherited_from": "AbstractClass"
+    },
+    "16": {
+      "name": "uniqueId",
+      "type": "unsigned int",
+      "inherited_from": "AbstractClass"
+    },
+    "20": {
+      "name": "abstractFlags",
+      "type": "unsigned int",
+      "inherited_from": "AbstractClass"
+    },
+    "24": {
+      "name": "nextArrayIndex",
+      "type": "unsigned int",
+      "inherited_from": "AbstractClass"
+    },
+    "28": {
+      "name": "referenceCount",
+      "type": "int",
+      "inherited_from": "AbstractClass"
+    },
+    "32": {
+      "name": "needsSave",
+      "type": "unsigned __int8",
+      "inherited_from": "AbstractClass"
+    },
+    "33": {
+      "name": "_pad21",
+      "type": "unsigned __int8[3]"
+    },
     "36": {
       "name": "objectTypeFlags",
       "type": "uint32_t"
@@ -79,8 +132,8 @@
       "type": "bool"
     },
     "105": {
-      "name": "__pad_69",
-      "type": "uint8_t[3]"
+      "name": "alignmentPadding69",
+      "type": "uint8_t"
     },
     "108": {
       "name": "health",
@@ -95,8 +148,8 @@
       "type": "bool"
     },
     "117": {
-      "name": "__pad_75",
-      "type": "uint8_t[3]"
+      "name": "alignmentPadding75",
+      "type": "uint8_t"
     },
     "120": {
       "name": "spawnStatus",
@@ -127,8 +180,8 @@
       "type": "bool"
     },
     "133": {
-      "name": "__pad_85",
-      "type": "uint8_t[3]"
+      "name": "alignmentPadding85",
+      "type": "uint8_t"
     },
     "136": {
       "name": "parachute",
@@ -155,8 +208,8 @@
       "type": "bool"
     },
     "145": {
-      "name": "__pad_91",
-      "type": "uint8_t[3]"
+      "name": "alignmentPadding91",
+      "type": "uint8_t"
     },
     "148": {
       "name": "lastLayer",
@@ -171,8 +224,8 @@
       "type": "bool"
     },
     "154": {
-      "name": "__pad_9A",
-      "type": "uint8_t[2]"
+      "name": "alignmentPadding99",
+      "type": "uint8_t"
     },
     "156": {
       "name": "location",
@@ -181,89 +234,57 @@
     "168": {
       "name": "lineTrailer",
       "type": "LineTrail*"
-    },
-    "0": {
-      "name": "vfptr_0",
-      "type": "void*",
-      "inherited_from": "AbstractClass"
-    },
-    "4": {
-      "name": "vfptr_1",
-      "type": "void*",
-      "inherited_from": "AbstractClass"
-    },
-    "8": {
-      "name": "vfptr_2",
-      "type": "void*",
-      "inherited_from": "AbstractClass"
-    },
-    "12": {
-      "name": "vfptr_3",
-      "type": "void*",
-      "inherited_from": "AbstractClass"
-    },
-    "16": {
-      "name": "uniqueId",
-      "type": "uint32_t",
-      "inherited_from": "AbstractClass"
-    },
-    "20": {
-      "name": "abstractFlags",
-      "type": "uint32_t",
-      "inherited_from": "AbstractClass"
-    },
-    "24": {
-      "name": "nextArrayIndex",
-      "type": "uint32_t",
-      "inherited_from": "AbstractClass"
-    },
-    "28": {
-      "name": "referenceCount",
-      "type": "int32_t",
-      "inherited_from": "AbstractClass"
-    },
-    "32": {
-      "name": "needsSave",
-      "type": "bool",
-      "inherited_from": "AbstractClass"
     }
   },
   "MissionClass": {
-    "172": {
-      "name": "currentMission",
-      "type": "Mission"
+    "0": {
+      "name": "vtable0",
+      "type": "void *",
+      "inherited_from": "AbstractClass"
     },
-    "176": {
-      "name": "suspendedMission",
-      "type": "Mission"
+    "4": {
+      "name": "vtable1",
+      "type": "void *",
+      "inherited_from": "AbstractClass"
     },
-    "180": {
-      "name": "queuedMission",
-      "type": "Mission"
+    "8": {
+      "name": "vtable2",
+      "type": "void *",
+      "inherited_from": "AbstractClass"
     },
-    "184": {
-      "name": "missionQueued",
-      "type": "bool"
+    "12": {
+      "name": "vtable3",
+      "type": "void *",
+      "inherited_from": "AbstractClass"
     },
-    "185": {
-      "name": "__pad_B9",
-      "type": "uint8_t[3]"
+    "16": {
+      "name": "uniqueId",
+      "type": "unsigned int",
+      "inherited_from": "AbstractClass"
     },
-    "188": {
-      "name": "missionStatus",
-      "type": "int32_t"
+    "20": {
+      "name": "abstractFlags",
+      "type": "unsigned int",
+      "inherited_from": "AbstractClass"
     },
-    "192": {
-      "name": "missionStartTime",
-      "type": "int32_t"
+    "24": {
+      "name": "nextArrayIndex",
+      "type": "unsigned int",
+      "inherited_from": "AbstractClass"
     },
-    "196": {
-      "name": "missionData",
-      "type": "uint32_t"
+    "28": {
+      "name": "referenceCount",
+      "type": "int",
+      "inherited_from": "AbstractClass"
     },
-    "200": {
-      "name": "missionTimer",
-      "type": "TimerStruct"
+    "32": {
+      "name": "needsSave",
+      "type": "unsigned __int8",
+      "inherited_from": "AbstractClass"
+    },
+    "33": {
+      "name": "_pad21",
+      "type": "unsigned __int8[3]"
     },
     "36": {
       "name": "objectTypeFlags",
@@ -316,8 +337,8 @@
       "inherited_from": "ObjectClass"
     },
     "105": {
-      "name": "__pad_69",
-      "type": "uint8_t[3]",
+      "name": "alignmentPadding69",
+      "type": "uint8_t",
       "inherited_from": "ObjectClass"
     },
     "108": {
@@ -336,8 +357,8 @@
       "inherited_from": "ObjectClass"
     },
     "117": {
-      "name": "__pad_75",
-      "type": "uint8_t[3]",
+      "name": "alignmentPadding75",
+      "type": "uint8_t",
       "inherited_from": "ObjectClass"
     },
     "120": {
@@ -376,8 +397,8 @@
       "inherited_from": "ObjectClass"
     },
     "133": {
-      "name": "__pad_85",
-      "type": "uint8_t[3]",
+      "name": "alignmentPadding85",
+      "type": "uint8_t",
       "inherited_from": "ObjectClass"
     },
     "136": {
@@ -411,8 +432,8 @@
       "inherited_from": "ObjectClass"
     },
     "145": {
-      "name": "__pad_91",
-      "type": "uint8_t[3]",
+      "name": "alignmentPadding91",
+      "type": "uint8_t",
       "inherited_from": "ObjectClass"
     },
     "148": {
@@ -431,8 +452,8 @@
       "inherited_from": "ObjectClass"
     },
     "154": {
-      "name": "__pad_9A",
-      "type": "uint8_t[2]",
+      "name": "alignmentPadding99",
+      "type": "uint8_t",
       "inherited_from": "ObjectClass"
     },
     "156": {
@@ -445,129 +466,92 @@
       "type": "LineTrail*",
       "inherited_from": "ObjectClass"
     },
-    "0": {
-      "name": "vfptr_0",
-      "type": "void*",
-      "inherited_from": "AbstractClass"
+    "172": {
+      "name": "currentMission",
+      "type": "int32_t"
     },
-    "4": {
-      "name": "vfptr_1",
-      "type": "void*",
-      "inherited_from": "AbstractClass"
+    "176": {
+      "name": "suspendedMission",
+      "type": "int32_t"
     },
-    "8": {
-      "name": "vfptr_2",
-      "type": "void*",
-      "inherited_from": "AbstractClass"
+    "180": {
+      "name": "queuedMission",
+      "type": "int32_t"
     },
-    "12": {
-      "name": "vfptr_3",
-      "type": "void*",
-      "inherited_from": "AbstractClass"
+    "184": {
+      "name": "missionQueued",
+      "type": "bool"
     },
-    "16": {
-      "name": "uniqueId",
-      "type": "uint32_t",
-      "inherited_from": "AbstractClass"
+    "185": {
+      "name": "alignmentPaddingB9",
+      "type": "uint8_t"
     },
-    "20": {
-      "name": "abstractFlags",
-      "type": "uint32_t",
-      "inherited_from": "AbstractClass"
+    "188": {
+      "name": "missionStatus",
+      "type": "int32_t"
     },
-    "24": {
-      "name": "nextArrayIndex",
-      "type": "uint32_t",
-      "inherited_from": "AbstractClass"
+    "192": {
+      "name": "missionStartTime",
+      "type": "int32_t"
     },
-    "28": {
-      "name": "referenceCount",
-      "type": "int32_t",
-      "inherited_from": "AbstractClass"
+    "196": {
+      "name": "missionData",
+      "type": "uint32_t"
     },
-    "32": {
-      "name": "needsSave",
-      "type": "bool",
-      "inherited_from": "AbstractClass"
+    "200": {
+      "name": "missionTimer",
+      "type": "TimerStruct"
     }
   },
   "RadioClass": {
-    "212": {
-      "name": "lastCommands",
-      "type": "int32_t[3]"
+    "0": {
+      "name": "vtable0",
+      "type": "void *",
+      "inherited_from": "AbstractClass"
     },
-    "224": {
-      "name": "radioLinks",
-      "type": "DynamicVectorClass<TechnoClass*>"
+    "4": {
+      "name": "vtable1",
+      "type": "void *",
+      "inherited_from": "AbstractClass"
     },
-    "248": {
-      "name": "radioContact",
-      "type": "TechnoClass*"
+    "8": {
+      "name": "vtable2",
+      "type": "void *",
+      "inherited_from": "AbstractClass"
     },
-    "252": {
-      "name": "radioOperator",
-      "type": "TechnoClass*"
+    "12": {
+      "name": "vtable3",
+      "type": "void *",
+      "inherited_from": "AbstractClass"
     },
-    "256": {
-      "name": "radioCommand",
-      "type": "int32_t"
+    "16": {
+      "name": "uniqueId",
+      "type": "unsigned int",
+      "inherited_from": "AbstractClass"
     },
-    "260": {
-      "name": "radioTimer",
-      "type": "TimerStruct"
+    "20": {
+      "name": "abstractFlags",
+      "type": "unsigned int",
+      "inherited_from": "AbstractClass"
     },
-    "272": {
-      "name": "radioQueue",
-      "type": "int32_t[10]"
+    "24": {
+      "name": "nextArrayIndex",
+      "type": "unsigned int",
+      "inherited_from": "AbstractClass"
     },
-    "312": {
-      "name": "radioQueueCount",
-      "type": "int32_t"
+    "28": {
+      "name": "referenceCount",
+      "type": "int",
+      "inherited_from": "AbstractClass"
     },
-    "172": {
-      "name": "currentMission",
-      "type": "Mission",
-      "inherited_from": "MissionClass"
+    "32": {
+      "name": "needsSave",
+      "type": "unsigned __int8",
+      "inherited_from": "AbstractClass"
     },
-    "176": {
-      "name": "suspendedMission",
-      "type": "Mission",
-      "inherited_from": "MissionClass"
-    },
-    "180": {
-      "name": "queuedMission",
-      "type": "Mission",
-      "inherited_from": "MissionClass"
-    },
-    "184": {
-      "name": "missionQueued",
-      "type": "bool",
-      "inherited_from": "MissionClass"
-    },
-    "185": {
-      "name": "__pad_B9",
-      "type": "uint8_t[3]",
-      "inherited_from": "MissionClass"
-    },
-    "188": {
-      "name": "missionStatus",
-      "type": "int32_t",
-      "inherited_from": "MissionClass"
-    },
-    "192": {
-      "name": "missionStartTime",
-      "type": "int32_t",
-      "inherited_from": "MissionClass"
-    },
-    "196": {
-      "name": "missionData",
-      "type": "uint32_t",
-      "inherited_from": "MissionClass"
-    },
-    "200": {
-      "name": "missionTimer",
-      "type": "TimerStruct",
-      "inherited_from": "MissionClass"
+    "33": {
+      "name": "_pad21",
+      "type": "unsigned __int8[3]"
     },
     "36": {
       "name": "objectTypeFlags",
@@ -620,8 +604,8 @@
       "inherited_from": "ObjectClass"
     },
     "105": {
-      "name": "__pad_69",
-      "type": "uint8_t[3]",
+      "name": "alignmentPadding69",
+      "type": "uint8_t",
       "inherited_from": "ObjectClass"
     },
     "108": {
@@ -640,8 +624,8 @@
       "inherited_from": "ObjectClass"
     },
     "117": {
-      "name": "__pad_75",
-      "type": "uint8_t[3]",
+      "name": "alignmentPadding75",
+      "type": "uint8_t",
       "inherited_from": "ObjectClass"
     },
     "120": {
@@ -680,8 +664,8 @@
       "inherited_from": "ObjectClass"
     },
     "133": {
-      "name": "__pad_85",
-      "type": "uint8_t[3]",
+      "name": "alignmentPadding85",
+      "type": "uint8_t",
       "inherited_from": "ObjectClass"
     },
     "136": {
@@ -715,8 +699,8 @@
       "inherited_from": "ObjectClass"
     },
     "145": {
-      "name": "__pad_91",
-      "type": "uint8_t[3]",
+      "name": "alignmentPadding91",
+      "type": "uint8_t",
       "inherited_from": "ObjectClass"
     },
     "148": {
@@ -735,8 +719,8 @@
       "inherited_from": "ObjectClass"
     },
     "154": {
-      "name": "__pad_9A",
-      "type": "uint8_t[2]",
+      "name": "alignmentPadding99",
+      "type": "uint8_t",
       "inherited_from": "ObjectClass"
     },
     "156": {
@@ -749,561 +733,109 @@
       "type": "LineTrail*",
       "inherited_from": "ObjectClass"
     },
-    "0": {
-      "name": "vfptr_0",
-      "type": "void*",
-      "inherited_from": "AbstractClass"
-    },
-    "4": {
-      "name": "vfptr_1",
-      "type": "void*",
-      "inherited_from": "AbstractClass"
-    },
-    "8": {
-      "name": "vfptr_2",
-      "type": "void*",
-      "inherited_from": "AbstractClass"
-    },
-    "12": {
-      "name": "vfptr_3",
-      "type": "void*",
-      "inherited_from": "AbstractClass"
-    },
-    "16": {
-      "name": "uniqueId",
-      "type": "uint32_t",
-      "inherited_from": "AbstractClass"
-    },
-    "20": {
-      "name": "abstractFlags",
-      "type": "uint32_t",
-      "inherited_from": "AbstractClass"
-    },
-    "24": {
-      "name": "nextArrayIndex",
-      "type": "uint32_t",
-      "inherited_from": "AbstractClass"
-    },
-    "28": {
-      "name": "referenceCount",
+    "172": {
+      "name": "currentMission",
       "type": "int32_t",
-      "inherited_from": "AbstractClass"
+      "inherited_from": "MissionClass"
     },
-    "32": {
-      "name": "needsSave",
+    "176": {
+      "name": "suspendedMission",
+      "type": "int32_t",
+      "inherited_from": "MissionClass"
+    },
+    "180": {
+      "name": "queuedMission",
+      "type": "int32_t",
+      "inherited_from": "MissionClass"
+    },
+    "184": {
+      "name": "missionQueued",
       "type": "bool",
-      "inherited_from": "AbstractClass"
+      "inherited_from": "MissionClass"
+    },
+    "185": {
+      "name": "alignmentPaddingB9",
+      "type": "uint8_t",
+      "inherited_from": "MissionClass"
+    },
+    "188": {
+      "name": "missionStatus",
+      "type": "int32_t",
+      "inherited_from": "MissionClass"
+    },
+    "192": {
+      "name": "missionStartTime",
+      "type": "int32_t",
+      "inherited_from": "MissionClass"
+    },
+    "196": {
+      "name": "missionData",
+      "type": "uint32_t",
+      "inherited_from": "MissionClass"
+    },
+    "200": {
+      "name": "missionTimer",
+      "type": "TimerStruct",
+      "inherited_from": "MissionClass"
+    },
+    "212": {
+      "name": "lastCommands",
+      "type": "int32_t"
+    },
+    "224": {
+      "name": "radioLinks",
+      "type": "VectorClass<TechnoClass*>"
     }
   },
   "TechnoClass": {
-    "424": {
-      "name": "flashing",
-      "type": "FlashData"
-    },
-    "432": {
-      "name": "animation",
-      "type": "ProgressTimer"
-    },
-    "440": {
-      "name": "passengers",
-      "type": "PassengersClass"
-    },
-    "448": {
-      "name": "transporter",
-      "type": "TechnoClass*"
-    },
-    "452": {
-      "name": "turretChargeTimer",
-      "type": "int32_t"
-    },
-    "456": {
-      "name": "currentTurretNumber",
-      "type": "int32_t"
-    },
-    "460": {
-      "name": "secondaryTurretIndex",
-      "type": "int32_t"
-    },
-    "464": {
-      "name": "behindAnim",
-      "type": "AnimClass*"
-    },
-    "468": {
-      "name": "deployAnim",
-      "type": "AnimClass*"
-    },
-    "472": {
-      "name": "inAirFlag",
-      "type": "bool"
-    },
-    "548": {
-      "name": "spawnManager",
-      "type": "SpawnManagerClass*"
-    },
-    "556": {
-      "name": "spawnOwner",
-      "type": "TechnoClass*"
-    },
-    "564": {
-      "name": "slaveManager",
-      "type": "SlaveManagerClass*"
-    },
-    "572": {
-      "name": "originalOwnerHouse",
-      "type": "HouseClass*"
-    },
-    "580": {
-      "name": "pitchAngle",
-      "type": "float"
-    },
-    "584": {
-      "name": "diskLaserTimer",
-      "type": "TimerStruct"
-    },
-    "596": {
-      "name": "diskLaserChargeState",
-      "type": "uint32_t"
-    },
-    "600": {
-      "name": "ammo",
-      "type": "int32_t"
-    },
-    "604": {
-      "name": "unitValue",
-      "type": "int32_t"
-    },
-    "608": {
-      "name": "fireParticles",
-      "type": "ParticleSystemClass*"
-    },
-    "612": {
-      "name": "sparkParticles",
-      "type": "ParticleSystemClass*"
-    },
-    "616": {
-      "name": "ambientParticles",
-      "type": "ParticleSystemClass*"
-    },
-    "620": {
-      "name": "damageParticles",
-      "type": "ParticleSystemClass*"
-    },
-    "624": {
-      "name": "railgunParticles",
-      "type": "ParticleSystemClass*"
-    },
-    "628": {
-      "name": "auxParticles1",
-      "type": "ParticleSystemClass*"
-    },
-    "632": {
-      "name": "auxParticles2",
-      "type": "ParticleSystemClass*"
-    },
-    "636": {
-      "name": "firingParticles",
-      "type": "ParticleSystemClass*"
-    },
-    "640": {
-      "name": "waveEffect",
-      "type": "WaveClass*"
-    },
-    "644": {
-      "name": "tiltSidewaysAngle",
-      "type": "float"
-    },
-    "648": {
-      "name": "tiltForwardsAngle",
-      "type": "float"
-    },
-    "652": {
-      "name": "tiltSidewaysRate",
-      "type": "float"
-    },
-    "656": {
-      "name": "tiltForwardsRate",
-      "type": "float"
-    },
-    "660": {
-      "name": "hijackerInfantryType",
-      "type": "int32_t"
-    },
-    "664": {
-      "name": "storedTiberium",
-      "type": "OwnedTiberiumStruct"
-    },
-    "680": {
-      "name": "tiberiumCollectionState",
-      "type": "uint32_t"
-    },
-    "684": {
-      "name": "unloadTimer",
-      "type": "TransitionTimer"
-    },
-    "696": {
-      "name": "barrelFacing",
-      "type": "FacingStruct"
-    },
-    "700": {
-      "name": "facing",
-      "type": "FacingStruct"
-    },
-    "704": {
-      "name": "turretFacing",
-      "type": "FacingStruct"
-    },
-    "708": {
-      "name": "currentBurstIndex",
-      "type": "int32_t"
-    },
-    "712": {
-      "name": "target_laser_timer",
-      "type": "TimerStruct"
-    },
-    "724": {
-      "name": "targetLaserOpacity",
-      "type": "int16_t"
-    },
-    "726": {
-      "name": "targetLaserFlags",
-      "type": "uint16_t"
-    },
-    "728": {
-      "name": "isCountedAsOwned",
-      "type": "bool"
-    },
-    "729": {
-      "name": "isSinking",
-      "type": "bool"
-    },
-    "730": {
-      "name": "wasAlreadySinking",
-      "type": "bool"
-    },
-    "731": {
-      "name": "isReceivingDamageEffect",
-      "type": "bool"
-    },
-    "732": {
-      "name": "isPlayingDamageSound",
-      "type": "bool"
-    },
-    "733": {
-      "name": "hasBeenAttacked",
-      "type": "bool"
-    },
-    "734": {
-      "name": "isCloakableFlag",
-      "type": "bool"
-    },
-    "735": {
-      "name": "isPrimaryFactory",
-      "type": "bool"
-    },
-    "736": {
-      "name": "isSpawned",
-      "type": "bool"
-    },
-    "737": {
-      "name": "isInPlayfield",
-      "type": "bool"
-    },
-    "740": {
-      "name": "turretRecoil",
-      "type": "RecoilData"
-    },
-    "764": {
-      "name": "barrelRecoil",
-      "type": "RecoilData"
-    },
-    "788": {
-      "name": "isTurretLocked",
-      "type": "bool"
-    },
-    "789": {
-      "name": "isBarrelLocked",
-      "type": "bool"
-    },
-    "790": {
-      "name": "isHumanControlled",
-      "type": "bool"
-    },
-    "791": {
-      "name": "isDiscoveredByPlayer",
-      "type": "bool"
-    },
-    "792": {
-      "name": "isDiscoveredByComputer",
-      "type": "bool"
-    },
-    "793": {
-      "name": "isSelectedByPlayer",
-      "type": "bool"
-    },
-    "794": {
-      "name": "isUnderCursor",
-      "type": "bool"
-    },
-    "795": {
-      "name": "isCommandLineTarget",
-      "type": "bool"
-    },
-    "796": {
-      "name": "sightRangeBonus",
-      "type": "char"
-    },
-    "797": {
-      "name": "isRecruitableByAlly",
-      "type": "bool"
-    },
-    "798": {
-      "name": "isRecruitableByEnemy",
-      "type": "bool"
-    },
-    "799": {
-      "name": "isRadarTracked",
-      "type": "bool"
-    },
-    "800": {
-      "name": "isOnCarryall",
-      "type": "bool"
-    },
-    "801": {
-      "name": "isCrashing",
-      "type": "bool"
-    },
-    "802": {
-      "name": "wasAlreadyCrashing",
-      "type": "bool"
-    },
-    "803": {
-      "name": "isBeingManipulated",
-      "type": "bool"
-    },
-    "804": {
-      "name": "manipulatedByUnit",
-      "type": "TechnoClass*"
-    },
-    "808": {
-      "name": "chronoWarpedByHouse",
-      "type": "HouseClass*"
-    },
-    "812": {
-      "name": "isChronoImmuneFlag",
-      "type": "bool"
-    },
-    "813": {
-      "name": "isEMPImmune",
-      "type": "bool"
-    },
-    "814": {
-      "name": "isRadiationImmune",
-      "type": "bool"
-    },
-    "816": {
-      "name": "previousTeam",
-      "type": "TeamClass*"
-    },
-    "820": {
-      "name": "isCountedAsOwned_special",
-      "type": "bool"
-    },
-    "821": {
-      "name": "isAbsorbed",
-      "type": "bool"
-    },
-    "822": {
-      "name": "isGrindingInProgress",
-      "type": "bool"
-    },
-    "824": {
-      "name": "grindingAnimHandle",
-      "type": "uint32_t"
-    },
-    "828": {
-      "name": "currentTargetThreatValues",
-      "type": "DynamicVectorClass<int32_t>"
-    },
-    "852": {
-      "name": "currentTargets",
-      "type": "DynamicVectorClass<AbstractClass*>"
-    },
-    "876": {
-      "name": "attackedTargets",
-      "type": "DynamicVectorClass<AbstractClass*>"
-    },
-    "900": {
-      "name": "audioController3",
-      "type": "AudioController"
-    },
-    "928": {
-      "name": "audioLoopIndex3",
-      "type": "uint32_t"
-    },
-    "932": {
-      "name": "audioVolume3",
-      "type": "uint32_t"
-    },
-    "936": {
-      "name": "audioController4",
-      "type": "AudioController"
-    },
-    "964": {
-      "name": "isAudio4Active",
-      "type": "bool"
-    },
-    "968": {
-      "name": "audioHandle4",
-      "type": "uint32_t"
-    },
-    "972": {
-      "name": "audioController5",
-      "type": "AudioController"
-    },
-    "1000": {
-      "name": "isAudio5Active",
-      "type": "bool"
-    },
-    "1004": {
-      "name": "audioHandle5",
-      "type": "uint32_t"
-    },
-    "1008": {
-      "name": "audioController6",
-      "type": "AudioController"
-    },
-    "1036": {
-      "name": "queuedVoiceIndex",
-      "type": "uint32_t"
-    },
-    "1040": {
-      "name": "voiceFlags",
-      "type": "uint32_t"
-    },
-    "1044": {
-      "name": "isVoiceOverride",
-      "type": "bool"
-    },
-    "1048": {
-      "name": "voiceHandle",
-      "type": "uint32_t"
-    },
-    "1052": {
-      "name": "voiceVolumeModifier",
-      "type": "uint32_t"
-    },
-    "1056": {
-      "name": "empLockRemaining",
-      "type": "uint32_t"
-    },
-    "1060": {
-      "name": "threatPosed",
-      "type": "uint32_t"
-    },
-    "1064": {
-      "name": "shouldLoseTarget",
-      "type": "uint32_t"
-    },
-    "1068": {
-      "name": "firingRadBeam",
-      "type": "RadBeam*"
-    },
-    "1072": {
-      "name": "planningToken",
-      "type": "PlanningTokenClass*"
-    },
-    "1076": {
-      "name": "disguiseAsType",
-      "type": "ObjectTypeClass*"
-    },
-    "1080": {
-      "name": "isDisguisedFlag_as_house",
-      "type": "HouseClass*"
-    },
-    "212": {
-      "name": "lastCommands",
-      "type": "int32_t[3]",
-      "inherited_from": "RadioClass"
-    },
-    "224": {
-      "name": "radioLinks",
-      "type": "DynamicVectorClass<TechnoClass*>",
-      "inherited_from": "RadioClass"
-    },
-    "248": {
-      "name": "radioContact",
-      "type": "TechnoClass*",
-      "inherited_from": "RadioClass"
-    },
-    "252": {
-      "name": "radioOperator",
-      "type": "TechnoClass*",
-      "inherited_from": "RadioClass"
-    },
-    "256": {
-      "name": "radioCommand",
-      "type": "int32_t",
-      "inherited_from": "RadioClass"
-    },
-    "260": {
-      "name": "radioTimer",
-      "type": "TimerStruct",
-      "inherited_from": "RadioClass"
-    },
-    "272": {
-      "name": "radioQueue",
-      "type": "int32_t[10]",
-      "inherited_from": "RadioClass"
-    },
-    "312": {
-      "name": "radioQueueCount",
-      "type": "int32_t",
-      "inherited_from": "RadioClass"
-    },
-    "172": {
-      "name": "currentMission",
-      "type": "Mission",
-      "inherited_from": "MissionClass"
-    },
-    "176": {
-      "name": "suspendedMission",
-      "type": "Mission",
-      "inherited_from": "MissionClass"
-    },
-    "180": {
-      "name": "queuedMission",
-      "type": "Mission",
-      "inherited_from": "MissionClass"
-    },
-    "184": {
-      "name": "missionQueued",
-      "type": "bool",
-      "inherited_from": "MissionClass"
-    },
-    "185": {
-      "name": "__pad_B9",
-      "type": "uint8_t[3]",
-      "inherited_from": "MissionClass"
-    },
-    "188": {
-      "name": "missionStatus",
-      "type": "int32_t",
-      "inherited_from": "MissionClass"
-    },
-    "192": {
-      "name": "missionStartTime",
-      "type": "int32_t",
-      "inherited_from": "MissionClass"
-    },
-    "196": {
-      "name": "missionData",
-      "type": "uint32_t",
-      "inherited_from": "MissionClass"
-    },
-    "200": {
-      "name": "missionTimer",
-      "type": "TimerStruct",
-      "inherited_from": "MissionClass"
+    "0": {
+      "name": "vtable0",
+      "type": "void *",
+      "inherited_from": "AbstractClass"
+    },
+    "4": {
+      "name": "vtable1",
+      "type": "void *",
+      "inherited_from": "AbstractClass"
+    },
+    "8": {
+      "name": "vtable2",
+      "type": "void *",
+      "inherited_from": "AbstractClass"
+    },
+    "12": {
+      "name": "vtable3",
+      "type": "void *",
+      "inherited_from": "AbstractClass"
+    },
+    "16": {
+      "name": "uniqueId",
+      "type": "unsigned int",
+      "inherited_from": "AbstractClass"
+    },
+    "20": {
+      "name": "abstractFlags",
+      "type": "unsigned int",
+      "inherited_from": "AbstractClass"
+    },
+    "24": {
+      "name": "nextArrayIndex",
+      "type": "unsigned int",
+      "inherited_from": "AbstractClass"
+    },
+    "28": {
+      "name": "referenceCount",
+      "type": "int",
+      "inherited_from": "AbstractClass"
+    },
+    "32": {
+      "name": "needsSave",
+      "type": "unsigned __int8",
+      "inherited_from": "AbstractClass"
+    },
+    "33": {
+      "name": "_pad21",
+      "type": "unsigned __int8[3]"
     },
     "36": {
       "name": "objectTypeFlags",
@@ -1356,8 +888,8 @@
       "inherited_from": "ObjectClass"
     },
     "105": {
-      "name": "__pad_69",
-      "type": "uint8_t[3]",
+      "name": "alignmentPadding69",
+      "type": "uint8_t",
       "inherited_from": "ObjectClass"
     },
     "108": {
@@ -1376,8 +908,8 @@
       "inherited_from": "ObjectClass"
     },
     "117": {
-      "name": "__pad_75",
-      "type": "uint8_t[3]",
+      "name": "alignmentPadding75",
+      "type": "uint8_t",
       "inherited_from": "ObjectClass"
     },
     "120": {
@@ -1416,8 +948,8 @@
       "inherited_from": "ObjectClass"
     },
     "133": {
-      "name": "__pad_85",
-      "type": "uint8_t[3]",
+      "name": "alignmentPadding85",
+      "type": "uint8_t",
       "inherited_from": "ObjectClass"
     },
     "136": {
@@ -1451,8 +983,8 @@
       "inherited_from": "ObjectClass"
     },
     "145": {
-      "name": "__pad_91",
-      "type": "uint8_t[3]",
+      "name": "alignmentPadding91",
+      "type": "uint8_t",
       "inherited_from": "ObjectClass"
     },
     "148": {
@@ -1471,8 +1003,8 @@
       "inherited_from": "ObjectClass"
     },
     "154": {
-      "name": "__pad_9A",
-      "type": "uint8_t[2]",
+      "name": "alignmentPadding99",
+      "type": "uint8_t",
       "inherited_from": "ObjectClass"
     },
     "156": {
@@ -1485,50 +1017,843 @@
       "type": "LineTrail*",
       "inherited_from": "ObjectClass"
     },
-    "0": {
-      "name": "vfptr_0",
-      "type": "void*",
-      "inherited_from": "AbstractClass"
-    },
-    "4": {
-      "name": "vfptr_1",
-      "type": "void*",
-      "inherited_from": "AbstractClass"
-    },
-    "8": {
-      "name": "vfptr_2",
-      "type": "void*",
-      "inherited_from": "AbstractClass"
-    },
-    "12": {
-      "name": "vfptr_3",
-      "type": "void*",
-      "inherited_from": "AbstractClass"
-    },
-    "16": {
-      "name": "uniqueId",
-      "type": "uint32_t",
-      "inherited_from": "AbstractClass"
-    },
-    "20": {
-      "name": "abstractFlags",
-      "type": "uint32_t",
-      "inherited_from": "AbstractClass"
-    },
-    "24": {
-      "name": "nextArrayIndex",
-      "type": "uint32_t",
-      "inherited_from": "AbstractClass"
-    },
-    "28": {
-      "name": "referenceCount",
+    "172": {
+      "name": "currentMission",
       "type": "int32_t",
-      "inherited_from": "AbstractClass"
+      "inherited_from": "MissionClass"
     },
-    "32": {
-      "name": "needsSave",
+    "176": {
+      "name": "suspendedMission",
+      "type": "int32_t",
+      "inherited_from": "MissionClass"
+    },
+    "180": {
+      "name": "queuedMission",
+      "type": "int32_t",
+      "inherited_from": "MissionClass"
+    },
+    "184": {
+      "name": "missionQueued",
       "type": "bool",
-      "inherited_from": "AbstractClass"
+      "inherited_from": "MissionClass"
+    },
+    "185": {
+      "name": "alignmentPaddingB9",
+      "type": "uint8_t",
+      "inherited_from": "MissionClass"
+    },
+    "188": {
+      "name": "missionStatus",
+      "type": "int32_t",
+      "inherited_from": "MissionClass"
+    },
+    "192": {
+      "name": "missionStartTime",
+      "type": "int32_t",
+      "inherited_from": "MissionClass"
+    },
+    "196": {
+      "name": "missionData",
+      "type": "uint32_t",
+      "inherited_from": "MissionClass"
+    },
+    "200": {
+      "name": "missionTimer",
+      "type": "TimerStruct",
+      "inherited_from": "MissionClass"
+    },
+    "212": {
+      "name": "lastCommands",
+      "type": "int32_t",
+      "inherited_from": "RadioClass"
+    },
+    "224": {
+      "name": "radioLinks",
+      "type": "VectorClass<TechnoClass*>",
+      "inherited_from": "RadioClass"
+    },
+    "240": {
+      "name": "flashing",
+      "type": "FlashData"
+    },
+    "248": {
+      "name": "animation",
+      "type": "ProgressTimer",
+      "inherited_from": "RadioClass"
+    },
+    "256": {
+      "name": "passengers",
+      "type": "PassengersClass",
+      "inherited_from": "RadioClass"
+    },
+    "264": {
+      "name": "transporter",
+      "type": "TechnoClass*"
+    },
+    "268": {
+      "name": "turretChargeTimer",
+      "type": "int32_t"
+    },
+    "272": {
+      "name": "currentTurretNumber",
+      "type": "int32_t",
+      "inherited_from": "RadioClass"
+    },
+    "276": {
+      "name": "secondaryTurretIndex",
+      "type": "int32_t"
+    },
+    "280": {
+      "name": "behindAnim",
+      "type": "AnimClass*"
+    },
+    "284": {
+      "name": "deployAnim",
+      "type": "AnimClass*"
+    },
+    "288": {
+      "name": "inAirFlag",
+      "type": "bool"
+    },
+    "313": {
+      "name": "alignmentPadding139",
+      "type": "uint8_t"
+    },
+    "316": {
+      "name": "currentWeaponSlot",
+      "type": "int32_t"
+    },
+    "320": {
+      "name": "currentRank",
+      "type": "int32_t"
+    },
+    "324": {
+      "name": "gattlingStage",
+      "type": "int32_t"
+    },
+    "328": {
+      "name": "gattlingValue",
+      "type": "int32_t"
+    },
+    "332": {
+      "name": "ammoReloadTimer",
+      "type": "uint32_t"
+    },
+    "336": {
+      "name": "initialOwner",
+      "type": "HouseClass*"
+    },
+    "340": {
+      "name": "veterancy",
+      "type": "VeterancyStruct"
+    },
+    "344": {
+      "name": "alignmentPadding154",
+      "type": "uint32_t"
+    },
+    "352": {
+      "name": "armorMultiplier",
+      "type": "double"
+    },
+    "360": {
+      "name": "firepowerMultiplier",
+      "type": "double"
+    },
+    "368": {
+      "name": "idleActionTimer",
+      "type": "TimerStruct"
+    },
+    "380": {
+      "name": "radarFlashTimer",
+      "type": "TimerStruct"
+    },
+    "392": {
+      "name": "targetingTimer",
+      "type": "TimerStruct"
+    },
+    "404": {
+      "name": "ironCurtainTimer",
+      "type": "TimerStruct"
+    },
+    "416": {
+      "name": "ironTintTimer",
+      "type": "TimerStruct"
+    },
+    "428": {
+      "name": "ironTintStage",
+      "type": "int32_t"
+    },
+    "432": {
+      "name": "airstrikeTimer",
+      "type": "TimerStruct"
+    },
+    "444": {
+      "name": "airstrikeTintTimer",
+      "type": "TimerStruct"
+    },
+    "456": {
+      "name": "airstrikeTintStage",
+      "type": "uint32_t"
+    },
+    "460": {
+      "name": "forceShielded",
+      "type": "int32_t"
+    },
+    "464": {
+      "name": "isDeactivated",
+      "type": "bool"
+    },
+    "465": {
+      "name": "alignmentPadding1BD",
+      "type": "uint8_t"
+    },
+    "468": {
+      "name": "drainTarget",
+      "type": "TechnoClass*"
+    },
+    "472": {
+      "name": "drainingMe",
+      "type": "TechnoClass*"
+    },
+    "476": {
+      "name": "drainAnim",
+      "type": "AnimClass*"
+    },
+    "480": {
+      "name": "isDisguisedFlag",
+      "type": "bool"
+    },
+    "481": {
+      "name": "alignmentPadding1CE",
+      "type": "uint8_t"
+    },
+    "484": {
+      "name": "disguiseCreationFrame",
+      "type": "uint32_t"
+    },
+    "488": {
+      "name": "infantryBlinkTimer",
+      "type": "TimerStruct"
+    },
+    "500": {
+      "name": "disguiseBlinkTimer",
+      "type": "TimerStruct"
+    },
+    "512": {
+      "name": "isTargetedByChrono",
+      "type": "bool"
+    },
+    "513": {
+      "name": "alignmentPadding1F9",
+      "type": "uint8_t"
+    },
+    "516": {
+      "name": "reloadTimer",
+      "type": "TimerStruct"
+    },
+    "528": {
+      "name": "currentBurstCount",
+      "type": "uint32_t"
+    },
+    "532": {
+      "name": "currentBarrelIndex",
+      "type": "uint32_t"
+    },
+    "536": {
+      "name": "displayProductionTo",
+      "type": "IndexBitfield<HouseClass*>"
+    },
+    "540": {
+      "name": "group",
+      "type": "int32_t"
+    },
+    "544": {
+      "name": "focus",
+      "type": "AbstractClass*"
+    },
+    "548": {
+      "name": "owner",
+      "type": "HouseClass*"
+    },
+    "552": {
+      "name": "cloakState",
+      "type": "uint32_t"
+    },
+    "556": {
+      "name": "cloakProgress",
+      "type": "ProgressTimer"
+    },
+    "564": {
+      "name": "cloakDelayTimer",
+      "type": "TimerStruct"
+    },
+    "576": {
+      "name": "warpFactor",
+      "type": "float"
+    },
+    "580": {
+      "name": "isChronosphereImmune",
+      "type": "bool"
+    },
+    "593": {
+      "name": "alignmentPadding251",
+      "type": "uint8_t"
+    },
+    "596": {
+      "name": "lastSightCoords",
+      "type": "CoordStruct"
+    },
+    "608": {
+      "name": "lastSightRange",
+      "type": "int32_t"
+    },
+    "612": {
+      "name": "lastSightHeight",
+      "type": "int32_t"
+    },
+    "616": {
+      "name": "gapSuperCharged",
+      "type": "bool"
+    },
+    "617": {
+      "name": "isGeneratingGap",
+      "type": "bool"
+    },
+    "638": {
+      "name": "alignmentPadding27E",
+      "type": "uint8_t"
+    },
+    "640": {
+      "name": "gapRadius",
+      "type": "int32_t"
+    },
+    "644": {
+      "name": "isBeingWarpedOut",
+      "type": "bool"
+    },
+    "645": {
+      "name": "isWarpingOut",
+      "type": "bool"
+    },
+    "646": {
+      "name": "isWarpEffectActive",
+      "type": "bool"
+    },
+    "647": {
+      "name": "unusedField273",
+      "type": "uint8_t"
+    },
+    "648": {
+      "name": "temporalUsing",
+      "type": "TemporalClass*"
+    },
+    "652": {
+      "name": "temporalTargetingMe",
+      "type": "TemporalClass*"
+    },
+    "656": {
+      "name": "isImmobilized",
+      "type": "bool"
+    },
+    "657": {
+      "name": "alignmentPadding27D",
+      "type": "uint8_t"
+    },
+    "660": {
+      "name": "owningHouseIndex0",
+      "type": "uint32_t"
+    },
+    "664": {
+      "name": "chronoLockRemaining",
+      "type": "int32_t"
+    },
+    "668": {
+      "name": "chronoDestCoords",
+      "type": "CoordStruct"
+    },
+    "680": {
+      "name": "airstrike",
+      "type": "AirstrikeClass*"
+    },
+    "684": {
+      "name": "isBerserk",
+      "type": "bool"
+    },
+    "685": {
+      "name": "alignmentPadding29D",
+      "type": "uint8_t"
+    },
+    "688": {
+      "name": "isBerserk_duration_left",
+      "type": "uint32_t"
+    },
+    "692": {
+      "name": "sprayOffsetIndex",
+      "type": "uint32_t"
+    },
+    "696": {
+      "name": "isUncrushable",
+      "type": "bool"
+    },
+    "697": {
+      "name": "alignmentPadding2A9",
+      "type": "uint8_t"
+    },
+    "700": {
+      "name": "rockerLinkedUnit",
+      "type": "FootClass*"
+    },
+    "704": {
+      "name": "locomotorTarget",
+      "type": "FootClass*"
+    },
+    "708": {
+      "name": "locomotorSource",
+      "type": "FootClass*"
+    },
+    "712": {
+      "name": "target",
+      "type": "AbstractClass*"
+    },
+    "716": {
+      "name": "lastTarget",
+      "type": "AbstractClass*"
+    },
+    "720": {
+      "name": "captureManager",
+      "type": "CaptureManagerClass*"
+    },
+    "724": {
+      "name": "mindControlledBy",
+      "type": "TechnoClass*"
+    },
+    "728": {
+      "name": "mindControlledBy_a_unit",
+      "type": "bool"
+    },
+    "729": {
+      "name": "alignmentPadding2C2",
+      "type": "uint8_t"
+    },
+    "732": {
+      "name": "mindControlRingAnim",
+      "type": "AnimClass*"
+    },
+    "736": {
+      "name": "mindControlledBy_house",
+      "type": "HouseClass*"
+    },
+    "740": {
+      "name": "spawnManager",
+      "type": "SpawnManagerClass*"
+    },
+    "744": {
+      "name": "spawnOwner",
+      "type": "TechnoClass*"
+    },
+    "748": {
+      "name": "slaveManager",
+      "type": "SlaveManagerClass*"
+    },
+    "752": {
+      "name": "slaveOwner",
+      "type": "TechnoClass*"
+    },
+    "756": {
+      "name": "originalOwnerHouse",
+      "type": "HouseClass*"
+    },
+    "760": {
+      "name": "bunkerLinkedUnit",
+      "type": "TechnoClass*"
+    },
+    "764": {
+      "name": "pitchAngle",
+      "type": "float"
+    },
+    "768": {
+      "name": "diskLaserTimer",
+      "type": "TimerStruct"
+    },
+    "780": {
+      "name": "diskLaserChargeState",
+      "type": "uint32_t"
+    },
+    "784": {
+      "name": "ammo",
+      "type": "int32_t"
+    },
+    "788": {
+      "name": "unitValue",
+      "type": "int32_t"
+    },
+    "792": {
+      "name": "fireParticles",
+      "type": "ParticleSystemClass*"
+    },
+    "796": {
+      "name": "sparkParticles",
+      "type": "ParticleSystemClass*"
+    },
+    "800": {
+      "name": "ambientParticles",
+      "type": "ParticleSystemClass*"
+    },
+    "804": {
+      "name": "damageParticles",
+      "type": "ParticleSystemClass*"
+    },
+    "808": {
+      "name": "railgunParticles",
+      "type": "ParticleSystemClass*"
+    },
+    "812": {
+      "name": "auxParticles1",
+      "type": "ParticleSystemClass*"
+    },
+    "816": {
+      "name": "auxParticles2",
+      "type": "ParticleSystemClass*"
+    },
+    "820": {
+      "name": "firingParticles",
+      "type": "ParticleSystemClass*"
+    },
+    "824": {
+      "name": "waveEffect",
+      "type": "WaveClass*"
+    },
+    "828": {
+      "name": "tiltSidewaysAngle",
+      "type": "float"
+    },
+    "832": {
+      "name": "tiltForwardsAngle",
+      "type": "float"
+    },
+    "836": {
+      "name": "tiltSidewaysRate",
+      "type": "float"
+    },
+    "840": {
+      "name": "tiltForwardsRate",
+      "type": "float"
+    },
+    "844": {
+      "name": "hijackerInfantryType",
+      "type": "int32_t"
+    },
+    "848": {
+      "name": "storedTiberium",
+      "type": "OwnedTiberiumStruct"
+    },
+    "864": {
+      "name": "tiberiumCollectionState",
+      "type": "uint32_t"
+    },
+    "868": {
+      "name": "unloadTimer",
+      "type": "TransitionTimer"
+    },
+    "880": {
+      "name": "barrelFacing",
+      "type": "FacingStruct"
+    },
+    "884": {
+      "name": "facing",
+      "type": "FacingStruct"
+    },
+    "888": {
+      "name": "turretFacing",
+      "type": "FacingStruct"
+    },
+    "892": {
+      "name": "currentBurstIndex",
+      "type": "int32_t"
+    },
+    "896": {
+      "name": "target_laser_timer",
+      "type": "TimerStruct"
+    },
+    "908": {
+      "name": "targetLaserOpacity",
+      "type": "int16_t"
+    },
+    "910": {
+      "name": "targetLaserFlags",
+      "type": "uint16_t"
+    },
+    "912": {
+      "name": "isCountedAsOwned",
+      "type": "bool"
+    },
+    "913": {
+      "name": "isSinking",
+      "type": "bool"
+    },
+    "914": {
+      "name": "wasAlreadySinking",
+      "type": "bool"
+    },
+    "915": {
+      "name": "isReceivingDamageEffect",
+      "type": "bool"
+    },
+    "916": {
+      "name": "isPlayingDamageSound",
+      "type": "bool"
+    },
+    "917": {
+      "name": "hasBeenAttacked",
+      "type": "bool"
+    },
+    "918": {
+      "name": "isCloakableFlag",
+      "type": "bool"
+    },
+    "919": {
+      "name": "isPrimaryFactory",
+      "type": "bool"
+    },
+    "920": {
+      "name": "isSpawned",
+      "type": "bool"
+    },
+    "921": {
+      "name": "isInPlayfield",
+      "type": "bool"
+    },
+    "924": {
+      "name": "turretRecoil",
+      "type": "RecoilData"
+    },
+    "956": {
+      "name": "barrelRecoil",
+      "type": "RecoilData"
+    },
+    "988": {
+      "name": "isTurretLocked",
+      "type": "bool"
+    },
+    "989": {
+      "name": "isBarrelLocked",
+      "type": "bool"
+    },
+    "990": {
+      "name": "isHumanControlled",
+      "type": "bool"
+    },
+    "991": {
+      "name": "isDiscoveredByPlayer",
+      "type": "bool"
+    },
+    "992": {
+      "name": "isDiscoveredByComputer",
+      "type": "bool"
+    },
+    "993": {
+      "name": "isSelectedByPlayer",
+      "type": "bool"
+    },
+    "994": {
+      "name": "isUnderCursor",
+      "type": "bool"
+    },
+    "995": {
+      "name": "isCommandLineTarget",
+      "type": "bool"
+    },
+    "996": {
+      "name": "sightRangeBonus",
+      "type": "char"
+    },
+    "997": {
+      "name": "isRecruitableByAlly",
+      "type": "bool"
+    },
+    "998": {
+      "name": "isRecruitableByEnemy",
+      "type": "bool"
+    },
+    "999": {
+      "name": "isRadarTracked",
+      "type": "bool"
+    },
+    "1000": {
+      "name": "isOnCarryall",
+      "type": "bool"
+    },
+    "1001": {
+      "name": "isCrashing",
+      "type": "bool"
+    },
+    "1002": {
+      "name": "wasAlreadyCrashing",
+      "type": "bool"
+    },
+    "1003": {
+      "name": "isBeingManipulated",
+      "type": "bool"
+    },
+    "1004": {
+      "name": "manipulatedByUnit",
+      "type": "TechnoClass*"
+    },
+    "1008": {
+      "name": "chronoWarpedByHouse",
+      "type": "HouseClass*"
+    },
+    "1012": {
+      "name": "isChronoImmuneFlag",
+      "type": "bool"
+    },
+    "1013": {
+      "name": "isEMPImmune",
+      "type": "bool"
+    },
+    "1014": {
+      "name": "isRadiationImmune",
+      "type": "bool"
+    },
+    "1075": {
+      "name": "alignmentPadding433",
+      "type": "uint8_t"
+    },
+    "1076": {
+      "name": "previousTeam",
+      "type": "TeamClass*"
+    },
+    "1080": {
+      "name": "isCountedAsOwned_special",
+      "type": "bool"
+    },
+    "1081": {
+      "name": "isAbsorbed",
+      "type": "bool"
+    },
+    "1082": {
+      "name": "isGrindingInProgress",
+      "type": "bool"
+    },
+    "1083": {
+      "name": "alignmentPadding43B",
+      "type": "uint8_t"
+    },
+    "1084": {
+      "name": "grindingAnimHandle",
+      "type": "uint32_t"
+    },
+    "1088": {
+      "name": "currentTargetThreatValues",
+      "type": "DynamicVectorClass<int32_t>"
+    },
+    "1112": {
+      "name": "currentTargets",
+      "type": "DynamicVectorClass<AbstractClass*>"
+    },
+    "1136": {
+      "name": "attackedTargets",
+      "type": "DynamicVectorClass<AbstractClass*>"
+    },
+    "1160": {
+      "name": "audioController3",
+      "type": "AudioController"
+    },
+    "1180": {
+      "name": "audioLoopIndex3",
+      "type": "uint32_t"
+    },
+    "1184": {
+      "name": "audioVolume3",
+      "type": "uint32_t"
+    },
+    "1188": {
+      "name": "audioController4",
+      "type": "AudioController"
+    },
+    "1208": {
+      "name": "isAudio4Active",
+      "type": "bool"
+    },
+    "1209": {
+      "name": "alignmentPadding4B9",
+      "type": "uint8_t"
+    },
+    "1212": {
+      "name": "audioHandle4",
+      "type": "uint32_t"
+    },
+    "1216": {
+      "name": "audioController5",
+      "type": "AudioController"
+    },
+    "1236": {
+      "name": "isAudio5Active",
+      "type": "bool"
+    },
+    "1237": {
+      "name": "alignmentPadding4D5",
+      "type": "uint8_t"
+    },
+    "1240": {
+      "name": "audioHandle5",
+      "type": "uint32_t"
+    },
+    "1244": {
+      "name": "audioController6",
+      "type": "AudioController"
+    },
+    "1264": {
+      "name": "queuedVoiceIndex",
+      "type": "uint32_t"
+    },
+    "1268": {
+      "name": "voiceFlags",
+      "type": "uint32_t"
+    },
+    "1272": {
+      "name": "isVoiceOverride",
+      "type": "bool"
+    },
+    "1273": {
+      "name": "alignmentPadding4F9",
+      "type": "uint8_t"
+    },
+    "1276": {
+      "name": "voiceHandle",
+      "type": "uint32_t"
+    },
+    "1280": {
+      "name": "voiceVolumeModifier",
+      "type": "uint32_t"
+    },
+    "1284": {
+      "name": "empLockRemaining",
+      "type": "uint32_t"
+    },
+    "1288": {
+      "name": "threatPosed",
+      "type": "uint32_t"
+    },
+    "1292": {
+      "name": "shouldLoseTarget",
+      "type": "uint32_t"
+    },
+    "1296": {
+      "name": "firingRadBeam",
+      "type": "RadBeam*"
+    },
+    "1300": {
+      "name": "planningToken",
+      "type": "PlanningTokenClass*"
+    },
+    "1304": {
+      "name": "disguiseAsType",
+      "type": "ObjectTypeClass*"
+    },
+    "1308": {
+      "name": "isDisguisedFlag_as_house",
+      "type": "HouseClass*"
     }
   },
   "FootClass": {
@@ -6484,620 +6809,54 @@
     }
   },
   "BuildingClass": {
-    "424": {
-      "name": "flashing",
-      "type": "FlashData",
-      "inherited_from": "TechnoClass"
-    },
-    "432": {
-      "name": "animation",
-      "type": "ProgressTimer",
-      "inherited_from": "TechnoClass"
-    },
-    "440": {
-      "name": "passengers",
-      "type": "PassengersClass",
-      "inherited_from": "TechnoClass"
-    },
-    "448": {
-      "name": "transporter",
-      "type": "TechnoClass*",
-      "inherited_from": "TechnoClass"
-    },
-    "452": {
-      "name": "turretChargeTimer",
-      "type": "int32_t",
-      "inherited_from": "TechnoClass"
-    },
-    "456": {
-      "name": "currentTurretNumber",
-      "type": "int32_t",
-      "inherited_from": "TechnoClass"
-    },
-    "460": {
-      "name": "secondaryTurretIndex",
-      "type": "int32_t",
-      "inherited_from": "TechnoClass"
-    },
-    "464": {
-      "name": "behindAnim",
-      "type": "AnimClass*",
-      "inherited_from": "TechnoClass"
-    },
-    "468": {
-      "name": "deployAnim",
-      "type": "AnimClass*",
-      "inherited_from": "TechnoClass"
-    },
-    "472": {
-      "name": "inAirFlag",
-      "type": "bool",
-      "inherited_from": "TechnoClass"
-    },
-    "548": {
-      "name": "spawnManager",
-      "type": "SpawnManagerClass*",
-      "inherited_from": "TechnoClass"
-    },
-    "556": {
-      "name": "spawnOwner",
-      "type": "TechnoClass*",
-      "inherited_from": "TechnoClass"
-    },
-    "564": {
-      "name": "slaveManager",
-      "type": "SlaveManagerClass*",
-      "inherited_from": "TechnoClass"
-    },
-    "572": {
-      "name": "originalOwnerHouse",
-      "type": "HouseClass*",
-      "inherited_from": "TechnoClass"
-    },
-    "580": {
-      "name": "pitchAngle",
-      "type": "float",
-      "inherited_from": "TechnoClass"
-    },
-    "584": {
-      "name": "diskLaserTimer",
-      "type": "TimerStruct",
-      "inherited_from": "TechnoClass"
-    },
-    "596": {
-      "name": "diskLaserChargeState",
-      "type": "uint32_t",
-      "inherited_from": "TechnoClass"
-    },
-    "600": {
-      "name": "ammo",
-      "type": "int32_t",
-      "inherited_from": "TechnoClass"
-    },
-    "604": {
-      "name": "unitValue",
-      "type": "int32_t",
-      "inherited_from": "TechnoClass"
-    },
-    "608": {
-      "name": "fireParticles",
-      "type": "ParticleSystemClass*",
-      "inherited_from": "TechnoClass"
-    },
-    "612": {
-      "name": "sparkParticles",
-      "type": "ParticleSystemClass*",
-      "inherited_from": "TechnoClass"
-    },
-    "616": {
-      "name": "ambientParticles",
-      "type": "ParticleSystemClass*",
-      "inherited_from": "TechnoClass"
-    },
-    "620": {
-      "name": "damageParticles",
-      "type": "ParticleSystemClass*",
-      "inherited_from": "TechnoClass"
-    },
-    "624": {
-      "name": "railgunParticles",
-      "type": "ParticleSystemClass*",
-      "inherited_from": "TechnoClass"
-    },
-    "628": {
-      "name": "auxParticles1",
-      "type": "ParticleSystemClass*",
-      "inherited_from": "TechnoClass"
-    },
-    "632": {
-      "name": "auxParticles2",
-      "type": "ParticleSystemClass*",
-      "inherited_from": "TechnoClass"
-    },
-    "636": {
-      "name": "firingParticles",
-      "type": "ParticleSystemClass*",
-      "inherited_from": "TechnoClass"
-    },
-    "640": {
-      "name": "waveEffect",
-      "type": "WaveClass*",
-      "inherited_from": "TechnoClass"
-    },
-    "644": {
-      "name": "tiltSidewaysAngle",
-      "type": "float",
-      "inherited_from": "TechnoClass"
-    },
-    "648": {
-      "name": "tiltForwardsAngle",
-      "type": "float",
-      "inherited_from": "TechnoClass"
-    },
-    "652": {
-      "name": "tiltSidewaysRate",
-      "type": "float",
-      "inherited_from": "TechnoClass"
-    },
-    "656": {
-      "name": "tiltForwardsRate",
-      "type": "float",
-      "inherited_from": "TechnoClass"
-    },
-    "660": {
-      "name": "hijackerInfantryType",
-      "type": "int32_t",
-      "inherited_from": "TechnoClass"
-    },
-    "664": {
-      "name": "storedTiberium",
-      "type": "OwnedTiberiumStruct",
-      "inherited_from": "TechnoClass"
-    },
-    "680": {
-      "name": "tiberiumCollectionState",
-      "type": "uint32_t",
-      "inherited_from": "TechnoClass"
-    },
-    "684": {
-      "name": "unloadTimer",
-      "type": "TransitionTimer",
-      "inherited_from": "TechnoClass"
-    },
-    "696": {
-      "name": "barrelFacing",
-      "type": "FacingStruct",
-      "inherited_from": "TechnoClass"
-    },
-    "700": {
-      "name": "facing",
-      "type": "FacingStruct",
-      "inherited_from": "TechnoClass"
-    },
-    "704": {
-      "name": "turretFacing",
-      "type": "FacingStruct",
-      "inherited_from": "TechnoClass"
-    },
-    "708": {
-      "name": "currentBurstIndex",
-      "type": "int32_t",
-      "inherited_from": "TechnoClass"
-    },
-    "712": {
-      "name": "target_laser_timer",
-      "type": "TimerStruct",
-      "inherited_from": "TechnoClass"
-    },
-    "724": {
-      "name": "targetLaserOpacity",
-      "type": "int16_t",
-      "inherited_from": "TechnoClass"
-    },
-    "726": {
-      "name": "targetLaserFlags",
-      "type": "uint16_t",
-      "inherited_from": "TechnoClass"
-    },
-    "728": {
-      "name": "isCountedAsOwned",
-      "type": "bool",
-      "inherited_from": "TechnoClass"
-    },
-    "729": {
-      "name": "isSinking",
-      "type": "bool",
-      "inherited_from": "TechnoClass"
-    },
-    "730": {
-      "name": "wasAlreadySinking",
-      "type": "bool",
-      "inherited_from": "TechnoClass"
-    },
-    "731": {
-      "name": "isReceivingDamageEffect",
-      "type": "bool",
-      "inherited_from": "TechnoClass"
-    },
-    "732": {
-      "name": "isPlayingDamageSound",
-      "type": "bool",
-      "inherited_from": "TechnoClass"
-    },
-    "733": {
-      "name": "hasBeenAttacked",
-      "type": "bool",
-      "inherited_from": "TechnoClass"
-    },
-    "734": {
-      "name": "isCloakableFlag",
-      "type": "bool",
-      "inherited_from": "TechnoClass"
-    },
-    "735": {
-      "name": "isPrimaryFactory",
-      "type": "bool",
-      "inherited_from": "TechnoClass"
-    },
-    "736": {
-      "name": "isSpawned",
-      "type": "bool",
-      "inherited_from": "TechnoClass"
-    },
-    "737": {
-      "name": "isInPlayfield",
-      "type": "bool",
-      "inherited_from": "TechnoClass"
-    },
-    "740": {
-      "name": "turretRecoil",
-      "type": "RecoilData",
-      "inherited_from": "TechnoClass"
-    },
-    "764": {
-      "name": "barrelRecoil",
-      "type": "RecoilData",
-      "inherited_from": "TechnoClass"
-    },
-    "788": {
-      "name": "isTurretLocked",
-      "type": "bool",
-      "inherited_from": "TechnoClass"
-    },
-    "789": {
-      "name": "isBarrelLocked",
-      "type": "bool",
-      "inherited_from": "TechnoClass"
-    },
-    "790": {
-      "name": "isHumanControlled",
-      "type": "bool",
-      "inherited_from": "TechnoClass"
-    },
-    "791": {
-      "name": "isDiscoveredByPlayer",
-      "type": "bool",
-      "inherited_from": "TechnoClass"
-    },
-    "792": {
-      "name": "isDiscoveredByComputer",
-      "type": "bool",
-      "inherited_from": "TechnoClass"
-    },
-    "793": {
-      "name": "isSelectedByPlayer",
-      "type": "bool",
-      "inherited_from": "TechnoClass"
-    },
-    "794": {
-      "name": "isUnderCursor",
-      "type": "bool",
-      "inherited_from": "TechnoClass"
-    },
-    "795": {
-      "name": "isCommandLineTarget",
-      "type": "bool",
-      "inherited_from": "TechnoClass"
-    },
-    "796": {
-      "name": "sightRangeBonus",
-      "type": "char",
-      "inherited_from": "TechnoClass"
-    },
-    "797": {
-      "name": "isRecruitableByAlly",
-      "type": "bool",
-      "inherited_from": "TechnoClass"
-    },
-    "798": {
-      "name": "isRecruitableByEnemy",
-      "type": "bool",
-      "inherited_from": "TechnoClass"
-    },
-    "799": {
-      "name": "isRadarTracked",
-      "type": "bool",
-      "inherited_from": "TechnoClass"
-    },
-    "800": {
-      "name": "isOnCarryall",
-      "type": "bool",
-      "inherited_from": "TechnoClass"
-    },
-    "801": {
-      "name": "isCrashing",
-      "type": "bool",
-      "inherited_from": "TechnoClass"
-    },
-    "802": {
-      "name": "wasAlreadyCrashing",
-      "type": "bool",
-      "inherited_from": "TechnoClass"
-    },
-    "803": {
-      "name": "isBeingManipulated",
-      "type": "bool",
-      "inherited_from": "TechnoClass"
-    },
-    "804": {
-      "name": "manipulatedByUnit",
-      "type": "TechnoClass*",
-      "inherited_from": "TechnoClass"
-    },
-    "808": {
-      "name": "chronoWarpedByHouse",
-      "type": "HouseClass*",
-      "inherited_from": "TechnoClass"
-    },
-    "812": {
-      "name": "isChronoImmuneFlag",
-      "type": "bool",
-      "inherited_from": "TechnoClass"
-    },
-    "813": {
-      "name": "isEMPImmune",
-      "type": "bool",
-      "inherited_from": "TechnoClass"
-    },
-    "814": {
-      "name": "isRadiationImmune",
-      "type": "bool",
-      "inherited_from": "TechnoClass"
-    },
-    "816": {
-      "name": "previousTeam",
-      "type": "TeamClass*",
-      "inherited_from": "TechnoClass"
-    },
-    "820": {
-      "name": "isCountedAsOwned_special",
-      "type": "bool",
-      "inherited_from": "TechnoClass"
-    },
-    "821": {
-      "name": "isAbsorbed",
-      "type": "bool",
-      "inherited_from": "TechnoClass"
-    },
-    "822": {
-      "name": "isGrindingInProgress",
-      "type": "bool",
-      "inherited_from": "TechnoClass"
-    },
-    "824": {
-      "name": "grindingAnimHandle",
-      "type": "uint32_t",
-      "inherited_from": "TechnoClass"
-    },
-    "828": {
-      "name": "currentTargetThreatValues",
-      "type": "DynamicVectorClass<int32_t>",
-      "inherited_from": "TechnoClass"
-    },
-    "852": {
-      "name": "currentTargets",
-      "type": "DynamicVectorClass<AbstractClass*>",
-      "inherited_from": "TechnoClass"
-    },
-    "876": {
-      "name": "attackedTargets",
-      "type": "DynamicVectorClass<AbstractClass*>",
-      "inherited_from": "TechnoClass"
-    },
-    "900": {
-      "name": "audioController3",
-      "type": "AudioController",
-      "inherited_from": "TechnoClass"
-    },
-    "928": {
-      "name": "audioLoopIndex3",
-      "type": "uint32_t",
-      "inherited_from": "TechnoClass"
-    },
-    "932": {
-      "name": "audioVolume3",
-      "type": "uint32_t",
-      "inherited_from": "TechnoClass"
-    },
-    "936": {
-      "name": "audioController4",
-      "type": "AudioController",
-      "inherited_from": "TechnoClass"
-    },
-    "964": {
-      "name": "isAudio4Active",
-      "type": "bool",
-      "inherited_from": "TechnoClass"
-    },
-    "968": {
-      "name": "audioHandle4",
-      "type": "uint32_t",
-      "inherited_from": "TechnoClass"
-    },
-    "972": {
-      "name": "audioController5",
-      "type": "AudioController",
-      "inherited_from": "TechnoClass"
-    },
-    "1000": {
-      "name": "isAudio5Active",
-      "type": "bool",
-      "inherited_from": "TechnoClass"
-    },
-    "1004": {
-      "name": "audioHandle5",
-      "type": "uint32_t",
-      "inherited_from": "TechnoClass"
-    },
-    "1008": {
-      "name": "audioController6",
-      "type": "AudioController",
-      "inherited_from": "TechnoClass"
-    },
-    "1036": {
-      "name": "queuedVoiceIndex",
-      "type": "uint32_t",
-      "inherited_from": "TechnoClass"
-    },
-    "1040": {
-      "name": "voiceFlags",
-      "type": "uint32_t",
-      "inherited_from": "TechnoClass"
-    },
-    "1044": {
-      "name": "isVoiceOverride",
-      "type": "bool",
-      "inherited_from": "TechnoClass"
-    },
-    "1048": {
-      "name": "voiceHandle",
-      "type": "uint32_t",
-      "inherited_from": "TechnoClass"
-    },
-    "1052": {
-      "name": "voiceVolumeModifier",
-      "type": "uint32_t",
-      "inherited_from": "TechnoClass"
-    },
-    "1056": {
-      "name": "empLockRemaining",
-      "type": "uint32_t",
-      "inherited_from": "TechnoClass"
-    },
-    "1060": {
-      "name": "threatPosed",
-      "type": "uint32_t",
-      "inherited_from": "TechnoClass"
-    },
-    "1064": {
-      "name": "shouldLoseTarget",
-      "type": "uint32_t",
-      "inherited_from": "TechnoClass"
-    },
-    "1068": {
-      "name": "firingRadBeam",
-      "type": "RadBeam*",
-      "inherited_from": "TechnoClass"
-    },
-    "1072": {
-      "name": "planningToken",
-      "type": "PlanningTokenClass*",
-      "inherited_from": "TechnoClass"
-    },
-    "1076": {
-      "name": "disguiseAsType",
-      "type": "ObjectTypeClass*",
-      "inherited_from": "TechnoClass"
-    },
-    "1080": {
-      "name": "isDisguisedFlag_as_house",
-      "type": "HouseClass*",
-      "inherited_from": "TechnoClass"
-    },
-    "212": {
-      "name": "lastCommands",
-      "type": "int32_t[3]",
-      "inherited_from": "RadioClass"
-    },
-    "224": {
-      "name": "radioLinks",
-      "type": "DynamicVectorClass<TechnoClass*>",
-      "inherited_from": "RadioClass"
-    },
-    "248": {
-      "name": "radioContact",
-      "type": "TechnoClass*",
-      "inherited_from": "RadioClass"
-    },
-    "252": {
-      "name": "radioOperator",
-      "type": "TechnoClass*",
-      "inherited_from": "RadioClass"
-    },
-    "256": {
-      "name": "radioCommand",
-      "type": "int32_t",
-      "inherited_from": "RadioClass"
-    },
-    "260": {
-      "name": "radioTimer",
-      "type": "TimerStruct",
-      "inherited_from": "RadioClass"
-    },
-    "272": {
-      "name": "radioQueue",
-      "type": "int32_t[10]",
-      "inherited_from": "RadioClass"
-    },
-    "312": {
-      "name": "radioQueueCount",
-      "type": "int32_t",
-      "inherited_from": "RadioClass"
-    },
-    "172": {
-      "name": "currentMission",
-      "type": "Mission",
-      "inherited_from": "MissionClass"
-    },
-    "176": {
-      "name": "suspendedMission",
-      "type": "Mission",
-      "inherited_from": "MissionClass"
-    },
-    "180": {
-      "name": "queuedMission",
-      "type": "Mission",
-      "inherited_from": "MissionClass"
-    },
-    "184": {
-      "name": "missionQueued",
-      "type": "bool",
-      "inherited_from": "MissionClass"
-    },
-    "185": {
-      "name": "__pad_B9",
-      "type": "uint8_t[3]",
-      "inherited_from": "MissionClass"
-    },
-    "188": {
-      "name": "missionStatus",
-      "type": "int32_t",
-      "inherited_from": "MissionClass"
-    },
-    "192": {
-      "name": "missionStartTime",
-      "type": "int32_t",
-      "inherited_from": "MissionClass"
-    },
-    "196": {
-      "name": "missionData",
-      "type": "uint32_t",
-      "inherited_from": "MissionClass"
-    },
-    "200": {
-      "name": "missionTimer",
-      "type": "TimerStruct",
-      "inherited_from": "MissionClass"
+    "0": {
+      "name": "vtable0",
+      "type": "void *",
+      "inherited_from": "AbstractClass"
+    },
+    "4": {
+      "name": "vtable1",
+      "type": "void *",
+      "inherited_from": "AbstractClass"
+    },
+    "8": {
+      "name": "vtable2",
+      "type": "void *",
+      "inherited_from": "AbstractClass"
+    },
+    "12": {
+      "name": "vtable3",
+      "type": "void *",
+      "inherited_from": "AbstractClass"
+    },
+    "16": {
+      "name": "uniqueId",
+      "type": "unsigned int",
+      "inherited_from": "AbstractClass"
+    },
+    "20": {
+      "name": "abstractFlags",
+      "type": "unsigned int",
+      "inherited_from": "AbstractClass"
+    },
+    "24": {
+      "name": "nextArrayIndex",
+      "type": "unsigned int",
+      "inherited_from": "AbstractClass"
+    },
+    "28": {
+      "name": "referenceCount",
+      "type": "int",
+      "inherited_from": "AbstractClass"
+    },
+    "32": {
+      "name": "needsSave",
+      "type": "unsigned __int8",
+      "inherited_from": "AbstractClass"
+    },
+    "33": {
+      "name": "_pad21",
+      "type": "unsigned __int8[3]"
     },
     "36": {
       "name": "objectTypeFlags",
@@ -7150,8 +6909,8 @@
       "inherited_from": "ObjectClass"
     },
     "105": {
-      "name": "__pad_69",
-      "type": "uint8_t[3]",
+      "name": "alignmentPadding69",
+      "type": "uint8_t",
       "inherited_from": "ObjectClass"
     },
     "108": {
@@ -7170,8 +6929,8 @@
       "inherited_from": "ObjectClass"
     },
     "117": {
-      "name": "__pad_75",
-      "type": "uint8_t[3]",
+      "name": "alignmentPadding75",
+      "type": "uint8_t",
       "inherited_from": "ObjectClass"
     },
     "120": {
@@ -7210,8 +6969,8 @@
       "inherited_from": "ObjectClass"
     },
     "133": {
-      "name": "__pad_85",
-      "type": "uint8_t[3]",
+      "name": "alignmentPadding85",
+      "type": "uint8_t",
       "inherited_from": "ObjectClass"
     },
     "136": {
@@ -7245,8 +7004,8 @@
       "inherited_from": "ObjectClass"
     },
     "145": {
-      "name": "__pad_91",
-      "type": "uint8_t[3]",
+      "name": "alignmentPadding91",
+      "type": "uint8_t",
       "inherited_from": "ObjectClass"
     },
     "148": {
@@ -7265,8 +7024,8 @@
       "inherited_from": "ObjectClass"
     },
     "154": {
-      "name": "__pad_9A",
-      "type": "uint8_t[2]",
+      "name": "alignmentPadding99",
+      "type": "uint8_t",
       "inherited_from": "ObjectClass"
     },
     "156": {
@@ -7279,50 +7038,1242 @@
       "type": "LineTrail*",
       "inherited_from": "ObjectClass"
     },
-    "0": {
-      "name": "vfptr_0",
-      "type": "void*",
-      "inherited_from": "AbstractClass"
-    },
-    "4": {
-      "name": "vfptr_1",
-      "type": "void*",
-      "inherited_from": "AbstractClass"
-    },
-    "8": {
-      "name": "vfptr_2",
-      "type": "void*",
-      "inherited_from": "AbstractClass"
-    },
-    "12": {
-      "name": "vfptr_3",
-      "type": "void*",
-      "inherited_from": "AbstractClass"
-    },
-    "16": {
-      "name": "uniqueId",
-      "type": "uint32_t",
-      "inherited_from": "AbstractClass"
-    },
-    "20": {
-      "name": "abstractFlags",
-      "type": "uint32_t",
-      "inherited_from": "AbstractClass"
-    },
-    "24": {
-      "name": "nextArrayIndex",
-      "type": "uint32_t",
-      "inherited_from": "AbstractClass"
-    },
-    "28": {
-      "name": "referenceCount",
+    "172": {
+      "name": "currentMission",
       "type": "int32_t",
-      "inherited_from": "AbstractClass"
+      "inherited_from": "MissionClass"
     },
-    "32": {
-      "name": "needsSave",
+    "176": {
+      "name": "suspendedMission",
+      "type": "int32_t",
+      "inherited_from": "MissionClass"
+    },
+    "180": {
+      "name": "queuedMission",
+      "type": "int32_t",
+      "inherited_from": "MissionClass"
+    },
+    "184": {
+      "name": "missionQueued",
       "type": "bool",
-      "inherited_from": "AbstractClass"
+      "inherited_from": "MissionClass"
+    },
+    "185": {
+      "name": "alignmentPaddingB9",
+      "type": "uint8_t",
+      "inherited_from": "MissionClass"
+    },
+    "188": {
+      "name": "missionStatus",
+      "type": "int32_t",
+      "inherited_from": "MissionClass"
+    },
+    "192": {
+      "name": "missionStartTime",
+      "type": "int32_t",
+      "inherited_from": "MissionClass"
+    },
+    "196": {
+      "name": "missionData",
+      "type": "uint32_t",
+      "inherited_from": "MissionClass"
+    },
+    "200": {
+      "name": "missionTimer",
+      "type": "TimerStruct",
+      "inherited_from": "MissionClass"
+    },
+    "212": {
+      "name": "lastCommands",
+      "type": "int32_t",
+      "inherited_from": "RadioClass"
+    },
+    "224": {
+      "name": "radioLinks",
+      "type": "VectorClass<TechnoClass*>",
+      "inherited_from": "RadioClass"
+    },
+    "240": {
+      "name": "flashing",
+      "type": "FlashData"
+    },
+    "248": {
+      "name": "animation",
+      "type": "ProgressTimer",
+      "inherited_from": "RadioClass"
+    },
+    "256": {
+      "name": "passengers",
+      "type": "PassengersClass",
+      "inherited_from": "RadioClass"
+    },
+    "264": {
+      "name": "transporter",
+      "type": "TechnoClass*"
+    },
+    "268": {
+      "name": "turretChargeTimer",
+      "type": "int32_t"
+    },
+    "272": {
+      "name": "currentTurretNumber",
+      "type": "int32_t",
+      "inherited_from": "RadioClass"
+    },
+    "276": {
+      "name": "secondaryTurretIndex",
+      "type": "int32_t"
+    },
+    "280": {
+      "name": "behindAnim",
+      "type": "AnimClass*"
+    },
+    "284": {
+      "name": "deployAnim",
+      "type": "AnimClass*"
+    },
+    "288": {
+      "name": "inAirFlag",
+      "type": "bool"
+    },
+    "313": {
+      "name": "alignmentPadding139",
+      "type": "uint8_t"
+    },
+    "316": {
+      "name": "currentWeaponSlot",
+      "type": "int32_t"
+    },
+    "320": {
+      "name": "currentRank",
+      "type": "int32_t"
+    },
+    "324": {
+      "name": "gattlingStage",
+      "type": "int32_t"
+    },
+    "328": {
+      "name": "gattlingValue",
+      "type": "int32_t"
+    },
+    "332": {
+      "name": "ammoReloadTimer",
+      "type": "uint32_t"
+    },
+    "336": {
+      "name": "initialOwner",
+      "type": "HouseClass*"
+    },
+    "340": {
+      "name": "veterancy",
+      "type": "VeterancyStruct"
+    },
+    "344": {
+      "name": "alignmentPadding154",
+      "type": "uint32_t"
+    },
+    "352": {
+      "name": "armorMultiplier",
+      "type": "double"
+    },
+    "360": {
+      "name": "firepowerMultiplier",
+      "type": "double"
+    },
+    "368": {
+      "name": "idleActionTimer",
+      "type": "TimerStruct"
+    },
+    "380": {
+      "name": "radarFlashTimer",
+      "type": "TimerStruct"
+    },
+    "392": {
+      "name": "targetingTimer",
+      "type": "TimerStruct"
+    },
+    "404": {
+      "name": "ironCurtainTimer",
+      "type": "TimerStruct"
+    },
+    "416": {
+      "name": "ironTintTimer",
+      "type": "TimerStruct"
+    },
+    "428": {
+      "name": "ironTintStage",
+      "type": "int32_t"
+    },
+    "432": {
+      "name": "airstrikeTimer",
+      "type": "TimerStruct",
+      "inherited_from": "TechnoClass"
+    },
+    "444": {
+      "name": "airstrikeTintTimer",
+      "type": "TimerStruct"
+    },
+    "456": {
+      "name": "airstrikeTintStage",
+      "type": "uint32_t",
+      "inherited_from": "TechnoClass"
+    },
+    "460": {
+      "name": "forceShielded",
+      "type": "int32_t",
+      "inherited_from": "TechnoClass"
+    },
+    "464": {
+      "name": "isDeactivated",
+      "type": "bool",
+      "inherited_from": "TechnoClass"
+    },
+    "465": {
+      "name": "alignmentPadding1BD",
+      "type": "uint8_t"
+    },
+    "468": {
+      "name": "drainTarget",
+      "type": "TechnoClass*",
+      "inherited_from": "TechnoClass"
+    },
+    "472": {
+      "name": "drainingMe",
+      "type": "TechnoClass*",
+      "inherited_from": "TechnoClass"
+    },
+    "476": {
+      "name": "drainAnim",
+      "type": "AnimClass*"
+    },
+    "480": {
+      "name": "isDisguisedFlag",
+      "type": "bool"
+    },
+    "481": {
+      "name": "alignmentPadding1CE",
+      "type": "uint8_t"
+    },
+    "484": {
+      "name": "disguiseCreationFrame",
+      "type": "uint32_t"
+    },
+    "488": {
+      "name": "infantryBlinkTimer",
+      "type": "TimerStruct"
+    },
+    "500": {
+      "name": "disguiseBlinkTimer",
+      "type": "TimerStruct"
+    },
+    "512": {
+      "name": "isTargetedByChrono",
+      "type": "bool"
+    },
+    "513": {
+      "name": "alignmentPadding1F9",
+      "type": "uint8_t"
+    },
+    "516": {
+      "name": "reloadTimer",
+      "type": "TimerStruct"
+    },
+    "528": {
+      "name": "currentBurstCount",
+      "type": "uint32_t"
+    },
+    "532": {
+      "name": "currentBarrelIndex",
+      "type": "uint32_t"
+    },
+    "536": {
+      "name": "displayProductionTo",
+      "type": "IndexBitfield<HouseClass*>"
+    },
+    "540": {
+      "name": "group",
+      "type": "int32_t"
+    },
+    "544": {
+      "name": "focus",
+      "type": "AbstractClass*"
+    },
+    "548": {
+      "name": "owner",
+      "type": "HouseClass*",
+      "inherited_from": "TechnoClass"
+    },
+    "552": {
+      "name": "cloakState",
+      "type": "uint32_t"
+    },
+    "556": {
+      "name": "cloakProgress",
+      "type": "ProgressTimer",
+      "inherited_from": "TechnoClass"
+    },
+    "564": {
+      "name": "cloakDelayTimer",
+      "type": "TimerStruct",
+      "inherited_from": "TechnoClass"
+    },
+    "576": {
+      "name": "warpFactor",
+      "type": "float"
+    },
+    "580": {
+      "name": "isChronosphereImmune",
+      "type": "bool",
+      "inherited_from": "TechnoClass"
+    },
+    "593": {
+      "name": "alignmentPadding251",
+      "type": "uint8_t"
+    },
+    "596": {
+      "name": "lastSightCoords",
+      "type": "CoordStruct",
+      "inherited_from": "TechnoClass"
+    },
+    "608": {
+      "name": "lastSightRange",
+      "type": "int32_t",
+      "inherited_from": "TechnoClass"
+    },
+    "612": {
+      "name": "lastSightHeight",
+      "type": "int32_t",
+      "inherited_from": "TechnoClass"
+    },
+    "616": {
+      "name": "gapSuperCharged",
+      "type": "bool",
+      "inherited_from": "TechnoClass"
+    },
+    "617": {
+      "name": "isGeneratingGap",
+      "type": "bool"
+    },
+    "638": {
+      "name": "alignmentPadding27E",
+      "type": "uint8_t"
+    },
+    "640": {
+      "name": "gapRadius",
+      "type": "int32_t",
+      "inherited_from": "TechnoClass"
+    },
+    "644": {
+      "name": "isBeingWarpedOut",
+      "type": "bool",
+      "inherited_from": "TechnoClass"
+    },
+    "645": {
+      "name": "isWarpingOut",
+      "type": "bool"
+    },
+    "646": {
+      "name": "isWarpEffectActive",
+      "type": "bool"
+    },
+    "647": {
+      "name": "unusedField273",
+      "type": "uint8_t"
+    },
+    "648": {
+      "name": "temporalUsing",
+      "type": "TemporalClass*",
+      "inherited_from": "TechnoClass"
+    },
+    "652": {
+      "name": "temporalTargetingMe",
+      "type": "TemporalClass*",
+      "inherited_from": "TechnoClass"
+    },
+    "656": {
+      "name": "isImmobilized",
+      "type": "bool",
+      "inherited_from": "TechnoClass"
+    },
+    "657": {
+      "name": "alignmentPadding27D",
+      "type": "uint8_t"
+    },
+    "660": {
+      "name": "owningHouseIndex0",
+      "type": "uint32_t",
+      "inherited_from": "TechnoClass"
+    },
+    "664": {
+      "name": "chronoLockRemaining",
+      "type": "int32_t",
+      "inherited_from": "TechnoClass"
+    },
+    "668": {
+      "name": "chronoDestCoords",
+      "type": "CoordStruct"
+    },
+    "680": {
+      "name": "airstrike",
+      "type": "AirstrikeClass*",
+      "inherited_from": "TechnoClass"
+    },
+    "684": {
+      "name": "isBerserk",
+      "type": "bool",
+      "inherited_from": "TechnoClass"
+    },
+    "685": {
+      "name": "alignmentPadding29D",
+      "type": "uint8_t"
+    },
+    "688": {
+      "name": "isBerserk_duration_left",
+      "type": "uint32_t"
+    },
+    "692": {
+      "name": "sprayOffsetIndex",
+      "type": "uint32_t"
+    },
+    "696": {
+      "name": "isUncrushable",
+      "type": "bool",
+      "inherited_from": "TechnoClass"
+    },
+    "697": {
+      "name": "alignmentPadding2A9",
+      "type": "uint8_t"
+    },
+    "700": {
+      "name": "rockerLinkedUnit",
+      "type": "FootClass*",
+      "inherited_from": "TechnoClass"
+    },
+    "704": {
+      "name": "locomotorTarget",
+      "type": "FootClass*",
+      "inherited_from": "TechnoClass"
+    },
+    "708": {
+      "name": "locomotorSource",
+      "type": "FootClass*",
+      "inherited_from": "TechnoClass"
+    },
+    "712": {
+      "name": "target",
+      "type": "AbstractClass*",
+      "inherited_from": "TechnoClass"
+    },
+    "716": {
+      "name": "lastTarget",
+      "type": "AbstractClass*"
+    },
+    "720": {
+      "name": "captureManager",
+      "type": "CaptureManagerClass*"
+    },
+    "724": {
+      "name": "mindControlledBy",
+      "type": "TechnoClass*",
+      "inherited_from": "TechnoClass"
+    },
+    "728": {
+      "name": "mindControlledBy_a_unit",
+      "type": "bool",
+      "inherited_from": "TechnoClass"
+    },
+    "729": {
+      "name": "alignmentPadding2C2",
+      "type": "uint8_t",
+      "inherited_from": "TechnoClass"
+    },
+    "732": {
+      "name": "mindControlRingAnim",
+      "type": "AnimClass*",
+      "inherited_from": "TechnoClass"
+    },
+    "736": {
+      "name": "mindControlledBy_house",
+      "type": "HouseClass*",
+      "inherited_from": "TechnoClass"
+    },
+    "740": {
+      "name": "spawnManager",
+      "type": "SpawnManagerClass*",
+      "inherited_from": "TechnoClass"
+    },
+    "744": {
+      "name": "spawnOwner",
+      "type": "TechnoClass*"
+    },
+    "748": {
+      "name": "slaveManager",
+      "type": "SlaveManagerClass*"
+    },
+    "752": {
+      "name": "slaveOwner",
+      "type": "TechnoClass*"
+    },
+    "756": {
+      "name": "originalOwnerHouse",
+      "type": "HouseClass*"
+    },
+    "760": {
+      "name": "bunkerLinkedUnit",
+      "type": "TechnoClass*"
+    },
+    "764": {
+      "name": "pitchAngle",
+      "type": "float",
+      "inherited_from": "TechnoClass"
+    },
+    "768": {
+      "name": "diskLaserTimer",
+      "type": "TimerStruct"
+    },
+    "780": {
+      "name": "diskLaserChargeState",
+      "type": "uint32_t"
+    },
+    "784": {
+      "name": "ammo",
+      "type": "int32_t"
+    },
+    "788": {
+      "name": "unitValue",
+      "type": "int32_t",
+      "inherited_from": "TechnoClass"
+    },
+    "792": {
+      "name": "fireParticles",
+      "type": "ParticleSystemClass*",
+      "inherited_from": "TechnoClass"
+    },
+    "796": {
+      "name": "sparkParticles",
+      "type": "ParticleSystemClass*",
+      "inherited_from": "TechnoClass"
+    },
+    "800": {
+      "name": "ambientParticles",
+      "type": "ParticleSystemClass*",
+      "inherited_from": "TechnoClass"
+    },
+    "804": {
+      "name": "damageParticles",
+      "type": "ParticleSystemClass*",
+      "inherited_from": "TechnoClass"
+    },
+    "808": {
+      "name": "railgunParticles",
+      "type": "ParticleSystemClass*",
+      "inherited_from": "TechnoClass"
+    },
+    "812": {
+      "name": "auxParticles1",
+      "type": "ParticleSystemClass*",
+      "inherited_from": "TechnoClass"
+    },
+    "816": {
+      "name": "auxParticles2",
+      "type": "ParticleSystemClass*",
+      "inherited_from": "TechnoClass"
+    },
+    "820": {
+      "name": "firingParticles",
+      "type": "ParticleSystemClass*",
+      "inherited_from": "TechnoClass"
+    },
+    "824": {
+      "name": "waveEffect",
+      "type": "WaveClass*",
+      "inherited_from": "TechnoClass"
+    },
+    "828": {
+      "name": "tiltSidewaysAngle",
+      "type": "float",
+      "inherited_from": "TechnoClass"
+    },
+    "832": {
+      "name": "tiltForwardsAngle",
+      "type": "float"
+    },
+    "836": {
+      "name": "tiltSidewaysRate",
+      "type": "float"
+    },
+    "840": {
+      "name": "tiltForwardsRate",
+      "type": "float"
+    },
+    "844": {
+      "name": "hijackerInfantryType",
+      "type": "int32_t"
+    },
+    "848": {
+      "name": "storedTiberium",
+      "type": "OwnedTiberiumStruct"
+    },
+    "864": {
+      "name": "tiberiumCollectionState",
+      "type": "uint32_t"
+    },
+    "868": {
+      "name": "unloadTimer",
+      "type": "TransitionTimer"
+    },
+    "880": {
+      "name": "barrelFacing",
+      "type": "FacingStruct"
+    },
+    "884": {
+      "name": "facing",
+      "type": "FacingStruct"
+    },
+    "888": {
+      "name": "turretFacing",
+      "type": "FacingStruct"
+    },
+    "892": {
+      "name": "currentBurstIndex",
+      "type": "int32_t"
+    },
+    "896": {
+      "name": "target_laser_timer",
+      "type": "TimerStruct"
+    },
+    "908": {
+      "name": "targetLaserOpacity",
+      "type": "int16_t"
+    },
+    "910": {
+      "name": "targetLaserFlags",
+      "type": "uint16_t"
+    },
+    "912": {
+      "name": "isCountedAsOwned",
+      "type": "bool"
+    },
+    "913": {
+      "name": "isSinking",
+      "type": "bool"
+    },
+    "914": {
+      "name": "wasAlreadySinking",
+      "type": "bool"
+    },
+    "915": {
+      "name": "isReceivingDamageEffect",
+      "type": "bool"
+    },
+    "916": {
+      "name": "isPlayingDamageSound",
+      "type": "bool"
+    },
+    "917": {
+      "name": "hasBeenAttacked",
+      "type": "bool"
+    },
+    "918": {
+      "name": "isCloakableFlag",
+      "type": "bool"
+    },
+    "919": {
+      "name": "isPrimaryFactory",
+      "type": "bool"
+    },
+    "920": {
+      "name": "isSpawned",
+      "type": "bool"
+    },
+    "921": {
+      "name": "isInPlayfield",
+      "type": "bool"
+    },
+    "924": {
+      "name": "turretRecoil",
+      "type": "RecoilData"
+    },
+    "956": {
+      "name": "barrelRecoil",
+      "type": "RecoilData"
+    },
+    "988": {
+      "name": "isTurretLocked",
+      "type": "bool"
+    },
+    "989": {
+      "name": "isBarrelLocked",
+      "type": "bool"
+    },
+    "990": {
+      "name": "isHumanControlled",
+      "type": "bool"
+    },
+    "991": {
+      "name": "isDiscoveredByPlayer",
+      "type": "bool"
+    },
+    "992": {
+      "name": "isDiscoveredByComputer",
+      "type": "bool"
+    },
+    "993": {
+      "name": "isSelectedByPlayer",
+      "type": "bool"
+    },
+    "994": {
+      "name": "isUnderCursor",
+      "type": "bool"
+    },
+    "995": {
+      "name": "isCommandLineTarget",
+      "type": "bool"
+    },
+    "996": {
+      "name": "sightRangeBonus",
+      "type": "char"
+    },
+    "997": {
+      "name": "isRecruitableByAlly",
+      "type": "bool"
+    },
+    "998": {
+      "name": "isRecruitableByEnemy",
+      "type": "bool"
+    },
+    "999": {
+      "name": "isRadarTracked",
+      "type": "bool"
+    },
+    "1000": {
+      "name": "isOnCarryall",
+      "type": "bool",
+      "inherited_from": "TechnoClass"
+    },
+    "1001": {
+      "name": "isCrashing",
+      "type": "bool"
+    },
+    "1002": {
+      "name": "wasAlreadyCrashing",
+      "type": "bool"
+    },
+    "1003": {
+      "name": "isBeingManipulated",
+      "type": "bool"
+    },
+    "1004": {
+      "name": "manipulatedByUnit",
+      "type": "TechnoClass*",
+      "inherited_from": "TechnoClass"
+    },
+    "1008": {
+      "name": "chronoWarpedByHouse",
+      "type": "HouseClass*",
+      "inherited_from": "TechnoClass"
+    },
+    "1012": {
+      "name": "isChronoImmuneFlag",
+      "type": "bool"
+    },
+    "1013": {
+      "name": "isEMPImmune",
+      "type": "bool"
+    },
+    "1014": {
+      "name": "isRadiationImmune",
+      "type": "bool"
+    },
+    "1075": {
+      "name": "alignmentPadding433",
+      "type": "uint8_t"
+    },
+    "1076": {
+      "name": "previousTeam",
+      "type": "TeamClass*",
+      "inherited_from": "TechnoClass"
+    },
+    "1080": {
+      "name": "isCountedAsOwned_special",
+      "type": "bool",
+      "inherited_from": "TechnoClass"
+    },
+    "1081": {
+      "name": "isAbsorbed",
+      "type": "bool"
+    },
+    "1082": {
+      "name": "isGrindingInProgress",
+      "type": "bool"
+    },
+    "1083": {
+      "name": "alignmentPadding43B",
+      "type": "uint8_t"
+    },
+    "1084": {
+      "name": "grindingAnimHandle",
+      "type": "uint32_t"
+    },
+    "1088": {
+      "name": "currentTargetThreatValues",
+      "type": "DynamicVectorClass<int32_t>"
+    },
+    "1112": {
+      "name": "currentTargets",
+      "type": "DynamicVectorClass<AbstractClass*>"
+    },
+    "1136": {
+      "name": "attackedTargets",
+      "type": "DynamicVectorClass<AbstractClass*>"
+    },
+    "1160": {
+      "name": "audioController3",
+      "type": "AudioController"
+    },
+    "1180": {
+      "name": "audioLoopIndex3",
+      "type": "uint32_t"
+    },
+    "1184": {
+      "name": "audioVolume3",
+      "type": "uint32_t"
+    },
+    "1188": {
+      "name": "audioController4",
+      "type": "AudioController"
+    },
+    "1208": {
+      "name": "isAudio4Active",
+      "type": "bool"
+    },
+    "1209": {
+      "name": "alignmentPadding4B9",
+      "type": "uint8_t"
+    },
+    "1212": {
+      "name": "audioHandle4",
+      "type": "uint32_t"
+    },
+    "1216": {
+      "name": "audioController5",
+      "type": "AudioController"
+    },
+    "1236": {
+      "name": "isAudio5Active",
+      "type": "bool"
+    },
+    "1237": {
+      "name": "alignmentPadding4D5",
+      "type": "uint8_t"
+    },
+    "1240": {
+      "name": "audioHandle5",
+      "type": "uint32_t"
+    },
+    "1244": {
+      "name": "audioController6",
+      "type": "AudioController"
+    },
+    "1264": {
+      "name": "queuedVoiceIndex",
+      "type": "uint32_t"
+    },
+    "1268": {
+      "name": "voiceFlags",
+      "type": "uint32_t"
+    },
+    "1272": {
+      "name": "isVoiceOverride",
+      "type": "bool"
+    },
+    "1273": {
+      "name": "alignmentPadding4F9",
+      "type": "uint8_t"
+    },
+    "1276": {
+      "name": "voiceHandle",
+      "type": "uint32_t"
+    },
+    "1280": {
+      "name": "voiceVolumeModifier",
+      "type": "uint32_t"
+    },
+    "1284": {
+      "name": "empLockRemaining",
+      "type": "uint32_t"
+    },
+    "1288": {
+      "name": "threatPosed",
+      "type": "uint32_t"
+    },
+    "1292": {
+      "name": "shouldLoseTarget",
+      "type": "uint32_t"
+    },
+    "1296": {
+      "name": "firingRadBeam",
+      "type": "RadBeam*"
+    },
+    "1300": {
+      "name": "planningToken",
+      "type": "PlanningTokenClass*"
+    },
+    "1304": {
+      "name": "disguiseAsType",
+      "type": "ObjectTypeClass*"
+    },
+    "1308": {
+      "name": "isDisguisedFlag_as_house",
+      "type": "HouseClass*"
+    },
+    "1312": {
+      "name": "Type",
+      "type": "BuildingTypeClass*"
+    },
+    "1316": {
+      "name": "Factory",
+      "type": "FactoryClass*"
+    },
+    "1320": {
+      "name": "C4Timer",
+      "type": "TimerStruct"
+    },
+    "1332": {
+      "name": "BuildingClass_field_int_534",
+      "type": "int32_t"
+    },
+    "1336": {
+      "name": "BuildingClass_field_int_538",
+      "type": "int32_t"
+    },
+    "1340": {
+      "name": "OwnerCountryIndex",
+      "type": "uint32_t"
+    },
+    "1344": {
+      "name": "C4AppliedBy",
+      "type": "InfantryClass*"
+    },
+    "1348": {
+      "name": "BuildingClass_field_544",
+      "type": "uint32_t"
+    },
+    "1352": {
+      "name": "FirestormAnim",
+      "type": "AnimClass*"
+    },
+    "1356": {
+      "name": "PsiWarnAnim",
+      "type": "AnimClass*"
+    },
+    "1360": {
+      "name": "BuildingClass_field_timer_550",
+      "type": "TimerStruct"
+    },
+    "1372": {
+      "name": "Anims",
+      "type": "AnimClass*"
+    },
+    "1456": {
+      "name": "AnimStates",
+      "type": "bool"
+    },
+    "1477": {
+      "name": "align_5C5",
+      "type": "uint8_t"
+    },
+    "1480": {
+      "name": "DamageFireAnims",
+      "type": "AnimClass*"
+    },
+    "1512": {
+      "name": "RequiresDamageFires",
+      "type": "bool"
+    },
+    "1516": {
+      "name": "Upgrades",
+      "type": "BuildingTypeClass*"
+    },
+    "1528": {
+      "name": "FiringSWType",
+      "type": "int32_t"
+    },
+    "1532": {
+      "name": "BuildingClass_field_5FC",
+      "type": "uint32_t"
+    },
+    "1536": {
+      "name": "Spotlight",
+      "type": "BuildingLightClass*"
+    },
+    "1540": {
+      "name": "GateTimer",
+      "type": "RepeatableTimerStruct"
+    },
+    "1556": {
+      "name": "LightSource",
+      "type": "LightSourceClass*"
+    },
+    "1560": {
+      "name": "LaserFenceFrame",
+      "type": "uint32_t"
+    },
+    "1564": {
+      "name": "FirestormWallFrame",
+      "type": "uint32_t"
+    },
+    "1568": {
+      "name": "RepairProgress",
+      "type": "ProgressTimer"
+    },
+    "1596": {
+      "name": "BuildingClass_field_rect_63C",
+      "type": "RectangleStruct"
+    },
+    "1612": {
+      "name": "BuildingClass_field_coord_64C",
+      "type": "CoordStruct"
+    },
+    "1624": {
+      "name": "BuildingClass_field_int_658",
+      "type": "int32_t"
+    },
+    "1628": {
+      "name": "BuildingClass_field_65C",
+      "type": "uint32_t"
+    },
+    "1632": {
+      "name": "HasPower",
+      "type": "bool"
+    },
+    "1633": {
+      "name": "IsOverpowered",
+      "type": "bool"
+    },
+    "1634": {
+      "name": "RegisteredAsPoweredUnitSource",
+      "type": "bool"
+    },
+    "1636": {
+      "name": "SupportingPrisms",
+      "type": "uint32_t"
+    },
+    "1640": {
+      "name": "HasExtraPowerBonus",
+      "type": "bool"
+    },
+    "1641": {
+      "name": "HasExtraPowerDrain",
+      "type": "bool"
+    },
+    "1644": {
+      "name": "Overpowerers",
+      "type": "DynamicVectorClass<InfantryClass*>"
+    },
+    "1668": {
+      "name": "Occupants",
+      "type": "DynamicVectorClass<InfantryClass*>"
+    },
+    "1692": {
+      "name": "FiringOccupantIndex",
+      "type": "int32_t"
+    },
+    "1696": {
+      "name": "Audio7",
+      "type": "AudioController"
+    },
+    "1716": {
+      "name": "Audio8",
+      "type": "AudioController"
+    },
+    "1736": {
+      "name": "WasOnline",
+      "type": "bool"
+    },
+    "1737": {
+      "name": "ShowRealName",
+      "type": "bool"
+    },
+    "1738": {
+      "name": "BeingProduced",
+      "type": "bool"
+    },
+    "1739": {
+      "name": "ShouldRebuild",
+      "type": "bool"
+    },
+    "1740": {
+      "name": "HasEngineer",
+      "type": "bool"
+    },
+    "1744": {
+      "name": "CashProductionTimer",
+      "type": "TimerStruct"
+    },
+    "1756": {
+      "name": "BuildingClass_field_bool_6DC",
+      "type": "bool"
+    },
+    "1757": {
+      "name": "BuildingClass_field_bool_6DD",
+      "type": "bool"
+    },
+    "1758": {
+      "name": "NeedsRepairs",
+      "type": "bool"
+    },
+    "1759": {
+      "name": "C4Applied",
+      "type": "bool"
+    },
+    "1760": {
+      "name": "NoCrew",
+      "type": "bool"
+    },
+    "1761": {
+      "name": "BuildingClass_field_bool_6E1",
+      "type": "bool"
+    },
+    "1762": {
+      "name": "BuildingClass_field_bool_6E2",
+      "type": "bool"
+    },
+    "1763": {
+      "name": "HasBeenCaptured",
+      "type": "bool"
+    },
+    "1764": {
+      "name": "ActuallyPlacedOnMap",
+      "type": "bool"
+    },
+    "1765": {
+      "name": "BuildingClass_field_bool_6E5",
+      "type": "bool"
+    },
+    "1766": {
+      "name": "IsDamaged",
+      "type": "bool"
+    },
+    "1767": {
+      "name": "IsFogged",
+      "type": "bool"
+    },
+    "1768": {
+      "name": "IsBeingRepaired",
+      "type": "bool"
+    },
+    "1769": {
+      "name": "BuildingClass_field_bool_6E9",
+      "type": "bool"
+    },
+    "1770": {
+      "name": "StuffEnabled",
+      "type": "bool"
+    },
+    "1771": {
+      "name": "HasCloakingData",
+      "type": "char"
+    },
+    "1772": {
+      "name": "CloakRadius",
+      "type": "uint8_t"
+    },
+    "1773": {
+      "name": "Translucency",
+      "type": "char"
+    },
+    "1776": {
+      "name": "StorageFilledSlots",
+      "type": "uint32_t"
+    },
+    "1780": {
+      "name": "SecretProduction",
+      "type": "TechnoTypeClass*"
+    },
+    "1784": {
+      "name": "ColorAdd",
+      "type": "ColorStruct"
+    },
+    "1788": {
+      "name": "BuildingClass_field_int_6FC",
+      "type": "int32_t"
+    },
+    "1792": {
+      "name": "BuildingClass_field_short_700",
+      "type": "int16_t"
+    },
+    "1794": {
+      "name": "UpgradeLevel",
+      "type": "uint8_t"
+    },
+    "1795": {
+      "name": "GateStage",
+      "type": "char"
+    },
+    "1796": {
+      "name": "PrismStage",
+      "type": "PrismChargeState"
+    },
+    "1800": {
+      "name": "PrismTargetCoords",
+      "type": "CoordStruct"
+    },
+    "1812": {
+      "name": "DelayBeforeFiring",
+      "type": "uint32_t"
+    },
+    "1816": {
+      "name": "BunkerState",
+      "type": "int32_t"
+    },
+    "1820": {
+      "name": "ProductionTimer",
+      "type": "int32_t"
+    },
+    "1824": {
+      "name": "PlacementAllowed",
+      "type": "bool"
+    },
+    "1825": {
+      "name": "ProductionBlocked",
+      "type": "uint8_t"
+    },
+    "1826": {
+      "name": "padProd1",
+      "type": "uint8_t"
+    },
+    "1827": {
+      "name": "padProd2",
+      "type": "uint8_t"
+    },
+    "1828": {
+      "name": "ProductionAccum",
+      "type": "int32_t"
+    },
+    "1832": {
+      "name": "ProductionFrame",
+      "type": "int32_t"
+    },
+    "1836": {
+      "name": "ProductionRate",
+      "type": "int32_t"
+    },
+    "1840": {
+      "name": "ProductionSpeed",
+      "type": "int32_t"
+    },
+    "1848": {
+      "name": "CostAccumulator",
+      "type": "double"
+    },
+    "1856": {
+      "name": "PipelineStep",
+      "type": "uint8_t"
+    },
+    "1857": {
+      "name": "padProd3",
+      "type": "uint8_t"
     }
   },
   "AbstractTypeClass": {
