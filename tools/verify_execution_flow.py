@@ -67,8 +67,11 @@ Usage
 Output (two-state verdict)
 --------------------------
     PASS: BuildingClass::GetPowerOutput — matched
-    FAIL: UnitClass::Scatter — This function is not translated properly!
-    (a lambda/goto reject also prints the specific rewrite hint)
+    FAIL: UnitClass::Scatter — 未完成翻译
+    (a lambda/goto reject ALSO prints the specific rewrite hint; a structural /
+     STEP3(0) FAIL prints ONLY name + this generic message — no internal diff,
+     so the AGENT-FACING verdict cannot be gamed. Full per-block/per-offset/
+     per-event diagnostic stays under -v for human triage only.)
 
 Exit 0 = all PASS (or nothing verifiable in --auto), Exit 1 = any FAIL.
 
@@ -1376,7 +1379,12 @@ def main():
                 print(f"PASS: {disp} — matched")
             else:
                 all_passed = False
-                print(f"FAIL: {disp} — This function is not translated properly!")
+                # AGENT-FACING (non-verbose): opaque generic message only — NO
+                # step3_0_missing / per-block / per-offset / per-event detail (that
+                # stays under -v for human triage). The lambda/goto/asm reject path
+                # KEEPS its construct rewrite hint (a fixable construct rule, not the
+                # comparison result).
+                print(f"FAIL: {disp} — 未完成翻译")
                 if info.get("reject") and info.get("reason"):
                     print(f"  {info['reason']}")
         if not any_verified:
@@ -1471,7 +1479,11 @@ def main():
     if passed:
         print(f"PASS: {display_name} — matched")
         sys.exit(0)
-    print(f"FAIL: {display_name} — This function is not translated properly!")
+    # AGENT-FACING (non-verbose): opaque generic message only — NO
+    # step3_0_missing / per-block / per-offset / per-event detail (that stays
+    # under -v for human triage). The lambda/goto/asm reject path KEEPS its
+    # construct rewrite hint (a fixable construct rule, not the comparison result).
+    print(f"FAIL: {display_name} — 未完成翻译")
     if info.get("reject") and info.get("reason"):
         print(f"  {info['reason']}")
     sys.exit(1)
