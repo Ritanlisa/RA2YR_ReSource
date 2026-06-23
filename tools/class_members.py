@@ -460,6 +460,24 @@ TYPE_SIZE_ALIGN.update({
     "PipIndex": (4, 4),
 })
 
+# ── T1-scale slice-2 additions (tier-2 entity/system/type/misc classes) ───────
+# Confirmed sizes/alignments for types appearing ONLY in the tier-2 set.  Each is
+# either a primitive-backed enum (MSVC-6 `enum : int` => 4 bytes) or a fixed-size
+# OS/union type.  Struct types whose size I cannot confirm are DELIBERATELY left
+# out of this table: the engine then assumes 4/4 and the name-offset anchors
+# FORWARD-CORRECT over the gap (tagging the class best-effort) rather than emitting
+# a guessed — possibly wrong — size silently.
+TYPE_SIZE_ALIGN.update({
+    "LARGE_INTEGER": (8, 8),   # union {LowPart,HighPart}|QuadPart — 8B, /Zp8 align 8
+    # enums (`enum : int` => 4 bytes) seen in the tier-2 headers
+    "Action": (4, 4), "SuperWeaponType": (4, 4), "InfDeath": (4, 4),
+    "CellFlags": (4, 4),
+    # TintStruct {int32 Red,Green,Blue} = 12B (src/render/palette.hpp) — used by
+    # LightSourceClass.LightTint.  CONFIRMED size (not guessed), so LightSourceClass's
+    # tail offsets (DetailLevel/Location/LightVisibility/Activated) are deterministic.
+    "TintStruct": (12, 4),
+})
+
 # Inheritance forest (root -> leaf).  The 6 starter classes keep their cache sizes;
 # every other class's size is computed (cumulative + anchor calibration).
 EXT_PARENTS = {
@@ -505,6 +523,109 @@ EXT_SOURCES = {
 # branch contributes one vtable pointer (4) before AircraftClass-own members; the
 # anchor AircraftClass_field_bool_6C8 confirms Type lands at FootClass.size+4.
 EXT_BASE_ADJUST = {"AircraftClass": 4}
+
+# ══════════════════════════════════════════════════════════════════════════════
+# T1-SCALE SLICE-2 — tier-2 classes (entity / system / type / misc high-use)
+# ══════════════════════════════════════════════════════════════════════════════
+#
+# Reuses the SAME pure-python layout engine (compute_calibrated_offsets +
+# extract_class_members + name-offset anchors) as slice-1.  NO per-class IDA struct
+# declaration.  Each tier-2 class's parent is already modelled (a starter class or a
+# slice-1 extended class) OR is a parent-less ROOT (base 0).  The tier-2 set is
+# MERGED into the EXT_* forest below so build_extended_classes processes it after
+# the slice-1 classes (parents-first); build_signals.py needs no change.
+#
+# FAITHFUL POLICY (slice-2-only, stricter than slice-1): a tier-2 class is tagged
+# `faithful` ONLY if it has >=1 reliable offset anchor confirming the layout AND no
+# anchor contradiction AND zero unmodelled gaps.  A class with ZERO anchors (purely
+# semantic-named members, nothing to validate against) is `best-effort` even when it
+# closes cleanly — its offsets are unverified, so we do NOT claim faithfulness.  This
+# gate is scoped to TIER2_CLASSES, so slice-1 results stay byte-identical.
+TIER2_PARENTS = {
+    # entity (single-inheritance ObjectClass -> NO new vtable; first member @ ObjectClass.size)
+    "AnimClass": "ObjectClass", "BulletClass": "ObjectClass",
+    "OverlayClass": "ObjectClass", "ParticleClass": "ObjectClass",
+    "ParticleSystemClass": "ObjectClass", "SmudgeClass": "ObjectClass",
+    "TerrainClass": "ObjectClass", "TiberiumClass": "ObjectClass",
+    "TubeClass": "ObjectClass", "VoxelAnimClass": "ObjectClass",
+    "WaveClass": "ObjectClass",
+    # type — ObjectTypeClass derivatives
+    "BulletTypeClass": "ObjectTypeClass", "AnimTypeClass": "ObjectTypeClass",
+    "OverlayTypeClass": "ObjectTypeClass",
+    "ParticleSystemTypeClass": "ObjectTypeClass",
+    "ParticleTypeClass": "ObjectTypeClass", "SmudgeTypeClass": "ObjectTypeClass",
+    "TerrainTypeClass": "ObjectTypeClass",
+    "VoxelAnimTypeClass": "ObjectTypeClass",   # defined in src/render/voxel.hpp (NOT type/)
+    # type — AbstractTypeClass derivatives
+    "WeaponTypeClass": "AbstractTypeClass", "WarheadTypeClass": "AbstractTypeClass",
+    "SuperWeaponTypeClass": "AbstractTypeClass",
+    # misc/system — AbstractClass derivatives
+    "FactoryClass": "AbstractClass", "SuperClass": "AbstractClass",
+    "TacticalClass": "AbstractClass",
+    "LightSourceClass": "AbstractClass",   # defined in src/render/light_source.hpp
+    # roots (no base class, no vtable -> base 0; first member @ 0)
+    "CellClass": None, "ScenarioClass": None,
+}
+TIER2_SOURCES = {
+    "AnimClass": "src/entity/anim.hpp", "BulletClass": "src/entity/bullet.hpp",
+    "OverlayClass": "src/entity/overlay.hpp", "ParticleClass": "src/entity/particle.hpp",
+    "ParticleSystemClass": "src/entity/particle_system.hpp",
+    "SmudgeClass": "src/entity/smudge.hpp", "TerrainClass": "src/entity/terrain.hpp",
+    "TiberiumClass": "src/entity/tiberium.hpp", "TubeClass": "src/entity/tube.hpp",
+    "VoxelAnimClass": "src/entity/voxel_anim.hpp", "WaveClass": "src/entity/wave.hpp",
+    "BulletTypeClass": "src/type/bullet_type.hpp", "AnimTypeClass": "src/type/anim_type.hpp",
+    "OverlayTypeClass": "src/type/overlay_type.hpp",
+    "ParticleSystemTypeClass": "src/type/particle_system_type.hpp",
+    "ParticleTypeClass": "src/type/particle_type.hpp",
+    "SmudgeTypeClass": "src/type/smudge_type.hpp",
+    "TerrainTypeClass": "src/type/terrain_type.hpp",
+    "VoxelAnimTypeClass": "src/render/voxel.hpp",
+    "WeaponTypeClass": "src/type/weapon_type.hpp",
+    "WarheadTypeClass": "src/type/warhead_type.hpp",
+    "SuperWeaponTypeClass": "src/misc/super_weapon.hpp",
+    "FactoryClass": "src/system/factory.hpp", "SuperClass": "src/misc/super_weapon.hpp",
+    "TacticalClass": "src/system/tactical.hpp",
+    "LightSourceClass": "src/render/light_source.hpp",
+    "CellClass": "src/system/cell.hpp", "ScenarioClass": "src/system/scenario.hpp",
+}
+# Processing order (parents-first is guaranteed by slice-1 having modelled every
+# tier-2 parent already; tier-2 classes don't derive from each other, so any order
+# works — grouped by family for readability).
+TIER2_ORDER = [
+    "AnimClass", "BulletClass", "OverlayClass", "ParticleClass",
+    "ParticleSystemClass", "SmudgeClass", "TerrainClass", "TiberiumClass",
+    "TubeClass", "VoxelAnimClass", "WaveClass",
+    "BulletTypeClass", "AnimTypeClass", "OverlayTypeClass",
+    "ParticleSystemTypeClass", "ParticleTypeClass", "SmudgeTypeClass",
+    "TerrainTypeClass", "WeaponTypeClass", "WarheadTypeClass",
+    "VoxelAnimTypeClass",
+    "SuperWeaponTypeClass", "FactoryClass", "SuperClass", "TacticalClass",
+    "LightSourceClass",
+    "CellClass", "ScenarioClass",
+]
+TIER2_CLASSES = set(TIER2_ORDER)
+# Tier-2 targets that CANNOT be modelled by this pure-python engine, with the reason
+# (reported, never silently dropped).  hpp absent, or parent chain not yet modelled.
+TIER2_SKIP = {
+    # CONFIRMED via grep `class X`: no class DEFINITION anywhere in src/ (forward-decls
+    # only).  (NOTE: VoxelAnimTypeClass + LightSourceClass were WRONGLY skipped by an
+    # earlier pass that searched only src/type//src/system/; they ARE defined in
+    # src/render/voxel.hpp + src/render/light_source.hpp and are now modelled above.)
+    "TiberiumTypeClass": "no class definition in src/ (forward-declared only; confirmed via grep)",
+    "MapDataClass": "no class definition in src/ (forward-declared only; confirmed via grep)",
+    # CONFIRMED deep UI/display chain unmodelled (each link is a large UI class) -> out of
+    # tier-2 scope.  Chain: AbstractClass -> GScreenClass -> MapClass(~0x16000B) ->
+    # DisplayClass -> RadarClass -> PowerClass -> SidebarClass -> TabClass.
+    "MapClass": "parent GScreenClass unmodelled + MapClass is a ~0x16000B UI/display root; full chain out of tier-2 scope",
+    "SidebarClass": "parent PowerClass needs the full UI chain GScreenClass->MapClass->DisplayClass->RadarClass->PowerClass (5 large UI classes) modelled first -- out of tier-2 scope",
+    "VeinholeMonsterClass": "stub-only: opaque _field_0xNN placeholders, no semantic members to resolve",
+}
+
+# Merge tier-2 into the shared forest config so build_extended_classes handles it.
+EXT_PARENTS.update(TIER2_PARENTS)
+EXT_SOURCES.update(TIER2_SOURCES)
+EXT_ORDER = EXT_ORDER + TIER2_ORDER
+
 
 # Generalized offset-anchor extraction for the IDA-generated synthetic placeholder
 # names used across these headers.  Two reliability tiers:
@@ -759,21 +880,41 @@ def build_extended_classes(ida_classes, hpp_classes, hpp_mbn):
 
     for cls in EXT_ORDER:
         parent = EXT_PARENTS[cls]
-        psize = sizes.get(parent)
-        if psize is None:
-            report.append("  [%s] parent %s size unknown -> SKIP" % (cls, parent))
-            continue
-        base = psize + EXT_BASE_ADJUST.get(cls, 0)
+        if parent is None:                      # ROOT class (no base, no vtable)
+            base = EXT_BASE_ADJUST.get(cls, 0)
+        else:
+            psize = sizes.get(parent)
+            if psize is None:
+                report.append("  [%s] parent %s size unknown -> SKIP" % (cls, parent))
+                continue
+            base = psize + EXT_BASE_ADJUST.get(cls, 0)
         members = extract_class_members(EXT_SOURCES[cls], cls)
         own, eff_size, faithful, n_anc, n_gaps = compute_calibrated_offsets(
             cls, members, base, None, report)
         sizes[cls] = eff_size
+
+        # Tier-2 stricter faithful policy: a class with ZERO offset anchors has
+        # nothing validating its layout -> best-effort (do NOT claim faithful).
+        # Scoped to TIER2_CLASSES so slice-1 results stay byte-identical.
+        best_effort_reason = ""
+        if cls in TIER2_CLASSES:
+            if n_anc == 0:
+                faithful = False
+                best_effort_reason = ("no offset anchors to validate hpp layout "
+                                      "(unverified -> best-effort)")
+            elif not faithful:
+                best_effort_reason = ("anchor contradiction and/or %d unmodelled "
+                                      "gap(s) -> hpp not byte-faithful here" % n_gaps)
+
         report.append("  [%s] parent=%s base=0x%X members=%d anchors=%d gaps=%d "
-                      "size=0x%X %s"
-                      % (cls, parent, base, len(members), n_anc, n_gaps, eff_size,
-                         "FAITHFUL" if faithful else "best-effort"))
+                      "size=0x%X %s%s"
+                      % (cls, parent if parent is not None else "(root)", base,
+                         len(members), n_anc, n_gaps, eff_size,
+                         "FAITHFUL" if faithful else "best-effort",
+                         (" :: " + best_effort_reason) if best_effort_reason else ""))
 
         # Flatten: parent's absolute layout + this class's own members.
+        # (flat_offsets/flat_names .get(None, {}) -> {} for a root class.)
         offs = dict(flat_offsets.get(parent, {}))
         names = dict(flat_names.get(parent, {}))
         for off, name, type_str, size, conf in own:
@@ -784,13 +925,24 @@ def build_extended_classes(ida_classes, hpp_classes, hpp_mbn):
         flat_offsets[cls] = offs
         flat_names[cls] = names
 
-        classes_out[cls] = {
+        entry = {
             "offsets": offs, "size": eff_size, "parent": parent,
             "hpp_layout_faithful": faithful,
             "own_member_count": len(own), "anchor_count": n_anc,
             "unmodelled_gaps": n_gaps,
         }
+        if best_effort_reason:
+            entry["best_effort_reason"] = best_effort_reason
+        classes_out[cls] = entry
         member_by_name[cls] = names
+
+    # Report tier-2 targets that cannot be modelled here (hpp absent / parent chain
+    # unmodelled) — reported, never silently dropped.
+    if TIER2_SKIP:
+        report.append("")
+        report.append("  tier-2 SKIPPED (reported, not modelled):")
+        for cname in sorted(TIER2_SKIP):
+            report.append("    [SKIP] %-24s %s" % (cname, TIER2_SKIP[cname]))
 
     return classes_out, member_by_name, report
 

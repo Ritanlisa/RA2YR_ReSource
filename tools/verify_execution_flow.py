@@ -773,6 +773,7 @@ def _load_efv():
         import efv_normalize
         import efv_match
         import efv_cpp_reject
+        import efv_inline
         _EFV = {
             "model": efv_model,
             "ida_cfg": efv_ida_cfg,
@@ -782,8 +783,48 @@ def _load_efv():
             "normalize": efv_normalize,
             "match": efv_match,
             "reject": efv_cpp_reject,
+            "inline": efv_inline,
         }
     return _EFV
+
+
+def make_callee_cfg_provider(efv, M, signals):
+    """Return `get_callee_cfg(addr) -> efv_model.CFG | None` for T22 inline
+    expansion (`efv_inline.try_inline_match`).
+
+    Given the int address of an inlined callee, resolve it to a translated C++
+    function and build its NORMALIZED, event-stage CFG via the SAME pipeline a
+    top-level C++ function uses (`_build_cpp_cfg_events`). Returns None when the
+    callee is not translated (no C++ source) or uses an unverifiable construct
+    (lambda / goto / inline asm) — such a callee cannot be expanded, so the
+    inlining caller stays FAIL (documented T22 limitation, never a false PASS).
+    Built CFGs are cached so a callee inlined several times is built once."""
+    cache = {}
+
+    def get_callee_cfg(addr):
+        if addr in cache:
+            return cache[addr]
+        result = None
+        name = M.addr_to_name.get(addr)
+        body = None
+        if name:
+            body = find_cpp_function(name)
+        if not body:
+            body = find_cpp_function_by_addr(addr)
+        if body:
+            cls = body.get("class_name")
+            if not cls and name and "::" in name:
+                cls = name.split("::")[0]
+            cpp_text = "".join(body["lines"])
+            if efv["reject"].check_rejectable(cpp_text) is None:
+                try:
+                    result = _build_cpp_cfg_events(efv, cpp_text, cls, M, signals)
+                except Exception:
+                    result = None
+        cache[addr] = result
+        return result
+
+    return get_callee_cfg
 
 
 def _arm_reachable_key(cfg, succ_id, block_signature):
@@ -1144,7 +1185,29 @@ def verify_single_function(ida_addr, func_name, display_name, M,
 
     # ---- verdict: structural CFG bijection ----
     matched = efv["match"].cfg_match(ida_cfg, cpp_cfg)
-    return matched, {"reject": False, "reason": None}
+
+    # ---- T22 inline-expansion fallback ----
+    # The binary may have INLINED a (translated) callee: the IDA side shows the
+    # callee body in place (no CALL), while the faithful C++ still CALLs it, so
+    # the direct match fails ONLY at that call site. Recursively substitute the
+    # callee's CFG at each such C++ CALL (one absent from the caller's IDA
+    # call-set) and re-run the SAME cfg_match. This never relaxes the matcher —
+    # it only re-blocks the C++ CFG to mirror what the binary actually did.
+    info = {"reject": False, "reason": None}
+    if not matched:
+        get_callee = make_callee_cfg_provider(efv, M, signals)
+        inlined = efv["inline"].try_inline_match(
+            ida_cfg, cpp_cfg, get_callee,
+            cfg_match=efv["match"].cfg_match,
+            normalize=efv["normalize"].normalize,
+            canonicalize=canonicalize_branch_polarity)
+        if inlined:
+            matched = True
+            info["inline"] = True
+            if verbose:
+                print("  matched via INLINE expansion of an inlined callee",
+                      file=sys.stderr)
+    return matched, info
 
 
 def load_all_maps():
