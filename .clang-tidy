@@ -1,0 +1,5 @@
+---
+# RA2YR ReSource — 全部限制统一在此
+Checks: '-*,cppcoreguidelines-pro-bounds-pointer-arithmetic,cppcoreguidelines-pro-type-reinterpret-cast,cppcoreguidelines-pro-type-const-cast,cppcoreguidelines-pro-type-static-cast-downcast,cppcoreguidelines-slicing,bugprone-*,performance-*'
+WarningsAsErrors: 'cppcoreguidelines-pro-bounds-pointer-arithmetic,cppcoreguidelines-pro-type-reinterpret-cast,cppcoreguidelines-pro-type-const-cast,cppcoreguidelines-pro-type-static-cast-downcast'
+HeaderFilterRegex: '.*'

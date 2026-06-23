@@ -1,155 +1,81 @@
-# 函数体 IDA 翻译
+# 翻译工作流——子 Agent 必须照此执行
 
-## TL;DR
+## 核心原则
 
-> **核心目标**: 16,787 个未翻译函数 → IDA 反编译 → 完整 C++ 实现 → `translated=true`。
-> sub_* 函数翻译后根据功能统一重命名（全局查找替换）。
->
-> **当前进度**: translated=472 / 17,259（2.7%）
-> **产出**: 每个函数 body ≥5 行，所有分支/边界/返回路径覆盖，编译 0/0。
-> **并行执行**: YES — 3 waves + FINAL，按类/模块分组，同类内可并行。
+**假设子 agent 会忘记所有规则。用硬性步骤防止错误，用脚本代替手工分析。**
 
----
+## 强制工作流（分步脚本）
 
-## 状态
+### Step 0: 预检——翻译前必须通过
 
-| 指标 | 值 |
-|------|-----|
-| 总函数 | 19,133（全部 completed=true） |
-| 已翻译 | 472（58 REVERSE + 183 structure + 312 other − 62 dedup） |
-| 待翻译 | ~16,787（~11,300 已命名 + ~5,468 sub_*） |
-| sub_* 反编译 | 5,461 伪代码在 `tools/sub_decompiles/` |
-| CRT 排除 | 1,874（不翻译） |
-
----
-
-## 规则
-
-### 翻译（强制——违反即驳回）
-
-#### 1. 禁止注释壳 / stub
-- **每个方法 body 必须 ≥3 行非注释 C++ 代码**。纯注释 + `return 0;` = stub = 不合格。
-- 不得用 `// TODO`、`// Check if...`、`// Calculate...` 代替真实代码。
-- 验证：`python tools/audit_translation.py --check-stubs` → 0 + 人工抽查方法体。
-
-#### 2. 恢复原始成员访问（禁止 raw pointer offset）
-- **必须**: 用 `ptr->MemberName` 访问类成员，禁止 `reinterpret_cast<int*>(ptr)[offset/4]`
-- IDA 反编译输出 raw offset（如 `*(this + 588)`）是因为它不知道类布局——**我们有 1,120 个完整类 header，知道每个 offset 对应的成员名**。
-- 方法：IDA 输出 `*(int*)((uint8_t*)house + 588)` → 查 `house.hpp` offset 588 → 写 `house->AvailableCredits`
-- 全局变量同理：`*(int*)0x87F7E8` → 查 globals 表 → 写 `g_RulesData->SomeField`（用 `->` 访问）
-- **禁止**: `reinterpret_cast<int*>(*house)[588/4]`、`*(int*)(0x87F7E8 + offset)` 等 raw offset 写法
-
-#### 3. C 风格强制类型转换
-- **必须**: 用 `(Type)expr` 或 `Type(expr)` —— MSVC 6.0 原始风格
-- **禁止**: `static_cast<Type>(expr)`、`reinterpret_cast<Type>(expr)`、`dynamic_cast` 等 C++ 风格
-- 例: `(int)value` 不能写 `static_cast<int>(value)`；`(HouseClass*)ptr` 不能写 `static_cast<HouseClass*>(ptr)`
-
-#### 4. 伪代码来源
-- **必须**用 IDA MCP `ida-pro-mcp_decompile` 实时反编译，禁止使用 `tools/sub_decompiles/` 或任何缓存
-
-#### 5. 优化还原
-- 合并连续同类循环、变量语义化命名、同变量合并、消除编译器优化痕迹
-- 不改变函数外部行为（输入→输出不变）
-
-### 翻译后验证（Atlas 门控——每批必须）
-
-每批翻译完成后，Atlas 执行以下检查，任一失败 = 驳回重做：
-
-| 检查项 | 方法 | 标准 |
-|--------|------|------|
-| 编译 | `cmake --build build_win` | 0 errors |
-| 无 stub | `python tools/audit_translation.py --check-stubs` | 0 stubs |
-| 无显式指针加法 | grep `(uint8_t\*).*\+ \|\(int\*\)\(this\)\|\(char\*\)\(this\)` src/ | 0 匹配 |
-| 无非数组 `[]` | grep `\[[0-9]+/[0-9]+\]\|\(\(int\*\)[^)]+\)\[` src/ | 0 匹配 |
-| 无 raw offset | grep `reinterpret_cast<.*\*.*\[` src/ | 0 匹配 |
-| 无 C++ cast | grep `static_cast\|reinterpret_cast\|dynamic_cast` src/ | 0 匹配 |
-| 无注释壳 | 人工抽查 ≥3 方法 body | 每方法 ≥3 行真实代码 |
-| 成员访问正确 | `python tools/lookup_member.py Class offset` 验证 | 100% |
-
-### sub_* 重命名
-- 翻译完成后根据函数实际功能命名（PascalCase 全局函数 / `ClassName::Method` 成员函数）
-- **三处同步更新**:
-  1. IDA: `ida-pro-mcp_rename` → `idb_save`
-  2. functions.json: 更新 `name` 字段
-  3. 源码: hpp 声明 + cpp 实现 + 所有引用处的全局查找替换
-
-### 禁止
-- 使用 `tools/sub_decompiles/` 或任何缓存的反编译数据
-- 修改类 header 成员变量布局
-- 修改 REVERSE 管道保护文件
-- 批量标记 translated 不经 IDA 验证 + Atlas 门控
-- 翻译 CRT/thunk 函数
-- 改变函数外部行为（输入相同必须输出相同）
-- **显式指针加法**: `(uint8_t*)ptr + N`、`(int*)(this) + N`、`(char*)(this)` 等
-- **非数组 `[]` 运算符**: `ptr[N/4]`、`((int*)ptr)[N]` 等——类成员访问只用 `.` 和 `->`
-- **C++ 风格类型转换**: `static_cast`、`reinterpret_cast`、`dynamic_cast`
-- **注释壳/stub**: 纯注释 + `return 0;` 组成的空函数体
-
----
-
-## TODOs
-
-### Wave 1: 核心类方法（最高优先级）
-
-- [~] 1. structure/ 类方法 — BuildingClass, InfantryClass, UnitClass, AircraftClass
-  > **阻塞**: 6 次子 agent 翻译尝试全部失败——注释壳、raw pointer、成员名错误、删除源文件。
-  > 管线工具就位（member_lookup.json、fix_member_access.py、编译门控），但子 agent 无法执行翻译本身。
-  > **等待**: 用户决定新翻译策略。
-
-- [~] 2. object/ 类方法 — TechnoClass, FootClass, ObjectClass, MissionClass, RadioClass, AbstractClass
-  > **阻塞**: 同 Task 1 — 子 agent 翻译能力不足。等待用户决定策略。
-
-- [~] 3. 其余类方法 — render, system, ui, misc, house, entity, network, type
-  > **阻塞**: 同上。
-
-### Wave 2: 命名全局函数
-
-- [~] 4. 全局函数 — menu/rendering → object/system → combat/AI/network → misc/init
-  > **阻塞**: 同上。
-  > **Agent**: `deep` | **Parallel**: 不相关模块可并行 | **Blocked By**: 1
-
-### Wave 3: sub_* 翻译 + 重命名
-
-- [~] 5. sub_* <50B 翻译 + 重命名 (~4,200)
-  > **阻塞**: 翻译策略未定。
-  > 已有 4,255 存根（`src/_generated/`，仅供参考——**必须用 IDA MCP 实时反编译**）。
-  > 逐函数 IDA 实时反编译 → 优化还原原始 C++ → 编译验证 → 根据功能重命名。
-  > 重命名后三处同步：IDA rename & idb_save + functions.json + 源码全局查找替换。
-  > **Agent**: `deep` | **Parallel**: 模块间可并行 | **Blocked By**: 1-4
-
-- [~] 6. sub_* 50-500B 翻译 + 重命名 (~1,200)
-  > **阻塞**: 翻译策略未定。
-  > 已有 1,203 存根。中大型函数需逐行 IDA 实时反编译对照。
-  > 优化还原原始 C++（变量语义化、循环合并、编译器痕迹消除）。
-  > 关注浮点精度（fild vs fld）、边界条件、outcode 顺序。
-  > 重命名后三处同步：IDA + functions.json + 源码。
-  > **Agent**: `deep` | **Parallel**: 模块间可并行 | **Blocked By**: 1-4
-
-### Wave 4: 审计 + 收尾
-
-- [~] 7. 最终审计
-  > **阻塞**: 依赖翻译任务完成。
-- [~] F1. 翻译完整性
-- [~] F2. 编译验证
-- [~] F3. IDA 一致性审计
-- [~] F4. 管道回归
-
----
-
-## Final Verification Wave（阻塞—依赖翻译完成）
-
-- [~] F1. 翻译完整性 — 全部 17,259 游戏函数 translated=true
-- [~] F2. 编译 — `cmake --build build_win` 0/0
-- [~] F3. IDA 一致性审计 — 抽样 50 函数 100% 匹配
-- [~] F4. 管道回归 — `gen_reverse_hooks.py` 0 errors
-
----
-
-## 进度追踪
-
-每完成一批翻译：
-```bash
-python -c "import json; d=json.load(open('injectFunctionTest/functions.json')); print(sum(1 for f in d['functions'] if f['hook']['translated']))"
+```
+python tools/pre_translate.py ClassName::MethodName 0xADDR
 ```
 
-目标：472 → 17,259。每次提交附带 translated 增量。
+此脚本自动：
+1. 从 IDA MCP 反编译函数 → 提取所有偏移（自动归一化 DWORD/byte）
+2. 从 `member_lookup.json` 查找每个偏移的成员名
+3. **检查所有 callee 是否在 functions.json 中有已声明符号** → 缺失则报错
+4. 输出 `pre_translate_{函数名}.md` — 偏移映射表 + callee 清单
+
+**如果任何偏移/callee 无法解析 → 翻译阻塞 → 必须先修 header**
+
+### Step 1: 编写代码
+
+使用 Step 0 输出的映射表：
+- 每个 `READ(this+0x6C)` → `this->health`（查表即得）
+- 每个 `CALL(0x5B3A00)` → 查 functions.json 得函数名 → 调用
+- **禁止手算偏移** — 映射表已有答案
+
+### Step 2: 编译循环
+
+```
+cmake --build build_win --config Debug
+```
+→ 失败 → 读错误 → 修复 → 重编译 → 重复直到 0 errors
+
+### Step 3: 保存 IDA 缓存
+
+```
+python tools/verify_execution_flow.py --save-ida 0xADDR
+```
+
+### Step 4: 验证
+
+```
+python tools/verify_execution_flow.py --auto
+```
+→ PASS 或 "This function is not translated properly!"（不含原因）
+
+## 硬性限制（cmake 自动拦截）
+
+| 违规 | 拦截方式 |
+|------|---------|
+| 指针算术 `ptr+N` | clang-tidy → 编译错误 |
+| 非数组 `ptr[i]` | clang-tidy → 编译错误 |
+| `static_cast`/`reinterpret_cast` | Python checker → 编译错误 |
+| `goto` | Python checker → 编译错误 |
+| hex 地址作指针 | Python checker → 编译错误 |
+| IDA 变量名 `v1`/`field_0`/`dword_ABC` | Python checker → 编译错误 |
+| stub/注释壳 | Python checker → 编译错误 |
+| 新增 extern/函数声明 | Python checker → 编译错误 |
+| 调用不存在符号 | pre_translate.py → 翻译前阻塞 |
+
+## 软性引导（任务提示中注入）
+
+1. **"先查再写"**：Step 0 的映射表是唯一答案，不要手算
+2. **"信任 header 声明"**：用 `int Deploy()` 而不是 IDA 的 `__stdcall char Deploy(_DWORD*)`
+3. **"用脚本做批量操作"**：`lookup_member.py --from-ida` 代替逐偏移查询
+4. **"不要删除 IDA 逻辑路径"**：用 `// TODO: needs member name at offset N` 保留未映射分支
+5. **"类成员所有权：this-> 和 ptr-> 不同"**：不要混淆对象和它的 Type
+
+## cmake 自动化
+
+```
+cmake --build build_win --config Debug
+```
+自动执行：
+1. `check_translated_functions.py` — 函数级违规检查
+2. `verify_execution_flow.py --auto` — IDA 执行流匹配（读取缓存）
+3. 所有检查通过 → 编译成功
+4. 任一失败 → 编译失败

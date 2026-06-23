@@ -420,6 +420,41 @@ hook_size 从 functions.json 自动读取，不要手动改。
 
 ## 逆向经验（项目特定取证技巧）
 
+### 函数翻译前必检工具：`tools/pre_translate.py`
+
+**此工具必须在翻译任何函数之前运行。** 自动化 IDA 偏移解析，减少 80% 的手动偏移分析时间。
+
+```bash
+# 按函数名运行
+python tools/pre_translate.py UnitClass::Scatter
+
+# 按地址运行
+python tools/pre_translate.py 0x743A50
+
+# 指定类（当函数名不含类名时）
+python tools/pre_translate.py --class UnitClass 0x743A50
+```
+
+**工作流程：**
+1. Agent 调用 `ida-pro-mcp_decompile` 获取伪代码
+2. Agent 将结果 (JSON: `{"code": "...", "refs": [...]}`) 保存到 `.omo/mcp_input.txt`
+3. Agent 运行 `python tools/pre_translate.py FuncName`
+4. 读取输出 `.omo/translation_maps/pre_translate_*.md`
+
+**产出（Markdown）：**
+- **Member Offsets** — IDA 伪代码 → 字节偏移 → 成员名（通过 member_lookup.json + 继承链）
+- **UNKNOWN Members** — 最近已知邻居 + 修复建议（`Check offset within 'X' at +N`）
+- **Vtable Calls** — `(*this + N)` / `(v12 + 1152)` → vtable 索引
+- **Global Variables** — `MEMORY[0xADDR]` / `dword_XXXXXX` → 全局变量名
+- **Callee Functions** — 所有被调用函数 + 可用性检查 (functions.json `completed`)
+
+**门控逻辑：**
+- 任何 UNKNOWN 偏移 → exit 1: "Add members to headers before translation"
+- 任何不可用的被调用函数 → exit 1: "Fix missing symbols before translation"
+- 全部已解析 → exit 0: GATE PASSED
+
+**关键：** 不要在门控未通过的情况下开始翻译。先补全 header/全局变量/被调用函数，再重新运行。
+
 ### INI Key → 成员变量映射验证
 
 反编译类的 READ_INI/ReadINI 函数，查找 `INIClass::GetString(ini, section, "KeyName", ..., this+OFFSET, ...)` 模式：
