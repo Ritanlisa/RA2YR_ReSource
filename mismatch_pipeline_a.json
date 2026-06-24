@@ -1,0 +1,292 @@
+[
+  {
+    "addr": "0x004033C0",
+    "ida_name": "AudioStream::DestroyAll",
+    "hpp_name": "HouseClass::DestroyAll",
+    "hpp_file": "src/house/house.hpp",
+    "hpp_line": 142,
+    "issue": "wrong_class",
+    "fix": "Change annotation from HouseClass::DestroyAll to AudioStream::DestroyAll. Decompile confirms: iterates AudioQueue list, calls AudioStream::Destructor, accesses audio globals (off_815E98). Not house management code.",
+    "ida_evidence": "Decompile: LinkedList::Init, AudioQueue::GetNext((int *)Block + 62), AudioStream::Destructor(i). 2 callers both in audio system."
+  },
+  {
+    "addr": "0x0044C980",
+    "ida_name": "BuildingClass::ProcessSuperWeaponEffects",
+    "hpp_name": "FootClass::processSuperWeapon",
+    "hpp_file": "src/object/foot.hpp",
+    "hpp_line": 38,
+    "issue": "wrong_class",
+    "fix": "Remove annotation from foot.hpp:38. Correct annotation already at building.hpp:145 (BuildingClass::ProcessSuperWeaponEffects). Decompile confirms 0xc21-byte function with BuildingClass-specific operations (PSIWARN, PULSBALL strings, BuildingClass vtable at 0x7e410c).",
+    "ida_evidence": "Decompile: BuildingClass::ProcessSuperWeaponEffects(#377 *this), 26 callees, strings 'PSIWARN' 'PULSBALL', 58 basic blocks. Vtable xref at 0x7e410c."
+  },
+  {
+    "addr": "0x00454190",
+    "ida_name": "BuildingClass::Size",
+    "hpp_name": "VoxelAnimTypeClass::Size (and others)",
+    "hpp_file": "src/render/voxel.hpp",
+    "hpp_lines": [125, 181],
+    "issue": "wrong_class",
+    "fix": "Remove annotations from voxel.hpp:125,181 and all locomotion.hpp entries. Correct annotation at building.hpp:58. Decompile confirms BuildingClass::Size calling IPersistStream::GetSizeMax with BuildingClass member offsets (415,421). Locomotion classes have inline sizeof(*this) implementations that are different functions.",
+    "ida_evidence": "Decompile: BuildingClass::Size(#377 *this) with IPersistStream::GetSizeMax, member access at this+415 and this+421. Vtable xref at 0x7e3ed4."
+  },
+  {
+    "addr": "0x004A7900",
+    "ida_name": "DiskLaserClass::PointerGotInvalid",
+    "hpp_name": "RulesClass::PointerGotInvalid",
+    "hpp_file": "src/misc/rules.hpp",
+    "hpp_line": 110,
+    "issue": "wrong_class",
+    "fix": "Change annotation from RulesClass::PointerGotInvalid to DiskLaserClass::PointerGotInvalid. Decompile confirms DiskLaserClass-specific beam pointer access at this+9 and this+10, called from AbstractClass::AnnounceExpiredPointer. RulesClass has its own PointerGotInvalid stub elsewhere.",
+    "ida_evidence": "Decompile: DiskLaserClass::PointerGotInvalid(_DWORD *this, int a2) with member access this+9, this+10, this+12. Caller: AbstractClass::AnnounceExpiredPointer."
+  },
+  {
+    "addr": "0x004C9480",
+    "ida_name": "TimerClass::Active",
+    "hpp_name": "ChronoScreenEffect::Active",
+    "hpp_file": "src/misc/super_weapon.hpp",
+    "hpp_line": 225,
+    "issue": "wrong_class",
+    "fix": "Change annotation from ChronoScreenEffect::Active to TimerClass::Active. Decompile confirms timer field access at this+8, this+16, this+20 with 20+ callers across BuildingClass, TechnoClass. ChronoScreenEffect is a different module.",
+    "ida_evidence": "Decompile: BOOL __thiscall TimerClass::Active(int this) with fields at +8 (start_time), +16 (duration), +20 (flags). 20 callers include BuildingClass::ProcessSpreadEffect, ProcessAttack, ProcessActiveUpdate."
+  },
+  {
+    "addr": "0x005D2530",
+    "ida_name": "DDraw::HandleSuspend",
+    "hpp_name": "FactoryClass::Suspend",
+    "hpp_file": "src/system/factory.hpp",
+    "hpp_line": 39,
+    "issue": "wrong_class",
+    "fix": "Change annotation from FactoryClass::Suspend to DDraw::HandleSuspend. Decompile confirms DDraw surface iteration (this+7, this+10), MSEngine animation pause/resume strings, Sleep calls. FactoryClass is production queue management, completely different module.",
+    "ida_evidence": "Decompile: DDraw::HandleSuspend with strings 'MSEngine - Pausing animations', 'MSEngine - Sleeping', 'MSEngine - Resuming animations'. Callers: GameClass::FrameLoop, ProcessGraphicMenu. 10 xrefs-to."
+  },
+  {
+    "addr": "0x005C0E30",
+    "ida_name": "ScenarioClass::StubReturnFalse",
+    "hpp_name": "MPGameModeClass::AddRef",
+    "hpp_file": "src/network/multiplayer.hpp",
+    "hpp_line": 24,
+    "issue": "wrong_method",
+    "fix": "Change annotation from MPGameModeClass::AddRef to ScenarioClass::StubReturnFalse. Function is a 3-byte 'return 0' stub used as vtable filler (7 vtable xrefs). AddRef returns ULONG refcount, not char 0.",
+    "ida_evidence": "Decompile: char ScenarioClass::_vt1() { return 0; } — 3 bytes. Xrefs: 0x7ee188, 0x7ee428, 0x7ee510, 0x7ee5f8, 0x7ee700, 0x7ee818, 0x7eed64 (all vtable entries)."
+  },
+  {
+    "addr": "0x005C0E40",
+    "ida_name": "ScenarioClass::StubReturnFalse2",
+    "hpp_name": "MPGameModeClass::Release",
+    "hpp_file": "src/network/multiplayer.hpp",
+    "hpp_line": 25,
+    "issue": "wrong_method",
+    "fix": "Change annotation from MPGameModeClass::Release to ScenarioClass::StubReturnFalse2. Companion to 0x5C0E30 — another return-0 vtable filler stub, not a COM Release implementation.",
+    "ida_evidence": "Same pattern as 0x5C0E30 — 3-byte return-0 stub referenced by ScenarioClass vtables."
+  },
+  {
+    "addr": "0x005C21D0",
+    "ida_name": "CampaignCoop::Setup",
+    "hpp_name": "CellClass::Setup",
+    "hpp_file": "src/system/cell.hpp",
+    "hpp_line": 137,
+    "issue": "wrong_class",
+    "fix": "Change annotation from CellClass::Setup to CampaignCoop::Setup. Decompile confirms campaign coop dialog setup: GetStringCSF with 'NAME:COOPDESC%d%d', source file 'D:\\ra2mdpost\\MPCoop.cpp', DisableCampaignSlots, Movie::GetSectionID. CellClass::Setup is terrain/wall setup, completely different.",
+    "ida_evidence": "Decompile: CampaignCoop::Setup(int *this, int hDlg, char a3) with coop-specific strings, 36 basic blocks, calls GetStringCSF, Movie::GetSectionID, DisableCampaignSlots, ShowWindow/EnableWindow. 5 callers in Campaign/MPCooperative code."
+  },
+  {
+    "addr": "0x006EFC70",
+    "ida_name": "ProcessAISuperWeaponSelection",
+    "hpp_name": "TechnoClass::onSelect",
+    "hpp_file": "src/object/techno.hpp",
+    "hpp_line": 320,
+    "issue": "wrong_class",
+    "fix": "Change annotation from TechnoClass::onSelect to ProcessAISuperWeaponSelection. IDA confirms this is a GLOBAL function (no class prefix) for AI superweapon targeting logic. TechnoClass::onSelect handles player unit selection, completely different operation.",
+    "ida_evidence": "IDA name: ProcessAISuperWeaponSelection — global function, no :: separator. AI superweapon selection logic, not a TechnoClass member."
+  },
+  {
+    "addr": "0x006F9DC0",
+    "ida_name": "TechnoClass::GetTarget",
+    "hpp_name": "MovementAI::GetTarget",
+    "hpp_file": "src/object/movement_ai.hpp",
+    "hpp_line": 28,
+    "issue": "wrong_class",
+    "fix": "Change annotation from MovementAI::GetTarget to TechnoClass::GetTarget. IDA confirms TechnoClass member function. MovementAI is a utility namespace, not a class with virtual functions.",
+    "ida_evidence": "IDA name: TechnoClass::GetTarget — TechnoClass member (thiscall). MovementAI is a utility struct without vtable."
+  },
+  {
+    "addr": "0x0070F7E0",
+    "ida_name": "FootClass::updateThreat",
+    "hpp_name": "CellClass::UpdateThreat",
+    "hpp_file": "src/system/cell.hpp",
+    "hpp_line": 145,
+    "issue": "wrong_class",
+    "fix": "Change annotation from CellClass::UpdateThreat to FootClass::updateThreat. FootClass updates threat ratings for mobile units; CellClass manages terrain cells — different class hierarchy branches.",
+    "ida_evidence": "IDA name: FootClass::updateThreat — FootClass member. CellClass has no threat tracking concept."
+  },
+  {
+    "addr": "0x0071D000",
+    "ida_name": "TerrainClass::ProcessSpawnAnim",
+    "hpp_name": "TechnoClass::processSpawn",
+    "hpp_file": "src/object/techno.hpp",
+    "hpp_line": 340,
+    "issue": "wrong_class",
+    "fix": "Change annotation from TechnoClass::processSpawn to TerrainClass::ProcessSpawnAnim. TerrainClass handles terrain object spawn animations; TechnoClass is for combat units — different class hierarchy branches.",
+    "ida_evidence": "IDA name: TerrainClass::ProcessSpawnAnim — TerrainClass member."
+  },
+  {
+    "addr": "0x007241A0",
+    "ida_name": "Tooltip::Enable",
+    "hpp_name": "TriggerClass::Enable",
+    "hpp_file": "src/team/trigger.hpp",
+    "hpp_line": 55,
+    "issue": "wrong_class",
+    "fix": "Change annotation from TriggerClass::Enable to Tooltip::Enable. Tooltip is a UI helper; TriggerClass manages map triggers — completely different modules.",
+    "ida_evidence": "IDA name: Tooltip::Enable — Tooltip UI class."
+  },
+  {
+    "addr": "0x0074AA30",
+    "ida_name": "VoxelAnimClass::GetFrameCount",
+    "hpp_name": "ShpImage::GetFrameCount",
+    "hpp_file": "src/render/shp.hpp",
+    "hpp_line": 62,
+    "issue": "wrong_class",
+    "fix": "Change annotation from ShpImage::GetFrameCount to VoxelAnimClass::GetFrameCount. VoxelAnim handles 3D voxel animation; ShpImage handles 2D SHP sprites — different rendering subsystems.",
+    "ida_evidence": "IDA name: VoxelAnimClass::GetFrameCount."
+  },
+  {
+    "addr": "0x005F9070",
+    "ida_name": "ObjectTypeClass::Load2DArt",
+    "hpp_name": "AnimTypeClass::Load2DArt",
+    "hpp_file": "src/entity/anim_type.hpp",
+    "hpp_line": 30,
+    "issue": "wrong_class",
+    "fix": "Change annotation from AnimTypeClass::Load2DArt to ObjectTypeClass::Load2DArt. AnimTypeClass inherits Load2DArt from ObjectTypeClass, but the implementation at this address is the base class version, not AnimTypeClass override.",
+    "ida_evidence": "IDA name: ObjectTypeClass::Load2DArt — base class implementation."
+  },
+  {
+    "addr": "0x006AF580",
+    "ida_name": "SlaveManagerClass::SetOwner",
+    "hpp_name": "EBolt::SetOwner",
+    "hpp_file": "src/entity/ebolt.hpp",
+    "hpp_line": 45,
+    "issue": "wrong_class",
+    "fix": "Change annotation from EBolt::SetOwner to SlaveManagerClass::SetOwner. SlaveManager manages slave miners; EBolt is an electric bolt visual effect — completely different entity types.",
+    "ida_evidence": "IDA name: SlaveManagerClass::SetOwner."
+  },
+  {
+    "addr": "0x006CB560",
+    "ida_name": "SuperClass::StartTimer",
+    "hpp_name": "SuperClass::Grant",
+    "hpp_file": "src/misc/super_weapon.hpp",
+    "hpp_line": 80,
+    "issue": "wrong_method",
+    "fix": "Change annotation from SuperClass::Grant to SuperClass::StartTimer. Grant() launches the superweapon effect; StartTimer() begins the recharge countdown — different states in superweapon lifecycle.",
+    "ida_evidence": "IDA name: SuperClass::StartTimer."
+  },
+  {
+    "addr": "0x006CC080",
+    "ida_name": "SuperClass::AnnounceReady",
+    "hpp_name": "SuperClass::HasChargeProgressed",
+    "hpp_file": "src/misc/super_weapon.hpp",
+    "hpp_line": 85,
+    "issue": "wrong_method",
+    "fix": "Change annotation from SuperClass::HasChargeProgressed to SuperClass::AnnounceReady. AnnounceReady triggers EVA notification 'superweapon ready'; HasChargeProgressed checks charge percentage — different operations.",
+    "ida_evidence": "IDA name: SuperClass::AnnounceReady."
+  },
+  {
+    "addr": "0x0053A090",
+    "ida_name": "LightningStorm::End",
+    "hpp_name": "LightningStorm::RequestStop",
+    "hpp_file": "src/misc/super_weapon.hpp",
+    "hpp_line": 200,
+    "issue": "wrong_method",
+    "fix": "Change annotation from RequestStop to End. End() terminates the lightning storm; RequestStop is a different lifecycle method.",
+    "ida_evidence": "IDA name: LightningStorm::End."
+  },
+  {
+    "addr": "0x0053A110",
+    "ida_name": "NukeFlash::IsActive",
+    "hpp_name": "NukeFlash::FadeIn",
+    "hpp_file": "src/misc/super_weapon.hpp",
+    "hpp_line": 210,
+    "issue": "wrong_method",
+    "fix": "Change annotation from FadeIn to IsActive. IsActive checks if nuke flash is currently visible; FadeIn performs the fade-in transition — different operations.",
+    "ida_evidence": "IDA name: NukeFlash::IsActive."
+  },
+  {
+    "addr": "0x0053A120",
+    "ida_name": "NukeFlash::ProcessEffect",
+    "hpp_name": "NukeFlash::FadeOut",
+    "hpp_file": "src/misc/super_weapon.hpp",
+    "hpp_line": 211,
+    "issue": "wrong_method",
+    "fix": "Change annotation from FadeOut to ProcessEffect. ProcessEffect handles the nuke flash rendering logic; FadeOut is a specific transition — different operations.",
+    "ida_evidence": "IDA name: NukeFlash::ProcessEffect."
+  },
+  {
+    "addr": "0x00753580",
+    "ida_name": "ChronoScreenEffect::DecrementCounter",
+    "hpp_name": "ChronoScreenEffect::Start",
+    "hpp_file": "src/misc/super_weapon.hpp",
+    "hpp_line": 230,
+    "issue": "wrong_method",
+    "fix": "Change annotation from Start to DecrementCounter. DecrementCounter counts down the chrono effect duration; Start initializes a new chrono effect — different lifecycle stages.",
+    "ida_evidence": "IDA name: ChronoScreenEffect::DecrementCounter."
+  },
+  {
+    "addr": "0x00533D20",
+    "ida_name": "KeyboardConfig::LoadINI",
+    "hpp_name": "AudioSettings::LoadINI",
+    "hpp_file": "src/misc/audio_ext.hpp",
+    "hpp_line": 35,
+    "issue": "wrong_class",
+    "fix": "Change annotation from AudioSettings::LoadINI to KeyboardConfig::LoadINI. KeyboardConfig reads keyboard bindings from INI; AudioSettings reads audio configuration — different config domains.",
+    "ida_evidence": "IDA name: KeyboardConfig::LoadINI."
+  },
+  {
+    "addr": "0x0053A100",
+    "ida_name": "LightningStorm::IsActive",
+    "hpp_name": "LightningStorm::HasDeferment",
+    "hpp_file": "src/misc/super_weapon.hpp",
+    "hpp_line": 201,
+    "issue": "wrong_method",
+    "fix": "Change annotation from HasDeferment to IsActive. IsActive checks if lightning storm is currently running; HasDeferment is a separate check for deferred activation.",
+    "ida_evidence": "IDA name: LightningStorm::IsActive."
+  },
+  {
+    "addr": "0x0053B400",
+    "ida_name": "PsyDom::IsActive",
+    "hpp_name": "PsyDom::Active",
+    "hpp_file": "src/misc/super_weapon.hpp",
+    "hpp_line": 220,
+    "issue": "wrong_method",
+    "fix": "Change annotation from Active to IsActive. IsActive is the canonical method name used throughout the codebase for state checks.",
+    "ida_evidence": "IDA name: PsyDom::IsActive."
+  },
+  {
+    "addr": "0x005CA800",
+    "ida_name": "MultiplayerSiege::ProcessTurn",
+    "hpp_name": "MultiplayerSiege::Process",
+    "hpp_file": "src/network/multiplayer.hpp",
+    "hpp_line": 180,
+    "issue": "wrong_method",
+    "fix": "Change annotation from Process to ProcessTurn. ProcessTurn is the specific siege turn processing method.",
+    "ida_evidence": "IDA name: MultiplayerSiege::ProcessTurn."
+  },
+  {
+    "addr": "0x006CEA10",
+    "ida_name": "SuperWeaponTypeClass::SD_vt16",
+    "hpp_name": "SuperWeaponTypeClass::MouseOverObject",
+    "hpp_file": "src/misc/super_weapon.hpp",
+    "hpp_line": 150,
+    "issue": "wrong_method",
+    "fix": "Change annotation from MouseOverObject to SD_vt16. SD prefix indicates Superweapon Dialog vtable; this is vtable entry 16, not the MouseOverObject callback.",
+    "ida_evidence": "IDA name: SuperWeaponTypeClass::SD_vt16."
+  },
+  {
+    "addr": "0x0067A4A0",
+    "ida_name": "Stream::WriteIntArray",
+    "hpp_name": "Stream::WriteInt",
+    "hpp_file": "src/system/stream.hpp",
+    "hpp_line": 95,
+    "issue": "wrong_method",
+    "fix": "Change annotation from WriteInt to WriteIntArray. WriteInt writes a single integer; WriteIntArray serializes an array of integers — different signatures and semantics.",
+    "ida_evidence": "IDA name: Stream::WriteIntArray."
+  }
+]

@@ -1,0 +1,1178 @@
+[
+  {
+    "addr": "0X00403730",
+    "ida_name": "AudioQueue::StopAllVoices",
+    "json_name": "AudioQueue::StopAllVoices",
+    "hpp_name": "AudioMixer::StopAll",
+    "reason": "unclassified_convention_difference_needs_manual_review"
+  },
+  {
+    "addr": "0X00405B50",
+    "ida_name": null,
+    "json_name": "sub_405B50",
+    "hpp_name": "AudioController::Stop",
+    "reason": "unclassified_convention_difference_needs_manual_review"
+  },
+  {
+    "addr": "0X00406060",
+    "ida_name": "Mixer::ReleaseChannel",
+    "json_name": "Mixer::ReleaseChannel",
+    "hpp_name": "AudioMixer::ReleaseChannel",
+    "reason": "class_alias:Mixer=AudioMixer"
+  },
+  {
+    "addr": "0X00406D40",
+    "ida_name": "Audio::Shutdown",
+    "json_name": "Audio::Shutdown",
+    "hpp_name": "AudioEventHandle::AudioShutdown",
+    "reason": "class_alias:Audio=AudioEventHandle"
+  },
+  {
+    "addr": "0X00407000",
+    "ida_name": "Audio::IsSoundEnabled",
+    "json_name": "Audio::IsSoundEnabled",
+    "hpp_name": "AudioEventHandle::AudioIsSoundEnabled",
+    "reason": "class_alias:Audio=AudioEventHandle"
+  },
+  {
+    "addr": "0X004083D0",
+    "ida_name": "Mixer::RequestAllBuffers",
+    "json_name": "Mixer::RequestAllBuffers",
+    "hpp_name": "AudioMixer::RequestAllBuffers",
+    "reason": "class_alias:Mixer=AudioMixer"
+  },
+  {
+    "addr": "0X004151E0",
+    "ida_name": "AircraftClass::Mission_Unload",
+    "json_name": "UnitClass::Mission_Harvest",
+    "hpp_name": "MissionClass::Mission_Harvest",
+    "reason": "inheritance:AircraftClass<->MissionClass"
+  },
+  {
+    "addr": "0X004158E0",
+    "ida_name": "TechnoClass::ReturnToBaseAndReload",
+    "json_name": "TechnoClass::ReturnToBaseAndReload",
+    "hpp_name": "TechnoClass::Reload",
+    "reason": "inheritance:TechnoClass<->TechnoClass|sub_method_longer_vs_shorter_naming"
+  },
+  {
+    "addr": "0X004166C0",
+    "ida_name": "AircraftClass::Mission_Enter",
+    "json_name": "AircraftClass::Mission_Enter",
+    "hpp_name": "MissionClass::Mission_Enter",
+    "reason": "inheritance:AircraftClass<->MissionClass"
+  },
+  {
+    "addr": "0X00417FE0",
+    "ida_name": "AircraftClass::Mission_Attack",
+    "json_name": "AircraftClass::Mission_Attack",
+    "hpp_name": "MissionClass::Mission_Attack",
+    "reason": "inheritance:AircraftClass<->MissionClass"
+  },
+  {
+    "addr": "0X0041C8B0",
+    "ida_name": "AircraftTypeClass::AircraftTypeClass",
+    "json_name": "AircraftTypeClass::AircraftTypeClass",
+    "hpp_name": "AircraftTypeClass::Find",
+    "reason": "constructor_annotated_as_find|inheritance:AircraftTypeClass<->AircraftTypeClass|method_naming_convention_both_valid"
+  },
+  {
+    "addr": "0X00421B60",
+    "ida_name": "ClipRectIntersection",
+    "json_name": "ClipRectIntersection",
+    "hpp_name": "Rect::Clip",
+    "reason": "global_assigned_to_module_class_naming_convention"
+  },
+  {
+    "addr": "0X00427270",
+    "ida_name": "AbstractClass::setMapCoords",
+    "json_name": "AbstractClass::setMapCoords",
+    "hpp_name": "CellClass::SetMapCoords",
+    "reason": "unclassified_convention_difference_needs_manual_review"
+  },
+  {
+    "addr": "0X0042C900",
+    "ida_name": "FindPathWithRetry",
+    "json_name": "FindPathWithRetry",
+    "hpp_name": "FootClass::FindPathWithRetry",
+    "reason": "global_assigned_to_module_class_naming_convention"
+  },
+  {
+    "addr": "0X004385D0",
+    "ida_name": "BombClass::AbstractClass",
+    "json_name": "BombClass::AbstractClass",
+    "hpp_name": "BombClass::BombClass",
+    "reason": "inheritance:BombClass<->BombClass|method_naming_convention_both_valid"
+  },
+  {
+    "addr": "0X004494C0",
+    "ida_name": "BuildingClass::CanBeSold",
+    "json_name": "BuildingClass::CanBeSold",
+    "hpp_name": "ObjectClass::CanBeSold",
+    "reason": "inheritance:BuildingClass<->ObjectClass"
+  },
+  {
+    "addr": "0X00457770",
+    "ida_name": "BuildingClass::UpdateCloak",
+    "json_name": "BuildingClass::UpdateCloak",
+    "hpp_name": "TechnoClass::UpdateCloak",
+    "reason": "inheritance:BuildingClass<->TechnoClass"
+  },
+  {
+    "addr": "0X00459840",
+    "ida_name": "HouseClass::GetRepairStepAmount",
+    "json_name": "HouseClass::GetRepairStepAmount",
+    "hpp_name": "TechnoTypeClass::GetRepairStep",
+    "reason": "unclassified_convention_difference_needs_manual_review"
+  },
+  {
+    "addr": "0X00459E70",
+    "ida_name": "BuildingClass::Mission_Guard",
+    "json_name": "BuildingClass::Mission_Guard",
+    "hpp_name": "MissionClass::Mission_Guard",
+    "reason": "inheritance:BuildingClass<->MissionClass"
+  },
+  {
+    "addr": "0X00459EC0",
+    "ida_name": "BuildingClass::Mission_Construction",
+    "json_name": "BuildingClass::Mission_Construction",
+    "hpp_name": "MissionClass::Mission_Construction",
+    "reason": "inheritance:BuildingClass<->MissionClass"
+  },
+  {
+    "addr": "0X0045EE70",
+    "ida_name": "BuildingClass::ApplyFoundationDamage",
+    "json_name": "BuildingClass::ApplyFoundationDamage",
+    "hpp_name": "TechnoClass::onDamage",
+    "reason": "inheritance:BuildingClass<->TechnoClass"
+  },
+  {
+    "addr": "0X00465AF0",
+    "ida_name": "BuildingTypeClass::IsPowered",
+    "json_name": "BuildingTypeClass::IsPowered",
+    "hpp_name": "SuperClass::IsPowered",
+    "reason": "same_method_different_class_class_may_be_related"
+  },
+  {
+    "addr": "0X0046CE10",
+    "ida_name": "CampaignClass::LoadFromINIList",
+    "json_name": "CampaignClass::LoadFromINIList",
+    "hpp_name": "ScriptTypeClass::LoadFromINIList",
+    "reason": "same_method_different_class_class_may_be_related"
+  },
+  {
+    "addr": "0X00476EB0",
+    "ida_name": "INIEntry::GetTechnoType",
+    "json_name": "INIEntry::GetTechnoType",
+    "hpp_name": "ObjectTypeClass::GetTechnoType",
+    "reason": "same_method_different_class_class_may_be_related"
+  },
+  {
+    "addr": "0X0048BF40",
+    "ida_name": "ConnectionClass::sendAck",
+    "json_name": "ConnectionClass::sendAck",
+    "hpp_name": "ConnectionClass::Release",
+    "reason": "inheritance:ConnectionClass<->ConnectionClass|method_naming_convention_both_valid"
+  },
+  {
+    "addr": "0X0048C590",
+    "ida_name": "ConnectionClass::StubReturnFalse",
+    "json_name": "ConnectionClass::StubReturnFalse",
+    "hpp_name": "ConnectionClass::Open",
+    "reason": "inheritance:ConnectionClass<->ConnectionClass|method_naming_convention_both_valid"
+  },
+  {
+    "addr": "0X00490E50",
+    "ida_name": "LightConvertClass::SelectRLEBlitter",
+    "json_name": "LightConvertClass::SelectRLEBlitter",
+    "hpp_name": "ConvertClass::SelectRLEBlitter",
+    "reason": "same_method_different_class_class_may_be_related"
+  },
+  {
+    "addr": "0X0049F740",
+    "ida_name": "Dialog::MapDialogResource",
+    "json_name": "Dialog::MapDialogResource",
+    "hpp_name": "Dialog::HandleLauncherMessage",
+    "reason": "inheritance:Dialog<->Dialog|method_naming_convention_both_valid"
+  },
+  {
+    "addr": "0X004A5110",
+    "ida_name": "Window::IsVisible",
+    "json_name": "Window::IsVisible",
+    "hpp_name": "DialogClass::IsVisible",
+    "reason": "same_method_different_class_class_may_be_related"
+  },
+  {
+    "addr": "0X004A61C0",
+    "ida_name": "TextRenderer::DrawText",
+    "json_name": "TextRenderer::DrawText",
+    "hpp_name": "Text::DrawText",
+    "reason": "class_alias:TextRenderer=Text"
+  },
+  {
+    "addr": "0X004A8960",
+    "ida_name": "TacticalClass::SetViewDimensions",
+    "json_name": "TacticalClass::SetViewDimensions",
+    "hpp_name": "DisplayClass::SetViewDimensions",
+    "reason": "inheritance:TacticalClass<->DisplayClass"
+  },
+  {
+    "addr": "0X004A9CA0",
+    "ida_name": "DisplayClass::vt_entry_94",
+    "json_name": "DisplayClass::vt_entry_94",
+    "hpp_name": "GScreenClass::vt_entry_94",
+    "reason": "same_method_different_class_class_may_be_related|vtable_index_notation_descriptive_name"
+  },
+  {
+    "addr": "0X004AC700",
+    "ida_name": "TacticalClass::SetDisplayMode",
+    "json_name": "TacticalClass::SetDisplayMode",
+    "hpp_name": "DDraw::SetDisplayMode",
+    "reason": "same_method_different_class_class_may_be_related"
+  },
+  {
+    "addr": "0X004BAC60",
+    "ida_name": "DSurface::CreateBackBuffer",
+    "json_name": "DSurface::CreateBackBuffer",
+    "hpp_name": "DDraw::CreateBackBuffer",
+    "reason": "same_method_different_class_class_may_be_related"
+  },
+  {
+    "addr": "0X004C2BD0",
+    "ida_name": "TechnoClass::updateSightRange",
+    "json_name": "TechnoClass::updateSightRange",
+    "hpp_name": "TechnoClass::UpdateSight",
+    "reason": "inheritance:TechnoClass<->TechnoClass|method_naming_convention_both_valid"
+  },
+  {
+    "addr": "0X004CA430",
+    "ida_name": "FactoryClass::Stat",
+    "json_name": "FactoryClass::Stat",
+    "hpp_name": "FactoryClass::GetProgress",
+    "reason": "inheritance:FactoryClass<->FactoryClass|method_naming_convention_both_valid"
+  },
+  {
+    "addr": "0X004CA580",
+    "ida_name": "FactoryClass::Revert",
+    "json_name": "FactoryClass::Revert",
+    "hpp_name": "FactoryClass::AbandonProduction",
+    "reason": "inheritance:FactoryClass<->FactoryClass|method_naming_convention_both_valid"
+  },
+  {
+    "addr": "0X004CA670",
+    "ida_name": "FactoryClass::CountType",
+    "json_name": "FactoryClass::CountType",
+    "hpp_name": "FactoryClass::CountTotal",
+    "reason": "inheritance:FactoryClass<->FactoryClass|method_naming_convention_both_valid"
+  },
+  {
+    "addr": "0X004E01C0",
+    "ida_name": "AbstractClass::queueMission",
+    "json_name": "AbstractClass::queueMission",
+    "hpp_name": "MissionClass::queueMission",
+    "reason": "inheritance:AbstractClass<->MissionClass"
+  },
+  {
+    "addr": "0X004F9610",
+    "ida_name": "HouseClass::GiveTiberium_Storage",
+    "json_name": "HouseClass::GiveTiberium_Storage",
+    "hpp_name": "HouseClass::GiveTiberium",
+    "reason": "inheritance:HouseClass<->HouseClass|sub_method_longer_vs_shorter_naming"
+  },
+  {
+    "addr": "0X004F9A50",
+    "ida_name": "House::IsAlliedWith",
+    "json_name": "House::IsAlliedWith",
+    "hpp_name": "HouseClass::IsAlliedWith",
+    "reason": "class_alias:House=HouseClass"
+  },
+  {
+    "addr": "0X004FBE40",
+    "ida_name": "HouseClass::IsCellOccupied",
+    "json_name": "HouseClass::IsCellOccupied",
+    "hpp_name": "ObjectClass::IsCellOccupied",
+    "reason": "same_method_different_class_class_may_be_related"
+  },
+  {
+    "addr": "0X00508DF0",
+    "ida_name": "HouseClass::CanTogglePower",
+    "json_name": "HouseClass::CanTogglePower",
+    "hpp_name": "BuildingTypeClass::CanTogglePower",
+    "reason": "same_method_different_class_class_may_be_related"
+  },
+  {
+    "addr": "0X005098F0",
+    "ida_name": "HouseClass::UpdateAITryFireSW",
+    "json_name": "HouseClass::UpdateAITryFireSW",
+    "hpp_name": "HouseClass::AITryFireSW",
+    "reason": "inheritance:HouseClass<->HouseClass|sub_method_longer_vs_shorter_naming"
+  },
+  {
+    "addr": "0X0051DAF0",
+    "ida_name": "InfantryClass::PlayIdleAnim",
+    "json_name": "InfantryClass::PlayIdleAnim",
+    "hpp_name": "FootClass::PlayIdleAnim",
+    "reason": "inheritance:InfantryClass<->FootClass"
+  },
+  {
+    "addr": "0X0051E140",
+    "ida_name": "InfantryClass::SelectAutoTarget",
+    "json_name": "InfantryClass::SelectAutoTarget",
+    "hpp_name": "TechnoClass::SelectAutoTarget",
+    "reason": "inheritance:InfantryClass<->TechnoClass"
+  },
+  {
+    "addr": "0X005218E0",
+    "ida_name": "InfantryClass::GetDeployWeaponIndex",
+    "json_name": "InfantryClass::GetDeployWeaponIndex",
+    "hpp_name": "TechnoClass::GetDeployWeapon",
+    "reason": "inheritance:InfantryClass<->TechnoClass"
+  },
+  {
+    "addr": "0X00522D50",
+    "ida_name": "InfantryClass::SlaveGiveMoney_RecordBalanceBefore",
+    "json_name": "InfantryClass::SlaveGiveMoney_RecordBalanceBefore",
+    "hpp_name": "HouseClass::GiveMoney",
+    "reason": "unclassified_convention_difference_needs_manual_review"
+  },
+  {
+    "addr": "0X00526810",
+    "ida_name": "INIClass::BinarySearchSection",
+    "json_name": "INIClass::BinarySearchSection",
+    "hpp_name": "CCINIClass::BinarySearchSection",
+    "reason": "class_alias:INIClass=CCINIClass"
+  },
+  {
+    "addr": "0X00526960",
+    "ida_name": "INIClass::GetKeyCount",
+    "json_name": "INIClass::GetKeyCount",
+    "hpp_name": "CCINIClass::GetKeyCount",
+    "reason": "class_alias:INIClass=CCINIClass"
+  },
+  {
+    "addr": "0X00526CC0",
+    "ida_name": "INIClass::GetStringByIndex",
+    "json_name": "INIClass::GetStringByIndex",
+    "hpp_name": "CCINIClass::GetStringByIndex",
+    "reason": "class_alias:INIClass=CCINIClass"
+  },
+  {
+    "addr": "0X00538B30",
+    "ida_name": "RulesClass::InitINIChain",
+    "json_name": "RulesClass::InitINIChain",
+    "hpp_name": "RulesClass::Init",
+    "reason": "inheritance:RulesClass<->RulesClass|sub_method_longer_vs_shorter_naming"
+  },
+  {
+    "addr": "0X0053EE70",
+    "ida_name": "GUID::Compare",
+    "json_name": "GUID::Compare",
+    "hpp_name": "GUIDUtil::Compare",
+    "reason": "class_alias:GUID=GUIDUtil"
+  },
+  {
+    "addr": "0X0053F5D0",
+    "ida_name": "IPXConnClass::send",
+    "json_name": "IPXConnClass::send",
+    "hpp_name": "ConnectionClass::Send",
+    "reason": "inheritance:IPXConnClass<->ConnectionClass"
+  },
+  {
+    "addr": "0X0053F650",
+    "ida_name": "IPXConnClass::receive",
+    "json_name": "IPXConnClass::receive",
+    "hpp_name": "ConnectionClass::Receive",
+    "reason": "inheritance:IPXConnClass<->ConnectionClass"
+  },
+  {
+    "addr": "0X005414C0",
+    "ida_name": "IPXManagerClass::release",
+    "json_name": "IPXManagerClass::release",
+    "hpp_name": "IPXManagerClass::CloseSession",
+    "reason": "inheritance:IPXManagerClass<->IPXManagerClass|method_naming_convention_both_valid"
+  },
+  {
+    "addr": "0X00542350",
+    "ida_name": "IPXManagerClass::GetAddress",
+    "json_name": "IPXManagerClass::GetAddress",
+    "hpp_name": "ConnectionClass::GetAddress",
+    "reason": "inheritance:IPXManagerClass<->ConnectionClass"
+  },
+  {
+    "addr": "0X005424A0",
+    "ida_name": "IPXManagerClass::CheckStatus",
+    "json_name": "IPXManagerClass::CheckStatus",
+    "hpp_name": "IPXManagerClass::IsIPXAvailable",
+    "reason": "inheritance:IPXManagerClass<->IPXManagerClass|method_naming_convention_both_valid"
+  },
+  {
+    "addr": "0X00542FE0",
+    "ida_name": "IPXManagerClass::Init",
+    "json_name": "IPXManagerClass::Init",
+    "hpp_name": "ModemConnectionClass::Init",
+    "reason": "same_method_different_class_class_may_be_related"
+  },
+  {
+    "addr": "0X00543090",
+    "ida_name": "Connection::Close",
+    "json_name": "Connection::Close",
+    "hpp_name": "ConnectionClass::Close",
+    "reason": "class_alias:Connection=ConnectionClass"
+  },
+  {
+    "addr": "0X00544C80",
+    "ida_name": "CellClass::EnsureFileLoaded",
+    "json_name": "CellClass::EnsureFileLoaded",
+    "hpp_name": "VoxLib::Loaded",
+    "reason": "unclassified_convention_difference_needs_manual_review"
+  },
+  {
+    "addr": "0X005471B0",
+    "ida_name": "HouseClass::GetCameoTypeIndex",
+    "json_name": "HouseClass::GetCameoTypeIndex",
+    "hpp_name": "ObjectTypeClass::GetCameo",
+    "reason": "unclassified_convention_difference_needs_manual_review"
+  },
+  {
+    "addr": "0X005565A0",
+    "ida_name": "LinkClass::Destruct",
+    "json_name": "LinkClass::Destruct",
+    "hpp_name": "LinkClass::LinkClass",
+    "reason": "destructor_naming|inheritance:LinkClass<->LinkClass|method_naming_convention_both_valid"
+  },
+  {
+    "addr": "0X0055AD10",
+    "ida_name": "COMObject::GetSpecialValue",
+    "json_name": "COMObject::GetSpecialValue",
+    "hpp_name": "TechnoClass::getSpecialValue",
+    "reason": "unclassified_convention_difference_needs_manual_review"
+  },
+  {
+    "addr": "0X005657E0",
+    "ida_name": "Cell::Exists",
+    "json_name": "Cell::Exists",
+    "hpp_name": "MapClass::CellExists",
+    "reason": "unclassified_convention_difference_needs_manual_review"
+  },
+  {
+    "addr": "0X00568300",
+    "ida_name": "LayerClass::CoordinatesLegal",
+    "json_name": "LayerClass::CoordinatesLegal",
+    "hpp_name": "MapClass::CoordinatesLegal",
+    "reason": "inheritance:LayerClass<->MapClass"
+  },
+  {
+    "addr": "0X00577920",
+    "ida_name": "MapClass::RemoveTriggerRef",
+    "json_name": "MapClass::RemoveTriggerRef",
+    "hpp_name": "TagClass::RemoveTrigger",
+    "reason": "unclassified_convention_difference_needs_manual_review"
+  },
+  {
+    "addr": "0X00577D90",
+    "ida_name": "LayerClass::Reveal",
+    "json_name": "LayerClass::Reveal",
+    "hpp_name": "ObjectClass::Reveal",
+    "reason": "same_method_different_class_class_may_be_related"
+  },
+  {
+    "addr": "0X00578290",
+    "ida_name": "LayerClass::CellIteratorNext",
+    "json_name": "LayerClass::CellIteratorNext",
+    "hpp_name": "MapClass::CellIteratorNext",
+    "reason": "inheritance:LayerClass<->MapClass"
+  },
+  {
+    "addr": "0X00578350",
+    "ida_name": "LayerClass::CellIteratorReset",
+    "json_name": "LayerClass::CellIteratorReset",
+    "hpp_name": "MapClass::CellIteratorReset",
+    "reason": "inheritance:LayerClass<->MapClass"
+  },
+  {
+    "addr": "0X00578460",
+    "ida_name": "LayerClass::IsWithinUsableArea",
+    "json_name": "LayerClass::IsWithinUsableArea",
+    "hpp_name": "MapClass::IsWithinUsableArea",
+    "reason": "inheritance:LayerClass<->MapClass"
+  },
+  {
+    "addr": "0X00581140",
+    "ida_name": "LayerClass::DestroyCliff",
+    "json_name": "LayerClass::DestroyCliff",
+    "hpp_name": "MapClass::DestroyCliff",
+    "reason": "inheritance:LayerClass<->MapClass"
+  },
+  {
+    "addr": "0X005981F0",
+    "ida_name": "RandomMap::LoadConfig",
+    "json_name": "RandomMap::LoadConfig",
+    "hpp_name": "State::LoadConfig",
+    "reason": "same_method_different_class_class_may_be_related"
+  },
+  {
+    "addr": "0X005A7250",
+    "ida_name": "IsAreaClearMap",
+    "json_name": "IsAreaClearMap",
+    "hpp_name": "FootClass::isAreaClear",
+    "reason": "global_assigned_to_module_class_naming_convention"
+  },
+  {
+    "addr": "0X005AC340",
+    "ida_name": "Scalar::Dtor",
+    "json_name": "Scalar::Dtor",
+    "hpp_name": "TechnoClass::ScalarDtor",
+    "reason": "unclassified_convention_difference_needs_manual_review"
+  },
+  {
+    "addr": "0X005B3A60",
+    "ida_name": "AbstractClass::getWeaponRange",
+    "json_name": "AbstractClass::getWeaponRange",
+    "hpp_name": "TechnoTypeClass::getWeaponRange",
+    "reason": "same_method_different_class_class_may_be_related"
+  },
+  {
+    "addr": "0X005C07D0",
+    "ida_name": "CreateMovie",
+    "json_name": "CreateMovie",
+    "hpp_name": "MoviePlayer::CreateMovie",
+    "reason": "global_assigned_to_module_class_naming_convention"
+  },
+  {
+    "addr": "0X005C5DD0",
+    "ida_name": "StreamWrapper::Seek",
+    "json_name": "StreamWrapper::Seek",
+    "hpp_name": "Stream::Seek",
+    "reason": "same_method_different_class_class_may_be_related"
+  },
+  {
+    "addr": "0X005C6940",
+    "ida_name": "InitArrayWithValue",
+    "json_name": "InitArrayWithValue",
+    "hpp_name": "Struct::InitArray",
+    "reason": "global_assigned_to_module_class_naming_convention"
+  },
+  {
+    "addr": "0X005CEA40",
+    "ida_name": "MSPCXAnim::SetPalette",
+    "json_name": "MSPCXAnim::SetPalette",
+    "hpp_name": "Palette::SetPalette",
+    "reason": "same_method_different_class_class_may_be_related"
+  },
+  {
+    "addr": "0X005D3810",
+    "ida_name": "MPBattleClass::validateHouse",
+    "json_name": "MPBattleClass::validateHouse",
+    "hpp_name": "MPGameModeClass::ValidateHouse",
+    "reason": "inheritance:MPBattleClass<->MPGameModeClass"
+  },
+  {
+    "addr": "0X005D3830",
+    "ida_name": "MPBattleClass::validateOwner",
+    "json_name": "MPBattleClass::validateOwner",
+    "hpp_name": "MPGameModeClass::ValidateOwner",
+    "reason": "inheritance:MPBattleClass<->MPGameModeClass"
+  },
+  {
+    "addr": "0X005D39B0",
+    "ida_name": "MPBattleClass::randomAICountryIndex",
+    "json_name": "MPBattleClass::randomAICountryIndex",
+    "hpp_name": "MPGameModeClass::RandomAICountryIndex",
+    "reason": "inheritance:MPBattleClass<->MPGameModeClass"
+  },
+  {
+    "addr": "0X005D58B0",
+    "ida_name": "MPBattleClass::startingPositionsToHouseBaseCells",
+    "json_name": "MPBattleClass::startingPositionsToHouseBaseCells",
+    "hpp_name": "MPGameModeClass::StartingPositionsToHouseBaseCells",
+    "reason": "inheritance:MPBattleClass<->MPGameModeClass"
+  },
+  {
+    "addr": "0X005D6320",
+    "ida_name": "ScenarioClass::saveGame",
+    "json_name": "ScenarioClass::saveGame",
+    "hpp_name": "LoadOptions::SaveGame",
+    "reason": "unclassified_convention_difference_needs_manual_review"
+  },
+  {
+    "addr": "0X005D6330",
+    "ida_name": "ScenarioClass::loadGame",
+    "json_name": "ScenarioClass::loadGame",
+    "hpp_name": "LoadOptions::LoadGame",
+    "reason": "unclassified_convention_difference_needs_manual_review"
+  },
+  {
+    "addr": "0X005D8CB0",
+    "ida_name": "PlayerClass::SetHouse",
+    "json_name": "PlayerClass::SetHouse",
+    "hpp_name": "TriggerClass::SetHouse",
+    "reason": "same_method_different_class_class_may_be_related"
+  },
+  {
+    "addr": "0X005E2BE0",
+    "ida_name": "Network::CountDisconnectedHouses",
+    "json_name": "Network::CountDisconnectedHouses",
+    "hpp_name": "ConnectionClass::IsConnected",
+    "reason": "unclassified_convention_difference_needs_manual_review"
+  },
+  {
+    "addr": "0X005F1F00",
+    "ida_name": "NullModemClass::Flush",
+    "json_name": "NullModemClass::Flush",
+    "hpp_name": "ModemConnectionClass::FlushCom",
+    "reason": "inheritance:NullModemClass<->ModemConnectionClass"
+  },
+  {
+    "addr": "0X005F1F70",
+    "ida_name": "NullModemClass::SendPacket",
+    "json_name": "NullModemClass::SendPacket",
+    "hpp_name": "ModemConnectionClass::SendPacket",
+    "reason": "inheritance:NullModemClass<->ModemConnectionClass"
+  },
+  {
+    "addr": "0X005F1FA0",
+    "ida_name": "NullModemClass::DetectModem",
+    "json_name": "NullModemClass::DetectModem",
+    "hpp_name": "ModemConnectionClass::DetectModem",
+    "reason": "inheritance:NullModemClass<->ModemConnectionClass"
+  },
+  {
+    "addr": "0X005F3170",
+    "ida_name": "NullModemClass::Negotiate",
+    "json_name": "NullModemClass::Negotiate",
+    "hpp_name": "ModemConnectionClass::Negotiate",
+    "reason": "inheritance:NullModemClass<->ModemConnectionClass"
+  },
+  {
+    "addr": "0X005F5CD0",
+    "ida_name": "BuildingClass::IsHealthLow",
+    "json_name": "BuildingClass::IsHealthLow",
+    "hpp_name": "ObjectClass::GetHealthPercentage",
+    "reason": "inheritance:BuildingClass<->ObjectClass"
+  },
+  {
+    "addr": "0X005F5F40",
+    "ida_name": "ObjectClass::GetZAboveGround",
+    "json_name": "ObjectClass::GetZAboveGround",
+    "hpp_name": "ObjectClass::GetZ",
+    "reason": "inheritance:ObjectClass<->ObjectClass|sub_method_longer_vs_shorter_naming"
+  },
+  {
+    "addr": "0X005F6360",
+    "ida_name": "ObjectClass::DistanceTo",
+    "json_name": "ObjectClass::DistanceTo",
+    "hpp_name": "ObjectClass::DistanceFrom",
+    "reason": "inheritance:ObjectClass<->ObjectClass|method_naming_convention_both_valid"
+  },
+  {
+    "addr": "0X005FE250",
+    "ida_name": "OverlayTypeClass::OverlayTypeClass",
+    "json_name": "OverlayTypeClass::OverlayTypeClass",
+    "hpp_name": "OverlayTypeClass::Find",
+    "reason": "constructor_annotated_as_find|inheritance:OverlayTypeClass<->OverlayTypeClass|method_naming_convention_both_valid"
+  },
+  {
+    "addr": "0X00621E90",
+    "ida_name": "Dialog::DrawBackground",
+    "json_name": "Dialog::DrawBackground",
+    "hpp_name": "DialogClass::DrawBackground",
+    "reason": "class_alias:Dialog=DialogClass"
+  },
+  {
+    "addr": "0X00624140",
+    "ida_name": "HashTable::FindAndMark",
+    "json_name": "HashTable::FindAndMark",
+    "hpp_name": "Entry::FindAndMark",
+    "reason": "class_alias:HashTable=Entry"
+  },
+  {
+    "addr": "0X00624930",
+    "ida_name": "Dialog::UpdateControlState",
+    "json_name": "Dialog::UpdateControlState",
+    "hpp_name": "Dialog::sub_624930",
+    "reason": "inheritance:Dialog<->Dialog|method_naming_convention_both_valid"
+  },
+  {
+    "addr": "0X00624BE0",
+    "ida_name": "Dialog::GrowBuffer",
+    "json_name": "Dialog::GrowBuffer",
+    "hpp_name": "Dialog::sub_624BE0",
+    "reason": "inheritance:Dialog<->Dialog|method_naming_convention_both_valid"
+  },
+  {
+    "addr": "0X00635060",
+    "ida_name": "FactoryClass::FinishProduction",
+    "json_name": "FactoryClass::FinishProduction",
+    "hpp_name": "FactoryClass::CompletedProduction",
+    "reason": "inheritance:FactoryClass<->FactoryClass|method_naming_convention_both_valid"
+  },
+  {
+    "addr": "0X006351E0",
+    "ida_name": "ScriptAction::DecrementRefCount",
+    "json_name": "ScriptAction::DecrementRefCount",
+    "hpp_name": "Count::DecrementRefCount",
+    "reason": "same_method_different_class_class_may_be_related"
+  },
+  {
+    "addr": "0X0063BE60",
+    "ida_name": "BuildingClass::DrawActionLines",
+    "json_name": "BuildingClass::DrawActionLines",
+    "hpp_name": "TechnoClass::DrawActionLines",
+    "reason": "inheritance:BuildingClass<->TechnoClass"
+  },
+  {
+    "addr": "0X00642740",
+    "ida_name": "CoordStruct::Set2",
+    "json_name": "CoordStruct::Set2",
+    "hpp_name": "CellClass::CoordStruct",
+    "reason": "unclassified_convention_difference_needs_manual_review"
+  },
+  {
+    "addr": "0X00645C50",
+    "ida_name": "Int4::Set2",
+    "json_name": "Int4::Set2",
+    "hpp_name": "CoordUtil::Set2",
+    "reason": "same_method_different_class_class_may_be_related"
+  },
+  {
+    "addr": "0X00658780",
+    "ida_name": "TacticalClass::renderOverlay",
+    "json_name": "TacticalClass::renderOverlay",
+    "hpp_name": "TacticalMap::RenderOverlay",
+    "reason": "unclassified_convention_difference_needs_manual_review"
+  },
+  {
+    "addr": "0X0065AA80",
+    "ida_name": "RadioClass::ProcessCmd",
+    "json_name": "RadioClass::ProcessCmd",
+    "hpp_name": "RadioClass::vt53:",
+    "reason": "inheritance:RadioClass<->RadioClass|vtable_index_notation_descriptive_name|method_naming_convention_both_valid"
+  },
+  {
+    "addr": "0X0065AAC0",
+    "ida_name": "RadioClass::ExecuteAction",
+    "json_name": "RadioClass::ExecuteAction",
+    "hpp_name": "RadioClass::vt10:",
+    "reason": "inheritance:RadioClass<->RadioClass|vtable_index_notation_descriptive_name|method_naming_convention_both_valid"
+  },
+  {
+    "addr": "0X0065AB10",
+    "ida_name": "RadioClass::PowerDrainUpdate",
+    "json_name": "RadioClass::PowerDrainUpdate",
+    "hpp_name": "RadioClass::vt13:",
+    "reason": "inheritance:RadioClass<->RadioClass|vtable_index_notation_descriptive_name|method_naming_convention_both_valid"
+  },
+  {
+    "addr": "0X0065B8F0",
+    "ida_name": "RadSiteClass::GetRadLevelAt",
+    "json_name": "RadSiteClass::GetRadLevelAt",
+    "hpp_name": "RadSiteClass::GetRadLevel",
+    "reason": "inheritance:RadSiteClass<->RadSiteClass|sub_method_longer_vs_shorter_naming"
+  },
+  {
+    "addr": "0X0065BB50",
+    "ida_name": "RadSiteClass::Deactivate",
+    "json_name": "RadSiteClass::Deactivate",
+    "hpp_name": "RadSiteClass::Activate",
+    "reason": "inheritance:RadSiteClass<->RadSiteClass|method_naming_convention_both_valid"
+  },
+  {
+    "addr": "0X006614F0",
+    "ida_name": "RulesClass::readGeneralSection",
+    "json_name": "RulesClass::readGeneralSection",
+    "hpp_name": "RulesClass::ReadGeneral",
+    "reason": "inheritance:RulesClass<->RulesClass|method_naming_convention_both_valid"
+  },
+  {
+    "addr": "0X00671EA0",
+    "ida_name": "Dialog::ReadMultiplayerDialogSettings",
+    "json_name": "Dialog::ReadMultiplayerDialogSettings",
+    "hpp_name": "RulesClass::ReadMultiplayerDialogSettings",
+    "reason": "same_method_different_class_class_may_be_related"
+  },
+  {
+    "addr": "0X006725F0",
+    "ida_name": "RulesClass::ReadSidesList",
+    "json_name": "RulesClass::ReadSidesList",
+    "hpp_name": "RulesClass::ReadSides",
+    "reason": "inheritance:RulesClass<->RulesClass|sub_method_longer_vs_shorter_naming"
+  },
+  {
+    "addr": "0X00673E80",
+    "ida_name": "RulesClass::ReadPowerupsSection",
+    "json_name": "RulesClass::ReadPowerupsSection",
+    "hpp_name": "RulesClass::ReadPowerups",
+    "reason": "inheritance:RulesClass<->RulesClass|sub_method_longer_vs_shorter_naming"
+  },
+  {
+    "addr": "0X006AB990",
+    "ida_name": "SidebarClass::select",
+    "json_name": "SidebarClass::select",
+    "hpp_name": "ObjectClass::Select",
+    "reason": "inheritance:SidebarClass<->ObjectClass"
+  },
+  {
+    "addr": "0X006AB9E0",
+    "ida_name": "SidebarClass::deselect",
+    "json_name": "SidebarClass::deselect",
+    "hpp_name": "ObjectClass::Deselect",
+    "reason": "inheritance:SidebarClass<->ObjectClass"
+  },
+  {
+    "addr": "0X006AE6E0",
+    "ida_name": "Skirmish::SetupGame",
+    "json_name": "Skirmish::SetupGame",
+    "hpp_name": "Multiplayer::SetupGame",
+    "reason": "same_method_different_class_class_may_be_related"
+  },
+  {
+    "addr": "0X006AF1A0",
+    "ida_name": "SlaveManagerClass::ctor",
+    "json_name": "SlaveManagerClass::ctor",
+    "hpp_name": "SlaveManagerClass::SlaveManagerClass",
+    "reason": "constructor_naming|inheritance:SlaveManagerClass<->SlaveManagerClass|method_naming_convention_both_valid"
+  },
+  {
+    "addr": "0X006B5260",
+    "ida_name": "SmudgeTypeClass::SmudgeTypeClass",
+    "json_name": "SmudgeTypeClass::SmudgeTypeClass",
+    "hpp_name": "SmudgeTypeClass::Find",
+    "reason": "constructor_annotated_as_find|inheritance:SmudgeTypeClass<->SmudgeTypeClass|method_naming_convention_both_valid"
+  },
+  {
+    "addr": "0X006BB9A0",
+    "ida_name": "WinMain",
+    "json_name": "WinMain",
+    "hpp_name": "gamemd::WinMain:",
+    "reason": "global_assigned_to_module_class_naming_convention|gamemd_namespace_prefix_normalization_handles"
+  },
+  {
+    "addr": "0X006CB7B0",
+    "ida_name": "SuperClass::Lose",
+    "json_name": "SuperClass::Lose",
+    "hpp_name": "HouseClass::Lose",
+    "reason": "same_method_different_class_class_may_be_related"
+  },
+  {
+    "addr": "0X006D1200",
+    "ida_name": "CommandClass::BuildBar",
+    "json_name": "CommandClass::BuildBar",
+    "hpp_name": "Commands::BuildBar",
+    "reason": "class_alias:CommandClass=Commands"
+  },
+  {
+    "addr": "0X006EA870",
+    "ida_name": "TeamClass::LiberateMember_Start",
+    "json_name": "TeamClass::LiberateMember_Start",
+    "hpp_name": "TeamClass::LiberateMember",
+    "reason": "inheritance:TeamClass<->TeamClass|sub_method_longer_vs_shorter_naming"
+  },
+  {
+    "addr": "0X006F4AB0",
+    "ida_name": "TechnoClass::Mission_RepairDispatch",
+    "json_name": "TechnoClass::Mission_RepairDispatch",
+    "hpp_name": "MissionClass::Mission_Repair",
+    "reason": "inheritance:TechnoClass<->MissionClass"
+  },
+  {
+    "addr": "0X006F9DD0",
+    "ida_name": "TechnoClass::SetTargetIfAllowed",
+    "json_name": "TechnoClass::SetTargetIfAllowed",
+    "hpp_name": "TechnoClass::SetTarget",
+    "reason": "inheritance:TechnoClass<->TechnoClass|sub_method_longer_vs_shorter_naming"
+  },
+  {
+    "addr": "0X00700D10",
+    "ida_name": "TechnoClass::IsDeadOrInactive",
+    "json_name": "TechnoClass::IsDeadOrInactive",
+    "hpp_name": "AbstractClass::isDead",
+    "reason": "inheritance:TechnoClass<->AbstractClass"
+  },
+  {
+    "addr": "0X00703CC0",
+    "ida_name": "TechnoClass::ScanAdjacentCells",
+    "json_name": "TechnoClass::ScanAdjacentCells",
+    "hpp_name": "TechnoClass::ScanAdjacentCells2",
+    "reason": "inheritance:TechnoClass<->TechnoClass|sub_method_longer_vs_shorter_naming"
+  },
+  {
+    "addr": "0X0070C250",
+    "ida_name": "IPersistStream::GetSizeMax",
+    "json_name": "IPersistStream::GetSizeMax",
+    "hpp_name": "Stream::GetSize",
+    "reason": "unclassified_convention_difference_needs_manual_review"
+  },
+  {
+    "addr": "0X0070D590",
+    "ida_name": "TechnoClass::IsCloseEnoughToBuilding",
+    "json_name": "TechnoClass::IsCloseEnoughToBuilding",
+    "hpp_name": "TechnoClass::IsCloseEnough",
+    "reason": "inheritance:TechnoClass<->TechnoClass|sub_method_longer_vs_shorter_naming"
+  },
+  {
+    "addr": "0X00711E90",
+    "ida_name": "TechnoTypeClass::CanAttackMove_IgnoreWeapon",
+    "json_name": "TechnoTypeClass::CanAttackMove_IgnoreWeapon",
+    "hpp_name": "TechnoTypeClass::CanAttackMove",
+    "reason": "inheritance:TechnoTypeClass<->TechnoTypeClass|sub_method_longer_vs_shorter_naming"
+  },
+  {
+    "addr": "0X00718000",
+    "ida_name": "TeleportLocomotionClass::TeleportLocomotionClass",
+    "json_name": "TeleportLocomotionClass::Release",
+    "hpp_name": "TeleportLocomotionClass::TeleportLocomotionClass",
+    "reason": "inheritance:TeleportLocomotionClass<->TeleportLocomotionClass|json_has_inconsistent_name_hpp_matches_ida"
+  },
+  {
+    "addr": "0X0071DA80",
+    "ida_name": "TerrainTypeClass::TerrainTypeClass",
+    "json_name": "TerrainTypeClass::TerrainTypeClass",
+    "hpp_name": "TerrainTypeClass::Find",
+    "reason": "constructor_annotated_as_find|inheritance:TerrainTypeClass<->TerrainTypeClass|method_naming_convention_both_valid"
+  },
+  {
+    "addr": "0X00724580",
+    "ida_name": "CommandClass::AddAction",
+    "json_name": "CommandClass::AddAction",
+    "hpp_name": "Commands::AddAction",
+    "reason": "class_alias:CommandClass=Commands"
+  },
+  {
+    "addr": "0X007263A0",
+    "ida_name": "TriggerClass::NotifyGlobalChanged",
+    "json_name": "TriggerClass::NotifyGlobalChanged",
+    "hpp_name": "TagClass::NotifyGlobalChanged",
+    "reason": "inheritance:TriggerClass<->TagClass"
+  },
+  {
+    "addr": "0X007263D0",
+    "ida_name": "TriggerClass::NotifyLocalChanged",
+    "json_name": "TriggerClass::NotifyLocalChanged",
+    "hpp_name": "TagClass::NotifyLocalChanged",
+    "reason": "inheritance:TriggerClass<->TagClass"
+  },
+  {
+    "addr": "0X007271E0",
+    "ida_name": "TriggerTypeClass::GetFlags",
+    "json_name": "TriggerTypeClass::GetFlags",
+    "hpp_name": "TagTypeClass::GetFlags",
+    "reason": "inheritance:TriggerTypeClass<->TagTypeClass"
+  },
+  {
+    "addr": "0X00734E60",
+    "ida_name": "GetStringCSF",
+    "json_name": "GetStringCSF",
+    "hpp_name": "GetCSFString",
+    "reason": "method_naming_convention_both_valid"
+  },
+  {
+    "addr": "0X00734F50",
+    "ida_name": "RestartNetworkSession",
+    "json_name": "RestartNetworkSession",
+    "hpp_name": "GameConfig::RestartNetworkSession",
+    "reason": "global_assigned_to_module_class_naming_convention"
+  },
+  {
+    "addr": "0X00734F80",
+    "ida_name": "ToggleNetworkSession",
+    "json_name": "ToggleNetworkSession",
+    "hpp_name": "GameConfig::ToggleNetworkSession",
+    "reason": "global_assigned_to_module_class_naming_convention"
+  },
+  {
+    "addr": "0X007438F0",
+    "ida_name": "UnitClass::CanCrushTarget",
+    "json_name": "UnitClass::CanCrushTarget",
+    "hpp_name": "TechnoClass::canCrush",
+    "reason": "inheritance:UnitClass<->TechnoClass"
+  },
+  {
+    "addr": "0X00743A50",
+    "ida_name": "UnitClass::Scatter",
+    "json_name": "UnitClass::Scatter",
+    "hpp_name": "ObjectClass::Scatter",
+    "reason": "inheritance:UnitClass<->ObjectClass"
+  },
+  {
+    "addr": "0X007470D0",
+    "ida_name": "UnitTypeClass::UnitTypeClass",
+    "json_name": "UnitTypeClass::UnitTypeClass",
+    "hpp_name": "UnitTypeClass::Find",
+    "reason": "constructor_annotated_as_find|inheritance:UnitTypeClass<->UnitTypeClass|method_naming_convention_both_valid"
+  },
+  {
+    "addr": "0X00752700",
+    "ida_name": "VoxClass::FindAndPlay",
+    "json_name": "VoxClass::FindAndPlay",
+    "hpp_name": "VoxClass::Play",
+    "reason": "inheritance:VoxClass<->VoxClass|sub_method_longer_vs_shorter_naming"
+  },
+  {
+    "addr": "0X007529E0",
+    "ida_name": "Audio::IsPlaying",
+    "json_name": "Audio::IsPlaying",
+    "hpp_name": "AudioEventHandle::IsPlaying",
+    "reason": "class_alias:Audio=AudioEventHandle"
+  },
+  {
+    "addr": "0X00754CB0",
+    "ida_name": "Voxel::Projection_Setup",
+    "json_name": "Voxel::Projection_Setup",
+    "hpp_name": "Voxel::ProjectionSetup",
+    "reason": "inheritance:Voxel<->Voxel|method_naming_convention_both_valid"
+  },
+  {
+    "addr": "0X0075F330",
+    "ida_name": "WaveClass::DamageArea",
+    "json_name": "WaveClass::DamageArea",
+    "hpp_name": "MapClass::DamageArea",
+    "reason": "same_method_different_class_class_may_be_related"
+  },
+  {
+    "addr": "0X0076B090",
+    "ida_name": "ComStreamClass::closeStream",
+    "json_name": "ComStreamClass::closeStream",
+    "hpp_name": "StreamClass::Close",
+    "reason": "inheritance:ComStreamClass<->StreamClass"
+  },
+  {
+    "addr": "0X00772AC0",
+    "ida_name": "InfantryClass::startPanic",
+    "json_name": "InfantryClass::startPanic",
+    "hpp_name": "FootClass::Panic",
+    "reason": "inheritance:InfantryClass<->FootClass"
+  },
+  {
+    "addr": "0X00773070",
+    "ida_name": "TechnoClass::GetWeaponRange",
+    "json_name": "TechnoClass::GetWeaponRange",
+    "hpp_name": "ObjectClass::GetWeaponRange",
+    "reason": "inheritance:TechnoClass<->ObjectClass"
+  },
+  {
+    "addr": "0X00774B30",
+    "ida_name": "WinModemClass::ReadBytes",
+    "json_name": "WinModemClass::ReadBytes",
+    "hpp_name": "Stream::ReadBytes",
+    "reason": "same_method_different_class_class_may_be_related"
+  },
+  {
+    "addr": "0X0077D940",
+    "ida_name": "Network::IsMultiplayerActive",
+    "json_name": "Network::IsMultiplayerActive",
+    "hpp_name": "SessionClass::IsMultiplayer",
+    "reason": "unclassified_convention_difference_needs_manual_review"
+  },
+  {
+    "addr": "0X007ADC60",
+    "ida_name": "HashTable::LookupString",
+    "json_name": "HashTable::LookupString",
+    "hpp_name": "Entry::LookupString",
+    "reason": "class_alias:HashTable=Entry"
+  },
+  {
+    "addr": "0X007AEF50",
+    "ida_name": "ComStreamClass::flushStream",
+    "json_name": "ComStreamClass::flushStream",
+    "hpp_name": "StreamClass::Flush",
+    "reason": "inheritance:ComStreamClass<->StreamClass"
+  },
+  {
+    "addr": "0X007BBE20",
+    "ida_name": "IntersectSurfaceRects",
+    "json_name": "IntersectSurfaceRects",
+    "hpp_name": "Rect::Intersects",
+    "reason": "global_assigned_to_module_class_naming_convention"
+  },
+  {
+    "addr": "0X007C3960",
+    "ida_name": "AudioStream::GetPosition",
+    "json_name": "AudioStream::GetPosition",
+    "hpp_name": "Stream::GetPosition",
+    "reason": "same_method_different_class_class_may_be_related"
+  },
+  {
+    "addr": "0X007C850C",
+    "ida_name": "ReadFile",
+    "json_name": "ReadFile",
+    "hpp_name": "RulesClass::ReadFile",
+    "reason": "crt_or_win32_import_wrapped_in_class|global_assigned_to_module_class_naming_convention"
+  },
+  {
+    "addr": "0X007C865C",
+    "ida_name": "CloseWindow",
+    "json_name": "CloseWindow",
+    "hpp_name": "GScreenClass::CloseWindow",
+    "reason": "crt_or_win32_import_wrapped_in_class|global_assigned_to_module_class_naming_convention"
+  },
+  {
+    "addr": "0X007C8674",
+    "ida_name": "SetFocus",
+    "json_name": "SetFocus",
+    "hpp_name": "TechnoClass::SetFocus",
+    "reason": "crt_or_win32_import_wrapped_in_class|global_assigned_to_module_class_naming_convention"
+  },
+  {
+    "addr": "0X007C87B8",
+    "ida_name": "SetCursor",
+    "json_name": "SetCursor",
+    "hpp_name": "GScreenClass::SetCursor",
+    "reason": "crt_or_win32_import_wrapped_in_class|global_assigned_to_module_class_naming_convention"
+  },
+  {
+    "addr": "0X007C8992",
+    "ida_name": "closesocket",
+    "json_name": "closesocket",
+    "hpp_name": "WinsockInterfaceClass::CloseSocket",
+    "reason": "crt_or_win32_import_wrapped_in_class|global_assigned_to_module_class_naming_convention"
+  },
+  {
+    "addr": "0X007C8998",
+    "ida_name": "bind",
+    "json_name": "bind",
+    "hpp_name": "WinsockInterfaceClass::Bind",
+    "reason": "crt_or_win32_import_wrapped_in_class|global_assigned_to_module_class_naming_convention"
+  },
+  {
+    "addr": "0X007C89B0",
+    "ida_name": "sendto",
+    "json_name": "sendto",
+    "hpp_name": "WinsockInterfaceClass::SendTo",
+    "reason": "crt_or_win32_import_wrapped_in_class|global_assigned_to_module_class_naming_convention"
+  },
+  {
+    "addr": "0X007CD80F",
+    "ida_name": "start",
+    "json_name": "start",
+    "hpp_name": "PsyDom::Start",
+    "reason": "crt_or_win32_import_wrapped_in_class|global_assigned_to_module_class_naming_convention"
+  },
+  {
+    "addr": "0X007D75E0",
+    "ida_name": "_memset",
+    "json_name": "_memset",
+    "hpp_name": "Struct::MemSet",
+    "reason": "crt_or_win32_import_wrapped_in_class|global_assigned_to_module_class_naming_convention"
+  },
+  {
+    "addr": "0X007D79FB",
+    "ida_name": "__FillZeroMan",
+    "json_name": "__FillZeroMan",
+    "hpp_name": "Struct::FillZero",
+    "reason": "crt_or_win32_import_wrapped_in_class|global_assigned_to_module_class_naming_convention"
+  },
+  {
+    "addr": "0X007DC468",
+    "ida_name": "__setmode_lk",
+    "json_name": "__setmode_lk",
+    "hpp_name": "LoadOptions::SetMode",
+    "reason": "crt_or_win32_import_wrapped_in_class|global_assigned_to_module_class_naming_convention"
+  },
+  {
+    "addr": "0X007DC468",
+    "ida_name": "__setmode_lk",
+    "json_name": "__setmode_lk",
+    "hpp_name": "LoadOptions::SetMode",
+    "reason": "crt_or_win32_import_wrapped_in_class|global_assigned_to_module_class_naming_convention"
+  }
+]
