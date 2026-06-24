@@ -14,7 +14,10 @@ namespace gamemd
 class CCINIClass;
 class ObjectTypeClass;
 class HouseClass;
+#ifndef GAMEMD_USING_ObjectClass
+#define GAMEMD_USING_ObjectClass
 using ra2::game::ObjectClass;
+#endif
 struct SHPStruct;
 
 #ifndef GAMEMD_DEF_GScreenClass

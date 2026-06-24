@@ -267,6 +267,80 @@ public:
 protected:
     ScenarioClass() noexcept;
     ~ScenarioClass() noexcept;
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    int ReadAndParseString(void* a1, void* a2, int a3);  // 0x475870
+    int loadMapData(void* a1, void* a2, int a3);  // 0x475950
+    int SaveIntListToINI(void* a1, void* a2, int a3);  // 0x475F30
+    int SaveTypeNameListToINI(void* a1, void* a2, int a3);  // 0x4766F0
+    int FindTerrainTypeIndex();  // 0x48DBE0
+    void LoadMapData(void* a1);  // 0x4ACE70
+    int GetScenarioData(void* a1, int a2);  // 0x4ADA30
+    int ProcessGame(void* a1);  // 0x4ADBA0
+    void* SetEvent(int a1, int a2, int a3, int a4, int a5, int a6);  // 0x4C6780
+    int UpdateScriptActions();  // 0x54E4D0
+    void* ProcessAmbientEffects(int a1, int a2);  // 0x55BB40
+    int CalcMinShroudLevel();  // 0x588990
+    int Load(int a1);  // 0x5AE100
+    void* initAI(int a1);  // 0x5C0FE0
+    void* executeTriggerActions(int a1);  // 0x5C5E40
+    int AdvanceSHPAnimationFrame(void* a1, void* a2);  // 0x5CBDA0
+    void DrawConstructionFrame(int a1, void* a2);  // 0x5CC110
+    void DrawPlacementPreview(int a1, void* a2);  // 0x5CC550
+    void DrawSHPFrameToSurface(int a1);  // 0x5CC6C0
+    bool updateTiberiumGrowth();  // 0x5CC740
+    void* processCrates(int a1);  // 0x5CEC20
+    int AssignStartingPoints(int a1);  // 0x5D6C70
+    int deallocateCells(int a1);  // 0x5D80E0
+    void resetScenarioData();  // 0x5D8110
+    int validateMap(int a1);  // 0x5D8140
+    int loadTheater(int a1);  // 0x5D8160
+    int setupPlayers(void* a1);  // 0x5D8520
+    int assignHouses(int a1);  // 0x5D8550
+    int initLocalVariables(void* a1);  // 0x5D8670
+    int setGameSpeed(int a1);  // 0x5D86B0
+    int distributeStartingUnits(void* a1);  // 0x5D87E0
+    int SaveGameOptions();  // 0x5FAD10
+    void DestroyAndClearVector();  // 0x62E650
+    void* GetActionCoordsCopy(void* a1);  // 0x633B90
+    int RenderAction(int a1);  // 0x635350
+    int ShowMissionBriefing();  // 0x65F520
+    void* LookupMethod();  // 0x683000
+    int ReadINIEntry(int a1);  // 0x683560
+    void* InitTimer();  // 0x683610
+    void* SetFileName(void* a1);  // 0x686700
+    int SetupAlliances();  // 0x686890
+    int SaveLoad_Prefix(void* a1);  // 0x689310
+    void SaveLoad_Prefix_0(int a1);  // 0x689470
+    int SetGlobalToByID(int a1, int a2);  // 0x689670
+    int SetCountryFlag(void* a1, int a2);  // 0x6896C0
+    int GetGlobalStateByID(int a1, void* a2);  // 0x689760
+    int ReadGlobalVariables(void* a1);  // 0x689880
+    int SetLocalToByID(int a1, int a2);  // 0x689910
+    int GetLocalStateByID(int a1, void* a2);  // 0x689A00
+    int ReadLocalVariables(void* a1);  // 0x689B20
+    int ReadWaypoint(void* a1);  // 0x689C60
+    int SaveToINI(void* a1, int a2);  // 0x68AD70
+    void* Get_Waypoint_Location(void* a1, int a2);  // 0x68BCC0
+    void* GetCellFromArray(int a1);  // 0x68BCE0
+    void* ClearAllWaypoints();  // 0x68BD60
+    bool Is_Waypoint_Valid(int a1);  // 0x68BD80
+    int ReadWaypoints(int a1);  // 0x68BDC0
+    int Write_Waypoints(void* a1);  // 0x68BE90
+    int Set_Default_Waypoint(int a1);  // 0x68BF30
+    int Set_Waypoint(int a1, int a2);  // 0x68BF50
+    int LoadNetworkConfig();  // 0x6980C0
+    void SaveMultiplayerSettings();  // 0x699450
+    int CheckExists(int a1);  // 0x69AC30
+    void FreeConfig();  // 0x69DE70
+    int RevealMapForHouse(void* a1);  // 0x6B8B30
+    int Create(int a1, int a2, int a3, int a4);  // 0x6E0110
+    int PrepareTextDisplay(int a1, int a2, int a3, int a4);  // 0x6E1530
+    int UpdateCounters(int a1, int a2, int a3, int a4);  // 0x6E1BD0
+    int Set(int a1, int a2, int a3, int a4);  // 0x6E26D0
+    int checkMissionObjectives(int a1);  // 0x6E5560
+    void* processEndgame(int a1);  // 0x720940
+    int LoadWaypoints();  // 0x7283C0
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 } // namespace gamemd

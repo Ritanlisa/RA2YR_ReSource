@@ -368,6 +368,102 @@ public:
 
 protected:
     CellClass();
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    int ClearOccupancyGrid();  // 0x42A5B0
+    int setOverlayType(int a1);  // 0x42AC00
+    int setTileIndex(int a1);  // 0x42E6D0
+    bool Get(void* a1);  // 0x452940
+    int SetField2C();  // 0x45A170
+    bool HasContent();  // 0x4722C0
+    void AddObject(void* a1);  // 0x4733A0
+    void DTOR();  // 0x47BB60
+    void* Construct();  // 0x47BBF0
+    void* FindInfantry(int a1);  // 0x47C550
+    int IsPassable(int a1, int a2, int a3);  // 0x47C620
+    bool DetermineTileType();  // 0x47CA80
+    void UpdateAnimations();  // 0x47DD70
+    void* FindBuilding(int a1);  // 0x47EBA0
+    void* GetCoords(void* a1);  // 0x480A30
+    int InitRandomOffsets(int a1, int a2);  // 0x4814F0
+    int SetThreatBounds(int a1, int a2);  // 0x481870
+    int DamageAllObjects();  // 0x483480
+    int SpawnTiberiumTree(int a1);  // 0x483780
+    int SaveLoad_Prefix();  // 0x4839F0
+    int SaveLoad_Prefix_0();  // 0x483C10
+    int ddtor();  // 0x485200
+    int GetBridgeBitfield();  // 0x485390
+    void ProcessBridgeRepair();  // 0x485590
+    bool IsTerrainType();  // 0x4865B0
+    bool InMapDataRange();  // 0x486650
+    bool InBounds();  // 0x486670
+    int GetCellType();  // 0x4867E0
+    int GetOccupier();  // 0x486840
+    int CheckProperty();  // 0x486890
+    bool IsActiveOrNext();  // 0x486900
+    int CreateFoggedObjects();  // 0x486A70
+    void* UpdateZone();  // 0x486BF0
+    int ClearCellContents();  // 0x486C50
+    void RadLevel_Increase(double a1);  // 0x487CE0
+    void RadLevel_Decrease(double a1);  // 0x487D00
+    int AttachObject(int a1);  // 0x487D70
+    int CopyTo();  // 0x487E80
+    void* clearOccupationFlags(int a1, int a2);  // 0x488080
+    int Cleanup();  // 0x4A1750
+    int DestroyOverlay();  // 0x4A1AA0
+    void* FindOpenNeighbor(void* a1, int a2, int a3, int a4, int a5, int a6, int a7);  // 0x4AA440
+    int CheckBuildablePair(void* a1, void* a2, int a3, int a4, int a5);  // 0x4AAB30
+    int ProcessVisibility(void* a1);  // 0x4ACC50
+    int recalcPassability();  // 0x4D2790
+    void* ScanOccupiers(void* a1);  // 0x500300
+    int IterateOccupiers(int a1);  // 0x50D250
+    int GetTerrainFlag(int a1);  // 0x5471F0
+    void* GetScreenCenterOffset(void* a1, void* a2);  // 0x565520
+    void UpdateTerrainAndWaypoints(void* a1, int a2, int a3, int a4);  // 0x565C10
+    void* BuildPathfindingGraph();  // 0x567110
+    int LoadTerrainTiles(int a1);  // 0x56B5A0
+    int CreateOverlay(int a1);  // 0x56B780
+    int DecompressRawCellData(int a1);  // 0x56B8A0
+    int DecompressTerrainDataSimple(int a1);  // 0x56B9A0
+    int DecompressTerrainData(int a1);  // 0x56BAC0
+    int CreateBuildingCrater(void* a1);  // 0x56C020
+    int DetermineTileConnectivity(void* a1);  // 0x56D5A0
+    int RecursiveTileUpdate(void* a1, int a2, void* a3);  // 0x570AE0
+    int ProcessTileChange(int a1);  // 0x571050
+    int PropagateTerrainVariant2(void* a1);  // 0x571490
+    int ApplyTerrainModTile(int a1);  // 0x5749C0
+    int ApplyCliffMod2(void* a1);  // 0x575220
+    int ApplyCliffMod(void* a1);  // 0x575540
+    int ApplyTerrainMod2(void* a1);  // 0x575870
+    int ApplyTerrainMod(void* a1);  // 0x575BA0
+    int RecursiveCraterUpdate(void* a1, int a2, void* a3);  // 0x576200
+    int PropagateTerrainVariant5(void* a1);  // 0x576BA0
+    int ApplyTileModification(void* a1);  // 0x57BCF0
+    int ApplyTileModification2(void* a1);  // 0x57C2B0
+    int ApplyTileModification3(void* a1);  // 0x57CF60
+    int ApplyTileModification4(void* a1);  // 0x57D530
+    void ApplyCliffTileModifications(int a1);  // 0x57F200
+    void ApplyTileMod58(int a1);  // 0x57F440
+    void ApplyTileModification6(void* a1);  // 0x57F6A0
+    void ApplyTileModification7(void* a1);  // 0x57FBC0
+    void ApplyTileModification5(void* a1);  // 0x5800D0
+    void ApplyTileModification8(void* a1);  // 0x580600
+    bool updateLighting();  // 0x580B20
+    bool applyTileDamage();  // 0x580B70
+    int SetTerrainType(void* a1);  // 0x587180
+    int CheckConnectivity(int a1);  // 0x587410
+    int CopyNeighborData(int a1);  // 0x588C10
+    void* initCellData(void* a1);  // 0x588C40
+    int Reset();  // 0x5A38C0
+    int ProcessUpdate();  // 0x5A7B40
+    int LockSurface();  // 0x5B5EF0
+    int SetOccupancy();  // 0x5B9F30
+    int GetBridgeIndexThunk();  // 0x5F1EE0
+    void RevealFogRect(void* a1);  // 0x6565A0
+    int CreateInstance();  // 0x68EC20
+    int IsBuildable();  // 0x6B25C0
+    int Find(int a1, int a2, int a3, int a4);  // 0x6E18B0
+    int ClearCrateStateForAll();  // 0x722AB0
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 } // namespace gamemd

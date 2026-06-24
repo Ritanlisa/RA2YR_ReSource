@@ -61,6 +61,18 @@ public:
 
 protected:
     BuildingLightClass() noexcept = default;
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    void* CTOR(int a1);  // 0x435820
+    int Draw_Start(int a1, int a2);  // 0x435BE0
+    int SD_vt23();  // 0x4361D0
+    int SD_vt05(void* a1, int a2);  // 0x436950
+    int SD_vt10(int a1, int a2);  // 0x436A00
+    int CalculateDistanceIntensity();  // 0x436E80
+    int SD_vt13(void* a1);  // 0x436F40
+    int SD_vt53();  // 0x437030
+    int SD_vt54(int a1, int a2);  // 0x437050
+    int FindAllTargets(int a1, int a2, int a3, int a4);  // 0x6E2970
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 } // namespace gamemd

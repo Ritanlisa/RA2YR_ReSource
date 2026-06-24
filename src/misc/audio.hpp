@@ -109,6 +109,10 @@ public:
 
     VocClass() = delete;
     ~VocClass() = delete; // 0x4052F0
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    void* GetSampleName();  // 0x405170
+    int Check();  // 0x406170
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 class VoxClass
@@ -161,6 +165,9 @@ public:
     VoxPriority    Priority;         // 0x47: eva.ini Priority (1 byte enum)
     VoxType        Type;             // 0x48: eva.ini Type (1 byte enum)
     int32_t        voiceIndex;       // 0x4C: EVA voice index (YRpp: VoxClass_field_int_50)
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    int SetEVAIndex();  // 0x7534E0
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 class AudioController;

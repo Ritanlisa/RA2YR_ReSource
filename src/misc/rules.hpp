@@ -627,6 +627,25 @@ public:
 protected:
     RulesClass() = default; // 0x665650
     ~RulesClass() = default; // 0x667A30
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    int Addition();  // 0x668BF0
+    int LoadSpecialWeapons();  // 0x668FB0
+    int ReadCountryList();  // 0x66CF70
+    int LoadFromINI();  // 0x66D530
+    int LoadCountries();  // 0x6722F0
+    int ReadDataList();  // 0x672440
+    int LoadBuildingTypes();  // 0x672660
+    int ReadSideData();  // 0x672740
+    int LoadAnimTypes();  // 0x6728B0
+    int readColors();  // 0x672A00
+    int ReadMultiplayerDefaults();  // 0x672AE0
+    int LoadSpeedTypes();  // 0x674000
+    int ReadIQSection();  // 0x674240
+    int SaveLoad_Prefix(void* a1);  // 0x674730
+    int SaveLoad_Prefix_0(int a1);  // 0x675210
+    bool IsTypeBuildable(int a1);  // 0x721140
+    int Reset();  // 0x74E6B0
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 } // namespace gamemd

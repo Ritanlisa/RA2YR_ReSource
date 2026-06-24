@@ -41,6 +41,14 @@ public:
     void Pause();         // 0x405c00
     void Resume();        // 0x405c00
     static bool IsSoundEnabled();
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    void* Constructor();  // 0x402040
+    int AdvanceQueue();  // 0x4022C0
+    int UpdatePlayback();  // 0x402330
+    int CleanupStream();  // 0x4023F0
+    int Init();  // 0x405BE0
+    int GetOffset();  // 0x408520
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 // ============================================================================
@@ -445,6 +453,109 @@ public:
 
 protected:
     ObjectClass() noexcept;
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    int ClearFlags2();  // 0x401170
+    int Cleanup();  // 0x402220
+    int GetSizeMax();  // 0x4103E0
+    int vt_entry_140(int a1, void* a2, void* a3, void* a4);  // 0x417C80
+    int GetCoordsThunk1();  // 0x41BDD0
+    int GetCoordsThunk3();  // 0x41BE30
+    int GetCellCoords_Alt();  // 0x41BEA0
+    int GetMember41_2();  // 0x41CFA0
+    int CleanupAirstrikeTarget(int a1);  // 0x41D540
+    int GetDrawPosition();  // 0x4263D0
+    int Set(void* a1);  // 0x431A30
+    int CleanupAudioAndRefs();  // 0x4389B0
+    int HandleRallyPointCommand();  // 0x4436F0
+    int GetScreenCoords();  // 0x455C20
+    int RemoveFromPointerList(int a1);  // 0x471F90
+    int UpdateTiberiumGrowth(int a1);  // 0x4818E0
+    void* SetMember09(void* a1);  // 0x485240
+    int SetTriggerTarget(int a1);  // 0x485250
+    bool IsCliffWall();  // 0x4CA130
+    void* Construct();  // 0x4D08B0
+    int SetMember360(int a1);  // 0x4D94A0
+    int DispatchEvent(int a1, int a2, int a3, int a4, int a5);  // 0x4E13F0
+    int DestroyChain();  // 0x4E14C0
+    void BroadcastFlag(int a1);  // 0x4E1570
+    int SetPositionXY(int a1, int a2);  // 0x4E1A40
+    int ProcessCloaking();  // 0x5B3060
+    int FreeResources();  // 0x5F1960
+    int DetachAndFree();  // 0x5F1B70
+    void* ctor();  // 0x5F3900
+    void* Init(int a1);  // 0x5F3B50
+    void* CalcTargetFacing(void* a1, int a2);  // 0x5F3DB0
+    int HasC4();  // 0x5F3E30
+    int StepCleanup(void* a1);  // 0x5F3E50
+    int DetectCloaked();  // 0x5F3E70
+    int GetThreatLevel();  // 0x5F4260
+    int MoveToDirection();  // 0x5F4410
+    int HandleSelection();  // 0x5F4520
+    int GetPlacementScreenRect();  // 0x5F4730
+    int CalcDrawRect();  // 0x5F4B10
+    int ProcessInputKey();  // 0x5F5320
+    int ParachuteDrop();  // 0x5F5940
+    int SetReference(int a1);  // 0x5F5B50
+    int GetOrCreateResHandle();  // 0x5F5B90
+    int Fire();  // 0x5F5C20
+    bool IsYellowHP();  // 0x5F5D20
+    bool IsGreenHP();  // 0x5F5D90
+    int GetLandHeight();  // 0x5F5F00
+    int GetMember41();  // 0x5F5F30
+    int SetZ();  // 0x5F5FA0
+    int SetAnim(int a1);  // 0x5F6060
+    int ComputeDistance(int a1);  // 0x5F6440
+    int GetCoords();  // 0x5F65A0
+    int DelegateVt69();  // 0x5F65D0
+    int SetPosition();  // 0x5F6940
+    int GetCellCoords();  // 0x5F6960
+    int CoordToCell();  // 0x5F69C0
+    int CheckGroundHeightDiff();  // 0x5F6A70
+    int IsBelowScreen();  // 0x5F6B60
+    int IsHeightAboveThreshold();  // 0x5F6B90
+    int IsPlayerOwnedAndCheck();  // 0x5F6C30
+    int GetCoords_Alt();  // 0x5F6C80
+    int CheckFlagD0(int a1);  // 0x5F6CB0
+    bool IsCrushable(void* a1);  // 0x5F6CD0
+    int ResetPointerIfMatch();  // 0x5F6DA0
+    int FinalizeCellPlacement(int a1);  // 0x5FC570
+    void* RegisterInArray(int a1, int a2, int a3, int a4);  // 0x5FF250
+    int ProcessUpdate();  // 0x62BB20
+    int SetMember59(int a1);  // 0x6301F0
+    int ProcessGroupInput(int a1, int a2, int a3);  // 0x65A820
+    int ThunkTo636();  // 0x65AAA0
+    int ThunkTo159x4();  // 0x65ACB0
+    void* GetSidebarTooltip(int a1);  // 0x6A92E0
+    void* GetTooltipText(int a1);  // 0x6AC210
+    void* DestructWithRadar(int a1);  // 0x6AC7F0
+    int PreDraw();  // 0x6D0F00
+    void* ComputeDelta(void* a1);  // 0x6D6190
+    int Render(int a1, int a2, int a3, int a4);  // 0x6E1440
+    int ReadINIEntry(int a1, int a2, int a3, int a4);  // 0x6E15F0
+    int Get(int a1);  // 0x6EC130
+    int Vt34Thunk();  // 0x6F3270
+    int NotifyExpired(void* a1, void* a2);  // 0x7077C0
+    int GetTypeVt28();  // 0x708B30
+    int GetShroudByte();  // 0x70C5B0
+    int GetFogByte();  // 0x70C5C0
+    int HasSubObject();  // 0x70C5D0
+    int IsNotShrouded();  // 0x70C5F0
+    int CheckTypeFlag1681();  // 0x70DD70
+    int CheckTypeFlag1681_2();  // 0x70DDA0
+    int ResetTimer2();  // 0x70E340
+    int GetTypeVt41();  // 0x70F090
+    int GetPriorityTarget();  // 0x70F820
+    bool HasLocation();  // 0x70FEC0
+    int ClearPointerRefs();  // 0x710410
+    int FreeCaptureManager();  // 0x710460
+    int ComputeValue();  // 0x7120D0
+    int GetModeSpecificValue();  // 0x716290
+    void* UnlinkFromFactory(void* a1);  // 0x71AB60
+    int ProcessFoggedState();  // 0x71BDF0
+    int DrawTypewriterText(int a1);  // 0x72A4A0
+    int Initialize();  // 0x7498D0
+    int IsCellSuitableForPlacement();  // 0x74D670
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 } // namespace game

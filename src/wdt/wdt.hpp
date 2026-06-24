@@ -154,6 +154,9 @@ public:
     int             MapIndex;
     int             LastSave;
     uint32_t        align_34;
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    int SetIfChanged(int a1);  // 0x4F3A90
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 class Map
@@ -187,6 +190,10 @@ public:
 protected:
     rc_ptr<IUnknown> renderTarget;
     int              refcount = 0;
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    int GetInvalidCoord();  // 0x4104C0
+    bool CanScroll();  // 0x4F28B0
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 class Territory
@@ -239,6 +246,9 @@ public:
     int           Outcome;
     uint32_t      referenceCount = 0;
     uint32_t      align_C;
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    int GetOwnerHouse();  // 0x76BFE0
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 class Campaign
@@ -261,6 +271,9 @@ public:
     rc_ptr<Map>     map;
     std::vector<rc_ptr<Territory>> territories;
     std::vector<rc_ptr<Conflict>>  conflicts;
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    void SetupMovie();  // 0x5C2500
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 class History

@@ -1086,6 +1086,62 @@ public:
 
 protected:
     TechnoClass() noexcept; // 0x6F2B40
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    int SmokeUpdate();  // 0x414BB0
+    int updateROFTimer();  // 0x41B9E0
+    int processIdleState(int a1, void* a2, void* a3);  // 0x41C640
+    int processGuardState(int a1);  // 0x41C650
+    int processAttackState(int a1);  // 0x41C660
+    int processMoveState(int a1, void* a2, void* a3);  // 0x41C670
+    int processHarvestState(int a1);  // 0x41C680
+    int processDeployState(int a1);  // 0x41C690
+    int checkRange(int a1);  // 0x439080
+    int updateHealthBar();  // 0x46B270
+    int checkCloakState();  // 0x4A50F0
+    void* GetWeaponType(void* a1);  // 0x4C9470
+    int recalcThreat();  // 0x4D28C0
+    int QueueDrawVoiceResponse(void* a1, int a2, int a3, int a4, int a5, void* a6, int a7, int a8, int a9, int a10, int a11);  // 0x4DB0D0
+    void checkBuildLimit();  // 0x505180
+    bool processExperienceGain();  // 0x50D9C0
+    bool updateVeterancy();  // 0x50D9D0
+    void Find(int a1);  // 0x50E010
+    void Process(int a1);  // 0x50E1C0
+    bool updateTurretRotation();  // 0x5224F0
+    int drawPipScale(void* a1);  // 0x6594A0
+    int drawSpawnPips(void* a1);  // 0x6594C0
+    int drawAmmoPips(int a1);  // 0x6594E0
+    int drawTiberiumPips(int a1, int a2);  // 0x6594F0
+    bool HasAnyMission();  // 0x6E57C0
+    void* GetTurretOffset(void* a1, int a2);  // 0x6F3D60
+    void* Constructor(int a1);  // 0x6F4300
+    int ExecuteMoveCommand();  // 0x6FBFA0
+    int Vt240Thunk();  // 0x6FC090
+    int DrawTargetLine();  // 0x6FF960
+    int HasValidWeapon();  // 0x7010D0
+    int GetDrawHeight();  // 0x704350
+    int CleanupAll(int a1);  // 0x707CB0
+    int DrawPips();  // 0x709A90
+    int DrawVeterancy();  // 0x70A990
+    int DrawPowerIndicator();  // 0x70AA60
+    int processEMPulse();  // 0x70DC50
+    bool checkEMPState();  // 0x70DCE0
+    int applyEMPulseDamage();  // 0x70DCF0
+    int GetMember81();  // 0x70DDF0
+    int Vt249to254();  // 0x70E120
+    int CalcFlashAlpha(int a1);  // 0x70E4B0
+    int ClearUnknownFlag();  // 0x70F000
+    int processSpyAction(int a1);  // 0x7177E0
+    int ShouldSkipOccupierDraw(int a1, int a2, int a3);  // 0x73B0B0
+    int Draw(void* a1, void* a2);  // 0x73CEC0
+    int updateTargeting();  // 0x740B10
+    int updateParasiteState(int a1);  // 0x7465B0
+    int detachParasites(int a1);  // 0x7465F0
+    bool checkSpawnState();  // 0x746C90
+    int updateSpawnManager();  // 0x746D00
+    int releaseSpawns();  // 0x746D60
+    void* checkIronCurtainState(void* a1);  // 0x746E30
+    bool processIronCurtainExpiry(void* a1);  // 0x746EA0
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 } // namespace game

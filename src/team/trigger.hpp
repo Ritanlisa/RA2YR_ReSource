@@ -117,6 +117,19 @@ public:
 
 protected:
     TriggerClass() = default;
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    int EvaluateCondition(void* a1, int a2, int a3);  // 0x41E720
+    int ValidateTeamTriggerConditions(int a1);  // 0x509610
+    bool EvaluateObjectForTrigger(int a1, int a2);  // 0x6F1E20
+    int UnlinkTags();  // 0x71AD40
+    int Construct(int a1);  // 0x725FA0
+    int Create();  // 0x726630
+    int FireAction(int a1, int a2);  // 0x726690
+    int FireTrigger(void* a1);  // 0x726790
+    void* CheckCondition(int a1);  // 0x726950
+    int ProcessEvents();  // 0x726E00
+    int Process();  // 0x7275D0
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 // --- TriggerTypeClass ---
@@ -181,6 +194,18 @@ public:
 
 protected:
     TriggerTypeClass() = default;
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    int SaveToINI(void* a1);  // 0x41FB10
+    int Dispatch();  // 0x6E3EE0
+    void* ParseActionData();  // 0x71F4E0
+    int GetActionCategoryFlags();  // 0x71F680
+    void* Construct(void* a1);  // 0x726C80
+    int GetAction(int a1, int a2);  // 0x727090
+    int LoadFromINI(void* a1);  // 0x727240
+    int GetParameter(void* a1);  // 0x7276A0
+    int PowerDrainUpdate(void* a1);  // 0x727B30
+    int GetAuxField();  // 0x727CC0
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 } // namespace gamemd

@@ -52,6 +52,12 @@ public:
     uint32_t CurrentZRemap = 0;
     uint32_t HalfColorMask = 0;
     uint32_t QuarterColorMask = 0;
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    void* InitTables();  // 0x48EBF0
+    void AddRef(int a1, void* a2, int a3, int a4, int a5, int a6, int a7, int a8);  // 0x4913F0
+    int Release(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9);  // 0x491460
+    int Convert(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8);  // 0x491490
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 class LightConvertClass : public ConvertClass
@@ -89,6 +95,9 @@ public:
 
 private:
     uint8_t align_1B1[3] = {};
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    int Constructor(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9);  // 0x555DA0
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 } // namespace gamemd

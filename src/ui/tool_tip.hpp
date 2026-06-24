@@ -55,6 +55,9 @@ public:
 protected:
     ToolTipManager() = default;  // 0x724000
     ~ToolTipManager() = default; // 0x724B80
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    int release(int a1);  // 0x724AB0
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 } // namespace gamemd

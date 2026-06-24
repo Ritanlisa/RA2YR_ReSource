@@ -546,6 +546,26 @@ public:
 
 protected:
     BuildingClass() noexcept;
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    void* ctor(int a1);  // 0x43B680
+    int HandleFactoryCommand();  // 0x443410
+    int PushScriptAction();  // 0x44D760
+    void initBuildingData();  // 0x459FF0
+    int updateFactoryProduction(int a1);  // 0x45A020
+    int processPowerState();  // 0x465D70
+    int CheckAdjacentCells();  // 0x485460
+    void* checkOccupant(int a1);  // 0x487110
+    void* updateOccupiedState(int a1);  // 0x487130
+    int processGarrison(int a1);  // 0x487170
+    int evaulateDefense(int a1);  // 0x487180
+    int updateSellBack(void* a1, void* a2);  // 0x4AA290
+    double checkRepairEligibility();  // 0x4F9750
+    void processBaseExpansion(float a1);  // 0x5AEAD0
+    void updateFoundation(float a1);  // 0x5AEAF0
+    void recalcAdjacency(float a1);  // 0x5AEB20
+    int updateAnimationState();  // 0x63D540
+    int checkPlacement();  // 0x70DDC0
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 // External globals
@@ -573,6 +593,18 @@ public:
     {
         (void)ownerHouse;  // refresh owning house's super-weapon collection (callee body out of scope)
     }
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    int CreateUnits();  // 0x445F80
+    int CreateNukePayload();  // 0x46B310
+    int SelectSuperWeaponTarget(int a1);  // 0x4FAD20
+    int FireSuperWeaponHouseClass(int a1, int a2);  // 0x4FAE50
+    int EvaluateAITarget(int a1, void* a2);  // 0x4FAF00
+    int UpdateSuperWeaponsUnavailableHouseClass();  // 0x50B1D0
+    int SerializeSuperWeaponState();  // 0x539AE0
+    void* UpdateTargetRedrawState(void* a1);  // 0x6A60E0
+    int UpdateSuperWeaponReadyState(int a1);  // 0x6CBCA0
+    void DispatchTeam(int a1, int a2);  // 0x6EFE60
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 } // namespace gamemd

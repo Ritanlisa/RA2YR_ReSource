@@ -29,6 +29,9 @@ public:
     static void SetControlText(HWND hDlg, int32_t ctrlID, const wchar_t* text);
 
     int32_t     Control_field_00;       // 0x00
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    void* CreateControlDialog();  // 0x60CF00
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 // ============================================================================
@@ -368,6 +371,12 @@ public:
     uint8_t CampaignScore_field_0x18[4];
     uint8_t CampaignScore_field_0x1C[4];
     uint8_t CampaignScore_field_0x20[4];
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    int LookupDialogHash();  // 0x60CBA0
+    int FindDialogTemplate();  // 0x60CC00
+    int LoadCampaignScoreAssetsGame();  // 0x72D300
+    void* LoadScreenAssets();  // 0x72D460
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 // 2 methods in IDA
 class CampaignSelect
@@ -397,7 +406,7 @@ class CheckListClass
 public:
     virtual ~CheckListClass() = default;  // 0x557E10
 
-    virtual void ?() {} // 0x488310
+    virtual void vt_method_488310() {} // 0x488310
     virtual void Clear() {} // 0x488350
     virtual void ScrollUp() {} // 0x488360
     virtual void GetSelected() {} // 0x488380
@@ -424,6 +433,34 @@ public:
     uint8_t CheckListClass_field_0x48[4];
     uint8_t CheckListClass_field_0x4C[4];
     uint8_t CheckListClass_field_0x50[4];
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    int GetItem(int a1, void* a2, int a3);  // 0x4884A0
+    int SelectItem(int a1);  // 0x4886C0
+    int SetFocus(int a1);  // 0x4886D0
+    void* QueryInterface(int a1);  // 0x4886E0
+    void initList();  // 0x556EB0
+    int addItem(int a1);  // 0x556EE0
+    int removeItem(int a1, void* a2);  // 0x557090
+    int checkItem(void* a1);  // 0x557140
+    void* toggleItem(int a1);  // 0x5571C0
+    int RemoveItem(int a1, int a2);  // 0x557570
+    int SetItemState(int a1);  // 0x557A20
+    int OnKeyUp(int a1);  // 0x557A70
+    int GetItemCount();  // 0x557B00
+    int OnKeyDown(int a1);  // 0x557B70
+    int GetItemData();  // 0x557CB0
+    int KillFocus(int a1);  // 0x557D10
+    void* HitTest(int a1);  // 0x557E60
+    int Draw(int a1);  // 0x557EB0
+    int OnDblClick();  // 0x557F00
+    int ScrollDown(int a1);  // 0x557FB0
+    void AddItem();  // 0x557FD0
+    void* drawList(int a1);  // 0x558130
+    void scrollList();  // 0x5581E0
+    int selectItem(int a1);  // 0x558210
+    int clearList(int a1, void* a2);  // 0x5583C0
+    int getItemCount(void* a1);  // 0x558470
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 // 1 methods in IDA
 class CheckSum
@@ -485,6 +522,10 @@ public:
     uint8_t ComboBoxOwnerDraw_field_0x10[4];
     uint8_t ComboBoxOwnerDraw_field_0x14[4];
     uint8_t ComboBoxOwnerDraw_field_0x18[4];
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    void SetCapacity();  // 0x6258E0
+    int GrowBuffer();  // 0x625990
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 // 4 methods in IDA
 class ControlClass
@@ -550,7 +591,7 @@ public:
     virtual ~DropListClass() = default;
 
     virtual void OnClick() {} // 0x4B4EE0
-    virtual void ?() {} // 0x4B4F20
+    virtual void vt_method_4B4F20() {} // 0x4B4F20
     virtual void Draw() {} // 0x4B4F40
     virtual void HitTest() {} // 0x4B4F60
     virtual void OnDblClick() {} // 0x4B4F80
@@ -576,6 +617,26 @@ public:
     uint8_t DropListClass_field_0x48[4];
     uint8_t DropListClass_field_0x4C[4];
     uint8_t DropListClass_field_0x50[4];
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    int SetFocus(void* a1);  // 0x4B4FB0
+    int KillFocus();  // 0x4B4FF0
+    int GetItemData();  // 0x4B5010
+    int AddItem();  // 0x4B50A0
+    int Open(int a1, void* a2, void* a3);  // 0x4B50C0
+    int RemoveItem(int a1, int a2);  // 0x4B54E0
+    void OnKeyDown(void* a1);  // 0x4B5530
+    int ScrollUp();  // 0x4B55B0
+    int ScrollDown(int a1);  // 0x4B55D0
+    void* QueryInterface(int a1);  // 0x4B55F0
+    int Constructor();  // 0x4C30B0
+    int SelectItem(void* a1, int a2);  // 0x4C30E0
+    int GetItem(int a1);  // 0x4C3110
+    int GetCount(int a1, void* a2, int a3);  // 0x4C3190
+    int GetSelected();  // 0x4C32A0
+    void* GetItemText(void* a1);  // 0x4C32E0
+    int SetItemText(int a1);  // 0x4C3420
+    int Close();  // 0x4C3570
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 // 1 methods in IDA
 class DropPod
@@ -628,6 +689,9 @@ public:
     uint8_t FontClass_field_0x0C[4];
     uint8_t FontClass_field_0x10[4];
     uint8_t FontClass_field_0x14[4];
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    void* InitMetrics(void* a1, int a2, int a3, int a4, int a5, int a6);  // 0x68C710
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 // 2 methods in IDA
 class FontRenderer
@@ -730,6 +794,10 @@ public:
     uint8_t ListBox_field_0x14[4];
     uint8_t ListBox_field_0x18[4];
     uint8_t ListBox_field_0x1C[4];
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    int Clear();  // 0x623840
+    int SetCustomEntry();  // 0x6969C0
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 // 8 methods in IDA
 class ListClass
@@ -751,6 +819,11 @@ public:
     uint8_t ListClass_field_0x14[4];
     uint8_t ListClass_field_0x18[4];
     uint8_t ListClass_field_0x1C[4];
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    int Destru_vt43(int a1);  // 0x557800
+    void* Destru_vt50(int a1, int a2, int a3, int a4, int a5);  // 0x557D20
+    void* Destru_vt00(int a1);  // 0x558060
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 // 1 methods in IDA
 class ListNode
@@ -798,7 +871,7 @@ class SliderClass
 public:
     virtual ~SliderClass() = default; // 0x6B1D00
 
-    virtual void ?() {} // 0x558120
+    virtual void vt_method_558120() {} // 0x558120
     virtual void QueryInterface() {} // 0x558180
     virtual void Constructor() {} // 0x6B1B20
     virtual void Destructor() {} // 0x6B1D00
@@ -817,6 +890,16 @@ public:
     uint8_t SliderClass_field_0x28[4];
     uint8_t SliderClass_field_0x2C[4];
     uint8_t SliderClass_field_0x30[4];
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    int OnClick(int a1);  // 0x6B1DC0
+    int Draw(int a1);  // 0x6B1E50
+    int SetValue(int a1, void* a2, int a3);  // 0x6B1F50
+    int OnTrack(int a1);  // 0x6B2000
+    int OnRelease(int a1);  // 0x6B2040
+    int HitTest();  // 0x6B2070
+    int GetRange(int a1);  // 0x6B20F0
+    int SetRange(int a1, int a2, int a3);  // 0x6B2160
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 // 1 methods in IDA
 class TabCameoListClass
@@ -866,6 +949,17 @@ public:
     uint8_t ToolTipClass_field_0x2C[4];
     uint8_t ToolTipClass_field_0x30[4];
     uint8_t ToolTipClass_field_0x34[4];
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    int seek(int a1);  // 0x724C80
+    int addRef(int a1);  // 0x724C90
+    int readString(int a1, void* a2);  // 0x724CD0
+    void writeString();  // 0x724D80
+    int seekString(void* a1);  // 0x724DB0
+    int setString(int a1);  // 0x724DF0
+    int release(int a1, void* a2);  // 0x724E10
+    int read(void* a1);  // 0x724EC0
+    void* compareString(int a1);  // 0x724EF0
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 // 1 methods in IDA
 class Tooltip

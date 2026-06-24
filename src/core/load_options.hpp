@@ -176,6 +176,9 @@ private:
     uint8_t         _pad_2E[2];     // 0x2E — padding
     uint32_t        capacity;       // 0x30 — allocated capacity
     uint32_t        grow_step;      // 0x34 — grow step (=10)
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    void vt03();  // 0x55A150
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 // ============================================================================

@@ -44,6 +44,12 @@ public:
     int32_t     MovementAI_field_10;       // 0x10
     int32_t     MovementAI_field_14;       // 0x14
     int32_t     MovementAI_field_18;       // 0x18
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    int MainFootClass(int a1);  // 0x514F70
+    int MarkOccupiedPathCell();  // 0x5163B0
+    int StepFootClass(int a1);  // 0x5164D0
+    int Begin();  // 0x6F9E50
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 // ============================================================================
@@ -68,6 +74,10 @@ public:
     static void StopMoving(TechnoClass* tech);
 
     int32_t     Movement_field_00;       // 0x00
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    int CompareAbsCoords(void* a1, void* a2);  // 0x5B29C0
+    void UpdateLocomotion(void* a1);  // 0x5B2A30
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 
@@ -143,6 +153,9 @@ public:
     uint8_t Pathfinding_field_0x10[4];
     uint8_t Pathfinding_field_0x14[4];
     uint8_t Pathfinding_field_0x18[4];
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    void* CheckCliff(void* a1, void* a2, int a3, int a4);  // 0x583820
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 // 1 methods in IDA
 class PathfindingClass

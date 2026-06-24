@@ -175,6 +175,14 @@ public:
 protected:
     // unmatched: no callgraph reference and no git history record
     explicit SuperClass(noinit_t) noexcept;
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    void* ProcessEvent(int a1);  // 0x6CE220
+    int SetFieldX();  // 0x6CE270
+    void AdvanceCountdown();  // 0x6CE280
+    void* SetCurrentFrame();  // 0x6CE2C0
+    int RemoveFromPointerArray(int a1);  // 0x6CE320
+    int Get(int a1, int a2, int a3, int a4);  // 0x6E1C40
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 class LightningStorm

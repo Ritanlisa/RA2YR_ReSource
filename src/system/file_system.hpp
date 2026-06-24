@@ -95,6 +95,16 @@ public:
     static ConvertClass* THEATER_PAL;
     static ConvertClass* MOUSE_PAL;
     static ConvertClass* GRFXTXT_Convert;
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    void mountDrive();  // 0x626370
+    void InitExtensionState();  // 0x6267A0
+    void* findFile();  // 0x627170
+    void FlushTempFiles();  // 0x6272A0
+    void* openFile(void* a1);  // 0x628110
+    void* closeFile(void* a1);  // 0x628170
+    int readFile();  // 0x628740
+    void* writeFile(int a1, void* a2);  // 0x628ED0
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 } // namespace gamemd

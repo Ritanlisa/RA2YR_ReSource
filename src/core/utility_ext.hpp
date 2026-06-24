@@ -229,6 +229,11 @@ public:
     static void InitWithValue(void* ptr, int32_t count, int32_t value);
 
     int32_t     Struct_field_00;       // 0x00
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    int Copy6Bytes(int a1);  // 0x53EDE0
+    void* WideStringCopy(int a1);  // 0x6247D0
+    void* Zero25();  // 0x6D1810
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 // ============================================================================
@@ -284,6 +289,10 @@ public:
     int32_t     Y;              // 0x04
     int32_t     Width;          // 0x08
     int32_t     Height;         // 0x0C
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    int SetRedraw(int a1);  // 0x48BAA0
+    void* Set4(int a1, int a2, int a3, int a4);  // 0x54A120
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 // ============================================================================
@@ -390,6 +399,9 @@ public:
 
     static int32_t  s_EventCount;   // 0x00
     static void*    s_Queue;        // 0x04
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    bool CheckPosition();  // 0x54F6B0
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 // ============================================================================
@@ -442,6 +454,9 @@ public:
     static int32_t GetCount();
 
     static int32_t  s_PlayerCount; // 0x00
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    void RandomAssign();  // 0x69B8C0
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 // ============================================================================
@@ -614,6 +629,12 @@ public:
     int32_t     m_Position;     // 0x04
     int32_t     m_Size;         // 0x08
     int32_t     unknown_field_0C;       // 0x0C
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    int AddRef(int a1);  // 0x589300
+    int Release(int a1, void* a2);  // 0x589550
+    void* Init();  // 0x589680
+    void* QueryInterface(int a1);  // 0x58A420
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 // ============================================================================
@@ -678,6 +699,23 @@ public:
     uint8_t COMClass_field_0x48[4];
     uint8_t COMClass_field_0x4C[4];
     uint8_t COMClass_field_0x50[4];
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    void* invokeMethod(int a1);  // 0x765790
+    void* getTypeInfo(int a1);  // 0x7657C0
+    int registerObject(int a1, void* a2);  // 0x7659F0
+    int unregisterObject(int a1);  // 0x765B10
+    void* createInstance(int a1);  // 0x765BB0
+    void* getInterface(int a1);  // 0x765C20
+    void* releaseInterface();  // 0x765C70
+    void* connectPoint(int a1);  // 0x7669C0
+    int enumConnections(int a1);  // 0x766A80
+    void* adviseConnection(void* a1, int a2, void* a3);  // 0x766AA0
+    void* unadviseConnection(int a1);  // 0x766B90
+    int unlockServer(int a1);  // 0x7674E0
+    void* coInitialize(void* a1, int a2, void* a3);  // 0x767500
+    void* coUninitialize(int a1);  // 0x767880
+    void* marshalInterface(int a1);  // 0x767C50
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 // 2 methods in IDA
 class COMClassFactory
@@ -805,6 +843,20 @@ public:
     uint8_t COMObject_field_0x48[4];
     uint8_t COMObject_field_0x4C[4];
     uint8_t COMObject_field_0x50[4];
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    int ActivateThunk(int a1, int a2, int a3);  // 0x4E1530
+    int FindInList(int a1);  // 0x4E1920
+    int TrackCurrent(int a1);  // 0x4E1970
+    int ActivateGlobal();  // 0x4E19A0
+    int DeactivateGlobal();  // 0x4E19D0
+    bool IsPrimaryInstance();  // 0x4E19F0
+    int Check(int a1);  // 0x4E2AF0
+    int SetField(int a1);  // 0x4E2B20
+    void* ScalarDtor(int a1);  // 0x4E30F0
+    int DtorSequence(int a1);  // 0x4F42B0
+    void* SwapReference(int a1);  // 0x5233A0
+    int ValidatePtr();  // 0x683030
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 // 1 methods in IDA
 class CRC32
@@ -837,6 +889,11 @@ public:
     uint8_t ComPtr_field_0x18[4];
     uint8_t ComPtr_field_0x1C[4];
     uint8_t ComPtr_field_0x20[4];
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    int Set(int a1);  // 0x65D480
+    int ReleaseSimple();  // 0x67FDD0
+    void* Territory_Dtor();  // 0x76F060
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 // 1 methods in IDA
 class CountdownTimer
@@ -881,6 +938,13 @@ public:
     uint8_t EnumConnectionPointsClass_field_0x20[4];
     uint8_t EnumConnectionPointsClass_field_0x24[4];
     uint8_t EnumConnectionPointsClass_field_0x28[4];
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    void* Constructor_VectorClass_IConnectionPoint___(int a1);  // 0x4A0E60
+    void ClearBuffer();  // 0x4A0F20
+    int PointerToIndex(int a1);  // 0x4A0F50
+    int SetCapacity(int a1, void* a2);  // 0x4A13C0
+    int FindItem(void* a1);  // 0x4A1470
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 // 6 methods in IDA
 class EnumConnectionsClass
@@ -1158,6 +1222,12 @@ public:
     uint8_t PlayerClass_field_0x24[4];
     uint8_t PlayerClass_field_0x28[4];
     uint8_t PlayerClass_field_0x2C[4];
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    bool HasPlayers();  // 0x6ABAC0
+    int ProcessOccupancyUpdate(void* a1);  // 0x6D9FF0
+    int HasOccupiedCell();  // 0x6DA080
+    int UpdateAIUnits();  // 0x732600
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 // 1 methods in IDA
 class PlayerProfile
@@ -1342,6 +1412,10 @@ public:
     uint8_t StringVector_field_0x10[4];
     uint8_t StringVector_field_0x14[4];
     uint8_t StringVector_field_0x18[4];
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    void* Construct(int a1, int a2);  // 0x5AD6F0
+    int Insert(void* a1, int a2);  // 0x7AE5D0
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 // 1 methods in IDA
 class StructTable

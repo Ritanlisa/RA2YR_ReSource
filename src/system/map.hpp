@@ -74,6 +74,12 @@ struct Crate
 {
     TimerStruct crate_timer;
     CellStruct  location;
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    int FindPlacement(int a1, int a2);  // 0x487190
+    bool initializeCrate();  // 0x74FFC0
+    void processCratePickup(int a1);  // 0x750080
+    int applyCrateEffect();  // 0x75E4A0
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 struct ZoneConnectionClass

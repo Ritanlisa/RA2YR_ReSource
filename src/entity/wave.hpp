@@ -128,6 +128,17 @@ public:
 
 protected:
     WaveClass() = default;
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    void Destroy();  // 0x755D10
+    void* Constructor(void* a1, void* a2, void* a3, void* a4, void* a5);  // 0x75E950
+    int Destructor();  // 0x75ED30
+    int UpdateWave(int a1, int a2);  // 0x75F610
+    int DrawWave(void* a1, int a2);  // 0x75F8B0
+    int UpdateWavePosition();  // 0x75F980
+    void ProcessWaveCollision(void* a1, void* a2);  // 0x75F9F0
+    int Update();  // 0x760F50
+    void* Constructor_7632D0(int a1, int a2);  // 0x7632D0
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 } // namespace gamemd

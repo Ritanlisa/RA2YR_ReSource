@@ -10,8 +10,14 @@ namespace gamemd
 
 class CommandClass;
 class HouseClass;
-class ObjectClass;
-class TechnoClass;
+#ifndef GAMEMD_USING_ObjectClass
+#define GAMEMD_USING_ObjectClass
+using ra2::game::ObjectClass;
+#endif
+#ifndef GAMEMD_USING_TechnoClass
+#define GAMEMD_USING_TechnoClass
+using ra2::game::TechnoClass;
+#endif
 
 // ============================================================================
 // SelectTeamCommand — team selection command (6 methods)
@@ -35,6 +41,10 @@ public:
 
     int32_t     SelectTeamCommand_field_00;       // 0x00
     int32_t     SelectTeamCommand_field_04;       // 0x04
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    void* Read();  // 0x536050
+    int Do(int a1);  // 0x536080
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 // ============================================================================
@@ -59,6 +69,10 @@ public:
 
     int32_t     AddTeamCommand_field_00;       // 0x00
     int32_t     AddTeamCommand_field_04;       // 0x04
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    void* Read();  // 0x536140
+    int Do(int a1);  // 0x536170
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 // ============================================================================
@@ -81,6 +95,10 @@ public:
 
     int32_t     TauntCommandClass_field_00;       // 0x00
     int32_t     TauntCommandClass_field_04;       // 0x04
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    void* Read();  // 0x536320
+    int Do(int a1);  // 0x536350
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 // ============================================================================
@@ -147,6 +165,10 @@ public:
     virtual void Execute(uint32_t context) const override;
 
     int32_t     CenterTeamCommand_field_00;       // 0x00
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    void* Read();  // 0x536230
+    int Do(int a1);  // 0x536260
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 // ============================================================================

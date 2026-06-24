@@ -227,6 +227,47 @@ public:
 
 protected:
     TacticalClass() noexcept;
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    int FillScanlinesTransparent(int a1, int a2, int a3, int a4);  // 0x411330
+    int ProcessFrame();  // 0x41BFA0
+    int CheckAction();  // 0x41C030
+    bool ProcessTick();  // 0x41C050
+    void* ProcessTick2(void* a1);  // 0x41C150
+    int ProcessTick3(int a1);  // 0x41C160
+    int initTacticalMap(void* a1, void* a2);  // 0x45F1D0
+    int DispatchMode(int a1);  // 0x4AAD30
+    int HandlePlayerAction(void* a1, int a2, void* a3, int a4, int a5);  // 0x4AAE90
+    int SetObserverMode(int a1);  // 0x4AC820
+    int Initialize();  // 0x4AE450
+    int SetCameraPosition(int a1, int a2, int a3);  // 0x540D10
+    int UpdateScrollTarget(int a1, int a2, int a3, int a4, int a5);  // 0x554AA0
+    int ScrollView(int a1);  // 0x554AF0
+    int GetField();  // 0x556B30
+    void ClearVector();  // 0x5C0A70
+    int ProbeCalling(int a1);  // 0x5C0AA0
+    int ProbeCalling2(int a1);  // 0x5C0AC0
+    int CompareVector(int a1);  // 0x5C0AD0
+    int ReallocVector(int a1, void* a2);  // 0x5C0C50
+    int FindInVector(void* a1);  // 0x5C0D00
+    void* DestroyVector(int a1);  // 0x5C0D80
+    int processInput(int a1);  // 0x5D4AD0
+    void* saveConfig(int a1);  // 0x631E30
+    void FreeResources();  // 0x655A90
+    void ProcessChronoEffect();  // 0x6578F0
+    int UpdateObjects();  // 0x65ACE0
+    void ProcessView();  // 0x692F30
+    int SetPosition(void* a1, int a2);  // 0x6D2420
+    int ClickFindBuilding(void* a1, void* a2, int a3);  // 0x6D3870
+    int ClickFindOverlay(void* a1, void* a2, int a3);  // 0x6D3AC0
+    int InitScrollBounds(void* a1);  // 0x6D9F80
+    int UpdateScrollMaxBounds(void* a1);  // 0x6D9FC0
+    int ResetScrollBounds();  // 0x6DA160
+    int Get(int a1, int a2);  // 0x6EE100
+    int SetObserverView();  // 0x7311C0
+    int ResetView();  // 0x7313A0
+    void* updateScroll(int a1, int a2);  // 0x7343E0
+    void* CalcInverseAlpha(int a1, float a2);  // 0x75F5C0
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 } // namespace gamemd

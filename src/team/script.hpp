@@ -63,6 +63,11 @@ public:
 
 protected:
     ScriptClass() = default;
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    void* Construct(int a1);  // 0x6913C0
+    int PowerDrainUpdate(int a1);  // 0x6914E0
+    void* ProcessEvent(int a1);  // 0x691EE0
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 // --- ScriptTypeClass ---
@@ -95,6 +100,16 @@ public:
 
 protected:
     ScriptTypeClass() = default;
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    void* Constructor(void* a1);  // 0x6916B0
+    int GetParameter(void* a1);  // 0x6917F0
+    int GetEvent(void* a1);  // 0x6918A0
+    int PowerDrainUpdate(void* a1);  // 0x691E00
+    void GetAction(int a1, int a2);  // 0x691E30
+    int GetAuxField();  // 0x691F90
+    void* SetField(void* a1);  // 0x723CA0
+    int FormatToString(void* a1);  // 0x723CE0
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 } // namespace gamemd

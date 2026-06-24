@@ -45,6 +45,10 @@ public:
     uint32_t    AudioMixer_field_0C;       // 0x0C
     uint32_t    AudioMixer_field_10;       // 0x10
     uint32_t    AudioMixer_field_14;       // 0x14
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    void ProcessAudioFrame();  // 0x408000
+    int SetupChannels();  // 0x408A70
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 // ============================================================================
@@ -71,6 +75,10 @@ public:
     uint8_t     _pad_02[2];     // 0x02
     int32_t     AudioSettings_field_04;       // 0x04
     int32_t     AudioSettings_field_08;       // 0x08
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    int Check(int a1);  // 0x7209B0
+    int ComputeTransform(int a1);  // 0x720E50
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 // ============================================================================
@@ -136,6 +144,9 @@ public:
     char        m_Name[32];     // 0x08
     int32_t     ThemeClass_field_28;       // 0x28
     int32_t     ThemeClass_field_2C;       // 0x2C
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    int Play(int a1);  // 0x720BB0
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 // ============================================================================

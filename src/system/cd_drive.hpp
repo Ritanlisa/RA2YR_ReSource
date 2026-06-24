@@ -40,6 +40,13 @@ protected:
 
 public:
     uint32_t CD_field_04 = 0;
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    int AlwaysAvailable(int a1);  // 0x4790E0
+    bool NeverAsk(int a1);  // 0x479110
+    int SetCurrentInstance();  // 0x47ADA0
+    int CheckDiscPresence(int a1);  // 0x4A8270
+    bool CreateDialog();  // 0x623CD0
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 } // namespace gamemd

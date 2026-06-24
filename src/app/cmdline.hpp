@@ -20,6 +20,10 @@ struct GameConfig {
     bool spawn_mode = false;
     bool windowed = false;
     bool enable_log = false;
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    void* Constructor();  // 0x5D67B0
+    int BuildChecksum();  // 0x77E7A0
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 // --- Global variables (IDA addresses) ---

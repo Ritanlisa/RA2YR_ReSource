@@ -89,6 +89,22 @@ public:
 
 protected:
     FactoryClass() = default;
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    void AccumulateCreditsProgress(int a1, int a2);  // 0x4F9700
+    int ClearObjects();  // 0x635120
+    void FindAvailable();  // 0x635F80
+    int CompleteCurrentItem(int a1);  // 0x636590
+    void* RemoveFromArrays(int a1);  // 0x63D9C0
+    int RemoveItemAt(int a1);  // 0x63DFD0
+    int RemoveItem(int a1);  // 0x63F000
+    int LoadType();  // 0x6727D0
+    int PlaceExitUnits();  // 0x6B04C0
+    void* GetBridgeCell(void* a1);  // 0x6B0750
+    void* ResetProductionTimers();  // 0x6B0C80
+    int FindOrCreate();  // 0x6B5910
+    void* CompleteItem();  // 0x71ABC0
+    int CompleteProduction();  // 0x73D630
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 } // namespace gamemd

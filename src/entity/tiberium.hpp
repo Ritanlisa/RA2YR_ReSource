@@ -97,6 +97,15 @@ public:
 
 protected:
     TiberiumClass() = default; // 0x7216C0
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    int Grow(void* a1);  // 0x59C920
+    int CleanupMembers();  // 0x721880
+    int Harvest(void* a1);  // 0x721DC0
+    int SpreadGrowth(int a1, void* a2);  // 0x7220A0
+    int UpdateField(int a1, int a2);  // 0x722140
+    int Stub();  // 0x723700
+    void* DrawOre(int a1);  // 0x723710
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 } // namespace gamemd

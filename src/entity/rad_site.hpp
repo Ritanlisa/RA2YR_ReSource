@@ -79,6 +79,12 @@ public:
 
 protected:
     RadSiteClass() noexcept = default; // 0x65B1E0
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    void Constructor();  // 0x65B2F0
+    int PowerDrainUpdate(int a1);  // 0x65B3B0
+    int Tick();  // 0x65B800
+    void* ProcessEvent(int a1);  // 0x65BED0
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 } // namespace gamemd

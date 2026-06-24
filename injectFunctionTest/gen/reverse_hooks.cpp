@@ -795,9 +795,9 @@ static void NN(){
   sig[381]="void* CCFileClass::ReadEntireFile()"; rt[381]="void*";
   nm[382]="CCFileClass::Reset"; addr_tbl[382]=0x00473CE0;
   sig[382]="void CCFileClass::Reset()"; rt[382]="void";
-  nm[383]="INIClass::Constructor"; addr_tbl[383]=0x00535AA0;
+  nm[383]="INIClass::INIClass"; addr_tbl[383]=0x00535AA0;
   sig[383]="INIClass::INIClass()"; rt[383]="";
-  nm[384]="CCINIClass::Constructor"; addr_tbl[384]=0x00535B30;
+  nm[384]="CCINIClass::CCINIClass"; addr_tbl[384]=0x00535B30;
   sig[384]="CCINIClass::CCINIClass()"; rt[384]="";
   nm[385]="CCINIClass::Load"; addr_tbl[385]=0x004741F0;
   sig[385]="bool CCINIClass::Load(CCFileClass* file, bool unk1, bool unk2)"; rt[385]="bool";
@@ -1358,7 +1358,7 @@ static FE F[]={
   {0x00414BD4,"def_414BCD"},
   {0x004151B8,"jpt_414BCD"},
   {0x004151C0,"byte_4151C0"},
-  {0x004151E0,"AircraftClass::Mission_Unload"},
+  {0x004151E0,"UnitClass::Mission_Harvest"},
   {0x0041525A,"def_4151F4"},
   {0x004155D8,"jpt_4151F4"},
   {0x004155F0,"TechnoClass::ApplyIronCurtain"},
@@ -5100,7 +5100,7 @@ static FE F[]={
   {0x004F9950,"HouseClass::AddPower"},
   {0x004F9970,"HouseClass::UpdateAllSilos"},
   {0x004F9A10,"HouseClass::IsAllied"},
-  {0x004F9A50,"House::IsAlliedWith"},
+  {0x004F9A50,"HouseClass::IsAlliedWith"},
   {0x004F9A90,"Object::IsAlliedWithObjectHouse"},
   {0x004F9AF0,"Object::IsAlliedWithObjectSimpleHouse"},
   {0x004F9B50,"HouseClass::MakeAlly"},
@@ -5952,8 +5952,8 @@ static FE F[]={
   {0x00535A3C,"jpt_535629"},
   {0x00535A60,"BufferIOFileClass::Destruct"},
   {0x00535A70,"CCFileClass::Destruct"},
-  {0x00535AA0,"INIClass::Constructor"},
-  {0x00535B30,"CCINIClass::Constructor"},
+  {0x00535AA0,"INIClass::INIClass"},
+  {0x00535B30,"CCINIClass::CCINIClass"},
   {0x00535BD0,"CreateTeamCommand::Stub"},
   {0x00535BE0,"Map::IsCellFlag"},
   {0x00535BF0,"CreateTeamCommand::Do"},
@@ -12395,7 +12395,7 @@ static FE F[]={
   {0x00717CD0,"TypeList::PushBack"},
   {0x00717D20,"VectorClass::CopyParticle"},
   {0x00717DB0,"TechnoTypeClass::RemoveItem"},
-  {0x00718000,"TeleportLocomotionClass::Release"},
+  {0x00718000,"TeleportLocomotionClass::TeleportLocomotionClass"},
   {0x00718080,"JumpjetLocomotionClass::ShortFunc_718080"},
   {0x00718090,"JumpjetLocomotionClass::ShortFunc_718090"},
   {0x007180A0,"JumpjetLocomotionClass::GetCoordinateConditional"},

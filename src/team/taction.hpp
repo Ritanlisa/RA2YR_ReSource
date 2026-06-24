@@ -14,8 +14,14 @@ using ra2::game::AbstractType;
 #endif
 
 class HouseClass;
-class TechnoClass;
-class ObjectClass;
+#ifndef GAMEMD_USING_TechnoClass
+#define GAMEMD_USING_TechnoClass
+using ra2::game::TechnoClass;
+#endif
+#ifndef GAMEMD_USING_ObjectClass
+#define GAMEMD_USING_ObjectClass
+using ra2::game::ObjectClass;
+#endif
 
 // sizeof=0x98 (ctor 0x6DD000, dtor 0x6E4660)
 struct TActionClass : public AbstractClass
@@ -129,5 +135,8 @@ public:
     uint8_t     TActionClass_field_6D;           // +0x6D (this+109)
     uint8_t     pad_6E[73];         // +0x6E..+0x8F
     void*       TActionClass_field_90;           // +0x90 (this+144)
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    int ctor();  // 0x6DD000
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 } // namespace gamemd

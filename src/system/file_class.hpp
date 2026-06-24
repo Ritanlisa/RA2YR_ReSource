@@ -72,6 +72,21 @@ public:
 
 private:
     uint8_t padding_5[3] = {};
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    int BufferedWriter();  // 0x432050
+    int BufferedReader();  // 0x4322A0
+    int Load(int a1);  // 0x473D10
+    bool OpenFileBufferIO();  // 0x47AAB0
+    int OpenWithCDSearch(void* a1);  // 0x47AE10
+    int FindFirstWithCD();  // 0x47AF70
+    void* SetName(void* a1);  // 0x65CAC0
+    bool Open2();  // 0x65CB50
+    int CloseHandle();  // 0x65CCA0
+    int Write2();  // 0x65CDD0
+    int GetDosTimestamp();  // 0x65D1F0
+    bool SetTime(int a1);  // 0x65D240
+    void GetFileSizeOp(int a1, int a2);  // 0x65D2B0
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 class RawFileClass : public FileClass
@@ -122,6 +137,11 @@ public:
 
 private:
     uint8_t padding_21[3] = {};
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    void* Construct(int a1);  // 0x65CA80
+    void* QueryInterface(int a1);  // 0x65D3A0
+    bool Write();  // 0x65D420
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 } // namespace gamemd

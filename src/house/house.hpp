@@ -99,6 +99,13 @@ struct CounterClass
 {
     int32_t* items;
     int32_t  count;
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    void* Construct();  // 0x49F9B0
+    int Decrement(int a1);  // 0x49FA70
+    int ddtor();  // 0x49FB40
+    int Load(int a1);  // 0x49FBE0
+    void* QueryInterface(int a1);  // 0x49FCE0
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 struct IndexBitfield
@@ -571,6 +578,163 @@ protected:
     HouseClass() = default;
     // unmatched: no callgraph reference and no git history record
     HouseClass(HouseTypeClass* pType) noexcept;
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    int SaveTriggerNodeData(void* a1, void* a2);  // 0x42ED60
+    int createStartingUnits(int a1);  // 0x431410
+    int Render(int a1, int a2, int a3, int a4, int a5);  // 0x431700
+    bool ProcessData();  // 0x431800
+    int Add();  // 0x4575B0
+    int Process();  // 0x458750
+    int AssignCivilianToLowPowerTargets(int a1);  // 0x472330
+    int SumPowerDrain();  // 0x473460
+    int WriteBuildingTypeNameToINI(void* a1, void* a2, int a3);  // 0x474B20
+    int ReadHouseNamesToBitmask(void* a1, void* a2, int a3);  // 0x475260
+    int WriteHouseListToINI(void* a1, void* a2, int a3);  // 0x4752E0
+    int ReadIntFromINI(void* a1, void* a2, int a3);  // 0x475980
+    int updateBuildingProduction(void* a1, void* a2, int a3);  // 0x4759D0
+    int MarkCellBuildable(int a1);  // 0x483410
+    int checkAutoProduction();  // 0x483460
+    bool HasType();  // 0x4870F0
+    int FindHouseIndexByName();  // 0x48DB80
+    void* initDropshipData();  // 0x4B69B0
+    int RegisterForSwizzleTracking();  // 0x4B6BB0
+    int UpdateTeamProductionSpeed();  // 0x4CA6E0
+    void COMStub_3();  // 0x4E8290
+    int COMStub_5(int a1);  // 0x4E82C0
+    int COMStub_6(int a1);  // 0x4E82E0
+    int COMStub_1(int a1);  // 0x4E9200
+    int COMStub_2(int a1, void* a2);  // 0x4E9380
+    int COMStub_4(void* a1);  // 0x4E9430
+    void* COMStub_0(int a1);  // 0x4EF530
+    void processTargetSelection();  // 0x4F21A0
+    void* vt_placeholder_03(int a1);  // 0x4F2810
+    void* vt_placeholder_04(int a1);  // 0x4F2830
+    void vt_placeholder_05();  // 0x4F2850
+    int vt_placeholder_06(int a1);  // 0x4F2880
+    int processWaypointPlanning(int a1, void* a2);  // 0x4F2A60
+    int vt_placeholder_08(void* a1);  // 0x4F2B10
+    void* vt_placeholder_11(int a1);  // 0x4F2BB0
+    int Constructor(int a1);  // 0x4F5190
+    int Construct(int a1);  // 0x4F54A0
+    int SetCombatPower(int a1);  // 0x4F6EC0
+    int Destruct();  // 0x4F7140
+    int CanBuild(int a1, int a2, int a3);  // 0x4F7870
+    int GetFactoryProducing(int a1);  // 0x4F83C0
+    void Update_TogglePower();  // 0x4F8440
+    int Update();  // 0x4F9370
+    int NotifyUnderAttack(void* a1);  // 0x4F93E0
+    int ProcessPowerDrain(int a1);  // 0x4F9790
+    int AddPower(int a1);  // 0x4F9950
+    bool IsAllied(int a1);  // 0x4F9A10
+    int HandleAlliance(int a1, int a2);  // 0x4F9B70
+    int SetAlliance(int a1, int a2);  // 0x4F9F90
+    int SetThreat_Bounds(int a1, int a2);  // 0x4FA2E0
+    int StartFactoryProduction(void* a1, int a2, int a3);  // 0x4FA910
+    int CancelProduction(void* a1, int a2, int a3, int a4);  // 0x4FAA10
+    int CompleteProduction(void* a1, int a2, int a3, int a4);  // 0x4FB0E0
+    int ProcessPromotionSound(void* a1);  // 0x4FB6B0
+    int DefeatPlayer();  // 0x4FC0B0
+    int ClearLowPowerTargets();  // 0x4FC6D0
+    int CheckWinCondition(int a1);  // 0x4FC9E0
+    int CheckDefeat(int a1);  // 0x4FCBD0
+    double GetPowerRatio();  // 0x4FCE30
+    int FindBuildingOfType(int a1, int a2);  // 0x4FD060
+    int ManageProduction(int a1);  // 0x4FDD10
+    int AutoBuild();  // 0x4FE3E0
+    int AIUnitProduction();  // 0x4FEA60
+    int AIInfantryProduction();  // 0x4FEEE0
+    int AIAircraftProduction();  // 0x4FF210
+    int DecrementUnitCount(void* a1);  // 0x4FF550
+    int GetBuildLimit(int a1, int a2, int a3);  // 0x500510
+    int GetFactoryCount(int a1, int a2);  // 0x500910
+    int LoadTypeList();  // 0x5009B0
+    int ReadFromINI(void* a1);  // 0x500B40
+    int SaveToINI(void* a1);  // 0x501210
+    int NotifyPowerStateChange(int a1);  // 0x5018C0
+    void* GenerateAttackCoords(void* a1, int a2);  // 0x501AC0
+    void* RegisterGain(int a1, int a2);  // 0x5025F0
+    int RegisterGain_0(void* a1, int a2);  // 0x502A80
+    int FindOwner();  // 0x502D30
+    int UpdatePowerTimers(void* a1);  // 0x502D60
+    int EnsurePlanningPathExists(int a1);  // 0x504740
+    void* FirstBuildableFromArray(int a1);  // 0x5051E0
+    void GenerateAIBuildListEnsureSanity();  // 0x5054B0
+    void* ScanBuildLocation(void* a1, int a2, void* a3, int a4);  // 0x5060B0
+    void* FindBestProductionBuilding(void* a1, int a2);  // 0x506B90
+    int AutoBuildScanAndSort(int a1, void* a2);  // 0x506EF0
+    int CollectInfantryBuildCandidates(int a1, int a2);  // 0x507D70
+    int CollectAircraftBuildCandidates(int a1, int a2);  // 0x507F60
+    int ComputePowerDistribution();  // 0x508150
+    void FindAutoBuildLocation();  // 0x5082C0
+    int ToggleGapGeneratorReveal();  // 0x508F60
+    int UpdateProduction(int a1, int a2, int a3);  // 0x509140
+    int UpdateFogVisibility();  // 0x509400
+    int UpdateBuildState(int a1);  // 0x509700
+    void Find(int a1);  // 0x509B20
+    void FireStoredSW(int a1);  // 0x509C10
+    int Fire_ParaDrop(int a1);  // 0x509CD0
+    int Fire_LightningStorm(int a1);  // 0x509E00
+    int Fire_GenMutator(int a1);  // 0x509F60
+    int Fire_PsyDom(int a1);  // 0x50A150
+    int FireSuperWeaponAtBestTarget(int a1);  // 0x50A350
+    int RecordCratePlacement(void* a1);  // 0x50A490
+    int AIBuildBase();  // 0x50A5C0
+    int ShouldDisableCameo(int a1);  // 0x50B370
+    int GetColor();  // 0x50B840
+    int CalculateCostMultipliers();  // 0x50BF60
+    double GetBuildingDamageMultiplier(void* a1);  // 0x50C0A0
+    int FindByName();  // 0x50C170
+    void SetPrimaryTechBuilding();  // 0x50C210
+    int FindBuildLocation(int a1);  // 0x50C340
+    int NotifyImpactWater();  // 0x50C8C0
+    void* FindSWBuilding(void* a1);  // 0x50CBF0
+    void* FindSWTarget(void* a1, int a2);  // 0x50D170
+    int GetTransitionCount();  // 0x50DA80
+    void* GetCurrentOption(void* a1);  // 0x50DEF0
+    void* GetStartCoords(void* a1);  // 0x50DF30
+    int SetMapSeed(int a1);  // 0x50E000
+    void ReactivateTechnos(int a1);  // 0x50E280
+    int processRadar(int a1, int a2, int a3);  // 0x50E430
+    int AddCoordTrackingEntry(void* a1);  // 0x50FF50
+    void* updatePowerState(int a1);  // 0x510460
+    int processAIEvents(int a1);  // 0x510820
+    int GetUpgradeValue();  // 0x542310
+    void* ClampToUsableCell(void* a1, void* a2);  // 0x586E50
+    int ProcessPower();  // 0x5F6250
+    int updateAlliedStatus();  // 0x656DE0
+    void SetRadarVisibility(int a1);  // 0x656DF0
+    void* InitTypeVectors(int a1);  // 0x664D20
+    int InitSubsystems();  // 0x6A5030
+    int UpdateAllProductionTabs();  // 0x6A7D20
+    void* ClearProductionQueue();  // 0x6A81B0
+    int RouteFactoryRemoval(int a1, int a2, void* a3);  // 0x6ABAD0
+    int RemoveFromProductionQueue(void* a1);  // 0x6ABB60
+    void* AccumulateFloat4(void* a1, int a2);  // 0x6C9740
+    void* ComputeResourceDelta(void* a1, int a2);  // 0x6C97E0
+    void* updateFactoryQueue();  // 0x6D0EC0
+    int InitDefeatState();  // 0x6D1610
+    void* SetOwnerName(void* a1, int a2);  // 0x6D4DB0
+    int UpdateTechBuildings(int a1, int a2, int a3, int a4);  // 0x6E0EF0
+    int UpdateAllTypes();  // 0x6E57F0
+    int GetMaxBuildLevel();  // 0x6E8780
+    int EvaluateTarget();  // 0x6EB870
+    void* FindBestBuildingToRepair();  // 0x6EC3D0
+    int CheckDefeated(int a1, int a2);  // 0x6ED770
+    int UpdateProductionQueue(int a1);  // 0x6EF4D0
+    int CalcProductionSpeed();  // 0x6F47A0
+    bool HasPower();  // 0x717880
+    int HasType26Building();  // 0x726F50
+    int HasType25Building();  // 0x726F80
+    bool FindType24();  // 0x726FB0
+    int FindType15();  // 0x726FE0
+    int FindType2728(int a1);  // 0x727010
+    int ClearPrimaryFactory();  // 0x740E20
+    void* ClearStatArray();  // 0x748FD0
+    int IncrementStat(int a1);  // 0x749020
+    int InitStatArray(int a1);  // 0x749060
+    int NetworkConvert();  // 0x749100
+    void AccumulateScore(int a1, int a2);  // 0x74FF50
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 } // namespace gamemd

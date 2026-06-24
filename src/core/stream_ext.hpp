@@ -85,6 +85,13 @@ public:
     int32_t     Stream_field_08;       // 0x08
     int32_t     Stream_field_0C;       // 0x0C
     int32_t     Stream_field_10;       // 0x10
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    int WriteBlock(int a1, int a2, int a3);  // 0x5F1BF0
+    int ReadPacket();  // 0x5F1C60
+    int ReadOLEObjects();  // 0x67C690
+    int GetField();  // 0x7BCAE0
+    void CopyFromTemplate();  // 0x7BE640
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 // ============================================================================
@@ -256,6 +263,14 @@ public:
     uint8_t CStreamClass_field_0x48[4];
     uint8_t CStreamClass_field_0x4C[4];
     uint8_t CStreamClass_field_0x50[4];
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    bool IsEmpty();  // 0x4A31F0
+    void ClearBuffer();  // 0x4A4AD0
+    int PointerToIndex(int a1);  // 0x4A4B00
+    int CopyItems(int a1, void* a2);  // 0x4A4CB0
+    int FindItem(void* a1);  // 0x4A4D60
+    void* Constructor_VectorClass__DDSURFACEDESC___(int a1);  // 0x4A4DE0
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 // 1 methods in IDA
 class StreamObj
@@ -286,6 +301,9 @@ public:
     uint8_t StreamWrapper_field_0x0C[4];
     uint8_t StreamWrapper_field_0x10[4];
     uint8_t StreamWrapper_field_0x14[4];
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    void* QueryInterface(int a1);  // 0x7B0440
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 // 4 methods in IDA
 class Text

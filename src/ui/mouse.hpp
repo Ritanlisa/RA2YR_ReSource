@@ -93,6 +93,23 @@ public:
     uint32_t         WWfield_58;
 
     // TODO: complete WWMouseClass members
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    int loadCursorImages();  // 0x7B88D0
+    void AddRef(void* a1, int a2, int a3);  // 0x7B8A00
+    void* initCursorState(void* a1);  // 0x7B8E80
+    int updateCursorRect();  // 0x7B8F30
+    int DrawCursorBuffered(void* a1, int a2);  // 0x7B90C0
+    void updateCursor();  // 0x7B92D0
+    bool renderDragSelectionRect();  // 0x7B9690
+    int showCursor();  // 0x7B9750
+    int checkStatus(int a1, int a2, int a3, int a4);  // 0x7B9D70
+    void processFrame();  // 0x7B9D90
+    bool FlipCursorBuffer();  // 0x7B9E30
+    int UpdateCursorMovement();  // 0x7BA090
+    void drawCursor();  // 0x7BA320
+    int checkHotspot(int a1, int a2);  // 0x7BA380
+    void* QueryInterface(int a1);  // 0x7BA3A0
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 class MouseClass : public RadarClass
@@ -123,6 +140,28 @@ public:
 
 protected:
     MouseClass() = default;
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    int ProcessInput();  // 0x40D280
+    void* InitMouse(int a1);  // 0x40D290
+    void initCursor();  // 0x40D540
+    int updateCursorState(int a1);  // 0x40D570
+    int selectCursor(int a1, void* a2);  // 0x40D720
+    int getCursorFrame(void* a1);  // 0x40D7D0
+    void* applyCursorSettings(int a1);  // 0x40D850
+    int GetPosition();  // 0x5BDAA0
+    int SetPosition(int a1);  // 0x5BDAB0
+    void* LoadTypeData();  // 0x5BDF30
+    int HandleClick();  // 0x5BDF50
+    int LoadGameAssets();  // 0x5BDF70
+    int DrawCursor();  // 0x5BE6D0
+    void* drawCursor(int a1);  // 0x5BE9B0
+    void* loadCursor(int a1, int a2);  // 0x5BEA30
+    bool GetHotspot();  // 0x693060
+    int GetButtonState(int a1);  // 0x693840
+    int CheckCapture(void* a1);  // 0x693880
+    void* Construct(int a1, int a2);  // 0x7B8730
+    void CalcConfiningRect();  // 0x7B8960
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 } // namespace gamemd

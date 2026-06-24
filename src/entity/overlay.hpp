@@ -47,6 +47,10 @@ protected:
 public:
     // unmatched: no callgraph reference and no git history record
     OverlayClass(OverlayTypeClass* pType, const CellStruct& cell, HouseClass* owner) noexcept;
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    int WriteINI();  // 0x5FD6A0
+    void* updateOverlayState(int a1, int a2);  // 0x5FE020
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 } // namespace gamemd

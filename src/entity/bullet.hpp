@@ -118,6 +118,30 @@ public:
 
 protected:
     BulletClass() = default; // 0x466380
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    void* FlightUpdate(int a1, int a2);  // 0x415EE0
+    void NormalizeZeroVector();  // 0x41C3F0
+    bool CheckMirrorState(int a1);  // 0x4666C0
+    int ProcessNukeExplosion();  // 0x4666E0
+    void SetupVoxelTransform(void* a1, void* a2);  // 0x468090
+    int LoseTarget();  // 0x468430
+    int ProcessImpact(void* a1, void* a2);  // 0x4684E0
+    int ProcessObstacle(void* a1, void* a2);  // 0x468670
+    int UpdateFlightPath();  // 0x468B90
+    bool CheckBulletCollision(void* a1);  // 0x468BB0
+    int Fire(int a1);  // 0x468D80
+    int SaveLoad_Prefix(void* a1, int a2);  // 0x46AE70
+    int RenderVoxelBullet(int a1, void* a2, void* a3, void* a4, int a5, int a6, int a7);  // 0x46B0C0
+    int InitScalable();  // 0x46B280
+    int CheckEndOfSequence(int a1);  // 0x46B5A0
+    int CheckMissionAbort();  // 0x46B5B0
+    void* CheckActionStatus(int a1);  // 0x46B5C0
+    void* AddVector3(void* a1);  // 0x46B960
+    void* ResetDetonationTimer();  // 0x4E1100
+    int InitDetonationTimer(void* a1, void* a2, int a3, int a4);  // 0x4E1130
+    int CheckProximityDetonation(void* a1);  // 0x4E11F0
+    int ComputeImpactTrajectory(int a1);  // 0x6620F0
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 } // namespace gamemd

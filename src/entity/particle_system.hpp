@@ -67,6 +67,28 @@ public:
 
 protected:
     ParticleSystemClass() = default; // 0x4E8780
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    int updateParticles(int a1);  // 0x4E87B0
+    int AddRef(int a1);  // 0x4E9DE0
+    int Release(int a1, void* a2);  // 0x4E9F60
+    int Init(void* a1);  // 0x4EA010
+    int ReallocateBuffer(int a1, void* a2);  // 0x4EB3E0
+    int processParticleFrame(void* a1);  // 0x4EB490
+    void* QueryInterface(int a1);  // 0x4EF850
+    void* finalizeParticles(int a1);  // 0x4EFDA0
+    int Constructor(int a1, void* a2, int a3, void* a4, void* a5, int a6);  // 0x62DC50
+    void CreateBuildingLight(int a1, int a2);  // 0x62E280
+    int CreateParticle(void* a1, void* a2);  // 0x62E380
+    void UpdateAllParticles();  // 0x62E6D0
+    int SpawnParticle();  // 0x62F230
+    int Update();  // 0x62FD60
+    int UpdateSystem(int a1, int a2);  // 0x62FE90
+    int Write(int a1, void* a2);  // 0x62FF20
+    int PowerDrainUpdate(void* a1);  // 0x630100
+    void ProcessFrame();  // 0x6301E0
+    int Stub();  // 0x630220
+    void* resetSystemState(int a1, int a2);  // 0x6302A0
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 } // namespace gamemd

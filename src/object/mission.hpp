@@ -101,6 +101,18 @@ public:
 
 protected:
     MissionClass() noexcept;
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    bool vt_entry_200();  // 0x41B5E0
+    int IsProducing();  // 0x454250
+    void* Init();  // 0x49B610
+    int SetState();  // 0x5B2FD0
+    int GetPrimaryOrFallback();  // 0x5B3040
+    int AdvanceState();  // 0x5B3570
+    void* FindName();  // 0x5B3700
+    void* GetMissionControl();  // 0x5B3A00
+    int Construct(int a1, int a2, int a3);  // 0x6E8A90
+    int OverrideMission_SyncLog();  // 0x7013A0
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 } // namespace game

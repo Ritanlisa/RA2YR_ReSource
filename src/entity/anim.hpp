@@ -91,6 +91,32 @@ public:
     AnimClass(AnimTypeClass* pType, const ra2::game::CoordStruct& coords,
               int z_adjust, int loop_delay, double damage,
               ra2::game::HouseClass* owner) noexcept;
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    void* ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, int a7);  // 0x421EA0
+    int SimpleCtor();  // 0x422720
+    int SetAnimSpeed();  // 0x422BC0
+    void* UpdateZAdjust(void* a1);  // 0x422BE0
+    int CheckLayerFlags(int a1, int a2, int a3);  // 0x422C70
+    bool UpdateMirrorState(int a1);  // 0x4238B0
+    int UpdateProjectileTrajectory();  // 0x423930
+    int ClearTargetReferences(int a1, int a2);  // 0x425150
+    int SaveLoad_Prefix(int a1, int a2);  // 0x425280
+    int ProcessPower(void* a1);  // 0x425410
+    int CheckEndOfSequence();  // 0x425510
+    int Undeploy();  // 0x425530
+    int ProcessCraterFormation();  // 0x4255B0
+    int CheckDamageFlags();  // 0x425630
+    int UpdateDamageRadius(void* a1);  // 0x426270
+    void* MissionStubReturnZero3(int a1);  // 0x426590
+    void* InitRotation(void* a1, int a2, int a3, int a4, int a5, int a6, int a7, void* a8, double a9);  // 0x4397E0
+    int initAnimation();  // 0x447E00
+    bool updateAnimation(int a1);  // 0x448070
+    int drawFrame();  // 0x448260
+    int resetAnimation();  // 0x449540
+    int setLoopCount();  // 0x449A50
+    int finalizeAnimation();  // 0x449C30
+    void ProcessSequence();  // 0x729370
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 } // namespace gamemd

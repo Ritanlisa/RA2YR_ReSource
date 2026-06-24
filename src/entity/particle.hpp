@@ -79,6 +79,20 @@ public:
 
 protected:
     ParticleClass() = default;
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    int MissionDispatch();  // 0x5B35E0
+    int Construct(int a1, void* a2, float a3, int a4);  // 0x62B5E0
+    void UpdateParticlePhysics();  // 0x62C3A0
+    void UpdateAnimationDrift();  // 0x62C540
+    int Dispatch();  // 0x62CE40
+    void CheckWaterImpact();  // 0x62D3F0
+    bool CheckMirrorState(int a1);  // 0x62D6F0
+    int vt_entry_1E8();  // 0x62D830
+    int Stub();  // 0x62D990
+    void* UpdateParticle(int a1);  // 0x62D9A0
+    int ProcessCreation();  // 0x62DF20
+    int CreateInstance(void* a1, float a2, int a3);  // 0x62E4C0
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 } // namespace gamemd

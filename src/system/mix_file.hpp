@@ -21,6 +21,9 @@ protected:
 public:
     GenericNode* Next = nullptr;
     GenericNode* Previous = nullptr;
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    void* Constructor();  // 0x40E320
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 template <typename T>
@@ -177,6 +180,15 @@ public:
     // Memory-backed data (for sub-MIX files): non-null = read from memory, not disk
     uint8_t* MemoryData = nullptr;
     int      MemoryDataSize = 0;
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    void* FromFile(void* a1, int a2);  // 0x5B3C20
+    void LinkIntoPool();  // 0x5B4590
+    void* UnlinkFromPool(int a1);  // 0x5B4610
+    void* LoadSubFile();  // 0x69E580
+    int GetSubFile(int a1);  // 0x69E740
+    int GetPixelData(int a1, int a2);  // 0x69E860
+    void* CacheNode_Dtor(int a1);  // 0x69E930
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 } // namespace gamemd

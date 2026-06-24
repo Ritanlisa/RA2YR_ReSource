@@ -167,6 +167,9 @@ public:
 
 protected:
     AircraftClass() noexcept;
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    int Construct(int a1, void* a2);  // 0x413D20
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 } // namespace gamemd

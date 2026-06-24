@@ -57,6 +57,10 @@ public:
 
 protected:
     RadioClass() noexcept; // 0x65A750
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    int Constructor();  // 0x5B2DA0
+    void* ProcessEvent(int a1);  // 0x65AEB0
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 } // namespace game

@@ -6,13 +6,20 @@
 #include "core/enums.hpp"
 #include "core/math.hpp"
 #include "core/vector.hpp"
+#include "object/abstract.hpp"
 
 namespace gamemd
 {
 
-class ObjectClass;
+#ifndef GAMEMD_USING_ObjectClass
+#define GAMEMD_USING_ObjectClass
+using ra2::game::ObjectClass;
+#endif
 class HouseClass;
-class TechnoClass;
+#ifndef GAMEMD_USING_TechnoClass
+#define GAMEMD_USING_TechnoClass
+using ra2::game::TechnoClass;
+#endif
 class CellClass;
 
 // ============================================================================
@@ -50,6 +57,10 @@ public:
 
     // design: virtual function, no binary implementation matched in IDA
     virtual void Execute(uint32_t context) const = 0;    // vt[8]
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    bool executeAction(void* a1);  // 0x724FA0
+    int BinarySearchAction();  // 0x724FC0
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 // ============================================================================

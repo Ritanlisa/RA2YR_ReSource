@@ -26,6 +26,10 @@ class WTFMode {
 public:
     static bool Init(int* mode);  // 0x69BAB0
     static bool Shutdown(int* mode);  // 0x69BB40
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    int ResetUnitFlags();  // 0x41DB40
+    void* FindObjectByType(int a1);  // 0x47EC40
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 // IDA 0x532100 -- ScreenSaver

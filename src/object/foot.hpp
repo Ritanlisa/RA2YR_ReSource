@@ -323,6 +323,22 @@ protected:
 
 protected:
     FootClass() noexcept;
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    int DrawPlacementPreview();  // 0x43DA80
+    int Get(int a1);  // 0x45A040
+    int Add(int a1);  // 0x45A3E0
+    int Release(int a1, void* a2);  // 0x45A420
+    int GetSize(void* a1);  // 0x45A500
+    void* QueryInterface(int a1);  // 0x45AA60
+    void updateMovementAnimation(int a1);  // 0x4734B0
+    void* Construct(int a1);  // 0x4D31E0
+    int checkTurning();  // 0x50DAA0
+    void* processScriptAction(void* a1);  // 0x6E52F0
+    bool CanEnterBuilding();  // 0x7091D0
+    bool checkPassability();  // 0x70FEB0
+    void Process();  // 0x729AA0
+    int updateScanRange();  // 0x746D80
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 } // namespace game

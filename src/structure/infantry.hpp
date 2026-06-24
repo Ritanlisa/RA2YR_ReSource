@@ -170,6 +170,16 @@ public:
 
 protected:
     InfantryClass() noexcept;
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    int GetType();  // 0x484F20
+    int ProcessExitQueue();  // 0x4DA030
+    bool SetField6();  // 0x5176A0
+    int Construct(int a1, void* a2);  // 0x517A50
+    int ProcessDeployment(void* a1, int a2, int a3, void* a4, int a5, int a6, int a7);  // 0x517FA0
+    int Update();  // 0x51BAB0
+    void* checkBridgeClearance(int a1);  // 0x523370
+    void* updateOccupiedBuilding(void* a1);  // 0x5233D0
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 } // namespace gamemd

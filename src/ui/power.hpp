@@ -37,6 +37,14 @@ public:
 
 protected:
     PowerClass() = default;
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    void* updateDrain();  // 0x63F730
+    void checkBlackout();  // 0x63F7C0
+    void updatePowerBarAnimation();  // 0x63FEA0
+    int getDrain();  // 0x6403A0
+    void* getAvailable(int a1);  // 0x640450
+    void* Initialize(int a1);  // 0x6404B0
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 } // namespace gamemd

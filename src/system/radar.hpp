@@ -140,6 +140,36 @@ public:
 
 protected:
     RadarClass() = default; // 0x4F4220
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    void* RenderSpySatellite();  // 0x4A8730
+    void SetGlobal();  // 0x55AF40
+    int RenderMapPreview();  // 0x565090
+    void* Render(int a1);  // 0x565190
+    int RenderBlips(void* a1, int a2);  // 0x582D70
+    int updateRadarCells(int a1, void* a2);  // 0x589E20
+    void* drawRadarTerrain(int a1, int a2);  // 0x58ADB0
+    void* RenderJammerRadius(int a1, void* a2);  // 0x58AE60
+    int drawRadarEvents(void* a1);  // 0x58AF80
+    int Create();  // 0x63F6B0
+    void* Construct();  // 0x652960
+    int Destru_vt05();  // 0x652CF0
+    void Destru_vt07();  // 0x652DE0
+    int Destru_vt53();  // 0x652E90
+    int Destru_vt16(int a1);  // 0x653100
+    int Destru_vt34();  // 0x654320
+    int UpdateBlips(int a1, void* a2);  // 0x654EA0
+    int Process();  // 0x655990
+    void InitializeHashTable();  // 0x655B20
+    int UpdateFoundationShapesCustom();  // 0x6563B0
+    void Toggle(int a1, int a2);  // 0x656BE0
+    int SetViewMode(int a1, int a2);  // 0x656CB0
+    int IsActiveMode();  // 0x656E50
+    bool SetFlag();  // 0x656E90
+    void* Destru_vt33(int a1);  // 0x658770
+    void* Destru_vt04(int a1);  // 0x6587A0
+    int DrawBlips(int a1);  // 0x6D5030
+    int DrawBlip(int a1, int a2);  // 0x6D59D0
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 } // namespace gamemd

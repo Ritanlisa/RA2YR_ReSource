@@ -126,6 +126,9 @@ public:
 
 protected:
     UnitClass() noexcept;
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    int Construct();  // 0x7353C0
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 } // namespace gamemd

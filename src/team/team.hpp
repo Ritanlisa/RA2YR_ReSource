@@ -140,6 +140,27 @@ public:
 
 protected:
     TeamClass() = default;
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    int SumMemberCounts();  // 0x6E8160
+    int SelectWaypointTarget(int a1, int a2);  // 0x6EC9A0
+    int SelectAttackTarget(int a1, int a2);  // 0x6ECA70
+    void MoveToCellAndAttack(int a1, int a2);  // 0x6ECCE0
+    int AssignMemberToCoordinator(int a1, int a2);  // 0x6ECE60
+    int Create(int a1, int a2);  // 0x6ECFB0
+    int CoordinateSuperWeaponAttack(int a1, int a2);  // 0x6ED090
+    int AssignAttackTarget(int a1, int a2);  // 0x6EDB50
+    void SyncMemberFacing(int a1, int a2);  // 0x6EDCA0
+    int SelectAreaAttackTarget(int a1, int a2);  // 0x6EE310
+    void ProcessTeamMovement(int a1, int a2);  // 0x6EE3F0
+    void SelectBestMember(int a1, int a2);  // 0x6EE5C0
+    void* ScoreMember(void* a1, int a2, int a3);  // 0x6EEEA0
+    void PlayMemberAnimation(int a1, int a2);  // 0x6EF610
+    void SelectDeploymentTarget(int a1, int a2);  // 0x6EFA10
+    void CheckMemberSuperWeapon(int a1, int a2);  // 0x6F0130
+    void* ProcessEvent(int a1);  // 0x6F0450
+    int CreateOneOf(int a1);  // 0x6F09C0
+    int AddToBuildQueue();  // 0x726720
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 } // namespace gamemd

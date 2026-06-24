@@ -70,6 +70,12 @@ public:
 protected:
     MessageListClass() = default;  // 0x5D39D0
     ~MessageListClass() = default; // 0x5D3A40
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    int CountCharsInWidth(void* a1, int a2, int a3, int a4);  // 0x433F50
+    void Init(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11);  // 0x5D3A60
+    int AddMessage(void* a1, int a2, void* a3, int a4, int a5, int a6, int a7);  // 0x5D3BA0
+    int clearMessages(int a1, int a2, int a3, int a4, int a5);  // 0x72A440
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 } // namespace gamemd

@@ -172,6 +172,42 @@ public:
 
 protected:
     SidebarClass() = default; // 0x40D270
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    void* SetFlashEntry(int a1, int a2, int a3, void* a4);  // 0x4C6B60
+    int MarkTabForRebuild(int a1, int a2, int a3);  // 0x5005B0
+    int getTypeProductionCount(int a1, int a2, int a3);  // 0x500700
+    int ResetProductionState();  // 0x637AB0
+    int addToList(void* a1);  // 0x63E880
+    int Load(int a1);  // 0x6568A0
+    int Save(int a1);  // 0x656AC0
+    int ReadButtonList();  // 0x674650
+    int startButtonFlash(int a1, int a2, int a3);  // 0x69DFC0
+    int updateFlashTimer();  // 0x69E010
+    int Init();  // 0x6A5310
+    int UpdateCameoProductionState(void* a1);  // 0x6A5F20
+    void UpdateStrips(void* a1, void* a2);  // 0x6A7780
+    int InitCameoGrid(int a1);  // 0x6A8220
+    int RefreshCameoGrid();  // 0x6A8330
+    int sortCameoList();  // 0x6A83E0
+    int UpdateCameos(int a1, int a2);  // 0x6A8B30
+    int UpdateProduction();  // 0x6AA600
+    int ProcessInput(int a1, void* a2, int a3);  // 0x6AAD00
+    int saveLoadPrefix(int a1);  // 0x6AC5D0
+    int saveLoadPrefix2(int a1);  // 0x6AC5E0
+    void* queryInterface(int a1);  // 0x6AC780
+    void* initButtons();  // 0x6AC870
+    int GetProductionState();  // 0x6CBEE0
+    int findEntryIndexByName();  // 0x6CFCC0
+    int LoadButtonSHPs();  // 0x6D02B0
+    int InitButtons();  // 0x6D03A0
+    int DrawTabs(int a1);  // 0x6D0A20
+    int initializeStrip(int a1);  // 0x724520
+    int updateStripVisibility();  // 0x724530
+    int updateStripPosition();  // 0x724540
+    void* calcSidebarRect();  // 0x72AD90
+    int registerBuildingType();  // 0x734250
+    void* FindProductionData();  // 0x77DA50
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 } // namespace gamemd

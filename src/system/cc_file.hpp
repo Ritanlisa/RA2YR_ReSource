@@ -108,6 +108,25 @@ public:
     MemoryBuffer Buffer;
     uint32_t FileID = 0;
     uint32_t MixFileIndex = 0;
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    int Destru_vt08(int a1, int a2);  // 0x401980
+    void* Destru_vt00(int a1);  // 0x4019A0
+    void Create();  // 0x4309D0
+    int SetName(void* a1);  // 0x431E80
+    void* Construct(void* a1);  // 0x4739F0
+    void* Construct2(void* a1);  // 0x473A30
+    int Construct3();  // 0x473A80
+    int Destru_vt16(int a1, int a2, int a3);  // 0x473AB0
+    int Read();  // 0x473B10
+    int GetSize();  // 0x473C00
+    bool Destru_vt06();  // 0x473CD0
+    int Destru_vt14();  // 0x473E50
+    int Destru_vt15(int a1);  // 0x473F00
+    int Reopen(void* a1, int a2);  // 0x47AF10
+    int Load();  // 0x595BC0
+    void WriteINIString();  // 0x5D8FD0
+    int Cleanup();  // 0x759510
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 } // namespace gamemd

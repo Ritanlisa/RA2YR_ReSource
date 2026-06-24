@@ -53,6 +53,11 @@ public:
 
 protected:
     TubeClass() noexcept;
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    void* Construct(void* a1, int a2);  // 0x727FD0
+    int PowerDrainUpdate(void* a1);  // 0x728630
+    void* ProcessEvent(int a1);  // 0x728710
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 } // namespace gamemd

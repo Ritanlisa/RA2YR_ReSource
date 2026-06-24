@@ -41,6 +41,13 @@ public:
 
 protected:
     TabClass() = default; // 0x4A2350
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    void processTabInput();  // 0x637060
+    void* initTabData();  // 0x6A4E60
+    void* updateTabProduction(int a1);  // 0x6A80A0
+    int drawTabBackground();  // 0x6AC7C0
+    void* Constructor();  // 0x6CFE20
+    // --- gap2 auto-generated stub declarations (END) ---
 };
 
 } // namespace gamemd
