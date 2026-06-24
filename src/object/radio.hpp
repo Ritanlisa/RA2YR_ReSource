@@ -7,6 +7,20 @@ namespace game {
 
 enum class RadioCommand : int;
 
+// TECH DEBT (2026-06-24): This is a LOCAL, simplified VectorClass distinct from
+// the canonical IDA-verified gamemd::VectorClass / gamemd::DynamicVectorClass in
+// src/core/vector.hpp. Differences:
+//   - namespace ra2::game (here) vs namespace gamemd (canonical) -> NO ODR conflict
+//   - layout {Items, Count, Capacity} (12 bytes, no vtable) vs canonical
+//     DynamicVectorClass {vtable, Items, Capacity, IsInitialized, IsAllocated,
+//     Count, CapacityIncrement} (24 bytes). The real radio-link container in
+//     gamemd.exe IS a DynamicVectorClass<TechnoClass*> (vtable + CapacityIncrement
+//     = 10, see _generated/core/misc_sub.cpp), so this local layout is DIVERGENT.
+// Unifying radioLinks to gamemd::DynamicVectorClass<TechnoClass*> would change the
+// member size/offsets of RadioClass and every derived class (TechnoClass, FootClass,
+// ...) -- a binary-ABI change that must be approved/reviewed separately. Until then
+// this local definition is retained AS-IS (layout preserved) and only operator[] is
+// added so external code can use radioLinks[i] (project policy: obj[i], not .Items[i]).
 template <typename T>
 class VectorClass {
 public:
@@ -16,6 +30,12 @@ public:
 
     // design: constexpr operator, compile-time only
     constexpr VectorClass() noexcept : Items(nullptr), Count(0), Capacity(0) {}
+
+    // design: inline element accessor (mirrors gamemd::VectorClass::operator[]).
+    // Backing-store access (Items[i]) is legitimate inside the container's own
+    // method per src/core/vector.hpp ownership convention.
+    T& operator[](int i) { return Items[i]; }
+    const T& operator[](int i) const { return Items[i]; }
 };
 
 class RadioClass : public MissionClass {
