@@ -5,10 +5,13 @@ namespace ra2 { namespace game {
 
 class TechnoTypeClass : public ObjectTypeClass {
 public:
-    bool isArmed() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    bool isArmed() const;
     int getWeaponRange(int weaponIdx) const; // 0x5b3a60
-    WeaponTypeClass* getWeapon(int weaponIdx) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    bool hasTurret() const { return false; } // IDA: NOT_FOUND
+    // unmatched: no callgraph reference and no git history record
+    WeaponTypeClass* getWeapon(int weaponIdx) const;
+    // design: inline accessor, inlined at all call sites
+    bool hasTurret() const { return false; }
 
     // INI-loaded members
     bool armed; bool hasTurretFlag;

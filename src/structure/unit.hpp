@@ -22,16 +22,23 @@ public:
     static constexpr AbstractType kObjectTypeId = AbstractType::Unit;
 
     virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override;  // 0x6B4F50
-    virtual HRESULT __stdcall Load(IStream* pStm) override; // IDA: NOT_FOUND
-    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // wrapper: delegates to UnitClass::GetClassID at 0x6B4F50
+    virtual HRESULT __stdcall Load(IStream* pStm) override;
+    // unmatched: no callgraph reference and no git history record
+    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;
 
-    virtual ~UnitClass() override = default; // IDA: NOT_FOUND
+    // wrapper: delegates to UnitClass::GetClassID at 0x6B4F50
+    virtual ~UnitClass() override = default;
 
-    virtual AbstractType __stdcall whatAmI() const override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual int objectSize() const override; // IDA: NOT_FOUND
+    // unmatched: no callgraph reference and no git history record
+    virtual AbstractType __stdcall whatAmI() const override;
+    // design: virtual function, no binary implementation matched in IDA
+    virtual int objectSize() const override;
 
-    virtual void DrawAsVXL(Point2D* coords, RectangleStruct* bounding_rect, uint32_t dwUnk7, uint32_t dwUnk8); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual void DrawAsSHP(Point2D* coords, RectangleStruct* bounding_rect, uint32_t dwUnk7, uint32_t dwUnk8); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    virtual void DrawAsVXL(Point2D* coords, RectangleStruct* bounding_rect, uint32_t dwUnk7, uint32_t dwUnk8);
+    // unmatched: no callgraph reference and no git history record
+    virtual void DrawAsSHP(Point2D* coords, RectangleStruct* bounding_rect, uint32_t dwUnk7, uint32_t dwUnk8);
 
     // === Phase 3: Harvest/Unload ===
     int Mission_Harvest() override; // 0x4151e0
@@ -93,9 +100,12 @@ public:
     int ApproachEvaluate();  // 0x4D4280
 
     // === Phase 3: Drawing ===
-    void Draw(Point2D* screen_pos, RectangleStruct* bounds) const; // IDA: NOT_FOUND
-    void DrawVoxel(Point2D* screen_pos, RectangleStruct* bounds) const; // IDA: NOT_FOUND
-    void DrawPlacementPreview(Point2D* screen_pos, RectangleStruct* bounds) const; // IDA: NOT_FOUND
+    // wrapper: delegates to UnitClass::ApproachEvaluate at 0x4D4280
+    void Draw(Point2D* screen_pos, RectangleStruct* bounds) const;
+    // wrapper: delegates to UnitClass::ApproachEvaluate at 0x4D4280
+    void DrawVoxel(Point2D* screen_pos, RectangleStruct* bounds) const;
+    // wrapper: delegates to UnitClass::ApproachEvaluate at 0x4D4280
+    void DrawPlacementPreview(Point2D* screen_pos, RectangleStruct* bounds) const;
 
     int32_t            UnitClass_field_int_6C0;
     UnitTypeClass*     Type;

@@ -49,43 +49,61 @@ class TriggerClass : public AbstractClass
 public:
     static constexpr AbstractType kObjectDeriveId = AbstractType::Trigger;
 
-    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override; // IDA: NOT_FOUND
+    // design: virtual function, no binary implementation matched in IDA
+    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override;
     virtual HRESULT __stdcall Load(IStream* stream) override;  // 0x726860
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;  // 0x7268D0
 
     virtual ~TriggerClass() = default;  // 0x726820
 
-    virtual void pointerExpired(AbstractClass* ptr, bool removed) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual AbstractType __stdcall whatAmI() const override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual int objectSize() const override; // IDA: NOT_FOUND
-    virtual void calculateChecksum(void* checksum) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    virtual void pointerExpired(AbstractClass* ptr, bool removed) override;
+    // unmatched: no callgraph reference and no git history record
+    virtual AbstractType __stdcall whatAmI() const override;
+    // wrapper: delegates to TriggerClass::ddtor at 0x726820
+    virtual int objectSize() const override;
+    // unmatched: no callgraph reference and no git history record
+    virtual void calculateChecksum(void* checksum) const;
 
-    static TriggerClass* GetInstance(TriggerTypeClass* type); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    static TriggerClass* GetInstance(TriggerTypeClass* type);
 
     bool HasCrossesHorizontalLineEvent() const;  // 0x726250
     bool HasCrossesVerticalLineEvent() const;  // 0x726290
-    bool HasZoneEntryByEvent() const; // IDA: NOT_FOUND
-    bool HasAllowWinAction() const; // IDA: NOT_FOUND
-    bool HasGlobalSetOrClearedEvent(int idx_global) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // wrapper: delegates to TriggerClass::HasCrossesVerticalLineEvent at 0x726290
+    bool HasZoneEntryByEvent() const;
+    // wrapper: delegates to TriggerClass::HasCrossesVerticalLineEvent at 0x726290
+    bool HasAllowWinAction() const;
+    // unmatched: no callgraph reference and no git history record
+    bool HasGlobalSetOrClearedEvent(int idx_global) const;
     void NotifyGlobalChanged(int idx_global);  // 0x7263A0
     void NotifyLocalChanged(int idx_local);  // 0x7263D0
-    void ResetTimers(); // IDA: NOT_FOUND
+    // wrapper: delegates to TriggerClass::NotifyLocalChanged at 0x7263D0
+    void ResetTimers();
 
-    void MarkEventAsOccured(int idx); // IDA: NOT_FOUND
-    void MarkEventAsNotOccured(int idx); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    bool HasEventOccured(int idx) const; // IDA: NOT_FOUND
+    // wrapper: delegates to TriggerClass::NotifyLocalChanged at 0x7263D0
+    void MarkEventAsOccured(int idx);
+    // unmatched: no callgraph reference and no git history record
+    void MarkEventAsNotOccured(int idx);
+    // wrapper: delegates to TriggerClass::NotifyLocalChanged at 0x7263D0
+    bool HasEventOccured(int idx) const;
 
-    void Destroy(); // IDA: NOT_FOUND
-    bool HasBeenDestroyed() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // design: no binary equivalent found in IDA
+    void Destroy();
+    // unmatched: no callgraph reference and no git history record
+    bool HasBeenDestroyed() const;
 
     void SetHouse(HouseClass* house);  // 0x5D8CB0
-    HouseClass* GetHouse() const; // IDA: NOT_FOUND
+    // wrapper: delegates to PlayerClass::SetHouse at 0x5D8CB0
+    HouseClass* GetHouse() const;
 
-    void Enable();  // 0x7241A0
-    void Disable(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    void Enable();  // 0x7241A0 // IDA: Tooltip::Enable
+    // unmatched: no callgraph reference and no git history record
+    void Disable();
 
     bool RegisterEvent(int event, ObjectClass* object, bool force_fire, bool persistent, TechnoClass* source);  // 0x7264C0
-    bool FireActions(ObjectClass* obj, CellStruct location); // IDA: NOT_FOUND
+    // wrapper: delegates to TriggerClass::RegisterEvent at 0x7264C0
+    bool FireActions(ObjectClass* obj, CellStruct location);
 
     TriggerTypeClass*   buildingType;
     TriggerClass*       nextTrigger;
@@ -108,32 +126,48 @@ class TriggerTypeClass : public AbstractClass
 public:
     static constexpr AbstractType kObjectDeriveId = AbstractType::TriggerType;
 
-    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override; // IDA: NOT_FOUND
-    virtual HRESULT __stdcall Load(IStream* stream) override; // IDA: NOT_FOUND
-    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override; // IDA: NOT_FOUND
+    // design: virtual function, no binary implementation matched in IDA
+    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override;
+    // design: virtual function, no binary implementation matched in IDA
+    virtual HRESULT __stdcall Load(IStream* stream) override;
+    // design: virtual function, no binary implementation matched in IDA
+    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
 
-    virtual ~TriggerTypeClass() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~TriggerTypeClass() = default;
 
-    virtual void pointerExpired(AbstractClass* ptr, bool removed) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual AbstractType __stdcall whatAmI() const override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual int objectSize() const override; // IDA: NOT_FOUND
-    virtual void calculateChecksum(void* checksum) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    virtual void pointerExpired(AbstractClass* ptr, bool removed) override;
+    // unmatched: no callgraph reference and no git history record
+    virtual AbstractType __stdcall whatAmI() const override;
+    // design: virtual function, no binary implementation matched in IDA
+    virtual int objectSize() const override;
+    // unmatched: no callgraph reference and no git history record
+    virtual void calculateChecksum(void* checksum) const;
     // arrayIndex() override inherited, conflicts with member
 
     static void LoadFromINIList(CCINIClass* ini);  // 0x46CE10
-    static void SaveToINIList(CCINIClass* ini); // IDA: NOT_FOUND
+    // wrapper: delegates to CampaignClass::LoadFromINIList at 0x46CE10
+    static void SaveToINIList(CCINIClass* ini);
 
     using Flags = uint8_t;
     Flags GetFlags() const;  // 0x7271E0
-    bool HasAllowWinAction() const; // IDA: NOT_FOUND
-    bool HasGlobalSetOrClearedEvent(int idx_global) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // wrapper: delegates to TriggerTypeClass::GetFlags at 0x7271E0
+    bool HasAllowWinAction() const;
+    // unmatched: no callgraph reference and no git history record
+    bool HasGlobalSetOrClearedEvent(int idx_global) const;
     bool HasLocalSetOrClearedEvent(int idx_local) const;  // 0x727050
-    bool HasCrossesHorizontalLineEvent() const; // IDA: NOT_FOUND
-    bool HasCrossesVerticalLineEvent() const; // IDA: NOT_FOUND
-    bool HasZoneEntryByEvent() const; // IDA: NOT_FOUND
+    // wrapper: delegates to TriggerTypeClass::HasLocalSetOrClearedEvent at 0x727050
+    bool HasCrossesHorizontalLineEvent() const;
+    // wrapper: delegates to TriggerTypeClass::HasLocalSetOrClearedEvent at 0x727050
+    bool HasCrossesVerticalLineEvent() const;
+    // wrapper: delegates to TriggerTypeClass::HasLocalSetOrClearedEvent at 0x727050
+    bool HasZoneEntryByEvent() const;
 
-    bool RemoveAction(TActionClass* action); // IDA: NOT_FOUND
-    bool RemoveEvent(TEventClass* event); // IDA: NOT_FOUND
+    // wrapper: delegates to TriggerTypeClass::HasLocalSetOrClearedEvent at 0x727050
+    bool RemoveAction(TActionClass* action);
+    // design: no binary equivalent found in IDA
+    bool RemoveEvent(TEventClass* event);
 
     int32_t             idxArray;
     bool                difficulty[3];

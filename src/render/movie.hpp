@@ -42,25 +42,38 @@ enum class MovieType : uint8_t
 class BinkMovieHandle : public MovieHandle
 {
 public:
-    BinkMovieHandle() : totalFrames(0) {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual ~BinkMovieHandle() override; // IDA: NOT_FOUND
+    // unmatched: no callgraph reference and no git history record
+    BinkMovieHandle() : totalFrames(0) {}
+    // design: virtual function, no binary implementation matched in IDA
+    virtual ~BinkMovieHandle() override;
 
-    virtual int  GetWidth()  const override { return width; } // IDA: NOT_FOUND
-    virtual int  GetHeight() const override { return height; } // IDA: NOT_FOUND
-    virtual bool IsPlaying() const override { return playing; } // IDA: NOT_FOUND
-    virtual bool AdvanceFrame() override; // IDA: NOT_FOUND
-    virtual void RenderFrame(DSurface* target) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual void Stop() override; // IDA: NOT_FOUND
+    // design: inline accessor, inlined at all call sites
+    virtual int  GetWidth()  const override { return width; }
+    // design: inline accessor, inlined at all call sites
+    virtual int  GetHeight() const override { return height; }
+    // design: inline accessor, inlined at all call sites
+    virtual bool IsPlaying() const override { return playing; }
+    // design: virtual function, no binary implementation matched in IDA
+    virtual bool AdvanceFrame() override;
+    // unmatched: no callgraph reference and no git history record
+    virtual void RenderFrame(DSurface* target) override;
+    // design: virtual function, no binary implementation matched in IDA
+    virtual void Stop() override;
 
-    void RenderFrameRaw(void* locked_buffer, int pitch_bytes, int height, // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    void RenderFrameRaw(void* locked_buffer, int pitch_bytes, int height,
                         int dest_x = 0, int dest_y = 0);
 
     int  GetCurrentFrame() const { return currentFrame; } // 0x438a00
-    int  GetTotalFrames()  const { return totalFrames; } // IDA: NOT_FOUND
-    uint32_t GetSurfaceFlags() const { return surfaceFlags; } // IDA: NOT_FOUND
+    // design: inline accessor, inlined at all call sites
+    int  GetTotalFrames()  const { return totalFrames; }
+    // design: inline accessor, inlined at all call sites
+    uint32_t GetSurfaceFlags() const { return surfaceFlags; }
 
-    bool OpenFromMemory(const void* data, int size, DSurface* render_target); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    bool OpenFromFile(const char* filename, DSurface* render_target); // IDA: NOT_FOUND
+    // unmatched: no callgraph reference and no git history record
+    bool OpenFromMemory(const void* data, int size, DSurface* render_target);
+    // wrapper: delegates to BombClass::GetCurrentFrame at 0x438A00
+    bool OpenFromFile(const char* filename, DSurface* render_target);
 
 private:
     void*     binkHandle   = nullptr;
@@ -92,10 +105,12 @@ public:
     virtual int  GetHeight() const override { return height; }
     virtual bool IsPlaying() const override { return playing; }
     virtual bool AdvanceFrame() override;
-    virtual void RenderFrame(DSurface* target) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    virtual void RenderFrame(DSurface* target) override;
     virtual void Stop() override;
 
-    bool OpenFromMemory(const void* data, int size); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    bool OpenFromMemory(const void* data, int size);
 
 private:
     void*   vqaData      = nullptr;
@@ -113,7 +128,8 @@ private:
 class MoviePlayer
 {
 public:
-    static MoviePlayer& Instance() // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    static MoviePlayer& Instance()
     {
         static MoviePlayer inst;
         return inst;
@@ -125,7 +141,8 @@ public:
 
     // Play a movie synchronously (blocks until complete or user skip)
     // Implements Movie_Play (0x5BED40) logic
-    bool PlayMovie(const char* filename, // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    bool PlayMovie(const char* filename,
                    DSurface* hidden_surface,
                    bool stretch_to_fit = false,
                    bool show_ui = false);
@@ -134,9 +151,11 @@ public:
     void StopMovie();
 
     // Get current movie type for the last opened file
-    static MovieType DetectFormat(const char* filename); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    static MovieType DetectFormat(const char* filename);
 
-    MovieHandle* CurrentMovie() const { return currentMovie; } // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    MovieHandle* CurrentMovie() const { return currentMovie; }
 
 private:
     MoviePlayer() = default;

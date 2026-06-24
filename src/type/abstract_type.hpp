@@ -16,17 +16,22 @@ public:
 
     static DynamicVectorClass<AbstractTypeClass*>* Array;
 
-    static AbstractTypeClass* Find(const char* pID); // IDA: NOT_FOUND
-    static AbstractTypeClass* FindOrCreate(const char* pID); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    static int FindIndex(const char* pID); // IDA: NOT_FOUND
+    // design: static function, no direct binary match in IDA
+    static AbstractTypeClass* Find(const char* pID);
+    // unmatched: no callgraph reference and no git history record
+    static AbstractTypeClass* FindOrCreate(const char* pID);
+    // design: static function, no direct binary match in IDA
+    static int FindIndex(const char* pID);
 
     virtual ~AbstractTypeClass() = default;  // 0x4109C0 (as Dtor)
 
-    virtual void LoadTheaterSpecificArt(TheaterType th_type) {} // IDA: NOT_FOUND
+    // design: inline accessor, inlined at all call sites
+    virtual void LoadTheaterSpecificArt(TheaterType th_type) {}
     virtual bool LoadFromINI(CCINIClass* pINI) { return false; }  // 0x410A60
     virtual bool SaveToINI(CCINIClass* pINI) { return false; }  // 0x410B90 (as WriteINI)
 
-    const char* get_ID() const { return this->ID; } // IDA: NOT_FOUND
+    // design: inline accessor, inlined at all call sites
+    const char* get_ID() const { return this->ID; }
 
     AbstractTypeClass() = default;  // needed for derived class default ctors
     AbstractTypeClass(const char* pID) noexcept;  // 0x410800 (as Constructor)
@@ -34,7 +39,8 @@ public:
     struct noinit_t {};
 
 protected:
-    AbstractTypeClass(noinit_t) noexcept {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    AbstractTypeClass(noinit_t) noexcept {}
 
 public:
     char ID[0x18];

@@ -8,7 +8,8 @@ namespace gamemd
 class CDDriveManagerClass
 {
 public:
-    static CDDriveManagerClass* Global(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    static CDDriveManagerClass* Global();
 
     int GetCDNumber();
 
@@ -24,11 +25,15 @@ public:
 class CD
 {
 public:
-    virtual ~CD() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
+    // design: default destructor (compiler-generated), no callgraph reference
+    virtual ~CD() = default;
 
-    virtual bool ForceAvailable(int nCDNumber); // IDA: NOT_FOUND
-    virtual bool InsertCDDialog(); // IDA: NOT_FOUND
-    virtual void SwapToDisk(); // IDA: NOT_FOUND
+    // design: virtual function, no binary implementation matched in IDA
+    virtual bool ForceAvailable(int nCDNumber);
+    // design: virtual function, no binary implementation matched in IDA
+    virtual bool InsertCDDialog();
+    // design: virtual function, no binary implementation matched in IDA
+    virtual void SwapToDisk();
 
 protected:
     CD() = default;

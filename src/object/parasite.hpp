@@ -14,16 +14,21 @@ class ParasiteClass : public AbstractClass
 public:
     static constexpr AbstractType kObjectDeriveId = AbstractType::Parasite;
 
-    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override; // IDA: NOT_FOUND
+    // design: virtual function, no binary implementation matched in IDA
+    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override;
     virtual HRESULT __stdcall Load(IStream* stream) override;  // 0x6295B0
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;  // 0x6296B0
 
     virtual ~ParasiteClass() = default;  // 0x6296D0
 
-    virtual void pointerExpired(AbstractClass* ptr, bool removed) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual AbstractType __stdcall whatAmI() const override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual int objectSize() const override; // IDA: NOT_FOUND
-    virtual void calculateChecksum(void* checksum) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    virtual void pointerExpired(AbstractClass* ptr, bool removed) override;
+    // unmatched: no callgraph reference and no git history record
+    virtual AbstractType __stdcall whatAmI() const override;
+    // wrapper: delegates to ParasiteClass::ddtor at 0x6296D0
+    virtual int objectSize() const override;
+    // unmatched: no callgraph reference and no git history record
+    virtual void calculateChecksum(void* checksum) const;
 
     // Construction
     ParasiteClass();                                             // 0x6292B0

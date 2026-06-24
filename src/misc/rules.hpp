@@ -62,8 +62,10 @@ struct RocketStruct
     bool              LazyCurve;
     AircraftTypeClass* Type;
 
-    RocketStruct() noexcept; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    explicit RocketStruct(noinit_t) noexcept; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    RocketStruct() noexcept;
+    // unmatched: no callgraph reference and no git history record
+    explicit RocketStruct(noinit_t) noexcept;
 };
 
 class RulesClass
@@ -95,18 +97,23 @@ public:
     void ReadSmudgeTypes(CCINIClass* pINI);  // 0x67A730
     void ReadOverlayTypes(CCINIClass* pINI);  // 0x67A7C0
     void ReadAnimations(CCINIClass* pINI);  // 0x67A7D0
-    void ReadVoxelAnims(CCINIClass* pINI); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    void ReadVoxelAnims(CCINIClass* pINI);
     void ReadWarheads(CCINIClass* pINI);  // 0x67A8A0
     void ReadParticles(CCINIClass* pINI);  // 0x67A8B0
     void ReadParticleSystems(CCINIClass* pINI);  // 0x67A8E0
     void ReadAI(CCINIClass* pINI);  // 0x67B480
     void ReadPowerups(CCINIClass* pINI);  // 0x673E80
-    void ReadLandCharacteristics(CCINIClass* pINI); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    void ReadLandCharacteristics(CCINIClass* pINI);
     void ReadIQ(CCINIClass* pINI);  // 0x67C430
-    void ReadJumpjetControls(CCINIClass* pINI); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    void ReadDifficulties(CCINIClass* pINI); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    void ReadJumpjetControls(CCINIClass* pINI);
+    // unmatched: no callgraph reference and no git history record
+    void ReadDifficulties(CCINIClass* pINI);
     void ReadMovies(CCINIClass* pINI);  // 0x674550
-    void ReadAdvancedCommandBar(CCINIClass* pINI); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    void ReadAdvancedCommandBar(CCINIClass* pINI);
     void PointerGotInvalid(AbstractClass* pInvalid, bool removed);  // 0x4A7900
 
     int32_t              DetailMinFrameRateNormal;

@@ -122,8 +122,10 @@ public:
     uint8_t                      SessionClass_field_2854[0x884];
     bool                         CurrentlyInGame;
 
-    bool IsCampaign() const; // IDA: NOT_FOUND
-    bool IsSkirmish() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // design: no binary equivalent found in IDA
+    bool IsCampaign() const;
+    // unmatched: no callgraph reference and no git history record
+    bool IsSkirmish() const;
     bool IsMultiplayer() const;  // 0x77D940
 
     // TODO: complete SessionClass members

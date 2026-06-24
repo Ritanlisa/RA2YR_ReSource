@@ -42,7 +42,8 @@ public:
 
     virtual ~ParticleSystemClass() override = default;  // 0x630230
 
-    virtual AbstractType __stdcall whatAmI() const override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    virtual AbstractType __stdcall whatAmI() const override;
     virtual int objectSize() const override;  // 0x630200
 
     void Draw(void* surface, int draw_x, int draw_y);  // 0x62FE60

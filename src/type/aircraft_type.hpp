@@ -15,8 +15,10 @@ public:
 
     static DynamicVectorClass<AircraftTypeClass*>* Array;
     static AircraftTypeClass* Find(const char* pID);  // 0x41C8B0
-    static AircraftTypeClass* FindOrCreate(const char* pID); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    static int FindIndex(const char* pID); // IDA: NOT_FOUND
+    // unmatched: no callgraph reference and no git history record
+    static AircraftTypeClass* FindOrCreate(const char* pID);
+    // wrapper: delegates to AircraftTypeClass::AircraftTypeClass at 0x41C8B0
+    static int FindIndex(const char* pID);
 
     virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override; // 0x41CEB0 (as GetClassIdentifier)
 

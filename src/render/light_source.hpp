@@ -28,19 +28,27 @@ class LightSourceClass : public AbstractClass
 public:
     static constexpr AbstractType kObjectTypeId = AbstractType::LightSource;
 
-    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override; // IDA: NOT_FOUND
+    // design: virtual function, no binary implementation matched in IDA
+    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override;
 
-    virtual HRESULT __stdcall Load(IStream* stream) override; // IDA: NOT_FOUND
-    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // design: virtual function, no binary implementation matched in IDA
+    virtual HRESULT __stdcall Load(IStream* stream) override;
+    // unmatched: no callgraph reference and no git history record
+    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
 
     virtual ~LightSourceClass() override = default;  // 0x555080
 
-    virtual AbstractType __stdcall whatAmI() const override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual int objectSize() const override; // IDA: NOT_FOUND
+    // unmatched: no callgraph reference and no git history record
+    virtual AbstractType __stdcall whatAmI() const override;
+    // wrapper: delegates to LightSourceClass::ddtor at 0x555080
+    virtual int objectSize() const override;
 
-    void Activate(uint32_t zero = 0); // IDA: NOT_FOUND
-    void Deactivate(uint32_t zero = 0); // IDA: NOT_FOUND
-    void ChangeLevels(int intensity, const TintStruct& tint, int8_t mode); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // wrapper: delegates to LightSourceClass::ddtor at 0x555080
+    void Activate(uint32_t zero = 0);
+    // design: no binary equivalent found in IDA
+    void Deactivate(uint32_t zero = 0);
+    // unmatched: no callgraph reference and no git history record
+    void ChangeLevels(int intensity, const TintStruct& tint, int8_t mode);
 
     int32_t        LightIntensity;
     TintStruct     LightTint;
@@ -53,7 +61,8 @@ protected:
     LightSourceClass() = default;
     LightSourceClass(const CoordStruct& location, int intensity, int visibility,
                      const TintStruct& tint, int detail_level) noexcept;
-    explicit LightSourceClass(noinit_t) noexcept; // IDA: NOT_FOUND
+    // design: no binary equivalent found in IDA
+    explicit LightSourceClass(noinit_t) noexcept;
 };
 
 } // namespace gamemd

@@ -101,7 +101,8 @@ class MPBattleClass : public MPGameModeClass
 {
 public:
     MPBattleClass() noexcept;  // 0x5d8170
-    virtual ~MPBattleClass() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~MPBattleClass() = default;
     virtual bool IsTeamsAllowed() override;  // 0x5CB570
     virtual bool IsValidMap() override;  // 0x5CACF0
     virtual bool NeedsHouseSelection() override;  // 0x5CAD30
@@ -134,26 +135,42 @@ public:
     virtual void DrawTeamDropdown(HWND, DynamicVectorClass<MPTeam*>*, MPTeam*) override;  // 0x5D2DE0
     virtual bool UnfixAlliances() override;  // 0x5D4CD0
     virtual bool StartingPositionsToHouseBaseCells(int8_t) override;  // 0x5D58B0
-    virtual bool StartingPositionsToHouseBaseCells2(bool) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    virtual bool StartingPositionsToHouseBaseCells2(bool) override;
     virtual bool AllyTeams() override;  // 0x5D58E0
     virtual bool IsMegawealthAllowed() override;  // 0x5D5900
     virtual void OnAIJoined() override;  // 0x5D5920
-    virtual void OnAllCompleted() override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual int32_t GetScoreMode() override; // IDA: NOT_FOUND
-    virtual void OnNewScenario() override; // IDA: NOT_FOUND
-    virtual void OnInitGame(int32_t) override; // IDA: NOT_FOUND
-    virtual void OnGameSpeedChanged(int32_t) override; // IDA: NOT_FOUND
-    virtual bool IsGameOver() override; // IDA: NOT_FOUND
-    virtual void OnEndOfFrame() override; // IDA: NOT_FOUND
-    virtual void OnDrawDialog() override; // IDA: NOT_FOUND
-    virtual bool IsDefeated(int32_t,void*,int32_t,int16_t,int32_t,int32_t,int32_t) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual int32_t IsWinner() override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual bool IsPlayerEliminated() override; // IDA: NOT_FOUND
-    virtual void CreateMPTeams(DynamicVectorClass<MPTeam*>*) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual CellStruct* AssignStartingPositionsToHouse(CellStruct*, int32_t, // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    virtual void OnAllCompleted() override;
+    // wrapper: delegates to MPBattleClass::onAIJoined at 0x5D5920
+    virtual int32_t GetScoreMode() override;
+    // wrapper: delegates to MPBattleClass::onAIJoined at 0x5D5920
+    virtual void OnNewScenario() override;
+    // wrapper: delegates to MPBattleClass::onAIJoined at 0x5D5920
+    virtual void OnInitGame(int32_t) override;
+    // wrapper: delegates to MPBattleClass::onAIJoined at 0x5D5920
+    virtual void OnGameSpeedChanged(int32_t) override;
+    // design: virtual function, no binary implementation matched in IDA
+    virtual bool IsGameOver() override;
+    // design: virtual function, no binary implementation matched in IDA
+    virtual void OnEndOfFrame() override;
+    // design: virtual function, no binary implementation matched in IDA
+    virtual void OnDrawDialog() override;
+    // unmatched: no callgraph reference and no git history record
+    virtual bool IsDefeated(int32_t,void*,int32_t,int16_t,int32_t,int32_t,int32_t) override;
+    // unmatched: no callgraph reference and no git history record
+    virtual int32_t IsWinner() override;
+    // design: virtual function, no binary implementation matched in IDA
+    virtual bool IsPlayerEliminated() override;
+    // unmatched: no callgraph reference and no git history record
+    virtual void CreateMPTeams(DynamicVectorClass<MPTeam*>*) override;
+    // unmatched: no callgraph reference and no git history record
+    virtual CellStruct* AssignStartingPositionsToHouse(CellStruct*, int32_t,
                         DynamicVectorClass<CellStruct>*, uint8_t*) override { return nullptr; }
-    virtual bool SpawnBaseUnits(HouseClass*, uint32_t) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual bool GenerateStartingUnits(HouseClass*, int32_t&) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    virtual bool SpawnBaseUnits(HouseClass*, uint32_t) override;
+    // unmatched: no callgraph reference and no git history record
+    virtual bool GenerateStartingUnits(HouseClass*, int32_t&) override;
 
     void initGame(); // 0x5C0DD0
 };
@@ -178,7 +195,8 @@ public:
     virtual bool StartGame() override;
     virtual bool StopGame(int32_t reason) override;  // 0x5CADC0
     virtual bool AreTeamChangesAllowed() override;  // 0x5CADD0
-    virtual bool SpawnBaseUnits(HouseClass*, uint32_t) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    virtual bool SpawnBaseUnits(HouseClass*, uint32_t) override;
 };
 
 class MPSiegeClass : public MPGameModeClass
@@ -191,9 +209,12 @@ public:
     virtual bool AreTeamChangesAllowed() override;  // 0x5CADD0
     virtual bool IsAIAllowed() override;  // 0x5CB380
     virtual bool UnfixAlliances() override;  // 0x5D4CD0
-    virtual bool StartingPositionsToHouseBaseCells2(bool) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual void CreateMPTeams(DynamicVectorClass<MPTeam*>*) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual bool SpawnBaseUnits(HouseClass*, uint32_t) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    virtual bool StartingPositionsToHouseBaseCells2(bool) override;
+    // unmatched: no callgraph reference and no git history record
+    virtual void CreateMPTeams(DynamicVectorClass<MPTeam*>*) override;
+    // unmatched: no callgraph reference and no git history record
+    virtual bool SpawnBaseUnits(HouseClass*, uint32_t) override;
 };
 
 class MPMegawealthClass : public MPGameModeClass

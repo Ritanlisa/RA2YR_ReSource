@@ -14,31 +14,41 @@ class SHPFile;
 struct SHPStruct
 {
     SHPStruct() noexcept
-        : Type(0), Width(0), Height(0), Frames(0) // IDA: UNMATCHED — no_callgraph_match, no_git_history
+        // unmatched: no callgraph reference and no git history record
+        : Type(0), Width(0), Height(0), Frames(0)
     {
     }
 
-    virtual ~SHPStruct(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    virtual ~SHPStruct();
 
     void Load();
-    void Unload(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    void Unload();
 
     SHPFile* GetData();
 
-    RectangleStruct* GetFrameBounds(RectangleStruct& out, int frame_index) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    RectangleStruct GetFrameBounds(int frame_index) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    RectangleStruct* GetFrameBounds(RectangleStruct& out, int frame_index) const;
+    // unmatched: no callgraph reference and no git history record
+    RectangleStruct GetFrameBounds(int frame_index) const;
 
     ColorStruct* GetColor(ColorStruct& out, int frame_index) const;
     ColorStruct GetColor(int frame_index) const;
 
-    byte* GetPixels(int frame_index); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    byte* GetPixels(int frame_index);
 
-    bool HasCompression(int frame_index) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    bool HasCompression(int frame_index) const;
 
-    bool IsReference() const { return Type == 0xFFFF; } // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    bool IsReference() const { return Type == 0xFFFF; }
 
-    SHPReference* AsReference(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    const SHPReference* AsReference() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    SHPReference* AsReference();
+    // unmatched: no callgraph reference and no git history record
+    const SHPReference* AsReference() const;
 
     SHPFile* AsFile();
     const SHPFile* AsFile() const;
@@ -63,7 +73,8 @@ struct SHPFrame
 
 class SHPFile : public SHPStruct
 {
-    const SHPFrame& GetFrameHeader(int frame_index) const // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    const SHPFrame& GetFrameHeader(int frame_index) const
     {
         return (&FirstFrame)[frame_index];
     }
@@ -73,7 +84,8 @@ class SHPFile : public SHPStruct
 
 class SHPReference : public SHPStruct
 {
-    SHPReference(const char* filename); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    SHPReference(const char* filename);
 
     char*            Filename;
     SHPStruct*       Data;

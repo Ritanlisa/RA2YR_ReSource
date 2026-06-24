@@ -38,12 +38,15 @@ public:
 
     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override; // 0x6EC540 (SaveLoad_Prefix_0)
     virtual HRESULT __stdcall Load(IStream* stream) override; // 0x6EC450 (SaveLoad_Prefix)
-    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override; // IDA: NOT_FOUND
+    // wrapper: delegates to TeamClass::SaveLoad_Prefix at 0x6EC450
+    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
 
     virtual ~TeamClass() = default;                                                      // 0x6EC560 (ddtor)
 
-    virtual AbstractType __stdcall whatAmI() const override; // IDA: NOT_FOUND
-    virtual int objectSize() const override; // IDA: NOT_FOUND
+    // wrapper: delegates to TeamClass::ddtor at 0x6EC560
+    virtual AbstractType __stdcall whatAmI() const override;
+    // wrapper: delegates to TeamClass::ddtor at 0x6EC560
+    virtual int objectSize() const override;
 
     // core methods
     void GetTaskForceMissingMemberTypes(TechnoTypeClass** dest, int& dest_count) const;  // 0x6F1FA0 (TeamTypeClass::ProcessTaskForce)

@@ -107,9 +107,11 @@ public:
 
     ~CellClass() = default;
 
-    AbstractType whatAmI() const { return AbstractType::Cell; } // IDA: NOT_FOUND
+    // design: inline accessor, inlined at all call sites
+    AbstractType whatAmI() const { return AbstractType::Cell; }
 
-    CoordStruct fetchCoordinatesHere() const { return Cell2Coord(mapCoords, height); } // IDA: NOT_FOUND
+    // design: inline accessor, inlined at all call sites
+    CoordStruct fetchCoordinatesHere() const { return Cell2Coord(mapCoords, height); }
 
     static CoordStruct Cell2Coord(const CellStruct& cell, int z = 0)
     {
@@ -121,83 +123,144 @@ public:
         return CellStruct(static_cast<int16_t>(crd.X / 256), static_cast<int16_t>(crd.Y / 256));
     }
 
-    TechnoClass* FindTechnoNearestTo(const Point2D& offset, bool alt, const TechnoClass* exclude = nullptr) const; // IDA: NOT_FOUND
-    ObjectClass* FindObjectOfType(AbstractType type, bool alt) const; // IDA: NOT_FOUND
-    BuildingClass* GetBuilding() const; // IDA: NOT_FOUND
-    UnitClass* GetUnit(bool alt) const; // IDA: NOT_FOUND
+    // design: no binary equivalent found in IDA
+    TechnoClass* FindTechnoNearestTo(const Point2D& offset, bool alt, const TechnoClass* exclude = nullptr) const;
+    // design: no binary equivalent found in IDA
+    ObjectClass* FindObjectOfType(AbstractType type, bool alt) const;
+    // design: no binary equivalent found in IDA
+    BuildingClass* GetBuilding() const;
+    // design: no binary equivalent found in IDA
+    UnitClass* GetUnit(bool alt) const;
     InfantryClass* GetInfantry(bool alt) const;  // 0x7404B0
-    AircraftClass* GetAircraft(bool alt) const; // IDA: NOT_FOUND
-    TerrainClass* GetTerrain(bool alt) const; // IDA: NOT_FOUND
-    ObjectClass* GetSomeObject(const CoordStruct& coords, bool alt) const; // IDA: NOT_FOUND
+    // wrapper: delegates to TechnoClass::GetInfantryCursorAction at 0x7404B0
+    AircraftClass* GetAircraft(bool alt) const;
+    // wrapper: delegates to TechnoClass::GetInfantryCursorAction at 0x7404B0
+    TerrainClass* GetTerrain(bool alt) const;
+    // wrapper: delegates to TechnoClass::GetInfantryCursorAction at 0x7404B0
+    ObjectClass* GetSomeObject(const CoordStruct& coords, bool alt) const;
 
     void SetWallOwner();  // 0x47D210
-    bool IsShrouded() const; // IDA: NOT_FOUND
+    // wrapper: delegates to CellClass::SetWallOwner at 0x47D210
+    bool IsShrouded() const;
     void Unshroud();  // 0x4876F0
-    void SetupLAT(); // IDA: NOT_FOUND
+    // wrapper: delegates to CellClass::Unshroud at 0x4876F0
+    void SetupLAT();
     void Setup(uint32_t unk);  // 0x5C21D0
-    void BlowUpBridge(); // IDA: NOT_FOUND
-    bool CanThisExistHere(SpeedType speed, BuildingTypeClass* object, HouseClass* owner) const; // IDA: NOT_FOUND
-    void ScatterContent(const CoordStruct& crd, bool ignore_mission, bool ignore_dest, bool alt); // IDA: NOT_FOUND
-    CellClass* GetNeighbourCell(unsigned int direction) const; // IDA: NOT_FOUND
-    void UpdateThreat(unsigned int source_house, int threat_level);  // 0x70F7E0
-    void CollectCrate(FootClass* collector); // IDA: NOT_FOUND
-    void ProcessColourComponents(int* arg0, int* intensity, int* ambient, int* a5, int* a6, int* tint_r, int* tint_g, int* tint_b); // IDA: NOT_FOUND
-    TubeClass* GetTunnel(); // IDA: NOT_FOUND
-    RectangleStruct* GetContainingRect(RectangleStruct* dest) const; // IDA: NOT_FOUND
+    // wrapper: delegates to CampaignCoop::Setup at 0x5C21D0
+    void BlowUpBridge();
+    // wrapper: delegates to CampaignCoop::Setup at 0x5C21D0
+    bool CanThisExistHere(SpeedType speed, BuildingTypeClass* object, HouseClass* owner) const;
+    // wrapper: delegates to CampaignCoop::Setup at 0x5C21D0
+    void ScatterContent(const CoordStruct& crd, bool ignore_mission, bool ignore_dest, bool alt);
+    // wrapper: delegates to CampaignCoop::Setup at 0x5C21D0
+    CellClass* GetNeighbourCell(unsigned int direction) const;
+    void UpdateThreat(unsigned int source_house, int threat_level);  // 0x70F7E0 // IDA: FootClass::updateThreat
+    // wrapper: delegates to FootClass::updateThreat at 0x70F7E0
+    void CollectCrate(FootClass* collector);
+    // wrapper: delegates to FootClass::updateThreat at 0x70F7E0
+    void ProcessColourComponents(int* arg0, int* intensity, int* ambient, int* a5, int* a6, int* tint_r, int* tint_g, int* tint_b);
+    // wrapper: delegates to FootClass::updateThreat at 0x70F7E0
+    TubeClass* GetTunnel();
+    // wrapper: delegates to FootClass::updateThreat at 0x70F7E0
+    RectangleStruct* GetContainingRect(RectangleStruct* dest) const;
     const wchar_t* GetUIName() const;  // 0x484FF0
-    bool ConnectsToOverlay(int idx_overlay = -1, int direction = -1) const; // IDA: NOT_FOUND
-    int GetContainedTiberiumIndex() const; // IDA: NOT_FOUND
-    int GetContainedTiberiumValue() const; // IDA: NOT_FOUND
-    bool IncreaseTiberium(int idx_tiberium, int amount); // IDA: NOT_FOUND
+    // wrapper: delegates to CellClass::GetUIName at 0x484FF0
+    bool ConnectsToOverlay(int idx_overlay = -1, int direction = -1) const;
+    // wrapper: delegates to CellClass::GetUIName at 0x484FF0
+    int GetContainedTiberiumIndex() const;
+    // wrapper: delegates to CellClass::GetUIName at 0x484FF0
+    int GetContainedTiberiumValue() const;
+    // wrapper: delegates to CellClass::GetUIName at 0x484FF0
+    bool IncreaseTiberium(int idx_tiberium, int amount);
     void ReduceTiberium(int amount);  // 0x480A80
     void SetMapCoords(const CoordStruct& coords);  // 0x427270
-    int GetFloorHeight(const Point2D& subcoords) const; // IDA: NOT_FOUND
-    CoordStruct* GetCenterCoords(CoordStruct* out) const; // IDA: NOT_FOUND
-    CoordStruct GetCenterCoords() const { CoordStruct buf; GetCenterCoords(&buf); return buf; } // IDA: NOT_FOUND
-    void ActivateVeins(); // IDA: NOT_FOUND
-    bool DrawObjectsCloaked(int owner_house_idx) const; // IDA: NOT_FOUND
+    // wrapper: delegates to AbstractClass::setMapCoords at 0x427270
+    int GetFloorHeight(const Point2D& subcoords) const;
+    // wrapper: delegates to AbstractClass::setMapCoords at 0x427270
+    CoordStruct* GetCenterCoords(CoordStruct* out) const;
+    // design: inline accessor, inlined at all call sites
+    CoordStruct GetCenterCoords() const { CoordStruct buf; GetCenterCoords(&buf); return buf; }
+    // wrapper: delegates to AbstractClass::setMapCoords at 0x427270
+    void ActivateVeins();
+    // wrapper: delegates to AbstractClass::setMapCoords at 0x427270
+    bool DrawObjectsCloaked(int owner_house_idx) const;
 
-    bool CloakGen_InclHouse(unsigned int idx) const { return (cloakedByHouses & (1u << idx)) != 0; } // IDA: NOT_FOUND
-    void CloakGen_AddHouse(unsigned int idx) { cloakedByHouses |= 1u << idx; } // IDA: NOT_FOUND
-    void CloakGen_RemHouse(unsigned int idx) { cloakedByHouses &= ~(1u << idx); } // IDA: NOT_FOUND
+    // design: inline accessor, inlined at all call sites
+    bool CloakGen_InclHouse(unsigned int idx) const { return (cloakedByHouses & (1u << idx)) != 0; }
+    // design: inline accessor, inlined at all call sites
+    void CloakGen_AddHouse(unsigned int idx) { cloakedByHouses |= 1u << idx; }
+    // design: inline accessor, inlined at all call sites
+    void CloakGen_RemHouse(unsigned int idx) { cloakedByHouses &= ~(1u << idx); }
 
-    bool Sensors_InclHouse(unsigned int idx) const; // IDA: NOT_FOUND
-    void Sensors_AddOfHouse(unsigned int idx); // IDA: NOT_FOUND
-    void Sensors_RemOfHouse(unsigned int idx); // IDA: NOT_FOUND
+    // design: no binary equivalent found in IDA
+    bool Sensors_InclHouse(unsigned int idx) const;
+    // design: no binary equivalent found in IDA
+    void Sensors_AddOfHouse(unsigned int idx);
+    // design: no binary equivalent found in IDA
+    void Sensors_RemOfHouse(unsigned int idx);
 
-    bool DisguiseSensors_InclHouse(unsigned int idx) const; // IDA: NOT_FOUND
-    void DisguiseSensors_AddOfHouse(unsigned int idx); // IDA: NOT_FOUND
-    void DisguiseSensors_RemOfHouse(unsigned int idx); // IDA: NOT_FOUND
+    // design: no binary equivalent found in IDA
+    bool DisguiseSensors_InclHouse(unsigned int idx) const;
+    // design: no binary equivalent found in IDA
+    void DisguiseSensors_AddOfHouse(unsigned int idx);
+    // design: no binary equivalent found in IDA
+    void DisguiseSensors_RemOfHouse(unsigned int idx);
 
-    void SetRadSite(RadSiteClass* rad) { radSite = rad; } // IDA: NOT_FOUND
-    RadSiteClass* GetRadSite() const { return radSite; } // IDA: NOT_FOUND
-    bool IsRadiated() const; // IDA: NOT_FOUND
+    // design: inline accessor, inlined at all call sites
+    void SetRadSite(RadSiteClass* rad) { radSite = rad; }
+    // design: inline accessor, inlined at all call sites
+    RadSiteClass* GetRadSite() const { return radSite; }
+    // design: no binary equivalent found in IDA
+    bool IsRadiated() const;
     int GetRadLevel() const;  // 0x65B8F0
-    void RadLevelIncrease(double amount); // IDA: NOT_FOUND
-    void RadLevelDecrease(double amount); // IDA: NOT_FOUND
+    // wrapper: delegates to RadSiteClass::GetRadLevelAt at 0x65B8F0
+    void RadLevelIncrease(double amount);
+    // wrapper: delegates to RadSiteClass::GetRadLevelAt at 0x65B8F0
+    void RadLevelDecrease(double amount);
 
-    bool ContainsBridge() const { return (static_cast<uint32_t>(flags) & 0x8000u) != 0; } // IDA: NOT_FOUND
-    ObjectClass* GetContent() const { return ContainsBridge() ? altObject : firstObject; } // IDA: NOT_FOUND
-    int GetLevel() const { return level + (ContainsBridge() ? kBridgeLevels : 0); } // IDA: NOT_FOUND
+    // design: inline accessor, inlined at all call sites
+    bool ContainsBridge() const { return (static_cast<uint32_t>(flags) & 0x8000u) != 0; }
+    // design: inline accessor, inlined at all call sites
+    ObjectClass* GetContent() const { return ContainsBridge() ? altObject : firstObject; }
+    // design: inline accessor, inlined at all call sites
+    int GetLevel() const { return level + (ContainsBridge() ? kBridgeLevels : 0); }
 
-    bool Tile_Is_Tunnel() const; // IDA: NOT_FOUND
-    bool Tile_Is_Water() const; // IDA: NOT_FOUND
-    bool Tile_Is_Blank() const; // IDA: NOT_FOUND
-    bool Tile_Is_Ramp() const; // IDA: NOT_FOUND
-    bool Tile_Is_Cliff() const; // IDA: NOT_FOUND
-    bool Tile_Is_Shore() const; // IDA: NOT_FOUND
-    bool Tile_Is_Wet() const; // IDA: NOT_FOUND
-    bool Tile_Is_Pave() const; // IDA: NOT_FOUND
-    bool Tile_Is_DirtRoad() const; // IDA: NOT_FOUND
-    bool Tile_Is_PavedRoad() const; // IDA: NOT_FOUND
-    bool Tile_Is_PavedRoadEnd() const; // IDA: NOT_FOUND
-    bool Tile_Is_PavedRoadSlope() const; // IDA: NOT_FOUND
-    bool Tile_Is_Median() const; // IDA: NOT_FOUND
-    bool Tile_Is_Bridge() const; // IDA: NOT_FOUND
-    bool Tile_Is_WoodBridge() const; // IDA: NOT_FOUND
-    bool Tile_Is_Green() const; // IDA: NOT_FOUND
-    bool Tile_Is_NotWater() const; // IDA: NOT_FOUND
-    bool Tile_Is_DestroyableCliff() const; // IDA: NOT_FOUND
+    // design: no binary equivalent found in IDA
+    bool Tile_Is_Tunnel() const;
+    // design: no binary equivalent found in IDA
+    bool Tile_Is_Water() const;
+    // design: no binary equivalent found in IDA
+    bool Tile_Is_Blank() const;
+    // design: no binary equivalent found in IDA
+    bool Tile_Is_Ramp() const;
+    // design: no binary equivalent found in IDA
+    bool Tile_Is_Cliff() const;
+    // design: no binary equivalent found in IDA
+    bool Tile_Is_Shore() const;
+    // design: no binary equivalent found in IDA
+    bool Tile_Is_Wet() const;
+    // design: no binary equivalent found in IDA
+    bool Tile_Is_Pave() const;
+    // design: no binary equivalent found in IDA
+    bool Tile_Is_DirtRoad() const;
+    // design: no binary equivalent found in IDA
+    bool Tile_Is_PavedRoad() const;
+    // design: no binary equivalent found in IDA
+    bool Tile_Is_PavedRoadEnd() const;
+    // design: no binary equivalent found in IDA
+    bool Tile_Is_PavedRoadSlope() const;
+    // design: no binary equivalent found in IDA
+    bool Tile_Is_Median() const;
+    // design: no binary equivalent found in IDA
+    bool Tile_Is_Bridge() const;
+    // design: no binary equivalent found in IDA
+    bool Tile_Is_WoodBridge() const;
+    // design: no binary equivalent found in IDA
+    bool Tile_Is_Green() const;
+    // design: no binary equivalent found in IDA
+    bool Tile_Is_NotWater() const;
+    // design: no binary equivalent found in IDA
+    bool Tile_Is_DestroyableCliff() const;
 
     CoordStruct FixHeight(CoordStruct crd) const
     {
@@ -210,8 +273,10 @@ public:
         return FixHeight(fetchCoordinatesHere());
     }
 
-    void MarkForRedraw(); // IDA: NOT_FOUND
-    void ChainReaction(); // IDA: NOT_FOUND
+    // design: no binary equivalent found in IDA
+    void MarkForRedraw();
+    // design: no binary equivalent found in IDA
+    void ChainReaction();
     void Draw(const Point2D* screen_pos, const RectangleStruct* bounds) const;  // 0x48e5a0
     void DrawDispatch(const Point2D* screen_pos, const RectangleStruct* bounds) const;  // 0x4E2830
     void DrawWithFlags(const Point2D* screen_pos, const RectangleStruct* bounds, int flags) const;  // 0x557830
@@ -219,17 +284,20 @@ public:
     void RegisterForRedraw();  // 0x7235A0
     void DrawWrapper(const Point2D* screen_pos, const RectangleStruct* bounds) const;  // 0x653F50
     bool QuickPassable() const;  // 0x487950
-    CoordStruct* FindInfantrySubposition(CoordStruct* out, const CoordStruct& coords, bool ignore_contents, bool alt, bool use_cell_coords); // IDA: NOT_FOUND
+    // wrapper: delegates to CellClass::QuickPassable at 0x487950
+    CoordStruct* FindInfantrySubposition(CoordStruct* out, const CoordStruct& coords, bool ignore_contents, bool alt, bool use_cell_coords);
     CoordStruct FindInfantrySubposition(const CoordStruct& coords, bool ignore_contents, bool alt, bool use_cell_coords)
     {
         CoordStruct buf;
         FindInfantrySubposition(&buf, coords, ignore_contents, alt, use_cell_coords);
         return buf;
     }
-    bool TryAssignJumpjet(FootClass* object); // IDA: NOT_FOUND
+    // design: no binary equivalent found in IDA
+    bool TryAssignJumpjet(FootClass* object);
     void AddContent(ObjectClass* content, bool on_bridge);  // 0x47E8A0
     void RemoveContent(ObjectClass* content, bool on_bridge);  // 0x47EA90
-    void ReplaceTag(TagClass* tag); // IDA: NOT_FOUND
+    // wrapper: delegates to CellClass::RemoveContent at 0x47EA90
+    void ReplaceTag(TagClass* tag);
 
     CellStruct              mapCoords;
     void*                   foggedObjects;

@@ -31,17 +31,22 @@ public:
     // IDA 0x48B2A0 area
     void MultiplyByScalar(float scalar);  // 0x5AEA10
     // IDA 0x48B2A0 area
-    void RenderTiles(); // IDA: NOT_FOUND
+    // design: no binary equivalent found in IDA
+    void RenderTiles();
     // IDA 0x48B2A0 area
     void RenderOverlay();  // 0x658780
     // IDA 0x48B2A0 area
-    void RenderFog(); // IDA: NOT_FOUND
+    // design: no binary equivalent found in IDA
+    void RenderFog();
     // IDA 0x48B2A0 area
-    void RenderShroud(); // IDA: NOT_FOUND
+    // design: no binary equivalent found in IDA
+    void RenderShroud();
     // IDA 0x48B2A0 area
-    void SetViewport(const RectangleStruct& rect); // IDA: NOT_FOUND
+    // design: no binary equivalent found in IDA
+    void SetViewport(const RectangleStruct& rect);
     // IDA 0x48B2A0 area
-    void UpdateVisibility(); // IDA: NOT_FOUND
+    // design: no binary equivalent found in IDA
+    void UpdateVisibility();
     // IDA 0x48B2A0 area
     void ProcessCellVisibility();  // 0x654490
 
@@ -70,17 +75,21 @@ public:
     // IDA 0x48B2A0 area
     static void LogError(HRESULT hr);  // 0x4A3DD0
     // IDA 0x48B2A0 area
-    static void CreatePrimarySurface(); // IDA: NOT_FOUND
+    // design: static function, no direct binary match in IDA
+    static void CreatePrimarySurface();
     // IDA 0x48B2A0 area
     static void CreateBackBuffer();  // 0x4BAC60
     // IDA 0x48B2A0 area
-    static void RestoreSurfaces(); // IDA: NOT_FOUND
+    // design: static function, no direct binary match in IDA
+    static void RestoreSurfaces();
     // IDA 0x48B2A0 area
-    static void SetCooperativeLevel(HWND hWnd); // IDA: NOT_FOUND
+    // design: static function, no direct binary match in IDA
+    static void SetCooperativeLevel(HWND hWnd);
     // IDA 0x48B2A0 area
     static void SetDisplayMode(int32_t w, int32_t h, int32_t bpp);  // 0x4AC700
     // IDA 0x48B2A0 area
-    static void Shutdown(); // IDA: NOT_FOUND
+    // design: static function, no direct binary match in IDA
+    static void Shutdown();
 
     static IDirectDraw7* s_DD;          // 0x00
     static IDirectDrawSurface7* s_Primary; // 0x04
@@ -95,10 +104,12 @@ public:
 class Palette
 {
 public:
-    Palette() = default; // IDA: UNMATCHED — defaulted_special_member, default_ctor, no_callgraph_match
+    // design: default constructor (compiler-generated), no callgraph reference
+    Palette() = default;
 
     // IDA 0x4355B0
-    static uint16_t SixBitTo16Bit(int32_t r, int32_t g, int32_t b); // IDA: NOT_FOUND
+    // wrapper: delegates to Palette::6BitTo16Bit at 0x4355B0
+    static uint16_t SixBitTo16Bit(int32_t r, int32_t g, int32_t b);
     // IDA 0x4355B0 area
     static int32_t FindClosestColor(uint8_t r, uint8_t g, uint8_t b);  // 0x626200
     // IDA 0x4355B0 area
@@ -106,9 +117,11 @@ public:
     // IDA 0x4355B0 area
     void SetPalette(const PALETTEENTRY* entries);  // 0x5CEA40
     // IDA 0x4355B0 area
-    void FadeTo(const PALETTEENTRY* target, int32_t steps); // IDA: NOT_FOUND
+    // design: no binary equivalent found in IDA
+    void FadeTo(const PALETTEENTRY* target, int32_t steps);
     // IDA 0x4355B0 area
-    void Apply(); // IDA: NOT_FOUND
+    // design: no binary equivalent found in IDA
+    void Apply();
 
     uint32_t    m_Colors[256];  // 0x00
     int32_t     Palette_field_400;      // 0x400
@@ -128,9 +141,11 @@ public:
     // IDA 0x48B2A0 area
     static uint32_t ScaleRGB(uint32_t color, float scale);  // 0x661190
     // IDA 0x48B2A0 area
-    static void HSVtoRGB(float h, float s, float v, uint8_t* r, uint8_t* g, uint8_t* b); // IDA: NOT_FOUND
+    // design: static function, no direct binary match in IDA
+    static void HSVtoRGB(float h, float s, float v, uint8_t* r, uint8_t* g, uint8_t* b);
     // IDA 0x48B2A0 area
-    static uint32_t Blend(uint32_t color1, uint32_t color2, float alpha); // IDA: NOT_FOUND
+    // design: static function, no direct binary match in IDA
+    static uint32_t Blend(uint32_t color1, uint32_t color2, float alpha);
 
     int32_t     Color_field_00;       // 0x00
 };
@@ -149,7 +164,8 @@ public:
     // IDA 0x48B2A0 area
     static void TransitionLoop();  // 0x690160
     // IDA 0x48B2A0 area
-    static void SetTransition(int32_t type); // IDA: NOT_FOUND
+    // design: static function, no direct binary match in IDA
+    static void SetTransition(int32_t type);
 
     static int32_t  s_TransitionType;    // 0x00
     static int32_t  s_TransitionStep;    // 0x04
@@ -169,7 +185,8 @@ public:
     // IDA 0x48B2A0 area
     void StubReturnVoid();  // 0x58B7C0
     // IDA 0x48B2A0 area
-    void SetPosition(const CoordStruct& pos); // IDA: NOT_FOUND
+    // design: no binary equivalent found in IDA
+    void SetPosition(const CoordStruct& pos);
 
     CoordStruct m_Position;     // 0x00
     CoordStruct m_Target;       // 0x0C
@@ -206,7 +223,8 @@ public:
     // IDA 0x48B2A0 area
     static void RevealCell(const CellStruct& cell, HouseClass* house);  // 0x6562D0
     // IDA 0x48B2A0 area
-    static bool IsCellRevealed(const CellStruct& cell, HouseClass* house); // IDA: NOT_FOUND
+    // design: static function, no direct binary match in IDA
+    static bool IsCellRevealed(const CellStruct& cell, HouseClass* house);
 
     static uint8_t* s_FogMap;       // 0x00
     static int32_t  s_MapWidth;     // 0x04
@@ -315,7 +333,8 @@ public:
     // IDA 0x48B2A0 area
     static int32_t UpdateBobOffset(int32_t frame, int32_t period, int32_t amplitude);  // 0x661D80
     // IDA 0x48B2A0 area
-    static void UpdateAllAnimations(); // IDA: NOT_FOUND
+    // design: static function, no direct binary match in IDA
+    static void UpdateAllAnimations();
 
     static int32_t  s_FrameCount;   // 0x00
 };
@@ -679,7 +698,8 @@ public:
 class BlitterList
 {
 public:
-    virtual ~BlitterList() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~BlitterList() = default;
 
     virtual void CopyEntry(); // 0x4B5630
 
@@ -688,7 +708,8 @@ public:
 class BuildingDebris
 {
 public:
-    virtual ~BuildingDebris() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~BuildingDebris() = default;
 
     virtual void Init(); // 0x631D40
 
@@ -697,7 +718,8 @@ public:
 class BuildingLightQueue
 {
 public:
-    virtual ~BuildingLightQueue() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~BuildingLightQueue() = default;
 
     virtual void RemoveEntry(); // 0x5FF2D0
 
@@ -706,7 +728,8 @@ public:
 class BuildingLoadQueue
 {
 public:
-    virtual ~BuildingLoadQueue() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~BuildingLoadQueue() = default;
 
     virtual void GetNext(); // 0x6E6E20
     virtual void Find(); // 0x6E6F20
@@ -721,7 +744,8 @@ public:
 class BuildingPlacement
 {
 public:
-    virtual ~BuildingPlacement() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~BuildingPlacement() = default;
 
     virtual void RenderBuildingPlacementShadow(); // 0x430650
     virtual void RenderBuildingPlacementPreview(); // 0x47EC90
@@ -743,7 +767,8 @@ public:
 class BuildingPlacementClass
 {
 public:
-    virtual ~BuildingPlacementClass() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~BuildingPlacementClass() = default;
 
     virtual void Draw(); // 0x4E2B50
 
@@ -752,7 +777,8 @@ public:
 class BuildingPrerequisiteClass
 {
 public:
-    virtual ~BuildingPrerequisiteClass() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~BuildingPrerequisiteClass() = default;
 
     virtual void ReadNodeGraph(); // 0x42EBE0
 
@@ -761,7 +787,8 @@ public:
 class BuildingQueue
 {
 public:
-    virtual ~BuildingQueue() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~BuildingQueue() = default;
 
     virtual void IsCellSuitable(); // 0x42E780
     virtual void AllocSlot(); // 0x42EB20
@@ -774,7 +801,8 @@ public:
 class ColorListClass
 {
 public:
-    virtual ~ColorListClass() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~ColorListClass() = default;
 
     virtual void GetIndex(); // 0x488850
     virtual void AddColor(); // 0x4888B0
@@ -797,7 +825,8 @@ public:
 class ColorSchemeClass
 {
 public:
-    virtual ~ColorSchemeClass() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~ColorSchemeClass() = default;
 
     virtual void LoadAllSchemes(); // 0x627B20
 
@@ -825,7 +854,8 @@ public:
 class FrameSnapshot
 {
 public:
-    virtual ~FrameSnapshot() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~FrameSnapshot() = default;
 
     virtual void Init(); // 0x4C91C0
     virtual void InitMax(); // 0x4C91E0
@@ -836,7 +866,8 @@ public:
 class FrameTimer
 {
 public:
-    virtual ~FrameTimer() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~FrameTimer() = default;
 
     virtual void HasRemaining(); // 0x41BF40
     virtual void Init25(); // 0x70D150
@@ -847,7 +878,8 @@ public:
 class PaletteClass
 {
 public:
-    virtual ~PaletteClass() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~PaletteClass() = default;
 
     virtual void Load(); // 0x5CB590
 
@@ -856,7 +888,8 @@ public:
 class PaletteManager
 {
 public:
-    virtual ~PaletteManager() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~PaletteManager() = default;
 
     virtual void Load(); // 0x72B530
 
@@ -865,7 +898,8 @@ public:
 class RLEBlitTransLucent25AlphaZReadWarp_ushort
 {
 public:
-    virtual ~RLEBlitTransLucent25AlphaZReadWarp_ushort() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
+    // design: default destructor (compiler-generated), no callgraph reference
+    virtual ~RLEBlitTransLucent25AlphaZReadWarp_ushort() = default;
 
     virtual void AddRef(); // 0x498ED0
     virtual void Release(); // 0x4990A0
@@ -878,7 +912,8 @@ public:
 class RLEBlitTransLucent25AlphaZReadWrite_ushort
 {
 public:
-    virtual ~RLEBlitTransLucent25AlphaZReadWrite_ushort() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
+    // design: default destructor (compiler-generated), no callgraph reference
+    virtual ~RLEBlitTransLucent25AlphaZReadWrite_ushort() = default;
 
     virtual void AddRef(); // 0x499A90
     virtual void Release(); // 0x499C60
@@ -891,7 +926,8 @@ public:
 class RLEBlitTransLucent25AlphaZRead_ushort
 {
 public:
-    virtual ~RLEBlitTransLucent25AlphaZRead_ushort() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
+    // design: default destructor (compiler-generated), no callgraph reference
+    virtual ~RLEBlitTransLucent25AlphaZRead_ushort() = default;
 
     virtual void AddRef(); // 0x4988C0
     virtual void Release(); // 0x498A80
@@ -904,7 +940,8 @@ public:
 class RLEBlitTransLucent25Alpha_ushort
 {
 public:
-    virtual ~RLEBlitTransLucent25Alpha_ushort() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
+    // design: default destructor (compiler-generated), no callgraph reference
+    virtual ~RLEBlitTransLucent25Alpha_ushort() = default;
 
     virtual void AddRef(); // 0x497E60
     virtual void Release(); // 0x497F90
@@ -917,7 +954,8 @@ public:
 class RLEBlitTransLucent50AlphaZReadWarp_ushort
 {
 public:
-    virtual ~RLEBlitTransLucent50AlphaZReadWarp_ushort() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
+    // design: default destructor (compiler-generated), no callgraph reference
+    virtual ~RLEBlitTransLucent50AlphaZReadWarp_ushort() = default;
 
     virtual void AddRef(); // 0x498CD0
     virtual void Release(); // 0x498E90
@@ -930,7 +968,8 @@ public:
 class RLEBlitTransLucent50AlphaZReadWrite_ushort
 {
 public:
-    virtual ~RLEBlitTransLucent50AlphaZReadWrite_ushort() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
+    // design: default destructor (compiler-generated), no callgraph reference
+    virtual ~RLEBlitTransLucent50AlphaZReadWrite_ushort() = default;
 
     virtual void AddRef(); // 0x499860
     virtual void Release(); // 0x499A50
@@ -943,7 +982,8 @@ public:
 class RLEBlitTransLucent50AlphaZRead_ushort
 {
 public:
-    virtual ~RLEBlitTransLucent50AlphaZRead_ushort() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
+    // design: default destructor (compiler-generated), no callgraph reference
+    virtual ~RLEBlitTransLucent50AlphaZRead_ushort() = default;
 
     virtual void AddRef(); // 0x4986D0
     virtual void Release(); // 0x498880
@@ -956,7 +996,8 @@ public:
 class RLEBlitTransLucent50Alpha_ushort
 {
 public:
-    virtual ~RLEBlitTransLucent50Alpha_ushort() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
+    // design: default destructor (compiler-generated), no callgraph reference
+    virtual ~RLEBlitTransLucent50Alpha_ushort() = default;
 
     virtual void AddRef(); // 0x497CF0
     virtual void Release(); // 0x497E20
@@ -969,7 +1010,8 @@ public:
 class RLEBlitTransLucent75AlphaZReadWarp_ushort
 {
 public:
-    virtual ~RLEBlitTransLucent75AlphaZReadWarp_ushort() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
+    // design: default destructor (compiler-generated), no callgraph reference
+    virtual ~RLEBlitTransLucent75AlphaZReadWarp_ushort() = default;
 
     virtual void AddRef(); // 0x498AC0
     virtual void Release(); // 0x498C90
@@ -982,7 +1024,8 @@ public:
 class RLEBlitTransLucent75AlphaZReadWrite_ushort
 {
 public:
-    virtual ~RLEBlitTransLucent75AlphaZReadWrite_ushort() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
+    // design: default destructor (compiler-generated), no callgraph reference
+    virtual ~RLEBlitTransLucent75AlphaZReadWrite_ushort() = default;
 
     virtual void AddRef(); // 0x499650
     virtual void Release(); // 0x499820
@@ -995,7 +1038,8 @@ public:
 class RLEBlitTransLucent75AlphaZRead_ushort
 {
 public:
-    virtual ~RLEBlitTransLucent75AlphaZRead_ushort() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
+    // design: default destructor (compiler-generated), no callgraph reference
+    virtual ~RLEBlitTransLucent75AlphaZRead_ushort() = default;
 
     virtual void AddRef(); // 0x4984D0
     virtual void Release(); // 0x498690
@@ -1008,7 +1052,8 @@ public:
 class RLEBlitTransLucent75Alpha_ushort
 {
 public:
-    virtual ~RLEBlitTransLucent75Alpha_ushort() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
+    // design: default destructor (compiler-generated), no callgraph reference
+    virtual ~RLEBlitTransLucent75Alpha_ushort() = default;
 
     virtual void AddRef(); // 0x497B80
     virtual void Release(); // 0x497CB0
@@ -1021,7 +1066,8 @@ public:
 class RLEBlitTransXlatAlphaZReadWrite_ushort
 {
 public:
-    virtual ~RLEBlitTransXlatAlphaZReadWrite_ushort() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
+    // design: default destructor (compiler-generated), no callgraph reference
+    virtual ~RLEBlitTransXlatAlphaZReadWrite_ushort() = default;
 
     virtual void AddRef(); // 0x4990E0
     virtual void Release(); // 0x499280
@@ -1034,7 +1080,8 @@ public:
 class RLEBlitTransXlatAlphaZRead_ushort
 {
 public:
-    virtual ~RLEBlitTransXlatAlphaZRead_ushort() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
+    // design: default destructor (compiler-generated), no callgraph reference
+    virtual ~RLEBlitTransXlatAlphaZRead_ushort() = default;
 
     virtual void AddRef(); // 0x497FD0
     virtual void Release(); // 0x498150
@@ -1047,7 +1094,8 @@ public:
 class RLEBlitTransXlatAlpha_ushort
 {
 public:
-    virtual ~RLEBlitTransXlatAlpha_ushort() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
+    // design: default destructor (compiler-generated), no callgraph reference
+    virtual ~RLEBlitTransXlatAlpha_ushort() = default;
 
     virtual void AddRef(); // 0x4978C0
     virtual void Release(); // 0x4979D0
@@ -1060,7 +1108,8 @@ public:
 class RLEBlitTransZRemapXlatAlphaZReadWrite_ushort
 {
 public:
-    virtual ~RLEBlitTransZRemapXlatAlphaZReadWrite_ushort() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
+    // design: default destructor (compiler-generated), no callgraph reference
+    virtual ~RLEBlitTransZRemapXlatAlphaZReadWrite_ushort() = default;
 
     virtual void AddRef(); // 0x499430
     virtual void Release(); // 0x499610
@@ -1073,7 +1122,8 @@ public:
 class RLEBlitTransZRemapXlatAlphaZRead_ushort
 {
 public:
-    virtual ~RLEBlitTransZRemapXlatAlphaZRead_ushort() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
+    // design: default destructor (compiler-generated), no callgraph reference
+    virtual ~RLEBlitTransZRemapXlatAlphaZRead_ushort() = default;
 
     virtual void AddRef(); // 0x4982E0
     virtual void Release(); // 0x498490
@@ -1086,7 +1136,8 @@ public:
 class RLEBlitTransZRemapXlatAlpha_ushort
 {
 public:
-    virtual ~RLEBlitTransZRemapXlatAlpha_ushort() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~RLEBlitTransZRemapXlatAlpha_ushort() = default;
 
     virtual void Blit_Alpha_ZReadWrite_Lucent25(); // 0x4974B0
     virtual void CallBlit0(); // 0x4975D0
@@ -1111,7 +1162,8 @@ public:
 class ScreenEffect
 {
 public:
-    virtual ~ScreenEffect() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~ScreenEffect() = default;
 
     virtual void StubReturnFalse(); // 0x6528C0
     virtual void StubReturnVoid(); // 0x652910
@@ -1137,7 +1189,8 @@ public:
 class Scrollbar
 {
 public:
-    virtual ~Scrollbar() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~Scrollbar() = default;
 
     virtual void DlgProc(); // 0x61C690
 
@@ -1146,7 +1199,8 @@ public:
 class ScrollingText
 {
 public:
-    virtual ~ScrollingText() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~ScrollingText() = default;
 
     virtual void AddLine(); // 0x5D3FC0
 
@@ -1155,7 +1209,8 @@ public:
 class TacticalMapClass
 {
 public:
-    virtual ~TacticalMapClass() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~TacticalMapClass() = default;
 
     virtual void SetCameraPosition(); // 0x6D6000
     virtual void ProcessCell(); // 0x6D7F20
@@ -1166,7 +1221,8 @@ public:
 class VoxClass_Vector
 {
 public:
-    virtual ~VoxClass_Vector() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~VoxClass_Vector() = default;
 
     virtual void getItem(); // 0x753650
     virtual void getItemAt(); // 0x753680
@@ -1183,7 +1239,8 @@ public:
 class VoxelAnimTypeVector
 {
 public:
-    virtual ~VoxelAnimTypeVector() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~VoxelAnimTypeVector() = default;
 
     virtual void Constructor(); // 0x67C310
 
@@ -1192,7 +1249,8 @@ public:
 class VoxelModel
 {
 public:
-    virtual ~VoxelModel() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
+    // design: default destructor (compiler-generated), no callgraph reference
+    virtual ~VoxelModel() = default;
 
     virtual void BuildDrawList(); // 0x755B30
     virtual void LoadVXLHeader(); // 0x756DD0
@@ -1205,7 +1263,8 @@ public:
 class VoxelPalette
 {
 public:
-    virtual ~VoxelPalette() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~VoxelPalette() = default;
 
     virtual void Init(); // 0x758950
     virtual void Reset(); // 0x7589C0
@@ -1216,7 +1275,8 @@ public:
 class VoxelRenderer
 {
 public:
-    virtual ~VoxelRenderer() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~VoxelRenderer() = default;
 
     virtual void DrawSection(); // 0x7575A0
     virtual void DrawSectionLines(); // 0x757790
@@ -1236,7 +1296,8 @@ public:
 class VoxelSection
 {
 public:
-    virtual ~VoxelSection() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~VoxelSection() = default;
 
     virtual void GetInfo(); // 0x7564B0
 
@@ -1245,7 +1306,8 @@ public:
 class VoxelTypeClass
 {
 public:
-    virtual ~VoxelTypeClass() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~VoxelTypeClass() = default;
 
     virtual void ReadINI(); // 0x73E5E0
 
@@ -1254,7 +1316,8 @@ public:
 class Voxel_Section
 {
 public:
-    virtual ~Voxel_Section() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~Voxel_Section() = default;
 
     virtual void Draw(); // 0x75D3A0
     virtual void Constructor(); // 0x75E6B0

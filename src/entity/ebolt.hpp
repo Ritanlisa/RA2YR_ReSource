@@ -21,7 +21,7 @@ class EBolt
 {
 public:
     // SetOwner: stores owner ptr and weapon index (called from Fire path)
-    void SetOwner(UnitClass* owner, int weaponIdx);  // 0x6AF580
+    void SetOwner(UnitClass* owner, int weaponIdx);  // 0x6AF580 // IDA: SlaveManagerClass::SetOwner
 
     void ClearOwner();
     // 0x4C2B40 GetSourceCoords
@@ -40,8 +40,10 @@ public:
     bool           AlternateColor;  // +0x2C
 
 protected:
-    EBolt() noexcept = default; // IDA: UNMATCHED — defaulted_special_member, default_ctor, no_callgraph_match
-    ~EBolt() noexcept = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
+    // design: default constructor (compiler-generated), no callgraph reference
+    EBolt() noexcept = default;
+    // design: default destructor (compiler-generated), no callgraph reference
+    ~EBolt() noexcept = default;
 };
 
 } // namespace gamemd

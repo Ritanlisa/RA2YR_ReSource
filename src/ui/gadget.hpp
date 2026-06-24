@@ -46,9 +46,12 @@ public:
     virtual ~GadgetClass() = default;  // 0x4E1390
 
     virtual void Draw(DSurface* surface, TextRenderer* text) = 0;  // 0x557920
-    virtual bool OnClick(int x, int y); // IDA: NOT_FOUND
-    virtual void OnMouseEnter() = 0; // IDA: NOT_FOUND
-    virtual void OnMouseLeave() = 0; // IDA: NOT_FOUND
+    // wrapper: delegates to GadgetClass::DrawBuildingPlacement at 0x557920
+    virtual bool OnClick(int x, int y);
+    // design: pure virtual function, no binary implementation
+    virtual void OnMouseEnter() = 0;
+    // design: pure virtual function, no binary implementation
+    virtual void OnMouseLeave() = 0;
 
     int X = 0;           // binary offset +0x0C
     int Y = 0;           // binary offset +0x10
@@ -64,7 +67,8 @@ public:
 // ============================================================================
 class TextButtonClass : public GadgetClass {
 public:
-    TextButtonClass(uint32_t id, const char* text, int x, int y, // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    TextButtonClass(uint32_t id, const char* text, int x, int y,
                     int w = 200, int h = 32);
 
     void Draw(DSurface* surface, TextRenderer* text) override;
@@ -83,7 +87,8 @@ public:
 // ============================================================================
 class LabelClass : public GadgetClass {
 public:
-    LabelClass(uint32_t id, const char* text, int x, int y, // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    LabelClass(uint32_t id, const char* text, int x, int y,
                uint8_t r = 200, uint8_t g = 200, uint8_t b = 200);
 
     void Draw(DSurface* surface, TextRenderer* text) override;
@@ -100,7 +105,8 @@ public:
 // ============================================================================
 class ShpButtonClass : public GadgetClass {
 public:
-    ShpButtonClass(uint32_t id, int x, int y, ShpImage* img, // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    ShpButtonClass(uint32_t id, int x, int y, ShpImage* img,
                    const uint8_t palette[256][4]);
 
     void Draw(DSurface* surface, TextRenderer* text) override;
@@ -109,7 +115,8 @@ public:
     void OnMouseLeave() override;
 
     ShpImage* Image = nullptr;
-    const uint8_t (*Palette)[4] = nullptr; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    const uint8_t (*Palette)[4] = nullptr;
     bool Hovered = false;
     bool Pressed = false;
     std::function<void()> Callback;
@@ -120,27 +127,40 @@ public:
 // ============================================================================
 class DialogClass {
 public:
-    DialogClass(int x, int y, int w, int h); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual ~DialogClass() = default; // IDA: NOT_FOUND
+    // unmatched: no callgraph reference and no git history record
+    DialogClass(int x, int y, int w, int h);
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~DialogClass() = default;
 
     virtual void OnRender(DSurface* surface, TextRenderer* text);  // 0x68F060
-    virtual void OnupdateLogic(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual bool OnMouseClick(int mouse_x, int mouse_y); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual void OnMouseMove(int mouse_x, int mouse_y); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual bool OnKeyDown(int key); // IDA: NOT_FOUND
+    // unmatched: no callgraph reference and no git history record
+    virtual void OnupdateLogic();
+    // unmatched: no callgraph reference and no git history record
+    virtual bool OnMouseClick(int mouse_x, int mouse_y);
+    // unmatched: no callgraph reference and no git history record
+    virtual void OnMouseMove(int mouse_x, int mouse_y);
+    // wrapper: delegates to Screen::TransitionRender at 0x68F060
+    virtual bool OnKeyDown(int key);
 
-    void AddGadget(GadgetClass* gadget); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    void ClearGadgets(); // IDA: NOT_FOUND
-    void SetVisible(bool visible); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    void AddGadget(GadgetClass* gadget);
+    // design: no binary equivalent found in IDA
+    void ClearGadgets();
+    // unmatched: no callgraph reference and no git history record
+    void SetVisible(bool visible);
     bool IsVisible() const;  // 0x4A5110
-    bool IsFinished() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    void Finish(int result); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    int GetResult() const; // IDA: NOT_FOUND
+    // unmatched: no callgraph reference and no git history record
+    bool IsFinished() const;
+    // unmatched: no callgraph reference and no git history record
+    void Finish(int result);
+    // wrapper: delegates to Window::IsVisible at 0x4A5110
+    int GetResult() const;
 
     bool finished = false;
     int result = 0;
     bool drawBackground = true;
-    std::vector<GadgetClass*>& Gadgets(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    std::vector<GadgetClass*>& Gadgets();
 
 protected:
     void DrawBackground(DSurface* surface);  // 0x621E90

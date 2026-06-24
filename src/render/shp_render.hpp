@@ -25,12 +25,15 @@ struct ShpFrameInfo {
 
 class ShpImage {
 public:
-    ~ShpImage(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    ~ShpImage();
 
-    bool LoadFromMemory(const uint8_t* data, int data_size); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    void Free(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    bool LoadFromMemory(const uint8_t* data, int data_size);
+    // unmatched: no callgraph reference and no git history record
+    void Free();
 
-    int GetFrameCount() const;  // 0x74AA30
+    int GetFrameCount() const;  // 0x74AA30 // IDA: VoxelAnimClass::GetFrameCount
     int GetWidth() const;
     int GetHeight() const;
 
@@ -42,7 +45,8 @@ public:
         const uint8_t palette[256][4]);
 
 private:
-    bool DecodeRLE3(const uint8_t* src, int src_size, uint8_t* dst, // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    bool DecodeRLE3(const uint8_t* src, int src_size, uint8_t* dst,
                     int dst_width, int dst_height);
 
     ShpHeader         m_header{};

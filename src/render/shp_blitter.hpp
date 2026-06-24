@@ -23,21 +23,25 @@ struct SHPStruct;
 struct BlitRowFuncs
 {
     // vtable[0]: per-row blit (translucent/alpha modes)
-    void (__thiscall *BlitRowT)(void* _this, int dest, int* src_pixels, // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    void (__thiscall *BlitRowT)(void* _this, int dest, int* src_pixels,
                                 int count, int stride, unsigned int zbuf,
                                 unsigned int vsurf, int param, int flags, int tint);
 
     // vtable[1]: direct per-row blit
-    void (__thiscall *BlitRow)(void* _this, int dest, int* src_pixels, // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    void (__thiscall *BlitRow)(void* _this, int dest, int* src_pixels,
                                int count, int stride, unsigned int zbuf,
                                unsigned int vsurf, int param, int flags);
 
     // vtable[2]: per-row blit with tint color
-    void (__stdcall *BlitRowTint)(int dest, int* src_pixels, int count, // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    void (__stdcall *BlitRowTint)(int dest, int* src_pixels, int count,
                                   int param1, int param2, int param3, int tint);
 
     // vtable[3]: simplest per-row copy
-    void (__stdcall *BlitRowDirect)(int dest, int* src_pixels, int count, // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    void (__stdcall *BlitRowDirect)(int dest, int* src_pixels, int count,
                                     int param1, int param2, int param3,
                                     int param4, int param5);
 };
@@ -47,7 +51,8 @@ struct BlitRowFuncs
 // Simple direct pixel copy path for non-building SHP rendering.
 // Used when the SHP frame format byte is 0x00 (raw data, not RLE).
 //
-bool SHPBlitterCopy( // IDA: UNMATCHED — no_callgraph_match, no_git_history
+// unmatched: no callgraph reference and no git history record
+bool SHPBlitterCopy(
     DSurface* dst,
     int dst_x, int dst_y,
     const DSurface* src,
@@ -55,7 +60,8 @@ bool SHPBlitterCopy( // IDA: UNMATCHED — no_callgraph_match, no_git_history
     int w, int h,
     BlitterFlags flags);
 
-bool SHPBlitterRLEBlit( // IDA: UNMATCHED — no_callgraph_match, no_git_history
+// unmatched: no callgraph reference and no git history record
+bool SHPBlitterRLEBlit(
     Surface* dest_surface,
     Surface* src_surface,
     Surface* z_surface,

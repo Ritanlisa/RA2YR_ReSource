@@ -7,15 +7,18 @@ extern HWND      g_hWnd;
 extern HINSTANCE g_hInstance;
 
 int  InitGame(bool no_cd);  // 0x52BA60
-bool SpawnModeEnter(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+// unmatched: no callgraph reference and no git history record
+bool SpawnModeEnter();
 void MainGame();  // 0x48CCC0
 
-bool GameLoopInit(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+// unmatched: no callgraph reference and no git history record
+bool GameLoopInit(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd);
 void GameLoopRun();
 void GameLoopShutdown();
 
 int  GameLoopMessagePump(MSG* msg, UINT wMsgFilterMin, UINT wMsgFilterMax, HWND hWnd, UINT flags);  // 0x53E770
-bool TranslateMessageDispatch(MSG* msg); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+// unmatched: no callgraph reference and no git history record
+bool TranslateMessageDispatch(MSG* msg);
 void AudioVideoUpdate();
 
 // IDA 0x69BAB0 -- WTFMode (Westwood Technology Framework debug mode)

@@ -16,21 +16,25 @@ constexpr UINT BINKM_CLOSE = 0x4F0u;
 class BinkPlayerControl
 {
 public:
-    static BinkPlayerControl* FromHwnd(HWND h); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    static BinkPlayerControl* FromHwnd(HWND h);
 
-    static LRESULT CALLBACK WindowProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam, UINT_PTR uIdSubclass, DWORD_PTR dwRefData); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    static LRESULT CALLBACK WindowProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam, UINT_PTR uIdSubclass, DWORD_PTR dwRefData);
 
     bool IsPlaying() const;
     int  GetWidth()  const { return movie ? movie->GetWidth() : 0; }
     int  GetHeight() const { return movie ? movie->GetHeight() : 0; }
 
-    BinkMovieHandle* Movie(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    BinkMovieHandle* Movie();
 
 private:
     BinkPlayerControl() = default;
 
     void Init(HWND hWnd);
-    void OpenBink(const char* filename); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    void OpenBink(const char* filename);
     void CloseBink();
 
     HWND                              m_hWnd           = nullptr;

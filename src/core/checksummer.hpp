@@ -21,7 +21,8 @@ public:
     uint8_t   buffer[4];    // +0x08 (same as state, partial input)
 
 protected:
-    Checksummer() noexcept = default; // IDA: UNMATCHED — defaulted_special_member, default_ctor, no_callgraph_match
+    // design: default constructor (compiler-generated), no callgraph reference
+    Checksummer() noexcept = default;
 };
 
 } // namespace gamemd

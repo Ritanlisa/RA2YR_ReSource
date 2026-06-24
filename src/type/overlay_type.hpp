@@ -15,25 +15,31 @@ public:
 
     static DynamicVectorClass<OverlayTypeClass*>* Array;
     static OverlayTypeClass* Find(const char* pID);  // 0x5FE250
-    static OverlayTypeClass* FindOrCreate(const char* pID); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    static int FindIndex(const char* pID); // IDA: NOT_FOUND
+    // unmatched: no callgraph reference and no git history record
+    static OverlayTypeClass* FindOrCreate(const char* pID);
+    // wrapper: delegates to OverlayTypeClass::OverlayTypeClass at 0x5FE250
+    static int FindIndex(const char* pID);
 
     virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override; // 0x5FEC30 (as GetClassIdentifier)
 
     virtual HRESULT __stdcall Load(IStream* pStm) override; // 0x5FE770 (as LoadFromINI)
-    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override; // IDA: NOT_FOUND
+    // wrapper: delegates to OverlayTypeClass::LoadFromINI at 0x5FE770
+    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;
 
     virtual ~OverlayTypeClass() = default;  // 0x5FEF30 (as ddtor)
 
     virtual AbstractType __stdcall whatAmI() const override; // 0x5FEF00 (as GetTypeIdentifier)
     virtual int objectSize() const override; // 0x5FEF10 (as GetObjectSize)
 
-    virtual CoordStruct* onCellChanged(CoordStruct* pDest, CoordStruct* pSrc) const override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    virtual CoordStruct* onCellChanged(CoordStruct* pDest, CoordStruct* pSrc) const override;
 
-    virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override; // IDA: NOT_FOUND
+    // wrapper: delegates to OverlayTypeClass::GetObjectSize at 0x5FEF10
+    virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override;
     virtual ObjectClass* CreateObject(HouseClass* pOwner) override;  // 0x4737F0
 
-    virtual void Draw(Point2D* pClientCoords, RectangleStruct* pClipRect, int nFrame); // IDA: NOT_FOUND
+    // wrapper: delegates to ReinforcementClass::CreateObject at 0x4737F0
+    virtual void Draw(Point2D* pClientCoords, RectangleStruct* pClipRect, int nFrame);
 
     OverlayTypeClass(const char* pID) noexcept;  // 0x6440A0 (as Construct)
 

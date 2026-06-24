@@ -26,13 +26,16 @@ public:
     // IDA 0x48B2A0 area
     bool StubReturnFalse();  // 0x5CA7E0
     // IDA 0x48B2A0 area
-    void Process();  // 0x5CA800
+    void Process();  // 0x5CA800 // IDA: MultiplayerSiege::ProcessTurn
     // IDA 0x48B2A0 area
-    void Reset(); // IDA: NOT_FOUND
+    // design: no binary equivalent found in IDA
+    void Reset();
     // IDA 0x48B2A0 area
-    bool IsActive() const; // IDA: NOT_FOUND
+    // design: no binary equivalent found in IDA
+    bool IsActive() const;
     // IDA 0x48B2A0 area
-    int32_t GetTimeRemaining() const; // IDA: NOT_FOUND
+    // design: no binary equivalent found in IDA
+    int32_t GetTimeRemaining() const;
 
     int32_t     MultiplayerSiege_field_00;       // 0x00
     int32_t     MultiplayerSiege_field_04;       // 0x04
@@ -53,7 +56,8 @@ public:
     // IDA 0x68C2B0
     static void FindStartPositions();  // 0x688380
     // IDA 0x68C2B0 area
-    static void sub_68C2B0(); // IDA: NOT_FOUND
+    // design: static function, no direct binary match in IDA
+    static void sub_68C2B0();
     // IDA 0x48B2A0 area
     static void SetupGame();  // 0x6AE6E0
 
@@ -151,7 +155,8 @@ public:
 class Modem
 {
 public:
-    virtual ~Modem() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
+    // design: default destructor (compiler-generated), no callgraph reference
+    virtual ~Modem() = default;
 
     virtual void EnumerateDevices(); // 0x5BB6E0
     virtual void CheckStatus(); // 0x5F0690
@@ -166,7 +171,8 @@ public:
 class ModemGame
 {
 public:
-    virtual ~ModemGame() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~ModemGame() = default;
 
     virtual void AdvanceTauntCommand(); // 0x5B59B0
     virtual void UpdatePlayerNameAndColor(); // 0x5B5AD0
@@ -183,7 +189,8 @@ public:
 class ModemGuest
 {
 public:
-    virtual ~ModemGuest() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~ModemGuest() = default;
 
     virtual void Dialog(); // 0x5B49B0
     virtual void InitDialog(); // 0x5B4EE0
@@ -198,7 +205,8 @@ public:
 class ModemHost
 {
 public:
-    virtual ~ModemHost() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~ModemHost() = default;
 
     virtual void Dialog(); // 0x5B77E0
     virtual void InitDialog(); // 0x5B82F0
@@ -211,7 +219,8 @@ public:
 class MultiplayerBattleTeam
 {
 public:
-    virtual ~MultiplayerBattleTeam() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~MultiplayerBattleTeam() = default;
 
     virtual void AddRef(); // 0x5C1090
     virtual void Release(); // 0x5C10B0
@@ -224,7 +233,8 @@ public:
 class MultiplayerConfig
 {
 public:
-    virtual ~MultiplayerConfig() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~MultiplayerConfig() = default;
 
     virtual void Cleanup(); // 0x5D5B20
 
@@ -233,7 +243,8 @@ public:
 class MultiplayerLobby
 {
 public:
-    virtual ~MultiplayerLobby() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~MultiplayerLobby() = default;
 
     virtual void FillSlots(); // 0x5EC030
 
@@ -260,7 +271,8 @@ public:
 class MultiplayerObserverTeam
 {
 public:
-    virtual ~MultiplayerObserverTeam() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~MultiplayerObserverTeam() = default;
 
     virtual void AddRef(); // 0x5C94C0
     virtual void QueryInterface(); // 0x5C94D0
@@ -271,7 +283,8 @@ public:
 class MultiplayerSiegeAttackerTeam
 {
 public:
-    virtual ~MultiplayerSiegeAttackerTeam() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~MultiplayerSiegeAttackerTeam() = default;
 
     virtual void QueryInterface(); // 0x5CAF40
 
@@ -280,7 +293,8 @@ public:
 class MultiplayerSiegeDefenderTeam
 {
 public:
-    virtual ~MultiplayerSiegeDefenderTeam() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~MultiplayerSiegeDefenderTeam() = default;
 
     virtual void AddRef(); // 0x5CAE70
     virtual void QueryInterface(); // 0x5CAF10
@@ -291,7 +305,8 @@ public:
 class MultiplayerTeam
 {
 public:
-    virtual ~MultiplayerTeam() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~MultiplayerTeam() = default;
 
     virtual void Constructor(); // 0x5D8C50
     virtual void Destructor(); // 0x5D8C80
@@ -311,7 +326,8 @@ public:
 class MultiplayerTeam_Destru
 {
 public:
-    virtual ~MultiplayerTeam_Destru() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~MultiplayerTeam_Destru() = default;
 
     virtual void QueryInterface(); // 0x5D8D50
 
@@ -320,7 +336,8 @@ public:
 class NetworkBuffer
 {
 public:
-    virtual ~NetworkBuffer() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~NetworkBuffer() = default;
 
     virtual void GetField(); // 0x74FD50
     virtual void UpdateWindow(); // 0x74FD60
@@ -335,7 +352,8 @@ public:
 class NetworkDialog
 {
 public:
-    virtual ~NetworkDialog() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~NetworkDialog() = default;
 
     virtual void InitModemSettings(); // 0x695FD0
     virtual void Dispatch(); // 0x6964C0
@@ -348,7 +366,8 @@ public:
 class NetworkEventClass
 {
 public:
-    virtual ~NetworkEventClass() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~NetworkEventClass() = default;
 
     virtual void Process(); // 0x645820
 
@@ -357,7 +376,8 @@ public:
 class NetworkEventQueueClass
 {
 public:
-    virtual ~NetworkEventQueueClass() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~NetworkEventQueueClass() = default;
 
     virtual void WaitForResponse(); // 0x664530
 
@@ -366,7 +386,8 @@ public:
 class NetworkGameSetup
 {
 public:
-    virtual ~NetworkGameSetup() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~NetworkGameSetup() = default;
 
     virtual void DlgProc(); // 0x5B7970
     virtual void ReadRulesInitConfig(); // 0x5B9680
@@ -387,7 +408,8 @@ public:
 class NetworkID
 {
 public:
-    virtual ~NetworkID() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
+    // design: default destructor (compiler-generated), no callgraph reference
+    virtual ~NetworkID() = default;
 
     virtual void Assign(); // 0x53ED20
     virtual void Compare(); // 0x53EF30
@@ -398,7 +420,8 @@ public:
 class NetworkManager
 {
 public:
-    virtual ~NetworkManager() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~NetworkManager() = default;
 
     virtual void SetPlayerAddress(); // 0x664240
     virtual void RemovePlayer(); // 0x6646C0
@@ -409,7 +432,8 @@ public:
 class NetworkOptions
 {
 public:
-    virtual ~NetworkOptions() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~NetworkOptions() = default;
 
     virtual void DlgProc(); // 0x560480
     virtual void ApplySettings(); // 0x7B0F50
@@ -420,7 +444,8 @@ public:
 class NetworkScore
 {
 public:
-    virtual ~NetworkScore() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~NetworkScore() = default;
 
     virtual void DlgProc(); // 0x64AE50
 
@@ -429,7 +454,8 @@ public:
 class NetworkSession
 {
 public:
-    virtual ~NetworkSession() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~NetworkSession() = default;
 
     virtual void ResetState(); // 0x54EE60
     virtual void IsPlayerInGame(); // 0x69B600
@@ -440,7 +466,8 @@ public:
 class NetworkSettings
 {
 public:
-    virtual ~NetworkSettings() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~NetworkSettings() = default;
 
     virtual void DlgProc(); // 0x5DDBD0
 
@@ -449,7 +476,8 @@ public:
 class NetworkShare
 {
 public:
-    virtual ~NetworkShare() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~NetworkShare() = default;
 
     virtual void GetField(); // 0x5E8DA0
 
@@ -485,7 +513,8 @@ public:
 class WOLGameClass
 {
 public:
-    virtual ~WOLGameClass() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~WOLGameClass() = default;
 
     virtual void ParseChatMessage(); // 0x78E030
 
@@ -494,7 +523,8 @@ public:
 class WOLGameList
 {
 public:
-    virtual ~WOLGameList() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~WOLGameList() = default;
 
     virtual void UpdatePlayerStats(); // 0x77A7C0
     virtual void Check(); // 0x77A840
@@ -511,7 +541,8 @@ public:
 class WOLLogin
 {
 public:
-    virtual ~WOLLogin() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~WOLLogin() = default;
 
     virtual void DlgProc(); // 0x78DB70
 
@@ -520,7 +551,8 @@ public:
 class WOLOption
 {
 public:
-    virtual ~WOLOption() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~WOLOption() = default;
 
     virtual void SetValue(); // 0x77A4A0
 
@@ -529,7 +561,8 @@ public:
 class WOLPersona
 {
 public:
-    virtual ~WOLPersona() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~WOLPersona() = default;
 
     virtual void FormatDateTime(); // 0x77A4D0
 
@@ -538,7 +571,8 @@ public:
 class WOLobby
 {
 public:
-    virtual ~WOLobby() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~WOLobby() = default;
 
     virtual void FindPlayerIndex(); // 0x5E8D00
     virtual void BuildStateList(); // 0x781D20

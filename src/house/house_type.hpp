@@ -28,18 +28,25 @@ class HouseTypeClass : public AbstractClass
 public:
     static constexpr AbstractType kObjectDeriveId = AbstractType::HouseType;
 
-    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override; // IDA: NOT_FOUND
-    virtual HRESULT __stdcall Load(IStream* stream) override; // IDA: NOT_FOUND
-    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override; // IDA: NOT_FOUND
+    // design: virtual function, no binary implementation matched in IDA
+    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override;
+    // design: virtual function, no binary implementation matched in IDA
+    virtual HRESULT __stdcall Load(IStream* stream) override;
+    // design: virtual function, no binary implementation matched in IDA
+    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
 
     virtual ~HouseTypeClass() = default;  // 0x5116A0
 
-    virtual AbstractType __stdcall whatAmI() const override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    virtual AbstractType __stdcall whatAmI() const override;
     virtual int objectSize() const override;  // 0x512720
 
-    HouseTypeClass* FindParentCountry() const; // IDA: NOT_FOUND
-    int FindParentCountryIndex() const; // IDA: NOT_FOUND
-    static int FindIndexOfName(const char* name); // IDA: NOT_FOUND
+    // wrapper: delegates to HouseTypeClass::GetObjectSize at 0x512720
+    HouseTypeClass* FindParentCountry() const;
+    // wrapper: delegates to HouseTypeClass::GetObjectSize at 0x512720
+    int FindParentCountryIndex() const;
+    // wrapper: delegates to HouseTypeClass::GetObjectSize at 0x512720
+    static int FindIndexOfName(const char* name);
 
     char                    id[24];
     uint8_t                 m_zero_3C;

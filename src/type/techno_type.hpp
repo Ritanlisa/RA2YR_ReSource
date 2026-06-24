@@ -61,11 +61,14 @@ struct WeaponStruct
         , FLH()
         , BarrelLength(0)
         , BarrelThickness(0)
-        , TurretLocked(false) // IDA: UNMATCHED — no_callgraph_match, no_git_history
+        // unmatched: no callgraph reference and no git history record
+        , TurretLocked(false)
     {}
 
-    bool operator==(const WeaponStruct& rhs) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    bool operator!=(const WeaponStruct& rhs) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    bool operator==(const WeaponStruct& rhs) const;
+    // unmatched: no callgraph reference and no git history record
+    bool operator!=(const WeaponStruct& rhs) const;
 };
 
 class TechnoTypeClass : public ObjectTypeClass
@@ -75,37 +78,55 @@ public:
 
     static DynamicVectorClass<TechnoTypeClass*>* Array;
 
-    static TechnoTypeClass* Find(const char* pID); // IDA: NOT_FOUND
-    static int FindIndex(const char* pID); // IDA: NOT_FOUND
+    // design: static function, no direct binary match in IDA
+    static TechnoTypeClass* Find(const char* pID);
+    // design: static function, no direct binary match in IDA
+    static int FindIndex(const char* pID);
 
-    virtual HRESULT __stdcall Load(IStream* pStm) override; // IDA: NOT_FOUND
-    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override; // IDA: NOT_FOUND
-    virtual HRESULT __stdcall GetSizeMax(ULARGE_INTEGER* pcbSize) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // design: virtual function, no binary implementation matched in IDA
+    virtual HRESULT __stdcall Load(IStream* pStm) override;
+    // design: virtual function, no binary implementation matched in IDA
+    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;
+    // unmatched: no callgraph reference and no git history record
+    virtual HRESULT __stdcall GetSizeMax(ULARGE_INTEGER* pcbSize) override;
 
     virtual ~TechnoTypeClass() = default;  // 0x711AE0 (as DTOR)
 
-    virtual bool onTypeLoaded(); // IDA: NOT_FOUND
+    // wrapper: delegates to TechnoTypeClass::DTOR at 0x711AE0
+    virtual bool onTypeLoaded();
     virtual bool CanAttackMove() const; // 0x711E90
-    virtual bool CanCreateHere(const CellStruct& mapCoords, HouseClass* pOwner) const; // IDA: NOT_FOUND
+    // wrapper: delegates to TechnoTypeClass::CanAttackMove_IgnoreWeapon at 0x711E90
+    virtual bool CanCreateHere(const CellStruct& mapCoords, HouseClass* pOwner) const;
     virtual int GetCost() const;  // 0x708B40
-    virtual int GetRepairStepCost() const; // IDA: NOT_FOUND
+    // wrapper: delegates to TechnoClass::GetCostMultiplier at 0x708B40
+    virtual int GetRepairStepCost() const;
     virtual int GetRepairStep() const;  // 0x459840
-    virtual int getRefund(HouseClass* pHouse, bool bUnk) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual int GetFlightLevel() const; // IDA: NOT_FOUND
+    // unmatched: no callgraph reference and no git history record
+    virtual int getRefund(HouseClass* pHouse, bool bUnk) const;
+    // wrapper: delegates to HouseClass::GetRepairStepAmount at 0x459840
+    virtual int GetFlightLevel() const;
 
     static TechnoTypeClass* GetByTypeAndIndex(AbstractType abs, int index);  // 0x48DCD0
 
-    bool HasMultipleTurrets() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    bool HasMultipleTurrets() const;
 
-    CoordStruct* GetParticleSysOffset(CoordStruct* pBuffer) const; // IDA: NOT_FOUND
-    CoordStruct GetParticleSysOffset() const; // IDA: NOT_FOUND
+    // wrapper: delegates to TechnoTypeClass::GetByTypeAndIndex at 0x48DCD0
+    CoordStruct* GetParticleSysOffset(CoordStruct* pBuffer) const;
+    // wrapper: delegates to TechnoTypeClass::GetByTypeAndIndex at 0x48DCD0
+    CoordStruct GetParticleSysOffset() const;
 
-    bool InOwners(DWORD bitHouseType) const { return (this->GetOwners() & bitHouseType) != 0; } // IDA: NOT_FOUND
-    bool InRequiredHouses(DWORD bitHouseType) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    bool InForbiddenHouses(DWORD bitHouseType) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // design: inline accessor, inlined at all call sites
+    bool InOwners(DWORD bitHouseType) const { return (this->GetOwners() & bitHouseType) != 0; }
+    // unmatched: no callgraph reference and no git history record
+    bool InRequiredHouses(DWORD bitHouseType) const;
+    // unmatched: no callgraph reference and no git history record
+    bool InForbiddenHouses(DWORD bitHouseType) const;
 
-    WeaponStruct& GetWeapon(size_t index, bool elite); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    const WeaponStruct& GetWeapon(size_t index, bool elite) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    WeaponStruct& GetWeapon(size_t index, bool elite);
+    // unmatched: no callgraph reference and no git history record
+    const WeaponStruct& GetWeapon(size_t index, bool elite) const;
 
     TechnoTypeClass(const char* id, SpeedType speedtype) noexcept;  // 0x711840 (as Construct)
 

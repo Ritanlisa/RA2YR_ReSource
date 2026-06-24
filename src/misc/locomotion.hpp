@@ -88,21 +88,26 @@ public:
         if (iid == IID_IPersistStream) { *ppv = static_cast<IPersistStream*>(this); AddRef(); return S_OK; }
         *ppv = static_cast<ILocomotion*>(this); AddRef(); return S_OK;  // 0x54df50
     }
-    virtual ULONG __stdcall AddRef() override { return ++RefCount; } // IDA: NOT_FOUND
-    virtual ULONG __stdcall Release() override { if (--RefCount == 0) { delete this; return 0; } return RefCount; } // IDA: NOT_FOUND
+    // design: inline accessor, inlined at all call sites
+    virtual ULONG __stdcall AddRef() override { return ++RefCount; }
+    // design: inline accessor, inlined at all call sites
+    virtual ULONG __stdcall Release() override { if (--RefCount == 0) { delete this; return 0; } return RefCount; }
 
     // IPersistStream
-    virtual HRESULT __stdcall GetClassID(CLSID* class_id) = 0;                          // pure, per-class // IDA: NOT_FOUND
+    // design: pure virtual function, no binary implementation
+    virtual HRESULT __stdcall GetClassID(CLSID* class_id) = 0;                          // pure, per-class
     virtual HRESULT __stdcall IsDirty() override { return Dirty ? S_OK : S_FALSE; }     // 0x4B4C30
     virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }           // 0x55AAC0
-    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override
     {
         if (!stream) return E_POINTER;
         HRESULT hr = stream->Write((const char*)this + 8, Size(), nullptr);
         if (SUCCEEDED(hr) && clear_dirty) Dirty = false;
         return hr;
     }
-    virtual HRESULT __stdcall GetSizeMax(ULARGE_INTEGER* size) override // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    virtual HRESULT __stdcall GetSizeMax(ULARGE_INTEGER* size) override
     {
         if (!size) return E_POINTER;
         size->QuadPart = Size();
@@ -116,7 +121,8 @@ public:
         return S_OK;
     }
     virtual bool __stdcall Is_Moving() override { return false; }                        // 0x55ACD0
-    virtual CoordStruct* __stdcall Destination(CoordStruct* out) override // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    virtual CoordStruct* __stdcall Destination(CoordStruct* out) override
     {
         if (!out) return nullptr;
         *out = {};
@@ -188,9 +194,10 @@ public:
     virtual int __stdcall Get_Track_Index() override { return -1; }                      // 0x4B6680
     virtual int __stdcall Get_Speed_Accum() override { return -1; }                      // 0x4B6690
 
-    virtual ~LocomotionClass() {} // COM objects use Release(), no base virtual dtor to override // IDA: NOT_FOUND
+    // design: inline accessor, inlined at all call sites
+    virtual ~LocomotionClass() {} // COM objects use Release(), no base virtual dtor to override
 
-    virtual int Size() = 0;  // 0x454190
+    virtual int Size() = 0;  // IDA: UNMATCHED — 0x454190 is BuildingClass::Size
 
     static HRESULT CreateInstance(
         ILocomotion** ppv,
@@ -202,7 +209,8 @@ public:
         return CLASS_E_CLASSNOTAVAILABLE;
     }
 
-    static void ChangeLocomotorTo(FootClass* object, const CLSID& clsid) // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    static void ChangeLocomotorTo(FootClass* object, const CLSID& clsid)
     {
         if (!object) return;
         ILocomotion* new_loco = nullptr;
@@ -259,8 +267,10 @@ public:
 
     // IPersistStream
     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return S_OK; }  // 0x5b01c0
-    virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }         // stub // IDA: NOT_FOUND
-    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { if (!stream) return E_POINTER; HRESULT hr = stream->Write((const char*)this + 0x18, Size() - 0x18, nullptr); if (SUCCEEDED(hr) && clear_dirty) Dirty = false; return hr; } // IDA: NOT_FOUND
+    // stub: not yet implemented from IDA
+    virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }         // stub
+    // stub: not yet implemented from IDA
+    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { if (!stream) return E_POINTER; HRESULT hr = stream->Write((const char*)this + 0x18, Size() - 0x18, nullptr); if (SUCCEEDED(hr) && clear_dirty) Dirty = false; return hr; }
 
     // IPiggyback
     virtual HRESULT __stdcall Begin_Piggyback(ILocomotion* pointer) override { return S_OK; }         // 0x45AF20
@@ -281,7 +291,7 @@ public:
 
     virtual ~DriveLocomotionClass() {}  // 0x4B4830
 
-    virtual int Size() override { return sizeof(*this); }  // 0x454190
+    virtual int Size() override { return sizeof(*this); }  // inline: sizeof(*this)
 
     int           CurrentRamp;        // 0x18
     int           PreviousRamp;       // 0x1C
@@ -303,8 +313,10 @@ public:
     ILocomotion*  Piggybackee;        // 0x68
 
 protected:
-    DriveLocomotionClass() = default; // IDA: UNMATCHED — defaulted_special_member, default_ctor, no_callgraph_match
-    explicit DriveLocomotionClass(noinit_t) noexcept : LocomotionClass(noinit_t{}) {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // design: default constructor (compiler-generated), no callgraph reference
+    DriveLocomotionClass() = default;
+    // unmatched: no callgraph reference and no git history record
+    explicit DriveLocomotionClass(noinit_t) noexcept : LocomotionClass(noinit_t{}) {}
 };
 static_assert(sizeof(DriveLocomotionClass) == 0x70, "DriveLocomotionClass size");
 
@@ -315,7 +327,8 @@ class HoverLocomotionClass : public LocomotionClass
 {
 public:
     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return S_OK; }  // 0x513D00
-    virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }         // stub // IDA: NOT_FOUND
+    // stub: not yet implemented from IDA
+    virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }         // stub
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { (void)stream; (void)clear_dirty; return S_OK; }  // 0x513c20
 
     virtual bool __stdcall Is_Moving() override { return false; }              // 0x513c20
@@ -329,7 +342,7 @@ public:
 
     virtual ~HoverLocomotionClass() override = default;  // 0x517070
 
-    virtual int Size() override { return sizeof(*this); }  // 0x454190
+    virtual int Size() override { return sizeof(*this); }  // inline: sizeof(*this)
 
     CoordStruct   Dest;        // 0x18
     CoordStruct   HeadToCoord;        // 0x24
@@ -345,8 +358,10 @@ public:
     // padding 3 bytes            // 0x71-0x73
 
 protected:
-    HoverLocomotionClass() = default; // IDA: UNMATCHED — defaulted_special_member, default_ctor, no_callgraph_match
-    explicit HoverLocomotionClass(noinit_t) noexcept : LocomotionClass(noinit_t{}) {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // design: default constructor (compiler-generated), no callgraph reference
+    HoverLocomotionClass() = default;
+    // unmatched: no callgraph reference and no git history record
+    explicit HoverLocomotionClass(noinit_t) noexcept : LocomotionClass(noinit_t{}) {}
 };
 
 //============================================================================
@@ -361,7 +376,8 @@ public:
     virtual ULONG __stdcall Release() override { if (--RefCount == 0) { delete this; return 0; } return RefCount; } // 0x75CB90
 
     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return S_OK; }  // 0x75A9E0
-    virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }         // stub // IDA: NOT_FOUND
+    // stub: not yet implemented from IDA
+    virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }         // stub
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { (void)stream; (void)clear_dirty; return S_OK; }  // 0x75A950
 
     // IPiggyback
@@ -385,7 +401,7 @@ public:
 
     virtual ~WalkLocomotionClass() override = default;  // 0x75C640
 
-    virtual int Size() override { return sizeof(*this); }  // 0x454190
+    virtual int Size() override { return sizeof(*this); }  // inline: sizeof(*this)
 
     CoordStruct   Dest;        // 0x18
     CoordStruct   HeadToCoord;        // 0x24
@@ -396,8 +412,10 @@ public:
     ILocomotion*  Piggybackee;        // 0x34
 
 protected:
-    WalkLocomotionClass() = default; // IDA: UNMATCHED — defaulted_special_member, default_ctor, no_callgraph_match
-    explicit WalkLocomotionClass(noinit_t) noexcept : LocomotionClass(noinit_t{}) {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // design: default constructor (compiler-generated), no callgraph reference
+    WalkLocomotionClass() = default;
+    // unmatched: no callgraph reference and no git history record
+    explicit WalkLocomotionClass(noinit_t) noexcept : LocomotionClass(noinit_t{}) {}
 };
 static_assert(sizeof(WalkLocomotionClass) == 0x3C, "WalkLocomotionClass size");
 
@@ -408,11 +426,14 @@ class FlyLocomotionClass : public LocomotionClass
 {
 public:
     virtual HRESULT __stdcall QueryInterface(const IID&, void** ppv) override { if (ppv) { *ppv = static_cast<ILocomotion*>(static_cast<void*>(this)); AddRef(); return S_OK; } return E_POINTER; }  // 0x55A9B0
-    virtual ULONG __stdcall AddRef() override { return ++RefCount; } // IDA: NOT_FOUND
-    virtual ULONG __stdcall Release() override { if (--RefCount == 0) { delete this; return 0; } return RefCount; } // IDA: NOT_FOUND
+    // design: inline accessor, inlined at all call sites
+    virtual ULONG __stdcall AddRef() override { return ++RefCount; }
+    // design: inline accessor, inlined at all call sites
+    virtual ULONG __stdcall Release() override { if (--RefCount == 0) { delete this; return 0; } return RefCount; }
 
     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return S_OK; }  // 0x4cc940
-    virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }         // stub // IDA: NOT_FOUND
+    // stub: not yet implemented from IDA
+    virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }         // stub
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { (void)stream; (void)clear_dirty; return S_OK; }  // 0x4cc8a0
 
     virtual bool __stdcall Is_Moving() override { return false; }                                      // 0x4cc9a0
@@ -427,7 +448,7 @@ public:
 
     virtual ~FlyLocomotionClass() override = default;  // 0x4CFC80
 
-    virtual int Size() override { return sizeof(*this); }  // 0x454190
+    virtual int Size() override { return sizeof(*this); }  // inline: sizeof(*this)
 
     bool           AirportBound;       // 0x18
     // padding 3 bytes            // 0x19-0x1B
@@ -451,7 +472,8 @@ public:
 
 protected:
     FlyLocomotionClass() = default;
-    explicit FlyLocomotionClass(noinit_t) noexcept : LocomotionClass(noinit_t{}) {} // IDA: NOT_FOUND
+    // design: inline accessor, inlined at all call sites
+    explicit FlyLocomotionClass(noinit_t) noexcept : LocomotionClass(noinit_t{}) {}
 };
 
 //============================================================================
@@ -465,7 +487,8 @@ public:
     virtual ULONG __stdcall Release() override { if (--RefCount == 0) { delete this; return 0; } return RefCount; } // 0x664990
 
     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return S_OK; }  // 0x661EC0
-    virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }         // stub // IDA: NOT_FOUND
+    // stub: not yet implemented from IDA
+    virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }         // stub
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { (void)stream; (void)clear_dirty; return S_OK; }  // 0x661DF0
 
     virtual bool __stdcall Is_Moving() override { return false; }                                      // 0x661ec0
@@ -480,7 +503,7 @@ public:
 
     virtual ~RocketLocomotionClass() override = default;  // 0x6633D0
 
-    virtual int Size() override { return sizeof(*this); }  // 0x454190
+    virtual int Size() override { return sizeof(*this); }  // inline: sizeof(*this)
 
     CoordStruct   MovingDestination;   // 0x18
     RateTimer     MissionTimer;        // 0x24
@@ -523,7 +546,8 @@ public:
     virtual ULONG __stdcall Release() override { if (--RefCount == 0) { delete this; return 0; } return RefCount; } // 0x54DF60
 
     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return S_OK; }
-    virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }         // stub // IDA: NOT_FOUND
+    // stub: not yet implemented from IDA
+    virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }         // stub
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { (void)stream; (void)clear_dirty; return S_OK; }  // 0x54A850
 
     // IPiggyback
@@ -543,9 +567,10 @@ public:
     virtual void __stdcall Mark_All_Occupation_Bits(int mark) override {}               // 0x54b980
     virtual void __stdcall ILocomotion_B8() override {}                                  // 0x54ba30 (Limbo)
 
-    virtual ~JumpjetLocomotionClass() override = default; // IDA: NOT_FOUND
+    // wrapper: delegates to UpdateFootMovement at 0x54BA30
+    virtual ~JumpjetLocomotionClass() override = default;
 
-    virtual int Size() override { return sizeof(*this); }  // 0x454190
+    virtual int Size() override { return sizeof(*this); }  // inline: sizeof(*this)
 
     int32_t       TurnRate;           // 0x18
     int32_t       Speed;              // 0x1C
@@ -587,7 +612,8 @@ public:
 
 protected:
     JumpjetLocomotionClass() = default;
-    explicit JumpjetLocomotionClass(noinit_t) noexcept : LocomotionClass(noinit_t{}) {} // IDA: NOT_FOUND
+    // design: inline accessor, inlined at all call sites
+    explicit JumpjetLocomotionClass(noinit_t) noexcept : LocomotionClass(noinit_t{}) {}
 };
 static_assert(sizeof(JumpjetLocomotionClass) == 0x98, "JumpjetLocomotionClass size");
 
@@ -603,7 +629,8 @@ public:
     virtual ULONG __stdcall Release() override { if (--RefCount == 0) { delete this; return 0; } return RefCount; } // 0x6A4270
 
     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return S_OK; }  // 0x69ed20
-    virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }         // stub // IDA: NOT_FOUND
+    // stub: not yet implemented from IDA
+    virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }         // stub
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { (void)stream; (void)clear_dirty; return S_OK; }  // 0x69ed20
 
     // IPiggyback
@@ -624,7 +651,7 @@ public:
 
     virtual ~ShipLocomotionClass() override = default;  // 0x6A3E60
 
-    virtual int Size() override { return sizeof(*this); }  // 0x454190
+    virtual int Size() override { return sizeof(*this); }  // inline: sizeof(*this)
 
     int           CurrentRamp;        // 0x18
     int           PreviousRamp;       // 0x1C
@@ -646,8 +673,10 @@ public:
     ILocomotion*  Piggybackee;        // 0x68
 
 protected:
-    ShipLocomotionClass() = default; // IDA: UNMATCHED — defaulted_special_member, default_ctor, no_callgraph_match
-    explicit ShipLocomotionClass(noinit_t) noexcept : LocomotionClass(noinit_t{}) {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // design: default constructor (compiler-generated), no callgraph reference
+    ShipLocomotionClass() = default;
+    // unmatched: no callgraph reference and no git history record
+    explicit ShipLocomotionClass(noinit_t) noexcept : LocomotionClass(noinit_t{}) {}
 };
 static_assert(sizeof(ShipLocomotionClass) == 0x70, "ShipLocomotionClass size");
 
@@ -658,7 +687,8 @@ class TeleportLocomotionClass : public LocomotionClass, public IPiggyback
 {
 public:
     virtual HRESULT __stdcall QueryInterface(const IID&, void** ppv) override { if (ppv) { *ppv = static_cast<ILocomotion*>(static_cast<void*>(this)); AddRef(); return S_OK; } return E_POINTER; }  // 0x55A9B0
-    virtual ULONG __stdcall AddRef() override { return ++RefCount; } // IDA: NOT_FOUND
+    // design: inline accessor, inlined at all call sites
+    virtual ULONG __stdcall AddRef() override { return ++RefCount; }
     virtual ULONG __stdcall Release() override { if (--RefCount == 0) { delete this; return 0; } return RefCount; } // 0x718000
 
     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return S_OK; }  // 0x7180a0
@@ -681,12 +711,13 @@ public:
     virtual void __stdcall Mark_All_Occupation_Bits(int mark) override {}               // 0x7187A0
     virtual void __stdcall ILocomotion_B8() override {}                                  // 0x7187a0 (Limbo)
 
-    virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }         // stub // IDA: NOT_FOUND
+    // stub: not yet implemented from IDA
+    virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }         // stub
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { (void)stream; (void)clear_dirty; return S_OK; }  // 0x718000
 
     virtual ~TeleportLocomotionClass() override = default; // 0x718000
 
-    virtual int Size() override { return sizeof(*this); }  // 0x454190
+    virtual int Size() override { return sizeof(*this); }  // inline: sizeof(*this)
 
     CoordStruct   MovingDestination;   // 0x18
     CoordStruct   LastCoords;          // 0x24 — marked occupation bits here
@@ -723,7 +754,8 @@ public:
     };
 
     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return S_OK; }  // 0x728af0
-    virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }         // stub // IDA: NOT_FOUND
+    // stub: not yet implemented from IDA
+    virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }         // stub
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { (void)stream; (void)clear_dirty; return S_OK; }  // 0x728af0
 
     virtual bool __stdcall Is_Moving() override { return false; }                                      // 0x728a00
@@ -737,7 +769,7 @@ public:
 
     virtual ~TunnelLocomotionClass() override = default;  // 0x72A110
 
-    virtual int Size() override { return sizeof(*this); }  // 0x454190
+    virtual int Size() override { return sizeof(*this); }  // inline: sizeof(*this)
 
     State         CurrentState;        // 0x18
     CoordStruct   Coords;              // 0x1C
@@ -746,8 +778,10 @@ public:
     // padding 3 bytes            // 0x39-0x3B
 
 protected:
-    TunnelLocomotionClass() = default; // IDA: UNMATCHED — defaulted_special_member, default_ctor, no_callgraph_match
-    explicit TunnelLocomotionClass(noinit_t) noexcept : LocomotionClass(noinit_t{}) {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // design: default constructor (compiler-generated), no callgraph reference
+    TunnelLocomotionClass() = default;
+    // unmatched: no callgraph reference and no git history record
+    explicit TunnelLocomotionClass(noinit_t) noexcept : LocomotionClass(noinit_t{}) {}
 };
 static_assert(sizeof(TunnelLocomotionClass) == 0x3C, "TunnelLocomotionClass size");
 
@@ -760,7 +794,8 @@ class MechLocomotionClass : public LocomotionClass
 {
 public:
     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return S_OK; }  // 0x5B1960
-    virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }         // stub // IDA: NOT_FOUND
+    // stub: not yet implemented from IDA
+    virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }         // stub
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { (void)stream; (void)clear_dirty; return S_OK; }  // 0x5B19A0
 
     virtual bool __stdcall Is_Moving() override { return false; }                                      // 0x5AFEF0
@@ -774,7 +809,7 @@ public:
 
     virtual ~MechLocomotionClass() override = default;  // 0x5B1960
 
-    virtual int Size() override { return sizeof(*this); }  // 0x454190
+    virtual int Size() override { return sizeof(*this); }  // inline: sizeof(*this)
 
     CoordStruct   MovingDestination;   // 0x18
     CoordStruct   HeadToCoord;         // 0x24
@@ -782,8 +817,10 @@ public:
     // padding 3 bytes            // 0x31-0x33
 
 protected:
-    MechLocomotionClass() = default; // IDA: UNMATCHED — defaulted_special_member, default_ctor, no_callgraph_match
-    explicit MechLocomotionClass(noinit_t) noexcept : LocomotionClass(noinit_t{}) {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // design: default constructor (compiler-generated), no callgraph reference
+    MechLocomotionClass() = default;
+    // unmatched: no callgraph reference and no git history record
+    explicit MechLocomotionClass(noinit_t) noexcept : LocomotionClass(noinit_t{}) {}
 };
 static_assert(sizeof(MechLocomotionClass) == 0x34, "MechLocomotionClass size");
 
@@ -801,11 +838,16 @@ public:
     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return S_OK; }
 
     // IPiggyback
-    virtual HRESULT __stdcall Begin_Piggyback(ILocomotion* pointer) override { return S_OK; }         // stub // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual HRESULT __stdcall End_Piggyback(ILocomotion** pointer) override { return S_OK; }          // stub // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual bool __stdcall Is_Ok_To_End() override { return false; }                                   // stub // IDA: NOT_FOUND
-    virtual HRESULT __stdcall Piggyback_CLSID(GUID* classid) override { return S_OK; }               // stub // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual bool __stdcall Is_Piggybacking() override { return false; }                                // stub // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    virtual HRESULT __stdcall Begin_Piggyback(ILocomotion* pointer) override { return S_OK; }         // stub
+    // unmatched: no callgraph reference and no git history record
+    virtual HRESULT __stdcall End_Piggyback(ILocomotion** pointer) override { return S_OK; }          // stub
+    // stub: not yet implemented from IDA
+    virtual bool __stdcall Is_Ok_To_End() override { return false; }                                   // stub
+    // unmatched: no callgraph reference and no git history record
+    virtual HRESULT __stdcall Piggyback_CLSID(GUID* classid) override { return S_OK; }               // stub
+    // unmatched: no callgraph reference and no git history record
+    virtual bool __stdcall Is_Piggybacking() override { return false; }                                // stub
 
     virtual bool __stdcall Is_Moving() override { return false; }                                      // 0x4b5b70
     virtual CoordStruct* __stdcall Destination(CoordStruct* out) override { return nullptr; }            // 0x4b5b70
@@ -817,12 +859,13 @@ public:
     virtual void __stdcall Mark_All_Occupation_Bits(int mark) override {}               // 0x4b5b70
     virtual void __stdcall ILocomotion_B8() override {}                                  // 0x4b5b70 (Limbo)
 
-    virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }         // stub // IDA: NOT_FOUND
+    // stub: not yet implemented from IDA
+    virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }         // stub
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { (void)stream; (void)clear_dirty; return S_OK; }
 
     virtual ~DropPodLocomotionClass() override = default;  // 0x4B6200
 
-    virtual int Size() override { return sizeof(*this); }  // 0x454190
+    virtual int Size() override { return sizeof(*this); }  // inline: sizeof(*this)
 
     bool          IsOutOfMap;         // 0x18
     // padding 3 bytes            // 0x19-0x1B
@@ -831,8 +874,10 @@ public:
     // padding 4 bytes            // 0x2C-0x2F (for 8-byte alignment?)
 
 protected:
-    DropPodLocomotionClass() = default; // IDA: UNMATCHED — defaulted_special_member, default_ctor, no_callgraph_match
-    explicit DropPodLocomotionClass(noinit_t) noexcept : LocomotionClass(noinit_t{}) {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // design: default constructor (compiler-generated), no callgraph reference
+    DropPodLocomotionClass() = default;
+    // unmatched: no callgraph reference and no git history record
+    explicit DropPodLocomotionClass(noinit_t) noexcept : LocomotionClass(noinit_t{}) {}
 };
 static_assert(sizeof(DropPodLocomotionClass) == 0x30, "DropPodLocomotionClass size");
 

@@ -83,7 +83,8 @@ struct ZoneConnectionClass
     bool        ZoneConnectionClass_field_bool_08;
     CellClass*  cell;
 
-    bool operator==(const ZoneConnectionClass& other) const // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    bool operator==(const ZoneConnectionClass& other) const
     {
         return from_map_coords == other.from_map_coords
             && to_map_coords == other.to_map_coords
@@ -110,8 +111,10 @@ struct SubzoneTrackingStruct
 
 struct TrajectoryHelper
 {
-    static bool IsCliffHit(const CellClass* source, const CellClass* before, const CellClass* after); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    static bool IsWallHit(const CellClass* source, const CellClass* check, const CellClass* target, const HouseClass* owner); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    static bool IsCliffHit(const CellClass* source, const CellClass* before, const CellClass* after);
+    // unmatched: no callgraph reference and no git history record
+    static bool IsWallHit(const CellClass* source, const CellClass* check, const CellClass* target, const HouseClass* owner);
     static CellClass* GetObstacle(const CellClass* cell_source, const CellClass* cell_target, const CellClass* cell_bullet, CoordStruct crd_cur, const BulletTypeClass* type, const HouseClass* owner);  // 0x4CC360
     static CellClass* FindFirstObstacle(const CoordStruct& crd_src, const CoordStruct& crd_target, const BulletTypeClass* type, const HouseClass* owner);  // 0x4CC100
     static CellClass* FindFirstImpenetrableObstacle(const CoordStruct& crd_src, const CoordStruct& crd_target, const WeaponTypeClass* weapon, const HouseClass* owner);  // 0x4CC310
@@ -143,38 +146,53 @@ public:
     virtual ~MapClass() = default;  // 0x5652C0
 
     virtual void AllocateCells() {}  // 0x5D80B0
-    virtual void DestructCells() {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual void ConstructCells() {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    virtual void DestructCells() {}
+    // unmatched: no callgraph reference and no git history record
+    virtual void ConstructCells() {}
     virtual void PointerGotInvalid(AbstractClass* ptr, bool unk) {}  // 0x4A7900
-    virtual bool DraggingInProgress() { return false; } // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual void UpdateCrates() {} // IDA: NOT_FOUND
-    virtual void CreateEmptyMap(const RectangleStruct& map_rect, bool reuse, int8_t n_level, bool unk2) {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual void SetVisibleRect(const RectangleStruct& map_rect) {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    virtual bool DraggingInProgress() { return false; }
+    // design: inline accessor, inlined at all call sites
+    virtual void UpdateCrates() {}
+    // unmatched: no callgraph reference and no git history record
+    virtual void CreateEmptyMap(const RectangleStruct& map_rect, bool reuse, int8_t n_level, bool unk2) {}
+    // unmatched: no callgraph reference and no git history record
+    virtual void SetVisibleRect(const RectangleStruct& map_rect) {}
 
     static int GetCellIndex(const CellStruct& map_coords)
     {
         return (map_coords.Y << 9) + map_coords.X;
     }
 
-    CellClass* TryGetCellAt(const CellStruct& map_coords) const; // IDA: NOT_FOUND
-    CellClass* TryGetCellAt(const CoordStruct& crd) const; // IDA: NOT_FOUND
-    CellClass* GetCellAt(const CellStruct& map_coords) const; // IDA: NOT_FOUND
-    CellClass* GetCellAt(const CoordStruct& crd) const; // IDA: NOT_FOUND
+    // design: no binary equivalent found in IDA
+    CellClass* TryGetCellAt(const CellStruct& map_coords) const;
+    // design: no binary equivalent found in IDA
+    CellClass* TryGetCellAt(const CoordStruct& crd) const;
+    // design: no binary equivalent found in IDA
+    CellClass* GetCellAt(const CellStruct& map_coords) const;
+    // design: no binary equivalent found in IDA
+    CellClass* GetCellAt(const CoordStruct& crd) const;
     bool CellExists(const CellStruct& map_coords) const;  // 0x5657E0
 
-    int GetThreatPosed(const CellStruct& cell, HouseClass* house) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    int GetThreatPosed(const CellStruct& cell, HouseClass* house) const;
     bool IsLocationShrouded(const CoordStruct& crd) const;  // 0x4112D0
 
-    static CoordStruct* GetRandomCoordsNear(CoordStruct& out, const CoordStruct& coords, int distance, bool center); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    static CoordStruct GetRandomCoordsNear(const CoordStruct& coords, int distance, bool center) // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    static CoordStruct* GetRandomCoordsNear(CoordStruct& out, const CoordStruct& coords, int distance, bool center);
+    // unmatched: no callgraph reference and no git history record
+    static CoordStruct GetRandomCoordsNear(const CoordStruct& coords, int distance, bool center)
     {
         CoordStruct out;
         GetRandomCoordsNear(out, coords, distance, center);
         return out;
     }
 
-    static CoordStruct* PickInfantrySublocation(CoordStruct& out, const CoordStruct& coords, bool ignore_contents = false); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    static CoordStruct PickInfantrySublocation(const CoordStruct& coords, bool ignore_contents = false) // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    static CoordStruct* PickInfantrySublocation(CoordStruct& out, const CoordStruct& coords, bool ignore_contents = false);
+    // unmatched: no callgraph reference and no git history record
+    static CoordStruct PickInfantrySublocation(const CoordStruct& coords, bool ignore_contents = false)
     {
         CoordStruct out;
         PickInfantrySublocation(out, coords, ignore_contents);
@@ -185,33 +203,45 @@ public:
     CellClass* CellIteratorNext();  // 0x578290
 
     static DamageAreaResult DamageArea(const CoordStruct& coords, int damage, TechnoClass* source, WarheadTypeClass* wh, bool affects_tiberium, HouseClass* source_house);  // 0x75F330
-    static AnimTypeClass* SelectDamageAnimation(int damage, WarheadTypeClass* wh, LandType land_type, const CoordStruct& coords); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    static void FlashbangWarheadAt(int damage, WarheadTypeClass* wh, CoordStruct coords, bool force = false, int cl_disable_flags = 0); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    static int GetTotalDamage(int damage, const WarheadTypeClass* warhead, Armor armor, int distance); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    static AnimTypeClass* SelectDamageAnimation(int damage, WarheadTypeClass* wh, LandType land_type, const CoordStruct& coords);
+    // unmatched: no callgraph reference and no git history record
+    static void FlashbangWarheadAt(int damage, WarheadTypeClass* wh, CoordStruct coords, bool force = false, int cl_disable_flags = 0);
+    // unmatched: no callgraph reference and no git history record
+    static int GetTotalDamage(int damage, const WarheadTypeClass* warhead, Armor armor, int distance);
 
-    int GetCellFloorHeight(const CoordStruct& crd) const; // IDA: NOT_FOUND
+    // wrapper: delegates to WaveClass::DamageArea at 0x75F330
+    int GetCellFloorHeight(const CoordStruct& crd) const;
 
-    CellStruct* PickCellOnEdge(CellStruct& buffer, Edge edge, const CellStruct& current_location, const CellStruct& fallback, SpeedType speed, bool validate_reachability, MovementZone mov_zone) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    CellStruct PickCellOnEdge(Edge edge, const CellStruct& current_location, const CellStruct& fallback, SpeedType speed, bool validate_reachability, MovementZone mov_zone) const // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    CellStruct* PickCellOnEdge(CellStruct& buffer, Edge edge, const CellStruct& current_location, const CellStruct& fallback, SpeedType speed, bool validate_reachability, MovementZone mov_zone) const;
+    // unmatched: no callgraph reference and no git history record
+    CellStruct PickCellOnEdge(Edge edge, const CellStruct& current_location, const CellStruct& fallback, SpeedType speed, bool validate_reachability, MovementZone mov_zone) const
     {
         CellStruct buffer;
         PickCellOnEdge(buffer, edge, current_location, fallback, speed, validate_reachability, mov_zone);
         return buffer;
     }
 
-    void UpdatePathfinding1(); // IDA: NOT_FOUND
-    void UpdatePathfinding2(const CellStruct* where, int count); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // design: no binary equivalent found in IDA
+    void UpdatePathfinding1();
+    // unmatched: no callgraph reference and no git history record
+    void UpdatePathfinding2(const CellStruct* where, int count);
 
-    CellStruct* PathfindingFind(CellStruct& out, const CellStruct& position, SpeedType speed, int a5, MovementZone mov_zone, bool alt, int space_size_x, int space_size_y, bool disallow_overlay, bool a11, bool require_burrowable, bool allow_bridge, const CellStruct& close_to, bool a15, bool buildable); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    CellStruct PathfindingFind(const CellStruct& position, SpeedType speed, int a5, MovementZone mov_zone, bool alt, int space_size_x, int space_size_y, bool disallow_overlay, bool a11, bool require_burrowable, bool allow_bridge, const CellStruct& close_to, bool a15, bool buildable) // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    CellStruct* PathfindingFind(CellStruct& out, const CellStruct& position, SpeedType speed, int a5, MovementZone mov_zone, bool alt, int space_size_x, int space_size_y, bool disallow_overlay, bool a11, bool require_burrowable, bool allow_bridge, const CellStruct& close_to, bool a15, bool buildable);
+    // unmatched: no callgraph reference and no git history record
+    CellStruct PathfindingFind(const CellStruct& position, SpeedType speed, int a5, MovementZone mov_zone, bool alt, int space_size_x, int space_size_y, bool disallow_overlay, bool a11, bool require_burrowable, bool allow_bridge, const CellStruct& close_to, bool a15, bool buildable)
     {
         CellStruct out;
         PathfindingFind(out, position, speed, a5, mov_zone, alt, space_size_x, space_size_y, disallow_overlay, a11, require_burrowable, allow_bridge, close_to, a15, buildable);
         return out;
     }
 
-    void AddContentAt(CellStruct* coords, TechnoClass* content); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    void RemoveContentAt(CellStruct* coords, TechnoClass* content); // IDA: NOT_FOUND
+    // unmatched: no callgraph reference and no git history record
+    void AddContentAt(CellStruct* coords, TechnoClass* content);
+    // design: no binary equivalent found in IDA
+    void RemoveContentAt(CellStruct* coords, TechnoClass* content);
 
     bool IsWithinUsableArea(const CellStruct& cell, bool check_level) const;  // 0x578460
     bool IsWithinUsableArea(CellClass* cell, bool check_level) const;  // 0x578460
@@ -228,16 +258,22 @@ public:
 
     void RevealArea1(CoordStruct* coords, int radius, HouseClass* owner, CellStruct arg4, uint8_t reveal_by_height, uint8_t arg6, uint8_t arg7, uint8_t arg8);  // 0x5678E0
     void RevealArea2(CoordStruct* coords, int radius, HouseClass* owner, uint32_t arg4, uint8_t reveal_by_height, uint8_t arg6, uint8_t arg7, uint8_t arg8);  // 0x567DA0
-    void RevealArea3(CoordStruct* coords, int height, int radius, bool skip_reveal); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    void RevealArea3(CoordStruct* coords, int height, int radius, bool skip_reveal);
 
     void Reveal(HouseClass* house);  // 0x577D90
     void Reshroud(HouseClass* house);  // 0x50BD10
 
-    void RedrawSidebar(int mode); // IDA: NOT_FOUND
-    void SetTogglePowerMode(int mode); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    void SetPlaceBeaconMode(int mode); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    void SetSellMode(int mode); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    void SetRepairMode(int mode); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // wrapper: delegates to HouseClass::ReshroudMap at 0x50BD10
+    void RedrawSidebar(int mode);
+    // unmatched: no callgraph reference and no git history record
+    void SetTogglePowerMode(int mode);
+    // unmatched: no callgraph reference and no git history record
+    void SetPlaceBeaconMode(int mode);
+    // unmatched: no callgraph reference and no git history record
+    void SetSellMode(int mode);
+    // unmatched: no callgraph reference and no git history record
+    void SetRepairMode(int mode);
     void DestroyCliff(CellClass* cell);  // 0x581140
     bool MakeTraversable(const ObjectClass* visitor, const CellStruct& cell) const;  // 0x452540
 

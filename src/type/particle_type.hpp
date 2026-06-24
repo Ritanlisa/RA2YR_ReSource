@@ -21,8 +21,10 @@ class ParticleTypeClass : public ObjectTypeClass
 public:
     static constexpr AbstractType AbsID = AbstractType::ParticleType;
     static DynamicVectorClass<ParticleTypeClass*>* Array;
-    static ParticleTypeClass* Find(const char* pID); // IDA: NOT_FOUND
-    static ParticleTypeClass* FindOrCreate(const char* pID); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // design: static function, no direct binary match in IDA
+    static ParticleTypeClass* Find(const char* pID);
+    // unmatched: no callgraph reference and no git history record
+    static ParticleTypeClass* FindOrCreate(const char* pID);
 
     virtual ~ParticleTypeClass() = default;  // 0x645950 (as ddtor)
 
@@ -36,7 +38,8 @@ public:
 
 protected:
     struct noinit_t {};
-    ParticleTypeClass(noinit_t) noexcept : ObjectTypeClass(ObjectTypeClass::noinit_t{}) {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    ParticleTypeClass(noinit_t) noexcept : ObjectTypeClass(ObjectTypeClass::noinit_t{}) {}
 
 public:
     int ArrayIndex;

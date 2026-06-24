@@ -45,15 +45,18 @@ public:
     static constexpr size_t kSize = 0x40;
 
     INIClass();
-    virtual ~INIClass() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~INIClass() = default;
 
     // INI reading interface
     virtual bool Load(CCFileClass* file, bool unk1, bool unk2);  // 0x4741F0
     virtual const char* GetString(const char* section, const char* key, const char* def, char* buf, int bufSize);  // 0x528A10
     virtual int GetInt(const char* section, const char* key, int def);  // 0x529820
     virtual bool GetBool(const char* section, const char* key, bool def);  // 0x4757D0
-    virtual double GetDouble(const char* section, const char* key, double def); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual const char* GetGUID(const char* section, const char* key, const char* def); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    virtual double GetDouble(const char* section, const char* key, double def);
+    // unmatched: no callgraph reference and no git history record
+    virtual const char* GetGUID(const char* section, const char* key, const char* def);
 
 protected:
     // IDA layout offsets (0x00-0x3F):
@@ -82,7 +85,8 @@ public:
 
     bool Load(CCFileClass* file, bool unk1, bool unk2) override;  // 0x4741F0
 
-    CCFileClass* GetFile() const; // IDA: NOT_FOUND
+    // wrapper: delegates to CCINIClass::Load at 0x4741F0
+    CCFileClass* GetFile() const;
 
     int GetKeyCount(const char* section);  // 0x526960
     const char* GetStringByIndex(const char* section, int index);  // 0x526CC0

@@ -14,7 +14,8 @@ public:
     int32_t Count;
     int32_t Capacity;
 
-    constexpr VectorClass() noexcept : Items(nullptr), Count(0), Capacity(0) {} // IDA: NOT_FOUND
+    // design: constexpr operator, compile-time only
+    constexpr VectorClass() noexcept : Items(nullptr), Count(0), Capacity(0) {}
 };
 
 class RadioClass : public MissionClass {
@@ -24,10 +25,14 @@ public:
 
     virtual ~RadioClass() = default; // 0x65A750
 
-    virtual RadioCommand sendToFirstLink(RadioCommand command); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual RadioCommand sendCommand(RadioCommand command, TechnoClass* recipient); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual RadioCommand sendCommandWithData(RadioCommand command, AbstractClass*& inout, TechnoClass* recipient); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual void sendToEachLink(RadioCommand command); // IDA: NOT_FOUND
+    // unmatched: no callgraph reference and no git history record
+    virtual RadioCommand sendToFirstLink(RadioCommand command);
+    // unmatched: no callgraph reference and no git history record
+    virtual RadioCommand sendCommand(RadioCommand command, TechnoClass* recipient);
+    // unmatched: no callgraph reference and no git history record
+    virtual RadioCommand sendCommandWithData(RadioCommand command, AbstractClass*& inout, TechnoClass* recipient);
+    // wrapper: delegates to RadioClass::RadioClass at 0x65A750
+    virtual void sendToEachLink(RadioCommand command);
 
     // 0x65AAC0 -- vt10: Remove a specific object from radio links
     virtual void ExecuteAction(TechnoClass* obj, bool clear);  // 0x65AAC0
@@ -44,9 +49,11 @@ public:
     // 0x65AE60 -- Resize radio link array
     virtual void SetLinkCount(int count);  // 0x65AE60
 
-    TechnoClass* const& getNthLink(int idx = 0) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    TechnoClass* const& getNthLink(int idx = 0) const;
     bool hasFreeLink() const;  // 0x65ADC0
-    bool hasAnyLink() const; // IDA: NOT_FOUND
+    // wrapper: delegates to RadioClass::HasFreeLink at 0x65ADC0
+    bool hasAnyLink() const;
 
     int32_t             lastCommands[3];
     VectorClass<TechnoClass*> radioLinks;

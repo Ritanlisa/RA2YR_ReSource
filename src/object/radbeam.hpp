@@ -11,16 +11,24 @@ class RadBeam : public AbstractClass
 public:
     static constexpr AbstractType kObjectDeriveId = AbstractType::None;
 
-    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override; // IDA: NOT_FOUND
-    virtual HRESULT __stdcall Load(IStream* stream) override; // IDA: NOT_FOUND
-    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // design: virtual function, no binary implementation matched in IDA
+    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override;
+    // design: virtual function, no binary implementation matched in IDA
+    virtual HRESULT __stdcall Load(IStream* stream) override;
+    // unmatched: no callgraph reference and no git history record
+    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
 
-    virtual ~RadBeam() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~RadBeam() = default;
 
-    virtual void pointerExpired(AbstractClass* ptr, bool removed) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual AbstractType __stdcall whatAmI() const override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual int objectSize() const override; // IDA: NOT_FOUND
-    virtual void calculateChecksum(void* checksum) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    virtual void pointerExpired(AbstractClass* ptr, bool removed) override;
+    // unmatched: no callgraph reference and no git history record
+    virtual AbstractType __stdcall whatAmI() const override;
+    // design: virtual function, no binary implementation matched in IDA
+    virtual int objectSize() const override;
+    // unmatched: no callgraph reference and no git history record
+    virtual void calculateChecksum(void* checksum) const;
 
     // Construction
     static RadBeam* Create(bool);                                // 0x659110

@@ -8,7 +8,8 @@ namespace gamemd {
 constexpr int kLeptonsPerCell = 256;
 constexpr int kCellCenter = kLeptonsPerCell / 2;
 
-inline CoordStruct Cell2Coord(const CellStruct& cell, int z = 0) noexcept // IDA: UNMATCHED — inline_likely_inlined, no_callgraph_match, no_git_history
+// design: likely inlined by compiler (no standalone symbol), no callgraph/git history reference
+inline CoordStruct Cell2Coord(const CellStruct& cell, int z = 0) noexcept
 {
     return CoordStruct(
         cell.X * kLeptonsPerCell + kCellCenter,
@@ -17,7 +18,8 @@ inline CoordStruct Cell2Coord(const CellStruct& cell, int z = 0) noexcept // IDA
     );
 }
 
-inline CellStruct Coord2Cell(const CoordStruct& crd) noexcept // IDA: UNMATCHED — inline_likely_inlined, no_callgraph_match, no_git_history
+// design: likely inlined by compiler (no standalone symbol), no callgraph/git history reference
+inline CellStruct Coord2Cell(const CoordStruct& crd) noexcept
 {
     return CellStruct(
         static_cast<int16_t>(crd.X / kLeptonsPerCell),
@@ -25,7 +27,8 @@ inline CellStruct Coord2Cell(const CoordStruct& crd) noexcept // IDA: UNMATCHED 
     );
 }
 
-inline int Distance(const CoordStruct& a, const CoordStruct& b) noexcept // IDA: UNMATCHED — inline_likely_inlined, no_callgraph_match, no_git_history
+// design: likely inlined by compiler (no standalone symbol), no callgraph/git history reference
+inline int Distance(const CoordStruct& a, const CoordStruct& b) noexcept
 {
     int dx = a.X - b.X;
     if (dx < 0) dx = -dx;
@@ -49,12 +52,16 @@ inline int CellDistance(const CellStruct& a, const CellStruct& b) noexcept
     return dy + (dx / 2);
 }
 
-uint8_t Direction8(const CoordStruct& from, const CoordStruct& to) noexcept; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-uint8_t Direction32(const CoordStruct& from, const CoordStruct& to) noexcept; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+// unmatched: no callgraph reference and no git history record
+uint8_t Direction8(const CoordStruct& from, const CoordStruct& to) noexcept;
+// unmatched: no callgraph reference and no git history record
+uint8_t Direction32(const CoordStruct& from, const CoordStruct& to) noexcept;
 
-CoordStruct CoordMove(const CoordStruct& start, uint8_t dir32, uint16_t distance) noexcept; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+// unmatched: no callgraph reference and no git history record
+CoordStruct CoordMove(const CoordStruct& start, uint8_t dir32, uint16_t distance) noexcept;
 
-CellStruct AdjacentCell(const CellStruct& cell, uint8_t facing8) noexcept; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+// unmatched: no callgraph reference and no git history record
+CellStruct AdjacentCell(const CellStruct& cell, uint8_t facing8) noexcept;
 
 bool IsCloseEnough(const CoordStruct& a, const CoordStruct& b, int range) noexcept;  // 0x70D590
 

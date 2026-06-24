@@ -123,7 +123,8 @@ public:
 
     ~HouseClass() = default;
 
-    AbstractType __stdcall whatAmI() const override { return AbstractType::House; } // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    AbstractType __stdcall whatAmI() const override { return AbstractType::House; }
 
     // --- TODO: IHouse / IPublicHouse / IConnectionPointContainer interfaces from YRpp ---
 
@@ -134,11 +135,14 @@ public:
 
     void MakeAlly(int house_idx, bool announce);  // 0x4F9B50
     void MakeAlly(HouseClass* who, bool announce);  // 0x4F9B50
-    void MakeEnemy(HouseClass* who, bool announce); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    void AllyAIHouses(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    void MakeEnemy(HouseClass* who, bool announce);
+    // unmatched: no callgraph reference and no git history record
+    void AllyAIHouses();
 
     void SDDTORAllAndTriggers();  // 0x4FB920
-    void AcceptDefeat(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    void AcceptDefeat();
     void DestroyAll();  // 0x4033C0
     void DestroyAllBuildings();  // 0x4FC790
     void DestroyAllNonBuildingsNonNaval();  // 0x4FC820
@@ -147,72 +151,96 @@ public:
     void RespawnStartingBuildings();  // 0x50D320
     void RespawnStartingForces();  // 0x50D440
 
-    uint8_t Win(bool save_something); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    uint8_t Win(bool save_something);
     uint8_t Lose(bool save_something);  // 0x6CB7B0
 
     bool CanAlly(HouseClass* other) const;  // 0x501540
-    bool CanOverpower(TechnoClass* target) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    bool CanOverpower(TechnoClass* target) const;
 
     void LostPoweredCenter(TechnoTypeClass* type);  // 0x50E0E0
     void GainedPoweredCenter(TechnoTypeClass* type);  // 0x50E1B0
 
-    bool DoInfantrySelfHeal() const { return infantrySelfHeal > 0; } // IDA: NOT_FOUND
+    // design: inline accessor, inlined at all call sites
+    bool DoInfantrySelfHeal() const { return infantrySelfHeal > 0; }
     int GetInfSelfHealStep() const;  // 0x50D9E0
-    bool DoUnitsSelfHeal() const { return unitsSelfHeal > 0; } // IDA: NOT_FOUND
+    // design: inline accessor, inlined at all call sites
+    bool DoUnitsSelfHeal() const { return unitsSelfHeal > 0; }
     int GetUnitSelfHealStep() const;  // 0x50D9F0
 
     void UpdatePower(); // 0x508C30
     void CreatePowerOutage(int duration);  // 0x50BC90
-    double GetPowerPercentage() const; // IDA: NOT_FOUND
+    // wrapper: delegates to HouseClass::CreatePowerOutage at 0x50BC90
+    double GetPowerPercentage() const;
 
-    bool HasFullPower() const { return powerOutput >= powerDrain || !powerDrain; } // IDA: NOT_FOUND
-    bool HasLowPower() const { return powerOutput < powerDrain && powerDrain; } // IDA: NOT_FOUND
+    // design: inline accessor, inlined at all call sites
+    bool HasFullPower() const { return powerOutput >= powerDrain || !powerDrain; }
+    // design: inline accessor, inlined at all call sites
+    bool HasLowPower() const { return powerOutput < powerDrain && powerDrain; }
 
     void CreateRadarOutage(int duration);  // 0x50BCD0
     void ReshroudMap();  // 0x50BD10
-    void Cheer(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    void Cheer();
 
-    void BuildingUnderAttack(BuildingClass* building); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    void TakeMoney(int amount); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    void BuildingUnderAttack(BuildingClass* building);
+    // unmatched: no callgraph reference and no git history record
+    void TakeMoney(int amount);
     void GiveMoney(int amount);  // 0x522D50
 
-    bool CanTransactMoney(int amount) const { return amount > 0 || AvailableMoney() >= -amount; } // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    void TransactMoney(int amount) // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    bool CanTransactMoney(int amount) const { return amount > 0 || AvailableMoney() >= -amount; }
+    // unmatched: no callgraph reference and no git history record
+    void TransactMoney(int amount)
     {
         if (amount > 0) GiveMoney(amount);
         else TakeMoney(-amount);
     }
 
-    int AvailableMoney() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    int AvailableMoney() const;
 
     void GiveTiberium(float amount, int type);  // 0x4F9610
     void UpdateAllSilos(int prev_storage, int prev_total_storage);  // 0x4F9970
-    double getStoragePercentage(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    double getStoragePercentage();
 
     void AcquiredThreatNode();  // 0x509130
 
-    static bool IndexIsMP(int idx); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    static bool IndexIsMP(int idx);
 
-    void UpdateFactoriesQueues(AbstractType factory_of, bool is_naval, int build_cat) const; // IDA: NOT_FOUND
+    // wrapper: delegates to HouseClass::AcquiredThreatNode at 0x509130
+    void UpdateFactoriesQueues(AbstractType factory_of, bool is_naval, int build_cat) const;
 
-    bool FireLightningStorm(SuperClass* super); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    bool FireParadrop(SuperClass* super); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    bool FirePsyDom(SuperClass* super); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    bool FireGenMutator(SuperClass* super); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    bool FireLightningStorm(SuperClass* super);
+    // unmatched: no callgraph reference and no git history record
+    bool FireParadrop(SuperClass* super);
+    // unmatched: no callgraph reference and no git history record
+    bool FirePsyDom(SuperClass* super);
+    // unmatched: no callgraph reference and no git history record
+    bool FireGenMutator(SuperClass* super);
 
-    int  AIBaseConstructionupdateLogic(); // IDA: NOT_FOUND
+    // design: no binary equivalent found in IDA
+    int  AIBaseConstructionupdateLogic();
     void AITryFireSW();  // 0x5098F0
     bool FireSW(int idx, const CellStruct& coords);   // 0x5098F0
 
-    CellStruct* PickTargetByType(CellStruct& out, TargetType type) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    CellStruct PickTargetByType(TargetType type) const // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    CellStruct* PickTargetByType(CellStruct& out, TargetType type) const;
+    // unmatched: no callgraph reference and no git history record
+    CellStruct PickTargetByType(TargetType type) const
     {
         CellStruct out;
         PickTargetByType(out, type);
         return out;
     }
 
-    CellStruct* PickIonCannonTarget(CellStruct& out) const; // IDA: NOT_FOUND
+    // design: no binary equivalent found in IDA
+    CellStruct* PickIonCannonTarget(CellStruct& out) const;
     CellStruct PickIonCannonTarget() const
     {
         CellStruct out;
@@ -220,13 +248,16 @@ public:
         return out;
     }
 
-    bool IsIonCannonEligibleTarget(const TechnoClass* techno) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    bool IsIonCannonEligibleTarget(const TechnoClass* techno) const;
 
-    void UpdateFlagCoords(class UnitClass* new_carrier, uint32_t unk); // IDA: NOT_FOUND
+    // design: no binary equivalent found in IDA
+    void UpdateFlagCoords(class UnitClass* new_carrier, uint32_t unk);
     void DroppedFlag(CellStruct* where, class UnitClass* who);  // 0x4FBF60
     char PickedUpFlag(class UnitClass* who, uint32_t unk);  // 0x4FC060
 
-    FactoryClass* GetPrimaryFactory(AbstractType abs_id, bool naval, int build_cat) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    FactoryClass* GetPrimaryFactory(AbstractType abs_id, bool naval, int build_cat) const;
     void SetPrimaryFactory(FactoryClass* factory, AbstractType abs_id, bool naval, int build_cat);  // 0x740DF0
 
     const CellStruct& GetBaseCenter() const
@@ -235,12 +266,16 @@ public:
         return baseSpawnCell;
     }
 
-    unsigned int GetAIDifficultyIndex() const; // IDA: NOT_FOUND
+    // design: no binary equivalent found in IDA
+    unsigned int GetAIDifficultyIndex() const;
 
-    bool IsNeutral() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    bool IsPlayer() const; // IDA: NOT_FOUND
+    // unmatched: no callgraph reference and no git history record
+    bool IsNeutral() const;
+    // design: no binary equivalent found in IDA
+    bool IsPlayer() const;
     bool IsObserver() const;  // 0x5E9440
-    static bool IsPlayerObserver(); // IDA: NOT_FOUND
+    // wrapper: delegates to Player::IsObserver at 0x5E9440
+    static bool IsPlayerObserver();
 
     // ---- member variables ----
 
@@ -532,8 +567,10 @@ public:
     // TODO: complete remaining members from YRpp (very large class ~969 lines)
 
 protected:
-    HouseClass() = default; // IDA: UNMATCHED — defaulted_special_member, no_callgraph_match, no_git_history
-    HouseClass(HouseTypeClass* pType) noexcept; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // design: compiler-generated special member, no callgraph/git history reference
+    HouseClass() = default;
+    // unmatched: no callgraph reference and no git history record
+    HouseClass(HouseTypeClass* pType) noexcept;
 };
 
 } // namespace gamemd

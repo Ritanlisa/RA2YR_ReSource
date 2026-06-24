@@ -25,14 +25,17 @@ public:
         Entry*      next;       // 0x08
         uint32_t    hash;       // 0x0C
 
-        Entry() : next(nullptr), hash(0) {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
+        // unmatched: no callgraph reference and no git history record
+        Entry() : next(nullptr), hash(0) {}
         Entry(const K& k, const V& v, uint32_t h)
-            : key(k), value(v), next(nullptr), hash(h) {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
+            // unmatched: no callgraph reference and no git history record
+            : key(k), value(v), next(nullptr), hash(h) {}
     };
 
     HashTable()
         : m_Buckets(nullptr), m_Count(0), m_Capacity(0),
-          m_GrowThreshold(0), m_Sorted(false), m_LastFound(nullptr) // IDA: UNMATCHED — no_callgraph_match, no_git_history
+          // unmatched: no callgraph reference and no git history record
+          m_GrowThreshold(0), m_Sorted(false), m_LastFound(nullptr)
     {
         Grow(); // initial allocation
     }
@@ -53,7 +56,8 @@ public:
             }
         }
 
-        Entry* entry = new Entry(key, value, h); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+        // unmatched: no callgraph reference and no git history record
+        Entry* entry = new Entry(key, value, h);
         entry->next = m_Buckets[index];
         m_Buckets[index] = entry;
         ++m_Count;
@@ -309,14 +313,19 @@ public:
     }
 
     // --- Accessors ---
-    uint32_t GetCount() const { return m_Count; } // IDA: NOT_FOUND
-    uint32_t GetCapacity() const { return m_Capacity; } // IDA: NOT_FOUND
-    Entry** GetBuckets() { return m_Buckets; } // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    Entry* GetLastFound() const { return m_LastFound; } // IDA: NOT_FOUND
+    // design: inline accessor, inlined at all call sites
+    uint32_t GetCount() const { return m_Count; }
+    // design: inline accessor, inlined at all call sites
+    uint32_t GetCapacity() const { return m_Capacity; }
+    // unmatched: no callgraph reference and no git history record
+    Entry** GetBuckets() { return m_Buckets; }
+    // design: inline accessor, inlined at all call sites
+    Entry* GetLastFound() const { return m_LastFound; }
 
 private:
     // Rebuild hash table to new capacity
-    void RebuildTo(uint32_t new_capacity) // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    void RebuildTo(uint32_t new_capacity)
     {
         Entry** old_buckets = m_Buckets;
         uint32_t old_cap = m_Capacity;
@@ -388,13 +397,15 @@ private:
     };
 
     // Compare string key (for string-based tables like INI)
-    static bool CompareStringKey(const K& key, const char* str) // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    static bool CompareStringKey(const K& key, const char* str)
     {
         return false; // default: no string comparison
     }
 
     // Compare for binary search (int specialization)
-    static int CompareSorted(const K& a, int b) // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    static int CompareSorted(const K& a, int b)
     {
         if (static_cast<int>(a) < b) return -1;
         if (static_cast<int>(a) > b) return 1;
@@ -448,10 +459,12 @@ public:
 class SHA1
 {
 public:
-    SHA1() { Init(); } // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    SHA1() { Init(); }
 
     // IDA 0x69D8C0
-    void Init(); // IDA: NOT_FOUND
+    // wrapper: delegates to SHA1::ProcessBlock at 0x69D8C0
+    void Init();
 
     // IDA 0x69DA00
     void Process(const void* data, uint32_t size);  // 0x69D960
@@ -463,10 +476,12 @@ public:
     void Transform();  // 0x69DB30
 
     // IDA 0x69D8C0 area
-    void PadMessage(); // IDA: NOT_FOUND
+    // design: no binary equivalent found in IDA
+    void PadMessage();
 
     // IDA 0x69D8C0 area
-    static void DigestToHex(const uint8_t digest[20], char hex[41]); // IDA: NOT_FOUND
+    // design: static function, no direct binary match in IDA
+    static void DigestToHex(const uint8_t digest[20], char hex[41]);
 
     uint32_t    state[5];       // 0x00
     uint64_t    count;          // 0x14
@@ -481,7 +496,8 @@ public:
 class CRC32
 {
 public:
-    CRC32() : m_CRC(0xFFFFFFFF), m_Count(0) {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    CRC32() : m_CRC(0xFFFFFFFF), m_Count(0) {}
 
     // IDA 0x69E000
     static uint32_t Compute(const void* data, uint32_t size);  // 0x4A1FB0

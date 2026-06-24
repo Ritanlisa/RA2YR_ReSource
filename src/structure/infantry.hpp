@@ -23,15 +23,19 @@ public:
 
     virtual ~InfantryClass() override = default;  // 0x517D90
 
-    virtual AbstractType __stdcall whatAmI() const override; // IDA: NOT_FOUND
-    virtual int objectSize() const override; // IDA: NOT_FOUND
+    // wrapper: delegates to InfantryClass::Destruct at 0x517D90
+    virtual AbstractType __stdcall whatAmI() const override;
+    // wrapper: delegates to InfantryClass::Destruct at 0x517D90
+    virtual int objectSize() const override;
 
     virtual int IsDeployed() const;  // 0x6EF9E0
     virtual bool PlayAnim(Sequence index, bool force = false, bool randomStartFrame = false);  // 0x451890
 
     int Mission_Enter() override;  // 0x4166C0
-    int Mission_ParaDropApproach() override; // IDA: NOT_FOUND
-    int Mission_ParaDropOverfly() override; // IDA: NOT_FOUND
+    // wrapper: delegates to AircraftClass::Mission_Enter at 0x4166C0
+    int Mission_ParaDropApproach() override;
+    // wrapper: delegates to AircraftClass::Mission_Enter at 0x4166C0
+    int Mission_ParaDropOverfly() override;
 
     // === Phase 3: Deploy/Undeploy ===
     void ProcessDeploy() override;  // 0x4D5350
@@ -141,11 +145,13 @@ public:
     bool IsBridgeRepairEnabled();  // 0x5224D0
     int SlaveGiveMoney_RecordBalanceBefore();  // 0x522D50
     void startPanic();  // 0x772AC0
-    int CheckHealthDiff_0(); // IDA: NOT_FOUND
+    // wrapper: delegates to InfantryClass::startPanic at 0x772AC0
+    int CheckHealthDiff_0();
 
     // === Phase 3: Drawing ===
     void Draw(Point2D* screen_pos, RectangleStruct* bounds) const;  // 0x518F90
-    void DrawShadow(Point2D* screen_pos, RectangleStruct* bounds) const; // IDA: NOT_FOUND
+    // wrapper: delegates to InfantryClass::Draw at 0x518F90
+    void DrawShadow(Point2D* screen_pos, RectangleStruct* bounds) const;
 
     InfantryTypeClass* Type;
     Sequence           SequenceAnim;

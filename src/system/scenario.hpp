@@ -82,8 +82,10 @@ struct Randomizer
     int32_t next2;
     uint32_t table[250];
 
-    uint32_t Random(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    int32_t RandomRanged(int n_min, int n_max); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    uint32_t Random();
+    // unmatched: no callgraph reference and no git history record
+    int32_t RandomRanged(int n_min, int n_max);
     double RandomDouble();
 };
 
@@ -92,8 +94,10 @@ class ScenarioClass
 public:
     static ScenarioClass* Instance;
 
-    bool IsDefinedWaypoint(int idx); // IDA: NOT_FOUND
-    CellStruct* GetWaypointCoords(CellStruct* dest, int idx); // IDA: NOT_FOUND
+    // design: no binary equivalent found in IDA
+    bool IsDefinedWaypoint(int idx);
+    // design: no binary equivalent found in IDA
+    CellStruct* GetWaypointCoords(CellStruct* dest, int idx);
     CellStruct GetWaypointCoords(int idx)
     {
         CellStruct dest;
@@ -101,9 +105,11 @@ public:
         return dest;
     }
 
-    static void UpdateCellLighting(); // IDA: NOT_FOUND
+    // design: static function, no direct binary match in IDA
+    static void UpdateCellLighting();
     static void UpdateLighting(); // 0x53C280
-    static void RecalcLighting(int r, int g, int b, uint32_t unk); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    static void RecalcLighting(int r, int g, int b, uint32_t unk);
 
     ScenarioFlags       specialFlags;
     char                nextScenario[260];

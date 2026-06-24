@@ -21,10 +21,12 @@ public:
     {
     }
 
-    virtual ~Surface() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
+    // design: default destructor (compiler-generated), no callgraph reference
+    virtual ~Surface() = default;
 
     // [1] 0x04 BlitWhole
-    virtual bool BlitWhole(Surface* src, bool option1, bool option2) = 0; // IDA: NOT_FOUND
+    // design: pure virtual function, no binary implementation
+    virtual bool BlitWhole(Surface* src, bool option1, bool option2) = 0;
 
     // [2] 0x08 BlitPart
     virtual bool BlitPart(  // 0x7bbb90
@@ -174,10 +176,12 @@ public:
         uint32_t color) = 0;
 
     // [23] 0x5C Lock
-    virtual void* Lock(int x, int y) = 0; // IDA: NOT_FOUND
+    // design: pure virtual function, no binary implementation
+    virtual void* Lock(int x, int y) = 0;
 
     // [24] 0x60 Unlock
-    virtual bool Unlock() = 0; // IDA: NOT_FOUND
+    // design: pure virtual function, no binary implementation
+    virtual bool Unlock() = 0;
 
     // [25] 0x64 CanLock
     virtual bool CanLock(uint32_t unk1, uint32_t unk2) = 0;  // 0x4BAEC0
@@ -192,10 +196,12 @@ public:
     virtual bool IsLocked() const = 0;  // 0x411580
 
     // [28] 0x70 GetBytesPerPixel
-    virtual int GetBytesPerPixel() const = 0; // IDA: NOT_FOUND
+    // wrapper: delegates to Surface::IsLocked at 0x411580
+    virtual int GetBytesPerPixel() const = 0;
 
     // [29] 0x74 GetPitch
-    virtual int GetPitch() const = 0; // IDA: NOT_FOUND
+    // design: virtual function, no binary implementation matched in IDA
+    virtual int GetPitch() const = 0;
 
     // [30] 0x78 GetRect
     virtual RectangleStruct* GetRect(RectangleStruct* out) const // 0x411510
@@ -257,7 +263,8 @@ public:
         return buf;
     }
 
-    void DrawSHP( // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    void DrawSHP(
         ConvertClass* palette,
         SHPStruct* shp,
         int frame_index,
@@ -274,13 +281,15 @@ public:
         int zs_x,
         int zs_y);
 
-    void DrawSHP( // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    void DrawSHP(
         ConvertClass* palette,
         SHPStruct* shp,
         int frame_index,
         const Point2D& location);
 
-    static Point2D* DrawText( // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    static Point2D* DrawText(
         Point2D* out,
         const wchar_t* text,
         Surface* surface,
@@ -291,7 +300,8 @@ public:
         uint32_t flags,
         uint32_t unknown9);
 
-    static Point2D DrawText( // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    static Point2D DrawText(
         const wchar_t* text,
         Surface* surface,
         const RectangleStruct& bounds,
@@ -301,7 +311,8 @@ public:
         uint32_t flags = 0x16,
         uint32_t unknown9 = 1);
 
-    Point2D DrawText( // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    Point2D DrawText(
         const wchar_t* text,
         const RectangleStruct& bounds,
         const Point2D& location,
@@ -309,7 +320,8 @@ public:
         uint32_t option3 = 0,
         uint32_t flags = 0x16);
 
-    Point2D DrawText( // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    Point2D DrawText(
         const wchar_t* text,
         const Point2D& location,
         uint16_t color,
@@ -320,7 +332,8 @@ public:
     int Height;
 
 protected:
-    explicit Surface(noinit_t) noexcept {} // IDA: NOT_FOUND
+    // design: inline accessor, inlined at all call sites
+    explicit Surface(noinit_t) noexcept {}
 };
 
 class XSurface : public Surface
@@ -332,7 +345,8 @@ public:
     {
     }
 
-    virtual ~XSurface() override = default; // IDA: NOT_FOUND
+    // design: virtual function, no binary implementation matched in IDA
+    virtual ~XSurface() override = default;
 
     virtual bool BlitWhole(Surface* src, bool option1, bool option2) override; // 0x7BBAF0
     virtual bool BlitPart( // 0x7BBB90
@@ -435,7 +449,8 @@ public:
 
 protected:
     explicit XSurface(noinit_t) noexcept
-        : Surface(noinit_t{}) // IDA: UNMATCHED — no_callgraph_match, no_git_history
+        // unmatched: no callgraph reference and no git history record
+        : Surface(noinit_t{})
     {
     }
 };
@@ -450,7 +465,8 @@ public:
     {
     }
 
-    virtual ~BSurface() override = default; // IDA: NOT_FOUND
+    // design: virtual function, no binary implementation matched in IDA
+    virtual ~BSurface() override = default;
 
     virtual void* Lock(int x, int y) override; // 0x4115F0
     virtual int GetBytesPerPixel() const override { return BytesPerPixel; } // 0x411630
@@ -462,7 +478,8 @@ public:
 
 protected:
     explicit BSurface(noinit_t) noexcept
-        : XSurface(noinit_t{}) // IDA: UNMATCHED — no_callgraph_match, no_git_history
+        // unmatched: no callgraph reference and no git history record
+        : XSurface(noinit_t{})
     {
     }
 };
@@ -480,7 +497,8 @@ public:
 
     DSurface(int width, int height, bool back_buffer, bool force_3d) noexcept;
 
-    virtual ~DSurface() override; // IDA: NOT_FOUND
+    // design: virtual function, no binary implementation matched in IDA
+    virtual ~DSurface() override;
 
     virtual bool BlitWhole(Surface* src, bool option1, bool option2) override;  // 0x4C1A90
     virtual bool BlitPart( // 0x4BB080
@@ -536,7 +554,8 @@ public:
     virtual bool IsDSurface() const override final { return true; }  // 0x4C1AB0
 
     // IDA: DSurface::CreatePrimary pixel format detection (0x4BA770 bit-shift logic)
-    static void DetectPixelFormat(const DDPIXELFORMAT& pf); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    static void DetectPixelFormat(const DDPIXELFORMAT& pf);
 
     // 0x4BB0D0 — DSurface::Blit full hardware/software implementation
     // Used by REPLACE hook — bypasses Syringe trampoline entirely.
@@ -561,7 +580,8 @@ public:
 
 protected:
     explicit DSurface(noinit_t) noexcept
-        : XSurface(noinit_t{}) // IDA: UNMATCHED — no_callgraph_match, no_git_history
+        // unmatched: no callgraph reference and no git history record
+        : XSurface(noinit_t{})
     {
     }
 

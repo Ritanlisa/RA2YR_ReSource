@@ -30,7 +30,8 @@ public:
     static constexpr AbstractType AbsID = AbstractType::AnimType;
 
     static DynamicVectorClass<AnimTypeClass*>* Array;
-    static AnimTypeClass* Find(const char* pID); // IDA: NOT_FOUND
+    // design: static function, no direct binary match in IDA
+    static AnimTypeClass* Find(const char* pID);
     static AnimTypeClass* FindOrCreate(const char* pID);  // 0x428B80 (as FindOrCreate)
     static int FindIndex(const char* pID);  // 0x427CB0
 
@@ -38,21 +39,24 @@ public:
 
     virtual ~AnimTypeClass() = default;  // 0x428EA0 (as ddtor)
 
-    virtual AbstractType __stdcall whatAmI() const override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    virtual AbstractType __stdcall whatAmI() const override;
     virtual int objectSize() const override; // 0x428E70 (as GetObjectSize)
 
     virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override; // 0x428E90 (as StubReturnFalse)
     virtual ObjectClass* CreateObject(HouseClass* pOwner) override;  // 0x4737F0
 
-    virtual SHPStruct* LoadImage(); // IDA: NOT_FOUND
-    virtual void Load2DArt();  // 0x5F9070
+    // wrapper: delegates to ReinforcementClass::CreateObject at 0x4737F0
+    virtual SHPStruct* LoadImage();
+    virtual void Load2DArt();  // 0x5F9070 // IDA: ObjectTypeClass::Load2DArt (base)
 
     AnimTypeClass(const char* pID) noexcept;  // 0x427530 (as Construct)
 
     struct noinit_t {};
 
 protected:
-    AnimTypeClass(noinit_t) noexcept; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    AnimTypeClass(noinit_t) noexcept;
 
 public:
     int ArrayIndex;

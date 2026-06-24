@@ -27,10 +27,12 @@ struct BytePalette
 class FileSystem
 {
 public:
-    static void* LoadFile(const char* pFileName, bool bLoadAsSHP); // IDA: NOT_FOUND
+    // design: static function, no direct binary match in IDA
+    static void* LoadFile(const char* pFileName, bool bLoadAsSHP);
 
     // Load file and return size via outSize parameter
-    static void* LoadFileWithSize(const char* pFileName, int* outSize, bool bLoadAsSHP); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    static void* LoadFileWithSize(const char* pFileName, int* outSize, bool bLoadAsSHP);
 
     static void* LoadFile(const char* pFileName)
     {
@@ -42,7 +44,8 @@ public:
         return LoadFile(pFileName, true);
     }
 
-    static void* LoadWholeFileEx(const char* pFilename, bool& outAllocated); // IDA: NOT_FOUND
+    // design: static function, no direct binary match in IDA
+    static void* LoadWholeFileEx(const char* pFilename, bool& outAllocated);
 
     template <typename T>
     static T* LoadWholeFileEx(const char* pFilename, bool& outAllocated)
@@ -51,20 +54,27 @@ public:
     }
 
     template <typename T = void>
-    static T* AllocateFile(const char* pFilename) // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    static T* AllocateFile(const char* pFilename)
     {
-        CCFileClass file(pFilename); // IDA: NOT_FOUND
+        // design: no binary equivalent found in IDA
+        CCFileClass file(pFilename);
         return static_cast<T*>(file.ReadWholeFile());
     }
 
-    static BytePalette* AllocatePalette(const char* pFilename); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    static BytePalette* AllocatePalette(const char* pFilename);
 
-    static ConvertClass* LoadPALFile(const char* pFileName, DSurface* pSurface); // IDA: NOT_FOUND
+    // design: static function, no direct binary match in IDA
+    static ConvertClass* LoadPALFile(const char* pFileName, DSurface* pSurface);
 
     // Content-based search: find any 768-byte palette file in MIX pool
-    static void* LoadFirstPalette(); // IDA: NOT_FOUND
-    static void* LoadFirstSHP(); // IDA: NOT_FOUND
-    static void* LoadByHash(uint32_t hash);  // XCC hash-based lookup // IDA: NOT_FOUND
+    // design: static function, no direct binary match in IDA
+    static void* LoadFirstPalette();
+    // design: static function, no direct binary match in IDA
+    static void* LoadFirstSHP();
+    // design: static function, no direct binary match in IDA
+    static void* LoadByHash(uint32_t hash);  // XCC hash-based lookup
 
     static SHPStruct* PIPBRD_SHP;
     static SHPStruct* PIPS_SHP;

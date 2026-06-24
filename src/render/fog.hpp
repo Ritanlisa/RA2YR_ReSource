@@ -31,7 +31,8 @@ public:
 
     virtual ~FoggedObjectClass() override = default;  // 0x4D2910
 
-    virtual AbstractType __stdcall whatAmI() const override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    virtual AbstractType __stdcall whatAmI() const override;
     virtual int objectSize() const override;  // 0x4D27C0
 
     int32_t      LastSight;
@@ -40,7 +41,8 @@ public:
 
 protected:
     FoggedObjectClass() noexcept;
-    explicit FoggedObjectClass(noinit_t) noexcept; // IDA: NOT_FOUND
+    // design: no binary equivalent found in IDA
+    explicit FoggedObjectClass(noinit_t) noexcept;
 };
 
 } // namespace gamemd

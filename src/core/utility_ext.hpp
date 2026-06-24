@@ -116,7 +116,8 @@ public:
     // IDA 0x40A340
     int32_t CreateDirectSound();  // 0x40A340
     // IDA 0x40A6D0
-    int32_t sub_40A6D0(); // IDA: NOT_FOUND
+    // wrapper: delegates to Buffer::UpdateVolumeSettings at 0x40A6D0
+    int32_t sub_40A6D0();
     // IDA 0x40CCD0
     bool CompareEqual(const Buffer& other) const;  // 0x40CCD0
     // IDA 0x410ED0
@@ -157,14 +158,17 @@ class Delegate
 public:
     // IDA 0x52AE20
     Delegate();
-    ~Delegate(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    ~Delegate();
 
     // IDA 0x42DDB0
     void ProcessBitmapStream();  // 0x42DDB0
     // IDA 0x42DF40
-    void sub_42DF40(); // IDA: NOT_FOUND
+    // wrapper: delegates to Delegate::ProcessBitmapAndDispatch at 0x42DF40
+    void sub_42DF40();
     // IDA 0x4A2780
-    void sub_4A2780(); // IDA: NOT_FOUND
+    // wrapper: delegates to Delegate::StreamToBuffer at 0x4A2780
+    void sub_4A2780();
     // IDA 0x52AE70
     void ClearVectorAndStraw();  // 0x52AE70
     // IDA 0x52AEA0
@@ -210,15 +214,19 @@ public:
     // IDA 0x48B2A0 area
     static void MemSet(void* dst, uint8_t val, int32_t count);  // 0x7D75E0
     // IDA 0x48B2A0 area
-    static void MemCopy(void* dst, const void* src, int32_t count); // IDA: NOT_FOUND
+    // design: static function, no direct binary match in IDA
+    static void MemCopy(void* dst, const void* src, int32_t count);
     // IDA 0x48B2A0 area
     static void FillZero(void* ptr, int32_t count);  // 0x7D79FB
     // IDA 0x48B2A0 area
-    static void InitBlock(void* ptr, int32_t size); // IDA: NOT_FOUND
+    // design: static function, no direct binary match in IDA
+    static void InitBlock(void* ptr, int32_t size);
     // IDA 0x48B2A0 area
-    static void ClearStruct(void* ptr, int32_t size); // IDA: NOT_FOUND
+    // design: static function, no direct binary match in IDA
+    static void ClearStruct(void* ptr, int32_t size);
     // IDA 0x48B2A0 area
-    static void InitWithValue(void* ptr, int32_t count, int32_t value); // IDA: NOT_FOUND
+    // design: static function, no direct binary match in IDA
+    static void InitWithValue(void* ptr, int32_t count, int32_t value);
 
     int32_t     Struct_field_00;       // 0x00
 };
@@ -237,11 +245,13 @@ public:
     // IDA 0x48B2A0 area
     static int32_t GetCountQueue();  // 0x5F1EA0
     // IDA 0x48B2A0 area
-    static void IncrementRefCount(); // IDA: NOT_FOUND
+    // design: static function, no direct binary match in IDA
+    static void IncrementRefCount();
     // IDA 0x48B2A0 area
     static void DecrementRefCount();  // 0x6351E0
     // IDA 0x48B2A0 area
-    static int32_t GetRefCount(); // IDA: NOT_FOUND
+    // design: static function, no direct binary match in IDA
+    static int32_t GetRefCount();
 
     int32_t     m_RefCount;     // 0x00
 };
@@ -265,7 +275,8 @@ public:
     // IDA 0x4D9C00 area
     bool Intersects(const Rect& other) const;  // 0x7BBE20
     // IDA 0x4D9C00 area
-    bool Contains(int32_t x, int32_t y) const; // IDA: NOT_FOUND
+    // design: no binary equivalent found in IDA
+    bool Contains(int32_t x, int32_t y) const;
     // IDA 0x4D9C00 area
     void Clip(const Rect& clip);  // 0x421B60
 
@@ -374,7 +385,8 @@ public:
     // IDA 0x54F000 area
     static bool Check();  // 0x54F650
     // IDA 0x54F000 area
-    static void Clear(); // IDA: NOT_FOUND
+    // design: static function, no direct binary match in IDA
+    static void Clear();
 
     static int32_t  s_EventCount;   // 0x00
     static void*    s_Queue;        // 0x04
@@ -426,7 +438,8 @@ public:
     // IDA 0x48B2A0 area
     static bool IsObserver(HouseClass* house);  // 0x5E9440
     // IDA 0x48B2A0 area
-    static int32_t GetCount(); // IDA: NOT_FOUND
+    // design: static function, no direct binary match in IDA
+    static int32_t GetCount();
 
     static int32_t  s_PlayerCount; // 0x00
 };
@@ -587,13 +600,17 @@ public:
     // IDA 0x48B2A0 area
     int32_t Read(void* buf, int32_t size);  // 0x5896A0
     // IDA 0x48B2A0 area
-    void Flush(); // IDA: NOT_FOUND
+    // design: no binary equivalent found in IDA
+    void Flush();
     // IDA 0x48B2A0 area
-    int32_t GetPosition(); // IDA: NOT_FOUND
+    // design: no binary equivalent found in IDA
+    int32_t GetPosition();
     // IDA 0x48B2A0 area
-    int32_t GetSize(); // IDA: NOT_FOUND
+    // design: no binary equivalent found in IDA
+    int32_t GetSize();
     // IDA 0x48B2A0 area
-    void Close(); // IDA: NOT_FOUND
+    // design: no binary equivalent found in IDA
+    void Close();
 
     void*       m_Data;         // 0x00
     int32_t     m_Position;     // 0x04
@@ -626,7 +643,8 @@ public:
 class AllocCallback
 {
 public:
-    virtual ~AllocCallback() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~AllocCallback() = default;
 
     virtual void Dispatch() {} // 0x7BE5D0
 
@@ -635,7 +653,8 @@ public:
 class COMClass
 {
 public:
-    virtual ~COMClass() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~COMClass() = default;
 
     virtual void RegisterAll() {} // 0x490490
     virtual void ReleaseRef() {} // 0x65D670
@@ -669,7 +688,8 @@ public:
 class COMClassFactory
 {
 public:
-    virtual ~COMClassFactory() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~COMClassFactory() = default;
 
     virtual void Register() {} // 0x6BEDB0
     virtual void CreateInstance() {} // 0x6C0AC0
@@ -680,7 +700,8 @@ public:
 class COMClassFactory_10
 {
 public:
-    virtual ~COMClassFactory_10() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~COMClassFactory_10() = default;
 
     virtual void Construct() {} // 0x6BFBC0
 
@@ -689,7 +710,8 @@ public:
 class COMClassFactory_3
 {
 public:
-    virtual ~COMClassFactory_3() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~COMClassFactory_3() = default;
 
     virtual void Construct() {} // 0x6BF140
 
@@ -698,7 +720,8 @@ public:
 class COMClassFactory_4
 {
 public:
-    virtual ~COMClassFactory_4() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~COMClassFactory_4() = default;
 
     virtual void Construct() {} // 0x6BF2C0
 
@@ -707,7 +730,8 @@ public:
 class COMClassFactory_5
 {
 public:
-    virtual ~COMClassFactory_5() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~COMClassFactory_5() = default;
 
     virtual void Construct() {} // 0x6BF440
 
@@ -716,7 +740,8 @@ public:
 class COMClassFactory_6
 {
 public:
-    virtual ~COMClassFactory_6() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~COMClassFactory_6() = default;
 
     virtual void Construct() {} // 0x6BF5C0
 
@@ -725,7 +750,8 @@ public:
 class COMClassFactory_7
 {
 public:
-    virtual ~COMClassFactory_7() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~COMClassFactory_7() = default;
 
     virtual void Construct() {} // 0x6BF740
 
@@ -734,7 +760,8 @@ public:
 class COMClassFactory_8
 {
 public:
-    virtual ~COMClassFactory_8() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~COMClassFactory_8() = default;
 
     virtual void Construct() {} // 0x6BF8C0
 
@@ -743,7 +770,8 @@ public:
 class COMClassFactory_9
 {
 public:
-    virtual ~COMClassFactory_9() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~COMClassFactory_9() = default;
 
     virtual void Construct() {} // 0x6BFA40
 
@@ -752,7 +780,8 @@ public:
 class COMObject
 {
 public:
-    virtual ~COMObject() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~COMObject() = default;
 
     virtual void Release() {} // 0x437FC0
     virtual void DetachPrimary() {} // 0x488690
@@ -786,7 +815,8 @@ public:
 class CRC32
 {
 public:
-    virtual ~CRC32() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
+    // design: default destructor (compiler-generated), no callgraph reference
+    virtual ~CRC32() = default;
 
     virtual void Compute() {} // 0x4A1FB0
 
@@ -817,7 +847,8 @@ public:
 class CountdownTimer
 {
 public:
-    virtual ~CountdownTimer() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
+    // design: default destructor (compiler-generated), no callgraph reference
+    virtual ~CountdownTimer() = default;
 
     virtual void UpdateDisplay() {} // 0x4A2600
 
@@ -826,7 +857,8 @@ public:
 class CountryCombo
 {
 public:
-    virtual ~CountryCombo() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~CountryCombo() = default;
 
     virtual void IDToIndex() {} // 0x4E3830
 
@@ -878,7 +910,8 @@ public:
 class EventBuffer
 {
 public:
-    virtual ~EventBuffer() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~EventBuffer() = default;
 
     virtual void Enqueue() {} // 0x54F1C0
 
@@ -887,7 +920,8 @@ public:
 class Flag
 {
 public:
-    virtual ~Flag() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
+    // design: default destructor (compiler-generated), no callgraph reference
+    virtual ~Flag() = default;
 
     virtual void CheckNone() {} // 0x4A51D0
     virtual void IsZero() {} // 0x4F4CA0
@@ -900,7 +934,8 @@ public:
 class FlagSystem
 {
 public:
-    virtual ~FlagSystem() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~FlagSystem() = default;
 
     virtual void GetNextActive() {} // 0x626690
 
@@ -909,7 +944,8 @@ public:
 class Float4
 {
 public:
-    virtual ~Float4() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
+    // design: default destructor (compiler-generated), no callgraph reference
+    virtual ~Float4() = default;
 
     virtual void Copy() {} // 0x645D20
     virtual void Sum() {} // 0x6C9650
@@ -920,7 +956,8 @@ public:
 class FloatArray
 {
 public:
-    virtual ~FloatArray() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~FloatArray() = default;
 
     virtual void Get() {} // 0x6C9680
 
@@ -976,7 +1013,8 @@ public:
 class GraphicMenuItem_Destru
 {
 public:
-    virtual ~GraphicMenuItem_Destru() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~GraphicMenuItem_Destru() = default;
 
     virtual void Release() {} // 0x4F3AF0
     virtual void QueryInterface() {} // 0x4F3B20
@@ -987,7 +1025,8 @@ public:
 class GraphicMenuShortcutItem
 {
 public:
-    virtual ~GraphicMenuShortcutItem() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~GraphicMenuShortcutItem() = default;
 
     virtual void AddRef() {} // 0x4F3EE0
     virtual void QueryInterface() {} // 0x4F3F60
@@ -998,7 +1037,8 @@ public:
 class Hash
 {
 public:
-    virtual ~Hash() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
+    // design: default destructor (compiler-generated), no callgraph reference
+    virtual ~Hash() = default;
 
     virtual void ComputeHashSHA1() {} // 0x476D80
     virtual void InsertOrdered() {} // 0x4F4410
@@ -1011,7 +1051,8 @@ public:
 class HashMap
 {
 public:
-    virtual ~HashMap() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~HashMap() = default;
 
     virtual void ComputeIndex() {} // 0x624C80
     virtual void Shrink2() {} // 0x7ADF70
@@ -1026,7 +1067,8 @@ public:
 class HashTable
 {
 public:
-    virtual ~HashTable() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~HashTable() = default;
 
     virtual void DestroyHashTableINIClass() {} // 0x5256F0
     virtual void BinarySearch() {} // 0x52B390
@@ -1060,7 +1102,8 @@ public:
 class HashTableSection
 {
 public:
-    virtual ~HashTableSection() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~HashTableSection() = default;
 
     virtual void FindSection() {} // 0x526B10
 
@@ -1069,7 +1112,8 @@ public:
 class HashTree
 {
 public:
-    virtual ~HashTree() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~HashTree() = default;
 
     virtual void MarkEntry() {} // 0x5B4270
 
@@ -1078,7 +1122,8 @@ public:
 class HashVector_UInt
 {
 public:
-    virtual ~HashVector_UInt() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~HashVector_UInt() = default;
 
     virtual void Construct() {} // 0x58AFF0
 
@@ -1087,7 +1132,8 @@ public:
 class PairVector
 {
 public:
-    virtual ~PairVector() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~PairVector() = default;
 
     virtual void PushBack() {} // 0x4E0C40
 
@@ -1096,7 +1142,8 @@ public:
 class PlayerClass
 {
 public:
-    virtual ~PlayerClass() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~PlayerClass() = default;
 
     virtual void sub_430F70() {} // 0x430F70
     virtual void ExecuteCommand() {} // 0x4AB9B0
@@ -1121,7 +1168,8 @@ public:
 class PlayerProfile
 {
 public:
-    virtual ~PlayerProfile() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~PlayerProfile() = default;
 
     virtual void QueryInterface() {} // 0x77B030
 
@@ -1130,7 +1178,8 @@ public:
 class PlayerSlot
 {
 public:
-    virtual ~PlayerSlot() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~PlayerSlot() = default;
 
     virtual void NameToDialogID() {} // 0x510FB0
     virtual void IndexToDlgID() {} // 0x5E98F0
@@ -1141,7 +1190,8 @@ public:
 class PlayerType
 {
 public:
-    virtual ~PlayerType() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~PlayerType() = default;
 
     virtual void GetName() {} // 0x4E62B0
 
@@ -1150,7 +1200,8 @@ public:
 class PtrVector
 {
 public:
-    virtual ~PtrVector() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~PtrVector() = default;
 
     virtual void Destroy() {} // 0x5C6120
 
@@ -1159,7 +1210,8 @@ public:
 class Queue
 {
 public:
-    virtual ~Queue() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
+    // design: default destructor (compiler-generated), no callgraph reference
+    virtual ~Queue() = default;
 
     virtual void GetNext() {} // 0x407470
 
@@ -1168,7 +1220,8 @@ public:
 class Random
 {
 public:
-    virtual ~Random() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
+    // design: default destructor (compiler-generated), no callgraph reference
+    virtual ~Random() = default;
 
     virtual void Gaussian() {} // 0x5980C0
     virtual void State() {} // 0x65C780
@@ -1183,7 +1236,8 @@ public:
 class RandomStraw
 {
 public:
-    virtual ~RandomStraw() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~RandomStraw() = default;
 
     virtual void sub_65C8B0() {} // 0x65C8B0
     virtual void Release() {} // 0x661C10
@@ -1196,7 +1250,8 @@ public:
 class Rect_Point
 {
 public:
-    virtual ~Rect_Point() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~Rect_Point() = default;
 
     virtual void Set() {} // 0x4E1A20
 
@@ -1205,7 +1260,8 @@ public:
 class ReferenceCounted
 {
 public:
-    virtual ~ReferenceCounted() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~ReferenceCounted() = default;
 
     virtual void Constructor() {} // 0x65D660
 
@@ -1214,7 +1270,8 @@ public:
 class SHA1
 {
 public:
-    virtual ~SHA1() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
+    // design: default destructor (compiler-generated), no callgraph reference
+    virtual ~SHA1() = default;
 
     virtual void sub_69D8C0() {} // 0x69D8C0
     virtual void Process() {} // 0x69D960
@@ -1233,7 +1290,8 @@ public:
 class SettingsClass
 {
 public:
-    virtual ~SettingsClass() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~SettingsClass() = default;
 
     virtual void ClampValues() {} // 0x5975E0
 
@@ -1242,7 +1300,8 @@ public:
 class StringBuffer
 {
 public:
-    virtual ~StringBuffer() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~StringBuffer() = default;
 
     virtual void Reset() {} // 0x5F33A0
 
@@ -1251,7 +1310,8 @@ public:
 class StringList
 {
 public:
-    virtual ~StringList() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~StringList() = default;
 
     virtual void Find() {} // 0x721210
 
@@ -1260,7 +1320,8 @@ public:
 class StringTable
 {
 public:
-    virtual ~StringTable() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~StringTable() = default;
 
     virtual void Lookup() {} // 0x40DCE0
     virtual void Find() {} // 0x5CF6B0
@@ -1291,7 +1352,8 @@ public:
 class StructTable
 {
 public:
-    virtual ~StructTable() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~StructTable() = default;
 
     virtual void Append() {} // 0x4A3840
 
@@ -1300,7 +1362,8 @@ public:
 class Timeout
 {
 public:
-    virtual ~Timeout() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
+    // design: default destructor (compiler-generated), no callgraph reference
+    virtual ~Timeout() = default;
 
     virtual void GetRemaining() {} // 0x4B4D70
 
@@ -1309,7 +1372,8 @@ public:
 class TimerPool
 {
 public:
-    virtual ~TimerPool() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~TimerPool() = default;
 
     virtual void AllocSlot() {} // 0x53E3C0
 
@@ -1318,7 +1382,8 @@ public:
 class Tree
 {
 public:
-    virtual ~Tree() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~Tree() = default;
 
     virtual void Destructor() {} // 0x5B4080
 
@@ -1327,7 +1392,8 @@ public:
 class TypeClass
 {
 public:
-    virtual ~TypeClass() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~TypeClass() = default;
 
     virtual void FindByName() {} // 0x41CAA0
 
@@ -1336,7 +1402,8 @@ public:
 class Vector2
 {
 public:
-    virtual ~Vector2() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
+    // design: default destructor (compiler-generated), no callgraph reference
+    virtual ~Vector2() = default;
 
     virtual void NormalizeNonZero() {} // 0x41C460
     virtual void Subtract() {} // 0x6DC4C0
@@ -1347,7 +1414,8 @@ public:
 class Vector3
 {
 public:
-    virtual ~Vector3() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
+    // design: default destructor (compiler-generated), no callgraph reference
+    virtual ~Vector3() = default;
 
     virtual void Magnitude() {} // 0x41C3C0
     virtual void Subtract() {} // 0x437160
@@ -1360,7 +1428,8 @@ public:
 class Vector4
 {
 public:
-    virtual ~Vector4() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
+    // design: default destructor (compiler-generated), no callgraph reference
+    virtual ~Vector4() = default;
 
     virtual void EraseAt() {} // 0x5AD790
     virtual void EraseAt_Copy() {} // 0x63EF70
@@ -1371,7 +1440,8 @@ public:
 class Vector8
 {
 public:
-    virtual ~Vector8() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
+    // design: default destructor (compiler-generated), no callgraph reference
+    virtual ~Vector8() = default;
 
     virtual void EraseAt() {} // 0x589290
 
@@ -1380,7 +1450,8 @@ public:
 class VectorClassUInt
 {
 public:
-    virtual ~VectorClassUInt() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~VectorClassUInt() = default;
 
     virtual void Constructor() {} // 0x42DC50
 

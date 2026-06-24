@@ -24,15 +24,20 @@ public:
     // IDA 0x48B2A0 area
     static void ReadSettings();  // 0x596C70
     // IDA 0x48B2A0 area
-    static void WriteSettings(); // IDA: NOT_FOUND
+    // design: static function, no direct binary match in IDA
+    static void WriteSettings();
     // IDA 0x48B2A0 area
-    static void SelectMap(const char* mapName); // IDA: NOT_FOUND
+    // design: static function, no direct binary match in IDA
+    static void SelectMap(const char* mapName);
     // IDA 0x48B2A0 area
-    static void SetupAI(); // IDA: NOT_FOUND
+    // design: static function, no direct binary match in IDA
+    static void SetupAI();
     // IDA 0x48B2A0 area
-    static void SetupColors(); // IDA: NOT_FOUND
+    // design: static function, no direct binary match in IDA
+    static void SetupColors();
     // IDA 0x48B2A0 area
-    static void StartGame(); // IDA: NOT_FOUND
+    // design: static function, no direct binary match in IDA
+    static void StartGame();
 
     static int32_t  s_PlayerCount;  // 0x00
     static int32_t  s_MapSize;      // 0x04
@@ -52,7 +57,8 @@ public:
     // IDA 0x48B2A0 area
     static void SetDescriptionWStr(const wchar_t* desc);  // 0x69ACD0
     // IDA 0x48B2A0 area
-    static const wchar_t* GetDescription(); // IDA: NOT_FOUND
+    // design: static function, no direct binary match in IDA
+    static const wchar_t* GetDescription();
 
     static char     m_Name[64];     // 0x00
     static int32_t  m_Value;        // 0x40
@@ -84,7 +90,8 @@ public:
     // IDA 0x5FB050
     static void Read();  // 0x5FA620
     // IDA 0x5FB050 area
-    static void sub_5FB050(); // IDA: NOT_FOUND
+    // design: static function, no direct binary match in IDA
+    static void sub_5FB050();
     // IDA 0x5FB050 area
     static int32_t FindFlagged(int32_t flag);  // 0x7931A0
 
@@ -101,7 +108,8 @@ public:
     // IDA 0x608260
     static int32_t DlgProc(HWND hDlg, UINT msg, WPARAM wParam, LPARAM lParam);  // 0x5E6920
     // IDA 0x608260 area
-    void sub_608260(); // IDA: NOT_FOUND
+    // design: no binary equivalent found in IDA
+    void sub_608260();
 
     int32_t     SkirmishSetup_field_00;       // 0x00
     int32_t     SkirmishSetup_field_04;       // 0x04
@@ -195,7 +203,8 @@ public:
     // IDA 0x48B2A0 area
     static int32_t Range(int32_t min, int32_t max);  // 0x65C7E0
     // IDA 0x48B2A0 area
-    static void Seed(uint32_t seed); // IDA: NOT_FOUND
+    // design: static function, no direct binary match in IDA
+    static void Seed(uint32_t seed);
 
     static uint32_t s_Seed;         // 0x00
     static uint32_t s_State[4];     // 0x04
@@ -208,7 +217,8 @@ public:
 class GameInit
 {
 public:
-    virtual ~GameInit() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~GameInit() = default;
 
     virtual void InitMultiplayerModes() {} // 0x5D86D0
 
@@ -217,7 +227,8 @@ public:
 class GameLobby
 {
 public:
-    virtual ~GameLobby() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~GameLobby() = default;
 
     virtual void DlgProc() {} // 0x5E1CA0
 
@@ -226,7 +237,8 @@ public:
 class GameOption_WorldDominationTour
 {
 public:
-    virtual ~GameOption_WorldDominationTour() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~GameOption_WorldDominationTour() = default;
 
     virtual void QueryInterface() {} // 0x766A60
     virtual void Constructor() {} // 0x767300
@@ -237,7 +249,8 @@ public:
 class GameOptions
 {
 public:
-    virtual ~GameOptions() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~GameOptions() = default;
 
     virtual void GameSpeedChanged() {} // 0x4E1DE0
     virtual void ReadSettings() {} // 0x5B8CE0
@@ -252,7 +265,8 @@ public:
 class GameOptionsClass
 {
 public:
-    virtual ~GameOptionsClass() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~GameOptionsClass() = default;
 
     virtual void UnlockMovieIfNeeded_MoviesList() {} // 0x5FBF80
     virtual void PopulateMovieList() {} // 0x5FC000
@@ -263,7 +277,8 @@ public:
 class GameResult
 {
 public:
-    virtual ~GameResult() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~GameResult() = default;
 
     virtual void CalcScore() {} // 0x4C6210
 
@@ -272,7 +287,8 @@ public:
 class GameScreen
 {
 public:
-    virtual ~GameScreen() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~GameScreen() = default;
 
     virtual void DlgProc() {} // 0x60D540
 
@@ -281,7 +297,8 @@ public:
 class GameSetup
 {
 public:
-    virtual ~GameSetup() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~GameSetup() = default;
 
     virtual void sub_477440() {} // 0x477440
     virtual void FormatToString() {} // 0x477510
@@ -301,7 +318,8 @@ public:
 class GameState
 {
 public:
-    virtual ~GameState() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~GameState() = default;
 
     virtual void Reset() {} // 0x680FF0
 
@@ -310,7 +328,8 @@ public:
 class LoadGame
 {
 public:
-    virtual ~LoadGame() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~LoadGame() = default;
 
     virtual void LoadIteratedData() {} // 0x4136C0
     virtual void ClearAllSlots() {} // 0x413800
@@ -348,7 +367,8 @@ public:
 class LoadSaveDialog
 {
 public:
-    virtual ~LoadSaveDialog() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~LoadSaveDialog() = default;
 
     virtual void FillList() {} // 0x5596A0
 
@@ -357,7 +377,8 @@ public:
 class LoadScreen
 {
 public:
-    virtual ~LoadScreen() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~LoadScreen() = default;
 
     virtual void RenderLoop() {} // 0x4B6C30
     virtual void InitVtable() {} // 0x4BA2F0
@@ -376,7 +397,8 @@ public:
 class LoadingScreen
 {
 public:
-    virtual ~LoadingScreen() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~LoadingScreen() = default;
 
     virtual void Render() {} // 0x552D60
     virtual void AdjustForResolution() {} // 0x554100
@@ -425,7 +447,8 @@ public:
 class SaveLoad
 {
 public:
-    virtual ~SaveLoad() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~SaveLoad() = default;
 
     virtual void StreamVector() {} // 0x67A770
 
@@ -434,7 +457,8 @@ public:
 class SaveLoadDialog
 {
 public:
-    virtual ~SaveLoadDialog() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~SaveLoadDialog() = default;
 
     virtual void DlgProc() {} // 0x558DD0
     virtual void LookupDialogHash() {} // 0x608380
@@ -447,7 +471,8 @@ public:
 class SkirmishDialog
 {
 public:
-    virtual ~SkirmishDialog() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~SkirmishDialog() = default;
 
     virtual void FillComboBoxes() {} // 0x4E3B90
     virtual void HandleGameStart() {} // 0x5B9A60
@@ -460,7 +485,8 @@ public:
 class SkirmishMapGen
 {
 public:
-    virtual ~SkirmishMapGen() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~SkirmishMapGen() = default;
 
     virtual void DlgProc() {} // 0x596300
     virtual void LookupDialogHash() {} // 0x6067A0
@@ -471,7 +497,8 @@ public:
 class SkirmishVector
 {
 public:
-    virtual ~SkirmishVector() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~SkirmishVector() = default;
 
     virtual void PushBack() {} // 0x5EEE40
 
@@ -480,7 +507,8 @@ public:
 class SyncDelayClass
 {
 public:
-    virtual ~SyncDelayClass() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~SyncDelayClass() = default;
 
     virtual void ProcessNetworkSync() {} // 0x55DEE0
 

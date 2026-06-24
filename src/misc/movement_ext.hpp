@@ -20,19 +20,24 @@ public:
     MovementAI() = default;
 
     // IDA 0x487E00
-    void sub_487E00(); // IDA: NOT_FOUND
+    // wrapper: delegates to MovementAI::IsPathMovementAllowed at 0x487E00
+    void sub_487E00();
     // IDA 0x4A5150
-    void sub_4A5150(); // IDA: NOT_FOUND
+    // wrapper: delegates to MovementAI::IsProgressAtEnd at 0x4A5150
+    void sub_4A5150();
     // IDA 0x487E00 area
     bool Check(FootClass* foot);  // 0x4A5360
     // IDA 0x487E00 area
-    void Update(FootClass* foot); // IDA: NOT_FOUND
+    // design: no binary equivalent found in IDA
+    void Update(FootClass* foot);
     // IDA 0x487E00 area
-    void Reset(); // IDA: NOT_FOUND
+    // design: no binary equivalent found in IDA
+    void Reset();
     // IDA 0x487E00 area
-    void SetTarget(const CoordStruct& target); // IDA: NOT_FOUND
+    // design: no binary equivalent found in IDA
+    void SetTarget(const CoordStruct& target);
     // IDA 0x487E00 area
-    CoordStruct GetTarget() const;  // 0x6F9DC0
+    CoordStruct GetTarget() const;  // 0x6F9DC0 // IDA: TechnoClass::GetTarget
 
     CoordStruct m_Target;       // 0x00
     int32_t     m_State;        // 0x0C
@@ -53,11 +58,14 @@ public:
     // IDA 0x5B2970 area
     static bool Check(FootClass* foot, const CoordStruct& dest);  // 0x5B2930
     // IDA 0x5B2970 area
-    static void sub_5B2970(); // IDA: NOT_FOUND
+    // design: static function, no direct binary match in IDA
+    static void sub_5B2970();
     // IDA 0x5B2970 area
-    static bool IsMoving(TechnoClass* tech); // IDA: NOT_FOUND
+    // design: static function, no direct binary match in IDA
+    static bool IsMoving(TechnoClass* tech);
     // IDA 0x5B2970 area
-    static void StopMoving(TechnoClass* tech); // IDA: NOT_FOUND
+    // design: static function, no direct binary match in IDA
+    static void StopMoving(TechnoClass* tech);
 
     int32_t     Movement_field_00;       // 0x00
 };
@@ -69,7 +77,8 @@ public:
 class Locomotor
 {
 public:
-    virtual ~Locomotor() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
+    // design: default destructor (compiler-generated), no callgraph reference
+    virtual ~Locomotor() = default;
 
     virtual void GetSpeed(); // 0x426630
 
@@ -78,7 +87,8 @@ public:
 class MoveFeedback
 {
 public:
-    virtual ~MoveFeedback() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~MoveFeedback() = default;
 
     virtual void ClearBuffer(); // 0x40B640
     virtual void PointerToIndex(); // 0x40B670
@@ -105,7 +115,8 @@ public:
 class MovementClass
 {
 public:
-    virtual ~MovementClass() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~MovementClass() = default;
 
     virtual void CompareAbsCoords(); // 0x4C9530
     virtual void CalcSpeed(); // 0x54BFF0
@@ -116,7 +127,8 @@ public:
 class Pathfinding
 {
 public:
-    virtual ~Pathfinding() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
+    // design: default destructor (compiler-generated), no callgraph reference
+    virtual ~Pathfinding() = default;
 
     virtual void AStar(); // 0x42C290
     virtual void CalcDistance(); // 0x42D170
@@ -136,7 +148,8 @@ public:
 class PathfindingClass
 {
 public:
-    virtual ~PathfindingClass() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~PathfindingClass() = default;
 
     virtual void FindPath(); // 0x4FFB20
 

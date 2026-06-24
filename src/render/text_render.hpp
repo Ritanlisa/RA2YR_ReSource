@@ -11,8 +11,10 @@ public:
     TextRenderer();
     ~TextRenderer();
 
-    bool Init(int max_width, int max_height); // IDA: NOT_FOUND
-    void Shutdown(); // IDA: NOT_FOUND
+    // design: no binary equivalent found in IDA
+    bool Init(int max_width, int max_height);
+    // design: no binary equivalent found in IDA
+    void Shutdown();
 
     void DrawText(DSurface* target, int x, int y, const wchar_t* text, // 0x4a61c0
                   uint8_t r, uint8_t g, uint8_t b);
@@ -20,8 +22,10 @@ public:
     void DrawText(DSurface* target, int x, int y, const char* text, // 0x4a61c0
                   uint8_t r, uint8_t g, uint8_t b);
 
-    int GetTextWidth(const wchar_t* text); // IDA: NOT_FOUND
-    int GetTextHeight(); // IDA: NOT_FOUND
+    // wrapper: delegates to TextRenderer::DrawText at 0x4A61C0
+    int GetTextWidth(const wchar_t* text);
+    // wrapper: delegates to TextRenderer::DrawText at 0x4A61C0
+    int GetTextHeight();
 
 private:
     HDC          m_hdc;

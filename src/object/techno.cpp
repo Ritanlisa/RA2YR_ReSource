@@ -817,7 +817,7 @@ bool TechnoClass::CreateUnit()
 //  4. If no completion threshold (type+664==0): create unit immediately
 //  5. Special building launch: NukeSilo/ICBM/SpySat — launch anim + EVA + radar
 // ============================================================
-static bool ProductionCompletionCallback(TechnoClass* techno)
+bool ProductionCompletionCallback(TechnoClass* techno)
 {
     auto* building = (gamemd::BuildingClass*)(techno);
     auto* type = (gamemd::BuildingTypeClass*)(techno->GetTechnoType());
@@ -875,7 +875,7 @@ static bool ProductionCompletionCallback(TechnoClass* techno)
 //  4. Construction delay check (vt_entry_456)
 //  5. Branch: CreateUnitAtCoords_Timed or _Standard
 // ============================================================
-static bool CreateUnitOnCompletion(TechnoClass* techno)
+bool CreateUnitOnCompletion(TechnoClass* techno)
 {
     auto* building = (gamemd::BuildingClass*)(techno);
     auto* type = (gamemd::BuildingTypeClass*)(techno->GetTechnoType());
@@ -933,7 +933,7 @@ static bool CreateUnitOnCompletion(TechnoClass* techno)
 //  6. Cell walkability check at 3 neighbor cells
 //  7. Direction angle → update production progress timer / mission
 // ============================================================
-static void ConstructionPositionTracker(TechnoClass* techno)
+void ConstructionPositionTracker(TechnoClass* techno)
 {
     auto* building = (gamemd::BuildingClass*)(techno);
     auto* type = (gamemd::BuildingTypeClass*)(techno->GetTechnoType());

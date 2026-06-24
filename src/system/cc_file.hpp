@@ -10,10 +10,12 @@ namespace gamemd
 class MemoryBuffer
 {
 public:
-    constexpr MemoryBuffer() noexcept = default; // IDA: UNMATCHED — defaulted_special_member, default_ctor, no_callgraph_match
+    // design: default constructor (compiler-generated), no callgraph reference
+    constexpr MemoryBuffer() noexcept = default;
 
     explicit MemoryBuffer(int size) noexcept
-        : MemoryBuffer(nullptr, size) // IDA: UNMATCHED — no_callgraph_match, no_git_history
+        // unmatched: no callgraph reference and no git history record
+        : MemoryBuffer(nullptr, size)
     {}
 
     MemoryBuffer(void* pBuffer, int size) noexcept
@@ -27,7 +29,8 @@ public:
         }
     }
 
-    ~MemoryBuffer() noexcept // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    ~MemoryBuffer() noexcept
     {
         if (Allocated)
         {
@@ -43,12 +46,14 @@ public:
     MemoryBuffer(MemoryBuffer&& other) noexcept
         : Buffer(other.Buffer)
         , Size(other.Size)
-        , Allocated(other.Allocated) // IDA: UNMATCHED — no_callgraph_match, no_git_history
+        // unmatched: no callgraph reference and no git history record
+        , Allocated(other.Allocated)
     {
         other.Allocated = false;
     }
 
-    MemoryBuffer& operator=(const MemoryBuffer& other) noexcept // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    MemoryBuffer& operator=(const MemoryBuffer& other) noexcept
     {
         if (this != &other)
         {
@@ -60,7 +65,8 @@ public:
         return *this;
     }
 
-    MemoryBuffer& operator=(MemoryBuffer&& other) noexcept // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    MemoryBuffer& operator=(MemoryBuffer&& other) noexcept
     {
         MemoryBuffer tmp(std::move(*this));
         Buffer = other.Buffer;
@@ -88,7 +94,8 @@ class CCFileClass : public CDFileClass
 public:
     virtual ~CCFileClass() override = default;  // 0x535A70
 
-    explicit CCFileClass(const char* pFileName) noexcept; // IDA: NOT_FOUND
+    // wrapper: delegates to CCFileClass::Destruct at 0x535A70
+    explicit CCFileClass(const char* pFileName) noexcept;
 
     bool  Open(const char* pFileName);  // 0x473C50
     void* ReadEntireFile();  // 0x4A3890

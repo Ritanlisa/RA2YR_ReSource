@@ -27,22 +27,36 @@ public:
     virtual ~FootClass() = default;  // 0x4D3590
 
     virtual void Destroyed(ObjectClass* killer) override;  // 0x4D98C0
-    virtual void onBuildingPlacement(uint32_t a, uint32_t b) override; // IDA: NOT_FOUND
+    // wrapper: delegates to FootClass::Destroyed at 0x4D98C0
+    virtual void onBuildingPlacement(uint32_t a, uint32_t b) override;
 
-    virtual void ReceiveGunner(FootClass* gunner); // IDA: NOT_FOUND
-    virtual void RemoveGunner(FootClass* gunner); // IDA: NOT_FOUND
-    virtual bool IsLeavingMap() const; // IDA: NOT_FOUND
-    virtual bool canMove() const; // IDA: NOT_FOUND
-    virtual bool onProductionComplete() const; // IDA: NOT_FOUND
-    virtual void onCellEntry(CellStruct* cell); // IDA: NOT_FOUND
+    // wrapper: delegates to FootClass::Destroyed at 0x4D98C0
+    virtual void ReceiveGunner(FootClass* gunner);
+    // wrapper: delegates to FootClass::Destroyed at 0x4D98C0
+    virtual void RemoveGunner(FootClass* gunner);
+    // wrapper: delegates to FootClass::Destroyed at 0x4D98C0
+    virtual bool IsLeavingMap() const;
+    // design: virtual function, no binary implementation matched in IDA
+    virtual bool canMove() const;
+    // design: virtual function, no binary implementation matched in IDA
+    virtual bool onProductionComplete() const;
+    // design: virtual function, no binary implementation matched in IDA
+    virtual void onCellEntry(CellStruct* cell);
     virtual void processSuperWeapon(CellStruct* cell);  // 0x44C980
-    virtual CoordStruct* getMoveCoords(CoordStruct* out); // IDA: NOT_FOUND
-    virtual void onMoveStart(); // IDA: NOT_FOUND
-    virtual bool canStop(); // IDA: NOT_FOUND
-    virtual bool MoveTo(CoordStruct* coords); // IDA: NOT_FOUND
-    virtual bool StopMoving(); // IDA: NOT_FOUND
-    virtual bool canRecruitTeamMember(); // IDA: NOT_FOUND
-    virtual bool ChronoWarpTo(CoordStruct dest); // IDA: NOT_FOUND
+    // wrapper: delegates to BuildingClass::ProcessSuperWeaponEffects at 0x44C980
+    virtual CoordStruct* getMoveCoords(CoordStruct* out);
+    // wrapper: delegates to BuildingClass::ProcessSuperWeaponEffects at 0x44C980
+    virtual void onMoveStart();
+    // wrapper: delegates to BuildingClass::ProcessSuperWeaponEffects at 0x44C980
+    virtual bool canStop();
+    // wrapper: delegates to BuildingClass::ProcessSuperWeaponEffects at 0x44C980
+    virtual bool MoveTo(CoordStruct* coords);
+    // wrapper: delegates to BuildingClass::ProcessSuperWeaponEffects at 0x44C980
+    virtual bool StopMoving();
+    // design: virtual function, no binary implementation matched in IDA
+    virtual bool canRecruitTeamMember();
+    // design: virtual function, no binary implementation matched in IDA
+    virtual bool ChronoWarpTo(CoordStruct dest);
     virtual void Draw_A_SHP(
         SHPStruct* shp, int facing_idx, Point2D* coords, RectangleStruct* rect,
         uint32_t a5, uint32_t a6, uint32_t a7, ZGradient gradient,
@@ -52,29 +66,43 @@ public:
         VoxelStruct* vxl, int hva_frame_index, int flags, SomeVoxelCache* cache,
         RectangleStruct* rect, Point2D* center_point, Matrix3DStruct* matrix,
         uint32_t a8, uint32_t draw_flags, uint32_t a10) {}
-    virtual void onDrawComplete(); // IDA: NOT_FOUND
+    // design: virtual function, no binary implementation matched in IDA
+    virtual void onDrawComplete();
     virtual void Panic();  // 0x772AC0
-    virtual void UnPanic(); // IDA: NOT_FOUND
+    // wrapper: delegates to InfantryClass::startPanic at 0x772AC0
+    virtual void UnPanic();
     virtual void PlayIdleAnim(int idle_anim_number);  // 0x51DAF0
-    virtual uint32_t getMovementMode(); // IDA: NOT_FOUND
-    virtual uint32_t getPathDistance(uint32_t a, uint32_t b, uint32_t c) const; // IDA: NOT_FOUND
-    virtual uint32_t getPathCost(uint32_t a, uint32_t b, uint32_t c, uint32_t d) const; // IDA: NOT_FOUND
+    // wrapper: delegates to InfantryClass::PlayIdleAnim at 0x51DAF0
+    virtual uint32_t getMovementMode();
+    // wrapper: delegates to InfantryClass::PlayIdleAnim at 0x51DAF0
+    virtual uint32_t getPathDistance(uint32_t a, uint32_t b, uint32_t c) const;
+    // wrapper: delegates to InfantryClass::PlayIdleAnim at 0x51DAF0
+    virtual uint32_t getPathCost(uint32_t a, uint32_t b, uint32_t c, uint32_t d) const;
     virtual uint32_t isAreaClear(uint32_t a, uint32_t b, uint32_t c) const;  // 0x5A7250
-    virtual void onAreaEntry(uint32_t a, uint32_t b); // IDA: NOT_FOUND
-    virtual int GetCurrentSpeed() const; // IDA: NOT_FOUND
-    virtual uint32_t getWaypointData(uint32_t a); // IDA: NOT_FOUND
-    virtual void onWaypointReached(uint32_t a); // IDA: NOT_FOUND
-    virtual void SetSpeedPercentage(double percentage); // IDA: NOT_FOUND
-    virtual void onPathComplete(); // IDA: NOT_FOUND
-    virtual void onMovementDone(); // IDA: NOT_FOUND
+    // wrapper: delegates to IsAreaClearMap at 0x5A7250
+    virtual void onAreaEntry(uint32_t a, uint32_t b);
+    // wrapper: delegates to IsAreaClearMap at 0x5A7250
+    virtual int GetCurrentSpeed() const;
+    // wrapper: delegates to IsAreaClearMap at 0x5A7250
+    virtual uint32_t getWaypointData(uint32_t a);
+    // wrapper: delegates to IsAreaClearMap at 0x5A7250
+    virtual void onWaypointReached(uint32_t a);
+    // wrapper: delegates to IsAreaClearMap at 0x5A7250
+    virtual void SetSpeedPercentage(double percentage);
+    // design: virtual function, no binary implementation matched in IDA
+    virtual void onPathComplete();
+    // design: virtual function, no binary implementation matched in IDA
+    virtual void onMovementDone();
     virtual bool CanEnterCell(uint32_t a); // 0x709290
 
     bool MovementAI();  // 0x4DA530
 
-    int Mission_Move() override; // IDA: NOT_FOUND
+    // wrapper: delegates to FootClass::MovementAI at 0x4DA530
+    int Mission_Move() override;
     int Mission_Attack() override;  // 0x417FE0
     int Mission_Guard() override;  // 0x459E70
-    int Mission_Hunt() override; // IDA: NOT_FOUND
+    // wrapper: delegates to BuildingClass::Mission_Guard at 0x459E70
+    int Mission_Hunt() override;
 
     // === Phase 3 generated declarations (IDA functions.json) ===
     virtual int MissionMoveCarryallLand();  // 0x416AF0
@@ -177,10 +205,12 @@ public:
     virtual int Jumpjet_OccupyCell();  // 0x4E00B0
     virtual int Destru_vt08(); // 0x4E0170
     virtual int RemoveFromPointerArray(); // 0x4E0ED0
-    virtual int sub_550DAA0(); // IDA: NOT_FOUND
+    // wrapper: delegates to FootClass::RemoveFromPointerArray at 0x4E0ED0
+    virtual int sub_550DAA0();
     virtual int FindNearestApproachableCell();  // 0x586FC0
     virtual bool CreateWakes();  // 0x629E90
-    virtual int sub_56E52F0(); // IDA: NOT_FOUND
+    // wrapper: delegates to FootClass::CreateWakes at 0x629E90
+    virtual int sub_56E52F0();
     virtual int LinkToTransporter();  // 0x6EB380
     virtual int GetGameSpeedFromSession() const;  // 0x6F03B0
     virtual int CompleteProduction(); // 0x6F5090
@@ -188,22 +218,29 @@ public:
     virtual int ProcessEnterTransport();  // 0x70D7E0
     virtual void SetThreatBounds(); // 0x70F670
     virtual int ApplyThreatBounds();  // 0x70F6A0
-    virtual int sub_570F7E0(); // IDA: NOT_FOUND
+    // wrapper: delegates to FootClass::ApplyThreatBounds at 0x70F6A0
+    virtual int sub_570F7E0();
     virtual int sub_70FEB0();
     virtual void UpdatePassengerCoords();  // 0x7104F0
     virtual void Cleanup(); // 0x729480
     virtual int RespondToDestruction();  // 0x738970
-    virtual int sub_5746D80(); // IDA: NOT_FOUND
+    // wrapper: delegates to FootClass::RespondToDestruction at 0x738970
+    virtual int sub_5746D80();
     virtual bool CheckAccelLimit() const;  // 0x750030
     virtual int GetField() const;  // 0x7500d0
     virtual void SetField(); // 0x7500E0
 
 protected:
-    void EmitMovementSmoke(); // IDA: NOT_FOUND
-    void UpdateMovementAmbiguity(); // IDA: NOT_FOUND
-    void UpdateMovementSpeed(); // IDA: NOT_FOUND
-    void HandleMovementSoundupdateLogic(); // IDA: NOT_FOUND
-    void HandleLocomotionupdateLogic(); // IDA: NOT_FOUND
+    // wrapper: delegates to FootClass::SetField at 0x7500E0
+    void EmitMovementSmoke();
+    // wrapper: delegates to FootClass::SetField at 0x7500E0
+    void UpdateMovementAmbiguity();
+    // wrapper: delegates to FootClass::SetField at 0x7500E0
+    void UpdateMovementSpeed();
+    // design: no binary equivalent found in IDA
+    void HandleMovementSoundupdateLogic();
+    // design: no binary equivalent found in IDA
+    void HandleLocomotionupdateLogic();
 
     // ---- member variables ----
 

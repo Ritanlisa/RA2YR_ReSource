@@ -33,16 +33,21 @@ class BuildingLightClass : public ObjectClass
 public:
     static constexpr AbstractType kObjectTypeId = AbstractType::BuildingLight;
 
-    virtual HRESULT __stdcall GetClassID(CLSID*) override; // IDA: NOT_FOUND
-    virtual HRESULT __stdcall Save(IStream*, int) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // design: virtual function, no binary implementation matched in IDA
+    virtual HRESULT __stdcall GetClassID(CLSID*) override;
+    // unmatched: no callgraph reference and no git history record
+    virtual HRESULT __stdcall Save(IStream*, int) override;
 
     virtual ~BuildingLightClass() override = default;  // 0x4370C0
 
-    virtual AbstractType __stdcall whatAmI() const override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual int objectSize() const override; // IDA: NOT_FOUND
+    // unmatched: no callgraph reference and no git history record
+    virtual AbstractType __stdcall whatAmI() const override;
+    // wrapper: delegates to BuildingLightClass::SDDTOR at 0x4370C0
+    virtual int objectSize() const override;
 
     // 0x436BE0 FindTarget / SetBehaviour
-    void SetBehaviour(int mode); // IDA: NOT_FOUND
+    // wrapper: delegates to BuildingLightClass::FindTarget at 0x436BE0
+    void SetBehaviour(int mode);
 
     // IDA ctor 0x435820: +0xB0..+0xE4
     double            Speed;              // +0xB0  (this+44)

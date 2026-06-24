@@ -25,7 +25,8 @@ public:
     // IDA 0x48B2A0 area
     static bool CheckControlTypeDialog(HWND hDlg, int32_t ctrlID, int32_t type);  // 0x60C540
     // IDA 0x48B2A0 area
-    static void SetControlText(HWND hDlg, int32_t ctrlID, const wchar_t* text); // IDA: NOT_FOUND
+    // design: static function, no direct binary match in IDA
+    static void SetControlText(HWND hDlg, int32_t ctrlID, const wchar_t* text);
 
     int32_t     Control_field_00;       // 0x00
 };
@@ -42,7 +43,8 @@ public:
     // IDA 0x5BD3D0 area
     static int32_t MeasureWidth(const wchar_t* text);  // 0x433ED0
     // IDA 0x5BD3D0 area
-    static void sub_5BD3D0(); // IDA: NOT_FOUND
+    // design: static function, no direct binary match in IDA
+    static void sub_5BD3D0();
     // IDA 0x5BD3D0 area
     static void DrawText(DSurface* surface, const wchar_t* text, int32_t x, int32_t y, uint32_t color);  // 0x4A61C0
 
@@ -57,7 +59,8 @@ class Font
 {
 public:
     // IDA 0x4346C0
-    void sub_4346C0(); // IDA: NOT_FOUND
+    // wrapper: delegates to Font::GetGlyphDataForChar at 0x4346C0
+    void sub_4346C0();
     // IDA 0x4346C0 area
     void Print(const char* text, int32_t x, int32_t y, uint32_t color);  // 0x434CD0
 
@@ -269,7 +272,8 @@ public:
 class BitArray
 {
 public:
-    virtual ~BitArray() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~BitArray() = default;
 
     virtual void TestBit() {} // 0x54A950
 
@@ -278,7 +282,8 @@ public:
 class Bitmap
 {
 public:
-    virtual ~Bitmap() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
+    // design: default destructor (compiler-generated), no callgraph reference
+    virtual ~Bitmap() = default;
 
     virtual void GetNumberBitmapWOL() {} // 0x783A90
 
@@ -287,7 +292,8 @@ public:
 class BitmapClass
 {
 public:
-    virtual ~BitmapClass() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~BitmapClass() = default;
 
     virtual void ProcessFrame() {} // 0x42DF90
 
@@ -296,7 +302,8 @@ public:
 class ButtonClass
 {
 public:
-    virtual ~ButtonClass() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~ButtonClass() = default;
 
     virtual void SetState() {} // 0x69DEA0
 
@@ -305,7 +312,8 @@ public:
 class ButtonOwnerDraw
 {
 public:
-    virtual ~ButtonOwnerDraw() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~ButtonOwnerDraw() = default;
 
     virtual void DlgProc() {} // 0x616980
 
@@ -314,7 +322,8 @@ public:
 class CampaignCoop
 {
 public:
-    virtual ~CampaignCoop() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~CampaignCoop() = default;
 
     virtual void Setup() {} // 0x5C21D0
 
@@ -323,7 +332,8 @@ public:
 class CampaignMenu
 {
 public:
-    virtual ~CampaignMenu() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~CampaignMenu() = default;
 
     virtual void DlgProc() {} // 0x52D640
 
@@ -332,7 +342,8 @@ public:
 class CampaignProperties_WorldDominationTour
 {
 public:
-    virtual ~CampaignProperties_WorldDominationTour() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~CampaignProperties_WorldDominationTour() = default;
 
     virtual void QueryInterface() {} // 0x76C030
 
@@ -341,7 +352,8 @@ public:
 class CampaignScore
 {
 public:
-    virtual ~CampaignScore() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~CampaignScore() = default;
 
     virtual void DialogProc() {} // 0x46DFD0
     virtual void ProcessScreen() {} // 0x46FC00
@@ -363,7 +375,8 @@ public:
 class CampaignSelect
 {
 public:
-    virtual ~CampaignSelect() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~CampaignSelect() = default;
 
     virtual void LookupByName() {} // 0x46CC90
     virtual void DlgProc() {} // 0x52EC00
@@ -374,7 +387,8 @@ public:
 class Campaign_WorldDominationTour
 {
 public:
-    virtual ~Campaign_WorldDominationTour() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~Campaign_WorldDominationTour() = default;
 
     virtual void QueryInterface() {} // 0x765600
 
@@ -417,7 +431,8 @@ public:
 class CheckSum
 {
 public:
-    virtual ~CheckSum() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~CheckSum() = default;
 
     virtual void AccumulateModulo() {} // 0x632C40
 
@@ -426,7 +441,8 @@ public:
 class Checkbox
 {
 public:
-    virtual ~Checkbox() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
+    // design: default destructor (compiler-generated), no callgraph reference
+    virtual ~Checkbox() = default;
 
     virtual void WndProc() {} // 0x6163A0
 
@@ -435,7 +451,8 @@ public:
 class Checksum
 {
 public:
-    virtual ~Checksum() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
+    // design: default destructor (compiler-generated), no callgraph reference
+    virtual ~Checksum() = default;
 
     virtual void AddString() {} // 0x4A1DB0
 
@@ -444,7 +461,8 @@ public:
 class ComboBoxDropDown
 {
 public:
-    virtual ~ComboBoxDropDown() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~ComboBoxDropDown() = default;
 
     virtual void WndProc() {} // 0x617250
 
@@ -453,7 +471,8 @@ public:
 class ComboBoxOwnerDraw
 {
 public:
-    virtual ~ComboBoxOwnerDraw() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~ComboBoxOwnerDraw() = default;
 
     virtual void GetWidthHeight() {} // 0x600670
     virtual void MatchDimensions() {} // 0x600680
@@ -473,7 +492,8 @@ public:
 class ControlClass
 {
 public:
-    virtual ~ControlClass() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~ControlClass() = default;
 
     virtual void Construct() {} // 0x48E520
     virtual void CtorFromData() {} // 0x48E570
@@ -488,7 +508,8 @@ public:
 class CreditsPower
 {
 public:
-    virtual ~CreditsPower() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~CreditsPower() = default;
 
     virtual void sub_4C3D00() {} // 0x4C3D00
     virtual void Display() {} // 0x4C3E30
@@ -499,7 +520,8 @@ public:
 class DialogControl
 {
 public:
-    virtual ~DialogControl() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~DialogControl() = default;
 
     virtual void Hide() {} // 0x4E1450
     virtual void Show() {} // 0x4E1460
@@ -514,7 +536,8 @@ public:
 class DialogQueue
 {
 public:
-    virtual ~DialogQueue() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~DialogQueue() = default;
 
     virtual void PushEntry() {} // 0x5D4E70
     virtual void RemoveEntry() {} // 0x5D4ED0
@@ -525,7 +548,8 @@ public:
 class DropListClass
 {
 public:
-    virtual ~DropListClass() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~DropListClass() = default;
 
     virtual void OnClick() {} // 0x4B4EE0
     virtual void ?() {} // 0x4B4F20
@@ -559,7 +583,8 @@ public:
 class DropPod
 {
 public:
-    virtual ~DropPod() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~DropPod() = default;
 
     virtual void ProcessLanding() {} // 0x4CE840
 
@@ -568,7 +593,8 @@ public:
 class EditClass
 {
 public:
-    virtual ~EditClass() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~EditClass() = default;
 
     virtual void QueryInterface() {} // 0x4B57D0
 
@@ -577,7 +603,8 @@ public:
 class EditControl
 {
 public:
-    virtual ~EditControl() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~EditControl() = default;
 
     virtual void WndProc() {} // 0x614B30
     virtual void GrowBuffer() {} // 0x7B72F0
@@ -588,7 +615,8 @@ public:
 class FontClass
 {
 public:
-    virtual ~FontClass() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~FontClass() = default;
 
     virtual void RenderGlyph() {} // 0x434120
     virtual void RenderText() {} // 0x434500
@@ -607,7 +635,8 @@ public:
 class FontRenderer
 {
 public:
-    virtual ~FontRenderer() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~FontRenderer() = default;
 
     virtual void InitContext() {} // 0x4348F0
     virtual void DrawText() {} // 0x434B90
@@ -618,7 +647,8 @@ public:
 class GadgetGrid
 {
 public:
-    virtual ~GadgetGrid() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
+    // design: default destructor (compiler-generated), no callgraph reference
+    virtual ~GadgetGrid() = default;
 
     virtual void InsertItem() {} // 0x4134A0
     virtual void RemoveItem() {} // 0x4135D0
@@ -629,7 +659,8 @@ public:
 class InputManager
 {
 public:
-    virtual ~InputManager() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~InputManager() = default;
 
     virtual void sub_4E15A0() {} // 0x4E15A0
     virtual void ProcessEvents() {} // 0x4E1640
@@ -646,7 +677,8 @@ public:
 class InputManager_ProcessEvents
 {
 public:
-    virtual ~InputManager_ProcessEvents() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~InputManager_ProcessEvents() = default;
 
     virtual void AddRef() {} // 0x40D230
     virtual void Release() {} // 0x40D240
@@ -663,7 +695,8 @@ public:
 class Keyboard
 {
 public:
-    virtual ~Keyboard() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
+    // design: default destructor (compiler-generated), no callgraph reference
+    virtual ~Keyboard() = default;
 
     virtual void MapKey() {} // 0x54F450
 
@@ -672,7 +705,8 @@ public:
 class List
 {
 public:
-    virtual ~List() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
+    // design: default destructor (compiler-generated), no callgraph reference
+    virtual ~List() = default;
 
     virtual void FindByValue() {} // 0x5943E0
 
@@ -681,7 +715,8 @@ public:
 class ListBox
 {
 public:
-    virtual ~ListBox() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~ListBox() = default;
 
     virtual void Constructor() {} // 0x5C1030
     virtual void FillEntries() {} // 0x5D6450
@@ -723,7 +758,8 @@ public:
 class ListNode
 {
 public:
-    virtual ~ListNode() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~ListNode() = default;
 
     virtual void Alloc() {} // 0x5A9A20
 
@@ -732,7 +768,8 @@ public:
 class Main
 {
 public:
-    virtual ~Main() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
+    // design: default destructor (compiler-generated), no callgraph reference
+    virtual ~Main() = default;
 
     virtual void CreateDialog() {} // 0x4E1D00
 
@@ -741,7 +778,8 @@ public:
 class ProgressAnim
 {
 public:
-    virtual ~ProgressAnim() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~ProgressAnim() = default;
 
     virtual void Init() {} // 0x642A60
 
@@ -750,7 +788,8 @@ public:
 class Slider
 {
 public:
-    virtual ~Slider() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
+    // design: default destructor (compiler-generated), no callgraph reference
+    virtual ~Slider() = default;
 
     virtual void CalcPosition() {} // 0x412A40
 
@@ -785,7 +824,8 @@ public:
 class TabCameoListClass
 {
 public:
-    virtual ~TabCameoListClass() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~TabCameoListClass() = default;
 
     virtual void AddCameo_ReplaceItAll() {} // 0x6A8710
 
@@ -794,7 +834,8 @@ public:
 class TabControl
 {
 public:
-    virtual ~TabControl() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~TabControl() = default;
 
     virtual void WndProc() {} // 0x612B70
     virtual void DlgProc() {} // 0x61D950
@@ -832,7 +873,8 @@ public:
 class Tooltip
 {
 public:
-    virtual ~Tooltip() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
+    // design: default destructor (compiler-generated), no callgraph reference
+    virtual ~Tooltip() = default;
 
     virtual void Enable() {} // 0x7241A0
 

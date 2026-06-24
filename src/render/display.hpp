@@ -31,10 +31,13 @@ public:
     virtual const wchar_t* GetToolTip(unsigned int dialog_id);
     virtual void CloseWindow();  // 0x7C865C
     virtual void vt_entry_8C();
-    virtual bool vt_entry_90(const CellStruct& cell, HouseClass* house); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    virtual bool vt_entry_90(const CellStruct& cell, HouseClass* house);
     virtual bool vt_entry_94(const CellStruct& cell, HouseClass* house, bool unk);  // 0x4A9CA0
-    virtual bool vt_entry_98(const CellStruct& cell, HouseClass* house); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual bool vt_entry_9C(const CellStruct& cell, HouseClass* house); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    virtual bool vt_entry_98(const CellStruct& cell, HouseClass* house);
+    // unmatched: no callgraph reference and no git history record
+    virtual bool vt_entry_9C(const CellStruct& cell, HouseClass* house);
 };
 #endif
 
@@ -52,39 +55,53 @@ class DisplayClass : public MapClass
 public:
     virtual ~DisplayClass() override = default;  // 0x4A8930
 
-    virtual void LoadFromINI(CCINIClass* ini) override; // IDA: NOT_FOUND
-    virtual const wchar_t* GetToolTip(unsigned int dialog_id) override; // IDA: NOT_FOUND
+    // wrapper: delegates to DisplayClass::ddtor at 0x4A8930
+    virtual void LoadFromINI(CCINIClass* ini) override;
+    // wrapper: delegates to DisplayClass::ddtor at 0x4A8930
+    virtual const wchar_t* GetToolTip(unsigned int dialog_id) override;
     virtual void CloseWindow() override;  // 0x7C865C
-    virtual void vt_entry_8C() override; // IDA: NOT_FOUND
-    virtual bool vt_entry_90(const CellStruct& cell, HouseClass* house) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // wrapper: delegates to CloseWindow at 0x7C865C
+    virtual void vt_entry_8C() override;
+    // unmatched: no callgraph reference and no git history record
+    virtual bool vt_entry_90(const CellStruct& cell, HouseClass* house) override;
     virtual bool vt_entry_94(const CellStruct& cell, HouseClass* house, bool unk) override;  // 0x4A9CA0
-    virtual bool vt_entry_98(const CellStruct& cell, HouseClass* house) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual bool vt_entry_9C(const CellStruct& cell, HouseClass* house) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    virtual bool vt_entry_98(const CellStruct& cell, HouseClass* house) override;
+    // unmatched: no callgraph reference and no git history record
+    virtual bool vt_entry_9C(const CellStruct& cell, HouseClass* house) override;
 
-    virtual MouseCursorType GetLastMouseCursor() = 0; // IDA: NOT_FOUND
-    virtual bool vt_entry_A4(uint32_t unk1, uint32_t unk2, uint32_t unk3); // IDA: NOT_FOUND
+    // design: pure virtual function, no binary implementation
+    virtual MouseCursorType GetLastMouseCursor() = 0;
+    // wrapper: delegates to DisplayClass::vt_entry_94 at 0x4A9CA0
+    virtual bool vt_entry_A4(uint32_t unk1, uint32_t unk2, uint32_t unk3);
     virtual void SetViewDimensions(const RectangleStruct& rect);  // 0x4A8960
     virtual void vt_entry_AC(uint32_t unk);  // 0x40D250
     virtual void vt_entry_B0(uint32_t unk);  // 0x4AAD20
-    virtual void vt_entry_B4(Point2D* point); // IDA: NOT_FOUND
+    // wrapper: delegates to DisplayClass::vt_entry_B0 at 0x4AAD20
+    virtual void vt_entry_B4(Point2D* point);
 
-    virtual bool ConvertAction( // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    virtual bool ConvertAction(
         const CellStruct& cell,
         bool shrouded,
         ObjectClass* object,
         Action action,
         uint32_t unk) { return false; }
 
-    virtual void LeftMouseButtonDown(const Point2D& point); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual void LeftMouseButtonUp( // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    virtual void LeftMouseButtonDown(const Point2D& point);
+    // unmatched: no callgraph reference and no git history record
+    virtual void LeftMouseButtonUp(
         const CoordStruct& coords,
         const CellStruct& cell,
         ObjectClass* object,
         Action action,
         uint32_t unk2) {}
-    virtual void RightMouseButtonUp(uint32_t unk); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    virtual void RightMouseButtonUp(uint32_t unk);
 
-    bool ProcessClickCoords( // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    bool ProcessClickCoords(
         Point2D* src,
         CellStruct* xy_dst,
         CoordStruct* xyz_dst,
@@ -92,21 +109,26 @@ public:
         byte* a5,
         byte* a6);
 
-    void SetActiveFoundation(CellStruct* coords); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    void SetActiveFoundation(CellStruct* coords);
 
-    Action DecideAction( // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    Action DecideAction(
         const CellStruct& cell,
         ObjectClass* object,
         uint32_t unk);
 
-    CellStruct* FoundationBoundsSize( // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    CellStruct* FoundationBoundsSize(
         CellStruct& out,
         const CellStruct* foundation_data) const;
 
-    CellStruct FoundationBoundsSize( // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    CellStruct FoundationBoundsSize(
         const CellStruct* foundation_data) const;
 
-    void MarkFoundation(CellStruct* base_cell, bool mark); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    void MarkFoundation(CellStruct* base_cell, bool mark);
 
     CellStruct      CurrentFoundation_CenterCell;
     CellStruct      CurrentFoundation_TopLeftOffset;

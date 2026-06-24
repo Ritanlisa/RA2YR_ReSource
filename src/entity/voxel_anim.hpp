@@ -50,13 +50,17 @@ class VoxelAnimClass : public ObjectClass
 public:
     static constexpr AbstractType kObjectTypeId = AbstractType::VoxelAnim;
 
-    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override; // IDA: NOT_FOUND
-    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override; // IDA: NOT_FOUND
+    // design: virtual function, no binary implementation matched in IDA
+    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override;
+    // design: virtual function, no binary implementation matched in IDA
+    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;
 
     virtual ~VoxelAnimClass() override = default;  // 0x74AAD0
 
-    virtual AbstractType __stdcall whatAmI() const override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual int objectSize() const override; // IDA: NOT_FOUND
+    // unmatched: no callgraph reference and no git history record
+    virtual AbstractType __stdcall whatAmI() const override;
+    // wrapper: delegates to VoxelAnimClass::ddtor at 0x74AAD0
+    virtual int objectSize() const override;
 
     uint32_t               unused_AC;
     BounceClass            Bounce;

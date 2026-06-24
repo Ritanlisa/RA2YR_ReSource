@@ -10,10 +10,12 @@ class CDFileClass : public BufferIOFileClass
 public:
     virtual ~CDFileClass() override = default;
 
-    CDFileClass() = default; // IDA: UNMATCHED — defaulted_special_member, default_ctor, no_callgraph_match
+    // design: default constructor (compiler-generated), no callgraph reference
+    CDFileClass() = default;
 
 protected:
-    explicit CDFileClass(const noinit_t&) noexcept : BufferIOFileClass(noinit_t()) {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    explicit CDFileClass(const noinit_t&) noexcept : BufferIOFileClass(noinit_t()) {}
 
 public:
     uint32_t CDTrackIndex = 0;

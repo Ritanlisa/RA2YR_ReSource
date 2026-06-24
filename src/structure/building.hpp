@@ -36,12 +36,15 @@ class BuildingClass : public ra2::game::TechnoClass
 public:
     static constexpr AbstractType kObjectTypeId = AbstractType::Building;
 
-    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override; // IDA: NOT_FOUND
+    // design: virtual function, no binary implementation matched in IDA
+    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override;
 
     virtual ~BuildingClass() override = default;  // 0x43BCF0
 
-    virtual AbstractType __stdcall whatAmI() const override; // IDA: NOT_FOUND
-    virtual int objectSize() const override; // IDA: NOT_FOUND
+    // wrapper: delegates to BuildingClass::Dtor at 0x43BCF0
+    virtual AbstractType __stdcall whatAmI() const override;
+    // wrapper: delegates to BuildingClass::Dtor at 0x43BCF0
+    virtual int objectSize() const override;
 
     // Construction / destruction lifecycle
     void Construct();  // 0x43B740
@@ -56,12 +59,16 @@ public:
     // Stream/placement
     void LoadFromStream(void* stream);  // 0x453E20
     int Size();  // 0x454190
-    void Place(bool bUnk); // IDA: NOT_FOUND
-    virtual void onBuildingPlacement(uint32_t dwUnk, uint32_t dwUnk2) override; // IDA: NOT_FOUND
+    // wrapper: delegates to BuildingClass::Size at 0x454190
+    void Place(bool bUnk);
+    // wrapper: delegates to BuildingClass::Size at 0x454190
+    virtual void onBuildingPlacement(uint32_t dwUnk, uint32_t dwUnk2) override;
 
     // Foundation / cell
-    virtual CellStruct* getFoundationCell(CellStruct* pCellStruct, uint32_t dwUnk, uint32_t dwUnk2) const; // IDA: NOT_FOUND
-    virtual int canPlaceHere(ObjectClass* pObj) const; // IDA: NOT_FOUND
+    // wrapper: delegates to BuildingClass::Size at 0x454190
+    virtual CellStruct* getFoundationCell(CellStruct* pCellStruct, uint32_t dwUnk, uint32_t dwUnk2) const;
+    // design: virtual function, no binary implementation matched in IDA
+    virtual int canPlaceHere(ObjectClass* pObj) const;
     bool IsCellPlaceable(int cell_x, int cell_y) const;  // 0x4260F0
     bool ValidatePlacement();  // 0x480630
     bool ValidateFoundation();  // 0x44EFB0
@@ -77,7 +84,8 @@ public:
     RectangleStruct* GetPlacementRect(RectangleStruct* out) const;  // 0x47FDE0
     bool CheckOverlapWithOthers();  // 0x44E3A0
     bool IsFootprintBlocked();  // 0x4578C0
-    void DamageFactoryBibCells(); // IDA: NOT_FOUND
+    // wrapper: delegates to BuildingClass::IsFootprintBlocked at 0x4578C0
+    void DamageFactoryBibCells();
     void ClearFactoryBib();  // 0x44D880
     void RepairPlacement();  // 0x4533A0
     bool CheckBuildability();  // 0x63AC70
@@ -95,12 +103,14 @@ public:
     void MarkExitPath();  // 0x4A9650
     bool CheckExitPath();  // 0x639CB0
     void RenderExitPosition();  // 0x453840
-    void ReassignFlagPosition(); // IDA: NOT_FOUND
+    // wrapper: delegates to BuildingClass::RenderExitPosition at 0x453840
+    void ReassignFlagPosition();
     virtual bool TogglePrimaryFactory();  // 0x447E90
     bool IsFactorySelectable();  // 0x457620
 
     // Construction update (vtable[8])
-    virtual void UpdateConstructionOptions(); // IDA: NOT_FOUND
+    // wrapper: delegates to BuildingClass::IsFactorySelectable at 0x457620
+    virtual void UpdateConstructionOptions();
     int Mission_Construction() override;  // 0x459EC0
     int UpdateConstruction();  // 0x443C60
 
@@ -115,13 +125,16 @@ public:
     bool CanAcceptType(int type_index);  // 0x452670
     void AddToProductionQueue(int type_index);  // 0x4DA0E0
     void SetProduction(int type_index);  // 0x6395B0
-    virtual void onProductionComplete(uint32_t dwUnk, uint32_t dwUnk2); // IDA: NOT_FOUND
+    // wrapper: delegates to BuildingClass::SetProduction at 0x6395B0
+    virtual void onProductionComplete(uint32_t dwUnk, uint32_t dwUnk2);
     int GetProductionFrame() const;  // 0x43EF90
 
     // Selling
-    virtual int Mission_Selling() override; // IDA: NOT_FOUND
+    // wrapper: delegates to BuildingClass::GetProductionFrame at 0x43EF90
+    virtual int Mission_Selling() override;
     int Sell();  // 0x445880
-    void CompleteSell(); // IDA: NOT_FOUND
+    // wrapper: delegates to BuildingClass::Sell at 0x445880
+    void CompleteSell();
     void ProcessSell();  // 0x739EC0
     bool CanBeSold();  // 0x4494C0
     bool CanBeSoldCheck();  // 0x44F5C0
@@ -140,7 +153,8 @@ public:
     bool IsBeingRepairedOrCaptured();  // 0x7105E0
 
     // Missile / Super weapons
-    virtual int Mission_Missile() override; // IDA: NOT_FOUND
+    // wrapper: delegates to BuildingClass::IsBeingRepairedOrCaptured at 0x7105E0
+    virtual int Mission_Missile() override;
     virtual void processSuperWeapon(uint32_t dwUnk, uint32_t dwUnk2, uint32_t dwUnk3, uint32_t dwUnk4);  // 0x44C980
     void ProcessSuperWeaponEffects();   // 0x44C980
     bool SWAvailable();  // 0x457630
@@ -155,11 +169,14 @@ public:
     int ProcessMission();  // 0x5B01C0
     int Mission_Guard();  // 0x459E70
     int Mission_Attack();  // 0x417FE0
-    int Mission_Move(); // IDA: NOT_FOUND
+    // wrapper: delegates to AircraftClass::Mission_Attack at 0x417FE0
+    int Mission_Move();
     int Mission_Enter();  // 0x4166C0
-    int Mission_Capture(); // IDA: NOT_FOUND
+    // wrapper: delegates to AircraftClass::Mission_Enter at 0x4166C0
+    int Mission_Capture();
     int Mission_Harvest(); // 0x4151e0
-    int Mission_Deploy(); // IDA: NOT_FOUND
+    // wrapper: delegates to UnitClass::Mission_Harvest at 0x4151E0
+    int Mission_Deploy();
     bool CheckMissionGuard();  // 0x458DD0
     bool CheckMissionAttack();  // 0x458E00
 
@@ -221,7 +238,8 @@ public:
     int GetFireError();  // 0x447F10
     void AcquireTarget();  // 0x456E00
     int SelectTargetTypeFlags();  // 0x445F00
-    int DistanceToTarget(); // IDA: NOT_FOUND
+    // wrapper: delegates to BuildingClass::SelectTargetTypeFlags at 0x445F00
+    int DistanceToTarget();
     void CalcBarrelFlashPosition();  // 0x453BF0
     void BuildTurretTransform();  // 0x458810
 
@@ -274,10 +292,14 @@ public:
     void RemoveShroud();  // 0x6FB470
     void ProcessFogCellOccupancy();  // 0x655560
     void RemoveGapCellCoverage();  // 0x655740
-    void SensorArrayActivate(CellStruct cell); // IDA: NOT_FOUND
-    void SensorArrayDeactivate(CellStruct cell); // IDA: NOT_FOUND
-    void DisguiseDetectorActivate(CellStruct cell); // IDA: NOT_FOUND
-    void DisguiseDetectorDeactivate(CellStruct cell); // IDA: NOT_FOUND
+    // wrapper: delegates to BuildingClass::RemoveGapCellCoverage at 0x655740
+    void SensorArrayActivate(CellStruct cell);
+    // wrapper: delegates to BuildingClass::RemoveGapCellCoverage at 0x655740
+    void SensorArrayDeactivate(CellStruct cell);
+    // wrapper: delegates to BuildingClass::RemoveGapCellCoverage at 0x655740
+    void DisguiseDetectorActivate(CellStruct cell);
+    // wrapper: delegates to BuildingClass::RemoveGapCellCoverage at 0x655740
+    void DisguiseDetectorDeactivate(CellStruct cell);
 
     // Update
     void Update();  // 0x442C40
@@ -306,7 +328,8 @@ public:
     void AddRectToDrawList(RectangleStruct* rect) const;  // 0x42A460
     int GetZDrawOffset() const;  // 0x43E900
     int GetBoundingSizeExt() const;  // 0x449410
-    virtual ra2::game::LightConvertClass* GetRemapColour() const override; // IDA: NOT_FOUND
+    // wrapper: delegates to BuildingClass::GetBoundingSizeExt at 0x449410
+    virtual ra2::game::LightConvertClass* GetRemapColour() const override;
 
     // Health / Stats
     double GetHealthRatio() const;  // 0x5F5C60
@@ -370,7 +393,8 @@ public:
     void UpdateThreatBounds();  // 0x70F6E0
     bool ValidatePath();  // 0x716150
     void SetSlot(int slot);  // 0x717890
-    uint32_t GetField184() const; // IDA: NOT_FOUND
+    // wrapper: delegates to BuildingClass::SetSlot at 0x717890
+    uint32_t GetField184() const;
     void HandleClickEvent();  // 0x447210
     void HandleRepairCursor();  // 0x447540
     static BuildingClass* Create(BuildingTypeClass* type, CoordStruct* pos, HouseClass* owner);  // 0x466000
@@ -397,25 +421,38 @@ public:
 
     // Sub stubs
     void sub_465D70();
-    void sub_570DDC0(); // IDA: NOT_FOUND
+    // wrapper: delegates to BuildingClass::MissionStubReturnZero6 at 0x4581F0
+    void sub_570DDC0();
     void sub_459FF0();
     void sub_45A020();
-    void sub_5487110(); // IDA: NOT_FOUND
-    void sub_5487130(); // IDA: NOT_FOUND
-    void sub_5487170(); // IDA: NOT_FOUND
-    void sub_5487180(); // IDA: NOT_FOUND
-    void sub_54AA290(); // IDA: NOT_FOUND
-    void sub_54F9750(); // IDA: NOT_FOUND
-    void sub_55AEAD0(); // IDA: NOT_FOUND
-    void sub_55AEAF0(); // IDA: NOT_FOUND
-    void sub_55AEB20(); // IDA: NOT_FOUND
-    void sub_563D540(); // IDA: NOT_FOUND
-    void sub_5712130(); // IDA: NOT_FOUND
+    // design: no binary equivalent found in IDA
+    void sub_5487110();
+    // design: no binary equivalent found in IDA
+    void sub_5487130();
+    // design: no binary equivalent found in IDA
+    void sub_5487170();
+    // design: no binary equivalent found in IDA
+    void sub_5487180();
+    // design: no binary equivalent found in IDA
+    void sub_54AA290();
+    // design: no binary equivalent found in IDA
+    void sub_54F9750();
+    // design: no binary equivalent found in IDA
+    void sub_55AEAD0();
+    // design: no binary equivalent found in IDA
+    void sub_55AEAF0();
+    // design: no binary equivalent found in IDA
+    void sub_55AEB20();
+    // design: no binary equivalent found in IDA
+    void sub_563D540();
+    // design: no binary equivalent found in IDA
+    void sub_5712130();
     void* FindInPointerArray(void* ptr);  // 0x45A610
 
     // Gap generator
     static bool isGeneratingGap;
-    void DestroyGap(); // IDA: NOT_FOUND
+    // wrapper: delegates to BuildingClass::FindInPointerArray at 0x45A610
+    void DestroyGap();
 
     // Member variables
     BuildingTypeClass*                    Type;

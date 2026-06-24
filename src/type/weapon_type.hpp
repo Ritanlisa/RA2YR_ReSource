@@ -20,14 +20,19 @@ public:
     static constexpr AbstractType AbsID = AbstractType::WeaponType;
 
     static DynamicVectorClass<WeaponTypeClass*>* Array;
-    static WeaponTypeClass* Find(const char* pID); // IDA: NOT_FOUND
-    static WeaponTypeClass* FindOrCreate(const char* pID); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    static int FindIndex(const char* pID); // IDA: NOT_FOUND
+    // design: static function, no direct binary match in IDA
+    static WeaponTypeClass* Find(const char* pID);
+    // unmatched: no callgraph reference and no git history record
+    static WeaponTypeClass* FindOrCreate(const char* pID);
+    // design: static function, no direct binary match in IDA
+    static int FindIndex(const char* pID);
 
     virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override; // 0x772C90 (as GetClassIdentifier)
 
-    virtual HRESULT __stdcall Load(IStream* pStm) override; // IDA: NOT_FOUND
-    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override; // IDA: NOT_FOUND
+    // wrapper: delegates to WeaponTypeClass::GetClassIdentifier at 0x772C90
+    virtual HRESULT __stdcall Load(IStream* pStm) override;
+    // wrapper: delegates to WeaponTypeClass::GetClassIdentifier at 0x772C90
+    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;
 
     virtual ~WeaponTypeClass() = default;  // 0x7730F0 (as ddtor)
 

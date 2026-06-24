@@ -22,7 +22,8 @@ union target_composite
     };
 };
 
-inline target_t BuildTarget(AbstractType kind, unsigned value) noexcept // IDA: UNMATCHED — inline_likely_inlined, no_callgraph_match, no_git_history
+// design: likely inlined by compiler (no standalone symbol), no callgraph/git history reference
+inline target_t BuildTarget(AbstractType kind, unsigned value) noexcept
 {
     target_composite tc;
     tc.whole = 0;
@@ -31,14 +32,16 @@ inline target_t BuildTarget(AbstractType kind, unsigned value) noexcept // IDA: 
     return tc.whole;
 }
 
-inline AbstractType TargetKind(target_t t) noexcept // IDA: UNMATCHED — inline_likely_inlined, no_callgraph_match, no_git_history
+// design: likely inlined by compiler (no standalone symbol), no callgraph/git history reference
+inline AbstractType TargetKind(target_t t) noexcept
 {
     target_composite tc;
     tc.whole = t;
     return static_cast<AbstractType>(tc.exponent);
 }
 
-inline unsigned TargetValue(target_t t) noexcept // IDA: UNMATCHED — inline_likely_inlined, no_callgraph_match, no_git_history
+// design: likely inlined by compiler (no standalone symbol), no callgraph/git history reference
+inline unsigned TargetValue(target_t t) noexcept
 {
     target_composite tc;
     tc.whole = t;
@@ -102,25 +105,35 @@ FootClass* AsFoot(target_t target);
 class TargetClass
 {
 public:
-    TargetClass() noexcept : m_target(kTargetNone) {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    explicit TargetClass(target_t t) noexcept : m_target(t) {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    TargetClass() noexcept : m_target(kTargetNone) {}
+    // unmatched: no callgraph reference and no git history record
+    explicit TargetClass(target_t t) noexcept : m_target(t) {}
     TargetClass(AbstractType kind, int id) noexcept
-        : m_target(BuildTarget(kind, static_cast<unsigned>(id))) {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
+        // unmatched: no callgraph reference and no git history record
+        : m_target(BuildTarget(kind, static_cast<unsigned>(id))) {}
 
-    TargetClass(const ObjectClass* obj) noexcept; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    TargetClass(const CellClass* cell) noexcept; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    TargetClass(const ObjectClass* obj) noexcept;
+    // unmatched: no callgraph reference and no git history record
+    TargetClass(const CellClass* cell) noexcept;
 
-    operator target_t() const { return m_target; } // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    operator target_t() const { return m_target; }
 
-    bool operator==(const TargetClass& rhs) const { return m_target == rhs.m_target; } // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    bool operator!=(const TargetClass& rhs) const { return m_target != rhs.m_target; } // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    bool operator==(const TargetClass& rhs) const { return m_target == rhs.m_target; }
+    // unmatched: no callgraph reference and no git history record
+    bool operator!=(const TargetClass& rhs) const { return m_target != rhs.m_target; }
 
     AbstractType Kind() const { return TargetKind(m_target); }  // 0x65AD90
-    unsigned Value() const { return TargetValue(m_target); } // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    unsigned Value() const { return TargetValue(m_target); }
     target_t AsTarget() const { return m_target; }
 
     bool IsValid() const { return m_target != kTargetNone; }
-    void Invalidate() { m_target = kTargetNone; } // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    void Invalidate() { m_target = kTargetNone; }
 
     ObjectClass* AsObject() const { return gamemd::AsObject(m_target); }
     TechnoClass* AsTechno() const { return gamemd::AsTechno(m_target); }

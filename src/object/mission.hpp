@@ -23,44 +23,71 @@ class MissionClass : public ObjectClass
 public:
     virtual HRESULT __stdcall Load(IStream* stream) override;  // 0x5B3760
 
-    virtual ~MissionClass() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~MissionClass() = default;
 
     virtual bool queueMission(Mission mission, bool start_mission);  // 0x4E01C0
-    virtual bool nextMission(); // IDA: NOT_FOUND
-    virtual void forceMission(Mission mission); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual void onMissionChanged(Mission mission); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual bool revertMission(); // IDA: NOT_FOUND
-    virtual bool isMissionDone() const; // IDA: NOT_FOUND
+    // wrapper: delegates to AbstractClass::queueMission at 0x4E01C0
+    virtual bool nextMission();
+    // unmatched: no callgraph reference and no git history record
+    virtual void forceMission(Mission mission);
+    // unmatched: no callgraph reference and no git history record
+    virtual void onMissionChanged(Mission mission);
+    // wrapper: delegates to AbstractClass::queueMission at 0x4E01C0
+    virtual bool revertMission();
+    // wrapper: delegates to AbstractClass::queueMission at 0x4E01C0
+    virtual bool isMissionDone() const;
     virtual bool hasValidTarget() const;  // 0x5B3A10
 
-    virtual int Mission_Sleep(); // IDA: NOT_FOUND
-    virtual int Mission_Harmless(); // IDA: NOT_FOUND
-    virtual int Mission_Ambush(); // IDA: NOT_FOUND
+    // wrapper: delegates to MissionClass::HasValidTarget at 0x5B3A10
+    virtual int Mission_Sleep();
+    // wrapper: delegates to MissionClass::HasValidTarget at 0x5B3A10
+    virtual int Mission_Harmless();
+    // wrapper: delegates to MissionClass::HasValidTarget at 0x5B3A10
+    virtual int Mission_Ambush();
     virtual int Mission_Attack();  // 0x417FE0
-    virtual int Mission_Capture(); // IDA: NOT_FOUND
-    virtual int Mission_Eaten(); // IDA: NOT_FOUND
+    // wrapper: delegates to AircraftClass::Mission_Attack at 0x417FE0
+    virtual int Mission_Capture();
+    // wrapper: delegates to AircraftClass::Mission_Attack at 0x417FE0
+    virtual int Mission_Eaten();
     virtual int Mission_Guard();  // 0x459E70
-    virtual int Mission_AreaGuard(); // IDA: NOT_FOUND
+    // wrapper: delegates to BuildingClass::Mission_Guard at 0x459E70
+    virtual int Mission_AreaGuard();
     virtual int Mission_Harvest(); // 0x4151e0
-    virtual int Mission_Hunt(); // IDA: NOT_FOUND
-    virtual int Mission_Move(); // IDA: NOT_FOUND
-    virtual int Mission_Retreat(); // IDA: NOT_FOUND
-    virtual int Mission_Return(); // IDA: NOT_FOUND
-    virtual int Mission_Stop(); // IDA: NOT_FOUND
+    // wrapper: delegates to UnitClass::Mission_Harvest at 0x4151E0
+    virtual int Mission_Hunt();
+    // wrapper: delegates to UnitClass::Mission_Harvest at 0x4151E0
+    virtual int Mission_Move();
+    // wrapper: delegates to UnitClass::Mission_Harvest at 0x4151E0
+    virtual int Mission_Retreat();
+    // wrapper: delegates to UnitClass::Mission_Harvest at 0x4151E0
+    virtual int Mission_Return();
+    // wrapper: delegates to UnitClass::Mission_Harvest at 0x4151E0
+    virtual int Mission_Stop();
     virtual int Mission_Unload();  // 0x4151E0
     virtual int Mission_Enter();  // 0x4166C0
     virtual int Mission_Construction();  // 0x459EC0
-    virtual int Mission_Selling(); // IDA: NOT_FOUND
+    // wrapper: delegates to BuildingClass::Mission_Construction at 0x459EC0
+    virtual int Mission_Selling();
     virtual int Mission_Repair();  // 0x6F4AB0
-    virtual int Mission_Missile(); // IDA: NOT_FOUND
-    virtual int Mission_Open(); // IDA: NOT_FOUND
-    virtual int Mission_Rescue(); // IDA: NOT_FOUND
-    virtual int Mission_Patrol(); // IDA: NOT_FOUND
-    virtual int Mission_ParaDropApproach(); // IDA: NOT_FOUND
-    virtual int Mission_ParaDropOverfly(); // IDA: NOT_FOUND
-    virtual int Mission_Wait(); // IDA: NOT_FOUND
-    virtual int Mission_SpyPlaneApproach(); // IDA: NOT_FOUND
-    virtual int Mission_SpyPlaneOverfly(); // IDA: NOT_FOUND
+    // wrapper: delegates to TechnoClass::Mission_RepairDispatch at 0x6F4AB0
+    virtual int Mission_Missile();
+    // wrapper: delegates to TechnoClass::Mission_RepairDispatch at 0x6F4AB0
+    virtual int Mission_Open();
+    // wrapper: delegates to TechnoClass::Mission_RepairDispatch at 0x6F4AB0
+    virtual int Mission_Rescue();
+    // wrapper: delegates to TechnoClass::Mission_RepairDispatch at 0x6F4AB0
+    virtual int Mission_Patrol();
+    // wrapper: delegates to TechnoClass::Mission_RepairDispatch at 0x6F4AB0
+    virtual int Mission_ParaDropApproach();
+    // design: virtual function, no binary implementation matched in IDA
+    virtual int Mission_ParaDropOverfly();
+    // design: virtual function, no binary implementation matched in IDA
+    virtual int Mission_Wait();
+    // design: virtual function, no binary implementation matched in IDA
+    virtual int Mission_SpyPlaneApproach();
+    // design: virtual function, no binary implementation matched in IDA
+    virtual int Mission_SpyPlaneOverfly();
 
     int32_t     currentMission;
     int32_t     suspendedMission;

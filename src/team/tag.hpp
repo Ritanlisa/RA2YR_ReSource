@@ -40,37 +40,48 @@ class TagClass : public AbstractClass
 public:
     static constexpr AbstractType kObjectDeriveId = AbstractType::Tag;
 
-    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override; // IDA: NOT_FOUND
+    // design: virtual function, no binary implementation matched in IDA
+    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override;
     virtual HRESULT __stdcall Load(IStream* stream) override;  // 0x6E5730
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;  // 0x6E57A0
 
     virtual ~TagClass() = default;  // 0x6E56A0
 
-    virtual void pointerExpired(AbstractClass* ptr, bool removed) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual AbstractType __stdcall whatAmI() const override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual int objectSize() const override; // IDA: NOT_FOUND
-    virtual void calculateChecksum(void* checksum) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    virtual void pointerExpired(AbstractClass* ptr, bool removed) override;
+    // unmatched: no callgraph reference and no git history record
+    virtual AbstractType __stdcall whatAmI() const override;
+    // wrapper: delegates to TagClass::ddtor at 0x6E56A0
+    virtual int objectSize() const override;
+    // unmatched: no callgraph reference and no git history record
+    virtual void calculateChecksum(void* checksum) const;
 
-    static void DeleteAll(); // IDA: NOT_FOUND
+    // design: static function, no direct binary match in IDA
+    static void DeleteAll();
     static void NotifyGlobalChanged(int idx_global);  // 0x7263A0
     static void NotifyLocalChanged(int idx_local);  // 0x7263D0
 
     bool HasCrossesHorizontalLineEvent() const;  // 0x6E5320
     bool HasCrossesVerticalLineEvent() const;  // 0x6E5300
     bool HasZoneEntryByEvent() const;  // 0x6E5340
-    bool HasAllowWinAction() const; // IDA: NOT_FOUND
+    // wrapper: delegates to TagClass::HasZoneEntryByEvent at 0x6E5340
+    bool HasAllowWinAction() const;
     void GlobalChanged(int idx_global);  // 0x7263A0
     void LocalChanged(int idx_local);  // 0x7263D0
     bool IsOnlyInstanceOfType() const;  // 0x6E5850
 
-    bool RaiseEvent(int event, ObjectClass* tag_owner, CellStruct location, bool force_all = false, TechnoClass* source = nullptr); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    bool RaiseEvent(int event, ObjectClass* tag_owner, CellStruct location, bool force_all = false, TechnoClass* source = nullptr);
 
-    bool ShouldReplace() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    bool ShouldReplace() const;
     void Destroy();  // 0x6E5230
-    bool HasBeenDestroyed() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    bool HasBeenDestroyed() const;
     void AddTrigger(TriggerClass* trigger);  // 0x6E55C0
     bool RemoveTrigger(TriggerClass* trigger);  // 0x577920
-    bool ContainsTrigger(TriggerClass* trigger) const; // IDA: NOT_FOUND
+    // wrapper: delegates to MapClass::RemoveTriggerRef at 0x577920
+    bool ContainsTrigger(TriggerClass* trigger) const;
 
     TagTypeClass*   buildingType;
     TriggerClass*   firstTrigger;
@@ -93,31 +104,39 @@ class TagTypeClass : public AbstractClass
 public:
     static constexpr AbstractType kObjectDeriveId = AbstractType::TagType;
 
-    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override; // IDA: NOT_FOUND
-    virtual HRESULT __stdcall Load(IStream* stream) override; // IDA: NOT_FOUND
+    // design: virtual function, no binary implementation matched in IDA
+    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override;
+    // design: virtual function, no binary implementation matched in IDA
+    virtual HRESULT __stdcall Load(IStream* stream) override;
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;  // 0x6E6470
 
     virtual ~TagTypeClass() = default;  // 0x6E64C0
 
-    virtual void pointerExpired(AbstractClass* ptr, bool removed) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual AbstractType __stdcall whatAmI() const override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    virtual void pointerExpired(AbstractClass* ptr, bool removed) override;
+    // unmatched: no callgraph reference and no git history record
+    virtual AbstractType __stdcall whatAmI() const override;
     virtual int objectSize() const override;  // 0x6E64A0
-    virtual void calculateChecksum(void* checksum) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    virtual void calculateChecksum(void* checksum) const;
     // arrayIndex() override inherited, conflicts with member
 
     using Flags = uint8_t;
 
     Flags GetFlags() const;  // 0x7271E0
-    bool HasAllowWinAction() const; // IDA: NOT_FOUND
+    // wrapper: delegates to TriggerTypeClass::GetFlags at 0x7271E0
+    bool HasAllowWinAction() const;
     bool HasCrossesHorizontalLineEvent() const;  // 0x6E6250
     bool HasCrossesVerticalLineEvent() const;  // 0x6E6280
     bool HasZoneEntryByEvent() const;  // 0x6E62B0
     bool AddTrigger(class TriggerTypeClass* trigger);  // 0x6E55C0
     bool RemoveTrigger(class TriggerTypeClass* trigger);   // 0x577920
-    bool ContainsTrigger(class TriggerTypeClass* trigger) const; // IDA: NOT_FOUND
+    // wrapper: delegates to MapClass::RemoveTriggerRef at 0x577920
+    bool ContainsTrigger(class TriggerTypeClass* trigger) const;
 
     static void LoadFromINIList(CCINIClass* ini);  // 0x46CE10
-    static void SaveToINIList(CCINIClass* ini); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    static void SaveToINIList(CCINIClass* ini);
 
     int32_t             arrayIndex;
     int32_t             persistence;

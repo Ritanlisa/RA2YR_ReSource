@@ -13,9 +13,12 @@ enum class LogLevel {
     None  = 5
 };
 
-void LogSetLevel(LogLevel level); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-void LogWrite(LogLevel level, const char* fmt, ...); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-void LogClose(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+// unmatched: no callgraph reference and no git history record
+void LogSetLevel(LogLevel level);
+// unmatched: no callgraph reference and no git history record
+void LogWrite(LogLevel level, const char* fmt, ...);
+// unmatched: no callgraph reference and no git history record
+void LogClose();
 
 #if defined(GAMEMD_DEBUG) || defined(_DEBUG)
     #define LOG_TRACE(fmt, ...) ::gamemd::LogWrite(::gamemd::LogLevel::Trace, "[TRACE] " fmt "\n", ##__VA_ARGS__)

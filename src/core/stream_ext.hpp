@@ -13,7 +13,8 @@ namespace gamemd
 class StreamClass
 {
 public:
-    virtual ~StreamClass() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~StreamClass() = default;
 
     // IDA 0x48B2A0 area
     virtual int32_t WriteBytes(const void* data, int32_t size);  // 0x411310
@@ -22,19 +23,24 @@ public:
     // IDA 0x48B2A0 area
     virtual void Set2(int32_t val);  // 0x45AEA0
     // IDA 0x48B2A0 area
-    virtual int32_t Read(void* buf, int32_t size); // IDA: NOT_FOUND
+    // design: virtual function, no binary implementation matched in IDA
+    virtual int32_t Read(void* buf, int32_t size);
     // IDA 0x48B2A0 area
-    virtual int32_t Write(const void* data, int32_t size); // IDA: NOT_FOUND
+    // design: virtual function, no binary implementation matched in IDA
+    virtual int32_t Write(const void* data, int32_t size);
     // IDA 0x48B2A0 area
-    virtual int32_t Seek(int32_t offset); // IDA: NOT_FOUND
+    // design: virtual function, no binary implementation matched in IDA
+    virtual int32_t Seek(int32_t offset);
     // IDA 0x48B2A0 area
-    virtual int32_t GetSize(); // IDA: NOT_FOUND
+    // design: virtual function, no binary implementation matched in IDA
+    virtual int32_t GetSize();
     // IDA 0x48B2A0 area
     virtual void Flush();  // 0x7AEF50
     // IDA 0x48B2A0 area
     virtual void Close();  // 0x76B090
     // IDA 0x48B2A0 area
-    virtual int32_t GetPosition(); // IDA: NOT_FOUND
+    // design: virtual function, no binary implementation matched in IDA
+    virtual int32_t GetPosition();
 
     void*       m_Data;         // 0x00
     int32_t     m_Position;     // 0x04
@@ -50,7 +56,8 @@ class Stream
 {
 public:
     Stream() = default;
-    ~Stream(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    ~Stream();
 
     // IDA 0x48B2A0 area
     void FlushAndReset();  // 0x439110
@@ -61,7 +68,7 @@ public:
     // IDA 0x48B2A0 area
     int32_t ReadInt();  // 0x49FB70
     // IDA 0x48B2A0 area
-    void WriteInt(int32_t val);  // 0x67A4A0
+    void WriteInt(int32_t val);  // 0x67A4A0 // IDA: Stream::WriteIntArray
     // IDA 0x48B2A0 area
     void WriteBytes(const void* data, int32_t size);  // 0x411310
     // IDA 0x48B2A0 area
@@ -171,7 +178,8 @@ public:
 class Buffer
 {
 public:
-    virtual ~Buffer() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
+    // design: default destructor (compiler-generated), no callgraph reference
+    virtual ~Buffer() = default;
 
     virtual void CreateDirectSound(); // 0x40A340
     virtual void UpdateVolumeSettings(); // 0x40A6D0
@@ -195,7 +203,8 @@ public:
 class BufferClass
 {
 public:
-    virtual ~BufferClass() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~BufferClass() = default;
 
     virtual void CompareEqual(); // 0x477C30
 
@@ -204,7 +213,8 @@ public:
 class BufferIO
 {
 public:
-    virtual ~BufferIO() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~BufferIO() = default;
 
     virtual void FindActiveChannel(); // 0x431170
     virtual void Flush(); // 0x431DD0
@@ -251,7 +261,8 @@ public:
 class StreamObj
 {
 public:
-    virtual ~StreamObj() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~StreamObj() = default;
 
     virtual void Release(); // 0x410E50
 
@@ -260,7 +271,8 @@ public:
 class StreamWrapper
 {
 public:
-    virtual ~StreamWrapper() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~StreamWrapper() = default;
 
     virtual void Read(); // 0x5C5D40
     virtual void Write(); // 0x5C5D90
@@ -279,7 +291,8 @@ public:
 class Text
 {
 public:
-    virtual ~Text() = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
+    // design: default destructor (compiler-generated), no callgraph reference
+    virtual ~Text() = default;
 
     virtual void Layout(); // 0x433CF0
     virtual void MeasureWidth(); // 0x433ED0
@@ -294,7 +307,8 @@ public:
 class TextGroup
 {
 public:
-    virtual ~TextGroup() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~TextGroup() = default;
 
     virtual void SetRect(); // 0x433CA0
 

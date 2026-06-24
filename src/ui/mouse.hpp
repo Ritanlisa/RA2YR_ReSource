@@ -34,7 +34,8 @@ struct MouseCursor
                 int32_t miniFrame, int32_t miniCount,
                 int32_t hotX, int32_t hotY) noexcept
         : Frame(frame), Count(count), Interval(interval),
-          MiniFrame(miniFrame), MiniCount(miniCount), HotX(hotX), HotY(hotY) {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
+          // unmatched: no callgraph reference and no git history record
+          MiniFrame(miniFrame), MiniCount(miniCount), HotX(hotX), HotY(hotY) {}
 };
 
 class WWMouseClass
@@ -42,25 +43,36 @@ class WWMouseClass
 public:
     static WWMouseClass* Instance;
 
-    virtual ~WWMouseClass() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~WWMouseClass() = default;
 
-    virtual void Draw(const CellStruct& coords, const SHPStruct* pImage, int32_t idxFrame) {} // IDA: NOT_FOUND
-    virtual bool IsRefCountNegative() { return false; } // IDA: NOT_FOUND
+    // design: inline accessor, inlined at all call sites
+    virtual void Draw(const CellStruct& coords, const SHPStruct* pImage, int32_t idxFrame) {}
+    // design: inline accessor, inlined at all call sites
+    virtual bool IsRefCountNegative() { return false; }
     virtual void HideCursor() {}  // 0x7B9930
     virtual void ShowCursor() {}  // 0x7C868C
     virtual void ReleaseMouse() {}  // 0x7B9C30
     virtual void CaptureMouse() {}  // 0x7B9A60
     virtual uint8_t GetField10() { return 0; }  // 0x6CC2A0
     virtual void InvalidateRect(const RectangleStruct& rect) {}  // 0x7C8608
-    virtual void CallFunc10() {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual uint32_t GetRefCount() { return 0; } // IDA: NOT_FOUND
-    virtual int32_t GetX() const { return 0; } // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual int32_t GetY() const { return 0; } // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual Point2D* fetchCoordinatesHere(Point2D* out) const { return nullptr; } // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual void SetCoords(const Point2D& buffer) {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    virtual void CallFunc10() {}
+    // design: inline accessor, inlined at all call sites
+    virtual uint32_t GetRefCount() { return 0; }
+    // unmatched: no callgraph reference and no git history record
+    virtual int32_t GetX() const { return 0; }
+    // unmatched: no callgraph reference and no git history record
+    virtual int32_t GetY() const { return 0; }
+    // unmatched: no callgraph reference and no git history record
+    virtual Point2D* fetchCoordinatesHere(Point2D* out) const { return nullptr; }
+    // unmatched: no callgraph reference and no git history record
+    virtual void SetCoords(const Point2D& buffer) {}
     virtual void InitSurface(DSurface* pSurface, bool unk) {}  // 0x7B9040
-    virtual void InitCursor(DSurface* pSurface, bool unk) {} // IDA: NOT_FOUND
-    virtual void GetDimensions(int32_t* outWidth, int32_t* outHeight) {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // design: inline accessor, inlined at all call sites
+    virtual void InitCursor(DSurface* pSurface, bool unk) {}
+    // unmatched: no callgraph reference and no git history record
+    virtual void GetDimensions(int32_t* outWidth, int32_t* outHeight) {}
 
     SHPStruct*       Image;
     int32_t          ImageFrameIndex;
@@ -88,13 +100,18 @@ class MouseClass : public RadarClass
 public:
     static MouseClass* Instance;
 
-    virtual ~MouseClass() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~MouseClass() = default;
 
     virtual bool SetCursor(MouseCursorType cursor, bool miniMap) override { return false; }  // 0x7C87B8
-    virtual bool UpdateCursor(MouseCursorType cursor, bool miniMap) override { return false; } // IDA: NOT_FOUND
-    virtual bool RestoreCursor() override { return false; } // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual void UpdateCursorMinimapState(bool miniMap) override {} // IDA: NOT_FOUND
-    virtual MouseCursorType GetLastMouseCursor() { return MouseCursorType::Default; } // IDA: NOT_FOUND
+    // design: inline accessor, inlined at all call sites
+    virtual bool UpdateCursor(MouseCursorType cursor, bool miniMap) override { return false; }
+    // unmatched: no callgraph reference and no git history record
+    virtual bool RestoreCursor() override { return false; }
+    // design: inline accessor, inlined at all call sites
+    virtual void UpdateCursorMinimapState(bool miniMap) override {}
+    // design: inline accessor, inlined at all call sites
+    virtual MouseCursorType GetLastMouseCursor() { return MouseCursorType::Default; }
 
     bool              MouseCursorIsMini;
     uint8_t           padding_01[3];

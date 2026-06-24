@@ -39,15 +39,18 @@ public:
 
     // --- Convenience wrappers ---
 
-    void PrintMessage(const wchar_t* pLabel, uint32_t unk1, const wchar_t* pMessage, // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    void PrintMessage(const wchar_t* pLabel, uint32_t unk1, const wchar_t* pMessage,
                       int32_t colorIndex, uint32_t unk2, int32_t duration, bool silent);
     // calls AddMessage @ 0x5D3BA0 internally
 
-    void PrintMessage(const wchar_t* pMessage, int32_t durationFrames = 150, // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    void PrintMessage(const wchar_t* pMessage, int32_t durationFrames = 150,
                       int32_t colorIndex = 0, bool silent = false);
     // 150 frames = 10s @ ~15fps (convenience wrapper)
 
-    void PrintMessage(const wchar_t* pMessage, double durationMinutes, // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    void PrintMessage(const wchar_t* pMessage, double durationMinutes,
                       int32_t colorIndex = 0, bool silent = false);
     // minutes * 900 → frame count (convenience wrapper)
 

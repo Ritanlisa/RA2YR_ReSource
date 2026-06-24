@@ -9,12 +9,14 @@ namespace gamemd
 class GenericNode
 {
 public:
-    virtual ~GenericNode() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~GenericNode() = default;
 
     GenericNode() = default;
 
 protected:
-    explicit GenericNode(const noinit_t&) noexcept {} // IDA: NOT_FOUND
+    // design: inline accessor, inlined at all call sites
+    explicit GenericNode(const noinit_t&) noexcept {}
 
 public:
     GenericNode* Next = nullptr;
@@ -25,7 +27,8 @@ template <typename T>
 class Node : public GenericNode
 {
 public:
-    virtual ~Node() override = default; // IDA: UNMATCHED — defaulted_special_member, default_dtor, no_callgraph_match
+    // design: default destructor (compiler-generated), no callgraph reference
+    virtual ~Node() override = default;
 
     Node() = default;
 
@@ -37,12 +40,14 @@ template <typename T>
 class LinkedList
 {
 public:
-    virtual ~LinkedList() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~LinkedList() = default;
 
     LinkedList() = default;
 
 protected:
-    explicit LinkedList(const noinit_t&) noexcept {} // IDA: NOT_FOUND
+    // design: inline accessor, inlined at all call sites
+    explicit LinkedList(const noinit_t&) noexcept {}
 
 public:
     GenericNode Head;
@@ -98,7 +103,8 @@ public:
     };
 
     // Global search pool -- all loaded MIX files (including sub-MIX)
-    static DynamicVectorClass<MixFileClass*>& GetMixPool(); // IDA: NOT_FOUND
+    // design: static function, no direct binary match in IDA
+    static DynamicVectorClass<MixFileClass*>& GetMixPool();
 
     static LinkedList<MixFileClass*>& MIXes;
     static DynamicVectorClass<MixFileClass*>& Array;
@@ -111,7 +117,8 @@ public:
 
     static bool Bootstrap();  // IDA: MixFileClass::Bootstrap @ 0x5301A0 -- returns bool  // 0x5301A0
 
-    static uint32_t ComputeID(const char* filename); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    static uint32_t ComputeID(const char* filename);
 
     virtual ~MixFileClass() override
     {
@@ -121,27 +128,41 @@ public:
             free(MemoryData);
     }
 
-    MixFileClass() noexcept : Node(noinit_t()) {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    explicit MixFileClass(const char* pFileName) noexcept; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    MixFileClass() noexcept : Node(noinit_t()) {}
+    // unmatched: no callgraph reference and no git history record
+    explicit MixFileClass(const char* pFileName) noexcept;
 
     // Memory-backed constructor: takes ownership of data buffer
-    MixFileClass(const uint8_t* data, int dataSize, const char* name) noexcept; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    MixFileClass(const uint8_t* data, int dataSize, const char* name) noexcept;
 
-    int  FindIndex(uint32_t id) const; // IDA: NOT_FOUND
-    int  FindIndex(const char* filename) const; // IDA: NOT_FOUND
-    int  GetSize(int index) const; // IDA: NOT_FOUND
-    int  GetSize(const char* filename) const; // IDA: NOT_FOUND
-    uint32_t GetFileID(int index) const { // IDA: NOT_FOUND
+    // design: no binary equivalent found in IDA
+    int  FindIndex(uint32_t id) const;
+    // design: no binary equivalent found in IDA
+    int  FindIndex(const char* filename) const;
+    // design: no binary equivalent found in IDA
+    int  GetSize(int index) const;
+    // design: no binary equivalent found in IDA
+    int  GetSize(const char* filename) const;
+    // design: no binary equivalent found in IDA
+    uint32_t GetFileID(int index) const {
         return (index >= 0 && index < CountFiles) ? Headers[index].ID : 0;
     }
-    bool Extract(int index, void* buffer, int buffer_size) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    bool Extract(const char* filename, void* buffer, int buffer_size) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    bool Peek(int index, void* buffer, int size) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    bool IsValid() const; // IDA: NOT_FOUND
-    void DumpEntries() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    bool Extract(int index, void* buffer, int buffer_size) const;
+    // unmatched: no callgraph reference and no git history record
+    bool Extract(const char* filename, void* buffer, int buffer_size) const;
+    // unmatched: no callgraph reference and no git history record
+    bool Peek(int index, void* buffer, int size) const;
+    // design: no binary equivalent found in IDA
+    bool IsValid() const;
+    // unmatched: no callgraph reference and no git history record
+    void DumpEntries() const;
 
 protected:
-    explicit MixFileClass(const noinit_t&) noexcept : Node(noinit_t()) {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    explicit MixFileClass(const noinit_t&) noexcept : Node(noinit_t()) {}
 
 public:
     const char* FileName = nullptr;

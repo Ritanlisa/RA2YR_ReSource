@@ -26,16 +26,23 @@ class SpawnManagerClass : public AbstractClass
 public:
     static constexpr AbstractType kObjectDeriveId = AbstractType::SpawnManager;
 
-    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return 0; } // IDA: NOT_FOUND
-    virtual HRESULT __stdcall Load(IStream* stream) override { return 0; } // IDA: NOT_FOUND
-    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { return 0; } // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // design: inline accessor, inlined at all call sites
+    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return 0; }
+    // design: inline accessor, inlined at all call sites
+    virtual HRESULT __stdcall Load(IStream* stream) override { return 0; }
+    // unmatched: no callgraph reference and no git history record
+    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { return 0; }
 
     virtual ~SpawnManagerClass() = default;  // 0x6B7ED0
 
-    virtual void pointerExpired(AbstractClass* ptr, bool removed) override {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual AbstractType __stdcall whatAmI() const override { return kObjectDeriveId; } // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual int objectSize() const override { return 0; } // IDA: NOT_FOUND
-    virtual void calculateChecksum(void* checksum) const {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    virtual void pointerExpired(AbstractClass* ptr, bool removed) override {}
+    // unmatched: no callgraph reference and no git history record
+    virtual AbstractType __stdcall whatAmI() const override { return kObjectDeriveId; }
+    // design: inline accessor, inlined at all call sites
+    virtual int objectSize() const override { return 0; }
+    // unmatched: no callgraph reference and no git history record
+    virtual void calculateChecksum(void* checksum) const {}
 
     // Construction
     SpawnManagerClass(TechnoClass*, HouseClass*, HouseClass*, int, int); // 0x6B6C90 (Construct)

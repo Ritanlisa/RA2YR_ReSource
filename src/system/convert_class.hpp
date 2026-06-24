@@ -19,10 +19,13 @@ public:
     static DynamicVectorClass<ConvertClass*>& Array;
     // IDA 0x48E740 -- ConvertClass::Construct (builds palette+blitter tables)
 
-    static ConvertClass* FindOrCreate(const char* pFilename); // IDA: NOT_FOUND
-    static void CreateFromFile(const char* pFilename, BytePalette*& pPalette, ConvertClass*& pDestination); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // wrapper: delegates to ConvertClass::Construct at 0x48E740
+    static ConvertClass* FindOrCreate(const char* pFilename);
+    // unmatched: no callgraph reference and no git history record
+    static void CreateFromFile(const char* pFilename, BytePalette*& pPalette, ConvertClass*& pDestination);
 
-    BlitterCore* SelectPlainBlitter(BlitterFlags flags) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    BlitterCore* SelectPlainBlitter(BlitterFlags flags) const;
     RLEBlitterCore* SelectRLEBlitter(BlitterFlags flags) const;  // 0x490E50
 
     virtual ~ConvertClass() = default;  // 0x491430
@@ -35,7 +38,8 @@ public:
         bool skipBlitters);
 
 protected:
-    explicit ConvertClass(const noinit_t&) noexcept; // IDA: NOT_FOUND
+    // design: no binary equivalent found in IDA
+    explicit ConvertClass(const noinit_t&) noexcept;
 
 public:
     int BytesPerPixel = 0;
@@ -55,7 +59,8 @@ class LightConvertClass : public ConvertClass
 public:
     static DynamicVectorClass<LightConvertClass*>& Array;
 
-    virtual ~LightConvertClass() override = default; // IDA: NOT_FOUND
+    // design: virtual function, no binary implementation matched in IDA
+    virtual ~LightConvertClass() override = default;
 
     virtual void UpdateColors(int red, int green, int blue, bool tinted);  // 0x556090
 

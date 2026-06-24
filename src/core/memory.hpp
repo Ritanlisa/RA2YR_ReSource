@@ -14,21 +14,27 @@ struct GameAllocator
 {
     using value_type = T;
 
-    constexpr GameAllocator() noexcept = default; // IDA: UNMATCHED — defaulted_special_member, default_ctor, no_callgraph_match
+    // design: default constructor (compiler-generated), no callgraph reference
+    constexpr GameAllocator() noexcept = default;
 
     template <typename U>
-    constexpr GameAllocator(const GameAllocator<U>&) noexcept {} // IDA: UNMATCHED — constexpr_no_runtime, no_callgraph_match, no_git_history
+    // design: constexpr only (no runtime address), no callgraph/git history reference
+    constexpr GameAllocator(const GameAllocator<U>&) noexcept {}
 
-    constexpr bool operator==(const GameAllocator&) const noexcept { return true; } // IDA: UNMATCHED — constexpr_no_runtime, no_callgraph_match, no_git_history
-    constexpr bool operator!=(const GameAllocator&) const noexcept { return false; } // IDA: UNMATCHED — constexpr_no_runtime, no_callgraph_match, no_git_history
+    // design: constexpr only (no runtime address), no callgraph/git history reference
+    constexpr bool operator==(const GameAllocator&) const noexcept { return true; }
+    // design: constexpr only (no runtime address), no callgraph/git history reference
+    constexpr bool operator!=(const GameAllocator&) const noexcept { return false; }
 
-    T* allocate(std::size_t count) // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    T* allocate(std::size_t count)
     {
         void* p = std::malloc(count * sizeof(T));
         if (!p) throw std::bad_alloc();
         return static_cast<T*>(p);
     }
-    void deallocate(T* ptr, std::size_t count) // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    void deallocate(T* ptr, std::size_t count)
     {
         (void)count;
         std::free(ptr);
@@ -79,7 +85,8 @@ public:
     }
 
     template <typename T, typename TAlloc>
-    static void DeleteArray(TAlloc& alloc, T* ptr, std::size_t capacity) // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    static void DeleteArray(TAlloc& alloc, T* ptr, std::size_t capacity)
     {
         if (ptr)
         {
@@ -96,7 +103,8 @@ public:
 };
 
 template <typename T, typename... TArgs>
-T* GameCreate(TArgs&&... args) // IDA: UNMATCHED — no_callgraph_match, no_git_history
+// unmatched: no callgraph reference and no git history record
+T* GameCreate(TArgs&&... args)
 {
     static_assert(std::is_constructible<T, TArgs...>::value, "Cannot construct T from TArgs.");
     GameAllocator<T> alloc;
@@ -111,7 +119,8 @@ void GameDelete(T* ptr)
 }
 
 template <typename T, typename... TArgs>
-T* GameCreateArray(std::size_t capacity, TArgs&&... args) // IDA: UNMATCHED — no_callgraph_match, no_git_history
+// unmatched: no callgraph reference and no git history record
+T* GameCreateArray(std::size_t capacity, TArgs&&... args)
 {
     static_assert(std::is_constructible<T, TArgs...>::value, "Cannot construct T from TArgs.");
     GameAllocator<T> alloc;
@@ -119,7 +128,8 @@ T* GameCreateArray(std::size_t capacity, TArgs&&... args) // IDA: UNMATCHED — 
 }
 
 template <typename T>
-void GameDeleteArray(T* ptr, std::size_t capacity) // IDA: UNMATCHED — no_callgraph_match, no_git_history
+// unmatched: no callgraph reference and no git history record
+void GameDeleteArray(T* ptr, std::size_t capacity)
 {
     GameAllocator<T> alloc;
     Memory::DeleteArray(alloc, ptr, capacity);
@@ -128,7 +138,8 @@ void GameDeleteArray(T* ptr, std::size_t capacity) // IDA: UNMATCHED — no_call
 struct GameDeleter
 {
     template <typename T>
-    void operator()(T* ptr) const noexcept // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    void operator()(T* ptr) const noexcept
     {
         if (ptr)
         {

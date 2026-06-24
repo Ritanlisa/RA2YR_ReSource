@@ -53,16 +53,20 @@ public:
     static bool VoicesEnabled;
 
     // IDA 0x7514D0
-    static VocClass* Find(const char* pName); // IDA: NOT_FOUND
+    // wrapper: delegates to VocClass::FindIndex at 0x7514D0
+    static VocClass* Find(const char* pName);
     // IDA 0x7514D0 (same address, Find calls FindIndex)
     static int32_t FindIndex(const char* pName);  // 0x7514D0
 
     // IDA 0x750920
-    static void PlayGlobal(int32_t index, int32_t panning, float volume, AudioController* pCtrl = nullptr); // IDA: NOT_FOUND
+    // wrapper: delegates to PlayVocClass at 0x750920
+    static void PlayGlobal(int32_t index, int32_t panning, float volume, AudioController* pCtrl = nullptr);
     // IDA 0x7509E0
-    static void PlayAt(int32_t index, const CoordStruct& coords, AudioController* pCtrl = nullptr); // IDA: NOT_FOUND
+    // wrapper: delegates to StartAudioControllerAt at 0x7509E0
+    static void PlayAt(int32_t index, const CoordStruct& coords, AudioController* pCtrl = nullptr);
     // IDA 0x750E20
-    static void PlayIndexAtPos(int32_t index, const CoordStruct& coords, int32_t a3 = 0); // IDA: NOT_FOUND
+    // wrapper: delegates to PlayAudioAt2 at 0x750E20
+    static void PlayIndexAtPos(int32_t index, const CoordStruct& coords, int32_t a3 = 0);
 
     VocClassHeader   Header;             // 0x00 (0x0C bytes)
     int32_t          SamplesOK;          // 0x0C: 0 or 1, all samples usable
@@ -114,22 +118,29 @@ public:
     static int32_t EVAIndex;
 
     // IDA 0x753250
-    static VoxClass* Find(const char* pName); // IDA: NOT_FOUND
+    // wrapper: delegates to VocClass::FindByName at 0x753250
+    static VoxClass* Find(const char* pName);
     // IDA 0x752CB0 wrapper (uses Array search)
-    static int32_t FindIndex(const char* pName); // IDA: NOT_FOUND
+    // wrapper: delegates to sub_752CB0 at 0x752CB0
+    static int32_t FindIndex(const char* pName);
 
     // IDA 0x752700
     static void Play(const char* pName, int32_t unk1 = -1, int32_t unk2 = -1);  // 0x752700
     // IDA 0x752480
-    static void PlayIndex(int32_t index, int32_t unk1 = -1, int32_t unk2 = -1); // IDA: NOT_FOUND
+    // wrapper: delegates to UpdateThemeManager at 0x752480
+    static void PlayIndex(int32_t index, int32_t unk1 = -1, int32_t unk2 = -1);
     // IDA 0x750E20
-    static void PlayAtPos(int32_t index, CoordStruct* pCoords, uint32_t unk = 0); // IDA: NOT_FOUND
+    // wrapper: delegates to PlayAudioAt2 at 0x750E20
+    static void PlayAtPos(int32_t index, CoordStruct* pCoords, uint32_t unk = 0);
     // IDA 0x752A40
-    static void SilenceIndex(int32_t index); // IDA: NOT_FOUND
+    // wrapper: delegates to ClearThemeQueuePlaylist at 0x752A40
+    static void SilenceIndex(int32_t index);
     // IDA 0x753330
-    static const char* GetName(int32_t index); // IDA: NOT_FOUND
+    // design: static function, no direct binary match in IDA
+    static const char* GetName(int32_t index);
     // IDA 0x7531A0
-    static void DeleteAll(); // IDA: NOT_FOUND
+    // wrapper: delegates to LoadINIEVA at 0x7531A0
+    static void DeleteAll();
 
     // IDA 0x752CB0
     VoxClass(const char* pName);
@@ -137,9 +148,11 @@ public:
     ~VoxClass();
 
     // IDA 0x753380
-    const char* GetFilename() const; // IDA: NOT_FOUND
+    // design: no binary equivalent found in IDA
+    const char* GetFilename() const;
     // IDA 0x752DB0
-    bool LoadFromINI(CCINIClass* pINI); // IDA: NOT_FOUND
+    // design: matched by name to IDA but marked NOT_FOUND
+    bool LoadFromINI(CCINIClass* pINI);
 
     char           Name[0x28];       // 0x00: eva.ini sound name
     float          Volume;           // 0x28: eva.ini Volume

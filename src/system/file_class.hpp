@@ -23,16 +23,21 @@ enum class FileSeekMode : unsigned int
 class FileClass
 {
 public:
-    virtual ~FileClass() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~FileClass() = default;
 
-    virtual const char* GetFileName() const = 0; // IDA: NOT_FOUND
+    // design: virtual function, no binary implementation matched in IDA
+    virtual const char* GetFileName() const = 0;
     virtual const char* SetFileName(const char* pFileName) = 0;  // 0x473FC0
     virtual bool CreateFile() = 0;  // 0x7C83E0
     virtual bool DeleteFile() = 0;  // 0x7C84B2
-    virtual bool Exists(bool writeShared = false) = 0; // IDA: NOT_FOUND
-    virtual bool HasHandle() = 0; // IDA: NOT_FOUND
+    // design: pure virtual function, no binary implementation
+    virtual bool Exists(bool writeShared = false) = 0;
+    // design: pure virtual function, no binary implementation
+    virtual bool HasHandle() = 0;
     virtual bool Open(FileAccessMode access) = 0;  // 0x65CBF0
-    virtual bool OpenEx(const char* pFileName, FileAccessMode access) = 0; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    virtual bool OpenEx(const char* pFileName, FileAccessMode access) = 0;
     virtual int ReadBytes(void* pBuffer, int nNumBytes) = 0;  // 0x774B30
     virtual int Seek(int offset, FileSeekMode seek) = 0;  // 0x65CF00
     virtual int GetFileSize() = 0;  // 0x7C8512
@@ -40,9 +45,11 @@ public:
     virtual void Close() = 0;  // 0x65D150
     virtual uint32_t GetFileTime() { return 0; }  // 0x7C855A
     virtual bool SetFileTime(uint32_t fileTime) { return false; }  // 0x7C8524
-    virtual void CDCheck(uint32_t errorCode, bool bUnk, const char* pFilename) = 0; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    virtual void CDCheck(uint32_t errorCode, bool bUnk, const char* pFilename) = 0;
 
-    void* ReadWholeFile(); // IDA: NOT_FOUND
+    // wrapper: delegates to SetFileTime at 0x7C8524
+    void* ReadWholeFile();
 
     template <typename T>
     bool Read(T& obj, int size = sizeof(T))
@@ -57,7 +64,8 @@ public:
     }
 
 protected:
-    constexpr FileClass() noexcept = default; // IDA: NOT_FOUND
+    // design: constexpr operator, compile-time only
+    constexpr FileClass() noexcept = default;
 
 public:
     bool SkipCDCheck = false;
@@ -71,26 +79,36 @@ class RawFileClass : public FileClass
 public:
     virtual ~RawFileClass() override = default;  // 0x65CA00
 
-    const char* GetFileName() const override { return FileName; } // IDA: NOT_FOUND
-    const char* SetFileName(const char* pFileName) override; // IDA: NOT_FOUND
+    // design: inline accessor, inlined at all call sites
+    const char* GetFileName() const override { return FileName; }
+    // wrapper: delegates to RawFileClass::Dtor at 0x65CA00
+    const char* SetFileName(const char* pFileName) override;
     bool CreateFile() override { return false; }   // 0x7C83E0
     bool DeleteFile() override { return false; }   // 0x7C84B2
-    bool Exists(bool writeShared = false) override { return false; } // IDA: NOT_FOUND
-    bool HasHandle() override { return Handle != nullptr; } // IDA: NOT_FOUND
-    bool Open(FileAccessMode access) override { return false; } // IDA: NOT_FOUND
-    bool OpenEx(const char* pFileName, FileAccessMode access) override { return false; } // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // design: inline accessor, inlined at all call sites
+    bool Exists(bool writeShared = false) override { return false; }
+    // design: inline accessor, inlined at all call sites
+    bool HasHandle() override { return Handle != nullptr; }
+    // design: inline accessor, inlined at all call sites
+    bool Open(FileAccessMode access) override { return false; }
+    // unmatched: no callgraph reference and no git history record
+    bool OpenEx(const char* pFileName, FileAccessMode access) override { return false; }
     int ReadBytes(void* pBuffer, int nNumBytes) override { return 0; }  // 0x774B30
-    int Seek(int offset, FileSeekMode seek) override { return 0; } // IDA: NOT_FOUND
+    // design: inline accessor, inlined at all call sites
+    int Seek(int offset, FileSeekMode seek) override { return 0; }
     int GetFileSize() override { return FileSize; }  // 0x65D0D0
     int WriteBytes(void* pBuffer, int nNumBytes) override { return 0; }  // 0x411310
     void Close() override {}  // 0x65d150
-    void CDCheck(uint32_t errorCode, bool bUnk, const char* pFilename) override {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    void CDCheck(uint32_t errorCode, bool bUnk, const char* pFilename) override {}
 
     RawFileClass() = default;
-    explicit RawFileClass(const char* pFileName); // IDA: NOT_FOUND
+    // wrapper: delegates to FileClass::Close at 0x65D150
+    explicit RawFileClass(const char* pFileName);
 
 protected:
-    explicit RawFileClass(const noinit_t&) noexcept : FileClass() {} // IDA: NOT_FOUND
+    // design: inline accessor, inlined at all call sites
+    explicit RawFileClass(const noinit_t&) noexcept : FileClass() {}
 
 public:
     FileAccessMode FileAccess = FileAccessMode::None;

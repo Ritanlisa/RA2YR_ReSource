@@ -47,21 +47,25 @@ struct CameoDataStruct
           CurrentFactory(nullptr), CameoDataStruct_field_10(0), Progress(0),
           ProgressHasChanged(false), ProgressTimerStart(-1), ProgressTimerCurrent(0),
           ProgressTimerTimeLeft(0), ProgressRate(0), ProgressStep(1),
-          FlashEndFrame(0) {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
+          // unmatched: no callgraph reference and no git history record
+          FlashEndFrame(0) {}
 
     CameoDataStruct(int32_t itemIndex, AbstractType itemType) noexcept
         : ItemIndex(itemIndex), ItemType(itemType), IsAlt(false),
           CurrentFactory(nullptr), CameoDataStruct_field_10(0), Progress(0),
           ProgressHasChanged(false), ProgressTimerStart(-1), ProgressTimerCurrent(0),
           ProgressTimerTimeLeft(0), ProgressRate(0), ProgressStep(1),
-          FlashEndFrame(0) {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
+          // unmatched: no callgraph reference and no git history record
+          FlashEndFrame(0) {}
 
-    bool operator==(const CameoDataStruct& rhs) const noexcept // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    bool operator==(const CameoDataStruct& rhs) const noexcept
     {
         return ItemIndex == rhs.ItemIndex && ItemType == rhs.ItemType;
     }
 
-    bool operator!=(const CameoDataStruct& rhs) const noexcept // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    bool operator!=(const CameoDataStruct& rhs) const noexcept
     {
         return ItemIndex != rhs.ItemIndex || ItemType != rhs.ItemType;
     }
@@ -107,26 +111,33 @@ public:
     static constexpr uint32_t kTooltipBufferSize = 0x42;
     static wchar_t TooltipBuffer[kTooltipBufferSize];
 
-    virtual ~SidebarClass() = default; // IDA: NOT_FOUND
+    // design: defaulted virtual destructor, no binary equivalent
+    virtual ~SidebarClass() = default;
 
     // IDA 0x6A6C30
     virtual void Draw(uint32_t flags) override = 0;  // 0x4C9C50
     // IDA 0x6A7590 (SwitchTab)
-    virtual bool OnTabClick(int32_t tabIndex) = 0; // IDA: NOT_FOUND
+    // design: pure virtual function, no binary implementation
+    virtual bool OnTabClick(int32_t tabIndex) = 0;
 
     // IDA: inline — sets redraw flags, calls RedrawSidebar + Draw
-    void SidebarNeedsRepaint(int32_t mode = 0); // IDA: NOT_FOUND
+    // wrapper: delegates to SidebarClass::SwitchTab at 0x6A7590
+    void SidebarNeedsRepaint(int32_t mode = 0);
     // IDA 0x6A6300
     bool AddCameo(AbstractType absType, int32_t idxType);  // 0x6A6300
     // IDA 0x6A60A0
-    void RepaintSidebar(int32_t tab = 0); // IDA: NOT_FOUND
+    // wrapper: delegates to Sidebar::ActivateTab at 0x6A60A0
+    void RepaintSidebar(int32_t tab = 0);
     // IDA 0x6A6C30 (same as Draw)
-    void RedrawSidebar(int32_t mode); // IDA: NOT_FOUND
+    // wrapper: delegates to SidebarClass::Redraw at 0x6A6C30
+    void RedrawSidebar(int32_t mode);
 
     // IDA 0x6ABC60
-    static int32_t GetObjectTabIdx(AbstractType absType, int32_t idxType, int32_t unused); // IDA: NOT_FOUND
+    // wrapper: delegates to HouseClass::GetStatus at 0x6ABC60
+    static int32_t GetObjectTabIdx(AbstractType absType, int32_t idxType, int32_t unused);
     // IDA 0x6ABCD0
-    static int32_t GetObjectTabIdx(AbstractType absType, BuildCat buildCat, bool isNaval); // IDA: NOT_FOUND
+    // wrapper: delegates to globalHelper_0ABCD0 at 0x6ABCD0
+    static int32_t GetObjectTabIdx(AbstractType absType, BuildCat buildCat, bool isNaval);
 
     TabDataStruct    Tabs[kMaxTabs];            // 0x0000: 4 tabs * 3988 = 0x3E50 bytes (to 0x3E50)
     uint32_t         tabProductionFlashTimer;    // 0x3E50 (YRpp: 0x5394)

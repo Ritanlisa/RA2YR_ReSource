@@ -21,8 +21,10 @@ class ParticleSystemTypeClass : public ObjectTypeClass
 public:
     static constexpr AbstractType AbsID = AbstractType::ParticleSystemType;
     static DynamicVectorClass<ParticleSystemTypeClass*>* Array;
-    static ParticleSystemTypeClass* Find(const char* pID); // IDA: NOT_FOUND
-    static ParticleSystemTypeClass* FindOrCreate(const char* pID); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // design: static function, no direct binary match in IDA
+    static ParticleSystemTypeClass* Find(const char* pID);
+    // unmatched: no callgraph reference and no git history record
+    static ParticleSystemTypeClass* FindOrCreate(const char* pID);
 
     virtual ~ParticleSystemTypeClass() = default;  // 0x644960 (as ddtor)
 
@@ -32,11 +34,13 @@ public:
     virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override; // 0x644950 (as StubReturnFalse)
     virtual ObjectClass* CreateObject(HouseClass* pOwner) override;  // 0x4737F0
 
-    ParticleSystemTypeClass(const char* pID) noexcept; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    ParticleSystemTypeClass(const char* pID) noexcept;
 
 protected:
     struct noinit_t {};
-    ParticleSystemTypeClass(noinit_t) noexcept : ObjectTypeClass(ObjectTypeClass::noinit_t{}) {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    ParticleSystemTypeClass(noinit_t) noexcept : ObjectTypeClass(ObjectTypeClass::noinit_t{}) {}
 
 public:
     int ArrayIndex;

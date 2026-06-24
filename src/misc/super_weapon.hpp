@@ -103,7 +103,8 @@ public:
     virtual ~SuperClass() = default;                                                 // 0x6CDEB0 (ddtor)
 
     virtual AbstractType __stdcall whatAmI() const override; // 0x6CE020 (PowerDrainUpdate area)
-    virtual int32_t objectSize() const override; // IDA: NOT_FOUND
+    // wrapper: delegates to SuperClass::PowerDrainUpdate at 0x6CE020
+    virtual int32_t objectSize() const override;
 
     void Reset();                                                                    // 0x6CE0B0
     bool SetOnHold(bool onHold);                                                     // 0x6CB4D0
@@ -116,9 +117,11 @@ public:
     int8_t StopPreclickAnim(bool isPlayer);                                           // 0x6CB830
     int8_t ClickFire(bool isPlayer, const CellStruct& cell);                          // 0x6CB920
     bool HasChargeProgressed(bool isPlayer);                                          // 0x6CC080 (AnnounceReady)
-    int32_t GetCameoChargeState() const; // IDA: NOT_FOUND
+    // wrapper: delegates to SuperClass::AnnounceReady at 0x6CC080
+    int32_t GetCameoChargeState() const;
     void SetCharge(int32_t percentage);                                               // 0x6CC1E0
-    int32_t GetRechargeTime() const; // IDA: NOT_FOUND
+    // wrapper: delegates to SuperClass::SetCharge at 0x6CC1E0
+    int32_t GetRechargeTime() const;
     void SetRechargeTime(int32_t time);                                               // 0x6CC280
     void ResetRechargeTime();                                                        // 0x6CC290
     const wchar_t* NameReadiness() const;                                             // 0x6CC2B0
@@ -170,7 +173,8 @@ public:
     // TODO: complete SuperClass
 
 protected:
-    explicit SuperClass(noinit_t) noexcept; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    explicit SuperClass(noinit_t) noexcept;
 };
 
 class LightningStorm
@@ -194,7 +198,8 @@ public:
     static bool HasDeferment();                                              // 0x53A100 (IsActive)
     static void Strike(const CellStruct& cell);                              // 0x53A140
     static void Strike2(const CoordStruct& coords);                          // 0x53A300
-    static void PrintMessage(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    static void PrintMessage();
     static void End();  // 0x53A090
     static bool IsActive();  // 0x53A100
 };
@@ -208,9 +213,11 @@ public:
     static AnimClass*              Anim;     // data: 0xA8E834
 
     static void Start(HouseClass* pOwner, const CellStruct& coords);  // 0x7CD80F
-    static void updateLogic(); // IDA: NOT_FOUND
+    // wrapper: delegates to start at 0x7CD80F
+    static void updateLogic();
     static void Fire();                                               // 0x53B080
-    static void PrintMessage(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    static void PrintMessage();
     static bool Active();                                             // 0x53B400 (IsActive)
 };
 
@@ -221,7 +228,8 @@ public:
     static int32_t Duration; // data: 0xA8E83C
 
     static void Start(int32_t duration);      // 0x753580 (DecrementCounter)
-    static void updateLogic(); // IDA: NOT_FOUND
+    // wrapper: delegates to ChronoScreenEffect::DecrementCounter at 0x753580
+    static void updateLogic();
     static bool Active();  // 0x4C9480
     static void DecrementCounter();  // 0x753580
 };
@@ -235,8 +243,10 @@ public:
 
     static void FadeIn();                // 0x53A110 (IsActive)
     static void FadeOut();               // 0x53A120 (ProcessEffect)
-    static bool IsFadingIn(); // IDA: NOT_FOUND
-    static bool IsFadingOut(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // wrapper: delegates to NukeFlash::ProcessEffect at 0x53A120
+    static bool IsFadingIn();
+    // unmatched: no callgraph reference and no git history record
+    static bool IsFadingOut();
     static bool IsActive();  // 0x53A110
     static void ProcessEffect();  // 0x53A120
 };

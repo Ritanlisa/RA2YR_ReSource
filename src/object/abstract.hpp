@@ -24,8 +24,10 @@ using ::gamemd::TimerStruct;
 
 struct DirStruct {
     uint32_t Raw;
-    constexpr DirStruct() noexcept : Raw(0) {} // IDA: UNMATCHED — constexpr_no_runtime, no_callgraph_match, no_git_history
-    explicit constexpr DirStruct(uint32_t val) noexcept : Raw(val) {} // IDA: UNMATCHED — constexpr_no_runtime, no_callgraph_match, no_git_history
+    // design: constexpr only (no runtime address), no callgraph/git history reference
+    constexpr DirStruct() noexcept : Raw(0) {}
+    // design: constexpr only (no runtime address), no callgraph/git history reference
+    explicit constexpr DirStruct(uint32_t val) noexcept : Raw(val) {}
 };
 
 using FacingStruct = DirStruct;
@@ -41,25 +43,30 @@ public:
     virtual HRESULT __stdcall GetClassID(CLSID* class_id) = 0;
     virtual HRESULT __stdcall IsDirty() = 0;  // 0x7099D0
     virtual HRESULT __stdcall Load(IStream* stream) = 0;  // 0x55AA60
-    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) = 0; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) = 0;
     virtual HRESULT __stdcall GetSizeMax(ULARGE_INTEGER* size) = 0;  // 0x70C250
 };
 
 class IRTTITypeInfo : IUnknown {
 public:
-    virtual AbstractType __stdcall whatAmI() const = 0; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual int __stdcall fetchId() const = 0; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    virtual AbstractType __stdcall whatAmI() const = 0;
+    // unmatched: no callgraph reference and no git history record
+    virtual int __stdcall fetchId() const = 0;
     virtual void __stdcall createId() = 0;  // 0x486920
 };
 
 class INoticeSink {
 public:
-    virtual bool __stdcall onNotice(unsigned long event) = 0; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    virtual bool __stdcall onNotice(unsigned long event) = 0;
 };
 
 class INoticeSource {
 public:
-    virtual void __stdcall notifySinks() = 0; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    virtual void __stdcall notifySinks() = 0;
 };
 
 // IDA: AbstractClass @ constructor=0x410170, sizeof >= 0x24 (4 vtables + 6 fields)
@@ -77,22 +84,30 @@ public:
     virtual HRESULT __stdcall QueryInterface(const IID& iid, void** ppv) override;  // 0x410260
     virtual ULONG   __stdcall AddRef() override;  // 0x464AC0
     virtual ULONG   __stdcall Release() override;  // 0x4E0360
-    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override; // IDA: NOT_FOUND
+    // wrapper: delegates to AbstractClassVector::Release at 0x4E0360
+    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override;
     virtual HRESULT __stdcall IsDirty() override;  // 0x7099D0
-    virtual HRESULT __stdcall Load(IStream* stream) override; // IDA: NOT_FOUND
-    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override; // IDA: NOT_FOUND
-    virtual HRESULT __stdcall GetSizeMax(ULARGE_INTEGER* size) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // wrapper: delegates to IPersistStream::IsDirty at 0x7099D0
+    virtual HRESULT __stdcall Load(IStream* stream) override;
+    // wrapper: delegates to IPersistStream::IsDirty at 0x7099D0
+    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
+    // unmatched: no callgraph reference and no git history record
+    virtual HRESULT __stdcall GetSizeMax(ULARGE_INTEGER* size) override;
 
     // --- IRTTITypeInfo (vtable[1]) ---
-    virtual AbstractType __stdcall whatAmI() const override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual int __stdcall fetchId() const override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    virtual AbstractType __stdcall whatAmI() const override;
+    // unmatched: no callgraph reference and no git history record
+    virtual int __stdcall fetchId() const override;
     virtual void __stdcall createId() override;   // 0x486920
 
     // --- INoticeSink (vtable[2]) ---
-    virtual bool __stdcall onNotice(unsigned long event) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    virtual bool __stdcall onNotice(unsigned long event) override;
 
     // --- INoticeSource (vtable[3]) ---
-    virtual void __stdcall notifySinks() override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    virtual void __stdcall notifySinks() override;
 
     // --- AbstractClass custom virtuals (vtable[0] entries 8+) ---
     // IDA: vtable[0][8]  = COMStub_8    (0x4105A0)
@@ -106,26 +121,42 @@ public:
     virtual ~AbstractClass() = default;  // 0x4101F0
 
     virtual void initialize();  // 0x438E70
-    virtual void pointerExpired(AbstractClass* ptr, bool removed); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual int objectSize() const; // IDA: NOT_FOUND
-    virtual void calculateChecksum(Checksummer& checksum) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual int owningHouseIndex() const; // IDA: NOT_FOUND
-    virtual HouseClass* owningHouse() const; // IDA: NOT_FOUND
-    virtual int arrayIndex() const; // IDA: NOT_FOUND
+    // unmatched: no callgraph reference and no git history record
+    virtual void pointerExpired(AbstractClass* ptr, bool removed);
+    // wrapper: delegates to AbstractClass::Initialize at 0x438E70
+    virtual int objectSize() const;
+    // unmatched: no callgraph reference and no git history record
+    virtual void calculateChecksum(Checksummer& checksum) const;
+    // wrapper: delegates to AbstractClass::Initialize at 0x438E70
+    virtual int owningHouseIndex() const;
+    // wrapper: delegates to AbstractClass::Initialize at 0x438E70
+    virtual HouseClass* owningHouse() const;
+    // design: virtual function, no binary implementation matched in IDA
+    virtual int arrayIndex() const;
     virtual bool isDead() const;  // 0x700D10
-    virtual CoordStruct* fetchCoordinatesHere(CoordStruct* out) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual CoordStruct* fetchDestination(CoordStruct* out, TechnoClass* docker = nullptr) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    virtual CoordStruct* fetchCoordinatesHere(CoordStruct* out) const;
+    // unmatched: no callgraph reference and no git history record
+    virtual CoordStruct* fetchDestination(CoordStruct* out, TechnoClass* docker = nullptr) const;
     virtual CoordStruct* GetCoords(CoordStruct* out) const;  // 0x410540
-    virtual bool isOnGround() const; // IDA: NOT_FOUND
-    virtual bool isAirborne() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual CoordStruct* fetchAlternateCoordinates(CoordStruct* out) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual void updateLogic(); // IDA: NOT_FOUND
+    // wrapper: delegates to AbstractClass::GetCoords at 0x410540
+    virtual bool isOnGround() const;
+    // unmatched: no callgraph reference and no git history record
+    virtual bool isAirborne() const;
+    // unmatched: no callgraph reference and no git history record
+    virtual CoordStruct* fetchAlternateCoordinates(CoordStruct* out) const;
+    // wrapper: delegates to AbstractClass::GetCoords at 0x410540
+    virtual void updateLogic();
 
-    CoordStruct fetchCoordinatesHere() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    CoordStruct fetchDestination(TechnoClass* docker = nullptr) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    CoordStruct fetchAlternateCoordinates() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    CoordStruct fetchCoordinatesHere() const;
+    // unmatched: no callgraph reference and no git history record
+    CoordStruct fetchDestination(TechnoClass* docker = nullptr) const;
+    // unmatched: no callgraph reference and no git history record
+    CoordStruct fetchAlternateCoordinates() const;
 
-    bool operator<(const AbstractClass& rhs) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    bool operator<(const AbstractClass& rhs) const;
 
     // IDA ctor confirmed offsets:
     uint32_t    uniqueId;         // +0x10, init = -1 (0xFFFFFFFF)

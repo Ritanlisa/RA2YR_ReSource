@@ -35,7 +35,8 @@ public:
     static constexpr AbstractType AbsID = AbstractType::BuildingType;
 
     static DynamicVectorClass<BuildingTypeClass*>* Array;
-    static BuildingTypeClass* Find(const char* pID); // IDA: NOT_FOUND
+    // design: static function, no direct binary match in IDA
+    static BuildingTypeClass* Find(const char* pID);
     static BuildingTypeClass* FindOrCreate(const char* pID);  // 0x4653C0 (as FindOrCreate)
     static int FindIndex(const char* pID);  // 0x747370
 
@@ -46,22 +47,30 @@ public:
     virtual AbstractType __stdcall whatAmI() const override; // 0x465D90 (as GetTypeIdentifier)
     virtual int objectSize() const override; // 0x465DA0 (as GetObjectSize)
 
-    virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override; // IDA: NOT_FOUND
+    // wrapper: delegates to BuildingTypeClass::GetObjectSize at 0x465DA0
+    virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override;
     virtual ObjectClass* CreateObject(HouseClass* pOwner) override;  // 0x4737F0
 
-    virtual SHPStruct* LoadBuildup(); // IDA: NOT_FOUND
+    // wrapper: delegates to ReinforcementClass::CreateObject at 0x4737F0
+    virtual SHPStruct* LoadBuildup();
 
-    bool IsVehicle() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    bool IsVehicle() const;
     short GetFoundationWidth() const;  // 0x45EC90
     short GetFoundationHeight(bool bIncludeBib) const;  // 0x45ECA0
-    bool CanPlaceHere(CellStruct* cell, HouseClass* owner) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    bool CanPlaceHere(CellStruct* cell, HouseClass* owner) const;
 
-    bool HasSuperWeapon(int index) const; // IDA: NOT_FOUND
-    bool HasSuperWeapon() const; // IDA: NOT_FOUND
+    // wrapper: delegates to BuildingTypeClass::GetFoundationHeight at 0x45ECA0
+    bool HasSuperWeapon(int index) const;
+    // wrapper: delegates to BuildingTypeClass::GetFoundationHeight at 0x45ECA0
+    bool HasSuperWeapon() const;
     bool CanTogglePower() const;  // 0x508DF0
 
-    BuildingAnimStruct& GetBuildingAnim(BuildingAnimSlot slot); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    const BuildingAnimStruct& GetBuildingAnim(BuildingAnimSlot slot) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    BuildingAnimStruct& GetBuildingAnim(BuildingAnimSlot slot);
+    // unmatched: no callgraph reference and no git history record
+    const BuildingAnimStruct& GetBuildingAnim(BuildingAnimSlot slot) const;
 
     BuildingTypeClass(const char* pID) noexcept;  // 0x644BE0 (as Construct)
 
@@ -294,8 +303,10 @@ public:
     int  TriggerTag;    // 0x452dc0 area
     int  BuildingTypeClass_field_60; // 0x60
 
-    int  GetArrayIndex() const { return ArrayIndex; } // IDA: NOT_FOUND
-    bool IsCellClearOfTerrainObstacles(const CellStruct& cell) const; // IDA: NOT_FOUND
+    // design: inline accessor, inlined at all call sites
+    int  GetArrayIndex() const { return ArrayIndex; }
+    // design: no binary equivalent found in IDA
+    bool IsCellClearOfTerrainObstacles(const CellStruct& cell) const;
 
     DWORD align_1794;
 };

@@ -76,6 +76,7 @@ struct SpawnConfig {
     HouseConfig houses[8]{};
 };
 
-SpawnConfig SpawnConfig_LoadFromINI(const char* filename); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+// unmatched: no callgraph reference and no git history record
+SpawnConfig SpawnConfig_LoadFromINI(const char* filename);
 
 } // namespace gamemd

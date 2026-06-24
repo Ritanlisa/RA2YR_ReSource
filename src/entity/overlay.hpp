@@ -24,21 +24,29 @@ class OverlayClass : public ObjectClass
 public:
     static constexpr AbstractType kObjectTypeId = AbstractType::Overlay;
 
-    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override; // IDA: NOT_FOUND
-    virtual HRESULT __stdcall Load(IStream* pStm) override; // IDA: NOT_FOUND
-    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // design: virtual function, no binary implementation matched in IDA
+    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override;
+    // design: virtual function, no binary implementation matched in IDA
+    virtual HRESULT __stdcall Load(IStream* pStm) override;
+    // unmatched: no callgraph reference and no git history record
+    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;
 
-    virtual ~OverlayClass() override = default; // IDA: NOT_FOUND
+    // design: virtual function, no binary implementation matched in IDA
+    virtual ~OverlayClass() override = default;
 
-    virtual AbstractType __stdcall whatAmI() const override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual int objectSize() const override; // IDA: NOT_FOUND
+    // unmatched: no callgraph reference and no git history record
+    virtual AbstractType __stdcall whatAmI() const override;
+    // design: virtual function, no binary implementation matched in IDA
+    virtual int objectSize() const override;
 
     OverlayTypeClass* Type;
 
 protected:
-    OverlayClass() = default; // IDA: UNMATCHED — defaulted_special_member, default_ctor, no_callgraph_match
+    // design: default constructor (compiler-generated), no callgraph reference
+    OverlayClass() = default;
 public:
-    OverlayClass(OverlayTypeClass* pType, const CellStruct& cell, HouseClass* owner) noexcept; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    OverlayClass(OverlayTypeClass* pType, const CellStruct& cell, HouseClass* owner) noexcept;
 };
 
 } // namespace gamemd

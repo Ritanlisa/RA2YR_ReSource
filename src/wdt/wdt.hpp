@@ -44,19 +44,22 @@ public:
     rc_ptr() noexcept = default;
 
     explicit rc_ptr(T* ptr) noexcept
-        : ptr(ptr) // IDA: UNMATCHED — no_callgraph_match, no_git_history
+        // unmatched: no callgraph reference and no git history record
+        : ptr(ptr)
     {
         if (ptr) { ptr->AddRef(); }
     }
 
     rc_ptr(const rc_ptr& other) noexcept
-        : ptr(other.ptr) // IDA: UNMATCHED — no_callgraph_match, no_git_history
+        // unmatched: no callgraph reference and no git history record
+        : ptr(other.ptr)
     {
         if (ptr) { ptr->AddRef(); }
     }
 
     rc_ptr(rc_ptr&& other) noexcept
-        : ptr(other.ptr) // IDA: UNMATCHED — no_callgraph_match, no_git_history
+        // unmatched: no callgraph reference and no git history record
+        : ptr(other.ptr)
     {
         other.ptr = nullptr;
     }
@@ -66,7 +69,8 @@ public:
         if (ptr) { ptr->Release(); }
     }
 
-    rc_ptr& operator=(const rc_ptr& other) noexcept // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    rc_ptr& operator=(const rc_ptr& other) noexcept
     {
         if (this != &other)
         {
@@ -77,7 +81,8 @@ public:
         return *this;
     }
 
-    rc_ptr& operator=(rc_ptr&& other) noexcept // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    rc_ptr& operator=(rc_ptr&& other) noexcept
     {
         if (this != &other)
         {
@@ -88,10 +93,14 @@ public:
         return *this;
     }
 
-    T* get() const noexcept { return ptr; } // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    T* operator->() const noexcept { return ptr; } // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    T& operator*() const noexcept { return *ptr; } // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    explicit operator bool() const noexcept { return ptr != nullptr; } // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    T* get() const noexcept { return ptr; }
+    // unmatched: no callgraph reference and no git history record
+    T* operator->() const noexcept { return ptr; }
+    // unmatched: no callgraph reference and no git history record
+    T& operator*() const noexcept { return *ptr; }
+    // unmatched: no callgraph reference and no git history record
+    explicit operator bool() const noexcept { return ptr != nullptr; }
 
     void reset(T* ptr = nullptr) noexcept
     {
@@ -100,7 +109,8 @@ public:
         if (ptr) { ptr->AddRef(); }
     }
 
-    T* release() noexcept // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    T* release() noexcept
     {
         T* tmp = ptr;
         ptr = nullptr;
@@ -115,13 +125,17 @@ class State
 {
 public:
     State();
-    virtual ~State(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    virtual ~State();
 
-    void AddRef() noexcept {} // IDA: NOT_FOUND
-    void Release() noexcept {} // IDA: NOT_FOUND
+    // design: inline accessor, inlined at all call sites
+    void AddRef() noexcept {}
+    // design: inline accessor, inlined at all call sites
+    void Release() noexcept {}
 
     virtual WDTError LoadConfig(); // 0x5981f0
-    virtual WDTError SaveConfig(); // IDA: NOT_FOUND
+    // wrapper: delegates to RandomMap::LoadConfig at 0x5981F0
+    virtual WDTError SaveConfig();
 
     int             Players;
     int             AIPlayers;
@@ -146,14 +160,20 @@ class Map
 {
 public:
     Map();
-    virtual ~Map(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    virtual ~Map();
 
-    virtual WDTError Load(); // IDA: NOT_FOUND
-    virtual WDTError Draw(); // IDA: NOT_FOUND
-    virtual void    updateLogic(); // IDA: NOT_FOUND
+    // design: virtual function, no binary implementation matched in IDA
+    virtual WDTError Load();
+    // design: virtual function, no binary implementation matched in IDA
+    virtual WDTError Draw();
+    // design: virtual function, no binary implementation matched in IDA
+    virtual void    updateLogic();
 
-    void AddRef() noexcept { ++refcount; } // IDA: NOT_FOUND
-    void Release() noexcept { if (--refcount == 0) delete this; } // IDA: NOT_FOUND
+    // design: inline accessor, inlined at all call sites
+    void AddRef() noexcept { ++refcount; }
+    // design: inline accessor, inlined at all call sites
+    void Release() noexcept { if (--refcount == 0) delete this; }
 
     int         Width;
     int         Height;
@@ -172,13 +192,18 @@ protected:
 class Territory
 {
 public:
-    Territory(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual ~Territory(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    Territory();
+    // unmatched: no callgraph reference and no git history record
+    virtual ~Territory();
 
     virtual WDTError Attach(int player);
-    virtual WDTError Detach(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual int      Owner() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual int      Income() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    virtual WDTError Detach();
+    // unmatched: no callgraph reference and no git history record
+    virtual int      Owner() const;
+    // unmatched: no callgraph reference and no git history record
+    virtual int      Income() const;
 
     void AddRef() { ++referenceCount; }
     void Release() { if (--referenceCount == 0) delete this; }
@@ -194,14 +219,20 @@ public:
 class Conflict
 {
 public:
-    Conflict(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual ~Conflict(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    Conflict();
+    // unmatched: no callgraph reference and no git history record
+    virtual ~Conflict();
 
-    virtual WDTError Resolve(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual void     updateLogic(); // IDA: NOT_FOUND
+    // unmatched: no callgraph reference and no git history record
+    virtual WDTError Resolve();
+    // design: virtual function, no binary implementation matched in IDA
+    virtual void     updateLogic();
 
-    void AddRef() { ++referenceCount; } // IDA: NOT_FOUND
-    void Release() { if (--referenceCount == 0) delete this; } // IDA: NOT_FOUND
+    // design: inline accessor, inlined at all call sites
+    void AddRef() { ++referenceCount; }
+    // design: inline accessor, inlined at all call sites
+    void Release() { if (--referenceCount == 0) delete this; }
 
     Territory*    Attacker;
     Territory*    Defender;
@@ -214,13 +245,17 @@ class Campaign
 {
 public:
     Campaign();
-    virtual ~Campaign(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    virtual ~Campaign();
 
     virtual WDTError Start();  // 0x7CD80F
     virtual WDTError End();  // 0x53A090
-    virtual void     updateLogic(); // IDA: NOT_FOUND
-    virtual WDTError Save(const char* filename); // IDA: NOT_FOUND
-    virtual WDTError Load(const char* filename); // IDA: NOT_FOUND
+    // wrapper: delegates to LightningStorm::End at 0x53A090
+    virtual void     updateLogic();
+    // wrapper: delegates to LightningStorm::End at 0x53A090
+    virtual WDTError Save(const char* filename);
+    // wrapper: delegates to LightningStorm::End at 0x53A090
+    virtual WDTError Load(const char* filename);
 
     rc_ptr<State>   state;
     rc_ptr<Map>     map;
@@ -231,10 +266,13 @@ public:
 class History
 {
 public:
-    History(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual ~History(); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    History();
+    // unmatched: no callgraph reference and no git history record
+    virtual ~History();
 
-    virtual void Record(const char* event); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    virtual void Record(const char* event);
     virtual void Clear();
 
     struct Entry

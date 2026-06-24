@@ -20,7 +20,8 @@ struct WarheadFlags
     bool PassiveAcquire;
 
     WarheadFlags(bool FF = true, bool Retal = true, bool Acquire = true)
-        : ForceFire(FF), Retaliate(Retal), PassiveAcquire(Acquire) {} // IDA: UNMATCHED — no_callgraph_match, no_git_history
+        // unmatched: no callgraph reference and no git history record
+        : ForceFire(FF), Retaliate(Retal), PassiveAcquire(Acquire) {}
 };
 
 class WarheadTypeClass : public AbstractTypeClass
@@ -29,9 +30,11 @@ public:
     static constexpr AbstractType AbsID = AbstractType::WarheadType;
 
     static DynamicVectorClass<WarheadTypeClass*>* Array;
-    static WarheadTypeClass* Find(const char* pID); // IDA: NOT_FOUND
+    // design: static function, no direct binary match in IDA
+    static WarheadTypeClass* Find(const char* pID);
     static WarheadTypeClass* FindOrCreate(const char* pID);  // 0x75E3B0 (as FindOrCreate)
-    static int FindIndex(const char* pID); // IDA: NOT_FOUND
+    // wrapper: delegates to WarheadTypeClass::FindOrCreate at 0x75E3B0
+    static int FindIndex(const char* pID);
 
     virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override { return E_NOTIMPL; }  // 0x524ED0 (as GetClassIdentifier)
 

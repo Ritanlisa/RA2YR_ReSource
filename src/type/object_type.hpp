@@ -39,26 +39,39 @@ class ObjectTypeClass : public AbstractTypeClass
 {
 public:
     virtual HRESULT __stdcall Load(IStream* pStm) override; // 0x5F92D0 (as LoadFromINI)
-    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual HRESULT __stdcall GetSizeMax(ULARGE_INTEGER* pcbSize) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;
+    // unmatched: no callgraph reference and no git history record
+    virtual HRESULT __stdcall GetSizeMax(ULARGE_INTEGER* pcbSize) override;
 
     virtual ~ObjectTypeClass() = default;  // 0x5F7400 (as Destruct)
 
     virtual CoordStruct* onCellChanged(CoordStruct* pDest, CoordStruct* pSrc) const; // 0x41CBF0 (as vt_entry_7C)
-    virtual DWORD GetOwners() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual int GetPipMax() const; // IDA: NOT_FOUND
-    virtual void onTypeLoadComplete(DWORD dwUnk) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual void onTypeUnload(DWORD dwUnk); // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) = 0; // IDA: NOT_FOUND
-    virtual int GetActualCost(HouseClass* pHouse) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual int GetBuildSpeed() const; // IDA: NOT_FOUND
+    // unmatched: no callgraph reference and no git history record
+    virtual DWORD GetOwners() const;
+    // wrapper: delegates to ObjectTypeClass::vt_entry_7C at 0x41CBF0
+    virtual int GetPipMax() const;
+    // unmatched: no callgraph reference and no git history record
+    virtual void onTypeLoadComplete(DWORD dwUnk) const;
+    // unmatched: no callgraph reference and no git history record
+    virtual void onTypeUnload(DWORD dwUnk);
+    // design: pure virtual function, no binary implementation
+    virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) = 0;
+    // unmatched: no callgraph reference and no git history record
+    virtual int GetActualCost(HouseClass* pHouse) const;
+    // design: virtual function, no binary implementation matched in IDA
+    virtual int GetBuildSpeed() const;
     virtual ObjectClass* CreateObject(HouseClass* pOwner) = 0;  // 0x4737F0
-    virtual CellStruct* GetFoundationData(bool IncludeBib) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual BuildingClass* FindFactory(bool allowOccupied, bool requirePower, bool requireCanBuild, HouseClass const* pHouse) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    virtual CellStruct* GetFoundationData(bool IncludeBib) const;
+    // unmatched: no callgraph reference and no git history record
+    virtual BuildingClass* FindFactory(bool allowOccupied, bool requirePower, bool requireCanBuild, HouseClass const* pHouse) const;
     virtual SHPStruct* GetCameo() const;  // 0x5471B0
-    virtual SHPStruct* GetImage() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    virtual SHPStruct* GetImage() const;
 
-    static bool IsBuildCat5(AbstractType abstractID, int idx); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    static bool IsBuildCat5(AbstractType abstractID, int idx);
     static TechnoTypeClass* GetTechnoType(AbstractType abstractID, int idx);  // 0x476EB0
 
     ObjectTypeClass() = default;
@@ -67,7 +80,8 @@ public:
     struct noinit_t {};
 
 protected:
-    ObjectTypeClass(noinit_t) noexcept; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    ObjectTypeClass(noinit_t) noexcept;
 
 public:
     ColorStruct RadialColor;

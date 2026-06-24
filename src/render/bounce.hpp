@@ -24,9 +24,11 @@ public:
         Impact = 2
     };
 
-    BounceClass() = default; // IDA: UNMATCHED — defaulted_special_member, default_ctor, no_callgraph_match
+    // design: default constructor (compiler-generated), no callgraph reference
+    BounceClass() = default;
 
-    BounceClass( // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    BounceClass(
         const CoordStruct& coords,
         double elasticity,
         double gravity,
@@ -34,7 +36,8 @@ public:
         const Vector3D<float>& velocity,
         double angular_velocity);
 
-    void Initialize( // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    void Initialize(
         const CoordStruct& coords,
         double elasticity,
         double gravity,
@@ -42,11 +45,15 @@ public:
         const Vector3D<float>& velocity,
         double angular_velocity);
 
-    CoordStruct* fetchCoordinatesHere(CoordStruct* out) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    CoordStruct fetchCoordinatesHere() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    CoordStruct* fetchCoordinatesHere(CoordStruct* out) const;
+    // unmatched: no callgraph reference and no git history record
+    CoordStruct fetchCoordinatesHere() const;
 
-    Matrix3D* GetDrawingMatrix(Matrix3D* out) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    Matrix3D GetDrawingMatrix() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    Matrix3D* GetDrawingMatrix(Matrix3D* out) const;
+    // unmatched: no callgraph reference and no git history record
+    Matrix3D GetDrawingMatrix() const;
 
     Status updateLogic();
 

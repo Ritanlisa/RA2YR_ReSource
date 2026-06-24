@@ -13,16 +13,21 @@ class TemporalClass : public AbstractClass
 public:
     static constexpr AbstractType kObjectDeriveId = AbstractType::Temporal;
 
-    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override; // IDA: NOT_FOUND
+    // design: virtual function, no binary implementation matched in IDA
+    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override;
     virtual HRESULT __stdcall Load(IStream* stream) override;  // 0x71A660
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;  // 0x71A700
 
     virtual ~TemporalClass() = default;  // 0x71A720
 
-    virtual void pointerExpired(AbstractClass* ptr, bool removed) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual AbstractType __stdcall whatAmI() const override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual int objectSize() const override; // IDA: NOT_FOUND
-    virtual void calculateChecksum(void* checksum) const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    virtual void pointerExpired(AbstractClass* ptr, bool removed) override;
+    // unmatched: no callgraph reference and no git history record
+    virtual AbstractType __stdcall whatAmI() const override;
+    // wrapper: delegates to TemporalClass::ddtor at 0x71A720
+    virtual int objectSize() const override;
+    // unmatched: no callgraph reference and no git history record
+    virtual void calculateChecksum(void* checksum) const;
 
     // Construction
     TemporalClass();                                             // 0x71A4E0

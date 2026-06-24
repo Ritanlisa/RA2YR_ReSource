@@ -26,19 +26,23 @@ public:
 
     virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override;
     virtual HRESULT __stdcall Load(IStream* pStm) override;
-    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;
 
     virtual ~SmudgeClass() override = default;
 
-    virtual AbstractType __stdcall whatAmI() const override; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    virtual AbstractType __stdcall whatAmI() const override;
     virtual int objectSize() const override;
 
     SmudgeTypeClass* Type;
 
 protected:
-    SmudgeClass() = default; // IDA: UNMATCHED — defaulted_special_member, default_ctor, no_callgraph_match
+    // design: default constructor (compiler-generated), no callgraph reference
+    SmudgeClass() = default;
 public:
-    SmudgeClass(SmudgeTypeClass* pType, const CellStruct& cell, HouseClass* owner) noexcept; // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    SmudgeClass(SmudgeTypeClass* pType, const CellStruct& cell, HouseClass* owner) noexcept;
 };
 
 } // namespace gamemd

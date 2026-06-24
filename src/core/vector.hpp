@@ -15,7 +15,8 @@ public:
     static_assert(!needs_vector_delete<T>::value || (alignof(T) <= 4),
         "Alignment of T needs to be less than or equal to 4.");
 
-    constexpr VectorClass() noexcept = default; // IDA: NOT_FOUND
+    // design: constexpr operator, compile-time only
+    constexpr VectorClass() noexcept = default;
 
     explicit VectorClass(int capacity, T* mem = nullptr)
     {
@@ -52,7 +53,8 @@ public:
         : Items(other.Items)
         , Capacity(other.Capacity)
         , IsInitialized(other.IsInitialized)
-        , IsAllocated(std::exchange(other.IsAllocated, false)) // IDA: UNMATCHED — no_callgraph_match, no_git_history
+        // unmatched: no callgraph reference and no git history record
+        , IsAllocated(std::exchange(other.IsAllocated, false))
     {}
 
     virtual ~VectorClass() noexcept
@@ -63,19 +65,22 @@ public:
         }
     }
 
-    VectorClass& operator=(const VectorClass& other) // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    VectorClass& operator=(const VectorClass& other)
     {
         VectorClass(other).Swap(*this);
         return *this;
     }
 
-    VectorClass& operator=(VectorClass&& other) noexcept // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    VectorClass& operator=(VectorClass&& other) noexcept
     {
         VectorClass(std::move(other)).Swap(*this);
         return *this;
     }
 
-    virtual bool operator==(const VectorClass& other) const // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    virtual bool operator==(const VectorClass& other) const
     {
         if (Capacity != other.Capacity)
         {
@@ -92,7 +97,8 @@ public:
         return true;
     }
 
-    bool operator!=(const VectorClass& other) const // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    bool operator!=(const VectorClass& other) const
     {
         return !(*this == other);
     }
@@ -121,7 +127,8 @@ public:
                 }
                 if (IsAllocated)
                 {
-                    GameDeleteArray(Items, static_cast<std::size_t>(Capacity)); // IDA: UNMATCHED — no_callgraph_match, no_git_history
+                    // unmatched: no callgraph reference and no git history record
+                    GameDeleteArray(Items, static_cast<std::size_t>(Capacity));
                     Items = nullptr;
                 }
             }
@@ -183,7 +190,8 @@ public:
         return Items[i];
     }
 
-    bool Reserve(int capacity) // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    bool Reserve(int capacity)
     {
         if (!IsInitialized)
         {
@@ -214,7 +222,8 @@ template <typename T>
 class DynamicVectorClass : public VectorClass<T>
 {
 public:
-    constexpr DynamicVectorClass() noexcept = default; // IDA: NOT_FOUND
+    // design: constexpr operator, compile-time only
+    constexpr DynamicVectorClass() noexcept = default;
 
     explicit DynamicVectorClass(int capacity, T* mem = nullptr)
         : VectorClass<T>(capacity, mem)
@@ -239,16 +248,19 @@ public:
     DynamicVectorClass(DynamicVectorClass&& other) noexcept
         : VectorClass<T>(std::move(other))
         , Count(other.Count)
-        , CapacityIncrement(other.CapacityIncrement) // IDA: UNMATCHED — no_callgraph_match, no_git_history
+        // unmatched: no callgraph reference and no git history record
+        , CapacityIncrement(other.CapacityIncrement)
     {}
 
-    DynamicVectorClass& operator=(const DynamicVectorClass& other) // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    DynamicVectorClass& operator=(const DynamicVectorClass& other)
     {
         DynamicVectorClass(other).Swap(*this);
         return *this;
     }
 
-    DynamicVectorClass& operator=(DynamicVectorClass&& other) noexcept // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    DynamicVectorClass& operator=(DynamicVectorClass&& other) noexcept
     {
         DynamicVectorClass(std::move(other)).Swap(*this);
         return *this;
@@ -264,7 +276,8 @@ public:
         return result;
     }
 
-    int GetSize() const { return Count; } // IDA: NOT_FOUND
+    // design: inline accessor, inlined at all call sites
+    int GetSize() const { return Count; }
 
     void Clear() override
     {
@@ -288,17 +301,20 @@ public:
         return -1;
     }
 
-    bool ValidIndex(int index) const // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    bool ValidIndex(int index) const
     {
         return static_cast<unsigned>(index) < static_cast<unsigned>(Count);
     }
 
-    T GetItemOrDefault(int i) const // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    T GetItemOrDefault(int i) const
     {
         return GetItemOrDefault(i, T());
     }
 
-    T GetItemOrDefault(int i, T def) const // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    T GetItemOrDefault(int i, T def) const
     {
         if (ValidIndex(i))
         {
@@ -307,22 +323,26 @@ public:
         return def;
     }
 
-    T* begin() // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    T* begin()
     {
         return &this->Items[0];
     }
 
-    T* end() // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    T* end()
     {
         return &this->Items[Count];
     }
 
-    const T* begin() const // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    const T* begin() const
     {
         return &this->Items[0];
     }
 
-    const T* end() const // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    const T* end() const
     {
         return &this->Items[Count];
     }
@@ -348,7 +368,8 @@ public:
         return true;
     }
 
-    bool AddUnique(const T& item) // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    bool AddUnique(const T& item)
     {
         int idx = FindItemIndex(item);
         return idx < 0 && AddItem(item);

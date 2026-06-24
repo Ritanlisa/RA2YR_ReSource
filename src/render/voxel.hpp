@@ -25,7 +25,8 @@ struct VoxLib
     void Start();  // 0x7CD80F
     bool Loaded();  // 0x544C80
     void Clear();
-    void InitLimits( // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    // unmatched: no callgraph reference and no git history record
+    void InitLimits(
         int32_t hva_min_x, int32_t hva_min_y, int32_t hva_min_z,
         int32_t hva_max_x, int32_t hva_max_y, int32_t hva_max_z);
 
@@ -119,12 +120,15 @@ public:
 
     static DynamicVectorClass<VoxelAnimTypeClass*>* Array;
 
-    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override; // IDA: NOT_FOUND
+    // design: virtual function, no binary implementation matched in IDA
+    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override;
 
-    virtual AbstractType __stdcall WhatAmI() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual int Size() const;  // 0x454190
+    // unmatched: no callgraph reference and no git history record
+    virtual AbstractType __stdcall WhatAmI() const;
+    virtual int Size() const;  // 0x454190 // wrapper: BuildingClass::Size
 
-    virtual bool SpawnAtMapCoords(CellStruct* coords, HouseClass* owner); // IDA: NOT_FOUND
+    // wrapper: delegates to BuildingClass::Size at 0x454190
+    virtual bool SpawnAtMapCoords(CellStruct* coords, HouseClass* owner);
     virtual ObjectClass* CreateObject(HouseClass* owner) override;  // 0x4737F0
 
     virtual ~VoxelAnimTypeClass() override = default;  // 0x74BA30
@@ -159,7 +163,8 @@ public:
 
 protected:
     VoxelAnimTypeClass() = default;
-    explicit VoxelAnimTypeClass(noinit_t) noexcept; // IDA: NOT_FOUND
+    // design: no binary equivalent found in IDA
+    explicit VoxelAnimTypeClass(noinit_t) noexcept;
 };
 
 
@@ -171,14 +176,17 @@ public:
 
     static DynamicVectorClass<VoxelAnimClass*>* Array;
 
-    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override; // IDA: NOT_FOUND
+    // design: virtual function, no binary implementation matched in IDA
+    virtual HRESULT __stdcall GetClassID(CLSID* class_id) override;
 
-    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override; // IDA: NOT_FOUND
+    // design: virtual function, no binary implementation matched in IDA
+    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
 
     virtual ~VoxelAnimClass() override = default;  // 0x74AAD0
 
-    virtual AbstractType __stdcall WhatAmI() const; // IDA: UNMATCHED — no_callgraph_match, no_git_history
-    virtual int Size() const;  // 0x454190
+    // unmatched: no callgraph reference and no git history record
+    virtual AbstractType __stdcall WhatAmI() const;
+    virtual int Size() const;  // 0x454190 // wrapper: BuildingClass::Size
 
     uint32_t                align_AC;
     BounceClass             Bounce;
@@ -197,7 +205,8 @@ public:
 
 protected:
     VoxelAnimClass() = default;
-    explicit VoxelAnimClass(noinit_t) noexcept; // IDA: NOT_FOUND
+    // design: no binary equivalent found in IDA
+    explicit VoxelAnimClass(noinit_t) noexcept;
 };
 
 } // namespace gamemd
