@@ -117,36 +117,18 @@ if(WIN32)
         )
     endif()
 
-    # ── Code quality check: modified functions only ──
-    # Checks: stubs, comment shells, pointer arithmetic, C++ casts, gotos, IDA artifacts
+    # ── Code quality check: all gates (modified functions only) ──
+    # Runs B.2 (translated checks), B.5 (pointer arithmetic), and exec-flow (CFG) independently.
+    # All gates run regardless of failures; build fails if ANY gate fails.
     if(Python3_FOUND)
-        add_custom_target(check_code_quality
-            COMMAND ${Python3_EXECUTABLE} "${CMAKE_SOURCE_DIR}/tools/check_translated_functions.py"
-            COMMAND ${Python3_EXECUTABLE} "${CMAKE_SOURCE_DIR}/tools/check_pointer_arithmetic.py" "${CMAKE_SOURCE_DIR}/src/" "${CMAKE_SOURCE_DIR}/app/"
+        add_custom_target(check_code_quality ALL
+            COMMAND ${Python3_EXECUTABLE} "${CMAKE_SOURCE_DIR}/tools/run_all_gates.py"
             WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
-            COMMENT "Checking code quality (modified functions only)"
+            COMMENT "Running all build gates independently (B.2 + B.5 + exec-flow)"
         )
         add_dependencies(gamemd check_code_quality)
         add_dependencies(check_code_quality build_signals)
-
-        # ── Execution-flow CFG verification: modified functions only (T21) ──
-        # verify_execution_flow.py --auto compares the CONTROL-FLOW GRAPH of each
-        # git-modified C++ function against its IDA Hex-Rays CFG, failing the build
-        # on a structural mismatch (a stub / mistranslation).
-        # GRACEFUL DEGRADATION — the build is NEVER blocked by IDA being closed:
-        #   * --auto reads ONLY the local IDA cache (.omo/ida_cache/); it never
-        #     contacts the IDA MCP server, so IDA being down has no effect here.
-        #   * a modified function with NO cached IDA pseudocode is SKIPPED with a
-        #     WARNING (not a failure); if nothing is verifiable the script exits 0.
-        #   * the build FAILS (exit 1) ONLY on a genuine CFG mismatch of a function
-        #     that HAS IDA data — i.e. an actual mistranslation.
-        add_custom_target(verify_execution_flow
-            COMMAND ${Python3_EXECUTABLE} "${CMAKE_SOURCE_DIR}/tools/verify_execution_flow.py" --auto
-            WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
-            COMMENT "Verifying execution-flow CFG (modified functions only; skips funcs with no IDA cache)"
-        )
-        add_dependencies(gamemd verify_execution_flow)
-        add_dependencies(verify_execution_flow build_signals)
+        add_dependencies(hook_dll check_code_quality)
 
         # Name consistency audit (optional, not build-gating)
         add_custom_target(audit_names
