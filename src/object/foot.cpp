@@ -96,6 +96,7 @@ FootClass::FootClass() noexcept
 //      TechnoClass::SmokeUpdate)
 // ============================================================
 
+// 0x4da530
 bool FootClass::MovementAI()
 {
     // IDA: 0x4DA530 — FootClass::MovementAI

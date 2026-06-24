@@ -189,6 +189,7 @@ ObjectClass* CellClass::FindObjectOfType(AbstractType type, bool alt) const
 // IDA: 0x48E5A0 -- CellClass::Draw
 // Draws the cell at a given screen position.
 // 55 bytes: thin wrapper around DrawDispatch.
+// 0x48e5a0
 void CellClass::Draw(const Point2D* screen_pos, const RectangleStruct* bounds) const
 {
     // Calls DrawDispatch which handles the full cell rendering pipeline:
@@ -203,6 +204,7 @@ void CellClass::Draw(const Point2D* screen_pos, const RectangleStruct* bounds) c
 // Routes to appropriate drawing mode based on cell state:
 // - Fogged/shrouded cells get fog overlay
 // - Visible cells get full rendering
+// 0x4e2830
 void CellClass::DrawDispatch(const Point2D* screen_pos, const RectangleStruct* bounds) const
 {
     if (!screen_pos)
@@ -236,6 +238,7 @@ void CellClass::DrawDispatch(const Point2D* screen_pos, const RectangleStruct* b
 //   4. Wall (if wallOwnerIndex >= 0)
 //   5. Objects on cell (firstObject chain)
 //   6. Bridge overlays (if ContainsBridge())
+// 0x557830
 void CellClass::DrawWithFlags(const Point2D* screen_pos, const RectangleStruct* bounds, int flags) const
 {
     if (!screen_pos)
@@ -288,6 +291,7 @@ void CellClass::DrawWithFlags(const Point2D* screen_pos, const RectangleStruct* 
 // IDA: 0x47FF80 -- CellClass::GetScreenRect
 // Computes the screen-space bounding rectangle for this cell.
 // Uses isometric projection: diamond-shaped tiles.
+// 0x47ff80
 RectangleStruct* CellClass::GetScreenRect(RectangleStruct* out) const
 {
     if (!out)
@@ -316,6 +320,7 @@ RectangleStruct* CellClass::GetScreenRect(RectangleStruct* out) const
 // IDA: 0x7235A0 -- CellClass::RegisterForRedraw
 // Marks this cell as needing redraw and notifies the map.
 // 298 bytes: integrates with MapClass::MarkForRedraw.
+// 0x7235a0
 void CellClass::RegisterForRedraw()
 {
     if (visibilityChanged)
@@ -330,6 +335,7 @@ void CellClass::RegisterForRedraw()
 // IDA: 0x653F50 -- CellClass::DrawWrapper
 // Thin wrapper that calls Draw.
 // 28 bytes: takes TransformStruct and delegates to Draw.
+// 0x653f50
 void CellClass::DrawWrapper(const Point2D* screen_pos, const RectangleStruct* bounds) const
 {
     Draw(screen_pos, bounds);
@@ -423,6 +429,7 @@ int GetGroundHeight(int x_leptons, int y_leptons)
 
 // IDA: 0x487950 -- CellClass::QuickPassable
 // Quick check if the cell is passable for pathfinding.
+// 0x487950
 bool CellClass::QuickPassable() const
 {
     // Check flags for blocking terrain

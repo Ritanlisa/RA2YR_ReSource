@@ -290,6 +290,7 @@ DSurface::~DSurface()
 // IDA: 0x4C1A90 — DSurface::BlitWhole (23B) thin wrapper
 // Rect::Set(0,0,0,0) → Blit(zero, zero, src, zero, zero, option1, option2)
 REVERSE(0x4C1A90, "DSurface::BlitWhole: Thin wrapper around Blit", "None")
+// 0x4c1a90
 bool DSurface::BlitWhole(class Surface* src, bool option1, bool option2)
 {
     RectangleStruct zero = {};
@@ -770,6 +771,7 @@ bool DSurface::FillRectEx(
 // IDA: 0x4BB5F0 — DSurface::FillRect (43B) thin wrapper
 // GetRect() → FillRectEx(clip, fill_rect, color)
 REVERSE(0x4BB5F0, "DSurface::FillRect: Fill rectangle with color", "None")
+// 0x4bb5f0
 bool DSurface::FillRect(const RectangleStruct& fill_rect, uint32_t color)
 {
     RectangleStruct clip;
@@ -890,6 +892,7 @@ bool DSurface::FillRectWithFlags(
 // First lock path calls IDirectDrawSurface7::Lock(vtable[25]) and caches desc in SurfaceDesc.
 // Nested lock path just increments LockCount and computes byte offset.
 REVERSE(0x4BAD80, "DSurface::Lock: Lock surface for CPU access", "None")
+// 0x4bad80
 void* DSurface::Lock(int x, int y)
 {
     // IDA: if (!g_DDraw_Initialized && !g_DDraw_Active) return 0
@@ -963,6 +966,7 @@ void* DSurface::Lock(int x, int y)
 // vtable[24] — Decrements lock count; on last unlock releases DDraw surface.
 // Also handles lost-surface recovery on unlock (re-lock cycle after Restore).
 REVERSE(0x4BAF40, "DSurface::Unlock: Release DDraw surface lock", "None")
+// 0x4baf40
 bool DSurface::Unlock()
 {
     // IDA: check DDraw state (OR: proceed if either initialized or active)
@@ -1009,6 +1013,7 @@ bool DSurface::Unlock()
 // IDA: 0x4BAEC0 -- DSurface::CanLock (95B)
 // vtable[25] — Probes whether the surface can be locked via test-lock-then-unlock.
 REVERSE(0x4BAEC0, "DSurface::CanLock: Test if surface can be locked", "None")
+// 0x4baec0
 bool DSurface::CanLock(uint32_t /*unk1*/, uint32_t /*unk2*/)
 {
     // IDA: already locked — can always lock again (nested)
@@ -1047,6 +1052,7 @@ int DSurface::GetPitch() const
 // IDA: 0x4BAF20 -- DSurface::CheckBltStatus (17B)
 // Calls IDirectDrawSurface7::GetBltStatus(DDGBS_ISBLTDONE)
 // Returns true if blit is complete (DD_OK)
+// 0x4baf20
 bool DSurface::CheckBltStatus()
 {
     // IDA: (*(*(this+7) + 52))(*(this+7), 1) == 0
@@ -1177,6 +1183,7 @@ Point2D Surface::DrawText(
 // IDA: 0x7BAEB0 -- XSurface::SetPixel (89B)
 // vtable[9]  0x24 -- Lock(point) -> check BPP -> write pixel -> Unlock
 REVERSE(0x7baeb0, "XSurface::SetPixel: pixel write", "None")
+// 0x7baeb0
 bool XSurface::SetPixel(const Point2D& point, uint32_t color)
 {
     void* buf = Lock(point.X, point.Y);
@@ -1195,6 +1202,7 @@ bool XSurface::SetPixel(const Point2D& point, uint32_t color)
 // IDA: 0x7BAE60 -- XSurface::GetPixel (80B)
 // vtable[10] 0x28 -- Lock(point) -> check BPP -> read pixel -> Unlock
 REVERSE(0x7bae60, "XSurface::GetPixel: pixel read", "None")
+// 0x7bae60
 uint32_t XSurface::GetPixel(const Point2D& point)
 {
     uint32_t result = 0;
@@ -1215,6 +1223,7 @@ uint32_t XSurface::GetPixel(const Point2D& point)
 // IDA: 0x7BAF90 -- XSurface::PutPixel (130B)
 // vtable[34] 0x88 -- bounds check -> Lock -> check BPP -> write -> Unlock
 REVERSE(0x7baf90, "XSurface::PutPixel: pixel write + bounds", "Inject")
+// 0x7baf90
 bool XSurface::PutPixel(const Point2D& point, uint16_t color, const RectangleStruct& clip_rect)
 {
     if (point.X < clip_rect.X)
@@ -1242,6 +1251,7 @@ bool XSurface::PutPixel(const Point2D& point, uint16_t color, const RectangleStr
 // IDA: 0x7BAF10 -- XSurface::GetPixelAtCoords (119B)
 // vtable[35] 0x8C -- bounds check -> Lock -> check BPP -> read -> Unlock
 REVERSE(0x7baf10, "XSurface::GetPixelAtCoords: pixel read + bounds", "Inject")
+// 0x7baf10
 uint16_t XSurface::GetPixelAtCoords(const Point2D& point, const RectangleStruct& clip_rect)
 {
     uint16_t result = 0;
@@ -1520,6 +1530,7 @@ bool XSurface::DrawLineEx(
 
 // IDA: 0x7BA5E0 -- XSurface::DrawLine (48B)
 // vtable[12] 0x30 -- DrawLineEx wrapper with surface-level clip
+// 0x7ba5e0
 bool XSurface::DrawLine(const Point2D& start, const Point2D& end, uint32_t color)
 {
     RectangleStruct clip;
@@ -1711,6 +1722,7 @@ bool XSurface::DrawDashedLine(
 // IDA: 0x7BBAB0 -- XSurface::Fill (51B)
 // vtable[6] 0x18 -- fill entire surface with single color
 REVERSE(0x7bbab0, "XSurface::Fill: fill surface", "None")
+// 0x7bbab0
 bool XSurface::Fill(uint32_t color)
 {
     RectangleStruct rect;
@@ -1740,6 +1752,7 @@ bool XSurface::DrawRectEx(
 
 // IDA: 0x7BAD90 -- XSurface::DrawRect (43B)
 // vtable[22] 0x58 -- DrawRectEx wrapper with surface-level clip
+// 0x7bad90
 bool XSurface::DrawRect(const RectangleStruct& draw_rect, uint32_t color)
 {
     RectangleStruct clip;
@@ -1825,6 +1838,7 @@ bool XSurface::DrawEllipseOutline(
 // IDA: 0x7BB020 -- XSurface::FillRect (41B)
 // vtable[5] 0x14 -- GetRect() → FillRectEx wrapper
 REVERSE(0x7BB020, "XSurface::FillRect: rect fill wrapper", "None")
+// 0x7bb020
 bool XSurface::FillRect(const RectangleStruct& fill_rect, uint32_t color)
 {
     RectangleStruct clip;
@@ -1967,6 +1981,7 @@ extern "C" bool BlitterCopySimpleSHP(
 // IDA: 0x7BBAF0 -- XSurface::BlitWhole (145B)
 // vtable[1] 0x04 -- GetRect both surfaces → Blit with zero origins
 REVERSE(0x7BBAF0, "XSurface::BlitWhole: Blit wrapper with zero origins", "None")
+// 0x7bbaf0
 bool XSurface::BlitWhole(Surface* src, bool option1, bool option2)
 {
     RectangleStruct dst_r;

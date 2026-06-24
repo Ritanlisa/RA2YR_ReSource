@@ -83,6 +83,7 @@ void LoadOptions::Construct() {
     grow_step    = 10;
 }
 
+// 0x558740
 LoadOptions::LoadOptions() {
     Construct();
 }
@@ -92,6 +93,7 @@ LoadOptions::~LoadOptions() {
 }
 
 // IDA 0x558790: LoadOptions::Cleanup
+// 0x558790
 void LoadOptions::Cleanup() {
     // Free all entries
     for (uint32_t i = 0; i < count; ++i) {
@@ -125,6 +127,7 @@ bool LoadOptions::DeleteSaveFile(const char* filename) {
 }
 
 // IDA 0x5587F0: Run — launch save/load dialog
+// 0x5587f0
 int LoadOptions::Run() {
     mode     = 1;
     field_0C = 0;
@@ -133,6 +136,7 @@ int LoadOptions::Run() {
 }
 
 // IDA 0x559C20: Check — scan for save files matching extension
+// 0x559c20
 bool LoadOptions::Check() {
     char pattern[64];
     snprintf(pattern, sizeof(pattern), "*.%s", extension ? extension : "SAV");
@@ -188,6 +192,7 @@ bool LoadOptions::ReadEntry(FileEntryClass* dest, int a2) {
 }
 
 // IDA 0x55A1F0: CopyItems — resize vector, preserve existing entries
+// 0x55a1f0
 bool LoadOptions::CopyItems(uint32_t new_size, FileEntryClass** out_buffer) {
     if (new_size == 0) {
         Cleanup();
@@ -222,6 +227,7 @@ bool LoadOptions::CopyItems(uint32_t new_size, FileEntryClass** out_buffer) {
 }
 
 // IDA 0x55A2A0: ClearBuffer
+// 0x55a2a0
 void LoadOptions::ClearBuffer() {
     if (entries && owns_memory) {
         delete[] entries;
@@ -232,6 +238,7 @@ void LoadOptions::ClearBuffer() {
 }
 
 // IDA 0x55A2D0: FindItem — linear search by first dword
+// 0x55a2d0
 int LoadOptions::FindItem(const uint32_t* key) {
     if (!is_active) return 0;
     if (count == 0) return -1;
@@ -245,6 +252,7 @@ int LoadOptions::FindItem(const uint32_t* key) {
 }
 
 // IDA 0x55A310: PointerToIndex
+// 0x55a310
 uint32_t LoadOptions::PointerToIndex(FileEntryClass* ptr) {
     if (!is_active) return 0;
     return (uint32_t)((char*)(ptr) - (char*)(entries)) / sizeof(FileEntryClass*);

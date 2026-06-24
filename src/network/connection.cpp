@@ -18,6 +18,7 @@ ConnectionClass::ConnectionClass() noexcept
 }
 
 // IDA 0x48B410 — queueSendPacket: store outgoing packet for sequential delivery
+// 0x48b410
 void ConnectionClass::queueSendPacket(const uint8_t* data, int32_t length, int32_t flags)
 {
     // The original implements a ring buffer of packet slots with sequence numbers
@@ -63,6 +64,7 @@ void ConnectionClass::serviceSendQueue()
 }
 
 // IDA 0x48C5A0 — connect: activate network connection
+// 0x48c5a0
 bool ConnectionClass::connect()
 {
     if (Active) return true;

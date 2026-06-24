@@ -105,6 +105,7 @@ BuildingClass::BuildingClass() noexcept
 }
 
 // IDA 0x43b740
+// 0x43b740
 void BuildingClass::Construct()
 {
     ActuallyPlacedOnMap = true;
@@ -118,6 +119,7 @@ void BuildingClass::Construct()
 }
 
 // IDA 0x43bcf0
+// 0x43bcf0
 void BuildingClass::Dtor()
 {
     ClearAnims();
@@ -125,6 +127,7 @@ void BuildingClass::Dtor()
 }
 
 // IDA 0x459f20: scalar destructor → calls Dtor, conditionally frees memory
+// 0x459f20
 int BuildingClass::ScalarDtor()
 {
     Dtor();
@@ -140,6 +143,7 @@ int BuildingClass::Activate()
 }
 
 // IDA 0x452480: deactivate building power
+// 0x452480
 int BuildingClass::Deactivate()
 {
     WasOnline = false;
@@ -148,12 +152,14 @@ int BuildingClass::Deactivate()
 }
 
 // IDA 0x459e80: Destroyed notification — set destroyed state
+// 0x459e80
 void BuildingClass::Destroyed(ObjectClass* killer)
 {
     BuildingClass_field_bool_6E2 = true;
 }
 
 // IDA 0x43bd40: after destruction cleanup
+// 0x441f60
 void BuildingClass::AfterDestruction()
 {
     EjectCrew();
@@ -161,6 +167,7 @@ void BuildingClass::AfterDestruction()
 }
 
 // IDA 0x43bd10: Cleanup → clear anims + super weapon anim
+// 0x43eeb0
 void BuildingClass::Cleanup()
 {
     ClearAnims();
@@ -187,6 +194,7 @@ void BuildingClass::LoadFromStream(void* stream)
 }
 
 // IDA 0x454190: return sizeof(BuildingClass)
+// 0x454190
 int BuildingClass::Size()
 {
     return sizeof(BuildingClass);
@@ -197,6 +205,7 @@ int BuildingClass::Size()
 // ============================================================
 
 // IDA 0x70d1a0: check if cell is placeable for this building type
+// 0x4260f0
 bool BuildingClass::IsCellPlaceable(int cell_x, int cell_y) const
 {
     if (!Type) return false;
@@ -205,6 +214,7 @@ bool BuildingClass::IsCellPlaceable(int cell_x, int cell_y) const
 }
 
 // IDA 0x44d310: validate placement passes all checks
+// 0x480630
 bool BuildingClass::ValidatePlacement() { return ValidateFoundation(); }
 bool BuildingClass::ValidateFoundation() { return CheckBuildability(); }
 bool BuildingClass::ValidateFoundation_0() { return ValidateFoundation(); }
@@ -213,6 +223,7 @@ bool BuildingClass::ValidateCell(int x, int y) { return IsCellPlaceable(x, y); }
 bool BuildingClass::ValidatePlacementEx() { return ValidateFoundation(); }
 
 // IDA 0x449820: find cells occupied by building foundation
+// 0x7447b0
 void BuildingClass::FindPlacementCells()
 {
     if (!Type) return;
@@ -223,9 +234,11 @@ void BuildingClass::FindPlacementCells()
 }
 
 // IDA 0x449830: find placement cells variant
+// 0x6b0300
 void BuildingClass::FindPlacementCells2() { FindPlacementCells(); }
 
 // IDA 0x449840: search for valid placement
+// 0x56bec0
 void BuildingClass::SearchPlacement()
 {
     if (!Type) return;
@@ -234,6 +247,7 @@ void BuildingClass::SearchPlacement()
 }
 
 // IDA 0x449850: visualize placement footprint
+// 0x485af0
 void BuildingClass::VisualizePlacement()
 {
     if (!Type) return;
@@ -246,6 +260,7 @@ void BuildingClass::VisualizePlacement()
 }
 
 // IDA 0x4258c0: get placement coords
+// 0x45f160
 CoordStruct* BuildingClass::GetPlacementCoords(CoordStruct* out) const
 {
     if (out) *out = location;
@@ -253,6 +268,7 @@ CoordStruct* BuildingClass::GetPlacementCoords(CoordStruct* out) const
 }
 
 // IDA 0x425910: get placement rect from type foundation
+// 0x47fde0
 RectangleStruct* BuildingClass::GetPlacementRect(RectangleStruct* out) const
 {
     if (!out || !Type) return nullptr;
@@ -266,14 +282,17 @@ RectangleStruct* BuildingClass::GetPlacementRect(RectangleStruct* out) const
 }
 
 // IDA 0x44e3a0: check overlap with other buildings
+// 0x44e3a0
 bool BuildingClass::CheckOverlapWithOthers() { return CheckBuildability(); }
 // IDA 0x44e400: check footprint blocked
+// 0x4578c0
 bool BuildingClass::IsFootprintBlocked() { return !CheckBuildability(); }
 void BuildingClass::DamageFactoryBibCells() {}
 void BuildingClass::ClearFactoryBib() {}
 void BuildingClass::RepairPlacement() {}
 
 // IDA 0x63ac70: check if building can be placed at location
+// 0x63ac70
 bool BuildingClass::CheckBuildability()
 {
     if (!Type) return false;
@@ -290,12 +309,14 @@ bool BuildingClass::CheckBuildability()
 }
 
 // IDA 0x70c5a0: check cell passability (delegates to TechnoClass flag)
+// 0x70c5a0
 bool BuildingClass::CheckCellPassability()
 {
     return !BuildingClass_field_bool_6E5;
 }
 
 // IDA 0x710670: placement complete notification
+// 0x710670
 void BuildingClass::OnCellPlacementComplete()
 {
     ActuallyPlacedOnMap = true;
@@ -307,6 +328,7 @@ void BuildingClass::OnCellPlacementComplete()
 // ============================================================
 
 // IDA 0x44e1b0: get exit coordinates for units leaving building
+// 0x447ac0
 CoordStruct* BuildingClass::GetExitCoords(CoordStruct* out, uint32_t unknown) const
 {
     if (!Type || !out) return out;
@@ -319,11 +341,13 @@ CoordStruct* BuildingClass::GetExitCoords(CoordStruct* out, uint32_t unknown) co
 }
 
 CoordStruct* BuildingClass::GetAdjustedExitCoords(CoordStruct* out) const { return GetExitCoords(out, 0); }
+// 0x44f640
 CoordStruct* BuildingClass::GetFactoryPosition(CoordStruct* out) const { return GetExitCoords(out, 1); }
 CoordStruct* BuildingClass::CalcExitCoords(CoordStruct* out, int dir) const { (void)dir; return GetExitCoords(out, 0); }
 CoordStruct* BuildingClass::GetRallyPointCoord(CoordStruct* out) const { return GetExitCoords(out, 0); }
 
 // IDA 0x4497c0: get build coords adjusted
+// 0x459ef0
 CoordStruct* BuildingClass::GetBuildCoordsAdjusted(CoordStruct* out) const
 {
     if (out) *out = location;
@@ -331,6 +355,7 @@ CoordStruct* BuildingClass::GetBuildCoordsAdjusted(CoordStruct* out) const
 }
 
 // IDA 0x44cd60: set rally point
+// 0x443860
 void BuildingClass::SetRallyPoint(CoordStruct* target)
 {
     if (target && Type)
@@ -338,6 +363,7 @@ void BuildingClass::SetRallyPoint(CoordStruct* target)
 }
 
 // IDA 0x4a9650: mark exit path cells
+// 0x4a9650
 void BuildingClass::MarkExitPath()
 {
     if (!Type) return;
@@ -346,6 +372,7 @@ void BuildingClass::MarkExitPath()
 }
 
 // IDA 0x44f590: check exit path is clear
+// 0x639cb0
 bool BuildingClass::CheckExitPath()
 {
     if (!Type) return false;
@@ -356,6 +383,7 @@ void BuildingClass::RenderExitPosition() {}
 void BuildingClass::ReassignFlagPosition() {}
 
 // IDA 0x44f620: toggle primary factory status
+// 0x447e90
 bool BuildingClass::TogglePrimaryFactory()
 {
     if (!Type || Type->Factory == AbstractType::None) return false;
@@ -363,6 +391,7 @@ bool BuildingClass::TogglePrimaryFactory()
 }
 
 // IDA 0x44f640: is factory selectable
+// 0x457620
 bool BuildingClass::IsFactorySelectable()
 {
     return Type != nullptr && Type->Factory != AbstractType::None && ProductionTimer <= 0;
@@ -378,6 +407,7 @@ int BuildingClass::Mission_Construction()
 }
 
 // IDA 0x459ec0: returns 6 (wait timer constant)
+// 0x443c60
 int BuildingClass::UpdateConstruction()
 {
     if (missionStatus == 0) {
@@ -412,11 +442,13 @@ void BuildingClass::ProcessSell()
 }
 
 // IDA 0x4494c0: can be sold check
+// 0x4494c0
 bool BuildingClass::CanBeSold() { return ActuallyPlacedOnMap && Type != nullptr && ProductionTimer <= 0; }
 bool BuildingClass::CanBeSoldCheck() { return CanBeSold(); }
 void BuildingClass::ToggleSellMode() { Sell(); }
 
 // IDA 0x5f5dd0: sell priority based on health ratio
+// 0x5f5dd0
 int BuildingClass::GetSellPriority()
 {
     double ratio = GetHealthRatio();
@@ -424,6 +456,7 @@ int BuildingClass::GetSellPriority()
 }
 
 // IDA 0x44d2c0: sell effects at location
+// 0x480cb0
 void BuildingClass::SellEffects()
 {
     if (!Type) return;
@@ -433,6 +466,7 @@ void BuildingClass::SellEffects()
 }
 
 // IDA 0x4d9f70: sell unit - create MCV from undeployable building
+// 0x4d9f70
 void BuildingClass::SellUnit()
 {
     if (!Type || !Type->UndeploysInto) return;
@@ -443,6 +477,7 @@ void BuildingClass::SellUnit()
 }
 
 // IDA 0x701410: handle sell or repair from sidebar
+// 0x701410
 void BuildingClass::HandleSellOrRepair()
 {
     if (IsBeingRepaired) {
@@ -466,13 +501,16 @@ int BuildingClass::Mission_Repair()
 void BuildingClass::ProcessRepair() {}
 
 // IDA 0x44f480: can repair - health below max
+// 0x457ce0
 bool BuildingClass::CanRepair() { return Type && health < (int)(Type->Strength); }
 void BuildingClass::ToggleRepairMode() { IsBeingRepaired = !IsBeingRepaired; }
 
 // IDA 0x452630: check health below threshold for repair
+// 0x452630
 bool BuildingClass::CheckHealthForRepair() { return CanRepair(); }
 
 // IDA 0x7105e0: check if being repaired or captured
+// 0x7105e0
 bool BuildingClass::IsBeingRepairedOrCaptured() { return IsBeingRepaired || HasBeenCaptured; }
 
 // IDA 0x459ed0: missile building mission
@@ -485,6 +523,7 @@ int BuildingClass::Mission_Missile()
 void BuildingClass::ProcessSuperWeaponEffects() {}
 
 // IDA 0x457630/0x457690: check SuperWeaponType availability from Type
+// 0x457630
 bool BuildingClass::SWAvailable() {
     if (!Type) return false;
     return Type->SuperWeapon != -1;
@@ -495,6 +534,7 @@ bool BuildingClass::SW2Available() {
 }
 
 // IDA 0x505310: find building by SuperWeapon type
+// 0x505310
 BuildingClass* BuildingClass::FindBySWType(int sw_type)
 {
     // Iterate all buildings to find one with matching SuperWeapon
@@ -545,6 +585,7 @@ void BuildingClass::UpdatePrism() {}
 void BuildingClass::Disappear_PrismForward() {}
 
 // IDA 0x43c2d0: main mission controller (handles production, sell, repair, etc.)
+// 0x43c2d0
 int BuildingClass::MissionController()
 {
     if (BeingProduced) return Mission_Construction();
@@ -564,6 +605,7 @@ int BuildingClass::Mission_Harvest() { return 0; }
 int BuildingClass::Mission_Deploy() { return 0; }
 
 // IDA 0x450010: check if mission is guard
+// 0x458dd0
 bool BuildingClass::CheckMissionGuard() { return missionStatus == 0; }
 bool BuildingClass::CheckMissionAttack() { return missionStatus == 1; }
 
@@ -572,6 +614,7 @@ bool BuildingClass::CheckMissionAttack() { return missionStatus == 1; }
 // ============================================================
 
 // IDA 0x454260: per-frame power drain accounting
+// 0x454260
 void BuildingClass::PowerDrainUpdate()
 {
     if (!Type || !HasPower) return;
@@ -587,6 +630,7 @@ void BuildingClass::PowerDrainUpdate()
 // Structure: Type read, vtable call + early return, flag branches, 3-slot
 // do-while over Upgrades, two direct calls, multiple returns.  vtable +468 =
 // slot 117 = Mission_Harvest (project header vtable; binary impl IDA-labels GetShroudByte).
+// 0x44e7b0
 int BuildingClass::GetPowerOutput()
 {
     int power = this->Type->PowerOutput;               // v2 = *(this->Type + 3808)
@@ -623,6 +667,7 @@ int BuildingClass::GetPowerOutput()
 }
 
 // IDA 0x44e880: base drain + overpower drain
+// 0x44e880
 int BuildingClass::GetPowerDrain()
 {
     if (!Type || !HasPower) return 0;
@@ -635,6 +680,7 @@ void BuildingClass::PowerUpdate() {}
 int BuildingClass::UpdatePowerDrain() { PowerDrainUpdate(); return 0; }
 
 // IDA 0x4525f0: check if powered on
+// 0x4525f0
 bool BuildingClass::IsPoweredOn()
 {
     if (!Type || !Type->Powered) return true;
@@ -642,9 +688,11 @@ bool BuildingClass::IsPoweredOn()
 }
 
 // IDA 0x452600: check if powered and active
+// 0x4555d0
 bool BuildingClass::IsPoweredActive() { return HasPower; }
 
 // IDA 0x4a51b0: check power flags
+// 0x4a51b0
 bool BuildingClass::CheckPowerFlags()
 {
     if (!HasPower) return false;
@@ -653,6 +701,7 @@ bool BuildingClass::CheckPowerFlags()
 }
 
 // IDA 0x4a5130: check flag 24
+// 0x4a5130
 bool BuildingClass::CheckFlag24()
 {
     return HasPower && !IsOverpowered;
@@ -687,6 +736,7 @@ int IsNonNullPtr(int handle) noexcept;
 //   5895 = CloakRadiusInCells,                     5900 = PsychicDetectionRadius;
 //   3281/3282/3283 = GapGenerator/GapRadiusInCells/SuperGapRadiusInCells
 //   (inherited TechnoTypeClass members).
+// 0x4566b0
 int BuildingClass::GetPowerFrame()
 {
     BuildingTypeClass* type = this->Type;                 // v2 = *(this + 1312)  [Type]
@@ -726,6 +776,7 @@ int BuildingClass::GetPowerFrame()
 // ============================================================
 
 // IDA 0x447780: start production of type_index
+// 0x447780
 int BuildingClass::StartProduction(int type_index)
 {
     if (ProductionTimer > 0) return -1;
@@ -734,6 +785,7 @@ int BuildingClass::StartProduction(int type_index)
 }
 
 // IDA 0x447ab0: update production timer
+// 0x4496b0
 void BuildingClass::UpdateProduction()
 {
     if (ProductionTimer <= 0) return;
@@ -745,6 +797,7 @@ void BuildingClass::UpdateProduction()
 }
 
 // IDA 0x639740: complete production
+// 0x639740
 void BuildingClass::CompleteProduction()
 {
     if (ProductionTimer <= 0) return;
@@ -758,6 +811,7 @@ void BuildingClass::ProductionDisplayUpdate() {}
 void BuildingClass::DisplayProductionFrame() {}
 
 // IDA 0x4513d0: check if production is active
+// 0x4513d0
 bool BuildingClass::ProductionCheck()
 {
     if (!Type) return false;
@@ -766,9 +820,11 @@ bool BuildingClass::ProductionCheck()
 }
 
 // IDA 0x4478b0: abandon current production
+// 0x4c9ff0
 void BuildingClass::AbandonProduction() { ProductionTimer = 0; /* Accumulators_Reset() */ return; }
 
 // IDA 0x452670: check if can accept production type
+// 0x452670
 bool BuildingClass::CanAcceptType(int type_idx)
 {
     if (!Type) return false;
@@ -780,6 +836,7 @@ bool BuildingClass::CanAcceptType(int type_idx)
 void BuildingClass::AddToProductionQueue(int) {}
 
 // IDA 0x6395b0: set production with full initialization
+// 0x6395b0
 void BuildingClass::SetProduction(int type_index)
 {
     ProductionTimer = type_index;
@@ -798,16 +855,19 @@ void BuildingClass::DrawFactoryProduction(Point2D*, RectangleStruct*, int) const
 int BuildingClass::ProcessCapture() { return 0; }
 
 // IDA 0x44c960: capture this building
+// 0x44d5d0
 void BuildingClass::CaptureBuilding() { HasBeenCaptured = true; }
 void BuildingClass::Capture() { CaptureBuilding(); }
 
 // IDA 0x4521c0: disable temporal effect
+// 0x4521c0
 void BuildingClass::DisableTemporal()
 {
     BuildingClass_field_bool_6E9 = false;
 }
 
 // IDA 0x43d230: infiltrate building
+// 0x4571e0
 void BuildingClass::Infiltrate()
 {
     BuildingClass_field_bool_6E2 = true;
@@ -818,12 +878,14 @@ void BuildingClass::ProcessEnterUnit() {}
 void BuildingClass::ProcessOccupancy() {}
 
 // IDA 0x63be10: check if idle with no captives
+// 0x63be10
 bool BuildingClass::IsIdleWithNoCaptives()
 {
     return !IsBeingRepaired && !HasBeenCaptured && !C4Applied;
 }
 
 // IDA 0x44eb10: get crew count from type
+// 0x44eb10
 int BuildingClass::GetCrew()
 {
     if (!Type) return 0;
@@ -831,12 +893,14 @@ int BuildingClass::GetCrew()
 }
 
 // IDA 0x451330: get crew count
+// 0x451330
 int BuildingClass::GetCrewCount()
 {
     return GetCrew();
 }
 
 // IDA 0x44eb50: eject crew units
+// 0x442d90
 void BuildingClass::EjectCrew()
 {
     if (NoCrew || !Type || Type->CrewCount <= 0) return;
@@ -856,6 +920,7 @@ void BuildingClass::RebuildOccupancy2() { RebuildOccupancyTracking(); }
 void BuildingClass::InitBuildLimit() {}
 
 // IDA 0x6b0d60: refresh occupier cache
+// 0x6b0d60
 void BuildingClass::RefreshOccupierCache()
 {
     if (!Type) return;
@@ -866,6 +931,7 @@ void BuildingClass::RefreshOccupierCache()
 void BuildingClass::ClearFactoryData() {}
 
 // IDA 0x722390: free upgrade queue
+// 0x722390
 void BuildingClass::FreeUpgradeQueue()
 {
     for (int i = 0; i < 3; ++i) {
@@ -877,6 +943,7 @@ void BuildingClass::FreeUpgradeQueue()
 void BuildingClass::FreeUpgradeQueue2() { FreeUpgradeQueue(); }
 
 // IDA 0x7013e0: check if building has occupants
+// 0x7013e0
 bool BuildingClass::CheckOccupantState()
 {
     return Occupants.GetSize() > 0 || Overpowerers.GetSize() > 0;
@@ -891,6 +958,7 @@ void BuildingClass::AimTurret() {}
 void BuildingClass::CalculateTurretAngle() {}
 
 // IDA 0x445e50: get facing direction to target
+// 0x445e50
 int BuildingClass::GetFacingToTarget()
 {
     if (!target) return 0;
@@ -903,10 +971,12 @@ int BuildingClass::GetFacingToTarget()
 }
 
 // IDA 0x44d7d0: get target facing (delegates to GetFacingToTarget)
+// 0x44d7d0
 int BuildingClass::GetTargetFacing() { return GetFacingToTarget(); }
 void BuildingClass::FireLaser() {}
 
 // IDA 0x44d700: get ammo count scaled
+// 0x44d700
 int BuildingClass::GetAmmoCountScaled()
 {
     if (!Type || Type->Ammo <= 0) return 0;
@@ -914,10 +984,12 @@ int BuildingClass::GetAmmoCountScaled()
 }
 
 // IDA 0x44d780: get fire error
+// 0x447f10
 int BuildingClass::GetFireError() { return (int)(TechnoClass::GetFireError(nullptr, 0, false)); }
 void BuildingClass::AcquireTarget() {}
 
 // IDA 0x445f00: select target type flags
+// 0x445f00
 int BuildingClass::SelectTargetTypeFlags()
 {
     if (!Type) return 0;
@@ -941,6 +1013,7 @@ void BuildingClass::FindBridgeCell() {}
 bool BuildingClass::CheckBridge() { return false; }
 
 // IDA 0x4576f0: destroy building on bridge collapse
+// 0x4576f0
 void BuildingClass::DestroyOnBridgeCollapse()
 {
     if (!Type || !Type->BridgeRepairHut) return;
@@ -958,6 +1031,7 @@ CoordStruct* BuildingClass::GetBridgeAwareCoords(CoordStruct* out) const
 // ============================================================
 
 // IDA 0x44ced0: deploy building
+// 0x62a4a0
 int BuildingClass::Deploy()
 {
     if (!Type) return 0;
@@ -967,6 +1041,7 @@ int BuildingClass::Deploy()
 }
 
 // IDA 0x465d40: check if 1x1 and undeployable
+// 0x465d40
 bool BuildingClass::Is1x1AndUndeployable_BuildingMassSelectable()
 {
     if (!Type) return false;
@@ -1011,6 +1086,7 @@ void BuildingClass::UpdateDamageAnim() { ProcessDamageAnim(); }
 void BuildingClass::CreateIdleAnim() {}
 
 // IDA 0x451750: play upgrade animation
+// 0x451750
 void BuildingClass::PlayUpgradeAnim()
 {
     if (!Type) return;
@@ -1020,6 +1096,7 @@ void BuildingClass::PlayUpgradeAnim()
 }
 
 // IDA 0x451f60: sync crate visual state
+// 0x451f60
 void BuildingClass::SyncCrateVisuals()
 {
     if (!Type) return;
@@ -1043,6 +1120,7 @@ void BuildingClass::AnimController()
 void BuildingClass::UpdateCloak() {}
 
 // IDA 0x457c90: iron curtain effect
+// 0x457c90
 int BuildingClass::IronCurtain()
 {
     if (!Type) return 0;
@@ -1051,11 +1129,13 @@ int BuildingClass::IronCurtain()
 }
 
 // IDA 0x6f9e10: check if invisible
+// 0x6f9e10
 bool BuildingClass::IsInvisible() { return HasCloakingData != 0; }
 
 void BuildingClass::AnnounceReady() {}
 
 // IDA 0x456580: update reveal field around building
+// 0x456580
 void BuildingClass::UpdateRevealField()
 {
     if (!Type || Type->Sight <= 0) return;
@@ -1064,6 +1144,7 @@ void BuildingClass::UpdateRevealField()
 }
 
 // IDA 0x4565e0: update gap generator field
+// 0x4565e0
 void BuildingClass::UpdateGapGeneratorField()
 {
     if (!Type || !Type->GapGenerator) return;
@@ -1071,6 +1152,7 @@ void BuildingClass::UpdateGapGeneratorField()
 }
 
 // IDA 0x456640: update detection field
+// 0x456640
 void BuildingClass::UpdateDetectionField()
 {
     if (Type && Type->SensorArray) {
@@ -1090,6 +1172,7 @@ void BuildingClass::RemoveShroud() {}
 void BuildingClass::ProcessFogCellOccupancy() {}
 
 // IDA 0x655740: remove gap cell coverage
+// 0x655740
 void BuildingClass::RemoveGapCellCoverage()
 {
     if (!Type || !Type->GapGenerator) return;
@@ -1107,6 +1190,7 @@ void BuildingClass::Update()
 }
 
 // IDA 0x44e8f0: object expired notification
+// 0x44e8f0
 void BuildingClass::OnObjectExpired(ObjectClass* obj)
 {
     if (C4AppliedBy == (InfantryClass*)(obj))
@@ -1114,6 +1198,7 @@ void BuildingClass::OnObjectExpired(ObjectClass* obj)
 }
 
 // IDA 0x4a5290: update timer with elapsed seconds
+// 0x4a5290
 void BuildingClass::UpdateTimerWithElapsed()
 {
     if (C4Timer.IsActive())
@@ -1123,6 +1208,7 @@ void BuildingClass::UpdateTimerWithElapsed()
 }
 
 // IDA 0x458db0: check if has active parameter
+// 0x458db0
 bool BuildingClass::HasActiveParam()
 {
     if (BuildingClass_field_bool_6E9)
@@ -1131,6 +1217,7 @@ bool BuildingClass::HasActiveParam()
 }
 
 // IDA 0x455da0: check special update flags
+// 0x455da0
 void BuildingClass::CheckSpecialUpdateFlags()
 {
     if (!Type) return;
@@ -1145,6 +1232,7 @@ void BuildingClass::CheckSpecialUpdateFlags()
 // ============================================================
 
 // IDA 0x480110: calculate draw position
+// 0x480110
 Point2D* BuildingClass::CalcDrawPos(Point2D* out) const
 {
     if (!out) return out;
@@ -1174,6 +1262,7 @@ int BuildingClass::DetermineVisualState() const { return 0; }
 void BuildingClass::AddRectToDrawList(RectangleStruct*) const {}
 
 // IDA 0x43e900: get Z draw offset
+// 0x43e900
 int BuildingClass::GetZDrawOffset() const
 {
     if (!Type) return 0;
@@ -1181,6 +1270,7 @@ int BuildingClass::GetZDrawOffset() const
 }
 
 // IDA 0x449410: get bounding size extension
+// 0x449410
 int BuildingClass::GetBoundingSizeExt() const
 {
     if (!Type) return 0;
@@ -1200,6 +1290,7 @@ double BuildingClass::GetHealthRatio() const
 }
 
 // IDA 0x5f5cd0: check health below 50%
+// 0X005f5cd0
 bool BuildingClass::IsHealthLow() { return GetHealthRatio() < 0.5; }
 
 // ============================================================
@@ -1207,6 +1298,7 @@ bool BuildingClass::IsHealthLow() { return GetHealthRatio() < 0.5; }
 // ============================================================
 
 // IDA 0x5f6500: squared distance to target
+// 0x5f6500
 int BuildingClass::SquaredDistanceTo(CoordStruct* target) const
 {
     if (!target) return 0;
@@ -1222,6 +1314,7 @@ void BuildingClass::SaveLoad_Register()
 }
 
 // IDA 0x634310: copy type data for rendering
+// 0x634310
 void BuildingClass::CopyTypeDataForRender()
 {
     if (!Type) return;
@@ -1229,17 +1322,21 @@ void BuildingClass::CopyTypeDataForRender()
 }
 
 // IDA 0x705d20: get type pointer (duplicate of GetTypePtr at different address)
+// 0x705d20
 BuildingTypeClass* BuildingClass::GetType() { return Type; }
 
 // IDA 0x705d10: set type
+// 0x705d10
 void BuildingClass::SetType(BuildingTypeClass* t) { Type = t; }
 
 // IDA 0x459ee0: get type pointer
+// 0x459ee0
 BuildingTypeClass* BuildingClass::GetTypePtr() { return Type; }
 
 BuildingTypeClass* BuildingClass::GetType_Thunk() { return Type; }
 
 // IDA 0x449a40: get owner house via vtable
+// 0x449a40
 HouseClass* BuildingClass::GetOwnerHouse()
 {
     auto* vtable = *(void***)this;
@@ -1248,6 +1345,7 @@ HouseClass* BuildingClass::GetOwnerHouse()
 }
 
 // IDA 0x6347b0: get type entry index
+// 0x6347b0
 int BuildingClass::GetTypeEntry()
 {
     if (!Type) return -1;
@@ -1255,6 +1353,7 @@ int BuildingClass::GetTypeEntry()
 }
 
 // IDA 0x459ed0: get type field at offset 60
+// 0x459ed0
 int BuildingClass::GetTypeField60()
 {
     if (!Type) return 0;
@@ -1264,6 +1363,7 @@ int BuildingClass::GetTypeField60()
 int BuildingClass::GetObjectData() { return 0; }
 
 // IDA 0x455b90: get foundation width/height flags
+// 0x455b90
 int BuildingClass::GetFWFlags()
 {
     if (!Type) return 0;
@@ -1279,6 +1379,7 @@ void BuildingClass::ReadBuildingSettings() {}
 void BuildingClass::ReadConstructionData() {}
 
 // IDA 0x4527d0: check if has occupant audio
+// 0x4527d0
 bool BuildingClass::HasOccupantAudio()
 {
     return Occupants.GetSize() > 0;
@@ -1291,6 +1392,7 @@ void BuildingClass::SpawnParticles() {}
 void BuildingClass::ApplyFoundationDamage() {}
 
 // IDA 0x4ff980: decrement type counter
+// 0x4ff980
 void BuildingClass::DecrementTypeCounter()
 {
     if (!Type) return;
@@ -1298,6 +1400,7 @@ void BuildingClass::DecrementTypeCounter()
 }
 
 // IDA 0x4ffa50: increment occupant type counter
+// 0x4ffa50
 void BuildingClass::IncrementOccupantTypeCounter()
 {
     if (!Type) return;
@@ -1306,6 +1409,7 @@ void BuildingClass::IncrementOccupantTypeCounter()
 }
 
 // IDA 0x459c00: check if mass selectable
+// 0x459c00
 bool BuildingClass::IsMassSelectable()
 {
     if (!Type) return false;
@@ -1315,6 +1419,7 @@ bool BuildingClass::IsMassSelectable()
 }
 
 // IDA 0x6551c0: add upgrade to building
+// 0x6551c0
 void BuildingClass::AddUpgrade(BuildingTypeClass* upgrade)
 {
     if (!upgrade) return;
@@ -1324,6 +1429,7 @@ void BuildingClass::AddUpgrade(BuildingTypeClass* upgrade)
 }
 
 // IDA 0x726400: process upgrade effects
+// 0x726400
 void BuildingClass::ProcessUpgradeEffects()
 {
     for (int i = 0; i < 3; ++i) {
@@ -1334,6 +1440,7 @@ void BuildingClass::ProcessUpgradeEffects()
 }
 
 // IDA 0x7265c0: execute triggers
+// 0x7265c0
 void BuildingClass::ExecuteTriggers()
 {
     if (!Type) return;
@@ -1343,6 +1450,7 @@ void BuildingClass::ExecuteTriggers()
 }
 
 // IDA 0x459c20: process upgrade targeting
+// 0x459c20
 void BuildingClass::ProcessUpgradeTargeting()
 {
     if (UpgradeLevel <= 0) return;
@@ -1353,6 +1461,7 @@ void BuildingClass::ProcessSpreadEffect() {}
 void BuildingClass::Unlimbo_UnitDeliveryFix() {}
 
 // IDA 0x452170: set connected building mission
+// 0x452170
 void BuildingClass::SetConnectedBuildingMission()
 {
     if (!Type) return;
@@ -1362,6 +1471,7 @@ void BuildingClass::SetConnectedBuildingMission()
 }
 
 // IDA 0x4852d0: create destruction crater
+// 0x4852d0
 void BuildingClass::CreateDestructionCrater()
 {
     if (!Type) return;
@@ -1374,6 +1484,7 @@ void BuildingClass::CreateCraterAtCell(int x, int y) { (void)x; (void)y; }
 void BuildingClass::BeginCrumblingTimer() {}
 
 // IDA 0x453d60: mark cell as occupied by building
+// 0x453d60
 void BuildingClass::MarkCellOccupied(int cell_x, int cell_y)
 {
     if (!Type) return;
@@ -1387,6 +1498,7 @@ void BuildingClass::MarkCellOccupied(int cell_x, int cell_y)
 }
 
 // IDA 0x453dc0: clear cell occupation
+// 0x453dc0
 void BuildingClass::ClearCellOccupied(int cell_x, int cell_y)
 {
     if (!Type) return;
@@ -1403,15 +1515,18 @@ void BuildingClass::ScanCircleForTiberium() {}
 void BuildingClass::UpdateTerrainEffect() {}
 
 // IDA 0x483620: check if eligible for tiberium collection
+// 0x483620
 bool BuildingClass::IsTiberiumCollectorEligible() { return Type && Type->Refinery; }
 
 // IDA 0x483690: check if eligible for tiberium storage
+// 0x483690
 bool BuildingClass::IsTiberiumSiloEligible() { return Type && Type->Storage > 0; }
 
 void BuildingClass::UpdateBunker() {}
 void BuildingClass::EmptyBunker() {}
 
 // IDA 0x452540: make traversable after destruction
+// 0X00452540
 void BuildingClass::MakeTraversable()
 {
     if (!Type) return;
@@ -1434,17 +1549,21 @@ void BuildingClass::ClearLimpetCheck()
 }
 
 // IDA 0x487c10: check if C4 is active
+// 0x487c10
 bool BuildingClass::CheckC4Active() { return C4Applied; }
 
 // IDA 0x424c90: set field at offset 95
+// 0x424c90
 void BuildingClass::SetField95(int v) { BuildingClass_field_bool_6E5 = (v != 0); }
 
 // IDA 0x425260: set field at offset 8 (activates flag)
+// 0x425260
 void BuildingClass::SetField8(int v) { BuildingClass_field_bool_6E9 = (v != 0); }
 
 int BuildingClass::GetCursorAction() { return 0; }
 
 // IDA 0x70f6e0: update threat bounds for AI
+// 0x70f6e0
 void BuildingClass::UpdateThreatBounds()
 {
     if (!Type) return;
@@ -1454,6 +1573,7 @@ void BuildingClass::UpdateThreatBounds()
 bool BuildingClass::ValidatePath() { return true; }
 
 // IDA 0x717890: set production slot
+// 0x717890
 void BuildingClass::SetSlot(int slot)
 {
     if (slot < 0 || slot >= 0x15) return;
@@ -1465,6 +1585,7 @@ void BuildingClass::HandleClickEvent() {}
 void BuildingClass::HandleRepairCursor() {}
 
 // IDA 0x466000: create building instance
+// 0x466000
 BuildingClass* BuildingClass::Create(BuildingTypeClass* type, CoordStruct* pos, HouseClass* owner)
 {
     if (!type || !pos || !owner) return nullptr;
@@ -1553,6 +1674,7 @@ void BuildingClass::SensorArrayActivate(CellStruct cell) {}
 void BuildingClass::SensorArrayDeactivate(CellStruct cell) {}
 void BuildingClass::DisguiseDetectorActivate(CellStruct cell) {}
 void BuildingClass::DisguiseDetectorDeactivate(CellStruct cell) {}
+// 0x480110
 Point2D BuildingClass::CalcDrawPos() const { Point2D buf; CalcDrawPos(&buf); return buf; }
 ra2::game::LightConvertClass* BuildingClass::GetRemapColour() const { return nullptr; }
 int BuildingClass::AssignTarget_SyncLog() { return 0; }

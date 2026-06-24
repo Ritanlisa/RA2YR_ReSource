@@ -234,6 +234,7 @@ FireError TechnoClass::GetFireError(AbstractClass* target, int weapon_index, boo
     return (FireError)((int)(gamemd::FireError::NONE));
 }
 
+// 0x70ece0
 BulletClass* TechnoClass::Fire(AbstractClass* target, int weapon_index)
 {
     // IDA: 0x70ECE0 — TechnoClass::Fire (Fire_At)
@@ -373,6 +374,7 @@ void TechnoClass::Uncloak(bool play_sound)
     cloakState = (uint32_t)(gamemd::CloakState::Uncloaking);
 }
 
+// 0x6f3330
 int TechnoClass::SelectWeapon(AbstractClass* target) const
 {
     // IDA: 0x6F3330 — TechnoClass::SelectWeapon
@@ -541,6 +543,7 @@ void TechnoClass::AddPassenger(FootClass* passenger)
 //  9. Production milestone → type chain switching
 // 10. Final unit creation via CreateUnitOnCompletion
 // ============================================================
+// 0x423ac0
 bool TechnoClass::CreateUnit()
 {
     auto* type = GetTechnoType();
@@ -1240,6 +1243,7 @@ int TechnoClass::GarrisonBuilding() { return 0; }
 int TechnoClass::IsMission27to30() const { return false; }
 int TechnoClass::HandleSpecialAction() { return 0; }
 int TechnoClass::IsEnteringOrCapturingStructure() const { return false; }
+// 0x5f5390
 void TechnoClass::CreateDestructionEffect() {}
 int TechnoClass::FindMatchingUnit() { return -1; }
 int TechnoClass::ClearArrays() { return 0; }
@@ -1262,6 +1266,7 @@ int TechnoClass::ComputeTransform() { return 0; }
 int TechnoClass::CanMoveToCell() const { return false; }
 int TechnoClass::CanInitiateSell() const { return false; }
 int TechnoClass::IsNotAircraftOrBuilding() const { return false; }
+// 0x6f3330
 int TechnoClass::SelectWeapon() { return 0; }
 int TechnoClass::CanTargetHouse() const { return false; }
 int TechnoClass::CanSelfRepair() { return false; }

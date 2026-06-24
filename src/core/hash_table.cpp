@@ -24,6 +24,7 @@ uint32_t Hash::ComputeHashSHA1(const void* data, uint32_t size)
 }
 
 // IDA 0x52B720: InsertOrdered (stub)
+// 0x4f4410
 void Hash::InsertOrdered(void* table, const void* entry)
 {
     // Original: inserts entry into sorted hash table array
@@ -60,6 +61,7 @@ void SHA1::Init()
 }
 
 // IDA 0x69DA00: Process
+// 0x69d960
 void SHA1::Process(const void* data, uint32_t size)
 {
     const uint8_t* p = (const uint8_t*)(data);
@@ -75,6 +77,7 @@ void SHA1::Process(const void* data, uint32_t size)
 }
 
 // IDA 0x69DC00: Compute
+// 0x69d9e0
 void SHA1::Compute(uint8_t digest[20])
 {
     PadMessage();
@@ -199,6 +202,7 @@ static const uint32_t crc32_table[256] = {
 };
 
 // IDA 0x69E000: Compute
+// 0x4a1fb0
 uint32_t CRC32::Compute(const void* data, uint32_t size)
 {
     uint32_t crc = 0xFFFFFFFF;

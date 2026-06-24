@@ -128,6 +128,7 @@ void NetworkManager::RemovePlayer() {}
 
 // --- NetworkOptions ---
 
+// 0x560480
 void NetworkOptions::DlgProc() {}
 void NetworkOptions::ApplySettings() {}
 

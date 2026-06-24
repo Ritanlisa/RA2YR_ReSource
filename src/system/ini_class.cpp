@@ -37,6 +37,7 @@ struct INIData {
 // IDA 0x535AA0 -- INIClass::Constructor (84 bytes)
 // ============================================================
 REVERSE(0x535aa0, "INIClass::Constructor: IDA verified", "None")
+// 0x535aa0
 INIClass::INIClass()
 {
     std::memset(this, 0, kSize);
@@ -46,6 +47,7 @@ INIClass::INIClass()
 // IDA 0x535B30 -- CCINIClass::Constructor (138 bytes)
 // ============================================================
 REVERSE(0x535b30, "CCINIClass::Constructor: IDA verified", "None")
+// 0x535b30
 CCINIClass::CCINIClass()
     : INIClass()
 {
@@ -80,6 +82,7 @@ REVERSE(0x4741f0, "CCINIClass::Load: IDA verified", "None")
 // IDA 0x4741F0 -- CCINIClass::Load(file, unk1, unk2)
 // Parses INI file content into sections and key=value pairs
 // ============================================================
+// 0x4741f0
 bool CCINIClass::Load(CCFileClass* file, bool unk1, bool unk2)
 {
     (void)unk1;

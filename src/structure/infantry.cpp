@@ -64,6 +64,7 @@ void InfantryClass::ProcessDeploy()
 }
 
 // IDA: 0x51D6F0 (ProcessDeployAction, 1013B) — validates weapon, checks mission, sets loco
+// 0x51d6f0
 int InfantryClass::ProcessDeployAction(int deploy_type, bool a3, bool a4)
 {
     if (deploy_type == -1)
@@ -78,6 +79,7 @@ int InfantryClass::ProcessDeployAction(int deploy_type, bool a3, bool a4)
 }
 
 // IDA: 0x5200B0 (ProcessIdleDeploy, 428B)
+// 0x5200b0
 int InfantryClass::ProcessIdleDeploy()
 {
     if (PanicDurationLeft > 0)
@@ -142,18 +144,21 @@ bool InfantryClass::IsBombDeployMission()
     return false;
 }
 
+// 0x514310
 int InfantryClass::DeployAnimation()
 {
     // IDA: 0x514310 — deploy animation frame selection
     return 0;
 }
 
+// 0x521d80
 int InfantryClass::ComputeDeploySpeedFactor()
 {
     // IDA: 0x521D80 — compute deploy speed multiplier
     return 100;
 }
 
+// 0x5218e0
 int InfantryClass::GetDeployWeaponIndex()
 {
     // IDA: 0x5218E0 — get deploy weapon index from type
@@ -161,6 +166,7 @@ int InfantryClass::GetDeployWeaponIndex()
     return 0;
 }
 
+// 0x4598a0
 bool InfantryClass::updateDeployAnimation()
 {
     // IDA: 0x4598A0 — check deploy animation state
@@ -171,6 +177,7 @@ bool InfantryClass::updateDeployAnimation()
 // Phase 3: Firing / Combat
 // ============================================================
 
+// 0x522600
 int InfantryClass::FireAtTargetPos()
 {
     // IDA: 0x522600 (60B)
@@ -186,6 +193,7 @@ int InfantryClass::FireAtTargetPos()
     return 0;
 }
 
+// 0x51df60
 int InfantryClass::FireWeaponWithCleanup(int a2, int a3)
 {
     // IDA: 0x51DF60 (131B)
@@ -201,6 +209,7 @@ int InfantryClass::FireWeaponWithCleanup(int a2, int a3)
     return result;
 }
 
+// 0x51c8b0
 int InfantryClass::GetFireError(int* target, int weapon_idx, int a4, int a5)
 {
     // IDA: 0x51C8B0 (741B) — comprehensive fire error checks (returns 0-7)
@@ -222,6 +231,7 @@ int InfantryClass::GetFireError(int* target, int weapon_idx, int a4, int a5)
 }
 
 // IDA: 0x5227F0 — checks if target can be attacked (not allied, not cloaked, in range)
+// 0x5227f0
 bool InfantryClass::CanAttackTarget()
 {
     if (!target) return false;
@@ -243,6 +253,7 @@ int InfantryClass::ProcessIdleAction()
     return 10;
 }
 
+// 0x5239d0
 int InfantryClass::ProcessAnimation()
 {
     // IDA: 0x5239D0 (311B)
@@ -250,6 +261,7 @@ int InfantryClass::ProcessAnimation()
     return 0;
 }
 
+// 0x521320
 int InfantryClass::GetIdleTimer()
 {
     // IDA: 0x521320 (928B)
@@ -261,6 +273,7 @@ int InfantryClass::GetIdleTimer()
 // Phase 3: Crawling / Movement
 // ============================================================
 
+// 0x5216d0
 bool InfantryClass::CanMoveFreely()
 {
     // IDA: 0x5216D0 — infantry can move if not crawling/deploying
@@ -273,12 +286,14 @@ bool InfantryClass::CanMoveThroughCell()
     return true;
 }
 
+// 0x51dff0
 int InfantryClass::MoveToCell()
 {
     // IDA: 0x51DFF0 — move to specific cell
     return 0;
 }
 
+// 0x51df10
 int InfantryClass::CancelMovement()
 {
     // IDA: 0x51DF10 — cancel current movement
@@ -300,12 +315,14 @@ int InfantryClass::FindMoveTarget()
     return 0;
 }
 
+// 0x418e20
 int InfantryClass::FindNearbyCell()
 {
     // IDA: 0x418E20 — find nearby cell for movement
     return 0;
 }
 
+// 0x51f330
 int InfantryClass::FindPathToBuilding()
 {
     // IDA: 0x51F330 — pathfind to enter building
@@ -315,6 +332,7 @@ int InfantryClass::FindPathToBuilding()
     return 0;
 }
 
+// 0x51f3e0
 int InfantryClass::EnterBuilding()
 {
     // IDA: 0x51F3E0 — try to enter target building
@@ -324,12 +342,14 @@ int InfantryClass::EnterBuilding()
     return 0;
 }
 
+// 0x51f540
 int InfantryClass::ProcessEnterOrRepair()
 {
     // IDA: 0x51F540 — enter building or repair
     return 0;
 }
 
+// 0x522bc0
 bool InfantryClass::CanEnterBuilding()
 {
     // IDA: 0x522BC0 — check if can enter target building
@@ -342,6 +362,7 @@ int InfantryClass::FindIdleMovePosition()
     return 0;
 }
 
+// 0x51f640
 int InfantryClass::FindIdleAITarget()
 {
     // IDA: 0x51F640 — find idle AI target
@@ -352,6 +373,7 @@ int InfantryClass::FindIdleAITarget()
 // Phase 3: Paradrop
 // ============================================================
 
+// 0x521760
 int InfantryClass::ParachuteTo()
 {
     // IDA: 0x521760 — parachute infantry to target location
@@ -363,6 +385,7 @@ int InfantryClass::ParachuteTo()
 // Phase 3: C4 / Bomb
 // ============================================================
 
+// 0x51f6e0
 int InfantryClass::ProcessIvanBomb()
 {
     // IDA: 0x51F6E0 — process Ivan bomb planting
@@ -388,11 +411,13 @@ int InfantryClass::CheckAndApplyBomb()
 // Phase 3: Per-Frame & AI
 // ============================================================
 
+// 0x521c90
 void InfantryClass::PowerDrainUpdate()
 {
     // IDA: 0x521C90 (160B) — per-frame power consumption
 }
 
+// 0x51aa10
 int InfantryClass::HandleTargetDestroyed()
 {
     // IDA: 0x51AA10 — handle when target is destroyed
@@ -400,12 +425,14 @@ int InfantryClass::HandleTargetDestroyed()
     return 0;
 }
 
+// 0x51f250
 int InfantryClass::ProcessUpdate()
 {
     // IDA: 0x51F250 — process update state
     return 0;
 }
 
+// 0x51f190
 int InfantryClass::ValidateTargetAndMove()
 {
     // IDA: 0x51F190 — validate target and initiate movement
@@ -431,12 +458,14 @@ int InfantryClass::ProcessTunnelMovement()
     return 0;
 }
 
+// 0x736579
 int InfantryClass::UpdateBehavior()
 {
     // IDA: 0x736579 — update infantry behavior AI
     return 0;
 }
 
+// 0x51dbd0
 int InfantryClass::CalcFacingToTarget()
 {
     // IDA: 0x51DBD0 — calculate facing direction toward target
@@ -444,6 +473,7 @@ int InfantryClass::CalcFacingToTarget()
     return 0;
 }
 
+// 0x51bf90
 int InfantryClass::EvaluateTarget()
 {
     // IDA: 0x51BF90 — evaluate if target is worth attacking
@@ -451,6 +481,7 @@ int InfantryClass::EvaluateTarget()
     return 1;
 }
 
+// 0x51e140
 int InfantryClass::SelectAutoTarget(unsigned int flags, __int64 a3)
 {
     // IDA: 0x51E140 — auto-select target
@@ -588,12 +619,14 @@ int InfantryClass::CaptureAttackerInfo()
     return 0;
 }
 
+// 0x522780
 int InfantryClass::InitProductionLimits()
 {
     // IDA: 0x522780 — initialize production limits
     return 0;
 }
 
+// 0x522640
 int InfantryClass::GetProductionLimit()
 {
     // IDA: 0x522640 — get production limit from type
@@ -637,6 +670,7 @@ int InfantryClass::ResetReloadIfNeeded()
     return 0;
 }
 
+// 0x5220f0
 int InfantryClass::SetFlag1752()
 {
     // IDA: 0x5220F0 — set flag at offset 1752
@@ -685,23 +719,27 @@ int InfantryClass::RepairBridge()
     return 0;
 }
 
+// 0x522340
 void InfantryClass::CalculateApproachPath()
 {
     // IDA: 0x522340 — calculate approach path to target
 }
 
+// 0x5224d0
 bool InfantryClass::IsBridgeRepairEnabled()
 {
     // IDA: 0x5224D0 — check if bridge repair is enabled
     return Technician;
 }
 
+// 0x522d50
 int InfantryClass::SlaveGiveMoney_RecordBalanceBefore()
 {
     // IDA: 0x522D50 — record slave money balance
     return 0;
 }
 
+// 0x772ac0
 void InfantryClass::startPanic()
 {
     // IDA: 0x772AC0 — start panic state
@@ -718,6 +756,7 @@ int InfantryClass::CheckHealthDiff_0()
 // Phase 3: Drawing
 // ============================================================
 
+// 0x518f90
 void InfantryClass::Draw(Point2D* screen_pos, RectangleStruct* bounds) const
 {
     if (!screen_pos || !Type)

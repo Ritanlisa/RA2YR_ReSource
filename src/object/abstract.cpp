@@ -27,6 +27,7 @@ AbstractClass::AbstractClass() noexcept
 // IDA: 0x410260 -- vtable[0][0], AbstractClass::QueryInterface
 REVERSE(0x410260, "AbstractClass::QueryInterface: IDA verified", "None")
 // Checks IUnknown / IPersistStream / IPersist / IRTTITypeInfo IIDs
+// 0x410260
 HRESULT AbstractClass::QueryInterface(const IID& iid, void** ppv) {
     // 0x410267: if (!ppv) return E_POINTER
     if (!ppv)

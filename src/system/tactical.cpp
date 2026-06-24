@@ -136,6 +136,7 @@ CoordStruct* TacticalClass::Coord_To_Screen(const CoordStruct& world, Point2D* o
 
 // IDA: 0x6D1FE0 -- AdjustForZShapeMove
 // Adjusts draw rectangle for z-shaped building movement (foundation offset)
+// 0x6d1fe0
 Point2D* TacticalClass::AdjustForZShapeMove(Point2D* dest, Point2D* client)
 {
     if (!dest || !client)
@@ -170,6 +171,7 @@ int ZCoordToScreenY(int z_world)
 //     For each column (0 to viewWidth):
 //       cell = (start_col, start_row) where col in [0, viewWidth]
 // Each cell is checked for screen bounds intersection.
+// 0x6d7560
 void TacticalClass::RenderIsometric(const RectangleStruct& viewRect, int flags)
 {
     int view_x = field24 + viewRect.X;     // this+0xB0 = field24 (scroll offset X)
@@ -229,6 +231,7 @@ void TacticalClass::RenderIsometric(const RectangleStruct& viewRect, int flags)
 
 // IDA: 0x480350 -- TacticalClass::CheckCellVisibility
 // Checks if a cell at given world coordinate is visible and processes it.
+// 0x480350
 void TacticalClass::CheckCellVisibility(const Point2D& screen_pos, int flags, bool unk)
 {
     // Convert screen position to cell coordinates and check if within viewport
@@ -247,6 +250,7 @@ void TacticalClass::CheckCellVisibility(const Point2D& screen_pos, int flags, bo
 
 // IDA: 0x6D7840 -- TacticalClass::DrawMap
 // Main map drawing function. Draws terrain, overlays, and building debris.
+// 0x6d7840
 void TacticalClass::DrawMap(const RectangleStruct& viewRect, RectangleStruct* bounds)
 {
     // Check if DSurface_Hidden_2 can lock
@@ -301,6 +305,7 @@ void TacticalClass::DrawMap(const RectangleStruct& viewRect, RectangleStruct* bo
 
 // IDA: 0x6D7C00 -- TacticalClass::DrawTerrain
 // Draws terrain tiles for all visible cells.
+// 0x6d7c00
 void TacticalClass::DrawTerrain(const RectangleStruct& viewRect)
 {
     // Iterates visible cells and draws isometric tile graphics
@@ -323,6 +328,7 @@ void TacticalClass::DrawCellTerrainOverlay(int cx, int cy, RectangleStruct* boun
 
 // IDA: 0x6D3040 -- TacticalClass::DrawTerrainPartial
 // Draws partial terrain for a region of cells.
+// 0x6d3040
 void TacticalClass::DrawTerrainPartial(const RectangleStruct& rect)
 {
     // Similar to DrawTerrain but limited to a specific rectangular region
@@ -347,6 +353,7 @@ void TacticalClass::DrawBuildingsInView(const RectangleStruct& viewRect)
 
 // IDA: 0x6D71E0 -- TacticalClass::CalcBuildingDrawPos
 // Calculates the screen draw position for a building.
+// 0x6d71e0
 Point2D* TacticalClass::CalcBuildingDrawPos(Point2D* out, BuildingClass* building)
 {
     if (!out || !building)
@@ -359,6 +366,7 @@ Point2D* TacticalClass::CalcBuildingDrawPos(Point2D* out, BuildingClass* buildin
 
 // IDA: 0x4D1890 -- TacticalClass::DrawBuildings
 // Draws all buildings in sorted order (Y-sort for isometric depth).
+// 0x4d1890
 void TacticalClass::DrawBuildings(const RectangleStruct& viewRect)
 {
     DrawBuildingsInView(viewRect);
@@ -394,6 +402,7 @@ void TacticalClass::RenderIsometricOverlay(const RectangleStruct& viewRect)
 
 // IDA: 0x658780 -- TacticalClass::renderOverlay
 // Thin wrapper that delegates to RenderIsometricOverlay.
+// 0x658780
 void TacticalClass::renderOverlay()
 {
     RectangleStruct rect = visibleArea;
@@ -414,6 +423,7 @@ void TacticalClass::RenderCellFogOfWar(int cx, int cy)
 
 // IDA: 0x550260 -- TacticalClass::RenderCells
 // Renders all cells in the current viewport.
+// 0x550260
 void TacticalClass::RenderCells()
 {
     // Called from the main render loop
@@ -431,6 +441,7 @@ void TacticalClass::RenderCells()
 
 // IDA: 0x6D8B30 -- TacticalClass::CalcViewportCells
 // Calculates which cells are visible in the current viewport.
+// 0x6d8b30
 void TacticalClass::CalcViewportCells()
 {
     // Uses view transform to compute the range of cell indices
@@ -462,6 +473,7 @@ void TacticalClass::CalcViewportCells()
 
 // IDA: 0x653760 -- TacticalClass::PixelToCellCheck
 // Converts pixel coordinates to cell coordinates and checks validity.
+// 0x653760
 bool TacticalClass::PixelToCellCheck(const Point2D& pixel, CellStruct* out_cell) const
 {
     // Inverse transform: screen pixel → world coordinate → cell coordinate
@@ -475,6 +487,7 @@ bool TacticalClass::PixelToCellCheck(const Point2D& pixel, CellStruct* out_cell)
 
 // IDA: 0x656750 -- TacticalClass::ScreenToCellLookup
 // Converts screen coordinates to cell index lookup.
+// 0x656750
 CellStruct TacticalClass::ScreenToCellLookup(const Point2D& screen) const
 {
     CellStruct result = {};
@@ -488,6 +501,7 @@ CellStruct TacticalClass::ScreenToCellLookup(const Point2D& screen) const
 
 // IDA: 0x483E30 -- TacticalClass::SetView
 // Sets the tactical view parameters.
+// 0x483e30
 void TacticalClass::SetView(int view_x, int view_y, int view_width, int view_height)
 {
     field24 = view_x;
@@ -498,6 +512,7 @@ void TacticalClass::SetView(int view_x, int view_y, int view_width, int view_hei
 
 // IDA: 0x4A8960 -- TacticalClass::SetViewDimensions
 // Sets viewport dimensions and recalculates visible area.
+// 0x4a8960
 void TacticalClass::SetViewDimensions(int width, int height)
 {
     TacticalClass_field_2C = width;
@@ -511,6 +526,7 @@ void TacticalClass::SetViewDimensions(int width, int height)
 
 // IDA: 0x537620 -- TacticalClass::InitView
 // Initializes the tactical view for first use.
+// 0x537620
 void TacticalClass::InitView()
 {
     TacticalClass_field_AC = false;
@@ -520,6 +536,7 @@ void TacticalClass::InitView()
 
 // IDA: 0x6D5F60 -- TacticalClass::SetViewportPosition
 // Sets the viewport scroll position.
+// 0x6d5f60
 void TacticalClass::SetViewportPosition(int x, int y)
 {
     field24 = x;   // this+0xB0 = scroll X offset
@@ -528,6 +545,7 @@ void TacticalClass::SetViewportPosition(int x, int y)
 
 // IDA: 0x6D2540 -- TacticalClass::ScrollViewport
 // Scrolls the viewport by a delta amount.
+// 0x6d2540
 void TacticalClass::ScrollViewport(int dx, int dy)
 {
     field24 += dx;
@@ -540,6 +558,7 @@ void TacticalClass::ScrollViewport(int dx, int dy)
 
 // IDA: 0x5090A0 -- TacticalClass::updateVisibility
 // Updates visibility state for all visible cells.
+// 0x5090a0
 void TacticalClass::updateVisibility()
 {
     visibleCellCount = 0;
@@ -552,6 +571,7 @@ void TacticalClass::updateVisibility()
 
 // IDA: 0x74D490 -- TacticalClass::Render
 // Main render entry point. Draws a single object into the tactical view.
+// 0x74d490
 void TacticalClass::Render(ObjectClass* obj)
 {
     if (!obj || redrawing)
@@ -607,6 +627,7 @@ void TacticalClass::RenderFrame()
 
 // IDA: 0x6D9EF0 -- TacticalClass::AddToDrawQueue
 // Adds an object to the draw queue for Y-sorted rendering.
+// 0x6d9ef0
 void TacticalClass::AddToDrawQueue(ObjectClass* obj, int screen_x, int screen_y)
 {
     if (!obj || visibleCellCount >= 800)
@@ -673,6 +694,7 @@ void TacticalClass::InterpolateView()
 
 // IDA: 0x6D2280 -- TacticalClass::TransformPixel
 // Transforms a pixel using the tactical view matrix.
+// 0x6d2280
 Point2D TacticalClass::TransformPixel(const Point2D& pixel) const
 {
     Point2D result = pixel;
@@ -682,6 +704,7 @@ Point2D TacticalClass::TransformPixel(const Point2D& pixel) const
 
 // IDA: 0x631E50 -- TacticalClass::InterpolateColor
 // Interpolates between two colors for fade effects.
+// 0x631e50
 uint32_t TacticalClass::InterpolateColor(uint32_t elapsed_ms)
 {
     // Color interpolation based on time
@@ -692,6 +715,7 @@ uint32_t TacticalClass::InterpolateColor(uint32_t elapsed_ms)
 
 // IDA: 0x631EE0 -- TacticalClass::DecrementCounter
 // Decrements a frame counter.
+// 0x631ee0
 bool TacticalClass::DecrementCounter(uint32_t delta)
 {
     if (TacticalClass_field_DF4 >= delta)
@@ -716,6 +740,7 @@ void TacticalClass::MapSpecialDrawMode()
 
 // IDA: 0x653850 -- TacticalClass::MouseInput
 // Processes mouse input for the tactical view.
+// 0x653850
 void TacticalClass::MouseInput(int x, int y, int buttons)
 {
     mouseFrameIndex = (mouseFrameIndex + 1) % 1000;
@@ -726,6 +751,7 @@ void TacticalClass::MouseInput(int x, int y, int buttons)
 
 // IDA: 0x6539D0 -- TacticalClass::ProcessMouseClick
 // Handles mouse click events in the tactical view.
+// 0x6539d0
 void TacticalClass::ProcessMouseClick(int x, int y)
 {
     // Convert pixel to cell, then dispatch click action

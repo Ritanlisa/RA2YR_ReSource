@@ -38,6 +38,7 @@ bool ObjectClass::Put(const CoordStruct& coords, unsigned int face_dir)
 }
 
 // IDA: 0x5F44A0 -- ObjectClass::Remove (123B)
+// 0x5f44a0
 bool ObjectClass::Remove()
 {
     if (!isSelected)
@@ -52,6 +53,7 @@ bool ObjectClass::Remove()
 }
 
 // IDA: 0x5F65F0 -- ObjectClass::Destroy (146B)
+// 0x5f65f0
 void ObjectClass::Destroy()
 {
     isAliveFlag = false;
@@ -254,6 +256,7 @@ void ObjectClass::Reveal()
 }
 
 // IDA: 0x5F4D10 -- ObjectClass::MarkForRedraw
+// 0x5f4d10
 void ObjectClass::MarkForRedraw()
 {
     if (!needsRedraw) {

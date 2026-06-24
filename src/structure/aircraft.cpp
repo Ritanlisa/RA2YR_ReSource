@@ -35,6 +35,7 @@ AircraftClass::AircraftClass() noexcept
 // ============================================================
 
 // IDA: 0x417FE0 (Mission_Attack, 3445B)
+// 0x417fe0
 int AircraftClass::Mission_Attack()
 {
     enum { VALIDATE_AZ, PICK_LOCATION, TAKEOFF, FLY_TO, FIRE1, FIRE2, RTB };
@@ -193,6 +194,7 @@ int AircraftClass::Mission_Retreat()
 }
 
 // IDA: 0x4166C0 (Mission_Enter, 1037B)
+// 0x4166c0
 int AircraftClass::Mission_Enter()
 {
     // Enter building/helipad for docking
@@ -200,6 +202,7 @@ int AircraftClass::Mission_Enter()
 }
 
 // IDA: 0x419C80 (Mission_Transport, 1215B)
+// 0x419c80
 int AircraftClass::Mission_Transport()
 {
     // Transport mission (carryall logic)
@@ -207,6 +210,7 @@ int AircraftClass::Mission_Transport()
 }
 
 // IDA: 0x4190B0 (MissionDispatch, 1147B)
+// 0x4190b0
 int AircraftClass::MissionDispatch()
 {
     // Dispatch to correct mission handler based on current mission
@@ -219,6 +223,7 @@ int AircraftClass::MissionDispatch()
 // ============================================================
 
 // IDA: 0x414310 (MoveTo, 406B)
+// 0x414310
 int AircraftClass::MoveTo()
 {
     // Move aircraft to target coordinates via flight path
@@ -248,6 +253,7 @@ bool AircraftClass::CanEnterCell()
 // ============================================================
 
 // IDA: 0x41BA90 (ProcessLanding, 82B)
+// 0x41ba90
 int AircraftClass::ProcessLanding()
 {
     // Process landing sequence
@@ -273,6 +279,7 @@ int AircraftClass::ValidateLandingCell()
 }
 
 // IDA: 0x415A50 (ProcessReturnToBase, 185B)
+// 0x415a50
 int AircraftClass::ProcessReturnToBase()
 {
     // Return to base (helipad/airfield)
@@ -313,6 +320,7 @@ int AircraftClass::LandingCheckStub()
 // ============================================================
 
 // IDA: 0x41B870 (ProcessPassengerEjection, 21B)
+// 0x41b870
 int AircraftClass::ProcessPassengerEjection()
 {
     // Eject passengers from aircraft
@@ -376,6 +384,7 @@ void AircraftClass::PowerDrainUpdate()
 }
 
 // IDA: 0x41B660 (HandleTargetDestroyed, 56B)
+// 0x41b660
 int AircraftClass::HandleTargetDestroyed()
 {
     // Handle when target is destroyed
@@ -384,6 +393,7 @@ int AircraftClass::HandleTargetDestroyed()
 }
 
 // IDA: 0x414A80 (ProcessMissionTimeout, 302B)
+// 0x414a80
 int AircraftClass::ProcessMissionTimeout()
 {
     // Process mission timeout for aircraft
@@ -391,6 +401,7 @@ int AircraftClass::ProcessMissionTimeout()
 }
 
 // IDA: 0x41A5C0 (GetMissionTimer, 886B)
+// 0x41a5c0
 int AircraftClass::GetMissionTimer()
 {
     // Get mission timer value
@@ -451,6 +462,7 @@ int AircraftClass::LoadFromStream()
 }
 
 // IDA: 0x414080 (Destruct, 513B)
+// 0x414080
 void AircraftClass::Destruct()
 {
     // Clean up aircraft resources
@@ -469,6 +481,7 @@ int AircraftClass::GetCursorOverObject()
 }
 
 // IDA: 0x41B920 (IsHeightAboveThreshold, 83B)
+// 0x41b920
 int AircraftClass::IsHeightAboveThreshold()
 {
     // Check if aircraft is above height threshold

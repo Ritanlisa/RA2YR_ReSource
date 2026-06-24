@@ -417,6 +417,7 @@ DynamicVectorClass<MixFileClass*>& MixFileClass::GetMixPool()
 }
 
 REVERSE(0x5301a0, "MixFileClass::Bootstrap: IDA verified", "None")
+// 0x5301a0
 bool MixFileClass::Bootstrap()
 {
     LOG_INFO("MixFileClass::Bootstrap: scanning all .mix files");
