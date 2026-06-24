@@ -221,6 +221,124 @@ def normalize_name(name):
     n = re.sub(r'vt\[\s*(\d+)\s*\]', r'vt_\1', n)
     return n
 
+
+# --- Bidirectional normalization for convention-tolerant comparison ---
+
+def normalize_name_core(name):
+    """Core normalization: strip noise, normalize formats, strip namespace.
+    
+    Does NOT replace :: with _ (that's done during comparison).
+    Does NOT handle constructor/destructor equivalence (that's bidirectional).
+    
+    Rules applied:
+      1. Strip trailing underscores (IDA ___ artifact)
+      2. Collapse 3+ consecutive underscores → 1
+      3. Normalize vt[NN] <-> vt_NN <-> vtNN → unified vt_N format
+      4. Strip gamemd:: namespace prefix
+    """
+    if not name:
+        return name
+    n = name.strip()
+    # Strip trailing underscores
+    n = n.rstrip('_')
+    # Collapse 3+ consecutive underscores
+    n = re.sub(r'_{3,}', '_', n)
+    # Normalize vt[NN] / vt_NN / vtNN → vt_N
+    n = re.sub(r'vt\[\s*(\d+)\s*\]', r'vt_\1', n)
+    n = re.sub(r'\bvt(\d+)\b', r'vt_\1', n)
+    # Strip gamemd:: namespace prefix
+    n = re.sub(r'^gamemd::', '', n)
+    return n
+
+
+def _has_ctor_pattern(name):
+    """Check if name matches ClassName::ClassName or ClassName_ClassName (constructor).
+    Returns the class name if found, None otherwise."""
+    # :: format: ClassName::ClassName
+    parts = name.split('::')
+    if len(parts) >= 2 and parts[-1] == parts[-2]:
+        return parts[-2]
+    # _ format (IDA naming): ClassName_ClassName
+    # Detection: last _-separated segment equals the preceding segment
+    # e.g. "CaptureManagerClass_CaptureManagerClass" → suffix "CaptureManagerClass"
+    parts_u = name.rsplit('_', 1)
+    if len(parts_u) == 2 and parts_u[0] == parts_u[1] and parts_u[1]:
+        return parts_u[1]
+    return None
+
+
+def _normalize_to_constructor(name):
+    """Convert ClassName::ClassName or ClassName_ClassName → Constructor variant."""
+    cls = _has_ctor_pattern(name)
+    if cls:
+        if '::' in name:
+            prefix = '::'.join(name.split('::')[:-1])
+            return prefix + '::Constructor'
+        else:
+            prefix = name.rsplit('_' + cls, 1)[0]
+            return prefix + '_Constructor'
+    return name
+
+
+def _flatten_for_compare(name):
+    """Replace :: with _ for cross-source comparison (IDA uses _ not ::)."""
+    return name.replace('::', '_')
+
+
+def normalize_name_bidirectional(name_a, name_b):
+    """Normalize two names for tolerant comparison.
+    
+    Returns (norm_a_flat, norm_b_flat, is_equivalent, warnings_list).
+    
+    Normalization rules (applied to BOTH names before comparison):
+      1. Core: trailing _, _ collapse, vt format, gamemd:: strip
+      2. Constructor: ClassName::ClassName ↔ ClassName::Constructor
+      3. Construct alias: Construct → Constructor
+      4. Scope separator: :: → _ for comparison
+      5. Case-insensitive comparison
+      6. Destructor: if names differ only by ~ prefix → WARNING, not mismatch
+    
+    If is_equivalent=True, the names differ only by convention, not semantics.
+    """
+    if not name_a or not name_b:
+        return (name_a or ''), (name_b or ''), False, []
+    
+    warnings = []
+    
+    # Step 1: Core normalization
+    a = normalize_name_core(name_a)
+    b = normalize_name_core(name_b)
+    
+    # Step 2: Strip ~ (destructor marker) — must happen BEFORE constructor check
+    # because ~ClassName::ClassName → ClassName::ClassName which IS a constructor pattern
+    has_tilde_a = '~' in a
+    has_tilde_b = '~' in b
+    a = a.replace('~', '')
+    b = b.replace('~', '')
+    
+    # Step 3: Constructor normalization
+    # ClassName::ClassName → ClassName::Constructor
+    a = _normalize_to_constructor(a)
+    b = _normalize_to_constructor(b)
+    
+    # Step 4: Flatten :: → _ for comparison
+    a_flat = _flatten_for_compare(a)
+    b_flat = _flatten_for_compare(b)
+    
+    # Step 5: Normalize Construct/Constructor aliases
+    # Use (^|_)Construct(_|$) instead of \bConstruct\b because Python's \w includes _
+    a_flat = re.sub(r'(^|_)Construct(_|$)', r'\1Constructor\2', a_flat)
+    b_flat = re.sub(r'(^|_)Construct(_|$)', r'\1Constructor\2', b_flat)
+    
+    # Step 6: Case-insensitive comparison
+    if a_flat.lower() == b_flat.lower():
+        if has_tilde_a or has_tilde_b:
+            warnings.append("destructor naming difference (~)")
+        return a_flat, b_flat, True, warnings
+    
+    return a_flat, b_flat, False, warnings
+
+
 # --- Audit logic ---
 
 def audit():
@@ -273,6 +391,38 @@ def audit():
         if h_name: mismatch["hpp_name"] = h_name
         name_mismatches.append(mismatch)
     
+    # --- Normalized name mismatches (convention-tolerant) ---
+    normalized_mismatches = []
+    normalization_resolved = 0
+    for mm in name_mismatches:
+        raw_names = {}
+        if "json_name" in mm: raw_names["json_name"] = mm["json_name"]
+        if "ida_name" in mm: raw_names["ida_name"] = mm["ida_name"]
+        if "hpp_name" in mm: raw_names["hpp_name"] = mm["hpp_name"]
+        
+        names_list = list(raw_names.items())
+        all_equivalent = True
+        all_warnings = []
+        
+        # Pairwise bidirectional comparison
+        for i in range(len(names_list)):
+            for j in range(i + 1, len(names_list)):
+                src_a, name_a = names_list[i]
+                src_b, name_b = names_list[j]
+                norm_a, norm_b, is_eq, warns = normalize_name_bidirectional(name_a, name_b)
+                if not is_eq:
+                    all_equivalent = False
+                all_warnings.extend(warns)
+        
+        if all_equivalent:
+            normalization_resolved += 1
+        else:
+            norm_entry = {"addr": mm["addr"]}
+            norm_entry.update(raw_names)
+            if all_warnings:
+                norm_entry["warnings"] = list(set(all_warnings))  # deduplicate
+            normalized_mismatches.append(norm_entry)
+    
     # --- Orphan addresses ---
     hpp_only = sorted(set(hpp_annots.keys()) - set(json_map.keys()))
     json_only = sorted(set(json_map.keys()) - set(hpp_annots.keys()) - crt_set)
@@ -294,6 +444,7 @@ def audit():
     
     report = {
         "name_mismatches": name_mismatches,
+        "normalized_mismatches": normalized_mismatches,
         "orphan_addresses": {
             "hpp_only": hpp_only,
             "json_only": json_only,
@@ -313,7 +464,9 @@ def audit():
             "total_ida_entries": len(ida_map),
             "total_hpp_addrs": len(hpp_annots),
             "crt_exclusions": len(crt_set),
-            "name_mismatches": len(name_mismatches)
+            "name_mismatches": len(name_mismatches),
+            "normalized_mismatches": len(normalized_mismatches),
+            "normalization_resolved": normalization_resolved
         }
     }
     
@@ -345,6 +498,23 @@ def print_human(report):
                 if k in mm:
                     print(f"    {k}: {mm[k]}")
     
+    # --- Normalized Mismatches (convention-tolerant) ---
+    norm_count = s.get('normalized_mismatches', 0)
+    norm_resolved = s.get('normalization_resolved', 0)
+    print(f"\n--- Normalized Mismatches ({norm_count}) ---")
+    if norm_resolved > 0:
+        print(f"  ({norm_resolved} raw mismatches resolved by convention normalization)")
+    if norm_count == 0:
+        print("  [OK] No semantic mismatches after convention normalization")
+    else:
+        for mm in report.get("normalized_mismatches", []):
+            print(f"  {mm['addr']}:")
+            for k in ["ida_name", "json_name", "hpp_name"]:
+                if k in mm:
+                    print(f"    {k}: {mm[k]}")
+            if mm.get("warnings"):
+                print(f"    warnings: {', '.join(mm['warnings'])}")
+    
     print(f"\n--- Coverage ---")
     print(f"  Game functions:     {c['total_game']:,}")
     print(f"  HPP-annotated:      {c['annotated']:,}")
@@ -374,6 +544,9 @@ def print_human(report):
     if s['name_mismatches'] > 0:
         issues += 1
         print(f"{s['name_mismatches']} name mismatch(es)", end="; ")
+    if norm_count > 0:
+        issues += 1
+        print(f"{norm_count} normalized mismatch(es)", end="; ")
     if c['missing'] > 0:
         issues += 1
         print(f"{c['missing']} unannotated", end="; ")
