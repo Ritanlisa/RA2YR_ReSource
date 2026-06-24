@@ -268,6 +268,27 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* updateScroll(int a1, int a2);  // 0x7343E0
     void* CalcInverseAlpha(int a1, float a2);  // 0x75F5C0
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    void* SetDisplayMode(int a1, int a2);  // 0x4ac700 -- TacticalClass::SetDisplayMode
+    void* ConstructTacticalSurface();  // 0x42a6d0 -- Tactical::ConstructTacticalSurface
+    int CreateTacticalLightSurface(int a1, int a2, int a3, int a4, int a5, int a6);  // 0x484050 -- Tactical::CreateTacticalLightSurface
+    int CalculateTacticalLighting(int a1, int a2, int a3, int a4, int a5, int a6, int a7);  // 0x484180 -- Tactical::CalculateTacticalLighting
+    void* SetCellTransform(int a1, int a2, int a3, int a4, int a5, int a6);  // 0x4a35f0 -- Tactical::SetCellTransform
+    void* MouseMove(int a1, int a2);  // 0x4a91b0 -- Tactical::MouseMove
+    int SelectObject(int a1);  // 0x4f4450 -- Tactical::SelectObject
+    bool IsCellVisible(int a1);  // 0x568350 -- Tactical::IsCellVisible
+    void* GetCellData();  // 0x58c2a0 -- Tactical::GetCellData
+    int HandleTacticalMouseInput();  // 0x6930a0 -- Tactical::HandleTacticalMouseInput
+    int UpdateUIVisibility();  // 0x6a6610 -- Tactical::UpdateUIVisibility
+    void DisplayTacticalOverlayText(int a1);  // 0x6d4e20 -- Tactical::DisplayTacticalOverlayText
+    int SetTacticalPosition(int a1);  // 0x6d6070 -- Tactical::SetTacticalPosition
+    void* PixelToCell(int a1, int a2);  // 0x6d6590 -- Tactical::PixelToCell
+    int AddCellToDrawList(int a1);  // 0x6da7d0 -- Tactical::AddCellToDrawList
+    int DrawTacticalConnectorLines();  // 0x6db210 -- Tactical::DrawTacticalConnectorLines
+    int DrawOverlay(int a1, int a2, int a3, int a4);  // 0x6dbb60 -- Tactical::DrawOverlay
+    void* UpdateView(int a1);  // 0x6dc470 -- Tactical::UpdateView
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 } // namespace gamemd

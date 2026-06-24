@@ -61,6 +61,11 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     bool executeAction(void* a1);  // 0x724FA0
     int BinarySearchAction();  // 0x724FC0
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int BuildBar();  // 0x6d1200 -- CommandClass::BuildBar
+    int AddAction(int a1);  // 0x724580 -- CommandClass::AddAction
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 // ============================================================================

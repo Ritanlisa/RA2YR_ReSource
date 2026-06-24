@@ -41,6 +41,13 @@ public:
 
     static int32_t  s_PlayerCount;  // 0x00
     static int32_t  s_MapSize;      // 0x04
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int RandomizeSettings(int a1);  // 0x597260 -- Skirmish::RandomizeSettings
+    int RenderPreview();  // 0x640710 -- Skirmish::RenderPreview
+    int EnableSpawnButtons();  // 0x6acd60 -- Skirmish::EnableSpawnButtons
+    int SetupGame();  // 0x6ae6e0 -- Skirmish::SetupGame
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 // ============================================================================
@@ -62,6 +69,10 @@ public:
 
     static char     m_Name[64];     // 0x00
     static int32_t  m_Value;        // 0x40
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    void* SetDigest(int a1);  // 0x69ad80 -- GameOption::SetDigest
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 // ============================================================================
@@ -313,6 +324,11 @@ public:
     uint8_t GameSetup_field_0x10[4];
     uint8_t GameSetup_field_0x14[4];
     uint8_t GameSetup_field_0x18[4];
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int LookupDialogHash();  // 0x60d320 -- GameSetup::LookupDialogHash
+    int WriteINI(int a1, int a2);  // 0x698f90 -- GameSetup::WriteINI
+    // === SYMBOL-ANCHOR (END) ===
 };
 // 1 methods in IDA
 class GameState
@@ -392,6 +408,10 @@ public:
     uint8_t LoadScreen_field_0x0C[4];
     uint8_t LoadScreen_field_0x10[4];
     uint8_t LoadScreen_field_0x14[4];
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int IsActive();  // 0x643e60 -- LoadScreen::IsActive
+    // === SYMBOL-ANCHOR (END) ===
 };
 // 16 methods in IDA
 class LoadingScreen
@@ -422,6 +442,13 @@ public:
     uint8_t LoadingScreen_field_0x34[4];
     uint8_t LoadingScreen_field_0x38[4];
     uint8_t LoadingScreen_field_0x3C[4];
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int GetColorScheme();  // 0x642b60 -- LoadingScreen::GetColorScheme
+    void* GetBackgroundImage(int a1);  // 0x72b2f0 -- LoadingScreen::GetBackgroundImage
+    void* GetOverlayImage(int a1);  // 0x72b310 -- LoadingScreen::GetOverlayImage
+    int ReleaseAnimObjects();  // 0x72b390 -- LoadingScreen::ReleaseAnimObjects
+    // === SYMBOL-ANCHOR (END) ===
 };
 // 7 methods in IDA
 class MultiplayerGameMode
@@ -442,6 +469,11 @@ public:
     uint8_t MultiplayerGameMode_field_0x10[4];
     uint8_t MultiplayerGameMode_field_0x14[4];
     uint8_t MultiplayerGameMode_field_0x18[4];
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    void* QueryInterface(int a1);  // 0x5d7f20 -- MultiplayerGameMode::QueryInterface
+    void* ConstructMultiplayerGameModeVectorClass(int a1, int a2);  // 0x5d89f0 -- MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass
+    // === SYMBOL-ANCHOR (END) ===
 };
 // 1 methods in IDA
 class SaveLoad

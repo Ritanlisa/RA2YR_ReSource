@@ -105,6 +105,12 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* CompleteItem();  // 0x71ABC0
     int CompleteProduction();  // 0x73D630
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int CountType(int a1);  // 0x4ca670 -- FactoryClass::CountType
+    int FindExitCellByName();  // 0x523c90 -- Factory::FindExitCellByName
+    int GetLinkedIndex(int a1);  // 0x663d60 -- Factory::GetLinkedIndex
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 } // namespace gamemd

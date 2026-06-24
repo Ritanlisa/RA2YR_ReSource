@@ -556,6 +556,34 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int Initialize();  // 0x7498D0
     int IsCellSuitableForPlacement();  // 0x74D670
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int GetCoordsThunk2();  // 0x41be00 -- ObjectClass::GetCoordsThunk2
+    int Undeploy();  // 0x5f4d30 -- ObjectClass::Undeploy
+    int Deploy();  // 0x5f4ec0 -- ObjectClass::Deploy
+    int Destroy2();  // 0x5f5280 -- ObjectClass::Destroy2
+    int UpdateProductionDisplay();  // 0x5f5850 -- ObjectClass::UpdateProductionDisplay
+    int GetZAboveGround();  // 0x5f5f40 -- ObjectClass::GetZAboveGround
+    int DistanceTo(int a1);  // 0x5f6360 -- ObjectClass::DistanceTo
+    int GetBoundingSize();  // 0x5f6bd0 -- ObjectClass::GetBoundingSize
+    int IsAboveScreenMargin();  // 0x5f6c10 -- ObjectClass::IsAboveScreenMargin
+    int CreateInstance();  // 0x5f6dc0 -- ObjectClass::CreateInstance
+    int FindClosestObjectCell(int a1, int a2, int a3);  // 0x47c3d0 -- Object::FindClosestObjectCell
+    int FindObjectCell(int a1, int a2);  // 0x47c5a0 -- Object::FindObjectCell
+    bool IsAlliedWithObjectHouse(int a1);  // 0x4f9a90 -- Object::IsAlliedWithObjectHouse
+    bool IsAlliedWithObjectSimpleHouse(int a1);  // 0x4f9af0 -- Object::IsAlliedWithObjectSimpleHouse
+    void* RemoveObjectArray();  // 0x53e420 -- Object::RemoveObjectArray
+    void* FindNearestObjectAtCell(int a1);  // 0x56c210 -- Object::FindNearestObjectAtCell
+    int Unlink();  // 0x5f5230 -- Object::Unlink
+    void* SpawnAtCell(int a1, int a2, int a3);  // 0x5fc380 -- Object::SpawnAtCell
+    int CheckState(int a1, int a2);  // 0x5fd270 -- Object::CheckState
+    int LoadObject(int a1, int a2);  // 0x5fd8f0 -- Object::LoadObject
+    void HandleAction(int a1, int a2);  // 0x5fd970 -- Object::HandleAction
+    int ProcessEvent();  // 0x5fdde0 -- Object::ProcessEvent
+    void* DrawObject(int a1);  // 0x5fdf70 -- Object::DrawObject
+    void* CalculateObjectPlacementPosition(int a1);  // 0x62ac30 -- Object::CalculateObjectPlacementPosition
+    void* DtorWithDelete(int a1);  // 0x7ad330 -- Object::DtorWithDelete
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 } // namespace game

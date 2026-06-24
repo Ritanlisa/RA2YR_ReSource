@@ -173,6 +173,30 @@ public:
 
 protected:
     DisplayClass() noexcept;
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int UpdateDisplayTimer();  // 0x487630 -- DisplayClass::UpdateDisplayTimer
+    int AdvanceFrameCounter();  // 0x487690 -- DisplayClass::AdvanceFrameCounter
+    int LoadTypeData();  // 0x4a8850 -- DisplayClass::LoadTypeData
+    int SetSize();  // 0x4a88c0 -- DisplayClass::SetSize
+    void Update(int a1, int a2);  // 0x4a9700 -- DisplayClass::Update
+    int UpdateCellPassability(int a1, int a2);  // 0x4a9890 -- DisplayClass::UpdateCellPassability
+    int ProcessCellReveal(int a1, int a2);  // 0x4a9dd0 -- DisplayClass::ProcessCellReveal
+    bool RevealFogCell(int a1, int a2);  // 0x4aa050 -- DisplayClass::RevealFogCell
+    int ProcessTacticalMouseInput(int a1, int a2, int a3);  // 0x4aac10 -- DisplayClass::ProcessTacticalMouseInput
+    int InitViewBounds(int a1);  // 0x4ac310 -- DisplayClass::InitViewBounds
+    int ExitMode();  // 0x4aead0 -- DisplayClass::ExitMode
+    void* updateRenderState(int a1);  // 0x4aebb0 -- DisplayClass::updateRenderState
+    void* Read(int a1);  // 0x4aebf0 -- DisplayClass::Read
+    void* processDisplayMode(int a1);  // 0x4aec30 -- DisplayClass::processDisplayMode
+    bool RenderStatusText(int a1, int a2);  // 0x5519b0 -- DisplayClass::RenderStatusText
+    int InsertPriorityText(int a1);  // 0x551a90 -- DisplayClass::InsertPriorityText
+    bool checkScreenBounds(int a1);  // 0x5f6220 -- DisplayClass::checkScreenBounds
+    int ScrollTacticalView(int a1, int a2);  // 0x6d8530 -- DisplayClass::ScrollTacticalView
+    int GetCoordDelta(int a1);  // 0x6da230 -- DisplayClass::GetCoordDelta
+    int ReadFromBuffer(int a1, int a2);  // 0x7ba4d0 -- DisplayClass::ReadFromBuffer
+    void* GetViewport();  // 0x72ad20 -- Display::GetViewport
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 } // namespace gamemd

@@ -112,7 +112,7 @@ void ResetAnimSystem(int mode);  // 0x75A7D0
 // IDA 0x6D1C20 -- TacticalMap::Construct
 void* TacticalMapConstruct(void* mem);  // 0x6D1C20
 
-// IDA 0x535AA0 -- INIClass::Constructor
+// IDA 0x535AA0 -- INIClass::INIClass
 void INIClassConstruct(void* buf);
 
 // IDA 0x4741F0 -- CCINIClass::Load

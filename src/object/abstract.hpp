@@ -291,6 +291,11 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int processSpecialEffect(void* a1);  // 0x764420
     int finalizeDestruction();  // 0x7C35C0
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int queueMission(int a1);  // 0x4e01c0 -- AbstractClass::queueMission
+    void* getWeaponRange(int a1);  // 0x5b3a60 -- AbstractClass::getWeaponRange
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 } // namespace game

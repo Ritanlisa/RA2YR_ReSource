@@ -87,6 +87,17 @@ public:
     bool AltPal;
     bool StateAIAdvanceFudgeCalc;
     uint8_t padding_306[2];
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    void GetClassIdentifier();  // 0x477900 -- ParticleTypeClass::GetClassIdentifier
+    int LoadTypeData(int a1);  // 0x477930 -- ParticleTypeClass::LoadTypeData
+    void* QueryInterface(int a1);  // 0x477ac0 -- ParticleTypeClass::QueryInterface
+    int Release(int a1, int a2);  // 0x4784f0 -- ParticleTypeClass::Release
+    void* EnsureCapacity(int a1);  // 0x4788e0 -- ParticleTypeClass::EnsureCapacity
+    int LoadFromINI(int a1);  // 0x644f50 -- ParticleTypeClass::LoadFromINI
+    int ProcessPower(int a1);  // 0x6454e0 -- ParticleTypeClass::ProcessPower
+    int GetType(int a1, int a2);  // 0x6458b0 -- ParticleTypeClass::GetType
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 } // namespace gamemd

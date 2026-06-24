@@ -37,6 +37,10 @@ public:
     static float GetVerses(int32_t armor);
 
     static int32_t  s_WarheadType;  // 0x00
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int ApplyPostDamageEffects();  // 0x46a310 -- Warhead::ApplyPostDamageEffects
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 // ============================================================================
@@ -81,6 +85,10 @@ public:
     bool        m_Enabled;      // 0x00
     uint8_t     _pad_01[3];     // 0x01
     int32_t     UnholyAlliance_field_04;       // 0x04
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    void* QueryInterface(int a1);  // 0x5cb540 -- UnholyAlliance::QueryInterface
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 // ============================================================================
@@ -403,6 +411,15 @@ public:
     uint8_t AITriggerTypeClass_field_0x34[4];
     uint8_t AITriggerTypeClass_field_0x38[4];
     uint8_t AITriggerTypeClass_field_0x3C[4];
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    bool CivilianHouseOwns(int a1, int a2);  // 0x41ec90 -- AITriggerTypeClass::CivilianHouseOwns
+    bool OwnerHouseOwns(int a1, int a2);  // 0x41ee90 -- AITriggerTypeClass::OwnerHouseOwns
+    bool HouseCredits(int a1, int a2);  // 0x41f230 -- AITriggerTypeClass::HouseCredits
+    int LoadFromINI(int a1);  // 0x41f580 -- AITriggerTypeClass::LoadFromINI
+    int RegisterSuccess();  // 0x41fd60 -- AITriggerTypeClass::RegisterSuccess
+    int RegisterFailure();  // 0x41fe20 -- AITriggerTypeClass::RegisterFailure
+    // === SYMBOL-ANCHOR (END) ===
 };
 // 7 methods in IDA
 class AnimFile
@@ -423,6 +440,10 @@ public:
     uint8_t AnimFile_field_0x10[4];
     uint8_t AnimFile_field_0x14[4];
     uint8_t AnimFile_field_0x18[4];
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    void* QueryInterface(int a1);  // 0x4272a0 -- AnimFile::QueryInterface
+    // === SYMBOL-ANCHOR (END) ===
 };
 // 1 methods in IDA
 class AnimSequence
@@ -508,6 +529,11 @@ public:
     uint8_t CoopCampaignVector_field_0x14[4];
     uint8_t CoopCampaignVector_field_0x18[4];
     uint8_t CoopCampaignVector_field_0x1C[4];
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int Write(int a1);  // 0x5c5750 -- CoopCampaignVector::Write
+    void* QueryInterface(int a1);  // 0x5c5940 -- CoopCampaignVector::QueryInterface
+    // === SYMBOL-ANCHOR (END) ===
 };
 // 2 methods in IDA
 class Coord2D
@@ -595,6 +621,10 @@ public:
     uint8_t EMPulseClass_field_0x14[4];
     uint8_t EMPulseClass_field_0x18[4];
     uint8_t EMPulseClass_field_0x1C[4];
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    void* CopyTo(int a1);  // 0x4c5ac0 -- EMPulseClass::CopyTo
+    // === SYMBOL-ANCHOR (END) ===
 };
 // 1 methods in IDA
 class ExplosionClass
@@ -719,6 +749,12 @@ public:
     uint8_t InfantryTypeVector_field_0x14[4];
     uint8_t InfantryTypeVector_field_0x18[4];
     uint8_t InfantryTypeVector_field_0x1C[4];
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int Add(int a1);  // 0x512f20 -- InfantryTypeVector::Add
+    void* Construct2(int a1, int a2);  // 0x5138f0 -- InfantryTypeVector::Construct2
+    void* ConstructFromData(int a1, int a2);  // 0x5d89a0 -- InfantryTypeVector::ConstructFromData
+    // === SYMBOL-ANCHOR (END) ===
 };
 // 2 methods in IDA
 class IsoCoord
@@ -790,6 +826,16 @@ public:
     uint8_t IsometricTileTypeClass_field_0x44[4];
     uint8_t IsometricTileTypeClass_field_0x48[4];
     uint8_t IsometricTileTypeClass_field_0x4C[4];
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int ProcessPower(int a1);  // 0x549b70 -- IsometricTileTypeClass::ProcessPower
+    int GetTileIndex(int a1, int a2);  // 0x549dd0 -- IsometricTileTypeClass::GetTileIndex
+    int GetAuxField();  // 0x54a160 -- IsometricTileTypeClass::GetAuxField
+    void ClearBuffer();  // 0x54a190 -- IsometricTileTypeClass::ClearBuffer
+    int PointerToIndex(int a1);  // 0x54a1c0 -- IsometricTileTypeClass::PointerToIndex
+    int SetCapacity(int a1, int a2);  // 0x54a3d0 -- IsometricTileTypeClass::SetCapacity
+    int FindItem(int a1);  // 0x54a480 -- IsometricTileTypeClass::FindItem
+    // === SYMBOL-ANCHOR (END) ===
 };
 // 1 methods in IDA
 class Lightning
@@ -840,6 +886,10 @@ public:
     uint8_t MapFile_field_0x10[4];
     uint8_t MapFile_field_0x14[4];
     uint8_t MapFile_field_0x18[4];
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    void* QueryInterface(int a1);  // 0x69d520 -- MapFile::QueryInterface
+    // === SYMBOL-ANCHOR (END) ===
 };
 // 2 methods in IDA
 class MapPreview
@@ -885,6 +935,13 @@ public:
     uint8_t MapSeed_field_0x18[4];
     uint8_t MapSeed_field_0x1C[4];
     uint8_t MapSeed_field_0x20[4];
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int ValidateName(int a1);  // 0x597730 -- MapSeed::ValidateName
+    bool IsCellInBounds();  // 0x5ac230 -- MapSeed::IsCellInBounds
+    int CheckName();  // 0x79c520 -- MapSeed::CheckName
+    void InsertName();  // 0x79c650 -- MapSeed::InsertName
+    // === SYMBOL-ANCHOR (END) ===
 };
 // 12 methods in IDA
 class MapSeedClass
@@ -910,6 +967,13 @@ public:
     uint8_t MapSeedClass_field_0x24[4];
     uint8_t MapSeedClass_field_0x28[4];
     uint8_t MapSeedClass_field_0x2C[4];
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int PlaceBuildingClusters(int a1);  // 0x5a5b50 -- MapSeedClass::PlaceBuildingClusters
+    int ValidateRectBounds();  // 0x5a76e0 -- MapSeedClass::ValidateRectBounds
+    void* QueryInterface(int a1);  // 0x5ac270 -- MapSeedClass::QueryInterface
+    int GenerateSeed(int a1);  // 0x5acb80 -- MapSeedClass::GenerateSeed
+    // === SYMBOL-ANCHOR (END) ===
 };
 // 3 methods in IDA
 class MapSizeGameOption_WorldDominationTour
@@ -1022,6 +1086,14 @@ public:
     uint8_t RadarHashVector_field_0x28[4];
     uint8_t RadarHashVector_field_0x2C[4];
     uint8_t RadarHashVector_field_0x30[4];
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int Read(int a1);  // 0x658aa0 -- RadarHashVector::Read
+    int Write(int a1);  // 0x658af0 -- RadarHashVector::Write
+    int ComputeHashIndex(int a1, int a2);  // 0x658b10 -- RadarHashVector::ComputeHashIndex
+    int FindItemIndex(int a1);  // 0x658c20 -- RadarHashVector::FindItemIndex
+    void* QueryInterface(int a1);  // 0x658d10 -- RadarHashVector::QueryInterface
+    // === SYMBOL-ANCHOR (END) ===
 };
 // 8 methods in IDA
 class ScoreAnimClass
@@ -1044,6 +1116,10 @@ public:
     uint8_t ScoreAnimClass_field_0x14[4];
     uint8_t ScoreAnimClass_field_0x18[4];
     uint8_t ScoreAnimClass_field_0x1C[4];
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    void* Constructor_ScoreFontClass(int a1);  // 0x6910a0 -- ScoreAnimClass::Constructor_ScoreFontClass
+    // === SYMBOL-ANCHOR (END) ===
 };
 // 1 methods in IDA
 class ScoreBoard
@@ -1104,6 +1180,12 @@ public:
     uint8_t ScoreScreen_field_0x1C[4];
     uint8_t ScoreScreen_field_0x20[4];
     uint8_t ScoreScreen_field_0x24[4];
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    void* LoadScoreFont(int a1);  // 0x690a10 -- ScoreScreen::LoadScoreFont
+    void* LoadCountryFlags(int a1);  // 0x690ae0 -- ScoreScreen::LoadCountryFlags
+    void RemoveItem(int a1, int a2, int a3, int a4, int a5);  // 0x7712c0 -- ScoreScreen::RemoveItem
+    // === SYMBOL-ANCHOR (END) ===
 };
 // 1 methods in IDA
 class ScoreScreenClass
@@ -1292,6 +1374,11 @@ public:
     uint8_t AbstractClassVector_field_0x14[4];
     uint8_t AbstractClassVector_field_0x18[4];
     uint8_t AbstractClassVector_field_0x1C[4];
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int Read(int a1);  // 0x4e0440 -- AbstractClassVector::Read
+    int Write(int a1);  // 0x4e0480 -- AbstractClassVector::Write
+    // === SYMBOL-ANCHOR (END) ===
 };
 // 1 methods in IDA
 class ActionQueue
@@ -1417,6 +1504,10 @@ public:
     uint8_t ArtConfig_field_0x0C[4];
     uint8_t ArtConfig_field_0x10[4];
     uint8_t ArtConfig_field_0x14[4];
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int validateConfig(int a1, int a2, int a3);  // 0x76fc50 -- ArtConfig::validateConfig
+    // === SYMBOL-ANCHOR (END) ===
 };
 // 1 methods in IDA
 class AssetClass
@@ -1478,7 +1569,7 @@ public:
     virtual ~BinkMovieClass() = default;
 
     virtual void SetPosition() {} // 0x433180
-    virtual void RenderFrameToSurface() {} // 0x4333F0
+    virtual void RenderFrameToSurface() {} // 0x4333F0  [BinkMovie::RenderFrameToSurface non-virtual variant at 0x433040, anchor removed]
     virtual void AllocateRenderSurface() {} // 0x4335E0
     virtual void ReleaseRenderSurface() {} // 0x4336C0
     virtual void OpenFile() {} // 0x433770
@@ -1487,6 +1578,27 @@ public:
     uint8_t BinkMovieClass_field_0x08[4];
     uint8_t BinkMovieClass_field_0x0C[4];
     uint8_t BinkMovieClass_field_0x10[4];
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    void* Close(int a1);  // 0x432690 -- BinkMovie::Close
+    void* Open(int a1, int a2);  // 0x4326c0 -- BinkMovie::Open
+    int Stop();  // 0x432700 -- BinkMovie::Stop
+    int InitFromFile(int a1);  // 0x432750 -- BinkMovie::InitFromFile
+    int Pause(int a1);  // 0x432c30 -- BinkMovie::Pause
+    int IsAtEnd();  // 0x432c50 -- BinkMovie::IsAtEnd
+    int Play();  // 0x432c70 -- BinkMovie::Play
+    bool RenderLoop(int a1, int a2, int a3);  // 0x432e40 -- BinkMovie::RenderLoop
+    int RenderSingleFrame(int a1, int a2, int a3, int a4);  // 0x4331f0 -- BinkMovie::RenderSingleFrame
+    void* BlitToTarget(int a1);  // 0x433270 -- BinkMovie::BlitToTarget
+    int AdjustSurfaceFormat(int a1);  // 0x433330 -- BinkMovie::AdjustSurfaceFormat
+    void Cleanup();  // 0x5c01f0 -- BinkMovie::Cleanup
+    void* CreateSurfaceTracker();  // 0x6c99d0 -- BinkMovie::CreateSurfaceTracker
+    int FreeSurfaceTracker();  // 0x6c9ae0 -- BinkMovie::FreeSurfaceTracker
+    int InitKeyframeTracking(int a1);  // 0x6c9b40 -- BinkMovie::InitKeyframeTracking
+    int CheckKeyframeTransition(int a1);  // 0x6c9c60 -- BinkMovie::CheckKeyframeTransition
+    void ProcessKeyframe(int a1);  // 0x6c9d40 -- BinkMovie::ProcessKeyframe
+    void* VtableDispatch(int a1);  // 0x6c9ec0 -- BinkMovie::VtableDispatch
+    // === SYMBOL-ANCHOR (END) ===
 };
 // 5 methods in IDA
 class BlowPipe
@@ -1613,6 +1725,10 @@ public:
     uint8_t CCToolTip_field_0x0C[4];
     uint8_t CCToolTip_field_0x10[4];
     uint8_t CCToolTip_field_0x14[4];
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    void* QueryInterface(int a1);  // 0x7784a0 -- CCToolTip::QueryInterface
+    // === SYMBOL-ANCHOR (END) ===
 };
 // 13 methods in IDA
 class CChatEventSink
@@ -1640,6 +1756,15 @@ public:
     uint8_t CChatEventSink_field_0x28[4];
     uint8_t CChatEventSink_field_0x2C[4];
     uint8_t CChatEventSink_field_0x30[4];
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int GrowBuffer();  // 0x7ad930 -- CChatEventSink::GrowBuffer
+    int ComputeBucketMask(int a1);  // 0x7aecb0 -- CChatEventSink::ComputeBucketMask
+    int ProcessChatEvent();  // 0x7aed40 -- CChatEventSink::ProcessChatEvent
+    int EnsureCapacity(int a1);  // 0x7aedd0 -- CChatEventSink::EnsureCapacity
+    int Check(int a1, int a2);  // 0x7aee90 -- CChatEventSink::Check
+    int EncodeString(int a1);  // 0x7b5e30 -- CChatEventSink::EncodeString
+    // === SYMBOL-ANCHOR (END) ===
 };
 // 2 methods in IDA
 class CDROM
@@ -1802,6 +1927,14 @@ public:
     uint8_t ComStreamClass_field_0x34[4];
     uint8_t ComStreamClass_field_0x38[4];
     uint8_t ComStreamClass_field_0x3C[4];
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    void readData();  // 0x7ae0e0 -- ComStreamClass::readData
+    void* writeData(int a1);  // 0x7aed20 -- ComStreamClass::writeData
+    void flushStream();  // 0x7aef50 -- ComStreamClass::flushStream
+    void* seekToPosition();  // 0x7b0220 -- ComStreamClass::seekToPosition
+    void* getStreamSize();  // 0x7b02a0 -- ComStreamClass::getStreamSize
+    // === SYMBOL-ANCHOR (END) ===
 };
 // 1 methods in IDA
 class Compression
@@ -1951,6 +2084,11 @@ public:
     uint8_t DiskLaserClass_field_0x20[4];
     uint8_t DiskLaserClass_field_0x24[4];
     uint8_t DiskLaserClass_field_0x28[4];
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    void PointerGotInvalid(int a1);  // 0x4a7900 -- DiskLaserClass::PointerGotInvalid
+    void* CopyTo(int a1);  // 0x4a7c90 -- DiskLaserClass::CopyTo
+    // === SYMBOL-ANCHOR (END) ===
 };
 // 1 methods in IDA
 class DiskSpace
@@ -2121,6 +2259,10 @@ public:
     uint8_t GaugeClass_field_0x14[4];
     uint8_t GaugeClass_field_0x18[4];
     uint8_t GaugeClass_field_0x1C[4];
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    void* QueryInterface(int a1);  // 0x4e30d0 -- GaugeClass::QueryInterface
+    // === SYMBOL-ANCHOR (END) ===
 };
 // 3 methods in IDA
 class GenericVector
@@ -2287,6 +2429,10 @@ public:
     virtual void Set2() {}
 
     uint8_t Int4_field_0x04[4];
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int Set2(int a1, int a2, int a3, int a4);  // 0x645c50 -- Int4::Set2
+    // === SYMBOL-ANCHOR (END) ===
 };
 // 1 methods in IDA
 class Int64
@@ -2487,6 +2633,12 @@ public:
     uint8_t Lobby_field_0x18[4];
     uint8_t Lobby_field_0x1C[4];
     uint8_t Lobby_field_0x20[4];
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int InvalidatePlayerSlots();  // 0x4e5d60 -- Lobby::InvalidatePlayerSlots
+    void UpdatePlayerLabels();  // 0x5eb060 -- Lobby::UpdatePlayerLabels
+    void SetupPlayerWidgets();  // 0x5eba00 -- Lobby::SetupPlayerWidgets
+    // === SYMBOL-ANCHOR (END) ===
 };
 // 1 methods in IDA
 class MIXClass
@@ -2575,6 +2727,10 @@ public:
     uint8_t MSBitPrintAnim_field_0x0C[4];
     uint8_t MSBitPrintAnim_field_0x10[4];
     uint8_t MSBitPrintAnim_field_0x14[4];
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    void* QueryInterface(int a1);  // 0x5ced10 -- MSBitPrintAnim::QueryInterface
+    // === SYMBOL-ANCHOR (END) ===
 };
 // 2 methods in IDA
 class MSChoiceClass
@@ -2624,6 +2780,10 @@ public:
     uint8_t MSFont_field_0x0C[4];
     uint8_t MSFont_field_0x10[4];
     uint8_t MSFont_field_0x14[4];
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    void* QueryInterface(int a1);  // 0x5d3450 -- MSFont::QueryInterface
+    // === SYMBOL-ANCHOR (END) ===
 };
 // 7 methods in IDA
 class MSOverlayAnim
@@ -2645,6 +2805,10 @@ public:
     uint8_t MSOverlayAnim_field_0x10[4];
     uint8_t MSOverlayAnim_field_0x14[4];
     uint8_t MSOverlayAnim_field_0x18[4];
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    void* QueryInterface(int a1);  // 0x5ceb80 -- MSOverlayAnim::QueryInterface
+    // === SYMBOL-ANCHOR (END) ===
 };
 // 7 methods in IDA
 class MSPCXAnim
@@ -2666,6 +2830,11 @@ public:
     uint8_t MSPCXAnim_field_0x10[4];
     uint8_t MSPCXAnim_field_0x14[4];
     uint8_t MSPCXAnim_field_0x18[4];
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    void SetPalette(int a1);  // 0x5cea40 -- MSPCXAnim::SetPalette
+    void* QueryInterface(int a1);  // 0x5ced70 -- MSPCXAnim::QueryInterface
+    // === SYMBOL-ANCHOR (END) ===
 };
 // 6 methods in IDA
 class MSPrintAnim
@@ -2686,6 +2855,10 @@ public:
     uint8_t MSPrintAnim_field_0x0C[4];
     uint8_t MSPrintAnim_field_0x10[4];
     uint8_t MSPrintAnim_field_0x14[4];
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int GetCharAt();  // 0x7b7110 -- MSPrintAnim::GetCharAt
+    // === SYMBOL-ANCHOR (END) ===
 };
 // 1 methods in IDA
 class MSSfxClass
@@ -2729,6 +2902,11 @@ public:
     uint8_t MSVQAnim_field_0x14[4];
     uint8_t MSVQAnim_field_0x18[4];
     uint8_t MSVQAnim_field_0x1C[4];
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    void* GetFrameRect(int a1);  // 0x5cd290 -- MSVQAnim::GetFrameRect
+    void* QueryInterface(int a1);  // 0x5cecb0 -- MSVQAnim::QueryInterface
+    // === SYMBOL-ANCHOR (END) ===
 };
 // 2 methods in IDA
 class Megawealth
@@ -2783,6 +2961,16 @@ public:
     uint8_t MovieClass_field_0x0C[4];
     uint8_t MovieClass_field_0x10[4];
     uint8_t MovieClass_field_0x14[4];
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int ComputeTime();  // 0x7c3990 -- MovieClass::ComputeTime
+    int GetSectionID(int a1);  // 0x49bc80 -- Movie::GetSectionID
+    int GetState(int a1);  // 0x49bcc0 -- Movie::GetState
+    int SetupScreen(int a1);  // 0x49caf0 -- Movie::SetupScreen
+    int GetSection(int a1, int a2);  // 0x49e3b0 -- Movie::GetSection
+    int Update();  // 0x7209d0 -- Movie::Update
+    int SelectNextBuildableType(int a1);  // 0x720a80 -- Movie::SelectNextBuildableType
+    // === SYMBOL-ANCHOR (END) ===
 };
 // 1 methods in IDA
 class MovieContext
@@ -2843,6 +3031,10 @@ public:
     uint8_t NeuronClass_field_0x0C[4];
     uint8_t NeuronClass_field_0x10[4];
     uint8_t NeuronClass_field_0x14[4];
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    void* Reset(int a1);  // 0x43a9c0 -- NeuronClass::Reset
+    // === SYMBOL-ANCHOR (END) ===
 };
 // 1 methods in IDA
 class NullGuard
@@ -3208,6 +3400,10 @@ public:
 
     virtual void Dtor() {}
 
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    void* Dtor(int a1);  // 0x5ac340 -- Scalar::Dtor
+    // === SYMBOL-ANCHOR (END) ===
 };
 // 1 methods in IDA
 class ScalarDtor
@@ -3364,6 +3560,10 @@ public:
     uint8_t SmudgeTypeVector_field_0x0C[4];
     uint8_t SmudgeTypeVector_field_0x10[4];
     uint8_t SmudgeTypeVector_field_0x14[4];
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    void* QueryInterface(int a1);  // 0x67c0b0 -- SmudgeTypeVector::QueryInterface
+    // === SYMBOL-ANCHOR (END) ===
 };
 // 9 methods in IDA
 class SortedArray
@@ -3387,6 +3587,13 @@ public:
     uint8_t SortedArray_field_0x18[4];
     uint8_t SortedArray_field_0x1C[4];
     uint8_t SortedArray_field_0x20[4];
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int BinarySearch();  // 0x52b620 -- SortedArray::BinarySearch
+    int Append(int a1, int a2);  // 0x5387d0 -- SortedArray::Append
+    int RemoveByKey(int a1);  // 0x5388a0 -- SortedArray::RemoveByKey
+    int FindPair(int a1);  // 0x538980 -- SortedArray::FindPair
+    // === SYMBOL-ANCHOR (END) ===
 };
 // 1 methods in IDA
 class SortedStateVector
@@ -3469,6 +3676,10 @@ public:
     uint8_t StaticButtonClass_field_0x0C[4];
     uint8_t StaticButtonClass_field_0x10[4];
     uint8_t StaticButtonClass_field_0x14[4];
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    void* QueryInterface(int a1);  // 0x6c6880 -- StaticButtonClass::QueryInterface
+    // === SYMBOL-ANCHOR (END) ===
 };
 // 1 methods in IDA
 class StaticString
@@ -4747,6 +4958,11 @@ public:
     uint8_t UnitTypeVector_field_0x10[4];
     uint8_t UnitTypeVector_field_0x14[4];
     uint8_t UnitTypeVector_field_0x18[4];
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    void* ConstructUnitTypeVectorClass(int a1, int a2);  // 0x513940 -- UnitTypeVector::ConstructUnitTypeVectorClass
+    void* Construct2(int a1, int a2);  // 0x5d8950 -- UnitTypeVector::Construct2
+    // === SYMBOL-ANCHOR (END) ===
 };
 // 1 methods in IDA
 class VQAClass
@@ -4793,6 +5009,10 @@ public:
     uint8_t VeinholeMonsterClass_field_0x20[4];
     uint8_t VeinholeMonsterClass_field_0x24[4];
     uint8_t VeinholeMonsterClass_field_0x28[4];
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    void* SpreadTiberium(int a1);  // 0x74f340 -- VeinholeMonsterClass::SpreadTiberium
+    // === SYMBOL-ANCHOR (END) ===
 };
 // 1 methods in IDA
 class VersionInfo
@@ -4971,6 +5191,18 @@ public:
     uint8_t WinModemClass_field_0x30[4];
     uint8_t WinModemClass_field_0x34[4];
     uint8_t WinModemClass_field_0x38[4];
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    bool ReadSerial();  // 0x774980 -- WinModemClass::ReadSerial
+    int ReadBytes(int a1, int a2);  // 0x774b30 -- WinModemClass::ReadBytes
+    int WriteSerial();  // 0x774c70 -- WinModemClass::WriteSerial
+    int LoadTypeData(int a1, int a2, int a3, int a4);  // 0x774cd0 -- WinModemClass::LoadTypeData
+    int SaveToINI();  // 0x774f50 -- WinModemClass::SaveToINI
+    int Dial(int a1, int a2, int a3, int a4, int a5, int a6, int a7);  // 0x775110 -- WinModemClass::Dial
+    int HangUp(int a1);  // 0x7754b0 -- WinModemClass::HangUp
+    int LogCommErrors(int a1, int a2, int a3, int a4);  // 0x7754d0 -- WinModemClass::LogCommErrors
+    void* QueryInterface(int a1);  // 0x775610 -- WinModemClass::QueryInterface
+    // === SYMBOL-ANCHOR (END) ===
 };
 // 1 methods in IDA
 class WonlineStringDialogControl

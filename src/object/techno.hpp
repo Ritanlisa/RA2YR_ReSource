@@ -1142,6 +1142,12 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* checkIronCurtainState(void* a1);  // 0x746E30
     bool processIronCurtainExpiry(void* a1);  // 0x746EA0
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    void updateSightRange(int a1, int a2);  // 0x4c2bd0 -- TechnoClass::updateSightRange
+    int ScanAdjacentCells();  // 0x703cc0 -- TechnoClass::ScanAdjacentCells
+    int GetOwnerHouse();  // 0x6f2070 -- Techno::GetOwnerHouse
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 } // namespace game

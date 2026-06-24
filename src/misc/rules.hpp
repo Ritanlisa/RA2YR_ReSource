@@ -646,6 +646,17 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     bool IsTypeBuildable(int a1);  // 0x721140
     int Reset();  // 0x74E6B0
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    void* InitINIChain(int a1, int a2);  // 0x538b30 -- RulesClass::InitINIChain
+    int readGeneralSection(int a1);  // 0x6614f0 -- RulesClass::readGeneralSection
+    int ReadSidesList();  // 0x6725f0 -- RulesClass::ReadSidesList
+    int ReadPowerupsSection();  // 0x673e80 -- RulesClass::ReadPowerupsSection
+    void* GetProductionTimeMult(int a1);  // 0x5fb2e0 -- Rules::GetProductionTimeMult
+    int ReadMiscINI();  // 0x6691e0 -- Rules::ReadMiscINI
+    int ReadCombatINI();  // 0x66bbb0 -- Rules::ReadCombatINI
+    void* CopyDataArray(int a1);  // 0x67a570 -- Rules::CopyDataArray
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 } // namespace gamemd

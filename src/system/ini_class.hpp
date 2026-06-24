@@ -25,6 +25,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     bool Exists();  // 0x679F40
     int LookupByName();  // 0x74FEF0
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int GetTechnoType(int a1, int a2);  // 0x476eb0 -- INIEntry::GetTechnoType
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 // INI section
@@ -156,6 +160,12 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int ReadDifficultyModifiers();  // 0x66D270
     void ReadTokenizedPair(void* a1, void* a2, void* a3, int a4, void* a5);  // 0x7710B0
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int BinarySearchSection(int a1);  // 0x526810 -- INIClass::BinarySearchSection
+    int GetKeyCount(int a1);  // 0x526960 -- INIClass::GetKeyCount
+    int GetStringByIndex(int a1, int a2);  // 0x526cc0 -- INIClass::GetStringByIndex
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 // IDA: CCINIClass @ 0x535B30 -- size ~0x58 (88 bytes)
@@ -167,7 +177,7 @@ public:
     static const void* Vtable;
 
     CCINIClass(); // 0x535B30
-    virtual ~CCINIClass(); // 0x501160
+    virtual ~CCINIClass();
 
     bool Load(CCFileClass* file, bool unk1, bool unk2) override;  // 0x4741F0
 
@@ -180,6 +190,10 @@ public:
 
     const char* GetString(const char* section, const char* key, const char* def, char* buf, int bufSize) override;  // 0x528A10
     int GetInt(const char* section, const char* key, int def) override;  // 0x529820
+
+    // Writes the [Houses] section roster + per-house data into this INI.
+    // Called by SaveScenarioToINI. NOT a constructor/destructor (verified via IDA decompile).
+    void WriteHouses();  // 0x501160
 
 protected:
     CCFileClass* ccFile;

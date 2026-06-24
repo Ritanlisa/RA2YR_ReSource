@@ -117,6 +117,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int finalizeAnimation();  // 0x449C30
     void ProcessSequence();  // 0x729370
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int ProcessFrame();  // 0x761030 -- AnimClass::ProcessFrame
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 } // namespace gamemd

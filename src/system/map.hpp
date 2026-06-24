@@ -337,6 +337,63 @@ public:
 
 protected:
     MapClass() noexcept;
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    void* AllocArrays();  // 0x42c1c0 -- MapClass::AllocArrays
+    int isCellAccessible(int a1);  // 0x430f30 -- MapClass::isCellAccessible
+    int loadTheaterINI(int a1, int a2, int a3);  // 0x4758c0 -- MapClass::loadTheaterINI
+    int RemoveCellReference(int a1);  // 0x485130 -- MapClass::RemoveCellReference
+    int SetCellFlagsAlongPath(int a1, int a2);  // 0x4a95a0 -- MapClass::SetCellFlagsAlongPath
+    int ToggleZoom(int a1);  // 0x4ac960 -- MapClass::ToggleZoom
+    int ProcessVisibilityFlags();  // 0x4acac0 -- MapClass::ProcessVisibilityFlags
+    int ProcessFogTransition();  // 0x4acbc0 -- MapClass::ProcessFogTransition
+    int RevealCell(int a1);  // 0x4acda0 -- MapClass::RevealCell
+    int SaveCellTagsToINI(int a1);  // 0x4ad7e0 -- MapClass::SaveCellTagsToINI
+    int GetScrollMode();  // 0x4aeb10 -- MapClass::GetScrollMode
+    bool SetScrollMode(int a1);  // 0x4aeb30 -- MapClass::SetScrollMode
+    int LoadFileData();  // 0x547020 -- MapClass::LoadFileData
+    int ScrollOnce(int a1);  // 0x554a80 -- MapClass::ScrollOnce
+    int InitCellVector();  // 0x565aa0 -- MapClass::InitCellVector
+    int FreeAllCells();  // 0x565b00 -- MapClass::FreeAllCells
+    void* InitAllCells();  // 0x565bc0 -- MapClass::InitAllCells
+    int RevealArea0(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8);  // 0x5673a0 -- MapClass::RevealArea0
+    void FillRevealBuffer(int a1, int a2);  // 0x5683c0 -- MapClass::FillRevealBuffer
+    void ApplyOverlayReveal(int a1, int a2);  // 0x5687f0 -- MapClass::ApplyOverlayReveal
+    int PostProcessReveal(int a1);  // 0x568bb0 -- MapClass::PostProcessReveal
+    int DecompressCellData(int a1);  // 0x56b3f0 -- MapClass::DecompressCellData
+    int GetTileIndex(int a1, int a2, int a3);  // 0x56d230 -- MapClass::GetTileIndex
+    int ProcessRegion();  // 0x56d6e0 -- MapClass::ProcessRegion
+    int ClearRegions(int a1);  // 0x56dae0 -- MapClass::ClearRegions
+    void ApplyTerrainDamage(int a1);  // 0x574c20 -- MapClass::ApplyTerrainDamage
+    int RemoveTriggerRef(int a1, int a2);  // 0x577920 -- MapClass::RemoveTriggerRef
+    void* ClearShroud(int a1);  // 0x577f30 -- MapClass::ClearShroud
+    int IsRectInBounds();  // 0x578390 -- MapClass::IsRectInBounds
+    void* SpiralSearch();  // 0x578710 -- MapClass::SpiralSearch
+    void* FastCellLookup(int a1, int a2, int a3);  // 0x578880 -- MapClass::FastCellLookup
+    void IncrementRedrawCounter();  // 0x578ac0 -- MapClass::IncrementRedrawCounter
+    int BuildTileConnectivityGraph(int a1, int a2, int a3);  // 0x57a320 -- MapClass::BuildTileConnectivityGraph
+    void* BuildSubzones();  // 0x581f50 -- MapClass::BuildSubzones
+    int InitializeTileData(int a1);  // 0x5856b0 -- MapClass::InitializeTileData
+    int LoadTerrainData(int a1);  // 0x585d00 -- MapClass::LoadTerrainData
+    bool IsAreaFree(int a1, int a2);  // 0x586780 -- MapClass::IsAreaFree
+    int initCellVectors(int a1);  // 0x588de0 -- MapClass::initCellVectors
+    int AllocateCellDataBuffer(int a1, int a2);  // 0x589370 -- MapClass::AllocateCellDataBuffer
+    void allocateCellArrays();  // 0x5894a0 -- MapClass::allocateCellArrays
+    int FindSubzoneConnectionIndex(int a1);  // 0x5894d0 -- MapClass::FindSubzoneConnectionIndex
+    int initSubzoneData(int a1);  // 0x589530 -- MapClass::initSubzoneData
+    int AllocateMapDataBuffer(int a1, int a2);  // 0x589a60 -- MapClass::AllocateMapDataBuffer
+    void* allocateMapBuffers();  // 0x589bd0 -- MapClass::allocateMapBuffers
+    int ProcessTile();  // 0x599530 -- MapClass::ProcessTile
+    int GrowLayer(int a1, int a2, int a3);  // 0x5a0410 -- MapClass::GrowLayer
+    void checkCellBounds();  // 0x5ac5a0 -- MapClass::checkCellBounds
+    int validateCellCoord(int a1);  // 0x5ac5d0 -- MapClass::validateCellCoord
+    int updatePathfindingGrid(int a1);  // 0x5ad0c0 -- MapClass::updatePathfindingGrid
+    int SetCellOverlayFlag();  // 0x5f60a0 -- MapClass::SetCellOverlayFlag
+    int ClearCellOverlayFlag();  // 0x5f6120 -- MapClass::ClearCellOverlayFlag
+    int TransformCoordToScreen(int a1, int a2);  // 0x6d8260 -- MapClass::TransformCoordToScreen
+    void* FindPlacementCellsAlt(int a1, int a2);  // 0x703590 -- MapClass::FindPlacementCellsAlt
+    int isCellShrouded(int a1);  // 0x7bcf50 -- MapClass::isCellShrouded
+    // === SYMBOL-ANCHOR (END) ===
 };
 #endif
 

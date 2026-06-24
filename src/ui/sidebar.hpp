@@ -208,6 +208,18 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int registerBuildingType();  // 0x734250
     void* FindProductionData();  // 0x77DA50
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int select();  // 0x6ab990 -- SidebarClass::select
+    int deselect();  // 0x6ab9e0 -- SidebarClass::deselect
+    int StartSidebarProduction(int a1, int a2, int a3, int a4);  // 0x4fa350 -- Sidebar::StartSidebarProduction
+    int Dispatch(int a1, int a2, int a3, int a4);  // 0x5007a0 -- Sidebar::Dispatch
+    int ScrollSidebarSkipGame();  // 0x533f50 -- Sidebar::ScrollSidebarSkipGame
+    void CancelSidebarProductionQueue();  // 0x636310 -- Sidebar::CancelSidebarProductionQueue
+    int RemoveItem(int a1);  // 0x63f040 -- Sidebar::RemoveItem
+    int FindProductionType(int a1, int a2, int a3);  // 0x6a6140 -- Sidebar::FindProductionType
+    void FlushSidebarTooltip(int a1);  // 0x6a70e0 -- Sidebar::FlushSidebarTooltip
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 } // namespace gamemd

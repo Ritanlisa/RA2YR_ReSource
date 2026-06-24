@@ -93,6 +93,12 @@ public:
     uint8_t AnimHigh;
     uint8_t AnimRate;
     bool Flat;
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int ProcessPower(int a1);  // 0x46c560 -- BulletTypeClass::ProcessPower
+    int GetWarhead(int a1, int a2);  // 0x46c820 -- BulletTypeClass::GetWarhead
+    int ReadTrajectoryFlags(int a1, int a2, int a3);  // 0x475150 -- BulletTypeClass::ReadTrajectoryFlags
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 } // namespace gamemd

@@ -52,6 +52,12 @@ public:
 
 protected:
     SideClass() noexcept;
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int FindByName();  // 0x49d9f0 -- SideClass::FindByName
+    void* GetName();  // 0x4e38a0 -- SideClass::GetName
+    int GetCountry(int a1);  // 0x6a4710 -- SideClass::GetCountry
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 } // namespace gamemd

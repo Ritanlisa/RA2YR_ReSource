@@ -110,7 +110,7 @@ public:
     PageUserCommandClass() = default;
     virtual ~PageUserCommandClass() = default;  // 0x537E10
 
-    virtual void Construct();  // 0x537DD0
+    virtual void Construct();  // 0x537DD0 (PageUserCommandClass::PageUserCommandClass) real ctor, sets vftable
     virtual int32_t AddRef();  // 0x537DE0
     virtual int32_t Release();  // 0x537DF0
     // wrapper: delegates to PageUserCommandClass::Release at 0x537DF0

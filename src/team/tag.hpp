@@ -93,6 +93,14 @@ public:
 
 protected:
     TagClass() = default; // 0x6E4F60
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int CheckEvent(int a1, int a2);  // 0x6e5610 -- TagClass::CheckEvent
+    int ProcessTag(int a1);  // 0x6e56e0 -- TagClass::ProcessTag
+    void* ProcessTrigger(int a1);  // 0x6e58b0 -- TagClass::ProcessTrigger
+    int HasValidHouse();  // 0x6e6220 -- TagClass::HasValidHouse
+    int Unlink();  // 0x71ade0 -- TagClass::Unlink
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 // --- TagTypeClass ---
@@ -144,6 +152,17 @@ public:
 
 protected:
     TagTypeClass() = default;
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int CleanupMembers();  // 0x6e5ca0 -- TagTypeClass::CleanupMembers
+    int GetEvent(int a1, int a2);  // 0x6e5e50 -- TagTypeClass::GetEvent
+    int GetAction(int a1);  // 0x6e6080 -- TagTypeClass::GetAction
+    int GetParameter(int a1);  // 0x6e6160 -- TagTypeClass::GetParameter
+    void* FindOrCreate();  // 0x6e6310 -- TagTypeClass::FindOrCreate
+    int PowerDrainUpdate(int a1);  // 0x6e63e0 -- TagTypeClass::PowerDrainUpdate
+    int GetAuxField();  // 0x6e64b0 -- TagTypeClass::GetAuxField
+    void* FindOrCreateTriggerType();  // 0x727aa0 -- TagTypeClass::FindOrCreateTriggerType
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 } // namespace gamemd

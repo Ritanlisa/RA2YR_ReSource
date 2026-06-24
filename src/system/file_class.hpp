@@ -87,6 +87,23 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     bool SetTime(int a1);  // 0x65D240
     void GetFileSizeOp(int a1, int a2);  // 0x65D2B0
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int Write();  // 0x473ae0 -- FileClass::Write
+    int Read();  // 0x65cce0 -- FileClass::Read
+    int IsReady(int a1);  // 0x431f10 -- File::IsReady
+    void* LoadFont();  // 0x433990 -- File::LoadFont
+    int Dispatch();  // 0x4cb920 -- File::Dispatch
+    void* LoadFileHVA(int a1);  // 0x5bd570 -- File::LoadFileHVA
+    int ParseFileHVA(int a1);  // 0x5bd5c0 -- File::ParseFileHVA
+    void* LoadPaletteData(int a1);  // 0x625af0 -- File::LoadPaletteData
+    bool FindByPrefix(int a1, int a2);  // 0x625db0 -- File::FindByPrefix
+    int ParseCSFString();  // 0x734990 -- File::ParseCSFString
+    void* LoadFileVXL(int a1, int a2);  // 0x755cd0 -- File::LoadFileVXL
+    void* LoadWDT(int a1);  // 0x76ac90 -- File::LoadWDT
+    int LoadWDTDecompress(int a1, int a2);  // 0x76b0a0 -- File::LoadWDTDecompress
+    int ParseAudioFileRIFF();  // 0x7c12b0 -- File::ParseAudioFileRIFF
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 class RawFileClass : public FileClass

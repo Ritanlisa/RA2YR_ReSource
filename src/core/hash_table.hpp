@@ -486,6 +486,10 @@ public:
     uint8_t     buffer[64];     // 0x1C
     uint8_t     buffer_index;   // 0x5C
     uint8_t     _pad_5D[3];     // 0x5D
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int ComputeThunk(int a1);  // 0x69e9e0 -- SHA1::ComputeThunk
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 // ============================================================================

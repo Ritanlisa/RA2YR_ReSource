@@ -55,6 +55,10 @@ public:
     uint32_t     LastPacketTime;
     uint32_t     PacketsSent;
     uint32_t     PacketsReceived;
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int GetSpeed();  // 0x5422f0 -- Connection::GetSpeed
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 class IPXConnClass : public ConnectionClass
@@ -108,6 +112,12 @@ public:
     uint32_t  Socket;
     bool      Initialized;
     bool      Active;
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int send(int a1);  // 0x541040 -- IPXManagerClass::send
+    int ddtor(int a1, int a2, int a3);  // 0x5415f0 -- IPXManagerClass::ddtor
+    void* QueryInterface(int a1);  // 0x5430e0 -- IPXManagerClass::QueryInterface
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 class ModemConnectionClass : public ConnectionClass
@@ -147,6 +157,19 @@ public:
     bool DetectModem();  // 0x5F1FA0
     bool Negotiate();  // 0x5F3170
 
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int Flush(int a1);  // 0x5f1f00 -- NullModemClass::Flush
+    int Disconnect(int a1, int a2, int a3);  // 0x5f3540 -- NullModemClass::Disconnect
+    int Release(int a1, int a2, int a3, int a4);  // 0x5f3560 -- NullModemClass::Release
+    int Receive();  // 0x5f35d0 -- NullModemClass::Receive
+    int CheckStatus();  // 0x5f35f0 -- NullModemClass::CheckStatus
+    int GetAddress(int a1);  // 0x5f3610 -- NullModemClass::GetAddress
+    int SetAddress(int a1);  // 0x5f3630 -- NullModemClass::SetAddress
+    void* QueryInterface(int a1);  // 0x5f3650 -- NullModemClass::QueryInterface
+    int sendData();  // 0x774670 -- NullModemClass::sendData
+    int receiveData();  // 0x7747c0 -- NullModemClass::receiveData
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 } // namespace gamemd

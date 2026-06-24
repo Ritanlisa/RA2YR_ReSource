@@ -37,6 +37,12 @@ public:
 
 protected:
     WaypointClass() noexcept = default;
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    void* FindByCell(int a1);  // 0x5023b0 -- Waypoint::FindByCell
+    void* InitInvalid();  // 0x53ecb0 -- Waypoint::InitInvalid
+    int FindCell(int a1);  // 0x763a50 -- Waypoint::FindCell
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 } // namespace gamemd

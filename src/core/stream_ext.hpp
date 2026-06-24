@@ -92,6 +92,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int GetField();  // 0x7BCAE0
     void CopyFromTemplate();  // 0x7BE640
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int WriteIntArray(int a1);  // 0x67a4a0 -- Stream::WriteIntArray
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 // ============================================================================

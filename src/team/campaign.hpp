@@ -65,6 +65,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int Check(int a1);  // 0x5CF810
     void* Constructor_1(int a1);  // 0x5D2E00
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int LoadFromINIList();  // 0x46ce10 -- CampaignClass::LoadFromINIList
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 } // namespace gamemd

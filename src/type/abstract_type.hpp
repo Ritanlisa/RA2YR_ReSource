@@ -48,6 +48,13 @@ public:
     char UINameLabel[0x20];
     const wchar_t* UIName;
     char Name[0x31];
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int NameEquals();  // 0x410a40 -- AbstractTypeClass::NameEquals
+    int ProcessPower(int a1);  // 0x410be0 -- AbstractTypeClass::ProcessPower
+    void* ddtor(int a1);  // 0x410c30 -- AbstractTypeClass::ddtor
+    void* FindName();  // 0x40dcb0 -- AbstractType::FindName
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 } // namespace gamemd

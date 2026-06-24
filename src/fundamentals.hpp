@@ -29,6 +29,10 @@ struct ProgressTimer
 {
     int32 Value;
     int32 Timer;
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    void* GetValue(int a1);  // 0x4c93d0 -- ProgressTimer::GetValue
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 extern int& CurrentFrame;

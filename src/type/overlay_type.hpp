@@ -67,6 +67,18 @@ public:
     bool IsRubble;
     bool IsARock;
     ColorStruct RadarColor;
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int ReadINIString(int a1, int a2, int a3);  // 0x4754b0 -- OverlayTypeClass::ReadINIString
+    int LookupByName();  // 0x48df80 -- OverlayTypeClass::LookupByName
+    bool GetType(int a1, int a2);  // 0x5fe530 -- OverlayTypeClass::GetType
+    void* GetDamage(int a1);  // 0x5fe570 -- OverlayTypeClass::GetDamage
+    void GetLandType(int a1, int a2, int a3);  // 0x5fe5a0 -- OverlayTypeClass::GetLandType
+    int PowerDrainUpdate(int a1);  // 0x5fea50 -- OverlayTypeClass::PowerDrainUpdate
+    int GetRadarColor(int a1, int a2);  // 0x5fed00 -- OverlayTypeClass::GetRadarColor
+    void* GetCategory();  // 0x5fede0 -- OverlayTypeClass::GetCategory
+    int GetAuxField();  // 0x5fef20 -- OverlayTypeClass::GetAuxField
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 } // namespace gamemd

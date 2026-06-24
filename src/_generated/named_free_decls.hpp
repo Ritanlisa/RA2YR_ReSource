@@ -17,3 +17,25 @@
   int __cdecl GameFrameCheck(void); // 0x55CFD0
   bool __cdecl GameFrameLoop(void); // 0x55D360
 
+// === SYMBOL-ANCHOR (BEGIN) ===
+// 17 global + 1 anchor symbol-anchor entries
+void* ClipRectIntersection(int a1, int a2, int a3, int a4, int a5); // 0x421b60
+bool ProductionCompletionCallback(void); // 0x424ce0
+bool CreateUnitOnCompletion(void); // 0x424f00
+bool ConstructionPositionTracker(void); // 0x425670
+void* FindPathWithRetry(int a1, int a2, int a3, int a4, int a5, int a6, int a7); // 0x42c900
+int IsAreaClearMap(int a1, int a2, int a3); // 0x5a7250
+void* CreateMovie(int a1, int a2, int a3); // 0x5c07d0
+int InitArrayWithValue(int a1, int a2, int a3); // 0x5c6940
+void UpdateObserveButtonWOL(void); // 0x5ee200
+void Team_Get(void); // 0x634b20
+void* Team_Remove(void); // 0x637640
+int ProcessDeployAction(void); // 0x6afd60
+void ProcessAISuperWeaponSelection(int a1, int a2); // 0x6efc70
+int RestartNetworkSession(void); // 0x734f50
+int ToggleNetworkSession(void); // 0x734f80
+void DeleteAndZero(void); // 0x7b46f0
+int sub_405B50(void); // 0x00405b50
+// 0x6bb9a0 -- WinMain
+// === SYMBOL-ANCHOR (END) ===
+

@@ -566,6 +566,12 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int updateAnimationState();  // 0x63D540
     int checkPlacement();  // 0x70DDC0
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    void* ComputePosition(int a1);  // 0x425d10 -- Building::ComputePosition
+    int GetNthOfType();  // 0x485020 -- Building::GetNthOfType
+    int GetRenderType();  // 0x772a90 -- Building::GetRenderType
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 // External globals

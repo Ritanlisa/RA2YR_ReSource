@@ -130,6 +130,14 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int ProcessEvents();  // 0x726E00
     int Process();  // 0x7275D0
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int EnableOnce(int a1);  // 0x554a60 -- Trigger::EnableOnce
+    void* initTrigger(int a1, int a2, int a3, int a4, int a5, int a6, int a7);  // 0x5cbd20 -- Trigger::initTrigger
+    void ProcessMapEvents(int a1, int a2, int a3);  // 0x76d4d0 -- Trigger::ProcessMapEvents
+    void* processTrigger(int a1, int a2);  // 0x76f090 -- Trigger::processTrigger
+    int executeActions(int a1);  // 0x76ff20 -- Trigger::executeActions
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 // --- TriggerTypeClass ---

@@ -339,6 +339,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void Process();  // 0x729AA0
     int updateScanRange();  // 0x746D80
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    bool updateThreat();  // 0x70f7e0 -- FootClass::updateThreat
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 } // namespace game

@@ -51,6 +51,14 @@ public:
     bool IsAnimated;
     bool IsVeinhole;
     CellStruct* FoundationData;
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int GetTileData(int a1, int a2, int a3, int a4, int a5, int a6);  // 0x53ffa0 -- TerrainTypeClass::GetTileData
+    bool GetHeight(int a1, int a2);  // 0x71ddd0 -- TerrainTypeClass::GetHeight
+    void* GetTileIndex(int a1);  // 0x71de10 -- TerrainTypeClass::GetTileIndex
+    int PowerDrainUpdate(int a1);  // 0x71e140 -- TerrainTypeClass::PowerDrainUpdate
+    int GetAuxField();  // 0x71e350 -- TerrainTypeClass::GetAuxField
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 } // namespace gamemd

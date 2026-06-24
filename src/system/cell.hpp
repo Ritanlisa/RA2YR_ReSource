@@ -464,6 +464,38 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int Find(int a1, int a2, int a3, int a4);  // 0x6E18B0
     int ClearCrateStateForAll();  // 0x722AB0
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int EnsureFileLoaded();  // 0x544c80 -- CellClass::EnsureFileLoaded
+    int IsOccupied(int a1, int a2);  // 0x419b00 -- Cell::IsOccupied
+    void* GetHeight(int a1, int a2);  // 0x4265b0 -- Cell::GetHeight
+    int PosToIndex();  // 0x42b1c0 -- Cell::PosToIndex
+    void* IsBridge();  // 0x47c520 -- Cell::IsBridge
+    void ApplyDamage(int a1, int a2, int a3, int a4);  // 0x481670 -- Cell::ApplyDamage
+    void* GetNeighbourContent(int a1);  // 0x481810 -- Cell::GetNeighbourContent
+    int IsValidHeight();  // 0x485060 -- Cell::IsValidHeight
+    bool IsEmpty();  // 0x486380 -- Cell::IsEmpty
+    bool IsGroundTypeRange();  // 0x4865d0 -- Cell::IsGroundTypeRange
+    bool IsInRange();  // 0x486750 -- Cell::IsInRange
+    bool IsInRange2();  // 0x486770 -- Cell::IsInRange2
+    bool IsShore();  // 0x4867b0 -- Cell::IsShore
+    int IsBuildableAdvanced();  // 0x486ff0 -- Cell::IsBuildableAdvanced
+    int HasOccupierBit();  // 0x4870b0 -- Cell::HasOccupierBit
+    int IsPassableOffset();  // 0x4870d0 -- Cell::IsPassableOffset
+    int SearchEnemies(int a1);  // 0x487a10 -- Cell::SearchEnemies
+    int GetTraversability();  // 0x487cb0 -- Cell::GetTraversability
+    int GetSlopeIndex();  // 0x487d50 -- Cell::GetSlopeIndex
+    bool IsBridge2();  // 0x487df0 -- Cell::IsBridge2
+    bool IsValidDestination(int a1);  // 0x4dce80 -- Cell::IsValidDestination
+    bool Exists(int a1);  // 0x5657e0 -- Cell::Exists
+    int DecodeFlags();  // 0x56cb80 -- Cell::DecodeFlags
+    int CoordToIndex(int a1);  // 0x56d430 -- Cell::CoordToIndex
+    int SetRadar(int a1);  // 0x56d460 -- Cell::SetRadar
+    int GetTerrainMask(int a1, int a2);  // 0x57b210 -- Cell::GetTerrainMask
+    void* Clear();  // 0x5a9940 -- Cell::Clear
+    void* GetWorldCoords(int a1, int a2);  // 0x68bd00 -- Cell::GetWorldCoords
+    int IsWalkable(int a1, int a2);  // 0x6b5f80 -- Cell::IsWalkable
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 } // namespace gamemd

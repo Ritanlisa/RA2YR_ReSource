@@ -73,6 +73,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int SD_vt54(int a1, int a2);  // 0x437050
     int FindAllTargets(int a1, int a2, int a3, int a4);  // 0x6E2970
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int CalculateShading();  // 0x5ff850 -- BuildingLight::CalculateShading
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 } // namespace gamemd

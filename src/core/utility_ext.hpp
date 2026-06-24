@@ -857,6 +857,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* SwapReference(int a1);  // 0x5233A0
     int ValidatePtr();  // 0x683030
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int GetSpecialValue(int a1);  // 0x55ad10 -- COMObject::GetSpecialValue
+    // === SYMBOL-ANCHOR (END) ===
 };
 // 1 methods in IDA
 class CRC32
@@ -1228,6 +1232,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int HasOccupiedCell();  // 0x6DA080
     int UpdateAIUnits();  // 0x732600
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int SetHouse(int a1);  // 0x5d8cb0 -- PlayerClass::SetHouse
+    // === SYMBOL-ANCHOR (END) ===
 };
 // 1 methods in IDA
 class PlayerProfile

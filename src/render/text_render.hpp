@@ -35,6 +35,11 @@ private:
     int          m_width;
     int          m_height;
     HFONT        m_font;
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    void* DrawText();  // 0x4a61c0 -- TextRenderer::DrawText
+    int MeasureBuilding(int a1, int a2, int a3, int a4, int a5);  // 0x642c80 -- TextRenderer::MeasureBuilding
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 } // namespace gamemd

@@ -189,6 +189,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int GetPixelData(int a1, int a2);  // 0x69E860
     void* CacheNode_Dtor(int a1);  // 0x69E930
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int LoadSide();  // 0x534fa0 -- MixFile::LoadSide
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 } // namespace gamemd

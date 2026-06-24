@@ -41,6 +41,11 @@ struct FacingClass {
     uint32_t StartFacing;       // DirStruct — starting direction for rotation
     CDTimerClass RotationTimer; // counts down during rotation
     uint32_t ROT;               // DirStruct — Rate Of Turn
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int Update(int a1);  // 0x4c9220 -- FacingClass::Update
+    int Set_SyncLog(int a1);  // 0x4c9300 -- FacingClass::Set_SyncLog
+    // === SYMBOL-ANCHOR (END) ===
 };
 static_assert(sizeof(FacingClass) == 0x18, "FacingClass size");
 
@@ -197,7 +202,7 @@ public:
     // design: inline accessor, inlined at all call sites
     virtual ~LocomotionClass() {} // COM objects use Release(), no base virtual dtor to override
 
-    virtual int Size() = 0;  // IDA: UNMATCHED — 0x454190 is BuildingClass::Size
+    virtual int Size() = 0;  // 0x454190 — override: BuildingClass::Size
 
     static HRESULT CreateInstance(
         ILocomotion** ppv,
@@ -233,6 +238,13 @@ public:
 protected:
     LocomotionClass() = default;  // 0x4cc9a0
     explicit LocomotionClass(noinit_t) noexcept {}  // 0x4CC9A0
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int Initialize();  // 0x4af540 -- LocomotionClass::Initialize
+    int CheckBridgeBlock();  // 0x4cfa70 -- LocomotionClass::CheckBridgeBlock
+    double GetSpeedMultiplier();  // 0x4dc760 -- LocomotionClass::GetSpeedMultiplier
+    void* ProcessMove(int a1);  // 0x5172f0 -- LocomotionClass::ProcessMove
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 //============================================================================
@@ -317,6 +329,10 @@ protected:
     DriveLocomotionClass() = default;
     // unmatched: no callgraph reference and no git history record
     explicit DriveLocomotionClass(noinit_t) noexcept : LocomotionClass(noinit_t{}) {}
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    void* ProcessMove(int a1);  // 0x4b4d00 -- DriveLocomotionClass::ProcessMove
+    // === SYMBOL-ANCHOR (END) ===
 };
 static_assert(sizeof(DriveLocomotionClass) == 0x70, "DriveLocomotionClass size");
 
@@ -362,6 +378,10 @@ protected:
     HoverLocomotionClass() = default;
     // unmatched: no callgraph reference and no git history record
     explicit HoverLocomotionClass(noinit_t) noexcept : LocomotionClass(noinit_t{}) {}
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    void* ProcessMove(int a1);  // 0x5172c0 -- HoverLocomotionClass::ProcessMove
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 //============================================================================
@@ -416,6 +436,14 @@ protected:
     WalkLocomotionClass() = default;
     // unmatched: no callgraph reference and no git history record
     explicit WalkLocomotionClass(noinit_t) noexcept : LocomotionClass(noinit_t{}) {}
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    void* ProcessMove(int a1);  // 0x75cbe0 -- WalkLocomotionClass::ProcessMove
+    int MoveTo(int a1, int a2);  // 0x6a01a0 -- WalkLocomotion::MoveTo
+    int ProcessCollision(int a1);  // 0x6a05f0 -- WalkLocomotion::ProcessCollision
+    int Update(int a1, int a2, int a3);  // 0x6a1c80 -- WalkLocomotion::Update
+    void* TransformCoords(int a1, int a2, int a3);  // 0x6a3db0 -- WalkLocomotion::TransformCoords
+    // === SYMBOL-ANCHOR (END) ===
 };
 static_assert(sizeof(WalkLocomotionClass) == 0x3C, "WalkLocomotionClass size");
 
@@ -474,6 +502,10 @@ protected:
     FlyLocomotionClass() = default;
     // design: inline accessor, inlined at all call sites
     explicit FlyLocomotionClass(noinit_t) noexcept : LocomotionClass(noinit_t{}) {}
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    void* ProcessMove(int a1);  // 0x4d03a0 -- FlyLocomotionClass::ProcessMove
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 //============================================================================
@@ -521,6 +553,10 @@ public:
 protected:
     RocketLocomotionClass() = default; // 0x661EC0
     explicit RocketLocomotionClass(noinit_t) noexcept : LocomotionClass(noinit_t{}) {}  // 0x661EC0
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    void* ProcessMove(int a1);  // 0x6635c0 -- RocketLocomotionClass::ProcessMove
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 //============================================================================
@@ -614,6 +650,31 @@ protected:
     JumpjetLocomotionClass() = default;
     // design: inline accessor, inlined at all call sites
     explicit JumpjetLocomotionClass(noinit_t) noexcept : LocomotionClass(noinit_t{}) {}
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    double ComputeVectorLengthMetric();  // 0x439a10 -- JumpjetLocomotionClass::ComputeVectorLengthMetric
+    int Update2();  // 0x439b00 -- JumpjetLocomotionClass::Update2
+    void ComputeVectorLengthMetric_0();  // 0x43a130 -- JumpjetLocomotionClass::ComputeVectorLengthMetric_0
+    int AdjustClimbFacing(int a1);  // 0x4848b0 -- JumpjetLocomotionClass::AdjustClimbFacing
+    int FindClosestOccupiableCell();  // 0x485080 -- JumpjetLocomotionClass::FindClosestOccupiableCell
+    bool StubReturnZero_5();  // 0x4c94b0 -- JumpjetLocomotionClass::StubReturnZero_5
+    bool StubReturnZero_6();  // 0x4c94f0 -- JumpjetLocomotionClass::StubReturnZero_6
+    void ProcessRotation();  // 0x4ce5a0 -- JumpjetLocomotionClass::ProcessRotation
+    int CheckWindowsErrorWrapper_0();  // 0x4d0400 -- JumpjetLocomotionClass::CheckWindowsErrorWrapper_0
+    void* ProcessLanding(int a1, int a2);  // 0x54d6d0 -- JumpjetLocomotionClass::ProcessLanding
+    int GetFloorZSetContext();  // 0x54d820 -- JumpjetLocomotionClass::GetFloorZSetContext
+    void* ProcessAttach(int a1);  // 0x54dfa0 -- JumpjetLocomotionClass::ProcessAttach
+    void* ClampToCellBounds(int a1, int a2, int a3);  // 0x586ac0 -- JumpjetLocomotionClass::ClampToCellBounds
+    int StubReturnZero_16();  // 0x709480 -- JumpjetLocomotionClass::StubReturnZero_16
+    void* ConstructLocomotor(int a1);  // 0x71a130 -- JumpjetLocomotionClass::ConstructLocomotor
+    int ConvertCoordToCell_3(int a1, int a2);  // 0x72a090 -- JumpjetLocomotionClass::ConvertCoordToCell_3
+    int MoveTo(int a1, int a2);  // 0x4b0ad0 -- JumpjetLocomotion::MoveTo
+    int ProcessCollision(int a1);  // 0x4b0f20 -- JumpjetLocomotion::ProcessCollision
+    int Update(int a1, int a2, int a3);  // 0x4b2630 -- JumpjetLocomotion::Update
+    void* TransformCoords(int a1, int a2, int a3);  // 0x4b4780 -- JumpjetLocomotion::TransformCoords
+    int Land();  // 0x54ca90 -- JumpjetLocomotion::Land
+    int UpdateFacing();  // 0x54d0f0 -- JumpjetLocomotion::UpdateFacing
+    // === SYMBOL-ANCHOR (END) ===
 };
 static_assert(sizeof(JumpjetLocomotionClass) == 0x98, "JumpjetLocomotionClass size");
 
@@ -677,6 +738,10 @@ protected:
     ShipLocomotionClass() = default;
     // unmatched: no callgraph reference and no git history record
     explicit ShipLocomotionClass(noinit_t) noexcept : LocomotionClass(noinit_t{}) {}
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    void* ProcessMove(int a1);  // 0x6a42b0 -- ShipLocomotionClass::ProcessMove
+    // === SYMBOL-ANCHOR (END) ===
 };
 static_assert(sizeof(ShipLocomotionClass) == 0x70, "ShipLocomotionClass size");
 
@@ -782,6 +847,10 @@ protected:
     TunnelLocomotionClass() = default;
     // unmatched: no callgraph reference and no git history record
     explicit TunnelLocomotionClass(noinit_t) noexcept : LocomotionClass(noinit_t{}) {}
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    void* ProcessMove(int a1);  // 0x72a210 -- TunnelLocomotionClass::ProcessMove
+    // === SYMBOL-ANCHOR (END) ===
 };
 static_assert(sizeof(TunnelLocomotionClass) == 0x3C, "TunnelLocomotionClass size");
 
@@ -878,6 +947,10 @@ protected:
     DropPodLocomotionClass() = default;
     // unmatched: no callgraph reference and no git history record
     explicit DropPodLocomotionClass(noinit_t) noexcept : LocomotionClass(noinit_t{}) {}
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    void* ProcessMove(int a1);  // 0x4b66f0 -- DropPodLocomotionClass::ProcessMove
+    // === SYMBOL-ANCHOR (END) ===
 };
 static_assert(sizeof(DropPodLocomotionClass) == 0x30, "DropPodLocomotionClass size");
 

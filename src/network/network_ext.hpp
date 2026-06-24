@@ -42,6 +42,11 @@ public:
     int32_t     MultiplayerSiege_field_08;       // 0x08
     int32_t     MultiplayerSiege_field_0C;       // 0x0C
     int32_t     MultiplayerSiege_field_10;       // 0x10
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int ProcessTurn(int a1);  // 0x5ca800 -- MultiplayerSiege::ProcessTurn
+    void* QueryInterface(int a1);  // 0x5cabd0 -- MultiplayerSiege::QueryInterface
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 // ============================================================================
@@ -63,6 +68,10 @@ public:
 
     static int32_t  s_MaxPlayers;   // 0x00
     static int32_t  s_GameMode;     // 0x04
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    void ShowProgress(int a1);  // 0x69ae90 -- Multiplayer::ShowProgress
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 // ============================================================================
@@ -150,6 +159,17 @@ public:
     uint8_t IPXGlobalConnClass_field_0x2C[4];
     uint8_t IPXGlobalConnClass_field_0x30[4];
     uint8_t IPXGlobalConnClass_field_0x34[4];
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int CheckStatus();  // 0x5400d0 -- IPXGlobalConnClass::CheckStatus
+    void ReceivePacket(int a1);  // 0x540110 -- IPXGlobalConnClass::ReceivePacket
+    int Send();  // 0x5402d0 -- IPXGlobalConnClass::Send
+    int SendPacket(int a1, int a2);  // 0x540340 -- IPXGlobalConnClass::SendPacket
+    int SetAddress(int a1, int a2, int a3, int a4, int a5, int a6);  // 0x5403f0 -- IPXGlobalConnClass::SetAddress
+    int Release(int a1, int a2, int a3, int a4);  // 0x540610 -- IPXGlobalConnClass::Release
+    int Connect(int a1, int a2);  // 0x540650 -- IPXGlobalConnClass::Connect
+    void* QueryInterface(int a1);  // 0x540670 -- IPXGlobalConnClass::QueryInterface
+    // === SYMBOL-ANCHOR (END) ===
 };
 // 4 methods in IDA
 class Modem
@@ -403,6 +423,12 @@ public:
     uint8_t NetworkGameSetup_field_0x14[4];
     uint8_t NetworkGameSetup_field_0x18[4];
     uint8_t NetworkGameSetup_field_0x1C[4];
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int ReadRulesUnknown();  // 0x5b9750 -- NetworkGameSetup::ReadRulesUnknown
+    void SendGameSetupPacket(int a1);  // 0x5ba970 -- NetworkGameSetup::SendGameSetupPacket
+    void* DeleteComPtr(int a1);  // 0x5bb560 -- NetworkGameSetup::DeleteComPtr
+    // === SYMBOL-ANCHOR (END) ===
 };
 // 2 methods in IDA
 class NetworkID
@@ -508,6 +534,15 @@ public:
     uint8_t UDPInterfaceClass_Destru_field_0x2C[4];
     uint8_t UDPInterfaceClass_Destru_field_0x30[4];
     uint8_t UDPInterfaceClass_Destru_field_0x34[4];
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int Bind(int a1);  // 0x7b3450 -- UDPInterfaceClass_Destru::Bind
+    int Receive();  // 0x7b3890 -- UDPInterfaceClass_Destru::Receive
+    int CheckStatus();  // 0x7b3900 -- UDPInterfaceClass_Destru::CheckStatus
+    void Reset(int a1, int a2);  // 0x7b3920 -- UDPInterfaceClass_Destru::Reset
+    int GetStatistics(int a1);  // 0x7b4100 -- UDPInterfaceClass_Destru::GetStatistics
+    int COMStub();  // 0x7b4140 -- UDPInterfaceClass_Destru::COMStub
+    // === SYMBOL-ANCHOR (END) ===
 };
 // 1 methods in IDA
 class WOLGameClass

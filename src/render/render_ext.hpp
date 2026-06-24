@@ -59,6 +59,14 @@ public:
     float       m_TintFactor;   // 0x18
     int32_t     TacticalMap_field_1C;       // 0x1C
     int32_t     TacticalMap_field_20;       // 0x20
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int DrawCursor();  // 0x5d49a0 -- TacticalMap::DrawCursor
+    int RenderCell(int a1, int a2, int a3, int a4);  // 0x6d2b60 -- TacticalMap::RenderCell
+    int RenderAllObjects(int a1);  // 0x6d8db0 -- TacticalMap::RenderAllObjects
+    int DrawOccupiedRegion();  // 0x6da180 -- TacticalMap::DrawOccupiedRegion
+    int FillScanlinesOpaque(int a1, int a2, int a3, int a4);  // 0x7bcfb0 -- TacticalMap::FillScanlinesOpaque
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 // ============================================================================
@@ -95,6 +103,10 @@ public:
     static IDirectDrawSurface7* s_Primary; // 0x04
     static IDirectDrawSurface7* s_BackBuffer; // 0x08
     static bool     s_Initialized;      // 0x0C
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int HandleSuspend();  // 0x5d2530 -- DDraw::HandleSuspend
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 // ============================================================================
@@ -125,6 +137,11 @@ public:
 
     uint32_t    m_Colors[256];  // 0x00
     int32_t     Palette_field_400;      // 0x400
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int CalcColorDistance(int a1);  // 0x661350 -- Palette::CalcColorDistance
+    int LoadFile();  // 0x72b820 -- Palette::LoadFile
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 // ============================================================================
@@ -148,6 +165,11 @@ public:
     static uint32_t Blend(uint32_t color1, uint32_t color2, float alpha);
 
     int32_t     Color_field_00;       // 0x00
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int Lerp(int a1, int a2);  // 0x6612c0 -- Color::Lerp
+    void* RGBFromFloat(int a1, int a2);  // 0x75f540 -- Color::RGBFromFloat
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 // ============================================================================
@@ -169,6 +191,10 @@ public:
 
     static int32_t  s_TransitionType;    // 0x00
     static int32_t  s_TransitionStep;    // 0x04
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int CleanupTransitionObjects();  // 0x690360 -- Screen::CleanupTransitionObjects
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 // ============================================================================
@@ -337,6 +363,10 @@ public:
     static void UpdateAllAnimations();
 
     static int32_t  s_FrameCount;   // 0x00
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    void LoadSidebarAnimations(int a1, int a2);  // 0x770550 -- Animation::LoadSidebarAnimations
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 // ============================================================================
@@ -415,6 +445,15 @@ public:
     uint8_t BlitTransLucent25AlphaZReadWrite_ushort_field_0x2C[4];
     uint8_t BlitTransLucent25AlphaZReadWrite_ushort_field_0x30[4];
     uint8_t BlitTransLucent25AlphaZReadWrite_ushort_field_0x34[4];
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int CallBlit0(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11);  // 0x496130 -- BlitTransLucent25AlphaZReadWrite_ushort::CallBlit0
+    int Blit_RLE_Remap(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10);  // 0x496170 -- BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Remap
+    int CallBlit0_0(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11);  // 0x496210 -- BlitTransLucent25AlphaZReadWrite_ushort::CallBlit0_0
+    void* Blit_RLE_Lucent50(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10);  // 0x496250 -- BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Lucent50
+    int CallBlit0_1(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11);  // 0x4962d0 -- BlitTransLucent25AlphaZReadWrite_ushort::CallBlit0_1
+    void* Blit(int a1);  // 0x49a720 -- BlitTransLucent25AlphaZReadWrite_ushort::Blit
+    // === SYMBOL-ANCHOR (END) ===
 };
 // 5 methods in IDA
 class BlitTransLucent25AlphaZRead_ushort
@@ -455,6 +494,13 @@ public:
     uint8_t BlitTransLucent25Alpha_ushort_field_0x1C[4];
     uint8_t BlitTransLucent25Alpha_ushort_field_0x20[4];
     uint8_t BlitTransLucent25Alpha_ushort_field_0x24[4];
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int CallBlit0(int a1, int a2, int a3, int a4, int a5, int a6, int a7);  // 0x494500 -- BlitTransLucent25Alpha_ushort::CallBlit0
+    int CallBlit0_0(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9);  // 0x494530 -- BlitTransLucent25Alpha_ushort::CallBlit0_0
+    int CallBlit0_1(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8);  // 0x494560 -- BlitTransLucent25Alpha_ushort::CallBlit0_1
+    void* Blit(int a1);  // 0x49a340 -- BlitTransLucent25Alpha_ushort::Blit
+    // === SYMBOL-ANCHOR (END) ===
 };
 // 5 methods in IDA
 class BlitTransLucent50AlphaZReadWarp_ushort
@@ -642,6 +688,24 @@ public:
     uint8_t BlitTransXlatAlphaZRead_ushort_field_0x48[4];
     uint8_t BlitTransXlatAlphaZRead_ushort_field_0x4C[4];
     uint8_t BlitTransXlatAlphaZRead_ushort_field_0x50[4];
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int CallBlit0_2(int a1, int a2, int a3, int a4, int a5, int a6, int a7);  // 0x494890 -- BlitTransXlatAlphaZRead_ushort::CallBlit0_2
+    int CallBlit0_3(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9);  // 0x4948c0 -- BlitTransXlatAlphaZRead_ushort::CallBlit0_3
+    int CallBlit0_4(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8);  // 0x4948f0 -- BlitTransXlatAlphaZRead_ushort::CallBlit0_4
+    void* Blit_Alpha_Lucent50(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8);  // 0x494920 -- BlitTransXlatAlphaZRead_ushort::Blit_Alpha_Lucent50
+    int CallBlit0_5(int a1, int a2, int a3, int a4, int a5, int a6, int a7);  // 0x4949b0 -- BlitTransXlatAlphaZRead_ushort::CallBlit0_5
+    int CallBlit0_6(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9);  // 0x4949e0 -- BlitTransXlatAlphaZRead_ushort::CallBlit0_6
+    int CallBlit0_7(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8);  // 0x494a10 -- BlitTransXlatAlphaZRead_ushort::CallBlit0_7
+    void* Blit_Alpha_Lucent50_0(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8);  // 0x494a40 -- BlitTransXlatAlphaZRead_ushort::Blit_Alpha_Lucent50_0
+    int CallBlit0_8(int a1, int a2, int a3, int a4, int a5, int a6, int a7);  // 0x494ad0 -- BlitTransXlatAlphaZRead_ushort::CallBlit0_8
+    int CallBlit0_9(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9);  // 0x494b00 -- BlitTransXlatAlphaZRead_ushort::CallBlit0_9
+    int CallBlit0_10(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8);  // 0x494b30 -- BlitTransXlatAlphaZRead_ushort::CallBlit0_10
+    int AddRef(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8);  // 0x494b60 -- BlitTransXlatAlphaZRead_ushort::AddRef
+    int BlitRect(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9);  // 0x494c40 -- BlitTransXlatAlphaZRead_ushort::BlitRect
+    int GetSize(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8);  // 0x494d50 -- BlitTransXlatAlphaZRead_ushort::GetSize
+    void* Blit(int a1);  // 0x49a420 -- BlitTransXlatAlphaZRead_ushort::Blit
+    // === SYMBOL-ANCHOR (END) ===
 };
 // 5 methods in IDA
 class BlitTransZRemapXlatAlphaZReadWrite_ushort
@@ -762,6 +826,12 @@ public:
     uint8_t BuildingPlacement_field_0x18[4];
     uint8_t BuildingPlacement_field_0x1C[4];
     uint8_t BuildingPlacement_field_0x20[4];
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int Activate(int a1, int a2);  // 0x4fb840 -- BuildingPlacement::Activate
+    int ProcessBuildingPlacementAction();  // 0x54c550 -- BuildingPlacement::ProcessBuildingPlacementAction
+    void* SelectBuildingPlacementCells(int a1);  // 0x594f40 -- BuildingPlacement::SelectBuildingPlacementCells
+    // === SYMBOL-ANCHOR (END) ===
 };
 // 1 methods in IDA
 class BuildingPlacementClass
@@ -820,6 +890,14 @@ public:
     uint8_t ColorListClass_field_0x1C[4];
     uint8_t ColorListClass_field_0x20[4];
     uint8_t ColorListClass_field_0x24[4];
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int GetColor(int a1);  // 0x488ee0 -- ColorListClass::GetColor
+    void* QueryInterface(int a1);  // 0x488f00 -- ColorListClass::QueryInterface
+    int SetColor();  // 0x557ae0 -- ColorListClass::SetColor
+    int Clear(int a1);  // 0x557f40 -- ColorListClass::Clear
+    void RemoveColor(int a1);  // 0x558010 -- ColorListClass::RemoveColor
+    // === SYMBOL-ANCHOR (END) ===
 };
 // 1 methods in IDA
 class ColorSchemeClass
@@ -849,6 +927,10 @@ public:
     uint8_t FoggedObject_DrawVector_field_0x0C[4];
     uint8_t FoggedObject_DrawVector_field_0x10[4];
     uint8_t FoggedObject_DrawVector_field_0x14[4];
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    void* QueryInterface(int a1);  // 0x4d2d10 -- FoggedObject_DrawVector::QueryInterface
+    // === SYMBOL-ANCHOR (END) ===
 };
 // 2 methods in IDA
 class FrameSnapshot
@@ -1157,6 +1239,13 @@ public:
     uint8_t RLEBlitTransZRemapXlatAlpha_ushort_field_0x24[4];
     uint8_t RLEBlitTransZRemapXlatAlpha_ushort_field_0x28[4];
     uint8_t RLEBlitTransZRemapXlatAlpha_ushort_field_0x2C[4];
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int CallBlit0_1(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11);  // 0x497880 -- RLEBlitTransZRemapXlatAlpha_ushort::CallBlit0_1
+    void* AddRef(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10);  // 0x497a10 -- RLEBlitTransZRemapXlatAlpha_ushort::AddRef
+    int Release(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11);  // 0x497b40 -- RLEBlitTransZRemapXlatAlpha_ushort::Release
+    void* QueryInterface(int a1);  // 0x49aa40 -- RLEBlitTransZRemapXlatAlpha_ushort::QueryInterface
+    // === SYMBOL-ANCHOR (END) ===
 };
 // 13 methods in IDA
 class ScreenEffect
@@ -1291,6 +1380,10 @@ public:
     uint8_t VoxelRenderer_field_0x10[4];
     uint8_t VoxelRenderer_field_0x14[4];
     uint8_t VoxelRenderer_field_0x18[4];
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int InitializeBuffers();  // 0x759fb0 -- VoxelRenderer::InitializeBuffers
+    // === SYMBOL-ANCHOR (END) ===
 };
 // 1 methods in IDA
 class VoxelSection

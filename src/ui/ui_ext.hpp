@@ -326,8 +326,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~CampaignCoop() = default;
 
-    virtual void Setup() {}
-
+    virtual void Setup() {} // 0x5c21d0 -- CampaignCoop::Setup
 };
 // 1 methods in IDA
 class CampaignMenu
@@ -970,6 +969,10 @@ public:
 
     virtual void Enable() {}
 
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int Enable(int a1);  // 0x7241a0 -- Tooltip::Enable
+    // === SYMBOL-ANCHOR (END) ===
 };
 // 1 methods in IDA
 class TooltipClass

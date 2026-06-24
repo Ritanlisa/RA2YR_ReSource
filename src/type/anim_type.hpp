@@ -129,6 +129,18 @@ public:
     bool Shadow;
     bool PsiWarning;
     bool ShouldFogRemove;
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    void* Construct2(int a1);  // 0x41e350 -- AnimTypeClass::Construct2
+    int GetLoopCount(int a1);  // 0x427a80 -- AnimTypeClass::GetLoopCount
+    int GetWarhead(int a1);  // 0x427b50 -- AnimTypeClass::GetWarhead
+    int PowerDrainUpdate(int a1);  // 0x4289d0 -- AnimTypeClass::PowerDrainUpdate
+    int GetAnimData(int a1, int a2);  // 0x428c10 -- AnimTypeClass::GetAnimData
+    int GetDamage();  // 0x428c30 -- AnimTypeClass::GetDamage
+    int GetAuxField();  // 0x428e60 -- AnimTypeClass::GetAuxField
+    int ReadINIString(int a1, int a2, int a3);  // 0x477050 -- AnimTypeClass::ReadINIString
+    int LookupByName();  // 0x48e050 -- AnimTypeClass::LookupByName
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 } // namespace gamemd

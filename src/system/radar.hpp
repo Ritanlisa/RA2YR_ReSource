@@ -170,6 +170,16 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int DrawBlips(int a1);  // 0x6D5030
     int DrawBlip(int a1, int a2);  // 0x6D59D0
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int FindNearestRadarTarget(int a1, int a2, int a3);  // 0x431090 -- Radar::FindNearestRadarTarget
+    bool IsRadarTargetEligible();  // 0x5090f0 -- Radar::IsRadarTargetEligible
+    int ProcessSubzone(int a1, int a2, int a3, int a4, int a5);  // 0x5824a0 -- Radar::ProcessSubzone
+    void Update(int a1);  // 0x584550 -- Radar::Update
+    void* CopyDataArray(int a1);  // 0x58abd0 -- Radar::CopyDataArray
+    int PixelIndex();  // 0x6558b0 -- Radar::PixelIndex
+    int RenderMinimap();  // 0x656ec0 -- Radar::RenderMinimap
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 } // namespace gamemd

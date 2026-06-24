@@ -77,6 +77,14 @@ public:
     char WalkFrames;
     char FiringFrames;
     char AltImageFile[0x19];
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int ReadINIEntry();  // 0x6b4dd0 -- UnitTypeClass::ReadINIEntry
+    int ConstructUnit();  // 0x747560 -- UnitTypeClass::ConstructUnit
+    void* GetDimensions(int a1);  // 0x747590 -- UnitTypeClass::GetDimensions
+    int PowerDrainUpdate(int a1);  // 0x747f70 -- UnitTypeClass::PowerDrainUpdate
+    int GetAuxField();  // 0x748180 -- UnitTypeClass::GetAuxField
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 } // namespace gamemd

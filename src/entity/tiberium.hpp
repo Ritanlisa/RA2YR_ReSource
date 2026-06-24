@@ -106,6 +106,11 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int Stub();  // 0x723700
     void* DrawOre(int a1);  // 0x723710
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int ProcessGrowth(int a1, int a2, int a3);  // 0x59d510 -- Tiberium::ProcessGrowth
+    int CalculateSpread(int a1, int a2, int a3, int a4, int a5, int a6, int a7);  // 0x59e740 -- Tiberium::CalculateSpread
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 } // namespace gamemd

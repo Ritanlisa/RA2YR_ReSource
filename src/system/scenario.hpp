@@ -341,6 +341,21 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* processEndgame(int a1);  // 0x720940
     int LoadWaypoints();  // 0x7283C0
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int ReadTeams();  // 0x44f820 -- Scenario::ReadTeams
+    int FindBuildingTypeByName(int a1, int a2, int a3);  // 0x4758f0 -- Scenario::FindBuildingTypeByName
+    int CopyLocalScenarioData();  // 0x4c6180 -- Scenario::CopyLocalScenarioData
+    int ProcessSidebarUnits();  // 0x50d610 -- Scenario::ProcessSidebarUnits
+    int ComputeDisplayPosition();  // 0x552b10 -- Scenario::ComputeDisplayPosition
+    void* ComputeDialogPos(int a1);  // 0x552be0 -- Scenario::ComputeDialogPos
+    void Update();  // 0x55afb0 -- Scenario::Update
+    int LoadOrReloadOptions(int a1);  // 0x597a10 -- Scenario::LoadOrReloadOptions
+    void* ResetDisplayArrays();  // 0x5c9700 -- Scenario::ResetDisplayArrays
+    int SetDword32(int a1);  // 0x642b10 -- Scenario::SetDword32
+    int SetDword30(int a1);  // 0x642df0 -- Scenario::SetDword30
+    int LoadWithProgress();  // 0x684620 -- Scenario::LoadWithProgress
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 } // namespace gamemd

@@ -72,6 +72,19 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* Export(void* a1);  // 0x71D160
     void* MissionStubReturnZero4(int a1);  // 0x71D350
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int ProcessSpawnAnim(int a1, int a2);  // 0x71d000 -- TerrainClass::ProcessSpawnAnim
+    int GetTileIndex(int a1);  // 0x48b720 -- Terrain::GetTileIndex
+    int GetTileType(int a1);  // 0x48b9e0 -- Terrain::GetTileType
+    void PlaceCliffs(int a1, int a2, int a3);  // 0x568e40 -- Terrain::PlaceCliffs
+    int ConnectivityGraph();  // 0x56c510 -- Terrain::ConnectivityGraph
+    int FloodFillConnectivity(int a1, int a2, int a3);  // 0x56cb90 -- Terrain::FloodFillConnectivity
+    void ProcessCellModification(int a1);  // 0x570050 -- Terrain::ProcessCellModification
+    void RecursiveModify(int a1);  // 0x573540 -- Terrain::RecursiveModify
+    int CreateCrater(int a1);  // 0x576770 -- Terrain::CreateCrater
+    int LookupByName();  // 0x71dd80 -- Terrain::LookupByName
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 } // namespace gamemd

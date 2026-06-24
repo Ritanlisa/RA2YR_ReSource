@@ -71,6 +71,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int ProcessMouseOver(int a1, void* a2, int a3);  // 0x723EC0
     int TrackState(int a1, int a2);  // 0x77A700
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    void* InitProperties();  // 0x600630 -- Gadget::InitProperties
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 // ============================================================================
@@ -182,6 +186,13 @@ protected:
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* CopyTemplateStruct(void* a1);  // 0x623610
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    void MapDialogResource();  // 0x49f740 -- Dialog::MapDialogResource
+    int Show();  // 0x622800 -- Dialog::Show
+    int UpdateControlState(int a1, int a2);  // 0x624930 -- Dialog::UpdateControlState
+    void GrowBuffer();  // 0x624be0 -- Dialog::GrowBuffer
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 } // namespace gamemd

@@ -45,6 +45,15 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* getAvailable(int a1);  // 0x640450
     void* Initialize(int a1);  // 0x6404B0
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int Update(int a1);  // 0x43a5d0 -- Power::Update
+    int FinalizeDrain(int a1);  // 0x4a1c10 -- Power::FinalizeDrain
+    int FlagProcess(int a1);  // 0x4a1ca0 -- Power::FlagProcess
+    void* UpdateAll();  // 0x67c6e0 -- Power::UpdateAll
+    int ComputeHousePowerChecksum(int a1);  // 0x68b940 -- Power::ComputeHousePowerChecksum
+    int ChangedHouse(int a1);  // 0x750090 -- Power::ChangedHouse
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 } // namespace gamemd

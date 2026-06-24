@@ -735,6 +735,23 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int NetworkConvert();  // 0x749100
     void AccumulateScore(int a1, int a2);  // 0x74FF50
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int GetRepairStepAmount();  // 0x459840 -- HouseClass::GetRepairStepAmount
+    double GiveTiberium_Storage(int a1, int a2);  // 0x4f9610 -- HouseClass::GiveTiberium_Storage
+    int IsCellOccupied(int a1, int a2);  // 0x4fbe40 -- HouseClass::IsCellOccupied
+    void* CanTogglePower();  // 0x508df0 -- HouseClass::CanTogglePower
+    int UpdateAITryFireSW();  // 0x5098f0 -- HouseClass::UpdateAITryFireSW
+    int GetCameoTypeIndex(int a1);  // 0x5471b0 -- HouseClass::GetCameoTypeIndex
+    void AnnounceUpgrade(int a1);  // 0x47d2b0 -- House::AnnounceUpgrade
+    int UpdateHouseAI();  // 0x4fd500 -- House::UpdateHouseAI
+    int IsHumanPlayer();  // 0x50b6f0 -- House::IsHumanPlayer
+    int IsCurrentPlayer();  // 0x50b730 -- House::IsCurrentPlayer
+    int ChooseHouseEnemy(int a1);  // 0x50db00 -- House::ChooseHouseEnemy
+    int LookupObject(int a1);  // 0x544be0 -- House::LookupObject
+    bool LoadMapFileData(int a1, int a2);  // 0x544c20 -- House::LoadMapFileData
+    int PowerBeginUpdate(int a1);  // 0x70c270 -- House::PowerBeginUpdate
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 } // namespace gamemd

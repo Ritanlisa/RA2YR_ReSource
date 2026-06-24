@@ -165,6 +165,14 @@ protected:
     VoxelAnimTypeClass() = default;
     // design: no binary equivalent found in IDA
     explicit VoxelAnimTypeClass(noinit_t) noexcept;
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int PowerDrainUpdate(int a1);  // 0x74b690 -- VoxelAnimTypeClass::PowerDrainUpdate
+    int GetData(int a1, int a2);  // 0x74b8f0 -- VoxelAnimTypeClass::GetData
+    int LoadSection(int a1, int a2);  // 0x5f7a90 -- VoxelAnimType::LoadSection
+    int LoadBarrel(int a1, int a2);  // 0x5f7db0 -- VoxelAnimType::LoadBarrel
+    int LoadAnim();  // 0x5f8110 -- VoxelAnimType::LoadAnim
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 
@@ -207,6 +215,20 @@ protected:
     VoxelAnimClass() = default;
     // design: no binary equivalent found in IDA
     explicit VoxelAnimClass(noinit_t) noexcept;
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    void* QuaternionToMatrix(int a1);  // 0x4399e0 -- VoxelAnimClass::QuaternionToMatrix
+    int UpdateMatrix();  // 0x4d02b0 -- VoxelAnimClass::UpdateMatrix
+    int CleanupMembers();  // 0x7499f0 -- VoxelAnimClass::CleanupMembers
+    int DrawVoxelFrame(int a1, int a2, int a3);  // 0x749b20 -- VoxelAnimClass::DrawVoxelFrame
+    int ProcessAnim(int a1, int a2);  // 0x749b70 -- VoxelAnimClass::ProcessAnim
+    int Update();  // 0x749f30 -- VoxelAnimClass::Update
+    int SaveLoad_Prefix(int a1, int a2);  // 0x74a970 -- VoxelAnimClass::SaveLoad_Prefix
+    int GetFrameCount(int a1);  // 0x74aa30 -- VoxelAnimClass::GetFrameCount
+    int LoadFrame();  // 0x74ab30 -- VoxelAnimClass::LoadFrame
+    void* DrawVoxel(int a1);  // 0x74ab50 -- VoxelAnimClass::DrawVoxel
+    int Reset();  // 0x75aa90 -- VoxelAnimClass::Reset
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 } // namespace gamemd

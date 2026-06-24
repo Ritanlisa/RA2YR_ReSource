@@ -162,6 +162,13 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* Construct(int a1, int a2);  // 0x7B8730
     void CalcConfiningRect();  // 0x7B8960
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int SetBounds(int a1);  // 0x4a8bf0 -- Mouse::SetBounds
+    int GetKeyState();  // 0x53ec90 -- Mouse::GetKeyState
+    int SetCursor(int a1, int a2);  // 0x5bdc80 -- Mouse::SetCursor
+    int ReleaseCapture();  // 0x6938c0 -- Mouse::ReleaseCapture
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 } // namespace gamemd

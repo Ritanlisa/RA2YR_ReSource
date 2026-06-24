@@ -113,6 +113,13 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int Construct(int a1, int a2, int a3);  // 0x6E8A90
     int OverrideMission_SyncLog();  // 0x7013A0
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int ExecuteTechnoMissionAction();  // 0x520ae0 -- Mission::ExecuteTechnoMissionAction
+    int ProcessUnitMissionAI();  // 0x520f40 -- Mission::ProcessUnitMissionAI
+    int AssignTeamMemberMissions(int a1, int a2);  // 0x6ed7e0 -- Mission::AssignTeamMemberMissions
+    int GetMissionDelay();  // 0x70f770 -- Mission::GetMissionDelay
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 } // namespace game

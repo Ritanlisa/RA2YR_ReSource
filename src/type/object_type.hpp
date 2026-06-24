@@ -125,6 +125,46 @@ public:
     uint8_t align_23E[2];
     int LineTrailColorDecrement;
     SomeVoxelCache VoxelCaches[4];
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int FindOrCreate();  // 0x46c790 -- ObjectTypeClass::FindOrCreate
+    int loadTypeMember_473980();  // 0x473980 -- ObjectTypeClass::loadTypeMember_473980
+    int ReadBool(int a1, int a2, int a3);  // 0x474690 -- ObjectTypeClass::ReadBool
+    int ReadPrerequisite(int a1, int a2, int a3);  // 0x4746e0 -- ObjectTypeClass::ReadPrerequisite
+    void* ReadSoundList(int a1, int a2, int a3, int a4);  // 0x474740 -- ObjectTypeClass::ReadSoundList
+    int ReadBool2(int a1, int a2, int a3);  // 0x4747c0 -- ObjectTypeClass::ReadBool2
+    int loadTypeMember_5474940(int a1, int a2, int a3);  // 0x474940 -- ObjectTypeClass::loadTypeMember_5474940
+    int loadTypeMember_54749E0(int a1, int a2, int a3);  // 0x4749e0 -- ObjectTypeClass::loadTypeMember_54749E0
+    int ReadString(int a1, int a2, int a3);  // 0x474d50 -- ObjectTypeClass::ReadString
+    int loadTypeMember_5474E40(int a1, int a2, int a3);  // 0x474e40 -- ObjectTypeClass::loadTypeMember_5474E40
+    int ReadInt(int a1, int a2, int a3);  // 0x474f50 -- ObjectTypeClass::ReadInt
+    int ReadDouble(int a1, int a2, int a3);  // 0x474fa0 -- ObjectTypeClass::ReadDouble
+    int ReadDouble2(int a1, int a2, int a3);  // 0x474ff0 -- ObjectTypeClass::ReadDouble2
+    int ReadBool3(int a1, int a2, int a3);  // 0x475060 -- ObjectTypeClass::ReadBool3
+    int ReadTypeListINI(int a1, int a2, int a3);  // 0x476240 -- ObjectTypeClass::ReadTypeListINI
+    int loadTypeMember_476FC0(int a1, int a2, int a3);  // 0x476fc0 -- ObjectTypeClass::loadTypeMember_476FC0
+    int loadTypeMember_5477590(int a1, int a2, int a3);  // 0x477590 -- ObjectTypeClass::loadTypeMember_5477590
+    int loadTypeMember_48DFF0();  // 0x48dff0 -- ObjectTypeClass::loadTypeMember_48DFF0
+    int CreateInstance(int a1, int a2);  // 0x5f1c30 -- ObjectTypeClass::CreateInstance
+    void ReleaseWaveAndString();  // 0x5f61a0 -- ObjectTypeClass::ReleaseWaveAndString
+    int ConstructFull(int a1);  // 0x5f7090 -- ObjectTypeClass::ConstructFull
+    void CleanupWeapons();  // 0x5f8080 -- ObjectTypeClass::CleanupWeapons
+    int Load2DArt();  // 0x5f9070 -- ObjectTypeClass::Load2DArt
+    int FreeLoaderBuffer();  // 0x5f9b60 -- ObjectTypeClass::FreeLoaderBuffer
+    int FindByName();  // 0x6e5e70 -- ObjectTypeClass::FindByName
+    int SelectArtOrAlt();  // 0x712040 -- ObjectTypeClass::SelectArtOrAlt
+    int DeserializeArrays();  // 0x7170a0 -- ObjectTypeClass::DeserializeArrays
+    int loadTypeMember_5717820();  // 0x717820 -- ObjectTypeClass::loadTypeMember_5717820
+    int loadTypeMember_57179D0(int a1, int a2);  // 0x7179d0 -- ObjectTypeClass::loadTypeMember_57179D0
+    int loadTypeMember_5717A30(int a1);  // 0x717a30 -- ObjectTypeClass::loadTypeMember_5717A30
+    int loadTypeMember_5717A50(int a1);  // 0x717a50 -- ObjectTypeClass::loadTypeMember_5717A50
+    int loadTypeMember_5717A80(int a1);  // 0x717a80 -- ObjectTypeClass::loadTypeMember_5717A80
+    int loadTypeMember_5717AB0(int a1);  // 0x717ab0 -- ObjectTypeClass::loadTypeMember_5717AB0
+    int loadTypeMember_5717AE0();  // 0x717ae0 -- ObjectTypeClass::loadTypeMember_5717AE0
+    void* CheckFlag(int a1);  // 0x717bf0 -- ObjectTypeClass::CheckFlag
+    void* loadTypeMember_5717C00(int a1);  // 0x717c00 -- ObjectTypeClass::loadTypeMember_5717C00
+    int ReadDestroyAnim();  // 0x71cb90 -- ObjectTypeClass::ReadDestroyAnim
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 } // namespace gamemd

@@ -334,6 +334,17 @@ public:
 protected:
     // design: inline accessor, inlined at all call sites
     explicit Surface(noinit_t) noexcept {}
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int CreateSurfacePalette();  // 0x4a4780 -- Surface::CreateSurfacePalette
+    void* CopyRect(int a1);  // 0x5d1fd0 -- Surface::CopyRect
+    int LoadToSurfaceSHP(int a1);  // 0x641db0 -- Surface::LoadToSurfaceSHP
+    int RenderRadar();  // 0x655250 -- Surface::RenderRadar
+    void BlitTechnoTo(int a1, int a2, int a3, int a4, int a5, int a6);  // 0x707480 -- Surface::BlitTechnoTo
+    void RenderToSurfaceVoxel(int a1, int a2);  // 0x7602e0 -- Surface::RenderToSurfaceVoxel
+    int PixelToIndex(int a1);  // 0x769330 -- Surface::PixelToIndex
+    int CommitSurfaceBuffersAudio();  // 0x7bd690 -- Surface::CommitSurfaceBuffersAudio
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 class XSurface : public Surface
@@ -482,6 +493,11 @@ protected:
         : XSurface(noinit_t{})
     {
     }
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    bool CreateTripleBuffer();  // 0x7b8c60 -- BSurface::CreateTripleBuffer
+    void* ConstructEx(int a1, int a2, int a3, int a4);  // 0x7bc970 -- BSurface::ConstructEx
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 class DSurface : public XSurface
@@ -597,6 +613,17 @@ private:
         int* clip_src,
         int flags,
         char option2);
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    void* CreatePrimary();  // 0x4ba770 -- DSurface::CreatePrimary
+    void* CreateBackBuffer(int a1);  // 0x4bac60 -- DSurface::CreateBackBuffer
+    int RestoreIfLost();  // 0x4bb000 -- DSurface::RestoreIfLost
+    int DrawMarker(int a1, int a2);  // 0x63d400 -- DSurface::DrawMarker
+    int FlipIfNeeded();  // 0x759e60 -- DSurface::FlipIfNeeded
+    int LockAndPrepareRect();  // 0x7bd210 -- DSurface::LockAndPrepareRect
+    int CommitBuffers();  // 0x7bdf80 -- DSurface::CommitBuffers
+    int Flip();  // 0x7c2c60 -- DSurface::Flip
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 } // namespace gamemd

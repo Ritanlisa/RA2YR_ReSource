@@ -90,6 +90,21 @@ private:
     bool      playing       = false;
     bool      memoryOwned  = false;
     void*     memoryBuffer = nullptr;
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int Check(int a1);  // 0x432bd0 -- BinkMovieHandle::Check
+    void* CopyFrameToSurface();  // 0x433060 -- BinkMovieHandle::CopyFrameToSurface
+    int InitFromFile();  // 0x5c0550 -- BinkMovieHandle::InitFromFile
+    int COMStub();  // 0x5c0570 -- BinkMovieHandle::COMStub
+    bool AddRef();  // 0x5c0580 -- BinkMovieHandle::AddRef
+    int Release();  // 0x5c0590 -- BinkMovieHandle::Release
+    int Pause(int a1, int a2);  // 0x5c05a0 -- BinkMovieHandle::Pause
+    int RenderLoop(int a1);  // 0x5c05c0 -- BinkMovieHandle::RenderLoop
+    int AdjustSurfaceFormat(int a1);  // 0x5c05d0 -- BinkMovieHandle::AdjustSurfaceFormat
+    int BlitToTarget();  // 0x5c05e0 -- BinkMovieHandle::BlitToTarget
+    void* Close();  // 0x5c05f0 -- BinkMovieHandle::Close
+    void* QueryInterface(int a1);  // 0x5c0a30 -- BinkMovieHandle::QueryInterface
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 //

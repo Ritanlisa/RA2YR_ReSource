@@ -309,6 +309,39 @@ public:
     bool IsCellClearOfTerrainObstacles(const CellStruct& cell) const;
 
     DWORD align_1794;
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int Enqueue(int a1);  // 0x41c500 -- BuildingTypeClass::Enqueue
+    int Dequeue();  // 0x41c590 -- BuildingTypeClass::Dequeue
+    int ConstructFull(int a1);  // 0x45dd90 -- BuildingTypeClass::ConstructFull
+    void* loadBuildingProperty_b_545E520(int a1);  // 0x45e520 -- BuildingTypeClass::loadBuildingProperty_b_545E520
+    int CleanupMembers();  // 0x45e580 -- BuildingTypeClass::CleanupMembers
+    int FindIndexByName();  // 0x45e7b0 -- BuildingTypeClass::FindIndexByName
+    int GetMaxPips();  // 0x45ece0 -- BuildingTypeClass::GetMaxPips
+    int LoadAnimations(int a1);  // 0x45f230 -- BuildingTypeClass::LoadAnimations
+    void LoadVoxel();  // 0x45fa90 -- BuildingTypeClass::LoadVoxel
+    void* GetSizeInLeptons(int a1);  // 0x464af0 -- BuildingTypeClass::GetSizeInLeptons
+    int UpdatePower();  // 0x464b30 -- BuildingTypeClass::UpdatePower
+    int SaveLoad_Prefix();  // 0x465010 -- BuildingTypeClass::SaveLoad_Prefix
+    int SaveLoad_Prefix_0();  // 0x465300 -- BuildingTypeClass::SaveLoad_Prefix_0
+    void IsPowered();  // 0x465af0 -- BuildingTypeClass::IsPowered
+    int GetAuxField();  // 0x465db0 -- BuildingTypeClass::GetAuxField
+    int FindAnimByName(int a1, int a2, int a3);  // 0x474a90 -- BuildingTypeClass::FindAnimByName
+    void* loadBuildingProperty_b_5478850(int a1, int a2);  // 0x478850 -- BuildingTypeClass::loadBuildingProperty_b_5478850
+    int GetPowerOutput(int a1);  // 0x4c9680 -- BuildingTypeClass::GetPowerOutput
+    int ProcessData(int a1, int a2);  // 0x50b760 -- BuildingTypeClass::ProcessData
+    int CheckPlacementArea(int a1, int a2);  // 0x594010 -- BuildingTypeClass::CheckPlacementArea
+    int FindOrCreate2();  // 0x5fec70 -- BuildingTypeClass::FindOrCreate2
+    int LoadOrGet();  // 0x644890 -- BuildingTypeClass::LoadOrGet
+    int FindOrCreateEx();  // 0x645430 -- BuildingTypeClass::FindOrCreateEx
+    int ProcessPower(int a1);  // 0x7171a0 -- BuildingTypeClass::ProcessPower
+    void* GetUpgradeOffset(int a1);  // 0x7178c0 -- BuildingTypeClass::GetUpgradeOffset
+    bool IsPlacementValid(int a1, int a2);  // 0x746000 -- BuildingTypeClass::IsPlacementValid
+    int FindOrCreateAlt();  // 0x7480d0 -- BuildingTypeClass::FindOrCreateAlt
+    int FindDefault();  // 0x4e3560 -- BuildingType::FindDefault
+    int FindOwnerHouse();  // 0x510ed0 -- BuildingType::FindOwnerHouse
+    bool IsSpecialType();  // 0x510f60 -- BuildingType::IsSpecialType
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 } // namespace gamemd

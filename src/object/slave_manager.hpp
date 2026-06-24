@@ -84,6 +84,10 @@ public:
     int32_t                     SlaveManagerClass_field_58;           // +0x58 (this+88)
     int32_t                     SlaveManagerClass_field_5C;           // +0x5C (this+92)
     int32_t                     SlaveManagerClass_field_60;           // +0x60 (this+96)
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int ctor(int a1, int a2, int a3, int a4, int a5);  // 0x6af1a0 -- SlaveManagerClass::ctor
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 } // namespace game

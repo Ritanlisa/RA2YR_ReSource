@@ -110,6 +110,14 @@ public:
     bool IsRadEruption;
     int RadLevel;
     bool IsMagBeam;
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int ReadTrajectoryData(int a1, int a2, int a3);  // 0x475b70 -- WeaponTypeClass::ReadTrajectoryData
+    int ReadVeteranData(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9);  // 0x475c70 -- WeaponTypeClass::ReadVeteranData
+    void* Create();  // 0x512680 -- WeaponTypeClass::Create
+    void* loadWeaponProperties(int a1);  // 0x771f00 -- WeaponTypeClass::loadWeaponProperties
+    int ProcessPower(int a1);  // 0x772ae0 -- WeaponTypeClass::ProcessPower
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 } // namespace gamemd

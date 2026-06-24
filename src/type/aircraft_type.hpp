@@ -47,6 +47,12 @@ public:
     bool FlyBack;
     bool AirportBound;
     bool Fighter;
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int ConstructAircraft(int a1);  // 0x41cb20 -- AircraftTypeClass::ConstructAircraft
+    int PowerDrainUpdate(int a1);  // 0x41cdb0 -- AircraftTypeClass::PowerDrainUpdate
+    int GetAuxField();  // 0x41cfd0 -- AircraftTypeClass::GetAuxField
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 } // namespace gamemd

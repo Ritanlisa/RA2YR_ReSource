@@ -183,6 +183,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int RemoveFromPointerArray(int a1);  // 0x6CE320
     int Get(int a1, int a2, int a3, int a4);  // 0x6E1C40
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int GetDefaultTimer();  // 0x6cc260 -- Super::GetDefaultTimer
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 class LightningStorm
@@ -227,6 +231,10 @@ public:
     // unmatched: no callgraph reference and no git history record
     static void PrintMessage();
     static bool Active();
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    bool IsActive();  // 0x53b400 -- PsyDom::IsActive
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 class ChronoScreenEffect

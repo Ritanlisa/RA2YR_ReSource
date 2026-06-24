@@ -168,6 +168,10 @@ public:
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int SetEVAIndex();  // 0x7534E0
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    void FindAndPlay(int a1);  // 0x752700 -- VoxClass::FindAndPlay
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 class AudioController;

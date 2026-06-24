@@ -65,6 +65,12 @@ public:
     bool UseLineTrail;
     bool ParticleSystemTypeClass_field_bool_2D4;
     uint8_t padding_2D5[3];
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    void* ReadXYZFromINI(int a1, int a2, int a3, int a4);  // 0x476340 -- ParticleSystemTypeClass::ReadXYZFromINI
+    int GetType(int a1);  // 0x6442d0 -- ParticleSystemTypeClass::GetType
+    int PowerDrainUpdate(int a1);  // 0x644700 -- ParticleSystemTypeClass::PowerDrainUpdate
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 } // namespace gamemd

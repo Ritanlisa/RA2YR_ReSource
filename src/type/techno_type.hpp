@@ -463,6 +463,24 @@ public:
     char PaletteFile[0x20];
     void* Palette;
     DWORD align_DF4;
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    double Dispatch(int a1);  // 0x50bdf0 -- TechnoTypeClass::Dispatch
+    double GetThreatMultiplier(int a1);  // 0x50beb0 -- TechnoTypeClass::GetThreatMultiplier
+    void* LoadBase(int a1);  // 0x6f06e0 -- TechnoTypeClass::LoadBase
+    bool HasVoiceResponse(int a1);  // 0x70d0d0 -- TechnoTypeClass::HasVoiceResponse
+    void* ReadINI(int a1, int a2);  // 0x710af0 -- TechnoTypeClass::ReadINI
+    bool CanAttackMove_IgnoreWeapon();  // 0x711e90 -- TechnoTypeClass::CanAttackMove_IgnoreWeapon
+    double ComputeBuildTime();  // 0x711ee0 -- TechnoTypeClass::ComputeBuildTime
+    int ComputeValueSimple(int a1);  // 0x711f00 -- TechnoTypeClass::ComputeValueSimple
+    int ComputeValue(int a1, int a2);  // 0x711f60 -- TechnoTypeClass::ComputeValue
+    void* ddtor(int a1);  // 0x7179a0 -- TechnoTypeClass::ddtor
+    int SaveLoadDataArray(int a1);  // 0x717b20 -- TechnoTypeClass::SaveLoadDataArray
+    void* Constructor_0(int a1);  // 0x717bc0 -- TechnoTypeClass::Constructor_0
+    void* Constructor_1(int a1);  // 0x717be0 -- TechnoTypeClass::Constructor_1
+    int RemoveItem(int a1);  // 0x717db0 -- TechnoTypeClass::RemoveItem
+    int CheckFlag(int a1);  // 0x721290 -- TechnoTypeClass::CheckFlag
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 } // namespace gamemd

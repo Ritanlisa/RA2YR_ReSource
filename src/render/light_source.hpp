@@ -63,6 +63,11 @@ protected:
                      const TintStruct& tint, int detail_level) noexcept;
     // design: no binary equivalent found in IDA
     explicit LightSourceClass(noinit_t) noexcept;
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int Stat(int a1);  // 0x555070 -- LightSourceClass::Stat
+    void* CopyTo(int a1);  // 0x555150 -- LightSourceClass::CopyTo
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 } // namespace gamemd

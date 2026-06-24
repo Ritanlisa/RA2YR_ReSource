@@ -101,6 +101,14 @@ public:
     bool UseOwnName;
     bool JumpJetTurn;
     DWORD align_ECC;
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    void* Constructor_523980(int a1);  // 0x523980 -- InfantryTypeClass::Constructor_523980
+    int ConstructInfantry(int a1);  // 0x523b10 -- InfantryTypeClass::ConstructInfantry
+    int PowerDrainUpdate(int a1);  // 0x524840 -- InfantryTypeClass::PowerDrainUpdate
+    int GetAuxField();  // 0x524d60 -- InfantryTypeClass::GetAuxField
+    void* CopyDataArray(int a1);  // 0x524f20 -- InfantryTypeClass::CopyDataArray
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 } // namespace gamemd

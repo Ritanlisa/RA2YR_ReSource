@@ -111,6 +111,20 @@ public:
 
 protected:
     HouseTypeClass() noexcept;
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int loadCountryData(int a1, int a2, int a3);  // 0x4756f0 -- HouseTypeClass::loadCountryData
+    void* loadVeteranWeapons(int a1);  // 0x511650 -- HouseTypeClass::loadVeteranWeapons
+    int ProcessPower(int a1);  // 0x512170 -- HouseTypeClass::ProcessPower
+    void* readStartUnit();  // 0x512960 -- HouseTypeClass::readStartUnit
+    void* readStartInfantry(int a1);  // 0x512bd0 -- HouseTypeClass::readStartInfantry
+    void* readBaseDefense(int a1);  // 0x513370 -- HouseTypeClass::readBaseDefense
+    void* readDefaultAlly(int a1, int a2);  // 0x513560 -- HouseTypeClass::readDefaultAlly
+    int readPowerPlants(int a1);  // 0x5136c0 -- HouseTypeClass::readPowerPlants
+    void* readParaDropTypes(int a1);  // 0x5137d0 -- HouseTypeClass::readParaDropTypes
+    void* readAllowedUnits(int a1);  // 0x513860 -- HouseTypeClass::readAllowedUnits
+    int Find();  // 0x6a46d0 -- HouseTypeClass::Find
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 } // namespace gamemd

@@ -112,6 +112,23 @@ public:
     int MaxDebris;
     int MinDebris;
     DWORD unused_1CC;
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int loadWarheadINI(int a1, int a2, int a3);  // 0x474810 -- WarheadTypeClass::loadWarheadINI
+    void* QueryInterface(int a1);  // 0x524fc0 -- WarheadTypeClass::QueryInterface
+    int AddRef(int a1);  // 0x5250d0 -- WarheadTypeClass::AddRef
+    int Release(int a1, int a2);  // 0x525300 -- WarheadTypeClass::Release
+    void* parseVerses();  // 0x52ab80 -- WarheadTypeClass::parseVerses
+    void* parseModifiers(int a1);  // 0x52ad50 -- WarheadTypeClass::parseModifiers
+    void* parseAnimations(int a1);  // 0x52ae00 -- WarheadTypeClass::parseAnimations
+    void* ReadParticleSystems(int a1);  // 0x52afc0 -- WarheadTypeClass::ReadParticleSystems
+    int applyDamage();  // 0x644630 -- WarheadTypeClass::applyDamage
+    int LoadType();  // 0x672990 -- WarheadTypeClass::LoadType
+    int ProcessPower(int a1);  // 0x75dec0 -- WarheadTypeClass::ProcessPower
+    int GetDamage(int a1, int a2);  // 0x75e440 -- WarheadTypeClass::GetDamage
+    void* checkImmunity(int a1);  // 0x75e690 -- WarheadTypeClass::checkImmunity
+    void* calculateDamage(int a1);  // 0x75e6a0 -- WarheadTypeClass::calculateDamage
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 } // namespace gamemd

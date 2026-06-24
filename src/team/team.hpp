@@ -161,6 +161,11 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int CreateOneOf(int a1);  // 0x6F09C0
     int AddToBuildQueue();  // 0x726720
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int ReleaseAll(int a1);  // 0x5d26c0 -- Team::ReleaseAll
+    int AllMembersValid();  // 0x65ae30 -- Team::AllMembersValid
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 } // namespace gamemd

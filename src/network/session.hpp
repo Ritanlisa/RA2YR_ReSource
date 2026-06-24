@@ -133,6 +133,50 @@ public:
 protected:
     SessionClass() noexcept; // 0x6970A0
     ~SessionClass() noexcept;
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int initLAN(int a1, int a2, int a3);  // 0x540dc0 -- SessionClass::initLAN
+    int initInternet();  // 0x540e70 -- SessionClass::initInternet
+    void* Load();  // 0x552cc0 -- SessionClass::Load
+    bool LoadGameSession(int a1, int a2);  // 0x5adf20 -- SessionClass::LoadGameSession
+    int LoadMapSelection(int a1);  // 0x5ceef0 -- SessionClass::LoadMapSelection
+    void loadSettings();  // 0x5d0070 -- SessionClass::loadSettings
+    int initPlayers();  // 0x5e64c0 -- SessionClass::initPlayers
+    int BuildLobbyPlayerList();  // 0x663b40 -- SessionClass::BuildLobbyPlayerList
+    void* GetEntry(int a1);  // 0x691500 -- SessionClass::GetEntry
+    int SetField();  // 0x6915d0 -- SessionClass::SetField
+    int GetPlayerSide();  // 0x696f10 -- SessionClass::GetPlayerSide
+    int GetOption();  // 0x696f50 -- SessionClass::GetOption
+    int GetOption2();  // 0x696f70 -- SessionClass::GetOption2
+    int SetPlayerOption(int a1);  // 0x696f90 -- SessionClass::SetPlayerOption
+    int SetPlayerColor(int a1);  // 0x696fc0 -- SessionClass::SetPlayerColor
+    int SetOption(int a1);  // 0x696ff0 -- SessionClass::SetOption
+    int SetOption2(int a1);  // 0x697020 -- SessionClass::SetOption2
+    int CreateConnections();  // 0x697b70 -- SessionClass::CreateConnections
+    int IsValidHouse(int a1);  // 0x697e70 -- SessionClass::IsValidHouse
+    void* LoadMissionList();  // 0x699980 -- SessionClass::LoadMissionList
+    void* ParseGameInfo(int a1, int a2, int a3, int a4, int a5, int a6, int a7);  // 0x69a980 -- SessionClass::ParseGameInfo
+    int AssignSide(int a1, int a2);  // 0x69b760 -- SessionClass::AssignSide
+    int AssignColor(int a1, int a2);  // 0x69b7e0 -- SessionClass::AssignColor
+    int GetGameSpeed();  // 0x69bbe0 -- SessionClass::GetGameSpeed
+    void SetupNetwork();  // 0x69bd60 -- SessionClass::SetupNetwork
+    void ddtor();  // 0x69c4a0 -- SessionClass::ddtor
+    int Write(int a1);  // 0x69c4d0 -- SessionClass::Write
+    int Seek(int a1);  // 0x69c4f0 -- SessionClass::Seek
+    void* QueryInterface(int a1);  // 0x69c6c0 -- SessionClass::QueryInterface
+    int AddRef(int a1);  // 0x69c710 -- SessionClass::AddRef
+    int addPlayer(int a1, int a2);  // 0x69c750 -- SessionClass::addPlayer
+    void removePlayer();  // 0x69c800 -- SessionClass::removePlayer
+    int findPlayer(int a1);  // 0x69c830 -- SessionClass::findPlayer
+    int updatePlayer(int a1);  // 0x69c870 -- SessionClass::updatePlayer
+    int Release(int a1, int a2);  // 0x69c890 -- SessionClass::Release
+    int Read(int a1);  // 0x69c940 -- SessionClass::Read
+    void* validateGame(int a1);  // 0x69d460 -- SessionClass::validateGame
+    int RemoveTeam(int a1);  // 0x5d1d80 -- Session::RemoveTeam
+    int PrepareGame();  // 0x5e74e0 -- Session::PrepareGame
+    int StartGame();  // 0x5ed370 -- Session::StartGame
+    int GetPlayerOption();  // 0x69b700 -- Session::GetPlayerOption
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 } // namespace gamemd

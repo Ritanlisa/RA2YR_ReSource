@@ -98,6 +98,10 @@ private:
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int Constructor(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9);  // 0x555DA0
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    int SelectRLEBlitter(int a1);  // 0x490e50 -- LightConvertClass::SelectRLEBlitter
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 } // namespace gamemd

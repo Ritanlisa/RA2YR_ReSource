@@ -46,6 +46,15 @@ public:
     int Height;
     bool Crater;
     bool Burn;
+    public:  // symbol-anchor
+    // === SYMBOL-ANCHOR (BEGIN) ===
+    bool GetType(int a1, int a2);  // 0x6b5550 -- SmudgeTypeClass::GetType
+    void* GetFlag(int a1);  // 0x6b55c0 -- SmudgeTypeClass::GetFlag
+    void vt_entry_A0(int a1, int a2, int a3, int a4, int a5);  // 0x6b55f0 -- SmudgeTypeClass::vt_entry_A0
+    int GetSize(int a1);  // 0x6b56d0 -- SmudgeTypeClass::GetSize
+    int PowerDrainUpdate(int a1);  // 0x6b57f0 -- SmudgeTypeClass::PowerDrainUpdate
+    int GetAuxField();  // 0x6b6150 -- SmudgeTypeClass::GetAuxField
+    // === SYMBOL-ANCHOR (END) ===
 };
 
 } // namespace gamemd
