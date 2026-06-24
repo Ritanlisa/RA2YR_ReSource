@@ -154,6 +154,19 @@ if(WIN32)
             WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
             COMMENT "Auditing IDA↔JSON↔hpp name consistency"
         )
+
+        # Sync symbols: keep hpp + functions.json + IDA names in sync with cpp definitions.
+        # cpp function definitions (// 0xADDR) are the authoritative source.
+        # Runs as a PRE_BUILD dependency of gamemd; idempotent on success.
+        add_custom_target(sync-symbols
+            COMMAND ${Python3_EXECUTABLE} "${CMAKE_SOURCE_DIR}/tools/sync_symbols.py"
+            WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+            COMMENT "Syncing function names: cpp -> hpp -> functions.json -> IDA"
+        )
+        add_dependencies(gamemd sync-symbols)
+        if(TARGET hook_dll)
+            add_dependencies(hook_dll sync-symbols)
+        endif()
     else()
         message(WARNING "Python3 not found — skipping code quality checks")
     endif()
