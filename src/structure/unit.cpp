@@ -40,7 +40,7 @@ UnitClass::UnitClass() noexcept
 
 // 0x4151e0
 int UnitClass::Mission_Harvest()
-{}
+{ return 0; }
 
 int UnitClass::Mission_Unload()
 {
@@ -92,7 +92,7 @@ int UnitClass::ProcessExitQueue()
 // IDA: 0x6B6080 (CreateUnloadPlacementCraters, 167B)
 // 0x6b6080
 int UnitClass::CreateUnloadPlacementCraters(CellStruct* cell)
-{}
+{ return 0; }
 
 // IDA: 0x54E3B0 (GetExitCell, 288B)
 // 0x54e3b0
@@ -212,7 +212,7 @@ int UnitClass::UpdateRotation_TurretFacing_EMP()
 // IDA: 0x743A50 (Scatter, 1622B)
 // 0x743a50
 int UnitClass::Scatter(CellStruct* threatPos, bool a3, bool a4)
-{}
+{ return 0; }
 
 // IDA: 0x458A00 (IsCellBlockedByBridge, 121B)
 // 0x458a00
@@ -249,7 +249,7 @@ int UnitClass::CheckForNearbyEnemies()
 // IDA: 0x737C90 (OnUnderAttack, 2540B)
 // 0x737c90
 int UnitClass::OnUnderAttack(ObjectClass* attacker, int damage, int weaponIdx, CellStruct* sourceCell, int a8, bool a9, void* a10)
-{}
+{ return 0; }
 
 // ============================================================
 // Phase 3: Weapon Switching

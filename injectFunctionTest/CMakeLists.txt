@@ -27,7 +27,12 @@ set(HOOK_SOURCES
     shadow_txn.cpp
     headless_server.cpp
     element_tracker.cpp
-    blit_tracker.cpp
+    # blit_tracker.cpp excluded: it is the full DSurface::Blit REPLACE-hook body
+    # (headless render tracking). Its only consumer is the disabled #if 0 block in
+    # render_hooks.cpp, and it depends on XSurface::BlitPart which is intentionally
+    # absent (headless structure). Excluding it removes the LNK2019 unresolved
+    # external without implementing BlitPart. The 对拍/shadow-comparison pipeline
+    # (reverse_hooks/PostProcStub/shadow_txn/headless_server) does NOT depend on it.
     render_hooks.cpp
     "${CMAKE_CURRENT_SOURCE_DIR}/gen/reverse_hooks.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/gen/reverse_check.cpp"
