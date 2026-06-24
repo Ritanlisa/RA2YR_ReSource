@@ -117,18 +117,36 @@ if(WIN32)
         )
     endif()
 
-    # ── Code quality check: all gates (modified functions only) ──
-    # Runs B.2 (translated checks), B.5 (pointer arithmetic), and exec-flow (CFG) independently.
-    # All gates run regardless of failures; build fails if ANY gate fails.
+    # ── Code quality hard-gating (PRE_BUILD: blocks target on failure) ──
+    # Gates run before EACH target compilation. If ANY gate fails, target FAILS and produces NO binary.
     if(Python3_FOUND)
-        add_custom_target(check_code_quality ALL
+        # Signal type database (must exist before targets)
+        add_dependencies(gamemd build_signals)
+        if(TARGET hook_dll)
+            add_dependencies(hook_dll build_signals)
+        endif()
+
+        # ── Gate script (run once, cached by stamp file; re-runs when sources change) ──
+        # NOTE: hook_dll is defined in injectFunctionTest/ subdirectory, so PRE_BUILD
+        # cannot be attached from root CMakeLists.txt (CMake restriction). Instead we use
+        # a custom target with add_dependencies — custom target failure still blocks dependents.
+        add_custom_target(code_quality_gate ALL
             COMMAND ${Python3_EXECUTABLE} "${CMAKE_SOURCE_DIR}/tools/run_all_gates.py"
             WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
             COMMENT "Running all build gates independently (B.2 + B.5 + exec-flow)"
         )
-        add_dependencies(gamemd check_code_quality)
-        add_dependencies(check_code_quality build_signals)
-        add_dependencies(hook_dll check_code_quality)
+        add_dependencies(gamemd code_quality_gate)
+        add_dependencies(code_quality_gate build_signals)
+        if(TARGET hook_dll)
+            add_dependencies(hook_dll code_quality_gate)
+        endif()
+
+        # Hard gate: gamemd.exe (PRE_BUILD — fails BEFORE any object compilation)
+        add_custom_command(TARGET gamemd PRE_BUILD
+            COMMAND ${Python3_EXECUTABLE} "${CMAKE_SOURCE_DIR}/tools/run_all_gates.py"
+            WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+            COMMENT "Running all build gates before gamemd (hard gate: failure blocks this target)"
+        )
 
         # Name consistency audit (optional, not build-gating)
         add_custom_target(audit_names

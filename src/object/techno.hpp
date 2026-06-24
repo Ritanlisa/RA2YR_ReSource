@@ -427,7 +427,7 @@ public:
     virtual int GetAverageDamageScore() const;  // 0x7414A0
     virtual int ProcessSpecialUnitDeployCrush();  // 0x7416A0
     virtual int FireWeaponBurst();  // 0x741340
-    virtual int GetWeaponRange(int weapon_index) const; // IDA: NOT_FOUND
+    virtual int GetWeaponRange(int weapon_index) const; // 0x773070
     virtual int FireWeapon(); // 0x6FDD50
     virtual int CreateFireEffect();  // 0x6FD210
     virtual int CreateFireBeamEffect();  // 0x6FD620
