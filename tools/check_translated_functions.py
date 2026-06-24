@@ -586,6 +586,69 @@ def _selftest_cast_then_call():
     return True
 
 
+def _selftest_stub_accessor():
+    """Regression tests for the stub-vs-accessor distinction (Task B.2 fix).
+
+    A single-line `return <real-expr>;` accessor (operator[], member access,
+    function call, scope resolution, arithmetic) is LEGITIMATE — NOT a stub.
+    Constant-return placeholders (return 0/nullptr/false/true/{};) and empty
+    bodies ARE stubs and must stay flagged.
+    Run via:  python check_translated_functions.py --selftest
+    """
+    # (sig_text, body_lines) → must NOT be flagged as stub (legitimate accessors)
+    accessor_cases = [
+        ('TechnoClass* const& RadioClass::getNthLink(int idx) const {',
+         ['TechnoClass* const& RadioClass::getNthLink(int idx) const { return radioLinks[idx]; }\n']),
+        ('bool RadioClass::hasAnyLink() const {',
+         ['bool RadioClass::hasAnyLink() const { return radioLinks.Count > 0; }\n']),
+        ('int Foo::getX() const {',
+         ['int Foo::getX() const { return this->x; }\n']),
+        ('int Foo::ptrX() const {',
+         ['int Foo::ptrX() const { return p->value; }\n']),
+        ('int Foo::call() {',
+         ['int Foo::call() { return Compute(); }\n']),
+        ('int Foo::arith() const {',
+         ['int Foo::arith() const { return a + b; }\n']),
+        ('int Foo::scope() const {',
+         ['int Foo::scope() const { return Constants::Max; }\n']),
+        # multi-line accessor (still a single return statement)
+        ('int Foo::bar() const {',
+         ['int Foo::bar() const {\n', '    return m_arr[3].field;\n', '}\n']),
+    ]
+    # (sig_text, body_lines) → MUST be flagged as stub (constant returns / empty)
+    stub_cases = [
+        ('int Foo::stub0() {',       ['int Foo::stub0() { return 0; }\n']),
+        ('void* Foo::stubNull() {',  ['void* Foo::stubNull() { return nullptr; }\n']),
+        ('bool Foo::stubFalse() {',  ['bool Foo::stubFalse() { return false; }\n']),
+        ('bool Foo::stubTrue() {',   ['bool Foo::stubTrue() { return true; }\n']),
+        ('Foo Foo::stubEmpty() {',   ['Foo Foo::stubEmpty() { return {}; }\n']),
+        ('void Foo::stubVoid() {',   ['void Foo::stubVoid() {}\n']),
+        ('int Foo::stubNum() {',     ['int Foo::stubNum() { return 1; }\n']),
+        # multi-line constant stub
+        ('int Foo::stubML() {',      ['int Foo::stubML() {\n', '    return 0;\n', '}\n']),
+    ]
+    failures = []
+    for sig, body_lines in accessor_cases:
+        nums = list(range(1, len(body_lines) + 1))
+        is_stub, reason = _check_stub(body_lines, nums, sig)
+        if is_stub:
+            failures.append(f'  EXPECTED ACCESSOR (not stub) but flagged: '
+                            f'{sig.rstrip(" {")} -> {reason}')
+    for sig, body_lines in stub_cases:
+        nums = list(range(1, len(body_lines) + 1))
+        is_stub, _reason = _check_stub(body_lines, nums, sig)
+        if not is_stub:
+            failures.append(f'  EXPECTED STUB but passed: {sig.rstrip(" {")}')
+    if failures:
+        print('SELFTEST FAILED (stub-vs-accessor):')
+        for f in failures:
+            print(f)
+        return False
+    print(f'SELFTEST PASSED: {len(accessor_cases)} accessor-case(s) + '
+          f'{len(stub_cases)} stub-case(s) OK')
+    return True
+
+
 def _split_params(params_str):
     """Split parameter string by commas, respecting nested <> and ()."""
     params = []
@@ -1093,6 +1156,95 @@ def _check_body_for_violations(body_lines, body_line_nums, func_start_line, sig_
     return violations
 
 
+# ── Legitimate-accessor detection (Task B.2 stub false-positive fix) ──
+#
+# A 1-line function whose entire body is a single `return <real-expr>;` is a
+# LEGITIMATE accessor, NOT a stub — even though it has < 3 real code lines.
+# Examples (NOT stubs):
+#     TechnoClass* const& RadioClass::getNthLink(int idx) const { return radioLinks[idx]; }
+#     bool RadioClass::hasAnyLink() const { return radioLinks.Count > 0; }
+# These return a NON-CONSTANT expression: operator[] on an object, member access
+# (. / ->), a function call, scope resolution (::), arithmetic/comparison, etc.
+#
+# Only CONSTANT-return placeholders are genuine stubs and stay flagged:
+#     { return 0; }  { return nullptr; }  { return false; }  { return true; }
+#     { return {}; }  {}  (empty body)
+
+# Chars/operators in a return expression that indicate real computation/access:
+#   [ ]      operator[] indexing                radioLinks[idx]
+#   ( )      function call / cast invocation    Compute()
+#   .        member access                      obj.field
+#   - > (->) member access through pointer       p->field   (also comparison <,>)
+#   :        scope resolution (::) / ternary    Constants::Max , a ? b : c
+#   + * / % & | ^ ~ < > ? arithmetic/comparison/logical/bitwise
+_RE_REAL_EXPR_INDICATOR = re.compile(r'[\[\]().?:]|[-+*/%<>&|^~]')
+
+# Constant return values (after whitespace removal) that mark a genuine stub.
+_STUB_RETURN_CONSTANTS = {'0', 'nullptr', 'NULL', 'false', 'true', '{}', '{0}', ''}
+
+
+def _accessor_body_expr(body_lines):
+    """If the function body is a single `return <expr>;` statement, return <expr>
+    (stripped). Otherwise return None.
+
+    Comments (block + line) are stripped first. The body is the text between the
+    first '{' and its matching '}'. A single statement means exactly one ';' and
+    the statement begins with `return`.
+    """
+    text = _strip_block_comments(''.join(body_lines))
+    text = re.sub(r'//[^\n]*', '', text)  # strip line comments
+
+    open_i = text.find('{')
+    if open_i < 0:
+        return None
+    depth = 0
+    close_i = -1
+    for k in range(open_i, len(text)):
+        if text[k] == '{':
+            depth += 1
+        elif text[k] == '}':
+            depth -= 1
+            if depth == 0:
+                close_i = k
+                break
+    if close_i < 0:
+        return None
+
+    inner = text[open_i + 1:close_i].strip()
+    if not inner.startswith('return'):
+        return None
+    # Token boundary: `return` must be a whole word (not `returnFoo`)
+    if len(inner) > len('return') and (inner[len('return')].isalnum()
+                                        or inner[len('return')] == '_'):
+        return None
+    # Strip the single trailing ';' then ensure it was the only statement
+    if inner.endswith(';'):
+        inner = inner[:-1].rstrip()
+    if ';' in inner:
+        return None  # more than one statement → not a simple accessor
+    return inner[len('return'):].strip()
+
+
+def _is_legitimate_accessor(body_lines):
+    """True if the body is a single `return <real-expr>;` accessor (non-constant).
+
+    Returns False for constant-return placeholders (return 0/nullptr/false/true/{};)
+    and for empty bodies — those remain genuine stubs.
+    """
+    expr = _accessor_body_expr(body_lines)
+    if expr is None:
+        return False
+    norm = expr.replace(' ', '').replace('\t', '')
+    # Genuine stub constants → NOT an accessor
+    if norm in _STUB_RETURN_CONSTANTS:
+        return False
+    # Pure numeric literal (e.g. `return 0;`, `return 0x0;`, `return 1;`) → stub
+    if re.fullmatch(r'0[xX][0-9A-Fa-f]+[uUlL]*|\d+[uUlL]*', norm):
+        return False
+    # Real computation/access indicator present → legitimate accessor
+    return bool(_RE_REAL_EXPR_INDICATOR.search(expr))
+
+
 def _check_stub(body_lines, body_line_nums, sig_text):
     """Check if a function is a stub or comment shell.
 
@@ -1122,7 +1274,10 @@ def _check_stub(body_lines, body_line_nums, sig_text):
             has_stub_marker = True
 
     # Rule 1: < 3 real code lines → stub
-    if real_code_lines < 3:
+    #   EXCEPTION: a single `return <real-expr>;` accessor (operator[], member
+    #   access, function call, arithmetic) is legitimate, NOT a stub. Only
+    #   constant-return placeholders (return 0/nullptr/false/true/{};) stay flagged.
+    if real_code_lines < 3 and not _is_legitimate_accessor(body_lines):
         extra = ''
         if has_stub_marker:
             extra += ' (has // TODO/stub/FIXME)'
@@ -1291,13 +1446,16 @@ Use --files to check all functions in specific file(s).
     parser.add_argument('--max-ida-stub-ratio', type=float, default=0.3,
                         help='Ratio below this is LIKELY_STUB (default: 0.3)')
     parser.add_argument('--selftest', action='store_true',
-                        help='Run internal regression tests for cast-then-call detection and exit')
+                        help='Run internal regression tests (cast-then-call + '
+                             'stub-vs-accessor detection) and exit')
     parser.add_argument('files', nargs='*', metavar='FILE',
                         help='Check ALL functions in specified .cpp files (bypasses git diff)')
     args = parser.parse_args()
 
     if args.selftest:
-        sys.exit(0 if _selftest_cast_then_call() else 1)
+        ok_cast = _selftest_cast_then_call()
+        ok_stub = _selftest_stub_accessor()
+        sys.exit(0 if (ok_cast and ok_stub) else 1)
 
     repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
