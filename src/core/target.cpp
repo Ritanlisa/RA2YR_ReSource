@@ -32,7 +32,7 @@ ObjectClass* FindObjectByTypeAndId(AbstractType kind, int id)
     auto& objects = CurrentObjects;
     for (int i = 0; i < objects.Count; ++i)
     {
-        auto* obj = objects.Items[i];
+        auto* obj = objects[i];
         if (obj && obj->whatAmI() == kind && obj->arrayIndex() == id)
         {
             return obj;

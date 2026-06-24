@@ -421,52 +421,169 @@ def _has_pointer_cast_inner(text, open_pos, close_pos):
     return '*' in inner
 
 
+# Calling-convention function-pointer marker: __thiscall* / __cdecl* / __stdcall* / ...
+# (a '*' immediately after a calling convention indicates a function-pointer type)
+_FUNC_PTR_CONV_RE = re.compile(r'__(?:thiscall|cdecl|stdcall|fastcall|vectorcall)\s*\*')
+
+
 def _has_func_ptr_cast_inner(text, open_pos, close_pos):
     """Check if text between (open_pos, close_pos) contains a function-POINTER cast.
-    Function pointer types have (* syntax: void(*)(int), void(__thiscall*)(...), etc.
-    Simple pointer casts like (int*) or (char*) should NOT trigger this."""
+
+    Function pointer types are recognized by either:
+      - '(*' syntax: void(*)(int), int(*)(void)
+      - a calling convention adjacent to '*': void(__thiscall*)(int), void(__cdecl *)(...)
+    Simple DATA-pointer casts like (int*), (char*), or (TechnoClass*) do NOT trigger this."""
     inner = text[open_pos + 1:close_pos]
-    return '(*' in inner
+    if '(*' in inner:
+        return True
+    if _FUNC_PTR_CONV_RE.search(inner):
+        return True
+    return False
 
 
 def _find_cast_then_call(line):
-    """Find patterns like ((type)expr)(args) where callee is a cast expression.
+    """Find GENUINE call-through-cast: ((funcptrtype)value)(args).
 
-    Scans for )...( patterns where the matching ( for the closing )
-    wraps a cast expression (contains * or starts with alpha/identifier).
+    Only flags when the callee is a FUNCTION-POINTER cast that is INVOKED — the IDA
+    decompile artifact form, e.g. ((void(*)(int))ptr)(args) or
+    ((SomeFuncType)0x401000)(this): a raw address/value cast to a function-pointer
+    type and then called.
+
+    Deliberately IGNORES (these are §8-mandated C-style casts, NOT violations):
+      - data-pointer casts used as values/arguments: (TechnoClass*)(this), (uint32_t)(x)
+      - casts whose result is used with member access: (T)(expr)->Method(), (T)(expr).Method()
+      - casts in argument position: foo((T)(x), ...)
+
+    Key insight: a single-paren cast `(type)(operand)` is ALWAYS a cast (never a call),
+    because to invoke a cast result you must wrap it: `((cast)value)(args)`. Therefore
+    only the double-paren wrapped form — where the callee paren-group itself contains a
+    cast applied to a value, or a function-pointer cast type — is a call-through-cast.
 
     Returns list of (col, snippet) tuples.
     """
     violations = []
     i = 0
     while i < len(line):
-        if line[i] == '(':
-            # Check if this ( is preceded by ) — indicating )...(
-            j = i - 1
-            while j >= 0 and line[j] in ' \t':
-                j -= 1
-            if j >= 0 and line[j] == ')':
-                # Found )...( pattern — likely cast-then-call
-                # Verify: find the matching ( for that closing )
-                depth = 0
-                k = j
-                while k >= 0:
-                    if line[k] == ')':
-                        depth += 1
-                    elif line[k] == '(':
-                        depth -= 1
-                        if depth == 0:
-                            # Check if this ( looks like a cast:
-                            # contains * (pointer/function-ptr type) or starts with alpha
-                            after_paren = line[k + 1:j].strip()
-                            if after_paren and ('*' in after_paren or after_paren[0].isalpha()):
-                                violations.append((i, line[k:j + 1] + line[j + 1:i + 1]))
-                            break
-                    k -= 1
+        if line[i] != '(':
             i += 1
             continue
+
+        # Is this '(' preceded (skipping spaces) by ')' ?  → )(  candidate for (X)(Y)
+        j = i - 1
+        while j >= 0 and line[j] in ' \t':
+            j -= 1
+        if j < 0 or line[j] != ')':
+            i += 1
+            continue
+
+        # Find the matching '(' for the closing ')' at j → the callee group (open_k .. j)
+        open_k = _find_matching_paren(line, j, 'backward')
+        if open_k < 0:
+            i += 1
+            continue
+        callee = line[open_k + 1:j].strip()  # X in  (X)(Y)
+        if not callee:
+            i += 1
+            continue
+
+        # ── SKIP: cast in argument position (char before the callee '(' is '(' or ',') ──
+        p = open_k - 1
+        while p >= 0 and line[p] in ' \t':
+            p -= 1
+        if p >= 0 and line[p] in '(,':
+            i += 1
+            continue
+
+        # ── SKIP: operand group (Y) used with member access  (T)(expr)->M() / .M() ──
+        #    (user directive: cast-then-call must ignore casts called via -> / .)
+        close_y = _find_matching_paren(line, i, 'forward')
+        if close_y >= 0:
+            q = close_y + 1
+            while q < len(line) and line[q] in ' \t':
+                q += 1
+            if q < len(line) and (line[q] == '.' or line[q:q + 2] == '->'):
+                i += 1
+                continue
+
+        # ── FLAG only when the callee is a function-pointer cast invocation ──
+        if _is_func_ptr_callee(line, open_k, j, callee):
+            violations.append((i, line[open_k:j + 1] + line[j + 1:i + 1]))
         i += 1
     return violations
+
+
+def _is_func_ptr_callee(line, open_k, close_j, callee):
+    """Decide whether callee  X  in  (X)(args)  is a function-pointer invocation.
+
+    True when:
+      1. X is a function-pointer cast type ('(*' or a calling convention), e.g.
+         (void(*)(int))ptr , (void(__thiscall*)(int))ptr
+      2. X is a wrapped cast applied to a value: ((cast)value), e.g.
+         ((SomeFuncType)0x401000) , ((MyFuncPtr)addr)
+         (by C++ grammar this double-paren form is only ever a call-through-cast).
+    False for plain DATA casts where the type IS the callee text itself
+    (TechnoClass*, uint32_t, RadioCommand) → single-paren `(type)(operand)` cast.
+    """
+    # (1) function-pointer type directly present in the callee cast
+    if _has_func_ptr_cast_inner(line, open_k, close_j):
+        return True
+    # (2) wrapped cast-to-value:  callee starts with a complete '(...)' then a value
+    if callee.startswith('('):
+        depth = 0
+        end_inner = -1
+        for idx_c, ch in enumerate(callee):
+            if ch == '(':
+                depth += 1
+            elif ch == ')':
+                depth -= 1
+                if depth == 0:
+                    end_inner = idx_c
+                    break
+        if end_inner > 0:
+            inner_cast = callee[1:end_inner].strip()
+            value = callee[end_inner + 1:].strip()
+            if inner_cast and value:
+                return True
+    return False
+
+
+def _selftest_cast_then_call():
+    """Regression tests for the cast-then-call detector (Task B.2 false-positive fix).
+
+    Verifies genuine call-through-cast is still caught while §8-mandated C-style data
+    casts are ignored. Run via:  python check_translated_functions.py --selftest
+    """
+    must_flag = [
+        '((void(*)(int))ptr)(args);',                    # classic function-pointer cast call
+        '((void(__thiscall*)(int))ptr)(this);',          # calling-convention func-ptr cast call
+        '((SomeFuncType)0x401000)(this);',               # raw address func-ptr cast invocation
+        'r = ((int(__cdecl*)(int,int))0x4012AB)(a, b);', # raw cdecl func-ptr cast invocation
+    ]
+    must_ignore = [
+        'radioLinks[i]->ReceiveCommand((TechnoClass*)(this), command, dummy);',  # arg-position cast
+        'radioLinks[i] = (TechnoClass*)(ptr_raw);',                              # data cast (assign)
+        'uint32_t ptr_raw = (uint32_t)(radioLinks[i]);',                         # data cast (assign)
+        'return (RadioCommand)(0);',                                             # data cast of literal
+        'x = (TechnoClass*)(this)->Type;',                                       # cast-then-member (->)
+        'y = (FooClass*)(obj).Value;',                                           # cast-then-member (.)
+        'foo((BarClass*)(this), n);',                                            # cast in arg position
+    ]
+    failures = []
+    for s in must_flag:
+        if not _find_cast_then_call(s):
+            failures.append(f'  EXPECTED FLAG but got none: {s}')
+    for s in must_ignore:
+        hits = _find_cast_then_call(s)
+        if hits:
+            failures.append(f'  EXPECTED IGNORE but flagged: {s}')
+    if failures:
+        print('SELFTEST FAILED (cast-then-call):')
+        for f in failures:
+            print(f)
+        return False
+    print(f'SELFTEST PASSED: {len(must_flag)} flag-case(s) + '
+          f'{len(must_ignore)} ignore-case(s) OK')
+    return True
 
 
 def _split_params(params_str):
@@ -1173,9 +1290,14 @@ Use --files to check all functions in specific file(s).
                         help='Minimum ratio for IDA LIKELY_REAL (default: 0.3)')
     parser.add_argument('--max-ida-stub-ratio', type=float, default=0.3,
                         help='Ratio below this is LIKELY_STUB (default: 0.3)')
+    parser.add_argument('--selftest', action='store_true',
+                        help='Run internal regression tests for cast-then-call detection and exit')
     parser.add_argument('files', nargs='*', metavar='FILE',
                         help='Check ALL functions in specified .cpp files (bypasses git diff)')
     args = parser.parse_args()
+
+    if args.selftest:
+        sys.exit(0 if _selftest_cast_then_call() else 1)
 
     repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 

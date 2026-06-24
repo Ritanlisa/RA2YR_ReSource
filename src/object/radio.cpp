@@ -28,7 +28,7 @@ RadioClass::RadioClass() noexcept
     radioLinks.Items = new TechnoClass*[1];
     radioLinks.Capacity = 1;
     radioLinks.Count = 1;
-    radioLinks.Items[0] = nullptr; // IDA: first slot = 0
+    radioLinks[0] = nullptr; // IDA: first slot = 0
 
     // Initialize lastCommands
     lastCommands[0] = -1;
@@ -79,10 +79,10 @@ void RadioClass::sendToEachLink(RadioCommand command)
 {
     for (int i = 0; i < radioLinks.Count; ++i)
     {
-        if (radioLinks.Items[i])
+        if (radioLinks[i])
         {
             AbstractClass* dummy = nullptr;
-            radioLinks.Items[i]->ReceiveCommand((TechnoClass*)(this), command, dummy);
+            radioLinks[i]->ReceiveCommand((TechnoClass*)(this), command, dummy);
         }
     }
 }
@@ -101,11 +101,11 @@ void RadioClass::ExecuteAction(TechnoClass* obj, bool clear)
     int count = radioLinks.Count;
     for (int i = 0; i < count; ++i)
     {
-        TechnoClass* link = radioLinks.Items[i];
+        TechnoClass* link = radioLinks[i];
         if (link == obj)
         {
             if (clear)
-                radioLinks.Items[i] = nullptr;
+                radioLinks[i] = nullptr;
         }
     }
 }
@@ -126,7 +126,7 @@ int RadioClass::FindLinkIndex(TechnoClass* obj)
 
     for (int i = 0; i < count; ++i)
     {
-        if (radioLinks.Items[i] == obj)
+        if (radioLinks[i] == obj)
             return i;
     }
     return -1;
@@ -146,7 +146,7 @@ bool RadioClass::hasFreeLink() const
 
     for (int i = 0; i < count; ++i)
     {
-        if (!radioLinks.Items[i])
+        if (!radioLinks[i])
             return true;
     }
     return false;
@@ -168,7 +168,7 @@ void RadioClass::PowerDrainUpdate()
 
     for (int i = 0; i < radioLinks.Count; ++i)
     {
-        TechnoClass* link = radioLinks.Items[i];
+        TechnoClass* link = radioLinks[i];
         if (link)
         {
             // IDA: vtable[16] (offset 0x40 in vtable[0]) — COM method
@@ -225,7 +225,7 @@ HRESULT RadioClass::LoadState(IStream* stream)
         radioLinks.Items = new TechnoClass*[1];
         radioLinks.Capacity = 1;
         radioLinks.Count = 1;
-        radioLinks.Items[0] = nullptr;
+        radioLinks[0] = nullptr;
     }
 
     // IDA: IStream::Read(stream, &count, 4, nullptr)
@@ -249,14 +249,14 @@ HRESULT RadioClass::LoadState(IStream* stream)
         hr = stream->Read(&ptr_raw, 4, &bytes_read);
         if (FAILED(hr) || bytes_read != 4)
             return FAILED(hr) ? hr : E_FAIL;
-        radioLinks.Items[i] = (TechnoClass*)(ptr_raw);
+        radioLinks[i] = (TechnoClass*)(ptr_raw);
     }
 
-    // IDA: ObjectPtr::RegisterForTracking(&SwizzleManager, &radioLinks.Items[i])
+    // IDA: ObjectPtr::RegisterForTracking(&SwizzleManager, &radioLinks[i])
     // Registers each link pointer for pointer swizzling after load.
     for (int i = 0; i < link_count; ++i)
     {
-        // ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &radioLinks.Items[i]);
+        // ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, &radioLinks[i]);
     }
 
     return S_OK;
@@ -285,7 +285,7 @@ HRESULT RadioClass::SaveState(IStream* stream, int clear_dirty)
     // IDA: Write each link pointer
     for (int i = 0; i < link_count; ++i)
     {
-        uint32_t ptr_raw = (uint32_t)(radioLinks.Items[i]);
+        uint32_t ptr_raw = (uint32_t)(radioLinks[i]);
         hr = stream->Write(&ptr_raw, 4, &bytes_written);
         if (FAILED(hr) || bytes_written != 4)
             return FAILED(hr) ? hr : E_FAIL;
@@ -312,7 +312,7 @@ void RadioClass::SetLinkCount(int count)
             int newCap = count;
             auto* newItems = new TechnoClass*[newCap];
             for (int i = 0; i < oldCount; ++i)
-                newItems[i] = radioLinks.Items[i];
+                newItems[i] = radioLinks[i];
             delete[] radioLinks.Items;
             radioLinks.Items = newItems;
             radioLinks.Capacity = newCap;
@@ -320,7 +320,7 @@ void RadioClass::SetLinkCount(int count)
 
         // Zero new slots
         for (int i = oldCount; i < count; ++i)
-            radioLinks.Items[i] = nullptr;
+            radioLinks[i] = nullptr;
 
         radioLinks.Count = count;
     }
@@ -337,7 +337,7 @@ namespace ra2 { namespace game {
 
 HRESULT __stdcall RadioClass::Load(IStream* stream) { return S_OK; }
 HRESULT __stdcall RadioClass::Save(IStream* stream, int clear_dirty) { return S_OK; }
-TechnoClass* const& RadioClass::getNthLink(int idx) const { return radioLinks.Items[idx]; }
+TechnoClass* const& RadioClass::getNthLink(int idx) const { return radioLinks[idx]; }
 bool RadioClass::hasAnyLink() const { return radioLinks.Count > 0; }
 
 } // namespace game
