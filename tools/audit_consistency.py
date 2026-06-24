@@ -83,20 +83,57 @@ def normalize_addr(addr):
 
 # --- HPP annotation extraction ---
 
-def _find_enclosing_class(lines, line_no):
-    """Find enclosing class or namespace name for a line (0-indexed). Returns name or None."""
-    for j in range(line_no, max(0, line_no - 800), -1):
-        cls_match = re.search(r'^\s*(?:class|struct|namespace)\s+(\w+)', lines[j])
+def _compute_bracket_depth(lines):
+    """Compute bracket nesting depth BEFORE each line.
+    
+    Returns list where depth[i] = depth before processing line i.
+    depth[0] = 0 (file start).
+    """
+    depth = [0] * (len(lines) + 1)
+    d = 0
+    for i in range(len(lines)):
+        depth[i] = d
+        d += lines[i].count('{') - lines[i].count('}')
+    depth[len(lines)] = d
+    return depth
+
+
+def _find_enclosing_class(lines, line_no, depth=None):
+    """Find enclosing class or struct name for a line (0-indexed).
+    
+    Args:
+        lines: file lines
+        line_no: 0-indexed line number of the annotation
+        depth: precomputed bracket depth array (optional, computed if None)
+    
+    Returns class/struct name or None.
+    Does NOT return namespace names — only class/struct bodies.
+    Skips forward declarations: "class Foo;" or "struct Bar;" (line ends with ';').
+    Accepts: "class Foo {" or multi-line "class Foo : public Bar" (no ';' on line).
+    
+    No arbitrary line limit — scans to file start using precomputed depth.
+    """
+    if depth is None:
+        depth = _compute_bracket_depth(lines)
+    
+    target_d = depth[min(line_no, len(depth) - 1)]
+    
+    for j in range(line_no, -1, -1):
+        cls_match = re.search(r'^\s*(?:class|struct)\s+(\w+)', lines[j])
         if not cls_match:
             continue
-        name = cls_match.group(1)
-        # Verify we are inside the body (brace depth > 0 after processing declaration)
-        depth = 0
-        for k in range(j, min(len(lines), line_no + 1)):
-            depth += lines[k].count('{') - lines[k].count('}')
-            if depth > 0:
-                return name
-        return None
+        
+        decl_d = depth[min(j, len(depth) - 1)]
+        if decl_d >= target_d:
+            continue  # declaration is at same or deeper level — not enclosing
+        
+        # Skip forward declarations: line ends with ';' → no body
+        # e.g. "class WinsockInterfaceClass;"
+        stripped = lines[j].rstrip()
+        if stripped.endswith(';'):
+            continue
+        
+        return cls_match.group(1)
     return None
 
 def extract_hpp_annotations(directories):
@@ -128,6 +165,8 @@ def extract_hpp_annotations(directories):
             except Exception:
                 continue
             rel = str(hpp.relative_to(ROOT))
+            # Precompute bracket depth once per file for efficient enclosing-class lookup
+            depth = _compute_bracket_depth(lines)
             for lineno, line in enumerate(lines, 1):
                 m = addr_pattern.search(line)
                 if not m:
@@ -168,10 +207,12 @@ def extract_hpp_annotations(directories):
                         if cname and ':' in cname:
                             name = cname
                 
-                # Resolve class/namespace context: if name has no :: prefix and we are 
-                # inside a class or namespace body, prepend the context name
+                # Resolve class context: if name has no :: prefix and we are 
+                # inside a class/struct body, prepend the class name.
+                # Namespace names are intentionally NOT prepended — functions.json
+                # uses bare names for namespace-scoped functions.
                 if name and '::' not in name:
-                    cls_name = _find_enclosing_class(lines, lineno - 1)
+                    cls_name = _find_enclosing_class(lines, lineno - 1, depth)
                     if cls_name:
                         name = f"{cls_name}::{name}"
                 

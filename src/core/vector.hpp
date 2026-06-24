@@ -216,6 +216,61 @@ public:
     int Capacity = 0;
     bool IsInitialized = true;
     bool IsAllocated = false;
+
+    // ========================================================================
+    // IDA-named alias methods (for template specialization stubs)
+    // These match IDA function names. Delegates to existing methods where possible.
+    // Marked virtual to match original binary vtable layout.
+    // ========================================================================
+
+    virtual int QueryInterface() { return 0; }
+    virtual int AddRef() { return 0; }
+    virtual int Release() { return 0; }
+
+    virtual T Get(int i) const { return GetItem(i); }
+    virtual int GetCount() const { return Capacity; }
+    virtual int GetCapacity() const { return Capacity; }
+    virtual T GetAt(int i) const { return GetItem(i); }
+    virtual int GetPtrOffset(int) { return 0; }
+    virtual int GetClassIdentifier() const { return 0; }
+    virtual int GetIndex(const T& item) const { return FindItemIndex(item); }
+    virtual int GetSize() const { return Capacity; }
+
+    virtual bool Add(T item) { return false; }
+    virtual bool Remove(int index) { return false; }
+    virtual bool IsEqualTo(const T&) const { return false; }
+
+    virtual void SetAt(int, T) {}
+    virtual void LoadTypeData() {}
+    virtual void SaveToINI() {}
+    virtual void ProcessAll() {}
+    virtual void ClearBuffer() { Clear(); }
+    virtual void Destroy() { delete this; }
+    virtual void ddtor() { delete this; }
+    virtual void TryFreeAndClear() { Clear(); }
+
+    virtual int IndexOf(const T&) const { return -1; }
+    virtual int FindValue(const T& item) const { return FindItemIndex(item); }
+    virtual int HashEntryCompare(const T&) const { return 0; }
+    virtual int PointerToIndex(const T& ptr) const { return GetItemIndex(&ptr); }
+
+    virtual void Read() {}
+    virtual void Write() {}
+    virtual void Seek() {}
+    virtual int FindItem(const T&) const { return -1; }
+    virtual int Count() { return Capacity; }
+    virtual void FreeData() { Clear(); }
+    virtual void AllocCopyData_4B() {}
+    virtual void AllocCopyData_8B() {}
+
+    virtual void* j_vt00() { return nullptr; }
+    virtual void j_vt09() {}
+    virtual int vt_00() { return 0; }
+    virtual int vt_02() { return 0; }
+    virtual int vt_03() { return 0; }
+    virtual int vt_04() { return 0; }
+    virtual int vt_05() { return 0; }
+    virtual int vt_19() { return 0; }
 };
 
 template <typename T>
