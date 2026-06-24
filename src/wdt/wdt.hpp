@@ -120,7 +120,7 @@ public:
     void AddRef() noexcept {} // IDA: NOT_FOUND
     void Release() noexcept {} // IDA: NOT_FOUND
 
-    virtual WDTError LoadConfig(); // IDA: NOT_FOUND
+    virtual WDTError LoadConfig(); // 0x5981f0
     virtual WDTError SaveConfig(); // IDA: NOT_FOUND
 
     int             Players;

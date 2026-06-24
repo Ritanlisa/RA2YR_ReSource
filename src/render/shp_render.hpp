@@ -36,7 +36,7 @@ public:
 
     const uint8_t* GetPixelData(int frame_index) const;
 
-    void RenderToSurface( // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    void RenderToSurface( // 0x5d1e70
         Surface* surface, int frame_index,
         int dest_x, int dest_y,
         const uint8_t palette[256][4]);

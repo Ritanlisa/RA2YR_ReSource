@@ -51,7 +51,7 @@ public:
     }
 
     template <typename T, typename TAlloc>
-    static void Delete(TAlloc& alloc, T* ptr) // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    static void Delete(TAlloc& alloc, T* ptr) // 0x65d190
     {
         if (ptr)
         {

@@ -11,7 +11,21 @@ struct SHPStruct { int unused; };
 #ifndef GAMEMD_VOXEL_STRUCT_FULL
 struct VoxelStruct { int unused; };
 #endif
-struct SomeVoxelCache { int unused; };
+// SomeVoxelCache — 20 bytes (0x14). IDA-validated: each element of ObjectTypeClass::VoxelCaches[4]
+// is a {ptr, dword, dword, byte, dword} group. Confirmed by ObjectTypeClass::ConstructFull
+// (0x5F7090) zero-init of this+580/584/588/(byte)592/596 .. this+656, and ObjectTypeClass::Destruct
+// (0x5F7400) which `operator delete`s the [+0] pointer of each of the four groups. 4 * 20 = 80 bytes
+// occupy [0x244,0x294), closing ObjectTypeClass at sizeof 0x294 (660) — i.e. exactly where
+// VoxelAnimTypeClass's first own member (Normalized) begins (ctor 0x74AD80 writes byte 660).
+struct SomeVoxelCache
+{
+    void*    CachedBuffer;      // +0x00 — freed via operator delete in ObjectTypeClass::Destruct
+    int      field_4;           // +0x04
+    int      field_8;           // +0x08
+    bool     field_C;           // +0x0C — only this byte cleared by ctor/dtor (flag)
+    uint8_t  pad_D[3];          // +0x0D — alignment padding to the next dword
+    int      field_10;          // +0x10
+};  // sizeof = 0x14 (20)
 class BuildingClass;
 class HouseClass;
 class HouseTypeClass;

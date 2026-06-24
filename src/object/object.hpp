@@ -217,7 +217,7 @@ public:
     // [89] 0x5F4380 AbstractClass::COMStub_89
     virtual bool IsCloseEnough3D(uint32_t a, uint32_t b) const = 0; // IDA: NOT_FOUND
     // [90] 0x5F4390 AbstractClass::COMStub_90
-    virtual int GetWeaponRange(int weapon_idx) const; // IDA: NOT_FOUND
+    virtual int GetWeaponRange(int weapon_idx) const; // 0x773070
     // [91] 0x5F5390 TechnoClass::CreateDestructionEffect
     virtual DamageState ReceiveDamage(int* damage, int distance_from_epicenter, WarheadTypeClass* wh,
         ObjectClass* attacker, bool ignore_defenses, bool prevent_passenger_escape, HouseClass* attacking_house);

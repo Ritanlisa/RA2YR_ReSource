@@ -423,7 +423,7 @@ inline bool HashTable<const char*, int>::CompareStringKey(const char* const& key
 class Hash
 {
 public:
-    Hash() : Hash_field_00(0), Hash_field_04(0) {} // IDA: NOT_FOUND
+    Hash() : Hash_field_00(0), Hash_field_04(0) {} // 0x5dac00
 
     // IDA 0x69D8C0
     static uint32_t ComputeHashSHA1(const void* data, uint32_t size);  // 0x476D80

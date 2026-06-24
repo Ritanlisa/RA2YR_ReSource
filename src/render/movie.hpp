@@ -55,7 +55,7 @@ public:
     void RenderFrameRaw(void* locked_buffer, int pitch_bytes, int height, // IDA: UNMATCHED — no_callgraph_match, no_git_history
                         int dest_x = 0, int dest_y = 0);
 
-    int  GetCurrentFrame() const { return currentFrame; } // IDA: NOT_FOUND
+    int  GetCurrentFrame() const { return currentFrame; } // 0x438a00
     int  GetTotalFrames()  const { return totalFrames; } // IDA: NOT_FOUND
     uint32_t GetSurfaceFlags() const { return surfaceFlags; } // IDA: NOT_FOUND
 

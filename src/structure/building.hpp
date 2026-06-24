@@ -158,7 +158,7 @@ public:
     int Mission_Move(); // IDA: NOT_FOUND
     int Mission_Enter();  // 0x4166C0
     int Mission_Capture(); // IDA: NOT_FOUND
-    int Mission_Harvest(); // IDA: NOT_FOUND
+    int Mission_Harvest(); // 0x4151e0
     int Mission_Deploy(); // IDA: NOT_FOUND
     bool CheckMissionGuard();  // 0x458DD0
     bool CheckMissionAttack();  // 0x458E00

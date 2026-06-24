@@ -41,7 +41,7 @@ public:
     virtual int Mission_Eaten(); // IDA: NOT_FOUND
     virtual int Mission_Guard();  // 0x459E70
     virtual int Mission_AreaGuard(); // IDA: NOT_FOUND
-    virtual int Mission_Harvest(); // IDA: NOT_FOUND
+    virtual int Mission_Harvest(); // 0x4151e0
     virtual int Mission_Hunt(); // IDA: NOT_FOUND
     virtual int Mission_Move(); // IDA: NOT_FOUND
     virtual int Mission_Retreat(); // IDA: NOT_FOUND

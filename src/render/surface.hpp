@@ -112,7 +112,7 @@ public:
         bool update_z_buffer) = 0;
 
     // [15] 0x3C DrawLineFaded -- 渐变直线，浮点渐隐参数
-    virtual bool DrawLineFaded( // IDA: UNMATCHED — no_callgraph_match, no_git_history
+    virtual bool DrawLineFaded( // 0x4bc750
         const Point2D& start,
         const Point2D& end,
         const uint8_t* stipple_pattern,

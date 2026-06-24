@@ -34,7 +34,7 @@ public:
     virtual void DrawAsSHP(Point2D* coords, RectangleStruct* bounding_rect, uint32_t dwUnk7, uint32_t dwUnk8); // IDA: UNMATCHED — no_callgraph_match, no_git_history
 
     // === Phase 3: Harvest/Unload ===
-    int Mission_Harvest() override; // IDA: NOT_FOUND
+    int Mission_Harvest() override; // 0x4151e0
     int Mission_Unload() override;  // 0x4151E0
     int ProcessResourceHarvesting();  // 0x73D450
     int updateHarvesting();  // 0x4C2C10
