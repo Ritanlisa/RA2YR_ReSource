@@ -8,6 +8,44 @@
 namespace gamemd
 {
 
+// ============================================================================
+// VectorClass<T> / DynamicVectorClass<T> / TypeList<T>
+//
+// Re-translated to STRICTLY mirror the gamemd.exe IDA decompilation. Templates
+// cannot be validated by the downstream 对拍 (shadow comparison) framework, so
+// IDA fidelity is the ONLY verification — every method below reproduces the
+// exact control flow, field usage, edge cases and operation order of the binary.
+//
+// Object layout (verified via TiberiumClass::Debris ctor @0x7216C0 and the
+// per-type vtables, e.g. VectorClass<BulletClass*>::vftable @0x7E4698):
+//
+//   offset 0  : vtable pointer
+//   offset 4  : T*   Items
+//   offset 8  : int  Capacity
+//   offset 12 : bool IsInitialized
+//   offset 13 : bool IsAllocated
+//   (DynamicVectorClass adds)
+//   offset 16 : int  Count
+//   offset 20 : int  CapacityIncrement   (default 10)
+//
+// VectorClass vtable order (confirmed): [0] ~dtor, [1] operator==,
+//   [2] SetCapacity, [3] Clear, [4] FindItemIndex, [5] GetItemIndex,
+//   [6] GetItem.
+//
+// NOTE on IDA stub names: IDA's per-instance "method names" (Add/Remove/Get/
+// Release/QueryInterface/GetSize/GetCapacity…) are heuristic and systematically
+// MISLABELED. The real identity comes from the decompiled body + vtable slot:
+//   IDA "QueryInterface" (_vt00) = scalar-deleting ~dtor
+//   IDA "Add"           (_vt01) = operator==
+//   IDA "Release"       (_vt02) = VectorClass::SetCapacity (base)
+//   IDA "Remove"        (_vt03) = VectorClass::Clear (base)
+//   IDA "GetSize"       (_vt04) = VectorClass::FindItemIndex (base, Capacity)
+//   IDA "GetCapacity"   (_vt05) = VectorClass::GetItemIndex
+//   IDA "Get"           (_vt06) = VectorClass::GetItem
+// The genuine non-virtual AddItem/RemoveItem/GetSize(Count) live as
+// `DynamicVector::*` functions (e.g. AddItem @0x413A70, RemoveItem @0x45ADD0).
+// ============================================================================
+
 template <typename T>
 class VectorClass
 {
@@ -15,76 +53,100 @@ public:
     static_assert(!needs_vector_delete<T>::value || (alignof(T) <= 4),
         "Alignment of T needs to be less than or equal to 4.");
 
-    // design: constexpr operator, compile-time only
+    // design: constexpr default ctor — Items=0, Capacity=0, IsInitialized=true,
+    //         IsAllocated=false (matches the base-init prologue of every ctor)
     constexpr VectorClass() noexcept = default;
 
+    // 0x478790 (VectorClass<TechnoTypeClass*> ctor) — base allocation path
     explicit VectorClass(int capacity, T* mem = nullptr)
     {
-        if (capacity != 0)
+        Items = nullptr;
+        Capacity = capacity;
+        IsInitialized = true;
+        IsAllocated = false;
+        if (capacity)
         {
-            Capacity = capacity;
             if (mem)
             {
                 Items = mem;
             }
             else
             {
-                Items = GameCreateArray<T>(static_cast<std::size_t>(capacity));
+                Items = GameCreateArray<T>((std::size_t)capacity);
                 IsAllocated = true;
             }
         }
     }
 
+    // 0x4779E0 (DynamicVectorClass<int>::Copy base portion) — deep copy of
+    // Capacity elements (NOT Count)
     VectorClass(const VectorClass& other)
     {
         if (other.Capacity > 0)
         {
-            Items = GameCreateArray<T>(static_cast<std::size_t>(other.Capacity));
-            IsAllocated = true;
             Capacity = other.Capacity;
-            for (int i = 0; i < other.Capacity; ++i)
+            Items = GameCreateArray<T>((std::size_t)other.Capacity);
+            if (Items)
             {
-                Items[i] = other.Items[i];
+                IsAllocated = true;
+                for (int i = 0; i < other.Capacity; ++i)
+                {
+                    Items[i] = other.Items[i];
+                }
             }
         }
     }
 
+    // design: move ctor — modern C++ convenience (no binary equivalent; MSVC 6.0
+    //         has no move semantics). Transfers ownership without reallocating.
     VectorClass(VectorClass&& other) noexcept
         : Items(other.Items)
         , Capacity(other.Capacity)
         , IsInitialized(other.IsInitialized)
-        // unmatched: no callgraph reference and no git history record
         , IsAllocated(std::exchange(other.IsAllocated, false))
-    {}
-
-    virtual ~VectorClass() noexcept
     {
-        if (IsAllocated)
-        {
-            GameDeleteArray(Items, static_cast<std::size_t>(Capacity));
-        }
+        other.Items = nullptr;
+        other.Capacity = 0;
     }
 
-    // unmatched: no callgraph reference and no git history record
+    // 0x46B8C0 (~VectorClass<BulletClass*>, scalar-deleting wrapper body)
+    // The vtable reset + "if (flag&1) operator delete(this)" are compiler-
+    // generated; the source destructor body is exactly the lines below.
+    virtual ~VectorClass() noexcept
+    {
+        if (Items && IsAllocated)
+        {
+            GameDeleteArray(Items, (std::size_t)Capacity);
+            Items = nullptr;
+        }
+        IsAllocated = false;
+        Capacity = 0;
+    }
+
+    // design: copy/move assignment via copy-and-swap (mirrors the
+    //         "Destroy-then-copy" shape of DynamicVectorClass::Copy @0x4779E0)
     VectorClass& operator=(const VectorClass& other)
     {
         VectorClass(other).Swap(*this);
         return *this;
     }
 
-    // unmatched: no callgraph reference and no git history record
     VectorClass& operator=(VectorClass&& other) noexcept
     {
         VectorClass(std::move(other)).Swap(*this);
         return *this;
     }
 
-    // unmatched: no callgraph reference and no git history record
+    // 0x46B660 — operator== [vtable slot 1]
     virtual bool operator==(const VectorClass& other) const
     {
         if (Capacity != other.Capacity)
         {
             return false;
+        }
+        if (Capacity <= 0)
+        {
+            return true;
         }
         for (int i = 0; i < Capacity; ++i)
         {
@@ -97,64 +159,67 @@ public:
         return true;
     }
 
-    // unmatched: no callgraph reference and no git history record
     bool operator!=(const VectorClass& other) const
     {
         return !(*this == other);
     }
 
+    // 0x46B6A0 — VectorClass::SetCapacity [vtable slot 2] (base, flat)
     virtual bool SetCapacity(int capacity, T* mem = nullptr)
     {
-        if (capacity != 0)
+        if (capacity)
         {
             IsInitialized = false;
-            bool mustAllocate = (mem == nullptr);
-            if (!mem)
-            {
-                mem = GameCreateArray<T>(static_cast<std::size_t>(capacity));
-            }
+            T* buffer = mem ? mem : GameCreateArray<T>((std::size_t)capacity);
             IsInitialized = true;
-            if (!mem)
+            if (buffer)
             {
-                return false;
-            }
-            if (Items)
-            {
-                int n = (capacity < Capacity) ? capacity : Capacity;
-                for (int i = 0; i < n; ++i)
+                if (Items)
                 {
-                    mem[i] = std::move_if_noexcept(Items[i]);
+                    int n = (capacity < Capacity) ? capacity : Capacity;
+                    for (int i = 0; i < n; ++i)
+                    {
+                        buffer[i] = Items[i];
+                    }
+                    if (IsAllocated)
+                    {
+                        GameDeleteArray(Items, (std::size_t)Capacity);
+                        Items = nullptr;
+                    }
                 }
-                if (IsAllocated)
-                {
-                    // unmatched: no callgraph reference and no git history record
-                    GameDeleteArray(Items, static_cast<std::size_t>(Capacity));
-                    Items = nullptr;
-                }
+                Items = buffer;
+                Capacity = capacity;
+                IsAllocated = (mem == nullptr);
+                return true;
             }
-            IsAllocated = mustAllocate;
-            Items = mem;
-            Capacity = capacity;
+            return false;
         }
-        else
-        {
-            Clear();  // 0x40b120
-        }
+        Clear();  // virtual dispatch — vtable[3]
         return true;
     }
 
+    // 0x46B750 — VectorClass::Clear [vtable slot 3] (base)
     virtual void Clear()
     {
-        VectorClass(std::move(*this));
-        Items = nullptr;
+        if (Items && IsAllocated)
+        {
+            GameDeleteArray(Items, (std::size_t)Capacity);
+            Items = nullptr;
+        }
+        IsAllocated = false;
         Capacity = 0;
     }
 
+    // 0x46B780 — VectorClass::FindItemIndex [vtable slot 4] (base, scans Capacity)
     virtual int FindItemIndex(const T& item) const
     {
         if (!IsInitialized)
         {
             return 0;
+        }
+        if (Capacity <= 0)
+        {
+            return -1;
         }
         for (int i = 0; i < Capacity; ++i)
         {
@@ -166,20 +231,23 @@ public:
         return -1;
     }
 
+    // 0x46B7C0 — VectorClass::GetItemIndex [vtable slot 5] (final)
     virtual int GetItemIndex(const T* item) const final
     {
-        if (!IsInitialized)
+        if (IsInitialized)
         {
-            return 0;
+            return (int)(item - Items);
         }
-        return static_cast<int>(item - Items);
+        return 0;
     }
 
+    // 0x46B630 — VectorClass::GetItem [vtable slot 6] (final)
     virtual T GetItem(int i) const final
     {
         return Items[i];
     }
 
+    // design: inline accessors, inlined at all call sites in the binary
     T& operator[](int i)
     {
         return Items[i];
@@ -188,20 +256,6 @@ public:
     const T& operator[](int i) const
     {
         return Items[i];
-    }
-
-    // unmatched: no callgraph reference and no git history record
-    bool Reserve(int capacity)
-    {
-        if (!IsInitialized)
-        {
-            return false;
-        }
-        if (Capacity >= capacity)
-        {
-            return true;
-        }
-        return SetCapacity(capacity, nullptr);
     }
 
     void Swap(VectorClass& other) noexcept
@@ -216,135 +270,128 @@ public:
     int Capacity = 0;
     bool IsInitialized = true;
     bool IsAllocated = false;
-
-    // ========================================================================
-    // IDA-named alias methods (for template specialization stubs)
-    // These match IDA function names. Delegates to existing methods where possible.
-    // Marked virtual to match original binary vtable layout.
-    // ========================================================================
-
-    virtual int QueryInterface() { return 0; }
-    virtual int AddRef() { return 0; }
-    virtual int Release() { return 0; }
-
-    virtual T Get(int i) const { return GetItem(i); }
-    virtual int GetCount() const { return Capacity; }
-    virtual int GetCapacity() const { return Capacity; }
-    virtual T GetAt(int i) const { return GetItem(i); }
-    virtual int GetPtrOffset(int) { return 0; }
-    virtual int GetClassIdentifier() const { return 0; }
-    virtual int GetIndex(const T& item) const { return FindItemIndex(item); }
-    virtual int GetSize() const { return Capacity; }
-
-    virtual bool Add(T item) { return false; }
-    virtual bool Remove(int index) { return false; }
-    virtual bool IsEqualTo(const T&) const { return false; }
-
-    virtual void SetAt(int, T) {}
-    virtual void LoadTypeData() {}
-    virtual void SaveToINI() {}
-    virtual void ProcessAll() {}
-    virtual void ClearBuffer() { Clear(); }
-    virtual void Destroy() { delete this; }
-    virtual void ddtor() { delete this; }
-    virtual void TryFreeAndClear() { Clear(); }
-
-    virtual int IndexOf(const T&) const { return -1; }
-    virtual int FindValue(const T& item) const { return FindItemIndex(item); }
-    virtual int HashEntryCompare(const T&) const { return 0; }
-    virtual int PointerToIndex(const T& ptr) const { return GetItemIndex(&ptr); }
-
-    virtual void Read() {}
-    virtual void Write() {}
-    virtual void Seek() {}
-    virtual int FindItem(const T&) const { return -1; }
-    virtual int Count() { return Capacity; }
-    virtual void FreeData() { Clear(); }
-    virtual void AllocCopyData_4B() {}
-    virtual void AllocCopyData_8B() {}
-
-    virtual void* j_vt00() { return nullptr; }
-    virtual void j_vt09() {}
-    virtual int vt_00() { return 0; }
-    virtual int vt_02() { return 0; }
-    virtual int vt_03() { return 0; }
-    virtual int vt_04() { return 0; }
-    virtual int vt_05() { return 0; }
-    virtual int vt_19() { return 0; }
 };
 
 template <typename T>
 class DynamicVectorClass : public VectorClass<T>
 {
 public:
-    // design: constexpr operator, compile-time only
+    // design: constexpr default ctor — base init + Count=0, CapacityIncrement=10
     constexpr DynamicVectorClass() noexcept = default;
 
+    // 0x477DB0 (DynamicVectorClass<int>::Construct) — base ctor then
+    //          CapacityIncrement=10, Count=0 (member initializers below)
     explicit DynamicVectorClass(int capacity, T* mem = nullptr)
         : VectorClass<T>(capacity, mem)
     {}
 
+    // 0x4779E0 (DynamicVectorClass<int>::Copy) — deep copy of Capacity elements;
+    //          Count and CapacityIncrement copied unconditionally
     DynamicVectorClass(const DynamicVectorClass& other)
     {
         if (other.Capacity > 0)
         {
-            this->Items = GameCreateArray<T>(static_cast<std::size_t>(other.Capacity));
-            this->IsAllocated = true;
             this->Capacity = other.Capacity;
-            Count = other.Count;
-            CapacityIncrement = other.CapacityIncrement;
-            for (int i = 0; i < other.Count; ++i)
+            this->Items = GameCreateArray<T>((std::size_t)other.Capacity);
+            if (this->Items)
             {
-                this->Items[i] = other.Items[i];
+                this->IsAllocated = true;
+                for (int i = 0; i < other.Capacity; ++i)
+                {
+                    this->Items[i] = other.Items[i];
+                }
             }
         }
+        Count = other.Count;
+        CapacityIncrement = other.CapacityIncrement;
     }
 
+    // design: move ctor — modern convenience, no binary equivalent
     DynamicVectorClass(DynamicVectorClass&& other) noexcept
         : VectorClass<T>(std::move(other))
         , Count(other.Count)
-        // unmatched: no callgraph reference and no git history record
         , CapacityIncrement(other.CapacityIncrement)
-    {}
+    {
+        other.Count = 0;
+    }
 
-    // unmatched: no callgraph reference and no git history record
     DynamicVectorClass& operator=(const DynamicVectorClass& other)
     {
         DynamicVectorClass(other).Swap(*this);
         return *this;
     }
 
-    // unmatched: no callgraph reference and no git history record
     DynamicVectorClass& operator=(DynamicVectorClass&& other) noexcept
     {
         DynamicVectorClass(std::move(other)).Swap(*this);
         return *this;
     }
 
+    // 0x4E9AA0 — DynamicVectorClass::SetCapacity [vtable slot 2 override]
+    // FLAT function: base alloc/copy logic inlined + Count clamp at the end.
+    // (Does NOT delegate to VectorClass::SetCapacity — matches the binary.)
     bool SetCapacity(int capacity, T* mem = nullptr) override
     {
-        bool result = VectorClass<T>::SetCapacity(capacity, mem);
+        if (capacity)
+        {
+            this->IsInitialized = false;
+            T* buffer = mem ? mem : GameCreateArray<T>((std::size_t)capacity);
+            this->IsInitialized = true;
+            if (!buffer)
+            {
+                return false;
+            }
+            if (this->Items)
+            {
+                int n = (capacity < this->Capacity) ? capacity : this->Capacity;
+                for (int i = 0; i < n; ++i)
+                {
+                    buffer[i] = this->Items[i];
+                }
+                if (this->IsAllocated)
+                {
+                    GameDeleteArray(this->Items, (std::size_t)this->Capacity);
+                    this->Items = nullptr;
+                }
+            }
+            this->Items = buffer;
+            this->Capacity = capacity;
+            this->IsAllocated = (mem == nullptr);
+        }
+        else
+        {
+            this->Clear();  // virtual dispatch — DynamicVectorClass::Clear
+        }
         if (this->Capacity < Count)
         {
             Count = this->Capacity;
         }
-        return result;
+        return true;
     }
 
-    // design: inline accessor, inlined at all call sites
-    int GetSize() const { return Count; }
-
+    // 0x46B5E0 — DynamicVectorClass::Clear [vtable slot 3 override]
+    // Resets Count=0 first, then frees Items (flat; mirrors the binary order).
     void Clear() override
     {
-        VectorClass<T>::Clear();  // 0x40b120
+        T* old = this->Items;
         Count = 0;
+        if (old && this->IsAllocated)
+        {
+            GameDeleteArray(old, (std::size_t)this->Capacity);
+            this->Items = nullptr;
+        }
+        this->IsAllocated = false;
+        this->Capacity = 0;
     }
 
+    // 0x4E9B50 — DynamicVectorClass::FindItemIndex [vtable slot 4 override]
+    // Scans Count (NOT Capacity); returns -1 when Count<=0. There is NO
+    // IsInitialized check here (unlike the base VectorClass version).
     int FindItemIndex(const T& item) const override final
     {
-        if (!this->IsInitialized)
+        if (Count <= 0)
         {
-            return 0;
+            return -1;
         }
         for (int i = 0; i < Count; ++i)
         {
@@ -356,52 +403,10 @@ public:
         return -1;
     }
 
-    // unmatched: no callgraph reference and no git history record
-    bool ValidIndex(int index) const
-    {
-        return static_cast<unsigned>(index) < static_cast<unsigned>(Count);
-    }
+    // design: inline accessor, inlined at all call sites
+    int GetSize() const { return Count; }
 
-    // unmatched: no callgraph reference and no git history record
-    T GetItemOrDefault(int i) const
-    {
-        return GetItemOrDefault(i, T());
-    }
-
-    // unmatched: no callgraph reference and no git history record
-    T GetItemOrDefault(int i, T def) const
-    {
-        if (ValidIndex(i))
-        {
-            return this->Items[i];
-        }
-        return def;
-    }
-
-    // unmatched: no callgraph reference and no git history record
-    T* begin()
-    {
-        return &this->Items[0];
-    }
-
-    // unmatched: no callgraph reference and no git history record
-    T* end()
-    {
-        return &this->Items[Count];
-    }
-
-    // unmatched: no callgraph reference and no git history record
-    const T* begin() const
-    {
-        return &this->Items[0];
-    }
-
-    // unmatched: no callgraph reference and no git history record
-    const T* end() const
-    {
-        return &this->Items[Count];
-    }
-
+    // 0x413A70 (DynamicVector::AddItem) — append with capacity growth
     bool AddItem(T item)
     {
         if (Count >= this->Capacity)
@@ -419,36 +424,66 @@ public:
                 return false;
             }
         }
-        this->Items[Count++] = std::move(item);
+        this->Items[Count++] = item;
         return true;
     }
 
-    // unmatched: no callgraph reference and no git history record
+    // 0x45ADD0 (DynamicVector::RemoveItem) — remove by index, shift-down.
+    // Guard is the signed test `index >= Count` (matches the binary; this is
+    // NOT an unsigned ValidIndex check).
+    bool RemoveItem(int index)
+    {
+        if (index >= Count)
+        {
+            return false;
+        }
+        --Count;
+        if (index < Count)
+        {
+            for (int i = index; i < Count; ++i)
+            {
+                this->Items[i] = this->Items[i + 1];
+            }
+        }
+        return true;
+    }
+
+    // 0x4390D0 (RemoveFromDynamicVector pattern) — FindItemIndex then RemoveItem
+    bool Remove(const T& item)
+    {
+        int idx = FindItemIndex(item);
+        if (idx < 0)
+        {
+            return false;
+        }
+        return RemoveItem(idx);
+    }
+
+    // design: YRpp convenience helpers, inlined in the binary
+    bool ValidIndex(int index) const
+    {
+        return (unsigned)index < (unsigned)Count;
+    }
+
     bool AddUnique(const T& item)
     {
         int idx = FindItemIndex(item);
         return idx < 0 && AddItem(item);
     }
 
-    bool RemoveItem(int index)
+    T GetItemOrDefault(int i, T def) const
     {
-        if (!ValidIndex(index))
+        if (ValidIndex(i))
         {
-            return false;
+            return this->Items[i];
         }
-        --Count;
-        for (int i = index; i < Count; ++i)
-        {
-            this->Items[i] = std::move_if_noexcept(this->Items[i + 1]);
-        }
-        return true;
+        return def;
     }
 
-    bool Remove(const T& item)
-    {
-        int idx = FindItemIndex(item);
-        return idx >= 0 && RemoveItem(idx);
-    }
+    T* begin() { return &this->Items[0]; }
+    T* end() { return &this->Items[Count]; }
+    const T* begin() const { return &this->Items[0]; }
+    const T* end() const { return &this->Items[Count]; }
 
     void Swap(DynamicVectorClass& other) noexcept
     {
@@ -461,7 +496,59 @@ public:
     int CapacityIncrement = 10;
 };
 
-// IDA: TypeList<T> is declared in entity/tiberium.hpp
-// Used by RulesClass/ScenarioClass as typed list container.
+// ============================================================================
+// TypeList<T> : public DynamicVectorClass<T>
+//
+// Same memory layout as DynamicVectorClass<T> (no extra fields) — confirmed by
+// TypeList::CopyConstructor @0x513740 which copies exactly the 6 DynamicVector
+// fields. TypeList only differs by its own vtable (a distinct operator== slot,
+// @0x67AE70, with a body identical to the base). All other behaviour is
+// inherited from DynamicVectorClass.
+// ============================================================================
+template <typename T>
+class TypeList : public DynamicVectorClass<T>
+{
+public:
+    // design: constexpr default ctor — inherits DynamicVectorClass field init
+    constexpr TypeList() noexcept = default;
+
+    // 0x478790 (base portion) / 0x67A4F0 (TypeList::Construct) — ctor(capacity,mem)
+    explicit TypeList(int capacity, T* mem = nullptr)
+        : DynamicVectorClass<T>(capacity, mem)
+    {}
+
+    // 0x513740 (TypeList::CopyConstructor) — deep copy via base copy ctor
+    TypeList(const TypeList& other)
+        : DynamicVectorClass<T>(other)
+    {}
+
+    TypeList& operator=(const TypeList& other)
+    {
+        DynamicVectorClass<T>::operator=(other);
+        return *this;
+    }
+
+    // 0x67AE70 — TypeList::operator== [distinct vtable slot 1, identical body]
+    bool operator==(const VectorClass<T>& other) const override
+    {
+        if (this->Capacity != other.Capacity)
+        {
+            return false;
+        }
+        if (this->Capacity <= 0)
+        {
+            return true;
+        }
+        for (int i = 0; i < this->Capacity; ++i)
+        {
+            if (this->Items[i] == other.Items[i])
+            {
+                continue;
+            }
+            return false;
+        }
+        return true;
+    }
+};
 
 } // namespace gamemd
