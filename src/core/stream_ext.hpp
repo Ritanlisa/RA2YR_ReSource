@@ -67,7 +67,7 @@ public:
     // IDA 0x48B2A0 area
     int32_t ReadBytes(void* buf, int32_t size);  // 0x774B30
     // IDA 0x48B2A0 area
-    void Seek(int32_t offset); // IDA: NOT_FOUND
+    void Seek(int32_t offset); // 0x5c5dd0
     // IDA 0x48B2A0 area
     int32_t GetPosition();  // 0x7C3960
     // IDA 0x48B2A0 area

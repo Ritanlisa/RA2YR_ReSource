@@ -461,8 +461,8 @@ class RocketLocomotionClass : public LocomotionClass
 {
 public:
     virtual HRESULT __stdcall QueryInterface(const IID&, void** ppv) override { if (ppv) { *ppv = static_cast<ILocomotion*>(static_cast<void*>(this)); AddRef(); return S_OK; } return E_POINTER; }  // 0x664AC0
-    virtual ULONG __stdcall AddRef() override { return ++RefCount; } // IDA: NOT_FOUND
-    virtual ULONG __stdcall Release() override { if (--RefCount == 0) { delete this; return 0; } return RefCount; } // IDA: NOT_FOUND
+    virtual ULONG __stdcall AddRef() override { return ++RefCount; } // 0x664810
+    virtual ULONG __stdcall Release() override { if (--RefCount == 0) { delete this; return 0; } return RefCount; } // 0x664990
 
     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return S_OK; }  // 0x661EC0
     virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }         // stub // IDA: NOT_FOUND
@@ -659,7 +659,7 @@ class TeleportLocomotionClass : public LocomotionClass, public IPiggyback
 public:
     virtual HRESULT __stdcall QueryInterface(const IID&, void** ppv) override { if (ppv) { *ppv = static_cast<ILocomotion*>(static_cast<void*>(this)); AddRef(); return S_OK; } return E_POINTER; }  // 0x55A9B0
     virtual ULONG __stdcall AddRef() override { return ++RefCount; } // IDA: NOT_FOUND
-    virtual ULONG __stdcall Release() override { if (--RefCount == 0) { delete this; return 0; } return RefCount; } // IDA: NOT_FOUND
+    virtual ULONG __stdcall Release() override { if (--RefCount == 0) { delete this; return 0; } return RefCount; } // 0x718000
 
     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return S_OK; }  // 0x7180a0
 
