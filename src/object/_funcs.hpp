@@ -107,9 +107,9 @@ int TechnoTypeClass::SaveLoad_Prefix_0(); // 0x716DC0
 
 // === Construction Helper Functions (techno.cpp) ===
 // Note: declared static in techno.cpp; declarations here support external linkage if needed.
-bool ProductionCompletionCallback(TechnoClass* techno);     // 0x424CE0 [stub: ProductionCompletionCallback]
-bool CreateUnitOnCompletion(TechnoClass* techno);           // 0x424F00 [stub: CreateUnitOnCompletion]
-void ConstructionPositionTracker(TechnoClass* techno);      // 0x425670 [stub: ConstructionPositionTracker]
+bool ProductionCompletionCallback(TechnoClass* techno);
+bool CreateUnitOnCompletion(TechnoClass* techno);
+void ConstructionPositionTracker(TechnoClass* techno);
 
 } // namespace game
 } // namespace ra2

@@ -33,7 +33,7 @@ public:
     // unmatched: no callgraph reference and no git history record
     void Free();
 
-    int GetFrameCount() const;  // 0x74AA30 // IDA: VoxelAnimClass::GetFrameCount
+    int GetFrameCount() const;
     int GetWidth() const;
     int GetHeight() const;
 

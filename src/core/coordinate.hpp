@@ -63,6 +63,6 @@ CoordStruct CoordMove(const CoordStruct& start, uint8_t dir32, uint16_t distance
 // unmatched: no callgraph reference and no git history record
 CellStruct AdjacentCell(const CellStruct& cell, uint8_t facing8) noexcept;
 
-bool IsCloseEnough(const CoordStruct& a, const CoordStruct& b, int range) noexcept;  // 0x70D590
+bool IsCloseEnough(const CoordStruct& a, const CoordStruct& b, int range) noexcept;
 
 } // namespace gamemd

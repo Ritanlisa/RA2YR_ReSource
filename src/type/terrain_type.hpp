@@ -12,7 +12,7 @@ public:
     static constexpr AbstractType AbsID = AbstractType::TerrainType;
 
     static DynamicVectorClass<TerrainTypeClass*>* Array;
-    static TerrainTypeClass* Find(const char* pID);  // 0x71DA80
+    static TerrainTypeClass* Find(const char* pID);
     static TerrainTypeClass* FindOrCreate(const char* pID);  // 0x71E2A0 (as FindOrCreate)
     // wrapper: delegates to TerrainTypeClass::FindOrCreate at 0x71E2A0
     static int FindIndex(const char* pID);

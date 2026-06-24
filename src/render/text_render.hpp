@@ -16,10 +16,10 @@ public:
     // design: no binary equivalent found in IDA
     void Shutdown();
 
-    void DrawText(DSurface* target, int x, int y, const wchar_t* text, // 0x4a61c0
+    void DrawText(DSurface* target, int x, int y, const wchar_t* text,
                   uint8_t r, uint8_t g, uint8_t b);
 
-    void DrawText(DSurface* target, int x, int y, const char* text, // 0x4a61c0
+    void DrawText(DSurface* target, int x, int y, const char* text,
                   uint8_t r, uint8_t g, uint8_t b);
 
     // wrapper: delegates to TextRenderer::DrawText at 0x4A61C0

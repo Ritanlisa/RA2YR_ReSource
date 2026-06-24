@@ -37,7 +37,7 @@ public:
     // design: no binary equivalent found in IDA
     void SetTarget(const CoordStruct& target);
     // IDA 0x487E00 area
-    CoordStruct GetTarget() const;  // 0x6F9DC0 // IDA: TechnoClass::GetTarget
+    CoordStruct GetTarget() const;
 
     CoordStruct m_Target;       // 0x00
     int32_t     m_State;        // 0x0C

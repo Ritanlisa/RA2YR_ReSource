@@ -21,8 +21,8 @@ public:
 
     // IUnknown
     virtual HRESULT __stdcall QueryInterface(const IID&, void**);
-    virtual ULONG   __stdcall AddRef(); // 0x5C0E30
-    virtual ULONG   __stdcall Release(); // 0x5C0E40
+    virtual ULONG   __stdcall AddRef();
+    virtual ULONG   __stdcall Release();
 
     virtual ~MPGameModeClass() = default;                                                    // 0x5C0E50
 
@@ -46,18 +46,18 @@ public:
     virtual void   PopulateTeamDropdown(HWND, DynamicVectorClass<MPTeam*>*, MPTeam*); // 0x5D1A80 (MPBattleClass::populateTeamDropdown)
     virtual void   DrawTeamDropdown(HWND, DynamicVectorClass<MPTeam*>*, MPTeam*); // 0x5D2DE0 (MPBattleClass::drawTeamDropdown)
     virtual void   PopulateTeamDropdownForPlayer(HWND, int32_t); // 0x5D3470 (MPBattleClass::populateTeamDropdownForPlayer)
-    virtual bool   ValidateHouse(int32_t,int32_t,void*,int32_t,int16_t,int32_t,int32_t); // 0x5D3810
-    virtual bool   ValidateOwner(int32_t,int32_t,void*,int32_t,int16_t,int32_t,int32_t,int32_t,int32_t); // 0x5D3830
+    virtual bool   ValidateHouse(int32_t,int32_t,void*,int32_t,int16_t,int32_t,int32_t);
+    virtual bool   ValidateOwner(int32_t,int32_t,void*,int32_t,int16_t,int32_t,int32_t,int32_t,int32_t);
     virtual bool   ValidateColor(int32_t,int32_t,int32_t); // 0x5D38F0 (MPBattleClass::validateColor)
     virtual bool   ValidateStartPosition(); // 0x5D3920 (MPBattleClass::validateStartPosition)
     virtual bool   IsDefaultFix(); // 0x5D3950 (MPBattleClass::isDefaultFix)
     virtual bool   IsDefaultAI(); // 0x5D3980 (MPBattleClass::isDefaultAI)
     virtual int32_t RandomHumanCountryIndex(); // 0x5D3990 (MPBattleClass::randomHumanCountryIndex)
-    virtual int32_t RandomAICountryIndex(); // 0x5D39B0
+    virtual int32_t RandomAICountryIndex();
     virtual void   OnDialogCreated(int32_t, int32_t); // 0x5D4C30 (MPBattleClass::onDialogCreated)
     virtual void   OnDialogDestroyed(int32_t); // 0x5D4C50 (MPBattleClass::onDialogDestroyed)
     virtual bool   UnfixAlliances(); // 0x5D4CD0 (MPBattleClass::unfixAlliances)
-    virtual bool   StartingPositionsToHouseBaseCells(int8_t); // 0x5D58B0 (MPBattleClass)
+    virtual bool   StartingPositionsToHouseBaseCells(int8_t);
     virtual bool   StartingPositionsToHouseBaseCells2(bool); // 0x5D6310 (ScenarioClass::MissionStubReturnZero2)
     virtual bool   AllyTeams(); // 0x5D58E0 (MPBattleClass::allyTeams)
     virtual bool   IsMegawealthAllowed(); // 0x5D5900 (MPBattleClass::isMegawealthAllowed)
@@ -119,22 +119,22 @@ public:
     virtual int32_t FirstValidMapIndex() override;  // 0x5CEDB0
     virtual void PopulateTeamDropdown(HWND, DynamicVectorClass<MPTeam*>*, MPTeam*) override;  // 0x5D1A80
     virtual void PopulateTeamDropdownForPlayer(HWND, int32_t) override;  // 0x5D3470
-    virtual bool ValidateHouse(int32_t,int32_t,void*,int32_t,int16_t,int32_t,int32_t) override;  // 0x5D3810
-    virtual bool ValidateOwner(int32_t,int32_t,void*,int32_t,int16_t,int32_t,int32_t,int32_t,int32_t) override;  // 0x5D3830
+    virtual bool ValidateHouse(int32_t,int32_t,void*,int32_t,int16_t,int32_t,int32_t) override;
+    virtual bool ValidateOwner(int32_t,int32_t,void*,int32_t,int16_t,int32_t,int32_t,int32_t,int32_t) override;
     virtual bool ValidateColor(int32_t,int32_t,int32_t) override;  // 0x5D38F0
     virtual bool ValidateStartPosition() override;  // 0x5D3920
     virtual bool IsDefaultFix() override;  // 0x5D3950
     virtual bool IsDefaultAI() override;  // 0x5D3980
     virtual bool ValidatePlayer(int32_t idx) override;  // 0x5CAD60
     virtual int32_t RandomHumanCountryIndex() override;  // 0x5D3990
-    virtual int32_t RandomAICountryIndex() override;  // 0x5D39B0
+    virtual int32_t RandomAICountryIndex() override;
     virtual bool AreTeamChangesAllowed() override;  // 0x5CADD0
     virtual bool IsHouseAllyChangeAllowed() override;  // 0x5CADF0
     virtual void OnDialogCreated(int32_t, int32_t) override;  // 0x5D4C30
     virtual void OnDialogDestroyed(int32_t) override;  // 0x5D4C50
     virtual void DrawTeamDropdown(HWND, DynamicVectorClass<MPTeam*>*, MPTeam*) override;  // 0x5D2DE0
     virtual bool UnfixAlliances() override;  // 0x5D4CD0
-    virtual bool StartingPositionsToHouseBaseCells(int8_t) override;  // 0x5D58B0
+    virtual bool StartingPositionsToHouseBaseCells(int8_t) override;
     // unmatched: no callgraph reference and no git history record
     virtual bool StartingPositionsToHouseBaseCells2(bool) override;
     virtual bool AllyTeams() override;  // 0x5D58E0

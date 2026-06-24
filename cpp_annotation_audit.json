@@ -1,0 +1,1914 @@
+{
+  "summary": {
+    "total_annotations": 1710,
+    "text_annotations": 1566,
+    "data_annotations": 142,
+    "other_annotations": 2,
+    "unique_addresses": 1700,
+    "duplicate_addresses": 10,
+    "cross_file_duplicates": 8,
+    "matched_to_functions": 1518,
+    "matched_to_data_globals": 0,
+    "unmatched": 192,
+    "unmatched_text": 48,
+    "unmatched_data": 142,
+    "unmatched_other": 2,
+    "translated_functions_total": 500,
+    "translated_with_cpp_annotation": 298,
+    "translated_missing_annotation": 202,
+    "coverage_pct": "59.6%",
+    "accuracy_mismatches": 0,
+    "files_with_annotations": 47
+  },
+  "duplicates": [
+    {
+      "addr": "0X840A70",
+      "count": 2,
+      "addr_type": "data",
+      "locations": [
+        "globals.cpp:27",
+        "init_game.cpp:68"
+      ],
+      "is_cross_file": true,
+      "note": "Cross-file global reference"
+    },
+    {
+      "addr": "0X89E3A0",
+      "count": 2,
+      "addr_type": "data",
+      "locations": [
+        "globals.cpp:29",
+        "init_game.cpp:66"
+      ],
+      "is_cross_file": true,
+      "note": "Cross-file global reference"
+    },
+    {
+      "addr": "0X8175B0",
+      "count": 2,
+      "addr_type": "data",
+      "locations": [
+        "globals.cpp:44",
+        "init_game.cpp:65"
+      ],
+      "is_cross_file": true,
+      "note": "Cross-file global reference"
+    },
+    {
+      "addr": "0XA8ED80",
+      "count": 2,
+      "addr_type": "data",
+      "locations": [
+        "globals.cpp:48",
+        "init_game.cpp:67"
+      ],
+      "is_cross_file": true,
+      "note": "Cross-file global reference"
+    },
+    {
+      "addr": "0X887324",
+      "count": 2,
+      "addr_type": "data",
+      "locations": [
+        "globals.cpp:283",
+        "init_game.cpp:87"
+      ],
+      "is_cross_file": true,
+      "note": "Cross-file global reference"
+    },
+    {
+      "addr": "0X88730C",
+      "count": 2,
+      "addr_type": "data",
+      "locations": [
+        "globals.cpp:284",
+        "init_game.cpp:72"
+      ],
+      "is_cross_file": true,
+      "note": "Cross-file global reference"
+    },
+    {
+      "addr": "0X887314",
+      "count": 2,
+      "addr_type": "data",
+      "locations": [
+        "globals.cpp:285",
+        "init_game.cpp:73"
+      ],
+      "is_cross_file": true,
+      "note": "Cross-file global reference"
+    },
+    {
+      "addr": "0X887308",
+      "count": 2,
+      "addr_type": "data",
+      "locations": [
+        "globals.cpp:286",
+        "init_game.cpp:71"
+      ],
+      "is_cross_file": true,
+      "note": "Cross-file global reference"
+    },
+    {
+      "addr": "0X6F3330",
+      "count": 2,
+      "addr_type": "text",
+      "locations": [
+        "techno.cpp:377",
+        "techno.cpp:1269"
+      ],
+      "is_cross_file": false,
+      "note": "Same-file duplicate"
+    },
+    {
+      "addr": "0X480110",
+      "count": 2,
+      "addr_type": "text",
+      "locations": [
+        "building.cpp:1235",
+        "building.cpp:1677"
+      ],
+      "is_cross_file": false,
+      "note": "Same-file duplicate"
+    }
+  ],
+  "accuracy_issues": [],
+  "translated_missing_annotations": [
+    {
+      "address": "0x4068F0",
+      "name": "Array::ForEach",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x406B10",
+      "name": "InitializeAudioSubsystem",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x406F70",
+      "name": "UpdateAudioVideo",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x407000",
+      "name": "Audio::IsSoundEnabled",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x4093B0",
+      "name": "Audio::Callback",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x410230",
+      "name": "AbstractClass::GenerateUniqueID",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x410450",
+      "name": "AbstractClass::IsClean",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x410540",
+      "name": "AbstractClass::GetCoords",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x4134A0",
+      "name": "GadgetGrid::InsertItem",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x4135D0",
+      "name": "GadgetGrid::RemoveItem",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x413D20",
+      "name": "AircraftClass::Construct",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x421B60",
+      "name": "ClipRectIntersection",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x434AD0",
+      "name": "BitTextClass::LoadFont",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x4355B0",
+      "name": "Palette::6BitTo16Bit",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x437350",
+      "name": "BlitterCopySimpleSHP",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x43AE50",
+      "name": "Vector::Clear",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x4739F0",
+      "name": "CCFileClass::Construct",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x477BE0",
+      "name": "VectorClass::Construct",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x4790B0",
+      "name": "SetSoundWarning",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x47C520",
+      "name": "Cell::IsBridge",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x48C8B0",
+      "name": "MainGameFrame",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x48CCC0",
+      "name": "MainGame",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x48D080",
+      "name": "Event::Dispatch",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x48E740",
+      "name": "ConvertClass::Construct",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x49F5C0",
+      "name": "CopyProtection::CheckLauncher",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x49F620",
+      "name": "CopyProtection::NotifyLauncher",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x49F740",
+      "name": "Dialog::MapDialogResource",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x4A38D0",
+      "name": "LoadFileSHP",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x4A3C30",
+      "name": "FadePalette",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x4A5EB0",
+      "name": "RenderTextLabel",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x4A6360",
+      "name": "RenderTextLabelWordWrap",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x4B9BD0",
+      "name": "Struct::Zero3",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x4BA770",
+      "name": "DSurface::CreatePrimary",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x4BB080",
+      "name": "DSurface::BlitPart",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x4BB620",
+      "name": "DSurface::FillRectEx",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x4BB830",
+      "name": "DSurface::FillRectWithFlags",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x4BBCA0",
+      "name": "DSurface::DrawLineModulated",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x4BC750",
+      "name": "DSurface::DrawLineFaded",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x4BDF00",
+      "name": "DSurface::DrawLineZBufColored",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x4BF750",
+      "name": "DSurface::DrawGradientLine",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x4BFD30",
+      "name": "DSurface::DrawLineZBuf",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x4C0750",
+      "name": "DSurface::DrawDashedLineStipple",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x4C0E30",
+      "name": "DSurface::DrawStippledRect",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x4E12F0",
+      "name": "GadgetClass::Construct",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x4E1390",
+      "name": "GadgetClass::Dtor",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x4E1450",
+      "name": "DialogControl::Hide",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x4E1460",
+      "name": "DialogControl::Show",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x4E1470",
+      "name": "DialogControl::IsHidden",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x4E1550",
+      "name": "GadgetClass::ClearState",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x4E4EC0",
+      "name": "Dialog::SideIDToIndex",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x4E59A0",
+      "name": "Dialog::OptionIDToIndex",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x4F4780",
+      "name": "Frame::Present",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x517A50",
+      "name": "InfantryClass::Construct",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x51BAB0",
+      "name": "InfantryClass::Update",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x5256F0",
+      "name": "HashTable::DestroyHashTableINIClass",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x52B720",
+      "name": "CompareFunc4Int",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x52CB50",
+      "name": "PlayIntroSequence",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x52CB90",
+      "name": "Credits::Screen",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x52F620",
+      "name": "ParseCommandLine",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x52FC20",
+      "name": "InitRandomSeed",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x52FEC0",
+      "name": "Screen::Capture",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x530000",
+      "name": "LoadExpansionMixFiles",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x530460",
+      "name": "MixFile::LoadAll",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x5312A0",
+      "name": "ShowLoadingScreen",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x531680",
+      "name": "InitBulkData",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x531F60",
+      "name": "MainMenu::DlgProc",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x532150",
+      "name": "InitCommands",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x535A70",
+      "name": "CCFileClass::Destruct",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x53F1F0",
+      "name": "Multiplayer::Screen",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x54F000",
+      "name": "EventQueue::Process",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x54F720",
+      "name": "Timer::PumpMessages",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x559E40",
+      "name": "LoadOptions::Release",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x559EB0",
+      "name": "LoadOptions::ddtor",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x55A050",
+      "name": "LoadOptions::Write",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x55A070",
+      "name": "LoadOptions::Seek",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x55A090",
+      "name": "LoadOptions::Open",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x55A0B0",
+      "name": "LoadOptions::Close",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x55A0D0",
+      "name": "LoadOptions::QueryInterface",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x55A180",
+      "name": "LoadOptions::vt05",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x55A1A0",
+      "name": "LoadOptions::vt06",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x55A1B0",
+      "name": "LoadOptions::vt01",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x55A330",
+      "name": "LoadOptions::vt02",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x55A3E0",
+      "name": "LoadOptions::vt04",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x55A410",
+      "name": "LoadOptions::Constructor_VectorClass_FileEntryClass___",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x55A460",
+      "name": "LoadOptions::vt00",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x55CFD0",
+      "name": "GameFrameCheck",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x55D360",
+      "name": "GameFrameLoop",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x55FAA0",
+      "name": "Options::Screen_Save",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x55FC80",
+      "name": "Options::Screen_Dialog",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x578080",
+      "name": "Cell::GetGroundHeight",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x5AE860",
+      "name": "Matrix3x4::Identity",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x5B2DA0",
+      "name": "RadioClass::Constructor",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x5B40B0",
+      "name": "SearchMIXFile",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x5BCC90",
+      "name": "TextBuffer::Init",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x5BD570",
+      "name": "File::LoadFileHVA",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x5BDA80",
+      "name": "Mission::SetAndCall",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x5D3490",
+      "name": "Dialog::ShowMessageBox",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x5D4D50",
+      "name": "Dialog::MessageLoop",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x5D4E70",
+      "name": "DialogQueue::PushEntry",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x5D4ED0",
+      "name": "DialogQueue::RemoveEntry",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x5D5DC0",
+      "name": "Dialog::GetModeNeg2",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x5D5DD0",
+      "name": "Dialog::GetMode3",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x5D7CE0",
+      "name": "CompleteGameInit",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x5E26C0",
+      "name": "Dialog::FindGameUI",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x5E2700",
+      "name": "Dialog::ShowMessage",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x5E2790",
+      "name": "Dialog::ShowStatusText",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x5E2F60",
+      "name": "Dialog::ShowPlayerName",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x5E9950",
+      "name": "Dialog::MapPlayerIDToIndex",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x5EE350",
+      "name": "Dialog::RefreshDialogsGame",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x5F2950",
+      "name": "Dialog::RunModemDialing",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x5F3900",
+      "name": "ObjectClass::ctor",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x5FA620",
+      "name": "GameSettings::Read",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x5FB320",
+      "name": "HotkeyOptions::DlgProc",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x5FBEF0",
+      "name": "ShowHotkeyOptionsDialog",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x600630",
+      "name": "Gadget::InitProperties",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x602AE0",
+      "name": "Dialog::IsSpecialTemplate",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x606800",
+      "name": "Dialog::MapControlToAction",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x607FD0",
+      "name": "Dialog::StopBink",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x608070",
+      "name": "Dialog::IdleProcess",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x60A330",
+      "name": "Dialog::HandleTabKey",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x60A5B0",
+      "name": "Dialog::DispatchEvent",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x60AAA0",
+      "name": "Dialog::EnumAndCleanup",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x60F320",
+      "name": "Dialog::SubclassEditControl",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x60F760",
+      "name": "Dialog::InitWindow",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x60F9A0",
+      "name": "Dialog::InitializeControls",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x610360",
+      "name": "Dialog::DestroyDialogSystem",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x6137D0",
+      "name": "Dialog::TabControlPaint",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x618D40",
+      "name": "Options::DialogProc",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x61E700",
+      "name": "GroupLabel::WndProc",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x61EF70",
+      "name": "FormatHotkeyDisplayString",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x6213A0",
+      "name": "Dialog::Resize",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x622720",
+      "name": "Dialog::Destroy",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x622800",
+      "name": "Dialog::Show",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x622B50",
+      "name": "BaseDialogProc",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x623120",
+      "name": "Dialog::PumpMessages",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x623340",
+      "name": "DialogControl::Constructor",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x6233A0",
+      "name": "Dialog::CleanupTree",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x623560",
+      "name": "GadgetClass::SetTooltip",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x623610",
+      "name": "DialogClass::CopyTemplateStruct",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x624110",
+      "name": "SimpleDialogControl::Constructor",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x624CA0",
+      "name": "Dialog::BindGadgetData",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x661850",
+      "name": "Random::AdvanceRandomBytes",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x668BF0",
+      "name": "RulesClass::Addition",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x66D3A0",
+      "name": "RulesClass::ReadColors",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x66D480",
+      "name": "RulesClass::ReadColorAdd",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x671EA0",
+      "name": "Dialog::ReadMultiplayerDialogSettings",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x672660",
+      "name": "RulesClass::LoadBuildingTypes",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x6728B0",
+      "name": "RulesClass::LoadAnimTypes",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x674550",
+      "name": "RulesClass::ReadMovies",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x683610",
+      "name": "ScenarioClass::InitTimer",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x69D8C0",
+      "name": "SHA1::ProcessBlock",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x6A46D0",
+      "name": "HouseTypeClass::Find",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x6AE2C0",
+      "name": "ShowSkirmishSetupScreen",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x6AE3F0",
+      "name": "Skirmish::Setup_DlgProc",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x6BB390",
+      "name": "RegisterClassesCOM",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x6BB9A0",
+      "name": "WinMain",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x6C8C40",
+      "name": "Timer::GetTicks",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x6D1C20",
+      "name": "TacticalMap::Construct",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x6D20E0",
+      "name": "ZCoordToScreenY",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x6D2140",
+      "name": "Coord::To_Screen",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x6E57F0",
+      "name": "HouseClass::UpdateAllTypes",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x6E5820",
+      "name": "TriggerActionQueue::ProcessAll",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x6F3F40",
+      "name": "TechnoClass::Update",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x720590",
+      "name": "ThemeClass::InitializeThemes",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x720770",
+      "name": "ThemeManager::Cleanup",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x7207F0",
+      "name": "Audio::LoadWAVFiles",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x723EA0",
+      "name": "GadgetClass::Show",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x723EB0",
+      "name": "GadgetClass::Hide",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x72AA40",
+      "name": "LoadMouseClassResources",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x735120",
+      "name": "CharToWideString",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x7353C0",
+      "name": "UnitClass::Construct",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x74FAE0",
+      "name": "GetModuleInternalVersion",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x750920",
+      "name": "PlayVocClass",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x7510D0",
+      "name": "Audio::InitFromINI",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x7513F0",
+      "name": "Audio::LoadSoundINI",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x753000",
+      "name": "InitFromINIEVA",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x7531A0",
+      "name": "LoadINIEVA",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x753B70",
+      "name": "VoxelPaletteClass::LoadFromFile",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x754C00",
+      "name": "Voxel::SetProjectionAngle",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x754CB0",
+      "name": "Voxel::Projection_Setup",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x755CD0",
+      "name": "File::LoadFileVXL",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x75A790",
+      "name": "AnimSystem::Init",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x75A7D0",
+      "name": "ResetAnimSystem",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x775940",
+      "name": "Dialog::FindByHandle",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x7759B0",
+      "name": "Dialog::FindByPtr",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x775BC0",
+      "name": "DialogClass::Reposition",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x777060",
+      "name": "Dialog::RestoreParent",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x7775C0",
+      "name": "MainWindowProc",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x777C30",
+      "name": "InitWindowCreation",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x77A700",
+      "name": "GadgetClass::TrackState",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x77D820",
+      "name": "Dialog::UpdateGameUI",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x799D10",
+      "name": "Dialog::CloseAll",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x7B1DE0",
+      "name": "WinsockInterface::Init",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x7B2720",
+      "name": "SessionClass::SetInstance",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x7BA610",
+      "name": "XSurface::DrawLineEx",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x7BA8C0",
+      "name": "XSurface::DrawDashedLine",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x7BAB90",
+      "name": "XSurface::WalkLine",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x7BADC0",
+      "name": "XSurface::DrawRectEx",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x7BB050",
+      "name": "XSurface::FillRectEx",
+      "size_hint": "?"
+    },
+    {
+      "address": "0x7BB350",
+      "name": "XSurface::DrawEllipseOutline",
+      "size_hint": "?"
+    }
+  ],
+  "unmatched_text_sample": [
+    {
+      "addr": "0X52F634",
+      "file": "cmdline.cpp",
+      "line": 19,
+      "context": "// 0x52F634: ResetIntroFlags(&g_IntroMovieObject)"
+    },
+    {
+      "addr": "0X52F63E",
+      "file": "cmdline.cpp",
+      "line": 22,
+      "context": "// 0x52F63E: ArmageddonMode = 0"
+    },
+    {
+      "addr": "0X52F644",
+      "file": "cmdline.cpp",
+      "line": 25,
+      "context": "// 0x52F644: if argc <= 1, return 1"
+    },
+    {
+      "addr": "0X52F66E",
+      "file": "cmdline.cpp",
+      "line": 34,
+      "context": "// 0x52F66E: -JABBER"
+    },
+    {
+      "addr": "0X52F68F",
+      "file": "cmdline.cpp",
+      "line": 40,
+      "context": "// 0x52F68F: -STR"
+    },
+    {
+      "addr": "0X52F6B0",
+      "file": "cmdline.cpp",
+      "line": 46,
+      "context": "// 0x52F6B0: -NOSTR"
+    },
+    {
+      "addr": "0X52F6CE",
+      "file": "cmdline.cpp",
+      "line": 52,
+      "context": "// 0x52F6CE: -NOAUDIO"
+    },
+    {
+      "addr": "0X52F6EB",
+      "file": "cmdline.cpp",
+      "line": 58,
+      "context": "// 0x52F6EB: -RECORD"
+    },
+    {
+      "addr": "0X52F70C",
+      "file": "cmdline.cpp",
+      "line": 64,
+      "context": "// 0x52F70C: -PLAY"
+    },
+    {
+      "addr": "0X52F76B",
+      "file": "cmdline.cpp",
+      "line": 70,
+      "context": "// 0x52F76B: -? / -HELP / -OPT / -OPTIONS"
+    },
+    {
+      "addr": "0X52F787",
+      "file": "cmdline.cpp",
+      "line": 84,
+      "context": "// 0x52F787: -NOINTRO (hash 0xD945A2A2 = -648255326)"
+    },
+    {
+      "addr": "0X52F7A0",
+      "file": "cmdline.cpp",
+      "line": 90,
+      "context": "// 0x52F7A0: -CD"
+    },
+    {
+      "addr": "0X52F7C6",
+      "file": "cmdline.cpp",
+      "line": 97,
+      "context": "// 0x52F7C6: -DESTNET=x.x.x.x"
+    },
+    {
+      "addr": "0X52F885",
+      "file": "cmdline.cpp",
+      "line": 117,
+      "context": "// 0x52F885: -SOCKET"
+    },
+    {
+      "addr": "0X52F8D6",
+      "file": "cmdline.cpp",
+      "line": 125,
+      "context": "// 0x52F8D6: SessionClassSetInstance(0)"
+    },
+    {
+      "addr": "0X52F8E1",
+      "file": "cmdline.cpp",
+      "line": 128,
+      "context": "// 0x52F8E1: -MPDEBUG"
+    },
+    {
+      "addr": "0X52F901",
+      "file": "cmdline.cpp",
+      "line": 134,
+      "context": "// 0x52F901: -DROP="
+    },
+    {
+      "addr": "0X52F93F",
+      "file": "cmdline.cpp",
+      "line": 141,
+      "context": "// 0x52F93F: -SPEEDCONTROL"
+    },
+    {
+      "addr": "0X52F958",
+      "file": "cmdline.cpp",
+      "line": 145,
+      "context": "// 0x52F958: -DLINK1"
+    },
+    {
+      "addr": "0X52F974",
+      "file": "cmdline.cpp",
+      "line": 149,
+      "context": "// 0x52F974: -NETGEAR"
+    },
+    {
+      "addr": "0X52F98C",
+      "file": "cmdline.cpp",
+      "line": 153,
+      "context": "// 0x52F98C: -NOROUTER"
+    },
+    {
+      "addr": "0X52F9A4",
+      "file": "cmdline.cpp",
+      "line": 157,
+      "context": "// 0x52F9A4: -STEALTH"
+    },
+    {
+      "addr": "0X52F9C2",
+      "file": "cmdline.cpp",
+      "line": 163,
+      "context": "// 0x52F9C2: -MESSAGES"
+    },
+    {
+      "addr": "0X52F9DF",
+      "file": "cmdline.cpp",
+      "line": 169,
+      "context": "// 0x52F9DF: -ATTRACT"
+    },
+    {
+      "addr": "0X52FA01",
+      "file": "cmdline.cpp",
+      "line": 175,
+      "context": "// 0x52FA01: -%dX%d custom resolution"
+    },
+    {
+      "addr": "0X52FA37",
+      "file": "cmdline.cpp",
+      "line": 181,
+      "context": "// 0x52FA37: -480"
+    },
+    {
+      "addr": "0X52FA78",
+      "file": "cmdline.cpp",
+      "line": 187,
+      "context": "// 0x52FA78: -16"
+    },
+    {
+      "addr": "0X52FAAC",
+      "file": "cmdline.cpp",
+      "line": 193,
+      "context": "// 0x52FAAC: -WIN"
+    },
+    {
+      "addr": "0X52FAD7",
+      "file": "cmdline.cpp",
+      "line": 199,
+      "context": "// 0x52FAD7: -X / -O prefix"
+    },
+    {
+      "addr": "0X410191",
+      "file": "abstract.cpp",
+      "line": 15,
+      "context": ": uniqueId((uint32_t)(-1))  // 0x410191: mov [eax+0x10], 0xFFFFFFFF"
+    }
+  ],
+  "unmatched_data_sample": [
+    {
+      "addr": "0XA8E960",
+      "file": "globals.cpp",
+      "line": 25,
+      "context": "int  g_IntroMovieObject    = 0;   // 0xA8E960"
+    },
+    {
+      "addr": "0XA8ED6B",
+      "file": "globals.cpp",
+      "line": 26,
+      "context": "bool ArmageddonMode        = false; // 0xA8ED6B"
+    },
+    {
+      "addr": "0X840A70",
+      "file": "globals.cpp",
+      "line": 27,
+      "context": "uint32_t g_Audio_MixerEnabled = 1; // 0x840A70 (default: audio enabled)"
+    },
+    {
+      "addr": "0XA8F784",
+      "file": "globals.cpp",
+      "line": 28,
+      "context": "int  dword_A8F784          = 0;   // 0xA8F784 (record/playback: 0=normal, 1=record, 2=play)"
+    },
+    {
+      "addr": "0X89E3A0",
+      "file": "globals.cpp",
+      "line": 29,
+      "context": "bool byte_89E3A0           = false; // 0x89E3A0 (-CD flag)"
+    },
+    {
+      "addr": "0XA8D600",
+      "file": "globals.cpp",
+      "line": 30,
+      "context": "uint32_t dword_A8D600      = 0;   // 0xA8D600 (dest IP net)"
+    },
+    {
+      "addr": "0XA8D604",
+      "file": "globals.cpp",
+      "line": 31,
+      "context": "uint32_t dword_A8D604      = 0;   // 0xA8D604"
+    },
+    {
+      "addr": "0XA8D608",
+      "file": "globals.cpp",
+      "line": 32,
+      "context": "uint32_t dword_A8D608      = 0;   // 0xA8D608"
+    },
+    {
+      "addr": "0XA8D5FC",
+      "file": "globals.cpp",
+      "line": 33,
+      "context": "bool dword_A8D5FC           = false; // 0xA8D5FC (-DESTNET set)"
+    },
+    {
+      "addr": "0XB04880",
+      "file": "globals.cpp",
+      "line": 34,
+      "context": "bool byte_B04880           = false; // 0xB04880 (MP debug)"
+    },
+    {
+      "addr": "0XA8B8B4",
+      "file": "globals.cpp",
+      "line": 35,
+      "context": "bool byte_A8B8B4           = false; // 0xA8B8B4 (MP debug 2)"
+    },
+    {
+      "addr": "0XA8EDDC",
+      "file": "globals.cpp",
+      "line": 36,
+      "context": "bool byte_A8EDDC           = false; // 0xA8EDDC (-SPEEDCONTROL)"
+    },
+    {
+      "addr": "0XB77E18",
+      "file": "globals.cpp",
+      "line": 37,
+      "context": "int  dword_B77E18          = 0;   // 0xB77E18 (router: 0=default, 1=DLINK1, 2=NETGEAR)"
+    },
+    {
+      "addr": "0XA8E2C8",
+      "file": "globals.cpp",
+      "line": 38,
+      "context": "bool byte_A8E2C8           = true;  // 0xA8E2C8 (no router, default: router enabled)"
+    },
+    {
+      "addr": "0XA8D60C",
+      "file": "globals.cpp",
+      "line": 39,
+      "context": "bool byte_A8D60C           = false; // 0xA8D60C (-STEALTH)"
+    },
+    {
+      "addr": "0XA8D60D",
+      "file": "globals.cpp",
+      "line": 40,
+      "context": "bool byte_A8D60D           = true;  // 0xA8D60D (-MESSAGES, default: messages)"
+    },
+    {
+      "addr": "0XA8D5F8",
+      "file": "globals.cpp",
+      "line": 41,
+      "context": "int  g_NetworkEventPending = 0;   // 0xA8D5F8 (network event flags)"
+    },
+    {
+      "addr": "0XA8EB84",
+      "file": "globals.cpp",
+      "line": 42,
+      "context": "int  g_CommandLineFlags    = 0;   // 0xA8EB84"
+    },
+    {
+      "addr": "0XA8EB88",
+      "file": "globals.cpp",
+      "line": 43,
+      "context": "int  g_CommandLineParam    = 0;   // 0xA8EB88"
+    },
+    {
+      "addr": "0X8175B0",
+      "file": "globals.cpp",
+      "line": 44,
+      "context": "bool g_Is16BitMode         = false; // 0x8175B0"
+    }
+  ],
+  "file_breakdown": [
+    {
+      "file": "abstract.cpp",
+      "total": 17,
+      "text": 15,
+      "data": 0,
+      "other": 2,
+      "matched": 1,
+      "unmatched": 16,
+      "is_generated": false
+    },
+    {
+      "file": "aircraft.cpp",
+      "total": 15,
+      "text": 15,
+      "data": 0,
+      "other": 0,
+      "matched": 15,
+      "unmatched": 0,
+      "is_generated": false
+    },
+    {
+      "file": "anim.cpp",
+      "total": 1,
+      "text": 1,
+      "data": 0,
+      "other": 0,
+      "matched": 1,
+      "unmatched": 0,
+      "is_generated": true
+    },
+    {
+      "file": "audio.cpp",
+      "total": 58,
+      "text": 58,
+      "data": 0,
+      "other": 0,
+      "matched": 58,
+      "unmatched": 0,
+      "is_generated": true
+    },
+    {
+      "file": "building.cpp",
+      "total": 135,
+      "text": 135,
+      "data": 0,
+      "other": 0,
+      "matched": 135,
+      "unmatched": 0,
+      "is_generated": false
+    },
+    {
+      "file": "cc_file.cpp",
+      "total": 3,
+      "text": 3,
+      "data": 0,
+      "other": 0,
+      "matched": 3,
+      "unmatched": 0,
+      "is_generated": false
+    },
+    {
+      "file": "cell.cpp",
+      "total": 7,
+      "text": 7,
+      "data": 0,
+      "other": 0,
+      "matched": 7,
+      "unmatched": 0,
+      "is_generated": false
+    },
+    {
+      "file": "cmdline.cpp",
+      "total": 29,
+      "text": 29,
+      "data": 0,
+      "other": 0,
+      "matched": 0,
+      "unmatched": 29,
+      "is_generated": false
+    },
+    {
+      "file": "connection.cpp",
+      "total": 2,
+      "text": 2,
+      "data": 0,
+      "other": 0,
+      "matched": 2,
+      "unmatched": 0,
+      "is_generated": false
+    },
+    {
+      "file": "containers.cpp",
+      "total": 9,
+      "text": 9,
+      "data": 0,
+      "other": 0,
+      "matched": 9,
+      "unmatched": 0,
+      "is_generated": true
+    },
+    {
+      "file": "factory.cpp",
+      "total": 1,
+      "text": 1,
+      "data": 0,
+      "other": 0,
+      "matched": 1,
+      "unmatched": 0,
+      "is_generated": true
+    },
+    {
+      "file": "file.cpp",
+      "total": 13,
+      "text": 13,
+      "data": 0,
+      "other": 0,
+      "matched": 13,
+      "unmatched": 0,
+      "is_generated": true
+    },
+    {
+      "file": "foot.cpp",
+      "total": 1,
+      "text": 1,
+      "data": 0,
+      "other": 0,
+      "matched": 1,
+      "unmatched": 0,
+      "is_generated": false
+    },
+    {
+      "file": "gadget.cpp",
+      "total": 46,
+      "text": 46,
+      "data": 0,
+      "other": 0,
+      "matched": 46,
+      "unmatched": 0,
+      "is_generated": true
+    },
+    {
+      "file": "globals.cpp",
+      "total": 110,
+      "text": 15,
+      "data": 95,
+      "other": 0,
+      "matched": 15,
+      "unmatched": 95,
+      "is_generated": false
+    },
+    {
+      "file": "hash_table.cpp",
+      "total": 4,
+      "text": 4,
+      "data": 0,
+      "other": 0,
+      "matched": 4,
+      "unmatched": 0,
+      "is_generated": false
+    },
+    {
+      "file": "house.cpp",
+      "total": 6,
+      "text": 6,
+      "data": 0,
+      "other": 0,
+      "matched": 6,
+      "unmatched": 0,
+      "is_generated": true
+    },
+    {
+      "file": "house_type.cpp",
+      "total": 1,
+      "text": 0,
+      "data": 1,
+      "other": 0,
+      "matched": 0,
+      "unmatched": 1,
+      "is_generated": false
+    },
+    {
+      "file": "infantry.cpp",
+      "total": 39,
+      "text": 39,
+      "data": 0,
+      "other": 0,
+      "matched": 39,
+      "unmatched": 0,
+      "is_generated": false
+    },
+    {
+      "file": "ini_class.cpp",
+      "total": 3,
+      "text": 3,
+      "data": 0,
+      "other": 0,
+      "matched": 3,
+      "unmatched": 0,
+      "is_generated": false
+    },
+    {
+      "file": "init_game.cpp",
+      "total": 46,
+      "text": 0,
+      "data": 46,
+      "other": 0,
+      "matched": 0,
+      "unmatched": 46,
+      "is_generated": false
+    },
+    {
+      "file": "load_options.cpp",
+      "total": 8,
+      "text": 8,
+      "data": 0,
+      "other": 0,
+      "matched": 8,
+      "unmatched": 0,
+      "is_generated": false
+    },
+    {
+      "file": "locomotor.cpp",
+      "total": 2,
+      "text": 2,
+      "data": 0,
+      "other": 0,
+      "matched": 2,
+      "unmatched": 0,
+      "is_generated": true
+    },
+    {
+      "file": "map.cpp",
+      "total": 40,
+      "text": 40,
+      "data": 0,
+      "other": 0,
+      "matched": 40,
+      "unmatched": 0,
+      "is_generated": true
+    },
+    {
+      "file": "math.cpp",
+      "total": 50,
+      "text": 50,
+      "data": 0,
+      "other": 0,
+      "matched": 50,
+      "unmatched": 0,
+      "is_generated": true
+    },
+    {
+      "file": "menu.cpp",
+      "total": 7,
+      "text": 7,
+      "data": 0,
+      "other": 0,
+      "matched": 7,
+      "unmatched": 0,
+      "is_generated": true
+    },
+    {
+      "file": "misc_sub.cpp",
+      "total": 611,
+      "text": 611,
+      "data": 0,
+      "other": 0,
+      "matched": 611,
+      "unmatched": 0,
+      "is_generated": true
+    },
+    {
+      "file": "mix.cpp",
+      "total": 1,
+      "text": 1,
+      "data": 0,
+      "other": 0,
+      "matched": 1,
+      "unmatched": 0,
+      "is_generated": true
+    },
+    {
+      "file": "mix_file.cpp",
+      "total": 1,
+      "text": 1,
+      "data": 0,
+      "other": 0,
+      "matched": 1,
+      "unmatched": 0,
+      "is_generated": false
+    },
+    {
+      "file": "movie.cpp",
+      "total": 7,
+      "text": 7,
+      "data": 0,
+      "other": 0,
+      "matched": 2,
+      "unmatched": 5,
+      "is_generated": false
+    },
+    {
+      "file": "network.cpp",
+      "total": 1,
+      "text": 1,
+      "data": 0,
+      "other": 0,
+      "matched": 1,
+      "unmatched": 0,
+      "is_generated": true
+    },
+    {
+      "file": "network_ext.cpp",
+      "total": 1,
+      "text": 1,
+      "data": 0,
+      "other": 0,
+      "matched": 1,
+      "unmatched": 0,
+      "is_generated": false
+    },
+    {
+      "file": "object.cpp",
+      "total": 8,
+      "text": 8,
+      "data": 0,
+      "other": 0,
+      "matched": 8,
+      "unmatched": 0,
+      "is_generated": false
+    },
+    {
+      "file": "radar.cpp",
+      "total": 1,
+      "text": 1,
+      "data": 0,
+      "other": 0,
+      "matched": 1,
+      "unmatched": 0,
+      "is_generated": true
+    },
+    {
+      "file": "random.cpp",
+      "total": 10,
+      "text": 10,
+      "data": 0,
+      "other": 0,
+      "matched": 10,
+      "unmatched": 0,
+      "is_generated": true
+    },
+    {
+      "file": "rules.cpp",
+      "total": 171,
+      "text": 171,
+      "data": 0,
+      "other": 0,
+      "matched": 171,
+      "unmatched": 0,
+      "is_generated": true
+    },
+    {
+      "file": "scenario.cpp",
+      "total": 6,
+      "text": 6,
+      "data": 0,
+      "other": 0,
+      "matched": 6,
+      "unmatched": 0,
+      "is_generated": true
+    },
+    {
+      "file": "shp.cpp",
+      "total": 1,
+      "text": 1,
+      "data": 0,
+      "other": 0,
+      "matched": 1,
+      "unmatched": 0,
+      "is_generated": true
+    },
+    {
+      "file": "string.cpp",
+      "total": 74,
+      "text": 74,
+      "data": 0,
+      "other": 0,
+      "matched": 74,
+      "unmatched": 0,
+      "is_generated": true
+    },
+    {
+      "file": "super.cpp",
+      "total": 16,
+      "text": 16,
+      "data": 0,
+      "other": 0,
+      "matched": 16,
+      "unmatched": 0,
+      "is_generated": true
+    },
+    {
+      "file": "surface.cpp",
+      "total": 51,
+      "text": 51,
+      "data": 0,
+      "other": 0,
+      "matched": 51,
+      "unmatched": 0,
+      "is_generated": false
+    },
+    {
+      "file": "tactical.cpp",
+      "total": 26,
+      "text": 26,
+      "data": 0,
+      "other": 0,
+      "matched": 26,
+      "unmatched": 0,
+      "is_generated": false
+    },
+    {
+      "file": "team.cpp",
+      "total": 2,
+      "text": 2,
+      "data": 0,
+      "other": 0,
+      "matched": 2,
+      "unmatched": 0,
+      "is_generated": true
+    },
+    {
+      "file": "techno.cpp",
+      "total": 5,
+      "text": 5,
+      "data": 0,
+      "other": 0,
+      "matched": 5,
+      "unmatched": 0,
+      "is_generated": false
+    },
+    {
+      "file": "timer.cpp",
+      "total": 9,
+      "text": 9,
+      "data": 0,
+      "other": 0,
+      "matched": 9,
+      "unmatched": 0,
+      "is_generated": true
+    },
+    {
+      "file": "unit.cpp",
+      "total": 43,
+      "text": 43,
+      "data": 0,
+      "other": 0,
+      "matched": 43,
+      "unmatched": 0,
+      "is_generated": false
+    },
+    {
+      "file": "vtables.cpp",
+      "total": 12,
+      "text": 12,
+      "data": 0,
+      "other": 0,
+      "matched": 12,
+      "unmatched": 0,
+      "is_generated": true
+    }
+  ]
+}

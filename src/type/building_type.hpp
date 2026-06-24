@@ -65,7 +65,7 @@ public:
     bool HasSuperWeapon(int index) const;
     // wrapper: delegates to BuildingTypeClass::GetFoundationHeight at 0x45ECA0
     bool HasSuperWeapon() const;
-    bool CanTogglePower() const;  // 0x508DF0
+    bool CanTogglePower() const;
 
     // unmatched: no callgraph reference and no git history record
     BuildingAnimStruct& GetBuildingAnim(BuildingAnimSlot slot);

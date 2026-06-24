@@ -39,17 +39,17 @@ public:
     bool HasProgressChanged();                                                           // 0x4C9C60
     bool DemandProduction(const TechnoTypeClass* type, HouseClass* owner, bool should_queue); // 0x4C9C70
     void SetObject(TechnoClass* object);                                                 // 0x4C9E10
-    bool Suspend(bool manual);  // 0x5D2530
+    bool Suspend(bool manual);
     // unmatched: no callgraph reference and no git history record
     bool Unsuspend(bool manual);
     int GetBuildTimeFrames() const;                                                      // 0x4C9FB0
-    bool AbandonProduction();                                                            // 0x4CA580 (Revert)
-    int GetProgress() const;                                                            // 0x4CA430 (Stat)
+    bool AbandonProduction();
+    int GetProgress() const;
     // unmatched: no callgraph reference and no git history record
     bool IsDone() const;
     // wrapper: delegates to FactoryClass::Stat at 0x4CA430
     int GetCostPerStep() const;
-    bool CompletedProduction();                                                          // 0x635060 (FinishProduction)
+    bool CompletedProduction();
     void StartProduction();                                                             // 0x4C9E60
     void StartProduction_2();                                                            // 0x4CA5A0
     void UpdateProduction();                                                            // 0x4C9B20
@@ -57,7 +57,7 @@ public:
 
     // queue management
     bool RemoveOneFromQueue(const TechnoTypeClass* item);                                // 0x4CA620
-    int CountTotal(const TechnoTypeClass* type) const;                                   // 0x4CA670 (CountType)
+    int CountTotal(const TechnoTypeClass* type) const;
     bool IsQueued(const TechnoTypeClass* type) const;                                    // 0x4CA6B0
 
     // static helpers

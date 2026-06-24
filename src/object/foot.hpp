@@ -42,7 +42,7 @@ public:
     virtual bool onProductionComplete() const;
     // design: virtual function, no binary implementation matched in IDA
     virtual void onCellEntry(CellStruct* cell);
-    virtual void processSuperWeapon(CellStruct* cell);  // 0x44C980
+    virtual void processSuperWeapon(CellStruct* cell);
     // wrapper: delegates to BuildingClass::ProcessSuperWeaponEffects at 0x44C980
     virtual CoordStruct* getMoveCoords(CoordStruct* out);
     // wrapper: delegates to BuildingClass::ProcessSuperWeaponEffects at 0x44C980
@@ -68,17 +68,17 @@ public:
         uint32_t a8, uint32_t draw_flags, uint32_t a10) {}
     // design: virtual function, no binary implementation matched in IDA
     virtual void onDrawComplete();
-    virtual void Panic();  // 0x772AC0
+    virtual void Panic();
     // wrapper: delegates to InfantryClass::startPanic at 0x772AC0
     virtual void UnPanic();
-    virtual void PlayIdleAnim(int idle_anim_number);  // 0x51DAF0
+    virtual void PlayIdleAnim(int idle_anim_number);
     // wrapper: delegates to InfantryClass::PlayIdleAnim at 0x51DAF0
     virtual uint32_t getMovementMode();
     // wrapper: delegates to InfantryClass::PlayIdleAnim at 0x51DAF0
     virtual uint32_t getPathDistance(uint32_t a, uint32_t b, uint32_t c) const;
     // wrapper: delegates to InfantryClass::PlayIdleAnim at 0x51DAF0
     virtual uint32_t getPathCost(uint32_t a, uint32_t b, uint32_t c, uint32_t d) const;
-    virtual uint32_t isAreaClear(uint32_t a, uint32_t b, uint32_t c) const;  // 0x5A7250
+    virtual uint32_t isAreaClear(uint32_t a, uint32_t b, uint32_t c) const;
     // wrapper: delegates to IsAreaClearMap at 0x5A7250
     virtual void onAreaEntry(uint32_t a, uint32_t b);
     // wrapper: delegates to IsAreaClearMap at 0x5A7250
@@ -99,8 +99,8 @@ public:
 
     // wrapper: delegates to FootClass::MovementAI at 0x4DA530
     int Mission_Move() override;
-    int Mission_Attack() override;  // 0x417FE0
-    int Mission_Guard() override;  // 0x459E70
+    int Mission_Attack() override;
+    int Mission_Guard() override;
     // wrapper: delegates to BuildingClass::Mission_Guard at 0x459E70
     int Mission_Hunt() override;
 
@@ -125,7 +125,7 @@ public:
     virtual int sub_4734B0();
     virtual int checkTerrainSpeed();  // 0x487150
     virtual int updateLocomotion();  // 0x487160
-    virtual int FindPathWithRetry();  // 0x42C900
+    virtual int FindPathWithRetry();
     virtual void ProcessDeployMission();  // 0x4CD2A0
     virtual void UpdateDeployMovement();  // 0x4CE680
     virtual int PostLoadInit();  // 0x4D3540

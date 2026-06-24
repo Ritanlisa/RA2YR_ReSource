@@ -133,7 +133,7 @@ public:
     // design: inline accessor, inlined at all call sites
     void Release() noexcept {}
 
-    virtual WDTError LoadConfig(); // 0x5981f0
+    virtual WDTError LoadConfig();
     // wrapper: delegates to RandomMap::LoadConfig at 0x5981F0
     virtual WDTError SaveConfig();
 
@@ -248,8 +248,8 @@ public:
     // unmatched: no callgraph reference and no git history record
     virtual ~Campaign();
 
-    virtual WDTError Start();  // 0x7CD80F
-    virtual WDTError End();  // 0x53A090
+    virtual WDTError Start();
+    virtual WDTError End();
     // wrapper: delegates to LightningStorm::End at 0x53A090
     virtual void     updateLogic();
     // wrapper: delegates to LightningStorm::End at 0x53A090

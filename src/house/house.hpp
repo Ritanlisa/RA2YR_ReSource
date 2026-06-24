@@ -143,7 +143,7 @@ public:
     void SDDTORAllAndTriggers();  // 0x4FB920
     // unmatched: no callgraph reference and no git history record
     void AcceptDefeat();
-    void DestroyAll();  // 0x4033C0
+    void DestroyAll();
     void DestroyAllBuildings();  // 0x4FC790
     void DestroyAllNonBuildingsNonNaval();  // 0x4FC820
     void DestroyAllNonBuildingsNaval();  // 0x4FC8D0
@@ -153,7 +153,7 @@ public:
 
     // unmatched: no callgraph reference and no git history record
     uint8_t Win(bool save_something);
-    uint8_t Lose(bool save_something);  // 0x6CB7B0
+    uint8_t Lose(bool save_something);
 
     bool CanAlly(HouseClass* other) const;  // 0x501540
     // unmatched: no callgraph reference and no git history record
@@ -188,7 +188,7 @@ public:
     void BuildingUnderAttack(BuildingClass* building);
     // unmatched: no callgraph reference and no git history record
     void TakeMoney(int amount);
-    void GiveMoney(int amount);  // 0x522D50
+    void GiveMoney(int amount);
 
     // unmatched: no callgraph reference and no git history record
     bool CanTransactMoney(int amount) const { return amount > 0 || AvailableMoney() >= -amount; }
@@ -202,7 +202,7 @@ public:
     // unmatched: no callgraph reference and no git history record
     int AvailableMoney() const;
 
-    void GiveTiberium(float amount, int type);  // 0x4F9610
+    void GiveTiberium(float amount, int type);
     void UpdateAllSilos(int prev_storage, int prev_total_storage);  // 0x4F9970
     // unmatched: no callgraph reference and no git history record
     double getStoragePercentage();
@@ -226,8 +226,8 @@ public:
 
     // design: no binary equivalent found in IDA
     int  AIBaseConstructionupdateLogic();
-    void AITryFireSW();  // 0x5098F0
-    bool FireSW(int idx, const CellStruct& coords);   // 0x5098F0
+    void AITryFireSW();
+    bool FireSW(int idx, const CellStruct& coords);
 
     // unmatched: no callgraph reference and no git history record
     CellStruct* PickTargetByType(CellStruct& out, TargetType type) const;

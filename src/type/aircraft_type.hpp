@@ -14,7 +14,7 @@ public:
     static constexpr AbstractType AbsID = AbstractType::AircraftType;
 
     static DynamicVectorClass<AircraftTypeClass*>* Array;
-    static AircraftTypeClass* Find(const char* pID);  // 0x41C8B0
+    static AircraftTypeClass* Find(const char* pID);
     // unmatched: no callgraph reference and no git history record
     static AircraftTypeClass* FindOrCreate(const char* pID);
     // wrapper: delegates to AircraftTypeClass::AircraftTypeClass at 0x41C8B0

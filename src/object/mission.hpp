@@ -26,7 +26,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~MissionClass() = default;
 
-    virtual bool queueMission(Mission mission, bool start_mission);  // 0x4E01C0
+    virtual bool queueMission(Mission mission, bool start_mission);
     // wrapper: delegates to AbstractClass::queueMission at 0x4E01C0
     virtual bool nextMission();
     // unmatched: no callgraph reference and no git history record
@@ -45,15 +45,15 @@ public:
     virtual int Mission_Harmless();
     // wrapper: delegates to MissionClass::HasValidTarget at 0x5B3A10
     virtual int Mission_Ambush();
-    virtual int Mission_Attack();  // 0x417FE0
+    virtual int Mission_Attack();
     // wrapper: delegates to AircraftClass::Mission_Attack at 0x417FE0
     virtual int Mission_Capture();
     // wrapper: delegates to AircraftClass::Mission_Attack at 0x417FE0
     virtual int Mission_Eaten();
-    virtual int Mission_Guard();  // 0x459E70
+    virtual int Mission_Guard();
     // wrapper: delegates to BuildingClass::Mission_Guard at 0x459E70
     virtual int Mission_AreaGuard();
-    virtual int Mission_Harvest(); // 0x4151e0
+    virtual int Mission_Harvest();
     // wrapper: delegates to UnitClass::Mission_Harvest at 0x4151E0
     virtual int Mission_Hunt();
     // wrapper: delegates to UnitClass::Mission_Harvest at 0x4151E0
@@ -64,12 +64,12 @@ public:
     virtual int Mission_Return();
     // wrapper: delegates to UnitClass::Mission_Harvest at 0x4151E0
     virtual int Mission_Stop();
-    virtual int Mission_Unload();  // 0x4151E0
-    virtual int Mission_Enter();  // 0x4166C0
-    virtual int Mission_Construction();  // 0x459EC0
+    virtual int Mission_Unload();
+    virtual int Mission_Enter();
+    virtual int Mission_Construction();
     // wrapper: delegates to BuildingClass::Mission_Construction at 0x459EC0
     virtual int Mission_Selling();
-    virtual int Mission_Repair();  // 0x6F4AB0
+    virtual int Mission_Repair();
     // wrapper: delegates to TechnoClass::Mission_RepairDispatch at 0x6F4AB0
     virtual int Mission_Missile();
     // wrapper: delegates to TechnoClass::Mission_RepairDispatch at 0x6F4AB0

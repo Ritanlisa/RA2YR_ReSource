@@ -103,7 +103,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~MouseClass() = default;
 
-    virtual bool SetCursor(MouseCursorType cursor, bool miniMap) override { return false; }  // 0x7C87B8
+    virtual bool SetCursor(MouseCursorType cursor, bool miniMap) override { return false; }
     // design: inline accessor, inlined at all call sites
     virtual bool UpdateCursor(MouseCursorType cursor, bool miniMap) override { return false; }
     // unmatched: no callgraph reference and no git history record

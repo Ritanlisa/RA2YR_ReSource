@@ -14,7 +14,7 @@ public:
     static constexpr AbstractType AbsID = AbstractType::UnitType;
 
     static DynamicVectorClass<UnitTypeClass*>* Array;
-    static UnitTypeClass* Find(const char* pID);  // 0x7470D0
+    static UnitTypeClass* Find(const char* pID);
     static UnitTypeClass* FindOrCreate(const char* pID);  // 0x74B960 (as FindOrCreate)
     // wrapper: delegates to UnitTypeClass::FindOrCreate at 0x74B960
     static int FindIndex(const char* pID);
@@ -33,10 +33,10 @@ public:
     virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override;
     virtual ObjectClass* CreateObject(HouseClass* pOwner) override; // 0x7474B0 (as CreateUnit)
 
-    UnitTypeClass(const char* pID) noexcept;  // 0x7470d0
+    UnitTypeClass(const char* pID) noexcept;
 
 protected:
-    UnitTypeClass(noinit_t) noexcept;  // 0x7470d0
+    UnitTypeClass(noinit_t) noexcept;
 
 public:
     int ArrayIndex;

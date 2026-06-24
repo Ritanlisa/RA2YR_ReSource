@@ -29,11 +29,11 @@ public:
 
     virtual void LoadFromINI(CCINIClass* ini);
     virtual const wchar_t* GetToolTip(unsigned int dialog_id);
-    virtual void CloseWindow();  // 0x7C865C
+    virtual void CloseWindow();
     virtual void vt_entry_8C();
     // unmatched: no callgraph reference and no git history record
     virtual bool vt_entry_90(const CellStruct& cell, HouseClass* house);
-    virtual bool vt_entry_94(const CellStruct& cell, HouseClass* house, bool unk);  // 0x4A9CA0
+    virtual bool vt_entry_94(const CellStruct& cell, HouseClass* house, bool unk);
     // unmatched: no callgraph reference and no git history record
     virtual bool vt_entry_98(const CellStruct& cell, HouseClass* house);
     // unmatched: no callgraph reference and no git history record
@@ -59,12 +59,12 @@ public:
     virtual void LoadFromINI(CCINIClass* ini) override;
     // wrapper: delegates to DisplayClass::ddtor at 0x4A8930
     virtual const wchar_t* GetToolTip(unsigned int dialog_id) override;
-    virtual void CloseWindow() override;  // 0x7C865C
+    virtual void CloseWindow() override;
     // wrapper: delegates to CloseWindow at 0x7C865C
     virtual void vt_entry_8C() override;
     // unmatched: no callgraph reference and no git history record
     virtual bool vt_entry_90(const CellStruct& cell, HouseClass* house) override;
-    virtual bool vt_entry_94(const CellStruct& cell, HouseClass* house, bool unk) override;  // 0x4A9CA0
+    virtual bool vt_entry_94(const CellStruct& cell, HouseClass* house, bool unk) override;
     // unmatched: no callgraph reference and no git history record
     virtual bool vt_entry_98(const CellStruct& cell, HouseClass* house) override;
     // unmatched: no callgraph reference and no git history record
@@ -74,7 +74,7 @@ public:
     virtual MouseCursorType GetLastMouseCursor() = 0;
     // wrapper: delegates to DisplayClass::vt_entry_94 at 0x4A9CA0
     virtual bool vt_entry_A4(uint32_t unk1, uint32_t unk2, uint32_t unk3);
-    virtual void SetViewDimensions(const RectangleStruct& rect);  // 0x4A8960
+    virtual void SetViewDimensions(const RectangleStruct& rect);
     virtual void vt_entry_AC(uint32_t unk);  // 0x40D250
     virtual void vt_entry_B0(uint32_t unk);  // 0x4AAD20
     // wrapper: delegates to DisplayClass::vt_entry_B0 at 0x4AAD20

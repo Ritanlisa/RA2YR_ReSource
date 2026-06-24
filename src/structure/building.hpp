@@ -111,7 +111,7 @@ public:
     // Construction update (vtable[8])
     // wrapper: delegates to BuildingClass::IsFactorySelectable at 0x457620
     virtual void UpdateConstructionOptions();
-    int Mission_Construction() override;  // 0x459EC0
+    int Mission_Construction() override;
     int UpdateConstruction();  // 0x443C60
 
     // Production
@@ -145,7 +145,7 @@ public:
     void HandleSellOrRepair();  // 0x701410
 
     // Repair
-    virtual int Mission_Repair() override;  // 0x6F4AB0
+    virtual int Mission_Repair() override;
     void ProcessRepair();  // 0x44B780
     bool CanRepair();  // 0x457CE0
     void ToggleRepairMode();  // 0x446FF0
@@ -155,7 +155,7 @@ public:
     // Missile / Super weapons
     // wrapper: delegates to BuildingClass::IsBeingRepairedOrCaptured at 0x7105E0
     virtual int Mission_Missile() override;
-    virtual void processSuperWeapon(uint32_t dwUnk, uint32_t dwUnk2, uint32_t dwUnk3, uint32_t dwUnk4);  // 0x44C980
+    virtual void processSuperWeapon(uint32_t dwUnk, uint32_t dwUnk2, uint32_t dwUnk3, uint32_t dwUnk4);
     void ProcessSuperWeaponEffects();   // 0x44C980
     bool SWAvailable();  // 0x457630
     bool SW2Available();  // 0x457690
@@ -168,13 +168,13 @@ public:
     int MissionController();  // 0x43C2D0
     int ProcessMission();  // 0x5B01C0
     int Mission_Guard();  // 0x459E70
-    int Mission_Attack();  // 0x417FE0
+    int Mission_Attack();
     // wrapper: delegates to AircraftClass::Mission_Attack at 0x417FE0
     int Mission_Move();
-    int Mission_Enter();  // 0x4166C0
+    int Mission_Enter();
     // wrapper: delegates to AircraftClass::Mission_Enter at 0x4166C0
     int Mission_Capture();
-    int Mission_Harvest(); // 0x4151e0
+    int Mission_Harvest();
     // wrapper: delegates to UnitClass::Mission_Harvest at 0x4151E0
     int Mission_Deploy();
     bool CheckMissionGuard();  // 0x458DD0

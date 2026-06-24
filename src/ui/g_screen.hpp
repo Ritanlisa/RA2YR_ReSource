@@ -45,7 +45,7 @@ public:
     virtual void DrawOnTop();
     virtual void Draw(uint32_t flags);
     virtual void Render();
-    virtual bool SetCursor(MouseCursorType cursor, bool miniMap);  // 0x7C87B8
+    virtual bool SetCursor(MouseCursorType cursor, bool miniMap);
     // unmatched: no callgraph reference and no git history record
     virtual bool UpdateCursor(MouseCursorType cursor, bool miniMap);
     // unmatched: no callgraph reference and no git history record
@@ -56,11 +56,11 @@ public:
     virtual HRESULT Save(IStream* stream);
     virtual void LoadFromINI(CCINIClass* ini);
     virtual const wchar_t* GetToolTip(unsigned int dialog_id);
-    virtual void CloseWindow();  // 0x7C865C
+    virtual void CloseWindow();
     virtual void vt_entry_8C();
     // unmatched: no callgraph reference and no git history record
     virtual bool vt_entry_90(const CellStruct& cell, HouseClass* house);
-    virtual bool vt_entry_94(const CellStruct& cell, HouseClass* house, bool unk);  // 0x4A9CA0
+    virtual bool vt_entry_94(const CellStruct& cell, HouseClass* house, bool unk);
     // unmatched: no callgraph reference and no git history record
     virtual bool vt_entry_98(const CellStruct& cell, HouseClass* house);
     // unmatched: no callgraph reference and no git history record

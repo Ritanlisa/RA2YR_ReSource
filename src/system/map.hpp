@@ -141,7 +141,7 @@ class MapClass : public GScreenClass
 public:
     static constexpr int kMaxCells = 0x40000;
 
-    virtual int32_t __stdcall IsVisible(CellStruct cell) { return 0; }  // 0x4A5110
+    virtual int32_t __stdcall IsVisible(CellStruct cell) { return 0; }
 
     virtual ~MapClass() = default;  // 0x5652C0
 
@@ -150,7 +150,7 @@ public:
     virtual void DestructCells() {}
     // unmatched: no callgraph reference and no git history record
     virtual void ConstructCells() {}
-    virtual void PointerGotInvalid(AbstractClass* ptr, bool unk) {}  // 0x4A7900
+    virtual void PointerGotInvalid(AbstractClass* ptr, bool unk) {}
     // unmatched: no callgraph reference and no git history record
     virtual bool DraggingInProgress() { return false; }
     // design: inline accessor, inlined at all call sites
@@ -173,7 +173,7 @@ public:
     CellClass* GetCellAt(const CellStruct& map_coords) const;
     // design: no binary equivalent found in IDA
     CellClass* GetCellAt(const CoordStruct& crd) const;
-    bool CellExists(const CellStruct& map_coords) const;  // 0x5657E0
+    bool CellExists(const CellStruct& map_coords) const;
 
     // unmatched: no callgraph reference and no git history record
     int GetThreatPosed(const CellStruct& cell, HouseClass* house) const;
@@ -199,10 +199,10 @@ public:
         return out;
     }
 
-    void CellIteratorReset();  // 0x578350
-    CellClass* CellIteratorNext();  // 0x578290
+    void CellIteratorReset();
+    CellClass* CellIteratorNext();
 
-    static DamageAreaResult DamageArea(const CoordStruct& coords, int damage, TechnoClass* source, WarheadTypeClass* wh, bool affects_tiberium, HouseClass* source_house);  // 0x75F330
+    static DamageAreaResult DamageArea(const CoordStruct& coords, int damage, TechnoClass* source, WarheadTypeClass* wh, bool affects_tiberium, HouseClass* source_house);
     // unmatched: no callgraph reference and no git history record
     static AnimTypeClass* SelectDamageAnimation(int damage, WarheadTypeClass* wh, LandType land_type, const CoordStruct& coords);
     // unmatched: no callgraph reference and no git history record
@@ -243,10 +243,10 @@ public:
     // design: no binary equivalent found in IDA
     void RemoveContentAt(CellStruct* coords, TechnoClass* content);
 
-    bool IsWithinUsableArea(const CellStruct& cell, bool check_level) const;  // 0x578460
-    bool IsWithinUsableArea(CellClass* cell, bool check_level) const;  // 0x578460
-    bool IsWithinUsableArea(const CoordStruct& coords) const;  // 0x578460
-    bool CoordinatesLegal(const CellStruct& cell) const;  // 0x568300
+    bool IsWithinUsableArea(const CellStruct& cell, bool check_level) const;
+    bool IsWithinUsableArea(CellClass* cell, bool check_level) const;
+    bool IsWithinUsableArea(const CoordStruct& coords) const;
+    bool CoordinatesLegal(const CellStruct& cell) const;
 
     CoordStruct* FindFirstFirestorm(CoordStruct* out, const CoordStruct& start, const CoordStruct& end, const HouseClass* house = nullptr) const;  // 0x5880A0
     CoordStruct FindFirstFirestorm(const CoordStruct& start, const CoordStruct& end, const HouseClass* house = nullptr) const
@@ -261,7 +261,7 @@ public:
     // unmatched: no callgraph reference and no git history record
     void RevealArea3(CoordStruct* coords, int height, int radius, bool skip_reveal);
 
-    void Reveal(HouseClass* house);  // 0x577D90
+    void Reveal(HouseClass* house);
     void Reshroud(HouseClass* house);  // 0x50BD10
 
     // wrapper: delegates to HouseClass::ReshroudMap at 0x50BD10
@@ -274,7 +274,7 @@ public:
     void SetSellMode(int mode);
     // unmatched: no callgraph reference and no git history record
     void SetRepairMode(int mode);
-    void DestroyCliff(CellClass* cell);  // 0x581140
+    void DestroyCliff(CellClass* cell);
     bool MakeTraversable(const ObjectClass* visitor, const CellStruct& cell) const;  // 0x452540
 
     // IDA 0x4F42F0 -- MapClass::MarkForRedraw (44B)

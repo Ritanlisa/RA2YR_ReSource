@@ -31,7 +31,7 @@ public:
     virtual int IsDeployed() const;  // 0x6EF9E0
     virtual bool PlayAnim(Sequence index, bool force = false, bool randomStartFrame = false);  // 0x451890
 
-    int Mission_Enter() override;  // 0x4166C0
+    int Mission_Enter() override;
     // wrapper: delegates to AircraftClass::Mission_Enter at 0x4166C0
     int Mission_ParaDropApproach() override;
     // wrapper: delegates to AircraftClass::Mission_Enter at 0x4166C0
@@ -57,7 +57,7 @@ public:
     virtual int FireWeaponWithCleanup(int a2, int a3);  // 0x51DF60
     virtual int GetFireError(int* target, int weapon_idx, int a4, int a5);  // 0x51C8B0
     virtual bool CanAttackTarget();  // 0x5227F0
-    virtual void PlayIdleAnim(int idle_anim_number) override;  // 0x51DAF0
+    virtual void PlayIdleAnim(int idle_anim_number) override;
     virtual int ProcessIdleAction();  // 0x51CDB0
     int ProcessAnimation();  // 0x5239D0
     int GetIdleTimer();  // 0x521320

@@ -26,7 +26,7 @@ public:
 
     // unmatched: no callgraph reference and no git history record
     BlitterCore* SelectPlainBlitter(BlitterFlags flags) const;
-    RLEBlitterCore* SelectRLEBlitter(BlitterFlags flags) const;  // 0x490E50
+    RLEBlitterCore* SelectRLEBlitter(BlitterFlags flags) const;
 
     virtual ~ConvertClass() = default;  // 0x491430
 

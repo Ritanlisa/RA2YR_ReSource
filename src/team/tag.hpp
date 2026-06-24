@@ -58,16 +58,16 @@ public:
 
     // design: static function, no direct binary match in IDA
     static void DeleteAll();
-    static void NotifyGlobalChanged(int idx_global);  // 0x7263A0
-    static void NotifyLocalChanged(int idx_local);  // 0x7263D0
+    static void NotifyGlobalChanged(int idx_global);
+    static void NotifyLocalChanged(int idx_local);
 
     bool HasCrossesHorizontalLineEvent() const;  // 0x6E5320
     bool HasCrossesVerticalLineEvent() const;  // 0x6E5300
     bool HasZoneEntryByEvent() const;  // 0x6E5340
     // wrapper: delegates to TagClass::HasZoneEntryByEvent at 0x6E5340
     bool HasAllowWinAction() const;
-    void GlobalChanged(int idx_global);  // 0x7263A0
-    void LocalChanged(int idx_local);  // 0x7263D0
+    void GlobalChanged(int idx_global);
+    void LocalChanged(int idx_local);
     bool IsOnlyInstanceOfType() const;  // 0x6E5850
 
     // unmatched: no callgraph reference and no git history record
@@ -79,7 +79,7 @@ public:
     // unmatched: no callgraph reference and no git history record
     bool HasBeenDestroyed() const;
     void AddTrigger(TriggerClass* trigger);  // 0x6E55C0
-    bool RemoveTrigger(TriggerClass* trigger);  // 0x577920
+    bool RemoveTrigger(TriggerClass* trigger);
     // wrapper: delegates to MapClass::RemoveTriggerRef at 0x577920
     bool ContainsTrigger(TriggerClass* trigger) const;
 
@@ -123,18 +123,18 @@ public:
 
     using Flags = uint8_t;
 
-    Flags GetFlags() const;  // 0x7271E0
+    Flags GetFlags() const;
     // wrapper: delegates to TriggerTypeClass::GetFlags at 0x7271E0
     bool HasAllowWinAction() const;
     bool HasCrossesHorizontalLineEvent() const;  // 0x6E6250
     bool HasCrossesVerticalLineEvent() const;  // 0x6E6280
     bool HasZoneEntryByEvent() const;  // 0x6E62B0
     bool AddTrigger(class TriggerTypeClass* trigger);  // 0x6E55C0
-    bool RemoveTrigger(class TriggerTypeClass* trigger);   // 0x577920
+    bool RemoveTrigger(class TriggerTypeClass* trigger);
     // wrapper: delegates to MapClass::RemoveTriggerRef at 0x577920
     bool ContainsTrigger(class TriggerTypeClass* trigger) const;
 
-    static void LoadFromINIList(CCINIClass* ini);  // 0x46CE10
+    static void LoadFromINIList(CCINIClass* ini);
     // unmatched: no callgraph reference and no git history record
     static void SaveToINIList(CCINIClass* ini);
 

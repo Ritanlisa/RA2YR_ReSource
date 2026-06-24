@@ -93,11 +93,11 @@ public:
     // unmatched: no callgraph reference and no git history record
     bool HasBeenDestroyed() const;
 
-    void SetHouse(HouseClass* house);  // 0x5D8CB0
+    void SetHouse(HouseClass* house);
     // wrapper: delegates to PlayerClass::SetHouse at 0x5D8CB0
     HouseClass* GetHouse() const;
 
-    void Enable();  // 0x7241A0 // IDA: Tooltip::Enable
+    void Enable();
     // unmatched: no callgraph reference and no git history record
     void Disable();
 
@@ -146,7 +146,7 @@ public:
     virtual void calculateChecksum(void* checksum) const;
     // arrayIndex() override inherited, conflicts with member
 
-    static void LoadFromINIList(CCINIClass* ini);  // 0x46CE10
+    static void LoadFromINIList(CCINIClass* ini);
     // wrapper: delegates to CampaignClass::LoadFromINIList at 0x46CE10
     static void SaveToINIList(CCINIClass* ini);
 

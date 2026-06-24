@@ -271,7 +271,7 @@ class XSurface;
 
 // --- Network ---
 // Network::ModemConnectionDialog;  // 0x5EF4E0
-// Network::IsMultiplayerActive;  // 0x77D940
+// Network::IsMultiplayerActive;
 
 // --- ObjectClass ---
 // ObjectClass::ToggleSidebarDisplay;  // 0x6A7D70
@@ -369,7 +369,7 @@ class XSurface;
 
 // --- TextRenderer ---
 // TextRenderer::Printf;  // 0x4A60E0
-// TextRenderer::DrawText;  // 0x4A61C0
+// TextRenderer::DrawText;
 // TextRenderer::RenderCentered;  // 0x4B96A0
 // TextRenderer::MeasureBuilding2;  // 0x642EF0
 

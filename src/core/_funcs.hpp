@@ -50,7 +50,7 @@ namespace gamemd {
     void sub_403FA0(/* param_bytes: 0 */) noexcept; // 0x403FA0 [global: unknown]
     int ProcessAudioFrame(/* param_bytes: 0 */) noexcept; // 0x4041D0 [global: unknown]
     int PollNextAudioQueue(/* param_bytes: 0 */) noexcept; // 0x404E20 [global: fastcall]
-    _DWORD * sub_405B50(/* param_bytes: 0 */) noexcept; // 0x405B50 [global: fastcall]
+    _DWORD * sub_405B50(/* param_bytes: 0 */) noexcept;
     void SetAudioSource(/* param_bytes: 0 */) noexcept; // 0x4060F0 [global: fastcall]
     int AddSampleVocClass(/* param_bytes: 0 */) noexcept; // 0x4064A0 [global: fastcall]
     void sub_406520(/* param_bytes: 0 */) noexcept; // 0x406520 [global: fastcall]
@@ -1990,7 +1990,7 @@ namespace gamemd {
     int ShowLoadingScreen(/* param_bytes: 0 */) noexcept; // 0x5312A0 [global: unknown]
     char InitBulkData(/* param_bytes: 0 */) noexcept; // 0x531680 [global: unknown]
     int InitCommands(/* param_bytes: 0 */) noexcept; // 0x532150 [global: unknown]
-    // char KeyboardConfig::LoadINI(/* param_bytes: 0 */) noexcept; // 0x533D20 [member: unknown]
+    // char KeyboardConfig::LoadINI(/* param_bytes: 0 */) noexcept;
     // int Game::DestroyAllObjects(/* param_bytes: 0 */) noexcept; // 0x534450 [member: unknown]
     char ReleaseLoadingResources(/* param_bytes: 0 */) noexcept; // 0x534DE0 [global: unknown]
     // char AssetClass::ReleaseAndReload(/* param_bytes: 0 */) noexcept; // 0x534E50 [member: unknown]
@@ -2204,10 +2204,10 @@ namespace gamemd {
     int sub_539760(/* param_bytes: 0 */) noexcept; // 0x539760 [global: unknown]
     void sub_539EA0(/* param_bytes: 0 */) noexcept; // 0x539EA0 [global: fastcall]
     // int LightningStorm::Start(/* param_bytes: 0 */) noexcept; // 0x539EB0 [member: fastcall]
-    // char LightningStorm::End(/* param_bytes: 0 */) noexcept; // 0x53A090 [member: unknown]
+    // char LightningStorm::End(/* param_bytes: 0 */) noexcept;
     BOOL sub_53A0E0(/* param_bytes: 0 */) noexcept; // 0x53A0E0 [global: unknown]
-    // BOOL NukeFlash::IsActive(/* param_bytes: 0 */) noexcept; // 0x53A110 [member: unknown]
-    // BOOL NukeFlash::ProcessEffect(/* param_bytes: 0 */) noexcept; // 0x53A120 [member: unknown]
+    // BOOL NukeFlash::IsActive(/* param_bytes: 0 */) noexcept;
+    // BOOL NukeFlash::ProcessEffect(/* param_bytes: 0 */) noexcept;
     // int LightningStorm::Strike(/* param_bytes: 4 */) noexcept; // 0x53A140 [member: stdcall]
     // char LightningStorm::Strike2(/* param_bytes: 12 */) noexcept; // 0x53A300 [member: stdcall]
     char UpdateSuperWeapons(/* param_bytes: 0 */) noexcept; // 0x53A6C0 [global: unknown]
@@ -2217,7 +2217,7 @@ namespace gamemd {
     int sub_53AE00(/* param_bytes: 0 */) noexcept; // 0x53AE00 [global: unknown]
     void UpdatePsyDom(/* param_bytes: 0 */) noexcept; // 0x53AF40 [global: unknown]
     // void PsyDom::Fire(/* param_bytes: 0 */) noexcept; // 0x53B080 [member: unknown]
-    // bool PsyDom::IsActive(/* param_bytes: 0 */) noexcept; // 0x53B400 [member: unknown]
+    // bool PsyDom::IsActive(/* param_bytes: 0 */) noexcept;
     int sub_53B410(/* param_bytes: 0 */) noexcept; // 0x53B410 [global: unknown]
     void globalHelper_03B460(/* param_bytes: 0 */) noexcept; // 0x53B460 [global: fastcall]
     void UpdateChronosphereEffect(/* param_bytes: 0 */) noexcept; // 0x53B560 [global: unknown]
@@ -2567,7 +2567,7 @@ namespace gamemd {
     // int SwizzleManager::SaveLoad(/* param_bytes: 8 */) noexcept; // 0x55AAC0 [member: stdcall]
     // _DWORD * COMObject::ReturnZeroPos(/* param_bytes: 8 */) noexcept; // 0x55ABD0 [member: stdcall]
     // _DWORD * COMObject::GetCoord3D(/* param_bytes: 8 */) noexcept; // 0x55ACA0 [member: stdcall]
-    // int COMObject::GetSpecialValue(/* param_bytes: 4 */) noexcept; // 0x55AD10 [member: stdcall]
+    // int COMObject::GetSpecialValue(/* param_bytes: 4 */) noexcept;
     int sub_55AD30(/* param_bytes: 0 */) noexcept; // 0x55AD30 [global: unknown]
     void sub_55AD50(/* param_bytes: 0 */) noexcept; // 0x55AD50 [global: unknown]
     void sub_55AD80(/* param_bytes: 0 */) noexcept; // 0x55AD80 [global: unknown]
@@ -2675,7 +2675,7 @@ namespace gamemd {
 
 // === 0x580000 - 0x58FFFF (73 funcs: 17 named, 56 sub_) ===
 
-    // int LayerClass::DestroyCliff(/* param_bytes: 0 */) noexcept; // 0x581140 [member: fastcall]
+    // int LayerClass::DestroyCliff(/* param_bytes: 0 */) noexcept;
     // int * Pathfinding::CrossBridge(/* param_bytes: 12 */) noexcept; // 0x583180 [member: stdcall]
     // int * Pathfinding::SelectRegionPath(/* param_bytes: 12 */) noexcept; // 0x5833F0 [member: stdcall]
     int * FindCliffSeedCell(/* param_bytes: 12 */) noexcept; // 0x5835D0 [global: stdcall]
@@ -2790,7 +2790,7 @@ namespace gamemd {
     int PlaceMapSeedClassBuildings(/* param_bytes: 0 */) noexcept; // 0x5A6C10 [global: fastcall]
     _DWORD * FindClearPlacementCell(/* param_bytes: 16 */) noexcept; // 0x5A6D80 [global: stdcall]
     _DWORD * globalHelper_0A7070(/* param_bytes: 16 */) noexcept; // 0x5A7070 [global: stdcall]
-    char IsAreaClearMap(/* param_bytes: 0 */) noexcept; // 0x5A7250 [global: fastcall]
+    char IsAreaClearMap(/* param_bytes: 0 */) noexcept;
     char IsMapClassAreaUniform(/* param_bytes: 0 */) noexcept; // 0x5A7440 [global: fastcall]
     _DWORD * globalHelper_0A7640(/* param_bytes: 0 */) noexcept; // 0x5A7640 [global: fastcall]
     unsigned int PlaceMapSeedBuildingsStrategic(/* param_bytes: 4 */) noexcept; // 0x5A78D0 [global: stdcall]
@@ -3015,7 +3015,7 @@ namespace gamemd {
     char sub_5C00E0(/* param_bytes: 0 */) noexcept; // 0x5C00E0 [global: unknown]
     // char AbstractClass::sub_5C03D0(/* param_bytes: 0 */) noexcept; // 0x5C03D0 [member: unknown]
     char sub_5C0640(/* param_bytes: 0 */) noexcept; // 0x5C0640 [global: fastcall]
-    _DWORD * CreateMovie(/* param_bytes: 0 */) noexcept; // 0x5C07D0 [global: fastcall]
+    _DWORD * CreateMovie(/* param_bytes: 0 */) noexcept;
     BOOL sub_5C0980(/* param_bytes: 0 */) noexcept; // 0x5C0980 [global: unknown]
     int sub_5C09A0(/* param_bytes: 0 */) noexcept; // 0x5C09A0 [global: unknown]
     // char Memory::FreeConditional(/* param_bytes: 34 */) noexcept; // 0x5C0E90 [member: stdcall]
@@ -3083,7 +3083,7 @@ namespace gamemd {
     int sub_5C65B0(/* param_bytes: 0 */) noexcept; // 0x5C65B0 [global: fastcall]
     void RotateBitBufferRight(/* param_bytes: 0 */) noexcept; // 0x5C6660 [global: fastcall]
     void RotateBitBufferLeft(/* param_bytes: 0 */) noexcept; // 0x5C67A0 [global: fastcall]
-    int InitArrayWithValue(/* param_bytes: 0 */) noexcept; // 0x5C6940 [global: fastcall]
+    int InitArrayWithValue(/* param_bytes: 0 */) noexcept;
     int FindBitArrayHighestBit(/* param_bytes: 0 */) noexcept; // 0x5C6960 [global: fastcall]
     int CompareBigIntLE(/* param_bytes: 0 */) noexcept; // 0x5C69E0 [global: fastcall]
     bool sub_5C6A30(/* param_bytes: 0 */) noexcept; // 0x5C6A30 [global: fastcall]
@@ -3205,8 +3205,8 @@ namespace gamemd {
     int sub_5D36A0(/* param_bytes: 16 */) noexcept; // 0x5D36A0 [global: stdcall]
     int sub_5D37C0(/* param_bytes: 0 */) noexcept; // 0x5D37C0 [global: unknown]
     void sub_5D37E0(/* param_bytes: 0 */) noexcept; // 0x5D37E0 [global: unknown]
-    // void MPBattleClass::sub_5D3810(/* param_bytes: 0 */) noexcept; // 0x5D3810 [member: unknown]
-    // void MPBattleClass::sub_5D3830(/* param_bytes: 0 */) noexcept; // 0x5D3830 [member: unknown]
+    // void MPBattleClass::sub_5D3810(/* param_bytes: 0 */) noexcept;
+    // void MPBattleClass::sub_5D3830(/* param_bytes: 0 */) noexcept;
     void sub_5D3850(/* param_bytes: 0 */) noexcept; // 0x5D3850 [global: unknown]
     void sub_5D3870(/* param_bytes: 0 */) noexcept; // 0x5D3870 [global: unknown]
     void sub_5D3890(/* param_bytes: 0 */) noexcept; // 0x5D3890 [global: unknown]
@@ -3216,7 +3216,7 @@ namespace gamemd {
     // __int64 MPBattleClass::sub_5D3950(/* param_bytes: 0 */) noexcept; // 0x5D3950 [member: unknown]
     // int MPBattleClass::sub_5D3980(/* param_bytes: 0 */) noexcept; // 0x5D3980 [member: unknown]
     // int MPBattleClass::sub_5D3990(/* param_bytes: 0 */) noexcept; // 0x5D3990 [member: unknown]
-    // int MPBattleClass::sub_5D39B0(/* param_bytes: 0 */) noexcept; // 0x5D39B0 [member: unknown]
+    // int MPBattleClass::sub_5D39B0(/* param_bytes: 0 */) noexcept;
     int ProcessEditControlKey(/* param_bytes: 0 */) noexcept; // 0x5D4510 [global: fastcall]
     // int WideString::WordWrap(/* param_bytes: 20 */) noexcept; // 0x5D4B20 [member: stdcall]
     // int MPBattleClass::sub_5D4C30(/* param_bytes: 0 */) noexcept; // 0x5D4C30 [member: unknown]
@@ -3225,7 +3225,7 @@ namespace gamemd {
     // int MPBattleClass::sub_5D4CD0(/* param_bytes: 0 */) noexcept; // 0x5D4CD0 [member: unknown]
     void sub_5D4D10(/* param_bytes: 0 */) noexcept; // 0x5D4D10 [global: cdecl]
     // MMRESULT Timer::DisableHighPrecision(/* param_bytes: 0 */) noexcept; // 0x5D5880 [member: unknown]
-    // void MPBattleClass::sub_5D58B0(/* param_bytes: 0 */) noexcept; // 0x5D58B0 [member: unknown]
+    // void MPBattleClass::sub_5D58B0(/* param_bytes: 0 */) noexcept;
     // void MPBattleClass::sub_5D58E0(/* param_bytes: 0 */) noexcept; // 0x5D58E0 [member: unknown]
     // void MPBattleClass::sub_5D5900(/* param_bytes: 0 */) noexcept; // 0x5D5900 [member: unknown]
     // void MPBattleClass::sub_5D5920(/* param_bytes: 0 */) noexcept; // 0x5D5920 [member: unknown]
@@ -4009,7 +4009,7 @@ namespace gamemd {
     // int RadSiteClass::SaveLoad_Prefix_0(/* param_bytes: 12 */) noexcept; // 0x65B450 [member: stdcall]
     // int RadSiteClass::ddtor(/* param_bytes: 8 */) noexcept; // 0x65B470 [member: stdcall]
     // int RadSiteClass::Radiate(/* param_bytes: 0 */) noexcept; // 0x65B9C0 [member: fastcall]
-    // int RadSiteClass::Deactivate(/* param_bytes: 0 */) noexcept; // 0x65BB50 [member: fastcall]
+    // int RadSiteClass::Deactivate(/* param_bytes: 0 */) noexcept;
     // int RadSiteClass::DecreaseRadiation(/* param_bytes: 0 */) noexcept; // 0x65BD00 [member: fastcall]
     unknown unknown_libname_28(/* param_bytes: 0 */) noexcept; // 0x65C630 [global: unknown]
     unsigned int sub_65D510(/* param_bytes: 0 */) noexcept; // 0x65D510 [global: fastcall]
@@ -5302,7 +5302,7 @@ namespace gamemd {
 // === 0x700000 - 0x70FFFF (8 funcs: 8 named, 0 sub_) ===
 
     void SelectTargetByWeight(/* param_bytes: 0 */) noexcept; // 0x709550 [global: unknown]
-    // int IPersistStream::GetSizeMax(/* param_bytes: 12 */) noexcept; // 0x70C250 [com: stdcall]
+    // int IPersistStream::GetSizeMax(/* param_bytes: 12 */) noexcept;
     // int FrameTimer::Init25(/* param_bytes: 0 */) noexcept; // 0x70D150 [member: unknown]
     void SetGlobalFlag(/* param_bytes: 0 */) noexcept; // 0x70D180 [global: fastcall]
     // void AbstractClass::ClearTargetToMeClearManagerTarget(/* param_bytes: 0 */) noexcept; // 0x70D4A0 [member: fastcall]
@@ -5900,7 +5900,7 @@ namespace gamemd {
     bool globalHelper_0532A0(/* param_bytes: 0 */) noexcept; // 0x7532A0 [global: fastcall]
     void ??__F?m_badAllocExceptionPtr___ExceptionPtr__0V?$shared_ptr___ExceptionPtr___tr1_std__A__YAXXZ_1(/* param_bytes: 0 */) noexcept; // 0x753510 [global: unknown]
     int sub_753570(/* param_bytes: 0 */) noexcept; // 0x753570 [global: unknown]
-    // int ChronoScreenEffect::DecrementCounter(/* param_bytes: 0 */) noexcept; // 0x753580 [member: unknown]
+    // int ChronoScreenEffect::DecrementCounter(/* param_bytes: 0 */) noexcept;
     int sub_7535D0(/* param_bytes: 0 */) noexcept; // 0x7535D0 [global: unknown]
     int sub_7539B0(/* param_bytes: 0 */) noexcept; // 0x7539B0 [global: unknown]
     int sub_7539D0(/* param_bytes: 0 */) noexcept; // 0x7539D0 [global: unknown]
@@ -7024,7 +7024,7 @@ namespace gamemd {
     int __strnicmp(/* param_bytes: 0 */) noexcept; // 0x7CD680 [global: cdecl]
     size_t _strcspn(/* param_bytes: 0 */) noexcept; // 0x7CD790 [global: cdecl]
     size_t _wcscspn(/* param_bytes: 0 */) noexcept; // 0x7CD7CE [global: cdecl]
-    unknown start(/* param_bytes: 0 */) noexcept; // 0x7CD80F [global: unknown]
+    unknown start(/* param_bytes: 0 */) noexcept;
     void __amsg_exit(/* param_bytes: 0 */) noexcept; // 0x7CD917 [global: cdecl]
     void _fast_error_exit(/* param_bytes: 0 */) noexcept; // 0x7CD93C [global: cdecl]
     int _strcmp(/* param_bytes: 0 */) noexcept; // 0x7CDA90 [global: cdecl]
@@ -7211,7 +7211,7 @@ namespace gamemd {
     int _crtGetLocaleInfoA_16(/* param_bytes: 16 */) noexcept; // 0x7D7491 [global: stdcall]
     unknown _LcidFromHexString(/* param_bytes: 0 */) noexcept; // 0x7D7577 [global: unknown]
     unknown _GetPrimaryLen(/* param_bytes: 0 */) noexcept; // 0x7D75B0 [global: unknown]
-    void * _memset(/* param_bytes: 0 */) noexcept; // 0x7D75E0 [global: cdecl]
+    void * _memset(/* param_bytes: 0 */) noexcept;
     int __lseek(/* param_bytes: 0 */) noexcept; // 0x7D7638 [global: cdecl]
     int __lseek_lk(/* param_bytes: 0 */) noexcept; // 0x7D769D [global: cdecl]
     unknown __getbuf(/* param_bytes: 0 */) noexcept; // 0x7D7710 [global: unknown]
@@ -7223,7 +7223,7 @@ namespace gamemd {
     unknown __IncMan(/* param_bytes: 0 */) noexcept; // 0x7D78FE [global: unknown]
     unknown __RoundMan(/* param_bytes: 0 */) noexcept; // 0x7D7954 [global: unknown]
     unknown __CopyMan(/* param_bytes: 0 */) noexcept; // 0x7D79E0 [global: unknown]
-    unknown __FillZeroMan(/* param_bytes: 0 */) noexcept; // 0x7D79FB [global: unknown]
+    unknown __FillZeroMan(/* param_bytes: 0 */) noexcept;
     unknown __IsZeroMan(/* param_bytes: 0 */) noexcept; // 0x7D7A07 [global: unknown]
     unknown __ShrMan(/* param_bytes: 0 */) noexcept; // 0x7D7A22 [global: unknown]
     unknown __ld12cvt(/* param_bytes: 0 */) noexcept; // 0x7D7AAF [global: unknown]
@@ -7329,7 +7329,7 @@ namespace gamemd {
     void ?unexpected_YAXXZ(/* param_bytes: 0 */) noexcept; // 0x7DC223 [global: cdecl]
     unknown __filwbuf(/* param_bytes: 0 */) noexcept; // 0x7DC291 [global: unknown]
     unsigned __int8 * __mbschr(/* param_bytes: 0 */) noexcept; // 0x7DC378 [global: cdecl]
-    unknown __setmode_lk(/* param_bytes: 0 */) noexcept; // 0x7DC468 [global: unknown]
+    unknown __setmode_lk(/* param_bytes: 0 */) noexcept;
     int ___crtGetLocaleInfoW(/* param_bytes: 0 */) noexcept; // 0x7DC4C9 [global: cdecl]
     int ___crtGetLocaleInfoA(/* param_bytes: 0 */) noexcept; // 0x7DC5DC [global: cdecl]
     void _abort(/* param_bytes: 0 */) noexcept; // 0x7DC6FA [global: cdecl]

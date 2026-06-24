@@ -20,18 +20,18 @@ public:
 
     virtual HRESULT __stdcall QueryInterface(const IID&, void**); // 0x48C650
     virtual ULONG   __stdcall AddRef(); // 0x48BF10
-    virtual ULONG   __stdcall Release(); // 0x48BF40
+    virtual ULONG   __stdcall Release();
 
     virtual ~ConnectionClass() = default;                                                    // 0x48BEE0
 
-    virtual bool  Open(); // 0x48C590
-    virtual void  Close();  // 0x543090
-    virtual bool  IsConnected() const;  // 0x5E2BE0
-    virtual bool  Send(const uint8_t*, int32_t); // 0x53F5D0
-    virtual int32_t Receive(uint8_t*, int32_t); // 0x53F650
+    virtual bool  Open();
+    virtual void  Close();
+    virtual bool  IsConnected() const;
+    virtual bool  Send(const uint8_t*, int32_t);
+    virtual int32_t Receive(uint8_t*, int32_t);
     // unmatched: no callgraph reference and no git history record
     virtual int32_t GetLatency() const;
-    virtual const char* GetAddress() const; // 0x542350
+    virtual const char* GetAddress() const;
     // unmatched: no callgraph reference and no git history record
     virtual void  OnMessageReceived(const NetworkEvent&);
     // wrapper: delegates to IPXManagerClass::GetAddress at 0x542350
@@ -80,16 +80,16 @@ public:
 class IPXManagerClass
 {
 public:
-    IPXManagerClass() noexcept;                                       // 0x542FE0
+    IPXManagerClass() noexcept;
     static IPXManagerClass* Instance;                                  // data: 0xA8EBE4
 
     void Init();  // 0x48BA90
     // wrapper: delegates to IPXManagerClass::init at 0x48BA90
     bool OpenSession();
-    void CloseSession();                                              // 0x5414C0
+    void CloseSession();
     bool SendPacket(const uint8_t*, int32_t);                          // 0x540D80
     int32_t ReceivePacket(uint8_t*, int32_t);                          // 0x541070
-    bool IsIPXAvailable() const;                                       // 0x5424A0
+    bool IsIPXAvailable() const;
 
     void init();  // 0x48BA90
     void processPacket();                                             // 0x5409F0
@@ -117,12 +117,12 @@ public:
     virtual ~ModemConnectionClass() = default;
     virtual bool Open() override; // 0x5F1BC0
 
-    bool Init();  // 0x542fe0
+    bool Init();
     bool Connect();  // 0x48C5A0
-    void FlushCom();                                        // 0x5F1F00
-    bool SendPacket(const uint8_t*, int32_t);                // 0x5F1F70
-    bool DetectModem();                                     // 0x5F1FA0
-    bool Negotiate();                                       // 0x5F3170
+    void FlushCom();
+    bool SendPacket(const uint8_t*, int32_t);
+    bool DetectModem();
+    bool Negotiate();
 
     char     PhoneNumber[64];
     bool     IsDialing;

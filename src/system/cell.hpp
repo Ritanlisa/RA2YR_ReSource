@@ -115,7 +115,7 @@ public:
 
     static CoordStruct Cell2Coord(const CellStruct& cell, int z = 0)
     {
-        return CoordStruct(cell.X * 256 + 128, cell.Y * 256 + 128, z);  // 0x642740
+        return CoordStruct(cell.X * 256 + 128, cell.Y * 256 + 128, z);
     }
 
     static CellStruct Coord2Cell(const CoordStruct& crd)
@@ -145,7 +145,7 @@ public:
     void Unshroud();  // 0x4876F0
     // wrapper: delegates to CellClass::Unshroud at 0x4876F0
     void SetupLAT();
-    void Setup(uint32_t unk);  // 0x5C21D0
+    void Setup(uint32_t unk);
     // wrapper: delegates to CampaignCoop::Setup at 0x5C21D0
     void BlowUpBridge();
     // wrapper: delegates to CampaignCoop::Setup at 0x5C21D0
@@ -154,7 +154,7 @@ public:
     void ScatterContent(const CoordStruct& crd, bool ignore_mission, bool ignore_dest, bool alt);
     // wrapper: delegates to CampaignCoop::Setup at 0x5C21D0
     CellClass* GetNeighbourCell(unsigned int direction) const;
-    void UpdateThreat(unsigned int source_house, int threat_level);  // 0x70F7E0 // IDA: FootClass::updateThreat
+    void UpdateThreat(unsigned int source_house, int threat_level);
     // wrapper: delegates to FootClass::updateThreat at 0x70F7E0
     void CollectCrate(FootClass* collector);
     // wrapper: delegates to FootClass::updateThreat at 0x70F7E0
@@ -173,7 +173,7 @@ public:
     // wrapper: delegates to CellClass::GetUIName at 0x484FF0
     bool IncreaseTiberium(int idx_tiberium, int amount);
     void ReduceTiberium(int amount);  // 0x480A80
-    void SetMapCoords(const CoordStruct& coords);  // 0x427270
+    void SetMapCoords(const CoordStruct& coords);
     // wrapper: delegates to AbstractClass::setMapCoords at 0x427270
     int GetFloorHeight(const Point2D& subcoords) const;
     // wrapper: delegates to AbstractClass::setMapCoords at 0x427270
@@ -212,7 +212,7 @@ public:
     RadSiteClass* GetRadSite() const { return radSite; }
     // design: no binary equivalent found in IDA
     bool IsRadiated() const;
-    int GetRadLevel() const;  // 0x65B8F0
+    int GetRadLevel() const;
     // wrapper: delegates to RadSiteClass::GetRadLevelAt at 0x65B8F0
     void RadLevelIncrease(double amount);
     // wrapper: delegates to RadSiteClass::GetRadLevelAt at 0x65B8F0

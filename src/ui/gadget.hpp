@@ -148,7 +148,7 @@ public:
     void ClearGadgets();
     // unmatched: no callgraph reference and no git history record
     void SetVisible(bool visible);
-    bool IsVisible() const;  // 0x4A5110
+    bool IsVisible() const;
     // unmatched: no callgraph reference and no git history record
     bool IsFinished() const;
     // unmatched: no callgraph reference and no git history record
@@ -163,7 +163,7 @@ public:
     std::vector<GadgetClass*>& Gadgets();
 
 protected:
-    void DrawBackground(DSurface* surface);  // 0x621E90
+    void DrawBackground(DSurface* surface);
 
     int x, y, w, h;
     bool visible = true;

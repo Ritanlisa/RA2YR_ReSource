@@ -34,7 +34,7 @@ public:
     // design: no binary equivalent found in IDA
     void RenderTiles();
     // IDA 0x48B2A0 area
-    void RenderOverlay();  // 0x658780
+    void RenderOverlay();
     // IDA 0x48B2A0 area
     // design: no binary equivalent found in IDA
     void RenderFog();
@@ -78,7 +78,7 @@ public:
     // design: static function, no direct binary match in IDA
     static void CreatePrimarySurface();
     // IDA 0x48B2A0 area
-    static void CreateBackBuffer();  // 0x4BAC60
+    static void CreateBackBuffer();
     // IDA 0x48B2A0 area
     // design: static function, no direct binary match in IDA
     static void RestoreSurfaces();
@@ -86,7 +86,7 @@ public:
     // design: static function, no direct binary match in IDA
     static void SetCooperativeLevel(HWND hWnd);
     // IDA 0x48B2A0 area
-    static void SetDisplayMode(int32_t w, int32_t h, int32_t bpp);  // 0x4AC700
+    static void SetDisplayMode(int32_t w, int32_t h, int32_t bpp);
     // IDA 0x48B2A0 area
     // design: static function, no direct binary match in IDA
     static void Shutdown();
@@ -115,7 +115,7 @@ public:
     // IDA 0x4355B0 area
     void ConvertIndices(uint8_t* dst, const uint8_t* src, int32_t count);  // 0x632BE0
     // IDA 0x4355B0 area
-    void SetPalette(const PALETTEENTRY* entries);  // 0x5CEA40
+    void SetPalette(const PALETTEENTRY* entries);
     // IDA 0x4355B0 area
     // design: no binary equivalent found in IDA
     void FadeTo(const PALETTEENTRY* target, int32_t steps);

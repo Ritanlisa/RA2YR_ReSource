@@ -66,13 +66,13 @@ public:
     virtual CellStruct* GetFoundationData(bool IncludeBib) const;
     // unmatched: no callgraph reference and no git history record
     virtual BuildingClass* FindFactory(bool allowOccupied, bool requirePower, bool requireCanBuild, HouseClass const* pHouse) const;
-    virtual SHPStruct* GetCameo() const;  // 0x5471B0
+    virtual SHPStruct* GetCameo() const;
     // unmatched: no callgraph reference and no git history record
     virtual SHPStruct* GetImage() const;
 
     // unmatched: no callgraph reference and no git history record
     static bool IsBuildCat5(AbstractType abstractID, int idx);
-    static TechnoTypeClass* GetTechnoType(AbstractType abstractID, int idx);  // 0x476EB0
+    static TechnoTypeClass* GetTechnoType(AbstractType abstractID, int idx);
 
     ObjectTypeClass() = default;
     ObjectTypeClass(const char* pID) noexcept;  // 0x5F7320 (as Construct)

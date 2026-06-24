@@ -19,7 +19,7 @@ public:
 
     // Takes a pointer to another GUID, returns true if equal
     // Supports two comparison modes controlled by dword_828140
-    static bool __fastcall Compare(const GUID& a, const GUID& b) noexcept;  // 0x53EE70
+    static bool __fastcall Compare(const GUID& a, const GUID& b) noexcept;
 };
 
 } // namespace gamemd

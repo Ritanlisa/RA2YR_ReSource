@@ -126,7 +126,7 @@ public:
     bool IsCampaign() const;
     // unmatched: no callgraph reference and no git history record
     bool IsSkirmish() const;
-    bool IsMultiplayer() const;  // 0x77D940
+    bool IsMultiplayer() const;
 
     // TODO: complete SessionClass members
 

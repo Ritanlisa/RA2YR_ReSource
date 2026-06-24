@@ -45,7 +45,7 @@ public:
     virtual HRESULT __stdcall Load(IStream* stream) = 0;  // 0x55AA60
     // unmatched: no callgraph reference and no git history record
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) = 0;
-    virtual HRESULT __stdcall GetSizeMax(ULARGE_INTEGER* size) = 0;  // 0x70C250
+    virtual HRESULT __stdcall GetSizeMax(ULARGE_INTEGER* size) = 0;
 };
 
 class IRTTITypeInfo : IUnknown {
@@ -133,7 +133,7 @@ public:
     virtual HouseClass* owningHouse() const;
     // design: virtual function, no binary implementation matched in IDA
     virtual int arrayIndex() const;
-    virtual bool isDead() const;  // 0x700D10
+    virtual bool isDead() const;
     // unmatched: no callgraph reference and no git history record
     virtual CoordStruct* fetchCoordinatesHere(CoordStruct* out) const;
     // unmatched: no callgraph reference and no git history record

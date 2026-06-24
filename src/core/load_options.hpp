@@ -63,10 +63,10 @@ public:
     bool Check();  // 0x559C20
 
     // IDA 0x559D60: AddRef (vt01) — load saved game
-    bool LoadGame(const char* filename);  // 0x5D6330
+    bool LoadGame(const char* filename);
 
     // IDA 0x559E40: Release (vt02) — save game
-    bool SaveGame(const char* filename, const wchar_t* description);  // 0x5D6320
+    bool SaveGame(const char* filename, const wchar_t* description);
 
     // IDA 0x559ED0: Read (vt04) — populate entry from file
     // wrapper: delegates to LoadOptions::Read at 0x559ED0
@@ -138,7 +138,7 @@ public:
     // --- Accessors ---
     // wrapper: delegates to LoadOptions::GetFlag252 at 0x6812D0
     uint32_t GetMode() const;
-    void SetMode(uint32_t m);  // 0x7DC468
+    void SetMode(uint32_t m);
     // unmatched: no callgraph reference and no git history record
     const char* GetExtension() const;
     // unmatched: no callgraph reference and no git history record

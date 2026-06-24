@@ -26,7 +26,7 @@ public:
     // IDA 0x48B2A0 area
     bool StubReturnFalse();  // 0x5CA7E0
     // IDA 0x48B2A0 area
-    void Process();  // 0x5CA800 // IDA: MultiplayerSiege::ProcessTurn
+    void Process();
     // IDA 0x48B2A0 area
     // design: no binary equivalent found in IDA
     void Reset();
@@ -59,7 +59,7 @@ public:
     // design: static function, no direct binary match in IDA
     static void sub_68C2B0();
     // IDA 0x48B2A0 area
-    static void SetupGame();  // 0x6AE6E0
+    static void SetupGame();
 
     static int32_t  s_MaxPlayers;   // 0x00
     static int32_t  s_GameMode;     // 0x04

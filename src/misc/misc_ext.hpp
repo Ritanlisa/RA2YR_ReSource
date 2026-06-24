@@ -238,7 +238,7 @@ class GUIDUtil
 {
 public:
     // IDA 0x48B2A0 area
-    static bool Compare(const ::GUID& a, const ::GUID& b);  // 0x53EE70
+    static bool Compare(const ::GUID& a, const ::GUID& b);
 
     int32_t     GUIDUtil_field_00;       // 0x00
 };
@@ -252,7 +252,7 @@ class CoordUtil
 {
 public:
     // IDA 0x48B2A0 area
-    void Set2(int32_t x, int32_t y, int32_t z);  // 0x645c50
+    void Set2(int32_t x, int32_t y, int32_t z);
 
     int32_t     X;              // 0x00
     int32_t     Y;              // 0x04
@@ -1781,7 +1781,7 @@ public:
     virtual ~ComStreamClass() = default;  // 0x7A40F0
 
     virtual void initStream() {} // 0x76B080
-    virtual void closeStream() {} // 0x76B090
+    virtual void closeStream() {}
     virtual void SetSize() {} // 0x7A2FE0
     virtual void Read() {} // 0x7A30D0
     virtual void Commit() {} // 0x7A3B30
@@ -1936,7 +1936,7 @@ public:
 
     virtual void Fire() {} // 0x4A71A0
     virtual void Update() {} // 0x4A7340
-    virtual void PointerGotInvalid() {} // 0x4A7900
+    virtual void PointerGotInvalid() {}
     virtual void DiskLaserClass() {} // 0x4A7A30
     virtual void Stat() {} // 0x4A7B80
     // +6 more virtual methods
@@ -2284,7 +2284,7 @@ public:
     virtual ~Int4() = default;
 
     virtual void Set() {} // 0x645C30
-    virtual void Set2() {} // 0x645C50
+    virtual void Set2() {}
 
     uint8_t Int4_field_0x04[4];
 };
@@ -2656,7 +2656,7 @@ public:
     virtual void Construct() {} // 0x5CE640
     virtual void Load() {} // 0x5CE7D0
     virtual void Draw() {} // 0x5CE8C0
-    virtual void SetPalette() {} // 0x5CEA40
+    virtual void SetPalette() {}
     virtual void GetFrame() {} // 0x5CEA80
     // +2 more virtual methods
 
@@ -3204,9 +3204,9 @@ public:
 class Scalar
 {
 public:
-    virtual ~Scalar() = default;  // 0x5AC340
+    virtual ~Scalar() = default;
 
-    virtual void Dtor() {} // 0x5AC340
+    virtual void Dtor() {}
 
 };
 // 1 methods in IDA

@@ -176,7 +176,7 @@ public:
     virtual void __stdcall Force_Immediate_Destination(CoordStruct coord) override {}     // 0x55AC00
     virtual void __stdcall Force_New_Slope(int ramp) override {}                         // 0x55ACE0
     virtual bool __stdcall Is_Moving_Now() override { return Is_Moving(); }              // 0x4B6610
-    virtual int __stdcall Apparent_Speed() override { return 0; }                        // 0x55AD10
+    virtual int __stdcall Apparent_Speed() override { return 0; }
     virtual int __stdcall Drawing_Code() override { return 0; }                          // 0x55ACF0
     virtual FireError __stdcall Can_Fire() override { return FireError::OK; }            // 0x55AD00
     virtual int __stdcall Get_Status() override { return 0; }                            // 0x4B4C60
@@ -689,7 +689,7 @@ public:
     virtual HRESULT __stdcall QueryInterface(const IID&, void** ppv) override { if (ppv) { *ppv = static_cast<ILocomotion*>(static_cast<void*>(this)); AddRef(); return S_OK; } return E_POINTER; }  // 0x55A9B0
     // design: inline accessor, inlined at all call sites
     virtual ULONG __stdcall AddRef() override { return ++RefCount; }
-    virtual ULONG __stdcall Release() override { if (--RefCount == 0) { delete this; return 0; } return RefCount; } // 0x718000
+    virtual ULONG __stdcall Release() override { if (--RefCount == 0) { delete this; return 0; } return RefCount; }
 
     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override { return S_OK; }  // 0x7180a0
 
@@ -701,8 +701,8 @@ public:
     virtual bool __stdcall Is_Piggybacking() override { return false; }                                // 0x718100
 
     // ILocomotion overrides
-    virtual bool __stdcall Is_Moving() override { return false; }                                      // 0x718000
-    virtual CoordStruct* __stdcall Destination(CoordStruct* out) override { return nullptr; }            // 0x718000
+    virtual bool __stdcall Is_Moving() override { return false; }
+    virtual CoordStruct* __stdcall Destination(CoordStruct* out) override { return nullptr; }
     virtual bool __stdcall Process() override { return false; }                                        // 0x718230
     virtual void __stdcall Move_To(CoordStruct to) override { (void)to; }                          // 0x718260
     virtual void __stdcall Stop_Moving() override {}                                    // 0x718260
@@ -713,9 +713,9 @@ public:
 
     // stub: not yet implemented from IDA
     virtual HRESULT __stdcall Load(IStream* stream) override { return S_OK; }         // stub
-    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { (void)stream; (void)clear_dirty; return S_OK; }  // 0x718000
+    virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override { (void)stream; (void)clear_dirty; return S_OK; }
 
-    virtual ~TeleportLocomotionClass() override = default; // 0x718000
+    virtual ~TeleportLocomotionClass() override = default;
 
     virtual int Size() override { return sizeof(*this); }  // inline: sizeof(*this)
 

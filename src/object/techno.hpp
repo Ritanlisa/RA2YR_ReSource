@@ -87,7 +87,7 @@ class TechnoClass : public RadioClass {
 public:
     static constexpr AbstractType kObjectDeriveId = static_cast<AbstractType>(0x1);
 
-    virtual HRESULT __stdcall Load(IStream* stream) override;  // 0x4158E0
+    virtual HRESULT __stdcall Load(IStream* stream) override;
     // wrapper: delegates to TechnoClass::ReturnToBaseAndReload at 0x4158E0
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;
 
@@ -122,8 +122,8 @@ public:
     virtual int getThreatValue() const;  // 0x4DED70
     // wrapper: delegates to TechnoClass::GetThreatValue at 0x4DED70
     virtual bool canBeAttacked(uint32_t a);
-    virtual uint32_t getSpecialValue(uint32_t a, uint32_t b);  // 0x55AD10
-    virtual bool canCrush(uint32_t a);  // 0x7438F0
+    virtual uint32_t getSpecialValue(uint32_t a, uint32_t b);
+    virtual bool canCrush(uint32_t a);
     virtual int getCrewCount() const;  // 0x6F3950
     // wrapper: delegates to TechnoClass::GetCrewCount at 0x6F3950
     virtual int getAntiAirValue() const;
@@ -157,7 +157,7 @@ public:
     // wrapper: delegates to TechnoClass::GetCrew at 0x707D20
     virtual bool CanDeploySlashUnload() const;
     virtual int GetROF(int weapon) const;  // 0x46C4F0
-    virtual int GetGuardRange(int unknown) const; // 0x773070
+    virtual int GetGuardRange(int unknown) const;
     // wrapper: delegates to TechnoClass::GetWeaponRange at 0x773070
     virtual bool canEnterTransport() const;
     // wrapper: delegates to TechnoClass::GetWeaponRange at 0x773070
@@ -225,7 +225,7 @@ public:
     virtual uint32_t getDamageReduction();
     // design: virtual function, no binary implementation matched in IDA
     virtual bool TriggersCellInset(AbstractClass* target);
-    virtual bool IsCloseEnough(AbstractClass* target, int weapon_idx) const;  // 0x70D590
+    virtual bool IsCloseEnough(AbstractClass* target, int weapon_idx) const;
     // wrapper: delegates to TechnoClass::IsCloseEnoughToBuilding at 0x70D590
     virtual bool IsCloseEnoughToAttack(AbstractClass* target) const;
     // wrapper: delegates to TechnoClass::IsCloseEnoughToBuilding at 0x70D590
@@ -237,8 +237,8 @@ public:
     virtual FireError GetFireErrorWithoutRange(AbstractClass* target, int weapon_index) const;
     // wrapper: delegates to TechnoClass::GetSightRange at 0x717800
     virtual FireError GetFireError(AbstractClass* target, int weapon_index, bool ignore_range) const;
-    virtual CellClass* SelectAutoTarget(TargetFlags flags, int current_threat, bool only_target_house_enemy);  // 0x51E140
-    virtual void SetTarget(AbstractClass* target);  // 0x6F9DD0
+    virtual CellClass* SelectAutoTarget(TargetFlags flags, int current_threat, bool only_target_house_enemy);
+    virtual void SetTarget(AbstractClass* target);
     virtual BulletClass* Fire(AbstractClass* target, int weapon_index);  // 0x70ECE0
     // wrapper: delegates to TechnoClass::Fire at 0x70ECE0
     virtual void Guard();
@@ -256,7 +256,7 @@ public:
     virtual int canAct();
     // design: virtual function, no binary implementation matched in IDA
     virtual int isNotSprayAttack2() const;
-    virtual WeaponStruct* GetDeployWeapon() const;  // 0x5218E0
+    virtual WeaponStruct* GetDeployWeapon() const;
     // wrapper: delegates to InfantryClass::GetDeployWeaponIndex at 0x5218E0
     virtual WeaponStruct* GetTurretWeapon() const;
     // wrapper: delegates to InfantryClass::GetDeployWeaponIndex at 0x5218E0
@@ -272,7 +272,7 @@ public:
     // design: virtual function, no binary implementation matched in IDA
     virtual void OnFinishRepair();
 
-    virtual void UpdateCloak(bool unknown = true);  // 0x457770
+    virtual void UpdateCloak(bool unknown = true);
     // wrapper: delegates to BuildingClass::UpdateCloak at 0x457770
     virtual void CreateGap();
     // wrapper: delegates to BuildingClass::UpdateCloak at 0x457770
@@ -281,7 +281,7 @@ public:
     virtual void onBridgeRepair();
     // wrapper: delegates to BuildingClass::UpdateCloak at 0x457770
     virtual void Sensed();
-    virtual void Reload();  // 0x4158E0
+    virtual void Reload();
     // wrapper: delegates to TechnoClass::ReturnToBaseAndReload at 0x4158E0
     virtual void onReloadComplete();
     virtual CoordStruct* GetTargetCoords(CoordStruct* pCrd) const;  // 0x70BCB0
@@ -289,14 +289,14 @@ public:
     virtual bool IsNotWarpingIn() const;
     // wrapper: delegates to TechnoClass::GetTargetCoords at 0x70BCB0
     virtual bool canChronoShift(uint32_t dwUnk) const;
-    virtual void DrawActionLines(bool force, uint32_t dwUnk2);  // 0x63BE60
+    virtual void DrawActionLines(bool force, uint32_t dwUnk2);
     // wrapper: delegates to BuildingClass::DrawActionLines at 0x63BE60
     virtual uint32_t GetDisguiseFlags(uint32_t existingFlags) const;
     // wrapper: delegates to BuildingClass::DrawActionLines at 0x63BE60
     virtual bool isClearlyVisibleTo(HouseClass* house) const;
     virtual void drawSelectionBox(uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5, // 0x659470
         uint32_t a6, uint32_t a7, uint32_t a8, uint32_t a9, uint32_t a10) {}
-    virtual void onSelect(uint32_t a, uint32_t b);  // 0x6EFC70
+    virtual void onSelect(uint32_t a, uint32_t b);
     virtual void DrawHealthBar(Point2D* pLocation, RectangleStruct* pBounds, bool bUnk3) const;  // 0x6f5190
     // wrapper: delegates to TechnoClass::DrawHealthBar at 0x6F5190
     virtual void DrawPipScalePips(Point2D* pLocation, Point2D* pOriginalLocation, RectangleStruct* pBounds) const;
@@ -319,12 +319,12 @@ public:
     virtual bool IsItTimeForIdleActionYet() const;
     // wrapper: delegates to TechnoClass::GetSightRange at 0x717800
     virtual bool UpdateIdleAction();
-    virtual void onDamage(uint32_t dwUnk);  // 0x45EE70
+    virtual void onDamage(uint32_t dwUnk);
     // wrapper: delegates to BuildingClass::ApplyFoundationDamage at 0x45EE70
     virtual void SetDestination(AbstractClass* dest, bool unknown);
     // wrapper: delegates to BuildingClass::ApplyFoundationDamage at 0x45EE70
     virtual bool canRecruit(uint32_t dwUnk, uint32_t dwUnk2);
-    virtual void UpdateSight(uint32_t a, uint32_t b, uint32_t c, uint32_t d, uint32_t e);  // 0x4C2BD0
+    virtual void UpdateSight(uint32_t a, uint32_t b, uint32_t c, uint32_t d, uint32_t e);
     // wrapper: delegates to TechnoClass::updateSightRange at 0x4C2BD0
     virtual void onPlacement(uint32_t a, uint32_t b, uint32_t c, uint32_t d);
     // design: pure virtual function, no binary implementation
@@ -349,7 +349,7 @@ public:
     virtual int getSpawnCount() const;
     // design: virtual function, no binary implementation matched in IDA
     virtual CoordStruct* getSpawnCoords(CoordStruct* out);
-    virtual uint32_t processSpawn();  // 0x71D000 // IDA: TerrainClass::ProcessSpawnAnim
+    virtual uint32_t processSpawn();
     // wrapper: delegates to TerrainClass::ProcessSpawnAnim at 0x71D000
     virtual bool canAttackOnTheMove() const;
     // wrapper: delegates to TerrainClass::ProcessSpawnAnim at 0x71D000
@@ -479,7 +479,7 @@ public:
     virtual int CanSelfRepair();  // 0x70FB50
     virtual int Mission_RepairDispatch();  // 0x6F4AB0
     virtual int PushNearbyUnits();  // 0x6F4EB0
-    virtual int SetFocus();  // 0x7C8674
+    virtual int SetFocus();
     virtual int SetHouseFlag();  // 0x6F4960
     virtual int ProcessAIDecision();  // 0x740810
     virtual int CheckPlayerOwned() const;  // 0x6F4A40
@@ -610,7 +610,7 @@ public:
     virtual int ProcessBorderTower();  // 0x6ED4D0
     virtual int HandleCursor();  // 0x700600
     virtual int HandleCursorClick();  // 0x6FFEC0
-    virtual int ScanAdjacentCells2(); // 0x703CC0
+    virtual int ScanAdjacentCells2();
     virtual int ScanNeighborCells();  // 0x703E70
     virtual int IsValidBuildingPlacement();  // 0x704000
     virtual int StartEffectAudio();  // 0x703770
@@ -651,7 +651,7 @@ public:
     virtual int GetWaypointCoords() const; // 0x6F18A0
     virtual int Create(); // 0x6F1920
     virtual int CopyStateFrom();  // 0x4B5210
-    virtual int ScalarDtor();  // 0x5AC340
+    virtual int ScalarDtor();
     virtual int EnteredOpenTopped();  // 0x710470
     virtual int MarkPassengersAsExited();  // 0x7104C0
     virtual int ExitedOpenTopped();  // 0x7104A0

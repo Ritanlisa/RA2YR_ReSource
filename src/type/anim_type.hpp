@@ -48,7 +48,7 @@ public:
 
     // wrapper: delegates to ReinforcementClass::CreateObject at 0x4737F0
     virtual SHPStruct* LoadImage();
-    virtual void Load2DArt();  // 0x5F9070 // IDA: ObjectTypeClass::Load2DArt (base)
+    virtual void Load2DArt();
 
     AnimTypeClass(const char* pID) noexcept;  // 0x427530 (as Construct)
 

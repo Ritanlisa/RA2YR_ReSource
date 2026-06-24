@@ -22,8 +22,8 @@ class VoxelAnimTypeClass;
 
 struct VoxLib
 {
-    void Start();  // 0x7CD80F
-    bool Loaded();  // 0x544C80
+    void Start();
+    bool Loaded();
     void Clear();
     // unmatched: no callgraph reference and no git history record
     void InitLimits(
@@ -67,7 +67,7 @@ struct VoxLib
 
 struct MotLib
 {
-    bool Loaded();   // 0x544C80
+    bool Loaded();
     int32_t Frames;
     int32_t Layers;
     int32_t MotLib_field_8;
@@ -125,7 +125,7 @@ public:
 
     // unmatched: no callgraph reference and no git history record
     virtual AbstractType __stdcall WhatAmI() const;
-    virtual int Size() const;  // 0x454190 // wrapper: BuildingClass::Size
+    virtual int Size() const;
 
     // wrapper: delegates to BuildingClass::Size at 0x454190
     virtual bool SpawnAtMapCoords(CellStruct* coords, HouseClass* owner);
@@ -186,7 +186,7 @@ public:
 
     // unmatched: no callgraph reference and no git history record
     virtual AbstractType __stdcall WhatAmI() const;
-    virtual int Size() const;  // 0x454190 // wrapper: BuildingClass::Size
+    virtual int Size() const;
 
     uint32_t                align_AC;
     BounceClass             Bounce;

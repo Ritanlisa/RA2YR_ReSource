@@ -33,7 +33,7 @@ public:
     virtual void calculateChecksum(void* checksum) const;
 
     // Construction
-    BombClass();                                                 // 0x4385D0 (AbstractClass)
+    BombClass();
     void ddtor();  // 0x438B00
 
     // Methods

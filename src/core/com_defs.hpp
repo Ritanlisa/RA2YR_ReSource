@@ -67,7 +67,6 @@ static const CLSID CLSID_SuperWeaponClass = {0x0CF2BCE7, 0x36E4, 0x11D2, {0x9B,0
 // IDA 0x6BB390 -- RegisterClassesCOM (single-class registry writer)
 void RegisterClassCOM(const GUID& clsid);
 
-// IDA 0x6BB9A0 -- WinMain: RegisterAllClasses (iterates factory table)
 void RegisterAllClasses();
 
 } // namespace gamemd

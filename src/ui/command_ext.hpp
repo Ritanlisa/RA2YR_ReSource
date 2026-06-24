@@ -203,8 +203,8 @@ public:
     int32_t AddRef();  // 0x537A50
     void ddtor();  // 0x537A60
     int32_t Release();  // 0x537A70
-    static void BuildBar();  // 0x6D1200
-    static void AddAction(CommandClass* cmd);  // 0x724580
+    static void BuildBar();
+    static void AddAction(CommandClass* cmd);
 
     int32_t     m_RefCount;     // 0x00
     static DynamicVectorClass<CommandClass*>* Array; // data: 0x87F658

@@ -86,7 +86,7 @@ public:
     virtual AbstractType __stdcall whatAmI() const override;
     virtual int objectSize() const override;  // 0x691F80
 
-    static bool LoadFromINIList(CCINIClass* ini, bool is_global);  // 0x46CE10
+    static bool LoadFromINIList(CCINIClass* ini, bool is_global);
 
     int32_t             arrayIndex;
     bool                isGlobal;

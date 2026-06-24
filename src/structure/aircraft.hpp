@@ -71,15 +71,15 @@ public:
     virtual ~AircraftClass() override = default;  // 0x414080
 
     // === Phase 3: Missions ===
-    int Mission_Attack() override;  // 0x417FE0
+    int Mission_Attack() override;
     // wrapper: delegates to AircraftClass::Mission_Attack at 0x417FE0
     int Mission_Return() override;
-    int Mission_Unload() override;  // 0x4151E0
+    int Mission_Unload() override;
     // wrapper: delegates to UnitClass::Mission_Harvest at 0x4151E0
     int Mission_Hunt() override;
     // wrapper: delegates to UnitClass::Mission_Harvest at 0x4151E0
     int Mission_Retreat() override;
-    int Mission_Enter() override;  // 0x4166C0
+    int Mission_Enter() override;
     int Mission_Transport();  // 0x419C80
     int MissionDispatch();  // 0x4190B0
 

@@ -12,7 +12,7 @@ public:
     static constexpr AbstractType AbsID = AbstractType::SmudgeType;
 
     static DynamicVectorClass<SmudgeTypeClass*>* Array;
-    static SmudgeTypeClass* Find(const char* pID);  // 0x6B5260
+    static SmudgeTypeClass* Find(const char* pID);
     // unmatched: no callgraph reference and no git history record
     static SmudgeTypeClass* FindOrCreate(const char* pID);
     // wrapper: delegates to SmudgeTypeClass::SmudgeTypeClass at 0x6B5260

@@ -42,7 +42,7 @@ public:
 
     virtual AbstractType __stdcall whatAmI() const override; // 0x6CE8F0 (SD_vt11)
     virtual int32_t objectSize() const override; // 0x6CE900 (SD_vt12)
-    virtual Action MouseOverObject(const CellStruct& cell, ObjectClass* pObjBelowMouse) const; // 0x6CEA10 (SD_vt16)
+    virtual Action MouseOverObject(const CellStruct& cell, ObjectClass* pObjBelowMouse) const;
 
     static SuperWeaponTypeClass* FindFirstOfAction(Action action);                    // 0x6CEEB0
 
@@ -108,15 +108,15 @@ public:
 
     void Reset();                                                                    // 0x6CE0B0
     bool SetOnHold(bool onHold);                                                     // 0x6CB4D0
-    bool Grant(bool oneTime, bool announce, bool onHold);                            // 0x6CB560 (StartTimer)
+    bool Grant(bool oneTime, bool announce, bool onHold);
     bool Lose();                                                                     // 0x6CB7B0
-    bool IsPowered() const;  // 0x465AF0
+    bool IsPowered() const;
     void Launch(const CellStruct& cell, bool isPlayer);                              // 0x6CC390
     int8_t CanFire() const;                                                           // 0x6CC360
     void SetReadiness(bool ready);                                                    // 0x6CB820
     int8_t StopPreclickAnim(bool isPlayer);                                           // 0x6CB830
     int8_t ClickFire(bool isPlayer, const CellStruct& cell);                          // 0x6CB920
-    bool HasChargeProgressed(bool isPlayer);                                          // 0x6CC080 (AnnounceReady)
+    bool HasChargeProgressed(bool isPlayer);
     // wrapper: delegates to SuperClass::AnnounceReady at 0x6CC080
     int32_t GetCameoChargeState() const;
     void SetCharge(int32_t percentage);                                               // 0x6CC1E0
@@ -194,8 +194,8 @@ public:
     static DynamicVectorClass<AnimClass*> BoltsPresent;      // data: 0xA8E80C
 
     static void Start(int32_t duration, int32_t deferment, const CellStruct& cell, HouseClass* pOwner); // 0x539EB0
-    static void RequestStop();                                               // 0x53A090 (End)
-    static bool HasDeferment();                                              // 0x53A100 (IsActive)
+    static void RequestStop();
+    static bool HasDeferment();
     static void Strike(const CellStruct& cell);                              // 0x53A140
     static void Strike2(const CoordStruct& coords);                          // 0x53A300
     // unmatched: no callgraph reference and no git history record
@@ -212,13 +212,13 @@ public:
     static HouseClass*             Owner;    // data: 0xA8E830
     static AnimClass*              Anim;     // data: 0xA8E834
 
-    static void Start(HouseClass* pOwner, const CellStruct& coords);  // 0x7CD80F
+    static void Start(HouseClass* pOwner, const CellStruct& coords);
     // wrapper: delegates to start at 0x7CD80F
     static void updateLogic();
     static void Fire();                                               // 0x53B080
     // unmatched: no callgraph reference and no git history record
     static void PrintMessage();
-    static bool Active();                                             // 0x53B400 (IsActive)
+    static bool Active();
 };
 
 class ChronoScreenEffect
@@ -227,10 +227,10 @@ public:
     static int32_t Status;   // data: 0xA8E838
     static int32_t Duration; // data: 0xA8E83C
 
-    static void Start(int32_t duration);      // 0x753580 (DecrementCounter)
+    static void Start(int32_t duration);
     // wrapper: delegates to ChronoScreenEffect::DecrementCounter at 0x753580
     static void updateLogic();
-    static bool Active();  // 0x4C9480
+    static bool Active();
     static void DecrementCounter();  // 0x753580
 };
 
@@ -241,8 +241,8 @@ public:
     static int32_t          StartTime;  // data: 0xA8E844
     static int32_t          Duration;   // data: 0xA8E848
 
-    static void FadeIn();                // 0x53A110 (IsActive)
-    static void FadeOut();               // 0x53A120 (ProcessEffect)
+    static void FadeIn();
+    static void FadeOut();
     // wrapper: delegates to NukeFlash::ProcessEffect at 0x53A120
     static bool IsFadingIn();
     // unmatched: no callgraph reference and no git history record

@@ -97,7 +97,6 @@ int SideIDToIndex(int side_id);  // 0x4E4EC0
 // IDA 0x5EE350 -- Dialog::RefreshDialogsGame
 void RefreshDialogsGame();  // 0x5EE350
 
-// IDA 0x49F740 -- Dialog::HandleLauncherMessage
 void HandleLauncherMessage(int msg_data);
 
 // IDA 0x5F3450 -- Dialog::CheckButtonState
@@ -115,10 +114,8 @@ void Resize(HWND hWnd);
 // IDA 0x607FD0 -- Dialog::StopBink
 void StopBink();  // 0x607FD0
 
-// IDA 0x624930 -- Dialog::sub_624930
 void sub_624930();
 
-// IDA 0x624BE0 -- Dialog::sub_624BE0
 void sub_624BE0();
 
 // IDA 0x60A330 -- Dialog::HandleTabKey

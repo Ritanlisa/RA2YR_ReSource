@@ -65,7 +65,6 @@ void Matrix3x4Identity(float* m);
 // IDA 0x754C00 -- Voxel::SetProjectionAngle
 void VoxelSetProjectionAngle(float angle);  // 0x754C00
 
-// IDA 0x754CB0 -- Voxel::ProjectionSetup
 void VoxelProjectionSetup();
 
 // IDA 0x4068F0 -- Array::ForEach (zero-fill 3-byte strides)
@@ -165,7 +164,6 @@ void InitCommands();  // 0x532150
 void CompleteGameInit();  // 0x5D7CE0
 
 // IDA 0x6BB390 -- RegisterClassesCOM (single class registry writer)
-// IDA 0x6BB9A0 -- RegisterAllClasses (iterates TClassFactory table, 63-71 entries)
 void RegisterAllClasses();
 
 // IDA 0x49F5C0 -- CopyProtection::CheckLauncher (always TRUE -- bypassed)

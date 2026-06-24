@@ -14,7 +14,7 @@ public:
     static constexpr AbstractType AbsID = AbstractType::OverlayType;
 
     static DynamicVectorClass<OverlayTypeClass*>* Array;
-    static OverlayTypeClass* Find(const char* pID);  // 0x5FE250
+    static OverlayTypeClass* Find(const char* pID);
     // unmatched: no callgraph reference and no git history record
     static OverlayTypeClass* FindOrCreate(const char* pID);
     // wrapper: delegates to OverlayTypeClass::OverlayTypeClass at 0x5FE250

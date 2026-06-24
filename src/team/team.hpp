@@ -50,7 +50,7 @@ public:
 
     // core methods
     void GetTaskForceMissingMemberTypes(TechnoTypeClass** dest, int& dest_count) const;  // 0x6F1FA0 (TeamTypeClass::ProcessTaskForce)
-    void LiberateMember(FootClass* foot, int idx = -1, uint8_t count = 0);               // 0x6EA870 (LiberateMember_Start)
+    void LiberateMember(FootClass* foot, int idx = -1, uint8_t count = 0);
     void LiberateMember_Start(FootClass* foot, int idx, uint8_t count);  // 0x6EA870
     void RecruitMember(FootClass* foot, int idx);                                        // 0x6EAA90
     void AddMember(FootClass* foot);                                                     // 0x6EA500

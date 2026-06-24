@@ -26,18 +26,18 @@ public:
     // IDA 0x4071C0 area
     int32_t RequestOrEndBuffer(int32_t index);  // 0x406270
     // IDA 0x407150 area
-    void ReleaseChannel(int32_t channel);  // 0x406060
+    void ReleaseChannel(int32_t channel);
     // IDA 0x407150 area
-    void RequestAllBuffers();  // 0x4083D0
+    void RequestAllBuffers();
     // IDA 0x407150 area
-    void StopAll();  // 0x403730
+    void StopAll();
     // IDA 0x407150 area
     void SetVolume(int32_t volume);  // 0x406650
     // IDA 0x407150 area
     // design: no binary equivalent found in IDA
     void SetPan(int32_t pan);
     // IDA 0x407150 area
-    bool IsPlaying(int32_t channel);  // 0x7529E0
+    bool IsPlaying(int32_t channel);
 
     uint32_t    AudioMixer_field_00;       // 0x00
     uint32_t    AudioMixer_field_04;       // 0x04
@@ -61,7 +61,7 @@ public:
     // IDA 0x48B2A0 area
     static int32_t DlgProc(HWND hDlg, UINT msg, WPARAM wParam, LPARAM lParam);  // 0x6B6300
     // IDA 0x48B2A0 area
-    void LoadINI();  // 0x533D20 // IDA: KeyboardConfig::LoadINI
+    void LoadINI();
     // IDA 0x48B2A0 area
     // design: no binary equivalent found in IDA
     void SaveINI();

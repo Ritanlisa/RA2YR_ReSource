@@ -210,14 +210,14 @@ public:
     // IDA 0x48B2A0 area
     static void ZeroInitAndSetup(void* ptr, int32_t size);  // 0x48BF10
     // IDA 0x48B2A0 area
-    static void InitArray(void* arr, int32_t stride, int32_t count);  // 0x5C6940
+    static void InitArray(void* arr, int32_t stride, int32_t count);
     // IDA 0x48B2A0 area
-    static void MemSet(void* dst, uint8_t val, int32_t count);  // 0x7D75E0
+    static void MemSet(void* dst, uint8_t val, int32_t count);
     // IDA 0x48B2A0 area
     // design: static function, no direct binary match in IDA
     static void MemCopy(void* dst, const void* src, int32_t count);
     // IDA 0x48B2A0 area
-    static void FillZero(void* ptr, int32_t count);  // 0x7D79FB
+    static void FillZero(void* ptr, int32_t count);
     // IDA 0x48B2A0 area
     // design: static function, no direct binary match in IDA
     static void InitBlock(void* ptr, int32_t size);
@@ -248,7 +248,7 @@ public:
     // design: static function, no direct binary match in IDA
     static void IncrementRefCount();
     // IDA 0x48B2A0 area
-    static void DecrementRefCount();  // 0x6351E0
+    static void DecrementRefCount();
     // IDA 0x48B2A0 area
     // design: static function, no direct binary match in IDA
     static int32_t GetRefCount();
@@ -273,12 +273,12 @@ public:
     // IDA 0x4D9C00 area
     void Union(const Rect& other);  // 0x487F40
     // IDA 0x4D9C00 area
-    bool Intersects(const Rect& other) const;  // 0x7BBE20
+    bool Intersects(const Rect& other) const;
     // IDA 0x4D9C00 area
     // design: no binary equivalent found in IDA
     bool Contains(int32_t x, int32_t y) const;
     // IDA 0x4D9C00 area
-    void Clip(const Rect& clip);  // 0x421B60
+    void Clip(const Rect& clip);
 
     int32_t     X;              // 0x00
     int32_t     Y;              // 0x04
@@ -549,7 +549,6 @@ public:
 class Main
 {
 public:
-    // IDA 0x6BB9A0 area
     static void* CreateDialog(int32_t dlg_id);  // 0x4E1D00
 
     int32_t     Main_field_00;       // 0x00
@@ -562,7 +561,6 @@ public:
 class Stub
 {
 public:
-    // IDA 0x6BB9A0 area
     static void InfiniteLoop();  // 0x4F4D80
 
     int32_t     Stub_field_00;       // 0x00
@@ -625,11 +623,8 @@ public:
 class WinMain
 {
 public:
-    // IDA 0x6BB9A0 area
     static void CleanupResource();  // 0x49F8B0
-    // IDA 0x6BB9A0 area
     static void Constructor_VectorClass_Wstring();  // 0x69A1F0
-    // IDA 0x6BB9A0 area
     static void ShutdownCleanup();  // 0x734D30
 
     static HWND    s_hWnd;        // 0x00
@@ -1074,7 +1069,7 @@ public:
     virtual void BinarySearch() {} // 0x52B390
     virtual void BinarySearchAlt() {} // 0x52B4F0
     virtual void LookupAndMark() {} // 0x608440
-    virtual void FindAndMark() {} // 0x624140
+    virtual void FindAndMark() {}
     // +22 more virtual methods
 
     uint8_t HashTable_field_0x04[4];

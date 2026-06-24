@@ -34,14 +34,11 @@ public:
     // wrapper: delegates to RadioClass::RadioClass at 0x65A750
     virtual void sendToEachLink(RadioCommand command);
 
-    // 0x65AAC0 -- vt10: Remove a specific object from radio links
-    virtual void ExecuteAction(TechnoClass* obj, bool clear);  // 0x65AAC0
+    virtual void ExecuteAction(TechnoClass* obj, bool clear);
     // 0x65AD90 -- Linear search for linked object index
     virtual int FindLinkIndex(TechnoClass* obj);  // 0x65AD90
-    // 0x65AB10 -- vt13: Update power drain for all linked objects
-    virtual void PowerDrainUpdate();  // 0x65AB10
-    // 0x65AA80 -- vt53: Process undeploy command
-    virtual void ProcessCmd();  // 0x65AA80
+    virtual void PowerDrainUpdate();
+    virtual void ProcessCmd();
     // 0x65AB80 -- Load radio link state from stream
     virtual HRESULT __stdcall LoadState(IStream* stream);  // 0x65AB80
     // 0x65AC40 -- Save radio link state to stream

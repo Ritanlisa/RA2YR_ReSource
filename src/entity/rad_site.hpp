@@ -53,14 +53,12 @@ public:
     void SetSpread(int cells);  // 0x65B4D0
     void SetRadLevel(int level);  // 0x65B4F0
     // 0x65B510 GetRadLevel
-    int GetRadLevel() const;  // 0x65B8F0
+    int GetRadLevel() const;
     void Add(int radLevel);  // 0x65B530
     // 0x65B580 Activate
-    void Activate();  // 0x65BB50
-     // 0x65B8F0 GetRadLevelAt
+    void Activate();
     int GetRadLevelAt(CellStruct* cell);  // 0x65B8F0
     void Radiate();  // 0x65B9C0
-     // 0x65BB50 Deactivate
     void Deactivate();  // 0x65BB50
     void DecreaseRadiation();  // 0x65BD00
     void DecreaseLight();  // 0x65BE90

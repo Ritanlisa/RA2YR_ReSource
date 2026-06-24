@@ -88,9 +88,9 @@ public:
     // wrapper: delegates to CCINIClass::Load at 0x4741F0
     CCFileClass* GetFile() const;
 
-    int GetKeyCount(const char* section);  // 0x526960
-    const char* GetStringByIndex(const char* section, int index);  // 0x526CC0
-    int BinarySearchSection(const char* section);  // 0x526810
+    int GetKeyCount(const char* section);
+    const char* GetStringByIndex(const char* section, int index);
+    int BinarySearchSection(const char* section);
 
     const char* GetString(const char* section, const char* key, const char* def, char* buf, int bufSize) override;  // 0x528A10
     int GetInt(const char* section, const char* key, int def) override;  // 0x529820

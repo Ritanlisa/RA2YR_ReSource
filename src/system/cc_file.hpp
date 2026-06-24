@@ -20,7 +20,7 @@ public:
 
     MemoryBuffer(void* pBuffer, int size) noexcept
         : Buffer(pBuffer)
-        , Size(size) // 0x454190
+        , Size(size)
     {
         if (!Buffer && Size > 0)
         {
@@ -40,7 +40,7 @@ public:
 
     MemoryBuffer(const MemoryBuffer& other) noexcept
         : Buffer(other.Buffer)
-        , Size(other.Size) // 0x454190
+        , Size(other.Size)
     {}
 
     MemoryBuffer(MemoryBuffer&& other) noexcept

@@ -36,11 +36,11 @@ public:
     uint32_t AudioController_field_0C;   // +0x0C, init &dword_87E294
     uint32_t AudioController_field_10;   // +0x10, not initialized by Init
 
-    void Stop();          // 0x405b50
-    void Start(int32_t soundIndex);  // 0x405b50
+    void Stop();
+    void Start(int32_t soundIndex);
     void Pause();         // 0x405c00
     void Resume();        // 0x405c00
-    static bool IsSoundEnabled(); // IDA 0x407000  // 0x407000
+    static bool IsSoundEnabled();
 };
 
 // ============================================================================
@@ -96,7 +96,7 @@ public:
     // stub: not yet implemented from IDA
     virtual bool IsStrange() const;
     // [33] 0x5F6BC0 AbstractClass::COMStub_Return0_33
-    virtual TechnoTypeClass* GetTechnoType() const = 0;  // 0x476EB0
+    virtual TechnoTypeClass* GetTechnoType() const = 0;
     // [34] 0x4E0130 AbstractClass::COMStub_Return0_34
     // stub: not yet implemented from IDA
     virtual ObjectTypeClass* GetType() const = 0;
@@ -109,7 +109,7 @@ public:
     // stub: not yet implemented from IDA
     virtual bool CanBeRepaired() const;
     // [38] 0x5F42C0 AbstractClass::COMStub_Return0_38 (return false stub)
-    virtual bool CanBeSold() const;  // 0x4494C0
+    virtual bool CanBeSold() const;
     // [39] 0x5F42D0 AbstractClass::COMStub_Return0_39 (return false stub)
     virtual bool IsActive() const;  // 0x5F6690
     // [40] 0x5F42E0 AbstractClass::COMStub_Return0_40 (return false stub)
@@ -184,7 +184,7 @@ public:
 
     // --- Visibility / Discovery ---
     // [63] 0x5F4310 AbstractClass::COMStub_Return0_63 (stub retn)
-    virtual void Reveal();  // 0x577D90
+    virtual void Reveal();
     // [64] 0x5F4320 AbstractClass::COMStub_64
     // design: pure virtual function, no binary implementation
     virtual KickOutResult KickOutUnit(TechnoClass* techno, CellStruct cell) = 0;
@@ -247,9 +247,9 @@ public:
     // design: virtual function, no binary implementation matched in IDA
     virtual void Flash(int duration);
     // [83] 0x5F4520 ObjectClass::HandleSelection
-    virtual bool Select();  // 0x6AB990
+    virtual bool Select();
     // [84] 0x5F44A0 ObjectClass::Remove (Deselect)
-    virtual void Deselect();  // 0x6AB9E0
+    virtual void Deselect();
 
     // --- Combat / Armor ---
     // [85] 0x426460 AbstractClass::COMStub_Return0_85
@@ -268,14 +268,14 @@ public:
     // stub: not yet implemented from IDA
     virtual bool IsCloseEnough3D(uint32_t a, uint32_t b) const = 0;
     // [90] 0x5F4390 AbstractClass::COMStub_90
-    virtual int GetWeaponRange(int weapon_idx) const; // 0x773070
+    virtual int GetWeaponRange(int weapon_idx) const;
     // [91] 0x5F5390 TechnoClass::CreateDestructionEffect
     virtual DamageState ReceiveDamage(int* damage, int distance_from_epicenter, WarheadTypeClass* wh,
         ObjectClass* attacker, bool ignore_defenses, bool prevent_passenger_escape, HouseClass* attacking_house);
     // [92] 0x4264A0 AbstractClass::COMStub_Return0_92 (stub retn)
     virtual void Destroy();  // 0x5F65F0
     // [93] 0x5F43A0 AbstractClass::COMStub_Return0_93
-    virtual void Scatter(const CoordStruct& coords, bool ignore_mission, bool ignore_destination);  // 0x743A50
+    virtual void Scatter(const CoordStruct& coords, bool ignore_mission, bool ignore_destination);
     // [94] 0x5F43B0 AircraftClass::StubReturnFalse3
     // stub: not yet implemented from IDA
     virtual bool Ignite();
@@ -317,7 +317,7 @@ public:
 
     // --- Movement / Occupation ---
     // [107] 0x4264C0 AbstractClass::COMStub_107
-    virtual Move IsCellOccupied(CellClass* dest_cell, int facing, int level, CellClass* source_cell, bool alt) const;  // 0x4FBE40
+    virtual Move IsCellOccupied(CellClass* dest_cell, int facing, int level, CellClass* source_cell, bool alt) const;
     // [108] 0x4264D0 ObjectClass::COMStub_108
     // design: pure virtual function, no binary implementation
     virtual uint32_t canDeployHere(uint32_t a, uint32_t b, uint32_t c, uint32_t d, uint32_t e) = 0;
@@ -344,7 +344,7 @@ public:
     // wrapper: delegates to ObjectClass::GetHeight at 0x556630
     virtual void SetHeight(uint32_t height);
     // [116] 0x5F5F30 ObjectClass::GetMember41
-    virtual int GetZ() const;  // 0x5F5F40
+    virtual int GetZ() const;
 
     // --- Warping state ---
     // [117] 0x4264E0 AbstractClass::COMStub_Return0_117
@@ -364,9 +364,9 @@ public:
     virtual LightConvertClass* GetRemapColour() const = 0;
 
     // === Non-virtual methods ===
-    int DistanceFrom(AbstractClass* that) const;  // 0x5F6360 ObjectClass::DistanceTo
+    int DistanceFrom(AbstractClass* that) const;
 
-    virtual double GetHealthPercentage() const;   // 0x5f5cd0
+    virtual double GetHealthPercentage() const;
 
     HealthState GetHealthStatus() const {         // 0x5F5DD0
         auto pct = GetHealthPercentage();

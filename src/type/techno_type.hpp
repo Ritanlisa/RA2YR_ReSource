@@ -94,13 +94,13 @@ public:
 
     // wrapper: delegates to TechnoTypeClass::DTOR at 0x711AE0
     virtual bool onTypeLoaded();
-    virtual bool CanAttackMove() const; // 0x711E90
+    virtual bool CanAttackMove() const;
     // wrapper: delegates to TechnoTypeClass::CanAttackMove_IgnoreWeapon at 0x711E90
     virtual bool CanCreateHere(const CellStruct& mapCoords, HouseClass* pOwner) const;
     virtual int GetCost() const;  // 0x708B40
     // wrapper: delegates to TechnoClass::GetCostMultiplier at 0x708B40
     virtual int GetRepairStepCost() const;
-    virtual int GetRepairStep() const;  // 0x459840
+    virtual int GetRepairStep() const;
     // unmatched: no callgraph reference and no git history record
     virtual int getRefund(HouseClass* pHouse, bool bUnk) const;
     // wrapper: delegates to HouseClass::GetRepairStepAmount at 0x459840

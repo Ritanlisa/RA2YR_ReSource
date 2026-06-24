@@ -46,7 +46,7 @@ public:
     // design: static function, no direct binary match in IDA
     static void sub_5BD3D0();
     // IDA 0x5BD3D0 area
-    static void DrawText(DSurface* surface, const wchar_t* text, int32_t x, int32_t y, uint32_t color);  // 0x4A61C0
+    static void DrawText(DSurface* surface, const wchar_t* text, int32_t x, int32_t y, uint32_t color);
 
     int32_t     Text_field_00;       // 0x00
 };
@@ -211,9 +211,7 @@ public:
 class KeyboardConfig
 {
 public:
-    // IDA 0x533D20
     static void LoadINI();  // 0x533D20
-    // IDA 0x533D20 area
     static void ReleaseBuffer();  // 0x538B80
 
     static int32_t  s_KeyMap[256];  // 0x00
@@ -240,7 +238,7 @@ class LinkClass
 {
 public:
     LinkClass() = default;
-    virtual ~LinkClass();  // 0x5565A0
+    virtual ~LinkClass();
 
     // IDA 0x48B2A0 area
     void Destroy();  // 0x4E1480
@@ -325,7 +323,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~CampaignCoop() = default;
 
-    virtual void Setup() {} // 0x5C21D0
+    virtual void Setup() {}
 
 };
 // 1 methods in IDA
@@ -876,7 +874,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Tooltip() = default;
 
-    virtual void Enable() {} // 0x7241A0
+    virtual void Enable() {}
 
 };
 // 1 methods in IDA

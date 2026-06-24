@@ -7,7 +7,7 @@ class TechnoTypeClass : public ObjectTypeClass {
 public:
     // unmatched: no callgraph reference and no git history record
     bool isArmed() const;
-    int getWeaponRange(int weaponIdx) const; // 0x5b3a60
+    int getWeaponRange(int weaponIdx) const;
     // unmatched: no callgraph reference and no git history record
     WeaponTypeClass* getWeapon(int weaponIdx) const;
     // design: inline accessor, inlined at all call sites

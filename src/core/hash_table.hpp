@@ -74,7 +74,6 @@ public:
         return e ? &e->value : nullptr;
     }
 
-    // IDA 0x7ADC60: LookupString — string-key lookup
     V* LookupString(const char* key)
     {
         for (uint32_t i = 0; i < m_Capacity; ++i) {
@@ -89,7 +88,7 @@ public:
     // IDA 0x625F60: FindString — search by string key
     V* FindString(const char* key)
     {
-        return LookupString(key);  // 0x7ADC60
+        return LookupString(key);
     }
 
     // IDA 0x625FB0: FindChunk — find entry by key
@@ -114,7 +113,6 @@ public:
         return nullptr;
     }
 
-    // IDA 0x624140: FindAndMark
     Entry* FindAndMark(const K& key)
     {
         Entry* e = Find(key);
@@ -125,7 +123,7 @@ public:
     // IDA 0x608440: LookupAndMark
     Entry* LookupAndMark(const K& key)
     {
-        return FindAndMark(key);  // 0x624140
+        return FindAndMark(key);
     }
 
     // IDA 0x624760: Get — return value copy

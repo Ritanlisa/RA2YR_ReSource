@@ -35,9 +35,9 @@ public:
     // design: virtual function, no binary implementation matched in IDA
     virtual int32_t GetSize();
     // IDA 0x48B2A0 area
-    virtual void Flush();  // 0x7AEF50
+    virtual void Flush();
     // IDA 0x48B2A0 area
-    virtual void Close();  // 0x76B090
+    virtual void Close();
     // IDA 0x48B2A0 area
     // design: virtual function, no binary implementation matched in IDA
     virtual int32_t GetPosition();
@@ -68,17 +68,17 @@ public:
     // IDA 0x48B2A0 area
     int32_t ReadInt();  // 0x49FB70
     // IDA 0x48B2A0 area
-    void WriteInt(int32_t val);  // 0x67A4A0 // IDA: Stream::WriteIntArray
+    void WriteInt(int32_t val);
     // IDA 0x48B2A0 area
     void WriteBytes(const void* data, int32_t size);  // 0x411310
     // IDA 0x48B2A0 area
-    int32_t ReadBytes(void* buf, int32_t size);  // 0x774B30
+    int32_t ReadBytes(void* buf, int32_t size);
     // IDA 0x48B2A0 area
-    void Seek(int32_t offset); // 0x5c5dd0
+    void Seek(int32_t offset);
     // IDA 0x48B2A0 area
-    int32_t GetPosition();  // 0x7C3960
+    int32_t GetPosition();
     // IDA 0x48B2A0 area
-    int32_t GetSize();  // 0x70C250
+    int32_t GetSize();
 
     StreamClass* m_Stream;      // 0x00
     int32_t     Stream_field_04;       // 0x04
