@@ -9,6 +9,15 @@ namespace game {
 extern int& CurrentFrame;
 
 // ============================================================
+// Layout verification (ABI: radioLinks 12 -> 16 bytes).
+// IDA ctor 0x65a750 proves radioLinks is a *base* VectorClass<TechnoClass*>:
+//   vtable@224, Items@228, Capacity@232, IsInitialized@236, IsAllocated@237.
+// = 16 bytes (no Count/CapacityIncrement -> NOT DynamicVectorClass).
+// ============================================================
+static_assert(sizeof(gamemd::VectorClass<TechnoClass*>) == 16,
+              "radioLinks must be a 16-byte base VectorClass<TechnoClass*> (vtable+Items+Capacity+IsInitialized+IsAllocated) per IDA 0x65a750");
+
+// ============================================================
 // RadioClass constructor (IDA: 0x65a750)
 // 1. Call MissionClass base constructor
 // 2. Allocate radioLinks with initial capacity 1
@@ -19,21 +28,14 @@ RadioClass::RadioClass() noexcept
     // Base MissionClass ctor: sets currentMission/suspendedMission/queuedMission = -1
     // missionQueued = false, missionStatus = 0, missionStartTime = CurrentFrame, missionData = 0
 
-    // Initialize radioLinks vector
-    radioLinks.Items = nullptr;
-    radioLinks.Count = 0;
-    radioLinks.Capacity = 0;
-
-    // Allocate initial capacity of 1 (IDA: operator new(4))
-    radioLinks.Items = new TechnoClass*[1];
-    radioLinks.Capacity = 1;
-    radioLinks.Count = 1;
-    radioLinks[0] = nullptr; // IDA: first slot = 0
-
-    // Initialize lastCommands
-    lastCommands[0] = -1;
-    lastCommands[1] = -1;
-    lastCommands[2] = -1;
+    // IDA 0x65a750: radioLinks initial 1-element allocation, slot 0 zeroed
+    // (Capacity=1, Items=operator new(4), IsAllocated=1, *Items=0).
+    radioLinks.SetCapacity(1, nullptr);
+    radioLinks[0] = nullptr;
+    // IDA 0x65a750: lastCommands[0..2] init to 0 (*(this+53/54/55)).
+    lastCommands[0] = 0;
+    lastCommands[1] = 0;
+    lastCommands[2] = 0;
 }
 
 // ============================================================
@@ -77,7 +79,7 @@ RadioCommand RadioClass::sendCommandWithData(RadioCommand command, AbstractClass
 
 void RadioClass::sendToEachLink(RadioCommand command)
 {
-    for (int i = 0; i < radioLinks.Count; ++i)
+    for (int i = 0; i < radioLinks.Capacity; ++i)  // base VectorClass: Capacity = link count
     {
         if (radioLinks[i])
         {
@@ -98,7 +100,7 @@ void RadioClass::ExecuteAction(TechnoClass* obj, bool clear)
     // IDA: Object::Unlink(this) — sub_5F5230
     // Removes this object from the global linked list. Deferred to ObjectClass implementation.
 
-    int count = radioLinks.Count;
+    int count = radioLinks.Capacity;
     for (int i = 0; i < count; ++i)
     {
         TechnoClass* link = radioLinks[i];
@@ -120,7 +122,7 @@ int RadioClass::FindLinkIndex(TechnoClass* obj)
     if (!obj)
         return -1;
 
-    int count = radioLinks.Count;
+    int count = radioLinks.Capacity;
     if (count <= 0)
         return -1;
 
@@ -140,7 +142,7 @@ int RadioClass::FindLinkIndex(TechnoClass* obj)
 // ============================================================
 bool RadioClass::hasFreeLink() const
 {
-    int count = radioLinks.Count;
+    int count = radioLinks.Capacity;
     if (count <= 0)
         return false;
 
@@ -160,25 +162,16 @@ bool RadioClass::hasFreeLink() const
 // ============================================================
 void RadioClass::PowerDrainUpdate()
 {
-    // IDA: AbstractClass::COMStub_13(this, a2) — sub_5B3970
-    // Base class power pre-processing stub.
-
-    // IDA: Power::TimerProcess(radioLinks.Count) — sub_4A1D50
-    // Accumulates power drain for the total number of links.
-
-    for (int i = 0; i < radioLinks.Count; ++i)
+    // IDA 0x65ab10 (_vt13): COMStub_13(this,a2) + Power::TimerProcess per link.
+    // COMStub_13/Power/the link vtable slots are unavailable here; the link
+    // iteration below is the faithful, implementable part.
+    int linkCount = radioLinks.Capacity;
+    for (int i = 0; i < linkCount; ++i)
     {
         TechnoClass* link = radioLinks[i];
-        if (link)
-        {
-            // IDA: vtable[16] (offset 0x40 in vtable[0]) — COM method
-            // int result1 = link->SomeVirtualMethod();
-            // Power::TimerProcess(result1);
-
-            // IDA: vtable[44] (offset 0xB0 in vtable[0]) — another COM method
-            // int result2 = link->AnotherMethod();
-            // Power::TimerProcess(result2);
-        }
+        if (!link)
+            continue;
+        // IDA: Power::TimerProcess of link COM vtable[4] + primary vtable[11].
     }
 }
 
@@ -215,16 +208,12 @@ HRESULT RadioClass::LoadState(IStream* stream)
     // IDA: BuildingClass::SaveLoad_Register(this) — sub_5F5E80
     // Registers this object for save/load tracking. Returns < 0 on error.
 
-    // Reset radioLinks vector: set count=0, keep allocation
-    if (radioLinks.Items && radioLinks.Capacity > 0)
+    // Reset radioLinks vector: ensure at least a 1-element allocation. base
+    // VectorClass has no separate Count, so there is no logical-size to reset;
+    // only (re)allocate when the backing store is missing.
+    if (!(radioLinks.Items && radioLinks.Capacity > 0))
     {
-        radioLinks.Count = 0;
-    }
-    else
-    {
-        radioLinks.Items = new TechnoClass*[1];
-        radioLinks.Capacity = 1;
-        radioLinks.Count = 1;
+        radioLinks.SetCapacity(1, nullptr);
         radioLinks[0] = nullptr;
     }
 
@@ -235,12 +224,13 @@ HRESULT RadioClass::LoadState(IStream* stream)
     if (FAILED(hr) || bytes_read != 4)
         return FAILED(hr) ? hr : E_FAIL;
 
-    // IDA: VectorClass::resize(radioLinks, link_count, 0) — grow if needed
-    if (link_count > radioLinks.Count)
+    // IDA: VectorClass::resize(radioLinks, link_count, 0) — grow if needed.
+    // base VectorClass tracks size as Capacity; SetLinkCount grows Capacity to
+    // at least link_count (no separate Count to assign).
+    if (link_count > radioLinks.Capacity)
     {
         SetLinkCount(link_count);
     }
-    radioLinks.Count = link_count;
 
     // IDA: Read each link pointer from stream
     for (int i = 0; i < link_count; ++i)
@@ -276,7 +266,7 @@ HRESULT RadioClass::SaveState(IStream* stream, int clear_dirty)
     // Writes save-prefix marker. Returns < 0 on error.
 
     // IDA: IStream::Write(stream, &count, 4, nullptr)
-    int32_t link_count = radioLinks.Count;
+    int32_t link_count = radioLinks.Capacity;
     ULONG bytes_written = 0;
     HRESULT hr = stream->Write(&link_count, 4, &bytes_written);
     if (FAILED(hr) || bytes_written != 4)
@@ -301,28 +291,12 @@ HRESULT RadioClass::SaveState(IStream* stream, int clear_dirty)
 // ============================================================
 void RadioClass::SetLinkCount(int count)
 {
-    int oldCount = radioLinks.Count;
-
-    if (count > oldCount)
+    int oldCapacity = radioLinks.Capacity;           // IDA 0x65ae60: link count = Capacity
+    if (count > oldCapacity)
     {
-        // IDA: VectorClass::resize(this+56, count, 0)
-        // Grow array
-        if (count > radioLinks.Capacity)
-        {
-            int newCap = count;
-            auto* newItems = new TechnoClass*[newCap];
-            for (int i = 0; i < oldCount; ++i)
-                newItems[i] = radioLinks[i];
-            delete[] radioLinks.Items;
-            radioLinks.Items = newItems;
-            radioLinks.Capacity = newCap;
-        }
-
-        // Zero new slots
-        for (int i = oldCount; i < count; ++i)
-            radioLinks[i] = nullptr;
-
-        radioLinks.Count = count;
+        radioLinks.SetCapacity(count, nullptr);      // vtable[2] = VectorClass::SetCapacity
+        for (int i = oldCapacity; i < count; ++i)
+            radioLinks[i] = nullptr;                 // IDA: zero new slots [oldCapacity, count)
     }
 }
 
@@ -338,7 +312,7 @@ namespace ra2 { namespace game {
 HRESULT __stdcall RadioClass::Load(IStream* stream) { return S_OK; }
 HRESULT __stdcall RadioClass::Save(IStream* stream, int clear_dirty) { return S_OK; }
 TechnoClass* const& RadioClass::getNthLink(int idx) const { return radioLinks[idx]; }
-bool RadioClass::hasAnyLink() const { return radioLinks.Count > 0; }
+bool RadioClass::hasAnyLink() const { return radioLinks.Capacity > 0; }
 
 } // namespace game
 } // namespace ra2
