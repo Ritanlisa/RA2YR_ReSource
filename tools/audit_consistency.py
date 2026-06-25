@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""audit_consistency.py — Cross-validate functions.json, IDA function DB, hpp annotations.
+"""audit_consistency.py — Cross-validate signals.json, IDA function DB, hpp annotations.
 
 Data sources:
-  1. injectFunctionTest/functions.json (stripped) — REVERSE pipeline entries
+  1. signals.json (canonical symbol file) — function entries (kind=="function")
   2. tools/ida_function_db.json — IDA-extracted function metadata
   3. src/ + include/gamemd/ hpp files — `// 0xADDR` address annotations
   4. tools/fr_crt_exclusions.json — CRT/library function exclusions
@@ -26,15 +26,33 @@ ROOT = Path(__file__).resolve().parent.parent
 # --- Data loading ---
 
 def load_functions_json():
-    """Load stripped functions.json → {addr: entry} + set of addrs."""
-    path = ROOT / "injectFunctionTest" / "functions.json"
-    with open(path) as f:
+    """Load function entries from signals.json (canonical) → {normAddr: entry} + entries.
+
+    signals.json keeps function symbols under data["symbols"] (kind=="function"),
+    keyed by address. Each is reshaped into the legacy {address, name, call{}, hook{}}
+    shape so the rest of this audit (extract_json_name, field_check call.params) is
+    unchanged. Member/global symbols are ignored — this audit covers functions only."""
+    path = ROOT / "signals.json"
+    with open(path, encoding="utf-8") as f:
         data = json.load(f)
-    entries = data.get("functions", [])
+    entries = []
     fn_map = {}
-    for e in entries:
-        addr = normalize_addr(e["address"])
-        fn_map[addr] = e
+    for key, sym in (data.get("symbols", {}) or {}).items():
+        if not isinstance(sym, dict) or sym.get("kind") != "function":
+            continue
+        addr = sym.get("address", key)
+        entry = {
+            "address": addr,
+            "name": sym.get("name", ""),
+            "call": {
+                "convention": sym.get("call_convention", "unknown"),
+                "return_type": sym.get("return_type", "void"),
+                "params": sym.get("params", []),
+            },
+            "hook": {"completed": sym.get("completed", False)},
+        }
+        entries.append(entry)
+        fn_map[normalize_addr(addr)] = entry
     return fn_map, entries
 
 def load_ida_function_db():
@@ -475,7 +493,7 @@ def audit():
     ida_map = load_ida_function_db()
     crt_set = load_crt_exclusions()
     
-    print(f"  functions.json: {len(json_map)} entries", file=sys.stderr)
+    print(f"  signals.json: {len(json_map)} function entries", file=sys.stderr)
     print(f"  ida_function_db: {len(ida_map)} entries", file=sys.stderr)
     print(f"  CRT exclusions: {len(crt_set)} addresses", file=sys.stderr)
     
@@ -610,7 +628,7 @@ def print_human(report):
     print("  AUDIT CONSISTENCY REPORT")
     print("=" * 60)
     print(f"\nData sources:")
-    print(f"  functions.json:     {s['total_json_entries']:,} entries")
+    print(f"  signals.json:       {s['total_json_entries']:,} function entries")
     print(f"  ida_function_db:    {s['total_ida_entries']:,} entries")
     print(f"  hpp annotations:    {s['total_hpp_addrs']:,} unique addresses")
     print(f"  CRT exclusions:     {s['crt_exclusions']:,} addresses")

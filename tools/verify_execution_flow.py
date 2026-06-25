@@ -90,9 +90,8 @@ from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 SRC_DIR = PROJECT_ROOT / "src"
-FUNCTIONS_JSON = PROJECT_ROOT / "injectFunctionTest" / "functions.json"
 MEMBER_LOOKUP_JSON = PROJECT_ROOT / "tools" / "member_lookup.json"
-SIGNALS_JSON = PROJECT_ROOT / "signals.json"
+SIGNALS_JSON = PROJECT_ROOT / "signals.json"  # canonical symbol file (was functions.json)
 IDA_MCP_URL = "http://127.0.0.1:13337/mcp"
 IDA_CACHE_DIR = PROJECT_ROOT / ".omo" / "ida_cache"
 
@@ -186,31 +185,11 @@ class Maps:
 # Data loaders
 # ============================================================
 
-def load_functions_json(M):
-    if not FUNCTIONS_JSON.exists():
-        print(f"WARNING: {FUNCTIONS_JSON} not found", file=sys.stderr)
-        return
-    with open(FUNCTIONS_JSON, "r", encoding="utf-8") as f:
-        data = json.load(f)
-    for entry in data.get("functions", []):
-        addr_str = entry.get("address", "")
-        name = entry.get("name", "")
-        if not addr_str or not name:
-            continue
-        try:
-            addr = int(addr_str, 16)
-        except ValueError:
-            continue
-        M.name_to_addr.setdefault(name, addr)
-        M.addr_to_name.setdefault(addr, name)
-        simple = name.split("::")[-1] if "::" in name else name
-        M.simple_to_addrs.setdefault(simple, []).append(addr)
-        M.name_to_completed[name] = bool(entry.get("hook", {}).get("completed", False))
-
-
 def load_signals(M):
-    """signals.json: supplements function name->addr. (Globals there are keyed
-    by name with no numeric address, so they contribute nothing to addresses.)"""
+    """signals.json — the canonical symbol file (was functions.json). Populates the
+    function name->addr, addr->name, simple-name, and the completed-flag maps, plus
+    global name->addr. (Globals there are keyed by name with no numeric address, so
+    they contribute nothing to addresses; numeric global addrs come from globals*.hpp.)"""
     if not SIGNALS_JSON.exists():
         return
     try:
@@ -222,7 +201,12 @@ def load_signals(M):
         if not isinstance(sym, dict):
             continue
         name = sym.get("name", "")
-        if not name or not addr_str.startswith("0x"):
+        # Case-insensitive: signals.json (from functions.json) has 66 entries keyed
+        # with an uppercase "0X" prefix. The legacy functions.json loader used
+        # int(addr_str,16) (case-insensitive), so we must include these too — 2 are
+        # completed (BuildingClass::MakeTraversable, ::IsHealthLow) and would
+        # otherwise be silently dropped from the completed-scope gate.
+        if not name or not addr_str.lower().startswith("0x"):
             continue
         try:
             addr = int(addr_str, 16)
@@ -231,6 +215,10 @@ def load_signals(M):
         if sym.get("kind") == "function":
             M.sig_name_to_addr.setdefault(name, addr)
             M.name_to_addr.setdefault(name, addr)
+            M.addr_to_name.setdefault(addr, name)
+            # signals.json is now the canonical completed-flag source (was functions.json
+            # hook.completed). Used by §D-STEP4.6 completed-scope gating in --auto.
+            M.name_to_completed[name] = bool(sym.get("completed", False))
             simple = name.split("::")[-1] if "::" in name else name
             M.simple_to_addrs.setdefault(simple, [])
             if addr not in M.simple_to_addrs[simple]:
@@ -1356,7 +1344,6 @@ def verify_single_function(ida_addr, func_name, display_name, M,
 
 def load_all_maps():
     M = Maps()
-    load_functions_json(M)
     load_signals(M)
     load_globals_map(M)
     load_member_lookup(M)

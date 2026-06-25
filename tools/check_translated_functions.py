@@ -1395,7 +1395,7 @@ def _ida_verify_function(client, name_index, func_name, sig_text,
 
     if result is None:
         return (f"{filepath}:{func_start}: {func_name}: FAIL - "
-                f"IDA: function '{search_name}' not found in functions.json")
+                f"IDA: function '{search_name}' not found in signals.json")
 
     verdict = result.get("verdict", "UNKNOWN")
     if verdict == "LIKELY_STUB":

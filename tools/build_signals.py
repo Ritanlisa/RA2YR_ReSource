@@ -1,9 +1,18 @@
 #!/usr/bin/env python3
 """
-build_signals.py — Generate signals.json by merging:
-  1. Manual state from injectFunctionTest/functions.json
-  2. Member type info from tools/member_lookup.json
-  3. Global variable declarations from src/**/globals_*.hpp
+build_signals.py — INCREMENTAL update of signals.json (the single canonical symbol
+file, checked into git — NOT a build artifact regenerated from scratch).
+
+Function entries (name + completed/done/idempotent/translated flags + types) are
+PRESERVED verbatim from the EXISTING signals.json. This build NEVER regenerates
+function flags from scratch (that would clobber manual completed/done/idempotent
+state). Brand-new functions can be merged non-destructively from the IDA function DB.
+
+It then refreshes the DERIVED sections from their authoritative sources:
+  1. Function entries  — preserved from the existing signals.json (flags untouched)
+  2. Member type info  — tools/member_lookup.json (+ IDA/hpp class layouts)
+  3. Global variables  — src/**/globals_*.hpp `extern T name; // data: 0xADDR`
+  4. _by_name / classes / _member_by_name indexes — rebuilt from the above
 
 Output: signals.json at project root.
 
@@ -25,7 +34,9 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
 # Make sibling tool modules importable regardless of how this script is launched.
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-FUNCTIONS_JSON = PROJECT_ROOT / "injectFunctionTest" / "functions.json"
+# signals.json is the canonical function source (incremental, flags preserved).
+# The IDA function DB is the optional source for brand-new (not-yet-tracked) functions.
+IDA_FUNCTION_DB = PROJECT_ROOT / "tools" / "ida_function_db.json"
 MEMBER_LOOKUP = PROJECT_ROOT / "tools" / "member_lookup.json"
 SIGNALS_JSON = PROJECT_ROOT / "signals.json"
 
@@ -40,30 +51,104 @@ SIGNALS_JSON = PROJECT_ROOT / "signals.json"
 IDA_CLASS_CACHE = PROJECT_ROOT / "tools" / "ida_class_layouts.json"
 
 
-# ─── Step 1: Load functions.json ───────────────────────────────────────────────
+# ─── Step 1: Load function entries from the EXISTING signals.json (incremental) ──
 
 def load_functions():
-    """Extract function entries from functions.json, keyed by address."""
-    with open(FUNCTIONS_JSON, encoding="utf-8") as f:
+    """Extract function entries from the EXISTING signals.json, keyed by address.
+
+    signals.json is the canonical, git-tracked symbol source. Function entries —
+    including completed/done/idempotent/translated flags and names (kept current by
+    tools/sync_symbols.py) — are PRESERVED verbatim. This is the INCREMENTAL core:
+    we never re-derive function flags from scratch, so manual state is never clobbered.
+    Brand-new functions are added separately via merge_new_from_ida().
+    """
+    if not SIGNALS_JSON.exists():
+        raise FileNotFoundError(
+            f"{SIGNALS_JSON} not found — signals.json is the canonical, git-tracked "
+            "symbol source and must exist before an incremental build_signals run."
+        )
+    with open(SIGNALS_JSON, encoding="utf-8") as f:
         data = json.load(f)
 
     funcs = {}
-    for func in data["functions"]:
-        addr = func["address"]
-        call = func.get("call", {})
-        hook = func.get("hook", {})
-
-        funcs[addr] = {
-            "name": func["name"],
+    for key, sym in (data.get("symbols", {}) or {}).items():
+        if not isinstance(sym, dict) or sym.get("kind") != "function":
+            continue
+        addr = sym.get("address", key)
+        entry = {
+            "name": sym.get("name", ""),
             "kind": "function",
             "address": addr,
-            "return_type": call.get("return_type", "void"),
-            "call_convention": call.get("convention", "unknown"),
-            "params": call.get("params", []),
-            "completed": hook.get("completed", False),
-            "translated": hook.get("translated", False),
+            "return_type": sym.get("return_type", "void"),
+            "call_convention": sym.get("call_convention", "unknown"),
+            "params": sym.get("params", []),
+            "completed": sym.get("completed", False),
+            "translated": sym.get("translated", False),
+            "done": sym.get("done", False),
+            # None/null preserves the "no manual override" semantics used by
+            # injectFunctionTest/gen_reverse_hooks.py resolve_idempotent (Case 2 = auto).
+            "idempotent": sym.get("idempotent"),
         }
+        # Carry any extra preserved fields (e.g. idempotent_reason) verbatim.
+        if "idempotent_reason" in sym:
+            entry["idempotent_reason"] = sym["idempotent_reason"]
+        funcs[addr] = entry
     return funcs
+
+
+def merge_new_from_ida(funcs):
+    """Non-destructively add brand-new functions from the IDA function DB.
+
+    ONLY addresses ABSENT from `funcs` are added, with conservative default flags
+    (completed/done/translated=False, idempotent=None). Existing entries are NEVER
+    modified — names and flags stay under the authority of signals.json +
+    sync_symbols.py. Returns the count of functions added (0 if the IDA DB is missing
+    or every IDA address is already tracked).
+    """
+    if not IDA_FUNCTION_DB.exists():
+        return 0
+    try:
+        with open(IDA_FUNCTION_DB, encoding="utf-8") as f:
+            ida = json.load(f)
+    except (OSError, ValueError):
+        return 0
+    if not isinstance(ida, dict):
+        return 0
+
+    have = {str(a).lower() for a in funcs}
+    added = 0
+    for addr, e in ida.items():
+        if not isinstance(e, dict):
+            continue
+        a = addr if str(addr).lower().startswith("0x") else ("0x" + str(addr))
+        if a.lower() in have:
+            continue
+        sig = e.get("signature", "") or ""
+        if e.get("is_thiscall"):
+            conv = "thiscall"
+        elif "__stdcall" in sig:
+            conv = "stdcall"
+        elif "__fastcall" in sig:
+            conv = "fastcall"
+        elif "__cdecl" in sig:
+            conv = "cdecl"
+        else:
+            conv = "unknown"
+        funcs[a] = {
+            "name": e.get("name", ""),
+            "kind": "function",
+            "address": a,
+            "return_type": e.get("return_type", "void"),
+            "call_convention": conv,
+            "params": [],
+            "completed": False,
+            "translated": False,
+            "done": False,
+            "idempotent": None,
+        }
+        have.add(a.lower())
+        added += 1
+    return added
 
 
 # ─── Step 2a: Load member_lookup.json ──────────────────────────────────────────
@@ -458,9 +543,13 @@ def _run_regen_compat():
 
 
 def main():
-    print("Step 1: Loading functions.json ...")
+    print("Step 1: Loading existing function entries from signals.json (incremental) ...")
     functions = load_functions()
-    print(f"  → {len(functions)} functions")
+    print(f"  → {len(functions)} functions (names + completed/done/idempotent preserved)")
+    new_funcs = merge_new_from_ida(functions)
+    if new_funcs:
+        print(f"  → merged {new_funcs} brand-new function(s) from IDA function DB "
+              f"(default flags; existing entries untouched)")
 
     print("Step 2a: Loading member_lookup.json ...")
     members = load_members()

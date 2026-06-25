@@ -122,7 +122,7 @@ if(Python3_FOUND)
         COMMAND "${Python3_EXECUTABLE}" "${SCRIPTS_DIR}/ida_gen_re_impl.py"
         DEPENDS
             "${SCRIPTS_DIR}/ida_gen_re_impl.py"
-            "${SCRIPTS_DIR}/functions.json"
+            "${SCRIPTS_DIR}/../signals.json"
             "${SCRIPTS_DIR}/gen_re_impl.py"
         COMMENT "Extracting IDA decompiled implementations..."
         WORKING_DIRECTORY "${SCRIPTS_DIR}"
@@ -140,7 +140,7 @@ if(Python3_FOUND)
         DEPENDS
             "${SCRIPTS_DIR}/gen_reverse_hooks.py"
             "${SCRIPTS_DIR}/gen_re_impl.py"
-            "${SCRIPTS_DIR}/functions.json"
+            "${SCRIPTS_DIR}/../signals.json"
             "${SCRIPTS_DIR}/idempotent_results.json"
             "${GEN_DIR}/re_impl_generated.cpp"
             ${REVERSE_SOURCES}

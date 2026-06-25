@@ -11,7 +11,9 @@ Usage: python ida_gen_re_impl.py [--force]
 import json, os, sys, re
 
 SCRIPT = os.path.dirname(os.path.abspath(__file__))
-FUNCTIONS_JSON = os.path.join(SCRIPT, "functions.json")
+# signals.json is the canonical symbol file (functions.json eliminated). The compat
+# shim (tools/functions_json_compat.py) synthesizes the legacy {"functions":[...]} shape.
+SIGNALS_JSON = os.path.abspath(os.path.join(SCRIPT, "..", "signals.json"))
 OUT_FILE = os.path.join(SCRIPT, "gen", "re_impl_generated.cpp")
 FORCE = '--force' in sys.argv
 
@@ -227,9 +229,13 @@ def generate():
         print(f"  WARNING: IDA unavailable and no cache — skipping generation")
         return False
 
-    # Load functions.json
-    with open(FUNCTIONS_JSON) as f:
-        data = json.load(f)
+    # Load function entries from signals.json (canonical) via the compat shim.
+    import sys as _sys
+    _tools = os.path.abspath(os.path.join(SCRIPT, "..", "tools"))
+    if _tools not in _sys.path:
+        _sys.path.insert(0, _tools)
+    import functions_json_compat
+    data = functions_json_compat.load(SIGNALS_JSON)
 
     inject_funcs = []
     for item in data['functions']:
@@ -237,7 +243,7 @@ def generate():
             inject_funcs.append(item)
 
     if not inject_funcs:
-        print("  No matching functions in functions.json. Skipping.")
+        print("  No matching functions in signals.json. Skipping.")
         return True
 
     # Extract from IDA

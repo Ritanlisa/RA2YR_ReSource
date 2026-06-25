@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-sync_symbols.py — Synchronize function names: cpp → hpp → functions.json → IDA.
+sync_symbols.py — Synchronize function names: cpp → hpp → signals.json → IDA.
 
 Authoritative source: cpp function definitions (preceded by // 0xADDR annotations).
 cpp definitions drive all changes. On unresolvable conflict: FAIL with clear error.
@@ -19,7 +19,7 @@ from pathlib import Path
 # ── Configuration ────────────────────────────────────────────────────────────
 ROOT = Path(__file__).resolve().parent.parent
 SRC_DIR = ROOT / "src"
-FUNCTIONS_JSON = ROOT / "injectFunctionTest" / "functions.json"
+SIGNALS_JSON = ROOT / "signals.json"  # canonical symbol file (was functions.json)
 IDA_HOST = "127.0.0.1"
 IDA_PORT = 13337
 
@@ -272,14 +272,20 @@ def find_hpp_addr_entries():
 
 # ── JSON handling ────────────────────────────────────────────────────────────
 
-def load_functions_json():
-    """Load functions.json, return (data, {address: entry})."""
-    with open(FUNCTIONS_JSON, 'r', encoding='utf-8') as f:
+def load_signals_json():
+    """Load signals.json (canonical), return (data, {addrUpper: (origKey, entry)}).
+
+    Only function symbols (kind=="function") are indexed. The index value carries the
+    original `symbols` key so the `_by_name` index can be kept consistent on rename.
+    The full signals dict is returned so members/globals/classes are preserved on write."""
+    with open(SIGNALS_JSON, 'r', encoding='utf-8') as f:
         data = json.load(f)
     index = {}
-    for entry in data['functions']:
-        addr = entry['address'].upper()
-        index[addr] = entry
+    for orig_key, sym in (data.get('symbols', {}) or {}).items():
+        if not isinstance(sym, dict) or sym.get('kind') != 'function':
+            continue
+        addr = sym.get('address', orig_key).upper()
+        index[addr] = (orig_key, sym)
     return data, index
 
 
@@ -364,8 +370,13 @@ def sync_hpp(cpp_entries, hpp_entries, dry_run=False):
 # ── Sync: functions.json ← CPP ───────────────────────────────────────────────
 
 def sync_functions_json(cpp_entries, json_data, json_index, dry_run=False):
-    """Update functions.json names to match cpp."""
+    """Update signals.json function names to match cpp (cpp definitions are canonical).
+
+    Renames the function symbol's `name` in place and keeps the `_by_name` index
+    consistent (old name→addr removed, new name→addr added). Every other top-level
+    section (members, globals, classes, _member_by_name) is preserved untouched."""
     changes = []
+    by_name = json_data.get('_by_name', {})
 
     for addr in sorted(cpp_entries.keys()):
         cpp_name = cpp_entries[addr]['name']
@@ -373,7 +384,7 @@ def sync_functions_json(cpp_entries, json_data, json_index, dry_run=False):
         if addr not in json_index:
             continue
 
-        json_entry = json_index[addr]
+        orig_key, json_entry = json_index[addr]
         json_name = json_entry.get('name', '')
 
         if normalize_name(cpp_name) == normalize_name(json_name):
@@ -381,6 +392,13 @@ def sync_functions_json(cpp_entries, json_data, json_index, dry_run=False):
 
         if not dry_run:
             json_entry['name'] = cpp_name
+            # Keep _by_name consistent: drop old name→addr, add new name→addr.
+            old_bucket = by_name.get(json_name)
+            if isinstance(old_bucket, dict):
+                old_bucket.get('symbols', {}).pop(orig_key, None)
+                if not old_bucket.get('symbols'):
+                    by_name.pop(json_name, None)
+            by_name.setdefault(cpp_name, {'symbols': {}})['symbols'][orig_key] = 'function'
 
         changes.append({
             'addr': addr,
@@ -389,9 +407,11 @@ def sync_functions_json(cpp_entries, json_data, json_index, dry_run=False):
         })
 
     if changes and not dry_run:
-        with open(FUNCTIONS_JSON, 'w', encoding='utf-8', newline='\n') as f:
+        # Match build_signals.py output format exactly (indent=2, ensure_ascii=False,
+        # default newline handling, NO trailing newline) so sync-written and
+        # build_signals-written signals.json are byte-consistent (no spurious diff).
+        with open(SIGNALS_JSON, 'w', encoding='utf-8') as f:
             json.dump(json_data, f, indent=2, ensure_ascii=False)
-            f.write('\n')
 
     return changes
 
@@ -454,16 +474,16 @@ def main():
           file=sys.stderr)
 
     # Phase 3
-    print("Phase 3: Loading functions.json...", file=sys.stderr)
-    json_data, json_index = load_functions_json()
-    print("  Loaded {0} entries".format(len(json_data['functions'])), file=sys.stderr)
+    print("Phase 3: Loading signals.json...", file=sys.stderr)
+    json_data, json_index = load_signals_json()
+    print("  Loaded {0} function entries".format(len(json_index)), file=sys.stderr)
 
     # Phase 4
     print("Phase 4: Syncing hpp (cpp -> hpp)...", file=sys.stderr)
     hpp_changes = sync_hpp(cpp_entries, hpp_entries, dry_run=dry_run)
 
     # Phase 5
-    print("Phase 5: Syncing functions.json (cpp -> json)...", file=sys.stderr)
+    print("Phase 5: Syncing signals.json (cpp -> json)...", file=sys.stderr)
     json_changes = sync_functions_json(cpp_entries, json_data, json_index, dry_run=dry_run)
 
     # Phase 6

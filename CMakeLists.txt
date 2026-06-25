@@ -108,23 +108,28 @@ if(WIN32)
         message(STATUS "Skipping hook_dll: requires Python3 + YRpp/Syringe.h submodule")
     endif()
 
-    # ── Signal type database (generated, used by code quality checks) ──
+    # ── signals.json INCREMENTAL refresh (on-demand; preserves flags) ──
+    # signals.json is the single canonical symbol file and is checked into git — it is
+    # NOT a build artifact regenerated from scratch. `build_signals` performs an
+    # INCREMENTAL refresh: it preserves every function's completed/done/idempotent/
+    # translated flags and names, and only rebuilds the derived member/global/class
+    # sections from their sources. Run it manually when those sources change:
+    #     cmake --build <dir> --target build_signals
     if(Python3_FOUND)
         add_custom_target(build_signals
             COMMAND ${Python3_EXECUTABLE} "${CMAKE_SOURCE_DIR}/tools/build_signals.py"
             WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}"
-            COMMENT "Building signals.json — symbol type database"
+            COMMENT "Incrementally refreshing signals.json (preserves completed/done/idempotent flags)"
         )
     endif()
 
     # ── Code quality hard-gating (PRE_BUILD: blocks target on failure) ──
     # Gates run before EACH target compilation. If ANY gate fails, target FAILS and produces NO binary.
     if(Python3_FOUND)
-        # Signal type database (must exist before targets)
-        add_dependencies(gamemd build_signals)
-        if(TARGET hook_dll)
-            add_dependencies(hook_dll build_signals)
-        endif()
+        # signals.json is the canonical, git-tracked symbol file — always present, so
+        # it needs no per-build generation step. `build_signals` is intentionally NOT a
+        # dependency of gamemd/hook_dll (it would rewrite the git-tracked file every
+        # build); it is an on-demand incremental refresh target instead.
 
         # ── Gate script (run once, cached by stamp file; re-runs when sources change) ──
         # NOTE: hook_dll is defined in injectFunctionTest/ subdirectory, so PRE_BUILD
@@ -136,7 +141,6 @@ if(WIN32)
             COMMENT "Running all build gates independently (B.2 + B.5 + exec-flow)"
         )
         add_dependencies(gamemd code_quality_gate)
-        add_dependencies(code_quality_gate build_signals)
         if(TARGET hook_dll)
             add_dependencies(hook_dll code_quality_gate)
         endif()
@@ -155,13 +159,13 @@ if(WIN32)
             COMMENT "Auditing IDA↔JSON↔hpp name consistency"
         )
 
-        # Sync symbols: keep hpp + functions.json + IDA names in sync with cpp definitions.
+        # Sync symbols: keep hpp + signals.json + IDA names in sync with cpp definitions.
         # cpp function definitions (// 0xADDR) are the authoritative source.
         # Runs as a PRE_BUILD dependency of gamemd; idempotent on success.
         add_custom_target(sync-symbols
             COMMAND ${Python3_EXECUTABLE} "${CMAKE_SOURCE_DIR}/tools/sync_symbols.py"
             WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
-            COMMENT "Syncing function names: cpp -> hpp -> functions.json -> IDA"
+            COMMENT "Syncing function names: cpp -> hpp -> signals.json -> IDA"
         )
         add_dependencies(gamemd sync-symbols)
         if(TARGET hook_dll)

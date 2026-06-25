@@ -2,7 +2,7 @@
 """Scan REVERSE macros, generate DEFINE_HOOK stubs with completion checks.
 
 Features:
-  - Completion check via #pragma/#error (reads functions.json)
+  - Completion check via #pragma/#error (reads signals.json — the canonical symbol file)
   - "No Call" summary for all hooked functions on exit
   - Caller lookup via gamemd.exe.map binary search
   - Parameter names from C++ function declaration
@@ -14,7 +14,7 @@ SCRIPT = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(SCRIPT, ".."))
 OUT  = os.path.join(SCRIPT, "gen", "reverse_hooks.cpp")
 CHK  = os.path.join(SCRIPT, "gen", "reverse_check.cpp")
-JSON = os.path.join(SCRIPT, "functions.json")
+JSON = os.path.join(ROOT, "signals.json")  # canonical symbol file (function entries keyed by address)
 MAP  = os.path.join(ROOT, "decompile-results", "gamemd.exe.map")
 CAL  = os.path.join(SCRIPT, "callee_map.json")
 
@@ -75,10 +75,37 @@ from gen_re_impl import generate_re_impl
 
 def load_json():
     if not os.path.exists(JSON): return {}, None
-    with open(JSON) as f:
+    with open(JSON, encoding='utf-8') as f:
         raw = f.read()
     data = json.loads(raw)
-    fn_map = {fn['address'].lower(): fn for fn in data['functions']}
+    # signals.json is the canonical symbol file. Function symbols live under
+    # data["symbols"] keyed by address (kind=="function"). Reshape each into the
+    # {address, name, call{convention,return_type,params}, hook{completed,idempotent}}
+    # structure the generator expects, so the completion-gate and per-convention
+    # parameter marshalling logic stay byte-for-byte unchanged. `idempotent` is
+    # carried as-is: None/null means "no manual override" -> resolve_idempotent
+    # uses the auto (analyze_idempotent.py) result (Case 2). Keyed by lowercase addr.
+    fn_map = {}
+    for addr, sym in (data.get('symbols', {}) or {}).items():
+        if not isinstance(sym, dict) or sym.get('kind') != 'function':
+            continue
+        a = sym.get('address', addr)
+        hook = {
+            'completed': sym.get('completed', False),
+            'idempotent': sym.get('idempotent'),
+        }
+        if 'idempotent_reason' in sym:
+            hook['idempotent_reason'] = sym['idempotent_reason']
+        fn_map[a.lower()] = {
+            'address': a,
+            'name': sym.get('name', ''),
+            'call': {
+                'convention': sym.get('call_convention', 'unknown'),
+                'return_type': sym.get('return_type', 'int'),
+                'params': sym.get('params', []),
+            },
+            'hook': hook,
+        }
     return fn_map, raw
 
 def get_json_line(addr, raw):
@@ -103,7 +130,7 @@ def resolve_idempotent(addr, fn_info, results, warnings_list, hook_path, line_no
     """Resolve idempotent status for a hook function.
 
     Priority:
-      1. Manual `idempotent` in functions.json → use as-is
+      1. Manual `idempotent` in signals.json → use as-is
          - If manual=true but auto != True → WARNING (with reason check)
          - If manual=false but auto == True → no warning (conservative)
       2. No manual → use auto result
@@ -170,7 +197,7 @@ def resolve_idempotent(addr, fn_info, results, warnings_list, hook_path, line_no
     # Case 3: neither manual nor auto → FATAL
     extra_errors.append(
         f"FATAL: {addr} ({fn_info.get('name','?')}) has no idempotent value. "
-        f"Run analyze_idempotent.py or add manual idempotent to functions.json."
+        f"Run analyze_idempotent.py or add manual idempotent to signals.json."
     )
     return False, extra_errors  # conservative default after fatal error
 
@@ -316,7 +343,7 @@ def find_markers(functions, raw_json, callee_map, callee_names, all_marked, idem
                     fn_info = functions.get(addr)
                     
                     if fn_info is None:
-                        err = f"{fp}:{c[:m.start()].count(chr(10))+1}: REVERSE({addr}) — NOT FOUND in functions.json"
+                        err = f"{fp}:{c[:m.start()].count(chr(10))+1}: REVERSE({addr}) — NOT FOUND in signals.json"
                         errors.append(err)
                         continue
                     
@@ -332,7 +359,7 @@ def find_markers(functions, raw_json, callee_map, callee_names, all_marked, idem
                     if mode == "None":
                         if not completed:
                             json_line = get_json_line(addr, raw_json)
-                            warnings.append(f"{fp}:{c[:m.start()].count(chr(10))+1}: {addr} ({fname}) mode=None, not completed (functions.json line {json_line})")
+                            warnings.append(f"{fp}:{c[:m.start()].count(chr(10))+1}: {addr} ({fname}) mode=None, not completed (signals.json line {json_line})")
                         if addr in callee_map:
                             unmarked = {}
                             for callee in callee_map[addr]:
@@ -360,7 +387,7 @@ def find_markers(functions, raw_json, callee_map, callee_names, all_marked, idem
                     if mode in ("Replace", "Inject"):
                         if not completed:
                             json_line = get_json_line(addr, raw_json)
-                            errors.append(f"{fp}:{c[:m.start()].count(chr(10))+1}: {addr} ({fname}) mode={mode} but NOT completed (functions.json line {json_line})")
+                            errors.append(f"{fp}:{c[:m.start()].count(chr(10))+1}: {addr} ({fname}) mode={mode} but NOT completed (signals.json line {json_line})")
                         
                         # Dependency check for Replace mode
                         if mode == "Replace" and addr in callee_map:
@@ -976,7 +1003,7 @@ def main():
     
     print(f"None markers: {len(none_markers)}")
 
-    # Build caller lookup from functions.json (IDA names, 19K+ entries)
+    # Build caller lookup from signals.json (IDA names, 19K+ entries)
     # Supplement with .map file entries for any extras
     fn_map = {}
     for addr_str, fn_info in functions.items():
@@ -990,7 +1017,7 @@ def main():
     for addr, name in parse_map().items():
         if addr not in fn_map:
             fn_map[addr] = name
-    print(f"Caller lookup table: {len(fn_map)} entries (functions.json + map)")
+    print(f"Caller lookup table: {len(fn_map)} entries (signals.json + map)")
     code = generate(markers, functions, fn_map, none_markers)
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     with open(OUT,'w') as f: f.write(code)

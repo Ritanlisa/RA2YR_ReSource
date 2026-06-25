@@ -6,7 +6,7 @@ parameter signature is part of the identity. This tool assesses how complete and
 correct the symbol table's parameter signatures are by cross-comparing:
 
   1. tools/ida_function_db.json          - IDA truth (param_types, is_thiscall)
-  2. injectFunctionTest/functions.json   - the symbol table (call.params)
+  2. signals.json (canonical symbol file) - function symbols (call_convention/params)
   3. src/**/*.hpp                         - C++ declaration param lists (// 0xADDR)
 
 It REPORTS discrepancy counts only. It modifies NOTHING (assessment only).
@@ -64,7 +64,7 @@ from collections import Counter
 
 ROOT = Path(__file__).resolve().parent.parent
 IDA_DB = ROOT / "tools" / "ida_function_db.json"
-FUNCS_JSON = ROOT / "injectFunctionTest" / "functions.json"
+SIGNALS_JSON = ROOT / "signals.json"  # canonical symbol file (was functions.json)
 HPP_DIRS = ["src", "include/gamemd", "app"]
 OUT_JSON = ROOT / ".omo" / "signature_audit.json"
 
@@ -501,19 +501,35 @@ def audit():
     ida_raw = json.loads(IDA_DB.read_text(encoding="utf-8"))
     ida_map = {norm_addr(a): e for a, e in ida_raw.items()}
 
-    fj_raw = json.loads(FUNCS_JSON.read_text(encoding="utf-8"))
-    fj_entries = fj_raw.get("functions", [])
+    # signals.json is the canonical symbol file. Reshape function symbols
+    # (kind=="function") into the legacy {address, name, call{params,...}} shape so
+    # json_params() and the comparison logic are unchanged.
+    sig_raw = json.loads(SIGNALS_JSON.read_text(encoding="utf-8"))
+    fj_entries = []
     fj_map = {}
     fj_names = {}
-    for e in fj_entries:
-        a = norm_addr(e.get("address"))
+    for _k, sym in (sig_raw.get("symbols", {}) or {}).items():
+        if not isinstance(sym, dict) or sym.get("kind") != "function":
+            continue
+        addr = sym.get("address", _k)
+        e = {
+            "address": addr,
+            "name": sym.get("name", ""),
+            "call": {
+                "convention": sym.get("call_convention", "unknown"),
+                "return_type": sym.get("return_type", "void"),
+                "params": sym.get("params", []),
+            },
+        }
+        fj_entries.append(e)
+        a = norm_addr(addr)
         fj_map[a] = e
-        fj_names[a] = e.get("name", "")
+        fj_names[a] = e["name"]
 
     hpp_par, hpp_seen = extract_hpp_params(HPP_DIRS)
 
     print(f"  ida_function_db:   {len(ida_map):,} entries", file=sys.stderr)
-    print(f"  functions.json:    {len(fj_map):,} entries "
+    print(f"  signals.json:      {len(fj_map):,} function entries "
           f"({sum(1 for e in fj_entries if (e.get('call') or {}).get('params'))} with params)",
           file=sys.stderr)
     print(f"  hpp annotations:   {len(hpp_seen):,} addrs "
@@ -600,7 +616,7 @@ def print_human(r):
     print("\n-- Data sources --")
     print(f"  IDA entries (signature data):  {t['ida_entries_with_signature_data']:,}"
           f"  ({t['ida_thiscall']:,} thiscall)")
-    print(f"  functions.json entries:        {t['functions_json_entries']:,}"
+    print(f"  signals.json functions:        {t['functions_json_entries']:,}"
           f"  ({t['functions_json_with_params']:,} with call.params)")
     print(f"  hpp // 0xADDR annotations:     {t['hpp_annotated_addrs']:,}"
           f"  ({t['hpp_with_param_decl']:,} with a parseable param decl)")

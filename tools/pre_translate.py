@@ -160,9 +160,16 @@ PARTIAL_MATCH_SKIP = {
 # ── Data Loaders ──
 
 def load_functions_json():
-    """Load functions.json and build lookup maps."""
-    with open(FUNCTIONS_JSON, 'r', encoding='utf-8') as f:
-        data = json.load(f)
+    """Load function entries from signals.json (canonical) and build lookup maps.
+
+    functions.json was eliminated; functions_json_compat synthesizes the legacy
+    {"functions": [...]} shape from signals.json so the maps below are unchanged."""
+    import os as _os, sys as _sys
+    _here = _os.path.dirname(_os.path.abspath(__file__))
+    if _here not in _sys.path:
+        _sys.path.insert(0, _here)
+    import functions_json_compat
+    data = functions_json_compat.load()
 
     name_to_addr = {}       # "ClassName::Method" → "0xADDR"
     addr_to_entry = {}      # "0xADDR" → entry dict
