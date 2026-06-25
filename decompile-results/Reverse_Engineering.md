@@ -3,10 +3,11 @@
 
 ---
 
-# RA2/YR gamemd.exe — 逆向工程进度统计
+# RA2/YR gamemd.exe — 逆向工程进度统计 (Phase 1 快照)
 
 > 数据来源: IDA Pro 9.2, `gamemd.exe.i64` (Mental Omega)  
-> 统计时间: 2026-06-03  
+> 快照时间: 2026-06-03  
+> 当前状态: **symbols-locked-v2** — 全部 19,067 函数 1:1:1 映射 (IDA↔signals↔hpp), 13,437 已命名 (70.5%), 0 sub_* 匿名全局变量  
 > 目标二进制: 32-bit Windows PE, MSVC 6.0, 基址 0x400000, ~7.6MB  
 
 ### 统计规则 (固定)

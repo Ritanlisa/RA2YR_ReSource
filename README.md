@@ -49,7 +49,7 @@ RA2YR_ReSource/
 │   └── wdt/                 # Watchdog timer
 ├── app/                     ← EXE entry point (WinMain + game loop + DDraw init)
 ├── injectFunctionTest/      ← Hook-based shadow execution framework (see below)
-├── CMakeLists.txt           # C++20, Win32 static lib + EXE
+├── CMakeLists.txt           # C++20, Win32 EXE build
 └── LICENSE.md               # GPL v3 (inherited from CnC_Red_Alert)
 ```
 
@@ -165,14 +165,14 @@ echo STATS | ncat 127.0.0.1 25400
 
 ## IDA Naming Progress
 
-All 19,067 functions named. 1,120 classes have complete header definitions with all member fields identified.
+All 19,067 functions named. 1,120 classes have complete header definitions with all member fields identified. **symbols-locked-v2**: 1:1:1 mapping (IDA↔signals↔hpp).
 
 | Category | Count | Percentage |
 |----------|-------|------------|
-| Named functions | 10,366 | 100% |
-| Member functions (`::`) | 7,936 | 76.6% |
-| Global functions | 2,430 | 23.4% |
-| Named global variables | 9,999 | 100% |
+| Named functions | 13,437 | 70.5% |
+| Member functions (`::`) | 7,936 | 59.0% |
+| Global functions | 5,501 | 41.0% |
+| sub_* remaining | 5,630 | 29.5% |
 | Classes with headers | 1,120 | 100% |
 | Total functions | 19,067 | — |
 

@@ -183,11 +183,13 @@ cmake --build build_linux
 |------|------|
 | 已实现函数（存根） | ~140（~200+ stubs）+ **4,255 sub_* <50B 存根 (Task 17)** + **1,203 sub_* 50-500B 存根 (Task 18)** |
 | 编译错误 / 警告 | **0 / 0** (gamemd 来自 _generated/ 和主要模块) |
-| completed (符号定义) | **19,133 / 19,133 (100%)** — 所有函数在 IDA/functions.json/hpp 中有名称和地址 |
+| symbol-locked | **symbols-locked-v2** — 全部 19,067 函数 1:1:1 映射 (IDA↔signals↔hpp)，0 naming mismatches |
+| completed (符号定义) | **19,133 / 19,133 (100%)** — 所有函数在 IDA/signals.json/hpp 中有名称和地址 |
 | translated (完整IDA对照) | **472** — 完整 C++ 实现经 IDA 反编译验证（58 REVERSE + 183 structure + 312 other − 62 dedup） |
 | IDA 命名 | **13,437 / 19,067 (70.5%)** — 822 sub_* 已自动命名 (Task 19) |
 | IDA 类 header | **1,120 / 1,120 (100%)** — 所有类成员变量已解析，0 unknown_ |
 | sub_* 残留 | **5,468** — 函数级别 (非类成员)，0 已翻译 |
+| 命名一致性 | 215 剩余 (59 method_diff + 116 wrong_class + 40 other)，需逐函数审查 |
 | REVERSE 标记 | ~32（2 Inject 活跃, 39 None） |
 | 幂等自动判定 | Phase 1+2 完成: TRUE 31%, FALSE 36%, UNCERTAIN 33% |
 | 源文件 | ~130 .hpp + ~135 .cpp (~110,000 行) |
@@ -667,6 +669,8 @@ RA2/YR 的移动系统使用 COM 架构。GUID 表位于 `.rdata` 段（0x7E9A60
 - 10-19 xref 全局变量命名（~180 个）
 - 函数体逆向翻译（继续从 P0/P1 优先级，Task 6 完成 structure/ 后继续其他目录）
 - 解编译数据存档：`.omo/evidence/` 下有 unit (41 funcs), infantry (32 funcs), building 的 IDA 完整伪代码
+- 215 命名不一致修复 (59 method_diff + 116 wrong_class + 40 other) — 需逐函数 IDA 审查
+- symbols-locked-v2 已创建 tag（全部 19,067 函数 1:1:1 IDA↔signals↔hpp），后续命名变更需同步更新 signals.json 和 IDA
 
 ## 下一会话快速接手指引
 
@@ -677,3 +681,4 @@ RA2/YR 的移动系统使用 COM 架构。GUID 表位于 `.rdata` 段（0x7E9A60
 5. 看 `D:\RA2MD\debug\snapshot-*` 了解最近崩溃记录
 6. 任何崩溃分析：先满足"故障排除最低标准"6 项，缺一项不下结论
 7. 查看 `.omo/evidence/fr-task-19-globals.txt` 了解 Task 19 详细状态
+8. symbols-locked-v2: 全部 19,067 函数 1:1:1 IDA↔signals↔hpp 映射，0 naming mismatches。`signals.json` 是权威函数元数据源

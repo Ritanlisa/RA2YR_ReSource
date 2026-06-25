@@ -48,7 +48,7 @@ RA2YR_ReSource/
 │   ├── network/             # Winsock、会话、多人游戏
 │   └── team/                # 小队、触发器、脚本、战役
 ├── app/                     ← EXE 入口点 (WinMain + 游戏循环 + DDraw初始化)
-├── CMakeLists.txt           # C++20, Win32 静态库 + 可执行文件
+├── CMakeLists.txt           # C++20, Win32 EXE 构建
 └── LICENSE.md               # GPL v3（继承自 CnC_Red_Alert）
 ```
 
