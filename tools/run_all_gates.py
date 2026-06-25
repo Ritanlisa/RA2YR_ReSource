@@ -10,9 +10,9 @@ def run(name, args):
         print(r.stdout[-2000:] if r.stdout else r.stderr[-2000:])
     return r.returncode
 results = [
-    run("B.2", ["tools/check_translated_functions.py"]),
-    run("B.5", ["tools/check_pointer_arithmetic.py", "src/", "app/"]),
-    run("EXEC-FLOW", ["tools/verify_execution_flow.py", "--auto"]),
+    run("code-standards", ["tools/check_translated_functions.py"]),
+    run("ida-artifact",   ["tools/check_pointer_arithmetic.py", "src/", "app/"]),
+    run("exec-flow",      ["tools/verify_execution_flow.py", "--auto"]),
 ]
 failed = sum(1 for r in results if r != 0)
 print(f"\n{failed}/3 gates FAILED" if failed else "\nALL GATES PASSED")
