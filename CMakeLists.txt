@@ -23,11 +23,7 @@ file(GLOB_RECURSE SOURCES
 list(FILTER SOURCES EXCLUDE REGEX "src/app/")
 list(FILTER SOURCES EXCLUDE REGEX "src/_generated/")
 
-# Main library target — REMOVED: gamemd.exe now builds directly from sources.
-# (gamemd_core was a STATIC library wrapper; sources are compiled directly into the EXE.)
-# add_library(gamemd_core STATIC ${HEADERS} ${SOURCES})
-# target_include_directories(gamemd_core PUBLIC "src")
-# target_compile_definitions(gamemd_core PRIVATE $<$<CONFIG:Debug>:GAMEMD_DEBUG>)
+# gamemd.exe builds directly from sources — no intermediate static library needed.
 
 # Optional: Verification target (compiles headers only for syntax checking)
 add_custom_target(verify_headers

@@ -6,7 +6,7 @@ Reverse-engineered C++ source code of Red Alert 2 / Yuri's Revenge from `gamemd.
 
 This project reconstructs the RA2/YR game engine `gamemd.exe` — a 7.6MB 32-bit Windows PE compiled with MSVC 6.0, containing 19,059 functions across 1,120 classes.
 
-Current output: static library `gamemd_core` + executable `gamemd.exe`, built with CMake + C++20. The long-term goal is a fully independent, drop-in replacement engine with progressive modernization.
+Current output: executable `gamemd.exe`, built with CMake + C++20. The long-term goal is a fully independent, drop-in replacement engine with progressive modernization.
 
 ## Architecture Overview
 
@@ -56,7 +56,7 @@ RA2YR_ReSource/
 ## Build
 
 ```bash
-# gamemd_core.lib + gamemd.exe
+# gamemd.exe
 cmake -B build_win -G "Visual Studio 17 2022" -A Win32
 cmake --build build_win
 

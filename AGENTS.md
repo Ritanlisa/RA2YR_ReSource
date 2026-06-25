@@ -11,7 +11,7 @@
 | Phase 1 (当前) | 完整逆向重建，功能对等原版 | 可直接替换的 Win32 EXE (`gamemd.exe`) |
 | Phase 2 (远期) | 现代化重构 (现代渲染 / AI Bot / 原生模组系统) | 跨平台现代游戏引擎 |
 
-当前构建产物：静态库 `gamemd_core` + EXE `gamemd.exe`，CMake + C++20。
+当前构建产物：可执行文件 `gamemd.exe`，CMake + C++20。
 
 ## 项目专属行为准则
 
@@ -103,7 +103,7 @@ cmake --build build_hook --config Release
 # 生成 REVERSE 钩子代码
 cd injectFunctionTest && python gen_reverse_hooks.py
 
-# Linux 验证编译 (仅 gamemd_core 静态库, 不能运行游戏)
+# Linux 验证编译 (x86_64 ELF, 仅代码验证, 不能运行游戏)
 cmake -B build_linux -G "Unix Makefiles"
 cmake --build build_linux
 ```
@@ -182,7 +182,7 @@ cmake --build build_linux
 | 指标 | 数值 |
 |------|------|
 | 已实现函数（存根） | ~140（~200+ stubs）+ **4,255 sub_* <50B 存根 (Task 17)** + **1,203 sub_* 50-500B 存根 (Task 18)** |
-| 编译错误 / 警告 | **0 / 0** (gamemd_core 来自 _generated/ 和主要模块) |
+| 编译错误 / 警告 | **0 / 0** (gamemd 来自 _generated/ 和主要模块) |
 | completed (符号定义) | **19,133 / 19,133 (100%)** — 所有函数在 IDA/functions.json/hpp 中有名称和地址 |
 | translated (完整IDA对照) | **472** — 完整 C++ 实现经 IDA 反编译验证（58 REVERSE + 183 structure + 312 other − 62 dedup） |
 | IDA 命名 | **13,437 / 19,067 (70.5%)** — 822 sub_* 已自动命名 (Task 19) |
@@ -557,7 +557,7 @@ RA2/YR 的移动系统使用 COM 架构。GUID 表位于 `.rdata` 段（0x7E9A60
     - 名称规范化解决了 5 个误报
   - **Phase 3 (wrong_class)**: 180 → 116（通过命名空间/结构体上下文识别减少了 64 个）
   - **Phase 4 (other)**: 34 → 40（净变化 +6）
-  - **构建验证**: 0 错误, 0 警告（gamemd_core）
+  - **构建验证**: 0 错误, 0 警告（gamemd）
   - 工具: `tools/audit_consistency.py`（已增强）, `tools/fix_phase2_easy.py`
   - 证据: `.omo/no_scope_v2.txt`, `.omo/method_diff_v2.txt`, `.omo/wrong_class_v2.txt`, `.omo/other_v2.txt`
 
@@ -612,7 +612,7 @@ RA2/YR 的移动系统使用 COM 架构。GUID 表位于 `.rdata` 段（0x7E9A60
   - 函数用 `sub_naming_proposals.json` 命名（PascalCase，`::` 替换为 `_`）
   - IDA 伪代码保留为注释，供后续手动翻译
   - 引用 IDA 全局变量自动添加 `extern` 声明
-  - 构建验证：0 errors, 0 warnings (gamemd_core)
+  - 构建验证：0 errors, 0 warnings (gamemd)
   - 工具：`tools/task17_generate.py`（可重复生成）
 - **2026-06-18**: Task 6 — structure/ 函数批量翻译 (IDA decompile → C++)
   - 4 文件, ~160 stub 函数翻译为忠实 C++ 实现
@@ -627,7 +627,7 @@ RA2/YR 的移动系统使用 COM 架构。GUID 表位于 `.rdata` 段（0x7E9A60
   - 822/4,412 非 CRT sub_* 函数通过 caller-context 启发式自动命名
   - `batch_name_subs_ida.py`：两轮迭代命名（Pass 1: 794, Pass 2: 28）
   - `ida_extract.py` 重新生成 functions.json：13,437 已命名 (+3,071)，11,872 已完成
-  - gamemd_core 编译：0 errors, 0 warnings
+  - gamemd 编译：0 errors, 0 warnings
   - 剩余 3,590 sub_* 需解编译命名（后续 Pass 3+）
 - **2026-06-17**: IDA 类 header 定义全部完成
   - 1,120 个 IDA 类的成员变量全部解析并生成 C++ header

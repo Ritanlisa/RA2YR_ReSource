@@ -279,14 +279,14 @@
 | P5-4 | 强化学习 AI 框架 (替代规则AI) | 大型 |
 | P5-5 | 跨平台移植 (Linux/macOS) | 中型 |
 | P5-6 | 现代网络层 (替代 UDP/IPX) | 中型 |
-| P5-7 | Linux 下编译 gamemd_core 静态库 (平台兼容层 + 条件编译) | 小型 |
+| P5-7 | Linux 下编译 gamemd 可执行文件 (平台兼容层 + 条件编译) | 小型 |
 | P5-8 | cnc-ddraw MinGW 交叉编译 (Linux 产出 ddraw.dll) | 小型 |
 
 ---
 
-### P5-7: Linux 编译 gamemd_core 详情
+### P5-7: Linux 编译 gamemd 详情
 
-**目标**: `cmake -B build_linux -G "Unix Makefiles" && cmake --build build_linux` 产出 `libgamemd_core.a`（x86_64 ELF），不改动 Windows 编译结果。仅用于代码验证/CI，不运行游戏。
+**目标**: `cmake -B build_linux -G "Unix Makefiles" && cmake --build build_linux` 产出 `gamemd`（x86_64 ELF），不改动 Windows 编译结果。仅用于代码验证/CI，不运行游戏。
 
 **子步骤**:
 

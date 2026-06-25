@@ -1242,7 +1242,7 @@ Good, the main include is structure/unit.hpp. Let me check what _funcs.hpp has f
 Thought: 2.1s
 I can see that the functions I need like StreamClass::Set2, WinAPI::Wrapper, StartAudioControllerAt, CreateTriggerClassIfFarEnough, Terrain::ClimbCheck etc. exist in the _funcs.hpp files, but most are commented out or have vague signatures.
 
-The build is a static library (gamemd_core) that links to nothing external at C++ level - it just needs to compile. So I need declarations that exist so the linker stage can be resolved later.
+The build is an executable (gamemd) that just needs to compile. So I need declarations that exist so the linker stage can be resolved later.
 
 Let me check what functions ARE actually declared (not commented out):
 ✱Grep "^(?!//).*\b(Random::Range|Math::CalcAngle|Math::Sqrt|Math::RoundToInt|MissionClass::GetMissionControl|TimerClass::Active|LayerClass::Pathfinding_Find|LayerClass::IsWithinUsableArea|CellCoord::To_CellObj|ProgressTimer::GetValue|ObjectClass::GetLandHeight|Coord::To_Cell|Cell::IsBridge|House::IsHumanPlayer|House::IsCurrentPlayer|FootClass::ProcessDeploy|BuildingClass::GetHealthRatio|BuildingClass::UpdateDamageAnim|AnimClass::ctor|VoxClass::FindAndPlay|TechnoClass::CleanupAll|TechnoClass::MarkPassengersAsExited|TechnoClass::HasAnyMission|FootClass::PopAndProcess|Team::GetMember|TeamClass::AddMember|Array::Contains|ObjectClass::SetReference|Object::IsAlliedWithObjectHouse|BulletClass::LoseTarget|AbstractClass::ClearTargetToMeClearManagerTarget|CrateClass::ProcessPickup|ObjectClass::FindPlacementPosition|ProcessUnitDeploymentAtCell|BuildingClass::SearchPlacement|InfantryClass::Construct|BuildingClass::Deploy|TechnoClass::SetFocus|TechnoClass::CreateDeathAnim|StartAudioController)\b" in src 
@@ -2281,7 +2281,7 @@ int UnitClass::DeployToBuilding()
 Thought: 708ms
 OK, I've replaced all 3 functions. Now let me try to compile and see what errors come up. Let me first check if the file is still syntactically valid.
 Now let me try to compile:
-# Build gamemd_core to check compilation in .
+# Build gamemd to check compilation in .
 $ cmake --build build_win --config Debug 2>&1
 ...
 
@@ -4115,7 +4115,7 @@ All clean. Let me build:
 [✓] src/structure/unit.cpp: Translate Deploy (0x7192F0) — state machine with real transitions
 [•] src/structure/unit.cpp: cmake --build build_win --config Debug → 0 errors
 [ ] src/structure/unit.cpp: verify_execution_flow.py for each function
-# Build gamemd_core to verify 0 errors in .
+# Build gamemd to verify 0 errors in .
 $ cmake --build build_win --config Debug 2>&1
 适用于 .NET Framework MSBuild 版本 17.14.40+3e7442088
 
@@ -4130,7 +4130,7 @@ CUSTOMBUILD : warning : D:\RA2YR_ReSource\src\core\init_game.cpp:342: 0x5b40b0 (
 …
 Click to expand
 Thought: 3.1s
-The code quality check PASSED for all 3 functions! 0 violations. But there are compilation errors in gamemd_core:
+The code quality check PASSED for all 3 functions! 0 violations. But there are compilation errors in gamemd:
 
 1. error C2323: "gamemd::operator new": non-member operator new or delete functions cannot be declared static or in a namespace outside global — at line 36. This is my forward declaration void* __cdecl operator new(unsigned int size); inside namespace gamemd.
 
@@ -4208,7 +4208,7 @@ Actually, looking at the earlier compilation output, the specific errors were ab
 The other forward declarations (like BuildingClass, TechnoClass_static, etc.) didn't cause errors in the first build, so they should still be fine. The issue was specifically those 3 items.
 
 Let me build again.
-# Build gamemd_core - second attempt in .
+# Build gamemd - second attempt in .
 $ cmake --build build_win --config Debug 2>&1
 适用于 .NET Framework MSBuild 版本 17.14.40+3e7442088
 
@@ -4259,7 +4259,7 @@ namespace {namespace {
 constexpr uint32_t kUnitFlag = (uint32_t)(AbstractFlags::Foot)constexpr uint32_t kUnitFlag = (uint32_t)(AbstractFlags::Foot)
 Thought: 507ms
 Now let me build again.
-# Build gamemd_core - third attempt in .
+# Build gamemd - third attempt in .
 $ cmake --build build_win --config Debug 2>&1
 ...
 

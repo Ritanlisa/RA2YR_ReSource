@@ -8,7 +8,7 @@ set(CMAKE_CXX_STANDARD 17)
 # ============================================================
 # YRpp include dir (Phobos submodule @ 613922a)
 set(YRPP_DIR           "${CMAKE_CURRENT_SOURCE_DIR}/../YRpp")
-# gamemd_core include dir
+# Source include dir
 set(GAMEMD_INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../src")
 # Output directory for hook_dll.dll (set via -DHOOK_OUTPUT_DIR=... or env)
 if(NOT DEFINED HOOK_OUTPUT_DIR)
