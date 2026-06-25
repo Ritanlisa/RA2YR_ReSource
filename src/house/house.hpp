@@ -280,7 +280,7 @@ public:
     bool IsNeutral() const;
     // design: no binary equivalent found in IDA
     bool IsPlayer() const;
-    bool IsObserver() const;  // 0x5E9440
+    bool IsObserver() const;
     // wrapper: delegates to Player::IsObserver at 0x5E9440
     static bool IsPlayerObserver();
 

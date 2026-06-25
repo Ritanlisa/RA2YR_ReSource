@@ -86,7 +86,7 @@ public:
     // design: no binary equivalent found in IDA
     int GetOcclusion(const CellStruct& cell, bool fog) const;
     Point2D* AdjustForZShapeMove(Point2D* dest, Point2D* client);  // 0x6D1FE0
-    static int AdjustForZ(int height);  // 0x6D1FE0
+    static int AdjustForZ(int height);
 
     // Viewport management
     // wrapper: delegates to TacticalClass::AdjustForZShapeMove at 0x6D1FE0

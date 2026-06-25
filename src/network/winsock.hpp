@@ -17,7 +17,7 @@ public:
     bool initialize();
     // design: no binary equivalent found in IDA
     void Shutdown();
-    bool IsAvailable() const;  // 0x4F6540
+    bool IsAvailable() const;
 
     // wrapper: delegates to SuperWeaponTypeClass::IsAvailable at 0x4F6540
     bool CreateSocket();
@@ -56,7 +56,7 @@ public:
     bool initialize();
     // design: no binary equivalent found in IDA
     void Shutdown();
-    bool IsAvailable() const;  // 0x4F6540
+    bool IsAvailable() const;
 
     // wrapper: delegates to SuperWeaponTypeClass::IsAvailable at 0x4F6540
     bool CreateSocket();
@@ -114,7 +114,7 @@ public:
     bool initialize();
     // design: no binary equivalent found in IDA
     void Shutdown();
-    bool IsAvailable() const;  // 0x4F6540
+    bool IsAvailable() const;
 
     // unmatched: no callgraph reference and no git history record
     bool CreateSocket(uint16_t port);

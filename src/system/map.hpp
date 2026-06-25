@@ -268,7 +268,7 @@ public:
     void RevealArea3(CoordStruct* coords, int height, int radius, bool skip_reveal);
 
     void Reveal(HouseClass* house);
-    void Reshroud(HouseClass* house);  // 0x50BD10
+    void Reshroud(HouseClass* house);
 
     // wrapper: delegates to HouseClass::ReshroudMap at 0x50BD10
     void RedrawSidebar(int mode);
@@ -281,7 +281,7 @@ public:
     // unmatched: no callgraph reference and no git history record
     void SetRepairMode(int mode);
     void DestroyCliff(CellClass* cell);
-    bool MakeTraversable(const ObjectClass* visitor, const CellStruct& cell) const;  // 0x452540
+    bool MakeTraversable(const ObjectClass* visitor, const CellStruct& cell) const;
 
     // IDA 0x4F42F0 -- MapClass::MarkForRedraw (44B)
     void MarkForRedraw(int flags) { (void)flags; /* TODO: full IDA translation */ } // 0x4F42F0

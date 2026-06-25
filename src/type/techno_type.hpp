@@ -97,7 +97,7 @@ public:
     virtual bool CanAttackMove() const;
     // wrapper: delegates to TechnoTypeClass::CanAttackMove_IgnoreWeapon at 0x711E90
     virtual bool CanCreateHere(const CellStruct& mapCoords, HouseClass* pOwner) const;
-    virtual int GetCost() const;  // 0x708B40
+    virtual int GetCost() const;
     // wrapper: delegates to TechnoClass::GetCostMultiplier at 0x708B40
     virtual int GetRepairStepCost() const;
     virtual int GetRepairStep() const;

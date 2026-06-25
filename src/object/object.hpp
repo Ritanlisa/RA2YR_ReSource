@@ -38,8 +38,8 @@ public:
 
     void Stop();
     void Start(int32_t soundIndex);
-    void Pause();         // 0x405c00
-    void Resume();        // 0x405c00
+    void Pause();
+    void Resume();
     static bool IsSoundEnabled();
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* Constructor();  // 0x402040

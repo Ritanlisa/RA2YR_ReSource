@@ -19,7 +19,7 @@ public:
     ConnectionClass() noexcept;                          // 0x48BE60
 
     virtual HRESULT __stdcall QueryInterface(const IID&, void**); // 0x48C650
-    virtual ULONG   __stdcall AddRef(); // 0x48BF10
+    virtual ULONG   __stdcall AddRef();
     virtual ULONG   __stdcall Release();
 
     virtual ~ConnectionClass() = default;                                                    // 0x48BEE0
@@ -128,7 +128,7 @@ public:
     virtual bool Open() override; // 0x5F1BC0
 
     bool Init();
-    bool Connect();  // 0x48C5A0
+    bool Connect();
     void FlushCom();
     bool SendPacket(const uint8_t*, int32_t);
     bool DetectModem();

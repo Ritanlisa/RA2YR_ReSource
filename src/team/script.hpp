@@ -53,7 +53,7 @@ public:
     bool Reset();
     // unmatched: no callgraph reference and no git history record
     bool SetCurrentLine(int idx);
-    bool NextAction();  // 0x691540
+    bool NextAction();
     // wrapper: delegates to ScriptClass::GetNextAction at 0x691540
     bool HasNextAction() const;
 

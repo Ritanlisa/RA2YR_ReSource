@@ -147,7 +147,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~DialogClass() = default;
 
-    virtual void OnRender(DSurface* surface, TextRenderer* text);  // 0x68F060
+    virtual void OnRender(DSurface* surface, TextRenderer* text);
     // unmatched: no callgraph reference and no git history record
     virtual void OnupdateLogic();
     // unmatched: no callgraph reference and no git history record

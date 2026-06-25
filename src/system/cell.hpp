@@ -131,7 +131,7 @@ public:
     BuildingClass* GetBuilding() const;
     // design: no binary equivalent found in IDA
     UnitClass* GetUnit(bool alt) const;
-    InfantryClass* GetInfantry(bool alt) const;  // 0x7404B0
+    InfantryClass* GetInfantry(bool alt) const;
     // wrapper: delegates to TechnoClass::GetInfantryCursorAction at 0x7404B0
     AircraftClass* GetAircraft(bool alt) const;
     // wrapper: delegates to TechnoClass::GetInfantryCursorAction at 0x7404B0

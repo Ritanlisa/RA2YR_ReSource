@@ -28,8 +28,8 @@ public:
     // wrapper: delegates to InfantryClass::Destruct at 0x517D90
     virtual int objectSize() const override;
 
-    virtual int IsDeployed() const;  // 0x6EF9E0
-    virtual bool PlayAnim(Sequence index, bool force = false, bool randomStartFrame = false);  // 0x451890
+    virtual int IsDeployed() const;
+    virtual bool PlayAnim(Sequence index, bool force = false, bool randomStartFrame = false);
 
     int Mission_Enter() override;
     // wrapper: delegates to AircraftClass::Mission_Enter at 0x4166C0

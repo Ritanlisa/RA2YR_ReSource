@@ -48,7 +48,7 @@ public:
     // design: no binary equivalent found in IDA
     void UpdateVisibility();
     // IDA 0x48B2A0 area
-    void ProcessCellVisibility();  // 0x654490
+    void ProcessCellVisibility();
 
     int32_t     TacticalMap_field_00;       // 0x00
     int32_t     TacticalMap_field_04;       // 0x04

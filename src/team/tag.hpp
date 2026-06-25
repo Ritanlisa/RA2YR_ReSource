@@ -137,7 +137,7 @@ public:
     bool HasCrossesHorizontalLineEvent() const;  // 0x6E6250
     bool HasCrossesVerticalLineEvent() const;  // 0x6E6280
     bool HasZoneEntryByEvent() const;  // 0x6E62B0
-    bool AddTrigger(class TriggerTypeClass* trigger);  // 0x6E55C0
+    bool AddTrigger(class TriggerTypeClass* trigger);
     bool RemoveTrigger(class TriggerTypeClass* trigger);
     // wrapper: delegates to MapClass::RemoveTriggerRef at 0x577920
     bool ContainsTrigger(class TriggerTypeClass* trigger) const;

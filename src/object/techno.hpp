@@ -309,7 +309,7 @@ public:
     virtual void Uncloak(bool play_sound);
     // wrapper: delegates to TechnoClass::DrawHealthBar at 0x6F5190
     virtual void Cloak(bool play_sound);
-    virtual uint32_t getSight(uint32_t dwUnk) const;  // 0x717800
+    virtual uint32_t getSight(uint32_t dwUnk) const;
     // wrapper: delegates to TechnoClass::GetSightRange at 0x717800
     virtual void UpdateRefinerySmokeSystems();
     // wrapper: delegates to TechnoClass::GetSightRange at 0x717800
@@ -358,7 +358,7 @@ public:
     virtual bool selectTarget();  // 0x41BEF0
     // wrapper: delegates to TechnoClass::selectTarget at 0x41BEF0
     virtual void onTargetChange();
-    virtual bool canFire();  // 0x6CC360
+    virtual bool canFire();
 
     // === Phase 3 generated declarations (IDA functions.json) ===
     virtual int ApplyIronCurtain();  // 0x4155F0
@@ -648,7 +648,7 @@ public:
     virtual int IsGuardingTarget() const;  // 0x746750
     virtual int ProcessUnitSelfDestruct();  // 0x746100
     virtual int NotifyTeamOnDestruction();  // 0x744720
-    virtual int RespondToDestruction();  // 0x738970
+    virtual int RespondToDestruction();
     virtual int GetWaypointCoords() const; // 0x6F18A0
     virtual int Create(); // 0x6F1920
     virtual int CopyStateFrom();  // 0x4B5210
@@ -684,7 +684,7 @@ public:
     virtual int Update2(); // 0x70ED10
     virtual int GetAnimationFlags() const;  // 0x70ED80
     virtual int GetTargetSpeedMultiplier() const;  // 0x50C050
-    virtual int ProcessEnterTransport();  // 0x70D7E0
+    virtual int ProcessEnterTransport();
     // wrapper: delegates to FootClass::ProcessEnterTransport at 0x70D7E0
     virtual int IsCloseEnoughToBuilding2() const;
     virtual int IsDeployed() const;  // 0x6EF9E0

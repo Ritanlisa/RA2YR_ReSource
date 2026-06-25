@@ -64,7 +64,7 @@ public:
     virtual ~INIClass() = default;
 
     // INI reading interface
-    virtual bool Load(CCFileClass* file, bool unk1, bool unk2);  // 0x4741F0
+    virtual bool Load(CCFileClass* file, bool unk1, bool unk2);
     virtual const char* GetString(const char* section, const char* key, const char* def, char* buf, int bufSize);  // 0x528A10
     virtual int GetInt(const char* section, const char* key, int def);  // 0x529820
     virtual bool GetBool(const char* section, const char* key, bool def);  // 0x4757D0

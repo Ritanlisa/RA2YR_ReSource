@@ -42,7 +42,7 @@ public:
 
     // --- Lifecycle ---
     // IDA 0x558740: Construct — init fields + DynamicVectorClass
-    void Construct();  // 0x558740
+    void Construct();
 
     // IDA 0x558790: Cleanup — free entries, reset vector
     void Cleanup();  // 0x558790

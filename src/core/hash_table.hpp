@@ -380,7 +380,7 @@ private:
     {
         static uint32_t Do(const T& val)
         {
-            return HashString(val);  // 0x5F9E80
+            return HashString(val);
         }
     };
 

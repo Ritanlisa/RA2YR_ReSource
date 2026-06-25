@@ -58,11 +58,18 @@ Usage
     python tools/verify_execution_flow.py 0x459e70 --ida-stdin < decomp.txt
     python tools/verify_execution_flow.py 0x44e7b0 -v        # dump both CFGs
 
-    # Save IDA pseudocode to cache (needs IDA MCP at 127.0.0.1:13337):
+    # Save ONE function's IDA pseudocode to cache (needs IDA MCP at 127.0.0.1:13337):
     python tools/verify_execution_flow.py --save-ida 0x743A50
 
-    # Verify every function modified in the working tree (uses IDA cache):
+    # Pre-fill the IDA cache for EVERY completed=true function (no comparison):
+    python tools/verify_execution_flow.py --fetch-cache      # FATAL if IDA down
+
+    # HARD gate (CMake / run_all_gates): verify EVERY completed=true function.
+    # Any completed function whose IDA pseudocode is not cached is FETCHED from the
+    # IDA MCP and persisted; if IDA is UNREACHABLE the build FAILS (exit 1) instead
+    # of silently skipping (the whole point of the gate being hard):
     python tools/verify_execution_flow.py --auto
+    python tools/verify_execution_flow.py --auto --no-ida    # offline: skip uncached
 
 Output (two-state verdict)
 --------------------------
@@ -73,7 +80,10 @@ Output (two-state verdict)
      so the AGENT-FACING verdict cannot be gamed. Full per-block/per-offset/
      per-event diagnostic stays under -v for human triage only.)
 
-Exit 0 = all PASS (or nothing verifiable in --auto), Exit 1 = any FAIL.
+Exit 0 = all PASS (or nothing verifiable in --auto). Exit 1 = any FAIL, OR (--auto
+hard gate) the IDA MCP server was unreachable while a completed function still
+needed its pseudocode fetched (FATAL — a missing IDA is a build failure, not a
+silent skip; use --no-ida to opt into the offline soft-skip behavior instead).
 
 NOTE: the leaf extractors / regexes / Maps / resolvers below are imported by the
 efv_* modules (efv_ida_cfg, efv_ida_events, efv_cpp_events). They are part of the
@@ -1120,7 +1130,69 @@ def load_ida_cache(addr):
 
 
 # ============================================================
-# Modified-function detection (--auto)
+# Completed-scope iteration + auto cache-fill (HARD --auto gate)
+# ============================================================
+
+def _collect_completed_functions(M):
+    """Every completed=true function as a sorted, address-deduped list of
+    (int addr, name).
+
+    signals.json is the canonical completed-flag source and `load_signals`
+    populates `name_to_completed` and `name_to_addr` in lock-step (a completed
+    function symbol always gets BOTH), so every completed name resolves to an
+    address. Deduped by address so an aliased name is verified once."""
+    out = []
+    seen = set()
+    for name, is_comp in M.name_to_completed.items():
+        if is_comp is not True:
+            continue
+        addr = M.name_to_addr.get(name)
+        if not addr or addr in seen:
+            continue
+        seen.add(addr)
+        out.append((addr, name))
+    out.sort(key=lambda t: t[0])
+    return out
+
+
+def _ida_unreachable_fatal():
+    """Print the canonical FATAL message and exit non-zero (HARD GATE).
+
+    A completed=true function whose IDA pseudocode is neither cached nor fetchable
+    cannot be verified. Silently skipping it would make the exec-flow gate soft, so
+    a missing IDA MCP server is a BUILD FAILURE, not a skip (user directive:
+    `如果无法连接到IDA就报错说明无法连接到IDA导致编译失败`)."""
+    print("FATAL: IDA MCP unreachable — cannot verify completed functions. "
+          "Start IDA Pro with MCP plugin.", file=sys.stderr)
+    print(f"  (expected IDA MCP at {IDA_MCP_URL})", file=sys.stderr)
+    sys.exit(1)
+
+
+def _fetch_and_cache(addr, name, M):
+    """Decompile `addr` via IDA MCP and persist it to the cache; return the
+    pseudocode text (str) or None.
+
+    Assumes whole-server IDA health was already confirmed by the caller. A
+    PER-ADDRESS failure (decompile error or empty result — e.g. IDA has not
+    analyzed this address) is NON-FATAL: it logs a warning and returns None so the
+    caller skips THAT ONE function. Only a whole-server health failure
+    (`_ida_unreachable_fatal`) fails the build."""
+    try:
+        code = get_ida_decompile(addr)
+    except Exception as exc:
+        print(f"  WARNING: IDA decompile failed for 0x{addr:X} ({name}): {exc}",
+              file=sys.stderr)
+        return None
+    if not code or not code.strip():
+        print(f"  WARNING: IDA returned empty decompilation for 0x{addr:X} ({name})",
+              file=sys.stderr)
+        return None
+    save_ida_cache(addr, code, M.addr_to_name.get(addr) or name)
+    return code
+
+
+# ============================================================
+# Modified-function detection (legacy helper; see _collect_completed_functions)
 # ============================================================
 
 def get_modified_functions():
@@ -1363,35 +1435,98 @@ def main():
     p.add_argument("--ida-file", help="file with IDA pseudocode")
     p.add_argument("--ida-json", help="JSON file ({'decompiled'|'code': ...})")
     p.add_argument("--ida-stdin", action="store_true", help="read IDA pseudocode from stdin")
-    p.add_argument("--auto", action="store_true", help="verify modified functions (uses IDA cache)")
+    p.add_argument("--auto", action="store_true",
+                   help="HARD gate: verify EVERY completed=true function; auto-fetch "
+                        "missing IDA cache from MCP (FATAL exit if IDA unreachable)")
     p.add_argument("--save-ida", action="store_true", help="fetch IDA pseudocode to cache")
+    p.add_argument("--no-ida", action="store_true",
+                   help="(--auto) offline soft mode: SKIP completed functions whose "
+                        "IDA cache is missing instead of fetching/failing")
+    p.add_argument("--fetch-cache", action="store_true",
+                   help="pre-fill IDA cache for ALL completed=true functions (no "
+                        "comparison); FATAL exit if IDA MCP unreachable")
     p.add_argument("--verbose", "-v", action="store_true")
     args = p.parse_args()
 
     M = load_all_maps()
 
-    # ── AUTO ──
-    if args.auto:
-        modified = get_modified_functions()
-        if not modified:
-            print("No modified functions to verify.", file=sys.stderr)
+    # ── FETCH-CACHE ── pre-fill IDA cache for every completed=true function
+    # (no comparison). Convenience: warm the cache once so a later --auto run is
+    # fast / works offline. FATAL exit if IDA MCP is unreachable AND there is at
+    # least one function to fetch.
+    if args.fetch_cache:
+        completed = _collect_completed_functions(M)
+        missing = []
+        for addr, name in completed:
+            decomp, _c = load_ida_cache(addr)
+            if not decomp or not decomp.strip():
+                missing.append((addr, name))
+        if not missing:
+            print(f"All {len(completed)} completed functions already cached.")
             sys.exit(0)
+        if not check_ida_available():
+            _ida_unreachable_fatal()
+        print(f"Fetching IDA pseudocode for {len(missing)} of {len(completed)} "
+              f"completed functions...", file=sys.stderr)
+        ok = failed = 0
+        for addr, name in missing:
+            if _fetch_and_cache(addr, name, M) is not None:
+                ok += 1
+            else:
+                failed += 1
+        print(f"Cached {ok} entries "
+              f"({failed} skipped — IDA had no pseudocode for that address).")
+        sys.exit(0)
+
+    # ── AUTO ── HARD exec-flow gate over EVERY completed=true function.
+    # For each completed=true function: use its cached IDA pseudocode if present,
+    # else FETCH it from IDA MCP and persist it, else (IDA unreachable) FAIL THE
+    # BUILD. This makes the gate truly hard — previously, an uncached completed
+    # function was silently skipped, so 471 of 502 went unverified.
+    if args.auto:
+        completed = _collect_completed_functions(M)
+        if not completed:
+            print("No completed=true functions to verify.", file=sys.stderr)
+            sys.exit(0)
+        # HARD-GATE PRECONDITION: determine which completed functions lack a usable
+        # cache. If ANY do and we are NOT in offline --no-ida mode, IDA MUST be
+        # reachable so we can fetch them — check ONCE, BEFORE any decompile, and
+        # FAIL THE BUILD now if IDA is down (rather than per-function later).
+        missing = []
+        for addr, name in completed:
+            decomp, _c = load_ida_cache(addr)
+            if not decomp or not decomp.strip():
+                missing.append((addr, name))
+        if missing and not args.no_ida:
+            if not check_ida_available():
+                _ida_unreachable_fatal()
+            print(f"exec-flow: {len(missing)} of {len(completed)} completed "
+                  f"functions missing IDA cache — fetching from IDA MCP "
+                  f"({IDA_MCP_URL})...", file=sys.stderr)
+
         all_passed = True
         any_verified = False
+        fetched = skipped_no_ida = 0
         signals = _load_efv()["cpp_events"].get_signals()
-        for mf in modified:
-            addr, name = mf["addr"], mf["name"]
+        for addr, name in completed:
             disp = name or f"sub_{addr:X}"
-            # §D-STEP4.6 completed-scope gating: only completed=true functions get
-            # a strict verdict; completed=false / unknown are SKIPPED (not verified,
-            # not FAIL, no effect on exit code).
-            if M.name_to_completed.get(name) is not True:
-                print(f"SKIP (completed != true): {disp}")
-                continue
             ida_decomp, cached = load_ida_cache(addr)
             if not ida_decomp or not ida_decomp.strip():
-                print(f"  WARNING: IDA cache missing for 0x{addr:X} ({disp})", file=sys.stderr)
-                continue
+                if args.no_ida:
+                    # Offline soft mode: skip (does NOT affect the exit code).
+                    print(f"SKIP (no cache, --no-ida): {disp}")
+                    skipped_no_ida += 1
+                    continue
+                # IDA reachability was confirmed above; fetch + cache this one now.
+                ida_decomp = _fetch_and_cache(addr, name, M)
+                if ida_decomp is None:
+                    # Per-address IDA failure (not analyzed / empty pseudocode) —
+                    # skip THIS function only; do NOT fail the build for a single
+                    # address (per spec: only whole-server unreachability is fatal).
+                    print(f"SKIP (IDA has no pseudocode): {disp}")
+                    continue
+                cached = M.addr_to_name.get(addr) or name
+                fetched += 1
             any_verified = True
             passed, info = verify_single_function(addr, name or cached, disp, M,
                                                   ida_decomp, verbose=args.verbose,
@@ -1408,8 +1543,14 @@ def main():
                 print(f"FAIL: {disp} — 未完成翻译")
                 if info.get("reject") and info.get("reason"):
                     print(f"  {info['reason']}")
+        if fetched:
+            print(f"exec-flow: auto-cached {fetched} IDA pseudocode entries.",
+                  file=sys.stderr)
+        if args.no_ida and skipped_no_ida:
+            print(f"exec-flow: skipped {skipped_no_ida} uncached function(s) "
+                  f"(--no-ida offline mode).", file=sys.stderr)
         if not any_verified:
-            print("No IDA cache entries for modified functions — nothing verified.",
+            print("No completed functions verifiable (no cache / IDA pseudocode).",
                   file=sys.stderr)
             sys.exit(0)
         sys.exit(0 if all_passed else 1)
