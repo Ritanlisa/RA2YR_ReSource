@@ -192,7 +192,8 @@ TechnoClass::TechnoClass() noexcept
 
 FireError TechnoClass::GetFireErrorWithoutRange(AbstractClass* target, int weapon_index) const
 {
-    // IDA: 0x6F3F40 — TechnoClass::GetFireErrorWithoutRange
+    // Fire-error check without range validation (helper for TechnoClass::GetFireError).
+    // NOTE: 0x6F3F40 (a previous annotation here) is TechnoClass::Update, a different function.
     // Can_Fire check without range validation.
     // Checks: target alive, not falling, weapon exists, weapon AA/AG match,
     // rearm delay elapsed, ammo available, not cloaked.

@@ -78,8 +78,10 @@ HRESULT AbstractClass::GetClassID(CLSID* class_id) {
     return E_NOTIMPL;
 }
 
-// IDA: 0x410450 -- vtable[0][4], AbstractClass::IsClean
-// Returns *(this + 0x20) == 0  --  !needsSave
+// IDA: 0x7099D0 -- AbstractClass::IsDirty (IPersistStream override)
+// COM IPersistStream::IsDirty: returns S_OK when needsSave is set (dirty), S_FALSE when clean.
+// NOTE: the previous 0x410450 annotation was wrong -- that address is the separate
+//       AbstractClass::IsClean getter (returns *(this+0x20)==0), not this method.
 HRESULT AbstractClass::IsDirty() {
     return needsSave ? S_OK : S_FALSE;
 }

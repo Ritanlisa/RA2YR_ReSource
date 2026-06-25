@@ -161,7 +161,8 @@ int AircraftClass::Mission_Return()
     return 10;
 }
 
-// IDA: 0x4151E0 (Mission_Unload_full, 1015B)
+// AircraftClass::Mission_Unload -- aircraft unload override (no standalone IDA function).
+// NOTE: previous annotation pointed at UnitClass::Mission_Harvest (a different function).
 int AircraftClass::Mission_Unload()
 {
     // Paradrop troops / unload cargo
@@ -172,7 +173,9 @@ int AircraftClass::Mission_Unload()
     return 5;
 }
 
-// IDA: 0x414A80 (ProcessMissionTimeout, 302B)
+// AircraftClass::Mission_Hunt -- aircraft hunt mission override.
+// No standalone IDA function (aircraft missions are dispatched via MissionDispatch @ 0x4190B0).
+// NOTE: the previous 0x414A80 annotation was wrong -- that address is ProcessMissionTimeout.
 int AircraftClass::Mission_Hunt()
 {
     // Scan for enemies in flight range
@@ -297,7 +300,8 @@ int AircraftClass::CheckLandingClearance()
     return 0;
 }
 
-// IDA: 0x4151E0 (Mission_Unload_full, 1015B)
+// AircraftClass::Mission_Unload_full -- aircraft full-unload override (no standalone IDA function).
+// NOTE: previous annotation pointed at UnitClass::Mission_Harvest (a different function).
 int AircraftClass::Mission_Unload_full()
 {
     // Full unload with parachute deployment

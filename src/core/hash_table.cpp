@@ -7,7 +7,8 @@ namespace gamemd {
 // Hash implementation
 // ============================================================================
 
-// IDA 0x69D8C0: ComputeHashSHA1 (stub)
+// IDA 0x476D80: Hash::ComputeHashSHA1 (stub) -- full-hash compute (SHA1::ComputeThunk + Checksummer).
+// NOTE: 0x69D8C0 (the previous annotation) is SHA1::ProcessBlock, a different function.
 uint32_t Hash::ComputeHashSHA1(const void* data, uint32_t size)
 {
     // Original uses SHA1 class, returns 32-bit hash
@@ -23,7 +24,8 @@ uint32_t Hash::ComputeHashSHA1(const void* data, uint32_t size)
            (uint32_t)(digest[3]);
 }
 
-// IDA 0x52B720: InsertOrdered (stub)
+// IDA 0x4F4410: Hash::InsertOrdered (stub).
+// NOTE: previous annotation pointed at Int_CompareFunc4 (a different function).
 // 0x4f4410
 void Hash::InsertOrdered(void* table, const void* entry)
 {
@@ -47,7 +49,7 @@ static inline uint32_t RotL(uint32_t x, int n) {
     return (x << n) | (x >> (32 - n));
 }
 
-// IDA 0x69D8C0: Init
+// SHA1::Init -- initialize SHA1 state (simplified reimpl; cf. IDA SHA1::Reset @ 0x69DFF0).
 void SHA1::Init()
 {
     state[0] = 0x67452301;
@@ -150,7 +152,7 @@ void SHA1::PadMessage()
     Transform();
 }
 
-// IDA 0x69D8C0: DigestToHex
+// SHA1::DigestToHex -- digest-to-hex string helper (no standalone IDA function).
 void SHA1::DigestToHex(const uint8_t digest[20], char hex[41])
 {
     static const char hex_chars[] = "0123456789ABCDEF";
