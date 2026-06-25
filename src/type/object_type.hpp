@@ -46,7 +46,7 @@ public:
 
     virtual ~ObjectTypeClass() = default;  // 0x5F7400 (as Destruct)
 
-    virtual CoordStruct* onCellChanged(CoordStruct* pDest, CoordStruct* pSrc) const; // 0x41CBF0 (as vt_entry_7C)
+    virtual CoordStruct* onCellChanged(CoordStruct* pDest, CoordStruct* pSrc) const; // 0x41CBF0 -- ObjectTypeClass::vt_entry_7C
     // unmatched: no callgraph reference and no git history record
     virtual DWORD GetOwners() const;
     // wrapper: delegates to ObjectTypeClass::vt_entry_7C at 0x41CBF0

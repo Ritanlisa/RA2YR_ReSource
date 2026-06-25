@@ -18,8 +18,8 @@ namespace gamemd {
 // All relocatable declarations were moved to class bodies / src/_generated/global_funcs.hpp by tools/move_funcs_decls.py.
 // Residual declarations below could not be relocated (invalid name / no class / collision):
 
-    void sub_40BE10(/* param_bytes: 0 */) noexcept; // 0x40BE10 [global: cdecl]
-    void sub_40C590(/* param_bytes: 0 */) noexcept; // 0x40C590 [global: unknown]
+    // void sub_40BE10(/* param_bytes: 0 */) noexcept; // 0x40BE10 [global: cdecl]
+    // void sub_40C590(/* param_bytes: 0 */) noexcept; // 0x40C590 [global: unknown]
     // int Math::InitDegToRad(/* param_bytes: 0 */) noexcept; // 0x40FFFF [member: unknown]
     // void FractalNoise::Release(/* param_bytes: 4 */) noexcept; // 0x420270 [member: stdcall]
     // _DWORD * AbstractClass::sub_464A70(/* param_bytes: 0 */) noexcept; // 0x464A70 [member: unknown]

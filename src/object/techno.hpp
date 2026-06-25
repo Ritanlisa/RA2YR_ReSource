@@ -156,7 +156,8 @@ public:
     virtual bool isInAirAlt() const;
     // wrapper: delegates to TechnoClass::GetCrew at 0x707D20
     virtual bool CanDeploySlashUnload() const;
-    virtual int GetROF(int weapon) const;  // 0x46C4F0
+    // design: virtual function, no binary implementation matched in IDA
+    virtual int GetROF(int weapon) const;
     virtual int GetGuardRange(int unknown) const;
     // wrapper: delegates to TechnoClass::GetWeaponRange at 0x773070
     virtual bool canEnterTransport() const;
