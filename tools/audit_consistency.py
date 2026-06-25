@@ -245,6 +245,88 @@ def extract_hpp_name(annot):
     """Get display name from hpp annotation."""
     return annot.get("name", "")
 
+# --- Template-name normalization (IDA underscore <-> C++ angle-bracket) ---
+#
+# IDA cannot use '<' or '>' in identifiers, so template instantiations are
+# encoded with underscores. The C++ source uses real angle-bracket notation.
+# The two MUST be treated as the same symbol (rules from
+# .omo/invalid_names_analysis.json):
+#
+#     VectorClass_ptr_X         <->  VectorClass<X*>
+#     VectorClass_cptr_X        <->  VectorClass<X const*>   (also <const X*>)
+#     DynamicVectorClass_X      <->  DynamicVectorClass<X>
+#     DynamicVectorClass_ptr_X  <->  DynamicVectorClass<X*>
+#     DynamicVectorClass_cptr_X <->  DynamicVectorClass<X const*>
+#     TypeList_ptr_X            <->  TypeList<X*>
+#     TypeList_cptr_X           <->  TypeList<X const*>
+#
+# We canonicalize the C++ angle-bracket form INTO the underscore form because
+# (a) IDA names are already underscore-encoded, and (b) the underscore form
+# survives the later '::' -> '_' flattening cleanly.
+#
+# This is SURGICAL: only names containing '<' are touched. A genuine method
+# like 'Add_Float' (no '<') is never confused with 'AddItem', and two distinct
+# template parameters (VectorClass<Foo*> vs VectorClass<Bar*>) stay distinct.
+# So the audit's real comparison is preserved, not weakened.
+
+_TEMPLATE_INST_RE = re.compile(r'([A-Za-z_]\w*)<([^<>]*)>')
+
+
+def _encode_template_arg(arg):
+    """Encode one C++ template argument into IDA underscore suffix.
+
+      'X*'        -> '_ptr_X'
+      'X const*'  -> '_cptr_X'   (east const)
+      'const X*'  -> '_cptr_X'   (west const)
+      'X'         -> '_X'
+
+    Multiple comma-separated args are encoded left-to-right and concatenated
+    (best-effort; the documented cases are all single-argument).
+    """
+    arg = arg.strip()
+    if not arg:
+        return ''
+    if ',' in arg:
+        return ''.join(_encode_template_arg(p) for p in arg.split(','))
+    is_ptr = arg.endswith('*')
+    inner = arg[:-1].strip() if is_ptr else arg
+    is_const = False
+    m = re.match(r'^const\s+(.+)$', inner)       # west const: 'const X'
+    if m:
+        is_const = True
+        inner = m.group(1).strip()
+    m = re.match(r'^(.+?)\s+const$', inner)       # east const: 'X const'
+    if m:
+        is_const = True
+        inner = m.group(1).strip()
+    inner = inner.strip()
+    if is_ptr and is_const:
+        return '_cptr_' + inner
+    if is_ptr:
+        return '_ptr_' + inner
+    return '_' + inner
+
+
+def _normalize_template_to_underscore(name):
+    """Convert C++ angle-bracket template notation to IDA underscore form.
+
+    Idempotent: names without '<' are returned unchanged. Handles nesting by
+    collapsing innermost <...> first (the regex only matches bracket bodies
+    that contain no further '<' or '>').
+    """
+    if not name or '<' not in name:
+        return name
+    n = name
+    prev = None
+    guard = 0
+    while '<' in n and prev != n and guard < 64:
+        prev = n
+        guard += 1
+        n = _TEMPLATE_INST_RE.sub(
+            lambda m: m.group(1) + _encode_template_arg(m.group(2)), n)
+    return n
+
+
 def normalize_name(name):
     """Normalize a function name for comparison.
     - Strips trailing underscores (IDA artifact)
@@ -254,6 +336,8 @@ def normalize_name(name):
     if not name:
         return name
     n = name
+    # Template instantiation: VectorClass<X*> -> VectorClass_ptr_X (etc.)
+    n = _normalize_template_to_underscore(n)
     # Strip trailing underscores (IDA's ___ artifact)
     n = n.rstrip('_')
     # Normalize consecutive underscores (3+ → 1)
@@ -280,6 +364,8 @@ def normalize_name_core(name):
     if not name:
         return name
     n = name.strip()
+    # Template instantiation: VectorClass<X*> -> VectorClass_ptr_X (etc.)
+    n = _normalize_template_to_underscore(n)
     # Strip trailing underscores
     n = n.rstrip('_')
     # Collapse 3+ consecutive underscores
@@ -596,7 +682,77 @@ def print_human(report):
     else:
         print()
 
+def _selftest():
+    """Self-tests for name normalization, especially template-name equivalence.
+
+    Verifies that IDA underscore template notation and C++ angle-bracket
+    notation are treated as the same symbol, WITHOUT weakening the real
+    comparison (distinct params/methods stay distinct).
+    """
+    failures = []
+    n_checks = [0]
+
+    def check_equiv(a, b, expect, label):
+        n_checks[0] += 1
+        _, _, is_eq, _ = normalize_name_bidirectional(a, b)
+        if is_eq != expect:
+            failures.append(
+                f"[{label}] equiv({a!r}, {b!r}) = {is_eq}, expected {expect}")
+
+    def check_encode(name, expected, label):
+        n_checks[0] += 1
+        got = _normalize_template_to_underscore(name)
+        if got != expected:
+            failures.append(
+                f"[{label}] _normalize_template_to_underscore({name!r}) = "
+                f"{got!r}, expected {expected!r}")
+
+    # --- Direct underscore-encoding checks ---
+    check_encode("VectorClass<TechnoClass*>", "VectorClass_ptr_TechnoClass", "enc_ptr")
+    check_encode("VectorClass<CommandClass const*>", "VectorClass_cptr_CommandClass", "enc_cptr_east")
+    check_encode("VectorClass<const CommandClass*>", "VectorClass_cptr_CommandClass", "enc_cptr_west")
+    check_encode("DynamicVectorClass<BombClass>", "DynamicVectorClass_BombClass", "enc_value")
+    check_encode("DynamicVectorClass<BombClass*>", "DynamicVectorClass_ptr_BombClass", "enc_dv_ptr")
+    check_encode("DynamicVectorClass<BombClass const*>", "DynamicVectorClass_cptr_BombClass", "enc_dv_cptr")
+    check_encode("TypeList<Foo*>", "TypeList_ptr_Foo", "enc_typelist_ptr")
+    check_encode("TypeList<Foo const*>", "TypeList_cptr_Foo", "enc_typelist_cptr")
+    check_encode("PlainName::Method", "PlainName::Method", "enc_noop")
+    check_encode("VectorClass_ptr_TechnoClass", "VectorClass_ptr_TechnoClass", "enc_already_underscore")
+
+    # --- Template-method equivalence (the required synthetic case + variants) ---
+    check_equiv("VectorClass_ptr_TechnoClass::SetCapacity",
+                "VectorClass<TechnoClass*>::SetCapacity", True, "req_synthetic")
+    check_equiv("VectorClass_cptr_CommandClass::GetAt",
+                "VectorClass<CommandClass const*>::GetAt", True, "cptr_method")
+    check_equiv("DynamicVectorClass_ptr_BombClass::AddItem",
+                "DynamicVectorClass<BombClass*>::AddItem", True, "dv_ptr_method")
+    check_equiv("DynamicVectorClass_BombClass::AddItem",
+                "DynamicVectorClass<BombClass>::AddItem", True, "dv_value_method")
+    check_equiv("TypeList_cptr_TeamTypeClass::FindItemIndex",
+                "TypeList<TeamTypeClass const*>::FindItemIndex", True, "typelist_method")
+
+    # --- NEGATIVE: must NOT over-normalize (real comparison preserved) ---
+    check_equiv("VectorClass<Foo*>::Get", "VectorClass<Bar*>::Get", False, "neg_diff_param")
+    check_equiv("VectorClass<Foo*>::Add", "VectorClass<Foo*>::Remove", False, "neg_diff_method")
+    check_equiv("DynamicVector::Add_Float", "DynamicVector::AddItem", False, "neg_addfloat_additem")
+    check_equiv("DynamicVector::Remove", "DynamicVector::RemoveItem", False, "neg_remove_removeitem")
+
+    # --- Regression: existing convention normalization still works ---
+    check_equiv("CCINIClass::CCINIClass", "CCINIClass::Constructor", True, "reg_ctor")
+    check_equiv("gamemd::InitGame", "InitGame", True, "reg_gamemd")
+
+    if failures:
+        print("SELFTEST FAILED:")
+        for f in failures:
+            print("  -", f)
+        return 1
+    print(f"SELFTEST OK ({n_checks[0]} checks passed)")
+    return 0
+
+
 def main():
+    if "--selftest" in sys.argv:
+        sys.exit(_selftest())
     check_only = "--check-only" in sys.argv
     json_flag = "--json" in sys.argv
     
