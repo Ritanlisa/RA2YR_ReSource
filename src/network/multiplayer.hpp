@@ -173,6 +173,13 @@ public:
     virtual bool GenerateStartingUnits(HouseClass*, int32_t&) override;
 
     void initGame(); // 0x5C0DD0
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    void sub_5D3810();
+    void sub_5D3830();
+    int sub_5D39B0();
+    void sub_5D58B0();
+    // === FUNCS-MOVE (END) ===
 };
 
 class MPFreeForAllClass : public MPGameModeClass

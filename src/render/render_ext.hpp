@@ -832,6 +832,10 @@ public:
     int ProcessBuildingPlacementAction();  // 0x54c550 -- BuildingPlacement::ProcessBuildingPlacementAction
     void* SelectBuildingPlacementCells(int a1);  // 0x594f40 -- BuildingPlacement::SelectBuildingPlacementCells
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    void* FindPosition(int a1, int a2);  // 0x500200
+    // === FUNCS-MOVE (END) ===
 };
 // 1 methods in IDA
 class BuildingPlacementClass

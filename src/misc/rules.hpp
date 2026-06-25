@@ -657,6 +657,11 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int ReadCombatINI();  // 0x66bbb0 -- Rules::ReadCombatINI
     void* CopyDataArray(int a1);  // 0x67a570 -- Rules::CopyDataArray
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    double GetFiringDistance();  // 0x48acf0
+    int LoadTypeList(int a1, int a2, int a3, int a4, int a5);  // 0x67bdd0
+    // === FUNCS-MOVE (END) ===
 };
 
 } // namespace gamemd

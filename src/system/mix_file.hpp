@@ -193,6 +193,11 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // === SYMBOL-ANCHOR (BEGIN) ===
     int LoadSide();  // 0x534fa0 -- MixFile::LoadSide
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    void CleanupCache();  // 0x69e210
+    void DestroyCache();  // 0x69e180
+    // === FUNCS-MOVE (END) ===
 };
 
 } // namespace gamemd

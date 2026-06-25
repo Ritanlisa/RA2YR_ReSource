@@ -356,6 +356,18 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int SetDword30(int a1);  // 0x642df0 -- Scenario::SetDword30
     int LoadWithProgress();  // 0x684620 -- Scenario::LoadWithProgress
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    bool AnimateConstructionStage(int a1, int a2, int a3, int a4);  // 0x5cc330
+    int AssignStartPositions(int a1);  // 0x5d6be0
+    int CleanupTemporary();  // 0x683eb0
+    int ClearFlag();  // 0x5d6790
+    void* CopyStartPositions();  // 0x58bb30
+    int LoadMap(int a1, int a2, int a3);  // 0x686b20
+    int LoadScenarioAndStart(int a1, int a2, int a3);  // 0x683ab0
+    void* ProcessIntroTimer();  // 0x684180
+    int ReadMapINI(int a1, int a2, int a3);  // 0x689e90
+    // === FUNCS-MOVE (END) ===
 };
 
 } // namespace gamemd

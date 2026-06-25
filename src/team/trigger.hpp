@@ -138,6 +138,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* processTrigger(int a1, int a2);  // 0x76f090 -- Trigger::processTrigger
     int executeActions(int a1);  // 0x76ff20 -- Trigger::executeActions
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int FindByEventType(int a1);  // 0x610950
+    // === FUNCS-MOVE (END) ===
 };
 
 // --- TriggerTypeClass ---
@@ -214,6 +218,13 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int PowerDrainUpdate(void* a1);  // 0x727B30
     int GetAuxField();  // 0x727CC0
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int ReadINI(int a1, int a2, int a3, int a4, int a5);  // 0x6fc0b0
+    int GetClassIdentifier(int a1, int a2);  // 0x727bb0
+    int LoadTypeData(int a1, int a2);  // 0x727bf0
+    int Write(int a1, int a2, int a3);  // 0x727c80
+    // === FUNCS-MOVE (END) ===
 };
 
 } // namespace gamemd

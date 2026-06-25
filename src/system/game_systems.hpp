@@ -449,6 +449,15 @@ public:
     void* GetOverlayImage(int a1);  // 0x72b310 -- LoadingScreen::GetOverlayImage
     int ReleaseAnimObjects();  // 0x72b390 -- LoadingScreen::ReleaseAnimObjects
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int FreeResources3();  // 0x72def0
+    void DestroyFileTrees();  // 0x72ef60
+    void CleanupObjects();  // 0x72f140
+    void* LoadSHPs();  // 0x72fa10
+    int FreeResources();  // 0x730400
+    void FreeResources2();  // 0x730530
+    // === FUNCS-MOVE (END) ===
 };
 // 7 methods in IDA
 class MultiplayerGameMode

@@ -49,6 +49,11 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int Init();  // 0x405BE0
     int GetOffset();  // 0x408520
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int LoadThemeBank(int a1, int a2, int a3, int a4, int a5);  // 0x409de0
+    void GetVolume();  // 0x72d170
+    // === FUNCS-MOVE (END) ===
 };
 
 // ============================================================================
@@ -584,6 +589,18 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* CalculateObjectPlacementPosition(int a1);  // 0x62ac30 -- Object::CalculateObjectPlacementPosition
     void* DtorWithDelete(int a1);  // 0x7ad330 -- Object::DtorWithDelete
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    bool HasLinkedObject(int a1);  // 0x4135a0
+    int CheckCellFlags(int a1, int a2, int a3, int a4, int a5);  // 0x4d9c60
+    int LoadFromStream_Common();  // 0x4db3c0
+    int SaveToStream_Common();  // 0x4db690
+    void* FindPlacementCell(int a1, int a2, int a3, int a4, int a5, int a6);  // 0x4de1d0
+    void* ComputeScreenYOffset(int a1, int a2);  // 0x55a8c0
+    int SetDeployState(int a1, int a2);  // 0x55baa0
+    void CleanupSidebarResources();  // 0x6a5bf0
+    int FindOwner(int a1, int a2);  // 0x6e45e0
+    // === FUNCS-MOVE (END) ===
 };
 
 } // namespace game

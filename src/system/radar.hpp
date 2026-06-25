@@ -180,6 +180,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int PixelIndex();  // 0x6558b0 -- Radar::PixelIndex
     int RenderMinimap();  // 0x656ec0 -- Radar::RenderMinimap
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    bool GetBlip(int a1, int a2, int a3, int a4);  // 0x6a8420
+    // === FUNCS-MOVE (END) ===
 };
 
 } // namespace gamemd

@@ -165,6 +165,14 @@ public:
     void* loadTypeMember_5717C00(int a1);  // 0x717c00 -- ObjectTypeClass::loadTypeMember_5717C00
     int ReadDestroyAnim();  // 0x71cb90 -- ObjectTypeClass::ReadDestroyAnim
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    void* Copy(int a1, int a2);  // 0x41cf80
+    void* InitTripleTen(int a1);  // 0x5f75c0
+    void UnloadPipsSHP();  // 0x5f77f0
+    int LoadCleanup(int a1, int a2);  // 0x5f9720
+    int LoadExtras(int a1, int a2, int a3);  // 0x712170
+    // === FUNCS-MOVE (END) ===
 };
 
 } // namespace gamemd

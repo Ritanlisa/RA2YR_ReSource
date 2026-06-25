@@ -129,6 +129,12 @@ public:
     void* checkImmunity(int a1);  // 0x75e690 -- WarheadTypeClass::checkImmunity
     void* calculateDamage(int a1);  // 0x75e6a0 -- WarheadTypeClass::calculateDamage
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int SaveLoad_Prefix(int a1, int a2);  // 0x75e0c0
+    int SaveLoad_Prefix_0(int a1, int a2, int a3, int a4, int a5);  // 0x75e2c0
+    int ReadINI(int a1, int a2, int a3);  // 0x772080
+    // === FUNCS-MOVE (END) ===
 };
 
 } // namespace gamemd

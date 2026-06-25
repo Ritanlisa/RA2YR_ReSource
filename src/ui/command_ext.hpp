@@ -121,6 +121,11 @@ public:
 
     int32_t     PageUserCommandClass_field_00;       // 0x00
     int32_t     PageUserCommandClass_field_04;       // 0x04
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    void* Read();  // 0x537e30
+    int Do(int a1);  // 0x537e50
+    // === FUNCS-MOVE (END) ===
 };
 
 // ============================================================================
@@ -144,6 +149,11 @@ public:
 
     int32_t     DeleteCommandClass_field_00;       // 0x00
     int32_t     DeleteCommandClass_field_04;       // 0x04
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    void* Read();  // 0x537f70
+    int Undo(int a1);  // 0x537f90
+    // === FUNCS-MOVE (END) ===
 };
 
 // ============================================================================

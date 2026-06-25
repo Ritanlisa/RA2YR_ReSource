@@ -177,6 +177,11 @@ protected:
     int StartGame();  // 0x5ed370 -- Session::StartGame
     int GetPlayerOption();  // 0x69b700 -- Session::GetPlayerOption
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int GetPlayerColorScheme(int a1);  // 0x69a310
+    void BuildLaunchString();  // 0x78f000
+    // === FUNCS-MOVE (END) ===
 };
 
 } // namespace gamemd

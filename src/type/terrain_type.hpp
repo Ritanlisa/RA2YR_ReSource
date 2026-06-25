@@ -59,6 +59,12 @@ public:
     int PowerDrainUpdate(int a1);  // 0x71e140 -- TerrainTypeClass::PowerDrainUpdate
     int GetAuxField();  // 0x71e350 -- TerrainTypeClass::GetAuxField
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    void* GetWidth(int a1, int a2);  // 0x71e0d0
+    int SaveLoad_Prefix(int a1, int a2);  // 0x71e1d0
+    int SaveLoad_Prefix_0(int a1, int a2, int a3);  // 0x71e240
+    // === FUNCS-MOVE (END) ===
 };
 
 } // namespace gamemd

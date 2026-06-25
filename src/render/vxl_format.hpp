@@ -110,6 +110,10 @@ struct VoxelAnim
     int                 num_frames;    // Number of animation frames
     int                 num_sections;  // Number of sections per frame
     HVASectionMatrix*   matrices;      // (num_frames x num_sections) x 48B entries
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int ComputeTransform(int a1, int a2, int a3, int a4);  // 0x7586f0
+    // === FUNCS-MOVE (END) ===
 };
 
 // Voxel section info -- runtime query results (VoxelSection_GetInfo @ 0x7564B0)

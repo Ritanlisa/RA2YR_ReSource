@@ -234,6 +234,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* WideStringCopy(int a1);  // 0x6247D0
     void* Zero25();  // 0x6D1810
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    void* InitTriple256(int a1);  // 0x5f75e0
+    // === FUNCS-MOVE (END) ===
 };
 
 // ============================================================================
@@ -293,6 +297,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int SetRedraw(int a1);  // 0x48BAA0
     void* Set4(int a1, int a2, int a3, int a4);  // 0x54A120
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int Inflate();  // 0x72a9e0
+    // === FUNCS-MOVE (END) ===
 };
 
 // ============================================================================
@@ -861,6 +869,17 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // === SYMBOL-ANCHOR (BEGIN) ===
     int GetSpecialValue(int a1);  // 0x55ad10 -- COMObject::GetSpecialValue
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int FindNextActive(int a1);  // 0x4e1a00
+    int QueryInterface(int a1, int a2, int a3);  // 0x4f4240
+    bool IsSameType(int a1);  // 0x4f43f0
+    void* ReturnZeroPos(int a1, int a2);  // 0x55abd0
+    void* GetCoord3D(int a1, int a2);  // 0x55aca0
+    int GetSizeMaxWrapper(int a1, int a2);  // 0x5f9970
+    int QueryInterface2(int a1, int a2, int a3);  // 0x6c0050
+    int GetStringValue(int a1, int a2);  // 0x55ab40
+    // === FUNCS-MOVE (END) ===
 };
 // 1 methods in IDA
 class CRC32
@@ -898,6 +917,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int ReleaseSimple();  // 0x67FDD0
     void* Territory_Dtor();  // 0x76F060
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int DestroyWrapper(int a1, int a2);  // 0x76f000
+    // === FUNCS-MOVE (END) ===
 };
 // 1 methods in IDA
 class CountdownTimer
@@ -949,6 +972,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int SetCapacity(int a1, void* a2);  // 0x4A13C0
     int FindItem(void* a1);  // 0x4A1470
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int Skip(int a1);  // 0x4a0b10
+    // === FUNCS-MOVE (END) ===
 };
 // 6 methods in IDA
 class EnumConnectionsClass
@@ -968,6 +995,10 @@ public:
     uint8_t EnumConnectionsClass_field_0x0C[4];
     uint8_t EnumConnectionsClass_field_0x10[4];
     uint8_t EnumConnectionsClass_field_0x14[4];
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int Skip(int a1);  // 0x4a0180
+    // === FUNCS-MOVE (END) ===
 };
 // 1 methods in IDA
 class EventBuffer
@@ -1236,6 +1267,11 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // === SYMBOL-ANCHOR (BEGIN) ===
     int SetHouse(int a1);  // 0x5d8cb0 -- PlayerClass::SetHouse
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int AssignPlayerIndex();  // 0x5d62c0
+    bool IsValidIndex(int a1);  // 0x5d8c90
+    // === FUNCS-MOVE (END) ===
 };
 // 1 methods in IDA
 class PlayerProfile

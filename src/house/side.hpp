@@ -58,6 +58,12 @@ protected:
     void* GetName();  // 0x4e38a0 -- SideClass::GetName
     int GetCountry(int a1);  // 0x6a4710 -- SideClass::GetCountry
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int LoadAllFromINI(int a1);  // 0x679a10
+    int SaveLoad_Prefix(int a1, int a2);  // 0x6a4780
+    int SaveLoad_Prefix_0(int a1, int a2, int a3);  // 0x6a48a0
+    // === FUNCS-MOVE (END) ===
 };
 
 } // namespace gamemd

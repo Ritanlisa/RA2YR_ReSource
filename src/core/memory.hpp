@@ -100,6 +100,12 @@ public:
             std::allocator_traits<TAlloc>::deallocate(alloc, ptr, capacity);
         }
     }
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int FreeConditional(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9);  // 0x5c0e90
+    int FreeConditional2(int a1, int a2, int a3, int a4, int a5, int a6, int a7);  // 0x5c0fa0
+    int Alloc76();  // 0x731ce0
+    // === FUNCS-MOVE (END) ===
 };
 
 template <typename T, typename... TArgs>

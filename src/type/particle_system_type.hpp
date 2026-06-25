@@ -71,6 +71,12 @@ public:
     int GetType(int a1);  // 0x6442d0 -- ParticleSystemTypeClass::GetType
     int PowerDrainUpdate(int a1);  // 0x644700 -- ParticleSystemTypeClass::PowerDrainUpdate
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int GetClassIdentifier(int a1, int a2);  // 0x6447a0
+    int SaveLoad_Prefix(int a1, int a2);  // 0x6447e0
+    int SaveLoad_Prefix_0(int a1, int a2, int a3);  // 0x644830
+    // === FUNCS-MOVE (END) ===
 };
 
 } // namespace gamemd

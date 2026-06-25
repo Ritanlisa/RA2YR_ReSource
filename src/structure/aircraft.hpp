@@ -170,6 +170,10 @@ protected:
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int Construct(int a1, void* a2);  // 0x413D20
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    void* Update(int a1, int a2);  // 0x413f80
+    // === FUNCS-MOVE (END) ===
 };
 
 } // namespace gamemd

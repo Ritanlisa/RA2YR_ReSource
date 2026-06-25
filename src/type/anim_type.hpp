@@ -141,6 +141,12 @@ public:
     int ReadINIString(int a1, int a2, int a3);  // 0x477050 -- AnimTypeClass::ReadINIString
     int LookupByName();  // 0x48e050 -- AnimTypeClass::LookupByName
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int LoadFromINI(int a1, int a2, int a3);  // 0x427d00
+    int SaveLoad_Prefix(int a1, int a2);  // 0x428800
+    int SaveLoad_Prefix_0(int a1, int a2, int a3);  // 0x428970
+    // === FUNCS-MOVE (END) ===
 };
 
 } // namespace gamemd

@@ -127,6 +127,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void WriteINIString();  // 0x5D8FD0
     int Cleanup();  // 0x759510
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    void ProcessStream(int a1);  // 0x69e320
+    // === FUNCS-MOVE (END) ===
 };
 
 } // namespace gamemd

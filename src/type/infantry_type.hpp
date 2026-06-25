@@ -109,6 +109,14 @@ public:
     int GetAuxField();  // 0x524d60 -- InfantryTypeClass::GetAuxField
     void* CopyDataArray(int a1);  // 0x524f20 -- InfantryTypeClass::CopyDataArray
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    void* GetDimensions(int a1);  // 0x523c20
+    int LoadFromINI(int a1, int a2, int a3);  // 0x5240a0
+    void* GetDefaultDimensions(int a1);  // 0x524760
+    int GetGameplayValue();  // 0x524790
+    void* ClampToGroundHeight(int a1, int a2);  // 0x5247d0
+    // === FUNCS-MOVE (END) ===
 };
 
 } // namespace gamemd

@@ -121,6 +121,14 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // === SYMBOL-ANCHOR (BEGIN) ===
     int ProcessFrame();  // 0x761030 -- AnimClass::ProcessFrame
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    void* CheckMirrorFlags(int a1);  // 0x4238d0
+    int SaveLoad_Prefix_0(int a1, int a2, int a3);  // 0x4253b0
+    int ProcessAreaEffect(int a1);  // 0x426300
+    int MissionStubReturnZero2(int a1, int a2);  // 0x426540
+    int GetAnimation(int a1, int a2);  // 0x7298f0
+    // === FUNCS-MOVE (END) ===
 };
 
 } // namespace gamemd

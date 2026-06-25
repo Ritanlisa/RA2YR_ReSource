@@ -543,6 +543,10 @@ public:
     int GetStatistics(int a1);  // 0x7b4100 -- UDPInterfaceClass_Destru::GetStatistics
     int COMStub();  // 0x7b4140 -- UDPInterfaceClass_Destru::COMStub
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int Connect(int a1, int a2, int a3, int a4, int a5, int a6);  // 0x7b3720
+    // === FUNCS-MOVE (END) ===
 };
 // 1 methods in IDA
 class WOLGameClass
@@ -622,6 +626,11 @@ public:
     uint8_t WOLobby_field_0x10[4];
     uint8_t WOLobby_field_0x14[4];
     uint8_t WOLobby_field_0x18[4];
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int SetupDlgProc();  // 0x78f7f0
+    int ChatDlgProc();  // 0x791b10
+    // === FUNCS-MOVE (END) ===
 };
 
 } // namespace gamemd

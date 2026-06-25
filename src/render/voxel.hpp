@@ -173,6 +173,13 @@ protected:
     int LoadBarrel(int a1, int a2);  // 0x5f7db0 -- VoxelAnimType::LoadBarrel
     int LoadAnim();  // 0x5f8110 -- VoxelAnimType::LoadAnim
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int LoadFromINI(int a1, int a2, int a3);  // 0x74b050
+    int GetClassIdentifier(int a1, int a2);  // 0x74b7d0
+    int SaveLoad_Prefix(int a1, int a2);  // 0x74b810
+    int SaveLoad_Prefix_0(int a1, int a2, int a3);  // 0x74b8d0
+    // === FUNCS-MOVE (END) ===
 };
 
 
@@ -229,6 +236,11 @@ protected:
     void* DrawVoxel(int a1);  // 0x74ab50 -- VoxelAnimClass::DrawVoxel
     int Reset();  // 0x75aa90 -- VoxelAnimClass::Reset
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int ProcessFrame();  // 0x4caf20
+    int SaveLoad_Prefix_0(int a1, int a2, int a3);  // 0x74aa10
+    // === FUNCS-MOVE (END) ===
 };
 
 } // namespace gamemd

@@ -68,6 +68,11 @@ protected:
     int Stat(int a1);  // 0x555070 -- LightSourceClass::Stat
     void* CopyTo(int a1);  // 0x555150 -- LightSourceClass::CopyTo
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int Write(int a1, int a2);  // 0x5550c0
+    int Seek(int a1, int a2, int a3);  // 0x555110
+    // === FUNCS-MOVE (END) ===
 };
 
 } // namespace gamemd

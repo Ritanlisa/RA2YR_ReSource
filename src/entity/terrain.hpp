@@ -85,6 +85,12 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int CreateCrater(int a1);  // 0x576770 -- Terrain::CreateCrater
     int LookupByName();  // 0x71dd80 -- Terrain::LookupByName
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int ProcessUpdate(int a1, int a2, int a3, int a4, int a5, int a6);  // 0x6dd8b0
+    int CheckFrameUpdate(int a1, int a2, int a3);  // 0x71cf30
+    int MissionStubReturnZero3(int a1, int a2);  // 0x71d310
+    // === FUNCS-MOVE (END) ===
 };
 
 } // namespace gamemd

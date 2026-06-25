@@ -180,6 +180,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* checkBridgeClearance(int a1);  // 0x523370
     void* updateOccupiedBuilding(void* a1);  // 0x5233D0
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int ScanTarget(int a1);  // 0x4d4dc0
+    // === FUNCS-MOVE (END) ===
 };
 
 } // namespace gamemd

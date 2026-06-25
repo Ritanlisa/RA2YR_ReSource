@@ -342,6 +342,10 @@ public:
     int FindOwnerHouse();  // 0x510ed0 -- BuildingType::FindOwnerHouse
     bool IsSpecialType();  // 0x510f60 -- BuildingType::IsSpecialType
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    void LoadRepairAnimations(int a1);  // 0x45e970
+    // === FUNCS-MOVE (END) ===
 };
 
 } // namespace gamemd

@@ -585,3 +585,6 @@ class XSurface;
 // __unlockexit();  // 0x7CBECA
 
 } // namespace gamemd
+
+// All relocatable declarations were moved to class bodies / src/_generated/global_funcs.hpp by tools/move_funcs_decls.py.
+

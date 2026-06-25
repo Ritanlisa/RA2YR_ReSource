@@ -24,6 +24,10 @@ class INoticeSink
 public:
     // unmatched: no callgraph reference and no git history record
     virtual bool __stdcall INoticeSink_Unknown(DWORD dwUnknown) = 0;
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int Dispatch(int a1);  // 0x410210
+    // === FUNCS-MOVE (END) ===
 };
 
 class INoticeSource
@@ -31,6 +35,10 @@ class INoticeSource
 public:
     // design: pure virtual function, no binary implementation
     virtual void __stdcall INoticeSource_Unknown() = 0;
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int Dispatch(int a1);  // 0x4105f0
+    // === FUNCS-MOVE (END) ===
 };
 
 class ISwizzle : public IUnknown

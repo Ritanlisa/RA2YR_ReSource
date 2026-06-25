@@ -752,6 +752,26 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     bool LoadMapFileData(int a1, int a2);  // 0x544c20 -- House::LoadMapFileData
     int PowerBeginUpdate(int a1);  // 0x70c270 -- House::PowerBeginUpdate
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int QueryInterface_Helper(int a1, int a2, int a3);  // 0x429210
+    int QueryInterface_Dispatch(int a1, int a2, int a3, int a4);  // 0x429270
+    int QueryInterface(int a1, int a2, int a3);  // 0x4f6830
+    int FailedToPlaceNode();  // 0x42f380
+    void* PsiWarn(int a1, int a2, int a3, int a4);  // 0x43b5e0
+    void ResetObjectOrders(int a1, int a2);  // 0x4adee0
+    int RevealShroudForAllies(int a1, int a2);  // 0x4adff0
+    int vt_placeholder_00(int a1);  // 0x4e8240
+    int vt_placeholder_01(int a1);  // 0x4e8250
+    int CanDetect();  // 0x501640
+    int SaveLoad_Prefix();  // 0x503040
+    int PrerequisitesForTechnoTypeAreListed(int a1, int a2, int a3);  // 0x505360
+    int COMStub_Ret1_1(int a1);  // 0x50e340
+    int COMStub_Ret1_2(int a1);  // 0x50e350
+    int AIDecision(int a1, int a2);  // 0x5d70f0
+    int InitAlliances();  // 0x5d74a0
+    void FindStartPositions();  // 0x5ee9d0
+    // === FUNCS-MOVE (END) ===
 };
 
 } // namespace gamemd

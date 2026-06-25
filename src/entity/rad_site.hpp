@@ -85,6 +85,11 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int Tick();  // 0x65B800
     void* ProcessEvent(int a1);  // 0x65BED0
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int SaveLoad_Prefix(int a1, int a2);  // 0x65b3d0
+    int SaveLoad_Prefix_0(int a1, int a2, int a3);  // 0x65b450
+    // === FUNCS-MOVE (END) ===
 };
 
 } // namespace gamemd

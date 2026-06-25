@@ -139,6 +139,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int Update();  // 0x760F50
     void* Constructor_7632D0(int a1, int a2);  // 0x7632D0
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int ProcessWaveTick(int a1, int a2, int a3);  // 0x75f7d0
+    // === FUNCS-MOVE (END) ===
 };
 
 } // namespace gamemd

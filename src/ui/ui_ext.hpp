@@ -460,6 +460,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int clearList(int a1, void* a2);  // 0x5583C0
     int getItemCount(void* a1);  // 0x558470
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    void* OnClick(int a1, int a2, int a3, int a4, int a5, int a6, int a7);  // 0x488520
+    // === FUNCS-MOVE (END) ===
 };
 // 1 methods in IDA
 class CheckSum
@@ -636,6 +640,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int SetItemText(int a1);  // 0x4C3420
     int Close();  // 0x4C3570
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    void* OnKeyUp(int a1, int a2, int a3);  // 0x4b5030
+    // === FUNCS-MOVE (END) ===
 };
 // 1 methods in IDA
 class DropPod
@@ -797,6 +805,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int Clear();  // 0x623840
     int SetCustomEntry();  // 0x6969C0
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int EditSubclassProc();  // 0x614190
+    // === FUNCS-MOVE (END) ===
 };
 // 8 methods in IDA
 class ListClass

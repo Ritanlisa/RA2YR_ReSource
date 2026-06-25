@@ -572,6 +572,11 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int GetNthOfType();  // 0x485020 -- Building::GetNthOfType
     int GetRenderType();  // 0x772a90 -- Building::GetRenderType
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int FindClosestForRepair(int a1);  // 0x4dfcb0
+    int FindClosestForRepair2(int a1);  // 0x4dfe00
+    // === FUNCS-MOVE (END) ===
 };
 
 // External globals

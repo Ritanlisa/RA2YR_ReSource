@@ -99,6 +99,15 @@ public:
     int GetWarhead(int a1, int a2);  // 0x46c820 -- BulletTypeClass::GetWarhead
     int ReadTrajectoryFlags(int a1, int a2, int a3);  // 0x475150 -- BulletTypeClass::ReadTrajectoryFlags
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int ReadArmor();  // 0x465450
+    int ReadTrailerAnim();  // 0x465cc0
+    int LoadFromINI(int a1, int a2, int a3);  // 0x46bee0
+    int SaveLoad_Prefix(int a1, int a2);  // 0x46c6a0
+    int SaveLoad_Prefix_0(int a1, int a2, int a3);  // 0x46c730
+    int ProcessImpact(int a1);  // 0x69fc10
+    // === FUNCS-MOVE (END) ===
 };
 
 } // namespace gamemd

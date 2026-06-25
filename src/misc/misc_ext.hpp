@@ -89,6 +89,10 @@ public:
     // === SYMBOL-ANCHOR (BEGIN) ===
     void* QueryInterface(int a1);  // 0x5cb540 -- UnholyAlliance::QueryInterface
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int GetResult();  // 0x5cb440
+    // === FUNCS-MOVE (END) ===
 };
 
 // ============================================================================
@@ -314,6 +318,10 @@ public:
     virtual ULONG __stdcall Release() override;
 
     int32_t     m_RefCount;     // 0x04
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int GetSize(int a1, int a2);  // 0x6c4e10
+    // === FUNCS-MOVE (END) ===
 };
 
 // ============================================================================
@@ -420,6 +428,11 @@ public:
     int RegisterSuccess();  // 0x41fd60 -- AITriggerTypeClass::RegisterSuccess
     int RegisterFailure();  // 0x41fe20 -- AITriggerTypeClass::RegisterFailure
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    bool IronCurtainCharged(int a1, int a2);  // 0x41f0d0
+    bool ChronoSphereCharged(int a1, int a2);  // 0x41f180
+    // === FUNCS-MOVE (END) ===
 };
 // 7 methods in IDA
 class AnimFile
@@ -836,6 +849,12 @@ public:
     int SetCapacity(int a1, int a2);  // 0x54a3d0 -- IsometricTileTypeClass::SetCapacity
     int FindItem(int a1);  // 0x54a480 -- IsometricTileTypeClass::FindItem
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int LoadTypeData(int a1, int a2);  // 0x549c80
+    int SaveToINI(int a1, int a2, int a3);  // 0x549d70
+    int GetClassIdentifier(int a1, int a2);  // 0x549d90
+    // === FUNCS-MOVE (END) ===
 };
 // 1 methods in IDA
 class Lightning
@@ -974,6 +993,12 @@ public:
     void* QueryInterface(int a1);  // 0x5ac270 -- MapSeedClass::QueryInterface
     int GenerateSeed(int a1);  // 0x5acb80 -- MapSeedClass::GenerateSeed
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    void* GetCell();  // 0x597fa0
+    void* SetCell();  // 0x597fc0
+    void* Validate();  // 0x597fe0
+    // === FUNCS-MOVE (END) ===
 };
 // 3 methods in IDA
 class MapSizeGameOption_WorldDominationTour
@@ -1309,6 +1334,10 @@ public:
     uint8_t TClassFactory_CampaignClass_field_0x14[4];
     uint8_t TClassFactory_CampaignClass_field_0x18[4];
     uint8_t TClassFactory_CampaignClass_field_0x1C[4];
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int GetSize(int a1, int a2);  // 0x6c0310
+    // === FUNCS-MOVE (END) ===
 };
 // 4 methods in IDA
 class TClassFactory_CellClass
@@ -1765,6 +1794,10 @@ public:
     int Check(int a1, int a2);  // 0x7aee90 -- CChatEventSink::Check
     int EncodeString(int a1);  // 0x7b5e30 -- CChatEventSink::EncodeString
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int HandleChatChannelList(int a1, int a2, int a3);  // 0x7aa870
+    // === FUNCS-MOVE (END) ===
 };
 // 2 methods in IDA
 class CDROM
@@ -1935,6 +1968,14 @@ public:
     void* seekToPosition();  // 0x7b0220 -- ComStreamClass::seekToPosition
     void* getStreamSize();  // 0x7b02a0 -- ComStreamClass::getStreamSize
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int Write(int a1, int a2, int a3, int a4, int a5);  // 0x7a3d90
+    int Seek(int a1, int a2, int a3, int a4);  // 0x7a4070
+    int AddRef();  // 0x7ac800
+    int Release();  // 0x7ac820
+    int QueryInterface(int a1, int a2, int a3);  // 0x7ac870
+    // === FUNCS-MOVE (END) ===
 };
 // 1 methods in IDA
 class Compression
@@ -1989,6 +2030,11 @@ public:
     uint8_t ConnectionPointClass_field_0x18[4];
     uint8_t ConnectionPointClass_field_0x1C[4];
     uint8_t ConnectionPointClass_field_0x20[4];
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int Unadvise(int a1, int a2, int a3);  // 0x4a0630
+    int EnumConnections(int a1, int a2);  // 0x4a0700
+    // === FUNCS-MOVE (END) ===
 };
 // 1 methods in IDA
 class ConnectionPointVector
@@ -2089,6 +2135,11 @@ public:
     void PointerGotInvalid(int a1);  // 0x4a7900 -- DiskLaserClass::PointerGotInvalid
     void* CopyTo(int a1);  // 0x4a7c90 -- DiskLaserClass::CopyTo
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int Write(int a1, int a2);  // 0x4a7b90
+    int Seek(int a1, int a2, int a3);  // 0x4a7c10
+    // === FUNCS-MOVE (END) ===
 };
 // 1 methods in IDA
 class DiskSpace
@@ -2639,6 +2690,10 @@ public:
     void UpdatePlayerLabels();  // 0x5eb060 -- Lobby::UpdatePlayerLabels
     void SetupPlayerWidgets();  // 0x5eba00 -- Lobby::SetupPlayerWidgets
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int BuildPlayerList();  // 0x77db90
+    // === FUNCS-MOVE (END) ===
 };
 // 1 methods in IDA
 class MIXClass
@@ -3783,6 +3838,14 @@ public:
     uint8_t SwizzleManagerClass_field_0x1C[4];
     uint8_t SwizzleManagerClass_field_0x20[4];
     uint8_t SwizzleManagerClass_field_0x24[4];
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int Add(int a1, int a2, int a3);  // 0x6cf490
+    int AddRef(int a1);  // 0x6cf4b0
+    int Release(int a1);  // 0x6cf4c0
+    int Lookup(int a1, int a2, int a3, int a4);  // 0x6cf4e0
+    int Remove(int a1, int a2, int a3);  // 0x6cf4d0
+    // === FUNCS-MOVE (END) ===
 };
 // 2 methods in IDA
 class SymbolTable
@@ -5013,6 +5076,11 @@ public:
     // === SYMBOL-ANCHOR (BEGIN) ===
     void* SpreadTiberium(int a1);  // 0x74f340 -- VeinholeMonsterClass::SpreadTiberium
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int Update(int a1, int a2, int a3);  // 0x74eee0
+    int CheckStatus();  // 0x74ef00
+    // === FUNCS-MOVE (END) ===
 };
 // 1 methods in IDA
 class VersionInfo

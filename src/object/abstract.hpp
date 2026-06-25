@@ -46,6 +46,10 @@ public:
     // unmatched: no callgraph reference and no git history record
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) = 0;
     virtual HRESULT __stdcall GetSizeMax(ULARGE_INTEGER* size) = 0;
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int SetField(int a1);  // 0x5b36e0
+    // === FUNCS-MOVE (END) ===
 };
 
 class IRTTITypeInfo : IUnknown {
@@ -61,6 +65,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int SetCapacity(int a1, void* a2);  // 0x74F540
     int FindItem(void* a1);  // 0x74F5F0
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int QueryInterface(int a1, int a2, int a3);  // 0x4105e0
+    // === FUNCS-MOVE (END) ===
 };
 
 class INoticeSink {
@@ -296,6 +304,30 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int queueMission(int a1);  // 0x4e01c0 -- AbstractClass::queueMission
     void* getWeaponRange(int a1);  // 0x5b3a60 -- AbstractClass::getWeaponRange
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int initVtableBase();  // 0x410100
+    int GetVtable3(int a1);  // 0x410220
+    int GenerateUniqueID(int a1);  // 0x410230
+    int SaveLoad_Prefix(int a1, int a2, int a3);  // 0x410320
+    int SaveLoad_Prefix_0(int a1, int a2);  // 0x410380
+    int GetField9();  // 0x417fd0
+    int compareType(int a1);  // 0x487e50
+    int saveToStream(int a1, int a2, int a3);  // 0x510a20
+    int loadFromStream(int a1);  // 0x510a30
+    int computeSize(int a1);  // 0x510a40
+    int COMStub_6(int a1, int a2, int a3);  // 0x5439f0
+    int getPathDirection(int a1, int a2, int a3);  // 0x5c03d0
+    void* processRevealArea(int a1, int a2, int a3, int a4, int a5, int a6);  // 0x5d81f0
+    void* computeRevealRadius(int a1, int a2, int a3, int a4, int a5, int a6);  // 0x5d8230
+    void* applyRevealToCell(int a1, int a2, int a3, int a4, int a5, int a6);  // 0x5d8270
+    void* checkRevealCell(int a1, int a2, int a3, int a4, int a5, int a6);  // 0x5d82b0
+    int SaveLoad_PrefixWrapper(int a1, int a2, int a3);  // 0x5f9950
+    int updateTargetTracking(int a1);  // 0x6ce1f0
+    void ClearTargetToMeClearManagerTarget(int a1);  // 0x70d4a0
+    void AnnounceExpiredPointer(int a1, int a2);  // 0x7258d0
+    void* RemoveObjectFromHouse(int a1, int a2, int a3, int a4, int a5);  // 0x4fb9b0
+    // === FUNCS-MOVE (END) ===
 };
 
 } // namespace game

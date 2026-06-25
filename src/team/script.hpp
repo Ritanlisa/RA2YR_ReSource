@@ -110,6 +110,12 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* SetField(void* a1);  // 0x723CA0
     int FormatToString(void* a1);  // 0x723CE0
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int GetClassIdentifier(int a1, int a2);  // 0x691d50
+    int LoadTypeData(int a1, int a2);  // 0x691d90
+    int ReadINI(int a1, int a2);  // 0x6e8340
+    // === FUNCS-MOVE (END) ===
 };
 
 } // namespace gamemd

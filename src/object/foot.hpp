@@ -343,6 +343,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // === SYMBOL-ANCHOR (BEGIN) ===
     bool updateThreat();  // 0x70f7e0 -- FootClass::updateThreat
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    void FootClass_ImbueLocomotor();  // 0x710000
+    // === FUNCS-MOVE (END) ===
 };
 
 } // namespace game

@@ -49,6 +49,11 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void ProcessAudioFrame();  // 0x408000
     int SetupChannels();  // 0x408A70
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int Pump();  // 0x753620
+    int Shutdown();  // 0x406e80
+    // === FUNCS-MOVE (END) ===
 };
 
 // ============================================================================
@@ -147,6 +152,11 @@ public:
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int Play(int a1);  // 0x720BB0
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int ClearQueues();  // 0x752370
+    void GetField(int a1);  // 0x752ab0
+    // === FUNCS-MOVE (END) ===
 };
 
 // ============================================================================

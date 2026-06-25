@@ -163,6 +163,11 @@ protected:
     int GetAuxField();  // 0x6e64b0 -- TagTypeClass::GetAuxField
     void* FindOrCreateTriggerType();  // 0x727aa0 -- TagTypeClass::FindOrCreateTriggerType
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int GetClassIdentifier(int a1, int a2);  // 0x6e63a0
+    int LoadTypeData(int a1, int a2);  // 0x6e6410
+    // === FUNCS-MOVE (END) ===
 };
 
 } // namespace gamemd

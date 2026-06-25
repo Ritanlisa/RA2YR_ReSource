@@ -118,6 +118,11 @@ public:
     void* loadWeaponProperties(int a1);  // 0x771f00 -- WeaponTypeClass::loadWeaponProperties
     int ProcessPower(int a1);  // 0x772ae0 -- WeaponTypeClass::ProcessPower
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int SaveLoad_Prefix(int a1, int a2, int a3, int a4);  // 0x772cd0
+    int SaveLoad_Prefix_0(int a1, int a2, int a3, int a4, int a5);  // 0x772eb0
+    // === FUNCS-MOVE (END) ===
 };
 
 } // namespace gamemd

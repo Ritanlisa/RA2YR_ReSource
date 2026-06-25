@@ -156,6 +156,10 @@ public:
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* CheckCliff(void* a1, void* a2, int a3, int a4);  // 0x583820
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    void* ExpandNode(int a1, int a2);  // 0x5a5360
+    // === FUNCS-MOVE (END) ===
 };
 // 1 methods in IDA
 class PathfindingClass

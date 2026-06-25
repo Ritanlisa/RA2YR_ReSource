@@ -24,6 +24,11 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* Constructor();  // 0x5D67B0
     int BuildChecksum();  // 0x77E7A0
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    void* ComputeCRC();  // 0x5e84d0
+    int ComputeHash();  // 0x679d90
+    // === FUNCS-MOVE (END) ===
 };
 
 // --- Global variables (IDA addresses) ---

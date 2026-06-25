@@ -53,6 +53,11 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int Read(int a1);  // 0x42F5E0
     void* QueryInterface(int a1);  // 0x42F970
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int LoadBaseNodeClass(int a1, int a2);  // 0x42ee30
+    int LoadArrayFields(int a1, int a2);  // 0x42f070
+    // === FUNCS-MOVE (END) ===
 };
 
 } // namespace gamemd

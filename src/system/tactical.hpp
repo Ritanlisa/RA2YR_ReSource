@@ -289,6 +289,15 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int DrawOverlay(int a1, int a2, int a3, int a4);  // 0x6dbb60 -- Tactical::DrawOverlay
     void* UpdateView(int a1);  // 0x6dc470 -- Tactical::UpdateView
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int BuildCommandBar(int a1, int a2, int a3);  // 0x6d04f0
+    void CleanupResources();  // 0x6d0270
+    void* CollectSelectedIDs();  // 0x732d10
+    int FindBuilding(int a1, int a2, int a3);  // 0x6d9920
+    int FindOverlay(int a1, int a2, int a3);  // 0x6d97d0
+    int SetPositionThunk(int a1);  // 0x653f70
+    // === FUNCS-MOVE (END) ===
 };
 
 } // namespace gamemd

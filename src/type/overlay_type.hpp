@@ -79,6 +79,13 @@ public:
     void* GetCategory();  // 0x5fede0 -- OverlayTypeClass::GetCategory
     int GetAuxField();  // 0x5fef20 -- OverlayTypeClass::GetAuxField
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    void* GetTile(int a1);  // 0x5fe4c0
+    void* vt_entry_6C(int a1, int a2);  // 0x5fea30
+    int SaveLoad_Prefix(int a1, int a2);  // 0x5feaf0
+    int SaveLoad_Prefix_0(int a1, int a2, int a3);  // 0x5fec10
+    // === FUNCS-MOVE (END) ===
 };
 
 } // namespace gamemd

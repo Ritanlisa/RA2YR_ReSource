@@ -194,6 +194,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int GetInvalidCoord();  // 0x4104C0
     bool CanScroll();  // 0x4F28B0
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int IsCellFlag(int a1);  // 0x535be0
+    // === FUNCS-MOVE (END) ===
 };
 
 class Territory

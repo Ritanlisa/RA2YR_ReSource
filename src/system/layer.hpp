@@ -34,6 +34,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     bool IsWithinUsableArea(int a1, int a2);  // 0x578460 -- LayerClass::IsWithinUsableArea
     int DestroyCliff(int a1, int a2, int a3);  // 0x581140 -- LayerClass::DestroyCliff
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    void* Pathfinding_Find(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17);  // 0x56dc20
+    // === FUNCS-MOVE (END) ===
 };
 
 } // namespace gamemd

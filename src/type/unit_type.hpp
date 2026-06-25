@@ -85,6 +85,13 @@ public:
     int PowerDrainUpdate(int a1);  // 0x747f70 -- UnitTypeClass::PowerDrainUpdate
     int GetAuxField();  // 0x748180 -- UnitTypeClass::GetAuxField
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    void* GetDefaultDimensions(int a1);  // 0x7475d0
+    void* ClampToGroundHeight(int a1, int a2);  // 0x747eb0
+    int GetGameplayValue();  // 0x747f20
+    int LoadFromINI2(int a1, int a2);  // 0x748010
+    // === FUNCS-MOVE (END) ===
 };
 
 } // namespace gamemd

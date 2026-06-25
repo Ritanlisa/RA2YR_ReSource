@@ -142,6 +142,14 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int CheckProximityDetonation(void* a1);  // 0x4E11F0
     int ComputeImpactTrajectory(int a1);  // 0x6620F0
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    void* CalculateSpreadAngle(int a1);  // 0x466660
+    int SaveLoad_Prefix_0(int a1, int a2, int a3);  // 0x46afb0
+    int CheckTargetValidity();  // 0x46afd0
+    int ValidateTarget();  // 0x46aff0
+    int PowerDrainProcess(int a1, int a2);  // 0x46b560
+    // === FUNCS-MOVE (END) ===
 };
 
 } // namespace gamemd

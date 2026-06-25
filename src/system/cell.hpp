@@ -496,6 +496,24 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* GetWorldCoords(int a1, int a2);  // 0x68bd00 -- Cell::GetWorldCoords
     int IsWalkable(int a1, int a2);  // 0x6b5f80 -- Cell::IsWalkable
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int CheckTilePassable(int a1);  // 0x57ccf0
+    int CheckTilePassable2(int a1);  // 0x57baa0
+    int GetByte284(int a1);  // 0x6d6ad0
+    int GetTileData(int a1, int a2);  // 0x56bcd0
+    int SetTileType13(int a1, int a2);  // 0x572b80
+    int SetTileType14(int a1, int a2);  // 0x572c90
+    int SpiralFindClosest(int a1, int a2, int a3);  // 0x5865f0
+    int UpdateTerrain(int a1, int a2);  // 0x56f8b0
+    int UpdateTileVariant2(int a1, int a2);  // 0x56fc80
+    int UpdateVariant3(int a1, int a2);  // 0x56ef50
+    int UpdateVariant4(int a1, int a2);  // 0x56f2f0
+    int UpdateVariant5(int a1, int a2);  // 0x572da0
+    int UpdateVariant6(int a1, int a2);  // 0x573170
+    int UpdateVariant7(int a1, int a2);  // 0x572440
+    int UpdateVariant8(int a1, int a2);  // 0x5727e0
+    // === FUNCS-MOVE (END) ===
 };
 
 } // namespace gamemd

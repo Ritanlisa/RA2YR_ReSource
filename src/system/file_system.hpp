@@ -105,6 +105,12 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int readFile();  // 0x628740
     void* writeFile(int a1, void* a2);  // 0x628ED0
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    void CleanupTrees();  // 0x72d350
+    void InitPipShapes();  // 0x5f76b0
+    int ProcessNextFileExtension();  // 0x626da0
+    // === FUNCS-MOVE (END) ===
 };
 
 } // namespace gamemd

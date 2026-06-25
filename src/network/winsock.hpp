@@ -96,6 +96,13 @@ protected:
     int initSession(int a1);  // 0x7b2ad0 -- IPXInterfaceClass::initSession
     void* closeSession(int a1);  // 0x7b2b50 -- IPXInterfaceClass::closeSession
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int COMStub_Ret1139(int a1);  // 0x7b1780
+    int SetAddress(int a1);  // 0x7b1fd0
+    int GetAddress();  // 0x7b25e0
+    int ReceivePacket(int a1, int a2);  // 0x7b26d0
+    // === FUNCS-MOVE (END) ===
 };
 
 class UDPInterfaceClass

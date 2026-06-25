@@ -125,6 +125,21 @@ protected:
     void* readAllowedUnits(int a1);  // 0x513860 -- HouseTypeClass::readAllowedUnits
     int Find();  // 0x6a46d0 -- HouseTypeClass::Find
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int QueryInterface(int a1, int a2, int a3);  // 0x5125a0
+    int LoadFromINI(int a1, int a2, int a3);  // 0x511850
+    int SaveLoad_Prefix(int a1, int a2);  // 0x512290
+    int SaveLoad_Prefix_0(int a1, int a2, int a3, int a4, int a5);  // 0x512480
+    int LoadHouse(int a1, int a2);  // 0x512570
+    int GetClassIdentifier(int a1, int a2);  // 0x512640
+    int AddRef(int a1);  // 0x512740
+    int Release(int a1);  // 0x512750
+    int readBaseDefenses(int a1, int a2, int a3);  // 0x5139e0
+    int readAiBuildLists(int a1);  // 0x5139f0
+    int readLoadoutData(int a1);  // 0x513a00
+    int ReadCountryName(int a1, int a2, int a3, int a4, int a5);  // 0x67b8f0
+    // === FUNCS-MOVE (END) ===
 };
 
 } // namespace gamemd

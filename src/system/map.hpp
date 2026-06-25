@@ -394,6 +394,21 @@ protected:
     void* FindPlacementCellsAlt(int a1, int a2);  // 0x703590 -- MapClass::FindPlacementCellsAlt
     int isCellShrouded(int a1);  // 0x7bcf50 -- MapClass::isCellShrouded
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int CalcVisibleCellRange(int a1, int a2, int a3, int a4);  // 0x506d50
+    int CheckCellsBuildable(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9);  // 0x56e7c0
+    int Cleanup(int a1, int a2);  // 0x594700
+    int FindPassableNeighbor();  // 0x5a17f0
+    int GetTileDataField14(int a1);  // 0x5a00c0
+    int InitTileData(int a1, int a2);  // 0x57a0c0
+    int IsCellPassable(int a1, int a2);  // 0x5656d0
+    int SetObstruction(int a1, int a2);  // 0x5a0090
+    int TransitionCliff(int a1);  // 0x574780
+    int TriggerEVA(int a1);  // 0x57b790
+    int UnselectAll_ClearLimboLaunchers();  // 0x48dc90
+    int UpdateLightingPostProcess();  // 0x4ae4c0
+    // === FUNCS-MOVE (END) ===
 };
 #endif
 

@@ -98,6 +98,11 @@ public:
     int ProcessPower(int a1);  // 0x6454e0 -- ParticleTypeClass::ProcessPower
     int GetType(int a1, int a2);  // 0x6458b0 -- ParticleTypeClass::GetType
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int SaveLoad_Prefix(int a1, int a2);  // 0x645660
+    int SaveLoad_Prefix_0(int a1, int a2, int a3);  // 0x6457a0
+    // === FUNCS-MOVE (END) ===
 };
 
 } // namespace gamemd

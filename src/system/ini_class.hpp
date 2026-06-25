@@ -166,6 +166,11 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int GetKeyCount(int a1);  // 0x526960 -- INIClass::GetKeyCount
     int GetStringByIndex(int a1, int a2);  // 0x526cc0 -- INIClass::GetStringByIndex
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int ReadCoord(int a1, int a2, int a3, int a4);  // 0x474620
+    int ReadInt(int a1, int a2, int a3);  // 0x5278f0
+    // === FUNCS-MOVE (END) ===
 };
 
 // IDA: CCINIClass @ 0x535B30 -- size ~0x58 (88 bytes)
@@ -216,6 +221,11 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int IterateNodes(int a1);  // 0x710550
     int LoadTypeFromINI();  // 0x71CA70
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int ReadTypeList(int a1, int a2);  // 0x41f2e0
+    int ReadInfantryTypeList(int a1, int a2);  // 0x41f490
+    // === FUNCS-MOVE (END) ===
 };
 
 // Hash table for INI section lookup (used by INIClass::BinarySearchSection)

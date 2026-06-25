@@ -1148,6 +1148,15 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int ScanAdjacentCells();  // 0x703cc0 -- TechnoClass::ScanAdjacentCells
     int GetOwnerHouse();  // 0x6f2070 -- Techno::GetOwnerHouse
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int CanFireAtTarget(int a1, int a2, int a3, int a4, int a5);  // 0x41a9e0
+    int processDamageAnimation();  // 0x41b7d0
+    int updateWeaponCooldown();  // 0x41b840
+    int checkAmmo(int a1);  // 0x41b860
+    void* Update(int a1, int a2);  // 0x6f3f40
+    void GetField();  // 0x731cf0
+    // === FUNCS-MOVE (END) ===
 };
 
 } // namespace game

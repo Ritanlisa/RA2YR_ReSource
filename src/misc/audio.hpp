@@ -113,6 +113,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* GetSampleName();  // 0x405170
     int Check();  // 0x406170
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    void* GetSampleNameByIndex(int a1);  // 0x751590
+    // === FUNCS-MOVE (END) ===
 };
 
 class VoxClass

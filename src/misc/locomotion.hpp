@@ -245,6 +245,10 @@ protected:
     double GetSpeedMultiplier();  // 0x4dc760 -- LocomotionClass::GetSpeedMultiplier
     void* ProcessMove(int a1);  // 0x5172f0 -- LocomotionClass::ProcessMove
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    void* UpdateAll();  // 0x4c54a0
+    // === FUNCS-MOVE (END) ===
 };
 
 //============================================================================
@@ -333,6 +337,11 @@ protected:
     // === SYMBOL-ANCHOR (BEGIN) ===
     void* ProcessMove(int a1);  // 0x4b4d00 -- DriveLocomotionClass::ProcessMove
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int BeginMove();  // 0x4af780
+    int LoadFromStream();  // 0x4af800
+    // === FUNCS-MOVE (END) ===
 };
 static_assert(sizeof(DriveLocomotionClass) == 0x70, "DriveLocomotionClass size");
 
@@ -382,6 +391,10 @@ protected:
     // === SYMBOL-ANCHOR (BEGIN) ===
     void* ProcessMove(int a1);  // 0x5172c0 -- HoverLocomotionClass::ProcessMove
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int BeginMove(int a1, int a2);  // 0x5170b0
+    // === FUNCS-MOVE (END) ===
 };
 
 //============================================================================
@@ -444,6 +457,13 @@ protected:
     int Update(int a1, int a2, int a3);  // 0x6a1c80 -- WalkLocomotion::Update
     void* TransformCoords(int a1, int a2, int a3);  // 0x6a3db0 -- WalkLocomotion::TransformCoords
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int SetWaypointTarget(int a1, int a2, int a3, int a4);  // 0x6a0310
+    bool IsAtDestination(int a1, int a2, int a3, int a4);  // 0x6a3f50
+    int BeginMove();  // 0x75c680
+    int LoadFromStream();  // 0x75c700
+    // === FUNCS-MOVE (END) ===
 };
 static_assert(sizeof(WalkLocomotionClass) == 0x3C, "WalkLocomotionClass size");
 
@@ -506,6 +526,11 @@ protected:
     // === SYMBOL-ANCHOR (BEGIN) ===
     void* ProcessMove(int a1);  // 0x4d03a0 -- FlyLocomotionClass::ProcessMove
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int BeginMove(int a1, int a2);  // 0x4cfcc0
+    void ILocomotion_AcquireHunterSeekerTarget(int a1);  // 0x4cfe80
+    // === FUNCS-MOVE (END) ===
 };
 
 //============================================================================
@@ -557,6 +582,10 @@ protected:
     // === SYMBOL-ANCHOR (BEGIN) ===
     void* ProcessMove(int a1);  // 0x6635c0 -- RocketLocomotionClass::ProcessMove
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int BeginMove(int a1, int a2);  // 0x663410
+    // === FUNCS-MOVE (END) ===
 };
 
 //============================================================================
@@ -675,6 +704,201 @@ protected:
     int Land();  // 0x54ca90 -- JumpjetLocomotion::Land
     int UpdateFacing();  // 0x54d0f0 -- JumpjetLocomotion::UpdateFacing
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int IUnknownAddRef();  // 0x71a0e0
+    int IUnknownRelease();  // 0x71a0f0
+    int StubReturnZero(int a1, int a2);  // 0x4af8e0
+    int StubReturnZero_0(int a1, int a2);  // 0x4af930
+    bool CheckPiggybackState(int a1);  // 0x4af970
+    void* InitMovementState(int a1, int a2);  // 0x4afb40
+    bool StubReturnTrue_0(int a1);  // 0x4afc20
+    void* GetCoordinate(int a1, int a2);  // 0x4afc90
+    void* GetRenderCoordinate(int a1, int a2);  // 0x4afcc0
+    void* ConvertCoordToCell(int a1, int a2, int a3, int a4);  // 0x4afd40
+    int CheckWindowsErrorWrapper(int a1);  // 0x4afe00
+    void* ComputeVoxelTransform(int a1, int a2, int a3);  // 0x4aff60
+    void* ComputeAudio3DRotation(int a1, int a2, int a3);  // 0x4b0410
+    int DispatchVirtualCall(int a1);  // 0x4b04d0
+    int SetWaypointTarget(int a1, int a2, int a3, int a4);  // 0x4b0c40
+    int UpdateFacingDirection(int a1, int a2);  // 0x4b0ef0
+    int StubReturnTwo(int a1);  // 0x4b4820
+    int MoveToChecked(int a1, int a2);  // 0x4b48d0
+    bool IsAtDestination(int a1, int a2, int a3, int a4);  // 0x4b4920
+    int StubReturnZero_2(int a1);  // 0x4b4b00
+    int SetByteField(int a1);  // 0x4b4be0
+    int SetByteField_0(int a1);  // 0x4b4bf0
+    int GetField_0x54(int a1);  // 0x4b4c00
+    int GetField_0x58(int a1);  // 0x4b4c10
+    int GetField_0x48(int a1);  // 0x4b4c20
+    int GetLinkedLocomotorPointer();  // 0x4b4cd0
+    int GetField_0x78(int a1, int a2, int a3);  // 0x4b4d90
+    int GetField_0x7C();  // 0x4b4da0
+    int GetField_0x80();  // 0x4b4db0
+    void* GetSpeedCoordinate(int a1, int a2);  // 0x4b5b40
+    void* UpdateMovementPosition(int a1, int a2, int a3);  // 0x4b6040
+    int StubReturnZero_3(int a1, int a2);  // 0x4b63b0
+    int StubReturnZero_4(int a1, int a2);  // 0x4b6400
+    bool CheckBaseClassState(int a1);  // 0x4b6440
+    int SmallStub_4B64D0(int a1);  // 0x4b64d0
+    int LoadLocomotionFromStream_0(int a1, int a2);  // 0x4b64e0
+    int ShortFunc_4B65F0();  // 0x4b65f0
+    int ShortFunc_4B66C0();  // 0x4b66c0
+    int SmallStub_4B6740(int a1, int a2, int a3);  // 0x4b6740
+    int SmallStub_4B6750();  // 0x4b6750
+    int SmallStub_4B6760();  // 0x4b6760
+    int SmallStub_4B6770(int a1, int a2, int a3);  // 0x4b6770
+    int SmallStub_4B6780();  // 0x4b6780
+    int SmallStub_4B6790();  // 0x4b6790
+    int StubReturnZero_7(int a1, int a2);  // 0x4cca20
+    int ComputeFloatExpression();  // 0x4cca90
+    void* GetMovementCoordinate(int a1, int a2);  // 0x4ccae0
+    int ProcessLocomotionStep(int a1);  // 0x4ccb40
+    int UpdateFootLocomotion(int a1, int a2, int a3, int a4);  // 0x4ccc80
+    int ComputeMoveToPosition(int a1);  // 0x4ccfd0
+    void* ComputeRotationMatrix(int a1, int a2, int a3);  // 0x4cf610
+    void* CalculateBobOffset(int a1, int a2);  // 0x4cf830
+    void* ShortFunc_4CF940(int a1, int a2);  // 0x4cf940
+    void* ComputeVoxelMatrix(int a1, int a2, int a3);  // 0x4cfb00
+    int SynchronizeFacingDirection(int a1, int a2);  // 0x4cfc10
+    int DispatchVirtualCall_0(int a1);  // 0x4cfcf0
+    int ClearLocomotionDirty(int a1);  // 0x4cfd20
+    int ShortFunc_4CFD90(int a1);  // 0x4cfd90
+    bool DispatchVirtualCall_1(int a1);  // 0x4cfda0
+    int ComputeFloatExpression_1(int a1);  // 0x4cfe20
+    int StubReturnZero_8(int a1);  // 0x4cfe50
+    int GetInterface(int a1, int a2, int a3);  // 0x4d0510
+    int GetInterface2();  // 0x4d0520
+    int Stub2();  // 0x4d0530
+    void* ComputeAudio3DRotation_0(int a1, int a2, int a3);  // 0x5142a0
+    int HasScoreDisplayChanged();  // 0x514c30
+    int ComputeFloatExpression_2();  // 0x514c80
+    void* HasScoreDisplayChanged_514CB0(int a1, int a2);  // 0x514cb0
+    void* HasScoreDisplayChanged_514D10(int a1, int a2);  // 0x514d10
+    void* SetMovementTarget(int a1, int a2, int a3, int a4);  // 0x514d90
+    void* HasScoreDisplayChanged_516320(int a1);  // 0x516320
+    int UpdateFacingDirection_0(int a1, int a2);  // 0x516370
+    int ClearLocomotionDirty_0(int a1);  // 0x516bf0
+    bool DispatchVirtualCall_2(int a1);  // 0x516c70
+    int TryMoveToAdjacentCell(int a1, int a2);  // 0x516e10
+    int RandomizeLocomotionParam(int a1, int a2);  // 0x516fc0
+    int SmallStub_517100(int a1);  // 0x517100
+    int DispatchVirtualCall_3(int a1, int a2);  // 0x5171c0
+    bool IsPositionWithinThreshold(int a1, int a2, int a3, int a4);  // 0x517210
+    int SmallStub_54AE50(int a1);  // 0x54ae50
+    void* GetMovementCoordinate_0(int a1, int a2);  // 0x54ae60
+    int DispatchLocomotion(int a1);  // 0x54aec0
+    int SmoothObjectPlacement(int a1, int a2, int a3, int a4);  // 0x54b1c0
+    int MoveToDestination(int a1);  // 0x54b4d0
+    int SynchronizeFacingDirection_0(int a1, int a2);  // 0x54b6e0
+    int GetClassIdentifier(int a1, int a2);  // 0x54b710
+    int InitClass();  // 0x54b750
+    int LoadFromStream();  // 0x54b7e0
+    bool CheckCompositeState(int a1);  // 0x54d0d0
+    int DispatchVirtualCall_4(int a1, int a2);  // 0x54d930
+    void* GetConditionedCoordinate(int a1, int a2);  // 0x54d9b0
+    int StubReturnZero_9(int a1, int a2);  // 0x54da00
+    int StubReturnZero_10(int a1, int a2);  // 0x54da50
+    bool StubReturnTrue_2(int a1);  // 0x54db00
+    int LoadLocomotionFromStream_1(int a1, int a2);  // 0x54db50
+    void* ComputeMovementTransform(int a1, int a2, int a3);  // 0x54dcc0
+    int ShortFunc_54DF70();  // 0x54df70
+    int SmallStub_54DFF0(int a1, int a2, int a3);  // 0x54dff0
+    int SmallStub_54E000();  // 0x54e000
+    int SmallStub_54E010();  // 0x54e010
+    int SmallStub_54E020(int a1, int a2, int a3);  // 0x54e020
+    int SmallStub_54E030();  // 0x54e030
+    int SmallStub_54E040();  // 0x54e040
+    void* GetGlobalCoordinate(int a1, int a2);  // 0x55ac70
+    void* GetMovementCoordinate_1(int a1, int a2);  // 0x5aff80
+    int ShortFunc_5B0060(int a1);  // 0x5b0060
+    int ConvertCoordToCell_1(int a1, int a2, int a3, int a4);  // 0x5b0080
+    int SyncMatrixTransformState(int a1);  // 0x5b0120
+    int UpdateFacingDirection_1(int a1, int a2);  // 0x5b0170
+    int InitMultiFieldArray(int a1, int a2, int a3, int a4);  // 0x5b01a0
+    int SmallStub_5B19D0(int a1);  // 0x5b19d0
+    int HasFieldStateChanged();  // 0x661f50
+    void* GetCoordinate_0(int a1, int a2);  // 0x661fb0
+    int ComputeFloatExpression_3(int a1, int a2, int a3, int a4);  // 0x6632e0
+    int SmallStub_663460(int a1);  // 0x663460
+    void* ComputePitchYaw(int a1, int a2, int a3);  // 0x663470
+    int StubReturnZero_12(int a1, int a2);  // 0x69eff0
+    void* InitMovementState_0(int a1, int a2);  // 0x69f250
+    bool StubReturnTrue_5(int a1);  // 0x69f290
+    bool StubReturnTrue_6(int a1);  // 0x69f330
+    void* GetCoordinate_1(int a1, int a2);  // 0x69f3a0
+    void* GetRenderCoordinate_1(int a1, int a2);  // 0x69f3d0
+    void* ConvertCoordToCell_2(int a1, int a2, int a3, int a4);  // 0x69f450
+    int CheckWindowsErrorWrapper_1(int a1);  // 0x69f510
+    void* ComputeVoxelTransform2(int a1, int a2, int a3);  // 0x69f670
+    void* ComputeAudio3DRotation_1(int a1, int a2, int a3);  // 0x69fb20
+    int DispatchVirtualCall_6(int a1);  // 0x69fbe0
+    int UpdateFacingDirection_2(int a1, int a2);  // 0x6a05c0
+    int SmallStub_6A3E50(int a1);  // 0x6a3e50
+    int DispatchCheckState_6A3EB0(int a1);  // 0x6a3eb0
+    int MoveToChecked_0(int a1, int a2);  // 0x6a3f00
+    int StubReturnZero_15(int a1);  // 0x6a4130
+    int SetByteField_1(int a1);  // 0x6a4210
+    int SetByteField_2(int a1);  // 0x6a4220
+    int SmallStub_6A4230(int a1);  // 0x6a4230
+    int SmallStub_6A4240(int a1);  // 0x6a4240
+    int SmallStub_6A4250(int a1);  // 0x6a4250
+    int GetLinkedLocomotorPointer_0();  // 0x6a4280
+    int SmallStub_6A4300(int a1, int a2, int a3);  // 0x6a4300
+    int SmallStub_6A4310();  // 0x6a4310
+    int SmallStub_6A4320();  // 0x6a4320
+    int UpdateFacingDirection_3(int a1, int a2);  // 0x7192c0
+    int SetCoordinateField(int a1);  // 0x719bf0
+    int StubReturnZero_17(int a1, int a2);  // 0x719c60
+    int InitMultiFieldArray_0();  // 0x719ca0
+    int CheckWindowsErrorWrapper_2();  // 0x719d40
+    int SmallStub_719E20(int a1);  // 0x719e20
+    int UpdateAltitude(int a1, int a2, int a3);  // 0x719e30
+    int StubReturnZero_18(int a1, int a2);  // 0x719e90
+    int StubReturnZero_19(int a1, int a2);  // 0x719ee0
+    bool StubReturnTrue_7(int a1);  // 0x719f30
+    int LoadLocomotionFromStream_3(int a1, int a2);  // 0x719f80
+    int DispatchVirtualCall_7(int a1, int a2);  // 0x71a090
+    int ShortFunc_71A100();  // 0x71a100
+    int SmallStub_71A160(int a1, int a2, int a3);  // 0x71a160
+    int SmallStub_71A170();  // 0x71a170
+    int SmallStub_71A180();  // 0x71a180
+    int SmallStub_71A190(int a1, int a2, int a3);  // 0x71a190
+    int SmallStub_71A1A0();  // 0x71a1a0
+    int SmallStub_71A1B0();  // 0x71a1b0
+    int StubReturnZero_20(int a1);  // 0x728a60
+    void* GetCoordinateConditional_0(int a1, int a2);  // 0x728a90
+    int ComputeBounceHeight(int a1);  // 0x729e50
+    int CheckStateWithOverride(int a1);  // 0x72a020
+    bool IsStateInRange(int a1);  // 0x72a060
+    int UpdateFacingDirection_4(int a1, int a2);  // 0x72a0e0
+    int ShortFunc_72A1A0(int a1);  // 0x72a1a0
+    int ShortFunc_72A1C0(int a1);  // 0x72a1c0
+    int ShortFunc_72A1E0();  // 0x72a1e0
+    int SmallStub_75AB30(int a1);  // 0x75ab30
+    void* GetMovementCoordinate_2(int a1, int a2);  // 0x75aba0
+    int DrawVoxelAnimation(int a1);  // 0x75ac80
+    int ConvertCoordToCell_4(int a1, int a2, int a3, int a4);  // 0x75acb0
+    int DispatchVirtualCall_8(int a1);  // 0x75ada0
+    int SynchronizeFacingDirection_1(int a1, int a2);  // 0x75ae00
+    int SmallStub_75C7E0(int a1);  // 0x75c7e0
+    int StubReturnZero_22(int a1, int a2);  // 0x75c850
+    int StubReturnZero_23(int a1, int a2);  // 0x75c8a0
+    bool CheckBaseClassState_0(int a1);  // 0x75c8e0
+    int LoadLocomotionFromStream_4(int a1, int a2);  // 0x75c920
+    int DispatchVirtualCall_10(int a1, int a2);  // 0x75ca30
+    bool IsPositionWithinThreshold_1(int a1, int a2, int a3, int a4);  // 0x75ca80
+    int SmallStub_75CB20(int a1);  // 0x75cb20
+    void* InitMultiFieldArray_1(int a1);  // 0x75cb30
+    int ShortFunc_75CBA0();  // 0x75cba0
+    int SetByteField_3(int a1);  // 0x75cbc0
+    int SmallStub_75CC30(int a1, int a2, int a3);  // 0x75cc30
+    int SmallStub_75CC40();  // 0x75cc40
+    int SmallStub_75CC50();  // 0x75cc50
+    int SmallStub_75CC60(int a1, int a2, int a3);  // 0x75cc60
+    int SmallStub_75CC70();  // 0x75cc70
+    int SmallStub_75CC80();  // 0x75cc80
+    // === FUNCS-MOVE (END) ===
 };
 static_assert(sizeof(JumpjetLocomotionClass) == 0x98, "JumpjetLocomotionClass size");
 
@@ -742,6 +966,10 @@ protected:
     // === SYMBOL-ANCHOR (BEGIN) ===
     void* ProcessMove(int a1);  // 0x6a42b0 -- ShipLocomotionClass::ProcessMove
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int BeginMove();  // 0x69ee90
+    // === FUNCS-MOVE (END) ===
 };
 static_assert(sizeof(ShipLocomotionClass) == 0x70, "ShipLocomotionClass size");
 
@@ -851,6 +1079,10 @@ protected:
     // === SYMBOL-ANCHOR (BEGIN) ===
     void* ProcessMove(int a1);  // 0x72a210 -- TunnelLocomotionClass::ProcessMove
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int BeginMove(int a1, int a2);  // 0x72a150
+    // === FUNCS-MOVE (END) ===
 };
 static_assert(sizeof(TunnelLocomotionClass) == 0x3C, "TunnelLocomotionClass size");
 
@@ -951,6 +1183,11 @@ protected:
     // === SYMBOL-ANCHOR (BEGIN) ===
     void* ProcessMove(int a1);  // 0x4b66f0 -- DropPodLocomotionClass::ProcessMove
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int BeginMove();  // 0x4b6240
+    int UpdateMovement();  // 0x4b62c0
+    // === FUNCS-MOVE (END) ===
 };
 static_assert(sizeof(DropPodLocomotionClass) == 0x30, "DropPodLocomotionClass size");
 

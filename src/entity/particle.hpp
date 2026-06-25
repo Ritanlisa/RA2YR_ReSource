@@ -93,6 +93,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int ProcessCreation();  // 0x62DF20
     int CreateInstance(void* a1, float a2, int a3);  // 0x62E4C0
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int CheckCollisionFlags(int a1, int a2, int a3);  // 0x62d810
+    // === FUNCS-MOVE (END) ===
 };
 
 } // namespace gamemd

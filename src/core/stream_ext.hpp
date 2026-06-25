@@ -46,6 +46,10 @@ public:
     int32_t     m_Position;     // 0x04
     int32_t     m_Size;         // 0x08
     int32_t     StreamClass_field_0C;       // 0x0C
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int ResetPosition(int a1, int a2);  // 0x55a710
+    // === FUNCS-MOVE (END) ===
 };
 
 // ============================================================================
@@ -275,6 +279,20 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int FindItem(void* a1);  // 0x4A4D60
     void* Constructor_VectorClass__DDSURFACEDESC___(int a1);  // 0x4A4DE0
     // --- gap2 auto-generated stub declarations (END) ---
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int CopyStreamToBuffer();  // 0x4a2cd0
+    int Read(int a1, int a2, int a3, int a4, int a5);  // 0x4a2e00
+    int Write(int a1, int a2, int a3);  // 0x4a2e50
+    int Seek(int a1, int a2, int a3, int a4, int a5, int a6);  // 0x4a2ea0
+    int SetSize(int a1, int a2);  // 0x4a2ee0
+    int Commit(int a1);  // 0x4a2f10
+    int Revert(int a1, int a2, int a3, int a4, int a5, int a6);  // 0x4a2f40
+    int Stat(int a1, int a2);  // 0x4a2ff0
+    int IStreamQueryInterface(int a1, int a2, int a3);  // 0x4a3220
+    int IStreamAddRef();  // 0x4a3230
+    int IStreamRelease();  // 0x4a3240
+    // === FUNCS-MOVE (END) ===
 };
 // 1 methods in IDA
 class StreamObj

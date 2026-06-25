@@ -481,6 +481,11 @@ public:
     int RemoveItem(int a1);  // 0x717db0 -- TechnoTypeClass::RemoveItem
     int CheckFlag(int a1);  // 0x721290 -- TechnoTypeClass::CheckFlag
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int SaveLoad_Prefix(int a1, int a2);  // 0x7162f0
+    int SaveLoad_Prefix_0(int a1, int a2, int a3, int a4, int a5);  // 0x716dc0
+    // === FUNCS-MOVE (END) ===
 };
 
 } // namespace gamemd

@@ -110,6 +110,12 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int ProcessGrowth(int a1, int a2, int a3);  // 0x59d510 -- Tiberium::ProcessGrowth
     int CalculateSpread(int a1, int a2, int a3, int a4, int a5, int a6, int a7);  // 0x59e740 -- Tiberium::CalculateSpread
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int LoadFromINI(int a1, int a2, int a3);  // 0x721a50
+    int SaveLoad_Prefix(int a1, int a2);  // 0x721e80
+    int SaveLoad_Prefix_0(int a1, int a2, int a3);  // 0x7220d0
+    // === FUNCS-MOVE (END) ===
 };
 
 } // namespace gamemd

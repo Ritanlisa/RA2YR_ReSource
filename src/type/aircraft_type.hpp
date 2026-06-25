@@ -53,6 +53,13 @@ public:
     int PowerDrainUpdate(int a1);  // 0x41cdb0 -- AircraftTypeClass::PowerDrainUpdate
     int GetAuxField();  // 0x41cfd0 -- AircraftTypeClass::GetAuxField
     // === SYMBOL-ANCHOR (END) ===
+    public:  // funcs-move
+    // === FUNCS-MOVE (BEGIN) ===
+    int LoadTypeData(int a1, int a2, int a3);  // 0x41cc20
+    int LoadFromINI(int a1, int a2);  // 0x41ce20
+    int SaveToINI();  // 0x41ce90
+    int GetGameplayValue();  // 0x712120
+    // === FUNCS-MOVE (END) ===
 };
 
 } // namespace gamemd
