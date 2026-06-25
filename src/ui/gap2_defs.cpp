@@ -83,9 +83,9 @@ namespace gamemd { int DropListClass::Close() { return 0; } }
 // 0x4C6B60
 namespace gamemd { void* SidebarClass::SetFlashEntry(int a1, int a2, int a3, void* a4) { return nullptr; } }
 // 0x4E12F0
-namespace gamemd { void* GadgetClass::Construct(int a1, int a2, int a3, int a4, int a5, int a6) { return nullptr; } }
+// moved to ui/gadget.cpp: GadgetClass::Construct
 // 0x4E1550
-namespace gamemd { int GadgetClass::ClearState(int a1) { return 0; } }
+// moved to ui/gadget.cpp: GadgetClass::ClearState
 // 0x4E1A60
 namespace gamemd { void* GadgetClass::QueryInterface(int a1) { return nullptr; } }
 // 0x5005B0
@@ -187,9 +187,9 @@ namespace gamemd { int CampaignScore::FindDialogTemplate() { return 0; } }
 // 0x60CF00
 namespace gamemd { void* Control::CreateControlDialog() { return nullptr; } }
 // 0x623560
-namespace gamemd { void GadgetClass::SetTooltip(void* a1) { } }
+// moved to ui/gadget.cpp: GadgetClass::SetTooltip
 // 0x623610
-namespace gamemd { void* DialogClass::CopyTemplateStruct(void* a1) { return nullptr; } }
+// moved to ui/gadget.cpp: DialogClass::CopyTemplateStruct
 // 0x623840
 namespace gamemd { int ListBox::Clear() { return 0; } }
 // 0x6258E0
@@ -295,9 +295,9 @@ namespace gamemd { int SidebarClass::InitButtons() { return 0; } }
 // 0x6D0A20
 namespace gamemd { int SidebarClass::DrawTabs(int a1) { return 0; } }
 // 0x723EA0
-namespace gamemd { int GadgetClass::Show() { return 0; } }
+// moved to ui/gadget.cpp: GadgetClass::Show
 // 0x723EB0
-namespace gamemd { int GadgetClass::Hide() { return 0; } }
+// moved to ui/gadget.cpp: GadgetClass::Hide
 // 0x723EC0
 namespace gamemd { int GadgetClass::ProcessMouseOver(int a1, void* a2, int a3) { return 0; } }
 // 0x724520
@@ -341,7 +341,7 @@ namespace gamemd { void* CampaignScore::LoadScreenAssets() { return nullptr; } }
 // 0x734250
 namespace gamemd { int SidebarClass::registerBuildingType() { return 0; } }
 // 0x77A700
-namespace gamemd { int GadgetClass::TrackState(int a1, int a2) { return 0; } }
+// moved to ui/gadget.cpp: GadgetClass::TrackState
 // 0x77DA50
 namespace gamemd { void* SidebarClass::FindProductionData() { return nullptr; } }
 // 0x7B8730

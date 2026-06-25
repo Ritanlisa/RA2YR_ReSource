@@ -61,19 +61,20 @@ public:
     bool Enabled = true; // custom (binary: Disabled @ +0x1E)
     uint32_t ID = 0;     // custom (binary: GadgetFlag Flags @ +0x20)
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
-    void* Construct(int a1, int a2, int a3, int a4, int a5, int a6);  // 0x4E12F0
-    int ClearState(int a1);  // 0x4E1550
+    void Construct(int x, int y, int w, int h, unsigned flags, bool isSticky);  // 0x4E12F0
+    bool ClearState(bool force);  // 0x4E1550
     void* QueryInterface(int a1);  // 0x4E1A60
     int InitControls();  // 0x557BE0
-    void SetTooltip(void* a1);  // 0x623560
-    int Show();  // 0x723EA0
-    int Hide();  // 0x723EB0
+    void SetTooltip(const wchar_t* tooltip);  // 0x623560
+    void Show();  // 0x723EA0
+    void Hide();  // 0x723EB0
     int ProcessMouseOver(int a1, void* a2, int a3);  // 0x723EC0
-    int TrackState(int a1, int a2);  // 0x77A700
+    char TrackState(int newState, int eventType);  // 0x77A700
     // --- gap2 auto-generated stub declarations (END) ---
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
     void* InitProperties();  // 0x600630 -- Gadget::InitProperties
+    int Dtor();  // 0x4E1390 -- GadgetClass::Dtor
     // === SYMBOL-ANCHOR (END) ===
 };
 
@@ -184,7 +185,7 @@ protected:
     bool visible = true;
     std::vector<GadgetClass*> gadgets;
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
-    void* CopyTemplateStruct(void* a1);  // 0x623610
+    void CopyTemplateStruct(const void* template_data, int template_size);  // 0x623610
     // --- gap2 auto-generated stub declarations (END) ---
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===

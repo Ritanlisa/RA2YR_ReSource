@@ -308,6 +308,84 @@ def _extract_decl_names(toks):
     return _declarator_names(toks, k, n)
 
 
+def _extract_param_names(tokens, brace_idx):
+    """Extract a function's PARAMETER names from its signature.
+
+    The parameter list is the first balanced `( ... )` before the body `{`
+    (`brace_idx`). A parameter's NAME is the LAST identifier in its declarator
+    (skipping the type and any default value after a depth-0 '='). Returns the
+    name list (best-effort: an unnamed / function-pointer parameter may yield a
+    stray type token, but that only ever ADDS a local name -- which can at most
+    SHADOW a same-named bare access, never fabricate an event).
+
+    Parameters ARE locals: a bare parameter access is not an observable member /
+    global side effect. Treating them as locals stops a parameter whose name
+    collides with a signals.json global/member (e.g. an IDA-promoted `ppv` that
+    signals.json records as a global) from being misresolved to a spurious
+    global READ/WRITE (FP#1 AbstractClass::QueryInterface)."""
+    limit = brace_idx if brace_idx is not None else len(tokens)
+    open_i = None
+    for k in range(limit):
+        if _is_op(tokens[k], "("):
+            open_i = k
+            break
+    if open_i is None:
+        return []
+    depth = 0
+    close_i = None
+    for k in range(open_i, len(tokens)):
+        t = tokens[k]
+        if _is_open(t):
+            depth += 1
+        elif _is_close(t):
+            depth -= 1
+            if depth == 0:
+                close_i = k
+                break
+    if close_i is None:
+        return []
+
+    def _last_name(seg):
+        cut = len(seg)
+        d = 0
+        for idx, t in enumerate(seg):
+            if _is_open(t):
+                d += 1
+            elif _is_close(t):
+                if d > 0:
+                    d -= 1
+            elif d == 0 and _is_op(t, "="):
+                cut = idx
+                break
+        for t in reversed(seg[:cut]):
+            if t.kind == KIND_IDENT and t.value not in KEYWORDS:
+                return t.value
+        return None
+
+    names = []
+    seg = []
+    d = 0
+    for k in range(open_i + 1, close_i):
+        t = tokens[k]
+        if _is_open(t):
+            d += 1
+            seg.append(t)
+        elif _is_close(t):
+            d -= 1
+            seg.append(t)
+        elif d == 0 and _is_op(t, ","):
+            nm = _last_name(seg)
+            if nm:
+                names.append(nm)
+            seg = []
+        else:
+            seg.append(t)
+    nm = _last_name(seg)
+    if nm:
+        names.append(nm)
+    return names
+
+
 # ============================================================
 # Depth-0 text splitter (re-tokenises a fragment; robust on quotes/parens)
 # ============================================================
@@ -931,7 +1009,20 @@ def build_cpp_cfg(cpp_function_body_text):
     if brace_idx is not None:
         parser.i = brace_idx + 1
     stmts = parser.parse_statements()
-    return _CppBuilder().build(stmts)
+    cfg = _CppBuilder().build(stmts)
+
+    # Seed the entry block with the function's PARAMETER names as `decl` markers
+    # so T14 treats a parameter access as a LOCAL (not an observable member/global
+    # event). The entry block reaches every block, so these locals are visible
+    # everywhere -- exactly the scope of a parameter. Without this, a parameter
+    # whose name collides with a signals.json global/member is misresolved to a
+    # spurious global/member READ/WRITE (FP#1 QueryInterface's `ppv`).
+    params = _extract_param_names(tokens, brace_idx)
+    if params:
+        entry = cfg.get_block(cfg.entry_id)
+        if entry is not None:
+            entry.ordered_events[:0] = ["decl " + p for p in params]
+    return cfg
 
 
 # ============================================================

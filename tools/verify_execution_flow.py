@@ -426,6 +426,191 @@ def clean_line(line):
     return s
 
 
+def _logical_signature(lines, start_idx, max_join=16):
+    """Return the LOGICAL (possibly multi-line) function signature beginning at
+    `lines[start_idx]`, joined onto one line.
+
+    A C++ function signature can wrap across several lines:
+
+        bool DSurface::FillRectWithFlags(
+            const RectangleStruct& clip_rect,
+            const ColorStruct& color,
+            int opacity_percent)
+        {
+
+    The per-line finder regexes use `\\([^)]*\\)`, which can never span a
+    newline, so such a wrapped signature is invisible (FillRectWithFlags ->
+    'NOT FOUND'). This joins `lines[start_idx]` onto the following lines until
+    the FIRST '(' on the start line is balanced by its matching ')', returning
+    the single joined line (so the same regexes match it). A line whose parens
+    already balance (the single-line case) or that has no '(' (a comment / plain
+    line) is returned unchanged — so the common single-line path is unaffected.
+    Parens are counted on `clean_line` output so a trailing `// comment (...)`
+    cannot skew the balance."""
+    first = lines[start_idx].rstrip("\n")
+    depth = clean_line(first).count("(") - clean_line(first).count(")")
+    if depth <= 0:
+        return first
+    text = first
+    k = start_idx
+    while depth > 0 and (k - start_idx) < max_join and k + 1 < len(lines):
+        k += 1
+        nxt = lines[k].rstrip("\n")
+        text += " " + nxt
+        c = clean_line(nxt)
+        depth += c.count("(") - c.count(")")
+    return text
+
+
+def _signature_class_name(sig):
+    """Extract the enclosing class name from a (logical) function signature, or
+    None for a free function. Handles BOTH the normal `ReturnType Class::Method(`
+    form AND a constructor / destructor `Class::Class(` / `Class::~Class(` that
+    has NO return type (the normal regex requires a return-type token + space, so
+    it never matches a ctor/dtor — the cause of the MissionClass ctor finder
+    miss)."""
+    m = re.match(
+        r'^\s*(?:inline\s+)?[\w\s*&<>:\-]+\s+'
+        r'(?:([\w:]+)::)?(~?\w+)\s*\(', sig)
+    cls = m.group(1) if m else None
+    if cls and "::" in cls:
+        cls = cls.split("::")[-1]
+    if cls:
+        return cls
+    cm = re.match(r'^\s*([A-Za-z_]\w*)\s*::\s*~?([A-Za-z_]\w*)\s*\(', sig)
+    if cm and cm.group(1) == cm.group(2):
+        return cm.group(1)
+    return None
+
+
+# Constructor/destructor method-name aliases (signals.json / IDA name these
+# variously; a ctor def in C++ is always `Class::Class`).
+_CTOR_METHOD_ALIASES = frozenset({"Constructor", "Destructor", "Construct", "Destruct"})
+
+
+def _ctor_def_re(class_name, method_name):
+    """A compiled regex matching a constructor/destructor DEFINITION line
+    `Class::Class(` / `Class::~Class(` (NO return type), or None when the
+    requested method is not a ctor/dtor of `class_name`. A ctor/dtor def lacks a
+    return-type token, so the normal `def_pattern` (which requires one) never
+    matches it; this fills that gap."""
+    if not class_name:
+        return None
+    if method_name in (class_name, "~" + class_name) or method_name in _CTOR_METHOD_ALIASES:
+        return re.compile(rf'^\s*{re.escape(class_name)}\s*::\s*~?{re.escape(class_name)}\s*\(')
+    return None
+
+
+# Any constructor/destructor definition: `Class::Class(` or `Class::~Class(`
+# (group(1)==group(2)). Used by the by-address finder to recognise a ctor def
+# when scanning for the function that ENCLOSES (or follows) an address comment.
+_ANY_CTOR_DEF_RE = re.compile(r'^\s*(\w+)\s*::\s*~?(\w+)\s*\(')
+
+
+def _is_ctor_def(sig):
+    """True if `sig` is a constructor/destructor definition `Class::Class(...)`."""
+    m = _ANY_CTOR_DEF_RE.match(sig)
+    return bool(m and m.group(1) == m.group(2))
+
+
+def _match_brace(text, open_off):
+    """Index of the '}' matching the '{' at `text[open_off]`, or None."""
+    depth = 0
+    n = len(text)
+    j = open_off
+    while j < n:
+        c = text[j]
+        if c == "{":
+            depth += 1
+        elif c == "}":
+            depth -= 1
+            if depth == 0:
+                return j
+        j += 1
+    return None
+
+
+def _skip_init_list(text, i):
+    """Skip a constructor initializer list in `text` starting just past the ':'
+    at index `i`. The init list is comma-separated `member(...)` / `member{...}`
+    initializers; return the index of the function BODY '{' (the first '{' that
+    is not a member-initializer brace), or None."""
+    n = len(text)
+    while i < n:
+        ch = text[i]
+        if ch.isspace() or ch == ",":
+            i += 1
+            continue
+        if ch == "{":
+            # a '{' where a member NAME was expected -> the function body opens
+            return i
+        # read a member-initializer: a name then a balanced (...) or {...}
+        j = i
+        while j < n and text[j] not in "({,":
+            j += 1
+        if j >= n:
+            return None
+        if text[j] == ",":
+            i = j + 1
+            continue
+        opench = text[j]
+        closech = ")" if opench == "(" else "}"
+        depth = 0
+        k = j
+        while k < n:
+            if text[k] == opench:
+                depth += 1
+            elif text[k] == closech:
+                depth -= 1
+                if depth == 0:
+                    k += 1
+                    break
+            k += 1
+        i = k
+    return None
+
+
+def _find_body_open(text):
+    """Index of the '{' that opens the FUNCTION BODY in `text` (a function
+    definition with comments already stripped), or None.
+
+    Correctly skips the parameter list AND a constructor initializer list whose
+    members use brace-init (`member{}`). A naive brace counter opens the body at
+    the first '{' it sees, so for `MissionClass::MissionClass() : ... ,
+    missionTimer{} { body }` it wrongly opens (and immediately closes) at
+    `missionTimer{}`, truncating the body to the init list. This walks the
+    signature explicitly: skip the first balanced '(...)' (params), then skip
+    qualifiers and any ':' initializer list, returning the body '{'."""
+    n = len(text)
+    i = text.find("(")
+    if i < 0:
+        b = text.find("{")
+        return b if b >= 0 else None
+    depth = 0
+    while i < n:
+        if text[i] == "(":
+            depth += 1
+        elif text[i] == ")":
+            depth -= 1
+            if depth == 0:
+                i += 1
+                break
+        i += 1
+    while i < n:
+        ch = text[i]
+        if ch.isspace():
+            i += 1
+        elif ch == "{":
+            return i
+        elif ch == ":" and (i + 1 >= n or text[i + 1] != ":"):
+            return _skip_init_list(text, i + 1)
+        elif ch == "}":
+            return None
+        else:
+            i += 1
+    return None
+
+
 def _is_write(text, end):
     """True if the access ending at `text[end]` is the target of `= ` (single)."""
     i, n = end, len(text)
@@ -683,23 +868,22 @@ def _order_hits(hits):
 # ============================================================
 
 def _extract_function_body(lines, start_idx, cppf_relative):
-    def_match = re.match(
-        r'^\s*(?:inline\s+)?[\w\s*&<>:\-]+\s+'
-        r'(?:([\w:]+)::)?(~?\w+)\s*\([^)]*\)',
-        lines[start_idx])
-    class_name = def_match.group(1) if def_match else None
-    if class_name and "::" in class_name:
-        class_name = class_name.split("::")[-1]
-    brace_count = 0
-    found_open = False
+    # Class name is read from the LOGICAL signature (joined across lines for a
+    # wrapped signature) and also recognises a ctor/dtor that has no return type.
+    class_name = _signature_class_name(_logical_signature(lines, start_idx))
+    # Locate the body span over a comment-stripped window (newlines preserved),
+    # using an initializer-list-aware body-brace finder so a ctor's brace-init
+    # member (`member{}`) is not mistaken for the body opening.
+    window = lines[start_idx:min(start_idx + 1200, len(lines))]
+    cleaned = "".join(clean_line(l) for l in window)
     end_line = start_idx
-    for k in range(start_idx, min(start_idx + 1200, len(lines))):
-        brace_count += lines[k].count("{") - lines[k].count("}")
-        if "{" in lines[k]:
-            found_open = True
-        if found_open and brace_count <= 0:
-            end_line = k
-            break
+    open_off = _find_body_open(cleaned)
+    if open_off is not None:
+        close_off = _match_brace(cleaned, open_off)
+        if close_off is not None:
+            end_line = start_idx + cleaned.count("\n", 0, close_off + 1)
+        else:
+            end_line = start_idx + len(window) - 1
     return {
         "lines": lines[start_idx:end_line + 1],
         "start_line": start_idx,
@@ -725,15 +909,29 @@ def find_cpp_function(func_name):
         rf'^\s*(?:inline\s+)?[\w\s*&<>:\-]+\s+'
         rf'{class_prefix}{re.escape(method_name)}'
         r'\s*\([^)]*\)\s*(?:const\s*)?(?:\{|$)')
+    # A constructor/destructor def has NO return type, so def_pattern can never
+    # match it; try a dedicated ctor/dtor pattern when the requested method names
+    # a ctor/dtor (FP#10).
+    ctor_re = _ctor_def_re(class_name, method_name)
+    # Cheap per-line pre-filter so a logical (possibly multi-line) signature is
+    # only assembled for lines that can plausibly START the target definition.
+    hint = method_name[1:] if method_name.startswith("~") else method_name
+    ctor_hint = class_name if ctor_re is not None else None
     for cppf in _cpp_files():
         try:
             with open(cppf, "r", encoding="utf-8", errors="replace") as f:
                 lines = f.readlines()
         except OSError:
             continue
+        rel = str(cppf.relative_to(PROJECT_ROOT))
         for i, line in enumerate(lines):
-            if def_pattern.search(line):
-                return _extract_function_body(lines, i, str(cppf.relative_to(PROJECT_ROOT)))
+            if hint not in line and (ctor_hint is None or ctor_hint not in line):
+                continue
+            # Match the LOGICAL signature (joined across lines) so a wrapped
+            # multi-line signature is matched, not just single-line (FP#4).
+            sig = _logical_signature(lines, i)
+            if def_pattern.search(sig) or (ctor_re is not None and ctor_re.search(sig)):
+                return _extract_function_body(lines, i, rel)
     return None
 
 
@@ -742,18 +940,57 @@ def find_cpp_function_by_addr(ida_addr):
     def_re = re.compile(
         r'^\s*(?:inline\s+)?[\w\s*&<>:\-]+\s+'
         r'(?:([\w:]+)::)?(~?\w+)\s*\([^)]*\)\s*(?:const\s*)?(?:\{|$)')
+
+    def _is_def_line(lns, j):
+        # An initializer-list element (`: m(..)` / `, m(..)`) can spuriously match
+        # def_re (its leading ':' is swallowed as a "return type"), and the body
+        # `{` / brace-init lines are not defs -- exclude those, then match the
+        # LOGICAL signature so a multi-line def is recognised, plus ctors/dtors
+        # (which have no return type).
+        head = lns[j].lstrip()[:1]
+        if head in (":", ",", "{", "}"):
+            return False
+        sig = _logical_signature(lns, j)
+        return bool(def_re.match(sig)) or _is_ctor_def(sig)
+
     for cppf in _cpp_files():
         try:
             with open(cppf, "r", encoding="utf-8", errors="replace") as f:
                 lines = f.readlines()
         except OSError:
             continue
+        rel = str(cppf.relative_to(PROJECT_ROOT))
+        n = len(lines)
         for i, line in enumerate(lines):
             stripped = line.strip()
-            if stripped.startswith("//") and addr_pattern.search(stripped):
-                for j in range(i + 1, min(i + 12, len(lines))):
-                    if def_re.match(lines[j]):
-                        return _extract_function_body(lines, j, str(cppf.relative_to(PROJECT_ROOT)))
+            if not (stripped.startswith("//") and addr_pattern.search(stripped)):
+                continue
+            # Decide whether the `// 0xADDR` comment is BURIED inside a function
+            # body or is a standard pre-definition annotation, by checking whether
+            # the NEAREST PRECEDING definition's body range ENCLOSES this comment
+            # line. (A brace-depth heuristic is wrong: namespace/class braces
+            # inflate the depth, so a top-level annotation inside `namespace X {}`
+            # would be misread as buried. FP#10's ctor places `// IDA 0x5B2DA0`
+            # inside its own body -> the enclosing-ctor body contains the comment
+            # -> resolve the ctor, NOT the following queueMission definition.)
+            enclosing = None
+            for k in range(i - 1, max(i - 600, -1), -1):
+                if not _is_def_line(lines, k):
+                    continue
+                body = _extract_function_body(lines, k, rel)
+                last = body["start_line"] + len(body["lines"]) - 1
+                if body["start_line"] <= i <= last:
+                    enclosing = body
+                break  # only the nearest preceding definition can enclose it
+            if enclosing is not None:
+                return enclosing
+            # Standard form: the comment precedes the annotated definition. Scan
+            # forward a few lines for the next definition (skipping further
+            # comment lines and REVERSE()/macro annotation lines that sit between
+            # the address comment and the actual definition).
+            for j in range(i + 1, min(i + 12, n)):
+                if _is_def_line(lines, j):
+                    return _extract_function_body(lines, j, rel)
     return None
 
 
@@ -1285,13 +1522,23 @@ def verify_single_function(ida_addr, func_name, display_name, M,
     ida_cfg = _build_ida_cfg_events(efv, ida_decompiled, this_type, M)
 
     # ---- locate the C++ implementation ----
+    # Prioritise the EXACT address-annotation match (FP#10): the C++ definition
+    # carrying the `// 0xADDR` annotation is the authoritative mapping for this
+    # IDA address. A NAME-based match can resolve to a DIFFERENT function when
+    # signals.json mislabels the symbol -- e.g. 0x5B2DA0 is named
+    # "RadioClass::Constructor" but is actually MissionClass's constructor (its
+    # body writes &MissionClass::vftable); name resolution finds radio.cpp's
+    # RadioClass ctor, while the `// IDA 0x5B2DA0` annotation lives inside
+    # mission.cpp's MissionClass ctor. Trying the address annotation first picks
+    # the right function; name-based lookup remains the fallback for the many
+    # functions that carry no cpp address annotation.
     body = None
-    if func_name:
+    if ida_addr:
+        body = find_cpp_function_by_addr(ida_addr)
+    if not body and func_name:
         body = find_cpp_function(func_name)
     if not body and display_name and display_name != func_name:
         body = find_cpp_function(display_name)
-    if not body and ida_addr:
-        body = find_cpp_function_by_addr(ida_addr)
     if not body:
         if verbose:
             print("  C++ source : NOT FOUND", file=sys.stderr)

@@ -565,10 +565,10 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~DialogControl() = default;
 
-    virtual void Hide() {} // 0x4E1450
-    virtual void Show() {} // 0x4E1460
-    virtual void IsHidden() {} // 0x4E1470
-    virtual void Constructor() {} // 0x623340
+    virtual void Hide();  // 0x4E1450
+    virtual void Show();  // 0x4E1460
+    virtual bool IsHidden();  // 0x4E1470
+    virtual void Constructor();  // 0x623340
 
     uint8_t DialogControl_field_0x04[4];
     uint8_t DialogControl_field_0x08[4];
@@ -581,8 +581,8 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~DialogQueue() = default;
 
-    virtual void PushEntry() {} // 0x5D4E70
-    virtual void RemoveEntry() {} // 0x5D4ED0
+    virtual void PushEntry(int entryType, int param);  // 0x5D4E70
+    virtual int RemoveEntry();  // 0x5D4ED0
 
     uint8_t DialogQueue_field_0x04[4];
 };
@@ -719,8 +719,8 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~GadgetGrid() = default;
 
-    virtual void InsertItem() {} // 0x4134A0
-    virtual void RemoveItem() {} // 0x4135D0
+    virtual void InsertItem(int index, void* item);  // 0x4134A0
+    virtual void RemoveItem(int index);  // 0x4135D0
 
     uint8_t GadgetGrid_field_0x04[4];
 };

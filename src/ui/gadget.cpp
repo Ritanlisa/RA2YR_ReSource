@@ -1,4 +1,9 @@
 #include "ui/gadget.hpp"
+#ifdef _WIN32
+#include <windows.h>
+#undef CreateDialog
+#endif
+#include "ui/ui_ext.hpp"
 #include "render/text_render.hpp"
 #include "render/shp_render.hpp"
 #include "core/logging.hpp"
@@ -222,9 +227,9 @@ void DialogClass::DrawBackground(DSurface* surface)
 
 // IDA 0x4E12F0: GadgetClass::Construct — initialize gadget fields
 // params: this, x, y, w, h, flags, isSticky
-static void GadgetClass_Construct(void* self, int x, int y, int w, int h, unsigned flags, bool isSticky)
+void GadgetClass::Construct(int x, int y, int w, int h, unsigned flags, bool isSticky)
 {
-    uint8_t* p = (uint8_t*)(self);
+    uint8_t* p = (uint8_t*)(this);
     // Set vtable (IDA: *this = &GadgetClass::vftable) — skip for modern C++
     *(int*)(p + 0x0C) = x;
     *(int*)(p + 0x10) = y;
@@ -241,7 +246,7 @@ static void GadgetClass_Construct(void* self, int x, int y, int w, int h, unsign
 }
 
 // IDA 0x4E1390: GadgetClass::Dtor — destructor, clears global gadget pointers
-static int GadgetClass_Dtor(void* self)
+int GadgetClass::Dtor()
 {
     // IDA: *this = &GadgetClass::vftable (restore vtable)
     // Clears dword_8B3E90, dword_8B3E88, dword_8B3E8C if they point to this
@@ -252,26 +257,26 @@ static int GadgetClass_Dtor(void* self)
     static void* g_prevGadget = nullptr;      // dword_8B3E88
     static void* g_otherGadget = nullptr;     // dword_8B3E8C
 
-    if (self == g_focusedGadget) {
-        uint8_t* p = (uint8_t*)(self);
+    if ((void*)this == g_focusedGadget) {
+        uint8_t* p = (uint8_t*)(this);
         unsigned flags = *(unsigned*)(p + 0x20);
         flags &= ~1u;
         *(unsigned*)(p + 0x20) = flags;
         g_focusedGadget = nullptr;
     }
-    if (self == g_prevGadget)
+    if ((void*)this == g_prevGadget)
         g_prevGadget = nullptr;
-    if (self == g_otherGadget)
+    if ((void*)this == g_otherGadget)
         g_otherGadget = nullptr;
-    if (self == g_focusedGadget)
+    if ((void*)this == g_focusedGadget)
         g_focusedGadget = nullptr;
     return 0; // LinkClass::Destruct equivalent
 }
 
 // IDA 0x4E1550: GadgetClass::ClearState — clear sticky/selected state
-static bool GadgetClass_ClearState(void* self, bool force)
+bool GadgetClass::ClearState(bool force)
 {
-    uint8_t* p = (uint8_t*)(self);
+    uint8_t* p = (uint8_t*)(this);
     if (!force && !p[0x1C]) // if not force and not NeedsRedraw
         return false;
     p[0x1C] = 0; // clear NeedsRedraw
@@ -279,26 +284,26 @@ static bool GadgetClass_ClearState(void* self, bool force)
 }
 
 // IDA 0x723EA0: GadgetClass::Show — make gadget visible
-static void GadgetClass_Show(void* self)
+void GadgetClass::Show()
 {
-    uint8_t* p = (uint8_t*)(self);
+    uint8_t* p = (uint8_t*)(this);
     // IDA: vtable call to vfunc at +72 (update/redraw), set byte at +45 (=0x2D) to 1
     p[0x2D] = 1; // Visible flag at offset 0x2D
     // vtable[72/4=18]() — redraw callback, skipped for modern C++
 }
 
 // IDA 0x723EB0: GadgetClass::Hide — hide gadget
-static void GadgetClass_Hide(void* self)
+void GadgetClass::Hide()
 {
-    uint8_t* p = (uint8_t*)(self);
+    uint8_t* p = (uint8_t*)(this);
     p[0x2D] = 0; // Visible flag = 0
     // vtable[72/4=18]() — redraw callback, skipped
 }
 
 // IDA 0x623560: GadgetClass::SetTooltip — set tooltip string (wchar_t*)
-static void GadgetClass_SetTooltip(void* self, const wchar_t* tooltip)
+void GadgetClass::SetTooltip(const wchar_t* tooltip)
 {
-    uint8_t* p = (uint8_t*)(self);
+    uint8_t* p = (uint8_t*)(this);
     wchar_t** tooltipPtr = (wchar_t**)(p + 0x28); // offset +10 dwords = 0x28
 
     // Free existing tooltip
@@ -319,9 +324,9 @@ static void GadgetClass_SetTooltip(void* self, const wchar_t* tooltip)
 // params: self, newState, eventType
 // +0x10=current state (dword at offset 16), +0x14=event count (dword at offset 20),
 // +0x08=needs redraw byte
-static char GadgetClass_TrackState(void* self, int newState, int eventType)
+char GadgetClass::TrackState(int newState, int eventType)
 {
-    uint8_t* p = (uint8_t*)(self);
+    uint8_t* p = (uint8_t*)(this);
     int curState = *(int*)(p + 0x10);
 
     if (newState == curState) {
@@ -378,9 +383,9 @@ static void SimpleDialogControl_Construct(void* self)
 // ============================================================================
 
 // IDA 0x623340: DialogControl::Constructor — zero-init 0x200 bytes, set defaults
-static void DialogControl_Construct(void* self)
+void DialogControl::Constructor()
 {
-    uint8_t* p = (uint8_t*)(self);
+    uint8_t* p = (uint8_t*)(this);
     memset(p, 0, 0x200);
 
     *(int*)(p + 0x68) = 11;     // +26 dwords = 0x68: default value 11
@@ -401,25 +406,25 @@ static void DialogControl_Construct(void* self)
 }
 
 // IDA 0x4E1450: DialogControl::Hide
-static void DialogControl_Hide(void* self)
+void DialogControl::Hide()
 {
-    uint8_t* p = (uint8_t*)(self);
+    uint8_t* p = (uint8_t*)(this);
     p[0x1E] = 0; // byte at +30 = 0 (visible flag off)
     p[0x1C] = 1; // byte at +28 = 1 (needs redraw)
 }
 
 // IDA 0x4E1460: DialogControl::Show
-static void DialogControl_Show(void* self)
+void DialogControl::Show()
 {
-    uint8_t* p = (uint8_t*)(self);
+    uint8_t* p = (uint8_t*)(this);
     p[0x1E] = 1; // byte at +30 = 1 (visible flag on)
     p[0x1C] = 1; // byte at +28 = 1 (needs redraw)
 }
 
 // IDA 0x4E1470: DialogControl::IsHidden
-static bool DialogControl_IsHidden(void* self)
+bool DialogControl::IsHidden()
 {
-    uint8_t* p = (uint8_t*)(self);
+    uint8_t* p = (uint8_t*)(this);
     return p[0x1E] == 0; // byte at +30 == 0
 }
 
@@ -429,10 +434,10 @@ static bool DialogControl_IsHidden(void* self)
 // ============================================================================
 
 // IDA 0x4134A0: GadgetGrid::InsertItem
-static void GadgetGrid_InsertItem(void* self, int index, void* item)
+void GadgetGrid::InsertItem(int index, void* item)
 {
     // IDA: array insert at position index
-    uint8_t* p = (uint8_t*)(self);
+    uint8_t* p = (uint8_t*)(this);
     int count = *(int*)(p + 0x04); // item count at +4
     void** items = (void**)(*(int*)(p + 0x08)); // array ptr at +8
 
@@ -445,9 +450,9 @@ static void GadgetGrid_InsertItem(void* self, int index, void* item)
 }
 
 // IDA 0x4135D0: GadgetGrid::RemoveItem
-static void GadgetGrid_RemoveItem(void* self, int index)
+void GadgetGrid::RemoveItem(int index)
 {
-    uint8_t* p = (uint8_t*)(self);
+    uint8_t* p = (uint8_t*)(this);
     int count = *(int*)(p + 0x04);
     if (index < 0 || index >= count) return;
 
@@ -468,9 +473,9 @@ static void GadgetGrid_RemoveItem(void* self, int index)
 // ============================================================================
 
 // IDA 0x5D4E70: DialogQueue::PushEntry — add entry to end of queue
-static void DialogQueue_PushEntry(void* self, int entryType, int param)
+void DialogQueue::PushEntry(int entryType, int param)
 {
-    uint8_t* p = (uint8_t*)(self);
+    uint8_t* p = (uint8_t*)(this);
     int count = *(int*)(p + 0x00);
     if (count >= 16) return; // max 16 entries
 
@@ -481,9 +486,9 @@ static void DialogQueue_PushEntry(void* self, int entryType, int param)
 
 // IDA 0x5D4ED0: DialogQueue::RemoveEntry — remove entry from front of queue
 // Returns: 0 = queue empty, 1 = removed entry
-static int DialogQueue_RemoveEntry(void* self)
+int DialogQueue::RemoveEntry()
 {
-    uint8_t* p = (uint8_t*)(self);
+    uint8_t* p = (uint8_t*)(this);
     int count = *(int*)(p + 0x00);
     if (count <= 0) return 0;
 
@@ -508,9 +513,9 @@ bool DialogClass_GetFlag(void* self)
 
 // IDA 0x623610: DialogClass::CopyTemplateStruct — copy DLGTEMPLATE into internal buffer
 // Copies dialog template data to a local buffer at this+72
-void DialogClass_CopyTemplateStruct(void* self, const void* template_data, int template_size)
+void DialogClass::CopyTemplateStruct(const void* template_data, int template_size)
 {
-    uint8_t* p = (uint8_t*)(self);
+    uint8_t* p = (uint8_t*)(this);
     // IDA: allocates buffer, copies template data to *(this+72)
     // PENDING: full decompile
     (void)template_data;
