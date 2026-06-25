@@ -39,17 +39,11 @@ UnitClass::UnitClass() noexcept
 // ============================================================
 
 // 0x4151e0
+// Merged: Westwood combined harvest + unload into a single 5-case state machine.
+// Case 3 handles unloading logic (pop cargo, apply overlay, handle team members).
+// No separate Mission_Unload override exists in the binary (vtable slot = Return450J).
 int UnitClass::Mission_Harvest()
 { return 0; }
-
-int UnitClass::Mission_Unload()
-{
-    if (!HasFollowerCar)
-        return 0;
-
-    Unloading = true;
-    return 5;
-}
 
 // IDA: 0x73D450 (ProcessResourceHarvesting, 477B)
 // 0x73d450

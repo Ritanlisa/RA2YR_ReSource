@@ -161,17 +161,8 @@ int AircraftClass::Mission_Return()
     return 10;
 }
 
-// AircraftClass::Mission_Unload -- aircraft unload override (no standalone IDA function).
-// NOTE: previous annotation pointed at UnitClass::Mission_Harvest (a different function).
-int AircraftClass::Mission_Unload()
-{
-    // Paradrop troops / unload cargo
-    if (!HasPassengers)
-        return 0;
-
-    HasPassengers = false;
-    return 5;
-}
+// REMOVED: AircraftClass::Mission_Unload — does not exist in binary.
+// Aircraft unload is handled via Mission_Harvest (0x4151e0, case 3) or MissionDispatch (0x4190B0).
 
 // AircraftClass::Mission_Hunt -- aircraft hunt mission override.
 // No standalone IDA function (aircraft missions are dispatched via MissionDispatch @ 0x4190B0).

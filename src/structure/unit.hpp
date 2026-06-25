@@ -41,8 +41,8 @@ public:
     virtual void DrawAsSHP(Point2D* coords, RectangleStruct* bounding_rect, uint32_t dwUnk7, uint32_t dwUnk8);
 
     // === Phase 3: Harvest/Unload ===
+    // 0x4151e0 — merged harvest+unload state machine (case 3 = unload logic)
     int Mission_Harvest() override;
-    int Mission_Unload() override;
     int ProcessResourceHarvesting();  // 0x73D450
     int updateHarvesting();  // 0x4C2C10
     int UnloadPassengers();  // 0x6B4BE0

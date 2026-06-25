@@ -74,7 +74,6 @@ public:
     int Mission_Attack() override;
     // wrapper: delegates to AircraftClass::Mission_Attack at 0x417FE0
     int Mission_Return() override;
-    int Mission_Unload() override;
     // wrapper: delegates to UnitClass::Mission_Harvest at 0x4151E0
     int Mission_Hunt() override;
     // wrapper: delegates to UnitClass::Mission_Harvest at 0x4151E0
