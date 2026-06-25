@@ -27,7 +27,7 @@ public:
     virtual void ExecuteAction(TechnoClass* obj, bool clear);
     // 0x65AD90 -- Linear search for linked object index
     virtual int FindLinkIndex(TechnoClass* obj);  // 0x65AD90
-    virtual void PowerDrainUpdate();
+    virtual int PowerDrainUpdate(int a2);
     virtual void ProcessCmd();
     // 0x65AB80 -- Load radio link state from stream
     virtual HRESULT __stdcall LoadState(IStream* stream);  // 0x65AB80

@@ -378,9 +378,10 @@ int AircraftClass::CheckReloadTimer()
 // Phase 3: Per-Frame & AI
 // ============================================================
 
-void AircraftClass::PowerDrainUpdate()
+int AircraftClass::PowerDrainUpdate(int a2)
 {
-    // Per-frame power for aircraft
+    // Per-frame power for aircraft (vt13). a2 is the COM-stub context, unused.
+    return 0;
 }
 
 // IDA: 0x41B660 (HandleTargetDestroyed, 56B)

@@ -613,15 +613,18 @@ bool BuildingClass::CheckMissionAttack() { return missionStatus == 1; }
 // Section 5: Power
 // ============================================================
 
-// IDA 0x454260: per-frame power drain accounting
+// IDA 0x454260: per-frame power drain accounting (vt13, shares the slot with
+// RadioClass::PowerDrainUpdate). a2 is the COM-stub context, unused by the
+// building-specific drain accounting.
 // 0x454260
-void BuildingClass::PowerDrainUpdate()
+int BuildingClass::PowerDrainUpdate(int a2)
 {
-    if (!Type || !HasPower) return;
+    if (!Type || !HasPower) return 0;
     if (Type->PowerDrain > 0)
         GetOwnerHouse()->powerDrain -= Type->PowerDrain;
     if (HasExtraPowerDrain)
         GetOwnerHouse()->powerDrain -= 100;
+    return 0;
 }
 
 // GOLDEN: 0x44E7B0 — BuildingClass::GetPowerOutput.  Faithful 1:1 with IDA.
@@ -677,7 +680,7 @@ int BuildingClass::GetPowerDrain()
 }
 
 void BuildingClass::PowerUpdate() {}
-int BuildingClass::UpdatePowerDrain() { PowerDrainUpdate(); return 0; }
+int BuildingClass::UpdatePowerDrain() { PowerDrainUpdate(0); return 0; }
 
 // IDA 0x4525f0: check if powered on
 // 0x4525f0

@@ -155,24 +155,27 @@ bool RadioClass::hasFreeLink() const
 }
 
 // ============================================================
-// PowerDrainUpdate (IDA: 0x65ab10, vt13)
-// IDA: Calls AbstractClass::COMStub_13, then Power::TimerProcess on link count,
-// then iterates each link calling vtable[16] and vtable[44], passing results
-// to Power::TimerProcess. Called from House::PowerBeginUpdate @ 0x70C270.
+// PowerDrainUpdate (IDA: 0x65ab10, vt13)  ->  int __thiscall _vt13(this, int a2)
+// IDA: Calls AbstractClass::COMStub_13(this, a2), then Power::TimerProcess on the
+// link count (radioLinks.Capacity), then iterates each non-null link calling the
+// COM-interface vtable[4] (on link+4) and the primary vtable[11], passing both
+// results to Power::TimerProcess. Returns the (re-read) link Capacity.
+// Called from House::PowerBeginUpdate @ 0x70C270.
 // ============================================================
-void RadioClass::PowerDrainUpdate()
+int RadioClass::PowerDrainUpdate(int a2)
 {
-    // IDA 0x65ab10 (_vt13): COMStub_13(this,a2) + Power::TimerProcess per link.
-    // COMStub_13/Power/the link vtable slots are unavailable here; the link
-    // iteration below is the faithful, implementable part.
-    int linkCount = radioLinks.Capacity;
-    for (int i = 0; i < linkCount; ++i)
+    // IDA 0x65ab10 (_vt13): COMStub_13(this,a2); then Power::TimerProcess(Capacity)
+    // and, per non-null link, Power::TimerProcess of link COM vtable[4]/primary
+    // vtable[11]; returns the (re-read) Capacity. Power::TimerProcess (0x4A1D50)
+    // and the link vtable slots are not yet callable here -> deferred.
+    COMStub_13(a2);                                  // IDA 0x65ab1a
+    for (int i = 0; i < radioLinks.Capacity; ++i)    // *(this+58) re-read each iter
     {
-        TechnoClass* link = radioLinks[i];
+        TechnoClass* link = radioLinks[i];           // *(this+57)[i]
         if (!link)
             continue;
-        // IDA: Power::TimerProcess of link COM vtable[4] + primary vtable[11].
     }
+    return radioLinks.Capacity;                      // *(this+58)
 }
 
 // ============================================================

@@ -110,7 +110,7 @@ public:
     int CheckReloadTimer();  // 0x41C020
 
     // === Phase 3: Per-Frame & AI ===
-    void PowerDrainUpdate() override;  // 0x41B610
+    int PowerDrainUpdate(int a2) override;  // 0x41B610
     virtual int HandleTargetDestroyed();  // 0x41B660
     int ProcessMissionTimeout();  // 0x414A80
     int GetMissionTimer();  // 0x41A5C0

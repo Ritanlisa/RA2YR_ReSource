@@ -181,7 +181,7 @@ public:
     bool CheckMissionAttack();  // 0x458E00
 
     // Power system
-    void PowerDrainUpdate();  // 0x454260
+    int PowerDrainUpdate(int a2);  // 0x454260
     int GetPowerOutput();  // 0x44E7B0
     int GetPowerDrain();  // 0x44E880
     void PowerUpdate();  // 0x4FF700

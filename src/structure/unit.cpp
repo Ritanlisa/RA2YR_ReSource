@@ -359,9 +359,11 @@ int UnitClass::SaveState()
 
 // IDA: 0x744640 (PowerDrainUpdate, 159B)
 // 0x744640
-void UnitClass::PowerDrainUpdate()
+int UnitClass::PowerDrainUpdate(int a2)
 {
-    // Per-frame power drain for units
+    // Per-frame power drain for units (vt13). Faithful per-class stub pending
+    // full IDA translation; a2 is the COM-stub context, unused here.
+    return 0;
 }
 
 // IDA: 0x746810 (PerFrameUpdate, 167B)

@@ -86,7 +86,7 @@ public:
     int CheckAndApplyBomb();  // 0x521DD0
 
     // === Phase 3: Per-Frame & AI ===
-    void PowerDrainUpdate() override;  // 0x521C90
+    int PowerDrainUpdate(int a2) override;  // 0x521C90
     virtual int PerFrameUpdate();  // 0x517CC0
     virtual int HandleTargetDestroyed();  // 0x51AA10
     int ProcessUpdate();  // 0x51F250

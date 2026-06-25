@@ -87,7 +87,7 @@ public:
     virtual int SaveState();  // 0x6B4F00
 
     // === Phase 3: Per-Frame & AI ===
-    void PowerDrainUpdate() override;  // 0x744640
+    int PowerDrainUpdate(int a2) override;  // 0x744640
     virtual int PerFrameUpdate();  // 0x746810
     virtual int HandleTargetDestroyed();  // 0x7446E0
     int CheckStatus();  // 0x6B4F20

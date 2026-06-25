@@ -412,9 +412,11 @@ int InfantryClass::CheckAndApplyBomb()
 // ============================================================
 
 // 0x521c90
-void InfantryClass::PowerDrainUpdate()
+int InfantryClass::PowerDrainUpdate(int a2)
 {
-    // IDA: 0x521C90 (160B) — per-frame power consumption
+    // IDA: 0x521C90 (160B) — per-frame power consumption (vt13).
+    // a2 is the COM-stub context, unused by this per-class stub.
+    return 0;
 }
 
 // 0x51aa10
