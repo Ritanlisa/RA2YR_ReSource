@@ -13,6 +13,7 @@ build_*/
 CMakeCache.txt
 CMakeFiles/
 cmake_install.cmake
+.cache/
 
 # Visual Studio
 .vs/
